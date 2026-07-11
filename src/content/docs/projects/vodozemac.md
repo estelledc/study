@@ -8,7 +8,7 @@ title: vodozemac — Matrix 端到端加密的 Rust 内核
 
 ## 是什么
 
-vodozemac 是 Matrix 协议的**端到端加密内核**——实现 **Olm**（1 对 1 加密）和 **Megolm**（群组加密）两套协议，2022 年用 Rust 重写发布，用来替换老的 C 库 **libolm**。所有 Matrix 客户端（Element Web / Desktop / Android / iOS）最终都通过它来加解密。
+vodozemac 是 Matrix 协议的**端到端加密内核**——实现 **Olm**（1 对 1 加密）和 **Megolm**（群组加密）两套协议，2022 年用 Rust 重写发布，用来替换老的 C 库 **libolm**。主流 Element 系客户端（Web / Desktop / Android / iOS）和新客户端都走它；少数仍绑 libolm 的第三方客户端不在此列。
 
 日常类比：像一个**信件密封工坊**。Matrix 网络只负责送信封（服务端是密文路由器），工坊（vodozemac）负责把信塞进信封 + 上锁；每个 Matrix 客户端不自己学怎么上锁，**全外包给同一家工坊**——浏览器里通过 WASM 调，移动端通过 FFI 调，调的是字节级一致的同一份 Rust 代码。
 
@@ -33,11 +33,11 @@ vodozemac 在 [[matrix-rust-sdk]] 的 `matrix-sdk-crypto` crate 里被直接 wra
 
 vodozemac 把端到端加密拆成 **两套协议** + **一个账户/密钥仓**：
 
-1. **Olm（1 对 1 加密）**：双方第一次握手做 **Triple DH**（三次 Diffie-Hellman 混合派生根密钥；DH 是"两人各亮一把公钥就能算出同一把共享密钥"的数学魔术）。这一步与 Signal 的 X3DH 思路同源但**少一组一次性预共享键**。握手完成后每条消息推一步 **Double Ratchet**——对称 KDF 链 + 每收到对方消息时换 DH 密钥对。日常类比：每说一句话就把锁芯换一次，旧钥匙立刻作废。
+1. **Olm（1 对 1 加密）**：双方第一次握手做 **Triple DH**（三次 Diffie-Hellman 混合派生根密钥；DH 是"两人各亮一把公钥就能算出同一把共享密钥"的数学魔术）。这一步与 Signal 的 X3DH 思路同源但**少一组一次性预共享键**。握手完成后每条消息推一步 **Double Ratchet**——对称 **KDF** 链（密钥派生函数：像搅拌机，把旧密钥搅成新密钥）+ 每收到对方消息时换 DH 密钥对。日常类比：每说一句话就把锁芯换一次，旧钥匙立刻作废。
 
-2. **Megolm（群组加密）**：1000 人群聊里给每个人单独建 1000 条 Olm 会话不现实。Megolm 的解法：每个发送者本地生成一个 **group session**（群发送者会话），把它的当前密钥用 Olm 通道**点对点分发**给每个成员；之后这个发送者只做**单向 ratchet**——一次加密广播给所有人。代价是没有前向安全恢复，但群聊的吞吐量上来了。
+2. **Megolm（群组加密）**：1000 人群聊里给每个人单独建 1000 条 Olm 会话不现实。Megolm 的解法：每个发送者本地生成一个 **group session**（群发送者会话），把它的当前密钥用 Olm 通道**点对点分发**给每个成员（这把群密钥常叫 **sender key**——像群主发的同一把会议室钥匙）；之后这个发送者只做**单向 ratchet**——一次加密广播给所有人。代价是没有前向安全恢复，但群聊的吞吐量上来了。
 
-3. **Account（密钥仓）**：每个用户/设备持有一份 Account——身份键（长期 Curve25519 + Ed25519 对）+ 一次性键池（每次有人发起新会话用一把）。客户端定期把池子补货上传到服务端。
+3. **Account（密钥仓）**：每个用户/设备持有一份 Account——身份键（长期 **Curve25519** 做密钥交换 + **Ed25519** 做签名，像两把不同用途的章）+ 一次性键池（每次有人发起新会话用一把）。客户端定期把池子补货上传到服务端。
 
 4. **常时算法 + 无 unsafe**：vodozemac 整个 crate 禁用 `unsafe`，底层用 `curve25519-dalek` / `subtle` 这些"按位常时"的密码学库，避免计时旁路攻击。这是 Rust 在密码学领域相对 C 的硬优势。
 
@@ -57,26 +57,31 @@ Bob 上线，反着走一遍：服务端推密文 → matrix-js-sdk WASM → vod
 
 ### 案例 2：FFI vs WASM 跑同一份 Rust
 
-[[matrix-rust-sdk]] 在移动端通过 uniffi 暴露给 Kotlin / Swift：
+[[matrix-rust-sdk]] 在移动端通过 **uniffi**（自动生成 Kotlin/Swift 绑定的工具）暴露 API：
 
 ```rust
-// vodozemac 提供 Rust API
-let mut session = OlmSession::new(...);
-let ciphertext = session.encrypt(plaintext);
+// vodozemac：先建 Account，再拿对方身份键 + 一次性键建出 Session
+let account = Account::new();
+let mut session = account.create_outbound_session(
+    SessionConfig::version_1(),
+    identity_key,
+    one_time_key,
+)?;
+let message = session.encrypt("hello");
 ```
 
 ```kotlin
-// Element Android 侧（Kotlin via uniffi 绑定）
+// Element Android（Kotlin via uniffi）
 val ciphertext = olmMachine.encrypt(roomId, eventType, content)
-// 内部走 JNI → Rust → vodozemac
+// 内部：JNI → Rust → 上面同一套 Account/Session
 ```
 
-[[element-web]] 在浏览器侧通过 wasm-bindgen 调用：
+[[element-web]] 在浏览器侧通过 **wasm-bindgen**（把 Rust 编成 WASM 并生成 TS 胶水）调用：
 
 ```ts
-// Element Web 侧（TS via WASM）
+// Element Web（TS via WASM）
 const ciphertext = await olmMachine.encryptRoomEvent(roomId, eventType, content)
-// 内部走 WASM → 同一份 vodozemac Rust 代码
+// 内部：WASM → 同一份 vodozemac Rust 代码
 ```
 
 **移动端和浏览器调的是同一份字节级一致的 Rust 实现**——和 [[libsignal]] 的"Rust + FFI 出多份"是同一种工程范式。
@@ -89,7 +94,7 @@ const ciphertext = await olmMachine.encryptRoomEvent(roomId, eventType, content)
 - 浏览器和移动端各编一份 libolm，参数细节不一致引发跨端 bug
 - 没有常时保证，理论上易受计时旁路攻击
 
-vodozemac 重写后：所有 Matrix 客户端通过 WASM/FFI 调同一份 Rust，2022 年 5 月通过 Least Authority 密码学审计；libolm 进入 deprecated，新客户端不允许再用。
+vodozemac 重写后：主流客户端通过 WASM/FFI 调同一份 Rust，2022 年 5 月通过 Least Authority 密码学审计；libolm 进入 deprecated，新客户端不允许再用。
 
 ## 踩过的坑
 

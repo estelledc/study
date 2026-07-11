@@ -17,7 +17,7 @@ const {register, handleSubmit} = useForm();
 return <input {...register("email")} />;
 ```
 
-`register("email")` 返回一组 `ref + onChange + onBlur` 摊到 input 上。从这一刻起，用户每敲一个字符**只更新 DOM 自己**，不触发 React 重渲染——直到提交那一下，RHF 才把所有字段值收齐。这就是它在大表单里比 Formik 快 5-10 倍的根因。
+`register("email")` 返回一组 `ref + onChange + onBlur` 摊到 input 上。从这一刻起，用户每敲一个字符**只更新 DOM 自己**，不触发 React 重渲染——直到提交那一下，RHF 才把所有字段值收齐。官方大表单 benchmark 里，这常被写成比 Formik 快约 5–10 倍——根因就是少重渲染，不是魔法。
 
 ## 为什么重要
 
@@ -26,7 +26,7 @@ return <input {...register("email")} />;
 - 为什么 100 字段表单用 Formik 输入卡顿，换成 RHF 立刻丝滑——同一个 React，差异在哪
 - 为什么 RHF + zod 几乎成了 React + TS 项目的默认搭配，而不是 RHF + 自己写校验
 - 为什么 RHF 在 Server Components / Suspense 边界总有奇怪 hydration warning，新一代库（Conform）反而更好
-- 为什么 valtio / mobx-react-lite / TanStack Query 这些库都用同一套"Proxy + 按字段订阅"
+- 为什么 valtio / mobx-react-lite / Jotai 这些库都用同一套"细粒度订阅"（前两者靠 Proxy，Jotai 靠 atom）——和 RHF 的 formState Proxy 是同一类思路
 
 ## 核心要点
 
@@ -34,7 +34,7 @@ RHF 性能秘诀拆三步：
 
 1. **register 把 input 注册成 uncontrolled**：返回 `{ref, name, onChange, onBlur}`，spread 到 `<input>`。值存在 DOM 里，**不进 React state**。类比：把笔记写在纸上，不每次都拍照发群。
 
-2. **valuesRef 当影子仓库**：RHF 内部维护一个 `valuesRef.current` 镜像所有字段值。用户输入时 onChange 更新它，但**不**调用 setState。类比：服务员心里记单，但不打断厨房。
+2. **内部影子仓库（教学上可叫 valuesRef）**：RHF 用 ref/可变对象镜像所有字段值。用户输入时 onChange 更新它，但**不**调用 setState。类比：服务员心里记单，但不打断厨房。
 
 3. **formState 用 Proxy 按字段订阅**：你访问 `formState.errors.email` 时，Proxy 拦截这次 get，把"errors.email"加进订阅集。之后只有 errors.email 变了，本组件才重渲染。类比：你订阅"我的快递"通知，邻居的快递更新不吵你。
 
@@ -78,9 +78,10 @@ const schema = z.object({email: z.string().email(), age: z.number().min(18)});
 type FormValues = z.infer<typeof schema>;
 
 const {register, handleSubmit} = useForm<FormValues>({resolver: zodResolver(schema)});
+// 下面仍是 <input {...register("email")} /> + handleSubmit，与案例 1 同形
 ```
 
-**逐部分**：
+**逐部分**（本案例只演示接线，完整 JSX 同案例 1）：
 
 - `z.object({...})` 写一份 schema，**一次定义，校验+类型双输出**
 - `z.infer<typeof schema>` 自动算出 `{email: string, age: number}` 类型
@@ -134,7 +135,7 @@ import Select from "react-select";
 - **2019 年**：Bill Luo（@bluebill1049）个人开源 v1，对标当时垄断的 Formik，主打 uncontrolled。第一版 README 直接放 benchmark 数据，性能差距说服力极强。
 - **2021 年**：v7 重写——把原来手动维护的 subscription 系统换成 Proxy，bundle 砍 30%，API 收敛到现在这套 register / handleSubmit / formState。breaking change，但社区接受度高。
 - **2022 年**：`@hookform/resolvers` 拆出来独立维护，按子包提供 zod / yup / joi / valibot / arktype / class-validator 等桥接，让校验库与表单库彻底解耦。
-- **2024 年**：weekly downloads ~10M+，GitHub 40k stars，与 zod 形成 React+TS 表单事实标配。
+- **2024–2026 年**：weekly downloads ~10M+，GitHub stars 已到 **4 万+**，与 zod 形成 React+TS 表单事实标配。
 
 ## 学到什么
 

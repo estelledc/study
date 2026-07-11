@@ -43,7 +43,7 @@ Flask 的核心设计可以拆成 **三块**：
 
 2. **装饰器路由**：`@app.route("/path")` 让你在函数定义那一刻就声明"我负责这个 URL"，不用单独维护一张路由表。类比：在自己门上贴号码牌，而不是去物业那边登记房号——分散管理但每个文件局部清晰。
 
-3. **应用上下文 + 请求上下文**：Flask 用一个叫 thread-local 的机制，让你在任何地方都能写 `request.args.get("name")` 拿到当前 HTTP 请求的参数——好像它是个全局变量，但实际每个请求各自一份。这是 Flask 最神奇也最容易踩坑的地方。
+3. **应用上下文 + 请求上下文**：Flask 用 thread-local（像每人自带一份便签本）让你随手写 `request.args.get("name")`——看起来像全局变量，实际每个请求各自一份。这是最神奇也最易踩坑的地方。
 
 ## 实践案例
 
@@ -152,18 +152,18 @@ def list_users():
 - **2020 年 Flask 2.0**：开始支持 `async def` 视图（虽然性能不如原生 async 框架）
 - **2024 年 Flask 3.0**：移除老 Python 兼容代码，全面拥抱现代 Python
 
-如今 71k stars、Pallets 组织维护、BSD-3 协议，仍是 Python web 教程默认起点。
+如今数万 star 量级、Pallets 组织维护、BSD-3 协议，仍是 Python web 教程默认起点。
 
 ## 学到什么
 
-1. **少做事 = 易学 = 长寿**：Flask 15 年没大改核心 API，正因为它不试图把所有事包圆
-2. **装饰器是 Python web 的通用心智**：Flask 把它推成主流后，FastAPI / Starlette 都沿用同一套
-3. **微框架的代价是组合负担**：自由换来要自己挑数据库、表单、登录——决策疲劳是真实代价；thread-local 让 API 优雅但和异步组合时要懂底层机制
+1. **少做事 = 易学 = 长寿**：核心 API 15 年没大改，正因为它不试图包圆一切
+2. **装饰器成了 Python web 通用心智**：FastAPI / Starlette 都沿用同一套
+3. **微框架的代价是组合负担**：自由换来要自己挑数据库、表单、登录；thread-local 优雅但和异步组合时要懂底层
 
 ## 延伸阅读
 
-- 官方教程 + 设计哲学：[Flask Tutorial](https://flask.palletsprojects.com/en/tutorial/) + [Design Decisions in Flask](https://flask.palletsprojects.com/en/design/)（搭完整博客 + 解释"为什么是这样"）
-- Miguel Grinberg 的 [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)（23 篇博文，社区公认最完整）
+- 官方教程 + 设计哲学：[Flask Tutorial](https://flask.palletsprojects.com/en/tutorial/) + [Design Decisions in Flask](https://flask.palletsprojects.com/en/design/)
+- Miguel Grinberg 的 [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)（社区公认最完整）
 - [[fastapi]] —— 用类型注解的现代继承者
 - [[express]] —— JS 世界同生态位的微框架
 
@@ -180,23 +180,4 @@ def list_users():
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
-- [[redis]] —— Redis — 内存键值数据库
-- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
-- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
-- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
-- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
-- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
-- [[superset]] —— Apache Superset — 开源 BI 平台
 

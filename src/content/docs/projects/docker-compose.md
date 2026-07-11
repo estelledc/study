@@ -176,5 +176,12 @@ services:
 
 - [[docker]] —— Compose 是 Docker 的官方多容器编排工具，YAML 一份起整套栈
 - [[kubernetes]] —— K8s 的 Pod/Service/Volume 概念能在 Compose 里找到雏形
+- [[containerd]] —— Compose 最终仍通过容器运行时落地镜像和进程隔离
 - [[nginx]] —— Compose 里加一个 nginx 服务做反代是最常见模式
 - [[airflow]] —— Airflow 官方推荐的本地开发方式就是 Compose 起 webserver+scheduler+postgres
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）

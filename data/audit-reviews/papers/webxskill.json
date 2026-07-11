@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "首段 grounded/guided 可再各加半句日常类比，降低首次接触负担"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "WebArena/WebVoyager 提升数字已用「约」对冲，可标明是成功率百分点以免被读成绝对分"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 selector 是教学伪代码，可注明真实站点选择器会不同，避免读者照抄"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "首段 grounded/guided 可再各加半句日常类比，降低首次接触负担"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "WebArena/WebVoyager 提升数字已用「约」对冲，可标明是成功率百分点以免被读成绝对分"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 selector 是教学伪代码，可注明真实站点选择器会不同，避免读者照抄"
+      ]
+    }
+  ]
+}

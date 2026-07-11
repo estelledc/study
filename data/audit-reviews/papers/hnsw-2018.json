@@ -1,0 +1,121 @@
+{
+  "slug": "hnsw-2018",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "商场楼层导览类比贴合；M/ef/embedding 有桥接；hnswlib 与 pgvector 案例有逐步解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "层级分配不是『按概率 p=1/ln(M) 直接决定最高层』：论文用归一化因子 mL=1/ln(M)，层号 floor(-ln(U)·mL)，相邻层存活约 1/M。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『每个点连到自己最近的 M 个邻居』过度简化：论文用启发式选边，不是纯 M-NN。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『ef=200 几乎全图扫』对百万级图过强，宜改成召回接近饱和、代价接近暴力。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "hnswlib/pgvector 示例概念正确可跟做；案例 2 的 benchmark() 是示意即可；ef/内存/删除/距离函数踩坑与适用边界具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "商场楼层导览类比贴合；M/ef/embedding 有桥接；hnswlib 与 pgvector 案例有逐步解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "层级分配不是『按概率 p=1/ln(M) 直接决定最高层』：论文用归一化因子 mL=1/ln(M)，层号 floor(-ln(U)·mL)，相邻层存活约 1/M。",
+        "『每个点连到自己最近的 M 个邻居』过度简化：论文用启发式选边，不是纯 M-NN。",
+        "『ef=200 几乎全图扫』对百万级图过强，宜改成召回接近饱和、代价接近暴力。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "hnswlib/pgvector 示例概念正确可跟做；案例 2 的 benchmark() 是示意即可；ef/内存/删除/距离函数踩坑与适用边界具体。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.34,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 关联"
+    ],
+    "unresolved_hints": [],
+    "summary": "修正 mL=1/ln(M) 层级抽样表述、启发式选边、ef 饱和口径。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 175,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 175,
+  "l1_pass": true
+}

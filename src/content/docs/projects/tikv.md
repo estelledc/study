@@ -45,15 +45,22 @@ TiKV 的整体架构可以拆成 **四层**：
 
 ### 案例 1：写一条数据，幕后发生了什么
 
-客户端调用 `put("k1", "v1")`：
+客户端调用 `put("k1", "v1")`，调用顺序可以想成：
+
+```text
+loc = PD.GetRegion("k1")          # 问：谁管 k1？
+raft.Propose(loc.leader, Put...)  # leader 提案并复制
+raft.WaitCommit()                 # 多数派落盘
+ApplyToRocksDB(Put...)            # 写入数据引擎后返回
+```
+
+**逐部分解释**：
 
 1. 客户端先问 PD："k1 归哪个 Region？leader 在哪个节点？"（结果会本地缓存）
-2. 请求发到该 Region 的 leader
-3. leader 把这条写打包成 Raft log 提案，复制到 2 个 follower
-4. 多数派（leader + 1 个 follower）落盘后，Raft log 就 committed
-5. leader 把 log 应用到状态机（写到数据 RocksDB），返回给客户端
+2. 请求发到该 Region 的 leader；leader 把写打包成 Raft log，复制到 2 个 follower
+3. 多数派（leader + 1 个 follower）落盘后 log committed，再 Apply 到数据 RocksDB
 
-整个过程**只有这一个 Region 的 3 个节点参与**，其他几百个 Region 在干自己的活——这就是 Multi-Raft 能水平扩展的原因。
+整个过程**只有这一个 Region 的 3 个节点参与**——这就是 Multi-Raft 能水平扩展的原因。
 
 ### 案例 2：跨 Region 事务（Percolator）
 
@@ -82,10 +89,10 @@ TiKV 的整体架构可以拆成 **四层**：
 
 同一份订单数据，既要支持"按订单号查一条"（OLTP，TiKV 强项），又要支持"按时间维度做销售统计"（OLAP，列存才合适）：
 
-- TiFlash 节点作为 Raft **learner** 加入每个 Region 的 Raft 组——接 log 但不投票
-- 收到 log 后转成列式格式存到本地 ClickHouse 风格引擎里
-- TiDB 的优化器会自动选：点查走 TiKV 行存，分析查询走 TiFlash 列存
-- 一份数据两种形态，**不需要 ETL 同步**——HTAP 概念在 TiDB 这套体系里就这么落地的
+- TiFlash 作为 Raft **learner** 加入每个 Region——类比"只抄作业、不举手投票"：接 log 但不参与多数派
+- 收到 log 后转成列式格式存到本地（ClickHouse 风格引擎）
+- TiDB 优化器自动选：点查走 TiKV 行存，分析走 TiFlash 列存
+- 一份数据两种形态，**不需要 ETL**——HTAP 就这么落地
 
 ## 踩过的坑
 
@@ -116,7 +123,7 @@ TiKV 的整体架构可以拆成 **四层**：
 ## 历史小故事（可跳过）
 
 - **2015 年**：PingCAP 三位创始人刘奇 / 黄东旭 / 崔秋离开豌豆荚，受 Google Spanner / F1 论文启发，开始做"开源版 Spanner"。最早叫 TiDB（Ti = titanium，钛）
-- **2016 年 4 月**：TiKV 作为 TiDB 的存储层独立开源，第一版用 Go 写，几个月后**整体重写成 Rust**——理由是 Go GC 在 KV 这种延迟敏感场景抖动太大
+- **2016 年**：TiKV 作为存储层开源（约 1 月开工、4 月开源）。团队**考虑过用 Go**，但因 GC 停顿与调用 RocksDB 时的 CGO 开销，**从一开始选 Rust 从零写**（不是整仓重写）
 - **2018 年**：捐给 CNCF，进入 sandbox
 - **2019 年**：升级到 incubating
 - **2020 年 9 月**：CNCF 毕业，成为继 etcd 之后第二个 Raft 系毕业存储项目

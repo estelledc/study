@@ -1,0 +1,112 @@
+{
+  "slug": "glslify",
+  "area": "projects",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.33,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文是重复「观察点」占位模板，没有解释 GLSL 模块化、#pragma glslify 或 npm 复用"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "无类比、无逐步案例，零基础读者学不到任何实质内容，需整篇重写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 glslify/glslify，但正文与项目事实无关；需按 Browserify 风格 GLSL 模块系统、stack.gl 生态重写"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可运行代码、无真实踩坑与适用边界，需按 glslify CLI / tagged template / #pragma require 重写"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文是重复「观察点」占位模板，没有解释 GLSL 模块化、#pragma glslify 或 npm 复用",
+        "无类比、无逐步案例，零基础读者学不到任何实质内容，需整篇重写"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 4,
+        "no_distortion": 1
+      },
+      "average": 2,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源指向 glslify/glslify，但正文与项目事实无关；需按 Browserify 风格 GLSL 模块系统、stack.gl 生态重写"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可运行代码、无真实踩坑与适用边界，需按 glslify CLI / tagged template / #pragma require 重写"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 1.33,
+    "verdict": "rewrite",
+    "rejects": 3,
+    "needs_refine": 0,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "rewrite",
+    "round": 1,
+    "reason": "正文为重复观察点占位模板，三审均 reject；按 glslify 真实模块系统（pragma/CLI/tagged template）整篇重写。",
+    "sections_modified": [
+      "full rewrite"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

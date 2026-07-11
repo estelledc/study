@@ -14,7 +14,7 @@ Era 不只是又一个 Rollup。它有三个特点：
 
 - **EVM 兼容**：你的 Solidity 合约 99% 不用改就能搬上去
 - **自研 LLVM 编译器**：把 Solidity/Yul/Vyper 编成自家 zkEVM 字节码（不是直接复用 EVM）
-- **原生账户抽象**：所有账户都是合约，没有传统私钥账户（EOA），可以用 USDC 付 gas、用社交登录、用任意签名算法
+- **原生账户抽象**：底层**一律是合约账户**——用户侧仍可像普通钱包（EOA）一样用私钥签名，但协议不区分"私钥账户 vs 合约账户"，因此可用 USDC 付 gas、社交登录、任意签名算法
 
 第三点最特别——它不是装个插件实现的，而是**协议层**就这么设计的。
 
@@ -22,10 +22,10 @@ Era 不只是又一个 Rollup。它有三个特点：
 
 不理解 Era，下面这些事都解释不通：
 
-- 为什么 2023 年之后冒出"用社交账号登录的钱包"——背后多半是某条 zkEVM L2 的账户抽象在撑
+- 为什么 2023 年之后冒出"用社交账号登录的钱包"——常依赖某条带原生或强账户抽象的 L2（Era、Starknet 等）在撑
 - 为什么以太坊主网拥堵但 dApp 依然能扩——因为大部分活动转移到 Era / Arbitrum / Optimism 这层
 - 为什么 Matter Labs 要自己造 LLVM 后端——EVM 字节码不适合 zk 证明（指令开销不一样），需要重设计指令集
-- 为什么有人能"用 USDC 付 gas"——账户抽象 + Paymaster 协作的产物，L1 做不到
+- 为什么有人能"用 USDC 付 gas"——账户抽象 + Paymaster 的产物；L1 **协议层**做不到，只能靠 EIP-4337 这类应用层补丁
 
 ## 核心要点
 
@@ -43,7 +43,7 @@ zkSync Era 把"L2 高速 + L1 验证"拆成 **三件事**：
 
 ### 案例 1：把一个 ERC20 部署上 Era
 
-用熟悉的 Hardhat，加 `@matterlabs/hardhat-zksync` 插件：
+用熟悉的 Hardhat，加 `@matterlabs/hardhat-zksync`（还需 `zksync-ethers`，部署用其 `Deployer`）：
 
 ```js
 // hardhat.config.ts
@@ -67,7 +67,7 @@ export default {
 ### 案例 2：写一个 Paymaster 让用户用 USDC 付 gas
 
 ```solidity
-// 简化版 Paymaster
+// 教学简化：省略完整 IPaymaster 接口与 gas 计价，勿照抄上主网
 contract USDCPaymaster {
     function validateAndPayForPaymasterTransaction(
         bytes32, bytes32, Transaction calldata _tx
@@ -78,11 +78,11 @@ contract USDCPaymaster {
 }
 ```
 
-用户签名时把这个 Paymaster 地址塞进交易，Era 协议会先调它验证，通过后由 Paymaster 替用户付 ETH gas。这套流程在 L1 完全做不到——L1 必须用户钱包里有 ETH 才能发交易。
+**三步走**：① 用户签名时把 Paymaster 地址塞进交易；② Era 协议先调它的 `validateAndPay...`；③ 通过后由 Paymaster 替用户付 ETH gas。L1 协议层做不到同等原生流程——只能靠 EIP-4337 应用层补丁，且默认仍要用户有 ETH。
 
 ### 案例 3：社交登录钱包
 
-账户抽象意味着账户合约可以装任何验证逻辑。社交登录钱包（如 Argent X 风格）是这样工作的：
+账户抽象意味着账户合约可以装任何验证逻辑。关键改动只有一处：**用自定义验证函数替换 ECDSA**（Argent X 风格思路）：
 
 ```solidity
 function validateTransaction(...) external {
@@ -91,13 +91,12 @@ function validateTransaction(...) external {
 }
 ```
 
-钱包账户的"私钥"实际上是用户的 Google 账号。L1 上这套**根本写不出**，因为 L1 账户的签名校验写死在协议里。
-
+钱包账户的"私钥"实际上是用户的 Google 账号。L1 协议把签名校验写死为 ECDSA，这类验证**写不进默认账户模型**。
 ## 踩过的坑
 
 1. **Era 不是 100% EVM 等价**：少数 opcode 行为不同（CREATE2 地址算法、selfdestruct 语义、部分 precompile），从 L1 直接搬合约可能出 subtle bug——上线前必须在 Era testnet 全套跑过
 
-2. **没有 EOA，传统 msg.sender 直觉失效**：因为所有账户都是合约，钓鱼检测、白名单这些"按地址类型分流"的代码经常误判——必须改为按合约接口（ERC-4337-style）判断
+2. **底层无传统 EOA，msg.sender 直觉易失效**：用户侧像 EOA，但地址全是合约；钓鱼检测、白名单若"按地址类型分流"常误判——应改按合约接口判断
 
 3. **Paymaster 是双刃剑**：dApp 替用户垫 gas 听着美好，但 `validateAndPayForPaymasterTransaction` 必须严格限制谁能用、用多少，否则任何人都能让你帮他付 gas，被薅到破产
 

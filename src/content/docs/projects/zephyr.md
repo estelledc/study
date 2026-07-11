@@ -13,7 +13,7 @@ Zephyr 是 Linux Foundation 托管、Apache 2.0 授权的**开源实时操作系
 它的核心野心写在第一行 README 里：**一份代码树同时支持 8KB 内存的 MCU 到几 GB 的应用处理器**。具体覆盖：
 
 - 架构层面：ARM Cortex-M / Cortex-A、RISC-V、Intel x86、Xtensa（ESP32）、ARC、MIPS、SPARC
-- 板型层面：170+ 官方 BSP，从 Nordic nRF52、ST STM32、NXP i.MX RT 到 SiFive RISC-V
+- 板型层面：170+ 官方 BSP（Board Support Package，某块板子的启动与外设适配包），从 Nordic nRF52、ST STM32、NXP i.MX RT 到 SiFive RISC-V
 - 协议层面：完整 TCP/IP（v4/v6）、Bluetooth 5.0 LE（含 Mesh）、IEEE 802.15.4、Thread、CoAP / MQTT / LwM2M
 - 治理层面：Linux Foundation 中立托管，会员含 Intel、NXP、Nordic、ADI、Antmicro
 
@@ -32,7 +32,7 @@ Zephyr 的存在让这些事统一：
 
 - **构建系统现代化**：CMake + Kconfig + devicetree + west，前两个直接复用 Linux 内核生态
 - **驱动模型可移植**：写一次驱动，靠 devicetree 描述硬件差异，理论上换芯片只改 overlay
-- **安全有正式认证**：拿到 PSA Certified Level 1，是少数能进汽车 / 医疗准入清单的开源 RTOS
+- **安全有正式基线**：拿到 PSA Certified Level 1（平台安全架构入门级认证）；这是安全基线，不等于完整 ISO 26262 / IEC 62304 功能安全认证
 - **LTS 版本长支持**：LTS3（v3.7.0）2024 年发布，承诺 2.5 年安全更新；季度滚动 release（v4.x）
 
 简单说：FreeRTOS 给你一个内核，Zephyr 给你**整套发行版**。
@@ -47,7 +47,7 @@ Zephyr 的存在让这些事统一：
 
 3. **devicetree**：从 Linux 内核搬来的"硬件描述"。这块板子上 UART2 接到哪几个引脚、SPI1 时钟多少 MHz、I2C 上挂了什么传感器——全写在 `.dts` 文件里，编译时生成 C 头文件。**关键差异**：Kconfig 管"启不启用"，devicetree 管"硬件长什么样"。
 
-4. **west**：Zephyr 的 meta build tool（用 Python 写的）。负责把主仓库 + 所有 modules（HAL / mbedTLS / TF-M）按一个 manifest 文件拉下来，再统一派发 `west build` / `west flash` / `west debug` 命令。
+4. **west**：Zephyr 的 meta build tool（用 Python 写的）。负责把主仓库 + 所有 modules（HAL=芯片厂硬件抽象层、mbedTLS、TF-M 等）按一个 manifest 文件拉下来，再统一派发 `west build` / `west flash` / `west debug` 命令。
 
 四件套底层是 CMake 在生成构建图。新人看到的"复杂"基本都来自这四层职责分工。
 
@@ -64,7 +64,7 @@ Zephyr 的存在让这些事统一：
 
 ### 案例 1：BLE 心率广播 — 5 分钟跑通
 
-Nordic nRF52840-DK 是 Zephyr 入门首选板。流程：
+Nordic nRF52840-DK 是 Zephyr 入门首选板。流程（板名 `nrf52840dk/nrf52840` 适用于较新 Zephyr；旧教程可能仍写 `nrf52840dk_nrf52840`，以你安装的版本文档为准）：
 
 ```bash
 west init zephyrproject && cd zephyrproject
@@ -78,17 +78,32 @@ west flash                               # 烧录
 
 ### 案例 2：自定义板子 BSP — 入门到进阶的分水岭
 
-手头一块自己设计的 STM32 板子，想让它跑 `hello_world`。要写三份文件：
+手头一块自己设计的 STM32 板子，想让它跑 `hello_world`。在树里新建板目录并写三份文件：
 
-- `boards/myvendor/myboard/myboard.dts` — 板级 devicetree（哪个 UART 是 console、LED 接哪个 GPIO）
-- `boards/myvendor/myboard/Kconfig.defconfig` — 板级默认 Kconfig
-- `boards/myvendor/myboard/myboard_defconfig` — 必要的 CONFIG 开关
+1. `boards/myvendor/myboard/myboard.dts` — 板级 devicetree（哪个 UART 是 console、LED 接哪个 GPIO；引脚复用靠 pinctrl，即「哪个脚当 UART/SPI」的接线表）
+2. `boards/myvendor/myboard/Kconfig.defconfig` — 板级默认 Kconfig
+3. `boards/myvendor/myboard/myboard_defconfig` — 必要的 CONFIG 开关
 
-跨过这一步，才算真正"懂 Zephyr"——理解 devicetree binding、pinctrl、clock tree 怎么联动。
+然后：
+
+```bash
+west build -b myboard samples/hello_world
+west flash
+```
+
+串口应打出 `Hello World! myboard`。跨过这一步，才算真正"懂 Zephyr"——理解 binding、pinctrl、时钟树怎么联动。
 
 ### 案例 3：Thread Mesh 网络节点
 
-同一块 nRF52840 跑 `samples/net/openthread/coap_server`，能组建一个 802.15.4 + IPv6 over low-power 的 Thread mesh。对比同一块板子跑 BLE / Wi-Fi 的功耗和拓扑差异，是理解 IoT 协议栈的最好实验。
+同一块 nRF52840 跑 OpenThread CoAP 样例（需 `west update` 拉齐 OpenThread 相关 module）：
+
+```bash
+west build -b nrf52840dk/nrf52840 \
+  samples/net/openthread/coap_server
+west flash
+```
+
+烧完后节点会加入 802.15.4 + IPv6 的 Thread mesh，可用 CoAP 客户端访问板上资源。对比同一块板跑 BLE 的功耗与拓扑，是理解 IoT 协议栈的好实验。
 
 ## 踩过的坑
 
@@ -108,15 +123,15 @@ west flash                               # 烧录
 
 **适用**：
 
-- BLE / Thread / Matter 设备开发——协议栈现成，认证现成
+- BLE / Thread / Matter 设备开发——协议栈现成，PSA 等安全基线现成
 - 需要跨芯片厂的产品线（同一份固件想跑 Nordic 和 ST）
-- 需要正式安全认证（PSA L1、IEC 62304 医疗、ISO 26262 汽车）
-- 多核异构 SoC（主核跑 Linux + 协核跑 Zephyr，AMP 模式）
+- 需要平台安全基线（PSA L1）；若还要完整 IEC 62304 / ISO 26262，需另做功能安全论证，不能只靠 PSA
+- 多核异构 SoC（主核跑 Linux + 协核跑 Zephyr，即 AMP=非对称多处理）
 
 **不适用**：
 
 - 只想做最简单的"按键点灯"裸机程序——杀鸡用牛刀，Arduino / 厂商 HAL 更轻
-- 硬实时要求极严（μs 级抖动）——上 RT-Thread / Threadx 或专用硬实时核
+- 极严抖动预算（μs 级）——Zephyr 可做确定性调度，但仍需实测；预算极紧时可能选专用硬实时方案
 - 团队完全没碰过 Linux 内核 Kconfig / devicetree——学习曲线陡，需要前置知识
 - 需要 GUI / 应用层框架——Zephyr 是底层 RTOS，不是 Android
 
@@ -125,7 +140,7 @@ west flash                               # 烧录
 - **2015 年**：Wind River 把内部商用 RTOS Rocket（VxWorks Microkernel Profile 的精简版）开源
 - **2016 年**：Wind River 把代码捐给 Linux Foundation，Zephyr Project 成立。Wind River 自己继续卖 VxWorks 商业线，两条线并存
 - **2017–2020 年**：Nordic、Intel、NXP 陆续把自家 HAL 上游到 Zephyr，BSP 数量从几十块涨到上百块
-- **2024 年**：v3.7.0 LTS3 发布，PSA Certified Level 1 通过，进入汽车 / 医疗准入清单
+- **2024 年**：v3.7.0 LTS3 发布，PSA Certified Level 1 通过（安全基线，非完整功能安全认证）
 - **当前（2026）**：v4.x 季度滚动，GitHub 15k+ stars、140k+ commits，是 FreeRTOS 之外最活跃的开源 RTOS
 
 ## 学到什么

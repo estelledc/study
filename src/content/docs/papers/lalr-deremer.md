@@ -25,7 +25,7 @@ LALR(1) 状态数：~300  （同一文法）
 
 不理解 LALR，下面这些事都没法解释：
 
-- 为什么 60 年来几乎所有 C / Pascal / Java / Go / SQL 的 parser 都是用 yacc 类工具自动生成的——**LALR(1) 是它们共同的算法基础**
+- 为什么 50 年来大量工业语言前端（C、Pascal、早期 Java、SQL，以及无数 DSL）用 yacc/bison 类工具生成——**LALR(1) 是那条工具链的算法基础**（现代 Go gc、javac 等则常改手写递归下降）
 - 为什么大学《编译原理》上来就讲 "项集 / lookahead / GOTO 表"——它们是 LALR 的零件
 - 为什么 yacc 的 `.y` 文件里你会看到诡异的 `%left '+'`、`%right '='` 声明——那是绕开 LALR shift/reduce 冲突的工程补丁
 - 为什么有些研究项目（tree-sitter、PEG）宁愿用别的算法也不碰 LALR——后面"踩过的坑"里讲

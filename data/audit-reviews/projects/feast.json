@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 entity_df 用了省略号 ...，零基础无法照抄跑通；应给完整三行时间戳。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇代码缺 timedelta 的 import，首次跟做会 NameError。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Tecton —— Feast 商业版同源」不准确：Tecton 是独立商业 Feature Store（Michelangelo 背景），虽主导贡献 Feast，但不是 Feast 的商业版；应改为对照阅读/主要贡献方。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Gojek+Google 开源、捐 LF AI 的时间线大体合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补全 import（timedelta）与可运行的 entity_df；materialize 命令可保留。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺「反向链接」段，建议补占位以对齐 12 段模板。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（不算特征、schema 只走 feast apply、TTL vs 物化频率）具体有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 entity_df 用了省略号 ...，零基础无法照抄跑通；应给完整三行时间戳。",
+        "开篇代码缺 timedelta 的 import，首次跟做会 NameError。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "「Tecton —— Feast 商业版同源」不准确：Tecton 是独立商业 Feature Store（Michelangelo 背景），虽主导贡献 Feast，但不是 Feast 的商业版；应改为对照阅读/主要贡献方。",
+        "Gojek+Google 开源、捐 LF AI 的时间线大体合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "补全 import（timedelta）与可运行的 entity_df；materialize 命令可保留。",
+        "缺「反向链接」段，建议补占位以对齐 12 段模板。",
+        "踩坑（不算特征、schema 只走 feast apply、TTL vs 物化频率）具体有用。"
+      ]
+    }
+  ]
+}

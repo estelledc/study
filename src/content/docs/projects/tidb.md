@@ -31,7 +31,7 @@ TiDB 的架构可以拆成 **四个角色**：
 
 2. **PD（Placement Driver）**——大脑。管元数据 + 全局时间戳（**TSO**）+ 调度 Region。任何事务开始要找 PD 领一个时间戳。
 
-3. **TiKV**——行存底盘。基于 [[rocksdb]] + [[raft]]，把整库看成有序 KV，按 key 范围切成 **Region**（默认 96MB）。每个 Region 有 3 副本放在不同机器。
+3. **TiKV**——行存底盘。基于 [[rocksdb]] + [[raft]]，把整库看成有序 KV，按 key 范围切成 **Region**（v8.4 前默认 96MB，之后默认 256MB）。每个 Region 有 3 副本放在不同机器。
 
 4. **TiFlash**——列存副本。通过 Raft **Learner** 角色异步从 TiKV 拉数据，但落盘成列式。同一行数据存两份格式：行存给 OLTP、列存给 OLAP。
 
@@ -134,7 +134,7 @@ SELECT user_id, SUM(amount) FROM orders GROUP BY user_id;
 - **2020 年**：TiKV 从 CNCF 毕业，成为继 etcd 之后第二个毕业的存储项目。
 - **2021 年**：5.0 引入 TiFlash MPP（大规模并行处理），HTAP 第一次真正可用。
 - **2022 年**：TiDB Cloud Serverless 公测，按用量计费。
-- **2024 年**：7.5 LTS 发布，外键约束、资源管控等"补齐 MySQL 该有的"陆续到位。
+- **2023 年**：7.5 LTS（2023-12-01）发布，外键约束、资源管控等"补齐 MySQL 该有的"陆续到位。
 
 ## 学到什么
 

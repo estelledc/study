@@ -1,0 +1,131 @@
+{
+  "action": "rewrite",
+  "average": 1.22,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "slug 是 scaling-hnsws-antirez（antirez《Scaling HNSWs》），正文却在讲 d-HNSW 存算分离，零基础读者按 slug 找笔记会完全对不上题"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "柜员/仓库、图书馆卡片类比服务的是 RDMA 论文，不是 antirez 讲的量化、线程与分片"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例无 Redis VADD/VSIM/Q8 等可跟做步骤，全是论文实验叙述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "slug/主题应为 antirez《Scaling HNSWs》（antirez.com/news/156，Redis Vector Sets 工程笔记），来源却写成 Y. Liu / F. Fang / C. Qian 的 d-HNSW"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题「反向索引内存」误译 disaggregated memory；正文 117×、meta-HNSW 等属于 HotStorage'25 d-HNSW，与 antirez 文无关"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把两篇完全不同的工作绑在同一 slug 上，属于身份级歪曲，需整篇按 antirez 原文重写"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例应围绕 Redis Vector Sets：VADD Q8/BIN、VSIM 多实例合并、CAS 写入拆分等，而非 RDMA doorbell/子图加载"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑应覆盖量化精度、epoch 多线程、tombstone vs 真删除、RDB 序列化图结构等 antirez 原文要点"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界应量化到单机百万～千万向量、多 key 分片、内存型 HNSW vs 磁盘 ANN"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "slug 是 scaling-hnsws-antirez（antirez《Scaling HNSWs》），正文却在讲 d-HNSW 存算分离，零基础读者按 slug 找笔记会完全对不上题",
+        "柜员/仓库、图书馆卡片类比服务的是 RDMA 论文，不是 antirez 讲的量化、线程与分片",
+        "实践案例无 Redis VADD/VSIM/Q8 等可跟做步骤，全是论文实验叙述"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 1,
+        "no_distortion": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "frontmatter",
+      "fix_hints": [
+        "slug/主题应为 antirez《Scaling HNSWs》（antirez.com/news/156，Redis Vector Sets 工程笔记），来源却写成 Y. Liu / F. Fang / C. Qian 的 d-HNSW",
+        "标题「反向索引内存」误译 disaggregated memory；正文 117×、meta-HNSW 等属于 HotStorage'25 d-HNSW，与 antirez 文无关",
+        "把两篇完全不同的工作绑在同一 slug 上，属于身份级歪曲，需整篇按 antirez 原文重写"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例应围绕 Redis Vector Sets：VADD Q8/BIN、VSIM 多实例合并、CAS 写入拆分等，而非 RDMA doorbell/子图加载",
+        "踩坑应覆盖量化精度、epoch 多线程、tombstone vs 真删除、RDB 序列化图结构等 antirez 原文要点",
+        "适用边界应量化到单机百万～千万向量、多 key 分片、内存型 HNSW vs 磁盘 ANN"
+      ]
+    }
+  ],
+  "slug": "scaling-hnsws-antirez",
+  "area": "papers",
+  "status": "rewritten",
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full-note"
+    ],
+    "unresolved_hints": [],
+    "note": "原笔记错绑 d-HNSW（Liu/Fang/Qian）；已按 antirez Scaling HNSWs 整篇重写"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

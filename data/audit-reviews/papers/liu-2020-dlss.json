@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递包裹/翻译员类比贴合；motion vector / Tensor Core 有桥接；案例 2 偏概念图，可再补一句「跟做时先看引擎是否输出 MV」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 Edward Liu GTC 2020 / DLSS 2.0 正确；Control 性能表属教学示意而非论文原表，可接受；「输出权重」是合理教学简化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "管线伪代码与 HUD 顺序可跟做；ghosting / sharpening / 首帧稳态踩坑具体；适用边界有 Tensor Core 与 <30fps 量化。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快递包裹/翻译员类比贴合；motion vector / Tensor Core 有桥接；案例 2 偏概念图，可再补一句「跟做时先看引擎是否输出 MV」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源指向 Edward Liu GTC 2020 / DLSS 2.0 正确；Control 性能表属教学示意而非论文原表，可接受；「输出权重」是合理教学简化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "管线伪代码与 HUD 顺序可跟做；ghosting / sharpening / 首帧稳态踩坑具体；适用边界有 Tensor Core 与 <30fps 量化。"
+      ]
+    }
+  ]
+}

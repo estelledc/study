@@ -1,0 +1,114 @@
+{
+  "slug": "buildkit",
+  "area": "projects",
+  "round": 17,
+  "output_path": "/workspace/src/content/docs/projects/buildkit.md",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例有命令但逐部分解释不足，建议说明每个 flag / mount / stage 的作用。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Docker 默认启用 BuildKit 的版本应写为 Docker Engine 23.0 起，而不是 22.06。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“构建时间常常砍一半”过于绝对，建议改成更稳健的性能表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2/3/4/5 应补充输入、缓存和 secret mount 的边界，避免读者把示例当成完整生产 Dockerfile。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "按 base rules 补齐 ## 反向链接 占位段，便于 regen 脚本接管。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例有命令但逐部分解释不足，建议说明每个 flag / mount / stage 的作用。",
+        "按 base rules 补齐 ## 反向链接 占位段，便于 regen 脚本接管。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Docker 默认启用 BuildKit 的版本应写为 Docker Engine 23.0 起，而不是 22.06。",
+        "“构建时间常常砍一半”过于绝对，建议改成更稳健的性能表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3/4/5 应补充输入、缓存和 secret mount 的边界，避免读者把示例当成完整生产 Dockerfile。"
+      ]
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 184,
+    "reasons": []
+  }
+}

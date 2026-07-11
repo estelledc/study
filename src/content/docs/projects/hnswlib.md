@@ -72,14 +72,16 @@ idx.save_index('idx.bin')
 idx = hnswlib.Index(space='cosine', dim=dim)
 ```
 
-hnswlib 的 cosine 实际上是 **1 - inner_product**，向量必须先 L2 归一化才正确。文档里写了，但很多人没看：
+官方公式是 **cosine distance = 1 − IP / (‖a‖‖b‖)**，和 `space='ip'` 的 `1 − IP` 不是一回事。Python 绑定在 `add_items` 时会对 cosine **自动归一化**；纯 C++ 头文件则要你自己先 normalize。生产里更直白的写法是显式归一化后走 `ip`：
 
 ```python
 data = data / np.linalg.norm(data, axis=1, keepdims=True)
+idx = hnswlib.Index(space='ip', dim=dim)
+idx.init_index(max_elements=num, M=16, ef_construction=200)
 idx.add_items(data, ids)
 ```
 
-不归一化会得到一堆"看起来很相似但其实不对"的结果。生产里一般用 `space='ip'` + 显式 normalize，更直白。
+混用「未归一化向量 + 以为 cosine 会魔法修好距离值」时，排序偶发还能看，**距离数值会对不上**——benchmark 时尤其容易踩。
 
 ### 案例 3：增量插入与上限调整
 
@@ -125,6 +127,13 @@ idx.mark_deleted(label_id)
 - 高频增删改、需要事务 → HNSW 算法本身不擅长，hnswlib 也没补
 - 想用 GPU 加速 → Faiss IndexHNSWFlat
 - 需要混合检索（向量 + 全文）→ Elasticsearch / Vespa / Qdrant 的上层封装
+
+## 历史小故事（可跳过）
+
+- **2016**：Malkov & Yashunin 把 HNSW 挂到 arXiv（1603.09320），随后开源 nmslib 里的图索引实验代码
+- **2018**：TPAMI 正式刊出；作者把核心抽成独立仓库 **hnswlib**，header-only，方便别人嵌入
+- **2019–2021**：Faiss IndexHNSW、Milvus、Weaviate、Qdrant 等要么复用、要么按同一接口语义重写
+- **RAG 时代**：`pip install hnswlib` 成了 Python 原型标配——很多人用了作者实现却不知道作者是谁
 
 ## 学到什么
 

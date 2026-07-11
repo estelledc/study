@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只贴了 io-threads 配置，缺少对两行配置各自作用的逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有改主机名前后对比，建议补 2-3 步迁移检查（连上、SET/GET、看 INFO）让零基础能跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题写「Redis 7.4 的开源 fork」，正文与史实均为从 Redis 7.2.4 fork，应统一为 7.2.4"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Redis 7.4+ 写成「闭源」不准确：实际是 SSPL/RSALv2 源码可得（source-available），不是闭源"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "许可证变更应点明 dual license（SSPL + RSALv2），不宜只写 SSPL"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「社区一半的注意力」缺乏依据，宜改为可核验表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联段目前只有 1 条，建议补齐与 dragonfly / keydb / redis-stack 等相邻项目的对照链接"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 1.5-2x 吞吐数字宜注明来源或改成「官方/社区基准常见区间」以免被当成硬承诺"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只贴了 io-threads 配置，缺少对两行配置各自作用的逐步解释",
+        "案例 2 只有改主机名前后对比，建议补 2-3 步迁移检查（连上、SET/GET、看 INFO）让零基础能跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "标题写「Redis 7.4 的开源 fork」，正文与史实均为从 Redis 7.2.4 fork，应统一为 7.2.4",
+        "把 Redis 7.4+ 写成「闭源」不准确：实际是 SSPL/RSALv2 源码可得（source-available），不是闭源",
+        "许可证变更应点明 dual license（SSPL + RSALv2），不宜只写 SSPL",
+        "「社区一半的注意力」缺乏依据，宜改为可核验表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联段目前只有 1 条，建议补齐与 dragonfly / keydb / redis-stack 等相邻项目的对照链接",
+        "案例 3 的 1.5-2x 吞吐数字宜注明来源或改成「官方/社区基准常见区间」以免被当成硬承诺"
+      ]
+    }
+  ]
+}

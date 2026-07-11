@@ -70,16 +70,18 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    if (error.response?.status === 401) {
+    const original = error.config;
+    if (error.response?.status === 401 && !original._retry) {
+      original._retry = true;
       await refreshToken();
-      return api.request(error.config);   // 用新 token 重发原请求
+      return api.request(original);        // 用新 token 重发原请求
     }
     return Promise.reject(error);
   }
 );
 ```
 
-请求拦截器统一塞 token；响应拦截器看到 401 就刷 token 再重试。业务代码完全不用知道有 token 这回事——这是 interceptor 模式最经典的舞台。
+请求拦截器统一塞 token；响应拦截器第一次看到 401 就刷 token 再重试。`_retry` 是防死循环保险：如果刷新后的请求仍然 401，就把错误抛给登录页。业务代码不用知道 token 细节——这是 interceptor 模式最经典的舞台。
 
 ### 案例 3：AbortController 取消请求
 
@@ -128,7 +130,7 @@ controller.abort();
 - **2014-08**：Matt Zabriskie 发 v0.1，目标是给 AngularJS 1.x 当 `$http` 替代品
 - **2016-2017**：Promise 时代来临，axios 比 jQuery.ajax 易用、比原生 fetch 友好，迅速成主流
 - **2018**：Matt 退出维护，仓库一度无人合 PR，社区焦虑
-- **2020**：OpenJS Foundation 接管，恢复发版节奏
+- **2020**：Node.js Package Maintenance 工作组公开讨论 axios 维护压力，社区协作者开始补治理和发版流程
 - **2022**：v1.0 GA，TypeScript 类型内置，AbortController 接替 CancelToken
 - **2024**：v1.7+ 加 fetch adapter，承认"未来属于平台原生"
 

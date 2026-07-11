@@ -1,5 +1,5 @@
 ---
-title: NativeScript
+title: NativeScript — 用 JS/TS 直接驱动原生控件
 来源: 'https://github.com/NativeScript/NativeScript'
 日期: 2026-07-08
 分类: mobile
@@ -8,162 +8,143 @@ title: NativeScript
 
 ## 是什么
 
-NativeScript 的目标是用 JS/TS 写跨平台原生 app，而不是被 WebView 包住。它在运行时把前端代码映射到 iOS/Android 原生组件，让你可以较少改一次代码覆盖两个平台。
+NativeScript 让你用 **JavaScript / TypeScript** 写 iOS 与 Android（以及 visionOS）应用，运行时把前端代码**映射到系统原生控件**，而不是塞进 WebView。日常类比：不是在网页外壳里套页面，而是给每个平台各配一套"遥控器"——按钮同一套按法，动作落到 UIKit / Android View 等原生组件上。
 
-日常类比：不是在网页外壳里套一个页面，而是给每个平台各配一套“遥控器”，按钮同一套按法，只是动作映射到底层系统原生控件。
+最小心智模型：你写 XML（或框架组件）描述界面，写 TS 写逻辑；NativeScript runtime 在设备上把 `Button`、`Label` 变成真正的原生 View，并可直接调用相机、定位等原生 API。
+
+官方 monorepo（约 2.5 万 star）提供 `@nativescript/core` 与各平台 types；可用 Angular / Vue / React / Solid / Svelte 等前端范式驱动同一套原生层。
+
+和"用网页假装 App"不同：用户滑动的是系统列表，点的是系统按钮，无障碍与平台手势也更接近原生应用。
 
 ## 为什么重要
 
-它适合的场景是：前端团队想复用逻辑与 UI 描述，但又不想让体验完全沦为 Web wrapper。
+不理解 NativeScript，下面这些事会很难解释：
 
-- 组件层可复用
-- 原生能力可达（定位、相机、推送、权限）
-- 通过统一范式加快多人协同
+- 为什么有人坚持"跨端"却拒绝 Cordova / Ionic 式 WebView——他们要的是原生控件手感，不是套壳网页
+- 为什么同一套 JS 业务仍要维护两套运行时——iOS 与 Android 的桥接与生命周期并不对称
+- 为什么插件生态比 UI 组件库更决定项目生死——相机、推送、BLE 几乎都走 native plugin
+- 为什么它和 [[react-native]] / [[flutter]] 常被放在同一张选型表，却不是同一条技术路线
 
 ## 核心要点
 
-### XML + JS/TS 构建模型
+1. **XML + JS/TS 构建模型**：视图常用 XML 描述组件树，逻辑在 TS。类比：剧本写站位（XML），演员念台词（TS）；舞台上的人仍是原生演员，不是网页投影。
 
-视图常用 XML 描述，业务逻辑在 JS/TS。
+2. **双端（多端）运行时**：NativeScript 为 iOS / Android 等维护独立 runtime，把 JS 调用转到原生。同名 API 行为可能不同，需要自己的抽象层。类比：同一遥控器说明书，两台电视频道编号不一样。
 
-- 组件树到原生 View 映射。
-- 变更检测与视图更新通过框架运行时。
-
-### 平台运行时
-
-NativeScript 维护两套运行时：iOS / Android。
-
-- 同名 API 可能在两个端有行为差异，需要抽象层包一层。
-- Native modules 让你直接调用原生能力。
-
-### 插件与依赖
-
-社区插件质量差异较大，需要分层接入。
-
-- 第三方 plugin 要看底层权限声明。
-- 自研 plugin 需要维护两端能力。
+3. **直接触达原生 API + 插件**：不必为每个系统能力重写 Java/Swift 业务，但第三方 plugin 质量参差，权限与原生依赖要分层接入。类比：万能转接头很多，劣质接头会烧掉设备。
 
 ## 实践案例
 
-### 案例 1：内部报修 app
+### 案例 1：脚手架跑起来
 
-一套工单流程，Android 里要调相机，iOS 里要读相册。
+```bash
+npm install -g nativescript
+ns create my-app
+cd my-app
+ns run android   # 或 ns run ios
+```
 
-- 业务层共用，原生权限请求分离封装。
-- 通过 NativeScript 的 API，减少重复代码。
+**逐部分解释**：
 
-### 案例 2：轻量 CRM
+- `ns create` 生成带 `@nativescript/core` 的工程骨架
+- `ns run` 编译 JS/TS，打包进对应平台运行时，装到模拟器或真机
+- 这一步验证的是"工具链通了"，还不是业务抽象是否干净
 
-列表、详情、推送三模块。
+### 案例 2：XML 页面 + 事件
 
-- 统一组件库在两端回用。
-- 针对 iOS/Android 的交互风格通过样式和手势抽象。
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <StackLayout>
+    <Label text="{{ message }}" />
+    <Button text="点我" tap="onTap" />
+  </StackLayout>
+</Page>
+```
 
-### 案例 3：物联设备控制端
+```ts
+export function onTap() {
+  this.set("message", "已点击");
+}
+```
 
-BLE 操作是典型例子。
+**逐部分解释**：
 
-- 统一调用层，原生通信层差异较大。
-- 通过 plugin bridge 做超时重试和状态同步。
+- `Label` / `Button` / `StackLayout` 会映射成原生布局与控件，不是 DOM
+- `tap="onTap"` 把原生点击接到 TS 方法
+- `{{ message }}` 是绑定：改数据后视图更新走框架运行时，不是手动改 DOM
+
+### 案例 3：平台差异用 adapter 包一层
+
+```ts
+import { isIOS } from "@nativescript/core";
+
+export function pickPhoto() {
+  if (isIOS) return openIosPhotoLibrary();
+  return openAndroidCameraOrGallery();
+}
+```
+
+**逐部分解释**：
+
+- 业务页只调 `pickPhoto()`，不散落 `if (isIOS)` 
+- 权限声明、相册 vs 相机入口放在 adapter，避免 UI 层被平台细节污染
+- BLE / 推送等同理：统一调用层 + 原生通信层分离
 
 ## 踩过的坑
 
-1. **跨端行为差异**：同一 API 在 iOS/Android 返回值或生命周期差异明显。
-2. **热更新节奏**：版本更新后运行时兼容性变化要尽早回归。
-3. **插件依赖冲突**：原生 plugin 版本混乱时编译链会崩。
-4. **UI 测试覆盖不足**：同样布局代码在不同分辨率下表现差异大。
-5. **桥接层报错信息不透明**：很多异常来自原生 side。
+1. **同名 API 两端行为不同**：返回值、生命周期、权限弹窗时机常不一致，原因是两套 runtime 而非"写错一行 JS"。
+2. **插件版本与 runtime 绑死**：升级 `@nativescript/core` 后旧 native plugin 编译失败很常见，要锁版本并做两端回归。
+3. **桥接层报错不透明**：堆栈常停在原生 side，JS 里只看到模糊异常，需要同时看 Xcode / Logcat。
+4. **把 Web 布局习惯原样搬过来**：CSS 子集与原生布局规则不同，长列表不做虚拟化时滚动会卡。
 
 ## 适用 vs 不适用场景
 
-适用：
+**适用**：
 
-- 小团队希望降低双端维护成本
-- 业务逻辑变化快，想统一开发
-- 可接受定制运行时和插件生态管理
+- 前端团队想复用 TS 逻辑与 UI 描述，又要原生控件手感
+- 中小型业务 App（表单、列表、中等原生能力），双端维护成本敏感
+- 已接受"要管插件与原生依赖"的团队
 
-不适用：
+**不适用**：
 
-- 对极致原生动画和性能有极高要求
-- 团队不愿意维护原生层依赖
-- 强依赖平台特有新 API 的项目
+- 极致原生动画 / 游戏级帧率——更常选纯原生或 [[flutter]] 自绘
+- 团队无人愿意碰 Xcode / Android 构建链
+- 强依赖刚发布的平台-only API，且社区 plugin 尚未跟上
 
 ## 历史小故事（可跳过）
 
-- 早期框架热潮里，WebView 方案和 NativeScript 都在争夺“跨端效率”。
-- NativeScript 的价值不是“写得最快”，而是“原生能力下沉成本更低”。
-- 随着 RN、Flutter 兴起，NativeScript 需要更细化模块治理才能保竞争力。
+- **2014–2015 年**：Telerik 推出 NativeScript，主打"JS 直接调原生 API"，区别于当时流行的 Cordova 套壳
+- **2015 年**：GitHub 仓库公开，跨端热潮中与 Cordova / React Native 并列被讨论
+- **收购之后**：Progress 收购 Telerik，产品继续开源维护；官方加强 Angular / Vue 等集成
+- **社区分化**：RN 与 Flutter 拿走大部分心智份额后，NativeScript 更强调"多前端框架 × 原生 API 直达"
+- **近年**：runtime 扩展到 visionOS 等；定位变成差异化路线，而不是"唯一跨端答案"
 
 ## 学到什么
 
-1. 跨平台不是单次代码转译，是持续维护。
-2. 运行时桥接是架构核心，不是次要技术债。
-3. 原生 API 一致性要通过封装层统一。
-4. 插件治理比 UI 组件更重要。
-5. 性能瓶颈常在桥接，不在逻辑。
-
+1. **跨端不是一次转译，是持续维护两套运行时与插件**
+2. **桥接层是架构核心**——性能与排错往往卡在这里，不在业务 if/else
+3. **平台差异要用 adapter 收口**，不要泄漏进每个页面
+4. **选型先问"要不要真原生控件"**：要 Web 套壳看 [[ionic-framework]] / [[capacitor]]；要 JS 原生桥看 NS / RN；要自绘 UI 看 Flutter
+5. **插件治理成本是隐性主成本**——UI 写得再快，原生依赖一乱，发布节奏就会塌
 ## 延伸阅读
 
-- 官方仓库： https://github.com/NativeScript/NativeScript
-- NativeScript 文档：项目脚手架与原生模块
-- [[react-native]] —— 另一种 JS 跨端路线
-- [[flutter]] —— UI 渲染统一路线
-- [[ionic]] —— WebView 路线对照
+- 官方文档：[NativeScript Docs](https://docs.nativescript.org/)（setup、核心概念、插件）
+- 仓库：[NativeScript/NativeScript](https://github.com/NativeScript/NativeScript)
+- 快速上手视频：[NativeScript Getting Started](https://www.youtube.com/results?search_query=nativescript+getting+started)（官方/社区入门可选）
+- [[react-native]] —— 另一条 JS→原生桥路线（Yoga 布局 + 组件生态）
+- [[flutter]] —— Dart + 自绘引擎，不走系统控件映射
+- [[ionic-framework]] / [[capacitor]] —— WebView / 混合路线对照
 
 ## 关联
 
-- [[mobile-cross-platform]] —— 跨端策略总览
-- [[native-bridge]] —— 桥接层设计
-- [[ionic]] —— WebView 对比
-- [[react-native]] —— JS/TS 生态对比
-- [[flutter]] —— 渲染统一对比
+- [[react-native]] —— JS 跨端原生桥的主流对照
+- [[flutter]] —— 自绘 UI 路线，性能模型不同
+- [[ionic-framework]] —— Web 技术栈 + 原生壳
+- [[capacitor]] —— 现代 WebView 桥，常与 Ionic 搭配
+- [[expo]] —— RN 工具链与托管服务对照
+- [[cordova]] —— 早期 WebView 插件生态前史
+- [[webview]] —— 套壳路线的底层对照，帮助理解 NS 为何坚持原生控件
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[react-native]] —— 对照另一种跨端策略。
-- [[flutter]] —— 编译时渲染对照。
-- [[ionic]] —— Wrapper 模式对照。
-- [[webview]] —— 移动端嵌套策略。
-- [[native-module]] —— 原生桥接实践。
-
-## 工程化补充
-
-### 上线前校验
-
-- 运行时版本与插件版本一一对应。
-- 两端 native 代码编译缓存清理策略一致。
-- 权限声明在 manifest 两端同步。
-- 离线构建与 OTA 流程不交叉。
-
-### 常见性能排查
-
-1. 查看主线程阻塞日志。
-2. 检查桥接层反复序列化成本。
-3. 对长列表做分页和虚拟化。
-4. 针对动画热点使用原生动画 API。
-
-### 代码组织建议
-
-- 页面层复用，业务逻辑层分服务。
-- 平台差异通过 adapter 层隔离。
-- 异常上报统一到同一事件总线。
-
-### 升级策略
-
-- 升级前跑最小化回归套件。
-- 先锁版本再做渐进式插件更新。
-- 对关键页面进行快照测试，降低回归风险。
-
-### 对复杂需求的处理
-
-- BLE 连接不稳定可引入统一重连中间层。
-- 文件上传需加签名与重试退避。
-- 推送消息落库后再展示，避免丢消息。
-
-### 本轮补充结论
-
-- NativeScript 最有价值的地方不是减少代码量，而是把“平台差异”从业务层移出去。
-- 同步接口设计和权限治理后，跨端项目的可维护性会明显上升。
-- 长期而言要把关键能力抽到纯业务服务层，而不是放在视图脚本里。

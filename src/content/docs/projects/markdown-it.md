@@ -17,16 +17,16 @@ md.render('# Hello\n\n这是 **粗体**')
 // → '<h1>Hello</h1>\n<p>这是 <strong>粗体</strong></p>\n'
 ```
 
-它的特点：100% 遵守 CommonMark 规范、可选打开 GitHub Flavored Markdown 扩展（表格、删除线）、解析速度快（单线程每秒大约 5 万到 10 万篇短文）、规则可拔插（你能写一个小 plugin 就改它的行为）。VitePress、VuePress、Hexo、docsify 这些写文档站的工具，背后跑的就是它。
+它的特点：100% 遵守 CommonMark 规范、可选打开 GitHub Flavored Markdown 扩展（表格、删除线）、解析速度快（单线程每秒大约 5 万到 10 万篇短文）、规则可拔插（你能写一个小 plugin 就改它的行为）。VitePress、VuePress 等文档站默认用它；Hexo 默认是 marked，也可换成 `hexo-renderer-markdown-it`；docsify 则走 marked 路线。
 
 ## 为什么重要
 
 不理解它，下面这些事就没法解释：
 
-- 为什么 VitePress / VuePress / Hexo 渲染速度差异很小——它们后端都是 markdown-it
-- 为什么社区有 200+ 个 `markdown-it-xxx` plugin 而 marked 几乎没有——是架构差异
+- 为什么 VitePress / VuePress 渲染路径很像——它们默认都挂 markdown-it
+- 为什么社区有 200+ 个 `markdown-it-xxx` plugin 而 marked 少得多——是 Ruler/token 架构差异
 - 为什么文档站里 `# 标题` 旁边能自动出锚点 `#`——markdown-it-anchor plugin 替换了一条 renderer 规则
-- 为什么 Markdown 里的 `<script>` 默认不会被执行——markdown-it 默认开了 escape，想让它直通必须显式 `html: true`
+- 为什么 Markdown 里的 `<script>` 默认不会被执行——markdown-it 默认 `html: false`（转义），想让源里 HTML 直通必须显式 `html: true`
 
 ## 核心要点
 
@@ -73,7 +73,7 @@ md.renderer.rules.link_open = (tokens, idx, opts, env, self) => {
 }
 ```
 
-这就是一个完整 plugin。原理：替换 `link_open` 这条 renderer 规则，先看 href，再决定加不加属性，最后走默认渲染。社区那 200+ 个 plugin 多数都是这个套路。
+**逐部分解释**：先取出（或构造）默认 `link_open` 渲染函数；再覆盖同名规则——读 `href`，外链就加 `target`/`rel`；最后仍调用默认渲染，避免自己手写整段 `<a>`。社区多数 plugin 都是「保存默认 → 改 token 属性 → 回默认」。
 
 ### 案例 3：拿 token 流抽 TOC
 
@@ -89,7 +89,7 @@ for (let i = 0; i < tokens.length; i++) {
 }
 ```
 
-跳过 render，只用 parse 阶段的 token 流——这就是为什么 markdown-it 有用：你能在中间插一手，干静态分析的事。
+**逐部分解释**：`parse` 只产出扁平 token 数组，不生成 HTML；遇到 `heading_open` 时，`tag` 是 `h1`/`h2`…，紧邻的 `inline` token 的 `content` 才是标题文字。跳过 render、只读 token——适合做 TOC/静态分析。
 
 ## 踩过的坑
 
@@ -104,13 +104,14 @@ for (let i = 0; i < tokens.length; i++) {
 ## 适用 vs 不适用场景
 
 **适用**：
-- 文档站、博客、SSG（VitePress / VuePress / Hexo / docsify 已是事实标准）
+- 文档站 / SSG 默认栈（VitePress、VuePress）；Hexo 若已换成 markdown-it 渲染器
 - 需要写 plugin 扩展 Markdown 语法（自定义容器、数学公式、emoji 短代码）
 - 服务端同步渲染 Markdown（Node API 返回 HTML）
-- 笔记软件、富文本编辑器底层
+- 要在 parse 与 render 之间插手（TOC、锚点、外链策略）
 
 **不适用**：
-- 浏览器端极小 bundle 优先 → 用 marked（约 50KB vs markdown-it 约 80KB）
+- 浏览器端极小 bundle 优先 → 用 marked（min ~30KB vs markdown-it 更大）
+- 默认 Hexo / docsify 栈且不想换引擎 → 它们默认是 marked
 - 想要严格的 AST 树 + 异步 plugin pipeline → 用 unified / remark
 - Markdown + JSX 混写（mdx）→ 用 mdx 体系
 
@@ -118,7 +119,7 @@ for (let i = 0; i < tokens.length; i++) {
 
 - **2014 年**：Puzrin 与 Kocharin 嫌当时的 remarkable 解析器架构不够清晰，把它整理重写发布了 markdown-it 1.0。
 - **2015 年**：CommonMark 规范定稿，markdown-it 第一时间做到 100% 兼容，成为 JS 生态里 CommonMark 的事实参考实现。
-- **2018-2020 年**：VuePress / VitePress / Hexo 陆续把 markdown-it 选为底层，社区 plugin 数突破 200。
+- **2018-2020 年**：VuePress / VitePress 把 markdown-it 选为默认底层；Hexo 生态同时提供 markdown-it 可选渲染器，社区 plugin 数突破 200。
 - **2024 年**：稳定在 v14.x，CommonMark 0.31 兼容，npm 周下载量约 2500 万。
 
 ## 学到什么

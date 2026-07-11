@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑 / ## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "修正 chi v5 全局 Use 的语义：已注册路由后再 Use 会报错，不应写成静默只影响后续路由；Mount 不会绕开父级已声明中间件。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "修正不适用场景里 gin/fasthttp 的归类：gin 基于 net/http，fiber/fasthttp 才是非标准栈；同时补清 Mount 与 Route 的工程边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "修正 chi v5 全局 Use 的语义：已注册路由后再 Use 会报错，不应写成静默只影响后续路由；Mount 不会绕开父级已声明中间件。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑 / ## 适用 vs 不适用场景",
+      "fix_hints": [
+        "修正不适用场景里 gin/fasthttp 的归类：gin 基于 net/http，fiber/fasthttp 才是非标准栈；同时补清 Mount 与 Route 的工程边界。"
+      ]
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 163,
+    "reasons": []
+  }
+}

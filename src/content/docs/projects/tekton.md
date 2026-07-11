@@ -39,7 +39,7 @@ spec:
 - 想给团队搭 CI 又不想被 GitHub Actions 锁死、托管费失控——自建 Jenkins 又要养 master
 - 多个项目想复用同一套 `git-clone` / `buildah` 步骤，Jenkins 用 shared library，GitHub Actions 用 reusable workflow，**两个机制都和平台绑死**
 - 想让 SRE 用 `kubectl` 直接看 CI 状态、把告警接到 Prometheus——传统 CI 要装 exporter、配 webhook
-- OpenShift Pipelines / Jenkins X / 部分 Cloud Build 都是 Tekton 的下游产品，不懂 Tekton 看它们文档全是黑话
+- OpenShift Pipelines、Jenkins X 等发行版底层就是 Tekton，不懂 Tekton 看它们文档全是黑话（注意：Google Cloud Build 是另一套系统，不是 Tekton 下游）
 
 Tekton 和 [[argo-workflows]] / [[knative]] 是同一个潮流：**把基础设施抽象层从"装个服务"挪到"声明个 CRD"**。Argo 走的是通用 workflow，Tekton 专做 CI/CD——所以它有 Task / Pipeline 这种贴近构建语义的对象，而不是只有 Workflow / Step。
 
@@ -154,6 +154,12 @@ build-push-run-x9k2t  True       Succeeded  2m         12s
 - 在意冷启动延迟（< 10 秒触发到出结果）——Pod 创建注定吃几十秒
 - 没有专人维护 K8s 集群——CRD 升级、Catalog 跟进都要人
 
+## 历史小故事（可跳过）
+
+2018 年 Google 在 Knative 里做了一块叫 **Knative Build** 的能力：用 K8s 资源描述“怎么从源码变成镜像”。社区很快发现——构建流水线不该绑死在 serverless 项目里。2019 年这块被拆出来，改名 Tekton，捐给 Continuous Delivery Foundation，专做云原生 CI/CD 积木。
+
+之后 Red Hat 把它产品化成 OpenShift Pipelines，Jenkins X 3.x 也把执行引擎换成 Tekton。一条线串起来：**先有声明式构建对象，再有独立的 CI/CD 框架，最后被多家发行版当底座**。
+
 ## 学到什么
 
 1. **声明式 CI**：流水线是一份 YAML 而不是一次脚本调用，跟你管 Deployment / Service 是同一套思路
@@ -174,3 +180,7 @@ build-push-run-x9k2t  True       Succeeded  2m         12s
 - [[knative]] —— Tekton 的孵化母体，早期叫 Knative Build
 - [[drone]] —— 同期 K8s 友好的 CI 但走容器原生 YAML 路线，没把流水线建模成 CRD
 - [[jenkins]] —— 中心化 master + plugin 模式，Tekton 是它的反命题
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

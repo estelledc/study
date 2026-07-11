@@ -1,0 +1,69 @@
+{
+  "slug": "amplification-hell-2014",
+  "area": "papers",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么 / ## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Dyn 2016 / Mirai 应与反射放大区分开，不能写成本文机制直接解释的案例。",
+        "2010 年代 DDoS 量级跃迁不应归结为单一主因，建议弱化为重要原因之一。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "base_rule_findings": []
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic reviewer found over-broad attribution of Mirai/Dyn and DDoS growth causes",
+    "sections_modified": [
+      "## 是什么",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

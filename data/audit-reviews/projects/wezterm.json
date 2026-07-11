@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 多路复用怎么用",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 多路复用怎么用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 是片段：缺 require、config 表与 return，零基础无法单独跟做，应补成完整可粘贴脚本并分步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「多路复用怎么用」游离在实践案例外，建议并入案例或删掉独立 H2，避免读者不知道该先配 unix_domains"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有安装命令，可补「打开后改字体/主题」两步，和案例 2 衔接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "`wezterm serve --daemonize` 不是官方 CLI；mux 后台进程是 `wezterm-mux-server --daemonize`，且通常由配置了 unix_domains 后 `wezterm connect unix` 自动拉起"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段写「19k+ star」偏旧（现约 26k+），可改为「2 万+」或加「截至笔记日期」以免读者以为过时"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「迁移到 wgpu，支持 WebGPU 后端」大体正确，但默认 front_end 曾在 OpenGL/WebGpu 间切换，宜避免暗示已全面默认 WebGpu"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mux 示例缺 `config.unix_domains = {{ name = 'unix' }}`，直接 `cli spawn --domain-name unix` / `connect unix` 会失败"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "把错误的 `wezterm serve --daemonize` 改成文档路径：配 unix_domains → `wezterm connect unix`（或显式 `wezterm-mux-server --daemonize`）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 应附完整 return config 的文件骨架，否则复制粘贴会报 nil config"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 是片段：缺 require、config 表与 return，零基础无法单独跟做，应补成完整可粘贴脚本并分步解释",
+        "「多路复用怎么用」游离在实践案例外，建议并入案例或删掉独立 H2，避免读者不知道该先配 unix_domains",
+        "案例 1 只有安装命令，可补「打开后改字体/主题」两步，和案例 2 衔接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 多路复用怎么用",
+      "fix_hints": [
+        "`wezterm serve --daemonize` 不是官方 CLI；mux 后台进程是 `wezterm-mux-server --daemonize`，且通常由配置了 unix_domains 后 `wezterm connect unix` 自动拉起",
+        "历史段写「19k+ star」偏旧（现约 26k+），可改为「2 万+」或加「截至笔记日期」以免读者以为过时",
+        "「迁移到 wgpu，支持 WebGPU 后端」大体正确，但默认 front_end 曾在 OpenGL/WebGpu 间切换，宜避免暗示已全面默认 WebGpu"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 多路复用怎么用",
+      "fix_hints": [
+        "mux 示例缺 `config.unix_domains = {{ name = 'unix' }}`，直接 `cli spawn --domain-name unix` / `connect unix` 会失败",
+        "把错误的 `wezterm serve --daemonize` 改成文档路径：配 unix_domains → `wezterm connect unix`（或显式 `wezterm-mux-server --daemonize`）",
+        "案例 3 应附完整 return config 的文件骨架，否则复制粘贴会报 nil config"
+      ]
+    }
+  ]
+}

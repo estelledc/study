@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」里 LDAP / YARN / Kerberos 对零基础偏硬，可各加半句日常桥接（如「公司账号登录」「集群排队跑任务」「加密身份证明」）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线与 stars 数量为概略表述，延伸阅读已给官网与仓库，可接受；若再精炼可注明「约」字已覆盖不确定性"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例依赖官方 bank 样例表 / bank.csv / Spark 路径，教学上可跟做，但未点明需先按 quickstart 导入样例数据"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么重要」里 LDAP / YARN / Kerberos 对零基础偏硬，可各加半句日常桥接（如「公司账号登录」「集群排队跑任务」「加密身份证明」）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史时间线与 stars 数量为概略表述，延伸阅读已给官网与仓库，可接受；若再精炼可注明「约」字已覆盖不确定性"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例依赖官方 bank 样例表 / bank.csv / Spark 路径，教学上可跟做，但未点明需先按 quickstart 导入样例数据"
+      ]
+    }
+  ]
+}

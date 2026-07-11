@@ -1,0 +1,131 @@
+{
+  "slug": "machanavajjhala-l-diversity-2007",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "lines": 162,
+  "l1_pass": true,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "成绩单挂科/抽奖箱/菜单排除类比把同质性与背景知识攻击讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "k-anonymity、准标识符、等价类、distinct/entropy/recursive 首次出现有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 有逐部分解释；案例 3 偏概念对比，仍可跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Machanavajjhala et al. ACM TKDD 2007、ICDE 2006 前身与 frontmatter 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "同质性攻击、背景知识/Umeko、distinct/entropy/recursive (c,l) 与论文主线一致，无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "相对 k-anonymity / t-closeness / DP 的定位未歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "distinct 检查与 top_share 示例概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "k≠l、distinct 不够、全局偏斜、非 DP 替代等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用微数据发布/已有 k-anonymity vs 不适用反复查询/强背景知识/可组合预算边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "成绩单挂科/抽奖箱/菜单排除类比把同质性与背景知识攻击讲透",
+        "k-anonymity、准标识符、等价类、distinct/entropy/recursive 首次出现有桥接",
+        "案例 1/2 有逐部分解释；案例 3 偏概念对比，仍可跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Machanavajjhala et al. ACM TKDD 2007、ICDE 2006 前身与 frontmatter 一致",
+        "同质性攻击、背景知识/Umeko、distinct/entropy/recursive (c,l) 与论文主线一致，无硬伤",
+        "相对 k-anonymity / t-closeness / DP 的定位未歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "distinct 检查与 top_share 示例概念正确可跟做",
+        "k≠l、distinct 不够、全局偏斜、非 DP 替代等坑具体可操作",
+        "适用微数据发布/已有 k-anonymity vs 不适用反复查询/强背景知识/可组合预算边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

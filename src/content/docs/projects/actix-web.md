@@ -177,20 +177,13 @@ async fn signup(form: web::Json<Signup>) -> String {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[embassy]] —— Embassy — 让单片机也能用 async/await
-- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
-- [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
-- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
-- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架

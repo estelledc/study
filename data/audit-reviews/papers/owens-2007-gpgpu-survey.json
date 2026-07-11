@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只是应用清单，缺少像案例 1/2 那样的逐步解释；建议挑一个应用（如矩阵乘或 histogram）拆成 3 步说明「为什么必须伪装成画图」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "FBO / viewport / read back 对零基础略密，可在案例 1 补一句「FBO=把画布绑到纹理上，方便把结果当数组读回」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点表格：32×32 RGBA 纹理是 1024 像素×4 float=4096 个 float，与「×256 像素=1024」自相矛盾；应改为 16×16 RGBA（4×256=1024）或 32×32 单通道"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」里写 CUDA 文档到处是 stream programming，易与 CUDA 异步 stream 混淆；可改成「stream programming 抽象被后来的并行模型继承」并保留关联段的同名辨析"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「告诉投资人」属推测，建议弱化为「说明学界已在硬撬 GPU 做通用计算」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；可补一句量化门槛，例如「只在理解 2005–2010 shader-based 论文语境时值得精读，写新 kernel 请直接看 CUDA/OpenCL」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只是应用清单，缺少像案例 1/2 那样的逐步解释；建议挑一个应用（如矩阵乘或 histogram）拆成 3 步说明「为什么必须伪装成画图」",
+        "FBO / viewport / read back 对零基础略密，可在案例 1 补一句「FBO=把画布绑到纹理上，方便把结果当数组读回」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点表格：32×32 RGBA 纹理是 1024 像素×4 float=4096 个 float，与「×256 像素=1024」自相矛盾；应改为 16×16 RGBA（4×256=1024）或 32×32 单通道",
+        "「为什么重要」里写 CUDA 文档到处是 stream programming，易与 CUDA 异步 stream 混淆；可改成「stream programming 抽象被后来的并行模型继承」并保留关联段的同名辨析",
+        "「告诉投资人」属推测，建议弱化为「说明学界已在硬撬 GPU 做通用计算」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "适用边界清楚；可补一句量化门槛，例如「只在理解 2005–2010 shader-based 论文语境时值得精读，写新 kernel 请直接看 CUDA/OpenCL」"
+      ]
+    }
+  ]
+}

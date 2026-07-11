@@ -1,0 +1,102 @@
+{
+  "slug": "calico",
+  "area": "projects",
+  "round": 19,
+  "output_path": "/workspace/src/content/docs/projects/calico.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "不要把 OpenShift 写成默认使用 Calico；改成 OpenShift 常见自家 SDN/OVN-Kubernetes，Calico 是可选集成。",
+        "Felix 默认处理 NetworkPolicy/HostEndpoint，不应写成会把 Service 翻译成 IPVS；Service 接管应限定在 eBPF service handling。",
+        "弱化“Cilium 只有 eBPF 一条路”和“市面唯一”这类绝对表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "pass_count": 2,
+    "verdict": "refine",
+    "action": "refine",
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 核心要点",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 为什么重要",
+        "verdict": "needs-refine"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 适用 vs 不适用场景",
+        "verdict": "pass"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "academic",
+        "hint": "不要把 OpenShift 写成默认使用 Calico；改成 OpenShift 常见自家 SDN/OVN-Kubernetes，Calico 是可选集成。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "Felix 默认处理 NetworkPolicy/HostEndpoint，不应写成会把 Service 翻译成 IPVS；Service 接管应限定在 eBPF service handling。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "弱化“Cilium 只有 eBPF 一条路”和“市面唯一”这类绝对表述。"
+      }
+    ]
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 163,
+    "reasons": []
+  }
+}

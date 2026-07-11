@@ -22,13 +22,13 @@ io_uring_prep_read(sqe, fd, buf, 4096, 0);
 io_uring_submit(&ring);  // 一次 syscall 提交一批
 ```
 
-传统写法每次 read/write 都要进内核（一次 syscall），10000 个并发 IO 就要 10000+ 次。io_uring 让用户在共享内存里直接写"订单卡"，内核读到一批一起做，syscall 数砍到几百甚至零。这是 PostgreSQL 17 / Tokio / ScyllaDB 全部押注它的核心原因。
+传统写法每次 read/write 都要进内核（一次 syscall），10000 个并发 IO 就要 10000+ 次。io_uring 让用户在共享内存里直接写"订单卡"，内核读到一批一起做，syscall 数砍到几百甚至零。这是 ScyllaDB、Tokio（可选）和 PostgreSQL 18（`io_method=io_uring`）愿意接它的核心原因。
 
 ## 为什么重要
 
 不理解 io_uring，下面这些事都没法解释：
 
-- 为什么 PostgreSQL 17、ScyllaDB、Tokio 全部把 io_uring 做成默认异步 IO 后端
+- 为什么 PostgreSQL 18 在 Linux 上提供 `io_method=io_uring`（默认仍是 `worker`），ScyllaDB / Tokio 也把它做成可选高性能后端
 - 为什么 Android / ChromeOS 默认**关掉** io_uring（CVE 多）—— 性能和安全的权衡
 - 为什么 epoll 是"通知接口"而 io_uring 是"完成接口"，差一个字差很大
 - 为什么"共享内存代替 syscall"是这十年系统编程最重要的范式转移之一
@@ -120,7 +120,7 @@ CQE 带 `IORING_CQE_F_MORE` 标记表示"还会有更多 CQE 来"。比 epoll + 
 - **2018**：Jens Axboe 开始 io_uring 原型设计；他是 fio benchmark 作者 + Linux block layer 维护者 20+ 年，看遍了所有异步 IO 烂路。
 - **2019-01**：发表白皮书 "Efficient IO with io_uring"，2019-05 Linux 5.1 mainline 合入（commit 2b188cc1bb85）。
 - **2020-2024**：5 年持续演化——5.6 全 op 异步化、5.8 buffered IO、5.18 multishot accept/recv、6.1 zero-copy send。
-- **2024**：PostgreSQL 17 把 io_uring 做成默认异步 IO 后端。一个人推动了 Linux 异步 IO 历史上最大一次重构。
+- **2025**：PostgreSQL 18 引入异步 IO 子系统，Linux 上可选 `io_method=io_uring`（默认 `worker`）。一个人推动了 Linux 异步 IO 历史上最大一次重构。
 
 ## 学到什么
 
@@ -143,7 +143,7 @@ CQE 带 `IORING_CQE_F_MORE` 标记表示"还会有更多 CQE 来"。比 epoll + 
 - [[tcp]] —— io_uring 网络异步化的目标对象，多 TCP 连接场景受益最大
 - [[tls-1.3]] —— TLS 握手 + 数据 IO 都可放进 io_uring，端到端零 syscall 路径
 - [[nginx]] —— 经典 epoll 用户，io_uring 后端到 2024 仍是 experimental，没默认开
-- [[postgresql]] —— 17 版起 io_method=io_uring 是 Linux 推荐设置
+- [[postgresql]] —— 18 版起 Linux 可设 io_method=io_uring（默认仍是 worker）
 - [[postgres-js]] —— 客户端走 epoll，与服务端 io_uring 互补成完整异步链
 
 ## 反向链接

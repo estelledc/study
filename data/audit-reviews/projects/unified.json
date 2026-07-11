@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 虽有行内注释，但缺少像案例 1 那样的逐步说明（每个 plugin 改完树长什么样）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「trough 调用栈」「lazy freeze」对零基础仍偏硬，首次出现宜加一句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "官方 README 写 2014 初步工作是为 retext（受 ware 启发），再在 remark 中孵化，2015 才外部化为 unified；笔记写成「2014 写 mdast 规范」略偏"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每一步都是纯函数」略绝对——transformer 常原地改树，且可写 file.messages；教学简化可接受但宜弱化措辞"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「markdown-it 快 2-3x」缺出处或场景限定（文件规模 / 是否含 GFM），建议写成「常见博客体量下往往更快」之类可核对表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 未列 import，跟做时需读者自行补齐；教学可接受，但可在段首注明依赖包名"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 虽有行内注释，但缺少像案例 1 那样的逐步说明（每个 plugin 改完树长什么样）",
+        "「trough 调用栈」「lazy freeze」对零基础仍偏硬，首次出现宜加一句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "官方 README 写 2014 初步工作是为 retext（受 ware 启发），再在 remark 中孵化，2015 才外部化为 unified；笔记写成「2014 写 mdast 规范」略偏",
+        "「每一步都是纯函数」略绝对——transformer 常原地改树，且可写 file.messages；教学简化可接受但宜弱化措辞"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「markdown-it 快 2-3x」缺出处或场景限定（文件规模 / 是否含 GFM），建议写成「常见博客体量下往往更快」之类可核对表述",
+        "案例 2 未列 import，跟做时需读者自行补齐；教学可接受，但可在段首注明依赖包名"
+      ]
+    }
+  ]
+}

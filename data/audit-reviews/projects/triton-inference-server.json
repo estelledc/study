@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2/3 缺少模板式「逐部分解释」：案例 1 应说明三个端口与挂载目录各自干什么；案例 2 应逐步解释 InferInput 的名字/shape/dtype 如何对齐 config；案例 3 应给出最小 config.pbtxt 片段再解释 backend 字段"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 protobuf、ensemble_scheduling、BLS、KIND_GPU、NHWC/CHW 对零基础跳跃大，每条要点应用一句日常类比桥接（对照 hindley-milner 的编号 1/2/3 + 类比写法）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "踩过的坑可收成 4 条编号，并把「原因一句话」写死，避免术语堆叠"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「KServe / Seldon 默认推荐 Triton-IS」略强：更准确是二者把 Triton 列为常用/支持的推理运行时之一，建议措辞降级为「常被选作运行时」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线大体正确（TRTIS→Triton、多框架、Ensemble/BLS、TRT-LLM/vLLM backend）；若保留「约 8.5k stars」需接受其为快照数字而非稳定事实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2：image_np 未定义、未 as_numpy 取输出，跟做会卡；补最小 numpy 占位与 result.as_numpy(...) 一行即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3：只有叙述没有可粘贴的 config.pbtxt（backend: \"vllm\" + model 路径约定），应给最小片段"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可补一句「单卡多模型 vs 单 LLM 极致吞吐」的选型量化提示（不必生产级）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2/3 缺少模板式「逐部分解释」：案例 1 应说明三个端口与挂载目录各自干什么；案例 2 应逐步解释 InferInput 的名字/shape/dtype 如何对齐 config；案例 3 应给出最小 config.pbtxt 片段再解释 backend 字段",
+        "核心要点里 protobuf、ensemble_scheduling、BLS、KIND_GPU、NHWC/CHW 对零基础跳跃大，每条要点应用一句日常类比桥接（对照 hindley-milner 的编号 1/2/3 + 类比写法）",
+        "踩过的坑可收成 4 条编号，并把「原因一句话」写死，避免术语堆叠"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「KServe / Seldon 默认推荐 Triton-IS」略强：更准确是二者把 Triton 列为常用/支持的推理运行时之一，建议措辞降级为「常被选作运行时」",
+        "历史时间线大体正确（TRTIS→Triton、多框架、Ensemble/BLS、TRT-LLM/vLLM backend）；若保留「约 8.5k stars」需接受其为快照数字而非稳定事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2：image_np 未定义、未 as_numpy 取输出，跟做会卡；补最小 numpy 占位与 result.as_numpy(...) 一行即可",
+        "案例 3：只有叙述没有可粘贴的 config.pbtxt（backend: \"vllm\" + model 路径约定），应给最小片段",
+        "适用/不适用边界清楚；可补一句「单卡多模型 vs 单 LLM 极致吞吐」的选型量化提示（不必生产级）"
+      ]
+    }
+  ]
+}

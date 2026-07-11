@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "binary+模型文件类比清楚；GGUF/量化桥接好；案例 2 偏指路读源码，案例 1/3 更具体。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑第 3 条写「显存占用随长度平方增长」不准确：KV cache 显存近似随上下文长度线性增长，注意力计算量才是 O(n²)。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "修正上下文长度与显存关系：KV 显存≈线性，不要写成平方；可保留 8B@32k 量级经验数字但标明是粗估。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例命令可跟做；适用边界（端侧 vs vLLM）清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "binary+模型文件类比清楚；GGUF/量化桥接好；案例 2 偏指路读源码，案例 1/3 更具体。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑第 3 条写「显存占用随长度平方增长」不准确：KV cache 显存近似随上下文长度线性增长，注意力计算量才是 O(n²)。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 5
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "修正上下文长度与显存关系：KV 显存≈线性，不要写成平方；可保留 8B@32k 量级经验数字但标明是粗估。",
+        "案例命令可跟做；适用边界（端侧 vs vLLM）清楚。"
+      ]
+    }
+  ]
+}

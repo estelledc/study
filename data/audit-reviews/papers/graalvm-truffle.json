@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "活字印刷/试岗/流水线类比贴合；三案例都有逐部分解释。部分求值首次出现已有括号桥接，可接受。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Würthinger et al. Onward! 2013、Futamura 1971、Self PIC、Jones-Gomard-Sestoft 1993 时间线正确。『跑赢专用 VM』对 2013 论文略偏乐观，但后续 TruffleRuby/GraalJS 峰值追平属合理教学概括。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "@Specialization DSL 与 Polyglot.eval 教学片段可跟读；特化爆炸/@CompilationFinal/稳定阈值踩坑具体；内存与启动时间边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "活字印刷/试岗/流水线类比贴合；三案例都有逐部分解释。部分求值首次出现已有括号桥接，可接受。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Würthinger et al. Onward! 2013、Futamura 1971、Self PIC、Jones-Gomard-Sestoft 1993 时间线正确。『跑赢专用 VM』对 2013 论文略偏乐观，但后续 TruffleRuby/GraalJS 峰值追平属合理教学概括。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "@Specialization DSL 与 Polyglot.eval 教学片段可跟读；特化爆炸/@CompilationFinal/稳定阈值踩坑具体；内存与启动时间边界清楚。"
+      ]
+    }
+  ]
+}

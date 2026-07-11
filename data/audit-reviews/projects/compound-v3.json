@@ -1,0 +1,92 @@
+{
+  "slug": "compound-v3",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "frontmatter title",
+      "fix_hints": [
+        "标题将 Comet 概括为“单抵押”容易误导；Comet 的关键是不再多资产共借，而是单 base asset / 单借贷资产市场。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 不应依赖不准确的 userBasic tuple 解构，建议用 borrowBalanceOf 表达借款结果。",
+        "案例 3 的 absorb 账户数组和 buyCollateral baseAmount 示例需要更接近 Solidity/USDC 实际写法。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "reject_count": 0,
+    "verdicts": [
+      "pass",
+      "needs-refine",
+      "needs-refine"
+    ],
+    "decision": "refine",
+    "status": "refined"
+  },
+  "refinements": [
+    {
+      "section": "frontmatter title",
+      "change": "将“单抵押借贷重构”改为“单基础资产借贷重构”。"
+    },
+    {
+      "section": "## 实践案例",
+      "change": "用 borrowBalanceOf 检查借款状态，避免错误 tuple 解构。"
+    },
+    {
+      "section": "## 实践案例",
+      "change": "将 absorb 改为显式 accounts 数组，并把 buyCollateral 的 baseAmount 改成 1000 USDC 口径。"
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "details": {
+      "lines": {
+        "ok": true,
+        "lines": 166
+      },
+      "red-line": {
+        "ok": true
+      },
+      "h2": {
+        "ok": true
+      }
+    }
+  },
+  "lines": 166,
+  "l1_pass": true
+}

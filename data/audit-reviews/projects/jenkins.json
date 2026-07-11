@@ -1,0 +1,114 @@
+{
+  "slug": "jenkins",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "烧饭/外卖类比清楚；案例 2 多分支 Pipeline 缺最小配置片段，但仍能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2004 年 Jenkins 几乎是企业自动化的唯一选择』过强：同期已有 CruiseControl 等；宜改为『早期开源 CI 的事实标准之一』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2024 年依然占企业 CI 服务器市场份额第一』缺少可核来源，宜弱化为『企业自托管 CI 里仍很常见，份额持续被 GitHub Actions 等蚕食』"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Jenkinsfile / input 门禁可跟做；踩坑（sandbox、插件、master 瓶颈、JCasC）具体可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "烧饭/外卖类比清楚；案例 2 多分支 Pipeline 缺最小配置片段，但仍能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『2004 年 Jenkins 几乎是企业自动化的唯一选择』过强：同期已有 CruiseControl 等；宜改为『早期开源 CI 的事实标准之一』",
+        "『2024 年依然占企业 CI 服务器市场份额第一』缺少可核来源，宜弱化为『企业自托管 CI 里仍很常见，份额持续被 GitHub Actions 等蚕食』"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Jenkinsfile / input 门禁可跟做；踩坑（sandbox、插件、master 瓶颈、JCasC）具体可操作"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：弱化『唯一选择』与『市场份额第一』表述；插件数量改为 1800+。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "l1_pass": true
+}

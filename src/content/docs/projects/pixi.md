@@ -21,7 +21,7 @@ const bunny = new Sprite(tex);
 app.stage.addChild(bunny);
 ```
 
-它管你叫上的所有图片 / 文字 / 几何形状叫 **Container 树**——你往树里挂东西，它每帧把整棵树遍历一遍，翻译成 GPU 调用。在 H5 抽奖转盘、互动数据可视化、广告创意这些场景，PixiJS 是事实标准；npm 周下载量 ~150k。
+它管你叫上的所有图片 / 文字 / 几何形状叫 **Container 树**——你往树里挂东西，它每帧把整棵树遍历一遍，翻译成 GPU 调用。在 H5 抽奖转盘、互动数据可视化、广告创意这些场景，PixiJS 很常见；npm 周下载量约十几万量级。
 
 ## 为什么重要
 
@@ -62,21 +62,25 @@ app.ticker.add((time) => { bunny.rotation += 0.01 * time.deltaTime; });
 
 **逐部分解释**：`Application` 帮你建好 canvas + renderer + ticker；`Assets.load` 把图片转成 GPU texture；`Sprite` 是包着 texture 的 Container；`ticker.add` 注册每帧回调。整个闭环 10 行就够了。
 
-### 案例 2：1000 个粒子的极限——ParticleContainer
+### 案例 2：1000 个粒子的极限——ParticleContainer（v8）
 
 ```ts
-import { ParticleContainer, Sprite, Assets } from 'pixi.js';
+import { ParticleContainer, Particle, Assets } from 'pixi.js';
 const tex = await Assets.load('/star.png');
-const pc = new ParticleContainer(2000, { position: true, rotation: true });
+const pc = new ParticleContainer({
+  dynamicProperties: { position: true, rotation: true },
+});
 for (let i = 0; i < 1000; i++) {
-  const s = new Sprite(tex);
-  s.x = Math.random() * 800; s.y = Math.random() * 600;
-  pc.addChild(s);
+  pc.addParticle(new Particle({
+    texture: tex,
+    x: Math.random() * 800,
+    y: Math.random() * 600,
+  }));
 }
 app.stage.addChild(pc);
 ```
 
-**逐部分解释**：`ParticleContainer` 比普通 Container 更激进——所有子节点共享同一张 texture，**不支持** filter / mask / 嵌套。代价换来的是：1000 个 sprite 走 1 次 drawCall，移动端也 60FPS。
+**逐部分解释**：v8 的 `ParticleContainer` 不再收 `Sprite`，只收轻量 `Particle`；用 `addParticle` 而不是 `addChild`。`dynamicProperties` 声明每帧会变的属性。换来的是海量粒子仍可少 drawCall；**不支持** filter / mask / 嵌套子树。
 
 ### 案例 3：带模糊滤镜的转盘
 
@@ -89,7 +93,7 @@ app.stage.addChild(wheel);
 app.ticker.add(() => { wheel.rotation += 0.02; });
 ```
 
-**逐部分解释**：`filters` 数组里每个 filter 都会触发一次"把 Container 渲染到一张离屏纹理 → 用 shader 处理 → 再贴回屏幕"。看着只多一行，但移动端 Safari 上 RT 切换每帧多 5-10ms。Jason 在 H5 项目里踩过这个坑。
+**逐部分解释**：`filters` 数组里每个 filter 都会触发一次"把 Container 渲染到一张离屏纹理 → 用 shader 处理 → 再贴回屏幕"。看着只多一行，但移动端 Safari 上 RT 切换每帧常多几毫秒到十几毫秒，叠几个 Blur 就容易掉帧。
 
 ## 踩过的坑
 
@@ -105,7 +109,7 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 
 **适用**：
 
-- H5 互动游戏 / 广告创意 / 抽奖转盘 / 盲盒动效——同屏图形多、要动起来
+- H5 互动游戏 / 广告创意 / 抽奖转盘 / 营销页动效——同屏图形多、要动起来
 - 数据可视化里的"几千个点的散点图 / 力导图"——D3 算坐标，Pixi 负责渲染
 - 教育课件 / 数字孪生（digital twin）的 2D 视图层
 - 想自己控制渲染管线、不要游戏引擎那一堆模板

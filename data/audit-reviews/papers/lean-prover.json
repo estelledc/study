@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "卫生宏 / tabled typeclass / discrimination tree / MacroM 对零基础过密，首次出现需各加一句日常桥接（例如：卫生宏=宏展开时自动给临时变量换不会撞名的身份证号）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 quasiquotation 语法可再补一句「反引号包住的是语法树模板，$ 是往里填洞」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2021 条写「从 C++ 内核重写为 Lean 自举」易误解：Lean 4 可信内核仍是 C++，自举的是 parser/elaborator/tactic/codegen；应与前文「内核之外」对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「mathlib4 半百万行」偏粗，可改为「数十万到上百万行量级」或加「量级」限定，避免被当成精确统计"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码概念正确；案例 1 的 mkOr/mkNot 未给出定义，可一句注明「辅助构造函数，论文里有完整版」以免读者以为缺依赖"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "卫生宏 / tabled typeclass / discrimination tree / MacroM 对零基础过密，首次出现需各加一句日常桥接（例如：卫生宏=宏展开时自动给临时变量换不会撞名的身份证号）",
+        "案例 2 的 quasiquotation 语法可再补一句「反引号包住的是语法树模板，$ 是往里填洞」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "2021 条写「从 C++ 内核重写为 Lean 自举」易误解：Lean 4 可信内核仍是 C++，自举的是 parser/elaborator/tactic/codegen；应与前文「内核之外」对齐",
+        "「mathlib4 半百万行」偏粗，可改为「数十万到上百万行量级」或加「量级」限定，避免被当成精确统计"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码概念正确；案例 1 的 mkOr/mkNot 未给出定义，可一句注明「辅助构造函数，论文里有完整版」以免读者以为缺依赖"
+      ]
+    }
+  ]
+}

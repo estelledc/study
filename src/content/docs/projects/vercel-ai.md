@@ -29,7 +29,7 @@ import { anthropic } from '@ai-sdk/anthropic'
 // model: anthropic('claude-opus-4-7')
 ```
 
-调用代码一字不改——这是 SDK 的核心承诺。
+业务侧调用形态不变——这是 SDK 的核心承诺（厂商专属能力走 `providerOptions`）。
 
 ## 为什么重要
 
@@ -37,42 +37,39 @@ import { anthropic } from '@ai-sdk/anthropic'
 
 - 为什么 Next.js / React 项目集成 LLM 默认选这个 SDK
 - 为什么"流式输出"在前端这么丝滑——`useChat` / `useCompletion` 把 streaming 当一等公民
-- 为什么 Tool calling 跨 Provider 还能写一份代码——SDK 把各家 schema 差异吸收掉了
+- 为什么 Tool calling（让模型点名调用你写的函数）跨 Provider 还能写一份代码——SDK 吸收各家 schema 差异
 - 与 [[langchain]] 的差别在哪——AI SDK 偏 frontend / 流式 UI，LangChain 偏 backend pipeline / agent 编排
 
 ## 核心要点
 
 Vercel AI SDK 的核心抽象可以拆成 **三块**：
 
-1. **4 个核心函数**：
-   - `generateText` —— 同步生成文本
-   - `streamText` —— 流式生成文本
-   - `generateObject` —— 同步生成结构化对象（带 zod schema 校验）
-   - `streamObject` —— 流式生成结构化对象（progressive JSON）
+1. **4 个核心函数**：`generateText` / `streamText` / `generateObject` / `streamObject`。类比：同一把"遥控器"，按一下拿整段、按住拿流式、再加 zod 校验拿结构化对象。
 
-2. **Provider 适配器**：每家厂商一个独立 npm 包（`@ai-sdk/openai` / `@ai-sdk/anthropic` / `@ai-sdk/google` / `@ai-sdk/mistral` / 本地 [[ollama]]），都实现同一个接口。换厂商只换一行 import。
+2. **Provider 适配器**：每家厂商一个独立 npm 包（`@ai-sdk/openai` / `@ai-sdk/anthropic` / `@ai-sdk/google` / 本地 [[ollama]]），都实现同一接口。类比：统一电源插座，换品牌只换插头。
 
-3. **React hook 一等公民**：`useChat`、`useCompletion` 直接把 streaming 接到 React state，前端写 30 行代码就能拿到完整 chat UI。
+3. **React hook 一等公民**：`useChat`、`useCompletion` 把 streaming 接到 React state。类比：水管接到水龙头——后端吐流，前端直接渲染，不必手写 buffer。
 
 ## 实践案例
 
 ### 案例 1：一行换 Provider
 
 ```ts
-// 旧：用 OpenAI
 import { openai } from '@ai-sdk/openai'
-const { text } = await generateText({ model: openai('gpt-4o'), prompt })
-
-// 新：换 Anthropic（只改 import）
 import { anthropic } from '@ai-sdk/anthropic'
-const { text } = await generateText({ model: anthropic('claude-opus-4-7'), prompt })
+import { generateText } from 'ai'
+
+const { text } = await generateText({ model: openai('gpt-4o'), prompt })
+// 换厂商：只改 model 工厂
+const { text: t2 } = await generateText({ model: anthropic('claude-opus-4-7'), prompt })
 ```
 
-业务代码 0 行改动。
+步骤：① 选 provider 包 → ② `generateText` 传 `model` → ③ 换厂商只换工厂函数，prompt / 业务逻辑不动。
 
 ### 案例 2：跨 Provider 统一 Tool calling
 
 ```ts
+import { anthropic } from '@ai-sdk/anthropic'
 import { generateText, tool } from 'ai'
 import { z } from 'zod'
 
@@ -81,7 +78,7 @@ const result = await generateText({
   tools: {
     weather: tool({
       description: 'Get the current weather',
-      parameters: z.object({ location: z.string() }),
+      inputSchema: z.object({ location: z.string() }),
       execute: async ({ location }) =>
         await fetch(`/api/weather/${location}`).then(r => r.json())
     })
@@ -90,79 +87,88 @@ const result = await generateText({
 })
 ```
 
-SDK 帮你做的事：把 zod schema 翻译成各家 tool 协议、拦截 LLM 的 tool_use、跑你写的 `execute` 函数、把 result 喂回 LLM、跑 multi-turn 循环。换成 OpenAI / Google 同样代码——SDK 帮你吸收差异。
+步骤：① 用 zod 声明工具入参 → ② SDK 译成各家 tool 协议 → ③ 拦截 tool_use、跑 `execute`、把结果喂回模型做多轮。换 OpenAI / Google 同一套代码。
 
-### 案例 3：前端 30 行 streaming chat UI
+### 案例 3：前端 streaming chat UI（AI SDK 5+）
 
 ```tsx
+import { useState } from 'react'
 import { useChat } from '@ai-sdk/react'
+import { DefaultChatTransport } from 'ai'
 
 function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat()
+  const [input, setInput] = useState('')
+  const { messages, sendMessage } = useChat({
+    transport: new DefaultChatTransport({ api: '/api/chat' }),
+  })
   return (
-    <form onSubmit={handleSubmit}>
-      {messages.map(m => <div key={m.id}>{m.role}: {m.content}</div>)}
-      <input value={input} onChange={handleInputChange} />
+    <form onSubmit={e => {
+      e.preventDefault()
+      sendMessage({ text: input })
+      setInput('')
+    }}>
+      {messages.map(m => <div key={m.id}>{m.role}</div>)}
+      <input value={input} onChange={e => setInput(e.target.value)} />
     </form>
   )
 }
 ```
 
-后端返回 `result.toUIMessageStreamResponse()`——SDK 自动把 streaming 协议两端对接起来。
+步骤：① 自管 input state → ② `sendMessage` 发消息 → ③ 后端用 `toUIMessageStreamResponse()` 对接流式协议。v5 起不再内置 `handleSubmit`。
 
 ## 踩过的坑
 
-1. **v3 → v4 的大改动**：Provider 包从主仓库整合状态被拆出独立包（`@ai-sdk/openai` 等），import 路径全变。升级 v3 老应用要改一圈。
-
-2. **Tool calling 各家表现略不同**：Claude 早期版本的 tool stream 顺序和 OpenAI 不一致——SDK 做了归一化，但**特殊行为**（如 Anthropic prompt caching）要走专门的 `providerOptions`。这条"逃生通道"得记得。
-
-3. **Edge Runtime 兼容陷阱**：在 Vercel Edge / Cloudflare Workers 跑流式时，要注意 `Web Streams API` 的兼容版本。Node.js 18 之前的 stream 行为不一致，会出现"卡 buffer 不 flush"的现象。
-
-4. **比直接用 OpenAI SDK 多了一层**：调试 prompt 行为时，多一层抽象意味着多读一层源码。极简单的 one-shot 直接调原生 SDK 更直接——SDK 价值在**切 Provider / 想要流式 UI / 用 React** 时才显现。
+1. **v3 → v4**：Provider 拆成独立包（`@ai-sdk/openai` 等），import 路径全变，升级要改一圈。
+2. **v4 → v5**：`useChat` 去掉内置 input；`tool()` 的 `parameters` 改名 `inputSchema`——照旧示例会直接跑不通。
+3. **厂商专属能力**：归一化后特殊行为（如 Anthropic prompt caching）要走 `providerOptions`（厂商私有开关）这条逃生通道。
+4. **Edge Runtime**：在 Vercel Edge / Cloudflare Workers 上流式时，注意 Web Streams API（浏览器式流）兼容；Node 18 前易出现"卡 buffer 不 flush"。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Next.js / React 项目集成 LLM —— 默认选择
-- 需要 streaming UI、`useChat` / `useCompletion`
-- 需要跨 Provider 切换（A/B 测、降级、成本优化）
-- structured output 场景（zod schema 直接喂进 `generateObject`）
+- Next.js / React 集成 LLM —— 默认选择
+- 需要 streaming UI（`useChat` / `useCompletion`）
+- 跨 Provider 切换（A/B、降级、成本优化）
+- structured output（zod 直接喂 `generateObject`）
 
 **不适用**：
 
-- 重型 agent 编排（多 agent 协调、复杂 memory、graph workflow）→ LangGraph / Mastra
-- RAG-heavy 应用（向量检索 + chunk 管理 + retriever）→ LlamaIndex
-- 非 React / 非 TypeScript 项目 —— 价值打对折
-- 极简单的 one-shot 调用 —— 直接原生 SDK 更直接
+- 重型 agent 编排（多 agent、复杂 memory、graph）→ LangGraph / Mastra
+- RAG-heavy（向量检索 + chunk + retriever）→ LlamaIndex
+- 非 React / 非 TypeScript —— 价值明显下降
+- 极简单 one-shot —— 直接原生 SDK 更直接
 
-## 历史小故事
+## 历史小故事（可跳过）
 
-- **2023-06**：Vercel AI SDK v1 发布，主打"流式 React hook"；当时 LLM 应用还在野蛮生长，每家 SDK 写法各异
-- **2024-Q1**：v3 发布，确立 `generateText` / `streamText` / `generateObject` / `streamObject` 4 函数体系
-- **2024-Q4**：v4 重构——provider 包独立、`LanguageModelV2` 接口成熟，跨 Provider tool calling 真正可用
-- **2025**：v5+ 加入 Provider Registry、middleware 系统、UIMessage 协议；后续 v7 alpha 进入快速迭代
+- **2023-06**：AI SDK v1，主打流式 React hook；当时各家 SDK 写法各异
+- **2024**：v3 确立四函数体系；v4 拆出 provider 包，跨 Provider tool calling 可用
+- **2025-07**：v5 发布——UIMessage 协议、`inputSchema`、`useChat` transport 重构
+- **2025-12 / 2026-06**：v6、v7 相继正式发布（agent / 多模态能力扩展）
 
 ## 学到什么
 
-1. **薄抽象赢过厚框架**——Vercel AI SDK 故意只统一最小集（4 个函数 + provider 接口），不发明 Chain / Memory 概念。这是 2024 年后 LLM 应用工程的"实证答案"
-2. **TypeScript 类型推导贯穿全 API**——zod schema 流过 `generateObject`、tool input 类型流过 `execute`，写起来"少猜一次"
-3. **Streaming 是产品体验关键**——Vercel 早早把 streaming 当一等公民。底层 Web Streams API + 上层 React hook，两端都做才好用
-4. **Provider 抽象的"窄腰"设计**——核心约定（`doGenerate` / `doStream`）做窄做对，差异部分（`providerOptions`）做开放
+1. **薄抽象赢过厚框架**——只统一最小集（4 函数 + provider 接口），不发明 Chain / Memory
+2. **TypeScript 类型贯穿**——zod 流过 `generateObject`、tool input 流过 `execute`
+3. **Streaming 是产品体验**——底层 Web Streams + 上层 React hook，两端都做才好用
+4. **窄腰设计**——核心约定（`doGenerate` / `doStream`）做窄；差异走 `providerOptions`
 
 ## 延伸阅读
 
-- 官方文档：[ai-sdk.dev](https://ai-sdk.dev) —— 含 RSC integration / agent / middleware 的 use case
-- 仓库：[vercel/ai](https://github.com/vercel/ai) —— 心脏文件 `packages/ai/src/generate-text/{generate-text,stream-text}.ts`
-- 协议文档：[Anthropic Messages API](https://docs.claude.com/en/api/messages) —— SDK 内部翻译目标之一
+- 官方文档：[ai-sdk.dev](https://ai-sdk.dev)
+- 仓库：[vercel/ai](https://github.com/vercel/ai)
+- v5 迁移：[Migrate AI SDK 4.x to 5.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0)
 - [[langchain]] —— 厚框架 vs 薄抽象的另一极
+- [[zod]] —— `generateObject` / tool schema 的事实标准
 
 ## 关联
 
-- [[langchain]] —— 厚 vs 薄两条路；薄者赢 90% 场景
+- [[langchain]] —— 厚 vs 薄两条路；多数聊天/流式 UI 场景薄抽象更省事
 - [[ollama]] —— Vercel AI SDK 的本地模型 Provider 之一
 - [[zod]] —— `generateObject` / tool schema 的事实标准
 - [[react]] —— `useChat` / `useCompletion` 的载体
+- [[next-js]] —— 官方模板与 Edge 流式部署的常见宿主
+- [[llamaindex]] —— RAG-heavy 场景的另一条路，和薄 SDK 互补
 
 ## 反向链接
 
@@ -171,4 +177,3 @@ function Chat() {
 - [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
 - [[react]] —— React UI 组件库
 - [[zod]] —— Zod — TypeScript-first schema 验证
-

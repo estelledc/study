@@ -1,0 +1,123 @@
+{
+  "slug": "pdfkit",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "白纸画笔类比贴合命令式 PDF 生成，与 pdfmake/jsPDF 对照清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "doc / 坐标系 / point / pipe 首次出现即有白话定义"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "发票 / HTTP Stream / 中文字体三案例均有逐步解释，跟做成本低"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/foliojs/pdfkit；Devon Govett / 2012 起与公开史实一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "pdfmake 底层用 PDFKit、原点左上 y 向下、72pt/inch、标准 14 字体无中文均正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未发现与 stub/常识冲突的硬伤；分类写「数据可视化」略宽但仍可接受教学归类"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "发票 / Express pipe / registerFont 最小例可直接跟做，API 用法正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：y 向下、中文静默空白、链式不换行、图片 1:1 像素、漏 end、bufferPages"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：固定版式批量生成适用；复杂排版/编辑已有 PDF/纯网页打印不适用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "白纸画笔类比贴合命令式 PDF 生成，与 pdfmake/jsPDF 对照清楚",
+        "doc / 坐标系 / point / pipe 首次出现即有白话定义",
+        "发票 / HTTP Stream / 中文字体三案例均有逐步解释，跟做成本低"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 github.com/foliojs/pdfkit；Devon Govett / 2012 起与公开史实一致",
+        "pdfmake 底层用 PDFKit、原点左上 y 向下、72pt/inch、标准 14 字体无中文均正确",
+        "未发现与 stub/常识冲突的硬伤；分类写「数据可视化」略宽但仍可接受教学归类"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "发票 / Express pipe / registerFont 最小例可直接跟做，API 用法正确",
+        "踩坑具体：y 向下、中文静默空白、链式不换行、图片 1:1 像素、漏 end、bufferPages",
+        "适用边界清楚：固定版式批量生成适用；复杂排版/编辑已有 PDF/纯网页打印不适用"
+      ]
+    }
+  ],
+  "lines": 159,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

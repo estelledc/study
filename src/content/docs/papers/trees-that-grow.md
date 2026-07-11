@@ -22,59 +22,65 @@ data Expr p = Var (XVar p) Name | App (XApp p) (Expr p) (Expr p)
 
 不理解 TTG，下面这些事都没法解释：
 
-- 为什么 GHC（Haskell 编译器）2018 之后内部 AST 全部改写——这次 refactor 跨越 5 个 GHC 版本、约 1500 个 commits
-- 为什么 hsx / haskell-src-exts / Idris 这些第三方 Haskell 工具能"加一个新阶段而不需要 fork 整棵 AST"
-- 为什么写编译器后端插件时 fork 整棵 AST 这种做法 2017 之后被淘汰
-- 为什么 TypeScript / Babel / SWC 虽然没用 type family，但 AST 设计都借鉴了"骨架共享 + 阶段标注"的核心思路
+- 为什么 GHC（Haskell 编译器）从 8.4 起把内部 AST 整族改写——跨多个版本的大规模重构，而不是再复制一套树
+- 为什么 haskell-src-exts 一类第三方工具想"加一个新阶段"时，不必再 fork 整棵 AST
+- 为什么 2017 之后，多阶段编译器里"为每个阶段复制一整棵 AST"的默认做法开始被质疑
+- 为什么 TypeScript / Babel / SWC 虽没用 type family，却也常见"同一骨架 + 阶段标注"的多阶段 AST 思路（相近，非直接抄 TTG）
 
-它和 [[hindley-milner]] 配合得特别好——HM 推完类型后要把类型写回 AST，TTG 提供的"Typechecked 阶段把字段填成 Type"恰好是这一步的工程落地。
+它和 [[hindley-milner]] 配合得特别好——HM 推完类型后要把类型写回 AST，TTG 的 Typechecked 阶段把字段填成 `Type`，正好是这一步的工程落地。
 
 ## 核心要点
 
 TTG 拆开看是 **三件事**：
 
-1. **AST 类型带阶段参数**：`data Expr p = ...`，p 是"阶段标签"——一个空类型，运行时不存在，只在类型层做标记。
+1. **AST 类型带阶段参数**：`data Expr p = ...`，p 是"阶段标签"——像衣服上的季节吊牌，吊牌本身不占重量，只告诉你现在是哪一季。
 
-2. **每个 constructor 加一个扩展字段**：`Var (XVar p) Name`、`App (XApp p) ...`——每个节点都多带一个槽，类型由 type family 决定。
+2. **每个 constructor 加一个扩展字段**：`Var (XVar p) Name`——每个节点多一个"口袋"；口袋里装什么，由阶段决定。
 
-3. **type family 把槽的类型和阶段绑定**：`type instance XVar Parsed = ()`、`type instance XVar Typechecked = Type`——同一字段在不同阶段可以是不同类型。
+3. **type family 把槽的类型和阶段绑定**：先声明 `type family XVar p`，再写 `type instance XVar Parsed = ()` / `Typechecked = Type`——同一口袋，不同季节装不同东西。
 
-合起来：一棵 AST 骨架 + 阶段决定字段 = 同一份 traversal 代码（如算自由变量、漂亮打印、计算节点数）跨四个阶段复用。
+合起来：一棵 AST 骨架 + 阶段决定字段 = 同一份 traversal（自由变量、漂亮打印）跨多阶段复用。
 
 ## 实践案例
 
 ### 案例 1：Parsed 阶段空、Typechecked 阶段填类型
 
 ```haskell
+type family XVar p
+type family XApp p
 data Expr p = Var (XVar p) Name | App (XApp p) (Expr p) (Expr p)
 
 data Parsed
 data Typechecked
 data Type = IntT | ArrT Type Type
 
-type instance XVar Parsed       = ()        -- Parsed 阶段不需要类型
-type instance XVar Typechecked  = Type      -- Typechecked 阶段填类型
+type instance XVar Parsed       = ()     -- Parsed：口袋空着
+type instance XVar Typechecked  = Type   -- Typechecked：口袋装类型
 type instance XApp Parsed       = ()
 type instance XApp Typechecked  = Type
 ```
 
-`Var () "x"` 是 Parsed 阶段的合法值；`Var IntT "x"` 是 Typechecked 阶段的值。**同一棵 AST，两种"长法"**。运行时 `()` 是 zero-cost，不增加内存。
+**逐部分解释**：
+
+1. `data Parsed` / `data Typechecked` 是阶段吊牌——没有字段，只当类型层标记
+2. `type family` + `type instance` 规定：Parsed 口袋是 `()`，Typechecked 口袋是 `Type`
+3. `Var () "x"` 合法于 Parsed；`Var IntT "x"` 合法于 Typechecked。运行时 `()` 几乎零成本
 
 ### 案例 2：GHC 把三套变量名统一到一棵树
 
-GHC 之前有三个独立的 AST 数据类型，分别用三种"变量名"：`RdrName`（解析后的原始名字）/ `Name`（去歧义后的唯一名字）/ `Id`（带类型信息的标识符）。三套 AST 同步是噩梦——加一个 syntax 节点要改 9 个文件。
+类比：同一个人，解析后叫**外号**（`RdrName`），改名消歧后换**身份证号**（`Name`），类型检查后再换成**带简历的工牌**（`Id`）。以前 GHC 为三种身份各造一棵树，加一个语法节点要改多处。
 
-TTG 之后 GHC 内部只剩一套，三种身份用 type family 切换：
+TTG 之后只剩一套树，身份用 type family 切换：
 
 ```haskell
 data HsExpr p = HsVar (XVar p) (LIdP p) | HsApp (XApp p) (HsExpr p) (HsExpr p) | ...
 
-type instance LIdP GhcPs = RdrName        -- Parsed 阶段
-type instance LIdP GhcRn = Name           -- Renamed 阶段
-type instance LIdP GhcTc = Id             -- Typechecked 阶段
+type instance LIdP GhcPs = RdrName   -- 外号
+type instance LIdP GhcRn = Name      -- 身份证
+type instance LIdP GhcTc = Id        -- 带简历的工牌
 ```
 
-`HsExpr GhcPs` 装 `RdrName`，`HsExpr GhcTc` 装 `Id`——一棵树，三种身份。GHC 8.0 → 9.x 把约 25 个 `compiler/GHC/Hs/*.hs` 模块按这个套路重写。
+**逐部分解释**：`HsExpr GhcPs` 装外号，`HsExpr GhcTc` 装工牌——一棵树，三种身份。GHC 8.4 起把 `compiler/GHC/Hs/*.hs` 一族按此套路迁完。
 
 ### 案例 3：一份 freeVars 代码服务四阶段
 
@@ -84,7 +90,7 @@ freeVars (Var _ n)   = Set.singleton n
 freeVars (App _ a b) = freeVars a <> freeVars b
 ```
 
-注意模式里写 `_`（不解构扩展字段），整个函数对 p 是泛型的。Parsed / Renamed / Typechecked / Optimized 四个阶段都能用同一份代码。这是 TTG 最大的工程收益——**traversal 代码减少约一半**。
+**逐部分解释**：模式里写 `_`，故意不看扩展口袋，所以函数对任意阶段 p 都成立。忽略扩展槽 → 对所有阶段多态；Parsed / Renamed / Typechecked / Optimized 共用一份，这是 TTG 最大的工程收益。
 
 ## 踩过的坑
 
@@ -110,33 +116,37 @@ freeVars (App _ a b) = freeVars a <> freeVars b
 - 团队没人懂 type family——`XVar GhcRn` 这种间接寻址学习成本不低，没人维护就是 bus factor 1
 - Rust 生态——Rust 没 type family，rustc 内部走"多套独立 IR + trait Visit"路线；思路相似但机制不同
 
-## 历史小故事
+## 历史小故事（可跳过）
 
-- **2017 年**：Najd（Edinburgh 博士生）+ Peyton Jones（Microsoft Research，GHC 主架构师）把多年 GHC AST 重构经验形式化，发表在 J. of Universal Computer Science（21 页）。
-- **2018 年**：GHC 8.4 开始正式应用 TTG idiom，阶段标签命名为 `GhcPs` / `GhcRn` / `GhcTc`。后续几个版本陆续把整族 `HsSyn` 类型迁完。
-- **2020 年后**：陆续出现 "Compositional ASTs"、"Multistage AST" 等扩展工作，把 TTG 思路推到更通用的代数数据类型层面。
+- **2017 年**：Najd（Edinburgh）+ Peyton Jones 把 GHC AST 重构经验写成 JUCS 论文（约 16–21 页，视排版而定）。
+- **2018 年**：GHC 8.4 起正式用 TTG，阶段标签 `GhcPs` / `GhcRn` / `GhcTc`，后续版本迁完 `HsSyn`。
+- **2020 年后**："Compositional ASTs"、"Multistage AST" 等把思路推到更通用 ADT。
 
-20 年来"扩展 AST"的研究链条：Phantom Types (2003) → GADT (2006) → Data Types à la Carte (2008) → Compositional Data Types (2011) → **TTG (2017)** → GHC AST refactor (2018+)。
+链条：Phantom Types (2003) → GADT (2006) → Data Types à la Carte (2008) → Compositional Data Types (2011) → **TTG (2017)** → GHC refactor (2018+)。
 
 ## 学到什么
 
-1. **AST 不必复制 N 份**——一棵骨架 + 阶段化字段，是过去 30 年编译器设计最重要的工程教训之一
-2. **类型层的"阶段标签"是 zero-cost 抽象**——运行时不存在，只在编译期做静态保证
-3. **理论纯度 vs 工程友好的取舍**：Data Types à la Carte 更优雅但 Haskell 原生支持差；TTG 选了"够用 + 容易落地"的中间点
-4. **理论 → 工业落地常常跨越 5 年以上**：2017 论文 → 2018 GHC 8.4 起步 → 2021 还在 follow-up。耐心是真功夫
+1. **AST 不必复制 N 份**——一棵骨架 + 阶段化字段，是编译器设计的关键工程教训
+2. **类型层"阶段标签"是 zero-cost 抽象**——运行时不存在，只在编译期做静态保证
+3. **理论纯度 vs 工程友好**：Data Types à la Carte 更优雅但落地难；TTG 选"够用 + 易落地"
+4. **理论 → 工业落地常跨 5 年+**：2017 论文 → 2018 GHC 8.4 起步 → 后续版本仍在 follow-up
 
 ## 延伸阅读
 
-- 论文 PDF：[Trees that Grow（21 页）](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/trees-that-grow.pdf)
-- GHC 实际代码：`compiler/GHC/Hs/Expr.hs` 与 `compiler/GHC/Hs/Extension.hs`（TTG 落地源头）
-- 反方观点：Lennart Augustsson, "Type Families Are Harmful"（2019 blog，反对 type family 滥用）
-- 背景题：Wadler 的 "The Expression Problem"（1998 邮件帖，所有可扩展数据类型工作的源头）
+- 论文 PDF：[Trees that Grow](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/trees-that-grow.pdf)
+- GHC 落地：`compiler/GHC/Hs/Expr.hs`、`compiler/GHC/Hs/Extension.hs`
+- 反方：Lennart Augustsson, "Type Families Are Harmful"（2019）
+- 源头：Wadler, "The Expression Problem"（1998）
+- [[hindley-milner]] —— 类型写回 AST 的上游算法
+- [[gadt-pjones]] —— GADT 是 TTG 之前的类型层扩展工具
 
 ## 关联
 
-- [[hindley-milner]] —— HM 推完类型要写回 AST，TTG 的 Typechecked 阶段就是这一步的工程落地
-- [[lambda-calculus]] —— TTG 的 AST 表达的就是 λ-演算项的扩展形式
-- [[standard-ml]] —— ML 系语言是 TTG 思想的天然宿主
+- [[hindley-milner]] —— HM 推完类型要写回 AST，TTG 的 Typechecked 阶段就是落地
+- [[lambda-calculus]] —— TTG 的 AST 表达的是 λ-项的扩展形式
+- [[standard-ml]] —— ML 系语言是阶段化 AST 思想的天然宿主
+- [[gadt-pjones]] —— GADT 解决"构造子返回更精确类型"，TTG 解决"同构造子跨阶段长字段"
+- [[template-haskell]] —— TH 也要操作 Haskell 语法树，和 HsSyn 扩展问题同源
 
 ## 反向链接
 

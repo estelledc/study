@@ -1,0 +1,135 @@
+{
+  "slug": "storybook",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "装修样板间类比贴合「孤立预览组件」，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Manager/Preview/channel 三层有白话；telejson 可再补半句「跨 iframe 的序列化库」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CSF / play() / addon 三案例步骤清楚，零基础能跟住「写 stories → 预览 → 顺带测」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/storybookjs/storybook；2016 Kadira/React Storybook、2017 去 React 前缀扩框架大体正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "年表有误：CSF 3 实验版约 2021、Storybook 7（2023）起为默认；不是「2024 年 CSF 3.0」。CSF 2 对应 SB5.2/6 时代（约 2019–2020），不宜写成「2021 年 CSF 2.0」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Storybook 9（2025-06）拉进 Vitest addon、v10.4（2026-05）时间线合理；「整进核心」宜理解为推荐/内置测试体验，非字面合并进单一包"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CSF Meta/StoryObj 与 play()+userEvent 可跟做；addon 双端模型可落地"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖双 pipeline 冷启动、iframe DevTools、大 args 卡顿、static export、monorepo——具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有组件数阈值、Ladle/Histoire/Bit/Chromatic 边界，量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "装修样板间类比贴合「孤立预览组件」，保留",
+        "Manager/Preview/channel 三层有白话；telejson 可再补半句「跨 iframe 的序列化库」",
+        "CSF / play() / addon 三案例步骤清楚，零基础能跟住「写 stories → 预览 → 顺带测」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 github.com/storybookjs/storybook；2016 Kadira/React Storybook、2017 去 React 前缀扩框架大体正确",
+        "年表有误：CSF 3 实验版约 2021、Storybook 7（2023）起为默认；不是「2024 年 CSF 3.0」。CSF 2 对应 SB5.2/6 时代（约 2019–2020），不宜写成「2021 年 CSF 2.0」",
+        "Storybook 9（2025-06）拉进 Vitest addon、v10.4（2026-05）时间线合理；「整进核心」宜理解为推荐/内置测试体验，非字面合并进单一包"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "CSF Meta/StoryObj 与 play()+userEvent 可跟做；addon 双端模型可落地",
+        "踩坑覆盖双 pipeline 冷启动、iframe DevTools、大 args 卡顿、static export、monorepo——具体可操作",
+        "适用/不适用有组件数阈值、Ladle/Histoire/Bit/Chromatic 边界，量化清楚"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 CSF 2/3 年表（CSF3 实验 2021、SB7/2023 默认）；弱化「Vitest 整进核心」为 addon-vitest；telejson 补桥接。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 174,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 174,
+  "l1_pass": true
+}

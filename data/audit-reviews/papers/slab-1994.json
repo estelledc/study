@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "inode / task_struct / socket 首次出现可各加半句白话（如「文件在内核里的身份证」），零基础跟读更稳"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「着色 / cache line」可再补一句「像停车场错开车位，避免大家抢同一排」类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2024/Linux 6.8 条目写「剩 SLUB + SLOB」有误：SLOB 已在 Linux 6.4 移除，6.8 移除 SLAB 后只剩 SLUB"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」里把 SLOB 写成仍可用的嵌入式选项，与现状不符，应标明已删或改表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SLUB「合入 2.6.22 成为默认」略笼统（合入与默认版本常差一拍），可写成合入 2.6.22、随后成为默认"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用里「嵌入式 < 16MB → SLOB」已过时：现代主线内核无 SLOB，应改为历史选项或改指 SLUB 小内存调参"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑第 4 条「SLOB 误用」仍暗示可启用；改为「别再找 CONFIG_SLOB」或说明 6.4 已删"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 伪代码概念正确，可注明 magazine/cpu freelist 是 SLUB 热路径教学简化，非字面 API"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "inode / task_struct / socket 首次出现可各加半句白话（如「文件在内核里的身份证」），零基础跟读更稳",
+        "「着色 / cache line」可再补一句「像停车场错开车位，避免大家抢同一排」类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "2024/Linux 6.8 条目写「剩 SLUB + SLOB」有误：SLOB 已在 Linux 6.4 移除，6.8 移除 SLAB 后只剩 SLUB",
+        "「为什么重要」里把 SLOB 写成仍可用的嵌入式选项，与现状不符，应标明已删或改表述",
+        "SLUB「合入 2.6.22 成为默认」略笼统（合入与默认版本常差一拍），可写成合入 2.6.22、随后成为默认"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "不适用里「嵌入式 < 16MB → SLOB」已过时：现代主线内核无 SLOB，应改为历史选项或改指 SLUB 小内存调参",
+        "踩坑第 4 条「SLOB 误用」仍暗示可启用；改为「别再找 CONFIG_SLOB」或说明 6.4 已删",
+        "案例 2 伪代码概念正确，可注明 magazine/cpu freelist 是 SLUB 热路径教学简化，非字面 API"
+      ]
+    }
+  ]
+}

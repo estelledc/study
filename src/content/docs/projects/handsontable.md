@@ -24,7 +24,7 @@ GitHub 约 20k star，TypeScript 写成，**AGPL v3 + 商业双许可**（这一
 
 **关键差别**：前两者目标是「展示数据」，Handsontable 目标是「让用户编辑数据」。后者的难度大一个数量级——Excel 几十年积累的快捷键、撤销栈、公式引擎、合并单元格、跨表引用、复制粘贴语义……都得复刻。
 
-它的 **HyperFormula** 公式引擎后来被拆出来独立开源，成了浏览器端最完整的 Excel 兼容公式实现（支持 380 多个函数）。
+它的 **HyperFormula** 公式引擎后来被拆出来独立开源，是浏览器端函数覆盖很广的 Excel 兼容公式引擎之一（约 380+ 个函数）。
 
 ## 核心要点
 
@@ -59,7 +59,7 @@ Handsontable 的设计可以拆成 **四件事**：
 - **AGPL v3**：你免费用，但你的应用代码也必须开源（包括 SaaS 产品的服务器端代码）
 - **商业许可**：付费购买，闭源使用
 
-这种「用版权法逼竞争对手付费，但对真开源项目仍然免费」的模式，叫「**开放核心 + Copyleft 武器化**」。MongoDB 的 SSPL、ElasticSearch 的 ELv2 是同类思路。
+这种「用许可证逼商业用户付费，但对遵守开源义务的项目仍可用」的模式，是商业化开源常见打法。注意：AGPL 仍是 OSI 认可的 copyleft；MongoDB 的 SSPL、Elastic 的 ELv2 更偏「源码可用、非 OSI」，不宜和 AGPL 混称为同一种 Copyleft。
 
 **实战影响**：写自家闭源 SaaS，要么买商业 license，要么换库（AG Grid 社区版 MIT、glide-data-grid MIT 都是更友好的选择）。
 
@@ -101,7 +101,11 @@ const hot = new Handsontable(container, {
 })
 ```
 
-跑起来 C1 显示 3，C2 显示 7，C3 显示 10。改 A1 → C1 / C3 自动跟着变。
+**逐部分解释**：
+
+- `formulas: { engine: HyperFormula }` 把公式引擎挂进表格。
+- `=A1+B1` / `=SUM(C1:C2)` 是单元格里的公式文本，不是普通字符串展示。
+- 跑起来 C1=3、C2=7、C3=10；改 A1 后，依赖图会带动 C1、C3 重算。
 
 ### 案例 3：合并单元格 + 冻结行
 
@@ -120,7 +124,12 @@ const hot = new Handsontable(container, {
 })
 ```
 
-右键弹出菜单（插入行 / 删除列 / 合并单元格 / 复制 / 粘贴），鼠标拖列宽行高——一行 `contextMenu: true` 就开了。
+**逐部分解释**：
+
+- `fixedRowsTop` / `fixedColumnsLeft`：滚动时冻结首行/首列，表头不跟着跑丢。
+- `mergeCells`：把一块矩形区域合成一格（这里合并第 0 行的 3 列）。
+- `contextMenu: true`：右键菜单开插入/删除/合并/复制粘贴。
+- `manualColumnResize` / `manualRowResize`：允许拖列宽行高。
 
 ## 踩过的坑
 
@@ -149,7 +158,7 @@ const hot = new Handsontable(container, {
 - **2012 年**：波兰开发者 Marcin Warpechowski 在 GitHub 开源 Handsontable，初版只有几百行，因为 jQuery 时代缺一个像 Excel 的表格组件，迅速火起来
 - **2014 年前后**：成立 Handsoncode 公司商业化运营，社区版仍 MIT
 - **2019 年（7.0 版本）**：从 MIT 改为非商业许可后又调整到 AGPL v3。社区一度炸锅，竞争对手 AG Grid 借机吸纳了一批用户
-- **2020 年**：把内部公式引擎拆成独立项目 **HyperFormula**，同样 GPLv3 + 商业双许可，反而成为开源 spreadsheet 公式引擎里最完整的一个
+- **2020 年**：把内部公式引擎拆成独立项目 **HyperFormula**，同样 GPLv3 + 商业双许可，成为开源 spreadsheet 公式引擎里函数覆盖很广的一个
 - **如今**：商业版稳定盈利，是 JS 生态里少数靠 license 卖钱活下来的开源项目之一
 
 ## 学到什么

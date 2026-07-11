@@ -17,22 +17,22 @@ yargs 是一个 **把 `process.argv` 这串原始字符串数组，翻译成"命
 // → ['node', 'my-cli.js', 'build', '--watch', '--port', '8080', 'src/index.ts']
 ```
 
-你想要的是 `{ _: ['build'], watch: true, port: 8080, entry: 'src/index.ts' }`。yargs 不仅做这一步翻译，还顺带把 `--help` / `--version` / shell 自动补全 / 子命令分发 / 配置文件加载全都做完。webpack、mocha、eslint 这些 CLI 的"前台"用的都是它。
+你想要的是 `{ _: ['build'], watch: true, port: 8080, entry: 'src/index.ts' }`。yargs 不仅做这一步翻译，还顺带把 `--help` / `--version` / shell 自动补全 / 子命令分发 / 配置文件加载全都做完。webpack-cli、mocha 这类 CLI 的"前台"就用它。
 
 ## 为什么重要
 
 不理解 yargs 这层，下面这些事都没法解释：
 
 - 为什么 `webpack --watch --mode=production` 这种命令能"自动"显示帮助、版本、错误时给出有用提示
-- 为什么 `npm` / `yarn` 的子命令（`npm install`、`yarn add`）能嵌套又互不干扰
-- 为什么有的 CLI 你在 zsh 里按 Tab 能自动补全选项名——这能力是免费送的
+- 为什么 `git`-like 的嵌套子命令（`tool config get`）能一层层分发又互不干扰
+- 为什么有的 CLI 你在 zsh 里按 Tab 能自动补全选项名——这能力是声明后免费送的
 - 为什么手撸 `process.argv.slice(2)` 写过几个 CLI 之后，你最终都会去找一个解析库
 
 ## 核心要点
 
 yargs 的设计可以拆成 **三层** 来理解：
 
-1. **解析层（yargs-parser）**：纯函数，输入 argv 数组、输出 `{_, flags}` 对象。处理 `-` vs `--`、`--key=value` vs `--key value`、`-abc` 聚合、`--no-watch` 取反、`--config.host=x` 嵌套这些边界。这一层独立成包，npm/yarn 只用这一层。
+1. **解析层（yargs-parser）**：纯函数，输入 argv 数组、输出 `{_, flags}` 对象。处理 `-` vs `--`、`--key=value` vs `--key value`、`-abc` 聚合、`--no-watch` 取反、`--config.host=x` 嵌套这些边界。这一层独立成包；Yarn classic 等只想要解析、不要命令框架的项目可以单独引入。
 
 2. **命令层（yargs core）**：在解析结果上做命令匹配和分发。`.command(name, desc, builder, handler)` 注册一条命令；builder 是函数，让子命令的选项**懒加载**——你不进入这条命令就不解析它的参数。类比：餐厅有 50 个菜单，客人点 A 才翻 A 那一页。
 
@@ -71,23 +71,29 @@ yargs(hideBin(process.argv))
 yargs(hideBin(process.argv))
   .command('config', '配置管理', (y) => {
     return y
-      .command('get <key>', '读取配置', () => {}, (argv) => { /* ... */ })
-      .command('set <key> <value>', '写入配置', () => {}, (argv) => { /* ... */ })
-      .command('list', '列出全部', () => {}, (argv) => { /* ... */ })
+      .command('get <key>', '读取配置', () => {}, (argv) => {
+        console.log(readConfig(argv.key));
+      })
+      .command('set <key> <value>', '写入配置', () => {}, (argv) => {
+        writeConfig(argv.key, argv.value);
+      })
+      .command('list', '列出全部', () => {}, () => { listConfig(); })
       .demandCommand(1);
   })
   .help()
   .parse();
 ```
 
-`<key>` 是必需 positional，`[key]` 是可选，`<key...>` 是必需数组。webpack-cli 这种"N 级嵌套"的复杂工具就是这样撑起来的。
+读法分三步：① 外层 `config` 只负责"进配置域"；② 内层 `get` / `set` / `list` 才是真正干活的 handler；③ `<key>` 是必需位置参数，`[key]` 是可选，`<key...>` 是必需数组。webpack-cli 的多级命令就是这样叠出来的。
 
 ### 案例 3：中间件 + 校验 + 全局错误
 
 ```javascript
 yargs(hideBin(process.argv))
   .middleware((argv) => { argv.startTime = Date.now(); })
-  .command('serve', '启动服务', /* ... */)
+  .command('serve', '启动服务', (y) => {
+    return y.option('port', { type: 'number', default: 3000 });
+  }, (argv) => { startServer(argv.port); })
   .check((argv) => {
     if (argv.port < 1024 && process.getuid() !== 0) {
       throw new Error('低位端口需要 root');
@@ -98,7 +104,7 @@ yargs(hideBin(process.argv))
   .parse();
 ```
 
-`middleware` / `check` / `fail` 三件套对应大型 CLI 的全部生命周期需求：handler 之前跑钩子、handler 之前做校验、出错时统一兜底。
+生命周期按时间线：`middleware` 在 handler 前先跑（这里记开始时间）→ `check` 再拦非法参数 → handler 真正启动服务 → 任一步抛错都进 `fail` 统一退出。
 
 ## 踩过的坑
 
@@ -126,9 +132,9 @@ yargs(hideBin(process.argv))
 
 - **2010**：Ben Coe 从 substack（James Halliday）的 `optimist` 分叉创建 yargs，因为 optimist 已停滞。
 - **2014**：加入 `.command()` 子命令系统，从"参数解析器"升级为 CLI 框架。
-- **2017**：拆出 `yargs-parser` 子包，让 npm / yarn classic 这种只想要解析层的项目可以独立引入。
+- **2017**：拆出 `yargs-parser` 子包，让只想要解析层、不要命令框架的项目可以独立引入。
 - **2021**：v17 大版本——全量改写为 TypeScript，迁移到 ESM + CJS 双模发布。
-- **现在**：weekly downloads ~80M，是 webpack-cli、mocha、eslint-cli 等明星工具的事实标准件。
+- **现在**：weekly downloads 约数千万级，是 webpack-cli、mocha 等明星工具的常用标准件。
 
 ## 学到什么
 
@@ -151,8 +157,8 @@ yargs(hideBin(process.argv))
 - [[clack]] —— 不解析参数但负责交互式 prompt，常和 yargs 一起用
 - [[ink]] —— 用 React 渲染 CLI 输出，yargs 解析后再交给 ink 显示
 - [[ora]] —— CLI 中的 spinner / loading，handler 里跑长任务时配合用
-- [[chalk]] —— CLI 输出着色，yargs 的 help 文本默认就用它
-- [[boxen]] —— CLI 输出加边框，常用于 yargs 应用启动横幅
+- [[chalk]] —— CLI 输出着色，常在 yargs 的 handler 里给日志上色
+- [[boxen]] —— CLI 输出加边框，常用于应用启动横幅
 - [[enquirer]] —— 命令行交互问答库，和 yargs 形成"参数 + 交互"双层
 
 ## 反向链接

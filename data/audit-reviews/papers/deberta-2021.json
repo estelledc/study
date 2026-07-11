@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有叙事数字，缺逐步拆解（SuperGLUE 任务→人类基线→单模型/ensemble 怎么读）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 末尾 ELECTRA-style RTD 未桥接，零基础会卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 是选型清单，缺一段可跟做的最小判别流程（加载→encode→取 logits/向量）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「编码器路线的天花板时刻」偏修辞，但 SuperGLUE 89.9 vs 89.8 与 ICLR 2021 / arXiv 2006.03654 一致，无硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 HF 片段可跑，但缺 tokenizer/model 输出怎么接到分类头的一步；不影响 pass"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有叙事数字，缺逐步拆解（SuperGLUE 任务→人类基线→单模型/ensemble 怎么读）",
+        "案例 2 末尾 ELECTRA-style RTD 未桥接，零基础会卡住",
+        "案例 3 是选型清单，缺一段可跟做的最小判别流程（加载→encode→取 logits/向量）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「编码器路线的天花板时刻」偏修辞，但 SuperGLUE 89.9 vs 89.8 与 ICLR 2021 / arXiv 2006.03654 一致，无硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 HF 片段可跑，但缺 tokenizer/model 输出怎么接到分类头的一步；不影响 pass"
+      ]
+    }
+  ]
+}

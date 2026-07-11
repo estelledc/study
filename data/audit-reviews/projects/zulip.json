@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 把 topic 用法与 long-poll HTTP 混在一节，零基础读者可能跟丢；可把协议循环单独拆成更短的逐步说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "PyCon US 2017 条目缺完整作者/标题引文格式；其余架构与产品事实与公开资料一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 provision/run-dev 路径正确但省略了 Vagrant/Docker 前置；新人仍可能卡在环境选型，可补一句默认走 Docker 还是 Vagrant"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 把 topic 用法与 long-poll HTTP 混在一节，零基础读者可能跟丢；可把协议循环单独拆成更短的逐步说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "PyCon US 2017 条目缺完整作者/标题引文格式；其余架构与产品事实与公开资料一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 provision/run-dev 路径正确但省略了 Vagrant/Docker 前置；新人仍可能卡在环境选型，可补一句默认走 Docker 还是 Vagrant"
+      ]
+    }
+  ]
+}

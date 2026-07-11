@@ -114,7 +114,7 @@ GitHub Actions 配置：
 - run: earthly --ci +all
 ```
 
-`--ci` 标志会强制清掉本地缓存、关交互输出。**关键是：开发者本机跑的命令和 CI 跑的命令一字不差**。
+`--ci` 会关掉交互提示、启用 CI 友好默认（非交互、适合流水线日志）；**它不会自动清空本地缓存**。需要干净构建时另加 `--no-cache`。**关键是：开发者本机跑的 `earthly +all` 和 CI 跑的是同一份 Earthfile**。
 
 ## 踩过的坑
 
@@ -174,3 +174,7 @@ GitHub Actions 配置：
 - [[github-actions]] —— Earthly 最常被部署到 GH Actions 里，作为 CI 任务统一入口
 - [[bazel]] —— 相同问题域的"重型选手"，精度更高但学习曲线更陡
 - [[nix]] —— 另一条"可重复构建"路线，更纯粹但更难入门，Earthly 用容器做了 80% 的事
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

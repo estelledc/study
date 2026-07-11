@@ -8,7 +8,7 @@ title: nvm — 在同一台机器上轻松切换 Node 版本
 
 ## 是什么
 
-nvm（**N**ode **V**ersion **M**anager）是一个让你在同一台机器上**装多个 Node.js 版本，并随时切换**的工具。日常类比：像家里换灯泡——同一个灯座（你的电脑），可以换 5W、10W、20W 不同灯泡（不同 Node 版本），不用拆整盏灯。
+nvm（**N**ode **V**ersion **M**anager）是一个让你在同一台机器上**装多个 Node.js 版本，并随时切换**的工具。日常类比：像家里换灯泡——同一个灯座（你的电脑），可以换 5W、10W、20W 不同灯泡（不同 Node 版本），不用拆整盏灯。切换的开关其实是改 `PATH`：把「当前这盏灯」的目录排到命令查找列表最前面。
 
 你敲：
 
@@ -47,35 +47,48 @@ GitHub 上有 81k star，是 Node 生态的事实标准。
 ### 案例 1：装好后第一次用
 
 ```bash
-# 装 nvm（一次性）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-
 # 重开终端后
-nvm install --lts        # 装最新 LTS
-nvm install 20           # 装 Node 20
-nvm ls                   # 列已装版本
-nvm alias default 20     # 把 20 设为新终端的默认
+nvm install --lts
+nvm install 20
+nvm alias default 20
+node -v
 ```
+
+逐部分解释：
+
+- 安装脚本把 `nvm.sh` 写进 `~/.nvm/`，并在 `~/.bashrc` / `~/.zshrc` 里加一行 `source`。
+- 新开终端时 shell 先 source `nvm.sh`，nvm 命令才可用。
+- `nvm install 20` 把 Node 解压到 `~/.nvm/versions/node/v20.x.x/`，不碰系统 `/usr/bin/node`。
+- `nvm alias default 20` 让以后新终端默认把该目录前置到 `PATH`；`node -v` 应显示 v20。
 
 ### 案例 2：项目级版本锁定
 
 ```bash
 cd my-project
-echo "18.17.1" > .nvmrc      # 团队约定用 Node 18.17.1
-nvm use                       # nvm 读 .nvmrc 自动切
-# 输出：Now using node v18.17.1
+echo "18.17.1" > .nvmrc
+nvm use
+# → Now using node v18.17.1
 ```
 
-CI 里也能用：GitHub Actions 的 `actions/setup-node` 直接读 `.nvmrc`，零配置。
+逐部分解释：
+
+- `.nvmrc` 只是一行版本号，约定「这个仓库用哪盏灯泡」。
+- 裸敲 `nvm use`（不带参数）会读当前目录的 `.nvmrc`，再改本终端的 `PATH`。
+- 只影响当前 shell；隔壁终端若没 `use`，仍是 default。
+- CI 里 `actions/setup-node` 也可直接读 `.nvmrc`，本地与流水线对齐。
 
 ### 案例 3：临时用某版本跑一次命令
 
 ```bash
-nvm exec 16 npm test     # 当前 shell 不切，用 16 跑一次 test
+nvm exec 16 npm test
 ```
 
-适合"我只想验证下这个 bug 在 Node 16 上是否存在"的快速检查。
+逐部分解释：
 
+- `exec` 不改当前 shell 的 default，只在子进程里把 Node 16 的目录塞进 `PATH`。
+- 适合「只想确认 bug 在 16 上是否复现」，测完终端仍停在原来的版本。
+- 对比：`nvm use 16` 会改当前终端，直到你再 `use` 别的版本。
 ## 踩过的坑
 
 1. **shell 启动变慢**：source `nvm.sh` 是 bash 脚本，开新终端冷启动加 100-300ms。重度用户用 lazy-load wrapper（在第一次调 `nvm` 时才真正 source）能缓解。

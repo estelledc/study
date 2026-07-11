@@ -1,0 +1,78 @@
+{
+  "slug": "boa-engine",
+  "area": "projects",
+  "round": 15,
+  "output_path": "/workspace/src/content/docs/projects/boa-engine.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例只有场景清单，没有代码和逐步解释；补充可跟做的 Rust/JS 小例子。",
+        "首次出现 Context、host function、GC 等术语时需要更日常的桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "不要把 Boa 泛化成完整浏览器级运行时；明确它更适合嵌入、学习和受控脚本。",
+        "补充 ECMAScript/Test262 兼容性需要按版本验证的限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.33,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例缺少代码，无法判断是否可跑或概念是否正确。",
+        "把安全、超时、兼容性建议合并进踩坑和适用边界，不要放在反向链接之后。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 2.89,
+    "reject_count": 1,
+    "verdict": "refine",
+    "action": "refine"
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "lines": 180
+  }
+}

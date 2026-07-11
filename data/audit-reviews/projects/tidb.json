@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "单店餐厅 vs 连锁中央厨房+看板，把 HTAP 讲成「同一份数据两种用法」，好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "TiDB Server / PD / TiKV / TiFlash 四角色有门面/大脑/底盘桥接；TSO 有领号类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 可跟做；案例 3 五步写路径清楚，TSO/Raft 对零基础略密但可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "PingCAP 2015、TiKV CNCF 2019 沙箱/2020 毕业、5.0 TiFlash MPP、VLDB 2020 论文定位正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2024 年 7.5 LTS」不准确：7.5.0 于 2023-12-01 发布；宜改为 2023"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Region「默认 96MB」在 v8.4 前成立，v8.4+ 默认 256MiB；宜加版本限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "tiup playground + mysql 4000 + AUTO_RANDOM / SET TIFLASH REPLICA 可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：自增热点、兼容性、TiFlash 成本、CBO 抖动、PD 关键路径、小集群不划算"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化（>几 TB、<5ms 写、最少约 8 台）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "单店餐厅 vs 连锁中央厨房+看板，把 HTAP 讲成「同一份数据两种用法」，好懂",
+        "TiDB Server / PD / TiKV / TiFlash 四角色有门面/大脑/底盘桥接；TSO 有领号类比",
+        "案例 1–2 可跟做；案例 3 五步写路径清楚，TSO/Raft 对零基础略密但可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "PingCAP 2015、TiKV CNCF 2019 沙箱/2020 毕业、5.0 TiFlash MPP、VLDB 2020 论文定位正确",
+        "「2024 年 7.5 LTS」不准确：7.5.0 于 2023-12-01 发布；宜改为 2023",
+        "Region「默认 96MB」在 v8.4 前成立，v8.4+ 默认 256MiB；宜加版本限定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "tiup playground + mysql 4000 + AUTO_RANDOM / SET TIFLASH REPLICA 可跟做",
+        "踩坑具体：自增热点、兼容性、TiFlash 成本、CBO 抖动、PD 关键路径、小集群不划算",
+        "适用边界有量化（>几 TB、<5ms 写、最少约 8 台）"
+      ]
+    }
+  ]
+}

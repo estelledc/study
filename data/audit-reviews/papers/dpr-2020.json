@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书管理员 vs 语义卡片类比贴合；案例 1 万维网例子零基础能跟。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 in-batch negatives 的 128×128 矩阵对零基础稍抽象，但仍可跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1972 年 BM25 时代」事实错误：BM25/Okapi 约 1990 年代（Robertson 等）；1972 更接近 Sparck Jones IDF。应改为「经典 BM25/字面检索时代」或「1990 年代 Okapi BM25」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段「全面碾压 BM25」与正文 SQuAD 反例略冲；可改为「在多数开放域 QA 集上全面超过 BM25」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（领域漂移、hard negatives 标注噪声、chunking）可操作；适用边界有量级。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例偏概念与表格，无训练脚本，对检索论文可接受。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书管理员 vs 语义卡片类比贴合；案例 1 万维网例子零基础能跟。",
+        "案例 3 in-batch negatives 的 128×128 矩阵对零基础稍抽象，但仍可跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "「1972 年 BM25 时代」事实错误：BM25/Okapi 约 1990 年代（Robertson 等）；1972 更接近 Sparck Jones IDF。应改为「经典 BM25/字面检索时代」或「1990 年代 Okapi BM25」。",
+        "历史段「全面碾压 BM25」与正文 SQuAD 反例略冲；可改为「在多数开放域 QA 集上全面超过 BM25」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "踩坑（领域漂移、hard negatives 标注噪声、chunking）可操作；适用边界有量级。",
+        "案例偏概念与表格，无训练脚本，对检索论文可接受。"
+      ]
+    }
+  ]
+}

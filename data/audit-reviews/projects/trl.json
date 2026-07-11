@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 缺少模板式「逐部分解释」步骤，建议把 DPO 三列与 GRPO 组内打分拆成 3 步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 RLHF / reference model / log-prob / critic / 策略梯度 需加一句日常桥接，零基础跟不住核心要点第 4 条与案例 3"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「是什么」里的按钮类比可用，但后文术语密度上升过快，建议在核心要点每条末尾补一句白话"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线把 DeepSeekMath（2024）与 DeepSeek-R1（2025-01）并列为「2024 年初爆红」不准确，应拆开：GRPO 出自 DeepSeekMath 2024，R1 更晚才火"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」里写 DeepSeek-R1 火后 GRPOTrainer 一周进主分支易误导——GRPOTrainer 对应的是 DeepSeekMath 的 GRPO，应改成 DeepSeekMath / GRPO 论文后快速合入"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读里 DeepSeekMath 链接与 DPO 链接可用，保持；正文叙述与时间线对齐即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 用了 load_dataset 但未展示 from datasets import load_dataset，教学 min example 建议补上 import"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 model/ref_model/ds 未交代从哪来，可加两行注释说明是 SFT 后的模型与三列偏好数据"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 缺少模板式「逐部分解释」步骤，建议把 DPO 三列与 GRPO 组内打分拆成 3 步说明",
+        "首次出现的 RLHF / reference model / log-prob / critic / 策略梯度 需加一句日常桥接，零基础跟不住核心要点第 4 条与案例 3",
+        "「是什么」里的按钮类比可用，但后文术语密度上升过快，建议在核心要点每条末尾补一句白话"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史时间线把 DeepSeekMath（2024）与 DeepSeek-R1（2025-01）并列为「2024 年初爆红」不准确，应拆开：GRPO 出自 DeepSeekMath 2024，R1 更晚才火",
+        "「为什么重要」里写 DeepSeek-R1 火后 GRPOTrainer 一周进主分支易误导——GRPOTrainer 对应的是 DeepSeekMath 的 GRPO，应改成 DeepSeekMath / GRPO 论文后快速合入",
+        "延伸阅读里 DeepSeekMath 链接与 DPO 链接可用，保持；正文叙述与时间线对齐即可"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 用了 load_dataset 但未展示 from datasets import load_dataset，教学 min example 建议补上 import",
+        "案例 2 的 model/ref_model/ds 未交代从哪来，可加两行注释说明是 SFT 后的模型与三列偏好数据"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "傻瓜机类比把「按快门 vs 写 prompt」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Gradio / checkpoint / LoRA 有桥接；案例 1 里 CLIP/VAE/latent 可再各补半句日常对照"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有步骤；缺 ## 反向链接 占位（模板要求），与其他段一并补即可"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写「2022-08-23 首个 commit」有误：仓库创建与 first commit 均为 2022-08-22（与 SD 1.4 权重公开同日）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「是什么」写「公开后几周内」过慢：应改为当天/数小时内做出 Gradio 入口"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "stars≈163k、gradio==3.41.2 钉死、AGPL-3.0、Forge/ComfyUI 分流等与现行仓库一致，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 Script 扩展骨架与案例 3 --api/curl 可跟做；案例 1 管线顺序与 modules/processing.py 工程路径正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：Python 3.10、medvram、TAESD preview、扩展锁 commit、Gradio 钉死、AGPL——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（本地出图/测 LoRA vs 复杂节点图/生产调度/SD3·Flux）；建议补 ## 反向链接 占位"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "傻瓜机类比把「按快门 vs 写 prompt」讲透，零基础直觉强",
+        "Gradio / checkpoint / LoRA 有桥接；案例 1 里 CLIP/VAE/latent 可再各补半句日常对照",
+        "三案例有步骤；缺 ## 反向链接 占位（模板要求），与其他段一并补即可"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史写「2022-08-23 首个 commit」有误：仓库创建与 first commit 均为 2022-08-22（与 SD 1.4 权重公开同日）",
+        "「是什么」写「公开后几周内」过慢：应改为当天/数小时内做出 Gradio 入口",
+        "stars≈163k、gradio==3.41.2 钉死、AGPL-3.0、Forge/ComfyUI 分流等与现行仓库一致，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 2 Script 扩展骨架与案例 3 --api/curl 可跟做；案例 1 管线顺序与 modules/processing.py 工程路径正确",
+        "踩坑具体：Python 3.10、medvram、TAESD preview、扩展锁 commit、Gradio 钉死、AGPL——保留",
+        "适用/不适用边界清楚（本地出图/测 LoRA vs 复杂节点图/生产调度/SD3·Flux）；建议补 ## 反向链接 占位"
+      ]
+    }
+  ]
+}

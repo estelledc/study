@@ -1,0 +1,145 @@
+{
+  "slug": "nix",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.55,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "宜家按图纸 CNC 类比能懂可复现，但 derivation/flake/closure 表格缺一句人话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3/4 几乎没有逐部分解释；案例 4 超出「三案例」模板，宜合并"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "正文夹带 Video-LLM/Video AI 领域旁支，零基础通用读者会懵"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 NixOS/nix；Dolstra 纯函数式部署模型、nixpkgs/flakes 定位正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 含 description/子分类/provenance 等 legacy 字段，应收敛到新格式"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段 2003–2006 博士论文节点可再写清学位年份，无硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "flake.nix / nix-shell / nix run 方向正确，但缺逐字段解释与最小可跟步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "multi-user、flakes 开关、binary cache、PATH 与 brew 污染等坑有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化（store 体积 GB、首次无 cache 编译耗时）；去掉领域旁支，补通用边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "宜家按图纸 CNC 类比能懂可复现，但 derivation/flake/closure 表格缺一句人话桥接",
+        "案例 2/3/4 几乎没有逐部分解释；案例 4 超出「三案例」模板，宜合并",
+        "正文夹带 Video-LLM/Video AI 领域旁支，零基础通用读者会懵"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 NixOS/nix；Dolstra 纯函数式部署模型、nixpkgs/flakes 定位正确",
+        "frontmatter 含 description/子分类/provenance 等 legacy 字段，应收敛到新格式",
+        "历史段 2003–2006 博士论文节点可再写清学位年份，无硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "flake.nix / nix-shell / nix run 方向正确，但缺逐字段解释与最小可跟步骤",
+        "multi-user、flakes 开关、binary cache、PATH 与 brew 污染等坑有用",
+        "适用/不适用缺量化（store 体积 GB、首次无 cache 编译耗时）；去掉领域旁支，补通用边界"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.55,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 151,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 实践案例",
+      "## 适用",
+      "## 学到什么",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": [],
+    "summary": "收敛legacy frontmatter；桥接derivation/flake；三案例补逐部分解释；去Video-LLM旁支；适用加量化"
+  }
+}

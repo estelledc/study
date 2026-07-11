@@ -1,0 +1,138 @@
+{
+  "slug": "scikit-learn",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "通用电器店 + 三个按钮（fit/predict/transform）类比贴合，零基础能抓住统一 API 直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Estimator / Transformer 有插头/流水线桥接；案例 1 的 X/y 未交代从哪来，可补一行「用内置数据集」让读者能直接跑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "[[pyth]] 在本仓库指向 Pyth Network（链上预言机），不是 Python 语言——延伸阅读/关联里「Python 生态」链到 pyth 是事实硬伤，应删改或改写为不链错 slug"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「换成 GradientBoosting 一字不改」不严谨：分类应对 GradientBoostingClassifier，且部分估计器默认超参/求解器不同可能告警"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Pedregosa et al. 2011 JMLR 与 Cournapeau 2007 GSoC / INRIA 接手时间线合理；「60k+ star」宜标约数或「截至笔记撰写」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–3 使用未定义的 X/y，读者无法直接跑；建议用 load_iris 或 make_classification 给出可复制最小例子"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "数据泄漏 / fit_transform vs transform / 类别特征 / 无 GPU 边界——踩坑具体可操作；适用有 <100 万行量化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联里 [[pyth]] 链错，工程师点开会看到预言机项目，应修掉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "通用电器店 + 三个按钮（fit/predict/transform）类比贴合，零基础能抓住统一 API 直觉",
+        "Estimator / Transformer 有插头/流水线桥接；案例 1 的 X/y 未交代从哪来，可补一行「用内置数据集」让读者能直接跑"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "[[pyth]] 在本仓库指向 Pyth Network（链上预言机），不是 Python 语言——延伸阅读/关联里「Python 生态」链到 pyth 是事实硬伤，应删改或改写为不链错 slug",
+        "「换成 GradientBoosting 一字不改」不严谨：分类应对 GradientBoostingClassifier，且部分估计器默认超参/求解器不同可能告警",
+        "Pedregosa et al. 2011 JMLR 与 Cournapeau 2007 GSoC / INRIA 接手时间线合理；「60k+ star」宜标约数或「截至笔记撰写」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–3 使用未定义的 X/y，读者无法直接跑；建议用 load_iris 或 make_classification 给出可复制最小例子",
+        "数据泄漏 / fit_transform vs transform / 类别特征 / 无 GPU 边界——踩坑具体可操作；适用有 <100 万行量化",
+        "关联里 [[pyth]] 链错，工程师点开会看到预言机项目，应修掉"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "lines": 172,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic/engineer 指出 [[pyth]] 链到 Pyth Network 而非 Python；案例缺可跑数据；GradientBoosting 分类命名不严谨。已改 load_iris 可跑例子、修正命名、去掉错误 pyth 关联。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}

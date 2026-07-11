@@ -21,10 +21,10 @@ DiT（**Diffusion Transformer**）把 [[ddpm]] 里默认的 U-Net 画家**换成
 
 不理解 DiT，下面这些事都没法解释：
 
-- 为什么 Stable Diffusion 3 / Sora / FLUX.1 现在**全部用 DiT 架构**——U-Net 已经退役
+- 为什么 Stable Diffusion 3 / Sora / FLUX.1 等**新一代**产线改用 DiT 系 backbone——U-Net 在旧版 SD1.5 仍常见，但新旗舰已转向 Transformer
 - 为什么扩散模型也能像 [[gpt-3]] 一样砸算力出奇迹——这条 scaling laws 路是 DiT 在生图领域打通的
-- 为什么 OpenAI 敢做高清长视频（Sora）——U-Net 不好扩到长序列，DiT 才行
-- 为什么 [[vit]] 之后所有视觉新架构都"先切 patch 再喂 Transformer"——DiT 把这套范式从判别扩到了生成
+- 为什么 OpenAI 敢做高清长视频（Sora）——卷积 U-Net 不好扩到长时空序列，DiT 的 attention 更合适
+- 为什么 [[vit]] 之后视觉新架构常"先切 patch 再喂 Transformer"——DiT 把这套范式从判别扩到了生成
 
 ## 核心要点
 
@@ -40,13 +40,17 @@ DiT 的核心改造可以拆成 **三步**：
 
 ### 案例 1：ImageNet 256×256 拿下 SOTA
 
+论文 Table 2（带 classifier-free guidance）对比：
+
 | 模型 | 参数 | FID（越低越好） |
 |------|------|-----------------|
-| ADM（U-Net 代表） | 554M | 4.59 |
+| ADM-G（U-Net + 引导） | 554M | 4.59 |
 | LDM-4（U-Net + latent） | 400M | 3.60 |
 | **DiT-XL/2** | **675M** | **2.27** |
 
-DiT-XL/2 第一次让"Transformer 在生图任务赢卷积"被白纸黑字写下来。这一篇论文也直接把后续工业界的 backbone 选择拉向 Transformer。
+DiT-XL/2 第一次让"Transformer 在生图任务赢卷积"被白纸黑字写下来，后续工业 backbone 选择也跟着偏向 Transformer。
+
+**最小形状推演（可跟做）**：256×256 图经 SD VAE（下采样 8×）→ latent `32×32×4`；patch size=2 → 每维 `32/2=16`，共 `16×16=256` 个 token，再送进 Transformer——这就是案例表里 `/2` 的含义。
 
 ### 案例 2：Sora 直接用 DiT 做视频
 
@@ -112,8 +116,8 @@ DiT 论文从挂 arXiv 到工业全面接受，花了一年半。架构革命从
 7. **Sora 出圈靠论文背书**：Sora 报告反复 cite DiT 而非把架构当黑盒，这种"论文 → 工业 → 出圈" 的反向引用让 academia 与 industry 之间有了一条可验证的传承链。
 8. **AdaLN-Zero 是稳定深网的法宝**：每个 block 初始 = identity，从 do-nothing 起步比从随机起步稳得多——这条思想跟 ResNet 残差、ControlNet zero conv、LoRA B 矩阵零初始化是一条线。
 9. **MMDiT（SD3）的双流注意力是延伸**：把文本和图像 token 分双流走 attention，再融合——延续 DiT 解耦思路，把"backbone 解耦" 推进到"模态解耦"。
-10. **scaling law 跨任务普适**：DiT 把语言里的 scaling law 搬到图像生成，证明它不是 NLP 专利；后续 Sora（视频）、AlphaFold（结构）都遵循同一规律。
-11. **理论简洁不等于工程接受**：DiT 在 2022 论文里就量化了 U-Net 不必要，但工业界等到 SD 3 / Sora 2024 才切——纸面证据 vs 工业证据是两条曲线，前者快后者慢。
+10. **scaling law 跨任务普适**：DiT 把语言里的 scaling law 搬到图像生成；后续 Sora（视频）、SD3/FLUX（多模态 DiT）继续沿同一条"加算力换质量"曲线走。
+11. **理论简洁不等于工程接受**：DiT 在 2022 论文里就量化了 U-Net 可替换，但工业界等到 SD3 / Sora 2024 才大规模切换——纸面证据 vs 工业证据是两条曲线。
 
 ## 延伸阅读
 

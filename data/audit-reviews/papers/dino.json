@@ -1,0 +1,143 @@
+{
+  "slug": "dino",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.11,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么 / ## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇缺少日常类比，直接堆 ViT / EMA / multi-crop / [CLS]，零基础无法入门。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例只有一段论文伪代码，没有 ### 案例 1/2/3 与逐部分解释。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "centering / sharpening / CorLoc / J&F 等术语首次出现缺少桥接。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文写 global crop 覆盖 50%-100%，附录表写 (0.4, 1.0)，彼此矛盾；应按论文常用 (0.4, 1.0) 统一。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 缺 日期/分类/难度，且多出 arxiv 字段；应按新格式补全。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“第一次跨过 supervised ViT”需限定为文中 ViT-B/8 linear/k-NN 设定，避免读成一切 supervised ViT 都被全面超越。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "应拆成可跟做的 3 个案例（一步训练损失、读 attention、选模型档位），而不是单段 Algorithm 1。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与算力边界（8×V100、batch/momentum）有用，可保留。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 2,
+        "case_clarity": 2
+      },
+      "average": 2.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么 / ## 实践案例",
+      "fix_hints": [
+        "开篇缺少日常类比，直接堆 ViT / EMA / multi-crop / [CLS]，零基础无法入门。",
+        "实践案例只有一段论文伪代码，没有 ### 案例 1/2/3 与逐部分解释。",
+        "centering / sharpening / CorLoc / J&F 等术语首次出现缺少桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "正文写 global crop 覆盖 50%-100%，附录表写 (0.4, 1.0)，彼此矛盾；应按论文常用 (0.4, 1.0) 统一。",
+        "frontmatter 缺 日期/分类/难度，且多出 arxiv 字段；应按新格式补全。",
+        "“第一次跨过 supervised ViT”需限定为文中 ViT-B/8 linear/k-NN 设定，避免读成一切 supervised ViT 都被全面超越。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "应拆成可跟做的 3 个案例（一步训练损失、读 attention、选模型档位），而不是单段 Algorithm 1。",
+        "踩坑与算力边界（8×V100、batch/momentum）有用，可保留。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "补日常类比与术语桥接；拆成案例 1/2/3；统一 crop 尺度；补全 frontmatter；去掉附录并压到 150–200 行。",
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

@@ -80,16 +80,19 @@ packages:
 ### 案例 3：验证硬链接是真的共享 inode
 
 ```bash
-# 找项目里某个文件的 inode
+# 找项目里某个文件的 inode（Linux / macOS 语法不同）
+# Linux:
+stat -c '%i' node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js
+# macOS:
 stat -f '%i' node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js
 # 假设输出 1234567
 
-# 在全局仓库里反查同一个 inode
+# 在全局仓库里反查同一个 inode（两边通用）
 find ~/.pnpm-store/v3/files -inum 1234567
 # 输出指向某个 hash 路径，证明它和项目里的文件是同一个 inode
 ```
 
-`-inum` 找 inode 号——硬链接的本质是"多个路径指向同一个 inode"。这个实验让你亲眼看到 pnpm 的核心机制不是"复制再 dedupe"，是文件系统层面的共享。
+`-inum` 找 inode 号——硬链接的本质是"多个路径指向同一个 inode"。这个实验让你亲眼看到 pnpm 的核心机制不是"复制再 dedupe"，是文件系统层面的共享。注意 `stat` 的格式参数跨平台不通用，照抄错平台会直接报错。
 
 ## 踩过的坑
 

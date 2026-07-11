@@ -29,62 +29,68 @@ BFV 方案的工作方式可以拆成**三步**：
 
 1. **加密：把整数藏进多项式**：明文整数被编码进一个多项式环 Z_t[x]/(x^n+1) 里，加上随机噪声后变成密文。类比：把消息写成一首诗，然后往每个字上泼墨点（噪声），别人看到墨迹猜不出原文。
 
-2. **同态运算：加密态下直接算**：两个密文相加或相乘，对应明文也做了同样的运算。但每次乘法会让噪声膨胀——乘一次噪声大约翻倍。类比：每复印一次，纸张上的噪点就多一层，复印太多次就糊得看不清了。
+2. **同态运算：加密态下直接算**：两个密文相加或相乘，对应明文也做了同样的运算。每次乘法会让噪声**显著膨胀**（近似二次增长，远不止翻倍）。类比：每复印一次，纸张上的噪点就厚一层，复印太多次就糊得看不清了。
 
-3. **噪声控制：重线性化 + 模数切换**：乘法后密文会"变大"（维度增长），重线性化把它压回去；模数切换逐步缩小模数来控制噪声增长。这两步让 BFV 能在有限的乘法深度内保持正确。
+3. **噪声控制：scale-invariant + 重线性化**：BFV 继承 Brakerski 的 scale-invariant 设计——密文相对模数的"比例"保持稳定，**不必像 BGV 那样靠模数切换管噪声**；乘法后密文维度从 2 涨到 3，重线性化再压回 2。论文里的模切主要用于简化 bootstrapping 分析，不是日常乘法的标配。
 
 ## 实践案例
 
-### 案例 1：用 SEAL 做 BFV 加密加法
+### 案例 1：用 SEAL 风格 API 做 BFV 加密加法
+
+（下列贴近 Microsoft SEAL 的 Python 绑定写法；装包名以官方/社区文档为准。）
 
 ```python
-from seal import SEALContext, KeyGenerator, Encryptor, Evaluator
+from seal import (EncryptionParameters, scheme_type, CoeffModulus,
+                  SEALContext, KeyGenerator, Encryptor, Evaluator,
+                  Decryptor, BatchEncoder, Plaintext, Ciphertext)
 
-params = SEALContext.Parameters()
-params.set_poly_modulus_degree(4096)
-params.set_coeff_modulus(128)  # 128-bit security
-context = SEALContext.Create(params)
+parms = EncryptionParameters(scheme_type.bfv)
+parms.set_poly_modulus_degree(4096)          # 多项式度 n
+parms.set_coeff_modulus(CoeffModulus.BFVDefault(4096))
+parms.set_plain_modulus(1024)                # 明文模数 t
+ctx = SEALContext(parms)
 
-keygen = KeyGenerator(context)
-encryptor = Encryptor(context, keygen.public_key())
-evaluator = Evaluator(context)
+keygen = KeyGenerator(ctx)
+pub, sec = keygen.public_key(), keygen.secret_key()
+encoder = BatchEncoder(ctx)                  # 整数 ↔ 多项式槽
+encryptor, evaluator = Encryptor(ctx, pub), Evaluator(ctx)
+decryptor = Decryptor(ctx, sec)
 
-# 加密两个整数
-ct_a = encryptor.encrypt(encode(42))
-ct_b = encryptor.encrypt(encode(10))
-
-# 密文上加法 → 解密得 52
-ct_sum = evaluator.add(ct_a, ct_b)
+# 四步：编码 → 加密 → 密文加法 → 解密
+pt_a, pt_b = Plaintext(), Plaintext()
+encoder.encode([42], pt_a); encoder.encode([10], pt_b)
+ct_a, ct_b, ct_sum = Ciphertext(), Ciphertext(), Ciphertext()
+encryptor.encrypt(pt_a, ct_a); encryptor.encrypt(pt_b, ct_b)
+evaluator.add(ct_a, ct_b, ct_sum)            # 服务端无私钥
+# decryptor.decrypt(ct_sum, ...) → 槽里是 52
 ```
 
-逐部分解释：先设置多项式度和安全参数（决定能做多深的运算），再生成密钥对，加密 42 和 10 两个整数，在密文上直接做加法，解密后得到 52。全程服务端没有私钥。
+逐部分解释：① 设 n / q / t（决定安全与乘法深度）；② 生成公私钥；③ `BatchEncoder` 把整数放进多项式槽再加密；④ 在密文上 `add`，解密得 52。
 
-### 案例 2：密文乘法与噪声增长
+### 案例 2：密文乘法与重线性化
 
 ```python
-# 密文乘法 → 解密得 420
-ct_prod = evaluator.multiply(ct_a, ct_b)
-# 乘法后需要重线性化，把密文维度压回 2
-ct_prod = evaluator.relinearize(ct_prod, keygen.relin_keys())
+relin_keys = keygen.relin_keys()
+ct_prod = Ciphertext()
+evaluator.multiply(ct_a, ct_b, ct_prod)      # 维度 2→3，噪声大涨
+evaluator.relinearize_inplace(ct_prod, relin_keys)  # 压回维度 2
+# 解密槽值 ≈ 420；不做 relinearize，连乘几次密文会胀到不可用
 ```
 
-乘法后密文维度从 2 变成 3，噪声也显著增长。`relinearize` 用重线性化密钥把维度压回 2，让后续运算能继续。不做这步，连乘几次密文就会膨胀到不可用。
+乘法后密文多一项，噪声也近似二次膨胀。`relinearize` 用重线性化密钥把维度压回 2，后续才能继续乘。
 
 ### 案例 3：批量打包（SIMD）
 
 ```python
-# 一个密文里打包多个整数
-batch_encoder = BatchEncoder(context)
-plain = batch_encoder.encode([1, 2, 3, 4, 5, 6, 7, 8])
-ct_batch = encryptor.encrypt(plain)
-
-# 一条密文运算 = 8 个整数同时运算
-ct_doubled = evaluator.multiply_plain(
-    ct_batch, batch_encoder.encode([2] * 8))
-# 解密得 [2, 4, 6, 8, 10, 12, 14, 16]
+pt_vec, pt_two, ct_batch, ct_doubled = Plaintext(), Plaintext(), Ciphertext(), Ciphertext()
+encoder.encode([1, 2, 3, 4, 5, 6, 7, 8], pt_vec)
+encryptor.encrypt(pt_vec, ct_batch)
+encoder.encode([2] * 8, pt_two)
+evaluator.multiply_plain(ct_batch, pt_two, ct_doubled)
+# 解密得 [2, 4, 6, 8, 10, 12, 14, 16]——一条密文算 8 个槽
 ```
 
-多项式环的中国剩余定理（CRT）把环分解成多个"槽"，每个槽放一个整数。一次密文运算同时处理所有槽——这就是 SIMD 批处理，把吞吐量提高 n 倍。
+中国剩余定理（CRT）把环拆成多个槽，一次密文运算同时处理所有槽，吞吐量约提高 n 倍。
 
 ## 踩过的坑
 

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "宜家「整套书柜 vs 单卖铰链」类比贴合双形态"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "HttpKernel / DI / EventDispatcher 均有日常类比；autowiring 对零基础仍略抽象但案例补足"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有逐部分解释，属性路由 + 构造注入 + AsEventListener 可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每年发一次 LTS」事实错误：Symfony LTS 是每个 major 分支末次 minor（X.4），约每两年一次，不是每年"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Composer 生态里半数包名带 symfony/」过满，宜改为「大量底层包 / 很多基础设施包依赖 symfony/*」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "时间线 2005 Sensio / 2007 1.0 / 2011 2.0 组件化 / Laravel·Drupal 采用大体正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "PHP 8 attribute 路由 / autowiring / AsEventListener 示例可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：cache:clear、private 服务、多候选歧义、prod 不读 .env——都可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可再点明中大型单体 vs 极简单文件 API 的体量分界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "宜家「整套书柜 vs 单卖铰链」类比贴合双形态",
+        "HttpKernel / DI / EventDispatcher 均有日常类比；autowiring 对零基础仍略抽象但案例补足",
+        "三个案例都有逐部分解释，属性路由 + 构造注入 + AsEventListener 可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「每年发一次 LTS」事实错误：Symfony LTS 是每个 major 分支末次 minor（X.4），约每两年一次，不是每年",
+        "「Composer 生态里半数包名带 symfony/」过满，宜改为「大量底层包 / 很多基础设施包依赖 symfony/*」",
+        "时间线 2005 Sensio / 2007 1.0 / 2011 2.0 组件化 / Laravel·Drupal 采用大体正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "PHP 8 attribute 路由 / autowiring / AsEventListener 示例可跟做",
+        "踩坑具体：cache:clear、private 服务、多候选歧义、prod 不读 .env——都可操作",
+        "适用/不适用边界清楚；可再点明中大型单体 vs 极简单文件 API 的体量分界"
+      ]
+    }
+  ]
+}

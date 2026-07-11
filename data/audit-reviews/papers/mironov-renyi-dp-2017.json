@@ -1,0 +1,117 @@
+{
+  "slug": "mironov-renyi-dp-2017",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "超市打包折扣与多把尺子类比贴合 RDP 组合/选 α，零基础能抓住直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "邻接数据集、L2 敏感度 Δ₂、α 尾部偏差首次出现桥接偏短，高级主题仍需一句人话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例代码有注释且标明简化；案例 1/2 偏工业叙事，可再补一句旋钮含义"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "zCDP 作者误写为 Bun & Maddock，应为 Bun & Steinke (2016)；延伸阅读同步改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「zCDP 等价于固定 α=2 的 RDP」不准确：ρ-zCDP 对应整族 ε(α)=ρα，宜改为简化特例表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Mironov CSF 2017、高斯机制闭式 (α, α·Δ₂²/(2σ²))-RDP、与 moments accountant 血缘大体正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "简化 RDP 会计可跟做，且已注明真实子采样公式更复杂并指向 dp_accounting/opacus"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "α 网格、RDP ε vs DP ε、泊松采样前提、自适应组合四条踩坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用对组合步数、噪声族、法规解释场景边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "超市打包折扣与多把尺子类比贴合 RDP 组合/选 α，零基础能抓住直觉",
+        "邻接数据集、L2 敏感度 Δ₂、α 尾部偏差首次出现桥接偏短，高级主题仍需一句人话",
+        "案例代码有注释且标明简化；案例 1/2 偏工业叙事，可再补一句旋钮含义"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "zCDP 作者误写为 Bun & Maddock，应为 Bun & Steinke (2016)；延伸阅读同步改正",
+        "「zCDP 等价于固定 α=2 的 RDP」不准确：ρ-zCDP 对应整族 ε(α)=ρα，宜改为简化特例表述",
+        "来源 Mironov CSF 2017、高斯机制闭式 (α, α·Δ₂²/(2σ²))-RDP、与 moments accountant 血缘大体正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "简化 RDP 会计可跟做，且已注明真实子采样公式更复杂并指向 dp_accounting/opacus",
+        "α 网格、RDP ε vs DP ε、泊松采样前提、自适应组合四条踩坑具体可操作",
+        "适用/不适用对组合步数、噪声族、法规解释场景边界清楚"
+      ]
+    }
+  ],
+  "lines": 160,
+  "l1_pass": true
+}

@@ -15,15 +15,15 @@ LLM.int8() 是一种**把 transformer 推理时的矩阵乘法从 16-bit 压成 
 1. 普通衣服用一种"按列定制"的折法（**vector-wise 量化**）尽量不变形
 2. 那几件羽绒服**单独留一个高精度的盒子装**（FP16 路径），其他 99.9% 的衣服走 INT8 路径
 
-这是把"175B 参数模型 350GB → 175GB、单台服务器就能跑"的工程现实背后的算法。
+这是把"175B 参数模型 FP16 约 350GB → INT8 约一半显存、单台多卡消费级服务器就能跑"的工程现实背后的算法。
 
 ## 为什么重要
 
-- **OPT-175B / BLOOM-176B 的 8 张消费级 GPU 推理**——没有 LLM.int8() 之前，这些模型只能跑在 H100 集群上
-- **第一次发现并量化描述了 outlier 通道现象**——后续 SmoothQuant / AWQ / GPTQ / QLoRA 全部建立在这个观察上
-- **`load_in_8bit=True` 一行代码搞定**——HuggingFace transformers 默认集成了 bitsandbytes 库，作者就是 Tim Dettmers
-- **零精度损失**——之前所有 INT8 方法在大模型上都会掉 5–10 个困惑度点，本文是第一个零掉点的
-- **打开了 4-bit 时代**——后续 QLoRA（NF4）、AWQ、GPTQ 都是这条路上的延续
+- **OPT-175B / BLOOM-176B 的单台消费级 GPU 服务器推理**——之前通常要多张 A100 级数据中心卡或多机；本文把 FP16 显存需求大约砍半
+- **第一次系统描述并工程化处理 outlier 通道**——后续 SmoothQuant / AWQ / GPTQ / QLoRA 都建立在相关观察上
+- **`load_in_8bit=True` 一行代码搞定**——HuggingFace transformers 集成了 bitsandbytes，作者之一就是 Tim Dettmers
+- **接近 FP16 的精度**——此前大模型 INT8 常掉数个困惑度点；本文在 175B 上报告与 16-bit 相当、无明显退化
+- **打开了更低比特路线**——后续 QLoRA（NF4）、AWQ、GPTQ 都是这条路上的延续
 
 如果你想理解今天为什么能在一张 24G 消费级显卡上微调 70B 模型，这篇是源头。
 
@@ -93,7 +93,7 @@ Y = X_int8 · W_int8 / scales + X_fp16 · W_fp16
 | **8-bit vector-wise** | 12.72 |
 | **LLM.int8() (vector + decomp)** | **12.45** |
 
-只有加了**异常分解**那一步才能完全无损——单靠 vector-wise 在 6.7B 之后就会开始掉点。
+只有加了**异常分解**那一步才能回到与 FP16 相当——单靠 vector-wise 在 6.7B 之后就会开始掉点。
 
 ### 案例 3：用起来什么样
 
@@ -135,7 +135,7 @@ model = AutoModelForCausalLM.from_pretrained(
 - 训练阶段量化 → LLM.int8() 是推理工具
 - 小于 6.7B 的模型 → 简单 vector-wise 量化即可，不需要这套
 
-## 历史脉络（可跳过）
+## 历史小故事（可跳过）
 
 - **2018–2021 年**：CNN 量化（DoReFa / LSQ）、BERT 量化（Q-BERT）成熟，但 LLM 上做 INT8 总是掉点 5–10
 - **2021 年**：作者 Tim Dettmers 在 GPT-3 复现 OPT-175B 时遇到内存墙，开始挖根因

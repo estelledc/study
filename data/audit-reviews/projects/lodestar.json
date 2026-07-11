@@ -1,0 +1,143 @@
+{
+  "slug": "lodestar",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例应用 ### 案例 1/2/3，并给每段补「逐部分解释」；案例 3 目前几乎无代码"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Beacon Chain / attestation / gossipsub / sync committee 等术语首次出现时桥接偏短，核心要点三段过密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "历史小故事建议改成时间线 bullet，并加（可跳过）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文写「完全使用 TypeScript」，但同篇踩坑已承认 Zig NAPI 加速热路径；GitHub 亦描述为 Zig+TS 生态——应改成「以 TypeScript 为主、热路径可挂原生模块」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题「唯一用 TypeScript 写的」可保留为 JS 生态定位，但避免「完全」绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "轻客户端示例缺少 LightClientRestTransport 导入，且 genesisTime / genesisValidatorsRoot 未定义，跟做会卡住"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑应改成编号 1/2/3/4 短 bullet，便于扫读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联段应改用 [[wikilink]]，并补到 5–7 条；当前 /study/projects/ 路径不符合笔记惯例"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例应用 ### 案例 1/2/3，并给每段补「逐部分解释」；案例 3 目前几乎无代码",
+        "Beacon Chain / attestation / gossipsub / sync committee 等术语首次出现时桥接偏短，核心要点三段过密",
+        "历史小故事建议改成时间线 bullet，并加（可跳过）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文写「完全使用 TypeScript」，但同篇踩坑已承认 Zig NAPI 加速热路径；GitHub 亦描述为 Zig+TS 生态——应改成「以 TypeScript 为主、热路径可挂原生模块」",
+        "标题「唯一用 TypeScript 写的」可保留为 JS 生态定位，但避免「完全」绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "轻客户端示例缺少 LightClientRestTransport 导入，且 genesisTime / genesisValidatorsRoot 未定义，跟做会卡住",
+        "踩过的坑应改成编号 1/2/3/4 短 bullet，便于扫读",
+        "关联段应改用 [[wikilink]]，并补到 5–7 条；当前 /study/projects/ 路径不符合笔记惯例"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.56,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审均 needs-refine：修正「完全 TypeScript」表述；案例改为 ### 案例+逐部分解释并补全导入；踩坑编号化；关联改 [[wikilink]]。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 154,
+  "l1_pass": true
+}

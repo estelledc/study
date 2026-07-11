@@ -10,12 +10,12 @@ title: Element Android — Matrix 协议官方 Android 客户端（Kotlin + Real
 
 Element Android 是 **Matrix 协议**的官方 Android 客户端，由 Element 公司维护，全 Kotlin 编写。日常类比：把"邮箱客户端"改成"聊天客户端"——你在手机上点开 Element 看消息，它在背后向你自己（或别人架的）Matrix homeserver 不停拉新事件，再把端到端加密的密文解出来摆给你看。
 
-Matrix 是去中心化协议：每家服务器（Synapse / Dendrite）跑一份，用户消息在不同服务器之间联邦同步。Element Android 不关心联邦怎么走——那是服务端的事——它只跟自己登录的那台 homeserver 说话，剩下的它当作"远端用户"看待。
+Matrix 是去中心化协议：每家服务器（Synapse / Dendrite）跑一份，用户消息在不同服务器之间**联邦**同步——像邮件跨邮局投递，你家服务器帮你把消息转给对方服务器。Element Android 不关心联邦怎么走——那是服务端的事——它只跟自己登录的那台 **homeserver**（你家"邮局"/账号所在服务器）说话，剩下的它当作"远端用户"看待。
 
 最小用法：从 Google Play 装一个 Element，登录 matrix.org（或自架的 homeserver），就能加房间、收发加密消息、视频通话（走 Jitsi）。
 
 ```kotlin
-// matrix-android-sdk2 的核心入口大致长这样
+// matrix-android-sdk2 登录入口示意（方法名随 SDK 小版本可能微调，以仓库为准）
 val matrix = Matrix.getInstance(context)
 val session = matrix.authenticationService()
     .getLoginWizard()
@@ -28,7 +28,7 @@ session.startSync(true)  // 后台长轮询拉事件
 ## 为什么重要
 
 - 不理解 Element Android，就解释不清"为什么 Slack/Discord 是中心化的、Matrix 不是"——前者数据全在一家公司，后者每个 homeserver 各自存
-- 它是迄今为止 Matrix 在 Android 端**用户量最大**的客户端，几乎所有政府/医疗/军方私有部署都先选它（德国 TI-M 医疗即时通讯、法国 Tchap 都是基于它改的）
+- 它是迄今为止 Matrix 在 Android 端**用户量最大**的客户端；多国政府与医疗私有部署常基于它 fork（德国 TI-M 医疗即时通讯、法国 Tchap 都是改品牌重打包）
 - 想看"Kotlin + 协程 + Realm + 端到端加密"在一个真生产 app 里怎么搭，这是公开样本里最完整的一个
 - 看它怎么被 Element X 替代，能理解"为什么 Element 公司决定把核心搬到 Rust"——这是 [[matrix-rust-sdk]] 的反面教材
 
@@ -40,7 +40,7 @@ Element Android 的工程价值集中在 **三件事**：
 
 2. **Realm 当本地缓存**：每个房间的事件、状态、密钥都先写进 Realm 数据库，UI 从 Realm 读。好处是离线可用 + 秒级冷启动；代价是 Realm 强引用线程（见踩坑 1），跨线程传对象会崩。
 
-3. **E2EE 走 Olm + Megolm + libolm**：双人对话用 Olm（基于 X3DH 双棘轮，类似 Signal）；群聊用 Megolm（一把"会话密钥"分发给所有成员，单向棘轮省算力）。底层调 C 写的 libolm，Kotlin 包一层 JNI。密钥本身存在 Realm 加密 store 里。
+3. **E2EE（端到端加密）走 Olm + Megolm + libolm**：双人对话用 **Olm**（两人之间的密钥协商，底层是 X3DH 一类双棘轮，直觉类似 Signal）；群聊用 **Megolm**（先把一把"会话密钥"分给成员，再单向推进，省群聊算力）。底层是 C 写的 **libolm**，Kotlin 经 **JNI**（Java 调本地库的桥）调用。密钥本身存在 Realm 加密 store 里；跨设备恢复靠 **SSSS**（把密钥加密备份到服务器，用恢复密码取回）。
 
 外面再裹两件事：**flavor 拆分**（Google Play 用 FCM 推送、F-Droid 用 UnifiedPush）和 **Jitsi WebRTC**（视频会议另起一套，不走 Matrix 自己的 1:1 RTP）。
 
@@ -77,7 +77,7 @@ productFlavors {
 
 ### 案例 3：迁移到 Element X Android
 
-老 Element Android 加密会话存在本地 crypto store。换设备或迁移到新 app（Element X）时，得先打开**密钥备份（SSSS）**：用一串恢复密码把所有 Megolm 密钥加密上传到 homeserver，新设备登录后输入恢复密码拉回来。
+老 Element Android 加密会话存在本地 crypto store。换设备或迁移到新 app（Element X）时，得先打开**密钥备份（SSSS，Secure Secret Storage）**：用一串恢复密码把所有 Megolm 群聊会话密钥加密上传到 homeserver，新设备登录后输入恢复密码拉回来。
 
 ```text
 设置 → 加密 → 安全密钥与备份 → 设置恢复密码 → 备份所有密钥
@@ -105,7 +105,7 @@ productFlavors {
 
 **不适用**：
 - 新启动的 Matrix 客户端项目——官方推荐直接用 [[matrix-rust-sdk]] + Element X Android 模板
-- 想要 6 倍冷启动速度——matrix-android-sdk2 的纯 Kotlin 状态机比 Rust 实现慢
+- 要明显更快的冷启动 / 更少加密三端不一致——旧版 matrix-android-sdk2 的纯 Kotlin 状态机通常慢于 Element X 的 Rust 核心
 - 不需要 E2EE 的内部公司 IM——直接用 Mattermost / Rocket.Chat 简单得多
 
 ## 历史小故事（可跳过）

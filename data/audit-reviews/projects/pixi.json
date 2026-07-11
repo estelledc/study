@@ -1,0 +1,137 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "铅笔手绘 vs 打印机喷沓、俄罗斯套娃、快递合捆类比能懂 GPU 批处理"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Container / Batching / drawCall / filter 离屏有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 步骤清楚；案例 2 若 API 过时会让新手照抄失败，需与正文 v8 叙述对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 仍写 v7 风格 ParticleContainer(maxSize, props)+Sprite.addChild；v8 已改为 Particle + dynamicProperties + addParticle——与正文「v8」叙述冲突，必须改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 pixijs/pixijs 正确；Application async init、Assets 替换 Loader 与 v8 迁移一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用场景里「盲盒动效」贴近红线语义，宜改成中性互动/营销动效表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 符合 v8；案例 2 按现写法在 v8 不可跑，应改为 ParticleContainer({ dynamicProperties }) + Particle + addParticle"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑有用（v7→v8、filter RT、addChild 贵、scene graph≠数据层）；「Jason 在 H5…」属个人旁注，宜删"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 H5/可视化 vs 3D/DOM/完整游戏引擎边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "铅笔手绘 vs 打印机喷沓、俄罗斯套娃、快递合捆类比能懂 GPU 批处理",
+        "Container / Batching / drawCall / filter 离屏有桥接",
+        "案例 1 步骤清楚；案例 2 若 API 过时会让新手照抄失败，需与正文 v8 叙述对齐"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 仍写 v7 风格 ParticleContainer(maxSize, props)+Sprite.addChild；v8 已改为 Particle + dynamicProperties + addParticle——与正文「v8」叙述冲突，必须改正",
+        "来源 pixijs/pixijs 正确；Application async init、Assets 替换 Loader 与 v8 迁移一致",
+        "适用场景里「盲盒动效」贴近红线语义，宜改成中性互动/营销动效表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 符合 v8；案例 2 按现写法在 v8 不可跑，应改为 ParticleContainer({ dynamicProperties }) + Particle + addParticle",
+        "踩坑有用（v7→v8、filter RT、addChild 贵、scene graph≠数据层）；「Jason 在 H5…」属个人旁注，宜删",
+        "适用 H5/可视化 vs 3D/DOM/完整游戏引擎边界清楚"
+      ]
+    }
+  ],
+  "slug": "pixi",
+  "area": "projects",
+  "status": "refined",
+  "aggregate": {
+    "action": "refine",
+    "average": 3.67,
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "pass_count": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172
+  },
+  "lines": 172,
+  "l1_pass": true,
+  "refinement": {
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  }
+}

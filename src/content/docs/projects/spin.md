@@ -93,7 +93,7 @@ source = "dist/spin-app.wasm"
 allowed_outbound_hosts = ["https://api.github.com"]
 ```
 
-不加 `allowed_outbound_hosts`，`fetch` 会**静默失败**——这是 wasm 沙箱默认拒绝出站的安全策略。你必须显式列出白名单。
+不加 `allowed_outbound_hosts`，`fetch` 会被宿主**直接拒绝/报错**（不是悄悄返回成功）——这是 wasm 沙箱默认拒绝出站的安全策略。你必须显式列出白名单。
 
 ## 踩过的坑
 
@@ -101,7 +101,7 @@ allowed_outbound_hosts = ["https://api.github.com"]
 
 2. **各语言 SDK 能力不齐**：Python SDK 没 MySQL/Postgres 客户端，C# 还不支持 Redis trigger，自定义 trigger 只能 Rust 写。选语言前先去文档查特性矩阵。
 
-3. **沙箱默认零权限**：模块开箱**没文件系统、没网络、没环境变量**。不在 `spin.toml` 里声明 `allowed_outbound_hosts` / `files` / 数据库 store，代码就静默拿不到资源，新人会以为是 SDK 坏了。
+3. **沙箱默认零权限**：模块开箱**没文件系统、没网络、没环境变量**。不在 `spin.toml` 里声明 `allowed_outbound_hosts` / `files` / 数据库 store，出站或读文件会直接失败，新人容易误以为是 SDK 坏了。
 
 4. **Spin 1.x 和 2.x 不兼容**：1.x 用 WASI Preview 1，2.x 切到 Preview 2 + 组件模型，老博客的 `spin_sdk::http_component` 注解、`wasm32-wasi` target 都改过了，复制代码前先看版本号。
 
@@ -126,7 +126,7 @@ allowed_outbound_hosts = ["https://api.github.com"]
 - **2021 年**：Matt Butcher、Radu Matei 等前 Deis/Helm（Kubernetes 包管理）核心成员离职创立 Fermyon，定位"专做 wasm serverless 平台"。
 - **2022 年初**：Spin 0.1 开源发布，那时候只有 Rust SDK，trigger 只支持 HTTP。
 - **2023 年**：Spin 2.0 切换到 WASI Preview 2 + 组件模型，第一次能让不同语言写的组件互相调用。
-- **2024-2025 年**：Adobe、ByteDance 等大厂在边缘和实验性场景试水，GitHub star 突破 6.5k，进入主流视野。
+- **2024-2025 年**：Adobe、ByteDance 等大厂在边缘和实验性场景试水；仓库迁至 `spinframework/spin`，社区星标过万量级，进入主流视野。
 - **持续演进**：WASI 标准还在迭代，每个 Spin 大版本都会跟着标准更新——这也是 1.x/2.x 不兼容的根因。
 
 ## 学到什么

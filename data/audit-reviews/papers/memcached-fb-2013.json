@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "奶茶店便签类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "lease / gutter / cold warmup / regional pool / mcsqueal 都有白话步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "五则案例逐步编号清楚，可直接跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Nishtala et al. NSDI 2013 正确；lease 10s、UDP get/TCP set、mcsqueal、cold warmup、regional pool 与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Facebook 是 500:1」过满：论文写 reads 比 writes 高约两个数量级；Table 2 各 pool get:set 约 8:1–400:1，宜改为「约两个数量级 / 视 pool 而定」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "gutter「留 1% 机器」论文只写 small reserved pool，未给 1% 硬数，宜弱化为「少量备用机」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "lease/gutter/warmup/mcsqueal 流程可照着落地设计讨论"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "UDP/TCP 分工、stale set、regional 冷热升级反馈环等坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有读多写少/最终一致/小 KV；可再点明「强一致别靠 cache」已写清"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "奶茶店便签类比贯穿全文，零基础直觉强",
+        "lease / gutter / cold warmup / regional pool / mcsqueal 都有白话步骤",
+        "五则案例逐步编号清楚，可直接跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "来源 Nishtala et al. NSDI 2013 正确；lease 10s、UDP get/TCP set、mcsqueal、cold warmup、regional pool 与论文一致",
+        "「Facebook 是 500:1」过满：论文写 reads 比 writes 高约两个数量级；Table 2 各 pool get:set 约 8:1–400:1，宜改为「约两个数量级 / 视 pool 而定」",
+        "gutter「留 1% 机器」论文只写 small reserved pool，未给 1% 硬数，宜弱化为「少量备用机」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "lease/gutter/warmup/mcsqueal 流程可照着落地设计讨论",
+        "UDP/TCP 分工、stale set、regional 冷热升级反馈环等坑具体",
+        "适用边界有读多写少/最终一致/小 KV；可再点明「强一致别靠 cache」已写清"
+      ]
+    }
+  ]
+}

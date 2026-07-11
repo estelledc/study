@@ -31,7 +31,7 @@ Reformer 是 Google / UC Berkeley 在 2020 年提出的**省显存版 Transforme
 
 Reformer 的两块改造分开看：
 
-1. **LSH attention**：query 和 key 都过同一个哈希函数，哈希值相近的进同一个桶。每个 query 只和自己桶里的 key 做 dot product。哈希函数选的是"随机投影 + 取符号"——投到同一象限的向量就是相似的。
+1. **LSH attention**：query 和 key 都过同一个哈希函数，哈希值相近的进同一个桶。每个 query 只和自己桶里的 key 做 dot product。实现上常用 **shared-QK**（令 Q=K），这样"自己和自己哈希"更稳。哈希函数是"随机投影 + 取符号"——投到同一象限的向量就是相似的。
 
 2. **多轮哈希**：单轮哈希会漏配（真相似但被分到不同桶），所以做 `n_hashes` 轮（通常 4-8），把每轮的结果合并。轮数越多越接近真值，但越慢。
 
@@ -74,25 +74,27 @@ x2 = y2 - g(y1)
 x1 = y1 - f(x2)
 ```
 
-一行减法就推回去了。代价是每层反向多一次 f / g 前向，**FLOPs 多约 33%，显存常数级**。
+一行减法就推回去了。代价是每层反向多一次 f / g 前向，**FLOPs 大约多 1/3 量级，显存接近常数级**。
 
 类比：普通残差像每翻一页书都拍照存档，可逆残差像知道每页是上一页的某种确定性变换，丢了也能凭最后一页倒推回去。
 
-### 案例 3：能解决什么问题
+### 案例 3：调 `n_hashes` 看漏配
 
-论文的实验配方：
+跟做时先固定桶大小，只改哈希轮数：
 
-- **enwik8**（字符级语言模型，序列 64K）：12 层 Reformer 性能等同 12 层标准 Transformer，但后者根本塞不进 16GB
-- **imagenet64**（像素级图像生成，序列 4096+）：把 64×64 图展开成像素 token 序列，用 Reformer 做自回归生成
-- **合成 copy 任务**：验证 LSH 在长依赖上不掉点
+1. `n_hashes=1`：同桶命中率低，长依赖 copy 任务容易掉点或发散
+2. `n_hashes=4`：论文常用起点，多数任务接近 dense attention
+3. `n_hashes=8`：更贴真值，但排序/分桶开销明显上涨
+
+论文在 **enwik8 64K** 上用约 12 层打平同规模标准 Transformer（后者塞不进 16GB）；**imagenet64** 把 64×64 像素当 token 序列做自回归。调参口诀：**先够用再加轮，别一上来拉满**。
 
 ## 踩过的坑
 
 1. **n_hashes 难调**：开太少（如 1-2 轮）哈希漏配严重，模型发散；开太多（>16）速度优势消失。论文推荐 4-8，但每个任务都得重调。
 
-2. **省显存不省算力**：reversible residual 反向重算前向，FLOPs 反而增加约 1/3。GPU 算力受限的场景比标准 Transformer 还慢——它换的是**显存墙**不是**算力墙**。
+2. **省显存不省算力**：reversible residual 反向重算前向，FLOPs 大约多 1/3 量级。GPU 算力受限的场景比标准 Transformer 还慢——它换的是**显存墙**不是**算力墙**。
 
-3. **短序列别用**：L < 1024 时，LSH 的分桶 / 排序 overhead 大于它省下的 attention 计算，比标准 Transformer 慢。短序列任务请用普通 Transformer。
+3. **短序列别用**：L ≲ 1024–2K 时，LSH 的分桶 / 排序 overhead 常大于省下的 attention，比标准 Transformer 慢。短序列请用普通 Transformer。
 
 4. **复现踩雷**：官方 Trax 实现历史包袱重，HuggingFace 的 Reformer 实现存在已知数值差异，复现 enwik8 64K 结果需要严格对照原始 config（哈希轮数、桶大小、学习率 schedule 都敏感）。
 
@@ -106,7 +108,7 @@ x1 = y1 - f(x2)
 
 **不适用**：
 
-- 短到中等序列（L < 2K）——纯 overhead 拖慢
+- 短到中等序列（L ≲ 1024–2K）——分桶/排序 overhead 主导，反而更慢
 - 推理对精度极敏感的任务——LSH 是近似
 - 已经能用 [[flash-attention]] 的现代场景——FlashAttention 精确、更快、实现更简单
 

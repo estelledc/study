@@ -28,32 +28,17 @@ title: Tilt — K8s 微服务本地开发的"文件保存即上线"
 - 10 个服务并行开发时，光等构建就要等到下班
 - `docker-compose` 不够用，因为生产环境是 K8s，本地不一致就会出 bug
 
-Tilt 的核心创新是 **live_update**：不重建镜像，直接把改动的文件 `kubectl cp` 进运行中的容器，再触发进程重启。**3 秒内**完成一次"代码 → 服务"循环。
+Tilt 的核心创新是 **live_update**：不重建镜像，用自有同步协议把改动文件送进运行中的容器，再触发进程重启。**3 秒内**完成一次"代码 → 服务"循环。
 
 ## 核心要点
 
 Tilt 的工作原理可以拆成 **三件事**：
 
-1. **Tiltfile**：用 **Starlark**（一种受限的 Python 子集，Bazel 也用）写配置。声明你有哪些服务、镜像怎么 build、K8s YAML 在哪里。
+1. **Tiltfile**：用 **Starlark**（受限的 Python 子集，Bazel 也用）写配置，声明服务、镜像、K8s YAML。类比：像一份"开工清单"，写清要起哪些店、货从哪来。
 
-2. **dev loop（开发循环）**：Tilt 监听文件变化 → 决定是 full rebuild 还是 live_update → 执行 → 更新 Web UI。
+2. **dev loop（开发循环）**：监听文件变化 → 决定 full rebuild 还是 live_update → 执行 → 更新 Web UI。类比：像自动流水线，你改图纸它就重做那一环。
 
-3. **live_update 协议**：在 Tiltfile 里告诉 Tilt"改了 `src/` 就 sync 进容器的 `/app/src/`，然后 `restart_container()`"——绕开镜像重建。
-
-```python
-# Tiltfile 示例
-docker_build(
-    'my-app',
-    '.',
-    live_update=[
-        sync('./src', '/app/src'),
-        run('pip install -r requirements.txt', trigger='./requirements.txt'),
-        restart_container(),
-    ]
-)
-k8s_yaml('deploy.yaml')
-k8s_resource('my-app', port_forwards=8080)
-```
+3. **live_update**：在 Tiltfile 里写"改了 `src/` 就 sync 到容器 `/app/src/`，再重启进程"——绕开镜像重建。类比：不重盖整栋楼，只换坏掉的那块砖。
 
 ## 实践案例
 
@@ -74,16 +59,27 @@ k8s_resource('my-api', port_forwards='8080:80')
 
 ### 案例 2：live_update 跳过镜像重建
 
-Python Flask 项目，改一行 view 函数：
+```python
+docker_build(
+    'my-api', '.',
+    live_update=[
+        sync('./src', '/app/src'),
+        run('pip install -r requirements.txt', trigger='./requirements.txt'),
+        restart_container(),
+    ]
+)
+k8s_yaml('k8s/api.yaml')
+```
 
-- 没 live_update：build 镜像 90 秒 → push → rollout → **总耗时 2 分钟**
-- 有 live_update：`sync` 文件进容器 → `restart_container` → **总耗时 3 秒**
+**逐步解释**：
 
-差距 40 倍。这是 Tilt 在大型项目里被采用的核心理由。
+1. `sync('./src', '/app/src')`：本机 `src/` 一改，同步进容器对应目录（不必重建镜像）
+2. `run(..., trigger=...)`：只有 `requirements.txt` 变了才重装依赖
+3. `restart_container()`：文件到位后重启进程，让新代码生效
+
+对比：没 live_update 约 2 分钟；有则约 **3 秒**，差约 40 倍。
 
 ### 案例 3：多服务依赖编排
-
-10 个服务的项目：
 
 ```python
 for svc in ['api', 'worker', 'web', 'auth']:
@@ -93,8 +89,7 @@ for svc in ['api', 'worker', 'web', 'auth']:
 k8s_resource('web', resource_deps=['api', 'auth'])
 ```
 
-`resource_deps` 告诉 Tilt"web 启动前必须先启动 api 和 auth"，避免启动顺序乱掉导致的连接错误。
-
+**逐行说明**：循环给四个服务各自 build + apply；`resource_deps` 规定 web 等 api、auth 就绪后再起，避免 web 一启动就连不上后端。
 ## 踩过的坑
 
 1. **Tiltfile 不是 Python**：是 Starlark，**不能 `import os`、不能用 list comprehension 的某些写法、没有 class**。新人常以为是 Python 一通乱写然后报错。
@@ -140,7 +135,8 @@ Tilt 与 Skaffold 的关键差异：Tilt 用 Starlark **写配置可以加逻辑
 ## 延伸阅读
 
 - 官网教程：[tilt.dev/getting-started](https://docs.tilt.dev/)（30 分钟跑通第一个项目）
-- 对比文章：[Tilt vs Skaffold vs DevSpace](https://docs.tilt.dev/choosing_clusters.html)（官方写的对比，相对客观）
+- 官方对比：[From Skaffold to Tilt](https://docs.tilt.dev/skaffold.html)（配置语言与 UI 差异）
+- 三方综述：[Skaffold vs Tilt vs DevSpace](https://www.vcluster.com/blog/skaffold-vs-tilt-vs-devspace)
 - 源码入口：[tilt-dev/tilt](https://github.com/tilt-dev/tilt) 的 `internal/engine/` 是 dev loop 核心
 - [[skaffold]] —— Google 的同类工具，YAML 配置
 - [[k3d]] —— 本地跑轻量 K8s 集群，常和 Tilt 搭配

@@ -78,11 +78,20 @@ Brewer 提出处理分区的工程模板：
 - 分区结束合并：**取并集**（不变量是"加进去的不能丢"，重复加一次的代价小）
 - Amazon Dynamo 论文里就是这套
 
+可以把它想成一条很朴素的规则：
+
+```js
+if (networkPartition) acceptLocalAddToCart()
+afterRecovery(() => cart = union(leftCart, rightCart))
+```
+
+读法：分区期间先保"能加购物车"，恢复后用并集把两边补齐。
+
 ### 案例 3：Google Spanner 反向操作
 
-- 用 GPS + 原子钟把"不确定的时间窗口"压到几毫秒
-- 等价于把"分区可能性窗口"压到极小
-- 让系统**逼近 CA**——不是违反 CAP，而是把 P 出现概率压到可忽略
+- 用 GPS + 原子钟把"时间不确定窗口"压到几毫秒
+- 平时没分区时，它愿意多等一小段 TrueTime 窗口来换强一致
+- 这不是消除 P，也不是违反 CAP；真分区时仍要取舍，只是正常路径的一致性延迟被控制住
 
 ### 案例 4：Yahoo PNUTS 跨地域
 
@@ -100,9 +109,9 @@ Brewer 提出处理分区的工程模板：
 为什么需要：**99.9% 的时间没分区**，但你仍要在"等所有副本同步（高一致 + 高延迟）"和"立刻返回（低延迟 + 弱一致）"之间选。CAP 没覆盖这一面，PACELC 补上。
 
 举例：
-- DynamoDB 默认 PA/EL（分区时 A，平时 L）
-- Spanner 是 PC/EC（永远选一致，靠原子钟把代价压低）
-- MongoDB 默认 PA/EC（分区时 A，平时 C）
+- DynamoDB 常被近似看成偏 PA/EL：分区时优先可用，平时优先低延迟
+- Spanner 偏 PC/EC：强一致优先，靠 TrueTime 把等待代价压低
+- MongoDB 要看 replica set 和读写 concern 配置，不能只贴一个永久标签
 
 ## 踩过的坑
 

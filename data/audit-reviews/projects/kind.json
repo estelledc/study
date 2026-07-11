@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "足球队/机器人球员类比清楚；三则案例命令可跟做，术语有桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『GitHub Actions 几乎所有 K8s 相关 workflow 都用 kind』过满，宜改为『大量 / 很常见』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库 Star 写 14k+ 偏低（约 15k+），可更新；Benjamin Elder / SIG-Testing / Apache-2.0 正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "create/load/CI 片段可跟做；kind load、LoadBalancer、extraPortMappings、macOS VM 层踩坑具体"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "足球队/机器人球员类比清楚；三则案例命令可跟做，术语有桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『GitHub Actions 几乎所有 K8s 相关 workflow 都用 kind』过满，宜改为『大量 / 很常见』",
+        "仓库 Star 写 14k+ 偏低（约 15k+），可更新；Benjamin Elder / SIG-Testing / Apache-2.0 正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "create/load/CI 片段可跟做；kind load、LoadBalancer、extraPortMappings、macOS VM 层踩坑具体"
+      ]
+    }
+  ]
+}

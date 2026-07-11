@@ -1,0 +1,98 @@
+{
+  "slug": "fpga-hls-2011",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "「Xilinx 2011 年花 5000 万美元收 AutoESL」与公开报道不符：收购条款未披露，SEC 仅称金额不重大；应改为「收购 AutoESL（金额未公开）」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文多处写 HLS 电路「比手写慢 1.5-2 倍」，而论文 sphere decoder 案例显示 HLS 可在资源上优于手写 RTL；宜加限定（常见工程经验 vs 论文个案）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Xilinx 2011 年花 5000 万美元收 AutoESL」与公开报道不符：收购条款未披露，SEC 仅称金额不重大；应改为「收购 AutoESL（金额未公开）」",
+        "正文多处写 HLS 电路「比手写慢 1.5-2 倍」，而论文 sphere decoder 案例显示 HLS 可在资源上优于手写 RTL；宜加限定（常见工程经验 vs 论文个案）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic: 去掉未公开的 AutoESL 收购金额；弱化 HLS 必输手写 RTL 的绝对化表述，并对照论文 QoR 个案",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 171,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 171,
+  "l1_pass": true
+}

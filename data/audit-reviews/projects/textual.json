@@ -1,0 +1,145 @@
+{
+  "slug": "textual",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "黑板磁贴→CSS 网页渲染在终端的类比贴合，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Widget 树/TCSS/reactive 有 DOM/React 桥接；async 事件循环对零基础仍偏陡，可再补半句日常说法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐部分解释；案例 2 缺「逐部分解释」结构；案例 3 只有安装叙述无代码步骤，建议拆成 2–3 步可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub Textualize/textual、Will McGugan、建于 Rich 之上正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」写 textual-web，案例 3 写 textual-serve——二者不同：textual-serve 自托管，textual-web 公网发布；宜区分，勿混成同一产品"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「所有事件处理都是 async def」略绝对：Textual 允许同步 handler，I/O 密集才必须 await；宜弱化为「事件循环基于 asyncio，阻塞 sleep 会冻住」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 TodoApp 可跟做；案例 3 写 pip install textual-serve 又写 textual serve CLI——补一段 Server(\"python myapp.py\").serve() 或标明内置 textual serve，避免装错包"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：CJK 宽度、time.sleep 冻循环、TCSS 子集、DevTools 8081、PyInstaller datas——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（SSH 监控/无 X11 vs 高刷新大数据）；可补一句「数千行 ListView 无虚拟化会卡」量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "黑板磁贴→CSS 网页渲染在终端的类比贴合，保留",
+        "Widget 树/TCSS/reactive 有 DOM/React 桥接；async 事件循环对零基础仍偏陡，可再补半句日常说法",
+        "案例 1 有逐部分解释；案例 2 缺「逐部分解释」结构；案例 3 只有安装叙述无代码步骤，建议拆成 2–3 步可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 GitHub Textualize/textual、Will McGugan、建于 Rich 之上正确",
+        "「为什么重要」写 textual-web，案例 3 写 textual-serve——二者不同：textual-serve 自托管，textual-web 公网发布；宜区分，勿混成同一产品",
+        "「所有事件处理都是 async def」略绝对：Textual 允许同步 handler，I/O 密集才必须 await；宜弱化为「事件循环基于 asyncio，阻塞 sleep 会冻住」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 TodoApp 可跟做；案例 3 写 pip install textual-serve 又写 textual serve CLI——补一段 Server(\"python myapp.py\").serve() 或标明内置 textual serve，避免装错包",
+        "踩坑具体可操作：CJK 宽度、time.sleep 冻循环、TCSS 子集、DevTools 8081、PyInstaller datas——保留",
+        "适用边界清楚（SSH 监控/无 X11 vs 高刷新大数据）；可补一句「数千行 ListView 无虚拟化会卡」量化"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "reason": "区分 textual-serve/textual-web；案例2补逐部分解释、案例3补 Server 代码；弱化全 async 绝对化；补历史小故事与反向链接；ListView 量化边界。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "区分 textual-serve/textual-web；案例2补逐部分解释、案例3补 Server 代码；弱化全 async 绝对化；补历史小故事与反向链接；ListView 量化边界。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 185,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

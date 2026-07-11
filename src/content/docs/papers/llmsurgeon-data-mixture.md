@@ -1,6 +1,6 @@
 ---
 title: LLMSurgeon — 从模型回答反推训练数据配方
-来源: 'Yaxin Luo et al., "LLMSurgeon: Diagnosing Data Mixture of Large Language Models", arXiv 2026'
+来源: 'Yaxin Luo et al., "LLMSurgeon: Diagnosing Data Mixture of Large Language Models", arXiv:2605.30348, 2026'
 日期: 2026-05-29
 分类: machine-learning
 难度: 中级

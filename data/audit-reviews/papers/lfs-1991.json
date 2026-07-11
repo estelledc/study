@@ -1,0 +1,76 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 是路径示意而非逐步可跟做的命令；对论文笔记可接受，但可补一句「这是概念路径，不是 shell 命令」降低零基础困惑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「leveldb 抽成 500 行」偏修辞；LevelDB 远不止 500 行，且直接继承的是 LSM 而非 LFS 文件系统实现——教学简化可接受，宜弱化为「小型 C++ LSM 库」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2 是路径示意而非逐步可跟做的命令；对论文笔记可接受，但可补一句「这是概念路径，不是 shell 命令」降低零基础困惑"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "「leveldb 抽成 500 行」偏修辞；LevelDB 远不止 500 行，且直接继承的是 LSM 而非 LFS 文件系统实现——教学简化可接受，宜弱化为「小型 C++ LSM 库」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ]
+}

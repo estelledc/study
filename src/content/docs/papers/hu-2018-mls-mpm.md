@@ -12,7 +12,9 @@ MLS-MPM 是 [[sulsky-1994-mpm]] 的现代化重写：把 MPM 里那一套 B-spli
 
 日常类比：原版 MPM 像在每个粒子周围摆 27 个砝码（quadratic B-spline），先称重再平均；MLS-MPM 改成"在粒子周围用一张小桌子做最小二乘拟合"——拟合本身天然给出权重和导数，少算一遍、还更准。
 
-配套的工程产物是 **Taichi**——Hu 同期写的领域特定语言，目标就是让这种"循环 + 稀疏网格"的物理仿真能在 Python 写、CUDA 跑。论文里 88 行 Taichi 版 MLS-MPM 成了之后五年图形学课的入门样本。
+MPM 每步都在两套表示之间倒腾：**P2G**（Particle-to-Grid，粒子→网格，像把散落的沙倒进格子称重）和 **G2P**（Grid-to-Particle，网格→粒子，再把格子上的力发回每粒沙）。APIC 还给每粒沙记一张小"速度倾斜表"（仿射矩阵 C），描述它附近谁快谁慢。
+
+配套的工程产物是 **Taichi**——Hu 为这类"循环 + 稀疏网格"仿真写的领域特定语言，目标是 Python 写、CUDA 跑。论文配套的 88 行 Taichi 版 MLS-MPM 成了之后五年图形学课的入门样本。
 
 ## 为什么重要
 
@@ -20,7 +22,7 @@ MLS-MPM 是 [[sulsky-1994-mpm]] 的现代化重写：把 MPM 里那一套 B-spli
 
 - 为什么 2018 年之后 MPM 突然从"工业界离线渲染才用得起"变成"本科生周末跑得动"
 - 为什么 DiffTaichi / DiffMPM / ChainQueen 这一波**可微仿真**几乎都建在 MLS-MPM 之上
-- 为什么 Taichi 这门语言能在 SIGGRAPH 2019/2020 一年发两次——它的母论文就是 MLS-MPM
+- 为什么 Taichi 能从 2018 的配套库长成 SIGGRAPH Asia 2019 的独立语言论文——MLS-MPM 是它最早的硬核客户
 - 为什么"切割""断裂""材料分层"这些以前 MPM 做得很别扭的事，现在能直接跑
 
 一句话：**MLS-MPM 是把 1994 年的固体力学算法压到"实时 + 可微 + 易写"的临门一脚**。
@@ -44,13 +46,12 @@ MLS-MPM 是 [[sulsky-1994-mpm]] 的现代化重写：把 MPM 里那一套 B-spli
 论文附录给出的 88 行 Taichi 程序，是 MLS-MPM 最出圈的产物。结构大致是：
 
 ```python
-# 极简伪代码
+# 极简伪代码（P2G 核心）
 @ti.kernel
 def substep():
     for p in particles:
         base = (x[p] / dx - 0.5).cast(int)
         fx = x[p] / dx - base.cast(float)
-        # MLS quadratic 权重（同时给出梯度）
         w = [0.5*(1.5-fx)**2, 0.75-(fx-1)**2, 0.5*(fx-0.5)**2]
         affine = stress + p_mass * C[p]  # MLS-MPM 关键合并
         for i, j in ti.static(ti.ndrange(3, 3)):
@@ -60,7 +61,12 @@ def substep():
             grid_v[base + offset] += weight * (p_mass * v[p] + affine @ dpos)
 ```
 
-`affine = stress + p_mass * C` 这一行就是 MLS-MPM 把 APIC 仿射场和应力合并的精髓。
+**逐部分解释**：
+
+- `base` / `fx`：粒子落在哪个 3×3 网格邻域、相对格子中心偏了多少
+- `w = [...]`：二次权重（同时隐含梯度），替代原版 B-spline 的"先权重再单独求导"
+- `affine = stress + p_mass * C[p]`：把应力和 APIC 的仿射表 C **合成一项**——这就是 2× 加速的来源
+- 内层循环：按权重把动量撒到周围格子（一次 P2G 干完以前两遍的活）
 
 ### 案例 2：和 [[sulsky-1994-mpm]] 的差距在哪
 
@@ -125,11 +131,12 @@ DiffTaichi（Hu 2020）、ChainQueen（Hu 2019）、DiffMPM 这一系列**让仿
 - **1994**：Sulsky 等定义 MPM [[sulsky-1994-mpm]]，固体力学界用了近 20 年
 - **2013**：Stomakhin 等用 MPM 做《冰雪奇缘》的雪，图形学一夜爆红
 - **2015**：Jiang 等提出 APIC，修 PIC/FLIP 的能量噪声两难
-- **2018**：Hu 等提出 MLS-MPM 和 Taichi 语言（同年 SIGGRAPH 双发），把"快"和"易写"一并解决
-- **2019-2020**：DiffTaichi / ChainQueen / DiffMPM 一起把可微仿真推向机器人和材料学
+- **2018**：Hu 等提出 MLS-MPM（SIGGRAPH）；同期开源早期 Taichi 库（arXiv），用 88 行演示把"快"和"易写"绑在一起
+- **2019**：Taichi 语言论文发在 SIGGRAPH Asia；ChainQueen 等把可微仿真推向机器人
+- **2020**：DiffTaichi（ICLR）等继续把 MLS-MPM 当可微物理后端
 - **2021 至今**：Taichi 独立成开源项目，MLS-MPM 成为本科生图形学课样例
 
-从 1994 固体力学论文到 2018 图形学+编程语言双栖论文，跨度 24 年，跨学科 3 次。
+从 1994 固体力学论文到 2018 图形学现代化重写，跨度 24 年；语言论文则晚一年才独立成篇。
 
 ## 学到什么
 

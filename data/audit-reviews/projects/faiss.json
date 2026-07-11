@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "IVF/PQ/HNSW 首次出现有角色说明；工厂字符串像乐高的类比很贴，零基础能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2017 FAIR 开源、Johnson/Douze/Jégou、PQ 2010 脉络正确；「GPU 路径独占无开源对手」略满（cuVS 等已出现），属可接受的教学强调"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "FlatL2 / index_factory / GPU 迁移路径概念正确；案例 2 的 train_set/database 未给出构造，教学上可跟读；nprobe/GIL/持久化踩坑很工程"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "IVF/PQ/HNSW 首次出现有角色说明；工厂字符串像乐高的类比很贴，零基础能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "2017 FAIR 开源、Johnson/Douze/Jégou、PQ 2010 脉络正确；「GPU 路径独占无开源对手」略满（cuVS 等已出现），属可接受的教学强调"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "FlatL2 / index_factory / GPU 迁移路径概念正确；案例 2 的 train_set/database 未给出构造，教学上可跟读；nprobe/GIL/持久化踩坑很工程"
+      ]
+    }
+  ]
+}

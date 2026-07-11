@@ -30,7 +30,7 @@ inngest.createFunction(
 
 - 为什么 Vercel / Lambda / Cloudflare Workers 这种"无状态函数"也能跑"睡 24 小时再继续"的任务
 - 为什么 Temporal / Cadence 要求一个长连的 worker 进程，而 Inngest 不用
-- 为什么 trigger.dev V3 在 2024 年大改 API，把 step.run 抄进了自己的 SDK
+- 为什么 trigger.dev V3 在 2024 年大改 API，也采用了类似的 `step.run` 风格
 - 为什么后台任务的"DB status 字段 + 一堆 try/catch"模式正在被淘汰
 
 ## 核心要点
@@ -89,7 +89,22 @@ inngest.createFunction(
 
 ### 案例 3：改 step id 让缓存失效
 
-把案例 2 里 `"flaky"` 改成 `"flaky-v2"`，重新触发同一个事件。观察：A 也会重新 print 一次。原因是 step id 变了 → 哈希变了 → 整个 run 在 state store 里找不到任何缓存 → 从头跑。这是"step id 是 cache key"最直观的实证。在生产中改 id 之前一定要想清楚已经在跑的 run 会怎样。
+把案例 2 的第二个 step 改名后再跑同一事件：
+
+```ts
+await step.run("always-ok", () => { console.log("A"); return "A" })
+await step.run("flaky-v2", () => {   // 原来叫 "flaky"
+  attempts++
+  if (attempts === 1) throw new Error("transient")
+  return "B"
+})
+```
+
+逐部分解释：
+
+- `"flaky"` → `"flaky-v2"` 后，state store 里旧 cache key 对不上
+- 重放时找不到任何已完成 step，于是 `always-ok` 也会再 print 一次 A
+- 这直接证明 step id 就是缓存钥匙；生产里改名等于让进行中的 run 丢档重跑
 
 ## 踩过的坑
 
@@ -120,8 +135,8 @@ inngest.createFunction(
 - **2019 年**：Temporal 从 Uber Cadence fork 出来，走 Go runtime + worker daemon 长连路线
 - **2022 年**：trigger.dev V1/V2 用 Node.js 实现 workflow，但 sleep 是 polling 数据库
 - **2023 年**：Inngest（YC W23）提出 event sourcing + step.run 函数式 API，无需长连 worker，无服务器友好
-- **2024 年**：trigger.dev V3 重写成 V8 isolate runtime，但 step.run 形式直接学了 Inngest
-- **2025 年**：Cloudflare Workflows 把这一思路做成平台原生 feature
+- **2024 年**：trigger.dev V3 重写成 V8 isolate runtime，API 也走向类似的 step.run 风格
+- **2024–2025 年**：Cloudflare Workflows 等平台把 durable step 做成原生能力
 
 ## 学到什么
 
@@ -151,13 +166,4 @@ inngest.createFunction(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
-- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
-- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
-- [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[redis]] —— Redis — 内存键值数据库
-- [[temporal]] —— Temporal — 持久化工作流引擎
 

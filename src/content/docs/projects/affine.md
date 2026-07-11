@@ -54,17 +54,17 @@ togglePrimaryMode() {
 ### 案例 2：本地存储不依赖云
 
 ```typescript
-// 简化版：写一段文字
+// 简化伪代码：写一段文字
 ydoc.getText('content').insert(0, '今天的会议笔记');
 
 // Yjs 把这次操作编码成一段二进制 update
 const update = encodeStateAsUpdate(ydoc);
 
-// 本地 IndexedDB 直接存
-await indexedDB.put('doc-123', update);
+// 通过 idb / Dexie 这类封装写入本地 IndexedDB
+await db.put('updates', update, 'doc-123');
 ```
 
-整个过程没碰服务器。下次联网时把累积的 update 推给后端，后端只是"把二进制按时间顺序追加"，不解析、不合并。合并发生在客户端。
+整个过程没碰服务器。下次联网时把累积的 update 推给后端，后端只需要存储并转发 update，不负责手写冲突合并；真正的合并发生在客户端。
 
 ### 案例 3：自托管启动
 

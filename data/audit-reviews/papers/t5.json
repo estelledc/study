@@ -1,0 +1,92 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2（摘要）只有输入输出骨架，缺少像案例 3/4 那样的逐部分解释（为何长进短出、loss 如何与翻译同质）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“之后再没人做过同等规模的对比”偏绝对；可改成“很少有后续工作在同等规模上系统扫完架构/数据/目标/规模四维”"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“24 张消融表”宜核对论文表数或改成“大量消融表”，避免硬数字被挑刺"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联只有 3 条，建议补到 5–7（如 [[flan-2021]]、[[t0-2021]]、[[roberta-2019]]）以便导航"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例是 I/O 格式示意而非可跑脚本，可加一句“用 HuggingFace T5ForConditionalGeneration.generate 即可复现”降低跟做摩擦"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2（摘要）只有输入输出骨架，缺少像案例 3/4 那样的逐部分解释（为何长进短出、loss 如何与翻译同质）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "“之后再没人做过同等规模的对比”偏绝对；可改成“很少有后续工作在同等规模上系统扫完架构/数据/目标/规模四维”",
+        "“24 张消融表”宜核对论文表数或改成“大量消融表”，避免硬数字被挑刺"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联只有 3 条，建议补到 5–7（如 [[flan-2021]]、[[t0-2021]]、[[roberta-2019]]）以便导航",
+        "实践案例是 I/O 格式示意而非可跑脚本，可加一句“用 HuggingFace T5ForConditionalGeneration.generate 即可复现”降低跟做摩擦"
+      ]
+    }
+  ]
+}

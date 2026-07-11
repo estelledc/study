@@ -26,16 +26,16 @@ trace(ray, depth):
     return color
 ```
 
-**三根次级射线**——reflection（反射）、refraction（折射）、shadow（阴影）——这套范式从 1980 年起 46 年没变。今天 NVIDIA RTX 显卡 RT Core、DXR / Vulkan Raytracing API 暴露的就是这五种 shader：ray gen / closest hit / any hit / miss / intersection，对应 Whitted 五行算法的不同回调。
+**三根次级射线**——reflection（反射）、refraction（折射）、shadow（阴影）——这套范式从 1980 年起 46 年没变。今天 RTX 游戏里的「RT 反射 / RT 阴影」开关，本质上还是在发这几类次级射线；硬件 API 怎么把它们拆成回调，见案例 3。
 
 ## 为什么重要
 
 不理解 Whitted，下面这些事都没法解释：
 
-- 为什么 Pixar / Arnold / Cycles / RenderMan 都长得像同一个算法——它们都是 Whitted 1980 的后裔
-- 为什么 NVIDIA 2018 年从光栅卡突然变成"RTX"——他们把 BVH 遍历和三角形求交做成了硬件单元
+- 为什么现代渲染器都先「打光线求交再着色」——递归求交骨架来自 Whitted；完整全局光照则是 Kajiya 等后继
+- 为什么 NVIDIA 2018 年从光栅卡突然变成"RTX"——他们把 BVH（包围盒层次树）遍历和三角形求交做成了硬件单元
 - 为什么 Quake II RTX、Cyberpunk 2077 的 "RT Reflection / RT Shadow" 选项是**分开**的——对应 Whitted 三根次级射线之一
-- 为什么 Whitted 1980 那张 chrome 球 + glass 球 + 棋盘地板的图，今天每本图形学教材都印——它是第一张**计算机算出来真实反射 / 折射 / 阴影**的图
+- 为什么 Whitted 1980 那张 chrome 球 + glass 球 + 棋盘地板的图，今天每本图形学教材都印——它是早期把**反射 + 折射 + 阴影**算在同一帧里的标志图
 
 之前 Appel 1968 的 ray casting 只找可见性，没法递归；Phong / Blinn 给局部着色，但玻璃球必须靠环境贴图骗。Whitted 把"递归"这一刀切下去，整个**真实感渲染**领域从此分成了 Whitted 之前和之后。
 
@@ -70,37 +70,38 @@ Whitted 1979 在 VAX 11/780 上渲染：512×512，单帧 **74 分钟**。每像
 
 一像素最坏情况 `2^4 = 16` 根次级射线。今天 RTX 4090 这种场景实时跑。
 
-### 案例 2：Three.js 教学版 raytracer
+### 案例 2：教学版 raytracer（三根次级射线）
 
 ```js
 function trace(ray, depth) {
   if (depth > MAX) return BLACK;
   const hit = scene.intersect(ray);
   if (!hit) return SKY_COLOR;
-
-  let color = phongShade(hit);                          // 局部着色
-  if (hit.material.reflective) {
+  let color = phongShade(hit);
+  if (hit.material.kr > 0) {                         // 1) 反射
     const r = reflect(ray.dir, hit.normal);
     color = color.add(trace(new Ray(hit.point, r), depth + 1).mul(hit.material.kr));
   }
-  for (const light of scene.lights) {
-    const shadowRay = new Ray(hit.point.add(hit.normal.mul(0.001)), light.dir);  // epsilon 偏移
-    if (!scene.intersectAny(shadowRay)) color = color.add(specularTerm(hit, light));
+  if (hit.material.kt > 0) {                          // 2) 折射（全反射则改走反射）
+    const t = refract(ray.dir, hit.normal, hit.material.ior);
+    if (t) color = color.add(trace(new Ray(hit.point, t), depth + 1).mul(hit.material.kt));
+  }
+  for (const light of scene.lights) {                 // 3) 阴影
+    const origin = hit.point.add(hit.normal.mul(0.001)); // epsilon，防自阴影
+    if (!scene.intersectAny(new Ray(origin, light.dir)))
+      color = color.add(specularTerm(hit, light));
   }
   return color;
 }
 ```
 
-**注意 `0.001` 这一行**——交点稍稍沿法线偏移，否则物体会给自己投影黑斑（self-shadow acne）。这是 Whitted 算法第一坑。
+逐步读：先局部 Phong；有 `kr` 就沿镜面再 trace；有 `kt` 就按折射率 `ior` 折射（`refract` 返回空则全反射）；最后对每个灯发一根不递归的 shadow ray。`0.001` 偏移是防 self-shadow acne 的第一坑。
 
-### 案例 3：RT Core 在硬件上做的事
+### 案例 3：RT Core / DXR 怎么对应 Whitted
 
-NVIDIA Turing 2018 的 RT Core 加速两件事：
-
-- **BVH 遍历**：包围盒层次树，把"光线落到哪个三角形"从 O(N) 降到 O(log N)
-- **三角形求交**：每秒 100 亿次的硬件单元
-
-**算法本身**（递归、shadow ray、reflection ray 的发起）仍跑在 shader 里，硬件只把"光线打哪"这件最热的事固化了。所以 DXR API 的形状仍是 Whitted 1980——硬件加速没改变算法骨架。
+1. **Shader 发射线**：ray-generation 发主光线；closest-hit 里再发 reflection / refraction / shadow——对应 `trace()` 的递归调用。
+2. **硬件只加速求交**：Turing RT Core 做 BVH 遍历 + 三角求交（量级约 10 Giga Rays/s）；miss / any-hit 仍是软件回调。
+3. **颜色怎么回来**：次级射线命中后把颜色乘 `kr`/`kt` 加回，和 1980 的累加式一样——API 换皮，递归次级射线范式没换。
 
 ## 踩过的坑
 
@@ -118,16 +119,15 @@ NVIDIA Turing 2018 的 RT Core 加速两件事：
 
 **适用**：
 
-- 强反射 / 强折射场景（金属、玻璃、水、冰）——这是 Whitted 唯一能正确渲染的场景
-- 离线高质量渲染（电影、产品可视化、建筑预览）
-- 教学：Whitted 算法是理解所有现代渲染器的最短路径
-- 实时 RT 反射 / RT 阴影（RTX 游戏的局部增强）
+- 镜面主导场景（金属、玻璃、水、冰），递归深度通常 `depth ≤ 5`
+- 教学与实时局部增强（RTX 的 RT 反射 / RT 阴影）
+- 离线里只要硬阴影 + 镜面/折射、不要求间接漫反射时
 
 **不适用**：
 
-- 全局光照（GI，间接漫反射）→ Whitted 只追镜面 / 折射 / 直接光，间接漫反射是黑的，要 Kajiya 1986 path tracing
-- 焦散（caustics，玻璃聚焦在地板上的光斑）→ Whitted 反向追踪从相机出发，到不了"光源 → 玻璃 → 地板"这条路，要 Jensen 1996 photon mapping
-- 软阴影、景深、运动模糊 → Cook 1984 distributed
+- 间接漫反射贡献大时画面发黑（无 GI）→ Kajiya 1986 path tracing
+- 焦散（相机反向追不到「灯→玻璃→地板」）→ Jensen 1996 photon mapping
+- 软阴影 / 景深 / 运动模糊 → Cook 1984 distributed
 - 次表面散射、毛发、烟雾 → 体积渲染，几何光线不够
 
 ## 历史小故事（可跳过）
@@ -139,9 +139,9 @@ NVIDIA Turing 2018 的 RT Core 加速两件事：
 - **1986**：Jim Kajiya 提出 rendering equation，path tracing，能量守恒
 - **1997**：Eric Veach MIS（多重重要性采样），现代离线渲染基石
 - **2018-08**：NVIDIA Turing 架构 RT Core，硬件 BVH + 三角求交
-- **2020**：Quake II RTX、Cyberpunk 2077 用 DXR 做实时 Whitted
+- **2019–2020**：Quake II RTX（2019）、Cyberpunk 2077（2020）用 DXR 做实时反射/阴影
 
-从论文到硬件 **38 年**，但**算法骨架一字未改**——这是计算机图形学最长寿的一个范式。
+从论文到硬件约 **38 年**；采样与材质早已演进，但**递归次级射线范式**仍在——图形学里最长寿的骨架之一。
 
 ## 学到什么
 

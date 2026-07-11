@@ -1,0 +1,97 @@
+{
+  "slug": "brill-moore-2000",
+  "area": "papers",
+  "round": 19,
+  "output_path": "/workspace/src/content/docs/papers/brill-moore-2000.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "把“单字符模型做不到”弱化为“单字符模型要拆成多步、概率会被压低”，避免把基线模型说成完全无法处理多编辑候选。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "补上 base rules 要求的 `## 反向链接` 占位段，避免后续 backlinks regen 无锚点。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "pass_count": 1,
+    "verdict": "refine",
+    "action": "refine",
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 实践案例",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 为什么重要",
+        "verdict": "needs-refine"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 反向链接",
+        "verdict": "needs-refine"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "academic",
+        "hint": "把“单字符模型做不到”弱化为“单字符模型要拆成多步、概率会被压低”，避免把基线模型说成完全无法处理多编辑候选。"
+      },
+      {
+        "reviewer": "engineer",
+        "hint": "补上 base rules 要求的 `## 反向链接` 占位段，避免后续 backlinks regen 无锚点。"
+      }
+    ]
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 197,
+    "reasons": []
+  }
+}

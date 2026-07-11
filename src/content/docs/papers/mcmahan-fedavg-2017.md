@@ -70,30 +70,43 @@ def local_train(global_model, E, B, lr):
 
 ### 案例 1：Google Gboard 下一词预测
 
-Gboard 用 FedAvg 训练语言模型。每天夜间手机充电 + 连 WiFi 时自动参与：下载全局模型 → 用你当天的打字记录跑 E=1 本地 epoch → 上传模型差值（加密 + 安全聚合）。几百万台手机的平均值让模型每周变好一点，但谷歌从未见过你打了什么。
+Gboard 用 FedAvg 训练下一词预测。夜间充电 + WiFi 时，一台手机会走完这四步：
+
+1. **下载**：拿到当前全局语言模型参数（体积远小于你的打字日志）
+2. **本地训**：用当天输入记录跑 E=1 轮 SGD，只在本机算梯度
+3. **上传差值**：把"新参数 − 旧参数"加密后交给安全聚合，不传原文
+4. **服务器平均**：几百万台手机的加权平均写出下一版全局模型
+
+谷歌只见过平均值，没见过你打了什么字。
 
 ### 案例 2：医院联合训练影像诊断
 
-三家医院各有 CT 影像数据但不能共享（HIPAA / 数据安全法）。用 FedAvg：中央服务器只看到参数平均值，不看到任何 CT 图片。配合 [[abadi-dpsgd-2016]] 在每个医院本地训练时加噪声，即使参数本身泄露也无法反推单张影像。
+三家医院各有 CT，但不能出院（HIPAA / 数据安全法）。联合训练按 FedAvg 拆开：
+
+1. 中心服务器广播同一份初始诊断网络
+2. 每家医院在内网用本地 CT 跑若干 epoch（可叠加 [[abadi-dpsgd-2016]] 噪声）
+3. 只回传参数更新；中心按各院样本量加权平均
+4. 重复多轮，直到验证集指标达标
+
+中心始终看不到任何一张 CT，只看到参数平均值。
 
 ### 案例 3：用 [[pytorch]] 的 Flower 框架 5 分钟跑通
 
 ```python
 # pip install flwr torch torchvision
 import flwr as fl
-import torch
 
 class MnistClient(fl.client.NumPyClient):
     def fit(self, parameters, config):
-        set_params(model, parameters)
-        train(model, trainloader, epochs=5)  # 本地多轮
+        set_params(model, parameters)          # 写入服务器下发的权重
+        train(model, trainloader, epochs=5)    # 本地 E=5，对应论文旋钮
         return get_params(model), len(trainloader.dataset), {}
 
-fl.client.start_numpy_client(server_address="localhost:8080",
-                             client=MnistClient())
+fl.client.start_numpy_client(
+    server_address="localhost:8080", client=MnistClient())
 ```
 
-Flower 把 FedAvg 的"选客户端 → 下发 → 本地训练 → 聚合"全封装好了，换模型只改 `train()` 函数。
+逐部分：`NumPyClient.fit` 就是 FedAvg 的客户端；返回值里的 `len(dataset)` 供服务器做加权；`set_params` / `get_params` 是把 list[np.ndarray] 写进 / 读出 `model.state_dict()` 的两行胶水。换模型只改 `train()`。
 
 ## 踩过的坑
 

@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "发动机/车架类比清晰；Server/Database/Redis/Provider 案例逐步可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Hocuspocus 当前为 MIT License（GitHub/npm 均标注 MIT），不是 AGPL-3.0；踩坑 4 与「不适用：不能接受 AGPL」整条事实错误，必须改正。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "认证 throw、debounce 落盘、unloadImmediately 等坑有用；但 AGPL 相关踩坑/不适用会误导选型，应改为 MIT 下的真实边界（例如自托管运维成本、与 Tiptap Cloud 的差异）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "发动机/车架类比清晰；Server/Database/Redis/Provider 案例逐步可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "Hocuspocus 当前为 MIT License（GitHub/npm 均标注 MIT），不是 AGPL-3.0；踩坑 4 与「不适用：不能接受 AGPL」整条事实错误，必须改正。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "认证 throw、debounce 落盘、unloadImmediately 等坑有用；但 AGPL 相关踩坑/不适用会误导选型，应改为 MIT 下的真实边界（例如自托管运维成本、与 Tiptap Cloud 的差异）。"
+      ]
+    }
+  ]
+}

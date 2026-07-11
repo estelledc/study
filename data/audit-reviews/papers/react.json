@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "侦探类比把 Thought/Action/Observation 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 轨迹可读；案例 2 偏叙事，若补一句「每步 Observation 拼回 prompt」会更稳"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「适用 vs 不适用」段，零基础不知道何时不该用 ReAct（可与 engineer 一并补）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "think 伪 action 的环境回包写错：论文 ALFWorld 轨迹返回固定字符串 OK.，不是 Nice thought."
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「全靠 6 个手写示例」过满：HotpotQA 为 6-shot、FEVER 为 3-shot，ALFWorld/WebShop 仅 1–2 shot；应标明任务差异"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「7 步硬上限」应标明是 HotpotQA 侧（FEVER 为 5）；不宜写成全论文统一上限"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "主实验 backend 是 PaLM-540B（附录有 GPT-3）；「祖先」表述可保留为教学简化，但 think 细节与 shot 数需纠"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（格式失败 / Observation 截断 / max iterations / stop token）非常可操作，保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺整段「适用 vs 不适用」：应写清适合工具调用多跳任务，不适合纯闭卷推理、低延迟单次补全、无工具环境"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例轨迹可跟做；生产 agent 还需强调 max_iterations 与 Observation 截断已在踩坑覆盖"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "侦探类比把 Thought/Action/Observation 讲透，零基础直觉强",
+        "案例 1 轨迹可读；案例 2 偏叙事，若补一句「每步 Observation 拼回 prompt」会更稳",
+        "缺「适用 vs 不适用」段，零基础不知道何时不该用 ReAct（可与 engineer 一并补）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "think 伪 action 的环境回包写错：论文 ALFWorld 轨迹返回固定字符串 OK.，不是 Nice thought.",
+        "「全靠 6 个手写示例」过满：HotpotQA 为 6-shot、FEVER 为 3-shot，ALFWorld/WebShop 仅 1–2 shot；应标明任务差异",
+        "「7 步硬上限」应标明是 HotpotQA 侧（FEVER 为 5）；不宜写成全论文统一上限",
+        "主实验 backend 是 PaLM-540B（附录有 GPT-3）；「祖先」表述可保留为教学简化，但 think 细节与 shot 数需纠"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "踩坑（格式失败 / Observation 截断 / max iterations / stop token）非常可操作，保留",
+        "缺整段「适用 vs 不适用」：应写清适合工具调用多跳任务，不适合纯闭卷推理、低延迟单次补全、无工具环境",
+        "案例轨迹可跟做；生产 agent 还需强调 max_iterations 与 Observation 截断已在踩坑覆盖"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "crdt-sss-2011",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "CvRDT 三元组 (S, ⊑, ⊔) 对零基础偏陡，建议在符号旁各加一句日常桥接（状态集合 / 谁更大 / 取并）。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 MV-Register 缺少逐步状态演示，建议补并发写后 merge 保留多值的小例子。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 写「DynamoDB 的 sibling values」不准确：带 vector clock 返回 siblings 的是 Dynamo 论文 / Riak 一脉；DynamoDB 默认 LWW。应改为 Dynamo 或 Riak。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 只列文件名对应关系，缺少可跟做的接口骨架（new/merge/value）；建议补 5–8 行伪代码。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "延伸阅读里 Marc Shapiro 视频缺 URL，应补链接或删掉该条。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "CvRDT 三元组 (S, ⊑, ⊔) 对零基础偏陡，建议在符号旁各加一句日常桥接（状态集合 / 谁更大 / 取并）。",
+        "案例 2 MV-Register 缺少逐步状态演示，建议补并发写后 merge 保留多值的小例子。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 写「DynamoDB 的 sibling values」不准确：带 vector clock 返回 siblings 的是 Dynamo 论文 / Riak 一脉；DynamoDB 默认 LWW。应改为 Dynamo 或 Riak。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只列文件名对应关系，缺少可跟做的接口骨架（new/merge/value）；建议补 5–8 行伪代码。",
+        "延伸阅读里 Marc Shapiro 视频缺 URL，应补链接或删掉该条。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic 纠正 DynamoDB siblings 误称；zero-base 补符号桥接与案例 2；engineer 补接口骨架并修复视频链接。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 175,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 175,
+  "l1_pass": true
+}

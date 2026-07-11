@@ -33,9 +33,9 @@ export default function Posts() {
 理解 Remix 的设计哲学，能解释这些事：
 
 - **为什么 React 全栈这么难做**：客户端状态管理、数据获取、错误处理、表单提交——每个问题都有一堆库。Remix 用 Web 标准（fetch + form）把它们一次解决
-- **为什么 React Router v7 突然变得像 Next.js**：2024 年 Shopify 收购 Remix 后，团队把 Remix 的能力**全量并入** React Router——v7 = 新版 React Router + Remix
+- **为什么 React Router v7 突然变得像 Next.js**：Shopify **2022** 收购 Remix；**2024** 团队把 Remix 框架能力并入 React Router——v7 ≈ 新版 React Router + Remix
 - **为什么"渐进增强"重要**：Remix 默认 JS 不加载也能用（form 走原生提交），符合 Web 平台几十年的可访问性传统
-- **为什么 Nested Routes 是个大事**：路由嵌套对应 UI 嵌套，这是 React Router 的发明，被 [[next-js]] App Router 抄过去
+- **为什么 Nested Routes 是个大事**：路由嵌套对应 UI 嵌套；在 React 生态由 React Router **普及**，后来被 [[next-js]] App Router 采用
 
 ## 核心要点
 
@@ -76,7 +76,8 @@ export default function Post() {
 
 ```tsx
 // app/routes/contact.tsx
-import { Form, redirect, type ActionFunctionArgs } from "@remix-run/react"
+import { redirect, type ActionFunctionArgs } from "@remix-run/node"
+import { Form } from "@remix-run/react"
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData()
@@ -123,7 +124,7 @@ app/routes/
 
 3. **Remix v2 与 v1 路由约定有调整**：v1 用文件夹（`routes/posts/$slug.tsx`），v2 用扁平命名（`routes/posts.$slug.tsx`）。老教程经常错位
 
-4. **2024 年 Remix → React Router v7 合并**：术语切换让老文档失准——现在新项目应该用 `react-router@7`（带 framework mode），而不是 `@remix-run/*`。Remix v2 仍维护，但 v3 不会有了
+4. **2024 年 Remix → React Router v7 合并**：术语切换让老文档失准——现在新项目应该用 `react-router@7`（framework mode），而不是新开 `@remix-run/*`。Remix v2 仍维护，原计划的 v3 以 RR v7 形式发布
 
 5. **部署需要 Node 服务端**：Remix 默认 SSR，不像 [[next-js]] 那样可以纯静态导出。要放 CDN 得用 Cloudflare Workers / Deno Deploy 等边缘运行时
 
@@ -141,7 +142,14 @@ app/routes/
 - 纯客户端 SPA（管理后台、画板工具）—— Remix 的卖点用不上，反而被 SSR 拖累
 - 需要完全静态导出（GitHub Pages 这种）—— 默认要 Node 运行时
 - 团队已经深度绑定 [[next-js]] 生态（next-image / next-auth / vercel） —— 切换成本不值
-- 2025+ 新项目：直接用 React Router v7 framework mode，别再用 `@remix-run/*` 包
+- 2025+ 新项目：直接用 React Router v7 framework mode，别再用新开 `@remix-run/*` 包
+
+## 历史小故事（可跳过）
+
+- **2020 年**：Ryan Florence / Michael Jackson 推出 Remix（先付费后开源），把 React Router 的嵌套路由做成全栈约定
+- **2022-10**：Shopify 收购 Remix 团队，继续开源；Hydrogen 等商店前端栈受益
+- **2024**：宣布「原计划的 Remix v3」并入 React Router v7（framework mode）；文档与包名开始切换
+- **此后**：Remix v2 仍维护；新项目默认跟 React Router v7，旧教程里的 `@remix-run/*` 需对照迁移
 
 ## 学到什么
 
@@ -160,9 +168,10 @@ app/routes/
 ## 关联
 
 - [[next-js]] —— Remix 的最大对手；两者哲学相反，Remix 拥抱 Web 标准，Next 自建一套
-- [[react-router]] —— Remix 的"娘家"；2024 年合并后 React Router v7 = Remix
+- [[react-router]] —— Remix 的"娘家"；2022 收购后，2024 起框架能力并入 React Router v7
 - [[astro]] —— 同样追求"Web 标准 + SSR"，但做内容站，不做交互应用
 - [[shadcn-ui]] —— 常和 Remix 配合用的 UI 方案
+- [[sveltekit]] —— 另一条「约定式全栈」路线，可对照 loader/action 心智
 
 ## 反向链接
 

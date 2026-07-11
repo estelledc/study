@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "剪辑机/操作面板与干洗取衣单类比清晰；案例均有逐部分解释，零基础可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "官方退休公告是 2025-01-06；仓库约 2025-06 归档。笔记写「2026-07-02 归档 / 2026 年 7 月归档」把 README 更新日当成归档日，需改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2026-07 应表述为 README 指向 FFmpegKitNext 的维护延续说明，而非首次归档。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Flutter 异步编码/烧字幕/pipe 案例可跟做；包矩阵与 GPL 踩坑具体。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用可再点明：二进制已从 Maven/CocoaPods/npm 下架后，不能再假设包管理器一键拉取。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "剪辑机/操作面板与干洗取衣单类比清晰；案例均有逐部分解释，零基础可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "官方退休公告是 2025-01-06；仓库约 2025-06 归档。笔记写「2026-07-02 归档 / 2026 年 7 月归档」把 README 更新日当成归档日，需改正。",
+        "2026-07 应表述为 README 指向 FFmpegKitNext 的维护延续说明，而非首次归档。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Flutter 异步编码/烧字幕/pipe 案例可跟做；包矩阵与 GPL 踩坑具体。",
+        "不适用可再点明：二进制已从 Maven/CocoaPods/npm 下架后，不能再假设包管理器一键拉取。"
+      ]
+    }
+  ]
+}

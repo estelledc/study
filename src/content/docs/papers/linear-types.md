@@ -16,17 +16,17 @@ title: 线性类型（Linear Types）
 
 ```rust
 let s: String = String::from("hello");
-let t = s;             // s 借给 t，s 自动失效
+let t = s;             // s 的所有权 move 给 t，s 失效
 println!("{}", s);     // 编译错误：s 已被 move
 ```
 
-Rust 这段代码编译不过——因为 String 是线性资源，借给 t 之后 s 就死了。这就是线性类型在现代工程语言里的样子。
+Rust 这段编译不过——`String` 实际是**仿射**（至多用一次，不用就自动 drop），不是严格线性；但"不能用两遍"的体感，正是线性类型思想的工程版。
 
 ## 为什么重要
 
 不理解线性类型，下面这些事都没法解释：
 
-- 为什么 Rust 写得磨人但**几乎不会内存泄漏 / use-after-free / data race**——核心规则就是"每个值用一次"
+- 为什么 Rust 写得磨人但**很难写出 use-after-free / data race**（泄漏仍可能，如 `Rc` 环）——核心是"每个值至多用一次"
 - 为什么 Haskell 9.0 之后多了一种箭头 `a %1 -> b`——纯函数式语言也开始管理资源
 - 为什么文件 / 网络连接 / GPU buffer 用完不释放是 bug 主因——线性类型把这种错误变成**编译期错误**
 - 为什么量子计算需要类型系统帮忙——qubit 物理上不能克隆（no-cloning theorem），天然是线性
@@ -142,7 +142,7 @@ let s2 = read_log(f);    // 报错：f 已 moved
 - **1995 年**：荷兰 Clean 语言全面采用"唯一性类型"（uniqueness types），是 linear types 的第一个产业版本。但 Clean 太小众，没出圈。
 - **2010 年代**：Mozilla 工程师 Graydon Hoare 设计 Rust，**没直接引用 Wadler 1990 那篇论文**——但概念同源。Rust 选 affine（≤1）+ borrow + lifetime，工程上比纯线性好用得多。
 - **2015 年**：Rust 1.0 发布，affine 类型 + 借用检查器进入主流视野。
-- **2018 年**：Wadler 自己合作的 Linear Haskell 进入 GHC 9，纯线性回到 Haskell 生态——但工程上比 Rust 难用，至今 niche。
+- **2018–2021 年**：Linear Haskell 提案约 2018，随 **GHC 9.0（2021）** 落地，纯线性回到 Haskell——工程上比 Rust 难用，至今 niche。
 - **2020 年**：Idris 2 用 quantitative type theory（0 / 1 / ω 三态多重性）—— Wadler 二元划分的精细化版本。
 
 理论 → 工程兑现的时差：**Wadler 1990 → Rust 1.0 是 25 年**。

@@ -1,0 +1,115 @@
+{
+  "slug": "pg-boss-readme",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "饭店台账/厨师抢单类比贴合「表即队列、SKIP LOCKED 抢行」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SKIP LOCKED / LISTEN/NOTIFY / Outbox 有白话；「ADR-3」未解释略突兀"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "事务性入队、schedule、retry 三案例步骤清楚，work([job]) 数组坑有点名"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/timgit/pg-boss 正确；SKIP LOCKED 实为 Postgres 9.5+（正文核心要点已写对）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」写「Postgres 13 之后的 SKIP LOCKED」易被读成关键字到 13 才有——与 9.5+ 事实冲突，需改成「9.5+ 引入、大表场景 13+ 更稳」之类"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "事务性入队、LISTEN/NOTIFY、graphile-worker/River 同路线叙述合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "send/work/schedule/retry API 与现行 pg-boss 批处理 work([job]) 一致，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：PG13+、轮询 QPS、archive 膨胀、大版本迁移锁表、work 数组参数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 <100 万 job/天与 Outbox；不适用千万 QPS/跨语言——有量化边界；「Serverless 不需要长连接」仅对轮询模式成立"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "饭店台账/厨师抢单类比贴合「表即队列、SKIP LOCKED 抢行」",
+        "SKIP LOCKED / LISTEN/NOTIFY / Outbox 有白话；「ADR-3」未解释略突兀",
+        "事务性入队、schedule、retry 三案例步骤清楚，work([job]) 数组坑有点名"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 github.com/timgit/pg-boss 正确；SKIP LOCKED 实为 Postgres 9.5+（正文核心要点已写对）",
+        "「为什么重要」写「Postgres 13 之后的 SKIP LOCKED」易被读成关键字到 13 才有——与 9.5+ 事实冲突，需改成「9.5+ 引入、大表场景 13+ 更稳」之类",
+        "事务性入队、LISTEN/NOTIFY、graphile-worker/River 同路线叙述合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "send/work/schedule/retry API 与现行 pg-boss 批处理 work([job]) 一致，可跟做",
+        "踩坑具体：PG13+、轮询 QPS、archive 膨胀、大版本迁移锁表、work 数组参数",
+        "适用 <100 万 job/天与 Outbox；不适用千万 QPS/跨语言——有量化边界；「Serverless 不需要长连接」仅对轮询模式成立"
+      ]
+    }
+  ]
+}

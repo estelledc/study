@@ -114,8 +114,8 @@ registry.action({
 ## 历史小故事（可跳过）
 
 - 2023 起 LLM 操作浏览器的需求爆发，最先红的是 cloud Chrome 路线（browser-use / Browserbase）
-- 2024 OpenAI Operator 推出，按月 200 刀的定价让"自己装一个"成为强需求
-- 2024-2025 nanobrowser 走扩展形态切入开源市场，主打"零订阅 + 数据不出本机"
+- 2025 年 1 月 OpenAI Operator 推出，按月 200 刀的 Pro 定价让"自己装一个"成为强需求
+- 2024–2025 nanobrowser 走扩展形态切入开源市场，主打"零订阅 + 数据不出本机"
 - 2025 年 GitHub stars 快速涨到 13k+，社区贡献多 LLM provider 支持（OpenAI / Anthropic / Gemini / Ollama / Groq / Cerebras）
 - 2026 年仍在维护，但不日更，社区扩展 PR 节奏稳定
 

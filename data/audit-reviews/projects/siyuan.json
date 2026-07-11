@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 5,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "编号便利贴/书房类比贴合；块、workspace、内核桥接清楚；Docker/CLI/API 三案例均有逐部分解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Docker serve/v3.7.0、CLI notebook/search/export、端口 6806 与官方 README 一致；~4.5 万 stars 与公开数据相符；未夸大协作能力"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Docker/CLI/API 可跟做；卷挂载/serve/同步盘/.sy 损坏/Docker 非桌面替代踩坑可操作；适用边界含纯 md+Git、多人协作、轻量草稿"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "编号便利贴/书房类比贴合；块、workspace、内核桥接清楚；Docker/CLI/API 三案例均有逐部分解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Docker serve/v3.7.0、CLI notebook/search/export、端口 6806 与官方 README 一致；~4.5 万 stars 与公开数据相符；未夸大协作能力"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Docker/CLI/API 可跟做；卷挂载/serve/同步盘/.sy 损坏/Docker 非桌面替代踩坑可操作；适用边界含纯 md+Git、多人协作、轻量草稿"
+      ]
+    }
+  ]
+}

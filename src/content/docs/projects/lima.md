@@ -124,7 +124,7 @@ VM 内 `~/projects` 写入会反映回 host，VM 内 `python -m http.server 8080
 
 **不适用**：
 
-- Linux / Windows 主机（Lima 专为 macOS 设计，Linux 直接用 LXD / multipass，Windows 用 WSL2）
+- Linux 主机上只想跑容器/服务（Lima 虽支持 Linux/NetBSD 主机，但多数场景直接用容器或裸机更简单；Windows 仅有实验性 WSL2 驱动）
 - 需要 GUI 桌面环境（Lima 偏向无头 server VM，要 GUI 用 UTM / VMware Fusion）
 - 性能敏感的极限场景（VM 仍有几个百分点开销，HFT / 内核调试用裸金属）
 - 不想学 YAML 的人（Colima 更简单，命令行 flag 就够）
@@ -135,10 +135,9 @@ VM 内 `~/projects` 写入会反映回 host，VM 内 `python -m http.server 8080
 - **2021-06**：Docker Inc 宣布 Docker Desktop 对大企业收费，开源社区急寻替代，Lima 一夜间从小众变热门。
 - **2022**：Rancher Desktop 切到 Lima 做底座；Colima（Lima 的薄封装）出现，成为 macOS 跑 Docker 最简单的方式。
 - **2023**：AWS 推 Finch（同样基于 Lima），证明 Lima 已经是基础设施级别的项目。
-- **2024**：vz + virtiofs 成熟，性能瓶颈基本消除。
-- **2025-01**：Lima 1.0 发布，API 稳定，正式推荐生产可用。
+- **2024**：vz + virtiofs 成熟；**2024-11** Lima 1.0 发布（默认驱动切到 vz），API 稳定。
 
-短短 4 年，从一个开发者的 side project 长成 macOS Linux 容器生态的事实标准。
+短短约 4 年，从一个开发者的 side project 长成 macOS Linux 容器生态的事实标准。
 
 ## 学到什么
 
@@ -160,3 +159,7 @@ VM 内 `~/projects` 写入会反映回 host，VM 内 `python -m http.server 8080
 
 - [[docker]] —— Lima 最大的使用场景就是替代 Docker Desktop 跑 Docker daemon
 - [[lazydocker]] —— Lima VM 内可以装 lazydocker 监控容器，体验和原生一致
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

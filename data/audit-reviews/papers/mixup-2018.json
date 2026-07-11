@@ -1,0 +1,137 @@
+{
+  "slug": "mixup-2018",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "鸡尾酒调配类比贴合「样本+标签一起按 λ 混合」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Beta(α,α) 用「越偏 0/1 vs 越靠 0.5」桥接，零基础能跟上"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有可跟伪代码；案例 2–4 偏经验/概念，可再补一句逐步读法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Zhang et al. ICLR 2018 / arXiv 1710.09412 正确；Hongyi Zhang + FAIR 合作叙述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "凸组合、标签同混、Beta(α,α)、VRM、CutMix 2019 / Manifold Mixup 血缘无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「对抗样本天然落在两点连线附近」是教学视角简化，可接受但不宜读成严格几何结论"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mixup_batch + 双 CE 加权与论文实现等价，概念可跟做（需自备 numpy/torch import）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "只混 x、α 过大、小 batch、BN 扰动、检测/分割边界等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用分类/噪声/鲁棒性；不适用检测分割与极小数据，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "鸡尾酒调配类比贴合「样本+标签一起按 λ 混合」",
+        "Beta(α,α) 用「越偏 0/1 vs 越靠 0.5」桥接，零基础能跟上",
+        "案例 1 有可跟伪代码；案例 2–4 偏经验/概念，可再补一句逐步读法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "来源 Zhang et al. ICLR 2018 / arXiv 1710.09412 正确；Hongyi Zhang + FAIR 合作叙述合理",
+        "凸组合、标签同混、Beta(α,α)、VRM、CutMix 2019 / Manifold Mixup 血缘无硬伤",
+        "「对抗样本天然落在两点连线附近」是教学视角简化，可接受但不宜读成严格几何结论"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "mixup_batch + 双 CE 加权与论文实现等价，概念可跟做（需自备 numpy/torch import）",
+        "只混 x、α 过大、小 batch、BN 扰动、检测/分割边界等坑具体可操作",
+        "适用分类/噪声/鲁棒性；不适用检测分割与极小数据，边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

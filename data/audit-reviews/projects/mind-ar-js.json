@@ -1,0 +1,112 @@
+{
+  "slug": "mind-ar-js",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "眼镜/舞台灯光师类比贴合；三个案例都有逐部分解释，零基础可跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 hiukim/mind-ar-js、mind-ar@1.2.5、A-Frame/three.js 双入口、.mind 预编译与人脸锚点主线正确。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2020 年左右开始维护」属近似时间线，教学可接受；MediaPipe Face Mesh 表述未歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "A-Frame/three.js 示例概念正确可跟；localhost/HTTPS、目标图特征、maxTrack、模型比例踩坑具体；边界（无平面检测/SLA）清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "眼镜/舞台灯光师类比贴合；三个案例都有逐部分解释，零基础可跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 hiukim/mind-ar-js、mind-ar@1.2.5、A-Frame/three.js 双入口、.mind 预编译与人脸锚点主线正确。",
+        "「2020 年左右开始维护」属近似时间线，教学可接受；MediaPipe Face Mesh 表述未歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "A-Frame/three.js 示例概念正确可跟；localhost/HTTPS、目标图特征、maxTrack、模型比例踩坑具体；边界（无平面检测/SLA）清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 200,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 200,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

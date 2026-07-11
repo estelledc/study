@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递员 vs 把店搬回家类比极贴；大仓 log / 行级 stage / LFS 案例步骤清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Linux 内核 24s/0.17GB vs lazygit 57s/2.6GB 与 README benchmark 一致；libgit2 路线与 LFS 结构性代价表述合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "命令可跟做；credential.helper / 键位冲突 / LFS 踩坑具体；适用边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "快递员 vs 把店搬回家类比极贴；大仓 log / 行级 stage / LFS 案例步骤清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Linux 内核 24s/0.17GB vs lazygit 57s/2.6GB 与 README benchmark 一致；libgit2 路线与 LFS 结构性代价表述合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "命令可跟做；credential.helper / 键位冲突 / LFS 踩坑具体；适用边界量化清楚。"
+      ]
+    }
+  ]
+}

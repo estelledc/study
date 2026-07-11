@@ -1,0 +1,131 @@
+{
+  "slug": "ncdu",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "du 打印纸 vs ncdu 房子地图类比非常贴合"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "扫描/表格/就地操作三步清楚；-x、exclude、inode 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "四个案例都有可跟命令与结果预期；缺历史小故事但不影响跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Yorhel、C+ncurses、扫描后内存快照交互等事实正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 来源指向 rofl0r fork；正文已区分原版与 fork，引用合理但官网/原作者链接更权威"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬链接按 inode 只计一次、apparent size 切换等与 du/ncdu 行为一致，无歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "sudo ncdu -x /、 -o/-f 离线、exclude、docker overlay 案例可直接跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "d 真删无回收站、NFS 卡死、扫描中勿按键、硬链接计数等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "与 duf/btop/glances 边界表量化清楚：盘 vs 树 vs 实时 vs 多机"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "du 打印纸 vs ncdu 房子地图类比非常贴合",
+        "扫描/表格/就地操作三步清楚；-x、exclude、inode 有桥接",
+        "四个案例都有可跟命令与结果预期；缺历史小故事但不影响跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "作者 Yorhel、C+ncurses、扫描后内存快照交互等事实正确",
+        "frontmatter 来源指向 rofl0r fork；正文已区分原版与 fork，引用合理但官网/原作者链接更权威",
+        "硬链接按 inode 只计一次、apparent size 切换等与 du/ncdu 行为一致，无歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "sudo ncdu -x /、 -o/-f 离线、exclude、docker overlay 案例可直接跟做",
+        "d 真删无回收站、NFS 卡死、扫描中勿按键、硬链接计数等坑具体可操作",
+        "与 duf/btop/glances 边界表量化清楚：盘 vs 树 vs 实时 vs 多机"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 171,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 171,
+  "l1_pass": true
+}

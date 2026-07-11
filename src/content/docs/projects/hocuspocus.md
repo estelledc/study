@@ -116,7 +116,7 @@ const provider = new HocuspocusProvider({
 
 3. **Document 内存常驻**：海量文档（10w+）的 SaaS 不能让 YDoc 全在内存。配 `unloadImmediately: true` + DB lazy fetch，没人连就释放，下次连接重新拉。
 
-4. **AGPL 协议传染**：Hocuspocus 默认 AGPL-3.0——闭源 SaaS 直接用法律上有风险。商业产品考虑买 Tiptap Pro license 或自己起一个 fork 维护。
+4. **别把「开源后端」当成「免运维」**：Hocuspocus 本身是 **MIT**，协议不挡闭源产品；真正的成本在自托管——WebSocket 粘性会话、Redis 扩展、落盘与 `server.destroy()` 优雅退出都要你自己盯。若只想托管协作，看 Tiptap Cloud / Liveblocks，而不是误以为协议会卡你。
 
 ## 适用 vs 不适用场景
 
@@ -130,7 +130,7 @@ const provider = new HocuspocusProvider({
 - 单纯 P2P 不要服务器 → 用 `y-webrtc` 直连
 - 海量文档 + 极低延迟（百万级 DAU）→ 自研专用后端，Hocuspocus 内存模型撑不住
 - 需要强一致 / 事务性写（金融账本）→ CRDT 模型本身不适合
-- 不能接受 AGPL 又不想买 license → 选 y-websocket 自己加扩展，或 Liveblocks 等 SaaS
+- 不想自托管运维（粘性会话 / Redis / 落盘）→ 用 Liveblocks、Tiptap Cloud 等托管协作 SaaS
 
 ## 历史小故事（可跳过）
 

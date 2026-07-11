@@ -1,0 +1,140 @@
+{
+  "slug": "maml-2017",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "考前复习套路/好起点类比贴合，内外循环有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "support set、query set、Hessian 对零基础仍偏密，但难度标中级可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 正弦回归、案例 2 miniImageNet 只有叙述没有代码与逐步解释；应按模板补最小伪代码+逐部分说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Finn, Abbeel, Levine ICML 2017 正确；arxiv 1703.03400 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "miniImageNet 5-way 1-shot ~48.7% 与论文表一致；FOMAML/ANIL/Reptile 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「普通 fine-tune 跑不动」略修辞；「5 页正文」是教学近似（含附录更长），可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 FOMAML create_graph 对比概念正确；踩坑（二阶内存、K、task 族、RL 上 FOMAML、ANIL）具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（few-shot vs 大数据单任务 vs in-context）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/2 缺可跟做伪代码：应补 sine few-shot 内循环更新与 5-way 1-shot support/query 最小示例"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "考前复习套路/好起点类比贴合，内外循环有桥接",
+        "support set、query set、Hessian 对零基础仍偏密，但难度标中级可接受",
+        "案例 1 正弦回归、案例 2 miniImageNet 只有叙述没有代码与逐步解释；应按模板补最小伪代码+逐部分说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Finn, Abbeel, Levine ICML 2017 正确；arxiv 1703.03400 一致",
+        "miniImageNet 5-way 1-shot ~48.7% 与论文表一致；FOMAML/ANIL/Reptile 时间线合理",
+        "「普通 fine-tune 跑不动」略修辞；「5 页正文」是教学近似（含附录更长），可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 FOMAML create_graph 对比概念正确；踩坑（二阶内存、K、task 族、RL 上 FOMAML、ANIL）具体有用",
+        "适用/不适用边界清楚（few-shot vs 大数据单任务 vs in-context）",
+        "案例 1/2 缺可跟做伪代码：应补 sine few-shot 内循环更新与 5-way 1-shot support/query 最小示例"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 171,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 171,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": [],
+    "summary": "为案例 1/2 补最小伪代码与逐部分解释，满足零基础/工程师对可跟做示例的要求。"
+  }
+}

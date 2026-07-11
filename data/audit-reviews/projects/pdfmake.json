@@ -1,0 +1,142 @@
+{
+  "slug": "pdfmake",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜单/打印机类比贴合声明式对象树，与 jsPDF 对照清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "content / table / columns / vfs 有桥接；案例 2/3 是片段缺「如何挂进 createPdf」的完整步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "建议案例 1 补全 createPdf(...).download 收尾，案例 2/3 各加一句嵌入位置说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/bpampuch/pdfmake；底层 PDFKit、vfs 字体方案与公开文档一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇仍写 pdfMake.vfs = pdfFonts.pdfMake.vfs，与正文所述 v0.3 fonts 重写不完全对齐（工程事实，见 engineer）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史节点 2014 开源 / v0.2–v0.3 量级正确；「Angular/Vue 接管为事实标准」略修辞但不构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "开篇 vfs 赋值是 0.1/早期写法；现行 0.2.15+/0.3 应 import 副作用或 addVirtualFileSystem(pdfFonts)，跟做会踩坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（中文 vfs、widths 溢出、columns 不换行、图片须 base64）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化：几千页内存爆改 PDFKit；复杂排版/改已有 PDF 不适用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "菜单/打印机类比贴合声明式对象树，与 jsPDF 对照清楚",
+        "content / table / columns / vfs 有桥接；案例 2/3 是片段缺「如何挂进 createPdf」的完整步骤",
+        "建议案例 1 补全 createPdf(...).download 收尾，案例 2/3 各加一句嵌入位置说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 github.com/bpampuch/pdfmake；底层 PDFKit、vfs 字体方案与公开文档一致",
+        "开篇仍写 pdfMake.vfs = pdfFonts.pdfMake.vfs，与正文所述 v0.3 fonts 重写不完全对齐（工程事实，见 engineer）",
+        "历史节点 2014 开源 / v0.2–v0.3 量级正确；「Angular/Vue 接管为事实标准」略修辞但不构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇 vfs 赋值是 0.1/早期写法；现行 0.2.15+/0.3 应 import 副作用或 addVirtualFileSystem(pdfFonts)，跟做会踩坑",
+        "踩坑（中文 vfs、widths 溢出、columns 不换行、图片须 base64）具体可操作",
+        "适用边界有量化：几千页内存爆改 PDFKit；复杂排版/改已有 PDF 不适用"
+      ]
+    }
+  ],
+  "lines": 189,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 189,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "vfs 改为 addVirtualFileSystem；案例补 createPdf/content 挂载说明",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  }
+}

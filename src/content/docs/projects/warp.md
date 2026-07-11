@@ -25,7 +25,7 @@ let hello = warp::path!("hello" / String)
 
 不理解 warp，下面这些事都没法解释：
 
-- 为什么 Rust web 框架能"不写宏、不写字符串路径"也做出类型安全路由
+- 为什么 Rust web 框架能用类型安全组合（而不是字符串路由表）做出路由
 - 为什么同一份 Rust 后端，axum 用 `Router::new().route(...)`、warp 用 `.and().or()`，路线分歧的根因在哪
 - 为什么"函数式组合中间件"听起来优雅，写多了又会被编译错误劝退
 - 为什么 hyper 作者要先做 warp 才做别的——它是 hyper 上层最早的"工程化包装"之一
@@ -34,13 +34,13 @@ let hello = warp::path!("hello" / String)
 
 warp 的设计可以拆成 **三件事**：
 
-1. **Filter 是一个 trait**：每个 Filter 要么"提取出一个值"（比如从 path 里抽出 `String`、从 header 抽出 `Bearer token`），要么"拒绝请求"（rejection）。Filter 的输出是个 **元组**——`Filter<Extract = (String,)>` 表示这个 Filter 给后续提供一个 String。
+1. **Filter 是一道关卡**：每个 Filter 要么"提取出一个值"（从 path 抽出名字、从 header 抽出 token），要么"拒绝请求"（rejection，像安检没过）。输出是个 **元组**——`Filter<Extract = (String,)>` 表示这关给后面递一张写着 String 的纸条。
 
-2. **`.and()` 把元组拼起来，`.or()` 做"前者拒了就试后者"**：`a.and(b)` 输出 `(A1..An, B1..Bn)` 拼接的元组；`a.or(b)` 是 fallback，不是 HTTP 短路。最后 `.map()` 或 `.and_then()` 拿到完整元组，写 handler。
+2. **`.and()` 串关，`.or()` 换通道**：`a.and(b)` 把两关的纸条拼成更长的元组；`a.or(b)` 是前者拒了才试后者（换通道），不是 HTTP 短路。最后 `.map()` / `.and_then()` 拿到完整元组写 handler。
 
-3. **类型推导让 handler 签名自动对上**：你不用手写 "这个 handler 收 path 段 + JSON body + Authorization 头"，编译器从 Filter 链推出来。错一个，编译器就拒绝。
+3. **编译器替你对签名**：你不用手写"这个 handler 收 path + JSON + Authorization"，编译器从 Filter 链推出来。错一个就编译失败——像拼图缺一块，盖不上。
 
-三件事加起来：路由 = Filter 树，中间件 = Filter 装饰，handler = Filter 链末端的 `.map()`。
+三件事加起来：路由 = Filter 树，中间件 = Filter 装饰，handler = 链末端的 `.map()`。
 
 ## 实践案例
 
@@ -81,11 +81,17 @@ let protected = warp::path!("me")
     .map(|token: String| format!("token ok: {}", token));
 ```
 
-`auth()` 是一个**可复用的 Filter**——任何路由 `.and(auth())` 就能套上鉴权。组合性来自于 Filter 是一等公民。
+**逐步解释**：
+
+- `auth()` 读 `authorization` 头；像 Bearer 就放行并抽出 token，否则 reject
+- `path!("me").and(auth())` 先匹配 `/me`，再过鉴权关——两关纸条拼成 `(token,)`
+- `.map(|token| ...)` 只在两关都过了才跑；任何路由 `.and(auth())` 就能复用
 
 ### 案例 3：WebSocket echo
 
 ```rust
+use futures_util::{SinkExt, StreamExt}; // split / forward 需要
+
 let ws = warp::path("ws")
     .and(warp::ws())
     .map(|ws: warp::ws::Ws| {
@@ -96,7 +102,11 @@ let ws = warp::path("ws")
     });
 ```
 
-`warp::ws()` 拿到 upgrade Filter，`on_upgrade` 把 HTTP 切到 WebSocket，剩下用 `futures::Stream` 处理。WebSocket 在 warp 里和普通路由共用同一套 Filter 抽象。
+**逐步解释**：
+
+- `path("ws").and(warp::ws())`：路径对上且客户端要升级成 WebSocket
+- `on_upgrade`：HTTP 握手成功后切到长连接（像电话从拨号切到通话）
+- `split` + `forward`：把收到的帧原样发回；依赖 `futures_util`
 
 ## 踩过的坑
 
@@ -112,16 +122,16 @@ let ws = warp::path("ws")
 
 **适用**：
 
-- 中小型 JSON API / WebSocket 服务，喜欢函数式风格
-- 需要细粒度组合 Filter 的场景（多种鉴权 / 多种 body 类型混合路由）
+- 中小型 JSON API / WebSocket（大约几十个路由以内），喜欢函数式风格
+- 需要细粒度组合 Filter（多种鉴权 / 多种 body 类型混合）
 - 已经在用 hyper 生态，想要薄包装
 
 **不适用**：
 
-- 团队不熟悉函数式组合 / Rust 类型推导——上手门槛比 axum 高
-- 需要重度依赖 tower 中间件生态 → 用 axum
-- 需要"路由表声明式集中管理" → 用 actix-web 或 rocket 的宏路由
-- 复杂大型应用 + 多人协作 → axum 的 `Router` 模式更直观
+- 团队不熟函数式组合 / 类型推导——上手门槛比 axum 高
+- 重度依赖 tower 限流/熔断中间件 → 用 axum
+- 要"路由表集中声明" → actix-web 或 rocket 的宏路由
+- 大型多人协作 → axum 的 `Router` 更直观
 
 ## 历史小故事（可跳过）
 

@@ -32,7 +32,7 @@ $app->run();
 
 - 为什么 PHP 圈不是只有 [[laravel]] / [[symfony]]，还需要一个轻量选项——同一个语言的"小快灵"和"全家桶"得共存
 - 为什么 PSR-7 / PSR-15 这两个 PHP 标准会被广泛接受——Slim v4 是第一批真正按它实现的主流框架
-- 为什么写 PHP 微服务 / Lambda 函数大家不会拖一个 Laravel 进来——启动一次 1-2MB 内存对短任务不划算
+- 为什么写 PHP 微服务 / Lambda 函数大家不会拖一个 Laravel 进来——Laravel 启动常到数 MB，短任务不划算
 - 为什么 Slim 在 PHP 圈的位置，跟 [[express]] 在 Node 圈、[[fastapi]] 在 Python 圈极其相似
 
 ## 核心要点
@@ -50,6 +50,8 @@ Slim 的设计可以拆成 **三个支点**：
 ## 实践案例
 
 ### 案例 1：30 行返回 JSON 的 hello API
+
+先装依赖：`composer require slim/slim slim/psr7`（v4 不自带 PSR-7 实现，缺了会报找不到 ResponseFactory）。
 
 ```php
 <?php
@@ -122,14 +124,14 @@ $app->get('/users', function ($req, $res) {
 1. **必须手选 PSR-7 实现**：v4 不自带 HTTP 消息类，第一次 `composer require slim/slim` 完跑起来会报"找不到 ResponseFactory"，必须再装 `slim/psr7` 或 `nyholm/psr7` 才行。
 2. **中间件顺序反直觉**：`add()` 是栈结构，**后加的先执行**。新人常把鉴权写最后导致先跑 CORS 再鉴权，业务路径已经被处理了一半才检查 token。
 3. **依赖注入容器要自己接**：Slim 只接受 PSR-11 接口，没装 PHP-DI / League Container 时回调里 `$this->get(...)` 直接报错。
-4. **prod 模式错误不显示堆栈**：`addErrorMiddleware($app, false, false, false)` 三个 false 控制 displayErrorDetails / logErrors / logErrorDetails。开发期忘记开第一个，会看到一片白屏完全不知道哪里炸了。
+4. **prod 模式错误不显示堆栈**：正确写法是 `$app->addErrorMiddleware(false, false, false)`，三个参数依次是 displayErrorDetails / logErrors / logErrorDetails。开发期忘记把第一个改成 `true`，会看到一片白屏完全不知道哪里炸了。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
 - 写小型 RESTful API / JSON 接口（10-50 个路由）
-- PHP 微服务、Serverless 函数（启动 200KB 内存比 Laravel 1MB 优势明显）
+- PHP 微服务、Serverless 函数（Slim 启动常在数百 KB 级，Laravel 常到数 MB，短任务差一截）
 - 渐进式接入 PSR 标准的老项目——Slim 不绑你的其余技术栈
 - 需要精细控制中间件管道顺序的场景（鉴权 / 限流 / 日志）
 
@@ -150,7 +152,7 @@ $app->get('/users', function ($req, $res) {
 ## 学到什么
 
 1. **micro 框架 = 显式拼装**：少给默认值反而让你更清楚每一块是什么，对学习很友好
-2. **PSR 标准让生态可拼**——Slim、Laravel、Symfony 的中间件可以互换，因为大家都按 PSR-15 接口写
+2. **PSR 标准让生态可拼**——符合 PSR-15 的中间件可跨框架复用；Laravel / Symfony 也逐步对齐，但并非所有自有中间件都能即插即用
 3. **洋葱模型是 web 框架的核心抽象**：理解了它，Express / Koa / Fastify / Slim 一通百通
 4. **不可变请求 / 响应对象** 强制函数式风格，避免中间件之间互相改坏对方的状态
 

@@ -30,20 +30,20 @@ const xScale = scaleLinear({ domain: [0, 100], range: [0, 500] });
 
 不理解 visx，下面这些事都没法解释：
 
-- 为什么 React 项目里用原生 d3 总撞墙：`d3.select(svg).selectAll(...)` 是 imperative，跟 React 的 declarative 重渲染时序对不上
+- 为什么 React 项目里用原生 d3 总撞墙：`d3.select(svg).selectAll(...)` 是一步步改 DOM（imperative，命令式），跟 React「声明 UI、由框架重画」的时序对不上
 - 为什么 [[recharts]] 易上手但深度自定义就卡死，visx 反过来——慢上手但天花板高
-- 为什么 SSR / Next.js 场景里大家选 SVG-based 方案而不是 Canvas
-- 为什么"按需 import 几个 schema"在 [[d3]] 这种工具库时代变成硬性优势（bundle 4KB vs 全量 50KB）
+- 为什么 SSR / Next.js 场景里大家选 SVG-based 方案而不是 Canvas（服务端先吐出可序列化的标签，hydration 体积更小）
+- 为什么「按需 import 几个子包」在 [[d3]] 这种工具库时代变成硬性优势（没用到的代码打包时丢掉，bundle 约 4KB vs 全量约 50KB）
 
 ## 核心要点
 
 visx 的设计可以拆成 **三句话**：
 
-1. **数学引擎用 d3，UI 层用 React**：`@visx/scale` 直接 re-export d3-scale 实例，没重写 scaleLinear/scaleLog。类比：visx 是 d3 的"翻译官"，不是替代品。
+1. **数学引擎用 d3，UI 层用 React**：`@visx/scale` 用配置对象薄包装创建 d3-scale，没重写 scaleLinear/scaleLog。类比：visx 是 d3 的"翻译官"，不是替代品。
 
-2. **每个原语是独立 React 组件**：scale / axis / shape 都是 props 驱动的 SVG 组件，没有 imperative `chart.update()`。data 变 → props 变 → React reconciliation → SVG 重渲染，整条链跟普通 React 应用一样。
+2. **原语分两类，心智却统一**：scale 是函数（数据 ↔ 像素）；axis / shape 才是 props 驱动的 SVG 组件。没有 imperative `chart.update()`——data 变 → props 变 → React 对比新旧树（reconciliation）→ SVG 重渲染。
 
-3. **monorepo 拆 30+ 子包**：`@visx/scale` `@visx/shape` `@visx/zoom` 各自独立发布、独立版本。bundler 看到你只 import 几个，剩下的全部 dead-code-eliminate。
+3. **monorepo 拆 30+ 子包**：`@visx/scale` `@visx/shape` `@visx/zoom` 各自独立发布。bundler 看到你只 import 几个，剩下的全部 dead-code-eliminate（没用到的代码打包时丢掉）。
 
 合在一起：**继承 d3 数学战斗经验 + React 心智一致 + tree-shake 友好的 bundle**。
 
@@ -65,7 +65,7 @@ xScale.invert(250);   // → 50（反向，pixel → data）
 xScale.ticks(5);      // → [0, 25, 50, 75, 100]
 ```
 
-`scaleLinear` 返回的对象**就是 d3-scale 实例**，本身是个函数，同时挂了 `.invert / .ticks / .domain / .range`。visx 只补 TS 类型，没改算法。
+**逐部分解释**：`scaleLinear` 返回的对象**就是 d3-scale 实例**（本身是个函数，同时挂了 `.invert / .ticks`）。visx 只补配置化 API 与 TS 类型，没改算法。真实柱状图通常 `data.map` 再喂 `xScale`。
 
 ### 案例 2：响应式容器（@visx/responsive）
 
@@ -77,11 +77,13 @@ import { ParentSize } from '@visx/responsive';
 </ParentSize>
 ```
 
-`ParentSize` 用 ResizeObserver 监听父容器，把宽高通过 render-prop 传给子组件，默认 debounce 300ms 防止拖动时每帧重渲染。SSR 时给 fallback 尺寸。
+**逐步**：① `ParentSize` 用 ResizeObserver 盯父容器宽高；② 通过 render-prop 把 `width/height` 传给子图；③ 默认 debounce 300ms，防拖动时每帧重渲染。SSR 时给 fallback 尺寸。
 
 ### 案例 3：state-based zoom（@visx/zoom）
 
 ```tsx
+import { Zoom } from '@visx/zoom';
+
 <Zoom width={500} height={500} scaleXMin={0.5} scaleXMax={4}>
   {(zoom) => (
     <svg
@@ -96,7 +98,7 @@ import { ParentSize } from '@visx/responsive';
 </Zoom>
 ```
 
-Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY），事件 handler 通过 props 注入到 SVG。**不直接操作 DOM**，跟原生 d3-zoom 的 imperative 路径形成对照——这是 visx 的关键设计代价。
+**逐步**：① 拖/滚轮进 Zoom 的 handler；② 内部更新 transformMatrix（scaleX/Y、translateX/Y）；③ `zoom.toString()` 写成 SVG `transform`。**不直接操作 DOM**——跟原生 d3-zoom 的 imperative 路径对照，这是 visx 的关键设计代价。
 
 ## 踩过的坑
 
@@ -147,7 +149,7 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 
 ## 关联
 
-- [[d3]] —— visx 的底层数学引擎，scale/shape/hierarchy 全部 re-export 或包装 d3 模块
+- [[d3]] —— visx 的底层数学引擎，scale/shape/hierarchy 全部包装或 re-export d3 模块
 - [[recharts]] —— 同生态高层对比，visx 是低层原语 / Recharts 是高层成品
 - [[observable-plot]] —— 反例哲学（用语法糖隐藏 d3）
 - [[echarts]] —— 高层 vs 低层哲学对比的另一极，配置驱动
@@ -168,4 +170,3 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 - [[vega]] —— Vega — 整张图就是一棵 JSON
 - [[vis-network]] —— vis-network — barnesHut 物理引擎驱动的网络图
 - [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-

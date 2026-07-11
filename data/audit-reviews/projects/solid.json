@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜单整张重写 vs 只改一行类比极贴合「无重渲染」；电台/收音机讲订阅也好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "signal / effect / memo / Show 首次出现有桥接；组件只跑一次反复强调，零基础能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐行解释；案例 2/3 几乎只有结论段——应各补「读了谁 → 谁变 → 谁重跑/更新」三步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/solidjs/solid 正确；Ryan Carniato、2018 原型、2021-06 1.0 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "细粒度信号 + 编译期 JSX、无 VDOM diff 与官方设计一致；~7KB gzip 量级可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「启发 React Compiler」「比 React 快 1.5–3 倍」属社区常见说法，宜作软表述勿当硬指标"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Counter / Effect / Memo 三段 API 用法正确可跟做；受控 input 的 value={name()}+onInput 是 Solid 常规写法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：只跑一次分支、count 未调用、解构 props 丢响应式、React 生态不兼容——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（~7KB、dashboard vs 全员 React/shadcn）；可再补一句「列表大更新仍要用 For/索引策略」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "菜单整张重写 vs 只改一行类比极贴合「无重渲染」；电台/收音机讲订阅也好懂",
+        "signal / effect / memo / Show 首次出现有桥接；组件只跑一次反复强调，零基础能跟",
+        "案例 1 有逐行解释；案例 2/3 几乎只有结论段——应各补「读了谁 → 谁变 → 谁重跑/更新」三步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 github.com/solidjs/solid 正确；Ryan Carniato、2018 原型、2021-06 1.0 时间线合理",
+        "细粒度信号 + 编译期 JSX、无 VDOM diff 与官方设计一致；~7KB gzip 量级可接受",
+        "「启发 React Compiler」「比 React 快 1.5–3 倍」属社区常见说法，宜作软表述勿当硬指标"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Counter / Effect / Memo 三段 API 用法正确可跟做；受控 input 的 value={name()}+onInput 是 Solid 常规写法",
+        "踩坑具体：只跑一次分支、count 未调用、解构 props 丢响应式、React 生态不兼容——保留",
+        "适用/不适用边界清楚（~7KB、dashboard vs 全员 React/shadcn）；可再补一句「列表大更新仍要用 For/索引策略」"
+      ]
+    }
+  ]
+}

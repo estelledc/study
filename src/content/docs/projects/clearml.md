@@ -108,6 +108,20 @@ if __name__ == "__main__":
 
 工作流：本地 IDE 单步 debug 5 个 epoch → 通过 → 加这一行 → 推到远端跑 100 个 epoch。
 
+### 案例 3：把数据集也当成版本
+```python
+from clearml import Dataset
+ds = Dataset.create(dataset_name="cats-vs-dogs")
+ds.add_files("data/")
+ds.upload()
+ds.finalize()
+```
+
+**逐部分解释**：
+- `Dataset.create` 像开一个数据仓库分支，记录这批数据叫什么。
+- `add_files` 只声明要收哪些文件，真正上传由 `upload` 执行。
+- `finalize` 像给版本打 tag，后续训练任务可以固定拉这一版，避免“今天的数据和昨天不一样”。
+
 ## 生态对比
 
 | 维度 | ClearML | MLflow | W&B |
@@ -179,3 +193,7 @@ if __name__ == "__main__":
 - [[airflow]] —— 通用 DAG 调度，ClearML Pipeline 借鉴了思路
 - [[pytorch]] —— ClearML 自动 hook 的主要训练框架之一
 - [[pytorch-lightning]] —— Lightning 内置 ClearML logger
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "写字楼大堂类比贯穿 Route/Service/plugin；YAML 鉴权、K8s CRD、decK 三案例逐步可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitHub Kong/kong 来源合理；Mashape 2015 开源、OpenResty/LuaJIT、DB-less/Ingress/AI Gateway 时间线与公开史实一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "声明式 YAML/KongPlugin/decK 概念正确可跟；Admin API 8001、PG 单点、Lua 泄漏、priority 顺序踩坑可操作；南北向 vs mesh/极简反代边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "写字楼大堂类比贯穿 Route/Service/plugin；YAML 鉴权、K8s CRD、decK 三案例逐步可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "GitHub Kong/kong 来源合理；Mashape 2015 开源、OpenResty/LuaJIT、DB-less/Ingress/AI Gateway 时间线与公开史实一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "声明式 YAML/KongPlugin/decK 概念正确可跟；Admin API 8001、PG 单点、Lua 泄漏、priority 顺序踩坑可操作；南北向 vs mesh/极简反代边界清楚"
+      ]
+    }
+  ]
+}

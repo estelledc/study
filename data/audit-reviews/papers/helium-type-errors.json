@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "简易词典类比与 GHC vs Helium 对照极清晰；type graph/heuristics/siblings 有桥接；案例 3 directives 偏抽象但不挡跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者/年份/会场正确；去 type class、type graph、siblings 与论文主线一致；Elm/Rust 影响表述略概括但无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Haskell 误用示例概念正确；教学编译器边界、启发式误报、siblings 维护成本写得可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "简易词典类比与 GHC vs Helium 对照极清晰；type graph/heuristics/siblings 有桥接；案例 3 directives 偏抽象但不挡跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "作者/年份/会场正确；去 type class、type graph、siblings 与论文主线一致；Elm/Rust 影响表述略概括但无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Haskell 误用示例概念正确；教学编译器边界、启发式误报、siblings 维护成本写得可操作。"
+      ]
+    }
+  ]
+}

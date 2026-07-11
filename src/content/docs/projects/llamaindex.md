@@ -37,7 +37,7 @@ print(response)
 
 - 为什么 2024 之后 RAG 项目里 LlamaIndex 与 [[langchain]] 形成"两强"，而不是后者一统天下
 - 为什么"接 PDF / Notion / Slack / Google Drive"这种琐碎活，社区会沉淀出 200+ 现成的 data loader（LlamaHub）
-- 为什么生产级 RAG 必须"检索 + 重排"两步，而不是只做向量召回——LlamaIndex 内置 re-ranker 把这件事做成了默认选项
+- 为什么生产级 RAG 常在向量召回后再加一步重排（re-rank）——LlamaIndex 把 cross-encoder re-ranker 做成**可选插件**，接上就能用
 - 为什么 2024 底 LlamaIndex 也加了"Workflow API"（事件驱动 agent），和 LangGraph 形成对位
 - 为什么 LlamaCloud（managed RAG 服务）是 2024 年这家公司商业化的主线
 
@@ -57,20 +57,37 @@ LlamaIndex 的数据流可以拆成 **三层**：
 
 ## 实践案例
 
-### 案例 1：最简 RAG（4 行做完）
+### 案例 1：最简 RAG（逐步拆开）
 
-上面 "是什么" 段已经给了。注意它默认用 OpenAI 的 embedding 和 chat 模型——换 Claude / 本地模型只需替 `Settings.llm` 一行。
+```python
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
+from llama_index.llms.openai import OpenAI  # 可换成 Claude / Ollama
+
+# 第 1 步：换模型（可选；默认也是 OpenAI）
+Settings.llm = OpenAI(model="gpt-4o-mini")
+
+# 第 2 步：扫描 data/ 下 PDF/Markdown → Document 列表
+docs = SimpleDirectoryReader("data").load_data()
+
+# 第 3 步：切块 + 算 embedding → 建向量索引
+index = VectorStoreIndex.from_documents(docs)
+
+# 第 4 步：对外只暴露 .query()；内部 = 检索 + 把片段塞给 LLM
+response = index.as_query_engine().query("公司报销政策对出租车有什么限制？")
+print(response)
+```
+
+**逐部分解释**：第 2 步是"图书管理员扫描"；第 3 步是"贴坐标进卡片柜"；第 4 步是"翻出相关卡片再复述"。默认**不做** cross-encoder 重排——要加 re-ranker 需另接节点。
 
 ### 案例 2：Sub-question（复杂问题自动拆）
 
-用户问："对比公司 2023 和 2024 财年研发投入"。
+用户问："对比公司 2023 和 2024 财年研发投入"。裸向量检索一次只能捞一堆片段，很难做跨年对比。
 
-LlamaIndex 的 `SubQuestionQueryEngine` 自动把它拆成两个子问题：
+1. `SubQuestionQueryEngine` 让 LLM 先拆成子问题："2023 研发投入？" / "2024 研发投入？"
+2. 每个子问题各自走一遍 retriever → 得到数字或段落
+3. 再把两份证据交给 LLM 合并成对比答复
 
-- "2023 财年研发投入是多少？" → 查 2023 财报
-- "2024 财年研发投入是多少？" → 查 2024 财报
-
-各自查完，再让 LLM 合并答复。这一层"拆 + 合"对裸 RAG 是巨大升级——单次向量检索没法跨多文档对比。
+这一层"拆 + 合"是对单次 RAG 的升级：对比类问题不再指望一次 top-k 碰巧两边都齐。
 
 ### 案例 3：Hybrid retrieval（向量 + 关键词加权）
 

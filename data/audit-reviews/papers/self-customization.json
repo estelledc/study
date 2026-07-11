@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅抄三本菜谱类比贴合「按调用者类型复制方法」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "map / type prediction / guard / deoptimize 均有白话桥接；PIC 靠 wikilink 补"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 伪指令前后对照清楚；案例 2/3 可跟读，案例 3 map 分裂一步到位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史条写「SELF 跑到 Smalltalk 的 4-5×」与论文不符：PLDI'89 报告约 2× Smalltalk、距优化 C 约 4–5×——应改成后者"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Chambers & Ungar PLDI 1989 与 DOI 10.1145/74818.74831 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "maps→hidden class、type prediction、Hölzle PIC/自适应再编译时间线合理；教学简化可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 伪指令从 dispatch 到 load_field/imul 概念正确，可跟做教学推演"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：代码膨胀 10-100×、多态 guard 失败、map transition 失效、离线编译 vs eval"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化（mono/低多态 vs 10+ 类型、嵌入式 ROM）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "餐厅抄三本菜谱类比贴合「按调用者类型复制方法」",
+        "map / type prediction / guard / deoptimize 均有白话桥接；PIC 靠 wikilink 补",
+        "案例 1 伪指令前后对照清楚；案例 2/3 可跟读，案例 3 map 分裂一步到位"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史条写「SELF 跑到 Smalltalk 的 4-5×」与论文不符：PLDI'89 报告约 2× Smalltalk、距优化 C 约 4–5×——应改成后者",
+        "来源 Chambers & Ungar PLDI 1989 与 DOI 10.1145/74818.74831 正确",
+        "maps→hidden class、type prediction、Hölzle PIC/自适应再编译时间线合理；教学简化可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 伪指令从 dispatch 到 load_field/imul 概念正确，可跟做教学推演",
+        "踩坑具体：代码膨胀 10-100×、多态 guard 失败、map transition 失效、离线编译 vs eval",
+        "适用边界有量化（mono/低多态 vs 10+ 类型、嵌入式 ROM）"
+      ]
+    }
+  ]
+}

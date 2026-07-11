@@ -1,6 +1,6 @@
 ---
 title: k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制
-来源: Rancher Labs 2019, github.com/k3s-io/k3s（CNCF 孵化项目）
+来源: Rancher Labs 2019, github.com/k3s-io/k3s（CNCF 沙箱项目）
 日期: 2026-05-31
 分类: 基础设施
 难度: 中级
@@ -29,7 +29,7 @@ curl -sfL https://get.k3s.io | sh -
 - 为什么有人能在 **树莓派 4** 上跑生产级 K8s 集群——完整 K8s 占 1 GB+，树莓派内存全吃掉
 - 为什么 Rancher Desktop / k3d / Rancher 的多集群产品**底层都是 k3s**——它是 Rancher 整个生态的发动机
 - 为什么"边缘 K8s"这个赛道在 2020 年之后才热起来——k3s 把门槛降到让 IoT 厂家也敢上 K8s
-- 为什么你本地开发不用 minikube 而用 k3d——后者启动 5 秒，前者要等 30 秒虚拟机
+- 为什么本地开发常选 k3d 而不是传统 minikube VM driver——k3d 复用 Docker，冷启动常在十几秒内；minikube 的 VM driver 首次还要拉镜像、等虚拟机就绪
 
 ## 核心要点
 
@@ -69,7 +69,7 @@ k3d cluster create dev --servers 1 --agents 2
 # 总耗时：约 15 秒
 ```
 
-**对比 minikube**：minikube 启动需要先拉一个 VM 镜像（500 MB+），首次启动 1 分钟。k3d 直接复用 Docker，10 秒搞定。
+**对比 minikube（VM driver）**：传统路径要先拉 VM 镜像（500 MB+），首次常要一分钟量级。k3d 直接复用本机 Docker，通常十几秒内就绪（minikube 也有 Docker driver，但 k3d 仍更轻、专为「丢弃式」本地集群设计）。
 
 ### 案例 3：HA 模式（多节点高可用）
 
@@ -115,10 +115,10 @@ curl -sfL https://get.k3s.io | sh -s - server --server https://<node1>:6443
 ## 历史小故事（可跳过）
 
 - **2019-02**：Rancher 的 CTO Darren Shepherd 在 GitHub 开源 k3s。当时 K8s 已是云原生标准，但"边缘 K8s"还是个无人问津的赛道。
-- **2020-08**：Rancher 把 k3s 捐赠给 CNCF，进入沙箱阶段。
+- **2020-08**：Rancher 把 k3s 捐赠给 CNCF，进入**沙箱（Sandbox）**阶段。
 - **2020-12**：SUSE 收购 Rancher Labs，k3s 也跟着进了 SUSE 体系。
-- **2022-08**：k3s 从 CNCF 沙箱毕业，升级为孵化项目。
-- **2023+**：边缘 AI 兴起，k3s 成了边缘节点跑模型的标准底座之一。
+- **2025-2026**：维护者提交 CNCF 孵化（Incubating）申请并补安全自评等材料；截至 2026 中，官网仍标注为 Sandbox，尚未升到孵化级。
+- **2023+**：边缘 AI 兴起，k3s 成了边缘节点跑模型的常见底座之一。
 
 ## 学到什么
 

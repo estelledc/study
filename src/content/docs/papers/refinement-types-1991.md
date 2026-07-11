@@ -30,9 +30,9 @@ rectype α nelist = cons (α, α list)
 
 不理解 refinement types，下面这些事都没法解释：
 
-- TypeScript 里 `if (x !== null) { x.toUpperCase() }` 为什么能编译过——这是 1991 年 Freeman-Pfenning"对一个 union 在分支里 narrow 成子集"思想的现代落地
+- TypeScript 里 `if (x !== null) { x.toUpperCase() }` 为什么能编译过——和 1991 年"在分支里把 union 收成子集"是同一类思路的现代回响（TS 自己的实现路径并不直接抄这篇）
 - 为什么 Liquid Haskell 能在编译时拒绝除以 0、数组越界——它把 refinement 推到了一阶逻辑断言
-- 为什么 F\* / Dafny 这些"程序+证明"语言能让一个函数自带"它做了什么"的规格——它们的类型系统都从这里发源
+- 为什么 F\* / Dafny 这类"程序+证明"语言能让函数自带规格——它们吸收了 refinement 思想，同时也站在依赖类型、霍尔逻辑等更广谱系上
 - 为什么 ML 的 `head` 没办法拒绝空列表，而 30 年后的 Liquid Haskell 可以
 
 ## 核心要点
@@ -43,7 +43,7 @@ refinement types 的工作原理可以拆成 **三件事**：
 
 2. **交集类型 ∧**：同一个构造器 `cons` 同时具备多个类型——传入 `(α, ?nil)` 给出 `α singleton`，传入 `(α, list)` 给出 `α list`。多个类型用 `∧` 拼起来。类比：一个司机同时是"会开手动挡"也"会开自动挡"，谁要哪个能力就拿哪个。
 
-3. **有限格上的抽象解释**：所有 refinement 排成一个有限格（`⊥ < singleton < list, ⊥ < ?nil < list`），类型推导就是在格上往上推合一。有限是关键——保证算法**可判定**，否则完整 intersection type 推导是不可判定的。
+3. **有限格上的抽象解释**：把所有 refinement 排成一张有限的"精细度梯子"（格：`⊥ < singleton < list, ⊥ < ?nil < list`）。**抽象解释**就是：不跑完整程序，只在这张梯子上推"值大概落在哪一格"。有限是关键——保证算法**可判定**，否则完整 intersection type 推导是不可判定的。
 
 ## 实践案例
 
@@ -62,7 +62,9 @@ fun head (cons (x, _) : α nelist) = x
 
 调用 `head nil` 时，编译器知道 `nil` 不是 `nelist` 的成员，**编译期**就报错。HM 做不到。
 
-### 案例 2：λ-演算 head normal form 写进类型
+### 案例 2：把"不能再化简的项"写进类型
+
+日常对照：算术里 `3+4` 还能算，`7` 已经是答案——后者就是"头范式"（**hnf**，head normal form：不能再做 β-化简的 λ 项；β-规约 ≈ 把函数应用到参数上算一步）。
 
 ```ml
 datatype term = Var of string
@@ -74,9 +76,9 @@ rectype hnf = Var of string
             | App of hnf * term  (* App 左侧必须递归是 hnf *)
 ```
 
-`hnf` 是无法再 β-规约的项。要写"再规约一步"的函数，输入是 `term and not hnf`，输出是 `term`。Refinement 把这层 invariant 直接写进类型，不再藏在注释里。
+要写"再化简一步"的函数，输入应是"还不是 hnf 的 term"，输出是 `term`。Refinement 把这层 invariant 写进类型，不再藏在注释里。（示意：论文主例子是 list/bitstr；hnf 用来展示同一套路。）
 
-### 案例 3：TypeScript narrowing 是它的现代影子
+### 案例 3：TypeScript narrowing 是同类思路的现代回响
 
 ```ts
 function fmt(x: string | null): string {
@@ -85,7 +87,7 @@ function fmt(x: string | null): string {
 }
 ```
 
-TypeScript 的 control-flow narrowing 做的就是 1991 年抽象解释——一个 union 类型 `string | null` 在分支里被推成它的子集。TS 不需要 `rectype` 因为 union 已经是一等公民，但内核思路一样。
+TS 的 control-flow narrowing：union `string | null` 在分支里被收成子集。不需要 `rectype`（union 已是一等公民），但"在控制流里收窄合法子集"和 1991 年抽象解释是同一类直觉。
 
 ## 踩过的坑
 
@@ -111,12 +113,12 @@ TypeScript 的 control-flow narrowing 做的就是 1991 年抽象解释——一
 
 ## 历史小故事（可跳过）
 
-- **1969 年**：意大利学派 Coppo / Dezani 发明 intersection types ∧，纯逻辑工具，没有可跑算法。
+- **1978 年前后**：意大利学派 Coppo / Dezani 提出 intersection types ∧（约 1978 论文），纯逻辑工具，没有可跑的编程语言算法。
 - **1988 年**：Reynolds 设计 Forsythe，首次把 intersection 用在实际语言，但要程序员大量手写注解。
-- **1990 年**：Pierce 在 CMU 做 intersection + union 的初步研究（unpublished manuscript [Pie90]），Freeman 是 Pfenning 的博士生。
+- **1989–1990 年**：Pierce 等研究 intersection + polymorphism 的更一般情形（论文引 [Pie89]）；Freeman 是 Pfenning 的博士生。
 - **1991 年**：Freeman-Pfenning 在 PLDI 提出 **refinement types**——把 intersection 限制到"同一个 ML 类型的精化"，从而保留可判定推导。
 - **2008 年**：Rondon-Kawaguchi-Jhala 发表 Liquid Types，把 refinement 推到一阶逻辑断言（`{v:int | v>0}`），交给 SMT solver 解。
-- **2011 年起**：F\* / Dafny / Liquid Haskell 一系列工业语言把 refinement + 程序验证彻底融合。
+- **2011 年起**：F\* / Dafny / Liquid Haskell 等把 refinement 与程序验证深度结合（同时继承依赖类型、霍尔逻辑等更广传统）。
 
 ## 学到什么
 

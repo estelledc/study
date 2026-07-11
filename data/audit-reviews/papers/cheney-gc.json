@@ -1,0 +1,107 @@
+{
+  "slug": "cheney-gc",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    "案例 1 的 C 片段用 int header 存 forwarding pointer，64 位机器会截断地址；应改为 uintptr_t 并显式引入 stdint.h。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 C 片段用 int header 存 forwarding pointer，64 位机器会截断地址；应改为 uintptr_t 并显式引入 stdint.h。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "reject_count": 0,
+    "verdicts": [
+      "pass",
+      "pass",
+      "needs-refine"
+    ],
+    "decision": "refine",
+    "status": "refined"
+  },
+  "refinements": [
+    {
+      "section": "## 实践案例",
+      "change": "将 Cell.header 从 int 改为 uintptr_t，并补充 stdint.h，避免 forwarding pointer 在 64 位环境截断。"
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 175,
+    "reasons": [],
+    "details": {
+      "lines": {
+        "ok": true,
+        "lines": 175
+      },
+      "red-line": {
+        "ok": true
+      },
+      "h2": {
+        "ok": true
+      }
+    }
+  },
+  "lines": 175,
+  "l1_pass": true
+}

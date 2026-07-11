@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 FlashAttention 融合讲清了思路，但缺少像案例 1 那样可跟读的模板片段；零基础读者会停在概念层。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「FlashAttention / FlashAttention-2 / xFormers 的底层都直接调 CUTLASS」过强：官方 FlashAttention 以手写 CUDA 为主，CUTLASS 更多出现在 xFormers 等实现；应改成「部分实现 / xFormers 等」并弱化「都」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「唯一开源参考实现」宜加限定（系统化分层的开源 GEMM 模板参考），避免绝对化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 CUTLASS 2.x 模板风格概念正确，可跟做；案例 2 若补一句「寄存器驻留 epilogue」与 cuBLAS 黑盒边界对照会更可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 FlashAttention 融合讲清了思路，但缺少像案例 1 那样可跟读的模板片段；零基础读者会停在概念层。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「FlashAttention / FlashAttention-2 / xFormers 的底层都直接调 CUTLASS」过强：官方 FlashAttention 以手写 CUDA 为主，CUTLASS 更多出现在 xFormers 等实现；应改成「部分实现 / xFormers 等」并弱化「都」。",
+        "「唯一开源参考实现」宜加限定（系统化分层的开源 GEMM 模板参考），避免绝对化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 CUTLASS 2.x 模板风格概念正确，可跟做；案例 2 若补一句「寄存器驻留 epilogue」与 cuBLAS 黑盒边界对照会更可操作。"
+      ]
+    }
+  ]
+}

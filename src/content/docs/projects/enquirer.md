@@ -79,9 +79,14 @@ const answers = await prompt([
     choices: ['eslint', 'prettier', 'husky'] },
   { type: 'confirm', name: 'init', message: 'git init？' }
 ]);
+// answers ≈ { name: 'demo', lang: 'TS', tools: ['eslint'], init: true }
 ```
 
-四种类型一次问完，answers 是个对象。这就是 `create-*` 系列脚手架的常见写法。
+**逐部分解释**：
+
+- `input` 返回字符串；`select` 返回选中的那一项；`multiselect` 返回数组；`confirm` 返回布尔值。
+- 传入数组时，enquirer 按顺序问完，最后拼成一个 `answers` 对象。
+- 这就是 `create-*` 系列脚手架的常见写法：一次配置，串完初始化问卷。
 
 ### 案例 3：自己造一个 prompt 类型
 
@@ -100,9 +105,17 @@ class Counter extends Prompt {
   }
   format() { return String(this.value); }
 }
+
+const r = await new Counter({
+  name: 'n', message: '按 +/- 调数字，回车确认', initial: 3
+}).run();
+// r === 4（若用户按了一次 +）
 ```
 
-按 `+` 加一、按 `-` 减一。enquirer 把基类钩子摆得很整齐，extend 三十行就能造新类型——这是它对 inquirer 的最大差异化。
+**逐部分解释**：
+
+- `dispatch` 吃单个按键；`format` 决定屏幕上显示什么；回车后基类结束循环并 `run()` resolve。
+- 用法是 `new Counter(...).run()`，不必先注册到全局——extend 三十行就能造新类型。
 
 ## 踩过的坑
 

@@ -43,8 +43,11 @@ pdfme 的设计可以拆成 **三层**：
 
 ### 案例 1：5 分钟生成第一份 PDF
 
+逐步：① `npm i @pdfme/generator @pdfme/common @pdfme/schemas` ② 写 template ③ `generate` ④ 拿到 `Uint8Array`。
+
 ```ts
 import { generate } from '@pdfme/generator';
+import { BLANK_PDF } from '@pdfme/common'; // 空白 A4 底版常量
 import { text } from '@pdfme/schemas';
 
 const template = {
@@ -56,12 +59,11 @@ const template = {
 };
 
 const inputs = [{ orderNo: 'A20260601-001', amount: '￥128.00' }];
-
 const pdf = await generate({ template, inputs, plugins: { text } });
 // pdf 是 Uint8Array，可以下载也可以传后端
 ```
 
-注意 `schemas` 是**数组的数组**——外层每个元素代表一页，内层是这页的所有字段。
+`schemas` 是**数组的数组**——外层一页、内层该页字段；坐标单位是毫米（见踩坑）。
 
 ### 案例 2：把 Designer 嵌进自己的后台
 
@@ -99,7 +101,7 @@ await s3.uploadMany(pdfs);
 
 ## 踩过的坑
 
-1. **中文字体必须自己注入**：默认字体是 Helvetica（不含中文）。直接写中文会变方框。要 `Font.register()` 加一份 Noto Sans CJK 之类的字体。还要打开 fallback，否则混排英文也会糊。
+1. **中文字体必须自己注入**：默认字体不含中文，直接写会变方框。正确做法是 `generate({ ..., options: { font: { Noto: { data: fontBytes, fallback: true } } } })`（从 `@pdfme/common` 的 `Font` 类型），不是 `Font.register()`。
 
 2. **Designer 与 React 绑得死**：UI 包是 React 组件。Vue / Svelte 想用要么 iframe 套一层，要么自己读 schemas JSON 自己画——目前社区还没成熟的非 React 适配。
 
@@ -154,3 +156,7 @@ await s3.uploadMany(pdfs);
 - [[excalidraw]] —— 同样是"前端原生 + 模板可拖拽"思路，但目标是白板不是 PDF
 - [[tldraw]] —— canvas + 协议驱动渲染，pdfme 把同一思路用在 PDF 上
 - [[react-hook-form]] —— pdfme Form 组件思路类似，把 schema 当表单源
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

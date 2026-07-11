@@ -1,0 +1,141 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅营业看板类比把 pull 模型讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Counter/Gauge/Histogram/Summary 有小账本桥接；OpenMetrics/scrape 有解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有代码；案例 1 用 req.path 当 label 与后文高基数踩坑打架，易晕"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 siimon/prom-client 正确；四类型与 Prometheus 模型一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SoundCloud→Prometheus 2015、Node client 迁移动机、AggregatorRegistry 解决 cluster 分裂——主线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "v15 OpenMetrics / 下载量『上千万』属量级描述，可接受；未歪曲拉取模型定位"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 用 route: req.path 作 label，正是踩坑#1 的高基数反例；应改为固定路由模板或 method+status"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：高基数、默认 bucket、cluster 聚合、hot path new Counter——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 Prometheus 拉取；不适用写『推送模型用别的 SDK』却又写 pushgateway——表述需收紧为『非 Prometheus 生态推送』"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "餐厅营业看板类比把 pull 模型讲透，零基础直觉强",
+        "Counter/Gauge/Histogram/Summary 有小账本桥接；OpenMetrics/scrape 有解释",
+        "三案例有代码；案例 1 用 req.path 当 label 与后文高基数踩坑打架，易晕"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 siimon/prom-client 正确；四类型与 Prometheus 模型一致",
+        "SoundCloud→Prometheus 2015、Node client 迁移动机、AggregatorRegistry 解决 cluster 分裂——主线合理",
+        "v15 OpenMetrics / 下载量『上千万』属量级描述，可接受；未歪曲拉取模型定位"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 用 route: req.path 作 label，正是踩坑#1 的高基数反例；应改为固定路由模板或 method+status",
+        "踩坑具体：高基数、默认 bucket、cluster 聚合、hot path new Counter——可操作",
+        "适用 Prometheus 拉取；不适用写『推送模型用别的 SDK』却又写 pushgateway——表述需收紧为『非 Prometheus 生态推送』"
+      ]
+    }
+  ],
+  "slug": "prom-client",
+  "area": "projects",
+  "status": "refined",
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "案例 1 label 改为 method/status 有限枚举，避免与高基数踩坑打架；收紧不适用里推送模型表述",
+    "sections_modified": [
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  }
+}

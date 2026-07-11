@@ -152,12 +152,12 @@ let b = BALANCES.may_load(deps.storage, &addr)?.unwrap_or_default();
 - 代码教程：[Area-52 学习路径](https://area-52.io/)（社区维护的合约教程）
 - 视频：[Ethan Frey — CosmWasm Origins](https://www.youtube.com/results?search_query=ethan+frey+cosmwasm)
 - [[cosmos-sdk]] —— CosmWasm 寄生在 Cosmos SDK 的 x/wasm 模块里
-- [[ink]] —— Substrate 生态的 Rust+Wasm 合约方案，思路相近
+- ink!（Substrate 合约语言）—— 同样走 Rust+Wasm，但本仓库的 `[[ink]]` 是终端 UI 库，不能混链
 
 ## 关联
 
 - [[cosmos-sdk]] —— x/wasm 模块的宿主链框架，没有它 CosmWasm 跑不起来
-- [[ink]] —— Polkadot/Substrate 上的 Rust 合约方案，与 CosmWasm 思路最像
+- [[move-language]] —— Aptos/Sui 的资源类型合约语言，和 CosmWasm 的 Rust/Wasm 路线形成对照
 - [[cairo-lang]] —— StarkNet 用的合约语言，另一条非 EVM 路线，但走 zk
 - [[anchor]] —— Solana 上的 Rust 合约框架，账户模型不同但工程体验类似
 - [[arbitrum]] —— EVM L2，对比理解为什么 CosmWasm 选 Wasm 而不是兼容 EVM

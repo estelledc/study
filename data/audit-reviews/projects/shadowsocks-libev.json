@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "上锁中转袋 / 小餐馆前台 / 两把钥匙类比把隧道、事件循环、密码+cipher 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ss-local / ss-redir / ss-tunnel / SOCKS5 首次出现有场景桥接；libev 用前台排队说清"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有命令与逐部分解释；curl / dig / ss-nat 步骤可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub shadowsocks/shadowsocks-libev 正确；README 维护者 madeye/linusyang、3.3.6、bug-fix-only → shadowsocks-rust 与仓库现状一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "五工具分工、C+libev、chacha20-ietf-poly1305、ss-nat/透明代理边界与项目文档相符，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读把 mbedtls 写成「TLS / 加密库」略宽：本项目主要用其做 AEAD/cipher，非完整 TLS 隧道——教学可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–3 命令可跟：ss-server/ss-local、ss-redir+ss-nat、ss-tunnel DNS；-u / --socks5-hostname / -L 语义正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：SOCKS≠VPN、密码 cipher 不一致、未排除服务器 IP 绕圈、UDP 还需 TPROXY——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（OpenWrt 轻量代理 vs WireGuard/Tor/Envoy）；可再点明单机并发与 AEAD 性能量级预期"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "上锁中转袋 / 小餐馆前台 / 两把钥匙类比把隧道、事件循环、密码+cipher 讲透，零基础直觉强",
+        "ss-local / ss-redir / ss-tunnel / SOCKS5 首次出现有场景桥接；libev 用前台排队说清",
+        "三案例均有命令与逐部分解释；curl / dig / ss-nat 步骤可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "来源 GitHub shadowsocks/shadowsocks-libev 正确；README 维护者 madeye/linusyang、3.3.6、bug-fix-only → shadowsocks-rust 与仓库现状一致",
+        "五工具分工、C+libev、chacha20-ietf-poly1305、ss-nat/透明代理边界与项目文档相符，可保留",
+        "延伸阅读把 mbedtls 写成「TLS / 加密库」略宽：本项目主要用其做 AEAD/cipher，非完整 TLS 隧道——教学可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "案例 1–3 命令可跟：ss-server/ss-local、ss-redir+ss-nat、ss-tunnel DNS；-u / --socks5-hostname / -L 语义正确",
+        "踩坑具体可操作：SOCKS≠VPN、密码 cipher 不一致、未排除服务器 IP 绕圈、UDP 还需 TPROXY——保留",
+        "适用/不适用边界清楚（OpenWrt 轻量代理 vs WireGuard/Tor/Envoy）；可再点明单机并发与 AEAD 性能量级预期"
+      ]
+    }
+  ],
+  "slug": "shadowsocks-libev",
+  "area": "projects",
+  "status": "passed",
+  "lines": 166,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

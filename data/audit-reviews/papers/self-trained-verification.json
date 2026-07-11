@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "助教批改作业类比贯穿全文，零基础能建立心智模型"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有伪代码与逐部分解释，步骤清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "历史段 RLVR / STaR 首次出现桥接偏短，但不挡主线理解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Chen Henry Wu & Aditi Raghunathan, arXiv 2026（2605.30290）与 frontmatter/延伸阅读一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "STV 训练有参考解的老师验证器、再蒸馏无参考解学生验证器，以及 ViL 闭环表述与论文主线相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「STV 引导的 8B 超过无验证 32B」属论文实验结论，教学可保留；宜理解为特定硬题设定下的结果而非普适定律"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三例伪代码概念正确：verify-revise 循环、teacher/student distillation、frozen verifier + RL reward"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：分类器缺诊断、SFT 离策略、校准失败、参数量替代验证器"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（有可验证奖励 vs 开放创作）；教学伪代码即可，无需生产级实现"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "助教批改作业类比贯穿全文，零基础能建立心智模型",
+        "案例 1–3 有伪代码与逐部分解释，步骤清楚",
+        "历史段 RLVR / STaR 首次出现桥接偏短，但不挡主线理解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "来源 Chen Henry Wu & Aditi Raghunathan, arXiv 2026（2605.30290）与 frontmatter/延伸阅读一致",
+        "STV 训练有参考解的老师验证器、再蒸馏无参考解学生验证器，以及 ViL 闭环表述与论文主线相符",
+        "「STV 引导的 8B 超过无验证 32B」属论文实验结论，教学可保留；宜理解为特定硬题设定下的结果而非普适定律"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三例伪代码概念正确：verify-revise 循环、teacher/student distillation、frozen verifier + RL reward",
+        "踩坑具体可操作：分类器缺诊断、SFT 离策略、校准失败、参数量替代验证器",
+        "适用边界清楚（有可验证奖励 vs 开放创作）；教学伪代码即可，无需生产级实现"
+      ]
+    }
+  ]
+}

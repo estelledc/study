@@ -30,9 +30,9 @@ const html = await codeToHtml('console.log("hi")', {
 不理解 shiki，下面这些事都没法解释：
 
 - 为什么 VitePress、Astro 文档站的代码块和 VS Code 一模一样，而老博客的代码块总是"差点意思"
-- 为什么有的代码高亮库 bundle 才 10 KB，shiki 要 200 KB——它把 VS Code 的整套引擎都搬了过来
+- 为什么有的代码高亮库 bundle 才 10 KB，而 shiki 的 core 约百 KB、WASM 约数百 KB、全量语言主题可达数 MB——它把 VS Code 那套引擎搬了过来
 - 为什么 shiki 推荐"在编译时染色"而不是"在浏览器染色"——和 SSR / 静态生成的趋势绑死
-- 为什么 2024 年它要重写一次（v1.x），生态里还能听到"升级痛苦"的声音
+- 为什么 2024 年初它要重写一次（v1.x），生态里还能听到"升级痛苦"的声音
 
 ## 核心要点
 
@@ -72,7 +72,7 @@ document.querySelector('#out').innerHTML = html;
 
 ### 案例 2：预加载 highlighter 复用实例
 
-每次调 `codeToHtml` 都会重新加载 grammar，文档站有几百个代码块时太慢。这时用 `createHighlighter` 一次加载、多次复用：
+文档站有几百个代码块时，不要依赖默认 `codeToHtml` 的隐式加载；用 `createHighlighter` 一次显式加载、多次复用：
 
 ```ts
 import { createHighlighter } from 'shiki';
@@ -85,7 +85,7 @@ const highlighter = await createHighlighter({
 const html = highlighter.codeToHtml(code, { lang: 'ts', theme: 'nord' });
 ```
 
-SSR 场景下，这个 `highlighter` 只在 build 启动时建一次，后面所有页面共享。
+SSR 场景下，这个 `highlighter` 只在 build 启动时建一次，后面所有页面共享，语言/主题加载也更可控。
 
 ### 案例 3：用 transformer 给某几行加高亮
 
@@ -105,13 +105,13 @@ const html = await codeToHtml(code, {
 
 ## 踩过的坑
 
-1. **默认全量 import 会让 bundle 飙到 500 KB+**：`import { codeToHtml } from 'shiki'` 看似只引一个函数，但默认会拉所有 grammar 和 theme。生产必须用 `createHighlighter` 显式列出实际用到的几个。
+1. **默认全量 import 体积是 MB 级**：`import { codeToHtml } from 'shiki'` 看似只引一个函数，但会带上大量 grammar/theme 异步 chunk（官方全量约数 MB）。生产必须用 `createHighlighter` 或 `@shikijs/core` 显式列出实际用到的几个。
 
-2. **浏览器侧 runtime 高亮要等 WASM 加载**：oniguruma 是 WASM，冷启动 200 ms+，首屏会"先白后染"。正确姿势是在 build 阶段就染好色，HTML 直接发到浏览器，零运行时。
+2. **浏览器侧 runtime 高亮要等 WASM 加载**：oniguruma 是 WASM（约数百 KB），冷启动常 200 ms+，首屏会"先白后染"。正确姿势是在 build 阶段就染好色，HTML 直接发到浏览器，零运行时。
 
 3. **dual theme 让 HTML 体积翻倍**：用 `themes: { light, dark }` 输出双主题时，每个 `<span>` 的 style 都塞了两套颜色变量。小文档站没事，超大 SSG 站要权衡。
 
-4. **v1.x 是 ESM-only，老项目升级痛**：2024-03 的重写抛掉了 CommonJS 兼容，`require('shiki')` 直接报错；0.x 时代写的 plugin 也都不兼容，只能改写成 transformer。
+4. **v1.x 是 ESM-only，老项目升级痛**：2024-02 的 v1.0 重写抛掉了 CommonJS 兼容，`require('shiki')` 直接报错；0.x 时代写的 plugin 也都不兼容，只能改写成 transformer。
 
 ## 适用 vs 不适用场景
 
@@ -125,13 +125,13 @@ const html = await codeToHtml(code, {
 - 极小 bundle 需求（10 KB 极致博客）—— 选 Prism + 一两个语言
 - 在线代码编辑器（要边输入边染色，还要可改）—— 选 [[monaco-editor]] 或 CodeMirror
 - 需要自动猜语言（用户粘贴代码不告诉你是什么）—— 选 highlight.js
-- CF Worker 这种有 1 MB binary 限制的 edge runtime —— 要细心挑 grammar，可能直接放弃
+- 严格抠 edge 体积的 runtime —— 官方支持 CF Workers，但必须显式 compose langs/themes，并单独评估 WASM 体积
 
 ## 历史小故事（可跳过）
 
 - **2018-09**：Pine Wu 开源 shiki v0.1，名字来自日语「式」（仪式），最初只是个小工具
 - **2022 年起**：Anthony Fu（Vue / Nuxt 生态核心开发者）接手维护，把 shiki 推到 VitePress / Nuxt Content / Slidev / Astro 的默认渲染器
-- **2024-03**：v1.x 重写发布，改成 ESM-only + 分包架构（`@shikijs/core` / `@shikijs/transformers` / `@shikijs/twoslash`），引入 transformer 模式
+- **2024-02**：v1.0 重写发布，改成 ESM-only + 分包架构（`@shikijs/core` / `@shikijs/transformers` / `@shikijs/twoslash`），引入 transformer 模式
 - **后续**：社区开始讨论是否用 [[tree-sitter]] 替换 TextMate grammar，但目前 shiki 仍是 TextMate 路线
 
 ## 学到什么

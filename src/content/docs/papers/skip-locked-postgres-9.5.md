@@ -24,24 +24,24 @@ UPDATE jobs SET state = 'done' WHERE id = $1;
 COMMIT;                      -- COMMIT 才释放锁
 ```
 
-10 个 worker 并发跑这段代码，**每个都拿到不同的任务**，零冲突、零等待、零客户端协调。
+10 个 worker 并发跑这段代码，**每个都拿到不同的任务**——互不阻塞等同一行，也不用客户端互相协调谁拿哪条。
 
 ## 为什么重要
 
 不理解 SKIP LOCKED，下面这些事都没法解释：
 
 - 为什么 Solid Queue / River / pg_queue 这一波"Postgres 当队列"的库 2020 年后才爆发——核心特性 9.5 才有
-- 为什么 ADR-3 选 Postgres 做后端队列而不是引入 Redis / RabbitMQ——少一个组件少一份运维
+- 为什么架构决策（ADR）常选 Postgres 做后端队列而不是引入 Redis / RabbitMQ——少一个组件少一份运维
 - 为什么 MySQL 用户做并发作业队列一直很难——MySQL 8.0（2018）才补上同名特性
 - 为什么"用数据库做队列"从被嘲笑（2010s）变成主流推荐（2020s）
 
 ## 核心要点
 
-`FOR UPDATE` 之后能跟三种修饰：
+`FOR UPDATE`（给选中的行上锁）之后能跟三种修饰：
 
-1. **默认（什么都不加）**：行被别人锁住 → **阻塞等待**，可能死等几秒
-2. **NOWAIT**：行被别人锁住 → **立即报错**，应用层接住重试
-3. **SKIP LOCKED**：行被别人锁住 → **跳过这一行**，继续往下找
+1. **默认（什么都不加）**：行被别人锁住 → **阻塞等待**。类比：前面结账机有人，你就站着等。
+2. **NOWAIT**：行被别人锁住 → **立即报错**，应用层接住重试。类比：机子被占就立刻喊"换一台"，不排队。
+3. **SKIP LOCKED**：行被别人锁住 → **跳过这一行**，继续往下找。类比：被占就默默去下一台，不喊也不等。
 
 执行顺序拆开看：
 
@@ -59,19 +59,20 @@ WHERE → ORDER BY → 加锁 → 跳过被别人锁的 → LIMIT 计数
 CREATE TABLE jobs (
   id BIGSERIAL PRIMARY KEY,
   payload JSONB,
+  priority INT DEFAULT 0,
   state TEXT DEFAULT 'pending',
   created_at TIMESTAMPTZ DEFAULT now()
 );
 CREATE INDEX ON jobs (state) WHERE state = 'pending';  -- 部分索引
 ```
 
-worker 循环里：
+worker 循环里（无行返回就 sleep 再试）：
 
 ```sql
 BEGIN;
 SELECT id, payload FROM jobs
   WHERE state = 'pending'
-  ORDER BY id
+  ORDER BY priority DESC, id
   LIMIT 1
   FOR UPDATE SKIP LOCKED;
 -- 业务处理
@@ -91,7 +92,11 @@ SELECT id FROM jobs
   FOR UPDATE SKIP LOCKED;
 ```
 
-一个 worker 一次拿 50 条，吞吐量直接拉满。瓶颈从"加锁次数"变成"业务处理速度"。
+**逐部分解释**：
+
+- `ORDER BY priority DESC`：先试高优先级；被锁就跳过，继续按排序找
+- `LIMIT 50`：一次最多拿 50 条；被跳过的行不占名额
+- 瓶颈从"加锁次数"变成"业务处理速度"
 
 ### 案例 3：抢库存
 
@@ -108,7 +113,11 @@ UPDATE inventory
   RETURNING id;
 ```
 
-10 个并发请求抢同一个 SKU，每个请求**锁不同行**，没有热点行抢锁，吞吐量比"锁同一行"高一个数量级（前提是同 SKU 有多行库存记录）。
+**逐部分解释**：
+
+- 子查询先锁住一行有货的库存记录；别人已锁的行直接跳过
+- 外层 `UPDATE` 只改这一行的 `stock`
+- 前提：同 SKU 有多行库存；10 个并发请求锁不同行，避免热点行抢锁
 
 ## 踩过的坑
 
@@ -148,7 +157,7 @@ UPDATE inventory
 
 1. **两个单词改变一个生态**：SKIP LOCKED 让 Postgres 从"勉强能当队列"变成"推荐方案"，新组件的引入门槛被一句 SQL 削平
 2. **基础设施特性 vs 应用层重试**：以前要在客户端做的"锁冲突重试"被下沉到 SQL 引擎，少一层错误处理就少一类 bug
-3. **数据库做队列的真正成本是运维**：少一个 Redis 实例 = 少一份监控 / 备份 / 故障恢复，**这是 ADR-3 选 Postgres 的真正理由**，性能反而是次要的
+3. **数据库做队列的真正成本是运维**：少一个 Redis 实例 = 少一份监控 / 备份 / 故障恢复，**这是架构决策常选 Postgres 的真正理由**，性能反而是次要的
 4. **看版本号**：当一个流行做法忽然在某年大量出现，往往是底层某个小特性那一年才正式可用——SKIP LOCKED 之于队列正是如此
 
 ## 延伸阅读

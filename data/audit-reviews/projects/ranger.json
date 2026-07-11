@@ -1,0 +1,84 @@
+{
+  "slug": "ranger",
+  "area": "projects",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例缺少模板要求的「逐部分解释」；案例1应拆解 --choosedir/mktemp/cd 机制，案例2应拆成可跟做的按键步骤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例1需解释 --choosedir 与退出后 cd 的机制；案例2应给出可复现的按键序列与编辑器替换步骤。"
+    },
+    {
+      "reviewer": "aggregate",
+      "hint": "历史段标题应使用 `## 历史小故事（可跳过）`；补上 `## 反向链接` 占位；v1.8 iTerm2 支持年份宜写 2016。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例缺少模板要求的「逐部分解释」；案例1应拆解 --choosedir/mktemp/cd 机制，案例2应拆成可跟做的按键步骤。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "v1.8.0 发布于 2016-12，iTerm2 预览宜写 2016 而非笼统 2017。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例1需解释 --choosedir 与退出后 cd 的机制；案例2应给出可复现的按键序列与编辑器替换步骤。"
+      ]
+    }
+  ]
+}

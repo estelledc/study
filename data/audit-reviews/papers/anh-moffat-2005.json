@@ -1,0 +1,72 @@
+{
+  "slug": "anh-moffat-2005",
+  "area": "papers",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点 / ## 实践案例",
+      "fix_hints": [
+        "Simple-9 不应写成直接 SIMD 或完全无分支；建议改为选择器分派、位移掩码、SIMD 友好。",
+        "1000 个数字约 9 次循环的说法数量级错误，需要按每个 32 位字最多装 28 个数重算。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的性能对比应给出可核算的 batch 数量，避免学习者照着错误复杂度理解。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "base_rule_findings": []
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic and engineer reviewers found overstatements in Simple-9 SIMD and loop-count explanations",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

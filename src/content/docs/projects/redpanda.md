@@ -29,8 +29,8 @@ kafkacat -b localhost:9092 -t demo -P
 不理解 Redpanda 的设计，下面这些事都没法解释：
 
 - 为什么 Kafka 协议这么坚固——脱离 Java 重写一遍，整个客户端 / Connect / Schema Registry 生态都能直接用
-- 为什么金融行情、广告竞价这些场景越来越多换掉 Kafka——P99 延迟没有 JVM GC 抖动，差距能到 10 倍
-- 为什么新一代消息系统（Redpanda / Pulsar / WarpStream）几乎都用 **Raft** 做复制——比 Kafka 原创的 ISR + Controller 模型更主流
+- 为什么金融行情、广告竞价这些场景越来越多换掉 Kafka——P99 没有 JVM GC 抖动，社区/官方基准常见数倍到约一个数量级（视负载而定）
+- 为什么 Redpanda / WarpStream 这类重写派多用 **Raft** 做复制，而 Pulsar 另走 BookKeeper——都在替代 Kafka 原创的 ISR + Controller 模型
 - 为什么 thread-per-core 这个十年前的小众范式（Seastar / ScyllaDB）正在成为低延迟服务端的默认选择
 
 简单说：**Redpanda 证明了 Kafka 协议是 de facto 标准但 Kafka 实现并不是**——用现代 C++ 范式可以做得更快、更简单、更省运维。
@@ -60,7 +60,7 @@ rpk topic create demo --partitions 3 --replicas 3
 rpk cluster status             # 看 brokers / partitions / leadership
 ```
 
-**整个集群一个二进制 + 一个 CLI，没有 ZooKeeper、没有 Controller、没有 KRaft 单独配置**。
+**整个集群一个二进制 + 一个 CLI**：没有 ZooKeeper，也没有单独的 KRaft 进程；元数据仍由内置 controller Raft group 管，只是不用再额外部署协调组件。
 
 ### 案例 2：Kafka 客户端无感接入
 
@@ -93,7 +93,7 @@ rpk cluster partitions list demo
 
 4. **WASM Data Transforms 还很新**：v23 才引入，类似 Kafka Connect 的轻量替代，但**生态比 Kafka Connect 数百个连接器差太远**。需要丰富 source/sink 时反而要用 Kafka Connect 反向连进 Redpanda（协议兼容这点救场）。
 
-5. **rpk 是唯一官方工具**：Kafka 生态的 `kafka-topics.sh` / `kafka-console-consumer.sh` 等脚本不能直接用（虽然命令语义可平移）。**新人会下意识找 Kafka 脚本，要先适应 rpk**。
+5. **rpk 才是一等公民**：协议兼容下不少 `kafka-topics.sh` 等工具也能连上，但覆盖与报错体验不如官方 CLI。**生产排障与集群管理优先用 rpk**，不要默认 Kafka 脚本行为一致。
 
 6. **集群规模上限不如 Kafka 验证充分**：metadata 跑在内置 controller raft group，**单集群超过几百节点的实战案例少**。超大规模仍是 Kafka KRaft 的主场。
 
@@ -126,7 +126,7 @@ rpk cluster partitions list demo
 
 1. **协议是标准，实现可换**——Kafka 协议成为 de facto 标准，谁重写实现都能直接吃整个生态。这是开源协议兼容生态的复利
 2. **thread-per-core 是新默认**——Scylla / Redpanda / ClickHouse 部分模块都在用，未来低延迟服务端这个范式会更常见
-3. **Raft 替代 ISR**——新一代消息系统几乎都选 Raft 做 partition 复制，Kafka 原创的 ISR + Controller 模型逐渐被边缘化
+3. **Raft / BookKeeper 替代 ISR**——Redpanda 等选 Raft 做 partition 复制，Pulsar 选 BookKeeper；殊途同归是换掉 Kafka 原创的 ISR + Controller 模型
 4. **BSL 是商业开源新折中**——源码可读、4 年后转 Apache、限制云转售。这种许可证在 MongoDB / Elastic / CockroachDB 之后越来越普遍
 
 ## 延伸阅读

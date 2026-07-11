@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「超市排队」类比略弱于城市路网主类比，但不影响跟读；松弛/优先队列已有日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1959 Numerische Mathematik / 1956 咖啡馆口述 / A* 1968 / Fredman-Tarjan 1984 均与公开史料一致；「松弛重复 |E| 次」是教学压缩，可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "堆版 Dijkstra 与懒惰删除可跟做；负边/全点对/路网毫秒级边界清楚；「百万级以下」是粗量级经验阈值，可接受"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「超市排队」类比略弱于城市路网主类比，但不影响跟读；松弛/优先队列已有日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "1959 Numerische Mathematik / 1956 咖啡馆口述 / A* 1968 / Fredman-Tarjan 1984 均与公开史料一致；「松弛重复 |E| 次」是教学压缩，可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "堆版 Dijkstra 与懒惰删除可跟做；负边/全点对/路网毫秒级边界清楚；「百万级以下」是粗量级经验阈值，可接受"
+      ]
+    }
+  ]
+}

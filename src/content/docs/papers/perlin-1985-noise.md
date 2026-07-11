@@ -16,7 +16,7 @@ noise(0.32, 1.42, 0.05)  →  0.251   ← 邻近点几乎相同
 noise(8.10, 1.42, 0.05)  →  -0.483  ← 远处又是另一种花纹
 ```
 
-这个函数是大理石纹路 / 木头年轮 / 火焰 / 烟雾 / Minecraft 地形 / 阿凡达云海背后的同一根引擎。
+这个函数是大理石纹路 / 木头年轮 / 火焰 / 烟雾 / Minecraft 地形，以及程序化云海一类效果背后常用的同一类引擎。
 
 ## 为什么重要
 
@@ -64,7 +64,7 @@ color = colormap(sin(x + 4 * turbulence(p)))
 - `+ 4 * turbulence` 把直条纹"揉皱"成大理石那种弯曲脉络
 - `colormap` 把数值映成黑白灰
 
-整段是 **Perlin 1985 论文 9.3 节原版配方**。一行公式，无穷大理石。
+整段是 **Perlin 1985 论文里的大理石示例配方**。一行公式，无穷大理石。
 
 ### 案例 2：Minecraft 地形
 
@@ -84,7 +84,7 @@ height(x, z) = sum_k amplitude_k * noise(frequency_k * (x, z))
 density(p, t) = turbulence(p + t * (0, 1, 0))
 ```
 
-让 turbulence 沿 y 方向以时间 t 偏移——观感就是"烟从下往上飘"。Hollywood 90% 的烟雾 / 爆炸特效底层都这一招。
+让 turbulence 沿 y 方向以时间 t 偏移——观感就是"烟从下往上飘"。影视烟雾 / 爆炸里常用这类多尺度扰动，而不是逐粒子物理仿真。
 
 ### 案例 4：木头年轮
 
@@ -93,7 +93,7 @@ ring = floor(sqrt(x^2 + y^2) + 0.2 * turbulence(p))
 color = lerp(浅黄, 深棕, smoothstep(0, 1, ring - floor(ring)))
 ```
 
-读法：先以 (0,0,z) 为轴算到该点的距离 → 整数取整就是同心圆 → 用 turbulence 微微扰动让圆不完美。这就是 Perlin 1985 论文 9.4 节的木纹配方，**整个游戏 / 影视行业沿用了 40 年**。
+读法：先以 (0,0,z) 为轴算到该点的距离 → 整数取整就是同心圆 → 用 turbulence 微微扰动让圆不完美。这就是 Perlin 1985 论文里的木纹示例配方，**游戏 / 影视程序化纹理里沿用了几十年**。
 
 ## 踩过的坑
 
@@ -121,10 +121,12 @@ color = lerp(浅黄, 深棕, smoothstep(0, 1, ring - floor(ring)))
 - 蓝噪声分布（采样、抖动）→ Perlin 是低频偏多的**红噪声**，要蓝噪声请用 Poisson disk
 - 极端写实（真实大理石的微观结构）→ 还得加物理仿真
 
+实时 shader 里叠 **3–6 个 octave** 通常够用；再加层细节收益递减，还更吃算力。
+
 ## 历史小故事（可跳过）
 
 - **1982 年**：Ken Perlin 在 MAGI 公司给电影《Tron》做 CGI，受不了画面的"塑料感"。
-- **1983 年**：他在 NYU 读博期间写出第一版 noise，给电影《无尽的故事》做天空。
+- **1983 年**：他写出第一版 noise（自述在 MAGI 时期起步），用来造可控的"自然随机"空间信号。
 - **1985 年**：SIGGRAPH 论文 "An Image Synthesizer" 公开 noise / turbulence / 大理石木纹配方。
 - **1997 年**：Academy of Motion Picture Arts and Sciences 颁给他**技术成就奖（Technical Achievement Award）**——影坛对这套数学的认可。
 - **2001-2002 年**：Perlin 自己发了 simplex noise + improving noise，把 1985 版的两个缺陷（高维爆炸、二阶导不连续）都修了。

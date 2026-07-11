@@ -27,7 +27,7 @@ Vault 找到对应池子合约，问它"换出多少？"，池子按自己的不
 
 - 为什么 DeFi 里的"指数基金池"（如 80% ETH + 20% BAL）能像股票指数一样自动再平衡，无需人工干预
 - 为什么 Vault 单合约不是中心化风险，反而更省 gas、更容易组合
-- 为什么 flash loan（闪电贷）在 Balancer 是免费的——它直接走 Vault 内部记账，不收手续费
+- 为什么 flash loan（闪电贷）在 Balancer V2 常被配置成 0 费率——它走 Vault 统一结算，但费率仍是协议参数
 - 为什么 multihop swap（一笔交易跨多个池子）能比逐池 swap 节省 30%+ gas
 
 ## 核心要点
@@ -78,11 +78,11 @@ vault.flashLoan(
 // recipient 在回调里：
 // 1. 用 1M USDC 在 Balancer 池低价买 ETH
 // 2. 在 Uniswap 高价卖 ETH 拿回 USDC
-// 3. 还款 1M USDC（Balancer 不收手续费）
+// 3. 还款 1M USDC + 当前协议配置要求的 fee（很多时期 fee = 0）
 // 4. 利润进自己口袋
 ```
 
-recipient 必须实现 `IFlashLoanRecipient.receiveFlashLoan` 接口（Vault 在转账后回调进去），整笔交易原子执行——任一步失败就全部 revert。Balancer 的 flashLoan 不收费，让套利者活跃，反过来让池子价格更贴近市场。
+recipient 必须实现 `IFlashLoanRecipient.receiveFlashLoan` 接口（Vault 在转账后回调进去），整笔交易原子执行——任一步失败就全部 revert。不要在集成里把"免费"写死：V2 很多时期 fee 为 0，但仍应从 Vault/协议配置读当前费率。
 
 ### 案例 3：batchSwap 跨池 multihop
 
@@ -100,7 +100,7 @@ await vault.batchSwap(SwapKind.GIVEN_IN, swaps, [DAI, USDC, USDT], funds, limits
 
 ## 踩过的坑
 
-1. **80/20 池不是"更安全的 50/50"**：主资产权重高，主资产下跌时无常损失（IL）反而比 50/50 更大——别被"分散化"的直觉误导。
+1. **80/20 池不是"更安全的 50/50"**：相对 HODL 的无常损失通常比 50/50 小，但你仍然 80% 暴露在主资产上；如果主资产暴跌，账户净值照样大幅下滑。别把"IL 低一点"误读成"本金安全"。
 
 2. **Vault 升级面是全协议级**：所有 token 都在 Vault 里，一旦 Vault 漏洞影响所有池子。这就是为什么 Balancer 的形式化验证 + 审计预算是 Uniswap 的好几倍。
 
@@ -127,8 +127,8 @@ await vault.batchSwap(SwapKind.GIVEN_IN, swaps, [DAI, USDC, USDT], funds, limits
 - **2020 年初**：Mike McDonald 和 Fernando Martinelli 上线 Balancer V1，开创"任意权重多资产池"概念，但每个池子是独立合约，gas 高、组合差。
 - **2021 年 5 月**：V2 白皮书发布，引入 Vault 单合约 + 模块化池子，TVL 一度过 30 亿美元。
 - **2021-2022 年**：veBAL（投票托管 BAL）治理代币模型上线，借鉴 Curve 的 ve 模式锁定流动性激励。
-- **2022 年 6 月**：BNT 池漏洞导致约 50 万美元损失，事后 Vault 抗攻击设计被反复验证。
-- **2023 年**：V3 推出 hooks 模型进一步简化池子开发，但 V2 因稳定仍是主力部署。
+- **2023 年**：V2 部分池型曝出安全风险，团队要求 LP 迁出或暂停相关池权重；这提醒大家 Vault 安全不等于每个池型都零风险。
+- **2024 年**：V3 引入 hooks 等扩展点，进一步简化池子开发；但 V2 因存量深、集成多，仍长期保留主力部署。
 
 ## 学到什么
 

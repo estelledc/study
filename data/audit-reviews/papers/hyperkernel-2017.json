@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.55,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "盖楼/钢筋类比贴合；finite interface 有桥接；案例 4/5 偏叙事，案例 1–2 步骤更清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文规约用 Python + Z3，实现在 LLVM IR 上符号执行验证，不是 Rosette；核心要点第 2 条与案例 2 的 Racket 代码需改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源作者列表重复写了 Bornholt，应为 Nelson, Sigurbjarnarson, Zhang, Johnson, Bornholt, Torlak, Wang。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「是什么」把 seL4 说成 Coq，应为 Isabelle/HOL（后文历史时间线已写对，需统一）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "三层说法应贴近论文：LLVM 实现 ≡ 状态机规约，状态机规约满足声明式安全性质；信任基含 Z3/Python/LLVM，不是 Rosette/Racket。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 Rosette/Racket 片段与 Hyperkernel 实际工具链不符，应改成 Python 状态机规约 + LLVM/Z3 验证流程的可跟读示例。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里「信任基包括 Z3 + Rosette + Racket」需改为 Z3 + Python 规约解释器 + LLVM 工具链。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "盖楼/钢筋类比贴合；finite interface 有桥接；案例 4/5 偏叙事，案例 1–2 步骤更清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 3,
+        "no_distortion": 2
+      },
+      "average": 2.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "论文规约用 Python + Z3，实现在 LLVM IR 上符号执行验证，不是 Rosette；核心要点第 2 条与案例 2 的 Racket 代码需改正。",
+        "来源作者列表重复写了 Bornholt，应为 Nelson, Sigurbjarnarson, Zhang, Johnson, Bornholt, Torlak, Wang。",
+        "「是什么」把 seL4 说成 Coq，应为 Isabelle/HOL（后文历史时间线已写对，需统一）。",
+        "三层说法应贴近论文：LLVM 实现 ≡ 状态机规约，状态机规约满足声明式安全性质；信任基含 Z3/Python/LLVM，不是 Rosette/Racket。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 Rosette/Racket 片段与 Hyperkernel 实际工具链不符，应改成 Python 状态机规约 + LLVM/Z3 验证流程的可跟读示例。",
+        "踩坑里「信任基包括 Z3 + Rosette + Racket」需改为 Z3 + Python 规约解释器 + LLVM 工具链。"
+      ]
+    }
+  ]
+}

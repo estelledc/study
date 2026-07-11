@@ -1,0 +1,100 @@
+{
+  "slug": "continual-pretrain-survey-2026",
+  "area": "papers",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.45,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter / ## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "原文是通用模板话术，案例没有代码和逐步解释，反向链接区域用重复占位行凑行数。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "slug、题名、source 与正文互相矛盾；source 只有 https://arxiv.org/abs/2026，正文又引用不匹配的 arXiv id，需按可核对主题重写。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "没有可跟做的最小案例、评估指标或适用边界，无法作为工程入门笔记使用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "原文是通用模板话术，案例没有代码和逐步解释，反向链接区域用重复占位行凑行数。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 1,
+        "no_distortion": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "frontmatter / ## 是什么",
+      "fix_hints": [
+        "slug、题名、source 与正文互相矛盾；source 只有 https://arxiv.org/abs/2026，正文又引用不匹配的 arXiv id，需按可核对主题重写。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "没有可跟做的最小案例、评估指标或适用边界，无法作为工程入门笔记使用。"
+      ]
+    }
+  ],
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full-note"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 150,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

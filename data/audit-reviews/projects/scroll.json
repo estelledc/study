@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "教务处/辅导班类比把 L2+证明盖章讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Type 1/2/3 在「为什么重要」点到但未白话；核心要点里 bytecode-equivalent 已有同声传译类比可撑住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有逐步解释，提现对比 OR 7 天很清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Euclid（2025-04）已把 prover 换 OpenVM，并弃用 zk-trie、改回以太坊 MPT；正文仍把 zk-trie 写成现行关键决定，与后文 Euclid 时间线矛盾"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2023-10 当时唯一一条 bytecode-equivalent zkEVM L2」过满：Polygon zkEVM 等更早主网，应改为「当时少数 / Scroll 主打 bytecode-equivalent 的一条」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub + 主网/Euclid 时间线大体可核；修完状态树表述后 no_distortion 可过"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "forge create 换 RPC 可跟做；链路/提现流程步骤清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "坑 4「zk-trie ≠ MPT / eth_getProof 格式不同」在 Euclid 后过时——应改为：升级前靠 zk-trie proof 的集成要迁移；升级后对齐 MPT 但仍需核对 Scroll 与主网差异"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用有 1-3 秒软确认、数小时证明、相对 OR 7 天等量化；可补一句 batch 不满时证明费分摊的数量级提醒（已有定性）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "教务处/辅导班类比把 L2+证明盖章讲透，零基础直觉强",
+        "Type 1/2/3 在「为什么重要」点到但未白话；核心要点里 bytecode-equivalent 已有同声传译类比可撑住",
+        "三个案例都有逐步解释，提现对比 OR 7 天很清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Euclid（2025-04）已把 prover 换 OpenVM，并弃用 zk-trie、改回以太坊 MPT；正文仍把 zk-trie 写成现行关键决定，与后文 Euclid 时间线矛盾",
+        "「2023-10 当时唯一一条 bytecode-equivalent zkEVM L2」过满：Polygon zkEVM 等更早主网，应改为「当时少数 / Scroll 主打 bytecode-equivalent 的一条」",
+        "来源 GitHub + 主网/Euclid 时间线大体可核；修完状态树表述后 no_distortion 可过"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "forge create 换 RPC 可跟做；链路/提现流程步骤清楚",
+        "坑 4「zk-trie ≠ MPT / eth_getProof 格式不同」在 Euclid 后过时——应改为：升级前靠 zk-trie proof 的集成要迁移；升级后对齐 MPT 但仍需核对 Scroll 与主网差异",
+        "适用有 1-3 秒软确认、数小时证明、相对 OR 7 天等量化；可补一句 batch 不满时证明费分摊的数量级提醒（已有定性）"
+      ]
+    }
+  ],
+  "slug": "scroll",
+  "area": "projects",
+  "status": "refined",
+  "lines": 159,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：Euclid 后 zk-trie→MPT/OpenVM 现行架构；弱化「唯一 bytecode-equivalent」；更新 eth_getProof 踩坑",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

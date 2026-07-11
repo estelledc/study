@@ -1,0 +1,92 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 偏 NewSQL 分片入门，和论文 HTAP 主线稍远；可把解释再扣回「为何旁听员能挂在 Region 上」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 commit index / apply 对零基础仍偏硬，可再补一句「先问柜台写到哪一页，再等自己抄到同一页」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "坑 1 把 tidb_read_staleness=0 说成「等同步」不准确：该变量管 stale read 窗口，不是 TiFlash learner 追齐机制"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事里称 Snowflake Hybrid Tables / Yugabyte「都借鉴」log-based 异步列存副本偏满；可改成「同类思路陆续出现」以免过度归因"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的混搭路径是概念正确的教学示例，但未点明需开启 TiFlash replica / 引擎选择；跟做时可能以为默认就能走列存"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 偏 NewSQL 分片入门，和论文 HTAP 主线稍远；可把解释再扣回「为何旁听员能挂在 Region 上」",
+        "核心要点里 commit index / apply 对零基础仍偏硬，可再补一句「先问柜台写到哪一页，再等自己抄到同一页」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "坑 1 把 tidb_read_staleness=0 说成「等同步」不准确：该变量管 stale read 窗口，不是 TiFlash learner 追齐机制",
+        "历史小故事里称 Snowflake Hybrid Tables / Yugabyte「都借鉴」log-based 异步列存副本偏满；可改成「同类思路陆续出现」以免过度归因"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的混搭路径是概念正确的教学示例，但未点明需开启 TiFlash replica / 引擎选择；跟做时可能以为默认就能走列存"
+      ]
+    }
+  ]
+}

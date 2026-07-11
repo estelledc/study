@@ -37,7 +37,7 @@ title: Grokking — 训练 loss 早归零，几千步后才突然学会
 1. **任务**：模 p 加法、模 p 减法、群运算等"算术表"任务。比如 p = 97，输入 (a, b) 输出 (a + b) mod 97
 2. **模型**：2 层 Transformer，几十万参数
 3. **数据切分**：train/val 比例从 30% 到 80% 不等
-4. **优化器**：AdamW（**weight decay 是必需的**，关掉就不 grok）
+4. **优化器**：AdamW（论文发现 **weight decay 对数据效率帮助极大**；著名延迟泛化图也可用无 wd 的 Adam 跑很久才出现）
 
 观察到三件事：
 
@@ -47,7 +47,7 @@ title: Grokking — 训练 loss 早归零，几千步后才突然学会
 
 三个关键变量：
 
-- **weight decay**：必须开。论文发现没有 weight decay 时模型只会记忆，永远不 grok
+- **weight decay**：极有效。大幅减少"要多少数据才能泛化"；关掉后模型更容易停在记忆解（后续工作如 Omnigrok 把这点讲得更死）
 - **数据比例**：越小越延迟。30% 数据可能要 100 万步才 grok
 - **任务难度**：越复杂的运算（如群操作）grok 来得越晚
 
@@ -67,23 +67,23 @@ step      train_acc    val_acc
 
 注意 100k → 600k 这段——验证 loss 几乎平的——是 grokking 最反直觉的部分。**朴素早停策略到这里就放弃了，永远看不到后面的相变。**
 
-### 案例 2：weight decay 的关键作用
+### 案例 2：weight decay 如何改变数据效率
 
 ```
-配置                          结果
-AdamW, wd=1.0                 在 100k 步内 grok
-AdamW, wd=0.1                 在 1M 步内 grok
-AdamW, wd=0                   永远不 grok（停在记忆解）
+配置                          典型结果（论文/复现经验）
+AdamW, wd=1.0                 更少数据、更早泛化
+AdamW, wd=0.1                 仍可 grok，往往更晚
+Adam / AdamW, wd=0            仍可能 grok，但常要多得多的步数；小数据上更容易停在记忆解
 ```
 
-直觉解释：weight decay 是个"压力"，把权重往小的方向推。模型的"记忆解"权重更杂乱，"泛化解"权重更结构化（更小的范数）。weight decay 给模型一个**朝泛化解滑过去的动力**。
+直觉解释：weight decay 是个"压力"，把权重往小的方向推。模型的"记忆解"权重更杂乱，"泛化解"权重更结构化（更小的范数）。weight decay 给模型一个**朝泛化解滑过去的动力**——所以论文说它"特别有效"，而不是"唯一开关"。
 
 可以把训练动力学想成一座山谷：
 
 - **记忆解**：山谷里的一个小坑。权重大、形状乱，但 train loss = 0
 - **泛化解**：另一个更深更平的坑。权重小、结构清晰，train loss = 0 而且 val loss = 0
 
-没有 weight decay 时，模型一旦掉进记忆解的小坑就出不来。weight decay 像一只看不见的手，把模型从小坑里慢慢推出去，最终滑进泛化解那个更大的坑。整个滑动过程在外部看就是 grokking 的"突然顿悟"。
+没有足够正则时，模型一旦掉进记忆解的小坑，就可能在外面看起来像"永远过拟合"。weight decay（以及小 batch 噪声等）像一只手，把模型慢慢推出去。整个滑动过程在外部看就是 grokking 的"突然顿悟"。
 
 ### 案例 3：grokking 之后模型在算什么
 
@@ -122,7 +122,7 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 
 ## 历史小故事（可跳过）
 
-- **2022 年 1 月**：OpenAI 团队（Power, Burns, Babuschkin, Edwards, Misra）在 ICLR 2022 MATH-AI workshop 投了这篇短文。论文不长，几个图，但震撼了机器学习社区。最先在 Twitter 上传开的就是那张"训练 acc 早早 100%、验证 acc 几十万步后才跳到 100%"的折线图
+- **2022 年 1 月**：OpenAI 团队（Power, Burda, Babuschkin, Edwards, Misra）在 ICLR 2022 MATH-AI workshop 投了这篇短文。论文不长，几个图，但震撼了机器学习社区。最先在 Twitter 上传开的就是那张"训练 acc 早早 100%、验证 acc 几十万步后才跳到 100%"的折线图
 - **2022-2023**：grokking 成为机制可解释性领域的"果蝇"——可复现、可控、可拆开。Anthropic、DeepMind、独立研究者纷纷在它上面做实验
 - **2023 年**：Neel Nanda 等人发表 *Progress measures for grokking via mechanistic interpretability*，把 grok 后的电路完全拆开，证明模型学的是离散傅里叶变换。这成为机制可解释性领域最经典的成功案例之一
 - **2024-2025**：grokking 被推广到更复杂任务（多步推理、组合泛化），并与 deep double descent、neural scaling laws 等现象相互映照。也有研究开始追问"大模型上的涌现能力"是不是宏观尺度的 grokking——尚无定论
@@ -130,7 +130,7 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 ## 学到什么
 
 1. **训练 loss 和泛化能力之间不是单调关系**——存在跳跃式相变
-2. **weight decay 不只是防过拟合，它在塑造优化路径**——决定模型最终落在记忆解还是泛化解
+2. **weight decay 不只是防过拟合，它在塑造优化路径**——常决定模型更快滑向泛化解，还是长时间停在记忆解
 3. **小玩具任务能驱动大问题**：grokking 是一个 50 行代码就能复现的现象，但它撬动了整个机制可解释性领域
 4. **早停是个会骗人的启发**：在 grokking 场景下，朴素早停让你永远看不到模型真正学懂的那一刻
 5. **"看不见的进度"是真的存在**：val 曲线纹丝不动时，模型内部可能正在悄悄重组电路。这逼着研究者去找新的内部进度信号，而不是只盯外部 loss
@@ -142,12 +142,12 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 - 视频解读：[Neel Nanda — A Mechanistic Interpretability Analysis of Grokking](https://www.youtube.com/watch?v=ob4vuiqG2Go)
 - 自己复现：[Nanda 的 colab notebook](https://colab.research.google.com/github/neelnanda-io/Easy-Transformer/blob/main/Grokking_Demo.ipynb)（一个 GPU 跑几小时就能看到相变）
 - [[anthropic-circuits]] —— grokking 是机制可解释性领域的核心实验玩具
-- [[adamw-2017]] —— AdamW 的 weight decay 是 grokking 出现的必要条件
+- [[adamw-2017]] —— AdamW 的 weight decay 是 grokking 实验里提升数据效率的关键旋钮
 
 ## 关联
 
 - [[anthropic-circuits]] —— grokking 之后用电路分析能拆出 Transformer 学到了什么算法
-- [[adamw-2017]] —— weight decay 是 grokking 现象的必需条件，论文里反复强调
+- [[adamw-2017]] —— weight decay 是 grokking 实验里提升数据效率的关键旋钮，论文反复对比
 - [[attention]] —— grokking 实验用的就是小 Transformer，attention 头是被分析的主要对象
 - [[scaling-laws]] —— 同样研究"训练曲线"形状，但 scaling laws 是平滑的，grokking 是跳跃的，两者互补
 - [[adam-2014]] —— Adam 与 AdamW 的差别就在 weight decay 的实现位置，而 weight decay 是 grokking 的关键超参
@@ -155,12 +155,3 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
-- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
-- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
-- [[attention]] —— Attention Is All You Need
-- [[bigbench-2022]] —— BIG-bench — 204 道题给大模型出考卷
-- [[double-descent-2019]] —— Double Descent — 模型越大越准，过参数化时代的反常识曲线
-- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-

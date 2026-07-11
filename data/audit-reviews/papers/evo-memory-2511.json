@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "连续上岗员工类比很好；案例 1 只有空方法壳，缺「逐部分解释」和最小可跟步骤，零基础看不出怎么装进统一接口。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 的 A-MEM/MemGPT 百分比表不像论文原表；评测主体更接近 Amem/Mem0/ExpRAG/ReMem 等，MemGPT 主要出现在相关工作。应改成示意或对齐论文方法名与结论口径。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 4 的 high/mid/low 三档准确率表在原文找不到；论文讲的是任务相似度与增益相关（如 Pearson r），不是这张分档百分比表。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 adapter 全是 ... 占位，工程师跟做不出最小对比；至少补 search/write/update 的伪实现步骤，并说明统一接口如何跑同一 stream。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "连续上岗员工类比很好；案例 1 只有空方法壳，缺「逐部分解释」和最小可跟步骤，零基础看不出怎么装进统一接口。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 A-MEM/MemGPT 百分比表不像论文原表；评测主体更接近 Amem/Mem0/ExpRAG/ReMem 等，MemGPT 主要出现在相关工作。应改成示意或对齐论文方法名与结论口径。",
+        "案例 4 的 high/mid/low 三档准确率表在原文找不到；论文讲的是任务相似度与增益相关（如 Pearson r），不是这张分档百分比表。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 adapter 全是 ... 占位，工程师跟做不出最小对比；至少补 search/write/update 的伪实现步骤，并说明统一接口如何跑同一 stream。"
+      ]
+    }
+  ]
+}

@@ -50,6 +50,11 @@ nivo 的设计可以拆成 **三个分工**：
 ### 案例 1：一张柱状图的完整 props
 
 ```jsx
+const data = [
+  { country: 'CN', 'hot dog': 12, burger: 20 },
+  { country: 'US', 'hot dog': 30, burger: 15 },
+]
+
 <ResponsiveBar
   data={data}
   keys={['hot dog', 'burger']}
@@ -62,8 +67,8 @@ nivo 的设计可以拆成 **三个分工**：
 
 **逐字段解释**：
 
-- `data`：数据数组，每行是一个柱子组
-- `keys`：每组里有几根柱子（堆叠或并排）
+- `data`：每行一个国家，后面字段是各组柱子的数值
+- `keys`：每组里画哪几根柱子（堆叠或并排）
 - `indexBy`：x 轴用哪个字段当类目
 - `margin / colors / theme`：外观——通过 React Context 下传给所有子图元
 
@@ -115,25 +120,18 @@ import { Bar } from '@nivo/bar'   // 注意：固定尺寸版本，不是 Respon
 - 需要完全自定义图表形态（不是标准柱/线/饼/散点）——用 visx 或裸 d3 自己拼
 - 静态展示用 PNG 就够——可以用 nivo 的 HTTP API 服务端生成图片
 
-## 历史与生态
+## 历史小故事（可跳过）
 
 - **2017**：作者 Raphael Benitte 发布第一版，目标"把 d3 React 化"
 - **2018–2020**：陆续加 Canvas 变体、HTTP API（服务端渲 PNG/JSON）、整体 TypeScript 重写
 - **2022 起**：迁到 pnpm monorepo，30 多个 `@nivo/*` 包独立发版
-- **2026 现状**：约 13k star，社区图表库三巨头之一（与 Recharts、visx 并列）
-
-## 与同类对比
-
-- **vs Recharts**：Recharts 把图表拆成 `<XAxis /><YAxis /><Bar />` 子组件像乐高拼；nivo 一个组件一张图，配置都走 props 对象。Recharts 适合"我要细调每个轴"，nivo 适合"我要一张能用的图"。
-- **vs visx（Airbnb）**：visx 是 d3 的 React 原语包，给你 `<Scale><Shape>` 自己拼；nivo 是封装好的高层组件。visx 灵活但要懂 d3，nivo 开箱即用但定制有边界。
-- **vs 纯 d3**：纯 d3 命令式（select / enter / exit），灵活但与 React 心智模型冲突；nivo 牺牲一部分灵活换 React 习惯。
-- **vs Chart.js**：Chart.js 是 Canvas-only vanilla JS；nivo 是 React 双轨（SVG + Canvas）。
+- **2026 现状**：社区常用 React 图表库之一（常与 Recharts、visx 并列讨论）
 
 ## 学到什么
 
-1. **声明式包装命令式**——d3 命令式 API（selection、enter、exit）跟 React 声明式 vDOM 冲突，nivo 的解法是只用 d3 算坐标，渲染交还 React
+1. **声明式包装命令式**——d3 的 selection/enter/exit 跟 React vDOM 冲突；nivo 只用 d3 算坐标，渲染交还 React
 2. **monorepo + 按图表分包**——避免"装一个用全部"的体积问题，是中大型组件库标配
-3. **Storybook 即文档**——每个 prop 一个 story，比 README 直观
+3. **和同类怎么选**——Recharts 像乐高细调轴；visx 给 d3 原语自己拼；nivo 一个组件一张图、开箱即用但定制有边界
 4. **SSR 友好的代价**——Responsive 在 server 不可用，要按"固定尺寸 server 端 + Responsive 客户端"分层
 5. **react-spring 替代 d3-transition**——动画系统也要跟着框架走，否则卸载留残骸
 
@@ -151,3 +149,7 @@ import { Bar } from '@nivo/bar'   // 注意：固定尺寸版本，不是 Respon
 - [[starlight]] —— 同样是 Astro 生态，文档站点常用 nivo 嵌图
 - [[playwright]] —— Canvas 版图表的 e2e 测试方案
 - [[tanstack-router]] —— 同属"用 React 心智重写传统库"的代表
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

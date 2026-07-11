@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工坊窗口类比清楚，Docker 案例 1 逐步解释够用"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Open VSX 首次出现缺白话桥接（开源扩展市场，类似应用商店）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 直接跑 ./bin/openvscode-server，零基础不知道二进制从哪来，需补下载/解压步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 gitpod-io/openvscode-server 正确；connection-token / 贴近上游定位与 README 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019 年 VS Code browser-based 重构叙述合理，属背景而非硬事实争议"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "star 数写成「约 6.1k（2026-07 查看）」有时间锚，可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 Docker 可跟做；案例 3 缺 release 下载与解压前置，code_runnable 不足"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "公网裸露、非完整平台、localhost 默认、扩展来源混乱等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可补「单人/小团队自托管 vs 多人租户」量化语气"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工坊窗口类比清楚，Docker 案例 1 逐步解释够用",
+        "Open VSX 首次出现缺白话桥接（开源扩展市场，类似应用商店）",
+        "案例 3 直接跑 ./bin/openvscode-server，零基础不知道二进制从哪来，需补下载/解压步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 gitpod-io/openvscode-server 正确；connection-token / 贴近上游定位与 README 一致",
+        "2019 年 VS Code browser-based 重构叙述合理，属背景而非硬事实争议",
+        "star 数写成「约 6.1k（2026-07 查看）」有时间锚，可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 Docker 可跟做；案例 3 缺 release 下载与解压前置，code_runnable 不足",
+        "公网裸露、非完整平台、localhost 默认、扩展来源混乱等坑具体可操作",
+        "适用/不适用边界清楚；可补「单人/小团队自托管 vs 多人租户」量化语气"
+      ]
+    }
+  ]
+}

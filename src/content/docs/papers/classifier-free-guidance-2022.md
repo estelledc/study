@@ -145,7 +145,10 @@ s̃(x, c) = s(x|c) + w · (s(x|c) − s(x))
 - [[ddpm-2020]] —— 提供 ε 预测目标，CFG 在其上加 dropout
 - [[diffusion-models]] —— 上位概念，CFG 是其控制层
 - [[score-based-models]] —— score 视角下 CFG 是线性外推
-- [[open-sora]] —— 视频扩散同样默认开 CFG
 - [[comfyui]] —— 节点式扩散 GUI，CFG 是每个采样节点必有参数
 - [[ddim]] —— 确定性采样器，最常和 CFG 搭配使用
 - [[controlnet]] —— 在 CFG 之上再加一层结构条件控制
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

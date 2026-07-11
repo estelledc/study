@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮局分拣手册类比极贴合；流表/控制器/Packet-In 都有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例以规则与叙事为主、无代码，对协议笔记可接受；案例 2 的「打电话问总部」把 reactive 模式讲透了"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "McKeown 等 SIGCOMM CCR 2008、Ethane 2007、B4 SIGCOMM 2013 引用正确；OpenFlow 1.0 的 12 元组表述正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Kubernetes 网络插件（Open vSwitch / Cilium）都长得像同一个东西」易歪曲：OVS 可走 OpenFlow，Cilium 主路径是 eBPF，不是 OpenFlow 南向——应改成 OVS/Neutron 或「控制面/数据面分离思想」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "B4「30%→95%」是流行转述，宜写成「行业常见低利用率 → 接近满载（B4 论文量级）」避免当成精确实验数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "match→action 伪规则与 reactive Packet-In 流程可跟做；TCAM 容量、控制器单点、OpenFlow≠SDN 坑具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界（单一管理域 vs 跨 AS BGP、首包延迟、P4 扩 header）量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "邮局分拣手册类比极贴合；流表/控制器/Packet-In 都有日常桥接",
+        "案例以规则与叙事为主、无代码，对协议笔记可接受；案例 2 的「打电话问总部」把 reactive 模式讲透了"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "McKeown 等 SIGCOMM CCR 2008、Ethane 2007、B4 SIGCOMM 2013 引用正确；OpenFlow 1.0 的 12 元组表述正确",
+        "「Kubernetes 网络插件（Open vSwitch / Cilium）都长得像同一个东西」易歪曲：OVS 可走 OpenFlow，Cilium 主路径是 eBPF，不是 OpenFlow 南向——应改成 OVS/Neutron 或「控制面/数据面分离思想」",
+        "B4「30%→95%」是流行转述，宜写成「行业常见低利用率 → 接近满载（B4 论文量级）」避免当成精确实验数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "match→action 伪规则与 reactive Packet-In 流程可跟做；TCAM 容量、控制器单点、OpenFlow≠SDN 坑具体有用",
+        "适用边界（单一管理域 vs 跨 AS BGP、首包延迟、P4 扩 header）量化清楚"
+      ]
+    }
+  ]
+}

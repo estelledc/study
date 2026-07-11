@@ -124,9 +124,9 @@ const { data } = await useFetch('/api/hello')
 
 1. **Nuxt 2 vs Nuxt 3 不兼容**：Nuxt 2 基于 Vue 2 + Webpack，Nuxt 3（2022 末发布）基于 Vue 3 + Vite + Nitro——**API、目录结构、生命周期几乎全换了**。老项目升级近似重写。新项目直接 Nuxt 3+。
 
-2. **Auto-import 让 IDE 跳转/类型提示要装官方插件**：VS Code 默认看到 `ref(0)` 不知道这是 Vue 的 `ref`——必须装 Volar + `@nuxt/typescript` 才有跳转 / 自动补全 / 类型检查。新人常以为"代码能跑但 IDE 标红肯定哪里错了"——其实是插件没装。
+2. **Auto-import 让 IDE 跳转/类型提示要装官方插件**：VS Code / Cursor 默认看到 `ref(0)` 不知道这是 Vue 的 `ref`——Nuxt 3 请装 **Vue - Official（原 Volar）**；TypeScript 已内置，不必再装 Nuxt 2 时代的 `@nuxt/typescript`。新人常以为"代码能跑但 IDE 标红肯定哪里错了"——其实是语言插件没装。
 
-3. **Server-only / Client-only 边界**：`process.server` / `process.client` 区分代码运行环境；`useNuxtApp().payload` 在两端含义不同。在 `<script setup>` 里直接用 `localStorage` 会**SSR 阶段崩溃**（服务器没有 localStorage）——必须包 `if (import.meta.client) {...}` 或用 `<ClientOnly>` 组件。
+3. **Server-only / Client-only 边界**：Nuxt 3 用 `import.meta.server` / `import.meta.client`（旧文里的 `process.server` 是 Nuxt 2 写法）。在 `<script setup>` 里直接用 `localStorage` 会**SSR 阶段崩溃**——必须包 `if (import.meta.client) {...}` 或用 `<ClientOnly>` 组件。
 
 4. **Nitro preset 选错部署不通**：build 时通过 `nitro.preset = 'cloudflare'` 切目标。如果代码里用了 Node 独有 API（如 `fs.readFile`），切到 Workers 会 build 失败但报错信息可能很绕——根因是 Workers runtime 没 fs 模块。
 
@@ -145,6 +145,13 @@ const { data } = await useFetch('/api/hello')
 - 纯静态内容站（博客 / 文档）→ [[astro]] 默认 0 JS 更轻
 - 重型后端（复杂业务逻辑、长连接、worker 队列）→ Nitro 是轻量 HTTP 框架，不适合扛核心业务，建议另起 Node 后端
 - 完全前后端分离的 SPA → Vue + Vite 即可，Nuxt 的 SSR 能力用不上反成累赘
+
+## 历史小故事（可跳过）
+
+- **2016**：Nuxt 1 出现，把 Vue 2 + Webpack 的 SSR 约定打包成「pages 即路由」。
+- **2018–2020**：Nuxt 2 成为 Vue 全栈默认选项，模块生态成型。
+- **2022 末**：Nuxt 3 正式发布——Vue 3 + Vite + Nitro，API 与目录几乎重写。
+- **之后**：Nitro 独立成通用服务端引擎，preset 把同一份代码打到 Node / Workers / Edge。
 
 ## 学到什么
 

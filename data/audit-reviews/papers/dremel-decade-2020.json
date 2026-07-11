@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "repetition/definition level 已有桥接，但对零基础仍偏抽象；案例 2 已能托住，不影响通过。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "时间线与 PVLDB 2020 回顾叙事一致；教学简化合理，未见硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界已有秒级/OLTP/单机等对照；可再量化「几 MB CSV」一类阈值，当前已够通过。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "repetition/definition level 已有桥接，但对零基础仍偏抽象；案例 2 已能托住，不影响通过。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "时间线与 PVLDB 2020 回顾叙事一致；教学简化合理，未见硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界已有秒级/OLTP/单机等对照；可再量化「几 MB CSV」一类阈值，当前已够通过。"
+      ]
+    }
+  ]
+}

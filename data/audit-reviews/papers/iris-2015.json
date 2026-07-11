@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 fractional permission 公式前可再补一句日常桥接（例如：整张房卡=1.0，两把只读钥匙各 0.5）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写「invariant 写作 ⌜I⌝」有误：Iris 里 ⌜·⌝ 是纯命题嵌入，不变式应写作 inv N I（或论文里的带名 boxed assertion），勿与 pure 混用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事「现在：Iris 5.x」不准确，当前稳定线是 Iris 4.x（如 4.4/4.5），应改为 4.x"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；可再点明「需要 Coq/专家证明成本」的量化预期（人月级）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 fractional permission 公式前可再补一句日常桥接（例如：整张房卡=1.0，两把只读钥匙各 0.5）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写「invariant 写作 ⌜I⌝」有误：Iris 里 ⌜·⌝ 是纯命题嵌入，不变式应写作 inv N I（或论文里的带名 boxed assertion），勿与 pure 混用",
+        "历史小故事「现在：Iris 5.x」不准确，当前稳定线是 Iris 4.x（如 4.4/4.5），应改为 4.x"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "适用边界清楚；可再点明「需要 Coq/专家证明成本」的量化预期（人月级）"
+      ]
+    }
+  ]
+}

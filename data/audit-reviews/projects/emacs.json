@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 最小配置速查",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点后半段 C 文件名（eval_sub、xdisp glyph matrix）对零基础是墙，建议每层先一句人话再点文件名，或把实现细节收成「想看源码再往下」。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "H2 标题是「为什么值得了解」，模板关键词是「为什么重要」，建议改回以对齐结构。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "动态模块随 Emacs 25.1 于 2016-09 发布，不应写成「2015 年」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Emacs 29 正式版在 2023（含内置 Eglot/tree-sitter），「2022 年」宜改为「2022–2023 / 2023 发布」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小配置速查实用；可注明 fido-vertical-mode 需 Emacs 28+，避免旧版跟做失败。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点后半段 C 文件名（eval_sub、xdisp glyph matrix）对零基础是墙，建议每层先一句人话再点文件名，或把实现细节收成「想看源码再往下」。",
+        "H2 标题是「为什么值得了解」，模板关键词是「为什么重要」，建议改回以对齐结构。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "动态模块随 Emacs 25.1 于 2016-09 发布，不应写成「2015 年」。",
+        "Emacs 29 正式版在 2023（含内置 Eglot/tree-sitter），「2022 年」宜改为「2022–2023 / 2023 发布」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 最小配置速查",
+      "fix_hints": [
+        "最小配置速查实用；可注明 fido-vertical-mode 需 Emacs 28+，避免旧版跟做失败。"
+      ]
+    }
+  ]
+}

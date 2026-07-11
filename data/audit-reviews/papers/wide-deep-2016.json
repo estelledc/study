@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 只有叙事没有逐步拆解：建议各加 3 步「输入特征 → wide/deep 怎么算 → 输出分数」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 代码后解释太短，应对 crossed_column / embedding_column / DNNLinearCombinedClassifier 逐行说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有数字列表，补一句「相对谁、量级为何显著」让零基础读者接得住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「所有大型 CTR 模型都长得两路并行」略绝对；DIN 等更偏注意力，宜改成「多数工业 CTR 排序模型沿用两路/记忆+泛化骨架」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里 [[deepseek-r1]] 与 Wide & Deep 的类比偏远，可换成 [[dcn-2017]] / [[din-2018]] 等同族工作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "hash_bucket_size 写成 1e6/1e7 在 Python 里是 float，应改成整数 1000000 / 10000000，避免 Estimator 报类型错"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小示例可补一句「还需要 input_fn 喂 batch」以免读者以为这几行就能 fit"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2 只有叙事没有逐步拆解：建议各加 3 步「输入特征 → wide/deep 怎么算 → 输出分数」",
+        "案例 4 代码后解释太短，应对 crossed_column / embedding_column / DNNLinearCombinedClassifier 逐行说明",
+        "案例 3 只有数字列表，补一句「相对谁、量级为何显著」让零基础读者接得住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「所有大型 CTR 模型都长得两路并行」略绝对；DIN 等更偏注意力，宜改成「多数工业 CTR 排序模型沿用两路/记忆+泛化骨架」",
+        "关联里 [[deepseek-r1]] 与 Wide & Deep 的类比偏远，可换成 [[dcn-2017]] / [[din-2018]] 等同族工作"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "hash_bucket_size 写成 1e6/1e7 在 Python 里是 float，应改成整数 1000000 / 10000000，避免 Estimator 报类型错",
+        "最小示例可补一句「还需要 input_fn 喂 batch」以免读者以为这几行就能 fit"
+      ]
+    }
+  ]
+}

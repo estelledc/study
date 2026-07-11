@@ -1,6 +1,6 @@
 ---
 title: Erigon — 存储优化型以太坊客户端
-来源: 'https://github.com/ledgerwatch/erigon'
+来源: 'https://github.com/erigontech/erigon'
 日期: 2026-05-29
 分类: blockchain
 难度: 高级
@@ -18,7 +18,7 @@ cd erigon && make erigon
 ./build/bin/erigon --datadir=/data/erigon --http --ws
 ```
 
-跑完这条就有一个能 RPC 调用的全节点：约 4 小时同步主网到链尾，磁盘约 1.1TB（全节点档位），相比传统 geth archive 模式的 2TB+ 直接砍一半多。
+跑完这条就有一个能 RPC 调用的全节点：在 **NVMe + 官方快照** 的常见配置下，主网全节点（`--prune.mode=full`）磁盘大约 **1–1.5TB**，从零同步常以小时计（硬件差时可能要一天以上）。同档对比应看 geth **full**；若要比 **archive**，geth 归档节点常到十余 TB，Erigon archive 大约 **1.5–2TB** 量级——省的是归档档，不是拿 full 去比别人的 archive。
 
 ## 为什么重要
 
@@ -26,7 +26,7 @@ cd erigon && make erigon
 
 - 为什么有人愿意维护 go-ethereum 的"性能 fork"——区块链客户端的瓶颈不是 CPU，是**磁盘 IO 与状态树膨胀**
 - 为什么 Erigon 把"账户状态树"拆成扁平 KV 存储——**Merkle Patricia Trie 每查一次状态都要走 log(n) 层，IO 放大严重**
-- 为什么"归档节点"曾经要 12TB+ 磁盘但 Erigon 1.6TB 就能存完——**历史数据可以做成不可变快照文件，不必塞进活跃数据库**
+- 为什么"归档节点"在 geth 上常要十余 TB，而 Erigon archive 大约 1.5–2TB 量级就能扛——**历史数据可以做成不可变快照文件，不必塞进活跃数据库**
 - 为什么以太坊有 4-5 个并行的客户端实现（geth / Erigon / Nethermind / Besu）——**多客户端是抗共识层 bug 的网络保险机制**
 
 ## 核心要点
@@ -110,7 +110,7 @@ Erigon 的省空间 + 快同步靠**三个机制**叠加：
 **适用**：
 
 - 自建以太坊全节点 / archive 节点，磁盘紧张时首选
-- 需要快速从零同步（4 小时 vs 几天）的研究 / 测试环境
+- 需要较快从零同步（快照 + NVMe 时常以小时计，vs 传统全量同步的数天）的研究 / 测试环境
 - 跑 `debug_traceTransaction` 这类回放密集型 RPC，Erigon 的扁平存储优势明显
 
 **不适用**：

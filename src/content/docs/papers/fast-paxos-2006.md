@@ -10,7 +10,7 @@ title: Fast Paxos — 给 Paxos 加一条乐观快车道
 
 Fast Paxos 是 Lamport 2006 年给经典 Paxos 加的**一条乐观快路径**。日常类比：原本所有人下单都得先排队找前台收银员转交（经典 Paxos），现在如果店里没人抢，你可以**直接把单子贴在每个厨师面前，省掉前台那一步**（fast round）；只有两个客人同时来抢同一张桌时，才回头让前台来仲裁（classic round）。
 
-经典 Paxos 一次共识要 **2 个消息延迟**（client → leader → acceptors → leader → client）。Fast Paxos 把没冲突的常见情况压到 **1.5 个消息延迟**（client → acceptors → client）。
+经典 Paxos 一次共识大约 **2 个 RTT / 4 跳**（client → leader → acceptors → leader → client）。Fast Paxos 把没冲突的常见情况压到约 **1.5 个 RTT / 3 跳**（client → acceptors → client）。
 
 代价：快路径要求 **更大的 quorum**——经典 Paxos 只要过半（> N/2），快路径要 > 3N/4。
 
@@ -150,3 +150,7 @@ Fast Paxos = 经典 Paxos + 乐观快路径，**用更大的 quorum 换更短的
 - [[raft]] —— 另一条路：放弃乐观、要可理解性
 - [[lamport-1978]] —— 同作者，理解分布式时序是读 Paxos 的更前置
 - [[bernstein-1981-cc]] —— 并发控制视角下的"冲突 + 回退"思路
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

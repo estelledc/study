@@ -1,0 +1,93 @@
+{
+  "slug": "esphome",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.55,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "时间线略概括，但不影响零基础跟读；案例逐步解释已经够清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源仓库与文档路径正确；Open Home Foundation / 多芯片支持表述与公开定位一致，无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "车库门 GPIOXX 占位来自 cookbook，跟做时需换成真实引脚；踩坑对上拉/OTA/串口已够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "时间线略概括，但不影响零基础跟读；案例逐步解释已经够清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源仓库与文档路径正确；Open Home Foundation / 多芯片支持表述与公开定位一致，无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "车库门 GPIOXX 占位来自 cookbook，跟做时需换成真实引脚；踩坑对上拉/OTA/串口已够用。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 185,
+    "reasons": []
+  },
+  "lines": 185,
+  "l1_pass": true
+}

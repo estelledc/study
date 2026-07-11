@@ -37,19 +37,22 @@ def factorial(n: BigInt): BigInt = {
 
 Stainless 的工作流程可以拆成 **三步**：
 
-1. **抽取规约**：从 `require` / `ensuring` / `invariant` 注释里读出前后置条件，从 `def` 体读出函数定义。整个程序变成一组**逻辑公式**。
+1. **抽取规约**：从 `require` / `ensuring` / `invariant` 读出前后置条件，从 `def` 体读出定义，整段程序变成一组**逻辑公式**。类比：把合同条款从白话抄成可核对的条款清单。
 
-2. **生成 verification condition (VC)**：对每个函数，问"前置成立 → 函数体执行 → 后置一定成立"是不是恒真？这是一道一阶逻辑+归纳数据类型的判定题。
+2. **生成 verification condition (VC)**：对每个函数问"前置成立 → 执行函数体 → 后置一定成立"是否恒真。类比：不是抽查几份合同，而是问"有没有任何一份能违约"。
 
-3. **SMT 求解**：把 VC 喂给 **Z3 / CVC4 / Princess**。求解器要么说"valid"（证毕），要么给一个**反例**（输入 X 时后置不成立），要么超时。
+3. **SMT 求解**：把 VC 喂给 **Z3 / cvc5 / Princess**（自动定理证明器）。结果是 valid、反例，或超时。类比：把条款丢给验算机，它要么盖章，要么指出哪一页对不上。
 
-System FR（OOPSLA 2019）是 Stainless 背后的**核心演算**——一套带 refinement type、recursive type、equality type 的多态依赖类型 lambda 演算，**Coq 里证明可靠**。Stainless 复杂的高级特性（type class、imperative、模式匹配）都被翻译成 System FR 再走 SMT。
+System FR（OOPSLA 2019）是背后的**小核心演算**：用 refinement type（给类型加约束，如"非负整数"）等特性描述程序，并在 **Coq** 里证明可靠。高级 Scala 特性先翻译进这个小核心，再交给 SMT。
 
 ## 实践案例
 
 ### 案例 1：链表反转的归纳证明
 
 ```scala
+import stainless.lang._
+import stainless.collection._
+
 def reverse[T](xs: List[T]): List[T] = xs match {
   case Nil() => Nil()
   case Cons(h, t) => reverse(t) ++ List(h)
@@ -60,7 +63,7 @@ def reverseTwiceIsId[T](xs: List[T]): Boolean = {
 }.holds
 ```
 
-`.holds` 让 Stainless 把这个 Boolean 表达式当成**待证定理**。它会自动按 `xs` 做结构归纳：Nil 情况手动可验，Cons 情况靠归纳假设。十几秒后："Theorem holds"。这就是手写 Coq 要花 20 行的证明。
+`.holds` 把表达式当成**待证定理**。证明按结构归纳三步走：（1）Nil 基例：`reverse(reverse(Nil)) == Nil`；（2）Cons 步：假设对尾巴成立，推对 `Cons(h,t)` 成立；（3）合起来对任意列表成立。十几秒后 "Theorem holds"。
 
 ### 案例 2：找到反例时给你具体输入
 
@@ -75,56 +78,45 @@ def safeDivide(a: BigInt, b: BigInt): BigInt = {
 
 ### 案例 3：和 Leon 时代的差距
 
-Leon（2013-2017）只支持纯函数子集；遇到 `var x = 0; x = x + 1` 直接拒绝。Stainless（2017 起）通过**翻译到 SSA + 引入幽灵状态变量**，让你写命令式 Scala 也能验证。代价是验证条件更复杂、SMT 更容易超时，但工业可用性大幅提升。
+Leon（2013-2017）只支持纯函数；遇到 `var x = 0; x = x + 1` 直接拒绝。Stainless（2017 起）把命令式代码**翻译成 SSA**（每改一次变量就换个新名字记账）并加**幽灵状态**跟踪副作用，于是命令式 Scala 也能验证。代价是 VC 更复杂、SMT 更易超时。
 
 ## 踩过的坑
 
-1. **SMT 超时不等于不成立**：Z3 给"unknown"很常见。可能要拆函数、加中间引理、或换 `--solvers=cvc4`。Stainless 给的报错有时不指向真正难证的子目标。
-
-2. **递归函数必须能证明终止**：否则 Stainless 会拒绝把它当成数学函数（不终止函数没有数学意义）。终止证明默认按结构递减；自定义度量要写 `decreases(...)`。
-
-3. **抽取边界容易踩**：Scala 里 `Iterator` / 异常 / 反射 / Future 这些 Stainless 大多不支持。一定要用它的"verified subset"——库函数从 `stainless.lang._` / `stainless.collection._` 导，不能直接用 `scala.collection`。
-
-4. **归纳证明不会自动做高阶函数的归纳**：`map` / `fold` 这种要么手动展开，要么调用预先证好的引理。新人常以为 Stainless 万能，碰到高阶就卡住。
-
-5. **不要把"验证通过"当成"零 bug"**：Stainless 只证你写下的规约。规约本身写错，验证再绿也救不了——比如忘记写 `b != 0`，溢出检查没考虑，或者把"不该崩"误写成"返回 0"。形式化验证把责任**转移**到规约的正确性，而不是消除责任。
+1. **SMT 超时不等于不成立**：Z3 给"unknown"很常见——拆函数、加中间引理，或换 `--solvers=smt-cvc5`；报错有时不指向真正难证的子目标。
+2. **递归必须能证终止**：否则不能当数学函数用；默认按结构递减，自定义度量写 `decreases(...)`。
+3. **抽取边界**：`Iterator` / 异常 / 反射 / `Future` 大多不支持——只用 `stainless.lang._` / `stainless.collection._`，别直接用 `scala.collection`。
+4. **验证通过 ≠ 零 bug**：只证你写下的规约；规约写错（漏 `b != 0`、误写后置）再绿也救不了——责任转移到规约本身。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 算法核心 / 数据结构不变量（红黑树平衡、堆有序）
-- 密码协议 / 共识算法的关键性质
-- 智能合约的资金守恒
-- 编译器优化阶段的语义保持
-- 关键业务逻辑里的"不可能出错"路径
+- 算法核心 / 数据结构不变量（红黑树平衡、堆有序）；核心模块大约几百行往往可证
+- 密码协议 / 共识关键性质、智能合约资金守恒
+- 编译器优化阶段的语义保持；关键业务里的"不可能出错"路径
 
 **不适用**：
 
-- 大量 IO / 网络 / GUI 代码——副作用难规约
-- 性能关键路径——验证子集牺牲了一些 Scala 高性能特性
-- 全代码库验证——成本极高，业界做法是只验证**核心模块**
-- 需要复杂浮点 / 实数推理——SMT 对浮点支持有限
+- 大量 IO / 网络 / GUI——副作用难规约
+- 全库万行级验证——成本过高，业界只验核心；复杂归纳常 >30s 超时，需先拆引理
+- 复杂浮点 / 实数推理——SMT 支持有限；极致性能路径也可能落在验证子集外
 
 ## 历史小故事（可跳过）
 
-- **2011-2013**：Viktor Kunčak 在 EPFL 启动 **Leon** 项目，目标是"在 Scala 里做合成 + 验证"。Suter / Kneuss / Kuraj 在 OOPSLA 2013 发表 *Synthesis Modulo Recursive Functions*——只给规约就能合成代码。
-- **2017**：Stainless 项目从 Leon fork 出来，重写架构，扩展到命令式 Scala。Voirol 的 PhD 论文 *Verified Functional Programming* 是核心。
-- **2019 OOPSLA**：Hamza、Voirol、Kunčak 发表 **System FR**——给 Stainless 一个数学严密的核心演算 + Coq 可靠性证明。终于有了"Stainless 凭什么对"的标准答案。
-- **System FR 的关键设计**：通过**分层**（stratified types）同时容纳终止与非终止计算——在某一层，类型只描述终止值；在另一层，允许潜在不终止。这避免了 Curry-Howard 风格依赖类型系统遇到不终止函数时的逻辑不一致问题。
-- 论文里反复强调一个观点：工业语言的形式化基础**不能从零造**，必须把现有特性逐条翻译进可证明可靠的小核心，否则论文写完工具就跟不上。
+- **2011-2013**：Viktor Kunčak 在 EPFL 启动 **Leon**。Suter / Kneuss / Kuraj 在 OOPSLA 2013 发表 *Synthesis Modulo Recursive Functions*——只给规约就能合成代码。
+- **2017**：Stainless 从 Leon fork，重写架构并扩展命令式支持。Voirol 的 PhD *Verifying Functional Programs* 是核心。
+- **2019 OOPSLA**：Hamza、Voirol、Kunčak 发表 **System FR**——小核心演算 + Coq 可靠性证明，回答"Stainless 凭什么对"。
+- **System FR 关键**：用 **sized types** 等机制做终止推理（含惰性结构如 stream），并证明可类型化程序规范化——避免"不终止项混进逻辑"的不一致。
+- 论文强调：工业语言形式化**不能从零造**，要把现有特性翻译进可证可靠的小核心。
 
-之后 Stainless 被用到 **Cardano / DEDIS** 等区块链协议、Scala 标准库验证、教学（EPFL 形式化验证课）。
+之后用于 Scala 库验证、EPFL 教学；Cardano 生态的 Scala 工具链（如 Scalus）也会指向 Stainless 做形式化验证。
 
 ## 学到什么
 
-1. **验证不是测试的加强版**——是另一种范式：测试问"这次跑对吗"，验证问"所有可能跑都对吗"
-2. **依赖类型 + refinement type + SMT** 是把"高级类型论"落到工业语言的三件套
-3. **核心演算（System FR）+ 翻译层** 是验证工具的通用架构：复杂语言特性都翻译成小核心，证明小核心可靠
-4. **Coq 机械化证明 vs SMT 自动化** 不是对立——前者用来一次性证明工具本身可靠，后者用来日常验证用户代码
-5. **学术工具走向工业** 通常要 6-10 年：Leon 2011 → Stainless 2017 → 区块链落地 2020s
-6. **规约写作本身是技能**：把"我想要的行为"翻译成 `require`/`ensuring` 是新的负担，但这个翻译过程**本身就在帮你想清楚需求**——很多 bug 是规约阶段就发现的，VC 还没生成
-7. **反例驱动的开发节奏**：写规约 → 跑验证 → 拿到反例 → 修代码或修规约。这个 loop 比"写代码 → 跑测试"更直接命中根因
+1. **验证不是测试的加强版**：测试问"这次对吗"，验证问"所有可能都对吗"
+2. **refinement type + SMT + 小核心演算** 是把类型论落到工业语言的常见三件套；System FR 证明工具本身可靠，SMT 日常验用户代码
+3. **规约写作是技能**：把行为写成 `require`/`ensuring` 本身就在澄清需求；很多 bug 在规约阶段就暴露
+4. **反例驱动**：写规约 → 验证 → 反例 → 修代码或修规约，比"写代码再测"更直接命中根因
 
 ## 延伸阅读
 

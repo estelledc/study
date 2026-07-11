@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "双手写字类比贴合自回归 vs 多头并行，树形候选也有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有结果数字（平均接受 2.5），缺「一次前向→拼树→验证→留下前缀」的逐步拆解"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 有 vLLM 代码但无逐部分解释；案例 3 是对比表不是可跟做步骤，零基础更需要 3 个带步骤的案例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Cai et al. arXiv:2401.10774 / ICML 2024 正确；Medusa-1/2 加速量级与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「被 vLLM / TensorRT-LLM 收编成标配」略强，宜写成「主流引擎已支持/可选」避免过度外推"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "typical acceptance 相对严格 rejection sampling 的取舍表述合理，未歪曲论文主张"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "vLLM speculative_model 示例概念正确，建议补逐行说明 num_speculative_tokens 与 head 的对应"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（K 过大、分布漂移、接受率衰减、batch=1 变慢、temperature 阈值）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有 batch≥4、7B-70B 等量化提示，端侧 1B 以下不适用说得清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "双手写字类比贴合自回归 vs 多头并行，树形候选也有日常桥接",
+        "案例 1 只有结果数字（平均接受 2.5），缺「一次前向→拼树→验证→留下前缀」的逐步拆解",
+        "案例 2 有 vLLM 代码但无逐部分解释；案例 3 是对比表不是可跟做步骤，零基础更需要 3 个带步骤的案例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Cai et al. arXiv:2401.10774 / ICML 2024 正确；Medusa-1/2 加速量级与论文一致",
+        "「被 vLLM / TensorRT-LLM 收编成标配」略强，宜写成「主流引擎已支持/可选」避免过度外推",
+        "typical acceptance 相对严格 rejection sampling 的取舍表述合理，未歪曲论文主张"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "vLLM speculative_model 示例概念正确，建议补逐行说明 num_speculative_tokens 与 head 的对应",
+        "踩坑（K 过大、分布漂移、接受率衰减、batch=1 变慢、temperature 阈值）具体可操作",
+        "适用边界有 batch≥4、7B-70B 等量化提示，端侧 1B 以下不适用说得清楚"
+      ]
+    }
+  ]
+}

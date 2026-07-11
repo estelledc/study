@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "共享发动机类比贴合；Olm/Megolm/FFI 有桥接；三案例分层清晰，部分 API 省略号需读者脑补"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2020 年后几乎都不再用 matrix-js-sdk』过满：Element Web 等仍维护/使用 JS SDK，应改为『新客户端优先 Rust SDK，JS SDK 仍服务 Web』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『启动快 6 倍』缺出处限定，宜写成『官方宣传/评测约数倍』或加来源年份"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史：Matrix 起源于 Amdocs 团队，Element（原 New Vector）是后续公司，『诞生于 Element 公司前身』表述易误导"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小 Client/sync 与分层案例概念正确；公共 crate/UniFFI async/sliding sync/crypto store/Tokio 踩坑可操作；客户端 vs 服务端边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "共享发动机类比贴合；Olm/Megolm/FFI 有桥接；三案例分层清晰，部分 API 省略号需读者脑补"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『2020 年后几乎都不再用 matrix-js-sdk』过满：Element Web 等仍维护/使用 JS SDK，应改为『新客户端优先 Rust SDK，JS SDK 仍服务 Web』",
+        "『启动快 6 倍』缺出处限定，宜写成『官方宣传/评测约数倍』或加来源年份",
+        "历史：Matrix 起源于 Amdocs 团队，Element（原 New Vector）是后续公司，『诞生于 Element 公司前身』表述易误导"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "最小 Client/sync 与分层案例概念正确；公共 crate/UniFFI async/sliding sync/crypto store/Tokio 踩坑可操作；客户端 vs 服务端边界清楚"
+      ]
+    }
+  ]
+}

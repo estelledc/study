@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 JSON 字段（title/events/start_date/media）缺少面向零基础的逐字段拆解，建议按「先写数据 → 再挂 CDN → 再 new TL.Timeline」三步写清"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 几乎只有 JSON 片段，应补一句 group 如何在 TimeNav 里变成多行轨道，以及读者何时该用分组"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "v3 重写时间写「2017 年前后」不准确：TimelineJS3 约 2015 年公开（beta），应改为 2015 年前后并保留「抛弃 jQuery / 模块化」等正确要点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「吃掉了大半新闻业的时间线需求」偏绝对，可改为「大量英语世界新闻专题嵌入」之类可核对表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 imgur/youtube 示例 URL 是占位符，可注明「换成真实直链」以免读者照抄后空白媒体"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 JSON 字段（title/events/start_date/media）缺少面向零基础的逐字段拆解，建议按「先写数据 → 再挂 CDN → 再 new TL.Timeline」三步写清",
+        "案例 3 几乎只有 JSON 片段，应补一句 group 如何在 TimeNav 里变成多行轨道，以及读者何时该用分组"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "v3 重写时间写「2017 年前后」不准确：TimelineJS3 约 2015 年公开（beta），应改为 2015 年前后并保留「抛弃 jQuery / 模块化」等正确要点",
+        "「吃掉了大半新闻业的时间线需求」偏绝对，可改为「大量英语世界新闻专题嵌入」之类可核对表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 imgur/youtube 示例 URL 是占位符，可注明「换成真实直链」以免读者照抄后空白媒体"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "办公楼门禁类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "RIO / 基本块 / 代码缓存首次出现有运行时桥接；GOT 在「是什么」里略突兀，可加半句「函数地址表」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释；案例 2/3 把 ret 劫持与绕过检查讲清楚，可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kiriansky / Bruening / Amarasinghe，USENIX Security 2002 著录正确，PDF 链到 legacy usenix 可用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "时间线：Aleph One 1996、StackGuard 1998、Dynamo 2000、StackGhost/FormatGuard 2001、Shepherding 2002 与公开史料一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学简化合理：不声称修补漏洞本身；sensitive data overwrite 不在核心范围与论文立场一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三案例伪代码概念正确：来源检查、合法 ret 目标集、不可绕过 syscall 检查均可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：不修漏洞只挡控制流、不只挡 shellcode、保护监控器自身、热路径≠零成本"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用无源码 IA-32 / 不适用敏感数据破坏与复杂 JIT——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "办公楼门禁类比贯穿全文，零基础直觉强",
+        "RIO / 基本块 / 代码缓存首次出现有运行时桥接；GOT 在「是什么」里略突兀，可加半句「函数地址表」",
+        "三案例均有逐部分解释；案例 2/3 把 ret 劫持与绕过检查讲清楚，可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Kiriansky / Bruening / Amarasinghe，USENIX Security 2002 著录正确，PDF 链到 legacy usenix 可用",
+        "时间线：Aleph One 1996、StackGuard 1998、Dynamo 2000、StackGhost/FormatGuard 2001、Shepherding 2002 与公开史料一致",
+        "教学简化合理：不声称修补漏洞本身；sensitive data overwrite 不在核心范围与论文立场一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三案例伪代码概念正确：来源检查、合法 ret 目标集、不可绕过 syscall 检查均可跟",
+        "踩坑具体可操作：不修漏洞只挡控制流、不只挡 shellcode、保护监控器自身、热路径≠零成本",
+        "适用无源码 IA-32 / 不适用敏感数据破坏与复杂 JIT——边界清楚"
+      ]
+    }
+  ]
+}

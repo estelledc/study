@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "保险箱/泼墨/复印类比清楚；但案例 1 出现未定义的 encode()，且 SEAL API 对零基础像黑盒——建议补 BatchEncoder/IntegerEncoder 桥接，并逐步标出「参数→密钥→加密→运算」四步。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "BFV 是 scale-invariant：噪声管理不依赖模数切换（那是 BGV 的标配）；论文用模切主要简化 bootstrapping 分析。把「重线性化+模数切换」并列为 BFV 核心噪声控制会与 BGV 混淆。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「乘一次噪声大约翻倍」过度简化：同态乘法噪声增长远高于线性翻倍，应改为「显著膨胀/近似二次增长」并保留有限深度结论。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 API 不可跟做：SEALContext.Parameters() / set_coeff_modulus(128) / 裸 encode() 均不符合常见 python-seal 或官方 C++ API；应改成 EncryptionParameters(scheme_type.bfv)+CoeffModulus.BFVDefault，或明确标「示意伪代码」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界已有「毫秒级/深度有限/整数 vs CKKS」——可保留；修好代码后即可。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "保险箱/泼墨/复印类比清楚；但案例 1 出现未定义的 encode()，且 SEAL API 对零基础像黑盒——建议补 BatchEncoder/IntegerEncoder 桥接，并逐步标出「参数→密钥→加密→运算」四步。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "BFV 是 scale-invariant：噪声管理不依赖模数切换（那是 BGV 的标配）；论文用模切主要简化 bootstrapping 分析。把「重线性化+模数切换」并列为 BFV 核心噪声控制会与 BGV 混淆。",
+        "「乘一次噪声大约翻倍」过度简化：同态乘法噪声增长远高于线性翻倍，应改为「显著膨胀/近似二次增长」并保留有限深度结论。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 API 不可跟做：SEALContext.Parameters() / set_coeff_modulus(128) / 裸 encode() 均不符合常见 python-seal 或官方 C++ API；应改成 EncryptionParameters(scheme_type.bfv)+CoeffModulus.BFVDefault，或明确标「示意伪代码」。",
+        "适用边界已有「毫秒级/深度有限/整数 vs CKKS」——可保留；修好代码后即可。"
+      ]
+    }
+  ]
+}

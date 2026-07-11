@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "游戏引擎 / 一笔笔画 vs 显卡一次塞形状类比把「只管画」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "graphology、WebGL、reducer、camera ratio 首次出现有白话桥接，整体能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 直接用 sigma/graph 未展示创建，零基础难复现；建议补上最小初始化再写 hover"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点把 graphology 写成「纯数据库」不准确，应为图数据结构/算法库（数据层），不是数据库"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写 v1「Canvas + SVG」偏歪：2013/2014 v1 主线是 Canvas + WebGL，SVG 多为导出/插件路径"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitHub jacomyal/sigma.js、v2≈2021 重写+剥离 graphology、médialab 渊源与公开叙述一致，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 片段缺 Graph/Sigma 创建与 container，跟做会 ReferenceError；应补最小样板"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：缺 x/y/size 静默空白、peerDependency、reducer 别做重活、ratio 反直觉、context lost——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（上万节点交互 vs cytoscape/react-flow/Cosmograph）；量化门槛可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "游戏引擎 / 一笔笔画 vs 显卡一次塞形状类比把「只管画」讲透，零基础直觉强",
+        "graphology、WebGL、reducer、camera ratio 首次出现有白话桥接，整体能跟",
+        "案例 2 直接用 sigma/graph 未展示创建，零基础难复现；建议补上最小初始化再写 hover"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点把 graphology 写成「纯数据库」不准确，应为图数据结构/算法库（数据层），不是数据库",
+        "历史写 v1「Canvas + SVG」偏歪：2013/2014 v1 主线是 Canvas + WebGL，SVG 多为导出/插件路径",
+        "GitHub jacomyal/sigma.js、v2≈2021 重写+剥离 graphology、médialab 渊源与公开叙述一致，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 片段缺 Graph/Sigma 创建与 container，跟做会 ReferenceError；应补最小样板",
+        "踩坑具体可操作：缺 x/y/size 静默空白、peerDependency、reducer 别做重活、ratio 反直觉、context lost——保留",
+        "适用/不适用边界清楚（上万节点交互 vs cytoscape/react-flow/Cosmograph）；量化门槛可保留"
+      ]
+    }
+  ]
+}

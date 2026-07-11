@@ -1,0 +1,38 @@
+{
+  "round_n": 123,
+  "total": 1975,
+  "audited": 1975,
+  "failed": 0,
+  "pending": 0,
+  "by_status": {
+    "rewritten": 48,
+    "refined": 1169,
+    "passed": 758
+  },
+  "last_round": {
+    "round": 123,
+    "results": 75,
+    "passed": 42,
+    "refined": 33,
+    "rewritten": 0,
+    "failed": 0,
+    "at": "2026-07-11T01:47:58.039Z"
+  },
+  "next_action": "DONE",
+  "updated_at": "2026-07-11T01:47:58.039Z",
+  "handoff": {
+    "mode": "complete",
+    "last_round": 123,
+    "summary": {
+      "round": 123,
+      "results": 75,
+      "passed": 42,
+      "refined": 33,
+      "rewritten": 0,
+      "failed": 0,
+      "at": "2026-07-11T01:47:58.039Z"
+    },
+    "message": "Full audit complete: all 1975 notes audited. STOP."
+  },
+  "complete": true
+}

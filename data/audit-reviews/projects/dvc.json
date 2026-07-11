@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「延伸阅读」段，零基础读者学完无处可去；补 4–6 条官方文档/教程/相关 wikilink。历史段标题宜改成「历史小故事（可跳过）」以对齐模板。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 4 把『改了 dvc.yaml 忘 commit』和『.dvc 文件没进 Git』混为一谈：应分开说明 dvc.yaml / *.dvc 占位文件都要进 Git，否则队友 checkout 后 pipeline 或数据指针会对不上。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 4 可操作建议写清：改完 dvc.yaml 或跑完 dvc add/commit 后，把 dvc.yaml 与 *.dvc 一并 git add/commit；勿手改 hash。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "缺「延伸阅读」段，零基础读者学完无处可去；补 4–6 条官方文档/教程/相关 wikilink。历史段标题宜改成「历史小故事（可跳过）」以对齐模板。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 4 把『改了 dvc.yaml 忘 commit』和『.dvc 文件没进 Git』混为一谈：应分开说明 dvc.yaml / *.dvc 占位文件都要进 Git，否则队友 checkout 后 pipeline 或数据指针会对不上。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 4 可操作建议写清：改完 dvc.yaml 或跑完 dvc add/commit 后，把 dvc.yaml 与 *.dvc 一并 git add/commit；勿手改 hash。"
+      ]
+    }
+  ]
+}

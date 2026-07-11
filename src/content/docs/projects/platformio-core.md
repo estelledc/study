@@ -72,7 +72,7 @@ pio run -t upload    # 编译 + 上传，一条命令搞定
 pio device monitor   # 打开串口监视器看输出
 ```
 
-第一次运行时 PlatformIO 自动下载 Xtensa 编译器和 Arduino 框架，之后缓存复用。
+**逐部分解释**：① `[env:esp32dev]` 是一个构建环境名；② `platform` 决定工具链家族；③ `board` 填入 Flash/上传协议等元数据；④ `framework = arduino` 选用 Arduino API；⑤ 源码放 `src/main.cpp`，`LED_BUILTIN` 由板级定义提供。第一次运行会下载 Xtensa 编译器与框架，之后缓存复用。
 
 ### 案例 2：同一份代码跑在三块不同板子上
 
@@ -93,7 +93,7 @@ board = nucleo_f401re
 framework = arduino
 ```
 
-一条 `pio run` 会按顺序编译三个环境。CI 里加一行就搞定多板验证。
+**逐部分解释**：① 每个 `[env:…]` 是独立工具链，互不污染；② 共用同一份 `src/`，换板只换 env；③ `pio run` 默认编全部 env，`pio run -e uno` 只编一块；④ CI 里一行多板验证，避免「只在我的 ESP32 上能过」。
 
 ### 案例 3：加入单元测试
 
@@ -112,7 +112,7 @@ int main() {
 }
 ```
 
-执行 `pio test` 会自动编译测试代码、上传到板子、通过串口收集结果。也可以在本地 native 环境跑（不需要硬件）。
+**逐部分解释**：① 测试放在 `test/` 下，Unity 宏写断言；② `pio test` 编译测试固件，可上传到板子经串口回收结果；③ 也可配 `native` env 在 PC 上跑，不插硬件也能做纯逻辑 TDD。
 
 ## 踩过的坑
 

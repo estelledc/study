@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "便携打印机类比与三案例很清晰；缺历史小故事/反向链接段，结构与模板略不一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 4「format 数组强制 mm」不准确：jsPDF 里字符串 'a4' 与 [w,h] 都按当前 unit 解释，数组并不强制毫米。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 parallax/jsPDF、James Hall 2010、v2/v3 时间线大体合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码可跟做；踩坑 4 单位说法会误导排版调试，应改为「数组也是当前 unit，混用 mm 数值与 pt unit 才会全错」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "中文字体/基线/html2canvas 不可搜等踩坑很有用，保持。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "便携打印机类比与三案例很清晰；缺历史小故事/反向链接段，结构与模板略不一致。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 4「format 数组强制 mm」不准确：jsPDF 里字符串 'a4' 与 [w,h] 都按当前 unit 解释，数组并不强制毫米。",
+        "来源 parallax/jsPDF、James Hall 2010、v2/v3 时间线大体合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 3,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例代码可跟做；踩坑 4 单位说法会误导排版调试，应改为「数组也是当前 unit，混用 mm 数值与 pt unit 才会全错」。",
+        "中文字体/基线/html2canvas 不可搜等踩坑很有用，保持。"
+      ]
+    }
+  ]
+}

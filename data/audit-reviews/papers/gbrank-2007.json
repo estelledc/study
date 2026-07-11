@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "squared hinge / function-space gradient descent / surrogate split 首次出现桥接偏短，零基础会在损失公式与「负梯度」处卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 是对比表而非逐步操作，建议在表前补一句「看完表再对照案例 2 的伪代码」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「直接催生 LambdaMART」偏强：LambdaMART 是 LambdaRank 梯度套到 MART/GBDT；可改为「为后续 LambdaMART 等 GBDT 排序铺路」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SIGIR 2007 作者与标题与来源一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 伪代码可跟做；适用边界已有候选 100-1000、百万级样本等量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "squared hinge / function-space gradient descent / surrogate split 首次出现桥接偏短，零基础会在损失公式与「负梯度」处卡住",
+        "案例 3 是对比表而非逐步操作，建议在表前补一句「看完表再对照案例 2 的伪代码」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「直接催生 LambdaMART」偏强：LambdaMART 是 LambdaRank 梯度套到 MART/GBDT；可改为「为后续 LambdaMART 等 GBDT 排序铺路」",
+        "SIGIR 2007 作者与标题与来源一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 伪代码可跟做；适用边界已有候选 100-1000、百万级样本等量化"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 title: Etherpad — 经典协作文本编辑器
-来源: 'https://github.com/ether/etherpad-lite'
+来源: 'https://github.com/ether/etherpad'
 日期: 2026-07-08
 分类: editors
 难度: 中级
@@ -103,32 +103,28 @@ services:
 
 ### 案例 3：用 HTTP API 让业务系统创建 pad
 
-HTTP API 文档的典型场景是：一个门户网站先有自己的用户和权限，再把用户映射成 Etherpad author、group 和 session。
+关键：`groupMapper` 只是业务键，返回的 `data.groupID`（形如 `g.xxx`）才是真 ID；group pad 的 `padID` 必须是 `groupID$padName`，且要先 `createGroupPad`。
 
 ```bash
 API=http://pad.example.com/api/1
-TOKEN="$ETHERPAD_TOKEN"
+H="Authorization: Bearer $ETHERPAD_TOKEN"
 
-curl -H "Authorization: Bearer $TOKEN" \
-  "$API/createAuthorIfNotExistsFor?name=Michael&authorMapper=7"
-
-curl -H "Authorization: Bearer $TOKEN" \
-  "$API/createGroupIfNotExistsFor?groupMapper=course-101"
-
-curl -H "Authorization: Bearer $TOKEN" \
-  --get "$API/setText" \
-  --data-urlencode "padID=course-101$week-01" \
+curl -sS -H "$H" "$API/createAuthorIfNotExistsFor?name=Michael&authorMapper=7"
+GROUP_ID=$(curl -sS -H "$H" "$API/createGroupIfNotExistsFor?groupMapper=course-101" \
+  | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['groupID'])")
+curl -sS -H "$H" --get "$API/createGroupPad" \
+  --data-urlencode "groupID=$GROUP_ID" --data-urlencode "padName=week-01" \
   --data-urlencode "text=第一周讨论提纲"
+PAD_ID="${GROUP_ID}"'$week-01'
+curl -sS -H "$H" --get "$API/setText" \
+  --data-urlencode "padID=$PAD_ID" --data-urlencode "text=提纲（已更新）"
 ```
 
-逐部分解释：
+- `createGroupIfNotExistsFor` → 取出 `groupID`，不要把 `course-101` 当 pad 前缀。
+- `createGroupPad` 之后才能稳定用 `groupID$padName` 读写；长文本用 POST/`--data-urlencode`。
+- Bearer token 放服务端，不要写进前端。
 
-- `authorMapper=7`：把业务系统里的用户 id 7 映射成 Etherpad 的作者 id。
-- `groupMapper=course-101`：把一门课、一个项目或一个团队映射成 group。
-- `setText`：把初始文本写进 pad；如果文本很长，官方文档建议用 POST，避免 GET 请求头长度限制。
-- `Authorization: Bearer`：新版文档写明 API 请求要带访问令牌，不要把密钥硬编码进前端。
-
-这类用法让 Etherpad 嵌进教学平台、CMS、项目系统或内部门户：业务系统管登录和权限，Etherpad 专心管实时编辑。
+业务系统管登录权限，Etherpad 只管实时编辑——适合嵌进教学平台或内部门户。
 
 ## 踩过的坑
 
@@ -158,11 +154,11 @@ curl -H "Authorization: Bearer $TOKEN" \
 
 ## 历史小故事（可跳过）
 
-- **2009 年前后**：Etherpad 以浏览器实时协作编辑闻名，后来代码开放，成为早期多人协作编辑的代表项目之一。
-- **长期演进**：项目从 `etherpad-lite` 名称逐渐过渡到 `ether/etherpad` 仓库，但生态里很多包名和路径仍保留旧名字。
-- **社区维护**：README 说项目由小型志愿维护团队维护，核心目标多年没有大转向。
-- **生态扩展**：插件数量长期增长，很多能力不进核心，而是通过 `ep_` 前缀插件装上去。
-- **现在**：GitHub 页面显示约 18k stars，README 提到 105 种语言、数百插件和大量自托管实例。
+- **2008**：AppJet 发布 Etherpad，浏览器里真正实时的多人文本编辑迅速走红。
+- **2009.12**：Google 收购 AppJet；在社区压力下开源原版代码（Java/Scala），随后官方托管服务关闭。
+- **2011–2012**：社区用 Node.js 重写为更轻的 **etherpad-lite**，成为今天主线的前身。
+- **长期演进**：仓库从 `etherpad-lite` 名称逐渐过渡到 `ether/etherpad`，但生态里很多包名和路径仍保留旧名字。
+- **现在**：由小型志愿团队维护；GitHub 约 18k stars，README 提到 105 种语言、数百 `ep_` 插件和大量自托管实例。
 
 ## 学到什么
 

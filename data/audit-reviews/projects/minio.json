@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "车库/公共仓库类比清楚；docker + SDK + mc 三案例可跟，Erasure Coding 对零基础略抽象但有书页类比。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2017：用 Apache 2.0 协议开源」时间线偏糊：项目更早开源，且后来许可证有变更；宜改成「早期 Apache-2.0，后调整许可证」并弱化精确年份。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比传统 3 副本省一半空间」取决于 N+M 配比，宜加「常见配比下」限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺独立的 ## 适用 / 不适用 段：单节点玩 vs ≥4 盘 EC 生产、替代 S3 开发联调 vs 超大规模多租户等边界应写清。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "forcePathStyle / multipart / 默认密码踩坑有用；SDK 示例可跟做。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "车库/公共仓库类比清楚；docker + SDK + mc 三案例可跟，Erasure Coding 对零基础略抽象但有书页类比。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「2017：用 Apache 2.0 协议开源」时间线偏糊：项目更早开源，且后来许可证有变更；宜改成「早期 Apache-2.0，后调整许可证」并弱化精确年份。",
+        "「比传统 3 副本省一半空间」取决于 N+M 配比，宜加「常见配比下」限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "缺独立的 ## 适用 / 不适用 段：单节点玩 vs ≥4 盘 EC 生产、替代 S3 开发联调 vs 超大规模多租户等边界应写清。",
+        "forcePathStyle / multipart / 默认密码踩坑有用；SDK 示例可跟做。"
+      ]
+    }
+  ]
+}

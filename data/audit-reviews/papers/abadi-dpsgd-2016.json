@@ -1,0 +1,60 @@
+{
+  "slug": "abadi-dpsgd-2016",
+  "area": "papers",
+  "note_path": "src/content/docs/papers/abadi-dpsgd-2016.md",
+  "research_stub_path": "/tmp/audit-round-1/papers-abadi-dpsgd-2016/research-stub.json",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的训练循环用了 labels 但没有展示 batch 如何拆包；零基础读者可能照抄后遇到 NameError。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "关于工业系统采用 DP-SGD 或其变体的表述略概括，建议保留为背景价值，不要写成所有公司训练管线都直接使用原始 DP-SGD。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Opacus 示例中 for batch in data_loader 后直接使用 labels，代码片段缺少 inputs/labels 拆包，作为可跟做示例需要补齐。",
+        "训练循环最好显式把 optimizer.zero_grad() 放在每步开头，避免读者沿用上一轮梯度。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "action": "refine",
+    "reason": "engineer reviewer 标记代码可跑性 needs-refine；reject 数为 0，按规则进入定向 refine。",
+    "initial_quality_gate": {
+      "pass": true,
+      "lines": 191
+    }
+  }
+}

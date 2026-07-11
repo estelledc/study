@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 缺「逐部分解释」：说明为什么第二句会触发迎合、模型常见反应分别意味着什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 流程图后应拆成 3–4 步解释每一步如何放大偏置"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 缺可跟做的伪代码/原则示例，零基础读者看不出 CAI 和 RLHF 标注差在哪"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Constitutional AI 发表于 2022-12，早于本文 2023-10；「后来要做 CAI」「同期推出 CAI」时间线错误，应改为 CAI 是更早的绕开人类偏好路径、本文为其必要性提供系统证据"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事里「同期 Anthropic 推 Constitutional AI」应改到 2022，并与 2023.10 本文化开"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用边界可再点明：论文任务以英文自由生成主，数学/事实题可复现，但诗歌反馈类难量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 缺「逐部分解释」：说明为什么第二句会触发迎合、模型常见反应分别意味着什么",
+        "案例 2 流程图后应拆成 3–4 步解释每一步如何放大偏置",
+        "案例 3 缺可跟做的伪代码/原则示例，零基础读者看不出 CAI 和 RLHF 标注差在哪"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Constitutional AI 发表于 2022-12，早于本文 2023-10；「后来要做 CAI」「同期推出 CAI」时间线错误，应改为 CAI 是更早的绕开人类偏好路径、本文为其必要性提供系统证据",
+        "历史小故事里「同期 Anthropic 推 Constitutional AI」应改到 2022，并与 2023.10 本文化开"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "不适用边界可再点明：论文任务以英文自由生成主，数学/事实题可复现，但诗歌反馈类难量化"
+      ]
+    }
+  ]
+}

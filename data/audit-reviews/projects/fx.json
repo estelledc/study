@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "jq/less 类比很好；但案例 4 把「按 . 写 jq 管道」写成实时 REPL，和真实 dig/JS 行为不一致，会误导跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "与官方 key bindings / fx.wtf 不符：空格是翻页不是折叠；按 . 是 dig 路径而非 jq filter REPL；Go 版处理语言是 JavaScript 不是 jq DSL；Ctrl+S 保存表达式不成立。需按现行 Go 版文档改写核心要点第 1–2 条与案例 4。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 的 `.users | map(.email)` + Ctrl+S 无法按描述跟做；应改为 dig 路径或 CLI 的 JS 表达式示例（如 fx 'x.users.map(u => u.email)'）。空格折叠键位同样会让读者当场踩坑。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "jq/less 类比很好；但案例 4 把「按 . 写 jq 管道」写成实时 REPL，和真实 dig/JS 行为不一致，会误导跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "与官方 key bindings / fx.wtf 不符：空格是翻页不是折叠；按 . 是 dig 路径而非 jq filter REPL；Go 版处理语言是 JavaScript 不是 jq DSL；Ctrl+S 保存表达式不成立。需按现行 Go 版文档改写核心要点第 1–2 条与案例 4。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 的 `.users | map(.email)` + Ctrl+S 无法按描述跟做；应改为 dig 路径或 CLI 的 JS 表达式示例（如 fx 'x.users.map(u => u.email)'）。空格折叠键位同样会让读者当场踩坑。"
+      ]
+    }
+  ]
+}

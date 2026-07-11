@@ -121,7 +121,7 @@ def linearizable_read(key):
 - **1990 年 7 月**：TOPLAS 30 页正式版，确立现在的术语和证明框架
 - **2002 年**：Gilbert & Lynch 证 CAP 定理，里面的 "C" 直接采用 linearizability 的定义
 - **2013 年**：Kyle Kingsbury 启动 Jepsen 项目，用 Knossos 检查器对工业系统做线性化测试，发现一票数据库违规
-- **2003 年起**：Herlihy 用同一思路推 transactional memory；今天 lock-free 数据结构教科书都把这篇当原点
+- **1993 年**：Herlihy & Moss 在 ISCA 提出硬件 transactional memory；**2003 年**前后软件 TM（如 DSTM）热潮沿同一正确性思路展开；今天 lock-free 教科书仍把 1990 这篇当原点
 
 ## 学到什么
 

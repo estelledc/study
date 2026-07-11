@@ -52,12 +52,18 @@ nomad agent -dev
 
 这一行命令就把 server + client 都起在本机，可以立刻提交 job。开发模式下数据存内存，关掉就没了，适合学习。
 
-### 案例 2：一份最小 job 文件
+### 案例 2：一份最小可提交的 job 文件
 
 ```hcl
 job "hello" {
+  datacenters = ["dc1"]   # 必填：要跑进哪个数据中心
+  type        = "service"
+
   group "web" {
     count = 2
+    network {
+      port "http" { to = 80 }  # 先声明端口名，task 才能引用
+    }
     task "server" {
       driver = "docker"
       config {
@@ -73,7 +79,7 @@ job "hello" {
 }
 ```
 
-提交：`nomad job run hello.nomad.hcl`。Nomad 会找两个节点各起一个 nginx，资源不够就报 placement failed。
+提交：`nomad job run hello.nomad.hcl`。成功时 `nomad job status hello` 会看到 2 个 allocation；资源不够则报 placement failed。缺 `datacenters` 或未声明 `port` 时，parser / 调度会直接拒收。
 
 ### 案例 3：跑非容器化的旧 Java 服务
 

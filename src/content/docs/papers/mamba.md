@@ -8,141 +8,142 @@ title: Mamba — 选择性状态空间模型
 
 ## 是什么
 
-Mamba 是 2023 年底 Carnegie Mellon 的 Albert Gu 和 Tri Dao 提出的**新一代序列模型架构**，用一种叫"选择性状态空间"（Selective State Space Model，简称 **S6** = S4 + Selection）的机制**替代了 Transformer 里的 [[attention]]**。
+Mamba 是 2023 年底 Albert Gu 与 Tri Dao 提出的**序列模型架构**，用「选择性状态空间」（Selective State Space Model，简称 **S6** = S4 + Selection）机制，在许多长序列任务上**替代 Transformer 里的 [[attention]]**。
 
 日常类比：
 
-- **Transformer 处理长文像背诵全文**——每个新词都要和前面所有词逐一比较"你和我有关系吗"，越往后越累
-- **Mamba 像速读高手**——边读边把当前页的关键信息塞进一个固定大小的"小脑袋"里，下一页就只看小脑袋 + 新内容
+- **Transformer 像背诵全文**——每个新词都要和前面所有词比一遍「你和我有关系吗」，越长越累
+- **Mamba 像速读高手**——边读边把关键信息塞进固定大小的「小脑袋」，下一页只看小脑袋 + 新内容
 
-正因为只看"压缩过的小脑袋"，Mamba 处理 100 万 token 的长上下文时**不像 Transformer 那样卡死**，而是顺顺当当一直读下去。论文标题里的 "Linear-Time Sequence Modeling" 不是市场口号——是数学证明的 **O(N) 推理时间** 保证。
+正因为只看压缩过的状态，处理百万 token 时推理时间可按长度**线性**增长（论文标题里的 Linear-Time），而不是 Transformer 的平方级。它不是又一个「更快的 attention 近似」，而是换了一套递推状态的记账方式。
+
+论文把选择性 SSM 嵌进简化后的端到端网络（常称 Mamba block），在语言、音频、基因组等模态上展示了长序列潜力。
 
 ## 为什么重要
 
-不理解 Mamba，下面这些事都没法解释：
+不理解 Mamba，下面这些事都很难解释：
 
-- 为什么 2024 年开始有一波"线性 attention 复兴"——RWKV、RetNet、xLSTM 全是这条路
-- 为什么 AI21 / Mistral / TII 等团队开始出 Mamba+Transformer **混合模型**（Jamba、Codestral Mamba、Falcon-Mamba）
-- 为什么基因组学、长音频、长视频这些"序列动辄 100 万"的领域，Mamba 几乎垄断
-- 为什么有人喊"Transformer 终结者"——但两年过去，旗舰 LLM 还是清一色 Transformer
-- 为什么"算法 + CUDA kernel 协同设计"成了 LLM-era 新论文的标配
-- 为什么 Tri Dao 同一作者，左手 [[flash-attention]] 推 Transformer，右手 Mamba 推替代——这种"两面下注"恰恰说明谁也没完全胜出
+- 为什么 2024 年出现一波「线性 attention / RNN 复兴」——RWKV、RetNet、xLSTM 都在同一赛道
+- 为什么 AI21 / Mistral / TII 等会出 Mamba+Transformer **混合模型**（Jamba、Codestral Mamba、Falcon-Mamba）
+- 为什么基因组、长音频等「序列动辄百万」的领域特别关注 SSM
+- 为什么有人喊「Transformer 终结者」，但旗舰 LLM 仍以 Transformer 为主
+- 为什么「算法 + CUDA kernel 协同设计」成了新架构论文的标配（同一作者也做了 [[flash-attention]]）
 
-Mamba 的核心承诺是 **推理时间线性 O(N)**（Transformer 是平方 O(N²)）+ **state 大小固定 O(1)**（Transformer 的 KV cache 随 token 数线性涨）。
+核心承诺：**推理时间 O(N)** + **decode 时状态大小近似固定**（对比 Transformer 的 KV cache 随长度涨）。把这两点记住，后面读混合模型文案时就不容易被「终结者」口号带跑。
 
 ## 核心要点
 
-Mamba 做对了三件事，缺一不可：
+1. **State Space Model（SSM）打底**：用隐藏向量 `h` 压缩读过的内容。类比 LSTM 的记忆细胞，但数学来自控制论。每读一个 token 更新一次 `h`，维度固定（论文常用状态扩展 N=16），不随上下文变长。
 
-1. **State Space Model（SSM）打底**：用一个隐藏向量 h 压缩到目前为止读过的所有内容。类比 LSTM 的"记忆细胞"，但数学结构来自控制论，更清晰、更可控。每读一个 token 就更新一次 h，h 的大小固定（论文默认 16 维），不随上下文增长。
+2. **Selective（选择性）——真正突破**：旧 SSM（如 S4）参数固定；Mamba 让 Δ、B、C **随当前输入变化**——重要 token 多写一笔，无关 token 可跳过。这就是「速读」的开关。
 
-2. **Selective（选择性）—— 这是真正的突破**：以前的 SSM（如 S4）参数是固定的，处理任何 token 都用同一种方式更新 h。Mamba 让参数 **根据当前输入动态生成**——遇到重要 token 多写一笔，遇到无关 token 直接跳过。这就是"speed reading"的本质。
+3. **Hardware-aware CUDA kernel**：参数变 input-dependent 后不能再当固定卷积训。Mamba 用 **parallel scan** + 把中间值留在 GPU SRAM，避免反复读写 HBM，让训练速度追上优化过的 Transformer。
 
-3. **Hardware-aware CUDA kernel**：单纯把参数变 input-dependent 会让训练 **没法并行**（不再是固定卷积）。Mamba 用 **parallel scan**（一个 1990 年就有但被深度学习社区忘掉的并行算法）+ 把所有中间值留在 GPU 的 SRAM 里，让训练速度追上 [[flash-attention]] 优化过的 Transformer。
+可以记成一条流水线：**输入 → 动态生成 Δ/B/C → 更新固定状态 h → 读出 y**；训练走并行 scan，推理走逐步递推。
 
-三件事合起来 = **训练快 + 推理超快 + 长上下文能跑**。
-
+三件事合起来：**能训、能推、能跑长上下文**。
 ## 实践案例
 
-### 案例 1：100 万 token 长文档
+### 案例 1：读一个 token 时发生了什么
 
-任务：把整本《战争与和平》（约 50 万词）喂给模型做摘要。
+```text
+# 伪代码：selective SSM 一步
+x_t = 当前 token 的向量
+Δ, B, C = Linear(x_t)          # 由输入动态生成
+h_t = exp(-Δ) * h_{t-1} + Δ*B * x_t   # 更新固定大小状态
+y_t = C * h_t                   # 读出当前输出
+```
 
-- **Transformer**：32k 上下文已经吃力，128k 要 ring attention，1M 显存爆炸
-- **Mamba**：state 始终是同样大小（约 128KB），从头读到尾内存不变，速度线性
+逐部分解释：
 
-### 案例 2：基因组建模（DNA 序列）
+- `Δ/B/C` 依赖 `x_t`：同一套公式，遇到「重要词」和「虚词」更新力度不同。
+- `h_t` 长度固定：读到第 10 个或第 100 万个 token，状态槽位数不变。
+- 训练时用 parallel scan 把整段序列并行算完；推理 decode 时逐步递推即可。
 
-人类基因组 30 亿碱基对。Mamba 在 1M-token 序列上比 Transformer 低 4-8 个 perplexity 点（ppl 越低越好）。这是 Mamba 真正打 Transformer 不还手的领域。
+### 案例 2：同规模语言建模对比
 
-### 案例 3：同规模 LM 性能
+论文在 The Pile 上训约 300B token：Mamba-2.8B 的下游表现**略优于同规模 Pythia-2.8B**，推理吞吐可到约 **5×**。这是「同参数量、同数据量」下的对照，不是「任意规模都碾压 Transformer」。
 
-Mamba-2.8B 在 Pile 数据集训练 300B token 后，**ppl 略优于 Pythia-2.8B**（同规模 Transformer），而推理速度快 5x。但 **仅在 7B 以下**——更大规模上 Transformer 仍占优。
+读结果时注意：
 
-### 案例 4：流式语音转写
+- 比的是 **2.8B 档** 的开源基线，不是 GPT-4 级旗舰
+- 「更快」主要来自 decode 不再维护随长度增长的 KV cache
+- 若任务极度依赖精确回看某句原文，数字好看也不代表该换架构
 
-实时语音需要"边听边输出"。Transformer 每个新词都要回看所有历史 token，越长越慢；Mamba 的 state 是固定大小，每个新词处理时间常数——天然适合流式场景。这是 Mamba 在产品落地最现实的窗口。
+### 案例 3：长序列、基因组与流式
 
+- **长文档**：百万 token 扫读时，状态内存近似常数；纯 Transformer 往往先撞显存墙。
+- **基因组**：碱基序列极长，SSM 这类线性模型更吃得消；这是论文重点模态之一，不等于「该领域只剩 Mamba」。
+- **流式语音**：每来一个新帧，更新 `h` 的时间近似常数；适合边听边出字的产品窗口。
+
+### 案例 4：混合架构一眼看懂
+
+AI21 的 Jamba 等把 attention 与 Mamba **按层混排**（常见约 1:7）：少数 attention 层负责精确召回，多数 Mamba 层负责便宜的长程推进。纯 Mamba「取代一切」没有发生，**互补**才是 2024–2025 更常见的落地。
 ## 踩过的坑
 
-1. **In-context learning 弱**：Mamba 把历史压缩成固定向量是有损（lossy）的，少样本学习（few-shot prompting）能力比 Transformer 差 2-5%。RAG / 精确召回类任务（needle-in-haystack）落后更多。
+1. **In-context learning 偏弱**：历史压成固定向量是有损的，few-shot / 精确召回（needle-in-haystack）常弱于同规模 Transformer。
 
-2. **"无 KV cache"是修辞**：确实没有 attention 的 KV cache，但 conv1d 还要保留前 4 个 token 的 input；prefill 阶段仍是 O(L)。准确说法是"decode 阶段每 token O(1)"。
+2. **「完全无 KV cache」是修辞**：没有 attention 的 KV，但 conv1d 仍要留最近若干输入；更准确说是 **decode 每 token 近似 O(1)**。
 
-3. **训练超参敏感**：A 矩阵必须用 HiPPO 风格初始化，Delta 范围严格在 [0.001, 0.1]，深层网络必须开 residual_in_fp32——配方不对直接 NaN。比 Transformer "随便糊上去都能训"差远了。
+3. **训练超参敏感**：A 常用 HiPPO 风格初始化，Δ 范围要管住，深层常需 `residual_in_fp32`——配方不对容易 NaN。
 
-4. **生态贫瘠**：Transformer 有 vLLM / TGI / TensorRT-LLM 全套生态，Mamba 只有官方 mamba-ssm 一个 repo + HuggingFace 支持有限。生产部署得自己搞 inference server。
+4. **生态仍薄**：生产推理栈不如 vLLM 等对 Transformer 成熟，部署常要自己接 `mamba-ssm` kernel。
 
+经验法则：先问「我的痛点是长度/吞吐，还是精确回看？」再决定纯 Mamba、混合还是继续 Transformer。
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 超长上下文（32k+）+ 推理流量大于训练（流式语音、实时翻译、长文档摘要）
-- 嵌入式 / 边缘部署（state 仅 MB 级，无需 GB 级 KV cache）
-- 基因组 / 高分辨率音频（序列动辄 1M+，Transformer 物理上不行）
-- 与 Transformer **混合**（Jamba 风格，1:7 比例 attention，兼顾 ICL 和 long context）
+- 超长上下文（数万 token 以上）且推理流量大（流式语音、长文档扫读）
+- 边缘部署：状态以 MB 计，不想扛 GB 级 KV cache
+- 基因组 / 高分辨率音频等物理上难喂给纯 attention 的超长序列
+- 与 Transformer **混合**（如 Jamba 约 1:7 attention:Mamba），兼顾召回与吞吐
 
 **不适用**：
 
-- 强 in-context learning 需求（few-shot prompting 是 LLM 主要使用方式）
-- 精确召回 / 检索（RAG、code search、法律医疗文档）
-- 对生态成熟度敏感的生产环境
-- 任务画像不清时——Transformer 永远是 safer bet
+- 强依赖 few-shot / 精确引用的产品形态
+- RAG、代码跳转、法律医疗「必须找对那一句」的检索型任务
+- 要开箱即用推理生态的团队
+- 任务画像不清时——默认仍选 Transformer 更稳
 
 ## 历史小故事（可跳过）
 
 - **1960 年代**：控制论提出 State Space Model，描述线性动态系统
-- **1990 年**：Blelloch 发明 work-efficient parallel scan 算法，本是并行计算理论的玩具
-- **1997 年**：LSTM 诞生，第一次让 RNN 实用化处理长依赖
-- **2017 年**：Transformer 论文发布，[[attention]] 成为序列建模主流
-- **2020 年**：Albert Gu 等提出 HiPPO 理论，给 SSM 一个稳定的 A 矩阵初始化
-- **2021 年**：S4 在 Long Range Arena 上首次超过 Transformer，但语言建模仍弱
-- **2023 年 12 月**：Gu & Dao 把 "selectivity" 加进 SSM，Mamba 论文发布，社区炸了
-- **2024 年**：Mamba-2（State Space Duality）/ Jamba / Falcon-Mamba 7B 等扩展涌现；旗舰 LLM 仍未采用
+- **1990 年**：Blelloch 给出 work-efficient parallel scan，后来成了 Mamba 训练并行的关键积木
+- **1997 / 2017 年**：LSTM 让 RNN 实用化；Transformer / [[attention]] 随后成为序列建模主流
+- **2020–2021 年**：HiPPO → S4，长程基准上超过 Transformer，但语言建模仍偏弱
+- **2023 年 12 月**：Gu & Dao 加入 selectivity，Mamba（arXiv:2312.00752）发布，社区热议「线性时代」
+- **2024 年**：Mamba-2（State Space Duality）、Jamba、Falcon-Mamba 等扩展出现；旗舰 LLM 仍以 Transformer 为主，混合架构更常见
 
-Mamba 的成功是 **算法 + 工程同等重要** 的典型——光有 selectivity 没有 hardware-aware kernel，速度跑不起来；光有 kernel 没有 selectivity，建模能力不够。
-
-## 案例补充：混合架构（Jamba）的工程经验
-
-AI21 的 Jamba 把 Transformer 和 Mamba 按 1:7 比例混排：每 8 层里 1 层是 attention、7 层是 Mamba。结果是：
-
-- **长上下文 256k**：内存占用比纯 Transformer 低 5x
-- **ICL（in-context learning）保住了**：靠那 1/8 的 attention 层维持精确召回
-- **吞吐量翻倍**：大部分计算量在 Mamba 上，attention 只在关键节点
-
-这是 Mamba 在 2024-2025 年最现实的落地形式——纯 Mamba 替代 Transformer 失败了，但混合架构给两边都留了位置。Codestral Mamba（Mistral）和 Falcon-Mamba（TII）都走了类似路线。
-
-更深的启示：架构竞争往往不是"谁取代谁"，而是"谁补谁"。Mamba 的固定 state 提供 O(N) 推理，attention 提供精确召回；两者都是有价值的能力，混合是利益最大化的选择。这种"打平不是失败，而是各占生态位"的格局，在硬件领域（CPU vs GPU vs ASIC）已经反复出现。
-
+这段历史说明：Mamba 的爆发是 **selectivity + parallel scan kernel** 叠在一起的结果，缺一则要么慢、要么弱。
 ## 学到什么
 
-1. **Transformer 不是终点，但替代它要同时做对算法、数学、工程三件事**——只做一件不够
-2. **state expansion 与 attention 的对偶**：N=16 的状态向量本质是 16 个独立 channel 的记忆，类似 multi-head 但每 head 是 RNN
-3. **selectivity 的本质是 input-dependent routing**——和 MoE 的 expert routing、LSTM 的 forget gate、attention 的 softmax 是同一类思想：让模型基于输入动态选信息
-4. **hardware-aware 已经成为新模型入场券**：未来任何"O(N) 训练复杂度"的模型，没有自己的 fused kernel 就上不了主流——FlashAttention / Mamba / FlexAttention 都是这个套路
-5. **看一篇 paper 的 limitations 比 results 更重要**：Mamba 论文 limitation 里就老老实实写了 ICL 弱、混合最好——读者经常跳过，然后惊讶"为什么没替代 Transformer"
+1. 替代 attention 要同时做对**算法、数学、工程**——只证明复杂度不够
+2. **Selectivity ≈ 按内容路由**：和 LSTM forget gate、attention softmax、MoE routing 是同一类思想
+3. **Hardware-aware kernel** 已是新架构入场券：没有 fused scan，纸面 O(N) 也难进主流训练栈
+4. 读 limitations 比读刷榜数字更重要：论文自己也强调 ICL 弱、混合往往更实用
+5. 架构竞争常常是「各占生态位」：固定状态换吞吐，attention 换精确回看
 
+一句话记忆：Mamba 用「可开关的小脑袋」换线性长上下文；精确逐词回看仍常要 attention 帮忙。
 ## 延伸阅读
 
-- 论文 PDF：[Mamba arXiv 2312.00752](https://arxiv.org/abs/2312.00752)（密度高但写得清晰，section 3 selectivity motivation 必读）
-- 官方代码：[state-spaces/mamba](https://github.com/state-spaces/mamba)（13k+ stars，CUDA kernel 在 csrc/selective_scan）
-- [[attention]] —— Mamba 想替代的那个机制
-- [[flash-attention]] —— Tri Dao 同一作者，同一 IO-aware 思路从 attention 搬到 SSM
+- 论文：[arXiv:2312.00752](https://arxiv.org/abs/2312.00752) —— §3 selectivity motivation 必读
+- 代码：[state-spaces/mamba](https://github.com/state-spaces/mamba) —— CUDA kernel 在 `csrc/selective_scan`
+- [[attention]] —— Mamba 想部分替代的机制
+- [[flash-attention]] —— 同一作者的 IO-aware 思路，对照着读很有启发
+- [[lstm]] —— 更早的「压缩历史」路线，帮助理解状态模型直觉
+- [[rwkv]] —— 另一条追求 O(N) 推理的序列建模路线
 
 ## 关联
 
-- [[attention]] —— Mamba 的对照面；attention 是 lossless lookup，SSM 是 lossy compression
-- [[flash-attention]] —— 同一作者 Tri Dao；同一 hardware-aware kernel 思想；Mamba 的反对者也是同一个人
-- [[lstm]] —— Mamba 的远亲，都用"隐藏状态压缩历史"，但数学结构和并行性差距大
-- [[transformer]] —— Mamba 的竞争对手；2024 后双方更多走"混合"而非"替代"
-- [[rwkv]] —— 同样追求 O(N) 推理的"线性 attention"路线，与 Mamba 平行竞争
+- [[attention]] —— lossless lookup；SSM 是 lossy compression
+- [[flash-attention]] —— 同一 hardware-aware 思路
+- [[lstm]] —— 都用隐藏状态压历史，并行性与数学结构不同
+- [[transformer]] —— 主竞品；2024 后更多「混合」而非「取代」
+- [[rwkv]] —— 平行的线性时间序列建模路线
+- [[llama]] —— 当代旗舰仍多走 Transformer；对照着看 Mamba 的取舍更清楚
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[attention]] —— Attention Is All You Need
-- [[dino]] —— DINO 自监督视觉 transformer
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 

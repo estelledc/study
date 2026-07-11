@@ -1,0 +1,118 @@
+{
+  "slug": "github-actions",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房机器人类比很好；「ADR1」未解释，零基础读者会卡住，应改成通用表述或删掉。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 历史小故事 与 ## 反向链接，结构不完整。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019 正式发布与 docs 来源正确；「几乎清一色」偏概括；ADR1 像站内私货，建议改成公开可核验表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "YAML 案例可跟做；secrets/base64、GITHUB_TOKEN permissions、concurrency、SHA 锁定踩坑具体；配额数字会随套餐变，边界仍够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "厨房机器人类比很好；「ADR1」未解释，零基础读者会卡住，应改成通用表述或删掉。",
+        "缺 ## 历史小故事 与 ## 反向链接，结构不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "2019 正式发布与 docs 来源正确；「几乎清一色」偏概括；ADR1 像站内私货，建议改成公开可核验表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "YAML 案例可跟做；secrets/base64、GITHUB_TOKEN permissions、concurrency、SHA 锁定踩坑具体；配额数字会随套餐变，边界仍够用。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "去掉未解释的 ADR1；补 ## 历史小故事 与 ## 反向链接占位；关联补对照项。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 174,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 174,
+  "l1_pass": true
+}

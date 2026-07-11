@@ -1,0 +1,142 @@
+{
+  "slug": "simple-peer",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "发动机铁壳类比生动，信令/NAT/STUN/TURN 均有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1、3、4 有代码；案例 2 手抄 signal 只有叙述，缺逐步控制台操作步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "最小用法三事件出口清晰，零基础能跟住主线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/feross/simple-peer、WebTorrent 底层依赖属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「send 一次上限约 16KB：DataChannel 协议限制」不准确：浏览器 SCTP 消息上限通常远高于 16KB；16KB 是 WebTorrent 等实践里的安全切片习惯，应改成实践建议而非协议硬上限"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「不经服务器中转任何字节」对数据面成立，但 ICE 仍可能走 STUN/TURN；宜加半句限定，避免绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例可跟做；生产前需自备信令与 iceServers，文中已点明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：信令必配、TURN 兜底、切片、wrtc/Apple Silicon、getUserMedia https"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界量化清楚：4 人以上改 SFU、PeerJS 对比、libp2p 跨协议"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "发动机铁壳类比生动，信令/NAT/STUN/TURN 均有白话桥接",
+        "案例 1、3、4 有代码；案例 2 手抄 signal 只有叙述，缺逐步控制台操作步骤",
+        "最小用法三事件出口清晰，零基础能跟住主线"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "来源 github.com/feross/simple-peer、WebTorrent 底层依赖属实",
+        "「send 一次上限约 16KB：DataChannel 协议限制」不准确：浏览器 SCTP 消息上限通常远高于 16KB；16KB 是 WebTorrent 等实践里的安全切片习惯，应改成实践建议而非协议硬上限",
+        "开篇「不经服务器中转任何字节」对数据面成立，但 ICE 仍可能走 STUN/TURN；宜加半句限定，避免绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例可跟做；生产前需自备信令与 iceServers，文中已点明",
+        "踩坑可操作：信令必配、TURN 兜底、切片、wrtc/Apple Silicon、getUserMedia https",
+        "适用边界量化清楚：4 人以上改 SFU、PeerJS 对比、libp2p 跨协议"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正 DataChannel 16KB 为实践切片建议而非协议硬上限；开篇限定数据面 P2P，并点明 STUN/TURN。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 169,
+  "l1_pass": true
+}

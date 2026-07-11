@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "装修/迷雾区类比贴合；一致性不传递讲清楚。案例 1 注释写『NaN 或者 hello2』易让零基础以为 * 会拼接字符串。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Siek-Taha 2006 / Wadler-Findler 2009 / Takikawa 2016 引用正确；一致性不传递与 TypeScript≠sound gradual 判断对。案例 1：y 运行时是 string 时 y*2 在 JS 得 NaN，不会得到『hello2』（那是 + 拼接）；应改正注释。另：核心要点里『(?)e 表示检查是否符合 ?』易反——向 ? 的向上 cast 通常不检查，从 ? 到具体类型才插入检查。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mypy 与函数 wrapper 案例可跟读；blame/性能/TS unsound 踩坑有用。案例 1 注释把 * 与字符串拼接混谈，应按 JS 语义改成 NaN，或改用 + 演示拼接。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "装修/迷雾区类比贴合；一致性不传递讲清楚。案例 1 注释写『NaN 或者 hello2』易让零基础以为 * 会拼接字符串。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Siek-Taha 2006 / Wadler-Findler 2009 / Takikawa 2016 引用正确；一致性不传递与 TypeScript≠sound gradual 判断对。案例 1：y 运行时是 string 时 y*2 在 JS 得 NaN，不会得到『hello2』（那是 + 拼接）；应改正注释。另：核心要点里『(?)e 表示检查是否符合 ?』易反——向 ? 的向上 cast 通常不检查，从 ? 到具体类型才插入检查。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "mypy 与函数 wrapper 案例可跟读；blame/性能/TS unsound 踩坑有用。案例 1 注释把 * 与字符串拼接混谈，应按 JS 语义改成 NaN，或改用 + 演示拼接。"
+      ]
+    }
+  ]
+}

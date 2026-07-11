@@ -48,6 +48,12 @@ bat 的设计可以拆成 **3 件事**：
 bat src/main.rs
 ```
 
+**逐部分解释**：
+
+- `bat` 会根据文件后缀识别 Rust 语法，给关键字、字符串、注释分别上色。
+- 左侧 gutter 显示行号；如果文件在 git 仓库里，还会显示新增或修改标记。
+- 输出超过一屏时自动进入 pager，你可以像用 `less` 一样滚动和搜索。
+
 得到：左侧灰色行号、Rust 关键字蓝紫色、字符串绿色、注释暗灰；如果这个文件刚被 `git` 改过，行号右边有 `~` 标记。整体观感接近 VS Code 打开文件，但还在终端里。
 
 ### 案例 2：管道传给其他工具
@@ -56,6 +62,12 @@ bat src/main.rs
 bat -p server.log | grep ERROR
 ```
 
+**逐部分解释**：
+
+- `-p` 是 plain 模式，去掉文件头、边框和行号，保留适合终端看的输出。
+- `| grep ERROR` 仍然只接收文本内容，不会被 bat 的装饰列干扰。
+- 如果脚本要完全无颜色，再加 `--color=never`，避免 ANSI 色码污染日志处理。
+
 `-p` 是 plain 模式——不分页、不加行号、不加文件名头部，**只把语法高亮保留**（grep 仍能正常匹配文本）。日常处理日志、对接 awk / sed 都用这个。
 
 ### 案例 3：和 fzf 组合做交互式预览
@@ -63,6 +75,12 @@ bat -p server.log | grep ERROR
 ```bash
 fzf --preview 'bat --color=always --line-range=:200 {}'
 ```
+
+**逐部分解释**：
+
+- `--preview '...'` 告诉 fzf：光标停在哪个文件上，就用这条命令生成右侧预览。
+- `--color=always` 强制保留高亮，因为输出对象不是普通终端而是 fzf 的预览窗。
+- `--line-range=:200` 只读前 200 行，避免大文件让预览卡住。
 
 打开 fzf 文件选择器，右侧实时预览高亮内容（截前 200 行避免大文件卡顿）。`--color=always` 强制输出色码（fzf 会接受）；不加的话 fzf 拿到的是无色文本，预览很丑。
 
@@ -80,7 +98,7 @@ fzf --preview 'bat --color=always --line-range=:200 {}'
 
 4. **macOS / Linux 包名不一致**——`brew install bat` 装出来叫 `bat`；Debian / Ubuntu apt 装出来叫 `batcat`（避免和已有 `bat` 包冲突）。在跨平台脚本里要兼容两个名字，或用 `~/.local/bin/bat -> /usr/bin/batcat` 软链统一。
 
-## 历史
+## 历史小故事（可跳过）
 
 - **2018**：David Peter 在 [[fd]] 做火之后顺手写了 bat——同一套设计哲学（Rust + 用户体验优先 + 单二进制零依赖）
 - **2020 v0.16**：加入 Git integration（`+`/`-`/`~` 标记），从"漂亮 cat"升级成"带上下文的 cat"

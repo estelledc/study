@@ -1,0 +1,76 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 2 条把「复制集」与「BSON 类型」揉在同一条，零基础读者会以为 BSON 是复制集的一部分；建议把 BSON 挪到第 1 条文档模型下"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「默认是 majority read/write concern」需版本限定：majority 写关注成为默认是 MongoDB 5.0+；更早默认 w:1"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点第 2 条把「复制集」与「BSON 类型」揉在同一条，零基础读者会以为 BSON 是复制集的一部分；建议把 BSON 挪到第 1 条文档模型下"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「默认是 majority read/write concern」需版本限定：majority 写关注成为默认是 MongoDB 5.0+；更早默认 w:1"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": []
+    }
+  ]
+}

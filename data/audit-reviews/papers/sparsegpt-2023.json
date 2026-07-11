@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有结果表，缺少像模板那样的「逐部分解释」；建议用 3–4 步伪代码走一遍「算 H → 选 mask → OBS 补偿」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 讲硬件与 GPTQ 组合时，零基础读者需要一句「2:4 长什么样」的具体例子（如 [a,b,c,d] 里必须两个为 0）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Hessian / Cholesky 首次出现可再加半句日常桥接（如「二阶敏感度表」「把敏感度表预分解好方便后面连除」）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 C4 数字与论文 Table 4 不符：OPT-175B Dense≈10.13、SparseGPT 50%≈10.36、2:4≈10.92；笔记写 10.12/10.08/10.85，且「几乎一样」对 C4 不成立（PPL 上升）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "WikiText2 Dense 主表为 8.35（Table 1），笔记写 8.34；Magnitude 50% 约为 4.3e4 而非笼统 ~1e4"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「逐层…是个凸的二次规划」易歪曲：带基数约束的稀疏回归是 NP-hard（前文已写），应改为「忽略稀疏约束时是二次最小二乘，再加启发式 mask」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 把 GPTQ 链到 [[awq]] 不准确，应链 [[gptq-2023]]；「体积压到 1/16」对非结构化稀疏+索引开销过满，宜弱化为「量级上可到约 1/8–1/16（视存储格式）」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例缺少可跟做的伪代码/最小 API 流程（校准 128×2048 → 逐层 SparseGPT → 导出 mask）；至少给一段伪代码标明输入输出"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑很好，可在案例旁点明：非结构化 50% 只省显存、要加速必须 2:4 + 稀疏内核"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景「10B+」可再量化一句：论文主结果在 OPT/BLOOM 全家桶，小模型（如 125M）同稀疏度掉点更大"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有结果表，缺少像模板那样的「逐部分解释」；建议用 3–4 步伪代码走一遍「算 H → 选 mask → OBS 补偿」",
+        "案例 2/3 讲硬件与 GPTQ 组合时，零基础读者需要一句「2:4 长什么样」的具体例子（如 [a,b,c,d] 里必须两个为 0）",
+        "核心要点里 Hessian / Cholesky 首次出现可再加半句日常桥接（如「二阶敏感度表」「把敏感度表预分解好方便后面连除」）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 C4 数字与论文 Table 4 不符：OPT-175B Dense≈10.13、SparseGPT 50%≈10.36、2:4≈10.92；笔记写 10.12/10.08/10.85，且「几乎一样」对 C4 不成立（PPL 上升）",
+        "WikiText2 Dense 主表为 8.35（Table 1），笔记写 8.34；Magnitude 50% 约为 4.3e4 而非笼统 ~1e4",
+        "「逐层…是个凸的二次规划」易歪曲：带基数约束的稀疏回归是 NP-hard（前文已写），应改为「忽略稀疏约束时是二次最小二乘，再加启发式 mask」",
+        "案例 3 把 GPTQ 链到 [[awq]] 不准确，应链 [[gptq-2023]]；「体积压到 1/16」对非结构化稀疏+索引开销过满，宜弱化为「量级上可到约 1/8–1/16（视存储格式）」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例缺少可跟做的伪代码/最小 API 流程（校准 128×2048 → 逐层 SparseGPT → 导出 mask）；至少给一段伪代码标明输入输出",
+        "踩过的坑很好，可在案例旁点明：非结构化 50% 只省显存、要加速必须 2:4 + 稀疏内核",
+        "适用场景「10B+」可再量化一句：论文主结果在 OPT/BLOOM 全家桶，小模型（如 125M）同稀疏度掉点更大"
+      ]
+    }
+  ]
+}

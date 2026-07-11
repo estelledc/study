@@ -1,0 +1,131 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "租房合同 / 体检报告类比把 compliance、violation、warning 讲清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SSA、Datalog、sstore、caller 首次出现有白话桥接，零基础可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释；核心要点第 2 步 semantic facts 仍略密，但不挡跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Tsankov et al. CCS 2018 / arXiv:1806.01143 著录正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "55.5% / 29.3% / 15.2% 与论文评估表述一致；不处理 overflow 等数值属性也符合原文范围"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Securify 说成「抽象解释」是教学概括（论文主线是依赖图 + compliance/violation patterns），合理简化未歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则 Solidity 案例概念正确：无限制写 owner、call 后写状态、未检查 call 返回值——可跟做教学"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：pattern 充分条件、warning 语义、数值属性缺口、可达性假设"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（批量筛查 vs 业务规则证明 / 数值漏洞 / 最短攻击路径）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "租房合同 / 体检报告类比把 compliance、violation、warning 讲清楚",
+        "SSA、Datalog、sstore、caller 首次出现有白话桥接，零基础可跟",
+        "三案例均有逐部分解释；核心要点第 2 步 semantic facts 仍略密，但不挡跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "来源 Tsankov et al. CCS 2018 / arXiv:1806.01143 著录正确",
+        "55.5% / 29.3% / 15.2% 与论文评估表述一致；不处理 overflow 等数值属性也符合原文范围",
+        "把 Securify 说成「抽象解释」是教学概括（论文主线是依赖图 + compliance/violation patterns），合理简化未歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三则 Solidity 案例概念正确：无限制写 owner、call 后写状态、未检查 call 返回值——可跟做教学",
+        "踩坑具体：pattern 充分条件、warning 语义、数值属性缺口、可达性假设",
+        "适用/不适用边界清楚（批量筛查 vs 业务规则证明 / 数值漏洞 / 最短攻击路径）"
+      ]
+    }
+  ],
+  "slug": "securify-2018",
+  "area": "papers",
+  "status": "passed",
+  "lines": 160,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

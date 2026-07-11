@@ -35,7 +35,7 @@ doc.recompute()
 - 为什么 CAD 文件不只是“一个 3D 网格”，而是一串可回放、可修改的建模步骤
 - 为什么机械设计里常说“参数化”比“画得像”更重要，因为后期改孔距和壁厚是常态
 - 为什么开源硬件、3D 打印、机器人小项目需要 STEP / STL / DXF / PDF 等格式互相转换
-- 为什么 FreeCAD 有约 22k GitHub stars，却仍会被人说“上手慢”：它面对的是工程约束，不是单纯拖形状
+- 为什么 FreeCAD 有约 32k GitHub stars，却仍会被人说“上手慢”：它面对的是工程约束，不是单纯拖形状
 
 ## 核心要点
 
@@ -141,7 +141,7 @@ FreeCADCmd convert_step_to_stl.py motor_mount.step motor_mount.stl
 
 ## 踩过的坑
 
-1. **拓扑命名会让下游特征断掉**：如果草图直接贴在某个面上，上游几何变化后 `Face13` 可能变成别的面，孔或倒角就跑偏。
+1. **拓扑命名会让下游特征断掉**：如果草图直接贴在某个面上，上游几何变化后 `Face13` 可能变成别的面，孔或倒角就跑偏。FreeCAD **1.0（2024-11）** 已合入 TNP mitigation，稳定性好很多，但复杂特征链仍可能断，建模习惯仍要尽量少绑临时面号。
 2. **忘记 `doc.recompute()` 会以为代码没生效**：FreeCAD 为了大模型性能，不是每次属性变化都立即重算。
 3. **STL 不是可编辑 CAD 源文件**：STL 只是三角面片，适合打印，不适合保留草图、约束和参数历史。
 4. **工程图标注不要太早做**：模型还在大改时，TechDraw 维度引用可能跟着几何变化失效，最好等主体稳定后再补完整标注。
@@ -166,7 +166,7 @@ FreeCADCmd convert_step_to_stl.py motor_mount.step motor_mount.stl
 
 - **2000 年代初**：FreeCAD 开始围绕 OpenCASCADE、Qt、Python 这些开源技术搭建通用 CAD。
 - **社区扩展**：BIM、CAM、FEM、外部工作台和宏生态逐渐长出来，FreeCAD 不再只是零件建模工具。
-- **1.0 时代**：官方开始更系统地改善拓扑命名、Assembly、TechDraw 等关键工作流，降低新人踩坑成本。
+- **2024-11 FreeCAD 1.0**：合入拓扑命名缓解（TNP mitigation）、集成 Assembly、材料系统与大量 UI 改进——缓解不是根除，但关键工作流明显稳了。
 
 ## 学到什么
 

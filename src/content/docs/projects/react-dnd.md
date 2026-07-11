@@ -32,7 +32,7 @@ const [, dropRef] = useDrop(() => ({ accept: 'fruit', drop: (item) => save(item)
 
 2. **backend 可换**：HTML5Backend 用浏览器原生 DnD 事件，TouchBackend 用 touchstart/move/end，TestBackend 用代码模拟。换 backend 时业务代码不动——这是 react-dnd 最被低估的工程价值，本质上把"输入设备"做成了可插拔依赖。
 
-3. **collect 是 selector**：每个 useDrag/useDrop 传一个 collect 函数，声明"我只关心 isDragging、isOver"。monitor 状态变化时，react-dnd 重跑 collect、shallow compare，只有结果变了才让组件重渲染。和 Redux mapStateToProps 是同一个思想。
+3. **collect 是 selector**：每个 useDrag/useDrop 传一个 collect 函数，声明"我只关心 isDragging、isOver"。monitor 状态变化时，react-dnd 重跑 collect，再做浅比较（只看返回对象第一层字段变没变），只有结果变了才让组件重渲染——和 Redux 里"只订阅关心的那几字段"是同一个思想。
 
 4. **dnd-core 是 Redux store**：react-dnd 把状态机拆成独立包 dnd-core，actions (BEGIN_DRAG / HOVER / DROP) + reducers + 单 store。这让拖拽状态机可以脱离 React 单测，也是 2015 年那波 Redux 浪潮在 UI 库内部的典型应用。
 
@@ -97,7 +97,7 @@ DndProvider 通过 React Context 把 DragDropManager 单例传给所有后代。
 **适用**：
 - 有明确"类型"概念的拖拽：看板、文件上传、工具箱到画布
 - 需要在 PC + 移动端 + 单元测试 三套环境跑同一套逻辑
-- 老 React 项目（v14 之前）已经在用 HOC 风格，迁移成本高
+- 已在用 react-dnd v14 之前 HOC 写法的存量项目，整库迁 hooks 成本高
 - 要支持从浏览器外拖文件进来（HTML5Backend 天然支持 dataTransfer.files）
 
 **不适用**：
@@ -110,10 +110,10 @@ DndProvider 通过 React Context 把 DragDropManager 单例传给所有后代。
 
 - **2010 年**：HTML5 标准化原生 DnD API，浏览器开始支持 draggable 属性 + dragstart/drop 事件
 - **2013 年**：Sortable.js 发布，纯 JS 列表拖拽老牌库，至今还活跃
-- **2015 年**：Dan Abramov（同年也写出 redux）发布 react-dnd，把 backend 抽象引入 React 生态
+- **2015 年**：Dan Abramov（同年也写出 redux）发布 react-dnd v1.0.0，把 backend 抽象引入 React 生态
 - **2017 年**：Atlassian 发布 react-beautiful-dnd，特化 Trello/Jira 这种列表场景
-- **2020 年**：react-dnd v14 重构为 hooks-first，HOC 降级为兼容
-- **2021 年**：clauderic 发布 dnd-kit，pointer events 优先、内建 a11y，逐步取代 react-dnd 在新项目里的地位
+- **2019 年**：react-dnd 把 hooks API（useDrag/useDrop）升为稳定推荐写法，HOC 仍兼容
+- **2021 年**：v14.0.0（3 月）拆开 type/item、修 collect 活性；同年 clauderic 发布 dnd-kit，pointer events 优先、内建 a11y
 - **2022 年起**：react-dnd 维护者轮换，进入"稳定但慢更新"状态，仓库 issue 多但内核基本不动，因为 API 已经够用
 
 ## 学到什么

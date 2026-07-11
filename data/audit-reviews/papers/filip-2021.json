@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有概念描述，建议补「取 word token → 对 256 patch 算相似度 → 看 argmax 落在哪」三步。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 与案例 4 数字重复，可合并；案例 3 偏研究评论，对零基础不像「实践」。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "非标准 ## 一句话总结 占行数，可并入学到什么。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "训练数据写成「3 亿对」偏少：论文是 FILIP300M + 公开集合计约 340M（vs CLIP 400M），应改成约 3.4 亿或 340M。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Flickr30K「涨约 5 点」未标明指标/对照表；论文 ablation 的 +5.5 是 MSCOCO I2T（late interaction），不宜直接写成 Flickr30K T2I vs CLIP-L。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ImageNet 77.1% 与 ICLR 2022 / arXiv:2111.07783 引用正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "核心要点伪代码（max+mean）概念正确；踩坑（显存、多向量索引、分辨率）可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有百万级精排 vs 亿级单向量等边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有概念描述，建议补「取 word token → 对 256 patch 算相似度 → 看 argmax 落在哪」三步。",
+        "案例 2 与案例 4 数字重复，可合并；案例 3 偏研究评论，对零基础不像「实践」。",
+        "非标准 ## 一句话总结 占行数，可并入学到什么。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "训练数据写成「3 亿对」偏少：论文是 FILIP300M + 公开集合计约 340M（vs CLIP 400M），应改成约 3.4 亿或 340M。",
+        "Flickr30K「涨约 5 点」未标明指标/对照表；论文 ablation 的 +5.5 是 MSCOCO I2T（late interaction），不宜直接写成 Flickr30K T2I vs CLIP-L。",
+        "ImageNet 77.1% 与 ICLR 2022 / arXiv:2111.07783 引用正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "核心要点伪代码（max+mean）概念正确；踩坑（显存、多向量索引、分辨率）可操作。",
+        "适用/不适用有百万级精排 vs 亿级单向量等边界。"
+      ]
+    }
+  ]
+}

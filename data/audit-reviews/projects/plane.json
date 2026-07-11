@@ -1,0 +1,55 @@
+{
+  "slug": "plane",
+  "area": "projects",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个案例都有命令或代码和逐步解释；如果未来扩写，可补一张整体架构图帮助定位服务边界。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史时间线使用了保守表述，未发现与 stub 或 GitHub release 信息冲突的硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "部署命令和伪代码适合教学；适用范围已有团队规模和运维能力边界。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
+  }
+}

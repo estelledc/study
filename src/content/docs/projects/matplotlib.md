@@ -64,13 +64,20 @@ matplotlib 是**三层架构**，理解这一点几乎能解释所有困惑：
 布局系统两代并存：
 
 - `tight_layout()` 后处理收紧 bbox，碰到共享 colorbar / suptitle 容易算错
-- `constrained_layout=True` 是 1.x 起新求解器（layoutgrid），推荐新代码用这个
+- `constrained_layout=True` 是较新的 layoutgrid 求解器（约 2.2 起可用、3.x 推荐），新代码优先用它
 
 ## 实践案例
 
 ### 案例 1：多子图 + 双 y 轴
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(10)
+y1 = np.exp(-x / 5)          # 假装是 loss
+y2 = 1 - np.exp(-x / 3)      # 假装是 acc
+
 fig, axes = plt.subplots(1, 2, figsize=(10, 4), constrained_layout=True)
 
 axes[0].plot(x, y1, label="loss")
@@ -79,6 +86,7 @@ ax2.plot(x, y2, color="red", label="acc")
 
 axes[1].scatter(x, y1, c=y2, cmap="viridis")
 fig.colorbar(axes[1].collections[0], ax=axes[1])
+fig.savefig("panels.png")
 ```
 
 `subplots(1,2)` 返回 ndarray of Axes；`axes.flat` 是迭代器、`axes[0,1]` 是网格索引。`twinx()` 创建共享 x 的第二 y 轴，常用 loss/acc 双指标对比。注意 colorbar 必须显式拿 `collections[0]`（散点 = `PathCollection`）。
@@ -86,14 +94,16 @@ fig.colorbar(axes[1].collections[0], ax=axes[1])
 ### 案例 2：动画（FuncAnimation）
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 fig, ax = plt.subplots()
 line, = ax.plot([], [])
-ax.set_xlim(0, 2 * 3.1416); ax.set_ylim(-1, 1)
+ax.set_xlim(0, 2 * np.pi); ax.set_ylim(-1, 1)
 
 def update(frame):
-    xs = np.linspace(0, 2 * 3.1416, 200)
+    xs = np.linspace(0, 2 * np.pi, 200)
     line.set_data(xs, np.sin(xs + frame / 10))
     return [line]
 
@@ -171,3 +181,7 @@ canvas.print_png("plot.png")
 - [[pandas]] —— `DataFrame.plot()` 返回 Axes，是 matplotlib 的最大下游用户
 - [[observable-plot]] —— JS 端的 grammar of graphics，可对照声明式 vs 命令式
 - [[vega-lite]] —— Web 端"声明式 + JSON IR"的代表，对位 matplotlib 的"命令式 + Artist 树"
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

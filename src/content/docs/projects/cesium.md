@@ -127,7 +127,7 @@ viewer.entities.add({
 - 只要 2D 地图 / 矢量底图 → 用 [[maplibre-gl]] / [[mapbox-gl-js]]，包体小一个数量级
 - 通用三维场景（产品展示 / 游戏） → 用 [[three-js]]，没地理坐标系开销
 - 仅做静态截图或轻量轨迹图 → 用 [[d3]] + 投影库即可
-- 移动端弱网弱 GPU → CesiumJS 启动开销不小，要谨慎评估
+- 移动端弱网弱 GPU，尤其首屏预算小于 2MB、内存低于 2GB、没有稳定 WebGL2 的设备 → CesiumJS 启动开销不小，要谨慎评估
 
 ## 历史小故事（可跳过）
 
@@ -159,3 +159,7 @@ viewer.entities.add({
 - [[maplibre-gl]] —— 2D 矢量地图开源主流，与 Cesium 常组合做"2D + 3D 切换"
 - [[deck.gl]] —— GPU 大数据可视化，官方支持以 Cesium 为底图
 - [[three-js]] —— 通用 3D 引擎，没地理坐标系内置，与 Cesium 形成对照
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -18,149 +18,135 @@ title: CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图
 
 不理解 UM，下面这些事都没法解释：
 
-- 为什么 **2014 年起 CUDA 入门教程突然不写 `cudaMemcpy` 了**——`cudaMallocManaged` 一行替代了两次显式拷贝
-- 为什么 **[[pascal-architecture-2016]] GP100 把"页错误硬件"当卖点**——没它 UM 永远是假象，超额分配跑不动
-- 为什么 **2016 年起 GPU 能跑超过显存的 dataset**（16GB 卡跑 30GB 数据集）——靠 oversubscription + 自动换出
-- 为什么 [[hopper-architecture-2022]] 的 **Grace Hopper Superchip** 把 CPU/GPU 直接 NVLink-C2C 互联——UM 把"共享地址空间"做到极致的硬件答案
-- 为什么 **PyTorch / TensorFlow 用户大多没听说 UM**——框架自己管显存，UM 主要给写裸 CUDA 的人省事
+- 为什么 **2014 年后不少 CUDA 入门教程开始用 `cudaMallocManaged`**——一行替代两次显式 `cudaMemcpy`
+- 为什么 **[[pascal-architecture-2016]] GP100 把"页错误硬件"当卖点**——没它 UM 只能整块同步，超额分配跑不动
+- 为什么 **2016 年起 GPU 能跑超过显存的 dataset**（16GB 卡跑 30GB）——靠 oversubscription + 自动换出
+- 为什么 [[hopper-architecture-2022]] 的 **Grace Hopper** 用 NVLink-C2C 直连 CPU/GPU——把"共享地址空间"做到硬件极致
 
 ## 核心要点
 
-UM 从手工 `cudaMemcpy` 演进到 Pascal 真按需迁移，可以拆成 **三步台阶**：
+UM 从手工拷贝演进到 Pascal 真按需迁移，可以拆成 **三步台阶**：
 
-1. **手工拷贝时代（2007 CUDA 1.0 ~ 2013）**：`cudaMalloc` 在显存，`malloc` 在主存，两边各一个指针，`cudaMemcpy` 显式搬。优点是零运行时开销；缺点是代码冗长、漏拷一次直接段错误。
+1. **手工拷贝时代（2007–2013）**：`cudaMalloc` 在显存、`malloc` 在主存，两边各一个指针，靠 `cudaMemcpy` 显式搬。类比：两个仓库各管各的货，你亲自开车。优点是零运行时开销；漏拷一次就崩。
 
-2. **CUDA 6 软件 UM（2014, Kepler / Maxwell）**：`cudaMallocManaged` 给一块"看起来共享"的内存——**实际 kernel 启动前驱动把整块同步到 GPU，结束后整块同步回 host**。本质还是批量 `cudaMemcpy`，但程序员代码看着像"共享"。**整块迁移、不能超额分配、CPU/GPU 同时访问会冲突**。
+2. **CUDA 6 软件 UM（2014, Kepler/Maxwell）**：`cudaMallocManaged` 看起来共享——**实际 kernel 前后驱动整块同步**。类比：管理员假装共享账本，其实还是整车往返。不能超额分配，CPU/GPU 同时访问会冲突。
 
-3. **CUDA 8 + Pascal 硬件 UM（2016, GP100）**：GPU MMU 支持 49-bit 虚拟地址 + 页错误。GPU 跑到一条访存指令、对应页**不在显存**——硬件触发 page fault → 驱动从 host 或对端 GPU 把那一页（4KB / 64KB / 2MB）拉过来 → 重启指令。意义：**按需迁移、可超额分配（显存换出冷页）、CPU/GPU 可并发访问、对端 GPU 直接拉页（P2P）**。
-
-### 为什么 Pascal 是分水岭
-
-- 没**页错误硬件**：UM 只能 kernel 边界整批同步，超额分配直接 OOM
-- 没**49-bit 虚拟地址**：CPU 64-bit 指针塞不进 GPU 40-bit MMU，"同一指针两边能用"做不到
-- 没**页迁移引擎**：fault 后搬页要走慢路径，吞吐崩盘
-- Volta（2017）再加 **access counters**——硬件统计哪些页 GPU 频繁访问，主动迁移而不只被动响应 fault
+3. **CUDA 8 + Pascal 硬件 UM（2016, GP100）**：GPU 的 **MMU**（内存管理单元，像仓库门禁）支持 49-bit 虚地址 + **page fault**（页错误：刷卡发现货不在本仓，就去对面仓取一页）。按需迁移、可超额分配、可并发访问。Volta 再加 access counters，主动迁热页。
 
 ## 实践案例
 
-### 案例 1：手工 cudaMemcpy vs Unified Memory 代码对比
+### 案例 1：手工 cudaMemcpy vs Unified Memory
 
 ```cuda
-// 手工拷贝：4 步走，漏一步就崩
+// 手工：host/device 各一份 + 两次拷贝
 float *h_x, *d_x;
-h_x = (float*)malloc(N * sizeof(float));      // host 分配
-cudaMalloc(&d_x, N * sizeof(float));          // device 分配
-cudaMemcpy(d_x, h_x, N*4, cudaMemcpyHostToDevice);  // 上传
+h_x = (float*)malloc(N * sizeof(float));
+cudaMalloc(&d_x, N * sizeof(float));
+cudaMemcpy(d_x, h_x, N*4, cudaMemcpyHostToDevice);
 kernel<<<G,B>>>(d_x);
-cudaMemcpy(h_x, d_x, N*4, cudaMemcpyDeviceToHost);  // 下载
+cudaMemcpy(h_x, d_x, N*4, cudaMemcpyDeviceToHost);
 
-// Unified Memory：一个指针通吃
+// UM：一个指针；CPU 读前必须 sync
 float *x;
-cudaMallocManaged(&x, N * sizeof(float));     // CPU/GPU 共用
-// CPU 直接写 x[...]
+cudaMallocManaged(&x, N * sizeof(float));
 kernel<<<G,B>>>(x);
-cudaDeviceSynchronize();                       // 等 GPU 完
-// CPU 直接读 x[...]
+cudaDeviceSynchronize();   // 等 GPU 写完再读
 ```
 
-意义：**代码量减半 + 不会漏拷**。但**性能默认更差**（第一次访问全是 fault），需要 `cudaMemPrefetchAsync` 提示运行时提前搬。
+**逐部分解释**：
 
-### 案例 2：Oversubscription — 16GB 显存跑 30GB 数据
+1. 手工版要两份指针、两次 `cudaMemcpy`，漏一步就崩
+2. UM 版 `cudaMallocManaged` 让 CPU/GPU 共用 `x`
+3. **`cudaDeviceSynchronize` 不能省**——看着像共享，实际 GPU 写完前 CPU 读到旧值
+
+### 案例 2：Oversubscription — 16GB 显存跑 30GB
 
 ```cuda
-// Pascal 之后才能这么写：分配 30GB 给 16GB 的 P100
-size_t big = 30L * 1024 * 1024 * 1024;
+size_t big = 30L * 1024 * 1024 * 1024;  // 30GB > 16GB P100
 float *data;
 cudaMallocManaged(&data, big);
-// 跑遍数据，GPU 按需把"当前热页"拉到显存，冷页换回 host
 process_in_chunks<<<G,B>>>(data, big);
+cudaDeviceSynchronize();
 ```
 
-意义：**out-of-core 计算第一次"自动化"**——以前要程序员手动分块上传下载，现在驱动按 LRU 自动换。代价是 PCIe 来回吞吐有限，对延迟敏感的负载仍要手分块。
+**逐部分解释**（Pascal+ 才行）：
 
-### 案例 3：Prefetch 提示让 fault 风暴消失
+1. **分配**：申请 30GB managed，驱动先记在账本上，不立刻塞满显存
+2. **fault**：GPU 碰到不在显存的页 → page fault → 从 host 拉一页过来
+3. **冷页换出**：显存满了就把久未访问的页换回 host（LRU），继续跑
+
+代价：PCIe Gen3 ~16GB/s，远低于显存 ~700GB/s；延迟敏感负载仍要手分块。
+
+### 案例 3：Prefetch + Advise 消掉 fault 风暴
 
 ```cuda
 cudaMallocManaged(&x, N * sizeof(float));
-init_on_cpu(x, N);                                  // CPU 写
-cudaMemPrefetchAsync(x, N*4, gpuId);                // 提前搬到 GPU
-kernel<<<G,B>>>(x);                                 // 全在显存，零 fault
-cudaMemPrefetchAsync(x, N*4, cudaCpuDeviceId);      // 搬回 CPU
+init_on_cpu(x, N);
+cudaMemAdvise(x, N*4, cudaMemAdviseSetPreferredLocation, gpuId);
+cudaMemPrefetchAsync(x, N*4, gpuId);     // 提前搬到 GPU
+kernel<<<G,B>>>(x);                      // 热路径零 fault
+cudaDeviceSynchronize();
+cudaMemPrefetchAsync(x, N*4, cudaCpuDeviceId);
 ```
 
-意义：**默认 UM 性能拉胯，prefetch 之后接近手工 cudaMemcpy**。这也是 UM 的真实使用模式——不是"全自动魔法"，而是"省 90% 拷贝代码 + 关键路径手工 hint"。
+**逐部分解释**：
 
-### 案例 4：cudaMemAdvise 给运行时提示
-
-```cuda
-cudaMemAdvise(x, size, cudaMemAdviseSetReadMostly, gpuId);     // 多个读者复制
-cudaMemAdvise(x, size, cudaMemAdviseSetPreferredLocation, gpuId); // 优先 GPU
-cudaMemAdvise(x, size, cudaMemAdviseSetAccessedBy, cpuId);       // CPU 也常访问 → 建立映射
-```
-
-意义：**程序员还是要懂数据流**——UM 不是消灭手工，而是**把"何时迁移"从硬编码移到运行时 + 提示**，更灵活但仍需领域知识。
+1. CPU 先初始化；不 prefetch 则首访全是 fault，吞吐≈PCIe
+2. `cudaMemAdvise` 告诉运行时"优先放 GPU"；`PrefetchAsync` 提前搬
+3. kernel 期间数据已在显存；sync 后再 prefetch 回 CPU 读结果
 
 ## 踩过的坑
 
-1. **CUDA 6 的 UM 不是真 UM**：`cudaMallocManaged` 在 Kepler/Maxwell 上**整块迁移、不能超分、CPU/GPU 不能并发**。读 2014 年的教程以为能跑 oversubscription——只在 Pascal+ 才行。
-
-2. **第一次访问全是 page fault**：不 prefetch 直接 launch kernel，**首批访问吞吐 = PCIe 带宽（16GB/s）而不是显存带宽（720GB/s）**。性能差 40 倍。新人总在这里被坑。
-
-3. **Windows WDDM 模式至今受限**：游戏 / 桌面 GPU 走 WDDM 驱动，**Windows 上 UM 没有 oversubscription、没有并发访问**。Linux + Tesla 才是完整 UM。这条不写在显眼处，新人移植代码时频繁中招。
-
-4. **`cudaDeviceSynchronize` 不能省**：UM 让你"看着像共享内存"，但**CPU 读 GPU 写完的数据前必须同步**——少一行 sync 就读到旧值。这是和真共享内存的本质区别。
-
-5. **过度依赖自动迁移 → 性能不可预测**：HPC 团队上 UM 做原型，benchmark 时跑得慢——根因是 fault 风暴。**生产代码里 UM 通常配合大量 `cudaMemAdvise` + `cudaMemPrefetchAsync`**，否则不如手工 cudaMemcpy。
-
-6. **跨 GPU UM 在 Pascal 也只能走 PCIe**：[[pascal-architecture-2016]] 的 NVLink 在 SXM2 卡上才有；PCIe 卡之间 P2P 走 PCIe Gen3，UM 跨卡迁移延迟高。Volta + NVSwitch 后才彻底改观。
+1. **CUDA 6 的 UM 不是真 UM**：Kepler/Maxwell 上整块迁移、不能超分、不能并发；oversubscription 只在 Pascal+ 才行。
+2. **第一次访问全是 page fault**：不 prefetch 则吞吐≈PCIe Gen3 **~16GB/s**，不是显存 **~700GB/s**，差约 40 倍。
+3. **Windows WDDM 受限**：桌面 GPU 上 UM 常无 oversubscription / 并发访问；完整 UM 看 Linux + 数据中心卡。
+4. **漏 `cudaDeviceSynchronize`**：CPU 在 GPU 写完前读 managed 指针会读到旧值——和真共享内存的本质区别。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- CUDA 教学 / 原型 —— 一行 `cudaMallocManaged` 替代两次拷贝，新人友好
-- Out-of-core 计算 —— 数据集 > 显存，靠 oversubscription 自动换出冷页
-- 不规则访存模式 —— 图算法 / 稀疏计算，提前不知道要哪些页，按需 fault 比手工分块容易
-- 多 GPU 共享数据 —— UM 让对端 GPU 直接拉页，不用程序员管 P2P
+- CUDA 教学 / 原型 —— 一行 managed 替代两次拷贝
+- Out-of-core —— 数据 > 显存，靠自动换页（可接受 PCIe ~16GB/s 换页开销）
+- 不规则访存 —— 图 / 稀疏计算，按需 fault 比手分块容易
 
 **不适用**：
 
-- 极致性能 HPC —— 手工 `cudaMemcpy` + 双缓冲 + 流水线仍是吞吐冠军
-- 实时 / 低延迟推理 —— page fault 不可预测，**首 token 延迟受 fault 风暴拖累**
-- Windows 桌面 GPU —— WDDM 驱动不支持完整 UM
-- 大型 DL 框架内部 —— PyTorch / TensorFlow 自己实现 caching allocator，绕开 UM
+- 极致吞吐 HPC —— 手工 `cudaMemcpy` + 双缓冲仍更快（显存 ~700GB/s 路径）
+- 低延迟推理 —— fault 风暴拖累首 token 延迟
+- Windows 桌面 GPU / 大型 DL 框架内部 —— WDDM 不完整；PyTorch 等自管 allocator
 
 ## 历史小故事（可跳过）
 
-- **2007 CUDA 1.0**：`cudaMalloc` + `cudaMemcpy` 出生，程序员手工搬 7 年
-- **2011 CUDA 4.0**：UVA（Unified Virtual Addressing）—— **指针有唯一虚地址，但不自动迁移**，是 UM 前奏
-- **2014-03 CUDA 6**：`cudaMallocManaged` 上线，软件 UM——开始把"共享"卖成程序员体验
-- **2016-04 [[pascal-architecture-2016]] GP100**：硬件页错误 + 49-bit VA + 页迁移引擎——真·UM
-- **2017-05 [[volta-architecture-2017]] V100**：access counters，迁移决策更聪明
-- **2020-05 [[ampere-architecture-2020]] A100**：UM 跨 NVLink 网状 fabric，多卡共享地址空间
-- **2022-09 [[hopper-architecture-2022]] H100 + Grace**：NVLink-C2C 把 CPU 和 GPU 物理直连，UM 在硬件层达成"真共享内存"
+- **2007 CUDA 1.0**：`cudaMalloc` + `cudaMemcpy`，手工搬 7 年
+- **2011 CUDA 4.0**：UVA——指针唯一虚地址，但不自动迁移
+- **2014-03 CUDA 6**：`cudaMallocManaged`，软件 UM
+- **2016-04 [[pascal-architecture-2016]] GP100**：页错误 + 49-bit VA——真·UM
+- **2017–2022**：[[volta-architecture-2017]] access counters → [[hopper-architecture-2022]] NVLink-C2C 物理共享
 
 ## 学到什么
 
-1. **抽象的演进总是"软件先骗，硬件后真"**：CUDA 6 软件 UM 是骗——批量拷贝伪装共享；Pascal 硬件 UM 是真——页错误 + 迁移引擎让骗变成实
-2. **共享地址空间是分布式系统古老问题在 GPU 的回响**：DSM（Distributed Shared Memory，1980s）研究的就是"多台机器共享虚拟地址 + 按需迁移"，UM 是同一思想换战场
-3. **自动化 vs 性能可预测**：UM 让代码短 + 自动，但 fault 触发时机不可控——**生产代码常常退回手工 + UM 混用**
-4. **硬件能力 = 抽象上限**：没 49-bit VA、没页错误硬件，再好的 API 也是空架子。Pascal 之前的"UM"本质是营销词
-5. **从 CUDA 到 Grace Hopper 的弧线**：2014 的 `cudaMallocManaged` → 2022 的 NVLink-C2C 共享地址空间——**8 年时间，软件抽象一步步逼着硬件追上**
+1. **软件先骗，硬件后真**：CUDA 6 批量拷贝伪装共享；Pascal 页错误才落地
+2. **共享地址空间是老问题**：1980s DSM 思想换到 GPU 战场
+3. **自动化 ≠ 可预测**：生产常混用 prefetch/advise，否则不如手工拷贝
+4. **硬件能力 = 抽象上限**：没 49-bit VA / 页错误，API 只是空架子
 
 ## 延伸阅读
 
-- 入门博客：[Unified Memory in CUDA 6 (2014)](https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
-- Pascal 进化：[Beyond GPU Memory Limits with Unified Memory on Pascal (2016)](https://developer.nvidia.com/blog/beyond-gpu-memory-limits-unified-memory-pascal/)
-- 调优指南：[Maximizing Unified Memory Performance in CUDA (2017)](https://developer.nvidia.com/blog/maximizing-unified-memory-performance-cuda/)
-- [[pascal-architecture-2016]] —— 硬件 UM 的真正起点
-- [[volta-architecture-2017]] —— access counters 让迁移更聪明
-- [[hopper-architecture-2022]] —— NVLink-C2C 把 UM 推到极致
+- [Unified Memory in CUDA 6 (2014)](https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
+- [Beyond GPU Memory Limits on Pascal (2016)](https://developer.nvidia.com/blog/beyond-gpu-memory-limits-unified-memory-pascal/)
+- [Maximizing Unified Memory Performance (2017)](https://developer.nvidia.com/blog/maximizing-unified-memory-performance-cuda/)
+- [[pascal-architecture-2016]] —— 硬件 UM 起点
+- [[hopper-architecture-2022]] —— NVLink-C2C 极致共享
 
 ## 关联
 
-- [[pascal-architecture-2016]] —— GP100 页错误硬件让 UM 从假象变真实
-- [[volta-architecture-2017]] —— V100 access counters + ATS 进一步优化迁移
-- [[ampere-architecture-2020]] —— A100 把 UM 扩展到 NVLink 多卡 fabric
-- [[hopper-architecture-2022]] —— Grace Hopper NVLink-C2C 让 CPU/GPU 物理共享
-- [[mlx]] —— Apple Silicon 统一内存的另一条路径，硬件层就一份内存
+- [[pascal-architecture-2016]] —— GP100 页错误让 UM 从假象变真实
+- [[volta-architecture-2017]] —— access counters 优化迁移
+- [[ampere-architecture-2020]] —— UM 扩展到 NVLink 多卡
+- [[hopper-architecture-2022]] —— Grace Hopper 物理共享
+- [[mlx]] —— Apple Silicon 另一条统一内存路径
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

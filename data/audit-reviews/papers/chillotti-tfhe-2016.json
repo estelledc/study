@@ -1,0 +1,74 @@
+{
+  "slug": "chillotti-tfhe-2016",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.22,
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "reject_count": 0,
+    "verdicts": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "decision": "pass",
+    "status": "passed"
+  },
+  "refinements": [],
+  "quality_gate": {
+    "pass": true,
+    "details": {
+      "lines": {
+        "ok": true,
+        "lines": 158
+      },
+      "red-line": {
+        "ok": true
+      },
+      "h2": {
+        "ok": true
+      }
+    }
+  },
+  "lines": 158,
+  "l1_pass": true
+}

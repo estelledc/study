@@ -1,0 +1,132 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递柜 vs 中央账本银行类比贴合 object owner 模型，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "owned/shared、快速路径、gas 拆分都有白话桥接；案例 1–2 步骤清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 swap 签名用了省略号，可再补一句「多人抢同一 pool 才必须进共识」方便跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Mysten Labs / Diem→Sui、object 模型、owned 快速路径 + Narwhal/Bullshark shared 路径时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「三件事拼起来叫 Sui 共识协议」略宽：对象模型与并行执行不全是共识；教学可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读 Sui Lutris / Narwhal&Bullshark arXiv 链接与主线一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Move mint/transfer 与 owned 快速路径步骤可跟做；gas 对象串行坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖全局余额幻觉、owned/shared 误用、Aptos Move 不互通、单 gas Coin 排队"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有亚秒/高频 owned 场景；重度 shared DeFi 与 EVM 兼容标为不适用，量化可再补一句延迟量级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快递柜 vs 中央账本银行类比贴合 object owner 模型，零基础直觉强",
+        "owned/shared、快速路径、gas 拆分都有白话桥接；案例 1–2 步骤清楚",
+        "案例 3 的 swap 签名用了省略号，可再补一句「多人抢同一 pool 才必须进共识」方便跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Mysten Labs / Diem→Sui、object 模型、owned 快速路径 + Narwhal/Bullshark shared 路径时间线正确",
+        "「三件事拼起来叫 Sui 共识协议」略宽：对象模型与并行执行不全是共识；教学可接受",
+        "延伸阅读 Sui Lutris / Narwhal&Bullshark arXiv 链接与主线一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Move mint/transfer 与 owned 快速路径步骤可跟做；gas 对象串行坑具体",
+        "踩坑覆盖全局余额幻觉、owned/shared 误用、Aptos Move 不互通、单 gas Coin 排队",
+        "适用边界有亚秒/高频 owned 场景；重度 shared DeFi 与 EVM 兼容标为不适用，量化可再补一句延迟量级"
+      ]
+    }
+  ],
+  "slug": "sui",
+  "area": "projects",
+  "status": "passed",
+  "lines": 163,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，平均 4.33 ≥ 4.0"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

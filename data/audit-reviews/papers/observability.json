@@ -1,0 +1,102 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递单 / 中转站 / 高速抽样类比贯穿全文，trace_id / span / sampling 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有逐部分解释；案例 2 的 annotate API 偏示意，零基础仍能跟住结构"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Sigelman et al. Google 2010 正确；Pinpoint / X-Trace / Zipkin-Jaeger-OTel 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "span 覆盖 RPC 与本地重要操作的表述与论文一致；采样两阶段（记录侧 + 收集侧）教学简化可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "trace_id 传播 / annotation / hash 采样三段概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：不传 id、全量追踪、span≠根因、payload 隐私——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用微服务长尾 vs 单进程/审计全量/内核根因，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快递单 / 中转站 / 高速抽样类比贯穿全文，trace_id / span / sampling 有桥接",
+        "三案例都有逐部分解释；案例 2 的 annotate API 偏示意，零基础仍能跟住结构"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Sigelman et al. Google 2010 正确；Pinpoint / X-Trace / Zipkin-Jaeger-OTel 时间线合理",
+        "span 覆盖 RPC 与本地重要操作的表述与论文一致；采样两阶段（记录侧 + 收集侧）教学简化可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "trace_id 传播 / annotation / hash 采样三段概念正确可跟",
+        "踩坑具体：不传 id、全量追踪、span≠根因、payload 隐私——可操作",
+        "适用微服务长尾 vs 单进程/审计全量/内核根因，边界清楚"
+      ]
+    }
+  ]
+}

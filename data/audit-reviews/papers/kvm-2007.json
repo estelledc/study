@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "旅馆包间类比极好；案例 1 ioctl 伪代码有逐步注释，案例 2/3 偏概念但仍可读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Firecracker / gVisor / WSL2 都走小型 KVM 用户态」过满：WSL2 在 Windows 上是 Hyper-V；gVisor 默认是用户态内核（Sentry），KVM 只是可选 platform。应改成 Firecracker / Cloud Hypervisor / crosvm 等 KVM 用户态，或分开表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kivity et al. OLS 2007、2.6.20 合入、VT-x 前提、影子页表→EPT 时间线总体正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 /dev/kvm ioctl 三件套概念正确可跟做；影子页表与 Firecracker 延伸有用；适用/不适用边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "旅馆包间类比极好；案例 1 ioctl 伪代码有逐步注释，案例 2/3 偏概念但仍可读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Firecracker / gVisor / WSL2 都走小型 KVM 用户态」过满：WSL2 在 Windows 上是 Hyper-V；gVisor 默认是用户态内核（Sentry），KVM 只是可选 platform。应改成 Firecracker / Cloud Hypervisor / crosvm 等 KVM 用户态，或分开表述。",
+        "Kivity et al. OLS 2007、2.6.20 合入、VT-x 前提、影子页表→EPT 时间线总体正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 /dev/kvm ioctl 三件套概念正确可跟做；影子页表与 Firecracker 延伸有用；适用/不适用边界量化清楚。"
+      ]
+    }
+  ]
+}

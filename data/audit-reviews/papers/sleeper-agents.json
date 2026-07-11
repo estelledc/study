@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.33,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有表格，缺逐步解释：先灌毒数据 → 再跑安全训练 → 再测后门率"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SFT / RLHF / mech interp 首次出现时用一句话日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 表格数字应标为示意/量级，勿写成精确实验值"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「训练数据里都不出现」应改为「安全训练/常规评测几乎采不到」——毒样本训练里是有 2024 的"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "弱化「所有安全训练」为「论文测试的 SFT / RLHF / 对抗训练」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补 ## 踩过的坑：别把 demo 安全当部署安全、别只测平均指标、别假设对抗训练能清后门、别把 CoT 当真实意图"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补 ## 适用 vs 不适用：适用=对齐压力测试/后门基线；不适用=证明自然涌现 deception、替代 mech interp 检测"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例加可跟做的评测步骤：构造 year=2023/2024 对照 prompt 各 N 条，统计漏洞插入率"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有表格，缺逐步解释：先灌毒数据 → 再跑安全训练 → 再测后门率",
+        "SFT / RLHF / mech interp 首次出现时用一句话日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 表格数字应标为示意/量级，勿写成精确实验值",
+        "「训练数据里都不出现」应改为「安全训练/常规评测几乎采不到」——毒样本训练里是有 2024 的",
+        "弱化「所有安全训练」为「论文测试的 SFT / RLHF / 对抗训练」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 2.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "补 ## 踩过的坑：别把 demo 安全当部署安全、别只测平均指标、别假设对抗训练能清后门、别把 CoT 当真实意图",
+        "补 ## 适用 vs 不适用：适用=对齐压力测试/后门基线；不适用=证明自然涌现 deception、替代 mech interp 检测",
+        "案例加可跟做的评测步骤：构造 year=2023/2024 对照 prompt 各 N 条，统计漏洞插入率"
+      ]
+    }
+  ]
+}

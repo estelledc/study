@@ -79,14 +79,14 @@ t = 5    μs：观察 memcached 队列 = 4 个包，runqueue 深度 = 6
 - 把缓存里的内容刷到内存
 - 重新加载到 B 核的缓存
 
-这一套下来 5-10 μs 是常态。Shenango 把核当成"可重新分配的资源"，**应用内的用户态线程根本不动**——只是把 IOKernel 给的"许可"挪到另一个核去 spin。所以**核迁移**和**线程切换**其实是两件事，前者只要更新一张表。
+这一套下来数微秒是常态。Shenango 把**核**和**用户态线程**拆开：**应用内的 uthread 根本不跨核搬**——变的是"哪个 kthread 被允许占用哪个核"。IOKernel 用 eventfd 唤醒（unpark）、用信号抢占（preempt）kthread，仍会碰到内核原语，但路径极短；真正的工作线程队列还在用户态 runtime 里。所以**分核**和**切 goroutine**是两件事，前者不必做完整线程迁移。
 
 ### 案例 4：和 Go runtime 的关系
 
 Go 的 GMP 是**应用内**调度：一个 Go 进程内部 goroutine 排 OS 线程的核。
 Shenango 是**跨应用**调度：决定每个进程总共能拿几个核。
 
-两者**互补不冲突**——可以把 Go runtime 替换成 Shenango runtime，应用代码几乎不改，但跨应用协调由 IOKernel 接管。
+两者**互补不冲突**——Go 管进程内怎么排；Shenango 管机器上谁拿几个核。若要用 Shenango 的跨应用分核，需要**链上它的 runtime（或按其 API 移植）**，不是换个库就零改动；跨应用协调由 IOKernel 接管。
 
 ## 踩过的坑
 

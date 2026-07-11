@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 只有叙事没有逐步拆解；案例 2 建议按「建模→发现→修复」三步写，案例 3 按「四个 DH→要证的两条性质→lemma 引导」拆开"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 Horn 子句、反向归结、Dolev-Yao 各加一句日常桥接，否则零基础读者会在「核心要点」卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有 Alice 半边规则，补一句 Bob 对称侧或说明「另一半同理」，并加「逐部分解释」小标题"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Basel 团队」应为 Basin 团队（David Basin 等 S&P 2021 EMV 论文），人名写错属事实硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑里「区别于 ProVerif，Tamarin 的 incomplete 是必要的代价」过简：ProVerif 也有近似导致的假攻击/不完备，建议改成「两者都不完备，但原因不同」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 伪代码缺 lemma 写法与完整会话双方，读者无法跟做到「怎么声明要证的属性」；至少补一条 lemma 伪代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可加一句量化边界：工业协议常需数十条 lemma、证明可能跑数小时"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 只有叙事没有逐步拆解；案例 2 建议按「建模→发现→修复」三步写，案例 3 按「四个 DH→要证的两条性质→lemma 引导」拆开",
+        "首次出现的 Horn 子句、反向归结、Dolev-Yao 各加一句日常桥接，否则零基础读者会在「核心要点」卡住",
+        "案例 1 只有 Alice 半边规则，补一句 Bob 对称侧或说明「另一半同理」，并加「逐部分解释」小标题"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Basel 团队」应为 Basin 团队（David Basin 等 S&P 2021 EMV 论文），人名写错属事实硬伤",
+        "踩坑里「区别于 ProVerif，Tamarin 的 incomplete 是必要的代价」过简：ProVerif 也有近似导致的假攻击/不完备，建议改成「两者都不完备，但原因不同」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 伪代码缺 lemma 写法与完整会话双方，读者无法跟做到「怎么声明要证的属性」；至少补一条 lemma 伪代码",
+        "适用场景可加一句量化边界：工业协议常需数十条 lemma、证明可能跑数小时"
+      ]
+    }
+  ]
+}

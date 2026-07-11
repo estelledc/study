@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "笔记本整理课本的类比贴合；RAG / embedding / multi-hop 有短桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有伪流程，缺「逐部分解释」；案例 3 是对照表、案例 4 偏叙事，零基础难跟做"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "建议把 search/read/follow 三步拆成带注释的最小伪代码，并标明每步在干什么"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Haoliang Ming et al., arXiv:2605.25480 正确；HotpotQA 上相对最强图基线 2.0–8.1 F1 与摘要一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文接口是 wiki_search / wiki_read，link-following 靠页面内链接，不宜写成独立的 follow(link_id) 第三工具"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Error Book 主线是编译期结构/语义错误的约束积累与修复，不是「答错 HotpotQA 题再改 wiki」的查询时闭环；案例 2 需改写以免歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "评测还应点到 2WikiMultiHopQA；历史段可补一句，勿只写 HotpotQA/MuSiQue/AuthTrace"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无最小可跟伪代码/接口签名；建议给出 wiki_search/wiki_read 调用序列与 T_max 预算提示"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "编译质量、死循环 max_depth、Error Book 膨胀等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 multi-hop vs 单跳、实时更新等边界；可再点出 tool-call 预算与编译成本"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "笔记本整理课本的类比贴合；RAG / embedding / multi-hop 有短桥接",
+        "案例 1 只有伪流程，缺「逐部分解释」；案例 3 是对照表、案例 4 偏叙事，零基础难跟做",
+        "建议把 search/read/follow 三步拆成带注释的最小伪代码，并标明每步在干什么"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Haoliang Ming et al., arXiv:2605.25480 正确；HotpotQA 上相对最强图基线 2.0–8.1 F1 与摘要一致",
+        "论文接口是 wiki_search / wiki_read，link-following 靠页面内链接，不宜写成独立的 follow(link_id) 第三工具",
+        "Error Book 主线是编译期结构/语义错误的约束积累与修复，不是「答错 HotpotQA 题再改 wiki」的查询时闭环；案例 2 需改写以免歪曲",
+        "评测还应点到 2WikiMultiHopQA；历史段可补一句，勿只写 HotpotQA/MuSiQue/AuthTrace"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无最小可跟伪代码/接口签名；建议给出 wiki_search/wiki_read 调用序列与 T_max 预算提示",
+        "编译质量、死循环 max_depth、Error Book 膨胀等坑具体可操作",
+        "适用/不适用有 multi-hop vs 单跳、实时更新等边界；可再点出 tool-call 预算与编译成本"
+      ]
+    }
+  ]
+}

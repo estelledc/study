@@ -1,0 +1,92 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房分层、证人、三城档案馆类比把 RS/XOR 讲透；组件角色表对零基础很友好。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Muralidhar et al. OSDI 2014、RS(10,4)、2.1x vs 3.6x≈省 42%、90 天门槛、跨 DC XOR 与论文一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「都是 f4 这套思路的工业延续」略归纳色彩，但无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例以示意块与流程为主，概念正确可跟读；修盘 10× 放大、小文件/删除空洞等踩坑可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化（平均文件 ≥ 几 MB / <1MB、温热分层）——清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厨房分层、证人、三城档案馆类比把 RS/XOR 讲透；组件角色表对零基础很友好。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Muralidhar et al. OSDI 2014、RS(10,4)、2.1x vs 3.6x≈省 42%、90 天门槛、跨 DC XOR 与论文一致。",
+        "「都是 f4 这套思路的工业延续」略归纳色彩，但无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例以示意块与流程为主，概念正确可跟读；修盘 10× 放大、小文件/删除空洞等踩坑可操作。",
+        "适用边界有量化（平均文件 ≥ 几 MB / <1MB、温热分层）——清楚。"
+      ]
+    }
+  ]
+}

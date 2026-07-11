@@ -34,12 +34,12 @@ RSA 安全靠**一个数学难题**撑着：
 
 加密和解密的步骤：
 
-1. **造钥匙**：选两个大素数 p、q；算 n = p × q；算 φ(n) = (p-1)(q-1)；选公钥指数 e（常用 65537）；算私钥 d 满足 e · d ≡ 1 (mod φ(n))。**公钥 = (n, e)，私钥 = d**。
+1. **造钥匙**：选两个大素数 p、q；算 n = p × q；算 φ(n) = (p-1)(q-1)（欧拉函数：小于 n 且与 n 互素的个数，知道 p、q 就能秒算）；选公钥指数 e（常用 65537）；算私钥 d 满足 e · d ≡ 1 (mod φ(n))——像找「乘 e 再对 φ(n) 取余等于 1」的配对按钮。**公钥 = (n, e)，私钥 = (n, d)**。
 2. **加密**：把消息 m 当成数字（必须 m < n），算 `c = m^e mod n`，发送 c。
-3. **解密**：拿到 c，用私钥算 `m = c^d mod n`。这一定能还原出 m，背后是欧拉定理。
+3. **解密**：拿到 c，用私钥算 `m = c^d mod n`。欧拉定理保证这对运算能还原 m。
 4. **签名**：把上面"反着用"——用私钥算 `s = m^d mod n` 当签名，任何人用公钥验 `s^e mod n == m`。
 
-为什么不知道 p、q 就破不了？因为算 d 必须先有 φ(n)，而 φ(n) 必须先分解 n 才能算出来。**陷门 = p 和 q**——持有人能秒算，外人没辙。
+为什么不知道 p、q 就破不了？因为算 d 必须先有 φ(n)，而 φ(n) 必须先分解 n。**陷门 = p 和 q**——持有人能秒算，外人没辙。
 
 ## 实践案例
 
@@ -50,50 +50,34 @@ RSA 安全靠**一个数学难题**撑着：
 - n = 11 × 13 = 143
 - φ(n) = 10 × 12 = 120
 - 选 e = 7（与 120 互素）
-- 算 d：要找 d 使 7d ≡ 1 (mod 120)，扩展欧几里得给出 d = 103
+- 算 d：要找 d 使 `7 × d` 除以 120 余 1。试算 `7 × 103 = 721 = 6 × 120 + 1`，所以 d = 103（扩展欧几里得就是系统化找这个 d 的算法）
 
-加密 m = 9：
+加密 m = 9 → `c = 9^7 mod 143 = 48`；解密 → `m = 48^103 mod 143 = 9`。回到 9。大整数版就是 RSA-2048。
 
-```
-c = 9^7 mod 143 = 4782969 mod 143 = 48
-```
-
-解密 c = 48：
-
-```
-m = 48^103 mod 143 = 9
-```
-
-回到 9。**整套数学就这么简单**——大整数版本就是 RSA-2048。
-
-### 案例 2：OpenSSL 命令行三步走
+### 案例 2：OpenSSL 命令行
 
 ```bash
-# 1. 生成 RSA-2048 私钥
-openssl genrsa -out private.pem 2048
-
-# 2. 提取公钥
-openssl rsa -in private.pem -pubout -out public.pem
-
-# 3. 用私钥签名一个文件
+openssl genrsa -out private.pem 2048          # 造 (n,d)
+openssl rsa -in private.pem -pubout -out public.pem   # 抽出 (n,e)
 openssl dgst -sha256 -sign private.pem -out doc.sig doc.txt
-
-# 4. 别人用公钥验证
 openssl dgst -sha256 -verify public.pem -signature doc.sig doc.txt
 # Verified OK
 ```
 
-每一步对应论文里的一个公式。生产环境就这样跑。
+对应论文：genrsa = 造钥匙，sign = `s = H(m)^d mod n`，verify = 用 e 验。
 
 ### 案例 3：JWT RS256 怎么签 token
 
-JWT（JSON Web Token）的 RS256 算法 = RSA-2048 + SHA-256：
+RS256 = RSA-2048 + SHA-256。伪代码：
 
-1. 服务端拿私钥对 `header.payload`（JSON Base64）做 SHA-256，再用私钥签
-2. 把签名拼到 token 末尾发给客户端
-3. 客户端 / 网关拿公钥验签——验过就信任 token 内容
+```
+signing_input = base64url(header) + "." + base64url(payload)
+sig = RSA_PSS_Sign(private_key, SHA256(signing_input))
+token = signing_input + "." + base64url(sig)
+# 网关用 public_key 验 sig，通过才信任 payload
+```
 
-OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链。
+OAuth / Auth0 / Firebase 的无状态登录都靠这条链。
 
 ## 踩过的坑
 
@@ -101,11 +85,11 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 
 2. **不带 padding 会被打穿**：教科书 RSA `c = m^e mod n` 是**确定性**的（同样的 m 永远得到同样的 c），攻击者能用"字典攻击"试遍常见明文。1996 年 Bleichenbacher 攻击进一步证明哪怕加了 PKCS#1 v1.5 padding 也不安全。**生产必须用 OAEP padding（加密）和 PSS padding（签名）**。
 
-3. **1024 位现在不安全**：2010 年代以前 RSA-1024 是默认，现在国家级对手已能在数小时内分解。NIST 2014 年起强制联邦系统弃用 1024，**新系统必须 2048 起步，长期数据 3072 / 4096**。
+3. **1024 位现在不安全**：2010 年代以前 RSA-1024 是默认；公开估算与国家级算力下它已不可信。NIST 2014 年起弃用 1024，**新系统必须 2048 起步，长期数据 3072 / 4096**。
 
-4. **私钥随机数发生器有问题就完了**：2010 年 Sony PS3 因为 ECDSA 签名复用同一个随机数 k，黑客直接算出根私钥，整个 PS3 系统破解。早期比特币钱包也因为 RNG 弱被搬空过。**密码学库的安全 = 它依赖的随机源的安全**。
+4. **私钥随机数发生器有问题就完了**：2010 年 Sony PS3 因 ECDSA 复用同一随机数 k 被算出根私钥。**密码学库的安全 = 它依赖的随机源的安全**。
 
-5. **量子计算机会一夜终结 RSA**：1994 年 Shor 算法证明量子机能在多项式时间分解 n。一旦容错量子机问世，所有 RSA 证书 / SSH 主机密钥 / PGP 签名一夜失效。NIST 已选定 PQC 标准（Kyber / Dilithium），2030 年前所有联邦系统必须迁移。
+5. **量子计算机会终结 RSA**：Shor 算法（1994）证明容错量子机可多项式时间分解 n。NIST 2024 年发布 PQC 标准（ML-KEM/ML-DSA，曾用名 Kyber/Dilithium）；联邦迁移时间表以 2035 为主目标，高风险系统更早。
 
 ## 适用 vs 不适用场景
 
@@ -135,7 +119,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 - **1995 年**：Netscape SSL 用 RSA，HTTPS 时代开启。
 - **2000 年**：RSA 美国专利到期，算法捐入公有领域。
 - **2002 年**：三人共获 ACM 图灵奖。
-- **2024 年**：NIST 正式发布 PQC 标准 Kyber / Dilithium，开启**后量子迁移**。
+- **2024 年**：NIST 正式发布 PQC 标准 ML-KEM / ML-DSA（曾用名 Kyber / Dilithium），开启后量子迁移。
 
 ## 学到什么
 

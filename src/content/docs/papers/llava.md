@@ -8,7 +8,7 @@ title: LLaVA — 开源多模态对话模型
 
 ## 是什么
 
-LLaVA（**Large Language and Vision Assistant**）是 2023 年威斯康辛大学 + 微软推出的**第一个开源的"看图说话"对话模型**。
+LLaVA（**Large Language and Vision Assistant**）是 2023 年威斯康辛大学 + 微软推出的**开源视觉指令微调代表作**——用纯文本 GPT-4 编多模态对话数据，再把眼睛接到语言模型上。
 
 日常类比：[[llama]] 是个只能听不能看的助手——你说什么它接什么；LLaVA 给它装了一双眼睛（[[clip]] 视觉编码器），从此它能"边看图边和你聊"。
 
@@ -27,7 +27,7 @@ Assistant: 一名男子站在路边停的摩托车旁，手里抱着一只小狗
 狗放进专用宠物箱里再上路。
 ```
 
-它不是只会"念出图里有什么"，它能**理解图、回答问题、给建议**——这是 2023 年开源世界第一次做到。
+它不是只会"念出图里有什么"，它能**理解图、回答问题、给建议**——并把完整数据与训练 recipe 公开，让后来者能复现。
 
 ## 为什么重要
 
@@ -102,32 +102,25 @@ GPT-4 编出：
 
 整个 forward 一次，模型把视觉信息当作 LLM 输入的"前缀"，剩下的事全交给 LLM 自回归生成。**没有跨模态 attention 的奇技淫巧，就是 concat。**
 
-### 案例 3：LLaVA 30 行 PyTorch 复现核心
+### 案例 3：最小 PyTorch 骨架
 
 ```python
-import torch.nn as nn
-from transformers import CLIPVisionModel, AutoModelForCausalLM
-
 class MinimalLLaVA(nn.Module):
     def __init__(self):
-        super().__init__()
         self.vision = CLIPVisionModel.from_pretrained("openai/clip-vit-large-patch14")
         for p in self.vision.parameters():
             p.requires_grad = False  # 冻住眼睛
-
         self.llm = AutoModelForCausalLM.from_pretrained("lmsys/vicuna-7b-v1.5")
         self.projector = nn.Linear(1024, 4096)  # 小桥
 
     def forward(self, images, input_ids):
-        with torch.no_grad():
-            visual_feat = self.vision(images).last_hidden_state[:, 1:, :]
+        visual_feat = self.vision(images).last_hidden_state[:, 1:, :]
         visual_tok = self.projector(visual_feat)
         text_emb = self.llm.get_input_embeddings()(input_ids)
-        inputs = torch.cat([visual_tok, text_emb], dim=1)
-        return self.llm(inputs_embeds=inputs)
+        return self.llm(inputs_embeds=torch.cat([visual_tok, text_emb], dim=1))
 ```
 
-这就是 LLaVA 的全部。简单到出奇——**让数据和规模说话**。
+冻 CLIP → 线性投影 → concat → LLM，就是 LLaVA 的全部骨架。
 
 ## 踩过的坑
 
@@ -137,27 +130,54 @@ class MinimalLLaVA(nn.Module):
 
 3. **高分辨率成本指数爆炸**：CLIP token 数 = (W/14)²。224 → 256 token，336 → 576，672 会到 2304。LLM 输入长度爆炸——LLaVA-NeXT 用"切片 + 动态分辨率"才勉强缓解。
 
-4. **会编**：LLaVA 继承了 LLM 的幻觉——会说"图里有一只猫"，但其实没有。POPE benchmark 专测这个，LLaVA-1.5 拿 85.9，比早期好但远没解决。
+4. **会编**：LLaVA 继承了 LLM 的幻觉——会说"图里有一只猫"，但其实没有。POPE benchmark 专测这个，LLaVA-1.5 约 85.9，比早期好但远没解决。
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 自然图上的多轮视觉对话、通用 VQA、教学演示「视觉编码器 + 投影 + LLM」模板
+- 有 1–8 张 A100 级 GPU、想复现开源多模态指令微调 recipe（约一天量级）
+- 需要公开权重/数据、可本地部署的轻量多模态助手原型（7B 级 Vicuna 骨干）
+
+**不适用**：
+
+- 医疗影像、卫星、CAD 等域外视觉——冻住的 CLIP 几乎零样本失败
+- 强 OCR、超高分辨率文档理解——224/336 默认分辨率不够，需 LLaVA-NeXT 或专用 OCR 模型
+- 幻觉敏感的生产问答——POPE 仍远未到可无人值守上线
+- 只要「图文检索/相似度」——直接用 [[clip]]，不必上整套对话 LLM
 
 ## 历史小故事（可跳过）
 
-- **2021-02**：[[clip]] 发布，证明 "图像编码器 + 文本编码器对比学习" 能学到视觉-语言共享语义。但 CLIP 只能算相似度，不会对话。
-- **2022-12**：ChatGPT 出圈，证明 instruction tuning 是 LLM "从模型变助手"的范式级钥匙。
-- **2023-04**：LLaVA 1.0 论文发布。同一个月 KAUST 的 MiniGPT-4 也放了出来，但 LLaVA 关键差异是**公开了 158K GPT-4 合成数据**和**完整训练 recipe**。
-- **2023-09**：GPT-4V 开放，但闭源、贵、不透明。
-- **2023-10**：LLaVA-1.5 升级——MLP projector + 学术 VQA 数据 + 336 分辨率。在 11 个 benchmark 上反超 InstructBLIP / Qwen-VL。
-- **2024-01**：LLaVA-NeXT (1.6) 加动态分辨率（最高 ~672²）+ 更强 OCR + 多语言。
-- **2024-2025**：Qwen2-VL / InternVL2 / Phi-3-Vision 把 LLaVA 思路推到 SOTA，几乎所有开源多模态 LLM 都能在 LLaVA 那张架构图里找到对应。
+- **2021-02**：[[clip]] 发布，图像-文本对齐能学到共享语义，但不会对话。
+- **2022-12**：ChatGPT 出圈，instruction tuning 成为「模型变助手」钥匙。
+- **2023-04**：LLaVA 1.0 发布；同月 MiniGPT-4 也出现，LLaVA 差异是公开 158K 数据与完整 recipe。
+- **2023-10**：LLaVA-1.5——MLP projector + 学术 VQA + 336 分辨率，多 benchmark 反超 InstructBLIP。
+- **2024-01**：LLaVA-NeXT 加动态分辨率与更强 OCR；此后 Qwen2-VL / InternVL2 等沿同一骨架冲 SOTA。
 
 ## 学到什么
 
-1. **多模态 LLM 不需要重新发明轮子**——[[clip]] 当眼睛 + [[llama]] 当嘴 + 中间小 projector，是事实模板。
-2. **数据合成是 2023 年新关键技能**——"用强模型 distill 出高质量数据"和"写 model code"同等重要。LLaVA 用 GPT-4 编 158K 多模态数据，是这套 recipe 的代表作。
-3. **两阶段训练**——先训桥（feature alignment），再 fine-tune 整体（visual instruction tuning）。所有后续多模态 LLM 都沿用这个套路。
-4. **简单优于复杂**——BLIP-2 用复杂的 Q-Former，LLaVA 用线性层，结果 LLaVA 更好。前提是数据足够多。
+1. **多模态 LLM 不需要重新发明轮子**——[[clip]] 当眼睛 + [[llama]] 当嘴 + 小 projector，是事实模板。
+2. **数据合成是关键技能**——用强模型 distill 高质量数据，和写 model code 同等重要。
+3. **两阶段训练**——先训桥（feature alignment），再 visual instruction tuning；后续多模态 LLM 多沿用。
+4. **简单优于复杂**——BLIP-2 的 Q-Former 更复杂，LLaVA 用线性层却更好，前提是数据够。
+
+## 延伸阅读
+
+- 论文：[Visual Instruction Tuning (arXiv:2304.08485)](https://arxiv.org/abs/2304.08485)
+- 项目页：[llava-vl.github.io](https://llava-vl.github.io/)
+- 代码：[haotian-liu/LLaVA](https://github.com/haotian-liu/LLaVA)
+- [[clip]] —— 视觉编码器从哪来
+- [[llama]] —— 语言模型骨干与 Vicuna 指令微调
 
 ## 关联
 
-- [[clip]] —— LLaVA 的眼睛。理解 LLaVA 必先理解 CLIP 把图像-文本对齐到共享空间
-- [[llama]] —— LLaVA 的嘴和脑。LLaVA 用的是 LLaMA 的 instruction-tuned 版本 Vicuna
-- [[transformer]] —— CLIP-ViT 和 LLaMA 都基于 transformer；理解 patch token + attention 才能读懂 projector 为什么是 per-token 线性映射
+- [[clip]] —— LLaVA 的眼睛；理解图像-文本对齐才能懂冻住视觉塔
+- [[llama]] —— LLaVA 的嘴和脑；实际用的是 Vicuna
+- [[transformer]] —— CLIP-ViT 与 LLaMA 都基于它；projector 是 per-token 线性映射
+- [[attention]] —— 视觉 token 与文字 token 在 LLM 里一起做自注意力
+- [[gpt-3]] —— 指令跟随与规模化 LLM 能力的上游背景
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

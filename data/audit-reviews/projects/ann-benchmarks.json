@@ -1,0 +1,73 @@
+{
+  "slug": "ann-benchmarks",
+  "area": "projects",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么 / ## 为什么重要",
+      "fix_hints": [
+        "不要把项目起点固定写成 2018 年开源，research stub 不足以支撑这个精确年份。",
+        "“唯一公开 benchmark”和“所有向量数据库官方对比都引用”过于绝对，应弱化为常用公开 benchmark / 许多系统会参考。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "base_rule_findings": [
+      "缺少 base-rules 要求的 ## 历史小故事"
+    ]
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic wording needed weakening and base rules require all standard sections",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 历史小故事",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 180,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

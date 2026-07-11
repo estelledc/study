@@ -107,8 +107,8 @@ dvc exp show                   # 列出两次实验的参数 + 指标对照表
 1. **Git 不熟会更晕**：DVC 是 Git 的扩展不是替代，要先理解 add / commit / branch / checkout 的心智模型。
 2. **超大文件 push 慢**：几十 GB 单文件传 S3 要分块上传，看 `dvc remote modify` 配并发。
 3. **Windows 下 symlink 不稳**：默认 cache 用 reflink/symlink，Windows 退化成 copy 会占双倍磁盘。`dvc config cache.type copy` 显式声明更可控。
-4. **改了 dvc.yaml 忘 commit**：`.dvc` 文件没进 Git，下次 repro 会判定输入「变了」触发不必要的重跑。
-5. **手动改 .dvc 里的 hash**：会让 dvc pull 找不到数据。这文件只能由 `dvc add / dvc commit` 生成，不能手编辑。
+4. **改了 pipeline / 数据指针忘进 Git**：`dvc.yaml`（pipeline）和 `*.dvc`（数据占位/领货单）都要 `git add` + `commit`。只改本地不提交，队友 checkout 后会拿到旧指针，或你自己换分支后 `dvc repro` 对不上。
+5. **手动改 .dvc 里的 hash**：会让 dvc pull 找不到数据。这文件只能由 `dvc add` / `dvc commit` 生成，不能手编辑。
 
 ## 适用 vs 不适用场景
 
@@ -126,11 +126,13 @@ dvc exp show                   # 列出两次实验的参数 + 指标对照表
 - 重量级 ML 平台（要 K8s 原生 pipeline + 多租户）→ 用 Pachyderm / Kubeflow
 - 纯文本仓库（无大文件）→ Git 就够
 
-## 历史
+## 历史小故事（可跳过）
 
-2017 年 Dmitry Petrov 在 Microsoft 做 ML 项目时痛感「数据复现」无解，写了 DVC 雏形。2018 成立 Iterative.ai，开源 DVC，定位「Git for ML」。2020 之后陆续加入 `dvc exp`（实验追踪）、`dvc.yaml`（pipeline 描述）、CML（CI 集成），从单纯的「大文件版本工具」演进成完整的 ML 工程化栈。
-
-到 2024 年前后，DVC 在 GitHub 上累积约 14k star，是 Iterative 公司开源矩阵的核心：DVC（数据 / pipeline）、CML（CI 集成）、MLEM（模型部署）、Studio（云端协作 UI）共同构成「GitOps for ML」的尝试。
+- **2017 年**：Dmitry Petrov 在 Microsoft 做 ML 项目时痛感「数据复现」无解，写出 DVC 雏形（同年 5 月公开 beta）。
+- **2018 年**：与 Ivan Shcheklein 成立 Iterative.ai，把 DVC 定位成「Git for ML」。
+- **2020 年**：DVC 1.0；之后陆续加强 `dvc.yaml` pipeline、`dvc exp` 实验追踪，并推出 CML（CI 里贴指标）。
+- **2024 年前后**：GitHub 约 14k+ star；DVC / CML / MLEM / Studio 组成 Iterative 的「GitOps for ML」矩阵。
+- **2025 年末**：lakeFS（Treeverse）宣布收购 DVC，项目继续开源演进。
 
 ## 学到什么
 
@@ -138,6 +140,15 @@ dvc exp show                   # 列出两次实验的参数 + 指标对照表
 2. **DAG + hash** 让「只重跑变了的部分」变得自然——和 make / bazel / nix 是一脉相承的工程美学。区别只是节点装的是数据集而不是 .o 文件。
 3. **diff 友好**才能进 code review：参数 / 指标 / 数据 hash 都做成可 diff 的小文本，PR 才能审。这条对所有「想被纳入 Git 流程」的工具都成立。
 4. **工具不替代 Git，要长在 Git 上**：DVC 的所有命令都和 Git 同形（add / push / pull / checkout），学习曲线大幅降低。同样思路在 Nix flake、Pulumi、Terraform 也能看到。
+
+## 延伸阅读
+
+- 官方文档：[dvc.org/doc](https://dvc.org/doc)（Get Started 半小时能跑通 add/push/pull）
+- 仓库：[iterative/dvc](https://github.com/iterative/dvc)（现由 lakeFS/Treeverse 继续维护）
+- CML：[cml.dev](https://cml.dev) —— 和案例 4 配套的 CI 报告工具
+- 对比阅读：Git LFS 文档 —— 看清「只存大文件」和「pipeline + 复现」差在哪
+- [[mlflow]] —— 实验追踪侧重点不同，常和 DVC 搭配
+- [[lakefs]] —— 数据湖层级的 Git 抽象，规模更大时的下一家
 
 ## 关联
 

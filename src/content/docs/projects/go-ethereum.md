@@ -22,14 +22,14 @@ geth --sepolia --http --http.api eth,net,web3
 geth attach http://127.0.0.1:8545
 ```
 
-第一行把节点跑起来同步 Sepolia 测试网，第二行进 JavaScript 控制台。两条命令之间是几小时的状态同步——从 2015 年创世块到今天的每一次合约调用，都被你这台机器**亲自验证过**才算数。
+第一行把节点跑起来同步 Sepolia 测试网，第二行进 JavaScript 控制台。两条命令之间往往是数小时的状态同步——Sepolia 有**自己的创世块（约 2022）**，不是 2015 主网 Frontier；但同步期间每一笔测试网交易仍会被你这台机器**亲自重放验证**。
 
 ## 为什么重要
 
 不理解 Geth 这套东西，下面的事都没法解释：
 
 - 为什么"智能合约不可篡改"不是口号——每个全节点**独立重跑** EVM，篡改一笔等于让全网几千节点同时点头
-- 为什么 DApp 前端连 RPC 时延差异巨大——MetaMask、Uniswap 背后都是 Geth 或它的 fork（Erigon、Nethermind）在跑
+- 为什么 DApp 前端连 RPC 时延差异巨大——MetaMask、Uniswap 背后常是 Geth，或其它独立执行层客户端（Nethermind 为 .NET 实现；Erigon 源自早期 Geth/turbo-geth 系但已大幅重写）
 - 为什么 The Merge（2022 PoW→PoS）能成——执行层 Geth 和共识层 Prysm/Lighthouse 通过 Engine API 解耦，各自独立升级
 - 为什么以太坊的 Account 模型一上手就懂、UTXO 反而绕——Geth 把账户余额、nonce、code、storage 直接存成 Merkle Patricia Trie 节点，是教科书级实现
 
@@ -50,14 +50,14 @@ Geth 干的事可以拆成 **3 件**：
 ### 案例 1：本地 dev 模式秒挖区块
 
 ```bash
-geth --dev --http --http.api eth,web3,personal --datadir /tmp/geth-dev
+geth --dev --http --http.api eth,web3 --datadir /tmp/geth-dev
 geth attach /tmp/geth-dev/geth.ipc
 > eth.blockNumber
 > eth.accounts
 > eth.getBalance(eth.accounts[0])
 ```
 
-`--dev` 是单节点开发链，自动给第一个账户预存大量 ETH，发交易**立刻出块**。前端调试合约最快路径——不需要测试网水龙头、不需要等共识层。但走的是和主网**完全一样的代码路径**，EVM 行为一致。
+`--dev` 是单节点开发链，自动给第一个账户预存大量 ETH，发交易**立刻出块**。前端调试合约最快路径——不需要测试网水龙头、不需要等共识层。走的是和主网**同一套 EVM 代码路径**。新版本里 `personal_*` 已弱化，本地演示用 `eth.accounts` 即可，勿把 `personal` 暴露到公网。
 
 ### 案例 2：用 abigen 把 Solidity 合约绑成 Go
 
@@ -67,7 +67,7 @@ abigen --abi=build/Token.abi --bin=build/Token.bin \
        --pkg=token --out=token.go
 ```
 
-`abigen` 是 Geth 自带的代码生成工具——读 Solidity 编译产物，**生成 Go 包**（编译期类型安全）。生成的 `token.go` 里 `NewToken(addr, client)` 返回一个 Go 对象，调用 `.Transfer(...)` 就是发链上交易。**这是用 Go 写 DApp 后端的标准姿势**——不用手拼 `eth_call` JSON-RPC，IDE 还能补全。
+`abigen` 是 Geth 自带的代码生成工具——读 Solidity 编译产物，**生成 Go 客户端绑定**（不是改合约本身；编译期类型安全）。生成的 `token.go` 里 `NewToken(addr, client)` 返回一个 Go 对象，调用 `.Transfer(...)` 就是发链上交易。**这是用 Go 写 DApp 后端的标准姿势**——不用手拼 `eth_call` JSON-RPC，IDE 还能补全。
 
 ### 案例 3：通过 RPC 看链状态
 
@@ -119,7 +119,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 
 ## 学到什么
 
-1. **"参考实现 + 多客户端"是协议演化的双保险**——Geth 占主网 60%+ 份额，但 Erigon、Nethermind、Reth 各占一份，2024 年 Geth 出过共识 bug 时其他客户端撑住了链不分裂
+1. **"参考实现 + 多客户端"是协议演化的双保险**——执行层上 Geth 长期占大约一半量级份额（统计口径会漂），Nethermind / Besu / Erigon / Reth 分担其余；任一客户端出共识 bug 时，其它实现能降低整网一起踩坑的风险
 2. **Account 模型 vs UTXO 不是对错而是 trade-off**——Account 模型对智能合约 / 状态机思维友好（一行就是一个对象），UTXO 对并发 / 隐私友好（多个输出无依赖），各自适合不同上层应用
 3. **Engine API 把执行层和共识层解耦**是过去十年最干净的协议手术——两边各自独立升级，借鉴自微服务设计思路
 4. **Go 在系统级网络 + 加密 + GC 容忍度高的场景很合适**——Geth 用 Go 写了 11 年，证明了 GC 语言可以跑严肃的金融基建（前提是 GC 调优足够）

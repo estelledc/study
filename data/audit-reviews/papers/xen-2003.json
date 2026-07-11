@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点末尾用 gRPC / io_uring / WebAssembly 作类比，零基础读者可能更懵；可各加半句日常说法或删到只留一条"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 气球驱动可补一句「像房间里吹大气球占地方，好把空出来的柜子借给邻居」把膨胀/放气钉死"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「当年 VMware 的全虚拟化要损失 30% 以上」过于绝对；宜写成「常见报道/部分 workload 可达约 30%」并点明与 Xen 论文自报数字对比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「论文用一句话总结：协作比欺骗便宜得多」更像教学概括而非原文原话，建议去掉「论文用一句话总结」以免像直接引用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可补 3–5 行伪代码对照 popf vs HYPERVISOR_set_iflag，方便跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化边界（如单机并发 guest 数量级、相对裸机开销 2–8%）帮助选型"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点末尾用 gRPC / io_uring / WebAssembly 作类比，零基础读者可能更懵；可各加半句日常说法或删到只留一条",
+        "案例 3 气球驱动可补一句「像房间里吹大气球占地方，好把空出来的柜子借给邻居」把膨胀/放气钉死"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「当年 VMware 的全虚拟化要损失 30% 以上」过于绝对；宜写成「常见报道/部分 workload 可达约 30%」并点明与 Xen 论文自报数字对比",
+        "「论文用一句话总结：协作比欺骗便宜得多」更像教学概括而非原文原话，建议去掉「论文用一句话总结」以免像直接引用"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可补 3–5 行伪代码对照 popf vs HYPERVISOR_set_iflag，方便跟做",
+        "适用场景可补一条量化边界（如单机并发 guest 数量级、相对裸机开销 2–8%）帮助选型"
+      ]
+    }
+  ]
+}

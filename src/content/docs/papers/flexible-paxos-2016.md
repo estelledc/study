@@ -23,8 +23,8 @@ FPaxos：phase 1 quorum ∩ phase 2 quorum ≠ ∅（只要相交一次）
 
 不理解 FPaxos，下面这些事都没法解释：
 
-- 为什么 etcd / TiKV 这些工业系统支持"可调 quorum"——它们的理论根基就是这篇
-- 为什么"读写 quorum 解耦"在 Dynamo / Cassandra 之外的强一致系统也成立
+- 为什么后来有人讨论"可调 quorum / Flexible Raft"——FPaxos 证明两阶段不必都多数
+- 为什么"读写 quorum 解耦"在 Dynamo / Cassandra 之外的强一致系统也说得通
 - 为什么 6 节点集群比 5 节点写入更慢却没多大可用性提升（多数派要 4 个）
 - 为什么 Raft 的"过半多数"是可以放松的——只是历史选择，不是数学必然
 
@@ -103,7 +103,7 @@ Q1 = 5（跨机房）, Q2 = 2（本机房两节点）
 
 **适用**：
 
-- 写入频繁、故障切换稀有的工业级 KV / log 复制（etcd / TiKV / FoundationDB 风格）
+- 写入频繁、故障切换稀有的强一致 KV / log 复制（可把 FPaxos 旋钮嵌进 Paxos/Raft 变体）
 - 偶数节点集群想"占满"票数
 - 跨地域部署，想让稳态写入本地完成、故障时才跨地协调
 - 需要在延迟 / 可用性之间精细调旋钮的强一致系统
@@ -121,7 +121,7 @@ Q1 = 5（跨机房）, Q2 = 2（本机房两节点）
 - **2001 年**：Lamport 写 *Paxos Made Simple*，把同一个算法换成大白话，但 quorum 要求没动。
 - **2006 年**：Lamport 提出 Fast Paxos，从消息轮数减少入手，没动 quorum 形状。
 - **2016 年**：Howard、Malkhi、Spiegelman 这篇短文（arXiv 上 9 页）从最朴素的角度问"两个 quorum 都得是多数吗"——证明不必，写出 FPaxos。
-- **2016 年之后**：思想被 etcd、TiKV、FoundationDB 等工业系统部分采纳为"可调 quorum"特性；学界继续把它推广到 Raft、EPaxos 上。
+- **2016 年之后**：学界把它推广到 Raft 等协议（Flexible Raft 一类工作）；工业上"可调 quorum"多属实验/定制部署，etcd/TiKV 默认仍是多数派 Raft。
 
 ## 学到什么
 

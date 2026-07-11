@@ -1,0 +1,140 @@
+{
+  "action": "refine",
+  "average": 3,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房/双餐厅类比只覆盖『一套代码多端』，未把 Bridge/线程边界讲成日常画面；建议换成『同剧本、两个剧场各自搭景』并点出传话员（桥）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里『幂等性』无桥接；Bridge / JSI / Fabric / reconciliation 首次出现需各加一句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例缺逐步解释：案例 2 只有一行调用、案例 3 storage/api 未定义，零基础无法跟做——每案拆成 3 步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『映射成 UIKit、Jetpack Compose』不准确：经典 RN Android 落在 View 体系（UIView/android.view），并非默认 Jetpack Compose；宜改为 UIKit / Android Views"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事过空：缺 2015 开源、旧 Bridge 异步序列化、2018 起新架构（JSI/Fabric/TurboModules）、近年默认新架构等可核对节点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源仅 GitHub URL 可接受；正文勿把热更新/OTA 写成 RN 官方标配能力（需 CodePush 等第三方，且商店政策有约束）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可编译概念正确；案例 2 缺原生侧契约说明；案例 3 依赖未给出的 storage/api，跟做会断——补最小伪实现或标明『示意』并写清三步"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏口号：平台差异/桥接高频/视觉细节/热更新——各补一句可操作判据（如列表滚动掉帧先查 JS 线程、原生崩溃不能只靠 OTA）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化：可补『主路径 UI 一致的业务 App』vs『120fps 游戏/强平台定制』；点明新架构迁移与第三方原生模块兼容成本"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "厨房/双餐厅类比只覆盖『一套代码多端』，未把 Bridge/线程边界讲成日常画面；建议换成『同剧本、两个剧场各自搭景』并点出传话员（桥）",
+        "核心要点里『幂等性』无桥接；Bridge / JSI / Fabric / reconciliation 首次出现需各加一句白话",
+        "三案例缺逐步解释：案例 2 只有一行调用、案例 3 storage/api 未定义，零基础无法跟做——每案拆成 3 步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "『映射成 UIKit、Jetpack Compose』不准确：经典 RN Android 落在 View 体系（UIView/android.view），并非默认 Jetpack Compose；宜改为 UIKit / Android Views",
+        "历史小故事过空：缺 2015 开源、旧 Bridge 异步序列化、2018 起新架构（JSI/Fabric/TurboModules）、近年默认新架构等可核对节点",
+        "来源仅 GitHub URL 可接受；正文勿把热更新/OTA 写成 RN 官方标配能力（需 CodePush 等第三方，且商店政策有约束）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可编译概念正确；案例 2 缺原生侧契约说明；案例 3 依赖未给出的 storage/api，跟做会断——补最小伪实现或标明『示意』并写清三步",
+        "踩坑偏口号：平台差异/桥接高频/视觉细节/热更新——各补一句可操作判据（如列表滚动掉帧先查 JS 线程、原生崩溃不能只靠 OTA）",
+        "适用/不适用缺量化：可补『主路径 UI 一致的业务 App』vs『120fps 游戏/强平台定制』；点明新架构迁移与第三方原生模块兼容成本"
+      ]
+    }
+  ],
+  "slug": "react-native",
+  "area": "projects",
+  "status": "refined",
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：纠 Compose 映射；补 2015/新架构时间线；案例拆三步；弱化 OTA 万能药；桥接/JSI 白话桥接",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 152,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 152,
+  "l1_pass": true
+}

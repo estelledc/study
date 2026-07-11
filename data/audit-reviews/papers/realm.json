@@ -1,0 +1,150 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "闭卷学霸+字典类比贯穿全文，零基础直觉很强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 HuggingFace 代码块缺逐步解释：建议拆成「装模型→编码问题→前向→decode 答案」四步，并说明 predicted_answer_ids 是什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ICT / MIPS / ScaNN / marginalize 首次出现可再补一句括号桥接；「学到什么」已压到 4 条，保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 T5-11B 高大约 15 个点」错误：Table 1 上 NQ 为 REALM 39.2/40.4 vs T5-11B 34.5，差距约 5–6 点；论文摘要写的是相对先前方法 4–16% absolute"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Table 7 去掉 ICT 后 NQ EM 从 39.2 跌到 13.4」不成立：论文 Table 2 无此 ICT ablation；13.9 是 Baseline(ORQA) 的 zero-shot Recall@5，不是 EM——应删或改写为冷启动/ICT 必要性的定性说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用段写 spaCy NER recall~70%：论文用的是 CoNLL-2003 上训练的 BERT tagger + 日期正则，不是 spaCy"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事 DrQA 写成「TF-IDF + BERT reader」：Chen et al. 2017 DrQA 的 reader 是 BiLSTM，不是 BERT"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RETRO 宜标 2021 arXiv / ICML 2022，不宜与 Atlas 一并笼统写「2022 年」；来源 Guu et al. ICML 2020 / arXiv:2002.08909 正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–3 伪代码/HF API 概念可跟做；注明 google/realm-orqa-nq-openqa 与 transformers v4.41+ 已删即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：ICT 冷启动、top-k softmax、异步刷新、null doc——保留，但 ICT 数字须按 academic 修正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界缺可靠量化：spaCy 70% 无出处且与论文不符；可改为「NER/日期抽取漏检的实体拿不到训练信号」并点明 single-hop / 原始 pretrain 不可复现"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "闭卷学霸+字典类比贯穿全文，零基础直觉很强",
+        "案例 1 HuggingFace 代码块缺逐步解释：建议拆成「装模型→编码问题→前向→decode 答案」四步，并说明 predicted_answer_ids 是什么",
+        "ICT / MIPS / ScaNN / marginalize 首次出现可再补一句括号桥接；「学到什么」已压到 4 条，保留"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「比 T5-11B 高大约 15 个点」错误：Table 1 上 NQ 为 REALM 39.2/40.4 vs T5-11B 34.5，差距约 5–6 点；论文摘要写的是相对先前方法 4–16% absolute",
+        "「Table 7 去掉 ICT 后 NQ EM 从 39.2 跌到 13.4」不成立：论文 Table 2 无此 ICT ablation；13.9 是 Baseline(ORQA) 的 zero-shot Recall@5，不是 EM——应删或改写为冷启动/ICT 必要性的定性说明",
+        "适用段写 spaCy NER recall~70%：论文用的是 CoNLL-2003 上训练的 BERT tagger + 日期正则，不是 spaCy",
+        "历史小故事 DrQA 写成「TF-IDF + BERT reader」：Chen et al. 2017 DrQA 的 reader 是 BiLSTM，不是 BERT",
+        "RETRO 宜标 2021 arXiv / ICML 2022，不宜与 Atlas 一并笼统写「2022 年」；来源 Guu et al. ICML 2020 / arXiv:2002.08909 正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1–3 伪代码/HF API 概念可跟做；注明 google/realm-orqa-nq-openqa 与 transformers v4.41+ 已删即可",
+        "踩坑具体：ICT 冷启动、top-k softmax、异步刷新、null doc——保留，但 ICT 数字须按 academic 修正",
+        "适用边界缺可靠量化：spaCy 70% 无出处且与论文不符；可改为「NER/日期抽取漏检的实体拿不到训练信号」并点明 single-hop / 原始 pretrain 不可复现"
+      ]
+    }
+  ],
+  "slug": "realm",
+  "area": "papers",
+  "status": "refined",
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正 T5/ORQA 分差、删除错误 ICT Table7 数字、spaCy→BERT tagger、DrQA reader、RETRO 年份；案例1补四步；适用边界去无出处量化",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 171,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 171,
+  "l1_pass": true
+}

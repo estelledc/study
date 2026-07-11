@@ -1,0 +1,142 @@
+{
+  "slug": "mmskills-multimodal",
+  "area": "papers",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "游戏小抄/菜谱配图类比贴合「文字情境+关键帧过程」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "state card / keyframes / embedding 有桥接，零基础大体能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例1只有前后对比摘要，缺「建卡→检索→塞上下文→执行」逐步拆解；案例3是对比表不是可跟做步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写成 Anonymous 不准确：arXiv:2605.13527 作者为 Kangning Zhang, Shuai Shao, Qingyao Li 等（非匿名）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「新手第一次就能做到 80 分」属营销式外推，宜改成「显著减少试错步数」并锚定论文实验表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "state card + multi-view keyframes + 检索复用与论文 multimodal procedural knowledge 主张一致，未歪曲核心"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例多为文本示意，缺可跟做的检索/拼卡伪代码或逐步流水线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：错帧毒化、state card 过长、分辨率失配、跨站过度合并"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 GUI/游戏/跨会话；不适用纯文本与一次性任务，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "游戏小抄/菜谱配图类比贴合「文字情境+关键帧过程」",
+        "state card / keyframes / embedding 有桥接，零基础大体能跟",
+        "案例1只有前后对比摘要，缺「建卡→检索→塞上下文→执行」逐步拆解；案例3是对比表不是可跟做步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源写成 Anonymous 不准确：arXiv:2605.13527 作者为 Kangning Zhang, Shuai Shao, Qingyao Li 等（非匿名）",
+        "「新手第一次就能做到 80 分」属营销式外推，宜改成「显著减少试错步数」并锚定论文实验表述",
+        "state card + multi-view keyframes + 检索复用与论文 multimodal procedural knowledge 主张一致，未歪曲核心"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例多为文本示意，缺可跟做的检索/拼卡伪代码或逐步流水线",
+        "踩坑具体：错帧毒化、state card 过长、分辨率失配、跨站过度合并",
+        "适用 GUI/游戏/跨会话；不适用纯文本与一次性任务，边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "status": "refined",
+  "lines": 154,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "summary": "修正作者为 Zhang et al.；弱化 80 分外推；案例1补建卡→检索→执行步骤；删 round#0 尾巴"
+  }
+}

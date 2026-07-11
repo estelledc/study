@@ -65,15 +65,15 @@ curl --http3 -v https://cloudflare.com/
 ### 案例 3：流级多路复用对抗丢包
 
 ```python
-# 用 aioquic 同时开 3 个 stream 并行下载
+# 用 aioquic 同时开 3 个 stream 并行下载（教学简化）
 async with connect("server", 443) as conn:
-    s1 = conn.create_stream()  # 下载 a.html
-    s2 = conn.create_stream()  # 下载 b.css
-    s3 = conn.create_stream()  # 下载 c.js
+    s1 = conn.create_stream()  # 独立水管：a.html
+    s2 = conn.create_stream()  # 独立水管：b.css
+    s3 = conn.create_stream()  # 独立水管：c.js
     # 模拟 1% 丢包：只影响命中的那个 stream
 ```
 
-如果 stream 1 的某个包丢了，stream 2 和 3 的数据照常处理。HTTP/2 over TCP 同样场景下三个全卡——这是 QUIC 解决的"传输层 head-of-line blocking"问题。
+每个 `create_stream` 对应一条独立请求水管。若 stream 1 某个包丢了，stream 2/3 照常处理；HTTP/2 over TCP 同样场景下三个全卡——这是 QUIC 解决的"传输层 head-of-line blocking"（队头阻塞）问题。
 
 实测在 1% 丢包率的网络下，HTTP/2 over TCP 的吞吐可能比 HTTP/1.1 多连接还差（Akamai 2017 测试），而 QUIC 仍能维持高效并发。
 
@@ -112,8 +112,8 @@ async with connect("server", 443) as conn:
 - **2016 年**：IETF QUIC 工作组成立，draft-00 公开
 - **2018 年**：Google 把 gQUIC 正式分叉给 IETF 标准化
 - **2021 年 5 月**：RFC 9000 / 9001 / 9002 三件套定稿
-- **2022 年 6 月**：RFC 9114 HTTP/3 发布，QUIC 成为 HTTP 默认 transport
-- **2023 年**：Cloudflare 报告 QUIC 流量占其总流量 30%+ 并持续上升
+- **2022 年 6 月**：RFC 9114 HTTP/3 发布，QUIC 成为 HTTP/3 的标准传输层（公网仍大量并存 HTTP/2）
+- **2023 年**：Cloudflare 观测 HTTP/3 全年约占请求两成，年中一度接近 30%
 
 QUIC 是 TCP 在 1981 年成为互联网传输支柱后第一次被严肃挑战。有意思的是，它没有"取代" TCP——浏览器仍同时维护 HTTP/1.1 / HTTP/2 / HTTP/3 三套实现，QUIC 走机会主义升级（Alt-Svc）。完全切换可能要 5-10 年甚至更久。
 

@@ -25,7 +25,7 @@ const user = await ofetch<User>("/api/users/1");
 
 - 为什么 Nuxt 文档几乎不再提 ofetch 这个名字——它被 framework 起了个别名 `$fetch` 接管了
 - 为什么大家不直接用原生 fetch——4xx 不抛错、没 retry、body 要手 stringify，业务代码最后都会自己写一个"半成品 ofetch"
-- 为什么 axios 在 Cloudflare Worker 跑不起来——它依赖 Node 的 http 模块，edge runtime 没有
+- 为什么经典 axios 在 Cloudflare Worker 上常要额外适配——默认偏 Node `http` 栈；ofetch 原生走标准 fetch，edge 上少一层胶水
 - 为什么 [[axios]] / [[ky]] / ofetch 三家在同一赛道却长得不像——选了不同的姿势包同一件事
 
 ## 核心要点
@@ -120,7 +120,7 @@ const data = await $fetch<User[]>("/api/users");
 - **2022-08**：UnJS 的 Pooya Parsa（@pi0，Nuxt core team lead）发布 v0.x，最早叫 ohmyfetch
 - **2022-10**：改名 ofetch，统一 UnJS 命名（h3 / ufo / destr / ohash 都是这种短名）
 - **2023**：1.x 稳定，跟着 Nuxt 3 正式版被默认推
-- **2026**：weekly downloads 4M+，stars 4k+——比起 axios 50M / 105k stars 还差一个量级，但增速快
+- **2026**：npm 周下载约数百万、GitHub stars 约数千量级——比起 axios 仍差一个数量级，但跟着 Nuxt 生态增速快
 
 ## 学到什么
 

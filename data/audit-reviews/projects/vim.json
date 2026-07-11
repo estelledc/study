@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 3 条「可组合性和重复性」缺一句日常类比（前两条有迷你语言/模式切换对照），可补「像录一段钢琴指法再反复弹」之类桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2003 年：Vim 7 引入 vimscript」有硬伤：Vim 7.0 发布于 2006 年，且 vimscript 早在更早版本就存在；Vim 7 是增强了 List/Dictionary 等，不是「引入」脚本语言"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「最初叫 Vi IMitation」可保留，但宜标明 1991 年公开的是早期版本、后改名 Vi IMproved，避免读者以为 1991 年就叫 Improved"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已有边界，可把「1-2 周适应期」再落到可观察信号（如前三天改配置文件会变慢、但 SSH 场景立刻有用）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点第 3 条「可组合性和重复性」缺一句日常类比（前两条有迷你语言/模式切换对照），可补「像录一段钢琴指法再反复弹」之类桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2003 年：Vim 7 引入 vimscript」有硬伤：Vim 7.0 发布于 2006 年，且 vimscript 早在更早版本就存在；Vim 7 是增强了 List/Dictionary 等，不是「引入」脚本语言",
+        "「最初叫 Vi IMitation」可保留，但宜标明 1991 年公开的是早期版本、后改名 Vi IMproved，避免读者以为 1991 年就叫 Improved"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用已有边界，可把「1-2 周适应期」再落到可观察信号（如前三天改配置文件会变慢、但 SSH 场景立刻有用）"
+      ]
+    }
+  ]
+}

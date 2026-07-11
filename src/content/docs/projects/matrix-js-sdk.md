@@ -27,7 +27,7 @@ client.on("Room.timeline", (event, room) => {
 client.startClient();   // 后台开 sync loop
 ```
 
-它是 **element-web**（Element 公司的 Web 客户端，几百万行 React）的唯一数据源，也是大量 Matrix 机器人 / IRC-Discord-Slack 桥接器的标准依赖。
+它是 **element-web**（Element 公司的大型 React Web 客户端）的主数据源，也是大量 Matrix 机器人 / IRC-Discord-Slack 桥接器的标准依赖。
 
 ## 为什么重要
 
@@ -58,7 +58,7 @@ SDK 围绕 `MatrixClient` 一个核心对象组织：
 
 - **历史顺序**：matrix-js-sdk **先存在**（2014-2015 年随协议诞生），matrix-rust-sdk 是 **2020 年后**才启动的"统一内核"项目
 - **运行环境**：js-sdk 跑在浏览器/Node.js；rust-sdk 通过 UniFFI/wasm-bindgen 同时给 Swift/Kotlin/JS 用
-- **当前定位**：js-sdk 是 **element-web 专属底座**；rust-sdk 是 **element-x（iOS/Android 新客户端）+ Fractal + iamb 的共享内核**
+- **当前定位**：js-sdk 是 **element-web 的主底座 / Web 端事实标准**；rust-sdk 是 **element-x（iOS/Android 新客户端）+ Fractal + iamb 的共享内核**
 - **加密层**：js-sdk 现在的 crypto **就是 rust-sdk crypto 的 WASM 封装**——上下游关系，不是替代关系
 - **未来走向**：官方策略是 rust-sdk 作主力，js-sdk 维持但优先级降低
 
@@ -93,7 +93,17 @@ client.on("Room.timeline", async (event, room) => {
 
 ### 案例 3：自建 Web 客户端 / 嵌入聊天组件
 
-想给自己的 Web 应用加聊天功能——`npm install matrix-js-sdk`，登录拿 token，订阅 `Room.timeline`，用任意前端框架渲染就行。不用自己造协议轮子。
+想给自己的 Web 应用加聊天功能——装 SDK、登录、订阅时间线即可，不用自己造协议轮子：
+
+```ts
+import { createClient } from "matrix-js-sdk";
+
+const client = createClient({ baseUrl: "https://matrix.example.com", accessToken, userId });
+client.on("Room.timeline", (event, room) => renderBubble(room, event));
+client.startClient({ initialSyncLimit: 20 });
+```
+
+任意前端框架只要在回调里改自己的 state 就能画气泡。
 
 ## 踩过的坑
 

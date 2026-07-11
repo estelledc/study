@@ -1,0 +1,105 @@
+{
+  "slug": "box2d",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点缺少编号类比，fixture、Step、CCD 等术语需要用零基础读者能懂的桥接句。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个实践案例原本只有描述和 bullet，缺少代码块与逐部分解释。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补充固定步长、ApplyLinearImpulseToCenter、Step 参数等可跟做的最小代码。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "删除反向链接之后的额外 H2，把稳定性建议消化到模板段落内。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "核心要点缺少编号类比，fixture、Step、CCD 等术语需要用零基础读者能懂的桥接句。",
+        "三个实践案例原本只有描述和 bullet，缺少代码块与逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "补充固定步长、ApplyLinearImpulseToCenter、Step 参数等可跟做的最小代码。",
+        "删除反向链接之后的额外 H2，把稳定性建议消化到模板段落内。"
+      ]
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 163,
+    "reasons": []
+  }
+}

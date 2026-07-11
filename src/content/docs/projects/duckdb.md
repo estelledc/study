@@ -63,7 +63,7 @@ result = duckdb.sql("SELECT category, avg(price) FROM 'sales.csv' GROUP BY categ
 duckdb mydb.duckdb -c "SELECT count(*) FROM read_parquet('s3://bucket/logs/*.parquet')"
 ```
 
-`read_parquet` 是 DuckDB 内置函数，支持通配符、HTTP、S3。不需要先下载、不需要 import，**SQL 就是 ETL**。这种用法在数据工程圈很受欢迎，常用来做"一次性大数据探索"。
+`read_parquet` 是 DuckDB 内置函数，支持通配符、HTTP、S3（查 S3 前需 `INSTALL httpfs; LOAD httpfs;` 并配好凭证）。不需要先下载、不需要 import，**SQL 就是 ETL**。常用来做"一次性大数据探索"。
 
 ### 案例三：和 Pandas 互操作
 
@@ -118,7 +118,7 @@ result = con.execute("""
 - **2021 年**：v0.2 发布，Python binding 成熟，开始在数据科学圈传播。
 - **2023 年**：v0.10 加 Iceberg 表格式支持，进入数据湖生态。
 - **2024 年 6 月**：v1.0 GA（Generally Available），稳定 API 和文件格式。
-- **2024 年 12 月**：DuckDB Cloud（managed 服务）公测，开始商业化。
+- **2022 年起**：独立公司 MotherDuck 推出基于 DuckDB 的托管云仓，把"本地 DuckDB → 云端同方言"做成商业产品。
 
 ## 学到什么
 
@@ -141,6 +141,8 @@ result = con.execute("""
 - [[sqlite]] —— 同样嵌入式，但偏事务；DuckDB 偏分析
 - [[postgresql]] —— DuckDB SQL 方言的主要参照，和 PG 单机分析做对比
 - [[clickhouse]] —— 同样列式向量化，但 CH 是分布式服务器、DuckDB 是嵌入式
+- [[arrow]] —— 内存列式标准；DuckDB 与 Pandas/Polars 互操作常经 Arrow
+- [[cstore-2005]] —— 列存分析的学术祖先；DuckDB 把同类思路做成嵌入式
 
 ## 反向链接
 

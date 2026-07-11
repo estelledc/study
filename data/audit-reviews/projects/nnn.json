@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Finder/冰箱/四窗口类比把极简哲学讲透了"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "装包、cd-on-quit、插件三案例有代码；案例 2 正文提 -c 与代码参数不一致，零基础会懵"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 jarun/nnn、C+ncurses、4-context、FIFO 插件协议描述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读与适用段 yazi 链接写成 github.com/sxyazri/yazi（404），正确是 sxyazi/yazi，须改正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 cd-on-quit：官方写法是 export NNN_TMPFILE 后 nnn，再 source \"$NNN_TMPFILE\"（文件内容是 cd 'path'），用 cd \"$(cat .lastd)\" 会失败；且正文写 -c、代码用 -dH，应对齐"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "trash-cli / NNN_TRASH、Windows 需 WSL 等踩坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用（SSH/嵌入式 vs 大量预览/Windows 原生）边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Finder/冰箱/四窗口类比把极简哲学讲透了",
+        "装包、cd-on-quit、插件三案例有代码；案例 2 正文提 -c 与代码参数不一致，零基础会懵"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "来源 jarun/nnn、C+ncurses、4-context、FIFO 插件协议描述合理",
+        "延伸阅读与适用段 yazi 链接写成 github.com/sxyazri/yazi（404），正确是 sxyazi/yazi，须改正"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 cd-on-quit：官方写法是 export NNN_TMPFILE 后 nnn，再 source \"$NNN_TMPFILE\"（文件内容是 cd 'path'），用 cd \"$(cat .lastd)\" 会失败；且正文写 -c、代码用 -dH，应对齐",
+        "trash-cli / NNN_TRASH、Windows 需 WSL 等踩坑具体",
+        "适用/不适用（SSH/嵌入式 vs 大量预览/Windows 原生）边界清楚"
+      ]
+    }
+  ]
+}

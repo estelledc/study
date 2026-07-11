@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Datasource / Panel / PromQL 有一定术语密度，但案例步骤够跟；可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「不用再配 Alertmanager」易被读成全面替代；宜保留「也可以接」并强调 Grafana 自带告警是另一条路径"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 的 Panel Alert Tab + WHEN avg() OF query(A,...) 是 Grafana 7 及更早经典告警写法；v8+ 统一告警（Unified Alerting）入口与规则形态已变，2026 读者按此跟做会对不上 UI"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2「Configuration → Data Sources」在新版常为 Connections / Data sources，建议改成版本中性描述"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Datasource / Panel / PromQL 有一定术语密度，但案例步骤够跟；可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「不用再配 Alertmanager」易被读成全面替代；宜保留「也可以接」并强调 Grafana 自带告警是另一条路径"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 的 Panel Alert Tab + WHEN avg() OF query(A,...) 是 Grafana 7 及更早经典告警写法；v8+ 统一告警（Unified Alerting）入口与规则形态已变，2026 读者按此跟做会对不上 UI",
+        "案例 2「Configuration → Data Sources」在新版常为 Connections / Data sources，建议改成版本中性描述"
+      ]
+    }
+  ]
+}

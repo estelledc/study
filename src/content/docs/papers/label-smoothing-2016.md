@@ -25,10 +25,10 @@ title: Label Smoothing — 别让模型对正确答案过度自信
 
 这个 trick 表面看像随手一改，实际影响极大：
 
-- **Transformer 论文 2017 直接引用**——`ε=0.1` 是默认配方
-- **BERT / GPT / T5 / LLaMA 预训练全部默认开启**
+- **Transformer 论文 2017 直接引用**——`ε=0.1` 写进默认训练配方
+- **多种后续大模型训练配方常采用**（机器翻译、部分 LM 预训练/SFT；并非每个 BERT/GPT 变体都"默认开启"）
 - **2019 年 Hinton 团队论文**证明：LS 不只是正则，还能让模型**校准（calibration）**——输出 0.9 的概率时，真的有 90% 是对的，而不是 99% 是对的（过自信）
-- 在大模型 RLHF / SFT 阶段也常用，避免模型对某个 token 钉死
+- 在大模型 RLHF / SFT 阶段也常见，用来避免模型对某个 token 钉死
 
 不理解 LS，下面这些事都没法解释：
 
@@ -79,12 +79,12 @@ def label_smooth_ce(logits, target, eps=0.1, K=None):
 
 ### 案例 2：Transformer 配方为什么是 ε=0.1
 
-Vaswani 2017 报告：
+Vaswani 2017 Table 3（En→De dev，base 模型）报告：
 
 | ε | PPL（越低越好） | BLEU（越高越好） |
 |---|----|------|
-| 0.0 | 4.92 | 25.3 |
-| **0.1** | 4.33 | **25.8** |
+| 0.0 | 4.67 | 25.3 |
+| **0.1** | **4.92** | **25.8** |
 
 PPL 反直觉地"变差"了——因为 LS 让模型不再对正确 token 输出 99.9%，PPL 自然抬高。但 **BLEU 涨了**，说明翻译质量真的更好。这告诉我们：**PPL 不是越低越好，要看下游指标**。
 
@@ -134,7 +134,7 @@ PPL 反直觉地"变差"了——因为 LS 让模型不再对正确 token 输出
 - **2016 年 CVPR**：论文正式发表，ImageNet 准确率 21.2% top-5 error，state-of-the-art
 - **2017 年**：Vaswani 团队写 Transformer 论文，照搬 LS、ε=0.1，从此变成 NLP 默认
 - **2019 年**：Müller-Kornblith-Hinton 在 NeurIPS 写《When Does Label Smoothing Help?》，**第一次系统证明 LS 改善校准但损害蒸馏**
-- **2020 年起**：BERT/GPT/T5/LLaMA 等大模型预训练全部开 LS
+- **2020 年起**：LS 成为许多大模型训练配方里的常驻开关（具体是否默认因模型/阶段而异）
 
 附录里的小段子，最后影响了一整代大模型。
 

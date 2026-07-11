@@ -1,0 +1,143 @@
+{
+  "action": "refine",
+  "average": 3.55,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「是什么」里 Horn 子句 / 归结首次出现偏陡，建议先用「如果…就能推出…」的日常规则句再贴 Prolog 语法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 讲的是 Tamarin 发现 TLS 降级，零基础读者会以为 ProVerif 没跑过 TLS；应点明同类工具分工或补一句 ProVerif 侧用法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 步骤清楚；案例 3/4 可各加一句「你输入什么 → 工具输出什么」的跟读提示"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「选择性归结让无界会话变可判定」过满：无界会话验证本身不可判定；ProVerif 靠抽象+归结在实践中可分析，但仍 incomplete / 可能不终止"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史「2008：Tamarin 出现」偏早；Tamarin 公开论文约 2012–2013，应改为 2012/2013"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1996-2000：Avispa」时间线偏松（AVISPA 项目更偏 2000s 中前期）；可改为「1990s 末–2000s 初：CASPER / Athena 等有界工具」以免硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 Horn 规则可跟做；案例 2/3 缺可粘贴的最小 .pv 片段，但不挡理解"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（DY 理想化 / incomplete / 状态 / 不终止）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；可顺带把「可判定」表述收成「可分析」以免工程师误以为总能停"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「是什么」里 Horn 子句 / 归结首次出现偏陡，建议先用「如果…就能推出…」的日常规则句再贴 Prolog 语法",
+        "案例 2 讲的是 Tamarin 发现 TLS 降级，零基础读者会以为 ProVerif 没跑过 TLS；应点明同类工具分工或补一句 ProVerif 侧用法",
+        "案例 1 步骤清楚；案例 3/4 可各加一句「你输入什么 → 工具输出什么」的跟读提示"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「选择性归结让无界会话变可判定」过满：无界会话验证本身不可判定；ProVerif 靠抽象+归结在实践中可分析，但仍 incomplete / 可能不终止",
+        "历史「2008：Tamarin 出现」偏早；Tamarin 公开论文约 2012–2013，应改为 2012/2013",
+        "「1996-2000：Avispa」时间线偏松（AVISPA 项目更偏 2000s 中前期）；可改为「1990s 末–2000s 初：CASPER / Athena 等有界工具」以免硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 Horn 规则可跟做；案例 2/3 缺可粘贴的最小 .pv 片段，但不挡理解",
+        "踩坑（DY 理想化 / incomplete / 状态 / 不终止）具体可操作",
+        "适用边界清楚；可顺带把「可判定」表述收成「可分析」以免工程师误以为总能停"
+      ]
+    }
+  ],
+  "slug": "proverif-2001",
+  "area": "papers",
+  "status": "refined",
+  "lines": 155,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.55,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：纠正「无界会话可判定」；Tamarin/有界工具时间线；案例补输入→输出跟读与 TLS 工具分工",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「BKT/KD-tree」「fp32」「recall@10」首次出现时补一句日常桥接，避免零基础在核心要点卡住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 把 SPANN 写成 ~10 GB：论文主实验在 SIFT1B 上与 DiskANN 对齐的是约 32GB 内存，应改为 ~32 GB 或注明「约原全内存方案的 10%」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩过的坑写「1B 约 64 万簇」偏小：论文按 posting list 大小限制与约 10–12% 向量数选簇数，应改成「百万级 / 约向量数的 10% 量级」并去掉不实的 64 万"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 的 DiskANN ~64 GB 与论文同内存对比设定不一致，改为与 SPANN 同约 32GB 对比或标明为粗略量级"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用里延迟写 5–50ms 偏保守：论文在约 32GB 内存下可到 ~1ms 达 90% recall，可把下限改成 1–10ms 量级以免误导选型"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「BKT/KD-tree」「fp32」「recall@10」首次出现时补一句日常桥接，避免零基础在核心要点卡住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 把 SPANN 写成 ~10 GB：论文主实验在 SIFT1B 上与 DiskANN 对齐的是约 32GB 内存，应改为 ~32 GB 或注明「约原全内存方案的 10%」",
+        "踩过的坑写「1B 约 64 万簇」偏小：论文按 posting list 大小限制与约 10–12% 向量数选簇数，应改成「百万级 / 约向量数的 10% 量级」并去掉不实的 64 万",
+        "案例 1 的 DiskANN ~64 GB 与论文同内存对比设定不一致，改为与 SPANN 同约 32GB 对比或标明为粗略量级"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用里延迟写 5–50ms 偏保守：论文在约 32GB 内存下可到 ~1ms 达 90% recall，可把下限改成 1–10ms 量级以免误导选型"
+      ]
+    }
+  ]
+}

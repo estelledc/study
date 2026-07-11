@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "合开店/确认单类比贴合；RTT 与依赖图有桥接；案例 3 偏概念对比、无逐步代码，但对论文笔记可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "EPaxos（Moraru/Andersen/Kaminsky, SOSP 2013）与 Janus（Mu/Nelson/Lloyd/Li）并非「同作者团队」；应改为依赖图思路的前驱/启发关系"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "不适用里「交互式事务 → 用 Calvin」不准确：Calvin 同样偏 one-shot/确定性排序；宜改为 Spanner / CockroachDB 等支持交互式的系统"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "RTT 对照与依赖图冲突例子可跟读；one-shot/冲突率/破环一致性踩坑具体；跨 DC vs 机房内边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "合开店/确认单类比贴合；RTT 与依赖图有桥接；案例 3 偏概念对比、无逐步代码，但对论文笔记可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "EPaxos（Moraru/Andersen/Kaminsky, SOSP 2013）与 Janus（Mu/Nelson/Lloyd/Li）并非「同作者团队」；应改为依赖图思路的前驱/启发关系",
+        "不适用里「交互式事务 → 用 Calvin」不准确：Calvin 同样偏 one-shot/确定性排序；宜改为 Spanner / CockroachDB 等支持交互式的系统"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "RTT 对照与依赖图冲突例子可跟读；one-shot/冲突率/破环一致性踩坑具体；跨 DC vs 机房内边界清楚"
+      ]
+    }
+  ]
+}

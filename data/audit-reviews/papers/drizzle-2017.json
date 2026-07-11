@@ -1,0 +1,86 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写「32 节点」与论文不符：SOSP 2017 实验是 128 台 EC2 r3.xlarge，应改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延迟数字歪曲：无 micro-batch 内优化时 Drizzle 中位延迟约 350ms、与 Flink 同档、比 Spark 约 3.6×；有优化时 Drizzle 可压到 <100ms 且快于 Flink/Spark。笔记写 Flink ~50ms、Spark ~1500ms、Drizzle ~100ms 不成立。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Flink 的 continuous processing 模式借鉴了它」过满：Flink 本就是 continuous operator；应改为 Structured Streaming continuous 等后续工作吸收了协调摊薄思路，勿说 Flink 借鉴。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 对比数字应按论文 Yahoo Streaming Benchmark（128 节点）重写，避免读者拿错基线调参。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写「32 节点」与论文不符：SOSP 2017 实验是 128 台 EC2 r3.xlarge，应改正。",
+        "延迟数字歪曲：无 micro-batch 内优化时 Drizzle 中位延迟约 350ms、与 Flink 同档、比 Spark 约 3.6×；有优化时 Drizzle 可压到 <100ms 且快于 Flink/Spark。笔记写 Flink ~50ms、Spark ~1500ms、Drizzle ~100ms 不成立。",
+        "「Flink 的 continuous processing 模式借鉴了它」过满：Flink 本就是 continuous operator；应改为 Structured Streaming continuous 等后续工作吸收了协调摊薄思路，勿说 Flink 借鉴。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 对比数字应按论文 Yahoo Streaming Benchmark（128 节点）重写，避免读者拿错基线调参。"
+      ]
+    }
+  ]
+}

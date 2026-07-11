@@ -24,10 +24,10 @@ cpu,host=server01 usage_idle=97.1 1672531320000000000
 
 不了解 InfluxDB，下面这些事都没法解释：
 
-- 工业 IoT 与监控领域第一选择：戴尔、IBM、思科都用它收设备状态
+- 工业 IoT / 运维监控里的常见选择之一（厂商案例里常能见到戴尔、IBM、思科等），不是唯一标准答案
 - 自带 InfluxQL（类 SQL）+ Flux（函数式）双查询语言，初学和重度分析两不误
 - 配套全家桶：Telegraf（采集 agent）+ Chronograf（看板）+ Kapacitor（告警）+ InfluxDB（存储），合称 TICK 栈
-- 与 [[grafana]]、[[prometheus]] 三足鼎立：Prometheus 偏拉模式短期监控，InfluxDB 偏长期存储 + 业务指标，Grafana 是大家共用的看板皮
+- 与 [[grafana]]、[[prometheus]] 常被一起比较：Prometheus 偏拉模式短期监控，InfluxDB 偏长期存储 + 业务指标，Grafana 是大家共用的看板皮
 
 ## 核心要点
 
@@ -98,7 +98,7 @@ from(bucket: "metrics")
 
 2. **Tag 高基数性能崩**：和 [[prometheus]] 一样的雷——把 user_id / trace_id 这种千万级唯一值塞进 tags，索引爆炸内存爆炸。tag 应该是有限维度（host / region / status），fields 才是真正的测量值。
 
-3. **Retention policy 默认无限留**：v1 默认 bucket 永不过期，磁盘几个月就爆。建库后第一件事改 retention，例如保留 30 天。
+3. **Retention 默认无限留**：v1 的 Retention Policy、v2 的 bucket retention 默认常是永不过期，磁盘几个月就爆。建库后第一件事改保留期，例如 30 天。
 
 4. **Flux 学习曲线**：函数式语法 + 管道操作 + 自创函数库，对只会 SQL 的人陌生。v3 把 SQL 加回来部分缓解。
 
@@ -119,9 +119,9 @@ from(bucket: "metrics")
 
 ## 历史小故事（可跳过）
 
-- **2013**：Paul Dix 创立 InfluxData，用 Go 写第一版 InfluxDB
-- **2014**：InfluxDB 1.0 开源，自带 TSM 引擎和 InfluxQL
-- **2018**：v2.0 重新设计——单一二进制变模块化，引入 Flux 函数式查询语言
+- **2013**：Paul Dix 创立 InfluxData，用 Go 写第一版 InfluxDB 并开源早期版本
+- **2016**：InfluxDB 1.0 GA（约 9 月），TSM 引擎与 InfluxQL 成为主线
+- **2020**：v2.0 GA（约 11 月）——模块化与 Flux 函数式查询落地；2018–2019 多为设计/预览期
 - **2023**：InfluxDB 3.0 公布——底层用 Rust 重写为 IOx，存储改 Apache Parquet + DataFusion 查询，对接 Iceberg 表格式
 - **2024**：IOx 同步推 Cloud 与 OSS 版，部分商业化（无限 cardinality 等高级特性留给云版）
 

@@ -1,0 +1,142 @@
+{
+  "slug": "panel",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "万能转接头类比贴合多后端 dashboard"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Param / bind / Pane 有桥接，可读"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 FastListTemplate 缺逐步解释；缺「历史小故事」段，零基础少时间线锚点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/holoviz/panel 正确；Philipp Rudiger / HoloViz / 1.0 GA 叙述与公开资料一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "与 Streamlit 整段重跑、Dash 单后端对比无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "可补简短历史时间线（2018 发起 → 2019 公开 → 2023 1.0）以免只靠开篇一句"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "pn.bind / Tabs / FastListTemplate / notebook 直出示例概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：autoreload、matplotlib trigger、session 全局变量、bind vs depends"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺「反向链接」占位；建议补历史段后保持 150–200 行"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "万能转接头类比贴合多后端 dashboard",
+        "Param / bind / Pane 有桥接，可读",
+        "案例 2 FastListTemplate 缺逐步解释；缺「历史小故事」段，零基础少时间线锚点"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 github.com/holoviz/panel 正确；Philipp Rudiger / HoloViz / 1.0 GA 叙述与公开资料一致",
+        "与 Streamlit 整段重跑、Dash 单后端对比无硬伤",
+        "可补简短历史时间线（2018 发起 → 2019 公开 → 2023 1.0）以免只靠开篇一句"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "pn.bind / Tabs / FastListTemplate / notebook 直出示例概念正确可跟做",
+        "踩坑具体：autoreload、matplotlib trigger、session 全局变量、bind vs depends",
+        "缺「反向链接」占位；建议补历史段后保持 150–200 行"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 185,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 185,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "summary": "案例2补FastListTemplate逐步读法；补历史时间线与反向链接占位"
+  }
+}

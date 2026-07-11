@@ -69,7 +69,13 @@ docker CLI（docker/cli）
   → containerd shim → runc → clone() + 各种 namespace
 ```
 
-读 Moby 源码就是沿这条链一层层 grep 函数名。`api/server/router/container/container_routes.go` 是入口。
+读 Moby 源码可按这三步跟：
+
+1. 打开 `api/server/router/container/container_routes.go`，找到 `postContainersCreate` / `postContainersStart`
+2. 跟进 `daemon/create.go`、`daemon/start.go` 看业务逻辑
+3. 再搜 containerd client 调用，理解"真正起进程"已交给下一层
+
+`api/server/router/container/` 是入口；沿函数名 grep 即可走完这条链。
 
 ### 案例 2：libnetwork 的 bridge 模式
 
@@ -85,9 +91,9 @@ docker run -d --name b alpine ping a
 ```bash
 git clone https://github.com/moby/moby.git
 cd moby
-# 官方推荐用 dind 容器编译，不污染宿主
+# 需本机已装 Docker；官方推荐用 dind 容器编译，不污染宿主
 make BIND_DIR=. shell
-# 容器里：
+# 容器里（首次较慢，要拉依赖）：
 make binary
 # 产物在 bundles/binary-daemon/dockerd
 ```
@@ -98,25 +104,32 @@ make binary
 
 1. **`github.com/docker/docker` 不是它的真名**——2017 年改成 `moby/moby` 后，老链接靠 GitHub redirect 维持，但 Go module path 是 `github.com/docker/docker`（兼容历史）。新人写 `import` 会被这两个路径搞混
 2. **CLI 和 daemon 是两个仓库**——想改 `docker run` 的参数解析在 [docker/cli](https://github.com/docker/cli)，想改实际行为在 moby/moby
-3. **Moby 不再含 swarm**——swarm classic 编排已废弃，K8s 是事实标准；如果你在找 K8s 替代，看错仓库了
+3. **swarm classic ≠ Swarm mode**——旧版独立 swarm 编排已废弃；dockerd 里仍有 Swarm mode，但生产编排主流是 K8s，别把 Moby 当 K8s 替代品来读
 4. **Docker Desktop 的私货**——Mac/Windows 版的虚拟机层、文件共享、k8s 集成都是 Docker Inc 闭源加在 Moby 之上的；只读 Moby 看不到这部分
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 想读"docker 命令到底怎么跑"的源码学习者
-- 给 Docker 引擎提 PR 修 bug
-- 排查线上 dockerd 异常（卡死、内存涨、网络丢）需要看源码定位
-- 学大型 Go daemon 的工程范本
-- 写自己的容器管理工具，需要参考 dockerd 怎么和 containerd 打交道
+- 想读"docker 命令到底怎么跑"的源码学习者（愿意翻 Go 仓库）
+- 给 Docker 引擎提 PR / 修 dockerd bug
+- 排查线上 dockerd 卡死、内存涨、网络丢，需要看源码定位
+- 学大型 Go daemon 工程范本；或写容器工具时参考 dockerd↔containerd 交互
 
 **不适用**：
 
-- 只想用 Docker 不读源码——看官方文档 [docs.docker.com](https://docs.docker.com)
-- 找轻量替代品——直接用 [[containerd]] / runc / podman，不需要 Moby 这层
-- K8s 编排——读 [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)
+- 只想用 Docker 不读源码——看 [docs.docker.com](https://docs.docker.com)
+- 找轻量运行时——直接用 [[containerd]] / runc / podman，不必经 Moby
+- K8s 编排（1.24+ 默认不经 dockerd）——读 kubernetes 仓库
 - 学 BuildKit / containerd 内部——它们是独立仓库，Moby 只是调用方
+
+## 历史小故事（可跳过）
+
+- **2013 年**：dotCloud 开源 Docker，引擎与 CLI 同仓，品牌即仓库名 `docker/docker`
+- **2016-2017 年**：拆出 containerd、runc 等，推向 OCI/CNCF；引擎不再是唯一实现
+- **2017 年**：DockerCon 宣布 **Moby Project**——品牌与上游分离，`docker/docker` 迁到 `moby/moby`
+- **2018 年后**：BuildKit 成为新 `docker build`；K8s 逐步绕开 dockerd，直连 containerd
+- **2023 年**：libnetwork 合回 moby/moby；Moby 更像装配层，核心能力多在外部仓库
 
 ## 学到什么
 

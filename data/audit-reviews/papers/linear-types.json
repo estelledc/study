@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "博物馆借展品类比生动；三种纪律表格帮助建立坐标"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇把 Rust String 直接叫「线性」易与后文仿射表冲突，需一句桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Rust move / Haskell %1 -> / 文件 close 三案例步骤清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Rust ownership 是仿射（允许 drop/用 0 次），不是严格线性；开篇「String 是线性资源」应改为仿射或注明工程近似"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几乎不会内存泄漏」过强：Rc 环、mem::forget 仍可泄漏，宜改为 use-after-free/data race 为主"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2018 年 Linear Haskell 进入 GHC 9」时间线混淆：提案约 2018，GHC 9.0 发布于 2021"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Wadler 1990 / Girard 1987 / Clean uniqueness 主线正确；borrow 非 Wadler 原文的说明好"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Rust/Haskell 片段概念正确可跟读；案例 3 伪代码教学意图清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "strict linear vs affine、borrow、早 return、partial borrow、Ur a 五条坑工程向很强"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界合理（系统/资源 vs CRUD/脚本/GUI）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "博物馆借展品类比生动；三种纪律表格帮助建立坐标",
+        "开篇把 Rust String 直接叫「线性」易与后文仿射表冲突，需一句桥接",
+        "Rust move / Haskell %1 -> / 文件 close 三案例步骤清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Rust ownership 是仿射（允许 drop/用 0 次），不是严格线性；开篇「String 是线性资源」应改为仿射或注明工程近似",
+        "「几乎不会内存泄漏」过强：Rc 环、mem::forget 仍可泄漏，宜改为 use-after-free/data race 为主",
+        "「2018 年 Linear Haskell 进入 GHC 9」时间线混淆：提案约 2018，GHC 9.0 发布于 2021",
+        "Wadler 1990 / Girard 1987 / Clean uniqueness 主线正确；borrow 非 Wadler 原文的说明好"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Rust/Haskell 片段概念正确可跟读；案例 3 伪代码教学意图清楚",
+        "strict linear vs affine、borrow、早 return、partial borrow、Ur a 五条坑工程向很强",
+        "适用/不适用边界合理（系统/资源 vs CRUD/脚本/GUI）"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 缺「逐部分解释」分步拆解，零基础不易跟上 Ray chunk / fallback 序列化代价"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「100% 语义对齐（覆盖率约 90%）」自相矛盾，应改成「目标语义对齐，当前 API 覆盖约 90%，其余 fallback」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「OpaQ（Opaque Query Compiler）」名称查无出处；Modin/VLDB 2020 讲的是 Query Compiler + dataframe algebra，应改正名或删掉 OpaQ"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「100% 语义对齐」与「覆盖率约 90%」并列表述会歪曲 drop-in 承诺的真实边界"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例数字（12 秒 / 4 分钟）宜标明为示意量级，避免被当成可复现基准"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2 缺「逐部分解释」分步拆解，零基础不易跟上 Ray chunk / fallback 序列化代价",
+        "「100% 语义对齐（覆盖率约 90%）」自相矛盾，应改成「目标语义对齐，当前 API 覆盖约 90%，其余 fallback」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「OpaQ（Opaque Query Compiler）」名称查无出处；Modin/VLDB 2020 讲的是 Query Compiler + dataframe algebra，应改正名或删掉 OpaQ",
+        "「100% 语义对齐」与「覆盖率约 90%」并列表述会歪曲 drop-in 承诺的真实边界"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例数字（12 秒 / 4 分钟）宜标明为示意量级，避免被当成可复现基准"
+      ]
+    }
+  ]
+}

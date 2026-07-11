@@ -56,19 +56,13 @@ RisingWave 的世界由五个部件咬合：
 
 ### 案例 1：替换 Flink + Kafka + Redis 三件套
 
-传统实时大屏架构通常长这样：
+传统实时大屏：Kafka 收事件 → Flink 聚合写 Redis → 应用查 Redis。迁到 RisingWave 后三步：
 
-- Kafka 收业务事件
-- Flink 跑聚合写回 Kafka 或 Redis
-- 应用从 Redis 查最新指标
+1. `CREATE SOURCE` 仍接 Kafka（上游不用换）。
+2. 一条 `CREATE MATERIALIZED VIEW` 替代整个 Flink job + Redis 写入。
+3. 应用用 PG 驱动 `SELECT` 物化视图，BI/ORM 不用换协议。
 
-迁到 RisingWave 后：
-
-- Kafka 还是 Kafka（source 接进来）
-- 一条 `CREATE MATERIALIZED VIEW` 替代整个 Flink job
-- 应用直接用 PG 驱动 `SELECT` 物化视图
-
-**省掉的不是代码量，是运维**：Flink 状态恢复要拉满 RocksDB checkpoint，扩容要重 rescale，作业依赖图要自己排；RisingWave 把这些都收进引擎。
+**省掉的是运维**：Flink 状态恢复、rescale、作业依赖图都收进引擎；延迟目标通常是百毫秒级读最新聚合，不是亚毫秒点查。
 
 ### 案例 2：物化视图能链起来
 
@@ -80,15 +74,19 @@ CREATE MATERIALIZED VIEW big_spenders AS
   SELECT user_id FROM user_total WHERE total > 10000;
 ```
 
-第二个 MV 建在第一个 MV 上。数据流过来时，**两层 MV 都会增量更新**，不需要你手动调度。这种"MV 上叠 MV"的能力是流式数据库相对传统 KV 缓存的杀手锏。
+**逐部分解释**：
+
+- 第一层 MV 对 `orders` 做增量 `SUM`，结果常驻引擎，不是定时重算。
+- 第二层 MV 读的是上一层 MV：`total` 一变，`big_spenders` 跟着增量更新。
+- 你不用写「先刷缓存再刷名单」的调度；流式数据库把缓存一致性下沉到引擎。
 
 ### 案例 3：从 Postgres 拉 CDC 进来做实时分析
 
 ```sql
 CREATE SOURCE pg_orders
   WITH (connector='postgres-cdc',
-        hostname='...', port='5432',
-        username='...', password='...',
+        hostname='db.example', port='5432',
+        username='rw', password='***',
         database.name='shop', table.name='public.orders',
         slot.name='rw_slot');
 
@@ -98,12 +96,15 @@ CREATE MATERIALIZED VIEW hourly_gmv AS
   FROM pg_orders GROUP BY 1;
 ```
 
-业务库改一行，几百毫秒后 `hourly_gmv` 就更新了——**没有 ETL，没有定时调度**。这是 RisingWave 最常被采用的场景：业务库不动，旁路接出实时分析视图。
+**逐部分解释**：
+
+- `postgres-cdc` 订阅业务库 WAL（逻辑复制槽 `rw_slot`），行变更变成流入事件。
+- `hourly_gmv` 按小时增量聚合；业务库改一行，通常几百毫秒内视图更新。
+- 业务库仍只做 OLTP；分析旁路接出，**没有 ETL 批任务、没有 crontab**。
 
 ### 案例 4：什么时候 RisingWave 不合适
 
-如果你要做的是"频繁 UPDATE 单行"——比如订单状态从 `pending` 改 `paid`——这是 OLTP 工作负载，RisingWave 不接。它的写入路径是 `INSERT` 或 `source 接入`，更新通过 source 的 CDC（Debezium 输出）流进来。把它当 MySQL 用会撞墙。
-
+如果你要做的是"频繁 UPDATE 单行"——比如订单状态从 `pending` 改 `paid`——这是 OLTP，RisingWave 不接。写入路径是 `INSERT` 或 source/CDC 流入；把它当 MySQL 用会撞墙。
 ## 踩过的坑
 
 1. **Postgres 兼容是 wire 层，不是函数完全集**：能连 psql 不代表所有 PG 内置函数都有。复杂 JSON 函数、某些 array 操作、特定 procedural 扩展可能缺。先翻官方"compatibility"页再迁。
@@ -118,8 +119,8 @@ CREATE MATERIALIZED VIEW hourly_gmv AS
 
 **适用**：
 
-- 实时大屏 / 实时风控 / 实时推荐特征——典型的"流入 + 增量聚合 + 低延迟查"
-- 替换 Flink + Kafka + Redis/Cassandra 的三件套架构
+- 实时大屏 / 实时风控 / 实时推荐特征——典型的"流入 + 增量聚合 + 百毫秒级读最新结果"
+- 替换 Flink + Kafka + Redis/Cassandra 的三件套架构（状态常在 GB～TB 级更划算）
 - 想用 SQL 写流处理、不想写 Java DataStream
 - 已有 Postgres 生态（BI / ORM / 工具），想加流式能力但不换协议
 
@@ -134,9 +135,9 @@ CREATE MATERIALIZED VIEW hourly_gmv AS
 
 - **2018 ~ 2020**：Materialize（差分数据流方向）和 ksqlDB（Kafka 内置流引擎）是最早把"流式 SQL"做成产品的两家。前者偏研究、单节点；后者绑死 Kafka。
 - **2021**：吴英骏（Yingjun Wu，前 AWS Redshift / IBM Almaden）创立 Singularity Data，目标是"云原生的 Materialize"。早期项目代号就是 RisingWave。
-- **2022 年 2 月**：仓库公开，Apache 2.0。架构定调"存算分离 + 共享存储 + Rust 实现"，跟 Materialize 的差分数据流路线分道。
-- **2023 ~ 2024**：1.0 正式版、Hummock 存储稳定、CDC connector 矩阵补全；公司改名 RisingWave Labs。
-- **2025 起**：进入生产采用期，国内多家互联网公司用它替换实时数据栈的"Flink + KV"组合。
+- **2022 年 4 月**：RisingWave 以 Apache 2.0 正式开源（仓库约年初创建）。架构定调"存算分离 + 共享存储 + Rust 实现"，跟 Materialize 的差分数据流路线分道。
+- **2023 ~ 2024**：1.0 正式版、Hummock 存储稳定、CDC connector 矩阵补全；公司从 Singularity Data 改名 RisingWave Labs。
+- **2025 起**：进入生产采用期，多家公司用它替换实时数据栈的"Flink + KV"组合。
 
 ## 学到什么
 
@@ -149,7 +150,7 @@ CREATE MATERIALIZED VIEW hourly_gmv AS
 
 - 官方架构文档：[RisingWave Architecture](https://docs.risingwave.com/docs/current/architecture/)（一张图看清五大组件）
 - 创始人 Yingjun Wu 写的对比文：[Streaming Databases: A Comprehensive Guide](https://www.risingwave.com/blog/)（长文综述这个赛道）
-- 主仓库：[risingwavelabs/risingwave on GitHub](https://github.com/risingwavelabs/risingwave)（Rust，30k+ star）
+- 主仓库：[risingwavelabs/risingwave on GitHub](https://github.com/risingwavelabs/risingwave)（Rust，约 9k+ star）
 - [[kafka]] —— 最常用的上游 source；理解 Kafka 才能用好 RisingWave 的 source 接入
 - [[flink-2015]] —— 流处理的上一代标准；对比着读才知道 RisingWave 解的痛在哪
 

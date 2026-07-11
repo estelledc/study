@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工程绘图桌类比贴切；DXF/图层/相对坐标有桥接；dxf2pdf、正方形、变量画圆三案例均有逐步解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事写『GitHub stars 量级约 2.2k』明显偏低；当前仓库约 6.1k，应更正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "QCAD 社区版演化、Qt、GPLv2、dxf2pdf/dxf2png 与官方 README 一致；命令行示例口径合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "dxf2* 与 command line 坐标/变量示例可跟做；相对坐标 @、layer 0、macOS quarantine、Qt 分支踩坑具体；2D vs 3D 边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "工程绘图桌类比贴切；DXF/图层/相对坐标有桥接；dxf2pdf、正方形、变量画圆三案例均有逐步解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史小故事写『GitHub stars 量级约 2.2k』明显偏低；当前仓库约 6.1k，应更正。",
+        "QCAD 社区版演化、Qt、GPLv2、dxf2pdf/dxf2png 与官方 README 一致；命令行示例口径合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "dxf2* 与 command line 坐标/变量示例可跟做；相对坐标 @、layer 0、macOS quarantine、Qt 分支踩坑具体；2D vs 3D 边界清楚。"
+      ]
+    }
+  ]
+}

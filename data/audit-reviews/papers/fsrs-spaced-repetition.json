@@ -1,0 +1,103 @@
+{
+  "slug": "fsrs-spaced-repetition",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "健身教练/血量类比生动；DSR 有桥接；核心公式与案例 1 写法不一致，会让新手以为两个都对。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Anki 23.10 起 FSRS 是内置可选调度器，需在牌组选项里手动开启；SM-2 仍是默认，不应写成『默认调度器』。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写 R=(1+t/(9S))^-1，案例 1 写 (1+FACTOR*t/S)^-0.5（FACTOR=19/81）；应统一为 FSRS-5 公式并注明教学简化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 与案例 3 / 核心要点遗忘曲线公式不一致，跟做会对不上数值；统一 FACTOR/DECAY 后再给示例输出。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "立即再点 Good / Again 砍 S / R_target=0.85 踩坑具体；适用边界有 reviews 数量门槛。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "健身教练/血量类比生动；DSR 有桥接；核心公式与案例 1 写法不一致，会让新手以为两个都对。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Anki 23.10 起 FSRS 是内置可选调度器，需在牌组选项里手动开启；SM-2 仍是默认，不应写成『默认调度器』。",
+        "核心要点写 R=(1+t/(9S))^-1，案例 1 写 (1+FACTOR*t/S)^-0.5（FACTOR=19/81）；应统一为 FSRS-5 公式并注明教学简化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 与案例 3 / 核心要点遗忘曲线公式不一致，跟做会对不上数值；统一 FACTOR/DECAY 后再给示例输出。",
+        "立即再点 Good / Again 砍 S / R_target=0.85 踩坑具体；适用边界有 reviews 数量门槛。"
+      ]
+    }
+  ],
+  "refine_round": 1,
+  "sections_modified": [
+    "## 是什么",
+    "## 核心要点",
+    "## 实践案例",
+    "## 历史小故事（可跳过）"
+  ],
+  "unresolved_hints": []
+}

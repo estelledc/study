@@ -46,7 +46,7 @@ ARC 干的事拆成 **三层**：
 ```bash
 NAMESPACE='arc-systems'
 helm install arc \
-  --namespace '${NAMESPACE}' --create-namespace \
+  --namespace "${NAMESPACE}" --create-namespace \
   oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller
 ```
 
@@ -54,11 +54,13 @@ helm install arc \
 
 ### 案例 2：起一个 GPU runner scale-set
 
+先用 GitHub App 私钥在 `arc-runners` 命名空间建好 `arc-github-app` secret，再把它交给 scale-set chart：
+
 ```bash
 helm install gpu-runners \
   --namespace 'arc-runners' --create-namespace \
   --set githubConfigUrl='https://github.com/my-org/my-repo' \
-  --set githubConfigSecret.github_token='ghp_xxx' \
+  --set githubConfigSecret='arc-github-app' \
   --set minRunners=0 \
   --set maxRunners=4 \
   --set 'template.spec.nodeSelector.nvidia\.com/gpu.product'='A100' \

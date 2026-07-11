@@ -1,0 +1,141 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "写文章/拼图花色类比把「图像 token + 自回归」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "FID / VQGAN / 码本首次出现有白话桥接；encoder-decoder 对入门仍偏密但可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例结构清楚：scaling 表、AR vs 扩散对照、PartiPrompts 寿命——可跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「750M→3B 跳得最大」与表内数字矛盾：14.10→10.71（Δ3.39）大于 10.71→8.10（Δ2.61）；应改为 350M→750M 降幅最大，或写「持续下降、大模型端收益递减」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑「训练用 1024 个 TPUv4 chip」在论文/项目页未给出该芯片数；宜改为「Lingvo + GSPMD 跑在大规模 Cloud TPUv4 上」等可核对表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "FID 表 14.10/10.71/8.10/7.23、码本 8192、PartiPrompts 12×11、WDSR 超分 15M/30M、arXiv 2206.10789 均与论文一致——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "管线 ASCII / token 串行代价概念正确可跟；案例 1 scaling 数字与论文一致可核对"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里「1024 个 TPUv4」不可复现核对——工程读者会当硬指标；改为「大规模 TPUv4 + GSPMD」并保留「开源难复现 20B」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（4G 蒸馏扩散、16384 token、主模型 256 直出 + 可选超分）——保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "写文章/拼图花色类比把「图像 token + 自回归」讲透，零基础直觉强",
+        "FID / VQGAN / 码本首次出现有白话桥接；encoder-decoder 对入门仍偏密但可跟",
+        "三案例结构清楚：scaling 表、AR vs 扩散对照、PartiPrompts 寿命——可跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1「750M→3B 跳得最大」与表内数字矛盾：14.10→10.71（Δ3.39）大于 10.71→8.10（Δ2.61）；应改为 350M→750M 降幅最大，或写「持续下降、大模型端收益递减」",
+        "踩坑「训练用 1024 个 TPUv4 chip」在论文/项目页未给出该芯片数；宜改为「Lingvo + GSPMD 跑在大规模 Cloud TPUv4 上」等可核对表述",
+        "FID 表 14.10/10.71/8.10/7.23、码本 8192、PartiPrompts 12×11、WDSR 超分 15M/30M、arXiv 2206.10789 均与论文一致——保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "管线 ASCII / token 串行代价概念正确可跟；案例 1 scaling 数字与论文一致可核对",
+        "踩坑里「1024 个 TPUv4」不可复现核对——工程读者会当硬指标；改为「大规模 TPUv4 + GSPMD」并保留「开源难复现 20B」",
+        "适用/不适用边界清楚（4G 蒸馏扩散、16384 token、主模型 256 直出 + 可选超分）——保留"
+      ]
+    }
+  ],
+  "slug": "parti-2022",
+  "area": "papers",
+  "status": "refined",
+  "lines": 160,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：案例1「750M→3B跳最大」与表内Δ矛盾；踩坑「1024 TPUv4」论文未给出——改为 GSPMD/Cloud TPUv4",
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

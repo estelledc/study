@@ -38,7 +38,7 @@ PA 和 PC 各自的核心机制可以拆成 **三步**：
 
 3. **恢复时按默认值回答**：协调者崩溃重启后，参与者来问"事务 T 怎么样了"，协调者查日志没找到——按约定回 abort（PA）或 commit（PC）。
 
-三步加起来叫 **PA/PC 协议簇**。R* 论文还把它们组合到 **Tree of Processes**（树形协调结构）里，让中间节点同时当协调者和参与者。
+三步加起来叫 **PA/PC 协议簇**。R* 论文还把它们组合到 **Tree of Processes**（树形协调结构）里——中间节点**既当爹又当儿子**：对上是参与者投票，对下是协调者拍板。
 
 ## 实践案例
 
@@ -83,7 +83,7 @@ PREPARE TRANSACTION 'tx-42';   -- 这条会 force 写日志，记录参与者
 COMMIT PREPARED 'tx-42';        -- 这条不需要等所有 ACK
 ```
 
-这个"PREPARE 时就 force 写参与者列表"的设计，就是 PC 的直接后裔。CockroachDB 在每个 range 上跑 2PC、Spanner 跨 Paxos 组协调事务，骨架都还是 PA/PC——只是把"日志"换成了 Paxos 复制日志。
+这个"PREPARE 时就 force 写参与者列表"的设计，教学上可看作 PC 思路的工业对照（看日志里有没有参与者名单）。CockroachDB 在每个 range 上跑 2PC、Spanner 跨 Paxos 组协调事务，骨架仍是原子提交——把"本地 force 日志"换成复制日志，并沿用「默认共识省往返」一类优化，不必当成 R* 状态机的逐字移植。
 
 ## 踩过的坑
 
@@ -113,13 +113,13 @@ COMMIT PREPARED 'tx-42';        -- 这条不需要等所有 ACK
 
 ## 历史小故事（可跳过）
 
-- **1976 年**：IBM 圣何塞 System R 项目跑出第一个完整 SQL 关系数据库；Jim Gray 同期写出原版 2PC（"Notes on Database Operating Systems"）。
-- **1980 年**：System R 团队启动 R* 项目，把关系模型扩展到多机分布式；Mohan、Lindsay 是核心作者。
-- **1986 年**：R* 第二代，论文 "Transaction Management in the R*" 发表在 ACM TODS——首次系统化提出 PA/PC 优化和 Tree of Processes 模型。
-- **1992 年**：Mohan 在 ARIES 论文里把这套日志思想推到极致，让恢复算法成熟。
-- **2012 年起**：Spanner、CockroachDB、TiDB 把 PA/PC 嫁接到 Paxos / Raft 复制日志上，做出现代分布式数据库。
+- **1976 年**：IBM 圣何塞 System R 跑出第一个完整 SQL 关系数据库，事务与恢复的工程基础在这里成型。
+- **1978 年**：Jim Gray《Notes on Data Base Operating Systems》（LNCS；稿约约 1977）系统讲清原版 2PC，成为后续分布式提交的对照基线。
+- **1980–1986 年**：System R 团队做 R* 多机扩展；1986 年 Mohan、Lindsay、Obermarck 在 ACM TODS 发表 "Transaction Management in the R*"，系统化提出 PA/PC 与 Tree of Processes。
+- **1992 年**：Mohan 在 ARIES 论文里把日志与恢复思想推到极致。
+- **2012 年起**：Spanner、CockroachDB、TiDB 等在 2PC 骨架上嫁接 Paxos / Raft 复制日志；教学上常对照 PA/PC 的「默认共识省 I/O」思路，而非逐字复刻 R* 状态机。
 
-之后 40 年，所有支持分布式事务的关系型系统都没逃过这套思想。
+之后 40 年，支持分布式事务的关系型系统仍绕不开这套提交与恢复语义。
 
 ## 学到什么
 

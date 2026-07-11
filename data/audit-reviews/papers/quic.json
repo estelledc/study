@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "换 SIM 卡 / 独立水管 / 通讯录『老王』类比把连接迁移与 stream 隔离讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "RTT、PSK、Connection ID 有白话桥接，零基础能跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 aioquic 伪代码偏短，可再补一句『每个 create_stream 对应一个独立请求水管』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史『Cloudflare 报告 QUIC 流量占其总流量 30%+』偏高：2023 Year in Review 全球 HTTP/3 约 20%；中段博客曾见 ~28–30% 峰值，宜改成『一度接近 30% / 全年约两成』并避免写成持续 30%+"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『RFC 9114…QUIC 成为 HTTP 默认 transport』过满：HTTP/3 以 QUIC 为传输层，但公网默认仍大量 HTTP/2；应改为『HTTP/3 的标准传输层』而非『HTTP 默认』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 RFC 9000 Iyengar & Thomson / 9001 / 9002（2021-05）与 HTTP/3 RFC 9114（2022-06）引用正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "curl --http3 / 连接迁移叙事 / aioquic 多 stream 概念可跟做；aioquic API 属教学简化可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：UDP 被墙、用户态 CPU、0-RTT 重放、SSLKEYLOGFILE——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有移动切网、企业禁 UDP、嵌入式 CPU，量化够用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "换 SIM 卡 / 独立水管 / 通讯录『老王』类比把连接迁移与 stream 隔离讲透",
+        "RTT、PSK、Connection ID 有白话桥接，零基础能跟住",
+        "案例 3 aioquic 伪代码偏短，可再补一句『每个 create_stream 对应一个独立请求水管』"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史『Cloudflare 报告 QUIC 流量占其总流量 30%+』偏高：2023 Year in Review 全球 HTTP/3 约 20%；中段博客曾见 ~28–30% 峰值，宜改成『一度接近 30% / 全年约两成』并避免写成持续 30%+",
+        "『RFC 9114…QUIC 成为 HTTP 默认 transport』过满：HTTP/3 以 QUIC 为传输层，但公网默认仍大量 HTTP/2；应改为『HTTP/3 的标准传输层』而非『HTTP 默认』",
+        "来源 RFC 9000 Iyengar & Thomson / 9001 / 9002（2021-05）与 HTTP/3 RFC 9114（2022-06）引用正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "curl --http3 / 连接迁移叙事 / aioquic 多 stream 概念可跟做；aioquic API 属教学简化可接受",
+        "踩坑具体可操作：UDP 被墙、用户态 CPU、0-RTT 重放、SSLKEYLOGFILE——保留",
+        "适用边界有移动切网、企业禁 UDP、嵌入式 CPU，量化够用"
+      ]
+    }
+  ]
+}

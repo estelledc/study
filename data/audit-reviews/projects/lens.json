@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "扩展 API 示例对零基础略陡，但案例 1 的 kubeconfig 步骤足够跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "MIT→BSL、OpenLens fork、Headlamp 入 CNCF 沙箱的主线与公开叙事一致；来源写 README 略宽但仍可核对。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "强制登录、BSL 边界、Electron 内存、exec plugin PATH 都是可操作踩坑；适用/不适用量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "扩展 API 示例对零基础略陡，但案例 1 的 kubeconfig 步骤足够跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "MIT→BSL、OpenLens fork、Headlamp 入 CNCF 沙箱的主线与公开叙事一致；来源写 README 略宽但仍可核对。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "强制登录、BSL 边界、Electron 内存、exec plugin PATH 都是可操作踩坑；适用/不适用量化清楚。"
+      ]
+    }
+  ]
+}

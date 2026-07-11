@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇「替代 TeamSpeak 的开源语音」类比清楚，客户端/服务端拆分有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例多为场景叙述，缺逐步可跟做命令（如 murmur 最小 ini / 客户端连接步骤）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 反向链接 占位；多出「如何快速上手」「一句话总结」偏离 12 段模板，建议收束"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2010 年从早期编码切到 Speex」不准确：早期即 Speex；约 2012–2014 经 CELT 切到 Opus，应改正时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TLS 非 E2EE、TCP+UDP 双通道、Opus 主编码主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「端到端 50ms / Discord 100-200ms」属经验量级，宜加「局域网/自托管常见」限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/mumble-voip/mumble 合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺最小可跑部署片段（docker/murmur.ini 端口 64738）；案例偏故事"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "非 E2EE、位置音频需插件、NAT/UDP、无官方移动端等坑具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（E2EE/浏览器/视频/万人社区）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "开篇「替代 TeamSpeak 的开源语音」类比清楚，客户端/服务端拆分有桥接",
+        "案例多为场景叙述，缺逐步可跟做命令（如 murmur 最小 ini / 客户端连接步骤）",
+        "缺 ## 反向链接 占位；多出「如何快速上手」「一句话总结」偏离 12 段模板，建议收束"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2010 年从早期编码切到 Speex」不准确：早期即 Speex；约 2012–2014 经 CELT 切到 Opus，应改正时间线",
+        "TLS 非 E2EE、TCP+UDP 双通道、Opus 主编码主线正确",
+        "「端到端 50ms / Discord 100-200ms」属经验量级，宜加「局域网/自托管常见」限定",
+        "来源 github.com/mumble-voip/mumble 合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺最小可跑部署片段（docker/murmur.ini 端口 64738）；案例偏故事",
+        "非 E2EE、位置音频需插件、NAT/UDP、无官方移动端等坑具体有用",
+        "适用/不适用边界清楚（E2EE/浏览器/视频/万人社区）"
+      ]
+    }
+  ]
+}

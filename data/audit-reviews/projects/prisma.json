@@ -1,0 +1,127 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜单→下单按钮类比贴合；三案例有 schema / include / migrate 逐步解释，零基础可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『第一个把 schema 当源头 + codegen + 类型护栏拧到一起』过满：同类思路在其他工具链也有先例，宜改为『把这三件事做成 TypeScript ORM 主流范式的标杆之一』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用段把 PlanetScale 写成自带 pooling 的 serverless db 搭档已过时（其托管 MySQL 产品线已收缩）；宜改成 Neon / Supabase pooler / Prisma Accelerate"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线 Graphcool→Prisma 1→Prisma 2 大方向对；『2026 年 v6 推 wasm 进主流』宜加限定，避免写成已完成事实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "schema / Client / migrate 示例可跟做；include 多 round-trip、忘记 generate、serverless 连接池等坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Edge 段写 Workers『100KB 限制』过时且过窄，宜改为『默认 native engine 体积/二进制约束，需 Accelerate 或 driver adapter / wasm』"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "菜单→下单按钮类比贴合；三案例有 schema / include / migrate 逐步解释，零基础可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『第一个把 schema 当源头 + codegen + 类型护栏拧到一起』过满：同类思路在其他工具链也有先例，宜改为『把这三件事做成 TypeScript ORM 主流范式的标杆之一』",
+        "适用段把 PlanetScale 写成自带 pooling 的 serverless db 搭档已过时（其托管 MySQL 产品线已收缩）；宜改成 Neon / Supabase pooler / Prisma Accelerate",
+        "历史时间线 Graphcool→Prisma 1→Prisma 2 大方向对；『2026 年 v6 推 wasm 进主流』宜加限定，避免写成已完成事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "schema / Client / migrate 示例可跟做；include 多 round-trip、忘记 generate、serverless 连接池等坑具体",
+        "Edge 段写 Workers『100KB 限制』过时且过窄，宜改为『默认 native engine 体积/二进制约束，需 Accelerate 或 driver adapter / wasm』"
+      ]
+    }
+  ],
+  "slug": "prisma",
+  "area": "projects",
+  "status": "refined",
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 踩过的坑",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": [],
+    "summary": "弱化「第一个」表述；Edge/Workers 100KB 改为引擎体积约束；PlanetScale→Neon/Supabase；v6/wasm 加限定"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 195,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 195,
+  "l1_pass": true
+}

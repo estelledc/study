@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例缺少模板式「逐部分解释」：案例 1/2 应拆成 2-3 步说明 partition → chunk / strategy 参数各自干什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3、4 对零基础读者可再补一句「为什么页码/类型过滤对检索有用」的桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」有 5 条，可压到 4 条以贴近规范并给案例解释腾行数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2024-Q1 拿到 ~25M A 轮」时间线有误：Seed+Series A 合计约 25M 于 2023-07 公布（Madrona 领投 A，Bain 参与）；2024-03 是约 40M Series B"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段可补一句 Series B 或把 A 轮年份改成 2023，避免读者按错误时间线记事"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「~25M 美元 A 轮」表述略笼统——公开材料写的是 Seed 与 Series A 合计 25M，教学简化可保留但年份必须改对"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码概念正确，可跟做；若 refining，建议在案例 2 注明 hi_res 常需额外 extras/系统依赖，与「踩过的坑」呼应"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联段目前 4 条，规范倾向 5-7；可补 pdfplumber / pymupdf 或 llamaparse 对照"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺少模板式「逐部分解释」：案例 1/2 应拆成 2-3 步说明 partition → chunk / strategy 参数各自干什么",
+        "案例 3、4 对零基础读者可再补一句「为什么页码/类型过滤对检索有用」的桥接",
+        "「为什么重要」有 5 条，可压到 4 条以贴近规范并给案例解释腾行数"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2024-Q1 拿到 ~25M A 轮」时间线有误：Seed+Series A 合计约 25M 于 2023-07 公布（Madrona 领投 A，Bain 参与）；2024-03 是约 40M Series B",
+        "历史段可补一句 Series B 或把 A 轮年份改成 2023，避免读者按错误时间线记事",
+        "「~25M 美元 A 轮」表述略笼统——公开材料写的是 Seed 与 Series A 合计 25M，教学简化可保留但年份必须改对"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码概念正确，可跟做；若 refining，建议在案例 2 注明 hi_res 常需额外 extras/系统依赖，与「踩过的坑」呼应",
+        "关联段目前 4 条，规范倾向 5-7；可补 pdfplumber / pymupdf 或 llamaparse 对照"
+      ]
+    }
+  ]
+}

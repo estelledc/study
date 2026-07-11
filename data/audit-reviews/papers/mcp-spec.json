@@ -1,0 +1,142 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "USB-C 类比贴合「一次写服务端、多客户端复用」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「本项目的 ADR-5」对站外零基础读者无上下文，应改成通用部署/选型表述"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三则 JSON-RPC / OAuth 案例步骤清楚，list_changed 与握手可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "将 OAuth 2.1 写成「RFC 9700 草案」不准确：RFC 9700 是 OAuth 2.0 Security BCP；OAuth 2.1 是 draft-ietf-oauth-v2-1"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "stdio / Streamable HTTP、2025-03-26 破坏性升级、Tools/Resources/Prompts/Sampling 与公开规范大体一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 modelcontextprotocol.io 与 2024-11 / 2025-06-18 版本叙事合理；教学简化未歪曲主线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "initialize / tools/list_changed / OAuth+PKCE 消息流概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "stdio 勿打 stdout、listChanged 未声明勿推、旧双端点不兼容等坑可直接排障"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有延迟与流量量化；关联段略少可再补 1 条"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "USB-C 类比贴合「一次写服务端、多客户端复用」",
+        "「本项目的 ADR-5」对站外零基础读者无上下文，应改成通用部署/选型表述",
+        "三则 JSON-RPC / OAuth 案例步骤清楚，list_changed 与握手可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "将 OAuth 2.1 写成「RFC 9700 草案」不准确：RFC 9700 是 OAuth 2.0 Security BCP；OAuth 2.1 是 draft-ietf-oauth-v2-1",
+        "stdio / Streamable HTTP、2025-03-26 破坏性升级、Tools/Resources/Prompts/Sampling 与公开规范大体一致",
+        "来源 modelcontextprotocol.io 与 2024-11 / 2025-06-18 版本叙事合理；教学简化未歪曲主线"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "initialize / tools/list_changed / OAuth+PKCE 消息流概念正确可跟",
+        "stdio 勿打 stdout、listChanged 未声明勿推、旧双端点不兼容等坑可直接排障",
+        "适用/不适用有延迟与流量量化；关联段略少可再补 1 条"
+      ]
+    }
+  ],
+  "slug": "mcp-spec",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}

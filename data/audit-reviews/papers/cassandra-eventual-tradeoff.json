@@ -1,0 +1,89 @@
+{
+  "action": "rewrite",
+  "average": 1.33,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    "原文把 Cassandra 最终一致性论文写成了泛化工作流，实践案例与主题无关，需整篇重写。",
+    "旧稿存在大量重复补充观察，属于凑行数内容，应删除并换成 Cassandra 的副本、读写级别和修复机制。",
+    "需要明确 N/R/W、ONE/QUORUM/ALL、read repair/repair 等事实，避免把最终一致性讲成抽象流程管理。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "旧稿案例只讲输入边界和流程拆分，零基础读者学不到 Cassandra 的一致性取舍。",
+        "需要用生活类比解释多个副本短暂不同步，以及为什么读写级别会改变旧值窗口。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 2,
+        "no_distortion": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "旧稿没有呈现 Lakshman & Malik 论文的核心事实，几乎没有 Cassandra 架构、一致性级别或副本机制。",
+        "来源 URL 指向 Cassandra 论文，但正文和来源不匹配，构成事实性硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "旧稿的断言示例不是可跟做的 Cassandra 场景，无法指导一致性级别选择。",
+        "踩坑和适用范围泛化到任何流程，不足以支持工程判断。"
+      ]
+    }
+  ],
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "entire_note"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 157,
+    "reasons": []
+  }
+}

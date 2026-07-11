@@ -28,9 +28,9 @@ TDengine 是北京涛思数据 2017 年用 C 语言写、2019 年开源的时序
 假设有 100 万个温度传感器：
 
 - 普通做法（InfluxDB）：一张 `temperature` 表，靠 `device_id` tag 区分
-- TDengine 做法：建一个 STable `temperature`（定义列：ts、temp、humidity、location 等），每个设备建一张子表 `t_001 / t_002 / ... / t_1000000`，schema 自动继承
+- TDengine 做法：建一个 STable `temperature`——**普通列**是测量值（ts、temp、humidity），**TAGS** 是设备维度（device_id、location）；每个设备一张子表 `t_001 / ... / t_1000000`，schema 从模板继承
 
-为什么这样切：同一设备的连续数据点，时间戳是单调的、数值高度相关，独占一张表后**列存压缩**和**顺序扫描**都吃满。跨设备查询走 STable 这一层做并行下推。
+为什么这样切：同一设备的连续数据点，时间戳单调、数值高度相关，独占一张表后**列存压缩**和**顺序扫描**都吃满。跨设备查询走 STable 这一层做并行下推；按 location 过滤时走的是标签索引，不是把 location 当成普通列扫。
 
 ### 2. 列存 + 时序专用压缩
 
@@ -130,7 +130,7 @@ GROUP BY location;
 ## 历史小故事（可跳过）
 
 - **2017**：陶建辉创办涛思数据。陶建辉之前做过 Motorola 工程师、和信通信 CTO，跨行做 TSDB
-- **2019.07**：1.0 开源（GPLv3），口号「比 InfluxDB 快 10 倍」掀起一波讨论
+- **2019.07**：1.0 开源（GPLv3），对外口号「比 InfluxDB 快 10 倍」（营销口径，非普适基准）掀起一波讨论
 - **2020**：GitHub star 破万，进入 CNCF 时序库讨论圈
 - **2022.08**：3.0 发布，整套重写为分布式云原生（mnode/vnode/qnode/snode），同时启动 TDengine Cloud
 - **2024**：开源版功能持续补齐，企业版主推跨 IDC 与高可用
@@ -158,3 +158,7 @@ GROUP BY location;
 - [[questdb]] —— 同类专用 TSDB，主打 SIMD + SQL
 - [[prometheus]] —— 拉模式短期监控，与 TDengine 长期存储互补
 - [[clickhouse]] —— 通用列存 OLAP，可跑时序但缺时间窗口算子
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

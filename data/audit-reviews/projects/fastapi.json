@@ -1,0 +1,109 @@
+{
+  "slug": "fastapi",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "海关申报单类比贴合；Depends 与 Spring @Autowired 对照对零基础略跳，但不挡主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“一边倒选它 / Flask Django 份额下滑”偏行业归纳；80k+ stars 与 Pydantic v2 时间线大体合理，可接受的教学压缩。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "async/def、Pydantic v2、response_model、BackgroundTasks 踩坑具体可操作；<1ms 边界略概括但够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "海关申报单类比贴合；Depends 与 Spring @Autowired 对照对零基础略跳，但不挡主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "“一边倒选它 / Flask Django 份额下滑”偏行业归纳；80k+ stars 与 Pydantic v2 时间线大体合理，可接受的教学压缩。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "async/def、Pydantic v2、response_model、BackgroundTasks 踩坑具体可操作；<1ms 边界略概括但够用。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "三审均为 pass，但 quality-gate 因自动生成反向链接列表超 200 行失败；裁剪 ## 反向链接 为占位注释。",
+    "sections_modified": [
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true
+}

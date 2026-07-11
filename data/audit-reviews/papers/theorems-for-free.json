@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有直觉结论，缺少像案例 1 那样的逐步手算/对照步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 偏编译器黑盒叙述，建议补一句读者可跟做的小例子（先 map 两次再融合）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "⊥ / seq / logical relation 首次出现可再加半句日常桥接，降低跳读成本"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「是什么」与案例 1 把 sort 列为 forall a. [a] -> [a] 的实例是事实错误：sort 需要 Ord a，恰恰会削弱 parametricity（踩坑第 2 条已正确说明，前后矛盾）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "应改成 reverse / take n / drop n / id / tail 等真正无约束多态列表函数，并删掉「换 sort…也能验证」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可再点明「无类型类约束 / 无反射 / 纯函数」三条硬边界，方便工程师自检"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有直觉结论，缺少像案例 1 那样的逐步手算/对照步骤",
+        "案例 3 偏编译器黑盒叙述，建议补一句读者可跟做的小例子（先 map 两次再融合）",
+        "⊥ / seq / logical relation 首次出现可再加半句日常桥接，降低跳读成本"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「是什么」与案例 1 把 sort 列为 forall a. [a] -> [a] 的实例是事实错误：sort 需要 Ord a，恰恰会削弱 parametricity（踩坑第 2 条已正确说明，前后矛盾）",
+        "应改成 reverse / take n / drop n / id / tail 等真正无约束多态列表函数，并删掉「换 sort…也能验证」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可再点明「无类型类约束 / 无反射 / 纯函数」三条硬边界，方便工程师自检"
+      ]
+    }
+  ]
+}

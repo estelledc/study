@@ -16,10 +16,12 @@ GitHub 0.5k 星，Apache 2.0 协议，最新版 v2.7.0（2026 年 3 月）。代
 
 ## 为什么重要
 
-- **Flutter 是当前跨六平台一份代码的主流选择**，做实时音视频就绕不开 LiveKit Flutter SDK 或闭源 SaaS（声网、ZEGO）
-- **WebRTC 协议栈本身极复杂**（ICE/DTLS/SRTP/SCTP/RTP 五层），SDK 把这一坨包成 Dart 友好的 `Room` / `Participant` / `Track` 三个对象
-- **LiveKit 是开源 WebRTC SaaS 的头部产品**，移动端覆盖完全靠这个 Flutter SDK——没它，LiveKit 在手机上就只能写两份原生代码（Swift + Kotlin）
-- **AI 实时多模态对话兴起**（语音助理、AI 视频陪伴），Flutter App 接 LLM 后端做实时音视频，几乎只有这一条路
+不理解 LiveKit Flutter SDK，下面这些事都没法解释：
+
+- 为什么 Flutter 做实时音视频常绕不开开源 SFU SDK 或闭源 SaaS（声网、ZEGO）
+- 为什么 WebRTC 五层协议（ICE/DTLS/SRTP/SCTP/RTP）能收成 Dart 里的 `Room` / `Participant` / `Track`
+- 为什么 LiveKit 要覆盖手机端，几乎必须有 Flutter（或再写 Swift + Kotlin 两套原生）
+- 为什么 AI 语音助理 / 多模态对话在 Flutter App 里，常把实时音视频接到 LiveKit 这类房间模型上
 
 ## 核心要点
 
@@ -86,19 +88,19 @@ await room.localParticipant?.setMicrophoneEnabled(true);
 ### 案例 2：监听别人加入并渲染视频
 
 ```dart
-room.addListener(() {
-  for (final participant in room.remoteParticipants.values) {
-    for (final pub in participant.videoTrackPublications) {
-      if (pub.track != null) {
-        // 在 UI 里塞进 VideoTrackRenderer
-        showVideoWidget(VideoTrackRenderer(pub.track!));
-      }
-    }
+final listener = room.createListener();
+listener.on<TrackSubscribedEvent>((event) {
+  if (event.track is VideoTrack) {
+    showVideoWidget(VideoTrackRenderer(event.track as VideoTrack));
   }
 });
 ```
 
-`VideoTrackRenderer` 是 SDK 提供的 Flutter Widget，把 Track 渲染到一个 `Texture`（Flutter 的原生纹理）上——iOS/Android 走 Metal/Vulkan，Web 走 `<video>` 标签。一份 Dart 代码六个平台都对。
+**逐部分解释**：
+
+- `createListener()` + `on<TrackSubscribedEvent>` 比 `addListener` 轮询 `remoteParticipants` 更省：有人发布轨道才刷新 UI
+- `TrackSubscribedEvent` 表示"别人的轨道已订阅成功，可以渲染"
+- `VideoTrackRenderer` 把 Track 画到 Flutter `Texture`：移动端走 Metal/Vulkan，Web 走 `<video>`
 
 ### 案例 3：屏幕共享（六平台一致）
 
@@ -106,7 +108,11 @@ room.addListener(() {
 await room.localParticipant?.setScreenShareEnabled(true);
 ```
 
-这一行在不同平台底下走完全不同的实现：iOS 用 ReplayKit、Android 用 MediaProjection、桌面用系统级窗口捕获 API。SDK 把差异藏进 Track 工厂，**业务代码只看到一个布尔开关**。
+**逐部分解释**：
+
+- 业务层只看到一个布尔开关；底下 iOS 走 ReplayKit、Android 走 MediaProjection、桌面走窗口捕获
+- 发布成功后，远端会收到一条屏幕共享 Track，和摄像头 Track 一样可单独订阅/静音
+- Android 10+ 还要先起前台服务，否则这一行会直接抛异常（见踩坑）
 
 ## 踩过的坑
 
@@ -134,28 +140,35 @@ await room.localParticipant?.setScreenShareEnabled(true);
 
 ## 历史小故事（可跳过）
 
-- **2021 年**：LiveKit 创始人 Russ d’Sa（Twitter Spaces 早期工程师）开源 LiveKit，定位"Zoom 后端开源版"
-- **2022 年**：Flutter SDK 首发，团队意识到 WebRTC 在 Flutter 生态长期空白（`flutter_webrtc` 是社区维护，没 SFU 集成）
-- **2023 年**：OpenAI Realtime API 选 LiveKit 做底层音频管道，Flutter SDK 顺势成为移动端 AI 语音助理的事实标准
-- **2026 年**：v2.7.0 把 E2EE 默认开关挪到 RoomOptions 顶层，简化 API
+- **2021 年**：LiveKit 开源，定位开源实时媒体基础设施；创始人 Russ d’Sa 有 Twitter Spaces 早期工程背景
+- **2022 年**：Flutter SDK 首发，补上 Flutter 生态里"有 WebRTC 插件、缺官方 SFU 集成"的缺口
+- **2023 年起**：LiveKit Agents 提供 OpenAI Realtime 等插件，Flutter 客户端常被用来做移动端语音助理 Demo
+- **2026 年**：v2.7.0 把 E2EE 相关开关收到 `RoomOptions` 顶层，API 更扁平
 
 ## 学到什么
 
-1. **协议复杂度的封装是真价值**——WebRTC 五层协议栈靠 SDK 收成三个对象，是这个项目存在的全部理由
-2. **跨平台一致性靠分层**——Dart 业务层 + 平台桥接层 + 原生 WebRTC 库；只有桥接层每个平台不同，业务层完全共享
-3. **SFU 架构是开源 RTC 的胜负手**——P2P 撑不到三人，闭源 SaaS 又锁死了私有部署，开源 SFU 是唯一第三条路
-4. **AI 时代实时音视频需求井喷**——LiveKit 0.5k 星看似不多，但接住了 OpenAI Realtime 这条流量入口，工程价值远超星数
+1. **协议复杂度的封装是真价值**——WebRTC 五层收成三个对象，是这个 SDK 存在的理由
+2. **跨平台一致性靠分层**——Dart 业务层共享，平台桥接层各自对接原生 WebRTC
+3. **SFU 是开源多人 RTC 的常见胜负手**——纯 P2P 难扩到多人，闭源 SaaS 又锁私有部署
+4. **AI 实时对话抬高了客户端 SDK 的需求**——星数不高，但和 Agents / Realtime 集成绑在一起时工程价值更大
 
 ## 延伸阅读
 
 - 官方文档：[LiveKit Flutter Docs](https://docs.livekit.io/realtime/quickstarts/flutter/)
-- WebRTC 协议参考书：[High Performance Browser Networking — Ch.18](https://hpbn.co/webrtc/)
-- SFU 架构论文：[Mediasoup 设计文档](https://mediasoup.org/documentation/v3/mediasoup/design/)（Node.js SFU，原理与 LiveKit 同源）
-- [[aiortc]] —— Python 服务端 RTC 协议栈，与本项目互补（一个客户端、一个服务端）
-- [[webrtc-rs]] —— Rust WebRTC 协议栈实现
+- WebRTC 参考：[High Performance Browser Networking — Ch.18](https://hpbn.co/webrtc/)
+- SFU 设计：[Mediasoup design](https://mediasoup.org/documentation/v3/mediasoup/design/)（原理与 LiveKit 同类）
+- [[aiortc]] —— Python 服务端 RTC，与本项目互补
+- [[webrtc-rs]] —— Rust WebRTC 协议栈
+- [[livekit]] —— LiveKit 服务端 / SFU 本体
 
 ## 关联
 
+- [[livekit]] —— 服务端 SFU 与房间模型，本 SDK 的对端
 - [[aiortc]] —— 同样基于 WebRTC，Python 在服务端，本项目在客户端
-- [[webrtc-rs]] —— Rust 实现的 WebRTC 协议栈，可作为自建 SFU 的底层
+- [[webrtc-rs]] —— Rust 实现的 WebRTC 协议栈，可作自建 SFU 底层
 - [[flutter]] —— 跨平台 UI 框架，本 SDK 的运行环境
+- [[mediasoup]] —— 另一常见 SFU，可对比底层零件 vs 产品化 SDK
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

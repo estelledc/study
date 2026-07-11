@@ -1,0 +1,147 @@
+{
+  "slug": "nvidia-mig",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "写字楼砌实墙分租类比把硬件隔离讲透，对比时间切片很清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SM / GPC / GI / CI / profile 有桥接；1g.5gb 读法好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例偏场景叙述，缺编号步骤（开 MIG→切 profile→绑 UUID / 改 Pod resources）；建议拆成可跟做的 3–4 步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 NVIDIA MIG User Guide 合理；A100 首发、最多 7 实例与官方一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "A100 40GB profile（1g.5gb…7g.40gb）、GI/CI 两层、profile id 19 与文档主流一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "缺「历史小故事」「反向链接」段，但不构成事实硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "nvidia-smi -mig / -cgi 命令概念正确，但案例段缺「切完怎么验证 nvidia-smi -L / 绑 CUDA_VISIBLE_DEVICES」的可跟步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不可动态改、非法组合、训练勿开、K8s 资源名切换、驱动版本、DCGM 监控等坑具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用多租户推理/CI vs 不适用大训/频繁重切——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "写字楼砌实墙分租类比把硬件隔离讲透，对比时间切片很清楚",
+        "SM / GPC / GI / CI / profile 有桥接；1g.5gb 读法好懂",
+        "三案例偏场景叙述，缺编号步骤（开 MIG→切 profile→绑 UUID / 改 Pod resources）；建议拆成可跟做的 3–4 步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 NVIDIA MIG User Guide 合理；A100 首发、最多 7 实例与官方一致",
+        "A100 40GB profile（1g.5gb…7g.40gb）、GI/CI 两层、profile id 19 与文档主流一致",
+        "缺「历史小故事」「反向链接」段，但不构成事实硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "nvidia-smi -mig / -cgi 命令概念正确，但案例段缺「切完怎么验证 nvidia-smi -L / 绑 CUDA_VISIBLE_DEVICES」的可跟步骤",
+        "不可动态改、非法组合、训练勿开、K8s 资源名切换、驱动版本、DCGM 监控等坑具体有用",
+        "适用多租户推理/CI vs 不适用大训/频繁重切——边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 198,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 198,
+  "l1_pass": true,
+  "sections_modified": [
+    "## 实践案例",
+    "## 历史小故事",
+    "## 反向链接"
+  ],
+  "unresolved_hints": [],
+  "refinement": {
+    "action": "refine",
+    "reason": "zero-base/engineer needs-refine：案例补编号步骤与验证命令；补历史小故事与反向链接占位。",
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

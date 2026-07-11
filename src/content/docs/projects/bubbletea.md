@@ -127,6 +127,13 @@ view := style.Render(ti.View())  // 圆角边框包住一个输入框
 - 极致低延迟（高频交易终端、游戏）→ TEA 的"全量重画"模型有开销，用立即模式
 - 不想吃 Go 语法的团队 → JS 圈用 [Ink]，Rust 圈用 [[ratatui]]，Python 圈用 [Textual]
 
+## 历史小故事（可跳过）
+
+- **2019-2020 年**：Charmbracelet 团队把 Elm 架构搬进 Go 终端世界，Bubble Tea 早期版本先解决"键盘消息进来、字符串画出去"这个最小闭环。
+- **2021 年**：`bubbles` 和 `lipgloss` 逐渐成型，常见组件与样式系统从主框架里拆出来，Bubble Tea 从"能写 demo"变成"能拼真实工具"。
+- **2022-2023 年**：`glow`、`soft-serve`、`gh dash` 等项目把 Bubble Tea 带到更多开发者面前，Charm 的 TUI 全家桶开始形成统一审美。
+- **2024 年以后**：Go TUI 圈把 TEA 当成主流选择之一，新项目常在 Bubble Tea、[[ratatui]]、[Textual]、[Ink] 之间按语言和团队栈做取舍。
+
 ## 学到什么
 
 1. **TEA 在终端里比在浏览器更纯粹**——输入只有 KeyMsg，输出只有字符串，没有 DOM diff，没有 CSS 复杂度。这是学单向数据流最好的入门场地

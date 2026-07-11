@@ -1,0 +1,120 @@
+{
+  "slug": "elasticsearch",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「## 适用」与「## 延伸阅读」两段，模板导航不完整，零基础不知道何时该用/不该用。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "历史小故事标题建议加「（可跳过）」与模板一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2015 年：上市 IPO」有误，Elastic 于 2018 年 IPO，应改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「GitHub / Stack Overflow / Wikipedia 站内搜索都用它」宜弱化为「曾用/常见选型」，避免绝对化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "完全缺少「适用 vs 不适用」边界（数据量、一致性、事务需求）；工程师无法判断何时不该上 ES。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「关联」仅 4 条，建议扩到 5–7（如 opensearch、meilisearch、kafka）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "缺少「## 适用」与「## 延伸阅读」两段，模板导航不完整，零基础不知道何时该用/不该用。",
+        "历史小故事标题建议加「（可跳过）」与模板一致。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「2015 年：上市 IPO」有误，Elastic 于 2018 年 IPO，应改正。",
+        "「GitHub / Stack Overflow / Wikipedia 站内搜索都用它」宜弱化为「曾用/常见选型」，避免绝对化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 2
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "完全缺少「适用 vs 不适用」边界（数据量、一致性、事务需求）；工程师无法判断何时不该上 ES。",
+        "「关联」仅 4 条，建议扩到 5–7（如 opensearch、meilisearch、kafka）。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 190,
+    "reasons": []
+  },
+  "lines": 190,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 适用",
+      "## 历史小故事",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}

@@ -17,7 +17,7 @@ DreamFusion 把"脑中的照片"换成 **预训练 2D 扩散模型**（论文里
 ## 为什么重要
 
 - **绕过了 3D 数据稀缺**：网上有几十亿张图但 3D 模型寥寥几百万。DreamFusion 直接复用 2D 模型已经学到的世界知识。
-- **奠定了 text-to-3D 范式**：之后两年的 Magic3D / ProlificDreamer / MVDream / Zero-1-to-3 全是 SDS 的变体或修补。
+- **奠定了 text-to-3D 范式**：之后两年的 Magic3D / ProlificDreamer / MVDream 多是 SDS 的变体或修补；Zero-1-to-3 则走多视角图像条件扩散，给后续工作换了另一条 prior。
 - **SDS 本身是一个通用工具**：现在不止用来做 3D，还用来做 4D、avatar、纹理生成、物理仿真初值。
 - **它是一篇"先有现象、再补理论"的范文**：作者一开始观察到 SDS 能 work，但严格的概率解释（VSD、distributional view）是后续两年别人补完的。
 

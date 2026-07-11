@@ -72,7 +72,7 @@ helm list
 kubectl get pods,svc
 ```
 
-不到 5 行命令，集群里就跑起来一份 nginx，包含 Deployment + Service + 默认 5 个副本。
+不到 5 行命令，集群里就跑起来一份 nginx，包含 Deployment + Service（Bitnami chart 默认 `replicaCount: 1`，可用 values 改成多副本）。
 
 ### 案例：用 values.yaml 自定义参数
 
@@ -129,12 +129,12 @@ helm rollback my-nginx 1
 
 ## 历史小故事（可跳过）
 
-- **2015**：Deis 公司启动 Helm 项目，目标是给 K8s 做包管理器
-- **2016**：Helm 1.0 发布，引入 Tiller（集群内的 server 端组件）
+- **2015**：Deis 公司启动 Helm 项目，目标是给 K8s 做包管理器（早期亦称 Helm Classic）
+- **2016**：Helm 2 发布，引入 **Tiller**（集群内的 server 端组件，负责渲染与安装）
 - **2018**：加入 [[cncf]] 孵化
 - **2019**：Helm 3.0 发布，移除 Tiller（解决长期诟病的安全问题），改为客户端直连 K8s API
 - **2020**：从 CNCF 毕业，成为生态稳定标准
-- **2024**：Helm 3.16 完整支持 OCI registry（用 Docker registry 协议存 Chart，统一镜像与 Chart 的分发渠道）
+- **2024**：Helm 3.x 对 OCI registry 的支持继续完善（用 Docker registry 协议存 Chart，统一镜像与 Chart 的分发渠道）
 
 ## 学到什么
 

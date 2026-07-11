@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现 ADR5 / GCRA / Lua / worker 池时各加半句白话桥接，避免零基础读者卡在术语上"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 补模板式「逐部分解释」：Lua 脚本逐行说在干什么；案例 2 拆成「速率合规→仍占满→并发上限」三步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点四条可各加一句日常类比（如并发限流=收银台同时服务人数上限），与超市类比呼应"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 的 Tier1–4（docs/marketing 等）与原文 worker utilization 四档（critical / POST / GET / test mode）不符；应改回原文分类或标明是教学改写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文把 Stripe Redis 实现写成「GCRA 变体」易与 Brandur redis-cell 混淆；原文明确用 token bucket，GCRA 应放到延伸阅读而非归因 Stripe"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每用户 ~100 req/s」原文未给固定数字，宜改为「每用户 N req/s（按流量调）」或加「示意」限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 Lua：ARGV[2]/ARGV[3] 需 tonumber，否则 math.min/算术在 Redis Lua 里会类型出错；补上后再写 HMSET"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 jitter 公式可注明 full jitter（[0, 2^i]）或等价值，避免读者抄成「固定退避 + 再加一整段」却不知区间含义"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可加一点量化：如「日均 QPS < 10 的内网工具可先不做」；强实时「毫秒级精确」可点明 token bucket 允许 burst ≈ rate×window"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "首次出现 ADR5 / GCRA / Lua / worker 池时各加半句白话桥接，避免零基础读者卡在术语上",
+        "案例 1–3 补模板式「逐部分解释」：Lua 脚本逐行说在干什么；案例 2 拆成「速率合规→仍占满→并发上限」三步",
+        "核心要点四条可各加一句日常类比（如并发限流=收银台同时服务人数上限），与超市类比呼应"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 Tier1–4（docs/marketing 等）与原文 worker utilization 四档（critical / POST / GET / test mode）不符；应改回原文分类或标明是教学改写",
+        "正文把 Stripe Redis 实现写成「GCRA 变体」易与 Brandur redis-cell 混淆；原文明确用 token bucket，GCRA 应放到延伸阅读而非归因 Stripe",
+        "「每用户 ~100 req/s」原文未给固定数字，宜改为「每用户 N req/s（按流量调）」或加「示意」限定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 Lua：ARGV[2]/ARGV[3] 需 tonumber，否则 math.min/算术在 Redis Lua 里会类型出错；补上后再写 HMSET",
+        "案例 4 jitter 公式可注明 full jitter（[0, 2^i]）或等价值，避免读者抄成「固定退避 + 再加一整段」却不知区间含义",
+        "适用/不适用可加一点量化：如「日均 QPS < 10 的内网工具可先不做」；强实时「毫秒级精确」可点明 token bucket 允许 burst ≈ rate×window"
+      ]
+    }
+  ]
+}

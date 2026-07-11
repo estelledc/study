@@ -1,0 +1,141 @@
+{
+  "slug": "nextra",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "精装修包类比能懂「只写 markdown」；案例 1 _meta 顺序清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点堆 webpack loader / remark+rehype+recma / page-map AST，缺更短日常桥接，零基础易掉队"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 frontmatter→列表自动排可读；案例 3 tsdoc 对零基础略陡，可再一句「从类型声明自动生成表格」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/shuding/nextra 正确；搭在 Next.js 上、theme-docs/blog、v4 切 App Router+RSC+Tailwind 4 与公开叙述一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "The Guild / dimaMachina 维护权转移时间线大体合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未把 Nextra 说成替代 Next.js，边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "next.config 包装 + content/*.mdx + _meta 可跟做；博客 frontmatter 流程清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ESM/top-level await、浅克隆 Last updated、_meta 静默错 key、Tailwind prose 冲突等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 Vue→VitePress、Astro→Starlight、Next 版本耦合等清晰边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "精装修包类比能懂「只写 markdown」；案例 1 _meta 顺序清楚",
+        "核心要点堆 webpack loader / remark+rehype+recma / page-map AST，缺更短日常桥接，零基础易掉队",
+        "案例 2 frontmatter→列表自动排可读；案例 3 tsdoc 对零基础略陡，可再一句「从类型声明自动生成表格」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 github.com/shuding/nextra 正确；搭在 Next.js 上、theme-docs/blog、v4 切 App Router+RSC+Tailwind 4 与公开叙述一致",
+        "The Guild / dimaMachina 维护权转移时间线大体合理",
+        "未把 Nextra 说成替代 Next.js，边界清楚"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "next.config 包装 + content/*.mdx + _meta 可跟做；博客 frontmatter 流程清楚",
+        "ESM/top-level await、浅克隆 Last updated、_meta 静默错 key、Tailwind prose 冲突等坑具体可操作",
+        "适用/不适用有 Vue→VitePress、Astro→Starlight、Next 版本耦合等清晰边界"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 166,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": [],
+    "summary": "核心要点改为收件/加工/装修桥接，弱化 webpack/AST 术语堆叠；案例 3 先一句说明 tsdoc 从类型声明生成表格。"
+  }
+}

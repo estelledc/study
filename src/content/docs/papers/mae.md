@@ -8,11 +8,11 @@ title: MAE — Masked Autoencoders
 
 ## 是什么
 
-MAE 是 Kaiming He（[[resnet]] 作者）2021 年做的"图像版 [[bert]]"——把图片切成方块（patch），随机盖住 75%，让 [[vit]] 看剩下的 25%，再让一个轻量 decoder 重建被盖住的部分。
+MAE 是 Kaiming He（[[resnet]] 作者）在 2021 年 arXiv、2022 年 CVPR 发表的"图像版 [[bert]]"——把图片切成方块（patch），随机盖住 75%，让 [[vit]] 看剩下的 25%，再让一个轻量 decoder 重建被盖住的部分。
 
 日常类比：[[bert]] 把句子里 15% 的词盖住，让模型猜被盖住的词；MAE 把图片里 75% 的小方块盖住，让 ViT 猜被盖住的方块。两件事是同一个剧本，只是输入从文字换成图块。
 
-预训练完，decoder 直接扔掉，只留 encoder。下游分类、检测、分割都接这个 encoder。
+预训练完，decoder 直接扔掉，只留 encoder。下游分类、检测、分割都接这个 encoder。一句话：先玩「看残图猜全图」，再把猜图用的大脑（encoder）拿去干正经活。
 
 ## 为什么重要
 
@@ -37,27 +37,38 @@ MAE 三个关键设计：
 
 ## 实践案例
 
-### 案例 1：ImageNet 上越级打怪
+### 案例 1：一次前向的伪代码骨架
+
+```python
+# patches: [N, 196, 768]  — 224×224 图切成 16×16
+visible, mask_ids = random_mask(patches, ratio=0.75)  # 留 49，盖 147
+latents = encoder(visible)                            # 只看可见 patch
+full = insert_mask_tokens(latents, mask_ids)          # 按原位置塞回 mask token
+recon = decoder(full)                                 # 浅 decoder 重建
+loss = mse(recon[mask_ids], pixels[mask_ids])         # 只在被盖处算损失
+```
+
+**逐部分解释**：
+
+- `random_mask(..., 0.75)`：随机丢掉 75% 图块，逼模型不能抄邻居。
+- `encoder(visible)`：大 ViT 只处理 25% token，省掉大部分 [[attention]] 计算。
+- `insert_mask_tokens`：把可学习的「空白占位」按原坐标插回去，decoder 才知道哪里缺了。
+- `mse(...[mask_ids])`：只监督被盖住的像素；可见部分不算分。
+
+### 案例 2：ImageNet 上越级打怪
 
 ViT-Huge 用 MAE 预训练 1600 epoch（不用任何标签），再用 ImageNet-1k 标签 fine-tune：
 
 - 224 分辨率：86.9% top-1
 - 448 分辨率：**87.8% top-1**
 
-对比同时期监督训练的 ViT-L 大约 84%。换句话说，MAE 不需要标签的预训练比有标签的监督训练更强。这是 MAE 最有说服力的卖点。
+对比同时期监督训练的 ViT-L 大约 84%。换句话说，无标签预训练可以超过有标签监督预训练——这是 MAE 最有说服力的卖点。
 
-### 案例 2：分割任务涨幅最大
+### 案例 3：分割涨点 + 训练变快
 
-ADE20K 语义分割：
+ADE20K 语义分割：监督预训练 ViT-L 约 49.9 mIoU，MAE 预训练 ViT-L 约 **53.6 mIoU**。分割是密集像素预测，和「重建像素」pretext 天然对齐；COCO 检测 APbox 也常涨 3–4 点。
 
-- 监督预训练 ViT-L：49.9 mIoU
-- MAE 预训练 ViT-L：**53.6 mIoU**
-
-直觉：分割本身就是密集像素预测，和 MAE 的预训练目标（重建像素）天然对齐。检测（COCO）也类似，APbox 涨 3-4 个点。
-
-### 案例 3：训练比 contrastive learning 快
-
-encoder 只跑 49 个 token（不是 196 个）。Self-Attention 是 O(N²) 的，所以 [[attention]] 部分 16× 加速，整体大约 4× 加速。同样的 wall-clock 预算下，MAE 能跑更多 epoch 或更大模型。ViT-H 1600 epoch 在 128 张 V100 上 31 小时——对当时的视觉自监督来说很轻量。
+算力侧：encoder 只跑 49 个 token，Self-Attention 是 O(N²)，[[attention]] 部分约 16× 加速，端到端约 4×。ViT-H 1600 epoch 在 128 张 V100 上约 31 小时——对当时视觉自监督很轻量。
 
 ## 踩过的坑
 

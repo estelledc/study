@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "官网下一步 vs 一行命令、食谱卡片/合集书/替身演员类比把 Scoop 直觉讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Manifest / Bucket / Shim / Install path 表格桥接清楚，零基础能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 步骤清楚；案例 3 多版本可再补一句「旧版本要从 versions bucket 找」降低踩坑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文写「MIT 协议」不完整：Scoop 自 0.2.0 起为 Unlicense 或 MIT 双许可（SPDX: UNLICENSE or MIT）——应改成双许可表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库 / 24.2k stars / v0.5.3（2025-08）与 GitHub 现状一致，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "与 Chocolatey / winget 的权限与人群对比属合理教学简化，未歪曲 Scoop 用户态设计"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 `scoop install nodejs-lts@18.20.0` 在默认 main 常装不到旧版：需先 `scoop bucket add versions`（或确认该版本仍在 bucket 历史中）——应补这一步，否则跟做会失败"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：ExecutionPolicy、代理、`-g`、bucket 过多、GUI shim 边界——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（CLI 开发者 vs 商业套件/驱动）；可再点明「可复现环境靠 export/import manifest 列表」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "官网下一步 vs 一行命令、食谱卡片/合集书/替身演员类比把 Scoop 直觉讲透",
+        "Manifest / Bucket / Shim / Install path 表格桥接清楚，零基础能跟",
+        "案例 1–2 步骤清楚；案例 3 多版本可再补一句「旧版本要从 versions bucket 找」降低踩坑"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文写「MIT 协议」不完整：Scoop 自 0.2.0 起为 Unlicense 或 MIT 双许可（SPDX: UNLICENSE or MIT）——应改成双许可表述",
+        "仓库 / 24.2k stars / v0.5.3（2025-08）与 GitHub 现状一致，可保留",
+        "与 Chocolatey / winget 的权限与人群对比属合理教学简化，未歪曲 Scoop 用户态设计"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 `scoop install nodejs-lts@18.20.0` 在默认 main 常装不到旧版：需先 `scoop bucket add versions`（或确认该版本仍在 bucket 历史中）——应补这一步，否则跟做会失败",
+        "踩坑具体可操作：ExecutionPolicy、代理、`-g`、bucket 过多、GUI shim 边界——保留",
+        "适用/不适用边界清楚（CLI 开发者 vs 商业套件/驱动）；可再点明「可复现环境靠 export/import manifest 列表」"
+      ]
+    }
+  ]
+}

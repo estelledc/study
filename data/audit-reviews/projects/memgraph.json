@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆/会议桌类比贴合；MVCC/WAL/Bolt 有桥接。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/3 缺少「逐部分解释」结构，案例 2 有路径直觉但步骤仍偏短，建议给端口含义与驱动对接补逐步说明。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「公开 benchmark 比 Neo4j 单机快 3-5 倍」是厂商 Benchgraph 口径，不宜写成中性事实；应标明来源/条件或弱化为「厂商公开对比中常报数倍优势」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几百 GB 到 TB 级」与后文「几百 GB 以内」口径打架，应统一内存上限表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Neo4j 客户端不改一行代码就能连」过满：Bolt/openCypher 大体兼容，但方言与过程库仍有差异。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里 RedisGraph「已停维（2024）」宜改为 2023 年 Redis 宣布停维/移除更准确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Docker/Cypher/Neo4j 驱动示例可跟做；RAM/snapshot/BSL 踩坑具体。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺 ## 反向链接 占位段（模板 12 段之一），建议补回注释占位。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CREATE STREAM 语法宜贴近官方 CREATE KAFKA STREAM 写法，避免照抄失败。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书馆/会议桌类比贴合；MVCC/WAL/Bolt 有桥接。",
+        "案例 1/3 缺少「逐部分解释」结构，案例 2 有路径直觉但步骤仍偏短，建议给端口含义与驱动对接补逐步说明。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「公开 benchmark 比 Neo4j 单机快 3-5 倍」是厂商 Benchgraph 口径，不宜写成中性事实；应标明来源/条件或弱化为「厂商公开对比中常报数倍优势」。",
+        "「几百 GB 到 TB 级」与后文「几百 GB 以内」口径打架，应统一内存上限表述。",
+        "「Neo4j 客户端不改一行代码就能连」过满：Bolt/openCypher 大体兼容，但方言与过程库仍有差异。",
+        "关联里 RedisGraph「已停维（2024）」宜改为 2023 年 Redis 宣布停维/移除更准确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Docker/Cypher/Neo4j 驱动示例可跟做；RAM/snapshot/BSL 踩坑具体。",
+        "缺 ## 反向链接 占位段（模板 12 段之一），建议补回注释占位。",
+        "CREATE STREAM 语法宜贴近官方 CREATE KAFKA STREAM 写法，避免照抄失败。"
+      ]
+    }
+  ]
+}

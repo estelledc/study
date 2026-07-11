@@ -21,8 +21,8 @@ MCP TS SDK 是 **Anthropic 2024 年提出的 Model Context Protocol（MCP）的 
 
 不只是"又一个工具集成方案"，它代表了 LLM 工具生态的标准化：
 
-- **Anthropic 自家产品全线采用**——[[claude-code]] / Claude Desktop / Anthropic API 工具调用都走 MCP
-- **开放协议，多家跟进**——2025 年 OpenAI / Microsoft / Google 陆续加入 MCP 生态，从"Anthropic 私货"变成"行业标准草案"
+- **Anthropic 客户端全线采用**——[[claude-code]] / Claude Desktop 等通过 MCP 挂载外部工具；Messages API 自己的 `tool_use` 是另一条路径，不要混为一谈
+- **开放协议，多家跟进**——2025 年 OpenAI / Microsoft / Google 陆续加入 MCP 生态，从"Anthropic 私货"变成行业事实标准
 - **解决 N×M 适配地狱**——以前 N 家工具 × M 家 LLM 要写 N×M 个适配器，MCP 让它变成 N+M
 - **TypeScript SDK 是 reference impl**——其他语言（Python / Go / Rust）的 SDK 都参考 TS 版本
 
@@ -63,7 +63,7 @@ server.tool(
 await server.connect(new StdioServerTransport())
 ```
 
-启动后它会一直监听 stdin 等待 JSON-RPC 消息。
+逐部分解释：`McpServer` 注册名叫 `search` 的 tool；`z.string()` 描述入参并转成 JSON Schema 给客户端；`StdioServerTransport` 用标准输入输出跑 JSON-RPC——启动后进程挂起等消息，不要往 stdout 打普通日志。
 
 ### 案例 2：在 Claude Desktop 里挂上去
 
@@ -80,7 +80,7 @@ await server.connect(new StdioServerTransport())
 }
 ```
 
-重启 Claude Desktop。它会自动 spawn 你的 server 子进程，调 `tools/list` 拿到 `search` 这个工具，之后对话里 LLM 自己决定何时调它。
+逐部分解释：`command` + `args` 告诉客户端如何 spawn 子进程；重启后 Desktop 调 `tools/list` 发现 `search`，对话里由模型决定何时调用。路径必须是绝对路径，相对路径常启动失败。
 
 ### 案例 3：用现成的 server 接数据库
 
@@ -104,7 +104,7 @@ npm install -g @modelcontextprotocol/server-postgres
 }
 ```
 
-之后在对话里说"查最近 7 天注册用户数"，Claude 自动跑 SQL 给你结果。**你没写一行代码就给 LLM 加了数据库能力**。
+逐部分解释：`-y` 让 npx 免确认拉取包；最后一个参数是连接串。之后说"查最近 7 天注册用户数"，客户端会让模型选 tool 跑 SQL——**你没写业务代码就给 LLM 加了数据库能力**。
 
 ## 踩过的坑
 
@@ -116,12 +116,12 @@ npm install -g @modelcontextprotocol/server-postgres
 
 4. **跨 client 兼容性参差**：Claude Desktop / Cursor / Continue 对 MCP 的支持深度不一致——有的不支持 prompts，有的不支持 resourceTemplate，有的对错误返回处理不同。**写 server 前先看目标 client 实现了哪些 capability**。
 
-## 历史
+## 历史小故事（可跳过）
 
 - **2024-11**：Anthropic 公开 MCP 规范 + TypeScript SDK 同步开源——一开始就是"协议 + 参考实现"双轨
 - **2025-Q1**：[[claude-code]] / Claude Desktop 全线接入 MCP，成为协议第一批大规模生产用户
 - **2025-Q1-Q2**：OpenAI / Microsoft / Google 陆续加入 MCP 生态——从单家协议变成事实标准
-- **2025**：v1.0 spec frozen——核心三类原语 + JSON-RPC 信封稳定下来；task management / elicitation 等高级特性进入 experimental 命名空间
+- **2025**：核心三类原语 + JSON-RPC 信封相对稳定；task management / elicitation 等高级特性仍在 experimental 命名空间演进
 
 之后 1 年（2025-Q3 → 2026-Q2）持续叠加：streamable HTTP transport / session resumption / OAuth 鉴权——每一个都是把协议从"本地 stdio 玩具"推向"远程生产级"的关键拼图。
 

@@ -1,0 +1,81 @@
+{
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 表格里 t=1 的演算把基底写成了 80，新手按公式跟算会对不上；修好后更易跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤：案例 1 写「Mac 默认是 NewReno」——macOS 自 Yosemite（2014）起默认已是 CUBIC；应改为「旧版 macOS 曾用 NewReno，Yosemite 起切到 CUBIC」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 手算表：公式是 W(t)=C*(t-K)^3+W_max，t=1 时应为 100+0.4*(1-3.68)^3≈92，文中误写成以 80 为基底得到 87。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 表格里 t=1 的演算把基底写成了 80，新手按公式跟算会对不上；修好后更易跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "硬伤：案例 1 写「Mac 默认是 NewReno」——macOS 自 Yosemite（2014）起默认已是 CUBIC；应改为「旧版 macOS 曾用 NewReno，Yosemite 起切到 CUBIC」。",
+        "案例 2 手算表：公式是 W(t)=C*(t-K)^3+W_max，t=1 时应为 100+0.4*(1-3.68)^3≈92，文中误写成以 80 为基底得到 87。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆坐标轴/箭头夹角类比贯穿「是什么」与案例 1，零基础直觉很强，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有 encode + 一句「一模一样」，缺「嵌入→算余弦→按分数排序」三步桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 纯叙述无步骤；建议拆成「纯词频为何翻车 → discrimination/降权 → 接到 TF-IDF」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Salton, Wong & Yang / CACM 18(11) 1975 / A Vector Space Model for Automatic Indexing 正确；页码 613–620 确为 8 页"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 余弦算错：D1=[8,1,0]、q=[1,1,0] 得 sim≈0.79，D2=[1,9,0] 得 sim≈0.78，排序应为 D1>D2>D3，不是文中的 D2>D1 与 0.71/0.78"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史「写给计算机届」应为「计算机界」；SMART 背扩写可保留为通称"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 自称「手算可行」但数值与排序错误，跟做会得到与正文相反的结论——必须改正弦与排名"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 SentenceTransformer 教学向可跟读；补一句「生产常用归一化向量 + 内积 ≈ 余弦」即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（稀疏、同义词、词形、维度灾难、长文档、短查询）具体可操作；适用边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书馆坐标轴/箭头夹角类比贯穿「是什么」与案例 1，零基础直觉很强，保留",
+        "案例 2 只有 encode + 一句「一模一样」，缺「嵌入→算余弦→按分数排序」三步桥接",
+        "案例 3 纯叙述无步骤；建议拆成「纯词频为何翻车 → discrimination/降权 → 接到 TF-IDF」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Salton, Wong & Yang / CACM 18(11) 1975 / A Vector Space Model for Automatic Indexing 正确；页码 613–620 确为 8 页",
+        "案例 1 余弦算错：D1=[8,1,0]、q=[1,1,0] 得 sim≈0.79，D2=[1,9,0] 得 sim≈0.78，排序应为 D1>D2>D3，不是文中的 D2>D1 与 0.71/0.78",
+        "历史「写给计算机届」应为「计算机界」；SMART 背扩写可保留为通称"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 自称「手算可行」但数值与排序错误，跟做会得到与正文相反的结论——必须改正弦与排名",
+        "案例 2 SentenceTransformer 教学向可跟读；补一句「生产常用归一化向量 + 内积 ≈ 余弦」即可",
+        "踩坑（稀疏、同义词、词形、维度灾难、长文档、短查询）具体可操作；适用边界清楚"
+      ]
+    }
+  ]
+}

@@ -31,7 +31,7 @@ API 立刻返回，邮件由 worker 异步发出去。**所有状态都在 Postg
 
 - 为什么"只用一个 Postgres"也能撑起生产级任务队列，而不是必须再上 Redis / Kafka
 - 为什么"事务性入队"是 Redis 队列做不到的——你的业务 INSERT 和 job 入队**同一笔事务**，要么都成要么都没
-- 为什么 Postgres 13 之后的 `SKIP LOCKED` 关键字让"多个 worker 抢同一张表"不再是性能噩梦
+- 为什么 Postgres 的 `SKIP LOCKED`（**9.5+ 引入**；大表抢锁在 **13+** 更稳）让"多个 worker 抢同一张表"不再是性能噩梦
 - 为什么 graphile-worker / River（Go）选了同一条路——它们底层都靠 `SELECT ... FOR UPDATE SKIP LOCKED`
 
 ## 核心要点
@@ -101,7 +101,7 @@ await boss.send('webhook', payload, {
 - 已经在用 Postgres 的项目，不想再引 Redis / Kafka 一份依赖
 - 需要"业务写 + 入队"严格同一事务（Outbox 模式、金融场景）
 - 中小规模任务队列（< 100 万 job/天，单库够用）
-- Serverless / 多 master 部署——pg-boss 不需要长连接
+- Serverless / 多 master 部署——**轮询模式**下不依赖长连接 `LISTEN`（冷启动连一下就能抢 job）
 - 想用 SQL 直接查队列状态、调试、写运维报表
 
 **不适用**：
@@ -126,7 +126,7 @@ await boss.send('webhook', payload, {
 1. **数据库就是队列**——只要有 `SKIP LOCKED`，关系库可以撑起原本要专门中间件做的事，少一个组件就少一份运维
 2. **事务性入队是 Postgres 队列的杀手锏**——Redis 队列再强也做不到"业务写 + 入队"原子化
 3. **`SKIP LOCKED` 本质是"读跳过被锁的行"**——比"等锁"或"乐观锁重试"都简单，是 Postgres 给消息队列场景的官方答案
-4. **小项目能撑大场景**——pg-boss 全靠一两个维护者，但已经是 ADR-3 选型清单里的主推方案
+4. **小项目能撑大场景**——pg-boss 全靠一两个维护者，但在"已有 Postgres、不想再引 Redis"的选型里经常是首选
 
 ## 延伸阅读
 

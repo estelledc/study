@@ -46,9 +46,9 @@ dav1d 的意义就在于：
 
 并且持续保持多核并发路径。  
 
-### 3）AGPL 之外的更宽松许可
+### 3）BSD-2-Clause 宽松许可
 
-公开声明中它不是严格受限于很多 VideoLAN 项目的授权框架，这给嵌入方更大自由。  
+dav1d 使用 BSD-2-Clause 许可证，这比 GPL/AGPL 类许可证更容易被播放器、浏览器和商业 SDK 嵌入。
 
 在产品落地中，“许可证是否能进商业闭源链路”常比技术指标更先被法务卡住。  
 
@@ -67,30 +67,50 @@ dav1d 的意义就在于：
 
 你可以按官方步骤执行：
 
-1. 安装 Meson/Ninja/汇编器；  
-2. `meson setup ..` 配置构建；  
-3. `ninja` 编译；  
-4. 根据目标加 `--cross-file` 进行交叉编译。  
+```bash
+git clone https://code.videolan.org/videolan/dav1d.git
+cd dav1d
+meson setup build
+ninja -C build
+```
+
+逐部分解释：
+
+- `meson setup build` 生成构建目录，检查编译器、nasm/asm 工具和目标平台能力。
+- `ninja -C build` 真正编译库和命令行工具。
+- 如果目标是 Android、iOS 或嵌入式板子，就把 `meson setup build --cross-file <file>` 固化进 CI。
 
 跨平台兼容最先从构建系统开始体现。  
 
-### 案例 2：文档与可维护性
+### 案例 2：用命令行验证一个 AV1 文件
 
-文档不是“可选项”，而是验证行为一致性的入口。  
+```bash
+./build/tools/dav1d -i sample.ivf -o decoded.yuv --framethreads 4
+```
 
-一旦参数、编译宏不一致，解码结果会差异化，文档版本与 CI 产物能帮团队缩小“版本幻觉”。  
+逐部分解释：
 
-### 案例 3：解码器集成
+- `-i sample.ivf` 指向 AV1 测试码流，常见于 conformance 或回归样本。
+- `-o decoded.yuv` 输出原始 YUV，方便和参考输出做 hash 或逐帧比对。
+- `--framethreads 4` 打开帧级并行，适合先看多核路径是否正常。
+- 这一步不是性能冠军测试，而是先确认“能正确解码同一份输入”。
 
-AV1 解码通常伴随播放器、滤镜链路、流媒体适配。dav1d 的稳定 ABI 行为和许可证宽松使它常见于客户端 SDK、浏览器插件、媒体转码组件。  
+### 案例 3：在应用里调用 libdav1d
 
-### 案例 4：质量与性能平衡
+```c
+Dav1dSettings s;
+dav1d_default_settings(&s);
+s.n_threads = 4;
+// 后续流程：dav1d_open -> dav1d_send_data -> dav1d_get_picture -> dav1d_close
+```
 
-论文与官方 roadmap 都强调：  
+逐部分解释：
 
-- 不牺牲规范和特性支持；  
-- 逐步把更快代码路径覆盖到高比特深度和较少见架构；  
-- 测试链路先于“某条机器上跑得快”。  
+- `dav1d_default_settings` 先给一组安全默认值，避免调用方漏填字段。
+- `n_threads` 控制并行度，真实项目会按 CPU 核数和延迟目标调。
+- `send_data/get_picture` 把“喂压缩包”和“取解码帧”分开，方便播放器接入缓冲队列。
+
+质量与性能的平衡点是：先用 conformance 样本证明解码正确，再比较不同线程数和汇编路径的速度。
 
 ## 踩过的坑
 

@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房调度员/节拍器类比生动；MCU、Pressure Advance、Input Shaper 均有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有「逐部分解释」，配置与命令可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub Klipper3d/klipper、Kevin O'Connor 2016 前后公开推进时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约 1 万星量级」为约数，可接受；未发现硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "flash / Pressure Advance / Input Shaper 命令与配置可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（by-id 串口、RESTART、照搬 Marlin、整形不能修机械）具体；适用边界含安全/工业 PLC 排除"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "厨房调度员/节拍器类比生动；MCU、Pressure Advance、Input Shaper 均有桥接",
+        "三个案例都有「逐部分解释」，配置与命令可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 GitHub Klipper3d/klipper、Kevin O'Connor 2016 前后公开推进时间线合理",
+        "「约 1 万星量级」为约数，可接受；未发现硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "flash / Pressure Advance / Input Shaper 命令与配置可跟做",
+        "踩坑（by-id 串口、RESTART、照搬 Marlin、整形不能修机械）具体；适用边界含安全/工业 PLC 排除"
+      ]
+    }
+  ]
+}

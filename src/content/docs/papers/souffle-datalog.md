@@ -19,7 +19,7 @@ reachable(X, Z) :- reachable(X, Y), edge(Y, Z).
 
 意思是"从 X 能到 Y，如果有直接边；或者能先到中间点 Y 再到 Z"。
 
-Soufflé 把这两条规则**编译**成一份递推 C++ 程序，自动挑索引、自动并行。在指针分析这种动辄几亿条 fact 的场景，原来跑 1 小时的 query 变成 1 分钟。
+Soufflé 把这两条规则**编译**成一份递推 C++ 程序，自动挑索引、自动并行。在指针分析这种动辄几亿条 fact 的场景，相对解释型引擎常能快出数倍到一个数量级。
 
 ## 为什么重要
 
@@ -44,7 +44,7 @@ Soufflé 把 Datalog 程序跑快，靠 **四个支柱**：
 
 4. **并行 + 锁无关数据结构**：B-tree 用 lock-free 实现，多线程同时插入。等价类（union-find）也有专门的并行版本。
 
-四条加起来：在 Doop 的 Java 指针分析 benchmark 上，比 LogicBlox（当时最快的商业 Datalog 引擎）快 2-5 倍，比 bddbddb 快 10 倍以上。
+四条加起来：在 Doop 类指针分析上，相对 LogicBlox 常见约 2–4 倍加速，相对 bddbddb 往往更快一个数量级。
 
 ## 实践案例
 
@@ -62,31 +62,47 @@ reachable(x, z) :- reachable(x, y), edge(y, z).
 
 Soufflé 编译成 C++ 后：
 
-- 给 `edge` 自动建按 x 排的 B-tree（因为第二条规则里 `edge(y, z)` 要按 y 查）
-- 半朴素求值：第 N 轮只用 N-1 轮新增的 reachable 与 edge join
-- 多线程并行做 join
-
-输入百万条 edge，秒级跑完。手写 BFS C++ 也就这个量级。
+- 给 `edge` 自动建按 y 查的 B-tree（第二条规则里 `edge(y, z)` 要按 y 定位）
+- **半朴素**：第 N 轮只用「N-1 轮新增的 reachable」（delta）去 join `edge`，旧边不再重扫
+- 多线程并行做 join；百万条 edge 通常秒级，量级接近手写 BFS
 
 ### 案例 2：Doop 指针分析
 
-Doop 是 Yannis Smaragdakis 团队写的 Java 指针分析框架，**整套规则就是 Datalog**：
+Doop 是 Yannis Smaragdakis 团队的 Java 指针分析框架，**整套规则就是 Datalog**：
 
 ```prolog
 VarPointsTo(var, obj) :- AssignHeapAllocation(obj, var).
 VarPointsTo(to, obj) :- Assign(from, to), VarPointsTo(from, obj).
-VarPointsTo(this, obj) :- 
+VarPointsTo(this, obj) :-
     VirtualMethodInvocation(invo, sig, base),
     VarPointsTo(base, obj),
     LookupMethodOf(obj, sig, method),
     ThisVar(method, this).
 ```
 
-读起来像数学定义，没有循环没有状态。Soufflé 在背后跑出"百万行 Java 代码每个变量指向哪些对象"。在 Soufflé 之前，同样的 Doop 规则用 LogicBlox 跑要 30 分钟，Soufflé 跑 5 分钟。
+**逐部分解释**：
+
+1. 第一条：`new` 出来的对象，立刻记入「变量可能指向它」
+2. 第二条：赋值 `to = from` 时，把 from 的指向集合抄给 to（传播）
+3. 第三条：虚调用时，先看 `base` 可能指向哪些对象，再查对象上的方法，把 `this` 也标成指向同一对象
+4. Soufflé 在背后做不动点；相对 LogicBlox，同规则常约快 2–4 倍（视并行与是否计编译时间而定）
 
 ### 案例 3：智能合约漏洞扫描
 
-Vandal 把以太坊字节码反编译成关系式 fact（`def(var, bytecode_pos)`、`use(var, bytecode_pos)` 等），再用 Datalog 写"哪些 storage 写入是 reentrancy 风险"的 query。规则几十行就能表达手写分析几千行的事。
+Vandal 把以太坊字节码变成关系 fact，再用 Datalog 查风险。最短示意：
+
+```prolog
+.decl def(var:symbol, pos:number)
+.decl use(var:symbol, pos:number)
+.decl external_call(pos:number)
+.decl storage_write(pos:number)
+.decl reentrancy_risk(write_pos:number, call_pos:number)
+
+reentrancy_risk(w, c) :-
+    storage_write(w), external_call(c), w < c.
+```
+
+**逐行**：先声明 def/use 与调用、写存储位置；规则说「若某次写存储发生在外部调用之前，标成 reentrancy 风险」。几十行规则常能顶手写分析几千行。
 
 ## 踩过的坑
 
@@ -102,25 +118,23 @@ Vandal 把以太坊字节码反编译成关系式 fact（`def(var, bytecode_pos)
 
 **适用**：
 
-- 程序分析（指针、taint、类型推导、call graph）——本身就是不动点递推
-- 图算法（可达、最短路、强连通分量）——Datalog 的天然舞台
-- 业务规则引擎（合规检查、权限推导）——规则可读性比性能更重要
-- 安全审计 query（"哪些函数没检查权限就读了 storage"）
+- 程序分析（指针、taint、call graph）——不动点递推；全程序指针分析常需数十 GB 内存
+- 图算法（可达、最短路）——百万边图通常秒级；强连通等也可写
+- 业务规则 / 安全审计 query——规则可读性优先时很合适
 
 **不适用**：
 
 - 需要任意 Turing 完备表达——Datalog 是有限固定点逻辑，递归只能在 relation 上
-- 需要浮点 / 复杂数值——Soufflé 主打整数和符号，做不动数值线性代数
-- 流式 / 增量更新——传统 Soufflé 是 batch 模式，要增量得用衍生品 DDLog
-- 数据规模超内存——除非用 disk-backed 模式，否则吃内存吃到崩
+- 需要浮点 / 复杂数值——Soufflé 主打整数和符号
+- 流式 / 增量更新——传统 Soufflé 是 batch；增量看 DDLog
+- 数据规模超内存——除非 disk-backed，否则容易把机器吃满
 
 ## 历史小故事（可跳过）
 
-- **1977 年**：Aho 和 Ullman 给 Datalog 这个名字，意思是"data 的 Prolog"。但当时没人当真——大家觉得递归 query 跑不动。
-- **1989 年**：Naughton、Ramakrishnan、Sagiv、Ullman 提出 magic sets 重写，让递归 query 能像 query 引擎一样剪枝。理论奠基。
-- **2004 年**：Whaley & Lam 用 BDD（二叉决策图）表示 relation 做 Java 指针分析（bddbddb），第一次让 Datalog 跑动百万行代码。但 BDD 编程门槛高、不能并行。
-- **2016 年**：Scholz 等在 Oracle Labs 发表本论文。把 Datalog 编译成 C++ 听起来朴素，但工程细节（索引、并行、半朴素）做到位才能赢 BDD。
-- **2016 年至今**：Soufflé 开源，被 Doop、Vandal、各种学术工具采纳，成了"工业级 Datalog 引擎"的事实标准。
+- **1970 年代末**：Aho、Ullman 等把递归查询求值做成数据库理论问题；「Datalog」一名后来多归 David Maier（data + Prolog）。
+- **1989 年**：Naughton、Ramakrishnan、Sagiv、Ullman 提出 magic sets，让递归 query 能剪枝。
+- **2004 年**：Whaley & Lam 用 BDD 做 Java 指针分析（bddbddb），首次让 Datalog 跑动百万行代码，但难并行。
+- **2016 年**：Scholz 等发表本论文，把 Datalog 编译成并行 C++；开源后被 Doop、Vandal 等采纳。
 
 ## 学到什么
 

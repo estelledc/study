@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "镜子类比贴合；BRDF/cos/积分有逐项翻译；Fredholm 稍硬但有「未知量同时出现在等号两边」桥接；三案例可跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kajiya 1986 / Whitted 1980 / Goral 1984 / Cook 1984 / Veach 系谱正确；光子映射常引 Jensen 1996（EGWR），文中写 1995 略偏早但不构成硬伤；NeRF 作体积形式解法属合理教学延伸"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "路径追踪伪代码概念正确可跟读；fireflies/NEE/能量守恒踩坑具体；离线小时级 vs 16ms 实时有量化边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "镜子类比贴合；BRDF/cos/积分有逐项翻译；Fredholm 稍硬但有「未知量同时出现在等号两边」桥接；三案例可跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Kajiya 1986 / Whitted 1980 / Goral 1984 / Cook 1984 / Veach 系谱正确；光子映射常引 Jensen 1996（EGWR），文中写 1995 略偏早但不构成硬伤；NeRF 作体积形式解法属合理教学延伸"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "路径追踪伪代码概念正确可跟读；fireflies/NEE/能量守恒踩坑具体；离线小时级 vs 16ms 实时有量化边界"
+      ]
+    }
+  ]
+}

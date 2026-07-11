@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 有规则代码但缺少逐部分解释（每条规则在算什么、join 顺序），建议拆成 3–4 步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有散文没有代码；补一段最短的 reentrancy/def-use Datalog 规则并逐行说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 已有 bullet，可再点明「半朴素」对应哪一轮 delta，方便零基础对照核心要点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1977 年 Aho 和 Ullman 给 Datalog 这个名字」不准确：Datalog 一名通常归 David Maier；Aho/Ullman 贡献的是递归查询求值理论，应改写时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「1 小时变 1 分钟」缺少出处，易被当成论文数字；可改为定性表述或对齐 Doop/LogicBlox 文献量级（约 2–4×）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CC 2016 作者与会议引用正确；核心四支柱（编译、半朴素、自动索引、并行）与论文主旨一致，保留即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 Soufflé 声明/规则语法概念正确，可跟做；案例 2 是 Doop 风格示意即可，不必要求完整可跑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑四条（分层、内存、.plan、aggregate）具体可操作，保持"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；若能补一句「百万边图秒级、全程序指针分析常需数十 GB」会更量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 有规则代码但缺少逐部分解释（每条规则在算什么、join 顺序），建议拆成 3–4 步",
+        "案例 3 只有散文没有代码；补一段最短的 reentrancy/def-use Datalog 规则并逐行说明",
+        "案例 1 已有 bullet，可再点明「半朴素」对应哪一轮 delta，方便零基础对照核心要点"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「1977 年 Aho 和 Ullman 给 Datalog 这个名字」不准确：Datalog 一名通常归 David Maier；Aho/Ullman 贡献的是递归查询求值理论，应改写时间线",
+        "开篇「1 小时变 1 分钟」缺少出处，易被当成论文数字；可改为定性表述或对齐 Doop/LogicBlox 文献量级（约 2–4×）",
+        "CC 2016 作者与会议引用正确；核心四支柱（编译、半朴素、自动索引、并行）与论文主旨一致，保留即可"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 Soufflé 声明/规则语法概念正确，可跟做；案例 2 是 Doop 风格示意即可，不必要求完整可跑",
+        "踩坑四条（分层、内存、.plan、aggregate）具体可操作，保持",
+        "适用/不适用边界清楚；若能补一句「百万边图秒级、全程序指针分析常需数十 GB」会更量化"
+      ]
+    }
+  ]
+}

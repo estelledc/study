@@ -1,0 +1,139 @@
+{
+  "slug": "supertokens",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "指纹锁类比清楚自托管产品感"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Recipe/Core/SDK有白话；案例2 SessionClaimValidatorStore 对零基础偏陡"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例1 Docker+init可跟；案例3 hash链有逐部分解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RFC 6749 §10.4 讲的是 refresh token 保密与绑定，不是 refresh rotation；rotation 应引 OAuth 2.0 Security BCP（RFC 9700）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Core Java + Recipe 模式 + refresh hash 链机制描述与公开文档一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "open-core / multi-tenancy 企业版表述合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Docker hello + recipeList init 可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：CORS credentials、docker 网络、rid header、validator 静默丢弃"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（Auth.js/Clerk/Keycloak/Lucia）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "指纹锁类比清楚自托管产品感",
+        "Recipe/Core/SDK有白话；案例2 SessionClaimValidatorStore 对零基础偏陡",
+        "案例1 Docker+init可跟；案例3 hash链有逐部分解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "RFC 6749 §10.4 讲的是 refresh token 保密与绑定，不是 refresh rotation；rotation 应引 OAuth 2.0 Security BCP（RFC 9700）",
+        "Core Java + Recipe 模式 + refresh hash 链机制描述与公开文档一致",
+        "open-core / multi-tenancy 企业版表述合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Docker hello + recipeList init 可跟做",
+        "踩坑具体：CORS credentials、docker 网络、rid header、validator 静默丢弃",
+        "适用/不适用边界清楚（Auth.js/Clerk/Keycloak/Lucia）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "refresh rotation 引用改为 RFC 9700；案例2加前台登记本类比降低陡度。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "refresh rotation 引用改为 RFC 9700；案例2加前台登记本类比降低陡度。",
+    "sections_modified": [
+      "## 实践案例",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

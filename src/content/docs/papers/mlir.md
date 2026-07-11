@@ -111,7 +111,7 @@ EDA 工具一直是封闭世界，CIRCT 用 MLIR 第一次让"开源 + 可复用
 
 - **2018 年**：Chris Lattner 在 Google 启动 MLIR，初衷是给 TensorFlow XLA 一套更干净的 IR，避免 XLA 内部"高层 HLO + 低层 LLVM"中间断层。
 - **2019 年**：Google 把 MLIR 贡献给 LLVM Foundation，成为 LLVM 子项目。Lattner 同期离开 Google。
-- **2020 年 2 月**：CGO 论文发表（arXiv 2002.11054），第一次系统介绍方言架构。
+- **2020 年 2 月**：arXiv 预印本挂出（2002.11054）；**2021 年**：CGO 正式发表（标题略改为 *Scaling Compiler Infrastructure for Domain Specific Computation*），第一次系统介绍方言架构。
 - **2021-2022 年**：JAX / IREE / Flang（LLVM 的 Fortran 前端）/ CIRCT 陆续基于 MLIR 重写。
 - **2023 年**：OpenAI Triton 切到 MLIR；Modular Mojo 语言以 MLIR 为底层；PyTorch 2.x 的 Inductor 也开始引入 MLIR 思路。
 - **2024-2025 年**：StableHLO 标准化为跨框架张量交换格式；MLIR 成为 AI 编译器事实标准。

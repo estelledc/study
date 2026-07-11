@@ -13,10 +13,10 @@ title: act — 在本地用 Docker 跑 GitHub Actions
 日常类比：
 
 - 平时改 workflow 像**改菜谱**——你只能把菜谱寄到中央厨房（GitHub），等他们做完发回照片告诉你哪一步翻车了。一次 5 分钟，改 10 次就是 50 分钟全在等。
-- act 像**自己家厨房**——同一份菜谱，自己起锅，30 秒看到结果，还能边做边偿尝味道。
+- act 像**自己家厨房**——同一份菜谱，自己起锅，30 秒看到结果，还能边做边尝味道。
 - 厨房和中央厨房不完全一样（缺某些品牌酱料、火候略有差异），但 80% 的食谱在家试就够。
 
-70.6k star，Go 写的，最早由 Casey Lee 在 2019 年开源。当前版本 v0.2.88（2026-05）。
+截至 2026-05，act 在 GitHub 上约 7 万 star，Go 写的，最早由 Casey Lee 在 2019 年开源。
 
 ## 为什么重要
 
@@ -33,7 +33,7 @@ act 的工作分 **三步**：
 
 1. **解析 workflow**：读 `.github/workflows/*.yml`，把 job 之间的 `needs:` 依赖排成拓扑序，决定先跑谁
 2. **起容器**：每个 job 启一个 Docker 容器，镜像默认是 `catthehacker/ubuntu:act-latest`（社区维护的"接近 GitHub-hosted"镜像）
-3. **执行 step**：把 step 翻译成容器里的 shell 命令，actions/checkout / actions/setup-node 这些"composite action"会被 act 在容器内 git clone 下来执行
+3. **执行 step**：把 step 翻译成容器里的 shell 命令；actions/checkout、actions/setup-node 这类常见 action 会被 act 下载到容器内，再按各自的 JavaScript / composite / Docker 入口执行
 
 镜像分三档（**装多大决定能跑多接近真实环境**）：
 
@@ -130,6 +130,13 @@ QEMU 模拟会慢一点（50%-70% 原速），但能跑通。等 act 官方出 a
 - 依赖 macOS / Windows runner 的工作流
 - 重度依赖 `actions/cache` 想测命中率
 - 涉及 GitHub API 高级权限（OIDC、deploy token 等）的 step
+
+## 历史小故事（可跳过）
+
+- **2019 年**：Casey Lee 开源 act，最初解决的就是"改 GitHub Actions workflow 必须 push 才能试"这个痛点。
+- **2020-2021 年**：GitHub Actions 普及后，act 成为很多开源项目调试 CI yaml 的本地工具。
+- **2022 年**：社区维护的 runner 镜像逐渐分出 micro / medium / large，解决"镜像太小跑不动、镜像太大下载慢"的取舍。
+- **2024 年以后**：更多团队把 act 当成本地 task runner 的兜底校验：复杂任务写一份 workflow，本地和云上共用。
 
 ## 学到什么
 

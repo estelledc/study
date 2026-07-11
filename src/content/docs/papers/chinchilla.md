@@ -45,18 +45,18 @@ Chinchilla 是 DeepMind 2022 年的一篇论文，回答了一个朴素问题：
 | [[gpt-3]] | 175B | 300B | **1.7** | undertrained，浪费参数 |
 | Chinchilla | 70B | 1.4T | **20** | compute-optimal |
 | Llama-2 7B | 7B | 2T | **285** | 过训练，但推理便宜 |
-| Llama-3 8B | 8B | 15T | **1875** | 远超 Chinchilla 比例 |
+| Llama-3 8B | 8B | 15T | **1875** | 为了推理成本，远超训练最优比例 |
 
-GPT-3 训练时算力分配完全偏向"堆参数"。同样的算力如果按 Chinchilla 配方跑，应该是约 **63B 参数 + 1.4T token**——参数砍一大半，数据加 4 倍。
+GPT-3 训练时算力分配明显偏向"堆参数"。如果按 Chinchilla 的 20 token/参数粗略口径重算，同量级预算会更像 **50B~70B 参数 + 1T 级别 token**——参数砍一大半，数据加数倍。
 
-### 案例 2：Chinchilla 70B vs GPT-3 175B
+### 案例 2：Chinchilla 70B 为什么能超过更大的模型
 
-DeepMind 用 Chinchilla 公式重新分配 GPT-3 同等的训练算力：
+DeepMind 不是简单加算力，而是把原本偏向大模型的预算重新分配到更多 token：
 
-- GPT-3：175B 参数 × 300B token
+- Gopher：280B 参数 × 300B token
 - Chinchilla：70B 参数 × 1.4T token
 
-**算力消耗几乎一样**，但 Chinchilla 在 MMLU、阅读理解、推理等大多数评测上都超过 GPT-3。这不是"更多算力换更好结果"，是**同样算力分配方式不同**。
+这两者训练算力同量级，但 Chinchilla 在 MMLU、阅读理解、推理等大多数评测上超过 Gopher，也强于 GPT-3 175B 这类更大但训练 token 偏少的模型。这不是"更多算力换更好结果"，而是**同样级别算力分配方式不同**。
 
 ### 案例 3：为什么现代模型"过训练"得离谱
 

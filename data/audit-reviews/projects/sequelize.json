@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "装修房类比把 Active Record vs Prisma 讲透；ORM/Hooks 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「历史小故事」时间线，零基础不易建立 2010→v6→v7 演进直觉"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Stack Overflow 关于 Node ORM 的老问答 80% 是 Sequelize」「遇到 Sequelize 的概率 > 50%」无出处，应改为定性表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「最古老」宜改为「最早一批 / 最老牌之一」，避免绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺少「历史小故事（可跳过）」段，与模板结构不一致，后续 regen/对照会吃亏"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 Model.init / Op.gt / migration up-down 概念正确可跟做；适用场景宜补更具体边界（存量维护 vs 新 TS 项目）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "装修房类比把 Active Record vs Prisma 讲透；ORM/Hooks 有桥接",
+        "缺「历史小故事」时间线，零基础不易建立 2010→v6→v7 演进直觉"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Stack Overflow 关于 Node ORM 的老问答 80% 是 Sequelize」「遇到 Sequelize 的概率 > 50%」无出处，应改为定性表述",
+        "「最古老」宜改为「最早一批 / 最老牌之一」，避免绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "缺少「历史小故事（可跳过）」段，与模板结构不一致，后续 regen/对照会吃亏",
+        "案例 Model.init / Op.gt / migration up-down 概念正确可跟做；适用场景宜补更具体边界（存量维护 vs 新 TS 项目）"
+      ]
+    }
+  ]
+}

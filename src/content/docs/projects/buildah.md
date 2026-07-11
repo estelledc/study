@@ -60,6 +60,11 @@ buildah bud -t myapp:dev -f Dockerfile .
 
 Buildah 利用 Linux user namespace 把当前用户映射成容器里的 root，所有"需要 root"的构建步骤（apt install、chown）在 namespace 内合法，但宿主机上没有任何 root 进程。这是 OpenShift / Kubernetes 多租户场景的关键能力。
 
+逐部分解释：
+
+- `buildah bud` 读取 Dockerfile / Containerfile，产出镜像，但命令结束后不留下守护进程。
+- 普通用户能构建，是因为 user namespace 把"容器里的 root"和"宿主机普通用户"隔开。
+
 ### 案例 2：脚本化构建，不写 Dockerfile
 
 ```bash
@@ -77,6 +82,12 @@ buildah rm $ctr
 
 这个 shell 脚本干的事和一份 Dockerfile 完全等价，但你能在中间随便插 `if`、`for`、调 `jq` 算版本号、读环境变量分支构建——都是普通 shell，**不需要 Dockerfile 那一套受限语法**。
 
+逐部分解释：
+
+- `buildah from` 先创建一个可修改的工作容器，相当于 Dockerfile 的 `FROM`。
+- `run / copy / config` 分别对应安装依赖、放入代码、设置启动命令。
+- `commit / rm` 把工作容器固化成镜像，再清掉临时容器，避免本地堆垃圾。
+
 ### 案例 3：和 Podman 配合，构建完直接跑
 
 ```bash
@@ -85,6 +96,11 @@ podman run --rm -p 8080:8080 myapp:test
 ```
 
 Buildah 和 Podman 共享同一份 `containers/storage` 后端（默认 `~/.local/share/containers/`），所以 `buildah bud` 写出来的镜像，`podman run` 不需要 push 到 registry 就能直接跑。这就像 docker build 完直接 docker run，但整条链路里没有 daemon。
+
+逐部分解释：
+
+- `buildah bud` 负责构建镜像，不负责长期运行容器。
+- `podman run` 负责启动容器，两者通过同一个本地镜像存储交接。
 
 ## 踩过的坑
 
@@ -153,3 +169,7 @@ Buildah 和 Podman 共享同一份 `containers/storage` 后端（默认 `~/.loca
 - [[buildkit]] —— 同为下一代构建工具，BuildKit 走"功能丰富"路线，Buildah 走"少守护进程"路线
 - [[kaniko]] —— K8s 内构建镜像的同类方案，与 Buildah 设计思路有交集但生态不同
 - [[tekton]] —— OpenShift Pipelines 默认用 Buildah 做镜像构建步骤
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

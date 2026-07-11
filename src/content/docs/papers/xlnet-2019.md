@@ -20,18 +20,18 @@ XLNet 是 2019 年的一种语言模型预训练方法，核心思想叫**排列
 
 - 为什么 BERT 的 `[MASK]` 不只是"工程上不方便"，而是**数学上有偏**
 - 为什么 2019 年大家短暂相信"BERT 已经被超过了"，结果一年后 RoBERTa 又把它追回来
-- 为什么后续长文档模型（Longformer、BigBird）都默认带相对位置编码——这个习惯是 Transformer-XL 留下来的，XLNet 把它推广了
+- 为什么后续长文档模型常谈相对位置编码——Transformer-XL / XLNet 这条线把「位置看相对距离」推成了长序列预训练的常见习惯（谱系里还有 Shaw 等更早工作）
 - 为什么"统一 GPT 与 BERT"是 2019 - 2020 年预训练论文最常见的标题模板
 
 ## 核心要点
 
 XLNet 的关键概念可以拆成 **三块**：
 
-1. **排列语言模型 PLM**：对长度为 T 的句子，理论上枚举它的 T! 种 token 顺序排列，每种排列都做自回归分解 logP(x_{z_t} | x_{z_<t})。训练目标是这些分解 log-likelihood 在所有排列上的期望。
-2. **双流自注意力 two-stream attention**：因为同一个位置在不同排列里既要"被预测"又要"作为历史给后面用"，普通自注意力会泄露答案。XLNet 同时维护两条流——content stream 看自己和历史（用于给后面位置当上下文），query stream 只看历史和当前位置编号、不看当前内容（用于预测当前位置）。
-3. **底座 Transformer-XL**：相对位置编码 + 段级循环（segment recurrence），让预训练能跨长文档而不是 BERT 那样硬截断到 512。
+1. **排列语言模型 PLM**：类比——同一副牌反复洗牌，每次仍按「上一张猜下一张」出牌。对长度 T 的句子，理论上枚举 T!（T 的阶乘）种 token 顺序；每种顺序都做自回归分解：用已经出现过的词，预测下一个词的概率。训练目标是这些概率在所有排列上的平均。
+2. **双流自注意力 two-stream attention**：类比——考试时「答题卡」不能偷看本题答案，但「草稿纸」可以记下本题内容给后面用。同一位置既要被预测、又要当历史，普通注意力会泄题。于是 content 流看自己+历史（给后面当上下文），query 流只看历史和位置编号、不看当前内容（用来猜当前位置）。
+3. **底座 Transformer-XL**：类比——读长篇小说时把上一章摘要带进下一章，而不是每章从零开始。相对位置编码 + 段级循环，让预训练能跨长文档，而不是像 BERT 那样硬截断到 512。
 
-补一个常见误解：排列**不是真的把 token 打乱输入**。位置编码保持原始顺序，模型仍读原句；改的只是注意力 mask——决定每个位置能看到哪些位置的 query。
+补一个常见误解：排列**不是真的把 token 打乱输入**。位置编码保持原始顺序，模型仍读原句；改的只是注意力 mask——决定每个位置能看到哪些位置。
 
 ## 实践案例
 
@@ -53,45 +53,46 @@ L_XLNet = log P(New | is a city) + log P(York | New, is a city)
 
 ### 案例 2：排列语言模型的一种采样
 
-句子 `[1, 2, 3, 4]`，假设采到一个排列 z = `[3, 1, 4, 2]`。模型按这个顺序自回归预测：
+句子位置编号 `[1, 2, 3, 4]`，假设采到排列 z = `[3, 1, 4, 2]`。**实现上只改 attention mask，不 permute 输入张量**——词仍按原顺序进模型。
 
-- 预测位置 3：用空历史
+按排列顺序自回归预测：
+
+- 预测位置 3：历史为空
 - 预测位置 1：能看到位置 3
 - 预测位置 4：能看到位置 3, 1
 - 预测位置 2：能看到位置 3, 1, 4
 
-注意位置 2 在排列里排到最后，所以它的"上下文"其实包含了原句子里**右边**的位置 3 和 4——这就是双向性的来源。轮到下一次采样别的排列时，位置 2 又会换一种历史。许多次采样后，每个位置都见过各种"前面是谁"的组合。
+**逐部分解释**：
+
+- 位置 2 排到最后，上下文含原句**右边**的 3 和 4——双向性来自这里
+- 下次采别的排列，位置 2 会换一套历史；多次采样后每个位置都见过多种「前面是谁」
+- 工程对照：content mask 允许看历史+自己；query mask 只看严格历史——避免用答案猜答案
 
 ### 案例 3：实际训练只采样部分排列
 
-T! 是天文数字（T=512 时不可枚举）。XLNet 实际做法：
+T 的阶乘是天文数字（T=512 时不可枚举）。XLNet 实际做法：
 
-- 每个序列采一个随机排列
-- 在排列尾部 K 个位置上算 loss（前面的位置上下文太少，损失噪声大），其他位置不算
-- 论文里 K ≈ T/6 ~ T/7
+```
+每个序列采 1 个随机排列
+只在排列尾部 K 个位置算 loss（K ≈ T/6 ~ T/7）
+前面位置上下文太少，噪声大，不算
+```
 
-所以"排列"并不昂贵，每步 forward 只比 BERT 多一个 stream 的开销，但训练总步数和数据量都比 BERT 大。
+**逐部分解释**：
 
-### 案例 4：双流注意力的 mask 长什么样
-
-设 batch 内一条样本的排列为 z，序列长度 4。两个 mask 的语义可以这样直观描述：
-
-- content mask `M_c[i][j] = 1`，当且仅当 j 在排列里位于 i 之前**或**等于 i——content stream 既看历史，也看自己。
-- query mask `M_q[i][j] = 1`，当且仅当 j 在排列里**严格**位于 i 之前——query stream 只看历史。
-
-所以两条流共享 K/V，只是第一层 query stream 拿不到自己 token 的内容（只用位置编码 + 上一层 query 表示），从而避免"用答案预测答案"。后续层每层都按这两套 mask 重新算 attention。这两步 mask 之差，就是 XLNet 全部"魔法"的工程实现。
+- 「排列」不贵：每步 forward 只比 BERT 多一条 query stream
+- 真正贵的是总步数与数据量（约 32B tokens vs BERT 约 3B）
+- 选型时把 wall-clock 慢约 1.5–2 倍算进预算
 
 ## 踩过的坑
 
 1. **以为 XLNet 真的打乱了输入序列**：不是。打乱的是注意力 mask，输入和位置编码仍按原顺序。这点初读很容易误解。
 
-2. **two-stream 的实现细节复杂**：query stream 与 content stream 在每一层都要分别算且互相喂参数。开源实现里这部分代码量比标准 BERT 多一倍，是 XLNet 工程化难落地的主要原因。
+2. **two-stream 实现复杂**：query / content 每层分别算且互相喂参数，开源代码量约比 BERT 多一倍，是难落地主因。
 
-3. **公平对比争议**：XLNet 用了比 BERT 多 10 倍的数据（约 32B tokens vs BERT 约 3B tokens）和更长训练。RoBERTa 后来证明 BERT 同等数据 + 更长训练也能匹敌 XLNet——所以 PLM 本身的增益究竟有多少，至今没有干净的对比答案。
+3. **公平对比争议**：XLNet 数据约 32B tokens（BERT 约 3B）且训更久；RoBERTa 证明同等数据+更长训练也能匹敌——PLM 纯增益至今没有干净对照。
 
-4. **下游 finetune 仍按普通 LM 用**：预训练用排列，但 finetune 时不再排列，按正常单向或双向使用。这个不一致也是后来论文常拿来质疑的地方。
-
-5. **训练慢**：双流 + 排列采样让 wall-clock 比同等参数的 BERT 慢约 1.5-2 倍，这是工业界没大规模采用的现实原因之一。
+4. **预训练排、finetune 不排**：下游按普通单向/双向用，这个不一致常被后来论文质疑；再叠加 wall-clock 慢约 1.5–2 倍，工业界很少大规模采用。
 
 ## 适用 vs 不适用场景
 
@@ -103,9 +104,9 @@ T! 是天文数字（T=512 时不可枚举）。XLNet 实际做法：
 
 **不适用**：
 
-- 想直接拿现成模型上业务——2026 年主流早已是 LLaMA/Qwen 系 decoder-only AR，XLNet 的 encoder 风格 + PLM 已经被冷落
-- 资源紧张——双流注意力让训练 / 推理都更贵，性价比不如 RoBERTa
-- 生成任务——XLNet 是 understanding 模型，不像 GPT 那样直接拿来生成
+- 想直接拿现成模型上业务——2026 年主流是 LLaMA/Qwen 系 decoder-only，XLNet 的 encoder + PLM 已冷落
+- 资源紧张——双流让训练 wall-clock 约慢 1.5–2 倍，性价比不如 RoBERTa
+- 生成任务——XLNet 主打 understanding，不像 GPT 那样直接拿来生成
 
 ## 历史小故事（可跳过）
 
@@ -117,20 +118,19 @@ T! 是天文数字（T=512 时不可枚举）。XLNet 实际做法：
 
 ## 学到什么
 
-1. **掩码语言模型的"独立性假设"是隐性的**：BERT 写起来很自然，但同时预测多个 mask 的 loss 默认假设它们条件独立——这个假设在大多数自然语言里不成立。
-2. **AR 与双向并非天然对立**：通过排列重排上下文窗口，可以在保持严格自回归分解的同时让每个位置看到"双向"的信息。
-3. **架构层和目标层可以解耦设计**：XLNet = Transformer-XL（架构）+ PLM（目标）+ two-stream（实现细节）。三件事可以独立替换、独立比较，这是好的工程切分。
-4. **公平基线很重要**：XLNet 与 BERT 的数据规模差异让纯算法增益难以估计；RoBERTa 的"调参翻案"提醒我们，所有"我们超过了 X"的论文都该先问数据和训练步数对齐了没。
-5. **工程复杂度本身是一种代价**：two-stream 让代码量翻倍、训练慢一倍，即便论文数字漂亮，工业界仍会算性价比账。这也是为什么 2020 年后 decoder-only 成为大多数大规模预训练的默认选择。
+1. **掩码语言模型的"独立性假设"是隐性的**：同时预测多个 mask 默认假设它们条件独立——自然语言里常常不成立。
+2. **AR 与双向并非天然对立**：用排列重排上下文窗口，可在严格自回归分解下仍让每个位置看到「双向」信息。
+3. **架构层和目标层可以解耦**：XLNet = Transformer-XL（架构）+ PLM（目标）+ two-stream（实现）；三件事可独立替换、独立比较。
+4. **公平基线与工程代价**：数据/步数没对齐就难谈算法增益；two-stream 让代码与训练更贵，这也是 2020 年后 decoder-only 成默认的原因之一。
 
 ## 延伸阅读
 
-- 原论文 PDF：[Yang et al. 2019](https://arxiv.org/abs/1906.08237)（25 页，Section 2 是 PLM 推导主战场）
-- 官方代码：[zihangdai/xlnet](https://github.com/zihangdai/xlnet)（TensorFlow，two-stream attention 在 modeling.py）
-- 解读博客：[Jay Alammar — The Illustrated XLNet]（从图示出发推导排列 mask 的可视化）
+- 原论文 PDF：[Yang et al. 2019](https://arxiv.org/abs/1906.08237)（Section 2 是 PLM 推导主战场）
+- 官方代码：[zihangdai/xlnet](https://github.com/zihangdai/xlnet)（TensorFlow，two-stream 在 modeling.py）
+- 解读博客：[Jay Alammar — The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)（同作者图示风格；XLNet 排列 mask 可对照论文 Fig.1）
 - 反方观点：[Liu et al. — RoBERTa](https://arxiv.org/abs/1907.11692)（同年 7 月，证明 BERT 没调好）
-- 实现走读：HuggingFace transformers 仓库 `models/xlnet/modeling_xlnet.py` 是当下能直接跑的最完整 PyTorch 复现，把 query / content 两条 stream 命名得很清楚
-- [[bert]] —— XLNet 想要超越的对象，理解 MLM 才能理解 PLM 的针对性
+- 实现走读：HuggingFace `models/xlnet/modeling_xlnet.py`（PyTorch，query/content 两条 stream 命名清楚）
+- [[bert]] —— 理解 MLM 才能理解 PLM 的针对性
 - [[transformer-xl-2019]] —— XLNet 的底座架构
 
 ## 关联

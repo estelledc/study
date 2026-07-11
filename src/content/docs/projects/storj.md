@@ -24,18 +24,18 @@ sj://my-bucket/cat.png
 
 - 为什么"去中心化存储"也能做到 S3 的低延迟——把"账本"从链搬到 Satellite 是关键
 - 为什么 Storj 单价比 S3 便宜 80% 还能盈利——硬盘成本外包给个人节点了
-- 为什么 IPFS / Filecoin 都在用 IPFS-Storj gateway——Storj 把"长期保存"问题工程化解了
+- 为什么可用 Storj 给 IPFS 做「持久层」补强（IPFS-Storj gateway）——把长期保存做成工程问题，而不是让 Filecoin 之类另走一套
 - 为什么 Storj 不像 Sia / Arweave 一样发链——发链就要解决共识，反而拖慢上传速度
 
 ## 核心要点
 
 Storj 让"把文件交给陌生人"靠谱，靠 **三层设计**：
 
-1. **客户端纠删码（Reed-Solomon 29-of-80）**：上传前在你电脑里把 64 MiB 一个 segment 切成 80 片，每片 ~2.3 MiB。下载时任意 29 片到位就能重建——冗余比只有 2.76x（S3 是 3x），但能扛掉 51 片同时挂掉。类比：菜谱抄成 80 张明信片，谁手上拿到 29 张就能拼回原版。
+1. **客户端纠删码（Reed-Solomon，教学按 29-of-80）**：上传前在你电脑里把约 64 MiB 一个 segment 切成多片（公开材料常写约 80 片；线上也可能用更高扩容如 29/110）。下载时任意 **29** 片到位就能重建——纠删码就像「多抄几份能拼回原版」。教学用 29-of-80 时冗余约 2.76x，能扛掉约 51 片同时挂掉。
 
-2. **Satellite 协调层（链下账本）**：Satellite 是个普通 PostgreSQL + Go 服务，存"哪个 object 切成了哪 80 片、每片在哪个 node"。它不参与共识、不跑挖矿——纯粹记账 + 调度。任一时刻一个 bucket 绑定一个 Satellite，类比：你选了哪家邮政局，所有寄件记录都查那家。
+2. **Satellite 协调层（链下账本）**：Satellite 是个普通 PostgreSQL + Go 服务，存"哪个 object 切成了哪几片、每片在哪个 node"。它不参与共识、不跑挖矿——纯粹记账 + 调度。任一时刻一个 bucket 绑定一个 Satellite，类比：你选了哪家邮政局，所有寄件记录都查那家。
 
-3. **端到端加密 + 路径加密**：Uplink 在客户端用 AES-GCM 加密文件块，密钥从用户 passphrase 派生，**Satellite 看不到明文也看不到路径文本**——它只知道"有这么个 object，加密后的路径 hash 是 xxx"。换句话说，托管 Satellite 的人也读不懂你存了什么。
+3. **端到端加密 + 路径加密**：Uplink 在客户端用 **AES-GCM**（带完整性校验的加密锁）加密文件块，密钥从用户 passphrase（口令）派生，**Satellite 看不到明文也看不到路径文本**——它只知道"有这么个 object，加密后的路径 hash 是 xxx"。换句话说，托管 Satellite 的人也读不懂你存了什么。
 
 三层加起来：**纠删码解决"碎片够不够"、Satellite 解决"碎片在哪"、客户端加密解决"碎片是不是隐私"**。
 
@@ -53,8 +53,8 @@ uplink share --url sj://photos/cat.png
 
 **逐部分解释**：
 
-- `setup` 把 access grant（包含 satellite 地址 + API key + passphrase）存到本地配置
-- `cp` 内部做了三件事：AES-GCM 加密 → 切成 64 MiB segment → 每段做 RS 29-of-80 → 并发推 80 个节点
+- `setup` 把 access grant（通行证：satellite 地址 + API key + passphrase）存到本地配置
+- `cp` 内部做了三件事：AES-GCM 加密 → 切成约 64 MiB segment → 每段做纠删码（教学 29-of-80）→ 并发推到多个节点
 - `share --url` 让 Satellite 帮你做一次代理，临时给一个浏览器能直接访问的 HTTPS URL
 
 ### 案例 2：跑一个 storagenode 出租自家硬盘
@@ -70,7 +70,7 @@ docker run -d --restart unless-stopped \
   storjlabs/storagenode:latest
 ```
 
-跑完 Satellite 会陆续给你扔加密碎片，每月按"存了多少 GB · 月 + 出了多少 GB 流量"结算 STORJ 代币（ERC-20）。但有门槛：99.3% 在线率、IPv4 公网、500 GB 起。掉线 / 删数据会扣 graceful exit 抵押金。
+跑完 Satellite 会陆续给你扔加密碎片，每月按"存了多少 GB · 月 + 出了多少 GB 流量"结算 STORJ 代币（以太坊上的 ERC-20）。但有门槛：99.3% 在线率、IPv4 公网、500 GB 起。**graceful exit**（正常退役）要走完流程，否则会扣抵押金；掉线 / 删数据同样吃亏。
 
 ### 案例 3：用 rclone 把 Storj 当备份目标
 
@@ -89,7 +89,7 @@ rclone sync ./local-dir storj:my-bucket --progress
 
 3. **SNO 门槛比想象高**：500 GB 起、必须 IPv4、99.3% 在线率，graceful exit（正常退役）不走完流程会扣抵押金；家庭宽带掉线频繁基本赚不到钱。
 
-4. **冷数据成本优势没那么大**：单价确实低于 S3（约 $4 vs $23 per TB · 月），但出口流量同样收费。**存了不读**才真划算；频繁拉的热数据省不了多少。
+4. **冷数据成本优势没那么大**：存储单价常低于 S3（公开标价量级约 $4 vs $23 per TB · 月），但 **egress（出口流量）同样按量收费**。**存了不读**才真划算；频繁拉的热数据省不了多少。
 
 ## 适用 vs 不适用场景
 
@@ -119,7 +119,7 @@ rclone sync ./local-dir storj:my-bucket --progress
 ## 学到什么
 
 1. **去中心化不等于上链**——Storj 把账本留在 Satellite（链下），换来 S3 级别的延迟和可用性，证明"协议层去中心化 + 协调层中心化"是个完全合理的设计点
-2. **纠删码 > 副本**——RS 29-of-80 用 2.76x 冗余扛 51 片同时挂，S3 三副本 3x 冗余只能扛 2 个 region 挂；同样的钱买更多容错
+2. **纠删码 > 副本**——教学用的 RS 29-of-80 约 2.76x 冗余就能扛掉约 51 片；S3 三副本 3x 冗余通常只能扛 2 个 region 挂——同样的钱买更多容错
 3. **协议兼容是去中心化产品的护城河**——`endpoint=...storjshare.io` 一行配置就接上 rclone / boto3，让迁移成本归零，比"全新 SDK"路线友好十倍
 4. **架构是权衡**：Satellite 引入了单点信任，但把"协调"工程问题降到了"运维一台 PostgreSQL"——比让节点跑共识便宜几个数量级
 

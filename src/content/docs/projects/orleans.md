@@ -121,11 +121,11 @@ public interface ILeaderboardGrain : IGrainWithStringKey {
 
 ## 历史小故事（可跳过）
 
-- **2010 年**：Microsoft Research 启动 Orleans 项目，背景是 Halo 4 后端无法用传统"无状态服务+数据库"扛百万在线对战
-- **2011 年**：原型代号 "Cloud Computing Futures"，提出 virtual actor 概念——actor 在逻辑层永存，物理层按需起停
-- **2014 年**：343 Industries 用 Orleans 上线 Halo 4 全球玩家服务；玩家匹配 / 状态 / 战绩全跑在 grain 上
+- **2009–2010 年**：Microsoft Research 启动 Orleans，要把有状态云服务写得像单机对象
+- **2011 年起**：Halo 相关云服务开始在 Azure 上跑 Orleans；**2012 年** Halo 4 上线，匹配 / 状态 / 战绩等后端大量用 grain
+- **2014 年**：MSR 技术报告整理 virtual actor 模型（MSR-TR-2014）；技术转入 343 Industries 等产品团队
 - **2015 年 1 月**：Orleans 开源到 GitHub（dotnet/orleans）
-- **之后**：Skype messaging、Azure IoT Hub device twin、Halo 5、Gears of War、Visual Studio Online 都用上 Orleans 模型
+- **之后**：Skype messaging、Azure IoT Hub device twin、Halo 5、Gears of War 等继续沿用同一模型
 
 ## 学到什么
 

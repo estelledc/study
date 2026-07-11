@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "SQLite 亲戚类比极好；向量化搬砖类比能跟住；案例 4 Wasm 略跳，但不影响主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SIGMOD 2019 demo、Raasveldt & Mühleisen、OLAP-SQLite 定位正确；「比 SQLite 快 50 倍」「Pandas 集体迁移」偏宣传口吻，作背景可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用写「GB 到 TB」，踩坑写「稳定超过几百 GB 就该换」互相打架；适用应改成约 1–100GB（单机磁盘舒适区），与踩坑对齐。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "SQLite 亲戚类比极好；向量化搬砖类比能跟住；案例 4 Wasm 略跳，但不影响主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "SIGMOD 2019 demo、Raasveldt & Mühleisen、OLAP-SQLite 定位正确；「比 SQLite 快 50 倍」「Pandas 集体迁移」偏宣传口吻，作背景可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "适用写「GB 到 TB」，踩坑写「稳定超过几百 GB 就该换」互相打架；适用应改成约 1–100GB（单机磁盘舒适区），与踩坑对齐。"
+      ]
+    }
+  ]
+}

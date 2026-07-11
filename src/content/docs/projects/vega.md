@@ -10,7 +10,7 @@ title: Vega — 整张图就是一棵 JSON
 
 Vega 是一个**用 JSON 描述图表**的可视化系统。你不写画图代码，你写一份"规格说明"——告诉它"数据在这里、横轴接这一列、纵轴接那一列、画成圆点"——它自己读这份 JSON、自己渲染出 SVG 或 Canvas。日常类比：像点装修——你提交一份"客厅要北欧风、白墙、原木家具"的需求清单，施工队读完自己装；你不需要去搬砖也不用挑哪块砖摆哪。
 
-它由 University of Washington 的 Interactive Data Lab（Jeffrey Heer 团队）2013 年启动，是 grammar of graphics 在 JS 世界里**最学术**的一支——背后有 IEEE InfoVis 2014 / 2016 两篇高引论文，不是"先做后想"的产品，是"先想清楚再做"的研究系统。
+它由 University of Washington 的 Interactive Data Lab（Jeffrey Heer 团队）2013 年启动，是 grammar of graphics 在 JS 世界里**最学术**的一支——背后有 Reactive Vega（InfoVis/TVCG 2015–2016）与 Vega-Lite（InfoVis 2016 Best Paper）两篇高引论文，不是"先做后想"的产品，是"先想清楚再做"的研究系统。
 
 ```json
 {
@@ -61,18 +61,24 @@ Vega 的整张 spec 折叠成 **五个概念**：
 }
 ```
 
-Vega 版（Vega-Lite 编译器吐出来的等价 spec）：
+Vega 版（编译器吐出的等价骨架，字段写全一点方便对照）：
 
 ```json
 {
-  "data": [{"name": "table", "values": [...]}],
-  "scales": [{"name": "xscale", "type": "band", "domain": {...}, "range": "width"}],
-  "axes": [{"orient": "bottom", "scale": "xscale"}],
-  "marks": [{"type": "rect", "from": {"data": "table"}, "encode": {...}}]
+  "data": [{"name": "table", "values": [{"a": "A", "b": 28}]}],
+  "scales": [
+    {"name": "xscale", "type": "band", "domain": {"data": "table", "field": "a"}, "range": "width"},
+    {"name": "yscale", "type": "linear", "domain": {"data": "table", "field": "b"}, "range": "height"}
+  ],
+  "axes": [{"orient": "bottom", "scale": "xscale"}, {"orient": "left", "scale": "yscale"}],
+  "marks": [{
+    "type": "rect", "from": {"data": "table"},
+    "encode": {"enter": {"x": {"scale": "xscale", "field": "a"}, "y": {"scale": "yscale", "field": "b"}}}
+  }]
 }
 ```
 
-**为什么留两层**：Vega-Lite 给人写，Vega 给工具生成（编译器 / LLM / BI 工具）。底层 Vega 更显式、更可程序化构造。
+对照：Vega-Lite 的 `encoding.x/y` 被拆成 **scale + axis + mark.encode** 三块。**为什么留两层**：Lite 给人写，Vega 给工具生成；底层更显式、更可程序化构造。
 
 ### 案例 2：Signal 让交互成为 spec 的一部分
 
@@ -97,13 +103,14 @@ Vega 版（Vega-Lite 编译器吐出来的等价 spec）：
 
 ```python
 import altair as alt
+# diamonds 换成任意 DataFrame 即可（列名对上就行）
 chart = alt.Chart(diamonds).mark_circle().encode(
     x="carat", y="price", color="cut"
 )
 chart.to_json()  # 吐一份 Vega-Lite spec
 ```
 
-Altair 本身**不画一个像素**，它只是把 Python 链式调用翻译成 Vega-Lite JSON，再交给 Vega 渲染器。这是"Python 数据栈 + JS 可视化栈"用 JSON 当 ABI 的标准模式。
+Altair 本身**不画一个像素**，它只是把 Python 链式调用翻译成 Vega-Lite JSON，再交给 Vega 渲染器。这是"Python 数据栈 + JS 可视化栈"用 JSON 当 ABI（两边都能读的中间格式）的标准模式。
 
 ## 踩过的坑
 
@@ -120,7 +127,7 @@ Altair 本身**不画一个像素**，它只是把 Python 链式调用翻译成 
 **适用**：
 - 工具 / 编译器 / LLM **生成图表**——JSON 可以模板化、可以序列化、可以跨语言
 - Notebook 渲染器内嵌（Jupyter / VS Code / Observable）
-- BI / 报表系统底层（Kibana / Looker / Hex）
+- BI / 报表系统底层（Kibana 内置 Vega 面板；Hex 等 notebook BI 也常嵌 Vega 渲染）
 - Python 数据科学走 Altair → Vega-Lite → Vega 这条链
 - 学术可视化原型——配套论文、可复现 spec
 
@@ -136,8 +143,8 @@ Altair 本身**不画一个像素**，它只是把 Python 链式调用翻译成 
 - **2005 年**：Hadley Wickham 在 R 实现 ggplot2，让 grammar of graphics 走进数据科学日常。
 - **2009 年**：Mike Bostock 在 UW IDL 做 Protovis（D3 前身），把 grammar 思想搬进 JS。
 - **2011 年**：Bostock 离开 UW 做 [[d3]]，选择"低层武器"路线。
-- **2013–2014 年**：Heer 团队启动 Vega，做"声明式 JSON 版的 Protovis"，IEEE InfoVis 论文发表。
-- **2016 年**：Vega-Lite 论文拿 IEEE InfoVis 最佳论文，定义了"统计图的简化语法"。
+- **2013 年**：Heer 团队启动 Vega，做"声明式 JSON 版的 Protovis"。
+- **2015–2016 年**：Reactive Vega 论文（InfoVis/TVCG）把交互做成 dataflow；同年 Vega-Lite 拿 InfoVis 最佳论文，定义统计图简化语法。
 - **2018 年**：Altair（Python）成为 Vega-Lite 主流入口，Python 数据科学界默认可视化栈之一。
 - **2021 年**：[[observable-plot]] 出现，借鉴 Vega-Lite 思想但回到 JS API 路线，分流但理念近。
 
@@ -164,3 +171,7 @@ Altair 本身**不画一个像素**，它只是把 Python 链式调用翻译成 
 - [[plotly-js]] —— 另一种"JSON 即图"路线，更偏交互式仪表盘
 - [[amcharts5]] —— 商业图表库，对照 Vega 的学术路线
 - [[chart-js]] —— Canvas 渲染入门级图表，Vega 的"重型版"对立面
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

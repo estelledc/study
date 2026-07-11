@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "LeakyReLU、softmax、bag-of-words 首次出现缺少一句日常桥接，零基础会在公式段卡住。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "inductive / transductive 虽有解释，建议在案例 2 再用「旧班 vs 新班」补一句。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「GCN 不行——换图就崩」过强：原版 GCN 多在 transductive 设定评估，但度归一化本身可在新图上重算；宜改为「原论文设定偏 transductive，换图泛化不是它的主打能力」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Transformer 本质上就是全连接图上的 GAT」可保留为教学类比，但宜加「结构上相近」限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例只有结构示意，缺一段可跟做的 PyG GATConv 最小示例（几行即可）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里 GATv2 静态 attention 写得很有用，保持。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "LeakyReLU、softmax、bag-of-words 首次出现缺少一句日常桥接，零基础会在公式段卡住。",
+        "inductive / transductive 虽有解释，建议在案例 2 再用「旧班 vs 新班」补一句。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「GCN 不行——换图就崩」过强：原版 GCN 多在 transductive 设定评估，但度归一化本身可在新图上重算；宜改为「原论文设定偏 transductive，换图泛化不是它的主打能力」。",
+        "「Transformer 本质上就是全连接图上的 GAT」可保留为教学类比，但宜加「结构上相近」限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例只有结构示意，缺一段可跟做的 PyG GATConv 最小示例（几行即可）。",
+        "踩坑里 GATv2 静态 attention 写得很有用，保持。"
+      ]
+    }
+  ]
+}

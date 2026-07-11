@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有故事没有逐步拆解（冻结→拷贝→恢复），建议补 3 步编号，方便零基础跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "学到什么第2条把 AFS/Coda 写成 Sprite 后裔不准确：AFS 与 Sprite 同年并行，Coda 继承的是 AFS；应改为同时代对比路线，勿写成血缘后裔"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "反思段「迁移开销 50ms」与前文「10MB/10Mbps 约 8 秒」易冲突，建议改成论文量级表述或删掉绝对毫秒数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "是什么里「未存档的浏览器标签跟着走」是时代错位类比，可弱化为「未保存的编辑状态/终端会话」以免被当成史实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化边界（如 RTT <1ms / 同构 ISA），与踩坑里的 WAN/异构呼应"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有故事没有逐步拆解（冻结→拷贝→恢复），建议补 3 步编号，方便零基础跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "学到什么第2条把 AFS/Coda 写成 Sprite 后裔不准确：AFS 与 Sprite 同年并行，Coda 继承的是 AFS；应改为同时代对比路线，勿写成血缘后裔",
+        "反思段「迁移开销 50ms」与前文「10MB/10Mbps 约 8 秒」易冲突，建议改成论文量级表述或删掉绝对毫秒数",
+        "是什么里「未存档的浏览器标签跟着走」是时代错位类比，可弱化为「未保存的编辑状态/终端会话」以免被当成史实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用场景可补一条量化边界（如 RTT <1ms / 同构 ISA），与踩坑里的 WAN/异构呼应"
+      ]
+    }
+  ]
+}

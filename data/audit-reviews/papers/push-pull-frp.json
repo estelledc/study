@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 对比有代码但缺少像案例 1 那样的逐部分解释，零基础读者难跟住 RxJS shareReplay 与 Solid createSignal 各自对应论文哪一侧"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点三条缺少简短日常类比（模板要求每条带类比）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写「论文宣称比纯 pull 快 10-100 倍」与原文不符：Haskell'09 论文定性讨论浪费重算与轮询延迟，未给出 10-100× 定量宣称，应改为定性表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，但「性能敏感」可再补一句相对纯 pull 轮询的量化直觉（如每帧全量重算 vs 事件驱动）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 对比有代码但缺少像案例 1 那样的逐部分解释，零基础读者难跟住 RxJS shareReplay 与 Solid createSignal 各自对应论文哪一侧",
+        "核心要点三条缺少简短日常类比（模板要求每条带类比）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点写「论文宣称比纯 pull 快 10-100 倍」与原文不符：Haskell'09 论文定性讨论浪费重算与轮询延迟，未给出 10-100× 定量宣称，应改为定性表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用边界清楚，但「性能敏感」可再补一句相对纯 pull 轮询的量化直觉（如每帧全量重算 vs 事件驱动）"
+      ]
+    }
+  ]
+}

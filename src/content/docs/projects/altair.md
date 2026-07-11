@@ -143,6 +143,13 @@ chart.save("c.html")  # 嵌 Vega-Lite runtime 的离线 HTML
 - 3D 图——Vega-Lite 不支持，要转 plotly / pyvista
 - 完全离线无浏览器场景——Vega-Lite 依赖 SVG / Canvas，命令行进程跑不动
 
+## 历史小故事（可跳过）
+
+- 2016 年前后：Altair 从 Python 数据科学社区里长出来，目标是把 Vega-Lite 的声明式图形语法搬进 Notebook。
+- 2017-2019 年：JupyterLab / Notebook 对 Vega-Lite 渲染越来越顺，Altair 成了 PyData 里“轻量交互图”的常用选择。
+- 2020 年后：Streamlit、Observable、前端文档站都能吃 Vega-Lite spec，Altair 的 `to_dict()` 变成跨环境接口。
+- 2023 年后：Altair 5 跟进 Vega-Lite 5，选择、参数和交互写法更统一。
+
 ## 学到什么
 
 1. **声明式 vs 命令式画图差一代抽象**：Altair 让你说"要什么"，matplotlib 让你说"怎么画"——前者把"图能不能换数据 / 加交互 / 嵌网页"全免费送
@@ -166,3 +173,7 @@ chart.save("c.html")  # 嵌 Vega-Lite runtime 的离线 HTML
 - [[d3]] —— Vega 底层用 D3 selection 做绑定 + 过渡
 - [[plotly-js]] —— 同代际竞品，PyData 里另一选择
 - [[jupyter-notebook]] —— Altair 默认渲染容器，内置 Vega-Lite runtime
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

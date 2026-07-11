@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有说明，但案例 2/3 缺少「逐部分解释」；建议各补 3–4 条，说明 formulas/engine、fixedRowsTop、mergeCells 分别干什么。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 AGPL 与 MongoDB SSPL、Elastic ELv2 并称为「Copyleft 武器化」易歪曲：后两者不是 OSI copyleft；应改成「用许可证逼商业用户付费」并区分 AGPL vs 源码可用许可证。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「浏览器端最完整的 Excel 兼容公式实现」过满，宜改为「较完整 / 函数覆盖很广」并保留约 380+ 函数的可核验表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "licenseKey、afterChange、autoColumnSize、paste 精度都是实战坑；案例 2/3 可跑但缺逐步注释。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 有说明，但案例 2/3 缺少「逐部分解释」；建议各补 3–4 条，说明 formulas/engine、fixedRowsTop、mergeCells 分别干什么。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "把 AGPL 与 MongoDB SSPL、Elastic ELv2 并称为「Copyleft 武器化」易歪曲：后两者不是 OSI copyleft；应改成「用许可证逼商业用户付费」并区分 AGPL vs 源码可用许可证。",
+        "「浏览器端最完整的 Excel 兼容公式实现」过满，宜改为「较完整 / 函数覆盖很广」并保留约 380+ 函数的可核验表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "licenseKey、afterChange、autoColumnSize、paste 精度都是实战坑；案例 2/3 可跑但缺逐步注释。"
+      ]
+    }
+  ]
+}

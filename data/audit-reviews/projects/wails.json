@@ -1,0 +1,112 @@
+{
+  "action": "rewrite",
+  "average": 1.11,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文是占位模板：每段重复「围绕 wails 关注 wails 的边界与收益」，零基础读者学不到任何实质内容"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少日常类比与真实定义：应说明 Wails 是用 Go + Web 前端做桌面应用的框架"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例无代码、无步骤，需重写为 3 个可跟做案例（脚手架、绑定、打包）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文未陈述任何可核验事实：未说明 Go 后端、系统 WebView、与 Electron/Tauri 的定位差异"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "分类标为 mobile 与项目事实不符，Wails 主线是桌面应用（macOS/Windows/Linux）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 URL 合理，但内容与来源完全脱节，属于空壳笔记而非可引用摘要"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可运行命令或绑定示例，需补 wails init / Bind / 打包流程的最小可跟做代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑段全是占位句，应写 WebView 差异、绑定序列化、资源路径、平台依赖等真实坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用无边界：应对比 Electron 体积、Tauri/Rust 栈、纯 Web 不够用的场景"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文是占位模板：每段重复「围绕 wails 关注 wails 的边界与收益」，零基础读者学不到任何实质内容",
+        "缺少日常类比与真实定义：应说明 Wails 是用 Go + Web 前端做桌面应用的框架",
+        "实践案例无代码、无步骤，需重写为 3 个可跟做案例（脚手架、绑定、打包）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 2,
+        "no_distortion": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文未陈述任何可核验事实：未说明 Go 后端、系统 WebView、与 Electron/Tauri 的定位差异",
+        "分类标为 mobile 与项目事实不符，Wails 主线是桌面应用（macOS/Windows/Linux）",
+        "来源 URL 合理，但内容与来源完全脱节，属于空壳笔记而非可引用摘要"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可运行命令或绑定示例，需补 wails init / Bind / 打包流程的最小可跟做代码",
+        "踩坑段全是占位句，应写 WebView 差异、绑定序列化、资源路径、平台依赖等真实坑",
+        "适用/不适用无边界：应对比 Electron 体积、Tauri/Rust 栈、纯 Web 不够用的场景"
+      ]
+    }
+  ]
+}

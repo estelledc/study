@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "精装公寓 vs 毛坯房类比贯穿，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Rack 用 Servlet 桥接清楚；DSL/classic/modular 可跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐部分解释，案例 2/3 场景具体可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2007 Blake Mizerany 开源、Rack 底座、Express/Flask 路由 DSL 受影响等主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub sinatra/sinatra 合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Sinatra 对立成「最少惊讶」、Rails 对立成「约定优于配置」易歪曲：Rails 也常自称 POLS；宜改为「约定优于配置 vs 显式组装/自带电池」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 使用 $counter 但未初始化，跟做会 NameError/一直为 nil；应先 $counter = 0 或改成固定文案"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "尾斜杠、classic/modular 混用、无热重载、缺 ORM 等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：几条路由/mock/嵌入 health vs 大型后台/异步密集/极致性能/团队不熟 Ruby"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "精装公寓 vs 毛坯房类比贯穿，零基础直觉强",
+        "Rack 用 Servlet 桥接清楚；DSL/classic/modular 可跟住",
+        "案例 1 有逐部分解释，案例 2/3 场景具体可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "2007 Blake Mizerany 开源、Rack 底座、Express/Flask 路由 DSL 受影响等主线正确",
+        "来源 GitHub sinatra/sinatra 合理",
+        "把 Sinatra 对立成「最少惊讶」、Rails 对立成「约定优于配置」易歪曲：Rails 也常自称 POLS；宜改为「约定优于配置 vs 显式组装/自带电池」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 使用 $counter 但未初始化，跟做会 NameError/一直为 nil；应先 $counter = 0 或改成固定文案",
+        "尾斜杠、classic/modular 混用、无热重载、缺 ORM 等坑具体可操作",
+        "适用边界清楚：几条路由/mock/嵌入 health vs 大型后台/异步密集/极致性能/团队不熟 Ruby"
+      ]
+    }
+  ]
+}

@@ -19,7 +19,7 @@ result = Runner.run_sync(agent, 'Your prompt here')
 print(result.final_output)
 ```
 
-这个 SDK 是 OpenAI 早期实验项目 **Swarm** 的生产化升级，2026 年 5 月最新版 v0.17.4，MIT 协议，需要 Python 3.10+。
+这个 SDK 是 OpenAI 早期实验项目 **Swarm** 的生产化升级；本文按 2026-05 文档快照（当时 PyPI 常见为 v0.17.x），MIT 协议，需要 Python 3.10+。
 
 ## 为什么重要
 
@@ -50,7 +50,7 @@ SDK 暴露的原语只有 **7 个**，但理解 3 个就够了：
 | **Tracing** | 自动记一棵调用树 | 监控录像 |
 | Sessions | 跨轮持久化的工作记忆 | 工位上的便利贴 |
 
-本笔记重点对照后三个——它们是 ADR-1 三选一的对象，分别管"谁来跑 / 能不能跑 / 跑了什么"。
+本笔记重点对照后三个：它们分别管"谁来跑 / 能不能跑 / 跑了什么"，是多 agent 产品里最常要做的三个设计选择。
 
 ## 实践案例
 
@@ -111,7 +111,7 @@ with trace('Customer support flow'):
 4. 不想上报：环境变量 `OPENAI_AGENTS_DISABLE_TRACING=1` / 代码 `set_tracing_disabled(True)` / per-run 配 `RunConfig.tracing_disabled=True`
 5. 想换地方上报：`add_trace_processor(...)` 加一个、`set_trace_processors(...)` 全替换
 
-**注意**：用 OpenAI API 走 ZDR（零数据保留）合同的组织，tracing 直接不可用。
+**注意**：用 OpenAI API 且签了 ZDR（Zero Data Retention，零数据保留：提供商不落盘你的请求内容）合同的组织，tracing 直接不可用。
 
 ## 踩过的坑
 
@@ -134,9 +134,16 @@ with trace('Customer support flow'):
 
 **不适用**：
 
-- 单一 agent 单 prompt 就能搞定的场景——直接用 SDK 是过度工程
-- 需要复杂图状工作流（条件分支、循环、回退节点） → LangGraph 这种带显式图引擎更合适
-- 完全本地推理 + 不希望任何遥测出网 → 关 tracing 后能用，但生态是为 OpenAI 后端调优的
+- 单一 agent、无工具、对话轮次 < 3 就能搞定——直接调 Chat Completions 更简单
+- 需要复杂图状工作流（条件分支、循环、回退节点）→ LangGraph 这类显式图引擎更合适
+- 完全本地推理且禁止任何遥测出网 → 可关 tracing，但生态仍按 OpenAI 后端调优
+
+## 历史小故事（可跳过）
+
+- **2024 年**：OpenAI 开源实验项目 Swarm，用极少原语演示多 agent handoff
+- **2025 年**：Agents SDK 接棒 Swarm，补上 guardrail、tracing、sessions，走向可维护的生产 API
+- **设计选择**：不发明工作流 DSL，编排留给普通 Python `async`/`if`/`for`
+- **生态**：官方文档同步维护 handoffs / guardrails / tracing 专章，和本笔记三条主线一一对应
 
 ## 学到什么
 
@@ -158,3 +165,9 @@ with trace('Customer support flow'):
 - [[anthropic-cookbook]] —— 另一家厂的 agent 实现范式合集，可对照看哲学差异
 - [[langgraph]] —— 用显式图引擎做 agent 编排，和 SDK"少原语 + Python 控制流"路线相反
 - [[crewai]] —— 把多 agent 抽象成"角色 + 任务 + 流程"的另一种 DSL 取向
+- [[autogen]] —— 微软多 agent 对话框架，适合对比"聊天室"与"handoff 转介"两种协作模型
+- [[langchain]] —— 更重的链式/代理生态；Agents SDK 刻意更薄
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

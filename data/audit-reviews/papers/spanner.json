@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 有 SQL 但缺少像模板那样的「逐部分解释」编号步骤；建议拆成：拆分片 → 本地 snapshot read → 汇总"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3（AdWords 预算）没有可跟做的伪代码/步骤表，只剩叙事对比；补 3–4 步「改预算 → commit-wait → 全球读到新值」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「tablet / Paxos group / snapshot read」首次出现可再加半句白话桥接，降低零基础掉队风险"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「CockroachDB / TiDB / YugabyteDB / FoundationDB … 都是 OSS 复刻品」过满：CockroachDB/YugabyteDB 是 Spanner 启发；TiDB 更偏 Percolator（后文历史已写）；FoundationDB 架构路线不同，不是 Spanner 复刻"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑标题「写延迟 > 跨大洲网络往返」易误读：跨大洲 RTT 通常远大于 commit-wait（~ε）；应改为「写延迟 = commit-wait + 跨 region quorum」，勿暗示 commit-wait 本身超过跨洲 RTT"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「约 14ms 后」把 2ε 写成固定等待可接受为教学简化，但宜标明「约 2ε（ε≈7ms）」以免读者当成常数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 协议轨迹可跟做；案例 2/3 可补更可操作的步骤或伪代码，与 zero-base 建议对齐"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑有 ε、RTT、leader blackout 量化，实用；适用/不适用边界清楚，可随 academic 修正 NewSQL「复刻」表述"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 有 SQL 但缺少像模板那样的「逐部分解释」编号步骤；建议拆成：拆分片 → 本地 snapshot read → 汇总",
+        "案例 3（AdWords 预算）没有可跟做的伪代码/步骤表，只剩叙事对比；补 3–4 步「改预算 → commit-wait → 全球读到新值」",
+        "「tablet / Paxos group / snapshot read」首次出现可再加半句白话桥接，降低零基础掉队风险"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「CockroachDB / TiDB / YugabyteDB / FoundationDB … 都是 OSS 复刻品」过满：CockroachDB/YugabyteDB 是 Spanner 启发；TiDB 更偏 Percolator（后文历史已写）；FoundationDB 架构路线不同，不是 Spanner 复刻",
+        "踩坑标题「写延迟 > 跨大洲网络往返」易误读：跨大洲 RTT 通常远大于 commit-wait（~ε）；应改为「写延迟 = commit-wait + 跨 region quorum」，勿暗示 commit-wait 本身超过跨洲 RTT",
+        "案例 1「约 14ms 后」把 2ε 写成固定等待可接受为教学简化，但宜标明「约 2ε（ε≈7ms）」以免读者当成常数"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 协议轨迹可跟做；案例 2/3 可补更可操作的步骤或伪代码，与 zero-base 建议对齐",
+        "踩坑有 ε、RTT、leader blackout 量化，实用；适用/不适用边界清楚，可随 academic 修正 NewSQL「复刻」表述"
+      ]
+    }
+  ]
+}

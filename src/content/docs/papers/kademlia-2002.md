@@ -30,7 +30,7 @@ Kademlia 是一套**让上百万台没中心服务器的机器自己组网、互
 
 Kademlia 的全部魔力来自**三件东西**：
 
-1. **XOR 距离**：`d(x,y) = x XOR y`。它满足三个关键性质——对称（`d(x,y) = d(y,x)`）、自反（`d(x,x) = 0`）、三角不等式（`d(x,y) <= d(x,z) XOR d(z,y)`）。对称这点比 Chord 的圆环重要：Chord 的"我离你"和"你离我"不一样，路由表得专门维护。Kademlia 任意一次消息往返都能顺带更新双方的路由表。
+1. **XOR 距离**：`d(x,y) = x XOR y`（把结果当无符号整数比大小）。它满足度量的基本性质——对称（`d(x,y) = d(y,x)`）、自反（`d(x,x) = 0`）、三角不等式（`d(x,y) ≤ d(x,z) + d(z,y)`）；进一步还是**超度量**：`d(x,y) ≤ max(d(x,z), d(z,y))`。对称这点比 Chord 的圆环重要：Chord 的"我离你"和"你离我"不一样，路由表得专门维护。Kademlia 任意一次消息往返都能顺带更新双方的路由表。
 
 2. **k-bucket 路由表**：每台机器维护 160 个桶，第 i 个桶装"和我 XOR 距离落在 [2^i, 2^(i+1)) 的节点"。每桶最多装 k 个（论文取 k=20）。新节点想进满桶？先 ping 桶里最老的节点——**他还活着就不替换**。这套策略偏向保留老节点，而老节点统计上更可能继续在线（这是论文用 Gnutella 实测数据支撑的）。
 
@@ -116,8 +116,8 @@ B 比 A 离我近。**直观理解**：XOR 距离就看"前缀有多少位相同
 
 - **2001 年 SIGCOMM**：Chord、Pastry、Tapestry、CAN 四篇 DHT 论文同期。Maymounkov 当时是纽约大学硕士生，正在导师 Mazières 实验室做 SFS 加密文件系统，看完这些论文觉得 Chord 的圆环路由不优雅——非对称、要专门 stabilize。
 - **2002 年 IPTPS**：Maymounkov 和 Mazières 把 Kademlia 投到第一届 IPTPS。论文 6 页，密度极高，几乎没有冗余文字。
-- **2005 年**：Azureus（后来的 Vuze）BitTorrent 客户端第一个上线 Mainline DHT 实现。
-- **2006 年**：主线 BitTorrent 协议规范 BEP-5 把 Kademlia 写进标准，全网铺开。
+- **2005-05**：Azureus（后来的 Vuze）率先上线**自有**的 Kademlia DHT（仅该客户端使用）。
+- **2005-05/06**：BitTorrent Inc 推出互不兼容的 **Mainline DHT**；随后多数客户端跟进，2006 年前后由 BEP-5 写成规范并全网铺开。
 - **2014 年**：以太坊 devp2p 选 Kademlia 做节点发现，沿用至今（discovery v4 / v5）。
 - **2018 年**：libp2p / IPFS 把 Kademlia 模块化、可换距离函数，但默认还是 XOR。
 - **现在（2026）**：Kademlia 是部署最广的 DHT。Chord、Pastry、Tapestry 在工业界几乎绝迹，只在课程和论文里出现。

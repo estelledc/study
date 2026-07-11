@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 2.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "『预热零件』类比含糊，宜改成『轻量引擎 vs 整车 Node』；custom runtime/layer 缺零基础桥接；三案例多为 bullet 清单，缺可跟做步骤与逐行解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "应标明 experimental、Rust+QuickJS、无 JIT、官方宣称约 10x 冷启动；历史段缺 2023/2024 开源时间线；勿写成已可无脑替代 Node 生产。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "核心要点代码围栏标 bash 实为 JS；Dockerfile 未 COPY llrt 却 chmod /usr/bin/llrt；案例缺可运行 layer/handler 最小步骤；适用场景宜补冷启动数量级（数十 ms vs 数百 ms）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "『预热零件』类比含糊，宜改成『轻量引擎 vs 整车 Node』；custom runtime/layer 缺零基础桥接；三案例多为 bullet 清单，缺可跟做步骤与逐行解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "应标明 experimental、Rust+QuickJS、无 JIT、官方宣称约 10x 冷启动；历史段缺 2023/2024 开源时间线；勿写成已可无脑替代 Node 生产。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "核心要点代码围栏标 bash 实为 JS；Dockerfile 未 COPY llrt 却 chmod /usr/bin/llrt；案例缺可运行 layer/handler 最小步骤；适用场景宜补冷启动数量级（数十 ms vs 数百 ms）。"
+      ]
+    }
+  ]
+}

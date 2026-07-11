@@ -1,5 +1,5 @@
 ---
-title: React UI 组件库
+title: React — 用组件描述界面的 JavaScript 库
 来源: https://github.com/facebook/react
 日期: 2026-05-29
 分类: UI 框架
@@ -8,7 +8,7 @@ title: React UI 组件库
 
 ## 是什么
 
-React 是一个让你**用写函数的方式描述界面**的 JavaScript 库。日常类比：你在餐厅写菜单，老板（React）安排厨房按你菜单做菜——你只管菜单里有什么菜，不用管炉火怎么开、汤怎么炖。
+React 是一个让你**用写函数（组件）的方式描述界面**的 JavaScript 库——不是 Ant Design 那种现成按钮合集，而是自己搭积木的底座。日常类比：你在餐厅写菜单，老板（React）安排厨房按你菜单做菜——你只管菜单里有什么菜，不用管炉火怎么开、汤怎么炖。
 
 更技术一点说：你写一个函数，输入是**数据**（props 和 state），输出是**界面应该长什么样**的描述（JSX）。React 自己负责把这份描述变成浏览器里真实的 DOM，并在数据变化时自动更新。
 
@@ -92,7 +92,11 @@ function Greeting({ name }) {
 }
 ```
 
-`name="Jason"` 从父组件 `App` 传给子组件 `Greeting`。**props 只能从上往下传**——子组件想改父组件的状态，必须父组件传一个回调函数（如 `onChange`），子组件调用它通知父组件。
+**逐步对照**：
+
+1. 父 `App` 写 `name="Jason"` → 数据从上往下交给子
+2. 子 `Greeting` 用 `{ name }` 解构接收，只读这份 props
+3. 子若要改父的状态：父再传一个回调（如 `onChange`），子调用它通知父——**不能**直接改父的 state
 
 ## 踩过的坑
 
@@ -118,7 +122,7 @@ function Greeting({ name }) {
 - 纯静态页 / 营销落地页 —— React runtime 比 vanilla JS 重，SEO 和首屏速度都不占优；考虑 Astro / 11ty
 - 极致性能场景（Canvas 渲染万级元素 / 高频动画）—— React reconciliation 有开销，直接操作 DOM 或借助 [[framer-motion]] 这类专门优化方案
 - 不希望引入 build 工具的小项目 —— React 几乎必须配 [[vite]] / webpack，不像 jQuery 一个 script 标签就能用
-- 需要 SSR + 强 SEO —— 用纯 React 难，用 Next.js 这种框架更合适
+- 需要 SSR + 强 SEO —— `react-dom/server` 能出 HTML，但路由/数据/缓存通常还要 Next.js 这类框架
 
 ## 历史小故事（可跳过）
 
@@ -126,7 +130,7 @@ function Greeting({ name }) {
 - **2013 年 5 月**：Pete Hunt 在 JSConf US 上开源 React，演讲名叫 "Rethinking Best Practices"——观众觉得"在 JS 里写 HTML"很反传统，反响褒贬参半
 - **2015 年**：React Native 发布，把组件思想带到移动端
 - **2018 年 10 月**：React 16.8 发布 Hooks，颠覆了 class 写法。`useState` / `useEffect` 让函数组件第一次能存状态
-- **2022 年 3 月**：React 18 发布并发渲染（concurrent rendering）+ 自动批处理，为后续 Server Components 铺路
+- **2022 年 3 月**：React 18 发布并发渲染（concurrent rendering）+ 自动批处理，并加强流式 SSR；Server Components 则更早在 2020 提出、由框架侧落地
 
 ## 学到什么
 
@@ -156,83 +160,4 @@ function Greeting({ name }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
-- [[ag-grid]] —— AG Grid — 企业级数据表格
-- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
-- [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
-- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
-- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
-- [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
-- [[cot]] —— Chain-of-Thought Prompting
-- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
-- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
-- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
-- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
-- [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
-- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
-- [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
-- [[framer-motion]] —— Framer Motion — React 声明式动画
-- [[glide-data-grid]] —— glide-data-grid — Canvas 画出来的百万行表格
-- [[gradio]] —— Gradio — ML 模型 demo 框架
-- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
-- [[gsap]] —— GSAP — GreenSock 高性能动画
-- [[handsontable]] —— Handsontable — 浏览器里的 Excel
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
-- [[kepler-gl]] —— kepler.gl — 拖拽式百万点 GIS 探索界面
-- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
-- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
-- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
-- [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
-- [[metagpt]] —— MetaGPT — 多智能体软件公司
-- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
-- [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
-- [[next-js]] —— Next.js — React 全栈框架
-- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
-- [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
-- [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[openhands]] —— OpenHands — 开源 AI 软件工程师
-- [[penpot]] —— Penpot — 开源自托管的 Figma 替代
-- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
-- [[preact]] —— Preact — 3KB React 替代
-- [[qwik]] —— Qwik — Resumable UI 框架
-- [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
-- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
-- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
-- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[reflexion]] —— Reflexion — 让 LLM 自我反思
-- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
-- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
-- [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器
-- [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
-- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
-- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
-- [[streamlit]] —— Streamlit — Python 几行写 Web 应用
-- [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
-- [[svelte]] —— Svelte — 编译时 UI 框架
-- [[sveltekit]] —— SvelteKit — Svelte 全栈框架
-- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
-- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
-- [[swr]] —— SWR — React 远程数据 hook 的极简流派
-- [[tabulator]] —— Tabulator — 纯 JS 交互式表格
-- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
-- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
-- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
-- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
-- [[tree-of-thoughts-2023]] —— Tree of Thoughts — 让 LLM 像下棋一样多想几步再答
-- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
-- [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页
-- [[voyager]] —— Voyager — LLM 终身学习智能体
-- [[vue]] —— Vue.js — 渐进式 UI 框架
-- [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
-- [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
-- [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
-- [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
-- [[zustand]] —— Zustand — 极简 React 状态管理
 

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例缺少模板式「逐部分解释」：案例 1 表格后应分步说明为何 6 连接分散丢包、单连接如何全局停顿"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "PLT / HoL / dummynet 首次出现时用一句话白话桥接（页面加载时间 / 队头堵住后面的车 / 内核流量整形）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2–4 偏结论摘要，建议各拆成 2–3 步可跟读的推理，而不是只给前后数字"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「快 4–15%」与论文摘要「依赖与计算后约 7%」及「高 RTT/低带宽下 70–80% 页面受益」不完全对齐，应改成更贴近论文的区间表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1–4 的绝对 PLT 秒数（3.2s/4.1s 等）未见论文原文对应表，应标明为教学示意或改用论文相对比例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Google 早期宣传宜写白纸报告的约 27–60%，不宜笼统写「50%+」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例是结果表而非可跟做步骤；可补一段「固定 RTT/丢包 → 对比 6 连接 HTTP 与单连接 SPDY → 看 PLT」的最小复现思路"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「适用 vs 不适用」缺少量化边界（如 RTT≥200ms 且丢包≈0 才明显受益）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑第 2 条可点明 2014 用的是早期 SPDY/3 + 自研客户端，与今日 HTTP/2 栈不可直接外推"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺少模板式「逐部分解释」：案例 1 表格后应分步说明为何 6 连接分散丢包、单连接如何全局停顿",
+        "PLT / HoL / dummynet 首次出现时用一句话白话桥接（页面加载时间 / 队头堵住后面的车 / 内核流量整形）",
+        "案例 2–4 偏结论摘要，建议各拆成 2–3 步可跟读的推理，而不是只给前后数字"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "开篇「快 4–15%」与论文摘要「依赖与计算后约 7%」及「高 RTT/低带宽下 70–80% 页面受益」不完全对齐，应改成更贴近论文的区间表述",
+        "案例 1–4 的绝对 PLT 秒数（3.2s/4.1s 等）未见论文原文对应表，应标明为教学示意或改用论文相对比例",
+        "Google 早期宣传宜写白纸报告的约 27–60%，不宜笼统写「50%+」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例是结果表而非可跟做步骤；可补一段「固定 RTT/丢包 → 对比 6 连接 HTTP 与单连接 SPDY → 看 PLT」的最小复现思路",
+        "「适用 vs 不适用」缺少量化边界（如 RTT≥200ms 且丢包≈0 才明显受益）",
+        "踩过的坑第 2 条可点明 2014 用的是早期 SPDY/3 + 自研客户端，与今日 HTTP/2 栈不可直接外推"
+      ]
+    }
+  ]
+}

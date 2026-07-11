@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 ALU/带宽数量级对零基础略密，可再点一句「先记住：同面积硅，GPU 把钱花在算力上」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写 PCIe ~16 GB/s 更贴近 PCIe 3.0；2010 Fermi 时代常见是 PCIe 2.0 ~8 GB/s，可加年份限定以免读者以为论文原文数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界已清楚；可补一句「数据量至少要能摊薄一次 H2D 拷贝」的粗量化门槛"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 ALU/带宽数量级对零基础略密，可再点一句「先记住：同面积硅，GPU 把钱花在算力上」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写 PCIe ~16 GB/s 更贴近 PCIe 3.0；2010 Fermi 时代常见是 PCIe 2.0 ~8 GB/s，可加年份限定以免读者以为论文原文数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "适用边界已清楚；可补一句「数据量至少要能摊薄一次 H2D 拷贝」的粗量化门槛"
+      ]
+    }
+  ]
+}

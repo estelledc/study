@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "组装台式机 vs 品牌机三选一，贴合 Kubebuilder 单路径 vs SDK 三姿势"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "OLM / reconcile / CSV / scorecard 有短桥接；Level 5 Auto Pilot 对零基础稍陡但仍可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Helm / Ansible / bundle 三案例都有具体命令或 YAML，可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 operator-framework/operator-sdk；v1.0 起 Go 工作流 rebase Kubebuilder 的叙述正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Go / Ansible / Helm 三类型、bundle + OLM、Operator Capability Levels 与公开文档一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「运维同学也能写 Operator」属教学概括，未把 Helm Operator 夸成 Level 5"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "init/create api、Helm chart 包一层、Ansible k8s 模块、make bundle 流程概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "v0/v1 目录断层、Helm 能力封顶、playbook 幂等、bundle validate、scorecard≠e2e、owner ref、finalizer 七坑可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用上架/OLM/多语言；不适用仅内部部署或极度定制时改用 Kubebuilder，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "组装台式机 vs 品牌机三选一，贴合 Kubebuilder 单路径 vs SDK 三姿势",
+        "OLM / reconcile / CSV / scorecard 有短桥接；Level 5 Auto Pilot 对零基础稍陡但仍可接受",
+        "Helm / Ansible / bundle 三案例都有具体命令或 YAML，可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 operator-framework/operator-sdk；v1.0 起 Go 工作流 rebase Kubebuilder 的叙述正确",
+        "Go / Ansible / Helm 三类型、bundle + OLM、Operator Capability Levels 与公开文档一致",
+        "「运维同学也能写 Operator」属教学概括，未把 Helm Operator 夸成 Level 5"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "init/create api、Helm chart 包一层、Ansible k8s 模块、make bundle 流程概念正确",
+        "v0/v1 目录断层、Helm 能力封顶、playbook 幂等、bundle validate、scorecard≠e2e、owner ref、finalizer 七坑可操作",
+        "适用上架/OLM/多语言；不适用仅内部部署或极度定制时改用 Kubebuilder，边界清楚"
+      ]
+    }
+  ]
+}

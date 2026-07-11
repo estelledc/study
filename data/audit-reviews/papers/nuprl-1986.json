@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "作家写小说+工匠造工具合并 IDE 类比贴合，目标树示意直观"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "外延等同用『两边相等就互换』桥接；战术/extraction 有白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "加法交换律、非空列表、排序抽取三案例步骤清楚；ETT 术语仍偏密"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Constable et al. Prentice-Hall 1986、Cornell PRL→Nuprl、与 Coq 内涵分家主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源与 nuprl.org 书链一致；子集类型/商类型/library 机制描述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『工业可用』extraction 略满（学术系统），但未歪曲 ETT 不可判定与 tactic+kernel 分层"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Nuprl 伪代码战术树概念正确，可跟读；非现代可执行 REPL 属教学预期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：类型检查不可判定、生态分裂、GUI 老化、战术爆炸、排中律"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用构造性数学/extraction；不适用可判定检查/经典数学/工业硬件验证——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "作家写小说+工匠造工具合并 IDE 类比贴合，目标树示意直观",
+        "外延等同用『两边相等就互换』桥接；战术/extraction 有白话",
+        "加法交换律、非空列表、排序抽取三案例步骤清楚；ETT 术语仍偏密"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Constable et al. Prentice-Hall 1986、Cornell PRL→Nuprl、与 Coq 内涵分家主线正确",
+        "来源与 nuprl.org 书链一致；子集类型/商类型/library 机制描述合理",
+        "『工业可用』extraction 略满（学术系统），但未歪曲 ETT 不可判定与 tactic+kernel 分层"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Nuprl 伪代码战术树概念正确，可跟读；非现代可执行 REPL 属教学预期",
+        "踩坑具体：类型检查不可判定、生态分裂、GUI 老化、战术爆炸、排中律",
+        "适用构造性数学/extraction；不适用可判定检查/经典数学/工业硬件验证——边界清楚"
+      ]
+    }
+  ],
+  "slug": "nuprl-1986",
+  "area": "papers",
+  "status": "passed",
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 180,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 180,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

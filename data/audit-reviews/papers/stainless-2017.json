@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "## 核心要点 三条步骤缺各自短类比；refinement type / System FR / SMT 首次出现时用一句日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的「结构归纳」对零基础偏陡，拆成 Nil 基例 → Cons 归纳假设 → 结论三步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「SSA + 幽灵状态变量」加一句类比（像给每步改名记账），否则零基础跟不住案例 3"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Stainless 被用到 Cardano / DEDIS 等区块链协议」过满：Scalus 仅推荐用 Stainless 验 Scala，宜改为「Cardano 生态的 Scala 工具链会指向 Stainless」或删绝对化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "System FR「分层 stratified types 同时容纳终止与非终止」易歪曲：论文强调 sized types 与可类型化程序的规范化；改为 sized types / 终止检查相关表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "求解器列表写 CVC4 可注明现多用 cvc5，或改成 Z3 / cvc5 / Princess"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 建议补 stainless.collection / lang 的最小 import，方便跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界可补一句量化（核心几百行可证 vs 全库万行级不划算）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "## 核心要点 三条步骤缺各自短类比；refinement type / System FR / SMT 首次出现时用一句日常桥接",
+        "案例 1 的「结构归纳」对零基础偏陡，拆成 Nil 基例 → Cons 归纳假设 → 结论三步",
+        "「SSA + 幽灵状态变量」加一句类比（像给每步改名记账），否则零基础跟不住案例 3"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「Stainless 被用到 Cardano / DEDIS 等区块链协议」过满：Scalus 仅推荐用 Stainless 验 Scala，宜改为「Cardano 生态的 Scala 工具链会指向 Stainless」或删绝对化",
+        "System FR「分层 stratified types 同时容纳终止与非终止」易歪曲：论文强调 sized types 与可类型化程序的规范化；改为 sized types / 终止检查相关表述",
+        "求解器列表写 CVC4 可注明现多用 cvc5，或改成 Z3 / cvc5 / Princess"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1 建议补 stainless.collection / lang 的最小 import，方便跟做",
+        "适用边界可补一句量化（核心几百行可证 vs 全库万行级不划算）"
+      ]
+    }
+  ]
+}

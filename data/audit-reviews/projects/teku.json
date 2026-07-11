@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "挖矿→投票客户端、财务/仓库核账印章类比把 EL+CL 讲清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Gasper / gossipsub / attestation 有括号白话；inactivity 渗漏可再半句日常说法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例命令可跟，案例 1 有逐部分解释；案例 2/3 也可各补一句「这条在干什么」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 仍用 --network=holesky：Holesky 已于 2025 年 sunset，验证者测试网应改为 hoodi（或注明历史）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Java 25+ 要求与当前官方 README/v26.6+ 一致；客户端份额约 10–15% 与 ~14% 公开快照大致相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub Consensys/teku、Merge 2022-09、Beacon Chain 2020-12 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「占比超 2/3」表述正确对应 finality 风险阈值；可顺带区分 >1/3 也会阻碍最终确定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 holesky 已不可跟做，须改成 --network=hoodi 并确认 builder/fee-recipient 标志仍适用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：JDK 版本、jwt 不一致、单进程 missed attestation、忘 checkpoint-sync——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化（内存 <8GB / JVM 栈 / Web3Signer）——可接受；案例 2 缺 --validators-proposer-default-fee-recipient 时主网会拒启，可点明"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "挖矿→投票客户端、财务/仓库核账印章类比把 EL+CL 讲清楚",
+        "Gasper / gossipsub / attestation 有括号白话；inactivity 渗漏可再半句日常说法",
+        "三案例命令可跟，案例 1 有逐部分解释；案例 2/3 也可各补一句「这条在干什么」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 仍用 --network=holesky：Holesky 已于 2025 年 sunset，验证者测试网应改为 hoodi（或注明历史）",
+        "Java 25+ 要求与当前官方 README/v26.6+ 一致；客户端份额约 10–15% 与 ~14% 公开快照大致相符",
+        "来源 GitHub Consensys/teku、Merge 2022-09、Beacon Chain 2020-12 时间线合理",
+        "「占比超 2/3」表述正确对应 finality 风险阈值；可顺带区分 >1/3 也会阻碍最终确定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 holesky 已不可跟做，须改成 --network=hoodi 并确认 builder/fee-recipient 标志仍适用",
+        "踩坑具体：JDK 版本、jwt 不一致、单进程 missed attestation、忘 checkpoint-sync——可操作",
+        "适用边界有量化（内存 <8GB / JVM 栈 / Web3Signer）——可接受；案例 2 缺 --validators-proposer-default-fee-recipient 时主网会拒启，可点明"
+      ]
+    }
+  ]
+}

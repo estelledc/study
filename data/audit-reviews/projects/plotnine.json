@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "翻译 / 肌肉记忆类比贴切，+ 叠加图层好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「历史小故事」与「反向链接」两段，零基础少了时间线锚点，也不符合 12 段模板"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 可跟做；stat_count / factor(cyl) 有解释，可再点明「渲染后才报错」的体验"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/has2k1/plotnine、Hassan Kibirige 2017 起主导与公开史料一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GoG Wilkinson 1999、Wickham layered grammar 2010、matplotlib 后端定位正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2018 年后迁 Python 不痛」属教学归纳，未歪曲 API 对等关系"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mtcars / geom_smooth / facet_wrap / p.save / draw() 贴近官方用法，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：+ 顺序、aes 常量、列名空格、>10 万点、theme 合并"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺历史小故事与反向链接；关联仅 2 条偏少，建议补 matplotlib/ggplot2 血缘并加反向链接占位"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "翻译 / 肌肉记忆类比贴切，+ 叠加图层好懂",
+        "缺「历史小故事」与「反向链接」两段，零基础少了时间线锚点，也不符合 12 段模板",
+        "案例 1–3 可跟做；stat_count / factor(cyl) 有解释，可再点明「渲染后才报错」的体验"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 github.com/has2k1/plotnine、Hassan Kibirige 2017 起主导与公开史料一致",
+        "GoG Wilkinson 1999、Wickham layered grammar 2010、matplotlib 后端定位正确",
+        "「2018 年后迁 Python 不痛」属教学归纳，未歪曲 API 对等关系"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "mtcars / geom_smooth / facet_wrap / p.save / draw() 贴近官方用法，可跟做",
+        "踩坑可操作：+ 顺序、aes 常量、列名空格、>10 万点、theme 合并",
+        "缺历史小故事与反向链接；关联仅 2 条偏少，建议补 matplotlib/ggplot2 血缘并加反向链接占位"
+      ]
+    }
+  ]
+}

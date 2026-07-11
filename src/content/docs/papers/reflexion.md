@@ -50,7 +50,7 @@ Reflexion 的架构可以拆成 **3 个 LLM + 1 个 memory**：
 3. **Self-Reflector**——错了之后写反思的 LLM。关键 prompt 大致是：
    > "诊断你刚才失败的可能原因，并提出一个简短的高层 plan，避免再犯。用完整句子。"
 
-   注意：反思**不告诉 Actor 正确答案**（Evaluator 也不知道答案），而是说"应该先搜 X 再做 Y"——是**操作层面**的指导。
+   注意：反思**不把正确答案喂给 Actor**，而是说"应该先搜 X 再做 Y"——是**操作层面**的指导。字符串匹配 / 单元测试类 Evaluator 自己持有标准答案或测试预言，但 Self-Reflector 的输出刻意不泄题。
 
 4. **Memory buffer**——存历次反思的列表（论文建议上限 1-3 条）。下一轮 Actor 跑之前，把整段 memory 塞到 prompt 顶部。
 
@@ -109,7 +109,7 @@ Trial 2:
 
 1. **小模型反思容易"诊断错"**：参数量小于 7B 的模型写反思常常把失败归因到不存在的步骤，反而误导下一次 trial。Reflexion 在 GPT-4 上 work，在小开源模型上效果差很多。
 
-2. **字符串匹配假阴性污染反思**：如果答 "United Kingdom" 但标准答案是 "Britain"，EM 判错 → 反思写"我应该改答 Britain"——但**语义其实对**，反思被 grading bug 误导。
+2. **字符串匹配假阴性污染反思**：如果答 "United Kingdom" 但标准答案是 "Britain"，EM（Exact Match，字符串必须完全一样）判错 → 反思写"我应该改答 Britain"——但**语义其实对**，反思被 grading bug 误导。
 
 3. **反思列表越长越浪费 context**：论文说 memory 上限 1-3 条最佳，但**实际代码里没强制 cap**，跑久了会塞爆 prompt。落地时一定要自己加 `if len(reflections) > 3: pop(0)`。
 
@@ -134,9 +134,8 @@ Trial 2:
 ## 历史小故事（可跳过）
 
 - **2022 年**：[[cot]] 论文（Wei 等）证明"让 LLM 一步步想"能解数学题；同年 [[react]]（Yao 等）把 CoT 扩展成"想 + 行动"。
-- **2023 年 3 月**：Shinn 等在 arXiv 发 Reflexion v1，标题还叫 "an autonomous agent with dynamic memory and self-reflection"。
-- **2023 年 8 月**：Self-Refine（Madaan 等）同期出现，思路类似但只做单步精炼，不带跨 trial 长期 memory。
-- **2023 年 10 月**：Reflexion v4 在 NeurIPS 录用版改标题为 "Verbal Reinforcement Learning"——把"用文字代替梯度"的理论框架前置。
+- **2023 年 3 月**：Shinn 等发 Reflexion v1 arXiv；同月 Self-Refine（Madaan 等）也上线——后者只做单步精炼，不带跨 trial 长期 memory。
+- **2023 年 10 月**：Reflexion 在 NeurIPS 录用版改标题为 "Verbal Reinforcement Learning"——把"用文字代替梯度"的理论框架前置。
 - **2024 年**：Cursor / Claude Code / Devin 等工程产品在 agent loop 内置错误反思——Reflexion 思想从论文落地到日用工具。
 
 ## 学到什么

@@ -29,7 +29,7 @@ docker compose up -d   # 起 mongo + rocketchat 两个容器
 - 为什么"自托管 IM"选型时它和 Mattermost 永远一起被提——一个 Meteor 路线（功能多）、一个 Go 路线（性能稳），代表两种工程取舍
 - 为什么它和 [[element-web]] 是不同物种：Element 是 Matrix **协议**的客户端壳，Rocket.Chat 是**产品**——前者卖联邦互通，后者卖企业 omnichannel
 - 为什么和 [[signal-server]] 也不是一回事：Signal 端到端加密是默认刚需，Rocket.Chat 的 E2EE 是可选项，因为客服场景不允许服务端"看不到内容"
-- 为什么 Apps Engine 是早于 Slack apps 的插件市场雏形——理解一次"BaaS + 插件平台"该长什么样
+- 为什么 Apps Engine 是对位 Slack apps 的自托管插件市场——理解一次"BaaS + 插件平台"在开源侧该长什么样
 
 ## 核心要点
 
@@ -47,36 +47,49 @@ Rocket.Chat 的设计可以拆成 **四层**：
 
 ### 案例 1：30 分钟自建团队 IM
 
-`docker-compose.yml` 里两个 service：`mongo` 和 `rocketchat`，端口映射 3000，环境变量配 `ROOT_URL` 和 `MONGO_URL`：
+最小 `docker-compose.yml` 要同时起 Mongo 和 Rocket.Chat（缺 mongo 起不来）：
 
 ```yaml
 services:
+  mongo:
+    image: mongo:6
+    volumes: [mongo-data:/data/db]
   rocketchat:
     image: rocket.chat:latest
+    ports: ["3000:3000"]
     environment:
-      ROOT_URL: https://chat.example.com
+      ROOT_URL: http://localhost:3000
       MONGO_URL: mongodb://mongo:27017/rocketchat
+    depends_on: [mongo]
+volumes:
+  mongo-data:
 ```
 
-启动后浏览器开 3000 端口，第一个注册的账号自动是超管。团队成员浏览器开网页就能用，消息全在你 MongoDB 里。
+`docker compose up -d` 后浏览器开 3000，第一个注册账号即超管；消息落在自家 MongoDB。
 
 ### 案例 2：在客户官网嵌 LiveChat
 
-后台开启 LiveChat 后，官网 `<head>` 里粘一段 JS snippet：访客点页面右下气泡，消息直接落到 Rocket.Chat 的 omnichannel 工作台；客服在 Rocket.Chat 内回，访客在自己网页气泡看到回复。整条链路不需要客服侧装任何插件，是中小企业最常用的"售前对话"方案。
+三步：① 后台打开 LiveChat；② 官网 `<head>` 粘官方 JS snippet；③ 访客点右下气泡，消息进 omnichannel 工作台，客服在 Rocket.Chat 内回、访客在网页气泡看到。客服侧不用另装插件，是中小企业常用的"售前对话"方案。
 
 ### 案例 3：用 Apps Engine 写个 GitLab webhook
 
-App 用 TypeScript 写，注册一个 endpoint 监听 GitLab push event，把 commit 信息推到指定频道：
+App 用 TypeScript 写，注册外部 endpoint，把 GitLab push 推到指定频道：
 
 ```ts
 class GitLabApp extends App {
-  public async executePostMessageSent(message, read, http, persistence, modify) {
-    // 监听消息钩子，或注册外部 webhook 处理 GitLab 推过来的 payload
+  public async initialize() {
+    this.registerApi({ path: '/gitlab', methods: ['post'] });
+  }
+  public async executePostEndpoint(req, read, modify) {
+    const msg = modify.getCreator().startMessage()
+      .setRoom(await read.getRoomReader().getByName('ci'))
+      .setText(`push: ${req.content.commits?.[0]?.message ?? '(no msg)'}`);
+    await modify.getCreator().finish(msg);
   }
 }
 ```
 
-打包 zip 上传到 Apps marketplace 即装好，**不用动主仓代码、不用重启服务**。
+打包 zip 上传 Apps marketplace 即装好，**不用动主仓、不用重启**。
 
 ### 案例 4：读源码搞懂 DDP 怎么驱动 UI
 
@@ -116,23 +129,20 @@ class GitLabApp extends App {
 
 - **2015 年**：巴西公司 Konecty 开源 Rocket.Chat 0.0.1，目标做 Slack 的开源对位。
 - **2016 年**：GitHub 突破万星，成早期开源 IM 标杆之一。
-- **2018 年**：推 Apps Engine，把插件平台从概念变现实，对位 Slack apps。
+- **2018 年**：Apps Engine 合并进主仓并推 Marketplace，对位（而非早于）已存在的 Slack apps 生态。
 - **2020 年**：疫情远程办公爆发，装机量暴涨，omnichannel 路线被市场验证。
 - **2024 年起**：开始把后端从 Meteor 慢慢拆走，向 Node.js + microservices 迁移；但 MongoDB 仍是主库。这场迁移的动力之一是 Meteor 生态本身在收缩，Galaxy 之外的 Meteor 社区活跃度逐年下降。
 
-10 年下来活成了"开源 IM 老兵"，41k stars 是开源团队聊天分类里数一数二的。和 Slack 同期开源、同期推 Apps，但走出了一条不一样的"自托管 + omnichannel"路。
+10 年下来活成了"开源 IM 老兵"，GitHub 约 45k+ stars，开源团队聊天分类里数一数二。与 Slack 几乎同期起步开源，但插件平台更晚落地，走出的是"自托管 + omnichannel"路。
 
 ## 学到什么
 
-0. **同一个"开源 IM"赛道上有三种心智**：Rocket.Chat 是产品 + omnichannel，[[element-web]] 是协议 + 联邦，[[signal-server]] 是端到端零知识。看一个项目时先问它选了哪条路，再看代码就不会被表象迷惑
-
-1. **产品优先 vs 协议优先是两条路**：Rocket.Chat 选产品（omnichannel、Apps），[[element-web]] 选协议（Matrix 联邦），看用户买的是哪一头
-2. **Meteor 是 web 实时应用的"上一代主流"**：Reactive collection + DDP 让 2015 年的 web 第一次像桌面 IM 那样流畅；今天 React + WebSocket + state lib 把这套拆开重写了
-3. **MongoDB 当主库的代价**：schema 弹性换来运维成本，百万消息后必须做索引和分片功课
-4. **插件平台 = 长期生命力**：Apps Engine 让 Rocket.Chat 不靠主仓也能持续生长，这是企业产品的护城河
-5. **E2EE 不是越多越好**：客服、合规、审计场景需要服务端能看见内容；安全是和业务匹配的，不是绝对越强越好
-
-6. **企业 IM 的护城河是"接口"**：消息收发只是入口，真正粘性来自 LiveChat 集成、Apps marketplace、SSO/LDAP、合规审计——选型时如果只比"消息体验"必然忽略这些重头戏
+1. **同一个"开源 IM"赛道上有三种心智**：Rocket.Chat 是产品 + omnichannel，[[element-web]] 是协议 + 联邦，[[signal-server]] 是端到端零知识。看项目先问选了哪条路
+2. **产品优先 vs 协议优先是两条路**：Rocket.Chat 选产品（omnichannel、Apps），[[element-web]] 选协议（Matrix 联邦）
+3. **Meteor 是 web 实时应用的"上一代主流"**：Reactive collection + DDP 让 2015 年的 web 第一次像桌面 IM；今天 React + WebSocket + state lib 把这套拆开重写了
+4. **MongoDB 当主库的代价**：schema 弹性换来运维成本，百万消息后必须做索引和分片功课
+5. **插件平台 = 长期生命力**：Apps Engine 让 Rocket.Chat 不靠主仓也能持续生长
+6. **E2EE 不是越多越好**：客服/合规需要服务端能看见内容；安全要和业务匹配。企业 IM 粘性来自 LiveChat、Apps、SSO/LDAP，不只是消息体验
 
 ## 延伸阅读
 

@@ -1,0 +1,93 @@
+{
+  "slug": "decision-transformer-2021",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小说续写者类比到位；R̂ / return-to-go 首次出现已有中文桥接，零基础可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "NeurIPS 2021 / RTG token 化 / 与 Trajectory Transformer 并列等主线正确；关联里「无梯度」略易误解为完全无反向传播，正文已写清是无 Q/TD/policy gradient。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Hopper 伪代码可跟做；目标 return OOD、不会自我改进、随机环境偏置等踩坑非常具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "小说续写者类比到位；R̂ / return-to-go 首次出现已有中文桥接，零基础可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "NeurIPS 2021 / RTG token 化 / 与 Trajectory Transformer 并列等主线正确；关联里「无梯度」略易误解为完全无反向传播，正文已写清是无 Q/TD/policy gradient。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Hopper 伪代码可跟做；目标 return OOD、不会自我改进、随机环境偏置等踩坑非常具体。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

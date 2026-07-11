@@ -15,7 +15,7 @@ Dagger 是一个**让你用 Go / TypeScript / Python 写 CI/CD pipeline、而不
 最简单的体验，写一个 TypeScript 函数：
 
 ```ts
-import { dag, object, func } from '@dagger.io/dagger'
+import { dag, Directory, Container, object, func } from '@dagger.io/dagger'
 
 @object()
 class MyApp {
@@ -121,7 +121,7 @@ GitHub Actions 配置：
     args: test --source=.
 ```
 
-**关键点**：开发者本机跑的 `dagger call test` 和 CI 跑的命令一字不差，Engine 也是同一版本——本地能过 CI 一定能过。
+**关键点**：开发者本机跑的 `dagger call test` 和 CI 跑的命令一字不差，Engine 也是同一版本——除非差在 secrets / 权限 / 网络，本地过了 CI 大概率也会过。
 
 ## 踩过的坑
 
@@ -181,3 +181,7 @@ GitHub Actions 配置：
 - [[tekton]] —— Kubernetes 原生 CI，与 Dagger 都依赖容器，但 Tekton 仍是 YAML/CRD 配置
 - [[jenkins]] —— 老牌 CI，Jenkinsfile 是 Groovy 脚本，Dagger 把这条思路推到完整语言
 - [[nix]] —— 另一条"可重复构建"路线，更纯粹但更难入门，Dagger 用容器做了 80% 的事
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

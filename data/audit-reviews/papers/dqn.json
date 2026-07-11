@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 案例补充：Rainbow 的\"叠加技\"教训",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "价值表/追影子/打散笔记类比生动；Pong/Breakout 案例具体。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "文中另起「案例补充」H2，零基础可能以为结构跑偏，但不影响主线可读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「RLHF 用的 PPO 是 DQN 路线长出来的」歪曲谱系：PPO 属 on-policy policy gradient（TRPO 一脉），与 DQN 的 value-based 路线是并列演化，不是 DQN 后代。应改为「深度 RL 被 DQN 带火后，RLHF 常用的 PPO 等策略梯度方法才进入主流」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Nature 2015 / 49 游戏 / replay+target 等核心事实正确；来源引用合格。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "致命三联体、reward clipping、种子方差等踩坑对复现很有用；适用/不适用边界清楚。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例偏叙事无可运行训练循环，但对经典 RL 论文可接受；延伸阅读已给 CleanRL。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 案例补充：Rainbow 的\"叠加技\"教训",
+      "fix_hints": [
+        "价值表/追影子/打散笔记类比生动；Pong/Breakout 案例具体。",
+        "文中另起「案例补充」H2，零基础可能以为结构跑偏，但不影响主线可读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「RLHF 用的 PPO 是 DQN 路线长出来的」歪曲谱系：PPO 属 on-policy policy gradient（TRPO 一脉），与 DQN 的 value-based 路线是并列演化，不是 DQN 后代。应改为「深度 RL 被 DQN 带火后，RLHF 常用的 PPO 等策略梯度方法才进入主流」。",
+        "Nature 2015 / 49 游戏 / replay+target 等核心事实正确；来源引用合格。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "致命三联体、reward clipping、种子方差等踩坑对复现很有用；适用/不适用边界清楚。",
+        "案例偏叙事无可运行训练循环，但对经典 RL 论文可接受；延伸阅读已给 CleanRL。"
+      ]
+    }
+  ]
+}

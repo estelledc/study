@@ -26,9 +26,7 @@ Druid 是 **Lambda 架构**（Nathan Marz 2011 提出）的工业级落地代表
 - **速度层**：用流处理系统处理刚来的几分钟数据
 - **服务层**：把两者合并对外提供查询
 
-理论上很美，工程上很痛——你得**自己粘三个系统**。Druid 的贡献是把这三层揉进一个数据库，**对外只一个查询接口**。这让"既要看历史也要看实时"的业务不必再维护双套管线。
-
-广告（Metamarkets 起家场景）、APM 监控、用户行为分析、IoT，这些行业的实时 dashboard 大量靠它撑。
+Druid 把批层 + 速度层揉进一个库，**对外一个查询接口**（现代部署也常纯 Kafka 流式摄取，不必再挂 Hadoop 批层）。广告、APM、行为分析、IoT 的实时 dashboard 大量靠它。
 
 ## 核心要点
 
@@ -62,9 +60,9 @@ Druid 是 **Lambda 架构**（Nathan Marz 2011 提出）的工业级落地代表
 2. MiddleManager 拉到内存，几分钟内攒成一个**实时段**，已可被查询
 3. 段写满（比如 1 小时）后，**封存推到 S3 深度存储**
 4. Coordinator 通知 Historical 节点从 S3 拉这个段到本地 SSD
-5. 之后查询都走 Historical（更快），MiddleManager 转去做新段
+5. MiddleManager 转去做新段后，Historical 本地 SSD 扫老段通常更快——**刚到的走内存段，沉淀后走磁盘段**，对外仍是同一张表
 
-这个流程 = Lambda 架构里"速度层 → 批层"的自动迁移。**用户不用写任何代码**。
+这个流程 = Lambda「速度层 → 批层」的自动迁移，用户不用自己粘两套管线。
 
 ### 案例 2：一次查询走的路
 
@@ -83,7 +81,33 @@ Druid 内部：
 4. 各节点返回各自部分聚合结果（"北京: 1200, 上海: 800"）
 5. Broker 合并 → 返回客户端
 
-整个过程在数百毫秒内完成。**关键**：5 个节点真正并行，没有像 MySQL 那样某个节点扛大头。
+整个过程在数百毫秒内完成。**关键**：多节点真正并行扫段，不是单节点扛大头。
+
+### 案例 3：本地 quickstart 跑通一次
+
+官方 Docker 镜像半小时能起：
+
+```bash
+# 拉镜像并起单机（Broker+Historical+MiddleManager 打成一套）
+docker pull apache/druid:28.0.1
+# 按官网 quickstart 起 compose 后：
+curl -X POST 'http://localhost:8888/druid/indexer/v1/task' \
+  -H 'Content-Type: application/json' \
+  -d @quickstart/wikipedia-index.json
+```
+
+读：任务文件告诉 MiddleManager「从哪读样例、时间列是什么、哪些是维度/指标」。任务跑完后，在控制台对 `wikipedia` 数据源跑：
+
+```sql
+SELECT page, COUNT(*) AS edits
+FROM wikipedia
+WHERE __time >= CURRENT_TIMESTAMP - INTERVAL '1' HOUR
+GROUP BY page
+ORDER BY edits DESC
+LIMIT 10
+```
+
+这就是「摄取 → 段可查 → SQL 聚合」最小闭环；生产再把样例文件换成 Kafka topic。
 
 ## 踩过的坑
 
@@ -125,25 +149,25 @@ Druid 内部：
 ## 学到什么
 
 1. **节点角色专门化**比"一个节点干所有活"更好扩——查询/存储/摄取压力曲线不同
-2. **不可变段 + 深度存储**让节点挂了不丢数据，加新节点也很简单（直接拉段）
-3. **列存 + 位图 + 字典编码**三件套是聚合查询飞起来的现代标配
-4. Lambda 架构的"两路合并"可以**封装在数据库内部**，不必让业务自己粘
-5. **近似算法**（HyperLogLog 算 distinct count、T-Digest 算分位数）允许牺牲一点精度换数量级速度——OLAP 场景大多接受
-6. 一个工程哲学：**让"刚到的数据"和"很久前的数据"走不同路径但对外看起来一样**——这是 Druid 留给后续 OLAP 系统的核心模板
+2. **不可变段 + 深度存储**让节点挂了不丢数据，加节点直接拉段
+3. **列存 + 位图 + 字典编码**是聚合查询的现代标配
+4. 「刚到的」和「很久前的」可走不同路径，对外仍像一张表——这是后续 OLAP 的常用模板
 
 ## 延伸阅读
 
-- 论文：[Druid: A Real-time Analytical Data Store (SIGMOD 2014)](https://static.druid.apache.org/docs/druid.pdf)（30 页，最权威）
-- 官网：[druid.apache.org](https://druid.apache.org/)（quickstart 半小时能跑通）
-- [[clickhouse]] —— 同类列存数据库，更纯粹的"SQL 加速器"
-- [[kafka]] —— Druid 实时摄取的主要上游
+- 论文：[Druid: A Real-time Analytical Data Store (SIGMOD 2014)](https://static.druid.apache.org/docs/druid.pdf)
+- 官网：[druid.apache.org](https://druid.apache.org/)（quickstart）
+- [[clickhouse]] —— 同类列存，单机更强、流批一体弱
+- [[kafka]] —— 实时摄取的主要上游
+- [[pinot]] —— LinkedIn 起家的实时 OLAP，常与 Druid 对比
 
 ## 关联
 
-- [[clickhouse]] —— 同样是列存 OLAP，但单机更强、流批一体弱
+- [[clickhouse]] —— 同样列存 OLAP，流批一体弱于 Druid
 - [[kafka]] —— Druid 速度层的事实标准上游
-- [[hadoop]] —— Druid 批层最早的依赖，现在常被 Spark 替代
-- [[elasticsearch]] —— 同样按段存储，但定位是搜索不是聚合
+- [[hadoop]] —— 批层最早依赖，现常被 Spark 替代
+- [[elasticsearch]] —— 同样按段存，定位是搜索不是聚合
+- [[pinot]] —— 同赛道实时 OLAP，索引与运维模型不同
 
 ## 反向链接
 

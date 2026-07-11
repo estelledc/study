@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "鸡蛋卷类比有画面，但 GEMM/all-reduce/1F1B/bubble 堆术语缺桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 个偏多且案例 2 无代码步骤；缺 ## 反向链接 占位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Shoeybi 2019 / Narayanan 2021 / Korthikanti 2022、MT-NLG 530B、TP 每 block 2×all-reduce 与文献一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "torchrun 三维并行与 Column/RowParallel 配对可跟读；TP 不跨机、size 乘积死锁、显存 O(s²) 踩坑具体；7B 微调/推理边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "鸡蛋卷类比有画面，但 GEMM/all-reduce/1F1B/bubble 堆术语缺桥接",
+        "案例 4 个偏多且案例 2 无代码步骤；缺 ## 反向链接 占位"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Shoeybi 2019 / Narayanan 2021 / Korthikanti 2022、MT-NLG 530B、TP 每 block 2×all-reduce 与文献一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "torchrun 三维并行与 Column/RowParallel 配对可跟读；TP 不跨机、size 乘积死锁、显存 O(s²) 踩坑具体；7B 微调/推理边界清楚"
+      ]
+    }
+  ]
+}

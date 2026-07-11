@@ -30,7 +30,7 @@ const { data, isLoading } = useQuery({
 
 不用 TanStack Query 也能写代码，但下面这几件事会反复掉坑：
 
-- React 项目里 60%+ 用它**替代 Redux / MobX 处理服务器状态**——服务器数据本来不归你 own，硬塞进 Redux 反人类
+- 大量 React 项目用它**替代 Redux / MobX 处理服务器状态**——服务器数据本来不归你 own，硬塞进 Redux 反人类
 - TanStack 系（query / table / router / form）跨框架（React / Vue / Solid / Svelte / Angular）**一套 API 几乎不变**——学一次到处用
 - 自带 dedup（同 key 只发一次）/ 缓存失效 / 后台 revalidate / 离线支持 / 乐观更新——这些功能自己写一遍要几千行
 - 自带 Devtools——缓存里有什么、谁在 fetching、谁过期了，可视化看到
@@ -130,9 +130,9 @@ function AddTodo() {
 
 ## 历史小故事（可跳过）
 
-- **2017 年**：Tanner Linsley 写了 react-query。当时 React 生态都在用 Redux / Saga 处理服务器数据，他提出"服务器状态和客户端状态是两种不同物种"
-- **2021 年**：从 react-query 改名 TanStack Query，跨框架——Vue / Solid / Svelte 共用同一份 query-core
-- **2024 年**：v5 发布，引入 `useSuspenseQuery` / `staleTime: 'static'` 等新 API，深度配合 React 18+
+- **2019–2020 年**：Tanner Linsley 抽出 react-query（GitHub 约 2019-09，v1 约 2020-02）。当时 React 生态常用 Redux / Saga 管服务器数据，他提出"服务器状态和客户端状态是两种不同物种"
+- **2022 年 7 月**：随 v4 改名 TanStack Query，monorepo + 跨框架——Vue / Solid / Svelte 共用 query-core
+- **2023 年 10 月**：v5.0.0 发布，引入 `useSuspenseQuery`、`cacheTime`→`gcTime` 等；之后才陆续有 `staleTime: 'static'` 等增强，深度配合 React 18+
 
 核心 insight 是"前端状态分两种"——一旦你心里区分客户端状态（自己 own）和服务器状态（远端 own 的副本），代码会自然分裂成两套工具。
 

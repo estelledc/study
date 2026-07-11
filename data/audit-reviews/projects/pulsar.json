@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "自营快递 vs 分工式快递把计算存储分离讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "broker / BookKeeper / tenant/namespace 有白话；四种订阅模式列表清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Docker standalone + produce/consume + 多租户三案例可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 apache/pulsar 正确；Yahoo 起源、BookKeeper、分层存储、多租户与项目史一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『比 kafka 多两种模式』措辞略松（实列四种订阅），但不构成硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "计算存储分离、standalone 打包三件套属合理教学简化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "docker standalone + pulsar-admin/client 命令可跟做，四级命名解释清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑：学习曲线、Kafka 兼容层不全、客户端成熟度、non-persistent 误用——具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用多租户/分层存储 vs 已绑 Kafka 生态/极致低延迟，边界有量化直觉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "自营快递 vs 分工式快递把计算存储分离讲透",
+        "broker / BookKeeper / tenant/namespace 有白话；四种订阅模式列表清楚",
+        "Docker standalone + produce/consume + 多租户三案例可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 apache/pulsar 正确；Yahoo 起源、BookKeeper、分层存储、多租户与项目史一致",
+        "『比 kafka 多两种模式』措辞略松（实列四种订阅），但不构成硬伤",
+        "计算存储分离、standalone 打包三件套属合理教学简化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "docker standalone + pulsar-admin/client 命令可跟做，四级命名解释清楚",
+        "踩坑：学习曲线、Kafka 兼容层不全、客户端成熟度、non-persistent 误用——具体可操作",
+        "适用多租户/分层存储 vs 已绑 Kafka 生态/极致低延迟，边界有量化直觉"
+      ]
+    }
+  ],
+  "slug": "pulsar",
+  "area": "projects",
+  "status": "passed",
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true
+}

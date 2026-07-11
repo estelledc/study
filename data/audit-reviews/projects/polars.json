@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.55,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "手动挡 vs 导航自动挡类比把 eager/lazy 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "DataFrame / LazyFrame / Expression、predicate/projection pushdown 都有白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释：scan 下推→多列表达式→streaming，零基础可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 pola-rs/polars 正确；Arrow + lazy 优化 + Rayon 并行与项目定位一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「快主要来自优化器少读列」是教学压缩，方向正确；未把 Polars 说成分布式 Spark 替代品"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史 Ritchie Vink / 1.0 / DuckDB 双雄叙事合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 `collect(streaming=True)` 在 Polars 1.x 已弃用/将失效，应改为 `collect(engine=\"streaming\")` 并注明旧参数弃用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：忘 collect、表达式上下文、无行索引、u32≈42 亿行上限"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用千万~数十亿单机 ETL vs 小表/深度 pandas 生态/时序 API/OLTP 边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "手动挡 vs 导航自动挡类比把 eager/lazy 讲透",
+        "DataFrame / LazyFrame / Expression、predicate/projection pushdown 都有白话",
+        "三案例均有逐部分解释：scan 下推→多列表达式→streaming，零基础可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 pola-rs/polars 正确；Arrow + lazy 优化 + Rayon 并行与项目定位一致",
+        "「快主要来自优化器少读列」是教学压缩，方向正确；未把 Polars 说成分布式 Spark 替代品",
+        "历史 Ritchie Vink / 1.0 / DuckDB 双雄叙事合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 `collect(streaming=True)` 在 Polars 1.x 已弃用/将失效，应改为 `collect(engine=\"streaming\")` 并注明旧参数弃用",
+        "踩坑具体：忘 collect、表达式上下文、无行索引、u32≈42 亿行上限",
+        "适用千万~数十亿单机 ETL vs 小表/深度 pandas 生态/时序 API/OLTP 边界清楚"
+      ]
+    }
+  ]
+}

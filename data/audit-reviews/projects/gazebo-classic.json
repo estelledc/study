@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "剧场排练类比清楚；SDF / spawn_model / ModelPlugin 三案例都有逐部分解释，初级读者能跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2025-01 EOL、2025-02 仓库归档与官方说明一致；gzserver/gzclient、SDF/URDF、ODE 等描述未歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "world / spawn / plugin 命令与路径坑可跟做；EOL 与物理参数坑具体；Classic 维护资产 vs 新项目迁移边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "剧场排练类比清楚；SDF / spawn_model / ModelPlugin 三案例都有逐部分解释，初级读者能跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "2025-01 EOL、2025-02 仓库归档与官方说明一致；gzserver/gzclient、SDF/URDF、ODE 等描述未歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "world / spawn / plugin 命令与路径坑可跟做；EOL 与物理参数坑具体；Classic 维护资产 vs 新项目迁移边界量化清楚。"
+      ]
+    }
+  ]
+}

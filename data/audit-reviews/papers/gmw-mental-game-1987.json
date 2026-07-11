@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "打牌/公证员/拼图类比贴合；OT、诚实多数、零知识有桥接；Turing-machine game 首次出现稍陡，但不挡主线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Goldreich/Micali/Wigderson STOC 1987 正确；trap-door + 诚实多数的教学概括与恶意模型主定理一致，未明显歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则协议伪代码可跟读；踩坑区分可行性证明与工程 MPC、输出泄露与恶意模型，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "打牌/公证员/拼图类比贴合；OT、诚实多数、零知识有桥接；Turing-machine game 首次出现稍陡，但不挡主线"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Goldreich/Micali/Wigderson STOC 1987 正确；trap-door + 诚实多数的教学概括与恶意模型主定理一致，未明显歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三则协议伪代码可跟读；踩坑区分可行性证明与工程 MPC、输出泄露与恶意模型，边界清楚"
+      ]
+    }
+  ]
+}

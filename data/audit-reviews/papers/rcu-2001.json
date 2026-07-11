@@ -1,0 +1,109 @@
+{
+  "slug": "rcu-2001",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2（dcache）偏叙述，可再拆成「加锁→逐层查→seqcount 校验→失败回退」四步，方便零基础跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "McKenney 于 2019 年 10 月离开 IBM（后加入 Meta 并继续维护 RCU），不是 2017 年退休；请改正年份并避免写成已退出维护。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 fib API 是教学简化，可加一句「真实内核 API 名不同，但读锁/替换/宽限期模式相同」。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2（dcache）偏叙述，可再拆成「加锁→逐层查→seqcount 校验→失败回退」四步，方便零基础跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "McKenney 于 2019 年 10 月离开 IBM（后加入 Meta 并继续维护 RCU），不是 2017 年退休；请改正年份并避免写成已退出维护。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 fib API 是教学简化，可加一句「真实内核 API 名不同，但读锁/替换/宽限期模式相同」。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：历史小故事中 McKenney 离开 IBM 年份有误；其余两位 pass。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 McKenney 2019 离开 IBM；案例 2 拆成四步；案例 1 注明教学简化 API。",
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

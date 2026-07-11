@@ -1,0 +1,107 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "承重墙预制件类比贴合「别自己浇筑关键结构」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "重入/ERC20/Ownable 有白话桥接，初级读者能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有逐部分解释；案例 2 未演示如何 grantRole，步骤略短但不影响理解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 OpenZeppelin/openzeppelin-contracts 正确；The DAO 2016、Solidity 0.8 SafeMath 废弃、v5 Ownable 显式构造参数与生态事实一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「99% 项目都该用」属教学夸张可接受；未歪曲库职责边界（审计≠你的业务安全）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ERC20+Ownable / AccessControl / UUPS 示例符合 OZ v5 用法，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "存储布局错位、master 分支、普通版塞代理后、审计≠姿势 四坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "gas 相对 Solady/Solmate 高 10-30%、非 EVM 不适用边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "承重墙预制件类比贴合「别自己浇筑关键结构」",
+        "重入/ERC20/Ownable 有白话桥接，初级读者能跟",
+        "三案例有逐部分解释；案例 2 未演示如何 grantRole，步骤略短但不影响理解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 OpenZeppelin/openzeppelin-contracts 正确；The DAO 2016、Solidity 0.8 SafeMath 废弃、v5 Ownable 显式构造参数与生态事实一致",
+        "「99% 项目都该用」属教学夸张可接受；未歪曲库职责边界（审计≠你的业务安全）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "ERC20+Ownable / AccessControl / UUPS 示例符合 OZ v5 用法，可跟做",
+        "存储布局错位、master 分支、普通版塞代理后、审计≠姿势 四坑具体可操作",
+        "gas 相对 Solady/Solmate 高 10-30%、非 EVM 不适用边界量化清楚"
+      ]
+    }
+  ]
+}

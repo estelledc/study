@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 OOM/preemption 演示代码较抽象，可补一两步观察 free block / preempt 的说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「社区方案吞吐差 5-20 倍」偏宽，可注明相对哪类 baseline；其余 SOSP 2023 / 利用率与吞吐数字与论文一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的内部 API 路径随 v1 engine 可能变动，可注明版本或改成更稳定的观察方式"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 OOM/preemption 演示代码较抽象，可补一两步观察 free block / preempt 的说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「社区方案吞吐差 5-20 倍」偏宽，可注明相对哪类 baseline；其余 SOSP 2023 / 利用率与吞吐数字与论文一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的内部 API 路径随 v1 engine 可能变动，可注明版本或改成更稳定的观察方式"
+      ]
+    }
+  ]
+}

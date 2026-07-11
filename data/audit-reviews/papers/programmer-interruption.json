@@ -1,0 +1,131 @@
+{
+  "slug": "programmer-interruption",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "地铁刷卡计时器类比把「不问自评、只看行为时间戳」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "edit-lag / Navigate-to-New 首次出现有白话桥接；案例 1 的 brew 安装可补一句 Linux/Windows 替代，避免非 Mac 读者卡住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「JetBrains Focus Mode / VS Code Zen Mode / Slack Snooze / GitHub PR Draft 几乎在同一年代集体出现」过满：论文是 2009，Focus Mode 约 2018，工具并非与论文或彼此严格同代；宜改为「后来催生了…」或「十余年后陆续产品化」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心数字（10% <1min、30% >30min、Table 9 策略频率、9899→7492→5175、85 人）与 ICPC 2009 一致，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「行为数据比自评可靠 10 倍」属修辞，勿读成论文统计结论——可加「教学夸张」或改成「远比自评可靠」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 ActivityWatch 流程可跟做；brew --cask 仅 macOS，建议点明 pip/官网安装路径"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑把「23 分钟」误读、策略非互斥、edit-lag≠认知负荷写得很具体；适用/不适用边界清楚（pair/LLM 时代/flow）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "地铁刷卡计时器类比把「不问自评、只看行为时间戳」讲透，零基础直觉强",
+        "edit-lag / Navigate-to-New 首次出现有白话桥接；案例 1 的 brew 安装可补一句 Linux/Windows 替代，避免非 Mac 读者卡住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「JetBrains Focus Mode / VS Code Zen Mode / Slack Snooze / GitHub PR Draft 几乎在同一年代集体出现」过满：论文是 2009，Focus Mode 约 2018，工具并非与论文或彼此严格同代；宜改为「后来催生了…」或「十余年后陆续产品化」",
+        "核心数字（10% <1min、30% >30min、Table 9 策略频率、9899→7492→5175、85 人）与 ICPC 2009 一致，可保留",
+        "「行为数据比自评可靠 10 倍」属修辞，勿读成论文统计结论——可加「教学夸张」或改成「远比自评可靠」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 ActivityWatch 流程可跟做；brew --cask 仅 macOS，建议点明 pip/官网安装路径",
+        "踩坑把「23 分钟」误读、策略非互斥、edit-lag≠认知负荷写得很具体；适用/不适用边界清楚（pair/LLM 时代/flow）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "lines": 165,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic 指出 Focus Mode 等「同一年代」过满；顺带补 ActivityWatch 跨平台安装说明，并把「可靠 10 倍」改为「远比自评可靠」。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  }
+}

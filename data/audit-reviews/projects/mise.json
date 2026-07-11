@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全家桶/摆好食材类比可用；四案例缺「逐部分解释」，零基础不易抓住每步在改什么。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「历史小故事」「反向链接」两段，相对模板不完整，建议补上 rtx→mise 时间线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Jeff Dickey、前身 rtx、2024 改名 mise、MIT/Rust 主线正确。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑写「mise 默认从源码编译 Python」已过时：现行文档默认优先下载预编译二进制；应改为「未命中预编译或强制 compile=true 时才源码编译」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mise use / .mise.toml / tasks / env 示例可跟做；activate vs shims、优先级、Windows→WSL 边界清楚。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Python 编译踩坑与当前默认预编译行为不符，会误导排障；应改写并给出 `mise settings set python.compile false` 的适用条件。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例建议补逐部分解释，标明哪步写配置、哪步下载、哪步靠 activate 自动切 PATH。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "全家桶/摆好食材类比可用；四案例缺「逐部分解释」，零基础不易抓住每步在改什么。",
+        "缺「历史小故事」「反向链接」两段，相对模板不完整，建议补上 rtx→mise 时间线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "作者 Jeff Dickey、前身 rtx、2024 改名 mise、MIT/Rust 主线正确。",
+        "踩坑写「mise 默认从源码编译 Python」已过时：现行文档默认优先下载预编译二进制；应改为「未命中预编译或强制 compile=true 时才源码编译」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "mise use / .mise.toml / tasks / env 示例可跟做；activate vs shims、优先级、Windows→WSL 边界清楚。",
+        "Python 编译踩坑与当前默认预编译行为不符，会误导排障；应改写并给出 `mise settings set python.compile false` 的适用条件。",
+        "案例建议补逐部分解释，标明哪步写配置、哪步下载、哪步靠 activate 自动切 PATH。"
+      ]
+    }
+  ]
+}

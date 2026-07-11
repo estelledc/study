@@ -1,0 +1,134 @@
+{
+  "slug": "temporal",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Kafka 队列+状态机 vs 普通 async 函数的对比类比贴合「持久化执行」，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Workflow / Activity / Worker / history 重放有桥接；确定性约束用 Math.random 反例好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 代码完整但「不会重跑」可再拆半步：重放时已完成 Activity 直接读 history 结果、不重调外部"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub temporalio/temporal、Cadence→Temporal 2019、v1.0 2020、Nexus 需 server ≥1.25（2024 预览）基本正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「B 轮 7500 万美元，估值 17 亿美元」不准确：2022-02 官方宣布 Series B 约 1 亿美元、估值逾 15 亿美元。请改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「前两步不会重复」略绝对：崩溃时未完成的 Activity 可能重试；宜改为「已完成步骤按 history 结果跳过副作用」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "TS Workflow/Activity/Cron/Saga 示例概念正确可跟做；教学 min example 足够"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖确定性、continueAsNew、三超时、心智模型、本地 vs 生产——具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有长周期与高 QPS 边界；可再点一句 history 写入对 QPS 的数量级约束"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Kafka 队列+状态机 vs 普通 async 函数的对比类比贴合「持久化执行」，保留",
+        "Workflow / Activity / Worker / history 重放有桥接；确定性约束用 Math.random 反例好懂",
+        "案例 1 代码完整但「不会重跑」可再拆半步：重放时已完成 Activity 直接读 history 结果、不重调外部"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 GitHub temporalio/temporal、Cadence→Temporal 2019、v1.0 2020、Nexus 需 server ≥1.25（2024 预览）基本正确",
+        "「B 轮 7500 万美元，估值 17 亿美元」不准确：2022-02 官方宣布 Series B 约 1 亿美元、估值逾 15 亿美元。请改正",
+        "「前两步不会重复」略绝对：崩溃时未完成的 Activity 可能重试；宜改为「已完成步骤按 history 结果跳过副作用」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "TS Workflow/Activity/Cron/Saga 示例概念正确可跟做；教学 min example 足够",
+        "踩坑覆盖确定性、continueAsNew、三超时、心智模型、本地 vs 生产——具体可操作",
+        "适用/不适用有长周期与高 QPS 边界；可再点一句 history 写入对 QPS 的数量级约束"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正 Series B 约 $100M / 估值逾 $1.5B；澄清重放时已完成 Activity 读 history、未完成可能重试；补 QPS/history 数量级与 Nexus≥1.25。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 179,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 179,
+  "l1_pass": true
+}

@@ -16,7 +16,7 @@ MCS 锁是一种**让 N 个线程抢锁时总线流量保持 O(1) 而不是 O(N)
 - 排成 FIFO 队列，前一个释放时**亲手**把后一个 qnode 的 `locked` 改成 false 唤醒它
 - 整个切换只动两根 cache line（前驱的和后继的），与线程总数无关
 
-这就是 Linux 内核 qspinlock、Java `AbstractQueuedSynchronizer` 背后的核心算法。
+这就是 Linux 内核 qspinlock 背后的核心算法；Java `AbstractQueuedSynchronizer` 用的是同期近亲 **CLH** 队列锁（见案例 3），不是直接搬 MCS。
 
 ## 为什么重要
 

@@ -73,7 +73,7 @@ cast :: EqW a b -> a -> b
 cast Refl x = x                   -- 模式匹配 Refl 让编译器把 a 和 b 等同
 ```
 
-**类比 + 解释**：把 `Refl` 想成"身份证比对"——只要拿出 `Refl` 这张证，编译器就承认 `a` 和 `b` 是同一个类型。`EqW a b` 只有一个 constructor `Refl`，构造时签名要求 `a = a`（两参数同名）；模式匹配到 `Refl` 时 GADT 触发 refinement，`a` 和 `b` 在右边被等同，所以可以把 `a` 当 `b` 返回。这是 Haskell 写 typesafe cast 的标准姿势。
+**类比 + 解释**：`EqW a b` 读作"我手里有一张证明：类型 a 和类型 b 其实是同一个"。把 `Refl` 想成"身份证比对"——唯一构造子，造出来时签名就要求两边同名（`a = a`）；模式匹配到 `Refl` 时 GADT 触发 refinement，编译器在右边把 `a` 和 `b` 等同，于是可以把 `a` 当 `b` 返回。这是 Haskell 写 typesafe cast（安全类型转换）的标准姿势。
 
 ### 案例 3：长度索引向量（safe head）
 
@@ -88,13 +88,13 @@ safeHead :: Vec ('S n) a -> a        -- 类型层就拒绝空列表
 safeHead (Cons x _) = x
 ```
 
-**逐部分解释**：`Vec` 第一个参数是 type-level 的长度（用 `DataKinds` 把 `Nat` 提升到 kind）；`Nil :: Vec 'Z a` 把空列表的长度钉成 `'Z`；`safeHead` 签名要求长度形如 `'S n`（至少 1），所以传 `Nil` 直接编译期报错——这种"不变量进类型"对应 Rust 的 typestate 模式和 TypeScript discriminated union。
+**逐部分解释**：平时 `Nat` 是值（运行时的数字）；`DataKinds` 像给数字盖个"类型章"，把 `Z` / `S n` 提升到类型层当标签用（kind 可以粗想成"类型的类型"）。`Nil :: Vec 'Z a` 把空列表长度钉成 `'Z`；`safeHead` 要求长度形如 `'S n`（至少 1），传 `Nil` 直接编译期报错——这种"不变量进类型"对应 Rust typestate 和 TypeScript discriminated union。
 
 ## 踩过的坑
 
 1. **不写顶层类型签名就别指望编译器猜对**：例如 `f x y = case x of Lit i -> i + y; other -> 0`，`Term a -> Int -> Int` 和 `Term a -> a -> Int` 都讲得通，互不更一般，GHC 只会保守拒绝；论文核心结论就是"用户标注是不可省的"。
 
-2. **GADT 程序往往要 polymorphic recursion**（直白讲：同一个函数自己调自己时，每次调用允许带不同的具体类型）：`eval` 在 `If` 分支递归时 `a` 已被 refine 成具体类型，没有顶层 `:: Term a -> a` 签名，HM 的 let 泛化根本走不通——所以 GADT 函数必须先写签名。
+2. **GADT 程序往往要 polymorphic recursion**（直白讲：同一张菜谱允许每次换不同食材规格——函数自己调自己时，每次调用可带不同具体类型）：`eval` 在 `If` 分支递归时 `a` 已被 refine 成具体类型，没有顶层 `:: Term a -> a` 签名，HM 的 let 泛化走不通——所以 GADT 函数必须先写签名。
 
 3. **lambda 里 type refinement 不生效**：最小反例 `f = \x -> case x of Lit i -> i`，GHC 报 "Cannot match expected type 'a' with actual type 'Int'"；原因是 `x` 是 wobbly（没标注），refinement 规则不触发。解法是把它写成 `(\x -> case x of ...) :: Term a -> Int`，让 `x` 变 rigid。
 

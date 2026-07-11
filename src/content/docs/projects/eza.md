@@ -8,7 +8,7 @@ title: eza — 现代 ls 替代（exa 的社区接管 fork）
 
 ## 是什么
 
-eza 是 **2022 年社区接管 exa（原作者停止维护后另起的 fork）写的现代 ls 替代**——同样 Rust 单二进制，把"ls 输出黑白一锅粥"变成"带颜色 + git 状态 + 树视图 + 图标"的现代终端体验。
+eza 是 **2023 年社区接管 exa（原作者停止维护后另起的 fork）写的现代 ls 替代**——同样 Rust 单二进制，把"ls 输出黑白一锅粥"变成"带颜色 + git 状态 + 树视图 + 图标"的现代终端体验。
 
 日常类比：
 
@@ -116,8 +116,8 @@ fzf --preview 'eza -T --color=always --level=2 {}'
 
 - **2014 年**：Benjamin Sago 用 Rust 写出 exa（ogham/exa），是 Rust CLI 现代化套件的早期成员，和 fd / bat / ripgrep 同期
 - **2021 年**：exa 作者宣布"只做维护、不再加新功能"，PR 队列开始堆积（当时已经堆到 100+ 个未合并）
-- **2022 年 8 月**：社区另起 fork，命名 eza（"exa" 把 x 换成 z），由 cafkafk 等人主导，半年内合掉 exa 积压的 50+ PR、修了著名的 "Grid Bug"
-- **2023–2024 年**：brew / arch AUR / nixpkgs 全线把 exa 替换成 eza 作为推荐包，exa 进入 "deprecated" 状态
+- **2023 年 7 月**：社区另起 fork（eza-community/eza 建库），命名 eza（"exa" 把 x 换成 z），由 cafkafk 等人主导，随后合掉 exa 积压 PR、修了著名的 "Grid Bug"
+- **2023–2024 年**：brew / arch AUR / nixpkgs 陆续把 exa 替换成 eza 作为推荐包，exa 进入 "deprecated" 状态
 - **2025 年起**：eza 进入稳定期，新功能放缓，主要做 SELinux / hyperlink / theme.yml 等长尾完善
 
 eza 是开源项目"原作者不维护 → 社区 fork → fork 反超原作"的标准模板——和 [[fzf]] 衍生的 sk、Webpack 衍生的 Rspack 故事相似。

@@ -1,0 +1,149 @@
+{
+  "slug": "magic3d-2023",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "泥巴粗胚→大理石精修类比把两阶段讲透，零基础有画面"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "hash grid / DMTet / SDS / 潜空间 首次出现有桥接；CFG、Eikonal 仍偏陡"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "伪代码两阶段可跟读；案例 2 潜空间洞见清楚，案例 3 image-conditioned 偏短"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Lin et al. CVPR 2023 / arXiv:2211.10440 正确；作者与两阶段框架与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤：论文 fine 阶段约 3000 iter（25 分钟），不是伪代码里的 5000；40 分钟是在 8×A100 上测的，正文宜点明多卡"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「marching cubes 转成 DMTet」过简：论文是 density→SDF 初始化再进 DMTet 可微四面体，宜弱化为「从粗密度场初始化可微 mesh/DMTet」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "两阶段伪代码概念正确可跟读；iter 数宜与论文对齐"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "杂草/质量断崖/SDF 漂移/VAE 雅可比/Janus/CFG 分阶段等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 mesh 资产 vs 不适用复杂场景/实时/毛发半透明——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "泥巴粗胚→大理石精修类比把两阶段讲透，零基础有画面",
+        "hash grid / DMTet / SDS / 潜空间 首次出现有桥接；CFG、Eikonal 仍偏陡",
+        "伪代码两阶段可跟读；案例 2 潜空间洞见清楚，案例 3 image-conditioned 偏短"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Lin et al. CVPR 2023 / arXiv:2211.10440 正确；作者与两阶段框架与论文一致",
+        "硬伤：论文 fine 阶段约 3000 iter（25 分钟），不是伪代码里的 5000；40 分钟是在 8×A100 上测的，正文宜点明多卡",
+        "「marching cubes 转成 DMTet」过简：论文是 density→SDF 初始化再进 DMTet 可微四面体，宜弱化为「从粗密度场初始化可微 mesh/DMTet」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "两阶段伪代码概念正确可跟读；iter 数宜与论文对齐",
+        "杂草/质量断崖/SDF 漂移/VAE 雅可比/Janus/CFG 分阶段等坑具体可操作",
+        "适用 mesh 资产 vs 不适用复杂场景/实时/毛发半透明——边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true,
+  "sections_modified": [
+    "## 是什么",
+    "## 核心要点",
+    "## 实践案例",
+    "## 踩过的坑"
+  ],
+  "unresolved_hints": [],
+  "refinement": {
+    "action": "refine",
+    "reason": "academic needs-refine：fine 阶段改为 3000 iter；点明 8×A100；弱化 marching cubes→改为 density→SDF→DMTet。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  }
+}

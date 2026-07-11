@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "后厨小盘/灶台类比贯穿全文，morsel、dispatcher、NUMA 都有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有逐部分解释，静态切块 vs work stealing 对比清晰"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Volcano/exchange、pipeline breaker 首次出现可再补半句中文，但不挡零基础跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者/SIGMOD 2014/morsel≈1e5 tuples/NUMA-aware dispatcher 与 stub 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TPC-H 32 核平均 >30× 加速表述与论文报告方向一致，未发现硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "HyPer/Umbra 后续演化属合理教学归纳，未歪曲 morsel-driven 核心贡献"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "JS 伪代码概念正确：静态 split vs nextLocalOrSteal、三表 join pipeline、NUMA pick 层级清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：morsel≠cache line、允许 steal、算子也要并行、elasticity≠频繁建线程"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已区分 OLAP/NUMA vs 磁盘瓶颈/单核；可再补核数阈值，但不影响通过"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "后厨小盘/灶台类比贯穿全文，morsel、dispatcher、NUMA 都有日常桥接",
+        "三个案例都有逐部分解释，静态切块 vs work stealing 对比清晰",
+        "Volcano/exchange、pipeline breaker 首次出现可再补半句中文，但不挡零基础跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "作者/SIGMOD 2014/morsel≈1e5 tuples/NUMA-aware dispatcher 与 stub 一致",
+        "TPC-H 32 核平均 >30× 加速表述与论文报告方向一致，未发现硬伤",
+        "HyPer/Umbra 后续演化属合理教学归纳，未歪曲 morsel-driven 核心贡献"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "JS 伪代码概念正确：静态 split vs nextLocalOrSteal、三表 join pipeline、NUMA pick 层级清楚",
+        "踩坑具体：morsel≠cache line、允许 steal、算子也要并行、elasticity≠频繁建线程",
+        "适用/不适用已区分 OLAP/NUMA vs 磁盘瓶颈/单核；可再补核数阈值，但不影响通过"
+      ]
+    }
+  ]
+}

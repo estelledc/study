@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.33,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "IND-CPA / UF-CMA / PPT / Adv / Dolev-Yao 首次出现缺足够日常桥接，零基础会在核心要点掉队"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "多出 ## 工具生态对比、## 一个常被混淆的点，偏离 12 段模板，应并入适用/学到什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 5 个过多且偏叙事；压到 3 个，保留 game hop 最小例子 + 一则协议对照 + 卡住场景"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Signal、WireGuard、Noise、5G AKA 这些 2017 年后的协议发布前都跑过 CryptoVerif」过满：WireGuard 有 CryptoVerif 证明较稳；Signal/5G 等宜改为「部分协议/模式被形式化（工具不一）」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「IETF 第一次接受机器辅助密码学证明」宜加限定（TLS 1.3 相关材料中的 computational 证明贡献），避免写成唯一/首次铁律"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "FOSAD 2008 作为综述/教程入口与 2006 CSFW 首发的时间线在历史段已区分，可保留；难度字段「进阶」宜改为「高级」以合模板枚举"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例缺一段最小 CryptoVerif 输入/命令风格的可跟读片段（不必能本地跑通，但要像 `crypto ind_cpa` 那样可对照手册）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑「声明错假设=错证明」「几乎不能纯自动」具体有用；5 条压到 4 条"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界与 ProVerif/Tamarin/EasyCrypt 对照有价值，但应放进 ## 适用 而非独立 H2 表"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 2,
+        "case_clarity": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "IND-CPA / UF-CMA / PPT / Adv / Dolev-Yao 首次出现缺足够日常桥接，零基础会在核心要点掉队",
+        "多出 ## 工具生态对比、## 一个常被混淆的点，偏离 12 段模板，应并入适用/学到什么",
+        "案例 5 个过多且偏叙事；压到 3 个，保留 game hop 最小例子 + 一则协议对照 + 卡住场景"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Signal、WireGuard、Noise、5G AKA 这些 2017 年后的协议发布前都跑过 CryptoVerif」过满：WireGuard 有 CryptoVerif 证明较稳；Signal/5G 等宜改为「部分协议/模式被形式化（工具不一）」",
+        "「IETF 第一次接受机器辅助密码学证明」宜加限定（TLS 1.3 相关材料中的 computational 证明贡献），避免写成唯一/首次铁律",
+        "FOSAD 2008 作为综述/教程入口与 2006 CSFW 首发的时间线在历史段已区分，可保留；难度字段「进阶」宜改为「高级」以合模板枚举"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺一段最小 CryptoVerif 输入/命令风格的可跟读片段（不必能本地跑通，但要像 `crypto ind_cpa` 那样可对照手册）",
+        "踩坑「声明错假设=错证明」「几乎不能纯自动」具体有用；5 条压到 4 条",
+        "适用边界与 ProVerif/Tamarin/EasyCrypt 对照有价值，但应放进 ## 适用 而非独立 H2 表"
+      ]
+    }
+  ]
+}

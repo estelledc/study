@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "瑞士军刀类比可用；「比 CSS transition 快 20×」对零基础过满，宜收窄对比对象。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GSAP 3 官方口径是现代主流浏览器；「IE9 都能跑」是旧版叙事，不宜写成当前默认能力。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "官方常见对比是相对 jQuery 最高约 20×，不是相对「朴素 CSS transition」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Webflow 收购后是 Club 插件免费开放；「开源了所有付费功能」表述过满，宜改成免费可用。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "坑 1 写反了：GSAP 3 的 tween.kill() 会立刻停掉动画且通常不触发 onComplete；API 是 kill(target, propertiesList)，不存在「kill(true) 清回调」这种用法。应改成正确清理/onInterrupt 建议。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景写「IE9+」与 GSAP 3 现实不符；应改成现代浏览器，并把老 IE 需求指向历史版本。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "瑞士军刀类比可用；「比 CSS transition 快 20×」对零基础过满，宜收窄对比对象。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "GSAP 3 官方口径是现代主流浏览器；「IE9 都能跑」是旧版叙事，不宜写成当前默认能力。",
+        "官方常见对比是相对 jQuery 最高约 20×，不是相对「朴素 CSS transition」。",
+        "Webflow 收购后是 Club 插件免费开放；「开源了所有付费功能」表述过满，宜改成免费可用。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 2,
+        "scope_correct": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "坑 1 写反了：GSAP 3 的 tween.kill() 会立刻停掉动画且通常不触发 onComplete；API 是 kill(target, propertiesList)，不存在「kill(true) 清回调」这种用法。应改成正确清理/onInterrupt 建议。",
+        "适用场景写「IE9+」与 GSAP 3 现实不符；应改成现代浏览器，并把老 IE 需求指向历史版本。"
+      ]
+    }
+  ]
+}

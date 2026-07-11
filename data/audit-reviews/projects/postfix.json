@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全能餐厅 vs 流水线小工类比把最小权限讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "MTA / smtpd / qmgr / chroot / deferred 有白话；master.cf 对零基础仍需多读"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–4 可跟做；缺「逐部分解释」标签，案例 3 中继规则可再拆句"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub vdukhovni/postfix mirror、Wietse Venema 1998/1999 开源时间线基本正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Gmail / Yahoo Mail 早期后台跑的是 Postfix」过满：Google 与 Wietse/Postfix 渊源可写，Yahoo Mail 不宜并列成既成事实；应改为「Google 等大型站点曾大规模使用/维护 Postfix」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2010s 主流 Linux 发行版默认 MTA 全切到 Postfix」过度概括：Debian/Ubuntu 等确默认 Postfix，但仍有 Exim 等；宜改为「不少主流发行版默认 MTA 切到 Postfix」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "systemctl/mailq/relay restrictions/virtual map 命令可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：reload vs restart、25 端口、recipient vs relay、TLS 路径、DKIM 外置"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺 ## 反向链接 占位段（模板要求）；适用自托管/中转 vs SaaS/极简 边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "全能餐厅 vs 流水线小工类比把最小权限讲透",
+        "MTA / smtpd / qmgr / chroot / deferred 有白话；master.cf 对零基础仍需多读",
+        "案例 1–4 可跟做；缺「逐部分解释」标签，案例 3 中继规则可再拆句"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 GitHub vdukhovni/postfix mirror、Wietse Venema 1998/1999 开源时间线基本正确",
+        "「Gmail / Yahoo Mail 早期后台跑的是 Postfix」过满：Google 与 Wietse/Postfix 渊源可写，Yahoo Mail 不宜并列成既成事实；应改为「Google 等大型站点曾大规模使用/维护 Postfix」",
+        "「2010s 主流 Linux 发行版默认 MTA 全切到 Postfix」过度概括：Debian/Ubuntu 等确默认 Postfix，但仍有 Exim 等；宜改为「不少主流发行版默认 MTA 切到 Postfix」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "systemctl/mailq/relay restrictions/virtual map 命令可跟做",
+        "踩坑具体：reload vs restart、25 端口、recipient vs relay、TLS 路径、DKIM 外置",
+        "缺 ## 反向链接 占位段（模板要求）；适用自托管/中转 vs SaaS/极简 边界清楚"
+      ]
+    }
+  ]
+}

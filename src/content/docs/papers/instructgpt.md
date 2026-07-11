@@ -84,7 +84,7 @@ Assistant: 秋叶飘零落，金风送暮凉。
 
 2. **RM 容易被骗**：模型会发现"重复关键词、加表情、写得长"能骗高分——叫 reward hacking。所以必须加 KL 约束防止模型只优化分数。
 
-3. **alignment tax（对齐税）**：RLHF 后模型在指令任务变好，但在标准 NLP benchmark（SQuAD / DROP）上反而变差——像"训过礼仪的天才忘了一些考试技巧"。需要混 10% 预训练 loss 才能修复。
+3. **alignment tax（对齐税）**：RLHF 后模型在指令任务变好，但在标准 NLP benchmark（SQuAD / DROP）上反而变差——像"训过礼仪的天才忘了一些考试技巧"。论文用 **PPO-ptx**：在 PPO 更新里混入一部分预训练梯度，缓解公共 NLP 集上的回退（比例是超参，不必死记成固定 10%）。
 
 4. **小模型也能反超大模型**：1.3B 的 InstructGPT 在指令任务上 win-rate 85%，打败 175B 的原版 [[gpt-3]]（50%）。RLHF 让"听话"这件事跨过了 100 倍参数缩放都达不到的门槛——这是这篇论文最有冲击力的发现。
 
@@ -107,14 +107,14 @@ Assistant: 秋叶飘零落，金风送暮凉。
 - **2022.03**：InstructGPT 论文发表，三阶段 recipe 把 RLHF 从 Atari 搬到 LLM。
 - **2022.11**：ChatGPT 上线，本质是 InstructGPT + 多轮对话格式，5 天百万用户。
 - **2022.12**：Anthropic 发布 [[constitutional-ai]]，把"人工排序"换成"AI 按宪法批评 AI"，省掉大部分人工。
-- **2024 年**：DPO 发表，证明 KL-正则化的 RL 解可以闭式求解，跳过 RM 训练这一段。
+- **2023 年**：DPO（Rafailov et al.，arXiv 2023.05 / NeurIPS 2023）发表，证明 KL-正则化的 RL 解可以闭式求解，跳过显式 RM + PPO 训练这一段。
 
 ## 学到什么
 
 1. **"会说话"和"听人话"是两件事**——前者靠 pretraining，后者要 RLHF。这是 LLM 商业化的关键认知。
 2. **三阶段 SFT → RM → PPO 是行业标配**——所有大模型厂商今天还在用这套，区别只在数据来源和细节。
 3. **小模型 + 好对齐 > 大模型 + 没对齐**——这是 InstructGPT 最有冲击力的发现，直接催生了 ChatGPT 的商业化。
-4. **对齐不免费**——RLHF 让模型听话，但通用能力会轻微下滑，需要混 pretraining loss 修复。
+4. **对齐不免费**——RLHF 让模型听话，但通用能力会轻微下滑，需要像 PPO-ptx 那样混入预训练更新来修复。
 5. **labeler 选择决定模型 personality**：OpenAI 找的 40 个 labeler 多是英语母语 / 大学教育水平偏高，最终模型的"语气" 就长这样。换一拨人标，模型 personality 会明显不同——RLHF 把 labeler 团队的偏好烙进了模型。
 6. **数据量比想象的小**：标注数据只有几万条，比 pretraining 的几千亿 token 少 7 个数量级，却撬动了模型最终行为——好的对齐数据"杠杆率" 远超 pretraining。
 7. **PPO 的 KL 惩罚是隐性的稳定器**：没有这个约束 RL 会把模型拉得离 SFT 太远进入"reward hacking" 区域；DPO 把这条 KL 约束直接闭式解出来，省掉显式 RL 训练但仍尊重同一条物理约束。

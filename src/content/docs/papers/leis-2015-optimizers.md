@@ -43,7 +43,7 @@ title: Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 
 论文的关键发现是：**坏全坏在第 1 部件**。把第 1 部件换成真实值（作弊一下），即使 cost model 极简单、plan 枚举只用贪心，也能跑出近似最优计划。反之第 1 部件不准，后面再花哨都救不了。
 
-误差还有方向性：**优化器系统性地低估**，原因是默认假设 "多个谓词彼此独立"——而真实数据高度相关（电影类型 / 年代 / 演员之间永远有相关性）。论文里给出一个度量叫 **q-error**：`max(estimate/true, true/estimate)`。1.0 是完美，10 是差一个数量级。在 5+ join 的查询上，PostgreSQL 的 q-error 中位数能轻松到 100 以上，最坏到 1e8。
+误差还有方向性：**优化器系统性地低估**，原因是默认假设 "多个谓词彼此独立"——而真实数据高度相关（电影类型 / 年代 / 演员之间永远有相关性）。论文里给出一个度量叫 **q-error**：`max(estimate/true, true/estimate)`。1.0 是完美，10 是差一个数量级。多表 join 上误差随表数快速变差：PostgreSQL 在 3 个 join 时已有约一半估计误差 ≥10×，极端低估可到 1e8。
 
 ## 实践案例
 
@@ -60,15 +60,15 @@ WHERE mi.movie_id = t.id
   AND t.production_year > 2000;
 ```
 
-EXPLAIN 输出会有 `rows=37`（预估）和 `actual rows=42718`（真实）两栏。**预估和真实差了 1000 倍**——这不是 bug，是优化器在 4 表 join 上的常态。错误的根因是：优化器以为 "keyword = sequel" 和 "production_year > 2000" 这两个条件独立，但实际续集电影本来就集中在 2000 年后，相关性把估算压扁了。
+装好 JOB/IMDB 后跑 `EXPLAIN ANALYZE`，会看到 `rows=`（预估）和 `actual rows=`（真实）两栏。教学示意：预估可能是几十行，真实却是几万行——**差三个数量级并不罕见**。根因是优化器以为 `keyword = sequel` 和 `production_year > 2000` 彼此独立，但续集电影本来就集中在 2000 年后，相关性把估算压扁了。
 
 ### 案例 2：把基数注入真实值后计划完全变样
 
-PostgreSQL 默认基于错误估算，选了 **nested loop**（"反正只有 37 行，循环一下也快"）。注入真实基数 42718 后，它改选 **hash join**——速度差 50 倍。
+PostgreSQL 若低估成"只有几十行"，常会选 **nested loop**（"循环一下也快"）。注入真实基数后，往往改选 **hash join**——论文用 cardinality injection 反复证明：计划质量会立刻好转。
 
 ```
-错估 →  Nested Loop (cost=...)  →  跑 8.7s
-真实 →  Hash Join (cost=...)    →  跑 0.18s
+错估 →  Nested Loop (cost=...)  →  可能慢一个数量级以上
+真实 →  Hash Join (cost=...)    →  接近该 cost model 下的最优
 ```
 
 教训：优化器不是 "算法不行"，是 **被错误输入误导**。论文里这种 "换上真实基数 → 计划立刻好" 的实验做了很多次，证明 plan 枚举本身没问题，只是输入垃圾导致输出垃圾。
@@ -76,9 +76,9 @@ PostgreSQL 默认基于错误估算，选了 **nested loop**（"反正只有 37 
 ### 案例 3：JOB 为什么至今还在被引用
 
 ```bash
-# JOB 公开下载（论文随附）
+# JOB 公开下载（论文随附；需先装 IMDB 数据才能复现）
 wget http://www-db.in.tum.de/~leis/qo/job.tgz
-# 113 query × 5 数据库 × 调换基数 / cost / plan，组合矩阵
+# 113 query × 多数据库 × 调换基数 / cost / plan，组合矩阵
 ```
 
 2015 年至今，但凡有新基数估算方法（learned 模型、采样、sketch）出来，第一件事就是 "在 JOB 上跑一下，q-error 降了多少"。这是论文留下的最大公共财富——**一把所有人都认的尺**。后来 MSCN（神经网络估基数）、DeepDB（概率图模型）、NeuroCard（深度自回归）等工作都把 "JOB q-error 低于 PostgreSQL" 当首要 KPI。

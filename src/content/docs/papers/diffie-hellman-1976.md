@@ -8,12 +8,12 @@ title: New Directions 1976 — 给协议世界写下公钥宪法
 
 ## 是什么
 
-1976 年 Diffie 和 Hellman 这篇 22 页论文，给后来几十年的网络协议奠了两块基石：
+1976 年 Diffie 和 Hellman 这篇发表在 IEEE TIT **vol.22** 的短文（约 11 页，pp.644–654），给后来几十年的网络协议奠了两块基石：
 
-1. **公钥密码**：能不能让两个人在所有人围观下凭空协商出共享密钥？答案是能。
-2. **数字签名**：能不能用一封电子文件证明"这是我写的，不是别人冒名"？论文里只提了构想，但把方向定下来了。
+1. **公钥密码框架**：每个人公布一把"锁"（公钥）、私藏一把"钥匙"（私钥），不必先见面交换密钥。
+2. **数字签名构想**：能不能用一封电子文件证明"这是我写的，不是别人冒名"？论文里只提了需求，但把方向定下来了。
 
-日常类比：以前人和人寄秘密信，必须先派信使送一把锁的钥匙。这篇论文说——**你寄个开口的盒子（公钥）出去，谁都能往里塞东西，但只有你手里那把私钥能打开**。送钥匙这个步骤直接被消灭。
+日常类比：以前寄秘密信必须先派信使送钥匙。论文的公钥框架说——**你寄个开口的盒子（公钥）出去，谁都能往里塞东西，但只有你的私钥能打开**。DH 则是论文给出的**第一个可算的密钥协商实例**（双方各公开一个数，各自算出同一个共享秘密），和"往盒子里塞信"不是同一步。
 
 这一篇直接催生了 1977 年的 RSA、1985 年的椭圆曲线密码，以及现代 TLS / SSH / Signal / 区块链所有公钥协议的形态。
 
@@ -83,16 +83,14 @@ ssh user@host
 ```python
 from cryptography.hazmat.primitives.asymmetric.dh import generate_parameters
 
-# 双方先用同一组参数（实际中 p、g 由协议固定）
+# 演示用：现场生成参数。真实协议多用命名曲线/固定组，不每次现场造 p、g
 params = generate_parameters(generator=2, key_size=2048)
 alice_priv = params.generate_private_key()
 bob_priv = params.generate_private_key()
 
-# 各自交换公钥
 alice_pub = alice_priv.public_key()
 bob_pub = bob_priv.public_key()
 
-# 各自算共享密钥，应该相等
 shared_alice = alice_priv.exchange(bob_pub)
 shared_bob = bob_priv.exchange(alice_pub)
 assert shared_alice == shared_bob
@@ -144,8 +142,8 @@ assert shared_alice == shared_bob
 
 ## 延伸阅读
 
-- 论文原文 PDF：[New Directions in Cryptography 1976](https://ee.stanford.edu/~hellman/publications/24.pdf)（22 页，前 4 页就是核心思想，可读性出乎意料地好）
-- Hellman 本人 50 周年回顾：[An Overview of Public Key Cryptography](https://ee.stanford.edu/~hellman/publications/31.pdf)
+- 论文原文 PDF：[New Directions in Cryptography 1976](https://ee.stanford.edu/~hellman/publications/24.pdf)（IEEE TIT vol.22，约 11 页；前几页就是核心思想）
+- Hellman 本人回顾：[An Overview of Public Key Cryptography](https://ee.stanford.edu/~hellman/publications/31.pdf)
 - Computerphile 视频：[Diffie Hellman -the Mathematics bit](https://www.youtube.com/watch?v=Yjrfm_oRO0w)（10 分钟把数学讲透）
 - 教材：Katz & Lindell《Introduction to Modern Cryptography》第 11 章
 
@@ -156,3 +154,7 @@ assert shared_alice == shared_bob
 - [[tls-1.3]] —— 现代协议把这套思想推到极致，强制前向保密
 - [[aes]] —— DH 协商出来的密钥用来给 AES 当对称密钥，两者搭档
 - [[turing-1936]] —— 计算可行性的边界；DH 安全性建立在 DLP 计算上不可行之上
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

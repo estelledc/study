@@ -1,0 +1,112 @@
+{
+  "action": "rewrite",
+  "average": 2.33,
+  "reject_count": 2,
+  "needs_refine_count": 1,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "作业批/流类比偏弱，未讲清 timely dataflow 的『多维时间戳 + 进度关闭』直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都是通用窗口/图迭代伪代码，几乎看不出 Naiad 特有机制（epoch/loop_iter、capability、notification）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "零基础读完仍不知道『什么时候可以安全输出最终结果』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写成 He et al. 是硬伤：SOSP 2013 作者为 Murray, McSherry, Isaacs, Isard, Barham, Abadi（Microsoft Research）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读 USENIX 链接被换行截断成 sosp13-\\npaper-naiad，不可用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文未覆盖 timely dataflow 核心：多维时间戳、pointstamp/frontier、stateful vertex + notification，过度简化到普通流窗口"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例伪代码无法跟做 Naiad 语义：缺 capability/downgrade、loop 回边与时间戳推进"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏通用流系统（迟到数据/窗口膨胀），未点 .NET 生态、进度协议扩展性、粗粒度 checkpoint 等论文相关工程边界"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景缺量化：何时选 Naiad/timely 思想 vs 纯 Flink watermark"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 1
+      },
+      "average": 2.33,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "作业批/流类比偏弱，未讲清 timely dataflow 的『多维时间戳 + 进度关闭』直觉",
+        "三个案例都是通用窗口/图迭代伪代码，几乎看不出 Naiad 特有机制（epoch/loop_iter、capability、notification）",
+        "零基础读完仍不知道『什么时候可以安全输出最终结果』"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 1,
+        "no_distortion": 3
+      },
+      "average": 2,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源写成 He et al. 是硬伤：SOSP 2013 作者为 Murray, McSherry, Isaacs, Isard, Barham, Abadi（Microsoft Research）",
+        "延伸阅读 USENIX 链接被换行截断成 sosp13-\\npaper-naiad，不可用",
+        "正文未覆盖 timely dataflow 核心：多维时间戳、pointstamp/frontier、stateful vertex + notification，过度简化到普通流窗口"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例伪代码无法跟做 Naiad 语义：缺 capability/downgrade、loop 回边与时间戳推进",
+        "踩坑偏通用流系统（迟到数据/窗口膨胀），未点 .NET 生态、进度协议扩展性、粗粒度 checkpoint 等论文相关工程边界",
+        "适用场景缺量化：何时选 Naiad/timely 思想 vs 纯 Flink watermark"
+      ]
+    }
+  ]
+}

@@ -147,7 +147,7 @@ human: A 赢
 
 - [[rlhf-christiano]] —— 同作者 Christiano 的早期工作；RLHF 用人类直接判，debate 用人类判辩论
 - [[constitutional-ai]] —— "AI 监督 AI" 的工程实现，理念近亲
-- [[amplification-hell-2014]] —— iterated amplification，debate 的兄弟协议（Christiano 也参与）
+- [[reward-hacking]] —— 奖励被钻空子的经典风险；debate 用对手反驳来降低「讨好人类」类 hacking
 - [[alphago]] —— self-play 训练范式来源；debate 也用 self-play
 - [[cot]] —— 让 AI 写出推理链，是 debate 单 agent 退化版
 

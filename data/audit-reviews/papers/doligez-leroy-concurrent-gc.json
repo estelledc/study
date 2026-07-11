@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "mutator / 写屏障在案例 1 末尾才出现，首次可补半句日常桥接；不影响主线跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "与 POPL 1993 / Concurrent Caml Light / young async copying + old concurrent marking / 可变性区分一致；教学压缩合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码足以讲清 mutator 写乱对象图；适用边界可再点明「暂停分布 vs 平均吞吐」的量化取舍，当前已够通过。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "mutator / 写屏障在案例 1 末尾才出现，首次可补半句日常桥接；不影响主线跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "与 POPL 1993 / Concurrent Caml Light / young async copying + old concurrent marking / 可变性区分一致；教学压缩合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "伪代码足以讲清 mutator 写乱对象图；适用边界可再点明「暂停分布 vs 平均吞吐」的量化取舍，当前已够通过。"
+      ]
+    }
+  ]
+}

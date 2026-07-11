@@ -8,12 +8,12 @@ title: ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
 
 ## 是什么
 
-ejabberd 是一个**用 Erlang 写的工业级即时通信服务器**，2002 年发布，至今活了 24 年。它同时支持 **XMPP / MQTT / SIP / Matrix** 四种协议，单台机器能撑数十万并发连接，集群轻松百万+。
+ejabberd 是一个**用 Erlang 写的工业级即时通信服务器**，2002 年发布，至今活了 24 年。它以 **XMPP** 为核心，并可扩展 **MQTT / SIP**；近年还提供 **Matrix 网关/桥接**（不是对等的第四套原生协议栈）。单机常能撑数十万并发连接，小集群可到百万级。
 
 三个关键词拆开：
 
 - **XMPP**：1999 年开放的联邦化 IM 协议（前身 Jabber）。`alice@a.com` 直接给 `bob@b.com` 发消息，跟邮件 SMTP 一样不依赖任何中央公司。
-- **Erlang/OTP**：爱立信 1986 年为电话交换机发明的语言 + 框架。专门为"7×24 小时不停机 + 海量并发"设计——9 个 9 的可用性（每年宕机不超过 30 秒）就是它的招牌。
+- **Erlang/OTP**：爱立信 1986 年为电话交换机发明的语言 + 框架，面向"7×24 不停机 + 海量并发"。爱立信 AXD301 交换机曾用同一技术栈做到约 9 个 9 可用性；ejabberd 继承的是这套容错思路，不是把交换机数字直接贴到自己身上。
 - **服务器**：负责接消息、转发到别家服务器、托管群聊（MUC）、推送离线消息、维护好友列表。
 
 日常类比：如果 [[prosody]] 是用一个员工 + 一台旧电脑开的小邮局，ejabberd 就是**国家邮政总局**——它要管几百万封信、几千个分拣点、十几条专线，而且**永远不能停**。
@@ -25,7 +25,7 @@ ejabberd 是一个**用 Erlang 写的工业级即时通信服务器**，2002 年
 - 为什么 **WhatsApp 早期能用 50 个工程师撑 9 亿用户**——核心后端就是基于 ejabberd + FreeBSD + Erlang 这一路线
 - 为什么"电信级稳定性"在工程上是真实的：BEAM 虚拟机 + actor 模型 + 监督树（supervisor tree）让单个 bug 不会拖垮整个系统
 - 为什么联邦化 IM 不是新概念——XMPP 玩了 20 年，Matrix / Mastodon 这波只是换了协议
-- 为什么大型电信运营商、银行内部 chat、Nintendo / 暴雪游戏 backend 仍然在用 ejabberd
+- 为什么大型电信 / 银行内部 chat，以及部分游戏后端（公开案例里常提到任天堂、暴雪一类）仍会选 ejabberd 路线
 
 ## 核心要点
 
@@ -39,31 +39,35 @@ ejabberd 的设计可以拆成 **四个支柱**：
 
 4. **多存储后端**：Mnesia（Erlang 自带的分布式数据库，集群里自动同步）/ PostgreSQL / MySQL / Redis / Riak 都行。小集群用 Mnesia 不需要外部 DB；大集群上 SQL 扛容量。
 
-## 一行 Erlang 简史（理解 ejabberd 必须先有的背景）
-
-- **1986**：爱立信 Joe Armstrong 团队为电话交换机发明 Erlang——电话交换的核心需求是"百万通呼叫并发 + 永不停机"，这正好预言了 IM 服务器的需求
-- **1996**：Erlang 开源，OTP（Open Telecom Platform）框架定型
-- **1998**：爱立信 AXD301 ATM 交换机用 Erlang 写，达到 9 个 9 可用性（每年宕机 < 30 秒）
-- **2002**：Alexey Shchepin 用 Erlang 实现 ejabberd，把电信级技术栈引入 IM 领域
-- **2009**：WhatsApp 诞生，后端基于 ejabberd 改造，最终 50 工程师撑 9 亿用户
-- **2014**：Facebook 收购 WhatsApp 190 亿美金，业界开始重新审视 Erlang
-- **2024**：ejabberd 仍在活跃开发，新增 Matrix 桥接、MQTT5 支持
-
 ## 实践案例
 
-### 案例 1：BEAM 进程模型为什么适合 IM
+### 案例 1：最小可跟做配置
 
-```erlang
-%% 一个用户连上来，spawn 一个进程
-{ok, Pid} = ejabberd_c2s:start({SockMod, Socket}, Opts),
-%% Pid 现在是这个用户的"服务员"
-%% 用户发消息 → Pid 收到 message，路由给目标用户的 Pid
-%% 用户掉线 → Pid 自然死亡，资源回收
+```yaml
+# ejabberd.yml 精简片段（本地玩具）
+hosts: ["localhost"]
+listen:
+  - port: 5222
+    module: ejabberd_c2s
+modules:
+  mod_roster: {}
+  mod_offline: {}
+  mod_muc: { host: "conference.@HOST@" }
 ```
 
-每个用户 = 一个 Pid，进程之间靠**消息传递**，没有共享内存。这是 actor 模型，跟 [[prosody]] 用 Lua 协程是同一思想，但 BEAM 的进程更轻、更隔离，单台 32GB 机器可以开 200 万个。
+步骤：① 只开 c2s + 花名册/离线/群聊三个模块；② 用官方容器或包启动后连 `5222`；③ 默认二三十个模块先全关，避免小机器白吃几百 MB。这是比读 OTP 源码更适合上手的入口。
 
-### 案例 2：let-it-crash 的监督树
+### 案例 2：每个用户一个 BEAM 进程
+
+```erlang
+%% 用户连上 → spawn 一个 c2s 进程当"专属服务员"
+{ok, Pid} = ejabberd_c2s:start({SockMod, Socket}, Opts),
+%% 发消息 = 给目标用户的 Pid 发 Erlang message；掉线 = Pid 退出回收
+```
+
+进程之间靠消息传递、无共享内存。单台 32GB 机器可开上百万这类轻量进程——这是 actor 模型落到 IM 上的直观画面。
+
+### 案例 3：let-it-crash 的监督树
 
 ```
 ejabberd_sup（根监督者）
@@ -73,35 +77,16 @@ ejabberd_sup（根监督者）
   └── mod_offline_sup → 离线消息存储进程
 ```
 
-某个 `c2s` 进程因为客户端发了畸形包崩了，监督者捕获 EXIT 信号、记录日志、按策略**自动重启**——其他用户毫无感知。这是 ejabberd 9 个 9 可用性的工程基础。
+某个 `c2s` 进程因畸形包崩了，监督者捕获 EXIT、记日志、按策略**自动重启**——其他用户无感。这是把 AXD301 那套容错哲学落到 IM 上的工程基础。
 
-### 案例 3：模块化的扩展点
+### 案例 4：跟 prosody / signal-server / mattermost 的差别
 
-写一个"消息撤回"功能，新增一个模块：
+同一需求"开一个 5 万人在线的开源 IM 后端"：
 
-```erlang
--module(mod_recall).
--behaviour(gen_mod).
--export([start/2, stop/1, on_message/3]).
-
-start(Host, _Opts) ->
-    ejabberd_hooks:add(user_send_packet, Host, ?MODULE, on_message, 50).
-
-on_message(Packet, _C2SState, _From) ->
-    %% 检查是不是撤回包，处理后返回新 Packet
-    Packet.
-```
-
-挂上 hook 就能拦截所有消息。整个生态 70+ 模块都是这套路子——这是为什么 ejabberd 能同时支持 XMPP/MQTT/SIP，新协议本质是新模块。
-
-### 案例 4：跟 prosody / signal-server / mattermost 的真实差别
-
-把同一个需求"开一个 5 万人在线的开源 IM 后端"放在四个项目上：
-
-- **[[prosody]]**：单机 8GB 内存够；写两个 Lua 模块即可；缺点是没有内置高可用
-- **ejabberd**：3 节点集群，Mnesia 同步状态；OTP 监督树兜底崩溃；标准答案
-- **[[signal-server]]**：要自建 Redis + DynamoDB + 推送服务，门槛高 10 倍；优势是端到端加密
-- **[[mattermost]]**：本质是产品不是协议——只能开"频道型"chat，不支持联邦
+- **[[prosody]]**：单机 8GB 够；Lua 模块好写；无内置高可用
+- **ejabberd**：3 节点 + Mnesia/SQL；OTP 监督树兜底；工业默认选项
+- **[[signal-server]]**：要 Redis + DynamoDB + 推送，门槛高；优势是端到端加密
+- **[[mattermost]]**：产品不是协议——频道型 chat，不支持联邦
 
 ## 踩过的坑
 
@@ -117,16 +102,26 @@ on_message(Packet, _C2SState, _From) ->
 
 **适用**：
 
-- 大型 IM 后端（电信、银行、教育、游戏）——百万并发是 ejabberd 的舒适区
+- 大型 IM 后端（电信、银行、教育、游戏）：常见是 **3–10 节点**、每节点数十 GB 内存、SQL 共享后端时冲向百万在线
 - 需要联邦化（不同公司服务器互通）——XMPP 原生支持
-- 需要多协议（同时跑 XMPP + MQTT 给 IoT）——一台 ejabberd 全包
-- 需要"让它崩了自己重启"的高可用——OTP 监督树
+- 需要多协议（XMPP + MQTT 给 IoT，必要时再加 Matrix 网关）——一台进程树里挂模块即可
+- 需要"崩了自己重启"的高可用——OTP 监督树
 
 **不适用**：
 
-- 个人 / 小团队自托管 → 用 [[prosody]]，门槛低 10 倍
-- 端到端加密为第一目标 → 用 [[signal-server]]，协议本身就考虑加密
-- 团队协作产品（频道、文件、看板） → 用 [[mattermost]]，ejabberd 只是协议服务器，不是产品
+- 个人 / 小团队自托管（<1 万在线）→ 用 [[prosody]]，门槛低一个数量级
+- 端到端加密为第一目标 → 用 [[signal-server]]
+- 团队协作产品（频道、文件、看板） → 用 [[mattermost]]；ejabberd 是协议服务器，不是产品
+
+## 历史小故事（可跳过）
+
+- **1986**：爱立信 Joe Armstrong 团队为电话交换机发明 Erlang
+- **1996**：Erlang 开源，OTP 框架定型
+- **1998**：AXD301 ATM 交换机用 Erlang，公开案例约 9 个 9 可用性
+- **2002**：Alexey Shchepin 发布 ejabberd，把电信级栈引入 IM
+- **2009**：WhatsApp 后端基于 ejabberd 改造起步，后来高度定制
+- **2014**：Facebook 收购 WhatsApp，Erlang 路线被重新审视
+- **2024**：ejabberd 仍活跃，补 Matrix 桥接、MQTT5 等模块
 
 ## 学到什么
 
@@ -146,7 +141,12 @@ on_message(Packet, _C2SState, _From) ->
 ## 关联
 
 - [[prosody]] —— 同样实现 XMPP，Lua 写的轻量版；ejabberd 是工业版
-- [[signal-server]] —— 中心化 + 端到端加密路线，与 ejabberd 联邦化思路完全相反
-- [[mattermost]] —— Go 写的团队 chat 产品；ejabberd 是协议服务器，定位上是上下游
+- [[signal-server]] —— 中心化 + 端到端加密路线，与联邦化思路相反
+- [[mattermost]] —— Go 写的团队 chat 产品；定位是上下游而非竞品
 - [[erlang-otp]] —— ejabberd 的根技术栈，理解它必须先理解 OTP
-- [[milner-pi-calculus]] —— Actor 模型 / 进程消息传递的理论源头
+- [[milner-pi-calculus]] —— Actor / 进程消息传递的理论源头
+- [[kafka]] —— 同属高并发消息路径，但 Kafka 是日志总线不是在线会话服务器
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

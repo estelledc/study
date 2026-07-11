@@ -42,7 +42,7 @@ while (cur != NULL) {
 
 2. **3 值逻辑做抽象**：具体执行时谓词非真即假（2 值）；为了让分析能停下来，必须把无穷多对象折叠成有限个"汇总节点"。被折叠对象上原本真假不一的事实就打上**第三个值 1/2（unknown）**。Kleene 1952 早就给出三值真值表，这里直接用。
 
-3. **embedding 定理保安全**：被折叠的抽象结构里若某事实仍是 true，那它在所有被汇总的真实堆里都为 true；abstract 上若是 false，具体也都 false；只有 1/2 才表示"不知道"。这条定理保证分析**保守且可靠**——不会漏报。
+3. **embedding 定理保安全**：被折叠的抽象结构里若某事实仍是 true，那它在所有被汇总的真实堆里都为 true；abstract 上若是 false，具体也都 false；只有 1/2 才表示"不知道"。这条定理保证分析**保守且可靠**——不会把假性质证成真（找 bug 时 1/2 仍可能误报）。
 
 加上 **focus**（暂时把 1/2 分裂回 1 和 0，让指针赋值能精确算）和 **coerce**（用 integrity 规则把 1/2 收紧），整套机器就能跑了。
 
@@ -111,10 +111,10 @@ sorted_upto(x) := ∀y.(y reachable_from list_head ∧ y ≠ x) ⇒ data(y) ≤ 
 ## 历史小故事（可跳过）
 
 - **1990 年**：Chase-Wegman-Zadeck 给出第一个针对链表的 shape graph 算法，但每种结构都得手写专用算法
-- **1996 年**：Sagiv-Reps-Wilhelm 先发"Solving shape-analysis problems in languages with destructive updating"，铺垫了一套描述 store 的图记号
-- **1999 年**：在 POPL 发"Parametric Shape Analysis with Destructive Updating"，第一次把"三值逻辑 + 参数化谓词"的想法摆出来
-- **2002 年**：TOPLAS 完整版（80 多页）发表，把 embedding theorem、focus、coerce 全证齐
-- **2000s**：TVLA 工具在 Tel Aviv 开源，开始有人拿它证小型操作系统内核里的链表函数
+- **1996 / 1998 年**：Sagiv-Reps-Wilhelm 先在 POPL'96 发"Solving shape-analysis problems in languages with destructive updating"，TOPLAS 1998 出完整版，铺垫描述 store 的图记号
+- **1999 年**：POPL 发"Parametric Shape Analysis via 3-Valued Logic"，第一次把"三值逻辑 + 参数化谓词"摆出来
+- **2002 年**：同题 TOPLAS 完整版（约 80 页）发表，把 embedding theorem、focus、coerce 全证齐
+- **2000 年起**：TVLA（Lev-Ami & Sagiv, SAS 2000）在 Tel Aviv 开源，开始有人拿它证小型 OS 内核里的链表函数
 - **2002 年起**：Reynolds 和 O'Hearn 推 separation logic，从断言式角度切同一问题，二者从此并行发展
 
 ## 学到什么

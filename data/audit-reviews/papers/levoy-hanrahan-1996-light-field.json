@@ -1,0 +1,102 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "山前网格拍照→4D 数组查表类比贴合；两平面参数化有取景器桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "7D→4D 自由空间假设对零基础稍密，但后文「光线整条辐射相同」补得住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SIGGRAPH 1996、两平面参数化、与 Lumigraph 同届、Ren Ng/Lytro 谱系正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「ISI 引用破万」口径偏市场宣传，宜弱化为「被引极高/图形学经典」；其余教学简化可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "render_new_view / refocus 伪代码概念正确可跟读；32×32×256×256 数量级清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（垂直光线参数化失效、混叠、鬼影→Lumigraph、四次方爆炸）可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有包络/动态/编辑限制；缺 ## 反向链接占位（模板完整度，不影响主线）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "山前网格拍照→4D 数组查表类比贴合；两平面参数化有取景器桥接",
+        "7D→4D 自由空间假设对零基础稍密，但后文「光线整条辐射相同」补得住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "SIGGRAPH 1996、两平面参数化、与 Lumigraph 同届、Ren Ng/Lytro 谱系正确",
+        "「ISI 引用破万」口径偏市场宣传，宜弱化为「被引极高/图形学经典」；其余教学简化可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "render_new_view / refocus 伪代码概念正确可跟读；32×32×256×256 数量级清楚",
+        "踩坑（垂直光线参数化失效、混叠、鬼影→Lumigraph、四次方爆炸）可操作",
+        "适用边界有包络/动态/编辑限制；缺 ## 反向链接占位（模板完整度，不影响主线）"
+      ]
+    }
+  ]
+}

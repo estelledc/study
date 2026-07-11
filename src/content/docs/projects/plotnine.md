@@ -132,6 +132,13 @@ fig = p.draw()                                     # 拿到 matplotlib Figure，
 - 3D / 地理投影 / 复杂 GIS → 直接 matplotlib + cartopy / pyvista
 - 期刊 Figure 1 级精排版（多面板对齐到 mm）→ 仍需要直接控 matplotlib
 
+## 历史小故事（可跳过）
+
+- **1999**：Leland Wilkinson 出版 *The Grammar of Graphics*，把"图"拆成可组合的层
+- **2005–2010**：Hadley Wickham 在 R 里做成 ggplot2，统计师肌肉记忆定型
+- **2017**：Hassan Kibirige（has2k1）开源 plotnine，目标是把 ggplot2 API 原样搬到 Python
+- **之后**：文档与案例库持续对齐 R 生态；后端始终钉在 matplotlib，换来论文级矢量输出
+
 ## 学到什么
 
 1. **GoG 把"图"形式化成 7 层**：data / aes / geom / stat / scale / coord / facet——理解这个比记 API 重要十倍，跨 R/Python/JS 都能复用
@@ -152,3 +159,10 @@ fig = p.draw()                                     # 拿到 matplotlib Figure，
 
 - [[altair]] —— 同样声明式，但编译目标是 Vega-Lite JSON 而非 matplotlib，交互 vs 静态出版的分叉
 - [[pandas]] —— plotnine 第一个参数就是 DataFrame
+- [[matplotlib]] —— plotnine 的渲染后端；`draw()` 交出的就是它的 Figure
+- [[seaborn]] —— 同属 Python 统计绘图，API 更"函数式快捷方式"而非 GoG 图层叠加
+- [[plotly-py]] —— 交互/仪表盘路线，和 plotnine 的论文静态输出互补
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -1,0 +1,102 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "冰箱菜单/厨师助理、菜谱 vs 开锅、心情卡/字幕组、剧场 vs 转播类比贴合。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "嵌套子树与并发容错案例清楚；案例 3 的 stream 进度略短但仍可跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "listr→listr2 fork、cenk1cenk2、webpack-cli/nx 采用与公开仓库史一致；月下载量属量级表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『npm install 背后就是 spinner』是 UX 类比而非声称 npm 依赖 listr2，教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Listr/newListr/concurrent/exitOnError/task.output API 与现行 listr2 一致；示例依赖 execa 属常见搭配。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "非 Promise 瞬间 ✓、CI 强制 default、CJK 宽度、stderr 打散树等踩坑具体可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "批处理 CLI vs daemon/分布式工作流/纯日志/跨进程边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "冰箱菜单/厨师助理、菜谱 vs 开锅、心情卡/字幕组、剧场 vs 转播类比贴合。",
+        "嵌套子树与并发容错案例清楚；案例 3 的 stream 进度略短但仍可跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "listr→listr2 fork、cenk1cenk2、webpack-cli/nx 采用与公开仓库史一致；月下载量属量级表述。",
+        "『npm install 背后就是 spinner』是 UX 类比而非声称 npm 依赖 listr2，教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Listr/newListr/concurrent/exitOnError/task.output API 与现行 listr2 一致；示例依赖 execa 属常见搭配。",
+        "非 Promise 瞬间 ✓、CI 强制 default、CJK 宽度、stderr 打散树等踩坑具体可操作。",
+        "批处理 CLI vs daemon/分布式工作流/纯日志/跨进程边界清楚。"
+      ]
+    }
+  ]
+}

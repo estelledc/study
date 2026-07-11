@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "仓库/叉车通道类比贯穿全文；FOR/DICT/DELTA/RLE 对零基础略密，但有「轻量压缩」桥接，中级难度可接受。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者/PVLDB 2023、~70 values/cycle、Tectorwise SUM 8 线程最高约 7x、04261537 转置顺序与论文一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "标量伪代码概念正确；适用/不适用有列存扫描、1024-vector、非整数主导等边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "仓库/叉车通道类比贯穿全文；FOR/DICT/DELTA/RLE 对零基础略密，但有「轻量压缩」桥接，中级难度可接受。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "作者/PVLDB 2023、~70 values/cycle、Tectorwise SUM 8 线程最高约 7x、04261537 转置顺序与论文一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "标量伪代码概念正确；适用/不适用有列存扫描、1024-vector、非整数主导等边界。"
+      ]
+    }
+  ]
+}

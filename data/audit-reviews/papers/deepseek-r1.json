@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "「Apache 2.0」有误：DeepSeek-R1 权重与代码为 MIT；Qwen 蒸馏版才继承 Apache 2.0，Llama 蒸馏版继承 Llama 协议。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「训练成本约 600 万美元」主要是 DeepSeek-V3-Base 公开 GPU 时成本，不宜直接写成 R1 训练成本；应区分底座与 R1 额外 RL。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「OpenAI o1 估计 10 亿美元起」过满且无出处，应弱化为「闭源前沿模型训练/研发成本通常高一个数量级以上」之类限定。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 think/answer 示意清楚；GRPO/SFT 首次出现已有桥接，零基础可跟。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界（可验证任务 / token 成本 / 无工具调用）对工程落地有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 think/answer 示意清楚；GRPO/SFT 首次出现已有桥接，零基础可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Apache 2.0」有误：DeepSeek-R1 权重与代码为 MIT；Qwen 蒸馏版才继承 Apache 2.0，Llama 蒸馏版继承 Llama 协议。",
+        "「训练成本约 600 万美元」主要是 DeepSeek-V3-Base 公开 GPU 时成本，不宜直接写成 R1 训练成本；应区分底座与 R1 额外 RL。",
+        "「OpenAI o1 估计 10 亿美元起」过满且无出处，应弱化为「闭源前沿模型训练/研发成本通常高一个数量级以上」之类限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "踩坑与适用边界（可验证任务 / token 成本 / 无工具调用）对工程落地有用。"
+      ]
+    }
+  ]
+}

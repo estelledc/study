@@ -1,0 +1,139 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "VS Code 贴纸类比贴合，TextMate / oniguruma / scope 都有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有代码 + 逐部分解释，零基础能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「shiki 要 200 KB」与官方体积表不符：core≈106KB、wasm≈623KB、全量 bundle 可达数 MB；应改成量级表述并区分 core/wasm/全量"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑「500 KB+」同样偏保守，默认全量更接近数 MB 级异步 chunk"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "v1.x 写成 2024-03，实际 v1.0.0 发布于 2024-02；可改为 2024-02 或「2024 年初」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 API（codeToHtml / createHighlighter / transformerNotationHighlight）与现行文档一致，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「每次调 codeToHtml 都会重新加载 grammar」偏绝对：应改成「未显式复用 createHighlighter 时，语言/主题加载不可控、易重复初始化」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CF Worker「1 MB binary 限制→可能直接放弃」过时：官方有 Workers 示例；应改为需显式 compose langs/themes + 注意 wasm 体积"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "VS Code 贴纸类比贴合，TextMate / oniguruma / scope 都有白话桥接",
+        "三个案例都有代码 + 逐部分解释，零基础能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「shiki 要 200 KB」与官方体积表不符：core≈106KB、wasm≈623KB、全量 bundle 可达数 MB；应改成量级表述并区分 core/wasm/全量",
+        "踩坑「500 KB+」同样偏保守，默认全量更接近数 MB 级异步 chunk",
+        "v1.x 写成 2024-03，实际 v1.0.0 发布于 2024-02；可改为 2024-02 或「2024 年初」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例 API（codeToHtml / createHighlighter / transformerNotationHighlight）与现行文档一致，可跟做",
+        "「每次调 codeToHtml 都会重新加载 grammar」偏绝对：应改成「未显式复用 createHighlighter 时，语言/主题加载不可控、易重复初始化」",
+        "CF Worker「1 MB binary 限制→可能直接放弃」过时：官方有 Workers 示例；应改为需显式 compose langs/themes + 注意 wasm 体积"
+      ]
+    }
+  ],
+  "slug": "shiki",
+  "area": "projects",
+  "status": "refined",
+  "lines": 174,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 174,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：纠正 bundle 体积量级；v1.0 日期改为 2024-02；弱化 codeToHtml 必重载表述；CF Workers 口径改为需 compose + 评估 wasm",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  }
+}

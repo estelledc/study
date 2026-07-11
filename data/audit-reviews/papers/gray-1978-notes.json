@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 只有结论句，缺逐步解释；建议拆成加锁/2PC 的 3 步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房/图书馆类比清楚，术语桥接够用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "LNCS 60 / 1978 讲义、2PL/WAL/2PC/ACID 命名时序与公开史料一致；『面试 80%』属教学夸张可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 SQL 可跟做；案例 2/3 缺可跟做步骤（意向锁顺序、prepare/commit）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（ACID 命名、2PL 死锁、2PC 阻塞）具体可操作；行数 203>200 需压到 ≤200"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 只有结论句，缺逐步解释；建议拆成加锁/2PC 的 3 步",
+        "厨房/图书馆类比清楚，术语桥接够用"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "LNCS 60 / 1978 讲义、2PL/WAL/2PC/ACID 命名时序与公开史料一致；『面试 80%』属教学夸张可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 SQL 可跟做；案例 2/3 缺可跟做步骤（意向锁顺序、prepare/commit）",
+        "踩坑（ACID 命名、2PL 死锁、2PC 阻塞）具体可操作；行数 203>200 需压到 ≤200"
+      ]
+    }
+  ]
+}

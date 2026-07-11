@@ -1,0 +1,142 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 反向链接",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "经理巡检办公桌类比把 pull 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "metric/labels/timestamp 有拆解；PromQL 三件套有白话读法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "docker run / yml scrape / 错误率告警三案例可跟；学到什么偏短"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 prometheus/prometheus 正确；SoundCloud 2012、CNCF 第二毕业项目主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Prometheus 3.0（2024-11）OTLP 摄入属实；『OTel-native 直接吃』略满，实为可选 OTLP metrics receiver"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Borgmon 启发、Grafana 组合定位未歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "docker run / prometheus.yml / prom-client Counter / 错误率 PromQL 可直接跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：高基数、短任务 Pushgateway、单机非 HA、rate vs increase"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "反向链接段膨胀导致全文 214 行超 quality-gate 200 上限；应按模板只留占位注释"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "经理巡检办公桌类比把 pull 讲透，零基础直觉强",
+        "metric/labels/timestamp 有拆解；PromQL 三件套有白话读法",
+        "docker run / yml scrape / 错误率告警三案例可跟；学到什么偏短"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 prometheus/prometheus 正确；SoundCloud 2012、CNCF 第二毕业项目主线正确",
+        "Prometheus 3.0（2024-11）OTLP 摄入属实；『OTel-native 直接吃』略满，实为可选 OTLP metrics receiver",
+        "Borgmon 启发、Grafana 组合定位未歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "docker run / prometheus.yml / prom-client Counter / 错误率 PromQL 可直接跟做",
+        "踩坑具体：高基数、短任务 Pushgateway、单机非 HA、rate vs increase",
+        "反向链接段膨胀导致全文 214 行超 quality-gate 200 上限；应按模板只留占位注释"
+      ]
+    }
+  ],
+  "slug": "prometheus",
+  "area": "projects",
+  "status": "refined",
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "清空膨胀的反向链接列表只留占位；收紧 3.0 OTLP 表述；补强学到什么",
+    "sections_modified": [
+      "## 历史小故事",
+      "## 学到什么",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

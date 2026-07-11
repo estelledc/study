@@ -132,7 +132,7 @@ if (x < len) {
 - 论文 PDF：[Spectre Attacks: Exploiting Speculative Execution](https://spectreattack.com/spectre.pdf)
 - [[meltdown-2018]] —— 和 Spectre 同期爆发，但攻击点更偏权限检查和乱序执行
 - [[foreshadow-2018]] —— 把瞬态执行攻击推进到 SGX enclave 场景
-- [[sgxpectre-2019]] —— `lr graph search` 显示的高相关后续工作，专门看 SGX 里的 Spectre
+- [[sgxpectre-2019]] —— 把 Spectre 思路推进到 Intel SGX enclave：飞地内推测执行同样可能泄密
 - [[dawg-2018]] —— 从硬件缓存隔离角度防御推测执行侧信道
 - [[flush-reload-2014]] —— Spectre 常用的缓存读数工具，负责把“痕迹”变成“字节”
 

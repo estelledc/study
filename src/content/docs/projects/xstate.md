@@ -34,7 +34,7 @@ actor.send({ type: 'FETCH' })   // → loading
 
 不理解 XState 的状态机思想，下面这些事说不清楚：
 
-- 为什么用 4 个 boolean 描述 fetch 状态会写出 12 个不可达组合，bug 反复出现
+- 为什么用多个标志位描述 fetch 会写出十几种不可达组合，bug 反复出现
 - 为什么 useReducer 不够用——它没有"当前状态决定能响应哪些 action"的概念
 - 为什么 Redux Saga 也是状态机，但**写起来不能可视化**
 - 为什么 W3C 在 2015 年专门定了 SCXML 标准——状态机是工业级流程的通用语言
@@ -45,15 +45,15 @@ XState 的设计可以拆成 **三层**：
 
 1. **机器（Machine）**：纯数据，描述"有哪些状态、什么事件能让它从 A 跳到 B"。类比：地铁线路图，挂在墙上不会动。机器没有"当前状态"概念，可以序列化发给后端、可以画到 [Stately Studio](https://stately.ai)。
 
-2. **Actor**：把机器跑起来的进程。类比：一辆正在地铁线上跑的列车。Actor 有 `mailbox`（事件排队）、`_snapshot`（当前快照）、`observers`（订阅者集合）。`actor.send(event)` 不是直接改状态——事件先入 mailbox，再串行处理，**保证转移原子性**。
+2. **Actor**：把机器跑起来的进程。类比：一辆正在地铁线上跑的列车。它有事件队列、当前快照、订阅者。`actor.send(event)` 不是直接改状态——事件先入队，再串行处理，**保证转移原子性**。
 
-3. **System**：所有 actor 共享的调度中心。父 actor `spawn` 子 actor 时复用 `parent.system`，`sessionId` 全局唯一。子 actor 发给兄弟 actor 的消息走 `system._relay` 路由——这就是 Erlang 风格的 Actor 模型，只是跑在浏览器里。
+3. **System**：所有 actor 共享的调度中心。父 actor `spawn` 子 actor 时复用同一套调度，每个实例有全局唯一 id。兄弟之间发消息由系统路由——这是 Erlang 风格 Actor 模型在浏览器里的简化版。
 
 三层加起来叫 **Statechart 运行时**（参考 Harel 1987）。
 
 ## 实践案例
 
-### 案例 1：4 个 boolean → 4 个状态
+### 案例 1：多个标志位 → 4 个状态
 
 很多 React 项目这样写 fetch：
 
@@ -64,35 +64,38 @@ const [error, setError] = useState(null)
 const [retries, setRetries] = useState(0)
 ```
 
-4 个 boolean/标志 = $2^4 = 16$ 种组合，真正合法的只有 4 个（idle / loading / success / error），**剩下 12 种是矛盾**。比如 `isLoading=true && error=有值`。
+多个标志位交叉组合 ≈ $2^4 = 16$ 种可能，真正合法的只有 4 个（idle / loading / success / error），**剩下约 12 种是矛盾**。比如 `isLoading=true && error=有值`。
 
-XState 的版本只有 4 个状态，**图里没画的转移根本发不出去**——`actor.send({ type: 'LOGOUT' })` 在 `loading` 状态被静默忽略，因为图里没这条边。矛盾状态从源头被消除。
+XState 的版本只有 4 个状态，**图里没画的转移根本发不出去**——`actor.send({ type: 'LOGOUT' })` 在 `loading` 被静默忽略。矛盾从源头消除。
 
 ### 案例 2：在 React 里用 useMachine
-
-xstate-react 提供 hook：
 
 ```tsx
 import { useMachine } from '@xstate/react'
 
 function FetchView() {
   const [state, send] = useMachine(fetchMachine)
-
   if (state.matches('loading')) return <Spinner />
-  if (state.matches('error'))   return <button onClick={() => send({ type: 'RETRY' })}>重试</button>
-  if (state.matches('success')) return <pre>{JSON.stringify(state.context.data)}</pre>
+  if (state.matches('error'))
+    return <button onClick={() => send({ type: 'RETRY' })}>重试</button>
+  if (state.matches('success')) return <p>加载完成</p>
   return <button onClick={() => send({ type: 'FETCH' })}>加载</button>
 }
 ```
 
-`state.matches('loading')` 替代 `isLoading === true` 的 boolean 链。每次状态变 React 自动重渲。
+**逐部分解释**：
 
-### 案例 3：层级状态和守卫
+- `useMachine(fetchMachine)` 启动一份 actor，返回当前 `state` 和 `send`
+- `state.matches('loading')` 问"现在是不是 loading 站"，替代 `isLoading === true`
+- 点按钮只 `send` 事件；能不能跳，由图决定，不靠散落的 setState
 
-登录流常常嵌套：未认证 → 输密码 → 多因子 → 已认证。用层级状态：
+### 案例 3：层级状态和绝对路径
+
+登录流嵌套：未认证 → 输密码 → 多因子 → 已认证。用层级状态：
 
 ```ts
 const auth = createMachine({
+  id: 'auth',
   initial: 'anonymous',
   states: {
     anonymous: { on: { LOGIN: 'verifying' } },
@@ -108,7 +111,11 @@ const auth = createMachine({
 })
 ```
 
-`#auth.anonymous` 是绝对路径跳转，把"任何子状态都能跳回登录页"用一行画出来——放 useReducer 里要写一坨嵌套 if。
+**逐部分解释**：
+
+- 必须设 `id: 'auth'`，`#auth.xxx` 这种绝对路径才找得到目标
+- `verifying` 里再嵌 `password` / `mfa`，像大站里的换乘厅
+- `FAIL: '#auth.anonymous'` 从任意子状态一跳回登录页——useReducer 里要写一坨嵌套 if
 
 ## 踩过的坑
 
@@ -160,7 +167,7 @@ const auth = createMachine({
 - [[zustand]] —— 简单全局 state 的轻量替代，没有状态机约束
 - [[jotai]] —— 原子化 state 管理，和状态机互补不冲突
 - [[effect]] —— FP 重型替代，actor 模型更纯但学习曲线更陡
-- [[erlang-otp]] —— Actor 模型的工业起源，XState 的 system._relay 是它的浏览器版
+- [[erlang-otp]] —— Actor 模型的工业起源，XState 的跨 actor 路由是它的浏览器简化版
 - [[svelte]] —— xstate-svelte adapter 让 Svelte 也能用同一份机器
 - [[tanstack-query]] —— 异步 fetch 的状态机替代，专注服务端状态
 

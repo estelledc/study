@@ -1,0 +1,87 @@
+{
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "总管家/方言翻译类比贴合；三案例均有 YAML/JSON 与逐部分解释，零基础可跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 home-assistant/core、2013 Paulus 起源、Hass.io/Open Home Foundation 时间线与公开史实一致；无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "automation/recorder/websocket 案例可跟做；trigger vs condition、mode、Recorder 噪声踩坑具体。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界（本地优先 vs 即插即用/商业 SLA）清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "总管家/方言翻译类比贴合；三案例均有 YAML/JSON 与逐部分解释，零基础可跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 home-assistant/core、2013 Paulus 起源、Hass.io/Open Home Foundation 时间线与公开史实一致；无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "automation/recorder/websocket 案例可跟做；trigger vs condition、mode、Recorder 噪声踩坑具体。",
+        "适用边界（本地优先 vs 即插即用/商业 SLA）清楚。"
+      ]
+    }
+  ]
+}

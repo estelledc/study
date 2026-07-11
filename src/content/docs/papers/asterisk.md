@@ -3,7 +3,7 @@ title: Asterisk — 把企业总机做成一台 Linux 服务器
 来源: Asterisk 开源项目 (https://github.com/asterisk/asterisk)，Mark Spencer 1999 起
 日期: 2026-05-31
 分类: 通信 / 开源 PBX
-难度: 入门
+难度: 初级
 ---
 
 ## 是什么
@@ -151,3 +151,7 @@ exten => 200,2,GotoIf($["${VIP}" = "yes"]?vip,s,1:normal,s,1)
 - [[freeswitch]] —— 2006 年从 Asterisk 分支出去的现代多线程版
 - [[sip-rfc-3261]] —— Asterisk chan_pjsip 实现的核心协议
 - [[linux-kernel]] —— Asterisk 长在 Linux 上，DAHDI 直接接内核驱动
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例用「场景」而非「### 案例 1/2/3」，且缺少逐部分解释；案例 1 的 wg set 各参数（private-key / peer / allowed-ips / endpoint）需用日常话拆开说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 漫游、案例 3 K8s 只有叙述没有步骤；各拆成 3 步「发生了什么 → 协议怎么反应 → 你看到什么」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Noise_IKpsk2、AEAD、DH、RTT、Layer 3 首次出现需加一句零基础桥接（例如 RTT=一来一回、AEAD=加密同时验真伪）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「学到什么」称固定套件思路「影响了 TLS 1.3」不准确：TLS 1.3 套件削减是 IETF 并行进程，不宜写成 WireGuard 因果影响；改为「与 TLS 1.3 同向」或删掉因果表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「延迟比 OpenVPN 低一个数量级」过绝对；改为「论文基准下延迟与吞吐显著优于典型用户态 OpenVPN」并避免未限定的数量级断言"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写「没有用户态进程」对内核实现数据面大致成立，但易误解为全平台皆然；应限定为 Linux 内核实现的数据路径"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 只配了服务器 A，对端 B 的对称配置缺失；至少补 B 侧 3–4 行镜像命令，否则读者无法复现 ping 通"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "wg set 一行里 peer/allowed-ips/endpoint 挤在一起，建议拆成可读的多行并注明 listen-port 51820 与 UDP 防火墙放行"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可加一条量化边界（如「点对点或小规模 mesh、peer 数通常几十以内靠手配；更大规模需外置密钥分发」）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例用「场景」而非「### 案例 1/2/3」，且缺少逐部分解释；案例 1 的 wg set 各参数（private-key / peer / allowed-ips / endpoint）需用日常话拆开说明",
+        "案例 2 漫游、案例 3 K8s 只有叙述没有步骤；各拆成 3 步「发生了什么 → 协议怎么反应 → 你看到什么」",
+        "核心要点里 Noise_IKpsk2、AEAD、DH、RTT、Layer 3 首次出现需加一句零基础桥接（例如 RTT=一来一回、AEAD=加密同时验真伪）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "「学到什么」称固定套件思路「影响了 TLS 1.3」不准确：TLS 1.3 套件削减是 IETF 并行进程，不宜写成 WireGuard 因果影响；改为「与 TLS 1.3 同向」或删掉因果表述",
+        "「延迟比 OpenVPN 低一个数量级」过绝对；改为「论文基准下延迟与吞吐显著优于典型用户态 OpenVPN」并避免未限定的数量级断言",
+        "核心要点写「没有用户态进程」对内核实现数据面大致成立，但易误解为全平台皆然；应限定为 Linux 内核实现的数据路径"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只配了服务器 A，对端 B 的对称配置缺失；至少补 B 侧 3–4 行镜像命令，否则读者无法复现 ping 通",
+        "wg set 一行里 peer/allowed-ips/endpoint 挤在一起，建议拆成可读的多行并注明 listen-port 51820 与 UDP 防火墙放行",
+        "适用场景可加一条量化边界（如「点对点或小规模 mesh、peer 数通常几十以内靠手配；更大规模需外置密钥分发」）"
+      ]
+    }
+  ]
+}

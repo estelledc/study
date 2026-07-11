@@ -1,153 +1,149 @@
 ---
-title: 'DINO 自监督视觉 transformer'
-来源: 'Caron et al., Emerging Properties in Self-Supervised Vision Transformers, ICCV 2021'
-arxiv: '2104.14294'
+title: DINO — 让视觉模型自己认出物体轮廓
+来源: 'Caron et al., "Emerging Properties in Self-Supervised Vision Transformers", ICCV 2021'
+日期: 2026-05-29
+分类: 机器学习
+难度: 中级
 ---
 
 ## 是什么
 
-DINO 是 2021 年 Facebook AI 提出的自监督视觉表征方法。
+DINO 是 2021 年 Facebook AI Research（FAIR）提出的**自监督视觉表征**方法：不靠人工标注，只靠同一张图的不同裁剪互相对齐，训出可用的图像特征。
 
-一句话：用同架构的 student / teacher 两个 ViT，teacher 是 student 的指数滑动平均（EMA），靠 multi-crop 不对称投喂 + 自蒸馏目标，无标签训出比 supervised ViT 还强的特征。最让人意外的不是分数，是训完之后 [CLS] 的注意力图自动长出物体分割形状——论文标题 emerging properties 指的就是这件事。
+日常类比：像带两个学生看同一座雕塑——一个站远看整体（teacher），一个有时只看局部（student）。student 要猜出 teacher 对「整座雕塑」的描述；时间久了，student 也会自己盯住主体，而不是背景杂物。
+
+技术上它用同架构的 student / teacher 两个 Vision Transformer（ViT，把图切成小块再建模）。teacher 不是另训的大模型，而是 student 参数的指数滑动平均（EMA，像「过去一段时间的我」的平滑版）。论文标题里的 emerging properties，指训完后 `[CLS]`（整图汇总 token）的注意力图会自动勾出物体轮廓。
+
+和「必须找很多不像的图当反例」的对比学习不同，DINO 更像自己给自己出题：同一张图的不同看法要对齐。这让工程上少维护一个巨大的负样本队列，也更贴合 ViT 这种按 token 思考的结构。
 
 ## 为什么重要
 
-把视觉自监督放在时间线上看，DINO 是从「contrastive 卷积」到「distillation + ViT 涌现」的转折点。
+不理解 DINO，下面这些事会很难解释：
 
-- 2019 MoCo / 2020 SimCLR：contrastive 把 ResNet-50 推到 74%，但要么 65K queue 要么 4096 batch
-- 2020 BYOL / SwAV：去掉 negative pair 也能 work，predictor + EMA 是关键
-- 2021 DINO：把这套搬到 ViT，ImageNet linear 80.1%，k-NN 77.4%，第一次跨过 supervised ViT
-- 2022 iBOT / 2023 DINOv2：把 DINO 拓到 patch 级和 142M 数据，做成 foundation visual encoder
-
-读懂 DINO 等于读懂 2020-2023 视觉自监督的范式转移。它给的核心信号是：架构（ViT）+ 目标（self-distill）+ 数据视图（multi-crop）必须 co-design，三者交互才有 emergence。
+- 为什么 2021 年后视觉自监督从「对比学习 + 卷积」转向「自蒸馏 + ViT」
+- 为什么无标签也能训出比部分监督 ViT 更强的 ImageNet 线性探测分数
+- 为什么 attention 热力图会「长」出分割形状，而不只是分类分数变高
+- 为什么后来的 DINOv2 能成为深度估计、语义分割里常用的视觉底座
 
 ## 核心要点
 
-**self-distillation。** 经典蒸馏是大网络教小网络，self-distillation 反过来——student 和 teacher 同架构，teacher 没有独立训练，由 student 参数 EMA 派生：`θ_t ← λ·θ_t + (1-λ)·θ_s`，λ 用 cosine schedule 从 0.996 涨到 1.0。直觉上 teacher 是「过去 100 天的我」，比「今天的我」更稳定，目标也更稳定。
+1. **自蒸馏（self-distillation）**：经典蒸馏是大网教小网；这里 student 与 teacher 同架构，teacher 由 EMA 更新：`θ_t ← λ·θ_t + (1-λ)·θ_s`，λ 从约 0.996 升到 1.0。类比：老师是「更稳的过去的自己」，目标不会天天乱跳。
 
-**multi-crop 不对称。** 同一张图取 2 个 global crop（224×224，覆盖 50%-100%）+ 8 个 local crop（96×96，覆盖 5%-50%）。关键：student 看所有 crop，teacher 只看 global。这逼 student 必须从局部碎片猜出 teacher 看全局时的输出，于是被迫学局部到整体的语义对应。
+2. **multi-crop 不对称**：每张图约 2 个 global crop（约 224×224，尺度约 0.4–1.0）+ 8 个 local crop（约 96×96，尺度约 0.05–0.4）。student 看全部，teacher 只看 global——逼 student 从局部猜整体语义。
 
-**centering + sharpening 防 collapse。** self-distillation 最大失败模式是 student 和 teacher 都输出常数。两个反向力：centering 在 teacher softmax 前减去 running mean `c`（推向均匀），sharpening 用 teacher 温度 τ_t=0.04 远低于 student τ_s=0.1（推向尖锐）。两力平衡点就是「有结构但不退化」。
+3. **防崩塌 + 高维投影**：两边都输出常数就学废了。centering（减 running mean）把分布推均匀，sharpening（teacher 温度更低，如 0.04 vs 0.1）把分布推尖锐；再加约 65536 维投影头当「伪类槽位」。训完后 `[CLS]` 对各 patch 的注意力常会盖住物体主体。
 
-**projection head 维度 K=65536。** ViT [CLS] 输出后接 3 层 MLP + L2 norm + 线性层，输出维度 65536。直觉：65536 个伪类槽位，越大能容纳的概念越多。论文 §5.3 ablation 显示 K 从 1024 到 65536 单调上升但收益递减——这是工程经验值不是理论最优。
-
-**emergent attention。** 训完后取最后一层 multi-head self-attention 的 [CLS] 对其他 patch 的权重，按网格 reshape 成 heatmap，高响应区自动覆盖物体主体。supervised ViT 的 attention 看起来更随机，MoCo / BYOL 训的也远不如 DINO 干净。这是 self-distill + ViT + multi-crop 三者交互的副产品。不同 head 还会自发分工：有的关注主体物体，有的关注头部 / 四肢，有的关注背景——supervised 训练下这种 head-wise specialization 被 label 压制，DINO 没有 label 反而让它长出来。
-
-**为什么 ViT 上才 emerge。** ViT 的 self-attention 本身就有「软分配」语义：每个 token 对其他 token 算权重。supervised 训练给 image-level label，attention 被压向「哪些 patch 帮我分类」——往往集中在判别性的小区域（猫脸）。DINO 的目标是「两个 view 的 [CLS] 输出一致」，逼 [CLS] 对所有 patch 形成稳定的全局总结。在 multi-crop 不对称下，全局总结必须覆盖物体主体（因为 local crop 只看到部分主体），于是 attention 自然分散到整个物体。这是「目标函数 → 架构特性 → 涌现现象」的因果链。
+为什么 ViT 上更明显：监督分类常把注意力压到「最能区分类别的一小块」（比如猫脸）；DINO 要让不同裁剪的整图汇总一致，又要在 local crop 里猜对 global，于是汇总不得不覆盖更大主体区域。这是目标函数和架构特性叠在一起的结果，不是魔法。
 
 ## 实践案例
 
-伪代码（论文 Algorithm 1 改写）：
+### 案例 1：一步里损失怎么算
 
 ```python
-def dino_step(x, student, teacher, center, tau_s, tau_t, m):
-    x1, x2 = aug(x), aug(x)               # 2 global crops
-    locals_ = [aug(x, local=True) for _ in range(8)]
-    s_out = [student(v) for v in [x1, x2] + locals_]
-    t_out = [teacher(v) for v in [x1, x2]]   # teacher 只看 global
-    loss = 0
-    for i, t in enumerate(t_out):
-        for j, s in enumerate(s_out):
-            if i < 2 and j == i: continue   # skip same view
-            t_p = softmax((t - center) / tau_t)
-            s_p = log_softmax(s / tau_s)
-            loss += -(t_p * s_p).sum(-1).mean()
-    loss.backward(); optimizer.step()
-    teacher_params = m * teacher_params + (1-m) * student_params  # EMA
-    center = 0.9 * center + 0.1 * mean(concat(t_out))
+# 概念示意（非完整可跑脚本）
+s_out = [student(v) for v in globals_ + locals_]
+t_out = [teacher(v) for v in globals_]  # teacher 只看 global
+loss = cross_entropy_student_to_teacher(s_out, t_out, center, tau_s, tau_t)
+ema_update(teacher, student, m=0.996)
 ```
 
-关键结果（论文 Table 2 / 3 / 5）：
+**逐部分解释**：
 
-| 方法 | 架构 | linear top-1 | k-NN top-1 |
-|------|------|--------------|------------|
-| supervised | ViT-B/16 | 79.9 | 76.1 |
-| MoCov3 | ViT-B/16 | 76.5 | 71.4 |
-| DINO | ViT-S/16 | 77.0 | 74.5 |
-| DINO | ViT-B/8 | 80.1 | 77.4 |
+- `globals_ / locals_`：同一张图的远景与近景裁剪
+- `center / tau_*`：防崩塌的居中与温度；teacher 侧温度通常更低（更尖）
+- `ema_update`：只动 teacher 的平滑参数，不反传 teacher
+- 跳过「同一 global 自己对自己」的配对，避免偷懒对齐
 
-ViT-B/8 的 k-NN 77.4 超过 supervised 76.1——意味着 DINO 学到的不只是线性可分特征，度量空间结构本身就接近真实语义。下游：DAVIS-2017 视频分割 J&F=61.8、VOC07 object discovery CorLoc=45.9（vs supervised ViT-S/16 35.3）、Oxford-Hard image retrieval mAP=51.5。
+### 案例 2：读出 emergent attention
+
+```python
+attn = last_block_cls_attn(student, image)  # [num_patches]
+heat = attn.reshape(h_patches, w_patches)
+```
+
+**逐部分解释**：
+
+- 取最后一层 `[CLS]` 对其他 patch 的权重，reshape 成热力图
+- 高响应区常覆盖主体；多物体时往往只盯最显眼的一个
+- 不同 attention head 有时会分工：有的看身体，有的看头/四肢，有的偏背景——这是观察现象，不是保证稳定的产品 API
+
+### 案例 3：按任务选档位
+
+```text
+dense 特征 / 分割 / 检索  → DINO 或 DINOv2
+image-level 零样本+文本   → 更看 CLIP 路线
+算力很小、只要分类微调   → 监督预训练 CNN/ViT 可能更省事
+```
+
+**逐部分解释**：
+
+- DINO 强在无标签视觉结构；不自带图文对齐
+- 论文设定下 ViT-B/8 的 ImageNet linear 约 80.1%、k-NN 约 77.4%（对照表中监督 ViT-B/16 的 k-NN 约 76.1%）
+- 数字只在论文报告的架构/协议下成立；换数据或换探测协议不要直接横比
 
 ## 踩过的坑
 
-- **collapse 模式有两种。** 关掉 centering 立刻 collapse（某维度饱和），关掉 sharpening 慢速 collapse（输出趋向均匀，loss 看似在降但学不到）。两个都开才稳定。
-- **超参对 batch size 敏感。** 默认 batch 1024（8 GPU × 128）。降到 256 时 EMA momentum 要从 0.996 调到 0.99，否则 teacher 跟不上 student。论文没给详细 schedule，社区 issue 里大量「换 batch 后 collapse」的报告。
-- **τ_t warmup 必须做。** teacher 温度从 0.04 warmup 到 0.07（前 30 epoch）。前 10 epoch loss 抖动很大不要误判 collapse——是 warmup 中。
-- **multi-crop dataloader 是瓶颈。** num_workers 不够（< 8）GPU 会饿。
-- **emergent attention 在多 instance 粗糙。** 一张图 5 只猫，attention 倾向聚焦最显著那只，不能直接拿 [CLS] attention 做 instance segmentation。
+1. **关掉 centering 或 sharpening**：会快崩或慢崩，两个都要开。
+2. **乱改 batch 不改 EMA**：默认常按较大 batch（如 1024）调；降到 256 时 momentum 往往要下调，否则 teacher 跟不上。
+3. **把前几 epoch 的抖动当崩塌**：teacher 温度有 warmup，前期 loss 抖很常见。
+4. **把 `[CLS]` attention 当实例分割**：多物体场景会偏到最显著目标，不能直接当 mask。
 
-## 适用
+补充：multi-crop 的 dataloader 很容易成为瓶颈——`num_workers` 太小会让 GPU 空转；这看起来像「算法不收敛」，其实是输入管道饿死了。
 
-选 DINO 路线的判断：
+## 适用 vs 不适用场景
 
-- 任务需要 dense / patch-level 特征（语义分割、单目深度、检索）→ DINO / DINOv2 比 CLIP 强
-- 没有标签，但能拿到大量图像 → self-distillation 比 contrastive 工程量小（不用维护 negative queue）
-- backbone 必须是 ViT（或类似 token-based 架构）；ResNet 上 emergent 故事不成立，效果回到 SwAV 水平
+**适用**：
 
-不选的判断：
+- 需要稠密 / patch 级特征（分割、检索、部分深度任务）
+- 有大量无标签图像，不想维护对比学习的巨大 negative queue
+- backbone 走 ViT 或同类 token 架构
+- 想先用公开 DINO/DINOv2 权重做下游微调，而不是从零自训
 
-- image-level zero-shot 分类 / 检索 → CLIP 路线更对口（有文本对齐）
-- 算力极度受限 → DINO ViT-B/8 训练 14 day on 8 V100，小集群很难复现
-- 多 instance 场景需要 mask → 直接用 SAM 而不是 [CLS] attention
-- 模型必须部署到边缘端 → ViT 推理慢，蒸馏到 ResNet 又丢 emergent attention，不如直接 supervised CNN
+**不适用**：
 
-落地决策树：先看任务粒度（image-level / dense / instance），再看数据规模（< 1M 用 supervised pretrain 微调可能更省事，> 10M 才考虑自训 SSL），最后看算力预算。
+- 需要图文零样本分类 → CLIP 更对口
+- 算力极紧（论文级 ViT-B/8 训练可达数日 × 多卡）
+- 边缘端强实时 → ViT 推理偏重，常不如轻量 CNN
+- 多实例精确 mask → 直接用专用分割模型更合适
 
-## 历史小故事
+落地时可先问三件事：任务粒度（整图 / 稠密 / 实例）、数据规模、算力预算；多数团队是「下载现成权重 + 微调头」，而不是复现全文训练。
 
-DINO 一作 Mathilde Caron 是 SwAV 的一作。SwAV 已经引入 multi-crop，但没碰 ViT，attention 也没那么 emergent。DINO 实质是把 SwAV 的 multi-crop + BYOL 的 EMA + ViT 三件事揉到一起。
+## 历史小故事（可跳过）
 
-工程上有个细节：projection head 最后一层用 weight normalization 但把幅度维度（weight_g）冻住——只学方向。论文里轻描淡写一句「对稳定性很关键」。社区复现里关掉 weight_norm 经常 loss 不收敛，说明这个工程细节比论文呈现的更核心。
-
-DINO 之后，FAIR 把同一思路推到 142M 数据 + ViT-g/14（11 亿参数）做出 DINOv2。蒸馏出 ViT-S/14 / ViT-B/14 / ViT-L/14 给社区用，dense feature 在 monocular depth / semantic segmentation 上是 2023-2024 的事实 baseline。
+- **2019–2020**：MoCo / SimCLR 把对比学习推高，但常要大 queue 或超大 batch。
+- **2020**：BYOL / SwAV 证明可以不做负样本对；SwAV 已用 multi-crop。
+- **2021**：Caron 等（SwAV 一作脉络）把 multi-crop + EMA 自蒸馏搬到 ViT，写出 DINO（ICCV）。
+- **工程细节**：投影头 weight norm 等稳定性技巧，社区复现里经常比正文更关键。
+- **2023**：DINOv2 把思路推到更大模型与更多数据，成为常用视觉编码器。
 
 ## 学到什么
 
-- **自监督不是 contrastive 一种范式。** distillation / clustering / masked modeling 都行，选哪种取决于 backbone 和任务。
-- **架构和目标必须 co-design。** 同一个 self-distillation 在 ResNet 上效果一般，在 ViT 上才 emerge。这警告我「换 backbone 同方法」的迁移性比想象中差。
-- **emergent 是个需要被审视的词。** DINO 的 emergent attention 是真的，但论文标题的修辞掩盖了「哪些是真涌现，哪些是工程精调副产品」。每次读 emergence 类论文都要问：消融了吗？换 setup 还在吗？
-- **数据 curation 是隐形门槛。** DINO 在 ImageNet-1K 已经够强，DINOv2 跨到 LVD-142M 才彻底起飞。学术复现 DINO 不难，复现 DINOv2 几乎不可能——数据壁垒比模型壁垒高。
-- **target 完成而非完美的工程哲学。** 65536 这个维度、0.04 这个温度、0.996 这个 momentum 都是经验值。能 work 就先发，理论解释后人补。
+- 自监督不只 contrastive 一种；自蒸馏也能成主线。
+- 架构与目标要一起设计：同一套自蒸馏在 ResNet 上故事弱很多，在 ViT 上才明显。
+- 「涌现」要会追问：换设定还在吗？消融了吗？
+- 数据规模是隐形门槛：复现 DINO 可行，复现 DINOv2 级数据很难。
+- 超参里很多是工程经验值（温度、EMA、投影维数）；先求稳定可训，再谈理论最优。
 
 ## 延伸阅读
 
-- DINOv2 (Oquab et al. 2023)：DINO + iBOT + KoLeo 缝合，LVD-142M 数据，foundation 视觉特征事实标准
-- iBOT (Zhou et al. 2022)：DINO + BERT-style masked image modeling，patch-level emergence 显式化
-- BYOL (Grill et al. 2020)：DINO 的精神祖先，ResNet 上的 EMA self-distillation
-- MAE (He et al. 2022)：另一条 SSL 路线，masked autoencoder，和 DINO 路线 2022 后并行发展
-- Tian et al. 2021《Understanding Self-Supervised Learning Dynamics》：toy linear analysis，把 SSL 防 collapse 机制统一为「阻止表征矩阵奇异值塌陷」
+- 论文 PDF / 预印本：[Emerging Properties in Self-Supervised Vision Transformers](https://arxiv.org/abs/2104.14294)（arXiv:2104.14294）
+- DINOv2（Oquab et al., 2023）：更大数据与模型上的后续
+- BYOL（Grill et al., 2020）：EMA 自蒸馏的重要前作
+- iBOT（Zhou et al., 2022）：把 DINO 思路扩到 patch 级掩码建模
+- MAE（He et al., 2022）：另一条掩码重建路线，便于对照
+- [[vit]] / [[clip]] / [[sam]] —— 架构、图文对照、分割下游
 
 ## 关联
 
-- [[vit]]：DINO 用的就是原版 ViT。DINO 揭示 ViT 在 supervised 训练下未充分利用，attention 有更多结构可学
-- [[clip]]：另一条路。CLIP 用图文对比，DINO 用纯图像自蒸馏。工业实践 image-level 用 CLIP，dense 用 DINOv2
-- [[sam]]：dense feature 的下游放大。SAM 自己用 MAE，但社区把 DINOv2 作为替换 backbone 后零样本分割能力提升
-- [[resnet]]：被超越的 backbone。ResNet 时代 SSL 推到 75% 左右，DINO + ViT-B/8 直接干到 80%，主流 backbone 切换到 ViT
+- [[vit]] —— DINO 的骨干；无标签目标让 attention 结构更可读
+- [[clip]] —— 图文对比的另一条路；image-level 零样本常更吃香
+- [[sam]] —— 分割下游；社区常拿 DINOv2 类特征当替换骨干
+- [[resnet]] —— 卷积时代 SSL 基线；DINO+ViT 后主流骨干切换
+- [[mae]] —— 掩码自编码并行路线，和 DINO 系一起塑造 2022 后格局
+- [[pytorch]] —— 论文实验与社区复现最常见的训练框架底座
+
+> 记四个常用旋钮：teacher 温度（sharpening）、EMA momentum、投影维数 K、batch size；改其中一个时，往往要连着检查另外三个。
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[mae]] —— MAE — Masked Autoencoders
-- [[resnet]] —— ResNet — 残差连接
-- [[sam]] —— SAM — Segment Anything
-- [[vit]] —— ViT — Vision Transformer
-
-## 附录
-
-核心超参（ViT-B/16 默认）：
-
-| 类别 | 值 |
-|------|-----|
-| optimizer / lr | AdamW / 0.0005 × bs/256 |
-| weight decay | 0.04 → 0.4 (cosine) |
-| epochs / batch | 100 / 1024 |
-| EMA momentum | 0.996 → 1.0 (cosine) |
-| τ_s / τ_t | 0.1 / 0.04 → 0.07 (warmup 30 ep) |
-| center momentum | 0.9 |
-| projection bottleneck / output K | 256 / 65536 |
-| global / local crop scale | (0.4, 1.0) / (0.05, 0.4) |
-| num local crops | 8 |
-
-记四个数：τ_t=0.04（sharpening 强度）、EMA 0.996→1.0（越训越冻）、K=65536（伪类槽位）、batch 1024（小集群要重调 momentum）。

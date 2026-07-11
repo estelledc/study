@@ -47,6 +47,7 @@ Conform 的设计可以拆成 **三件事**：
 ```tsx
 // app/login/page.tsx
 "use client";
+import {useActionState} from "react";
 import {useForm, getFormProps, getInputProps} from "@conform-to/react";
 import {parseWithZod} from "@conform-to/zod";
 import {z} from "zod";
@@ -55,12 +56,14 @@ import {login} from "./actions";
 const schema = z.object({email: z.string().email(), password: z.string().min(8)});
 
 export default function LoginPage() {
+  const [lastResult, action] = useActionState(login, undefined);
   const [form, fields] = useForm({
+    lastResult,
     onValidate: ({formData}) => parseWithZod(formData, {schema}),
     shouldValidate: "onBlur",
   });
   return (
-    <form {...getFormProps(form)} action={login}>
+    <form {...getFormProps(form)} action={action}>
       <input {...getInputProps(fields.email, {type: "email"})} />
       <div>{fields.email.errors}</div>
       <input {...getInputProps(fields.password, {type: "password"})} />
@@ -74,7 +77,7 @@ export default function LoginPage() {
 
 - `getFormProps(form)` 把 noValidate / id / onSubmit 一次铺到 `<form>` 上
 - `getInputProps(fields.email, {type: "email"})` 给 input 配 name + defaultValue + aria-invalid
-- `action={login}` 直接挂 Server Action——无 JS 也能 POST
+- `useActionState(login, undefined)` 把双参数 Server Action 接到表单上，返回值再通过 `lastResult` 回灌 UI
 
 ### 案例 2：同一 schema 服务端再校验一次
 
@@ -91,7 +94,7 @@ export async function login(prevState: unknown, formData: FormData) {
 }
 ```
 
-`submission.reply()` 把 server 错误打包成 `lastResult`，前端 `useForm({lastResult})` 接住即可——客户端 / 服务端校验逻辑零重复。
+`submission.reply()` 把 server 错误打包成 `lastResult`，前端用 `useActionState` 接住后传给 `useForm({lastResult})`——客户端 / 服务端校验逻辑零重复。
 
 ### 案例 3：FieldArray 用 intent 驱动
 
@@ -163,3 +166,7 @@ return (
 - [[tanstack-form]] —— 第三条路，跨框架 + hook-based，与 Conform / RHF 形成三足
 - [[remix]] —— 作者发源生态，action + useFetcher 与 Conform 心智同源
 - [[next-app-router]] —— Server Action 时代让 Conform 找到主战场
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

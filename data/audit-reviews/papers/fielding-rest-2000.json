@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1（gRPC 约束取舍）偏抽象，建议拆成「保留哪些 / 放弃哪些 / 换来什么」三步编号，并补一句日常对照。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 JSON 后可加 2–3 行逐字段解释（_links 是什么、客户端怎么用）。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 反向链接 占位；模板要求保留注释行。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「95% 自称 RESTful 的 API 没做到 HATEOAS」是修辞估计，建议改成「多数公开/内部 API」以免读成统计结论。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源、2000 博士论文、RFC 2616（1999）与 Fielding 主作者身份总体正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 JSON/伪 URI 可跟读；踩坑（应用状态 vs 资源状态、风格 vs 架构）具体可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；若 refine 可把案例压回 3 个并给案例 1 更可跟做的步骤。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1（gRPC 约束取舍）偏抽象，建议拆成「保留哪些 / 放弃哪些 / 换来什么」三步编号，并补一句日常对照。",
+        "案例 2 的 JSON 后可加 2–3 行逐字段解释（_links 是什么、客户端怎么用）。",
+        "缺 ## 反向链接 占位；模板要求保留注释行。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「95% 自称 RESTful 的 API 没做到 HATEOAS」是修辞估计，建议改成「多数公开/内部 API」以免读成统计结论。",
+        "来源、2000 博士论文、RFC 2616（1999）与 Fielding 主作者身份总体正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 JSON/伪 URI 可跟读；踩坑（应用状态 vs 资源状态、风格 vs 架构）具体可操作。",
+        "适用/不适用边界清楚；若 refine 可把案例压回 3 个并给案例 1 更可跟做的步骤。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的伪代码已能跟读，但缺少像案例 2 那样的编号步骤；不影响通过。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 反向链接 占位段，与模板不完全一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「seL4 直接继承了 EROS 的 IPC 路径设计」过强：seL4 主线是 L4，EROS 主要影响 capability/endpoint 思路；应改成「吸收 EROS 的 capability/endpoint 设计，并在 L4 快路径上做形式化验证」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事里「继承 EROS 的快 IPC」同样宜弱化为「吸收 capability 与 endpoint 思想」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码与 checkpoint 步骤概念正确；适用边界已有量化（快照间隔、移植成本），可通过。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的伪代码已能跟读，但缺少像案例 2 那样的编号步骤；不影响通过。",
+        "缺少 ## 反向链接 占位段，与模板不完全一致。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「seL4 直接继承了 EROS 的 IPC 路径设计」过强：seL4 主线是 L4，EROS 主要影响 capability/endpoint 思路；应改成「吸收 EROS 的 capability/endpoint 设计，并在 L4 快路径上做形式化验证」。",
+        "历史小故事里「继承 EROS 的快 IPC」同样宜弱化为「吸收 capability 与 endpoint 思想」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "伪代码与 checkpoint 步骤概念正确；适用边界已有量化（快照间隔、移植成本），可通过。"
+      ]
+    }
+  ]
+}

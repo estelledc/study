@@ -1,5 +1,5 @@
 ---
-title: MLflow — 给机器学习实验装上"记账本和身份证"
+title: MLflow — 给机器学习实验装上「记账本和身份证」
 来源: Zaharia et al., "Accelerating the Machine Learning Lifecycle with MLflow", Databricks 2018
 日期: 2026-05-31
 分类: MLOps / ML 平台
@@ -36,7 +36,7 @@ with mlflow.start_run():
 - 为什么大厂招 MLOps 工程师，简历都写"熟悉 MLflow / W&B"——它定义了行业的术语（experiment / run / artifact）
 - 为什么 Databricks 一家公司能让"实验记录"成为标配——开源 + 早进场 + 不强制改代码
 - 为什么 Kubeflow / Flyte / Airflow 都跑去和 MLflow 集成而不是自己造——抢了"最小工件集"的标准位
-- 为什么 ML 项目从 notebook 到生产 80% 出 bug——没有 tracking 时根本不知道线上模型对应哪份代码
+- 为什么 ML 项目从 notebook 到生产常翻车——没有 tracking 时根本不知道线上模型对应哪份代码与哪次 run
 
 ## 核心要点
 

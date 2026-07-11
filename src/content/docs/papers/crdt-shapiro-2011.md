@@ -20,14 +20,14 @@ Shapiro 等人在这篇 INRIA 长报告里做了三件事：
 
 ## 为什么重要
 
-不理解 CRDT，下面这些产品都没法解释：
+不理解 CRDT，下面这些现象都没法解释：
 
-- 为什么 **Figma** 多人改图没"冲突弹窗"，每人改不同图层不互踩
-- 为什么 **Notion / Linear** 离线写完笔记联网就合上去，不冒"冲突副本.md"
+- 为什么多人改同一份数据可以**不弹冲突对话框**——核心是事先约定可交换的合并规则
+- 为什么 **Figma** 官方说自己受 CRDT 启发（属性级 LWW），却又不是纯去中心化 CvRDT/CmRDT
 - 为什么 **Riak 2.0** 直接给出 counter / set / map 这些"分布式数据类型"，让你不用自己写合并
-- 为什么 **Yjs / Automerge** 这些协同库底层算法名字都是 OR-Set / RGA / LWW——全是这篇论文里的设计
+- 为什么 **Yjs / Automerge** 底层算法名就是 OR-Set / RGA / LWW——直接来自这篇报告的设计
 
-也是后续所有 CRDT 论文的母体：[[crdt-json]]（Kleppmann 2017）把这套推广到嵌套 JSON，[[automerge-2016]] 是工程实现，[[yjs-2020]] 是 web 落地。
+也是后续 CRDT 论文的母体：[[crdt-json]]（Kleppmann 2017）推广到嵌套 JSON，[[automerge-2016]] / [[yjs-2020]] 是工程落地。
 
 ## 核心要点
 
@@ -86,9 +86,15 @@ B: 同时 remove(X) → 只能删它当时看到的 tag 集合 {} （没看到 t
 
 ### 案例 3：LWW-Register（Last-Writer-Wins 寄存器）
 
-每个写带一个时间戳，merge 取时间戳大的。简单但有代价：**时钟必须可比**（用 Lamport 时间戳或物理时钟+副本 ID 破平），并且并发写会丢一边。
+每个写带时间戳，merge 取时间戳大的那一侧：
 
-Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
+```
+A: write("红", t=5) → ("红", 5)
+B: 同时 write("蓝", t=7) → ("蓝", 7)
+merge → ("蓝", 7)   // t 更大的赢；"红"被丢
+```
+
+**逐步解释**：① 本地写只改自己副本；② 同步时比时间戳；③ 相等时用副本 ID 破平。代价：时钟必须可比（Lamport 或物理时钟+副本 ID），并发写会丢一边。Cassandra / DynamoDB 单字段冲突常用这招。
 
 ## 踩过的坑
 

@@ -8,7 +8,7 @@ title: Rive — 把矢量动画做成可交互组件的运行时
 
 ## 是什么
 
-Rive 是一套**让矢量动画带状态、带输入、能跨平台运行**的动画运行时；`rive-runtime` 是它最底层的 C++ runtime，GitHub 大约 7k stars。日常类比：普通动画像一段视频，按时间从第 1 秒播到第 3 秒；Rive 更像一个会反应的仪表盘，按钮按下去、鼠标移过去、血量变低时，它会自己切到对应状态。
+Rive 是一套**让矢量动画带状态、带输入、能跨平台运行**的动画运行时；`rive-runtime` 是它最底层的 C++ runtime（GitHub 约 1k+ stars，各语言 wrapper 另计）。日常类比：普通动画像一段视频，按时间从第 1 秒播到第 3 秒；Rive 更像一个会反应的仪表盘，按钮按下去、鼠标移过去、血量变低时，它会自己切到对应状态。
 
 `.riv` 文件里不只保存图形和关键帧，还可以保存 Artboard、State Machine、View Model、事件和绑定关系。运行时加载这份文件后，每帧推进状态机，计算矢量图形，再交给 Metal、Vulkan、D3D、OpenGL/WebGL 或宿主平台画出来。所以 Rive 不是单纯的“动画库”，而更像“设计师能交付的交互组件格式”：设计师在编辑器里定义视觉和状态，工程师在 Web、React、Flutter、Unity、iOS、Android 等平台里接入数据和事件。
 
@@ -142,10 +142,10 @@ class _RatingListState extends State<RatingList> {
 
 ## 踩过的坑
 
-1. **只给 `animations` 不给 `stateMachines`**：文档已把 timeline-only 播放标成旧方向，原因是交互动画应该从状态机进入。
-2. **忘记清理 runtime 实例**：Web 高层 API 也会创建 C++ 侧对象，原因是 artboard、animation、state machine 实例不清理会占内存。
-3. **把旧 Inputs 当新项目默认方案**：Inputs 文档已提示新项目用 Data Binding，原因是 View Model 更适合表达组件级数据接口。
-4. **以为所有 runtime 功能同时到齐**：官方反复指向 Feature Support，原因是 Text、Layout、Audio、Renderer 等能力在不同平台有最低版本要求。
+1. **只给 `animations` 不给 `stateMachines`**：按钮 `fire()` 了画面却没反应——状态转移规则在状态机里，时间线播放接不到 trigger。
+2. **忘记清理 runtime 实例**：SPA 路由来回切，Web/Flutter 高层 API 背后的 C++ artboard / state machine 不 `cleanup`/`dispose` 会泄漏。
+3. **Inputs 与 Data Binding 混用且当默认**：旧项目改一半属性走 Input、一半走 View Model，会出现「代码改了数、动画状态不同步」。
+4. **以为所有 runtime 功能同时到齐**：Text / Layout / Audio / shared texture 在各平台最低版本不同，上线前先查 Feature Support，别假设 Flutter 能用的 Web 一定有。
 
 ## 适用 vs 不适用场景
 

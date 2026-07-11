@@ -23,7 +23,7 @@ npx rolldown --input src/index.ts --dir dist
 
 不理解 rolldown，下面这些事说不清楚：
 
-- 为什么 Vite 8 的 release notes 里出现 "rolldown-vite" 这个新包，它和原版 Vite 7 有什么不一样
+- 为什么 Vite 8 起默认打包器换成了 Rolldown，和 Vite 7 的 esbuild+Rollup 双引擎有什么不一样
 - 为什么"用 Rust 重写 JS 工具链"这件事 esbuild、swc、Rspack、turbopack 都在做，rolldown 又凭什么挤进去
 - 为什么 Rollup 已经够好了还要重写，难道不是炫技——双引擎一致性问题就是答案
 - 为什么"plugin 兼容"是这种重写项目的命门——丢了生态等于重启战争，绝大多数 Rust 重写项目卡在这一关
@@ -70,33 +70,30 @@ export default {
 
 这个 plugin 拦截 `import x from 'foo'`，把 `foo` 改成本地文件。`resolveId` 钩子是 Rollup 协议里第一个被调用的钩子（每个模块解析时触发）。返回字符串表示重定向到那个路径，返回 `null` 表示这个 plugin 不处理、交给下一个。把上面的 config 文件放进项目根，跑 `npx rolldown -c` 就生效。
 
-### 案例 3：在 Vite 项目里换上 rolldown-vite
+### 案例 3：在 Vite 8+ 里用上默认的 Rolldown
 
-切引擎不改业务代码：
+Vite 8（2026-03）起 Rolldown 已是默认打包器，升级即可，不必再装临时包 `rolldown-vite`（那是 2025 技术预览）：
 
 ```bash
-npm uninstall vite
-npm install rolldown-vite
+npm install vite@^8
 ```
 
-然后把 `package.json` 里的 `"dev": "vite"` 这行不用改——rolldown-vite 把 bin 名字也叫 vite。跑 `npm run dev` 还是熟悉的命令，但底下走的是 rolldown 的 dev server。可以先在分支上试，build 出来对比产物大小、首屏速度，再决定要不要全切。
-
-切回去也只要 `npm uninstall rolldown-vite && npm install vite` 一行命令，没有数据迁移负担——这是兼容协议带来的另一个好处。
+需要 Rolldown 专有选项时，在 `vite.config.ts` 里写 `build.rolldownOptions`（例如自定义 chunk 分组）。跑 `npm run dev` / `npm run build` 命令不变，底下已是同一套引擎。仍停在 Vite 7 的项目若只想先试，历史上曾用 `rolldown-vite` 别名替换 `vite`，但新项目应直接上 Vite 8。
 
 ## 踩过的坑
 
 1. **Rollup 老 plugin 不保证开箱即用**：签名一样但钩子调用顺序在某些边角场景细微不同，迁移时要跑完整端到端测试才放心，别只看构建命令不报错就过。
 2. **写自定义 Rust plugin 门槛陡**：大多数人只能写 JS plugin，跨语言桥每次调用都有序列化开销，热路径上每模块都触发的钩子（比如 `transform`）要避免做重活。
 3. **小项目看不出快**：模块数 1000 以下，rolldown 和 esbuild 几乎打平；要 10k+ 模块的大型 monorepo 才显著拉开差距，别用小 demo 跑分得出结论。瓶颈通常在磁盘 IO 不在 parse 速度。
-4. **配置字段在快速变**：v1.0 之前 89 个 release 里有破坏性变更，锁版本时要看 changelog，别盲目升 minor 版本，自动化升级脚本最好配 lockfile。
+4. **1.0 后 API 锁定、产物行为仍可能变**：公开选项与 plugin 钩子按 semver 兼容；但 DCE/chunk 启发式会继续调优，升小版本仍要看 changelog 与产物 diff。
 
 ## 适用 vs 不适用场景
 
 适用：
 
-- Vite 项目想体验"dev 和 build 行为一致"，用 rolldown-vite 替换上游
-- 中大型 monorepo（10k+ 模块）打包慢，esbuild 又缺 Rollup 的某些 chunk 控制能力
-- 自己想写打包器但不想从零造轮子，rolldown 是 Rollup 兼容层 + Rust 性能的折中
+- Vite 8+ 项目（Rolldown 已是默认引擎），要统一的 dev/build 行为
+- 中大型 monorepo（10k+ 模块）打包慢，又需要 Rollup 级 chunk 控制
+- 独立 CLI 打包库/应用，要 Rollup 兼容 plugin + Rust 性能
 - 组件库作者想输出 ESM/CJS 双格式 + sourcemap + tree-shake 友好的产物
 
 不适用：
@@ -111,9 +108,9 @@ npm install rolldown-vite
 
 - 2020 — Evan You（尤雨溪）发布 Vite，用 esbuild 加速 dev、Rollup 负责 build，奠定双引擎模式
 - 2023 — ViteConf 公开承认双引擎妥协带来一致性问题，预告统一引擎计划
-- 2024 — VoidZero 公司成立，专门做 Vite 周边工具链（oxc / rolldown / vitest）
-- 2025 — rolldown 进入 alpha，oxc parser 同步成熟到能撑生产
-- 2026-05 — rolldown v1.0.3 发布，Vite 8 集成 rolldown-vite 作为可选包
+- 2024-04 — rolldown 首个公开版 `0.10.1`；同年 VoidZero 成立（oxc / rolldown / vitest）
+- 2025-05 — 临时包 `rolldown-vite` 技术预览；同年末 Vite 8 beta 默认改用 Rolldown
+- 2026-03 / 05 — Vite 8 稳定（Rolldown 成默认引擎）；Rolldown 1.0 稳定，公开 API 按 semver 锁定
 
 ## 学到什么
 

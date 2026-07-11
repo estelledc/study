@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "公寓门禁/收银扫码/地毯脚印类比把瞬态执行与缓存侧信道讲活了"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "架构状态 vs 微架构状态开篇就拆开，零基础能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例是教学伪代码，逐步解释够用；不是可复现 exploit 教程（对本题合适）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Lipp 等 USENIX Security 2018 正确；KPTI / KVA Shadow / Double Map 命名与公开材料一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Meltdown vs Spectre 攻击模型区分清楚，未把所有推测执行漏洞混为一谈"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Flush+Reload / KAISER→KPTI 时间线教学可用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码概念正确；明确写了现代系统已打补丁、不宜当复现教程"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "软件 bug 幻觉、与 Spectre 混淆、异常即无影响、容器天然安全四条坑很实用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，含 CPU 厂商差异提醒"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "公寓门禁/收银扫码/地毯脚印类比把瞬态执行与缓存侧信道讲活了",
+        "架构状态 vs 微架构状态开篇就拆开，零基础能跟",
+        "三案例是教学伪代码，逐步解释够用；不是可复现 exploit 教程（对本题合适）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Lipp 等 USENIX Security 2018 正确；KPTI / KVA Shadow / Double Map 命名与公开材料一致",
+        "Meltdown vs Spectre 攻击模型区分清楚，未把所有推测执行漏洞混为一谈",
+        "Flush+Reload / KAISER→KPTI 时间线教学可用"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "伪代码概念正确；明确写了现代系统已打补丁、不宜当复现教程",
+        "软件 bug 幻觉、与 Spectre 混淆、异常即无影响、容器天然安全四条坑很实用",
+        "适用/不适用边界清楚，含 CPU 厂商差异提醒"
+      ]
+    }
+  ]
+}

@@ -16,7 +16,7 @@ OpenTelemetry Collector（简称 **OTel Collector**）是 CNCF OpenTelemetry 项
 
 1. **收**：接收 OTLP / Jaeger / Zipkin / Prometheus scrape 等多种格式的数据
 2. **改**：批处理、过滤、采样、改字段、限流
-3. **送**：把数据送到一个或多个后端（可以同一份数据扇出到 5 家）
+3. **送**：把数据送到一个或多个后端（可以同一份数据扇出到多家）
 
 ## 为什么重要
 
@@ -35,117 +35,137 @@ Collector 的架构可以拆成 **四类组件 + 一根管子**：
 
 1. **Receiver（收）**：接收数据的入口。OTLP（gRPC/HTTP）/ Jaeger / Zipkin / Prometheus scrape / Kafka / syslog 都是 receiver。
 
-2. **Processor（改）**：数据穿过时做处理。常见的有 `batch`（攒批再发，省网络）、`memory_limiter`（内存压力时主动丢，防 OOM）、`attributes`（改/加字段）、`tail_sampling`（看完整条 trace 再决定要不要采样）。
+2. **Processor（改）**：数据穿过时做处理。常见的有 `batch`（攒批再发）、`memory_limiter`（内存压力时主动丢，防 OOM）、`attributes`（改/加字段）、`tail_sampling`（看完整条 trace 再决定采不采样）。
 
 3. **Exporter（送）**：往后端送。OTLP / Jaeger / Prometheus / Loki / Kafka / Datadog / 各家 SaaS 都是 exporter。
 
-4. **Extension（旁支）**：不在数据流里的辅助组件，如 `health_check`（健康检查）/ `pprof`（性能 profile）/ `zpages`（调试 UI）。
+4. **Extension（旁支）**：不在数据流里的辅助组件，如 `health_check` / `pprof` / `zpages`。
 
-把它们串起来的是 **Pipeline**：traces / metrics / logs 三条独立流水线，每条都是 `receivers → processors → exporters` 的形状。
+把它们串起来的是 **Pipeline**：traces / metrics / logs 三条独立流水线，每条都是 `receivers → processors → exporters`。
+
+## 实践案例
+
+### 案例 1：本机 Collector 替代双 SDK
+
+应用只发 OTLP；Collector 同时喂 Jaeger 与 Prometheus：
 
 ```yaml
+receivers:
+  otlp:
+    protocols: { grpc: { endpoint: 0.0.0.0:4317 } }
+processors:
+  memory_limiter: { check_interval: 1s, limit_mib: 512 }
+  batch: { timeout: 200ms }
+exporters:
+  otlp/jaeger: { endpoint: jaeger:4317, tls: { insecure: true } }
+  prometheus: { endpoint: 0.0.0.0:8889 }
 service:
   pipelines:
     traces:
       receivers: [otlp]
       processors: [memory_limiter, batch]
       exporters: [otlp/jaeger]
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [prometheus]
 ```
 
-## 实践案例
+逐部分：`otlp` 收应用数据 → `memory_limiter` 保命 → `batch` 攒批 → 双 exporter 扇出。以后加 Loki 只改 YAML。
 
-### 案例 1：替代经典『Jaeger agent + Prometheus』组合
+### 案例 2：gateway + tail_sampling 省存储
 
-老方案：应用埋 Jaeger client + Prometheus client，两个 SDK，两套埋点。
+agent（每节点）只做就近收转发；gateway（独立集群）看完整 trace 再采样：
 
-新方案：应用只发 **OTLP** 给本机 Collector，Collector 配两个 exporter——`otlp/jaeger`（送 Jaeger 后端）+ `prometheus`（暴露为 Prometheus scrape 端点）。
+```yaml
+processors:
+  tail_sampling:
+    decision_wait: 10s
+    policies:
+      - name: errors
+        type: status_code
+        status_code: { status_codes: [ERROR] }
+      - name: slow
+        type: latency
+        latency: { threshold_ms: 1000 }
+      - name: probabilistic
+        type: probabilistic
+        probabilistic: { sampling_percentage: 1 }
+```
 
-**好处**：应用代码减一半，未来要加 Loki 或 Datadog，只改 Collector。
+规则：错误与慢请求全留，其余约 1%。`tail_sampling` 必须在能看到整条 trace 的 gateway 上跑，agent 模式看不全 span。
 
-### 案例 2：gateway 模式做 tail_sampling 省 90% 存储
-
-agent 模式：每节点一个 Collector，与应用同 pod。
-gateway 模式：独立集群（3-10 个 Collector 实例），收所有 agent 转发上来的数据。
-
-`tail_sampling` processor **只能在 gateway 模式跑**——它要看一条 trace 的全部 span 再决定采不采样。规则示例：错误链路 100% 留、慢请求（> 1s）100% 留、其余按 1% 抽样。
-
-实际效果：后端存储从 1TB/天降到 80GB/天，关键链路一条不丢。
-
-### 案例 3：多租户云的路由分流
-
-SaaS 厂商给每个租户一条 pipeline：
+### 案例 3：按租户打标签再分流
 
 ```yaml
 processors:
   attributes/tenant_a:
-    actions: [{key: tenant, value: A, action: insert}]
+    actions: [{ key: tenant, value: A, action: insert }]
 exporters:
-  otlp/tenant_a_backend: {...}
-  otlp/tenant_b_backend: {...}
+  otlp/tenant_a: { endpoint: backend-a:4317, tls: { insecure: true } }
+  otlp/tenant_b: { endpoint: backend-b:4317, tls: { insecure: true } }
 ```
 
-数据进来时按 header 分流，打租户标签，送到对应租户的后端。一个 Collector 服务全部租户。
+数据进 gateway 后按 header/属性分流，打租户标签，送到对应后端。一个 Collector 服务多租户。
 
 ## 踩过的坑
 
-1. **`memory_limiter` 必须放 pipeline 第一个**——它在内存压力下会主动丢数据保命。放后面就来不及了，整个进程 OOM 你连日志都拿不到。
-
-2. **忘配 `batch` processor**：每个 span 立刻发出去，exporter QPS 飙升，下游被打挂。永远要把 `batch` 放在 exporter 之前。
-
-3. **`tail_sampling` 不能在 agent 模式做**——agent 只看到本节点的 span，看不全一条 trace。新人常配错。
-
-4. **core vs contrib 发行版混用**：写了 contrib 的组件名（如 `loadbalancing` exporter），用 core 二进制启动会报『unknown component』。两个发行版别混。
-
-5. **Prometheus receiver 是 pull，OTLP receiver 是 push**——前者是 Collector 主动去 scrape 应用；后者是应用主动推。语义反了，配置就错。
-
-6. **配置改了不重启不生效**：Collector 不像 nginx 有 reload 命令，改 YAML 必须重启进程。Kubernetes 部署可借 ConfigMap + rolling restart；裸机要用 systemd 或外层 supervisor 重新拉起。
+1. **`memory_limiter` 必须放 pipeline 第一个**——放后面就来不及，进程 OOM 时连日志都拿不到。
+2. **忘配 `batch`**：每个 span 立刻发出，网络 QPS 飙升，下游被打挂。
+3. **`tail_sampling` 不能在 agent 模式做**——agent 只看到本节点 span。
+4. **core vs contrib 混用**：写了 contrib 组件名却用 core 二进制，启动报 unknown component。
+5. **Prometheus receiver 是 pull，OTLP 是 push**——语义反了配置就错。
+6. **改 YAML 必须重启**：Collector 没有 nginx 式 reload；K8s 用 ConfigMap + rolling restart。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 微服务架构，需要统一 trace / metric / log 入口
-- 多后端共存（自建 Jaeger + 云厂商 Datadog 同时要喂）
-- 需要做 tail_sampling、字段脱敏、限流等中间处理
+- 微服务，需要统一 trace / metric / log 入口
+- 多后端共存（自建 Jaeger + 云厂商同时要喂）
+- 需要 tail_sampling、字段脱敏、限流等中间处理
 - 想把应用代码与具体后端解耦
 
 **不适用**：
 
-- 单体应用、单进程——直接 print 日志就够
-- 极致低延迟场景（金融交易撮合）——Collector 自己有几毫秒处理开销
-- 只有一种信号且后端固定（比如只用 Prometheus）——直接 Prometheus client 更轻
-- 移动端 / 浏览器端——Collector 是服务端组件，端上要走 OTLP HTTP 直连或专用 SDK
+- 单体、单进程——直接打日志就够
+- 极致低延迟路径（撮合核心）——Collector 有毫秒级开销
+- 只有一种信号且后端固定——直接客户端更轻
+- 移动端 / 浏览器——端上走 OTLP HTTP 或专用 SDK，Collector 是服务端组件
 
-## 历史与定位
+## 历史小故事（可跳过）
 
-- **2019 年**：OpenTracing（追踪标准，Uber/Lyft 系）+ OpenCensus（指标 + 追踪，Google 系）合并成 OpenTelemetry，结束多年标准战
-- **2020 年**：Collector 1.0 发布，core 与 contrib 分仓——核心组件官方维护，第三方厂商集成进 contrib
-- **2021 年**：Collector 进入 CNCF 孵化器，与 Jaeger / Prometheus 同台
-- **2022 年**：traces 信号 GA（生产可用），开始替代 Jaeger agent
-- **2023 年**：metrics / logs 信号 GA，三合一统一管道正式落地
-- **2024 年起**：成为云厂商默认 telemetry 入口（AWS Distro for OTel / Google Cloud Ops Agent / Azure Monitor 都基于它定制）
+- **2019 年**：OpenTracing + OpenCensus 合并为 OpenTelemetry，结束标准分裂
+- **2021 年 8 月**：OpenTelemetry 进入 CNCF 孵化；同年 Collector tracing 组件达到稳定里程碑（约 0.36 线）
+- **2022 年末**：Collector 模块化推进，pdata 等进入 1.0 RC；traces 管道已广泛替代 Jaeger agent
+- **2023 年起**：metrics / logs 信号与管道继续成熟，三合一部署成主流
+- **2024 年起**：云厂商默认 telemetry 入口多基于 Collector 定制（AWS ADOT / Google Ops Agent / Azure Monitor 等）
 
 ## 学到什么
 
-1. **可观测性的标准抽象在 CNCF 收敛了**——以前是 Jaeger 一套、Prometheus 一套、Fluentd 一套，现在一根管子吃三类数据
-2. **解耦应用与后端**是 Collector 的最大价值——这是基础设施抽象的经典模式（类比 [[envoy]] 解耦应用与服务网络）
-3. **agent + gateway 两层部署**是大规模可观测性的标配：agent 做就近收，gateway 做集中处理
-4. **YAML 配置 + 可插拔组件**让运维不写代码就能改管道——这是云原生工具链的统一范式
-5. **三类信号合并的代价**：traces/metrics/logs 模型差异很大，统一抽象意味着每类都要做一些妥协；理解这种"统一带来的取舍"对设计 API 平台很有用
+1. **可观测性抽象在 CNCF 收敛了**——以前 Jaeger / Prometheus / Fluentd 各一套，现在一根管子吃三类数据
+2. **解耦应用与后端**是最大价值——类比 [[envoy]] 解耦应用与服务网络
+3. **agent + gateway 两层**是大规模标配：就近收 + 集中处理
+4. **YAML + 可插拔组件**让运维不写代码改管道
+5. **统一有代价**：三类信号模型不同，统一抽象意味着各自妥协
 
 ## 延伸阅读
 
-- 官方文档：[OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)（先读 Architecture 章）
+- 官方文档：[OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)（先读 Architecture）
 - GitHub core：[opentelemetry-collector](https://github.com/open-telemetry/opentelemetry-collector)
-- GitHub contrib：[opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib)（100+ 第三方组件）
-- [[jaeger]] —— Collector 的经典 trace 后端
-- [[prometheus]] —— Collector 既消费它的 scrape 又能 remote_write 到它
-- [[grafana]] —— 配 Loki/Tempo/Mimir 接收 Collector 的输出做统一展示
+- GitHub contrib：[opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib)
+- [[jaeger]] —— 经典 trace 后端
+- [[prometheus]] —— 既可 scrape 也可被 remote_write
+- [[grafana]] —— Loki/Tempo/Mimir 常接 Collector 输出
 
 ## 关联
 
-- [[jaeger]] —— 分布式追踪后端，Collector 用 OTLP exporter 喂数据进去
-- [[prometheus]] —— 指标系统，可双向（pull/push）与 Collector 协作
-- [[grafana]] —— 可视化层，消费 Collector 路由出去的多类数据
-- [[envoy]] —— 服务网格代理，与 Collector 是同一思路（解耦应用与基础设施）的不同切面
-- [[ansible]] —— VM 场景下部署 Collector 的常见编排方式
+- [[jaeger]] —— 分布式追踪后端，Collector 用 OTLP exporter 喂数据
+- [[prometheus]] —— 指标系统，可双向与 Collector 协作
+- [[grafana]] —— 可视化层，消费 Collector 路由出去的数据
+- [[envoy]] —— 同一「解耦应用与基础设施」思路的网络切面
+- [[ansible]] —— VM 场景部署 Collector 的常见编排方式
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

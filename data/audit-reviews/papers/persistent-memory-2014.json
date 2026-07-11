@@ -1,0 +1,109 @@
+{
+  "slug": "persistent-memory-2014",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆/书架类比很贴合；关联里的 [[nvm]] 若点进去会跳到 Node 版本管理，零基础读者会被带偏，建议改掉错误 wikilink。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "[[nvm]] 在仓库中指向 Node Version Manager，不是非易失内存；关联段事实硬伤，应改为无歧义表述或正确相关 slug（如 CXL/内存类笔记）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「硬件还不存在」略绝对：2014 年已有 NVDIMM 等形态，宜改为「商用字节寻址 PMEM（如后来的 Optane DC）尚未出货」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CLFLUSH+SFENCE 与 mount -o dax 示例概念正确；现代代码更常见 CLWB/CLFLUSHOPT，可在踩坑或案例旁加一句年代限定，非必须。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "图书馆/书架类比很贴合；关联里的 [[nvm]] 若点进去会跳到 Node 版本管理，零基础读者会被带偏，建议改掉错误 wikilink。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "[[nvm]] 在仓库中指向 Node Version Manager，不是非易失内存；关联段事实硬伤，应改为无歧义表述或正确相关 slug（如 CXL/内存类笔记）。",
+        "「硬件还不存在」略绝对：2014 年已有 NVDIMM 等形态，宜改为「商用字节寻址 PMEM（如后来的 Optane DC）尚未出货」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "CLFLUSH+SFENCE 与 mount -o dax 示例概念正确；现代代码更常见 CLWB/CLFLUSHOPT，可在踩坑或案例旁加一句年代限定，非必须。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：修正错误 [[nvm]] wikilink，弱化「硬件还不存在」；engineer：补充 CLWB/CLFLUSHOPT 年代限定。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true
+}

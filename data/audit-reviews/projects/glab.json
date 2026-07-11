@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "窗口切换 vs 终端一条龙类比很好；MR/CI/api 案例步骤清楚。缺历史小故事段，但不挡跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「[[gh]] 的 contributor Clement Sam」不准确：Clement Sam（profclems）是受 gh 启发创建 glab，不宜写成 gh contributor。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「profclems 个人写了 4 年」偏长：2020-07 起步到 2022 官方接管约两年，应改成两年左右。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "MR/CI autologin/api 例子可跟做；GITLAB_TOKEN 优先级、自建 OAuth、ci lint --server-side 踩坑具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "窗口切换 vs 终端一条龙类比很好；MR/CI/api 案例步骤清楚。缺历史小故事段，但不挡跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「[[gh]] 的 contributor Clement Sam」不准确：Clement Sam（profclems）是受 gh 启发创建 glab，不宜写成 gh contributor。",
+        "「profclems 个人写了 4 年」偏长：2020-07 起步到 2022 官方接管约两年，应改成两年左右。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "MR/CI autologin/api 例子可跟做；GITLAB_TOKEN 优先级、自建 OAuth、ci lint --server-side 踩坑具体。"
+      ]
+    }
+  ]
+}

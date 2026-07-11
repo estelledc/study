@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "钢琴/和弦类比贴合 2^n；案例 1/2 有步骤与 XEB 直觉，案例 3（经典对手）偏叙述，缺可跟读的逐步对照（薛定谔法 vs 费曼路径各拆 2-3 步）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑第 3 条写「99.64% 双 qubit 门过 430 个掉到 21%」：论文最大电路是 1113 单门 + 430 双门 + 读出，误差乘积保真度约 0.2%，不是仅双门乘到 21%；应改为与论文一致的全电路误差乘积叙述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Arute et al. / Nature 574, 505-510 (2019)、53 qubit、200 秒 vs 1 万年、F_XEB≈0.2% 等主线事实正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "RCS/XEB 概念步骤可跟读；踩坑（霸权≠有用、保真度、经典反扑）具体；适用边界可再点明「学异构思维 vs 真跑 NISQ」的预期差距。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "钢琴/和弦类比贴合 2^n；案例 1/2 有步骤与 XEB 直觉，案例 3（经典对手）偏叙述，缺可跟读的逐步对照（薛定谔法 vs 费曼路径各拆 2-3 步）。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑第 3 条写「99.64% 双 qubit 门过 430 个掉到 21%」：论文最大电路是 1113 单门 + 430 双门 + 读出，误差乘积保真度约 0.2%，不是仅双门乘到 21%；应改为与论文一致的全电路误差乘积叙述。",
+        "来源 Arute et al. / Nature 574, 505-510 (2019)、53 qubit、200 秒 vs 1 万年、F_XEB≈0.2% 等主线事实正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "RCS/XEB 概念步骤可跟读；踩坑（霸权≠有用、保真度、经典反扑）具体；适用边界可再点明「学异构思维 vs 真跑 NISQ」的预期差距。"
+      ]
+    }
+  ]
+}

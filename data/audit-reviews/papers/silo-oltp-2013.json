@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "收银台类比不错，但 OCC/epoch/读集 首次出现缺零基础桥接（先干活后验票、按班次结账、读过的货架清单）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例三段全是叙述 bullet，缺代码/伪代码与逐步解释；至少把案例 1 拆成读库存→写订单→验证提交的迷你流程"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「分离路径优化」对零基础太抽象，建议用「结账通道 vs 逛货架通道」把读多写少说清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源应标 Tu/Zheng/Kohler/Liskov/Madden, SOSP 2013；现链到 CMU 课程 PDF 可保留为延伸阅读，不宜作唯一出处"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Epoch 主贡献是 group commit / 可恢复串行化与 TID 边界，顺带 GC；不宜写成「主要是 epoch-based GC」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关键贡献应点明：OCC 提交协议对只读记录避免共享内存写，并消除集中式 TID 分配；现文过度泛化成「短事务」教条"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可跟做伪代码；建议补 OCC 读集/写集验证提交的迷你伪代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 1–4 具体可保留；可补一句「epoch 推进过慢会抬高提交可见延迟」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界缺量化：论文约 32 核 TPC-C ~700k TPS、近线性扩展；长事务/高冲突不适用应写清"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "收银台类比不错，但 OCC/epoch/读集 首次出现缺零基础桥接（先干活后验票、按班次结账、读过的货架清单）",
+        "实践案例三段全是叙述 bullet，缺代码/伪代码与逐步解释；至少把案例 1 拆成读库存→写订单→验证提交的迷你流程",
+        "「分离路径优化」对零基础太抽象，建议用「结账通道 vs 逛货架通道」把读多写少说清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源应标 Tu/Zheng/Kohler/Liskov/Madden, SOSP 2013；现链到 CMU 课程 PDF 可保留为延伸阅读，不宜作唯一出处",
+        "Epoch 主贡献是 group commit / 可恢复串行化与 TID 边界，顺带 GC；不宜写成「主要是 epoch-based GC」",
+        "关键贡献应点明：OCC 提交协议对只读记录避免共享内存写，并消除集中式 TID 分配；现文过度泛化成「短事务」教条"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可跟做伪代码；建议补 OCC 读集/写集验证提交的迷你伪代码",
+        "踩坑 1–4 具体可保留；可补一句「epoch 推进过慢会抬高提交可见延迟」",
+        "适用边界缺量化：论文约 32 核 TPC-C ~700k TPS、近线性扩展；长事务/高冲突不适用应写清"
+      ]
+    }
+  ]
+}

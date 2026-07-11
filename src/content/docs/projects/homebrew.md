@@ -132,11 +132,11 @@ brew bundle install
 **不适用**：
 
 - **生产服务器装包** → 用 [[ansible]] / [[docker]] / [[nix]]，Homebrew 是开发机工具
-- **多版本 runtime 切换**（要在 node 18 / 20 / 22 之间切）→ 用 [[mise]] / nvm，brew 同时只能装一个版本
+- **多版本 runtime 频繁切换**（要在 node 18 / 20 / 22 之间来回切）→ 用 [[mise]] / nvm。brew 虽有 `node@20` 这类 versioned formula，能并存，但默认链接与 PATH 切换不如版本管理器顺手
 - **可重现构建**（同样输入必须出同样输出）→ 用 [[nix]]，brew 不保证
 - **Windows** → 不支持，用 [[chocolatey]] / Scoop / winget
 
-## 历史
+## 历史小故事（可跳过）
 
 - **2009-05**：Max Howell 在 GitHub 上发布第一个版本，Ruby 写
 - **2014**：引入 **Bottles**（预编译二进制），从"本地编译"变"下载即用"——速度提升 10 倍
@@ -168,3 +168,7 @@ brew bundle install
 - [[nix]] —— Homebrew 的"严肃版本"，可重现 + 声明式
 - [[ansible]] —— 服务器集群级的包管理，与 brew 处理的尺度不同
 - [[docker]] —— 容器化把"环境装好"变成镜像，比 brew 更彻底
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

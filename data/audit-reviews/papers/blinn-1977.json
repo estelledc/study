@@ -1,0 +1,65 @@
+{
+  "slug": "blinn-1977",
+  "area": "papers",
+  "round": 16,
+  "output_path": "/workspace/src/content/docs/papers/blinn-1977.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "把“Cook-Torrance 2012 / Disney GGX”拆成 Cook-Torrance 1982 与 Disney/GGX 2012，避免时间线错误。",
+        "能量守恒段不要把 `(n+2)/(2π)` 直接说成 Cook-Torrance/GGX 的补项，应区分归一化 Blinn-Phong 与微面元 BRDF 的分项约束。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "reject_count": 0,
+    "verdict": "refine",
+    "action": "refine"
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "lines": 165
+  }
+}

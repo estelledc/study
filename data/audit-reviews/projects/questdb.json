@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.55,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "综合医院/健康监测/急救中心类比贴合时序定位"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "mmap / designated timestamp / JIT / O3 首次出现有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 SQL 有解释；缺「历史小故事」段但不影响主线可读性"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub questdb/questdb 正确；YC W20、ILP+PG 双协议、O3/WAL 叙述与官方一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 C 写的 for 循环还快」偏营销口吻，但 JIT SIMD 机制本身未歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SYMBOL 字典编码、commit lag 语义教学简化合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "建表 TIMESTAMP+PARTITION、SAMPLE BY/LATEST ON/ASOF JOIN 可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：漏 designated ts、commit lag、JIT 仅数值、SYMBOL 高基数、补写 detach"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用金融/IoT vs 强事务/多表 OLAP/无时间维度，边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "综合医院/健康监测/急救中心类比贴合时序定位",
+        "mmap / designated timestamp / JIT / O3 首次出现有桥接",
+        "案例 SQL 有解释；缺「历史小故事」段但不影响主线可读性"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 GitHub questdb/questdb 正确；YC W20、ILP+PG 双协议、O3/WAL 叙述与官方一致",
+        "「比 C 写的 for 循环还快」偏营销口吻，但 JIT SIMD 机制本身未歪曲",
+        "SYMBOL 字典编码、commit lag 语义教学简化合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "建表 TIMESTAMP+PARTITION、SAMPLE BY/LATEST ON/ASOF JOIN 可跟做",
+        "踩坑具体：漏 designated ts、commit lag、JIT 仅数值、SYMBOL 高基数、补写 detach",
+        "适用金融/IoT vs 强事务/多表 OLAP/无时间维度，边界量化清楚"
+      ]
+    }
+  ]
+}

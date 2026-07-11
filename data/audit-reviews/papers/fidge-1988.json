@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全员账本表类比很好；案例 1 的 merge 用省略号，零基础难对照「dominates」怎么算。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Jaeger 分布式追踪的 causal span」不宜算作向量时钟直系后代——Jaeger/OpenTelemetry 用 trace/span id，不是 version vector；应删掉或改成「因果追踪思想的远亲」。Fidge/Mattern 同期独立发现表述正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 merge 函数体是 `...`，无法跟做 dominates / sibling 判定；请补全逐节点 max + 双向比较逻辑。踩坑与适用边界（N 固定、O(N) 开销、ITC）很扎实。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "全员账本表类比很好；案例 1 的 merge 用省略号，零基础难对照「dominates」怎么算。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「Jaeger 分布式追踪的 causal span」不宜算作向量时钟直系后代——Jaeger/OpenTelemetry 用 trace/span id，不是 version vector；应删掉或改成「因果追踪思想的远亲」。Fidge/Mattern 同期独立发现表述正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 merge 函数体是 `...`，无法跟做 dominates / sibling 判定；请补全逐节点 max + 双向比较逻辑。踩坑与适用边界（N 固定、O(N) 开销、ITC）很扎实。"
+      ]
+    }
+  ]
+}

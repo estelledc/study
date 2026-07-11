@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "乐高/成品玩具屋类比很好。案例 1 JWT 只有一段总述，缺逐部分解释；案例 2/3 更薄，建议给 install/authenticate/Channel 各拆 2-3 步。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1.0(2018)/2.0 Feature→Plugin(2022)/3.0(2024) 时间线合理；『stable 3.5.0』略旧（当前已 3.5.1），建议改成 3.5.x 或 3.5.1。13k+ stars 与公开数据一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "embeddedServer/JWT/WebSocket/HttpClient 教学片段概念正确；install 顺序、CIO、HOCON 覆盖、ContentNegotiation 踩坑具体。建议给案例 1 补逐步解释，并注明 JWT 依赖需另加。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "乐高/成品玩具屋类比很好。案例 1 JWT 只有一段总述，缺逐部分解释；案例 2/3 更薄，建议给 install/authenticate/Channel 各拆 2-3 步。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "1.0(2018)/2.0 Feature→Plugin(2022)/3.0(2024) 时间线合理；『stable 3.5.0』略旧（当前已 3.5.1），建议改成 3.5.x 或 3.5.1。13k+ stars 与公开数据一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "embeddedServer/JWT/WebSocket/HttpClient 教学片段概念正确；install 顺序、CIO、HOCON 覆盖、ContentNegotiation 踩坑具体。建议给案例 1 补逐步解释，并注明 JWT 依赖需另加。"
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ title: lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
 
 lwIP（Lightweight IP）是一个专为资源受限嵌入式系统设计的**开源 TCP/IP 协议栈**。日常类比：普通 TCP/IP 协议栈像一辆大巴车——功能全但体积大，lwIP 像一辆电动滑板车——只保留核心交通能力，能在窄路（几十 KB RAM + 40 KB ROM）上跑起来。
 
-它由瑞典计算机科学院的 Adam Dunkels 在 2001 年开发，目标是在保持 TCP 协议主要功能的前提下，把 RAM 占用压到极限。今天 FreeRTOS、Zephyr、RT-Thread 等主流 RTOS 都默认内置 lwIP 作为网卡协议栈。
+它由瑞典计算机科学院的 Adam Dunkels 在 2001 年开发，目标是在保持 TCP 协议主要功能的前提下，把 RAM 占用压到极限。今天 FreeRTOS、Zephyr、RT-Thread 等主流 RTOS **广泛集成或可选内置** lwIP（Zephyr 另有自研主栈；FreeRTOS 也常配 FreeRTOS+TCP）。
 
 ## 为什么重要
 

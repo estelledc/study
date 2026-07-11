@@ -101,7 +101,32 @@ FOR friend IN 1..2 OUTBOUND @userId friendOf
 
 银行场景：账户之间转账是边，账户档案是文档。要查"过去 30 天，给某个标记为可疑的账户转过钱的人，再往外两跳"——AQL 能在同一查询里同时做时间过滤、金额过滤、跳数限制。
 
+```aql
+FOR acct IN accounts
+  FILTER acct.flag == "suspect"
+  FOR v, e, p IN 1..2 INBOUND acct transfers
+    FILTER e.createdAt >= DATE_SUBTRACT(DATE_NOW(), 30, "day")
+    RETURN DISTINCT { account: v._key, amount: e.amount }
+```
+
+读法：先找可疑账户，再沿转账边反向追 2 跳，最后只保留近 30 天的边。
+
 如果用 Neo4j，账户档案得另存；用 Mongo，关系遍历得在应用层手拼。
+
+### 案例 3：GraphRAG 的"向量 + 图"组合
+
+文档向量存在 `docs.embedding`，相似段落先按向量分数排序，再扩一跳关系补上下文：
+
+```aql
+FOR doc IN docs
+  LET score = APPROX_NEAR_COSINE(doc.embedding, @queryVector)
+  SORT score DESC
+  LIMIT 5
+  FOR neighbor IN 1..1 OUTBOUND doc relatedTo
+    RETURN { doc: doc.title, neighbor: neighbor.title, score }
+```
+
+读法：向量搜索负责"像不像"，图遍历负责"和谁有关"，两段在同一条 AQL 里完成。
 
 ## 踩过的坑
 

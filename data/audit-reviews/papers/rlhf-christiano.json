@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "教狗「坐」类比贴合：成对录像选更好 → 学不出公式的目标"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Bradley-Terry / reward model / policy 有白话桥接；ensemble disagreement、OOD 可再各补半句"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 偏叙事，缺逐步拆解；建议各写成「随机探索 → 挑 pair → 人点选 → RM 更新 → policy 变好」四步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源题名/NeurIPS 2017/arXiv 1706.03741 正确；~700 Atari / ~900 MuJoCo 比较、三 predictor 主动挑题与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2024：Christiano 离开 OpenAI 创办 ARC」硬伤——他 2021 初离开并创办 ARC；US AISI 负责人才是更晚节点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2017 原文 policy 优化是 A2C（Atari）+ TRPO（MuJoCo），不是 PPO；PPO+KL 锚定是 InstructGPT 时代工业化骨架，勿写成 2017 原文算法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三案例概念正确可跟读；案例 3 文本版四步对照清楚；可再点明 2017 实验侧是 A2C/TRPO"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：reward hacking、β 靠 sweep、标注不一致、小数据 RM 漂移→SFT/DPO——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有量化（<1000 pair→DPO、可验证奖励 vs 风格礼貌）；冷启动 ensemble 噪声边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "教狗「坐」类比贴合：成对录像选更好 → 学不出公式的目标",
+        "Bradley-Terry / reward model / policy 有白话桥接；ensemble disagreement、OOD 可再各补半句",
+        "案例 1/2 偏叙事，缺逐步拆解；建议各写成「随机探索 → 挑 pair → 人点选 → RM 更新 → policy 变好」四步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源题名/NeurIPS 2017/arXiv 1706.03741 正确；~700 Atari / ~900 MuJoCo 比较、三 predictor 主动挑题与论文一致",
+        "「2024：Christiano 离开 OpenAI 创办 ARC」硬伤——他 2021 初离开并创办 ARC；US AISI 负责人才是更晚节点",
+        "2017 原文 policy 优化是 A2C（Atari）+ TRPO（MuJoCo），不是 PPO；PPO+KL 锚定是 InstructGPT 时代工业化骨架，勿写成 2017 原文算法"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三案例概念正确可跟读；案例 3 文本版四步对照清楚；可再点明 2017 实验侧是 A2C/TRPO",
+        "踩坑具体可操作：reward hacking、β 靠 sweep、标注不一致、小数据 RM 漂移→SFT/DPO——保留",
+        "适用/不适用有量化（<1000 pair→DPO、可验证奖励 vs 风格礼貌）；冷启动 ensemble 噪声边界清楚"
+      ]
+    }
+  ]
+}

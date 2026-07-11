@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "台式机 vs 笔记本、宜家预锯、Vite 热重载类比层层贴合 build-time DI / native / dev mode"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有「逐部分解释」，零基础能跟住 JAX-RS、native 产物、@Incoming"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "术语首次出现都有桥接；踩坑段偏工程向但仍可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019 Red Hat 公开、Devoxx 1.0、2022 Spring Boot Native、2024 加入 Commonhaus 主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「捐给 Commonhaus」略笼统——实为加入基金会并捐赠商标/域名，版权仍分散；教学简化可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "50ms / 13MB 等是 hello-world 演示量级，正文已暗示场景，未严重歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "JAX-RS + quarkus:dev、native package、SmallRye @Incoming 示例可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（@RegisterForReflection、native CI 时长、BOM 锁版本、reactive 下 RequestScoped）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界（K8s/Lambda vs 常驻单体 vs 重反射遗留 vs Spring 深度绑定）清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "台式机 vs 笔记本、宜家预锯、Vite 热重载类比层层贴合 build-time DI / native / dev mode",
+        "三个案例都有「逐部分解释」，零基础能跟住 JAX-RS、native 产物、@Incoming",
+        "术语首次出现都有桥接；踩坑段偏工程向但仍可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "2019 Red Hat 公开、Devoxx 1.0、2022 Spring Boot Native、2024 加入 Commonhaus 主线正确",
+        "「捐给 Commonhaus」略笼统——实为加入基金会并捐赠商标/域名，版权仍分散；教学简化可接受",
+        "50ms / 13MB 等是 hello-world 演示量级，正文已暗示场景，未严重歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "JAX-RS + quarkus:dev、native package、SmallRye @Incoming 示例可跟做",
+        "踩坑（@RegisterForReflection、native CI 时长、BOM 锁版本、reactive 下 RequestScoped）具体可操作",
+        "适用边界（K8s/Lambda vs 常驻单体 vs 重反射遗留 vs Spring 深度绑定）清楚"
+      ]
+    }
+  ]
+}

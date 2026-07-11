@@ -1,0 +1,87 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 几乎只打印字符串标签，建议补一行可算的 augmented_tf 数值示例，让零基础读者看到 0.5+0.5*tf/max_tf 怎么改分数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“系统比较 1800 种权重组合”宜核对 TR87-881/期刊版原文表述，或改成“大量权重组合”，避免硬数字被挑刺"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 doc_weight/query_weight 是说明字符串而非可跑计算；可补一小段用真实 tf/idf 算出 tfc 与 nfx 权重再对比"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可加一句量化边界，例如集合规模很小（文档数 < 百）时 IDF 不稳定"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 几乎只打印字符串标签，建议补一行可算的 augmented_tf 数值示例，让零基础读者看到 0.5+0.5*tf/max_tf 怎么改分数"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "“系统比较 1800 种权重组合”宜核对 TR87-881/期刊版原文表述，或改成“大量权重组合”，避免硬数字被挑刺"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 doc_weight/query_weight 是说明字符串而非可跑计算；可补一小段用真实 tf/idf 算出 tfc 与 nfx 权重再对比",
+        "适用/不适用可加一句量化边界，例如集合规模很小（文档数 < 百）时 IDF 不稳定"
+      ]
+    }
+  ]
+}

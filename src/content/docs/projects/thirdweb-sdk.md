@@ -50,18 +50,32 @@ thirdweb 的产品线可以拆成 **三层结构**：
 
 ```jsx
 import { createThirdwebClient, getContract } from "thirdweb";
+import { polygon } from "thirdweb/chains";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 import { claimTo } from "thirdweb/extensions/erc721";
 
 const client = createThirdwebClient({ clientId: "xxx" });
 const contract = getContract({ client, chain: polygon, address: "0x..." });
 
-<ConnectButton client={client} />
-// 用户点 mint：
-const tx = claimTo({ contract, to: account.address, quantity: 1n });
+function MintButton() {
+  const account = useActiveAccount();
+  return (
+    <>
+      <ConnectButton client={client} />
+      <button
+        onClick={() =>
+          account &&
+          claimTo({ contract, to: account.address, quantity: 1n })
+        }
+      >
+        mint
+      </button>
+    </>
+  );
+}
 ```
 
-**逐部分**：第 2 步 Dashboard 选合约模板就是 thirdweb 仓库里 audited 的 `DropERC721`；`claimTo` 是 v5 SDK 的 extension，知道怎么调这份合约的 `claim` 函数。**踩坑**：v5 写法是 `import from "thirdweb"`，老教程的 `useContract` 是 v4 写法跑不通，要按版本号读文档。
+**逐部分**：Dashboard 选的合约模板就是仓库里 audited 的 `DropERC721`；`claimTo` 是 v5 extension，知道怎么调这份合约的 `claim`。**踩坑**：v5 写法是 `import from "thirdweb"`，老教程的 `useContract` 是 v4，按版本号读文档。
 
 ### 案例 2：邮箱登录的 in-app wallet
 
@@ -114,14 +128,14 @@ curl -X POST http://engine/contract/137/0xNFT/erc721/claim-to \
 **不适用**：
 
 - 纯 Solidity 合约工程师做底层协议研究 → [[foundry]] / [[hardhat]] 更合适，thirdweb 是上层封装
-- Solana / Aptos / 比特币等非 EVM 生态 → thirdweb 不支持（focus 限 EVM）
+- Solana / Aptos / 比特币等非 EVM 生态 → 主线 focus EVM；非 EVM 不是一等公民（曾有/现有部分能力，别当通用多链 SDK）
 - 极致最小依赖偏好 → [[viem]] 几 KB 即可，thirdweb 全家桶安装下来体积大
 - 完全离线 / 自建 RPC / 不接受 SaaS → Engine 和 Pay 强依赖 thirdweb 服务，断网就废
 - 高价值资产托管（DeFi 千万级） → in-app wallet 的 MPC 一片在 thirdweb 服务器，硬件钱包仍是更稳的选择
 
 ## 历史小故事（可跳过）
 
-- **2021 年**：Furqan Rydhan（前 AfterPay CTO）+ Steven Bartlett 创立，主打"无代码发 NFT"切入市场，那时 NFT drop 项目方多用 [[hardhat]] 自己写脚本，门槛高
+- **2021 年**：Furqan Rydhan（Bebo / AppLovin 早期 CTO）+ Steven Bartlett 创立，主打"无代码发 NFT"切入市场，那时 NFT drop 项目方多用 [[hardhat]] 自己写脚本，门槛高
 - **2022 年**：开放 SDK + Dashboard，靠 NFT drop 模板 + ContractKit 扩展模式占住消费类 Web3 项目方
 - **2023 年**：Connect SDK 整合多钱包入口；推出 Engine 面向企业，开始往 B 端走
 - **2024 年**：v5 SDK 完全重写，单包 `thirdweb` 替代多个 `@thirdweb-dev/*` 子包，ESM-first、tree-shakable，对齐 [[viem]] 时代的工程审美
@@ -152,3 +166,7 @@ curl -X POST http://engine/contract/137/0xNFT/erc721/claim-to \
 - [[uniswap-v3]] —— 一个不靠 thirdweb 的 DeFi 协议典型，对照看不同复杂度项目的工具选型
 - [[argent-x]] —— Starknet AA 钱包，与 thirdweb 的 EVM smart account 在"账户即合约"理念上呼应
 - [[safe-contracts]] —— 多签合约钱包，是 thirdweb smart account 的同类参考
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

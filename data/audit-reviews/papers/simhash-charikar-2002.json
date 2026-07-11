@@ -1,0 +1,132 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "钢筋/墙面类比贴合随机超平面，零基础能建立几何直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "sign / 汉明距离 / TF-IDF 首次出现有桥接；核心公式仍偏密，但有圆周直觉补强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有可跑代码；案例 2–4 以工程叙事为主，步骤够跟但不如案例 1 细"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Charikar STOC 2002、公式 Pr=1-θ/π、Goemans-Williamson 1995、Manku WWW 2007 均正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「相同位数恰好编码夹角」宜理解为期望汉明相似度编码夹角，属合理教学简化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RedPajama/Falcon 流水线提及偏行业归纳，未见与 stub 冲突的硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的累加器+md5 位取法概念正确，可跟做；f=8 仅演示"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：IDF 权重、f 方差、cosine≠Jaccard、阈值+二次过滤、相关 seed、不可增量"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有量化边界（汉明≤几、d<50、top-k 需二次精算）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "钢筋/墙面类比贴合随机超平面，零基础能建立几何直觉",
+        "sign / 汉明距离 / TF-IDF 首次出现有桥接；核心公式仍偏密，但有圆周直觉补强",
+        "案例 1 有可跑代码；案例 2–4 以工程叙事为主，步骤够跟但不如案例 1 细"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 Charikar STOC 2002、公式 Pr=1-θ/π、Goemans-Williamson 1995、Manku WWW 2007 均正确",
+        "开篇「相同位数恰好编码夹角」宜理解为期望汉明相似度编码夹角，属合理教学简化",
+        "RedPajama/Falcon 流水线提及偏行业归纳，未见与 stub 冲突的硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的累加器+md5 位取法概念正确，可跟做；f=8 仅演示",
+        "踩坑具体：IDF 权重、f 方差、cosine≠Jaccard、阈值+二次过滤、相关 seed、不可增量",
+        "适用/不适用有量化边界（汉明≤几、d<50、top-k 需二次精算）"
+      ]
+    }
+  ],
+  "slug": "simhash-charikar-2002",
+  "area": "papers",
+  "status": "passed",
+  "lines": 165,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，平均 4.44 ≥ 4.0"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

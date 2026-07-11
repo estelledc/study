@@ -60,22 +60,30 @@ print(popt)            # 接近 [2.5, 1.3]
 print(np.sqrt(np.diag(pcov)))  # 每个参数的标准误差
 ```
 
-`popt` 是最优参数；`pcov` 是协方差矩阵，对角线开方就是参数的不确定度。这是科研里最常用的"拟合 + 报误差棒"流程。
+**逐部分解释**：
+
+- 输入：造出带噪声的指数衰减曲线，并写好待拟合公式 `model`。
+- 调用：`curve_fit` 从初值 `p0` 出发，找最贴近数据的 `a, b`。
+- 读输出：`popt` 是最优参数；`pcov` 协方差对角线开方就是参数不确定度（误差棒）。
 
 ### 案例 2：百万维稀疏线性方程组
 
 ```python
-from scipy.sparse import diags, csr_matrix
+from scipy.sparse import diags
 from scipy.sparse.linalg import spsolve
 
 n = 1_000_000
 # 三对角矩阵：主对角 2，上下对角 -1（一维拉普拉斯算子）
 A = diags([-1, 2, -1], [-1, 0, 1], shape=(n, n), format='csr')
 b = np.ones(n)
-x = spsolve(A, b)  # 几秒解完
+x = spsolve(A, b)
 ```
 
-如果用稠密 `numpy` 存矩阵，光内存就要 8 TB（100 万 × 100 万 × 8 byte）。`scipy.sparse` 只存非零元，CSR 格式让 `spsolve` 能跑稀疏 LU 分解。这是有限元、电路仿真、PageRank 的基础。
+**逐部分解释**：
+
+- 输入：用 `diags` 只存三条对角线上的非零数，得到 CSR 稀疏矩阵 `A`。
+- 调用：`spsolve` 对稀疏结构做分解求解，不必把整张表摊开。
+- 读输出：若用稠密 `numpy` 存，光内存约 8 TB（10⁶×10⁶×8 byte）；稀疏路径才是有限元 / 电路仿真的常态。
 
 ### 案例 3：参数 vs 非参数检验
 
@@ -86,17 +94,21 @@ group_b = [30, 28, 35, 32, 31, 33]
 
 # 假设正态：t 检验
 t_stat, p_t = stats.ttest_ind(group_a, group_b)
-# 不假设分布：Mann-Whitney U 检验
+# 不假设分布：Mann-Whitney U 检验（只比谁更大，不假设钟形曲线）
 u_stat, p_u = stats.mannwhitneyu(group_a, group_b)
 
 print(f"t-test p={p_t:.4f}, U-test p={p_u:.4f}")
 ```
 
-样本小且分布存疑时，t 检验的前提（正态、等方差）不成立，Mann-Whitney U 更稳健。`scipy.stats` 把 100+ 种检验和 90+ 种概率分布塞在一个命名空间里，是统计学习的"急救包"。
+**逐部分解释**：
+
+- 输入：两组小数列表；样本小、分布未必正态。
+- 调用：先跑 `ttest_ind`（吃正态假设），再跑 `mannwhitneyu`（只比排序，更稳）。
+- 读输出：看 `p` 值；前提不成立时更信 U 检验。`scipy.stats` 是统计"急救包"。
 
 ## 踩过的坑
 
-1. **`scipy.linalg` ≠ `numpy.linalg`**：前者强制走 LAPACK 优化版、支持更多分解（QR / Schur / Cholesky 完整版）；后者是简化封装。同名函数（如 `solve` / `eig`）性能能差几倍——做密集线代必须用 `scipy.linalg`。
+1. **`scipy.linalg` ≠ `numpy.linalg`**：两者多数底层都碰 LAPACK，但 `scipy.linalg` 封装更全（QR / Schur / 完整 Cholesky 等），同名函数（如 `solve` / `eig`）也常更快——做密集线代优先用 `scipy.linalg`。
 
 2. **稀疏格式选错性能崩盘**：`LIL` / `DOK` 适合"边构造边改"，`CSR` / `CSC` 适合矩阵乘法和解方程。构建完没 `.tocsr()` 就直接乘，每次都会重建索引，慢上百倍。
 
@@ -119,11 +131,11 @@ print(f"t-test p={p_t:.4f}, U-test p={p_u:.4f}")
 
 ## 历史小故事（可跳过）
 
-- **1999 年**：Travis Oliphant 等人把当时三套半成品（Numeric / Numarray / Multipack）合到一起，叫 SciPy 0.1。
-- **2001 年**：第一个公开版本发布，已能调 LAPACK 解线代。
-- **2006 年**：Oliphant 把底层 Numeric / Numarray 重写成 NumPy，SciPy 才稳定到"NumPy 当数组层 + SciPy 当算法层"的现代分层。
-- **2017 年**：1.0 正式版发布，距 0.1 整 18 年，宣告接口冻结。
-- **2020 年起**：每年一个稳定大版本，逐步把 Fortran 翻译成 C/C++、加 PEP 517 构建，迈向 Python 3-only。
+- **2001 年**：Travis Oliphant、Eric Jones、Pearu Peterson 把各自写的数值模块合并，发布 SciPy 0.1，已能调 LAPACK 解线代。
+- **2005–2006 年**：Oliphant 把 Numeric 与 Numarray 的长处合成 NumPy；SciPy 稳定成「NumPy 当数组层 + SciPy 当算法层」。
+- **2017 年**：SciPy 1.0 正式版发布，距首发约 16 年，宣告核心接口成熟。
+- **2020 年**：Virtanen 等在 Nature Methods 发表 SciPy 1.0 综述，把它写成科学计算基础设施。
+- **2020 年起**：每年稳定大版本，逐步把 Fortran 迁到 C/C++、加现代构建，迈向 Python 3-only。
 
 ## 学到什么
 
@@ -145,7 +157,9 @@ print(f"t-test p={p_t:.4f}, U-test p={p_u:.4f}")
 
 - [[numpy]] —— SciPy 把所有输入输出都当 numpy.ndarray，是物理上的依赖关系
 - [[pandas]] —— DataFrame 的 `.values` 直接喂给 SciPy；统计建模常 pandas + scipy.stats
-- [[polars]] —— 新一代列存表格库，和 SciPy 的桥还在生态早期，但思想类似（zero-copy 共享内存）
+- [[scikit-learn]] —— 经典 ML 大量依赖 `scipy.sparse` / `scipy.optimize` / `scipy.linalg`
+- [[polars]] —— 新一代列存表格库，和 SciPy 的桥还在生态早期，但思想类似（zero-copy）
+- [[dask]] —— 内存装不下时，用 Dask 数组/调度把 SciPy 式计算摊到集群
 
 ## 反向链接
 

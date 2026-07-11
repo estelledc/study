@@ -1,0 +1,103 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "把“任何机器只要装了 Docker 就能原封不动地跑”改成受 OS/CPU 架构约束、Mac/Windows 通过 Linux VM 运行 Linux 容器的表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Kubernetes 关系从“调度最小单元就是容器、没有 Docker 就没有 K8s”改成 Pod 是调度单元，Docker 推广的是镜像/容器模型。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "修正 containerd 捐给 CNCF 和毕业时间线，不要写成 2020 年才拆分捐出。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Node.js Dockerfile 示例建议拷贝 lockfile 并使用 npm ci，避免教学示例暗示不可复现安装。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补齐 ## 反向链接 占位，满足 base-rules 的 11 段结构要求。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "把“任何机器只要装了 Docker 就能原封不动地跑”改成受 OS/CPU 架构约束、Mac/Windows 通过 Linux VM 运行 Linux 容器的表述。",
+        "把 Kubernetes 关系从“调度最小单元就是容器、没有 Docker 就没有 K8s”改成 Pod 是调度单元，Docker 推广的是镜像/容器模型。",
+        "修正 containerd 捐给 CNCF 和毕业时间线，不要写成 2020 年才拆分捐出。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Node.js Dockerfile 示例建议拷贝 lockfile 并使用 npm ci，避免教学示例暗示不可复现安装。",
+        "补齐 ## 反向链接 占位，满足 base-rules 的 11 段结构要求。"
+      ]
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

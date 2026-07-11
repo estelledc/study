@@ -66,7 +66,7 @@ proctype Thread() {
 init { run Thread(); run Thread() }
 ```
 
-跑 `spin -search`，几秒内告诉你：没有死锁、互斥成立。如果你**忘了 `atomic`**（让"判 lock + 改 lock"变成两步），SPIN 立刻打印出一条交错：两个线程同时读到 `lock=false`，同时进入临界区。
+标准验证三步：`spin -a lock.pml` 生成 `pan.c` → `gcc -o pan pan.c` → `./pan`。几秒内告诉你：没有死锁、互斥成立。如果你**忘了 `atomic`**（让"判 lock + 改 lock"变成两步），`./pan` 立刻打印出一条交错：两个线程同时读到 `lock=false`，同时进入临界区；再用 `spin -t -p lock.pml` 回放反例。
 
 ### 案例 2：Mars Pathfinder 的优先级反转
 

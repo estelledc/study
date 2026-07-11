@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "接小杯水类比贴合；WordCount / parallel recovery / Structured Streaming 案例可跟读，术语有中文桥接。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Zaharia et al. SOSP 2013、RDD lineage / parallel recovery / micro-batch 主张与论文一致；对 Flink 不能做 speculative 的表述属教学简化，未构成硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "StreamingContext WordCount 与 checkpoint 示例概念正确；batch interval / lineage / driver HA / backpressure 坑具体；亚秒延迟与 event-time 边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "接小杯水类比贴合；WordCount / parallel recovery / Structured Streaming 案例可跟读，术语有中文桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Zaharia et al. SOSP 2013、RDD lineage / parallel recovery / micro-batch 主张与论文一致；对 Flink 不能做 speculative 的表述属教学简化，未构成硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "StreamingContext WordCount 与 checkpoint 示例概念正确；batch interval / lineage / driver HA / backpressure 坑具体；亚秒延迟与 event-time 边界清楚。"
+      ]
+    }
+  ]
+}

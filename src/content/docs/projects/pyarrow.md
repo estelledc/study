@@ -153,14 +153,3 @@ table = dataset.to_table(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arrow]] —— Apache Arrow — 内存列式标准
-- [[arrow-rs]] —— arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现
-- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
-- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
-- [[lance]] —— Lance — AI 数据列存格式
-- [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[pandas]] —— pandas — Python 表格数据事实标准
-- [[polars]] —— Polars — Rust 写的列存 DataFrame
-- [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
-

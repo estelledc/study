@@ -1,0 +1,128 @@
+{
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "是什么里只有『ReAct 像打法 / CoALA 像语法』的圈内对比，缺一个零基础日常类比（如厨房备餐：小票=工作记忆、菜谱柜=长期记忆、厨师长派活=决策）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例只有一段概念推演，没有 ### 案例 1/2/3，也没有逐步伪代码；建议拆成记忆读写、动作选择、退出条件三个可跟做小例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联/反向链接里 [[react]] 会落到 React UI 组件库；ReAct 论文笔记 slug 是 [[react-agent]]，应改正以免张冠李戴"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "记忆/动作/决策三分法与 CoALA（Sumers et al., arXiv:2309.02427）框架一致，教学简化可接受；延伸阅读里 ReAct/Reflexion/Toolformer/Voyager/Soar 方向正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例无任何伪代码/状态机步骤，工程师难以对照实现；至少给一轮『观察→选动作→写记忆→检查退出』的伪代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段缺少量化边界（如工具数>10 易迷路、无 max_steps/预算则成本失控）；踩坑方向对但可补『权限分层』的具体例子"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "是什么里只有『ReAct 像打法 / CoALA 像语法』的圈内对比，缺一个零基础日常类比（如厨房备餐：小票=工作记忆、菜谱柜=长期记忆、厨师长派活=决策）",
+        "实践案例只有一段概念推演，没有 ### 案例 1/2/3，也没有逐步伪代码；建议拆成记忆读写、动作选择、退出条件三个可跟做小例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联/反向链接里 [[react]] 会落到 React UI 组件库；ReAct 论文笔记 slug 是 [[react-agent]]，应改正以免张冠李戴",
+        "记忆/动作/决策三分法与 CoALA（Sumers et al., arXiv:2309.02427）框架一致，教学简化可接受；延伸阅读里 ReAct/Reflexion/Toolformer/Voyager/Soar 方向正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例无任何伪代码/状态机步骤，工程师难以对照实现；至少给一轮『观察→选动作→写记忆→检查退出』的伪代码",
+        "适用段缺少量化边界（如工具数>10 易迷路、无 max_steps/预算则成本失控）；踩坑方向对但可补『权限分层』的具体例子"
+      ]
+    }
+  ],
+  "slug": "nlp-agent-2024",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "average": 3.44,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 适用",
+      "## 关联"
+    ],
+    "unresolved_hints": [],
+    "summary": "补后厨类比与三案例伪代码；量化 max_steps/工具数；[[react]] 改为 [[react-agent]]"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

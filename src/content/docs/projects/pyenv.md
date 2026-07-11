@@ -139,6 +139,13 @@ pyenv shell 3.10.13 && python script.py
 - 需要 numpy/scipy/cuda 一条龙：用 conda/mamba（pyenv 不管包，只管解释器）
 - 多语言版本管理（同时管 node、ruby、java）：用 asdf 或 mise（机制和 pyenv 一样是 shim，但跨语言）
 
+## 历史小故事（可跳过）
+
+- **2010 年前后**：Ruby 圈的 rbenv 用 PATH shim + `.ruby-version` 解决多版本切换，成为后来全家桶的模板
+- **2013 年**：yyuu 把 rbenv 思路 fork 成 pyenv，专管 CPython 源码编译与按目录切版
+- **2010s 中后期**：pyenv-virtualenv、pyenv-virtualenvwrapper 等插件补上 venv 管理；mac / Linux 开发者把它当默认多版本方案
+- **2020s**：uv、mise 等用预编译二进制或跨语言 shim 分流「装得慢 / 只管 Python」两类痛点，但 `.python-version` 约定仍被广泛沿用
+
 ## 学到什么
 
 1. **shim 是 PATH-based 版本切换的标准范式**：rbenv → pyenv → nodenv → asdf 同源同构。理解一个就理解全家。

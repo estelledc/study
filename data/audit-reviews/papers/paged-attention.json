@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅拆单人座类比贴合碎片与按需分配，酒店房间/讲义复印贯穿分页与 CoW"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "KV cache、block table、copy-on-write 均有日常桥接；decoder-only / preemption 对零基础略跳但不挡主线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 数字与论文一致且可跟算；案例 3 CoW 伪代码偏抽象，但仍能建立「共享再复制」心智模型"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Kwon et al. SOSP 2023 正确；OPT-13B 800KB/token、2048≈1.6GB、吞吐 2-4×、kernel 20–26%、默认 block=16 均与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "分页 + block table + 引用计数/CoW 抓住核心贡献，未把 PagedAttention 说成改模型权重"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Orca→PagedAttention/vLLM→SGLang 等时间线合理；教学简化未歪曲原意"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则 Python 案例概念正确可跑：KV 公式、locate(34)→(3,2)、CoW 引用计数逻辑均对"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：非模型算法、block 过小、单请求 kernel 开销、preemption 兜底——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用在线 serving / 前缀共享 vs 单请求离线 / encoder-only / 训练，边界清楚；量化阈值可再补但已够用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "餐厅拆单人座类比贴合碎片与按需分配，酒店房间/讲义复印贯穿分页与 CoW",
+        "KV cache、block table、copy-on-write 均有日常桥接；decoder-only / preemption 对零基础略跳但不挡主线",
+        "案例 1 数字与论文一致且可跟算；案例 3 CoW 伪代码偏抽象，但仍能建立「共享再复制」心智模型"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Kwon et al. SOSP 2023 正确；OPT-13B 800KB/token、2048≈1.6GB、吞吐 2-4×、kernel 20–26%、默认 block=16 均与论文一致",
+        "分页 + block table + 引用计数/CoW 抓住核心贡献，未把 PagedAttention 说成改模型权重",
+        "Orca→PagedAttention/vLLM→SGLang 等时间线合理；教学简化未歪曲原意"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三则 Python 案例概念正确可跑：KV 公式、locate(34)→(3,2)、CoW 引用计数逻辑均对",
+        "踩坑具体：非模型算法、block 过小、单请求 kernel 开销、preemption 兜底——可操作",
+        "适用在线 serving / 前缀共享 vs 单请求离线 / encoder-only / 训练，边界清楚；量化阈值可再补但已够用"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "CFS 的 vruntime 和 BVT 属于同一 fair-share / virtual-time 思路，不应写成直接来源；Xen 采用过 BVT scheduler，但“直接抄”和“所有通用 OS”过度绝对。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "现代 OS 仍保留 priority / nice / deadline 等机制，应改成“不只看静态优先级，还要记账”。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CFS wakeup preemption 和 min_vruntime 不是显式 warp，需要改成相似问题的工程处理，而不是精神继承的等价实现。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "CFS 的 vruntime 和 BVT 属于同一 fair-share / virtual-time 思路，不应写成直接来源；Xen 采用过 BVT scheduler，但“直接抄”和“所有通用 OS”过度绝对。",
+        "现代 OS 仍保留 priority / nice / deadline 等机制，应改成“不只看静态优先级，还要记账”。",
+        "CFS wakeup preemption 和 min_vruntime 不是显式 warp，需要改成相似问题的工程处理，而不是精神继承的等价实现。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 156,
+    "reasons": []
+  }
+}

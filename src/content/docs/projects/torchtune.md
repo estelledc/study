@@ -54,27 +54,41 @@ tune run lora_finetune_single_device \
   epochs=1
 ```
 
-第一行下权重，第二行训练。`dataset.source=...` 和 `epochs=1` 是**临时覆盖** YAML——不用改文件就能换数据集。一张 24GB 4090 跑得动。
+**逐部分解释**：
+
+- `tune download ...`：从 HuggingFace 拉权重到本地目录（gated 模型要先设 `HF_TOKEN`）
+- `--config llama3_2/1B_qlora_single_device`：选官方 YAML——模型路径、lr、batch 都写在里面
+- `dataset.source=...` / `epochs=1`：CLI **临时覆盖** YAML，不用改文件就能换数据集
+- QLoRA = 4-bit 量化底座 + LoRA 旁路；一张 24GB 4090 跑得动 1B 级模型
 
 ### 案例 2：从 LoRA 切到全参——换 recipe，不是换参数
 
 ```bash
-# LoRA：参数高效，更新少量旁路矩阵
+# LoRA：只更新少量旁路矩阵，显存省
 tune run lora_finetune_distributed --config llama3_1/8B_lora
 
-# 全参：更新所有权重，要 8 卡 A100
+# 全参：更新所有权重，通常要 8 卡 A100
 tune run full_finetune_distributed --config llama3_1/8B_full
 ```
 
-注意是 `lora_finetune_*` vs `full_finetune_*`——**不同 recipe 文件**。设计哲学：与其在一个超级训练循环里塞 `if lora: ... else: ...`，不如各自独立、各自可读。复制一份 recipe 改 100 行，比读一个 1500 行的全能脚本容易得多。
+**逐部分解释**：
+
+- 注意 recipe 名：`lora_finetune_*` vs `full_finetune_*`——是**两份独立脚本**，不是同一个脚本里翻开关
+- 设计取舍：与其在 1500 行全能循环里塞 `if lora`，不如各写各的、各读各的
+- 你要改训练逻辑时：`tune cp` 复制对应 recipe，改约 100 行即可
 
 ### 案例 3：DPO 偏好对齐
 
 ```bash
+# 数据每行大致是：prompt + chosen（更好回答）+ rejected（更差回答）
 tune run lora_dpo_single_device --config llama3_1/8B_lora_dpo
 ```
 
-DPO（Direct Preference Optimization）需要"chosen / rejected"成对数据，loss 函数也不同。torchtune 的处理方式还是——**新开一份 recipe**。这份 recipe 你点开能看到完整 DPO loss 实现，不用翻继承链。
+**逐部分解释**：
+
+- DPO（Direct Preference Optimization）= 用"更好/更差"成对回答教模型偏好，不另训 reward model
+- 数据必须自备 `chosen` / `rejected` 字段；普通指令微调数据集（只有 instruction/output）直接跑会报字段缺失
+- loss 和普通 LoRA recipe 不同——所以 torchtune **新开一份** `lora_dpo_*` recipe；点开就能看到完整 DPO loss，不用翻继承链
 
 ## 踩过的坑
 
@@ -143,7 +157,8 @@ DPO（Direct Preference Optimization）需要"chosen / rejected"成对数据，l
 - [[pytorch]] —— torchtune 是它官方的 LLM 后训练栈，所有张量 / autograd / FSDP 都直接用 PyTorch 原生 API
 - [[pytorch-lightning]] —— Lightning 把训练循环封装成 Trainer；torchtune 反其道而行——故意暴露完整循环
 - [[fastai]] —— fastai 用 Learner 抽象，torchtune 用 recipe 脚本；都站在 PyTorch 上但抽象哲学相反
-- [[hindley-milner]] —— YAML config 解析时也用类型推导（dataclass 字段推 YAML 类型）
+- [[trl]] —— HuggingFace 的 LLM 后训练库，走 Trainer 路线；和 torchtune 的 recipe 路线对照着读最清楚
+- [[accelerate]] —— 设备/分布式抽象层；torchtune 多卡主要靠 PyTorch FSDP2，思路不同但解决同一类问题
 
 ## 反向链接
 

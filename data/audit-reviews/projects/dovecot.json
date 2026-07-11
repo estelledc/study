@@ -1,0 +1,120 @@
+{
+  "slug": "dovecot",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有拓扑图、案例 2 是目录清单、案例 3 无配置/命令；缺少可跟做的逐步解释。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「## 历史小故事（可跳过）」段，模板导航不完整。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约有 7 成跑的是 Dovecot」缺乏可核验来源，属于营销式绝对化；改为列举已知采用方并去掉市场份额百分比。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "补上历史时间线（Timo Sirainen 开源、2.x 演进等），避免项目笔记无出处脉络。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例应给最小可跟做配置或 doveadm 命令（如 protocols/mail_location），而不是只列 src 目录。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「适用」缺少量化边界（用户数、邮箱规模、是否需要 Director）；「关联」仅 3 条，应扩到 5–7。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 2
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有拓扑图、案例 2 是目录清单、案例 3 无配置/命令；缺少可跟做的逐步解释。",
+        "缺少「## 历史小故事（可跳过）」段，模板导航不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「约有 7 成跑的是 Dovecot」缺乏可核验来源，属于营销式绝对化；改为列举已知采用方并去掉市场份额百分比。",
+        "补上历史时间线（Timo Sirainen 开源、2.x 演进等），避免项目笔记无出处脉络。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例应给最小可跟做配置或 doveadm 命令（如 protocols/mail_location），而不是只列 src 目录。",
+        "「适用」缺少量化边界（用户数、邮箱规模、是否需要 Director）；「关联」仅 3 条，应扩到 5–7。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 150,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 关联",
+      "## 适用"
+    ],
+    "unresolved_hints": []
+  }
+}

@@ -39,13 +39,13 @@ CCHM 的关键原语有 **5 件**：
 
 2. **Path 类型 `PathP (i. A) a b`**：从 `I` 到 `A` 的函数，端点固定为 `a` 和 `b`。`refl = λ i. a` 就是"原地不动的路径"。**等于关系直接被路径替换**。
 
-3. **Composition `comp`**：把一个"立方体的部分面"沿路径**传输**到另一面。它替代了原来 Martin-Löf 里的 J、subst、transport——一个原语统一了所有"沿等式搬运"的操作。
+3. **Composition `comp`**：把一个"立方体的部分面"沿路径**传输**到另一面。日常类比：绳子两端各绑一个盒子，你沿着绳子把盒子滑到另一端——`comp` 就是"沿等式搬运"的统一原语，替代了原来 Martin-Löf 里的 J、subst、transport。
 
-4. **Glue 类型**：核心黑魔法。给定等价 `e : A ≃ B`，Glue 把 `e` 转成路径 `ua e : Path Type A B`。**这就是 univalence 的执行规则**——它不再是公理，是 Glue 的规约规则。
+4. **Glue 类型**：核心黑魔法。给定等价 `e : A ≃ B`，Glue 把 `e` 转成路径 `ua e : Path Type A B`。日常类比：两间房本来各有门牌，你用一张"这两间其实是同一间"的证明把它们粘成同一条走廊——**这就是 univalence 的执行规则**，不再是公理，是 Glue 的规约规则。
 
 5. **Higher Inductive Types（HITs）**：构造子可以是路径。圆 `S¹` 有 `base : S¹` 和 `loop : Path base base`。商类型、悬挂、截断现在都能直接写。
 
-把这 5 件加起来，`canonicity` 重新成立——闭合的 `Nat` 项一定能算到具体数字，不会卡。
+把这 5 件加起来，**canonicity（典范性）**重新成立——闭合的 `Nat` 项一定能算到具体数字（3、17…），不会卡在"假设公理成立"上。
 
 ## 实践案例
 
@@ -118,7 +118,7 @@ data ℤ : Type where
 - **2016**：CCHM 把这个语义结构**搬回语法**——加 interval、加 comp、加 Glue。论文挂上 arXiv。
 - **2018**：TYPES 2015 post-proceedings 正式发表。
 - **2019**：Vezzosi-Mörtberg-Abel 把 cubical 实现为 `Agda --cubical`，进入 Agda 主线。
-- **2020-2026**：Brunerie 用 Cubical Agda 算出 π₄(S³) ≡ ℤ/2ℤ（手算多年的同伦群结果）；synthetic homotopy theory 大规模形式化展开。
+- **2020-2026**：Brunerie 等人在 Cubical Agda 中形式化 π₄(S³) ≡ ℤ/2ℤ（该结果原在 HoTT 语境算出，cubical 侧把它跑成可检查的形式化）；synthetic homotopy theory 大规模展开。
 
 [[martin-lof-itt]] → [[awodey-warren-2009]] → [[hott-book-2013]] → CCHM 是这条线的**最后一块工程拼图**。
 

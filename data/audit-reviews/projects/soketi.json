@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 里 sticky session 与 Redis 各自解决什么可再点一句，避免零基础以为「没 sticky 就收不到跨节点消息」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Soketi 加入 PHP Foundation」缺乏依据；更准确是 Laravel 文档将其列为可自托管的 Echo/Pusher 兼容后端，并协助过文档——请改掉 PHP Foundation 表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「官方推荐的 Laravel Echo 后端」宜弱化为「Laravel 文档推荐的自托管选项之一」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "配了 Redis adapter 后跨节点广播不依赖 sticky；sticky 主要利于 presence/本地连接状态与减 reconnect，案例 2 宜分开写清。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 里 sticky session 与 Redis 各自解决什么可再点一句，避免零基础以为「没 sticky 就收不到跨节点消息」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「Soketi 加入 PHP Foundation」缺乏依据；更准确是 Laravel 文档将其列为可自托管的 Echo/Pusher 兼容后端，并协助过文档——请改掉 PHP Foundation 表述。",
+        "「官方推荐的 Laravel Echo 后端」宜弱化为「Laravel 文档推荐的自托管选项之一」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "配了 Redis adapter 后跨节点广播不依赖 sticky；sticky 主要利于 presence/本地连接状态与减 reconnect，案例 2 宜分开写清。"
+      ]
+    }
+  ]
+}

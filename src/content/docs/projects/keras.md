@@ -24,7 +24,7 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
 model.fit(x_train, y_train, epochs=5)
 ```
 
-12 行代码训练一个分类网络。**这是过去 10 年深度学习教学的事实入门**——MIT、Stanford、Coursera 的 DL 课程都用它当第一周作业。
+12 行代码训练一个分类网络。**过去十年它是深度学习教学里最常见的入门接口之一**——许多公开课和教材用它当第一周作业。
 
 Keras 3（2023.11 重写后）多了一个杀手锏：**同一份代码可以选 TensorFlow / JAX / PyTorch 三个后端跑**，靠 `KERAS_BACKEND` 环境变量切换。
 
@@ -72,7 +72,11 @@ outputs = layers.Dense(10, activation='softmax')(x)
 model = keras.Model(inputs, outputs)
 ```
 
-这种"层当函数调"的写法，比 Sequential 灵活，能描述 ResNet 那种**残差连接**——`x = layers.Add()([x, residual])`。
+**逐部分解释**：
+
+- `Input` 先声明张量形状，后面每层像函数一样接上一段输出。
+- 这种写法比 Sequential 灵活，能描述 ResNet 那种**残差连接**：`x = layers.Add()([x, residual])`。
+- 最后用 `keras.Model(inputs, outputs)` 把整张计算图封成可 `compile` / `fit` 的模型。
 
 ### 案例 3：用 callback 加早停和 checkpoint
 
@@ -85,7 +89,11 @@ callbacks = [
 model.fit(x, y, epochs=100, validation_split=0.2, callbacks=callbacks)
 ```
 
-不改训练循环就加上"验证集 3 轮不降就停"和"每次新最优就存盘"——这是 Keras 工程层面的甜点，PyTorch 原生需要自己写一段相同逻辑。
+**逐部分解释**：
+
+- `EarlyStopping`：验证集连续 3 轮不降就停，并恢复最好权重。
+- `ModelCheckpoint`：每次出现新最优就存盘，避免训完才发现中间更好。
+- 不改训练循环就能挂上这些钩子；PyTorch 原生通常要自己写同等逻辑。
 
 ### 案例 4：自定义训练循环（绕过 fit）
 
@@ -123,7 +131,7 @@ for epoch in range(epochs):
 - 教学和原型——5 行代码搞定 MLP / CNN / RNN，新人能立刻看到结果
 - 标准任务（图像分类、文本分类、回归）——`fit()` + `compile()` 就够
 - 团队混用 TF / JAX / PyTorch 的场景——Keras 3 当统一前端
-- 需要复用 sklearn 风格 pipeline 的工程化场景——`KerasClassifier` 包一下能进 sklearn
+- 想在 sklearn 风格 pipeline 里包一层深度模型——Keras 3 需借助 `scikeras` 等包装，而不是核心包自带 `KerasClassifier`
 
 **不适用**：
 
@@ -158,6 +166,10 @@ for epoch in range(epochs):
 
 - [[tensorflow]] —— 长期宿主，Keras 2 = tf.keras
 - [[pytorch]] —— Keras 3 新增后端，研究界主力
+- [[jax]] —— Keras 3 第三套后端，偏研究向函数式与加速
 - [[fastai]] —— 另一条"高层 DL API"路线，和 Keras 思路相似但拥抱 PyTorch
 - [[pytorch-lightning]] —— PyTorch 阵营的训练循环抽象，对标 Keras 的 `fit()`
-- [[hindley-milner]] —— Keras 没静态类型推导，但 keras.ops 的多后端 dispatch 也是一种"延迟到运行时再决定"
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

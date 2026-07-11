@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱/棋盘类比贴合；MIX 有逐部分解释，但案例 1 解释顺序与代码行序不完全对齐，零基础可能对号入座时卡一下。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线写「2024 年：Vol 4B 部分章节出版」不准确：Volume 4B 作为成书约 2023 年出版（此前是 fascicle 分册），应改正年份并区分 fascicle/成书。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "比尔·盖茨那句「读完整套欢迎来微软」属流传甚广的轶事引用，可保留但宜标明是广为流传的说法，避免写成可核验的正式声明。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Python Knuth shuffle 可跑且边界说明正确；MIX 作教学汇编可接受；踩坑与适用边界（CLRS/benchmark）具体有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "菜谱/棋盘类比贴合；MIX 有逐部分解释，但案例 1 解释顺序与代码行序不完全对齐，零基础可能对号入座时卡一下。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史时间线写「2024 年：Vol 4B 部分章节出版」不准确：Volume 4B 作为成书约 2023 年出版（此前是 fascicle 分册），应改正年份并区分 fascicle/成书。",
+        "比尔·盖茨那句「读完整套欢迎来微软」属流传甚广的轶事引用，可保留但宜标明是广为流传的说法，避免写成可核验的正式声明。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Python Knuth shuffle 可跑且边界说明正确；MIX 作教学汇编可接受；踩坑与适用边界（CLRS/benchmark）具体有用。"
+      ]
+    }
+  ]
+}

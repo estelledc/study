@@ -8,7 +8,7 @@ title: opentelemetry-collector — OTel 官方核心仓库与组件模型
 
 ## 是什么
 
-`open-telemetry/opentelemetry-collector` 是 OpenTelemetry Collector 的**核心源码仓库**（5.4k star），用 Go 写。
+`open-telemetry/opentelemetry-collector` 是 OpenTelemetry Collector 的**核心源码仓库**（笔记时点约 5–7k star 量级），用 Go 写。
 
 日常类比：它是手机的"主板"。主板本身只有 CPU / 内存 / 总线这些通用件，摄像头、麦克风、SIM 卡这些"具体外设"放在另一个仓库（`opentelemetry-collector-contrib`）里。需要哪些外设，自己拼一台。
 
@@ -61,6 +61,12 @@ exporters:
 
 跑 `ocb --config builder-config.yaml`，生成可执行二进制 `my-otelcol`。整个过程不写一行 Go——OCB 自己生成 main.go、组装 import、编译。
 
+**逐部分解释**：
+
+- `dist.name` / `output_path`：生成二进制叫什么、写到哪。
+- `receivers` / `processors` / `exporters`：按 Go module 路径点名要编进二进制的组件。
+- 版本号（如 `v0.95.0`）必须彼此对齐；混版是后面踩坑第 2 条的来源。
+
 ### 案例 2：读懂 Factory 接口
 
 每个 receiver 长这样（简化）：
@@ -110,7 +116,7 @@ type Factory interface {
 - 想找具体厂商集成——去 contrib 仓
 - 学 Go 入门——这个仓库的 generic / 接口抽象比较密集，零基础读会吃力
 
-## 历史与定位
+## 历史小故事（可跳过）
 
 - **2019 年**：OpenTracing + OpenCensus 合并为 OpenTelemetry，Collector 项目立项，初始代码来自 OpenCensus Service
 - **2020 年**：core 与 contrib 分仓，确立"协议中立进 core / 厂商绑定进 contrib"的分工

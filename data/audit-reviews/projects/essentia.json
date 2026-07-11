@@ -1,0 +1,100 @@
+{
+  "slug": "essentia",
+  "area": "projects",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.11,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文是通用「分阶段工作流」套话，仓库分拣类比与音乐信息检索无关；案例无音频 API，反向链接用重复「补充观察」凑行数。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源虽指向 MTG/essentia，正文未描述 C++/Python MIR 库、描述子或 extractor，事实内容缺失到无法审计。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无 pip/CLI/算法图示例；踩坑与适用全是空泛流程套话，必须按 Essentia 重写。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文是通用「分阶段工作流」套话，仓库分拣类比与音乐信息检索无关；案例无音频 API，反向链接用重复「补充观察」凑行数。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 2,
+        "no_distortion": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源虽指向 MTG/essentia，正文未描述 C++/Python MIR 库、描述子或 extractor，事实内容缺失到无法审计。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无 pip/CLI/算法图示例；踩坑与适用全是空泛流程套话，必须按 Essentia 重写。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 154,
+    "reasons": []
+  },
+  "lines": 154,
+  "l1_pass": true,
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full-note"
+    ],
+    "unresolved_hints": []
+  }
+}

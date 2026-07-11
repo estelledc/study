@@ -112,8 +112,8 @@ Immich 在管理面板换模型时会拿到一把数据库锁，把 `smart_searc
 - **2022 年初**：Alex Tran 因为不想交 iCloud 月费、又不放心 Google，在家给自己写了一个照片备份服务，开源到 GitHub
 - **2022-2023 年**：Reddit 自托管社区把它推到 r/selfhosted 头条；同时期 PhotoPrism 是主要竞争者，Immich 用更"消费级"的 mobile app 体验差异化
 - **2024 年**：合并 face recognition / OCR / memories 等 Google Photos 的招牌功能；star 数从 1 万快速冲到 5 万
-- **2025 年**：项目从"个人作品"过渡到"小团队 + 商业化探索"（开源核心 + 托管 cloud 模式）；进入 100k stars 俱乐部
-- **2026 年**：v2.7.x 系列发布，MobileCLIP / SigLIP 等更轻的模型选项加入，让 Immich 能跑在树莓派 / 老 Mac mini 上
+- **2025 年**：项目从"个人作品"过渡到"小团队 + 商业化探索"（开源核心 + 托管 cloud 模式）；star 数冲过数万并向十万级迈进
+- **2026 年**：主线进入 **v3.x**；模型目录扩到 SigLIP / SigLIP2 与多语 CLIP（MCLIP）等更轻选项，树莓派 / 老 Mac mini 也能跑智能搜索；仓库 star 跨过 **100k**
 
 ## 学到什么
 

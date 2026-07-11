@@ -1,0 +1,125 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "施工队/调度台 + 工位/传送带类比很强，节点与话题直觉清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只给了 Talker 类片段，缺 init/spin/shutdown，也没展示订阅者怎么接上；零基础无法跟做到「发出去又收回来」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ardent 2017、DDS/RMW、rmw_zenoh、发行版时间线与仓库量级表述整体靠谱"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学简化合理；未把 ROS 2 说成内核 OS，边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 Python 片段不可直接跑：缺 rclpy.init、create_node 生命周期、spin/shutdown；建议补最小可运行骨架或明确标注「节选」并给出完整入口"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "QoS 不兼容、忘记 source、composition 隔离损失——踩坑具体可操作；适用/不适用有微秒级内环量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "施工队/调度台 + 工位/传送带类比很强，节点与话题直觉清楚",
+        "案例 2 只给了 Talker 类片段，缺 init/spin/shutdown，也没展示订阅者怎么接上；零基础无法跟做到「发出去又收回来」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Ardent 2017、DDS/RMW、rmw_zenoh、发行版时间线与仓库量级表述整体靠谱",
+        "教学简化合理；未把 ROS 2 说成内核 OS，边界清楚"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 Python 片段不可直接跑：缺 rclpy.init、create_node 生命周期、spin/shutdown；建议补最小可运行骨架或明确标注「节选」并给出完整入口",
+        "QoS 不兼容、忘记 source、composition 隔离损失——踩坑具体可操作；适用/不适用有微秒级内环量化"
+      ]
+    }
+  ],
+  "slug": "ros2",
+  "area": "projects",
+  "status": "refined",
+  "lines": 170,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：案例 2 补全 rclpy.init/spin/shutdown 可跟做骨架，并说明订阅闭环",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 170,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

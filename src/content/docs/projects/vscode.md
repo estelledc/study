@@ -24,7 +24,7 @@ code .
 
 - 为什么装一个语言扩展就能多支持一门语言，**不用重编整个编辑器**
 - 为什么扩展崩了编辑器还能继续用——它跑在另一个进程里
-- 为什么 Cursor / Windsurf / Continue 都直接 fork VS Code，**没人重写**
+- 为什么 Cursor / Windsurf 直接 fork VS Code、Continue 以扩展接入——**没人从零重写编辑器**
 - 为什么 Stack Overflow 调查里它常年第一名——它把"轻量+IDE"那条中间线占住了
 
 ## 核心要点
@@ -39,7 +39,7 @@ VS Code 的架构可以拆成 **三层进程**：
 
 三层之上还有 **三个协议**，把"语言能力 / 调试能力 / 远端能力"标准化：
 
-- **LSP**（Language Server Protocol）：编辑器和语言服务用 stdio JSON-RPC 说话，PyRight、rust-analyzer、gopls 都按这个协议写一次到处用
+- **LSP**（Language Server Protocol）：编辑器和语言服务用一条"传菜口"管道说话（stdio 上的 JSON-RPC，像两台机器互发小纸条），Pyright、rust-analyzer、gopls 都按这个协议写一次到处用
 - **DAP**（Debug Adapter Protocol）：同样思路套到调试器
 - **Remote**：把扩展宿主整个搬到远端机器（SSH / 容器 / WSL），UI 留本地
 
@@ -47,12 +47,12 @@ VS Code 的架构可以拆成 **三层进程**：
 
 ### 案例 1：装一个语言扩展发生了什么
 
-你装 `ms-python.python` 时：
+你装 Python 扩展（常再配 Pylance）时：
 
 1. 扩展从 marketplace 下载到 `~/.vscode/extensions/`
-2. `package.json` 里的 `activationEvents`（如 `onLanguage:python`）被注册
-3. 你打开 `.py` 文件 → 触发激活 → 扩展宿主进程加载这个扩展
-4. 扩展启动 Pylance（一个 LSP server 子进程）
+2. `package.json` 里的 `activationEvents`（"什么时候叫醒我"，如 `onLanguage:python`）被注册
+3. 你打开 `.py` 文件 → 触发激活 → 扩展宿主进程加载扩展
+4. 扩展拉起 Pylance（一个 LSP server 子进程；没装语言服务扩展时补全/诊断会缺席）
 5. 编辑器和 Pylance 通过 LSP 互发 hover / completion / diagnostics
 
 **关键**：编辑器**完全不知道 Python 是什么**，它只是按 LSP 协议转发请求。换成 Go、Rust 完全同理。
@@ -73,7 +73,12 @@ VS Code 的架构可以拆成 **三层进程**：
 }
 ```
 
-按 F5 时：编辑器走 DAP 启动 debugpy（Python 扩展自带）→ debugpy 起目标进程 → 编辑器 UI 把"断点 / 单步 / 变量"全部翻译成 DAP 消息。换成 Node、Go、C++ 同理，DAP 适配器换一个就行。
+按 F5 时（需已装对应 debug adapter，Python 侧是 debugpy）：
+
+1. 编辑器读 `launch.json`，按 `type: python` 找到 DAP 适配器
+2. 适配器启动目标进程（`program: ${file}`）
+3. UI 把"断点 / 单步 / 变量"全部翻译成 DAP 消息来回传
+4. 换成 Node、Go、C++ 同理——只换适配器，不换编辑器
 
 ### 案例 3：Dev Containers 让"我机器上能跑"消失
 

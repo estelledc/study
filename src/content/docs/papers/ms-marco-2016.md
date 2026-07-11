@@ -1,5 +1,5 @@
 ---
-title: MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
+title: MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集
 来源: 'Bajaj 等, "MS MARCO: A Human Generated MAchine Reading COmprehension Dataset", arXiv 1611.09268 / NeurIPS Workshop 2016'
 日期: 2026-05-31
 分类: 信息检索

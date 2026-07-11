@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "背词典三段类比极好；案例 3 说「10 行 NumPy」但没给出代码，建议补一个最小可跑片段或逐步伪代码。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "文末缺 ## 反向链接 占位段，结构不完整。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「GPT-3 用 1750 亿参数……参数远超训练 token 数」不准确：GPT-3 约 175B 参数、训练约 300B tokens，参数并未远超 token；应改为「参数量巨大 / 远超经典统计直觉」之类。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Belkin et al. PNAS 2019 / arXiv 1812.11118 来源正确；双下降三段结构与插值阈值表述符合原文。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（步长错过峰、横轴是容量/样本比、正则抹平峰）对调参很有用。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 描述了最小范数解公式，但缺可跟做的扫特征数实验代码；补 8–12 行 NumPy 即可。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "背词典三段类比极好；案例 3 说「10 行 NumPy」但没给出代码，建议补一个最小可跑片段或逐步伪代码。",
+        "文末缺 ## 反向链接 占位段，结构不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「GPT-3 用 1750 亿参数……参数远超训练 token 数」不准确：GPT-3 约 175B 参数、训练约 300B tokens，参数并未远超 token；应改为「参数量巨大 / 远超经典统计直觉」之类。",
+        "Belkin et al. PNAS 2019 / arXiv 1812.11118 来源正确；双下降三段结构与插值阈值表述符合原文。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "踩坑（步长错过峰、横轴是容量/样本比、正则抹平峰）对调参很有用。",
+        "案例 3 描述了最小范数解公式，但缺可跟做的扫特征数实验代码；补 8–12 行 NumPy 即可。"
+      ]
+    }
+  ]
+}

@@ -127,7 +127,7 @@ CREATE TABLE users_by_email (email TEXT PRIMARY KEY, id UUID, name TEXT);
 - 数据量小（< 100GB）→ 单机 PostgreSQL 性能更好、运维更简单
 - 查询模式经常变 → CQL 限制会变成噩梦
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2008 年**：Facebook 工程师 Avinash Lakshman（Dynamo 论文作者之一）和 Prashant Malik 为收件箱搜索造了 Cassandra。希腊神话里 Cassandra 是个能预言但没人信的预言家——选这名字有点黑色幽默。
 - **2009 年**：Facebook 把代码捐给 Apache。
@@ -156,3 +156,7 @@ CREATE TABLE users_by_email (email TEXT PRIMARY KEY, id UUID, name TEXT);
 
 - [[paxos]] —— 同样讲分布式协调，但 Paxos 走强一致，Cassandra 走最终一致
 - [[postgresql]] —— 单店强一致 vs 连锁最终一致的鲜明对照
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

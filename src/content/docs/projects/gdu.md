@@ -84,11 +84,12 @@ gdu --archive-browsing /backups
 ### 案例 5：用 SQLite 持久化大目录扫描
 
 ```bash
-gdu --db scan.db /data
-gdu --db scan.db --read-from-storage   # 下次直接读，不重扫
+gdu --db scan.sqlite /data              # 扩展名决定引擎：.sqlite → SQLite
+gdu -r --db scan.sqlite                 # -r/--read-from-storage：下次直接读，不重扫
+# BadgerDB 写法：gdu --db scan.badger /data
 ```
 
-千万级文件扫一次几分钟，`--db` 把结果落到 SQLite/BadgerDB，下次启动跳过扫描直接渲染 TUI——ncdu/dua 都没有这种"持久化分析快照"的能力。
+千万级文件扫一次几分钟，`--db` 按扩展名把结果落到 SQLite（`*.sqlite`）或 BadgerDB（`*.badger`），下次用 `-r` 跳过扫描直接渲染 TUI——ncdu/dua 都没有这种"持久化分析快照"的能力。注意不要写成随意的 `.db`：官方靠后缀选存储引擎。
 
 ## 踩过的坑
 

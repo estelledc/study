@@ -58,11 +58,7 @@ Framework 的心智模型可以拆成 **三段**：
 - **Inputs**：`Inputs.range()` / `Inputs.search()` / `Inputs.table()` 等响应式控件
 - **Reactive runtime**：从 Observable notebook 移植的 dataflow——某 cell 依赖 `x`，`x` 变它自动重算，无需 useState
 
-写法上的关键约定：
-
-- 加载器名决定路由：`data/sales.sql` build 出 `_file/data/sales.csv`，页面 `FileAttachment("data/sales.csv")` 读
-- 代码块顶部 `echo` / `display` 等指令控制是否显示源码
-- `index.md` 不写 frontmatter 也行——和 Astro/Starlight 不同，结构来自目录而非 collection
+写法约定：加载器名决定路由（`data/sales.sql` → `FileAttachment("data/sales.csv")`）；代码块可用 `echo`/`display` 控制是否显示源码。
 
 ## 实践案例
 
@@ -152,27 +148,38 @@ Plot.lineY(filtered, {x: "date", y: "amount"}).plot()
 - 大数据原始查询（百 G 起）——DuckDB-Wasm 跑不动，应保持服务端 OLAP（[[clickhouse]] / [[trino]]）
 - 完全动态站——Framework 是 SSG，不要把 Next.js 该做的事让它做
 
+## 历史小故事（可跳过）
+
+- **2015–2016 年**：Mike Bostock 等人推出 Observable notebook——浏览器里 reactive 的数据笔记本，和 Jupyter 抢探索场景。
+- **2016–2023 年**：notebook 适合个人探索，但给几十上百同事"发布只读看板"仍要挂 kernel 或导出静态截图，运维别扭。
+- **2024 年 2 月**：Observable 开源 Framework：Markdown + build-time 加载器，把"探索"和"发布"拆开，静态站可丢 CDN。
+- **之后**：DuckDB-Wasm、Plot、Inputs 成为默认栈；数据团队用 CI 定时 build 代替常驻后端。
+
 ## 学到什么
 
-1. **build-time vs run-time 的取舍**：把数据加载从 run-time 推到 build-time，省掉了一整套后端基建——代价是数据"凝固"，刷新靠 CI。这种取舍在 SSG / [[astro]] / Next.js ISR 反复出现
-2. **多语言加载器统一在 stdout**：SQL/Python/R/JS/Shell 都通过 "可执行文件 + stdout 即产物" 这个统一接口接入——polyglot 的低成本做法
-3. **WebAssembly 把 OLAP 搬到浏览器**：DuckDB-Wasm + Parquet 让前端能跑过去要后端的查询，"零后端数据应用"这个新形态因此成立
-4. **Markdown 是数据工程的最小公倍数**：prose 给人读、代码块给机器跑——一个文件同时是文档和程序，是 [[jupyter-notebook]] 之后的下一代答案
+1. **build-time vs run-time**：数据加载推到 build，省掉后端——代价是数据凝固，刷新靠 CI（同 SSG / [[astro]]）
+2. **stdout 即产物**：SQL/Python/R/JS/Shell 共用"可执行文件 + 标准输出"接口，polyglot 成本低
+3. **Wasm 把 OLAP 搬进浏览器**：DuckDB-Wasm + Parquet 让"零后端数据应用"成立
+4. **Markdown 是最小公倍数**：prose 给人读、代码块给机器跑，是 [[jupyter-notebook]] 之后的发布形态
 
 ## 延伸阅读
 
 - 官方文档：[Observable Framework Docs](https://observablehq.com/framework/)
-- 入门教程：[Getting Started](https://observablehq.com/framework/getting-started)
-- 数据加载器：[Data loaders](https://observablehq.com/framework/loaders)
-- [[observable-plot]] —— Framework 的默认可视化层
-- [[duckdb]] —— DuckDB-Wasm 让浏览器端 OLAP 成立
-- [[vite]] —— Framework 底层构建工具
-- [[d3]] —— Plot 之下的渲染兜底
+- 入门：[Getting Started](https://observablehq.com/framework/getting-started)
+- 加载器：[Data loaders](https://observablehq.com/framework/loaders)
+- [[observable-plot]] —— 默认可视化层
+- [[duckdb]] —— 浏览器端 OLAP
+- [[vite]] —— 底层构建工具
 
 ## 关联
 
-- [[observable-plot]] —— Framework 的可视化默认组件，API 表现层
-- [[duckdb]] —— SQL 代码块在浏览器端的执行引擎
-- [[d3]] —— Plot 之下的底层渲染，Mike Bostock 一脉相承
-- [[astro]] —— 同为内容驱动的 SSG，Framework 更聚焦数据
-- [[jupyter-notebook]] —— Framework 想替代的"实时 kernel"模式
+- [[observable-plot]] —— Framework 默认可视化组件
+- [[duckdb]] —— SQL 代码块在浏览器端的引擎
+- [[d3]] —— Plot 之下的渲染兜底
+- [[astro]] —— 同为内容驱动 SSG，Framework 更聚焦数据
+- [[jupyter-notebook]] —— Framework 想替代的"实时 kernel"发布模式
+- [[vite]] —— build 工具链底座
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -70,7 +70,7 @@ r.Get("/", home)              // 受上面两层保护
 
 **逐部分解释**：`Use` 注册的中间件会按顺序包裹**之后**注册的所有 handler。请求进来时，先过 Logger（外层），再过 Recoverer，最后到 home；返回时反向往外走。
 
-注意 `r.Use(...)` 的位置：写在 `r.Get(...)` 之前才生效；写在后面，那条路由不会被该中间件保护——这是 chi 最常踩的坑，下一节会展开。
+注意 `r.Use(...)` 的位置：chi 要求全局中间件在路由注册前声明；路由已经注册后再 `Use`，新版 chi 会直接报错，提醒你别让中间件覆盖范围变得含糊。
 
 ### 案例 3：嵌套子路由
 
@@ -89,13 +89,13 @@ r.Route("/api/v1/users", func(r chi.Router) {
 
 ## 踩过的坑
 
-1. **中间件顺序非常敏感**：`r.Use(auth)` 必须写在 `r.Get(...)` **之前**，才能保护那条路由——chi 的中间件只对之后注册的路由生效。常见 bug：把 Use 写在末尾，结果一条都没保护到。
+1. **中间件顺序非常敏感**：全局 `r.Use(auth)` 必须在任何 `r.Get(...)` / `r.Route(...)` 之前声明；chi v5 会在"已经有路由后再 Use"时报错。常见 bug 不是静默漏保护，而是启动时才发现注册顺序写反了。
 
 2. **URL 参数在路由前取不到**：如果在全局中间件（router 级 Use）里调 `chi.URLParam(r, "id")`，会拿到空字符串——因为路由还没匹配，参数还没塞进 context。要拿参数得在 handler 或路由级中间件里。
 
 3. **`r.WithContext(ctx)` 返回新对象不是改原来的**：很多人写 `r.WithContext(ctx)` 然后还用旧的 r，等于白干。正确写法是 `r = r.WithContext(ctx)` 再往下传，或直接 `next.ServeHTTP(w, r.WithContext(ctx))`。
 
-4. **`Mount` 和 `Route` 不一样**：`Route` 是把子路由"内联"进来，共享父中间件栈；`Mount` 是把另一个独立 router 挂上去，**绕开**父中间件。要让子模块继承父 auth 中间件的话，用 Route 别用 Mount。
+4. **`Mount` 和 `Route` 不一样**：`Route` 适合在同一个 router 里分组，天然沿用当前链路；`Mount` 是把另一个独立 `http.Handler` 挂到前缀下，父路由前面已经声明的中间件仍会包住它，但子 router 自己的中间件和参数上下文要单独管理。
 
 ## 适用 vs 不适用场景
 
@@ -107,7 +107,7 @@ r.Route("/api/v1/users", func(r chi.Router) {
 
 **不适用**：
 
-- 极致追求 throughput 的网关层 → 用 fasthttp 系列（gin / fiber 底层），但要放弃 net/http 生态
+- 极致追求 throughput 的网关层 → 可以评估 fasthttp / fiber 这类非标准栈，但要放弃 net/http 生态；gin 仍基于 net/http，只是 API 风格更框架化
 - 需要框架级"全家桶"（ORM / DI / config 模板都打包好）→ 选 [[express]] 风格的全家桶（在 Go 里类似 kratos / go-kit）
 - 单文件脚本式工具，路由就 1-2 条 → 直接用 `http.HandleFunc` 就够，引 chi 反而过度设计
 

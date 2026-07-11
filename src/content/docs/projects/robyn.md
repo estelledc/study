@@ -31,9 +31,9 @@ app.start(host="0.0.0.0", port=8080)
 理解 Robyn 能帮你看清这些趋势：
 
 - 为什么"Python 性能差"不再是铁律——Pydantic v2、Polars、Robyn 都在把热路径下沉到 Rust
-- 为什么 actor 模型在 Web 框架里重新流行——Erlang/OTP 的思想经 Rust 重新落地
-- 为什么 TechEmpower 基准里 Robyn 的 JSON 序列化接近 Actix（纯 Rust）和 Fastify（Node）
-- 为什么一个 2021 年起步的新框架能拿到 6k+ stars——"零代价抽象"从系统语言蔓延到应用层
+- 为什么 Python Web 也能吃多核——多 worker 进程 + Rust 异步运行时，绕开 GIL 热路径
+- 为什么 TechEmpower 某几轮 plaintext/JSON 里 Robyn 能摸到 Actix / Fastify 同档（看具体 round，不是全面追平纯 Rust）
+- 为什么一个 2021 年起步的新框架能拿到 7k+ stars——"胶水语言写业务、系统语言跑引擎"从系统软件蔓延到应用层
 
 Robyn 代表的不只是一个框架，而是一类设计范式：**高级语言当胶水写业务，系统语言当引擎跑性能**。
 
@@ -43,11 +43,11 @@ Robyn 的架构可以拆成三层：
 
 1. **Rust 运行时（核心引擎）**：HTTP 解析、路由匹配、事件循环全在 Rust 侧完成。通过 PyO3 把 Rust 编译成 Python C 扩展（.so/.pyd），Python 端 `import` 进来就能用。类比：餐厅的后厨（Rust）和前台（Python）分离，前台只管接单传菜，炒菜的活全在后厨。
 
-2. **多进程 + Actor 模型**：Robyn 默认启动多个 worker 进程，每个进程内部用 actor 模型处理请求。不同于 Gunicorn 的 prefork 模式，Robyn 的 actor 之间通过消息传递协作，避免共享内存带来的锁竞争。这和 [[erlang-otp]] 的 actor 思想一脉相承，只是换成了 Rust 实现。
+2. **多进程 worker + Rust 异步运行时**：master 管监听与拉起 worker（可用 `--processes`），每个 worker 里用 Tokio 异步调度，HTTP 层借 Actix Web 等 Rust 组件扛解析与连接。和 Gunicorn prefork 一样是多进程扩核，但热路径在 Rust 侧，不是纯 Python 事件循环。别把它理解成 Erlang 式 mailbox actor——那是营销口径，官方架构叙事是 master/worker + 异步运行时。
 
-3. **Python API 层**：路由装饰器（`@app.get`）、中间件、WebSocket、依赖注入——开发者接触到的全是 Python。框架还支持 const 请求（在启动时计算好结果缓存，运行时零开销返回）和热重载。写法上借鉴了 [[flask]] 的简洁和 [[fastapi]] 的异步风格。
+3. **Python API 层**：路由装饰器（`@app.get`）、中间件、WebSocket、依赖注入——开发者接触到的全是 Python。框架还支持 const 请求（启动时算好结果缓存，运行时零开销返回）和热重载。写法借鉴 [[flask]] 的简洁和 [[fastapi]] 的异步风格。
 
-一句话总结底层栈：**PyO3 桥接 + Actix 级 Rust 引擎 + Flask 级 Python API**。
+一句话总结底层栈：**PyO3 桥接 + Tokio/Actix 系 Rust 运行时 + Flask 级 Python API**。
 
 ## 实践案例
 
@@ -128,7 +128,7 @@ WebSocket 支持是内建的，不需要额外装 `websockets` 库——因为 R
 - I/O 密集型 API 服务（高并发、大量网络请求）——Rust 事件循环吞吐量碾压纯 Python
 - 想要 Python 写法但 Flask/FastAPI 性能不够的场景——不改语言直接提速
 - WebSocket 实时服务——内建支持、无需额外依赖
-- 微服务节点——启动快、内存占用低、单二进制部署
+- 微服务节点——启动快、内存相对省；用 pip/wheel 安装（wheel 里带原生扩展），不是 Go 那种单二进制
 
 **不适用**：
 
@@ -139,14 +139,14 @@ WebSocket 支持是内建的，不需要额外装 `websockets` 库——因为 R
 
 ## 历史小故事（可跳过）
 
-Robyn 的名字来源于瑞典电子流行歌手 Robyn——框架作者 Sanskar Jethi 想表达"轻量、有节奏感"的设计理念。项目始于 2021 年，最初是 Sanskar 在探索 PyO3（Rust-Python 绑定）时的个人实验：能不能用 Rust 写一个 HTTP 运行时，让 Python 开发者完全感受不到 Rust 的存在？2021 年他在 PyCon Sweden 做了第一次公开演讲，展示了 Robyn 在 TechEmpower 基准上接近 Actix 的成绩，引发关注。到 2024 年项目已积累 6000+ stars，社区贡献者覆盖 WebSocket、中间件、CLI 脚手架等功能，成为 Python 高性能框架的新选项。
+Robyn 的名字来源于瑞典电子流行歌手 Robyn——框架作者 Sanskar Jethi 想表达"轻量、有节奏感"的设计理念。项目始于 2021 年，最初是 Sanskar 在探索 PyO3（Rust-Python 绑定）时的个人实验：能不能用 Rust 写一个 HTTP 运行时，让 Python 开发者几乎感觉不到 Rust？同年他在 PyCon Sweden 公开演讲，展示 TechEmpower 部分测试项上的成绩，引发关注。到 2026 年项目已积累 7k+ stars，社区贡献覆盖 WebSocket、中间件、CLI 脚手架等，成为 Python 高性能框架的一个选项。
 
 ## 学到什么
 
 1. **"胶水 + 引擎"分离**是性能与易用的最佳折中——Python 写业务、Rust 跑热路径，两边各做最擅长的事
-2. **Actor 模型不只属于 Erlang**——Robyn 证明了 Rust 实现的 actor 模式同样能在 Web 框架里提供高并发隔离
+2. **多进程扩核 + 热路径下沉**——和 Gunicorn 一样靠进程吃多核，但 HTTP/调度在 Rust，Python 只跑业务 handler
 3. **PyO3 是 Rust-Python 融合的关键桥梁**——没有它，Rust 代码无法被 Python 直接 import，整个"写 Python 跑 Rust"的故事就讲不通
-4. **新框架的最大风险不是性能而是生态**——Robyn 性能碾压，但没有 Pydantic / SQLAlchemy 级别的官方集成，生产项目选型时要权衡
+4. **新框架的最大风险不是性能而是生态**——Robyn 性能强，但没有 Pydantic / SQLAlchemy 级别的官方集成，生产选型要权衡
 
 ## 延伸阅读
 
@@ -158,7 +158,7 @@ Robyn 的名字来源于瑞典电子流行歌手 Robyn——框架作者 Sanskar
 
 - [[fastapi]] —— Python 类型驱动框架的标杆，Robyn 在 API 风格上向它看齐但换了 Rust 引擎
 - [[flask]] —— Robyn 的路由装饰器风格直接借鉴 Flask，但底层完全不同
-- [[actix-web]] —— Robyn 的 Rust 运行时性能对标 Actix，actor 模型也有相通之处
+- [[actix-web]] —— Robyn 的 Rust HTTP 层会用到 Actix Web 一类组件，性能叙事也常对标它
 - [[sanic]] —— 同样追求 async Python 高性能，但 Sanic 是纯 Python 实现
 - [[starlette]] —— FastAPI 的 ASGI 底座；Robyn 不走 ASGI，自己用 Rust 实现了同层功能
 - [[axum]] —— Rust 生态的类型驱动 Web 框架，和 Robyn 的 Rust 层定位类似

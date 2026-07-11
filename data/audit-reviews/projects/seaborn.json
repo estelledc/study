@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "单反 vs 人像模式手机相机类比贴合「统计语义自动配图」，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "figure-level / axes-level / 长格式首次出现有记忆窍门和对照，术语桥接到位"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有代码+一句解释；案例承前使用 tips，建议读者从「是什么」顺读即可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Waskom 2012 发起、NumFOCUS 赞助、v0.12（2022-09）objects、JOSS 2021、distplot→histplot/kdeplot 弃用时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「科研论文里那些图大多是 seaborn」略满，但后文已点出 matplotlib/plotnine 对照，教学简化可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "bootstrap 默认约 1000 次、95% CI、FacetGrid vs Axes 分层与官方 API 一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码概念正确可跟做：catplot 分面、heatmap mask、axes-level 混 plt.subplots 都是日常姿势"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：FacetGrid.savefig、宽表 melt、hue 连续色、set_theme 污染 rcParams、clustermap、distplot 弃用——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有交互/Web/海量点/像素排版量化边界与替代库，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "单反 vs 人像模式手机相机类比贴合「统计语义自动配图」，零基础直觉强",
+        "figure-level / axes-level / 长格式首次出现有记忆窍门和对照，术语桥接到位",
+        "案例 1–3 有代码+一句解释；案例承前使用 tips，建议读者从「是什么」顺读即可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Waskom 2012 发起、NumFOCUS 赞助、v0.12（2022-09）objects、JOSS 2021、distplot→histplot/kdeplot 弃用时间线正确",
+        "「科研论文里那些图大多是 seaborn」略满，但后文已点出 matplotlib/plotnine 对照，教学简化可接受",
+        "bootstrap 默认约 1000 次、95% CI、FacetGrid vs Axes 分层与官方 API 一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码概念正确可跟做：catplot 分面、heatmap mask、axes-level 混 plt.subplots 都是日常姿势",
+        "踩坑具体可操作：FacetGrid.savefig、宽表 melt、hue 连续色、set_theme 污染 rcParams、clustermap、distplot 弃用——保留",
+        "适用/不适用有交互/Web/海量点/像素排版量化边界与替代库，边界清楚"
+      ]
+    }
+  ]
+}

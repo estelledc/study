@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆 vs 快递分拣中心类比把「只追加不改」讲透，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "WAL / MemTable / SST / Compaction / Bloom 首次出现有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–4 全是叙事、无代码与逐步拆解；建议压成 3 个案例，至少 1 个带 PUT/GET 迷你 API 与逐部分解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 称 TiKV「每个 region 一个 column family」错误：TiKV 是少数固定 CF（default/write/lock 等），region 是同 CF 内的 key range 分片"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 7 把 Bloom 的假阳性写成「假阴性」——Bloom 只保证「肯定没有 / 可能有」，错误是假阳性"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub、O’Neil 1996 LSM、2012 Facebook fork LevelDB、Pebble 替代路径与史实相符；MyRocks「省一半」已用「据称」可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可跟做的 API/伪代码；建议补 Open→Put→Get→Close 或 Iterator 迷你骨架，并标 Options 关键旋钮"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：写放大 10–30×、Write Stall、三块内存、fsync、snapshot 挡 compaction、CF 共享 WAL——保留；Bloom 术语随 academic 改正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用单机写多/嵌入式状态；不适用跨机复制、冷数据随机点查——边界清楚，可再点明「默认 write_buffer 64MB」级量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书馆 vs 快递分拣中心类比把「只追加不改」讲透，保留",
+        "WAL / MemTable / SST / Compaction / Bloom 首次出现有桥接",
+        "案例 1–4 全是叙事、无代码与逐步拆解；建议压成 3 个案例，至少 1 个带 PUT/GET 迷你 API 与逐部分解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 称 TiKV「每个 region 一个 column family」错误：TiKV 是少数固定 CF（default/write/lock 等），region 是同 CF 内的 key range 分片",
+        "踩坑 7 把 Bloom 的假阳性写成「假阴性」——Bloom 只保证「肯定没有 / 可能有」，错误是假阳性",
+        "来源 GitHub、O’Neil 1996 LSM、2012 Facebook fork LevelDB、Pebble 替代路径与史实相符；MyRocks「省一半」已用「据称」可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可跟做的 API/伪代码；建议补 Open→Put→Get→Close 或 Iterator 迷你骨架，并标 Options 关键旋钮",
+        "踩坑具体可操作：写放大 10–30×、Write Stall、三块内存、fsync、snapshot 挡 compaction、CF 共享 WAL——保留；Bloom 术语随 academic 改正",
+        "适用单机写多/嵌入式状态；不适用跨机复制、冷数据随机点查——边界清楚，可再点明「默认 write_buffer 64MB」级量化"
+      ]
+    }
+  ]
+}

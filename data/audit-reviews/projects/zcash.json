@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 0 偏概念铺垫，可并入案例 1 开头，让三个案例都更像可跟读的实践步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 写「约 2-3 KB 的 Groth16 证明」与前文「几百字节」矛盾；Groth16 证明本身约 192 字节，应统一改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「链上 90% 的钱仍在 transparent 池」缺时间锚点，易过时；改为定性表述或注明大致时期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的节点视角伪代码概念正确，可补一行说明矿工费明文是唯一必见字段，避免读者以为整笔交易全隐藏"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 0 偏概念铺垫，可并入案例 1 开头，让三个案例都更像可跟读的实践步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 写「约 2-3 KB 的 Groth16 证明」与前文「几百字节」矛盾；Groth16 证明本身约 192 字节，应统一改正",
+        "「链上 90% 的钱仍在 transparent 池」缺时间锚点，易过时；改为定性表述或注明大致时期"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的节点视角伪代码概念正确，可补一行说明矿工费明文是唯一必见字段，避免读者以为整笔交易全隐藏"
+      ]
+    }
+  ]
+}

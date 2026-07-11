@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "CRD 首次出现应加半句桥接（如「集群里自定义的登记表条目」），零基础读者不知道 Custom Resource"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CSI / Restic / Kopia 在核心要点里各加一句人话解释，否则 PV 通路两段读不懂"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「四个核心 CRD」下列了 Backup/Restore/Schedule 与两个 Location，实际是五类对象；可改成「五类核心对象」或「Backup/Restore/Schedule 加两类 Location」以免计数不准"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 velero install 依赖事先存在的桶与凭证文件，可在命令前补一句前置条件，避免跟做时卡在 secret-file"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "CRD 首次出现应加半句桥接（如「集群里自定义的登记表条目」），零基础读者不知道 Custom Resource",
+        "CSI / Restic / Kopia 在核心要点里各加一句人话解释，否则 PV 通路两段读不懂"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「四个核心 CRD」下列了 Backup/Restore/Schedule 与两个 Location，实际是五类对象；可改成「五类核心对象」或「Backup/Restore/Schedule 加两类 Location」以免计数不准"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 velero install 依赖事先存在的桶与凭证文件，可在命令前补一句前置条件，避免跟做时卡在 secret-file"
+      ]
+    }
+  ]
+}

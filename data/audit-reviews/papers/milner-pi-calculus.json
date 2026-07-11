@@ -1,0 +1,142 @@
+{
+  "slug": "milner-pi-calculus",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "有线总机→手机号短信类比极贴 mobility，开篇能抓住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "六条语法一次抛出，νx / !P / 顶杠发送对零基础过陡，需在规则旁加一句日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "HTTP 重定向与 Erlang 案例有逐步解释；bisimulation 案例抽象但仍可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Milner-Parrow-Walker I+II, Information and Computation 1992 正确；reduction/ν/! 与标准 π 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Honda-Tokoro 1991 异步 π、Engberg-Nielsen ECCS、Turing 1991 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Rust async 也用同一套理论』略宽，属教学概括而非硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "π 伪代码与 Erlang 对照概念正确；同步 rendezvous vs 异步 mailbox 提醒有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：CSP 静态通道、bisimulation≠trace、!P≠while、scope extrusion"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可再点明『写业务代码别直接写 π spec』的成本感"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "有线总机→手机号短信类比极贴 mobility，开篇能抓住",
+        "六条语法一次抛出，νx / !P / 顶杠发送对零基础过陡，需在规则旁加一句日常桥接",
+        "HTTP 重定向与 Erlang 案例有逐步解释；bisimulation 案例抽象但仍可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Milner-Parrow-Walker I+II, Information and Computation 1992 正确；reduction/ν/! 与标准 π 一致",
+        "Honda-Tokoro 1991 异步 π、Engberg-Nielsen ECCS、Turing 1991 时间线合理",
+        "『Rust async 也用同一套理论』略宽，属教学概括而非硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "π 伪代码与 Erlang 对照概念正确；同步 rendezvous vs 异步 mailbox 提醒有用",
+        "踩坑具体：CSP 静态通道、bisimulation≠trace、!P≠while、scope extrusion",
+        "适用/不适用边界清楚；可再点明『写业务代码别直接写 π spec』的成本感"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 166,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "核心要点为 ν/!/顶杠加日常桥接；弱化 Rust async 过宽表述；补反向链接占位",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

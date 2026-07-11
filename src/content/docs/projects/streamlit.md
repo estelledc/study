@@ -29,10 +29,10 @@ if name:
 
 不理解 Streamlit，下面这些事都没法解释：
 
-- 为什么 HuggingFace Spaces 上 70% 以上的 ML demo 都用 Streamlit 或 [[gradio]]——它们把"会写 Python"和"做出能分享 URL 的 demo"中间那道墙拆了
+- 为什么 HuggingFace Spaces 上相当一部分 ML demo 用 Streamlit 或 [[gradio]]——它们把"会写 Python"和"做出能分享 URL 的 demo"中间那道墙拆了
 - 为什么数据科学团队的内部工具不再走 Flask + React 双轨——Streamlit 让分析师本人就能交付一个"老板能点的"页面
-- 为什么 LLM 应用原型几乎都是 Streamlit 起步——`st.chat_input` / `st.chat_message` 直接给一套对话 UI
-- 为什么 Snowflake 愿意花 8 亿美元买它——把 Streamlit 嵌进 Snowflake 后，BI 报表和数据应用合二为一
+- 为什么 LLM 应用原型常从 Streamlit 起步——`st.chat_input` / `st.chat_message` 直接给一套对话 UI
+- 为什么 Snowflake 愿意花约 8 亿美元买它——把 Streamlit 嵌进 Snowflake 后，BI 报表和数据应用合二为一
 
 ## 核心要点
 
@@ -70,7 +70,11 @@ if uploaded:
     st.dataframe(df.head(100))
 ```
 
-不到 15 行，得到的是：上传文件 / 列选择器 / 直方图 / 可排序表格的完整应用。
+**逐部分解释**：
+
+1. `file_uploader` 拿到上传文件对象；没有文件时后面不跑，避免空表报错
+2. `read_csv` 把 CSV 变成 DataFrame，`shape` 先让人看见规模
+3. `selectbox` 用列名当选项；`bar_chart` 画该列频次；`dataframe` 只展示前 100 行
 
 ### 案例 2：缓存把慢操作摁住
 
@@ -91,7 +95,11 @@ if text:
     st.write(clf(text))
 ```
 
-`cache_data` 按参数 hash 缓存返回值，第一次 5 秒、之后毫秒；`cache_resource` 把模型当全局单例，不被复制——10 个用户共享一个对象。这是 Streamlit 写 ML demo 的标准姿势。
+**逐部分解释**：
+
+1. `@st.cache_data` 按参数 hash 缓存返回值：第一次约 5 秒，之后毫秒级；`ttl=600` 十分钟后失效
+2. `@st.cache_resource` 缓存模型单例，不复制——多用户共享同一对象
+3. 控件只影响后面的推理；读表和装模型不会因每次 rerun 重做
 
 ### 案例 3：用 session_state 写一个聊天应用
 
@@ -105,12 +113,16 @@ for m in st.session_state.msgs:
 
 if prompt := st.chat_input("说点什么"):
     st.session_state.msgs.append({"role": "user", "content": prompt})
-    reply = call_llm(prompt)  # 任意 LLM 客户端
+    reply = call_llm(prompt)  # 自行接入任意 LLM 客户端
     st.session_state.msgs.append({"role": "assistant", "content": reply})
     st.rerun()
 ```
 
-`st.chat_input` / `st.chat_message` 是 1.24 以后专为 LLM 应用加的语义化控件，直接给气泡 UI。`st.session_state` 跨 rerun 保留消息历史。`st.rerun()` 强制重跑一次让最新消息立刻渲染。
+**逐部分解释**：
+
+1. 首次进入时初始化 `msgs`；`session_state` 跨 rerun 保留历史
+2. 循环用 `chat_message` 按角色渲染气泡（1.24+ 语义化控件）
+3. `chat_input` 收到新句 → 追加 user/assistant → `st.rerun()` 立刻重画
 
 ## 踩过的坑
 
@@ -122,9 +134,7 @@ if prompt := st.chat_input("说点什么"):
 
 4. **widget key 冲突**：在循环里造同样的 `st.button("delete")` 会撞 key，要显式传 `key=f"del-{i}"`。Streamlit 的"控件身份"绑定 (脚本位置 + label + key)，重名就当同一个。
 
-5. **st.write 渲染 DataFrame 慢**：`st.write(df)` 把 DataFrame 当 spreadsheet 全量序列化推到前端，超 5 万行卡顿；要用 `st.dataframe` 显式分页 / 虚拟滚动。
-
-6. **跨 session 共享数据要走外部存储**：`session_state` 是单用户单 tab 的，Tab 关了就没了；要做"评论持久化"必须接数据库 / 文件——Streamlit 不替你管。
+5. **大表用错 API / 跨 session 丢数据**：`st.write(df)` 超约 5 万行易卡，改用 `st.dataframe`；`session_state` 只活在单 tab，持久化要接数据库或文件。
 
 ## 适用 vs 不适用场景
 
@@ -141,6 +151,13 @@ if prompt := st.chat_input("说点什么"):
 - 复杂前端交互（拖拽 / 富文本编辑器 / 自定义动画）——要写 [[react]] Component 嵌入，复杂度反超传统栈
 - 高并发面向 C 端——单脚本进程模型不擅长万级 QPS
 - SEO / 公开内容站——SPA 渲染对搜索引擎不友好，应转 Astro / Next.js
+
+## 历史小故事（可跳过）
+
+- **2018 年**：Treuille / Teixeira / Kelly 离开 Uber 后开始做 Streamlit，目标是让数据科学家用纯 Python 交付可交互页面
+- **2019 年 10 月**：开源公开，迅速成为 ML demo 与内部工具的默认选项之一
+- **2022 年 3 月**：Snowflake 以约 8 亿美元收购，产品继续 Apache-2.0 开源
+- **之后**：`st.chat_*`、多页导航与组件生态把原型从报表推到 LLM 对话应用
 
 ## 学到什么
 
@@ -166,3 +183,7 @@ if prompt := st.chat_input("说点什么"):
 - [[fastapi]] —— 真正后端 API 场景的下一步，Streamlit 跨过去用 FastAPI
 - [[jupyter-notebook]] —— Streamlit 思维上从 Notebook 演化而来
 - [[react]] —— Streamlit 前端的实现栈
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

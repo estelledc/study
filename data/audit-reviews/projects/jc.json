@@ -1,0 +1,93 @@
+{
+  "slug": "jc",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "文本→JSON 翻译类比清楚；六案例逐步可跟；缺『反向链接』段不影响零基础主线阅读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ansible filter 现名是 community.general.jc，不是 from_jc；『为什么重要』里的 from_jc 应改正（案例 5 写法已正确）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "管道/magic/Ansible 案例可跟；macOS 字段/版本漂移/50ms 启动踩坑具体；自带 --json 与流式边界清楚。建议顺手修 from_jc 命名。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "文本→JSON 翻译类比清楚；六案例逐步可跟；缺『反向链接』段不影响零基础主线阅读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Ansible filter 现名是 community.general.jc，不是 from_jc；『为什么重要』里的 from_jc 应改正（案例 5 写法已正确）。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "管道/magic/Ansible 案例可跟；macOS 字段/版本漂移/50ms 启动踩坑具体；自带 --json 与流式边界清楚。建议顺手修 from_jc 命名。"
+      ]
+    }
+  ],
+  "refine_round": 1,
+  "sections_modified": [
+    "## 为什么重要",
+    "## 历史小故事（可跳过）",
+    "## 学到什么",
+    "## 反向链接"
+  ],
+  "unresolved_hints": []
+}

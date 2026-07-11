@@ -1,0 +1,114 @@
+{
+  "slug": "litellm-proxy",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "总机类比与五块原语对零基础很友好；三案例步骤清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2024 年初：进入 Y Combinator W23』年代错位：W23 是 Winter 2023，应改为 2023 年。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Netflix、Adobe、Lemonade』中 Netflix 未见官方常列客户；宜改为 YC/官网常见表述（如 Adobe、Lemonade、Samsara）并加『公开提到』限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "config/fallback/virtual key 可跟做；踩坑与 <50ms / 单厂商不适用边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "总机类比与五块原语对零基础很友好；三案例步骤清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "『2024 年初：进入 Y Combinator W23』年代错位：W23 是 Winter 2023，应改为 2023 年。",
+        "『Netflix、Adobe、Lemonade』中 Netflix 未见官方常列客户；宜改为 YC/官网常见表述（如 Adobe、Lemonade、Samsara）并加『公开提到』限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "config/fallback/virtual key 可跟做；踩坑与 <50ms / 单厂商不适用边界量化清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true
+}

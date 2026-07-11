@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 CFL、Gauss-Seidel 首次出现时可各加半句日常桥接，零基础读者否则会卡一下"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「所有游戏烟雾…骨架都是这 4 步」略绝对，现代影视/游戏常混用 FLIP/MPM；可改成「大量实时烟雾 demo 与早期工业求解器」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一条量化边界（如典型网格 64³–256³、实时 dt 远大于 CFL）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点里 CFL、Gauss-Seidel 首次出现时可各加半句日常桥接，零基础读者否则会卡一下"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「所有游戏烟雾…骨架都是这 4 步」略绝对，现代影视/游戏常混用 FLIP/MPM；可改成「大量实时烟雾 demo 与早期工业求解器」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可补一条量化边界（如典型网格 64³–256³、实时 dt 远大于 CFL）"
+      ]
+    }
+  ]
+}

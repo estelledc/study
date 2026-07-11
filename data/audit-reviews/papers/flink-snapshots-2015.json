@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "RocksDB / SST 首次出现可补一句「排序字符串表文件」桥接；不影响主线跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「不丢数据也不重算」易误导：故障恢复会从 checkpoint 之后重放输入；应改为「不丢不重 / exactly-once」或「从快照接着算」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「watermark、event time 都借用了 barrier 思想」过满：watermark 主要来自 Dataflow 系；宜写成「同类的流内标记手法」，避免归因到本篇。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界已有 MB/GB/TB 量级，可再点明 alignment 超时常见阈值或并行度相关调参入口；当前已够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "RocksDB / SST 首次出现可补一句「排序字符串表文件」桥接；不影响主线跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「不丢数据也不重算」易误导：故障恢复会从 checkpoint 之后重放输入；应改为「不丢不重 / exactly-once」或「从快照接着算」。",
+        "「watermark、event time 都借用了 barrier 思想」过满：watermark 主要来自 Dataflow 系；宜写成「同类的流内标记手法」，避免归因到本篇。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界已有 MB/GB/TB 量级，可再点明 alignment 超时常见阈值或并行度相关调参入口；当前已够用。"
+      ]
+    }
+  ]
+}

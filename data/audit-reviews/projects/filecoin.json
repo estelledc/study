@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "仓库+摄像头类比贴合；PoRep/PoSt/EC 均有日常桥接，密封「慢函数」对零基础略抽象但不挡主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「规则全部写在智能合约里」对早期 built-in actor 略满，FVM 之后更贴；PoRep/PoSt/EC 与 24h proving period 教学压缩可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "lotus daemon/deal/miner-worker 三案例可跟读；32 GiB 扇区、128 GB 内存、deal 耗时等边界具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "仓库+摄像头类比贴合；PoRep/PoSt/EC 均有日常桥接，密封「慢函数」对零基础略抽象但不挡主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「规则全部写在智能合约里」对早期 built-in actor 略满，FVM 之后更贴；PoRep/PoSt/EC 与 24h proving period 教学压缩可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "lotus daemon/deal/miner-worker 三案例可跟读；32 GiB 扇区、128 GB 内存、deal 耗时等边界具体。"
+      ]
+    }
+  ]
+}

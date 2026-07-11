@@ -58,6 +58,8 @@ ct2-transformers-converter \
 
 转换完成后磁盘上是一个目录，里面有 `model.bin`（权重）+ `config.json`（结构描述）+ tokenizer 文件。**和原版同名但体积砍到 1/4**。
 
+**逐部分解释**：converter 只做一次离线转换；`--model` 指原始 HuggingFace 权重；`--quantization int8` 决定运行时用 8 位整数加载权重。线上服务只读转换后的目录，不再依赖 PyTorch 计算图。
+
 ### 案例 2：用 Python API 跑批量翻译
 
 ```python
@@ -95,6 +97,8 @@ segments, info = model.transcribe('audio.mp3', beam_size=5)
 | faster-whisper | INT8 + batch=8 | 0m16s | 同上 |
 
 **同一份模型权重**，runtime 换掉 → 2-4 倍加速 + 35% 显存下降。这就是 CT2 的杀伤力。
+
+**逐部分解释**：`compute_type='int8_float16'` 表示权重用 INT8 压缩、部分计算保持 FP16；`beam_size=5` 是搜索候选数，越大越稳但越慢；返回的 `segments` 是一段段字幕，`info` 里有语言和时长等元信息。
 
 ## 踩过的坑
 
@@ -152,3 +156,7 @@ segments, info = model.transcribe('audio.mp3', beam_size=5)
 - [[quantization]] —— INT8 / INT4 量化的理论基础
 - [[onnx]] —— 另一种"模型 IR"思路，覆盖更广但 Transformer 优化更浅
 - [[vllm]] —— LLM serving 的另一选择，定位互补不冲突
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

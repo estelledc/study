@@ -22,7 +22,7 @@ sed 's/before/after/g' file
 sd before after file
 ```
 
-少了一个 `s/`、少了一个尾巴的 `/g`、少了一堆斜杠。语法是 JavaScript / Python 那种正则，不是 sed 自家的怪方言。它是 Rust 写的，速度比 GNU sed 快大约 12 倍，常跟 `ripgrep` `fd` `bat` 一起出现在"现代 CLI 全家桶"推荐里。
+少了一个 `s/`、少了一个尾巴的 `/g`、少了一堆斜杠。语法是 JavaScript / Python 那种正则，不是 sed 自家的怪方言。它是 Rust 写的；README 基准里**正则替换**可比 GNU sed 快约 12 倍（简单字面量替换大约 2 倍），常跟 `ripgrep` `fd` `bat` 一起出现在"现代 CLI 全家桶"推荐里。
 
 ## 为什么重要
 
@@ -110,15 +110,16 @@ fd --type file --extension ts --exec sd 'from "react"' 'from "preact"'
 **不适用**：
 
 - 不只想替换，还想做删除行 / 插入行 / 条件跳转——sed 的 `d` `a` `i` `b` 命令 sd 没有，老老实实用 sed 或 awk
+- 需要匹配跨行（换行符、多行块）却忘了加 `-A`/`--across`——默认按行处理，跨行模式才吃 `\n`
 - 多文件需要事务性回滚——sd 不带原子性，错了就要 git 救
 - 二进制文件 / 编码非 UTF-8 的旧文本——sd 不处理这些边界，需要先转码
 
 ## 历史小故事（可跳过）
 
-- **2018 年**：Mihail Konda（chmln）开始写 sd，动机是被 sed 的反斜杠和方言折磨够了
+- **2018 年**：Gregory（GitHub: chmln）开始写 sd，动机是被 sed 的反斜杠和方言折磨够了
 - **2019-2020 年**：sd 进入"现代 Rust CLI 全家桶"推荐列表，常与 `ripgrep` `fd` `bat` 并列
 - **2022 年前后**：dotfiles 社区里 alias `sed=sd` 的人多起来，但 sd 维持只做替换的克制
-- **2026 年**：GitHub 6.5k+ star，进了 awesome-rust 必收名单，但仍未试图覆盖 sed 的"流编辑器"全部能力
+- **2026 年**：GitHub 7k+ star，进了 awesome-rust 必收名单，但仍未试图覆盖 sed 的"流编辑器"全部能力
 
 它的故事也是 Rust CLI 生态的缩影：不重写 GNU 老兵的全部功能，**只做最常用的那 20%，把它做到极致**。
 

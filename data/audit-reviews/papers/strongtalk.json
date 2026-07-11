@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 可再补 2-3 步「为什么自动符合 protocol」的逐步拆解，更贴近标杆笔记的逐部分解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「TypeScript 1.0 设计文档明确提到借鉴 optional typing」略偏硬；可改为受 optional/pluggable typing 思路影响，避免过度坐实出处"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，若能各补一条更可量化的工程信号（如迁移成本、检查覆盖）会更稳"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 可再补 2-3 步「为什么自动符合 protocol」的逐步拆解，更贴近标杆笔记的逐部分解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「TypeScript 1.0 设计文档明确提到借鉴 optional typing」略偏硬；可改为受 optional/pluggable typing 思路影响，避免过度坐实出处"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用边界清楚，若能各补一条更可量化的工程信号（如迁移成本、检查覆盖）会更稳"
+      ]
+    }
+  ]
+}

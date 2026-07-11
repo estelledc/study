@@ -1,0 +1,131 @@
+{
+  "slug": "lora",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "教材便签/桌布窄布带类比贯穿全文，零基础能抓住「不改原书只贴便签」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "W / ΔW / r / alpha 首次出现有桥接；Wq/Wv 可再补半句「注意力里查问题与取值的两块矩阵」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有逐部分解释，参数量对比与 merge 步骤可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Hu/Shen/Wallis LoRA arXiv 2021（2106.09685）正确；冻结 W、ΔW=BA、推理合并与论文 §3 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GPT-3 175B 上 Wq+Wv、r=1..8 有效等叙述与论文实验方向一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Intrinsic Dimensionality / Prefix-Tuning / QLoRA 时间线合理，无硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "LoRALinear / 参数量对比 / merge_lora 概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "r 过大、只改 Wq、冻结仍吃激活显存、多 adapter 冲突等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可再补一条「r 与可训参数量级」的量化提示"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "教材便签/桌布窄布带类比贯穿全文，零基础能抓住「不改原书只贴便签」",
+        "W / ΔW / r / alpha 首次出现有桥接；Wq/Wv 可再补半句「注意力里查问题与取值的两块矩阵」",
+        "三个案例都有逐部分解释，参数量对比与 merge 步骤可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Hu/Shen/Wallis LoRA arXiv 2021（2106.09685）正确；冻结 W、ΔW=BA、推理合并与论文 §3 一致",
+        "GPT-3 175B 上 Wq+Wv、r=1..8 有效等叙述与论文实验方向一致",
+        "Intrinsic Dimensionality / Prefix-Tuning / QLoRA 时间线合理，无硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "LoRALinear / 参数量对比 / merge_lora 概念正确可跟做",
+        "r 过大、只改 Wq、冻结仍吃激活显存、多 adapter 冲突等坑具体可操作",
+        "适用/不适用边界清楚；可再补一条「r 与可训参数量级」的量化提示"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}

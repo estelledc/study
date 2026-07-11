@@ -39,10 +39,10 @@ Stonebraker 的论证可以拆成 **三步**：
 
 ### 案例 1：拆传统 RDBMS 的 CPU 饼图
 
-Harizopoulos-Madden-Stonebraker 2008 SIGMOD 的 Shore DBMS 测出来的数据，跑 TPC-C 的 New-Order 事务：
+Harizopoulos-Madden-Stonebraker 2008 SIGMOD 用 Shore（一个教学/研究用的开源数据库引擎）跑 TPC-C（模拟超市下单的标准考卷）的 New-Order 事务，量出大致这样的 CPU 账单：
 
 ```
-日志（log manager）        ~25%   写 WAL，强刷盘
+日志（log manager）        ~25%   写 WAL（崩溃前先记账的流水），强刷盘
 加锁（lock manager）        ~20%   两阶段锁的获取/释放
 闩锁（latch / mutex）       ~15%   B-tree 节点、锁表、缓冲池的短互斥
 缓冲池（buffer manager）   ~35%   把 page 从磁盘换进内存、LRU 替换
@@ -51,8 +51,8 @@ Harizopoulos-Madden-Stonebraker 2008 SIGMOD 的 Shore DBMS 测出来的数据，
 
 **逐部分解释**：
 
-- 这个测试是把 TPC-C 数据全部放进内存（避免磁盘 I/O 干扰），结果纯 CPU 还是只有 5% 在干正事
-- 砍掉前四块的任意一块，性能立刻翻倍；全砍掉，理论上能 20 倍
+- 这个测试是把 TPC-C 数据全部放进内存（避免磁盘 I/O 干扰），结果纯 CPU 还是只有约 5% 在干正事
+- Stonebraker 在 CACM 里写得很清楚：去掉一块大约只快 25%；去掉三块上限约 2×；四块全砍，Looking Glass 测到约 20×
 - 这张饼图是 Stonebraker 整篇文章的杀手锏证据，后来被无数 NewSQL 论文引用
 
 ### 案例 2：H-Store 怎么砍掉这四块
@@ -101,7 +101,7 @@ NoSQL 论点 C：扩展更容易
 
 **适用 Stonebraker 路线（NewSQL）**：
 - OLTP 工作负载（短事务、高并发、强一致）→ VoltDB / TiDB / CockroachDB
-- 数据量能放进多机内存（几十 TB 量级，分区到 100+ 节点上）
+- 数据量能放进**多机内存总和**（几十 TB 是集群合计，不是单机）
 - 业务上 90% 事务能落到单分区——典型如电商订单按用户分片、银行账户按账号分片
 
 **不适用（NoSQL 还是有它的位置）**：
@@ -114,7 +114,7 @@ NoSQL 论点 C：扩展更容易
 
 - **2006-2008 年**：Google BigTable、Amazon Dynamo、Facebook Cassandra 相继公布，社区开始喊"SQL 已死"
 - **2008 年 SIGMOD**：Harizopoulos-Madden-Stonebraker 发表 *OLTP Through the Looking Glass*，第一次定量拆出 96%/4% 那张饼图
-- **2008 年 VLDB**：Stonebraker 团队发表 H-Store 设计，证明砍掉四块开销可以 50-100 倍快
+- **2007 年 VLDB**：Stonebraker 团队发表 H-Store 设计（*The End of an Architectural Era*），证明砍掉四块开销可以数量级加速
 - **2010 年 4 月**：本文在 CACM Viewpoint 发表，2 页短文，成为 NewSQL 阵营的公开宣言
 - **2011 年**：分析师 Matt Aslett 创造"NewSQL"标签，VoltDB / Clustrix / NuoDB 进场
 - **2012 年**：Google Spanner 论文出来，证明大规模 SQL + ACID 真的能跑
@@ -131,7 +131,7 @@ NoSQL 论点 C：扩展更容易
 - 原文 PDF：[SQL Databases v. NoSQL Databases](https://cacm.acm.org/magazines/2010/4/81481-sql-databases-v-nosql-databases/fulltext)（CACM 2010, 2 页）
 - 杀手证据论文：[OLTP Through the Looking Glass](https://hstore.cs.brown.edu/papers/hstore-lookingglass.pdf)（Harizopoulos-Madden-Stonebraker SIGMOD 2008，那张饼图的出处）
 - H-Store 设计：[The End of an Architectural Era](https://hstore.cs.brown.edu/papers/hstore-endofera.pdf)（VLDB 2007，单线程分区 + 内存常驻的完整设计）
-- 视频：[Andy Pavlo CMU 15-721 — In-Memory Databases](https://www.youtube.com/watch?v=watch?v=15-721)（CMU 数据库公开课讲 H-Store 的那一节）
+- 视频：[Andy Pavlo CMU 15-721 — In-Memory Databases](https://www.youtube.com/watch?v=QKNISiRJF-4)（CMU 数据库公开课讲内存库 / H-Store 背景的那一节）
 - [[cassandra-2010]] —— Stonebraker 反对的典型 NoSQL 系统之一
 - [[spanner-2012]] —— Google 用大规模 SQL + ACID 实证 Stonebraker 路线
 

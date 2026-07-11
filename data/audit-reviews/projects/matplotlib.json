@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 使用了未定义的 x/y1/y2，零基础读者无法跟做；建议补 3 行示例数据"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 用了 np 但未 import numpy，建议补全"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 反向链接 占位段，结构与模板不一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「constrained_layout=True 是 1.x 起新求解器」年代略笼统；实际约 2.2 实验、3.x 推荐，可弱化表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/2 不是可跟做的最小完整片段：缺数据定义与 numpy import"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界写得很具体，修好案例即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 使用了未定义的 x/y1/y2，零基础读者无法跟做；建议补 3 行示例数据",
+        "案例 2 用了 np 但未 import numpy，建议补全",
+        "缺少 ## 反向链接 占位段，结构与模板不一致"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「constrained_layout=True 是 1.x 起新求解器」年代略笼统；实际约 2.2 实验、3.x 推荐，可弱化表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2 不是可跟做的最小完整片段：缺数据定义与 numpy import",
+        "踩坑与适用边界写得很具体，修好案例即可"
+      ]
+    }
+  ]
+}

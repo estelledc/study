@@ -1,0 +1,143 @@
+{
+  "slug": "nivo",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史与生态",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史与生态",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "d3 零件→成品玩具类比贴合，props 进 svg 出能懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "标准段应用「历史小故事」而非「历史与生态」；缺「反向链接」占位，零基础对照模板会迷路"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「与同类对比」挤占模板位，宜并入学到什么/延伸阅读；案例 1 的 data 未给出样例行"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 plouc/nivo、作者 Raphael Benitte、d3+React 分工叙述与项目定位一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SVG vs Canvas、SSR 用固定尺寸 Bar 等技术事实正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约 13k star」「三巨头」偏概括，可保留但勿写成官方排名"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ResponsiveBar / Canvas / SSR Bar 示例概念正确；案例 1 宜给具体 data 数组"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "按需 import、父容器高度 0、Canvas e2e、theme 不跟 dark mode 等坑具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "几百/几千/上万点的量化边界清楚；refine 时补齐反向链接并统一历史段标题"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史与生态",
+      "fix_hints": [
+        "d3 零件→成品玩具类比贴合，props 进 svg 出能懂",
+        "标准段应用「历史小故事」而非「历史与生态」；缺「反向链接」占位，零基础对照模板会迷路",
+        "「与同类对比」挤占模板位，宜并入学到什么/延伸阅读；案例 1 的 data 未给出样例行"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史与生态",
+      "fix_hints": [
+        "来源 plouc/nivo、作者 Raphael Benitte、d3+React 分工叙述与项目定位一致",
+        "SVG vs Canvas、SSR 用固定尺寸 Bar 等技术事实正确",
+        "「约 13k star」「三巨头」偏概括，可保留但勿写成官方排名"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "ResponsiveBar / Canvas / SSR Bar 示例概念正确；案例 1 宜给具体 data 数组",
+        "按需 import、父容器高度 0、Canvas e2e、theme 不跟 dark mode 等坑具体有用",
+        "几百/几千/上万点的量化边界清楚；refine 时补齐反向链接并统一历史段标题"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事",
+      "## 学到什么",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "summary": "历史与生态→历史小故事；并入与同类对比；案例1补data；补反向链接占位"
+  }
+}

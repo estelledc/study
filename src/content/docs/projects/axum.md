@@ -182,36 +182,3 @@ let app = Router::new()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
-- [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
-- [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
-- [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
-- [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
-- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
-- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-- [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
-- [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
-- [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
-- [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
-- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
-- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
-- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
-- [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
-- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
-- [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
-- [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
-- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
-- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-- [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
-- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-

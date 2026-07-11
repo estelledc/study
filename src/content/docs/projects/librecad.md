@@ -133,7 +133,7 @@ c=\a;\b;kill
 - **QCAD 社区版背景**：LibreCAD 从 QCAD community edition 演化出来，目标是保留免费开源的 2D CAD 路线。
 - **Qt 跨平台路线**：项目用 Qt 做界面，所以同一套应用能覆盖 Windows / macOS / Linux。
 - **DXF / DWG 能力逐步增强**：README 提到关联项目 `libdxfrw`，负责 DXF 和 DWG 文件读写能力。
-- **社区维护节奏**：仓库长期维护，GitHub stars 量级约 2.2k，issue 和 release 仍在更新。
+- **社区维护节奏**：仓库长期维护，GitHub stars 量级约 6.1k，issue 和 release 仍在更新。
 - **分支承接历史包袱**：2.1、2.2、2.2.1、2.2.2 分别对应不同 Qt 时代，说明桌面 CAD 软件维护周期很长。
 
 ## 学到什么

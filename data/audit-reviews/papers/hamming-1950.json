@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「症状向量」首次出现可再补半句日常桥接；不影响跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Hamming(72,64) 说成「Hamming(8,4) 的工业升级版」是教学类比，可接受；Google 2009 的「每 GB 每年几万次」略偏高（量级更接近数千），但不构成硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "手算 Hamming(7,4) 编码/纠错步骤可跟做；适用边界已给出替代码族，足够通过。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「症状向量」首次出现可再补半句日常桥接；不影响跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "把 Hamming(72,64) 说成「Hamming(8,4) 的工业升级版」是教学类比，可接受；Google 2009 的「每 GB 每年几万次」略偏高（量级更接近数千），但不构成硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "手算 Hamming(7,4) 编码/纠错步骤可跟做；适用边界已给出替代码族，足够通过。"
+      ]
+    }
+  ]
+}

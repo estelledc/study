@@ -47,7 +47,7 @@ score(Q, D) = Σ  IDF(qi) · ((k1+1) · tf) / (k1·(1-b+b·dl/avgdl) + tf)
              qi∈Q
 ```
 
-**典型参数**：k1 ∈ [1.2, 2.0]，b = 0.75。这两个值不是后人调的，是 1994 论文本身在 TREC-2 数据上跑出来的范围。
+**典型参数**：k1 ∈ [1.2, 2.0]，b = 0.75。论文在 TREC 实验里给出了这个常用范围，后世系统多沿用为默认起点（仍可按语料微调）。
 
 ## 实践案例
 
@@ -128,7 +128,8 @@ tf=50 → 2.43  （后面基本不动了）
 - **80 年代末**：City University London 开 Okapi 项目，BM1、BM11、BM15 一路试。
 - **1994 年**：Robertson + Walker 发本论文，BM25 定型。
 - **1995 年**：TREC-3 评测里 BM25 压倒一切，成新 baseline。
-- **2009 年**：Lucene 把默认排序从 TF-IDF 改成 BM25；Robertson 写综述《Probabilistic Relevance Framework: BM25 and Beyond》。
+- **2009 年**：Robertson 写综述《Probabilistic Relevance Framework: BM25 and Beyond》。
+- **2016 年**：Lucene 6.0 把默认相似度从 TF-IDF 换成 BM25（LUCENE-6789）。
 - **2020s**：RAG 兴起，BM25 + dense 的 hybrid 重新主流化。
 
 ## 学到什么
@@ -151,3 +152,7 @@ tf=50 → 2.43  （后面基本不动了）
 - [[bm25-okapi]] —— 同主题工程视角；本篇是论文推导视角，互补不重复
 - [[salton-vsm-1975]] —— Salton 1975 把检索建模成几何问题；BM25 走概率路线
 - [[rrf-cormack-2009]] —— BM25 召回 + dense 召回常用倒数排名融合
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

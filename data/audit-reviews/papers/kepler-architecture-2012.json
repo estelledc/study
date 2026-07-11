@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工厂工坊类比贴合 SMX/Hyper-Q/Dynamic Parallelism；硅片数字有桥接。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例有代码与后文说明，但案例 1 的 AlexNet 未定义，案例 3 缺更明确的逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Fermi SM 是 2 个 warp scheduler，不是「1 调度器」；应改为 2。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 用 `__shfl_xor_sync` 是 Volta/CUDA 9 才引入的同步版；Kepler 原语是 `__shfl_xor`，应改回或注明时代差异。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「CUDA Graphs 雏形」「MPS 都源自 Kepler」偏绝对：Hyper-Q/DP 是硬件前提，Graphs/MPS 是后续软件栈，宜弱化为谱系表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 `__shfl_xor_sync` 在 Kepler 时代不可用，应改为 `__shfl_xor` 并注明现代代码用 `_sync`。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 AlexNet 未导入，宜标成示意或补最小占位；踩坑（GK104/K80 双 GPU/DP 开销/CUDA 12）具体有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工厂工坊类比贴合 SMX/Hyper-Q/Dynamic Parallelism；硅片数字有桥接。",
+        "案例有代码与后文说明，但案例 1 的 AlexNet 未定义，案例 3 缺更明确的逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Fermi SM 是 2 个 warp scheduler，不是「1 调度器」；应改为 2。",
+        "案例 3 用 `__shfl_xor_sync` 是 Volta/CUDA 9 才引入的同步版；Kepler 原语是 `__shfl_xor`，应改回或注明时代差异。",
+        "「CUDA Graphs 雏形」「MPS 都源自 Kepler」偏绝对：Hyper-Q/DP 是硬件前提，Graphs/MPS 是后续软件栈，宜弱化为谱系表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 `__shfl_xor_sync` 在 Kepler 时代不可用，应改为 `__shfl_xor` 并注明现代代码用 `_sync`。",
+        "案例 1 AlexNet 未导入，宜标成示意或补最小占位；踩坑（GK104/K80 双 GPU/DP 开销/CUDA 12）具体有用。"
+      ]
+    }
+  ]
+}

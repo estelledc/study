@@ -69,27 +69,37 @@ Account >> deposit: amount
     balance := balance + amount.
     ^ self.
 
-SavingsAccount subclass: #Account
+Account subclass: #SavingsAccount
     instanceVariableNames: 'rate'.
 
 SavingsAccount >> deposit: amount
     super deposit: amount.
     balance := balance + (amount * rate).
+    ^ self.
 ```
 
-`super deposit: amount` 意思是"找父类（Account）的 deposit 方法跑一遍"。子类可以在父类基础上加东西，这就是**继承 + 覆盖**。
+读法：
+
+- `Object subclass: #Account`：在 Object 下新建 Account 类，实例有 `balance`
+- `Account subclass: #SavingsAccount`：SavingsAccount **继承** Account，再多一个 `rate`（利息比例）
+- `super deposit: amount`：先跑父类的 deposit（把本金加进 balance），再按 `amount * rate` 加一笔奖励利息
+- 这就是**继承 + 覆盖**：子类改写同名方法，但还能用 `super` 复用父类逻辑
 
 ### 案例 3：live coding 改类立刻生效
 
+假设系统里已有 `a := Account new`，且 `a deposit: 100` 跑过。打开浏览器，把 `Account>>deposit:` 从：
+
 ```smalltalk
-"打开浏览器，找到 Account 类的 deposit 方法"
-"原本是 balance := balance + amount."
-"改成 balance := balance + amount + 1."
-"保存——所有已经存在的 Account 实例下次调 deposit 都加 1 了"
+balance := balance + amount.
 ```
 
-不需要重启程序，不需要重建对象。Smalltalk VM 会把方法字典里的指针换成新版本，下次发消息走新路径。
+改成：
 
+```smalltalk
+balance := balance + amount + 1.
+```
+
+保存后，**同一个** `a` 再发 `deposit: 100` 就会多加 1——不用重启、不用 `Account new`。VM 只是把方法字典里的指针换成新版本，下次消息走新路径。
 ## 踩过的坑
 
 1. **image 越用越大**：所有"忘记的对象"和"半成品代码"都留在 image 里，几个月后 image 从 30 MB 涨到 500 MB。现代 Pharo 用 Iceberg（git 集成）+ 干净启动 image 缓解。
@@ -98,7 +108,7 @@ SavingsAccount >> deposit: amount
 
 3. **部署到生产困难**：image 包含 IDE / 调试器 / 临时变量——直接丢服务器上既臃肿又危险。要专门做 strip image 工具，剔除生产不需要的部分。
 
-4. **性能慢**：每次 send 都要查方法字典，1980s 比 C 慢 10 倍。1986 年 Self 发明 inline cache（缓存上次查到的方法），后来直接传给 V8 / HotSpot 用——你今天的 JS 引擎跑得快，要谢 Smalltalk 团队的后人。
+4. **性能慢**：每次 send 都要查方法字典，1980s 比 C 慢约 10 倍。Self（约 1986）发明 inline cache；经 Self / Strongtalk 一脉，同样思路进了 HotSpot 与 V8——今天 JS 引擎快，有这条血脉的功劳。
 
 ## 适用 vs 不适用场景
 

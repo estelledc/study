@@ -68,27 +68,14 @@ rg --json "TODO" | jq -r 'select(.type=="match") | .data.path.text' | sort -u | 
 ### 案例 3：和 [[fd]] 配合批量改 JSON
 
 ```bash
-fd -e json . config/ -x jq '.version = "2.0"' {} \; > /tmp/out.json
+# 预览：改 version 后打印到 stdout（不写盘）
+fd -e json . config/ -x jq '.version = "2.0"' {}
+
+# 就地写回：先写临时文件再 mv（fd 的 -x 不需要 find 那种 \;）
+fd -e json . config/ -x sh -c 'jq ".version = \"2.0\"" "$1" > "$1.tmp" && mv "$1.tmp" "$1"' _ {}
 ```
 
-fd 找出所有 .json 文件，jq 修改字段。这种"批量 JSON 迁移"在配置文件升级场景几乎只有 jq 能写得短。
-
-### 案例 4：聚合分组
-
-```bash
-jq 'group_by(.city) | map({city: .[0].city, count: length})' users.json
-```
-
-按城市分组、统计每组人数——一行 SQL `GROUP BY` 等价物。如果改用 Python，至少要 5-6 行：开文件 → json.load → defaultdict(int) → for 循环 → 输出。jq 的 DSL 把这种"读、聚合、回写"压成一个表达式。
-
-### 案例 5：递归找字段
-
-```bash
-jq '.. | objects | select(has("email")) | .email' big-config.json
-```
-
-`..` 是递归下降，类似 XPath `//`——在任意嵌套深度找含 `email` 字段的对象，然后取出 email。配置文件迁移、敏感字段审计常用这一招。
-
+fd 找出所有 .json，jq 改字段。注意：不要把多文件输出重定向到同一个 `/tmp/out.json`——那会糊成一份；要改原文件就按上面"临时文件 + mv"。
 ## 踩过的坑
 
 1. **shell 引号**：表达式必须**单引号**包起来（`'.foo'`），用双引号会被 shell 把 `$` 和反引号展开。新人 80% 的"jq 报错"都是引号问题。

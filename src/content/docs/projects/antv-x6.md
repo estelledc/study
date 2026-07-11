@@ -162,3 +162,7 @@ port + manhattan 走线，画出来就是 BPMN / DAG 的标准观感——边从
 - [[d3]] —— SVG 数据驱动祖师，X6 内部很多 DOM 操作思路与 d3-selection 类似
 - [[echarts]] —— graph series 是轻量替代，但不可编辑
 - [[3d-force-graph]] —— 3D 视角的图可视化路线
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

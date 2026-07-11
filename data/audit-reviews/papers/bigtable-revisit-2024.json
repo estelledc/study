@@ -1,0 +1,89 @@
+{
+  "slug": "bigtable-revisit-2024",
+  "area": "papers",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.56,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter / ## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    "原稿是通用占位内容，缺少 Bigtable 的三维数据模型、tablet 分片、row-key 热点等核心解释。",
+    "来源字段和正文事实不匹配，需改为有据可查的 Bigtable 2006 / 二十年回顾 / 2024 云服务更新。",
+    "实践案例没有代码或逐步解释，需补 row key、热点分桶、在线/分析隔离等可跟做示例。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例是泛化模板，没有 Bigtable 专属步骤、代码或逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 1,
+        "no_distortion": 2
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "frontmatter / ## 是什么",
+      "fix_hints": [
+        "来源写成 arxiv abs/2026 且正文没有对应论文事实，需重建为真实 Bigtable 资料。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺少可执行或可复现的工程例子，踩坑和适用边界都是通用话术。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 169,
+    "reasons": []
+  },
+  "rewrite": {
+    "status": "completed",
+    "sections_modified": [
+      "all"
+    ],
+    "unresolved_hints": []
+  }
+}

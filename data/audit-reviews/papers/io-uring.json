@@ -1,0 +1,123 @@
+{
+  "slug": "io-uring",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 解释够用但未标「逐部分解释」；SQPOLL/multishot 对零基础略陡，可接受。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "PostgreSQL 的 io_method（含 io_uring）是 18 引入，不是 17；且默认是 worker，不是 io_uring。笔记多处写「PG17 默认异步 IO 后端」属事实硬伤。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Tokio 也不把 io_uring 当默认 runtime（tokio-uring 为可选）；应改为「支持/可选」而非「默认后端」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Axboe 白皮书 2019、Linux 5.1 mainline、SQ/CQ/SQPOLL 叙述正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "liburing 风格示例概念正确；SQE union/CQE 乱序/SQPOLL 烧核/老 kernel 退化踩坑具体；适用边界有量化。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2 解释够用但未标「逐部分解释」；SQPOLL/multishot 对零基础略陡，可接受。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "PostgreSQL 的 io_method（含 io_uring）是 18 引入，不是 17；且默认是 worker，不是 io_uring。笔记多处写「PG17 默认异步 IO 后端」属事实硬伤。",
+        "Tokio 也不把 io_uring 当默认 runtime（tokio-uring 为可选）；应改为「支持/可选」而非「默认后端」。",
+        "Axboe 白皮书 2019、Linux 5.1 mainline、SQ/CQ/SQPOLL 叙述正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "liburing 风格示例概念正确；SQE union/CQE 乱序/SQPOLL 烧核/老 kernel 退化踩坑具体；适用边界有量化。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 168,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 168,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：PostgreSQL io_method/io_uring 属 18 而非 17，且默认是 worker；Tokio 亦非默认后端。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 历史小故事",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}

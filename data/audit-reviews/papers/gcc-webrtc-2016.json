@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "高速公路类比贴合；卡尔曼滤波器已有「聪明移动平均」桥接，AIMD 缩写首次可再点明中文全称一次"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「飞书会议 / 腾讯会议底层就是 GCC」过满：二者未必跑 Google GCC；应改为 Google Meet 等 WebRTC 实现，或写「同类延迟感知拥塞控制」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Carlucci et al. MMSys 2016、Politecnico di Bari 逆向分析叙述与来源一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例偏场景叙述但 chrome://webrtc-internals 可跟做；适用边界有 <400ms、<100kbps 等量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "高速公路类比贴合；卡尔曼滤波器已有「聪明移动平均」桥接，AIMD 缩写首次可再点明中文全称一次"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「飞书会议 / 腾讯会议底层就是 GCC」过满：二者未必跑 Google GCC；应改为 Google Meet 等 WebRTC 实现，或写「同类延迟感知拥塞控制」",
+        "Carlucci et al. MMSys 2016、Politecnico di Bari 逆向分析叙述与来源一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例偏场景叙述但 chrome://webrtc-internals 可跟做；适用边界有 <400ms、<100kbps 等量化"
+      ]
+    }
+  ]
+}

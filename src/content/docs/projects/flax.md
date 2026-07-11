@@ -29,16 +29,16 @@ logits = model.apply(params, jnp.ones((1, 784)))
 
 注意一个反直觉的设计：**`params` 是和 `model` 分开存的**——模型只是一份"配方"，参数是外面的"食材袋"。这是 Flax 函数式哲学的核心。
 
-后端是 [[jax]] + XLA，跑在 CPU / GPU / TPU。**Google DeepMind / Anthropic 的大模型训练栈都站在 Flax 上**——Gemini 前端、AlphaFold 2/3、Gemma 开源权重官方实现都是 Flax。
+后端是 [[jax]] + XLA，跑在 CPU / GPU / TPU。**Google 的大模型 JAX 栈常站在 Flax 上**（Gemma 官方实现是 Flax）；DeepMind 早期大作如 AlphaFold 2 则用姊妹库 Haiku。两者都是「JAX 上的神经网络层」，API 哲学相近。
 
 ## 为什么重要
 
 不理解 Flax，下面这些事都没法解释：
 
 - 为什么 [[jax]] 这么强还要再套一层——JAX 只卖原料，Flax 才是蛋糕
-- 为什么 DeepMind 开源的 AlphaFold / Gemma 代码看起来"参数到处传"，而 [[pytorch]] 里参数都"藏"在 `self.linear.weight`
+- 为什么 Gemma 等 Flax 代码里参数到处显式传，而 AlphaFold 2 同类写法却 import Haiku——同生态两条线
 - 为什么 Flax 2024 又推出一套全新的 `nnx` API，**和老的 `linen` 风格完全不一样**
-- 为什么大模型训练偏好 Flax 而不是 [[keras]]——Keras 3 是"跨后端最大公约数"，Flax 是"为 JAX 量身定做"
+- 为什么大模型训练偏好 Flax 而不是 [[keras]]——Keras 3 是「跨后端最大公约数」，Flax 是「为 JAX 量身定做」
 
 ## 核心要点
 
@@ -133,9 +133,9 @@ jax.tree.map(lambda p: p.shape, params)
 ## 历史小故事（可跳过）
 
 - **2020**：Google Brain 推出 Flax，替代早期 `jax.experimental.stax`，对标 DeepMind 的 Haiku
-- **2021**：AlphaFold 2 开源，训练栈全 Flax
-- **2022-2023**：linen API 稳定，PaLM / Gemma 都用它写
-- **2024**：`nnx` 作为新一代 API 公开，定位"linen 的精神继任者"，但 linen 不会废弃——两套长期并存
+- **2021**：AlphaFold 2 开源——训练/推理栈是 **Haiku + JAX**（不是 Flax）；同生态对照很有用
+- **2022-2023**：linen API 稳定；Gemma 等 Google 开源 LLM 用 Flax；DeepMind 建议新项目改用 Flax
+- **2024**：`nnx` 作为新一代 API 公开，定位「linen 的精神继任者」，但 linen 不废弃——两套长期并存
 
 ## 学到什么
 
@@ -160,3 +160,7 @@ jax.tree.map(lambda p: p.shape, params)
 - [[tensorflow]] —— Flax 与 TF 共享 XLA 后端，但前端范式（函数式 vs 图）完全不同
 - [[pytorch-lightning]] —— PyTorch 上的训练循环抽象；Flax 的 TrainState 是 JAX 侧对应物
 - [[accelerate]] —— HuggingFace 的设备/分布式抽象；JAX 自带 sharding 不需要它
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

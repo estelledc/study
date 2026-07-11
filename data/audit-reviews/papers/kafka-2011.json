@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮局柜员 / 滚动播报机类比很强；但案例 1/2/3 仍缺「逐部分解释」，零基础看完代码块不知道每行对应论文哪一步。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 Debezium CDC 是论文之后的生态应用，教学可以保留，但应点明「这是论文扇出模型的后世落地，不是 2011 原文实验」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「永不修改、永不单删」同 kafka 笔记，建议改成不按单条消息原地改/删。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 Python 应标明示意伪代码；真实客户端里 group_id 在 Consumer 构造，不在 subscribe。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/踩坑量化清楚，修好案例标注即可。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "邮局柜员 / 滚动播报机类比很强；但案例 1/2/3 仍缺「逐部分解释」，零基础看完代码块不知道每行对应论文哪一步。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 Debezium CDC 是论文之后的生态应用，教学可以保留，但应点明「这是论文扇出模型的后世落地，不是 2011 原文实验」。",
+        "「永不修改、永不单删」同 kafka 笔记，建议改成不按单条消息原地改/删。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 Python 应标明示意伪代码；真实客户端里 group_id 在 Consumer 构造，不在 subscribe。",
+        "适用/踩坑量化清楚，修好案例标注即可。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "LEGO 说明书类比可用，但精化/Bluespec/⊑/RV32I 首次出现桥接偏短，零基础会在核心要点卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例偏概念陈述，缺少「先打开什么、再写哪几步」的跟读路径；建议至少拆开案例 1 的 bypass 证明义务"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 反向链接 占位段，与模板结构不一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「从 ISA 规约一路证到 Verilog 网表」过强：正文后文已承认 Bluespec→Verilog 未在 Coq 内证明，开头应改成证到可提取描述/经 Bluespec 出 Verilog，并标明最后一跳不在证明边界内"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "用 Spectre/Meltdown 解释 Kami 价值易误导——Kami 主攻功能精化，不覆盖推测执行侧信道；宜改成微架构正确性难验证的一般动机，或加限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 Definition 与 ⊑ 结论是示意，不是可粘贴跑通的 Kami 源码；应标明「教学示意」并补 1–2 步读者可对照仓库的跟读动作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用/不适用边界已经很具体（12K 行、物理时序、异常未覆盖），可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "LEGO 说明书类比可用，但精化/Bluespec/⊑/RV32I 首次出现桥接偏短，零基础会在核心要点卡住",
+        "案例偏概念陈述，缺少「先打开什么、再写哪几步」的跟读路径；建议至少拆开案例 1 的 bypass 证明义务",
+        "缺少 ## 反向链接 占位段，与模板结构不一致"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「从 ISA 规约一路证到 Verilog 网表」过强：正文后文已承认 Bluespec→Verilog 未在 Coq 内证明，开头应改成证到可提取描述/经 Bluespec 出 Verilog，并标明最后一跳不在证明边界内",
+        "用 Spectre/Meltdown 解释 Kami 价值易误导——Kami 主攻功能精化，不覆盖推测执行侧信道；宜改成微架构正确性难验证的一般动机，或加限定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 Definition 与 ⊑ 结论是示意，不是可粘贴跑通的 Kami 源码；应标明「教学示意」并补 1–2 步读者可对照仓库的跟读动作",
+        "踩坑与适用/不适用边界已经很具体（12K 行、物理时序、异常未覆盖），可保留"
+      ]
+    }
+  ]
+}

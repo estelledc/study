@@ -1,0 +1,140 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "作文→挂号单/化验单类比贴合 FHIR 拆分直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Patient/Condition/Observation、LOINC grounding、诊断遮蔽都有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释，零基础可跟 text-to-FHIR → 术语校验 → 遮蔽评测"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Muti/Dulout/Fu arXiv 2605.30295 MedCase-Structured 正确；作者与标题一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "有效生成率写成 82.5% 与论文不符：摘要/Table 2 为 1,732 份有效 bundle、对已处理病例约 97.1% 成功——必须改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "结构化输入诊断准确率低于纯文本、HIDDEN/NONE、SapBERT grounding 与主线一致；「三次 LLM」略简化（还有 grounding 重排等），宜对齐 Method"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Bundle/Condition JSON、terminologyStore 伪代码、HIDDEN 遮蔽配置概念正确可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（当普通 JSON、结构化更难、码幻觉、诊断泄漏）具体；可再补一条「repair loop 次数上限」但不挡通过"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：FHIR 诊断评测 vs 真实安全结论、纵向病程、影像"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "作文→挂号单/化验单类比贴合 FHIR 拆分直觉",
+        "Patient/Condition/Observation、LOINC grounding、诊断遮蔽都有白话桥接",
+        "三案例均有逐部分解释，零基础可跟 text-to-FHIR → 术语校验 → 遮蔽评测"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 Muti/Dulout/Fu arXiv 2605.30295 MedCase-Structured 正确；作者与标题一致",
+        "有效生成率写成 82.5% 与论文不符：摘要/Table 2 为 1,732 份有效 bundle、对已处理病例约 97.1% 成功——必须改正",
+        "结构化输入诊断准确率低于纯文本、HIDDEN/NONE、SapBERT grounding 与主线一致；「三次 LLM」略简化（还有 grounding 重排等），宜对齐 Method"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Bundle/Condition JSON、terminologyStore 伪代码、HIDDEN 遮蔽配置概念正确可跟读",
+        "踩坑（当普通 JSON、结构化更难、码幻觉、诊断泄漏）具体；可再补一条「repair loop 次数上限」但不挡通过",
+        "适用/不适用边界清楚：FHIR 诊断评测 vs 真实安全结论、纵向病程、影像"
+      ]
+    }
+  ],
+  "slug": "medcase-fhir",
+  "area": "papers",
+  "status": "refined",
+  "lines": 155,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 学到什么"
+    ],
+    "unresolved_hints": [],
+    "summary": "有效生成率改为 97.1%/1732；对齐分阶段 LLM+grounding 流程描述。"
+  },
+  "sections_modified": [
+    "## 是什么",
+    "## 核心要点",
+    "## 学到什么"
+  ],
+  "unresolved_hints": []
+}

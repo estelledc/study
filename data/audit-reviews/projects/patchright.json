@@ -1,0 +1,137 @@
+{
+  "slug": "patchright",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工牌访客证 vs 戴帽子 stealth 类比把 driver fork 与用户层补丁讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Runtime.enable / isolated world / CDP 有场景化解释，零基础可跟主线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 改 import + 四件套参数逐步可跑；案例 2/3 对照与向量地图具体"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub Kaliiiiiiiiii-Vinyzu/patchright 正确；ts-morph AST patcher 定位准确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "AutomationControlled / Runtime.enable / route 注入三层叙述与项目 README 路线一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「立刻能在 Cloudflare 继续工作」偏满，正文踩坑与适用已给边界，教学上可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "async_playwright + persistent_context + channel=chrome 四件套可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "console 失效、必须有头、仅 Chromium、CSP、维护者少需 pin 版本等坑可直接排障"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用反 bot 生产爬虫；不适用跨浏览器/轻度检测/合规敏感，边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "工牌访客证 vs 戴帽子 stealth 类比把 driver fork 与用户层补丁讲透",
+        "Runtime.enable / isolated world / CDP 有场景化解释，零基础可跟主线",
+        "案例 1 改 import + 四件套参数逐步可跑；案例 2/3 对照与向量地图具体"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 GitHub Kaliiiiiiiiii-Vinyzu/patchright 正确；ts-morph AST patcher 定位准确",
+        "AutomationControlled / Runtime.enable / route 注入三层叙述与项目 README 路线一致",
+        "「立刻能在 Cloudflare 继续工作」偏满，正文踩坑与适用已给边界，教学上可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "async_playwright + persistent_context + channel=chrome 四件套可跟做",
+        "console 失效、必须有头、仅 Chromium、CSP、维护者少需 pin 版本等坑可直接排障",
+        "适用反 bot 生产爬虫；不适用跨浏览器/轻度检测/合规敏感，边界量化清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

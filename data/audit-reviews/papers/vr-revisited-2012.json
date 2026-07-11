@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 viewstamp / quorum / PREPARE 堆得较密，可在首次出现时各加半句日常桥接（例如 viewstamp≈换届届数+议案编号）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文混用「恰好一次」与「at-most-once」：client table 实现的是 at-most-once（重复请求不重做），不是 exactly-once；「是什么」「适用」里的「恰好一次」应改成 at-most-once / 至多一次，与「核心要点」「学到什么」对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「收齐 f+1 个 PREPARE-OK」易被读成 backup 回了 f+1 票；论文是 primary 自计 1 票再等 f 个 PREPARE-OK。案例 1 已写「含自己」，摘要句应改成「含 primary 共 f+1」以免歪曲 quorum"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化：正常路径一轮 RTT、view change 通常 1–2 个超时周期，方便和 Raft/Paxos 选型对照"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点里 viewstamp / quorum / PREPARE 堆得较密，可在首次出现时各加半句日常桥接（例如 viewstamp≈换届届数+议案编号）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文混用「恰好一次」与「at-most-once」：client table 实现的是 at-most-once（重复请求不重做），不是 exactly-once；「是什么」「适用」里的「恰好一次」应改成 at-most-once / 至多一次，与「核心要点」「学到什么」对齐",
+        "「收齐 f+1 个 PREPARE-OK」易被读成 backup 回了 f+1 票；论文是 primary 自计 1 票再等 f 个 PREPARE-OK。案例 1 已写「含自己」，摘要句应改成「含 primary 共 f+1」以免歪曲 quorum"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用场景可补一条量化：正常路径一轮 RTT、view change 通常 1–2 个超时周期，方便和 Raft/Paxos 选型对照"
+      ]
+    }
+  ]
+}

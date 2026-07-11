@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "剧院灯光师类比把 docker→containerd→runc 链路讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "OCI bundle / namespace / cgroups / pivot_root 首次出现有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 rootless 概念清楚，可再补 2–3 步「映射 uid→进 namespace→权限等同普通用户」白话拆解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 opencontainers/runc、OCI 2015 捐出 libcontainer→runc、CVE-2019-5736 / CVE-2024-21626 时间线与机制基本正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几乎所有 Linux 容器平台最底层都是它」略绝对：部分发行版/Podman 默认 crun，教学上可改成「多数生产栈默认或可替换为 runc」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2016 年 Kubernetes 接 runc 的表述略粗（CRI/containerd/CRI-O 演进跨 2016–2017），可接受为入门时间线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 docker export + runc spec/run 可跟做；需 root/sudo 已点明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CVE 踩坑具体可操作：/proc/self/exe 覆盖、fd 泄漏 cwd 逃逸、memfd/close-on-exec 修复——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（学习/沙箱/CVE vs docker-compose/非 Linux/强隔离换 gVisor·Kata·Firecracker）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "剧院灯光师类比把 docker→containerd→runc 链路讲透，零基础直觉强",
+        "OCI bundle / namespace / cgroups / pivot_root 首次出现有桥接",
+        "案例 3 rootless 概念清楚，可再补 2–3 步「映射 uid→进 namespace→权限等同普通用户」白话拆解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 opencontainers/runc、OCI 2015 捐出 libcontainer→runc、CVE-2019-5736 / CVE-2024-21626 时间线与机制基本正确",
+        "「几乎所有 Linux 容器平台最底层都是它」略绝对：部分发行版/Podman 默认 crun，教学上可改成「多数生产栈默认或可替换为 runc」",
+        "2016 年 Kubernetes 接 runc 的表述略粗（CRI/containerd/CRI-O 演进跨 2016–2017），可接受为入门时间线"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 docker export + runc spec/run 可跟做；需 root/sudo 已点明",
+        "CVE 踩坑具体可操作：/proc/self/exe 覆盖、fd 泄漏 cwd 逃逸、memfd/close-on-exec 修复——保留",
+        "适用/不适用边界清楚（学习/沙箱/CVE vs docker-compose/非 Linux/强隔离换 gVisor·Kata·Firecracker）"
+      ]
+    }
+  ]
+}

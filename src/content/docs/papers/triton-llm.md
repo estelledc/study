@@ -28,10 +28,10 @@ def add_kernel(x_ptr, y_ptr, out_ptr, n, BLOCK: tl.constexpr):
 
 不理解 Triton，下面这些事都讲不清：
 
-- 为什么 FlashAttention、vLLM 的 PagedAttention、PyTorch 2.0 Inductor **生成的 GPU 算子全是 Triton**——它已是事实标准
-- 为什么写一个新算子的工程师**不再先学 CUDA**，而是先学 Triton（CUDA 留给真正需要稀疏 / 异构访问的人）
+- 为什么 FlashAttention、vLLM 的 PagedAttention、PyTorch 2.0 Inductor **默认用 Triton 生成 GPU kernel**——它已是事实标准之一
+- 为什么写一个新算子的工程师**往往先学 Triton**，而不是先啃 CUDA（CUDA 留给稀疏 / 不规则访问）
 - 为什么同一个 kernel 在不同 GPU 上**重新 autotune 一下就能跑满**，不用手改 block size
-- 为什么 OpenAI / NVIDIA / Meta **都在 Triton 上下注**
+- 为什么 OpenAI 维护 Triton、Meta / 业界大量采用它写自定义算子
 
 ## 核心要点
 
@@ -59,11 +59,17 @@ def add(x_ptr, y_ptr, out_ptr, n, BLOCK: tl.constexpr):
     tl.store(out_ptr + offs, tl.load(x_ptr+offs, mask=mask) + tl.load(y_ptr+offs, mask=mask), mask=mask)
 ```
 
-`program_id(0)` 给当前 program（≈一个 thread block）一个编号；`tl.arange(0, BLOCK)` 生成 0…BLOCK-1 的 tile；`mask` 处理边界。CUDA 等价代码要 30 行。
+**逐部分解释**：
+
+1. `program_id(0)`：给当前 program（≈一个 thread block）发工号，像快递分区号
+2. `arange` + `pid * BLOCK`：算出本块负责的下标；`mask` 挡住越界（尾巴不够一整块时）
+3. `load` / `store`：按这块下标读写；启动时用 `grid=(ceil(n/BLOCK),)` 开够块数
+
+CUDA 等价代码常要 30 行手写 thread 下标。
 
 ### 案例 2：fused softmax——一次 kernel 顶 PyTorch 三次
 
-PyTorch 写 softmax 通常 launch 三个 kernel：求 max → 求 exp 求和 → 除。每次 launch 都要从 HBM 读一遍输入。Triton 一次性写完：
+PyTorch 写 softmax 通常 launch 三个 kernel：求 max → 求 exp 求和 → 除。每次都要从显存（HBM，像仓库）读一遍。Triton 一次写完（本例假设一行长度 ≤ `BLOCK`，更长需再分块）：
 
 ```python
 @triton.jit
@@ -74,15 +80,15 @@ def softmax(in_ptr, out_ptr, stride, N, BLOCK: tl.constexpr):
     tl.store(out_ptr + row*stride + cols, z / tl.sum(z, 0), mask=cols<N)
 ```
 
-读一次写一次，吞吐通常比 PyTorch 高 2-4×。这种"算子融合"是 LLM 训练 / 推理性能的关键。
+**三步**：`load` 一行 → 减 max 再 `exp` → 除以 `sum` 后 `store`。读一次写一次，吞吐常比 PyTorch 高 2-4×。
 
 ### 案例 3：FlashAttention——tile 抽象让 IO-aware 算法变得可写
 
-[[flash-attention]] 把 Q×K^T、softmax、×V 全在一个 kernel 里完成，关键是不把中间 N×N 矩阵写回 HBM——只在 SRAM 里逐 tile 算。
+[[flash-attention]] 把 Q×K^T、softmax、×V 放进一个 kernel：中间大矩阵不回写仓库（HBM），只在芯片近处缓存（SRAM，像案板）上按砖算。
 
-CUDA 写这个要 1000+ 行：要手算 thread block 怎么协作分 Q/K tile、shared memory 里怎么放、warp 之间怎么同步、最后 softmax 的 running max 怎么更新。
+类比：做长卷寿司——每次只切一小段配料上案板，滚动更新"目前最辣一口"（running max），而不是先把整条铺满桌子。
 
-Triton 实现约 200 行：外层循环遍历 K/V 的 tile，每次 `tl.load` 一块进 SRAM，做局部 dot 与局部 softmax，更新累加器；内层 thread 调度全交给编译器。Triton 让"按 tile 流式处理"自然到不用专门解释——这就是 DSL 设计的力量。
+Triton 骨架：`for` 遍历 K/V 的 tile → `tl.load` → 局部 `dot` / softmax → 更新累加器；thread 调度交给编译器（约 200 行 vs CUDA 1000+）。
 
 ## 踩过的坑
 

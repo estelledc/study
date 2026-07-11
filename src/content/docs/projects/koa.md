@@ -29,7 +29,7 @@ app.listen(3000);
 - 为什么 TJ Holowaychuk 写完 Express 三年后又写一个 **反 Express** 的框架——同作者亲手革命自己的产品
 - 为什么 Fastify / Hono / Elysia 这些后辈讲设计哲学时都要 **拿 Koa 当参照系**——洋葱中间件是它们的精神祖先
 - 为什么 50 行的 `koa-compose` 是 Node 中间件机制的 **教学典范**，读完彻底懂"中间件链异步执行"是怎么回事
-- 为什么 Koa v3 卡了好几年发不出稳定版——BDFL（仁慈独裁者）离场后社区维护的真实代价
+- 为什么 Koa v3 从 2019 alpha 拖到 **2025-04** 才发稳定版——BDFL 离场后社区维护的真实代价
 
 ## 核心要点
 
@@ -91,7 +91,7 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 
 4. **Stream body 错误隐晦**：`ctx.body = stream` 时 stream 出错不自动冒到 `ctx.onerror`，要手写 `stream.on('error', ctx.onerror)`。文档讲了但藏在角落，新人第一次踩到 stream 错误时连 socket hang up 原因都看不到。
 
-5. **v3 alpha 卡多年**：2019 起的 alpha 版本主要差别是 ESM-first + drop Node <18，但稳定版迟迟没出。TJ 离场后无强决策者拍板。Fastify / Hono 同期快速迭代，Koa 在新一代框架竞争里失速。
+5. **v3 拖太久才落地**：2019 起 alpha（ESM-first + drop Node <18），**v3.0.0 直到 2025-04-28 才正式发布**（之后有 3.1/3.2）。漫长空窗期里 Fastify / Hono 抢走心智；现在选型要按「v3 已可用」重新评估，别再当永久 alpha。
 
 ## 适用 vs 不适用场景
 
@@ -115,14 +115,14 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 - **2013 年**：TJ 起步 Koa v0.x，明确反思 Express——极简核心 + 不内置 router + 用 ES6 generators 解 callback hell。
 - **2014 年**：v1 稳定，generators 中间件（`yield next`）展示了"中间件链异步控制流"的优雅写法。
 - **2017 年**：v2 改 async/await，把 `yield next` 换成 `await next()`，更符合语言原生。
-- **2019-2024 年**：v3 alpha 多年没出稳定版，TJ 多年没活跃 commit，Jonathan Ong / Imed Jaberi 等社区 maintainer 接手节奏放缓。同期 Fastify / Hono / Elysia 抢走"现代 Node web 框架"心智份额。
+- **2019–2025-04**：v3 长期停在 alpha；TJ 少活跃，Jonathan Ong / Imed Jaberi 等社区 maintainer 节奏偏慢。**2025-04-28** 终于发 v3.0.0（Node ≥18、去掉 generator 中间件）。空窗期里 Fastify / Hono / Elysia 已抢走大量心智份额。
 
 ## 学到什么
 
 1. **同作者反思自己的设计是技术演进的良性信号**：TJ 三年后亲手做 Express 的"反面"——这种"我做的东西我亲手革命"在 OSS 领域少见但极有价值，说明作者真在思考问题本身而不是抱产品不放。
 2. **洋葱模型 = async/await 与中间件的自然结合**：Promise 时代之前中间件链是 callback hell；`await next()` 这一句话同时具备"递交控制 + 等待完成"双语义，才让洋葱从概念变成代码。
 3. **极简核心是哲学不是产品**：Koa core 600 行漂亮，用户视角是装 10 个包。"哲学正确" vs "用户体验正确" 在框架领域不总一致——Express 一站式赢在 onboarding，Koa 极简赢在思想纯洁。
-4. **maintainer 节奏决定框架命运**：v3 卡几年根因是 BDFL 离场后无人拍板。Fastify 双核心 + 商业化（Platformatic）有持续发版动力，OSS 框架成熟期"维护者激励"是第一生产力。
+4. **maintainer 节奏决定框架命运**：v3 从 alpha 拖到 2025 才稳定，根因是 BDFL 离场后无人拍板。Fastify 双核心 + 商业化（Platformatic）有持续发版动力，OSS 框架成熟期"维护者激励"是第一生产力。
 5. **50 行库的复杂度承载量是有限的**：`koa-compose` 50 行实现洋葱很优雅，但任何想加 lifecycle hook 区分 onRequest / preHandler 都要改根本。Fastify 选 8 段固定 hook 牺牲自由度换结构化语义清晰度——这是设计权衡而非优劣。
 
 ## 延伸阅读

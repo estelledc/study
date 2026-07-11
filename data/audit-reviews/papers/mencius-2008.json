@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关键数据（论文实测）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关键数据（论文实测）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "多收银台轮流收单类比把多 leader 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "skip/revoke 有餐厅窗口白话；实例号预分配好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 按场景推进清楚；关键数据段数字对零基础略突兀"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Mao/Junqueira/Marzullo OSDI 2008 正确；预分配+skip+revoke 机制与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「五大洲」不实：论文用 NetEm 仿真 WAN，非真实五洲部署"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延迟 250ms→80ms 与论文不符；五节点吞吐约 75 vs 360 ops/s 大致对，应改成论文表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例全是叙述，缺一段 propose/skip/revoke 伪代码时序"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（慢节点木桶、实现复杂度、非对称链路、客户端就近选 leader）可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界 WAN vs LAN 清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关键数据（论文实测）",
+      "fix_hints": [
+        "多收银台轮流收单类比把多 leader 讲透",
+        "skip/revoke 有餐厅窗口白话；实例号预分配好懂",
+        "案例 1–3 按场景推进清楚；关键数据段数字对零基础略突兀"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关键数据（论文实测）",
+      "fix_hints": [
+        "来源 Mao/Junqueira/Marzullo OSDI 2008 正确；预分配+skip+revoke 机制与论文一致",
+        "「五大洲」不实：论文用 NetEm 仿真 WAN，非真实五洲部署",
+        "延迟 250ms→80ms 与论文不符；五节点吞吐约 75 vs 360 ops/s 大致对，应改成论文表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例全是叙述，缺一段 propose/skip/revoke 伪代码时序",
+        "踩坑（慢节点木桶、实现复杂度、非对称链路、客户端就近选 leader）可操作",
+        "适用边界 WAN vs LAN 清楚"
+      ]
+    }
+  ]
+}

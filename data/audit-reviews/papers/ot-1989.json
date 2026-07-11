@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 GROVE 只有结论没有逐步操作说明，建议补 2-3 步：本地立刻应用 → 广播 → 对端 transform 再应用"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 更像概念补充而非可跟做案例，建议并入核心要点或改成带伪代码的逐步演示"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "状态向量 / site id 首次出现可再加一句更日常的桥接（快递单号维度）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 把 Jupiter 写成「Lotus Notes 研究院」有误：Nichols 等人 1995 的 Jupiter 出自 Xerox PARC（UIST'95），应改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事里 Jupiter 条目同步改为 Xerox PARC，勿写 Lotus Notes"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「学到什么」中「两者数学上等价」过强，宜改为工程上都能做协同、权衡不同"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 T 只覆盖 insert-insert，可在注释里点明 delete 对称规则或给一行 T_ID 示意，方便跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景已有 <1s / 10x 带宽量化，保持即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 GROVE 只有结论没有逐步操作说明，建议补 2-3 步：本地立刻应用 → 广播 → 对端 transform 再应用",
+        "案例 4 更像概念补充而非可跟做案例，建议并入核心要点或改成带伪代码的逐步演示",
+        "状态向量 / site id 首次出现可再加一句更日常的桥接（快递单号维度）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 把 Jupiter 写成「Lotus Notes 研究院」有误：Nichols 等人 1995 的 Jupiter 出自 Xerox PARC（UIST'95），应改正",
+        "历史小故事里 Jupiter 条目同步改为 Xerox PARC，勿写 Lotus Notes",
+        "「学到什么」中「两者数学上等价」过强，宜改为工程上都能做协同、权衡不同"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 T 只覆盖 insert-insert，可在注释里点明 delete 对称规则或给一行 T_ID 示意，方便跟做",
+        "适用场景已有 <1s / 10x 带宽量化，保持即可"
+      ]
+    }
+  ]
+}

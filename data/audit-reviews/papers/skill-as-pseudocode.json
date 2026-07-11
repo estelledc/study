@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 把「规则筛 skill」讲成运行时类型匹配，零基础读者能跟，但宜改成「检索后替换成模板+签名」的真实流程，并补逐部分解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「谓词」「副作用」首次出现可再加半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "四步确定性验证在论文里是转换期 verifier：Coverage / Binding / Replacement / Risk，用来决定候选伪代码合同能否 promote；笔记写成复用时按参数类型/前置条件/历史/副作用筛 skill，属核心机制错位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "检索时机制是 hierarchical-only + substituted bundle（concrete action templates + rewritten parent + inlined typed contract），不是「规则失败就跳过 skill 省一次 LLM」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "主实验基线是 Graph-of-Skills (GoS) skills_500，不是 Voyager 轨迹日记；Voyager 仅 related work。token/调用降幅可写约 -22.8% / -14.5%；「78% 翻译成功 / unable_to_typify」无出处，应改为 149 簇中 auto-promote 80 个子合同等论文数字"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源可补作者 Li, Zang, Cao, Sun 与完整副标题 for LLM Agents"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例伪代码可保留教学形态，但应体现 typed contract 字段（trigger / input_schema / pre/post / side_effects）与 invoke(κ, args) 占位，而不是虚构运行时四步类型闸门"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑宜对齐真实管线：过宽聚类被 Binding 打回、Replacement 卡控制流缠绕、Risk 拒不安全 sink、子合同不可直接当顶层检索结果"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可量化对齐 skills_500 / ALFWorld 134 unseen：有静态 markdown skill 库、可解析 procedural units 的环境更合适"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 把「规则筛 skill」讲成运行时类型匹配，零基础读者能跟，但宜改成「检索后替换成模板+签名」的真实流程，并补逐部分解释",
+        "「谓词」「副作用」首次出现可再加半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "四步确定性验证在论文里是转换期 verifier：Coverage / Binding / Replacement / Risk，用来决定候选伪代码合同能否 promote；笔记写成复用时按参数类型/前置条件/历史/副作用筛 skill，属核心机制错位",
+        "检索时机制是 hierarchical-only + substituted bundle（concrete action templates + rewritten parent + inlined typed contract），不是「规则失败就跳过 skill 省一次 LLM」",
+        "主实验基线是 Graph-of-Skills (GoS) skills_500，不是 Voyager 轨迹日记；Voyager 仅 related work。token/调用降幅可写约 -22.8% / -14.5%；「78% 翻译成功 / unable_to_typify」无出处，应改为 149 簇中 auto-promote 80 个子合同等论文数字",
+        "来源可补作者 Li, Zang, Cao, Sun 与完整副标题 for LLM Agents"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例伪代码可保留教学形态，但应体现 typed contract 字段（trigger / input_schema / pre/post / side_effects）与 invoke(κ, args) 占位，而不是虚构运行时四步类型闸门",
+        "踩坑宜对齐真实管线：过宽聚类被 Binding 打回、Replacement 卡控制流缠绕、Risk 拒不安全 sink、子合同不可直接当顶层检索结果",
+        "适用场景可量化对齐 skills_500 / ALFWorld 134 unseen：有静态 markdown skill 库、可解析 procedural units 的环境更合适"
+      ]
+    }
+  ]
+}

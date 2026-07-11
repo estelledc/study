@@ -26,7 +26,7 @@ packager input=movie.mp4 --dump_stream_info
 
 - 为什么 OTT 后端不能只把一个大 MP4 扔给用户，而要生成 `.mpd`、`.m3u8` 和一堆小分片
 - 为什么同一部片要同时准备 DASH 和 HLS，因为浏览器、电视、手机生态吃的“菜单格式”不一样
-- 为什么 DRM 不只是“给文件加密”，还要在 manifest、PSSH、key id、license server 之间对齐
+- 为什么 DRM 不只是“给文件加密”，还要在 manifest、PSSH（Protection System Specific Header，播放器认 DRM 门禁用的小标签）、key id、license server 之间对齐
 - 为什么直播链路里 manifest 必须等分片写完再更新，否则播放器会看到菜单却拿不到菜
 
 ## 核心要点
@@ -45,7 +45,7 @@ Shaka Packager 的核心可以拆成 **三件事**：
 
 ### 案例 1：把多档 H264 打成 DASH 点播
 
-官方 DASH 教程给的是多档 H264 VOD 包装命令；下面保留音频和两档视频，看字段会更清楚：
+官方 DASH 教程的多档 H264 VOD 命令（样例 MP4 来自教程 assets）；下面保留音频和两档视频：
 
 ```bash
 packager \
@@ -57,10 +57,10 @@ packager \
 
 **逐部分解释**：
 
-- `stream=audio` 和 `stream=video` 告诉它从同一个 MP4 里抽哪一路
-- `output=...mp4` 生成单轨 fragmented MP4，便于 DASH 播放器按轨道取
-- `--mpd_output h264.mpd` 生成 DASH manifest，播放器先读它再决定拉哪一路
-- 这个案例来自官方 DASH tutorial；完整示例还包括字幕和 480p / 1080p 档位
+- `stream=audio` / `stream=video`：从同一个 MP4 里抽哪一路
+- `output=...mp4`：生成单轨 fragmented MP4（按片切开的 MP4），便于按轨道取
+- `--mpd_output h264.mpd`：生成 DASH manifest，播放器先读菜单再拉分片
+- 完整教程还有字幕和 480p / 1080p；点播常用 `--segment_duration 6` 一类秒级分片
 
 ### 案例 2：一次产出 DASH 和 HLS 两套菜单
 
@@ -118,25 +118,25 @@ packager \
 
 **适用**：
 
-- OTT / 点播后端：把多档 MP4 产物变成 DASH / HLS 可分发资产
-- 直播打包：从 UDP 或 FFmpeg pipe 接入输入，持续生成分片和更新 manifest
-- 商业视频加密：接 Widevine、PlayReady、FairPlay 或 raw key 工作流
-- 需要同一份媒体同时服务 Web、移动端、电视端的团队
+- OTT / 点播后端：把多档 MP4 变成 DASH / HLS 可分发资产（分片常见 2–10 秒）
+- 直播打包：UDP 或 FFmpeg pipe 持续出分片并更新 manifest；端到端延迟通常数秒到数十秒
+- 商业视频加密：接 Widevine、PlayReady、FairPlay 或 raw key
+- 同一份媒体要同时服务 Web、移动端、电视端
 
 **不适用**：
 
-- 还没编码出 H264 / H265 / AV1 等输入文件；这一步应先看 [[ffmpeg]]、[[x264]]、[[x265]]
-- 只想播放本地 MP4，原生播放器或 [[video.js]] 已经足够
-- 做 WebRTC 级别的实时互动，DASH/HLS 的分片模型天然有更高延迟
-- 想要一个 CMS、上传后台或 CDN 平台；Shaka Packager 只处理媒体打包这一段
+- 还没编码出 H264 / H265 / AV1 输入；先看 [[ffmpeg]]、[[x264]]、[[x265]]
+- 只想播放本地 MP4——原生播放器或 [[video.js]] 已够
+- WebRTC 级互动（目标常是百毫秒级）；DASH/HLS 分片模型是秒级延迟
+- 要 CMS / 上传后台 / CDN 平台——Packager 只做媒体打包这一段
 
 ## 历史小故事（可跳过）
 
-- **2014 年前后**：Shaka 生态开始围绕开放 Web 流媒体标准建设，播放器和打包工具各管一段链路
-- **早期目标**：让 DASH 内容能被稳定准备出来，减少每家公司重复写打包器的成本
-- **HLS 支持加入后**：它不再只是 DASH 工具，而是更接近“多协议 OTT 打包器”
-- **DRM 扩展阶段**：Widevine、PlayReady、FairPlay、raw key 等能力逐步补齐，适合商业视频链路
-- **今天**：它仍保持命令行工具定位，常和编码器、对象存储、CDN、[[shaka-player]] 一起出现
+- **2015 年**：Google 开源 Shaka 生态；Player 负责浏览器播放，Packager 负责把编码好的流打成可分发资产
+- **早期**：先把 DASH（`.mpd` + 分片）链路跑稳，减少各家自写打包器
+- **随后**：补上 HLS（`.m3u8`），变成多协议 OTT 打包器，一份媒体两套菜单
+- **DRM**：Widevine / PlayReady / FairPlay / raw key 逐步齐备，对接商业许可证服务
+- **今天**：仍是命令行 + C++ SDK，常和编码器、对象存储、CDN、[[shaka-player]] 组链路
 
 ## 学到什么
 

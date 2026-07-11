@@ -16,7 +16,7 @@ react-spring 是一个让你**用"真实弹簧的物理参数"写动画**的 Rea
 const { x } = useSpring({ from: { x: 0 }, to: { x: 200 } })
 ```
 
-库内部每一帧用牛顿第二定律 + 胡克定律算出 x 应该在哪里——会冲过头一点，再回弹，再稳定。整个过程**没有"持续时间"这个参数**——只有弹性和阻尼。
+库内部每一帧用牛顿第二定律 + 胡克定律算出 x 应该在哪里——会冲过头一点，再回弹，再稳定。**默认路径没有"持续时间"**——你调的是弹性与阻尼；`config.duration` 只是可选旁路，不是主叙事。
 
 这种"参数化物理"是 react-spring 区别于 [[framer-motion]] / CSS transition / [[anime]] 的核心，也是它能把"被打断的动画"做得最丝滑的原因。
 
@@ -75,7 +75,7 @@ function Card() {
 }
 ```
 
-按住时卡片跟手——撒手时**速度连续**地弹回原位，不是从撒手位置匀速回到 0。这种"打断时速度连续"是 spring 模型的天然能力。
+三步：① `down` 时 `api.start` 跟手坐标；② 松手把目标改回 `{x:0,y:0}`；③ spring **带着松手瞬间的速度**弹回，不是匀速 tween。这种"打断时速度连续"是 spring 模型的天然能力。
 
 ### 案例 3：列表过场，进出场都丝滑
 
@@ -123,9 +123,9 @@ function List({ items }) {
 ## 历史小故事（可跳过）
 
 - **2016 年**：Cheng Lou 写了 react-motion，第一个用 spring 物理做 React 动画的库，但 API 是 render-prop 风格，hook 时代不友好。
-- **2017 年**：Paul Henschel 受 react-motion 启发写了 react-spring，最初也是 render-prop，v9 重写为 hook API。
+- **2017–2018 年**：Paul Henschel 先有 react-springy-parallax（2017），2018-03 正式开源 react-spring；最初 render-prop，同年 v7 上 hooks，v9 再大重写。
 - **2019 年**：Paul 创立 pmndrs（Poimandres）开源集体，react-spring 和 react-three-fiber、zustand、jotai 一起进入这个生态。
-- **2021 年**：Framer Motion 加了 `type: "spring"` 选项，相当于在自家 duration 引擎里"塞了一个 react-spring"——侧面证明 spring 范式是对的。
+- **2019 起**：Framer Motion 等竞品也把 `type: "spring"` 当一等公民——侧面证明 spring 范式被主流采纳，不是谁 2021 才临时补丁。
 
 ## 学到什么
 

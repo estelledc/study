@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "法官公告栏类比很贴合 mempool/consensus 拆分"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "wave/leader block 规则对零基础略密，但表格与案例能撑住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Aptos…共识协议不是抄 HotStuff 而是抄它』过满：Aptos 生产主路径是 Jolteon（HotStuff 系），Narwhal 思想主要落在 Quorum Store 数据传播层"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Aptos 用的叫 Bullshark』『主网上线共识用 Bullshark』不准确：Bullshark 是 Aptos Labs 研究/实验路线，生产长期跑 Jolteon；Sui 才是 Narwhal/Bullshark→Mysticeti 主线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里『Bullshark —— Aptos 现役共识』应改为研究变体/部分同步版，勿写成现役"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "worker/primary 与 170k→600k 数字可跟论文量级对照，踩坑（certificate≠commit、wave≥3 round、GC）具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用可再点明：生产若要亚秒 finality 优先看 Mysticeti/Jolteon，而非原版 Tusk"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "法官公告栏类比很贴合 mempool/consensus 拆分",
+        "wave/leader block 规则对零基础略密，但表格与案例能撑住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『Aptos…共识协议不是抄 HotStuff 而是抄它』过满：Aptos 生产主路径是 Jolteon（HotStuff 系），Narwhal 思想主要落在 Quorum Store 数据传播层",
+        "『Aptos 用的叫 Bullshark』『主网上线共识用 Bullshark』不准确：Bullshark 是 Aptos Labs 研究/实验路线，生产长期跑 Jolteon；Sui 才是 Narwhal/Bullshark→Mysticeti 主线",
+        "关联里『Bullshark —— Aptos 现役共识』应改为研究变体/部分同步版，勿写成现役"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "worker/primary 与 170k→600k 数字可跟论文量级对照，踩坑（certificate≠commit、wave≥3 round、GC）具体",
+        "适用可再点明：生产若要亚秒 finality 优先看 Mysticeti/Jolteon，而非原版 Tusk"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "超市收银员四步类比很贴；张量形状案例能跟读。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "文末缺 ## 反向链接 占位段，结构不完整。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2019 之后所有大型推荐基础设施都拿 DLRM 做对标」过绝对，应改为「多数 / 常被用作」一类限定。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「LLM 全模型 parallel」过度简化（实际常见 DP+TP+PP）；应改成「LLM 并行重心不同，很少像 DLRM 这样按 embedding/MLP 异构切分」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "异构并行与形状推演对工程读者很有用；踩坑（稀疏优化、不能照搬 LLM 并行）可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例偏概念推演无可运行训练脚本，但对系统论文可接受。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "超市收银员四步类比很贴；张量形状案例能跟读。",
+        "文末缺 ## 反向链接 占位段，结构不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「2019 之后所有大型推荐基础设施都拿 DLRM 做对标」过绝对，应改为「多数 / 常被用作」一类限定。",
+        "「LLM 全模型 parallel」过度简化（实际常见 DP+TP+PP）；应改成「LLM 并行重心不同，很少像 DLRM 这样按 embedding/MLP 异构切分」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "异构并行与形状推演对工程读者很有用；踩坑（稀疏优化、不能照搬 LLM 并行）可操作。",
+        "案例偏概念推演无可运行训练脚本，但对系统论文可接受。"
+      ]
+    }
+  ]
+}

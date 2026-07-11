@@ -24,12 +24,12 @@ title: Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 
 
 不理解这条线，下面这些事都没法解释：
 
-- 为什么 HotSpot client compiler（C1）启动比 server compiler（C2）快 5-10 倍——一大半来自寄存器分配换成了线性扫
-- 为什么 LuaJIT、V8 baseline、.NET RyuJIT 不用 LLVM——LLVM 后端是 Greedy（图染色变种），太慢，不适合"边跑边编"
-- 为什么 GCC `-O0` 和 `-O2` 编译时间差几十倍——`-O0` 走的是简化版 LSRA 思路，`-O2` 走图染色
-- 为什么 JIT 编译器愿意接受"代码慢 10%"换"编译快 10x"——JIT 的预算是毫秒级，等不起
+- 为什么 HotSpot client compiler（C1）启动比 server compiler（C2）快 5-10 倍——C1 用线性扫，C2 仍走图染色变体，编译预算差一个数量级
+- 为什么 LuaJIT、V8 baseline、.NET RyuJIT 的快速路径不用 LLVM——LLVM 后端是 Greedy（图染色变种），太慢，不适合"边跑边编"
+- 为什么 GCC `-O0` 和 `-O2` 编译时间差很大——`-O0` 用局部/简单分配求快，`-O2` 上 IRA 等更重的全局分配
+- 为什么许多 JIT 愿意接受"代码慢约 10%"换"编译快数倍到 10x"——JIT 的预算是毫秒级，等不起
 
-26 年后，**所有产品级 JIT 后端的寄存器分配都是这条线的徒孙**。AOT 编译器（GCC、LLVM）继续走 Chaitin；JIT 编译器统统走 Poletto-Sarkar。两条线 30 年并行。
+26 年后，**多数 baseline / client 级 JIT 的寄存器分配是这条线的徒孙**；服务端/高优化 JIT（如 HotSpot C2）仍常走图染色。AOT（GCC、LLVM）继续偏 Chaitin 系。两条线 30 年并行。
 
 ## 核心要点
 
@@ -65,9 +65,9 @@ Poletto-Sarkar 论文实测：在 Pentium 上跑 SPEC95 子集 + Java，**线性
 Java 字节码 → C1 IR → 活跃性分析 → live interval → 线性扫 → 机器码
 ```
 
-HotSpot C1 用的是 Wimmer & Mössenböck 2005 的 **SSA 扩展版**——原版 LSRA 不直接吃 SSA，Wimmer 加了 "lifetime hole"（允许 interval 中间打孔，修复 over-approx）+ 数据流融合。这就是今天 [[hotspot-server-compiler]] 启动慢但 client 快的关键。
+HotSpot C1 用的是 Wimmer & Mössenböck 2005 的 **SSA 扩展版**——原版 LSRA 要先退出 SSA（静态单赋值）。Wimmer 加了 "lifetime hole"：允许 interval 中间"打孔"（中间死掉的段落不再占寄存器），减轻 over-approx。这是 client 快、[[hotspot-server-compiler]]（C2）慢但代码更优的关键之一。
 
-实际数字：C1 编译一个中等方法 ~5ms，C2 ~50ms。这个 10x 差距里面寄存器分配占了大头。Java 程序启动阶段几千个方法都走 C1，hot 方法触发 OSR 才升 C2——分层编译（tiered compilation）的设计前提就是 LSRA。
+量级：C1 编一个中等方法约数毫秒，C2 常高一个数量级。启动阶段大量方法走 C1，热点再升 C2（分层编译）；快速路径依赖 LSRA，不代表整个 JVM 只用线性扫。
 
 ### 案例 3：spill 启发式的现实改进
 

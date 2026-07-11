@@ -37,7 +37,7 @@ FreeRTOS 内核能用三句话讲清：
 
 2. **调度 = 优先级位图 O(1) 选下一个任务**。tick 中断（默认 1ms）一来，调度器查 `uxTopReadyPriority` 位图找最高优先级的就绪任务，PendSV 异常做上下文切换汇编。同优先级任务走时间片轮转。
 
-3. **IPC（任务间通信）= queue 一招打天下**。`xQueueSend` / `xQueueReceive` 既是消息队列，也是信号量（计数 = 1 的 queue）、互斥锁（带优先级继承的 queue）、事件组（位图 queue）的底层。一份代码服务四种原语。
+3. **IPC（任务间通信）以 queue 为底座，但不是万物皆 queue**。`xQueueSend` / `xQueueReceive` 既是消息队列，也是信号量、互斥锁（带优先级继承）的底层实现；**事件组**则是另一套独立的位图同步对象（`event_groups.c`），用来等「多个条件同时满足」，并不走 queue 代码路径。
 
 加上 `portable/` 目录里架构相关的汇编（PendSV、SVC、SysTick），覆盖 ARM Cortex-M0/M3/M4/M7、RISC-V、Xtensa 等数十种 MCU。
 
@@ -133,7 +133,7 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 ## 学到什么
 
 1. **三个文件 = 一个内核**：list / queue / tasks 这三件事讲清，调度 + IPC + 内存就齐了
-2. **queue 是统一原语**：消息、信号量、互斥锁、事件组都是 queue 的特例，复用一份代码
+2. **queue 扛起消息 / 信号量 / 互斥锁**：这三类复用同一套代码；事件组是另一条位图同步路径，别混成「万物皆 queue」
 3. **优先级位图 + 双向链表 = O(1) 调度**：这套数据结构不止 RTOS 在用，Linux O(1) 调度器思路一致
 4. **portable 抽象层**：上层代码完全平台无关，硬件差异全压在 portable/ 的汇编里——这是跨平台库的经典套路
 

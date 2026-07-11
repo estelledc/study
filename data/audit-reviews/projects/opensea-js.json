@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "闲鱼代发货 / 寄存柜小票类比贴合链下签名+链上履约"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "WETH、setApprovalForAll、chainId 都有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例代码完整，expirationTime 毫秒陷阱写得很清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Wyvern→Seaport 2022、挂单不上链、offer 需 WETH 等事实正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源给 GitHub 仓库对 projects 笔记合理；Seaport 文档链可用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "撮合 Gas 降约 35% 属社区常见说法，未过度外推到协议安全结论"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "createListing / createCollectionOffer / cancelOrder 示例可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "WETH 余额、approval、chain 错配、rate limit、Seaport domain 升级五条踩坑可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联里 [[uniswap-v3]] 重复两次，可换成 ethers-js 等，但不影响可用性"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "闲鱼代发货 / 寄存柜小票类比贴合链下签名+链上履约",
+        "WETH、setApprovalForAll、chainId 都有日常桥接",
+        "三个案例代码完整，expirationTime 毫秒陷阱写得很清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Wyvern→Seaport 2022、挂单不上链、offer 需 WETH 等事实正确",
+        "来源给 GitHub 仓库对 projects 笔记合理；Seaport 文档链可用",
+        "撮合 Gas 降约 35% 属社区常见说法，未过度外推到协议安全结论"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "createListing / createCollectionOffer / cancelOrder 示例可跟做",
+        "WETH 余额、approval、chain 错配、rate limit、Seaport domain 升级五条踩坑可操作",
+        "关联里 [[uniswap-v3]] 重复两次，可换成 ethers-js 等，但不影响可用性"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 5,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 跟邻居网格谁选谁",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "随身保镖/翻译类比贴合；sidecar/mTLS/黄金指标桥接清楚；安装注入、viz dashboard、HTTPRoute 金丝雀三案例可跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/linkerd/linkerd2 合理；造词 service mesh、CNCF 毕业 2021-07、1.x JVM→2.x Rust/Go 重写时间线正确；与 Istio/Envoy 对比未歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "install/annotate/viz/HTTPRoute 命令与 YAML 可跟做；HTTP/2 计费、init container、HA、multicluster、无插件扩展踩坑具体；<1000 服务与复杂 L7 边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 跟邻居网格谁选谁",
+      "fix_hints": [
+        "随身保镖/翻译类比贴合；sidecar/mTLS/黄金指标桥接清楚；安装注入、viz dashboard、HTTPRoute 金丝雀三案例可跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 github.com/linkerd/linkerd2 合理；造词 service mesh、CNCF 毕业 2021-07、1.x JVM→2.x Rust/Go 重写时间线正确；与 Istio/Envoy 对比未歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "install/annotate/viz/HTTPRoute 命令与 YAML 可跟做；HTTP/2 计费、init container、HA、multicluster、无插件扩展踩坑具体；<1000 服务与复杂 L7 边界清楚。"
+      ]
+    }
+  ]
+}

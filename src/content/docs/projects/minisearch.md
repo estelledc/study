@@ -21,16 +21,16 @@ ms.addAll([
 ms.search('暹罗')   // → [{ id: 1, score: 1.83, ... }]
 ```
 
-它不是"轻量版 Elasticsearch"，而是**一种主张**：很多产品的搜索数据规模在百万 doc 以下（文档站、博客、组件库、本地笔记），根本不需要后端，浏览器装得下。
+它不是"轻量版 Elasticsearch"，而是**一种主张**：很多产品的搜索数据规模在**几十万 doc 以下**（文档站、博客、组件库、本地笔记），根本不需要后端，浏览器装得下。
 
 ## 为什么重要
 
 不理解 minisearch 这类前端搜索引擎，下面这些事就解释不清楚：
 
-- 为什么 Astro Starlight、VitePress 等文档框架的"搜索框"在断网时仍然能用——索引就在你浏览器里
+- 为什么 VitePress 等文档框架的"搜索框"在断网时仍然能用——索引就在你浏览器里（同类思路还有 [[starlight]] 默认的 Pagefind）
 - 为什么静态博客可以**零运维**做出"输入即时高亮结果"的搜索体验
 - 为什么有些"快"，是因为索引数据结构选对了（前缀树 vs 线性扫）
-- 为什么"百万级文档全文检索"和"几百条记录的字符串模糊匹配"是两件事，工具不能混用
+- 为什么"千万级文档全文检索"和"几万条记录的浏览器内检索"是两件事，工具不能混用
 
 ## 核心要点
 
@@ -65,7 +65,11 @@ const ms = MiniSearch.loadJSON(json, { fields: ['title', 'body'] })
 input.oninput = () => render(ms.search(input.value, { prefix: true }))
 ```
 
-逐部分解释：build 时一次性算好索引并序列化成 JSON；浏览器加载这份 JSON 直接复活成可查询的实例；`prefix: true` 让用户没打完也能出结果（"图" 就匹配"图鉴"）。
+**逐部分解释**：
+
+- build 时 `addAll` 一次性算好倒排索引，再 `JSON.stringify(ms)` 序列化落盘。
+- 浏览器用 `MiniSearch.loadJSON` 把 JSON 复活成可查询实例，无需再扫原文。
+- `prefix: true` 让用户没打完也能出结果（"图" 就匹配"图鉴"）。
 
 ### 案例 2：本地笔记 app 的增量索引
 
@@ -77,7 +81,10 @@ function onNoteEdit(note)   { ms.replace(note) }
 function onNoteDelete(note) { ms.remove(note) }
 ```
 
-逐部分解释：每次用户改笔记，只动倒排索引里相关的几个 term，不重建整棵树。这是为什么 minisearch 能撑起 Obsidian 替代品这种"用户每秒改一次内容"的场景。
+**逐部分解释**：
+
+- `add` / `replace` / `remove` 只改倒排索引里相关 term，不重建整棵树。
+- 这是相对 Lunr.js 的关键优势：笔记每秒改一次时，仍能保持交互延迟可接受。
 
 ### 案例 3：自动补全（autoSuggest）
 
@@ -86,7 +93,10 @@ ms.autoSuggest('cat fo', { fuzzy: 0.2 })
 // → [{ suggestion: 'cat food', score: 2.4, terms: [...] }, ...]
 ```
 
-逐部分解释：`autoSuggest` 把用户没打完的最后一个 token 当前缀查；`fuzzy: 0.2` 容忍 20% 字符出错（"foof" 也能匹配"food"），用于挽救手抖。
+**逐部分解释**：
+
+- `autoSuggest` 把最后一个未打完的 token 当前缀在树上 walk。
+- `fuzzy: 0.2` 容忍约 20% 字符出错（"foof" 也能匹配"food"），用于挽救手抖。
 
 ## 踩过的坑
 
@@ -118,7 +128,7 @@ ms.autoSuggest('cat fo', { fuzzy: 0.2 })
 
 - **2018 年**：Luca Ongaro 第一版 minisearch 发布。当时前端做全文搜索的事实标准是 Lunr.js（2014 年起步），但 Lunr 索引不能增量、fuzzy 是线性扫整个 term 表。
 - **2019 年初**：作者写博客解释设计取舍——为什么用 Radix Tree、为什么换成 BM25+、为什么坚持零依赖。
-- **2020-2022 年**：被 Astro Starlight、VitePress 等新一代文档框架内置 / 推荐，逐步从 Lunr 手里接过"前端文档搜索默认选项"的位置。
+- **2020-2022 年**：VitePress 等文档框架采用 / 推荐 minisearch；同期 [[starlight]] 选择另一条前端搜索路线 Pagefind，两者都证明"索引可进静态产物"。
 - **2025 年**：v7.x 稳定版，单人维护 7 年仍在迭代，~6k★、API 几乎没破坏性改动。
 
 ## 学到什么
@@ -134,15 +144,15 @@ ms.autoSuggest('cat fo', { fuzzy: 0.2 })
 - 设计博客：[How MiniSearch is implemented](https://lucaong.github.io/minisearch/blog/)（作者亲自讲数据结构选型）
 - 论文背景：Robertson & Zaragoza, *The Probabilistic Relevance Framework: BM25 and Beyond* (2009)（BM25 / BM25+ 公式来源）
 - [[elasticsearch]] —— 服务端工业级 IR 标杆，BM25 也是它的默认评分
-- [[starlight]] —— Astro 文档主题，内置用 minisearch 做搜索
+- [[starlight]] —— 默认用 Pagefind 做静态站搜索；和 minisearch 同属"索引进前端产物"，实现不同
 - [[meilisearch]] —— 同样想"用得轻的搜索"，但是走服务端路线
 
 ## 关联
 
 - [[elasticsearch]] —— 同类问题的服务端答案；千万级文档时升级到它
 - [[meilisearch]] —— Rust 写的服务端搜索，定位"比 ES 简单"，和 minisearch 的"完全前端"是两条路
-- [[astro]] —— 静态站生成器，常和 minisearch 配合 build time 出索引
-- [[starlight]] —— Astro 官方文档主题，把 minisearch 装成默认搜索方案
+- [[astro]] —— 静态站生成器，可在 build time 用 minisearch 自建索引
+- [[starlight]] —— 默认搜索是 Pagefind，不是 minisearch；选型时不要混为一谈
 - [[docusaurus]] —— Meta 的文档框架，自带 lunr / Algolia 二选一，可换 minisearch
 
 ## 反向链接

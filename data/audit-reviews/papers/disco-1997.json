@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例以机制推演为主，对零基础已够跟；若再补一行「guest 视角 vs VMM 视角」对照会更稳。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每台云 hypervisor 直接祖先是 Disco」偏满：VMware 谱系清楚，Xen/KVM 另有支线；可改为「现代商用虚拟化复兴的关键源头之一」。Disco 作者含 Devine，VMware 五创始人里实际不止 Bugnion+Rosenblum 两人来自 Disco。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "论文笔记以机制步骤代替可跑代码可接受；VMM vs container、x86 trap 缺口、16%→<3% 边界都具体可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例以机制推演为主，对零基础已够跟；若再补一行「guest 视角 vs VMM 视角」对照会更稳。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「每台云 hypervisor 直接祖先是 Disco」偏满：VMware 谱系清楚，Xen/KVM 另有支线；可改为「现代商用虚拟化复兴的关键源头之一」。Disco 作者含 Devine，VMware 五创始人里实际不止 Bugnion+Rosenblum 两人来自 Disco。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "论文笔记以机制步骤代替可跑代码可接受；VMM vs container、x86 trap 缺口、16%→<3% 边界都具体可操作。"
+      ]
+    }
+  ]
+}

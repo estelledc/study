@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「unbox / box / PC / 回边」首次出现缺白话桥接：unbox 说成「拆开包装取出整数」、box 说成「再包回 JS 值」、PC 说成「解释器下一步该读哪条指令」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「是什么」写「第一圈就录成 trace」，「核心要点」又写阈值比如 2 次，零基础会打架；统一成「热了几圈才开始录」并保留超市类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史线从 TraceMonkey 直接跳到 IonMonkey，省略了 Firefox 4 的 JaegerMonkey（方法 JIT）过渡；可加一句「先经 JaegerMonkey 方法 JIT，再由 IonMonkey 完全取代」以免读者以为一步换代"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Dynamo 常被写成 1996 项目启动、论文实为 2000 ASPLOS；若保留 1996，建议写成「约 1996 年起 / 2000 年论文」以免年份被当成论文发表年"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺可操作边界：补一句「循环体分支少、类型稳定时收益大；分支扇出大或频繁多态时 side exit / blacklist 会吃掉加速」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 trace tree 只叙述未给伪结构；建议用 3–5 行树形伪代码标出 loop_head → even/odd 两条子路径，方便跟做"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「unbox / box / PC / 回边」首次出现缺白话桥接：unbox 说成「拆开包装取出整数」、box 说成「再包回 JS 值」、PC 说成「解释器下一步该读哪条指令」",
+        "「是什么」写「第一圈就录成 trace」，「核心要点」又写阈值比如 2 次，零基础会打架；统一成「热了几圈才开始录」并保留超市类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史线从 TraceMonkey 直接跳到 IonMonkey，省略了 Firefox 4 的 JaegerMonkey（方法 JIT）过渡；可加一句「先经 JaegerMonkey 方法 JIT，再由 IonMonkey 完全取代」以免读者以为一步换代",
+        "Dynamo 常被写成 1996 项目启动、论文实为 2000 ASPLOS；若保留 1996，建议写成「约 1996 年起 / 2000 年论文」以免年份被当成论文发表年"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用缺可操作边界：补一句「循环体分支少、类型稳定时收益大；分支扇出大或频繁多态时 side exit / blacklist 会吃掉加速」",
+        "案例 3 的 trace tree 只叙述未给伪结构；建议用 3–5 行树形伪代码标出 loop_head → even/odd 两条子路径，方便跟做"
+      ]
+    }
+  ]
+}

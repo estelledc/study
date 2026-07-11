@@ -163,4 +163,11 @@ NODE_CLASS_MAPPINGS = {"InvertImage": InvertImage}
 
 - [[pytorch]] —— ComfyUI 节点底层全是 PyTorch 算子调用
 - [[accelerate]] —— 大模型 offload 思路相似，ComfyUI 走自研路线
+- [[stable-diffusion]] —— ComfyUI 最常见的工作流就是把 Stable Diffusion pipeline 拆成节点
+- [[stable-diffusion-webui]] —— AUTOMATIC1111 代表黑盒表单路线，正好和 ComfyUI 的白盒节点路线对照
+- [[flux]] —— Flux.1 等新扩散模型发布后，ComfyUI 常是社区最早可用的本地 workflow
 - [[hindley-milner]] —— 不直接相关，但『类型化端口阻挡接错线』和静态类型阻挡 bug 是同一种思想
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

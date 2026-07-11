@@ -1,0 +1,102 @@
+{
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "会动的打印机、红绿灯 vs 买咖啡、HAL 接线板类比贴合；实时/HAL/INI 桥接清楚。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "模拟启动、latency-test、halrun 三案例均有逐部分解释，学习顺序明确。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "EMC→LinuxCNC、HAL/INI/实时节拍定位与官方文档一致；未夸大即插即用能力。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitHub 来源合理；历史时间线为教学级概括，无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "linuxcnc/sim.ini、latency-test、halrun stepgen+siggen 命令可跟做，与官方教程同构。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "跳过模拟、只改 INI 不看 HAL、软件急停不可靠等踩坑具体。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；若补一句软件步进常见抖动阈值（如 max jitter 量级）会更量化。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "会动的打印机、红绿灯 vs 买咖啡、HAL 接线板类比贴合；实时/HAL/INI 桥接清楚。",
+        "模拟启动、latency-test、halrun 三案例均有逐部分解释，学习顺序明确。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "EMC→LinuxCNC、HAL/INI/实时节拍定位与官方文档一致；未夸大即插即用能力。",
+        "GitHub 来源合理；历史时间线为教学级概括，无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "linuxcnc/sim.ini、latency-test、halrun stepgen+siggen 命令可跟做，与官方教程同构。",
+        "跳过模拟、只改 INI 不看 HAL、软件急停不可靠等踩坑具体。",
+        "适用/不适用边界清楚；若补一句软件步进常见抖动阈值（如 max jitter 量级）会更量化。"
+      ]
+    }
+  ]
+}

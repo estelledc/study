@@ -34,7 +34,7 @@ Sia 让"陌生人帮你存数据"靠谱，靠 **三层机制**：
 
 2. **链上 file contract**：renter 和 host 在 SiaCoin 链上签合同，双方各押一笔抵押金。合约写明：存多少 GB / 多久 / 每区块多少租金 / 几个区块查一次证明。链是裁判，不是中介。
 
-3. **storage proof**：host 每隔约 1000 个区块（~1 周）必须上链提交一个 Merkle 证明——证明它仍持有合约里那段数据。链随机选一个数据块要它的路径，host 要现场算才答得出。漏交：押金被罚给 renter。
+3. **storage proof**：host 每隔约 1000 个区块（~1 周）必须上链提交一个 Merkle 证明（像抽查仓库某一箱货的封条路径）——证明它仍持有合约里那段数据。链随机选一个数据块要它的路径，host 要现场算才答得出。漏交：押金被罚给 renter。
 
 三层加起来：**经济激励压住作恶动机**——host 想拿钱就必须真存，删了就赔。
 
@@ -58,30 +58,44 @@ curl -u :password -X PUT \
   --data-binary @photo.jpg
 ```
 
-到期前 autopilot 会自动 renew 或 migrate 到更便宜的 host。
+**逐部分解释**：镜像挂数据目录；UI 设预算后 autopilot 签合约；`PUT .../objects/` 走 worker API 切片上传；到期前会 renew/migrate。
 
 ### 案例 2：cluster 模式做大容量
 
-bus / worker / autopilot 三个角色拆到多台机器，应对 TB 级：
+bus / worker / autopilot 拆到多机，应对 TB 级：
 
-- **bus**：管 contract / 元数据 / SQLite
-- **worker**：管上传下载 + 纠删码计算（CPU 密集）
-- **autopilot**：管 host 评分 + 续约决策
-
-3 台 worker 横向扩展上传带宽，bus 单点存元数据。每个 worker 的 HTTP API 一致，反向代理（caddy/nginx）做负载均衡即可。
-
-### 案例 3：当 S3 后端替代
-
-renterd 的 HTTP API 设计接近 S3：
-
-```js
-// 应用代码
-const renterd = new RenterdClient({ url, password })
-await renterd.put('bucket/file.bin', buffer)
-const data = await renterd.get('bucket/file.bin')
+```bash
+# 机 A：默认起 bus（元数据/合约/SQLite）
+renterd --http :9980
+# 机 B：worker 连远程 bus，关掉本机 autopilot
+renterd --bus.remoteAddr http://bus:9980/api/bus \
+  --autopilot.enabled=false --http :9981
+# 机 C：只跑 autopilot，关掉本机 worker
+renterd --bus.remoteAddr http://bus:9980/api/bus \
+  --worker.enabled=false
 ```
 
-加层适配器就能把现有 S3 SDK 调用导到 renterd——比如博客图床、备份脚本、数据湖冷数据。便宜是真便宜，但读延迟（要从多个 host 拉切片重组）比 S3 高一个数量级。
+**逐部分解释**：
+
+- **bus**：管 contract / 元数据 / SQLite，先起它
+- **worker**：CPU 密集的切片与传输，可水平加机器
+- **autopilot**：给 host 打分并续约；反向代理把多个 worker 当同一入口
+
+### 案例 3：用 HTTP API 当冷存储后端
+
+renterd 暴露与对象存储相近的 HTTP API（不是虚构 SDK）：
+
+```bash
+# 上传
+curl -u :password -X PUT \
+  http://localhost:9980/api/worker/objects/bucket/file.bin \
+  --data-binary @file.bin
+# 下载
+curl -u :password -o file.bin \
+  http://localhost:9980/api/worker/objects/bucket/file.bin
+```
+
+**逐部分解释**：`-u :password` 是 API 密码；路径即对象键；读时要从多 host 拉片重组，延迟常比 S3 高一个数量级，适合图床冷数据/备份，不适合 CDN 热读。
 
 ## 踩过的坑
 
@@ -111,19 +125,18 @@ const data = await renterd.get('bucket/file.bin')
 ## 历史小故事（可跳过）
 
 - **2014 年**：MIT 学生 David Vorick 在 HackMIT 写了 Sia 原型，灵感来自 BitTorrent 但加了链上付费
-- **2015 年 6 月**：Sia 主网上线，PoW 共识（和比特币同算法但不同币种），SiaCoin 开始流通
+- **2015 年 6 月**：Sia 主网上线；PoW 用 Blake2b（刻意不同于比特币 SHA-256，防 merge mining），SiaCoin 开始流通
 - **2021 年**：成立 Sia Foundation 非营利组织，接手协议开发
-- **2022-2024 年**：用 Go 从零重写整套软件——renterd（renter）/ hostd（host）/ walletd（钱包），告别老旧的 siad 单体架构
+- **2022-2024 年**：用 Go 从零重写——renterd / hostd / walletd，告别老旧 siad 单体
 - **2024 年**：renterd v1.0 发布，纯 HTTP API + autopilot，主推自部署友好
 
 ## 学到什么
 
-1. **持续付费 vs 永久付费是两种存储哲学**——Sia / Filecoin 是租，Arweave 是买断；冷数据成本前者赢，永久存档后者赢
+1. **持续付费 vs 永久付费是两种存储哲学**——Sia / Filecoin 是租，Arweave 是买断
 2. **storage proof 让"陌生人不删数据"成为博弈最优解**——经济惩罚比信任更管用
-3. **纠删码不是炫技**：m=10, n=30 是工程权衡，要扛住 2/3 host 同时跑路
-4. **autopilot 的存在说明链上原语不够用**——选 host / 续约这些"应用层 UX"得有人替用户做决策
-5. **去中心化程度有梯度**：IPFS 只去中心化寻址，Filecoin 去中心化寻址+市场，Sia 去中心化全套并自带链
-6. **简单胜过复杂**：Sia 的 PoW 链朴素到无聊，但十年没出过共识事故，复杂度全压在客户端
+3. **纠删码不是炫技**：m=10, n=30 要扛住约 2/3 host 同时跑路
+4. **autopilot 说明链上原语不够用**——选 host / 续约得有人替用户做决策
+5. **简单胜过复杂**：Sia 的 Blake2b PoW 朴素，公开记录未见重大共识事故，复杂度压在客户端
 
 ## 延伸阅读
 
@@ -141,7 +154,7 @@ const data = await renterd.get('bucket/file.bin')
 - [[filecoin]] —— Sia 的最大竞品，IPFS 之上的存储市场，PoSt 证明更复杂
 - [[arweave]] —— 一次付费永久存，靠捐赠基金和递归证明，与 Sia 持续付费哲学相反
 - [[reed-solomon-1960]] —— Sia 用的纠删码本体，60 年的老数学还在打工
-- [[bitcoin-core]] —— Sia 的 PoW 共识抄自比特币，但独立链
+- [[bitcoin-core]] —— 同为 PoW 独立链，但 Sia 用 Blake2b 而非 SHA-256
 - [[go-ethereum]] —— 同类去中心化系统的 Go 实现参考
 
 ## 反向链接

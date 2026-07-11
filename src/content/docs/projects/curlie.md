@@ -171,3 +171,7 @@ curlie -N https://api.example.com/events
 - [[yq]] —— 调 YAML / k8s API 时配 yq
 - [[dasel]] —— 多格式选择器，curlie 输出格式不固定时一把切
 - [[fx]] —— curlie 拿到大 JSON 后丢进 fx TUI 浏览
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

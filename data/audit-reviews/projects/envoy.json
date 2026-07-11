@@ -1,0 +1,103 @@
+{
+  "slug": "envoy",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 YAML 用了省略号 `...`，零基础无法照抄验证；应给可跟做的最小完整片段或逐步字段解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Envoy 几乎只在 k8s 里部署 sidecar」过满：边缘代理 / 独立进程 / Contour 等场景很常见，应改为「sidecar 是 mesh 主形态，也常作边缘/独立代理」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Lyft 2016 开源、Istio 2017、CNCF 2018 毕业等时间线合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 不完整，无法本地 curl 验证；金丝雀与 admin 端口案例可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "连接池 / filter 顺序 / access log 同步 IO 踩坑很具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 YAML 用了省略号 `...`，零基础无法照抄验证；应给可跟做的最小完整片段或逐步字段解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "「Envoy 几乎只在 k8s 里部署 sidecar」过满：边缘代理 / 独立进程 / Contour 等场景很常见，应改为「sidecar 是 mesh 主形态，也常作边缘/独立代理」。",
+        "Lyft 2016 开源、Istio 2017、CNCF 2018 毕业等时间线合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 不完整，无法本地 curl 验证；金丝雀与 admin 端口案例可操作。",
+        "连接池 / filter 顺序 / access log 同步 IO 踩坑很具体。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 199,
+    "reasons": []
+  },
+  "lines": 199,
+  "l1_pass": true
+}

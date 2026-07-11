@@ -28,7 +28,7 @@ const User = type({
 不理解 arktype，下面这些事都没法解释：
 
 - 为什么 zod 写久了会觉得 `.string().email().min(5)` 这种 method chain 像噪音
-- 为什么 `z.enum(["admin", "user"])` 推出来仍是 `string`，而 arktype 能保留 `'admin' | 'user'` 字面量联合
+- 为什么 schema 一多，校验写法和 TypeScript 类型容易分成两套心智；arktype 想让两边尽量长得一样
 - 为什么 TanStack Form / tRPC v11 / Hono 能"自动接受"任何符合 standardSchema 的库——arktype 是 v2.0 第一批实现
 - 为什么有些团队不用事实标准 zod，反而选小众库——技术正确不等于商业成功
 
@@ -65,14 +65,15 @@ type UserT = typeof User.infer
 **逐部分解释**：
 
 - `"string.email"` — 字符串内置子类型，校验是合法 email 格式
-- `"0 < number < 120"` — 链式区间，DSL 内置语法直接表达双闭区间
+- `"0 < number < 120"` — 链式区间，DSL 内置语法直接表达 0 到 120 之间的范围（不含边界）
 - `"'admin' | 'user'"` — 字符串字面量联合，TS 推出的类型仍是 union 而非 string
 - `typeof User.infer` — 等价于 zod 的 `z.infer<typeof User>`，但写法更紧凑
 
 ### 案例 2：校验数据 + narrowing
 
 ```ts
-const result = User({ email: "x@y.com", age: 25, role: "admin", tags: [] })
+const input: unknown = { email: "x@y.com", age: 25, role: "boss", tags: [] }
+const result = User(input)
 if (result instanceof type.errors) {
   console.error(result.summary)
   // "role must be 'admin' or 'user' (was 'boss')"

@@ -17,6 +17,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test",
+    "verify:ci": "node scripts/verify-ci.mjs",
     "verify:scripts": "npm test && node scripts/pick-batch.mjs --count 0 --rewrite 0 --new 0 --no-priority && node scripts/dispatch-batch.mjs --rewrite 0 --new 0 --dry-run && git diff --check",
     "doctor:candidates": "node scripts/doctor-candidates.mjs --all",
     "promote:candidates": "node scripts/promote-candidates.mjs --area papers --from new --limit 40",

@@ -1,0 +1,115 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "水管/远程按钮/积木三类比贯穿核心要点，零基础能建立心智模型"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有命令 + 逐部分解释，跟做路径清晰"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "UHID / AOA 有「更像物理键盘鼠标」桥接，可接受；若再压术语可在括号补全称"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Genymobile/scrcpy、Romain Vimont 2018 发布叙事正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "相机 Android 12+、音频 Android 11+、示例命令与官方 README/doc 对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约 113k star」属量级表述，可接受；未发现硬伤或过度简化歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例命令可直接跟做，参数解释与官方文档一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖 adb 授权、多设备 -s、-d/-e、安全调试开关、音频版本门槛，可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（非远控木马、非云端桌面、非测试调度平台）；延迟未给具体 ms 仍可接受"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "水管/远程按钮/积木三类比贯穿核心要点，零基础能建立心智模型",
+        "三个案例都有命令 + 逐部分解释，跟做路径清晰",
+        "UHID / AOA 有「更像物理键盘鼠标」桥接，可接受；若再压术语可在括号补全称"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Genymobile/scrcpy、Romain Vimont 2018 发布叙事正确",
+        "相机 Android 12+、音频 Android 11+、示例命令与官方 README/doc 对齐",
+        "「约 113k star」属量级表述，可接受；未发现硬伤或过度简化歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例命令可直接跟做，参数解释与官方文档一致",
+        "踩坑覆盖 adb 授权、多设备 -s、-d/-e、安全调试开关、音频版本门槛，可操作",
+        "适用/不适用边界清楚（非远控木马、非云端桌面、非测试调度平台）；延迟未给具体 ms 仍可接受"
+      ]
+    }
+  ],
+  "slug": "scrcpy",
+  "area": "projects",
+  "status": "passed"
+}

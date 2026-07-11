@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "要点 3 的 pager/VFS 对零基础仍偏抽象，可再补一句‘像操作系统帮你管磁盘页’的桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "‘站在 SQL、KV、文档库中间’是教学定位，略宽；可强调它是嵌入式双模引擎而非 SQL 替代品"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界可再补一点量化（如单机本地、中小 value、无网络协议）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "要点 3 的 pager/VFS 对零基础仍偏抽象，可再补一句‘像操作系统帮你管磁盘页’的桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "‘站在 SQL、KV、文档库中间’是教学定位，略宽；可强调它是嵌入式双模引擎而非 SQL 替代品"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界可再补一点量化（如单机本地、中小 value、无网络协议）"
+      ]
+    }
+  ]
+}

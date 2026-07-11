@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "橡皮泥 vs 菜谱类比极贴合，积木/木工/印章把布尔与模块讲清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "术语几乎都有日常桥接，零基础能跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有代码 + 逐部分解释，步骤清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/openscad/openscad；Kintel/Wolf、RepRap 社区脉络正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019.05/2021.01 稳定版与 BOSL2 等库生态描述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未把 OpenSCAD 夸成通用 CAD，边界（非 FreeCAD/Blender）清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "外壳/螺丝孔/命令行 -D 导出示例可跟做；screw_holes 需自备库但不影响教学"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（不可 x=x+1、F5≠F6、差集留 0.01、非 manifold）全是真实痛点"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用量化清楚（参数化小零件 vs 雕塑/强约束装配）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "橡皮泥 vs 菜谱类比极贴合，积木/木工/印章把布尔与模块讲清楚",
+        "术语几乎都有日常桥接，零基础能跟住",
+        "三个案例都有代码 + 逐部分解释，步骤清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 github.com/openscad/openscad；Kintel/Wolf、RepRap 社区脉络正确",
+        "2019.05/2021.01 稳定版与 BOSL2 等库生态描述合理",
+        "未把 OpenSCAD 夸成通用 CAD，边界（非 FreeCAD/Blender）清楚"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "外壳/螺丝孔/命令行 -D 导出示例可跟做；screw_holes 需自备库但不影响教学",
+        "踩坑（不可 x=x+1、F5≠F6、差集留 0.01、非 manifold）全是真实痛点",
+        "适用/不适用量化清楚（参数化小零件 vs 雕塑/强约束装配）"
+      ]
+    }
+  ]
+}

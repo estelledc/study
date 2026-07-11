@@ -1,6 +1,6 @@
 ---
 title: Row Polymorphism — 让函数不必知道 record 的全部字段
-来源: 'Rémy. "Type Inference for Records in a Natural Extension of ML". INRIA Research Report 1989'
+来源: 'Rémy. "Type Inference for Records in a Natural Extension of ML". INRIA Research Report RR-1431, 1991'
 日期: 2026-06-24
 分类: 编程语言
 难度: 中级
@@ -10,7 +10,7 @@ title: Row Polymorphism — 让函数不必知道 record 的全部字段
 
 Row polymorphism 是一种让类型系统表达"我只关心这个 record 有某些字段，其余随便"的多态方式。日常类比：你去前台说"帮我找一个有阳台的房间"，至于房间是大是小、朝南朝北，你不关心——"其余字段"由一个**行变量**（row variable）ρ 统一代表。
 
-Rémy 1989 年的论文把这个想法变成了完整的类型推导算法：给 ML 加一种新的"行"（row）结构，让 record 类型能被 Hindley-Milner 式推导，不需要子类型（subtyping），也不需要为每种 record 形状单独写类型定义。
+Rémy 先在 1989 年 POPL 提出记录/变体扩展，1991 年 INRIA RR-1431 给出完整类型推导：给 ML 加一种新的"行"（row）结构，让 record 类型能被 Hindley-Milner 式推导，不需要子类型（subtyping），也不需要为每种 record 形状单独写类型定义。
 
 核心洞见：把 record 类型 `{ x : Int, y : Bool }` 看成一个"行"——一串 label-type 对，末尾可以是空行 `·` 或者一个行变量 `ρ`。如果末尾是 `ρ`，这个 record 类型就是"开放的"，能和更大的 record 统一。整套机制只添加一种新的 kind（Row kind），算法 W 几乎不用改。
 
@@ -31,24 +31,23 @@ Rémy 1989 年的论文把这个想法变成了完整的类型推导算法：给
 
 这三点合在一起，使得 row polymorphism 不需要像 Java/C# 那样定义接口层次就能实现"只关心部分结构"的多态，而且类型推导仍然是完全自动的。
 
-从形式化角度看，row 的语法为：`ρ ::= · | r | l : τ, ρ`——要么是空行 `·`，要么是一个行变量 `r`，要么是一个 label-type 对接上另一个 row。Record 类型 `{ ρ }` 只是把 row 包了一层外壳。统一两个 row 时，算法会"重写"行变量，把需要暴露的 label 提到前面——这就是 Rémy 论文里的 row rewriting 规则。
+用白话说：一行字段清单可以从头列到尾，也可以在末尾留个"其余待定"的空位。形式化写作 `ρ ::= · | r | l : τ, ρ`——空行 `·`、行变量 `r`、或「标签:类型」接上另一行。Record 类型 `{ ρ }` 只是把这行清单包一层外壳；统一时算法会重写行变量、把要暴露的 label 提到前面（row rewriting）。
 
 ## 实践案例
 
 ### 案例 1：多态字段选取器
 
 ```ocaml
-(* OCaml 对象类型展示 row variable 的效果 *)
+(* OCaml 对象类型里的 row：.. 是「其余方法」行变量（不是 {..} record 语法） *)
 let get_name obj = obj#name
 (* 推导出的类型：< name : 'a; .. > -> 'a *)
-(* .. 就是 row variable，表示"其余方法随便" *)
 
 (* 两种不同的对象都能传入 *)
 let _ = get_name (object method name = "Alice" method age = 30 end)
 let _ = get_name (object method name = "Bob" method dept = "PL" end)
 ```
 
-编译器推出 `get_name` 能接受任何拥有 `name` 方法的对象，不管它还有什么别的方法。这就是 row polymorphism 在 OCaml 里的日常呈现。你可以把它用在 `{ name = "Alice"; age = 30 }` 上，也可以用在 `{ name = "Bob"; dept = "PL" }` 上——行变量 `..` 分别被实例化为不同的"剩余方法集"。
+编译器推出 `get_name` 能接受任何拥有 `name` 方法的对象，不管它还有什么别的方法。这是 row polymorphism 在 OCaml **对象类型**里的日常呈现（record 字段用另一套语法，但「开放尾巴」同一套思想）。行变量 `..` 分别被实例化为不同的"剩余方法集"。
 
 ### 案例 2：PureScript 中 record 作为函数参数
 
@@ -108,12 +107,12 @@ addZ { x = 1.0, y = 2.0, color = "red" }
 ## 历史小故事（可跳过）
 
 - **1987**：Mitchell Wand 提出用类型变量表达 record 的"开放尾巴"，发表 "Complete Type Inference for Simple Objects"，但推导算法不完整
-- **1989**：Didier Rémy 在 INRIA 发表本论文，给出完整的推导算法和主类型性证明，解决了 Wand 遗留的问题
+- **1989**：Rémy 在 POPL 发表 "Records and variants as a natural extension of ML"，把记录/变体纳入 ML 多态
+- **1991**：INRIA RR-1431《Type Inference for Records…》给出完整推导算法与主类型性证明（本文主来源），解决 Wand 遗留问题
 - **1992**：Rémy 在 POPL 发表 "Typing Record Concatenation for Free"，补上了 record 合并操作
-- **1995**：Rémy 的方案被融入 OCaml 的对象系统（`< method : type; .. >`），成为工业实践
-- **2012**：PureScript 把 row polymorphism 作为 record 和 effect 的核心设计
+- **1995**：方案融入 OCaml 对象系统（`< method : type; .. >`），成为工业实践
+- **2013**：PureScript 把 row polymorphism 作为 record 和 effect 的核心设计
 - **2016**：Elm 采用简化版 extensible record，让前端开发者也能享受行多态
-- **2019**：Dolan 等人在 POPL 发表新一代 row 系统研究，row polymorphism 仍是活跃方向
 
 ## 学到什么
 

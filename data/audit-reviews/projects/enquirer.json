@@ -1,0 +1,103 @@
+{
+  "slug": "enquirer",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 缺「逐部分解释」，四种 type 对零基础应各补一句返回值长什么样。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 Counter 只写了类，未说明怎么挂到 prompt 流程里。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "0 依赖 / 12 类型与官方定位一致；「API 70% 兼容」是量级说法，可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 自定义 Prompt 缺最小用法（如何 new/run 或注册），跟做会卡在「写完类然后呢」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Ctrl+C / validate / choices 踩坑很实用，适用边界也清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 缺「逐部分解释」，四种 type 对零基础应各补一句返回值长什么样。",
+        "案例 3 Counter 只写了类，未说明怎么挂到 prompt 流程里。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "0 依赖 / 12 类型与官方定位一致；「API 70% 兼容」是量级说法，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 自定义 Prompt 缺最小用法（如何 new/run 或注册），跟做会卡在「写完类然后呢」。",
+        "Ctrl+C / validate / choices 踩坑很实用，适用边界也清楚。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 190,
+    "reasons": []
+  },
+  "lines": 190,
+  "l1_pass": true
+}

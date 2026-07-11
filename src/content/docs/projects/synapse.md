@@ -12,9 +12,16 @@ Synapse 是 **Matrix 协议**的参考 homeserver——一台你自己架的"聊
 
 它由 Element 公司维护，**Python + Twisted** 异步框架写成，后期把热路径（状态算法、签名校验）迁到 Rust。
 
-最小启动：
+最小启动（先 `generate` 再跑，缺这一步容器起不来）：
 
 ```bash
+mkdir -p ~/synapse-data
+docker run -it --rm \
+  -v ~/synapse-data:/data \
+  -e SYNAPSE_SERVER_NAME=chat.example.com \
+  -e SYNAPSE_REPORT_STATS=no \
+  matrixdotorg/synapse:latest generate
+
 docker run -d --name synapse \
   -v ~/synapse-data:/data \
   -p 8008:8008 -p 8448:8448 \
@@ -27,8 +34,8 @@ docker run -d --name synapse \
 
 - 不理解 Synapse，就解释不清"为什么 Slack/Discord 是中心化的、Matrix 不是"——前者数据全在一家公司，后者每个 homeserver 各自存
 - 它是 Matrix 的"参考实现"——协议规范有歧义时，看 Synapse 怎么做就是答案
-- 政府、医院、军方自托管即时通讯几乎都跑 Synapse（德国国家医疗 TI-M 是大宗用户）
-- 想理解 P2P 即时通讯里的"状态最终一致性"，Synapse 的 state resolution v2 是教科书级别的工程参考
+- 政府、医院、军方等自托管即时通讯里，Synapse 仍是最常见的 Matrix homeserver（德国国家医疗 TI-M 是大宗用户之一）
+- 想理解联邦即时通讯里的"状态最终一致性"，Synapse 的 state resolution v2 是教科书级别的工程参考
 
 ## 核心要点
 
@@ -44,21 +51,21 @@ Synapse 的工程价值集中在 **三件事**：
 
 ### 案例 1：自架家庭/小公司服务器
 
-最简部署：一台 2C4G VPS + Docker Compose + Caddy 反向代理，20 人以下零运维：
+最简部署：一台 2C4G VPS + Docker Compose + Caddy 反向代理，20 人以下零运维。先在空 `./data` 上跑一次官方 `generate` 写出 `homeserver.yaml`，再：
 
 ```yaml
-# docker-compose.yml 片段
+# docker-compose.yml 片段（data/ 里已有 generate 产物）
 services:
   synapse:
     image: matrixdotorg/synapse:latest
     volumes: ["./data:/data"]
-    environment:
-      SYNAPSE_SERVER_NAME: chat.example.com
-      SYNAPSE_REPORT_STATS: "no"
+    ports: ["8008:8008", "8448:8448"]
   postgres:
     image: postgres:15
     environment:
       POSTGRES_PASSWORD: synapse
+      POSTGRES_USER: synapse
+      POSTGRES_DB: synapse
 ```
 
 跑 `docker compose up -d`，再用 Element Web 客户端连上去就能聊。
@@ -82,7 +89,7 @@ Matrix 的杀手锏是 **bridge**——通过中间程序把 IRC/XMPP/Slack/Disc
 [Discord 服务器] ←→ mautrix-discord ←→ [Synapse] ←→ Element 客户端
 ```
 
-公司里常见用法：把 Slack 历史导入 Matrix 自托管做归档。
+跟做三步：① 部署 `mautrix-discord` 并在 Synapse 登记为 application service；② 用桥账号登录 Discord；③ 在 Element 里应看到对应频道。公司里常见用法：把 Slack 历史导入 Matrix 自托管做归档。
 
 ## 踩过的坑
 
@@ -112,11 +119,10 @@ Matrix 的杀手锏是 **bridge**——通过中间程序把 IRC/XMPP/Slack/Disc
 
 ## 历史小故事（可跳过）
 
-- **2014 年**：Matrix.org 基金会发布协议草案，目标是做"开放标准的 Slack"
-- **2016 年**：Synapse 第一版发布（当时叫 synapse-python），Twisted 框架是 Python 异步当年的主流选项
-- **2017 年**：Riot.im 客户端（后改名 Element）成为旗舰，Synapse 跟着进入生产可用阶段
-- **2023 年**：Element 把仓库从 `matrix-org/synapse` 迁到 `element-hq/synapse`，license 改为 AGPLv3，引发社区分叉讨论（Conduit、Dendrite 借机抢用户）
-- **2024 年起**：状态算法、签名校验等热路径用 Rust 经 pyo3 重写，性能提升 2-5 倍
+- **2014 年**：Matrix.org 发布协议草案，同步开源参考 homeserver Synapse（Python + Twisted），目标是做"开放标准的 Slack"
+- **2016–2017 年**：Riot.im 客户端（后改名 Element）成为旗舰，Synapse 进入更广泛的生产可用阶段
+- **2023 年 11–12 月**：Element 把仓库从 `matrix-org/synapse` 迁到 `element-hq/synapse`，后续贡献改为 AGPLv3，引发社区分叉讨论（Conduit、Dendrite 借机抢用户）
+- **近年**：推送规则、事件处理等热路径用 Rust 经 pyo3 接入，官方称关键路径有数倍加速（具体倍数随版本与负载变化）
 
 ## 学到什么
 

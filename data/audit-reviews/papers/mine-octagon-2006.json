@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "橡皮筋/盒子类比贴合，但 DBM、强闭包首次出现桥接偏短，零基础容易卡在「2n×2n 矩阵」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 缺「逐部分解释」；文末是「一句话回顾」而非模板要求的「反向链接」占位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Miné HOSC 2006 / AST 2001、DBM+Floyd-Warshall 强闭包、Astrée 落地叙事与公开史实一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「便宜十倍」偏修辞量化，教学可接受但宜弱化为数量级对比"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "C 循环/数组越界案例概念正确；三变量/非线性/packing/浮点舍入踩坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有变量规模与约束形态，案例缺逐步对照区间 vs octagon 的推导步骤"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "橡皮筋/盒子类比贴合，但 DBM、强闭包首次出现桥接偏短，零基础容易卡在「2n×2n 矩阵」",
+        "案例 1/2 缺「逐部分解释」；文末是「一句话回顾」而非模板要求的「反向链接」占位"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Miné HOSC 2006 / AST 2001、DBM+Floyd-Warshall 强闭包、Astrée 落地叙事与公开史实一致",
+        "「便宜十倍」偏修辞量化，教学可接受但宜弱化为数量级对比"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "C 循环/数组越界案例概念正确；三变量/非线性/packing/浮点舍入踩坑具体",
+        "适用边界有变量规模与约束形态，案例缺逐步对照区间 vs octagon 的推导步骤"
+      ]
+    }
+  ]
+}

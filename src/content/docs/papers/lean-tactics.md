@@ -26,7 +26,7 @@ theorem add_comm (a b : Nat) : a + b = b + a := by
 不理解 Lean tactic，下面这些事都没法解释：
 
 - 为什么 mathlib（Lean 数学库）能积累几十万定理而不被人海堆死——tactic 自动化吃掉了 90% 琐碎步
-- 为什么形式化数学这十年突然能跑起来（Liquid Tensor Experiment / 费马大定理项目）
+- 为什么形式化数学这十年突然能跑起来（Liquid Tensor Experiment；费马大定理等形式化也在推进）
 - 为什么 Lean 4 能"自己写自己"（自举）——它把元编程做成一等公民
 - 为什么有人说 "tactic 是给定理证明器写的 DSL"，又有人说 "tactic 不是 DSL 是普通函数"
 
@@ -34,11 +34,11 @@ theorem add_comm (a b : Nat) : a + b = b + a := by
 
 Lean 的 tactic 系统建立在 **三层** 上：
 
-1. **内核**：一种叫 **CIC（归纳构造演算）** 的类型论，跟 Coq 同源。在这一层，"证明" = "一个类型为该命题的项"。所有最终被信任的东西都得能被翻译成 CIC 项。
+1. **内核**：一种叫 **CIC（归纳构造演算）** 的类型论，跟 Coq 同源。在这一层，"证明"就是一个**程序表达式（项）**，它的类型恰好是那个命题——像试卷答案的类型必须对上题目。所有最终被信任的东西都得能翻译成 CIC 项。
 
-2. **Tactic monad**：tactic 是函数，签名近似 `Goal → List Goal × Term`——读当前**待证目标**，写出**新目标列表**和**已构造的部分证明**。可以串联（先 A 再 B）、可以分支（A 失败试 B）、可以重复（while 直到不动）。
+2. **Tactic monad**：tactic 是函数，签名近似 `Goal → List Goal × Term`——读当前**待证目标**（还没做完的题），写出**新目标列表**和**已构造的部分证明**。可以串联、分支、重复，像脚本编排。
 
-3. **Elaborator**：你写的不是裸 CIC 项，而是省略了一堆细节的 surface 语法（`x + y` 没标类型、`apply f` 没填证据）。elaborator 把这些精化成完整 CIC 项，过程里发现需要证明的子目标，就丢给 tactic。
+3. **Elaborator**：把省略主语的口语补成完整句子。你写的是省略细节的 surface 语法（`x + y` 没标类型），elaborator 精化成完整 CIC 项；中间缺的洞就变成子目标丢给 tactic。
 
 三层加起来叫 **tactic 框架**。Lean 1（2015 论文这版）就把它跑通了；Lean 4（2021）把第二、三层整个用 Lean 自己重写——**写 tactic 的语言 = 写定理的语言**。
 
@@ -74,7 +74,7 @@ example (a b c : Nat) : (a + b) + c = c + (b + a) := by
   simp [Nat.add_comm, Nat.add_assoc]
 ```
 
-`simp` 拿你给的等式当**重写规则**，反复套到目标上直到不动。一行替代几十行机械推导。mathlib 里 70% 的小定理靠 simp 收尾。
+`simp` 拿你给的等式当**重写规则**，反复套到目标上直到不动。一行替代几十行机械推导。mathlib 里大量琐碎引理常靠 simp 收尾。
 
 ### 案例 4：tactic 组合子（combinators）
 
@@ -101,14 +101,14 @@ theorem easy (n : Nat) : n + 0 = n := by
 
 **适用**：
 
-- 形式化数学（mathlib / 费马大定理项目 / Liquid Tensor）
-- 软件验证（CompCert 思路、密码协议、操作系统内核）
+- 形式化数学（mathlib / Liquid Tensor；费马大定理等形式化进行中）
+- 软件验证（编译器、密码协议、OS 内核正确性）
 - 元编程实验（Lean 4 = 把"语言写自己"做到极致）
 - 教学逻辑 / 类型论（"自然演绎写出来能跑"）
 
 **不适用**：
 
-- 工程代码主流（编译慢、生态小，不会替代日常 Rust / TS）
+- 替代日常工程语言（编译慢、生态小，不是 Rust / TS 的竞品）
 - 需要决策过程的实数 / 概率（Lean 有但不如 Mathematica / SMT 顺手）
 - 不接受"看不懂的自动化证明"的场合（金融审计宁愿要人读得懂）
 
