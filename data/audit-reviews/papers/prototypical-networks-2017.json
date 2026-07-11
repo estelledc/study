@@ -1,0 +1,130 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇「平均长相」类比贴合原型均值，零基础能抓住主线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 主要是数字与公式消融，缺少像案例 3 那样的可跟做代码与逐部分解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点三步偏术语清单，建议每步补一句日常类比（对照模板 hindley-milner）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Bregman 散度有括号桥接，但首次出现仍偏陡，可再压一句「一类特殊距离，均值刚好是最优代表」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "miniImageNet 5-way 1-shot 49.4% / 5-shot 68.2% 与 Snell et al. NeurIPS 2017 Table 2 一致；相对 MAML 的领先幅度也对"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么 RAG 系统用 nearest-centroid 检索」过满：主流 RAG 是稠密向量近邻检索 chunk，不是按类原型做 nearest-centroid 分类，应改写或删掉"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「5 页正文」不准确：论文主文长于 5 页，宜改为「短论文 / 主文很短」之类表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "欧氏优于余弦、Bregman 与均值最优性的教学简化方向正确，不算硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 SentenceBERT 伪代码概念正确、可跟读；案例 1 建议补一段 episode 伪代码（抽 N-way K-shot → 均值原型 → 比距离）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：维度诅咒、噪声拉偏原型、episode 对齐、跨域失效——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有 1-20 shot、64-512 维等量化，够用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "难度 frontmatter 写「入门」，规范是 初级|中级|高级，建议改为「初级」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "开篇「平均长相」类比贴合原型均值，零基础能抓住主线",
+        "案例 1/2 主要是数字与公式消融，缺少像案例 3 那样的可跟做代码与逐部分解释",
+        "核心要点三步偏术语清单，建议每步补一句日常类比（对照模板 hindley-milner）",
+        "Bregman 散度有括号桥接，但首次出现仍偏陡，可再压一句「一类特殊距离，均值刚好是最优代表」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "miniImageNet 5-way 1-shot 49.4% / 5-shot 68.2% 与 Snell et al. NeurIPS 2017 Table 2 一致；相对 MAML 的领先幅度也对",
+        "「为什么 RAG 系统用 nearest-centroid 检索」过满：主流 RAG 是稠密向量近邻检索 chunk，不是按类原型做 nearest-centroid 分类，应改写或删掉",
+        "「5 页正文」不准确：论文主文长于 5 页，宜改为「短论文 / 主文很短」之类表述",
+        "欧氏优于余弦、Bregman 与均值最优性的教学简化方向正确，不算硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 SentenceBERT 伪代码概念正确、可跟读；案例 1 建议补一段 episode 伪代码（抽 N-way K-shot → 均值原型 → 比距离）",
+        "踩坑具体可操作：维度诅咒、噪声拉偏原型、episode 对齐、跨域失效——保留",
+        "适用边界有 1-20 shot、64-512 维等量化，够用",
+        "难度 frontmatter 写「入门」，规范是 初级|中级|高级，建议改为「初级」"
+      ]
+    }
+  ],
+  "slug": "prototypical-networks-2017",
+  "area": "papers",
+  "status": "refined"
+}
