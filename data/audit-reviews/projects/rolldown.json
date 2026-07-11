@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 3.66,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快餐车+大厨房→统一厨房类比贯穿双引擎痛点，零基础好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "bundler/AST/plugin 钩子都有白话桥接；napi-rs 有胶水说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 CLI 参数有解释；案例 2 resolveId 返回值语义清楚；案例 3 切引擎步骤可跟但路径已过时"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/rolldown/rolldown、VoidZero/oxc 定位正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "时间线过时：2024-04 已有公开 0.10.1，不是「2025 进入 alpha」；Vite 8（2026-03）默认内置 Rolldown，不是「rolldown-vite 可选包」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 仍教 uninstall vite + install rolldown-vite：那是 2025 技术预览路径；2026-05 起 Vite 8+ 应直接升 Vite，rolldown-vite 已并回主线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CLI 与 resolveId plugin 示例概念正确；案例 3 迁移命令在 Vite 8 默认 Rolldown 后会误导读者"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑有用：plugin 边角顺序、Rust 钩子序列化、小项目看不出快；v1 前破坏性变更需改成「1.0 后 API 锁定、产物行为仍可能变」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用仍主推「rolldown-vite 替换上游」；应改为 Vite 8+ 默认引擎 / 独立 CLI，并把 rolldown-vite 标为历史预览"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快餐车+大厨房→统一厨房类比贯穿双引擎痛点，零基础好懂",
+        "bundler/AST/plugin 钩子都有白话桥接；napi-rs 有胶水说明",
+        "案例 1 CLI 参数有解释；案例 2 resolveId 返回值语义清楚；案例 3 切引擎步骤可跟但路径已过时"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 github.com/rolldown/rolldown、VoidZero/oxc 定位正确",
+        "时间线过时：2024-04 已有公开 0.10.1，不是「2025 进入 alpha」；Vite 8（2026-03）默认内置 Rolldown，不是「rolldown-vite 可选包」",
+        "案例 3 仍教 uninstall vite + install rolldown-vite：那是 2025 技术预览路径；2026-05 起 Vite 8+ 应直接升 Vite，rolldown-vite 已并回主线"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "CLI 与 resolveId plugin 示例概念正确；案例 3 迁移命令在 Vite 8 默认 Rolldown 后会误导读者",
+        "踩坑有用：plugin 边角顺序、Rust 钩子序列化、小项目看不出快；v1 前破坏性变更需改成「1.0 后 API 锁定、产物行为仍可能变」",
+        "适用仍主推「rolldown-vite 替换上游」；应改为 Vite 8+ 默认引擎 / 独立 CLI，并把 rolldown-vite 标为历史预览"
+      ]
+    }
+  ],
+  "slug": "rolldown",
+  "area": "projects",
+  "status": "refined",
+  "lines": 161,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.66,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic/engineer：按 VoidZero 1.0 公告校正时间线；案例 3 改为 Vite 8 默认 Rolldown；适用与踩坑同步更新",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  }
+}
