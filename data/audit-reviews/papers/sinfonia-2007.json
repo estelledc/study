@@ -1,0 +1,132 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "对讲机协调 vs 便签交给前台的类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "memory node / minitransaction / piggyback 首次出现有白话；2PC 可再补「两阶段提交」四字桥接，不影响跟读"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 步骤清楚（组装 compare/read/write → 提交；2PC 对照；crash 恢复）；案例 4 CAS 锁也够具体"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Aguilera et al., SOSP 2007；minitransaction=(compare,read,write)、memory/application node 分工与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SinfoniaFS / GCS / 锁服务三应用、piggyback prepare、recovery coordinator 叙述与 stub/来源不冲突"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「很多教科书单列一节」「第一个系统化」略有叙事色彩；Percolator/Spanner 谱系属教学归纳，可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例伪代码/流程可跟读：CAS 建文件、2PC vs piggyback 对照、WAL+recovery coordinator"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：事先列读写集、节点不互通、无 SI、复制另做——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（DC 内受限事务 vs 交互式长事务/WAN/高竞争）；量化可再补一句竞争失败率量级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "对讲机协调 vs 便签交给前台的类比贯穿全文，零基础直觉强",
+        "memory node / minitransaction / piggyback 首次出现有白话；2PC 可再补「两阶段提交」四字桥接，不影响跟读",
+        "案例 1–3 步骤清楚（组装 compare/read/write → 提交；2PC 对照；crash 恢复）；案例 4 CAS 锁也够具体"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Aguilera et al., SOSP 2007；minitransaction=(compare,read,write)、memory/application node 分工与论文一致",
+        "SinfoniaFS / GCS / 锁服务三应用、piggyback prepare、recovery coordinator 叙述与 stub/来源不冲突",
+        "「很多教科书单列一节」「第一个系统化」略有叙事色彩；Percolator/Spanner 谱系属教学归纳，可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例伪代码/流程可跟读：CAS 建文件、2PC vs piggyback 对照、WAL+recovery coordinator",
+        "踩坑具体：事先列读写集、节点不互通、无 SI、复制另做——可操作",
+        "适用/不适用边界清楚（DC 内受限事务 vs 交互式长事务/WAN/高竞争）；量化可再补一句竞争失败率量级"
+      ]
+    }
+  ],
+  "slug": "sinfonia-2007",
+  "area": "papers",
+  "status": "passed",
+  "lines": 165,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，平均 4.44 ≥ 4.0"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
