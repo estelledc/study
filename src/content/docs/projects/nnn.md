@@ -13,7 +13,7 @@ nnn（读作 "n cubed"，n³）是一个**在终端里浏览和管理文件**的
 你打开它，看到的就是一列文件名：
 
 ```
-/home/jason/code
+~/projects
 > nnn/
   ranger/
   notes.md
@@ -163,4 +163,3 @@ sel="$(find . -type d 2>/dev/null | fzf)"
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
-

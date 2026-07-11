@@ -190,7 +190,7 @@ Stars 量级为 2025-2026 区间近似值，用于影响力参考；候选门槛
 
 ## 与现有 atlas 的去重确认
 
-已扫过 `/Users/jason/study/src/content/docs/projects/` 下 157 个 slug，下列**无冲突**：
+已扫过 `src/content/docs/projects/` 下 157 个 slug，下列**无冲突**：
 
 - 仅有 `bun` 重叠（按用户许可的多类目允许，本文件保留作 runtime 视角索引，不重复创建 slug 文件）
 - atlas 的 build / runtime 邻居：esbuild / swc / vite / rolldown / rollup / rspack / oxc / lightningcss / turbopack / webpack / pnpm / nx / lerna / turborepo / biome / starlight / vitepress / nextra（这些都是**构建 / 打包工具**，不属本文件 runtime / VM 主题）

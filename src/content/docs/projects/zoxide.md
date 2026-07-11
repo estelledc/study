@@ -19,7 +19,7 @@ z proj
 它从你过去 cd 过的所有目录里，挑一个 **最常去 + 最近去过 + 名字带 "proj"** 的，直接跳过去。等价于你手敲：
 
 ```bash
-cd /Users/jason/code/big-project/services/api
+cd "$HOME/projects/big-project/services/api"
 ```
 
 底层是 **Rust 单二进制 + 自有二进制小数据库**（默认在 `~/.local/share/zoxide/db.zo`，存"路径、访问分数、最后访问时间"三元组，不是 SQLite）。第一次用要先 `cd` 一遍学路径，之后就只敲关键词。
@@ -54,9 +54,9 @@ brew install zoxide              # macOS；Linux 可用 apt / cargo install zoxi
 echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
 source ~/.zshrc
 
-cd ~/code/big-project            # 先 cd 一次让它学
+cd ~/projects/big-project        # 先 cd 一次让它学
 cd ~                              # 回家
-z proj                            # 跳回 ~/code/big-project
+z proj                            # 跳回 ~/projects/big-project
 ```
 
 `zoxide init zsh` 不是装包，是**让 zoxide 把 z / zi 这两个 shell 函数注入到当前 shell**。没 eval 这一步，命令行只有 `zoxide` 二进制能用，不会有 `z` 这个简短入口。
@@ -166,4 +166,3 @@ zi proj
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
-

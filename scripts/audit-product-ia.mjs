@@ -22,6 +22,9 @@ const requiredFiles = [
   ...topicPages,
   'src/content/docs/projects-atlas.md',
   'src/content/docs/papers-atlas.md',
+  'src/components/StudyHeader.astro',
+  'src/components/StudyMobileMenuFooter.astro',
+  'src/styles/jx/components.css',
   'src/styles/jx/product-ui.css',
 ];
 
@@ -80,8 +83,12 @@ const start = read('src/content/docs/start.md');
 const topicsIndex = read('src/content/docs/topics/index.md');
 const frontend = read('src/content/docs/topics/frontend.md');
 const aiAgent = read('src/content/docs/topics/ai-agent.md');
+const about = read('src/content/docs/about.md');
 const config = read('astro.config.mjs');
 const css = read('src/styles/jx/product-ui.css');
+const dsComponents = read('src/styles/jx/components.css');
+const studyHeader = read('src/components/StudyHeader.astro');
+const studyMobileFooter = read('src/components/StudyMobileMenuFooter.astro');
 const atlasGenerator = read('scripts/regen-atlas.mjs');
 
 // Homepage positioning and the three visible first-screen actions are contractual.
@@ -107,6 +114,18 @@ if (authoredH1Count !== 0) {
 
 if (countClassUsage(heroPanel, 'study-kicker') < 1 || !heroPanel.includes(requiredKicker)) {
   fail(`Homepage .study-kicker must say: ${requiredKicker}`);
+}
+
+if (!heroPanel.includes('data-state="maintained"') || !heroPanel.includes('Maintained')) {
+  fail('Homepage first viewport must expose the maintained lifecycle state.');
+}
+
+if (/1,?975|1,?014|961/.test(heroPanel)) {
+  fail('Homepage first viewport must lead with learning value, not the raw content count.');
+}
+
+if (!heroPanel.includes('lang="en"') || !heroPanel.includes('A maintained learning map')) {
+  fail('Homepage hero must include the concise English product summary.');
 }
 
 const expectedActions = [
@@ -173,6 +192,70 @@ if (!index.includes('/study/projects/react/')) fail('Homepage must explicitly li
 if (!index.includes('/study/papers/react/')) fail('Homepage must explicitly link ReAct to /study/papers/react/.');
 if (!frontend.includes('/study/projects/react/')) fail('Frontend topic must explicitly link React to /study/projects/react/.');
 if (!aiAgent.includes('/study/papers/react/')) fail('AI Agent topic must explicitly link ReAct to /study/papers/react/.');
+
+// Public showcase proof must follow the beginner path and state the human/AI split honestly.
+const beginnerPathIndex = index.indexOf('先选一条新手路径');
+const proofIndex = index.indexOf('study-proof-section');
+if (proofIndex < 0 || proofIndex <= beginnerPathIndex) {
+  fail('Homepage proof block must appear after the beginner path, keeping raw scale out of the first viewport.');
+}
+
+for (const claim of [
+  'Jason 决定站点定位、筛选标准与编辑判断',
+  'Claude Code 负责源码研究、初稿和 Astro / Starlight 基础设施',
+  '内容不是 Jason 独自逐篇写作',
+  'Evidence / 证据',
+  'Limitations / 局限',
+  'AI 初稿可能误读',
+]) {
+  if (!index.includes(claim)) fail(`Homepage showcase disclosure is missing: ${claim}`);
+}
+
+for (const sourceClaim of [
+  '**战略**：Jason 决定站点定位、信念、项目筛选标准、节奏',
+  '**研究**：Claude Code 用 Explore 子代理本地 clone + 精读源码',
+  '**写作**：Claude Code 起草',
+  '**编辑**：Jason 读、提观点、要求重写、调整声音、补判断',
+]) {
+  if (!about.includes(sourceClaim)) fail(`About page no longer supports homepage collaboration claim: ${sourceClaim}`);
+}
+
+for (const className of ['jx-chip', 'jx-proof', 'jx-pill']) {
+  if (countClassUsage(index, className) < 1) fail(`Homepage must use Jason DS v2 .${className}.`);
+  if (!new RegExp(`\\.${escapeRegExp(className)}(?![\\w-])`).test(dsComponents)) {
+    fail(`Jason DS v2 components.css is missing .${className}.`);
+  }
+}
+
+const globalDestinations = [
+  'https://estelledc.github.io/',
+  'https://estelledc.github.io/about/',
+  'https://estelledc.github.io/resume/',
+];
+for (const href of globalDestinations) {
+  if (!studyHeader.includes(href)) fail(`Desktop chrome is missing global destination: ${href}`);
+  if (!studyMobileFooter.includes(href)) fail(`Mobile chrome is missing global destination: ${href}`);
+}
+if (!studyHeader.includes('<Search />')) fail('Custom desktop chrome must preserve Starlight search.');
+if (!studyHeader.includes('<SocialIcons />') || !config.includes('https://github.com/estelledc/study')) {
+  fail('Desktop chrome must preserve the configured GitHub source link.');
+}
+if (!studyMobileFooter.includes('https://github.com/estelledc/study')) {
+  fail('Mobile chrome must expose the GitHub source link.');
+}
+
+for (const component of [
+  "Header: './src/components/StudyHeader.astro'",
+  "MobileMenuFooter: './src/components/StudyMobileMenuFooter.astro'",
+]) {
+  if (!config.includes(component)) fail(`Starlight component override is missing: ${component}`);
+}
+
+for (const metadataToken of ['application/ld+json', "'@type': 'WebSite'", 'og:type', 'og:title', 'twitter:title']) {
+  if (!(config.includes(metadataToken) || index.includes(metadataToken))) {
+    fail(`Public metadata is missing token: ${metadataToken}`);
+  }
+}
 
 // The start page is an actual beginner entry, not another index.
 for (const [pattern, description] of [
@@ -266,6 +349,9 @@ const requiredCssClasses = [
   'study-callout',
   'study-stats-strip',
   'study-details',
+  'study-hero-en',
+  'study-collaboration',
+  'study-proof-section',
 ];
 
 for (const className of requiredCssClasses) {
