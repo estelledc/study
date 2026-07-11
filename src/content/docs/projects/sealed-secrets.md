@@ -15,7 +15,7 @@ Sealed Secrets 是 Bitnami 2017 年开源的一个 Kubernetes 控制器，专门
 - **K8s 原生 Secret** 像把存折写在明信片上——它只是 base64 编码，不是加密，谁拿到 yaml 都能 base64 -d 看明文。
 - **Sealed Secrets** 像给明信片套一个**只能在你家信箱里打开的保险盒**。你（开发者）有保险盒和盒外公钥，加密后随便丢；只有家里那把私钥（在集群里）能打开。
 
-GitHub 7.7k stars，2022 年进 CNCF Sandbox。是 GitOps 工作流（ArgoCD / Flux）里**事实标准**的 Secret 加密方案。
+GitHub 约 7.7k stars（Bitnami Labs 维护）。是 GitOps 工作流（ArgoCD / Flux）里**常见的**集群内 Secret 加密方案之一（另两条常见路线是 SOPS、External Secrets）。
 
 ## 为什么重要
 
@@ -120,16 +120,16 @@ spec:
 
 **适用**：
 
-- GitOps 工作流（ArgoCD / Flux）——一切在 Git 里，sealed-secrets 是最自然的补丁
-- 中小团队、没有专职安全运维——比 Vault 轻 100 倍
-- 内网集群、Secret 数量 < 几百条——人工备份私钥可控
+- GitOps 工作流（ArgoCD / Flux）——密文进 Git，是最自然的补丁之一
+- 中小团队、没有专职安全运维——比自建 Vault 轻一个数量级
+- 内网集群、Secret 数量 < 几百条——私钥可按集群重建节奏离线备份（建议每次轮换后立刻备份）
 - 开发/测试集群——快速起一套带密码的环境
 
 **不适用**：
 
 - **极高安全场景**（金融核心 / 政府）——私钥泄露=全部泄露，建议上 HSM / Vault
 - 跨集群共享同一份 Secret——SealedSecret 绑定单集群私钥，跨集群要重新加密
-- 需要细粒度审计"谁取了哪个 Secret"——sealed-secrets 不记访问日志，要 External Secrets + Vault
+- 需要细粒度审计"谁取了哪个 Secret"——不记访问日志，要 External Secrets + Vault
 - Secret 频繁轮换（每天换）——每次都要重新 `kubeseal` + 提 PR，流程重
 
 ## 与同类方案对比
