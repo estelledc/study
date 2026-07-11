@@ -152,3 +152,5 @@ connect_pins("C1", "2", "#PWR_GND", "1")
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kicad]] —— KiCad — 电子电路 CAD

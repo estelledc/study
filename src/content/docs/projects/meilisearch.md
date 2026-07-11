@@ -158,16 +158,12 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bun]] —— Bun — JS 全能运行时
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
-- [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[manticoresearch]] —— Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
-- [[supabase]] —— Supabase — Firebase 的开源替代
 - [[tantivy]] —— Tantivy — Rust 版 Lucene
+- [[typesense]] —— Typesense — 高性能搜索引擎
 - [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
-

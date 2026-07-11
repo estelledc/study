@@ -165,10 +165,5 @@ export const observe = (type, callback, opts = {}) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
-- [[preact]] —— Preact — 3KB React 替代
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
-- [[webpack]] —— webpack 模块打包
-
+- [[video.js]] —— Video.js — Web 视频播放器框架

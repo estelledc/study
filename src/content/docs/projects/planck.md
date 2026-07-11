@@ -147,3 +147,4 @@ world.on('begin-contact', (contact) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎

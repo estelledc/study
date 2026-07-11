@@ -160,3 +160,5 @@ dracoLoader.load('model.drc', function (geometry) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gltf-transform]] —— glTF Transform — glTF 资产工具链

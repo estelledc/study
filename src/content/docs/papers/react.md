@@ -166,3 +166,24 @@ ReAct 比 CoT 多了"接外部世界"，比 Reflexion 少了"做错了能改"。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[chain-of-thought]] —— Chain-of-Thought — 让大模型先写步骤再回答
+- [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
+- [[cot]] —— Chain-of-Thought Prompting
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[lacuna-program-holes]] —— LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞
+- [[metagpt]] —— MetaGPT — 多智能体软件公司
+- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
+- [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[react-agent]] —— ReAct Agent — 推理和行动交替的工具使用范式
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
+- [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
+- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
+- [[tree-of-thoughts-2023]] —— Tree of Thoughts — 让 LLM 像下棋一样多想几步再答
+- [[voyager]] —— Voyager — LLM 终身学习智能体
+- [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
+- [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"

@@ -182,7 +182,6 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 
 - [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
-- [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
@@ -190,6 +189,4 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
-- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
-

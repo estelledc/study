@@ -173,3 +173,6 @@ Buildah 和 Podman 共享同一份 `containers/storage` 后端（默认 `~/.loca
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像
+- [[podman]] —— Podman — 无 daemon 容器引擎

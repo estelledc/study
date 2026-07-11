@@ -151,27 +151,23 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[gfs]] —— GFS — 为工作负载反向定制的分布式文件系统
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[papers/kafka]] —— Kafka — 把消息系统降维成只追加的日志文件
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[paxos]] —— Paxos — 分布式共识算法
+- [[observability]] —— Dapper 可观测性 — 把一次请求走过的路画出来
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[raft]] —— Raft — 易理解的共识算法
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
 - [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
-

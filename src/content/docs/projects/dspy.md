@@ -165,11 +165,5 @@ print(compiled(question="法国的首都是哪里？").answer)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
-- [[self-refine-2023]] —— Self-Refine — 让同一个模型自己改自己写的东西
-- [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
-
+- [[llama-index]] —— LlamaIndex — 给大模型接上私有资料库
+- [[projects/optuna]] —— Optuna — 超参搜索框架

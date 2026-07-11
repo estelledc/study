@@ -155,15 +155,12 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
 - [[duchi-local-dp-2013]] —— Duchi 2013 — 本地差分隐私的统计极限
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[feynman-simulating-physics-1982]] —— Feynman 1982 — 量子计算从模拟物理开始
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[shor-1994]] —— Shor 1994 — 量子傅里叶变换把分解整数变成找周期
 - [[tor-2004]] —— Tor — 用三层洋葱皮让没人知道你在上网
-- [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明
-

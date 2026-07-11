@@ -166,9 +166,4 @@ export default defineConfig({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
-- [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
-

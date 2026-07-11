@@ -1,5 +1,6 @@
 ---
 title: Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器
+description: "介绍 Plane 如何组合任务管理、实时协同和自托管基础设施。"
 来源: 'https://github.com/makeplane/plane'
 日期: 2026-05-29
 分类: 项目管理 / 大型 Web 应用
@@ -147,3 +148,5 @@ const server = new Hocuspocus({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mobx]] —— MobX — 让 state 像电子表格一样自动重算

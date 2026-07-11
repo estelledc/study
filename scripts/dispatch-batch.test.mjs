@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { dispatchBatch, renderDispatchOutput } from './dispatch-batch.mjs';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+
+import { applyDispatchPlan, dispatchBatch, renderDispatchOutput } from './dispatch-batch.mjs';
+import { readJsonl } from './lib/jsonl.mjs';
 import { markClaimed } from './lib/queue-store.mjs';
 
 const HOME = '/tmp/study-home';
@@ -108,4 +113,83 @@ test('renderDispatchOutput keeps prompt rendering separate from queue selection'
   const output = renderDispatchOutput(plan, TEMPLATES);
 
   assert.equal(output.assignments[0].prompt, 'new project-n Value $1');
+});
+
+test('dispatch plan hash is deterministic for the same queue snapshot', () => {
+  const queues = {
+    candidates: [newCandidate('papers', 'paper-a'), newCandidate('projects', 'project-a')],
+    pool: [],
+  };
+  const first = dispatchBatch(args({ rewrite: 0, new: 2 }), structuredClone(queues), { home: HOME });
+  const second = dispatchBatch(args({ rewrite: 0, new: 2 }), structuredClone(queues), { home: HOME });
+
+  assert.equal(first.plan_hash, second.plan_hash);
+  assert.equal(first.queue_input_hash, second.queue_input_hash);
+});
+
+test('applyDispatchPlan writes leased claims as one queue generation', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'study-dispatch-'));
+  const paths = {
+    candidates: path.join(directory, 'candidates.jsonl'),
+    rewritePool: path.join(directory, 'rewrite-pool.jsonl'),
+  };
+  const queues = {
+    candidates: [newCandidate('papers', 'paper-a'), newCandidate('projects', 'project-a')],
+    pool: [],
+  };
+  await fs.writeFile(paths.candidates, `${queues.candidates.map(JSON.stringify).join('\n')}\n`, 'utf8');
+  await fs.writeFile(paths.rewritePool, '\n', 'utf8');
+  const plan = dispatchBatch(args({ rewrite: 0, new: 2 }), queues, { home: HOME });
+
+  await applyDispatchPlan(plan, queues, {
+    directory,
+    paths,
+    claimedAt: '2026-07-10T00:00:00.000Z',
+    leaseMs: 60_000,
+  });
+
+  const rows = await readJsonl(paths.candidates);
+  assert.deepEqual(rows.map((row) => row.status), ['claimed', 'claimed']);
+  assert.ok(rows.every((row) => row.claim_generation === plan.plan_hash));
+  assert.ok(rows.every((row) => row.lease_expires_at === '2026-07-10T00:01:00.000Z'));
+});
+
+test('applyDispatchPlan never writes a shortage plan', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'study-dispatch-short-'));
+  const paths = {
+    candidates: path.join(directory, 'candidates.jsonl'),
+    rewritePool: path.join(directory, 'rewrite-pool.jsonl'),
+  };
+  await fs.writeFile(paths.candidates, 'sentinel-candidates\n', 'utf8');
+  await fs.writeFile(paths.rewritePool, 'sentinel-rewrite\n', 'utf8');
+  const plan = dispatchBatch(args({ rewrite: 0, new: 2 }), { candidates: [], pool: [] }, { home: HOME });
+
+  await assert.rejects(
+    () => applyDispatchPlan(plan, { candidates: [], pool: [] }, { directory, paths }),
+    /not applicable/,
+  );
+  assert.equal(await fs.readFile(paths.candidates, 'utf8'), 'sentinel-candidates\n');
+  assert.equal(await fs.readFile(paths.rewritePool, 'utf8'), 'sentinel-rewrite\n');
+});
+
+test('applyDispatchPlan rejects a stale plan instead of overwriting newer queue state', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'study-dispatch-stale-'));
+  const paths = {
+    candidates: path.join(directory, 'candidates.jsonl'),
+    rewritePool: path.join(directory, 'rewrite-pool.jsonl'),
+  };
+  const queues = {
+    candidates: [newCandidate('papers', 'paper-a'), newCandidate('projects', 'project-a')],
+    pool: [],
+  };
+  await fs.writeFile(paths.candidates, `${queues.candidates.map(JSON.stringify).join('\n')}\n`, 'utf8');
+  await fs.writeFile(paths.rewritePool, '\n', 'utf8');
+  const plan = dispatchBatch(args({ rewrite: 0, new: 2 }), queues, { home: HOME });
+  await fs.writeFile(paths.candidates, '{"newer":true}\n', 'utf8');
+
+  await assert.rejects(
+    () => applyDispatchPlan(plan, queues, { directory, paths }),
+    /expected input mismatch/,
+  );
+  assert.equal(await fs.readFile(paths.candidates, 'utf8'), '{"newer":true}\n');
 });

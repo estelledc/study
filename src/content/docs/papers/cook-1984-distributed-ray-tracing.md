@@ -156,6 +156,8 @@ for each pixel (x, y):
 - [[catmull-clark-1978]] —— Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
 - [[cook-1986-stochastic-sampling]] —— Cook 1986 — 用噪声换掉锯齿
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
+- [[reyes-1987]] —— Reyes 1987 — 把电影级渲染拆成可流水线处理的小砖块
 - [[wald-2007-sah-bvh]] —— Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法
-- [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
-
+- [[appleseed]] —— appleseed — 物理渲染器
+- [[luxcorerender]] —— LuxCoreRender — 物理光线追踪
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器

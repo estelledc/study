@@ -145,12 +145,7 @@ duf --only local --hide-mp '/System/Volumes/Data,/var/lib/docker/*'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
-- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
-- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
-

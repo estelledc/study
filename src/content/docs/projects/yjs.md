@@ -156,18 +156,23 @@ notes.set('note-1', { title: '...', body: '...' })
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[anytype-ts]] —— Anytype — 本地优先块编辑器
 - [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[collabora-online]] —— Collabora Online — 浏览器里直接编辑 Office 文档的开源后端
-- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[etherpad-lite]] —— Etherpad — 经典协作文本编辑器
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[hedgedoc]] —— HedgeDoc — 协作 Markdown 编辑
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
+- [[outline]] —— Outline — 团队 Wiki 协作平台
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作
 - [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[plane]] —— Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
-- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[sharedb]] —— ShareDB — 基于 OT 的实时数据库
-
+- [[silverbullet]] —— SilverBullet — 自托管笔记 web 应用
+- [[tldraw]] —— tldraw — 把白板做成可嵌入的 SDK

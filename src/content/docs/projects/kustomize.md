@@ -197,3 +197,9 @@ images:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
+- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
+- [[tilt]] —— Tilt — K8s 微服务本地开发的"文件保存即上线"
+- [[velero]] —— Velero — Kubernetes 集群备份与迁移

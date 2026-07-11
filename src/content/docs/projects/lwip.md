@@ -153,12 +153,13 @@ close(sock);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[embassy]] —— Embassy — 让单片机也能用 async/await
-- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[freemodbus]] —— FreeModbus：嵌入式设备的 Modbus 从站协议栈
+- [[linuxcnc]] —— LinuxCNC — 实时控制 CNC 机床的开源系统
+- [[littlefs]] —— littlefs — MCU 友好的掉电安全文件系统
+- [[lora-mac-node]] —— LoRaMac-node — LoRaWAN 终端协议栈参考实现
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[nanomq]] —— NanoMQ — 边缘侧超轻量 MQTT Broker
 - [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
-- [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
-- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
-
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座
+- [[sdk-nrf]] —— Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK
+- [[shadowsocks-libev]] —— Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理

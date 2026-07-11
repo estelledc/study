@@ -154,11 +154,9 @@ Blinn: shininess = 128 →  视觉效果接近 A
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[monaghan-1992-sph]] —— SPH — 把流体拆成一群带核的粒子
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[stam-1999-stable-fluids]] —— Stable Fluids — 让流体模拟时间步随便给都不爆
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
-

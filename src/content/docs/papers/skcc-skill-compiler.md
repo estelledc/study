@@ -142,12 +142,5 @@ skill ExtractTable {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
-- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
-- [[react]] —— React UI 组件库
-- [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
-- [[voyager]] —— Voyager — LLM 终身学习智能体
+- [[passnet-graph-compiler]] —— PassNet — 让大模型给图编译器写优化 pass
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"

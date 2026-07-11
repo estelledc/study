@@ -1,0 +1,36 @@
+{
+  "schema_version": "study-public-redline-baseline-v1",
+  "baseline_commit": "acbf24baf4641c0f80a2a6c624abfb37f4cadefc",
+  "entries": [
+    {
+      "category": "posix-user-absolute-path",
+      "path": "src/content/docs/papers/ffs-1984.md",
+      "fingerprint": "c9bba0f45d0b9597b6e1071c09e7f7a270e7a3556c8c3c223009ad3c73d1f6ac"
+    },
+    {
+      "category": "posix-user-absolute-path",
+      "path": "src/content/docs/papers/ffs-1984.md",
+      "fingerprint": "342f88d78bd3b096b7c64687a9f6fb74d6ca25129e13f5b547179598c2d3a4b1"
+    },
+    {
+      "category": "posix-user-absolute-path",
+      "path": "src/content/docs/projects/nnn.md",
+      "fingerprint": "de78a14230a7e0bf653d414483c30f8141efad1af5a32ccfb0a7a2f25089e81b"
+    },
+    {
+      "category": "posix-user-absolute-path",
+      "path": "src/content/docs/projects/xplr.md",
+      "fingerprint": "de78a14230a7e0bf653d414483c30f8141efad1af5a32ccfb0a7a2f25089e81b"
+    },
+    {
+      "category": "posix-user-absolute-path",
+      "path": "src/content/docs/projects/zoxide.md",
+      "fingerprint": "aba56c69364d63bf22d4bd667ed0f5adeed2fb0c8d639fbd5e176b26902f473d"
+    },
+    {
+      "category": "text-file-unicode-control",
+      "path": "src/content/docs/projects/chalk.md",
+      "fingerprint": "cb9f2b605832ec16cdbdfefd448bb1ce6b040dfe35ac40dae67d310b357442e9"
+    }
+  ]
+}

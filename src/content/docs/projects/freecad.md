@@ -196,3 +196,6 @@ FreeCADCmd convert_step_to_stl.py motor_mount.step motor_mount.stl
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kicad]] —— KiCad — 电子电路 CAD
+- [[librecad]] —— LibreCAD — 2D 工程绘图

@@ -135,16 +135,17 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
 - [[attention]] —— Attention Is All You Need
+- [[chain-of-thought]] —— Chain-of-Thought — 让大模型先写步骤再回答
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[cot]] —— Chain-of-Thought Prompting
-- [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+- [[demystifying-data-org]] —— Demystifying Data Organization — 给训练数据排队的四条原则
 - [[double-descent-2019]] —— Double Descent — 模型越大越准，过参数化时代的反常识曲线
 - [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[grokking-2022]] —— Grokking — 训练 loss 早归零，几千步后才突然学会
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
+- [[llmsurgeon-data-mixture]] —— LLMSurgeon — 从模型回答反推训练数据配方
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
 - [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
-

@@ -155,3 +155,5 @@ eosFailure(1 / 4)  // 1/16：每边做两次 OT
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[paillier-1999]] —— Paillier 1999 — 能在密文上直接做加法的公钥加密

@@ -153,10 +153,5 @@ let g:ackprg = 'ag --vimgrep --nocolor --nogroup --column'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
-- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
-- [[fzf]] —— fzf — 命令行模糊查找
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[tantivy]] —— Tantivy — Rust 版 Lucene
-

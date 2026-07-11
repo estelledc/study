@@ -167,9 +167,6 @@ LSM 调优永远在三个放大之间挪动，Badger 把曲线移到了和 [[roc
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
-- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
-- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[pebble]] —— Pebble — CockroachDB 自研 LSM
-- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
-
+- [[unqlite]] —— UnQLite — C 写的嵌入式 NoSQL 双模数据库

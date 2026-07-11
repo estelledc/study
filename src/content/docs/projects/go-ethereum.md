@@ -146,32 +146,31 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atzei-eth-attacks-2017]] —— Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类
+- [[daian-flash-boys-2020]] —— Flash Boys 2.0 — MEV 把交易排序变成一门生意
+- [[making-smart-contracts-smarter]] —— Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞
+- [[securify-2018]] —— Securify 2018 — 用规则自动查智能合约漏洞
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[compound-v3]] —— Compound III (Comet) — 单基础资产借贷重构
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
+- [[lodestar]] —— Lodestar — JS/TS 生态里的以太坊共识层客户端
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[monero]] —— Monero — 默认隐私的 PoW 加密货币
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[raft]] —— Raft — 易理解的共识算法
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
-- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
-

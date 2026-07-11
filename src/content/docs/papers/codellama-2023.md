@@ -154,8 +154,9 @@ Code Llama 是开源代码模型生态的"奠基性配方书"。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
 - [[deepseek-coder-2024]] —— DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA
-- [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[entity-tracking-states]] —— Entity Tracking States — 语言模型不是一路记账，而是最后临时汇总
+- [[mira-rubric]] —— MIRA Rubric — 给混合训练数据先定评分尺再筛选
+- [[passnet-graph-compiler]] —— PassNet — 让大模型给图编译器写优化 pass
+- [[schgen-pcb]] —— SchGen PCB — 把一句需求变成可编辑电路原理图
 - [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型
-

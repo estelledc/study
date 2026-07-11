@@ -150,12 +150,5 @@ lazydocker
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bat]] —— bat — 现代 cat 替代
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[delta]] —— delta — git diff 的语法高亮分页器
-- [[fzf]] —— fzf — 命令行模糊查找
-- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[lima]] —— Lima — macOS 上跑 Linux 虚拟机的轻量 CLI
-- [[prometheus]] —— Prometheus — 时序监控系统
-

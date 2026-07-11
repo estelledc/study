@@ -158,9 +158,6 @@ stateDiagram-v2
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[drawio]] —— drawio (diagrams.net) — 离线版 Visio
 - [[flowchart-js]] —— flowchart.js — 文本生成流程图
-- [[starlight]] —— Starlight — Astro 文档站点主题
-- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
-
+- [[shader-park]] —— Shader Park — 程序化 SDF 着色器 DSL

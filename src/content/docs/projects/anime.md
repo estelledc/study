@@ -167,12 +167,9 @@ io.observe(document.querySelector('.hero-title'))
 
 - [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
-- [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
+- [[phaser]] —— Phaser — HTML5 2D 游戏框架
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[starlight]] —— Starlight — Astro 文档站点主题
-

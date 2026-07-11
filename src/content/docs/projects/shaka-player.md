@@ -156,3 +156,5 @@ await player.load(stored.offlineUri);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[shaka-packager]] —— Shaka Packager — 流媒体打包工具

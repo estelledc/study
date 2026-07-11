@@ -148,3 +148,9 @@ if (x < len) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[costan-sgx-explained-2016]] —— Intel SGX Explained — 把云主机里的一小块程序锁进硬件保险箱
+- [[flush-reload-2014]] —— FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存
+- [[foreshadow-2018]] —— Foreshadow 2018 — SGX 保险箱也挡不住瞬态执行脚印
+- [[kim-rowhammer-2014]] —— RowHammer 2014 — 反复读一行内存也能翻转邻居比特
+- [[sanctum-2016]] —— Sanctum 2016 — 用少量硬件改动做强隔离 enclave

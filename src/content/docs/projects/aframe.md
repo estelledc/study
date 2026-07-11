@@ -197,3 +197,7 @@ gltf-transform optimize robot.glb robot-web.glb --compress meshopt --texture-com
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ar-js]] —— AR.js — 浏览器里跑 Web AR 标记追踪
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[mind-ar-js]] —— MindAR — 不装原生 SDK 的浏览器图像/人脸 AR

@@ -148,7 +148,4 @@ const STYLE = { width: 100 };
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[react]] —— React UI 组件库
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
-- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
-

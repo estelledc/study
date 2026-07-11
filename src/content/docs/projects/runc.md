@@ -182,6 +182,5 @@ runc 不知道镜像是什么（那是 containerd 的事），也不配网络（
 
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
 - [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
-
+- [[podman]] —— Podman — 无 daemon 容器引擎

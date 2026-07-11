@@ -156,3 +156,11 @@ console.log(descends(v2, v3)) // false
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[cassandra-eventual-tradeoff]] —— Cassandra 最终一致性取舍 — 可用性、延迟和新鲜度不能都拿满
+- [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
+- [[flat-datacenter-storage]] —— Flat Datacenter Storage — 把整机房磁盘当成一块大盘
+- [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
+- [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
+- [[scads-database-2008]] —— SCADS — 用户涨一万倍也不改应用的存储愿景

@@ -161,14 +161,7 @@ function onMessage(bytes vaa) external {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
-- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[axelar]] —— Axelar — 通用跨链 gateway
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
-- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

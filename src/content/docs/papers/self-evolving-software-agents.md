@@ -148,12 +148,4 @@ def deliver_order(beliefs):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
-- [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
-- [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
-- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
-- [[llm-wiki-retrieval-reasoning]] —— LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
-- [[memcoder-co-evolution]] —— MemCoder — code agent 跟着你 git commit 一起成长
-- [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
-- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
-
+（暂无反向链接）

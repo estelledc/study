@@ -150,10 +150,4 @@ return {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[fzf]] —— fzf — 命令行模糊查找
-- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
-- [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
-- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
-
+（暂无反向链接）

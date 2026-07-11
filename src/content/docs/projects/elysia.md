@@ -164,12 +164,5 @@ const { data, error } = await api.users({ id: '123' }).get()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bun]] —— Bun — JS 全能运行时
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[hono]] —— Hono — 多运行时 Web 框架
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-

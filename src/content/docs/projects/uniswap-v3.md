@@ -149,6 +149,10 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atzei-eth-attacks-2017]] —— Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类
+- [[daian-flash-boys-2020]] —— Flash Boys 2.0 — MEV 把交易排序变成一门生意
+- [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
+- [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[anchor]] —— Anchor — Solana 合约开发框架
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
@@ -157,38 +161,28 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[arweave]] —— Arweave — 一次付费、永远存着的区块链
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[chainlink]] —— Chainlink — 智能合约的"感官系统"
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[compound-v3]] —— Compound III (Comet) — 单基础资产借贷重构
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[monero]] —— Monero — 默认隐私的 PoW 加密货币
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
 - [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合
 - [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-- [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[viem]] —— viem — 现代 TypeScript EVM 库
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 - [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 - [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
 - [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
-

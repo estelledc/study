@@ -155,3 +155,6 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigbench-2022]] —— BIG-bench — 204 道题给大模型出考卷
+- [[double-descent-2019]] —— Double Descent — 模型越大越准，过参数化时代的反常识曲线

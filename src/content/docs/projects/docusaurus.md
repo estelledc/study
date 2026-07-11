@@ -148,15 +148,10 @@ npm run docusaurus docs:version 1.0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
-- [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
-- [[react]] —— React UI 组件库
-- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
+- [[silverbullet]] —— SilverBullet — 自托管笔记 web 应用
 - [[starlight]] —— Starlight — Astro 文档站点主题
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
+- [[texstudio]] —— TeXstudio — LaTeX IDE
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
-- [[webpack]] —— webpack 模块打包
-
+- [[zettlr]] —— Zettlr — 学者向 Markdown 编辑器

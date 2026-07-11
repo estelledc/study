@@ -153,3 +153,7 @@ table = dataset.to_table(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arrow]] —— Apache Arrow — 内存列式标准
+- [[arrow-rs]] —— arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现
+- [[lance]] —— Lance — AI 数据列存格式
+- [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）

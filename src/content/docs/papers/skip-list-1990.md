@@ -153,15 +153,10 @@ map.firstKey();   // O(log n) 有序查询
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
-- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
-- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
+- [[compound-v3]] —— Compound III (Comet) — 单基础资产借贷重构
+- [[redis]] —— Redis — 内存键值数据库
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

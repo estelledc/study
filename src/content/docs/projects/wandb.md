@@ -160,10 +160,6 @@ trainer.fit(model, datamodule)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clearml]] —— ClearML — 自托管 MLOps 套件
+- [[projects/clearml]] —— ClearML — 自托管 MLOps 套件
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[mlflow]] —— MLflow — 端到端 ML 生命周期
-- [[optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
-
+- [[projects/mlflow]] —— MLflow — 端到端 ML 生命周期

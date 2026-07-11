@@ -151,9 +151,4 @@ GROUP BY level;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
-- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
-- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
-- [[starrocks]] —— StarRocks — MPP 列存数据库
-
+（暂无反向链接）

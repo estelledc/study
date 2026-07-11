@@ -165,10 +165,4 @@ find . -name mariadbd -type f | head
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[cockroach]] —— CockroachDB — 全球分布式 SQL
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
-

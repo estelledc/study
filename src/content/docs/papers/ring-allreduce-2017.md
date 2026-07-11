@@ -154,8 +154,4 @@ LLaMA-2 70B 的梯度大约 140 GB（fp16）。1024 卡做一次 ring all-reduce
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
-- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 - [[gpudirect-rdma-2014]] —— GPUDirect RDMA — 让网卡直接读写 GPU 显存
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-

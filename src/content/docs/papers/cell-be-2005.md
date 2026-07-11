@@ -181,9 +181,4 @@ while (有数据):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
-- [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
-- [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
-- [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
-- [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
-
+（暂无反向链接）

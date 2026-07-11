@@ -173,9 +173,7 @@ union(A, B):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[catmull-1974-zbuffer]] —— Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
 - [[curless-levoy-1996-tsdf]] —— Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型
-- [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
-- [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
-
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[pcl]] —— PCL — 点云算法的学术工具箱

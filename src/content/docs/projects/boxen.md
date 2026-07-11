@@ -196,3 +196,6 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
+- [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准

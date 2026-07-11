@@ -169,3 +169,6 @@ java -jar bob.jar --archive --platform x86_64-macos resolve distclean build bund
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[melonjs]] —— melonJS — 轻量 JS 2D 游戏引擎
+- [[raylib]] —— raylib — 极简 C 游戏库

@@ -192,3 +192,5 @@ SAVE_CONFIG
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[marlin]] —— Marlin Firmware — 3D 打印机里的运动控制大脑

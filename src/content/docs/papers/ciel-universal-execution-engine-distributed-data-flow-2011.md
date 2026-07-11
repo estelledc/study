@@ -150,3 +150,5 @@ return y
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[spark-rdd]] —— Spark RDD — 用血缘记录重建内存数据

@@ -171,11 +171,5 @@ make -j8                 # 普通笔记本约 30 分钟
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
-

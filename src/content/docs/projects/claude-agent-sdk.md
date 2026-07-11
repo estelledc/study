@@ -189,3 +189,5 @@ console.log(finalText)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[botbuilder-js]] —— Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象

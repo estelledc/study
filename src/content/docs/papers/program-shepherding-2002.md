@@ -147,3 +147,5 @@ void cached_syscall_block() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[newsome-taintcheck-2005]] —— TaintCheck — 给不可信输入贴追踪标签

@@ -149,21 +149,12 @@ sorted_upto(x) := ∀y.(y reachable_from list_head ∧ y ≠ x) ⇒ data(y) ≤ 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
 - [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
 - [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点
-- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
-- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
-- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
-

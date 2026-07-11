@@ -160,21 +160,17 @@ DELETE /users/42
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[caesar-rexford-2005]] —— Caesar-Rexford 2005 — 你的包为什么绕了大半个地球
-- [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[papers/couchdb]] —— CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库
 - [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
-- [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 - [[nfs-1985]] —— NFS 1985 — 让远程磁盘看起来像本地磁盘
 - [[oauth-2.1-rfc]] —— OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
-- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[r-bgp-2007]] —— R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[skip-locked-postgres-9.5]] —— SKIP LOCKED — 让 Postgres 当任务队列用
 - [[subramanian-2002-internet-hierarchy]] —— Subramanian 2002 — 用多个观察点把互联网切成 5 层
 - [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库
-- [[turing-1936]] —— Turing 1936 可计算性
 - [[xtrace-2007]] —— X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架
-
+- [[projects/couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB

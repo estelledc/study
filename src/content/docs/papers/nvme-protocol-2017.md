@@ -149,9 +149,4 @@ NVMe 的门铃版本：把命令直接写进 SQ 的内存区域，**写一个 32
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
-- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
-- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
-- [[ssa]] —— SSA — 静态单赋值形式
-

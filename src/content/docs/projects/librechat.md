@@ -146,13 +146,4 @@ UI 里发 3 条消息：第 1 条用 OpenAI、第 2 条切 Anthropic、第 3 条
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
-- [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
-- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
-- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
-- [[react]] —— React UI 组件库
-- [[redis]] —— Redis — 内存键值数据库
-
+（暂无反向链接）

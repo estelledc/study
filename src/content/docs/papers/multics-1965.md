@@ -153,3 +153,7 @@ MULTICS：根账户拥有全部 CPU/磁盘配额，只能委派**自己拥有的
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[capsicum-2010]] —— Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"
+- [[saltzer-schroeder-1975]] —— Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则
+- [[selinux-2001]] —— SELinux — 给 Linux 装上不可绕过的安检门

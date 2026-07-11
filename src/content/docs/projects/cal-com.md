@@ -150,10 +150,4 @@ if (isDedicated) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[next-js]] —— Next.js — React 全栈框架
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[prisma]] —— Prisma — 类型安全 ORM
-- [[supabase]] —— Supabase — Firebase 的开源替代
-- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-
+（暂无反向链接）

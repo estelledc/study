@@ -174,12 +174,10 @@ int main() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
-- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
 - [[circuitpython]] —— CircuitPython — 拖文件就能给芯片写程序的 Python
 - [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
+- [[esphome]] —— ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件
+- [[espurna]] —— ESPurna — 给便宜智能开关换一套本地大脑
+- [[marlin]] —— Marlin Firmware — 3D 打印机里的运动控制大脑
 - [[micropython]] —— MicroPython — 在巴掌大的芯片上跑 Python
-- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
-- [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式调试烧录工具
-

@@ -160,3 +160,6 @@ A 拨给 B，Asterisk 内部其实建了两个 channel（`PJSIP/A-00001` 和 `PJ
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[freeswitch]] —— FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架
+- [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器

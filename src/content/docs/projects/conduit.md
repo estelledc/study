@@ -155,10 +155,4 @@ services:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
-- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
-- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
-

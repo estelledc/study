@@ -150,21 +150,13 @@ window.ethereum.on('chainChanged', (chainId) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
-- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
-- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
-- [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
-

@@ -165,3 +165,8 @@ s += sgl.gen("data", regex=r'\{"name": "[A-Z][a-z]+", "age": [0-9]+\}')
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit
+- [[prefix-cache-policy-2026]] —— Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）
+- [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
+- [[projects/vllm]] —— vLLM — 高吞吐 LLM 推理引擎

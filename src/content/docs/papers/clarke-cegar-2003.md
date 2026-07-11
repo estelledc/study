@@ -151,19 +151,13 @@ CEGAR 第一轮抽象不知道 `error_condition` 何时为真，过近似认为"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
 - [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
-- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 - [[nieuwenhuis-dpll-t-2006]] —— Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书
-- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
-

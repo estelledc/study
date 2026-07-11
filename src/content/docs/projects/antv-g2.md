@@ -167,15 +167,10 @@ export function Sales({ data }) {
 - [[antv-f2]] —— AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集
 - [[antv-g6]] —— AntV G6 — 把"关系数据"画成会自己摆位置的图
 - [[antv-x6]] —— AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript
-- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[projects/cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[dhtmlx-gantt]] —— DHTMLX Gantt — 给企业级排期用的全功能甘特组件
-- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[frappe-gantt]] —— Frappe Gantt — 200 行 SVG 写出的甘特图
-- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[pdfmake]] —— pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑
 - [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
-- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[sigma-js]] —— Sigma.js — 上万节点仍流畅的 WebGL 图渲染器
-- [[vega-lite]] —— Vega-Lite — 用 JSON 三段式画复合图
-
+- [[projects/vega-lite]] —— Vega-Lite — 高层声明式可视化语法

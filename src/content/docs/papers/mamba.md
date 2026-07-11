@@ -147,3 +147,8 @@ AI21 的 Jamba 等把 attention 与 Mamba **按层混排**（常见约 1:7）：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[attention]] —— Attention Is All You Need
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[linear-attention-still-2026]] —— Linear Attention, Still: Why Mamba-style Models Plateau
+- [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
+- [[transformer]] —— Transformer — 让每个词一次看完整句话

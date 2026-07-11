@@ -156,3 +156,5 @@ User-Agent: Mozilla/3.0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[danezis-sphinx-2009]] —— Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小
+- [[dingledine-mixminion-2003]] —— Mixminion — 用一次性回信票据保护匿名邮件

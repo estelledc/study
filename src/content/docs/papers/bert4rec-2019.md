@@ -155,10 +155,4 @@ loss = - sum_{t in masked} log P(i_t | i_{<t}, i_{>t}, theta)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[gru-2014]] —— GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场
-- [[sasrec-2018]] —— SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
-- [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
-- [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
-
+（暂无反向链接）

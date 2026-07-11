@@ -149,9 +149,4 @@ Tendermint 只负责"块顺序对所有人一致"，**不管块里装什么**。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
-- [[move-language]] —— Move — 资源型智能合约语言
 - [[narwhal-tusk-2022]] —— Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

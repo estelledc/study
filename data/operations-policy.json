@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-07-10",
+  "bulk_production": {
+    "enabled": false,
+    "reason": "Content volume is not an authorized objective for the current review cycle.",
+    "requires_explicit_operator_approval": true,
+    "maximum_new_items_per_authorized_round": 4
+  },
+  "remote_publish": {
+    "enabled_by_default": false,
+    "requires_explicit_operator_approval": true,
+    "direct_main_push": false
+  },
+  "content": {
+    "rewrite_existing_note_bodies": false,
+    "preserve_historical_failure_events": true
+  },
+  "scale_budget": {
+    "compare_command": "node scripts/benchmark-site.mjs --compare data/performance-baseline.json",
+    "on_exceeded": "freeze-new-content-and-investigate",
+    "allow_threshold_bypass": false
+  },
+  "canonical_commands": {
+    "status": "npm run status:pipeline",
+    "preflight": "npm run round:preflight",
+    "dry_run": "npm run round:dispatch -- --rewrite 0 --new 4 --dry-run",
+    "ci": "npm run verify:ci"
+  },
+  "superseded_entrypoints": [
+    "/auto-push",
+    "SESSION-HANDOFF legacy snapshots",
+    "docs/follow-up-plan legacy roadmap"
+  ]
+}

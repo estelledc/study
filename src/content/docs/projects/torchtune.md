@@ -167,10 +167,7 @@ tune run lora_dpo_single_device --config llama3_1/8B_lora_dpo
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[fastai]] —— fastai — 三行代码做迁移学习
+- [[projects/megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
 - [[unsloth]] —— Unsloth — 微调 2-5x 加速
-

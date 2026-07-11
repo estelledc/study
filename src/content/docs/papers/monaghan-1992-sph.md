@@ -152,3 +152,7 @@ A(x) ≈ Σ_j  m_j · (A_j / ρ_j) · W(x - x_j, h)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[macklin-2014-position-based-fluids]] —— Position Based Fluids — 把水也塞进 PBD 同一套框架
+- [[muller-2007-pbd]] —— Position Based Dynamics — 直接修正位置的实时物理
+- [[sulsky-1994-mpm]] —— MPM — 让粒子背着自己的历史，借网格算一遍力

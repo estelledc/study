@@ -158,21 +158,18 @@ def step(params, x, y):
 
 - [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
-- [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
+- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
+- [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
+- [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
+- [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[flax]] —— Flax — JAX 上的神经网络库
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
-- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[projects/megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
-- [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
 - [[optax]] —— Optax — JAX 优化器组合库
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[ssa]] —— SSA — 静态单赋值形式
-- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
-
+- [[twgl]] —— TWGL — 极薄 WebGL helpers

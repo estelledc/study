@@ -164,19 +164,11 @@ await program.methods
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
-- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
-- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
-- [[safe-contracts]] —— Safe — 多签智能账户合约
-- [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[viem]] —— viem — 现代 TypeScript EVM 库
-

@@ -147,3 +147,5 @@ GET  /json/events?queue_id=abc&last_event_id=0
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）

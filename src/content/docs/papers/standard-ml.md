@@ -163,12 +163,28 @@ end
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
+- [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
+- [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy Concurrent GC — ML 线程运行时里的准实时垃圾回收
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
+- [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[papers/nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
+- [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
+- [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
+- [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
+- [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器

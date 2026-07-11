@@ -154,13 +154,5 @@ procs --watch-interval 2 --sortd cpu
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
-- [[bat]] —— bat — 现代 cat 替代
-- [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
-- [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
-- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
-- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-

@@ -155,3 +155,6 @@ SELECT country, SUM(c) FROM partial_results GROUP BY country;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[columnar-storage-formats-2023]] —— Columnar Storage Formats 2023 — Parquet/ORC 的体检报告
+- [[snowflake]] —— Snowflake — 云数仓把存储和计算拆开

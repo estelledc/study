@@ -149,11 +149,3 @@ Snapshot 提案通过 → SafeSnap 模块读取结果
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
-- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
-- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
-- [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
-- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
-- [[safe-contracts]] —— Safe — 多签智能账户合约
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

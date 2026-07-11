@@ -147,3 +147,6 @@ verify_many([commit_a, commit_b, commit_c], proof)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bowe-halo-2019]] —— Halo 2019 — 不靠可信仪式递归压缩证明
+- [[gabizon-plonk-2019]] —— PLONK — 一次通用布置，反复证明很多程序

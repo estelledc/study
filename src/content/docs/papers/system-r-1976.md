@@ -148,30 +148,19 @@ System R 的处理：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[benchmarking]] —— Wisconsin Benchmark — 给数据库出一套可重复的体检题
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
-- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
-- [[raft]] —— Raft — 易理解的共识算法
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-
+- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎

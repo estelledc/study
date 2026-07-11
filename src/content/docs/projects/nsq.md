@@ -155,8 +155,4 @@ nsqd --lookupd-tcp-address=127.0.0.1:4160 \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
-- [[redis]] —— Redis — 内存键值数据库
 - [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
-

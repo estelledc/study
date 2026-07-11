@@ -172,3 +172,5 @@ uniform sampler2D u_buffer1;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统

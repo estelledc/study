@@ -161,7 +161,4 @@ amitheinthestack 工具流程：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[codellama-2023]] —— Code Llama — 开源代码模型的完整训练配方
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
-
+- [[llmsurgeon-data-mixture]] —— LLMSurgeon — 从模型回答反推训练数据配方

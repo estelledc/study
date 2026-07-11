@@ -158,3 +158,14 @@ env.execute("hourly-clicks");
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
+- [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
+- [[drizzle-2017]] —— Drizzle — 让 micro-batch 也能跑出 100ms 延迟
+- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
+- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[naiad-2013]] —— Naiad — 一套引擎同时跑批处理、流处理和迭代计算
+- [[naiad-2013-sosp]] —— Naiad — 面向流式数据的及时数据流系统
+- [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
+- [[risingwave]] —— RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合

@@ -155,3 +155,6 @@ jupyter labextension enable my-extension
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[marimo]] —— marimo — 反应式 Python 笔记本
+- [[zeppelin]] —— Apache Zeppelin — JVM 多语言笔记本

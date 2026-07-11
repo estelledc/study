@@ -183,13 +183,8 @@ fl.client.start_numpy_client(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
 - [[bonawitz-fl-system-2019]] —— Bonawitz 2019 — Google 联邦学习的工业级系统设计
 - [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
-- [[duchi-local-dp-2013]] —— Duchi 2013 — 本地差分隐私的统计极限
-- [[erlingsson-rappor-2014]] —— RAPPOR 2014 — 用随机应答在浏览器端实现本地差分隐私
 - [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
 - [[kairouz-advances-fl-2019]] —— Kairouz 2019 — 联邦学习 58 个开放问题路线图
-- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 用一把更精确的尺子量隐私损失
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-
+- [[shokri-mia-2017]] —— Shokri MIA 2017 — 判断一条数据是否被模型见过

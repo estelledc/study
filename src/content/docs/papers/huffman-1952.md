@@ -148,8 +148,4 @@ def huffman(text):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
-- [[turing-1936]] —— Turing 1936 可计算性
-

@@ -142,8 +142,5 @@ if not node_heartbeat("hostB", timeout_ms=500):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cxl-interop]] —— CXL 与现有 fabric 的协同
-- [[cache-coherence]] —— 缓存一致性实践
-- [[memory-pooling]] —— 内存池化成本模型
-- [[rdma]] —— 远端访问与一致性边界对比
-- [[failure-recovery]] —— 失效重建案例
+- [[flush-reload-2014]] —— FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存
+- [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统

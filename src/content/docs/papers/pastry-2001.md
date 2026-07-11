@@ -153,8 +153,5 @@ Pastry 跳数更少，但每跳要在最多 15 个候选里挑——总消息量
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
-- [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[autograph-2004]] —— Autograph 2004 — 自动给蠕虫写内容签名
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
-

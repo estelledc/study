@@ -172,21 +172,19 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
-- [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[papers/couchdb]] —— CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
-- [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
-- [[emqx]] —— EMQX — 单集群千万连接的 MQTT 物联网消息总线
-- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[papers/emqx]] —— EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[hoare-csp-1978]] —— Hoare CSP 1978 — 把并发看成会对话的小程序
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[projects/couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
+- [[projects/emqx]] —— EMQX — 单集群千万连接的 MQTT 物联网消息总线
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
-- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
-- [[smalltalk-80]] —— Smalltalk-80
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
-

@@ -139,14 +139,11 @@ skills_500 上约 5709 个段落聚成 149 簇；校准阈值下 **auto-promote 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
-- [[cot]] —— Chain-of-Thought Prompting
 - [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
-- [[react]] —— React UI 组件库
 - [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器
 - [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
-- [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"

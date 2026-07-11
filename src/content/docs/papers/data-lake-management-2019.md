@@ -167,3 +167,4 @@ result = integrate(query_table, candidates, keys=["city"])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[lakehouse-2021]] —— Lakehouse 2021 — 把数据湖和数仓合成一套开放平台

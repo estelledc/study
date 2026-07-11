@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { atomicWriteFile } from './json-store.mjs';
 
 export function parseJsonl(raw, source = 'jsonl') {
   return raw
@@ -27,11 +28,18 @@ export async function readJsonl(filePath, options = {}) {
   }
 }
 
-export async function writeJsonl(filePath, rows, options = {}) {
+export function serializeJsonl(rows, options = {}) {
   const { finalNewline = 'always' } = options;
   const body = rows.map((row) => JSON.stringify(row)).join('\n');
   const suffix = finalNewline === 'always' || (finalNewline === 'non-empty' && rows.length)
     ? '\n'
     : '';
-  await fs.writeFile(filePath, body + suffix, 'utf8');
+  return body + suffix;
+}
+
+export async function writeJsonl(filePath, rows, options = {}) {
+  await atomicWriteFile(filePath, serializeJsonl(rows, options), {
+    encoding: 'utf8',
+    beforeRename: options.beforeRename,
+  });
 }

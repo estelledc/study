@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -17,57 +15,52 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      STUDY_CHANGED_FROM: ${{ github.event.before }}
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
-          node-version: 22
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
           cache: npm
-      - run: npm ci || npm install
-      - run: npm run build 2>&1 | tee /tmp/build.log
-      - name: Build diagnostics into dist/build-info.txt
+      - name: Use repository npm version
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
+      - run: node scripts/audit-toolchain.mjs
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Set runtime verification environment
         run: |
-          {
-            echo "=== source projects/ count ==="
-            ls src/content/docs/projects/ | wc -l
-            echo "=== source projects/ list ==="
-            ls src/content/docs/projects/
-            echo "=== dist projects/ count ==="
-            ls dist/projects/ 2>/dev/null | wc -l
-            echo "=== dist projects/ list ==="
-            ls dist/projects/ 2>/dev/null
-            echo "=== dist projects/ INDEX.HTML count (real files) ==="
-            find dist/projects -name "index.html" -type f | wc -l
-            echo "=== dist projects/zustand/ contents ==="
-            ls -la dist/projects/zustand/ 2>/dev/null || echo "no zustand dir"
-            echo "=== dist projects/biome/ contents ==="
-            ls -la dist/projects/biome/ 2>/dev/null
-            echo "=== dist papers/ count ==="
-            ls dist/papers/ 2>/dev/null | wc -l
-            echo "=== sitemap projects entries ==="
-            grep -oE "projects/[a-z-]+" dist/sitemap-0.xml | sort -u
-            echo "=== Duplicate id warnings ==="
-            grep -E "Duplicate id" /tmp/build.log | head -30 || echo "no duplicate id warnings"
-            echo "=== build log tail ==="
-            tail -40 /tmp/build.log
-            echo "=== astro version ==="
-            npx astro --version 2>&1
-            echo "=== node version ==="
-            node --version
-            echo "=== starlight version ==="
-            npm ls @astrojs/starlight 2>&1 | head -5
-          } > dist/build-info.txt
-          cat dist/build-info.txt
-      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+          echo "STUDY_BUILD_LOG=$RUNNER_TEMP/study-build.log" >> "$GITHUB_ENV"
+          echo "STUDY_FRESHNESS_AS_OF=$(date -u +%F)" >> "$GITHUB_ENV"
+      - run: npm run verify:ci
+      - name: Create sanitized diagnostics
+        if: always()
+        run: node scripts/build-diagnostics.mjs --log "$STUDY_BUILD_LOG" --dist dist --out "$RUNNER_TEMP/study-diagnostics.json"
+      - name: Upload sanitized diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: study-diagnostics-${{ github.run_id }}
+          path: ${{ runner.temp }}/study-diagnostics.json
+          retention-days: 7
+          if-no-files-found: error
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:
           path: ./dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

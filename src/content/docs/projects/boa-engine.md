@@ -172,8 +172,4 @@ fn main() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[javascript-engine]] —— 引擎生态对照。
-- [[quickjs]] —— 轻量 JS 执行线。
-- [[deno]] —— 高级生态整合。
-- [[rhai]] —— Rust 脚本语言对照。
-- [[vm-integration]] —— 虚拟机集成模式。
+- [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎

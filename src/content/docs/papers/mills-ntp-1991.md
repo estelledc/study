@@ -158,13 +158,4 @@ makestep 1.0 3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
-- [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
-- [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
-- [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-
+（暂无反向链接）

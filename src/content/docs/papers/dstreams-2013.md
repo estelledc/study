@@ -152,14 +152,9 @@ ssc.checkpoint("hdfs://...")   // 必须开！否则 driver 重启丢全状态
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
-- [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[drizzle-2017]] —— Drizzle — 让 micro-batch 也能跑出 100ms 延迟
+- [[dryadlinq-system-general-purpose-distributed-data-parallel-2008]] —— DryadLINQ — 把普通 C# 查询变成集群作业
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[server-sent-events]] —— Server-Sent Events — 服务器单向推送的标准协议
 - [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
-

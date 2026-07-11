@@ -187,12 +187,9 @@ atom.commands.add('atom-workspace', {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
-- [[emacs]] —— GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统
 - [[geany]] —— Geany — 用 C 写的轻量级 GTK 编辑器
 - [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
+- [[marktext]] —— MarkText — 实时预览 Markdown 编辑器
 - [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
 - [[textmate]] —— TextMate — macOS 上定义 bundle 宏系统的编辑器
-- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
-- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验
-

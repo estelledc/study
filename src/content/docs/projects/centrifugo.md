@@ -152,10 +152,4 @@ publish(f"ai:user:{user_id}", {"done": True})
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[redis]] —— Redis — 内存键值数据库
-- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
-

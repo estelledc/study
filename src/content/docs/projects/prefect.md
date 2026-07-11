@@ -172,7 +172,5 @@ def realtime_fix(): upsert_user(...)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[airflow]] —— Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工
-- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[dagster]] —— Dagster — 把流水线想成数据资产图，不是任务序列
 - [[kedro]] —— Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
-

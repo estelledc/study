@@ -147,3 +147,7 @@ expected_wait_to_get_share ~= mean_task_time * framework_share
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
+- [[dryadlinq-system-general-purpose-distributed-data-parallel-2008]] —— DryadLINQ — 把普通 C# 查询变成集群作业
+- [[sparrow-2013]] —— Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器

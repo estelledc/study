@@ -171,3 +171,15 @@ NODE_CLASS_MAPPINGS = {"InvertImage": InvertImage}
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[classifier-free-guidance-2022]] —— Classifier-Free Guidance — 让扩散模型自己听懂条件
+- [[blender]] —— Blender — 全流程 3D 创作套件
+- [[fooocus]] —— Fooocus — 把 SDXL 做成傻瓜机
+- [[handbrake]] —— HandBrake — 把视频转码变成点两下鼠标的事
+- [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[open-sora]] —— Open-Sora — 把 Sora 路线开源对标的视频生成项目
+- [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
+- [[sam2]] —— SAM 2 — 图像和视频都能抠轮廓的通用分割模型
+- [[stable-diffusion-webui]] —— AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器
+- [[ultralytics]] —— Ultralytics — YOLOv8/v11 易用 SDK

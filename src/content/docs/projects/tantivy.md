@@ -171,9 +171,4 @@ index.tokenizers().register("cn", cn_tokenizer);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
-- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
-- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
-- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
 - [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
-

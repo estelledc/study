@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
-import { parseJson, readJson, readJsonOptional, writeJson } from './json-store.mjs';
+import { atomicWriteFile, parseJson, readJson, readJsonOptional, writeJson } from './json-store.mjs';
 
 async function tempDir() {
   return fs.mkdtemp(path.join(os.tmpdir(), 'study-json-store-'));
@@ -37,4 +37,23 @@ test('writeJson creates parent directories and preserves stable formatting', asy
 
 test('parseJson annotates the source on parse failures', () => {
   assert.throws(() => parseJson('{bad', 'inline-json'), /inline-json/);
+});
+
+test('atomicWriteFile keeps the previous file when replacement fails', async () => {
+  const dir = await tempDir();
+  const filePath = path.join(dir, 'state.txt');
+  await fs.writeFile(filePath, 'before', 'utf8');
+
+  await assert.rejects(
+    () => atomicWriteFile(filePath, 'after', {
+      encoding: 'utf8',
+      beforeRename() {
+        throw new Error('injected-before-rename');
+      },
+    }),
+    /injected-before-rename/,
+  );
+
+  assert.equal(await fs.readFile(filePath, 'utf8'), 'before');
+  assert.deepEqual((await fs.readdir(dir)).sort(), ['state.txt']);
 });

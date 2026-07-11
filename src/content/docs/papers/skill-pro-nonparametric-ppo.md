@@ -152,5 +152,4 @@ L_CLIP = mean( min(ρÂ, clip(ρ, 1-ε, 1+ε)Â) )
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
 - [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
-- [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引

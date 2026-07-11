@@ -154,19 +154,16 @@ db.orders.aggregate([
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[projects/couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[neo4j]] —— Neo4j — 主流图数据库
-- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[projects/opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作
 - [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
-- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 - [[typesense]] —— Typesense — 高性能搜索引擎
+- [[unqlite]] —— UnQLite — C 写的嵌入式 NoSQL 双模数据库
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
-

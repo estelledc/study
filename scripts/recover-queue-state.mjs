@@ -4,12 +4,15 @@
 import fs from 'node:fs/promises';
 import {
   CANDIDATES_PATH,
+  DATA_DIR,
+  PIPELINE_EVENTS_PATH,
   REWRITE_POOL_PATH,
   WRITTEN_PATH,
 } from './lib/paths.mjs';
 import { listAreaNotes } from './lib/content-store.mjs';
-import { readJsonl, writeJsonl } from './lib/jsonl.mjs';
-import { queueKey } from './lib/queue-store.mjs';
+import { readJsonl } from './lib/jsonl.mjs';
+import { clearClaimMetadata, commitQueueState, queueKey } from './lib/queue-store.mjs';
+import { inspectQueueTransaction, recoverQueueTransaction } from './lib/queue-transaction.mjs';
 import { parseWrittenText } from './audit-runtime-state.mjs';
 
 function parseArgs(argv = process.argv.slice(2)) {
@@ -51,48 +54,80 @@ function change(row, from, to, reason, file) {
   };
 }
 
-export function recoverCandidates(candidates, context) {
+function leaseExpired(row, now) {
+  if (!row.lease_expires_at) return false;
+  const expiresAt = new Date(row.lease_expires_at).getTime();
+  return Number.isFinite(expiresAt) && expiresAt <= now.getTime();
+}
+
+export function recoverExpiredClaims(rows, context, options = {}) {
+  const now = new Date(options.now || Date.now());
+  if (!Number.isFinite(now.getTime())) throw new Error(`Invalid recovery time: ${options.now}`);
+  const availableStatus = options.availableStatus || 'queued';
+  const file = options.file || 'candidates';
   const changes = [];
-  const rows = candidates.map((row) => {
+  const recovered = rows.map((row) => {
+    if (row.status !== 'claimed') return row;
+    const key = queueKey(row);
+    const isWritten = options.existingContentProvesCompletion !== false &&
+      (context.writtenSet.has(key) || context.noteSet.has(key));
+    if (isWritten) {
+      changes.push(change(row, 'claimed', 'written', 'note-or-written-index-exists', file));
+      return { ...clearClaimMetadata(row), status: 'written' };
+    }
+
+    const expired = leaseExpired(row, now);
+    const legacyOrphan = !row.lease_expires_at && row.claimed_by == null;
+    if (!expired && !legacyOrphan) return row;
+    const reason = expired ? 'expired-claim-lease' : 'orphan-claimed-without-note';
+    changes.push({
+      ...change(row, 'claimed', availableStatus, reason, file),
+      claim_generation: row.claim_generation ?? null,
+      lease_expires_at: row.lease_expires_at ?? null,
+    });
+    return { ...clearClaimMetadata(row), status: availableStatus };
+  });
+  return { rows: recovered, changes };
+}
+
+export function recoverCandidates(candidates, context, options = {}) {
+  const changes = [];
+  const normalized = candidates.map((row) => {
     if (row.status === 'failed' || row.status === 'blacklisted') return row;
     const key = queueKey(row);
     const isWritten = context.writtenSet.has(key) || context.noteSet.has(key);
 
-    if ((row.status === 'queued' || row.status === 'claimed') && isWritten) {
-      if (row.status !== 'written' || row.claimed_by !== null) {
-        changes.push(change(row, row.status, 'written', 'note-or-written-index-exists', 'candidates'));
-      }
-      return { ...row, status: 'written', claimed_by: null };
-    }
-
-    if (row.status === 'claimed' && row.claimed_by == null && !isWritten) {
-      changes.push(change(row, 'claimed', 'queued', 'orphan-claimed-without-note', 'candidates'));
-      return { ...row, status: 'queued', claimed_by: null };
+    if (row.status === 'queued' && isWritten) {
+      changes.push(change(row, row.status, 'written', 'note-or-written-index-exists', 'candidates'));
+      return { ...clearClaimMetadata(row), status: 'written' };
     }
 
     return row;
   });
-  return { rows, changes };
-}
-
-export function recoverRewritePool(pool, context) {
-  const changes = [];
-  const rows = pool.map((row) => {
-    if (row.status !== 'claimed') return row;
-    const key = queueKey(row);
-    if (context.writtenSet.has(key) || context.noteSet.has(key)) {
-      changes.push(change(row, 'claimed', 'written', 'note-or-written-index-exists', 'rewrite-pool'));
-      return { ...row, status: 'written', claimed_by: null };
-    }
-    return row;
+  const claims = recoverExpiredClaims(normalized, context, {
+    ...options,
+    file: 'candidates',
+    availableStatus: 'queued',
   });
-  return { rows, changes };
+  return { rows: claims.rows, changes: [...changes, ...claims.changes] };
 }
 
-export function buildRecoveryPlan(inputs) {
+export function recoverRewritePool(pool, context, options = {}) {
+  return recoverExpiredClaims(pool, context, {
+    ...options,
+    file: 'rewrite-pool',
+    availableStatus: 'available',
+    // Rewrite entries point at notes which existed before the claim. Their mere
+    // presence (and the global written index) cannot prove that this lease's
+    // rewrite commit was accepted. Only the merge path may mark them written.
+    existingContentProvesCompletion: false,
+  });
+}
+
+export function buildRecoveryPlan(inputs, options = {}) {
   const context = makeContext(inputs);
-  const candidates = recoverCandidates(inputs.candidates, context);
-  const rewritePool = recoverRewritePool(inputs.rewritePool, context);
+  const candidates = recoverCandidates(inputs.candidates, context, options);
+  const rewritePool = recoverRewritePool(inputs.rewritePool, context, options);
   return {
     before: {
       candidates: countByStatus(inputs.candidates),
@@ -108,6 +143,28 @@ export function buildRecoveryPlan(inputs) {
   };
 }
 
+export function buildRecoveryEventUpdate(eventsText, plan, options = {}) {
+  const now = new Date(options.now || Date.now());
+  if (!Number.isFinite(now.getTime())) throw new Error(`Invalid recovery event time: ${options.now}`);
+  const events = plan.changes
+    .filter((item) => item.reason === 'expired-claim-lease')
+    .map((item) => ({
+      ts: now.toISOString(),
+      event: 'claim-lease-recovered',
+      area: item.area,
+      slug: item.slug,
+      assignment: `${item.area}::${item.slug}`,
+      queue: item.file,
+      claim_generation: item.claim_generation,
+      lease_expires_at: item.lease_expires_at,
+      recovery_reason: item.reason,
+    }));
+  const original = eventsText || '';
+  const prefix = original && !original.endsWith('\n') ? `${original}\n` : original;
+  const appended = events.length > 0 ? `${events.map(JSON.stringify).join('\n')}\n` : '';
+  return { events, text: prefix + appended };
+}
+
 async function readWrittenOptional() {
   try {
     return parseWrittenText(await fs.readFile(WRITTEN_PATH, 'utf8'));
@@ -117,19 +174,31 @@ async function readWrittenOptional() {
   }
 }
 
+async function readEventsOptional() {
+  try {
+    return { text: await fs.readFile(PIPELINE_EVENTS_PATH, 'utf8'), missing: false };
+  } catch (err) {
+    if (err.code === 'ENOENT') return { text: '', missing: true };
+    throw err;
+  }
+}
+
 async function loadInputs() {
-  const [candidates, rewritePool, written, papers, projects] = await Promise.all([
+  const [candidates, rewritePool, written, papers, projects, events] = await Promise.all([
     readJsonl(CANDIDATES_PATH, { missing: 'empty' }),
     readJsonl(REWRITE_POOL_PATH, { missing: 'empty' }),
     readWrittenOptional(),
     listAreaNotes('papers'),
     listAreaNotes('projects'),
+    readEventsOptional(),
   ]);
   return {
     candidates,
     rewritePool,
     written,
     notes: [...papers, ...projects],
+    eventsText: events.text,
+    eventsMissing: events.missing,
   };
 }
 
@@ -164,24 +233,59 @@ function summarizeResult(plan, { dryRun, appliedChanges = 0 }) {
     before: plan.before,
     after: plan.after,
     changes_by_reason: changesByReason,
+    lease_recoveries: changesByReason['expired-claim-lease'] || 0,
     changes: plan.changes,
   };
 }
 
 async function main() {
   const args = parseArgs();
+  let transactionRecovery;
+  if (args.write) {
+    transactionRecovery = await recoverQueueTransaction({ directory: DATA_DIR });
+  } else {
+    const pending = await inspectQueueTransaction({ directory: DATA_DIR });
+    if (pending.pending) {
+      throw new Error(`pending queue transaction ${pending.manifest.generation}; --dry-run will not mutate it, rerun with --write to recover`);
+    }
+    transactionRecovery = { recovered: false, generation: null, applied: [] };
+  }
   const inputs = await loadInputs();
-  const plan = buildRecoveryPlan(inputs);
+  const recoveryAt = new Date();
+  const plan = buildRecoveryPlan(inputs, { now: recoveryAt });
+  const eventUpdate = buildRecoveryEventUpdate(inputs.eventsText, plan, { now: recoveryAt });
 
   let result = summarizeResult(plan, { dryRun: !args.write });
   if (args.write) {
-    await writeJsonl(CANDIDATES_PATH, plan.candidates);
-    await writeJsonl(REWRITE_POOL_PATH, plan.rewritePool);
+    if (plan.changes.length > 0) {
+      await commitQueueState({
+        candidates: plan.candidates,
+        rewritePool: plan.rewritePool,
+        ...(eventUpdate.events.length > 0 ? { eventsText: eventUpdate.text } : {}),
+      }, {
+        directory: DATA_DIR,
+        generation: `recovery-${Date.now()}`,
+        paths: {
+          candidates: CANDIDATES_PATH,
+          rewritePool: REWRITE_POOL_PATH,
+          events: PIPELINE_EVENTS_PATH,
+        },
+        expectedState: {
+          candidates: inputs.candidates,
+          rewritePool: inputs.rewritePool,
+          ...(eventUpdate.events.length > 0
+            ? { eventsText: inputs.eventsMissing ? null : inputs.eventsText }
+            : {}),
+        },
+      });
+    }
     result = summarizeResult(plan, { dryRun: false, appliedChanges: plan.changes.length });
     if (result.planned_changes !== result.applied_changes) {
       throw new Error(`Recovery mismatch: planned ${result.planned_changes}, applied ${result.applied_changes}`);
     }
   }
+
+  result.transaction_recovery = transactionRecovery;
 
   if (args.json) console.log(JSON.stringify(result, null, 2));
   else console.log(renderHuman(result));

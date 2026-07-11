@@ -197,3 +197,6 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[wezterm]] —— WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用
+- [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图

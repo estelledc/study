@@ -3,6 +3,11 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@11.17.0",
+  "engines": {
+    "node": ">=22.23.1 <23",
+    "npm": ">=11.17.0 <12"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,13 +18,29 @@
     "audit:counts": "node scripts/audit-content-counts.mjs",
     "audit:product-ia": "node scripts/audit-product-ia.mjs",
     "audit:homepage-dist-links": "node scripts/audit-homepage-dist-links.mjs",
+    "audit:action-pins": "node scripts/audit-action-pins.mjs",
+    "audit:pages-artifact": "node scripts/audit-pages-artifact.mjs",
+    "audit:operations": "node scripts/audit-operation-entrypoints.mjs",
+    "audit:doc-lifecycle": "node scripts/audit-doc-lifecycle.mjs",
+    "audit:assets": "node scripts/audit-assets.mjs",
+    "audit:content-contract": "node scripts/audit-content-contract.mjs",
+    "audit:public-redlines": "node scripts/audit-public-redlines.mjs",
+    "audit:freshness": "node scripts/audit-freshness.mjs",
+    "audit:template-similarity": "node scripts/analyze-template-similarity.mjs",
+    "benchmark:site": "node scripts/benchmark-site.mjs",
+    "benchmark:atlas": "node scripts/benchmark-atlas.mjs",
+    "audit:pagefind": "node scripts/audit-pagefind.mjs",
+    "audit:seo": "node scripts/audit-seo-output.mjs",
+    "audit:a11y-static": "node scripts/audit-a11y-static.mjs",
+    "audit:toolchain": "node scripts/audit-toolchain.mjs",
     "generate:og": "node scripts/generate-showcase-og.mjs",
     "audit": "npm run audit:links && npm run audit:wikilinks && npm run audit:counts && npm run audit:product-ia",
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test",
-    "verify:ci": "node scripts/verify-ci.mjs",
+    "test:a11y": "playwright test -c playwright.config.mjs",
     "verify:scripts": "npm test && node scripts/pick-batch.mjs --count 0 --rewrite 0 --new 0 --no-priority && node scripts/dispatch-batch.mjs --rewrite 0 --new 0 --dry-run && git diff --check",
+    "verify:ci": "node scripts/verify-ci.mjs",
     "doctor:candidates": "node scripts/doctor-candidates.mjs --all",
     "promote:candidates": "node scripts/promote-candidates.mjs --area papers --from new --limit 40",
     "fix:candidate-metadata": "node scripts/fix-candidate-metadata.mjs --projects",
@@ -34,12 +55,16 @@
     "round:auto-prepare": "node scripts/round.mjs auto-prepare",
     "round:auto-advance": "node scripts/round.mjs auto-advance",
     "atlas": "node scripts/regen-atlas.mjs",
-    "prebuild": "node scripts/regen-atlas.mjs && npm run generate:og"
+    "prebuild": "node scripts/regen-atlas.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.7",
     "astro": "^5.0.0",
     "js-yaml": "^4.3.0",
     "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.61.1"
   }
 }

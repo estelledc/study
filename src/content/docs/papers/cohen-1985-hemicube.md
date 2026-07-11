@@ -168,12 +168,5 @@ Unity / Unreal 里的烘焙光照:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
-- [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
-- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
-- [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[hanrahan-1991-hierarchical-radiosity]] —— Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
-- [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
-

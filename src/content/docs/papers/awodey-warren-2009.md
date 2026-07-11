@@ -150,11 +150,5 @@ theorem nat_eq_of_eq_zero (n : Nat) (h : n = 0) : n + 0 = 0 := by
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
 - [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
-- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
-- [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
-

@@ -152,13 +152,7 @@ def score_candidate(tech):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
-- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
-- [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
-- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
-
+- [[parnas-information-hiding-1972]] —— Parnas 信息隐藏 1972 — 模块化设计原则

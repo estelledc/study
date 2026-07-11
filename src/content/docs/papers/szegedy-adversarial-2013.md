@@ -148,3 +148,8 @@ print(model_c(attack))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[carlini-wagner-2017]] —— C&W 攻击 — 用强优化检验神经网络鲁棒性
+- [[deepfool-2016]] —— DeepFool 2016 — 用最小扰动量出模型边界有多近
+- [[goodfellow-fgsm-2014]] —— Goodfellow FGSM — 用一次梯度就能造出对抗样本
+- [[madry-pgd-2017]] —— Madry PGD — 把对抗训练变成最坏情况演练

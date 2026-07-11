@@ -155,3 +155,7 @@ for item in sorted(requests):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lamport-bakery]] —— Lamport Bakery — 用取号排队解决并发互斥
+- [[raft-2014]] —— Raft 2014 — 把共识拆成能实现的三件事
+- [[skeen-3pc-1981]] —— Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁

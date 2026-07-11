@@ -156,15 +156,10 @@ spec increment {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anchor]] —— Anchor — Solana 合约开发框架
-- [[aptos-core]] —— Aptos — Move 系高性能 L1
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 - [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
-- [[linear-types]] —— 线性类型（Linear Types）
 - [[narwhal-tusk-2022]] —— Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事
-- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
-- [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板
+- [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
+- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
-

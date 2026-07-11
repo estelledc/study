@@ -152,3 +152,5 @@ step_ISA 重复 K 次后的值
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[verisoft-2008]] —— Verisoft — 把整台计算机从门电路到邮件客户端全部用数学证完

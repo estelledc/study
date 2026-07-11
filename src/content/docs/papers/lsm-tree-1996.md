@@ -143,21 +143,17 @@ client read key="foo"
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
-- [[badger]] —— Badger — Go 写的键值分离 LSM
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[papers/badger]] —— BadgerDB — 把键和值分开存的 Go 原生 KV 库
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[delta-lake-2020]] —— Delta Lake 2020 — 给对象存储补上事务日志
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
-- [[leveldb]] —— LevelDB — Google LSM 库
+- [[index-structures]] —— Learned Index Structures — 把数据库索引看成会预测位置的模型
 - [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[tidb]] —— TiDB — HTAP 分布式数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
-
+- [[projects/badger]] —— Badger — Go 写的键值分离 LSM
+- [[leveldb]] —— LevelDB — Google LSM 库

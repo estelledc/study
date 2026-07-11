@@ -157,3 +157,5 @@ function pay(address winner, uint prize) public {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[atzei-eth-attacks-2017]] —— Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类

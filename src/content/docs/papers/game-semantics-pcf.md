@@ -156,12 +156,4 @@ g 还没答，但调用了 call/cc
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[linear-types]] —— 线性类型（Linear Types）
-- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
-- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
-
+（暂无反向链接）

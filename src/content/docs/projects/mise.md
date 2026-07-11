@@ -188,3 +188,6 @@ shims 模式（备选）：在 `~/.local/share/mise/shims/` 放假可执行 `nod
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+- [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器

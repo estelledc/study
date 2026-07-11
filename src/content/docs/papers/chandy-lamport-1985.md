@@ -157,20 +157,17 @@ Raft 的快照之所以比 Chandy-Lamport 简单——因为 Raft 已经有单 l
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[distributed-snapshot-byzantine-2026]] —— Byzantine Linearizability — 让拜占庭客户端也像排队办业务
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
+- [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
 - [[flp-1985]] —— FLP 1985 — 一个坏节点就能让异步共识永不终止
 - [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
-- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[lamport-time-clocks-1978]] —— Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚
 - [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
 - [[ntp-mills-1991]] —— NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[raft]] —— Raft — 易理解的共识算法
 - [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
 - [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
-

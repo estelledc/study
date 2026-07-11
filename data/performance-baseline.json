@@ -1,0 +1,42 @@
+{
+  "schema_version": "2.0",
+  "dist": {
+    "files": 4843,
+    "bytes": 181016865,
+    "largest_html": {
+      "path": "projects/plane/index.html",
+      "bytes": 257378
+    }
+  },
+  "pagefind": {
+    "files": 2337,
+    "bytes": 20294979
+  },
+  "public": {
+    "files": 433,
+    "bytes": 37527270
+  },
+  "atlas": {
+    "notes": 1975,
+    "classified": 1928,
+    "unclassified": 47,
+    "chunks": 68,
+    "chunk_size_budget": 100,
+    "max_chunk_entries": 100,
+    "output_files": 71,
+    "output_bytes": 2444866,
+    "landing_bytes": 13202,
+    "landing_direct_note_links": 0
+  },
+  "repository": {
+    "tracked_files": 2733,
+    "tracked_bytes": 61621107,
+    "source_archive_bytes": 48351737
+  },
+  "source": {
+    "commit": "adf70a9df4beaa5cd2fc2f2643eb391d4d0e063a",
+    "node": "v26.4.0",
+    "npm": "11.17.0",
+    "platform": "darwin-arm64"
+  }
+}

@@ -164,12 +164,8 @@ async def highlight(params: HighlightParams, browser_session):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 - [[patchright]] —— patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
-- [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
-

@@ -163,3 +163,6 @@ atest AacDecBenchmark
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩事实标准

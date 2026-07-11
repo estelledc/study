@@ -2,8 +2,10 @@
 
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
+import { randomUUID } from 'node:crypto';
 
 import { CANDIDATES_PATH, docsEntryPath, REWRITE_POOL_PATH, ROOT } from './lib/paths.mjs';
+import { isNoteArea, isNoteSlug } from './lib/note-id.mjs';
 import { validateWorkerResults } from './lib/auto-round.mjs';
 import {
   ATLAS_ALLOWED,
@@ -22,6 +24,8 @@ import {
   statusPorcelain,
   validateCommitHash,
 } from './lib/git.mjs';
+import { acquireRoundLock, releaseRoundLock, renewLease } from './round-lock.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 
 const MAX_BUFFER = 100 * 1024 * 1024;
 
@@ -37,6 +41,13 @@ function parseArgs(argv = process.argv.slice(2)) {
     commit: null,
     lines: null,
     results: null,
+    round: null,
+    worktree: null,
+    branch: null,
+    generation: null,
+    claimToken: null,
+    ownerToken: null,
+    workflowRunId: process.env.GITHUB_RUN_ID || `local-${process.pid}`,
   };
   for (let i = 1; i < argv.length; i++) {
     const arg = argv[i];
@@ -48,9 +59,52 @@ function parseArgs(argv = process.argv.slice(2)) {
     else if (arg === '--commit') args.commit = argv[++i];
     else if (arg === '--lines') args.lines = parseInt(argv[++i], 10);
     else if (arg === '--results') args.results = argv[++i];
+    else if (arg === '--round') args.round = parseInt(argv[++i], 10);
+    else if (arg === '--worktree') args.worktree = argv[++i];
+    else if (arg === '--branch') args.branch = argv[++i];
+    else if (arg === '--generation') args.generation = argv[++i];
+    else if (arg === '--claim-token') args.claimToken = argv[++i];
+    else if (arg === '--owner-token') args.ownerToken = argv[++i];
+    else if (arg === '--workflow-run-id') args.workflowRunId = argv[++i];
     else throw new Error(`Unknown argument: ${arg}`);
   }
   return args;
+}
+
+async function withRoundOperationLock(args, label, operation) {
+  const ownerToken = randomUUID();
+  const acquired = await acquireRoundLock({
+    round: args.round,
+    workflowRunId: args.workflowRunId,
+    ownerToken,
+  });
+  if (!acquired.acquired) {
+    throw new Error(`${label} lock refused: ${acquired.reason}`);
+  }
+
+  let result;
+  let operationError;
+  try {
+    result = await operation({ ownerToken, lock: acquired.lock });
+  } catch (err) {
+    operationError = err;
+  }
+
+  let releaseError;
+  try {
+    const released = await releaseRoundLock(ownerToken);
+    if (!released.released) {
+      releaseError = new Error(`${label} lock release refused: ${released.reason}`);
+    }
+  } catch (err) {
+    releaseError = err;
+  }
+  if (operationError) {
+    if (releaseError) operationError.message += `; lock release also failed: ${releaseError.message}`;
+    throw operationError;
+  }
+  if (releaseError) throw releaseError;
+  return result;
 }
 
 function run(cmd, args, options = {}) {
@@ -143,14 +197,14 @@ function snapshot(label) {
 }
 
 function validateSlug(slug) {
-  if (!/^[a-z0-9][a-z0-9_.-]*$/.test(slug || '')) {
+  if (!isNoteSlug(slug)) {
     throw new Error(`Invalid slug: ${slug || '<empty>'}`);
   }
   return slug;
 }
 
 function validateArea(area) {
-  if (area !== 'papers' && area !== 'projects') {
+  if (!isNoteArea(area)) {
     throw new Error(`Invalid area: ${area || '<empty>'}`);
   }
   return area;
@@ -162,6 +216,12 @@ function validateMergeArgs(args) {
   validateCommitHash(args.commit);
   if (!Number.isInteger(args.lines) || args.lines <= 0) {
     throw new Error(`Invalid lines: ${args.lines || '<empty>'}`);
+  }
+  if (!Number.isInteger(args.round) || args.round < 0) {
+    throw new Error(`Invalid round: ${args.round ?? '<empty>'}`);
+  }
+  if (!args.worktree || !args.branch || !args.generation || !args.claimToken) {
+    throw new Error('merge-one requires worktree, branch, generation, and claim token provenance');
   }
   return args;
 }
@@ -191,38 +251,44 @@ function roundAutoPrepare(args) {
   console.log(JSON.stringify(output, null, 2));
 }
 
-function roundDispatch(args) {
+async function roundDispatch(args) {
   requireMainClean();
-  dispatchDryRun(args);
   if (args.dryRun) {
+    dispatchDryRun(args);
     console.log('[round] dry-run only; queue state was not changed');
     return;
   }
 
-  snapshot('before dispatch');
-  runNode('scripts/dispatch-batch.mjs', [
-    '--rewrite', String(args.rewrite),
-    '--new', String(args.new),
-  ]);
-  commitAllowedChanges(RUNTIME_ALLOWED, claimCommitMessage(args.rewrite + args.new), 'runtime');
-  snapshot('after dispatch');
+  assertBulkOperationAuthorized({ operation: 'round:dispatch', requestedItems: args.rewrite + args.new });
+
+  await withRoundOperationLock(args, 'dispatch', async ({ ownerToken }) => {
+    dispatchDryRun(args);
+    snapshot('before dispatch');
+    runNode('scripts/dispatch-batch.mjs', [
+      '--rewrite', String(args.rewrite),
+      '--new', String(args.new),
+      ...(Number.isInteger(args.round) ? ['--round', String(args.round)] : []),
+      '--owner-token', ownerToken,
+      '--workflow-run-id', args.workflowRunId,
+    ]);
+    commitAllowedChanges(RUNTIME_ALLOWED, claimCommitMessage(args.rewrite + args.new), 'runtime');
+    snapshot('after dispatch');
+  });
 }
 
-function roundMergeOne(args) {
-  validateMergeArgs(args);
-  if (args.dryRun) {
-    requireMainClean();
-    gitOutput(['cat-file', '-e', `${args.commit}^{commit}`], { cwd: ROOT });
-    const target = docsEntryPath(args.area, args.slug);
-    console.log(`[round] dry-run merge-one`);
-    console.log(`  slug: ${args.slug}`);
-    console.log(`  area: ${args.area}`);
-    console.log(`  commit: ${args.commit}`);
-    console.log(`  target: ${target}`);
-    console.log('  steps: sync-and-merge-single -> quality-gate -> build:strict -> atlas commit -> runtime sync commit');
-    return;
-  }
+function normalizeMergeProvenance(args) {
+  const worktree = args.worktree || args.claimed_by;
+  return {
+    ...args,
+    worktree,
+    branch: args.branch || (worktree ? `refactor/${worktree}` : null),
+    generation: args.generation || args.claim_generation,
+    claimToken: args.claimToken || args.claim_token,
+  };
+}
 
+function roundMergeOneCore(args) {
+  validateMergeArgs(args);
   requireMainClean();
   snapshot(`before merge ${args.slug}`);
   runNode('scripts/sync-and-merge-single.mjs', [
@@ -230,6 +296,12 @@ function roundMergeOne(args) {
     '--commit', args.commit,
     '--area', args.area,
     '--lines', String(args.lines),
+    '--worktree', args.worktree,
+    '--branch', args.branch,
+    '--round', String(args.round),
+    '--generation', args.generation,
+    '--claim-token', args.claimToken,
+    '--owner-token', args.ownerToken,
   ]);
 
   const target = docsEntryPath(args.area, args.slug);
@@ -244,11 +316,40 @@ function roundMergeOne(args) {
   requireCleanWorktree(ROOT);
 }
 
+async function roundMergeOne(rawArgs) {
+  const args = normalizeMergeProvenance(rawArgs);
+  validateMergeArgs(args);
+  if (args.dryRun) {
+    requireMainClean();
+    gitOutput(['cat-file', '-e', `${args.commit}^{commit}`], { cwd: ROOT });
+    const target = docsEntryPath(args.area, args.slug);
+    console.log('[round] dry-run merge-one');
+    console.log(`  assignment: ${args.area}::${args.slug}`);
+    console.log(`  source: ${args.worktree} ${args.branch} round=${args.round} generation=${args.generation}`);
+    console.log(`  commit: ${args.commit}`);
+    console.log(`  target: ${target}`);
+    console.log('  steps: source proof -> receipt/evidence companion proof -> sync-and-merge-single -> quality-gate -> build:strict -> atlas commit -> runtime sync commit');
+    return;
+  }
+
+  assertBulkOperationAuthorized({ operation: 'round:merge-one', requestedItems: 1 });
+
+  if (args.ownerToken) {
+    const renewed = await renewLease(args.ownerToken);
+    if (!renewed.renewed) throw new Error(`merge-one lock renewal refused: ${renewed.reason}`);
+    roundMergeOneCore(args);
+    return;
+  }
+  await withRoundOperationLock(args, 'merge-one', async ({ ownerToken }) => {
+    roundMergeOneCore({ ...args, ownerToken });
+  });
+}
+
 function roundFinalGate() {
   requireMainClean();
   run('git', ['log', '--oneline', 'origin/main..HEAD']);
   runNpm('verify:pipeline');
-  runNpm('build:strict');
+  runNpm('verify:ci');
   run('git', ['status', '--short', '--branch']);
   runNpm('status:pipeline');
 
@@ -256,29 +357,11 @@ function roundFinalGate() {
   if (issues.length > 0) {
     throw new Error(`final gate failed: ${issues.join('; ')}`);
   }
-  console.log('[round] final gate passed: clean, claimed=0, failures=0');
+  console.log('[round] final gate passed: clean, claimed=0, current failures=0; historical failures retained');
 }
 
 function roundSyncWorktrees() {
-  requireMainClean();
-  const summary = pipelineSummaryJson();
-  const issues = finalGateIssues(summary, '');
-  if (issues.length > 0) {
-    throw new Error(`refusing worktree sync: ${issues.join('; ')}`);
-  }
-
-  const doctor = runNode('scripts/worktree-doctor.mjs', ['--json', '--strict'], { capture: true, echo: true });
-  const report = parseJsonOutput(doctor, 'worktree doctor');
-  if (!report.ok || report.healthy !== 8) {
-    throw new Error(`refusing worktree sync: healthy=${report.healthy}/${report.checked}`);
-  }
-
-  const target = gitOutput(['rev-parse', 'HEAD'], { cwd: ROOT });
-  console.log(`[round] sync 8 worktrees to ${target}`);
-  for (const worktree of report.results) {
-    run('git', ['-C', worktree.path, 'reset', '--hard', target]);
-    run('git', ['-C', worktree.path, 'clean', '-fd']);
-  }
+  throw new Error('round:sync-worktrees is disabled: legacy worktrees require explicit per-branch archival review');
 }
 
 function readJsonlSync(filePath) {
@@ -301,38 +384,40 @@ function parseResultsArg(raw) {
   return JSON.parse(text);
 }
 
-function roundAutoAdvance(args) {
+async function roundAutoAdvance(args) {
   requireMainClean();
-  const candidates = readJsonlSync(CANDIDATES_PATH);
-  const pool = readJsonlSync(REWRITE_POOL_PATH);
-  const mergeArgs = validateWorkerResults({ candidates, pool }, parseResultsArg(args.results));
-  for (const mergeArg of mergeArgs) {
-    roundMergeOne({ ...args, ...mergeArg, dryRun: false });
-  }
-  roundFinalGate();
-  roundSyncWorktrees();
+  assertBulkOperationAuthorized({ operation: 'round:auto-advance', requestedItems: 1 });
+  await withRoundOperationLock(args, 'auto-advance', async ({ ownerToken }) => {
+    const candidates = readJsonlSync(CANDIDATES_PATH);
+    const pool = readJsonlSync(REWRITE_POOL_PATH);
+    const mergeArgs = validateWorkerResults({ candidates, pool }, parseResultsArg(args.results));
+    for (const mergeArg of mergeArgs) {
+      const renewed = await renewLease(ownerToken);
+      if (!renewed.renewed) throw new Error(`auto-advance lock renewal refused: ${renewed.reason}`);
+      await roundMergeOne({ ...args, ...mergeArg, ownerToken, dryRun: false });
+    }
+    roundFinalGate();
+  });
 }
 
-function main() {
+async function main() {
   const args = parseArgs();
   if (!args.command) {
     throw new Error('usage: node scripts/round.mjs <preflight|dispatch|merge-one|final-gate|sync-worktrees> [args]');
   }
   if (args.command === 'preflight') roundPreflight(args);
-  else if (args.command === 'dispatch') roundDispatch(args);
-  else if (args.command === 'merge-one') roundMergeOne(args);
+  else if (args.command === 'dispatch') await roundDispatch(args);
+  else if (args.command === 'merge-one') await roundMergeOne(args);
   else if (args.command === 'final-gate') roundFinalGate(args);
   else if (args.command === 'sync-worktrees') roundSyncWorktrees(args);
   else if (args.command === 'auto-prepare') roundAutoPrepare(args);
-  else if (args.command === 'auto-advance') roundAutoAdvance(args);
+  else if (args.command === 'auto-advance') await roundAutoAdvance(args);
   else throw new Error(`Unknown command: ${args.command}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  try {
-    main();
-  } catch (err) {
+  main().catch((err) => {
     console.error(`[round] ${err.message}`);
     process.exit(1);
-  }
+  });
 }

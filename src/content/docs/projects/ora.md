@@ -156,10 +156,5 @@ process.on('SIGINT', () => { clearInterval(id); process.stdout.write('\x1B[?25h\
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
-- [[enquirer]] —— enquirer — 让 CLI 工具会问问题的轻量库
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
-

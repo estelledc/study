@@ -147,3 +147,5 @@ r=0.95 → 几乎掏空；文中 LongBench 仍约 37.3 vs KeyDiff 约 17.6
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[kv-cache-budget-2026]] —— KVBudget — 给每条请求划一块 KV cache 预算
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit

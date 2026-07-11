@@ -148,3 +148,11 @@ drawCall.draw();
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[glsl-canvas]] —— glslCanvas — Book of Shaders 配套库
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统
+- [[hydra-synth]] —— Hydra — 实时视觉合成 livecoding
+- [[openscad]] —— OpenSCAD — 脚本式 CAD
+- [[openxr-sdk]] —— OpenXR SDK — Khronos VR/AR 标准参考实现

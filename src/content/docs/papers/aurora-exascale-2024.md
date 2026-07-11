@@ -149,9 +149,4 @@ ALCF 在 Aurora 上训练科学领域基础模型（**AuroraGPT**），证明了
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
-- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 - [[dash-numa-1992]] —— Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
-- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
-- [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
-

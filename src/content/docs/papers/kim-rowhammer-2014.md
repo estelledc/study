@@ -148,3 +148,6 @@ function closeRow(row: number) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[flush-reload-2014]] —— FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存
+- [[sanctum-2016]] —— Sanctum 2016 — 用少量硬件改动做强隔离 enclave

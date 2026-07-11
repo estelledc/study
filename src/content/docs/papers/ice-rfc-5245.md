@@ -149,10 +149,5 @@ Jonathan Rosenberg 在 IETF 提出 ICE，目标是**一套统一框架把所有 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bittorrent-2003]] —— BitTorrent — 用"以牙还牙"逼大家都上传
-- [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
-- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-- [[websocket-rfc-6455]] —— WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话
-
+- [[projects/coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
+- [[wireguard-go]] —— WireGuard-Go — WireGuard VPN 的 Go 用户态实现

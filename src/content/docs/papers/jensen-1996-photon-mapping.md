@@ -154,6 +154,5 @@ V-Ray 里这就是 **Caustics** 复选框背后的算法。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
-
+- [[veach-1995-mis]] —— Veach MIS — 用一行加权公式让多种采样策略各取所长
+- [[pcl]] —— PCL — 点云算法的学术工具箱

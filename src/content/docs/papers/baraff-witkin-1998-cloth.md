@@ -150,7 +150,5 @@ David Baraff 后来去了 Pixar 做技术总监，把这套方法和后来的衣
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[catmull-clark-1978]] —— Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
-- [[desbrun-1999-implicit-fairing]] —— Desbrun 1999 — 把热扩散方程隐式离散到三角网
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
-
+- [[macklin-2016-xpbd]] —— XPBD — 让 PBD 的软硬程度不再跟帧率绑死
+- [[muller-2007-pbd]] —— Position Based Dynamics — 直接修正位置的实时物理

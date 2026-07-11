@@ -158,8 +158,4 @@ curl -X POST \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-
+（暂无反向链接）

@@ -156,3 +156,14 @@ t-digest 是分布式聚合友好的近似分位结构,每个 shard 算自己的
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[columnar-storage-formats-2023]] —— Columnar Storage Formats 2023 — Parquet/ORC 的体检报告
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
+- [[snowflake]] —— Snowflake — 云数仓把存储和计算拆开
+- [[papers/starrocks]] —— StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析

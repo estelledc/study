@@ -157,10 +157,9 @@ masks, scores, _ = predictor.predict(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[dino]] —— DINO 自监督视觉 transformer
+- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset — 自动驾驶感知的共同训练场
+- [[dino]] —— DINO — 让视觉模型自己认出物体轮廓
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[mae]] —— MAE — Masked Autoencoders
 - [[vit]] —— ViT — Vision Transformer
-
+- [[sam2]] —— SAM 2 — 图像和视频都能抠轮廓的通用分割模型

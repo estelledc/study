@@ -1,0 +1,12 @@
+{
+  "pagefind.clear_search": "清除搜索",
+  "pagefind.load_more": "加载更多结果",
+  "pagefind.search_label": "搜索本站",
+  "pagefind.filters_label": "筛选",
+  "pagefind.zero_results": "没有找到“[SEARCH_TERM]”的结果",
+  "pagefind.many_results": "[COUNT] 个结果：[SEARCH_TERM]",
+  "pagefind.one_result": "[COUNT] 个结果：[SEARCH_TERM]",
+  "pagefind.alt_search": "没有找到“[SEARCH_TERM]”的结果，改为显示“[DIFFERENT_TERM]”的结果",
+  "pagefind.search_suggestion": "没有找到“[SEARCH_TERM]”的结果，可以尝试以下搜索：",
+  "pagefind.searching": "正在搜索：[SEARCH_TERM]…"
+}

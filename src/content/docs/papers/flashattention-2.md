@@ -154,3 +154,6 @@ print(bench(1024), bench(4096), bench(8192))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[flashattention-3-2024]] —— FlashAttention-3 — 面向 H100 的异步与低精度注意力
+- [[kv-fold]] —— KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文

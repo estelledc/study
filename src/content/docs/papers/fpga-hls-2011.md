@@ -162,9 +162,4 @@ int sum_list(struct Node *head) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[case-for-risc-1980]] —— Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命
-- [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
-- [[ssa]] —— SSA — 静态单赋值形式
-
+（暂无反向链接）

@@ -170,24 +170,22 @@ trainer = pl.Trainer(callbacks=[
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/panel]] —— Panel — 把 notebook 一键变交互式 web app
+- [[papers/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
-- [[bentoml]] —— BentoML — 模型打包部署
+- [[projects/bentoml]] —— BentoML — 模型打包部署
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
-- [[clearml]] —— ClearML — 自托管 MLOps 套件
+- [[projects/clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[haystack]] —— Haystack — 企业 NLP / RAG 流水线
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
-- [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
-- [[mlflow]] —— MLflow — 端到端 ML 生命周期
+- [[projects/megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
+- [[projects/mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[piper]] —— Piper — 端侧低延迟 TTS
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
-- [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
-
+- [[projects/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库

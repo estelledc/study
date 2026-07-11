@@ -148,3 +148,13 @@ Get("k1")       → 见墓碑 → NotFound；旧值仍可能占盘
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ffs-1984]] —— FFS — 把磁盘几何写进文件系统
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
+- [[projects/badger]] —— Badger — Go 写的键值分离 LSM
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[pebble]] —— Pebble — CockroachDB 自研 LSM
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
+- [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[unqlite]] —— UnQLite — C 写的嵌入式 NoSQL 双模数据库

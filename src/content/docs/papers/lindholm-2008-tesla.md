@@ -169,3 +169,5 @@ CUDA 源码先编译到 **PTX**（Parallel Thread Execution），再由驱动 JI
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[owens-2007-gpgpu-survey]] —— Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代

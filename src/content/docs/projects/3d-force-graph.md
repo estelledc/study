@@ -170,3 +170,8 @@ ForceGraph3D()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[antv-g6]] —— AntV G6 — 把"关系数据"画成会自己摆位置的图
+- [[antv-x6]] —— AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript
+- [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
+- [[tldraw]] —— tldraw — 把白板做成可嵌入的 SDK

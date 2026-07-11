@@ -163,3 +163,6 @@ VM 内 `~/projects` 写入会反映回 host，VM 内 `python -m http.server 8080
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI
+- [[neutralinojs]] —— neutralinojs — 系统 WebView 上的极简桌面壳

@@ -156,8 +156,4 @@ locust -f file.py --headless -u 200 -r 20 -t 5m \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[k6]] —— k6 — 用 JS 写脚本的现代负载测试器
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-

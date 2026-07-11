@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "study-execution-evidence-v1",
+  "title": "Study execution evidence artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "command", "exit_code", "result", "created_at"],
+  "properties": {
+    "schema_version": { "const": "study-execution-evidence-v1" },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["argv", "cwd"],
+      "properties": {
+        "argv": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 40,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "cwd": { "type": "string", "minLength": 1, "maxLength": 240 }
+      }
+    },
+    "exit_code": { "type": "integer", "minimum": 0, "maximum": 255 },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary"],
+      "properties": {
+        "status": { "enum": ["PASS", "FAIL"] },
+        "summary": { "type": "string", "minLength": 1, "maxLength": 240 }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

@@ -156,16 +156,11 @@ function List({ items }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
-- [[framer-motion]] —— Framer Motion — React 声明式动画
-- [[gsap]] —— GSAP — GreenSock 高性能动画
-- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[hermes]] —— Hermes — Facebook 的 React Native JS 引擎
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
-- [[react]] —— React UI 组件库
 - [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[styled-components]] —— styled-components — React 生态最早的 CSS-in-JS 库
+- [[styled-components]] —— styled-components — 用标签模板把 CSS 写进 React 组件的 CSS-in-JS 库
 - [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
-

@@ -190,3 +190,12 @@ graph TD
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[foam]] —— Foam — 把 VS Code 变成 Markdown 双链知识库
+- [[hedgedoc]] —— HedgeDoc — 协作 Markdown 编辑
+- [[joplin]] —— Joplin — 开源 Evernote 替代
+- [[logseq]] —— Logseq — 块结构离线知识库
+- [[nodegui]] —— nodegui — 用 Node.js 写原生桌面窗口
+- [[silverbullet]] —— SilverBullet — 自托管笔记 web 应用
+- [[trilium]] —— Trilium — 树形层级笔记系统
+- [[zettlr]] —— Zettlr — 学者向 Markdown 编辑器

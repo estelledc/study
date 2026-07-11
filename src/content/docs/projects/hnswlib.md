@@ -163,9 +163,4 @@ idx.mark_deleted(label_id)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
-- [[annoy]] —— Annoy — Spotify 的随机森林近似最近邻索引
-- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
-- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
-- [[milvus]] —— Milvus — 开源向量数据库
 - [[qdrant]] —— Qdrant — Rust 向量数据库
-

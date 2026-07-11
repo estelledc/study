@@ -154,9 +154,4 @@ calicoctl node status
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[prometheus]] —— Prometheus — 时序监控系统
-
+- [[wireguard-go]] —— WireGuard-Go — WireGuard VPN 的 Go 用户态实现

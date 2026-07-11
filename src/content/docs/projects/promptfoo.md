@@ -158,3 +158,6 @@ npx promptfoo@latest redteam run
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
+- [[oh-my-posh]] —— oh-my-posh — 一份配置让所有 shell 都长一个样

@@ -154,11 +154,5 @@ inView("#card", el => animate(el, { opacity: [0, 1], y: [40, 0] }))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[framer-motion]] —— Framer Motion — React 声明式动画
-- [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[vue]] —— Vue.js — 渐进式 UI 框架
-

@@ -171,10 +171,8 @@ INSERT INTO orders SELECT * FROM ext_orders;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[lakehouse-2021]] —— Lakehouse 2021 — 把数据湖和数仓合成一套开放平台
+- [[snowflake]] —— Snowflake — 云数仓把存储和计算拆开
 - [[databend]] —— Databend — Rust 写的存算分离云数仓
 - [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[starrocks]] —— StarRocks — MPP 列存数据库
-
+- [[projects/starrocks]] —— StarRocks — MPP 列存数据库

@@ -173,3 +173,20 @@ for epoch in range(epochs):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
+- [[papers/mlflow]] —— MLflow — 给机器学习实验装上「记账本和身份证」
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
+- [[papers/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
+- [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
+- [[fastai]] —— fastai — 三行代码做迁移学习
+- [[flax]] —— Flax — JAX 上的神经网络库
+- [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA 工具箱
+- [[jax]] —— JAX — Google 函数式数值计算
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[ncnn]] —— ncnn — 腾讯开源的端侧神经网络推理框架
+- [[optax]] —— Optax — JAX 优化器组合库
+- [[projects/optuna]] —— Optuna — 超参搜索框架
+- [[tflite-micro]] —— TensorFlow Lite Micro — 把小模型塞进微控制器
+- [[projects/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库

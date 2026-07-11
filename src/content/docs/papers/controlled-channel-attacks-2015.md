@@ -180,3 +180,5 @@ attacker_rebuilds_rough_bitmap()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[costan-sgx-explained-2016]] —— Intel SGX Explained — 把云主机里的一小块程序锁进硬件保险箱

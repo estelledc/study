@@ -163,7 +163,4 @@ function touch(id, profile) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
-- [[turing-1936]] —— Turing 1936 可计算性
-
+- [[on-demand-container-loading]] —— On-demand Container Loading — Lambda 把大镜像按需搬上车

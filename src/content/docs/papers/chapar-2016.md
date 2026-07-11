@@ -149,9 +149,4 @@ Chapar 的名字来自波斯语"信使"，呼应"消息传递"主题。第一作
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
-- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
-- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
-
+（暂无反向链接）

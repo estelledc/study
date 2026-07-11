@@ -185,3 +185,17 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
+- [[chroma]] —— Chroma — Python 优先的向量数据库
+- [[faiss]] —— FAISS — 向量检索的标准件库
+- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
+- [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
+- [[langchain]] —— LangChain — LLM 应用开发框架
+- [[projects/opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
+- [[qdrant]] —— Qdrant — Rust 向量数据库
+- [[typesense]] —— Typesense — 高性能搜索引擎
+- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
+- [[weaviate]] —— Weaviate — 模块化向量数据库

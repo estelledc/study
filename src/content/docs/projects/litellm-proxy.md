@@ -164,8 +164,4 @@ curl -X POST http://localhost:4000/key/generate \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aichat]] —— AIChat — 终端里的多模型 LLM 客户端
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-

@@ -77,18 +77,27 @@ function classifyClaimedRows(candidates, context) {
       area: row.area,
       slug: row.slug,
       claimed_by: row.claimed_by ?? null,
+      claim_generation: row.claim_generation ?? null,
+      lease_expires_at: row.lease_expires_at ?? null,
       topic: row.topic ?? null,
     };
     const hasNote = noteSet.has(key);
     const inWritten = writtenSet.has(key);
-    if (duplicates.has(key) || row.claimed_by) {
-      groups.needs_review.push({ ...item, reason: duplicates.has(key) ? 'duplicate' : 'claimed_by-present' });
+    const leaseExpiresAt = new Date(row.lease_expires_at || '').getTime();
+    const expiredLease = Number.isFinite(leaseExpiresAt) && leaseExpiresAt <= context.now;
+    if (duplicates.has(key)) {
+      groups.needs_review.push({ ...item, reason: 'duplicate' });
     } else if (hasNote && inWritten) {
       groups.written_and_indexed.push(item);
     } else if (hasNote && !inWritten) {
       groups.note_exists_not_indexed.push(item);
-    } else if (!hasNote && !inWritten && row.claimed_by == null) {
-      groups.recover_to_queued.push(item);
+    } else if (!hasNote && !inWritten && (expiredLease || row.claimed_by == null)) {
+      groups.recover_to_queued.push({
+        ...item,
+        reason: expiredLease ? 'expired-claim-lease' : 'legacy-orphan-claim',
+      });
+    } else if (row.claimed_by) {
+      groups.needs_review.push({ ...item, reason: 'active-or-unleased-owner-claim' });
     } else {
       groups.needs_review.push({ ...item, reason: 'ambiguous-written-without-note' });
     }
@@ -104,6 +113,7 @@ export function buildRuntimeAudit(inputs) {
     written: inputs.written,
     notes: inputs.notes,
     duplicates,
+    now: new Date(inputs.now || Date.now()).getTime(),
   });
 
   return {
@@ -136,6 +146,8 @@ export function buildRuntimeAudit(inputs) {
       status_missing: pipeline.status_missing,
       events_total: pipeline.events.total,
       failure_events: pipeline.events.failures.total,
+      current_failure_events: pipeline.events.failures.current_total,
+      historical_failure_events: pipeline.events.failures.historical_total,
     },
     worktrees: {
       ok: inputs.worktrees.ok,

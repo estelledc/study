@@ -166,3 +166,13 @@ Thought: 刀已经清洗，最后放回 countertop。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
+- [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
+- [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
+- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
+- [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
+- [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
+- [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
+- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
+- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO

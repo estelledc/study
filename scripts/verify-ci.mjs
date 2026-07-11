@@ -8,80 +8,83 @@ import { fileURLToPath } from 'node:url';
 import { ROOT } from './lib/paths.mjs';
 
 const COMMIT_SHA_RE = /^[0-9a-f]{40}$/i;
-const NOTE_RE = /^src\/content\/docs\/(papers|projects)\/[^/]+\.md$/;
 
-export function changedFromRef(env = process.env) {
+export function changedFromArgs(env = process.env) {
   const ref = String(env.STUDY_CHANGED_FROM || '').trim();
-  if (!COMMIT_SHA_RE.test(ref) || /^0{40}$/.test(ref)) return null;
-  return ref;
+  if (!COMMIT_SHA_RE.test(ref) || /^0{40}$/.test(ref)) return [];
+  return ['--changed-from', ref];
 }
 
-export function listChangedNotes(fromRef, runner = null) {
-  if (!fromRef) return [];
-  const execute =
-    runner ||
-    ((args) =>
-      spawnSync('git', args, {
-        cwd: ROOT,
-        encoding: 'utf8',
-        env: process.env,
-      }));
-  const result = execute(['diff', '--name-only', '--diff-filter=ACMR', `${fromRef}...HEAD`]);
-  if ((result.status ?? 1) !== 0) {
-    throw new Error(`git diff failed against ${fromRef}: ${result.stderr || result.stdout || ''}`);
-  }
-  return String(result.stdout || '')
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => NOTE_RE.test(line));
+export function whitespaceDiffArgs(env = process.env) {
+  const ref = String(env.STUDY_CHANGED_FROM || '').trim();
+  if (!COMMIT_SHA_RE.test(ref) || /^0{40}$/.test(ref)) return ['diff', '--check'];
+  return ['diff', '--check', `${ref}...HEAD`];
 }
 
-export function buildCiSteps(env = process.env, notePaths = null) {
-  const fromRef = changedFromRef(env);
-  const notes = notePaths ?? (fromRef ? listChangedNotes(fromRef) : []);
-  const steps = [
-    { name: 'tests', command: 'npm', args: ['test'] },
-    { name: 'repository audits', command: 'npm', args: ['run', 'audit'] },
+export function freshnessAsOf(env = process.env, now = new Date()) {
+  const explicit = String(env.STUDY_FRESHNESS_AS_OF || '').trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(explicit)) return explicit;
+  return now.toISOString().slice(0, 10);
+}
+
+export function buildCiSteps(env = process.env) {
+  const changedArgs = changedFromArgs(env);
+  return [
+  { name: 'toolchain contract', command: 'node', args: ['scripts/audit-toolchain.mjs'] },
+  { name: 'tests', command: 'npm', args: ['test'] },
+  { name: 'repository audits', command: 'npm', args: ['run', 'audit'] },
+  {
+    name: 'content contract',
+    command: 'node',
+    args: ['scripts/audit-content-contract.mjs', '--json', ...changedArgs],
+  },
+  ...(changedArgs.length > 0 ? [{
+    name: 'changed-note quality gate',
+    command: 'node',
+    args: ['scripts/quality-gate.mjs', ...changedArgs, '--json'],
+  }] : []),
+  { name: 'template similarity report', command: 'node', args: ['scripts/analyze-template-similarity.mjs', '--json'] },
+  {
+    name: 'freshness lifecycle',
+    command: 'node',
+    args: ['scripts/audit-freshness.mjs', '--as-of', freshnessAsOf(env), '--json'],
+  },
+  { name: 'tracked-file redlines', command: 'node', args: ['scripts/audit-public-redlines.mjs', '--tracked', '--json'] },
+  { name: 'action pins', command: 'node', args: ['scripts/audit-action-pins.mjs'] },
+  { name: 'operation entrypoints', command: 'node', args: ['scripts/audit-operation-entrypoints.mjs'] },
+  { name: 'operation document lifecycle', command: 'node', args: ['scripts/audit-doc-lifecycle.mjs'] },
+  { name: 'asset contract', command: 'node', args: ['scripts/audit-assets.mjs', '--json'] },
+  {
+    name: 'strict build',
+    command: 'npm',
+    args: [
+      'run',
+      'build:strict',
+      ...(env.STUDY_BUILD_LOG ? ['--', '--log', env.STUDY_BUILD_LOG] : []),
+    ],
+  },
+  { name: 'homepage and base links', command: 'npm', args: ['run', 'audit:homepage-dist-links'] },
+  { name: 'Pagefind query contract', command: 'node', args: ['scripts/audit-pagefind.mjs', '--json'] },
+  { name: 'SEO output contract', command: 'node', args: ['scripts/audit-seo-output.mjs', '--json'] },
+  { name: 'static accessibility contract', command: 'node', args: ['scripts/audit-a11y-static.mjs'] },
+  { name: 'browser accessibility smoke', command: 'npm', args: ['run', 'test:a11y'] },
+  { name: 'Pages artifact boundary', command: 'node', args: ['scripts/audit-pages-artifact.mjs'] },
+  { name: 'Atlas performance budget', command: 'node', args: ['scripts/benchmark-atlas.mjs'] },
+  { name: 'site performance budget', command: 'node', args: ['scripts/benchmark-site.mjs'] },
+  { name: 'generated tracked output drift', command: 'git', args: ['diff', '--exit-code'] },
+  { name: 'staged output drift', command: 'git', args: ['diff', '--cached', '--exit-code'] },
+  { name: 'diff whitespace', command: 'git', args: whitespaceDiffArgs(env) },
   ];
-
-  // Large content PRs (full-corpus audits) skip per-file gates; rely on audit + build.
-  const QUALITY_GATE_LIMIT = 100;
-  if (notes.length > 0 && notes.length <= QUALITY_GATE_LIMIT) {
-    for (const note of notes) {
-      steps.push({
-        name: `quality-gate ${note}`,
-        command: 'node',
-        args: ['scripts/quality-gate.mjs', note],
-      });
-    }
-  } else if (notes.length > QUALITY_GATE_LIMIT) {
-    console.log(
-      `[verify:ci] skipping per-file quality-gate for ${notes.length} changed notes (>${QUALITY_GATE_LIMIT}); audit+build still run`,
-    );
-  }
-
-  steps.push(
-    {
-      name: 'strict build',
-      command: 'npm',
-      args: ['run', 'build:strict', ...(env.STUDY_BUILD_LOG ? ['--', '--log', env.STUDY_BUILD_LOG] : [])],
-    },
-    { name: 'homepage and base links', command: 'npm', args: ['run', 'audit:homepage-dist-links'] },
-    { name: 'diff whitespace', command: 'git', args: ['diff', '--check'] },
-  );
-
-  return steps;
 }
 
-export function runCiSteps(steps, runner = null) {
-  const execute =
-    runner ||
-    ((step) =>
-      spawnSync(step.command, step.args, {
-        cwd: ROOT,
-        stdio: 'inherit',
-        env: process.env,
-      }).status ?? 1);
+export const CI_STEPS = buildCiSteps();
+
+export function runCiSteps(steps = CI_STEPS, runner = null) {
+  const execute = runner || ((step) => spawnSync(step.command, step.args, {
+    cwd: ROOT,
+    stdio: 'inherit',
+    env: process.env,
+  }).status ?? 1);
 
   for (const step of steps) {
     console.log(`[verify:ci] ${step.name}`);
@@ -92,18 +95,7 @@ export function runCiSteps(steps, runner = null) {
 }
 
 function main() {
-  let steps;
-  try {
-    steps = buildCiSteps();
-  } catch (error) {
-    console.error(`[verify:ci] ${error.message}`);
-    process.exit(1);
-  }
-
-  const noteCount = steps.filter((step) => step.name.startsWith('quality-gate ')).length;
-  console.log(`[verify:ci] changed notes under quality-gate: ${noteCount}`);
-
-  const result = runCiSteps(steps);
+  const result = runCiSteps();
   if (!result.ok) {
     console.error(`[verify:ci] failed at "${result.failed}" (exit ${result.status})`);
     process.exit(result.status || 1);

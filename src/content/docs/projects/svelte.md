@@ -157,17 +157,15 @@ Svelte 学习曲线可以拆成 **三块**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[gradio]] —— Gradio — ML 模型 demo 框架
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
 - [[next-js]] —— Next.js — React 全栈框架
 - [[qwik]] —— Qwik — Resumable UI 框架
-- [[react]] —— React UI 组件库
-- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
-- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
-

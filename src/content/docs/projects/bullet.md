@@ -156,20 +156,5 @@ world.addCollisionObject(sensorObject, sensorGroup, sensorMask);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
-- 说明：本项内容围绕 bullet 的设计与适用场景展开。
+
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎

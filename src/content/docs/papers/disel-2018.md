@@ -150,7 +150,4 @@ Theorem transfer_atomicity :
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
-- [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
-
+（暂无反向链接）

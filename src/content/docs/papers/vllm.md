@@ -148,3 +148,31 @@ llm = LLM(model="...", gpu_memory_utilization=0.99, max_num_seqs=512)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[afd-disagg-moe]] —— AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图
+- [[awq]] —— AWQ — 看激活脸色给权重打折
+- [[awq-2023]] —— AWQ 2023 — 把 70B 大模型权重压到 35GB
+- [[papers/bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
+- [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+- [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
+- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
+- [[kv-cache-budget-2026]] —— KVBudget — 给每条请求划一块 KV cache 预算
+- [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
+- [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度
+- [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit
+- [[paged-attention]] —— PagedAttention — 把 KV cache 当虚拟内存页来管理
+- [[paged-attention-vllm]] —— PagedAttention — 以页替代整段内存的显存管理
+- [[prefix-cache-policy-2026]] —— Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）
+- [[reasoning-with-sampling]] —— Reasoning with Sampling — 在关键决策点重采样推理过程
+- [[rtp-llm-alibaba]] —— RTP-LLM — 把大模型推理服务做成分阶段工厂
+- [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[sglang-2024]] —— SGLang — 把 LLM 程序当成共享前缀的树来跑
+- [[smoothquant-2023]] —— SmoothQuant 2023 — 把激活的烫手山芋扔给权重
+- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
+- [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
+- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
+- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
+- [[vericache]] —— VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收
+- [[zero-2020]] —— ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能

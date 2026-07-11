@@ -162,3 +162,7 @@ models:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
+- [[kedro]] —— Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
+- [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI

@@ -160,3 +160,68 @@ Chubby / Spanner / etcd 是 Multi-Paxos + leader；ZooKeeper 用 Zab，思想同
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[b4-2013]] —— B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
+- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[calvin]] —— Calvin — 先排队再执行的分布式事务系统
+- [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[cassandra-eventual-tradeoff]] —— Cassandra 最终一致性取舍 — 可用性、延迟和新鲜度不能都拿满
+- [[chain-replication-2004]] —— Chain Replication — 把多副本排成流水线，简单且强一致
+- [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
+- [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
+- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
+- [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
+- [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
+- [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
+- [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
+- [[disel-2018]] —— Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块
+- [[epaxos-2013]] —— EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
+- [[fast-paxos-2006]] —— Fast Paxos — 给 Paxos 加一条乐观快车道
+- [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
+- [[foundationdb]] —— FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性
+- [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
+- [[gfs]] —— GFS — 为工作负载反向定制的分布式文件系统
+- [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
+- [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
+- [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有
+- [[janus-2016]] —— Janus 2016 — 把并发控制和共识捏成一个协议
+- [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
+- [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
+- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
+- [[lamport-time-clocks-1978]] —— Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
+- [[linux-kernel]] —— Linux kernel — 三层解释开源内核如何协作
+- [[locus-1980]] —— LOCUS 1980 — 让一群机器看起来像同一台机器
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
+- [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
+- [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[moesi-cache-coherence-1986]] —— Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则
+- [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
+- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
+- [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
+- [[raft-2014]] —— Raft 2014 — 把共识拆成能实现的三件事
+- [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
+- [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
+- [[skeen-3pc-1981]] —— Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁
+- [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板
+- [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
+- [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
+- [[tradeoff-analysis]] —— The Tail at Scale — 尾延迟会被规模放大
+- [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
+- [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
+- [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
+- [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
+- [[compound-v3]] —— Compound III (Comet) — 单基础资产借贷重构
+- [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
+- [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核

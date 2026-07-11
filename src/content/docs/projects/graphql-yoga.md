@@ -164,13 +164,6 @@ const yoga = createYoga({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
-- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 - [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
-- [[swr]] —— SWR — React 远程数据 hook 的极简流派
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-

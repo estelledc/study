@@ -7,6 +7,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { extractFrontmatterBlock, parseFrontmatterKeyValues } from './lib/frontmatter.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import {
   AUDIT_REVIEWS_DIR,
   DOCS_DIR,
@@ -37,6 +38,7 @@ function excerptBody(text, maxChars = 1200) {
 
 async function main() {
   const args = parseArgs();
+  assertBulkOperationAuthorized({ operation: 'prepare-audit-slug', requestedItems: 1 });
   const notePath = docsEntryPath(args.area, args.slug);
   const text = await fs.readFile(notePath, 'utf8');
   const fmBlock = extractFrontmatterBlock(text);

@@ -154,12 +154,6 @@ await queue.add('daily-report', {}, {
 
 - [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[redis]] —— Redis — 内存键值数据库
 - [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
-- [[temporal]] —— Temporal — 持久化工作流引擎
-

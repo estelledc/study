@@ -168,4 +168,7 @@ busctl monitor de.pengutronix.rauc
 - [[openssl]] —— RAUC 的 bundle 签名和证书信任链离不开加密库与 X.509 概念。
 
 ## 反向链接
+
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）

@@ -153,12 +153,7 @@ RAG 是 lookup 一段代码，MemCoder 是 lookup 一段「当时为什么这么
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
-- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
-- [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
-- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
 - [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
-- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[self-evolving-recsys-2602]] —— Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线
 - [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
-

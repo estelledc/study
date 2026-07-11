@@ -173,3 +173,19 @@ lemma tricky: "∀x. P x ∧ Q x ⟹ ∃y. P y"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
+- [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
+- [[chapar-2016]] —— Chapar — 第一个被机器证明的因果一致 KV 存储
+- [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
+- [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
+- [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
+- [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有
+- [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
+- [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
+- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
+- [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集
+- [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
+- [[verisoft-2008]] —— Verisoft — 把整台计算机从门电路到邮件客户端全部用数学证完
+- [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码
+- [[why3-2013]] —— Why3 — 写一次程序规范，多个证明器一起来证

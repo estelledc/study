@@ -161,12 +161,7 @@ sharp(buf).resize(300).blur(2).greyscale().toBuffer();  // 这一行才执行
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[pillow]] —— Pillow — Python 图像处理
+- [[piskel]] —— Piskel — Web 像素艺术编辑器
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
-

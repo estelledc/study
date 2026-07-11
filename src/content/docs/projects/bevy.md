@@ -175,11 +175,13 @@ fn main() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[embassy]] —— Embassy — 让单片机也能用 async/await
-- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[defold]] —— Defold — King 出品的 Lua 跨平台游戏引擎
+- [[heaps]] —— Heaps — Haxe 跨平台高性能游戏引擎
+- [[love2d]] —— LÖVE — 用 Lua 写 2D 游戏的轻量框架
+- [[luxcorerender]] —— LuxCoreRender — 物理光线追踪
 - [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎
 - [[openrct2]] —— OpenRCT2 — 用逆向工程让 20 年前的游戏复活
-- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
-
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎
+- [[raylib]] —— raylib — 极简 C 游戏库
+- [[tiled]] —— Tiled Map Editor — 通用 2D 关卡编辑

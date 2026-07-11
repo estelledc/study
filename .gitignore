@@ -1,6 +1,8 @@
 # build output
 dist/
 .astro/
+playwright-report/
+test-results/
 
 # dependencies
 node_modules
@@ -14,7 +16,26 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
+.envrc
+.direnv/
+
+# credentials / signing profiles
+*.jks
+*.key
+*.keystore
+*.cer
+*.crt
+*.der
+*.mobileprovision
+*.p12
+*.pem
+*.pfx
+*.provisionprofile
+id_ed25519*
+id_rsa*
+.netrc
 
 # macOS
 .DS_Store
@@ -24,6 +45,10 @@ pnpm-debug.log*
 !.vscode/extensions.json
 .idea/
 .research/
+.codex/
+.claude/settings.local.json
+*.xcuserstate
+xcuserdata/
 
 # auto-push 机器状态（每批重写，不入仓）
 data/STATUS.md
@@ -33,5 +58,7 @@ data/status.json
 data/pipeline-events.jsonl
 data/checkpoint.json
 data/round-lock.json
+data/round-lock.json.guard/
+data/.queue-transaction*
 data/STOP_SIGNAL
 data/graveyard.jsonl

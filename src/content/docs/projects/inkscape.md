@@ -163,3 +163,9 @@ inkscape --actions="export-id:Badge; export-id-only; export-background:purple; e
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
+- [[gimp]] —— GIMP — GNU 图像处理程序
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[krita]] —— Krita — 数字绘画专业编辑器
+- [[librecad]] —— LibreCAD — 2D 工程绘图

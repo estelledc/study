@@ -153,30 +153,42 @@ def reduce(user_id, latencies):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[bigtable-revisit-2024]] —— Bigtable 二十年回顾 — 从三维表到云数据库
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[borg-2015]] —— Borg 2015 — Google 把一万台机器假装成一台
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[ciel-universal-execution-engine-distributed-data-flow-2011]] —— CIEL 2011 — 让分布式数据流会自己长出下一步
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
-- [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
-- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[data-lake-management-2019]] —— Data Lake Management 2019 — 数据湖从文件堆变成可治理资产
+- [[dremel-2010]] —— Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析
+- [[dremel-decade-2020]] —— Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线
+- [[dryadlinq-system-general-purpose-distributed-data-parallel-2008]] —— DryadLINQ — 把普通 C# 查询变成集群作业
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
-- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[gfs]] —— GFS — 为工作负载反向定制的分布式文件系统
+- [[gfs-2003]] —— GFS 2003 — 把廉价机器拼成大文件仓库
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lakehouse-2021]] —— Lakehouse 2021 — 把数据湖和数仓合成一套开放平台
+- [[mesos]] —— Mesos — 让多种计算框架共用一套集群
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[observability]] —— Dapper 可观测性 — 把一次请求走过的路画出来
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[piccolo-building-fast-distributed-programs-with-partitioned-2010]] —— Piccolo — 用分区表写分布式迭代程序
 - [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
+- [[ray-2018]] —— Ray 2018 — 把任务和演员放进同一个分布式舞台
 - [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[spark-rdd]] —— Spark RDD — 用血缘记录重建内存数据
+- [[system-design]] —— The Datacenter as a Computer — 把机房当成一台巨型计算机
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 - [[thrust-2010]] —— Thrust — 让 GPU 编程像写 STL 一样一行调用
+- [[tradeoff-analysis]] —— The Tail at Scale — 尾延迟会被规模放大
 - [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
-
+- [[papers/vllm]] —— vLLM — 把操作系统的分页搬进 GPU KV cache
+- [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上

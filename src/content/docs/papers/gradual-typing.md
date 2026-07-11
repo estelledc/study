@@ -148,14 +148,6 @@ let apply (f: ? -> ?) (x: int) =
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[linear-types]] —— 线性类型（Linear Types）
-- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
-- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
-- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
-

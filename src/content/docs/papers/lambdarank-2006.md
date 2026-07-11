@@ -151,12 +151,8 @@ lambda_ij = -sigmoid(s_j - s_i) * |Delta_NDCG_ij|
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 - [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
-- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
-- [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
-- [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
+- [[resolution-diagnostics-llm]] —— Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率
 - [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
 - [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
-

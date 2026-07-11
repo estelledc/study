@@ -154,3 +154,10 @@ A: "blue"  / "red" / "green" / "purple" / "yellow" ...
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chain-of-thought]] —— Chain-of-Thought — 让大模型先写步骤再回答
+- [[compositional-incoherence]] —— Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒
+- [[ppc-preplan]] —— PPC Preplan — 先想清楚题目类型再规划解法
+- [[reasoning-with-sampling]] —— Reasoning with Sampling — 在关键决策点重采样推理过程
+- [[rim-latent-reasoning]] —— RiM Latent Reasoning — 给 LLM 一块不用说出口的工作记忆
+- [[self-trained-verification]] —— Self-Trained Verification — 让模型先看标准答案学会挑错

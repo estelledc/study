@@ -160,3 +160,15 @@ docker run -p 8501:8501 \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
+- [[mcmahan-fedavg-2017]] —— FedAvg 2017 — 让手机本地训练模型再上传平均值
+- [[cmsis-nn]] —— CMSIS-NN — Arm Cortex-M 的神经网络算子加速库
+- [[flax]] —— Flax — JAX 上的神经网络库
+- [[jax]] —— JAX — Google 函数式数值计算
+- [[keras]] —— Keras 3 — 一份模型代码跑三套后端
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[mind-ar-js]] —— MindAR — 不装原生 SDK 的浏览器图像/人脸 AR
+- [[ncnn]] —— ncnn — 腾讯开源的端侧神经网络推理框架
+- [[open3d]] —— Open3D — 现代点云 / 几何库
+- [[tflite-micro]] —— TensorFlow Lite Micro — 把小模型塞进微控制器

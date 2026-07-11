@@ -154,17 +154,11 @@ client.on("Room.timeline", (event, room) => {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[conversations]] —— Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
-- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
-- [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
-- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 - [[prosody]] —— Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
-- [[react]] —— React UI 组件库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
-- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[vodozemac]] —— vodozemac — Matrix 端到端加密的 Rust 内核
 - [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
-

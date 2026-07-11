@@ -160,7 +160,7 @@ webpack 没"死"——npm 周下载量截至 2026 初仍约 30M+。但它从"默
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
-- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
@@ -170,7 +170,6 @@ webpack 没"死"——npm 周下载量截至 2026 初仍约 30M+。但它从"默
 - [[preact]] —— Preact — 3KB React 替代
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
-- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

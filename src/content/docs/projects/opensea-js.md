@@ -148,9 +148,4 @@ provider.on(transferFilter, async (log) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
-- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

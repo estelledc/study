@@ -2,6 +2,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { homepageTrustClaimFailures } from './lib/homepage-trust.mjs';
 
 const root = process.cwd();
 const distDir = path.join(root, 'dist');
@@ -128,6 +129,8 @@ const text = visibleText(html);
 const h1Texts = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map((match) => visibleText(match[1]));
 const requiredHeroTitle = '从真实项目和经典论文里，建立工程判断力';
 
+for (const message of homepageTrustClaimFailures(html)) fail(message);
+
 if (h1Texts.length !== 1 || h1Texts[0] !== requiredHeroTitle) {
   fail(`Built homepage must contain exactly one H1 with "${requiredHeroTitle}"; found ${JSON.stringify(h1Texts)}`);
 }
@@ -194,11 +197,11 @@ for (const property of ['og:title', 'og:description', 'og:url', 'og:type']) {
 if (
   !hasTagWithAttributes(html, 'meta', {
     property: 'og:image',
-    content: 'https://estelledc.github.io/study/og-study.png',
+    content: 'https://estelledc.github.io/study/og-study.webp',
   }) ||
   !hasTagWithAttributes(html, 'meta', {
     name: 'twitter:image',
-    content: 'https://estelledc.github.io/study/og-study.png',
+    content: 'https://estelledc.github.io/study/og-study.webp',
   })
 ) {
   fail('Built homepage is missing the stable Open Graph / Twitter share image.');
@@ -235,6 +238,17 @@ const requiredCtas = [
 for (const expected of requiredCtas) {
   const found = anchors.some((anchor) => pathnameOf(anchor.href) === expected.pathname && anchor.text.includes(expected.text));
   if (!found) fail(`Built homepage is missing CTA "${expected.text}" -> ${expected.pathname}`);
+}
+
+const requiredStarterPaths = [
+  { text: '前端产品工程', pathname: '/study/topics/frontend/' },
+  { text: 'AI Agent 入门', pathname: '/study/topics/ai-agent/' },
+  { text: '系统底层入门', pathname: '/study/topics/distributed-systems/' },
+];
+
+for (const expected of requiredStarterPaths) {
+  const found = anchors.some((anchor) => pathnameOf(anchor.href) === expected.pathname && anchor.text.includes(expected.text));
+  if (!found) fail(`Built homepage is missing starter path "${expected.text}" -> ${expected.pathname}`);
 }
 
 for (const href of [
@@ -301,4 +315,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[audit:homepage-dist] OK: three CTAs, React/ReAct targets, /study base paths, and ${new Set(hrefs.filter((href) => href.startsWith('/study'))).size} built targets verified in ${path.relative(root, homepagePath)}.`);
+console.log(`[audit:homepage-dist] OK: three CTAs, three starter paths, React/ReAct targets, /study base paths, and ${new Set(hrefs.filter((href) => href.startsWith('/study'))).size} built targets verified in ${path.relative(root, homepagePath)}.`);

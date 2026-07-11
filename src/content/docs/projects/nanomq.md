@@ -186,3 +186,5 @@ curl -u admin:public http://localhost:8081/api/v4/prometheus
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[nats]] —— NATS — 极简云原生消息系统

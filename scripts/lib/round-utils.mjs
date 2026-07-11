@@ -55,7 +55,9 @@ export function finalGateIssues(summary, statusPorcelainText = '') {
   if (claimed !== 0) {
     issues.push(`claimed=${claimed}`);
   }
-  const failures = summary?.events?.failures?.total ?? 0;
+  const failures = summary?.events?.failures?.current_total
+    ?? summary?.events?.failures?.total
+    ?? 0;
   if (failures !== 0) {
     issues.push(`failures=${failures}`);
   }

@@ -17,6 +17,7 @@ function parseArgs(argv = process.argv.slice(2)) {
 }
 
 function defaultLogPath() {
+  if (process.env.STUDY_BUILD_LOG) return path.resolve(process.env.STUDY_BUILD_LOG);
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   return path.join(os.tmpdir(), `study-build-${stamp}-${process.pid}.log`);
 }

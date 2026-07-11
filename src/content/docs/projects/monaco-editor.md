@@ -158,14 +158,13 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[code-server]] —— code-server — 浏览器里的 VS Code
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[notepad-plus-plus]] —— Notepad++ — 比记事本多两个加号的 Windows 编辑器
-- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[theia]] —— Eclipse Theia — 可定制的云端与桌面 IDE 框架
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建
-

@@ -148,3 +148,5 @@ Google Spanner 跨 shard 事务**仍然用 2PC**，但把 coordinator 日志用 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识

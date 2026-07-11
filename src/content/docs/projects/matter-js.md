@@ -151,5 +151,8 @@ render.mouse = mouse; // 让滚轮/坐标与画布对齐
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[physics]] —— 物理引擎的基础建模
-- [[gamedev]] —— 入门级互动系统工程方法
+- [[box2d]] —— Box2D — Erin Catto C++ 2D 物理
+- [[cannon-es]] —— Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则
+- [[phaser]] —— Phaser — HTML5 2D 游戏框架
+- [[planck]] —— planck.js — 纯 JS Box2D 生态
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎

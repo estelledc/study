@@ -159,9 +159,4 @@ driver 的 RPC 次数从 N 次降到 1 次，**网络往返被均摊**。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
-- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
-- [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
-- [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
-
+（暂无反向链接）

@@ -161,11 +161,4 @@ P5、P6 走 state transfer 拉历史 log → 进入 normal status
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[raft]] —— Raft — 易理解的共识算法
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-- [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
-
+- [[openxr-sdk]] —— OpenXR SDK — Khronos VR/AR 标准参考实现

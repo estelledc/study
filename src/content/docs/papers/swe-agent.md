@@ -138,12 +138,16 @@ GitHub issue：`json.dumps fails on datetime objects`。典型动作序列：
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
+- [[ccopd-distillation]] —— CCOPD — 让多轮对话别被自己的旧话带偏
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
-- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
-- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
+- [[lacuna-program-holes]] —— LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
-- [[react]] —— React UI 组件库
+- [[papers/react]] —— ReAct — Reasoning and Acting
+- [[react-agent]] —— ReAct Agent — 推理和行动交替的工具使用范式
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
+- [[soundness-bench]] —— SoundnessBench — 判断 AI 科学家会不会把坏点子当好点子
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
+- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"

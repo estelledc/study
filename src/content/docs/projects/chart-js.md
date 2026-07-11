@@ -170,3 +170,12 @@ new Chart(ctx, { type: 'line', data, plugins: [watermark] })
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[amcharts5]] —— amCharts 5 — TypeScript 重写的商业级图表库
+- [[antv-f2]] —— AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集
+- [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
+- [[billboard-js]] —— billboard.js — c3.js 的 TypeScript 继任者
+- [[chartist]] —— Chartist — 极简 SVG 图表
+- [[leaflet]] —— Leaflet — 轻量交互式地图
+- [[regl]] —— regl — 函数式 WebGL 封装
+- [[vega]] —— Vega — 整张图就是一棵 JSON

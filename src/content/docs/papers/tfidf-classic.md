@@ -150,3 +150,5 @@ print(doc_weight, query_weight)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bm25-okapi]] —— BM25 — 给文档打分的"老配方"

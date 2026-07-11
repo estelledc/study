@@ -192,3 +192,20 @@ func _on_mob_timer_timeout():
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
+- [[defold]] —— Defold — King 出品的 Lua 跨平台游戏引擎
+- [[dragonbones]] —— DragonBones — 国产开源 2D 骨骼动画运行时
+- [[filament]] —— Filament — Google 跨平台 PBR 引擎
+- [[heaps]] —— Heaps — Haxe 跨平台高性能游戏引擎
+- [[love2d]] —— LÖVE — 用 Lua 写 2D 游戏的轻量框架
+- [[melonjs]] —— melonJS — 轻量 JS 2D 游戏引擎
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎
+- [[openxr-sdk]] —— OpenXR SDK — Khronos VR/AR 标准参考实现
+- [[phaser]] —— Phaser — HTML5 2D 游戏框架
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎
+- [[raylib]] —— raylib — 极简 C 游戏库
+- [[spine-runtimes]] —— Spine Runtimes — 2D 骨骼动画运行时
+- [[tiled]] —— Tiled Map Editor — 通用 2D 关卡编辑

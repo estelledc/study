@@ -168,14 +168,7 @@ GRASP-DPLL(F):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
-- [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
-- [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
-- [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 - [[nelson-oppen-1979]] —— Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"
 - [[nieuwenhuis-dpll-t-2006]] —— Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书
-

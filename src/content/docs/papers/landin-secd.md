@@ -169,17 +169,8 @@ def secd_step(s, e, c, d):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[backus-fp-1978]] —— Backus FP 1978 — 把程序从赋值循环里解放出来
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
-- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
-- [[ssa]] —— SSA — 静态单赋值形式
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 - [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
-

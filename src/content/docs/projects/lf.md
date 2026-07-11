@@ -153,6 +153,4 @@ map x extract
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[fzf]] —— fzf — 命令行模糊查找
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-
+- [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器

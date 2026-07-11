@@ -152,9 +152,4 @@ D 必须学会：「我爱看鱼」里「看」放在「爱」和「鱼」之间
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[mae]] —— MAE — Masked Autoencoders
-- [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
-- [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
-
+（暂无反向链接）

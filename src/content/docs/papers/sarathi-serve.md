@@ -149,7 +149,4 @@ llm = LLM(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-
+- [[afd-disagg-moe]] —— AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图

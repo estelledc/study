@@ -181,3 +181,8 @@ class MinimalLLaVA(nn.Module):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[lomo-modality]] —— LoMo — 把同一句话换成图片也要看懂

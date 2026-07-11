@@ -165,14 +165,8 @@ rg --json "password" logs/ | fx
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[curlie]] —— curlie — curl 的能力 + HTTPie 的语法
 - [[dasel]] —— dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
-- [[fzf]] —— fzf — 命令行模糊查找
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
 - [[httpie]] —— HTTPie — curl 的人话版本
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
-- [[jq]] —— jq — JSON 的 sed/awk
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-

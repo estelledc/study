@@ -191,3 +191,12 @@ scores = net.forward()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
+- [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA 工具箱
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[pillow]] —— Pillow — Python 图像处理
+- [[sam2]] —— SAM 2 — 图像和视频都能抠轮廓的通用分割模型
+- [[ultralytics]] —— Ultralytics — YOLOv8/v11 易用 SDK

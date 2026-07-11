@@ -159,38 +159,35 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[aflgo-2017]] —— AFLGo — 让灰盒 fuzzing 朝目标代码前进
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
+- [[avgustinov-codeql-2016]] —— QL / CodeQL — 用面向对象外壳写可扩展代码查询
 - [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[e-path-egraph]] —— E-Path — 把 CFG 优化从单行通道改成候选池
+- [[egglog-incremental-2026]] —— Egglog — 把 Datalog 和等式饱和合成一台推理引擎
+- [[fairfuzz-2018]] —— FairFuzz 2018 — 保护关键字节，让 fuzzing 往深处走
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点
-- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[naiad-2013]] —— Naiad — 一套引擎同时跑批处理、流处理和迭代计算
-- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
+- [[newsome-taintcheck-2005]] —— TaintCheck — 给不可信输入贴追踪标签
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
-- [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
-

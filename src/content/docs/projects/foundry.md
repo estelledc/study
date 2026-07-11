@@ -160,6 +160,8 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bohme-aflfast-2016]] —— AFLFast — 把 fuzzing 的力气花在更少人走的路径上
+- [[making-smart-contracts-smarter]] —— Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞
 - [[anchor]] —— Anchor — Solana 合约开发框架
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
@@ -168,27 +170,19 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
-- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
-- [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
-- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
-

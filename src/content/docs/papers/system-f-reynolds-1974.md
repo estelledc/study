@@ -148,17 +148,12 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[liskov-abstraction-1974]] —— Liskov 抽象数据类型 — 用操作而不是存储形状定义数据
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
@@ -168,7 +163,3 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 - [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
-- [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
-

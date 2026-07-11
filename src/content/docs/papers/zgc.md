@@ -156,9 +156,4 @@ java -XX:+UseZGC -XX:+ZGenerational -Xmx32g MyApp
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
-

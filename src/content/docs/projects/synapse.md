@@ -156,18 +156,10 @@ Matrix 的杀手锏是 **bridge**——通过中间程序把 IRC/XMPP/Slack/Disc
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
-- [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
-- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
-- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
-- [[nginx]] —— nginx — 高性能 Web 服务器
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
-

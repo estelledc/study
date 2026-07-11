@@ -159,21 +159,17 @@ filter(p) :: *[ west?n → [ n mod p ≠ 0 → east!n ] ]
 
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
-- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+- [[hoare-csp-1978]] —— Hoare CSP 1978 — 把并发看成会对话的小程序
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[hoare-monitors-1974]] —— Hoare Monitors 1974 — 把锁和等待队列封进一个房间
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[monitors-1974]] —— Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
 - [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[stm-shavit-touitou]] —— STM Shavit-Touitou — 把"加锁"改成"事务"的源头
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[unix-1974]] —— UNIX 1974 — 用极小内核做出能用的分时系统
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
-
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核

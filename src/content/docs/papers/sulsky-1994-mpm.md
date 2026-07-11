@@ -145,6 +145,5 @@ for p in particles:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[hu-2018-mls-mpm]] —— MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[macklin-2016-xpbd]] —— XPBD — 让 PBD 的软硬程度不再跟帧率绑死

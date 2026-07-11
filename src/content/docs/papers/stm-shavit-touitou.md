@@ -152,10 +152,5 @@ withdraw acc n = atomically $ do
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
-- [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
-- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
-- [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-
+- [[hoare-monitors-1974]] —— Hoare Monitors 1974 — 把锁和等待队列封进一个房间
+- [[michael-scott-queue]] —— Michael-Scott Queue — 用 CAS 做高性能并发队列

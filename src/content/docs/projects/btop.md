@@ -147,22 +147,14 @@ git add btop/btop.conf && git commit -m 'sync btop config'
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
-- [[bat]] —— bat — 现代 cat 替代
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
-- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
-- [[fzf]] —— fzf — 命令行模糊查找
 - [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
 - [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
-- [[grafana]] —— Grafana — 监控可视化看板
-- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
-- [[prometheus]] —— Prometheus — 时序监控系统
-- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
-

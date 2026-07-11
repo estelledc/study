@@ -161,8 +161,6 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
@@ -170,8 +168,6 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
-

@@ -161,4 +161,6 @@ curl -X POST http://admin:pass@localhost:5984/_replicate \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[mongo]] —— MongoDB — 文档数据库代表
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
+- [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库

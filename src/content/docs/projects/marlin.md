@@ -177,3 +177,5 @@ M420 S1
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[klipper]] —— Klipper — 把 3D 打印运动计算搬到主机上

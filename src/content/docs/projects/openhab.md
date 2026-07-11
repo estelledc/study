@@ -189,3 +189,6 @@ public class WeatherHandlerFactory extends BaseThingHandlerFactory {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[esphome]] —— ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件
+- [[espurna]] —— ESPurna — 给便宜智能开关换一套本地大脑

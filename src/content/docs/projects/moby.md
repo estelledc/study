@@ -163,6 +163,4 @@ make binary
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[runc]] —— runc — Linux 容器最底层那个真正在 fork 进程的 CLI
-
+（暂无反向链接）

@@ -149,10 +149,5 @@ Yjs 的 YArray / YText 不直接用 Logoot 的多层数字 ID，而是用"前驱
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
-- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
-- [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
-- [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
-
+- [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库

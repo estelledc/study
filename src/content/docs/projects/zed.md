@@ -150,3 +150,10 @@ zed ssh://user@server.example.com/path/to/project
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[helix]] —— Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机
+- [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
+- [[lite-xl]] —— Lite-XL — 不到 3MB 的编辑器也能扩展出花样
+- [[opencode]] —— OpenCode — 终端里的开源 AI 编程助手
+- [[theia]] —— Eclipse Theia — 可定制的云端与桌面 IDE 框架
+- [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验

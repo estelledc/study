@@ -141,15 +141,13 @@ GAN 的 loss 曲线经常上下震荡甚至崩塌，需要无数 trick（label s
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步
+- [[diffusion-posterior-finite]] —— Diffusion Posterior Samplers Fail — 用有限样本看清扩散后验采样为什么翻车
 - [[dit]] —— DiT — Diffusion Transformer
 - [[edm-2022]] —— EDM — 把扩散模型的训练配方一次拆清楚
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
-- [[mae]] —— MAE — Masked Autoencoders
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[resnet]] —— ResNet — 残差连接
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
-- [[vit]] —— ViT — Vision Transformer
-
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存

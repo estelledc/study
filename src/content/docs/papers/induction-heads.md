@@ -142,9 +142,6 @@ GPT-2 small 在 layer 5 head 5 上有一个明确的 induction head。给它喂 
 
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
-- [[attention]] —— Attention Is All You Need
 - [[cot]] —— Chain-of-Thought Prompting
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
 - [[toy-models-superposition]] —— Toy Models of Superposition
-

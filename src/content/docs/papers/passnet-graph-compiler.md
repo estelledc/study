@@ -151,3 +151,5 @@ value = input[idx] + residual[i]
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[milestone-phase-order]] —— MileStone — 让编译器按能耗预算自己排优化顺序

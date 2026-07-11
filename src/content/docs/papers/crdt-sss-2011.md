@@ -166,9 +166,4 @@ Riak 2.0 的 `riak-dt`：`dvvset.erl` ↔ MV-Register，`lwwreg.erl` ↔ LWW-Reg
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
-- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
-- [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-

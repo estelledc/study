@@ -160,6 +160,4 @@ Helm 侧用 `jkroepke/helm-secrets`：`helm secrets install ... -f secrets.enc.y
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
-- [[helm]] —— Helm — Kubernetes 包管理器
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-
+- [[joplin]] —— Joplin — 开源 Evernote 替代

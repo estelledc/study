@@ -163,3 +163,5 @@ coCondenser = "**先把 [CLS] 训练成会聚合段落的指针，再做检索 f
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding

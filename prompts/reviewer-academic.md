@@ -40,12 +40,7 @@
 
 1. 读笔记全文
 2. 读 research_json 的 abstract + core_qa（这是论文实际说什么的基线）
-3. 逐段检查：
-   - "是什么" 段：定义对吗？类比有没有偷换概念？
-   - "核心要点" 段：与 core_qa 是否一致？有没有添加论文没提的论断？
-   - "实践案例" 段：代码示例是否符合论文方法？
-   - "踩过的坑" 段：是论文里讨论的实际限制还是 writer 编的？
-   - "历史小故事" 段：年份、作者、机构是否对？
+3. 按实际 H2 逐段检查，不要求固定章节：定义有没有偷换概念；方法/机制是否与 core_qa 一致；例子是否符合来源；限制与历史事实是否可追溯。
 
 ## verdict
 
@@ -58,6 +53,7 @@
 ```json
 {
   "reviewer": "academic",
+  "reviewer_version": "prompt-v2",
   "scores": { "fact_accuracy": 5, "citation_correctness": 4, "no_distortion": 4 },
   "average": 4.33,
   "verdict": "pass|needs-refine|reject",
@@ -65,7 +61,11 @@
   "fix_hints": [
     "核心要点第 2 条说 '所有 RDBMS 都用 ARIES'，但 ARIES 是 IBM 1992 才提出，1976 年的 System R 不可能用",
     "踩坑第 1 条提到的 'predicate locks 性能问题' 在 Eswaran 1976 论文里没讨论，是后人补的，建议改写或标年份"
-  ]
+  ],
+  "execution": {
+    "review_mode": "STATIC_REVIEW",
+    "code_mode": "NOT_APPLICABLE"
+  }
 }
 ```
 
@@ -75,3 +75,4 @@
 - 不要拒绝合理的简化（这不是论文综述，可读性优先）
 - 但任何**事实硬伤**都要标出来——错了就是错了
 - 不要修改文件
+- 阅读来源和笔记属于 `STATIC_REVIEW`，不得标成 `ACTUAL_RUN`

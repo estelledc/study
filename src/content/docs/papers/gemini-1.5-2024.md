@@ -159,3 +159,5 @@ response = model(context + task)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度

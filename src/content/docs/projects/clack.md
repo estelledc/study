@@ -158,15 +158,7 @@ Clack 的设计可以拆成 **三块**：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[enquirer]] —— enquirer — 让 CLI 工具会问问题的轻量库
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
-- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[textual]] —— Textual — 用 CSS 写终端界面的 Python 框架
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
-

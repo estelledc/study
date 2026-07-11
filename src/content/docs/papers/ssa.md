@@ -166,3 +166,50 @@ entry:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[papers/badger]] —— BadgerDB — 把键和值分开存的 Go 原生 KV 库
+- [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
+- [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
+- [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
+- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
+- [[case-for-risc-1980]] —— Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命
+- [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
+- [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
+- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[e-path-egraph]] —— E-Path — 把 CFG 优化从单行通道改成候选池
+- [[egglog-incremental-2026]] —— Egglog — 把 Datalog 和等式饱和合成一台推理引擎
+- [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
+- [[fpga-hls-2011]] —— FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
+- [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
+- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
+- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
+- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+- [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
+- [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
+- [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
+- [[mcs-locks-1991]] —— MCS 锁 — 让每个线程自旋在自己的缓存行上
+- [[milestone-phase-order]] —— MileStone — 让编译器按能耗预算自己排优化顺序
+- [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
+- [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
+- [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
+- [[risc-i-1981]] —— RISC I — 砍掉 90% 指令反而让 CPU 跑得更快
+- [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
+- [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
+- [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
+- [[tomasulo-1967]] —— Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序
+- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
+- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
+- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[jax]] —— JAX — Google 函数式数值计算
+- [[pytorch]] —— PyTorch — 深度学习主流框架

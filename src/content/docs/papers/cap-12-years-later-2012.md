@@ -169,6 +169,4 @@ afterRecovery(() => cart = union(leftCart, rightCart))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-
+- [[dynamo-2007]] —— Dynamo 2007 — 让购物车在机器故障时也能写入

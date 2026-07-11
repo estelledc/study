@@ -184,4 +184,6 @@ services:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[mender]] —— Mender — 给 IoT 设备做不会刷砖的 OTA 升级
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作

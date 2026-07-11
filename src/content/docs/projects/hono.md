@@ -149,14 +149,12 @@ app.get('/users/:id', (c) => {
 
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
-- [[bun]] —— Bun — JS 全能运行时
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
@@ -167,4 +165,3 @@ app.get('/users/:id', (c) => {
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-

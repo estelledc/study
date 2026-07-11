@@ -170,3 +170,5 @@ marimo convert old.ipynb -o report.py
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[pluto-jl]] —— Pluto.jl — Julia 反应式笔记本

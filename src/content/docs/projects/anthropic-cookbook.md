@@ -167,3 +167,9 @@ msg = client.messages.create(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[projects/autogen]] —— AutoGen — 微软多 Agent 对话框架
+- [[claude-agent-sdk]] —— Claude Agent SDK — 把 Claude Code 装进 npm 包
+- [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
+- [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
+- [[openai-agents-sdk]] —— OpenAI Agents SDK — 让多个 agent 协作的轻量框架

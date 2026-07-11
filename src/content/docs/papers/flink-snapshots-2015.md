@@ -153,10 +153,6 @@ Op1 ── Op2 ──┐
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
+- [[delta-lake-2020]] —— Delta Lake 2020 — 给对象存储补上事务日志
+- [[distributed-snapshot-byzantine-2026]] —— Byzantine Linearizability — 让拜占庭客户端也像排队办业务
 - [[drizzle-2017]] —— Drizzle — 让 micro-batch 也能跑出 100ms 延迟
-- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-

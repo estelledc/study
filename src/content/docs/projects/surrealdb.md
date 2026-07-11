@@ -192,3 +192,5 @@ SELECT ->knows->person.name AS friends FROM person:tobie;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB

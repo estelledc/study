@@ -151,9 +151,4 @@ data ℤ : Type where
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
-- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
-- [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
-- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
-- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
-
+（暂无反向链接）

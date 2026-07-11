@@ -165,3 +165,8 @@ remaining = budget - spent
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
+- [[brakerski-bgv-2012]] —— BGV 2012 — 不用自举也能做全同态加密
+- [[duchi-local-dp-2013]] —— Duchi 2013 — 本地差分隐私的统计极限
+- [[erlingsson-rappor-2014]] —— RAPPOR 2014 — 用随机应答在浏览器端实现本地差分隐私

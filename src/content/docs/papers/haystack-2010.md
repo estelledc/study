@@ -155,3 +155,5 @@ def rotate_photo(photo_id, kind, new_bytes):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[gfs-2003]] —— GFS 2003 — 把廉价机器拼成大文件仓库
+- [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB

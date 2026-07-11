@@ -157,3 +157,12 @@ acpp main.cpp                                           # AdaptiveCpp：AMD/NVID
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aurora-exascale-2024]] —— Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
+- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
+- [[fpga-hls-2011]] —— FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
+- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
+- [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
+- [[owens-2007-gpgpu-survey]] —— Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代
+- [[thrust-2010]] —— Thrust — 让 GPU 编程像写 STL 一样一行调用
+- [[filament]] —— Filament — Google 跨平台 PBR 引擎

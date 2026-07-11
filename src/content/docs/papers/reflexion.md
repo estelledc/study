@@ -165,14 +165,13 @@ Trial 2:
 
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
-- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
-- [[cot]] —— Chain-of-Thought Prompting
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
 - [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
-- [[react]] —— React UI 组件库
+- [[papers/react]] —— ReAct — Reasoning and Acting
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
+- [[self-trained-verification]] —— Self-Trained Verification — 让模型先看标准答案学会挑错
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
+- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
-

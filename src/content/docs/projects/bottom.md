@@ -164,12 +164,5 @@ strategy:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
-- [[bat]] —— bat — 现代 cat 替代
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
-- [[fzf]] —— fzf — 命令行模糊查找
-- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[ratatui]] —— ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-

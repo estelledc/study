@@ -164,9 +164,9 @@ reentrancy_risk(w, c) :-
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[atzei-eth-attacks-2017]] —— Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类
+- [[avgustinov-codeql-2016]] —— QL / CodeQL — 用面向对象外壳写可扩展代码查询
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
+- [[egglog-incremental-2026]] —— Egglog — 把 Datalog 和等式饱和合成一台推理引擎
 - [[ethane-2007]] —— Ethane 2007 — 把企业网安全策略集中到一台中央电脑上
-- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
-- [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
-
+- [[securify-2018]] —— Securify 2018 — 用规则自动查智能合约漏洞

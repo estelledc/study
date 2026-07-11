@@ -42,6 +42,18 @@ test('finalGateIssues fails on claimed, failures, or dirty status', () => {
 
   const failed = { queues: { claimed: 0 }, events: { failures: { total: 2 } } };
   assert.deepEqual(finalGateIssues(failed, ' M package.json'), ['worktree is not clean', 'failures=2']);
+
+  const historicalOnly = {
+    queues: { claimed: 0 },
+    events: { failures: { total: 27, current_total: 0, historical_total: 27 } },
+  };
+  assert.deepEqual(finalGateIssues(historicalOnly, ''), []);
+
+  const currentFailure = {
+    queues: { claimed: 0 },
+    events: { failures: { total: 28, current_total: 1, historical_total: 27 } },
+  };
+  assert.deepEqual(finalGateIssues(currentFailure, ''), ['failures=1']);
 });
 
 test('small round commit messages stay stable', () => {

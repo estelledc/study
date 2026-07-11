@@ -182,3 +182,5 @@ pn.Column(slider, pn.bind(lambda v: f"平方={v*v}", slider))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页

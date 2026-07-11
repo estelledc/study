@@ -170,3 +170,5 @@ VFS（Virtual File System）是 jsPDF 内部的内存文件系统，要先 `addF
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[pdfkit]] —— PDFKit — 用画笔在 PDF 上一笔一笔画

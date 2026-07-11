@@ -154,3 +154,9 @@ Fast Paxos = 经典 Paxos + 乐观快路径，**用更大的 quorum 换更短的
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
+- [[flp-1985]] —— FLP 1985 — 一个坏节点就能让异步共识永不终止
+- [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
+- [[skeen-3pc-1981]] —— Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁

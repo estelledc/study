@@ -147,6 +147,4 @@ for k in range(K):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[desbrun-1999-implicit-fairing]] —— Desbrun 1999 — 把热扩散方程隐式离散到三角网
-- [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
-- [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
+（暂无反向链接）

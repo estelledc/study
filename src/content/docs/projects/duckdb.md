@@ -148,18 +148,22 @@ result = con.execute("""
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/clickhouse]] —— ClickHouse — 把列存 OLAP 推到硬件极限
+- [[columnar-storage-formats-2023]] —— Columnar Storage Formats 2023 — Parquet/ORC 的体检报告
+- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
+- [[papers/starrocks]] —— StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP
+- [[velox-meta-2022]] —— Velox — Meta 统一执行引擎
 - [[arrow]] —— Apache Arrow — 内存列式标准
 - [[arrow-rs]] —— arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
+- [[debezium]] —— Debezium — 把数据库的"刚刚改了"变成消息流
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[lance]] —— Lance — AI 数据列存格式
 - [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI
+- [[marimo]] —— marimo — 反应式 Python 笔记本
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
-- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-
+- [[projects/starrocks]] —— StarRocks — MPP 列存数据库

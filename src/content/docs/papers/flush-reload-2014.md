@@ -161,3 +161,6 @@ for bit in private_exponent:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kocher-spectre-2019]] —— Spectre — CPU 猜错路时也会泄密
+- [[lipp-meltdown-2018]] —— Meltdown — 从用户态读到内核内存的硬件漏洞

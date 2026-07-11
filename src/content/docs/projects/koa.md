@@ -149,20 +149,14 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[bun]] —— Bun — JS 全能运行时
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[hono]] —— Hono — 多运行时 Web 框架
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
-- [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[pino]] —— pino — 日志不该阻塞热路径
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
-

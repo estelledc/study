@@ -149,3 +149,8 @@ new LineChart('.ct-chart', data, {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[amcharts5]] —— amCharts 5 — TypeScript 重写的商业级图表库
+- [[dhtmlx-gantt]] —— DHTMLX Gantt — 给企业级排期用的全功能甘特组件
+- [[frappe-gantt]] —— Frappe Gantt — 200 行 SVG 写出的甘特图
+- [[pdfmake]] —— pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑

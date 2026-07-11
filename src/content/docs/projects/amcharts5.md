@@ -156,3 +156,5 @@ polygonSeries.mapPolygons.template.events.on("click", (ev) => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[vega]] —— Vega — 整张图就是一棵 JSON

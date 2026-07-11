@@ -146,15 +146,7 @@ val code = q"input.getInt($idx) + 1"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
-- [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lacuna-program-holes]] —— LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
-- [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
-- [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
-- [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
-

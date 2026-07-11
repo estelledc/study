@@ -149,14 +149,12 @@ print(r)  # C 最高，D 最低
 
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
-- [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
+- [[graph-neural-networks]] —— Graph Neural Networks — 把关系网络交给神经网络来读
 - [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
 - [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
 - [[simrank-2002]] —— SimRank — 两个节点相似当且仅当它们的邻居相似
 - [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
 - [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
-

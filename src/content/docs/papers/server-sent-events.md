@@ -159,7 +159,4 @@ WebSocket 抢了所有"实时"风头十年，但 SSE 从未消失，一旦你只
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
-
+（暂无反向链接）

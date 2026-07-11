@@ -155,16 +155,17 @@ cmp alice.shared bob.shared && echo "shared secret OK"
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
-- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
+- [[dingledine-mixminion-2003]] —— Mixminion — 用一次性回信票据保护匿名邮件
+- [[freedman-psi-2004]] —— Freedman PSI 2004 — 把集合交集算出来但不交出名单
 - [[logjam-2015]] —— Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
-- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
-- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[ngabonziza-trustzone-2016]] —— TrustZone Explained — 把手机 CPU 分成普通区和保密区
 - [[rsa]] —— RSA 公钥密码
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[sgx-2013]] —— Intel SGX — 在 CPU 里建一间谁都偷看不了的密室
+- [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
+- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
+- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
-- [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
-- [[turing-1936]] —— Turing 1936 可计算性
-- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
-

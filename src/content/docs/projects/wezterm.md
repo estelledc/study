@@ -168,3 +168,7 @@ return config
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+- [[kitty]] —— kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里
+- [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件

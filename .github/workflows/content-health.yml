@@ -1,0 +1,83 @@
+name: Content health
+
+on:
+  schedule:
+    - cron: '17 2 * * 6'
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Explicit UTC audit date (YYYY-MM-DD); empty uses this run's UTC date
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: content-health
+  cancel-in-progress: false
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Use repository npm version
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
+      - run: node scripts/audit-toolchain.mjs
+      - run: npm ci
+      - name: Choose explicit audit date
+        env:
+          REQUESTED_AS_OF: ${{ inputs.as_of }}
+        run: |
+          if [[ -n "$REQUESTED_AS_OF" ]]; then
+            as_of="$REQUESTED_AS_OF"
+          else
+            as_of="$(date -u +%F)"
+          fi
+          echo "AS_OF=$as_of" >> "$GITHUB_ENV"
+      - id: audit
+        name: Generate readonly freshness report
+        continue-on-error: true
+        run: node scripts/audit-freshness.mjs --as-of "$AS_OF" --json > "$RUNNER_TEMP/freshness.json"
+      - name: Upload freshness report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: freshness-${{ github.run_id }}
+          path: ${{ runner.temp }}/freshness.json
+          retention-days: 14
+          if-no-files-found: error
+      - name: Create or update content health issue
+        if: always() && steps.audit.outcome != 'cancelled'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ ! -f "$RUNNER_TEMP/freshness.json" ]]; then
+            exit 1
+          fi
+          due="$(jq '.summary.review_due' "$RUNNER_TEMP/freshness.json")"
+          soon="$(jq '.summary.due_soon' "$RUNNER_TEMP/freshness.json")"
+          invalid="$(jq '.summary.invalid' "$RUNNER_TEMP/freshness.json")"
+          if (( due + soon + invalid == 0 )); then
+            exit 0
+          fi
+          title='[Content Health] Freshness review required'
+          body="As of $AS_OF: review-due=$due, due-soon=$soon, invalid=$invalid. This workflow is report-only. Download the freshness artifact from run $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID for paths and policy evidence."
+          issue="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+          if [[ -n "$issue" ]]; then
+            gh issue edit "$issue" --title "$title" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
+      - name: Fail on invalid lifecycle metadata
+        if: always()
+        run: |
+          test -f "$RUNNER_TEMP/freshness.json"
+          test "$(jq '.summary.invalid' "$RUNNER_TEMP/freshness.json")" -eq 0

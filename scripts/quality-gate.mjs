@@ -1,18 +1,19 @@
 #!/usr/bin/env node
-// 7 项 quality gate：
-// 1. 路径合法（papers/projects 下、kebab-case slug）
-// 2. 行数 150-200
-// 3. frontmatter YAML 子集严格 parse（引号配对 / 必含 title）
-// 4. 红线词扫（正文 + 路径）
-// 5. 12 段 H2 命中 ≥ 9/11
-// 6. GitHub permalink（github.com/.../blob/<sha>/...）≤ 3
-// 7. 无 Definition/Theorem/学术编号 H2
+// 新/实质修改内容的客观硬门：路径、YAML、公开红线、trust/evidence、
+// 零基础学习证据、permalink 上限、学术编号标题与极端模板复制。
+// 行数和 H2 只提供 note_type advisory，不再充当内容质量代理。
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { extractFrontmatterBlock, parseFrontmatterLoose } from './lib/frontmatter.mjs';
-
-const RED_LINE = /blindbox|quanzhiping|video-eval-agent|sankuai|friday|cagent|aigc\.sankuai|美团|mis\.sankuai|cagent_fe_h5_blindbox|LongCat|6 件套/i;
+import {
+  classifyWithBaseline,
+  loadPublicRedlineBaseline,
+  scanTextForPublicRedlines,
+} from './audit-public-redlines.mjs';
+import { collectMaterialChanges, validateTrust } from './audit-content-contract.mjs';
+import { checkExtremeSimilarity } from './analyze-template-similarity.mjs';
+import { isNoteArea, isNoteSlug } from './lib/note-id.mjs';
 
 // 解析 frontmatter 为对象（仅取顶层 key:value，忽略嵌套）
 function parseFrontmatter(text) {
@@ -61,6 +62,17 @@ const STD_H2 = [
   '延伸阅读', '关联', '反向链接',
 ];
 
+const NOTE_TYPE_PROFILES = {
+  concept: { lines: [80, 240], suggested: ['是什么', '机制', '学到'] },
+  library: { lines: [100, 280], suggested: ['是什么', '示例', '学到'] },
+  system: { lines: [120, 360], suggested: ['架构', '流程', '学到'] },
+  paper: { lines: [100, 320], suggested: ['问题', '方法', '学到'] },
+  protocol: { lines: [120, 360], suggested: ['机制', '流程', '学到'] },
+  tool: { lines: [90, 280], suggested: ['是什么', '实践', '学到'] },
+  'platform-api': { lines: [120, 360], suggested: ['接口', '实践', '学到'] },
+  'security-guidance': { lines: [120, 360], suggested: ['威胁', '机制', '学到'] },
+};
+
 const ACADEMIC_H2_PATTERNS = [
   /^##\s+(Definition|Theorem|Lemma|Corollary|Proof)\b/m,
   /^##\s+(定义|定理|引理|推论|证明)\b/m,
@@ -70,20 +82,31 @@ const ACADEMIC_H2_PATTERNS = [
 
 const PERMALINK_RE = /https?:\/\/github\.com\/[^/\s]+\/[^/\s]+\/blob\/[a-f0-9]{7,}\//gi;
 
-const VALID_PATH_RE = /\/src\/content\/docs\/(papers|projects)\/[a-z0-9][a-z0-9_.-]*\.md$/;
+function parseNotePath(filePath) {
+  const match = filePath.replaceAll('\\', '/').match(/\/src\/content\/docs\/([^/]+)\/([^/]+)\.md$/);
+  if (!match) return null;
+  const [, area, slug] = match;
+  return isNoteArea(area) && isNoteSlug(slug) ? { area, slug } : null;
+}
 
 function checkPath(filePath) {
-  if (!VALID_PATH_RE.test(filePath)) {
+  if (!parseNotePath(filePath)) {
     return { ok: false, reason: `path not in src/content/docs/{papers,projects}/<slug>.md: ${filePath}` };
   }
   return { ok: true };
 }
 
-function checkLines(text, min = 150, max = 200) {
+function checkLines(text, noteType, fallback = [100, 320]) {
+  const [min, max] = NOTE_TYPE_PROFILES[noteType]?.lines ?? fallback;
   const lines = text.split('\n').length;
-  if (lines < min) return { ok: false, reason: `lines:${lines}<${min}`, lines };
-  if (lines > max) return { ok: false, reason: `lines:${lines}>${max}`, lines };
-  return { ok: true, lines };
+  const advisory = lines < min || lines > max;
+  return {
+    ok: true,
+    advisory,
+    reason: advisory ? `lines:${lines} outside suggested ${min}-${max} for ${noteType ?? 'unknown'}` : null,
+    lines,
+    suggested: { min, max },
+  };
 }
 
 function checkFrontmatter(text) {
@@ -115,15 +138,24 @@ function checkFrontmatter(text) {
   return { ok: true };
 }
 
-function checkRedLine(text, filePath) {
-  const inText = text.match(RED_LINE);
-  if (inText) return { ok: false, reason: `red-line word in body: ${inText[0]}` };
-  const inPath = filePath.match(RED_LINE);
-  if (inPath) return { ok: false, reason: `red-line word in path: ${inPath[0]}` };
+async function checkRedLine(text, filePath) {
+  const relativePath = path.relative(process.cwd(), filePath).split(path.sep).join('/');
+  const baseline = await loadPublicRedlineBaseline(process.cwd());
+  const findings = classifyWithBaseline(
+    scanTextForPublicRedlines(text, relativePath),
+    baseline,
+  );
+  const blocking = findings.find(({ status }) => status === 'BLOCKING');
+  if (blocking) {
+    return {
+      ok: false,
+      reason: `public-redline:${blocking.category}:${blocking.fingerprint.slice(0, 12)}`,
+    };
+  }
   return { ok: true };
 }
 
-function checkH2(text, threshold = 9) {
+function checkH2(text, noteType) {
   let hits = 0;
   const matched = [];
   for (const h2 of STD_H2) {
@@ -133,10 +165,83 @@ function checkH2(text, threshold = 9) {
       matched.push(h2);
     }
   }
-  if (hits < threshold) {
-    return { ok: false, reason: `h2-hits:${hits}/11 (need ≥${threshold})`, hits, matched };
+  const headings = text.split('\n').map((line) => line.match(/^##\s+(.+)$/)?.[1]).filter(Boolean);
+  const suggested = NOTE_TYPE_PROFILES[noteType]?.suggested ?? ['是什么', '学到'];
+  const missingSuggested = suggested.filter((term) => !headings.some((heading) => heading.includes(term)));
+  return {
+    ok: true,
+    advisory: missingSuggested.length > 0,
+    reason: missingSuggested.length > 0 ? `suggested-h2-missing:${missingSuggested.join(',')}` : null,
+    hits,
+    matched,
+    headings,
+    missing_suggested: missingSuggested,
+  };
+}
+
+function areaFromPath(filePath) {
+  return parseNotePath(filePath)?.area ?? null;
+}
+
+function checkContentContract(frontmatter, area, enforceContract) {
+  if (!area) return { ok: false, reason: 'content-contract:note-area-missing', state: 'invalid-v2', note_type: null };
+  const checked = validateTrust(frontmatter, area);
+  if (!enforceContract && checked.state === 'legacy-unverified') {
+    return { ok: true, state: checked.state, note_type: null };
   }
-  return { ok: true, hits, matched };
+  if (checked.state !== 'v2') {
+    return {
+      ok: false,
+      reason: `content-contract:${checked.errors.length > 0 ? checked.errors.join(',') : checked.state}`,
+      state: checked.state,
+      note_type: checked.trust?.note_type ?? null,
+    };
+  }
+  return { ok: true, state: checked.state, note_type: checked.trust.note_type };
+}
+
+function checkLearningEvidence(text, noteType, enforceContract) {
+  if (!enforceContract) return { ok: true, codes: [] };
+  const codes = [];
+  if (!/^##\s+.*(?:学到|学习目标|能力)/m.test(text)) codes.push('learning-outcome-heading-missing');
+  if (!/(?:类比|就像|好比|比如|例如)/.test(text)) codes.push('beginner-explanation-signal-missing');
+
+  if (['library', 'tool', 'platform-api'].includes(noteType) && !/```[^\n]*\n[\s\S]*?```/.test(text)) {
+    codes.push('object-specific-code-example-missing');
+  }
+  if (['system', 'protocol', 'security-guidance'].includes(noteType)
+    && !/^##\s+.*(?:机制|流程|架构|数据流|威胁)/m.test(text)) {
+    codes.push('object-specific-mechanism-heading-missing');
+  }
+  if (['paper', 'concept'].includes(noteType)
+    && !/^##\s+.*(?:方法|机制|核心|案例|例子)/m.test(text)) {
+    codes.push('object-specific-explanation-heading-missing');
+  }
+  return {
+    ok: codes.length === 0,
+    reason: codes.length > 0 ? `learning-evidence:${codes.join(',')}` : null,
+    codes,
+  };
+}
+
+async function checkSimilarity(text, filePath, opts, enforceContract) {
+  if (!enforceContract || opts.skipSimilarity) return { ok: true, skipped: true };
+  const note = parseNotePath(filePath);
+  const noteRelativePath = note ? `src/content/docs/${note.area}/${note.slug}.md` : null;
+  const checked = await checkExtremeSimilarity(text, {
+    rootDir: opts.similarityRootDir ?? process.cwd(),
+    excludePath: filePath,
+    excludeRelativePath: noteRelativePath,
+    threshold: opts.similarityThreshold ?? 0.94,
+  });
+  if (!checked.ok) {
+    return {
+      ok: false,
+      reason: `extreme-template-copy:${checked.best.path}:${checked.best.score}`,
+      ...checked,
+    };
+  }
+  return checked;
 }
 
 function checkPermalink(text, max = 3) {
@@ -157,6 +262,7 @@ function checkAcademic(text) {
 
 export async function validate(filePath, opts = {}) {
   const reasons = [];
+  const advisories = [];
   let text;
   try {
     text = await fs.readFile(filePath, 'utf8');
@@ -164,53 +270,86 @@ export async function validate(filePath, opts = {}) {
     return { pass: false, reasons: [`read-fail: ${err.message}`], file: filePath };
   }
 
-  // 分发：schema_version=zhuangyuan-v1.1 走专用 validator，否则走默认 150-200 检查
+  const enforceContract = opts.enforceContract !== false;
+  const area = areaFromPath(filePath);
   const fm = parseFrontmatter(text);
-  if (fm && fm.schema_version === 'zhuangyuan-v1.1') {
-    // path / red-line 仍要跑；academic-h2 在 zy-v1.1 下豁免（Layer N 等学术分层是合法结构）
-    // 行数 / h2 / permalink / Figure / self-classify 由 zhuangyuan validator 接管
-    const pathR = checkPath(filePath);
-    const fmR = checkFrontmatter(text);
-    const redR = checkRedLine(text, filePath);
-    const zyR = validateZhuangyuanV11(text, fm);
-    const details = { path: pathR, frontmatter: fmR, 'red-line': redR, zhuangyuan: zyR };
-    for (const r of [pathR, fmR, redR, zyR]) if (!r.ok) reasons.push(r.reason);
-    return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'zhuangyuan-v1.1' };
-  }
+  const contractR = checkContentContract(fm, area, enforceContract);
+  const noteType = contractR.note_type;
+  const isZhuangyuan = fm?.schema_version === 'zhuangyuan-v1.1';
 
   const checks = [
     ['path', () => checkPath(filePath)],
-    ['lines', () => checkLines(text, opts.linesMin || 150, opts.linesMax || 200)],
+    ['lines', () => checkLines(text, noteType, opts.linesRange)],
     ['frontmatter', () => checkFrontmatter(text)],
     ['red-line', () => checkRedLine(text, filePath)],
-    ['h2', () => checkH2(text, opts.h2Threshold || 9)],
+    ['contract', () => contractR],
+    ['learning-evidence', () => checkLearningEvidence(text, noteType, enforceContract)],
+    ['h2', () => checkH2(text, noteType)],
     ['permalink', () => checkPermalink(text, opts.permalinkMax || 3)],
-    ['academic', () => checkAcademic(text)],
+    // zhuangyuan may retain its academic heading grammar, but it receives no
+    // exemption from provenance, learning, permalink, or copy detection.
+    ['academic', () => (isZhuangyuan ? { ok: true, skipped: true } : checkAcademic(text))],
+    ['template-similarity', () => checkSimilarity(text, filePath, opts, enforceContract)],
+    ...(isZhuangyuan ? [['zhuangyuan', () => validateZhuangyuanV11(text, fm)]] : []),
   ];
 
   const details = {};
   for (const [name, fn] of checks) {
-    const r = fn();
+    const r = await fn();
     details[name] = r;
     if (!r.ok) reasons.push(r.reason);
+    else if (r.advisory && r.reason) advisories.push(r.reason);
   }
 
   return {
     pass: reasons.length === 0,
     reasons,
+    advisories,
     details,
     file: filePath,
+    ...(isZhuangyuan ? { schema: 'zhuangyuan-v1.1' } : {}),
   };
 }
 
 // CLI
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const target = process.argv[2];
-  if (!target) {
-    console.error('usage: node quality-gate.mjs <file.md>');
+  try {
+    const argv = process.argv.slice(2);
+    let changedFrom = null;
+    let json = false;
+    let target = null;
+    for (let index = 0; index < argv.length; index += 1) {
+      if (argv[index] === '--changed-from') changedFrom = argv[++index];
+      else if (argv[index] === '--json') json = true;
+      else if (!target) target = argv[index];
+      else throw new Error(`unknown argument: ${argv[index]}`);
+    }
+    if (changedFrom === undefined) throw new Error('--changed-from requires a ref');
+    if (changedFrom && target) throw new Error('choose a file or --changed-from, not both');
+    if (!changedFrom && !target) throw new Error('usage: node quality-gate.mjs <file.md> | --changed-from <ref> [--json]');
+
+    if (changedFrom) {
+      const { materialChanges } = await collectMaterialChanges(process.cwd(), changedFrom);
+      const results = [];
+      for (const relativePath of [...materialChanges].sort()) {
+        results.push(await validate(path.resolve(relativePath), { enforceContract: true }));
+      }
+      const report = {
+        schema_version: 'study-quality-gate-changed-v1',
+        base_ref: changedFrom,
+        checked: results.length,
+        pass: results.every((result) => result.pass),
+        results,
+      };
+      console.log(JSON.stringify(report, null, json ? 2 : 0));
+      process.exit(report.pass ? 0 : 1);
+    }
+
+    const result = await validate(path.resolve(target), { enforceContract: true });
+    console.log(JSON.stringify(result, null, 2));
+    process.exit(result.pass ? 0 : 1);
+  } catch (error) {
+    console.error(`quality gate failed: ${error.message}`);
     process.exit(2);
   }
-  const result = await validate(path.resolve(target));
-  console.log(JSON.stringify(result, null, 2));
-  process.exit(result.pass ? 0 : 1);
 }

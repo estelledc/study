@@ -178,11 +178,6 @@ const { data } = await useFetch('/api/hello')
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
-- [[next-js]] —— Next.js — React 全栈框架
-- [[react]] —— React UI 组件库
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
-- [[vue]] —— Vue.js — 渐进式 UI 框架
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-
+- [[vue-i18n]] —— vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新

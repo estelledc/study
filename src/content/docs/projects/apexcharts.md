@@ -163,12 +163,4 @@ react-apexcharts 内部就是 `componentDidMount` 时 `new ApexCharts(...).rende
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
-- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
-- [[vega-lite]] —— Vega-Lite — 用 JSON 三段式画复合图
-- [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
-
+（暂无反向链接）

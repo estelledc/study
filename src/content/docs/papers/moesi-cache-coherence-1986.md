@@ -173,9 +173,8 @@ A 改了 line（M），B 来读：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[dash-numa-1992]] —— Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
+- [[flush-reload-2014]] —— FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存
 - [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[raft]] —— Raft — 易理解的共识算法
-
+- [[kim-rowhammer-2014]] —— RowHammer 2014 — 反复读一行内存也能翻转邻居比特
+- [[kocher-spectre-2019]] —— Spectre — CPU 猜错路时也会泄密

@@ -168,7 +168,4 @@ PostgreSQL 想跑在 K8s 上，主从切换、备份、扩容都要自动化。O
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[borg]] —— Borg — Google 把一万台机器假装成一台
-- [[omega-2013]] —— Omega 2013 — 让多个调度器同时改一份 cluster 状态
 - [[selinux-2001]] —— SELinux — 给 Linux 装上不可绕过的安检门
-

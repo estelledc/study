@@ -152,8 +152,4 @@ Cassandra、Riak、Voldemort 都是同样的招式。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
-- [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
-
+- [[dynamo-2007]] —— Dynamo 2007 — 让购物车在机器故障时也能写入

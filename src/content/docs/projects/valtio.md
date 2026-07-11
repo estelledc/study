@@ -161,9 +161,6 @@ subscribeKey(cart, 'total', (total) => console.log('新总价', total))
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
-- [[jotai]] —— Jotai — 原子化 React 状态管理
 - [[mobx]] —— MobX — 让 state 像电子表格一样自动重算
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
-- [[zustand]] —— Zustand — 极简 React 状态管理
-

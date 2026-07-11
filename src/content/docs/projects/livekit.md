@@ -189,3 +189,7 @@ lk egress stop --id EG_xxx
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[jitsi-meet]] —— Jitsi Meet — 开源视频会议的自托管套件
+- [[jitsi-videobridge]] —— Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器
+- [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频

@@ -157,16 +157,9 @@ sum_worker (x:xs) = case x of I# x# ->
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
-- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
-- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
-

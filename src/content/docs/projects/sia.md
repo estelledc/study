@@ -161,11 +161,4 @@ curl -u :password -o file.bin \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arweave]] —— Arweave — 一次付费、永远存着的区块链
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
-- [[reed-solomon-1960]] —— Reed-Solomon 编码
 - [[storj]] —— Storj — S3 兼容的去中心化对象存储
-

@@ -147,3 +147,76 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[milvus-2021]] —— Milvus 2021：把向量搜索做成数据库
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
+- [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
+- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
+- [[projects/clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[cockroach]] —— CockroachDB — 全球分布式 SQL
+- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[projects/couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[debezium]] —— Debezium — 把数据库的"刚刚改了"变成消息流
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[dgraph]] —— Dgraph — 分布式图数据库
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[docker]] —— Docker — 容器化平台
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
+- [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[kysely]] —— Kysely — TypeScript SQL 查询构建器
+- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
+- [[langchain]] —— LangChain — LLM 应用开发框架
+- [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
+- [[memgraph]] —— Memgraph — 内存图数据库
+- [[metabase]] —— Metabase — 让非技术人查数
+- [[milvus]] —— Milvus — 开源向量数据库
+- [[mongo]] —— MongoDB — 文档数据库代表
+- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
+- [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
+- [[nebula]] —— NebulaGraph — 国产分布式图数据库
+- [[neo4j]] —— Neo4j — 主流图数据库
+- [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
+- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
+- [[plane]] —— Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
+- [[questdb]] —— QuestDB — 高性能时序库
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
+- [[redash]] —— Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
+- [[redis]] —— Redis — 内存键值数据库
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[supabase]] —— Supabase — Firebase 的开源替代
+- [[superset]] —— Apache Superset — 开源 BI 平台
+- [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
+- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
+- [[typesense]] —— Typesense — 高性能搜索引擎
+- [[unqlite]] —— UnQLite — C 写的嵌入式 NoSQL 双模数据库
+- [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
+- [[weaviate]] —— Weaviate — 模块化向量数据库
+- [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
+- [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）

@@ -61,8 +61,64 @@ test('summarizePipeline counts queues and extracts recent failure reasons', () =
   assert.equal(summary.queues.claimed, 2);
   assert.equal(summary.queues.available, 2);
   assert.equal(summary.events.failures.total, 1);
+  assert.equal(summary.events.failures.current_total, 0);
+  assert.equal(summary.events.failures.historical_total, 1);
   assert.equal(summary.events.failures.recent[0].reason, 'boom');
   assert.match(renderPipelineSummary(summary), /Recent failures:\n- bad \| boom/);
+});
+
+test('summarizePipeline preserves historical failures and scopes the gate to the latest lifecycle', () => {
+  const summary = summarizePipeline({
+    checkpoint: null,
+    status: null,
+    candidates: [],
+    rewritePool: [],
+    events: [
+      { ts: '2026-07-09T00:00:00.000Z', event: 'merge-single-fail', error: 'historic' },
+      {
+        ts: '2026-07-10T00:00:00.000Z',
+        event: 'round-lifecycle-start',
+        lifecycle_id: 'generation-2',
+      },
+      { ts: '2026-07-10T00:01:00.000Z', event: 'stage-end', status: 'ok' },
+      { ts: '2026-07-10T00:02:00.000Z', event: 'pipeline-driver-error', error: 'current' },
+    ],
+    missing: { checkpoint: true, status: true },
+  });
+
+  assert.equal(summary.events.failures.total, 2);
+  assert.equal(summary.events.failures.historical_total, 1);
+  assert.equal(summary.events.failures.current_total, 1);
+  assert.equal(summary.events.failures.current_recent[0].reason, 'current');
+  assert.equal(summary.events.lifecycle.id, 'generation-2');
+});
+
+test('lease recovery evidence does not erase or inflate retained failure history', () => {
+  const historical = Array.from({ length: 27 }, (_, index) => ({
+    ts: `2026-07-09T00:00:${String(index).padStart(2, '0')}.000Z`,
+    event: 'merge-single-fail',
+    reason: `failure-${index}`,
+  }));
+  const summary = summarizePipeline({
+    checkpoint: null,
+    status: null,
+    candidates: [],
+    rewritePool: [],
+    events: [
+      ...historical,
+      {
+        ts: '2026-07-10T00:00:00.000Z',
+        event: 'claim-lease-recovered',
+        recovery_reason: 'expired-claim-lease',
+      },
+    ],
+    missing: { checkpoint: true, status: true },
+  });
+
+  assert.equal(summary.events.total, 28);
+  assert.equal(summary.events.failures.total, 27);
+  assert.equal(summary.events.failures.current_total, 0);
+  assert.equal(summary.events.failures.historical_total, 27);
 });
 
 test('loadPipelineInputs reports bad JSON with source context', async () => {

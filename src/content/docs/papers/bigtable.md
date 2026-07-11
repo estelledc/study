@@ -159,3 +159,29 @@ computed:churn_score = "0.12"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
+- [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[papers/kafka]] —— Kafka — 把消息系统降维成只追加的日志文件
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库
+- [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
+- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
+- [[leveldb]] —— LevelDB — Google LSM 库
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎

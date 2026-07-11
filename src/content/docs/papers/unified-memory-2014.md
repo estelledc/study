@@ -150,3 +150,5 @@ cudaMemPrefetchAsync(x, N*4, cudaCpuDeviceId);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[esx-memory-2002]] —— ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术

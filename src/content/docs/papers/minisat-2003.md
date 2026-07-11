@@ -169,16 +169,8 @@ while (qhead < trail.size()) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[bohme-aflfast-2016]] —— AFLFast — 把 fuzzing 的力气花在更少人走的路径上
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
-- [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
-- [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
-- [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
-- [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
-- [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
-- [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[nelson-oppen-1979]] —— Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"
 - [[nieuwenhuis-dpll-t-2006]] —— Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
-

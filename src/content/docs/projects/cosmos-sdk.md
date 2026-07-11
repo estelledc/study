@@ -157,3 +157,8 @@ ignite scaffold message createPost title body --module mymod
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
+- [[monero]] —— Monero — 默认隐私的 PoW 加密货币
+- [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1

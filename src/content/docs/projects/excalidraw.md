@@ -152,13 +152,7 @@ public record(delta: StoreDelta) {
 - [[canvas-datagrid]] —— canvas-datagrid — 整张表只用一块 canvas 画
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[drawio]] —— drawio (diagrams.net) — 离线版 Visio
-- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[flowchart-js]] —— flowchart.js — 文本生成流程图
-- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
-- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[librecad]] —— LibreCAD — 2D 工程绘图
 - [[pdfme]] —— pdfme — TypeScript 模板化 PDF
-- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
-- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[tldraw]] —— tldraw — 把白板做成可嵌入的 SDK
-- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
-

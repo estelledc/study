@@ -161,12 +161,8 @@ main().catch((err) => {
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[oclif]] —— oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
-

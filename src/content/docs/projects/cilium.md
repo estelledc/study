@@ -149,12 +149,7 @@ hubble observe --from-pod default/web --to-pod default/user
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/k3s]] —— k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[grafana]] —— Grafana — 监控可视化看板
-- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
-- [[prometheus]] —— Prometheus — 时序监控系统
 - [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里
-

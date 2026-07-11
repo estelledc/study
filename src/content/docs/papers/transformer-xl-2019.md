@@ -153,14 +153,12 @@ out = attention(q, k, v)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
-- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
 - [[graphormer-2021]] —— Graphormer — 标准 Transformer 直接刷爆 GNN
+- [[kv-fold]] —— KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文
+- [[mem-ft-lora]] —— MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[sasrec-2018]] —— SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
 - [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型

@@ -173,5 +173,4 @@ data_path = Dataset.get(dataset_id='abc123').get_local_copy()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[papers/scoop]] —— Scoop — Windows 上像 Homebrew 一样装命令行工具

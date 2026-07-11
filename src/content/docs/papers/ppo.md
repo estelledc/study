@@ -151,18 +151,15 @@ OpenAI Five 用 PPO 训练，128000 CPU + 256 GPU 跑了 10 个月。2019 年 4 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[a3c-2016]] —— A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[ccopd-distillation]] —— CCOPD — 让多轮对话别被自己的旧话带偏
+- [[ddpg-2015]] —— DDPG 2015 — 让神经网络直接学会连续动作控制
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
-- [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
-- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[muzero]] —— MuZero — 不用规则也能下棋
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[ppc-preplan]] —— PPC Preplan — 先想清楚题目类型再规划解法
+- [[ray-2018]] —— Ray 2018 — 把任务和演员放进同一个分布式舞台
+- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 - [[td3-2018]] —— TD3 — 给 DDPG 装两副刹车，连续控制终于稳了
-

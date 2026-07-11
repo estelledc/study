@@ -158,14 +158,5 @@ allowed_outbound_hosts = ["https://api.github.com"]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[bun]] —— Bun — JS 全能运行时
-- [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
-- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-
+- [[wamr]] —— WAMR — 塞进单片机也能跑的 Wasm 微运行时
+- [[wasmtime]] —— Wasmtime — Rust 实现的 WebAssembly 运行时

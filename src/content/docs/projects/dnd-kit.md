@@ -149,14 +149,11 @@ function onDragOver({ active, over }) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[pdfme]] —— pdfme — TypeScript 模板化 PDF
-- [[react]] —— React UI 组件库
 - [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
 - [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
 - [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
-

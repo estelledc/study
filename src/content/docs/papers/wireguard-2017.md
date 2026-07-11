@@ -157,8 +157,7 @@ spec:
 
 - [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
 - [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
-- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
-- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[reed-onion-routing-1998]] —— Onion Routing 1998 — Tor 前身把匿名连接做成网络积木
 - [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
-- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[shadowsocks-libev]] —— Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理
+- [[wireguard-go]] —— WireGuard-Go — WireGuard VPN 的 Go 用户态实现

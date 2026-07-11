@@ -156,16 +156,24 @@ const logUpdates = ViewPlugin.fromClass(class {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bookstack]] —— BookStack — 文档型 Wiki
+- [[etherpad-lite]] —— Etherpad — 经典协作文本编辑器
+- [[foam]] —— Foam — 把 VS Code 变成 Markdown 双链知识库
+- [[hedgedoc]] —— HedgeDoc — 协作 Markdown 编辑
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
+- [[lexical]] —— Lexical — 把富文本编辑拆成快照、事务和插件
 - [[lite-xl]] —— Lite-XL — 不到 3MB 的编辑器也能扩展出花样
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[notepad-plus-plus]] —— Notepad++ — 比记事本多两个加号的 Windows 编辑器
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作
+- [[pluto-jl]] —— Pluto.jl — Julia 反应式笔记本
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
-- [[react]] —— React UI 组件库
-- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[silverbullet]] —— SilverBullet — 自托管笔记 web 应用
+- [[siyuan]] —— SiYuan — 国产块结构笔记
+- [[trilium]] —— Trilium — 树形层级笔记系统
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
-
+- [[zettlr]] —— Zettlr — 学者向 Markdown 编辑器

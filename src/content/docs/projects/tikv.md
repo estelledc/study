@@ -158,10 +158,10 @@ TiKV = Rust 写的"分片 + Multi-Raft + Percolator 事务"分布式 KV，靠一
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[raft-2014]] —— Raft 2014 — 把共识拆成能实现的三件事
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[leveldb]] —— LevelDB — Google LSM 库
 - [[pebble]] —— Pebble — CockroachDB 自研 LSM
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
-
+- [[unqlite]] —— UnQLite — C 写的嵌入式 NoSQL 双模数据库

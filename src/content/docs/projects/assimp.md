@@ -193,3 +193,6 @@ if (scene) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dragonbones]] —— DragonBones — 国产开源 2D 骨骼动画运行时
+- [[pcl]] —— PCL — 点云算法的学术工具箱

@@ -150,7 +150,5 @@ spec:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
 - [[sealed-secrets]] —— Sealed Secrets — 把加密后的 Secret 安全提交到 Git
-

@@ -154,3 +154,5 @@ answer = generator(question=q, context=docs[:5])
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B

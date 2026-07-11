@@ -145,9 +145,4 @@ for frame in frames:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
-- [[resnet]] —— ResNet — 残差连接
-- [[sam]] —— SAM — Segment Anything
-- [[vit]] —— ViT — Vision Transformer
-
+- [[gazebo-classic]] —— Gazebo Classic — 机器人世界的物理排练场

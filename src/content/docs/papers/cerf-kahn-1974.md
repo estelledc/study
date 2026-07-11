@@ -150,14 +150,7 @@ sock.bind(('0.0.0.0', 8080))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[ice-rfc-5245]] —— ICE (RFC 5245) — 让两台藏在 NAT 后面的设备找到彼此
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
-- [[ntp-mills-1991]] —— NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[rtp-rfc-1889]] —— RTP RFC 1889 — 让 UDP 也能跑实时音视频
 - [[salsify-2018]] —— Salsify — 让编码器和传输层一起商量怎么发视频
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-

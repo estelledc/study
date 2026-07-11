@@ -148,3 +148,7 @@ print(clean_acc, robust_acc)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[carlini-wagner-2017]] —— C&W 攻击 — 用强优化检验神经网络鲁棒性
+- [[deepfool-2016]] —— DeepFool 2016 — 用最小扰动量出模型边界有多近
+- [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错

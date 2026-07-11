@@ -165,8 +165,4 @@ spec:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
-- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
-

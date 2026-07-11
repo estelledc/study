@@ -149,8 +149,4 @@ db.View(func(txn *badger.Txn) error {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
-- [[ssa]] —— SSA — 静态单赋值形式
-
+（暂无反向链接）

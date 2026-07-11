@@ -141,12 +141,7 @@ MAE 是这条线上"视觉 BERT 终于跑通"的那篇。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
-- [[dino]] —— DINO 自监督视觉 transformer
+- [[dino]] —— DINO — 让视觉模型自己认出物体轮廓
 - [[electra-2020]] —— ELECTRA — 把猜词题改成判真假题，训练效率 4 倍
-- [[resnet]] —— ResNet — 残差连接
-- [[sam]] —— SAM — Segment Anything
 - [[vit]] —— ViT — Vision Transformer
-

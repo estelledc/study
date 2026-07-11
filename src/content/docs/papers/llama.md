@@ -155,12 +155,14 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 - [[chatbot-arena-2024]] —— Chatbot Arena — 让真人盲投，给 LLM 排出公允座次
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[codellama-2023]] —— Code Llama — 开源代码模型的完整训练配方
-- [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
+- [[demystifying-data-org]] —— Demystifying Data Organization — 给训练数据排队的四条原则
 - [[dpo]] —— DPO — Direct Preference Optimization
+- [[entity-tracking-states]] —— Entity Tracking States — 语言模型不是一路记账，而是最后临时汇总
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[llava]] —— LLaVA — 开源多模态对话模型
-- [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[llmsurgeon-data-mixture]] —— LLMSurgeon — 从模型回答反推训练数据配方
+- [[loong-doc-mt]] —— Loong DocMT — 长文档翻译里的会挑上下文的代理
+- [[mamba]] —— Mamba — 选择性状态空间模型
+- [[rim-latent-reasoning]] —— RiM Latent Reasoning — 给 LLM 一块不用说出口的工作记忆
 - [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
-

@@ -147,3 +147,4 @@ export const lighting = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器

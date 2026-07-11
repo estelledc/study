@@ -167,3 +167,8 @@ UPDATE doctors SET on_call = false WHERE name = 'Bob';
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hekaton-2013-sigmod]] —— Hekaton — SQL Server 的内存原生 OLTP 引擎
+- [[rcu-2001]] —— RCU 2001 — 让"读"的代价归零的并发数据结构
+- [[silo-oltp-2013]] —— Silo — 多核内存数据库里的高速短事务
+- [[ucb-cs186-fa2024]] —— UCB CS186 Fall 2024 — 数据库内核阅读路线

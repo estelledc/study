@@ -187,3 +187,10 @@ if prompt := st.chat_input("说点什么"):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
+- [[gradio]] —— Gradio — ML 模型 demo 框架
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
+- [[marimo]] —— marimo — 反应式 Python 笔记本
+- [[projects/panel]] —— Panel — 多绘图后端的 Python dashboard
+- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页

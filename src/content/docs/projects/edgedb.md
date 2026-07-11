@@ -167,8 +167,5 @@ type BlogPost {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[prisma]] —— Prisma — 类型安全 ORM
 - [[risingwave]] —— RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合
-- [[supabase]] —— Supabase — Firebase 的开源替代
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
-

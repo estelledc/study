@@ -150,9 +150,5 @@ attention_mask[:, question_length:] = 1  # context 走 local
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
-
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
+- [[tree-of-attention-2026]] —— Tree-of-Attention — 把长上下文拆成树再分支注意

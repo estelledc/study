@@ -169,16 +169,11 @@ f(jnp.ones(5))   # 又重新编译
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
-- [[attention]] —— Attention Is All You Need
 - [[gshard-2020]] —— GShard — 用注解让 600B 模型自动跨设备切片
-- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[ssa]] —— SSA — 静态单赋值形式
+- [[milestone-phase-order]] —— MileStone — 让编译器按能耗预算自己排优化顺序
+- [[passnet-graph-compiler]] —— PassNet — 让大模型给图编译器写优化 pass
 - [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
-- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
+- [[numpy]] —— NumPy — Python 科学计算基石

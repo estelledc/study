@@ -175,3 +175,8 @@ Video.js 的脑子可以拆成 **三件事**：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hls.js]] —— hls.js — 浏览器里的 HLS 播放库
+- [[obs-studio]] —— OBS Studio — 直播推流软件事实标准
+- [[shaka-packager]] —— Shaka Packager — 流媒体打包工具
+- [[streamlink]] —— Streamlink — 把直播页变成可播的流

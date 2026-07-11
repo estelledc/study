@@ -161,6 +161,4 @@ publishing @demo/cli   ✓     ← core 已在 npm 上，cli 才能 resolve
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
-- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
-

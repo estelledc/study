@@ -184,3 +184,6 @@ net.load_model(alexnet_bin);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎
+- [[ultralytics]] —— Ultralytics — YOLOv8/v11 易用 SDK

@@ -148,3 +148,6 @@ def encrypt_bit(samples, bit, q=7):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bos-kyber-2018]] —— Bos-Kyber 2018 — 把后量子密钥交换做成可落地的标准候选
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium 2018 — 后量子时代的主力数字签名

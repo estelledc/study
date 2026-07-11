@@ -157,8 +157,4 @@ wav = encodec.decode(stack(c1, nar.predict(c1, p[1:])))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-- [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
-- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
+（暂无反向链接）

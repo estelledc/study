@@ -167,3 +167,6 @@ shap_values = explainer.shap_values(X_test[:10])
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[captum]] —— Captum — 给 PyTorch 模型装上 X 光机
+- [[scikit-learn]] —— scikit-learn — 经典 ML 库

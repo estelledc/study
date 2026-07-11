@@ -147,5 +147,6 @@ x_i += dx_i / rho0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[mueller-2007-pbd]] —— Position Based Dynamics — 跳过力，直接挪位置
-
+- [[macklin-2016-xpbd]] —— XPBD — 让 PBD 的软硬程度不再跟帧率绑死
+- [[muller-2007-pbd]] —— Position Based Dynamics — 直接修正位置的实时物理
+- [[sulsky-1994-mpm]] —— MPM — 让粒子背着自己的历史，借网格算一遍力

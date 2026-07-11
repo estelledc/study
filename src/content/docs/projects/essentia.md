@@ -150,4 +150,4 @@ print("essentia", bpm_e, "librosa", float(tempo_l))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- （回链由 regen-backlinks 回填；此处保留结构占位）
+- [[librosa]] —— librosa — 把声音变成机器学习能吃的数字特征

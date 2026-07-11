@@ -148,3 +148,12 @@ Hyperkernel 验证过程中发现 xv6 原版有若干隔离漏洞——比如某
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[disco-1997]] —— Disco — 让没改过的商用 OS 在 64 核大机器上一起跑
+- [[exokernel-1995]] —— Exokernel — 把抽象推到用户态的极致设计
+- [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
+- [[kami-2017]] —— Kami — 在 Coq 里造硬件并自动编译到 Verilog
+- [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
+- [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
+- [[the-os-1968]] —— THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生

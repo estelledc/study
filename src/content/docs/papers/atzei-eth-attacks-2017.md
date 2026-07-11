@@ -147,3 +147,5 @@ function play(uint n) public payable {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[controlled-channel-attacks-2015]] —— Controlled-Channel Attacks 2015 — 不可信操作系统也能用缺页记录偷看程序
+- [[making-smart-contracts-smarter]] —— Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞

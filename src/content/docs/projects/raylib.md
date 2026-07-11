@@ -196,3 +196,11 @@ CloseAudioDevice();
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[appleseed]] —— appleseed — 物理渲染器
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[luxcorerender]] —— LuxCoreRender — 物理光线追踪
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎
+- [[shader-park]] —— Shader Park — 程序化 SDF 着色器 DSL

@@ -188,7 +188,7 @@ path=(~/bin /usr/local/bin $path)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+- [[oh-my-posh]] —— oh-my-posh — 一份配置让所有 shell 都长一个样
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-
+- [[xonsh]] —— xonsh — 在同一行里同时写 bash 命令和 Python 代码

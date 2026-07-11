@@ -190,3 +190,9 @@ Spanner 跨数据中心写订单，内部仍是 prepare → commit。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
+- [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
+- [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
+- [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
+- [[saga-1987]] —— Sagas — 长事务拆成一串能"反向走回去"的小事务
+- [[unix-1974]] —— UNIX 1974 — 用极小内核做出能用的分时系统

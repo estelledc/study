@@ -153,13 +153,4 @@ dao.revoke(address(dao), alice, dao.UPGRADE_DAO_PERMISSION_ID());
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
-- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
-- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[safe-contracts]] —— Safe — 多签智能账户合约
-- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-
+（暂无反向链接）

@@ -158,3 +158,7 @@ for chunk in chunks:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dremel-2010]] —— Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析
+- [[fastlanes-compression]] —— FastLanes Compression Layout — 用标量代码解码千亿整数
+- [[velox-meta-2022]] —— Velox — Meta 统一执行引擎

@@ -183,10 +183,6 @@ g.V().has("person", "name", "Alice")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dgraph]] —— Dgraph — 分布式图数据库
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[graphology]] —— Graphology — 浏览器里的图数据结构与算法库
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[memgraph]] —— Memgraph — 内存图数据库
-- [[neo4j]] —— Neo4j — 主流图数据库
-

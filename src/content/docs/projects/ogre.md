@@ -192,3 +192,5 @@ Ogre::MeshLodGenerator::getSingleton().generateLodLevels(config);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库

@@ -184,3 +184,7 @@ Record&Play 适合“录一段 WebRTC 消息再播放”的小闭环。如果你
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
+- [[projects/asterisk]] —— Asterisk — 把企业总机变成一台 Linux 服务器
+- [[jitsi-videobridge]] —— Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器

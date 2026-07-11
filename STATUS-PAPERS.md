@@ -1,5 +1,7 @@
 # 论文研究 · 状态
 
+> 历史策划页，不是实时队列或执行入口。当前状态以 `npm run status:pipeline`、`data/operations-policy.json` 和 `docs/operations-index.md` 为准；“待写”清单不授权内容生产。
+
 > 这个文件是**论文研究线**的状态独占文件。
 > 只在论文研究 worktree（分支 `research/papers-*`）修改，避免与项目研究线冲突。
 

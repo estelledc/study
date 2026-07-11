@@ -156,3 +156,5 @@ fmt.Println(x)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dijkstra-1965]] —— Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死

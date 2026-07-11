@@ -189,3 +189,7 @@ position.setElement(10, [0, 0, 0]);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aframe]] —— A-Frame — 用 HTML 搭 Web VR 场景
+- [[ar-js]] —— AR.js — 浏览器里跑 Web AR 标记追踪
+- [[mind-ar-js]] —— MindAR — 不装原生 SDK 的浏览器图像/人脸 AR

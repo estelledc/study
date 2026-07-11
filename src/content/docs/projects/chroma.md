@@ -137,7 +137,9 @@ col = client.create_collection("docs", embedding_function=ef)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[dgraph]] —— Dgraph — 分布式图数据库
+- [[llama-index]] —— LlamaIndex — 给大模型接上私有资料库
 - [[llamaindex]] —— LlamaIndex — LLM 数据框架
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[memgraph]] —— Memgraph — 内存图数据库
@@ -145,5 +147,3 @@ col = client.create_collection("docs", embedding_function=ef)
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[qdrant]] —— Qdrant — Rust 向量数据库
-- [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
-

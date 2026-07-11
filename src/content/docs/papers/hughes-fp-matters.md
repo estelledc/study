@@ -151,19 +151,12 @@ maximise (Node n cs) = maximum (map minimise cs)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[backus-fp-1978]] —— Backus FP 1978 — 把程序从赋值循环里解放出来
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
-- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
-- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-- [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
-

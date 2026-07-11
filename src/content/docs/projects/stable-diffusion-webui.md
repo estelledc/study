@@ -151,3 +151,10 @@ curl -X POST http://127.0.0.1:7860/sdapi/v1/txt2img \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI
+- [[fooocus]] —— Fooocus — 把 SDXL 做成傻瓜机
+- [[gradio]] —— Gradio — ML 模型 demo 框架
+- [[handbrake]] —— HandBrake — 把视频转码变成点两下鼠标的事
+- [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
+- [[open-sora]] —— Open-Sora — 把 Sora 路线开源对标的视频生成项目

@@ -175,21 +175,15 @@ let s2 = read_log(f);    // 报错：f 已 moved
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
-- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
-- [[move-language]] —— Move — 资源型智能合约语言
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
-
+- [[move-language]] —— Move — 资源型智能合约语言
