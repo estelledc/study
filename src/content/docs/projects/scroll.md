@@ -29,9 +29,9 @@ Scroll 的设计可以拆成 **三个关键决定**：
 
 1. **bytecode-equivalent zkEVM 电路**：每条 EVM opcode（ADD、SLOAD、CALL 等）都有对应的算术电路。合约不用改，编译产物也不用改，主网跑什么 L2 就跑什么。类比：以前的 ZK 链像"国际学校"——必须用它的语言；Scroll 像"装了同声传译的普通学校"——你说中文系统自动翻成证明语。
 
-2. **zk-trie 替代 Merkle Patricia Trie**：以太坊状态原本用 MPT（Keccak hash + 16 叉），keccak 在电路里巨慢。Scroll 改用 **zk-trie**（Poseidon hash + 二叉），证明友好但格式和主网不同——这是兼容性的一个小代价。
+2. **状态树：早期 zk-trie → Euclid 后回到 MPT**：主网上线时用 **zk-trie**（Poseidon + 二叉）换掉慢电路里的 Keccak MPT，证明更快但 `eth_getProof` 格式和主网不同。**2025-04 Euclid** 换 OpenVM 后，证明 MPT 变得可行，Scroll **弃用 zk-trie、改回以太坊 MPT**——读旧文档时别把 zk-trie 当现行默认。
 
-3. **三层节点 + GPU prover**：Sequencer 排序交易、Execution Node 跑 EVM、Rollup Node 攒批写主网；最重的"生成证明"交给独立的 GPU Prover 集群，由 Coordinator 调度。三层加起来叫 Scroll 架构。
+3. **三层节点 + GPU prover**：Sequencer 排序交易、Execution Node 跑 EVM、Rollup Node 攒批写主网；最重的"生成证明"交给独立的 GPU Prover 集群，由 Coordinator 调度。Euclid 后电路从专用 Halo2 迁到 **OpenVM**（RISC-V zkVM），三层骨架仍在。
 
 三件事让 Scroll 既"和主网长得一样"又"能在合理时间出证明"。
 
@@ -67,7 +67,7 @@ forge create MyContract --rpc-url https://rpc.scroll.io --private-key $PK
 **逐部分解释**：
 
 - Sequencer 1-3 秒给你"软确认"——这时只是 L2 内排好了序
-- Execution Node 真跑你的合约，更新 zk-trie 状态根
+- Execution Node 真跑你的合约，更新状态根（Euclid 后为 MPT；早期文档仍可能写 zk-trie）
 - Rollup Node 把这一批交易压缩后写回主网（这一步交易"上链"但还没"被证明"）
 - Prover 集群算几十分钟到几小时，证明生成后主网验证，状态根才"硬确认"——这时才能安全提现
 
@@ -90,7 +90,7 @@ forge create MyContract --rpc-url https://rpc.scroll.io --private-key $PK
 
 3. **把 sequencer 当去中心化**：Scroll 早期 sequencer 单点（项目方自营），它能审查或重排你的交易。zk 证明保证的是"状态算得对"，不保证"谁都能上车"——抗审查要等 sequencer 去中心化（在 roadmap 里）。
 
-4. **zk-trie 不等于 MPT**：状态树换了，`eth_getProof` 在 Scroll 返回的格式和主网 MPT 不同。靠 Merkle proof 在主网验证 L2 状态的 dapp（跨链桥、轻客户端）必须重新适配。
+4. **状态树升级会弄断旧集成**：Euclid 前靠 zk-trie proof 的桥/轻客户端必须迁移；升级后对齐 MPT，仍要核对 Scroll 与主网在预编译、gas、proof 字段上的残余差异，别假设 `eth_getProof` 字节级一致。
 
 ## 适用 vs 不适用场景
 
@@ -112,8 +112,8 @@ forge create MyContract --rpc-url https://rpc.scroll.io --private-key $PK
 - **2021 年**：Ye Zhang、Sandy Peng 等创立 Scroll，最初和以太坊基金会的 PSE 团队合作做 zkEVM 研究
 - **2022 年**：发布 Pre-Alpha 测试网，跑通字节码级 zkEVM 的第一版电路（基于 Halo2）
 - **2023 年 2 月**：Alpha 测试网上线，第一次把"完整 EVM + zk 证明"做到端到端
-- **2023 年 10 月**：主网正式上线，是当时唯一一条 bytecode-equivalent 的 zkEVM L2
-- **2025 年**：Euclid 升级把内部 prover 换成 OpenVM（基于 RISC-V zkVM 的通用证明系统），方向从"专用电路"转向"通用 zkVM"
+- **2023 年 10 月**：主网正式上线，主打 bytecode-equivalent zkEVM（同期还有 Polygon zkEVM 等，定位不完全相同）
+- **2025 年 4 月**：Euclid 升级：prover 换 OpenVM，状态承诺从 zk-trie 迁回 MPT，方向从"专用电路"转向"通用 zkVM"
 
 ## 学到什么
 
@@ -121,7 +121,7 @@ forge create MyContract --rpc-url https://rpc.scroll.io --private-key $PK
 2. **OR vs ZK 是路线选择**：OR 假设诚实 + 7 天反悔；ZK 每批附证明 + 几小时终局。安全模型不同，体验也不同
 3. **bytecode-equivalent 是 EVM 兼容的最高梯度**：开发者无感迁移，代价是电路复杂度暴涨
 4. **GPU prover 是 ZK 链的隐藏工程**：链上看不见，但没它整条链跑不动；这是 ZK 路线的真正成本中心
-5. **抽象 vs 兼容是反复权衡**：zk-trie 牺牲了和主网的 proof 格式一致换证明性能，是 Scroll 在两难里挑了一边的典型例子
+5. **抽象 vs 兼容会随升级翻转**：早期 zk-trie 用证明性能换 proof 格式一致；Euclid 证明能力上来后又迁回 MPT——工程权衡不是一次性写死的
 
 ## 延伸阅读
 
