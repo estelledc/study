@@ -29,9 +29,9 @@ SASRec 的核心可以拆成 **三块**：
 
 1. **输入层**：取用户最近 N 个交互 item，每个 item 查一个 embedding，再加一个**位置 embedding**（标记"这是倒数第几次"）。这是 Transformer 标配，但推荐场景里位置很重要——RNN 用顺序自动带上，attention 没顺序就要手动注入。
 
-2. **self-attention block × b 层**：每层做 multi-head self-attention + 残差 + LayerNorm + 前馈网络。**关键是 causal mask**：位置 t 只能看 1..t-1，不能偷看未来——这叫**单向**。原始 Transformer encoder 是双向的，SASRec 砍掉一半保留因果。
+2. **self-attention block × b 层**：每层做 multi-head self-attention（多组注意力并行再拼）+ 残差 + LayerNorm（把向量尺度拉齐）+ 前馈网络。**关键是 causal mask**：位置 t 只能看 1..t（含自身），不能偷看 t 之后——这叫**单向**。原始 Transformer encoder 是双向的，SASRec 砍掉一半保留因果。
 
-3. **预测层**：取最后一个位置的输出向量，和**所有候选 item 的 embedding** 做点积，分数最高那个就是预测的下一个。Loss 用 BCE：每个位置用 1 个真实下一项 + 1 个负采样 item。
+3. **预测层**：取最后一个位置的输出向量，和**所有候选 item 的 embedding** 做点积，分数最高那个就是预测的下一个。Loss 用 BCE（二分类交叉熵：把「是不是下一项」当成对/错题来训）：每个位置用 1 个真实下一项 + 1 个负采样 item。
 
 整套结构去掉了 Transformer 的 encoder-decoder 架构，只留 decoder 风格——和后来 GPT 的思路同源。
 
