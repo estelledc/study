@@ -1,0 +1,146 @@
+{
+  "slug": "self-evolving-software-agents",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "员工写 SOP 类比贴合「跑业务同时改自己」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Belief/Desire/Intention 有白话桥接；tick / invariant / plan library 对零基础仍偏抽象"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有代码+解释可跟；案例 2 只是对比表缺逐步操作；案例 3 叙事缺拆步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Robol & Giorgini arXiv:2604.27264（2026）与 BDI–LLM + evolution module 架构正确；宜注明 AAMAS’26 Extended Abstract"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文原型场景是 Deliveroo.js 风格的动态多 agent 配送环境，不是能源/空调舒适度；案例 4「论文用这个案例论证」不成立"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文把 behavioural inheritance 列为开放限制，成功行为靠环境交互筛选；笔记写成正式 invariant test 门禁，过度具体化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 plan 伪代码概念正确，适合教学跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：behavioral inheritance、多 agent 同步、plan 膨胀、sandbox——均可操作对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（长期/合规 vs 短期/强合规禁自改）；案例域宜贴近论文配送原型"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "员工写 SOP 类比贴合「跑业务同时改自己」",
+        "Belief/Desire/Intention 有白话桥接；tick / invariant / plan library 对零基础仍偏抽象",
+        "案例 1 有代码+解释可跟；案例 2 只是对比表缺逐步操作；案例 3 叙事缺拆步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Robol & Giorgini arXiv:2604.27264（2026）与 BDI–LLM + evolution module 架构正确；宜注明 AAMAS’26 Extended Abstract",
+        "论文原型场景是 Deliveroo.js 风格的动态多 agent 配送环境，不是能源/空调舒适度；案例 4「论文用这个案例论证」不成立",
+        "论文把 behavioural inheritance 列为开放限制，成功行为靠环境交互筛选；笔记写成正式 invariant test 门禁，过度具体化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 plan 伪代码概念正确，适合教学跟读",
+        "踩坑具体：behavioral inheritance、多 agent 同步、plan 膨胀、sandbox——均可操作对照",
+        "适用/不适用边界清楚（长期/合规 vs 短期/强合规禁自改）；案例域宜贴近论文配送原型"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "对齐 Deliveroo.js 原型场景；弱化 invariant 门禁表述；案例拆步；注明 AAMAS’26 Extended Abstract；补行数过 gate。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "对齐 Deliveroo.js 原型场景；弱化 invariant 门禁表述；案例拆步；注明 AAMAS’26 Extended Abstract；补行数过 gate。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 学到什么",
+      "## 延伸阅读",
+      "frontmatter 来源"
+    ],
+    "unresolved_hints": [],
+    "round": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 160
+}
