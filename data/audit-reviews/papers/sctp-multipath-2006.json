@@ -1,0 +1,137 @@
+{
+  "slug": "sctp-multipath-2006",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "东门/南门类比很好，建议贯穿到 SFR/CUC：同一小区两门、各门自己数迟到包裹"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "TSN、SACK、cwnd、ssthresh 首次出现缺零基础桥接（传输序号、选择性确认、拥塞窗口）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例五段全是叙述，缺 ### 案例 1/2/3、伪代码与逐步解释；至少拆一个调度/重传小例子"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Iyengar/Amer/Stewart, IEEE/ACM ToN 2006 与 CMT 三大算法 SFR/CUC/DAC 归因正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CUC 表述成「按比例分摊」略粗：论文是按各 destination 新确认的 TSN 独立更新该路径 cwnd，宜改准一点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段可补 RFC 2960（2000）→ RFC 4960（2007）时间线，并标明 CMT-PF 属后续 2007 工作而非主文"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可跟做伪代码/命令；建议补路径调度或 RTX 策略选择的迷你伪代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "rbuf blocking、路径不对称、NAT/协议号 132 踩坑具体可操作，保留并编号为 1–4"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；可量化一句「路径 RTT/带宽差过大时吞吐可能低于单路径」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "东门/南门类比很好，建议贯穿到 SFR/CUC：同一小区两门、各门自己数迟到包裹",
+        "TSN、SACK、cwnd、ssthresh 首次出现缺零基础桥接（传输序号、选择性确认、拥塞窗口）",
+        "实践案例五段全是叙述，缺 ### 案例 1/2/3、伪代码与逐步解释；至少拆一个调度/重传小例子"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Iyengar/Amer/Stewart, IEEE/ACM ToN 2006 与 CMT 三大算法 SFR/CUC/DAC 归因正确",
+        "CUC 表述成「按比例分摊」略粗：论文是按各 destination 新确认的 TSN 独立更新该路径 cwnd，宜改准一点",
+        "历史段可补 RFC 2960（2000）→ RFC 4960（2007）时间线，并标明 CMT-PF 属后续 2007 工作而非主文"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可跟做伪代码/命令；建议补路径调度或 RTX 策略选择的迷你伪代码",
+        "rbuf blocking、路径不对称、NAT/协议号 132 踩坑具体可操作，保留并编号为 1–4",
+        "适用边界清楚；可量化一句「路径 RTT/带宽差过大时吞吐可能低于单路径」"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "补 ### 案例伪代码与逐步解释；桥接 TSN/SACK/cwnd；CUC 改为按 destination 新确认 TSN 更新；历史加（可跳过）时间线；踩坑编号 1–4。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}
