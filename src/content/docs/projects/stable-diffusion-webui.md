@@ -18,13 +18,13 @@ python launch.py
 
 浏览器开 `127.0.0.1:7860`，就有一个能出图的 webui。
 
-2022 年 8 月 Stable Diffusion 1.4 权重公开后几周内，匿名作者 AUTOMATIC1111 把它做出来了——这是把扩散模型从「会写 PyTorch 的人才能玩」变成「装个 Python 就能玩」的关键一步。
+2022 年 8 月 22 日 Stable Diffusion 1.4 权重公开的**同一天**，匿名作者 AUTOMATIC1111 就把 Gradio 入口推上了 GitHub——这是把扩散模型从「会写 PyTorch 的人才能玩」变成「装个 Python 就能玩」的关键一步。
 
 ## 为什么重要
 
 不理解 SD WebUI，下面这些事讲不清：
 
-- 为什么 GitHub 上一个 AI 工具能有 **163k stars / 30.4k forks**——它定义了 2022-2024 普通人接触扩散模型的默认入口
+- 为什么 GitHub 上一个 AI 工具能有 **~164k stars / ~30.5k forks**——它定义了 2022-2024 普通人接触扩散模型的默认入口
 - 为什么 Civitai 上每个模型卡都标「webui 兼容」——目录结构、文件名、扩展名约定都是这个仓库订下的
 - 为什么 ControlNet / LoRA / Dreambooth 这些 paper 一出来，**几天内**就有 webui 扩展跑得动——`extensions/` 目录的极简扩展机制
 - 为什么 ComfyUI / Forge / sd.next / InvokeAI 这些后起之秀都要先跟 webui 兼容再谈差异化——它是事实标准
@@ -117,8 +117,7 @@ curl -X POST http://127.0.0.1:7860/sdapi/v1/txt2img \
 
 ## 历史小故事（可跳过）
 
-- **2022-08-22**：Stability AI 公开 SD 1.4 权重
-- **2022-08-23**：AUTOMATIC1111 仓库首个 commit——一个 Gradio 单文件
+- **2022-08-22**：Stability AI 公开 SD 1.4 权重；同日 AUTOMATIC1111 建仓并推上首个 Gradio 单文件 commit（`first`）
 - **2022-09**：txt2img / img2img / Outpainting Mark II 标签页定型
 - **2022-10**：`extensions/` 目录上线，社区第三方扩展涌入
 - **2023**：SDXL 支持、API 改写、queue 重做
@@ -146,5 +145,9 @@ curl -X POST http://127.0.0.1:7860/sdapi/v1/txt2img \
 - [[pytorch]] —— webui 的推理底座，所有张量运算都过它
 - [[fastapi]] —— webui 的 API 模式跟 FastAPI 思路接近，都是「函数即接口」
 - [[accelerate]] —— HuggingFace 设备/分布式抽象；webui 自己没用 accelerate，而是直接管 CUDA/MPS 分支——这是 2022 年「快糙猛」工程风格的典型残留
-- [[whisper]] —— 同样是 2022 年「论文出来几周就出现一键工具」的现象级案例，但 Whisper 是 OpenAI 官方放，webui 是社区自发——两条普及路径
+- [[whisper]] —— 同样是 2022 年「论文出来很快就出现一键工具」的现象级案例，但 Whisper 是 OpenAI 官方放，webui 是社区自发——两条普及路径
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 

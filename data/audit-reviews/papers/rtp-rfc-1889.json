@@ -1,0 +1,138 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递贴标签类比把序号/时间戳讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SSRC / RTCP / jitter buffer 首次出现有桥接；payload type 用 PCMU/H.261 举例可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 步骤清楚；案例 3 偏观察清单，可再补一句「打开 webrtc-internals 后按 SSRC 对照丢包率」的跟做路径"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Schulzrinne/Casner/Frederick/Jacobson、RFC 1889 (1996) / RFC 3550 (2003) 著录正确；12 字节头与 PT=0 PCMU 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RTCP 占会话带宽约 5%、偶数/奇数端口配对与 RFC 表述一致；时间戳按采样时钟走未歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「50 人≈5 秒 / 500 人≈50 秒」是教学量级示意，真实间隔还依赖包大小与带宽；WebRTC 常 RTP/RTCP 复用同端口（RFC 5761），正文可一句点明但不构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 20ms/PT=0/timestamp+=160 与 jitter buffer 流程可跟做；案例 2 mixer/SFU 分流概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：timestamp≠Unix、序号回卷、明文需 SRTP、NAT/ICE、1889→3550——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（实时通话 vs 文件/百万直播/车载 TSN）；可再点明 WebRTC 生产默认 SRTP+ICE"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快递贴标签类比把序号/时间戳讲透，零基础直觉强",
+        "SSRC / RTCP / jitter buffer 首次出现有桥接；payload type 用 PCMU/H.261 举例可跟",
+        "案例 1–2 步骤清楚；案例 3 偏观察清单，可再补一句「打开 webrtc-internals 后按 SSRC 对照丢包率」的跟做路径"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Schulzrinne/Casner/Frederick/Jacobson、RFC 1889 (1996) / RFC 3550 (2003) 著录正确；12 字节头与 PT=0 PCMU 一致",
+        "RTCP 占会话带宽约 5%、偶数/奇数端口配对与 RFC 表述一致；时间戳按采样时钟走未歪曲",
+        "「50 人≈5 秒 / 500 人≈50 秒」是教学量级示意，真实间隔还依赖包大小与带宽；WebRTC 常 RTP/RTCP 复用同端口（RFC 5761），正文可一句点明但不构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1 的 20ms/PT=0/timestamp+=160 与 jitter buffer 流程可跟做；案例 2 mixer/SFU 分流概念正确",
+        "踩坑具体可操作：timestamp≠Unix、序号回卷、明文需 SRTP、NAT/ICE、1889→3550——保留",
+        "适用/不适用边界清楚（实时通话 vs 文件/百万直播/车载 TSN）；可再点明 WebRTC 生产默认 SRTP+ICE"
+      ]
+    }
+  ],
+  "slug": "rtp-rfc-1889",
+  "area": "papers",
+  "status": "passed",
+  "lines": 160,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "pass",
+    "round": 0,
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}
