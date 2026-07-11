@@ -1,0 +1,124 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "画板+标尺 / 心跳类比贴合，零基础能建立直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "TEA、Buffer、ANSI 有白话桥接；Cassowary 一句带过可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有叙事无代码、无逐步拆解；案例 2/3 有代码+解释。建议给案例 1 补「切屏→自定义 Widget→channel 回推→心跳 redraw」四步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『[[ink]]（Go 圈的 TUI 库）』事实错误：ink 是 Node.js/React TUI（vadimdemedes/ink）；Go 圈对照应是 bubbletea"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "tui-rs / Florian Dehau / 2023 fork、立即模式+双缓冲 diff、Layout 约束求解（Cassowary/kasuari）主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源可用 github.com/ratatui/ratatui（ratatui-org 为旧 org 重定向）；stars 带 2026-05 时间限定可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 / 核心要点示例仍用 f.size()：ratatui ≥0.28 已弃用，应改为 f.area()"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 无可跟做片段；踩坑（自写事件循环/状态/迁移/虚拟滚动）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（Rust CLI 交互 vs 低代码表单/非 Rust）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "画板+标尺 / 心跳类比贴合，零基础能建立直觉",
+        "TEA、Buffer、ANSI 有白话桥接；Cassowary 一句带过可接受",
+        "案例 1 只有叙事无代码、无逐步拆解；案例 2/3 有代码+解释。建议给案例 1 补「切屏→自定义 Widget→channel 回推→心跳 redraw」四步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『[[ink]]（Go 圈的 TUI 库）』事实错误：ink 是 Node.js/React TUI（vadimdemedes/ink）；Go 圈对照应是 bubbletea",
+        "tui-rs / Florian Dehau / 2023 fork、立即模式+双缓冲 diff、Layout 约束求解（Cassowary/kasuari）主线正确",
+        "来源可用 github.com/ratatui/ratatui（ratatui-org 为旧 org 重定向）；stars 带 2026-05 时间限定可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 / 核心要点示例仍用 f.size()：ratatui ≥0.28 已弃用，应改为 f.area()",
+        "案例 1 无可跟做片段；踩坑（自写事件循环/状态/迁移/虚拟滚动）具体可操作",
+        "适用/不适用边界清楚（Rust CLI 交互 vs 低代码表单/非 Rust）"
+      ]
+    }
+  ],
+  "final_quality_gate": {
+    "pass": true,
+    "lines": 165
+  },
+  "sections_modified": [
+    "## 是什么",
+    "## 为什么重要",
+    "## 核心要点",
+    "## 实践案例",
+    "## 反向链接"
+  ],
+  "refine_round": 1
+}
