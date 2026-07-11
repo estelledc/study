@@ -27,9 +27,9 @@ STG 干两件事：(1) 给 Haskell 设计一种小而正交的中间语言（也
 
 STG 的精髓是**三件小事**：
 
-1. **let 是分配，case 是求值**：源语言里到处都是表达式嵌套，STG 把它拍平——所有"要在堆上放一坨东西"的动作都用 `let` 表达，所有"现在必须把它算到 WHNF（弱头范式）"的动作都用 `case` 表达。其他子表达式只能是 atom（变量或字面量）。类比：菜谱被改写成"先准备 → 再触发烹饪"两类动作，没第三种。
+1. **let 是分配，case 是求值**：源语言里到处都是表达式嵌套，STG 把它拍平——所有"要在堆上放一坨东西"的动作都用 `let` 表达，所有"现在必须把它算到 WHNF（弱头范式）"的动作都用 `case` 表达。其他子表达式只能是 atom（不能再嵌套的「最小零件」：变量名或数字字面量）。类比：菜谱被改写成"先准备 → 再触发烹饪"两类动作，没第三种。
 
-2. **统一闭包布局 + 进入即跳转（tagless）**：堆上每个对象长得都一样：`[info pointer | free vars]`。要用它就跳到 info pointer 指向的代码，不再读 tag 判断"这是 thunk 还是 constructor 还是函数"。代码自己知道自己是什么。类比：每个抽屉外面贴着一张"打开我会发生什么"的小纸条，不用先扫描标签再决定。
+2. **统一闭包布局 + 进入即跳转（tagless）**：堆上每个对象长得都一样：`[info pointer | free vars]`——info pointer 是"入口代码地址"，free vars 是闭包关在里面的外部变量。要用它就跳到入口代码，不再读 tag 判断"这是 thunk 还是 constructor 还是函数"。代码自己知道自己是什么。类比：每个抽屉外面贴着一张"打开我会发生什么"的小纸条，不用先扫描标签再决定。
 
 3. **更新机制实现共享（无 spine）**：thunk 第一次被求值后，要把自己改写成结果，下次再来直接拿——这就是 lazy 的"算一次缓存"。STG 用 update frame 在栈上记录"算完我要回填谁"。不再像 G-machine 那样维护显式的应用 spine。
 
@@ -43,7 +43,7 @@ STG 的精髓是**三件小事**：
 sumTo n = sum [1..n]
 ```
 
-GHC `-ddump-stg` 大致输出（简化）：
+GHC `-ddump-stg` 大致输出（教学简化；本机真实 dump 还会带类型/arity 等标注，骨架相同）：
 
 ```
 sumTo = \r [n] case enumFromTo 1 n of xs { __DEFAULT -> sum xs }
@@ -133,7 +133,7 @@ g = \r [xs] let n = \u [] length xs in case +# n 1 of r { __DEFAULT -> r }
 
 ## 延伸阅读
 
-- 论文 PDF：[Implementing Lazy Functional Languages on Stock Hardware](https://www.microsoft.com/en-us/research/wp-content/uploads/1992/04/spineless-tagless-gmachine.pdf)（39 页，密度高但例子多）
+- 论文 PDF：[Implementing Lazy Functional Languages on Stock Hardware](https://www.microsoft.com/en-us/research/wp-content/uploads/1992/04/spineless-tagless-gmachine.pdf)（JFP 1992，约 pp.127–202，~76 页，密度高但例子多）
 - GHC 文档：[GHC Commentary — STG syntax](https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/compiler/stg-syntax)（带最新语法和语义注释）
 - 视频：[Simon Peyton Jones — Adventures in the Functional Frontier](https://www.youtube.com/results?search_query=peyton+jones+stg)（讲 STG 设计动机）
 - [[call-by-need-1995]] —— 给 STG 的 sharing 语义补理论

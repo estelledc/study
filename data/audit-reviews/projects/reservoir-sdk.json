@@ -1,0 +1,133 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "携程类比很强；但 Seaport / EIP-712 / WETH / BPS / BETH 首次出现缺少白话桥接，零基础会卡在术语墙"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐步读法；案例 2–3 偏「甩完整调用」，建议各补 2–3 步「API 返回什么 → 钱包签什么 → 链上发生什么」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「协议费（Seaport 0.5%）」易歪曲：Seaport 是订单协议，0.5% 是 OpenSea 等市场侧 fee，不是 Seaport 协议硬编码；应改成「市场/平台费（如 OpenSea 曾用约 0.5%）」并加时间限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RouterV6 主网地址 0xC2c86232…Fd8 与 Etherscan ReservoirV6_0_1 一致；GitHub reservoir-kit 来源正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "注意同名「Reservoir」另有稳定币项目（docs.reservoir.xyz）；笔记应明确本篇是 reservoirprotocol NFT 聚合，避免读者点错文档域"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "buyToken / listToken / partial / marketplaceFees:BPS 形态贴近真实 SDK；踩坑（中心化 API、Blur/BETH、两步 approve、chainId）可操作性强"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例里 getClient() 依赖事先 createClient，可在案例 1 前补一行初始化提示以免跟做失败"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "携程类比很强；但 Seaport / EIP-712 / WETH / BPS / BETH 首次出现缺少白话桥接，零基础会卡在术语墙",
+        "案例 1 有逐步读法；案例 2–3 偏「甩完整调用」，建议各补 2–3 步「API 返回什么 → 钱包签什么 → 链上发生什么」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「协议费（Seaport 0.5%）」易歪曲：Seaport 是订单协议，0.5% 是 OpenSea 等市场侧 fee，不是 Seaport 协议硬编码；应改成「市场/平台费（如 OpenSea 曾用约 0.5%）」并加时间限定",
+        "RouterV6 主网地址 0xC2c86232…Fd8 与 Etherscan ReservoirV6_0_1 一致；GitHub reservoir-kit 来源正确",
+        "注意同名「Reservoir」另有稳定币项目（docs.reservoir.xyz）；笔记应明确本篇是 reservoirprotocol NFT 聚合，避免读者点错文档域"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "buyToken / listToken / partial / marketplaceFees:BPS 形态贴近真实 SDK；踩坑（中心化 API、Blur/BETH、两步 approve、chainId）可操作性强",
+        "案例里 getClient() 依赖事先 createClient，可在案例 1 前补一行初始化提示以免跟做失败"
+      ]
+    }
+  ],
+  "slug": "reservoir-sdk",
+  "area": "projects",
+  "status": "refined",
+  "lines": 155,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：Seaport 0.5% 改为市场费+时间限定；术语桥接；案例补 createClient 与三步读法；区分同名稳定币项目",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

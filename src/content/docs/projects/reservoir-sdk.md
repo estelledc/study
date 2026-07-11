@@ -8,13 +8,13 @@ title: Reservoir SDK — 跨市场 NFT 聚合
 
 ## 是什么
 
-Reservoir SDK 是一组 TypeScript 包，让前端用**一个 API** 同时看到 OpenSea / Blur / LooksRare / X2Y2 / Sudoswap 这些 NFT 交易市场上的所有挂单和出价，并能在**一笔链上交易**里跨多个市场一起成交。
+Reservoir SDK（GitHub：`reservoirprotocol/reservoir-kit`，NFT 聚合；勿与同名稳定币项目混淆）是一组 TypeScript 包，让前端用**一个 API** 同时看到 OpenSea / Blur / LooksRare / X2Y2 / Sudoswap 这些 NFT 交易市场上的所有挂单和出价，并能在**一笔链上交易**里跨多个市场一起成交。
 
 打个比方。携程把国航 / 东航 / 南航的航班搜到一起、能一次下单同一行程里多家航司的票——你不用每家航司都注册一个账号。Reservoir 就是 NFT 的"携程"：以前要买一个 collection 的 floor，要到 OpenSea 看一遍价格、再到 Blur 看一遍、再到 LooksRare 看一遍，挂单签名格式还各不相同；现在只调一次 `actions.buyToken`，SDK 自动找到这三家里最便宜的几张拼成最优订单。
 
-代码层面三个核心包：`@reservoir0x/reservoir-sdk`（actions：buyToken / listToken / acceptOffer / placeBid / cancelOrder）、`@reservoir0x/reservoir-kit-ui`（开箱即用的 React 组件，BuyModal / ListModal / BidModal）、`@reservoir0x/relay-kit`（2024 后扩出来的跨链支付 kit）。SDK 不直接发交易——它先调 Reservoir 后端 API 拿一组"步骤"（approve / sign / transaction），再用 viem/ethers 钱包逐步执行。
+代码层面三个核心包：`@reservoir0x/reservoir-sdk`（actions：buyToken / listToken / acceptOffer / placeBid / cancelOrder）、`@reservoir0x/reservoir-kit-ui`（开箱即用的 React 组件，BuyModal / ListModal / BidModal）、`@reservoir0x/relay-kit`（2024 后扩出来的跨链支付 kit）。SDK 不直接发交易——它先调 Reservoir 后端 API 拿一组"步骤"（approve 授权 / sign 签名 / transaction 上链），再用 viem/ethers 钱包逐步执行。
 
-最小心智模型：**后端索引器**（Reservoir 自己跑节点订阅各市场合约事件，把不同签名格式归一成统一 order）+ **Steps API**（execute/buy/v7 返回多步动作给 SDK 执行）+ **RouterV6 合约**（链上批量路由器，能在一笔交易里同时打到 Seaport / Blur / LooksRare 多个市场合约）。
+最小心智模型：**后端索引器**（Reservoir 自己跑节点订阅各市场合约事件，把不同签名格式归一成统一 order）+ **Steps API**（execute/buy/v7 返回多步动作给 SDK 执行）+ **RouterV6 合约**（链上批量路由器，能在一笔交易里同时打到 Seaport——OpenSea 系订单协议——以及 Blur / LooksRare 等多个市场合约）。
 
 ## 为什么重要
 
@@ -27,20 +27,23 @@ Reservoir SDK 是一组 TypeScript 包，让前端用**一个 API** 同时看到
 ## 核心要点
 
 1. **统一 order 模型**：listings（asks）/ bids（offers）/ tokenSets（一组 NFT 的批量出价），不管底层市场是 Seaport 还是 Blur 自家协议都长成一样的 JSON 形状。后端索引器跑节点订阅各市场合约，把不同签名格式规范化后存到数据库。
-2. **Steps API**：`/execute/buy/v7` 不直接返回 `(to, data, value)`，而是返回 `steps: [{ kind: 'transaction', items: [...] }]`。每个 step 可能是 ERC20 approve / NFT approve / EIP-712 签名 / 真正的 transaction，SDK 顺序执行并通过 `onProgress` 上报每一步状态。
+2. **Steps API**：`/execute/buy/v7` 不直接返回 `(to, data, value)`，而是返回 `steps: [{ kind: 'transaction', items: [...] }]`。每个 step 可能是 ERC20 approve / NFT approve / EIP-712 签名（一种"按固定字段结构签名"的标准，钱包弹窗里能看清签的是什么）/ 真正的 transaction，SDK 顺序执行并通过 `onProgress` 上报每一步状态。
 3. **RouterV6 路由合约**：链上批量路由器，把多个市场的成交 calldata 拼到一笔。用户对 RouterV6 授权一次后，跨 OpenSea / Blur / LooksRare 都不用再次授权。`revertIfIncomplete: false` 允许 partial fill（其中一单失败不让整笔回滚）。
-4. **Fees 三层**：协议费（Seaport 0.5%）+ 版税（按 collection royalties 配置）+ marketplaceFees（前端聚合站自己加的，给传 `marketplaceFees: ['0xfee:200']` 表示 2%）。SDK 自动按每个市场策略叠加。
-5. **托管 + 自托管**：默认指向 `api.reservoir.tools`（托管 API，要 API key），也支持自跑 indexer 指向自己域名。生产侧前端绝大多数用托管。
+4. **Fees 三层**：市场/平台费（如 OpenSea 在 Seaport 订单上曾收约 0.5%，随时间调整，不是 Seaport 协议硬编码）+ 版税（按 collection royalties 配置）+ marketplaceFees（前端聚合站自己加的，给传 `marketplaceFees: ['0xfee:200']`——200 BPS = 2%，BPS 是万分之一）。SDK 自动按每个市场策略叠加。
+5. **托管 + 自托管**：默认指向 `api.reservoir.tools`（托管 API，要 API key；文档也在 docs.reservoir.tools，勿点到同名稳定币站），也支持自跑 indexer 指向自己域名。生产侧前端绝大多数用托管。
 
 ## 实践案例
 
 ### 案例 1：买一张 NFT（最小调用）
 
+先全局初始化一次（否则 `getClient()` 会空）：`createClient({ chains: [mainnet], source: 'myapp.xyz' })`。
+
 ```ts
-import { getClient } from '@reservoir0x/reservoir-sdk'
+import { createClient, getClient } from '@reservoir0x/reservoir-sdk'
 import { createWalletClient, custom } from 'viem'
 
-const client = getClient()  // 已通过 createClient({ chains, source }) 全局初始化
+createClient({ chains: [mainnet], source: 'myapp.xyz' })
+const client = getClient()
 const wallet = createWalletClient({ account, chain: mainnet, transport: custom(window.ethereum) })
 
 await client.actions.buyToken({
@@ -53,7 +56,7 @@ await client.actions.buyToken({
 })
 ```
 
-`buyToken` 内部 `GET /execute/buy/v7?token=0xBC4C...:1234` 拿 step 数组：先 currency-approval（如果用 WETH 付）→ 再 sale（打到 RouterV6）。SDK 用 `wallet.writeContract` 发出去，等链上确认后回调 onProgress。
+三步读：① SDK `GET /execute/buy/v7?token=...` 拿 step 数组；② 若用 WETH（包装过的 ETH）付，先 currency-approval；③ 再 sale 打到 RouterV6，`wallet.writeContract` 上链，`onProgress` 回报每步。
 
 ### 案例 2：跨市场扫地板（一笔吃 5 张最便宜）
 
@@ -68,7 +71,7 @@ await client.actions.buyToken({
 })
 ```
 
-API 返回的 path 可能是：`[{source: 'opensea.io', price: 0.5}, {source: 'blur.io', price: 0.51}, {source: 'looksrare.org', price: 0.52}, ...]`。RouterV6 把这 5 张的 calldata 拼成一笔，user 一次签名一次确认。`partial: true` 时即使其中 1 张被人抢掉也不让整笔回滚，剩下 4 张照常完成。
+三步读：① API 返回 path，例如 `[{source:'opensea.io',price:0.5},{source:'blur.io',price:0.51},...]`；② RouterV6 把 5 张 calldata 拼成一笔，钱包一次确认；③ `partial: true` 时若 1 张被抢，其余 4 张仍成交（不整笔回滚）。
 
 ### 案例 3：挂单（list）跨多市场同步发布
 
@@ -84,12 +87,12 @@ await client.actions.listToken({
 })
 ```
 
-同一张 NFT 同时挂到 3 个 orderbook。SDK 让 user 用 EIP-712 签名一组对应每家市场的不同结构（这是无法避免的——每家市场的合约只认它自己的 typed data），但 UI 上对 user 表现为"一个挂单流程"。
+三步读：① 同一 token 写 3 条 listing，指向不同 orderbook；② SDK 让钱包按 EIP-712 分别签各家 typed data（合约只认自家格式）；③ UI 仍表现为"一个挂单流程"，链下订单同步进三家簿。
 
 ## 踩过的坑
 
 1. **API 中心化**：默认指向 `api.reservoir.tools`，断了前端就买不了；做生产要么自跑 indexer，要么前端有 fallback（直连各家市场 SDK）。
-2. **Blur 订单成交失败**：Blur 的订单需要 BETH（Blur 自有的包装 ETH）和专属签名格式，早期 SDK 会把 Blur listing 混到结果里但前端钱包不识别就成交失败；新版 SDK 已经把 Blur 单独标 source，前端可以 filter 掉。
+2. **Blur 订单成交失败**：Blur 的订单需要 BETH（Blur 自有的包装 ETH，类似 WETH 但只在 Blur 体系用）和专属签名格式，早期 SDK 会把 Blur listing 混到结果里但前端钱包不识别就成交失败；新版 SDK 已经把 Blur 单独标 source，前端可以 filter 掉。
 3. **首次买的两步 transaction**：第一次买某 collection 时 `onProgress` 会先弹一个 NFT-approval / currency-approval（让 RouterV6 能拿走代币），然后才弹 sale。新人以为只要一次确认，结果 user 只签了第一步以为完了。
 4. **marketplaceFees 配错被拒**：`marketplaceFees: ['0xfee']` 缺 BPS 部分（应该写 `'0xfee:200'` 表示 2%），API 直接 400。
 5. **chainId mismatch**：`ReservoirKitProvider` 的 chains 配置和 wagmi/viem 的 chain 不一致（比如一个用 1 一个用 mainnet 但 id 不同），下单时 wallet.writeContract 会报 chainId 不匹配。
