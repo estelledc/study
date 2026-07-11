@@ -1,0 +1,3345 @@
+.claude/skills/auto-push/SKILL.md
+  s_1219958b232001::t_b1613127836d98 3,6,8,10,12-15,17
+.github/dependabot.yml
+  s_1219958b232001::t_804745c76facaa 1-7
+.github/workflows/ci.yml
+  s_1219958b232001::t_475d5587da92ec 27,29-31,33
+.github/workflows/content-health.yml
+  s_1219958b232001::t_32c2231353d4fe 1-83
+.github/workflows/deploy.yml
+  s_1219958b232001::t_ce318517e78db4 18-20,23-24,27,29-31,33-34,36-49,57-60
+.gitignore
+  s_1219958b232001::t_02ce35c4f0e216 4-5,19-38,48-51,61-62
+.nvmrc
+  s_1219958b232001::t_475342a56009d8 1
+CHANGELOG.md
+  s_1219958b232001::t_49c6b47e4bd593 1-27
+README.md
+  s_1219958b232001::t_e002d6c34cad2b 12,30,33,40-49,51-55,60-61,66,134,142-143
+SESSION-HANDOFF-2026-05-29.md
+  s_1219958b232001::t_df8fc964bcfb54 1,3,5,7,9-12,14
+SESSION-HANDOFF.md
+  s_1219958b232001::t_d8c96977d004a2 1,3,5,7-11,13,15-18,21,23-25
+STATUS-PAPERS.md
+  s_1219958b232001::t_de5db9616c3b58 3-4
+STATUS-PROJECTS.md
+  s_1219958b232001::t_d1f897856146a7 3-4
+astro.config.mjs
+  s_1219958b232001::t_211750ac140748 83,99,116-121
+data/asset-orphan-allowlist.json
+  s_1219958b232001::t_e623d51c97ffaf 1-24
+data/asset-orphan-baseline.json
+  s_1219958b232001::t_b20fedc43aef88 1-435
+data/content-contract-baseline.json
+  s_1219958b232001::t_835eb330256bc0 1-9
+data/freshness-policy.json
+  s_1219958b232001::t_bd10bbda0c0832 1-47
+data/note-index.json
+  s_1219958b232001::t_fbbf35c7e19bd0 1-63693
+data/official-source-registry.json
+  s_1219958b232001::t_095317ab86485d 1-15
+data/operations-policy.json
+  s_1219958b232001::t_bb4a1d80240258 1-35
+data/performance-baseline.json
+  s_1219958b232001::t_f9d30ad87c82e5 1-42
+data/performance-budget.json
+  s_1219958b232001::t_5622e4bfff28ef 1-41
+data/public-redline-baseline.json
+  s_1219958b232001::t_b973ca487f6fde 1-36
+data/review-evidence.schema.json
+  s_1219958b232001::t_0babb6bd76e516 1-36
+data/review-evidence/.gitkeep
+  s_1219958b232001::t_d5a276633e28a0 1
+data/review-receipts.schema.json
+  s_1219958b232001::t_41672dee88e3f5 1-116
+data/review-receipts/.gitkeep
+  s_1219958b232001::t_f30e3ffba545e2 1
+data/search-contract.json
+  s_1219958b232001::t_766cd66abe0844 1-22
+data/taxonomy.json
+  s_1219958b232001::t_7d05106b374b28 1-2624
+data/wikilink-aliases.json
+  s_1219958b232001::t_3d388e2f5704fb 1-4
+data/wikilink-baseline-transition.json
+  s_1219958b232001::t_92d1f7ac5b3ec5 1-18
+data/wikilink-baseline.json
+  s_1219958b232001::t_eace0b2f95aeed 1-9332
+docs/archive/auto-push-v3.md
+  s_1219958b232001::t_51ebd3584342a9 1-21
+docs/asset-policy.md
+  s_1219958b232001::t_55812e2f8a66b1 1-16
+docs/ci-contract.md
+  s_1219958b232001::t_488d8f43a80a0b 1-29
+docs/content-contract.md
+  s_1219958b232001::t_cb48c2d87e08b8 1-64
+docs/content-quality-rubric.md
+  s_1219958b232001::t_632c78de6724dc 1-65
+docs/follow-up-plan.md
+  s_1219958b232001::t_54e0a7a46d2dc2 1,3,5,7-9,11
+docs/freshness-policy.md
+  s_1219958b232001::t_96652676deaac7 1-46
+docs/operations-index.md
+  s_1219958b232001::t_657b5d2c1607db 1-33
+docs/operations-policy.md
+  s_1219958b232001::t_6c5883b805ef3b 1-24
+docs/performance-budget.md
+  s_1219958b232001::t_af26c7348ba9ff 1-17
+docs/public-repository-policy.md
+  s_1219958b232001::t_561bed605865fc 1-37
+docs/release-and-rollback.md
+  s_1219958b232001::t_964dbe5a1cb46f 1-62
+docs/review-evidence-contract.md
+  s_1219958b232001::t_521d4091f24486 1-62
+docs/search-seo-contract.md
+  s_1219958b232001::t_c3e3be5961d864 1-16
+docs/wikilink-governance.md
+  s_1219958b232001::t_1b440fcdd15294 1-56
+package-lock.json
+  s_1219958b232001::t_156d83a52e85db 15-22,173-185,1345-1360,2562-2571,5494-5540
+package.json
+  s_1219958b232001::t_8022b176183574 6-10,21-35,41,43,58,65-68
+playwright.config.mjs
+  s_1219958b232001::t_deb38f23580bbb 1-34
+prompts/base-rules.md
+  s_1219958b232001::t_57a599a8e8932e 3,7,16,18-20,22-31,35-37,41,50-63,67-68,81,83,85,105-106,111-112,133-135
+prompts/new-paper.md
+  s_1219958b232001::t_f7ccb1de82f77e 16-17,127-128
+prompts/new-project.md
+  s_1219958b232001::t_234969a846bd8f 16-17,74
+prompts/reviewer-academic.md
+  s_1219958b232001::t_391e59abbff538 43,56,64-68,78
+prompts/reviewer-engineer.md
+  s_1219958b232001::t_8211395fb57d0d 3,18-23,41-42,46-48,61-62,69-73,82-96
+prompts/reviewer-zero-base.md
+  s_1219958b232001::t_98503588425502 7-8,32-37,46-47,61-62,69-73,79-80
+prompts/rewrite-paper.md
+  s_1219958b232001::t_c0dfb410bbc4bf 13-14,69
+prompts/rewrite-project.md
+  s_1219958b232001::t_322b260059385a 14-15,61
+prompts/writer.md
+  s_1219958b232001::t_b7bd0acd079bff 3,7-8,51,53,55-60,62,64,75-88,92-93,115,158
+scripts/README.md
+  s_1219958b232001::t_822719bc359511 5-7,27-28,45-50,71,73,86,92-95,98,106,108,114,129,132,134,136,149,156,158
+scripts/aggregate-audit-reviews.mjs
+  s_1219958b232001::t_48ea78002afec4 13,32
+scripts/analyze-template-similarity.mjs
+  s_1219958b232001::t_119150df1defc5 1-225
+scripts/analyze-template-similarity.test.mjs
+  s_1219958b232001::t_115ed777683a98 1-87
+scripts/audit-a11y-static.mjs
+  s_1219958b232001::t_ec83682add9b90 1-33
+scripts/audit-a11y-static.test.mjs
+  s_1219958b232001::t_5bfa1e0463305f 1-21
+scripts/audit-action-pins.mjs
+  s_1219958b232001::t_0301c18a5fb484 1-82
+scripts/audit-action-pins.test.mjs
+  s_1219958b232001::t_382802ab76a3fd 1-34
+scripts/audit-assets.mjs
+  s_1219958b232001::t_366c76d4680cf5 1-276
+scripts/audit-assets.test.mjs
+  s_1219958b232001::t_015143f183c226 1-106
+scripts/audit-content-contract.mjs
+  s_1219958b232001::t_9707ef9acaa9a9 1-366
+scripts/audit-content-contract.test.mjs
+  s_1219958b232001::t_506bbc7940b5e2 1-250
+scripts/audit-doc-lifecycle.mjs
+  s_1219958b232001::t_5ba3e4b3067060 1-56
+scripts/audit-doc-lifecycle.test.mjs
+  s_1219958b232001::t_541f6810f2a667 1-24
+scripts/audit-freshness.mjs
+  s_1219958b232001::t_c3f4b57712d814 1-130
+scripts/audit-freshness.test.mjs
+  s_1219958b232001::t_9a9d99c5e8941c 1-199
+scripts/audit-homepage-dist-links.mjs
+  s_1219958b232001::t_e503897839061c 5,132-133,200,204,243-253,318
+scripts/audit-operation-entrypoints.mjs
+  s_1219958b232001::t_a20f6576cfe646 1-136
+scripts/audit-operation-entrypoints.test.mjs
+  s_1219958b232001::t_e529b80de6b6c2 1-45
+scripts/audit-pagefind.mjs
+  s_1219958b232001::t_de8f2dc1acdf6a 1-101
+scripts/audit-pagefind.test.mjs
+  s_1219958b232001::t_72cd788859b9a6 1-28
+scripts/audit-pages-artifact.mjs
+  s_1219958b232001::t_1939cd040c33ac 1-52
+scripts/audit-pages-artifact.test.mjs
+  s_1219958b232001::t_7a4fcbf17e6ddf 1-26
+scripts/audit-public-redlines.mjs
+  s_1219958b232001::t_8564b9f4af52b0 1-457
+scripts/audit-public-redlines.test.mjs
+  s_1219958b232001::t_8c56b8edf9220a 1-304
+scripts/audit-runtime-state.mjs
+  s_1219958b232001::t_51a7dec7f38ef5 80-81,86-89,94-100,116,149-150
+scripts/audit-runtime-state.test.mjs
+  s_1219958b232001::t_e70110cbd4d927 78-103
+scripts/audit-seo-output.mjs
+  s_1219958b232001::t_aee1b3dd36c72f 1-114
+scripts/audit-seo-output.test.mjs
+  s_1219958b232001::t_1c08b46375e5e7 1-26
+scripts/audit-toolchain.mjs
+  s_1219958b232001::t_ce59978d2c2e6f 1-142
+scripts/audit-toolchain.test.mjs
+  s_1219958b232001::t_3009f4aaa8360f 1-88
+scripts/audit-wikilink-ambiguity.mjs
+  s_1219958b232001::t_82f63d8e689f47 3,7-17,19-34,36,38,44-53,56-76,79-81,83-106,109-154,157-169,171-172,174-205,208-232,235-246,249-258,261-314,316-317,320-322
+scripts/audit-wikilink-ambiguity.test.mjs
+  s_1219958b232001::t_4e05c2c8e82a60 1-137
+scripts/benchmark-atlas.mjs
+  s_1219958b232001::t_8058ab2c6b5e5a 1-66
+scripts/benchmark-atlas.test.mjs
+  s_1219958b232001::t_d65649a2556bc0 1-35
+scripts/benchmark-site.mjs
+  s_1219958b232001::t_ebd46eae2a30c2 1-228
+scripts/benchmark-site.test.mjs
+  s_1219958b232001::t_b5485ba13d69e8 1-50
+scripts/build-audit-pool.mjs
+  s_1219958b232001::t_76ecea02a4ca6e 10,88
+scripts/build-diagnostics.test.mjs
+  s_1219958b232001::t_ac596f0a78e30c 1-26
+scripts/build-strict.mjs
+  s_1219958b232001::t_b9eb0b87fc17f4 20
+scripts/classify-wikilinks.mjs
+  s_1219958b232001::t_55702d3cce71b7 1-26
+scripts/dispatch-batch.mjs
+  s_1219958b232001::t_fdca70bef0cf9c 17-21,25-31,34-41,47-51,56-83,184-189,216,227-229,232-253,260-261,266-317,326,328-338,344-388,390
+scripts/dispatch-batch.test.mjs
+  s_1219958b232001::t_fadbb4b5c8a780 4-9,117-195
+scripts/exit-conditions.mjs
+  s_1219958b232001::t_19f1ac6207c3b7 10-39,46-54,57-64,68,75,81,88,94
+scripts/exit-conditions.test.mjs
+  s_1219958b232001::t_dabb80ce327720 1-65
+scripts/expand-pool.mjs
+  s_1219958b232001::t_1022a2d8211aa0 14-18,70-75,82,115,129,137-138,161,198,202
+scripts/expand-pool.test.mjs
+  s_1219958b232001::t_9f942bd1a5906b 44
+scripts/extract-candidates.mjs
+  s_1219958b232001::t_512d4e646bd2fc 8,39,74
+scripts/finalize-audit-round-from-agents.mjs
+  s_1219958b232001::t_f46201c42cc151 10,28
+scripts/finalize-audit-round.mjs
+  s_1219958b232001::t_7b4dcfe91c7f74 9,42
+scripts/finalize-round.sh
+  s_1219958b232001::t_5de16bf3325434 2-3,9,12,14-15,19-20,24-25
+scripts/finalize-round.test.sh
+  s_1219958b232001::t_a8f7683c7ae2a0 1-32
+scripts/generate-showcase-og.mjs
+  s_1219958b232001::t_93b7abc5e27af3 4-6,9,44-45
+scripts/lib/auto-round.mjs
+  s_1219958b232001::t_ba44b83c5bfaf1 34-45,91-92,95-102,120-122
+scripts/lib/auto-round.test.mjs
+  s_1219958b232001::t_37645262b4fd4b 21-22,28-36,64,85-92,94-121
+scripts/lib/freshness.mjs
+  s_1219958b232001::t_80fbf67736b5e4 1-189
+scripts/lib/git-commit-scope.mjs
+  s_1219958b232001::t_caba2102f3ec3b 1-155
+scripts/lib/git-commit-scope.test.mjs
+  s_1219958b232001::t_36275e4f7616d0 1-260
+scripts/lib/homepage-trust.mjs
+  s_1219958b232001::t_cc2c37b6b9ed56 1-24
+scripts/lib/homepage-trust.test.mjs
+  s_1219958b232001::t_cf1632b4176bac 1-17
+scripts/lib/json-store.mjs
+  s_1219958b232001::t_8e413bdbe1bb76 3-50,86-89
+scripts/lib/json-store.test.mjs
+  s_1219958b232001::t_032e54708d50ce 7,41-59
+scripts/lib/jsonl.mjs
+  s_1219958b232001::t_81d40d239ff9d5 2,31,37-44
+scripts/lib/jsonl.test.mjs
+  s_1219958b232001::t_0717ffc0c8da72 7,40-44
+scripts/lib/merge-review-companion.mjs
+  s_1219958b232001::t_efb7e9340c3496 1-372
+scripts/lib/merge-review-companion.test.mjs
+  s_1219958b232001::t_27679029766316 1-318
+scripts/lib/note-discovery.mjs
+  s_1219958b232001::t_a0b7d5c7789df1 1-51
+scripts/lib/note-id-consumers.test.mjs
+  s_1219958b232001::t_59d54b547275d9 1-63
+scripts/lib/note-id.mjs
+  s_1219958b232001::t_b74dbe34206f8b 1-230
+scripts/lib/note-id.test.mjs
+  s_1219958b232001::t_ddf77860777c79 1-115
+scripts/lib/official-source.mjs
+  s_1219958b232001::t_87c906d78cda55 1-22
+scripts/lib/operations-policy.mjs
+  s_1219958b232001::t_788af4c8f8ed13 1-36
+scripts/lib/operations-policy.test.mjs
+  s_1219958b232001::t_d20450cc964c5f 1-27
+scripts/lib/pipeline-review.mjs
+  s_1219958b232001::t_92dec235f2bc32 1-104
+scripts/lib/pipeline-review.test.mjs
+  s_1219958b232001::t_6a5b641e3c13fa 1-108
+scripts/lib/prompts.test.mjs
+  s_1219958b232001::t_70ccf110c6e630 70-71,75,81-98
+scripts/lib/publish-main.sh
+  s_1219958b232001::t_eb7b17d0a4cf02 1-217
+scripts/lib/queue-lock.py
+  s_1219958b232001::t_eafec02d9fe53c 1-28
+scripts/lib/queue-store.mjs
+  s_1219958b232001::t_3d63e67d13eb5b 1-4,8,11,13-15,18,71,75,77-83,94-101,105-108,118-122,127-140,144-161,174,187,193-253
+scripts/lib/queue-store.test.mjs
+  s_1219958b232001::t_9eb65ee9a42a60 13,17-19,21-50,72-89
+scripts/lib/queue-transaction.mjs
+  s_1219958b232001::t_6a1b9c4eadb8e5 1-634
+scripts/lib/queue-transaction.test.mjs
+  s_1219958b232001::t_c4121b1666cd40 1-622
+scripts/lib/review-receipt.mjs
+  s_1219958b232001::t_c0b3f286bd2af9 1-417
+scripts/lib/review-receipt.test.mjs
+  s_1219958b232001::t_42a3f29ad6a109 1-270
+scripts/lib/round-utils.mjs
+  s_1219958b232001::t_c5dec75d6494ea 58-60
+scripts/lib/round-utils.test.mjs
+  s_1219958b232001::t_c721f8f274b346 45-56
+scripts/lib/taxonomy.mjs
+  s_1219958b232001::t_af7daf13d5e7aa 1-350
+scripts/lib/taxonomy.test.mjs
+  s_1219958b232001::t_48c7a6145ce9d9 1-158
+scripts/lib/verify-remote-head.mjs
+  s_1219958b232001::t_39603e92f30b88 1-247
+scripts/lib/verify-remote-head.test.mjs
+  s_1219958b232001::t_734c791ab7ebfd 1-176
+scripts/pick-audit-batch.mjs
+  s_1219958b232001::t_ae931cb00d802f 10,62
+scripts/pick-batch.mjs
+  s_1219958b232001::t_bca24fb25eda16 10-11,13-14,16,18,21-27,139-171,180-181,235-238,242-267,270,272-303,305-332,337-340,342-344
+scripts/pick-batch.test.mjs
+  s_1219958b232001::t_266edc8dbb4881 2-4,7-8,28-29,60,81-167
+scripts/pipeline-summary.mjs
+  s_1219958b232001::t_81281346809869 37,55-99,125-136,140,142,144-146,159-162,190,194-196,242-244
+scripts/pipeline-summary.test.mjs
+  s_1219958b232001::t_6dbaeaa77b02f0 64-65,70-123
+scripts/prepare-audit-slug.mjs
+  s_1219958b232001::t_4389c4c758a740 10,41
+scripts/promote-candidates.mjs
+  s_1219958b232001::t_b42e31a0b7dc40 3,55-57
+scripts/quality-gate.mjs
+  s_1219958b232001::t_890e75b76eda56 2-4,9-16,65-75,85-90,93,99-100,102-109,141-154,158,168-218,220-244,265,273-274,276-278,282,285-287,289-293,298,301,307,310,316-352
+scripts/quality-gate.test.mjs
+  s_1219958b232001::t_2e76b1ca336ed0 1-127
+scripts/recover-queue-state.mjs
+  s_1219958b232001::t_fed64bf68a63e0 7-8,13-15,57-67,69-70,72-76,79-88,90,93,95-96,98-102,104,107-112,115-127,129-130,146-167,177-185,187,193,200-201,236,243-252,254-256,260-281,288-289
+scripts/recover-queue-state.test.mjs
+  s_1219958b232001::t_031cb5d84e612b 2-4,8,13-14,53,55-58,61,64,68-104,126-209
+scripts/regen-atlas.mjs
+  s_1219958b232001::t_bfb584a0a8c5d1 3-4,6-13,15,17-18,21-22,25-28,31-34,37-38,41-84,86-90,93,95-96,98,100-101,103,105,107-109,111-112,114-146,148-155,157-186,188-192,194,197-204,207-227,229-230,232-249,251-258,261-271
+scripts/regen-atlas.test.mjs
+  s_1219958b232001::t_37caf686fce668 1-98
+scripts/regen-backlinks.mjs
+  s_1219958b232001::t_0f5621e715901e 1-28,31-34,37-39,42-51,54-85,87-113,115-129,131-135,137-142,144-154,157-167,169-170,173-175
+scripts/regen-backlinks.test.mjs
+  s_1219958b232001::t_d915ec85dfeaa6 1-101
+scripts/remark-wikilinks.mjs
+  s_1219958b232001::t_2c37870d0847e0 1-3,8-22,29,31-33,37-43,45,48-61,64,66,71,73,76,78-80,84-96
+scripts/remark-wikilinks.test.mjs
+  s_1219958b232001::t_7ad066ab85c133 1-67
+scripts/round-lock.mjs
+  s_1219958b232001::t_94969767a818b2 3,5-7,10-12,14-17,20-24,27-29,32-150,152-154,158-170,172-174,176-194,196-300,302-372,376-379
+scripts/round-lock.test.mjs
+  s_1219958b232001::t_e9ae4c10f5939e 1-95
+scripts/round.mjs
+  s_1219958b232001::t_fc2ff7dc270ef6 5,8,27-28,44-50,62-68,74-109,200,207,220-225,254,257,262-276,279-288,290-291,299-304,319-347,352,360,364,387,389-400,403,409-410,414,419,422
+scripts/run-pipeline.mjs
+  s_1219958b232001::t_19a0745dbb223c 6-7,15,18,20,29-38,43-53,57,62-68,73,75,78-79,82,88-93,101,105-109,111-114,122,127-128,132,148-150,156-207,214-215,228-229,233-242,254-261,282-292
+scripts/run-pipeline.test.mjs
+  s_1219958b232001::t_0bdf099d244dbf 2-5,7,9,12,14,16,28-35,40,55-68,72-132
+scripts/showcase.test.mjs
+  s_1219958b232001::t_4644be82bbb3b9 15,92-94,108-112
+scripts/sync-and-merge-single.mjs
+  s_1219958b232001::t_3180151e44082a 3,6-9,12,21-40,42-65,68-79,87-92,98,105,121-130,134-256,263-309,315,320-322,326-345,347-356,362-368,370-371,373-389,392-443,448-457,464-465,471-481
+scripts/sync-and-merge-single.test.mjs
+  s_1219958b232001::t_c3306421c98197 2-5,8-14,16-30,32,34-74,78-82,84-230,233-237,239-241,246-302
+scripts/sync-and-merge.sh
+  s_1219958b232001::t_41e615d1627270 5,75-76,82,87
+scripts/sync-written.mjs
+  s_1219958b232001::t_4dbe0d7a1dd7a8 7,14-16,19,21,36,39-51,53-69,71-76
+scripts/verify-ci.mjs
+  s_1219958b232001::t_c37c6997cc1fd0 12,14-15,18-21,24-28,30-77,80-87,98
+scripts/verify-ci.test.mjs
+  s_1219958b232001::t_4d86b7e56e8402 1-79
+src/components/FreshnessBadge.astro
+  s_1219958b232001::t_20e9ccd1afbee1 1-74
+src/components/PageTitle.astro
+  s_1219958b232001::t_4f957788068359 1-12
+src/components/Search.astro
+  s_1219958b232001::t_14a6e02768f54a 1-41
+src/content.config.ts
+  s_1219958b232001::t_c0f905a599784a 2-50,53-63
+src/content/docs/atlas/papers/topic-papers-agents-and-llm-systems-01.md
+  s_1219958b232001::t_62b88b649d0b3a 1-74
+src/content/docs/atlas/papers/topic-papers-ai-safety-and-interpretability-01.md
+  s_1219958b232001::t_a0e2285392f600 1-24
+src/content/docs/atlas/papers/topic-papers-compilers-and-programming-language-theory-01.md
+  s_1219958b232001::t_90887ab531c5b8 1-117
+src/content/docs/atlas/papers/topic-papers-compilers-and-programming-language-theory-02.md
+  s_1219958b232001::t_9f3588bddb3ad6 1-44
+src/content/docs/atlas/papers/topic-papers-computation-theory-and-mathematical-foundations-01.md
+  s_1219958b232001::t_61797cb9cbd7e8 1-24
+src/content/docs/atlas/papers/topic-papers-computer-architecture-01.md
+  s_1219958b232001::t_d3cdcb903475b1 1-24
+src/content/docs/atlas/papers/topic-papers-computer-graphics-and-visualization-01.md
+  s_1219958b232001::t_4b57042e89ab6d 1-76
+src/content/docs/atlas/papers/topic-papers-computer-vision-01.md
+  s_1219958b232001::t_5662a0121e4828 1-26
+src/content/docs/atlas/papers/topic-papers-cryptography-and-security-01.md
+  s_1219958b232001::t_e4f035cde27c51 1-86
+src/content/docs/atlas/papers/topic-papers-databases-01.md
+  s_1219958b232001::t_383e3c81abc57f 1-98
+src/content/docs/atlas/papers/topic-papers-distributed-systems-01.md
+  s_1219958b232001::t_d2a754a61026a4 1-117
+src/content/docs/atlas/papers/topic-papers-distributed-systems-02.md
+  s_1219958b232001::t_7e22d894b09deb 1-21
+src/content/docs/atlas/papers/topic-papers-distributed-training-and-gpu-01.md
+  s_1219958b232001::t_1ff3ce23110786 1-39
+src/content/docs/atlas/papers/topic-papers-formal-methods-01.md
+  s_1219958b232001::t_2221a8e06bff24 1-50
+src/content/docs/atlas/papers/topic-papers-garbage-collection-and-memory-management-01.md
+  s_1219958b232001::t_56b064147d9f40 1-20
+src/content/docs/atlas/papers/topic-papers-generative-models-and-diffusion-01.md
+  s_1219958b232001::t_060b1c93083850 1-25
+src/content/docs/atlas/papers/topic-papers-hci-and-software-engineering-research-01.md
+  s_1219958b232001::t_726504ee9563fa 1-36
+src/content/docs/atlas/papers/topic-papers-information-and-coding-theory-01.md
+  s_1219958b232001::t_04d8b23803158c 1-20
+src/content/docs/atlas/papers/topic-papers-information-retrieval-and-recommendation-01.md
+  s_1219958b232001::t_bf21fd3630b1cc 1-68
+src/content/docs/atlas/papers/topic-papers-machine-learning-systems-01.md
+  s_1219958b232001::t_319e867e6cb30d 1-23
+src/content/docs/atlas/papers/topic-papers-network-protocols-01.md
+  s_1219958b232001::t_3eb44137034eb4 1-78
+src/content/docs/atlas/papers/topic-papers-nlp-foundations-and-scaling-01.md
+  s_1219958b232001::t_85715cc3b29ab4 1-117
+src/content/docs/atlas/papers/topic-papers-nlp-foundations-and-scaling-02.md
+  s_1219958b232001::t_6c2f228b07dd07 1-28
+src/content/docs/atlas/papers/topic-papers-operating-systems-and-cluster-management-01.md
+  s_1219958b232001::t_445cc5f1e7d321 1-117
+src/content/docs/atlas/papers/topic-papers-operating-systems-and-cluster-management-02.md
+  s_1219958b232001::t_6ad10aefbdedae 1-26
+src/content/docs/atlas/papers/topic-papers-reinforcement-learning-01.md
+  s_1219958b232001::t_1519ddd5f367a9 1-23
+src/content/docs/atlas/papers/unclassified-01.md
+  s_1219958b232001::t_45d3549d2cbfb5 1-34
+src/content/docs/atlas/projects/topic-projects-ai-applications-and-agent-platforms-01.md
+  s_1219958b232001::t_1c482c6ad8844c 1-43
+src/content/docs/atlas/projects/topic-projects-ai-browser-automation-01.md
+  s_1219958b232001::t_b3a7a28ad553ee 1-21
+src/content/docs/atlas/projects/topic-projects-animation-01.md
+  s_1219958b232001::t_adb246584a6e1d 1-21
+src/content/docs/atlas/projects/topic-projects-authentication-01.md
+  s_1219958b232001::t_6f22a13f24bba0 1-20
+src/content/docs/atlas/projects/topic-projects-backend-and-apis-01.md
+  s_1219958b232001::t_f1677072659c06 1-71
+src/content/docs/atlas/projects/topic-projects-blockchain-01.md
+  s_1219958b232001::t_f922a047b5b172 1-74
+src/content/docs/atlas/projects/topic-projects-build-tools-and-bundlers-01.md
+  s_1219958b232001::t_1b7c62357b3d1f 1-29
+src/content/docs/atlas/projects/topic-projects-cli-tools-01.md
+  s_1219958b232001::t_4a4d0cc48ab675 1-84
+src/content/docs/atlas/projects/topic-projects-communication-and-media-01.md
+  s_1219958b232001::t_abffd1d09fb76d 1-92
+src/content/docs/atlas/projects/topic-projects-css-and-styling-01.md
+  s_1219958b232001::t_2ebb8e93824516 1-20
+src/content/docs/atlas/projects/topic-projects-data-applications-and-saas-01.md
+  s_1219958b232001::t_a1105e9c445d8d 1-23
+src/content/docs/atlas/projects/topic-projects-data-fetching-and-routing-01.md
+  s_1219958b232001::t_2e8b9e06f2d510 1-19
+src/content/docs/atlas/projects/topic-projects-data-science-and-ai-01.md
+  s_1219958b232001::t_33532e4b460df0 1-59
+src/content/docs/atlas/projects/topic-projects-data-visualization-01.md
+  s_1219958b232001::t_a208cb0b3c81e3 1-69
+src/content/docs/atlas/projects/topic-projects-databases-and-storage-engines-01.md
+  s_1219958b232001::t_38da02a0cab947 1-92
+src/content/docs/atlas/projects/topic-projects-date-and-time-01.md
+  s_1219958b232001::t_b1f497d9833887 1-20
+src/content/docs/atlas/projects/topic-projects-devops-containers-and-operations-01.md
+  s_1219958b232001::t_d783665e62cb2e 1-71
+src/content/docs/atlas/projects/topic-projects-documentation-sites-01.md
+  s_1219958b232001::t_c834bb54bc2cb2 1-19
+src/content/docs/atlas/projects/topic-projects-drag-and-drop-interaction-01.md
+  s_1219958b232001::t_b0a45fcf40d673 1-18
+src/content/docs/atlas/projects/topic-projects-editors-and-rich-text-01.md
+  s_1219958b232001::t_e2fb716d2df04d 1-82
+src/content/docs/atlas/projects/topic-projects-embedded-systems-01.md
+  s_1219958b232001::t_52889581ff7c22 1-69
+src/content/docs/atlas/projects/topic-projects-forms-and-schema-validation-01.md
+  s_1219958b232001::t_682750f9fac3d5 1-20
+src/content/docs/atlas/projects/topic-projects-general-developer-tools-01.md
+  s_1219958b232001::t_4ba91565eb3eb1 1-28
+src/content/docs/atlas/projects/topic-projects-headless-ui-components-01.md
+  s_1219958b232001::t_8e5d423fdf7443 1-17
+src/content/docs/atlas/projects/topic-projects-http-clients-01.md
+  s_1219958b232001::t_c41eca12eaba82 1-20
+src/content/docs/atlas/projects/topic-projects-image-processing-and-canvas-01.md
+  s_1219958b232001::t_32defa8e161426 1-73
+src/content/docs/atlas/projects/topic-projects-infrastructure-utilities-01.md
+  s_1219958b232001::t_6dae8ae343fdc1 1-59
+src/content/docs/atlas/projects/topic-projects-internationalization-01.md
+  s_1219958b232001::t_d3f93e2d8e027c 1-20
+src/content/docs/atlas/projects/topic-projects-markdown-and-parsing-01.md
+  s_1219958b232001::t_512c912ff9d478 1-20
+src/content/docs/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01.md
+  s_1219958b232001::t_64247946c4531f 1-20
+src/content/docs/atlas/projects/topic-projects-mobile-development-01.md
+  s_1219958b232001::t_fde85cedebdeb2 1-25
+src/content/docs/atlas/projects/topic-projects-monitoring-and-time-series-01.md
+  s_1219958b232001::t_fa0ed1d8fbf6dd 1-24
+src/content/docs/atlas/projects/topic-projects-monorepos-and-package-management-01.md
+  s_1219958b232001::t_e503b9f64a21a1 1-20
+src/content/docs/atlas/projects/topic-projects-observability-and-performance-01.md
+  s_1219958b232001::t_53b7815da5c9b6 1-26
+src/content/docs/atlas/projects/topic-projects-orm-and-database-clients-01.md
+  s_1219958b232001::t_29b78512492c00 1-23
+src/content/docs/atlas/projects/topic-projects-state-management-01.md
+  s_1219958b232001::t_160f8eec068960 1-23
+src/content/docs/atlas/projects/topic-projects-terminal-tools-01.md
+  s_1219958b232001::t_c8d9a6f5158a74 1-21
+src/content/docs/atlas/projects/topic-projects-testing-and-verification-01.md
+  s_1219958b232001::t_6bd714303e3b8a 1-21
+src/content/docs/atlas/projects/topic-projects-ui-and-frontend-frameworks-01.md
+  s_1219958b232001::t_a53a6d89a7f4a7 1-28
+src/content/docs/atlas/projects/topic-projects-web-frameworks-01.md
+  s_1219958b232001::t_ff9d907cd7da73 1-29
+src/content/docs/atlas/projects/unclassified-01.md
+  s_1219958b232001::t_fb7484d65fe9e2 1-43
+src/content/docs/index.md
+  s_1219958b232001::t_75d09bf0567c86 97-114,186-187,189
+src/content/docs/papers-atlas.md
+  s_1219958b232001::t_3389f35cd835fe 3,9-10,16-18,21-67,70,72,74,78,80-82
+src/content/docs/papers/3d-gaussian-splatting.md
+  s_1219958b232001::t_52604268cd8e25 162,185,190-192
+src/content/docs/papers/a3c-2016.md
+  s_1219958b232001::t_52d351177101b2 152-153
+src/content/docs/papers/abadi-dpsgd-2016.md
+  s_1219958b232001::t_f99111177341bf 183,185,188-190,192-193
+src/content/docs/papers/activation-patching.md
+  s_1219958b232001::t_99b9e14ecb6d1e 148
+src/content/docs/papers/adam-2014.md
+  s_1219958b232001::t_2f282683f53ba5 157,163
+src/content/docs/papers/afd-disagg-moe.md
+  s_1219958b232001::t_d7cbe438e9afbe 161-162
+src/content/docs/papers/aflgo-2017.md
+  s_1219958b232001::t_dc7c77715d164b 159-163
+src/content/docs/papers/agent-r1-2511.md
+  s_1219958b232001::t_47004a4cc6f6fd 148
+src/content/docs/papers/agent-skill-protocol-2026.md
+  s_1219958b232001::t_af436750976217 153
+src/content/docs/papers/agentless.md
+  s_1219958b232001::t_9340934d889d47 158,162
+src/content/docs/papers/akamai-2002.md
+  s_1219958b232001::t_367b491e3fd2ad 173,177
+src/content/docs/papers/akamai-2010.md
+  s_1219958b232001::t_e43b9a1f882c36 155
+src/content/docs/papers/algol-60.md
+  s_1219958b232001::t_ee6f00b60314dd 180-181,185
+src/content/docs/papers/align-2021.md
+  s_1219958b232001::t_0752172b8b4866 154
+src/content/docs/papers/alpa-2022.md
+  s_1219958b232001::t_f426c90ade38f2 168
+src/content/docs/papers/amber-sigmod-2014.md
+  s_1219958b232001::t_edc07f290c41fd 168-169
+src/content/docs/papers/amoeba-1990.md
+  s_1219958b232001::t_201124af6aaf27 152
+src/content/docs/papers/ampere-architecture-2020.md
+  s_1219958b232001::t_3906dda4977eda 177-217
+src/content/docs/papers/amplification-hell-2014.md
+  s_1219958b232001::t_06b510f11a403f 155
+src/content/docs/papers/andersen-pointer-analysis.md
+  s_1219958b232001::t_e62281ce8d3ca2 172
+src/content/docs/papers/andromeda-2018.md
+  s_1219958b232001::t_4e6fab727a6713 154
+src/content/docs/papers/anserini-2017.md
+  s_1219958b232001::t_6a45116bf372b4 158,170,175
+src/content/docs/papers/apollo-2014.md
+  s_1219958b232001::t_f115253826fc2b 153
+src/content/docs/papers/apron-2009.md
+  s_1219958b232001::t_ccc4cd69931c16 152
+src/content/docs/papers/aries-1992.md
+  s_1219958b232001::t_f844d5b59c7a42 162,170,189-191
+src/content/docs/papers/arrakis-2014.md
+  s_1219958b232001::t_c46128ca6535bc 150
+src/content/docs/papers/art-2013.md
+  s_1219958b232001::t_e93a04aa1910a4 164
+src/content/docs/papers/asterisk.md
+  s_1219958b232001::t_22af0f2a9eaaa9 158-159
+src/content/docs/papers/attention.md
+  s_1219958b232001::t_2afe4c4a7270d1 113,132,137,146,153-154,157,160,173,175,177,179-180,185,191,195,206,210,213-234
+src/content/docs/papers/atzei-eth-attacks-2017.md
+  s_1219958b232001::t_21e8024a732912 150-151
+src/content/docs/papers/aurora.md
+  s_1219958b232001::t_c7fde0b3b16c49 155,157,159,162,165
+src/content/docs/papers/autogen.md
+  s_1219958b232001::t_a4d1d5c42c5e4d 148,153
+src/content/docs/papers/autograph-2004.md
+  s_1219958b232001::t_05804d2878d011 156-157
+src/content/docs/papers/autonomous-driving-waymo-2021.md
+  s_1219958b232001::t_dfed42f06599a2 148
+src/content/docs/papers/av2-video-spec.md
+  s_1219958b232001::t_3d21c788b07663 155
+src/content/docs/papers/avgustinov-codeql-2016.md
+  s_1219958b232001::t_e59dce74576625 154-156
+src/content/docs/papers/awq-2023.md
+  s_1219958b232001::t_963afa8e6e783f 158-159
+src/content/docs/papers/awq.md
+  s_1219958b232001::t_3ba702b77796b5 154
+src/content/docs/papers/azure-storage-2011.md
+  s_1219958b232001::t_edbe33bfd46f6f 155-156
+src/content/docs/papers/b-tree-1972.md
+  s_1219958b232001::t_6650fc5120bef2 136,139,148
+src/content/docs/papers/b4-2013.md
+  s_1219958b232001::t_ff016f4aaa42fc 176
+src/content/docs/papers/backus-fp-1978.md
+  s_1219958b232001::t_814fbe19b83261 170-171
+src/content/docs/papers/badger.md
+  s_1219958b232001::t_f1855f09aeda58 152
+src/content/docs/papers/baraff-witkin-1998-cloth.md
+  s_1219958b232001::t_1c2617792e0ae8 153-154
+src/content/docs/papers/batchnorm-2015.md
+  s_1219958b232001::t_ada3b9343cd9d9 155
+src/content/docs/papers/bayou-1995.md
+  s_1219958b232001::t_4c25ec2bb550e6 157
+src/content/docs/papers/bbr-2017.md
+  s_1219958b232001::t_9bf092102fa52f 152-157
+src/content/docs/papers/beck-tdd.md
+  s_1219958b232001::t_f97680fd4dff41 159
+src/content/docs/papers/belady-1966.md
+  s_1219958b232001::t_2b0bcb24c9aa93 166
+src/content/docs/papers/ben-sasson-stark-2018.md
+  s_1219958b232001::t_6d5aba1cb4b9fc 151-153
+src/content/docs/papers/benchmarking.md
+  s_1219958b232001::t_aaffa4a9961f8b 159-160
+src/content/docs/papers/bentoml.md
+  s_1219958b232001::t_23d8df0c58d0b1 167-168
+src/content/docs/papers/berenson-1995-isolation.md
+  s_1219958b232001::t_0ad7036f7a5e53 181
+src/content/docs/papers/bernstein-1981-cc.md
+  s_1219958b232001::t_c00943e6e46c0b 173
+src/content/docs/papers/bernstein-sphincs-2015.md
+  s_1219958b232001::t_f1a9c94715f149 151-152
+src/content/docs/papers/bert.md
+  s_1219958b232001::t_432949d070423d 167,170,180-181,186
+src/content/docs/papers/bert4rec-2019.md
+  s_1219958b232001::t_0335d4b94d0d1e 158
+src/content/docs/papers/bigbench-2022.md
+  s_1219958b232001::t_25dc681908a23b 155-161
+src/content/docs/papers/bigtable-2006.md
+  s_1219958b232001::t_92dc20aed59c47 155,158,160,167,171-172,175,177,179-180,186,191,193,199,204,207,209
+src/content/docs/papers/bigtable-revisit-2024.md
+  s_1219958b232001::t_ac95f1c72480be 169-170
+src/content/docs/papers/bigtable.md
+  s_1219958b232001::t_4102026cfd70bf 162-187
+src/content/docs/papers/bitcoin.md
+  s_1219958b232001::t_05ea2558eeb94a 145,147,150-151,153-161
+src/content/docs/papers/blip2-2023.md
+  s_1219958b232001::t_2af8bb9a9578e8 164
+src/content/docs/papers/block-max-wand-2011.md
+  s_1219958b232001::t_f168c560fb8c29 155
+src/content/docs/papers/bm25-okapi.md
+  s_1219958b232001::t_38c6bc9ac8f417 156-167
+src/content/docs/papers/bm25.md
+  s_1219958b232001::t_b9c250c3d2535e 152-158
+src/content/docs/papers/bohme-aflfast-2016.md
+  s_1219958b232001::t_a592daa3d6952a 150-153
+src/content/docs/papers/bonawitz-fl-system-2019.md
+  s_1219958b232001::t_c20c9b7912ebea 153
+src/content/docs/papers/boogie-2005.md
+  s_1219958b232001::t_8373f337e2814d 156-167
+src/content/docs/papers/borg-2015.md
+  s_1219958b232001::t_e1a1f82980500d 170-172
+src/content/docs/papers/borg-omega-kube-2016.md
+  s_1219958b232001::t_20f557b8ba2cb7 166-176
+src/content/docs/papers/borg.md
+  s_1219958b232001::t_dba6c10f247005 152,155-156,158,160,162,166
+src/content/docs/papers/bos-kyber-2018.md
+  s_1219958b232001::t_dfd837fd638f0c 151-152
+src/content/docs/papers/bowe-halo-2019.md
+  s_1219958b232001::t_e1b2fdb535206d 168-169
+src/content/docs/papers/brakerski-bgv-2012.md
+  s_1219958b232001::t_56a7bde4262366 157-158
+src/content/docs/papers/branch-prediction-yeh-patt-1991.md
+  s_1219958b232001::t_9cc863552a8c83 152
+src/content/docs/papers/brewer-cap-2000.md
+  s_1219958b232001::t_030380596f37a9 153,161,168
+src/content/docs/papers/brill-moore-2000.md
+  s_1219958b232001::t_9d51c580213ae0 197
+src/content/docs/papers/brooks-no-silver-bullet-1986.md
+  s_1219958b232001::t_14b4bbf168eb57 150
+src/content/docs/papers/btrfs-2013.md
+  s_1219958b232001::t_79664805ffa031 175
+src/content/docs/papers/bunz-bulletproofs-2018.md
+  s_1219958b232001::t_fc970fc16db63c 150-152
+src/content/docs/papers/bvt-1999.md
+  s_1219958b232001::t_4eef3454e2c604 152
+src/content/docs/papers/byzantine-generals-1982.md
+  s_1219958b232001::t_38cc9bf544732c 153,156,158
+src/content/docs/papers/cache-coherence-cxl3-2026.md
+  s_1219958b232001::t_dfc6a33fb2d8ca 145-146
+src/content/docs/papers/cadar-klee-2008.md
+  s_1219958b232001::t_f0f9ca80aa3492 157-162
+src/content/docs/papers/caesar-rexford-2005.md
+  s_1219958b232001::t_5a5f5ad0614b60 190
+src/content/docs/papers/cakeml.md
+  s_1219958b232001::t_804a14593f210d 165
+src/content/docs/papers/calder-2015-anycast-cdn.md
+  s_1219958b232001::t_636a23315d3e8f 168
+src/content/docs/papers/calvin-2012.md
+  s_1219958b232001::t_c18112f4921d14 152
+src/content/docs/papers/calvin.md
+  s_1219958b232001::t_2bb95ed3ae3f70 156-160
+src/content/docs/papers/cap-12-years-later-2012.md
+  s_1219958b232001::t_928feef2bf7005 172
+src/content/docs/papers/capsicum-2010.md
+  s_1219958b232001::t_6ae30fe43784e6 150-151
+src/content/docs/papers/carlini-wagner-2017.md
+  s_1219958b232001::t_c187e071eb3041 150-152
+src/content/docs/papers/cascades-1995.md
+  s_1219958b232001::t_5a68d3666bccdb 162,164,171,173
+src/content/docs/papers/cassandra-2010.md
+  s_1219958b232001::t_8da882202b0ab0 160,162,167,174
+src/content/docs/papers/cassandra-eventual-tradeoff.md
+  s_1219958b232001::t_13dbd8307b33e2 157-158
+src/content/docs/papers/catmull-1974-zbuffer.md
+  s_1219958b232001::t_07d73bf9783343 193-194
+src/content/docs/papers/catmull-clark-1978.md
+  s_1219958b232001::t_9d3c1809ea93c1 155
+src/content/docs/papers/causal-abstraction.md
+  s_1219958b232001::t_aa062f8be74cc7 165-167
+src/content/docs/papers/ccopd-distillation.md
+  s_1219958b232001::t_b6837dd4f656be 153-154
+src/content/docs/papers/cell-be-2005.md
+  s_1219958b232001::t_6612687c9d5f7b 184
+src/content/docs/papers/ceph-2006.md
+  s_1219958b232001::t_d07bccad9d97ec 166
+src/content/docs/papers/certikos-2016.md
+  s_1219958b232001::t_47983f48b6466c 157
+src/content/docs/papers/chaff-2001.md
+  s_1219958b232001::t_e0362a101e4f42 172
+src/content/docs/papers/chain-of-thought.md
+  s_1219958b232001::t_3f8720bda63a2d 168-171
+src/content/docs/papers/chain-replication-2004.md
+  s_1219958b232001::t_78b4587c278d2e 156,158-159
+src/content/docs/papers/chaitin-graph-coloring.md
+  s_1219958b232001::t_889a03aac5e7a6 163,165
+src/content/docs/papers/chandy-lamport-1985.md
+  s_1219958b232001::t_1eccfb78f35344 160,162,166
+src/content/docs/papers/chapar-2016.md
+  s_1219958b232001::t_7e11668a121c6c 152
+src/content/docs/papers/chatbot-arena-2024.md
+  s_1219958b232001::t_4c701ef7d4e100 153-156
+src/content/docs/papers/chaum-1981-mix.md
+  s_1219958b232001::t_10b4b294524dd5 149-151
+src/content/docs/papers/cheon-ckks-2017.md
+  s_1219958b232001::t_36a036e1fe76f7 163-164
+src/content/docs/papers/chillotti-tfhe-2016.md
+  s_1219958b232001::t_2189a97ea96b7d 151
+src/content/docs/papers/chinchilla.md
+  s_1219958b232001::t_28ffc6551e216d 140,146-148
+src/content/docs/papers/chronos-2024.md
+  s_1219958b232001::t_a1067e0bd4a0eb 154
+src/content/docs/papers/chubby.md
+  s_1219958b232001::t_e99919a80d9049 154,160,162,166
+src/content/docs/papers/ciel-universal-execution-engine-distributed-data-flow-2011.md
+  s_1219958b232001::t_2e48fc5526e5da 153-154
+src/content/docs/papers/cimatti-nusmv-2002.md
+  s_1219958b232001::t_cff12d6472768e 152
+src/content/docs/papers/classifier-free-guidance-2022.md
+  s_1219958b232001::t_b76ad1dee5a498 155-159
+src/content/docs/papers/clearml.md
+  s_1219958b232001::t_134230bf6d86a1 176
+src/content/docs/papers/clickhouse.md
+  s_1219958b232001::t_948b82285fbcfb 159-169
+src/content/docs/papers/clip.md
+  s_1219958b232001::t_bc17069a5f7fef 155,160,165,168,174-175,179-181
+src/content/docs/papers/coca-2022.md
+  s_1219958b232001::t_e9d7b855ef05af 168
+src/content/docs/papers/cockroachdb-2020.md
+  s_1219958b232001::t_ada12baf94d20d 161
+src/content/docs/papers/cocondenser-2021.md
+  s_1219958b232001::t_f560fef5b8e10c 166-167
+src/content/docs/papers/codd-1970.md
+  s_1219958b232001::t_508cb2f368c176 164,166,170-171,174,176-178
+src/content/docs/papers/codd-1979-extending.md
+  s_1219958b232001::t_edd34e63bb62f5 162
+src/content/docs/papers/code-as-agent-harness.md
+  s_1219958b232001::t_b2db00cdabf3c1 156,160,167
+src/content/docs/papers/codellama-2023.md
+  s_1219958b232001::t_772a845309fb99 158-161
+src/content/docs/papers/cognitive-load-theory.md
+  s_1219958b232001::t_dc48fe634b8704 156,160
+src/content/docs/papers/colbert-2020.md
+  s_1219958b232001::t_ff2788cb4e8e9c 153,156,161-162,167-168
+src/content/docs/papers/colbert-v2.md
+  s_1219958b232001::t_cfb2c7b598a2bf 155,157
+src/content/docs/papers/columnar-storage-formats-2023.md
+  s_1219958b232001::t_ee0495b9ad1a6d 161-164
+src/content/docs/papers/comer-1979-btree.md
+  s_1219958b232001::t_f7fe8bc7da9ad7 157,161
+src/content/docs/papers/compcert.md
+  s_1219958b232001::t_7c294c54cd9952 163
+src/content/docs/papers/compiler-errors.md
+  s_1219958b232001::t_016507c8e32ef9 183-184
+src/content/docs/papers/compose-future-theorems.md
+  s_1219958b232001::t_2fe5ee7c5f9b41 152-153
+src/content/docs/papers/compositional-incoherence.md
+  s_1219958b232001::t_6ff28a961c1086 152
+src/content/docs/papers/consistency-models-2023.md
+  s_1219958b232001::t_e53642fbd72dac 157-159
+src/content/docs/papers/consistent-hashing-1997.md
+  s_1219958b232001::t_a74cc5508a9b88 159
+src/content/docs/papers/constitutional-ai.md
+  s_1219958b232001::t_96c1bc8b1c0af4 153,159
+src/content/docs/papers/continual-pretrain-survey-2026.md
+  s_1219958b232001::t_9f537b7fde5dbf 148-149
+src/content/docs/papers/contriever-2021.md
+  s_1219958b232001::t_cee62394504820 157-158
+src/content/docs/papers/controlled-channel-attacks-2015.md
+  s_1219958b232001::t_7a11867064b09a 183-184
+src/content/docs/papers/cook-1984-distributed-ray-tracing.md
+  s_1219958b232001::t_6898725d6b5450 159,161-163
+src/content/docs/papers/cook-1986-stochastic-sampling.md
+  s_1219958b232001::t_1cb4d793e93f66 157
+src/content/docs/papers/cook-levin.md
+  s_1219958b232001::t_4c30f246e05ab8 158,164
+src/content/docs/papers/copilot-rct.md
+  s_1219958b232001::t_ef57fe8356f3c4 162
+src/content/docs/papers/cops-2011.md
+  s_1219958b232001::t_cddea65c32b594 155
+src/content/docs/papers/costan-sgx-explained-2016.md
+  s_1219958b232001::t_2feaa2cda924d0 150-155
+src/content/docs/papers/cot.md
+  s_1219958b232001::t_00f80ec0f01d27 168-170,172-175,177-180,182-183
+src/content/docs/papers/coturn.md
+  s_1219958b232001::t_7094c5471e26b0 166-167
+src/content/docs/papers/couchdb.md
+  s_1219958b232001::t_2f2c8cfcd32a8a 159-160
+src/content/docs/papers/cousot-abstract-interpretation.md
+  s_1219958b232001::t_a119ec917229ee 164,168,175-176,183,186,192
+src/content/docs/papers/cousot-halbwachs-polyhedra-1978.md
+  s_1219958b232001::t_8fd8149097fc1b 150-152
+src/content/docs/papers/craq-2009.md
+  s_1219958b232001::t_47daf9b1717276 151
+src/content/docs/papers/crdt-json-2017.md
+  s_1219958b232001::t_12cf141144661d 155-158
+src/content/docs/papers/crdt-json.md
+  s_1219958b232001::t_00e6eb6609cd52 152-163
+src/content/docs/papers/crdt-shapiro-2011.md
+  s_1219958b232001::t_aea7c781e197d0 169-170
+src/content/docs/papers/croft-harper-1979.md
+  s_1219958b232001::t_d89f8d9e91d1de 151-152
+src/content/docs/papers/cryptoverif-2008.md
+  s_1219958b232001::t_e7e0da4a8ec928 150-157
+src/content/docs/papers/csp-hoare-1978.md
+  s_1219958b232001::t_92a8fdb87cfffb 164,166,175
+src/content/docs/papers/cstore-2005.md
+  s_1219958b232001::t_15c2bcbbc6f015 151-153,155-157,159,162,164-169
+src/content/docs/papers/cubical-type-theory-2018.md
+  s_1219958b232001::t_0109e39eda3950 154
+src/content/docs/papers/cuda-streams-concurrency-2018.md
+  s_1219958b232001::t_6a6d29343e94f2 155
+src/content/docs/papers/cuda.md
+  s_1219958b232001::t_9ecf39a51056dd 151-164
+src/content/docs/papers/curless-levoy-1996-tsdf.md
+  s_1219958b232001::t_af2915d8689d87 172-173
+src/content/docs/papers/cutlass-2020.md
+  s_1219958b232001::t_b7b080d0ae3587 157
+src/content/docs/papers/cytoscape-js.md
+  s_1219958b232001::t_27b40faf6a5fc7 177
+src/content/docs/papers/dafny-2010.md
+  s_1219958b232001::t_84e5a980f01446 170-177
+src/content/docs/papers/daian-flash-boys-2020.md
+  s_1219958b232001::t_207548e89f9f0d 159-160
+src/content/docs/papers/danezis-sphinx-2009.md
+  s_1219958b232001::t_375f3ff96fad5b 159-160
+src/content/docs/papers/dapper-2010.md
+  s_1219958b232001::t_b4b69c564b03d3 153
+src/content/docs/papers/dash-numa-1992.md
+  s_1219958b232001::t_b98be590f971ee 158
+src/content/docs/papers/data-lake-management-2019.md
+  s_1219958b232001::t_aa79fdef0f179a 170
+src/content/docs/papers/dataflow-model-2015.md
+  s_1219958b232001::t_46eca3e545ebd1 157-158,161,165-166
+src/content/docs/papers/davis-putnam-1960.md
+  s_1219958b232001::t_51b92fa5b07eaf 155
+src/content/docs/papers/ddim-2020.md
+  s_1219958b232001::t_a0b1d9c201fee4 152,154
+src/content/docs/papers/ddpg-2015.md
+  s_1219958b232001::t_10c0e9e91a4bc1 161-162
+src/content/docs/papers/ddpm.md
+  s_1219958b232001::t_93ece1f28f0cb8 146,153
+src/content/docs/papers/debate-2018.md
+  s_1219958b232001::t_3257d9ffe5f706 158
+src/content/docs/papers/deberta-2021.md
+  s_1219958b232001::t_229ab7042b905e 161-162
+src/content/docs/papers/debevec-1998-rendering-with-natural-light.md
+  s_1219958b232001::t_9a8212d8e4b01b 160
+src/content/docs/papers/decision-transformer-2021.md
+  s_1219958b232001::t_06cdb9945d88bb 150
+src/content/docs/papers/deepfool-2016.md
+  s_1219958b232001::t_1cc20e154c85c3 150-153
+src/content/docs/papers/deepseek-coder-2024.md
+  s_1219958b232001::t_985f7f6ce39f9f 158-160
+src/content/docs/papers/deepseek-r1.md
+  s_1219958b232001::t_0ee1f672bf0de0 152,155,157-159,161-162,164
+src/content/docs/papers/deepspeed-zero.md
+  s_1219958b232001::t_94f29ec9878488 162-163,167
+src/content/docs/papers/deering-1988-triangle-processor.md
+  s_1219958b232001::t_f909896ba7fb9b 153-154
+src/content/docs/papers/delta-lake-2020.md
+  s_1219958b232001::t_865bf260339d8e 151-153
+src/content/docs/papers/demikernel-2021.md
+  s_1219958b232001::t_b342ca6ddf34d2 149
+src/content/docs/papers/demystifying-data-org.md
+  s_1219958b232001::t_4b8385bb3eff63 151
+src/content/docs/papers/denali-2002.md
+  s_1219958b232001::t_de5bca7da93892 151
+src/content/docs/papers/dewitt-gray-1992.md
+  s_1219958b232001::t_38738574540528 151-152,154
+src/content/docs/papers/differential-datalog.md
+  s_1219958b232001::t_7a249f4e8b7d96 155-156,159
+src/content/docs/papers/diffie-hellman-1976.md
+  s_1219958b232001::t_78e5e37537f943 161-178
+src/content/docs/papers/diffie-hellman.md
+  s_1219958b232001::t_aaa0dc66594bba 158-159,161,167-171
+src/content/docs/papers/diffusion-posterior-finite.md
+  s_1219958b232001::t_811c6873267207 150-151
+src/content/docs/papers/dijkstra-1965.md
+  s_1219958b232001::t_97d9eb4491cc1b 161-162,164
+src/content/docs/papers/dijkstra-goto-1968.md
+  s_1219958b232001::t_72177ee0e63225 154-156
+src/content/docs/papers/dijkstra-goto.md
+  s_1219958b232001::t_274c4b88ec7248 3,149
+src/content/docs/papers/dijkstra-shortest-path.md
+  s_1219958b232001::t_50c237b42377de 162
+src/content/docs/papers/dingledine-mixminion-2003.md
+  s_1219958b232001::t_d2cc81359989e5 153-154
+src/content/docs/papers/dino.md
+  s_1219958b232001::t_16ad50c9f25885 150-152
+src/content/docs/papers/disel-2018.md
+  s_1219958b232001::t_b1bfda186a6069 153
+src/content/docs/papers/diskann-2019.md
+  s_1219958b232001::t_dc25eb9bfef170 172
+src/content/docs/papers/disney-brdf-2012.md
+  s_1219958b232001::t_69fce5ba8b86df 166
+src/content/docs/papers/distributed-snapshot-byzantine-2026.md
+  s_1219958b232001::t_5eb83522e3e9c3 153-154
+src/content/docs/papers/distserve.md
+  s_1219958b232001::t_26291c2a31148e 153-156
+src/content/docs/papers/dit.md
+  s_1219958b232001::t_7839eebc31d532 149
+src/content/docs/papers/dlrm-2019.md
+  s_1219958b232001::t_f7b2d917e2438f 173-174
+src/content/docs/papers/dns.md
+  s_1219958b232001::t_39fd70f2720034 156
+src/content/docs/papers/dot-doh-perf-2020.md
+  s_1219958b232001::t_09b503b54aed3a 155
+src/content/docs/papers/double-descent-2019.md
+  s_1219958b232001::t_c1f7b23be3b883 164-165
+src/content/docs/papers/dpll-1962.md
+  s_1219958b232001::t_a3f8e14f82d09f 172
+src/content/docs/papers/dpo.md
+  s_1219958b232001::t_d29b26874312b8 153-159
+src/content/docs/papers/dpr-2020.md
+  s_1219958b232001::t_cc221eb2be9629 153,155,158
+src/content/docs/papers/dqn.md
+  s_1219958b232001::t_b161e9ac7a20e3 146
+src/content/docs/papers/dremel-2010.md
+  s_1219958b232001::t_1580b4e1713327 158-160
+src/content/docs/papers/dremel-decade-2020.md
+  s_1219958b232001::t_5ec69ed407ad06 157-159
+src/content/docs/papers/driller-2016.md
+  s_1219958b232001::t_e1db42c7a04595 157-159
+src/content/docs/papers/drizzle-2017.md
+  s_1219958b232001::t_70770862f6f6df 162
+src/content/docs/papers/dropout-2014.md
+  s_1219958b232001::t_e4c6b8d2ccab57 163-165,167-169
+src/content/docs/papers/dryadlinq-system-general-purpose-distributed-data-parallel-2008.md
+  s_1219958b232001::t_51dd20facb10bd 152-155
+src/content/docs/papers/dstreams-2013.md
+  s_1219958b232001::t_2974c5e5f40e57 157
+src/content/docs/papers/ducas-dilithium-2018.md
+  s_1219958b232001::t_014fb97e10ff3e 154-155
+src/content/docs/papers/duchi-local-dp-2013.md
+  s_1219958b232001::t_32cc5334762368 152,156-157
+src/content/docs/papers/dwork-calibrating-noise-2006.md
+  s_1219958b232001::t_6f04b33b33b2e6 163,165-166
+src/content/docs/papers/dwork-dp-2006.md
+  s_1219958b232001::t_fa937693e74538 168-172
+src/content/docs/papers/dwork-dp-icalp-2006.md
+  s_1219958b232001::t_38548be3d81174 153,156-157,159-160,162-163
+src/content/docs/papers/dwork-our-data-ourselves-2006.md
+  s_1219958b232001::t_4fda3a6f590b0d 178-180,182
+src/content/docs/papers/dynamo-2007.md
+  s_1219958b232001::t_b3a5b31e365ebc 159-166
+src/content/docs/papers/dynamo.md
+  s_1219958b232001::t_48838f74fb2bf1 166,171,184,186-187
+src/content/docs/papers/e-path-egraph.md
+  s_1219958b232001::t_3350c77300290e 150-151
+src/content/docs/papers/e5-2022.md
+  s_1219958b232001::t_f9ea9fb28ad98e 176
+src/content/docs/papers/eagle.md
+  s_1219958b232001::t_7ed415ef3ab92b 155,157
+src/content/docs/papers/earley-parser.md
+  s_1219958b232001::t_6d9097c35347c4 158
+src/content/docs/papers/easycrypt-2011.md
+  s_1219958b232001::t_3de71e05ddc056 159-162
+src/content/docs/papers/ebpf.md
+  s_1219958b232001::t_a86b63aa651219 162-163
+src/content/docs/papers/effect-handlers.md
+  s_1219958b232001::t_d8f49852ffbb40 177
+src/content/docs/papers/efficient-compile-2011.md
+  s_1219958b232001::t_55ee98cd783b32 194-195
+src/content/docs/papers/egglog-incremental-2026.md
+  s_1219958b232001::t_150a583cbe997f 158-159
+src/content/docs/papers/electra-2020.md
+  s_1219958b232001::t_0febe92173796a 155
+src/content/docs/papers/elmo-2018.md
+  s_1219958b232001::t_8ee15964e5aee4 155-157
+src/content/docs/papers/emqx.md
+  s_1219958b232001::t_d11501cd0b6c06 154
+src/content/docs/papers/entity-tracking-states.md
+  s_1219958b232001::t_ee14af9b6dc3f6 150-151
+src/content/docs/papers/erlang-otp.md
+  s_1219958b232001::t_01a663f8dbcd2a 176,178,180,182-186
+src/content/docs/papers/erlingsson-rappor-2014.md
+  s_1219958b232001::t_26620944f7579b 155
+src/content/docs/papers/eros-1999.md
+  s_1219958b232001::t_a85f6af85e2755 156-159
+src/content/docs/papers/eswaran-1976.md
+  s_1219958b232001::t_6a9bb1dda4b1d2 155
+src/content/docs/papers/ethane-2007.md
+  s_1219958b232001::t_ad50c9d5c3945b 165
+src/content/docs/papers/evo-memory-2511.md
+  s_1219958b232001::t_88ad104464891a 151
+src/content/docs/papers/exg-experience-graphs.md
+  s_1219958b232001::t_c985fbdeef807b 150-157
+src/content/docs/papers/exokernel-1995.md
+  s_1219958b232001::t_9c58c4cf92d11f 150-163
+src/content/docs/papers/f4-2014.md
+  s_1219958b232001::t_0fe417c87ff5f8 152
+src/content/docs/papers/fairfuzz-2018.md
+  s_1219958b232001::t_172599dd41c305 164-165
+src/content/docs/papers/faiss-2017.md
+  s_1219958b232001::t_b696ddd07cc11a 169-171,177-179
+src/content/docs/papers/farm-2015.md
+  s_1219958b232001::t_8aaecbee6ddab2 150-151
+src/content/docs/papers/farsite-2002.md
+  s_1219958b232001::t_cab71dea719e8c 152
+src/content/docs/papers/fast-paxos-2006.md
+  s_1219958b232001::t_fff8433997733c 157-162
+src/content/docs/papers/fastertransformer-2021.md
+  s_1219958b232001::t_fc7e5048a59633 152-153,157-158
+src/content/docs/papers/fastlanes-compression.md
+  s_1219958b232001::t_f69dbd24651dec 150-151
+src/content/docs/papers/fermi-architecture-2010.md
+  s_1219958b232001::t_afd3def49c6276 171-181
+src/content/docs/papers/feynman-simulating-physics-1982.md
+  s_1219958b232001::t_f30262ea35c363 150-151
+src/content/docs/papers/fidge-1988.md
+  s_1219958b232001::t_b1af4e0bfce7f5 190,192-193
+src/content/docs/papers/fielding-rest-2000.md
+  s_1219958b232001::t_1412884e1e7692 151-160
+src/content/docs/papers/filip-2021.md
+  s_1219958b232001::t_8db67410cf6d03 150
+src/content/docs/papers/firecracker-2020.md
+  s_1219958b232001::t_775d12e39578ac 154
+src/content/docs/papers/flamingo-2022.md
+  s_1219958b232001::t_8a7d10a2bc86ac 153
+src/content/docs/papers/flash-attention.md
+  s_1219958b232001::t_eaf273ef6ab2d7 160-161,163,166-167,169,174-176,178,180,187-188,190,194
+src/content/docs/papers/flashattention-2.md
+  s_1219958b232001::t_5a93ddcd7e4014 157-159
+src/content/docs/papers/flashattention-3-2024.md
+  s_1219958b232001::t_07e415b21d1ee0 158-159
+src/content/docs/papers/flat-datacenter-storage.md
+  s_1219958b232001::t_7ca2d44e800e2a 156-157
+src/content/docs/papers/flexible-paxos-2016.md
+  s_1219958b232001::t_edbebed2de8e36 156
+src/content/docs/papers/flexsc-2010.md
+  s_1219958b232001::t_56b61b7442002c 156
+src/content/docs/papers/flink-2015.md
+  s_1219958b232001::t_524ca9ad2098b4 161-171
+src/content/docs/papers/flink-snapshots-2015.md
+  s_1219958b232001::t_33acf7b235f340 156-157
+src/content/docs/papers/flp-1985.md
+  s_1219958b232001::t_feefdb8dd01bf6 153
+src/content/docs/papers/flush-reload-2014.md
+  s_1219958b232001::t_95325add9fe383 164-166
+src/content/docs/papers/foreshadow-2018.md
+  s_1219958b232001::t_9105e3c2889131 170-172
+src/content/docs/papers/foundationdb-2021.md
+  s_1219958b232001::t_7a465ba6318330 169
+src/content/docs/papers/foundationdb.md
+  s_1219958b232001::t_7572f2248de855 160-163
+src/content/docs/papers/fpga-hls-2011.md
+  s_1219958b232001::t_ebe3b5e6cb433c 165
+src/content/docs/papers/frangipani-1997.md
+  s_1219958b232001::t_8ce45933f9e241 150-151
+src/content/docs/papers/freedman-psi-2004.md
+  s_1219958b232001::t_247f7c3a08067e 164-165
+src/content/docs/papers/fstar.md
+  s_1219958b232001::t_1d8cf509716ee5 153,167
+src/content/docs/papers/g1-collector.md
+  s_1219958b232001::t_20f857aac9e3de 151
+src/content/docs/papers/gabizon-plonk-2019.md
+  s_1219958b232001::t_b52128b28ccd2b 167-168
+src/content/docs/papers/gadt-pjones.md
+  s_1219958b232001::t_9bf06c9709c22e 159
+src/content/docs/papers/game-semantics-pcf.md
+  s_1219958b232001::t_7dd506cc879d25 159
+src/content/docs/papers/gao-2001-as-relations.md
+  s_1219958b232001::t_d113afd519f4de 143
+src/content/docs/papers/gat-2018.md
+  s_1219958b232001::t_6707b9bfd085a4 177
+src/content/docs/papers/gbrank-2007.md
+  s_1219958b232001::t_934050077d81e2 159-160
+src/content/docs/papers/gcc-webrtc-2016.md
+  s_1219958b232001::t_e590123e79dcef 151-152
+src/content/docs/papers/gcn-2017.md
+  s_1219958b232001::t_b5c4a51286555a 157,159
+src/content/docs/papers/gemini-1.5-2024.md
+  s_1219958b232001::t_8808c0ec1f54b3 162-163
+src/content/docs/papers/gentry-fhe-2009.md
+  s_1219958b232001::t_4fcca49aa7a457 176-177
+src/content/docs/papers/gfs-2003.md
+  s_1219958b232001::t_6defa6068b36ba 153-157
+src/content/docs/papers/gfs.md
+  s_1219958b232001::t_7d1ef411f6915e 162,164,169-171,176,178,181,186,188,190
+src/content/docs/papers/ghost-2021.md
+  s_1219958b232001::t_3e88e42db6f324 157
+src/content/docs/papers/glue-2018.md
+  s_1219958b232001::t_329736f5281152 157
+src/content/docs/papers/gmw-mental-game-1987.md
+  s_1219958b232001::t_f7d8913dd96e4c 161-162
+src/content/docs/papers/goal-misgeneralization-2022.md
+  s_1219958b232001::t_cfabca44664153 150
+src/content/docs/papers/goodfellow-fgsm-2014.md
+  s_1219958b232001::t_6cc12ae1d914f7 151-155
+src/content/docs/papers/google-1998.md
+  s_1219958b232001::t_0339dbaa281006 157-160
+src/content/docs/papers/gpt-3.md
+  s_1219958b232001::t_e68e2ba23b8a43 146-149,151-157,159-162,165-182,184-196
+src/content/docs/papers/gptq-2023.md
+  s_1219958b232001::t_1e6f5bc7b9e931 152-153
+src/content/docs/papers/gpu-cache-coherence-2013.md
+  s_1219958b232001::t_197624d0a35d67 159-161
+src/content/docs/papers/graf-saidi-1997.md
+  s_1219958b232001::t_4bbdc9c61f16bf 154
+src/content/docs/papers/granule.md
+  s_1219958b232001::t_4359b8b9ab942c 161
+src/content/docs/papers/graph-neural-networks.md
+  s_1219958b232001::t_cff3a1c79fa812 150-154
+src/content/docs/papers/graphormer-2021.md
+  s_1219958b232001::t_f68dd3d6f24572 158-159
+src/content/docs/papers/graphrag.md
+  s_1219958b232001::t_ea09e3b81df063 140
+src/content/docs/papers/graphsage-2017.md
+  s_1219958b232001::t_c1aa15949ea7a9 153,155,157
+src/content/docs/papers/gray-1978-notes.md
+  s_1219958b232001::t_f3c591b181a7d1 193-198
+src/content/docs/papers/gray-1981-transaction.md
+  s_1219958b232001::t_2c3c3d0f30af70 154-156,159,164
+src/content/docs/papers/great-swe.md
+  s_1219958b232001::t_a21e0213db7342 159-161
+src/content/docs/papers/grokking-2022.md
+  s_1219958b232001::t_1086fd1e3706e9 158-160
+src/content/docs/papers/gshard-2020.md
+  s_1219958b232001::t_e56758e4f30d82 156-157
+src/content/docs/papers/hacl-star-2017.md
+  s_1219958b232001::t_9f271056c1aa60 162
+src/content/docs/papers/halide.md
+  s_1219958b232001::t_682c83755a9699 161-167
+src/content/docs/papers/haven-2014.md
+  s_1219958b232001::t_c07ebef2a66f3f 152-156
+src/content/docs/papers/haystack-2010.md
+  s_1219958b232001::t_e1cb1a5926a7a7 158-159
+src/content/docs/papers/hdfs-2010.md
+  s_1219958b232001::t_eb72579f7f8fc6 151,153-155
+src/content/docs/papers/heckbert-1986-texture-survey.md
+  s_1219958b232001::t_3b04c1489a8225 164-167
+src/content/docs/papers/hekaton-2013-sigmod.md
+  s_1219958b232001::t_c39df33c4f2e50 150-152
+src/content/docs/papers/helland-2007.md
+  s_1219958b232001::t_fbf4407fa6816e 166-167
+src/content/docs/papers/helm-2022.md
+  s_1219958b232001::t_be8b504953ff82 155-157
+src/content/docs/papers/herlihy-moss-tm.md
+  s_1219958b232001::t_81c30e3e551a76 160
+src/content/docs/papers/hewitt-actor-model.md
+  s_1219958b232001::t_4a432a8a27d85a 151-152
+src/content/docs/papers/hindley-milner.md
+  s_1219958b232001::t_d3d2cb156162dc 149-155,158,161,163,165,167-168,170-172,174,177-179,181,184-186,188-193,195-196,200-201,205,207-209,211-213,215-218,220-221,223-233,235-236,238,240,242,244-245,248-272
+src/content/docs/papers/hnsw-2018.md
+  s_1219958b232001::t_81efd1a800f2e8 160,166-168
+src/content/docs/papers/hoare-csp-1978.md
+  s_1219958b232001::t_600f0c5fc71c81 159-160
+src/content/docs/papers/hoare-monitors-1974.md
+  s_1219958b232001::t_47f55d65f10ae1 164
+src/content/docs/papers/holzmann-spin-1997.md
+  s_1219958b232001::t_71cc67116ce23e 152-154
+src/content/docs/papers/hotspot-server-compiler.md
+  s_1219958b232001::t_7b246ad93524f7 155
+src/content/docs/papers/http-2.md
+  s_1219958b232001::t_8c21d353a0e3cf 166-167,170-181
+src/content/docs/papers/hu-2018-mls-mpm.md
+  s_1219958b232001::t_dd5d2afe6e54c6 168
+src/content/docs/papers/hughes-fp-matters.md
+  s_1219958b232001::t_e8df0ba9ef981f 154
+src/content/docs/papers/hullft-ttft.md
+  s_1219958b232001::t_f4e06139c47c12 154-155
+src/content/docs/papers/hydra-1974.md
+  s_1219958b232001::t_8c48a5a27f586a 158-159
+src/content/docs/papers/hyperkernel-2017.md
+  s_1219958b232001::t_18f4523273f104 151-159
+src/content/docs/papers/ice-rfc-5245.md
+  s_1219958b232001::t_a81f24a1367ded 152-153
+src/content/docs/papers/index-structures.md
+  s_1219958b232001::t_d02139a24040b6 168-169
+src/content/docs/papers/ingres-1976.md
+  s_1219958b232001::t_653021670e9424 151
+src/content/docs/papers/instant-ngp-2022.md
+  s_1219958b232001::t_7aa61221dbf80e 150-151
+src/content/docs/papers/instructgpt.md
+  s_1219958b232001::t_bc0d91a94b0ef0 143,152,154-155
+src/content/docs/papers/io-uring.md
+  s_1219958b232001::t_6cf9523663f380 155,159
+src/content/docs/papers/isabelle-hol-2002.md
+  s_1219958b232001::t_b0e0d98581e0ce 176-191
+src/content/docs/papers/islands-architecture.md
+  s_1219958b232001::t_44a99c7bd27b00 152
+src/content/docs/papers/jacobson-1988.md
+  s_1219958b232001::t_e0496500a86933 162
+src/content/docs/papers/janus-2016.md
+  s_1219958b232001::t_0df8ae1c79ba01 159
+src/content/docs/papers/jemalloc-2006.md
+  s_1219958b232001::t_fc1c8dbfa1d7eb 155-156
+src/content/docs/papers/jensen-1996-photon-mapping.md
+  s_1219958b232001::t_1287d628295d08 157-158
+src/content/docs/papers/jupiter-2015.md
+  s_1219958b232001::t_c8c3f55a3ec4aa 156
+src/content/docs/papers/k3s.md
+  s_1219958b232001::t_92ff2e2366e571 152
+src/content/docs/papers/kafka-2011.md
+  s_1219958b232001::t_bcf7f9cef247ef 164
+src/content/docs/papers/kafka.md
+  s_1219958b232001::t_d9cac53797ed75 164-182
+src/content/docs/papers/kahn-natural-semantics.md
+  s_1219958b232001::t_5fa1abe8fb9dac 167
+src/content/docs/papers/kairouz-advances-fl-2019.md
+  s_1219958b232001::t_629f973647ef0a 166
+src/content/docs/papers/kajiya-1986-rendering-equation.md
+  s_1219958b232001::t_deea7b23970ab5 177,181,188-192
+src/content/docs/papers/kami-2017.md
+  s_1219958b232001::t_ea16686496af86 164-165
+src/content/docs/papers/karger-1997-consistent-hashing.md
+  s_1219958b232001::t_585575582f7111 155
+src/content/docs/papers/karis-2014-ue4-pbr.md
+  s_1219958b232001::t_9b8956637d14cb 156
+src/content/docs/papers/kazhdan-2006-poisson-recon.md
+  s_1219958b232001::t_b08888ee749077 158-161
+src/content/docs/papers/kildall-dataflow.md
+  s_1219958b232001::t_34fc23d1839288 162,165,173-175,185
+src/content/docs/papers/kim-rowhammer-2014.md
+  s_1219958b232001::t_de73c53e66e7ac 151-153
+src/content/docs/papers/knrm-2017.md
+  s_1219958b232001::t_f5e2886ee17123 150
+src/content/docs/papers/knuth-literate-1984.md
+  s_1219958b232001::t_407614dcccabec 168-169
+src/content/docs/papers/knuth-taocp.md
+  s_1219958b232001::t_83fa19e3c43407 152,155
+src/content/docs/papers/kocher-spectre-2019.md
+  s_1219958b232001::t_06f66d66d657ba 151-156
+src/content/docs/papers/krishnamurthy-1999-http11.md
+  s_1219958b232001::t_e1079d16cb2ddd 182
+src/content/docs/papers/kustomize.md
+  s_1219958b232001::t_007c09d8a6889e 173
+src/content/docs/papers/kv-cache-budget-2026.md
+  s_1219958b232001::t_a216b5c2cf115a 149-151
+src/content/docs/papers/kv-fold.md
+  s_1219958b232001::t_8aabae58ccc4d7 151-153
+src/content/docs/papers/label-smoothing-2016.md
+  s_1219958b232001::t_02f1337a8e3f3e 168
+src/content/docs/papers/lacuna-program-holes.md
+  s_1219958b232001::t_26420314dafe71 153-154
+src/content/docs/papers/lakehouse-2021.md
+  s_1219958b232001::t_65aa9eeaa9070f 152-154
+src/content/docs/papers/lambda-calculus.md
+  s_1219958b232001::t_c3e15a0562f15d 146-152,154-165,167,169-171,173-177,179-184,186-199,202-203,205-210
+src/content/docs/papers/lambdarank-2006.md
+  s_1219958b232001::t_7a99f1dad4a27b 156
+src/content/docs/papers/lamport-1978.md
+  s_1219958b232001::t_d799a046d052d0 158-210
+src/content/docs/papers/lamport-bakery.md
+  s_1219958b232001::t_76ff1b971a3de0 169-171
+src/content/docs/papers/lamport-time-clocks-1978.md
+  s_1219958b232001::t_fb1642d0e8cb14 158-161
+src/content/docs/papers/lamport-tla-1994.md
+  s_1219958b232001::t_330b931ae9be53 178,184
+src/content/docs/papers/lampson-hints-1983.md
+  s_1219958b232001::t_0ce5fddf7a93e2 154-155
+src/content/docs/papers/lampson-hints.md
+  s_1219958b232001::t_0b15f7dfa0965f 168,170
+src/content/docs/papers/landin-secd.md
+  s_1219958b232001::t_585a2039850d08 172
+src/content/docs/papers/lean-prover.md
+  s_1219958b232001::t_85f693176c0af7 153
+src/content/docs/papers/lee-keystone-2020.md
+  s_1219958b232001::t_13baf227f97312 153-154
+src/content/docs/papers/leis-2015-optimizers.md
+  s_1219958b232001::t_9407241e6145e3 155-156,159
+src/content/docs/papers/lerner-seminal.md
+  s_1219958b232001::t_39be6ac57dae6e 163
+src/content/docs/papers/li-2018-redner.md
+  s_1219958b232001::t_bb57e96ef17b39 148
+src/content/docs/papers/li-t-closeness-2007.md
+  s_1219958b232001::t_aee87016b21cd6 158-159
+src/content/docs/papers/lindholm-2008-tesla.md
+  s_1219958b232001::t_e13e22aa838f71 172-173
+src/content/docs/papers/linear-attention-still-2026.md
+  s_1219958b232001::t_9fbc463e415f46 150
+src/content/docs/papers/linear-scan-reg-alloc.md
+  s_1219958b232001::t_1d651372a87e1f 173
+src/content/docs/papers/linear-types.md
+  s_1219958b232001::t_83e70874de73bc 189
+src/content/docs/papers/linux-kernel.md
+  s_1219958b232001::t_8f60022adb272b 158-164
+src/content/docs/papers/lion-2023.md
+  s_1219958b232001::t_7390f2f504a19e 159
+src/content/docs/papers/lipp-meltdown-2018.md
+  s_1219958b232001::t_e0c9e84848955d 152-157
+src/content/docs/papers/liquid-types.md
+  s_1219958b232001::t_4b1d5f39ea1df8 162
+src/content/docs/papers/liskov-abstraction-1974.md
+  s_1219958b232001::t_4ac8ed2ba98970 158-159
+src/content/docs/papers/liu-2020-dlss.md
+  s_1219958b232001::t_ff7de24e5000fe 158
+src/content/docs/papers/llama.md
+  s_1219958b232001::t_91da4e1d3dc0de 158,160,164-167
+src/content/docs/papers/llava.md
+  s_1219958b232001::t_456f00309267e0 184-188
+src/content/docs/papers/llm-int8-2022.md
+  s_1219958b232001::t_661c886d9abe27 177,179-180
+src/content/docs/papers/llm-wiki-retrieval-reasoning.md
+  s_1219958b232001::t_cd707a239930b6 144-145
+src/content/docs/papers/llmsurgeon-data-mixture.md
+  s_1219958b232001::t_0aec35e8156216 154-155
+src/content/docs/papers/llvm.md
+  s_1219958b232001::t_5a361de2453863 184-239
+src/content/docs/papers/lmdb-2011.md
+  s_1219958b232001::t_5e518b545547b4 157
+src/content/docs/papers/locus-1980.md
+  s_1219958b232001::t_8917f3295f6666 166
+src/content/docs/papers/logoot-2010.md
+  s_1219958b232001::t_8324992497ed8a 153
+src/content/docs/papers/lomo-modality.md
+  s_1219958b232001::t_66f3556ba326af 151-152
+src/content/docs/papers/longformer-2020.md
+  s_1219958b232001::t_0ffd91837c946e 153-154
+src/content/docs/papers/loong-doc-mt.md
+  s_1219958b232001::t_c16d5c70a2dd27 150-151
+src/content/docs/papers/loop-1987-subdivision.md
+  s_1219958b232001::t_2d118fa3688f21 172
+src/content/docs/papers/lora.md
+  s_1219958b232001::t_200a90aadaebd2 163-168
+src/content/docs/papers/lsm-tree-1996.md
+  s_1219958b232001::t_39103ad41e61ba 146,148,150,158-159
+src/content/docs/papers/mach-vm-1987.md
+  s_1219958b232001::t_0182eb260578ce 155-156
+src/content/docs/papers/machanavajjhala-l-diversity-2007.md
+  s_1219958b232001::t_9e929529656666 162-163
+src/content/docs/papers/macklin-2014-position-based-fluids.md
+  s_1219958b232001::t_7a3f97ce4af89c 150-152
+src/content/docs/papers/macklin-2016-xpbd.md
+  s_1219958b232001::t_ace1265849e055 178-179
+src/content/docs/papers/madry-pgd-2017.md
+  s_1219958b232001::t_c1e8a963feae7f 151-154
+src/content/docs/papers/mae.md
+  s_1219958b232001::t_21c808d45c768f 145
+src/content/docs/papers/magic3d-2023.md
+  s_1219958b232001::t_08a66a9862a19a 157
+src/content/docs/papers/mahajan-2002-bgp-misconfig.md
+  s_1219958b232001::t_3baa28b43ece57 170
+src/content/docs/papers/making-smart-contracts-smarter.md
+  s_1219958b232001::t_65300e6b9011dd 160-161
+src/content/docs/papers/mamba.md
+  s_1219958b232001::t_f535ca2e4042b8 150-154
+src/content/docs/papers/mapreduce.md
+  s_1219958b232001::t_4f25213ca8b16c 156,158,160,162,164-167,172-173,175-176,178,181,183,186-187,191,193-194
+src/content/docs/papers/maron-kuhns-1960.md
+  s_1219958b232001::t_f7ae1fa8560130 153
+src/content/docs/papers/mattern-1989.md
+  s_1219958b232001::t_65051d55a92a62 158
+src/content/docs/papers/maxwell-architecture-2014.md
+  s_1219958b232001::t_c3923664a07b9c 162-167
+src/content/docs/papers/mccarthy-lisp.md
+  s_1219958b232001::t_952f136c551e25 156,175
+src/content/docs/papers/mcfarling-bp-1993.md
+  s_1219958b232001::t_6a256277e5e8ce 171
+src/content/docs/papers/mcmahan-fedavg-2017.md
+  s_1219958b232001::t_f3c40e18297324 190
+src/content/docs/papers/mcp-spec.md
+  s_1219958b232001::t_7541c710833ba4 153-154
+src/content/docs/papers/mcs-locks-1991.md
+  s_1219958b232001::t_560a701e5ceb61 151
+src/content/docs/papers/meagher-1982-octree.md
+  s_1219958b232001::t_da1c08c163103b 178-179
+src/content/docs/papers/medcase-fhir.md
+  s_1219958b232001::t_26128ce44ad3aa 155-156
+src/content/docs/papers/megastore-2011.md
+  s_1219958b232001::t_01136512ba26c5 164-165
+src/content/docs/papers/megatron-core-moe-2026.md
+  s_1219958b232001::t_3e817da0e07697 150
+src/content/docs/papers/megatron-lm.md
+  s_1219958b232001::t_f49cee793f4a58 153-165
+src/content/docs/papers/mem-ft-lora.md
+  s_1219958b232001::t_83c45396cf895f 154-155
+src/content/docs/papers/memcached-fb-2013.md
+  s_1219958b232001::t_9c2431877c37db 153
+src/content/docs/papers/mencius-2008.md
+  s_1219958b232001::t_18bbfb9d79630d 164
+src/content/docs/papers/mesa-optimization-2019.md
+  s_1219958b232001::t_f3ef4ac6b064e8 153
+src/content/docs/papers/mesos-2011.md
+  s_1219958b232001::t_d376b571ea3615 155-159
+src/content/docs/papers/mesos.md
+  s_1219958b232001::t_7e5aa6741d27a5 150-153
+src/content/docs/papers/metagpt.md
+  s_1219958b232001::t_6d3a373ddba013 171-174
+src/content/docs/papers/metcalfe-boggs-1976.md
+  s_1219958b232001::t_def5c94afc3925 161-162
+src/content/docs/papers/michael-scott-queue.md
+  s_1219958b232001::t_95d3f7baba8bd4 171-173
+src/content/docs/papers/milestone-phase-order.md
+  s_1219958b232001::t_45e54f3563f7ef 153-154
+src/content/docs/papers/mills-ntp-1991.md
+  s_1219958b232001::t_5b9679139c9e74 161
+src/content/docs/papers/millwheel-2013.md
+  s_1219958b232001::t_a95891e5ab8075 151
+src/content/docs/papers/milner-pi-calculus.md
+  s_1219958b232001::t_272be3c0be03f1 166-172
+src/content/docs/papers/milvus-2021.md
+  s_1219958b232001::t_c34c93e6582fba 154-155
+src/content/docs/papers/mine-octagon-2006.md
+  s_1219958b232001::t_1e3f58b6444621 159-161
+src/content/docs/papers/minisat-2003.md
+  s_1219958b232001::t_1c0a7d754033a5 172
+src/content/docs/papers/mips-1981.md
+  s_1219958b232001::t_2d45c08082747d 178
+src/content/docs/papers/mira-rubric.md
+  s_1219958b232001::t_82371aea57af12 155-156
+src/content/docs/papers/mironov-renyi-dp-2017.md
+  s_1219958b232001::t_1c95dc5d4d8a8c 154,157,159
+src/content/docs/papers/mixture-of-experts.md
+  s_1219958b232001::t_52a0e340f9f108 145,149
+src/content/docs/papers/mixup-2018.md
+  s_1219958b232001::t_5cf5071468b7ca 152
+src/content/docs/papers/mlflow.md
+  s_1219958b232001::t_049c77dbd5bc9e 166-168
+src/content/docs/papers/mlir.md
+  s_1219958b232001::t_8f02029bd97572 151,153,159
+src/content/docs/papers/mmlu-2021.md
+  s_1219958b232001::t_2638b45fba33c6 154,156
+src/content/docs/papers/mode-connectivity-2018.md
+  s_1219958b232001::t_47eef2bc462da9 154
+src/content/docs/papers/moesi-cache-coherence-1986.md
+  s_1219958b232001::t_f9244a046db770 176-177,179-180
+src/content/docs/papers/mogul-1995-persistent-http.md
+  s_1219958b232001::t_6f2f4b363e002f 157
+src/content/docs/papers/monaghan-1992-sph.md
+  s_1219958b232001::t_8443276a768f11 155-158
+src/content/docs/papers/monetdb-x100-2005.md
+  s_1219958b232001::t_5229cfe0dc63bf 154-156,160-162
+src/content/docs/papers/morsel-driven-2014.md
+  s_1219958b232001::t_eb257093a71b6a 170-171
+src/content/docs/papers/mptcp-2012.md
+  s_1219958b232001::t_05c6f15cbd1097 167
+src/content/docs/papers/mqtt-s-2008.md
+  s_1219958b232001::t_6381abd991b032 156-160
+src/content/docs/papers/ms-marco-2016.md
+  s_1219958b232001::t_01b918c919c68e 163,165
+src/content/docs/papers/mueller-2007-pbd.md
+  s_1219958b232001::t_79e1dfe4d94c59 159-160
+src/content/docs/papers/mueller-2022-instant-ngp.md
+  s_1219958b232001::t_70315273ce5a50 161
+src/content/docs/papers/muller-2007-pbd.md
+  s_1219958b232001::t_75f1ec379907db 162-163
+src/content/docs/papers/multics-1965.md
+  s_1219958b232001::t_6caced0e365beb 156-159
+src/content/docs/papers/muzero.md
+  s_1219958b232001::t_160033786829f1 150-152
+src/content/docs/papers/mvcc.md
+  s_1219958b232001::t_0edd5f81b7bfc2 170-174
+src/content/docs/papers/naiad-2013-sosp.md
+  s_1219958b232001::t_69de6c6d971542 144
+src/content/docs/papers/nelson-oppen-1979.md
+  s_1219958b232001::t_e15083fbac84f7 177
+src/content/docs/papers/nerf-2020.md
+  s_1219958b232001::t_213e5bf74ae0fb 150,153,161
+src/content/docs/papers/nestedkv.md
+  s_1219958b232001::t_9e52bd6cb3ed68 150-151
+src/content/docs/papers/netkat-2014.md
+  s_1219958b232001::t_c7aef928d684be 154
+src/content/docs/papers/neumann-2015-large-joins.md
+  s_1219958b232001::t_fd82ad4c79653d 158,162,164
+src/content/docs/papers/neumf-2017.md
+  s_1219958b232001::t_1d756d9ef8f6f5 154
+src/content/docs/papers/newcombe-2011-kinectfusion.md
+  s_1219958b232001::t_2b777a254e59be 159-160
+src/content/docs/papers/newsome-taintcheck-2005.md
+  s_1219958b232001::t_c08d7c8f5b5db2 172-179
+src/content/docs/papers/nfs-1985.md
+  s_1219958b232001::t_66ac524064250f 165
+src/content/docs/papers/ngabonziza-trustzone-2016.md
+  s_1219958b232001::t_ec454e215ff3d1 156-157
+src/content/docs/papers/nickolls-dally-2010-cuda-era.md
+  s_1219958b232001::t_9272b40ce3b390 188
+src/content/docs/papers/nimier-david-2019-mitsuba2.md
+  s_1219958b232001::t_772edeb76acb77 152-155
+src/content/docs/papers/nix.md
+  s_1219958b232001::t_de2b2129516709 152,154-155
+src/content/docs/papers/nlp-agent-2024.md
+  s_1219958b232001::t_baa0162f325edc 145
+src/content/docs/papers/nlp-rag-2024.md
+  s_1219958b232001::t_f491b640f58ffa 146
+src/content/docs/papers/no-silver-bullet.md
+  s_1219958b232001::t_9072f872bf6c2c 158
+src/content/docs/papers/ntk-2018.md
+  s_1219958b232001::t_2d5ff8d05b2bd8 151-152
+src/content/docs/papers/nvm.md
+  s_1219958b232001::t_cc154585b978a4 153
+src/content/docs/papers/oauth-2.1-rfc.md
+  s_1219958b232001::t_eb918ddd1f3473 184-185
+src/content/docs/papers/observability.md
+  s_1219958b232001::t_1447ace8a67d08 159-160
+src/content/docs/papers/okapi-bm25-1994.md
+  s_1219958b232001::t_fb1ae563026f1a 159-175
+src/content/docs/papers/omega-2013.md
+  s_1219958b232001::t_3d391189f8608e 159,161
+src/content/docs/papers/on-demand-container-loading.md
+  s_1219958b232001::t_a257678660e77d 152-153
+src/content/docs/papers/openhands.md
+  s_1219958b232001::t_2dbd5c346736d5 151-152
+src/content/docs/papers/opensearch.md
+  s_1219958b232001::t_b28982d139e38c 166-167
+src/content/docs/papers/optuna.md
+  s_1219958b232001::t_068ad362731d88 157
+src/content/docs/papers/orca-2022.md
+  s_1219958b232001::t_206768468869cd 150-152
+src/content/docs/papers/oscar-int2-kv.md
+  s_1219958b232001::t_7a751225a48cac 151-155
+src/content/docs/papers/ot-1989.md
+  s_1219958b232001::t_6bf23471f4daf7 159-163
+src/content/docs/papers/owens-2007-gpgpu-survey.md
+  s_1219958b232001::t_8c6dece6631a11 165-171
+src/content/docs/papers/p4-2014.md
+  s_1219958b232001::t_ef86a246ce3193 160
+src/content/docs/papers/paged-attention-vllm.md
+  s_1219958b232001::t_fc53b824f327c3 151-154
+src/content/docs/papers/paged-attention.md
+  s_1219958b232001::t_5ae41370bbe418 155-169
+src/content/docs/papers/pagerank-1998.md
+  s_1219958b232001::t_ba987be924fe3e 153
+src/content/docs/papers/paillier-1999.md
+  s_1219958b232001::t_360cfc93952194 165-166
+src/content/docs/papers/panel.md
+  s_1219958b232001::t_0e61d033aced0e 164
+src/content/docs/papers/park-2019-deepsdf.md
+  s_1219958b232001::t_fc0f0aadb9c774 160
+src/content/docs/papers/parnas-information-hiding-1972.md
+  s_1219958b232001::t_f9839d4167e4d4 150-151
+src/content/docs/papers/parti-2022.md
+  s_1219958b232001::t_761e19bbdb3dc1 160-161
+src/content/docs/papers/partial-evaluation-jones.md
+  s_1219958b232001::t_f762a716386ddd 141
+src/content/docs/papers/pascal-architecture-2016.md
+  s_1219958b232001::t_40dede1321e987 169-176
+src/content/docs/papers/passnet-graph-compiler.md
+  s_1219958b232001::t_21d5e5f9f460bd 154-155
+src/content/docs/papers/pastry-2001.md
+  s_1219958b232001::t_ec0fd6048d3d7e 156
+src/content/docs/papers/paxos-1998.md
+  s_1219958b232001::t_39600083ba5782 163-227
+src/content/docs/papers/paxos-simple-2001.md
+  s_1219958b232001::t_c77cc90a9bd5d3 157,163,168
+src/content/docs/papers/paxos.md
+  s_1219958b232001::t_2f002c0464bbf2 161,176-184
+src/content/docs/papers/pbft-1999.md
+  s_1219958b232001::t_8d6336444d0bcc 151-152
+src/content/docs/papers/performer-2020.md
+  s_1219958b232001::t_4385adaf726e45 158
+src/content/docs/papers/perlin-1985-noise.md
+  s_1219958b232001::t_418a7e0a640acd 160
+src/content/docs/papers/persistent-memory-2014.md
+  s_1219958b232001::t_8fe95b6b28fd76 155
+src/content/docs/papers/phong-1975.md
+  s_1219958b232001::t_e15ccb3d365a61 164
+src/content/docs/papers/piccolo-building-fast-distributed-programs-with-partitioned-2010.md
+  s_1219958b232001::t_b35927f35454ff 163-165
+src/content/docs/papers/piotrowska-loopix-2017.md
+  s_1219958b232001::t_e6afbc1689d710 154-155
+src/content/docs/papers/pivot-tracing-2015.md
+  s_1219958b232001::t_73891550b1aefd 158
+src/content/docs/papers/plan9-1995.md
+  s_1219958b232001::t_45be7256f7c6bd 158-159
+src/content/docs/papers/plenoxels-2022.md
+  s_1219958b232001::t_6d19116c68dd4f 167
+src/content/docs/papers/pnuts-2008.md
+  s_1219958b232001::t_aa2504babb16dd 156-157
+src/content/docs/papers/pointnet.md
+  s_1219958b232001::t_d9bdf16bc06619 162
+src/content/docs/papers/ppc-preplan.md
+  s_1219958b232001::t_0b58e6db2c55d4 173
+src/content/docs/papers/ppo.md
+  s_1219958b232001::t_35b3160d1df5c3 154,156-157,162-164
+src/content/docs/papers/prefix-cache-policy-2026.md
+  s_1219958b232001::t_d663e5bc40eba6 150-153
+src/content/docs/papers/product-quantization-2011.md
+  s_1219958b232001::t_e56de0fb02d56f 158,160
+src/content/docs/papers/program-comprehension-fmri.md
+  s_1219958b232001::t_450e1caf786631 155
+src/content/docs/papers/program-shepherding-2002.md
+  s_1219958b232001::t_1599ad856ccdd6 150-151
+src/content/docs/papers/projection-bench.md
+  s_1219958b232001::t_92487e6cfa74f1 178-179
+src/content/docs/papers/prolog-colmerauer.md
+  s_1219958b232001::t_9ae1bb8b2e99f2 169
+src/content/docs/papers/prototypical-networks-2017.md
+  s_1219958b232001::t_5ce47a6db8eda1 162
+src/content/docs/papers/ps-li-2014.md
+  s_1219958b232001::t_853f541d513a4d 160
+src/content/docs/papers/push-pull-frp.md
+  s_1219958b232001::t_874ee3728c6440 150
+src/content/docs/papers/pypy-tracing-jit.md
+  s_1219958b232001::t_f21639df29a8d5 166,168
+src/content/docs/papers/quantum-supremacy-2019.md
+  s_1219958b232001::t_e54dfe3304d8af 162-163
+src/content/docs/papers/quic.md
+  s_1219958b232001::t_d5c0de47ef9a2f 154,163,166,168
+src/content/docs/papers/r-bgp-2007.md
+  s_1219958b232001::t_6db52f00c762d5 154-159
+src/content/docs/papers/rabin-ot-1981.md
+  s_1219958b232001::t_b3803c3d208185 158-159
+src/content/docs/papers/raft-2014.md
+  s_1219958b232001::t_dbf08a523a13e2 153-156
+src/content/docs/papers/raft.md
+  s_1219958b232001::t_73272ca53bc137 150-214
+src/content/docs/papers/rag-lewis-2020.md
+  s_1219958b232001::t_7630c259174518 141,143-146,153
+src/content/docs/papers/ranknet-2005.md
+  s_1219958b232001::t_a8492f8dba061f 150
+src/content/docs/papers/ray-2018.md
+  s_1219958b232001::t_8076e13068672e 161-164
+src/content/docs/papers/rcu-2001.md
+  s_1219958b232001::t_3abed956e839b2 153-154
+src/content/docs/papers/react-agent.md
+  s_1219958b232001::t_073ac85f34bef6 169-178
+src/content/docs/papers/react-server-components.md
+  s_1219958b232001::t_1fb0f67b338bff 165-166
+src/content/docs/papers/react.md
+  s_1219958b232001::t_79f6439e8aec3a 169-189
+src/content/docs/papers/reasoning-with-sampling.md
+  s_1219958b232001::t_768d7ea3a5cb6b 156-158
+src/content/docs/papers/red-1993.md
+  s_1219958b232001::t_329ff642f3e544 155-158
+src/content/docs/papers/reed-onion-routing-1998.md
+  s_1219958b232001::t_47820255d0613d 159-160
+src/content/docs/papers/reed-solomon-1960.md
+  s_1219958b232001::t_18b92ee8ce4f2b 153
+src/content/docs/papers/reflexion.md
+  s_1219958b232001::t_243e2b9199c2b5 172,174,176
+src/content/docs/papers/regev-lwe-2005.md
+  s_1219958b232001::t_0aff579281939c 151-153
+src/content/docs/papers/reps-ifds.md
+  s_1219958b232001::t_95e3af560d2ae9 156
+src/content/docs/papers/resnet.md
+  s_1219958b232001::t_edc9522724a4bf 169,171-173,178,181
+src/content/docs/papers/resolution-diagnostics-llm.md
+  s_1219958b232001::t_6ea02a11c169a7 150-151
+src/content/docs/papers/rest-fielding-2000.md
+  s_1219958b232001::t_e1ec865eedfd94 163,175-176
+src/content/docs/papers/reward-hacking.md
+  s_1219958b232001::t_8fb538cc6e856c 158-161
+src/content/docs/papers/reyes-1987.md
+  s_1219958b232001::t_fab1af3c2bbd56 150-152
+src/content/docs/papers/reynolds-definitional-interpreters.md
+  s_1219958b232001::t_94b11b3a7dd59e 170
+src/content/docs/papers/rfc-3833-dns-threats.md
+  s_1219958b232001::t_a40676539a31d1 153
+src/content/docs/papers/rim-latent-reasoning.md
+  s_1219958b232001::t_b01f2127b391ba 150-151
+src/content/docs/papers/risc-i-1981.md
+  s_1219958b232001::t_8b49c98ceef564 158
+src/content/docs/papers/rlhf-christiano.md
+  s_1219958b232001::t_3e6f407aee01cc 142,148-150
+src/content/docs/papers/rm3-2001.md
+  s_1219958b232001::t_0558286848bbce 156
+src/content/docs/papers/roberta-2019.md
+  s_1219958b232001::t_4f9d0f54c08841 158
+src/content/docs/papers/rocksdb-2017.md
+  s_1219958b232001::t_0d6cfcae3d6f50 155,157,160
+src/content/docs/papers/rocksdb-lsm.md
+  s_1219958b232001::t_f22928bf1faf57 171-172,174,185-188
+src/content/docs/papers/ron-2001.md
+  s_1219958b232001::t_54413b17a401ef 148
+src/content/docs/papers/row-polymorphism-remy.md
+  s_1219958b232001::t_c9f28ff4c24cee 151
+src/content/docs/papers/rrf-cormack-2009.md
+  s_1219958b232001::t_011c13e3f84bd7 150
+src/content/docs/papers/rsa.md
+  s_1219958b232001::t_26032ce115a359 152,154,159,162-163,165-168,170-171
+src/content/docs/papers/rtp-llm-alibaba.md
+  s_1219958b232001::t_069b901632b64d 151-152
+src/content/docs/papers/rwkv-2023.md
+  s_1219958b232001::t_3c58d9d3547dcc 157
+src/content/docs/papers/sac-2018.md
+  s_1219958b232001::t_a6cce8bae9bc34 155
+src/content/docs/papers/salsa-adapton.md
+  s_1219958b232001::t_d48e06f5b425c4 155-157
+src/content/docs/papers/salsify-2018.md
+  s_1219958b232001::t_9d1594cb8199cb 154-155
+src/content/docs/papers/salton-vsm-1975.md
+  s_1219958b232001::t_3b85890d297b0d 158,164
+src/content/docs/papers/saltzer-1984-e2e.md
+  s_1219958b232001::t_a86099aa064a76 157
+src/content/docs/papers/saltzer-schroeder-1975.md
+  s_1219958b232001::t_aec8580761846a 161,163,167,169-171,174
+src/content/docs/papers/sam.md
+  s_1219958b232001::t_4831b011d9ac1d 160-161,165
+src/content/docs/papers/sanctum-2016.md
+  s_1219958b232001::t_996636d824deae 161-163
+src/content/docs/papers/sarathi-serve.md
+  s_1219958b232001::t_10c5d2091382cc 152
+src/content/docs/papers/scads-database-2008.md
+  s_1219958b232001::t_707aaaf5d78458 147
+src/content/docs/papers/scala-macros.md
+  s_1219958b232001::t_d14aa9ef3f906a 149
+src/content/docs/papers/scaling-hnsws-antirez.md
+  s_1219958b232001::t_82140ce79783b9 150-151
+src/content/docs/papers/scaling-laws.md
+  s_1219958b232001::t_44fb96a1ef7ded 138,141,148
+src/content/docs/papers/schgen-pcb.md
+  s_1219958b232001::t_6a3c79601ad016 155-156
+src/content/docs/papers/scott-strachey-denotational.md
+  s_1219958b232001::t_353e8e9610054f 153
+src/content/docs/papers/sctp-multipath-2006.md
+  s_1219958b232001::t_3c76cadfe0da24 150
+src/content/docs/papers/securify-2018.md
+  s_1219958b232001::t_4d6cc0a344ae2b 160-161
+src/content/docs/papers/sel4-2009.md
+  s_1219958b232001::t_326abd1efa2992 161-162
+src/content/docs/papers/self-adjusting.md
+  s_1219958b232001::t_33f1c3bfab4b92 156-158
+src/content/docs/papers/self-consistency-2022.md
+  s_1219958b232001::t_98ec31a5d03069 157-163
+src/content/docs/papers/self-evolving-agents-survey.md
+  s_1219958b232001::t_764df60b63b69b 164
+src/content/docs/papers/self-evolving-recsys-2602.md
+  s_1219958b232001::t_1d5b8a808734a0 150
+src/content/docs/papers/self-evolving-software-agents.md
+  s_1219958b232001::t_65f1ac848d22c6 151
+src/content/docs/papers/self-rag-2023.md
+  s_1219958b232001::t_38f580eac8220d 163-164
+src/content/docs/papers/self-refine-2023.md
+  s_1219958b232001::t_c4b7b25e5d431c 162-163
+src/content/docs/papers/self-trained-verification.md
+  s_1219958b232001::t_981e6ea806438a 153-154
+src/content/docs/papers/selinger-1979.md
+  s_1219958b232001::t_43949ac9fcd65f 151,165
+src/content/docs/papers/selinux-2001.md
+  s_1219958b232001::t_c9bddf24629031 154-155
+src/content/docs/papers/seq2seq-2014.md
+  s_1219958b232001::t_bdca69bbb94fea 158
+src/content/docs/papers/server-sent-events.md
+  s_1219958b232001::t_621a7e0fc36fbb 162
+src/content/docs/papers/sglang-2024.md
+  s_1219958b232001::t_445865cb93cd22 158-163
+src/content/docs/papers/sgx-2013.md
+  s_1219958b232001::t_5fe5a62c5690be 160-162,164-166
+src/content/docs/papers/shannon-1948.md
+  s_1219958b232001::t_4f9cfabbbaad8b 153
+src/content/docs/papers/shellcheck.md
+  s_1219958b232001::t_f77bc6e8d12cac 194
+src/content/docs/papers/shokri-mia-2017.md
+  s_1219958b232001::t_0525678b68780e 153-154
+src/content/docs/papers/shor-1994.md
+  s_1219958b232001::t_9185074811d3e4 150-152
+src/content/docs/papers/sillito-questions.md
+  s_1219958b232001::t_71fc015ac0177c 154
+src/content/docs/papers/silo-oltp-2013.md
+  s_1219958b232001::t_04578da5bcd31d 150
+src/content/docs/papers/silt-2011.md
+  s_1219958b232001::t_97c9bf70e4c4c5 151-152
+src/content/docs/papers/simhash-charikar-2002.md
+  s_1219958b232001::t_f682c2d813ce3b 161
+src/content/docs/papers/simula-67.md
+  s_1219958b232001::t_2d5c6a2ecad142 192
+src/content/docs/papers/skcc-skill-compiler.md
+  s_1219958b232001::t_24e217e4e49578 145
+src/content/docs/papers/skeen-3pc-1981.md
+  s_1219958b232001::t_16bd35953548c0 151-152
+src/content/docs/papers/skill-sd-self-distillation.md
+  s_1219958b232001::t_c58a364c0a8e4f 151
+src/content/docs/papers/skip-list-1990.md
+  s_1219958b232001::t_a620d083f87569 160-161
+src/content/docs/papers/skip-locked-postgres-9.5.md
+  s_1219958b232001::t_9a180ea7efec6a 181
+src/content/docs/papers/slab-1994.md
+  s_1219958b232001::t_b5d1e502edd5d2 152
+src/content/docs/papers/slam-microsoft.md
+  s_1219958b232001::t_837a1c4dc5ed97 162-163
+src/content/docs/papers/sleeper-agents.md
+  s_1219958b232001::t_48a306d50373b1 152,155
+src/content/docs/papers/smalltalk-80.md
+  s_1219958b232001::t_513a0c588c6cc9 175
+src/content/docs/papers/snowflake-2016.md
+  s_1219958b232001::t_071f35092451dd 155-158,160-161
+src/content/docs/papers/snowflake.md
+  s_1219958b232001::t_1b13d3f93201aa 150-161
+src/content/docs/papers/soft-updates-1999.md
+  s_1219958b232001::t_f1d8ee4d60d07a 160
+src/content/docs/papers/soltesz-2007.md
+  s_1219958b232001::t_9d4917e9076d89 152-153
+src/content/docs/papers/sophia-2023.md
+  s_1219958b232001::t_5984cfcf78a38d 152-153
+src/content/docs/papers/sorkine-2004-laplacian-editing.md
+  s_1219958b232001::t_1771b9f1fe40d7 150
+src/content/docs/papers/souffle-datalog.md
+  s_1219958b232001::t_782746230f4676 167-168,170,172
+src/content/docs/papers/soundness-bench.md
+  s_1219958b232001::t_e5871aee627824 157-158
+src/content/docs/papers/spann-2021.md
+  s_1219958b232001::t_c66d30a89267e6 159
+src/content/docs/papers/spanner-2012.md
+  s_1219958b232001::t_6de110591de7d6 148,151,154,163,166,169,171-172,178,188,194,197,201-202
+src/content/docs/papers/spanner.md
+  s_1219958b232001::t_f3f559411f9d36 158,166,180-182
+src/content/docs/papers/spark-rdd.md
+  s_1219958b232001::t_ad0abbdee22dfc 176-179
+src/content/docs/papers/splade-2021.md
+  s_1219958b232001::t_612c777863fe21 149,151
+src/content/docs/papers/ssa.md
+  s_1219958b232001::t_deff760f5902b4 169-215
+src/content/docs/papers/stable-diffusion.md
+  s_1219958b232001::t_142f101df59fe2 160-176
+src/content/docs/papers/stainless-2017.md
+  s_1219958b232001::t_eb54d787fb6bd1 147
+src/content/docs/papers/standard-ml.md
+  s_1219958b232001::t_6c5013550c72d1 166-167,169,171-172,174-176,179-180,182,184-186,189-190
+src/content/docs/papers/starcoder-2023.md
+  s_1219958b232001::t_9dee7b59888fe0 164
+src/content/docs/papers/starrocks.md
+  s_1219958b232001::t_94b6071a437c42 150
+src/content/docs/papers/stm-shavit-touitou.md
+  s_1219958b232001::t_41b6d3bb84b065 155-156
+src/content/docs/papers/stonebraker-2010-sqlnosql.md
+  s_1219958b232001::t_462977fa4a17e3 155
+src/content/docs/papers/stylegan2-2020.md
+  s_1219958b232001::t_78ed0b98e39235 155
+src/content/docs/papers/sulsky-1994-mpm.md
+  s_1219958b232001::t_e5e1ac83822cfb 149
+src/content/docs/papers/swe-agent.md
+  s_1219958b232001::t_e63935ce834bdf 141,144,147-148,150,152-153
+src/content/docs/papers/swe-bench.md
+  s_1219958b232001::t_c47dcb2189c348 151
+src/content/docs/papers/sweeney-k-anonymity-2002.md
+  s_1219958b232001::t_422640fa5e8282 169-171
+src/content/docs/papers/sycl-cpp-2020.md
+  s_1219958b232001::t_22653e915909d4 160-168
+src/content/docs/papers/sycophancy-2023.md
+  s_1219958b232001::t_09f29b89a3cde3 174-175
+src/content/docs/papers/system-design.md
+  s_1219958b232001::t_57a7b43f3745c3 173-174
+src/content/docs/papers/system-f-reynolds-1974.md
+  s_1219958b232001::t_7e78794092e2ca 156
+src/content/docs/papers/system-r-1976.md
+  s_1219958b232001::t_b638339fa3092b 151,166
+src/content/docs/papers/szegedy-adversarial-2013.md
+  s_1219958b232001::t_fc51105f75b2a1 151-155
+src/content/docs/papers/t0-2021.md
+  s_1219958b232001::t_680033f6dc9e13 175
+src/content/docs/papers/t5.md
+  s_1219958b232001::t_da39f328128a5a 157
+src/content/docs/papers/tamarin-2012.md
+  s_1219958b232001::t_3b10c2e7dbca3c 159-160
+src/content/docs/papers/tao-2013.md
+  s_1219958b232001::t_a77e2b912984c0 150
+src/content/docs/papers/taso-2019.md
+  s_1219958b232001::t_4dbe48c18d6ffc 150
+src/content/docs/papers/taubin-1995-mesh-smoothing.md
+  s_1219958b232001::t_15abf65a61f16c 148-149
+src/content/docs/papers/tcp.md
+  s_1219958b232001::t_57fae51a15be9b 155,160,172-173,183,187-193
+src/content/docs/papers/td3-2018.md
+  s_1219958b232001::t_d2843d187b6b3d 150-152
+src/content/docs/papers/tensorflow-osdi-2016.md
+  s_1219958b232001::t_77000ae6711c24 147,149
+src/content/docs/papers/tensorrt-llm-2023.md
+  s_1219958b232001::t_038c8aff973981 153-160
+src/content/docs/papers/tfidf-classic.md
+  s_1219958b232001::t_1ed599e90d6bb6 153-154
+src/content/docs/papers/the-os-1968.md
+  s_1219958b232001::t_f2b6ffe04c8a1c 169,171
+src/content/docs/papers/theorems-for-free.md
+  s_1219958b232001::t_71c8c6fd565e6c 170
+src/content/docs/papers/thrust-2010.md
+  s_1219958b232001::t_21ead8d54de27d 154
+src/content/docs/papers/tigerbeetle.md
+  s_1219958b232001::t_3ba58bbe5cf3ac 160,166
+src/content/docs/papers/tls-1.3.md
+  s_1219958b232001::t_0810c453e7c111 153-181
+src/content/docs/papers/tomasulo-1967.md
+  s_1219958b232001::t_c8147a5a303962 157-160
+src/content/docs/papers/toolformer.md
+  s_1219958b232001::t_8b3269dab23c19 151-159
+src/content/docs/papers/tor-2004.md
+  s_1219958b232001::t_a9476a40fcda60 147,149-154
+src/content/docs/papers/tradeoff-analysis.md
+  s_1219958b232001::t_6667e1e4876b6d 164-165
+src/content/docs/papers/transformer-2017.md
+  s_1219958b232001::t_3cf738581aa91a 150-158
+src/content/docs/papers/transformer-xl-2019.md
+  s_1219958b232001::t_c860a298091160 158,160-161
+src/content/docs/papers/transformer.md
+  s_1219958b232001::t_5a49e873b3217d 150-180
+src/content/docs/papers/tree-of-attention-2026.md
+  s_1219958b232001::t_8d639b599f1ffe 150
+src/content/docs/papers/trill-2014.md
+  s_1219958b232001::t_c1afe8ad62529f 180-181
+src/content/docs/papers/triton-2019.md
+  s_1219958b232001::t_a6189385705543 166,168
+src/content/docs/papers/triton-llm.md
+  s_1219958b232001::t_049cec6b9c4962 157
+src/content/docs/papers/trustrank-2004.md
+  s_1219958b232001::t_ea5b9bacf60525 151
+src/content/docs/papers/turchin-supercompilation.md
+  s_1219958b232001::t_4c989af9592a82 157
+src/content/docs/papers/turing-1936.md
+  s_1219958b232001::t_f46dddf0b548e4 167-198
+src/content/docs/papers/turing-architecture-2018.md
+  s_1219958b232001::t_2f80ca39dd1b87 167-170
+src/content/docs/papers/tvm-2018.md
+  s_1219958b232001::t_4685dccf7fab9d 170-172
+src/content/docs/papers/tvm.md
+  s_1219958b232001::t_f059d5c4ed3348 172-173
+src/content/docs/papers/ucb-cs186-fa2024.md
+  s_1219958b232001::t_4dca5f5c0f282d 144
+src/content/docs/papers/unified-memory-2014.md
+  s_1219958b232001::t_06c9c6918ed55b 153-154
+src/content/docs/papers/v-system-1988.md
+  s_1219958b232001::t_3f859f557c94b3 162
+src/content/docs/papers/vall-e-2023.md
+  s_1219958b232001::t_3ac6a784218a8d 160
+src/content/docs/papers/vamp-verisoft-2006.md
+  s_1219958b232001::t_86cb038b157e73 155-156
+src/content/docs/papers/veach-1995-mis.md
+  s_1219958b232001::t_b760c9b023134d 160-164
+src/content/docs/papers/vega-lite.md
+  s_1219958b232001::t_33408d6505645a 182
+src/content/docs/papers/vellvm.md
+  s_1219958b232001::t_e873735693d10b 151
+src/content/docs/papers/velox-meta-2022.md
+  s_1219958b232001::t_291778022b8a69 166
+src/content/docs/papers/vericache.md
+  s_1219958b232001::t_d46b4a1acc3a30 150
+src/content/docs/papers/verus-specgym.md
+  s_1219958b232001::t_9bd9dd74805a73 154-155
+src/content/docs/papers/videomla.md
+  s_1219958b232001::t_01aee5d1c4dd18 150-151
+src/content/docs/papers/vit.md
+  s_1219958b232001::t_699e850475931d 154,159,165
+src/content/docs/papers/vllm.md
+  s_1219958b232001::t_11201e967e8de1 151-178
+src/content/docs/papers/vogels-eventual-2009.md
+  s_1219958b232001::t_25b39c7b8859c4 159,161
+src/content/docs/papers/volcano-1994.md
+  s_1219958b232001::t_a6ed59cd709329 157,159,162,164,168,171,173-174
+src/content/docs/papers/volcano.md
+  s_1219958b232001::t_916f4deac54882 180,183,187-188
+src/content/docs/papers/volta-architecture-2017.md
+  s_1219958b232001::t_613a0f24bad4a1 159-169
+src/content/docs/papers/vr-1988.md
+  s_1219958b232001::t_60eecc15a37463 150,152
+src/content/docs/papers/vr-revisited-2012.md
+  s_1219958b232001::t_6f85db6f5e828a 164
+src/content/docs/papers/vst-2014.md
+  s_1219958b232001::t_83a5c9972d020f 156-157
+src/content/docs/papers/wadler-prettier.md
+  s_1219958b232001::t_14e37584f39f48 165,168-169
+src/content/docs/papers/wandb.md
+  s_1219958b232001::t_6f43ef1ceedb96 167
+src/content/docs/papers/wco-joins-relational-2020.md
+  s_1219958b232001::t_7eefe354fa0f4a 157-158
+src/content/docs/papers/websocket-rfc-6455.md
+  s_1219958b232001::t_da97d1f31498b3 156
+src/content/docs/papers/whisper-2022.md
+  s_1219958b232001::t_71706574faa295 162-163
+src/content/docs/papers/whitted-1980.md
+  s_1219958b232001::t_afd93241976fd0 181
+src/content/docs/papers/why3-2013.md
+  s_1219958b232001::t_b3b92f7c31fd08 175
+src/content/docs/papers/williams-1983-mipmap.md
+  s_1219958b232001::t_4b95f553764874 150
+src/content/docs/papers/wireguard-2017.md
+  s_1219958b232001::t_320bd3aa681319 160,162-163
+src/content/docs/papers/word2vec.md
+  s_1219958b232001::t_647b358e19d05c 150-151
+src/content/docs/papers/xla-compiler.md
+  s_1219958b232001::t_35ab47abc497b5 173-174,179
+src/content/docs/papers/yao-garbled-circuits-1986.md
+  s_1219958b232001::t_8b26d5160c04bf 150-152
+src/content/docs/papers/z3-2008.md
+  s_1219958b232001::t_6a4542c045ad52 171,173,175-176,181
+src/content/docs/papers/zab-2011.md
+  s_1219958b232001::t_92ef7b8d7a695c 163
+src/content/docs/papers/zero-2020.md
+  s_1219958b232001::t_5651f1dd2bef0c 157-158
+src/content/docs/papers/zk-snark.md
+  s_1219958b232001::t_a0bf6da85d9769 147-159
+src/content/docs/papers/zombie-agents-2602.md
+  s_1219958b232001::t_3bef05ef200573 143
+src/content/docs/projects-atlas.md
+  s_1219958b232001::t_b2068909501709 3,9-10,16-18,21-85,88,90,92,96,98-100
+src/content/docs/projects/3d-force-graph.md
+  s_1219958b232001::t_32af7dc39fe1af 173-177
+src/content/docs/projects/aave-v3.md
+  s_1219958b232001::t_cbc82ad981ac3d 165
+src/content/docs/projects/actix-web.md
+  s_1219958b232001::t_371e77fef461c4 180-186
+src/content/docs/projects/affine.md
+  s_1219958b232001::t_63de54e375afdc 155,157-160,162
+src/content/docs/projects/aframe.md
+  s_1219958b232001::t_6823d010e9322e 200-203
+src/content/docs/projects/age.md
+  s_1219958b232001::t_0eb50eee50fc46 153
+src/content/docs/projects/aichat.md
+  s_1219958b232001::t_d9b46c971f140f 153
+src/content/docs/projects/aider.md
+  s_1219958b232001::t_51526614dac5cb 194-196
+src/content/docs/projects/altair.md
+  s_1219958b232001::t_d58fc0e5026f88 180-190
+src/content/docs/projects/amcharts5.md
+  s_1219958b232001::t_3a0441d12fcb32 159-160
+src/content/docs/projects/anime.md
+  s_1219958b232001::t_02097104c69a45 173
+src/content/docs/projects/ann-benchmarks.md
+  s_1219958b232001::t_69251520cf1f53 170
+src/content/docs/projects/ansible.md
+  s_1219958b232001::t_110e87237f067c 171-185
+src/content/docs/projects/ant-media-server.md
+  s_1219958b232001::t_3b91c86b096bc7 179-180
+src/content/docs/projects/anthropic-cookbook.md
+  s_1219958b232001::t_b97267bedcb89f 170-175
+src/content/docs/projects/antv-f2.md
+  s_1219958b232001::t_671c74017e36ae 159
+src/content/docs/projects/antv-g2.md
+  s_1219958b232001::t_d6ff156a0c539c 170,176
+src/content/docs/projects/antv-g6.md
+  s_1219958b232001::t_3edfd5e18d9384 168-169
+src/content/docs/projects/antv-x6.md
+  s_1219958b232001::t_a6b52cf4436230 169-170
+src/content/docs/projects/anytype-ts.md
+  s_1219958b232001::t_0abd849735e93c 175-176
+src/content/docs/projects/apexcharts.md
+  s_1219958b232001::t_548ec505368815 166
+src/content/docs/projects/appflowy.md
+  s_1219958b232001::t_19b7738728ce56 175-176
+src/content/docs/projects/appleseed.md
+  s_1219958b232001::t_80a7079e042436 174-175
+src/content/docs/projects/ar-js.md
+  s_1219958b232001::t_4393f471531990 190-191
+src/content/docs/projects/aragon.md
+  s_1219958b232001::t_23bd444154c213 156
+src/content/docs/projects/arangodb.md
+  s_1219958b232001::t_7130be6a250ceb 190
+src/content/docs/projects/ardour.md
+  s_1219958b232001::t_b0735ffaeda620 161-162
+src/content/docs/projects/arduino-cli.md
+  s_1219958b232001::t_3ead25d7a1db57 153,155-158,164
+src/content/docs/projects/argilla.md
+  s_1219958b232001::t_960cd94f9b95e6 171-172
+src/content/docs/projects/argocd.md
+  s_1219958b232001::t_daa58c8c95597d 164,175
+src/content/docs/projects/arrow-rs.md
+  s_1219958b232001::t_93f1299fb412a4 150
+src/content/docs/projects/arrow.md
+  s_1219958b232001::t_7dc953f60eb746 154-155
+src/content/docs/projects/asdf.md
+  s_1219958b232001::t_d56a14d1a468bd 163-169
+src/content/docs/projects/aseprite.md
+  s_1219958b232001::t_3e976748192839 176-177
+src/content/docs/projects/assimp.md
+  s_1219958b232001::t_3a4b9c4985d2d4 196-198
+src/content/docs/projects/asterisk.md
+  s_1219958b232001::t_572b0e2a43f509 163-165
+src/content/docs/projects/astro.md
+  s_1219958b232001::t_ef2e9c26dcdc9b 200-220
+src/content/docs/projects/astronvim.md
+  s_1219958b232001::t_beb9fb57aa5a13 153
+src/content/docs/projects/asynq.md
+  s_1219958b232001::t_f8a09962027157 154
+src/content/docs/projects/atom.md
+  s_1219958b232001::t_894f02c70da441 192
+src/content/docs/projects/aubio.md
+  s_1219958b232001::t_d36acb4ae74469 158
+src/content/docs/projects/audacity.md
+  s_1219958b232001::t_410d744fd5b3c0 157-158
+src/content/docs/projects/automerge.md
+  s_1219958b232001::t_5401060d36138b 156,158
+src/content/docs/projects/aws-spot-best-practices.md
+  s_1219958b232001::t_a516ca815ac159 163-164
+src/content/docs/projects/axios.md
+  s_1219958b232001::t_c0c0d64cdbb87d 168
+src/content/docs/projects/axolotl.md
+  s_1219958b232001::t_f4193588d87dac 169
+src/content/docs/projects/axum.md
+  s_1219958b232001::t_4e1c539b1cc800 185-211
+src/content/docs/projects/babylonjs.md
+  s_1219958b232001::t_8e826bdb45da8c 166-170
+src/content/docs/projects/backstage.md
+  s_1219958b232001::t_9bf5a4aa9d18b5 193
+src/content/docs/projects/badger.md
+  s_1219958b232001::t_af313a0a1b414c 172
+src/content/docs/projects/balancer.md
+  s_1219958b232001::t_8634f54a15121d 162
+src/content/docs/projects/bentoml.md
+  s_1219958b232001::t_38526f106b4b10 186
+src/content/docs/projects/bevy.md
+  s_1219958b232001::t_835a1a10f978f4 178-181,183,185-187
+src/content/docs/projects/bigbluebutton.md
+  s_1219958b232001::t_960b92ceae6732 170
+src/content/docs/projects/billboard-js.md
+  s_1219958b232001::t_3ece167a20a1c4 156-157
+src/content/docs/projects/blender.md
+  s_1219958b232001::t_3fe49a1ed2860a 174-194
+src/content/docs/projects/boa-engine.md
+  s_1219958b232001::t_0a36d488749dde 175
+src/content/docs/projects/bokeh.md
+  s_1219958b232001::t_e214f79e6e3f87 168-173
+src/content/docs/projects/bookstack.md
+  s_1219958b232001::t_be313bab36217a 174-175
+src/content/docs/projects/botpress.md
+  s_1219958b232001::t_fa0a9417dece93 156-159
+src/content/docs/projects/box2d.md
+  s_1219958b232001::t_2ce14d5717c323 158-161
+src/content/docs/projects/boxen.md
+  s_1219958b232001::t_7122f4539a4e86 199-201
+src/content/docs/projects/bubbletea.md
+  s_1219958b232001::t_9639ab99a09f4e 167
+src/content/docs/projects/buildah.md
+  s_1219958b232001::t_87df6ce2c0e952 176-178
+src/content/docs/projects/buildkit.md
+  s_1219958b232001::t_4ee6bf0460dae1 184-188
+src/content/docs/projects/buildroot.md
+  s_1219958b232001::t_4bf85f2188a9c0 163,166
+src/content/docs/projects/bullet.md
+  s_1219958b232001::t_95e54b1ae24fb2 159-160
+src/content/docs/projects/bun.md
+  s_1219958b232001::t_1d8b3a59f54e8a 185,187,193,197
+src/content/docs/projects/caddy.md
+  s_1219958b232001::t_c28b6102109a72 181,185,192
+src/content/docs/projects/cal-com.md
+  s_1219958b232001::t_97cfce63157502 153
+src/content/docs/projects/calico.md
+  s_1219958b232001::t_326b5bf6662fd0 157
+src/content/docs/projects/cannon-es.md
+  s_1219958b232001::t_7070b02caf6c49 175-176
+src/content/docs/projects/capacitor.md
+  s_1219958b232001::t_7610a6373df824 166-172
+src/content/docs/projects/capnproto.md
+  s_1219958b232001::t_4ed228bc810b71 156
+src/content/docs/projects/cassandra.md
+  s_1219958b232001::t_81f39caea32236 163-177
+src/content/docs/projects/celery.md
+  s_1219958b232001::t_c947b51c24e33f 162,164
+src/content/docs/projects/cesium.md
+  s_1219958b232001::t_51b3a6903d0b07 166-169
+src/content/docs/projects/changesets.md
+  s_1219958b232001::t_1e110c9e1d1e63 156
+src/content/docs/projects/chaos-mesh.md
+  s_1219958b232001::t_be6288c6844c4c 159
+src/content/docs/projects/chart-js.md
+  s_1219958b232001::t_588559908c4a80 173-181
+src/content/docs/projects/chartist.md
+  s_1219958b232001::t_5a2a1daa0cef98 152-156
+src/content/docs/projects/chroma.md
+  s_1219958b232001::t_c76156ce309f49 140,142
+src/content/docs/projects/cilium.md
+  s_1219958b232001::t_c8d8f984e04fde 152
+src/content/docs/projects/circuitpython.md
+  s_1219958b232001::t_487f26eb5bea2f 187
+src/content/docs/projects/claude-agent-sdk.md
+  s_1219958b232001::t_02c879e5430b1b 192-193
+src/content/docs/projects/claude-code.md
+  s_1219958b232001::t_8ae22606d14b29 164-168,173,183,185-187
+src/content/docs/projects/clearml.md
+  s_1219958b232001::t_012699a64befc0 200-201
+src/content/docs/projects/clickhouse.md
+  s_1219958b232001::t_544c033a85a151 175
+src/content/docs/projects/cline.md
+  s_1219958b232001::t_acee5eb9cefd9f 176-179
+src/content/docs/projects/cmsis-nn.md
+  s_1219958b232001::t_c37de71901a2c6 181-182
+src/content/docs/projects/cockroach.md
+  s_1219958b232001::t_26682b88f0b79f 155-156
+src/content/docs/projects/cockroachdb.md
+  s_1219958b232001::t_a65d63df33780f 161-162
+src/content/docs/projects/cocos2d-x.md
+  s_1219958b232001::t_833f2eae1079f6 160-172
+src/content/docs/projects/code-server.md
+  s_1219958b232001::t_1b5c0200ea9864 150-156
+src/content/docs/projects/codemirror.md
+  s_1219958b232001::t_f604daa297f522 159-162,164,166,170-171,173-175,179
+src/content/docs/projects/coder.md
+  s_1219958b232001::t_b73f31c5b161bc 190
+src/content/docs/projects/collabora-online.md
+  s_1219958b232001::t_f1fbcdabb89c03 152
+src/content/docs/projects/colmap.md
+  s_1219958b232001::t_6fa1690a5df94b 171-172
+src/content/docs/projects/colossal-ai.md
+  s_1219958b232001::t_0a6032777ef54e 155-156
+src/content/docs/projects/comfyui.md
+  s_1219958b232001::t_db45a14cf9f9f4 174-185
+src/content/docs/projects/conform.md
+  s_1219958b232001::t_25539181aa5693 173-174
+src/content/docs/projects/connect-rpc.md
+  s_1219958b232001::t_8620f262480fbf 157-163
+src/content/docs/projects/containerd.md
+  s_1219958b232001::t_58ba657a0b9017 169-178
+src/content/docs/projects/continue.md
+  s_1219958b232001::t_c53fed9182a031 159,161,163-166
+src/content/docs/projects/conversations.md
+  s_1219958b232001::t_7a57fff6bc7e31 167
+src/content/docs/projects/coqui-tts.md
+  s_1219958b232001::t_5e910210314707 163-169
+src/content/docs/projects/cordova.md
+  s_1219958b232001::t_d14421e2e528d4 173-176
+src/content/docs/projects/cosmos-sdk.md
+  s_1219958b232001::t_3eed699f069f23 160-164
+src/content/docs/projects/cosmwasm.md
+  s_1219958b232001::t_eb14b45bc08b07 171
+src/content/docs/projects/coturn.md
+  s_1219958b232001::t_0625034c8dfcb2 156-161
+src/content/docs/projects/couchdb.md
+  s_1219958b232001::t_1baa501b79ab38 164-166
+src/content/docs/projects/crewai.md
+  s_1219958b232001::t_a438133db1b8da 156
+src/content/docs/projects/cri-o.md
+  s_1219958b232001::t_db88e0a8b94b67 174-175
+src/content/docs/projects/ctranslate2.md
+  s_1219958b232001::t_deb4e9e818fe9d 163-164
+src/content/docs/projects/curlie.md
+  s_1219958b232001::t_ad86a4d0a843ae 178-179
+src/content/docs/projects/cvat.md
+  s_1219958b232001::t_d48b785469bf86 156-157
+src/content/docs/projects/d3.md
+  s_1219958b232001::t_32ecd9d788da67 164-211
+src/content/docs/projects/dagger.md
+  s_1219958b232001::t_100784c28882d0 188-189
+src/content/docs/projects/dash.js.md
+  s_1219958b232001::t_82a88f8af0e59e 187-192
+src/content/docs/projects/databend.md
+  s_1219958b232001::t_29bcc2f567f9bb 167-168
+src/content/docs/projects/date-fns.md
+  s_1219958b232001::t_069f080b13a8d7 155
+src/content/docs/projects/dav1d.md
+  s_1219958b232001::t_ed951f031a294b 175-176
+src/content/docs/projects/dbt-core.md
+  s_1219958b232001::t_ec35461344894e 165-168
+src/content/docs/projects/debezium.md
+  s_1219958b232001::t_68c3406d0b4c00 183-184
+src/content/docs/projects/deck-gl.md
+  s_1219958b232001::t_53b522f8b932f0 181-182
+src/content/docs/projects/defold.md
+  s_1219958b232001::t_2b6894ee352e8b 172-174
+src/content/docs/projects/dendrite.md
+  s_1219958b232001::t_047eb75dfb98c2 160
+src/content/docs/projects/deno.md
+  s_1219958b232001::t_892dee5dcbd410 150-153
+src/content/docs/projects/dgraph.md
+  s_1219958b232001::t_389acb716f1498 197-201
+src/content/docs/projects/dhtmlx-gantt.md
+  s_1219958b232001::t_139141aaefe0b4 159-160
+src/content/docs/projects/dify.md
+  s_1219958b232001::t_de9282c304853e 176-178
+src/content/docs/projects/django.md
+  s_1219958b232001::t_ae82ae8a129bc2 180,182-185,190,193
+src/content/docs/projects/dlib.md
+  s_1219958b232001::t_6fce7b8c75b33f 170,172-173
+src/content/docs/projects/docker-compose.md
+  s_1219958b232001::t_7880adedd7fe3f 187-189
+src/content/docs/projects/docker.md
+  s_1219958b232001::t_2acc28d6567999 175-237
+src/content/docs/projects/docusaurus.md
+  s_1219958b232001::t_7ff203b583bbe4 153,155,157
+src/content/docs/projects/doris.md
+  s_1219958b232001::t_d1330e5be6175c 150-156
+src/content/docs/projects/dovecot.md
+  s_1219958b232001::t_40b67d187fcadb 150-151
+src/content/docs/projects/draco.md
+  s_1219958b232001::t_b0c86812df19be 163-164
+src/content/docs/projects/dragonbones.md
+  s_1219958b232001::t_d68e6eba1fe4aa 191-192
+src/content/docs/projects/dragonfly.md
+  s_1219958b232001::t_cc58c1f6b989d5 151-153
+src/content/docs/projects/drawio.md
+  s_1219958b232001::t_e7077e0e560822 175-176
+src/content/docs/projects/drizzle.md
+  s_1219958b232001::t_19b7b99a05a1aa 188
+src/content/docs/projects/druid.md
+  s_1219958b232001::t_e9e08281a8d9df 178
+src/content/docs/projects/dspy.md
+  s_1219958b232001::t_014291b95eb534 168-169
+src/content/docs/projects/duckdb-wasm.md
+  s_1219958b232001::t_673ccfca4c086c 159
+src/content/docs/projects/duckdb.md
+  s_1219958b232001::t_1b3b9f008f9ee3 151-155,159,165,169
+src/content/docs/projects/dust.md
+  s_1219958b232001::t_cb88b61eb18742 158
+src/content/docs/projects/dvc.md
+  s_1219958b232001::t_0d49ae2c04d647 164,166
+src/content/docs/projects/earthly.md
+  s_1219958b232001::t_88a7a36bdd72c2 181-186
+src/content/docs/projects/echarts.md
+  s_1219958b232001::t_8f2150809048a7 160,169
+src/content/docs/projects/eclipse-che.md
+  s_1219958b232001::t_1bb83fdf4c430d 183-184
+src/content/docs/projects/effect.md
+  s_1219958b232001::t_eee5de8763a817 158-159
+src/content/docs/projects/ejabberd.md
+  s_1219958b232001::t_e77c4a125f1b5d 153-156
+src/content/docs/projects/elasticsearch.md
+  s_1219958b232001::t_79758a1dcbaa27 167-169,178
+src/content/docs/projects/electron-builder.md
+  s_1219958b232001::t_a3031c0b605b61 199-202
+src/content/docs/projects/electron.md
+  s_1219958b232001::t_4bbda04327fb4d 181-188
+src/content/docs/projects/element-android.md
+  s_1219958b232001::t_fa8b72c86803de 153
+src/content/docs/projects/emacs.md
+  s_1219958b232001::t_a7708bb0e67fd4 182-183,186
+src/content/docs/projects/embedded-hal.md
+  s_1219958b232001::t_4276d61d0e0948 153-159,161-162,164
+src/content/docs/projects/emotion.md
+  s_1219958b232001::t_1cf28937981f90 169
+src/content/docs/projects/emqx.md
+  s_1219958b232001::t_3fd53b05cafe1c 167-169
+src/content/docs/projects/engine262.md
+  s_1219958b232001::t_d4b7556a245409 151-152
+src/content/docs/projects/envoy.md
+  s_1219958b232001::t_57e0c557437552 176,180,190,193
+src/content/docs/projects/esp-dl.md
+  s_1219958b232001::t_1b4228273a50ff 175-179
+src/content/docs/projects/esphome.md
+  s_1219958b232001::t_e43bfb143c5c4e 185-186
+src/content/docs/projects/espurna.md
+  s_1219958b232001::t_b96dec234e9be0 172-173
+src/content/docs/projects/essentia.md
+  s_1219958b232001::t_e747000dae1208 153
+src/content/docs/projects/etcd.md
+  s_1219958b232001::t_35ec28dbd62502 148-170
+src/content/docs/projects/etherpad-lite.md
+  s_1219958b232001::t_2cf310748c4b55 192-193
+src/content/docs/projects/ethers-js.md
+  s_1219958b232001::t_97f2f5e75c6dcc 171
+src/content/docs/projects/evidence.md
+  s_1219958b232001::t_5201f07bf55dd6 182-183
+src/content/docs/projects/excalidraw.md
+  s_1219958b232001::t_72076eef8fcb8a 156
+src/content/docs/projects/expo.md
+  s_1219958b232001::t_b3b781d52345d8 159-164
+src/content/docs/projects/express.md
+  s_1219958b232001::t_1c601607f194ec 168-214
+src/content/docs/projects/fabric-js.md
+  s_1219958b232001::t_4c7f30285fdcc9 156
+src/content/docs/projects/faiss.md
+  s_1219958b232001::t_898e61979c92f4 152-154,158
+src/content/docs/projects/fastai.md
+  s_1219958b232001::t_a26affd8208a29 164-167
+src/content/docs/projects/fastapi.md
+  s_1219958b232001::t_f6adbc37825ad5 172-231
+src/content/docs/projects/faster-whisper.md
+  s_1219958b232001::t_05c94c25b0144b 168-171
+src/content/docs/projects/fastify.md
+  s_1219958b232001::t_e3daf1ac3c3ae5 176
+src/content/docs/projects/fdk-aac.md
+  s_1219958b232001::t_4cbb08632a7462 166-168
+src/content/docs/projects/feast.md
+  s_1219958b232001::t_a77f24ab595e2a 176-177
+src/content/docs/projects/ferretdb.md
+  s_1219958b232001::t_1dbf80eabbad09 168-170
+src/content/docs/projects/ffmpeg-kit.md
+  s_1219958b232001::t_9b624c0c85d0a7 186-188
+src/content/docs/projects/ffmpeg.md
+  s_1219958b232001::t_f922d3bc2beb10 164-167,169-177,179-187,190-193,195-199,201-209
+src/content/docs/projects/filament.md
+  s_1219958b232001::t_014cb2caecfa29 192-194
+src/content/docs/projects/fish.md
+  s_1219958b232001::t_581771aa89b201 154
+src/content/docs/projects/flac.md
+  s_1219958b232001::t_4f17f697b6cc92 168-171
+src/content/docs/projects/flask.md
+  s_1219958b232001::t_f29e970201bc7d 184-195
+src/content/docs/projects/flax.md
+  s_1219958b232001::t_9e3c4d812f42ba 167-168
+src/content/docs/projects/flutter.md
+  s_1219958b232001::t_56c37e3d2ef675 198-208
+src/content/docs/projects/flux.md
+  s_1219958b232001::t_6ad4469642d416 166-167
+src/content/docs/projects/foam.md
+  s_1219958b232001::t_08044eb33c2f76 182-184
+src/content/docs/projects/foundry.md
+  s_1219958b232001::t_c4e9041df8b5be 163-164
+src/content/docs/projects/framer-motion.md
+  s_1219958b232001::t_ff09b2e3b39c93 169,171
+src/content/docs/projects/frappe-gantt.md
+  s_1219958b232001::t_64e860bb14f9af 161-163
+src/content/docs/projects/freecad.md
+  s_1219958b232001::t_fe4fcf97558005 199-201
+src/content/docs/projects/freemodbus.md
+  s_1219958b232001::t_34f648d01b57c5 166-167
+src/content/docs/projects/freertos.md
+  s_1219958b232001::t_192d93c8dc6368 162,164,166-171
+src/content/docs/projects/gazebo-classic.md
+  s_1219958b232001::t_3aec3adb0de9f0 199-202
+src/content/docs/projects/gdu.md
+  s_1219958b232001::t_1e05c08459515c 161
+src/content/docs/projects/geany.md
+  s_1219958b232001::t_6a4037bd16deaa 169
+src/content/docs/projects/ghostwriter.md
+  s_1219958b232001::t_09c29bf9908ec6 179-180
+src/content/docs/projects/gimp.md
+  s_1219958b232001::t_a61e59ef6e3de1 192-194
+src/content/docs/projects/gin.md
+  s_1219958b232001::t_323a5e3b36527e 170
+src/content/docs/projects/github-actions.md
+  s_1219958b232001::t_ac79f5dba12ab5 174-185
+src/content/docs/projects/gitpod.md
+  s_1219958b232001::t_cf5a3348c3f2eb 198-199
+src/content/docs/projects/glab.md
+  s_1219958b232001::t_3bf61b32da8b6e 177-178
+src/content/docs/projects/glsl-canvas.md
+  s_1219958b232001::t_6eb0a1ffdbb635 175-176
+src/content/docs/projects/glslify.md
+  s_1219958b232001::t_7dfe9ec94ecec4 161-164
+src/content/docs/projects/gltf-transform.md
+  s_1219958b232001::t_e9e23690bf38aa 192-195
+src/content/docs/projects/go-ethereum.md
+  s_1219958b232001::t_41cbb6b4da05e0 149-152,157,163
+src/content/docs/projects/godot.md
+  s_1219958b232001::t_d11f66abd0d6d4 195-211
+src/content/docs/projects/gradio.md
+  s_1219958b232001::t_e30bb71409e62c 171-176
+src/content/docs/projects/grafana-tempo.md
+  s_1219958b232001::t_aca421b35650f4 176-179
+src/content/docs/projects/grafana.md
+  s_1219958b232001::t_3e3723b90d8106 147,152
+src/content/docs/projects/grape.md
+  s_1219958b232001::t_50dc58878f23aa 172
+src/content/docs/projects/grbl.md
+  s_1219958b232001::t_9b8fa4abbe4818 165-168
+src/content/docs/projects/greenplum-db.md
+  s_1219958b232001::t_6e87448cb490f8 174-175,178
+src/content/docs/projects/grpc-go.md
+  s_1219958b232001::t_c19f71895f63df 173-174
+src/content/docs/projects/gsap.md
+  s_1219958b232001::t_72c8b032cbb52e 174
+src/content/docs/projects/gstreamer.md
+  s_1219958b232001::t_6a91ea6a707038 169-190
+src/content/docs/projects/handbrake.md
+  s_1219958b232001::t_e04a15c915636c 150-154,156-158,160-162
+src/content/docs/projects/haproxy.md
+  s_1219958b232001::t_8955510e68ec59 153,160
+src/content/docs/projects/haraka.md
+  s_1219958b232001::t_978411625ee150 154
+src/content/docs/projects/heaps.md
+  s_1219958b232001::t_5cbc8683c3fb0d 196-197
+src/content/docs/projects/hedgedoc.md
+  s_1219958b232001::t_1ff43e329a28d9 189-192
+src/content/docs/projects/helidon.md
+  s_1219958b232001::t_91e5349af2c3b7 187-188
+src/content/docs/projects/helm.md
+  s_1219958b232001::t_902195bd49ccbb 162,170,174,185
+src/content/docs/projects/hermes.md
+  s_1219958b232001::t_b437bb8d8ebd87 150
+src/content/docs/projects/hls.js.md
+  s_1219958b232001::t_838d6f67becbb9 152-158
+src/content/docs/projects/hocuspocus.md
+  s_1219958b232001::t_1e1f9b7e487ebe 172-173
+src/content/docs/projects/holoviews.md
+  s_1219958b232001::t_a5efa66f3b27e3 161-162
+src/content/docs/projects/home-assistant.md
+  s_1219958b232001::t_ec2b42de1006ee 198-201
+src/content/docs/projects/homebrew.md
+  s_1219958b232001::t_0439420b99499b 175-182
+src/content/docs/projects/hot-chocolate.md
+  s_1219958b232001::t_4bf0e1b6b35305 171
+src/content/docs/projects/hydra-synth.md
+  s_1219958b232001::t_f3ac7149ca27d9 164-165
+src/content/docs/projects/i18next.md
+  s_1219958b232001::t_ed2e7be3481e44 169
+src/content/docs/projects/imagemagick.md
+  s_1219958b232001::t_9fabc08d5eae16 167-170
+src/content/docs/projects/immich.md
+  s_1219958b232001::t_98a19a33d4fd3d 151
+src/content/docs/projects/inkscape.md
+  s_1219958b232001::t_2d69c354524cde 166-171
+src/content/docs/projects/inngest.md
+  s_1219958b232001::t_d9cf1ef76df31d 170-173
+src/content/docs/projects/insightface.md
+  s_1219958b232001::t_7b0c872a9e7220 193-194
+src/content/docs/projects/invokeai.md
+  s_1219958b232001::t_f5cda5d0567a8e 178-179
+src/content/docs/projects/ionic-framework.md
+  s_1219958b232001::t_071e34a9254461 150-152
+src/content/docs/projects/istio.md
+  s_1219958b232001::t_ac353700fc79b2 174
+src/content/docs/projects/jaeger.md
+  s_1219958b232001::t_b08cf98b126db5 171-179
+src/content/docs/projects/janus-gateway.md
+  s_1219958b232001::t_44262f68aea6cd 187-190
+src/content/docs/projects/jax.md
+  s_1219958b232001::t_29e087f4d7094a 162-166,170-172,175
+src/content/docs/projects/jc.md
+  s_1219958b232001::t_d4c262d20a90aa 164-165
+src/content/docs/projects/jellyfin.md
+  s_1219958b232001::t_0d82c36721cf8f 200-201
+src/content/docs/projects/jenkins.md
+  s_1219958b232001::t_8698250b7dc54d 154
+src/content/docs/projects/jimp.md
+  s_1219958b232001::t_bb7f897f5925df 164-165
+src/content/docs/projects/jitsi-meet.md
+  s_1219958b232001::t_22eb70e14016f5 180-182
+src/content/docs/projects/jitsi-videobridge.md
+  s_1219958b232001::t_d5ea5f9427a6c6 148-154
+src/content/docs/projects/joplin.md
+  s_1219958b232001::t_e54516a7f7750d 166-168
+src/content/docs/projects/jspdf.md
+  s_1219958b232001::t_586efd304743ce 173-174
+src/content/docs/projects/jupyter-notebook.md
+  s_1219958b232001::t_0eae5bf5586173 196-205
+src/content/docs/projects/jupyterlab.md
+  s_1219958b232001::t_d5b85262d01ebd 158-160
+src/content/docs/projects/just.md
+  s_1219958b232001::t_e789e8d3edeebe 185
+src/content/docs/projects/k6.md
+  s_1219958b232001::t_87aa615f17a206 164
+src/content/docs/projects/kafka.md
+  s_1219958b232001::t_c2d3a0595cb5b5 180-220
+src/content/docs/projects/kamailio.md
+  s_1219958b232001::t_d95b859cad19d9 160
+src/content/docs/projects/kaniko.md
+  s_1219958b232001::t_aa153c8608ebe0 176-178
+src/content/docs/projects/kdenlive.md
+  s_1219958b232001::t_a6cb02c87303fd 175-176
+src/content/docs/projects/kepler-gl.md
+  s_1219958b232001::t_8ceb12e6b65557 158-161
+src/content/docs/projects/keras.md
+  s_1219958b232001::t_48b131320093c9 176-192
+src/content/docs/projects/kicad.md
+  s_1219958b232001::t_c80465a8680658 166-167
+src/content/docs/projects/klipper.md
+  s_1219958b232001::t_d51b41e102e40e 195-196
+src/content/docs/projects/koa.md
+  s_1219958b232001::t_dc50c7de7c25dd 161
+src/content/docs/projects/konva.md
+  s_1219958b232001::t_022b52732e5ccc 160-161
+src/content/docs/projects/krita.md
+  s_1219958b232001::t_ee7e1467ff9924 156-159
+src/content/docs/projects/kubernetes.md
+  s_1219958b232001::t_1e77b4bc5bb5fc 150-226
+src/content/docs/projects/kustomize.md
+  s_1219958b232001::t_dfe9c9e7e6f8d9 200-205
+src/content/docs/projects/ky.md
+  s_1219958b232001::t_d8e163b0f0dee8 169
+src/content/docs/projects/lame.md
+  s_1219958b232001::t_3f8bca5de4788a 164-165
+src/content/docs/projects/lance.md
+  s_1219958b232001::t_d53a36321d1362 157
+src/content/docs/projects/langchain.md
+  s_1219958b232001::t_21f7fea189e7a9 183-208
+src/content/docs/projects/layerzero.md
+  s_1219958b232001::t_c4fec496b8a3d3 152
+src/content/docs/projects/lazygit.md
+  s_1219958b232001::t_1f956184d32ae9 154,161
+src/content/docs/projects/lens.md
+  s_1219958b232001::t_83ec37f51683ef 163
+src/content/docs/projects/leveldb.md
+  s_1219958b232001::t_e24d0555ba70ae 151-160
+src/content/docs/projects/lexical.md
+  s_1219958b232001::t_ffebaf73d7c7c2 3,183-191
+src/content/docs/projects/lf.md
+  s_1219958b232001::t_15480fb8df3cdd 156
+src/content/docs/projects/librecad.md
+  s_1219958b232001::t_886ecdf3a42e79 168-169
+src/content/docs/projects/librechat.md
+  s_1219958b232001::t_65cd8195cf18c9 149
+src/content/docs/projects/librosa.md
+  s_1219958b232001::t_e19e5f234847d3 148-149
+src/content/docs/projects/libsignal.md
+  s_1219958b232001::t_552cda5a75c0be 153,155,158,161-166,169
+src/content/docs/projects/libvpx.md
+  s_1219958b232001::t_eba85ee7430d1f 165-166
+src/content/docs/projects/lighthouse.md
+  s_1219958b232001::t_5245e0bd62f998 167
+src/content/docs/projects/lima.md
+  s_1219958b232001::t_ed7dce2ccb95ad 166-168
+src/content/docs/projects/lingui.md
+  s_1219958b232001::t_73b419479cc0e6 151
+src/content/docs/projects/linuxcnc.md
+  s_1219958b232001::t_bf3e991ce208e5 164-166
+src/content/docs/projects/lite-xl.md
+  s_1219958b232001::t_a44b66f4c8272d 155
+src/content/docs/projects/litestar.md
+  s_1219958b232001::t_a6e5d6ae351389 176
+src/content/docs/projects/litmus.md
+  s_1219958b232001::t_9422cc794e48e3 169-170
+src/content/docs/projects/littlefs.md
+  s_1219958b232001::t_576944bec7cc2b 175-176
+src/content/docs/projects/liveblocks.md
+  s_1219958b232001::t_7ed10a5c8ba39b 170-172
+src/content/docs/projects/livekit-flutter.md
+  s_1219958b232001::t_04a7b3876ef3f5 175-176
+src/content/docs/projects/livekit.md
+  s_1219958b232001::t_d5f371d84d7052 192-195
+src/content/docs/projects/llama-cpp.md
+  s_1219958b232001::t_da4fcd16106408 158-163
+src/content/docs/projects/llama-index.md
+  s_1219958b232001::t_3b05fb0ca14413 154-155
+src/content/docs/projects/llrt.md
+  s_1219958b232001::t_088d42cc62cdc0 147
+src/content/docs/projects/lm-evaluation-harness.md
+  s_1219958b232001::t_4fdb32ffb14e1d 173-177
+src/content/docs/projects/lmdb.md
+  s_1219958b232001::t_be4ce276286cd7 191-193
+src/content/docs/projects/lmms.md
+  s_1219958b232001::t_c542a741801f6b 151
+src/content/docs/projects/lodestar.md
+  s_1219958b232001::t_ed21312bf9fdd6 154-155
+src/content/docs/projects/logseq.md
+  s_1219958b232001::t_3d24b6f8c01a7a 166-170
+src/content/docs/projects/lora-mac-node.md
+  s_1219958b232001::t_ab4820c33b679e 177
+src/content/docs/projects/lottie.md
+  s_1219958b232001::t_1fbd06de5ca788 3,167-179
+src/content/docs/projects/love2d.md
+  s_1219958b232001::t_e9bcd933bb009c 173-176
+src/content/docs/projects/luma-gl.md
+  s_1219958b232001::t_e447a05ffa8133 150
+src/content/docs/projects/luxcorerender.md
+  s_1219958b232001::t_c0fbbd8e81a302 164-165
+src/content/docs/projects/lwip.md
+  s_1219958b232001::t_866261a984b5d7 156-159,161,163-165
+src/content/docs/projects/mage.md
+  s_1219958b232001::t_1bbe9e0e3be7ae 183
+src/content/docs/projects/manticoresearch.md
+  s_1219958b232001::t_95ef53487654f5 154
+src/content/docs/projects/marimo.md
+  s_1219958b232001::t_54762a16369bc1 173-174
+src/content/docs/projects/markdown-it.md
+  s_1219958b232001::t_61071c5acde867 154-157,159,163,166
+src/content/docs/projects/marked.md
+  s_1219958b232001::t_ecb1a909481272 175
+src/content/docs/projects/marktext.md
+  s_1219958b232001::t_49b5cd364ee9a0 193-201
+src/content/docs/projects/marlin.md
+  s_1219958b232001::t_b9c52dacf3faa8 180-181
+src/content/docs/projects/matplotlib.md
+  s_1219958b232001::t_079438ed15d50d 188-194
+src/content/docs/projects/matter-js.md
+  s_1219958b232001::t_80da2e43df820d 154-158
+src/content/docs/projects/mattermost.md
+  s_1219958b232001::t_c07d37f74714f4 144,146
+src/content/docs/projects/mbedtls.md
+  s_1219958b232001::t_b040249adb7833 151-159
+src/content/docs/projects/mediapipe.md
+  s_1219958b232001::t_e2d94fa345a516 199-201
+src/content/docs/projects/mediasoup.md
+  s_1219958b232001::t_42b67685e7db83 168-178
+src/content/docs/projects/megatron-lm.md
+  s_1219958b232001::t_f3709b2c88bcde 153-154
+src/content/docs/projects/meilisearch.md
+  s_1219958b232001::t_221c698b268c75 168
+src/content/docs/projects/melonjs.md
+  s_1219958b232001::t_c70889d7dab775 197
+src/content/docs/projects/memcached.md
+  s_1219958b232001::t_21e8f9f5945e0c 163
+src/content/docs/projects/memgraph.md
+  s_1219958b232001::t_6ad7a4ef584779 194-196
+src/content/docs/projects/mender.md
+  s_1219958b232001::t_680aea3fe3ac13 194-195
+src/content/docs/projects/mermaid.md
+  s_1219958b232001::t_ede0b9fdd9d2b1 163
+src/content/docs/projects/meshroom.md
+  s_1219958b232001::t_3e8b8f86fe78d6 187-188
+src/content/docs/projects/metabase.md
+  s_1219958b232001::t_90932912343ba4 156-158
+src/content/docs/projects/metaflow.md
+  s_1219958b232001::t_9a39155c43ff3c 193-195
+src/content/docs/projects/micropython.md
+  s_1219958b232001::t_5f82e283f6f09f 185,188,190
+src/content/docs/projects/mikro-orm.md
+  s_1219958b232001::t_de2bfe7fe89317 164-165
+src/content/docs/projects/milvus.md
+  s_1219958b232001::t_1a426b2d2c701b 188-201
+src/content/docs/projects/mind-ar-js.md
+  s_1219958b232001::t_65c9a13d4a23e2 200-201
+src/content/docs/projects/minetest.md
+  s_1219958b232001::t_2ee8459848fadb 173
+src/content/docs/projects/mise.md
+  s_1219958b232001::t_942889afc77d07 191-193
+src/content/docs/projects/mitsuba3.md
+  s_1219958b232001::t_4504abb99f1a4e 199-200
+src/content/docs/projects/mlflow.md
+  s_1219958b232001::t_a6a6afc7cf3624 152-159
+src/content/docs/projects/mlt.md
+  s_1219958b232001::t_2569b1003ef7fa 182-183,185-186
+src/content/docs/projects/moby.md
+  s_1219958b232001::t_dcf1b19365ffb8 166
+src/content/docs/projects/modin.md
+  s_1219958b232001::t_8df01fa3aefe8c 168
+src/content/docs/projects/monaco-editor.md
+  s_1219958b232001::t_05ba9d5c742a29 161,166
+src/content/docs/projects/monero.md
+  s_1219958b232001::t_d199777318acca 158
+src/content/docs/projects/mongo.md
+  s_1219958b232001::t_04550404094c2d 158
+src/content/docs/projects/mongodb.md
+  s_1219958b232001::t_727fcc02dc6fd7 157,162-163,168
+src/content/docs/projects/mosquitto.md
+  s_1219958b232001::t_d70fd3b6f367ba 199-203
+src/content/docs/projects/move-language.md
+  s_1219958b232001::t_43f02fff26ad2d 163-164
+src/content/docs/projects/moveit2.md
+  s_1219958b232001::t_f82c7cb3691200 185-186
+src/content/docs/projects/mumble.md
+  s_1219958b232001::t_4a5cce55550516 151
+src/content/docs/projects/mysql.md
+  s_1219958b232001::t_975846d897da1f 163-164,170
+src/content/docs/projects/nanomq.md
+  s_1219958b232001::t_d6ff233cc9d146 189-190
+src/content/docs/projects/nativescript.md
+  s_1219958b232001::t_66aea31858b8eb 151-152
+src/content/docs/projects/nats-server.md
+  s_1219958b232001::t_c99bf85b9fdd09 163-164
+src/content/docs/projects/nats.md
+  s_1219958b232001::t_a4abd1820b9ca5 157-169
+src/content/docs/projects/navigation2.md
+  s_1219958b232001::t_21199311b730d7 182-183
+src/content/docs/projects/ncnn.md
+  s_1219958b232001::t_8d0e0552e1f754 187-189
+src/content/docs/projects/nebula.md
+  s_1219958b232001::t_3735736e37ede4 158-159
+src/content/docs/projects/nestjs.md
+  s_1219958b232001::t_1f4c1f0e3c8229 181-196
+src/content/docs/projects/nethermind.md
+  s_1219958b232001::t_51902b2e357dee 162
+src/content/docs/projects/neutralinojs.md
+  s_1219958b232001::t_61514bfc6d27ca 186,188-190
+src/content/docs/projects/next-intl.md
+  s_1219958b232001::t_ae7955b96176f6 180-184
+src/content/docs/projects/next-js.md
+  s_1219958b232001::t_f9abfc3fdecfdc 172
+src/content/docs/projects/nginx-rtmp-module.md
+  s_1219958b232001::t_51bcbbd513f38d 199-200
+src/content/docs/projects/nginx.md
+  s_1219958b232001::t_4932736af7ff0b 173-175,177-182,184-185,187-190,192-205,207-208
+src/content/docs/projects/nivo.md
+  s_1219958b232001::t_369def3a45b401 156-157
+src/content/docs/projects/nix.md
+  s_1219958b232001::t_907d8709fbf7fe 3,152-164
+src/content/docs/projects/nnn.md
+  s_1219958b232001::t_80ab2f67bcef04 163
+src/content/docs/projects/node-js.md
+  s_1219958b232001::t_2648a104bdb48e 196-202
+src/content/docs/projects/nodegui.md
+  s_1219958b232001::t_fcd54c76dc0f45 191-193
+src/content/docs/projects/numpy.md
+  s_1219958b232001::t_14974b57ec704c 158-160,162
+src/content/docs/projects/nushell.md
+  s_1219958b232001::t_1136a911e73bcf 166-173
+src/content/docs/projects/nuttx.md
+  s_1219958b232001::t_51000f535d84c8 172,183
+src/content/docs/projects/nuxt.md
+  s_1219958b232001::t_e32a8fea86ac04 183
+src/content/docs/projects/nvidia-mig.md
+  s_1219958b232001::t_348af4f8652d31 198-199
+src/content/docs/projects/obs-studio.md
+  s_1219958b232001::t_c4354b4cf171af 166-168
+src/content/docs/projects/observable-framework.md
+  s_1219958b232001::t_4ff7927bf7267b 186-190
+src/content/docs/projects/observable-plot.md
+  s_1219958b232001::t_1e4d59be1292e6 175,177
+src/content/docs/projects/ofetch.md
+  s_1219958b232001::t_4898b7022d3411 155
+src/content/docs/projects/ogre.md
+  s_1219958b232001::t_5b3a0a084a69c6 195-196
+src/content/docs/projects/oh-my-posh.md
+  s_1219958b232001::t_cbf9f6c8a2ffe3 150
+src/content/docs/projects/open-sora.md
+  s_1219958b232001::t_6e89459f7f554b 151-157
+src/content/docs/projects/open3d.md
+  s_1219958b232001::t_9b9c0f5239fc99 194-197
+src/content/docs/projects/openai-agents-sdk.md
+  s_1219958b232001::t_0005d8e1f2d027 174-175
+src/content/docs/projects/opencode.md
+  s_1219958b232001::t_972779324d8956 167-168
+src/content/docs/projects/opencv.md
+  s_1219958b232001::t_c7610ae330dd0d 194-202
+src/content/docs/projects/openhab.md
+  s_1219958b232001::t_5d33ab1483ae2e 192-194
+src/content/docs/projects/openlayers.md
+  s_1219958b232001::t_2ea8c70fe52254 167-168
+src/content/docs/projects/openmeetings.md
+  s_1219958b232001::t_5b6246ac221d24 165
+src/content/docs/projects/openrct2.md
+  s_1219958b232001::t_adca2219226316 177
+src/content/docs/projects/openscad.md
+  s_1219958b232001::t_e6f624934dfca3 192-194
+src/content/docs/projects/opensearch.md
+  s_1219958b232001::t_1dbc6f2655faec 179-187
+src/content/docs/projects/opentelemetry-collector.md
+  s_1219958b232001::t_37a1a390a2f7ff 158
+src/content/docs/projects/opentelemetry.md
+  s_1219958b232001::t_b506efed652a7f 167-177
+src/content/docs/projects/openthread.md
+  s_1219958b232001::t_15e8d460308ec2 187-191
+src/content/docs/projects/opentofu.md
+  s_1219958b232001::t_3367a080355e7a 174-175
+src/content/docs/projects/openvidu.md
+  s_1219958b232001::t_227112e2b49187 170-174
+src/content/docs/projects/openvscode-server.md
+  s_1219958b232001::t_0090859d429a6a 160-163
+src/content/docs/projects/openwrt.md
+  s_1219958b232001::t_e764b822504f0c 148-152,154,156
+src/content/docs/projects/openxr-sdk.md
+  s_1219958b232001::t_4e539d753b23ed 177
+src/content/docs/projects/openzeppelin-contracts.md
+  s_1219958b232001::t_1f7ec3a7242fec 159-160
+src/content/docs/projects/optax.md
+  s_1219958b232001::t_e9a9f614b50d79 183-184
+src/content/docs/projects/optuna.md
+  s_1219958b232001::t_29086ba842b70b 197-198
+src/content/docs/projects/opus.md
+  s_1219958b232001::t_395ee27cebce78 153-160
+src/content/docs/projects/otel-collector.md
+  s_1219958b232001::t_04a7bdb80c2fcd 172-177
+src/content/docs/projects/outline.md
+  s_1219958b232001::t_33684da083d43d 184-185
+src/content/docs/projects/ovenmediaengine.md
+  s_1219958b232001::t_869af21f0063ba 167,169-172,174,176-177
+src/content/docs/projects/overleaf.md
+  s_1219958b232001::t_ba85eaebacbda8 179-180
+src/content/docs/projects/paddle-lite.md
+  s_1219958b232001::t_8e9d938827cc93 184-188
+src/content/docs/projects/paddleocr.md
+  s_1219958b232001::t_326074fa4a3746 159
+src/content/docs/projects/panda3d.md
+  s_1219958b232001::t_166491af419388 158-159
+src/content/docs/projects/pandas.md
+  s_1219958b232001::t_033415e967a0fa 162,165-166,176-177
+src/content/docs/projects/panel.md
+  s_1219958b232001::t_aa73b5eec2b147 185-186
+src/content/docs/projects/partykit.md
+  s_1219958b232001::t_b4411a969ad380 157-158
+src/content/docs/projects/pcl.md
+  s_1219958b232001::t_c3095d4fb814bb 177-178
+src/content/docs/projects/pdfme.md
+  s_1219958b232001::t_977e4a4377be9b 163-164
+src/content/docs/projects/peerjs-server.md
+  s_1219958b232001::t_d29a886a781587 158
+src/content/docs/projects/penpot.md
+  s_1219958b232001::t_681ef64ebb41aa 157
+src/content/docs/projects/pg-boss-readme.md
+  s_1219958b232001::t_2e5d3538fba314 154
+src/content/docs/projects/phaser.md
+  s_1219958b232001::t_0ccd2d9238caa4 177-188
+src/content/docs/projects/phoenix.md
+  s_1219958b232001::t_8b89ca4c19fd87 177
+src/content/docs/projects/picogl.md
+  s_1219958b232001::t_24f14c943549b4 151-158
+src/content/docs/projects/pillow.md
+  s_1219958b232001::t_408196ccbd75e0 197-198
+src/content/docs/projects/pion.md
+  s_1219958b232001::t_c1306a43bd34e3 173-174
+src/content/docs/projects/piper.md
+  s_1219958b232001::t_38a444a9348187 161-162
+src/content/docs/projects/piskel.md
+  s_1219958b232001::t_49fa5a1871a6c9 172-173
+src/content/docs/projects/pixi.md
+  s_1219958b232001::t_acb95a7a743367 162,164-165,167-183
+src/content/docs/projects/planck.md
+  s_1219958b232001::t_4575fb3919a1b7 150
+src/content/docs/projects/plane.md
+  s_1219958b232001::t_d512f09bba7206 3,151-152
+src/content/docs/projects/platformio-core.md
+  s_1219958b232001::t_95839fe8465878 179-181
+src/content/docs/projects/playcanvas.md
+  s_1219958b232001::t_49212914c59c63 164-168
+src/content/docs/projects/playwright.md
+  s_1219958b232001::t_c011b894b60639 184-225
+src/content/docs/projects/plotnine.md
+  s_1219958b232001::t_d20029ab7e368a 169-172
+src/content/docs/projects/plug.md
+  s_1219958b232001::t_6b21816ecb6537 188-189
+src/content/docs/projects/pluto-jl.md
+  s_1219958b232001::t_9c202b4ac6ee80 177-178
+src/content/docs/projects/pnpm.md
+  s_1219958b232001::t_f7f34372aba6ba 163,170-171,174
+src/content/docs/projects/pocketbase.md
+  s_1219958b232001::t_37fff54f053dc4 163
+src/content/docs/projects/podman.md
+  s_1219958b232001::t_0e983a28692913 182-184
+src/content/docs/projects/polars.md
+  s_1219958b232001::t_dd81d0658194df 180
+src/content/docs/projects/polygon-zkevm.md
+  s_1219958b232001::t_e6e526f67649ba 154-155
+src/content/docs/projects/postal.md
+  s_1219958b232001::t_64593378563d7d 168-169
+src/content/docs/projects/postfix.md
+  s_1219958b232001::t_8361f4dee64333 156-160
+src/content/docs/projects/postgres-js.md
+  s_1219958b232001::t_2e942b5acc8e0f 154
+src/content/docs/projects/postgresql.md
+  s_1219958b232001::t_1424ec34fbbd48 150-222
+src/content/docs/projects/pouchdb.md
+  s_1219958b232001::t_deb57d3345869a 157-158
+src/content/docs/projects/preact.md
+  s_1219958b232001::t_147badeb5c5a39 181-182
+src/content/docs/projects/prom-client.md
+  s_1219958b232001::t_1362a9fcc51b07 170
+src/content/docs/projects/prometheus.md
+  s_1219958b232001::t_a93119ca81c959 177-213
+src/content/docs/projects/promptfoo.md
+  s_1219958b232001::t_7e6328bc52d976 161-163
+src/content/docs/projects/prosemirror.md
+  s_1219958b232001::t_762936a8327467 165,168-169,171-172,174-176,178
+src/content/docs/projects/prosody.md
+  s_1219958b232001::t_5487e9a2d160bc 169-170
+src/content/docs/projects/prysm.md
+  s_1219958b232001::t_614a71d930794b 168
+src/content/docs/projects/pulsar.md
+  s_1219958b232001::t_4387f71d96485a 164-166
+src/content/docs/projects/pulumi.md
+  s_1219958b232001::t_e2d6132ca746ee 167
+src/content/docs/projects/pyarrow.md
+  s_1219958b232001::t_e3edfc834a55ab 156-159
+src/content/docs/projects/pyenv.md
+  s_1219958b232001::t_bd3e3baf910b0b 175
+src/content/docs/projects/pyth.md
+  s_1219958b232001::t_162cbbbcabd445 151
+src/content/docs/projects/pytorch-lightning.md
+  s_1219958b232001::t_74555f08c74ddb 173-174,176,178,185-186,191
+src/content/docs/projects/pytorch.md
+  s_1219958b232001::t_acd7492feaaf69 159-244
+src/content/docs/projects/qdrant.md
+  s_1219958b232001::t_909860c147dce7 172-178
+src/content/docs/projects/quart.md
+  s_1219958b232001::t_3d4cd8da8cffc7 194
+src/content/docs/projects/quasar.md
+  s_1219958b232001::t_3fdb428f18924b 150-151
+src/content/docs/projects/quickjs.md
+  s_1219958b232001::t_f99f1beb7ea06d 150-155
+src/content/docs/projects/qwik.md
+  s_1219958b232001::t_f05538cf1ada23 159
+src/content/docs/projects/rabbitmq-server.md
+  s_1219958b232001::t_714fb18c1c2257 158-160,162
+src/content/docs/projects/rails.md
+  s_1219958b232001::t_49fa1cee5a80fc 180
+src/content/docs/projects/ranger.md
+  s_1219958b232001::t_bb5a243c35aa6b 167-169
+src/content/docs/projects/rapier.md
+  s_1219958b232001::t_c8151b3bf3c887 161-164
+src/content/docs/projects/ratatui.md
+  s_1219958b232001::t_c93085b484422e 165-169
+src/content/docs/projects/rauc.md
+  s_1219958b232001::t_2c14d159908c77 171,173-174
+src/content/docs/projects/ravendb.md
+  s_1219958b232001::t_0238e94646db29 198-199
+src/content/docs/projects/ray.md
+  s_1219958b232001::t_c445883dcb98a6 193-195
+src/content/docs/projects/raylib.md
+  s_1219958b232001::t_8a6ad8e766a896 199-206
+src/content/docs/projects/react-hook-form.md
+  s_1219958b232001::t_25c39d341bb211 176
+src/content/docs/projects/react-intl.md
+  s_1219958b232001::t_9b93b832ac03b4 162
+src/content/docs/projects/react-native.md
+  s_1219958b232001::t_622c8d7b1cf4a5 152-162
+src/content/docs/projects/react-spring.md
+  s_1219958b232001::t_1c48a96a9643a5 161,165
+src/content/docs/projects/react.md
+  s_1219958b232001::t_681352413671cd 164-228
+src/content/docs/projects/redash.md
+  s_1219958b232001::t_93e98475c6c395 179-180
+src/content/docs/projects/redpanda.md
+  s_1219958b232001::t_d86b38939bc818 151
+src/content/docs/projects/regl.md
+  s_1219958b232001::t_d7d72e037fc51e 198-207
+src/content/docs/projects/rethinkdb.md
+  s_1219958b232001::t_1c3b5fbd0bcf36 168
+src/content/docs/projects/ripgrep.md
+  s_1219958b232001::t_7bb648f791a009 148,170,179,186
+src/content/docs/projects/rive.md
+  s_1219958b232001::t_e3917197b6bc19 199,201-202
+src/content/docs/projects/robyn.md
+  s_1219958b232001::t_9a111ff0fd87a4 170
+src/content/docs/projects/rocket.md
+  s_1219958b232001::t_310d0892b755c6 200-203
+src/content/docs/projects/rocksdb.md
+  s_1219958b232001::t_7591552d1b2ff4 163-165,169-170,174,178-179
+src/content/docs/projects/roo-code.md
+  s_1219958b232001::t_f4a502a8ebbf48 187-188
+src/content/docs/projects/ros2.md
+  s_1219958b232001::t_6d2fe1567225ec 170-173
+src/content/docs/projects/rt-thread.md
+  s_1219958b232001::t_57ce57957d1e00 162-165
+src/content/docs/projects/runc.md
+  s_1219958b232001::t_68293c1356d4bb 186
+src/content/docs/projects/safe-contracts.md
+  s_1219958b232001::t_ad59f7d7650e8d 164
+src/content/docs/projects/salvo.md
+  s_1219958b232001::t_ebfe70ec9a95fa 186
+src/content/docs/projects/sam2.md
+  s_1219958b232001::t_1a9eb285c5f5bd 200-201
+src/content/docs/projects/scikit-learn.md
+  s_1219958b232001::t_a20e15848c324f 164-165
+src/content/docs/projects/scipy.md
+  s_1219958b232001::t_4710ca625a49ed 169,172
+src/content/docs/projects/scoop.md
+  s_1219958b232001::t_290780d243e867 177
+src/content/docs/projects/scrcpy.md
+  s_1219958b232001::t_d6569af63108d3 166
+src/content/docs/projects/sdk-nrf.md
+  s_1219958b232001::t_ba40e9219ee1ee 198,200-201
+src/content/docs/projects/sealed-secrets.md
+  s_1219958b232001::t_c03d4b537ecb1e 172
+src/content/docs/projects/sentry.md
+  s_1219958b232001::t_911ba0700206b4 177
+src/content/docs/projects/sglang.md
+  s_1219958b232001::t_f2c83f51874832 168-172
+src/content/docs/projects/shadcn-ui.md
+  s_1219958b232001::t_898b1b696e2263 159,162
+src/content/docs/projects/shader-park.md
+  s_1219958b232001::t_23c89d66cb29e1 189-191
+src/content/docs/projects/shadowsocks-libev.md
+  s_1219958b232001::t_fc28fd1fa72154 166-167
+src/content/docs/projects/shaka-packager.md
+  s_1219958b232001::t_30f1d2773bcc74 170-171
+src/content/docs/projects/shaka-player.md
+  s_1219958b232001::t_3d47d142c4498b 159-160
+src/content/docs/projects/shap.md
+  s_1219958b232001::t_ffed91fbc94d79 170-172
+src/content/docs/projects/sharedb.md
+  s_1219958b232001::t_6baf334df334c0 168-170
+src/content/docs/projects/sharp.md
+  s_1219958b232001::t_7ef0bdc647b21e 165-167,169-170
+src/content/docs/projects/shell-gpt.md
+  s_1219958b232001::t_f6f8b5255e0f81 151
+src/content/docs/projects/shellcheck.md
+  s_1219958b232001::t_cd954fdf1943da 156-160
+src/content/docs/projects/shfmt.md
+  s_1219958b232001::t_de92c3610c5765 166-168
+src/content/docs/projects/shotcut.md
+  s_1219958b232001::t_5cc57138702595 150-155
+src/content/docs/projects/sidekiq.md
+  s_1219958b232001::t_4084015dc2fbcf 167-171
+src/content/docs/projects/sigma-js.md
+  s_1219958b232001::t_18b011089fffbe 175
+src/content/docs/projects/signal-android.md
+  s_1219958b232001::t_d700c6244fb0db 152
+src/content/docs/projects/signal-ios.md
+  s_1219958b232001::t_a4672eb2f3ad9f 151
+src/content/docs/projects/signoz.md
+  s_1219958b232001::t_3b2ec48de22883 194
+src/content/docs/projects/silverbullet.md
+  s_1219958b232001::t_ef13840c3baa11 195-196
+src/content/docs/projects/siyuan.md
+  s_1219958b232001::t_baf8dd3c8a4a7e 167-168
+src/content/docs/projects/skaffold.md
+  s_1219958b232001::t_2da0c90849945f 188-189
+src/content/docs/projects/sled.md
+  s_1219958b232001::t_492cba750fc391 190-191
+src/content/docs/projects/slim-framework.md
+  s_1219958b232001::t_943a65fc122747 182
+src/content/docs/projects/smoltcp.md
+  s_1219958b232001::t_e9565e407d107b 151
+src/content/docs/projects/socket-io.md
+  s_1219958b232001::t_193b3cbc013974 172-173
+src/content/docs/projects/soketi.md
+  s_1219958b232001::t_ae6c3ddddeef5e 157
+src/content/docs/projects/solid.md
+  s_1219958b232001::t_9b02016744d7c2 167-168
+src/content/docs/projects/sonic.md
+  s_1219958b232001::t_61acd4880de83c 168
+src/content/docs/projects/sops.md
+  s_1219958b232001::t_63841461c64c89 163
+src/content/docs/projects/sox.md
+  s_1219958b232001::t_4c0aa14f13547b 155-156
+src/content/docs/projects/spectorjs.md
+  s_1219958b232001::t_ee5add13eeb014 162-167
+src/content/docs/projects/spin.md
+  s_1219958b232001::t_b6517015957d1d 161-162
+src/content/docs/projects/spine-runtimes.md
+  s_1219958b232001::t_f477a0ae156dcc 196-198
+src/content/docs/projects/spring-boot.md
+  s_1219958b232001::t_d237b320ae12e1 143-146,149,151-153
+src/content/docs/projects/sqlite.md
+  s_1219958b232001::t_7b5631669b8123 151-176
+src/content/docs/projects/stable-diffusion-webui.md
+  s_1219958b232001::t_b9e3d31cafa536 154-160
+src/content/docs/projects/starlight.md
+  s_1219958b232001::t_aa577afb4a2ab0 167-169,184
+src/content/docs/projects/storj.md
+  s_1219958b232001::t_3d34427f051c68 151
+src/content/docs/projects/streamlink.md
+  s_1219958b232001::t_5cf1e6c1352af6 151-152
+src/content/docs/projects/streamlit.md
+  s_1219958b232001::t_1c255ef90691e8 190-196
+src/content/docs/projects/supercollider.md
+  s_1219958b232001::t_983cce0fc4a495 153-154
+src/content/docs/projects/superset.md
+  s_1219958b232001::t_16f4fba8a2e003 174-177
+src/content/docs/projects/supertokens.md
+  s_1219958b232001::t_39bb0b2a952f51 154
+src/content/docs/projects/surrealdb.md
+  s_1219958b232001::t_0546421b9a6254 195-196
+src/content/docs/projects/svelte.md
+  s_1219958b232001::t_db5d159a9558f4 160,168,170
+src/content/docs/projects/svt-av1.md
+  s_1219958b232001::t_4637d0e2ebd7b0 150-153
+src/content/docs/projects/swc.md
+  s_1219958b232001::t_f9e7fe804889ae 169
+src/content/docs/projects/tabulator.md
+  s_1219958b232001::t_dd62af090707a9 189
+src/content/docs/projects/tailwind.md
+  s_1219958b232001::t_1ae0fbaacf2b61 161
+src/content/docs/projects/tanstack-query.md
+  s_1219958b232001::t_0de4298c10d046 169
+src/content/docs/projects/task.md
+  s_1219958b232001::t_4a58710b2c8872 193
+src/content/docs/projects/tauri.md
+  s_1219958b232001::t_84c1c6ee68a9bc 160-165
+src/content/docs/projects/tdengine.md
+  s_1219958b232001::t_2fcc26f83aac1e 165-166
+src/content/docs/projects/tekton.md
+  s_1219958b232001::t_0a4f234cf22e10 187-190
+src/content/docs/projects/teku.md
+  s_1219958b232001::t_91d4eb6c038e73 161
+src/content/docs/projects/tempo.md
+  s_1219958b232001::t_1494990b65a0e1 154-155
+src/content/docs/projects/temporal-polyfill.md
+  s_1219958b232001::t_66dceee9c82740 152,155
+src/content/docs/projects/tensorflow.md
+  s_1219958b232001::t_a91f8ba475e396 163-174
+src/content/docs/projects/terraform.md
+  s_1219958b232001::t_f913f8a51dcebf 181-195
+src/content/docs/projects/testing-library.md
+  s_1219958b232001::t_1b19296a3fa76b 151-152
+src/content/docs/projects/texstudio.md
+  s_1219958b232001::t_3e6a450036093a 188-190
+src/content/docs/projects/textmate.md
+  s_1219958b232001::t_9955f32569164e 165-166
+src/content/docs/projects/textual.md
+  s_1219958b232001::t_3e3e80eaf4567e 185-186
+src/content/docs/projects/tflite-micro.md
+  s_1219958b232001::t_d66cbfa6aba9c3 164-167
+src/content/docs/projects/theia.md
+  s_1219958b232001::t_afa7033d900176 149-151
+src/content/docs/projects/thirdweb-sdk.md
+  s_1219958b232001::t_aac4b503e12e3d 173-174
+src/content/docs/projects/threejs.md
+  s_1219958b232001::t_74149d1f9af6d6 163-188
+src/content/docs/projects/tidb.md
+  s_1219958b232001::t_46e00a5c88e433 170
+src/content/docs/projects/tig.md
+  s_1219958b232001::t_55690de5a79998 150-151
+src/content/docs/projects/tikv.md
+  s_1219958b232001::t_6fb4ab10270a5e 161,167
+src/content/docs/projects/tiled.md
+  s_1219958b232001::t_d82eb8957eb9df 195-197
+src/content/docs/projects/timescaledb.md
+  s_1219958b232001::t_6349f636d76068 173
+src/content/docs/projects/tldraw.md
+  s_1219958b232001::t_88a8fc45da1101 161-162
+src/content/docs/projects/torchtune.md
+  s_1219958b232001::t_45683640c99649 170-171
+src/content/docs/projects/traefik.md
+  s_1219958b232001::t_4cf230a025fca1 161-170
+src/content/docs/projects/trilium.md
+  s_1219958b232001::t_ed365afdafc970 191-192
+src/content/docs/projects/triton-inference-server.md
+  s_1219958b232001::t_5514aa20a9f4ae 161-164
+src/content/docs/projects/trl.md
+  s_1219958b232001::t_e974db567e2146 162-167
+src/content/docs/projects/turborepo.md
+  s_1219958b232001::t_16fc73f6033234 172
+src/content/docs/projects/twgl.md
+  s_1219958b232001::t_dc1524292f0ec1 199-201
+src/content/docs/projects/twirp.md
+  s_1219958b232001::t_217ae1afc2e697 161
+src/content/docs/projects/tyk.md
+  s_1219958b232001::t_13d12c59ae6a83 159
+src/content/docs/projects/typeorm.md
+  s_1219958b232001::t_53016197ae7bb3 174-179
+src/content/docs/projects/typesense.md
+  s_1219958b232001::t_9484df4aa10bf7 150
+src/content/docs/projects/ultralytics.md
+  s_1219958b232001::t_3a314147b8356f 192-193
+src/content/docs/projects/uniswap-v3.md
+  s_1219958b232001::t_d45b5ebeb654bc 152-155,166
+src/content/docs/projects/universal-ctags.md
+  s_1219958b232001::t_17106b4a124833 163
+src/content/docs/projects/unqlite.md
+  s_1219958b232001::t_70d0a5c253412a 188-189
+src/content/docs/projects/unsloth.md
+  s_1219958b232001::t_ea10f9386a192a 159-160
+src/content/docs/projects/unstructured.md
+  s_1219958b232001::t_31ca19a6018b4c 159-160
+src/content/docs/projects/v8.md
+  s_1219958b232001::t_2fb1db572f0bdd 145-150
+src/content/docs/projects/vanilla-extract.md
+  s_1219958b232001::t_744550ae6f356a 179
+src/content/docs/projects/vega-lite.md
+  s_1219958b232001::t_06e44c7f01e837 197-204
+src/content/docs/projects/vega.md
+  s_1219958b232001::t_8b80cfe0b6617e 178-180
+src/content/docs/projects/velero.md
+  s_1219958b232001::t_a5c9dca2b51fa5 168
+src/content/docs/projects/vespa.md
+  s_1219958b232001::t_b80d9805f415db 173-174
+src/content/docs/projects/video.js.md
+  s_1219958b232001::t_0e98ca926d53d0 178-182
+src/content/docs/projects/viem.md
+  s_1219958b232001::t_f29b28cfaf4874 180
+src/content/docs/projects/vim.md
+  s_1219958b232001::t_6f1c48225f369e 164
+src/content/docs/projects/vips.md
+  s_1219958b232001::t_13998890b5580c 166-167
+src/content/docs/projects/vis-network.md
+  s_1219958b232001::t_97947684d4b9c9 159
+src/content/docs/projects/vis-timeline.md
+  s_1219958b232001::t_fb3ea1c00e4914 145
+src/content/docs/projects/vite.md
+  s_1219958b232001::t_8032e990bc7845 162-208
+src/content/docs/projects/vitess.md
+  s_1219958b232001::t_1abf56a16fd674 157
+src/content/docs/projects/vitest.md
+  s_1219958b232001::t_7ce05182691220 185
+src/content/docs/projects/vllm.md
+  s_1219958b232001::t_fe05a9f458f829 137,148
+src/content/docs/projects/vodozemac.md
+  s_1219958b232001::t_bd13f1ac19a8b4 162
+src/content/docs/projects/void.md
+  s_1219958b232001::t_9224fdc6faae1d 173-174
+src/content/docs/projects/voila.md
+  s_1219958b232001::t_60c135e065e748 162-163
+src/content/docs/projects/volta.md
+  s_1219958b232001::t_a1ebf73a5f4078 161
+src/content/docs/projects/vscode.md
+  s_1219958b232001::t_2ccc8da9b54ea3 161-162,164-165,167-169,172-173,175-177,181,183
+src/content/docs/projects/vscodium.md
+  s_1219958b232001::t_38fa7bccca949d 167-168
+src/content/docs/projects/vue.md
+  s_1219958b232001::t_09b577434d9e4e 175,181-182
+src/content/docs/projects/wails.md
+  s_1219958b232001::t_546d57fbb5143c 152-153
+src/content/docs/projects/wamr.md
+  s_1219958b232001::t_b0424c0ae1a638 150
+src/content/docs/projects/wandb.md
+  s_1219958b232001::t_9827bb4c73c6f3 163,165
+src/content/docs/projects/warp.md
+  s_1219958b232001::t_e835e931c7ad4c 180
+src/content/docs/projects/wasmer.md
+  s_1219958b232001::t_19823d2b2a0834 152-155
+src/content/docs/projects/wasmtime.md
+  s_1219958b232001::t_c729ea674a18ea 150-156
+src/content/docs/projects/weaviate.md
+  s_1219958b232001::t_ee74b8ffe55c84 151
+src/content/docs/projects/web-vitals.md
+  s_1219958b232001::t_9c0ee70f34afb7 169
+src/content/docs/projects/webpack.md
+  s_1219958b232001::t_42b667d9a01542 163
+src/content/docs/projects/webrtc-rs.md
+  s_1219958b232001::t_e3a59ad4501f8d 160-164,168-169,171
+src/content/docs/projects/wezterm.md
+  s_1219958b232001::t_7a2952b150db4f 171-174
+src/content/docs/projects/wireguard-go.md
+  s_1219958b232001::t_07ca13227e79de 167
+src/content/docs/projects/woodpecker.md
+  s_1219958b232001::t_501a2bb3b97c16 170-171
+src/content/docs/projects/x264.md
+  s_1219958b232001::t_3e9a38c9e949d9 152-157
+src/content/docs/projects/x265.md
+  s_1219958b232001::t_4948e91d846056 150-153
+src/content/docs/projects/xonsh.md
+  s_1219958b232001::t_c1345f02da2910 158-159
+src/content/docs/projects/xplr.md
+  s_1219958b232001::t_b8064b3eb98411 172
+src/content/docs/projects/yazi.md
+  s_1219958b232001::t_daaa62ba22790f 164-166
+src/content/docs/projects/yjs.md
+  s_1219958b232001::t_eea5e4395e0036 159-160,162,166,168,171-172,174,177-178
+src/content/docs/projects/yocto-poky.md
+  s_1219958b232001::t_1eb828bd9bd794 180,182
+src/content/docs/projects/yq.md
+  s_1219958b232001::t_92df102db9f6cc 172-179
+src/content/docs/projects/yt-dlp.md
+  s_1219958b232001::t_c2119eb47b7954 150-151
+src/content/docs/projects/yugabyte-db.md
+  s_1219958b232001::t_e39065fed3ed12 158-159
+src/content/docs/projects/zcash.md
+  s_1219958b232001::t_e297ffd88ca3e3 146
+src/content/docs/projects/zed.md
+  s_1219958b232001::t_bf6e5e5a72966a 153-159
+src/content/docs/projects/zellij.md
+  s_1219958b232001::t_9b169424ea19cd 200-202
+src/content/docs/projects/zephyr.md
+  s_1219958b232001::t_7cd1d85940b459 174,176-178,180-189
+src/content/docs/projects/zeppelin.md
+  s_1219958b232001::t_da19afb1d64ac8 180-181
+src/content/docs/projects/zettlr.md
+  s_1219958b232001::t_275fa5e0f660ff 183-184
+src/content/docs/projects/zincsearch.md
+  s_1219958b232001::t_4ff1137729a546 153-154
+src/content/docs/projects/zksync-era.md
+  s_1219958b232001::t_32023d67826439 158
+src/content/docs/projects/zookeeper.md
+  s_1219958b232001::t_9189b7ceee28a6 158-165
+src/content/docs/projects/zoxide.md
+  s_1219958b232001::t_dad419f9468038 164
+src/content/docs/projects/zsh.md
+  s_1219958b232001::t_af68787481dd0f 191,194
+src/content/docs/projects/zulip.md
+  s_1219958b232001::t_d97aabff976d9c 150-151
+src/content/docs/projects/zustand.md
+  s_1219958b232001::t_312b18ab939278 191
+src/content/docs/wikilink-health.md
+  s_1219958b232001::t_420b68e7c6ce79 1-28
+src/content/i18n/zh-CN.json
+  s_1219958b232001::t_04bcce0920d6e1 1-12
+src/styles/jx/product-ui.css
+  s_1219958b232001::t_351982a15ed2d2 12-14,30,153
+src/styles/opendesign-theme.css
+  s_1219958b232001::t_03eebf681f42ab 38-41,46-49
+tests/a11y/manual-matrix.md
+  s_1219958b232001::t_dd2e15ebd858e3 1-21
+tests/a11y/product-contract.spec.mjs
+  s_1219958b232001::t_b036ac16eb5b26 1-74
+tests/a11y/site.spec.mjs
+  s_1219958b232001::t_335f330cbae12b 1-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "71d038312c29a7406d4fa98f1c77fd50e42f8d77",
+  "prompts": {},
+  "sessions": {
+    "s_1219958b232001": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "s_1219958b232001",
+        "model": "unknown"
+      },
+      "human_author": "Jason <150260202+estelledc@users.noreply.github.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
