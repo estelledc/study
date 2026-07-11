@@ -1,0 +1,134 @@
+{
+  "slug": "rocket-chat",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「自托管 Slack」和 Excel cell 刷新类比 DDP，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "DDP / Omnichannel / Apps Engine 有桥接；案例 3 代码偏骨架，案例 2 步骤可再拆半句"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Apps Engine 是早于 Slack apps」史实错误：Slack App Directory/平台约 2015–2016，Rocket.Chat Apps Engine 约 2017–2018 合并进主仓——应改为对位/回应 Slack apps，而非「早于」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事「和 Slack 同期开源、同期推 Apps」过满：开源可称同期起步，Apps 平台明显晚于 Slack，需收窄"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Konecty/巴西 2015、Meteor+MongoDB、Omnichannel、GitHub 来源等主线正确；星数写 41k 略旧（约 45k+）可改成约数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 docker-compose 缺 mongo service 与端口映射，照抄无法起全栈；应补全最小可跟做 compose"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 Apps Engine 钩子只有空壳注释，建议给 endpoint/slash 注册的最小伪代码骨架"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（DDP 内存、Mongo 分片、E2EE 与 omnichannel 冲突、sticky session）具体可操作；适用边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「自托管 Slack」和 Excel cell 刷新类比 DDP，零基础直觉强",
+        "DDP / Omnichannel / Apps Engine 有桥接；案例 3 代码偏骨架，案例 2 步骤可再拆半句"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Apps Engine 是早于 Slack apps」史实错误：Slack App Directory/平台约 2015–2016，Rocket.Chat Apps Engine 约 2017–2018 合并进主仓——应改为对位/回应 Slack apps，而非「早于」",
+        "历史小故事「和 Slack 同期开源、同期推 Apps」过满：开源可称同期起步，Apps 平台明显晚于 Slack，需收窄",
+        "Konecty/巴西 2015、Meteor+MongoDB、Omnichannel、GitHub 来源等主线正确；星数写 41k 略旧（约 45k+）可改成约数"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 docker-compose 缺 mongo service 与端口映射，照抄无法起全栈；应补全最小可跟做 compose",
+        "案例 3 Apps Engine 钩子只有空壳注释，建议给 endpoint/slash 注册的最小伪代码骨架",
+        "踩坑（DDP 内存、Mongo 分片、E2EE 与 omnichannel 冲突、sticky session）具体可操作；适用边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic：纠正 Apps Engine「早于 Slack apps」与「同期推 Apps」；engineer：补全 compose mongo + Apps 最小伪代码；星数改为约 45k+。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
