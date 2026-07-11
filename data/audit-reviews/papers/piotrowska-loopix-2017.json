@@ -1,0 +1,136 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递驿站 / 空包裹 / 绕圈包裹类比把 mix + cover traffic 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Sphinx / Poisson / drop cover / provider 首次出现有白话桥接；stratified topology 可再半句「分层像安检通道」已够用"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释：指数延迟洗时间、没消息也发包、loop 侦测主动攻击——可跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Piotrowska/Hayes/Elahi/Meiser/Danezis、USENIX Security 2017、Poisson mix + cover/loop + stratified + provider 与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "第三方匿名（通信双方可互知）表述正确，未歪曲成双向身份隐藏；Sphinx 2009 / Mixminion 2003 / Tor 2004 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「17 页正文加附录」与 USENIX 页码 1199–1216 略有出入，属著录细节，不影响主旨"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 expovariate 对应指数延迟概念正确；案例 2/3 是教学伪代码（make_drop_cover 等未实现）但意图清楚可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：加密≠匿名、cover 带宽代价、provider 信任边界、匿名集太小——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用秒级异步消息 / 强观察者；不适用毫秒交互、极低带宽移动端、无 provider 去中心化——边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "快递驿站 / 空包裹 / 绕圈包裹类比把 mix + cover traffic 讲透，零基础直觉强",
+        "Sphinx / Poisson / drop cover / provider 首次出现有白话桥接；stratified topology 可再半句「分层像安检通道」已够用",
+        "三案例均有逐部分解释：指数延迟洗时间、没消息也发包、loop 侦测主动攻击——可跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "作者 Piotrowska/Hayes/Elahi/Meiser/Danezis、USENIX Security 2017、Poisson mix + cover/loop + stratified + provider 与论文一致",
+        "第三方匿名（通信双方可互知）表述正确，未歪曲成双向身份隐藏；Sphinx 2009 / Mixminion 2003 / Tor 2004 时间线合理",
+        "「17 页正文加附录」与 USENIX 页码 1199–1216 略有出入，属著录细节，不影响主旨"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 expovariate 对应指数延迟概念正确；案例 2/3 是教学伪代码（make_drop_cover 等未实现）但意图清楚可跟",
+        "踩坑具体：加密≠匿名、cover 带宽代价、provider 信任边界、匿名集太小——可操作",
+        "适用秒级异步消息 / 强观察者；不适用毫秒交互、极低带宽移动端、无 provider 去中心化——边界量化清楚"
+      ]
+    }
+  ],
+  "slug": "piotrowska-loopix-2017",
+  "area": "papers",
+  "status": "passed",
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 154,
+  "l1_pass": true
+}
