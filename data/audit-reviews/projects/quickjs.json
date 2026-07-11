@@ -1,7 +1,4 @@
 {
-  "slug": "quickjs",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.22,
   "reject_count": 0,
@@ -111,13 +108,5 @@
         "适用/不适用边界尚可，但缺体积/启动量级对比（相对 V8/Node）"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 150,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

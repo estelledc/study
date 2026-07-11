@@ -1,7 +1,4 @@
 {
-  "slug": "oscar-int2-kv",
-  "area": "papers",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1,
   "reject_count": 3,
@@ -111,13 +108,5 @@
         "无法指导 INT2 KV / SGLang 部署——必须 rewrite"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 151,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

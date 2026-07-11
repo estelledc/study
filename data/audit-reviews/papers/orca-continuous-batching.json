@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "机场摆渡车 vs 自动扶梯类比贯穿全文，iteration-level / selective batching 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 静态 vs continuous 的 step 表非常清晰；案例 2/3 零基础可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「ADR-1 / 决策树根节点」对零基础略跳，但不挡主线理解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Yu et al. OSDI 2022 正确；36.9× FasterTransformer 与论文主结果一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "iteration-level scheduling + selective batching 两点抓住论文核心，未歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「全部默认开启」略绝对，但作为教学概括可接受；vLLM/DistServe 时间线合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例伪代码概念正确，可跟做调度心智模型"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：dynamic≠continuous、mask 错位、prefill/decode 混批——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 decoder-only 在线 vs 离线静态/encoder-only/单请求，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "机场摆渡车 vs 自动扶梯类比贯穿全文，iteration-level / selective batching 有桥接",
+        "案例 1 静态 vs continuous 的 step 表非常清晰；案例 2/3 零基础可跟",
+        "「ADR-1 / 决策树根节点」对零基础略跳，但不挡主线理解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Yu et al. OSDI 2022 正确；36.9× FasterTransformer 与论文主结果一致",
+        "iteration-level scheduling + selective batching 两点抓住论文核心，未歪曲",
+        "「全部默认开启」略绝对，但作为教学概括可接受；vLLM/DistServe 时间线合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例伪代码概念正确，可跟做调度心智模型",
+        "踩坑具体：dynamic≠continuous、mask 错位、prefill/decode 混批——可操作",
+        "适用 decoder-only 在线 vs 离线静态/encoder-only/单请求，边界清楚"
+      ]
+    }
+  ]
+}

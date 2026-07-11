@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "回转寿司类比贴合 iteration-level；但 KV cache / prefill / decode 首次出现缺日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 缺逐部分解释；关联后堆「进阶话题/读者练习」等填充段，干扰主线阅读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Yu et al. OSDI 2022 引用正确；iteration-level scheduling 是论文核心贡献"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 分类写成「图形学/GPU 架构」明显错位，应为系统/LLM 推理 serving"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "selective batching 简化成「同阶段同算子」可接受，但勿与后续 PagedAttention 混成同一篇贡献"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "调度伪代码概念对但缺逐步注释；案例 3 只是对照表，跟做性弱"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏口号（OOM/阶段混批），宜写成具体失败场景；适用可补请求到达分布/长度方差等量化边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "回转寿司类比贴合 iteration-level；但 KV cache / prefill / decode 首次出现缺日常桥接",
+        "案例 1/2 缺逐部分解释；关联后堆「进阶话题/读者练习」等填充段，干扰主线阅读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Yu et al. OSDI 2022 引用正确；iteration-level scheduling 是论文核心贡献",
+        "frontmatter 分类写成「图形学/GPU 架构」明显错位，应为系统/LLM 推理 serving",
+        "selective batching 简化成「同阶段同算子」可接受，但勿与后续 PagedAttention 混成同一篇贡献"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "调度伪代码概念对但缺逐步注释；案例 3 只是对照表，跟做性弱",
+        "踩坑偏口号（OOM/阶段混批），宜写成具体失败场景；适用可补请求到达分布/长度方差等量化边界"
+      ]
+    }
+  ]
+}
