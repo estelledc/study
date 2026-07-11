@@ -48,7 +48,7 @@ export function Modal() {
       <Dialog.Trigger>打开</Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-1/2 bg-white p-6">
+        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6">
           <Dialog.Title>提示</Dialog.Title>
           <Dialog.Description>这就是一个 Dialog</Dialog.Description>
           <Dialog.Close>关闭</Dialog.Close>
@@ -102,7 +102,7 @@ export function MyTabs({ value, defaultValue, onValueChange }) {
 
 ## 踩过的坑
 
-1. **bundle 重量不轻**——Dialog 一开就 14kb gzip 起步（compose-refs / context / dismissable-layer / focus-scope / portal / presence / primitive 一连串依赖）；landing page 这种对体积敏感的页面，能用浏览器原生 dialog 元素就别上 Radix
+1. **bundle 重量不轻**——Dialog 一开就约 11kb gzip 起步（compose-refs / context / dismissable-layer / focus-scope / portal / presence / primitive 一连串依赖）；landing page 这种对体积敏感的页面，能用浏览器原生 dialog 元素就别上 Radix
 2. **a11y 不自动验证**——Radix 实现了 ARIA pattern 但不检查你用对了；Dialog.Title 写空、aria-describedby 留空、Portal 容器 display:none，dev 模式只 console.warn，prod 哑的，仍要跑 axe-core 这类工具
 3. **受控/非受控来回切换出诡异 bug**——同一个 setValue，受控时同步触发 onChange，非受控时要等 effect 异步触发，时机差一帧；表单提交读 value 时受控立刻拿到新值非受控有延迟
 4. **createContextScope 多实例隔离**——nested popover 套 popover 时如果不传 scope，关一个会把另一个也关掉；要 `createPopoverScope()` 拿到带 `__scopePopover` prop 的隔离版组件
@@ -121,16 +121,16 @@ export function MyTabs({ value, defaultValue, onValueChange }) {
 
 - 只需要简单 textarea / 评论框——Radix 上手成本太高
 - 团队已经全身心投资 MUI / Ant Design 设计系统——切到 Radix 要重写所有样式和 token
-- 体积极度敏感的 landing page / weekly newsletter renderer——单个 Dialog 14kb 起步压不下来
+- 体积极度敏感的 landing page / weekly newsletter renderer——单个 Dialog 约 11kb gzip 起步压不下来
 - 想要"hooks 返回 props 自己组装 DOM"的极致灵活——选 React Aria
 
 ## 历史小故事（可跳过）
 
 - **2020 年**：Modulz 团队（Stitches 作者那群人）发起 Radix Primitives，主张 a11y 应该是 React 应用层硬契约
-- **2021 年**：v1 发布，30+ 原语覆盖大部分 ARIA pattern，philosophy.md 立下"一组件一 DOM node"硬规则
-- **2023 年**：Modulz 被 WorkOS 收购，团队继续维护 Radix，shadcn 在它之上做复制粘贴分发引爆 React 生态
-- **2024 年**：Tailwind UI 用 Radix 改写默认实现，Vercel v0 把 Radix + shadcn 设成默认产物
-- **2025 年**：React 19 ref cleanup / use API 兼容路径在 Slot.tsx 完全落地，证明这套抽象能跨大版本
+- **2021 年**：进入公开 beta（0.1.x），30+ 原语覆盖大部分 ARIA pattern，philosophy.md 立下"一组件一 DOM node"硬规则
+- **2022 年**：WorkOS 收购 Modulz（随 Series B 公告），团队继续维护 Radix；随后 shadcn 在它之上做复制粘贴分发引爆 React 生态
+- **2024 年**：Vercel v0 把 Radix + shadcn 设成默认产物，生态从设计系统工具扩散到 AI 生成 UI
+- **2025 年**：React 19 ref cleanup / use API 兼容路径在 Slot.tsx 落地，证明这套抽象能跨大版本
 
 ## 学到什么
 
