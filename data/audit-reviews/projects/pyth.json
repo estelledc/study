@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "外卖小哥拍菜单 vs 厨师盖章扔柜子类比把一手数据讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "publisher / Pythnet / VAA / Pull 有白话；Wormhole 守护人仍偏密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "EVM settle、Solana 读账户、永续清算三案例步骤清楚可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 pyth-network/pyth-client 合理；Jump 系起源、Wormhole 2022 被盗、Pull+Pythnet 主线属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "BTC/USD price feed id 与公开 Pyth feed 一致；~400ms slot / price±conf 描述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Solana 不需要 Wormhole』为教学简化（主网有独立喂价路径），未歪曲跨链靠 Wormhole VAA"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Solidity updatePriceFeeds + getPriceNoOlderThan、Rust load_price_feed 可直接跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：只读不更新、盲信 conf、Wormhole 桥风险、unsafe vs NoOlderThan"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用永续/高频清算/Solana 原生；不适用小时心跳/完全去信任/非价格数据——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "外卖小哥拍菜单 vs 厨师盖章扔柜子类比把一手数据讲透",
+        "publisher / Pythnet / VAA / Pull 有白话；Wormhole 守护人仍偏密",
+        "EVM settle、Solana 读账户、永续清算三案例步骤清楚可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 pyth-network/pyth-client 合理；Jump 系起源、Wormhole 2022 被盗、Pull+Pythnet 主线属实",
+        "BTC/USD price feed id 与公开 Pyth feed 一致；~400ms slot / price±conf 描述合理",
+        "『Solana 不需要 Wormhole』为教学简化（主网有独立喂价路径），未歪曲跨链靠 Wormhole VAA"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Solidity updatePriceFeeds + getPriceNoOlderThan、Rust load_price_feed 可直接跟做",
+        "踩坑具体：只读不更新、盲信 conf、Wormhole 桥风险、unsafe vs NoOlderThan",
+        "适用永续/高频清算/Solana 原生；不适用小时心跳/完全去信任/非价格数据——边界清楚"
+      ]
+    }
+  ],
+  "slug": "pyth",
+  "area": "projects",
+  "status": "passed",
+  "lines": 159,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

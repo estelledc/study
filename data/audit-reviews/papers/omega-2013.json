@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "超市收银台三类模式类比把 monolithic / two-level / shared-state 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "OCC / cell state / resourceVersion 首次出现有桥接；informer 仍偏密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例步骤清楚；案例 2 是示意数字，零基础可跟但缺逐步命令"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Schwarzkopf/Konwinski/Abd-El-Malek/Wilkes EuroSys 2013 来源正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Borg→Omega→K8s、2016 三代同源承认 Omega 未在 Google 胜出与史实相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『K8s 精神领袖』对 Wilkes 略满，属教学修辞，未歪曲 shared-state/OCC 核心"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "OCC 冲突重试与 K8s resourceVersion CAS 流程概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：未替代 Borg、饥饿、全局公平难写、state 同步带宽"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用多调度器/数千节点；不适用百节点/高冲突/严格配额——边界有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "超市收银台三类模式类比把 monolithic / two-level / shared-state 讲透",
+        "OCC / cell state / resourceVersion 首次出现有桥接；informer 仍偏密",
+        "三案例步骤清楚；案例 2 是示意数字，零基础可跟但缺逐步命令"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Schwarzkopf/Konwinski/Abd-El-Malek/Wilkes EuroSys 2013 来源正确",
+        "Borg→Omega→K8s、2016 三代同源承认 Omega 未在 Google 胜出与史实相符",
+        "『K8s 精神领袖』对 Wilkes 略满，属教学修辞，未歪曲 shared-state/OCC 核心"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "OCC 冲突重试与 K8s resourceVersion CAS 流程概念正确可跟",
+        "踩坑具体：未替代 Borg、饥饿、全局公平难写、state 同步带宽",
+        "适用多调度器/数千节点；不适用百节点/高冲突/严格配额——边界有量化"
+      ]
+    }
+  ],
+  "slug": "omega-2013",
+  "area": "papers",
+  "status": "passed",
+  "lines": 166,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

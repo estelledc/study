@@ -1,0 +1,140 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "搬家先送急用箱子类比把按需加载讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "展平/切块/virtio-blk 有日常桥接；convergent encryption 仍偏密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有逐部分解释；案例 1 单位换算对零基础略绕"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Brooker et al. USENIX ATC 2023 / arXiv 2305.13162 来源正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 把 146 TiB/s 写成『也就是 150PB/s』单位错误：论文原文是 150Pb/s（petabit），且 146 TiB/s ≠ 150 PB/s——需改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "512KiB 块、AZ 缓存中位 550µs、S3 中位 36ms、非平凡上传均值 4.3% 新块与论文一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "readBlock 三级缓存与 sealChunk convergent encryption 伪代码概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：层级≠运行时、去重省网络、加密可共存、多峰延迟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用短生命周期高扩容；不适用整镜像顺序读/小规模单租户——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "搬家先送急用箱子类比把按需加载讲透",
+        "展平/切块/virtio-blk 有日常桥接；convergent encryption 仍偏密",
+        "三案例有逐部分解释；案例 1 单位换算对零基础略绕"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Brooker et al. USENIX ATC 2023 / arXiv 2305.13162 来源正确",
+        "案例 1 把 146 TiB/s 写成『也就是 150PB/s』单位错误：论文原文是 150Pb/s（petabit），且 146 TiB/s ≠ 150 PB/s——需改正",
+        "512KiB 块、AZ 缓存中位 550µs、S3 中位 36ms、非平凡上传均值 4.3% 新块与论文一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "readBlock 三级缓存与 sealChunk convergent encryption 伪代码概念正确可跟",
+        "踩坑具体：层级≠运行时、去重省网络、加密可共存、多峰延迟",
+        "适用短生命周期高扩容；不适用整镜像顺序读/小规模单租户——边界清楚"
+      ]
+    }
+  ],
+  "slug": "on-demand-container-loading",
+  "area": "papers",
+  "status": "refined",
+  "lines": 152,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 152,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正案例 1 带宽单位：对齐论文 150Pb/s，去掉错误的 150PB/s 换算",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}
