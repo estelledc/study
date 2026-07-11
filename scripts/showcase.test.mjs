@@ -12,6 +12,7 @@ const config = read('astro.config.mjs');
 const header = read('src/components/StudyHeader.astro');
 const mobileFooter = read('src/components/StudyMobileMenuFooter.astro');
 const robots = read('public/robots.txt');
+const packageJson = JSON.parse(read('package.json'));
 
 test('homepage leads with learning value and maintained status before scale', () => {
   const heroStart = homepage.indexOf('<div class="study-hero-panel">');
@@ -103,4 +104,9 @@ test('robots policy keeps the public learning map crawlable and points to its si
   assert.match(robots, /^User-agent: \*$/m);
   assert.match(robots, /^Allow: \/$/m);
   assert.match(robots, /^Sitemap: https:\/\/estelledc\.github\.io\/study\/sitemap-index\.xml$/m);
+});
+
+test('portable builds consume the reviewed OG asset without host-font raster drift', () => {
+  assert.equal(packageJson.scripts.prebuild, 'node scripts/regen-atlas.mjs');
+  assert.equal(packageJson.scripts['generate:og'], 'node scripts/generate-showcase-og.mjs');
 });

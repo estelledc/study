@@ -1,6 +1,9 @@
 import sharp from 'sharp';
 import { fileURLToPath } from 'node:url';
 
+// Manual maintenance utility only. SVG text rasterization follows the fonts
+// installed on the host, so portable builds consume the reviewed WebP tracked
+// in Git instead of regenerating different bytes on macOS and Linux.
 const width = 1200;
 const height = 630;
 const output = fileURLToPath(new URL('../public/og-study.webp', import.meta.url));

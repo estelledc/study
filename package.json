@@ -55,7 +55,7 @@
     "round:auto-prepare": "node scripts/round.mjs auto-prepare",
     "round:auto-advance": "node scripts/round.mjs auto-advance",
     "atlas": "node scripts/regen-atlas.mjs",
-    "prebuild": "node scripts/regen-atlas.mjs && npm run generate:og"
+    "prebuild": "node scripts/regen-atlas.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.7",
