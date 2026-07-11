@@ -1,7 +1,4 @@
 {
-  "slug": "tabulator",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -111,30 +108,5 @@
         "适用边界有量化（1千–10万行、每秒<10次 vs 百万行高频）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "踩坑 5 改为 height 启用虚拟滚动（弃用 virtualDom）；补历史小故事；GitHub 链到 tabulator-tables。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "踩坑 5 改为 height 启用虚拟滚动（弃用 virtualDom）；补历史小故事；GitHub 链到 tabulator-tables。",
-    "sections_modified": [
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 194,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

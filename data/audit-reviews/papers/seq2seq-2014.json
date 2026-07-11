@@ -113,35 +113,5 @@
         "适用边界清楚（变长 seq→seq / 强对齐标注 / 长文档须 attention / 串行延迟）——可接受"
       ]
     }
-  ],
-  "slug": "seq2seq-2014",
-  "area": "papers",
-  "status": "refined",
-  "lines": 163,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "纠正「还没赢 SMT」：集成 34.81 已超 baseline 33.30；encoder-decoder 造词归 Cho；补反转训练伪代码；长句瓶颈加限定",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

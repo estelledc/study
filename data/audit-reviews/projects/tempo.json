@@ -1,7 +1,4 @@
 {
-  "slug": "tempo",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.56,
   "reject_count": 0,
@@ -111,26 +108,5 @@
         "适用边界清楚；可量化「<1GB/天用 Jaeger all-in-one」已有，保留"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "reason": "删除不实 CNCF Sandbox 表述；补 docker-compose+TraceQL 可跟做案例与 Derived Field 步骤；桥接 exemplar/OTLP/WAL/RED；补历史小故事与反向链接；star 改为约 5k。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 关键事实速查",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 154,
-  "l1_pass": true
+  ]
 }

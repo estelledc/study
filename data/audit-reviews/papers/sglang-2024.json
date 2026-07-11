@@ -108,38 +108,5 @@
         "适用/不适用有量化边界（共享率、首 token <50ms）；案例侧仍缺第三个可跟做场景"
       ]
     }
-  ],
-  "slug": "sglang-2024",
-  "area": "papers",
-  "status": "refined",
-  "lines": 158,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "补案例3 fork；案例2改为示意非实测秒数；弱化「数量级」；KV cache桥接；补反向链接与runtime入口",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

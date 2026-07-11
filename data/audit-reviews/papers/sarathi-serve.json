@@ -1,7 +1,4 @@
 {
-  "slug": "sarathi-serve",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -111,34 +108,5 @@
         "适用边界清楚（在线对话 TBT SLO vs 离线 embedding / 极短 prompt）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "修正伪精确 Llama-2-13B 毫秒表为论文模型/算术强度直觉；vLLM 默认改为长上下文/V1 逐步默认；2.6× 对齐 Mistral-7B/A100。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正伪精确 Llama-2-13B 毫秒表为论文模型/算术强度直觉；vLLM 默认改为长上下文/V1 逐步默认；2.6× 对齐 Mistral-7B/A100。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 数字直觉（小段算术）",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

@@ -108,35 +108,5 @@
         "适用场景缺量化：宜补 RAM/flash 量级（如数十到数百 KB arena、关键词模型约十几 KB、人像检测约数百 KB）与「Pi 类 Linux 用普通 TFLite/LiteRT」对照"
       ]
     }
-  ],
-  "slug": "tflite-micro",
-  "area": "projects",
-  "status": "refined",
-  "lines": 164,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "三审 needs-refine：适用场景缺 RAM/模型体积量化；开头 resolver 未定义；历史 stars/时间线偏软"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "补 MicroMutableOpResolver；适用加数十～数百 KB 量化；历史改为 2019 公开与约 3k stars",
-    "sections_modified": [
-      "## 是什么",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

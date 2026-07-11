@@ -1,7 +1,4 @@
 {
-  "slug": "self-pic",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -112,28 +109,7 @@
       ]
     }
   ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "zero-base 与 engineer 均点名案例 3 无代码；已换成 megamorphic 拆分示例并弱化 Hooks 主因表述，补 dictionary mode / type feedback 白话",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 183,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 183,
-  "l1_pass": true
+  "slug": "self-pic",
+  "area": "papers",
+  "status": "refined"
 }

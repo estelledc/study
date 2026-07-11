@@ -1,7 +1,4 @@
 {
-  "slug": "self-customization",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -111,28 +108,5 @@
         "适用边界有量化（mono/低多态 vs 10+ 类型、嵌入式 ROM）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "修正历史条：PLDI'89 为约 2× Smalltalk、距优化 C 约 4–5×，非「Smalltalk 的 4-5×」。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正历史条：PLDI'89 为约 2× Smalltalk、距优化 C 约 4–5×，非「Smalltalk 的 4-5×」。",
-    "sections_modified": [
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 175,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

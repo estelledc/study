@@ -108,35 +108,5 @@
         "适用/不适用有边界；与 shfmt 分工清楚"
       ]
     }
-  ],
-  "slug": "shellcheck",
-  "area": "papers",
-  "status": "refined",
-  "lines": 196,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正开篇非法赋值示例；弱化「内核构建脚本都跑」断言；关联补到 7 条",
-    "sections_modified": [
-      "## 是什么",
-      "## 历史小故事（可跳过）",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 196,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

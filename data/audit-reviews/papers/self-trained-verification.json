@@ -108,24 +108,5 @@
         "适用边界清楚（有可验证奖励 vs 开放创作）；教学伪代码即可，无需生产级实现"
       ]
     }
-  ],
-  "slug": "self-trained-verification",
-  "area": "papers",
-  "status": "passed",
-  "lines": 153,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 153,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

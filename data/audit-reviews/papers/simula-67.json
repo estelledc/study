@@ -108,35 +108,5 @@
         "适用/不适用边界清楚（学 OOP 根 vs 生产代码/极致性能/FP）"
       ]
     }
-  ],
-  "slug": "simula-67",
-  "area": "papers",
-  "status": "refined",
-  "lines": 200,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "academic needs-refine：协程发明表述过强 + PDF 链错；平均 3.89 → refine"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "弱化协程「发明」表述并点出 Conway；更换 Common Base Language PDF 链接",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 200,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

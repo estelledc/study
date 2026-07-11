@@ -108,38 +108,5 @@
         "适用/不适用边界清楚：端到端部署/TPU vs 研究试错/单卡实验/自定义算子/JAX"
       ]
     }
-  ],
-  "slug": "tensorflow",
-  "area": "projects",
-  "status": "refined",
-  "lines": 163,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "纠正TPU非TF独占（JAX/XLA）；弱化PyTorch无对等部署表述；Serving补MODEL_NAME；补反向链接",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 学到什么",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

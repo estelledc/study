@@ -1,7 +1,4 @@
 {
-  "slug": "the-silver-searcher",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -112,33 +109,7 @@
       ]
     }
   ],
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "ripgrep 首发改为 2016；fd 作者改为 sharkdp；适用边界补一句 rg 更优。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "ripgrep 首发改为 2016；fd 作者改为 sharkdp；适用边界补一句 rg 更优。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 关联"
-    ],
-    "unresolved_hints": [],
-    "round": 1
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  },
+  "status": "refined",
   "lines": 163,
   "l1_pass": true
 }

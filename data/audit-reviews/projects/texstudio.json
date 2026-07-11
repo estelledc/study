@@ -108,35 +108,5 @@
         "适用边界清楚：新手论文 vs Overleaf/VS Code/纯 latexmk"
       ]
     }
-  ],
-  "slug": "texstudio",
-  "area": "projects",
-  "status": "refined",
-  "lines": 188,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.34,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "版本改为约 4.9.3 / stars 约 3.4k；注明 inputenc 现代可省略；桥接 txs:///quick",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 188,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

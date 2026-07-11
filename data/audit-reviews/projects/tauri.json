@@ -1,13 +1,6 @@
 {
-  "slug": "tauri",
-  "area": "projects",
-  "round": 120,
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.22,
-  "lines": 160,
-  "l1_pass": true,
-  "output_path": "/workspace/src/content/docs/projects/tauri.md",
   "reject_count": 3,
   "needs_refine_count": 0,
   "pass_count": 0,
@@ -100,86 +93,5 @@
         "需重写为可跟做的脚手架、Rust command、前端 invoke，并写清 vs Electron 边界与 WebView 依赖坑"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 1.22,
-    "reject_count": 3,
-    "needs_refine_count": 0,
-    "pass_count": 0,
-    "verdict": "rewrite",
-    "action": "rewrite",
-    "weakest_sections": [
-      {
-        "reviewer": "zero-base",
-        "section": "## 是什么",
-        "verdict": "reject"
-      },
-      {
-        "reviewer": "academic",
-        "section": "## 是什么",
-        "verdict": "reject"
-      },
-      {
-        "reviewer": "engineer",
-        "section": "## 实践案例",
-        "verdict": "reject"
-      }
-    ],
-    "fix_hints": [
-      {
-        "reviewer": "zero-base",
-        "hint": "全文是「观察点 N：围绕 tauri…」模板填充，无真实定义与类比，零基础无法建立心智模型"
-      },
-      {
-        "reviewer": "zero-base",
-        "hint": "实践案例无命令、无代码、无逐步解释，无法跟做"
-      },
-      {
-        "reviewer": "academic",
-        "hint": "正文未陈述 Tauri 是用系统 WebView + Rust 后端做跨平台桌面/移动应用、相对 Electron 体积更小等基本事实"
-      },
-      {
-        "reviewer": "academic",
-        "hint": "来源 URL github.com/tauri-apps/tauri 合理，但正文零事实可核对，等同空壳；分类写 mobile 也偏窄"
-      },
-      {
-        "reviewer": "engineer",
-        "hint": "无任何 create-tauri-app / invoke / allowlist 示例，踩坑与适用边界全是重复填充句"
-      },
-      {
-        "reviewer": "engineer",
-        "hint": "需重写为可跟做的脚手架、Rust command、前端 invoke，并写清 vs Electron 边界与 WebView 依赖坑"
-      }
-    ]
-  },
-  "remediation": {
-    "status": "rewritten",
-    "sections_modified": [
-      "frontmatter",
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "final_quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 160,
-    "reasons": []
-  }
+  ]
 }

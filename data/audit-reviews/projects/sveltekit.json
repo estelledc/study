@@ -108,38 +108,5 @@
         "适用/不适用缺量化（团队规模、首包目标、SSR QPS）；缺历史小故事段"
       ]
     }
-  ],
-  "slug": "sveltekit",
-  "area": "projects",
-  "status": "refined",
-  "lines": 175,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.67,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 175,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：补历史小故事；案例扩成路由/load逐步/Form Action；弱化包体积与 Next 锁定表述；适用场景加量化",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

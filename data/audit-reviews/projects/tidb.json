@@ -108,34 +108,5 @@
         "适用边界有量化（>几 TB、<5ms 写、最少约 8 台）"
       ]
     }
-  ],
-  "slug": "tidb",
-  "area": "projects",
-  "status": "refined",
-  "lines": 177,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "academic needs-refine：7.5 LTS 年份与 Region 默认大小缺版本限定；平均 4.22 → refine"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "7.5 LTS 改为 2023-12-01；Region 默认大小加 v8.4 前后限定",
-    "sections_modified": [
-      "## 核心要点",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 177,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

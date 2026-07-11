@@ -1,7 +1,4 @@
 {
-  "slug": "sctp-multipath-2006",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -111,27 +108,5 @@
         "适用边界清楚；可量化一句「路径 RTT/带宽差过大时吞吐可能低于单路径」"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "reason": "补 ### 案例伪代码与逐步解释；桥接 TSN/SACK/cwnd；CUC 改为按 destination 新确认 TSN 更新；历史加（可跳过）时间线；踩坑编号 1–4。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

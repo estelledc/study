@@ -1,7 +1,4 @@
 {
-  "slug": "svt-av1",
-  "area": "projects",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.22,
   "reject_count": 3,
@@ -111,21 +108,5 @@
         "适用场景写成知识库/双链，应改为 VOD/直播转码、多核并行编码 vs 参考编码器 aomenc 等边界"
       ]
     }
-  ],
-  "rewrite": {
-    "status": "rewritten",
-    "reason": "原文错贴 SiYuan 知识库内容；整篇按 SVT-AV1 AV1 编码器零基础模板重写。",
-    "sections_modified": [
-      "full-note"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 150,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

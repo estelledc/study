@@ -1,7 +1,4 @@
 {
-  "slug": "tanstack-form",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -111,32 +108,5 @@
         "适用边界清楚（跨框架/全家桶 vs 单 React 选 RHF、SSR FormData 选 Conform、50 字段 benchmark）——保留"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "修正 v1 已于 2025-03 stable（不再写仍在 RC）；历史补 stable；踩坑改锁 major；案例 1 补 password 同理说明。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 v1 已于 2025-03 stable（不再写仍在 RC）；历史补 stable；踩坑改锁 major；案例 1 补 password 同理说明。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 174,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

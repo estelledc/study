@@ -108,25 +108,5 @@
         "适用/不适用边界清楚（函数式标准、编译器正确性 vs 性能/并发）；理论文量化空间有限"
       ]
     }
-  ],
-  "slug": "scott-strachey-denotational",
-  "area": "papers",
-  "status": "passed",
-  "lines": 166,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三审均为 pass，平均 4.44 ≥ 4.0；未触发 refiner；quality-gate 已通过。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 166,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

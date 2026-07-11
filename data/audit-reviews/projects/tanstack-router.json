@@ -1,7 +1,4 @@
 {
-  "slug": "tanstack-router",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -112,19 +109,7 @@
       ]
     }
   ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 173,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 173,
-  "l1_pass": true
+  "slug": "tanstack-router",
+  "area": "projects",
+  "status": "passed"
 }

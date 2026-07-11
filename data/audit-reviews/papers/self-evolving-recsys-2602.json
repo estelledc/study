@@ -1,7 +1,4 @@
 {
-  "slug": "self-evolving-recsys-2602",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -111,30 +108,5 @@
         "适用边界清楚（大流量+完整 pipeline vs 小流量/无指标/强合规）；可补一句「outer loop 反馈常按天/周延迟」量化"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false,
-    "reason": "案例改为论文 Table 1（RMSprop）+ Think-Code-Verify 步骤；proxy gaming 标为教学概括；补 outer 反馈天/周延迟；行数抬过 150。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "案例改为论文 Table 1（RMSprop）+ Think-Code-Verify 步骤；proxy gaming 标为教学概括；补 outer 反馈天/周延迟；行数抬过 150。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

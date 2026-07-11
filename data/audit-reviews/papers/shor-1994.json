@@ -108,34 +108,5 @@
         "踩坑（不是试完所有因子、QFT≠FFT、可逆清理、多项式≠马上破 RSA）具体；适用/不适用边界清楚（隐藏周期 vs NP-complete）"
       ]
     }
-  ],
-  "slug": "shor-1994",
-  "area": "papers",
-  "status": "refined",
-  "lines": 150,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false,
-    "reason": "三审 needs-refine：案例 2 连分数示例 c=77 得周期 10 而非 r；Coppersmith/Deutsch QFT 表述过宽"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "案例 2 改为 c=64 演示 1/4→分母 4；历史收束到 Coppersmith 近似 QFT",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

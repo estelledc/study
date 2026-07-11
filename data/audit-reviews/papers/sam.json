@@ -108,34 +108,5 @@
         "适用交互分割/标注/box→mask vs 专用高精度/嵌入式/医学/要标签——边界清楚有量化替代"
       ]
     }
-  ],
-  "slug": "sam",
-  "area": "papers",
-  "status": "refined",
-  "lines": 167,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": [],
-    "notes": "修正图像编码器耗时（10 GPU-秒→数百毫秒量级）；案例 1/2 补 SamPredictor 最小可跟做伪代码与逐部分解释"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

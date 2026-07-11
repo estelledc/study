@@ -1,7 +1,4 @@
 {
-  "slug": "theia",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.22,
   "reject_count": 0,
@@ -111,7 +108,5 @@
         "适用/不适用边界清楚：个人写代码 vs 自建 IDE 产品分界明确"
       ]
     }
-  ],
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

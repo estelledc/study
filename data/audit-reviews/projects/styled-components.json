@@ -1,7 +1,4 @@
 {
-  "slug": "styled-components",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -111,34 +108,5 @@
         "适用边界清楚（Pages/CRA/Vite SPA vs RSC App Router / 零运行时 / 维护期选型）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "修正首发 2016-10 与双作者；v6=2023-06；维护期≈2025-03；去掉 30% 市场份额与「最早 CSS-in-JS」过满表述；案例 3「50 行」改为十几行。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正首发 2016-10 与双作者；v6=2023-06；维护期≈2025-03；去掉 30% 市场份额与「最早 CSS-in-JS」过满表述；案例 3「50 行」改为十几行。",
-    "sections_modified": [
-      "title/frontmatter",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }

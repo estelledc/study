@@ -1,7 +1,4 @@
 {
-  "slug": "silo-oltp-2013",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3,
   "reject_count": 0,
@@ -111,18 +108,5 @@
         "适用边界缺量化：论文约 32 核 TPC-C ~700k TPS、近线性扩展；长事务/高冲突不适用应写清"
       ]
     }
-  ],
-  "lines": 150,
-  "l1_pass": true,
-  "sections_modified": [
-    "## 是什么",
-    "## 核心要点",
-    "## 实践案例",
-    "## 踩过的坑",
-    "## 适用 vs 不适用",
-    "## 历史小故事",
-    "## 延伸阅读",
-    "## 关联"
-  ],
-  "round": 1
+  ]
 }

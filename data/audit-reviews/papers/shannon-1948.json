@@ -1,7 +1,4 @@
 {
-  "slug": "shannon-1948",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -111,32 +108,5 @@
         "适用/不适用边界清楚（通信/压缩/ML 损失 vs 强语义难采样、要具体码、量子、小样本）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "修正 Huffman 为 Fano 学生/课堂作业；bit 名称改为 Tukey 建议、Shannon 写入并普及。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 Huffman 为 Fano 学生/课堂作业；bit 名称改为 Tukey 建议、Shannon 写入并普及。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 关联"
-    ],
-    "unresolved_hints": [],
-    "round": 1
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 157,
-  "l1_pass": true
+  ]
 }

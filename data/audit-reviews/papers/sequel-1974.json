@@ -1,7 +1,4 @@
 {
-  "slug": "sequel-1974",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.56,
   "reject_count": 0,
@@ -111,22 +108,5 @@
         "适用/不适用边界清楚；可补一句「图/向量场景用专用查询语言更省事」已有，保持即可"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "reason": "改正 Boyce 早逝年龄 32→27；关系演算/代数混称改为关系代数/演算的英语外壳；历史补 SIGFIDET 表述。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 171,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 171,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "symfony",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -111,32 +108,5 @@
         "适用/不适用边界清楚；可再点明中大型单体 vs 极简单文件 API 的体量分界"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "纠正 LTS 约每两年一次；弱化「半数包名」为大量基础设施依赖 symfony/*。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "纠正 LTS 约每两年一次；弱化「半数包名」为大量基础设施依赖 symfony/*。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 195,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 195,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "sillito-questions",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -112,37 +109,7 @@
       ]
     }
   ],
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "修正四类题号为 Q1–5/Q6–20/Q21–33/Q34–44；DOI→2008.26；工业场 N=16；LaToza 改为 PLATEAU 2010；补 kappa 白话桥接。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正四类题号为 Q1–5/Q6–20/Q21–33/Q34–44；DOI→2008.26；工业场 N=16；LaToza 改为 PLATEAU 2010；补 kappa 白话桥接。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": [],
-    "round": 1
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
+  "status": "refined",
   "lines": 164,
   "l1_pass": true
 }

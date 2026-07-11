@@ -1,7 +1,4 @@
 {
-  "slug": "testing-library",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -111,22 +108,5 @@
         "适用边界量化清楚（~10ms jsdom vs Playwright/axe/renderHook）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三审全 pass，平均 4.67，无需 refine。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 160,
-  "l1_pass": true
+  ]
 }

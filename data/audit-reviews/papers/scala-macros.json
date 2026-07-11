@@ -108,36 +108,5 @@
         "适用/不适用边界清楚（派生/DSL vs 跨版本稳定库 / Scala 3 inline+quoted）"
       ]
     }
-  ],
-  "slug": "scala-macros",
-  "area": "papers",
-  "status": "refined",
-  "lines": 161,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic needs-refine: Catalyst case presented modern whole-stage codegen as quasiquote/toolbox; corrected to early quasiquote → Janino Java path, and fixed compile-time vs runtime wording",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 161,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -108,24 +108,5 @@
         "适用/不适用有量化边界（CRUD+鉴权+实时 vs 50k+ tps / 100k+ 订阅者）"
       ]
     }
-  ],
-  "slug": "supabase",
-  "area": "projects",
-  "status": "passed",
-  "lines": 196,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 196,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
