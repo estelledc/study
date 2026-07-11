@@ -110,9 +110,10 @@
   "refinement": {
     "action": "refine",
     "round": 1,
-    "reason": "三审 needs-refine：W3C→TC39 Intl.MessageFormat；Stage 1 时间改为 2022 进入、2024 仍 Stage 1",
+    "reason": "三审 needs-refine：W3C→TC39 Intl.MessageFormat（历史+延伸阅读）；Stage 1 时间改为 2022 进入、2024 仍 Stage 1",
     "sections_modified": [
-      "## 历史小故事（可跳过）"
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读"
     ],
     "unresolved_hints": []
   },

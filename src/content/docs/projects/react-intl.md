@@ -139,7 +139,7 @@ JSX 属性里塞不进 `<FormattedMessage>`（因为属性是字符串而不是 
 - [FormatJS 官方文档](https://formatjs.io)
 - [ICU MessageFormat 官方语法表](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
 - [Unicode CLDR Plural Rules](https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html)
-- [W3C Intl.MessageFormat 提案](https://github.com/tc39/proposal-intl-messageformat)
+- [TC39 Intl.MessageFormat 提案](https://github.com/tc39/proposal-intl-messageformat)
 - [[i18next]] —— 同领域对标，自家 plural 语法 vs ICU 标准
 - [[next-intl]] —— Next.js App Router 友好的 ICU 派后辈
 
