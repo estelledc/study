@@ -1,7 +1,64 @@
 {
-  "slug": "nvme-protocol-2017",
-  "area": "papers",
-  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮局窗口 vs 机场自助值机把多队列讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "doorbell / MSI-X / 队列深度有白话桥接；fio 单线程 vs 多线程对比清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 有命令对比与原因；案例 4 门铃链路可再拆成『写内存→写门铃→DMA→中断』四步，但整体可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文对 64K 队列、doorbell、MSI-X、NVMe-oF/ZNS 时间线与协议事实大体正确，教学简化可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源『NVMe and PCIe SSDs — A Modern Look… USENIX ATC 2017』查无此文；延伸阅读 Cao ATC17 链接 404，需改为真实规范/论文引用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『必需命令只有 13 条』宜标明早期 NVMe 1.x 量级，避免读成现行 2.0 全集"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "fio 单线程 vs 多 jobs 对比概念正确，能复现『喂不饱』现象"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：APST、SLC cache、MSI-X 向量耗尽、混合读写 P99——都可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用高 IOPS/小 IO vs 顺序大块/归档/老 RAID 卡，边界清楚有量化"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -52,6 +109,9 @@
       ]
     }
   ],
+  "slug": "nvme-protocol-2017",
+  "area": "papers",
+  "status": "refined",
   "aggregate": {
     "average": 4,
     "verdict": "refine",
@@ -76,5 +136,7 @@
     "lines": 158,
     "l1_pass": true,
     "reasons": []
-  }
+  },
+  "lines": 158,
+  "l1_pass": true
 }

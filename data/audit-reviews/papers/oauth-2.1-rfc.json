@@ -1,7 +1,64 @@
 {
-  "slug": "oauth-2.1-rfc",
-  "area": "papers",
-  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱+便签类比把『删危险 flow、收口最佳实践』讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "PKCE / Resource Owner / Client Credentials 首次出现都有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例步骤清楚；案例 1 的 verifier/challenge 对照可再标一句『hash 对不上就拒』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "草案状态、砍 Implicit/ROPC、强制 PKCE、精确 redirect_uri 与 oauth.net/2.1 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 draft-ietf-oauth-v2-1 / Aaron Parecki 起草时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Refresh Token 必须轮换』过绝对：2.1 对 public client 要求 sender-constrained 或一次性轮换，confidential 未一律强制——需加限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Auth Code+PKCE / Client Credentials / refresh 轮换三案例概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：全 Client 开 PKCE、redirect 精确匹配、别把 access_token 当身份、public client 无 secret——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用第三方登录/B2B vs 单服务 session/TLS/RBAC，边界清楚"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -52,6 +109,9 @@
       ]
     }
   ],
+  "slug": "oauth-2.1-rfc",
+  "area": "papers",
+  "status": "refined",
   "aggregate": {
     "average": 4.22,
     "verdict": "refine",
@@ -75,5 +135,7 @@
     "lines": 186,
     "l1_pass": true,
     "reasons": []
-  }
+  },
+  "lines": 186,
+  "l1_pass": true
 }
