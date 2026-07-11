@@ -1,0 +1,146 @@
+{
+  "slug": "react-flow",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Dify/n8n 画布类比立刻建立直觉，div 节点 + SVG 连线对比清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Node/Edge/Handle/Provider、Zustand、D3-zoom 有白话；贝塞尔路径对零基础略密但不挡主线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例具体：自定义节点、dagre 布局、责任划分都有可跟步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/xyflow/xyflow、包名 @xyflow/react、MIT、webkid→xyflow 主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2010 年代主要在 ComfyUI、Blender』时间线错误：ComfyUI 约 2023 才流行；宜改为 Nuke/Houdini/Blender/UE Blueprints 等更早的节点编辑器"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『几乎所有 AI 工作流编辑器都用 React Flow』偏满，宜弱化为『很多主流产品（如 Dify/Flowise/LangGraph Studio）』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019 开源、v12 measurement/SSR、Pro 订阅养维护者等与公开信息大体一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小例子与自定义节点概念正确可跟；onChange={...} 为省略写法，教学可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里『开 onlyRenderVisibleElements 和 panOnDrag={false}』后半句可疑：关平移不是常规大图优化；宜改为 memo 自定义节点 / 稳定 nodeTypes 引用等"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CSS 未引入、节点尺寸测量、controlled 混用三条很实用；适用边界（1000 节点、十万级 vis）量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Dify/n8n 画布类比立刻建立直觉，div 节点 + SVG 连线对比清楚",
+        "Node/Edge/Handle/Provider、Zustand、D3-zoom 有白话；贝塞尔路径对零基础略密但不挡主线",
+        "三案例具体：自定义节点、dagre 布局、责任划分都有可跟步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 github.com/xyflow/xyflow、包名 @xyflow/react、MIT、webkid→xyflow 主线正确",
+        "『2010 年代主要在 ComfyUI、Blender』时间线错误：ComfyUI 约 2023 才流行；宜改为 Nuke/Houdini/Blender/UE Blueprints 等更早的节点编辑器",
+        "『几乎所有 AI 工作流编辑器都用 React Flow』偏满，宜弱化为『很多主流产品（如 Dify/Flowise/LangGraph Studio）』",
+        "2019 开源、v12 measurement/SSR、Pro 订阅养维护者等与公开信息大体一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "最小例子与自定义节点概念正确可跟；onChange={...} 为省略写法，教学可接受",
+        "踩坑里『开 onlyRenderVisibleElements 和 panOnDrag={false}』后半句可疑：关平移不是常规大图优化；宜改为 memo 自定义节点 / 稳定 nodeTypes 引用等",
+        "CSS 未引入、节点尺寸测量、controlled 混用三条很实用；适用边界（1000 节点、十万级 vis）量化清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正 ComfyUI 2010s 时间线；弱化『几乎所有』；大图踩坑去掉可疑的 panOnDrag={false}，改为 memo/nodeTypes 稳定引用",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

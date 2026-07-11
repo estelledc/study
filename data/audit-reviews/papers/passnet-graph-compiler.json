@@ -1,0 +1,143 @@
+{
+  "slug": "passnet-graph-compiler",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房流程单 / 练车 / 外卖类比贴合，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ES_t、AS、fusible/classical/single-operator 首次出现缺少白话桥接，零基础会卡在缩写上"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有逐步解释；案例 1 的 match/rewrite 伪代码可跟，但可再点明「这是教学示意而非真实 PassNet API」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Yiqun Liu et al. / arXiv 2605.29357 / 2026 与 stub 一致；PassNet-Dataset≈18K、100K 模型、ES_t、落后 TorchInductor 37%、单子图可达约 3× 与摘要吻合"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "MaskFormer 3.02× 属论文个案量级，与「up to 3x」不冲突；教学简化可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "可补一句摘要中的 43% 长尾子图默认编译变慢，但非硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "match/rewrite 与 speedup/correct 伪代码概念正确，教学 min example 可跟；非真实可运行 PassNet API 可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：pass≠kernel、只奖速度会作弊、单案例误导、盲目融合更慢——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 37%、单卡推理 fusible 等边界；可再点明 PassBench≈200 任务量级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厨房流程单 / 练车 / 外卖类比贴合，零基础直觉强",
+        "ES_t、AS、fusible/classical/single-operator 首次出现缺少白话桥接，零基础会卡在缩写上",
+        "三案例有逐步解释；案例 1 的 match/rewrite 伪代码可跟，但可再点明「这是教学示意而非真实 PassNet API」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Yiqun Liu et al. / arXiv 2605.29357 / 2026 与 stub 一致；PassNet-Dataset≈18K、100K 模型、ES_t、落后 TorchInductor 37%、单子图可达约 3× 与摘要吻合",
+        "MaskFormer 3.02× 属论文个案量级，与「up to 3x」不冲突；教学简化可接受",
+        "可补一句摘要中的 43% 长尾子图默认编译变慢，但非硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "match/rewrite 与 speedup/correct 伪代码概念正确，教学 min example 可跟；非真实可运行 PassNet API 可接受",
+        "踩坑具体：pass≠kernel、只奖速度会作弊、单案例误导、盲目融合更慢——可操作",
+        "适用/不适用有 37%、单卡推理 fusible 等边界；可再点明 PassBench≈200 任务量级"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "补 ES_t/AS 与 fusible/classical/single-operator 白话桥接；案例 1 标明教学示意；补 43% 变慢与 PassBench≈200 边界",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 154,
+  "l1_pass": true
+}
