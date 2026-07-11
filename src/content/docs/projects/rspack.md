@@ -60,9 +60,9 @@ pnpm add -D @rspack/cli @rspack/core
 
 绝大多数 plugin 不用动。**逐部分解释**：
 
-- 业务 plugin（`HtmlWebpackPlugin` / `MiniCssExtractPlugin` 等）rspack 都内置了同名实现
+- HTML / CSS 抽取等常见能力有内置实现（如 `HtmlRspackPlugin`）；社区 `html-webpack-plugin` 也仍可直接用，只是内置版是性能向子集，不是「同名照搬」
 - 自定义 plugin 用了 `compilation.hooks.processAssets`，rspack 通过 napi 暴露同名 hook，多数能直接跑
-- 慢的根因 `babel-loader` 换成 `builtin:swc-loader`——这一步通常能砍掉 70% 编译时间
+- 慢的根因 `babel-loader` 换成 `builtin:swc-loader`——这一步通常能砍掉大半编译时间
 
 ### 案例 2：用 Rsbuild 起一个 React 项目（rspack 上层）
 
@@ -99,7 +99,7 @@ compiler.hooks.compilation.tap('demo', (compilation) => {
 
 ## 踩过的坑
 
-1. **不是 100% 兼容**。少数 plugin 直接读 `module.dependencies` 这种 webpack 内部字段，rspack 的内部数据结构不同会撞到。一般 0.5% 的 plugin 需要适配，社区已贡献了适配层。
+1. **不是 100% 兼容**。少数 plugin 直接读 `module.dependencies` 这种 webpack 内部字段，rspack 的内部数据结构不同会撞到；依赖这些私有字段的包往往需要适配或换官方替代。
 
 2. **Node loader 跨边界开销**。babel-loader / ts-loader 仍跑在 Node 子进程，每个文件都要跨 Rust ↔ Node 序列化一次。文件多时收益打折，建议换成 builtin SWC loader。
 
@@ -123,9 +123,9 @@ compiler.hooks.compilation.tap('demo', (compilation) => {
 ## 历史小故事（可跳过）
 
 - **2022 年**：web-infra-dev 团队立项，背景是大型仓库 webpack 编译时间已经无法接受，esbuild / vite 不兼容 webpack plugin 导致迁移成本过高。
-- **2023 年 3 月**：rspack v0.1 公开发布，主打"webpack-compatible Rust bundler"。
-- **2023 年底**：v1.0 候选版，plugin API 趋稳。
-- **2024 年**：配套 Rsbuild（应用脚手架）/ Rspress（文档站）/ Rslib（库构建）/ Rslint（lint）/ Rsdoctor（构建分析）相继上线，组成完整工具链。
+- **2023 年 3 月**：rspack v0.1 公开发布，主打"webpack-compatible Rust bundler"；同年仍处 v0.x 快速迭代。
+- **2023 年 11 月**：Rsbuild 0.1 发布，把常用配置收成开箱即用上层。
+- **2024 年 8 月**：rspack 1.0 正式发布（API 稳定、生产可用）；同期 Rspress / Rslib / Rsdoctor 等配套继续补齐，后续还有 Rslint 等 Rstack 工具。
 - **2025 年起**：被多家头部公司用在主仓库 ci / dev。
 
 ## 学到什么
