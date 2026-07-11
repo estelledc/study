@@ -1,0 +1,130 @@
+{
+  "slug": "shokri-mia-2017",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "门卫看照片反应 → 模型预测向量的类比贯穿全文，贴合且可跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "shadow model / in-out / 成员身份均有白话桥接；「概率向量」首次出现已用类别概率举例"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有代码+逐部分解释；案例 3 可再点明「只返回标签仍可能泄漏」的一步观察路径"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Shokri/Stronati/Song/Shmatikov、IEEE S&P 2017、DOI/arXiv:1610.05820 与来源一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "shadow training、黑盒 API、攻击输入含真实标签+概率向量、top-1/舍入只能缓解不能消除——与论文核心主张一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一次系统化」作教学概括可接受（ML 黑盒 MIA 奠基作）；Homer 等基因组成员推断属更早邻域，不必展开"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三案例伪代码概念正确：查询→拼 attack_input→shadow in/out 标注→top-1/舍入缓解，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：MIA≠还原样本、黑盒仍可攻、过拟合非唯一原因、top-1 非万能——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（开放 API 审计 vs 反演/无查询入口）；已点低误报率指标，可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "门卫看照片反应 → 模型预测向量的类比贯穿全文，贴合且可跟住",
+        "shadow model / in-out / 成员身份均有白话桥接；「概率向量」首次出现已用类别概率举例",
+        "三案例均有代码+逐部分解释；案例 3 可再点明「只返回标签仍可能泄漏」的一步观察路径"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "作者 Shokri/Stronati/Song/Shmatikov、IEEE S&P 2017、DOI/arXiv:1610.05820 与来源一致",
+        "shadow training、黑盒 API、攻击输入含真实标签+概率向量、top-1/舍入只能缓解不能消除——与论文核心主张一致",
+        "「第一次系统化」作教学概括可接受（ML 黑盒 MIA 奠基作）；Homer 等基因组成员推断属更早邻域，不必展开"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三案例伪代码概念正确：查询→拼 attack_input→shadow in/out 标注→top-1/舍入缓解，可跟做",
+        "踩坑具体：MIA≠还原样本、黑盒仍可攻、过拟合非唯一原因、top-1 非万能——可操作",
+        "适用/不适用边界清楚（开放 API 审计 vs 反演/无查询入口）；已点低误报率指标，可保留"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，平均 4.33；门卫类比与 shadow training 案例清楚，事实与 IEEE S&P 2017 一致。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 153,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
