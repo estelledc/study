@@ -19,7 +19,7 @@ RFC 3833 就是 DNS 的这份盘点报告。它**不**修任何漏洞，但它**
 不读 RFC 3833，下面这些问题答不出来：
 
 - 为什么 DNS 1983 年设计时不加密、不签名？——当时假设网络可信
-- 为什么 2008 年 Kaminsky 攻击能把整条 zone 在几秒内污染？——RFC 3833 第 2.2 节生日攻击的实例
+- 为什么 2008 年 Kaminsky 攻击能把整条 zone 在几秒内污染？——RFC 3833 第 2.2 节 ID 猜测威胁的实例
 - 为什么 DNSSEC 解决了"假应答"但没解决"被偷看查询"？——RFC 3833 明确把机密性划在范围外
 - 为什么现代 DNS 安全栈是 DNSSEC + DoT + DoH 三层叠加？——每层解决 RFC 3833 列出的不同威胁
 
@@ -33,7 +33,7 @@ RFC 3833 把 DNS 威胁拆成 **6 大类**：
 
 2. **包猜测**（query ID guessing）：DNS 用 16 位事务 ID 关联请求和应答。攻击者抢在真实应答前，伪造一个 ID 匹配的假应答塞给 resolver——这就是后来 Kaminsky 攻击的核心。
 
-3. **名字链攻击**（name chaining）：恶意服务器在应答里塞 additional section，把"www.bank.com"指向自己的 IP。早期 resolver 不加区分就缓存。
+3. **名字链攻击**（name chaining）：恶意服务器在应答里塞 additional section（附加区段=顺带塞的"推荐地址"），把"www.bank.com"指向自己的 IP。早期 resolver 不加区分就缓存。
 
 4. **跨域信任攻击**（betrayal by trusted server）：你信任的递归 resolver 本身被攻陷，给你回伪造数据。
 
@@ -49,12 +49,12 @@ RFC 3833 把 DNS 威胁拆成 **6 大类**：
 
 ```
 攻击者向受害 resolver 反复查 random1.bank.com / random2.bank.com / ...
-每个查询，攻击者同时发大量伪造应答（猜 16 位 query ID + 端口）
-应答里塞 authority section 把 bank.com 整个 NS 指向攻击者
+每个查询，攻击者同时发大量伪造应答（猜 16 位 query ID；当时源端口常可预测/未随机化）
+应答里塞 authority section（权威区段=官方盖章栏）把 bank.com 整个 NS 指向攻击者
 受害 resolver 一旦命中，整个 bank.com 的所有子域被污染
 ```
 
-RFC 3833 第 2.2 节早就把这个威胁原理写清楚了——**生日悖论 + 信任 authority section**。Kaminsky 只是把它工程化、量化（几秒就能成功）。
+RFC 3833 第 2.2 节（ID Guessing and Query Prediction）早就把**ID 空间可被暴力/预测**写清楚了；Kaminsky 再叠上「信任 authority section」并工程化（大量并行猜 ID），几秒就能成功。
 
 ### 案例 2：DNSSEC 怎么对症下药
 

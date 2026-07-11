@@ -69,8 +69,8 @@ Uniswap DAO 的 Snapshot space 配置（简化）：
 }
 ```
 
-- `quadratic` 把权重开平方：100 票 → 10 实际权重，10000 票 → 100 实际权重
-- 鲸鱼花 100 倍代币只换来 10 倍话语权，社区共识权重上升
+- 三步对照：① 对余额开平方 → ② 鲸鱼边际话语权被压低 → ③ 拨款更分散到多数小户支持的项目
+- 数字感：100 票 → 10 实际权重，10000 票 → 100；鲸鱼花 100 倍代币只换约 10 倍话语权
 - Gitcoin 用它做"哪个公共物品项目应该拿多少 ETH 拨款"
 
 ### 案例 3：链下投票 + 链上执行（SafeSnap）
@@ -98,7 +98,7 @@ Snapshot 提案通过 → SafeSnap 模块读取结果
 ## 适用 vs 不适用场景
 
 **适用**：
-- 持币人多、单次投票成本敏感的 DAO（Uniswap、Aave、ENS）
+- 持币人多、单次投票成本敏感的 DAO（Uniswap、Aave、ENS）——单次链上投票 Gas 常 >$5–50 时，零 Gas 链下更划算
 - 民意调查 / 信号收集（不需要即时执行）
 - 多链 DAO 治理——Snapshot 不绑定单一链
 - 实验性投票机制（quadratic / conviction / weighted）想低成本试
@@ -111,9 +111,9 @@ Snapshot 提案通过 → SafeSnap 模块读取结果
 
 ## 历史小故事（可跳过）
 
-- **2020 年 6 月**：Balancer 被攻击后，DeFi 圈开始正视治理参与度。Fabien Hutchinson 等人为 Balancer 写了第一版 snapshot.page，开源给所有 DAO 用。
+- **2020 年 6 月**：Balancer 被攻击后，DeFi 圈开始正视治理参与度。Fabien Marino（常用名 Fabien）为 Balancer 写了第一版 snapshot.page，开源给所有 DAO 用。
 - **2020 下半年**：Yearn 第一个大规模采用 Snapshot 投票，"链下投票 + 多签执行"模式成型。
-- **2021 年 DeFi Summer**：Aave、Sushi、Uniswap 全部接入，Snapshot 一年承载几千个 space。
+- **2021 年 DeFi 治理热潮**：Aave、Sushi、Uniswap 全部接入，Snapshot 一年承载几千个 space。
 - **2022 年**：SafeSnap 上线，链下结果第一次能自动触发链上多签。
 - **2024 年**：品牌升级为 Snapshot.box，引入原生执行器和更多投票类型；累计 30000+ space，事实上的 DAO 治理标准。
 - **2025 年**：Snapshot X 推出，把"提案 + 投票"也搬上 L2 链（Starknet 等），让"链下省 Gas"和"链上可执行"逐步合流，前者只是前端选项之一。
