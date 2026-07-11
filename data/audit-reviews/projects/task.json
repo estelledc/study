@@ -1,0 +1,135 @@
+{
+  "slug": "task",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "后厨出餐单类比贴合「YAML 命令清单」，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Taskfile / deps / sources / generates / includes 有白话；mtime vs checksum 好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有 YAML+解释；核心要点里「没装 git-bash 也能跑 cp/rm」易误导，需与事实对齐后零基础才不会踩坑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 go-task/task、taskfile.dev、YAML Taskfile v3、sources/generates、deps 并行 属实；作者 Andrey（@andreynering）2017 开源合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤：内嵌 mvdan/sh 只保证 POSIX shell 语法跨平台，并不自带 cp/rm；官方 2025 才加 Go 实现的 core utils（TASK_CORE_UTILS，Windows 默认开）。笔记写「没装 git-bash 也能跑 cp -r / rm -rf」把 shell 与 coreutils 混为一谈"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史「2024：内嵌 mvdan/sh 后 Windows 体验追平 Linux」不准确——mvdan/sh 很早就采用；2025 core utils 才是 Windows 文件命令真正追平的关键。stars「13k」相对 2026 中已偏旧（约 15k+）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 YAML（vars/deps/sources/generates/includes）概念正确，可跟做；对比表边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑有用：YAML 冒号引号、deps 并行、Docker mtime、cmds 行独立——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "范围/事实：应写明 Windows 上 cp/rm 依赖 PATH 里的 coreutils 或 2025+ 内置 TASK_CORE_UTILS；并在踩坑补一条「只有 shell、没有 cp」的常见翻车"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "后厨出餐单类比贴合「YAML 命令清单」，零基础直觉强",
+        "Taskfile / deps / sources / generates / includes 有白话；mtime vs checksum 好懂",
+        "案例 1–3 有 YAML+解释；核心要点里「没装 git-bash 也能跑 cp/rm」易误导，需与事实对齐后零基础才不会踩坑"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 go-task/task、taskfile.dev、YAML Taskfile v3、sources/generates、deps 并行 属实；作者 Andrey（@andreynering）2017 开源合理",
+        "硬伤：内嵌 mvdan/sh 只保证 POSIX shell 语法跨平台，并不自带 cp/rm；官方 2025 才加 Go 实现的 core utils（TASK_CORE_UTILS，Windows 默认开）。笔记写「没装 git-bash 也能跑 cp -r / rm -rf」把 shell 与 coreutils 混为一谈",
+        "历史「2024：内嵌 mvdan/sh 后 Windows 体验追平 Linux」不准确——mvdan/sh 很早就采用；2025 core utils 才是 Windows 文件命令真正追平的关键。stars「13k」相对 2026 中已偏旧（约 15k+）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "案例 YAML（vars/deps/sources/generates/includes）概念正确，可跟做；对比表边界清楚",
+        "踩坑有用：YAML 冒号引号、deps 并行、Docker mtime、cmds 行独立——可操作",
+        "范围/事实：应写明 Windows 上 cp/rm 依赖 PATH 里的 coreutils 或 2025+ 内置 TASK_CORE_UTILS；并在踩坑补一条「只有 shell、没有 cp」的常见翻车"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 197,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 197,
+  "l1_pass": true
+}
