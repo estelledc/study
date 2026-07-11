@@ -1,0 +1,149 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "录像机 / 排课类比把「给解释器录像而不是给用户程序写 JIT」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "jit_merge_point / guard / RPython 首次出现有桥接；「学到什么」里 Futamura 投影可补半句日常说法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 步骤清楚；案例 3 只是项目清单，缺「加几行 hint → 自动得 JIT」的逐步跟做，建议补 3–4 行伪代码展示 merge point"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Bolz/Cuni/Fijalkowski/Rigo ICOOOLPS 2009、Dynamo 2000、Psyco→RPython 时间线与著录正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「没专门为 Python 写 JIT」易误解：团队写了 RPython Python 解释器，JIT 在 meta 层——应改成「没为 Python 字节码单独手写 method/trace JIT，而是给解释器加 meta-tracing」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「论文之前没人证明过 meta 一层工业可行」过满：Dynamo 已是工业 tracing；应收窄为「把 tracing 接到解释器 meta 层并多语言复用」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「快 5–10 倍」应加负载限定（长循环/热点稳定），避免读成普适加速比"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 概念可跟，但缺可对照的伪代码：建议案例 2 或 3 写出 jit_merge_point + guard「x is int」失败回退的 4–6 行形态"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：多态 trace 爆炸、warmup、hint 标错、trace 截断——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可再点明短脚本（百毫秒级）常比 CPython 慢的量化印象"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "录像机 / 排课类比把「给解释器录像而不是给用户程序写 JIT」讲透，零基础直觉强",
+        "jit_merge_point / guard / RPython 首次出现有桥接；「学到什么」里 Futamura 投影可补半句日常说法",
+        "案例 1–2 步骤清楚；案例 3 只是项目清单，缺「加几行 hint → 自动得 JIT」的逐步跟做，建议补 3–4 行伪代码展示 merge point"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Bolz/Cuni/Fijalkowski/Rigo ICOOOLPS 2009、Dynamo 2000、Psyco→RPython 时间线与著录正确",
+        "「没专门为 Python 写 JIT」易误解：团队写了 RPython Python 解释器，JIT 在 meta 层——应改成「没为 Python 字节码单独手写 method/trace JIT，而是给解释器加 meta-tracing」",
+        "「论文之前没人证明过 meta 一层工业可行」过满：Dynamo 已是工业 tracing；应收窄为「把 tracing 接到解释器 meta 层并多语言复用」",
+        "「快 5–10 倍」应加负载限定（长循环/热点稳定），避免读成普适加速比"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–2 概念可跟，但缺可对照的伪代码：建议案例 2 或 3 写出 jit_merge_point + guard「x is int」失败回退的 4–6 行形态",
+        "踩坑具体可操作：多态 trace 爆炸、warmup、hint 标错、trace 截断——保留",
+        "适用/不适用边界清楚；可再点明短脚本（百毫秒级）常比 CPython 慢的量化印象"
+      ]
+    }
+  ],
+  "slug": "pypy-tracing-jit",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "收窄「没专门写 JIT / 工业首次 / 5–10x」过满表述；案例 2–3 补 jit_merge_point/guard 伪代码与多前端 hint 跟做；适用补短脚本量化。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 175,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 175,
+  "l1_pass": true
+}
