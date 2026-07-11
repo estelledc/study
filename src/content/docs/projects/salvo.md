@@ -8,7 +8,7 @@ title: Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust 
 
 ## 是什么
 
-Salvo 是一个 **Rust 异步 Web 框架**，定位『简单到能让你能写一个函数就能写一个 handler』。日常类比：像一家餐厅决定不再区分『厨师』和『传菜员』——所有人都挂同一种围裙、用同一种工作流，谁路过哪张桌子都能接活。框架里的 middleware 和路由 handler 长得一模一样，挂在路由树的任意节点都行。
+Salvo 是一个 **Rust 异步 Web 框架**，定位『简单到写一个函数就能当 handler』。日常类比：像一家餐厅决定不再区分『厨师』和『传菜员』——所有人都挂同一种围裙、用同一种工作流，谁路过哪张桌子都能接活。框架里的 middleware 和路由 handler 长得一模一样，挂在路由树的任意节点都行。
 
 它和 [[axum]] / [[actix-web]] 一样跑在 hyper + tokio 之上，区别在于上层抽象选择：
 
@@ -99,9 +99,10 @@ async fn create(body: JsonBody<CreateUser>) -> Json<User> {
 ### 案例 3：树状路由 + 鉴权 hoop——保护一个子树
 
 ```rust
+#[handler]
 async fn jwt_auth(req: &mut Request, depot: &mut Depot,
                    res: &mut Response, ctrl: &mut FlowCtrl) {
-    if !req.header::<String>("authorization").is_some() {
+    if req.header::<String>("authorization").is_none() {
         res.status_code(StatusCode::UNAUTHORIZED);
         ctrl.skip_rest();
     }
@@ -150,7 +151,7 @@ let router = Router::new()
 - **2021 年**：跟随 tokio 1.0 + hyper 0.14 进入稳定期，`#[handler]` 宏定型
 - **2023 年**：内置 OpenAPI 模块成熟，可以用 `#[endpoint]` 同时做路由和文档
 - **2024 年**：跟进 hyper 1.0 大版本，加入 HTTP/3 (QUIC) 与 ACME 自动证书
-- **2025-2026**：版本走到 0.93，4.4k+ stars，零 unsafe 代码，中文社区活跃
+- **2025-2026**：版本走到 0.94+，4.4k+ stars，unsafe forbidden，中文社区活跃
 
 ## 学到什么
 
