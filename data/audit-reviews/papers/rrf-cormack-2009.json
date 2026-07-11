@@ -1,0 +1,135 @@
+{
+  "slug": "rrf-cormack-2009",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "火锅店朋友推荐类比贴合「多列表合并」，零基础直觉强。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 讲清了「直接加分」为何翻车，可再拆成「量纲不同→大分压死小分→RRF 只用名次」三步，方便跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者/会议/年份（Cormack, Clarke & Buettcher, SIGIR 2009）与公式 k=60 来自 pilot 的叙述与原文一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「被引 1500+」偏绝对：ACM DL 量级约五百，不同统计源差异大；请改成「数百到上千（随统计源变化）」或删掉具体数字，避免硬伤。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Fox & Shaw CombSUM/CombMNZ、Condorcet 对照属于合理教学简化，未歪曲 RRF「只看排名」的核心主张。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 表格手算与公式一致，案例 3 ES `rank.rrf` 字段名与 `rank_constant` 用法概念正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（短列表调 k、同源列表互相加强、等权噪声）可操作，适用边界有量化感。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 `query_vector: [...]` 是教学占位即可，可加半句「换成真实向量」以免读者以为字面可跑。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "火锅店朋友推荐类比贴合「多列表合并」，零基础直觉强。",
+        "案例 2 讲清了「直接加分」为何翻车，可再拆成「量纲不同→大分压死小分→RRF 只用名次」三步，方便跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "作者/会议/年份（Cormack, Clarke & Buettcher, SIGIR 2009）与公式 k=60 来自 pilot 的叙述与原文一致。",
+        "「被引 1500+」偏绝对：ACM DL 量级约五百，不同统计源差异大；请改成「数百到上千（随统计源变化）」或删掉具体数字，避免硬伤。",
+        "Fox & Shaw CombSUM/CombMNZ、Condorcet 对照属于合理教学简化，未歪曲 RRF「只看排名」的核心主张。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 表格手算与公式一致，案例 3 ES `rank.rrf` 字段名与 `rank_constant` 用法概念正确。",
+        "踩坑（短列表调 k、同源列表互相加强、等权噪声）可操作，适用边界有量化感。",
+        "案例 3 的 `query_vector: [...]` 是教学占位即可，可加半句「换成真实向量」以免读者以为字面可跑。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：被引 1500+ 过绝对；其余两位 pass。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "弱化被引数字表述；案例 2 拆成三步；案例 3 注明 query_vector 占位。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 153,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
