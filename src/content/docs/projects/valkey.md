@@ -1,5 +1,5 @@
 ---
-title: Valkey — Redis 7.4 的开源 fork
+title: Valkey — Redis 7.2.4 的开源 fork
 来源: https://github.com/valkey-io/valkey
 日期: 2026-05-29
 分类: 数据库 / 缓存
@@ -10,7 +10,7 @@ title: Valkey — Redis 7.4 的开源 fork
 
 Valkey 是一个**开源的内存键值数据库**，2024 年 3 月由 Linux Foundation 联合 AWS、Google、Oracle 一起从 [[redis]] 7.2.4 fork 出来的。
 
-日常类比：原本免费开放的健身房（Redis）突然改成"会员制"（SSPL 许可证，云厂商不能直接用），原来的常客们集体跑出来，按原来的样子复刻了一个免费版本，挂上"Valkey"的招牌继续营业。
+日常类比：原本免费开放的健身房（Redis）突然改成"会员制"（SSPL + RSALv2 双许可证，云厂商不能直接拿来卖托管服务），原来的常客们集体跑出来，按原来的样子复刻了一个免费版本，挂上"Valkey"的招牌继续营业。
 
 你如果用 Redis 写过这种代码：
 
@@ -25,10 +25,10 @@ GET user:1001
 
 不理解 Valkey 的诞生背景，下面这些事都没法解释：
 
-- 为什么 AWS ElastiCache、GCP Memorystore 这些托管服务在 2024 下半年悄悄把默认引擎切到了 Valkey
-- 为什么 Redis 还在更新，但社区一半的注意力跑到了 Valkey
-- 为什么开源协议变更（Redis → SSPL）会引发整个行业的连锁反应
-- 为什么 Linux Foundation 治理的开源项目，比公司主导的"伪开源"更受云厂商信任
+- 为什么 AWS ElastiCache、GCP Memorystore 这些托管服务在 2024 下半年把默认引擎切到了 Valkey
+- 为什么 Redis 还在更新，但云厂商与大量开源用户把注意力转到了 Valkey
+- 为什么开源协议变更（BSD → SSPL/RSALv2）会引发整个行业的连锁反应
+- 为什么 Linux Foundation 治理的开源项目，比单一公司主导的源码可得项目更受云厂商信任
 
 简单说：**这是 2024 年开源世界最大的一次"集体出走"**，影响每个用 Redis 的后端开发者。
 
@@ -36,11 +36,11 @@ GET user:1001
 
 Valkey 与 [[redis]] 的关系可以拆成 **三层**：
 
-1. **协议层 100% 兼容**：用的是 RESP（Redis Serialization Protocol，Redis 自己发明的二进制协议）。客户端库（jedis / lettuce / ioredis / redis-py）连 Valkey 时，**完全感知不到差异**。
+1. **协议层兼容**：用的是 RESP（Redis Serialization Protocol，像双方约定好的"快递单格式"）。客户端库（jedis / lettuce / ioredis / redis-py）连 Valkey 时，**完全感知不到差异**。
 
 2. **数据结构完全继承**：string / hash / list / set / sorted set / stream / bitmap / hyperloglog / geo——Redis 7.2.4 之前定义的所有数据类型，Valkey 全都有，行为一致。
 
-3. **路线图开始分叉**：从 Valkey 8.0（2024-09 GA）起开始走自己的路——优先做**性能优化 + 多线程 IO**；而 Redis 闭源版优先做**商业模块**（向量搜索、时序数据库、JSON 文档）。
+3. **路线图开始分叉**：从 Valkey 8.0（2024-09 GA）起开始走自己的路——优先做**性能优化 + 多线程 IO**；而 Redis 7.4+（SSPL/RSALv2 源码可得，非闭源）优先做**商业模块**（向量搜索、时序、JSON）。
 
 简单说：**短期一样，长期会分家**。
 
@@ -73,36 +73,33 @@ JedisPool pool = new JedisPool("redis.example.com", 6379);
 JedisPool pool = new JedisPool("valkey.example.com", 6379);
 ```
 
-代码、数据结构、命令都不动。这就是"协议兼容"带来的红利。
+建议按三步验收：① 改主机名连上；② `SET`/`GET` 读写一条测试键；③ `INFO server` 确认 `redis_version`/`server_name` 指向 Valkey。代码、数据结构、命令都不动。
 
 ### 案例 3：Valkey 8.0 的多线程优势
 
-Valkey 8.0 引入了**多线程 IO**——把网络读写从单线程拆出来分给多个 worker。基准测试显示在高并发场景下吞吐量比 Redis 7.2 高 1.5-2 倍。
+Valkey 8.0 把网络读写从单线程拆给多个 worker。社区/官方基准在高并发场景下常见约 1.5–2× 吞吐提升（视负载与硬件而定，不是硬承诺）：
 
 ```bash
 # Valkey 8.0 配置
-io-threads 4
-io-threads-do-reads yes
+io-threads 4              # 开 4 个 IO 线程处理网络读写
+io-threads-do-reads yes   # 读请求也交给 IO 线程，不只写
 ```
 
 这是 Valkey 第一次走出 Redis 路线图——优先吞吐而不是模块。
 
 ## 踩过的坑
 
-1. **Redis Stack 模块在 Valkey 不通用**：RediSearch（向量搜索）/ RedisJSON（文档）/ RedisTimeSeries（时序）这些模块绑定 Redis Labs 的协议，Valkey 用不了。社区有替代品 `valkey-search` / `valkey-json`，但还没完全成熟。
-
-2. **Redis 7.4+ 的新功能不会同步**：Redis 出 7.4 时加了 hash 字段过期等新功能，Valkey 不一定跟。要看 Valkey 自己的路线图。
-
-3. **客户端库通常无需改，但版本检测可能踩坑**：有些客户端会用 `INFO server` 检查 Redis 版本，看到 Valkey 的输出可能误判。一般库会修，但老版本要注意。
-
-4. **三选一困难症**：Redis 7.2.4（旧 BSD 开源）/ Redis 7.4+（SSPL 闭源）/ Valkey（新 BSD 开源）。新项目大多数情况选 Valkey，但要确认依赖的模块是否还能用。
+1. **Redis Stack 模块在 Valkey 不通用**：RediSearch / RedisJSON / RedisTimeSeries 绑定 Redis Labs 协议，Valkey 用不了；社区有 `valkey-search` / `valkey-json`，但成熟度仍参差。
+2. **Redis 7.4+ 的新功能不会同步**：如 hash 字段过期等，Valkey 不一定跟，要看自己的路线图。
+3. **客户端版本检测可能踩坑**：有些库用 `INFO server` 检查 Redis 版本，看到 Valkey 输出可能误判；老版本客户端要升级。
+4. **三选一困难症**：Redis 7.2.4（旧 BSD）/ Redis 7.4+（SSPL/RSALv2）/ Valkey（BSD）。新项目多数选 Valkey，但要确认依赖模块是否还能用。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 - 缓存层、会话存储、排行榜、消息队列等 Redis 的所有经典场景
 - 云厂商托管的 Redis 服务迁移（AWS ElastiCache / GCP Memorystore 已默认 Valkey）
-- 想避开 SSPL 协议风险的开源项目
+- 想避开 SSPL/RSALv2 协议风险的开源项目
 - 高并发场景需要多线程 IO（Valkey 8.0+）
 
 **不适用**：
@@ -114,7 +111,7 @@ io-threads-do-reads yes
 
 - **2009 年**：意大利程序员 antirez（Salvatore Sanfilippo）创建 Redis，BSD 协议开源，迅速成为缓存层事实标准。
 - **2018 年**：Redis Labs 把部分模块改成 Commons Clause 协议，第一次商业化信号。
-- **2024-03-20**：Redis 主仓库改 SSPL 许可证，云厂商不能直接拿来卖托管服务。
+- **2024-03-20**：Redis 主仓库改 SSPL + RSALv2 双许可证，云厂商不能直接拿来卖托管服务。
 - **2024-03-28**：Linux Foundation 联合 AWS、Google、Oracle 宣布 Valkey 成立，从 Redis 7.2.4 fork。
 - **2024-04**：Snap、Ericsson、阿里云加入 Valkey 治理。
 - **2024-09**：Valkey 8.0 GA，性能优化 + 多线程 IO，正式走自己的路线。
@@ -123,7 +120,7 @@ io-threads-do-reads yes
 
 ## 学到什么
 
-1. **开源协议不是小事**——一个 BSD → SSPL 的改动，半年内重塑了整个 KV 数据库生态
+1. **开源协议不是小事**——一个 BSD → SSPL/RSALv2 的改动，半年内重塑了整个 KV 数据库生态
 2. **协议兼容是迁移的最大红利**——Valkey 不发明新协议，让用户"换品牌零成本"
 3. **基金会治理 vs 公司治理**——Linux Foundation 让云厂商敢押注（不会突然又改协议）
 4. **fork 不是终点**：Valkey 8.0 已开始走自己的路（多线程优先），长期会成为另一个数据库
@@ -138,7 +135,11 @@ io-threads-do-reads yes
 
 ## 关联
 
-- [[redis]] —— Valkey 是 Redis 7.2.4 的 fork，所有命令、协议、数据结构都继承
+- [[redis]] —— Valkey 是 Redis 7.2.4 的 fork，命令、协议、数据结构都继承
+- [[dragonfly]] —— 另一条多线程 Redis 兼容路线，可与 Valkey 8.0 对照
+- [[memcached]] —— 更早的内存缓存，理解 Valkey/Redis 为何后来居上
+- [[timescaledb]] —— 时序场景若不用 RedisTimeSeries，可看关系库扩展路线
+- [[sqlite]] —— 嵌入式持久化对照：Valkey 主打内存，SQLite 主打本地文件
 
 ## 反向链接
 
@@ -147,4 +148,3 @@ io-threads-do-reads yes
 - [[dragonfly]] —— Dragonfly — 多线程 Redis 替代
 - [[redis]] —— Redis — 内存键值数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
-

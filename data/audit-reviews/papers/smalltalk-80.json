@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 缺少像案例 1 那样的逐步读法；且 subclass 行写反，零基础读者会照抄出错"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有注释没有可跟做的代码，建议补一行改方法前后的对照或伪操作步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Self 发明 inline cache 后直接传给 V8/HotSpot」略压缩：中间还有 Strongtalk/Animorphic 等环节，可改成「经 Self/Strongtalk 一脉影响了 HotSpot 与 V8」以免过度直传感"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2：`SavingsAccount subclass: #Account` 写反了，应为 `Account subclass: #SavingsAccount`"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 SavingsAccount>>deposit: 在 super 已加 amount 后再 `balance + (amount * rate)` 语义怪异，建议改成利息加成或单独 interest 方法，避免误导"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 缺少像案例 1 那样的逐步读法；且 subclass 行写反，零基础读者会照抄出错",
+        "案例 3 只有注释没有可跟做的代码，建议补一行改方法前后的对照或伪操作步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「Self 发明 inline cache 后直接传给 V8/HotSpot」略压缩：中间还有 Strongtalk/Animorphic 等环节，可改成「经 Self/Strongtalk 一脉影响了 HotSpot 与 V8」以免过度直传感"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2：`SavingsAccount subclass: #Account` 写反了，应为 `Account subclass: #SavingsAccount`",
+        "案例 2 的 SavingsAccount>>deposit: 在 super 已加 amount 后再 `balance + (amount * rate)` 语义怪异，建议改成利息加成或单独 interest 方法，避免误导"
+      ]
+    }
+  ]
+}

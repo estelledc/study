@@ -52,12 +52,18 @@ CREATE EXTENSION timescaledb;
 
 ### 案例 1：在已有 PostgreSQL 上启用
 
+先装好 TimescaleDB 扩展包（发行版包或源码编译），再进 `psql`：
+
 ```sql
 CREATE EXTENSION IF NOT EXISTS timescaledb;
 SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
 ```
 
-不需要新装数据库、不需要数据迁移，已有业务表保持不动。
+**逐部分解释**：
+
+- `CREATE EXTENSION`：把扩展装进当前库，注册时序函数与 planner 钩子
+- `SELECT extversion`：确认扩展已加载，并看到版本号
+- 不需要新装数据库、不需要数据迁移，已有业务表保持不动
 
 ### 案例 2：建一张时序表
 
@@ -74,7 +80,11 @@ SELECT create_hypertable('metrics', 'time',
 CREATE INDEX ON metrics (device_id, time DESC);
 ```
 
-第二行是关键：`metrics` 从普通表变成 hypertable，按 `time` 字段每天切一个 chunk。
+**逐步拆开**：
+
+1. 先建普通表——列定义跟普通 PostgreSQL 表一样
+2. `create_hypertable`：把 `metrics` 变成超表，按 `time` 每天切一个 chunk
+3. `(device_id, time DESC)`：按设备查时先定位设备，再按时间倒序剪枝
 
 ### 案例 3：连续聚合视图
 
@@ -93,7 +103,7 @@ SELECT add_continuous_aggregate_policy('hourly_avg',
   schedule_interval => INTERVAL '30 minutes');
 ```
 
-后台每 30 分钟跑一次，把 `[3 小时前, 1 小时前]` 这段时间的新数据增量算进视图。仪表盘查"过去 7 天每小时平均值"直接查 `hourly_avg`，扫几百行而不是几亿行。
+后台每 30 分钟跑一次，把 `[3 小时前, 1 小时前]` 的新数据增量算进视图。仪表盘查"过去 7 天每小时平均"直接读 `hourly_avg`，扫几百行而不是几亿行。
 
 ## 踩过的坑
 
@@ -121,15 +131,14 @@ SELECT add_continuous_aggregate_policy('hourly_avg',
 - 不需要 SQL、只要简单 KV 写入——[[redis]] / [[valkey]] 的 streams 更轻
 - 完全不想要关系模型——直接选 InfluxDB / Prometheus
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2017 年**：Timescale Inc. 在纽约成立，第一版作为 PostgreSQL 扩展开源，主打 "make Postgres time-series"
 - **2020 年**：v2.0 发布，引入 Multinode 分布式模式，想冲超大规模时序
-- **2024 年**：v2.14 起官方移除 Multinode（用户少、维护重），战略回归"单机 + 云端 Hypercore"
-- **同年**：v2.18 发布 Cloud Hypercore Storage——把行存 / 列存 / 对象存储分层，热数据在 SSD、温数据列存压缩、冷数据下沉 S3
+- **2024 年**：v2.14 起官方移除 Multinode（用户少、维护重），战略回归单机扩展
+- **2025 年**：v2.18 强化 Hypercore（行存/列存混合）与分层存储，热数据在本地盘、温数据列存压缩、冷数据可下沉对象存储
 
 战略转向那次很关键：承认"分布式时序自己做不过 ClickHouse"，专注"PG 扩展"这个定位。
-
 ## 学到什么
 
 1. **扩展 vs 独立产品**：TimescaleDB 选了扩展路线，复用整个 PG 生态——这个决定让它在工具链、人才、运维上零成本，是中小团队"上时序"的最低门槛

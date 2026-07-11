@@ -1,29 +1,30 @@
 {
-  "round_n": 120,
+  "round_n": 121,
   "total": 1975,
-  "audited": 1700,
+  "audited": 1800,
   "failed": 0,
-  "pending": 275,
+  "pending": 175,
   "by_status": {
-    "rewritten": 41,
-    "refined": 993,
-    "passed": 666,
-    "pending": 275
+    "rewritten": 42,
+    "refined": 1066,
+    "passed": 692,
+    "pending": 175
   },
   "last_round": {
-    "round": 120,
+    "round": 121,
     "results": 100,
-    "passed": 21,
-    "refined": 74,
-    "rewritten": 5,
+    "passed": 26,
+    "refined": 73,
+    "rewritten": 1,
     "failed": 0,
-    "at": "2026-07-11T00:51:22.311Z"
+    "at": "2026-07-11T01:14:28.468Z"
   },
-  "next_action": "start-audit-round-121",
-  "updated_at": "2026-07-11T00:51:22.311Z",
+  "next_action": "start-audit-round-122",
+  "updated_at": "2026-07-11T01:14:28.468Z",
   "handoff": {
-    "branch": "cursor/audit-all-notes-4844",
-    "pr": "https://github.com/estelledc/study/pull/15",
-    "note": "round-120: 100-wide; audited 1700/1975; next start-audit-round-121"
+    "mode": "100-wide-true-concurrent",
+    "last_round": 121,
+    "summary": "100 agents x 1 note; 26 passed / 73 refined / 1 rewritten",
+    "next": "start-audit-round-122 with --count 100 (175 pending)"
   }
 }

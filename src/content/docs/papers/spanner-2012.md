@@ -18,22 +18,22 @@ Spanner 的解法叫 **TrueTime**：每个数据中心装 GPS 接收器和原子
 
 不理解 Spanner，下面这些事都没法解释：
 
-- 为什么 CockroachDB / YugabyteDB / TiDB / FoundationDB 这一波 NewSQL 几乎都在抄它的设计
+- 为什么 CockroachDB / YugabyteDB / TiDB 这一波全球 SQL 数据库，架构上几乎都在学它（分片 + 共识复制 + 分布式事务）
 - 为什么 Google AdWords（F1）能把扣费数据从 MySQL 拆到全球还不重复扣
-- 为什么 "external consistency" 这个词突然在 2012 后火起来——它比线性一致还多一层
+- 为什么 "external consistency"（外部一致）在 2012 后火起来——它用物理时间戳保证：先提交的事务时间戳一定更小，效果≈事务级线性一致
 - 为什么 "时钟"这个最不像计算机问题的东西，会成为分布式数据库的瓶颈
 
 ## 核心要点
 
 Spanner 的设计可以拆成 **三件大事**：
 
-1. **数据切成 tablet 放进 Paxos group**：每个 group 是一组副本，跨机房跑 Paxos 选 leader 写日志。类比：每条街开一个分行，分行内部三个柜员投票决定账本写不写。
+1. **数据切成 tablet 放进 Paxos group**：每个 group 是一组副本，跨机房跑 Paxos（多数派投票写日志）选 leader。类比：每条街开一个分行，分行内部三个柜员投票决定账本写不写。
 
-2. **跨 group 事务用 2PC**：一个事务可能动两条街的账本，需要两阶段提交协调。Paxos 让 2PC 的协调者本身可容错——这是相对早期 2PC 的关键改进。
+2. **跨 group 事务用 2PC**：一个事务可能动两条街的账本，需要两阶段提交（先问各分行能不能改，再统一落账）。Paxos 让 2PC 的协调者本身可容错——这是相对早期 2PC 的关键改进。
 
 3. **TrueTime 给事务发时间戳 + commit wait**：写事务拿到 TT.now().latest 当时间戳 s，**等到 TT.after(s) 才放锁**。等待的本质：让墙上的真实时间确定大于 s，这样后续事务的时间戳一定比 s 大。这一步叫 **commit wait**。
 
-读 read-only 事务挑一个 safe timestamp 直接快照读，**完全不用锁**——MVCC 让它和写并发不冲突，全局时间戳让它能跨 group 取一致视图。
+读 read-only 事务挑一个 safe timestamp 直接快照读，**完全不用锁**——MVCC（多版本：读旧快照、写新版本互不挡）让它和写并发不冲突，全局时间戳让它能跨 group 取一致视图。
 
 ## 实践案例
 

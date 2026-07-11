@@ -25,7 +25,7 @@ const bal = await getBalance(client, { address: "0xd8dA...96045" });
 - **Transport**（http / webSocket / custom / fallback）：负责"我怎么把字节送出去"
 - **Chain**：负责"我连的是哪条链"——内置 200+ EVM 链定义
 
-完全用 TypeScript 写，从合约 ABI 字面量自动推导出方法签名和返回类型，~35kb 压缩 bundle，**wagmi 2.0（2024）默认底座**。
+完全用 TypeScript 写，从合约 ABI（合约说明书）字面量自动推导方法签名和返回类型；官方 README 量级约 ~35kb 压缩 bundle，**wagmi 2.0（2024）默认底座**。
 
 ## 为什么重要
 
@@ -40,19 +40,21 @@ const bal = await getBalance(client, { address: "0xd8dA...96045" });
 
 viem 的设计可以拆成**四个对照决策**：
 
-1. **Client 三联 vs ethers Provider/Signer 二联**：viem 拆出 PublicClient（只读）/ WalletClient（签名+发交易）/ TestClient（本地测试链调试），职责更细。
+1. **Client 三联 vs ethers Provider/Signer 二联**：像把"前台接待 / 出纳签字 / 沙盘演练"拆成三个工位。PublicClient 只读、WalletClient 签名发交易、TestClient 本地调试，职责更细。
 
-2. **Transport 抽象（组合）vs ethers 内嵌**：transport 独立成对象，可以 `fallback([http(a), http(b)])` 自动重试切节点，也能塞 mock 测试。
+2. **Transport 抽象（组合）vs ethers 内嵌**：Transport 像快递渠道——http / webSocket / fallback 可换可叠。`fallback([http(a), http(b)])` 自动切节点，测试时也能塞 mock。
 
-3. **Actions（函数）vs ethers Methods（OO）**：调链用 `getBalance(client, args)`，不是 `client.getBalance(args)`。函数能 tree-shake——没用到的不打包。
+3. **Actions（函数）vs ethers Methods（OO）**：调链用 `getBalance(client, args)`，不是挂在对象上的方法。像自助柜只取你点的那一格——没用到的 action 不进打包（tree-shake）。
 
-4. **ABI 字面量类型推导**：要求你写 `const abi = [...] as const`。一旦写了，`contract.read.balanceOf` 会自动得到正确的入参/返回类型，整个 DApp 不用手写一个合约方法签名。
+4. **ABI 字面量类型推导**：ABI 是合约的"菜单说明书"。写 `const abi = [...] as const` 后，编辑器自己推出 `balanceOf` 的入参/返回类型，整站不用手写方法签名。
 
 四点合起来：**bundle 小、类型强、可组合、可测试**。
 
 ## 实践案例
 
 ### 案例 1：连主网读余额（最小例子）
+
+目标：问主网"这个地址有多少 ETH"。
 
 ```ts
 import { createPublicClient, http, formatEther } from "viem";
@@ -63,12 +65,15 @@ const balance = await client.getBalance({ address: "0xd8dA6BF26964aF9D7eEd9e03E5
 console.log(formatEther(balance), "ETH");
 ```
 
-这里 `client.getBalance` 是把 action 挂在 client 上的便捷写法。也能 `import { getBalance } from "viem/actions"` 后 `getBalance(client, {...})`，这种写法更适合 tree-shake。
+三步：① `createPublicClient` 拼好链 + 通道；② `getBalance` 问余额（返回 `bigint`）；③ `formatEther` 把 wei 换成可读 ETH。`client.getBalance` 是挂在 client 上的便捷写法；也可 `import { getBalance } from "viem/actions"` 后 `getBalance(client, {...})`，更利 tree-shake。
 
 ### 案例 2：从 ABI 自动推合约方法类型
 
+目标：让编辑器自己知道 `balanceOf` 返回 `bigint`。承接案例 1 的 `client`。
+
 ```ts
-import { createPublicClient, http, getContract } from "viem";
+import { getContract } from "viem";
+// client 同案例 1
 
 const usdcAbi = [
   { type: "function", name: "balanceOf", stateMutability: "view",
@@ -76,17 +81,20 @@ const usdcAbi = [
     outputs: [{ type: "uint256" }] },
 ] as const;  // 关键：const 断言
 
-const usdc = getContract({ address: "0xa0b8...", abi: usdcAbi, client });
-const bal = await usdc.read.balanceOf(["0xd8dA..."]);
-//    ^? bigint  — 编辑器自己推出来
+const usdc = getContract({ address: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", abi: usdcAbi, client });
+const bal = await usdc.read.balanceOf(["0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"]);
+//    ^? bigint  — 悬停可见类型
 ```
 
-viem 在编译期把 `as const` 的 ABI 当类型信息读，自动织出 `read.balanceOf` 这种方法 + 入参/返回类型。**忘了 `as const` 类型立刻退化成 any**——这是新人头号坑。
+三步：① ABI + `as const` 冻成字面量；② `getContract` 织出 `read.balanceOf`；③ 调用时编辑器已知道入参/返回。**忘了 `as const` 类型立刻退化**——新人头号坑。
 
 ### 案例 3：发交易 + 等回执
 
+目标：转 0.01 ETH 并等到上链确认。私钥仅用于本地演示；生产用浏览器钱包。`client` 仍用案例 1 的 PublicClient 等回执。
+
 ```ts
 import { createWalletClient, http, parseEther } from "viem";
+import { mainnet } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 
 const account = privateKeyToAccount("0x..." as `0x${string}`);
@@ -95,7 +103,7 @@ const hash = await wallet.sendTransaction({ to: "0x...", value: parseEther("0.01
 const receipt = await client.waitForTransactionReceipt({ hash });
 ```
 
-注意：`sendTransaction` / `writeContract` 只**返回 hash 不等回执**，你必须显式 `waitForTransactionReceipt`。这点和某些 ethers 写法不一样，新人容易忘。
+三步：① 私钥 → account → WalletClient；② `sendTransaction` **只返回 hash**；③ PublicClient 的 `waitForTransactionReceipt` 才等到回执。新人常停在第 ② 步。
 
 ## 踩过的坑
 
@@ -113,7 +121,7 @@ const receipt = await client.waitForTransactionReceipt({ hash });
 
 | 维度 | viem (2023+) | ethers v6 (2023+) | web3.js v4 (2023+，2025-03 archived) |
 |------|--------------|-------------------|--------------------------------------|
-| Bundle（压缩） | ~35 kb | ~144 kb | ~240 kb |
+| Bundle（压缩，README 量级） | ~35 kb | ~144 kb | ~240 kb |
 | API 风格 | actions 函数 + Client/Transport/Chain 组合 | OO 三件套：Provider / Signer / Contract | 单 `Web3` 主入口 + 模块挂载 |
 | 类型来源 | 从 ABI 字面量自动推 | 手写 TypedContract / typechain 生成 | 类型基本手写或弱类型 |
 | 大数 | 原生 `bigint` | 原生 `bigint`（v6 改） | 原生 `bigint`（v4 改） |
@@ -124,7 +132,7 @@ const receipt = await client.waitForTransactionReceipt({ hash });
 
 **适用**：
 - 新 DApp 项目首选——wagmi 2 默认底座
-- Bundle size 敏感的浏览器端（C 端钱包/交易所前端）
+- 浏览器首屏 JS 预算紧（例如希望以太坊客户端库 <50kb 压缩）时优先 viem
 - 需要从 ABI 自动推合约方法类型，省手写
 - 想用 functional 风格、按 action 引入
 
@@ -138,7 +146,7 @@ const receipt = await client.waitForTransactionReceipt({ hash });
 - **2022 年**：wagmi 团队在做 React DApp hook 库时发现 ethers v5 在前端 bundle 接近 200kb、TypeScript 类型不够强，于是决定造轮子
 - **2023 年**：viem 1.0 发布，完全 TypeScript 重写，提出 "Client + Transport + Chain" 三件套
 - **2024 年**：wagmi 2.0 把默认底层从 ethers 切到 viem，下游被动迁移
-- **2025 年**：在新建 DApp 项目里超越 ethers 成为首选，github 仓库 stars 持续上涨
+- **2025 年**：web3.js 归档后，常见脚手架/教程更多默认指向 viem；stars 持续上涨
 
 ## 学到什么
 

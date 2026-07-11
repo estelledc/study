@@ -28,10 +28,9 @@ for el in elements:
 不理解 Unstructured，下面这些事都没法解释：
 
 - 为什么 [[langchain]] 和 [[llamaindex]] 的"默认文档加载器"列表里都摆着 Unstructured——它把上游脏活做深了，下游不愿意再造一遍轮子
-- 为什么 RAG 项目卡在"PDF 解析质量"这一环——纯 `pdfplumber` 抽不出表格、PyMuPDF 抽不出版面层级，Unstructured 把这些拼成一套
-- 为什么"非结构化数据准备"能撑起一家拿了 ~25M 美元 A 轮的公司——这件事看起来不性感，但谁都绕不过去
-- 为什么 Unstructured 把策略显式分档（`fast` / `hi_res` / `ocr_only`），而不是"自动适配"——RAG 工程里的延迟和精度权衡只能由用户拍板
-- 为什么后来 LlamaParse、Reducto、AWS Textract 这一批"专业文档解析"工具会冒出来，都在啃同一块蛋糕
+- 为什么 RAG 项目卡在"PDF 解析质量"——纯 `pdfplumber` 抽不出表格、PyMuPDF 抽不出版面层级，它把这些拼成一套
+- 为什么"非结构化数据准备"能撑起一家拿了约 2500 万美元融资的公司——看起来不性感，但谁都绕不过去
+- 为什么它把策略显式分档（`fast` / `hi_res` / `ocr_only`），而不是"自动适配"——延迟和精度只能由用户拍板
 
 ## 核心要点
 
@@ -53,14 +52,17 @@ from unstructured.chunking.title import chunk_by_title
 
 elements = partition(filename="report.pdf")
 chunks = chunk_by_title(elements, max_characters=1000, combine_text_under_n_chars=200)
-# chunks 直接喂给 embedding 模型即可
 ```
 
-三行做完："PDF → 有序 Element → 按标题分块"——下一步接 [[llamaindex]] 或 [[langchain]] 的 vector store 即可。
+**逐部分解释**：
+
+1. `partition(...)`：自动认格式，拆成带类型的 Element 列表（标题 / 正文 / 表格…）
+2. `chunk_by_title(...)`：同一标题下的块粘在一起，并限制每块大约 1000 字符——方便下游 embedding（把文字变成向量的模型）吃下
+3. 下一步把 `chunks` 交给 [[llamaindex]] / [[langchain]] 的 vector store 即可
 
 ### 案例 2：hi_res 策略抠表格
 
-对扫描 PDF / 含财报表格的文档，默认 `fast` 策略会丢表格结构。换成：
+默认 `fast` 会丢表格结构。扫描 PDF / 财报要显式升档：
 
 ```python
 elements = partition(
@@ -70,39 +72,38 @@ elements = partition(
 )
 ```
 
-这会调用版面检测模型（detectron2 / yolox）识别表格区域，把表格 Element 的 `metadata.text_as_html` 填成结构化 HTML——下游可以直接喂给 LLM 让它读表。代价：速度从一秒几十页掉到一秒一两页。
+**逐部分解释**：
 
-### 案例 3：把元数据保留下来做 citation
+1. `strategy="hi_res"`：启用版面检测模型（detectron2 / yolox 一类），先找"哪里是表"
+2. `infer_table_structure=True`：把表格填进 `metadata.text_as_html`，下游 LLM 可读结构化表
+3. 代价：速度从一秒几十页掉到一秒一两页；且常需 `unstructured[all-docs]` + poppler / tesseract 等系统依赖（见踩坑）
+
+### 案例 3：元数据做 citation
 
 ```python
 for el in elements:
     print(el.text, "← page", el.metadata.page_number, el.metadata.coordinates)
 ```
 
-每个 Element 都有页码和 bbox，做 RAG 时可以让 LLM 回答完之后**指回原文**——"这段答案来自第 3 页第 12-18 行"，这是裸 `pdfplumber` 抽文本做不到的。
+每个 Element 自带页码和 bbox（矩形框坐标）。RAG 回答后可**指回原文**——"来自第 3 页"——裸抽 text 做不到。页码像书签：检索命中后读者能翻回原页核对。
 
-### 案例 4：自定义过滤——只留正文段
+### 案例 4：按类型过滤正文
 
-很多场景下 Header / Footer / Page Number 只会污染检索结果（每页都有"第 X 页 / 公司机密"反复出现）。利用 Element 类型可以一行过滤掉：
+Header / Footer / 页码会污染检索（每页重复"公司机密"）。按 Element 类型过滤：
 
 ```python
 narrative = [el for el in elements
              if type(el).__name__ in ("NarrativeText", "Title", "ListItem", "Table")]
 ```
 
-裸文本抽取做不到这一步——只有"已经类型化"的 Element 列表才能这样切。这也是 Unstructured 比单纯抽 text 多出来的核心价值。
+只有"已贴标签"的列表才能这样切——这是比单纯抽 text 多出来的核心价值。
 
 ## 踩过的坑
 
-1. **重依赖**：`hi_res` 策略要装 poppler（PDF 渲染）+ tesseract（OCR）+ detectron2 / onnxruntime（版面检测）+ libreoffice（DOCX/PPTX 先转 PDF）。裸 `pip install unstructured` 只够 `fast`——一上 `hi_res` 就 ImportError。社区维护的 `unstructured[all-docs]` extras 能装一部分系统包还得自己来。
-
-2. **速度差三档**：`fast` 一秒几十页，`hi_res` 一秒一两页，`ocr_only` 一秒不到一页。生产线必须**显式分流**——纯文本 PDF 走 fast，含表格 / 扫描件走 hi_res，扔同一档要么慢要么糊。
-
-3. **表格识别质量靠版面运气**：多列表格、合并单元格、跨页表格、横向表格——这些场景下 `text_as_html` 经常错位。专业财报场景往往要叠 layoutparser 或换 LlamaParse 这类专门工具。
-
-4. **OCR 千万别乱开**：`strategy="ocr_only"` 会把每一页都过 tesseract，纯文本 PDF 走这条路慢 50 倍且精度反而低（tesseract 对干净文字不如直接抽 text layer）。只在确认是扫描档时开。
-
-5. **embedding 维度对齐**：上游 chunk 大小和下游 embedding 模型的 token 上限要对齐——`max_characters=1000` 对 OpenAI text-embedding-3 够用，但有些 BGE 系列输入限 512 token，1000 字符可能超。换模型必须重新切块 + 重建索引。
+1. **重依赖**：`hi_res` 要 poppler + tesseract + 版面模型 +（DOCX/PPTX 时）libreoffice；裸 `pip install unstructured` 只够 `fast`，一上 `hi_res` 就 ImportError。
+2. **速度差三档**：`fast` 一秒几十页，`hi_res` 一秒一两页，`ocr_only` 更慢——生产线必须按文档类型分流，不能一刀切。
+3. **表格靠版面运气**：合并单元格、跨页表、横向表时 `text_as_html` 常错位；专业财报往往要换 LlamaParse 等专门工具。
+4. **OCR 别乱开**：`ocr_only` 每页过 tesseract，纯文本 PDF 慢约 50 倍且更糊——只在确认是扫描档时开。
 
 ## 适用 vs 不适用场景
 
@@ -124,30 +125,34 @@ narrative = [el for el in elements
 
 ## 历史小故事（可跳过）
 
-- **2022 中**：Brian Raymond 一帮人给 LLM 团队做数据预处理时，发现"PDF → 文本"这一步反复造轮子，决定抽成独立库。
-- **2022-10**：`Unstructured-IO/unstructured` 在 GitHub 开源，初版只支持 PDF / HTML / EML 三种。
-- **2023**：[[langchain]] 与 [[llamaindex]] 把 Unstructured 接成默认 document loader 之一，GitHub star 从 1k 涨到 6k。
-- **2024-Q1**：拿到 Madrona / Bain 领投的 ~25M 美元 A 轮，推出 Unstructured Platform（hosted API + 企业连接器，对接 SharePoint / Google Drive / S3）。
-- **2024-2025**：Element 列表持续加新字段（emphasis 强调、languages 多语种、links 链接），同时和 LlamaIndex / Haystack 等下游框架 co-evolve——上游加字段，下游接住。
+- **2022 中**：Brian Raymond 等人做 LLM 数据预处理时，发现"PDF → 文本"反复造轮子，抽成独立库。
+- **2022-10**：`Unstructured-IO/unstructured` 开源，初版主要支持 PDF / HTML / EML。
+- **2023**：[[langchain]] / [[llamaindex]] 接成默认 document loader 之一；同年 7 月公布 Seed + Series A 合计约 2500 万美元（Madrona 领投 A，Bain 参与）。
+- **2024-03**：再融约 4000 万美元 Series B（Menlo 领投），推进 Unstructured Platform（hosted API + SharePoint / Drive / S3 等连接器）。
+- **2024-2025**：Element 持续加字段（languages、links 等），与 LlamaIndex / [[haystack]] 等下游 co-evolve。
 
 ## 学到什么
 
-1. **把脏活做深就是护城河**——25+ 格式 × 3 种策略 × 元数据完整度，新框架要一次性复制非常难
-2. **策略显式分档比"自动适配"更工程**——`fast` / `hi_res` / `ocr_only` 让用户拍板 SLA，比黑箱更可控
-3. **下游生态的接入决定上游存活**——LangChain 哪天换默认 loader，Unstructured 的护城河会松一大截，所以它必须持续 co-evolve
-4. **开源 + 商业 hosted 是 RAG 工具链标准打法**——和 LlamaCloud / Pinecone / Weaviate 一样的双轨：开源版做生态，hosted 版收钱
-5. **元数据是"未来杠杆"**——一开始只是把页码、bbox 顺手存上，几年后做 citation 回溯、版面感知 chunk、多模态拼合时全靠它撑场。看起来"额外"的数据其实是**最有复利**的部分
+1. **把脏活做深就是护城河**——25+ 格式 × 3 种策略 × 元数据完整度，新框架很难一次抄齐
+2. **策略显式分档比"自动适配"更工程**——`fast` / `hi_res` / `ocr_only` 让用户拍板 SLA
+3. **下游生态决定上游存活**——框架换默认 loader，护城河就会松，必须持续 co-evolve
+4. **元数据是未来杠杆**——页码、bbox 当初像"顺手存"，后来 citation、版面感知 chunk 全靠它
 
 ## 延伸阅读
 
-- 官方文档与 API 参考：[Unstructured Docs](https://docs.unstructured.io/)（按格式、按策略两条主索引）
-- 源码起点：`unstructured/partition/auto.py`——读完这一文件就能搞清"自动嗅探 + 分发"是怎么实现的
-- 配套博客：Unstructured 团队对每种格式的解析坑都写过专题文章，比通用 RAG 教程深
-- [[langchain]] 文档里的 `UnstructuredFileLoader` 章节——能看到下游怎么消费 Element 列表
+- 官方文档：[Unstructured Docs](https://docs.unstructured.io/)（按格式、按策略两条主索引）
+- 源码起点：`unstructured/partition/auto.py`——看清"自动嗅探 + 分发"
+- 融资背景：[TechCrunch 报道 Seed+A 轮](https://techcrunch.com/2023/07/19/unstructured-which-offers-tools-to-prep-enterprise-data-for-llms-raises-25m/)
+- [[langchain]] 的 `UnstructuredFileLoader` 章节——看下游怎么消费 Element
 
 ## 关联
 
-- [[langchain]] —— 通用 LLM 框架，`UnstructuredFileLoader` 是默认文档加载器之一
-- [[llamaindex]] —— RAG 框架，`SimpleDirectoryReader` 在复杂格式下也会调 Unstructured
+- [[langchain]] —— 通用 LLM 框架，`UnstructuredFileLoader` 是常见文档加载器之一
+- [[llamaindex]] —— RAG 框架，复杂格式下常会调到 Unstructured
 - [[haystack]] —— 另一个把 Unstructured 当前置 loader 的 RAG 框架
-- [[paddleocr]] —— 专业扫描档场景的 OCR 替代方案，比内置 tesseract 准
+- [[paddleocr]] —— 专业扫描档 OCR 替代，比内置 tesseract 更准
+- [[vllm]] —— 下游生成侧；解析质量再好，也要接上能跑的推理引擎
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

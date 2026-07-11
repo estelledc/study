@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有状态快照，缺少像模板那样的「逐部分解释」步骤（选举→收集状态→按规则推进）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 几乎是叙述，建议补一段伪代码或状态机示意，说明 Spanner 的 2PC+Paxos 和纯 3PC 差在哪一步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "## 核心要点 未按 1/2/3 编号且每条缺短类比，零基础读者容易在状态机段落里迷路"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「FLP 直接判了 3PC 死刑」略过强：FLP 证的是异步模型下确定性共识的不可能性；3PC 的工程失败更直接来自不可靠故障检测与分区下的 split-brain，建议把因果写准"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「最多差一格」是教学不变量，可保留，但宜标明这是对非阻塞性质的简化表述，避免读者当成论文原文定理名"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 终止协议可写成 3-4 行伪代码（elect → collect states → decide），方便跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已有替代路线，可再点明「多一轮 RTT」的量级对比（相对 2PC），边界会更可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有状态快照，缺少像模板那样的「逐部分解释」步骤（选举→收集状态→按规则推进）",
+        "案例 3 几乎是叙述，建议补一段伪代码或状态机示意，说明 Spanner 的 2PC+Paxos 和纯 3PC 差在哪一步",
+        "## 核心要点 未按 1/2/3 编号且每条缺短类比，零基础读者容易在状态机段落里迷路"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「FLP 直接判了 3PC 死刑」略过强：FLP 证的是异步模型下确定性共识的不可能性；3PC 的工程失败更直接来自不可靠故障检测与分区下的 split-brain，建议把因果写准",
+        "「最多差一格」是教学不变量，可保留，但宜标明这是对非阻塞性质的简化表述，避免读者当成论文原文定理名"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 终止协议可写成 3-4 行伪代码（elect → collect states → decide），方便跟做",
+        "适用/不适用已有替代路线，可再点明「多一轮 RTT」的量级对比（相对 2PC），边界会更可操作"
+      ]
+    }
+  ]
+}

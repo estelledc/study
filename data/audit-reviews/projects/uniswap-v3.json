@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 标题写「窄区间」但代码 tick 是全区间（-887220~887220），零基础会直接懵；应改成真正靠近现价的窄窗口并逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "tick / liquidity / TWAP / sqrtPriceX96 首次出现时用一句日常话桥接（例如 tick=价位刻度、liquidity=这段货架上的货量）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 从 avgTick 到价格缺一步白话说明，读者不知道为什么要除以 1800"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写「Aave / Compound 陆续把喂价源切到 V3 TWAP」偏绝对：多数借贷协议主喂价仍是 Chainlink，V3 TWAP 多为补充或特定场景；宜改成「部分协议采用 / 作为防操纵参考」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 代码与标题不一致：应给出对齐 tickSpacing 的窄区间示例（如 fee=3000 时 tick 为 60 的倍数），并注明 token0/token1 须按地址排序"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可加一点量化边界（例如窄区间宽度约现价 ±1%~±2%、跨 tick 过多时 gas 显著上升）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 标题写「窄区间」但代码 tick 是全区间（-887220~887220），零基础会直接懵；应改成真正靠近现价的窄窗口并逐步解释",
+        "tick / liquidity / TWAP / sqrtPriceX96 首次出现时用一句日常话桥接（例如 tick=价位刻度、liquidity=这段货架上的货量）",
+        "案例 3 从 avgTick 到价格缺一步白话说明，读者不知道为什么要除以 1800"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写「Aave / Compound 陆续把喂价源切到 V3 TWAP」偏绝对：多数借贷协议主喂价仍是 Chainlink，V3 TWAP 多为补充或特定场景；宜改成「部分协议采用 / 作为防操纵参考」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 代码与标题不一致：应给出对齐 tickSpacing 的窄区间示例（如 fee=3000 时 tick 为 60 的倍数），并注明 token0/token1 须按地址排序",
+        "适用场景可加一点量化边界（例如窄区间宽度约现价 ±1%~±2%、跨 tick 过多时 gas 显著上升）"
+      ]
+    }
+  ]
+}

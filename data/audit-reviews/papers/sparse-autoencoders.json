@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都是叙事结果，缺少像模板那样的最小代码/伪代码和「逐部分解释」步骤，零基础读者无法跟做"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的特征编号直接甩出，建议补「抓激活 → 训 SAE → 看 top 激活句 → 起名」四步流程"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "residual stream / L1 / mse 首次出现可再加半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 的特征 #4017/#8329/#12044 未给出可核对来源，若为教学虚构应标明「示意」，勿写成已复现事实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「ReLU 把负数砍成 0（这就是稀疏的来源）」过度简化：极端稀疏主要来自 L1/Top-K，ReLU 只是非负门控"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「学到什么」里「Cunningham 给方法 + Bricken 给逐特征验证」配对叙事偏绝对，两篇都是方法+验证，宜弱化为互补证据"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无任何可跟做的伪代码/API 片段（如 SAELens 加载预训练 SAE、encode、看 top features），code_runnable 偏弱"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "建议案例 1 补 8-15 行最小伪代码：取 residual → SAE encode → 按激活排序特征"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联段只有 3 条，规范要求 5-7 条 [[slug]]；行数 141 < 150，quality-gate 会拦"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个案例都是叙事结果，缺少像模板那样的最小代码/伪代码和「逐部分解释」步骤，零基础读者无法跟做",
+        "案例 1 的特征编号直接甩出，建议补「抓激活 → 训 SAE → 看 top 激活句 → 起名」四步流程",
+        "residual stream / L1 / mse 首次出现可再加半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的特征 #4017/#8329/#12044 未给出可核对来源，若为教学虚构应标明「示意」，勿写成已复现事实",
+        "「ReLU 把负数砍成 0（这就是稀疏的来源）」过度简化：极端稀疏主要来自 L1/Top-K，ReLU 只是非负门控",
+        "「学到什么」里「Cunningham 给方法 + Bricken 给逐特征验证」配对叙事偏绝对，两篇都是方法+验证，宜弱化为互补证据"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例无任何可跟做的伪代码/API 片段（如 SAELens 加载预训练 SAE、encode、看 top features），code_runnable 偏弱",
+        "建议案例 1 补 8-15 行最小伪代码：取 residual → SAE encode → 按激活排序特征",
+        "关联段只有 3 条，规范要求 5-7 条 [[slug]]；行数 141 < 150，quality-gate 会拦"
+      ]
+    }
+  ]
+}

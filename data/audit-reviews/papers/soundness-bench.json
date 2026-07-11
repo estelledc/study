@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 里的「召回」可再补半句日常解释，零基础读者可能只看到百分比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 的 reviewers_agree 把置信度与方差过滤压成一变量，教学可接受，但可点明论文用的是 confidence≥3 与分数方差阈值"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码是教学伪代码即可，若补一行注释说明 judge_soundness/ask_model 为示意 API 会更清晰"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 里的「召回」可再补半句日常解释，零基础读者可能只看到百分比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 reviewers_agree 把置信度与方差过滤压成一变量，教学可接受，但可点明论文用的是 confidence≥3 与分数方差阈值"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码是教学伪代码即可，若补一行注释说明 judge_soundness/ask_model 为示意 API 会更清晰"
+      ]
+    }
+  ]
+}

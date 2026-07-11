@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.11,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实习生写 SOP 再照镜子的类比贴合「自抽 skill 再蒸馏」，可保留并贯穿三步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "reverse-KL / mode-seeking / importance weighting 首次出现缺更白话桥接；应先说「只学老师有把握的部分」再给公式名"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例全是叙述数字，没有像模板那样的伪代码或逐步操作；案例 2/3 应拆成可跟的 3 步（抽 skill → 条件化 teacher → 更新 student）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文机制是：轨迹总结成自然语言 skill，只作为 privileged prompt 条件化 teacher；student 始终用普通任务 prompt；同参自蒸馏 + 与 GRPO/RL 联合——不是把 skill 当成独立 teacher policy，也不是 Distill-then-Use 固定 GPT-4"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "AppWorld +14.0% 是相对 vanilla GRPO（Qwen3-4B，64.9%），另有 Sokoban +10.9%、相对 OPD +42.1%/+40.6%；勿写成笼统「AppWorld 上 +14%」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "importance-weighted reverse-KL 是为纠正 cross-prompt 下 reverse-KL 的梯度偏差（ρ 重要性权重），不是 weight=(skill_perf-student_perf) 的课程采样；top-K 三阈值、warm-up forward-KL、消融掉 5/8/11pp、邮件任务 40%/80%、12 epoch 仍涨等细节在摘要/正文主线中无依据，应删或改成与论文一致的 teacher sync / 稳定性叙述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例缺最小伪代码循环：rollout → summarize skills → teacher(skill-conditioned) vs student(plain) → IW reverse-KL (+ RL) → sync teacher；否则无法跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里「top-K 三阈值 / warm-up forward-KL」偏臆造；应改成论文真实工程点：teacher 不同步会 collapse、naive 耦合 RL 不稳定、skill 只训练时用推理不依赖检索"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界可量化：已有可跑通的 base agent + 可自动判定成功；不适用冷启动全 garbage 轨迹、要快速上线；可点名相对 GRPO 的算力开销（每轮要总结 skill + 双条件前向）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实习生写 SOP 再照镜子的类比贴合「自抽 skill 再蒸馏」，可保留并贯穿三步",
+        "reverse-KL / mode-seeking / importance weighting 首次出现缺更白话桥接；应先说「只学老师有把握的部分」再给公式名",
+        "三个案例全是叙述数字，没有像模板那样的伪代码或逐步操作；案例 2/3 应拆成可跟的 3 步（抽 skill → 条件化 teacher → 更新 student）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "论文机制是：轨迹总结成自然语言 skill，只作为 privileged prompt 条件化 teacher；student 始终用普通任务 prompt；同参自蒸馏 + 与 GRPO/RL 联合——不是把 skill 当成独立 teacher policy，也不是 Distill-then-Use 固定 GPT-4",
+        "AppWorld +14.0% 是相对 vanilla GRPO（Qwen3-4B，64.9%），另有 Sokoban +10.9%、相对 OPD +42.1%/+40.6%；勿写成笼统「AppWorld 上 +14%」",
+        "importance-weighted reverse-KL 是为纠正 cross-prompt 下 reverse-KL 的梯度偏差（ρ 重要性权重），不是 weight=(skill_perf-student_perf) 的课程采样；top-K 三阈值、warm-up forward-KL、消融掉 5/8/11pp、邮件任务 40%/80%、12 epoch 仍涨等细节在摘要/正文主线中无依据，应删或改成与论文一致的 teacher sync / 稳定性叙述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例缺最小伪代码循环：rollout → summarize skills → teacher(skill-conditioned) vs student(plain) → IW reverse-KL (+ RL) → sync teacher；否则无法跟做",
+        "踩坑里「top-K 三阈值 / warm-up forward-KL」偏臆造；应改成论文真实工程点：teacher 不同步会 collapse、naive 耦合 RL 不稳定、skill 只训练时用推理不依赖检索",
+        "适用边界可量化：已有可跑通的 base agent + 可自动判定成功；不适用冷启动全 garbage 轨迹、要快速上线；可点名相对 GRPO 的算力开销（每轮要总结 skill + 双条件前向）"
+      ]
+    }
+  ]
+}

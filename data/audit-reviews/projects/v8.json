@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.55,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 标题写 d8 但命令全是 node 标志，零基础会懵；改成一致并拆成「跑什么 → 看什么 → 怎么判断」三步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Ignition/Turbofan/Isolate/HandleScope 缺日常桥接，每条补一句类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只给了函数，没展示「形状乱 vs 形状稳」的对照代码与逐步解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 把 d8 与 node --trace-* 混为一谈，应标明 Node 嵌入 V8 后可用的观测标志，避免读者以为 d8 命令就是那些 node 行"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 标题/命令不一致，且缺少可复现的最小脚本与期望输出解读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺少可操作边界（如「p99 延迟敏感」「一次性脚本」之外的量化或场景阈值）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "删掉文末「额外补充」「备注补充」堆砌段，把可操作建议并回踩坑或案例"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 标题写 d8 但命令全是 node 标志，零基础会懵；改成一致并拆成「跑什么 → 看什么 → 怎么判断」三步",
+        "核心要点里 Ignition/Turbofan/Isolate/HandleScope 缺日常桥接，每条补一句类比",
+        "案例 1 只给了函数，没展示「形状乱 vs 形状稳」的对照代码与逐步解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 把 d8 与 node --trace-* 混为一谈，应标明 Node 嵌入 V8 后可用的观测标志，避免读者以为 d8 命令就是那些 node 行"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 标题/命令不一致，且缺少可复现的最小脚本与期望输出解读",
+        "适用/不适用缺少可操作边界（如「p99 延迟敏感」「一次性脚本」之外的量化或场景阈值）",
+        "删掉文末「额外补充」「备注补充」堆砌段，把可操作建议并回踩坑或案例"
+      ]
+    }
+  ]
+}

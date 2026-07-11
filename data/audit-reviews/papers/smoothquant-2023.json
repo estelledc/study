@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 2 步直接上 diag(s) 矩阵写法，零基础读者可能卡在符号；可先用「每列乘一个数」口头说法再给公式"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 LayerNorm / γ / β 缺少一句日常桥接，建议补半句「归一化层的两个可调旋钮」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么硬件厂商要做 INT8 Tensor Core」时序略偏：Ampere INT8 TC 早于 SmoothQuant；更准确是「为何 LLM 终于用得上已有 INT8 TC」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "MT-NLG 530B「塞进单节点」表述偏强，论文强调的是 W8A8 全 GEMM 可行与吞吐/显存收益，建议弱化为「显著降低显存与带宽压力」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 的 convert_checkpoint 命令缺校准数据/模型路径前置说明，跟做时可能卡在「α 从哪来」；补一行校准样本约定即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "延伸阅读里 TensorRT-LLM / vLLM 文档只有文字无 URL，工程检索成本略高"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点第 2 步直接上 diag(s) 矩阵写法，零基础读者可能卡在符号；可先用「每列乘一个数」口头说法再给公式",
+        "案例 3 的 LayerNorm / γ / β 缺少一句日常桥接，建议补半句「归一化层的两个可调旋钮」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么硬件厂商要做 INT8 Tensor Core」时序略偏：Ampere INT8 TC 早于 SmoothQuant；更准确是「为何 LLM 终于用得上已有 INT8 TC」",
+        "MT-NLG 530B「塞进单节点」表述偏强，论文强调的是 W8A8 全 GEMM 可行与吞吐/显存收益，建议弱化为「显著降低显存与带宽压力」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 的 convert_checkpoint 命令缺校准数据/模型路径前置说明，跟做时可能卡在「α 从哪来」；补一行校准样本约定即可",
+        "延伸阅读里 TensorRT-LLM / vLLM 文档只有文字无 URL，工程检索成本略高"
+      ]
+    }
+  ]
+}

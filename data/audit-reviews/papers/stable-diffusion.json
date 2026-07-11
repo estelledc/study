@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有产品介绍，缺少像案例 1 那样的逐步操作说明（打开 webui → 填 prompt → 调 CFG/seed → 出图）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 DreamBooth 有步骤但无最小可跟做命令/伪代码，建议补 3-5 行训练入口示例并逐行解释 sks 标识词"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Midjourney / Civitai / 各种 AI 头像 App——它们底层几乎都是 SD」不准确：Midjourney 自研闭源模型，并非 SD 权重；应改为 Civitai / Automatic1111 生态或「大量开源文生图 App」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「算力一下省了 100×」与后文「省 16 倍计算」互相矛盾；应对齐 LDM 论文口径（空间压缩约 64×、训练/推理加速约一个数量级）并删掉不一致数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可跑；若改案例 2/3，补最小 CLI/伪代码即可，不必生产级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有产品介绍，缺少像案例 1 那样的逐步操作说明（打开 webui → 填 prompt → 调 CFG/seed → 出图）",
+        "案例 3 DreamBooth 有步骤但无最小可跟做命令/伪代码，建议补 3-5 行训练入口示例并逐行解释 sks 标识词"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Midjourney / Civitai / 各种 AI 头像 App——它们底层几乎都是 SD」不准确：Midjourney 自研闭源模型，并非 SD 权重；应改为 Civitai / Automatic1111 生态或「大量开源文生图 App」",
+        "「算力一下省了 100×」与后文「省 16 倍计算」互相矛盾；应对齐 LDM 论文口径（空间压缩约 64×、训练/推理加速约一个数量级）并删掉不一致数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可跑；若改案例 2/3，补最小 CLI/伪代码即可，不必生产级"
+      ]
+    }
+  ]
+}

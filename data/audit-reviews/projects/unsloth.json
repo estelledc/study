@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有代码但缺少「逐部分解释」分点，零基础读者看不出 from_pretrained / get_peft_model 各干了什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有对比叙述，没有像模板那样拆成 1/2/3 步；建议补显存账本式逐步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 Triton 伪代码对零基础偏陡，需加一句「pid/BLOCK 是什么」的桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「速度 2-5x、显存省 50-80%」是官方宣传区间，建议点明依赖模型/序列长度/硬件，避免读成普适常数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "LoRA 反向乘法重排表述教学可接受，但可补一句「在低秩假设下中间张量更小」以免读者以为任意矩阵乘法都可随意重排"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可补 dtype/device_map 或说明用官方 4bit 权重名即可跑通，减少读者踩环境坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "开源版「只支持单卡」边界仍有用，但可注明多卡需 Pro 或回退 accelerate/FSDP，与现状一致即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 有代码但缺少「逐部分解释」分点，零基础读者看不出 from_pretrained / get_peft_model 各干了什么",
+        "案例 2 只有对比叙述，没有像模板那样拆成 1/2/3 步；建议补显存账本式逐步说明",
+        "案例 3 Triton 伪代码对零基础偏陡，需加一句「pid/BLOCK 是什么」的桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「速度 2-5x、显存省 50-80%」是官方宣传区间，建议点明依赖模型/序列长度/硬件，避免读成普适常数",
+        "LoRA 反向乘法重排表述教学可接受，但可补一句「在低秩假设下中间张量更小」以免读者以为任意矩阵乘法都可随意重排"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可补 dtype/device_map 或说明用官方 4bit 权重名即可跑通，减少读者踩环境坑",
+        "开源版「只支持单卡」边界仍有用，但可注明多卡需 Pro 或回退 accelerate/FSDP，与现状一致即可"
+      ]
+    }
+  ]
+}

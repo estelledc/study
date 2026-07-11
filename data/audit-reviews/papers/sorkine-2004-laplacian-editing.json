@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "## 实践案例 三个案例都缺可跟做的伪代码/公式步骤与「逐部分解释」；案例 1 至少写出钉锚点→拖耳朵→对比有无 T 的求解流程"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "cotangent / Cholesky / Laplace-Beltrami / 各向同性缩放 首次出现时加一句日常桥接，再进公式"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "## 核心要点 用 ### 拆成三块偏长；改成编号 1/2/3，每条 2–3 句并各留一个短类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "cotangent 权写成 (cot α + cot β)/2A 易与 Pinkall–Polthier 的 (cot α + cot β)/2 混淆；注明常用离散形式或去掉 /2A"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Houdini Edit SOP / Maya 几何工具本质都是这套 2004 数学」过满：Blender Laplacian Deform 可点名，Houdini/Maya 宜改为「同类拉普拉斯/软变形工具」或删绝对化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「后面 20 年几乎所有形状变形/重建/描述工作共享一套底层数学」过强；改为「大量后续变形与重建工作沿用同一套离散拉普拉斯」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "## 实践案例 需要可跟做的伪代码：建 L、组最小二乘、预分解、拖把手回代；案例 2/3 也要有步骤而不是纯叙事"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑已很具体，可压成 4 条（原因→现象），腾出行数给案例代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一条量化边界（如「大角度 >30–45° 改用 ARAP」「顶点数 ~10^5 时预分解秒级」）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 三个案例都缺可跟做的伪代码/公式步骤与「逐部分解释」；案例 1 至少写出钉锚点→拖耳朵→对比有无 T 的求解流程",
+        "cotangent / Cholesky / Laplace-Beltrami / 各向同性缩放 首次出现时加一句日常桥接，再进公式",
+        "## 核心要点 用 ### 拆成三块偏长；改成编号 1/2/3，每条 2–3 句并各留一个短类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "cotangent 权写成 (cot α + cot β)/2A 易与 Pinkall–Polthier 的 (cot α + cot β)/2 混淆；注明常用离散形式或去掉 /2A",
+        "「Houdini Edit SOP / Maya 几何工具本质都是这套 2004 数学」过满：Blender Laplacian Deform 可点名，Houdini/Maya 宜改为「同类拉普拉斯/软变形工具」或删绝对化",
+        "「后面 20 年几乎所有形状变形/重建/描述工作共享一套底层数学」过强；改为「大量后续变形与重建工作沿用同一套离散拉普拉斯」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 需要可跟做的伪代码：建 L、组最小二乘、预分解、拖把手回代；案例 2/3 也要有步骤而不是纯叙事",
+        "踩过的坑已很具体，可压成 4 条（原因→现象），腾出行数给案例代码",
+        "适用/不适用可补一条量化边界（如「大角度 >30–45° 改用 ARAP」「顶点数 ~10^5 时预分解秒级」）"
+      ]
+    }
+  ]
+}

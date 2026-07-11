@@ -18,28 +18,28 @@ import { style } from '@vanilla-extract/css';
 export const primary = style({ background: 'royalblue', color: 'white' });
 ```
 
-构建工具读完 `.css.ts` 文件，把所有 `style()` 调用收集起来，**生成一个静态 .css 文件 + 一个返回类名字符串的 .js 模块**。生产环境跑的时候，浏览器拿到的是 `<link rel="stylesheet">` 加 `className="primary_a3b_0"`——没有任何 vanilla-extract 自己的 JS 代码在跑。
+构建工具读完 `.css.ts`，收集所有 `style()` 调用，**生成静态 .css + 返回类名字符串的 .js 模块**。浏览器最终是 `<link rel="stylesheet">` 加 `className="primary_a3b_0"`——`style()` 路径没有 vanilla-extract 自己的 JS 在跑（`recipe` 另有约 1KB）。
 
 ## 为什么重要
 
 不理解它，下面这些事都没法解释：
 
-- 为什么 React Server Components 不能用 emotion，但能用 vanilla-extract——前者依赖 runtime Context，后者只剩静态字符串
-- 为什么 Tailwind 党和类型派吵了三年，vanilla-extract 是少数让"类型安全 + 0 runtime"同时成立的方案
+- 为什么 React Server Components（服务端先渲染、组件里不能随便挂客户端状态）不能用 emotion，但能用 vanilla-extract——前者依赖运行时 Context（像全局传话筒），后者只剩静态字符串
+- 为什么 Tailwind 党和类型派吵了三年，vanilla-extract 是少数让「类型安全 + style() 零 runtime」同时成立的方案
 - 为什么 Astro / Next App Router 推荐它而不是 styled-components——后者每次组件挂载要算 hash 注入 `<style>`
 - 为什么 CSS 也能像 TypeScript 一样在 IDE 里 "Go to Definition"——因为类名就是个 const 字符串，IDE 当普通变量处理
 
 ## 核心要点
 
-vanilla-extract 的整个机制可以拆成 **三件事**：
+vanilla-extract 的整个机制可以拆成 **三件事**（需装 `@vanilla-extract/vite-plugin` 等 bundler 插件才会抽取）：
 
-1. **`.css.ts` 是源文件**：扩展名很关键——bundler 看到 `.css.ts` 就触发 vanilla-extract 插件，看到普通 `.ts` 就走正常 TS 编译。类比：邮局看信封颜色决定走哪条投递路线。
+1. **`.css.ts` 是源文件**：扩展名很关键——bundler 看到 `.css.ts` 就触发插件，普通 `.ts` 走正常 TS 编译。类比：邮局看信封颜色决定投递路线。
 
-2. **build 时单独跑一遍**：插件用 esbuild 把 `.css.ts` 单独打包成 CommonJS，丢进 Node 的 `vm` 沙箱里执行，通过 **adapter 协议** 收集所有 `style()` 调用产生的样式规则。类比：让一个机器人替你把每个 style 调用念一遍，把内容记到本子上。
+2. **build 时单独跑一遍**：插件用 esbuild 把 `.css.ts` 打成 CommonJS，丢进 Node `vm` 沙箱执行；**adapter**（像临时接线员）把每次 `style()` 的规则抄到 collector。类比：机器人替你念一遍 style，记到本子上。
 
-3. **emit 静态产物**：把收集到的规则用 stylis 算法展开成扁平 CSS 文件，把原本 `.css.ts` 模块的导出重写成"类名字符串常量"。运行时不再有任何 vanilla-extract 的代码。
+3. **emit 静态产物**：用 stylis（把嵌套写法摊平的小引擎）展开成扁平 `.css`，并把导出改成类名字符串常量。`style()` 路径零 runtime；`recipe` 另有约 1KB 查表拼串。
 
-三件事加起来叫 **build-time evaluator** 模式，panda-css / stylex / linaria 都是它的徒弟。
+这叫 **build-time evaluator**。linaria（约 2017）更早走这条路；VE（2021）把它做成 TypeScript 一等公民，panda-css / stylex 也同属此路线。
 
 ## 实践案例
 
@@ -62,13 +62,16 @@ import { primary } from './Button.css';
 export default () => <button className={primary}>Click</button>;
 ```
 
-打开 DevTools Elements 面板，看到 `class="Button_primary__a3b0"`——`Button_primary__` 是开发模式的可读前缀，`a3b0` 是哈希。生产模式只有 `a3b0`。
+DevTools 里看到 `class="Button_primary__a3b0"`——前缀可读、后缀是哈希；生产模式往往只剩哈希。前提：项目已挂上 vite/webpack 等对应插件。
 
-### 案例 2：recipe variants——给按钮加颜色和尺寸
+### 案例 2：recipe variants——三步看懂
+
+1. **定底座**：`base` 是所有按钮都有的公共样式。  
+2. **列菜单**：`variants` 像点餐选项（颜色、尺寸），build 时为每个选项各生成一份 CSS。  
+3. **点单**：`button({ color: 'danger', size: 'lg' })` 只在 runtime 查表拼类名字符串（约 1KB JS）。
 
 ```ts
 import { recipe } from '@vanilla-extract/recipes';
-
 export const button = recipe({
   base: { padding: 8, borderRadius: 4 },
   variants: {
@@ -77,26 +80,17 @@ export const button = recipe({
   },
   defaultVariants: { color: 'primary', size: 'sm' },
 });
-
-// 用法
-button({ color: 'danger', size: 'lg' })
 // → "button_base_xxx button_color_danger_yyy button_size_lg_zzz"
 ```
 
-build 时枚举所有 variant 组合各生成一份 CSS，runtime 只是查表拼字符串——这是 vanilla-extract **唯一**保留的 ~1KB JS。
-
-### 案例 3：80 行手写一个 mini vanilla-extract
-
-理解机制最快的方法是自己写一个小型版：
+### 案例 3：迷你版——伪造厨房 + 记本子 + 出菜
 
 ```ts
 import vm from 'node:vm';
 import { transformSync } from 'esbuild';
-
 const collector: Array<{ className: string; rule: object }> = [];
 let counter = 0;
-
-function processFile(source: string, filePath: string) {
+function processFile(source: string) {
   const { code } = transformSync(source, { loader: 'ts', format: 'cjs' });
   const ctx = {
     require: (name: string) =>
@@ -108,15 +102,17 @@ function processFile(source: string, filePath: string) {
           } }
         : (() => { throw new Error('not supported'); })(),
     module: { exports: {} },
-    console,
   };
   vm.createContext(ctx);
   vm.runInContext(code, ctx);
-  return ctx.module.exports;
+  const css = collector.map(({ className, rule }) =>
+    `.${className}{${Object.entries(rule as Record<string, string>).map(([k, v]) => `${k}:${v}`).join(';')}}`
+  ).join('\n');
+  return { exports: ctx.module.exports, css };
 }
 ```
 
-跑一下，你会看到 `processFile` 返回 `{ primary: 'mini_0', danger: 'mini_1' }`，collector 里是对应的 CSS 规则——核心机制就这么简单，剩下都是工程化打磨（nested selector、media query、theme variable）。
+三块分工：`require` 伪造厨房（假 `@vanilla-extract/css`）、`collector` 是记本子、最后把规则拼成 CSS 字符串——真项目还要处理嵌套选择器与 media query。
 
 ## 踩过的坑
 
@@ -144,18 +140,18 @@ function processFile(source: string, filePath: string) {
 
 ## 历史小故事（可跳过）
 
-- **2018-2020 年**：emotion / styled-components 主流，写 CSS 像写 JS，但代价是每个组件挂载都要算 hash 注入 `<style>`，runtime 占 ~20KB
-- **2021 年 3 月**：Mark Dalgleish（Seek 工程师团队）在 Twitter 发第一个 demo——`.css.ts` 文件 + bundler 插件 + 0 runtime
-- **2022 年**：进入 0.x 稳定期，Astro / Remix / Next 13 RSC 时代起作为推荐 CSS 方案
-- **2023 年**：panda-css / stylex 出现，都参考了它的 build-time evaluator 思路
-- **2024-2026 年**：成为"想要类型安全的 CSS-in-JS"的事实标准，与 Tailwind 形成"类型派 vs 原子派"的双雄格局
+- **2017-2020 年**：linaria 等先探索 zero-runtime CSS-in-JS；emotion / styled-components 仍主流，代价是挂载时算 hash 注入 `<style>`
+- **2021 年 3 月**：Mark Dalgleish（Seek）开源 vanilla-extract——`.css.ts` + bundler 插件 + TypeScript 类型安全
+- **2022 年**：进入稳定期，Astro / Remix / Next 13 RSC 时代起常被列为 CSS-in-TS 选项
+- **2023 年**：panda-css / stylex 出现，同属 build-time 抽取路线
+- **2024-2026 年**：成为「想要类型安全的 CSS-in-TS」的主流选项之一，常与 Tailwind 对照讨论
 
 ## 学到什么
 
-1. **build-time vs runtime 是个真权衡**：把工作搬到 build 时，能换来生产 bundle 小、首屏快、SSR/RSC 友好——前提是设计良好的中间产物（这里是 `.css.ts`）
-2. **adapter 协议是侧通道注入的范本**：module-level 单例 + `setAdapter/removeAdapter` 包裹 evaluate，让 `.css.ts` 文件无感地把 style 调用送到 build 期 collector
-3. **vm 沙箱不是安全边界，是隔离机制**：Node `vm` 模块官方文档明确说不安全，vanilla-extract 用它只是为了多次跑 `.css.ts` 不污染主进程
-4. **80 行能复刻一个核心**：esbuild + vm + 全局 collector，证明这套机制不是黑魔法——剩下 99% 是工程化打磨
+1. **build-time vs runtime 是真权衡**：工作搬到 build，能换小 bundle、快首屏、SSR/RSC 友好——前提是 `.css.ts` 这类中间产物设计清楚
+2. **adapter 是侧通道范本**：临时接线员把 `style()` 抄到 collector，源文件无感
+3. **vm 沙箱是隔离不是安全边界**：官方文档说不安全；VE 只用它避免多次跑 `.css.ts` 污染主进程
+4. **迷你版能复刻核心**：esbuild + vm + collector + 拼 CSS，证明不是黑魔法——剩下是工程化
 
 ## 延伸阅读
 

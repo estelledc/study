@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "## 实践案例 应压成 3 个案例，每个带可跟做的伪代码/步骤 +「逐部分解释」；案例 1 至少写出 P2G→网格更新→G2P→扔网格的四步对照雪粒子"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/4 目前是纯叙事对比，缺逐步拆解；可把案例 2 改成「同一坨材料用纯网格 vs MPM」的对照步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「弹塑性本构」「变形梯度 F」「形函数」首次出现时再加半句日常桥接，再进矩阵/邻居数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Houdini 里 FLIP / MPM / Vellum 节点几乎是大变形仿真的工业默认」略满：Houdini 原生强项是 FLIP/Vellum，MPM 多为插件或研究管线；宜改为「FLIP/Vellum 常见，MPM 在雪沙泥等大变形里也很常见」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「网格法处理不了大变形」易与欧拉网格流体混淆；宜明确对比的是拉格朗日有限元网格扭曲 vs 欧拉网格难跟材料历史"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线与引用（Harlow PIC、Brackbill FLIP、Sulsky 1994、Stomakhin 2013、Jiang APIC 2015、Hu MLS-MPM 2018）整体准确，保持即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "## 实践案例 伪代码不完整：案例 3 只有半截 P2G，缺网格力更新与 G2P；至少补全一个可跟读的时间步循环"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/2/4 无代码；保留踩坑质量的同时，把 3 个案例各配短伪代码或公式步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可再补一条量化边界（如「波速 CFL：dt < dx / c」「每格 ≥2×2×2 粒子」已有，可写清实时 60fps 通常只够粗网格示意）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 2
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 应压成 3 个案例，每个带可跟做的伪代码/步骤 +「逐部分解释」；案例 1 至少写出 P2G→网格更新→G2P→扔网格的四步对照雪粒子",
+        "案例 2/4 目前是纯叙事对比，缺逐步拆解；可把案例 2 改成「同一坨材料用纯网格 vs MPM」的对照步骤",
+        "「弹塑性本构」「变形梯度 F」「形函数」首次出现时再加半句日常桥接，再进矩阵/邻居数"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Houdini 里 FLIP / MPM / Vellum 节点几乎是大变形仿真的工业默认」略满：Houdini 原生强项是 FLIP/Vellum，MPM 多为插件或研究管线；宜改为「FLIP/Vellum 常见，MPM 在雪沙泥等大变形里也很常见」",
+        "「网格法处理不了大变形」易与欧拉网格流体混淆；宜明确对比的是拉格朗日有限元网格扭曲 vs 欧拉网格难跟材料历史",
+        "历史时间线与引用（Harlow PIC、Brackbill FLIP、Sulsky 1994、Stomakhin 2013、Jiang APIC 2015、Hu MLS-MPM 2018）整体准确，保持即可"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 伪代码不完整：案例 3 只有半截 P2G，缺网格力更新与 G2P；至少补全一个可跟读的时间步循环",
+        "案例 1/2/4 无代码；保留踩坑质量的同时，把 3 个案例各配短伪代码或公式步骤",
+        "适用/不适用可再补一条量化边界（如「波速 CFL：dt < dx / c」「每格 ≥2×2×2 粒子」已有，可写清实时 60fps 通常只够粗网格示意）"
+      ]
+    }
+  ]
+}
