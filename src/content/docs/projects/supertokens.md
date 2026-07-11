@@ -66,6 +66,8 @@ SuperTokens.init({
 
 ### 案例 2：Recipe 模式怎么让模块互不打架
 
+类比：各科室不互相打电话，只往前台登记本写一条规则；前台验票时按本子逐条查。
+
 ```ts
 // supertokens-auth-react: emailverification recipe init
 SessionClaimValidatorStore.addClaimValidatorFromOtherRecipe(
@@ -73,7 +75,7 @@ SessionClaimValidatorStore.addClaimValidatorFromOtherRecipe(
 );
 ```
 
-EmailVerification recipe 把自己的"邮箱已验证"validator 注册进 Session 的中央 store。Session 校验时遍历 store 里所有 validator——recipe 之间**不直接调对方**，靠这个 store 间接联通。这就是 Recipe 模式的精髓：模块独立 + 中央注册中心。`10` 是 max age 秒数，避免每次请求都打 core API。
+EmailVerification recipe 把自己的「邮箱已验证」检查规则登记进 Session 的中央 store（前台本）。Session 校验时遍历 store——recipe 之间**不直接调对方**，靠登记本间接联通。`10` 是缓存秒数，避免每次请求都打 core。
 
 ### 案例 3：access token 里的 refresh hash 链
 
@@ -83,7 +85,7 @@ payload.addProperty("refreshTokenHash1", refreshTokenHash1);
 payload.addProperty("parentRefreshTokenHash1", parentRefreshTokenHash1);
 ```
 
-每张 access token 携带"当前 refresh token 的 hash + 上一代的 hash"，组成一条 hash 链。如果同一个 refresh token 被两个客户端同时用，server 一对比就发现链断裂——立刻判定 session 被劫持，撤销所有 token。OAuth2 RFC 推荐的"refresh rotation"标准做法。
+每张 access token 携带"当前 refresh token 的 hash + 上一代的 hash"，组成一条 hash 链。如果同一个 refresh token 被两个客户端同时用，server 一对比就发现链断裂——立刻判定 session 被劫持，撤销所有 token。这是 OAuth 2.0 Security BCP（RFC 9700）推荐的 refresh token rotation 做法。
 
 逐部分解释：
 
@@ -133,7 +135,7 @@ payload.addProperty("parentRefreshTokenHash1", parentRefreshTokenHash1);
 
 - 官网与文档：[supertokens.com/docs](https://supertokens.com/docs)（架构图与 recipe 配置全在这里）
 - 源码精读：[supertokens-core](https://github.com/supertokens/supertokens-core) 重点看 `session/` 和 `passwordless/` 两个目录
-- OAuth2 refresh rotation 规范：[RFC 6749 §10.4](https://datatracker.ietf.org/doc/html/rfc6749#section-10.4)
+- OAuth2 refresh rotation 规范：[RFC 9700（OAuth 2.0 Security BCP）](https://datatracker.ietf.org/doc/html/rfc9700)
 - [[auth-js]] —— 对比 library 形态的认证方案
 - [[clerk]] —— 对比 SaaS 形态的认证产品
 
