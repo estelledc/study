@@ -1,0 +1,125 @@
+{
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "翻译亭 / PDF vs Word / 宿舍菜单+食堂总账本类比把 ICU 与双轨讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有代码与逐步解释（中文 plural 只走 other、属性里必须用 useIntl），零基础可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「W3C Intl.MessageFormat 提案」应为 TC39 proposal-intl-messageformat（笔记延伸阅读链接已是 tc39）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Stage 1 在 2022 年进入，不是 2024；2024 条目应写成「仍为 Stage 1 / 持续更新」，勿与 v6 捆绑成「进 Stage 1」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Vite 最小集成、formatjs extract、useIntl 属性场景均可跟做；babel friction / id 策略 / polyfill 漏 locale 踩坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（译员平台、ICU 跨端、Next RSC→next-intl、小 bundle→lingui）；downloads 比例属软主张，可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "翻译亭 / PDF vs Word / 宿舍菜单+食堂总账本类比把 ICU 与双轨讲透",
+        "案例 1–3 有代码与逐步解释（中文 plural 只走 other、属性里必须用 useIntl），零基础可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「W3C Intl.MessageFormat 提案」应为 TC39 proposal-intl-messageformat（笔记延伸阅读链接已是 tc39）",
+        "Stage 1 在 2022 年进入，不是 2024；2024 条目应写成「仍为 Stage 1 / 持续更新」，勿与 v6 捆绑成「进 Stage 1」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Vite 最小集成、formatjs extract、useIntl 属性场景均可跟做；babel friction / id 策略 / polyfill 漏 locale 踩坑具体",
+        "适用边界清楚（译员平台、ICU 跨端、Next RSC→next-intl、小 bundle→lingui）；downloads 比例属软主张，可保留"
+      ]
+    }
+  ],
+  "slug": "react-intl",
+  "area": "projects",
+  "status": "refined",
+  "lines": 170,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.34,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：W3C→TC39 Intl.MessageFormat；Stage 1 时间改为 2022 进入、2024 仍 Stage 1",
+    "sections_modified": [
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 170,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

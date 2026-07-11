@@ -1,0 +1,147 @@
+{
+  "slug": "react-spring",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 是什么",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "机器人指令 vs 真实弹簧类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "tension/friction/mass、绕过 React 渲染有白话；Controller/FrameLoop 对入门仍稍密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有代码+解释；案例 2 可再拆『按下跟手 → 松手 api.start 回 0 → 速度连续』三步，但现稿可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写『2017 年：Paul Henschel…写了 react-spring』不准确：GitHub/npm 首发为 2018-03；2017 是 react-springy-parallax 前身，宜改为 2018 并可选提 parallax 前身"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2021 年：Framer Motion 加了 type: spring』过满：Framer Motion 早期（约 2019）已有 spring；宜改为『竞品也把 spring 当一等公民/默认过渡之一』，勿写成 2021 才补上"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『整个过程没有持续时间这个参数』绝对化：库支持 config.duration；宜改为『默认/主路径是物理参数，duration 是可选旁路』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 pmndrs/react-spring 合理；hooks 稳定在 v7（2018），『v9 重写为 hook API』易误解为 hooks 首发——宜写 v9 大重写、hooks 更早"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三案例 import @react-spring/web + useDrag/useTransition 概念正确可跟；是什么段『没有 duration』与真实 API 不符，跟做会困惑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：极端 tension/friction 发散、DevTools 看不到、SSR 闪、用 useSprings 管批量——可操作，保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用手势/物理感/多 target vs GSAP 时间线/纯 CSS hover——边界清楚；~16KB 量级可作约数保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "机器人指令 vs 真实弹簧类比贯穿全文，零基础直觉强",
+        "tension/friction/mass、绕过 React 渲染有白话；Controller/FrameLoop 对入门仍稍密",
+        "三案例都有代码+解释；案例 2 可再拆『按下跟手 → 松手 api.start 回 0 → 速度连续』三步，但现稿可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史写『2017 年：Paul Henschel…写了 react-spring』不准确：GitHub/npm 首发为 2018-03；2017 是 react-springy-parallax 前身，宜改为 2018 并可选提 parallax 前身",
+        "『2021 年：Framer Motion 加了 type: spring』过满：Framer Motion 早期（约 2019）已有 spring；宜改为『竞品也把 spring 当一等公民/默认过渡之一』，勿写成 2021 才补上",
+        "『整个过程没有持续时间这个参数』绝对化：库支持 config.duration；宜改为『默认/主路径是物理参数，duration 是可选旁路』",
+        "来源 pmndrs/react-spring 合理；hooks 稳定在 v7（2018），『v9 重写为 hook API』易误解为 hooks 首发——宜写 v9 大重写、hooks 更早"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "三案例 import @react-spring/web + useDrag/useTransition 概念正确可跟；是什么段『没有 duration』与真实 API 不符，跟做会困惑",
+        "踩坑具体：极端 tension/friction 发散、DevTools 看不到、SSR 闪、用 useSprings 管批量——可操作，保留",
+        "适用手势/物理感/多 target vs GSAP 时间线/纯 CSS hover——边界清楚；~16KB 量级可作约数保留"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：2017→2018 首发；Framer spring 非 2021 才加；duration 为可选旁路；案例2拆三步",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  }
+}

@@ -36,7 +36,7 @@ ripgrep 的速度优势可以拆成 **三层**：
 
 1. **少看文件**——默认尊重 `.gitignore` / `.ignore` / `.rgignore`，自动跳过二进制和 hidden 文件。这一层是最大的省时来源。
 
-2. **并行搜索**——多线程读多个文件 + 内存映射（mmap）减少系统调用。Rust 的 `rayon` 库让并行几乎零成本。
+2. **并行搜索**——多线程读多个文件 + 内存映射（mmap）减少系统调用。类比：多个工人同时翻不同书架，用工作窃取队列分活，而不是单人一本本翻。
 
 3. **快 regex 引擎**——默认用 Rust `regex` crate（基于有限自动机，保证线性时间），不像 PCRE 会指数爆炸。需要 lookahead / backreference 时加 `-P` 切换到 PCRE2。
 
@@ -77,15 +77,16 @@ rg --json --crlf "your query" /path/to/workspace
 有时候你**就是想**搜 `node_modules`：
 
 ```bash
-rg -uu "specific_function"   # u=不尊重 ignore，uu=连 hidden+binary 也搜
-rg --no-ignore "foo"         # 等价于 -u
+rg -u "specific_function"    # 一档：不读 .gitignore 等（= --no-ignore）
+rg -uu "foo"                 # 两档：再搜 hidden（.git 等点文件）
+rg -uuu "foo"                # 三档：再搜 binary；大致接近 grep -r
 ```
 
-新人最常踩的坑之一：以为 ripgrep "漏搜"了，其实是它默认尊重 ignore——加 `-uu` 就回到 grep 行为。
+新人最常踩的坑之一：以为 ripgrep "漏搜"了，其实是它默认尊重 ignore——加 `-u`/`-uu`/`-uuu` 逐级放开过滤。
 
 ## 踩过的坑
 
-1. **默认尊重 ignore 但有时想搜 ignored**——用 `-uu`（搜全部）、`-u`（搜 hidden 但不搜 ignore）、`--no-ignore`（不读 ignore 文件）。三档可调，新人记一档就够。
+1. **默认尊重 ignore 但有时想搜 ignored**——`-u` = 不读 ignore；`-uu` = 再搜 hidden；`-uuu` = 再搜 binary（约等于 `grep -r`）。新人先记 `-u` 往往就够。
 
 2. **glob 语法和 grep / find 不同**：`rg -g '*.ts' "foo"` 而不是 `--include='*.ts'`。`!*.test.ts` 是排除（注意感叹号转义）。
 
@@ -99,7 +100,7 @@ rg --no-ignore "foo"         # 等价于 -u
 
 **适用**：
 - 项目内代码搜索（最大用例，VS Code / Claude Code 都用它）
-- 大型 monorepo 搜索——尊重 ignore 让时间从分钟到秒
+- 大型 monorepo——主收益是默认跳过 ignore/二进制，不是 regex 本身更快
 - 日志文件 grep（速度优势明显）
 - CI 里 lint 前的 pattern 检查
 
@@ -111,8 +112,9 @@ rg --no-ignore "foo"         # 等价于 -u
 ## 历史小故事（可跳过）
 
 - **2016 年 9 月**：Andrew Gallant 发布 ripgrep 0.1，配一篇博客 [ripgrep is faster than ...](https://blog.burntsushi.net/ripgrep/)——文章把 ripgrep 和 grep / ag / ack / ucg 全方位对比，benchmark 详尽到发指。这篇博客是"如何写一个工程基准测试"的教科书级案例。
-- **2018 年**：v0.10 加 multiline 支持。同年 VS Code 1.27 默认改用 ripgrep 替代之前的搜索后端。
-- **2021 年**：v13 加 PCRE2 支持。同年 ripgrep 进入 Homebrew 默认推荐 CLI 列表。
+- **2017 年**：VS Code 约 1.11 起默认用 ripgrep 做工作区文本搜索（此前可开关试用）。
+- **2018 年**：v0.10 同时带来 multiline、可选 PCRE2（`-P`）和 `--json` 输出，方便编辑器集成。
+- **2021 年**：v13 加固 PCRE2 相关选项与安全修复；ripgrep 已是 Homebrew 等包管理器里的常驻 CLI。
 - **2024 年**：与 ast-grep 等 AST-based 搜索工具并存——后者按语法树搜（找"函数定义里包含 TODO"），ripgrep 按文本搜（找"任何包含 TODO 的行"）。两者互补不互斥。
 
 ## 学到什么
