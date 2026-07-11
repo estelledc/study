@@ -1,12 +1,9 @@
 {
-  "slug": "react-dnd",
-  "area": "projects",
-  "status": "refined",
-  "action": "refine",
-  "average": 4.22,
+  "action": "pass",
+  "average": 4.44,
   "reject_count": 0,
-  "needs_refine_count": 1,
-  "pass_count": 2,
+  "needs_refine_count": 0,
+  "pass_count": 3,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -15,8 +12,8 @@
     },
     {
       "reviewer": "academic",
-      "section": "## 历史小故事",
-      "verdict": "needs-refine"
+      "section": "## 核心要点",
+      "verdict": "pass"
     },
     {
       "reviewer": "engineer",
@@ -31,35 +28,31 @@
     },
     {
       "reviewer": "zero-base",
-      "hint": "source/target/monitor/backend、collect 有白话；shallow compare / mapStateToProps 对零基础仍偏密，可再加半句桥接"
+      "hint": "source/target/monitor/backend、collect 有白话；浅比较已补『只看返回对象第一层字段』桥接"
     },
     {
       "reviewer": "zero-base",
-      "hint": "三案例都有解释；案例 1/2 可再拆成「声明 type → collect 派生 → 挂 ref」三步，但现稿可跟"
+      "hint": "三案例均有解释；案例 1/2 可再拆『声明 type → collect 派生 → 挂 ref』三步，但现稿可跟"
     },
     {
       "reviewer": "academic",
-      "hint": "来源 react-dnd/react-dnd、Dan Abramov、2015-05 v1.0.0 与四层抽象定位正确；dnd-core 用 Redux 式 store 与史实一致"
+      "hint": "来源 react-dnd/react-dnd、Dan Abramov、2015 v1 与四层抽象定位正确；2019 hooks 稳定、2021-03 v14 type/item+collect 活性与发布说明一致"
     },
     {
       "reviewer": "academic",
-      "hint": "历史写『2020 年：react-dnd v14 重构为 hooks-first』不准确：hooks 稳定 API 在 2019；v14.0.0 发布于 2021-03，主要是 type/item 拆分与 collect 活性修复，宜改为 2021 并弱化『hooks-first 首发』表述"
+      "hint": "适用场景已写明『react-dnd v14 之前 HOC 存量』，不再与 React 版本混淆"
     },
     {
       "reviewer": "academic",
-      "hint": "『适用：老 React 项目（v14 之前）』易与 React 版本混淆；应写明是 react-dnd v14 之前的 HOC 存量项目"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "dnd-kit 2021、react-beautiful-dnd 2017、Sortable.js ~2013 时间线合理；『批判性继承』属教学概括，可接受"
+      "hint": "『dnd-core 是 Redux store』属教学简化（实为 Redux 风格单 store），可接受；dnd-kit 2021 / rbd 2017 时间线合理"
     },
     {
       "reviewer": "engineer",
-      "hint": "useDrag/useDrop 为 v14+ API（顶层 type），概念正确可跟做；案例 1/2 缺 import 由案例 3 补齐，教学可接受"
+      "hint": "useDrag/useDrop 为 v14+ 顶层 type API，概念正确；案例 1/2 缺 import 由案例 3 补齐，教学可接受"
     },
     {
       "reviewer": "engineer",
-      "hint": "踩坑具体可操作：忘包 DndProvider、HTML5Backend 不吃 touch、collect/deps 闭包旧 id、跨 iframe dataTransfer 丢失"
+      "hint": "踩坑具体可操作：忘包 DndProvider、HTML5Backend 不吃 touch、deps 闭包旧 id、跨 iframe dataTransfer 丢失"
     },
     {
       "reviewer": "engineer",
@@ -79,25 +72,24 @@
       "weakest_section": "## 核心要点",
       "fix_hints": [
         "搬家公司 / 餐厅四层类比贴合，backend 换卡车的直觉强",
-        "source/target/monitor/backend、collect 有白话；shallow compare / mapStateToProps 对零基础仍偏密，可再加半句桥接",
-        "三案例都有解释；案例 1/2 可再拆成「声明 type → collect 派生 → 挂 ref」三步，但现稿可跟"
+        "source/target/monitor/backend、collect 有白话；浅比较已补『只看返回对象第一层字段』桥接",
+        "三案例均有解释；案例 1/2 可再拆『声明 type → collect 派生 → 挂 ref』三步，但现稿可跟"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 3,
-        "citation_correctness": 4,
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
         "no_distortion": 4
       },
-      "average": 3.67,
-      "verdict": "needs-refine",
-      "weakest_section": "## 历史小故事",
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
       "fix_hints": [
-        "来源 react-dnd/react-dnd、Dan Abramov、2015-05 v1.0.0 与四层抽象定位正确；dnd-core 用 Redux 式 store 与史实一致",
-        "历史写『2020 年：react-dnd v14 重构为 hooks-first』不准确：hooks 稳定 API 在 2019；v14.0.0 发布于 2021-03，主要是 type/item 拆分与 collect 活性修复，宜改为 2021 并弱化『hooks-first 首发』表述",
-        "『适用：老 React 项目（v14 之前）』易与 React 版本混淆；应写明是 react-dnd v14 之前的 HOC 存量项目",
-        "dnd-kit 2021、react-beautiful-dnd 2017、Sortable.js ~2013 时间线合理；『批判性继承』属教学概括，可接受"
+        "来源 react-dnd/react-dnd、Dan Abramov、2015 v1 与四层抽象定位正确；2019 hooks 稳定、2021-03 v14 type/item+collect 活性与发布说明一致",
+        "适用场景已写明『react-dnd v14 之前 HOC 存量』，不再与 React 版本混淆",
+        "『dnd-core 是 Redux store』属教学简化（实为 Redux 风格单 store），可接受；dnd-kit 2021 / rbd 2017 时间线合理"
       ]
     },
     {
@@ -111,29 +103,30 @@
       "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "useDrag/useDrop 为 v14+ API（顶层 type），概念正确可跟做；案例 1/2 缺 import 由案例 3 补齐，教学可接受",
-        "踩坑具体可操作：忘包 DndProvider、HTML5Backend 不吃 touch、collect/deps 闭包旧 id、跨 iframe dataTransfer 丢失",
+        "useDrag/useDrop 为 v14+ 顶层 type API，概念正确；案例 1/2 缺 import 由案例 3 补齐，教学可接受",
+        "踩坑具体可操作：忘包 DndProvider、HTML5Backend 不吃 touch、deps 闭包旧 id、跨 iframe dataTransfer 丢失",
         "适用类型化拖拽/三端同逻辑 vs 不适用纯列表排序/a11y/新项目/跨 iframe，边界清楚"
       ]
     }
   ],
+  "slug": "react-dnd",
+  "area": "projects",
+  "status": "passed",
+  "lines": 159,
+  "l1_pass": true,
   "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
     "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
   },
   "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 v14 时间线（2020→2021，并补 2019 hooks 稳定）；澄清适用场景里 react-dnd v14 vs React 版本混淆；核心要点浅比较加白话桥接",
-    "sections_modified": [
-      "## 核心要点",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事"
-    ],
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
     "unresolved_hints": []
   },
   "quality_gate": {
@@ -141,7 +134,5 @@
     "lines": 159,
     "l1_pass": true,
     "reasons": []
-  },
-  "lines": 159,
-  "l1_pass": true
+  }
 }

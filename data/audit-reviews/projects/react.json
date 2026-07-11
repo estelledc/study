@@ -1,9 +1,9 @@
 {
-  "action": "refine",
-  "average": 4.33,
+  "action": "pass",
+  "average": 4.44,
   "reject_count": 0,
-  "needs_refine_count": 1,
-  "pass_count": 2,
+  "needs_refine_count": 0,
+  "pass_count": 3,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -12,8 +12,8 @@
     },
     {
       "reviewer": "academic",
-      "section": "## 是什么",
-      "verdict": "needs-refine"
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
     },
     {
       "reviewer": "engineer",
@@ -28,23 +28,23 @@
     },
     {
       "reviewer": "zero-base",
-      "hint": "JSX / props / state / useEffect 依赖数组都有白话桥接；stale closure 有中文对照"
+      "hint": "JSX / props / state / useEffect 依赖数组、stale closure 都有白话桥接"
     },
     {
       "reviewer": "zero-base",
-      "hint": "案例 1 有逐行解释；案例 2 依赖数组三种写法清楚；案例 3 可再补一句『父传回调、子调用』的逐步对照，但整体可跟"
+      "hint": "案例 1 逐行、案例 2 依赖三种写法、案例 3 父传回调三步对照齐全；案例 2 可再点一句请求竞态，但现稿可跟"
     },
     {
       "reviewer": "academic",
-      "hint": "来源 github.com/facebook/react 正确；FaxJS→2013 开源、2015 RN、2018.10 Hooks、2022.3 React 18 时间线与官方叙述一致"
+      "hint": "来源 github.com/facebook/react 正确；标题已改为『用组件描述界面的 JavaScript 库』，与官方 library 定位一致"
     },
     {
       "reviewer": "academic",
-      "hint": "标题『React UI 组件库』易与 Ant Design / MUI 类『组件库』混淆；官方定位是 library for building UIs，建议改成『用组件描述界面的 JavaScript 库』一类"
+      "hint": "FaxJS→2013 开源、2015 RN、2018.10 Hooks、2022.3 React 18 concurrent/流式 SSR、RSC 2020 提出——时间线与官方叙述一致"
     },
     {
       "reviewer": "academic",
-      "hint": "『React 18 … 为后续 Server Components 铺路』偏因果简化：RSC 2020 已宣布，18 主推 concurrent / 自动批处理；可改为并发特性与流式 SSR，勿写成 RSC 由 18 铺路"
+      "hint": "『全行业默认 / 绝大多数前端岗』属教学概括可接受；历史止于 React 18，未提 2024-12 React 19，属省略非硬伤"
     },
     {
       "reviewer": "engineer",
@@ -56,7 +56,7 @@
     },
     {
       "reviewer": "engineer",
-      "hint": "适用 SPA/复杂界面 vs 静态页/Canvas 万级/无 build 工具，边界清楚；『纯 React 难做 SSR』可再点明框架层（Next）补路由与数据，避免读者以为 react-dom/server 不存在"
+      "hint": "适用 SPA/复杂界面 vs 静态页/Canvas 万级/无 build；SSR 已点明 react-dom/server 与 Next 框架层边界"
     }
   ],
   "reviews": [
@@ -72,24 +72,24 @@
       "weakest_section": "## 实践案例",
       "fix_hints": [
         "餐厅写菜单 / 改菜单自动换菜类比贯穿是什么与 useState，零基础直觉强",
-        "JSX / props / state / useEffect 依赖数组都有白话桥接；stale closure 有中文对照",
-        "案例 1 有逐行解释；案例 2 依赖数组三种写法清楚；案例 3 可再补一句『父传回调、子调用』的逐步对照，但整体可跟"
+        "JSX / props / state / useEffect 依赖数组、stale closure 都有白话桥接",
+        "案例 1 逐行、案例 2 依赖三种写法、案例 3 父传回调三步对照齐全；案例 2 可再点一句请求竞态，但现稿可跟"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 3,
+        "fact_accuracy": 4,
         "citation_correctness": 5,
         "no_distortion": 4
       },
-      "average": 4,
-      "verdict": "needs-refine",
-      "weakest_section": "## 是什么",
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
       "fix_hints": [
-        "来源 github.com/facebook/react 正确；FaxJS→2013 开源、2015 RN、2018.10 Hooks、2022.3 React 18 时间线与官方叙述一致",
-        "标题『React UI 组件库』易与 Ant Design / MUI 类『组件库』混淆；官方定位是 library for building UIs，建议改成『用组件描述界面的 JavaScript 库』一类",
-        "『React 18 … 为后续 Server Components 铺路』偏因果简化：RSC 2020 已宣布，18 主推 concurrent / 自动批处理；可改为并发特性与流式 SSR，勿写成 RSC 由 18 铺路"
+        "来源 github.com/facebook/react 正确；标题已改为『用组件描述界面的 JavaScript 库』，与官方 library 定位一致",
+        "FaxJS→2013 开源、2015 RN、2018.10 Hooks、2022.3 React 18 concurrent/流式 SSR、RSC 2020 提出——时间线与官方叙述一致",
+        "『全行业默认 / 绝大多数前端岗』属教学概括可接受；历史止于 React 18，未提 2024-12 React 19，属省略非硬伤"
       ]
     },
     {
@@ -105,40 +105,34 @@
       "fix_hints": [
         "Counter / useEffect fetch / props 三案例概念正确可跟做；依赖数组语义准确",
         "踩坑具体可操作：stale closure、key=index、setState 异步读旧值、render 里 setState 死循环",
-        "适用 SPA/复杂界面 vs 静态页/Canvas 万级/无 build 工具，边界清楚；『纯 React 难做 SSR』可再点明框架层（Next）补路由与数据，避免读者以为 react-dom/server 不存在"
+        "适用 SPA/复杂界面 vs 静态页/Canvas 万级/无 build；SSR 已点明 react-dom/server 与 Next 框架层边界"
       ]
     }
   ],
   "slug": "react",
   "area": "projects",
-  "status": "refined",
+  "status": "passed",
   "lines": 164,
   "l1_pass": true,
   "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
     "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
   },
   "quality_gate": {
     "pass": true,
     "lines": 164,
     "l1_pass": true,
     "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic needs-refine：标题去『UI 组件库』误称；React 18 与 RSC 因果改写；案例 3 补逐步对照；SSR 边界点明 react-dom/server vs 框架；裁剪过长反向链接以过 gate",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
   }
 }
