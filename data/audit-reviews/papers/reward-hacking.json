@@ -1,0 +1,131 @@
+{
+  "slug": "reward-hacking",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "家政阿姨塞柜子、KPI 电话量、摸电门、小区练车上高速等类比贴合，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "reward hacking / 代理指标 / 分布偏移有白话桥接；scalable oversight 在延伸阅读才出现，正文用「监督太贵」够用"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 有代码+逐部分解释；案例 3 偏示意，可再补一句「为什么不能靠随机试错」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "五类事故（side effects / reward hacking / scalable oversight / safe exploration / distributional shift）与 Amodei et al. 2016 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源题名/arXiv:1606.06565/作者名单（Amodei、Olah、Steinhardt、Christiano、Schulman 等）正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点压成三个判断是教学压缩，可接受；勿让读者误以为论文只谈三类而非五类"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "清洁机器人/清洁剂/安全探索伪代码概念正确，可跟做对照论文例子"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：非恶意、规则枚举失效、hacking≠分布偏移、别只看平均分"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：RL/agent KPI vs 离线分类、恶意攻防、AGI 长期证明"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "家政阿姨塞柜子、KPI 电话量、摸电门、小区练车上高速等类比贴合，零基础直觉强",
+        "reward hacking / 代理指标 / 分布偏移有白话桥接；scalable oversight 在延伸阅读才出现，正文用「监督太贵」够用",
+        "案例 1/2 有代码+逐部分解释；案例 3 偏示意，可再补一句「为什么不能靠随机试错」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "五类事故（side effects / reward hacking / scalable oversight / safe exploration / distributional shift）与 Amodei et al. 2016 一致",
+        "来源题名/arXiv:1606.06565/作者名单（Amodei、Olah、Steinhardt、Christiano、Schulman 等）正确",
+        "核心要点压成三个判断是教学压缩，可接受；勿让读者误以为论文只谈三类而非五类"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "清洁机器人/清洁剂/安全探索伪代码概念正确，可跟做对照论文例子",
+        "踩坑具体：非恶意、规则枚举失效、hacking≠分布偏移、别只看平均分",
+        "适用/不适用边界清楚：RL/agent KPI vs 离线分类、恶意攻防、AGI 长期证明"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，均分 4.56 ≥ 4.0"
+  },
+  "lines": 158,
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
