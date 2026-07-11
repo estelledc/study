@@ -102,7 +102,7 @@ const db = new PouchDB("test", { adapter: "memory" });
 
 4. **不擅长复杂查询**：mango find 能做基础筛选 + 排序，但联表、全文搜索、聚合统计要么自建 map/reduce view，要么换 [[meilisearch]] / [[postgresql]]。
 
-5. **WebSQL 弃了之后兼容窗口缩窄**：v8 起 PouchDB 不再带 WebSQL 适配器，老 iOS Safari 上要么升级要么换 in-memory + 自己持久化。
+5. **WebSQL 弃了之后兼容窗口缩窄**：PouchDB **7.0**（2018）起不再带 WebSQL 适配器，老 iOS Safari 上要么升级要么换 in-memory + 自己持久化。
 
 ## 适用 vs 不适用
 
@@ -150,3 +150,7 @@ const db = new PouchDB("test", { adapter: "memory" });
 - [[rest-fielding-2000]] —— CouchDB / PouchDB 把 REST 推到极致的理论根
 - [[postgresql]] —— 当你需要强一致和复杂查询时的对照选择
 - [[elasticsearch]] —— 全文搜索的对照选择，PouchDB 不擅长这块
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
