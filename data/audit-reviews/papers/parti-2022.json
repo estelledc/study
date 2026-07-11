@@ -1,9 +1,6 @@
 {
-  "slug": "parti-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
-  "average": 3.78,
+  "average": 4,
   "reject_count": 0,
   "needs_refine_count": 2,
   "pass_count": 1,
@@ -20,7 +17,7 @@
     },
     {
       "reviewer": "engineer",
-      "section": "## 实践案例",
+      "section": "## 踩过的坑",
       "verdict": "needs-refine"
     }
   ],
@@ -31,39 +28,35 @@
     },
     {
       "reviewer": "zero-base",
-      "hint": "FID / VQGAN / 码本首次出现有白话桥接；encoder-decoder 对入门仍偏密"
+      "hint": "FID / VQGAN / 码本首次出现有白话桥接；encoder-decoder 对入门仍偏密但可跟"
     },
     {
       "reviewer": "zero-base",
-      "hint": "三案例结构清楚；案例 1 的 scaling 表可跟读，但数字需与论文核对（见 academic）"
+      "hint": "三案例结构清楚：scaling 表、AR vs 扩散对照、PartiPrompts 寿命——可跟读"
     },
     {
       "reviewer": "academic",
-      "hint": "案例 1 FID 表错误：论文 Figure 9 / 正文为 350M=14.10、750M=10.71、3B=8.10、20B=7.23；笔记把 750M 写成 8.10（与 3B 撞车）"
+      "hint": "案例 1「750M→3B 跳得最大」与表内数字矛盾：14.10→10.71（Δ3.39）大于 10.71→8.10（Δ2.61）；应改为 350M→750M 降幅最大，或写「持续下降、大模型端收益递减」"
     },
     {
       "reviewer": "academic",
-      "hint": "踩坑「256×256…1024 需要再接超分、论文里没做」不成立：Parti 用 WDSR 风格超分模块做到 512/1024（约 15M/30M 参数），只是比 Imagen 文本条件级联扩散更简单"
+      "hint": "踩坑「训练用 1024 个 TPUv4 chip」在论文/项目页未给出该芯片数；宜改为「Lingvo + GSPMD 跑在大规模 Cloud TPUv4 上」等可核对表述"
     },
     {
       "reviewer": "academic",
-      "hint": "「GPT-4o 原生图像生成不再用扩散」过满：OpenAI 称 4o 为 AR 原生嵌入，但公开示意仍有 tokens→transformer→diffusion→pixels；宜改为「不再是独立 DALL·E 扩散管线，主路径自回归」"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "「超过 Imagen 的 4.6B」易误解为整模参数：4.6B 是 Imagen 的 T5-XXL 文本编码器，不是整条级联扩散总参"
+      "hint": "FID 表 14.10/10.71/8.10/7.23、码本 8192、PartiPrompts 12×11、WDSR 超分 15M/30M、arXiv 2206.10789 均与论文一致——保留"
     },
     {
       "reviewer": "engineer",
-      "hint": "管线 ASCII / token 串行代价概念正确可跟；案例 1 scaling 表数字与论文不一致，跟做核对会踩坑——按 14.10/10.71/8.10/7.23 改正"
+      "hint": "管线 ASCII / token 串行代价概念正确可跟；案例 1 scaling 数字与论文一致可核对"
     },
     {
       "reviewer": "engineer",
-      "hint": "踩坑具体可操作：串行墙钟、离散瓶颈、20B 复现门槛——保留；超分「论文没做」需改成「做了简单卷积超分、非 Imagen 级联」"
+      "hint": "踩坑里「1024 个 TPUv4」不可复现核对——工程读者会当硬指标；改为「大规模 TPUv4 + GSPMD」并保留「开源难复现 20B」"
     },
     {
       "reviewer": "engineer",
-      "hint": "适用/不适用边界清楚（4G 蒸馏扩散、16384 token）；可补一句主版本 256 直出 + 可选超分的工程边界"
+      "hint": "适用/不适用边界清楚（4G 蒸馏扩散、16384 token、主模型 256 直出 + 可选超分）——保留"
     }
   ],
   "reviews": [
@@ -79,56 +72,63 @@
       "weakest_section": "## 实践案例",
       "fix_hints": [
         "写文章/拼图花色类比把「图像 token + 自回归」讲透，零基础直觉强",
-        "FID / VQGAN / 码本首次出现有白话桥接；encoder-decoder 对入门仍偏密",
-        "三案例结构清楚；案例 1 的 scaling 表可跟读，但数字需与论文核对（见 academic）"
+        "FID / VQGAN / 码本首次出现有白话桥接；encoder-decoder 对入门仍偏密但可跟",
+        "三案例结构清楚：scaling 表、AR vs 扩散对照、PartiPrompts 寿命——可跟读"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 2,
-        "citation_correctness": 4,
-        "no_distortion": 3
-      },
-      "average": 3,
-      "verdict": "needs-refine",
-      "weakest_section": "## 实践案例",
-      "fix_hints": [
-        "案例 1 FID 表错误：论文 Figure 9 / 正文为 350M=14.10、750M=10.71、3B=8.10、20B=7.23；笔记把 750M 写成 8.10（与 3B 撞车）",
-        "踩坑「256×256…1024 需要再接超分、论文里没做」不成立：Parti 用 WDSR 风格超分模块做到 512/1024（约 15M/30M 参数），只是比 Imagen 文本条件级联扩散更简单",
-        "「GPT-4o 原生图像生成不再用扩散」过满：OpenAI 称 4o 为 AR 原生嵌入，但公开示意仍有 tokens→transformer→diffusion→pixels；宜改为「不再是独立 DALL·E 扩散管线，主路径自回归」",
-        "「超过 Imagen 的 4.6B」易误解为整模参数：4.6B 是 Imagen 的 T5-XXL 文本编码器，不是整条级联扩散总参"
-      ]
-    },
-    {
-      "reviewer": "engineer",
-      "scores": {
-        "code_runnable": 3,
-        "pitfalls_useful": 5,
-        "scope_correct": 4
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
       },
       "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "管线 ASCII / token 串行代价概念正确可跟；案例 1 scaling 表数字与论文不一致，跟做核对会踩坑——按 14.10/10.71/8.10/7.23 改正",
-        "踩坑具体可操作：串行墙钟、离散瓶颈、20B 复现门槛——保留；超分「论文没做」需改成「做了简单卷积超分、非 Imagen 级联」",
-        "适用/不适用边界清楚（4G 蒸馏扩散、16384 token）；可补一句主版本 256 直出 + 可选超分的工程边界"
+        "案例 1「750M→3B 跳得最大」与表内数字矛盾：14.10→10.71（Δ3.39）大于 10.71→8.10（Δ2.61）；应改为 350M→750M 降幅最大，或写「持续下降、大模型端收益递减」",
+        "踩坑「训练用 1024 个 TPUv4 chip」在论文/项目页未给出该芯片数；宜改为「Lingvo + GSPMD 跑在大规模 Cloud TPUv4 上」等可核对表述",
+        "FID 表 14.10/10.71/8.10/7.23、码本 8192、PartiPrompts 12×11、WDSR 超分 15M/30M、arXiv 2206.10789 均与论文一致——保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "管线 ASCII / token 串行代价概念正确可跟；案例 1 scaling 数字与论文一致可核对",
+        "踩坑里「1024 个 TPUv4」不可复现核对——工程读者会当硬指标；改为「大规模 TPUv4 + GSPMD」并保留「开源难复现 20B」",
+        "适用/不适用边界清楚（4G 蒸馏扩散、16384 token、主模型 256 直出 + 可选超分）——保留"
       ]
     }
   ],
+  "slug": "parti-2022",
+  "area": "papers",
+  "status": "refined",
+  "lines": 160,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
   "refinement": {
     "action": "refine",
     "round": 1,
-    "reason": "三审 needs-refine：案例 1 FID 750M 误写 8.10（应为 10.71）；超分「论文没做」不实；GPT-4o/Imagen 4.6B 表述过满；补反向链接",
+    "reason": "三审 needs-refine：案例1「750M→3B跳最大」与表内Δ矛盾；踩坑「1024 TPUv4」论文未给出——改为 GSPMD/Cloud TPUv4",
     "sections_modified": [
-      "## 为什么重要",
       "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 延伸阅读",
-      "## 反向链接"
+      "## 踩过的坑"
     ],
     "unresolved_hints": []
   },
@@ -137,7 +137,5 @@
     "lines": 160,
     "l1_pass": true,
     "reasons": []
-  },
-  "lines": 160,
-  "l1_pass": true
+  }
 }
