@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "自行车 vs 电动三轮 / 前后厨类比把「写 Python 跑 Rust」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "GIL、PyO3、const 请求有桥接；actor 若保留需更白话，否则易和「多进程」搅在一起"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三则代码案例逐步解释清楚，路径参数 :id 与 before_request 放行/拦截对比好懂"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub sparckles/Robyn、Rust+PyO3、多 worker、WebSocket/中间件等骨架正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "架构过售：官方架构强调 master/worker + Tokio/Actix HTTP + PyO3，不宜写成「进程内 Erlang 式 actor 消息传递」为主叙事；应弱化为多进程 worker + Rust 异步运行时（可提 Actix/Tokio）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「单二进制部署」不准确：Robyn 是 pip/wheel 分发的 Python 包（含原生扩展），不是 Go 式单二进制"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则 min example 可跟做；:path 参数与 FastAPI {id} 差异、PanicException、多 worker 全局状态——踩坑很实用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用里删改「单二进制部署」：改为 wheel/原生扩展安装、内存相对省、启动快即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "TechEmpower「接近 Actix」宜加限定（具体 round/测试项快照），避免读成全面追平纯 Rust"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "自行车 vs 电动三轮 / 前后厨类比把「写 Python 跑 Rust」讲透",
+        "GIL、PyO3、const 请求有桥接；actor 若保留需更白话，否则易和「多进程」搅在一起",
+        "三则代码案例逐步解释清楚，路径参数 :id 与 before_request 放行/拦截对比好懂"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 GitHub sparckles/Robyn、Rust+PyO3、多 worker、WebSocket/中间件等骨架正确",
+        "架构过售：官方架构强调 master/worker + Tokio/Actix HTTP + PyO3，不宜写成「进程内 Erlang 式 actor 消息传递」为主叙事；应弱化为多进程 worker + Rust 异步运行时（可提 Actix/Tokio）",
+        "「单二进制部署」不准确：Robyn 是 pip/wheel 分发的 Python 包（含原生扩展），不是 Go 式单二进制"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三则 min example 可跟做；:path 参数与 FastAPI {id} 差异、PanicException、多 worker 全局状态——踩坑很实用",
+        "适用里删改「单二进制部署」：改为 wheel/原生扩展安装、内存相对省、启动快即可",
+        "TechEmpower「接近 Actix」宜加限定（具体 round/测试项快照），避免读成全面追平纯 Rust"
+      ]
+    }
+  ],
+  "slug": "robyn",
+  "area": "projects",
+  "status": "refined",
+  "lines": 179,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "pass_count": 1
+  },
+  "remediation": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 适用 vs 不适用场景",
+      "## 学到什么",
+      "## 历史小故事",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 179,
+    "reasons": []
+  }
+}
