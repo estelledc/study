@@ -8,7 +8,7 @@ title: SOPS — 让密码也能放心进 Git
 
 ## 是什么
 
-SOPS（Secrets OPerationS）是一把**专门给配置文件里"敏感字段"上锁的工具**。Mozilla 安全团队 2017 年开源，2024 年进 CNCF Sandbox。
+SOPS（Secrets OPerationS）是一把**专门给配置文件里"敏感字段"上锁的工具**。Mozilla 安全团队 2015 年启动并开源，2023 年 5 月进 CNCF Sandbox。
 
 日常类比：你有一份 YAML 配置，里面 90% 是端口号、超时时间这种"全公司随便看"的字段，10% 是数据库密码、API key 这种"看一眼都不行"的字段。直接丢进 Git 不安全，整文件加密又看不到改了什么。SOPS 的答案是——**把每一个敏感 value 单独锁起来，key 明文留着**。这样：
 
@@ -63,31 +63,36 @@ creation_rules:
 age（X25519 + ChaCha20-Poly1305）是现代 PGP 替代品，比 GnuPG 好用百倍。最小流程：
 
 ```bash
-age-keygen -o key.txt                    # 生成私钥
-# 把 public key 写进 .sops.yaml
-sops -e -i secrets.yaml                  # 原地加密
+age-keygen -o key.txt                    # 生成私钥；公钥打印在 stdout
+# .sops.yaml：
+# creation_rules:
+#   - path_regex: secrets/.*\.yaml$
+#     age: age1xxxxxxxx                  # 填上一步公钥
+sops -e -i secrets.yaml                  # 按规则原地加密
 git add secrets.yaml && git commit       # 大胆提交
+SOPS_AGE_KEY_FILE=key.txt sops -d secrets.yaml   # 部署机解密
 ```
 
-部署机器拿到 `key.txt` 后，`SOPS_AGE_KEY_FILE=key.txt sops -d secrets.yaml` 即可。零服务、零运维。
+零服务、零运维：私钥只放部署机 / CI secret，仓库里只有密文。
 
 ### 案例 2：和 Kubernetes 配合（Flux GitOps）
 
-Flux 的 SOPS controller 流程：
+1. 本地：`sops -e -i k8s/secret.yaml`，确认 value 已是 `ENC[AES256_GCM,...]`
+2. `git push`；Flux 拉到集群，识别 SOPS 格式
+3. controller 用预先注入的 age 私钥或 KMS 权限解密
+4. 明文 Secret 写入 etcd，Pod 用 `secretKeyRef` 挂载
 
-1. 你提交一份加密后的 K8s Secret manifest 到 Git
-2. Flux 拉到集群里，发现是 SOPS 加密格式
-3. controller 用集群预先注入的 KMS / age 私钥解密
-4. 解密后的 Secret 写进 etcd，Pod 正常挂载
-
-这就是"GitOps + Secrets"被普遍接受的方案——密钥从未离开过你的 KMS 或集群，但仓库里又是完整的。
+密钥材料不进 Git；仓库里仍是完整、可 diff 的声明式清单。
 
 ### 案例 3：和 Terraform / Helm 串起来
 
-- **Terraform**：`carlpett/terraform-provider-sops` 让 `data.sops_file.secrets.data["db_password"]` 在 plan 时自动解密
-- **Helm**：`jkroepke/helm-secrets` 插件让 `helm install -f secrets.enc.yaml` 自动调 sops 解密再注入 values
+```hcl
+# Terraform：plan/apply 时自动解密（carlpett/terraform-provider-sops）
+data "sops_file" "secrets" { source_file = "secrets.enc.yaml" }
+# 取值：data.sops_file.secrets.data["db_password"]
+```
 
-整套链路里你都不用手动 `sops -d`，工具替你做。
+Helm 侧用 `jkroepke/helm-secrets`：`helm secrets install ... -f secrets.enc.yaml`，插件内部调 `sops -d` 再注入 values。整条链路不用手敲解密。
 
 ## 踩过的坑
 
@@ -119,12 +124,11 @@ Flux 的 SOPS controller 流程：
 
 ## 历史小故事（可跳过）
 
-- **2017 年**：Mozilla 安全团队（Julien Vehent 主导）开源 SOPS，最初只为内部 Firefox 服务密钥管理。代码 2k 行 Go。
-- **2019-2021 年**：陆续加 GCP / Azure / Vault / age 后端，DevOps 圈口口相传，事实上成了"配置加密"标准。
-- **2023 年**：Mozilla 缩减开源投入，宣布退出维护。社区 fork 出 `getsops/sops` 接管。
-- **2024 年**：进入 CNCF Sandbox，治理正式社区化。
+- **2015 年**：Mozilla 安全团队（Julien Vehent、Adrian Utrilla）启动 SOPS，服务内部 Firefox 相关密钥管理；早期代码量很小。
+- **2019-2021 年**：陆续加 GCP / Azure / Vault / age 后端，DevOps 圈口口相传，事实上成了"配置加密"常见选项。
+- **2023 年**：社区迁到 `getsops/sops` 接管维护；同年 5 月 17 日进入 CNCF Sandbox，治理正式社区化。
 
-10 年从一个安全团队的内部工具走到 CNCF——典型的"小工具解决大问题"路径。
+近十年从一个安全团队的内部工具走到 CNCF——典型的"小工具解决大问题"路径。
 
 ## 学到什么
 

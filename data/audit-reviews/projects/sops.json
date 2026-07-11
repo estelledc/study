@@ -1,0 +1,143 @@
+{
+  "slug": "sops",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「敏感 value 上锁、key 明文留下」类比贴合，git diff 还能看懂的直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "DEK / recipient / encrypted_regex 有桥接，零基础大致能跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有四步叙事、无命令或 YAML 样例；案例 3 只有插件名。建议案例 2 补「提交加密 Secret → Flux 解密」对照片段，案例 1 补 .sops.yaml 里 age 公钥怎么写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开源/启动年份应为 2015（GitHub 首提交与官方 README），不是 2017；CNCF Sandbox 接受日为 2023-05-17，不是 2024"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/getsops/sops 正确；作者 Julien Vehent（及 Adrian Utrilla）与 DEK=AES-256-GCM、age 后端描述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「代码 2k 行」属过时/软数字，宜删或改成「早期很小」；Mozilla 退出后 getsops 接管与捐赠 CNCF 叙事可保留但年份对齐"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "age-keygen / sops -e -i / SOPS_AGE_KEY_FILE 解密链路概念正确，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：key 重排 diff、path_regex 静默不加密、撤 KMS 救不了 git 历史、age 私钥丢失、大二进制弱"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：GitOps 声明式密文 vs Vault 动态密钥 / 大二进制 / 强合规"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「敏感 value 上锁、key 明文留下」类比贴合，git diff 还能看懂的直觉强",
+        "DEK / recipient / encrypted_regex 有桥接，零基础大致能跟住",
+        "案例 2 只有四步叙事、无命令或 YAML 样例；案例 3 只有插件名。建议案例 2 补「提交加密 Secret → Flux 解密」对照片段，案例 1 补 .sops.yaml 里 age 公钥怎么写"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "开源/启动年份应为 2015（GitHub 首提交与官方 README），不是 2017；CNCF Sandbox 接受日为 2023-05-17，不是 2024",
+        "来源 github.com/getsops/sops 正确；作者 Julien Vehent（及 Adrian Utrilla）与 DEK=AES-256-GCM、age 后端描述合理",
+        "「代码 2k 行」属过时/软数字，宜删或改成「早期很小」；Mozilla 退出后 getsops 接管与捐赠 CNCF 叙事可保留但年份对齐"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "age-keygen / sops -e -i / SOPS_AGE_KEY_FILE 解密链路概念正确，可跟做",
+        "踩坑可操作：key 重排 diff、path_regex 静默不加密、撤 KMS 救不了 git 历史、age 私钥丢失、大二进制弱",
+        "适用/不适用边界清楚：GitOps 声明式密文 vs Vault 动态密钥 / 大二进制 / 强合规"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "academic/zero-base needs-refine：开源年与 CNCF 年错误；案例2/3步骤偏薄。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 166,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": [],
+    "notes": "开源改为2015、CNCF Sandbox改为2023-05-17；删「2k行」软数字；案例1补.sops.yaml age写法与解密命令；案例2补ENC确认步骤；案例3补Terraform data块示例。"
+  }
+}

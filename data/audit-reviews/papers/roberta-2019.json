@@ -1,0 +1,144 @@
+{
+  "slug": "roberta-2019",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "汽车调校类比把「架构没变、训练没训透」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "NSP / 动态 masking / byte-level BPE 有白话桥接，GLUE/SQuAD 可跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 偏元评论、缺可跟做步骤；建议补一段「加载 RoBERTa → 微调一句分类」的三步小例子，并让案例 1 的表数字与论文消融对齐以免误导"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 消融表中间行（84.0/84.7/84.9/85.5）不是论文 Table 4 原数；应改为 Books+Wiki→+160GB→+300K→+500K 的 SQuAD2.0/MNLI 累积表，GLUE 88.5 与 SQuAD2.0 89.4 分开写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Liu et al. / arXiv:1907.11692 / 2019 正确；BERT 原版数据量论文对照表写 ~13GB，RoBERTa 自训 Books+Wiki 写 16GB，宜区分"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "静态 masking「10 个 epoch 全用同一份」略歪：论文是预处理复制 10 份、40 epoch 内每份约用 4 次；「NSP 变成定论」宜弱化为「在 RoBERTa 设定下砍掉更好」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "动态 masking / FULL-SENTENCES 伪流程概念正确，但缺一段可跟做的 transformers 加载或伪代码微调"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：词表变重、8K batch 资源门槛、去 NSP 对句对任务的后续争议、ICLR 拒稿 vs 工业采用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺独立「适用/不适用」边界（何时直接用 RoBERTa 权重 vs 何时该换更大 decoder-only）；建议补量化场景"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "汽车调校类比把「架构没变、训练没训透」讲透，零基础直觉强",
+        "NSP / 动态 masking / byte-level BPE 有白话桥接，GLUE/SQuAD 可跟住",
+        "案例 4 偏元评论、缺可跟做步骤；建议补一段「加载 RoBERTa → 微调一句分类」的三步小例子，并让案例 1 的表数字与论文消融对齐以免误导"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 消融表中间行（84.0/84.7/84.9/85.5）不是论文 Table 4 原数；应改为 Books+Wiki→+160GB→+300K→+500K 的 SQuAD2.0/MNLI 累积表，GLUE 88.5 与 SQuAD2.0 89.4 分开写",
+        "来源 Liu et al. / arXiv:1907.11692 / 2019 正确；BERT 原版数据量论文对照表写 ~13GB，RoBERTa 自训 Books+Wiki 写 16GB，宜区分",
+        "静态 masking「10 个 epoch 全用同一份」略歪：论文是预处理复制 10 份、40 epoch 内每份约用 4 次；「NSP 变成定论」宜弱化为「在 RoBERTa 设定下砍掉更好」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "动态 masking / FULL-SENTENCES 伪流程概念正确，但缺一段可跟做的 transformers 加载或伪代码微调",
+        "踩坑具体：词表变重、8K batch 资源门槛、去 NSP 对句对任务的后续争议、ICLR 拒稿 vs 工业采用",
+        "缺独立「适用/不适用」边界（何时直接用 RoBERTa 权重 vs 何时该换更大 decoder-only）；建议补量化场景"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "reason": "三审均 needs-refine：案例1消融中间行非论文原表；缺适用段与可跟做加载示例；静态mask/NSP表述需收紧。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 165,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": [],
+    "notes": "案例1对齐论文 Table 4（SQuAD2.0/MNLI 累积）；区分 BERT~13GB vs RoBERTa 16GB/160GB；修正静态mask描述并弱化NSP定论；补 HF 微调片段与适用/不适用；压缩学到什么以控行数。"
+  }
+}
