@@ -1,0 +1,133 @@
+{
+  "slug": "regl",
+  "area": "projects",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房菜谱类比把「全局状态→局部命令」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "command / framebuffer / props 有白话桥接；GLSL 片段对纯新手仍需多停半拍"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例逐步解释清楚；案例 3 生命游戏若只展示 ping-pong，宜明示「完整邻居计数在官方 life.js」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2016 MIT、Freeman Lab / HHMI、5k+ stars、Bokeh/Deepscatter 等定位与仓库 README 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「函数式外壳 / 非 Three.js 引擎」表述准确，未歪曲项目意图"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 把 life.js 缩成「只采样上一帧」易让人以为那就是生命游戏规则；宜标明这是 ping-pong 骨架、完整规则见官方示例"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 可跟做；案例 3 frag 未实现 8 邻域生命规则，照抄不会得到 GoL——补注释或一行说明「此处省略邻居求和，完整见 example/life.js」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：frame 内新建命令、browserify debug、subdata/subimage、_refresh——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（引擎 vs 薄封装 vs 图表库）；可补一句「适合自定义 draw call 量级 demo，不适合开箱即用场景图」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "厨房菜谱类比把「全局状态→局部命令」讲透，零基础直觉强",
+        "command / framebuffer / props 有白话桥接；GLSL 片段对纯新手仍需多停半拍",
+        "三案例逐步解释清楚；案例 3 生命游戏若只展示 ping-pong，宜明示「完整邻居计数在官方 life.js」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "2016 MIT、Freeman Lab / HHMI、5k+ stars、Bokeh/Deepscatter 等定位与仓库 README 一致",
+        "「函数式外壳 / 非 Three.js 引擎」表述准确，未歪曲项目意图",
+        "案例 3 把 life.js 缩成「只采样上一帧」易让人以为那就是生命游戏规则；宜标明这是 ping-pong 骨架、完整规则见官方示例"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–2 可跟做；案例 3 frag 未实现 8 邻域生命规则，照抄不会得到 GoL——补注释或一行说明「此处省略邻居求和，完整见 example/life.js」",
+        "踩坑具体可操作：frame 内新建命令、browserify debug、subdata/subimage、_refresh——保留",
+        "适用/不适用边界清楚（引擎 vs 薄封装 vs 图表库）；可补一句「适合自定义 draw call 量级 demo，不适合开箱即用场景图」"
+      ]
+    }
+  ],
+  "status": "refined",
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：案例 3 标明 ping-pong 骨架、完整 GoL 见官方 life.js；适用段补自定义 draw call 边界",
+    "sections_modified": [
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 198,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 198,
+  "l1_pass": true
+}
