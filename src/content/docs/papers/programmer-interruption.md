@@ -18,7 +18,7 @@ Parnin & Rugaber 2009 是第一篇用 **IDE 行为数据**告诉你"程序员被
 
 不知道这篇文章，下面这些事都解释不清：
 
-- 为什么 JetBrains Focus Mode、VS Code Zen Mode、Slack Snooze、GitHub PR Draft 几乎在同一年代集体出现
+- 为什么十余年后 JetBrains Focus Mode、VS Code Zen Mode、Slack Snooze、GitHub PR Draft 会陆续做成产品——它们在修的是这篇 2009 年就量化过的恢复成本
 - 为什么"程序员平均 23 分钟才能恢复 flow"被到处引用，但这数字其实**不在这篇论文里**
 - 为什么"你只是看了眼微信"的代价远比你想象的大
 - 为什么写日报、留 TODO 注释、在 Cursor 对话窗里啰嗦解释思路——这些笨办法实际上在修补一个 2009 年就被量化的工程问题
@@ -40,9 +40,10 @@ Parnin & Rugaber 2009 是第一篇用 **IDE 行为数据**告诉你"程序员被
 跑一个最小自我观察：
 
 ```bash
-# 装 ActivityWatch（开源，本地跑，不上传任何数据）
-brew install --cask activitywatch
-# 装 VS Code 插件 aw-watcher-vscode
+# 装 ActivityWatch（开源，本地跑，不上传）
+# macOS: brew install --cask activitywatch
+# Linux/Windows: 官网 https://activitywatch.net 下载
+# 再装 VS Code 插件 aw-watcher-vscode
 ```
 
 打开 ActivityWatch 自带的 web UI，看自己一周的"应用切换 → IDE 第一次按键"间隔。你会发现：
@@ -121,7 +122,7 @@ brew install --cask activitywatch
 ## 学到什么
 
 1. **被打断的代价不是"23 分钟均值"，是右尾长尾**——多数会话恢复很快，但 30% 的会话超过 30 分钟，这才是吃掉全天产出的部分
-2. **行为数据比自评可靠 10 倍**——"我以为我恢复了"和"我真的开始改代码了"差距很大，能在 IDE 里测就别问问卷
+2. **行为数据远比自评可靠**——"我以为我恢复了"和"我真的开始改代码了"差距很大，能在 IDE 里测就别问问卷
 3. **预留 cue 比恢复时努力专注更有效**——离开前 30 秒留 TODO 注释 / 写日报最后一行，比回来后强迫自己集中注意力性价比高得多
 4. **多数恢复需要重读代码**：83% 的会话要 navigate 到别处，**程序员不是发呆，是在重读**——所以"代码自解释"和"留 cue"才这么重要
 5. **方法论的迁移性大于结论本身**：用事件流定义"开始做事"的时间戳、用 ≥15 分钟切会话、用频率分布报告策略——这套框架后来被搬到 debug、review、文档写作等几乎所有"知识工人"研究里

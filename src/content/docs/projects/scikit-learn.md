@@ -15,13 +15,15 @@ scikit-learn 是一个 **Python 机器学习工具箱**——把几十种经典 
 最小例子：
 
 ```python
+from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
+X, y = load_iris(return_X_y=True)
 clf = RandomForestClassifier()
-clf.fit(X_train, y_train)        # 学
-y_pred = clf.predict(X_test)     # 猜
+clf.fit(X, y)                 # 学
+print(clf.predict(X[:3]))     # 猜前 3 条
 ```
 
-把 `RandomForestClassifier` 换成 `LogisticRegression` / `SVC` / `GradientBoosting`——上面三行**一字不改**就能跑。这就是它能成为 Python ML default 的原因。
+把 `RandomForestClassifier` 换成 `LogisticRegression` / `SVC` / `GradientBoostingClassifier`——上面三行接口**几乎不动**就能跑（个别估计器默认超参不同，可能多几行调参）。这就是它能成为 Python ML default 的原因。
 
 ## 为什么重要
 
@@ -49,28 +51,30 @@ scikit-learn 的设计可以拆成 **三件套**：
 ### 案例 1：随机森林分类器（fit / predict）
 
 ```python
+from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
+X, y = load_iris(return_X_y=True)          # 内置鸢尾花数据，可直接跑
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 clf = RandomForestClassifier(n_estimators=100)
 clf.fit(X_train, y_train)
-print(clf.score(X_test, y_test))   # 准确率
+print(clf.score(X_test, y_test))           # 准确率
 ```
 
 **逐部分解释**：
 
-- `train_test_split` 把数据切训练 / 测试集，留 20% 给测试
-- `fit` 让森林"长出"100 棵决策树
-- `score` 一行算准确率，避免你自己写 `(y_pred == y_test).mean()`
+- `load_iris` 给出特征矩阵 `X` 和标签 `y`，不用自备 CSV
+- `train_test_split` 切训练 / 测试集，留 20% 给测试
+- `fit` 让森林"长出"100 棵决策树；`score` 一行算准确率
 
 ### 案例 2：标准化 + 测试集（fit_transform vs transform）
 
 ```python
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
-X_train_s = scaler.fit_transform(X_train)   # 训练集：算均值方差 + 应用
-X_test_s  = scaler.transform(X_test)        # 测试集：只应用，不算
+X_train_s = scaler.fit_transform(X_train)  # 训练集：算均值方差 + 应用
+X_test_s  = scaler.transform(X_test)       # 测试集：只应用，不算
 ```
 
 **关键点**：训练集才能 `fit_transform`，测试集只能 `transform`——否则把测试集均值方差泄到模型里，离线指标虚高。
@@ -83,7 +87,7 @@ from sklearn.linear_model import LogisticRegression
 
 pipe = Pipeline([
     ("scaler", StandardScaler()),
-    ("model",  LogisticRegression()),
+    ("model",  LogisticRegression(max_iter=200)),
 ])
 pipe.fit(X_train, y_train)
 pipe.score(X_test, y_test)
@@ -123,7 +127,7 @@ pipe.score(X_test, y_test)
 - **2010 年**：法国 INRIA 研究院的 Fabian Pedregosa、Gaël Varoquaux 等人接手主维护，"经典 ML 工具箱"定位形成。
 - **2011 年**：Pedregosa et al. 在 *Journal of Machine Learning Research* 发表论文 *"Scikit-learn: Machine Learning in Python"*，奠基学术引用 default。
 - **2013 年起**：fit / predict / transform 的 API 范式被广泛模仿——XGBoost / LightGBM / TensorFlow 的 Keras 后来都向它兼容。
-- **2020 年代**：GitHub 60k+ star，仍是 Python ML 教学和工业 baseline 的事实标准。
+- **2020 年代**：GitHub 星标约 6 万级（随时间变动），仍是 Python ML 教学和工业 baseline 的事实标准。
 
 ## 学到什么
 
@@ -140,6 +144,7 @@ pipe.score(X_test, y_test)
 - API 设计哲学：[API design for machine learning software](https://arxiv.org/abs/1309.0238)（Buitinck et al. 2013，讲为什么 fit / predict / transform 这套约定）
 - [[numpy]] —— scikit-learn 输入输出几乎都是 NumPy 数组
 - [[pandas]] —— 真实业务里 DataFrame 喂进去，scikit-learn 1.0+ 也直接支持
+- [[scipy]] —— 稀疏矩阵与优化器底座，许多估计器直接复用
 
 ## 关联
 
@@ -147,7 +152,7 @@ pipe.score(X_test, y_test)
 - [[scipy]] —— 提供稀疏矩阵和优化算法，scikit-learn 直接复用
 - [[pandas]] —— 真实业务里数据从这里来，scikit-learn 1.0+ 已原生支持 DataFrame 输入
 - [[polars]] —— 比 pandas 快得多的数据帧库，scikit-learn 通过 NumPy 数组接收它的输出
-- [[pyth]] —— Python 生态语言本身，scikit-learn 是它在 ML 领域的旗舰库
+- [[shap]] —— 模型解释常接在 scikit-learn 估计器之后，给每个特征归因
 
 ## 反向链接
 
