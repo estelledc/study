@@ -34,12 +34,12 @@ SAM（Segment Anything Model）是 Meta 2023 年发布的**图像分割界的 GP
 
 SAM 由**三个组件**组成，可以理解成「读图 → 读提示 → 出 mask」的三段流水线：
 
-1. **图像编码器（Image Encoder）**：用一个大号的 [[vit]]（ViT-H 版本，6 亿参数）把图像压成 64×64 的特征图。这一步**很重**——约 10 GPU-秒。但跑一次就够了，编码结果可以缓存复用。
+1. **图像编码器（Image Encoder）**：用一个大号的 [[vit]]（ViT-H 版本，约 6 亿参数）把图像压成 64×64 的特征图。这一步**相对重**——常见 GPU 上大约几百毫秒量级（公开对比里 ViT-H 编码常被引用为 ~450ms，视硬件而定）。但跑一次就够了，编码结果可以缓存复用。
 
 2. **Prompt 编码器（Prompt Encoder）**：把用户给的提示编码成模型能懂的向量。
    - 点：用傅里叶位置编码（连续坐标编码法）
    - 框：拆成左上、右下两个角点
-   - 文本（论文承诺过但代码没放，社区用 GroundingDINO 补齐）
+   - 文本（论文承诺过但官方代码未放，社区常用 GroundingDINO 补齐）
 
 3. **Mask 解码器（Mask Decoder）**：把图像特征 + 提示特征喂进去，输出 mask。这一步**极轻**——约 50 毫秒。所以你可以在浏览器里实时拖动鼠标，每动一次重新解码，体验丝滑。
 
@@ -47,27 +47,41 @@ SAM 由**三个组件**组成，可以理解成「读图 → 读提示 → 出 m
 
 ## 实践案例
 
-### 案例 1：单点提示
+### 案例 1：单点提示（最小可跟做）
 
-你给 SAM 一张猫的照片，在猫眼上点一下。
+你给 SAM 一张猫的照片，在猫眼上点一下。意图模糊时，SAM 默认输出**三个候选 mask**（部件 / 子部件 / 整体）+ IoU 分。
 
-由于「点一下」其实**意图模糊**——你想抠猫眼？猫脸？整只猫？——SAM 默认输出**三个候选 mask**，分别对应三种粒度（部件 / 子部件 / 整体），再附一个 IoU 质量分让你选。
+```python
+# 伪代码：官方 segment_anything 推理姿势
+from segment_anything import sam_model_registry, SamPredictor
+sam = sam_model_registry["vit_h"](checkpoint="sam_vit_h.pth")
+predictor = SamPredictor(sam)
+predictor.set_image(image)  # 只跑一次重编码，结果缓存
+masks, scores, _ = predictor.predict(
+    point_coords=[[x, y]], point_labels=[1], multimask_output=True
+)
+# masks[i] = 第 i 个候选；scores[i] = 对应 IoU 质量分，挑最高或给人看
+```
 
-这个「输出多个让用户选」的设计是 SAM 的精髓——它把分割从「分类问题」变成了「召回 + 排序」问题。
+**逐部分解释**：`set_image` 做贵的图像编码；`predict` 只跑轻量解码；`multimask_output=True` 就是「输出多个让用户选」。
 
 ### 案例 2：框提示
 
-你给 SAM 一张街景，再画一个框框住某辆车。
+你给 SAM 一张街景，再画一个框框住某辆车。SAM 输出框内主物体的精确轮廓。
 
-SAM 输出框内主物体的精确轮廓。这一步把「检测出框」和「分割成 mask」这两个传统上分开的任务衔接了——很多 2024 年后的视觉系统都是「检测器出框 → SAM 抠图」两段式。
+```python
+masks, scores, _ = predictor.predict(
+    box=[x0, y0, x1, y1], multimask_output=False
+)
+```
+
+这一步把「检测出框」和「分割成 mask」衔接成「检测器出框 → SAM 抠图」两段式——2024 年后很多视觉流水线都这么接。
 
 ### 案例 3：Auto-mask 全图分割
 
-不给提示，让 SAM 自己分割整张图。
+不给提示，让 SAM 自己分割整张图：在图上撒 32×32 网格（1024 个点），每个点当单点提示，再用 IoU 阈值 + 重叠度过滤重复 mask。
 
-做法：在图上撒一张 32×32 的网格点（共 1024 个点），把每个点都当成单点提示喂给 SAM，再用 IoU 阈值 + 重叠度过滤掉重复 mask。结果就是整张图所有物体的 mask 集合。
-
-这个流程也是 SA-1B 数据集 99% 标注的来源——**模型造数据，再训模型**的自举循环。
+这个流程也是 SA-1B 数据集约 99% 标注的来源——**模型造数据，再训模型**的自举循环。
 
 ## 踩过的坑
 
