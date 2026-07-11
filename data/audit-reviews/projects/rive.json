@@ -1,0 +1,133 @@
+{
+  "slug": "rive",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "仪表盘 / 交通灯 / 插座类比把状态机与 View Model 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "第二段一口气抛 Artboard、State Machine，零基础仍跟得上但略密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有代码 + 逐部分解释，清晰"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「GitHub 大约 7k stars」与事实不符：rive-runtime 约 1.1k stars（同组织 rive-flutter≈1.5k 为最高），应改为约 1k+ 或删具体星数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源链接、Flare→Rive、C++ runtime + Data Binding 叙事整体合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2026 年前后 Flutter 0.14 迁 C++ runtime」属近期文档口径，保留但勿写成已冻结史实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Web / React / Flutter 案例概念正确可跟；Flutter shared texture API 依赖较新版本，可点明查 Feature Support"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏口号：补具体后果（只播 animations→点了没反应；不 cleanup→路由切换泄漏；混用 Inputs+Binding→状态不同步）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用与 Lottie/游戏引擎边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "仪表盘 / 交通灯 / 插座类比把状态机与 View Model 讲透",
+        "第二段一口气抛 Artboard、State Machine，零基础仍跟得上但略密",
+        "三案例均有代码 + 逐部分解释，清晰"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「GitHub 大约 7k stars」与事实不符：rive-runtime 约 1.1k stars（同组织 rive-flutter≈1.5k 为最高），应改为约 1k+ 或删具体星数",
+        "来源链接、Flare→Rive、C++ runtime + Data Binding 叙事整体合理",
+        "「2026 年前后 Flutter 0.14 迁 C++ runtime」属近期文档口径，保留但勿写成已冻结史实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "Web / React / Flutter 案例概念正确可跟；Flutter shared texture API 依赖较新版本，可点明查 Feature Support",
+        "踩坑偏口号：补具体后果（只播 animations→点了没反应；不 cleanup→路由切换泄漏；混用 Inputs+Binding→状态不同步）",
+        "适用/不适用与 Lottie/游戏引擎边界清楚"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：runtime stars 7k 误写（约 1k+）；踩坑补具体失败后果",
+    "sections_modified": [
+      "## 是什么",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 200,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 200,
+  "l1_pass": true
+}
