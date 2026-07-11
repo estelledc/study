@@ -91,7 +91,7 @@ for block_id in range(num_blocks):
 
 ## 踩过的坑
 
-1. **把 RiM 理解成 prompt trick**：错在 RiM 需要训练 memory token 和 LoRA 适配器，光在 prompt 里写几个 `<m>` 不会自动产生工作记忆。
+1. **把 RiM 理解成 prompt trick**：错在 RiM 需要训练 memory token，并用 LoRA（Low-Rank Adaptation，低秩适配器）微调模型；光在 prompt 里写几个 `<m>` 不会自动产生工作记忆。
 2. **以为 latent reasoning 一定快**：错在 Coconut 也在隐空间推理，但 continuous thought 仍要自回归生成，速度瓶颈还在。
 3. **把 any-block accuracy 当部署指标**：错在 any-block 是事后挑最好的 block，真实部署通常只能用 final-block 或额外选择器。
 4. **忽略 Stage 1 的 grounding**：错在 Stage 2 单独训练也能涨一点，但论文消融显示它会早早平台化，memory block 还没学会承担计算角色。
@@ -100,15 +100,15 @@ for block_id in range(num_blocks):
 
 **适用**：
 
-- 数学题、符号推理、短答案问答这类有明确最终答案的任务。
-- 需要低延迟但又想增加内部计算预算的 LLM 系统。
-- 研究"模型内部状态是否承载推理信息"的可探针实验。
+- GSM8K / 符号推理这类有明确短答案的任务；论文设定常见约 8 个 memory block（每块若干 `<m>`）。
+- 要低延迟又想加内部计算：TTFT（Time To First Token，首 token 延迟）接近直接答题，而 CoT 可慢约一个数量级、Coconut 约数倍。
+- 研究"模型内部状态是否承载推理信息"的可探针实验（线性 probe 可读 memory representation）。
 
 **不适用**：
 
 - 必须向用户展示完整推理过程的教学或审计场景。
 - 开放式写作、长篇创作这类没有稳定最终答案的任务。
-- 不允许微调模型、只能改 prompt 的使用场景。
+- 不允许微调（含 LoRA）、只能改 prompt 的使用场景。
 
 ## 历史小故事（可跳过）
 
@@ -122,7 +122,7 @@ for block_id in range(num_blocks):
 
 - **推理预算可以横向摆在输入里**：固定 memory blocks 给模型额外隐空间，却不要求生成额外中间 token。
 - **监督信号决定 token 的角色**：同样是几个特殊 token，有没有 Stage 1 grounding，结果完全不同。
-- **速度来自摆脱自回归中间步骤**：RiM 的 TTFT 接近直接答题，而 CoT / Coconut 仍要等待中间状态逐步生成。
+- **速度来自摆脱自回归中间步骤**：RiM 的 TTFT（首 token 延迟）接近直接答题，而 CoT / Coconut 仍要等待中间状态逐步生成。
 - **可解释性会换成可探针性**：人看不到自然语言思维链，但线性 probe 可以从 memory representation 中预测哪个 block 更可能答对。
 
 ## 延伸阅读

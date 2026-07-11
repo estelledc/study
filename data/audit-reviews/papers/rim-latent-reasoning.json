@@ -1,0 +1,142 @@
+{
+  "slug": "rim-latent-reasoning",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "草稿纸 / 草稿格 / 老师批改类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "memory block、Stage 1/2、attention mask 有白话桥接；踩坑里的 LoRA、学到什么里的 TTFT 可各补半句中文全称"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有「逐部分解释」，案例 1–2 对比清晰可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Aichberger & Hochreiter、arXiv:2605.30343、两阶段课程与 fixed memory blocks 叙述与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "LoRA 训练、any-block vs final-block、TTFT≈直接答题、Coconut 自回归连续 thought 等要点无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Coconut 标 2024（arXiv:2412）可接受；DART/pause token 时间线属教学概括，非歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则伪代码概念正确：固定 memory_blocks 一次 forward、Stage1/2 loss 分工清楚，可作教学跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：prompt 塞 <m> 无效、Coconut 仍自回归、any-block 非部署指标、缺 Stage1 会平台化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化：请补约 8 个 memory block、TTFT 接近直接答题（相对 CoT/Coconut 数量级更慢）等边界，便于选型"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "草稿纸 / 草稿格 / 老师批改类比贯穿全文，零基础直觉强",
+        "memory block、Stage 1/2、attention mask 有白话桥接；踩坑里的 LoRA、学到什么里的 TTFT 可各补半句中文全称",
+        "三个案例都有「逐部分解释」，案例 1–2 对比清晰可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Aichberger & Hochreiter、arXiv:2605.30343、两阶段课程与 fixed memory blocks 叙述与论文一致",
+        "LoRA 训练、any-block vs final-block、TTFT≈直接答题、Coconut 自回归连续 thought 等要点无硬伤",
+        "Coconut 标 2024（arXiv:2412）可接受；DART/pause token 时间线属教学概括，非歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三则伪代码概念正确：固定 memory_blocks 一次 forward、Stage1/2 loss 分工清楚，可作教学跟读",
+        "踩坑可操作：prompt 塞 <m> 无效、Coconut 仍自回归、any-block 非部署指标、缺 Stage1 会平台化",
+        "适用/不适用缺量化：请补约 8 个 memory block、TTFT 接近直接答题（相对 CoT/Coconut 数量级更慢）等边界，便于选型"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "engineer needs-refine：适用场景补 memory block 数量与 TTFT 量化；顺带桥接 LoRA/TTFT。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "engineer needs-refine：适用场景补 memory block 数量与 TTFT 量化；顺带桥接 LoRA/TTFT。",
+    "sections_modified": [
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}
