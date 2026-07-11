@@ -39,7 +39,7 @@ const user = await prisma.user.findUnique({
 - 为什么 `prisma migrate dev` 能读懂你 schema 改了什么、自动生成 SQL 迁移文件
 - 为什么 Prisma Studio 那种"GUI 直接看 / 改数据"成为团队 onboarding 标配
 
-ORM 历史上有过 Active Record 派（Rails）/ Data Mapper 派（Hibernate）/ query builder 派（Knex）。Prisma 是第一个把"schema 当源头 + codegen 当桥梁 + 类型系统当护栏"三件事拧到一起的方案——这是它的标杆地位来源。
+ORM 历史上有过 Active Record 派（Rails）/ Data Mapper 派（Hibernate）/ query builder 派（Knex）。Prisma 把"schema 当源头 + codegen 当桥梁 + 类型系统当护栏"做成 TypeScript ORM 的主流范式标杆之一——这是它的地位来源（不是说此前完全没人做过相近思路）。
 
 ## 核心要点
 
@@ -122,11 +122,11 @@ Prisma 自动：
 
 1. **大型 query 生成的 SQL 不一定最优**：`include` 嵌套三层（`{ posts: { include: { tags: { include: ... } } } }`）会拆成多条 round trip。引擎把同层 batch 成一次（避免 N+1），但 round trip 总数随嵌套深度线性增长。复杂场景必须打开 `log: ['query']` 看真实 SQL。
 
-2. **Edge Runtime（Cloudflare Workers / Vercel Edge）支持有限**：默认 query engine 是 Rust binary，bundle 几 MB——塞不进 Workers 的 100KB 限制。要上 Edge 必须搭 [Prisma Accelerate](https://www.prisma.io/accelerate)（把 query 转 HTTP 走云端 connection pool）或用 v5+ 的 wasm engine（功能滞后中）。
+2. **Edge Runtime（Cloudflare Workers / Vercel Edge）支持有限**：默认 query engine 是带 native binary 的 Rust 引擎，体积与运行时约束都不适合直接塞进 Edge。要上 Edge 通常走 [Prisma Accelerate](https://www.prisma.io/accelerate)（query 转 HTTP + 云端连接池）、driver adapter，或 wasm/edge 相关引擎路径（能力与成熟度需按版本核对）。
 
 3. **Schema 改动后忘记 `prisma generate`**：Prisma Client 是 codegen 出来的——schema 改了不重 generate，IDE 看到的还是旧类型，runtime 也是旧 schema 副本，"修改没生效"。习惯做法：把 `prisma generate` 挂在 `postinstall` 钩子上，CI 跑 `npm install` 时自动同步。
 
-4. **Connection pool 与 serverless 不友好**：每次 lambda / Workers 冷启动都新建一份 PrismaClient = 新建一组 db connection，db 的 `max_connections` 几百很快被打爆。解决方案：① PgBouncer 中间件 ② Prisma Accelerate 云端共享池 ③ 数据库选 Neon / Planetscale 这种自带 pooling 的 serverless db。
+4. **Connection pool 与 serverless 不友好**：每次 lambda / Workers 冷启动都新建一份 PrismaClient = 新建一组 db connection，db 的 `max_connections` 几百很快被打爆。解决方案：① PgBouncer 等中间件 ② Prisma Accelerate 云端共享池 ③ 选 Neon / Supabase 等自带 pooler 的托管 Postgres。
 
 ## 适用 vs 不适用场景
 
@@ -149,8 +149,8 @@ Prisma 自动：
 - **2016 年**：Graphcool 创业（柏林），做 GraphQL backend-as-a-service。
 - **2019 年**：Graphcool 关停，团队转做 Prisma 1（GraphQL-first 的 ORM 雏形）。
 - **2020 年**：完全重写为 Prisma 2——砍掉 GraphQL 中间层，DSL + codegen + Rust query engine 这套架构定型。
-- **2022-2024 年**：Prisma 5.x 主线迭代，wasm engine 进 preview。
-- **2026 年**：v6 推 wasm engine 进主流，补 Edge runtime 这块债。
+- **2022-2024 年**：Prisma 5.x 主线迭代；wasm / edge 相关引擎进入 preview。
+- **2024 年底起**：Prisma 6.x 继续补 Edge / driver adapter 路线——以当时发行说明为准，不要默认「wasm 已在所有场景主流可用」。
 
 ## 学到什么
 
