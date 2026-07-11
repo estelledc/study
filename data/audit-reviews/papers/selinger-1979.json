@@ -1,0 +1,134 @@
+{
+  "slug": "selinger-1979",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「只说要什么、引擎算怎么做」+ 代价总账类比贯穿，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "代价模型 / 动态规划 / 选择性估算首次出现有白话桥接；nested loop、hash 有语境"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 偏口述比拼、案例 3 有 EXPLAIN；案例 1 的 A/B 代价同为「约 200 万」区分度弱，可补一句谁更便宜及原因"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "选择性估算写「直方图」偏现代：System R / Selinger 1979 主要用目录统计（行数、页数、不同值个数等），直方图是后续优化器才普及——请改表述并注明现代后代才加直方图"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "遗漏论文核心贡献 interesting orders（有趣顺序）：同一表子集可保留多条按排序属性区分的最优计划，而不只是「每个子集一条最便宜计划」——请在核心要点补一句，否则会把 Selinger 简化成普通子集 DP"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Selinger et al. SIGMOD 1979、System R、左深树限制、Volcano/Cascades 时间线总体正确，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 EXPLAIN 读法正确；案例 1–2 为教学口述可跟读，论文笔记可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：ANALYZE 过期、2^N 爆炸、左深树、倾斜数据——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：OLTP 中等 join vs 自适应执行 / 分布式 / 实时启发式 / NoSQL"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「只说要什么、引擎算怎么做」+ 代价总账类比贯穿，零基础直觉强",
+        "代价模型 / 动态规划 / 选择性估算首次出现有白话桥接；nested loop、hash 有语境",
+        "案例 1–2 偏口述比拼、案例 3 有 EXPLAIN；案例 1 的 A/B 代价同为「约 200 万」区分度弱，可补一句谁更便宜及原因"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "选择性估算写「直方图」偏现代：System R / Selinger 1979 主要用目录统计（行数、页数、不同值个数等），直方图是后续优化器才普及——请改表述并注明现代后代才加直方图",
+        "遗漏论文核心贡献 interesting orders（有趣顺序）：同一表子集可保留多条按排序属性区分的最优计划，而不只是「每个子集一条最便宜计划」——请在核心要点补一句，否则会把 Selinger 简化成普通子集 DP",
+        "来源 Selinger et al. SIGMOD 1979、System R、左深树限制、Volcano/Cascades 时间线总体正确，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 EXPLAIN 读法正确；案例 1–2 为教学口述可跟读，论文笔记可接受",
+        "踩坑具体：ANALYZE 过期、2^N 爆炸、左深树、倾斜数据——可操作",
+        "适用/不适用边界清楚：OLTP 中等 join vs 自适应执行 / 分布式 / 实时启发式 / NoSQL"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正直方图时代错位；补 interesting orders；案例 1 区分 A/B 依赖统计；踩坑/学到什么同步。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true
+}
