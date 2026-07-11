@@ -1,0 +1,143 @@
+{
+  "slug": "starrocks",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 技术亮点",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "连锁餐厅横切多维报表类比贴合 OLAP；FE 前台 / BE 厨房贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "MPP / 向量化 / CBO / 物化视图均有白话；SIMD「一条算 8 个数」好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 SQL 可跟；案例 2 PROPERTIES 用了省略号，可再补一行关键属性名"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2021 改名开源时用的是 Elastic License 2.0，不是 Apache 2.0；Apache 2.0 是 2022-12 才切换——请改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未检索到 VLDB 2024 论文 StarRocks: A Modern OLAP Database；技术亮点/延伸阅读勿写不存在的会议论文，可改指官方文档或 Linux Foundation 捐赠等可核事实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Doris→DorisDB→StarRocks 分叉时间线大体正确；「完全开源（Apache 2.0）」并到 2021 会歪曲许可史"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 SQL（多维 JOIN、External Catalog、物化视图改写）概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：ANALYZE 统计、Routine Load 微批、存算分离文档混用、PK 内存、小批量 Stream Load、与 Doris SQL 分化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺 base-rules 的「历史小故事（可跳过）」段（现为技术亮点）；建议把分叉/许可/存算分离时间线收进历史段，亮点并入核心要点或学到什么"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "连锁餐厅横切多维报表类比贴合 OLAP；FE 前台 / BE 厨房贯穿全文，零基础直觉强",
+        "MPP / 向量化 / CBO / 物化视图均有白话；SIMD「一条算 8 个数」好懂",
+        "案例 1–3 SQL 可跟；案例 2 PROPERTIES 用了省略号，可再补一行关键属性名"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "2021 改名开源时用的是 Elastic License 2.0，不是 Apache 2.0；Apache 2.0 是 2022-12 才切换——请改正",
+        "未检索到 VLDB 2024 论文 StarRocks: A Modern OLAP Database；技术亮点/延伸阅读勿写不存在的会议论文，可改指官方文档或 Linux Foundation 捐赠等可核事实",
+        "Doris→DorisDB→StarRocks 分叉时间线大体正确；「完全开源（Apache 2.0）」并到 2021 会歪曲许可史"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 技术亮点",
+      "fix_hints": [
+        "案例 SQL（多维 JOIN、External Catalog、物化视图改写）概念正确可跟做",
+        "踩坑具体：ANALYZE 统计、Routine Load 微批、存算分离文档混用、PK 内存、小批量 Stream Load、与 Doris SQL 分化",
+        "缺 base-rules 的「历史小故事（可跳过）」段（现为技术亮点）；建议把分叉/许可/存算分离时间线收进历史段，亮点并入核心要点或学到什么"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：2021 开源写成 Apache 2.0 有误；VLDB 2024 论文无法核实；缺历史小故事。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "改正 ELv2→Apache 2.0 许可时间线；删除不存在的 VLDB 论文；技术亮点改为历史小故事；补案例 2 属性与关联。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
