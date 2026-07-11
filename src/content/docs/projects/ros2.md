@@ -55,7 +55,7 @@ ros2 topic echo /turtle1/cmd_vel
 - `ros2 topic echo` 像把传送带旁边加一个透明观察窗，能看到键盘节点发出的速度消息
 - 这个案例来自官方 turtlesim 与 topic 教程，是 ROS 2 新手最短的反馈回路
 
-### 案例 2：写一个 Python 发布者和订阅者
+### 案例 2：写一个 Python 发布者（可跟做骨架）
 
 ```python
 import rclpy
@@ -72,14 +72,22 @@ class Talker(Node):
         msg = String()
         msg.data = "hello ros2"
         self.pub.publish(msg)
+
+def main():
+    rclpy.init()
+    node = Talker()
+    try:
+        rclpy.spin(node)  # 卡住跑，定时器才会持续触发
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 ```
 
 **逐部分解释**：
 
-- `Node` 是这个小程序接入 ROS 图的身份牌
-- `create_publisher(String, "chatter", 10)` 表示往 `chatter` 话题发 `String` 类型消息，队列深度是 10
-- `create_timer` 让节点每 0.5 秒执行一次，不用自己写死循环
-- 订阅者只要对同名话题和同类型消息 `create_subscription`，就能收到这批字符串
+- `rclpy.init` / `spin` / `shutdown` 是进程级入口：不 init 进不了 ROS 图，不 spin 定时器不会响
+- `create_publisher(String, "chatter", 10)` 往 `chatter` 发 `String`，队列深度 10
+- 另开一个节点对同名话题 `create_subscription(String, "chatter", callback, 10)`，就能在 callback 里打印 `msg.data`——发出去又收回来的最短闭环
 
 ### 案例 3：用 lifecycle 管住硬件启动顺序
 

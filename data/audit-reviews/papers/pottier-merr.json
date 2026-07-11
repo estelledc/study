@@ -1,0 +1,134 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "迷宫/死胡同类比很贴；但「星形路径 / 不动点迭代」首次出现缺日常桥接，零基础会在核心要点第 2 步掉队"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有编号步骤；案例 2/3 缺「逐部分解释」，案例 3 几乎只甩 grammar 片段，建议补 2–3 句对照样本→写消息的步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「LR(1) 可达性是 NP-hard 类」过满：论文强调算法昂贵并用 CompCert/PHP 等实测资源，未给出 NP-hard 定理表述；应改为最坏代价很高/实测可到数十分钟与数 GB"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史里把「静态错误消息表」并列为 Charles Wetherell + Jeffery 不稳：论文主线前驱是 Clinton Jeffery 的 merr；Wetherell 宜弱化或删，避免张冠李戴"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」里「OCaml 编译器报语法错」易被读成整个 ocamlc 都靠 Pottier 2016；宜收窄为 Menhir/CompCert 等采用该工作流的解析器"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Menhir --list-errors / --compile-errors / --update-errors 工作流可跟做；%on_error_reduce 与过近似/欠近似踩坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（LL/GLR/恢复另案）；案例 3 可再补一句「对着最短样本写 .messages」的落地动作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "迷宫/死胡同类比很贴；但「星形路径 / 不动点迭代」首次出现缺日常桥接，零基础会在核心要点第 2 步掉队",
+        "案例 1 有编号步骤；案例 2/3 缺「逐部分解释」，案例 3 几乎只甩 grammar 片段，建议补 2–3 句对照样本→写消息的步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「LR(1) 可达性是 NP-hard 类」过满：论文强调算法昂贵并用 CompCert/PHP 等实测资源，未给出 NP-hard 定理表述；应改为最坏代价很高/实测可到数十分钟与数 GB",
+        "历史里把「静态错误消息表」并列为 Charles Wetherell + Jeffery 不稳：论文主线前驱是 Clinton Jeffery 的 merr；Wetherell 宜弱化或删，避免张冠李戴",
+        "「为什么重要」里「OCaml 编译器报语法错」易被读成整个 ocamlc 都靠 Pottier 2016；宜收窄为 Menhir/CompCert 等采用该工作流的解析器"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Menhir --list-errors / --compile-errors / --update-errors 工作流可跟做；%on_error_reduce 与过近似/欠近似踩坑具体可操作",
+        "适用/不适用边界清楚（LL/GLR/恢复另案）；案例 3 可再补一句「对着最短样本写 .messages」的落地动作"
+      ]
+    }
+  ],
+  "slug": "pottier-merr",
+  "area": "papers",
+  "status": "refined",
+  "lines": 188,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：收窄 OCaml 编译器表述；桥接 star/可达性；补案例 2/3 逐步解释；NP-hard 改为实测代价；历史前驱收束到 Jeffery/merr",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 188,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
