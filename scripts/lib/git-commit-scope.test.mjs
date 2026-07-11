@@ -10,6 +10,10 @@ import {
   validateCommitScope,
 } from './git-commit-scope.mjs';
 
+// Temporary repositories must not inherit machine-level Trace2 collectors that
+// keep writing under .git after a Git command has returned.
+process.env.GIT_TRACE2_EVENT = '0';
+
 const TARGET = 'src/content/docs/papers/fixture.md';
 
 function git(repo, args) {

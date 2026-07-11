@@ -13,6 +13,10 @@ import {
   validateMergeSource,
 } from './sync-and-merge-single.mjs';
 
+// Temporary repositories must not inherit machine-level Trace2 collectors that
+// keep writing under .git after a Git command has returned.
+process.env.GIT_TRACE2_EVENT = '0';
+
 const SOURCE = {
   worktree: 'papers-3',
   branch: 'refactor/papers-3',
