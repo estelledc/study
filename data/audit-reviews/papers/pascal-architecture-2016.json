@@ -1,0 +1,146 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工厂高速路/轻轨/半成品并排产线类比贴合 HBM2/NVLink/FP16 packed，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "2.5D interposer、all-reduce、AMP 首次出现宜各补半句白话桥接（例如：硅片旁边叠显存；多卡先各自算再汇总梯度）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 末句『无需绕 PCIe，CPU』疑似截断，零基础读不通；案例 2 宜拆成『装 half2 → 调 __hfma2 → 奇数补 padding』三步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『8 卡全连接 NVLink』不成立：DGX-1 是 hybrid cube mesh（每卡 4 条 NVLink），无法 8 卡全互连；案例 1 已写对，『为什么重要』应改掉『全连接』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读把『DGX-1 With Tesla V100』白皮书当作 P100 整机架构来源易串代；宜改链 P100/DGX-1 同期材料或标明是 V100 后继文档"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心规格（3584/1792、16GB HBM2、~720 GB/s、FP16 21.2 TFLOPS、NVLink 4×40 GB/s）与白皮书一致可保留；PCIe『仅 16 GB/s』宜注明单向，避免与双向 160 GB/s 直接对打造成 10× 错觉"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 拓扑描述句子截断，无法跟读；补全 hybrid cube mesh / 非全连接即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 half2/__hfma2 概念正确；可补一句『必须成对、奇数 padding』的跟做约束（踩坑已有，案例内再点一次）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界具体（PCIe 无 NVLink、CC 6.0 vs 6.1、16GB/无 Tensor Core）——保留；适用可再点明『2016-2018 数据并行 ResNet 级』量化窗口"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工厂高速路/轻轨/半成品并排产线类比贴合 HBM2/NVLink/FP16 packed，保留",
+        "2.5D interposer、all-reduce、AMP 首次出现宜各补半句白话桥接（例如：硅片旁边叠显存；多卡先各自算再汇总梯度）",
+        "案例 1 末句『无需绕 PCIe，CPU』疑似截断，零基础读不通；案例 2 宜拆成『装 half2 → 调 __hfma2 → 奇数补 padding』三步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『8 卡全连接 NVLink』不成立：DGX-1 是 hybrid cube mesh（每卡 4 条 NVLink），无法 8 卡全互连；案例 1 已写对，『为什么重要』应改掉『全连接』",
+        "延伸阅读把『DGX-1 With Tesla V100』白皮书当作 P100 整机架构来源易串代；宜改链 P100/DGX-1 同期材料或标明是 V100 后继文档",
+        "核心规格（3584/1792、16GB HBM2、~720 GB/s、FP16 21.2 TFLOPS、NVLink 4×40 GB/s）与白皮书一致可保留；PCIe『仅 16 GB/s』宜注明单向，避免与双向 160 GB/s 直接对打造成 10× 错觉"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 拓扑描述句子截断，无法跟读；补全 hybrid cube mesh / 非全连接即可",
+        "案例 2 half2/__hfma2 概念正确；可补一句『必须成对、奇数 padding』的跟做约束（踩坑已有，案例内再点一次）",
+        "踩坑与适用边界具体（PCIe 无 NVLink、CC 6.0 vs 6.1、16GB/无 Tensor Core）——保留；适用可再点明『2016-2018 数据并行 ResNet 级』量化窗口"
+      ]
+    }
+  ],
+  "slug": "pascal-architecture-2016",
+  "area": "papers",
+  "status": "refined",
+  "lines": 169,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.56,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：修正『8卡全连接』→hybrid cube mesh；补全案例1截断句；案例2拆三步；桥接2.5D/all-reduce/AMP；PCIe单向/双向对照；延伸阅读标明V100后继；补##反向链接",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 延伸阅读",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}
