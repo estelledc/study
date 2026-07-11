@@ -1,0 +1,123 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "订报纸/信箱类比贯穿「服务器单向推」，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "EventSource / text/event-stream / Last-Event-ID / proxy_buffering 首次出现有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有双换行关键点；案例 2–3 略短但仍可跟读，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 WHATWG HTML Living Standard §7.5 Server-Sent Events 正确，延伸阅读指向规范与 MDN"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "MIME text/event-stream、空行派发、Last-Event-ID、retry、注释心跳与标准一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学简化（无握手/无升级）相对 WebSocket 成立；历史时间线为合理概要，未歪曲协议语义"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Node 最小服务端 + EventSource 多事件名概念正确，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：Nginx 缓冲、HTTP/1.1 六连接、心跳、data 换行、withCredentials——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：单向文本 vs WebSocket/二进制/<10ms 双向"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "订报纸/信箱类比贯穿「服务器单向推」，零基础直觉强",
+        "EventSource / text/event-stream / Last-Event-ID / proxy_buffering 首次出现有白话桥接",
+        "案例 1 有双换行关键点；案例 2–3 略短但仍可跟读，可保留"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 WHATWG HTML Living Standard §7.5 Server-Sent Events 正确，延伸阅读指向规范与 MDN",
+        "MIME text/event-stream、空行派发、Last-Event-ID、retry、注释心跳与标准一致",
+        "教学简化（无握手/无升级）相对 WebSocket 成立；历史时间线为合理概要，未歪曲协议语义"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Node 最小服务端 + EventSource 多事件名概念正确，可跟做",
+        "踩坑具体：Nginx 缓冲、HTTP/1.1 六连接、心跳、data 换行、withCredentials——可操作",
+        "适用/不适用边界清楚：单向文本 vs WebSocket/二进制/<10ms 双向"
+      ]
+    }
+  ],
+  "slug": "server-sent-events",
+  "area": "papers",
+  "status": "passed",
+  "lines": 166,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
