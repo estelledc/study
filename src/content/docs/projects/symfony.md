@@ -31,7 +31,7 @@ public function hello(string $name): Response {
 
 - 为什么 [[laravel]] 的 Request / Response / Console 命令长得跟 Symfony 一模一样——它直接用了 Symfony 组件
 - 为什么 Drupal 8 之后从『自己造一切』转向『站在 Symfony 上』
-- 为什么 Composer 生态里半数包名带 `symfony/`——它把 PHP 标准库的洞填满了
+- 为什么 Composer 生态里大量基础设施包依赖 `symfony/*`——它把 PHP 标准库的洞填满了
 - 为什么 PHP 从『写个 .php 就完事』升级到『工业级 OOP 后端』，Symfony 是分水岭
 
 ## 核心要点
@@ -149,11 +149,11 @@ class SecurityHeaderListener {
 - **2011 年**：Symfony 2.0 大重构，从『单体框架』改造成『组件 + 框架』双形态——这一步奠定现代地位
 - **2013 年**：Taylor Otwell 用 Symfony 组件造出 [[laravel]]；从此 PHP 两强格局都站在 Symfony 上
 - **2015 年**：Drupal 8 全面采用 Symfony，老 PHP 巨头投奔
-- **至今**：仍是 PHP 后端事实标准底座，每年发一次 LTS，Composer 生态半数包名带 `symfony/`
+- **至今**：仍是 PHP 后端事实标准底座；LTS 约每两年一次（每个 major 的 X.4），大量底层包依赖 `symfony/*`
 
 ## 学到什么
 
-1. **组件化 > 单体框架**：把功能拆成 30 个独立包，让别人也能用——Symfony 因此变成『PHP 的标准库』
+1. **组件化 > 单体框架**：把功能拆成 30+ 独立包，让别人也能用——Symfony 因此变成许多 PHP 项目的『标准零件库』
 2. **DI 编译期解析**：把反射 / 注入图谱在启动时编译成静态代码，运行期零开销，证明动态语言也能做工业级 IoC
 3. **事件钩子代替 hard-code**：生命周期事件让扩展不必改框架源码，[[rails]] 的 ActiveSupport hooks / [[spring-boot]] 的 BeanPostProcessor 思路一致
 4. **被『继任者们』包围反而更稳**：Laravel / Drupal 都用 Symfony，反过来 Symfony 自己也活得很好——基础设施不必竞争应用层

@@ -1,0 +1,143 @@
+{
+  "slug": "self-adjusting",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Excel / 借阅卡 / 菜谱类比贴合「只刷新受影响格子」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "mod/read/write/change/propagate 有白话桥接；modal type system 首次出现可再补半句日常解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 逐步解释清楚；案例 2/3 对照工程库可跟，但 DDG 边方向表述对零基础略绕"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "DDG 在 AFP/SAC 文献中是 Dynamic Dependence Graph（动态依赖图），不是 dependency-directed graph"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "边方向：论文里 read 边从 modifiable 指向 reader；文中「读者 → modifiable」写反了"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里「Svelte 5 Runes…零运行时开销」过满：Runes 仍有 signal 运行时，宜改为编译期插入依赖追踪/细粒度更新"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "SML 最小例子与 Solid/Salsa 对照概念正确，可跟做教学推演"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：纯函数约束、trace 膨胀、modal 被绕过、期望复杂度、AFP 无 memoization——都可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有「千到百万节点」量化；可再点明最坏 O(n) 与一次性 batch 的开销对比"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Excel / 借阅卡 / 菜谱类比贴合「只刷新受影响格子」",
+        "mod/read/write/change/propagate 有白话桥接；modal type system 首次出现可再补半句日常解释",
+        "案例 1 逐步解释清楚；案例 2/3 对照工程库可跟，但 DDG 边方向表述对零基础略绕"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "DDG 在 AFP/SAC 文献中是 Dynamic Dependence Graph（动态依赖图），不是 dependency-directed graph",
+        "边方向：论文里 read 边从 modifiable 指向 reader；文中「读者 → modifiable」写反了",
+        "关联里「Svelte 5 Runes…零运行时开销」过满：Runes 仍有 signal 运行时，宜改为编译期插入依赖追踪/细粒度更新"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "SML 最小例子与 Solid/Salsa 对照概念正确，可跟做教学推演",
+        "踩坑具体：纯函数约束、trace 膨胀、modal 被绕过、期望复杂度、AFP 无 memoization——都可操作",
+        "适用边界有「千到百万节点」量化；可再点明最坏 O(n) 与一次性 batch 的开销对比"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正 DDG 为 Dynamic Dependence Graph 与边方向；补 modal type system 白话；弱化 Svelte「零运行时」表述。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 DDG 为 Dynamic Dependence Graph 与边方向；补 modal type system 白话；弱化 Svelte「零运行时」表述。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}
