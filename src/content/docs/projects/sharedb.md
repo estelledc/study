@@ -31,13 +31,13 @@ doc.subscribe(() => {
 - 为什么 Google Docs / 飞书文档 早期能在 2010 年代规模化跑——它们走的是同一条 OT 路线，ShareDB 是这条路线的开源代表
 - 为什么 [[yjs]] / [[automerge]] 这类 CRDT 后来居上但 OT **没死**——结构化 JSON 文档（不只是文本）OT 仍有优势：op 小、语义清晰、回溯审计直接
 - 为什么 Derby / Racer 框架曾是"实时 web"的标杆方案——它的整个数据层就是 ShareDB
-- 为什么 [[liveblocks]] 这类 SaaS 出现时大家会拿来对比——它们解决同一个问题（多人改共享状态），但走 LWW + CRDT 路线，不是 OT
+- 为什么 [[liveblocks]] 这类 SaaS 出现时大家会拿来对比——它们解决同一个问题（多人改共享状态），但走 LWW（Last-Write-Wins，后写覆盖）+ CRDT 路线，不是 OT
 
 ## 核心要点
 
 ShareDB 的运行模型可以拆成 **四层**：
 
-1. **OT Type（操作类型）**：定义"什么是合法的 op"和"两个并发 op 怎么变换"。内置 `json0`（路径化 JSON op，2013 起）/ `json1`（嵌套结构更强，2018）/ `text` / `rich-text`。每种 type 实现 `apply(snapshot, op)` 和 `transform(op1, op2, side)` 两个函数。
+1. **OT Type（操作类型）**：定义"什么是合法的 op"和"两个并发 op 怎么变换"。默认常用 `json0`（路径化 JSON op）；`json1` / `text` / `rich-text` 需另行注册或安装，不是开箱全内置。每种 type 实现 `apply(snapshot, op)` 和 `transform(op1, op2, side)` 两个函数。
 
 2. **Doc（文档单位）**：每个 doc 由 `(collection, id)` 标识，含 snapshot + version。客户端通过 `connection.get('users', 'alice')` 拿到一个 Doc 对象，subscribe 后所有变更自动推过来。
 
@@ -130,12 +130,19 @@ Presence 走同一条 WebSocket，但不进 op log，断开就消失——和 [[
 - 不想自己运维 → [[liveblocks]] 这类 SaaS 直接租
 - 高频小 op（每秒上千次） → OT 的 transform 在长 op log 上是 O(n)，CRDT 更扛得住
 
+## 历史小故事（可跳过）
+
+- **2011 前后**：Joseph Gentle 做 ShareJS，把 OT 做成 Node.js 里可嵌入的实时编辑库。
+- **2014–2015**：Derby / Racer 把 ShareJS 当数据层；社区开始把「数据库 API + OT」拆成独立后端。
+- **约 2015**：ShareDB 从 ShareJS 演进出来，专注服务端 transform、可插拔存储与 WebSocket 传输。
+- **此后**：json0 仍是默认主力；Presence、Redis pub/sub 等能力陆续补齐，成为自托管 OT 后端的代表。
+
 ## 学到什么
 
-1. **OT vs CRDT 不是谁淘汰谁**——OT 有中央权威 + 结构化 op，CRDT 走最终一致 + 数学收敛，各自占据不同象限：在线协作 / 离线协作、强权威 / 弱权威
+1. **OT vs CRDT 不是谁淘汰谁**——OT 有中央权威 + 结构化 op，CRDT 走最终一致 + 数学收敛，各自占据不同象限
 2. **[[jupiter-1995]] 的 client-server 简化** 让 OT 真的能上工业——比 [[ot-1989]] 原始的 N×N transform 容易实现得多
 3. **可插拔的存储 + 传输** 是开源中间件的常见姿态——核心算法稳定，外围组件随场景换
-4. **op 即审计日志**——OT 系统天然有"谁在什么时候改了什么"的细粒度记录，CRDT 的合并历史是另一种粒度
+4. **op 即审计日志**——OT 系统天然有"谁在什么时候改了什么"的细粒度记录
 
 ## 延伸阅读
 
@@ -153,3 +160,9 @@ Presence 走同一条 WebSocket，但不进 op log，断开就消失——和 [[
 - [[yjs]] —— CRDT 路线的富文本协同；和 ShareDB 在同一应用层竞争
 - [[automerge]] —— local-first JSON CRDT；和 ShareDB 的中央权威路线对立
 - [[liveblocks]] —— 协作基建的 SaaS 化；ShareDB 是自托管的同类
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
