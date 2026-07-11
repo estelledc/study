@@ -1,0 +1,117 @@
+{
+  "slug": "theia",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "精装修公寓 vs 可改户型办公楼骨架类比贯穿 Platform/IDE/扩展，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有 open URL，略薄，但有逐部分解释仍可跟住；案例 3 命令注册伪代码清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「build-time extension」在为什么重要里出现，正文未展开，可接受为延伸钩子"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 eclipse-theia/theia 正确；Platform vs IDE、Open VSX、VS Code extension API 版本绑定表述准确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「合法、开源、可控」相对 VS Code 许可叙事教学上可接受，宜理解为产品可控性而非法律结论"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2026 AI-native 定位与官网口径一致；历史时间线略粗但无硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2/3 可跟做；registerCommand 伪代码抓住扩展核心姿势"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖扩展兼容、Open VSX、前后端部署，具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：个人写代码 vs 自建 IDE 产品分界明确"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "精装修公寓 vs 可改户型办公楼骨架类比贯穿 Platform/IDE/扩展，零基础直觉强",
+        "案例 1 只有 open URL，略薄，但有逐部分解释仍可跟住；案例 3 命令注册伪代码清楚",
+        "「build-time extension」在为什么重要里出现，正文未展开，可接受为延伸钩子"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 eclipse-theia/theia 正确；Platform vs IDE、Open VSX、VS Code extension API 版本绑定表述准确",
+        "「合法、开源、可控」相对 VS Code 许可叙事教学上可接受，宜理解为产品可控性而非法律结论",
+        "2026 AI-native 定位与官网口径一致；历史时间线略粗但无硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 可跟做；registerCommand 伪代码抓住扩展核心姿势",
+        "踩坑覆盖扩展兼容、Open VSX、前后端部署，具体可操作",
+        "适用/不适用边界清楚：个人写代码 vs 自建 IDE 产品分界明确"
+      ]
+    }
+  ],
+  "lines": 150,
+  "l1_pass": true
+}
