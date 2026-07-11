@@ -1,0 +1,23 @@
+scripts/lib/git-commit-scope.test.mjs
+  s_d3b0d20e4212f1::t_5a12d6e6b661df 13-16
+scripts/sync-and-merge-single.test.mjs
+  s_d3b0d20e4212f1::t_44f0fd1b680e28 16-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "7674306e33a0ba0a1a8ac803bcd10d1569bb88f5",
+  "prompts": {},
+  "sessions": {
+    "s_d3b0d20e4212f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_d3b0d20e4212f1",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
