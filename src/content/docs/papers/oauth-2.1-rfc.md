@@ -16,7 +16,7 @@ OAuth 2.1 是**正在制定的 IETF 草案**，把 2012 年的 OAuth 2.0（RFC 6
 
 - 强制开 **PKCE**（Proof Key for Code Exchange）
 - 禁掉 **Implicit Grant** 和 **Resource Owner Password Credentials**
-- **Refresh Token 必须轮换**（一次性使用）
+- **Public client 的 Refresh Token**：必须 **sender-constrained**（绑定客户端）或 **一次性轮换**；confidential client 未一律强制轮换
 - **redirect_uri 必须精确匹配**，不允许通配符
 
 ## 为什么重要
@@ -117,10 +117,10 @@ agent 调 MCP server API 时带 Authorization: Bearer <access_token>
   refresh_token=R1 → 换出 access_token + 仍然返回 R1
   攻击者偷到 R1 → 永远能换新 token
 
-OAuth 2.1：
-  refresh_token=R1 → 换出 access_token + 新的 R2，R1 立即作废
-  攻击者偷到 R1 用一次就废了
-  如果 R1 已被合法 Client 用过，再用 = 检测到泄露 → 撤销整条链
+OAuth 2.1（尤其 public client）：
+  方案 A：sender-constrained（mTLS/DPoP）——偷到 token 也用不了
+  方案 B：轮换——R1 → 换出 access_token + 新 R2，R1 立即作废
+  若 R1 已被合法 Client 用过再被重放 → 判定泄露，撤销整条链
 ```
 
 ## 踩过的坑

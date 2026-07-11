@@ -1,0 +1,78 @@
+{
+  "slug": "prysm",
+  "area": "projects",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "投票客户端 / 开票机器 / 选民证类比把 CL 三块讲清楚",
+        "beacon / validator / Engine API+JWT 有白话桥接；Merge 后双进程动机清楚",
+        "案例 1–3 有逐部分解释；checkpoint sync 的信任代价写明白了"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 prysmaticlabs/prysm 与 Offchain Labs 文档路径合理；CL/EL、Engine API、32 ETH、BLS 表述正确",
+        "Offchain Labs 收购 Prysmatic Labs 是 2022 年 10 月，不是 2023 年——历史时间线需改",
+        "客户端多样性、checkpoint sync 代价属合理教学简化，未硬歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "prysm.sh beacon/validator/checkpoint sync 命令可跟做，端口 8551 vs 8545 讲清",
+        "踩坑具体：JWT 同文件、双重签名 slashing、磁盘 IO——都可操作",
+        "适用 Solo staker / 全节点 vs 公共 RPC / 资源紧张选 Nimbus，边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic needs-refine：Offchain Labs 收购年份改为 2022-10。",
+    "sections_modified": [
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
