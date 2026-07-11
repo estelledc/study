@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "装修漏水/验收师傅类比把静态分析讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "分词/通配有日常桥接；SC 编号表可读"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有一行 Action、案例 3 无命令可跟；建议案例 1 补「装 Action → push → 看红叉」步骤，案例 4 旁再给一句怎么读 SC2086 输出"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 koalaman/shellcheck、Vidar Holen、2012、Haskell、GPL-3.0 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写「不接的项目反而是少数」过满，宜改为「大量基础设施仓库的常见 CI 检查」；星数写死 38k 易过时，可写「约 4 万星量级」或省略"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题是「历史」而非模板「历史小故事（可跳过）」；缺「反向链接」段——结构应对齐 12 段关键词"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "shellcheck deploy.sh 与 SC2086 输出可跟做；pre-commit 片段可用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：勿盲目 disable、静态≠逻辑、SC1090 source、zsh/fish 边界——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（bash/sh CI vs zsh-only / 运行时 bug / shfmt）；案例 1 的 action tag 用 @master 不稳定，建议钉版本或写「选用维护中的 ShellCheck Action」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "装修漏水/验收师傅类比把静态分析讲透，零基础直觉强",
+        "分词/通配有日常桥接；SC 编号表可读",
+        "案例 1 只有一行 Action、案例 3 无命令可跟；建议案例 1 补「装 Action → push → 看红叉」步骤，案例 4 旁再给一句怎么读 SC2086 输出"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史",
+      "fix_hints": [
+        "来源 koalaman/shellcheck、Vidar Holen、2012、Haskell、GPL-3.0 正确",
+        "历史写「不接的项目反而是少数」过满，宜改为「大量基础设施仓库的常见 CI 检查」；星数写死 38k 易过时，可写「约 4 万星量级」或省略",
+        "标题是「历史」而非模板「历史小故事（可跳过）」；缺「反向链接」段——结构应对齐 12 段关键词"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "shellcheck deploy.sh 与 SC2086 输出可跟做；pre-commit 片段可用",
+        "踩坑具体：勿盲目 disable、静态≠逻辑、SC1090 source、zsh/fish 边界——保留",
+        "适用/不适用边界清楚（bash/sh CI vs zsh-only / 运行时 bug / shfmt）；案例 1 的 action tag 用 @master 不稳定，建议钉版本或写「选用维护中的 ShellCheck Action」"
+      ]
+    }
+  ],
+  "slug": "shellcheck",
+  "area": "projects",
+  "status": "refined",
+  "lines": 156,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "reason": "三审 needs-refine：案例补 CI 步骤与 SC 读法；弱化「不接即少数」；历史改历史小故事；补反向链接；Action 钉版本",
+    "sections_modified": [
+      "## 实践案例",
+      "## 为什么重要",
+      "## 历史小故事",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}
