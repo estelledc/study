@@ -8,7 +8,7 @@ title: RethinkDB — 让数据库自己把更新推给客户端的先驱
 
 ## 是什么
 
-RethinkDB 是一个**开源文档数据库**，长得像 MongoDB，但有一个谁都没做过的核心能力：**客户端可以订阅一条查询的结果，结果一变就被推过来**。
+RethinkDB 是一个**开源文档数据库**，长得像 MongoDB，但把一个学术里早有、产品里少见的能力做成了开发者默认体验：**客户端可以订阅一条查询的结果，结果一变就被推过来**。
 
 日常类比：传统数据库像点外卖——你点一次拿一次，下次想知道菜单更新就得再点一次。RethinkDB 像微信公众号——你关注一次，新内容自动推到手机。
 
@@ -29,7 +29,7 @@ r.table('messages')
 
 不理解 RethinkDB，下面这些事都没法解释：
 
-- 为什么 Firebase / Supabase / Convex 后来都把『实时订阅』当卖点——它们是 RethinkDB 思想的徒弟
+- 为什么 Firebase / Supabase / Convex 都把『实时订阅』当卖点——同一道题的多条产品线，RethinkDB 是早期把查询订阅做进数据库内核的样本
 - 为什么 Materialize / Noria 这些增量视图维护数据库会出现——把『订阅一条查询』推到 SQL 体系
 - 为什么一个技术上做得很扎实的产品会**商业失败**——选错市场、错过窗口期
 - 为什么 2026 年仍有人讨论它——失败案例的教学价值有时大于成功
@@ -62,19 +62,34 @@ r.table('scores').orderBy({index: r.desc('score')}).limit(10).changes()
 
 榜单一旦有人挤进前 10，服务端推 `{old_val: 旧第 10, new_val: 新进来的}`。前端收到差量直接更新 UI——不需要重新拉整张表。
 
-### 案例 3：跨表 join 的订阅
+### 案例 3：表级订阅 + 应用侧补查（join 不能直接 .changes）
+
+官方 **不支持** `eqJoin(...).changes()`（join changefeed 一直未落地）。正确做法是订一张表，再在回调里补查另一张：
 
 ```javascript
-r.table('orders')
- .eqJoin('user_id', r.table('users'))
- .changes()
+r.table('orders').changes().run(conn, (err, cursor) => {
+  cursor.each(async (err, change) => {
+    const order = change.new_val
+    if (!order) return // 删除
+    const user = await r.table('users').get(order.user_id).run(conn)
+    console.log({ order, user })
+  })
+})
 ```
 
-订单或用户任意一边变化，订阅都会被触发。这一点是 changefeed 比 [[kafka]] 这类消息队列更高层的地方——队列只能告诉你『某行变了』，changefeed 告诉你『某条业务查询结果变了』。
+逐步读：① 只对 `orders` 开 changefeed；② 每条差量取出 `new_val`；③ 用 `user_id` 再 `get` 一次用户。比 [[kafka]] 仍更高层——你订的是业务表上的过滤结果，不是裸日志流；但跨表一致性要自己拼。
 
-### 案例 4：客户端断线重连不丢事件
+### 案例 4：`includeInitial` 与 `squash` 实际做什么
 
-ReQL changefeed 有 `includeInitial` 和 `squash` 参数。客户端断线重连后，可以指定『把我离线期间漏掉的差量补给我』，配合本地缓存就能做出 Notion / Figma 那样的离线优先体验。这是 Firebase Realtime Database 后来卖得最响的功能之一——RethinkDB 早做了几年。
+```javascript
+r.table('messages').filter({room: 'lobby'})
+ .changes({ includeInitial: true, squash: true })
+```
+
+- `includeInitial: true`：连上时**先推当前命中行的快照**（每条像 `{old_val: null, new_val: ...}`），再推后续变更——不是把离线期间漏掉的每一跳差量补发回来。
+- `squash: true`：短时间内多次写入合并成一条推送，降低刷屏。
+
+断线重连要自己：重开 feed + `includeInitial` 对齐当前态，本地用版本号/时间戳消化缺口。Firebase Realtime 是**同期**另一条实时产品线，不是 RethinkDB『早做了几年』的徒弟。
 
 ## 踩过的坑
 
@@ -118,7 +133,7 @@ ReQL changefeed 有 `includeInitial` 和 `squash` 参数。客户端断线重连
 2. **技术做得对 ≠ 商业能成**——开源繁荣与商业失败可以同时存在；选错市场是个独立维度
 3. **changefeed 是高层抽象**：比 Kafka 这类队列更贴近业务——队列只能告诉你『某行变了』，changefeed 告诉你『某条业务查询结果变了』
 4. **失败案例的教学价值**：Slava 那篇 *Why RethinkDB Failed* 是产品决策的必读，比成功案例更能学到东西
-5. **思想可以脱离实现存活**：RethinkDB 公司没了，但『查询即订阅』的思想已经被 Firebase / Convex / Materialize 接力跑下去
+5. **思想可以脱离实现存活**：RethinkDB 公司没了，但『查询即订阅』已被 Firebase / Convex / Materialize 等在各自产品线里继续跑下去
 
 ## 延伸阅读
 
@@ -141,10 +156,10 @@ ReQL changefeed 有 `includeInitial` 和 `squash` 参数。客户端断线重连
 
 把 RethinkDB 放进时间线看才能看清它的价值：
 
-- **上游影响它的**：1990s 主动数据库（active database）研究、Datalog 增量维护、CEP（complex event processing）系统——这些学术想法 RethinkDB 是第一个把它们包成『普通开发者也能用』的产品形态
-- **下游被它影响的**：Firebase Realtime（KV 层订阅，更窄）、Supabase Realtime（Postgres + 订阅）、Convex（更彻底的查询即订阅）、Materialize（SQL + 增量视图维护）、Noria（学术原型，现已停止维护）、Linear / Replicache 这类同步引擎
+- **上游影响它的**：1990s 主动数据库（active database）研究、Datalog 增量维护、CEP（complex event processing）——学术先例早有；RethinkDB 的贡献是把『查询即订阅』包成普通开发者能用的产品形态
+- **下游同题的**：Firebase Realtime（同期 KV 层订阅）、Supabase Realtime（Postgres + 订阅）、Convex（更彻底的查询即订阅）、Materialize（SQL + 增量视图维护）、Noria（学术原型，现已停止维护）、Linear / Replicache 这类同步引擎
 
-它的位置：**第一个把订阅做成查询引擎一等公民**的工业产品。这条线索一旦看清楚，再去看后辈就会觉得『哦，他们其实在解决同一道题』。
+它的位置：**把订阅做成查询引擎一等公民**的早期工业样本。这条线索一旦看清楚，再去看后辈就会觉得『哦，他们其实在解决同一道题』。
 
 ## 反向链接
 

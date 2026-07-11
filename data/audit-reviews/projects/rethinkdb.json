@@ -1,0 +1,149 @@
+{
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "外卖 vs 公众号类比把『查询即订阅』讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "changefeed / ReQL / Raft 首次出现有桥接；案例 1–2 差量形状讲清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3–4 对零基础过满且易误导（join 订阅、断线补差量）——建议改成可跟做的合法 API，并逐步解释 old_val/new_val"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RethinkDB 官方不支持对 eqJoin 等 join 直接 .changes()（issue #3997 未落地）；案例 3 写成可跑是事实硬伤，须删改"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "includeInitial 是连接时先推当前快照，squash 是合并连续变更——不能等价成『离线期间漏掉的差量补发』；案例 4 需改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『比 Firebase 早做了几年』不成立：Firebase 2011 起就是实时同步，与 RethinkDB 实时叙事同期；应弱化或改成『同期另一条产品线』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『谁都没做过』过满：主动数据库/CEP 早有学术先例；可改成『第一个把查询订阅做成开发者友好产品形态』"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 filter.changes 与案例 2 orderBy+limit.changes 概念正确可跟；案例 3 eqJoin.changes 不可跑，须换成表级 changefeed + 应用侧补查，或删掉"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：订阅成本线性、跨分片无全局序、公司倒闭无厂商支持、ReQL 迁移成本——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（中小数据量+重订阅 vs ACID/PB/SQL 生态）；可再点明『万级长连接内存吃紧』的量化直觉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "外卖 vs 公众号类比把『查询即订阅』讲透，零基础直觉强",
+        "changefeed / ReQL / Raft 首次出现有桥接；案例 1–2 差量形状讲清楚",
+        "案例 3–4 对零基础过满且易误导（join 订阅、断线补差量）——建议改成可跟做的合法 API，并逐步解释 old_val/new_val"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "RethinkDB 官方不支持对 eqJoin 等 join 直接 .changes()（issue #3997 未落地）；案例 3 写成可跑是事实硬伤，须删改",
+        "includeInitial 是连接时先推当前快照，squash 是合并连续变更——不能等价成『离线期间漏掉的差量补发』；案例 4 需改正",
+        "『比 Firebase 早做了几年』不成立：Firebase 2011 起就是实时同步，与 RethinkDB 实时叙事同期；应弱化或改成『同期另一条产品线』",
+        "『谁都没做过』过满：主动数据库/CEP 早有学术先例；可改成『第一个把查询订阅做成开发者友好产品形态』"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 filter.changes 与案例 2 orderBy+limit.changes 概念正确可跟；案例 3 eqJoin.changes 不可跑，须换成表级 changefeed + 应用侧补查，或删掉",
+        "踩坑具体可操作：订阅成本线性、跨分片无全局序、公司倒闭无厂商支持、ReQL 迁移成本——保留",
+        "适用/不适用有边界（中小数据量+重订阅 vs ACID/PB/SQL 生态）；可再点明『万级长连接内存吃紧』的量化直觉"
+      ]
+    }
+  ],
+  "slug": "rethinkdb",
+  "area": "projects",
+  "status": "refined",
+  "lines": 172,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.44,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：eqJoin.changes 不支持；includeInitial/squash 语义；Firebase 同期非徒弟；弱化『谁都没做过』",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 实践案例",
+      "## 学到什么",
+      "## 思想血脉（可选段）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
