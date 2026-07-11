@@ -1,0 +1,143 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "白纸直尺 vs 工具箱、USB、前台/后厨、诊室类比把分层设计讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "LAPACK/MINPACK 在「是什么」有 Fortran 桥接；CSR/pcov/Mann-Whitney 在案例里仍偏术语堆叠"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 代码后只有一段总述，缺「逐部分解释」分步；建议每案例拆成 3 步白话（输入→调用→读输出）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史 1999 条不准确：SciPy 0.1/首发是 2001（Oliphant/Jones/Peterson 合并各自模块），不是 1999 把 Numeric/Numarray/Multipack 合成 SciPy 0.1；Numarray 约 2001 才出现，与 Numeric 合并成 NumPy 是 2005–2006"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2001 首发、2006 NumPy、2017 SciPy 1.0、Virtanen et al. Nature Methods 2020 综述可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「scipy.linalg 强制走 LAPACK、numpy.linalg 是简化封装」略绝对：numpy.linalg 多数也走 LAPACK；宜改为「scipy.linalg 封装更全/常更快」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "curve_fit / spsolve / ttest+mannwhitneyu 概念正确，教学可跟做；百万维稠密 8TB 量级对"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：linalg 选型、LIL→CSR、minimize 方法、sf vs 1-cdf——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（GPU/分布式/符号/实时）；案例 2「几秒」对三对角偏保守但不误导"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "白纸直尺 vs 工具箱、USB、前台/后厨、诊室类比把分层设计讲透",
+        "LAPACK/MINPACK 在「是什么」有 Fortran 桥接；CSR/pcov/Mann-Whitney 在案例里仍偏术语堆叠",
+        "案例 1–3 代码后只有一段总述，缺「逐部分解释」分步；建议每案例拆成 3 步白话（输入→调用→读输出）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史 1999 条不准确：SciPy 0.1/首发是 2001（Oliphant/Jones/Peterson 合并各自模块），不是 1999 把 Numeric/Numarray/Multipack 合成 SciPy 0.1；Numarray 约 2001 才出现，与 Numeric 合并成 NumPy 是 2005–2006",
+        "2001 首发、2006 NumPy、2017 SciPy 1.0、Virtanen et al. Nature Methods 2020 综述可保留",
+        "「scipy.linalg 强制走 LAPACK、numpy.linalg 是简化封装」略绝对：numpy.linalg 多数也走 LAPACK；宜改为「scipy.linalg 封装更全/常更快」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "curve_fit / spsolve / ttest+mannwhitneyu 概念正确，教学可跟做；百万维稠密 8TB 量级对",
+        "踩坑具体可操作：linalg 选型、LIL→CSR、minimize 方法、sf vs 1-cdf——保留",
+        "适用/不适用边界清楚（GPU/分布式/符号/实时）；案例 2「几秒」对三对角偏保守但不误导"
+      ]
+    }
+  ],
+  "slug": "scipy",
+  "area": "projects",
+  "status": "refined",
+  "lines": 175,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 175,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic 历史 1999/SciPy0.1 纠错；弱化 linalg 绝对化；案例补逐部分解释；关联补齐",
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}
