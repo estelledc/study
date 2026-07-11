@@ -266,6 +266,12 @@ test('binary policy accepts strict WebP magic and fails closed for other or malf
 });
 
 test('known text extensions decode the whole UTF-8 file before checking Unicode controls', () => {
+  assert.deepEqual(
+    scanBufferForPublicRedlines(Buffer.from('22.23.1\n', 'utf8'), '.nvmrc')
+      .filter(({ category }) => category.startsWith('binary-') || category.startsWith('text-file-')),
+    [],
+  );
+
   const splitMultibyteAtOldSampleBoundary = Buffer.from(`${'a'.repeat(8191)}中\n`, 'utf8');
   assert.deepEqual(
     scanBufferForPublicRedlines(splitMultibyteAtOldSampleBoundary, 'docs/chinese.md')

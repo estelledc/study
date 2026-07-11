@@ -34,7 +34,7 @@ const TEXT_EXTENSIONS = new Set([
   '.xml', '.yaml', '.yml',
 ]);
 const TEXT_BASENAMES = new Set([
-  '.editorconfig', '.gitattributes', '.gitignore', '.gitkeep', '.nojekyll', '.npmrc',
+  '.editorconfig', '.gitattributes', '.gitignore', '.gitkeep', '.nojekyll', '.npmrc', '.nvmrc',
   '.prettierignore', 'CNAME', 'Dockerfile', 'LICENSE', 'Makefile', 'VERSION',
 ]);
 
