@@ -1,0 +1,2825 @@
+docs/wikilink-governance.md
+  s_20c5fdf91f2755::t_f19283718df4e3 56
+src/content/docs/papers/3d-gaussian-splatting.md
+  s_20c5fdf91f2755::t_ed49f1786167f3 162,185,190-192
+src/content/docs/papers/a3c-2016.md
+  s_20c5fdf91f2755::t_7786e2dcea00f9 152-153
+src/content/docs/papers/abadi-dpsgd-2016.md
+  s_20c5fdf91f2755::t_a969f2bc61301a 183,185,188-190,192-193
+src/content/docs/papers/activation-patching.md
+  s_20c5fdf91f2755::t_f4eb04b64d7278 148
+src/content/docs/papers/adam-2014.md
+  s_20c5fdf91f2755::t_34cb0b6b330562 157,163
+src/content/docs/papers/afd-disagg-moe.md
+  s_20c5fdf91f2755::t_5fbd70422b71a6 161-162
+src/content/docs/papers/aflgo-2017.md
+  s_20c5fdf91f2755::t_bc9a526714869c 159-163
+src/content/docs/papers/agent-r1-2511.md
+  s_20c5fdf91f2755::t_62cb932f1bba54 148
+src/content/docs/papers/agent-skill-protocol-2026.md
+  s_20c5fdf91f2755::t_3f113715e04de5 153
+src/content/docs/papers/agentless.md
+  s_20c5fdf91f2755::t_cc13adc4a69274 158,162
+src/content/docs/papers/akamai-2002.md
+  s_20c5fdf91f2755::t_012e25f6f08b34 173,177
+src/content/docs/papers/akamai-2010.md
+  s_20c5fdf91f2755::t_fd485b88f4124a 155
+src/content/docs/papers/algol-60.md
+  s_20c5fdf91f2755::t_eeb0599f4c3690 180-181,185
+src/content/docs/papers/align-2021.md
+  s_20c5fdf91f2755::t_61ec8005432455 154
+src/content/docs/papers/alpa-2022.md
+  s_20c5fdf91f2755::t_ce06d3282addc4 168
+src/content/docs/papers/amber-sigmod-2014.md
+  s_20c5fdf91f2755::t_5945a60cd9ca17 168-169
+src/content/docs/papers/amoeba-1990.md
+  s_20c5fdf91f2755::t_5639c357f346a1 152
+src/content/docs/papers/ampere-architecture-2020.md
+  s_20c5fdf91f2755::t_48b0d746c9bdc6 177-217
+src/content/docs/papers/amplification-hell-2014.md
+  s_20c5fdf91f2755::t_034e1aef4c139a 155
+src/content/docs/papers/andersen-pointer-analysis.md
+  s_20c5fdf91f2755::t_b912ba44e09e05 172
+src/content/docs/papers/andromeda-2018.md
+  s_20c5fdf91f2755::t_bd5d7401161075 154
+src/content/docs/papers/anserini-2017.md
+  s_20c5fdf91f2755::t_d0008b5ca5f356 158,170,175
+src/content/docs/papers/apollo-2014.md
+  s_20c5fdf91f2755::t_175974ae8ac459 153
+src/content/docs/papers/apron-2009.md
+  s_20c5fdf91f2755::t_6a7065d977ecff 152
+src/content/docs/papers/aries-1992.md
+  s_20c5fdf91f2755::t_5f1a3156e12098 162,170,189-191
+src/content/docs/papers/arrakis-2014.md
+  s_20c5fdf91f2755::t_a4b4714f9a4d6d 150
+src/content/docs/papers/art-2013.md
+  s_20c5fdf91f2755::t_96a10190570578 164
+src/content/docs/papers/asterisk.md
+  s_20c5fdf91f2755::t_abc9cf8cc38cad 158-159
+src/content/docs/papers/attention.md
+  s_20c5fdf91f2755::t_1e4a7882821c28 113,132,137,146,153-154,157,160,173,175,177,179-180,185,191,195,206,210,213-234
+src/content/docs/papers/atzei-eth-attacks-2017.md
+  s_20c5fdf91f2755::t_8576950cfa41fd 150-151
+src/content/docs/papers/aurora.md
+  s_20c5fdf91f2755::t_8e3c537bccb6b4 155,157,159,162,165
+src/content/docs/papers/autogen.md
+  s_20c5fdf91f2755::t_d2876455e3c25c 148,153
+src/content/docs/papers/autograph-2004.md
+  s_20c5fdf91f2755::t_19e0c61e8ce72b 156-157
+src/content/docs/papers/autonomous-driving-waymo-2021.md
+  s_20c5fdf91f2755::t_425f0bb24f4ebf 148
+src/content/docs/papers/av2-video-spec.md
+  s_20c5fdf91f2755::t_9cd6c7ddc7c2b5 155
+src/content/docs/papers/avgustinov-codeql-2016.md
+  s_20c5fdf91f2755::t_003bcd157a9d89 154-156
+src/content/docs/papers/awq-2023.md
+  s_20c5fdf91f2755::t_7ceefeabc6a084 158-159
+src/content/docs/papers/awq.md
+  s_20c5fdf91f2755::t_26b564e587230a 154
+src/content/docs/papers/azure-storage-2011.md
+  s_20c5fdf91f2755::t_7b51844ca25c38 155-156
+src/content/docs/papers/b-tree-1972.md
+  s_20c5fdf91f2755::t_c61e2aec233712 136,139,148
+src/content/docs/papers/b4-2013.md
+  s_20c5fdf91f2755::t_96dc7b4f65aab2 176
+src/content/docs/papers/backus-fp-1978.md
+  s_20c5fdf91f2755::t_396f69c4e21bb0 170-171
+src/content/docs/papers/badger.md
+  s_20c5fdf91f2755::t_97c171e4283688 152
+src/content/docs/papers/baraff-witkin-1998-cloth.md
+  s_20c5fdf91f2755::t_078266e44d93fc 153-154
+src/content/docs/papers/batchnorm-2015.md
+  s_20c5fdf91f2755::t_26161b040be98b 155
+src/content/docs/papers/bayou-1995.md
+  s_20c5fdf91f2755::t_67d5698cb7f2f6 157
+src/content/docs/papers/bbr-2017.md
+  s_20c5fdf91f2755::t_607f9dd9f39339 152-157
+src/content/docs/papers/beck-tdd.md
+  s_20c5fdf91f2755::t_a171fb3be5f083 159
+src/content/docs/papers/belady-1966.md
+  s_20c5fdf91f2755::t_f3b949b1caf730 166
+src/content/docs/papers/ben-sasson-stark-2018.md
+  s_20c5fdf91f2755::t_949492f29e29b8 151-153
+src/content/docs/papers/benchmarking.md
+  s_20c5fdf91f2755::t_22c3187b70036d 159-160
+src/content/docs/papers/bentoml.md
+  s_20c5fdf91f2755::t_d7f139c2ae2ff8 167-168
+src/content/docs/papers/berenson-1995-isolation.md
+  s_20c5fdf91f2755::t_4a443ab040f63a 181
+src/content/docs/papers/bernstein-1981-cc.md
+  s_20c5fdf91f2755::t_d378d1f1d0d73d 173
+src/content/docs/papers/bernstein-sphincs-2015.md
+  s_20c5fdf91f2755::t_c35e7cdc53a507 151-152
+src/content/docs/papers/bert.md
+  s_20c5fdf91f2755::t_300b7fde9fc567 167,170,180-181,186
+src/content/docs/papers/bert4rec-2019.md
+  s_20c5fdf91f2755::t_44dd738e67fca1 158
+src/content/docs/papers/bigbench-2022.md
+  s_20c5fdf91f2755::t_ad0dd657a63baf 155-161
+src/content/docs/papers/bigtable-2006.md
+  s_20c5fdf91f2755::t_cf7939c722e65a 155,158,160,167,171-172,175,177,179-180,186,191,193,199,204,207,209
+src/content/docs/papers/bigtable-revisit-2024.md
+  s_20c5fdf91f2755::t_a498e032196d19 169-170
+src/content/docs/papers/bigtable.md
+  s_20c5fdf91f2755::t_342528388e6f36 162-187
+src/content/docs/papers/bitcoin.md
+  s_20c5fdf91f2755::t_1151de392b7e26 145,147,150-151,153-161
+src/content/docs/papers/blip2-2023.md
+  s_20c5fdf91f2755::t_e443c3d1d00e81 164
+src/content/docs/papers/block-max-wand-2011.md
+  s_20c5fdf91f2755::t_a50bdd540e9106 155
+src/content/docs/papers/bm25-okapi.md
+  s_20c5fdf91f2755::t_d16db3789fd145 156-167
+src/content/docs/papers/bm25.md
+  s_20c5fdf91f2755::t_6bdeaac835c638 152-158
+src/content/docs/papers/bohme-aflfast-2016.md
+  s_20c5fdf91f2755::t_ba9eaa2045e277 150-153
+src/content/docs/papers/bonawitz-fl-system-2019.md
+  s_20c5fdf91f2755::t_483370af4c5d72 153
+src/content/docs/papers/boogie-2005.md
+  s_20c5fdf91f2755::t_0dcfbebae9f3ef 156-167
+src/content/docs/papers/borg-2015.md
+  s_20c5fdf91f2755::t_d51917ae7d75f2 170-172
+src/content/docs/papers/borg-omega-kube-2016.md
+  s_20c5fdf91f2755::t_e782d1d2e5b9e5 166-176
+src/content/docs/papers/borg.md
+  s_20c5fdf91f2755::t_831c8255e471fc 152,155-156,158,160,162,166
+src/content/docs/papers/bos-kyber-2018.md
+  s_20c5fdf91f2755::t_e093aba18a2e2e 151-152
+src/content/docs/papers/bowe-halo-2019.md
+  s_20c5fdf91f2755::t_a1c1102ed14c8a 168-169
+src/content/docs/papers/brakerski-bgv-2012.md
+  s_20c5fdf91f2755::t_5c94e2d8bb5ef8 157-158
+src/content/docs/papers/branch-prediction-yeh-patt-1991.md
+  s_20c5fdf91f2755::t_7fdec9744e3221 152
+src/content/docs/papers/brewer-cap-2000.md
+  s_20c5fdf91f2755::t_8862d7c8429e76 153,161,168
+src/content/docs/papers/brill-moore-2000.md
+  s_20c5fdf91f2755::t_2c41a20b847cd1 197
+src/content/docs/papers/brooks-no-silver-bullet-1986.md
+  s_20c5fdf91f2755::t_69266977ef31f2 150
+src/content/docs/papers/btrfs-2013.md
+  s_20c5fdf91f2755::t_4d7153293406a5 175
+src/content/docs/papers/bunz-bulletproofs-2018.md
+  s_20c5fdf91f2755::t_0b9125463a8a37 150-152
+src/content/docs/papers/bvt-1999.md
+  s_20c5fdf91f2755::t_a0c2db2157c27a 152
+src/content/docs/papers/byzantine-generals-1982.md
+  s_20c5fdf91f2755::t_5dbf9966617b6c 153,156,158
+src/content/docs/papers/cache-coherence-cxl3-2026.md
+  s_20c5fdf91f2755::t_014c9575d433a6 145-146
+src/content/docs/papers/cadar-klee-2008.md
+  s_20c5fdf91f2755::t_1e4fd27670efb1 157-162
+src/content/docs/papers/caesar-rexford-2005.md
+  s_20c5fdf91f2755::t_70f3635d392b30 190
+src/content/docs/papers/cakeml.md
+  s_20c5fdf91f2755::t_fb3537f018293c 165
+src/content/docs/papers/calder-2015-anycast-cdn.md
+  s_20c5fdf91f2755::t_dacea9df175f49 168
+src/content/docs/papers/calvin-2012.md
+  s_20c5fdf91f2755::t_5f955283797f98 152
+src/content/docs/papers/calvin.md
+  s_20c5fdf91f2755::t_2ad27a05d8145a 156-160
+src/content/docs/papers/cap-12-years-later-2012.md
+  s_20c5fdf91f2755::t_da357e4da649dd 172
+src/content/docs/papers/capsicum-2010.md
+  s_20c5fdf91f2755::t_2c7ea3925c1d6d 150-151
+src/content/docs/papers/carlini-wagner-2017.md
+  s_20c5fdf91f2755::t_a74e83f273a6ea 150-152
+src/content/docs/papers/cascades-1995.md
+  s_20c5fdf91f2755::t_48a1e6c2888d33 162,164,171,173
+src/content/docs/papers/cassandra-2010.md
+  s_20c5fdf91f2755::t_394303c8005dd0 160,162,167,174
+src/content/docs/papers/cassandra-eventual-tradeoff.md
+  s_20c5fdf91f2755::t_c5239c56a81bc5 157-158
+src/content/docs/papers/catmull-1974-zbuffer.md
+  s_20c5fdf91f2755::t_14f83e900dd46a 193-194
+src/content/docs/papers/catmull-clark-1978.md
+  s_20c5fdf91f2755::t_c5322f6bb09e3b 155
+src/content/docs/papers/causal-abstraction.md
+  s_20c5fdf91f2755::t_fa834eb6be82d1 165-167
+src/content/docs/papers/ccopd-distillation.md
+  s_20c5fdf91f2755::t_fa5d34a7b32553 153-154
+src/content/docs/papers/cell-be-2005.md
+  s_20c5fdf91f2755::t_cdb9be7f05570f 184
+src/content/docs/papers/ceph-2006.md
+  s_20c5fdf91f2755::t_da1f54d6a912d9 166
+src/content/docs/papers/certikos-2016.md
+  s_20c5fdf91f2755::t_af6994e40dbb70 157
+src/content/docs/papers/chaff-2001.md
+  s_20c5fdf91f2755::t_865e4f49c98a4b 172
+src/content/docs/papers/chain-of-thought.md
+  s_20c5fdf91f2755::t_89136c170cd499 168-171
+src/content/docs/papers/chain-replication-2004.md
+  s_20c5fdf91f2755::t_2b18eb959f2342 156,158-159
+src/content/docs/papers/chaitin-graph-coloring.md
+  s_20c5fdf91f2755::t_5d70d15136682a 163,165
+src/content/docs/papers/chandy-lamport-1985.md
+  s_20c5fdf91f2755::t_1467c19f15728d 160,162,166
+src/content/docs/papers/chapar-2016.md
+  s_20c5fdf91f2755::t_2c64e11508892e 152
+src/content/docs/papers/chatbot-arena-2024.md
+  s_20c5fdf91f2755::t_8b53e8a98d6a3c 153-156
+src/content/docs/papers/chaum-1981-mix.md
+  s_20c5fdf91f2755::t_bdc890ef2f0588 149-151
+src/content/docs/papers/cheon-ckks-2017.md
+  s_20c5fdf91f2755::t_cd130c335c6c22 163-164
+src/content/docs/papers/chillotti-tfhe-2016.md
+  s_20c5fdf91f2755::t_5c0bac61360c74 151
+src/content/docs/papers/chinchilla.md
+  s_20c5fdf91f2755::t_32881c1f31b88e 140,146-148
+src/content/docs/papers/chronos-2024.md
+  s_20c5fdf91f2755::t_e052a82fd8bceb 154
+src/content/docs/papers/chubby.md
+  s_20c5fdf91f2755::t_b160338a38c6a5 154,160,162,166
+src/content/docs/papers/ciel-universal-execution-engine-distributed-data-flow-2011.md
+  s_20c5fdf91f2755::t_536a65eca7b42b 153-154
+src/content/docs/papers/cimatti-nusmv-2002.md
+  s_20c5fdf91f2755::t_9d5050b0f58b7a 152
+src/content/docs/papers/classifier-free-guidance-2022.md
+  s_20c5fdf91f2755::t_ecddc450595e11 155-159
+src/content/docs/papers/clearml.md
+  s_20c5fdf91f2755::t_ebace4aed28849 176
+src/content/docs/papers/clickhouse.md
+  s_20c5fdf91f2755::t_a4126988fa7148 159-169
+src/content/docs/papers/clip.md
+  s_20c5fdf91f2755::t_813551ae322a49 155,160,165,168,174-175,179-181
+src/content/docs/papers/coca-2022.md
+  s_20c5fdf91f2755::t_fada431dcdd827 168
+src/content/docs/papers/cockroachdb-2020.md
+  s_20c5fdf91f2755::t_48486b77195631 161
+src/content/docs/papers/cocondenser-2021.md
+  s_20c5fdf91f2755::t_b4bc71a7b3e38a 166-167
+src/content/docs/papers/codd-1970.md
+  s_20c5fdf91f2755::t_4d4f7d62a3d6f8 164,166,170-171,174,176-178
+src/content/docs/papers/codd-1979-extending.md
+  s_20c5fdf91f2755::t_30019d493cae9c 162
+src/content/docs/papers/code-as-agent-harness.md
+  s_20c5fdf91f2755::t_ed33524e03add2 156,160,167
+src/content/docs/papers/codellama-2023.md
+  s_20c5fdf91f2755::t_fcf1fe96fbf7a4 158-161
+src/content/docs/papers/cognitive-load-theory.md
+  s_20c5fdf91f2755::t_75df3c3518af6c 156,160
+src/content/docs/papers/colbert-2020.md
+  s_20c5fdf91f2755::t_147b8ffefbfa3a 153,156,161-162,167-168
+src/content/docs/papers/colbert-v2.md
+  s_20c5fdf91f2755::t_cd687239e7bf46 155,157
+src/content/docs/papers/columnar-storage-formats-2023.md
+  s_20c5fdf91f2755::t_1b47f332ea3a94 161-164
+src/content/docs/papers/comer-1979-btree.md
+  s_20c5fdf91f2755::t_435d9daf15bfe1 157,161
+src/content/docs/papers/compcert.md
+  s_20c5fdf91f2755::t_062659cbd47d9c 163
+src/content/docs/papers/compiler-errors.md
+  s_20c5fdf91f2755::t_a24d1209bbb64d 183-184
+src/content/docs/papers/compose-future-theorems.md
+  s_20c5fdf91f2755::t_c6c18ef8c6816a 152-153
+src/content/docs/papers/compositional-incoherence.md
+  s_20c5fdf91f2755::t_3b3b833b7cd8f1 152
+src/content/docs/papers/consistency-models-2023.md
+  s_20c5fdf91f2755::t_14690daeed7420 157-159
+src/content/docs/papers/consistent-hashing-1997.md
+  s_20c5fdf91f2755::t_ad2fcb5f390f76 159
+src/content/docs/papers/constitutional-ai.md
+  s_20c5fdf91f2755::t_8cf0a86e237f2c 153,159
+src/content/docs/papers/continual-pretrain-survey-2026.md
+  s_20c5fdf91f2755::t_40f746dc29b2d9 148-149
+src/content/docs/papers/contriever-2021.md
+  s_20c5fdf91f2755::t_3b5fc209b036ea 157-158
+src/content/docs/papers/controlled-channel-attacks-2015.md
+  s_20c5fdf91f2755::t_9cbec3f95fdc85 183-184
+src/content/docs/papers/cook-1984-distributed-ray-tracing.md
+  s_20c5fdf91f2755::t_d9ba76755e73d4 159,161-163
+src/content/docs/papers/cook-1986-stochastic-sampling.md
+  s_20c5fdf91f2755::t_997ef6d34bf1e9 157
+src/content/docs/papers/cook-levin.md
+  s_20c5fdf91f2755::t_4deb69e1a83655 158,164
+src/content/docs/papers/copilot-rct.md
+  s_20c5fdf91f2755::t_d6b180e84fd818 162
+src/content/docs/papers/cops-2011.md
+  s_20c5fdf91f2755::t_e6899b9e0931e8 155
+src/content/docs/papers/costan-sgx-explained-2016.md
+  s_20c5fdf91f2755::t_373491218e082f 150-155
+src/content/docs/papers/cot.md
+  s_20c5fdf91f2755::t_f0b34ebdd8be61 168-170,172-175,177-180,182-183
+src/content/docs/papers/coturn.md
+  s_20c5fdf91f2755::t_5762d4fa6f0d9e 166-167
+src/content/docs/papers/couchdb.md
+  s_20c5fdf91f2755::t_53d9f4f7aa681a 159-160
+src/content/docs/papers/cousot-abstract-interpretation.md
+  s_20c5fdf91f2755::t_6b7f9f80319809 164,168,175-176,183,186,192
+src/content/docs/papers/cousot-halbwachs-polyhedra-1978.md
+  s_20c5fdf91f2755::t_9c1ac22a8b678a 150-152
+src/content/docs/papers/craq-2009.md
+  s_20c5fdf91f2755::t_fe9f875aa32e53 151
+src/content/docs/papers/crdt-json-2017.md
+  s_20c5fdf91f2755::t_d52ab487a530b9 155-158
+src/content/docs/papers/crdt-json.md
+  s_20c5fdf91f2755::t_658c781e813b24 152-163
+src/content/docs/papers/crdt-shapiro-2011.md
+  s_20c5fdf91f2755::t_b857276854aeda 169-170
+src/content/docs/papers/croft-harper-1979.md
+  s_20c5fdf91f2755::t_7a6f442a986227 151-152
+src/content/docs/papers/cryptoverif-2008.md
+  s_20c5fdf91f2755::t_88f6e30e5eb2e6 150-157
+src/content/docs/papers/csp-hoare-1978.md
+  s_20c5fdf91f2755::t_9ddeeba09fa0be 164,166,175
+src/content/docs/papers/cstore-2005.md
+  s_20c5fdf91f2755::t_d1c3d130a8b499 151-153,155-157,159,162,164-169
+src/content/docs/papers/cubical-type-theory-2018.md
+  s_20c5fdf91f2755::t_eb5993a0c418ef 154
+src/content/docs/papers/cuda-streams-concurrency-2018.md
+  s_20c5fdf91f2755::t_4602edeb9e2f1d 155
+src/content/docs/papers/cuda.md
+  s_20c5fdf91f2755::t_3f9285c884adc6 151-164
+src/content/docs/papers/curless-levoy-1996-tsdf.md
+  s_20c5fdf91f2755::t_c75d6ad5a100c2 172-173
+src/content/docs/papers/cutlass-2020.md
+  s_20c5fdf91f2755::t_fad93ddbcf16e2 157
+src/content/docs/papers/cytoscape-js.md
+  s_20c5fdf91f2755::t_aa0af4a2f2c22d 177
+src/content/docs/papers/dafny-2010.md
+  s_20c5fdf91f2755::t_5fa9d300b348cf 170-177
+src/content/docs/papers/daian-flash-boys-2020.md
+  s_20c5fdf91f2755::t_193f1d71332cb0 159-160
+src/content/docs/papers/danezis-sphinx-2009.md
+  s_20c5fdf91f2755::t_7f4912caa0205f 159-160
+src/content/docs/papers/dapper-2010.md
+  s_20c5fdf91f2755::t_347de664b23fba 153
+src/content/docs/papers/dash-numa-1992.md
+  s_20c5fdf91f2755::t_f57c7d3447a158 158
+src/content/docs/papers/data-lake-management-2019.md
+  s_20c5fdf91f2755::t_ae7c6a6589ae78 170
+src/content/docs/papers/dataflow-model-2015.md
+  s_20c5fdf91f2755::t_1421966e7c9013 157-158,161,165-166
+src/content/docs/papers/davis-putnam-1960.md
+  s_20c5fdf91f2755::t_b3794966e311e5 155
+src/content/docs/papers/ddim-2020.md
+  s_20c5fdf91f2755::t_b9a403f74d16ce 152,154
+src/content/docs/papers/ddpg-2015.md
+  s_20c5fdf91f2755::t_1f1a68b97388ad 161-162
+src/content/docs/papers/ddpm.md
+  s_20c5fdf91f2755::t_c330d67c44ce97 146,153
+src/content/docs/papers/debate-2018.md
+  s_20c5fdf91f2755::t_21e1cc0d203ddd 158
+src/content/docs/papers/deberta-2021.md
+  s_20c5fdf91f2755::t_c255ee1321da30 161-162
+src/content/docs/papers/debevec-1998-rendering-with-natural-light.md
+  s_20c5fdf91f2755::t_4989e5400ec9a3 160
+src/content/docs/papers/decision-transformer-2021.md
+  s_20c5fdf91f2755::t_f5d248f1418a10 150
+src/content/docs/papers/deepfool-2016.md
+  s_20c5fdf91f2755::t_2727d334c5d370 150-153
+src/content/docs/papers/deepseek-coder-2024.md
+  s_20c5fdf91f2755::t_5326d6354c4bc2 158-160
+src/content/docs/papers/deepseek-r1.md
+  s_20c5fdf91f2755::t_80128bd4dbef5d 152,155,157-159,161-162,164
+src/content/docs/papers/deepspeed-zero.md
+  s_20c5fdf91f2755::t_cacd5393796717 162-163,167
+src/content/docs/papers/deering-1988-triangle-processor.md
+  s_20c5fdf91f2755::t_9c128c7301b281 153-154
+src/content/docs/papers/delta-lake-2020.md
+  s_20c5fdf91f2755::t_a081a7c35ba6fb 151-153
+src/content/docs/papers/demikernel-2021.md
+  s_20c5fdf91f2755::t_389293c3a06f88 149
+src/content/docs/papers/demystifying-data-org.md
+  s_20c5fdf91f2755::t_8f45bb675410df 151
+src/content/docs/papers/denali-2002.md
+  s_20c5fdf91f2755::t_9d365a7c98db1b 151
+src/content/docs/papers/dewitt-gray-1992.md
+  s_20c5fdf91f2755::t_5a097e3e3affcb 151-152,154
+src/content/docs/papers/differential-datalog.md
+  s_20c5fdf91f2755::t_1c546bb4991b2d 155-156,159
+src/content/docs/papers/diffie-hellman-1976.md
+  s_20c5fdf91f2755::t_f612c9e2c728f9 161-178
+src/content/docs/papers/diffie-hellman.md
+  s_20c5fdf91f2755::t_677fe169526247 158-159,161,167-171
+src/content/docs/papers/diffusion-posterior-finite.md
+  s_20c5fdf91f2755::t_73b2f78513a6d2 150-151
+src/content/docs/papers/dijkstra-1965.md
+  s_20c5fdf91f2755::t_bc96336cb38963 161-162,164
+src/content/docs/papers/dijkstra-goto-1968.md
+  s_20c5fdf91f2755::t_65ef3e46964ef5 154-156
+src/content/docs/papers/dijkstra-goto.md
+  s_20c5fdf91f2755::t_af978bc1c355de 149
+src/content/docs/papers/dijkstra-shortest-path.md
+  s_20c5fdf91f2755::t_a16a79dbb0ca66 162
+src/content/docs/papers/dingledine-mixminion-2003.md
+  s_20c5fdf91f2755::t_70ffebfa738c88 153-154
+src/content/docs/papers/dino.md
+  s_20c5fdf91f2755::t_fa8b4fe7964304 150-152
+src/content/docs/papers/disel-2018.md
+  s_20c5fdf91f2755::t_6af35b894e7780 153
+src/content/docs/papers/diskann-2019.md
+  s_20c5fdf91f2755::t_23350c0a6dfa2c 172
+src/content/docs/papers/disney-brdf-2012.md
+  s_20c5fdf91f2755::t_492677e55eff52 166
+src/content/docs/papers/distributed-snapshot-byzantine-2026.md
+  s_20c5fdf91f2755::t_0b5df2cfb91c8f 153-154
+src/content/docs/papers/distserve.md
+  s_20c5fdf91f2755::t_78e308212982fe 153-156
+src/content/docs/papers/dit.md
+  s_20c5fdf91f2755::t_c483f33b9b924b 149
+src/content/docs/papers/dlrm-2019.md
+  s_20c5fdf91f2755::t_6c6a04f7d1a5b5 173-174
+src/content/docs/papers/dns.md
+  s_20c5fdf91f2755::t_4f1761546e1942 156
+src/content/docs/papers/dot-doh-perf-2020.md
+  s_20c5fdf91f2755::t_c6327dea9f3eaf 155
+src/content/docs/papers/double-descent-2019.md
+  s_20c5fdf91f2755::t_fd8ac229c479ec 164-165
+src/content/docs/papers/dpll-1962.md
+  s_20c5fdf91f2755::t_b7382c3faf54d7 172
+src/content/docs/papers/dpo.md
+  s_20c5fdf91f2755::t_587c7fd2699342 153-159
+src/content/docs/papers/dpr-2020.md
+  s_20c5fdf91f2755::t_2aa996bfb3021d 153,155,158
+src/content/docs/papers/dqn.md
+  s_20c5fdf91f2755::t_4e950d4d2dc05f 146
+src/content/docs/papers/dremel-2010.md
+  s_20c5fdf91f2755::t_bd964c2b21b10e 158-160
+src/content/docs/papers/dremel-decade-2020.md
+  s_20c5fdf91f2755::t_98f78729240955 157-159
+src/content/docs/papers/driller-2016.md
+  s_20c5fdf91f2755::t_316f814c327730 157-159
+src/content/docs/papers/drizzle-2017.md
+  s_20c5fdf91f2755::t_2c29c0f36c4263 162
+src/content/docs/papers/dropout-2014.md
+  s_20c5fdf91f2755::t_87384eada02be0 163-165,167-169
+src/content/docs/papers/dryadlinq-system-general-purpose-distributed-data-parallel-2008.md
+  s_20c5fdf91f2755::t_d030ba608f3cf9 152-155
+src/content/docs/papers/dstreams-2013.md
+  s_20c5fdf91f2755::t_b84a0142619ecb 157
+src/content/docs/papers/ducas-dilithium-2018.md
+  s_20c5fdf91f2755::t_1d87fee8f32549 154-155
+src/content/docs/papers/duchi-local-dp-2013.md
+  s_20c5fdf91f2755::t_95fd5c54382cb6 152,156-157
+src/content/docs/papers/dwork-calibrating-noise-2006.md
+  s_20c5fdf91f2755::t_604ecd79e05fff 163,165-166
+src/content/docs/papers/dwork-dp-2006.md
+  s_20c5fdf91f2755::t_3000a361b66c32 168-172
+src/content/docs/papers/dwork-dp-icalp-2006.md
+  s_20c5fdf91f2755::t_a02dc1305296b2 153,156-157,159-160,162-163
+src/content/docs/papers/dwork-our-data-ourselves-2006.md
+  s_20c5fdf91f2755::t_d1d18537bf5cfc 178-180,182
+src/content/docs/papers/dynamo-2007.md
+  s_20c5fdf91f2755::t_fc1af461a9c28b 159-166
+src/content/docs/papers/dynamo.md
+  s_20c5fdf91f2755::t_5b12881790f05d 166,171,184,186-187
+src/content/docs/papers/e-path-egraph.md
+  s_20c5fdf91f2755::t_ffae5eb4023442 150-151
+src/content/docs/papers/e5-2022.md
+  s_20c5fdf91f2755::t_3622ae16cec48d 176
+src/content/docs/papers/eagle.md
+  s_20c5fdf91f2755::t_c463ff84bc620f 155,157
+src/content/docs/papers/earley-parser.md
+  s_20c5fdf91f2755::t_546f204e0685df 158
+src/content/docs/papers/easycrypt-2011.md
+  s_20c5fdf91f2755::t_8ec865994e2ee8 159-162
+src/content/docs/papers/ebpf.md
+  s_20c5fdf91f2755::t_075dcecc8e4de0 162-163
+src/content/docs/papers/effect-handlers.md
+  s_20c5fdf91f2755::t_f52da59078838e 177
+src/content/docs/papers/efficient-compile-2011.md
+  s_20c5fdf91f2755::t_a8f6afe688a36e 194-195
+src/content/docs/papers/egglog-incremental-2026.md
+  s_20c5fdf91f2755::t_6b73fcd6f20ad0 158-159
+src/content/docs/papers/electra-2020.md
+  s_20c5fdf91f2755::t_c515f5c984506e 155
+src/content/docs/papers/elmo-2018.md
+  s_20c5fdf91f2755::t_60135cad770420 155-157
+src/content/docs/papers/emqx.md
+  s_20c5fdf91f2755::t_bf3b82739d4859 154
+src/content/docs/papers/entity-tracking-states.md
+  s_20c5fdf91f2755::t_7a862b7e38b82c 150-151
+src/content/docs/papers/erlang-otp.md
+  s_20c5fdf91f2755::t_de63f2b72f78fb 176,178,180,182-186
+src/content/docs/papers/erlingsson-rappor-2014.md
+  s_20c5fdf91f2755::t_a4d06c1f7c3cc7 155
+src/content/docs/papers/eros-1999.md
+  s_20c5fdf91f2755::t_f99813820f57b5 156-159
+src/content/docs/papers/eswaran-1976.md
+  s_20c5fdf91f2755::t_2a9855b5a84b6b 155
+src/content/docs/papers/ethane-2007.md
+  s_20c5fdf91f2755::t_a8307170cecd0b 165
+src/content/docs/papers/evo-memory-2511.md
+  s_20c5fdf91f2755::t_2b67cfc0104bf2 151
+src/content/docs/papers/exg-experience-graphs.md
+  s_20c5fdf91f2755::t_d3ea5ccf49988f 150-157
+src/content/docs/papers/exokernel-1995.md
+  s_20c5fdf91f2755::t_47cf3f99841187 150-163
+src/content/docs/papers/f4-2014.md
+  s_20c5fdf91f2755::t_b44c2d353fb09d 152
+src/content/docs/papers/fairfuzz-2018.md
+  s_20c5fdf91f2755::t_d22cf847b15cde 164-165
+src/content/docs/papers/faiss-2017.md
+  s_20c5fdf91f2755::t_239dea7185e9ec 169-171,177-179
+src/content/docs/papers/farm-2015.md
+  s_20c5fdf91f2755::t_ff4517ee6a6925 150-151
+src/content/docs/papers/farsite-2002.md
+  s_20c5fdf91f2755::t_ab0a51c5844592 152
+src/content/docs/papers/fast-paxos-2006.md
+  s_20c5fdf91f2755::t_3eeaae1ceddcad 157-162
+src/content/docs/papers/fastertransformer-2021.md
+  s_20c5fdf91f2755::t_00fc1e108e958f 152-153,157-158
+src/content/docs/papers/fastlanes-compression.md
+  s_20c5fdf91f2755::t_39512d7fa72d3f 150-151
+src/content/docs/papers/fermi-architecture-2010.md
+  s_20c5fdf91f2755::t_05732c5f680ba1 171-181
+src/content/docs/papers/feynman-simulating-physics-1982.md
+  s_20c5fdf91f2755::t_2494bd606a3fdb 150-151
+src/content/docs/papers/fidge-1988.md
+  s_20c5fdf91f2755::t_e44f66860393ae 190,192-193
+src/content/docs/papers/fielding-rest-2000.md
+  s_20c5fdf91f2755::t_176ce52cb588bf 151-160
+src/content/docs/papers/filip-2021.md
+  s_20c5fdf91f2755::t_180355daa30247 150
+src/content/docs/papers/firecracker-2020.md
+  s_20c5fdf91f2755::t_3844d4ffbfa699 154
+src/content/docs/papers/flamingo-2022.md
+  s_20c5fdf91f2755::t_41b57ced2b3524 153
+src/content/docs/papers/flash-attention.md
+  s_20c5fdf91f2755::t_2fed5b8cb5fd15 160-161,163,166-167,169,174-176,178,180,187-188,190,194
+src/content/docs/papers/flashattention-2.md
+  s_20c5fdf91f2755::t_d1defb7306d7fe 157-159
+src/content/docs/papers/flashattention-3-2024.md
+  s_20c5fdf91f2755::t_788d604d3feefd 158-159
+src/content/docs/papers/flat-datacenter-storage.md
+  s_20c5fdf91f2755::t_880302d687f7c9 156-157
+src/content/docs/papers/flexible-paxos-2016.md
+  s_20c5fdf91f2755::t_c41f154daad3c8 156
+src/content/docs/papers/flexsc-2010.md
+  s_20c5fdf91f2755::t_5aeebfa133e983 156
+src/content/docs/papers/flink-2015.md
+  s_20c5fdf91f2755::t_d1bf7c35887593 161-171
+src/content/docs/papers/flink-snapshots-2015.md
+  s_20c5fdf91f2755::t_4c2d99a3a166fe 156-157
+src/content/docs/papers/flp-1985.md
+  s_20c5fdf91f2755::t_f7043cddd8b643 153
+src/content/docs/papers/flush-reload-2014.md
+  s_20c5fdf91f2755::t_dfc53ad7ff7c74 164-166
+src/content/docs/papers/foreshadow-2018.md
+  s_20c5fdf91f2755::t_831997d71b05e9 170-172
+src/content/docs/papers/foundationdb-2021.md
+  s_20c5fdf91f2755::t_31a54ffbe8d43c 169
+src/content/docs/papers/foundationdb.md
+  s_20c5fdf91f2755::t_4b16f79b6346d2 160-163
+src/content/docs/papers/fpga-hls-2011.md
+  s_20c5fdf91f2755::t_bf2526fc0f5f9d 165
+src/content/docs/papers/frangipani-1997.md
+  s_20c5fdf91f2755::t_630dbb0e680648 150-151
+src/content/docs/papers/freedman-psi-2004.md
+  s_20c5fdf91f2755::t_e56b70045b04be 164-165
+src/content/docs/papers/fstar.md
+  s_20c5fdf91f2755::t_1ccb8591c407fe 153,167
+src/content/docs/papers/g1-collector.md
+  s_20c5fdf91f2755::t_affacd83b22a50 151
+src/content/docs/papers/gabizon-plonk-2019.md
+  s_20c5fdf91f2755::t_898fa5088ea50b 167-168
+src/content/docs/papers/gadt-pjones.md
+  s_20c5fdf91f2755::t_a8f5913b6cb985 159
+src/content/docs/papers/game-semantics-pcf.md
+  s_20c5fdf91f2755::t_f52b513ad057a6 159
+src/content/docs/papers/gao-2001-as-relations.md
+  s_20c5fdf91f2755::t_aa25719c783957 143
+src/content/docs/papers/gat-2018.md
+  s_20c5fdf91f2755::t_415d1f73ce16fa 177
+src/content/docs/papers/gbrank-2007.md
+  s_20c5fdf91f2755::t_72e12c0263f887 159-160
+src/content/docs/papers/gcc-webrtc-2016.md
+  s_20c5fdf91f2755::t_b10cd4aff0ea14 151-152
+src/content/docs/papers/gcn-2017.md
+  s_20c5fdf91f2755::t_ec40e37a475116 157,159
+src/content/docs/papers/gemini-1.5-2024.md
+  s_20c5fdf91f2755::t_b3314963378989 162-163
+src/content/docs/papers/gentry-fhe-2009.md
+  s_20c5fdf91f2755::t_019b46cd4e21fd 176-177
+src/content/docs/papers/gfs-2003.md
+  s_20c5fdf91f2755::t_28498516198f4e 153-157
+src/content/docs/papers/gfs.md
+  s_20c5fdf91f2755::t_78ccad3badf939 162,164,169-171,176,178,181,186,188,190
+src/content/docs/papers/ghost-2021.md
+  s_20c5fdf91f2755::t_670bc489c6e2ae 157
+src/content/docs/papers/glue-2018.md
+  s_20c5fdf91f2755::t_5649fe21d74052 157
+src/content/docs/papers/gmw-mental-game-1987.md
+  s_20c5fdf91f2755::t_5016f9276dff72 161-162
+src/content/docs/papers/goal-misgeneralization-2022.md
+  s_20c5fdf91f2755::t_7758cb5902a2a4 150
+src/content/docs/papers/goodfellow-fgsm-2014.md
+  s_20c5fdf91f2755::t_2be2c8550d75f5 151-155
+src/content/docs/papers/google-1998.md
+  s_20c5fdf91f2755::t_9d6e4b870a2ab6 157-160
+src/content/docs/papers/gpt-3.md
+  s_20c5fdf91f2755::t_c289cc68a0bf4a 146-149,151-157,159-162,165-182,184-196
+src/content/docs/papers/gptq-2023.md
+  s_20c5fdf91f2755::t_b4684143b9d419 152-153
+src/content/docs/papers/gpu-cache-coherence-2013.md
+  s_20c5fdf91f2755::t_5f79c3da08df4f 159-161
+src/content/docs/papers/graf-saidi-1997.md
+  s_20c5fdf91f2755::t_bf49f99a93b0d3 154
+src/content/docs/papers/granule.md
+  s_20c5fdf91f2755::t_43a6ffc4ca8f0a 161
+src/content/docs/papers/graph-neural-networks.md
+  s_20c5fdf91f2755::t_4e3755e3a7a18d 150-154
+src/content/docs/papers/graphormer-2021.md
+  s_20c5fdf91f2755::t_8e2d00c0b5b06d 158-159
+src/content/docs/papers/graphrag.md
+  s_20c5fdf91f2755::t_0794bb4a5b8542 140
+src/content/docs/papers/graphsage-2017.md
+  s_20c5fdf91f2755::t_b81e09dc7ca3e5 153,155,157
+src/content/docs/papers/gray-1978-notes.md
+  s_20c5fdf91f2755::t_a3ed58d9918305 193-198
+src/content/docs/papers/gray-1981-transaction.md
+  s_20c5fdf91f2755::t_794990bef588e9 154-156,159,164
+src/content/docs/papers/great-swe.md
+  s_20c5fdf91f2755::t_6df491c994c8c6 159-161
+src/content/docs/papers/grokking-2022.md
+  s_20c5fdf91f2755::t_388e9c64bfeecd 158-160
+src/content/docs/papers/gshard-2020.md
+  s_20c5fdf91f2755::t_473fe5651d30b5 156-157
+src/content/docs/papers/hacl-star-2017.md
+  s_20c5fdf91f2755::t_f33a9a52aa5faa 162
+src/content/docs/papers/halide.md
+  s_20c5fdf91f2755::t_6bdf99fb944e0b 161-167
+src/content/docs/papers/haven-2014.md
+  s_20c5fdf91f2755::t_375bc29c691fab 152-156
+src/content/docs/papers/haystack-2010.md
+  s_20c5fdf91f2755::t_8e64a3babf5c3f 158-159
+src/content/docs/papers/hdfs-2010.md
+  s_20c5fdf91f2755::t_5e46028434be55 151,153-155
+src/content/docs/papers/heckbert-1986-texture-survey.md
+  s_20c5fdf91f2755::t_b071ce0847b364 164-167
+src/content/docs/papers/hekaton-2013-sigmod.md
+  s_20c5fdf91f2755::t_89aa0fedc5c2cf 150-152
+src/content/docs/papers/helland-2007.md
+  s_20c5fdf91f2755::t_dffb40b80b7044 166-167
+src/content/docs/papers/helm-2022.md
+  s_20c5fdf91f2755::t_d5e8a74862cb09 155-157
+src/content/docs/papers/herlihy-moss-tm.md
+  s_20c5fdf91f2755::t_36c6a0d823d2b0 160
+src/content/docs/papers/hewitt-actor-model.md
+  s_20c5fdf91f2755::t_3ec12014614fab 151-152
+src/content/docs/papers/hindley-milner.md
+  s_20c5fdf91f2755::t_a5262ffb5523fe 149-155,158,161,163,165,167-168,170-172,174,177-179,181,184-186,188-193,195-196,200-201,205,207-209,211-213,215-218,220-221,223-233,235-236,238,240,242,244-245,248-272
+src/content/docs/papers/hnsw-2018.md
+  s_20c5fdf91f2755::t_7aa5a52ca8128b 160,166-168
+src/content/docs/papers/hoare-csp-1978.md
+  s_20c5fdf91f2755::t_21836c9218b071 159-160
+src/content/docs/papers/hoare-monitors-1974.md
+  s_20c5fdf91f2755::t_4ba35d04bddaff 164
+src/content/docs/papers/holzmann-spin-1997.md
+  s_20c5fdf91f2755::t_7cab94dce79d48 152-154
+src/content/docs/papers/hotspot-server-compiler.md
+  s_20c5fdf91f2755::t_3fe66258c43afa 155
+src/content/docs/papers/http-2.md
+  s_20c5fdf91f2755::t_70a5075cec12dd 166-167,170-181
+src/content/docs/papers/hu-2018-mls-mpm.md
+  s_20c5fdf91f2755::t_5b073820d016e3 168
+src/content/docs/papers/hughes-fp-matters.md
+  s_20c5fdf91f2755::t_e7c51aa8ac1123 154
+src/content/docs/papers/hullft-ttft.md
+  s_20c5fdf91f2755::t_fe8bfa067f67af 154-155
+src/content/docs/papers/hydra-1974.md
+  s_20c5fdf91f2755::t_6c7b0e28bdfbd1 158-159
+src/content/docs/papers/hyperkernel-2017.md
+  s_20c5fdf91f2755::t_ca1b8e833495df 151-159
+src/content/docs/papers/ice-rfc-5245.md
+  s_20c5fdf91f2755::t_6ae831f07e060a 152-153
+src/content/docs/papers/index-structures.md
+  s_20c5fdf91f2755::t_682c5317b92be3 168-169
+src/content/docs/papers/ingres-1976.md
+  s_20c5fdf91f2755::t_e480bd5ecdec35 151
+src/content/docs/papers/instant-ngp-2022.md
+  s_20c5fdf91f2755::t_6fd64a37fe6433 150-151
+src/content/docs/papers/instructgpt.md
+  s_20c5fdf91f2755::t_f9ca9d0333d484 143,152,154-155
+src/content/docs/papers/io-uring.md
+  s_20c5fdf91f2755::t_c5e06513ae6e1b 155,159
+src/content/docs/papers/isabelle-hol-2002.md
+  s_20c5fdf91f2755::t_6768ee75a44ef8 176-191
+src/content/docs/papers/islands-architecture.md
+  s_20c5fdf91f2755::t_37fc073ea99872 152
+src/content/docs/papers/jacobson-1988.md
+  s_20c5fdf91f2755::t_b635c7d733221c 162
+src/content/docs/papers/janus-2016.md
+  s_20c5fdf91f2755::t_5c39e62f85e251 159
+src/content/docs/papers/jemalloc-2006.md
+  s_20c5fdf91f2755::t_2c098f3335826f 155-156
+src/content/docs/papers/jensen-1996-photon-mapping.md
+  s_20c5fdf91f2755::t_e373dd191e59d2 157-158
+src/content/docs/papers/jupiter-2015.md
+  s_20c5fdf91f2755::t_14e25b13d171e7 156
+src/content/docs/papers/k3s.md
+  s_20c5fdf91f2755::t_99850f761cf215 152
+src/content/docs/papers/kafka-2011.md
+  s_20c5fdf91f2755::t_12fb7cb37136de 164
+src/content/docs/papers/kafka.md
+  s_20c5fdf91f2755::t_bd6bf23cb8291b 164-182
+src/content/docs/papers/kahn-natural-semantics.md
+  s_20c5fdf91f2755::t_82974045bb7622 167
+src/content/docs/papers/kairouz-advances-fl-2019.md
+  s_20c5fdf91f2755::t_36e7ccf592f566 166
+src/content/docs/papers/kajiya-1986-rendering-equation.md
+  s_20c5fdf91f2755::t_8c140a018beb3a 177,181,188-192
+src/content/docs/papers/kami-2017.md
+  s_20c5fdf91f2755::t_6c732574357545 164-165
+src/content/docs/papers/karger-1997-consistent-hashing.md
+  s_20c5fdf91f2755::t_3e799d7dab26c1 155
+src/content/docs/papers/karis-2014-ue4-pbr.md
+  s_20c5fdf91f2755::t_a85902f9defa0a 156
+src/content/docs/papers/kazhdan-2006-poisson-recon.md
+  s_20c5fdf91f2755::t_78dc1b8652b632 158-161
+src/content/docs/papers/kildall-dataflow.md
+  s_20c5fdf91f2755::t_9ba898b52363b1 162,165,173-175,185
+src/content/docs/papers/kim-rowhammer-2014.md
+  s_20c5fdf91f2755::t_68f7b114867be0 151-153
+src/content/docs/papers/knrm-2017.md
+  s_20c5fdf91f2755::t_2750f2860faffb 150
+src/content/docs/papers/knuth-literate-1984.md
+  s_20c5fdf91f2755::t_6a8d728fc93efa 168-169
+src/content/docs/papers/knuth-taocp.md
+  s_20c5fdf91f2755::t_32a3b7dbdcd46e 152,155
+src/content/docs/papers/kocher-spectre-2019.md
+  s_20c5fdf91f2755::t_35cca86e988747 151-156
+src/content/docs/papers/krishnamurthy-1999-http11.md
+  s_20c5fdf91f2755::t_98384d5d8e906a 182
+src/content/docs/papers/kustomize.md
+  s_20c5fdf91f2755::t_c36ba6c7f7a9f7 173
+src/content/docs/papers/kv-cache-budget-2026.md
+  s_20c5fdf91f2755::t_0e18f93604daa7 149-151
+src/content/docs/papers/kv-fold.md
+  s_20c5fdf91f2755::t_5a8507daf87ca3 151-153
+src/content/docs/papers/label-smoothing-2016.md
+  s_20c5fdf91f2755::t_3f080fc2567dcd 168
+src/content/docs/papers/lacuna-program-holes.md
+  s_20c5fdf91f2755::t_32c02524361ac6 153-154
+src/content/docs/papers/lakehouse-2021.md
+  s_20c5fdf91f2755::t_c9c29fcc4df82a 152-154
+src/content/docs/papers/lambda-calculus.md
+  s_20c5fdf91f2755::t_0dcbe767eed617 146-152,154-165,167,169-171,173-177,179-184,186-199,202-203,205-210
+src/content/docs/papers/lambdarank-2006.md
+  s_20c5fdf91f2755::t_bae90e7980b0fc 156
+src/content/docs/papers/lamport-1978.md
+  s_20c5fdf91f2755::t_9d3931b34a2659 158-210
+src/content/docs/papers/lamport-bakery.md
+  s_20c5fdf91f2755::t_533c134fda08c2 169-171
+src/content/docs/papers/lamport-time-clocks-1978.md
+  s_20c5fdf91f2755::t_232c518a9cea03 158-161
+src/content/docs/papers/lamport-tla-1994.md
+  s_20c5fdf91f2755::t_482f9f4571ac73 178,184
+src/content/docs/papers/lampson-hints-1983.md
+  s_20c5fdf91f2755::t_29f354d6e6951a 154-155
+src/content/docs/papers/lampson-hints.md
+  s_20c5fdf91f2755::t_02b6e755ee23db 168,170
+src/content/docs/papers/landin-secd.md
+  s_20c5fdf91f2755::t_34934de060e2fd 172
+src/content/docs/papers/lean-prover.md
+  s_20c5fdf91f2755::t_94899caa2bdad7 153
+src/content/docs/papers/lee-keystone-2020.md
+  s_20c5fdf91f2755::t_66986a03d2fa4f 153-154
+src/content/docs/papers/leis-2015-optimizers.md
+  s_20c5fdf91f2755::t_b5471c73344f99 155-156,159
+src/content/docs/papers/lerner-seminal.md
+  s_20c5fdf91f2755::t_cdb85bb4c1453a 163
+src/content/docs/papers/li-2018-redner.md
+  s_20c5fdf91f2755::t_e50041dd50e674 148
+src/content/docs/papers/li-t-closeness-2007.md
+  s_20c5fdf91f2755::t_1efdc6704745d1 158-159
+src/content/docs/papers/lindholm-2008-tesla.md
+  s_20c5fdf91f2755::t_d6122f6fa3dc6c 172-173
+src/content/docs/papers/linear-attention-still-2026.md
+  s_20c5fdf91f2755::t_325d62ce1075e2 150
+src/content/docs/papers/linear-scan-reg-alloc.md
+  s_20c5fdf91f2755::t_963e9da07da9d5 173
+src/content/docs/papers/linear-types.md
+  s_20c5fdf91f2755::t_58b1fdf1eee9a1 189
+src/content/docs/papers/linux-kernel.md
+  s_20c5fdf91f2755::t_c9b9d935097bfa 158-164
+src/content/docs/papers/lion-2023.md
+  s_20c5fdf91f2755::t_ea14d5e53555c0 159
+src/content/docs/papers/lipp-meltdown-2018.md
+  s_20c5fdf91f2755::t_30a1c5edadf525 152-157
+src/content/docs/papers/liquid-types.md
+  s_20c5fdf91f2755::t_899ccb418af4f0 162
+src/content/docs/papers/liskov-abstraction-1974.md
+  s_20c5fdf91f2755::t_be7dc4f6a2ba04 158-159
+src/content/docs/papers/liu-2020-dlss.md
+  s_20c5fdf91f2755::t_b9f5c35aec9db6 158
+src/content/docs/papers/llama.md
+  s_20c5fdf91f2755::t_f8e7d4b3aaa214 158,160,164-167
+src/content/docs/papers/llava.md
+  s_20c5fdf91f2755::t_9132eb0ccc18ed 184-188
+src/content/docs/papers/llm-int8-2022.md
+  s_20c5fdf91f2755::t_2221c2890097b4 177,179-180
+src/content/docs/papers/llm-wiki-retrieval-reasoning.md
+  s_20c5fdf91f2755::t_12481e1569c071 144-145
+src/content/docs/papers/llmsurgeon-data-mixture.md
+  s_20c5fdf91f2755::t_82d8652f719be5 154-155
+src/content/docs/papers/llvm.md
+  s_20c5fdf91f2755::t_9826cd0272a7f9 184-239
+src/content/docs/papers/lmdb-2011.md
+  s_20c5fdf91f2755::t_a398710c7d17a9 157
+src/content/docs/papers/locus-1980.md
+  s_20c5fdf91f2755::t_a5a8c6b1fc821a 166
+src/content/docs/papers/logoot-2010.md
+  s_20c5fdf91f2755::t_b03fde95d13b9a 153
+src/content/docs/papers/lomo-modality.md
+  s_20c5fdf91f2755::t_3db8b9ab5a7599 151-152
+src/content/docs/papers/longformer-2020.md
+  s_20c5fdf91f2755::t_0375fcaa41d9d1 153-154
+src/content/docs/papers/loong-doc-mt.md
+  s_20c5fdf91f2755::t_4eeb3db7ac9f2e 150-151
+src/content/docs/papers/loop-1987-subdivision.md
+  s_20c5fdf91f2755::t_dbd6e01ec243a1 172
+src/content/docs/papers/lora.md
+  s_20c5fdf91f2755::t_6196705dc35c6f 163-168
+src/content/docs/papers/lsm-tree-1996.md
+  s_20c5fdf91f2755::t_25af2a1e2bc63c 146,148,150,158-159
+src/content/docs/papers/mach-vm-1987.md
+  s_20c5fdf91f2755::t_48e73446e0ad7e 155-156
+src/content/docs/papers/machanavajjhala-l-diversity-2007.md
+  s_20c5fdf91f2755::t_065cb5828d3657 162-163
+src/content/docs/papers/macklin-2014-position-based-fluids.md
+  s_20c5fdf91f2755::t_a47783b11537b6 150-152
+src/content/docs/papers/macklin-2016-xpbd.md
+  s_20c5fdf91f2755::t_21595ad4f50b44 178-179
+src/content/docs/papers/madry-pgd-2017.md
+  s_20c5fdf91f2755::t_8a2cc02f3a9f40 151-154
+src/content/docs/papers/mae.md
+  s_20c5fdf91f2755::t_b0c9956be5b343 145
+src/content/docs/papers/magic3d-2023.md
+  s_20c5fdf91f2755::t_26b5271fd84325 157
+src/content/docs/papers/mahajan-2002-bgp-misconfig.md
+  s_20c5fdf91f2755::t_7ae635822cde8d 170
+src/content/docs/papers/making-smart-contracts-smarter.md
+  s_20c5fdf91f2755::t_4c552525e00003 160-161
+src/content/docs/papers/mamba.md
+  s_20c5fdf91f2755::t_80bdf66daab4ec 150-154
+src/content/docs/papers/mapreduce.md
+  s_20c5fdf91f2755::t_5390cbaa0ff863 156,158,160,162,164-167,172-173,175-176,178,181,183,186-187,191,193-194
+src/content/docs/papers/maron-kuhns-1960.md
+  s_20c5fdf91f2755::t_a2c6412524a4dc 153
+src/content/docs/papers/mattern-1989.md
+  s_20c5fdf91f2755::t_162b99cf435be8 158
+src/content/docs/papers/maxwell-architecture-2014.md
+  s_20c5fdf91f2755::t_db05d61b9df25c 162-167
+src/content/docs/papers/mccarthy-lisp.md
+  s_20c5fdf91f2755::t_79338bc7a58962 156,175
+src/content/docs/papers/mcfarling-bp-1993.md
+  s_20c5fdf91f2755::t_91e8610ce8e02e 171
+src/content/docs/papers/mcmahan-fedavg-2017.md
+  s_20c5fdf91f2755::t_2c0109cb3968ff 190
+src/content/docs/papers/mcp-spec.md
+  s_20c5fdf91f2755::t_94615273e0f8f0 153-154
+src/content/docs/papers/mcs-locks-1991.md
+  s_20c5fdf91f2755::t_772b2f24395403 151
+src/content/docs/papers/meagher-1982-octree.md
+  s_20c5fdf91f2755::t_b7dfbf6a0a0718 178-179
+src/content/docs/papers/medcase-fhir.md
+  s_20c5fdf91f2755::t_99634b09d6eb16 155-156
+src/content/docs/papers/megastore-2011.md
+  s_20c5fdf91f2755::t_8bfc9d08069e24 164-165
+src/content/docs/papers/megatron-core-moe-2026.md
+  s_20c5fdf91f2755::t_588dc140e210d0 150
+src/content/docs/papers/megatron-lm.md
+  s_20c5fdf91f2755::t_da02128ed2cb6b 153-165
+src/content/docs/papers/mem-ft-lora.md
+  s_20c5fdf91f2755::t_17a8b0208f923c 154-155
+src/content/docs/papers/memcached-fb-2013.md
+  s_20c5fdf91f2755::t_e9ae9bce83a2f9 153
+src/content/docs/papers/mencius-2008.md
+  s_20c5fdf91f2755::t_623f122fab23e0 164
+src/content/docs/papers/mesa-optimization-2019.md
+  s_20c5fdf91f2755::t_9822cbf72d3166 153
+src/content/docs/papers/mesos-2011.md
+  s_20c5fdf91f2755::t_6453cc5283859d 155-159
+src/content/docs/papers/mesos.md
+  s_20c5fdf91f2755::t_73492b6cc0b79d 150-153
+src/content/docs/papers/metagpt.md
+  s_20c5fdf91f2755::t_6c5c28ba8747a9 171-174
+src/content/docs/papers/metcalfe-boggs-1976.md
+  s_20c5fdf91f2755::t_d81b8c023c3227 161-162
+src/content/docs/papers/michael-scott-queue.md
+  s_20c5fdf91f2755::t_d2ba45b4cdc095 171-173
+src/content/docs/papers/milestone-phase-order.md
+  s_20c5fdf91f2755::t_de27ebe653dd89 153-154
+src/content/docs/papers/mills-ntp-1991.md
+  s_20c5fdf91f2755::t_0321a117d5f841 161
+src/content/docs/papers/millwheel-2013.md
+  s_20c5fdf91f2755::t_7224ddeaf17d3f 151
+src/content/docs/papers/milner-pi-calculus.md
+  s_20c5fdf91f2755::t_6f52498e4020c4 166-172
+src/content/docs/papers/milvus-2021.md
+  s_20c5fdf91f2755::t_35cf6e243aa761 154-155
+src/content/docs/papers/mine-octagon-2006.md
+  s_20c5fdf91f2755::t_27bb162e6dc4d8 159-161
+src/content/docs/papers/minisat-2003.md
+  s_20c5fdf91f2755::t_76f92794736acf 172
+src/content/docs/papers/mips-1981.md
+  s_20c5fdf91f2755::t_ed7aea616df090 178
+src/content/docs/papers/mira-rubric.md
+  s_20c5fdf91f2755::t_370361fe2d7fa9 155-156
+src/content/docs/papers/mironov-renyi-dp-2017.md
+  s_20c5fdf91f2755::t_0c5eeff9eaaac9 154,157,159
+src/content/docs/papers/mixture-of-experts.md
+  s_20c5fdf91f2755::t_8c10aa4968bd7e 145,149
+src/content/docs/papers/mixup-2018.md
+  s_20c5fdf91f2755::t_d2080d2857bc23 152
+src/content/docs/papers/mlflow.md
+  s_20c5fdf91f2755::t_9a4a9b06b7c52d 166-168
+src/content/docs/papers/mlir.md
+  s_20c5fdf91f2755::t_7f75f1a283f96e 151,153,159
+src/content/docs/papers/mmlu-2021.md
+  s_20c5fdf91f2755::t_3ff0726b4d77ec 154,156
+src/content/docs/papers/mode-connectivity-2018.md
+  s_20c5fdf91f2755::t_bd3ca309625ff2 154
+src/content/docs/papers/moesi-cache-coherence-1986.md
+  s_20c5fdf91f2755::t_0b3bd3556d377b 176-177,179-180
+src/content/docs/papers/mogul-1995-persistent-http.md
+  s_20c5fdf91f2755::t_ed3a133c68ae65 157
+src/content/docs/papers/monaghan-1992-sph.md
+  s_20c5fdf91f2755::t_a5ce451166ba76 155-158
+src/content/docs/papers/monetdb-x100-2005.md
+  s_20c5fdf91f2755::t_0947ea593caaeb 154-156,160-162
+src/content/docs/papers/morsel-driven-2014.md
+  s_20c5fdf91f2755::t_d01705c94e46e7 170-171
+src/content/docs/papers/mptcp-2012.md
+  s_20c5fdf91f2755::t_3498c774b246d2 167
+src/content/docs/papers/mqtt-s-2008.md
+  s_20c5fdf91f2755::t_c8f95789a941de 156-160
+src/content/docs/papers/ms-marco-2016.md
+  s_20c5fdf91f2755::t_a6a55a011cb439 163,165
+src/content/docs/papers/mueller-2007-pbd.md
+  s_20c5fdf91f2755::t_3f734de44b793f 159-160
+src/content/docs/papers/mueller-2022-instant-ngp.md
+  s_20c5fdf91f2755::t_53ef0fae19e4b1 161
+src/content/docs/papers/muller-2007-pbd.md
+  s_20c5fdf91f2755::t_2fc07d0d457ebd 162-163
+src/content/docs/papers/multics-1965.md
+  s_20c5fdf91f2755::t_263a63cede78c2 156-159
+src/content/docs/papers/muzero.md
+  s_20c5fdf91f2755::t_68dbbfc647053d 150-152
+src/content/docs/papers/mvcc.md
+  s_20c5fdf91f2755::t_95402d4cd0d8ac 170-174
+src/content/docs/papers/naiad-2013-sosp.md
+  s_20c5fdf91f2755::t_954807d1877e1c 144
+src/content/docs/papers/nelson-oppen-1979.md
+  s_20c5fdf91f2755::t_a8e2b8c6edf8fc 177
+src/content/docs/papers/nerf-2020.md
+  s_20c5fdf91f2755::t_2d8136f3a576a4 150,153,161
+src/content/docs/papers/nestedkv.md
+  s_20c5fdf91f2755::t_b857a7d0f2507e 150-151
+src/content/docs/papers/netkat-2014.md
+  s_20c5fdf91f2755::t_d51b495990d2e7 154
+src/content/docs/papers/neumann-2015-large-joins.md
+  s_20c5fdf91f2755::t_272fa7fbce4ba8 158,162,164
+src/content/docs/papers/neumf-2017.md
+  s_20c5fdf91f2755::t_140a909dce34b0 154
+src/content/docs/papers/newcombe-2011-kinectfusion.md
+  s_20c5fdf91f2755::t_454893f9250787 159-160
+src/content/docs/papers/newsome-taintcheck-2005.md
+  s_20c5fdf91f2755::t_c461965d5b163c 172-179
+src/content/docs/papers/nfs-1985.md
+  s_20c5fdf91f2755::t_52770b76341d39 165
+src/content/docs/papers/ngabonziza-trustzone-2016.md
+  s_20c5fdf91f2755::t_91c7033bf46967 156-157
+src/content/docs/papers/nickolls-dally-2010-cuda-era.md
+  s_20c5fdf91f2755::t_f94e480788736c 188
+src/content/docs/papers/nimier-david-2019-mitsuba2.md
+  s_20c5fdf91f2755::t_b44a828e03bbc9 152-155
+src/content/docs/papers/nix.md
+  s_20c5fdf91f2755::t_bfcb5ee20e1191 152,154-155
+src/content/docs/papers/nlp-agent-2024.md
+  s_20c5fdf91f2755::t_238fba0858920c 145
+src/content/docs/papers/nlp-rag-2024.md
+  s_20c5fdf91f2755::t_5960e1066d5216 146
+src/content/docs/papers/no-silver-bullet.md
+  s_20c5fdf91f2755::t_b39b1555d16904 158
+src/content/docs/papers/ntk-2018.md
+  s_20c5fdf91f2755::t_be6f37654010c2 151-152
+src/content/docs/papers/nvm.md
+  s_20c5fdf91f2755::t_abbadf764650bb 153
+src/content/docs/papers/oauth-2.1-rfc.md
+  s_20c5fdf91f2755::t_392589b66e2beb 184-185
+src/content/docs/papers/observability.md
+  s_20c5fdf91f2755::t_90d708388e2dd0 159-160
+src/content/docs/papers/okapi-bm25-1994.md
+  s_20c5fdf91f2755::t_600a88341bb1de 159-175
+src/content/docs/papers/omega-2013.md
+  s_20c5fdf91f2755::t_dd5f025e33a260 159,161
+src/content/docs/papers/on-demand-container-loading.md
+  s_20c5fdf91f2755::t_7d7c464b2fa8f5 152-153
+src/content/docs/papers/openhands.md
+  s_20c5fdf91f2755::t_3aed3763c343e6 151-152
+src/content/docs/papers/opensearch.md
+  s_20c5fdf91f2755::t_697ecd42fda60c 166-167
+src/content/docs/papers/optuna.md
+  s_20c5fdf91f2755::t_6d4196eb83c3cf 157
+src/content/docs/papers/orca-2022.md
+  s_20c5fdf91f2755::t_751d38fed1eacf 150-152
+src/content/docs/papers/oscar-int2-kv.md
+  s_20c5fdf91f2755::t_6a32fedebffa7e 151-155
+src/content/docs/papers/ot-1989.md
+  s_20c5fdf91f2755::t_80d6c75a715a5e 159-163
+src/content/docs/papers/owens-2007-gpgpu-survey.md
+  s_20c5fdf91f2755::t_6350f09fd10b15 165-171
+src/content/docs/papers/p4-2014.md
+  s_20c5fdf91f2755::t_4d2c01792b8db5 160
+src/content/docs/papers/paged-attention-vllm.md
+  s_20c5fdf91f2755::t_04dcd4bda92984 151-154
+src/content/docs/papers/paged-attention.md
+  s_20c5fdf91f2755::t_5fd6eb9e7172fb 155-169
+src/content/docs/papers/pagerank-1998.md
+  s_20c5fdf91f2755::t_f5534dfed0c256 153
+src/content/docs/papers/paillier-1999.md
+  s_20c5fdf91f2755::t_48d36449fd8e9a 165-166
+src/content/docs/papers/panel.md
+  s_20c5fdf91f2755::t_33d7ef67855b03 164
+src/content/docs/papers/park-2019-deepsdf.md
+  s_20c5fdf91f2755::t_8bf5ce93fd21cf 160
+src/content/docs/papers/parnas-information-hiding-1972.md
+  s_20c5fdf91f2755::t_5778c96a100d14 150-151
+src/content/docs/papers/parti-2022.md
+  s_20c5fdf91f2755::t_c80dc58bf66cc2 160-161
+src/content/docs/papers/partial-evaluation-jones.md
+  s_20c5fdf91f2755::t_25c3ab458a9b47 141
+src/content/docs/papers/pascal-architecture-2016.md
+  s_20c5fdf91f2755::t_c79183c2c2f6f6 169-176
+src/content/docs/papers/passnet-graph-compiler.md
+  s_20c5fdf91f2755::t_9d4b42144840b3 154-155
+src/content/docs/papers/pastry-2001.md
+  s_20c5fdf91f2755::t_24d18f7c88aa35 156
+src/content/docs/papers/paxos-1998.md
+  s_20c5fdf91f2755::t_8bbf3c8fc78c37 163-227
+src/content/docs/papers/paxos-simple-2001.md
+  s_20c5fdf91f2755::t_81d9552a31bf58 157,163,168
+src/content/docs/papers/paxos.md
+  s_20c5fdf91f2755::t_2784be65a8c87f 161,176-184
+src/content/docs/papers/pbft-1999.md
+  s_20c5fdf91f2755::t_4ff337ff1278fd 151-152
+src/content/docs/papers/performer-2020.md
+  s_20c5fdf91f2755::t_bbf7281683d1d9 158
+src/content/docs/papers/perlin-1985-noise.md
+  s_20c5fdf91f2755::t_a42bc808efc28d 160
+src/content/docs/papers/persistent-memory-2014.md
+  s_20c5fdf91f2755::t_6096763b91d6b3 155
+src/content/docs/papers/phong-1975.md
+  s_20c5fdf91f2755::t_5bf0cca9a626ae 164
+src/content/docs/papers/piccolo-building-fast-distributed-programs-with-partitioned-2010.md
+  s_20c5fdf91f2755::t_8fcb90dc2cc344 163-165
+src/content/docs/papers/piotrowska-loopix-2017.md
+  s_20c5fdf91f2755::t_630b0aee7c1db2 154-155
+src/content/docs/papers/pivot-tracing-2015.md
+  s_20c5fdf91f2755::t_160a23bc9b8486 158
+src/content/docs/papers/plan9-1995.md
+  s_20c5fdf91f2755::t_f4774f9428df54 158-159
+src/content/docs/papers/plenoxels-2022.md
+  s_20c5fdf91f2755::t_fd8a9366a92f93 167
+src/content/docs/papers/pnuts-2008.md
+  s_20c5fdf91f2755::t_ef4e95025d550c 156-157
+src/content/docs/papers/pointnet.md
+  s_20c5fdf91f2755::t_a9e1f7fb04493a 162
+src/content/docs/papers/ppc-preplan.md
+  s_20c5fdf91f2755::t_3f51c633e607d4 173
+src/content/docs/papers/ppo.md
+  s_20c5fdf91f2755::t_20405ffb4b441e 154,156-157,162-164
+src/content/docs/papers/prefix-cache-policy-2026.md
+  s_20c5fdf91f2755::t_7f2c0da11b97db 150-153
+src/content/docs/papers/product-quantization-2011.md
+  s_20c5fdf91f2755::t_3e6afa4b089a70 158,160
+src/content/docs/papers/program-comprehension-fmri.md
+  s_20c5fdf91f2755::t_e32fa8b36f36ab 155
+src/content/docs/papers/program-shepherding-2002.md
+  s_20c5fdf91f2755::t_18bea398212c76 150-151
+src/content/docs/papers/projection-bench.md
+  s_20c5fdf91f2755::t_e1e6c6b86279aa 178-179
+src/content/docs/papers/prolog-colmerauer.md
+  s_20c5fdf91f2755::t_4ba94828aa393c 169
+src/content/docs/papers/prototypical-networks-2017.md
+  s_20c5fdf91f2755::t_e68f8a40c2bca2 162
+src/content/docs/papers/ps-li-2014.md
+  s_20c5fdf91f2755::t_a7c7497b3935b4 160
+src/content/docs/papers/push-pull-frp.md
+  s_20c5fdf91f2755::t_79af2571f78d46 150
+src/content/docs/papers/pypy-tracing-jit.md
+  s_20c5fdf91f2755::t_776ee8cfcc63d5 166,168
+src/content/docs/papers/quantum-supremacy-2019.md
+  s_20c5fdf91f2755::t_3b30ef3cbee5c8 162-163
+src/content/docs/papers/quic.md
+  s_20c5fdf91f2755::t_705894d8bd7b05 154,163,166,168
+src/content/docs/papers/r-bgp-2007.md
+  s_20c5fdf91f2755::t_5e248d5972a2bb 154-159
+src/content/docs/papers/rabin-ot-1981.md
+  s_20c5fdf91f2755::t_24f06d1d96ed27 158-159
+src/content/docs/papers/raft-2014.md
+  s_20c5fdf91f2755::t_25675b1c209c5a 153-156
+src/content/docs/papers/raft.md
+  s_20c5fdf91f2755::t_c64eb71cf0ec42 150-214
+src/content/docs/papers/rag-lewis-2020.md
+  s_20c5fdf91f2755::t_84c4f3ab877bb0 141,143-146,153
+src/content/docs/papers/ranknet-2005.md
+  s_20c5fdf91f2755::t_003c1dab790736 150
+src/content/docs/papers/ray-2018.md
+  s_20c5fdf91f2755::t_9c2f09e9aef641 161-164
+src/content/docs/papers/rcu-2001.md
+  s_20c5fdf91f2755::t_90baa8e1c9f7f1 153-154
+src/content/docs/papers/react-agent.md
+  s_20c5fdf91f2755::t_c267fb91005fba 169-178
+src/content/docs/papers/react-server-components.md
+  s_20c5fdf91f2755::t_80d93726555a1a 165-166
+src/content/docs/papers/react.md
+  s_20c5fdf91f2755::t_27d67c2711a93a 169-189
+src/content/docs/papers/reasoning-with-sampling.md
+  s_20c5fdf91f2755::t_48e8af6c344393 156-158
+src/content/docs/papers/red-1993.md
+  s_20c5fdf91f2755::t_8623f83a0e9cc5 155-158
+src/content/docs/papers/reed-onion-routing-1998.md
+  s_20c5fdf91f2755::t_3df2daf8ad3ac5 159-160
+src/content/docs/papers/reed-solomon-1960.md
+  s_20c5fdf91f2755::t_ade1823f929da6 153
+src/content/docs/papers/reflexion.md
+  s_20c5fdf91f2755::t_ed395cc8e12f08 172,174,176
+src/content/docs/papers/regev-lwe-2005.md
+  s_20c5fdf91f2755::t_e147d3512ce8ed 151-153
+src/content/docs/papers/reps-ifds.md
+  s_20c5fdf91f2755::t_eb6fa68c6f789d 156
+src/content/docs/papers/resnet.md
+  s_20c5fdf91f2755::t_431a50ae529a8e 169,171-173,178,181
+src/content/docs/papers/resolution-diagnostics-llm.md
+  s_20c5fdf91f2755::t_830c266149b93c 150-151
+src/content/docs/papers/rest-fielding-2000.md
+  s_20c5fdf91f2755::t_94c820164f786d 163,175-176
+src/content/docs/papers/reward-hacking.md
+  s_20c5fdf91f2755::t_55c185fd935af4 158-161
+src/content/docs/papers/reyes-1987.md
+  s_20c5fdf91f2755::t_6a0d82b5b65315 150-152
+src/content/docs/papers/reynolds-definitional-interpreters.md
+  s_20c5fdf91f2755::t_141ee031af233b 170
+src/content/docs/papers/rfc-3833-dns-threats.md
+  s_20c5fdf91f2755::t_524ee0c3d10fbe 153
+src/content/docs/papers/rim-latent-reasoning.md
+  s_20c5fdf91f2755::t_4e3972b666983b 150-151
+src/content/docs/papers/risc-i-1981.md
+  s_20c5fdf91f2755::t_80f51969ffb308 158
+src/content/docs/papers/rlhf-christiano.md
+  s_20c5fdf91f2755::t_65fe5e93da6681 142,148-150
+src/content/docs/papers/rm3-2001.md
+  s_20c5fdf91f2755::t_907cb39601c5e2 156
+src/content/docs/papers/roberta-2019.md
+  s_20c5fdf91f2755::t_5f5e1a899a98f9 158
+src/content/docs/papers/rocksdb-2017.md
+  s_20c5fdf91f2755::t_50630ed53a7953 155,157,160
+src/content/docs/papers/rocksdb-lsm.md
+  s_20c5fdf91f2755::t_fb2f37b71c2f35 171-172,174,185-188
+src/content/docs/papers/ron-2001.md
+  s_20c5fdf91f2755::t_7d354a8c105aff 148
+src/content/docs/papers/row-polymorphism-remy.md
+  s_20c5fdf91f2755::t_94a71b624b425f 151
+src/content/docs/papers/rrf-cormack-2009.md
+  s_20c5fdf91f2755::t_44dab0ca17d846 150
+src/content/docs/papers/rsa.md
+  s_20c5fdf91f2755::t_97b890f8cf2a6c 152,154,159,162-163,165-168,170-171
+src/content/docs/papers/rtp-llm-alibaba.md
+  s_20c5fdf91f2755::t_63bafcd8c5023f 151-152
+src/content/docs/papers/rwkv-2023.md
+  s_20c5fdf91f2755::t_3311f2b2b0925b 157
+src/content/docs/papers/sac-2018.md
+  s_20c5fdf91f2755::t_ce85d555ae17a7 155
+src/content/docs/papers/salsa-adapton.md
+  s_20c5fdf91f2755::t_e5b0734b237d43 155-157
+src/content/docs/papers/salsify-2018.md
+  s_20c5fdf91f2755::t_b7f73525ebb593 154-155
+src/content/docs/papers/salton-vsm-1975.md
+  s_20c5fdf91f2755::t_990f25fe8f5f7d 158,164
+src/content/docs/papers/saltzer-1984-e2e.md
+  s_20c5fdf91f2755::t_f3253dc28e093e 157
+src/content/docs/papers/saltzer-schroeder-1975.md
+  s_20c5fdf91f2755::t_36589afd46ef9a 161,163,167,169-171,174
+src/content/docs/papers/sam.md
+  s_20c5fdf91f2755::t_d5fb323ed685b7 160-161,165
+src/content/docs/papers/sanctum-2016.md
+  s_20c5fdf91f2755::t_1c3e942b8ef0d9 161-163
+src/content/docs/papers/sarathi-serve.md
+  s_20c5fdf91f2755::t_d41c0fb49d191c 152
+src/content/docs/papers/scads-database-2008.md
+  s_20c5fdf91f2755::t_2304fcd2c3af77 147
+src/content/docs/papers/scala-macros.md
+  s_20c5fdf91f2755::t_6671bfe42292ba 149
+src/content/docs/papers/scaling-hnsws-antirez.md
+  s_20c5fdf91f2755::t_9fa10ff6dd7b81 150-151
+src/content/docs/papers/scaling-laws.md
+  s_20c5fdf91f2755::t_3fcbf6dd6fc0c8 138,141,148
+src/content/docs/papers/schgen-pcb.md
+  s_20c5fdf91f2755::t_00dff25368954d 155-156
+src/content/docs/papers/scott-strachey-denotational.md
+  s_20c5fdf91f2755::t_4ce10c41f52a2e 153
+src/content/docs/papers/sctp-multipath-2006.md
+  s_20c5fdf91f2755::t_3241c32a0224f1 150
+src/content/docs/papers/securify-2018.md
+  s_20c5fdf91f2755::t_b12ee6956250e8 160-161
+src/content/docs/papers/sel4-2009.md
+  s_20c5fdf91f2755::t_a2cce27da4ee50 161-162
+src/content/docs/papers/self-adjusting.md
+  s_20c5fdf91f2755::t_bcafb3f3ae43da 156-158
+src/content/docs/papers/self-consistency-2022.md
+  s_20c5fdf91f2755::t_5a27e0fc08ea27 157-163
+src/content/docs/papers/self-evolving-agents-survey.md
+  s_20c5fdf91f2755::t_b26227c3291a22 164
+src/content/docs/papers/self-evolving-recsys-2602.md
+  s_20c5fdf91f2755::t_0a5cb2767e3dac 150
+src/content/docs/papers/self-evolving-software-agents.md
+  s_20c5fdf91f2755::t_4f7f48174acb77 151
+src/content/docs/papers/self-rag-2023.md
+  s_20c5fdf91f2755::t_5e032bcdb215e3 163-164
+src/content/docs/papers/self-refine-2023.md
+  s_20c5fdf91f2755::t_8a034a0817dcc7 162-163
+src/content/docs/papers/self-trained-verification.md
+  s_20c5fdf91f2755::t_38ff0b87ace5a6 153-154
+src/content/docs/papers/selinger-1979.md
+  s_20c5fdf91f2755::t_8500598b073465 151,165
+src/content/docs/papers/selinux-2001.md
+  s_20c5fdf91f2755::t_150083dd79064f 154-155
+src/content/docs/papers/seq2seq-2014.md
+  s_20c5fdf91f2755::t_2042696007aba7 158
+src/content/docs/papers/server-sent-events.md
+  s_20c5fdf91f2755::t_4bf292980b819c 162
+src/content/docs/papers/sglang-2024.md
+  s_20c5fdf91f2755::t_2d878f011e1892 158-163
+src/content/docs/papers/sgx-2013.md
+  s_20c5fdf91f2755::t_4b8b63866ef027 160-162,164-166
+src/content/docs/papers/shannon-1948.md
+  s_20c5fdf91f2755::t_0c69b40be12de3 153
+src/content/docs/papers/shellcheck.md
+  s_20c5fdf91f2755::t_f0b5e71f982b9c 194
+src/content/docs/papers/shokri-mia-2017.md
+  s_20c5fdf91f2755::t_e0d25bb12a8a38 153-154
+src/content/docs/papers/shor-1994.md
+  s_20c5fdf91f2755::t_6912367ca1bcb7 150-152
+src/content/docs/papers/sillito-questions.md
+  s_20c5fdf91f2755::t_7b6537b47e0848 154
+src/content/docs/papers/silo-oltp-2013.md
+  s_20c5fdf91f2755::t_9cc025e83e76e7 150
+src/content/docs/papers/silt-2011.md
+  s_20c5fdf91f2755::t_07602d3f844e49 151-152
+src/content/docs/papers/simhash-charikar-2002.md
+  s_20c5fdf91f2755::t_9673c6756f94ff 161
+src/content/docs/papers/simula-67.md
+  s_20c5fdf91f2755::t_d32125a4753707 192
+src/content/docs/papers/skcc-skill-compiler.md
+  s_20c5fdf91f2755::t_e8e41013f66341 145
+src/content/docs/papers/skeen-3pc-1981.md
+  s_20c5fdf91f2755::t_77b7472574e63b 151-152
+src/content/docs/papers/skill-sd-self-distillation.md
+  s_20c5fdf91f2755::t_4b1248f4a96bf5 151
+src/content/docs/papers/skip-list-1990.md
+  s_20c5fdf91f2755::t_65c83ea8ba5e8b 160-161
+src/content/docs/papers/skip-locked-postgres-9.5.md
+  s_20c5fdf91f2755::t_8390a32b9d7166 181
+src/content/docs/papers/slab-1994.md
+  s_20c5fdf91f2755::t_235ba88b550b3e 152
+src/content/docs/papers/slam-microsoft.md
+  s_20c5fdf91f2755::t_92a90bfae606f1 162-163
+src/content/docs/papers/sleeper-agents.md
+  s_20c5fdf91f2755::t_25f33e25d29f81 152,155
+src/content/docs/papers/smalltalk-80.md
+  s_20c5fdf91f2755::t_1d9983ee5ade21 175
+src/content/docs/papers/snowflake-2016.md
+  s_20c5fdf91f2755::t_354d1415d51ef2 155-158,160-161
+src/content/docs/papers/snowflake.md
+  s_20c5fdf91f2755::t_c09eed505d1193 150-161
+src/content/docs/papers/soft-updates-1999.md
+  s_20c5fdf91f2755::t_b8814eba738dc2 160
+src/content/docs/papers/soltesz-2007.md
+  s_20c5fdf91f2755::t_465f2ad3ad34c7 152-153
+src/content/docs/papers/sophia-2023.md
+  s_20c5fdf91f2755::t_77e0bb1e31b85b 152-153
+src/content/docs/papers/sorkine-2004-laplacian-editing.md
+  s_20c5fdf91f2755::t_6f61c88ada99fe 150
+src/content/docs/papers/souffle-datalog.md
+  s_20c5fdf91f2755::t_56768b2c06d10c 167-168,170,172
+src/content/docs/papers/soundness-bench.md
+  s_20c5fdf91f2755::t_9a3a3b5e276130 157-158
+src/content/docs/papers/spann-2021.md
+  s_20c5fdf91f2755::t_a6c3b6570457df 159
+src/content/docs/papers/spanner-2012.md
+  s_20c5fdf91f2755::t_2e483b5b98a9c8 148,151,154,163,166,169,171-172,178,188,194,197,201-202
+src/content/docs/papers/spanner.md
+  s_20c5fdf91f2755::t_78eea0d2d949fa 158,166,180-182
+src/content/docs/papers/spark-rdd.md
+  s_20c5fdf91f2755::t_921e9e75a06915 176-179
+src/content/docs/papers/splade-2021.md
+  s_20c5fdf91f2755::t_d41753d90fc60f 149,151
+src/content/docs/papers/ssa.md
+  s_20c5fdf91f2755::t_8aaad3e116880f 169-215
+src/content/docs/papers/stable-diffusion.md
+  s_20c5fdf91f2755::t_e0f3d3f45175c1 160-176
+src/content/docs/papers/stainless-2017.md
+  s_20c5fdf91f2755::t_5e26e1717e8419 147
+src/content/docs/papers/standard-ml.md
+  s_20c5fdf91f2755::t_71c9c1712ce840 166-167,169,171-172,174-176,179-180,182,184-186,189-190
+src/content/docs/papers/starcoder-2023.md
+  s_20c5fdf91f2755::t_a4acc671c6985d 164
+src/content/docs/papers/starrocks.md
+  s_20c5fdf91f2755::t_29314d1baa6659 150
+src/content/docs/papers/stm-shavit-touitou.md
+  s_20c5fdf91f2755::t_2933f664ccc4d8 155-156
+src/content/docs/papers/stonebraker-2010-sqlnosql.md
+  s_20c5fdf91f2755::t_a8fb06e4e2fb8c 155
+src/content/docs/papers/stylegan2-2020.md
+  s_20c5fdf91f2755::t_88381c80f2c8fa 155
+src/content/docs/papers/sulsky-1994-mpm.md
+  s_20c5fdf91f2755::t_d69b251df2933e 149
+src/content/docs/papers/swe-agent.md
+  s_20c5fdf91f2755::t_f0abaa24f2c4ef 141,144,147-148,150,152-153
+src/content/docs/papers/swe-bench.md
+  s_20c5fdf91f2755::t_ff356793960e2b 151
+src/content/docs/papers/sweeney-k-anonymity-2002.md
+  s_20c5fdf91f2755::t_63f0d846881267 169-171
+src/content/docs/papers/sycl-cpp-2020.md
+  s_20c5fdf91f2755::t_0ff45df8985d92 160-168
+src/content/docs/papers/sycophancy-2023.md
+  s_20c5fdf91f2755::t_6a93c5e7264c3c 174-175
+src/content/docs/papers/system-design.md
+  s_20c5fdf91f2755::t_a3c167d0934948 173-174
+src/content/docs/papers/system-f-reynolds-1974.md
+  s_20c5fdf91f2755::t_5bc568b4910dc3 156
+src/content/docs/papers/system-r-1976.md
+  s_20c5fdf91f2755::t_6052e86a48438b 151,166
+src/content/docs/papers/szegedy-adversarial-2013.md
+  s_20c5fdf91f2755::t_50d46210f873b1 151-155
+src/content/docs/papers/t0-2021.md
+  s_20c5fdf91f2755::t_d70325be0e8883 175
+src/content/docs/papers/t5.md
+  s_20c5fdf91f2755::t_97d34cb159ea41 157
+src/content/docs/papers/tamarin-2012.md
+  s_20c5fdf91f2755::t_6ded3bcb65da91 159-160
+src/content/docs/papers/tao-2013.md
+  s_20c5fdf91f2755::t_a9ba5418c197af 150
+src/content/docs/papers/taso-2019.md
+  s_20c5fdf91f2755::t_0446e3b574c55e 150
+src/content/docs/papers/taubin-1995-mesh-smoothing.md
+  s_20c5fdf91f2755::t_be63d6cce5f2e4 148-149
+src/content/docs/papers/tcp.md
+  s_20c5fdf91f2755::t_f16b7c83e8fc65 155,160,172-173,183,187-193
+src/content/docs/papers/td3-2018.md
+  s_20c5fdf91f2755::t_0794f8b8de06f5 150-152
+src/content/docs/papers/tensorflow-osdi-2016.md
+  s_20c5fdf91f2755::t_7ff9040529effe 147,149
+src/content/docs/papers/tensorrt-llm-2023.md
+  s_20c5fdf91f2755::t_5463c486b3898b 153-160
+src/content/docs/papers/tfidf-classic.md
+  s_20c5fdf91f2755::t_19ae73cafb0554 153-154
+src/content/docs/papers/the-os-1968.md
+  s_20c5fdf91f2755::t_816e55828e5184 169,171
+src/content/docs/papers/theorems-for-free.md
+  s_20c5fdf91f2755::t_374ac5672ab8d1 170
+src/content/docs/papers/thrust-2010.md
+  s_20c5fdf91f2755::t_4f76826a0b1dec 154
+src/content/docs/papers/tigerbeetle.md
+  s_20c5fdf91f2755::t_639faf03edbe0d 160,166
+src/content/docs/papers/tls-1.3.md
+  s_20c5fdf91f2755::t_609ea67656424f 153-181
+src/content/docs/papers/tomasulo-1967.md
+  s_20c5fdf91f2755::t_a57984712f46a2 157-160
+src/content/docs/papers/toolformer.md
+  s_20c5fdf91f2755::t_a4f343b9b6d0c1 151-159
+src/content/docs/papers/tor-2004.md
+  s_20c5fdf91f2755::t_f5a9b3d616efd5 147,149-154
+src/content/docs/papers/tradeoff-analysis.md
+  s_20c5fdf91f2755::t_0f4193b8ea5c12 164-165
+src/content/docs/papers/transformer-2017.md
+  s_20c5fdf91f2755::t_75e15272713fec 150-158
+src/content/docs/papers/transformer-xl-2019.md
+  s_20c5fdf91f2755::t_157a9546cc3f67 158,160-161
+src/content/docs/papers/transformer.md
+  s_20c5fdf91f2755::t_b002810da0f8e3 150-180
+src/content/docs/papers/tree-of-attention-2026.md
+  s_20c5fdf91f2755::t_099a6de3ec79a9 150
+src/content/docs/papers/trill-2014.md
+  s_20c5fdf91f2755::t_64c09ca25f294d 180-181
+src/content/docs/papers/triton-2019.md
+  s_20c5fdf91f2755::t_25fdef061b29fd 166,168
+src/content/docs/papers/triton-llm.md
+  s_20c5fdf91f2755::t_a5e514ddcf3189 157
+src/content/docs/papers/trustrank-2004.md
+  s_20c5fdf91f2755::t_e86c8faacff3f4 151
+src/content/docs/papers/turchin-supercompilation.md
+  s_20c5fdf91f2755::t_8bfe7b7180df7d 157
+src/content/docs/papers/turing-1936.md
+  s_20c5fdf91f2755::t_5a0b82dc6c9ba3 167-198
+src/content/docs/papers/turing-architecture-2018.md
+  s_20c5fdf91f2755::t_0392450c7b2054 167-170
+src/content/docs/papers/tvm-2018.md
+  s_20c5fdf91f2755::t_e020005a39e6b5 170-172
+src/content/docs/papers/tvm.md
+  s_20c5fdf91f2755::t_e0e243ed3db480 172-173
+src/content/docs/papers/ucb-cs186-fa2024.md
+  s_20c5fdf91f2755::t_5509d2ca14e211 144
+src/content/docs/papers/unified-memory-2014.md
+  s_20c5fdf91f2755::t_9bdfb2fc0a90a2 153-154
+src/content/docs/papers/v-system-1988.md
+  s_20c5fdf91f2755::t_82f24e720933c0 162
+src/content/docs/papers/vall-e-2023.md
+  s_20c5fdf91f2755::t_13f6c0d8fa3e2b 160
+src/content/docs/papers/vamp-verisoft-2006.md
+  s_20c5fdf91f2755::t_8cc72c1b826647 155-156
+src/content/docs/papers/veach-1995-mis.md
+  s_20c5fdf91f2755::t_f1cdeeba815b06 160-164
+src/content/docs/papers/vega-lite.md
+  s_20c5fdf91f2755::t_f9e0288cff97e3 182
+src/content/docs/papers/vellvm.md
+  s_20c5fdf91f2755::t_66bac70630c005 151
+src/content/docs/papers/velox-meta-2022.md
+  s_20c5fdf91f2755::t_0b67e5f302f61e 166
+src/content/docs/papers/vericache.md
+  s_20c5fdf91f2755::t_18e40cb90398da 150
+src/content/docs/papers/verus-specgym.md
+  s_20c5fdf91f2755::t_3eba01369ad0ef 154-155
+src/content/docs/papers/videomla.md
+  s_20c5fdf91f2755::t_c02d7576695202 150-151
+src/content/docs/papers/vit.md
+  s_20c5fdf91f2755::t_a40f174a9713b9 154,159,165
+src/content/docs/papers/vllm.md
+  s_20c5fdf91f2755::t_21b45106be95b8 151-178
+src/content/docs/papers/vogels-eventual-2009.md
+  s_20c5fdf91f2755::t_5927b42a0307a3 159,161
+src/content/docs/papers/volcano-1994.md
+  s_20c5fdf91f2755::t_caa32386f1674d 157,159,162,164,168,171,173-174
+src/content/docs/papers/volcano.md
+  s_20c5fdf91f2755::t_6147e1ca743a46 180,183,187-188
+src/content/docs/papers/volta-architecture-2017.md
+  s_20c5fdf91f2755::t_571fd5320851d4 159-169
+src/content/docs/papers/vr-1988.md
+  s_20c5fdf91f2755::t_99e3989bacd060 150,152
+src/content/docs/papers/vr-revisited-2012.md
+  s_20c5fdf91f2755::t_1b17ffe062588d 164
+src/content/docs/papers/vst-2014.md
+  s_20c5fdf91f2755::t_85d15cf924af81 156-157
+src/content/docs/papers/wadler-prettier.md
+  s_20c5fdf91f2755::t_bd375368788dbe 165,168-169
+src/content/docs/papers/wandb.md
+  s_20c5fdf91f2755::t_20c58eebd6b365 167
+src/content/docs/papers/wco-joins-relational-2020.md
+  s_20c5fdf91f2755::t_00d2e1429d9fdf 157-158
+src/content/docs/papers/websocket-rfc-6455.md
+  s_20c5fdf91f2755::t_72981739b10f20 156
+src/content/docs/papers/whisper-2022.md
+  s_20c5fdf91f2755::t_272b39967278ab 162-163
+src/content/docs/papers/whitted-1980.md
+  s_20c5fdf91f2755::t_a9382af699b742 181
+src/content/docs/papers/why3-2013.md
+  s_20c5fdf91f2755::t_0739966c730706 175
+src/content/docs/papers/williams-1983-mipmap.md
+  s_20c5fdf91f2755::t_50f80724e84f41 150
+src/content/docs/papers/wireguard-2017.md
+  s_20c5fdf91f2755::t_2e444a5f791d6a 160,162-163
+src/content/docs/papers/word2vec.md
+  s_20c5fdf91f2755::t_f63175df003b2e 150-151
+src/content/docs/papers/xla-compiler.md
+  s_20c5fdf91f2755::t_d9bad78d23d105 173-174,179
+src/content/docs/papers/yao-garbled-circuits-1986.md
+  s_20c5fdf91f2755::t_9560e78fe3b869 150-152
+src/content/docs/papers/z3-2008.md
+  s_20c5fdf91f2755::t_4cfd25d7e83998 171,173,175-176,181
+src/content/docs/papers/zab-2011.md
+  s_20c5fdf91f2755::t_940c9078b84489 163
+src/content/docs/papers/zero-2020.md
+  s_20c5fdf91f2755::t_8845fb76114a36 157-158
+src/content/docs/papers/zk-snark.md
+  s_20c5fdf91f2755::t_e4a77da39f09dd 147-159
+src/content/docs/papers/zombie-agents-2602.md
+  s_20c5fdf91f2755::t_63fd92beb64634 143
+src/content/docs/projects/3d-force-graph.md
+  s_20c5fdf91f2755::t_730419389f64b3 173-177
+src/content/docs/projects/aave-v3.md
+  s_20c5fdf91f2755::t_d739929499fd7d 165
+src/content/docs/projects/actix-web.md
+  s_20c5fdf91f2755::t_a03ef8eed12015 180-186
+src/content/docs/projects/affine.md
+  s_20c5fdf91f2755::t_f644b9058be0ab 155,157-160,162
+src/content/docs/projects/aframe.md
+  s_20c5fdf91f2755::t_fc875bd80a4ccd 200-203
+src/content/docs/projects/age.md
+  s_20c5fdf91f2755::t_a9ef2af76fae12 153
+src/content/docs/projects/aichat.md
+  s_20c5fdf91f2755::t_5a790e944715c0 153
+src/content/docs/projects/aider.md
+  s_20c5fdf91f2755::t_8532cedfa0a0c5 194-196
+src/content/docs/projects/altair.md
+  s_20c5fdf91f2755::t_a6cfa93cf629f8 180-190
+src/content/docs/projects/amcharts5.md
+  s_20c5fdf91f2755::t_a6179b51ebc4ff 159-160
+src/content/docs/projects/anime.md
+  s_20c5fdf91f2755::t_c561954cebeb7b 173
+src/content/docs/projects/ann-benchmarks.md
+  s_20c5fdf91f2755::t_9720612ab59e86 170
+src/content/docs/projects/ansible.md
+  s_20c5fdf91f2755::t_6465f20b2f3fa9 171-185
+src/content/docs/projects/ant-media-server.md
+  s_20c5fdf91f2755::t_d6808425841be3 179-180
+src/content/docs/projects/anthropic-cookbook.md
+  s_20c5fdf91f2755::t_f6e18f0664b6c7 170-175
+src/content/docs/projects/antv-f2.md
+  s_20c5fdf91f2755::t_c74c2ab8cbe671 159
+src/content/docs/projects/antv-g2.md
+  s_20c5fdf91f2755::t_128db5ae363663 170,176
+src/content/docs/projects/antv-g6.md
+  s_20c5fdf91f2755::t_78ba745fb3285e 168-169
+src/content/docs/projects/antv-x6.md
+  s_20c5fdf91f2755::t_bc72b09f7617f1 169-170
+src/content/docs/projects/anytype-ts.md
+  s_20c5fdf91f2755::t_eac76964472f44 175-176
+src/content/docs/projects/apexcharts.md
+  s_20c5fdf91f2755::t_de2e8d25f40bfa 166
+src/content/docs/projects/appflowy.md
+  s_20c5fdf91f2755::t_540d542c64a337 175-176
+src/content/docs/projects/appleseed.md
+  s_20c5fdf91f2755::t_48008c7aab0fd7 174-175
+src/content/docs/projects/ar-js.md
+  s_20c5fdf91f2755::t_1cfe99eab47db1 190-191
+src/content/docs/projects/aragon.md
+  s_20c5fdf91f2755::t_11613b3ce33b78 156
+src/content/docs/projects/arangodb.md
+  s_20c5fdf91f2755::t_3cb9c13eaee670 190
+src/content/docs/projects/ardour.md
+  s_20c5fdf91f2755::t_b13ece1c4a3346 161-162
+src/content/docs/projects/arduino-cli.md
+  s_20c5fdf91f2755::t_41f6fac5e7fa35 153,155-158,164
+src/content/docs/projects/argilla.md
+  s_20c5fdf91f2755::t_2f2e9a0cbbe48a 171-172
+src/content/docs/projects/argocd.md
+  s_20c5fdf91f2755::t_c60ca048cd218b 164,175
+src/content/docs/projects/arrow-rs.md
+  s_20c5fdf91f2755::t_648b565801be01 150
+src/content/docs/projects/arrow.md
+  s_20c5fdf91f2755::t_b308805bf9aea4 154-155
+src/content/docs/projects/asdf.md
+  s_20c5fdf91f2755::t_bc8f164e719c14 163-169
+src/content/docs/projects/aseprite.md
+  s_20c5fdf91f2755::t_2298bb16fbd134 176-177
+src/content/docs/projects/assimp.md
+  s_20c5fdf91f2755::t_b67395cf439685 196-198
+src/content/docs/projects/asterisk.md
+  s_20c5fdf91f2755::t_353c7ee21c8f26 163-165
+src/content/docs/projects/astro.md
+  s_20c5fdf91f2755::t_8244a071975056 200-220
+src/content/docs/projects/astronvim.md
+  s_20c5fdf91f2755::t_d7dccc6e95858b 153
+src/content/docs/projects/asynq.md
+  s_20c5fdf91f2755::t_2b164a2f546465 154
+src/content/docs/projects/atom.md
+  s_20c5fdf91f2755::t_c78d09ccae37ea 192
+src/content/docs/projects/aubio.md
+  s_20c5fdf91f2755::t_187b35ba56f146 158
+src/content/docs/projects/audacity.md
+  s_20c5fdf91f2755::t_4f149e69099a7b 157-158
+src/content/docs/projects/automerge.md
+  s_20c5fdf91f2755::t_b4341c18583166 156,158
+src/content/docs/projects/aws-spot-best-practices.md
+  s_20c5fdf91f2755::t_3bf8e275bacc36 163-164
+src/content/docs/projects/axios.md
+  s_20c5fdf91f2755::t_390d134593b9ca 168
+src/content/docs/projects/axolotl.md
+  s_20c5fdf91f2755::t_ddf1577f9860a0 169
+src/content/docs/projects/axum.md
+  s_20c5fdf91f2755::t_54aef665eabe76 185-211
+src/content/docs/projects/babylonjs.md
+  s_20c5fdf91f2755::t_d6a62c752783e9 166-170
+src/content/docs/projects/backstage.md
+  s_20c5fdf91f2755::t_34507c171d9545 193
+src/content/docs/projects/badger.md
+  s_20c5fdf91f2755::t_cd8580023b1599 172
+src/content/docs/projects/balancer.md
+  s_20c5fdf91f2755::t_527867496445ef 162
+src/content/docs/projects/bentoml.md
+  s_20c5fdf91f2755::t_557b916ae62963 186
+src/content/docs/projects/bevy.md
+  s_20c5fdf91f2755::t_2e2e0d61a56ddb 178-181,183,185-187
+src/content/docs/projects/bigbluebutton.md
+  s_20c5fdf91f2755::t_7c626f14815346 170
+src/content/docs/projects/billboard-js.md
+  s_20c5fdf91f2755::t_74616dde9c2a3d 156-157
+src/content/docs/projects/blender.md
+  s_20c5fdf91f2755::t_4105706cc1519d 174-194
+src/content/docs/projects/boa-engine.md
+  s_20c5fdf91f2755::t_add4dde4f3862f 175
+src/content/docs/projects/bokeh.md
+  s_20c5fdf91f2755::t_06cc83a6629cc5 168-173
+src/content/docs/projects/bookstack.md
+  s_20c5fdf91f2755::t_e020a63baf69bb 174-175
+src/content/docs/projects/botpress.md
+  s_20c5fdf91f2755::t_5cde28a7f9e0c3 156-159
+src/content/docs/projects/box2d.md
+  s_20c5fdf91f2755::t_3858fb2526aad0 158-161
+src/content/docs/projects/boxen.md
+  s_20c5fdf91f2755::t_964fca14b8e084 199-201
+src/content/docs/projects/bubbletea.md
+  s_20c5fdf91f2755::t_42e5f1a1653b06 167
+src/content/docs/projects/buildah.md
+  s_20c5fdf91f2755::t_f1aef9fff611aa 176-178
+src/content/docs/projects/buildkit.md
+  s_20c5fdf91f2755::t_c7ae19c18d6099 184-188
+src/content/docs/projects/buildroot.md
+  s_20c5fdf91f2755::t_f941dacfbc9831 163,166
+src/content/docs/projects/bullet.md
+  s_20c5fdf91f2755::t_b98d8f344989db 159-160
+src/content/docs/projects/bun.md
+  s_20c5fdf91f2755::t_47111e218f5c03 185,187,193,197
+src/content/docs/projects/caddy.md
+  s_20c5fdf91f2755::t_2ededfd7dc7099 181,185,192
+src/content/docs/projects/cal-com.md
+  s_20c5fdf91f2755::t_cc9fe02ea574d4 153
+src/content/docs/projects/calico.md
+  s_20c5fdf91f2755::t_54fabf1146d5e2 157
+src/content/docs/projects/cannon-es.md
+  s_20c5fdf91f2755::t_57bf532a717d22 175-176
+src/content/docs/projects/capacitor.md
+  s_20c5fdf91f2755::t_1ddb6aa4584802 166-172
+src/content/docs/projects/capnproto.md
+  s_20c5fdf91f2755::t_04772056049164 156
+src/content/docs/projects/cassandra.md
+  s_20c5fdf91f2755::t_af6bb580e7c395 163-177
+src/content/docs/projects/celery.md
+  s_20c5fdf91f2755::t_95fa1113ea7777 162,164
+src/content/docs/projects/cesium.md
+  s_20c5fdf91f2755::t_99ac1a5f963f6d 166-169
+src/content/docs/projects/changesets.md
+  s_20c5fdf91f2755::t_ebaed1ef5968aa 156
+src/content/docs/projects/chaos-mesh.md
+  s_20c5fdf91f2755::t_9dbd0d7d2f9f1e 159
+src/content/docs/projects/chart-js.md
+  s_20c5fdf91f2755::t_d5e342207aacbd 173-181
+src/content/docs/projects/chartist.md
+  s_20c5fdf91f2755::t_28a817212fb872 152-156
+src/content/docs/projects/chroma.md
+  s_20c5fdf91f2755::t_31735a84237348 140,142
+src/content/docs/projects/cilium.md
+  s_20c5fdf91f2755::t_caf32717e96305 152
+src/content/docs/projects/circuitpython.md
+  s_20c5fdf91f2755::t_4dd59ed38f0da0 187
+src/content/docs/projects/claude-agent-sdk.md
+  s_20c5fdf91f2755::t_89fd7849a2992a 192-193
+src/content/docs/projects/claude-code.md
+  s_20c5fdf91f2755::t_cdfa53094fa3a9 164-168,173,183,185-187
+src/content/docs/projects/clearml.md
+  s_20c5fdf91f2755::t_7062ad7041a7e6 200-201
+src/content/docs/projects/clickhouse.md
+  s_20c5fdf91f2755::t_def30e82f836e7 175
+src/content/docs/projects/cline.md
+  s_20c5fdf91f2755::t_1fd2a0358702cd 176-179
+src/content/docs/projects/cmsis-nn.md
+  s_20c5fdf91f2755::t_ccfac48cb9b7c7 181-182
+src/content/docs/projects/cockroach.md
+  s_20c5fdf91f2755::t_a647457d8e2429 155-156
+src/content/docs/projects/cockroachdb.md
+  s_20c5fdf91f2755::t_1862990a586dc2 161-162
+src/content/docs/projects/cocos2d-x.md
+  s_20c5fdf91f2755::t_ac26b8f90a8035 160-172
+src/content/docs/projects/code-server.md
+  s_20c5fdf91f2755::t_7676de1631bd3a 150-156
+src/content/docs/projects/codemirror.md
+  s_20c5fdf91f2755::t_6f6ee642d56435 159-162,164,166,170-171,173-175,179
+src/content/docs/projects/coder.md
+  s_20c5fdf91f2755::t_887768a3c5ab8b 190
+src/content/docs/projects/collabora-online.md
+  s_20c5fdf91f2755::t_547a72f3a1ffef 152
+src/content/docs/projects/colmap.md
+  s_20c5fdf91f2755::t_8468531a6f37a3 171-172
+src/content/docs/projects/colossal-ai.md
+  s_20c5fdf91f2755::t_42da204d8c5f9a 155-156
+src/content/docs/projects/comfyui.md
+  s_20c5fdf91f2755::t_f4eb76fa6ba19a 174-185
+src/content/docs/projects/conform.md
+  s_20c5fdf91f2755::t_51ab145aa33d34 173-174
+src/content/docs/projects/connect-rpc.md
+  s_20c5fdf91f2755::t_e96118656c48d9 157-163
+src/content/docs/projects/containerd.md
+  s_20c5fdf91f2755::t_cd58c60e305af7 169-178
+src/content/docs/projects/continue.md
+  s_20c5fdf91f2755::t_cdfbded95253c8 159,161,163-166
+src/content/docs/projects/conversations.md
+  s_20c5fdf91f2755::t_a38e62df622a74 167
+src/content/docs/projects/coqui-tts.md
+  s_20c5fdf91f2755::t_473ad4c991e1f3 163-169
+src/content/docs/projects/cordova.md
+  s_20c5fdf91f2755::t_90b11b325fcd7c 173-176
+src/content/docs/projects/cosmos-sdk.md
+  s_20c5fdf91f2755::t_2212fc85534f58 160-164
+src/content/docs/projects/cosmwasm.md
+  s_20c5fdf91f2755::t_cffbe9a48cf59e 171
+src/content/docs/projects/coturn.md
+  s_20c5fdf91f2755::t_0f8f28885ed8f3 156-161
+src/content/docs/projects/couchdb.md
+  s_20c5fdf91f2755::t_2bb2a0e2d81c74 164-166
+src/content/docs/projects/crewai.md
+  s_20c5fdf91f2755::t_660bf73edf2d76 156
+src/content/docs/projects/cri-o.md
+  s_20c5fdf91f2755::t_a3d10580842cb2 174-175
+src/content/docs/projects/ctranslate2.md
+  s_20c5fdf91f2755::t_82d43057515338 163-164
+src/content/docs/projects/curlie.md
+  s_20c5fdf91f2755::t_ecc2206883204a 178-179
+src/content/docs/projects/cvat.md
+  s_20c5fdf91f2755::t_afbe3c9bb85fd2 156-157
+src/content/docs/projects/d3.md
+  s_20c5fdf91f2755::t_ec1310e18714c9 164-211
+src/content/docs/projects/dagger.md
+  s_20c5fdf91f2755::t_2abc7ce8507d62 188-189
+src/content/docs/projects/dash.js.md
+  s_20c5fdf91f2755::t_68f83e2a3b65c0 187-192
+src/content/docs/projects/databend.md
+  s_20c5fdf91f2755::t_c921f927e8c9f2 167-168
+src/content/docs/projects/date-fns.md
+  s_20c5fdf91f2755::t_835b0703df9ed4 155
+src/content/docs/projects/dav1d.md
+  s_20c5fdf91f2755::t_6003862fe9abed 175-176
+src/content/docs/projects/dbt-core.md
+  s_20c5fdf91f2755::t_01c843551c76a0 165-168
+src/content/docs/projects/debezium.md
+  s_20c5fdf91f2755::t_f09d37c5850b0c 183-184
+src/content/docs/projects/deck-gl.md
+  s_20c5fdf91f2755::t_88ce0b0bcd7a7c 181-182
+src/content/docs/projects/defold.md
+  s_20c5fdf91f2755::t_a11c6fb34c420c 172-174
+src/content/docs/projects/dendrite.md
+  s_20c5fdf91f2755::t_f58dc40d799922 160
+src/content/docs/projects/deno.md
+  s_20c5fdf91f2755::t_b55d31f4bb7274 150-153
+src/content/docs/projects/dgraph.md
+  s_20c5fdf91f2755::t_ee8fe7035f5e43 197-201
+src/content/docs/projects/dhtmlx-gantt.md
+  s_20c5fdf91f2755::t_26076cae59d086 159-160
+src/content/docs/projects/dify.md
+  s_20c5fdf91f2755::t_32e1f6c773dc5b 176-178
+src/content/docs/projects/django.md
+  s_20c5fdf91f2755::t_99d4442e10859a 180,182-185,190,193
+src/content/docs/projects/dlib.md
+  s_20c5fdf91f2755::t_0be04b218f9279 170,172-173
+src/content/docs/projects/docker-compose.md
+  s_20c5fdf91f2755::t_c9d3329c3d1c16 187-189
+src/content/docs/projects/docker.md
+  s_20c5fdf91f2755::t_ad0a3b279343f1 175-237
+src/content/docs/projects/docusaurus.md
+  s_20c5fdf91f2755::t_e536f674d85e79 153,155,157
+src/content/docs/projects/doris.md
+  s_20c5fdf91f2755::t_3d77a34558a335 150-156
+src/content/docs/projects/dovecot.md
+  s_20c5fdf91f2755::t_507a4878ed27bf 150-151
+src/content/docs/projects/draco.md
+  s_20c5fdf91f2755::t_f1ca40f57c0667 163-164
+src/content/docs/projects/dragonbones.md
+  s_20c5fdf91f2755::t_e81775ed1ee1e1 191-192
+src/content/docs/projects/dragonfly.md
+  s_20c5fdf91f2755::t_dd707c7d21a6fc 151-153
+src/content/docs/projects/drawio.md
+  s_20c5fdf91f2755::t_26c89ded8a41d4 175-176
+src/content/docs/projects/drizzle.md
+  s_20c5fdf91f2755::t_9005adce54eb2d 188
+src/content/docs/projects/druid.md
+  s_20c5fdf91f2755::t_0fab3d7793c319 178
+src/content/docs/projects/dspy.md
+  s_20c5fdf91f2755::t_b69252f56438de 168-169
+src/content/docs/projects/duckdb-wasm.md
+  s_20c5fdf91f2755::t_f30c1ba0ebf5f7 159
+src/content/docs/projects/duckdb.md
+  s_20c5fdf91f2755::t_f8a344f949e733 151-155,159,165,169
+src/content/docs/projects/dust.md
+  s_20c5fdf91f2755::t_c110fc575fabfb 158
+src/content/docs/projects/dvc.md
+  s_20c5fdf91f2755::t_493e799cc9a1a2 164,166
+src/content/docs/projects/earthly.md
+  s_20c5fdf91f2755::t_0aef8151bb1f44 181-186
+src/content/docs/projects/echarts.md
+  s_20c5fdf91f2755::t_a05c2aea3909cd 160,169
+src/content/docs/projects/eclipse-che.md
+  s_20c5fdf91f2755::t_8831f0f7fe6859 183-184
+src/content/docs/projects/effect.md
+  s_20c5fdf91f2755::t_88603106d6cc6d 158-159
+src/content/docs/projects/ejabberd.md
+  s_20c5fdf91f2755::t_e84392a72c0a60 153-156
+src/content/docs/projects/elasticsearch.md
+  s_20c5fdf91f2755::t_f949b162078517 167-169,178
+src/content/docs/projects/electron-builder.md
+  s_20c5fdf91f2755::t_724af401727eb9 199-202
+src/content/docs/projects/electron.md
+  s_20c5fdf91f2755::t_30dd4fa4d468db 181-188
+src/content/docs/projects/element-android.md
+  s_20c5fdf91f2755::t_016d440ab6afc1 153
+src/content/docs/projects/emacs.md
+  s_20c5fdf91f2755::t_062726107f22fd 182-183,186
+src/content/docs/projects/embedded-hal.md
+  s_20c5fdf91f2755::t_9082cf2c1e8889 153-159,161-162,164
+src/content/docs/projects/emotion.md
+  s_20c5fdf91f2755::t_9728ae77e14882 169
+src/content/docs/projects/emqx.md
+  s_20c5fdf91f2755::t_d8423a879b3c8f 167-169
+src/content/docs/projects/engine262.md
+  s_20c5fdf91f2755::t_f3a18eec91d3f2 151-152
+src/content/docs/projects/envoy.md
+  s_20c5fdf91f2755::t_fece7c9caf6701 176,180,190,193
+src/content/docs/projects/esp-dl.md
+  s_20c5fdf91f2755::t_2f4e3eca06c687 175-179
+src/content/docs/projects/esphome.md
+  s_20c5fdf91f2755::t_7412aebad85266 185-186
+src/content/docs/projects/espurna.md
+  s_20c5fdf91f2755::t_bb6f3923afd195 172-173
+src/content/docs/projects/essentia.md
+  s_20c5fdf91f2755::t_c15d4bc4a5f521 153
+src/content/docs/projects/etcd.md
+  s_20c5fdf91f2755::t_1c1c54713fe0d6 148-170
+src/content/docs/projects/etherpad-lite.md
+  s_20c5fdf91f2755::t_2cb35345131915 192-193
+src/content/docs/projects/ethers-js.md
+  s_20c5fdf91f2755::t_b55156ad97d449 171
+src/content/docs/projects/evidence.md
+  s_20c5fdf91f2755::t_c5d990ff092239 182-183
+src/content/docs/projects/excalidraw.md
+  s_20c5fdf91f2755::t_6f872ef3e5fc34 156
+src/content/docs/projects/expo.md
+  s_20c5fdf91f2755::t_27bc8481b2ad39 159-164
+src/content/docs/projects/express.md
+  s_20c5fdf91f2755::t_8c3064ca5da04a 168-214
+src/content/docs/projects/fabric-js.md
+  s_20c5fdf91f2755::t_4512d024284e96 156
+src/content/docs/projects/faiss.md
+  s_20c5fdf91f2755::t_ec7959f5f33d18 152-154,158
+src/content/docs/projects/fastai.md
+  s_20c5fdf91f2755::t_6a2a592c1c099a 164-167
+src/content/docs/projects/fastapi.md
+  s_20c5fdf91f2755::t_32a8f96a5be5a6 172-231
+src/content/docs/projects/faster-whisper.md
+  s_20c5fdf91f2755::t_15cdfeab62fdee 168-171
+src/content/docs/projects/fastify.md
+  s_20c5fdf91f2755::t_c1f697fa7d6a93 176
+src/content/docs/projects/fdk-aac.md
+  s_20c5fdf91f2755::t_1eb2660853d4db 166-168
+src/content/docs/projects/feast.md
+  s_20c5fdf91f2755::t_33ddd19b7c2a6b 176-177
+src/content/docs/projects/ferretdb.md
+  s_20c5fdf91f2755::t_bd867c852ee122 168-170
+src/content/docs/projects/ffmpeg-kit.md
+  s_20c5fdf91f2755::t_3acf833618599a 186-188
+src/content/docs/projects/ffmpeg.md
+  s_20c5fdf91f2755::t_da46a7cd0f47d3 164-167,169-177,179-187,190-193,195-199,201-209
+src/content/docs/projects/filament.md
+  s_20c5fdf91f2755::t_3d923aeb27a949 192-194
+src/content/docs/projects/fish.md
+  s_20c5fdf91f2755::t_23a74ebc0980a4 154
+src/content/docs/projects/flac.md
+  s_20c5fdf91f2755::t_15160531f2a553 168-171
+src/content/docs/projects/flask.md
+  s_20c5fdf91f2755::t_9a65b70e8ed16f 184-195
+src/content/docs/projects/flax.md
+  s_20c5fdf91f2755::t_cc84cc21e4e9ad 167-168
+src/content/docs/projects/flutter.md
+  s_20c5fdf91f2755::t_f4324b8627f4fa 198-208
+src/content/docs/projects/flux.md
+  s_20c5fdf91f2755::t_7b3ac036fe1253 166-167
+src/content/docs/projects/foam.md
+  s_20c5fdf91f2755::t_82a6fac381bd2f 182-184
+src/content/docs/projects/foundry.md
+  s_20c5fdf91f2755::t_8156ebeee25b9f 163-164
+src/content/docs/projects/framer-motion.md
+  s_20c5fdf91f2755::t_014be453cbc3c5 169,171
+src/content/docs/projects/frappe-gantt.md
+  s_20c5fdf91f2755::t_ce3a1aa8d18ad3 161-163
+src/content/docs/projects/freecad.md
+  s_20c5fdf91f2755::t_f1f0399243a044 199-201
+src/content/docs/projects/freemodbus.md
+  s_20c5fdf91f2755::t_f6ec7675901cc3 166-167
+src/content/docs/projects/freertos.md
+  s_20c5fdf91f2755::t_e4c5fe99a0e957 162,164,166-171
+src/content/docs/projects/gazebo-classic.md
+  s_20c5fdf91f2755::t_39b5dca1e0ac9c 199-202
+src/content/docs/projects/gdu.md
+  s_20c5fdf91f2755::t_7157ff5471fe90 161
+src/content/docs/projects/geany.md
+  s_20c5fdf91f2755::t_3b30620949c67e 169
+src/content/docs/projects/ghostwriter.md
+  s_20c5fdf91f2755::t_7d75777ceab074 179-180
+src/content/docs/projects/gimp.md
+  s_20c5fdf91f2755::t_9dd3e9bfacf1be 192-194
+src/content/docs/projects/gin.md
+  s_20c5fdf91f2755::t_41769f4b8f49f8 170
+src/content/docs/projects/github-actions.md
+  s_20c5fdf91f2755::t_6a87519af5f30d 174-185
+src/content/docs/projects/gitpod.md
+  s_20c5fdf91f2755::t_980d5e749089ff 198-199
+src/content/docs/projects/glab.md
+  s_20c5fdf91f2755::t_6d4a2cb8396c6f 177-178
+src/content/docs/projects/glsl-canvas.md
+  s_20c5fdf91f2755::t_7814d1a295c08d 175-176
+src/content/docs/projects/glslify.md
+  s_20c5fdf91f2755::t_6ce2a7c9dd208f 161-164
+src/content/docs/projects/gltf-transform.md
+  s_20c5fdf91f2755::t_9f6e4f1829a550 192-195
+src/content/docs/projects/go-ethereum.md
+  s_20c5fdf91f2755::t_7bdbb51e1f7150 149-152,157,163
+src/content/docs/projects/godot.md
+  s_20c5fdf91f2755::t_21ac9ed40a634e 195-211
+src/content/docs/projects/gradio.md
+  s_20c5fdf91f2755::t_71078c8469362b 171-176
+src/content/docs/projects/grafana-tempo.md
+  s_20c5fdf91f2755::t_588811bb1404d4 176-179
+src/content/docs/projects/grafana.md
+  s_20c5fdf91f2755::t_571570f61bc03e 147,152
+src/content/docs/projects/grape.md
+  s_20c5fdf91f2755::t_113f60a77522aa 172
+src/content/docs/projects/grbl.md
+  s_20c5fdf91f2755::t_3dade2ca04b960 165-168
+src/content/docs/projects/greenplum-db.md
+  s_20c5fdf91f2755::t_9861ffb5cdab02 174-175,178
+src/content/docs/projects/grpc-go.md
+  s_20c5fdf91f2755::t_0a3a451246d6ef 173-174
+src/content/docs/projects/gsap.md
+  s_20c5fdf91f2755::t_425b3d3097f9ca 174
+src/content/docs/projects/gstreamer.md
+  s_20c5fdf91f2755::t_30620a4b70115e 169-190
+src/content/docs/projects/handbrake.md
+  s_20c5fdf91f2755::t_9e5115fa4ce25a 150-154,156-158,160-162
+src/content/docs/projects/haproxy.md
+  s_20c5fdf91f2755::t_7f63e6f7d2f415 153,160
+src/content/docs/projects/haraka.md
+  s_20c5fdf91f2755::t_d144cfe9b95bcc 154
+src/content/docs/projects/heaps.md
+  s_20c5fdf91f2755::t_508131f7d73bd8 196-197
+src/content/docs/projects/hedgedoc.md
+  s_20c5fdf91f2755::t_8f99320b6d5ac9 189-192
+src/content/docs/projects/helidon.md
+  s_20c5fdf91f2755::t_c5bb837bef6489 187-188
+src/content/docs/projects/helm.md
+  s_20c5fdf91f2755::t_dd95a1ce556b55 162,170,174,185
+src/content/docs/projects/hermes.md
+  s_20c5fdf91f2755::t_f2d47a8f434f9d 150
+src/content/docs/projects/hls.js.md
+  s_20c5fdf91f2755::t_0ad0037cb7a4d5 152-158
+src/content/docs/projects/hocuspocus.md
+  s_20c5fdf91f2755::t_ef9e125069b468 172-173
+src/content/docs/projects/holoviews.md
+  s_20c5fdf91f2755::t_5cf4d853b3708b 161-162
+src/content/docs/projects/home-assistant.md
+  s_20c5fdf91f2755::t_ec8ef4d32bb922 198-201
+src/content/docs/projects/homebrew.md
+  s_20c5fdf91f2755::t_b56730b7168103 175-182
+src/content/docs/projects/hot-chocolate.md
+  s_20c5fdf91f2755::t_dd30a365fea2a7 171
+src/content/docs/projects/hydra-synth.md
+  s_20c5fdf91f2755::t_533dde0bfa92b9 164-165
+src/content/docs/projects/i18next.md
+  s_20c5fdf91f2755::t_1d850c9159f387 169
+src/content/docs/projects/imagemagick.md
+  s_20c5fdf91f2755::t_44b73bf232bf02 167-170
+src/content/docs/projects/immich.md
+  s_20c5fdf91f2755::t_df51bef378a2f0 151
+src/content/docs/projects/inkscape.md
+  s_20c5fdf91f2755::t_d1cbc495fe9a1d 166-171
+src/content/docs/projects/inngest.md
+  s_20c5fdf91f2755::t_962105b4814906 170-173
+src/content/docs/projects/insightface.md
+  s_20c5fdf91f2755::t_d21abf49007ea2 193-194
+src/content/docs/projects/invokeai.md
+  s_20c5fdf91f2755::t_458c18869debf2 178-179
+src/content/docs/projects/ionic-framework.md
+  s_20c5fdf91f2755::t_f59fe4c8644970 150-152
+src/content/docs/projects/istio.md
+  s_20c5fdf91f2755::t_9d602d6a947a36 174
+src/content/docs/projects/jaeger.md
+  s_20c5fdf91f2755::t_13415a4eb8c56b 171-179
+src/content/docs/projects/janus-gateway.md
+  s_20c5fdf91f2755::t_c571c7d3703a34 187-190
+src/content/docs/projects/jax.md
+  s_20c5fdf91f2755::t_9971cd87477704 162-166,170-172,175
+src/content/docs/projects/jc.md
+  s_20c5fdf91f2755::t_38519258ee5127 164-165
+src/content/docs/projects/jellyfin.md
+  s_20c5fdf91f2755::t_867eaea778f1cc 200-201
+src/content/docs/projects/jenkins.md
+  s_20c5fdf91f2755::t_3acad2ed3a8576 154
+src/content/docs/projects/jimp.md
+  s_20c5fdf91f2755::t_7270114e439768 164-165
+src/content/docs/projects/jitsi-meet.md
+  s_20c5fdf91f2755::t_4e47b15891f782 180-182
+src/content/docs/projects/jitsi-videobridge.md
+  s_20c5fdf91f2755::t_ed6b28a9f36b7a 148-154
+src/content/docs/projects/joplin.md
+  s_20c5fdf91f2755::t_63e553b507bf57 166-168
+src/content/docs/projects/jspdf.md
+  s_20c5fdf91f2755::t_87c55932ce3cae 173-174
+src/content/docs/projects/jupyter-notebook.md
+  s_20c5fdf91f2755::t_eeb5f74ab4c524 196-205
+src/content/docs/projects/jupyterlab.md
+  s_20c5fdf91f2755::t_74a02e5da87f52 158-160
+src/content/docs/projects/just.md
+  s_20c5fdf91f2755::t_c84586296f7701 185
+src/content/docs/projects/k6.md
+  s_20c5fdf91f2755::t_03b695c0b17f44 164
+src/content/docs/projects/kafka.md
+  s_20c5fdf91f2755::t_4f95fe5de2909d 180-220
+src/content/docs/projects/kamailio.md
+  s_20c5fdf91f2755::t_c5be9840bc8e47 160
+src/content/docs/projects/kaniko.md
+  s_20c5fdf91f2755::t_b14865189f23bd 176-178
+src/content/docs/projects/kdenlive.md
+  s_20c5fdf91f2755::t_8dbf6a4f5a45ba 175-176
+src/content/docs/projects/kepler-gl.md
+  s_20c5fdf91f2755::t_8fe100534ac2a2 158-161
+src/content/docs/projects/keras.md
+  s_20c5fdf91f2755::t_66fc1879c0a548 176-192
+src/content/docs/projects/kicad.md
+  s_20c5fdf91f2755::t_dc57bfca93a87a 166-167
+src/content/docs/projects/klipper.md
+  s_20c5fdf91f2755::t_9b693ccb44b18a 195-196
+src/content/docs/projects/koa.md
+  s_20c5fdf91f2755::t_baabc2cd76f13f 161
+src/content/docs/projects/konva.md
+  s_20c5fdf91f2755::t_7fb55ca6307b70 160-161
+src/content/docs/projects/krita.md
+  s_20c5fdf91f2755::t_c557e23009455d 156-159
+src/content/docs/projects/kubernetes.md
+  s_20c5fdf91f2755::t_e1ff1accaea6fa 150-226
+src/content/docs/projects/kustomize.md
+  s_20c5fdf91f2755::t_b5c476f140d9c3 200-205
+src/content/docs/projects/ky.md
+  s_20c5fdf91f2755::t_e082904ab08b0e 169
+src/content/docs/projects/lame.md
+  s_20c5fdf91f2755::t_5a119c8c7a350c 164-165
+src/content/docs/projects/lance.md
+  s_20c5fdf91f2755::t_47b2bf3e7129a7 157
+src/content/docs/projects/langchain.md
+  s_20c5fdf91f2755::t_106025e4c44654 183-208
+src/content/docs/projects/layerzero.md
+  s_20c5fdf91f2755::t_785c949fcaedeb 152
+src/content/docs/projects/lazygit.md
+  s_20c5fdf91f2755::t_733c676edc9d1a 154,161
+src/content/docs/projects/lens.md
+  s_20c5fdf91f2755::t_a278f354f09159 163
+src/content/docs/projects/leveldb.md
+  s_20c5fdf91f2755::t_c135a4d8667e5d 151-160
+src/content/docs/projects/lexical.md
+  s_20c5fdf91f2755::t_8c499806e928a7 183-191
+src/content/docs/projects/lf.md
+  s_20c5fdf91f2755::t_37e5c76d4cea08 156
+src/content/docs/projects/librecad.md
+  s_20c5fdf91f2755::t_708d396c97d304 168-169
+src/content/docs/projects/librechat.md
+  s_20c5fdf91f2755::t_42bd8cca652fe4 149
+src/content/docs/projects/librosa.md
+  s_20c5fdf91f2755::t_eb1db39ab777ef 148-149
+src/content/docs/projects/libsignal.md
+  s_20c5fdf91f2755::t_b354204a36262d 153,155,158,161-166,169
+src/content/docs/projects/libvpx.md
+  s_20c5fdf91f2755::t_89823e7d924e43 165-166
+src/content/docs/projects/lighthouse.md
+  s_20c5fdf91f2755::t_33414d51b7bd02 167
+src/content/docs/projects/lima.md
+  s_20c5fdf91f2755::t_4788fa120bfcd4 166-168
+src/content/docs/projects/lingui.md
+  s_20c5fdf91f2755::t_3b4e748339bd40 151
+src/content/docs/projects/linuxcnc.md
+  s_20c5fdf91f2755::t_71c31ce0026b19 164-166
+src/content/docs/projects/lite-xl.md
+  s_20c5fdf91f2755::t_c101fa10c5cf98 155
+src/content/docs/projects/litestar.md
+  s_20c5fdf91f2755::t_6dbae4018eb195 176
+src/content/docs/projects/litmus.md
+  s_20c5fdf91f2755::t_7f7e218b07192c 169-170
+src/content/docs/projects/littlefs.md
+  s_20c5fdf91f2755::t_6fd509624e850a 175-176
+src/content/docs/projects/liveblocks.md
+  s_20c5fdf91f2755::t_237c05c1d7255b 170-172
+src/content/docs/projects/livekit-flutter.md
+  s_20c5fdf91f2755::t_42ab262f429986 175-176
+src/content/docs/projects/livekit.md
+  s_20c5fdf91f2755::t_f2d2f094d4308a 192-195
+src/content/docs/projects/llama-cpp.md
+  s_20c5fdf91f2755::t_8c342aa0da7caa 158-163
+src/content/docs/projects/llama-index.md
+  s_20c5fdf91f2755::t_ba54c64bedde94 154-155
+src/content/docs/projects/llrt.md
+  s_20c5fdf91f2755::t_c4ffe76bbb08d6 147
+src/content/docs/projects/lm-evaluation-harness.md
+  s_20c5fdf91f2755::t_2f5b952cef7c0a 173-177
+src/content/docs/projects/lmdb.md
+  s_20c5fdf91f2755::t_6afd5a00d492d3 191-193
+src/content/docs/projects/lmms.md
+  s_20c5fdf91f2755::t_ed8548452d0ec9 151
+src/content/docs/projects/lodestar.md
+  s_20c5fdf91f2755::t_c75cea59a81864 154-155
+src/content/docs/projects/logseq.md
+  s_20c5fdf91f2755::t_c239c11afaf86f 166-170
+src/content/docs/projects/lora-mac-node.md
+  s_20c5fdf91f2755::t_4666597a6ad7d8 177
+src/content/docs/projects/lottie.md
+  s_20c5fdf91f2755::t_9a988a15db55e0 167-179
+src/content/docs/projects/love2d.md
+  s_20c5fdf91f2755::t_5195d243c42485 173-176
+src/content/docs/projects/luma-gl.md
+  s_20c5fdf91f2755::t_688629301104fb 150
+src/content/docs/projects/luxcorerender.md
+  s_20c5fdf91f2755::t_679e894f84b1b7 164-165
+src/content/docs/projects/lwip.md
+  s_20c5fdf91f2755::t_ea4e99d4093790 156-159,161,163-165
+src/content/docs/projects/mage.md
+  s_20c5fdf91f2755::t_7dcedb75767563 183
+src/content/docs/projects/manticoresearch.md
+  s_20c5fdf91f2755::t_d8fdfb063ed02e 154
+src/content/docs/projects/marimo.md
+  s_20c5fdf91f2755::t_58ae59f208989e 173-174
+src/content/docs/projects/markdown-it.md
+  s_20c5fdf91f2755::t_71628b891c6d11 154-157,159,163,166
+src/content/docs/projects/marked.md
+  s_20c5fdf91f2755::t_6151b0fe0dc2f3 175
+src/content/docs/projects/marktext.md
+  s_20c5fdf91f2755::t_fc790b48e829dd 193-201
+src/content/docs/projects/marlin.md
+  s_20c5fdf91f2755::t_1cf43d296c0477 180-181
+src/content/docs/projects/matplotlib.md
+  s_20c5fdf91f2755::t_14ca91afeed614 188-194
+src/content/docs/projects/matter-js.md
+  s_20c5fdf91f2755::t_8fed48b99557c8 154-158
+src/content/docs/projects/mattermost.md
+  s_20c5fdf91f2755::t_cea15596375035 144,146
+src/content/docs/projects/mbedtls.md
+  s_20c5fdf91f2755::t_0a766f6b915a52 151-159
+src/content/docs/projects/mediapipe.md
+  s_20c5fdf91f2755::t_b20ee2b01f6818 199-201
+src/content/docs/projects/mediasoup.md
+  s_20c5fdf91f2755::t_56121cdef51cb7 168-178
+src/content/docs/projects/megatron-lm.md
+  s_20c5fdf91f2755::t_fc3e0fa6213465 153-154
+src/content/docs/projects/meilisearch.md
+  s_20c5fdf91f2755::t_0decd9b210b181 168
+src/content/docs/projects/melonjs.md
+  s_20c5fdf91f2755::t_9821b88bcd2bbd 197
+src/content/docs/projects/memcached.md
+  s_20c5fdf91f2755::t_78268dae2cb4d8 163
+src/content/docs/projects/memgraph.md
+  s_20c5fdf91f2755::t_767f5131f0934f 194-196
+src/content/docs/projects/mender.md
+  s_20c5fdf91f2755::t_08f37f757fb81f 194-195
+src/content/docs/projects/mermaid.md
+  s_20c5fdf91f2755::t_a8101fbb772fff 163
+src/content/docs/projects/meshroom.md
+  s_20c5fdf91f2755::t_478bc193703b70 187-188
+src/content/docs/projects/metabase.md
+  s_20c5fdf91f2755::t_4ca9c3f00ae83b 156-158
+src/content/docs/projects/metaflow.md
+  s_20c5fdf91f2755::t_7714bdb49d17fd 193-195
+src/content/docs/projects/micropython.md
+  s_20c5fdf91f2755::t_c9e622042fe996 185,188,190
+src/content/docs/projects/mikro-orm.md
+  s_20c5fdf91f2755::t_95d60bc7752763 164-165
+src/content/docs/projects/milvus.md
+  s_20c5fdf91f2755::t_efcb81a6a98c3e 188-201
+src/content/docs/projects/mind-ar-js.md
+  s_20c5fdf91f2755::t_0feae9516d3672 200-201
+src/content/docs/projects/minetest.md
+  s_20c5fdf91f2755::t_198d7612ec68cf 173
+src/content/docs/projects/mise.md
+  s_20c5fdf91f2755::t_fa1a4b4a6da04e 191-193
+src/content/docs/projects/mitsuba3.md
+  s_20c5fdf91f2755::t_2ca5a944937c84 199-200
+src/content/docs/projects/mlflow.md
+  s_20c5fdf91f2755::t_f60bec1279e646 152-159
+src/content/docs/projects/mlt.md
+  s_20c5fdf91f2755::t_bccee74ad70acb 182-183,185-186
+src/content/docs/projects/moby.md
+  s_20c5fdf91f2755::t_28fa7cd879f453 166
+src/content/docs/projects/modin.md
+  s_20c5fdf91f2755::t_11b25a40714ab8 168
+src/content/docs/projects/monaco-editor.md
+  s_20c5fdf91f2755::t_7ea2b0b74586fb 161,166
+src/content/docs/projects/monero.md
+  s_20c5fdf91f2755::t_fd7958ca64362e 158
+src/content/docs/projects/mongo.md
+  s_20c5fdf91f2755::t_dbf30af64c5d35 158
+src/content/docs/projects/mongodb.md
+  s_20c5fdf91f2755::t_4700b05b8e2611 157,162-163,168
+src/content/docs/projects/mosquitto.md
+  s_20c5fdf91f2755::t_bba0553289db8f 199-203
+src/content/docs/projects/move-language.md
+  s_20c5fdf91f2755::t_42bd02dea55717 163-164
+src/content/docs/projects/moveit2.md
+  s_20c5fdf91f2755::t_526dbc62f13ac4 185-186
+src/content/docs/projects/mumble.md
+  s_20c5fdf91f2755::t_10dce64f5874d1 151
+src/content/docs/projects/mysql.md
+  s_20c5fdf91f2755::t_30fc4435fe243d 163-164,170
+src/content/docs/projects/nanomq.md
+  s_20c5fdf91f2755::t_c2cdee39c39ae8 189-190
+src/content/docs/projects/nativescript.md
+  s_20c5fdf91f2755::t_55c6cf0531eb41 151-152
+src/content/docs/projects/nats-server.md
+  s_20c5fdf91f2755::t_d999fa6e1de98c 163-164
+src/content/docs/projects/nats.md
+  s_20c5fdf91f2755::t_e8e6c5d8ca339a 157-169
+src/content/docs/projects/navigation2.md
+  s_20c5fdf91f2755::t_5db4675a94dbfd 182-183
+src/content/docs/projects/ncnn.md
+  s_20c5fdf91f2755::t_6cb5cf994a0bc6 187-189
+src/content/docs/projects/nebula.md
+  s_20c5fdf91f2755::t_5d4c3f5f2f4764 158-159
+src/content/docs/projects/nestjs.md
+  s_20c5fdf91f2755::t_04bc020a8d4309 181-196
+src/content/docs/projects/nethermind.md
+  s_20c5fdf91f2755::t_65e613b968a4fd 162
+src/content/docs/projects/neutralinojs.md
+  s_20c5fdf91f2755::t_eb98e4c50639f5 186,188-190
+src/content/docs/projects/next-intl.md
+  s_20c5fdf91f2755::t_6babe88cbfcdad 180-184
+src/content/docs/projects/next-js.md
+  s_20c5fdf91f2755::t_459dabb2d9dd84 172
+src/content/docs/projects/nginx-rtmp-module.md
+  s_20c5fdf91f2755::t_8e759f030b35d3 199-200
+src/content/docs/projects/nginx.md
+  s_20c5fdf91f2755::t_717e79979720c1 173-175,177-182,184-185,187-190,192-205,207-208
+src/content/docs/projects/nivo.md
+  s_20c5fdf91f2755::t_a2ce0488d1eaf3 156-157
+src/content/docs/projects/nix.md
+  s_20c5fdf91f2755::t_56451b3630d3b0 152-164
+src/content/docs/projects/nnn.md
+  s_20c5fdf91f2755::t_dca0789087db91 163
+src/content/docs/projects/node-js.md
+  s_20c5fdf91f2755::t_71078967759ae3 196-202
+src/content/docs/projects/nodegui.md
+  s_20c5fdf91f2755::t_e1a0620051d574 191-193
+src/content/docs/projects/numpy.md
+  s_20c5fdf91f2755::t_e6a8927fede3cd 158-160,162
+src/content/docs/projects/nushell.md
+  s_20c5fdf91f2755::t_9261ca949b42b2 166-173
+src/content/docs/projects/nuttx.md
+  s_20c5fdf91f2755::t_02bde29289cb41 172,183
+src/content/docs/projects/nuxt.md
+  s_20c5fdf91f2755::t_9cbbe43e39f469 183
+src/content/docs/projects/nvidia-mig.md
+  s_20c5fdf91f2755::t_d709d1c834ea99 198-199
+src/content/docs/projects/obs-studio.md
+  s_20c5fdf91f2755::t_61275a24628c73 166-168
+src/content/docs/projects/observable-framework.md
+  s_20c5fdf91f2755::t_298d761c92f2be 186-190
+src/content/docs/projects/observable-plot.md
+  s_20c5fdf91f2755::t_ce837a4bbe43fb 175,177
+src/content/docs/projects/ofetch.md
+  s_20c5fdf91f2755::t_50a440985a278a 155
+src/content/docs/projects/ogre.md
+  s_20c5fdf91f2755::t_855f4a6a5f47ff 195-196
+src/content/docs/projects/oh-my-posh.md
+  s_20c5fdf91f2755::t_a38be3b11a8852 150
+src/content/docs/projects/open-sora.md
+  s_20c5fdf91f2755::t_2cd83d1be43717 151-157
+src/content/docs/projects/open3d.md
+  s_20c5fdf91f2755::t_3455dbab47fe7a 194-197
+src/content/docs/projects/openai-agents-sdk.md
+  s_20c5fdf91f2755::t_d96b54cf882c31 174-175
+src/content/docs/projects/opencode.md
+  s_20c5fdf91f2755::t_609aa66db4be28 167-168
+src/content/docs/projects/opencv.md
+  s_20c5fdf91f2755::t_bb96457ab38720 194-202
+src/content/docs/projects/openhab.md
+  s_20c5fdf91f2755::t_953509a7b1493e 192-194
+src/content/docs/projects/openlayers.md
+  s_20c5fdf91f2755::t_beb162989301b5 167-168
+src/content/docs/projects/openmeetings.md
+  s_20c5fdf91f2755::t_4bc77d44a9f317 165
+src/content/docs/projects/openrct2.md
+  s_20c5fdf91f2755::t_bd55aba8401b44 177
+src/content/docs/projects/openscad.md
+  s_20c5fdf91f2755::t_812e48e84418c0 192-194
+src/content/docs/projects/opensearch.md
+  s_20c5fdf91f2755::t_131675f1f9e63d 179-187
+src/content/docs/projects/opentelemetry-collector.md
+  s_20c5fdf91f2755::t_312c9db836c609 158
+src/content/docs/projects/opentelemetry.md
+  s_20c5fdf91f2755::t_b59e38e55e3e99 167-177
+src/content/docs/projects/openthread.md
+  s_20c5fdf91f2755::t_88b69a04c10e34 187-191
+src/content/docs/projects/opentofu.md
+  s_20c5fdf91f2755::t_fa5a862cce127e 174-175
+src/content/docs/projects/openvidu.md
+  s_20c5fdf91f2755::t_18be9d1eb3393b 170-174
+src/content/docs/projects/openvscode-server.md
+  s_20c5fdf91f2755::t_ed837230e99a42 160-163
+src/content/docs/projects/openwrt.md
+  s_20c5fdf91f2755::t_42d3793421075b 148-152,154,156
+src/content/docs/projects/openxr-sdk.md
+  s_20c5fdf91f2755::t_2cfa4c62dbf841 177
+src/content/docs/projects/openzeppelin-contracts.md
+  s_20c5fdf91f2755::t_9f8d3e8bf4e2a0 159-160
+src/content/docs/projects/optax.md
+  s_20c5fdf91f2755::t_b5856543c23f8e 183-184
+src/content/docs/projects/optuna.md
+  s_20c5fdf91f2755::t_63f29b0c53036b 197-198
+src/content/docs/projects/opus.md
+  s_20c5fdf91f2755::t_c65bb687eb327b 153-160
+src/content/docs/projects/otel-collector.md
+  s_20c5fdf91f2755::t_457e25225c58dc 172-177
+src/content/docs/projects/outline.md
+  s_20c5fdf91f2755::t_65336836284653 184-185
+src/content/docs/projects/ovenmediaengine.md
+  s_20c5fdf91f2755::t_711373c2ddd56c 167,169-172,174,176-177
+src/content/docs/projects/overleaf.md
+  s_20c5fdf91f2755::t_3947cb6c0cf63b 179-180
+src/content/docs/projects/paddle-lite.md
+  s_20c5fdf91f2755::t_df903f5aa7ef53 184-188
+src/content/docs/projects/paddleocr.md
+  s_20c5fdf91f2755::t_9f3780be271aaa 159
+src/content/docs/projects/panda3d.md
+  s_20c5fdf91f2755::t_d1ae5f159485c4 158-159
+src/content/docs/projects/pandas.md
+  s_20c5fdf91f2755::t_382d66ffb378f2 162,165-166,176-177
+src/content/docs/projects/panel.md
+  s_20c5fdf91f2755::t_5c9115c7b55fea 185-186
+src/content/docs/projects/partykit.md
+  s_20c5fdf91f2755::t_f29fb082e9e87a 157-158
+src/content/docs/projects/pcl.md
+  s_20c5fdf91f2755::t_aa954230aefc77 177-178
+src/content/docs/projects/pdfme.md
+  s_20c5fdf91f2755::t_bc4d001cf10a20 163-164
+src/content/docs/projects/peerjs-server.md
+  s_20c5fdf91f2755::t_a485d0dc2bae8f 158
+src/content/docs/projects/penpot.md
+  s_20c5fdf91f2755::t_17a3cedaa35c1e 157
+src/content/docs/projects/pg-boss-readme.md
+  s_20c5fdf91f2755::t_14e4b84a31c9e5 154
+src/content/docs/projects/phaser.md
+  s_20c5fdf91f2755::t_0940d3057aa5d0 177-188
+src/content/docs/projects/phoenix.md
+  s_20c5fdf91f2755::t_12ac0360e65625 177
+src/content/docs/projects/picogl.md
+  s_20c5fdf91f2755::t_5e8d5631530f8e 151-158
+src/content/docs/projects/pillow.md
+  s_20c5fdf91f2755::t_4e1111c4ed7488 197-198
+src/content/docs/projects/pion.md
+  s_20c5fdf91f2755::t_786401736d34df 173-174
+src/content/docs/projects/piper.md
+  s_20c5fdf91f2755::t_a8a983f0258f33 161-162
+src/content/docs/projects/piskel.md
+  s_20c5fdf91f2755::t_5f8aa8cfc066e2 172-173
+src/content/docs/projects/pixi.md
+  s_20c5fdf91f2755::t_8ca145d2e05160 162,164-165,167-183
+src/content/docs/projects/planck.md
+  s_20c5fdf91f2755::t_69be617362940f 150
+src/content/docs/projects/plane.md
+  s_20c5fdf91f2755::t_73f05a6c2c52bf 151-152
+src/content/docs/projects/platformio-core.md
+  s_20c5fdf91f2755::t_cac6e5b66c2a19 179-181
+src/content/docs/projects/playcanvas.md
+  s_20c5fdf91f2755::t_dc958ddb164160 164-168
+src/content/docs/projects/playwright.md
+  s_20c5fdf91f2755::t_4a75a9dd5079a2 184-225
+src/content/docs/projects/plotnine.md
+  s_20c5fdf91f2755::t_5ae1295d333ad2 169-172
+src/content/docs/projects/plug.md
+  s_20c5fdf91f2755::t_c31d3d91639cb6 188-189
+src/content/docs/projects/pluto-jl.md
+  s_20c5fdf91f2755::t_1a052587fb4e64 177-178
+src/content/docs/projects/pnpm.md
+  s_20c5fdf91f2755::t_2fc6571b119b2e 163,170-171,174
+src/content/docs/projects/pocketbase.md
+  s_20c5fdf91f2755::t_a1693604d16f9e 163
+src/content/docs/projects/podman.md
+  s_20c5fdf91f2755::t_2556e48ac5a157 182-184
+src/content/docs/projects/polars.md
+  s_20c5fdf91f2755::t_430be5828884c6 180
+src/content/docs/projects/polygon-zkevm.md
+  s_20c5fdf91f2755::t_ab200554f795d5 154-155
+src/content/docs/projects/postal.md
+  s_20c5fdf91f2755::t_9b09436a29c29b 168-169
+src/content/docs/projects/postfix.md
+  s_20c5fdf91f2755::t_40779600a6a151 156-160
+src/content/docs/projects/postgres-js.md
+  s_20c5fdf91f2755::t_7423a55111a186 154
+src/content/docs/projects/postgresql.md
+  s_20c5fdf91f2755::t_c62c94c6feae16 150-222
+src/content/docs/projects/pouchdb.md
+  s_20c5fdf91f2755::t_e8a3c1b153dcc7 157-158
+src/content/docs/projects/preact.md
+  s_20c5fdf91f2755::t_87e9127544db7f 181-182
+src/content/docs/projects/prom-client.md
+  s_20c5fdf91f2755::t_f7fbeda051479d 170
+src/content/docs/projects/prometheus.md
+  s_20c5fdf91f2755::t_41caaab8de7fb5 177-213
+src/content/docs/projects/promptfoo.md
+  s_20c5fdf91f2755::t_b14a797cf8a9bd 161-163
+src/content/docs/projects/prosemirror.md
+  s_20c5fdf91f2755::t_075bd81746c9a5 165,168-169,171-172,174-176,178
+src/content/docs/projects/prosody.md
+  s_20c5fdf91f2755::t_3e3cba420265fe 169-170
+src/content/docs/projects/prysm.md
+  s_20c5fdf91f2755::t_1b6d0caa4c9804 168
+src/content/docs/projects/pulsar.md
+  s_20c5fdf91f2755::t_47613b50fd53cb 164-166
+src/content/docs/projects/pulumi.md
+  s_20c5fdf91f2755::t_7b052c26e3e833 167
+src/content/docs/projects/pyarrow.md
+  s_20c5fdf91f2755::t_1fd7d38af5b3f2 156-159
+src/content/docs/projects/pyenv.md
+  s_20c5fdf91f2755::t_6d51eaaf768811 175
+src/content/docs/projects/pyth.md
+  s_20c5fdf91f2755::t_23d5769957faf4 151
+src/content/docs/projects/pytorch-lightning.md
+  s_20c5fdf91f2755::t_7445e5d4b6dd82 173-174,176,178,185-186,191
+src/content/docs/projects/pytorch.md
+  s_20c5fdf91f2755::t_7c3cd0ad06ca88 159-244
+src/content/docs/projects/qdrant.md
+  s_20c5fdf91f2755::t_026758104ebf29 172-178
+src/content/docs/projects/quart.md
+  s_20c5fdf91f2755::t_12ccc2f967889a 194
+src/content/docs/projects/quasar.md
+  s_20c5fdf91f2755::t_6022795ae430f1 150-151
+src/content/docs/projects/quickjs.md
+  s_20c5fdf91f2755::t_f32239c1650d00 150-155
+src/content/docs/projects/qwik.md
+  s_20c5fdf91f2755::t_0c0c0b743ef06a 159
+src/content/docs/projects/rabbitmq-server.md
+  s_20c5fdf91f2755::t_ff53cd35918810 158-160,162
+src/content/docs/projects/rails.md
+  s_20c5fdf91f2755::t_eb6812045052f1 180
+src/content/docs/projects/ranger.md
+  s_20c5fdf91f2755::t_e53ad3c14d46b1 167-169
+src/content/docs/projects/rapier.md
+  s_20c5fdf91f2755::t_b6ea21ce424d83 161-164
+src/content/docs/projects/ratatui.md
+  s_20c5fdf91f2755::t_f1239cb6231264 165-169
+src/content/docs/projects/rauc.md
+  s_20c5fdf91f2755::t_13d0dc765c92d9 171,173-174
+src/content/docs/projects/ravendb.md
+  s_20c5fdf91f2755::t_52c7e08f1a229e 198-199
+src/content/docs/projects/ray.md
+  s_20c5fdf91f2755::t_053859967bf78d 193-195
+src/content/docs/projects/raylib.md
+  s_20c5fdf91f2755::t_8b6a7b1c5893cf 199-206
+src/content/docs/projects/react-hook-form.md
+  s_20c5fdf91f2755::t_9b7a4c67361d43 176
+src/content/docs/projects/react-intl.md
+  s_20c5fdf91f2755::t_0a9f165a8a7f00 162
+src/content/docs/projects/react-native.md
+  s_20c5fdf91f2755::t_d8c7685c9d9357 152-162
+src/content/docs/projects/react-spring.md
+  s_20c5fdf91f2755::t_4ca6c27825fdad 161,165
+src/content/docs/projects/react.md
+  s_20c5fdf91f2755::t_e4b0173da503f9 164-228
+src/content/docs/projects/redash.md
+  s_20c5fdf91f2755::t_091afa2b08bf87 179-180
+src/content/docs/projects/redpanda.md
+  s_20c5fdf91f2755::t_0a872aa32958d3 151
+src/content/docs/projects/regl.md
+  s_20c5fdf91f2755::t_d45e80527b8ae0 198-207
+src/content/docs/projects/rethinkdb.md
+  s_20c5fdf91f2755::t_bbeead5ae4a970 168
+src/content/docs/projects/ripgrep.md
+  s_20c5fdf91f2755::t_08cc918361e576 148,170,179,186
+src/content/docs/projects/rive.md
+  s_20c5fdf91f2755::t_da90806242449a 199,201-202
+src/content/docs/projects/robyn.md
+  s_20c5fdf91f2755::t_635c6a03b5eed1 170
+src/content/docs/projects/rocket.md
+  s_20c5fdf91f2755::t_73e648b47713bb 200-203
+src/content/docs/projects/rocksdb.md
+  s_20c5fdf91f2755::t_5b4150bdbab521 163-165,169-170,174,178-179
+src/content/docs/projects/roo-code.md
+  s_20c5fdf91f2755::t_34141c987649a6 187-188
+src/content/docs/projects/ros2.md
+  s_20c5fdf91f2755::t_32811f95f405b4 170-173
+src/content/docs/projects/rt-thread.md
+  s_20c5fdf91f2755::t_51704900a226d7 162-165
+src/content/docs/projects/runc.md
+  s_20c5fdf91f2755::t_629c7c0665fa74 186
+src/content/docs/projects/safe-contracts.md
+  s_20c5fdf91f2755::t_0931c83c4eace1 164
+src/content/docs/projects/salvo.md
+  s_20c5fdf91f2755::t_cfa7f4dd474a84 186
+src/content/docs/projects/sam2.md
+  s_20c5fdf91f2755::t_16e3bc40535d31 200-201
+src/content/docs/projects/scikit-learn.md
+  s_20c5fdf91f2755::t_935e3dc589040e 164-165
+src/content/docs/projects/scipy.md
+  s_20c5fdf91f2755::t_74748c429a60fe 169,172
+src/content/docs/projects/scoop.md
+  s_20c5fdf91f2755::t_6e575411ec7c1f 177
+src/content/docs/projects/scrcpy.md
+  s_20c5fdf91f2755::t_1ba9a05a4a2276 166
+src/content/docs/projects/sdk-nrf.md
+  s_20c5fdf91f2755::t_15d9337371d499 198,200-201
+src/content/docs/projects/sealed-secrets.md
+  s_20c5fdf91f2755::t_ae4bfe1796cfba 172
+src/content/docs/projects/sentry.md
+  s_20c5fdf91f2755::t_6d2bad135c19e4 177
+src/content/docs/projects/sglang.md
+  s_20c5fdf91f2755::t_7e4d0d0a0c5d69 168-172
+src/content/docs/projects/shadcn-ui.md
+  s_20c5fdf91f2755::t_5986819f6a8de1 159,162
+src/content/docs/projects/shader-park.md
+  s_20c5fdf91f2755::t_859f693780f2bc 189-191
+src/content/docs/projects/shadowsocks-libev.md
+  s_20c5fdf91f2755::t_c479277d63f9c9 166-167
+src/content/docs/projects/shaka-packager.md
+  s_20c5fdf91f2755::t_20711b79c0edd0 170-171
+src/content/docs/projects/shaka-player.md
+  s_20c5fdf91f2755::t_81297de13af540 159-160
+src/content/docs/projects/shap.md
+  s_20c5fdf91f2755::t_27e94c7879f783 170-172
+src/content/docs/projects/sharedb.md
+  s_20c5fdf91f2755::t_0bff9886850693 168-170
+src/content/docs/projects/sharp.md
+  s_20c5fdf91f2755::t_b06bd9f536fca6 165-167,169-170
+src/content/docs/projects/shell-gpt.md
+  s_20c5fdf91f2755::t_5ec792e9702b13 151
+src/content/docs/projects/shellcheck.md
+  s_20c5fdf91f2755::t_7bfb5491a01961 156-160
+src/content/docs/projects/shfmt.md
+  s_20c5fdf91f2755::t_635ab6431d110b 166-168
+src/content/docs/projects/shotcut.md
+  s_20c5fdf91f2755::t_50d4db414ad87a 150-155
+src/content/docs/projects/sidekiq.md
+  s_20c5fdf91f2755::t_506f53ea86ac9b 167-171
+src/content/docs/projects/sigma-js.md
+  s_20c5fdf91f2755::t_8aa708ffe27c15 175
+src/content/docs/projects/signal-android.md
+  s_20c5fdf91f2755::t_247f55a67dd2cc 152
+src/content/docs/projects/signal-ios.md
+  s_20c5fdf91f2755::t_214e63f8f2a604 151
+src/content/docs/projects/signoz.md
+  s_20c5fdf91f2755::t_7b4a00a3b3c9bb 194
+src/content/docs/projects/silverbullet.md
+  s_20c5fdf91f2755::t_f8272876d6dea0 195-196
+src/content/docs/projects/siyuan.md
+  s_20c5fdf91f2755::t_caa40161cc2616 167-168
+src/content/docs/projects/skaffold.md
+  s_20c5fdf91f2755::t_f2ddc0bf39522a 188-189
+src/content/docs/projects/sled.md
+  s_20c5fdf91f2755::t_d1d94534b91f19 190-191
+src/content/docs/projects/slim-framework.md
+  s_20c5fdf91f2755::t_b10fb65c474131 182
+src/content/docs/projects/smoltcp.md
+  s_20c5fdf91f2755::t_e5cb86f9156b68 151
+src/content/docs/projects/socket-io.md
+  s_20c5fdf91f2755::t_4d74b302258807 172-173
+src/content/docs/projects/soketi.md
+  s_20c5fdf91f2755::t_5545b758c2fb8d 157
+src/content/docs/projects/solid.md
+  s_20c5fdf91f2755::t_4a729c2522db21 167-168
+src/content/docs/projects/sonic.md
+  s_20c5fdf91f2755::t_22e1644c40de50 168
+src/content/docs/projects/sops.md
+  s_20c5fdf91f2755::t_bf034fe5c9968d 163
+src/content/docs/projects/sox.md
+  s_20c5fdf91f2755::t_4d6dd86c30f682 155-156
+src/content/docs/projects/spectorjs.md
+  s_20c5fdf91f2755::t_61baef8f05f83e 162-167
+src/content/docs/projects/spin.md
+  s_20c5fdf91f2755::t_81ff1b2f6418e8 161-162
+src/content/docs/projects/spine-runtimes.md
+  s_20c5fdf91f2755::t_d7e13a3efc4c90 196-198
+src/content/docs/projects/spring-boot.md
+  s_20c5fdf91f2755::t_a34b1e05c3b1ce 143-146,149,151-153
+src/content/docs/projects/sqlite.md
+  s_20c5fdf91f2755::t_158ce6ed47df69 151-176
+src/content/docs/projects/stable-diffusion-webui.md
+  s_20c5fdf91f2755::t_871631f585a637 154-160
+src/content/docs/projects/starlight.md
+  s_20c5fdf91f2755::t_a033c2a6afffd2 167-169,184
+src/content/docs/projects/storj.md
+  s_20c5fdf91f2755::t_185f305d1da16a 151
+src/content/docs/projects/streamlink.md
+  s_20c5fdf91f2755::t_6fbb9468596461 151-152
+src/content/docs/projects/streamlit.md
+  s_20c5fdf91f2755::t_622aed9e0a5d6c 190-196
+src/content/docs/projects/supercollider.md
+  s_20c5fdf91f2755::t_adcb98cd42d9bb 153-154
+src/content/docs/projects/superset.md
+  s_20c5fdf91f2755::t_25af320b21d0ec 174-177
+src/content/docs/projects/supertokens.md
+  s_20c5fdf91f2755::t_92730f5cd913d7 154
+src/content/docs/projects/surrealdb.md
+  s_20c5fdf91f2755::t_dd5d0c4033b307 195-196
+src/content/docs/projects/svelte.md
+  s_20c5fdf91f2755::t_3f2617c3f2bc21 160,168,170
+src/content/docs/projects/svt-av1.md
+  s_20c5fdf91f2755::t_64a26f0bc2ee79 150-153
+src/content/docs/projects/swc.md
+  s_20c5fdf91f2755::t_31bee2b2e1a3a3 169
+src/content/docs/projects/tabulator.md
+  s_20c5fdf91f2755::t_ff332d717cc044 189
+src/content/docs/projects/tailwind.md
+  s_20c5fdf91f2755::t_f4b639138e96b5 161
+src/content/docs/projects/tanstack-query.md
+  s_20c5fdf91f2755::t_a178ab78d96edb 169
+src/content/docs/projects/task.md
+  s_20c5fdf91f2755::t_79180732cbc114 193
+src/content/docs/projects/tauri.md
+  s_20c5fdf91f2755::t_e8cbbed41a1096 160-165
+src/content/docs/projects/tdengine.md
+  s_20c5fdf91f2755::t_520d54b009a6e6 165-166
+src/content/docs/projects/tekton.md
+  s_20c5fdf91f2755::t_427328387de8cd 187-190
+src/content/docs/projects/teku.md
+  s_20c5fdf91f2755::t_b95aab1b7a9aa7 161
+src/content/docs/projects/tempo.md
+  s_20c5fdf91f2755::t_46fd37481dda05 154-155
+src/content/docs/projects/temporal-polyfill.md
+  s_20c5fdf91f2755::t_09c7ed3f804b19 152,155
+src/content/docs/projects/tensorflow.md
+  s_20c5fdf91f2755::t_db3581ca0f3107 163-174
+src/content/docs/projects/terraform.md
+  s_20c5fdf91f2755::t_f497f6c6f6d439 181-195
+src/content/docs/projects/testing-library.md
+  s_20c5fdf91f2755::t_826c7cda0ba48f 151-152
+src/content/docs/projects/texstudio.md
+  s_20c5fdf91f2755::t_5bac6b454976e6 188-190
+src/content/docs/projects/textmate.md
+  s_20c5fdf91f2755::t_5bb433b9f0382e 165-166
+src/content/docs/projects/textual.md
+  s_20c5fdf91f2755::t_40e45ea5c4d080 185-186
+src/content/docs/projects/tflite-micro.md
+  s_20c5fdf91f2755::t_d4ebea55386e6d 164-167
+src/content/docs/projects/theia.md
+  s_20c5fdf91f2755::t_de110ea3f7e2c2 149-151
+src/content/docs/projects/thirdweb-sdk.md
+  s_20c5fdf91f2755::t_cc950a3490131e 173-174
+src/content/docs/projects/threejs.md
+  s_20c5fdf91f2755::t_54180047b8e727 163-188
+src/content/docs/projects/tidb.md
+  s_20c5fdf91f2755::t_6132f3b8e288df 170
+src/content/docs/projects/tig.md
+  s_20c5fdf91f2755::t_cd1f17a80c5f38 150-151
+src/content/docs/projects/tikv.md
+  s_20c5fdf91f2755::t_cc0eb367a0ef2b 161,167
+src/content/docs/projects/tiled.md
+  s_20c5fdf91f2755::t_c229cc14e4fc1f 195-197
+src/content/docs/projects/timescaledb.md
+  s_20c5fdf91f2755::t_624be54e9b2c69 173
+src/content/docs/projects/tldraw.md
+  s_20c5fdf91f2755::t_59cb5ece3cdf10 161-162
+src/content/docs/projects/torchtune.md
+  s_20c5fdf91f2755::t_e891aa53b92683 170-171
+src/content/docs/projects/traefik.md
+  s_20c5fdf91f2755::t_0b875909a129e5 161-170
+src/content/docs/projects/trilium.md
+  s_20c5fdf91f2755::t_388767ce8257c0 191-192
+src/content/docs/projects/triton-inference-server.md
+  s_20c5fdf91f2755::t_9f7320b2fe613d 161-164
+src/content/docs/projects/trl.md
+  s_20c5fdf91f2755::t_2ec3b0f3f05d5e 162-167
+src/content/docs/projects/turborepo.md
+  s_20c5fdf91f2755::t_77d729922d9cbc 172
+src/content/docs/projects/twgl.md
+  s_20c5fdf91f2755::t_52e3623222abeb 199-201
+src/content/docs/projects/twirp.md
+  s_20c5fdf91f2755::t_042d11018651b6 161
+src/content/docs/projects/tyk.md
+  s_20c5fdf91f2755::t_6ec8525932fd98 159
+src/content/docs/projects/typeorm.md
+  s_20c5fdf91f2755::t_dfd613153f426f 174-179
+src/content/docs/projects/typesense.md
+  s_20c5fdf91f2755::t_c9e5705b3f6091 150
+src/content/docs/projects/ultralytics.md
+  s_20c5fdf91f2755::t_f336ed22708996 192-193
+src/content/docs/projects/uniswap-v3.md
+  s_20c5fdf91f2755::t_89d87e3c0dddec 152-155,166
+src/content/docs/projects/universal-ctags.md
+  s_20c5fdf91f2755::t_32c7c48c51fd10 163
+src/content/docs/projects/unqlite.md
+  s_20c5fdf91f2755::t_cda392319eadcb 188-189
+src/content/docs/projects/unsloth.md
+  s_20c5fdf91f2755::t_09c058b3e7d261 159-160
+src/content/docs/projects/unstructured.md
+  s_20c5fdf91f2755::t_b076a54f178423 159-160
+src/content/docs/projects/v8.md
+  s_20c5fdf91f2755::t_e1cabb8aeab65d 145-150
+src/content/docs/projects/vanilla-extract.md
+  s_20c5fdf91f2755::t_5d8a659753cc39 179
+src/content/docs/projects/vega-lite.md
+  s_20c5fdf91f2755::t_d95c6c2cbeeba5 197-204
+src/content/docs/projects/vega.md
+  s_20c5fdf91f2755::t_f2ea7e8b79c3e1 178-180
+src/content/docs/projects/velero.md
+  s_20c5fdf91f2755::t_57db1b435994ba 168
+src/content/docs/projects/vespa.md
+  s_20c5fdf91f2755::t_f728ca819367f5 173-174
+src/content/docs/projects/video.js.md
+  s_20c5fdf91f2755::t_cdfb1a37b97427 178-182
+src/content/docs/projects/viem.md
+  s_20c5fdf91f2755::t_c838d44fae0506 180
+src/content/docs/projects/vim.md
+  s_20c5fdf91f2755::t_6aee7fbe98772d 164
+src/content/docs/projects/vips.md
+  s_20c5fdf91f2755::t_759a34cca3187b 166-167
+src/content/docs/projects/vis-network.md
+  s_20c5fdf91f2755::t_491ba39a8e1b04 159
+src/content/docs/projects/vis-timeline.md
+  s_20c5fdf91f2755::t_ada3283f049d49 145
+src/content/docs/projects/vite.md
+  s_20c5fdf91f2755::t_5fde1938799b1c 162-208
+src/content/docs/projects/vitess.md
+  s_20c5fdf91f2755::t_ac53bc1d7d722a 157
+src/content/docs/projects/vitest.md
+  s_20c5fdf91f2755::t_4b833f68d2bb72 185
+src/content/docs/projects/vllm.md
+  s_20c5fdf91f2755::t_646fdb310d0306 137,148
+src/content/docs/projects/vodozemac.md
+  s_20c5fdf91f2755::t_a01db209beeab7 162
+src/content/docs/projects/void.md
+  s_20c5fdf91f2755::t_c622b019a9abaa 173-174
+src/content/docs/projects/voila.md
+  s_20c5fdf91f2755::t_bb2f09583ccf00 162-163
+src/content/docs/projects/volta.md
+  s_20c5fdf91f2755::t_d9b283d229f855 161
+src/content/docs/projects/vscode.md
+  s_20c5fdf91f2755::t_44839dc132afc2 161-162,164-165,167-169,172-173,175-177,181,183
+src/content/docs/projects/vscodium.md
+  s_20c5fdf91f2755::t_a5ea586bddc4f9 167-168
+src/content/docs/projects/vue.md
+  s_20c5fdf91f2755::t_5b48fa23f0a701 175,181-182
+src/content/docs/projects/wails.md
+  s_20c5fdf91f2755::t_b8f14199d048de 152-153
+src/content/docs/projects/wamr.md
+  s_20c5fdf91f2755::t_572464a66f1686 150
+src/content/docs/projects/wandb.md
+  s_20c5fdf91f2755::t_df873f48649ed6 163,165
+src/content/docs/projects/warp.md
+  s_20c5fdf91f2755::t_b15f65f3435537 180
+src/content/docs/projects/wasmer.md
+  s_20c5fdf91f2755::t_7a8ab0f71537d8 152-155
+src/content/docs/projects/wasmtime.md
+  s_20c5fdf91f2755::t_5b8b5076c5fcbe 150-156
+src/content/docs/projects/weaviate.md
+  s_20c5fdf91f2755::t_5a8d5079046164 151
+src/content/docs/projects/web-vitals.md
+  s_20c5fdf91f2755::t_97b27293f9892e 169
+src/content/docs/projects/webpack.md
+  s_20c5fdf91f2755::t_1c0e424789b60d 163
+src/content/docs/projects/webrtc-rs.md
+  s_20c5fdf91f2755::t_b4f0b2e519abb6 160-164,168-169,171
+src/content/docs/projects/wezterm.md
+  s_20c5fdf91f2755::t_4fd4e23ccdfe9b 171-174
+src/content/docs/projects/wireguard-go.md
+  s_20c5fdf91f2755::t_fe0d2c99e44f73 167
+src/content/docs/projects/woodpecker.md
+  s_20c5fdf91f2755::t_3246126095020d 170-171
+src/content/docs/projects/x264.md
+  s_20c5fdf91f2755::t_0922082ce90b40 152-157
+src/content/docs/projects/x265.md
+  s_20c5fdf91f2755::t_53505845f0470d 150-153
+src/content/docs/projects/xonsh.md
+  s_20c5fdf91f2755::t_149d9e314e4160 158-159
+src/content/docs/projects/xplr.md
+  s_20c5fdf91f2755::t_321712178b423c 172
+src/content/docs/projects/yazi.md
+  s_20c5fdf91f2755::t_4a60c6cd4e7903 164-166
+src/content/docs/projects/yjs.md
+  s_20c5fdf91f2755::t_7c4277623887bd 159-160,162,166,168,171-172,174,177-178
+src/content/docs/projects/yocto-poky.md
+  s_20c5fdf91f2755::t_c2e82c229c706f 180,182
+src/content/docs/projects/yq.md
+  s_20c5fdf91f2755::t_5aaf22193e0b4c 172-179
+src/content/docs/projects/yt-dlp.md
+  s_20c5fdf91f2755::t_0d4ac7ea651cca 150-151
+src/content/docs/projects/yugabyte-db.md
+  s_20c5fdf91f2755::t_cbae75ee3f650d 158-159
+src/content/docs/projects/zcash.md
+  s_20c5fdf91f2755::t_847dcda2543f0f 146
+src/content/docs/projects/zed.md
+  s_20c5fdf91f2755::t_00caf0b2263785 153-159
+src/content/docs/projects/zellij.md
+  s_20c5fdf91f2755::t_0c80f37513804a 200-202
+src/content/docs/projects/zephyr.md
+  s_20c5fdf91f2755::t_a865dac5837a3a 174,176-178,180-189
+src/content/docs/projects/zeppelin.md
+  s_20c5fdf91f2755::t_1464d7d96c85d9 180-181
+src/content/docs/projects/zettlr.md
+  s_20c5fdf91f2755::t_0d4f18aca11c03 183-184
+src/content/docs/projects/zincsearch.md
+  s_20c5fdf91f2755::t_b91b40ae1f2acc 153-154
+src/content/docs/projects/zksync-era.md
+  s_20c5fdf91f2755::t_1d28c4b9057a16 158
+src/content/docs/projects/zookeeper.md
+  s_20c5fdf91f2755::t_71f28e76e80de0 158-165
+src/content/docs/projects/zoxide.md
+  s_20c5fdf91f2755::t_42f5d596c98ec1 164
+src/content/docs/projects/zsh.md
+  s_20c5fdf91f2755::t_7ebd988c1a0b8f 191,194
+src/content/docs/projects/zulip.md
+  s_20c5fdf91f2755::t_a817e3878013a6 150-151
+src/content/docs/projects/zustand.md
+  s_20c5fdf91f2755::t_33e6d40dccc768 191
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "9a6c64b0cbd33399f69a6e7a328ca0595ec98951",
+  "prompts": {},
+  "sessions": {
+    "s_20c5fdf91f2755": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_20c5fdf91f2755",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
