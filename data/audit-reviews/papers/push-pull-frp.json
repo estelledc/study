@@ -1,7 +1,4 @@
 {
-  "slug": "push-pull-frp",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -86,29 +83,5 @@
         "适用/不适用边界清楚，但「性能敏感」可再补一句相对纯 pull 轮询的量化直觉（如每帧全量重算 vs 事件驱动）"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：10-100× 定量宣称与论文不符；案例2/3缺逐部分解释；核心要点缺类比",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  }
+  ]
 }

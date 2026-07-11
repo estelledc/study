@@ -1,7 +1,4 @@
 {
-  "slug": "sentry",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -111,22 +108,5 @@
         "适用边界有 5k events、8GB self-host、高频路径微秒开销，量化够用"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：踩坑 1 误写 PII 默认上报；改为默认关闭 + 勿开 True + before_send",
-    "sections_modified": [
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 183,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 183,
-  "l1_pass": true
+  ]
 }

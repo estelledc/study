@@ -1,7 +1,4 @@
 {
-  "slug": "pipedream-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -116,28 +113,5 @@
         "适用边界有 K>4、1.5x–3x 吞吐，量化够用"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：案例 1 bubble 公式错误；best paper 提名不实；PaLM/API 路径过满或混用；案例收敛为 3 个并纠正异步 vs Flush",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 延伸阅读",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 154,
-  "l1_pass": true
+  ]
 }

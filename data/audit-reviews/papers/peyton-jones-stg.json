@@ -83,35 +83,5 @@
         "案例 1 的 -ddump-stg 已标明简化；可在案例旁加一句「真实 dump 还会有类型/arity 标注」以免读者对着本机输出对不上"
       ]
     }
-  ],
-  "slug": "peyton-jones-stg",
-  "area": "papers",
-  "status": "refined",
-  "lines": 171,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：延伸阅读页数 39→~76；核心要点补闭包/info pointer 桥接；案例标明 dump 简化",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 171,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

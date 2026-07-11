@@ -104,7 +104,7 @@
         "pitfalls_useful": 4,
         "scope_correct": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -113,33 +113,5 @@
         "适用边界清楚：骨干/收敛期可用性 vs 多故障灾难/安全敏感/小企业网"
       ]
     }
-  ],
-  "slug": "r-bgp-2007",
-  "area": "papers",
-  "status": "refined",
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：纠案例3虚假部署百分比；RCN→RCI；most-disjoint/下一跳通告；弱化「第一个」与表项臆测",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用",
-      "## 历史小故事",
-      "## 学到什么",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 153,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 153,
-  "l1_pass": true
+  ]
 }

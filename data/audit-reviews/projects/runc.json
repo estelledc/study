@@ -1,14 +1,9 @@
 {
-  "slug": "runc",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
   "needs_refine_count": 0,
   "pass_count": 3,
-  "lines": 188,
-  "l1_pass": true,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -113,18 +108,5 @@
         "适用/不适用边界清楚（学习/沙箱/CVE vs docker-compose/非 Linux/强隔离换 gVisor·Kata·Firecracker）"
       ]
     }
-  ],
-  "aggregate": {
-    "action": "pass",
-    "average": 4.56,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "pass_count": 3
-  },
-  "refinement": null,
-  "quality_gate": {
-    "pass": true,
-    "lines": 188,
-    "reasons": []
-  }
+  ]
 }

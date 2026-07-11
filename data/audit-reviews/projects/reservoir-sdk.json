@@ -98,36 +98,5 @@
         "案例里 getClient() 依赖事先 createClient，可在案例 1 前补一行初始化提示以免跟做失败"
       ]
     }
-  ],
-  "slug": "reservoir-sdk",
-  "area": "projects",
-  "status": "refined",
-  "lines": 155,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：Seaport 0.5% 改为市场费+时间限定；术语桥接；案例补 createClient 与三步读法；区分同名稳定币项目",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 155,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

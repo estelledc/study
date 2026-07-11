@@ -1,7 +1,4 @@
 {
-  "slug": "pbft-1999",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,30 +88,5 @@
         "适用列表里 Fabric 未标明默认是 CFT（Raft）；若保留 Fabric，应写成 Fabric SmartBFT（v3+）以免读者按 PBFT 去配生产 ordering"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：历史小故事 60% 吞吐口径与论文 3% 不符；「所有区块链直系祖先」过强；Fabric 适用需标明 SmartBFT/v3+",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  }
+  ]
 }

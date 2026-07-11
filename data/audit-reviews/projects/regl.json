@@ -101,7 +101,7 @@
         "pitfalls_useful": 5,
         "scope_correct": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -110,24 +110,5 @@
         "适用/不适用边界清楚（引擎 vs 薄封装 vs 图表库）；可补一句「适合自定义 draw call 量级 demo，不适合开箱即用场景图」"
       ]
     }
-  ],
-  "status": "refined",
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：案例 3 标明 ping-pong 骨架、完整 GoL 见官方 life.js；适用段补自定义 draw call 边界",
-    "sections_modified": [
-      "## 实践案例",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 198,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 198,
-  "l1_pass": true
+  ]
 }

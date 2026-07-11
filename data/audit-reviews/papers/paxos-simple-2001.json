@@ -1,7 +1,4 @@
 {
-  "slug": "paxos-simple-2001",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -116,33 +113,5 @@
         "适用/不适用边界清楚（动手实现、BFT、吞吐）；可补一句『读完仍需对照开源 Raft/Paxos 实现看成员变更』"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：纠 etcd≠Paxos α；Phase 2 双分支写清；核心要点『三层』改五步；弱化§3『14段』",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 176,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 176,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  }
+  ]
 }

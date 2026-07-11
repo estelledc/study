@@ -1,7 +1,4 @@
 {
-  "slug": "plenoxels-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -106,27 +103,5 @@
         "适用边界有场景类型与替代方案，量化可再补但已够用"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：修正案例2「PSNR 高 0.4 dB / 200k 步」为与 JAXNeRF 持平、约 128k 步；同步修正学到什么中的 PSNR 表述。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

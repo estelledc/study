@@ -1,7 +1,4 @@
 {
-  "slug": "ripgrep",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.55,
   "reject_count": 0,
@@ -111,33 +108,5 @@
         "适用/不适用有边界（管道仍偏 grep、只搜不改、POSIX 脚本）；可补一句「大仓库默认 ignore 是主收益，不是 regex 魔法」"
       ]
     }
-  ],
-  "aggregate": {
-    "action": "refine",
-    "average": 3.55,
-    "reject_count": 0,
-    "needs_refine_count": 3,
-    "pass_count": 0
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 191,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 191,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：-u/-uu/-uuu 档位写反；rayon 不实；PCRE2 属 0.10 非 v13；VS Code 默认约 1.11 非 1.27",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

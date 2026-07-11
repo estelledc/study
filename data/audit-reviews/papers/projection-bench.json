@@ -108,30 +108,5 @@
         "适用/不适用边界清楚：材料子域、非完整科研闭环、不替代同行评审"
       ]
     }
-  ],
-  "slug": "projection-bench",
-  "area": "papers",
-  "status": "passed",
-  "lines": 178,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 178,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "All reviewers passed; no refinement required",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "piccolo-building-fast-distributed-programs-with-partitioned-2010",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -111,20 +108,5 @@
         "适用/不适用边界清楚（迭代内存状态 vs 流水线批处理 / 跨 key 事务 / 数据倾斜）"
       ]
     }
-  ],
-  "aggregate": {
-    "action": "pass",
-    "average": 4.44,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "pass_count": 3
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

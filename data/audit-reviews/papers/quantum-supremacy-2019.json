@@ -1,7 +1,4 @@
 {
-  "slug": "quantum-supremacy-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -86,26 +83,5 @@
         "RCS/XEB 概念步骤可跟读；踩坑（霸权≠有用、保真度、经典反扑）具体；适用边界可再点明「学异构思维 vs 真跑 NISQ」的预期差距。"
       ]
     }
-  ],
-  "refinement": {
-    "slug": "quantum-supremacy-2019",
-    "area": "papers",
-    "status": "refined",
-    "round": 1,
-    "lines": 163,
-    "l1_pass": true,
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "reasons": [],
-    "file": "/workspace/src/content/docs/papers/quantum-supremacy-2019.md"
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

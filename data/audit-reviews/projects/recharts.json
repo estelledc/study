@@ -1,7 +1,4 @@
 {
-  "slug": "recharts",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -96,31 +93,5 @@
         "历史时间线里的版本/bundle 数字会误导选型；修完后踩坑与适用段的 SVG/点数边界可保留"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：v3.8.1/70KB/WAAPI 口径不准；Container「8个」偏少；70%/90% 营销数字需弱化",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 194,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  }
+  ]
 }

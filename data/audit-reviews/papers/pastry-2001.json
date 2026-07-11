@@ -1,7 +1,4 @@
 {
-  "slug": "pastry-2001",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -111,24 +108,5 @@
         "适用/不适用有边界（最终一致、Sybil、NAT）；可再点明「最后一跳靠 leaf set、前缀表负责中间跳」的职责分工"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：nodeId 非固定 IP hash；Chord 期望跳数误写成 ≈17；案例 4 挪回实践案例并补软状态/expanding ring 白话",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 160,
-  "l1_pass": true
+  ]
 }

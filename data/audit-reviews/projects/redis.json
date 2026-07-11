@@ -83,37 +83,5 @@
         "分布式锁案例可补一句：释放须用 Lua 校验 uuid 再 DEL，避免只写 SET NX 不写释放路径"
       ]
     }
-  ],
-  "slug": "redis",
-  "area": "projects",
-  "status": "refined",
-  "lines": 159,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic needs-refine：许可证改为 RSALv2/SSPLv1 双许可；单线程改为命令执行单线程+Redis6 I/O 线程限定；案例补 cache-aside 步骤与锁释放 Lua；裁剪反向链接过 gate",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

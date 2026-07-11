@@ -113,37 +113,5 @@
         "适用/不适用边界清楚；可再点明短脚本（百毫秒级）常比 CPython 慢的量化印象"
       ]
     }
-  ],
-  "slug": "pypy-tracing-jit",
-  "area": "papers",
-  "status": "refined",
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "收窄「没专门写 JIT / 工业首次 / 5–10x」过满表述；案例 2–3 补 jit_merge_point/guard 伪代码与多前端 hint 跟做；适用补短脚本量化。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 175,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 175,
-  "l1_pass": true
+  ]
 }

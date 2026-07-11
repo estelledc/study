@@ -1,7 +1,4 @@
 {
-  "slug": "rocket-chat",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -106,29 +103,5 @@
         "踩坑（DDP 内存、Mongo 分片、E2EE 与 omnichannel 冲突、sticky session）具体可操作；适用边界清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：纠正 Apps Engine「早于 Slack apps」与「同期推 Apps」；engineer：补全 compose mongo + Apps 最小伪代码；星数改为约 45k+。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

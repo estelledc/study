@@ -1,7 +1,4 @@
 {
-  "slug": "rook",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "CephCluster/BlockPool/PVC YAML 可跟做；loopback、奇数 mon、跨版本升级、内存与 useAllNodes 踩坑具体；延迟与节点数边界有量化。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "lines": 173,
-  "l1_pass": true,
-  "quality_gate": {
-    "pass": true,
-    "lines": 173,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

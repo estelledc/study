@@ -108,34 +108,5 @@
         "适用单机写多/嵌入式状态；不适用跨机复制、冷数据随机点查——边界清楚，可再点明「默认 write_buffer 64MB」级量化"
       ]
     }
-  ],
-  "slug": "rocksdb",
-  "area": "projects",
-  "status": "refined",
-  "lines": 176,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 176,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：修正 TiKV「每 region 一 CF」；Bloom 假阴性→假阳性；实践案例压成 3 个并补 PUT/GET 迷你骨架与逐部分解释",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

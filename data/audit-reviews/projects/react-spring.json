@@ -1,7 +1,4 @@
 {
-  "slug": "react-spring",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -116,32 +113,5 @@
         "适用手势/物理感/多 target vs GSAP 时间线/纯 CSS hover——边界清楚；~16KB 量级可作约数保留"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：2017→2018 首发；Framer spring 非 2021 才加；duration 为可选旁路；案例2拆三步",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 172,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  }
+  ]
 }

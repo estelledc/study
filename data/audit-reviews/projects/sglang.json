@@ -71,7 +71,7 @@
         "accessibility": 4,
         "case_clarity": 3
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -104,7 +104,7 @@
         "pitfalls_useful": 4,
         "scope_correct": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -113,34 +113,5 @@
         "适用/不适用边界清楚；多卡「不如 vLLM 完整」宜弱化为持续追赶"
       ]
     }
-  ],
-  "slug": "sglang",
-  "area": "projects",
-  "status": "refined",
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：纠 <5%/3-5× 口径；限定 vLLM 前缀缓存；案例补逐步；补历史小故事与反向链接",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用",
-      "## 与 vLLM 怎么选",
-      "## 历史小故事",
-      "## 延伸阅读",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 167,
-  "l1_pass": true
+  ]
 }

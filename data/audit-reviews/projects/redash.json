@@ -1,7 +1,4 @@
 {
-  "slug": "redash",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.55,
   "reject_count": 0,
@@ -111,26 +108,5 @@
         "适用边界有量化（<10 万行、秒级告警不适合）；缺 ## 反向链接占位，补上以免后续 regen 无锚点"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：纠『非工程师』定位；案例1拆步并厘清 Postgres结果 vs Redis broker；补 Query Runner 伪代码与反向链接；修正学到什么存储口径",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 学到什么",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 179,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 179,
-  "l1_pass": true
+  ]
 }

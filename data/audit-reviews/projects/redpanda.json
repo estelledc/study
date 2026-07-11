@@ -1,7 +1,4 @@
 {
-  "slug": "redpanda",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -111,33 +108,5 @@
         "BSL / --memory / fsync+NVMe / WASM 生态差距——具体可操作，保留；适用边界（Streams DSL、纯 OSS、超大规模）清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic 纠正 Pulsar≠Raft、收窄 P99 10× 与「无 Controller」表述；engineer 修正 kafka 脚本踩坑绝对化。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

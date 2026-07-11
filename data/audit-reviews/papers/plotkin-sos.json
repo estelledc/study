@@ -108,30 +108,5 @@
         "适用 <50 构造 / Coq 证明；不适用 C++/Rust 级规范、弱内存、直接当解释器——边界有量化"
       ]
     }
-  ],
-  "slug": "plotkin-sos",
-  "area": "papers",
-  "status": "passed",
-  "lines": 180,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 180,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

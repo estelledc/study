@@ -93,36 +93,5 @@
         "案例 Model.init / Op.gt / migration up-down 概念正确可跟做；适用场景宜补更具体边界（存量维护 vs 新 TS 项目）"
       ]
     }
-  ],
-  "slug": "sequelize",
-  "area": "projects",
-  "status": "refined",
-  "lines": 171,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 171,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer needs-refine：弱化无出处百分比与「最古老」绝对化；补历史小故事；适用场景加存量规模等量化边界",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

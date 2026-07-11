@@ -93,30 +93,5 @@
         "踩坑具体（图规模、代价调参、重排抖动、非 DRF）；适用有 <1000 机器量化边界"
       ]
     }
-  ],
-  "slug": "quincy-2009",
-  "area": "papers",
-  "status": "passed",
-  "lines": 157,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

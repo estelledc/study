@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "马克笔/白纸、翻页书、工具箱、厨房器具类比贯穿全文，零基础友好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "InitWindow / game loop / Camera2D / MusicStream 均有白话桥接；世界坐标仍稍密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有逐部分解释；案例 2 片段依赖 screenWidth 上下文，跟做略费劲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1.0（2013-11）、1.1/rlgl（2014）、1.3 shader/camera/raygui（2015）、physac/音频演进（2016）与 HISTORY 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 raysan5/raylib 合理；『三万多 stars / 140+ examples / 70+ bindings』与 README 量级相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "FAQ 定位 graphics library 非完整引擎，未歪曲；『2015-2016 更多平台』略宽（Android/RPi/Web 主在 2014）但不构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "是什么段完整可编译骨架正确；案例摘自官方 basic window / core_2d_camera / audio_music_stream，概念可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：当引擎用、忘 UpdateMusicStream、不 Unload、只看 cheatsheet——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚，量化可再紧一点"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "马克笔/白纸、翻页书、工具箱、厨房器具类比贯穿全文，零基础友好",
+        "InitWindow / game loop / Camera2D / MusicStream 均有白话桥接；世界坐标仍稍密",
+        "三案例都有逐部分解释；案例 2 片段依赖 screenWidth 上下文，跟做略费劲"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "1.0（2013-11）、1.1/rlgl（2014）、1.3 shader/camera/raygui（2015）、physac/音频演进（2016）与 HISTORY 一致",
+        "来源 raysan5/raylib 合理；『三万多 stars / 140+ examples / 70+ bindings』与 README 量级相符",
+        "FAQ 定位 graphics library 非完整引擎，未歪曲；『2015-2016 更多平台』略宽（Android/RPi/Web 主在 2014）但不构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "是什么段完整可编译骨架正确；案例摘自官方 basic window / core_2d_camera / audio_music_stream，概念可跟",
+        "踩坑具体：当引擎用、忘 UpdateMusicStream、不 Unload、只看 cheatsheet——可操作",
+        "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚，量化可再紧一点"
+      ]
+    }
+  ],
+  "slug": "raylib",
+  "area": "projects",
+  "status": "passed",
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，平均 4.33 ≥ 4.0，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 199,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 199,
+  "l1_pass": true
+}

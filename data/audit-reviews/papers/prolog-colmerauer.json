@@ -108,34 +108,5 @@
         "适用/不适用边界清楚（规则推理 / DCG / CLP vs 数值密集 / 可预测性能）；可再点明「默认深度优先无 memo」是调优主因"
       ]
     }
-  ],
-  "slug": "prolog-colmerauer",
-  "area": "papers",
-  "status": "refined",
-  "lines": 181,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 181,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic needs-refine：修正 Horn「线性可解」表述；拆开 Prolog II/III 与 CLP(FD)/SWI clpfd 的混淆",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

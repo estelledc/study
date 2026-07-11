@@ -1,7 +1,4 @@
 {
-  "slug": "peg-packrat-ford",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -111,24 +108,5 @@
         "适用/不适用边界清楚（自然语言→GLR/Earley、嵌入式→LL/LALR）；可顺带弱化 tree-sitter=PEG 的工程误导"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：LPeg 误写为 Lua 标准库；tree-sitter 不宜算 PEG 实现；案例 3 补运算符白话对照与 luarocks 前提",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 166,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 166,
-  "l1_pass": true
+  ]
 }

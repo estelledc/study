@@ -1,7 +1,4 @@
 {
-  "slug": "react-hook-form",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -111,26 +108,5 @@
         "适用/不适用有量化边界（10+ 字段、3–5 字段、antd Form 混用、RSC/Conform）；Proxy 并列里的 TanStack Query 需随 academic 改正"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：拿掉 TanStack Query 的 Proxy 并列；Formik 5-10x 加官方 benchmark 限定；stars 改为 4万+；案例 2 标明只演示接线",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 190,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 190,
-  "l1_pass": true
+  ]
 }

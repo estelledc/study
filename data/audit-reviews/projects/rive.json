@@ -1,7 +1,4 @@
 {
-  "slug": "rive",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -111,23 +108,5 @@
         "适用/不适用与 Lottie/游戏引擎边界清楚"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：runtime stars 7k 误写（约 1k+）；踩坑补具体失败后果",
-    "sections_modified": [
-      "## 是什么",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 200,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 200,
-  "l1_pass": true
+  ]
 }
