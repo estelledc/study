@@ -1,0 +1,142 @@
+{
+  "slug": "shannon-1948",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "水/电的秤、抛硬币、太阳东升/中彩票类比贴合「信息可称量」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "熵/信道容量/编码定理均有日常桥接；踩坑里的 MINE / InfoNCE / von Neumann 熵对零基础仍偏硬"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3（硬币熵 / 英文字母 / 4G 上限）有逐步数字推导，可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Claude Shannon / BSTJ 1948 / A Mathematical Theory of Communication 正确；两期合计约 79 页、作者约 32 岁均合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联写「Shannon 学生 Huffman」不准确：Huffman 是 Fano 在 MIT 的学生，编码是 Fano 课堂作业产物，非 Shannon 亲传"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「bit 单位是 Shannon 起的」过满：名称由 Tukey 建议、Shannon 写入论文并普及；宜改为「采用/普及」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "硬币熵与 4G Shannon-Hartley 计算概念正确，可跟算"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：i.i.d. 高估、渐近极限、未构造码、高维互信息、熵≠语义——均可操作对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（通信/压缩/ML 损失 vs 强语义难采样、要具体码、量子、小样本）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "水/电的秤、抛硬币、太阳东升/中彩票类比贴合「信息可称量」",
+        "熵/信道容量/编码定理均有日常桥接；踩坑里的 MINE / InfoNCE / von Neumann 熵对零基础仍偏硬",
+        "案例 1–3（硬币熵 / 英文字母 / 4G 上限）有逐步数字推导，可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "来源 Claude Shannon / BSTJ 1948 / A Mathematical Theory of Communication 正确；两期合计约 79 页、作者约 32 岁均合理",
+        "关联写「Shannon 学生 Huffman」不准确：Huffman 是 Fano 在 MIT 的学生，编码是 Fano 课堂作业产物，非 Shannon 亲传",
+        "「bit 单位是 Shannon 起的」过满：名称由 Tukey 建议、Shannon 写入论文并普及；宜改为「采用/普及」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "硬币熵与 4G Shannon-Hartley 计算概念正确，可跟算",
+        "踩坑具体：i.i.d. 高估、渐近极限、未构造码、高维互信息、熵≠语义——均可操作对照",
+        "适用/不适用边界清楚（通信/压缩/ML 损失 vs 强语义难采样、要具体码、量子、小样本）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正 Huffman 为 Fano 学生/课堂作业；bit 名称改为 Tukey 建议、Shannon 写入并普及。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 Huffman 为 Fano 学生/课堂作业；bit 名称改为 Tukey 建议、Shannon 写入并普及。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 关联"
+    ],
+    "unresolved_hints": [],
+    "round": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true
+}
