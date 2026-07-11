@@ -1,0 +1,131 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "底盘+发动机 vs FastAPI 整车类比贴合，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ASGI 三通水管、路由分拣机、中间件洋葱均有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 逐部分解释清楚；案例 2/3 可再各补一句「为什么这样写」，但不挡跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Encode/Tom Christie、FastAPI 建于 Starlette、ASGI vs WSGI 叙事与项目史一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub encode/starlette 正确；文档与 ASGI 规范链接合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2020 起维护模式」偏修辞：核心 API 稳定但仍有发布，读作「刻意保持小而稳」即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "WebSocket / TimingMiddleware / lifespan 概念正确，可跟做对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：sync→线程池、中间件外层顺序、BaseHTTPMiddleware 断 contextvars、TestClient 同步——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：极致自定义/实时 vs 要 OpenAPI+校验用 FastAPI、同步 ORM 用 Flask/Django"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "底盘+发动机 vs FastAPI 整车类比贴合，零基础直觉强",
+        "ASGI 三通水管、路由分拣机、中间件洋葱均有日常桥接",
+        "案例 1 逐部分解释清楚；案例 2/3 可再各补一句「为什么这样写」，但不挡跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Encode/Tom Christie、FastAPI 建于 Starlette、ASGI vs WSGI 叙事与项目史一致",
+        "来源 GitHub encode/starlette 正确；文档与 ASGI 规范链接合理",
+        "「2020 起维护模式」偏修辞：核心 API 稳定但仍有发布，读作「刻意保持小而稳」即可"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "WebSocket / TimingMiddleware / lifespan 概念正确，可跟做对照",
+        "踩坑具体：sync→线程池、中间件外层顺序、BaseHTTPMiddleware 断 contextvars、TestClient 同步——可操作",
+        "适用/不适用边界清楚：极致自定义/实时 vs 要 OpenAPI+校验用 FastAPI、同步 ORM 用 Flask/Django"
+      ]
+    }
+  ],
+  "slug": "starlette",
+  "area": "projects",
+  "status": "passed",
+  "lines": 185,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 185,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

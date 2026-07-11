@@ -1,0 +1,142 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "机器狗 + 多样性奖学金类比贴合，熵/α 有白话桥接，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有对照表、案例 3 只有叙事，缺少逐步拆解；零基础难跟「为什么这样训」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 可拆成「v1 三网络手调 α → v2 删 V + 自动 α → 开源默认 v2」三步；至少一例补伪代码/跟做步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Haarnoja et al. ICML 2018 / arXiv:1801.01290，v2 arXiv:1812.05905，作者与年份正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「全面超越 DDPG/PPO/TD3」对 TD3 过满：论文与后续复现多为持平或略优，宜改为「全面强于 DDPG/PPO，与 TD3 持平或略优」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「去掉熵就退化成 TD3」不准确：TD3 是确定性策略 + 延迟更新 + target smoothing；无熵的 SAC 仍是随机 actor，勿等同 TD3"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：reward scale↔α、tanh log-prob jacobian、稀疏奖励+HER、离散变体——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无跟做伪代码/最小训练循环；建议补一段 v2 风格伪代码（replay → 双 Q min → 熵正则 actor → 可选自动 α）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；「样本效率高 10 倍」宜标成量级经验而非硬指标"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "机器狗 + 多样性奖学金类比贴合，熵/α 有白话桥接，保留",
+        "案例 2 只有对照表、案例 3 只有叙事，缺少逐步拆解；零基础难跟「为什么这样训」",
+        "案例 1 可拆成「v1 三网络手调 α → v2 删 V + 自动 α → 开源默认 v2」三步；至少一例补伪代码/跟做步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Haarnoja et al. ICML 2018 / arXiv:1801.01290，v2 arXiv:1812.05905，作者与年份正确",
+        "「全面超越 DDPG/PPO/TD3」对 TD3 过满：论文与后续复现多为持平或略优，宜改为「全面强于 DDPG/PPO，与 TD3 持平或略优」",
+        "「去掉熵就退化成 TD3」不准确：TD3 是确定性策略 + 延迟更新 + target smoothing；无熵的 SAC 仍是随机 actor，勿等同 TD3"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "踩坑具体可操作：reward scale↔α、tanh log-prob jacobian、稀疏奖励+HER、离散变体——保留",
+        "实践案例无跟做伪代码/最小训练循环；建议补一段 v2 风格伪代码（replay → 双 Q min → 熵正则 actor → 可选自动 α）",
+        "适用/不适用边界清楚；「样本效率高 10 倍」宜标成量级经验而非硬指标"
+      ]
+    }
+  ],
+  "slug": "sac-2018",
+  "area": "papers",
+  "status": "refined",
+  "lines": 157,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：弱化「全面超越 TD3」与「去掉熵=TD3」；案例补三步拆解与 v2 伪代码；10 倍改为量级经验",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  }
+}
