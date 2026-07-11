@@ -1,0 +1,142 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房换面粉类比贴合；revision / verified_at / memo 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Durability 三档可再加半句「按改动频率贴标签」，零基础更稳"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐部分解释；案例 2 链路清楚；案例 3 心智模型可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Adapton（Hammer et al., PLDI 2014）是 demand-driven / DCG，不宜写成「BFS 遍历整张依赖图标脏」——那更接近经典 eager SAC；应改成 demand-driven 依赖追踪 vs Salsa 的 revision + 反向 verify"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写 salsa book + RustConf 2019 合理；GitHub 描述句作标题可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "为什么重要里 Bevy / Cargo 宜标明是「同类心智模型」，避免读成它们直接跑 Salsa（rust-analyzer 才是）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 input/tracked API 与现行 Salsa book 方向一致；缺 Database 实现骨架但教学可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：Durability 分错档、tracked 里做 IO、macro 难调试、无跨进程持久化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界；IDE/纯函数派生 vs 副作用/跨机器 cache 清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厨房换面粉类比贴合；revision / verified_at / memo 有桥接",
+        "Durability 三档可再加半句「按改动频率贴标签」，零基础更稳",
+        "案例 1 有逐部分解释；案例 2 链路清楚；案例 3 心智模型可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Adapton（Hammer et al., PLDI 2014）是 demand-driven / DCG，不宜写成「BFS 遍历整张依赖图标脏」——那更接近经典 eager SAC；应改成 demand-driven 依赖追踪 vs Salsa 的 revision + 反向 verify",
+        "来源写 salsa book + RustConf 2019 合理；GitHub 描述句作标题可接受",
+        "为什么重要里 Bevy / Cargo 宜标明是「同类心智模型」，避免读成它们直接跑 Salsa（rust-analyzer 才是）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 input/tracked API 与现行 Salsa book 方向一致；缺 Database 实现骨架但教学可跟",
+        "踩坑具体可操作：Durability 分错档、tracked 里做 IO、macro 难调试、无跨进程持久化",
+        "适用/不适用有边界；IDE/纯函数派生 vs 副作用/跨机器 cache 清楚"
+      ]
+    }
+  ],
+  "slug": "salsa-adapton",
+  "area": "papers",
+  "status": "refined",
+  "lines": 162,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "纠正 Adapton≠BFS整图标脏；标明 Bevy/Cargo 为心智模型非直接用 Salsa；补 Durability「改动频率标签」桥接",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

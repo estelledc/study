@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "远程小服务器/按门铃类比把服务化讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CDP 有「Chrome DevTools 协议」桥接；Fastify 可再补半句「Node 里的 HTTP 框架」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有跟做路径：docker scrape、puppeteer.connect、plugin hook"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Apache-2.0、~7k★、TypeScript+Fastify+puppeteer-core、activeSession 单会话与源码一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "BasePlugin lifecycle hook 实际约 12 个（onSessionStart/onBrowserLaunch/onPageCreated 等）；笔记写「6 个」又写「7 个」自相矛盾，需统一改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "YC 同期 Browserbase 开源对照叙事大体成立；具体 commit hash 可弱化以免过快过时"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 注册应走 cdpService.registerPlugin(...)，不是 pluginManager.register；setCookie 不是 CDPService 公开 API，应改为 page/CDP Network.setCookies 或 sessionContext.cookies"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑很强：单 activeSession、CDP 无鉴权、endSession 后 relaunch、反 bot 非银弹——均可对照源码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用自托管/解耦 agent；不适用高并发单实例与纯脚本——边界有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "远程小服务器/按门铃类比把服务化讲透",
+        "CDP 有「Chrome DevTools 协议」桥接；Fastify 可再补半句「Node 里的 HTTP 框架」",
+        "三案例均有跟做路径：docker scrape、puppeteer.connect、plugin hook"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Apache-2.0、~7k★、TypeScript+Fastify+puppeteer-core、activeSession 单会话与源码一致",
+        "BasePlugin lifecycle hook 实际约 12 个（onSessionStart/onBrowserLaunch/onPageCreated 等）；笔记写「6 个」又写「7 个」自相矛盾，需统一改正",
+        "YC 同期 Browserbase 开源对照叙事大体成立；具体 commit hash 可弱化以免过快过时"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 注册应走 cdpService.registerPlugin(...)，不是 pluginManager.register；setCookie 不是 CDPService 公开 API，应改为 page/CDP Network.setCookies 或 sessionContext.cookies",
+        "踩坑很强：单 activeSession、CDP 无鉴权、endSession 后 relaunch、反 bot 非银弹——均可对照源码",
+        "适用自托管/解耦 agent；不适用高并发单实例与纯脚本——边界有量化"
+      ]
+    }
+  ],
+  "slug": "steel-browser",
+  "area": "projects",
+  "status": "refined",
+  "lines": 177,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "统一 hook 数为约12；案例3改为 registerPlugin + sessionContext.cookies；弱化过时 commit hash；补 Fastify 桥接",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

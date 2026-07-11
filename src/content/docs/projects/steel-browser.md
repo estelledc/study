@@ -39,7 +39,7 @@ Steel 的设计可以拆成 **三个层次**：
 
 2. **双接口并存**：上层是 OpenAPI 风格的高层 REST（`/v1/scrape` / `/v1/screenshot` / `/v1/pdf`），下层暴露 raw CDP WebSocket（agent 想自己讲 Chrome DevTools 协议也行）。同一个 Chromium 实例两条接口都通——这是 Steel 区别于纯 SaaS 的核心特征。
 
-3. **plugin 钩子扩展**：核心代码 1500 行 `cdp.service.ts` 不用改，通过实现 `BasePlugin` 子类挂 `onSessionStart` / `onBrowserLaunch` / `onSessionEnd` 等 6 个 lifecycle hook，就能注入 cookie、改 header、加监控——这是"框架"而不是"工具"的味道。
+3. **plugin 钩子扩展**：核心约 1500 行 `cdp.service.ts` 不用改，实现 `BasePlugin` 子类即可挂生命周期钩子——`onSessionStart` / `onBrowserLaunch` / `onPageCreated` / `onSessionEnd` 等约 **12 个**，用来注入 cookie、改启动参数、加监控。HTTP 层用的是 Fastify（Node 里的 HTTP 框架）。这是"框架"而不是"工具"的味道。
 
 三层加起来的效果：**让 agent 像调外部 SaaS 一样用浏览器，但代码和数据都在自己手里**。
 
@@ -78,22 +78,27 @@ browser.disconnect();
 
 注意关键点：**agent 用的是标准 `puppeteer.connect()`**，它不知道中间有 Steel——对 puppeteer 来说 Steel 是透明的，等于一台远程 Chrome。
 
-### 案例 3：用 plugin 给每个 session 注入自定义 cookie
+### 案例 3：用 plugin 在 session 启动时注入 cookie
 
 ```typescript
-// 自己写个 plugin
+// 自己写个 plugin（示意）
 class MyAuthPlugin extends BasePlugin {
+  constructor() { super({ name: "my-auth" }); }
   async onSessionStart(config) {
-    await this.cdpService.setCookie({
-      name: 'auth_token',
-      value: process.env.AUTH_TOKEN,
-      domain: '.mycompany.com',
-    });
+    // 把 cookie 写进本次 session 的启动上下文（不要臆造 setCookie API）
+    config.sessionContext = {
+      ...(config.sessionContext || {}),
+      cookies: [{
+        name: "auth_token",
+        value: process.env.AUTH_TOKEN,
+        domain: ".mycompany.com",
+      }],
+    };
   }
 }
 
-// 注册（不改 cdp.service.ts 一行）
-cdpService.pluginManager.register(new MyAuthPlugin());
+// 注册：走公开的 registerPlugin（不改 cdp.service.ts 一行）
+cdpService.registerPlugin(new MyAuthPlugin());
 ```
 
 每次 session 开始 Steel 自动调你的 hook——这就是"框架"的扩展点。
@@ -114,7 +119,7 @@ cdpService.pluginManager.register(new MyAuthPlugin());
 
 - 公司内部 / 隐私敏感场景，需要**自托管**浏览器服务（替代 Browserbase 闭源 SaaS）
 - 有"agent 需要看网页"的应用——上 Steel 把浏览器跟主流程解耦，agent 死了不影响浏览器
-- 想 fork 改逻辑做内部基建（Apache-2.0 友好），已有 1500 行核心 + 7 个 hook 不用从零写
+- 想 fork 改逻辑做内部基建（Apache-2.0 友好），已有约 1500 行核心 + 约 12 个 hook 不用从零写
 - 反 bot 检测要求中等强度的抓取场景（裸 puppeteer 抗检测能力差）
 
 **不适用**：
@@ -129,13 +134,13 @@ cdpService.pluginManager.register(new MyAuthPlugin());
 - **2017 年**：Google 发布 puppeteer，把 Chrome DevTools Protocol 包成 Node 库——但定位是"测试工具"，不是服务。
 - **2020 年**：Microsoft 出 playwright，跨浏览器 + 更好的 selector，仍是进程内长驻库。
 - **2023 年**：ChatGPT 加 browsing 功能，OpenAI 内部包了一个浏览器服务（黑盒，外人看不到）。
-- **2024 年**：YC W24 同期同时孵化 Browserbase（闭源 SaaS）+ Steel（开源对照物），都是把"浏览器即服务"商业化。
-- **2026 年**：主线 commit fc75fcae，star ~7.1k。Steel 维护者还是 Steel.dev 公司核心团队 + 社区贡献。
+- **2024 年**：Browserbase（闭源 SaaS）与 Steel（开源自托管）几乎同期把"浏览器即服务"推向 agent 市场；Steel 团队亦经 YC 孵化。
+- **2026 年**：仓库约 7k+★，仍由 Steel.dev 核心团队 + 社区维护，API 与 session 模型持续迭代。
 
 ## 学到什么
 
 1. **同一个能力在两种执行模型之间需要一层翻译**——puppeteer（进程内）→ Steel（HTTP 服务）就是这个翻译
-2. **核心薄但 hook 多** 是"框架"健康的信号——Steel 7 个 extension point 让你不动 1500 行核心就能改行为
+2. **核心薄但 hook 多** 是"框架"健康的信号——约 12 个 lifecycle hook 让你不动约 1500 行核心就能改行为
 3. **双接口并存** 是聪明设计：高层 REST 给"我只想抓页面"的 agent，raw CDP 给"我要自己讲协议"的 agent
 4. **不显眼的运维负担**（鉴权 / 多实例 / 持久化）是开源 SaaS 替代品的真正成本——README 不会告诉你
 
