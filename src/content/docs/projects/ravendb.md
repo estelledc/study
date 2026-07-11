@@ -18,7 +18,7 @@ GitHub 约 3.5k star，AGPLv3 + 商业双授权，是 .NET 圈对标 [[mongodb]]
 
 - **跨文档 ACID 在文档数据库里是稀有特性**：[[mongodb]] 直到 4.0（2018）才支持，且性能损失明显；RavenDB 从 v1 起就是默认行为
 - **.NET 优先**：客户端是 C# / LINQ 写的，索引可以直接用 LINQ 表达式声明，写起来像查 List 而不是拼字符串
-- **预计算索引**：查询永远走索引、不退化成全表扫——这一点和 [[elasticsearch]] 同源（都用过 Lucene），但 OLTP 场景更友好
+- **预计算索引**：查询优先走索引、靠动态索引补洞——和 [[elasticsearch]] 同源（都用过 Lucene），但 OLTP 更友好
 - **集群一致性可调**：单文档默认异步多主复制；标了 cluster-wide 的事务走 [[raft]] 严格一致，让你按业务挑
 
 ## 核心要点
@@ -58,7 +58,7 @@ public class Users_ByAge : AbstractIndexCreationTask<User> {
 
 代价：索引会**异步**更新（毫秒级延迟），所以默认查询是"最终一致"。要强一致需显式 `WaitForNonStaleResults`。
 
-好处：查询永远不会因为漏建索引退化成全表扫——RavenDB 干脆禁止 ad-hoc 全表查，逼你提前声明。
+好处：查询优先走索引；没匹配索引时会自动建动态索引，而不是默默全表扫——逼你把查询路径显式化。
 
 ### 3. RQL 长得像 SQL，跑的是 Lucene/Corax
 
@@ -69,7 +69,7 @@ order by Age desc
 limit 10
 ```
 
-底层 v5 之前走 Lucene 索引（和 [[elasticsearch]] 同根），v6（2024）切到自研 **Corax**——按 RavenDB 工作负载特化（更小的内存占用、更少的 GC），官方测速比 Lucene 快 5-10 倍。
+底层长期走 Lucene 索引（和 [[elasticsearch]] 同根）；v6（2023）起可选自研 **Corax**（与 Lucene 并存）——按 RavenDB 工作负载特化，官方测速常报数倍提升。
 
 ### 4. 集群：多主异步 + Raft 严格一致
 
@@ -99,7 +99,7 @@ RavenDB 自带把数据同步到外部的 ETL 任务：到 SQL Server、到 Kafk
 
 ### 案例 1：电商订单 + 库存的强一致
 
-下单要同时扣库存和写订单。两个文档分布在不同 collection，传统文档库只能在应用层用补偿事务。RavenDB 直接：
+下单要同时扣库存和写订单。两步：① 开 `ClusterWide` 会话；② 同事务改库存并 `Store` 订单，`SaveChanges` 经 Raft 提交。
 
 ```csharp
 using var session = store.OpenSession(new SessionOptions {
@@ -108,20 +108,41 @@ using var session = store.OpenSession(new SessionOptions {
 var stock = session.Load<Stock>("stocks/sku-123");
 if (stock.Quantity < 1) throw new OutOfStockException();
 stock.Quantity--;
-session.Store(new Order { ... });
-session.SaveChanges(); // Raft committed，要么都成功要么都失败
+session.Store(new Order { Sku = "sku-123", Qty = 1 });
+session.SaveChanges(); // 多数节点确认，要么都成功要么都失败
 ```
 
-### 案例 2：博客全文搜索 + 文档查询合一
+### 案例 2：博客全文搜索 + 文档过滤合一
 
-用 [[postgresql]] 你得装 `pg_trgm` 或外接 [[elasticsearch]]；用 [[mongodb]] 文本索引能力有限。RavenDB 一句 `search()` 走 Corax，**OLTP 库自己带全文搜索**，省一套基础设施。
+步骤：① 声明含 `search` 字段的索引；② 用 RQL 一次过滤年龄并搜 Bio；③ 不必外挂搜索集群。
+
+```csharp
+// Map 索引把 Bio 送进全文字段后：
+// from Users where Age > 25 and search(Bio, "machine learning")
+var users = session.Advanced.DocumentQuery<User>()
+    .WhereGreaterThan(u => u.Age, 25)
+    .Search(u => u.Bio, "machine learning")
+    .ToList();
+```
+
+### 案例 3：Subscription 当迷你消息队列
+
+步骤：① 按谓词创建订阅；② `Run` 拉批次处理；③ 断线后从续传点接着消费——适合 CQRS 投影。
+
+```csharp
+var id = store.Subscriptions.Create<Order>(o => o.Status == "Pending");
+var worker = store.Subscriptions.GetSubscriptionWorker<Order>(id);
+await worker.Run(batch => {
+    foreach (var item in batch.Items) ProcessOrder(item.Result);
+});
+```
 
 ## 踩过的坑
 
-1. **AGPLv3 是真的"传染"**：把 RavenDB 嵌入闭源产品要么开源整个项目，要么买商业授权——不是 Apache 那种宽松协议，正经商用前要先和法务对齐
-2. **索引异步更新带来"读自己写不到"**：刚 `SaveChanges` 完立刻查，可能查不到最新数据。需要 `WaitForNonStaleResults` 或重读文档（按 ID 永远是强一致）
-3. **没有 ad-hoc 查询**：习惯 [[mongodb]] 随便 `db.find({})` 探索的人会不适，RavenDB 强制先声明索引
-4. **生态小**：星数 3.5k vs [[mongodb]] 28k，遇到非主流问题 Stack Overflow 上不一定有答案，多数得啃官方文档或 Ayende 博客
+1. **AGPLv3 是真的"传染"**：嵌入闭源产品要么开源，要么买商业授权——商用前先和法务对齐
+2. **索引异步更新带来"读自己写不到"**：刚 `SaveChanges` 立刻按条件查可能旧；要 `WaitForNonStaleResults`，或按 ID 重读（按 ID 强一致）
+3. **探索型 ad-hoc 不友好**：习惯 [[mongodb]] 随便 `find` 的人会撞上自动索引/声明索引门槛
+4. **生态小**：约 3.5k star vs [[mongodb]] 量级差距，冷门问题多靠官方文档或 Ayende 博客
 
 ## 适用 vs 不适用场景
 
@@ -140,12 +161,12 @@ session.SaveChanges(); // Raft committed，要么都成功要么都失败
 
 ## 历史小故事（可跳过）
 
-- **2010 年**：Oren Eini 在 NHibernate 维护多年，受够"对象关系阻抗失配"的痛，决定造一个文档库
-- **v3（2015）**：第一个被 .NET 社区广泛接受的稳定版
-- **v4（2018）**：重写存储引擎 **Voron**（基于 LMDB 思路的 B+ Tree），性能跃迁
-- **v5（2021）**：引入时间序列和分布式计数器
-- **v6（2024）**：自研 **Corax** 替换 Lucene 索引引擎
-- **v7（2025）**：原生向量搜索，拥抱 RAG 浪潮
+- **2010 年**：Oren Eini 受够 ORM 阻抗失配，发布 RavenDB 1.0（跨文档 ACID）
+- **v3（2014）**：引入自研存储引擎 **Voron**（LMDB 思路的 B+ Tree）
+- **v4（2018）**：Voron 成为唯一引擎，跨平台；随后 4.1 加 cluster-wide 事务
+- **v5（2020）**：时间序列与分布式计数器
+- **v6（2023）**：自研 **Corax** 索引引擎可选上线（与 Lucene 并存）
+- **v7（2025）**：原生向量搜索，拥抱 RAG
 
 ## 学到什么
 
@@ -170,3 +191,7 @@ session.SaveChanges(); // Raft committed，要么都成功要么都失败
 - [[postgresql]] —— JSONB 路线的关系派对手
 - [[raft]] —— cluster-wide 事务底层共识
 - [[neo4j]] —— 邻居领域（图）做对照
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
