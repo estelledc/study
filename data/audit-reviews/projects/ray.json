@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 直接抛 ParamServer 代码，缺『起 actor → worker 拉权重 → 回传梯度』的分步白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 Tune 一行带过，应拆成：定义 train_fn → 搜参空间 → ASHA 早停 三步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 ObjectRef / placement group 首次出现偏密，可各补半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ray 1.0 于 2020-09-30 宣布（Anyscale / Ray Summit），不是 2021；历史段应改为 2020"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『OpenAI 训 GPT』偏绝对；宜弱化为『OpenAI 等大规模训练/服务场景采用 Ray』并保留 Uber/Pinterest 等公开案例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "OSDI 2018 论文与 docs.ray.io 来源合理；Plasma 现多称 object store，可注明『曾称 Plasma』以免过时"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 缺 import numpy / ray.init 上下文；应补最小可跟做骨架或注明沿用文首 init"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 init_weights、compute_grad 未定义，读者无法跟做；给 stub 或伪实现"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 tune.run 可用，但 train_fn 应给最小签名（config→metric）以免 API 悬空"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 直接抛 ParamServer 代码，缺『起 actor → worker 拉权重 → 回传梯度』的分步白话",
+        "案例 3 Tune 一行带过，应拆成：定义 train_fn → 搜参空间 → ASHA 早停 三步",
+        "核心要点里 ObjectRef / placement group 首次出现偏密，可各补半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Ray 1.0 于 2020-09-30 宣布（Anyscale / Ray Summit），不是 2021；历史段应改为 2020",
+        "『OpenAI 训 GPT』偏绝对；宜弱化为『OpenAI 等大规模训练/服务场景采用 Ray』并保留 Uber/Pinterest 等公开案例",
+        "OSDI 2018 论文与 docs.ray.io 来源合理；Plasma 现多称 object store，可注明『曾称 Plasma』以免过时"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 缺 import numpy / ray.init 上下文；应补最小可跟做骨架或注明沿用文首 init",
+        "案例 2 的 init_weights、compute_grad 未定义，读者无法跟做；给 stub 或伪实现",
+        "案例 3 tune.run 可用，但 train_fn 应给最小签名（config→metric）以免 API 悬空"
+      ]
+    }
+  ],
+  "slug": "ray",
+  "area": "projects",
+  "status": "refined",
+  "lines": 192,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 192,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "纠 Ray 1.0 年份 2020；弱化 OpenAI 表述；案例补分步与 stub；ObjectRef/Plasma/placement group 桥接；补反向链接",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}
