@@ -8,47 +8,43 @@ title: React Native — 一套代码跑多端的跨端运行时
 
 ## 是什么
 
-React Native 是 Meta 用 React 思维搭起的跨平台 App 开发方案。
+React Native（**RN**）是 Meta（原 Facebook）用 React 思维搭起的跨平台 App 方案：你写一套 JS/TS 组件，两端各自长出**原生控件**，不是套一个浏览器壳。
 
-日常类比：你在同一个厨房做菜，但能同时服务 iOS、Android 两个不同餐厅。
-你写一套 React 组件和业务逻辑，底层由桥接层把这套 UI/交互翻译给对应原生系统。
+日常类比：同一份剧本，两个剧场各自搭景——iOS 用 UIKit 布景，Android 用系统 View 布景。中间有个**传话员**（旧架构叫 Bridge）把「台词、走位、道具」在 JS 世界和原生世界之间来回传。
 
-它不是“纯 Web”，也不是“纯 Native”，更像“UI 语义 + 原生适配器”。
-
-从开发者视角，你在 JavaScript 里描述状态、事件和视图。
-从手机系统视角，React Native 最后把它映射成 UIKit、Jetpack Compose 或底层视图层 API。
+它不是「纯 Web」，也不是「手写两套 Native」：更像「UI 语义用 React 描述 + 原生适配器落地」。
 
 ## 为什么重要
 
-- 一套组件树能覆盖 iOS 与 Android，团队人力可复用率明显提高。
-- 产品快速试验期，需求更新频繁，热更新和 OTA 能显著缩短发版周期。
-- 原生能力（摄像头、权限、推送）仍可逐步下沉，不会被 Web 套壳完全束缚。
+不理解 React Native，下面这些事都没法解释：
 
-早期移动开发常见问题是“复制两套代码”。React Native 的价值就在于减少这种重复。
+- 为什么同一套组件树能同时覆盖 iOS 与 Android，团队人力可复用
+- 为什么产品试验期改 UI 往往比双端各发一版商店包更快（JS 热重载；**OTA/热更新**通常靠 CodePush 等第三方，且受商店政策约束，不是官方标配万能药）
+- 为什么摄像头、推送等仍可下沉到 Native Module，不被 WebView 完全束缚
+- 为什么列表卡顿、手势掉帧常常出在「JS 线程 ↔ 原生线程」边界，而不是「React 写错了」一句话能概括
+
+早期移动开发常见「复制两套代码」。RN 的价值是减少重复，同时保留原生渲染。
 
 ## 核心要点
 
-1. **Bridge / JS Engine**
+1. **Bridge / JS Engine（传话员 + 剧本引擎）**
+   - JS 线程跑业务与状态；原生侧管界面与系统 API。
+   - 旧 Bridge：消息要排队、序列化，像传话员一次只能递一张纸条——高频调用会堵。
+   - 新架构用 **JSI**（JavaScript Interface，让 JS 直接握到原生对象）+ **Fabric**（新渲染管线）减少「传话抖动」。
 
-- JS 线程维护应用逻辑和状态，原生侧维护界面与系统 API。
-- 桥负责跨端通信：事件、属性、回调在两边来回传递。
-- 新架构里，Fabric + JSI 让通信模型更直接，减少桥接层抖动。
+2. **声明式 UI → 原生视图树**
+   - 你改的是状态，不是手搓 DOM；React **reconciliation**（对账：算出这帧和上帧差在哪）决定补丁。
+   - 补丁交给原生层落成 UIView / `android.view`，不是默认 Jetpack Compose。
+   - 类比：业务层画草图，原生层负责落笔。
 
-2. **声明式 UI 与原生渲染树对齐**
-
-- 组件树变化不是直接操作 DOM，而是通过 React 提供的声明式状态描述。
-- React reconciliation 决定下一帧 UI 差异，再交给原生层渲染。
-- 你可以把它理解为：业务层画草图，原生层负责落笔。
-
-3. **可降级与渐进原生化**
-
-- 你可以先保留大部分 JS 代码，再把性能敏感部分抽到 Native Module。
-- 平衡点是开发效率和幂等性：不是所有页面都适合同样策略。
-- 一个页面的卡顿并不意味整个应用都该改重写，而是先剖析瓶颈层级。
+3. **渐进原生化**
+   - 大部分页面可留在 JS；性能敏感处再抽 Native Module / Turbo Module。
+   - 平衡点是交付速度 vs 平台打磨——不是「幂等」口号，而是「同一操作重复触发结果可预期」（比如支付按钮防双击）。
+   - 一页卡顿不等于整 App 重写：先分清卡在 JS、布局，还是原生模块。
 
 ## 实践案例
 
-### 案例 1：基础页面 + state 更新
+### 案例 1：最小页面 + state
 
 ```js
 import React, { useState } from 'react'
@@ -59,97 +55,97 @@ export default function Home() {
   return (
     <View>
       <Text>已学习：{count}</Text>
-      <Button title="再来 1 题" onPress={() => setCount(count + 1)} />
+      <Button title="再来 1 题" onPress={() => setCount(c => c + 1)} />
     </View>
   )
 }
 ```
 
-- 先从最小交互起步，确认状态更新链路是否顺。
-- 真正复杂的 App 性能问题常在列表滚动和手势层，先别急于上手复杂优化。
+1. `useState` 留在 JS 线程；点按钮只改状态。
+2. RN 把 `<View>/<Text>` 映射成两端原生控件。
+3. 先确认这条链路顺，再碰列表虚拟化与手势。
 
-### 案例 2：调用原生模块
+### 案例 2：调用原生模块（示意）
 
 ```js
 import { NativeModules } from 'react-native'
 const { HapticModule } = NativeModules
-
-export const triggerHaptic = () => HapticModule?.fire()
-```
-
-- 原生能力可从 JS 触发，但命名、参数与错误码必须同步管理。
-- 用 TypeScript 做参数约束能减少运行期坑。
-
-### 案例 3：离线优先的数据同步
-
-```js
-const syncData = async () => {
-  const local = await storage.get('drafts')
-  const remote = await api.upload(local)
-  if (remote.ok) await storage.clear('drafts')
+export const triggerHaptic = () => {
+  if (!HapticModule?.fire) throw new Error('HapticModule missing')
+  return HapticModule.fire()
 }
 ```
 
-- React Native 场景里，离线队列、重试、幂等是“业务正确性”问题。
-- 你可以把“离线草稿”当成最关键的状态优先级。
+1. JS 侧只拿得到已注册的模块名与方法。
+2. iOS/Android 各自实现同名模块；参数与错误码要双端对齐。
+3. 用 TypeScript 包一层，避免运行期才发现 `undefined is not a function`。
+
+### 案例 3：离线草稿同步（示意三步）
+
+```js
+// storage / api 为项目里的封装，此处示意
+async function syncDrafts({ storage, api }) {
+  const local = await storage.get('drafts')       // 1. 读本地队列
+  const remote = await api.upload(local)         // 2. 上传（需幂等键）
+  if (remote.ok) await storage.clear('drafts')   // 3. 成功再清
+}
+```
+
+离线队列、重试、幂等键是业务正确性问题；RN 只提供跑代码的舞台。
 
 ## 踩过的坑
 
-1. **把平台差异当同质化问题**：Android 的手势、iOS 的键盘行为差异会导致同一套代码奇怪表现。
-2. **把桥接调用当免费**：高频调用过多会带来线程争用，先做批量化。
-3. **忽视字体/阴影/布局细节**：小视觉差最终会拉低体验且难补。
-4. **把热更新当生产级补丁万能药**：有些崩溃需要原生修复，不是 JS 打补丁能解决。
+1. **平台差异当同质**：Android 返回键 / iOS 键盘避让会导致「同一套 JSX」表现分叉——两端各测主路径。
+2. **桥接当免费**：滚动中每帧打原生 → JS 线程争用；先批量、降频，再考虑 JSI/新架构。
+3. **忽视像素级细节**：字体、阴影、Safe Area 小差会堆成「廉价感」，设计稿要对平台分量。
+4. **热更新当万能药**：JS 逻辑可 OTA；原生崩溃、权限模型、商店审核失败必须发二进制包。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 中小到中大型应用，需要同时覆盖两端，但功能主路径一致。
-- 产品变化快，需求验证周期短，优先求交付速度。
-- 团队已有 React 生态经验，能够形成统一工程约定。
+
+- 主路径 UI 一致的中小到中大型业务 App（电商、内容、工具）
+- 要同时覆盖两端，团队已有 React 经验
+- 能接受第三方原生模块，并预留新架构（Fabric/TurboModules）迁移成本
 
 **不适用**：
-- 高强度 3D 游戏或 120 帧严格实时渲染。
-- 底层原生体验要求极高且短周期内必须手工打磨每像素。
-- 团队原生能力很强且业务几乎完全端差异化。
+
+- 120fps 级游戏 / 重 3D / 严格实时渲染
+- 短周期内必须每像素平台定制（强依赖独特原生控件）
+- 团队原生很强且业务几乎完全端差异化——双端原生可能更省事
 
 ## 历史小故事（可跳过）
 
-- 2010 年代，跨端热潮兴起时，企业都在寻找“同一套代码，多套发行物”模式。
-- React Native 在这一波中走上前台，强调组件模型的复用。
-- 随着大规模应用落地，桥接性能和并发一致性压力被明确暴露。
-- 新架构对 Fabric、JSI 的引入，其实是为了从根上收敛这些争议。
+- **2015**：Facebook 开源 React Native（先 iOS，后 Android），旧 Bridge 异步 JSON 传话成为默认模型。
+- **2018 起**：内部推进新架构——JSI、Fabric、TurboModules，要解决桥接瓶颈。
+- **2021 前后**：Meta 自家 App 大规模落地新架构；开源侧随后 opt-in。
+- **近年**：新架构逐步成为新项目默认；旧 Bridge 进入迁移与兼容长尾。
 
 ## 学到什么
 
-1. 统一代码不等于统一体验，平台差异永远要独立验证。
-2. 学习曲线里最值钱的不是 API 数量，而是“跨线程状态可追踪”。
-3. 你先做业务正确，再优化渲染；顺序反过来会误判问题。
-4. JS 到原生的边界是你最关键的接口治理点。
+1. 统一代码 ≠ 统一体验；平台差异要独立验证。
+2. 最值钱的不是 API 数量，而是能追踪「跨线程状态」。
+3. 先保证业务正确，再优化渲染；顺序反了会误判。
+4. JS↔原生边界是接口治理的核心，也是性能事故高发区。
 
 ## 延伸阅读
 
-- 官方文档：[React Native 文档](https://reactnative.dev/docs/getting-started)
-- 生态实践：[新架构官方说明](https://reactnative.dev/docs/next/the-new-architecture/landing-page)
-- 社区资料：fabric + js runtime 的迁移经验
-- 同类对比：[[flutter]] —— 更一致的渲染抽象路线
-- 相关：[[expo]] —— 受控开发体验与发布流程
+- [React Native 官方入门](https://reactnative.dev/docs/getting-started)
+- [新架构说明](https://reactnative.dev/docs/the-new-architecture/landing-page)
+- 同类对比：[[flutter]] —— 自绘引擎、更一致的渲染抽象
+- 相关：[[expo]] —— 受控工具链与发布流程
+- 底层：[[react]] —— 声明式 UI 与状态模型
 
 ## 关联
 
-- [[react]] —— RN 视图模型背后的声明式 UI 与状态管理
-- [[javascript]] —— 运行时逻辑始于 JS 生态
-- [[android]] —— Native 侧资源与权限约束
-- [[ios]] —— 视图生命周期与原生生命周期同步
-- [[fabric]] —— RN 新架构关键执行路径
-- [[jsi]] —— 跨语言边界调用的重要升级点
-- [[turbo-modules]] —— 原生模块加载与调用优化
+- [[react]] —— RN 视图模型背后的声明式 UI
+- [[javascript]] —— 业务逻辑跑在 JS 引擎
+- [[android]] —— 权限、生命周期与 View 体系
+- [[ios]] —— UIKit 生命周期与手势
+- [[fabric]] —— 新架构渲染路径
+- [[jsi]] —— 跨语言直接调用
+- [[turbo-modules]] —— 原生模块懒加载与类型化
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[weex]] —— 早期跨端框架路线的一次历史对照
-- [[ionic]] —— 纯 Web 思路的跨端替代路径
-- [[flutter]] —— 声明式渲染在另一路线的实践
-- [[expo]] —— 约束开发环境换取更快上手
-- [[expo-router]] —— 文件路由与 RN 导航的一种实践
