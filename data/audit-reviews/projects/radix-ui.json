@@ -113,36 +113,5 @@
         "适用设计系统/shadcn vs 不适用简单表单/已投 MUI/体积敏感/要 hook 组装，边界清楚有量化直觉"
       ]
     }
-  ],
-  "slug": "radix-ui",
-  "area": "projects",
-  "status": "refined",
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic needs-refine：收购年改为 2022；删 Tailwind UI/Radix 误述；2021 改为公开 beta；顺手修 Dialog translate 类与 bundle 约 11kb。",
-    "sections_modified": [
-      "## 历史小故事",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "ot-1989",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -106,30 +103,5 @@
         "适用场景已有 <1s / 10x 带宽量化，保持即可"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refined",
-    "reason": "修正 Jupiter 归属为 Xerox PARC；案例 2 补三步流程；案例 4 并入核心要点；弱化 OT/CRDT「数学等价」；补 T_ID 示意与反向链接。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

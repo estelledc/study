@@ -1,7 +1,4 @@
 {
-  "slug": "padmanabhan-1995-http-latency",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.56,
   "reject_count": 0,
@@ -116,33 +113,5 @@
         "适用多小对象+高 RTT、不适用大文件/局域网边界清楚，可再点明「约 70ms 广域 RTT」量级"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.56,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：纠正 Stanford→Berkeley/DECstation+T1(~70ms) 实验装置；去掉「T/TCP 同台实测」歪曲，改为本文三种对照+姊妹篇讨论。engineer：补 curl 可跟做案例，弱化局域网「几乎无感」表述。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 学到什么",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 152,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

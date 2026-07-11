@@ -108,35 +108,5 @@
         "适用 10w-100w msg/s vs Kafka 流处理/Redis 轻量，边界有量化"
       ]
     }
-  ],
-  "slug": "rabbitmq-server",
-  "area": "projects",
-  "status": "refined",
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 165,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 topic 通配符非正则表述；软化 Classic 队列节点故障措辞；案例 1 补 import json",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

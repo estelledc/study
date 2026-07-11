@@ -1,7 +1,4 @@
 {
-  "slug": "p4-2014",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,28 +83,5 @@
         "案例 2 可补一行 match-action 伪代码（按 tenant_id meter）让「限速下沉到线速」可跟做"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic 指出收购金额未披露、$5B 易与 Mellanox 传闻混淆；Barefoot 创立年与 P4→ONF 年份有误。已改事实表述，并补强案例 1/2 的逐步说明与 meter 伪代码。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
