@@ -1,0 +1,41 @@
+.github/workflows/ci.yml
+  s_6fadd95570715a::t_b78e91abb82ba2 27,29-31
+.github/workflows/content-health.yml
+  s_6fadd95570715a::t_0633ce91169fd7 29,31-33
+.github/workflows/deploy.yml
+  s_6fadd95570715a::t_a84d95a783e3fb 27,29-31
+.nvmrc
+  s_6fadd95570715a::t_c2163f3fdd212f 1
+README.md
+  s_6fadd95570715a::t_bd72e3a7e0da7e 40-49,51-54,60-61
+package-lock.json
+  s_6fadd95570715a::t_c0b3762f485b6d 19-22
+package.json
+  s_6fadd95570715a::t_d5064c10113764 6-10,35
+scripts/audit-toolchain.mjs
+  s_6fadd95570715a::t_271907d7af2b08 1-142
+scripts/audit-toolchain.test.mjs
+  s_6fadd95570715a::t_a1b5c31168745c 1-88
+scripts/verify-ci.mjs
+  s_6fadd95570715a::t_2bc1682a975675 33
+scripts/verify-ci.test.mjs
+  s_6fadd95570715a::t_bcc275c90e4960 62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4bee8009a16be6e5f2318c90aa16d6e5e632d4e7",
+  "prompts": {},
+  "sessions": {
+    "s_6fadd95570715a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_6fadd95570715a",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
