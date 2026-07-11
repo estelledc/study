@@ -1,0 +1,134 @@
+{
+  "slug": "pastry-2001",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "大楼楼牌按前缀分区的类比把「一位一位逼近」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "nodeId / leaf set / neighborhood set / RTT 首次出现有桥接；expanding ring、软状态仍偏密，可各补半句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 可跟做；案例 4「和 Chord 同跳数比较」挂在「踩过的坑」下，结构易混——应挪回实践案例或并入核心要点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每台机器拿自己 IP 算 hash」过窄：论文 nodeId 随机均匀分配，常见做法是公钥（或节点材料）的密码学哈希，不宜写成固定「IP hash」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 4 把 Chord 写成 log2(N)≈17 跳：Chord 期望跳数约 ½ log2(N)≈8–9（N=10^5），17 是 O(log N) 量级上界，对比会夸大 Pastry 优势"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源/年份/作者（Rowstron & Druschel, Middleware 2001）、128 位、b=4、三张表与相对时延 <2×IP 直连等主线事实正确，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 前缀路由逐步跳转可跟做；案例 2 加入五步与 O(log N) 消息量清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：leaf set≠网络近、proximity 只优化常数因子、b 取舍、Sybil/NAT 边界——保留；Chord 跳数对比数字需随 academic 修正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（最终一致、Sybil、NAT）；可再点明「最后一跳靠 leaf set、前缀表负责中间跳」的职责分工"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "大楼楼牌按前缀分区的类比把「一位一位逼近」讲透，零基础直觉强",
+        "nodeId / leaf set / neighborhood set / RTT 首次出现有桥接；expanding ring、软状态仍偏密，可各补半句白话",
+        "案例 1–2 可跟做；案例 4「和 Chord 同跳数比较」挂在「踩过的坑」下，结构易混——应挪回实践案例或并入核心要点"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「每台机器拿自己 IP 算 hash」过窄：论文 nodeId 随机均匀分配，常见做法是公钥（或节点材料）的密码学哈希，不宜写成固定「IP hash」",
+        "案例 4 把 Chord 写成 log2(N)≈17 跳：Chord 期望跳数约 ½ log2(N)≈8–9（N=10^5），17 是 O(log N) 量级上界，对比会夸大 Pastry 优势",
+        "来源/年份/作者（Rowstron & Druschel, Middleware 2001）、128 位、b=4、三张表与相对时延 <2×IP 直连等主线事实正确，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 前缀路由逐步跳转可跟做；案例 2 加入五步与 O(log N) 消息量清楚",
+        "踩坑具体：leaf set≠网络近、proximity 只优化常数因子、b 取舍、Sybil/NAT 边界——保留；Chord 跳数对比数字需随 academic 修正",
+        "适用/不适用有边界（最终一致、Sybil、NAT）；可再点明「最后一跳靠 leaf set、前缀表负责中间跳」的职责分工"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：nodeId 非固定 IP hash；Chord 期望跳数误写成 ≈17；案例 4 挪回实践案例并补软状态/expanding ring 白话",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 160,
+  "l1_pass": true
+}
