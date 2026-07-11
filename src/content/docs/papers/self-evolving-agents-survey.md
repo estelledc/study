@@ -108,9 +108,9 @@ A-MEM、MemGPT、Generative Agents 都改 **Agent System 的记忆模块**：把
 ## 历史小故事（可跳过）
 
 - **2022 年**：ReAct（Yao et al.）把"想 + 做 + 观察"循环写进 prompt，agent 第一次能在测试时调整动作
-- **2023 年**：Reflexion / Voyager 让 agent 把自己的反思写进下次 prompt 或 skill 库——"自进化"概念落地
-- **2024 年**：A-MEM、MemGPT、AutoAgents 让 memory 和 workflow 也能动态改
-- **2025 年 8 月**：本综述出现，先把这条路的全貌画出来；之后 1 年内 [[apex-policy-exploration]]、[[exg-experience-graphs]]、[[misevolution-2509]] 各自补一块
+- **2023 年**：Reflexion / Voyager 让反思写回 prompt 或 skill 库；MemGPT 把分层 memory 做成可读写的 OS 隐喻——"自进化"概念落地
+- **2024 年**：A-MEM、AutoAgents 等继续让 memory 与 workflow 动态改
+- **2025 年 8 月**：本综述出现，先把这条路的全貌画出来；之后 [[apex-policy-exploration]]、[[exg-experience-graphs]]、[[misevolution-2509]] 各自补一块
 
 ## 学到什么
 
@@ -125,7 +125,6 @@ A-MEM、MemGPT、Generative Agents 都改 **Agent System 的记忆模块**：把
 
 - 论文 PDF：[arXiv:2508.07407](https://arxiv.org/abs/2508.07407)
 - 配套 GitHub list：[Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents)
-- 视频导读：作者团队 NeurIPS 2025 workshop talk
 - 综述地图复习：把 4 件套画在白板上，每读一篇 agent 论文往里贴标签
 - [[apex-policy-exploration]] —— 探索坍缩这一具体痛点的解法
 - [[evo-memory-2511]] —— memory 这个组件的专门 benchmark
