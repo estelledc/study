@@ -37,11 +37,27 @@ public/papers/<paper-slug>/   ← 每篇论文的 figure（webp 格式）
 
 ## 本地开发
 
+仓库工具链源真相是 `.nvmrc` 与 `package.json`。`engines` 表达允许升级的支持范围；
+`.nvmrc` 与 `packageManager` 表达本地和 CI 共用的规范执行版本。
+
+| 工具 | 规范执行版本 | 支持范围 | 官方依据 |
+|---|---:|---:|---|
+| Node.js | 22.23.1 | `>=22.23.1 <23` | [v22.23.1 LTS release](https://nodejs.org/en/blog/release/v22.23.1)（访问日期：2026-07-11） |
+| npm | 11.17.0 | `>=11.17.0 <12` | [v11.17.0 changelog](https://github.com/npm/cli/blob/v11.17.0/CHANGELOG.md)（声明支持 Node `^22.22.2`；访问日期：2026-07-11） |
+
+首次安装或版本升级后先运行：
+
 ```bash
+nvm install
+nvm use
+npm install --global "$(node -p "require('./package.json').packageManager")"
+npm run audit:toolchain
 npm ci
 npm run dev    # http://localhost:4321/study/
 npm run build  # 输出到 dist/
 ```
+
+`audit:toolchain` 会在 Node/npm、版本文件或 workflow 漂移时失败；不要只修改其中一处。
 
 ## 部署
 

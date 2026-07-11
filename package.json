@@ -3,6 +3,11 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@11.17.0",
+  "engines": {
+    "node": ">=22.23.1 <23",
+    "npm": ">=11.17.0 <12"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -27,6 +32,7 @@
     "audit:pagefind": "node scripts/audit-pagefind.mjs",
     "audit:seo": "node scripts/audit-seo-output.mjs",
     "audit:a11y-static": "node scripts/audit-a11y-static.mjs",
+    "audit:toolchain": "node scripts/audit-toolchain.mjs",
     "audit": "npm run audit:links && npm run audit:wikilinks && npm run audit:counts && npm run audit:product-ia",
     "preview": "astro preview",
     "astro": "astro",

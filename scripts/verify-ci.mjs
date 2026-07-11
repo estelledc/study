@@ -30,6 +30,7 @@ export function freshnessAsOf(env = process.env, now = new Date()) {
 export function buildCiSteps(env = process.env) {
   const changedArgs = changedFromArgs(env);
   return [
+  { name: 'toolchain contract', command: 'node', args: ['scripts/audit-toolchain.mjs'] },
   { name: 'tests', command: 'npm', args: ['test'] },
   { name: 'repository audits', command: 'npm', args: ['run', 'audit'] },
   {

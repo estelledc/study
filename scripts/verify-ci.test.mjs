@@ -59,6 +59,7 @@ test('runs the portable CI contract in a stable order', () => {
   });
   assert.equal(result.ok, true);
   assert.deepEqual(seen, CI_STEPS.map((step) => step.name));
+  assert.equal(seen[0], 'toolchain contract');
   assert.equal(seen.includes('strict build'), true);
   assert.equal(seen.includes('homepage and base links'), true);
   assert.equal(seen.includes('generated tracked output drift'), true);
