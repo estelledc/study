@@ -1,0 +1,114 @@
+{
+  "slug": "signal-ios",
+  "area": "projects",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮筒/换锁芯/保险箱类比把 E2E、棘轮、整库加密讲清楚，零基础友好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 八步链路清晰；X3DH / Double Ratchet 首次出现已有类比桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「97% Swift」对零基础无感，可保留但不必当硬指标"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库来源 signalapp/Signal-iOS、Double Ratchet / X3DH / Sealed Sender(2018) / Private Group System(2020) 时间线大体正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 2「群里 N 人×M 设备 = N·M 份密文、每条循环加密 N·M 次」对现代 Signal 群聊过时：群消息已用 Sender Keys，发送端对群会话密钥加密一次再由服务端扇出；N·M 更贴近 1:1 多设备或 Sender Key 分发阶段"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "NSE「内存 24MB」随 iOS 版本变化，宜写成「约十几到二十多 MB（随系统版本）」避免钉死单一数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 全链路与 Share Extension 示意代码可跟读；Keychain access group / App Group 坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 2 群扇出描述需按 Sender Keys 改正，否则工程师照着优化会找错瓶颈（真瓶颈常在 Sender Key 分发、多设备同步与 NSE 预算）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（无服务端搜索、非联邦、非跨端共享 UI 栈）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "邮筒/换锁芯/保险箱类比把 E2E、棘轮、整库加密讲清楚，零基础友好",
+        "案例 1 八步链路清晰；X3DH / Double Ratchet 首次出现已有类比桥接",
+        "「97% Swift」对零基础无感，可保留但不必当硬指标"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "仓库来源 signalapp/Signal-iOS、Double Ratchet / X3DH / Sealed Sender(2018) / Private Group System(2020) 时间线大体正确",
+        "踩坑 2「群里 N 人×M 设备 = N·M 份密文、每条循环加密 N·M 次」对现代 Signal 群聊过时：群消息已用 Sender Keys，发送端对群会话密钥加密一次再由服务端扇出；N·M 更贴近 1:1 多设备或 Sender Key 分发阶段",
+        "NSE「内存 24MB」随 iOS 版本变化，宜写成「约十几到二十多 MB（随系统版本）」避免钉死单一数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例 1 全链路与 Share Extension 示意代码可跟读；Keychain access group / App Group 坑具体",
+        "踩坑 2 群扇出描述需按 Sender Keys 改正，否则工程师照着优化会找错瓶颈（真瓶颈常在 Sender Key 分发、多设备同步与 NSE 预算）",
+        "适用/不适用边界清楚（无服务端搜索、非联邦、非跨端共享 UI 栈）"
+      ]
+    }
+  ]
+}
