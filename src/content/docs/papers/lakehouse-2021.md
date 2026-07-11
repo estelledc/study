@@ -149,3 +149,6 @@ features = vip.groupBy("user_id").sum("amount")
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[data-lake-management-2019]] —— Data Lake Management 2019 — 数据湖从文件堆变成可治理资产
+- [[databend]] —— Databend — Rust 写的存算分离云数仓

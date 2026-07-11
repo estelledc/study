@@ -154,7 +154,4 @@ def objective(trial):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[shap]] —— SHAP — 用博弈论给每个特征发工资
-
+（暂无反向链接）

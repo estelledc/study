@@ -156,10 +156,5 @@ const options = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
-- [[sigma-js]] —— Sigma.js — 上万节点仍流畅的 WebGL 图渲染器
+- [[bullet]] —— Bullet — C++ 经典 3D 物理引擎与 PyBullet 仿真工具
 - [[vis-timeline]] —— vis-timeline — 时间轴 / 日程 / 历史事件三合一组件
-- [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
-

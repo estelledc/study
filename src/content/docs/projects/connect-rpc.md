@@ -154,3 +154,10 @@ pb.RegisterGreeterServer(grpcServer, svc)            // 老 grpc 客户端
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
+- [[capnproto]] —— Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC
+- [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
+- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON

@@ -155,14 +155,10 @@ JOIN dim_geo g ON u.gid = g.id
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[papers/clickhouse]] —— ClickHouse — 把列存 OLAP 推到硬件极限
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[turing-1936]] —— Turing 1936 可计算性
+- [[morsel-driven-2014]] —— Morsel-Driven Parallelism — 把 SQL 查询切成小口分给多核
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-
+- [[wco-joins-relational-2020]] —— WCO Joins 2020 — 把最坏情况最优连接搬进关系数据库

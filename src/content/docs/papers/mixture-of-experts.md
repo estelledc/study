@@ -142,10 +142,8 @@ Mistral 2024 年开源的 8×7B MoE 是社区起飞点：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
+- [[afd-disagg-moe]] —— AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[gshard-2020]] —— GShard — 用注解让 600B 模型自动跨设备切片
 - [[llama]] —— LLaMA — Meta 开源大语言模型
-- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-
+- [[megatron-core-moe-2026]] —— Megatron-Core MoE — 大规模稀疏专家并行实践

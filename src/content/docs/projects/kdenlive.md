@@ -172,3 +172,5 @@ ffprobe Exports/first-cut.mp4
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器

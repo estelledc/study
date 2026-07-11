@@ -182,3 +182,5 @@ cover:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[espurna]] —— ESPurna — 给便宜智能开关换一套本地大脑

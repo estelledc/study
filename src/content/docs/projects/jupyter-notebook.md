@@ -193,3 +193,13 @@ jupyter qtconsole --existing 87f7d2c0
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
+- [[holoviews]] —— HoloViews — 一份声明 ⇄ 多后端自动绘图
+- [[jupyterlab]] —— JupyterLab — 下一代 Jupyter IDE
+- [[marimo]] —— marimo — 反应式 Python 笔记本
+- [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
+- [[pluto-jl]] —— Pluto.jl — Julia 反应式笔记本
+- [[streamlit]] —— Streamlit — Python 几行写 Web 应用
+- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页
+- [[zeppelin]] —— Apache Zeppelin — JVM 多语言笔记本

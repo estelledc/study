@@ -149,14 +149,23 @@ OAuth / Auth0 / Firebase 的无状态登录都靠这条链。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
+- [[bernstein-sphincs-2015]] —— SPHINCS 2015 — 不用记状态的后量子哈希签名
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[bowe-halo-2019]] —— Halo 2019 — 不靠可信仪式递归压缩证明
 - [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
 - [[chillotti-tfhe-2016]] —— TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium 2018 — 后量子时代的主力数字签名
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
 - [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[flush-reload-2014]] —— FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存
+- [[gabizon-plonk-2019]] —— PLONK — 一次通用布置，反复证明很多程序
 - [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
+- [[paillier-1999]] —— Paillier 1999 — 能在密文上直接做加法的公钥加密
+- [[rabin-ot-1981]] —— Rabin OT 1981 — 不知道对方是否收到的秘密交换
+- [[reed-onion-routing-1998]] —— Onion Routing 1998 — Tor 前身把匿名连接做成网络积木
+- [[regev-lwe-2005]] —— Regev LWE 2005 — 把带噪声方程变成后量子密码地基
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
-- [[turing-1936]] —— Turing 1936 可计算性
-
+- [[shor-1994]] —— Shor 1994 — 量子傅里叶变换把分解整数变成找周期
+- [[yao-garbled-circuits-1986]] —— Yao Garbled Circuits — 两个人不摊牌也能一起算答案

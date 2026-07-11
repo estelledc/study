@@ -181,3 +181,15 @@ def list_users():
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
+- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
+- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
+- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
+- [[superset]] —— Apache Superset — 开源 BI 平台

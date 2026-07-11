@@ -147,3 +147,9 @@ on_page_fault(addr):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[controlled-channel-attacks-2015]] —— Controlled-Channel Attacks 2015 — 不可信操作系统也能用缺页记录偷看程序
+- [[foreshadow-2018]] —— Foreshadow 2018 — SGX 保险箱也挡不住瞬态执行脚印
+- [[lee-keystone-2020]] —— Keystone — 用开源 RISC-V 拼一套可定制 TEE
+- [[ngabonziza-trustzone-2016]] —— TrustZone Explained — 把手机 CPU 分成普通区和保密区
+- [[sanctum-2016]] —— Sanctum 2016 — 用少量硬件改动做强隔离 enclave

@@ -164,3 +164,16 @@ lottie.loadAnimation({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[dragonbones]] —— DragonBones — 国产开源 2D 骨骼动画运行时
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
+- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时
+- [[shaka-player]] —— Shaka Player — Google 流媒体播放器
+- [[spine-runtimes]] —— Spine Runtimes — 2D 骨骼动画运行时

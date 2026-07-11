@@ -148,3 +148,6 @@ Dragonfly 快照格式是 DFS，和 Redis RDB/AOF **不能当同一文件互读*
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[redis]] —— Redis — 内存键值数据库
+- [[valkey]] —— Valkey — Redis 7.2.4 的开源 fork

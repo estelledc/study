@@ -196,3 +196,7 @@ docker run --rm -v "$PWD":/project \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用

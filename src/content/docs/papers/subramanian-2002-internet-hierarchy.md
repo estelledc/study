@@ -145,6 +145,4 @@ degree 选 A；rank 选 B   # 分层该听 rank
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
-- [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法

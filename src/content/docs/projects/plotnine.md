@@ -166,3 +166,7 @@ fig = p.draw()                                     # 拿到 matplotlib Figure，
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
+- [[matplotlib]] —— matplotlib — Python 绘图基石
+- [[seaborn]] —— seaborn — matplotlib 之上的一行统计图

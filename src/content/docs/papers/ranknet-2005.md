@@ -143,15 +143,9 @@ lambda_ij = (sigmoid(s_i - s_j) - P*) * abs(delta_ndcg)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
-- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 - [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
 - [[koren-mf-2009]] —— Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书
 - [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
-- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
-- [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
+- [[resolution-diagnostics-llm]] —— Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率
 - [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
-- [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
-- [[word2vec]] —— Word2Vec — 词向量奠基
-

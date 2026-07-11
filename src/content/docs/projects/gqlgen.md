@@ -155,14 +155,4 @@ models:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
-- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
-- [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
-- [[prisma]] —— Prisma — 类型安全 ORM
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-

@@ -145,6 +145,5 @@ for t in range(N):
 
 - [[desbrun-1999-implicit-fairing]] —— Desbrun 1999 — 把热扩散方程隐式离散到三角网
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
-- [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
-- [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
-- [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
+- [[sorkine-2004-laplacian-editing]] —— Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节
+- [[draco]] —— Draco — Google 3D 网格压缩

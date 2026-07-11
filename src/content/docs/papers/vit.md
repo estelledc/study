@@ -150,19 +150,16 @@ ViT 是 2020 年代视觉的 ResNet 时刻——架构转折点。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[attention]] —— Attention Is All You Need
-- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving
-- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset — 自动驾驶感知的共同训练场
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
-- [[dino]] —— DINO 自监督视觉 transformer
+- [[dino]] —— DINO — 让视觉模型自己认出物体轮廓
 - [[dit]] —— DiT — Diffusion Transformer
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[mae]] —— MAE — Masked Autoencoders
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
-
+- [[transformer]] —— Transformer — 让每个词一次看完整句话

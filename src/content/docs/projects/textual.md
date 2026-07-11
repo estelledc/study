@@ -182,3 +182,5 @@ Server("python myapp.py").serve()  # 本机浏览器打开；公网用 textual-w
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bubbletea]] —— Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架

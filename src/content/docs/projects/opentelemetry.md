@@ -164,3 +164,14 @@ traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
+- [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
+- [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
+- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
+- [[jaeger]] —— Jaeger — 分布式追踪系统
+- [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
+- [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
+- [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台

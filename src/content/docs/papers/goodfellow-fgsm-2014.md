@@ -148,3 +148,8 @@ loss = alpha * clean_loss + (1 - alpha) * adv_loss
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[carlini-wagner-2017]] —— C&W 攻击 — 用强优化检验神经网络鲁棒性
+- [[deepfool-2016]] —— DeepFool 2016 — 用最小扰动量出模型边界有多近
+- [[madry-pgd-2017]] —— Madry PGD — 把对抗训练变成最坏情况演练
+- [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错

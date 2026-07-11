@@ -159,10 +159,5 @@ mc mirror ./photos local/photos             # 持续同步整个目录
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[redis]] —— Redis — 内存键值数据库
-- [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
-

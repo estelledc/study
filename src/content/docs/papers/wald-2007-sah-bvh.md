@@ -148,8 +148,4 @@ accel = BVHAccel(prims, splitMethod=SAH)       # 默认 binned，常用 K=12
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cook-1984-distributed-ray-tracing]] —— Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样
-- [[goldsmith-1987-bvh]] —— Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karras-2012-parallel-bvh]] —— Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）
-- [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线

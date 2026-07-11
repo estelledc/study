@@ -152,14 +152,9 @@ DP 把上面这堆**反复施三条规则**化简，直到要么得出"显然可
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[cadar-klee-2008]] —— KLEE — 用符号执行自动给复杂系统程序生成高覆盖测试
 - [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 - [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
-

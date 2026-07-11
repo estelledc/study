@@ -178,3 +178,11 @@ app.whenReady().then(() => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
+- [[ionic-framework]] —— Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱
+- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
+- [[quasar]] —— Quasar Framework — 一套代码跑 Vue 全端的应用框架
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用
+- [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验

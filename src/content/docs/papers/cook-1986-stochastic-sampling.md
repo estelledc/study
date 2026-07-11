@@ -153,9 +153,5 @@ UE4 的 Temporal AA：每帧把样本位置在像素内**抖一个 sub-pixel 偏
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cook-1984-distributed-ray-tracing]] —— Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样
-- [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
-- [[perlin-1985-noise]] —— Perlin Noise — 让计算机生成的图像不再有"机器味"
-
+- [[reyes-1987]] —— Reyes 1987 — 把电影级渲染拆成可流水线处理的小砖块

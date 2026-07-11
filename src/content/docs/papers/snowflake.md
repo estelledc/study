@@ -147,3 +147,15 @@ CREATE TABLE orders_test CLONE orders;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[papers/clickhouse]] —— ClickHouse — 把列存 OLAP 推到硬件极限
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[papers/starrocks]] —— StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
+- [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
+- [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI

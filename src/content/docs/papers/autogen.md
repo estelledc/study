@@ -145,9 +145,9 @@ autogenstudio ui --port 8080
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[compositional-incoherence]] —— Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
-
+- [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器

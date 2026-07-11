@@ -147,3 +147,10 @@ pnpm dev --host 127.0.0.1 --port 3000
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[coder]] —— Coder — 自托管开发环境平台
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
+- [[gitpod]] —— Gitpod — 预构建云开发环境
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器
+- [[silverbullet]] —— SilverBullet — 自托管笔记 web 应用
+- [[theia]] —— Eclipse Theia — 可定制的云端与桌面 IDE 框架

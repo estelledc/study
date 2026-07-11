@@ -167,14 +167,10 @@ s := grpc.NewServer(grpc.UnaryInterceptor(loggingInterceptor))
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[etcd]] —— etcd — 分布式键值数据库
-- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[nats-server]] —— NATS Server — 极简云原生消息总线
+- [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
-

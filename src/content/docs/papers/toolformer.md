@@ -148,3 +148,12 @@ Toolformer 是论文里"**方法被吸收、接口被淘汰**"的经典案例。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ccopd-distillation]] —— CCOPD — 让多轮对话别被自己的旧话带偏
+- [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
+- [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
+- [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
+- [[papers/react]] —— ReAct — Reasoning and Acting
+- [[react-agent]] —— ReAct Agent — 推理和行动交替的工具使用范式
+- [[self-consistency-2022]] —— Self-Consistency — 让模型把同一道题做 40 遍再投票
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测

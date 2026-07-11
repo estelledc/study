@@ -161,6 +161,7 @@ root-app.yaml  # source 指向 infra-apps/
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/kustomize]] —— Kustomize — 不写模板也能给 K8s 配置分环境
 - [[actions-runner-controller]] —— Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
@@ -169,10 +170,9 @@ root-app.yaml  # source 指向 infra-apps/
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
-- [[helm]] —— Helm — Kubernetes 包管理器
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[projects/kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 - [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
@@ -180,5 +180,3 @@ root-app.yaml  # source 指向 infra-apps/
 - [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
 - [[temporal]] —— Temporal — 持久化工作流引擎
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
-- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
-

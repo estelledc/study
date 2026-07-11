@@ -168,3 +168,9 @@ gr.ChatInterface(fn=respond).launch()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
+- [[fooocus]] —— Fooocus — 把 SDXL 做成傻瓜机
+- [[projects/panel]] —— Panel — 多绘图后端的 Python dashboard
+- [[streamlit]] —— Streamlit — Python 几行写 Web 应用
+- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页

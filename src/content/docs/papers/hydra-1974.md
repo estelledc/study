@@ -155,3 +155,5 @@ call(B, procedure="copy_page", caps={"src": cap_read_F})
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[dash-numa-1992]] —— Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
+- [[ffs-1984]] —— FFS — 把磁盘几何写进文件系统

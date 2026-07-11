@@ -181,5 +181,5 @@ OAuth 2.1（尤其 public client）：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
+- [[rfc-3833-dns-threats]] —— RFC 3833 — IETF 第一次正式承认 DNS 不安全

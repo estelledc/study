@@ -191,3 +191,5 @@ mender-artifact write module-image \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[rauc]] —— RAUC — 嵌入式 Linux 的 A/B 更新控制器

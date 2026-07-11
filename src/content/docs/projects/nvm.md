@@ -162,8 +162,4 @@ nvm exec 16 npm test
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[mach-vm-1987]] —— Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦
-- [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
-- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[pyenv]] —— pyenv — 用 shim 把 python 命令拦截后路由到指定版本
-

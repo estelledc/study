@@ -170,9 +170,4 @@ def linear_scan(intervals, R):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
-- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[ssa]] —— SSA — 静态单赋值形式
-
+（暂无反向链接）

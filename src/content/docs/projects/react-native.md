@@ -149,3 +149,14 @@ async function syncDrafts({ storage, api }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[capacitor]] —— Capacitor — 把 Web 应用装进原生 App 的运行时
+- [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[expo]] —— Expo — 面向 React Native 的“开箱即用”应用生产线
+- [[hermes]] —— Hermes — Facebook 的 React Native JS 引擎
+- [[ionic-framework]] —— Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱
+- [[nativescript]] —— NativeScript — 用 JS/TS 直接驱动原生控件
+- [[neutralinojs]] —— neutralinojs — 系统 WebView 上的极简桌面壳
+- [[nodegui]] —— nodegui — 用 Node.js 写原生桌面窗口
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）

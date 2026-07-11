@@ -157,7 +157,4 @@ API 响应的 `usage` 里有三个字段：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
-- [[attention]] —— Attention Is All You Need
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
-

@@ -191,3 +191,6 @@ TypeError: main() got an unexpected keyword argument 'input'
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cline]] —— Cline — VS Code 自主编码代理
+- [[opencode]] —— OpenCode — 终端里的开源 AI 编程助手

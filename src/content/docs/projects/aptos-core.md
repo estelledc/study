@@ -165,16 +165,6 @@ proposal -> staking voting -> threshold reached
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
-- [[anchor]] —— Anchor — Solana 合约开发框架
-- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[move-language]] —— Move — 资源型智能合约语言
-- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-- [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
-

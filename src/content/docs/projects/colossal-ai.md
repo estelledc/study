@@ -152,3 +152,5 @@ LLaMA 开源后一周内 Colossal-AI 给出 SFT + RM + PPO 完整训练脚本，
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[open-sora]] —— Open-Sora — 把 Sora 路线开源对标的视频生成项目

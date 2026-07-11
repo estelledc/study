@@ -148,3 +148,5 @@ const server = new Hocuspocus({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mobx]] —— MobX — 让 state 像电子表格一样自动重算

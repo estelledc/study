@@ -147,3 +147,5 @@ doveadm search -u alice mailbox INBOX subject 发票
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mailcow]] —— mailcow — Docker compose 一键起一整套邮件服务

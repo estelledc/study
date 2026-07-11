@@ -155,7 +155,7 @@ function App() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[react]] —— React UI 组件库
-
+- [[projects/cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
+- [[luma-gl]] —— luma.gl — 给 WebGPU/WebGL 用的中低层 GPU 工具箱
+- [[open3d]] —— Open3D — 现代点云 / 几何库
+- [[regl]] —— regl — 函数式 WebGL 封装

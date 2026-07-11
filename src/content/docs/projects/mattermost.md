@@ -141,9 +141,9 @@ cd ../webapp && make run
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
+- [[bookstack]] —— BookStack — 文档型 Wiki
 - [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
-- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+- [[hedgedoc]] —— HedgeDoc — 协作 Markdown 编辑
 - [[openmeetings]] —— Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统
 - [[prosody]] —— Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
-- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）

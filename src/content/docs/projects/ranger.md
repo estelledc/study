@@ -164,3 +164,6 @@ ranger 的成功不是"终端文件管理器第一个"——vifm 和 Midnight Co
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
+- [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图

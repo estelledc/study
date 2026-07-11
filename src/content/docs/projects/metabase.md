@@ -153,3 +153,6 @@ const url = `${METABASE}/embed/dashboard/${token}#bordered=true`;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
+- [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI

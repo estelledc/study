@@ -147,11 +147,5 @@ msgstr "你好 {name}"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[react]] —— React UI 组件库
 - [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
-- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
-- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-
+- [[vue-i18n]] —— vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新

@@ -165,11 +165,8 @@ function Drawer({ isOpen }) {
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
-- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[gsap]] —— GSAP — GreenSock 高性能动画
-- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[lottie]] —— lottie-web — 把 AE 动画变成网页可播放的 JSON
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
-- [[next-js]] —— Next.js — React 全栈框架
-- [[react]] —— React UI 组件库
+- [[projects/react]] —— React — 用组件描述界面的 JavaScript 库
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-

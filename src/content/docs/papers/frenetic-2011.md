@@ -167,11 +167,5 @@ let final = route + monitor
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[netkat-2014]] —— NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式
-- [[openflow-2008]] —— OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
-- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
-- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[ron-2001]] —— RON 2001 — 让一小撮节点自己绕开 BGP 故障
-- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
-

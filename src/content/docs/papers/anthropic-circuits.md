@@ -138,11 +138,8 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
 - [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
-- [[attention]] —— Attention Is All You Need
 - [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[grokking-2022]] —— Grokking — 训练 loss 早归零，几千步后才突然学会
-- [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 - [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
@@ -150,4 +147,3 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 - [[sleeper-agents]] —— Sleeper Agents — 故意藏后门的 LLM
 - [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
 - [[toy-models-superposition]] —— Toy Models of Superposition
-

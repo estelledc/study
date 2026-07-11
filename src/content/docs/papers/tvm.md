@@ -164,17 +164,10 @@ tuner.tune(n_trial=1000, ...)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 - [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
-- [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
-- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[ssa]] —— SSA — 静态单赋值形式
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
-
+- [[numpy]] —— NumPy — Python 科学计算基石
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎

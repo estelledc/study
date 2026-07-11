@@ -172,10 +172,5 @@ RocketQA 的优化拆成 **三步**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
-- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
-- [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
-- [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
-

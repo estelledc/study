@@ -149,14 +149,6 @@ $ cd Signal-Android && ./reproducible-builds/go.sh <version>
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ngabonziza-trustzone-2016]] —— TrustZone Explained — 把手机 CPU 分成普通区和保密区
 - [[conversations]] —— Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
-- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
-- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
-- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
-- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
-- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
-- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
-- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
-- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-

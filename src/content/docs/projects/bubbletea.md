@@ -161,8 +161,7 @@ view := style.Render(ti.View())  // 圆角边框包住一个输入框
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[gum]] —— gum — 把 TUI 组件搬进 shell 脚本
 - [[ratatui]] —— ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 - [[textual]] —— Textual — 用 CSS 写终端界面的 Python 框架
-
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用

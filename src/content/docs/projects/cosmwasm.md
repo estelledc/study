@@ -168,10 +168,4 @@ let b = BALANCES.may_load(deps.storage, &addr)?.unwrap_or_default();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anchor]] —— Anchor — Solana 合约开发框架
-- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
-- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[solana]] —— Solana — Rust 写的高性能 PoH 链
-
+- [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑

@@ -178,10 +178,6 @@ app/routes/
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
-- [[next-js]] —— Next.js — React 全栈框架
-- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
-

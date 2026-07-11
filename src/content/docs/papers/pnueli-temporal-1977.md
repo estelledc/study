@@ -149,12 +149,4 @@ Spec == Init ∧ □[Next]_vars ∧ Liveness
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
-- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
-- [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
-- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
-

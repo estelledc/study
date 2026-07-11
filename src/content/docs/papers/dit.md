@@ -143,12 +143,7 @@ DiT 论文从挂 arXiv 到工业全面接受，花了一年半。架构革命从
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[attention]] —— Attention Is All You Need
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[resnet]] —— ResNet — 残差连接
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
-- [[vit]] —— ViT — Vision Transformer
-
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存

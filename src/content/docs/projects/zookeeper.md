@@ -155,3 +155,11 @@ A 挂了 → session 断 → 它的 znode 自动消失 → B 编号最小 → B 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[farm-2015]] —— FaRM — 把一排机器的内存当成一个低延迟仓库
+- [[mesos]] —— Mesos — 让多种计算框架共用一套集群
+- [[mesos-2011]] —— Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑
+- [[raft-2014]] —— Raft 2014 — 把共识拆成能实现的三件事
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[projects/kafka]] —— Apache Kafka — 分布式流处理平台
+- [[pulsar]] —— Apache Pulsar — 云原生消息队列

@@ -163,3 +163,6 @@ curl "http://127.0.0.1:41184/notes?order_by=updated_time&order_dir=ASC&limit=10&
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[anytype-ts]] —— Anytype — 本地优先块编辑器
+- [[siyuan]] —— SiYuan — 国产块结构笔记

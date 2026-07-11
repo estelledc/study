@@ -148,8 +148,4 @@ rpk cluster partitions list demo
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[nsq]] —— NSQ — Go 写的去中心化消息队列
-- [[pulsar]] —— Apache Pulsar — 云原生消息队列
-
+（暂无反向链接）

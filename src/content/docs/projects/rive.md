@@ -196,4 +196,7 @@ class _RatingListState extends State<RatingList> {
 - [[spectorjs]] —— 调试 WebGL/WebGPU 帧时可帮助观察 Rive WebGL2 后端是否过度绘制。
 
 ## 反向链接
+
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lottie]] —— lottie-web — 把 AE 动画变成网页可播放的 JSON

@@ -182,15 +182,16 @@ Bun.serve({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[deno]] —— Deno — 安全优先的 TypeScript/JavaScript 运行时
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
-- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
-- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vitest]] —— Vitest — Vite 原生测试框架
-
+- [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑

@@ -159,3 +159,9 @@ gl.bindTexture(gl.TEXTURE_2D, texture);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[appleseed]] —— appleseed — 物理渲染器
+- [[ar-js]] —— AR.js — 浏览器里跑 Web AR 标记追踪
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[mind-ar-js]] —— MindAR — 不装原生 SDK 的浏览器图像/人脸 AR
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时

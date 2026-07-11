@@ -166,16 +166,13 @@ pub fn process(mut program: Program, _: ()) -> Program {
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bun]] —— Bun — JS 全能运行时
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
-- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
-- [[rollup]] —— Rollup — ESM 优先的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[webpack]] —— webpack 模块打包
-

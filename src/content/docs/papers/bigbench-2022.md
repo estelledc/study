@@ -152,3 +152,10 @@ class MyTask(Task):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[benchmarking]] —— Wisconsin Benchmark — 给数据库出一套可重复的体检题
+- [[glue-2018]] —— GLUE — 给 NLU 模型出一张包含 9 道题的统考卷
+- [[helm-2022]] —— HELM 2022 — 给语言模型做全身体检
+- [[mmlu-2021]] —— MMLU — 用 57 个学科的多选题考一考语言模型
+- [[projection-bench]] —— ProjectionBench — 用逐步揭示信息测试科学假说生成
+- [[resolution-diagnostics-llm]] —— Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率

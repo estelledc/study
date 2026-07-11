@@ -163,5 +163,6 @@ client.transition_model_version_stage(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[papers/bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
+- [[papers/clearml]] —— ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
+- [[papers/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库

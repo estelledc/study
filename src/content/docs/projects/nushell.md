@@ -163,3 +163,11 @@ bash 要先 `csvkit` 装一套、再 `jq` 装一套，nushell 把 CSV/JSON/YAML/
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/shellcheck]] —— ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
+- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+- [[oh-my-posh]] —— oh-my-posh — 一份配置让所有 shell 都长一个样
+- [[wezterm]] —— WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用
+- [[xonsh]] —— xonsh — 在同一行里同时写 bash 命令和 Python 代码
+- [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件
+- [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell

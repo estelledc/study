@@ -186,3 +186,6 @@ box(0.15, 0.15, 0.03)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统
+- [[hydra-synth]] —— Hydra — 实时视觉合成 livecoding

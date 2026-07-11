@@ -150,3 +150,5 @@ if time_to_fire() and len(pool) >= threshold:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[piotrowska-loopix-2017]] —— Loopix — 用延迟和假流量保护通信关系

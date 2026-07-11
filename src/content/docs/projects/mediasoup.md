@@ -165,3 +165,14 @@ yq w -i /etc/bigbluebutton/bbb-webrtc-sfu/production.yml \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[projects/asterisk]] —— Asterisk — 把企业总机变成一台 Linux 服务器
+- [[projects/coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
+- [[hls.js]] —— hls.js — 浏览器里的 HLS 播放库
+- [[jitsi-meet]] —— Jitsi Meet — 开源视频会议的自托管套件
+- [[jitsi-videobridge]] —— Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
+- [[pion]] —— Pion — Go 实现的 WebRTC 协议栈
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[streamlink]] —— Streamlink — 把直播页变成可播的流

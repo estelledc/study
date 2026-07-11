@@ -150,7 +150,6 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[axelar]] —— Axelar — 通用跨链 gateway
@@ -159,20 +158,12 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[monero]] —— Monero — 默认隐私的 PoW 加密货币
-- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
-- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
-- [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 - [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
-- [[zk-snark]] —— zk-SNARK 零知识证明
 - [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
-

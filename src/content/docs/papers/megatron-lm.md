@@ -150,3 +150,16 @@ NVIDIA + 微软 2021 合作、**4480 张 A100**：公开配置量级为 TP=8 × 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
+- [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+- [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+- [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
+- [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
+- [[gpudirect-rdma-2014]] —— GPUDirect RDMA — 让网卡直接读写 GPU 显存
+- [[megatron-core-moe-2026]] —— Megatron-Core MoE — 大规模稀疏专家并行实践
+- [[paged-attention]] —— PagedAttention — 把 KV cache 当虚拟内存页来管理
+- [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
+- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[papers/vllm]] —— vLLM — 把操作系统的分页搬进 GPU KV cache
+- [[zero-2020]] —— ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能

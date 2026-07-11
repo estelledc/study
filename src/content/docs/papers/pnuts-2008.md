@@ -153,9 +153,5 @@ if record["stock"] > 0:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-
+- [[scads-database-2008]] —— SCADS — 用户涨一万倍也不改应用的存储愿景
+- [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库

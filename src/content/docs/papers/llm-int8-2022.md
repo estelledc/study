@@ -174,11 +174,8 @@ model = AutoModelForCausalLM.from_pretrained(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[awq]] —— AWQ — 看激活脸色给权重打折
-- [[awq-2023]] —— AWQ 2023 — 让 70B 大模型住进 RTX 4090
-- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[awq-2023]] —— AWQ 2023 — 把 70B 大模型权重压到 35GB
 - [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
+- [[lora]] —— LoRA — 给冻结大模型贴低秩便签
+- [[mem-ft-lora]] —— MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容
 - [[smoothquant-2023]] —— SmoothQuant 2023 — 把激活的烫手山芋扔给权重
-

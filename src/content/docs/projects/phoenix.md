@@ -174,11 +174,4 @@ MyApp.Accounts.register_user(params)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-
+- [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数

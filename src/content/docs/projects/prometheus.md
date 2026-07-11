@@ -174,3 +174,40 @@ rate(http_requests_total{status=~"5.."}[5m])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
+- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
+- [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
+- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[grafana-tempo]] —— Grafana Tempo — 用对象存储装下你所有的 trace
+- [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
+- [[jaeger]] —— Jaeger — 分布式追踪系统
+- [[k6]] —— k6 — 用 JS 写脚本的现代负载测试器
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[langfuse]] —— Langfuse — LLM 应用可观测性
+- [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
+- [[linuxcnc]] —— LinuxCNC — 实时控制 CNC 机床的开源系统
+- [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
+- [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
+- [[m3]] —— M3 — Uber 的分布式 TSDB
+- [[nanomq]] —— NanoMQ — 边缘侧超轻量 MQTT Broker
+- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
+- [[openhab]] —— openHAB — Java OSGi 家庭自动化框架
+- [[projects/opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+- [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
+- [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
+- [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
+- [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
+- [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
+- [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端
+- [[terraform]] —— Terraform — 基础设施即代码
+- [[vector]] —— Vector — Rust 写的统一可观测性数据管道
+- [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代

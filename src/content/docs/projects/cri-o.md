@@ -171,3 +171,5 @@ conmon 的 PPID 是 1（init），nginx 的 PPID 是 conmon——**不是 crio �
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[podman]] —— Podman — 无 daemon 容器引擎

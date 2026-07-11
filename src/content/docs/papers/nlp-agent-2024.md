@@ -142,8 +142,4 @@ for step in 1..max_steps:          # 例如 max_steps=8，或 token 预算用尽
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
-- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
-- [[react-agent]] —— ReAct Agent — 推理和行动交替的工具使用范式
-- [[reflexion]] —— Reflexion — 让 LLM 自我反思
-- [[voyager]] —— Voyager — LLM 终身学习智能体
+- [[soundness-bench]] —— SoundnessBench — 判断 AI 科学家会不会把坏点子当好点子

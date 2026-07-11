@@ -150,20 +150,12 @@ Signal 做法：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
-- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
-- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
-- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
 - [[mailcow]] —— mailcow — Docker compose 一键起一整套邮件服务
-- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 - [[prosody]] —— Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
-

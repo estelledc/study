@@ -147,3 +147,6 @@ image-level 零样本+文本   → 更看 CLIP 路线
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mae]] —— MAE — Masked Autoencoders
+- [[vit]] —— ViT — Vision Transformer

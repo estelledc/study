@@ -161,14 +161,9 @@ def minor_gc(self, roots):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
-- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
-

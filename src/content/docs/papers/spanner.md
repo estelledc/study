@@ -155,31 +155,28 @@ GROUP BY customer_id;
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[bigtable-revisit-2024]] —— Bigtable 二十年回顾 — 从三维表到云数据库
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 - [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[papers/kafka]] —— Kafka — 把消息系统降维成只追加的日志文件
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[raft]] —— Raft — 易理解的共识算法
-- [[rethinkdb]] —— RethinkDB — 让数据库自己把更新推给客户端的先驱
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[saga-1987]] —— Sagas — 长事务拆成一串能"反向走回去"的小事务
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[tidb]] —— TiDB — HTAP 分布式数据库
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
-- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
-
+- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[rethinkdb]] —— RethinkDB — 让数据库自己把更新推给客户端的先驱
+- [[tidb]] —— TiDB — HTAP 分布式数据库

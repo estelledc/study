@@ -147,3 +147,6 @@ DeepMind 后续把同类思路用到 YouTube VP9 的 RD 决策：每帧压缩参
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[alphago]] —— AlphaGo — 击败围棋世界冠军
+- [[dqn]] —— DQN — Deep Q-Network
+- [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉

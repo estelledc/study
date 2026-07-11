@@ -167,3 +167,11 @@ class Bag {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
+- [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
+- [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有
+- [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
+- [[verus-specgym]] —— Verus-SpecGym — 让机器检查规格是不是写对了

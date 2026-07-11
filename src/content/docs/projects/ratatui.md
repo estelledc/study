@@ -162,3 +162,8 @@ fn main() -> std::io::Result<()> {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bubbletea]] —— Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架
+- [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
+- [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
+- [[textual]] —— Textual — 用 CSS 写终端界面的 Python 框架

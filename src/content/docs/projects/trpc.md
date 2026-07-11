@@ -157,7 +157,6 @@ const { data, isLoading } = api.user.byId.useQuery(
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
@@ -165,7 +164,6 @@ const { data, isLoading } = api.user.byId.useQuery(
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 - [[next-js]] —— Next.js — React 全栈框架
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
-- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 - [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库

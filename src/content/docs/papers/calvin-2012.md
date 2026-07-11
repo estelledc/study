@@ -148,13 +148,7 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
-- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
+- [[foundationdb]] —— FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[raft]] —— Raft — 易理解的共识算法
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
-

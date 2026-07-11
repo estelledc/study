@@ -156,11 +156,4 @@ spec:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
-- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
-- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[nginx]] —— nginx — 高性能 Web 服务器
-- [[redis]] —— Redis — 内存键值数据库
-
+（暂无反向链接）

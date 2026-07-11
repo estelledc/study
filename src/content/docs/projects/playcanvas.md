@@ -161,3 +161,8 @@ cd my-app && npm install && npm run build
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aframe]] —— A-Frame — 用 HTML 搭 Web VR 场景
+- [[glsl-canvas]] —— glslCanvas — Book of Shaders 配套库
+- [[gltf-transform]] —— glTF Transform — glTF 资产工具链
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器
+- [[twgl]] —— TWGL — 极薄 WebGL helpers

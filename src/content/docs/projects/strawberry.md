@@ -186,12 +186,5 @@ class User:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
-

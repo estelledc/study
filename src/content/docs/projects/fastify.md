@@ -160,13 +160,11 @@ app.addHook('preHandler', async (req) => {
 - [[discord-js]] —— discord.js — Node.js Discord API 客户端事实标准
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
@@ -175,10 +173,10 @@ app.addHook('preHandler', async (req) => {
 - [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[nodemailer]] —— Nodemailer — Node.js 发邮件的事实标准
 - [[peerjs-server]] —— peerjs-server — 只管握手不管传话的 WebRTC 信令服务器
 - [[pino]] —— pino — 日志不该阻塞热路径
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
@@ -188,9 +186,6 @@ app.addHook('preHandler', async (req) => {
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
-- [[ssa]] —— SSA — 静态单赋值形式
 - [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-

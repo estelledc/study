@@ -148,8 +148,4 @@ rclone sync ./local-dir storj:my-bucket --progress
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arweave]] —— Arweave — 一次付费、永远存着的区块链
-- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
-- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
-- [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
-
+（暂无反向链接）

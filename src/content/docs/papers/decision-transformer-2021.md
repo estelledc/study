@@ -147,11 +147,4 @@ CQL Breakout 得分: 49.0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[alphago]] —— AlphaGo — 击败围棋世界冠军
-- [[attention]] —— Attention Is All You Need
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
-- [[ppo]] —— PPO — Proximal Policy Optimization
-- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
-- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
-
+（暂无反向链接）

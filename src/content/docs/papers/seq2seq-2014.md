@@ -155,8 +155,6 @@ WMT-14 英→法，论文自己的对照表：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[transformer-2017]] —— Attention Is All You Need — 用 self-attention 重写序列建模
 - [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
 - [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
-

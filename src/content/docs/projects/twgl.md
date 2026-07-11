@@ -196,3 +196,6 @@ twgl.setUniforms(screenProgramInfo, { u_scene: fbi.attachments[0] });
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[glsl-canvas]] —— glslCanvas — Book of Shaders 配套库
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统

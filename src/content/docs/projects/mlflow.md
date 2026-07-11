@@ -149,3 +149,11 @@ prediction = model.predict(input_df)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[projects/bentoml]] —— BentoML — 模型打包部署
+- [[projects/clearml]] —— ClearML — 自托管 MLOps 套件
+- [[dvc]] —— DVC — 数据版本管理
+- [[feast]] —— Feast — 让训练和上线用同一份特征定义的开源 Feature Store
+- [[kedro]] —— Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
+- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
+- [[projects/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库

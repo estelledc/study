@@ -166,9 +166,4 @@ miTLS 团队的形式化方法是这个发现的核心 —— 不靠 fuzz 不靠
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
 - [[dot-doh-perf-2020]] —— DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
-- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
-

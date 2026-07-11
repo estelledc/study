@@ -185,3 +185,6 @@ c&d\\ \hline
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[knuth-literate-1984]] —— Literate Programming — 把程序写成给人读的文章
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作

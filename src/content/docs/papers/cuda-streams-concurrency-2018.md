@@ -152,12 +152,9 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 - [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
 - [[aurora-exascale-2024]] —— Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
 - [[cell-be-2005]] —— Cell BE — 一颗 CPU 里塞 8 个加速核
-- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
+- [[cuda]] —— CUDA — 把显卡变成通用并行计算平台
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
-- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
-- [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
 - [[owens-2007-gpgpu-survey]] —— Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代
 - [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
-

@@ -158,14 +158,16 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
-- [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
-- [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
-- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[embassy]] —— Embassy — 让单片机也能用 async/await
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+- [[littlefs]] —— littlefs — MCU 友好的掉电安全文件系统
 - [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
+- [[marlin]] —— Marlin Firmware — 3D 打印机里的运动控制大脑
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[mender]] —— Mender — 给 IoT 设备做不会刷砖的 OTA 升级
+- [[mosquitto]] —— Mosquitto — C 写的轻量 MQTT 消息中转站
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座
+- [[sdk-nrf]] —— Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK
 - [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
-

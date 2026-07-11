@@ -151,6 +151,4 @@ LLM 输出的是 token 概率分布。Chronos 直接利用这一点：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[nbeats-2020]] —— N-BEATS — 纯前馈网络在时序预测上打败统计派
-- [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
-
+（暂无反向链接）

@@ -171,3 +171,15 @@ jobs:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[act]] —— act — 在本地用 Docker 跑 GitHub Actions
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[buildkit]] —— BuildKit — Docker 下一代镜像构建后端
+- [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
+- [[electron-builder]] —— electron-builder — Electron 打包发布事实标准
+- [[foam]] —— Foam — 把 VS Code 变成 Markdown 双链知识库
+- [[gitpod]] —— Gitpod — 预构建云开发环境
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI

@@ -159,3 +159,5 @@ print(publish_l_diverse([{"disease": "Cancer"}, {"disease": "Flu"}]))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[li-t-closeness-2007]] —— Li t-closeness 2007 — 用整体分布约束匿名分组

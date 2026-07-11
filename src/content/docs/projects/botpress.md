@@ -153,3 +153,7 @@ export const whatsapp = {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[botbuilder-js]] —— Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象
+- [[discord-py]] —— discord.py — 用 Python 写 Discord 机器人的事实标准
+- [[rasa]] —— Rasa — 自己造一个能记住上下文的对话机器人

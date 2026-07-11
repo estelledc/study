@@ -148,9 +148,8 @@ QR 码强制带 RS 冗余。四个等级对应不同的冗余比例：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
-- [[bitcoin]] —— Bitcoin 白皮书
 - [[f4-2014]] —— f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库
 - [[hamming-1950]] —— Hamming 纠错码
+- [[regev-lwe-2005]] —— Regev LWE 2005 — 把带噪声方程变成后量子密码地基
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
-

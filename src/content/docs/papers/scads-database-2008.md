@@ -144,8 +144,4 @@ workload + SLA + ML performance model
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dynamo-2007]] —— Dynamo — 购物车永不拒绝写入的最终一致存储
-- [[cassandra-2010]] —— Cassandra — Dynamo 骨架 + Bigtable 列族的开源拼装
-- [[pnuts-2008]] —— PNUTS — 按记录时间线一致的中间档
-- [[bigtable-2006]] —— Bigtable — Google 行级随机读写做到 PB 级
-- [[vogels-eventual-2009]] —— Vogels 对最终一致的产品化表述
+（暂无反向链接）

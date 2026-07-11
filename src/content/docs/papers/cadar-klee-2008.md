@@ -154,3 +154,9 @@ KLEE 最亮眼的实验是覆盖率：Coreutils 总体行覆盖达到 80% 以上
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aflgo-2017]] —— AFLGo — 让灰盒 fuzzing 朝目标代码前进
+- [[bohme-aflfast-2016]] —— AFLFast — 把 fuzzing 的力气花在更少人走的路径上
+- [[driller-2016]] —— Driller 2016 — 用符号执行给 fuzzing 打穿深分支
+- [[fairfuzz-2018]] —— FairFuzz 2018 — 保护关键字节，让 fuzzing 往深处走
+- [[making-smart-contracts-smarter]] —— Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞

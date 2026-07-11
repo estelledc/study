@@ -157,6 +157,4 @@ class WordCounter:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[unstructured]] —— Unstructured — 把任意文档解析成 LLM 能吃的元素列表
-

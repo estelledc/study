@@ -159,7 +159,9 @@ accelerate launch train.py
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
+- [[megatron-core-moe-2026]] —— Megatron-Core MoE — 大规模稀疏专家并行实践
+- [[papers/megatron-lm]] —— Megatron-LM — NVIDIA 大规模训练框架
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
-
+- [[papers/vllm]] —— vLLM — 把操作系统的分页搬进 GPU KV cache

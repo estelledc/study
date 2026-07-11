@@ -154,21 +154,21 @@ OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[benchmarking]] —— Wisconsin Benchmark — 给数据库出一套可重复的体检题
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+- [[papers/clickhouse]] —— ClickHouse — 把列存 OLAP 推到硬件极限
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+- [[dryadlinq-system-general-purpose-distributed-data-parallel-2008]] —— DryadLINQ — 把普通 C# 查询变成集群作业
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
+- [[efficient-compile-2011]] —— Efficient Compile 2011 — 把 SQL 查询编译成贴近 CPU 的机器码
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
+- [[morsel-driven-2014]] —— Morsel-Driven Parallelism — 把 SQL 查询切成小口分给多核
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[papers/vllm]] —— vLLM — 把操作系统的分页搬进 GPU KV cache
+- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
-

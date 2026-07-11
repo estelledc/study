@@ -167,3 +167,6 @@ const addShape = useMutation(({ storage }) => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
+- [[sharedb]] —— ShareDB — 基于 OT 的实时数据库

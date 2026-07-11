@@ -196,3 +196,7 @@ gzserver -u model_push.world && gzclient
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[blender]] —— Blender — 全流程 3D 创作套件
+- [[bullet]] —— Bullet — C++ 经典 3D 物理引擎与 PyBullet 仿真工具
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎

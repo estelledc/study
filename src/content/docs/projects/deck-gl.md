@@ -178,3 +178,5 @@ new ScatterplotLayer({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[luma-gl]] —— luma.gl — 给 WebGPU/WebGL 用的中低层 GPU 工具箱

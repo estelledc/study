@@ -157,13 +157,8 @@ zi proj
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bat]] —— bat — 现代 cat 替代
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
-- [[fzf]] —— fzf — 命令行模糊查找
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-- [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
-
+- [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器

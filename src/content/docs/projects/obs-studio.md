@@ -163,3 +163,6 @@ await obs.call('StartVirtualCam')
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口

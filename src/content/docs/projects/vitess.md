@@ -154,10 +154,4 @@ vtctldclient SwitchTraffic --workflow=split --tablet_types=primary
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
-- [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-- [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
-
+（暂无反向链接）

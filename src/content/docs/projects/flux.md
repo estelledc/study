@@ -163,3 +163,5 @@ k8s-config/
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI

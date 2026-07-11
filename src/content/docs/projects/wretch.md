@@ -160,6 +160,3 @@ const data = await api.url("/flaky").get().json()
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
-- [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
-- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
-- [[zod]] —— Zod — TypeScript-first schema 验证

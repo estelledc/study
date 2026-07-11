@@ -152,11 +152,5 @@ await new Listr(
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
-- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
-- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
-- [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
-- [[webpack]] —— webpack 模块打包
-- [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
-

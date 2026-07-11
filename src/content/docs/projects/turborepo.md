@@ -167,12 +167,8 @@ pnpm turbo run build
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
-- [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
+- [[plane]] —— Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[task]] —— Task — 用 YAML 写一份跨平台的 ‘项目命令清单’
-- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[webpack]] —— webpack 模块打包
-

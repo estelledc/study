@@ -166,15 +166,14 @@ topk = select_topk(scores, k=10)       # FAISS 论文重点优化了 GPU 上的 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[faiss]] —— FAISS — 向量检索的标准件库
-- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
-- [[numpy]] —— NumPy — Python 科学计算基石
+- [[columnar-storage-formats-2023]] —— Columnar Storage Formats 2023 — Parquet/ORC 的体检报告
+- [[hullft-ttft]] —— HullFT — 让测试时微调既会挑样本又省算力
+- [[milvus-2021]] —— Milvus 2021：把向量搜索做成数据库
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 - [[scann-2020]] —— ScaNN — 让向量量化只精修「客户会看到的那一面」
 - [[spann-2021]] —— SPANN — 内存放中心、SSD 放向量的十亿级近邻检索
 - [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
-
+- [[faiss]] —— FAISS — 向量检索的标准件库
+- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
+- [[numpy]] —— NumPy — Python 科学计算基石

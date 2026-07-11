@@ -155,9 +155,4 @@ human: A 赢
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[alphago]] —— AlphaGo — 击败围棋世界冠军
-- [[amplification-hell-2014]] —— Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
-- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
-- [[cot]] —— Chain-of-Thought Prompting
-- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
-
+- [[compositional-incoherence]] —— Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒

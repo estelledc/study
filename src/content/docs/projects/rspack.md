@@ -158,11 +158,8 @@ compiler.hooks.compilation.tap('demo', (compilation) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
-

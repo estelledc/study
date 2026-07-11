@@ -166,14 +166,8 @@ map (f . g) xs    = [3, 5]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[compose-future-theorems]] —— COMPOSE — 用引用图和 Mathlib 图预测未来定理
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
-

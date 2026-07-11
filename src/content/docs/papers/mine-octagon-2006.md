@@ -156,3 +156,6 @@ void f(int n, int a[]) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
+- [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系

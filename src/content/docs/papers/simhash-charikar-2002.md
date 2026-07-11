@@ -158,7 +158,4 @@ JL 把高维实向量降到低维实向量并保持欧氏距离；SimHash 把高
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
-- [[minhash-broder-1997]] —— MinHash — 用最小哈希值估算两个集合的重叠度
-- [[turing-1936]] —— Turing 1936 可计算性
-
+（暂无反向链接）

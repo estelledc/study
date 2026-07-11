@@ -166,21 +166,16 @@ def residual_block(x):
 
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[attention]] —— Attention Is All You Need
-- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving
+- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset — 自动驾驶感知的共同训练场
 - [[batchnorm-2015]] —— Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
-- [[dino]] —— DINO 自监督视觉 transformer
+- [[carlini-wagner-2017]] —— C&W 攻击 — 用强优化检验神经网络鲁棒性
+- [[deepfool-2016]] —— DeepFool 2016 — 用最小扰动量出模型边界有多近
+- [[dino]] —— DINO — 让视觉模型自己认出物体轮廓
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[label-smoothing-2016]] —— Label Smoothing — 别让模型对正确答案过度自信
 - [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
+- [[madry-pgd-2017]] —— Madry PGD — 把对抗训练变成最坏情况演练
 - [[mae]] —— MAE — Masked Autoencoders
-- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[nbeats-2020]] —— N-BEATS — 纯前馈网络在时序预测上打败统计派
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[vit]] —— ViT — Vision Transformer
-
+- [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错

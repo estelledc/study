@@ -152,3 +152,5 @@ Tevanian 后来跟 Steve Jobs 到 NeXT、Apple，做到软件 SVP；他写过的
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）

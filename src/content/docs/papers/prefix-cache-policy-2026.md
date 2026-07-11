@@ -147,3 +147,7 @@ def unicache_evict(task_queues, need_blocks):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kv-cache-budget-2026]] —— KVBudget — 给每条请求划一块 KV cache 预算
+- [[nestedkv]] —— NestedKV — 用三层记忆决定 KV cache 该留谁
+- [[vericache]] —— VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收

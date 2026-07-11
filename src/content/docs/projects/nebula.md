@@ -155,3 +155,5 @@ GO 3 STEPS FROM "user_42" OVER transfer YIELD transfer.dst, transfer.amount;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[memgraph]] —— Memgraph — 内存图数据库

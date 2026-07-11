@@ -156,10 +156,6 @@ Omega 的命运很像很多研究系统：**作为产品失败，作为思想活
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[borg-2015]] —— Borg 2015 — Google 把一万台机器假装成一台
 - [[kubernetes-2016]] —— Kubernetes — 为什么选声明式 API 加协调环
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
-- [[raft]] —— Raft — 易理解的共识算法
-- [[sparrow-2013]] —— Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器
-
+- [[twine-2020]] —— Twine — Facebook 把整个数据中心当一台机器调度

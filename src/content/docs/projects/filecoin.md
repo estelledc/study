@@ -149,15 +149,6 @@ lotus-worker run --listen 0.0.0.0:2345
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arweave]] —— Arweave — 一次付费、永远存着的区块链
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[chainlink]] —— Chainlink — 智能合约的"感官系统"
-- [[gfs]] —— GFS — 编译器决定不做哪些事
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[raft]] —— Raft — 易理解的共识算法
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
 - [[storj]] —— Storj — S3 兼容的去中心化对象存储
 - [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
-

@@ -165,12 +165,6 @@ SELECT user_id, SUM(amount) FROM orders GROUP BY user_id;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
-- [[leveldb]] —— LevelDB — Google LSM 库
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[raft]] —— Raft — 易理解的共识算法
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-
+- [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL

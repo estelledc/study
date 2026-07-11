@@ -162,13 +162,7 @@ while True:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
-- [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[program-shepherding-2002]] —— Program Shepherding — 给每次跳转安排门卫
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
-- [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
-
+- [[numpy]] —— NumPy — Python 科学计算基石

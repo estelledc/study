@@ -153,10 +153,4 @@ Q1 = 5（跨机房）, Q2 = 2（本机房两节点）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
-- [[epaxos-2013]] —— EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[raft]] —— Raft — 易理解的共识算法
-
+（暂无反向链接）

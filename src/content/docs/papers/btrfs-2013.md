@@ -172,9 +172,4 @@ btrfs send -p /mnt/data-snap-monday /mnt/data-snap-tuesday | \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
-- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
-- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
-- [[zfs-2003]] —— ZFS — 把磁盘当成水池，每滴水都贴标签
-
+（暂无反向链接）

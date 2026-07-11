@@ -161,10 +161,5 @@ REALM 和 RAG 是 retrieval-augmented LM 的双子星，分别走 BERT MLM 和 B
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
-

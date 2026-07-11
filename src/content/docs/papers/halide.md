@@ -151,22 +151,17 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
-- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 - [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
-- [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
-- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
-- [[ssa]] —— SSA — 静态单赋值形式
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
-
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[numpy]] —— NumPy — Python 科学计算基石
+- [[opencv]] —— OpenCV — 计算机视觉库
+- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
+- [[vips]] —— libvips — 流式低内存图像库

@@ -166,15 +166,6 @@ queens(N, Qs) :-
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
-- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
-- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[avgustinov-codeql-2016]] —— QL / CodeQL — 用面向对象外壳写可扩展代码查询
 - [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
-- [[turing-1936]] —— Turing 1936 可计算性
 - [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
-

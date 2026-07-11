@@ -145,53 +145,58 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[amber-sigmod-2014]] —— Amber — 把用户数据从 Web 应用里拆出来
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
 - [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[calvin]] —— Calvin — 先排队再执行的分布式事务系统
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[dremel-decade-2020]] —— Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线
 - [[epaxos-2013]] —— EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
+- [[farm-2015]] —— FaRM — 把一排机器的内存当成一个低延迟仓库
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
+- [[foundationdb]] —— FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
-- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[gfs]] —— GFS — 为工作负载反向定制的分布式文件系统
+- [[gfs-2003]] —— GFS 2003 — 把廉价机器拼成大文件仓库
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 - [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[janus-2016]] —— Janus 2016 — 把并发控制和共识捏成一个协议
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lamport-time-clocks-1978]] —— Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚
 - [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[ntp-mills-1991]] —— NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[scads-database-2008]] —— SCADS — 用户涨一万倍也不改应用的存储愿景
 - [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
+- [[system-design]] —— The Datacenter as a Computer — 把机房当成一台巨型计算机
 - [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
-- [[tikv]] —— TiKV — 分布式事务 KV
-- [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
+- [[tradeoff-analysis]] —— The Tail at Scale — 尾延迟会被规模放大
 - [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
 - [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
 - [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
-
+- [[tikv]] —— TiKV — 分布式事务 KV
+- [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层

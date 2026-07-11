@@ -190,7 +190,4 @@ tasks:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
-- [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
-- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
-
+（暂无反向链接）

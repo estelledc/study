@@ -160,5 +160,29 @@ Raycaster（射线拾取）= 从相机射出一根“手指”，看先碰到谁
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[threejs-examples]] —— 常见例程（材质、光照、交互）
-- [[webxr]] —— 若将 3D 场景扩展到沉浸式交互
+- [[aframe]] —— A-Frame — 用 HTML 搭 Web VR 场景
+- [[appleseed]] —— appleseed — 物理渲染器
+- [[ar-js]] —— AR.js — 浏览器里跑 Web AR 标记追踪
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[babylonjs]] —— Babylon.js — 浏览器里的 3D 游戏和可视化引擎
+- [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[draco]] —— Draco — Google 3D 网格压缩
+- [[filament]] —— Filament — Google 跨平台 PBR 引擎
+- [[glsl-canvas]] —— glslCanvas — Book of Shaders 配套库
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统
+- [[hydra-synth]] —— Hydra — 实时视觉合成 livecoding
+- [[lottie]] —— lottie-web — 把 AE 动画变成网页可播放的 JSON
+- [[luma-gl]] —— luma.gl — 给 WebGPU/WebGL 用的中低层 GPU 工具箱
+- [[mind-ar-js]] —— MindAR — 不装原生 SDK 的浏览器图像/人脸 AR
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎
+- [[openscad]] —— OpenSCAD — 脚本式 CAD
+- [[pcl]] —— PCL — 点云算法的学术工具箱
+- [[playcanvas]] —— PlayCanvas — Web 3D 引擎与可视化应用
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎
+- [[regl]] —— regl — 函数式 WebGL 封装
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时
+- [[shader-park]] —— Shader Park — 程序化 SDF 着色器 DSL
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器
+- [[spine-runtimes]] —— Spine Runtimes — 2D 骨骼动画运行时
+- [[twgl]] —— TWGL — 极薄 WebGL helpers

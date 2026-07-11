@@ -152,3 +152,8 @@ s̃(x, c) = s(x|c) + w · (s(x|c) − s(x))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[diffusion-posterior-finite]] —— Diffusion Posterior Samplers Fail — 用有限样本看清扩散后验采样为什么翻车
+- [[edm-2022]] —— EDM — 把扩散模型的训练配方一次拆清楚
+- [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存

@@ -156,26 +156,16 @@ docker logs optimism-batcher-1 -f
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
-- [[curve]] —— Curve — 稳定币低滑点兑换协议
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
-- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
-- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
-- [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 - [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
-

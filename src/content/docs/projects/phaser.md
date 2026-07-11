@@ -174,3 +174,15 @@ function update() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aframe]] —— A-Frame — 用 HTML 搭 Web VR 场景
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
+- [[defold]] —— Defold — King 出品的 Lua 跨平台游戏引擎
+- [[godot]] —— Godot — 开源游戏引擎和编辑器
+- [[heaps]] —— Heaps — Haxe 跨平台高性能游戏引擎
+- [[matter-js]] —— Matter.js — 2D 刚体世界里最轻的“物理白板”
+- [[melonjs]] —— melonJS — 轻量 JS 2D 游戏引擎
+- [[piskel]] —— Piskel — Web 像素艺术编辑器
+- [[planck]] —— planck.js — 纯 JS Box2D 生态
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时
+- [[spine-runtimes]] —— Spine Runtimes — 2D 骨骼动画运行时
+- [[tiled]] —— Tiled Map Editor — 通用 2D 关卡编辑

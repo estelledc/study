@@ -160,14 +160,11 @@ const renderPage = memo((mdPath, mtime) => readFileSync(mdPath, 'utf8').toUpperC
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[next-js]] —— Next.js — React 全栈框架
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
-- [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
 - [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
-

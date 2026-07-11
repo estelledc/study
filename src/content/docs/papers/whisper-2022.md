@@ -159,11 +159,6 @@ Whisper 在静音或纯噪声段有时会"编造"不存在的文字——这是 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-- [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
+- [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度
 - [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
-

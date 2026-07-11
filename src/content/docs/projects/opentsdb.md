@@ -159,10 +159,5 @@ curl -X POST http://localhost:4242/api/uid/assign \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[m3]] —— M3 — Uber 的分布式 TSDB
-- [[prometheus]] —— Prometheus — 时序监控系统
-- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
-

@@ -149,10 +149,10 @@ D, I = gpu_index.search(queries, 10)  # 同一套 API，GPU 跑
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[milvus-2021]] —— Milvus 2021：把向量搜索做成数据库
+- [[papers/opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+- [[scaling-hnsws-antirez]] —— Scaling HNSWs — antirez 把向量图做成 Redis 数据结构的工程笔记
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[annoy]] —— Annoy — Spotify 的随机森林近似最近邻索引
-- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
-- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[milvus]] —— Milvus — 开源向量数据库
-- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
-
+- [[weaviate]] —— Weaviate — 模块化向量数据库

@@ -149,8 +149,4 @@ mixup 之所以能立刻流行，三个原因：**实现简单到一行、算力
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
-- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
-- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
-- [[batchnorm-2015]] —— Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
-
+（暂无反向链接）

@@ -173,26 +173,21 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
-- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
+- [[projects/coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 - [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
-- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 - [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
+- [[shadowsocks-libev]] —— Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
-- [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样
-
+- [[traefik]] —— Traefik — 现代云原生反向代理

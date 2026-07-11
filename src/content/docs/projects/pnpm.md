@@ -160,15 +160,16 @@ find ~/.pnpm-store/v3/files -inum 1234567
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[bun]] —— Bun — JS 全能运行时
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
-- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[projects/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
-- [[scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
+- [[projects/scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
-

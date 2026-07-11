@@ -160,3 +160,5 @@ segments, info = model.transcribe('audio.mp3', beam_size=5)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）

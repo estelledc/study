@@ -151,7 +151,5 @@ dev 自动部、staging 等一人审、prod 等双人审 + 工作时间窗口—
 
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
 - [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
-- [[helm]] —— Helm — Kubernetes 包管理器
-- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
 - [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
-

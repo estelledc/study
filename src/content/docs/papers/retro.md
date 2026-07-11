@@ -154,8 +154,6 @@ retro.generate(prompt, retrieval_index="wikipedia_2024")
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[nlp-rag-2024]] —— RAG for AIGC: 检索增强生成在 AI 生成内容中的应用 — 学习笔记
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基

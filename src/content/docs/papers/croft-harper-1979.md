@@ -148,3 +148,5 @@ BIM 词权重是 `log((p_i (1-u_i)) / (u_i (1-p_i)))`。逐步代入：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bm25]] —— BM25 — 用概率框架给搜索结果排队

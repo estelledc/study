@@ -148,9 +148,12 @@ mbedtls_ssl_handshake(&ssl);  // 在 UDP 上完成握手
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
-- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
-- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
-- [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
-- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
-
+- [[cmsis-nn]] —— CMSIS-NN — Arm Cortex-M 的神经网络算子加速库
+- [[freemodbus]] —— FreeModbus：嵌入式设备的 Modbus 从站协议栈
+- [[littlefs]] —— littlefs — MCU 友好的掉电安全文件系统
+- [[lora-mac-node]] —— LoRaMac-node — LoRaWAN 终端协议栈参考实现
+- [[mender]] —— Mender — 给 IoT 设备做不会刷砖的 OTA 升级
+- [[nanomq]] —— NanoMQ — 边缘侧超轻量 MQTT Broker
+- [[sdk-nrf]] —— Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK
+- [[shadowsocks-libev]] —— Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理
+- [[wireguard-go]] —— WireGuard-Go — WireGuard VPN 的 Go 用户态实现

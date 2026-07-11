@@ -155,6 +155,4 @@ type Factory interface {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[prometheus]] —— Prometheus — 时序监控系统
-
+- [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据

@@ -155,5 +155,7 @@ Screened: min ‖∇χ - V‖² + λ Σᵢ |χ(pᵢ) - 0.5|²
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-
+- [[sorkine-2004-laplacian-editing]] —— Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节
+- [[draco]] —— Draco — Google 3D 网格压缩
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[pcl]] —— PCL — 点云算法的学术工具箱

@@ -156,3 +156,7 @@ EasyCrypt 把这件事拆成：枚举攻击者询问 H 的所有可能位置 →
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
+- [[rabin-ot-1981]] —— Rabin OT 1981 — 不知道对方是否收到的秘密交换
+- [[yao-garbled-circuits-1986]] —— Yao Garbled Circuits — 两个人不摊牌也能一起算答案

@@ -153,7 +153,4 @@ Tilt 与 Skaffold 的关键差异：Tilt 用 Starlark **写配置可以加逻辑
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[helm]] —— Helm — Kubernetes 包管理器
-- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
-

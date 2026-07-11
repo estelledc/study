@@ -170,12 +170,5 @@ service Greet { rpc Ping(Request) returns (Response); }
 
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[prometheus]] —— Prometheus — 时序监控系统
-- [[redis]] —— Redis — 内存键值数据库
-

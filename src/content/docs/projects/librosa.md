@@ -145,5 +145,5 @@ print(sim)  # 越接近 1 越像
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[aubio]] —— Aubio — 用音频信号提取节奏与音高
+- [[essentia]] —— Essentia — 音乐信息检索的 C++/Python 工具箱

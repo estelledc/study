@@ -169,3 +169,11 @@ signature hint: high bytes of 0xbffff4a0
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aflgo-2017]] —— AFLGo — 让灰盒 fuzzing 朝目标代码前进
+- [[autograph-2004]] —— Autograph 2004 — 自动给蠕虫写内容签名
+- [[avgustinov-codeql-2016]] —— QL / CodeQL — 用面向对象外壳写可扩展代码查询
+- [[driller-2016]] —— Driller 2016 — 用符号执行给 fuzzing 打穿深分支
+- [[fairfuzz-2018]] —— FairFuzz 2018 — 保护关键字节，让 fuzzing 往深处走
+- [[program-shepherding-2002]] —— Program Shepherding — 给每次跳转安排门卫
+- [[securify-2018]] —— Securify 2018 — 用规则自动查智能合约漏洞

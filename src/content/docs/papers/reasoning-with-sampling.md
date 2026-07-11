@@ -153,3 +153,6 @@ Entropy-Cut 的贡献主要在第二层。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ppc-preplan]] —— PPC Preplan — 先想清楚题目类型再规划解法
+- [[self-trained-verification]] —— Self-Trained Verification — 让模型先看标准答案学会挑错

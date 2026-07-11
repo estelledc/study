@@ -53,4 +53,4 @@ node scripts/regen-backlinks.mjs --check
 
 生成器只识别带固定 HTML marker 的自动生成段；没有 marker 的手写「反向链接」段保持 byte-identical。ALL 与 BACKREFS 均以 NoteId 为 key，跨区重复 slug 不再覆盖。重复 slug 的生成链接使用 `area/slug`，唯一 slug 继续使用裸形式。
 
-当前 shadow 运行预测 1,582 个自动生成段会变化，第二轮内存生成是零 diff。由于该批量超过本轮安全阈值，代码与 dry-run 已落地，但正文目录未写回；应在没有其他 note diff 的独立提交中审阅并生成。
+2026-07-11 的获批写回只更新 marker-owned 自动生成段：1,845 个文件发生变化，124 个无生成段文件保持未改，2 个手写「反向链接」文件保持整文件与 section SHA-256 不变。逐文件移除自动段后，写回前后正文 byte-identical；连续两次 `--check --json` 均为 `changed=0`。写回后的统计为 1,975 篇笔记、18,501 个 resolved occurrence、1,474 个 unresolved occurrence。后续生成仍须先 dry-run，并在独立提交中证明非生成正文没有变化。

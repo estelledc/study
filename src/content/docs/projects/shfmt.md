@@ -163,3 +163,6 @@ shfmt -d -i 2 script.sh # 再检查格式
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/shellcheck]] —— ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
+- [[projects/shellcheck]] —— ShellCheck — shell 脚本的静态体检医生

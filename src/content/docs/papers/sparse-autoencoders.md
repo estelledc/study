@@ -150,4 +150,3 @@ for fid in refusal_feature_ids:
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[sleeper-agents]] —— Sleeper Agents — 故意藏后门的 LLM
 - [[toy-models-superposition]] —— Toy Models of Superposition
-

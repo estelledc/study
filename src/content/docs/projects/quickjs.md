@@ -147,3 +147,9 @@ JS_FreeRuntime(rt);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boa-engine]] —— Boa — Rust 写的 ECMAScript 解释器
+- [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
+- [[llrt]] —— LLRT — AWS Lambda 场景下的低延迟 JS 运行时
+- [[wamr]] —— WAMR — 塞进单片机也能跑的 Wasm 微运行时
+- [[wasmtime]] —— Wasmtime — Rust 实现的 WebAssembly 运行时

@@ -168,3 +168,18 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/shellcheck]] —— ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
+- [[actions-runner-controller]] —— Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
+- [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
+- [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
+- [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
+- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
+- [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
+- [[opentofu]] —— OpenTofu — 社区接手的 Terraform
+- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
+- [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
+- [[pulumi]] —— Pulumi — 用真正的编程语言写云资源清单
+- [[sops]] —— SOPS — 让密码也能放心进 Git

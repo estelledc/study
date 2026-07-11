@@ -164,10 +164,14 @@ curl -X POST http://ome:8081/v1/vhosts/default/apps/app/streams/stream:startPush
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[dash.js]] —— dash.js — Web DASH 播放器官方参考实现
+- [[gstreamer]] —— GStreamer — 用积木管线处理音视频
+- [[libvpx]] —— libvpx — VP8/VP9 编解码器
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
 - [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
-- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
 - [[openmeetings]] —— Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统
-
+- [[shaka-player]] —— Shaka Player — Google 流媒体播放器
+- [[streamlink]] —— Streamlink — 把直播页变成可播的流

@@ -158,3 +158,5 @@ pw-link alsa_input.usb_mic:capture_FL ardour:Audio_1/in\ 1
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀

@@ -188,3 +188,6 @@ mdb_stat -rr /var/lib/app-lmdb
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV

@@ -160,9 +160,4 @@ pb.collection('todos').subscribe('*', (e) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
-- [[supabase]] —— Supabase — Firebase 的开源替代
-
+（暂无反向链接）

@@ -161,3 +161,6 @@ some-build-script.sh && ya emit cd "$(pwd)"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[helix]] —— Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机
+- [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器

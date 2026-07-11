@@ -147,3 +147,6 @@ Bob 得到 SA 当且仅当 Alice 也能得到 SB
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gmw-mental-game-1987]] —— GMW Mental Game — 多个人不交出秘密也能一起算答案
+- [[rabin-ot-1981]] —— Rabin OT 1981 — 不知道对方是否收到的秘密交换

@@ -167,3 +167,7 @@ ros2 lifecycle set /lc_talker activate
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gazebo-classic]] —— Gazebo Classic — 机器人世界的物理排练场
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[navigation2]] —— Nav2 — ROS 2 移动机器人导航栈

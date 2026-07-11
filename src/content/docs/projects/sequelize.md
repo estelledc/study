@@ -163,8 +163,4 @@ module.exports = {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
-- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[prisma]] —— Prisma — 类型安全 ORM
-

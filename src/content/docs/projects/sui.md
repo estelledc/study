@@ -152,11 +152,4 @@ shared 对象牺牲一点延迟（要进共识）换上"全局可访问"。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anchor]] —— Anchor — Solana 合约开发框架
-- [[aptos-core]] —— Aptos — Move 系高性能 L1
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[move-language]] —— Move — 资源型智能合约语言
-- [[solana]] —— Solana — Rust 写的高性能 PoH 链
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

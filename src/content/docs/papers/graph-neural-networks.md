@@ -147,3 +147,8 @@ score = dot(user_h, item_h)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[desbrun-1999-implicit-fairing]] —— Desbrun 1999 — 把热扩散方程隐式离散到三角网
+- [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
+- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
+- [[taubin-1995-mesh-smoothing]] —— Taubin 1995 — 把网格平滑当成低通滤波

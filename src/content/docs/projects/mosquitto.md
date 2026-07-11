@@ -196,3 +196,8 @@ restart_timeout 10 60
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[espurna]] —— ESPurna — 给便宜智能开关换一套本地大脑
+- [[nanomq]] —— NanoMQ — 边缘侧超轻量 MQTT Broker
+- [[nats]] —— NATS — 极简云原生消息系统
+- [[openhab]] —— openHAB — Java OSGi 家庭自动化框架

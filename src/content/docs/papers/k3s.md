@@ -149,5 +149,4 @@ curl -sfL https://get.k3s.io | sh -s - server --server https://<node1>:6443
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
-
+（暂无反向链接）

@@ -150,7 +150,6 @@ insertList x (y:ys)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
@@ -159,12 +158,7 @@ insertList x (y:ys)
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hacl-star-2017]] —— HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[lacuna-program-holes]] —— LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-

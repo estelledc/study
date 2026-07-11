@@ -152,16 +152,10 @@ UNDROP TABLE orders_2026;                  -- 误删救回
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
-- [[databend]] —— Databend — Rust 写的存算分离云数仓
-- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
-- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
+- [[data-lake-management-2019]] —— Data Lake Management 2019 — 数据湖从文件堆变成可治理资产
+- [[delta-lake-2020]] —— Delta Lake 2020 — 给对象存储补上事务日志
+- [[dremel-decade-2020]] —— Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
-- [[gfs]] —— GFS — 编译器决定不做哪些事
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
-
+- [[lakehouse-2021]] —— Lakehouse 2021 — 把数据湖和数仓合成一套开放平台
+- [[databend]] —— Databend — Rust 写的存算分离云数仓

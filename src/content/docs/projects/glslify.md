@@ -158,3 +158,7 @@ void main() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hydra-synth]] —— Hydra — 实时视觉合成 livecoding
+- [[shader-park]] —— Shader Park — 程序化 SDF 着色器 DSL
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器

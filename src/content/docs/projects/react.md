@@ -161,3 +161,68 @@ function Greeting({ name }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[ag-grid]] —— AG Grid — 企业级数据表格
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
+- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
+- [[deck-gl]] —— deck.gl — 大规模地图数据可视化图层库
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
+- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+- [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
+- [[ffmpeg-kit]] —— FFmpegKit — 把 FFmpeg 装进移动 App 的封装层
+- [[flutter]] —— Flutter — Google 的 Dart 跨平台 UI 框架
+- [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[glide-data-grid]] —— glide-data-grid — Canvas 画出来的百万行表格
+- [[gradio]] —— Gradio — ML 模型 demo 框架
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[handsontable]] —— Handsontable — 浏览器里的 Excel
+- [[hermes]] —— Hermes — Facebook 的 React Native JS 引擎
+- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
+- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
+- [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[kepler-gl]] —— kepler.gl — 拖拽式百万点 GIS 探索界面
+- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
+- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
+- [[lottie]] —— lottie-web — 把 AE 动画变成网页可播放的 JSON
+- [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
+- [[neutralinojs]] —— neutralinojs — 系统 WebView 上的极简桌面壳
+- [[next-js]] —— Next.js — React 全栈框架
+- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
+- [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[penpot]] —— Penpot — 开源自托管的 Figma 替代
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[preact]] —— Preact — 3KB React 替代
+- [[qwik]] —— Qwik — Resumable UI 框架
+- [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
+- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
+- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
+- [[react-native]] —— React Native — 一套代码跑多端的跨端运行时
+- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
+- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
+- [[streamlit]] —— Streamlit — Python 几行写 Web 应用
+- [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
+- [[svelte]] —— Svelte — 编译时 UI 框架
+- [[sveltekit]] —— SvelteKit — Svelte 全栈框架
+- [[swr]] —— SWR — React 远程数据 hook 的极简流派
+- [[tabulator]] —— Tabulator — 纯 JS 交互式表格
+- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
+- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
+- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
+- [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
+- [[video.js]] —— Video.js — Web 视频播放器框架
+- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用
+- [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
+- [[xstate]] —— XState — 把状态画成图，让矛盾写不出来

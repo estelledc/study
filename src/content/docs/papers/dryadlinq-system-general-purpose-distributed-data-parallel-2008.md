@@ -149,3 +149,7 @@ var reduced = grouped.SelectMany(reducer);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ciel-universal-execution-engine-distributed-data-flow-2011]] —— CIEL 2011 — 让分布式数据流会自己长出下一步
+- [[piccolo-building-fast-distributed-programs-with-partitioned-2010]] —— Piccolo — 用分区表写分布式迭代程序
+- [[spark-rdd]] —— Spark RDD — 用血缘记录重建内存数据

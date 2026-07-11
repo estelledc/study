@@ -156,3 +156,14 @@ Devlin et al. BERT (2018-10): 论文主报 16× Cloud TPU
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ampere-architecture-2020]] —— NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设
+- [[blackwell-architecture-2024]] —— NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化
+- [[burgess-2020-turing-rt]] —— Burgess 2020 RTX ON — Turing 把光线追踪做进硅片
+- [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
+- [[gpudirect-rdma-2014]] —— GPUDirect RDMA — 让网卡直接读写 GPU 显存
+- [[hopper-architecture-2022]] —— NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制
+- [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
+- [[nvlink-nvswitch-2018]] —— NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器
+- [[turing-architecture-2018]] —— NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8
+- [[unified-memory-2014]] —— CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图

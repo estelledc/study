@@ -155,3 +155,6 @@ completion = model.generate(prompt)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[schgen-pcb]] —— SchGen PCB — 把一句需求变成可编辑电路原理图
+- [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型

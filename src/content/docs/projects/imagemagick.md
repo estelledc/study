@@ -164,3 +164,7 @@ PNG 2400 1600 sRGB
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[inkscape]] —— Inkscape — 矢量图形编辑器
+- [[opencv]] —— OpenCV — 计算机视觉库
+- [[pillow]] —— Pillow — Python 图像处理
+- [[vips]] —— libvips — 流式低内存图像库

@@ -152,12 +152,4 @@ Coq 的 **extraction** 把证过的函数翻成 OCaml。Verdi 把 Raft 提出来
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[disel-2018]] —— Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块
-- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[raft]] —— Raft — 易理解的共识算法
-- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
-- [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
-

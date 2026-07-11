@@ -173,3 +173,7 @@ cline --auto-approve true --json "$PROMPT: $ISSUE_URL" \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[opencode]] —— OpenCode — 终端里的开源 AI 编程助手
+- [[roo-code]] —— Roo Code — 多模式 VS Code AI 助手
+- [[void]] —— Void — 开源 Cursor 替代

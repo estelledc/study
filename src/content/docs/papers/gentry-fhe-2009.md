@@ -169,13 +169,9 @@ Gentry 2009 之后，FHE 方案沿三条路线快速发展：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
 - [[brakerski-bgv-2012]] —— BGV 2012 — 不用自举也能做全同态加密
 - [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
 - [[chillotti-tfhe-2016]] —— TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒
-- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
 - [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
-- [[mcmahan-fedavg-2017]] —— FedAvg 2017 — 让手机本地训练模型再上传平均值
-- [[rsa]] —— RSA 公钥密码
-- [[zk-snark]] —— zk-SNARK 零知识证明
-
+- [[paillier-1999]] —— Paillier 1999 — 能在密文上直接做加法的公钥加密
+- [[regev-lwe-2005]] —— Regev LWE 2005 — 把带噪声方程变成后量子密码地基

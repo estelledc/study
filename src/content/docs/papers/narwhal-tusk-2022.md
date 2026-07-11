@@ -150,8 +150,4 @@ Narwhal 把每个验证人内部再拆成：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
-- [[move-language]] —— Move — 资源型智能合约语言
-- [[pbft-1999]] —— PBFT — 让拜占庭容错从理论变成能跑的工程
 - [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板
-

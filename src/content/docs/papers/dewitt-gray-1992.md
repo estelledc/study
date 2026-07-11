@@ -148,17 +148,10 @@ GROUP BY 1;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
-- [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
+- [[benchmarking]] —— Wisconsin Benchmark — 给数据库出一套可重复的体检题
+- [[dryadlinq-system-general-purpose-distributed-data-parallel-2008]] —— DryadLINQ — 把普通 C# 查询变成集群作业
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[snowflake]] —— Snowflake — 云数仓把存储和计算拆开
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-

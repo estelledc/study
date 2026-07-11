@@ -141,10 +141,4 @@ input → enter_loop → compute → exit_loop → output
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[flink]] —— 现代流引擎在状态与窗口上延续该路线
-- [[spark-structured-streaming]] —— 与实时语义对齐的方法
-- [[beam]] —— 统一模型在其他生态里的实现
-- [[storm]] —— 经典流引擎与及时流的分野
-- [[materialize]] —— 增量视图与可解释状态
-
-读完若只记一句：Naiad 教你用逻辑时间把「还在算」和「可以定稿」分开。
+（暂无反向链接）

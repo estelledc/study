@@ -155,11 +155,4 @@ export default async ({ req, res, log }) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
-- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
-- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
-- [[redis]] —— Redis — 内存键值数据库
-- [[supabase]] —— Supabase — Firebase 的开源替代
-

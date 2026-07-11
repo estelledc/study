@@ -162,3 +162,5 @@ make
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[svt-av1]] —— SVT-AV1 — Intel 主导的 AV1 编码器

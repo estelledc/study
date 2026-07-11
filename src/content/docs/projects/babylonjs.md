@@ -163,3 +163,8 @@ const xr = await scene.createDefaultXRExperienceAsync({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hydra-synth]] —— Hydra — 实时视觉合成 livecoding
+- [[luxcorerender]] —— LuxCoreRender — 物理光线追踪
+- [[playcanvas]] —— PlayCanvas — Web 3D 引擎与可视化应用
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器

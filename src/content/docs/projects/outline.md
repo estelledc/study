@@ -181,3 +181,5 @@ claude mcp add --transport http outline https://team.getoutline.com/mcp
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bookstack]] —— BookStack — 文档型 Wiki

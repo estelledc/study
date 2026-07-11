@@ -147,3 +147,6 @@ $ npx cap open ios            # 用 Xcode 继续签证书、上架
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[capacitor]] —— Capacitor — 把 Web 应用装进原生 App 的运行时
+- [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[nativescript]] —— NativeScript — 用 JS/TS 直接驱动原生控件

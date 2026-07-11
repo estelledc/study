@@ -147,3 +147,6 @@ WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_ONLY)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[index-structures]] —— Learned Index Structures — 把数据库索引看成会预测位置的模型
+- [[mvcc]] —— MVCC — 让读写互不挡路的版本账本

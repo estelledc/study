@@ -150,23 +150,16 @@ def map : (α → β) → List α → List β
 
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
-- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[compose-future-theorems]] —— COMPOSE — 用引用图和 Mathlib 图预测未来定理
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
 - [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[hacl-star-2017]] —— HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
 - [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
-- [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
-- [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
-- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
-- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
-- [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
-

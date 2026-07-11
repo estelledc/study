@@ -161,7 +161,4 @@ pn.Column(threshold, pn.bind(metrics, threshold)).servable()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
-- [[starlight]] —— Starlight — Astro 文档站点主题
-- [[vega-lite]] —— Vega-Lite — 三段式 JSON 把复合图收口
+（暂无反向链接）

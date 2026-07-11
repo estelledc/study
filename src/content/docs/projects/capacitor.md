@@ -163,3 +163,10 @@ npx cap open ios
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[ionic-framework]] —— Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱
+- [[nativescript]] —— NativeScript — 用 JS/TS 直接驱动原生控件
+- [[quasar]] —— Quasar Framework — 一套代码跑 Vue 全端的应用框架
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用

@@ -173,3 +173,6 @@ Start → LLM(分类节点)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[botpress]] —— Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器

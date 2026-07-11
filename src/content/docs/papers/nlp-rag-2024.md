@@ -143,8 +143,4 @@ if not supported(answer, chunks): say("资料不足，无法确认")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
-- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
-- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
-- [[retro]] —— RETRO — DeepMind 的检索增强 LLM
-- [[self-rag-2023]] —— Self-RAG — 让模型自己决定何时该查资料
+（暂无反向链接）

@@ -156,3 +156,5 @@ CL05:                       1376 bytes 或 416 bytes 级别
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[piotrowska-loopix-2017]] —— Loopix — 用延迟和假流量保护通信关系

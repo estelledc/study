@@ -156,3 +156,89 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
+- [[papers/bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
+- [[papers/clearml]] —— ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
+- [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
+- [[dino]] —— DINO — 让视觉模型自己认出物体轮廓
+- [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
+- [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
+- [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
+- [[graphsage-2017]] —— GraphSAGE 2017 — 给没见过的节点也能算嵌入
+- [[kairouz-advances-fl-2019]] —— Kairouz 2019 — 联邦学习 58 个开放问题路线图
+- [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
+- [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
+- [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
+- [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
+- [[mcmahan-fedavg-2017]] —— FedAvg 2017 — 让手机本地训练模型再上传平均值
+- [[papers/mlflow]] —— MLflow — 给机器学习实验装上「记账本和身份证」
+- [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
+- [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
+- [[papers/optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
+- [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
+- [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
+- [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
+- [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
+- [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准
+- [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
+- [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
+- [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
+- [[papers/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
+- [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
+- [[projects/bentoml]] —— BentoML — 模型打包部署
+- [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
+- [[captum]] —— Captum — 给 PyTorch 模型装上 X 光机
+- [[projects/clearml]] —— ClearML — 自托管 MLOps 套件
+- [[cmsis-nn]] —— CMSIS-NN — Arm Cortex-M 的神经网络算子加速库
+- [[colossal-ai]] —— Colossal-AI — 大模型训练系统
+- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI
+- [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包
+- [[deepspeed]] —— DeepSpeed — 微软分布式训练库
+- [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
+- [[projects/dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
+- [[esp-dl]] —— ESP-DL — 把小模型塞进 ESP32 的推理库
+- [[fastai]] —— fastai — 三行代码做迁移学习
+- [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版
+- [[flax]] —— Flax — JAX 上的神经网络库
+- [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA 工具箱
+- [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
+- [[jax]] —— JAX — Google 函数式数值计算
+- [[keras]] —— Keras 3 — 一份模型代码跑三套后端
+- [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[projects/megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
+- [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
+- [[projects/mlflow]] —— MLflow — 端到端 ML 生命周期
+- [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
+- [[ncnn]] —— ncnn — 腾讯开源的端侧神经网络推理框架
+- [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[open-sora]] —— Open-Sora — 把 Sora 路线开源对标的视频生成项目
+- [[open3d]] —— Open3D — 现代点云 / 几何库
+- [[opencv]] —— OpenCV — 计算机视觉库
+- [[optax]] —— Optax — JAX 优化器组合库
+- [[projects/optuna]] —— Optuna — 超参搜索框架
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎
+- [[paddleocr]] —— PaddleOCR — 中文 OCR 最强开源方案
+- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
+- [[piper]] —— Piper — 端侧低延迟 TTS
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
+- [[sam2]] —— SAM 2 — 图像和视频都能抠轮廓的通用分割模型
+- [[sglang]] —— SGLang — 结构化推理运行时
+- [[shap]] —— SHAP — 用博弈论给每个特征发工资
+- [[stable-diffusion-webui]] —— AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器
+- [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台
+- [[tflite-micro]] —— TensorFlow Lite Micro — 把小模型塞进微控制器
+- [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
+- [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
+- [[ultralytics]] —— Ultralytics — YOLOv8/v11 易用 SDK
+- [[projects/wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
+- [[whisper]] —— Whisper — OpenAI 多语言 ASR

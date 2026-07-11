@@ -145,15 +145,13 @@ rg -uuu "foo"                # 三档：再搜 binary；大致接近 grep -r
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aider]] —— Aider — 终端 AI 结对编程 CLI
 - [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[bat]] —— bat — 现代 cat 替代
-- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[delta]] —— delta — git diff 的语法高亮分页器
 - [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
@@ -169,6 +167,7 @@ rg -uuu "foo"                # 三档：再搜 binary；大致接近 grep -r
 - [[jq]] —— jq — JSON 的 sed/awk
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[lf]] —— lf — 终端里像 vim 一样翻文件
+- [[logseq]] —— Logseq — 块结构离线知识库
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
@@ -177,14 +176,14 @@ rg -uuu "foo"                # 三档：再搜 binary；大致接近 grep -r
 - [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
+- [[shfmt]] —— shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
-- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 - [[vim]] —— Vim — 键盘上弹钢琴的编辑器
+- [[wasmtime]] —— Wasmtime — Rust 实现的 WebAssembly 运行时
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
-

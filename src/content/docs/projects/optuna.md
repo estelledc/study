@@ -194,3 +194,5 @@ python search.py
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[shap]] —— SHAP — 用博弈论给每个特征发工资

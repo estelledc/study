@@ -154,11 +154,4 @@ score(i, t) = e_i . SelfAttn(causal_mask, e_{i_1}+p_1, ..., e_{i_t}+p_t)[t]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
 - [[bert4rec-2019]] —— BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模
-- [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
-- [[gru-2014]] —— GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场
-- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
-- [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
-- [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
-

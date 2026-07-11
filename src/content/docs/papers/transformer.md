@@ -147,3 +147,34 @@ input_vector = word_embedding + position_embedding
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[adafactor-2018]] —— Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
+- [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
+- [[deberta-2021]] —— DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT
+- [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+- [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
+- [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
+- [[linear-attention-still-2026]] —— Linear Attention, Still: Why Mamba-style Models Plateau
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[mamba]] —— Mamba — 选择性状态空间模型
+- [[papers/megatron-lm]] —— Megatron-LM — NVIDIA 大规模训练框架
+- [[nbeats-2020]] —— N-BEATS — 纯前馈网络在时序预测上打败统计派
+- [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
+- [[performer-2020]] —— Performer — 用随机特征把 softmax attention 拉成线性复杂度
+- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
+- [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
+- [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
+- [[sleeper-agents]] —— Sleeper Agents — 故意藏后门的 LLM
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
+- [[transformer-2017]] —— Attention Is All You Need — 用 self-attention 重写序列建模
+- [[tree-of-thoughts-2023]] —— Tree of Thoughts — 让 LLM 像下棋一样多想几步再答
+- [[voyager]] —— Voyager — LLM 终身学习智能体
+- [[anthropic-cookbook]] —— Anthropic Cookbook — Claude API 实战示例
+- [[projects/autogen]] —— AutoGen — 微软多 Agent 对话框架
+- [[ctranslate2]] —— CTranslate2 — Transformer 模型推理的 C++ 加速引擎
+- [[rasa]] —— Rasa — 自己造一个能记住上下文的对话机器人

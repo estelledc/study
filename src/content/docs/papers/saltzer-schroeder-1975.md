@@ -158,12 +158,17 @@ Cloudflare 后来必须做 1.1.1.1 客户端 + 系统级开关，让普通人也
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bohme-aflfast-2016]] —— AFLFast — 把 fuzzing 的力气花在更少人走的路径上
 - [[capsicum-2010]] —— Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"
+- [[driller-2016]] —— Driller 2016 — 用符号执行给 fuzzing 打穿深分支
 - [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声 — 大家一起加噪音比一个人加更安全
+- [[foreshadow-2018]] —— Foreshadow 2018 — SGX 保险箱也挡不住瞬态执行脚印
 - [[haven-2014]] —— Haven — 在不信任的云里给程序造一间安全屋
-- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[lampson-hints-1983]] —— Lampson Hints 1983 — 系统设计思维起点
+- [[ngabonziza-trustzone-2016]] —— TrustZone Explained — 把手机 CPU 分成普通区和保密区
+- [[sanctum-2016]] —— Sanctum 2016 — 用少量硬件改动做强隔离 enclave
 - [[selinux-2001]] —— SELinux — 给 Linux 装上不可绕过的安检门
 - [[sgx-2013]] —— Intel SGX — 在 CPU 里建一间谁都偷看不了的密室
-
+- [[sweeney-k-anonymity-2002]] —— Sweeney k-Anonymity 2002 — 删除姓名还不够的匿名化基线

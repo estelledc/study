@@ -165,3 +165,9 @@ curdoc().add_root(column(slider, p))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/panel]] —— Panel — 把 notebook 一键变交互式 web app
+- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
+- [[holoviews]] —— HoloViews — 一份声明 ⇄ 多后端自动绘图
+- [[projects/panel]] —— Panel — 多绘图后端的 Python dashboard
+- [[plotly-py]] —— Plotly.py — DataFrame 一行变交互图表

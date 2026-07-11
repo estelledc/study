@@ -160,8 +160,4 @@ brew install k9s
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[helm]] —— Helm — Kubernetes 包管理器
-- [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[react]] —— React UI 组件库
-
+（暂无反向链接）

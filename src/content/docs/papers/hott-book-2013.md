@@ -159,10 +159,4 @@ data S¹ : Type where
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
-- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
-- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
-- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
-- [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
-

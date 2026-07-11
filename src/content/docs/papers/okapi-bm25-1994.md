@@ -156,3 +156,20 @@ tf=50 → 2.43  （后面基本不动了）
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
+- [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
+- [[bm25]] —— BM25 — 用概率框架给搜索结果排队
+- [[bpr-2009]] —— BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』
+- [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
+- [[doc2query-2019]] —— doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
+- [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
+- [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
+- [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
+- [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
+- [[indri-2005]] —— Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎
+- [[maron-kuhns-1960]] —— Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
+- [[ms-marco-2016]] —— MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集
+- [[simrank-2002]] —— SimRank — 两个节点相似当且仅当它们的邻居相似
+- [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
+- [[tfidf-classic]] —— TF-IDF Classic — 给搜索词分清轻重缓急

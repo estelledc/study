@@ -171,3 +171,9 @@ export class AddEmailToUser1700000000000 implements MigrationInterface {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
+- [[sequelize]] —— Sequelize — 老牌 Node ORM

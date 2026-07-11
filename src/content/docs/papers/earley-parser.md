@@ -155,11 +155,4 @@ fn parse_with_recovery(tokens):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
-- [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
-- [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
-- [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
-- [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
-- [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
-- [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法
-
+（暂无反向链接）

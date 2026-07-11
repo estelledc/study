@@ -162,3 +162,7 @@ M5
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[kicad]] —— KiCad — 电子电路 CAD
+- [[openscad]] —— OpenSCAD — 脚本式 CAD

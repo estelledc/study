@@ -152,20 +152,13 @@ const openLog = Effect.acquireRelease(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hono]] —— Hono — 多运行时 Web 框架
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[lacuna-program-holes]] —— LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
-- [[zod]] —— Zod — TypeScript-first schema 验证
-

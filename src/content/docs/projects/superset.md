@@ -171,3 +171,7 @@ class CeleryConfig:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
+- [[metabase]] —— Metabase — 让非技术人查数
+- [[zeppelin]] —— Apache Zeppelin — JVM 多语言笔记本

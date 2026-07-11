@@ -168,20 +168,14 @@ let ws = warp::path("ws")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kitty]] —— kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里
 - [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
-- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
+- [[wezterm]] —— WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用
 - [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
-

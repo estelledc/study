@@ -163,11 +163,4 @@ middleware 自己**就是一个 hook**——里面可以调 `useEffect / useRef`
 
 - [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[preact]] —— Preact — 3KB React 替代
-- [[react]] —— React UI 组件库
-- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
-- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
-- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
-- [[zustand]] —— Zustand — 极简 React 状态管理
-

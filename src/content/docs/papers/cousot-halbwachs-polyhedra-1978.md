@@ -147,3 +147,6 @@ while (cond) i = i + 1;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
+- [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点

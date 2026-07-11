@@ -154,15 +154,10 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 
 - [[andromeda-2018]] —— Andromeda — Google Cloud 网络虚拟化的高速通道
 - [[capsicum-2010]] —— Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[pivot-tracing-2015]] —— Pivot Tracing — 让运维事后想测什么就测什么
 - [[shenango-2019]] —— Shenango — 每 5 微秒重新分一次核的中央调度器
-- [[solana]] —— Solana — Rust 写的高性能 PoH 链
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
-
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[solana]] —— Solana — Rust 写的高性能 PoH 链

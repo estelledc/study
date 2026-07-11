@@ -156,14 +156,7 @@ JSX 属性里塞不进 `<FormattedMessage>`（因为属性是字符串而不是 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
-- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
-- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
-- [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[next-intl]] —— next-intl — Next.js 专用的多语言开关
 - [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
-- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-
+- [[vue-i18n]] —— vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新

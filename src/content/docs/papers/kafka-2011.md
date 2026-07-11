@@ -160,15 +160,7 @@ order_created (offset=42)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
+- [[delta-lake-2020]] —— Delta Lake 2020 — 给对象存储补上事务日志
 - [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
-- [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[raft]] —— Raft — 易理解的共识算法
-- [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
-

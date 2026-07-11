@@ -158,18 +158,26 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
-- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[cline]] —— Cline — VS Code 自主编码代理
+- [[code-server]] —— code-server — 浏览器里的 VS Code
 - [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
+- [[foam]] —— Foam — 把 VS Code 变成 Markdown 双链知识库
 - [[geany]] —— Geany — 用 C 写的轻量级 GTK 编辑器
+- [[ghostwriter]] —— ghostwriter — Qt 干净 Markdown 写作器
+- [[gitpod]] —— Gitpod — 预构建云开发环境
+- [[jupyterlab]] —— JupyterLab — 下一代 Jupyter IDE
 - [[lite-xl]] —— Lite-XL — 不到 3MB 的编辑器也能扩展出花样
 - [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
-- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[marktext]] —— MarkText — 实时预览 Markdown 编辑器
+- [[nodegui]] —— nodegui — 用 Node.js 写原生桌面窗口
 - [[notepad-plus-plus]] —— Notepad++ — 比记事本多两个加号的 Windows 编辑器
-- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作
+- [[roo-code]] —— Roo Code — 多模式 VS Code AI 助手
 - [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
 - [[textmate]] —— TextMate — macOS 上定义 bundle 宏系统的编辑器
 - [[theia]] —— Eclipse Theia — 可定制的云端与桌面 IDE 框架
+- [[void]] —— Void — 开源 Cursor 替代
 - [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验
-
+- [[zettlr]] —— Zettlr — 学者向 Markdown 编辑器

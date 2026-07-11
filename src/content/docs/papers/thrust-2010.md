@@ -151,6 +151,4 @@ thrust::transform(x.begin(), x.end(), y.begin(), z.begin(), saxpy(2.0f));
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-
+- [[sycl-cpp-2020]] —— SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑

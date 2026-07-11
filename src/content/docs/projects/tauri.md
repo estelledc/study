@@ -157,3 +157,9 @@ console.log(msg); // 你好，Ada！
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[capacitor]] —— Capacitor — 把 Web 应用装进原生 App 的运行时
+- [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[quasar]] —— Quasar Framework — 一套代码跑 Vue 全端的应用框架
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用

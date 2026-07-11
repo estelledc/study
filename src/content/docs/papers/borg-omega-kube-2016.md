@@ -163,3 +163,14 @@ while True:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[borg-2015]] —— Borg 2015 — Google 把一万台机器假装成一台
+- [[kubernetes-2016]] —— Kubernetes — 为什么选声明式 API 加协调环
+- [[mesos]] —— Mesos — 让多种计算框架共用一套集群
+- [[mesos-2011]] —— Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑
+- [[papers/mlflow]] —— MLflow — 给机器学习实验装上「记账本和身份证」
+- [[omega-2013]] —— Omega 2013 — 让多个调度器同时改一份 cluster 状态
+- [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
+- [[ray-2018]] —— Ray 2018 — 把任务和演员放进同一个分布式舞台
+- [[soltesz-2007]] —— Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案
+- [[sparrow-2013]] —— Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器

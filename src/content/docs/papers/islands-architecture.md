@@ -149,10 +149,4 @@ import Search from '../components/Search.jsx'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
-- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
-- [[starlight]] —— Starlight — Astro 文档站点主题
-- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
-- [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
-
+（暂无反向链接）

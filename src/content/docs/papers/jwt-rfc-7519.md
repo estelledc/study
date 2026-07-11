@@ -150,7 +150,4 @@ echo 'eyJzdWIiOiIxMjMiLCJleHAiOjE3MDB9' | base64 -d
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[oauth-2.1-rfc]] —— OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
-- [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 - [[rfc-3833-dns-threats]] —— RFC 3833 — IETF 第一次正式承认 DNS 不安全
-- [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样
-

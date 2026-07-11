@@ -188,3 +188,6 @@ global.win = win;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[electron-builder]] —— electron-builder — Electron 打包发布事实标准

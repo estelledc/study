@@ -177,20 +177,18 @@ async fn signup(form: web::Json<Signup>) -> String {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
+- [[embassy]] —— Embassy — 让单片机也能用 async/await
+- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
+- [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
+- [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
+- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
-- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-

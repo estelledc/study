@@ -152,10 +152,4 @@ DoT:   握手  → 查 a.com → 查 b.com → 查 c.com ...
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
-- [[mockapetris-1988-dns]] —— Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
-- [[rfc-3833-dns-threats]] —— RFC 3833 — IETF 第一次正式承认 DNS 不安全
-
+（暂无反向链接）

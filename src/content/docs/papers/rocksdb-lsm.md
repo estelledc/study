@@ -166,24 +166,23 @@ opts.compaction_style = rocksdb.kCompactionStyleLevel    # 写多读少
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[badger]] —— Badger — Go 写的键值分离 LSM
+- [[papers/badger]] —— BadgerDB — 把键和值分开存的 Go 原生 KV 库
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
-- [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
+- [[cassandra-eventual-tradeoff]] —— Cassandra 最终一致性取舍 — 可用性、延迟和新鲜度不能都拿满
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
-- [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-
+- [[papers/vllm]] —— vLLM — 把操作系统的分页搬进 GPU KV cache
+- [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
+- [[lmdb]] —— LMDB — 内存映射 KV 库
+- [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支

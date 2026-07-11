@@ -158,3 +158,7 @@ backend: "vllm"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ncnn]] —— ncnn — 腾讯开源的端侧神经网络推理框架
+- [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎

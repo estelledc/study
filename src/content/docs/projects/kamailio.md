@@ -157,8 +157,6 @@ def ksr_request_route(msg):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[projects/asterisk]] —— Asterisk — 把企业总机变成一台 Linux 服务器
 - [[freeswitch]] —— FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架
-- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[jitsi-videobridge]] —— Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器
-- [[nginx]] —— nginx — 高性能 Web 服务器
-

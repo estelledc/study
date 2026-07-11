@@ -152,16 +152,16 @@ if result.errors:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
-- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
+- [[compositional-incoherence]] —— Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
 - [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
 - [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
+- [[lacuna-program-holes]] —— LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞
 - [[llm-wiki-retrieval-reasoning]] —— LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
 - [[memcoder-co-evolution]] —— MemCoder — code agent 跟着你 git commit 一起成长
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[self-evolving-recsys-2602]] —— Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线
 - [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
-- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
-
+- [[soundness-bench]] —— SoundnessBench — 判断 AI 科学家会不会把坏点子当好点子

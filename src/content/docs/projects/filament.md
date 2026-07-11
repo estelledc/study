@@ -189,3 +189,6 @@ matc -p mobile -o red_metal.filamat red_metal.mat
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎
+- [[openxr-sdk]] —— OpenXR SDK — Khronos VR/AR 标准参考实现

@@ -173,3 +173,6 @@ docker run \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[buildah]] —— Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工
+- [[buildkit]] —— BuildKit — Docker 下一代镜像构建后端

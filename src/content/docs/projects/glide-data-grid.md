@@ -166,10 +166,6 @@ glide 内置了 7 种 cell 类型：Text / Number / Markdown / Image / Uri / Bub
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[canvas-datagrid]] —— canvas-datagrid — 整张表只用一块 canvas 画
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[handsontable]] —— Handsontable — 浏览器里的 Excel
-- [[react]] —— React UI 组件库
 - [[tabulator]] —— Tabulator — 纯 JS 交互式表格
-

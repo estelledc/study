@@ -147,3 +147,4 @@ durable_when: epoch E-1 sealed  # 上一班日志落稳才对外保证
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[mvcc]] —— MVCC — 让读写互不挡路的版本账本

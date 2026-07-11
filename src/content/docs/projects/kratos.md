@@ -165,12 +165,5 @@ grpcSrv.Use(logging.Server(logger))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[prometheus]] —— Prometheus — 时序监控系统
-

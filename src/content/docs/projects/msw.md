@@ -161,12 +161,5 @@ test('renders error state', async () => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
-- [[vitest]] —— Vitest — Vite 原生测试框架
 - [[wretch]] —— wretch — 把 fetch 写成一条链
-

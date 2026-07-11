@@ -151,10 +151,5 @@ mount -o dax /dev/pmem0 /mnt/pmem
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[esx-memory-2002]] —— ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术
-- [[memcached-fb-2013]] —— Scaling Memcache at Facebook — 万台缓存怎么不被踩塌
-- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
-- [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
-
+- [[kim-rowhammer-2014]] —— RowHammer 2014 — 反复读一行内存也能翻转邻居比特

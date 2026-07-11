@@ -170,3 +170,7 @@ end
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[defold]] —— Defold — King 出品的 Lua 跨平台游戏引擎
+- [[heaps]] —— Heaps — Haxe 跨平台高性能游戏引擎
+- [[tiled]] —— Tiled Map Editor — 通用 2D 关卡编辑

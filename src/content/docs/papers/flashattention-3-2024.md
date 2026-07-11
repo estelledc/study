@@ -155,3 +155,5 @@ print("max abs err", err)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化

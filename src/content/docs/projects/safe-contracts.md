@@ -161,25 +161,17 @@ const predictedAddr = await calculateProxyAddress({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atzei-eth-attacks-2017]] —— Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类
 - [[anchor]] —— Anchor — Solana 合约开发框架
-- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
-- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
-- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
-- [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
-

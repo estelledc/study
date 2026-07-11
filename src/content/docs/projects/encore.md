@@ -166,10 +166,3 @@ func Charge(ctx context.Context, orderID string) error {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
-- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
-- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
-- [[temporal]] —— Temporal — 持久化工作流引擎
-

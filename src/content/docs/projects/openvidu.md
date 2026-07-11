@@ -167,5 +167,8 @@ curl -u OPENVIDUAPP:secret -X POST \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[webrtc-rs]] —— webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion
-
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
+- [[dash.js]] —— dash.js — Web DASH 播放器官方参考实现
+- [[libvpx]] —— libvpx — VP8/VP9 编解码器
+- [[obs-studio]] —— OBS Studio — 直播推流软件事实标准
+- [[video.js]] —— Video.js — Web 视频播放器框架

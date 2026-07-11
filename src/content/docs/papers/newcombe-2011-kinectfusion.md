@@ -156,3 +156,5 @@ KinectFusion 之后十年，每个限制都被一篇论文专门解决：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[pointnet]] —— PointNet — 直接吃点云的 3D 神经网络

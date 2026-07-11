@@ -169,11 +169,6 @@ socket.on('save', async (data, cb) => {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-- [[redis]] —— Redis — 内存键值数据库
+- [[etherpad-lite]] —— Etherpad — 经典协作文本编辑器
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-

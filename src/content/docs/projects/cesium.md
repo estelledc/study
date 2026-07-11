@@ -163,3 +163,7 @@ viewer.entities.add({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gltf-transform]] —— glTF Transform — glTF 资产工具链
+- [[openlayers]] —— OpenLayers — 全功能 GIS 前端
+- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎

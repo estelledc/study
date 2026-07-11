@@ -151,34 +151,44 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化
+- [[flashattention-3-2024]] —— FlashAttention-3 — 面向 H100 的异步与低精度注意力
 - [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[kv-cache-budget-2026]] —— KVBudget — 给每条请求划一块 KV cache 预算
+- [[kv-fold]] —— KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
-- [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[linear-attention-still-2026]] —— Linear Attention, Still: Why Mamba-style Models Plateau
 - [[longformer-2020]] —— Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[nestedkv]] —— NestedKV — 用三层记忆决定 KV cache 该留谁
+- [[paged-attention]] —— PagedAttention — 把 KV cache 当虚拟内存页来管理
+- [[paged-attention-vllm]] —— PagedAttention — 以页替代整段内存的显存管理
 - [[performer-2020]] —— Performer — 用随机特征把 softmax attention 拉成线性复杂度
+- [[prefix-cache-policy-2026]] —— Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
+- [[rtp-llm-alibaba]] —— RTP-LLM — 把大模型推理服务做成分阶段工厂
 - [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 - [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
+- [[transformer]] —— Transformer — 让每个词一次看完整句话
+- [[transformer-2017]] —— Attention Is All You Need — 用 self-attention 重写序列建模
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
+- [[tree-of-attention-2026]] —— Tree-of-Attention — 把长上下文拆成树再分支注意
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[vit]] —— ViT — Vision Transformer
-
+- [[papers/vllm]] —— vLLM — 把操作系统的分页搬进 GPU KV cache

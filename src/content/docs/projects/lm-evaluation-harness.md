@@ -170,3 +170,8 @@ metric_list:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigbench-2022]] —— BIG-bench — 204 道题给大模型出考卷
+- [[helm-2022]] —— HELM 2022 — 给语言模型做全身体检
+- [[resolution-diagnostics-llm]] —— Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率
+- [[argilla]] —— Argilla — 给 LLM 训练数据做人工反馈的开源标注平台

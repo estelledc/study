@@ -147,3 +147,11 @@ Bhargavan、Blanchet 等用 CryptoVerif 为 TLS 1.3 草案主要握手模式做 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bernstein-sphincs-2015]] —— SPHINCS 2015 — 不用记状态的后量子哈希签名
+- [[gmw-mental-game-1987]] —— GMW Mental Game — 多个人不交出秘密也能一起算答案
+- [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
+- [[rabin-ot-1981]] —— Rabin OT 1981 — 不知道对方是否收到的秘密交换
+- [[shor-1994]] —— Shor 1994 — 量子傅里叶变换把分解整数变成找周期
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
+- [[yao-garbled-circuits-1986]] —— Yao Garbled Circuits — 两个人不摊牌也能一起算答案

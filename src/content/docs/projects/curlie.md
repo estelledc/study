@@ -175,3 +175,5 @@ curlie -N https://api.example.com/events
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[xh]] —— xh — HTTPie 的 Rust 重写版

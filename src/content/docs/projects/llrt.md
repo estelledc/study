@@ -144,6 +144,4 @@ CMD ["app.handler"]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[serverless]] —— 事件驱动系统基础范式
-- [[edge-runtime]] —— 与边缘运行时的一种对照
-- [[nodejs]] —— 迁移时的兼容参考基线
+- [[quickjs]] —— QuickJS — 口袋里的 JavaScript 引擎

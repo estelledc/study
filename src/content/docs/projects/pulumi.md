@@ -164,3 +164,4 @@ bucket.id.apply(id => console.log(`Bucket: ${id}`));  // 对
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[opentofu]] —— OpenTofu — 社区接手的 Terraform

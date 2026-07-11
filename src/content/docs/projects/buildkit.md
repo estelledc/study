@@ -181,3 +181,8 @@ CI 跑完把缓存推到 registry，下一次（哪怕在另一台机器）`--ca
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[buildah]] —— Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工
+- [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
+- [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像
+- [[moby]] —— Moby — Docker 把引擎拆开后的开源上游

@@ -164,12 +164,6 @@ await chrome.kill();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
-- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
-- [[next-js]] —— Next.js — React 全栈框架
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[lodestar]] —— Lodestar — JS/TS 生态里的以太坊共识层客户端
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
-- [[webpack]] —— webpack 模块打包
-

@@ -164,3 +164,5 @@ CREATE TABLE sales_recovered AS
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库

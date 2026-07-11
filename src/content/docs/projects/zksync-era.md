@@ -155,12 +155,6 @@ function validateTransaction(...) external {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bunz-bulletproofs-2018]] —— Bulletproofs 2018：不用可信仪式的短范围证明
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
-- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
-- [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

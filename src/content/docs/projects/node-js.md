@@ -193,3 +193,10 @@ node --run test
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[electron-builder]] —— electron-builder — Electron 打包发布事实标准
+- [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
+- [[nodegui]] —— nodegui — 用 Node.js 写原生桌面窗口
+- [[quickjs]] —— QuickJS — 口袋里的 JavaScript 引擎
+- [[volta]] —— Volta — cd 进项目就自动换 Node 版本的工具链管理器

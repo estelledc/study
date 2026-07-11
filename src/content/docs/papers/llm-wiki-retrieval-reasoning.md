@@ -140,10 +140,6 @@ wiki_read(["Ashish Vaswani"])   # 跟页内链接再读
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
-- [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
-- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出统一考卷
-- [[exg-experience-graphs]] —— EXG 经验图 — 把成败拼成可复用关系图
-- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述
-- [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents
+- [[hullft-ttft]] —— HullFT — 让测试时微调既会挑样本又省算力
+- [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码

@@ -151,11 +151,16 @@ for (let i = 0; i < tokens.length; i++) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[bookstack]] —— BookStack — 文档型 Wiki
+- [[foam]] —— Foam — 把 VS Code 变成 Markdown 双链知识库
+- [[hedgedoc]] —— HedgeDoc — 协作 Markdown 编辑
+- [[logseq]] —— Logseq — 块结构离线知识库
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
+- [[marktext]] —— MarkText — 实时预览 Markdown 编辑器
 - [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
-- [[starlight]] —— Starlight — Astro 文档站点主题
+- [[silverbullet]] —— SilverBullet — 自托管笔记 web 应用
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
-
+- [[zettlr]] —— Zettlr — 学者向 Markdown 编辑器

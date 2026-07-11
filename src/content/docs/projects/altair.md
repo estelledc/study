@@ -177,3 +177,14 @@ chart.save("c.html")  # 嵌 Vega-Lite runtime 的离线 HTML
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/vega-lite]] —— Vega-Lite — 用 JSON 三段式画复合图
+- [[bokeh]] —— Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流
+- [[holoviews]] —— HoloViews — 一份声明 ⇄ 多后端自动绘图
+- [[matplotlib]] —— matplotlib — Python 绘图基石
+- [[projects/panel]] —— Panel — 多绘图后端的 Python dashboard
+- [[plotly-py]] —— Plotly.py — DataFrame 一行变交互图表
+- [[plotnine]] —— plotnine — Python 复刻 R 的 ggplot2
+- [[seaborn]] —— seaborn — matplotlib 之上的一行统计图
+- [[streamlit]] —— Streamlit — Python 几行写 Web 应用
+- [[projects/vega-lite]] —— Vega-Lite — 高层声明式可视化语法

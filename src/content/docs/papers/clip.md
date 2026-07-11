@@ -152,27 +152,30 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[attention]] —— Attention Is All You Need
-- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving
-- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset — 自动驾驶感知的共同训练场
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
-- [[dino]] —— DINO 自监督视觉 transformer
+- [[dino]] —— DINO — 让视觉模型自己认出物体轮廓
 - [[dit]] —— DiT — Diffusion Transformer
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
-- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[llava]] —— LLaVA — 开源多模态对话模型
+- [[lomo-modality]] —— LoMo — 把同一句话换成图片也要看懂
 - [[mae]] —— MAE — Masked Autoencoders
-- [[milvus]] —— Milvus — 开源向量数据库
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
+- [[transformer]] —— Transformer — 让每个词一次看完整句话
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存
 - [[vit]] —— ViT — Vision Transformer
 - [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
 - [[word2vec]] —— Word2Vec — 词向量奠基
-
+- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[milvus]] —— Milvus — 开源向量数据库
+- [[opencv]] —— OpenCV — 计算机视觉库

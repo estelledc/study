@@ -149,20 +149,21 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
 - [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
-- [[embassy]] —— Embassy — 让单片机也能用 async/await
+- [[freedman-psi-2004]] —— Freedman PSI 2004 — 把集合交集算出来但不交出名单
 - [[heartbleed-2014]] —— Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kocher-spectre-2019]] —— Spectre — CPU 猜错路时也会泄密
 - [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
-- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
-- [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
+- [[reed-onion-routing-1998]] —— Onion Routing 1998 — Tor 前身把匿名连接做成网络积木
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
-- [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
-- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
-- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[tor-2004]] —— Tor — 用三层洋葱皮让没人知道你在上网
+- [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
+- [[anytype-ts]] —— Anytype — 本地优先块编辑器
+- [[embassy]] —— Embassy — 让单片机也能用 async/await
+- [[joplin]] —— Joplin — 开源 Evernote 替代
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
 - [[vodozemac]] —— vodozemac — Matrix 端到端加密的 Rust 内核
 - [[webrtc-rs]] —— webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion
-
+- [[wireguard-go]] —— WireGuard-Go — WireGuard VPN 的 Go 用户态实现

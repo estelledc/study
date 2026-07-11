@@ -184,3 +184,9 @@ player.updateSettings({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hls.js]] —— hls.js — 浏览器里的 HLS 播放库
+- [[mediasoup]] —— mediasoup — 多人音视频会议的 SFU 路由器
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
+- [[shaka-player]] —— Shaka Player — Google 流媒体播放器
+- [[video.js]] —— Video.js — Web 视频播放器框架

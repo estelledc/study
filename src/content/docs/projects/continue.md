@@ -156,14 +156,13 @@ Check if this PR has any AI-generated slop:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aider]] —— Aider — 终端 AI 结对编程 CLI
 - [[anthropic-cookbook]] —— Anthropic Cookbook — Claude API 实战示例
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
+- [[cline]] —— Cline — VS Code 自主编码代理
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
-- [[openhands]] —— OpenHands — 开源 AI 软件工程师
-- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
-- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+- [[opencode]] —— OpenCode — 终端里的开源 AI 编程助手
+- [[roo-code]] —— Roo Code — 多模式 VS Code AI 助手
+- [[projects/vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+- [[void]] —— Void — 开源 Cursor 替代
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建
-

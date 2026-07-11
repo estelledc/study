@@ -161,11 +161,8 @@ pipe.score(X_test, y_test)
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[matplotlib]] —— matplotlib — Python 绘图基石
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[pandas]] —— pandas — Python 表格数据事实标准
-- [[polars]] —— Polars — Rust 写的列存 DataFrame
-- [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
+- [[opencv]] —— OpenCV — 计算机视觉库
+- [[projects/optuna]] —— Optuna — 超参搜索框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 - [[shap]] —— SHAP — 用博弈论给每个特征发工资
-

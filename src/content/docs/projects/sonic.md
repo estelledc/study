@@ -165,8 +165,4 @@ consolidate_after = 180
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
-- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
-- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
-- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
-
+- [[essentia]] —— Essentia — 音乐信息检索的 C++/Python 工具箱

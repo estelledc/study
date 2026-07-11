@@ -159,14 +159,13 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[velox-meta-2022]] —— Velox — Meta 统一执行引擎
 - [[arrow]] —— Apache Arrow — 内存列式标准
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
-- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
+- [[marimo]] —— marimo — 反应式 Python 笔记本
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
-- [[numpy]] —— NumPy — Python 科学计算基石
 - [[plotly-py]] —— Plotly.py — DataFrame 一行变交互图表
 - [[plotnine]] —— plotnine — Python 复刻 R 的 ggplot2
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
@@ -174,5 +173,5 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 - [[seaborn]] —— seaborn — matplotlib 之上的一行统计图
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-
+- [[shap]] —— SHAP — 用博弈论给每个特征发工资
+- [[zeppelin]] —— Apache Zeppelin — JVM 多语言笔记本

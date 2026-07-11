@@ -145,5 +145,5 @@ else:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-- [[rag]] —— 相关页面会在自动反向链接阶段补齐更多入口。
-- [[domain-adaptation]] —— 相关页面会在自动反向链接阶段补齐更多入口。
+
+（暂无反向链接）

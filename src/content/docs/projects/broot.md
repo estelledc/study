@@ -148,18 +148,10 @@ br -g
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bat]] —— bat — 现代 cat 替代
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
-- [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
-- [[fzf]] —— fzf — 命令行模糊查找
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
-- [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
-- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
-

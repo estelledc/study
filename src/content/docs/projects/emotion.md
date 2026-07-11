@@ -166,11 +166,6 @@ const { styles } = extractCriticalToChunks(html)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
-- [[next-js]] —— Next.js — React 全栈框架
-- [[react]] —— React UI 组件库
-- [[styled-components]] —— styled-components — React 生态最早的 CSS-in-JS 库
+- [[styled-components]] —— styled-components — 用标签模板把 CSS 写进 React 组件的 CSS-in-JS 库
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
-- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
-

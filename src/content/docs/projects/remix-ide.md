@@ -163,18 +163,10 @@ contract HelloTest {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anchor]] —— Anchor — Solana 合约开发框架
-- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
-

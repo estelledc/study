@@ -157,12 +157,7 @@ curl -sfL https://get.k3s.io | sh -s - server \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[helm]] —— Helm — Kubernetes 包管理器
 - [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像
 - [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
-

@@ -152,16 +152,9 @@ L1 = 0.3 GB
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
-- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[badger]] —— Badger — Go 写的键值分离 LSM
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[papers/badger]] —— BadgerDB — 把键和值分开存的 Go 原生 KV 库
 - [[btrfs-2013]] —— Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
-- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
-- [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
+- [[index-structures]] —— Learned Index Structures — 把数据库索引看成会预测位置的模型
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
-- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
-
+- [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库

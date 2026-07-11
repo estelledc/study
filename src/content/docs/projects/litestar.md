@@ -173,11 +173,4 @@ app = Litestar(route_handlers=[UserController])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
-
+（暂无反向链接）

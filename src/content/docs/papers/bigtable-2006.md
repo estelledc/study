@@ -152,48 +152,58 @@ column families:
 
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[akamai-2010]] —— Akamai 2010 — 从内容分发网络长成全球应用平台
-- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[amber-sigmod-2014]] —— Amber — 把用户数据从 Web 应用里拆出来
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[calvin]] —— Calvin — 先排队再执行的分布式事务系统
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[cassandra-eventual-tradeoff]] —— Cassandra 最终一致性取舍 — 可用性、延迟和新鲜度不能都拿满
 - [[ceph-2006]] —— Ceph — 让分布式文件系统不靠中心查表
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
 - [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
+- [[data-lake-management-2019]] —— Data Lake Management 2019 — 数据湖从文件堆变成可治理资产
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
+- [[dremel-2010]] —— Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析
+- [[dremel-decade-2020]] —— Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线
 - [[drizzle-2017]] —— Drizzle — 让 micro-batch 也能跑出 100ms 延迟
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[dynamo-2007]] —— Dynamo 2007 — 让购物车在机器故障时也能写入
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
+- [[foundationdb]] —— FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
-- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[gfs]] —— GFS — 为工作负载反向定制的分布式文件系统
+- [[gfs-2003]] —— GFS 2003 — 把廉价机器拼成大文件仓库
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
-- [[leveldb]] —— LevelDB — Google LSM 库
+- [[lakehouse-2021]] —— Lakehouse 2021 — 把数据湖和数仓合成一套开放平台
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[observability]] —— Dapper 可观测性 — 把一次请求走过的路画出来
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
+- [[piccolo-building-fast-distributed-programs-with-partitioned-2010]] —— Piccolo — 用分区表写分布式迭代程序
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[scads-database-2008]] —— SCADS — 用户涨一万倍也不改应用的存储愿景
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
+- [[system-design]] —— The Datacenter as a Computer — 把机房当成一台巨型计算机
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
+- [[tradeoff-analysis]] —— The Tail at Scale — 尾延迟会被规模放大
 - [[unix-1974]] —— UNIX 1974 — 用极小内核做出能用的分时系统
-
+- [[leveldb]] —— LevelDB — Google LSM 库

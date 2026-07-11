@@ -155,6 +155,3 @@ R2 提议 c2: PUT x=2（认为 deps={}）
 - [[borg-omega-kube-2016]] —— Borg / Omega / Kubernetes — Google 调度器三代同源
 - [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
 - [[janus-2016]] —— Janus 2016 — 把并发控制和共识捏成一个协议
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
-

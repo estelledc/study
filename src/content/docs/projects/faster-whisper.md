@@ -165,3 +165,7 @@ print(" ".join(s.text for s in segments))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[silero-vad]] —— Silero VAD — 轻量语音活动检测

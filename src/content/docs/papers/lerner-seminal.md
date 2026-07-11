@@ -160,8 +160,4 @@ Lerner 后来在 UCSD 继续做 PEC（Program Equivalence Checker）、Rosette �
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[ssa]] —— SSA — 静态单赋值形式
-
+- [[e-path-egraph]] —— E-Path — 把 CFG 优化从单行通道改成候选池

@@ -174,3 +174,4 @@ README 说明 `soft-se` 会从 `src/peripherals/soft-se/se-identity.h` 读取设
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+（暂无反向链接）

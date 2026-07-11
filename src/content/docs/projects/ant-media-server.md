@@ -176,3 +176,5 @@ helm install antmedia antmedia/antmedia \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器

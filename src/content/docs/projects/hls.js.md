@@ -149,3 +149,10 @@ hls.on(Hls.Events.MANIFEST_PARSED, () => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
+- [[dash.js]] —— dash.js — Web DASH 播放器官方参考实现
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
+- [[obs-studio]] —— OBS Studio — 直播推流软件事实标准
+- [[shaka-player]] —— Shaka Player — Google 流媒体播放器
+- [[video.js]] —— Video.js — Web 视频播放器框架

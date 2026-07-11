@@ -147,3 +147,80 @@ kubectl get svc web   # 看 PORT(S)；本地可用 minikube service web
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[borg-2015]] —— Borg 2015 — Google 把一万台机器假装成一台
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[papers/kustomize]] —— Kustomize — 不写模板也能给 K8s 配置分环境
+- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[lampson-hints-1983]] —— Lampson Hints 1983 — 系统设计思维起点
+- [[mesos]] —— Mesos — 让多种计算框架共用一套集群
+- [[mockapetris-1988-dns]] —— Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
+- [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
+- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
+- [[coder]] —— Coder — 自托管开发环境平台
+- [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
+- [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
+- [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
+- [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
+- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
+- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
+- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
+- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
+- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
+- [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
+- [[projects/kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
+- [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
+- [[linuxcnc]] —— LinuxCNC — 实时控制 CNC 机床的开源系统
+- [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
+- [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
+- [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
+- [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
+- [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
+- [[minio]] —— MinIO — S3 兼容对象存储
+- [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI
+- [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
+- [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[nvidia-mig]] —— NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡
+- [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
+- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
+- [[podman]] —— Podman — 无 daemon 容器引擎
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[pulumi]] —— Pulumi — 用真正的编程语言写云资源清单
+- [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
+- [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座
+- [[runc]] —— runc — Linux 容器最底层那个真正在 fork 进程的 CLI
+- [[sealed-secrets]] —— Sealed Secrets — 把加密后的 Secret 安全提交到 Git
+- [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
+- [[sops]] —— SOPS — 让密码也能放心进 Git
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
+- [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
+- [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
+- [[terraform]] —— Terraform — 基础设施即代码
+- [[traefik]] —— Traefik — 现代云原生反向代理
+- [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
+- [[vault]] —— Vault — HashiCorp 把"密码本"做成可编程基础设施
+- [[vector]] —— Vector — Rust 写的统一可观测性数据管道
+- [[velero]] —— Velero — Kubernetes 集群备份与迁移
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
+- [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI

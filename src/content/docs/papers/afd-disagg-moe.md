@@ -158,3 +158,5 @@ placement_policy:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[megatron-core-moe-2026]] —— Megatron-Core MoE — 大规模稀疏专家并行实践

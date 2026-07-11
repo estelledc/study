@@ -153,9 +153,4 @@ auto user = reader.getRoot<User>();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
-- [[raft]] —— Raft — 易理解的共识算法
-- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
-
+（暂无反向链接）

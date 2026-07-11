@@ -173,3 +173,7 @@ val joined = links.join(ranks)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[piccolo-building-fast-distributed-programs-with-partitioned-2010]] —— Piccolo — 用分区表写分布式迭代程序
+- [[sparrow-2013]] —— Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器
+- [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来

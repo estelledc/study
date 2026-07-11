@@ -168,3 +168,12 @@ Jaeger UI 主视图是一条**水平时间线**：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[grafana-tempo]] —— Grafana Tempo — 用对象存储装下你所有的 trace
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
+- [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
+- [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
+- [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
+- [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端

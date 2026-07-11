@@ -153,12 +153,10 @@ Agentless 的处理流程：
 
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
-- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 - [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
-- [[react]] —— React UI 组件库
+- [[react-agent]] —— ReAct Agent — 推理和行动交替的工具使用范式
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
-- [[voyager]] —— Voyager — LLM 终身学习智能体
-
+- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"

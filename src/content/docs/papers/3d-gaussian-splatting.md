@@ -149,21 +149,17 @@ for g in gaussians:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
 - [[catmull-clark-1978]] —— Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
-- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[debevec-1998-rendering-with-natural-light]] —— Debevec 1998 — 用真实世界的光照亮 CG 物体
 - [[deering-1988-triangle-processor]] —— Deering 1988 Triangle Processor — 现代 GPU 的祖先架构
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
-- [[dit]] —— DiT — Diffusion Transformer
 - [[dreamfusion-2022]] —— DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[goldsmith-1987-bvh]] —— Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
 - [[gortler-1996-lumigraph]] —— Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影
 - [[heckbert-1986-texture-survey]] —— Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述
+- [[instant-ngp-2022]] —— Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码
 - [[jensen-1996-photon-mapping]] —— Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karis-2014-taa]] —— Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿
@@ -183,12 +179,14 @@ for g in gaussians:
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[newcombe-2011-kinectfusion]] —— KinectFusion — 用消费级深度相机实时重建三维世界
 - [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
-- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
 - [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
+- [[pointnet]] —— PointNet — 直接吃点云的 3D 神经网络
 - [[stam-1999-stable-fluids]] —— Stable Fluids — 让流体模拟时间步随便给都不爆
 - [[vit]] —— ViT — Vision Transformer
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 - [[williams-1983-mipmap]] —— Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)
-
+- [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎

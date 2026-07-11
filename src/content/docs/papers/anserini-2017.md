@@ -155,6 +155,7 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 - [[ance-2020]] —— ANCE — 让模型自己挖训练负例，对比学习的"自给自足"
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
+- [[bm25]] —— BM25 — 用概率框架给搜索结果排队
 - [[brill-moore-2000]] —— Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
@@ -166,9 +167,9 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
 - [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
 - [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
-- [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
+- [[ms-marco-2016]] —— MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
 - [[rm3-2001]] —— RM3 — 让搜索引擎自己看一眼结果再重搜一次
 - [[rocketqa-2021]] —— RocketQA — 把稠密检索的训练拧到工业级
 - [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
-
+- [[tfidf-classic]] —— TF-IDF Classic — 给搜索词分清轻重缓急

@@ -161,11 +161,49 @@ FFmpeg 诞生于 2000 年，作者是法国程序员 Fabrice Bellard（此人还
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
+- [[ardour]] —— Ardour — 把录音、剪辑、混音放进同一个工程
+- [[aubio]] —— Aubio — 用音频信号提取节奏与音高
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
-- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[blender]] —— Blender — 全流程 3D 创作套件
+- [[dash.js]] —— dash.js — Web DASH 播放器官方参考实现
+- [[dav1d]] —— dav1d — 纯 C 的超快 AV1 解码器
+- [[essentia]] —— Essentia — 音乐信息检索的 C++/Python 工具箱
+- [[fdk-aac]] —— FDK-AAC — Fraunhofer AAC 编解码库
+- [[ffmpeg-kit]] —— FFmpegKit — 把 FFmpeg 装进移动 App 的封装层
+- [[flac]] —— FLAC — 无损音频压缩事实标准
+- [[gimp]] —— GIMP — GNU 图像处理程序
+- [[gstreamer]] —— GStreamer — 用积木管线处理音视频
 - [[handbrake]] —— HandBrake — 把视频转码变成点两下鼠标的事
+- [[hls.js]] —— hls.js — 浏览器里的 HLS 播放库
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[inkscape]] —— Inkscape — 矢量图形编辑器
+- [[janus-gateway]] —— Janus WebRTC Gateway — 轻量 WebRTC 服务器和插件底座
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[kdenlive]] —— Kdenlive — KDE 非线性视频剪辑
+- [[krita]] —— Krita — 数字绘画专业编辑器
+- [[lame]] —— LAME — MP3 编码事实标准
+- [[libvpx]] —— libvpx — VP8/VP9 编解码器
 - [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
 - [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
+- [[projects/nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[obs-studio]] —— OBS Studio — 直播推流软件事实标准
+- [[opencv]] —— OpenCV — 计算机视觉库
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
+- [[pillow]] —— Pillow — Python 图像处理
+- [[raylib]] —— raylib — 极简 C 游戏库
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[shaka-packager]] —— Shaka Packager — 流媒体打包工具
+- [[shaka-player]] —— Shaka Player — Google 流媒体播放器
 - [[shotcut]] —— Shotcut — 零成本入门视频剪辑的开源选择
-
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[streamlink]] —— Streamlink — 把直播页变成可播的流
+- [[svt-av1]] —— SVT-AV1 — Intel 主导的 AV1 编码器
+- [[video.js]] —— Video.js — Web 视频播放器框架
+- [[vips]] —— libvips — 流式低内存图像库
+- [[whisper]] —— Whisper — OpenAI 多语言 ASR
+- [[x264]] —— x264 — H.264/AVC 编码器
+- [[x265]] —— x265 — HEVC/H.265 编码器
+- [[yt-dlp]] —— yt-dlp — 统一多站点下载器 CLI

@@ -160,3 +160,10 @@ tts --text "$(cat article.txt)" \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
+- [[essentia]] —— Essentia — 音乐信息检索的 C++/Python 工具箱
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[handbrake]] —— HandBrake — 把视频转码变成点两下鼠标的事
+- [[piper]] —— Piper — 端侧低延迟 TTS
+- [[silero-vad]] —— Silero VAD — 轻量语音活动检测

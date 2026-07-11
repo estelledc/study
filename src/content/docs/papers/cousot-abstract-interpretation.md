@@ -161,35 +161,36 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aflgo-2017]] —— AFLGo — 让灰盒 fuzzing 朝目标代码前进
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[avgustinov-codeql-2016]] —— QL / CodeQL — 用面向对象外壳写可扩展代码查询
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
-- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
+- [[e-path-egraph]] —— E-Path — 把 CFG 优化从单行通道改成候选池
+- [[egglog-incremental-2026]] —— Egglog — 把 Datalog 和等式饱和合成一台推理引擎
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
-- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
+- [[liskov-abstraction-1974]] —— Liskov 抽象数据类型 — 用操作而不是存储形状定义数据
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
 - [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点
+- [[newsome-taintcheck-2005]] —— TaintCheck — 给不可信输入贴追踪标签
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
-- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[securify-2018]] —— Securify 2018 — 用规则自动查智能合约漏洞
 - [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
-
