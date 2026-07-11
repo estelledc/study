@@ -1,0 +1,146 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "共享系统 prompt / 基数树类比清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "KV cache / FSM / fork 有桥接；缺历史小故事段，时间线对零基础不友好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 基本是代码块，缺逐步解释；建议每案拆 2–3 步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「复杂 JSON 比无约束慢 <5%」无论文依据；应改为压缩 FSM 约 1.6× JSON 吞吐，或博客 jump-forward 相对 Outlines/Guidance 约 2–2.5×"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 Outlines/Guidance 快 3–5 倍」偏高；整体相对基线最高约 6.4×（NeurIPS），结构化博客口径约 2–2.5×"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「vLLM 跨请求前缀仍各算一份」对现代带 prefix cache 的 vLLM 过满；宜限定早期/未开缓存"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "归属写 LMSYS（Berkeley/Stanford 背景）即可；DeepSeek 官方推荐、xAI 采用可保留但勿写成「agent 默认引擎」绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "DSL / fork / regex 示例概念可跟；补逐步读法更稳"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：命中率退化、DSL 成本、FSM 编译、OpenAI 兼容差异——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；多卡「不如 vLLM 完整」宜弱化为持续追赶"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "共享系统 prompt / 基数树类比清楚",
+        "KV cache / FSM / fork 有桥接；缺历史小故事段，时间线对零基础不友好",
+        "案例 1–3 基本是代码块，缺逐步解释；建议每案拆 2–3 步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「复杂 JSON 比无约束慢 <5%」无论文依据；应改为压缩 FSM 约 1.6× JSON 吞吐，或博客 jump-forward 相对 Outlines/Guidance 约 2–2.5×",
+        "「比 Outlines/Guidance 快 3–5 倍」偏高；整体相对基线最高约 6.4×（NeurIPS），结构化博客口径约 2–2.5×",
+        "「vLLM 跨请求前缀仍各算一份」对现代带 prefix cache 的 vLLM 过满；宜限定早期/未开缓存",
+        "归属写 LMSYS（Berkeley/Stanford 背景）即可；DeepSeek 官方推荐、xAI 采用可保留但勿写成「agent 默认引擎」绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.0,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "DSL / fork / regex 示例概念可跟；补逐步读法更稳",
+        "踩坑具体：命中率退化、DSL 成本、FSM 编译、OpenAI 兼容差异——保留",
+        "适用/不适用边界清楚；多卡「不如 vLLM 完整」宜弱化为持续追赶"
+      ]
+    }
+  ],
+  "slug": "sglang",
+  "area": "projects",
+  "status": "refined",
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：纠 <5%/3-5× 口径；限定 vLLM 前缀缓存；案例补逐步；补历史小故事与反向链接",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用",
+      "## 与 vLLM 怎么选",
+      "## 历史小故事",
+      "## 延伸阅读",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true
+}
