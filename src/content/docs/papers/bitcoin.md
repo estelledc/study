@@ -142,30 +142,31 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atzei-eth-attacks-2017]] —— Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类
+- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
+- [[bowe-halo-2019]] —— Halo 2019 — 不靠可信仪式递归压缩证明
+- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
+- [[daian-flash-boys-2020]] —— Flash Boys 2.0 — MEV 把交易排序变成一门生意
+- [[distributed-snapshot-byzantine-2026]] —— Byzantine Linearizability — 让拜占庭客户端也像排队办业务
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[gabizon-plonk-2019]] —— PLONK — 一次通用布置，反复证明很多程序
+- [[making-smart-contracts-smarter]] —— Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞
+- [[reed-solomon-1960]] —— Reed-Solomon 编码
+- [[securify-2018]] —— Securify 2018 — 用规则自动查智能合约漏洞
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[arweave]] —— Arweave — 一次付费、永远存着的区块链
-- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
-- [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
-- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
-- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[compound-v3]] —— Compound III (Comet) — 单基础资产借贷重构
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[raft]] —— Raft — 易理解的共识算法
-- [[reed-solomon-1960]] —— Reed-Solomon 编码
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
-- [[rsa]] —— RSA 公钥密码
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
-

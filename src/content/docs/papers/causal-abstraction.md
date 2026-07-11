@@ -162,3 +162,6 @@ patched = run_with_patch(base_input, layer=14, dims=slice(200, 300), value=sourc
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[entity-tracking-states]] —— Entity Tracking States — 语言模型不是一路记账，而是最后临时汇总
+- [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来

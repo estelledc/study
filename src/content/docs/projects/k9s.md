@@ -155,10 +155,6 @@ Galiana 主要靠 GitHub Sponsors 维持开发，KubeCon 上多次分享 k9s 设
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
-- [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
-

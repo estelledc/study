@@ -148,14 +148,9 @@ const next = Temporal.PlainDate
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
-- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
+- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
-- [[timelinejs]] —— TimelineJS — 把 Google Sheet 一键变成新闻时间线
+- [[projects/timelinejs]] —— TimelineJS — 把 Google Sheet 一键变成新闻时间线
 - [[vis-timeline]] —— vis-timeline — 时间轴 / 日程 / 历史事件三合一组件
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-

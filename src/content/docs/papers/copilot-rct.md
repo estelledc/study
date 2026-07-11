@@ -152,18 +152,11 @@ Cohen's d ≈ 2.0 在心理学/社科属于 "罕见大"——通常 d>1.5 都需
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
-- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
-- [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
-- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
-- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
-- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
-
+- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check

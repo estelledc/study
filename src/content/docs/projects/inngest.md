@@ -167,3 +167,7 @@ await step.run("flaky-v2", () => {   // 原来叫 "flaky"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
+- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
+- [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列

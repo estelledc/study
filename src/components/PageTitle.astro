@@ -1,0 +1,12 @@
+---
+import DefaultPageTitle from '@astrojs/starlight/components/PageTitle.astro';
+import FreshnessBadge from './FreshnessBadge.astro';
+
+const entry = Astro.locals.starlightRoute.entry;
+const entryId = String(entry.id ?? '');
+const isLearningNote = /^(papers|projects)\//.test(entryId)
+  || /\/(papers|projects)\//.test(Astro.url.pathname);
+---
+
+<DefaultPageTitle />
+{isLearningNote && <FreshnessBadge frontmatter={entry.data} />}

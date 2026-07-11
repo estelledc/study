@@ -164,7 +164,6 @@ $share/billing/car/+/payment
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
-- [[redis]] —— Redis — 内存键值数据库
-
+- [[mosquitto]] —— Mosquitto — C 写的轻量 MQTT 消息中转站
+- [[nanomq]] —— NanoMQ — 边缘侧超轻量 MQTT Broker
+- [[openhab]] —— openHAB — Java OSGi 家庭自动化框架

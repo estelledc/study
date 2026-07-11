@@ -184,3 +184,7 @@ build-push-run-x9k2t  True       Succeeded  2m         12s
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[buildah]] —— Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工
+- [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
+- [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像

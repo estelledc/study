@@ -149,15 +149,7 @@ console.log(py(21));  // 42
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
-- [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
-- [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
-- [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 - [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
-

@@ -138,16 +138,16 @@ management:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
+- [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
+- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
+- [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
+- [[openhab]] —— openHAB — Java OSGi 家庭自动化框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言

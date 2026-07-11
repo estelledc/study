@@ -172,14 +172,11 @@ export function useMouse() {
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[react]] —— React UI 组件库
+- [[quasar]] —— Quasar Framework — 一套代码跑 Vue 全端的应用框架
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
-- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
-- [[vitest]] —— Vitest — Vite 原生测试框架
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-
+- [[vue-i18n]] —— vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用

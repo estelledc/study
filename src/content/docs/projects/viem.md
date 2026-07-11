@@ -177,9 +177,5 @@ const receipt = await client.waitForTransactionReceipt({ hash });
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
-- [[anchor]] —— Anchor — Solana 合约开发框架
-- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
+- [[lodestar]] —— Lodestar — JS/TS 生态里的以太坊共识层客户端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-- [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
-

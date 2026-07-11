@@ -182,8 +182,9 @@ micropython/
 - [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
 - [[circuitpython]] —— CircuitPython — 拖文件就能给芯片写程序的 Python
 - [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
-- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[marlin]] —— Marlin Firmware — 3D 打印机里的运动控制大脑
 - [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式调试烧录工具
+- [[raylib]] —— raylib — 极简 C 游戏库
 - [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
-
+- [[tflite-micro]] —— TensorFlow Lite Micro — 把小模型塞进微控制器

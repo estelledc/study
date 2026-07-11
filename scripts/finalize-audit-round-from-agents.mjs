@@ -7,6 +7,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import { AUDIT_REVIEWS_DIR, docsEntryPath } from './lib/paths.mjs';
 
 function parseArgs() {
@@ -24,6 +25,7 @@ function parseArgs() {
 
 async function main() {
   const args = parseArgs();
+  assertBulkOperationAuthorized({ operation: 'finalize-audit-round-from-agents', requestedItems: 1 });
   const raw = JSON.parse(await fs.readFile(args.results, 'utf8'));
   const out = [];
   for (const r of raw) {

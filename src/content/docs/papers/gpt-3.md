@@ -143,14 +143,54 @@ def is_prime(n):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
+- [[alphago]] —— AlphaGo — 击败围棋世界冠军
+- [[chain-of-thought]] —— Chain-of-Thought — 让大模型先写步骤再回答
+- [[chatbot-arena-2024]] —— Chatbot Arena — 让真人盲投，给 LLM 排出公允座次
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
-- [[codex-2021]] —— Codex — 让 GPT 学会写 Python
+- [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
+- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
+- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
+- [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
+- [[dit]] —— DiT — Diffusion Transformer
+- [[dpo]] —— DPO — Direct Preference Optimization
+- [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[induction-heads]] —— Induction Heads — in-context learning 引擎
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化
+- [[helm-2022]] —— HELM 2022 — 给语言模型做全身体检
+- [[hullft-ttft]] —— HullFT — 让测试时微调既会挑样本又省算力
+- [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
+- [[llmsurgeon-data-mixture]] —— LLMSurgeon — 从模型回答反推训练数据配方
+- [[lora]] —— LoRA — 给冻结大模型贴低秩便签
+- [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
+- [[papers/megatron-lm]] —— Megatron-LM — NVIDIA 大规模训练框架
+- [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
+- [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[mmlu-2021]] —— MMLU — 用 57 个学科的多选题考一考语言模型
+- [[muzero]] —— MuZero — 不用规则也能下棋
+- [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
+- [[ppo]] —— PPO — Proximal Policy Optimization
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[papers/react]] —— ReAct — Reasoning and Acting
+- [[resnet]] —— ResNet — 残差连接
+- [[resolution-diagnostics-llm]] —— Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率
+- [[retro]] —— RETRO — DeepMind 的检索增强 LLM
+- [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-- [[whisper-2022]] —— Whisper — 用野生音频教会模型听懂全世界
-
+- [[self-consistency-2022]] —— Self-Consistency — 让模型把同一道题做 40 遍再投票
+- [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型
+- [[t0-2021]] —— T0 — 让 50 个人各写各的提示词，模型反而更会听新指令
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
+- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
+- [[transformer]] —— Transformer — 让每个词一次看完整句话
+- [[transformer-2017]] —— Attention Is All You Need — 用 self-attention 重写序列建模
+- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
+- [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
+- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
+- [[word2vec]] —— Word2Vec — 词向量奠基
+- [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向

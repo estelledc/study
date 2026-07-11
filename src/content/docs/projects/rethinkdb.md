@@ -165,8 +165,4 @@ r.table('messages').filter({room: 'lobby'})
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
-- [[raft]] —— Raft — 易理解的共识算法
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-
+（暂无反向链接）

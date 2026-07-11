@@ -164,3 +164,5 @@ opencode acp --cwd /path/to/project
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[roo-code]] —— Roo Code — 多模式 VS Code AI 助手

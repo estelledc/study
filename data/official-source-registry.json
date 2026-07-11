@@ -1,0 +1,15 @@
+{
+  "schema_version": "study-official-source-registry-v1",
+  "github_repository_rule": {
+    "id": "github-repository",
+    "origin": "https://github.com",
+    "minimum_path_segments": 2
+  },
+  "origins": [
+    { "id": "github-docs", "origin": "https://docs.github.com" },
+    { "id": "mdn", "origin": "https://developer.mozilla.org" },
+    { "id": "nodejs", "origin": "https://nodejs.org" },
+    { "id": "npm-docs", "origin": "https://docs.npmjs.com" },
+    { "id": "react-docs", "origin": "https://react.dev" }
+  ]
+}

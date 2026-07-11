@@ -151,12 +151,5 @@ INSERT INTO emp VALUES ('alice', 12000);
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
-- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-
+- [[mvcc]] —— MVCC — 让读写互不挡路的版本账本

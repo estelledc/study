@@ -169,8 +169,4 @@ spec:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
-- [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
-- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-
+（暂无反向链接）

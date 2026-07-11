@@ -1,0 +1,41 @@
+---
+import DefaultSearch from '@astrojs/starlight/components/Search.astro';
+---
+
+<DefaultSearch {...Astro.props} />
+<div
+  class="sr-only"
+  data-study-search-status
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+></div>
+
+<script>
+  function installSearchStatusContract() {
+    const host = document.querySelector('site-search');
+    const liveStatus = document.querySelector('[data-study-search-status]');
+    if (
+      !(host instanceof HTMLElement)
+      || !(liveStatus instanceof HTMLElement)
+      || host.dataset.studyA11yObserver === 'ready'
+    ) return;
+
+    let announced = '';
+    const announce = () => {
+      const message = host.querySelector('.pagefind-ui__message');
+      if (!(message instanceof HTMLElement)) return;
+      const next = message.textContent?.trim() || '';
+      if (!next || next === announced) return;
+      announced = next;
+      liveStatus.textContent = next;
+    };
+
+    host.dataset.studyA11yObserver = 'ready';
+    announce();
+    new MutationObserver(announce).observe(host, { childList: true, subtree: true, characterData: true });
+  }
+
+  document.addEventListener('DOMContentLoaded', installSearchStatusContract, { once: true });
+  document.addEventListener('astro:page-load', installSearchStatusContract);
+</script>

@@ -148,12 +148,6 @@ smoltcp 让我理解了三件事。第一，网络协议栈不是必须依赖操
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
-- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
+- [[linuxcnc]] —— LinuxCNC — 实时控制 CNC 机床的开源系统
 - [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
-- [[micropython]] —— MicroPython — 在巴掌大的芯片上跑 Python
-- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
-- [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
-- [[probe-rs]] —— probe-rs — Rust 写的嵌入式调试烧录工具
-

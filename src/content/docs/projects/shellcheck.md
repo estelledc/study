@@ -153,3 +153,8 @@ rm $temp_file
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hadolint]] —— hadolint — 给 Dockerfile 做体检的小工具
+- [[notepad-plus-plus]] —— Notepad++ — 比记事本多两个加号的 Windows 编辑器
+- [[shfmt]] —— shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
+- [[xonsh]] —— xonsh — 在同一行里同时写 bash 命令和 Python 代码

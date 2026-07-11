@@ -195,3 +195,5 @@ GitHub 仓库显示 Gitpod Classic 大约 13k stars，但 README 也明确说 Gi
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE

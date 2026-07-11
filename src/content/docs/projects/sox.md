@@ -152,3 +152,5 @@ rec -r 44100 -b 16 -e signed-integer -p \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀

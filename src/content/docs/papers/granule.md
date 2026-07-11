@@ -158,11 +158,4 @@ copy path = let s = readFile path in writeFile s
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
-- [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
-- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
-- [[linear-types]] —— 线性类型（Linear Types）
-
+（暂无反向链接）

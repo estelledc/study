@@ -176,15 +176,5 @@ let app = Route::new()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
-- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-

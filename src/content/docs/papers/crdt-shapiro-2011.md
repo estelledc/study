@@ -156,19 +156,15 @@ merge → ("蓝", 7)   // t 更大的赢；"红"被丢
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
 - [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
-- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
 - [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 - [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
-- [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[raft]] —— Raft — 易理解的共识算法
-
+- [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
+- [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施

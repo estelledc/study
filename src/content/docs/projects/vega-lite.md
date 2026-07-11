@@ -194,3 +194,11 @@ Vega-Lite 的核心可以拆成 **三步**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
+- [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
+- [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
+- [[leaflet]] —— Leaflet — 轻量交互式地图
+- [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
+- [[matplotlib]] —— matplotlib — Python 绘图基石
+- [[projects/panel]] —— Panel — 多绘图后端的 Python dashboard
+- [[seaborn]] —— seaborn — matplotlib 之上的一行统计图

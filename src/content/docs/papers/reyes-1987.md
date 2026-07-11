@@ -147,3 +147,6 @@ pixel.color = filter(zbuffer.samples)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cook-1984-distributed-ray-tracing]] —— Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样
+- [[heckbert-1986-texture-survey]] —— Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述

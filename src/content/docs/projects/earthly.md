@@ -178,3 +178,9 @@ GitHub Actions 配置：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/shellcheck]] —— ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
+- [[act]] —— act — 在本地用 Docker 跑 GitHub Actions
+- [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI

@@ -144,6 +144,4 @@ SPDY    : 单连接复用，握手只付一次   → 更快
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[b4-2013]] —— B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+
-- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做

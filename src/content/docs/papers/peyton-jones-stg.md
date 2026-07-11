@@ -154,17 +154,9 @@ g = \r [xs] let n = \u [] length xs in case +# n 1 of r { __DEFAULT -> r }
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
-- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
-- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
-

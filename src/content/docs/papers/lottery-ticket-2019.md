@@ -165,9 +165,4 @@ LeNet 大概 26 万参数。按上面伪代码走一遍：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
-- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
 - [[double-descent-2019]] —— Double Descent — 模型越大越准，过参数化时代的反常识曲线
-- [[lottery-1994]] —— 彩票调度 — 用抽奖代替优先级的资源分配
-- [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
-

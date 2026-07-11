@@ -152,7 +152,4 @@ MaxScore（Turtle-Flood 1995）是另一条线：把词分成"必须命中"（es
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
-- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
-- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
-
+- [[tfidf-classic]] —— TF-IDF Classic — 给搜索词分清轻重缓急

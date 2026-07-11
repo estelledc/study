@@ -157,9 +157,6 @@ jstat -gcutil <pid> 1000
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
-- [[smalltalk-80]] —— Smalltalk-80
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
-

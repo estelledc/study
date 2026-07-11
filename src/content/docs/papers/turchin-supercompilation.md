@@ -154,14 +154,8 @@ Turchin 早期 Refal 系统就把"证明 A=B"归约为"supercompile 后看图同
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
-- [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
+- [[papers/dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
-- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
-

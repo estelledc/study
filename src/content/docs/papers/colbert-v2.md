@@ -149,15 +149,11 @@ ColBERTv2 是当时**唯一兼具高精度 + 可索引**的方案。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[dssm-2013]] —— DSSM — 把 query 和文档各编码成 128 维向量再算余弦
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[helm-2022]] —— HELM 2022 — 给语言模型做全身体检
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
-- [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
+- [[ms-marco-2016]] —— MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集
 - [[rocketqa-2021]] —— RocketQA — 把稠密检索的训练拧到工业级
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
-- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
-

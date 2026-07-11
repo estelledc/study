@@ -138,14 +138,16 @@ answer = llama.generate(prompt)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
-- [[milvus]] —— Milvus — 开源向量数据库
+- [[hullft-ttft]] —— HullFT — 让测试时微调既会挑样本又省算力
+- [[loong-doc-mt]] —— Loong DocMT — 长文档翻译里的会挑上下文的代理
+- [[medcase-fhir]] —— MedCase-Structured — 把病例文字变成 FHIR 病历来考 LLM
+- [[mem-ft-lora]] —— MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容
 - [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
 - [[nlp-rag-2024]] —— RAG for AIGC: 检索增强生成在 AI 生成内容中的应用 — 学习笔记
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 - [[self-rag-2023]] —— Self-RAG — 让模型自己决定何时该查资料
-
+- [[milvus]] —— Milvus — 开源向量数据库

@@ -160,9 +160,4 @@ def anisotropic_kmeans(X, K=256, w_par=10.0, w_orth=1.0):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
-- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
-- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
-- [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[spann-2021]] —— SPANN — 内存放中心、SSD 放向量的十亿级近邻检索
-

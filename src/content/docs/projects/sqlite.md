@@ -148,3 +148,29 @@ PRAGMA journal_mode=WAL;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[foundationdb]] —— FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
+- [[anytype-ts]] —— Anytype — 本地优先块编辑器
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[home-assistant]] —— Home Assistant Core — 本地优先的家庭自动化大脑
+- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[leveldb]] —— LevelDB — Google LSM 库
+- [[lmdb]] —— LMDB — 内存映射 KV 库
+- [[logseq]] —— Logseq — 块结构离线知识库
+- [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
+- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
+- [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
+- [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
+- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
+- [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
+- [[trilium]] —— Trilium — 树形层级笔记系统
+- [[unqlite]] —— UnQLite — C 写的嵌入式 NoSQL 双模数据库
+- [[valkey]] —— Valkey — Redis 7.2.4 的开源 fork

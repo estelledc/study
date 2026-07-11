@@ -166,7 +166,7 @@ function AddTodo() {
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
-- [[react]] —— React UI 组件库
+- [[projects/react]] —— React — 用组件描述界面的 JavaScript 库
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
 - [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
@@ -175,4 +175,3 @@ function AddTodo() {
 - [[wretch]] —— wretch — 把 fetch 写成一条链
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zustand]] —— Zustand — 极简 React 状态管理
-

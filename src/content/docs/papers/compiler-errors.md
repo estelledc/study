@@ -171,10 +171,7 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 - [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
@@ -183,4 +180,5 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
-
+- [[verus-specgym]] —— Verus-SpecGym — 让机器检查规格是不是写对了
+- [[lexical]] —— Lexical — 把富文本编辑拆成快照、事务和插件

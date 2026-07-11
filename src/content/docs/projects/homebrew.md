@@ -172,3 +172,11 @@ brew bundle install
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[papers/scoop]] —— Scoop — Windows 上像 Homebrew 一样装命令行工具
+- [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+- [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
+- [[projects/nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[projects/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[projects/scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器

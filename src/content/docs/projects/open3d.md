@@ -191,3 +191,7 @@ o3d.visualization.draw_geometries([mesh])
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[luxcorerender]] —— LuxCoreRender — 物理光线追踪
+- [[openscad]] —— OpenSCAD — 脚本式 CAD
+- [[pcl]] —— PCL — 点云算法的学术工具箱

@@ -161,3 +161,7 @@ make -f tensorflow/lite/micro/tools/make/Makefile run_person_detection
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cmsis-nn]] —— CMSIS-NN — Arm Cortex-M 的神经网络算子加速库
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎
+- [[wamr]] —— WAMR — 塞进单片机也能跑的 Wasm 微运行时

@@ -150,7 +150,6 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[delta]] —— delta — git diff 的语法高亮分页器
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
@@ -163,9 +162,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 - [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
-

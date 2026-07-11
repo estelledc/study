@@ -150,9 +150,7 @@ OPT-66B 模型：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-
+- [[afd-disagg-moe]] —— AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图
+- [[paged-attention]] —— PagedAttention — 把 KV cache 当虚拟内存页来管理
+- [[paged-attention-vllm]] —— PagedAttention — 以页替代整段内存的显存管理
+- [[rtp-llm-alibaba]] —— RTP-LLM — 把大模型推理服务做成分阶段工厂

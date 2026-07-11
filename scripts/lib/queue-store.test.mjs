@@ -10,13 +10,44 @@ import {
   queueKey,
 } from './queue-store.mjs';
 
-test('queueKey and excludeGraveyard use slug identity for graveyard filtering', () => {
+test('queueKey and excludeGraveyard use area::slug while dual-reading legacy graveyard rows', () => {
   assert.equal(queueKey({ area: 'papers', slug: 'react' }), 'papers::react');
   const items = [
     { area: 'papers', slug: 'keep' },
-    { area: 'projects', slug: 'blocked' },
+    { area: 'papers', slug: 'same-slug' },
+    { area: 'projects', slug: 'same-slug' },
+    { area: 'projects', slug: 'legacy-blocked' },
   ];
-  assert.deepEqual(excludeGraveyard(items, [{ slug: 'blocked' }]), [{ area: 'papers', slug: 'keep' }]);
+  assert.deepEqual(excludeGraveyard(items, [
+    { area: 'projects', slug: 'same-slug' },
+    { slug: 'legacy-blocked' },
+  ]), [
+    { area: 'papers', slug: 'keep' },
+    { area: 'papers', slug: 'same-slug' },
+  ]);
+});
+
+test('queueKey preserves dotted slugs through the shared NoteId grammar', () => {
+  assert.equal(queueKey({ area: 'projects', slug: 'dash.js' }), 'projects::dash.js');
+  assert.equal(queueKey({ area: 'papers', slug: 'tls-1.3' }), 'papers::tls-1.3');
+});
+
+test('queueKey fails closed for invalid areas and slugs', () => {
+  assert.throws(
+    () => queueKey({ area: 'notes', slug: 'react' }),
+    (error) => error?.code === 'AREA_INVALID',
+  );
+  assert.throws(
+    () => queueKey({ area: 'papers', slug: '../react' }),
+    (error) => error?.code === 'SLUG_INVALID',
+  );
+});
+
+test('queueKey keeps the same slug independent across note areas', () => {
+  assert.notEqual(
+    queueKey({ area: 'papers', slug: 'react' }),
+    queueKey({ area: 'projects', slug: 'react' }),
+  );
 });
 
 test('markPriorityPicked updates only selected priority rows', () => {
@@ -36,6 +67,24 @@ test('markClaimed records assignment worktree names', () => {
   assert.deepEqual(markClaimed(rows, rows, assignments), [
     { area: 'projects', slug: 'vite', status: 'claimed', claimed_by: 'projects-3' },
   ]);
+});
+
+test('markClaimed adds an owner token and lease without changing legacy fields', () => {
+  const rows = [{ area: 'papers', slug: 'lease', status: 'queued', claimed_by: null, extra: 'kept' }];
+  const assignments = [{ area: 'papers', slug: 'lease', worktree: { name: 'papers-3' } }];
+  const [claimed] = markClaimed(rows, rows, assignments, {
+    planHash: 'plan-1',
+    generation: 'generation-1',
+    claimedAt: '2026-07-10T00:00:00.000Z',
+    leaseMs: 60_000,
+  });
+
+  assert.equal(claimed.extra, 'kept');
+  assert.equal(claimed.claimed_by, 'papers-3');
+  assert.equal(claimed.claimed_at, '2026-07-10T00:00:00.000Z');
+  assert.equal(claimed.lease_expires_at, '2026-07-10T00:01:00.000Z');
+  assert.equal(claimed.claim_generation, 'generation-1');
+  assert.match(claimed.claim_token, /^[a-f0-9]{64}$/);
 });
 
 test('markCandidatesWritten only changes queued and claimed entries', () => {

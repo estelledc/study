@@ -159,3 +159,9 @@ trainer.train()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[argilla]] —— Argilla — 给 LLM 训练数据做人工反馈的开源标注平台
+- [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
+- [[deepspeed]] —— DeepSpeed — 微软分布式训练库
+- [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
+- [[unsloth]] —— Unsloth — 微调 2-5x 加速

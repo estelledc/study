@@ -155,3 +155,5 @@ print(ok, round(distance, 3))  # False，说明这个组太不像总体
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[machanavajjhala-l-diversity-2007]] —— Machanavajjhala l-Diversity 2007 — 给匿名分组补上敏感值多样性

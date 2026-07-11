@@ -147,3 +147,17 @@ secure binding 把它们拆开：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arrakis-2014]] —— Arrakis 2014 — 让操作系统退出数据路径
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[denali-2002]] —— Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验
+- [[ffs-1984]] —— FFS — 把磁盘几何写进文件系统
+- [[flexsc-2010]] —— FlexSC — 把系统调用从同步陷入改成异步队列
+- [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写
+- [[haven-2014]] —— Haven — 在不信任的云里给程序造一间安全屋
+- [[ix-2014]] —— IX 2014 — 用硬件保护做高吞吐低延迟的数据面 OS
+- [[linux-kernel]] —— Linux kernel — 三层解释开源内核如何协作
+- [[mach-vm-1987]] —— Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦
+- [[mirage-2013]] —— MirageOS 2013 — 应用和内核合体成一个超轻虚拟机
+- [[selinux-2001]] —— SELinux — 给 Linux 装上不可绕过的安检门
+- [[soltesz-2007]] —— Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案
+- [[v-system-1988]] —— V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC

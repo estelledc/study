@@ -155,3 +155,9 @@ def multi_choice(s, question):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit
+- [[paged-attention]] —— PagedAttention — 把 KV cache 当虚拟内存页来管理
+- [[paged-attention-vllm]] —— PagedAttention — 以页替代整段内存的显存管理
+- [[prefix-cache-policy-2026]] —— Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）
+- [[rtp-llm-alibaba]] —— RTP-LLM — 把大模型推理服务做成分阶段工厂

@@ -172,7 +172,5 @@ world.addEventListener('postStep', () => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bullet]] —— Bullet Physics —— 更传统的刚体引擎路线
-- [[cannon]] —— Cannon（旧版）历史实现对比
-- [[phyx]] —— 以数据为主的轻量物理框架
-- [[ragdoll]] —— 姿态系统与刚体系统常见组合点
+- [[aframe]] —— A-Frame — 用 HTML 搭 Web VR 场景
+- [[planck]] —— planck.js — 纯 JS Box2D 生态

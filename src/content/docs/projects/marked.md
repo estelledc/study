@@ -172,8 +172,6 @@ marked.use({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
+- [[marktext]] —— MarkText — 实时预览 Markdown 编辑器
 - [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
-- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
-- [[starlight]] —— Starlight — Astro 文档站点主题
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
-

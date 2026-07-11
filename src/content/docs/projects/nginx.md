@@ -170,12 +170,39 @@ location /static/ {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[code-server]] —— code-server — 浏览器里的 VS Code
+- [[projects/coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
+- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[etherpad-lite]] —— Etherpad — 经典协作文本编辑器
+- [[gstreamer]] —— GStreamer — 用积木管线处理音视频
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[jitsi-meet]] —— Jitsi Meet — 开源视频会议的自托管套件
+- [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[next-js]] —— Next.js — React 全栈框架
-- [[redis]] —— Redis — 内存键值数据库
+- [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
+- [[memcached]] —— Memcached — 经典内存缓存
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器
+- [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
+- [[pino]] —— pino — 日志不该阻塞热路径
+- [[postal]] —— Postal — 自托管的 Mailgun / SendGrid 替代
+- [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
+- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
+- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
-
+- [[trilium]] —— Trilium — 树形层级笔记系统
+- [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换

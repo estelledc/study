@@ -110,6 +110,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
+- [[afd-disagg-moe]] —— AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[ampere-architecture-2020]] —— NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设
@@ -122,36 +123,41 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[biggan-2018]] —— BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
 - [[blackwell-architecture-2024]] —— NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化
 - [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
 - [[codellama-2023]] —— Code Llama — 开源代码模型的完整训练配方
 - [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[compose-future-theorems]] —— COMPOSE — 用引用图和 Mathlib 图预测未来定理
 - [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
 - [[deberta-2021]] —— DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[deepseek-coder-2024]] —— DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA
+- [[demystifying-data-org]] —— Demystifying Data Organization — 给训练数据排队的四条原则
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[elmo-2018]] —— ELMo — 让词向量随上下文变化
+- [[entity-tracking-states]] —— Entity Tracking States — 语言模型不是一路记账，而是最后临时汇总
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化
+- [[flashattention-3-2024]] —— FlashAttention-3 — 面向 H100 的异步与低精度注意力
 - [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
 - [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态上下文的工程样板
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[graph-neural-networks]] —— Graph Neural Networks — 把关系网络交给神经网络来读
 - [[grokking-2022]] —— Grokking — 训练 loss 早归零，几千步后才突然学会
 - [[gru-2014]] —— GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场
 - [[gshard-2020]] —— GShard — 用注解让 600B 模型自动跨设备切片
@@ -164,21 +170,29 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 - [[label-smoothing-2016]] —— Label Smoothing — 别让模型对正确答案过度自信
 - [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
+- [[linear-attention-still-2026]] —— Linear Attention, Still: Why Mamba-style Models Plateau
 - [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
+- [[llmsurgeon-data-mixture]] —— LLMSurgeon — 从模型回答反推训练数据配方
 - [[longformer-2020]] —— Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
+- [[loong-doc-mt]] —— Loong DocMT — 长文档翻译里的会挑上下文的代理
+- [[lora]] —— LoRA — 给冻结大模型贴低秩便签
 - [[mae]] —— MAE — Masked Autoencoders
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[maron-kuhns-1960]] —— Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
+- [[mem-ft-lora]] —— MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[nestedkv]] —— NestedKV — 用三层记忆决定 KV cache 该留谁
 - [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
 - [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
 - [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[performer-2020]] —— Performer — 用随机特征把 softmax attention 拉成线性复杂度
@@ -189,10 +203,32 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接
+- [[rim-latent-reasoning]] —— RiM Latent Reasoning — 给 LLM 一块不用说出口的工作记忆
 - [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 - [[sasrec-2018]] —— SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
-- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[schgen-pcb]] —— SchGen PCB — 把一句需求变成可编辑电路原理图
 - [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
 - [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
-
+- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
+- [[stylegan2-2020]] —— StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
+- [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
+- [[toy-models-superposition]] —— Toy Models of Superposition
+- [[transformer]] —— Transformer — 让每个词一次看完整句话
+- [[transformer-2017]] —— Attention Is All You Need — 用 self-attention 重写序列建模
+- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
+- [[tree-of-attention-2026]] —— Tree-of-Attention — 把长上下文拆成树再分支注意
+- [[turing-architecture-2018]] —— NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8
+- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
+- [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存
+- [[vit]] —— ViT — Vision Transformer
+- [[volta-architecture-2017]] —— NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍
+- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
+- [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
+- [[word2vec]] —— Word2Vec — 词向量奠基
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
+- [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向

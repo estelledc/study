@@ -158,3 +158,6 @@ monitor:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[costan-sgx-explained-2016]] —— Intel SGX Explained — 把云主机里的一小块程序锁进硬件保险箱
+- [[lee-keystone-2020]] —— Keystone — 用开源 RISC-V 拼一套可定制 TEE

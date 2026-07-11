@@ -135,9 +135,7 @@ Grafana 8 起用**统一告警**（不要再找旧版 Panel 里的 Alert Tab / `
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
 - [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
@@ -146,21 +144,18 @@ Grafana 8 起用**统一告警**（不要再找旧版 Panel 里的 Alert Tab / `
 - [[jaeger]] —— Jaeger — 分布式追踪系统
 - [[k6]] —— k6 — 用 JS 写脚本的现代负载测试器
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
+- [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
 - [[m3]] —— M3 — Uber 的分布式 TSDB
 - [[metabase]] —— Metabase — 让非技术人查数
-- [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
-- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+- [[projects/opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[pino]] —— pino — 日志不该阻塞热路径
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
-- [[prometheus]] —— Prometheus — 时序监控系统
 - [[questdb]] —— QuestDB — 高性能时序库
 - [[superset]] —— Apache Superset — 开源 BI 平台
 - [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[vector]] —— Vector — Rust 写的统一可观测性数据管道
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
-

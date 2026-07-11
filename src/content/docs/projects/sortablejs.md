@@ -150,8 +150,4 @@ new Sortable(list, {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
-

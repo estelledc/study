@@ -186,3 +186,7 @@ curl -X POST http://localhost:3000/new/weekly-sync \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bookstack]] —— BookStack — 文档型 Wiki
+- [[etherpad-lite]] —— Etherpad — 经典协作文本编辑器
+- [[outline]] —— Outline — 团队 Wiki 协作平台

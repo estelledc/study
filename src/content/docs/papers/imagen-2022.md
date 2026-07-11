@@ -158,9 +158,5 @@ Imagen 没赢市场（闭源），但**赢了思想**——后来 SD3 / Flux 等
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dreamfusion-2022]] —— DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
-

@@ -149,11 +149,4 @@ NuSMV -bmc -bmc_length 30 pipeline.smv
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
-- [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
-- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
-- [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
-- [[ssa]] —— SSA — 静态单赋值形式
-
+（暂无反向链接）

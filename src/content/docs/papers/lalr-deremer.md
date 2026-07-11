@@ -148,15 +148,6 @@ OCaml 的 menhir 是 LALR(1) 的现代化实现，主要改进在错误信息—
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
-- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
-- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
-- [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
-- [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法
-

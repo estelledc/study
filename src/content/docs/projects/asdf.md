@@ -160,3 +160,10 @@ bin/list-bin-paths # 告诉 asdf 这个版本里哪些目录有可执行
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/scoop]] —— Scoop — Windows 上像 Homebrew 一样装命令行工具
+- [[dive]] —— dive — 看清 Docker 镜像每一层加了什么文件的 TUI
+- [[projects/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[pyenv]] —— pyenv — 用 shim 把 python 命令拦截后路由到指定版本
+- [[projects/scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
+- [[volta]] —— Volta — cd 进项目就自动换 Node 版本的工具链管理器

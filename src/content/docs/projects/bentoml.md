@@ -183,10 +183,5 @@ openllm start meta-llama/Llama-3-8B
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[mlflow]] —— MLflow — 端到端 ML 生命周期
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[projects/mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-

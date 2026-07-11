@@ -148,6 +148,4 @@ $ docker run --rm -it -v $(pwd):/app python:3.12-slim bash
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aichat]] —— AIChat — 终端里的多模型 LLM 客户端
-- [[oclif]] —— oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
-
+- [[aider]] —— Aider — 终端 AI 结对编程 CLI

@@ -151,19 +151,13 @@ customCommands:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bat]] —— bat — 现代 cat 替代
-- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[aider]] —— Aider — 终端 AI 结对编程 CLI
 - [[delta]] —— delta — git diff 的语法高亮分页器
-- [[fzf]] —— fzf — 命令行模糊查找
 - [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
-- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉
 - [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
-- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+- [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
-- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
-

@@ -147,3 +147,5 @@ tig status          # 或在 tig 里按 s
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[delta]] —— delta — git diff 的语法高亮分页器

@@ -169,3 +169,11 @@ yq -p=xml -o=json pom.xml | jq '.project.dependencies'
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[curlie]] —— curlie — curl 的能力 + HTTPie 的语法
+- [[dasel]] —— dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
+- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
+- [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
+- [[httpie]] —— HTTPie — curl 的人话版本
+- [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
+- [[xh]] —— xh — HTTPie 的 Rust 重写版

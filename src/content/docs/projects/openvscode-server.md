@@ -157,3 +157,7 @@ USER openvscode-server
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
+- [[neutralinojs]] —— neutralinojs — 系统 WebView 上的极简桌面壳
+- [[theia]] —— Eclipse Theia — 可定制的云端与桌面 IDE 框架

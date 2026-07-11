@@ -161,38 +161,30 @@ gRPC 选 HTTP/2 不是历史包袱而是设计选择：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
-- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
+- [[papers/coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器
+- [[papers/couchdb]] —— CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dot-doh-perf-2020]] —— DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
+- [[krishnamurthy-1999-http11]] —— Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么
+- [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
+- [[padmanabhan-1995-http-latency]] —— Padmanabhan-Mogul 1995 — 用秒表证明：持久连接 + 流水线能砍掉 HTTP 延迟
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
+- [[rtp-rfc-1889]] —— RTP RFC 1889 — 让 UDP 也能跑实时音视频
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[server-sent-events]] —— Server-Sent Events — 服务器单向推送的标准协议
+- [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
+- [[wang-2014-spdy]] —— How Speedy is SPDY — 换协议没让网页变快多少
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[krishnamurthy-1999-http11]] —— Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么
-- [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
-- [[padmanabhan-1995-http-latency]] —— Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
-- [[raft]] —— Raft — 易理解的共识算法
-- [[rtp-rfc-1889]] —— RTP RFC 1889 — 让 UDP 也能跑实时音视频
-- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
-- [[server-sent-events]] —— Server-Sent Events — 服务器单向推送的标准协议
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
-- [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
-

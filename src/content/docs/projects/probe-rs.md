@@ -174,11 +174,4 @@ runner = "probe-rs run --chip STM32F411CEUx"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
-- [[circuitpython]] —— CircuitPython — 拖文件就能给芯片写程序的 Python
-- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
-- [[micropython]] —— MicroPython — 在巴掌大的芯片上跑 Python
-- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
-- [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
 - [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
-

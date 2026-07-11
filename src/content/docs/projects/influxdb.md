@@ -151,11 +151,7 @@ from(bucket: "metrics")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[grafana]] —— Grafana — 监控可视化看板
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[prometheus]] —— Prometheus — 时序监控系统
 - [[questdb]] —— QuestDB — 高性能时序库
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
-

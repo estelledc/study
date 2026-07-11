@@ -145,6 +145,4 @@ Stripe 官方 SDK 默认带 jitter，不要自己重写。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
-- [[redis]] —— Redis — 内存键值数据库

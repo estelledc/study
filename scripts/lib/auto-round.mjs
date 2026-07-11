@@ -31,8 +31,18 @@ export function autoPrepareState(args, queues, options = {}) {
     ok: true,
     issues: [],
     plan,
-    nextCandidates: markClaimed(queues.candidates || [], plan.picked.new, plan.assignments),
-    nextPool: markClaimed(queues.pool || [], plan.picked.rewrite, plan.assignments),
+    nextCandidates: markClaimed(queues.candidates || [], plan.picked.new, plan.assignments, {
+      planHash: plan.plan_hash,
+      generation: options.generation || plan.plan_hash,
+      claimedAt: options.claimedAt,
+      leaseMs: options.leaseMs,
+    }),
+    nextPool: markClaimed(queues.pool || [], plan.picked.rewrite, plan.assignments, {
+      planHash: plan.plan_hash,
+      generation: options.generation || plan.plan_hash,
+      claimedAt: options.claimedAt,
+      leaseMs: options.leaseMs,
+    }),
   };
 }
 
@@ -78,8 +88,17 @@ export function validateWorkerResults(queues, rawResults) {
     }
     const area = resolveResultArea(result, claimed);
     const key = `${area}::${result.slug}`;
-    if (!claimedByKey.has(key)) {
+    const claimedRow = claimedByKey.get(key);
+    if (!claimedRow) {
       throw new Error(`worker result does not match claimed row: ${key}`);
+    }
+    for (const field of ['claim_token', 'claim_generation']) {
+      if (typeof claimedRow[field] !== 'string' || !claimedRow[field]) {
+        throw new Error(`claimed row ${key} is missing ${field}; recover and redispatch it`);
+      }
+      if (result[field] !== claimedRow[field]) {
+        throw new Error(`worker result ${field} mismatch for ${key}`);
+      }
     }
     if (resultsByKey.has(key)) throw new Error(`duplicate worker result: ${key}`);
     resultsByKey.set(key, { ...result, area });
@@ -98,6 +117,9 @@ export function validateWorkerResults(queues, rawResults) {
       area: row.area,
       commit: result.commit,
       lines: result.lines,
+      claim_token: row.claim_token,
+      claim_generation: row.claim_generation,
+      claimed_by: row.claimed_by,
     };
   });
 }

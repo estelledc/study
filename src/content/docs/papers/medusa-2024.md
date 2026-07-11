@@ -151,8 +151,4 @@ mask 让「跟随 A 的 X」只看见 P+A，「跟随 B 的 X」只看见 P+B。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[sglang-2024]] —— SGLang — 把 LLM 程序当成共享前缀的树来跑
-- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-

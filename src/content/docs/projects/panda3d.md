@@ -154,12 +154,8 @@ self.accept("arrow_down", self.move_cam, [-1])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
-- [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
-- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[blender]] —— Blender — 全流程 3D 创作套件
+- [[love2d]] —— LÖVE — 用 Lua 写 2D 游戏的轻量框架
 - [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
 - [[openrct2]] —— OpenRCT2 — 用逆向工程让 20 年前的游戏复活
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-

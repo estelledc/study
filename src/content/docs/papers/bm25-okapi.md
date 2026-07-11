@@ -153,3 +153,15 @@ scores = bm25.get_scores(["发酵", "酒精"])
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
+- [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
+- [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
+- [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
+- [[minhash-broder-1997]] —— MinHash — 用最小哈希值估算两个集合的重叠度
+- [[ms-marco-2016]] —— MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集
+- [[okapi-bm25-1994]] —— Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式
+- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
+- [[simhash-charikar-2002]] —— SimHash — 用随机超平面把余弦相似度变成汉明距离
+- [[tfidf-classic]] —— TF-IDF Classic — 给搜索词分清轻重缓急
+- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎

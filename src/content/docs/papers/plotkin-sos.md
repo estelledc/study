@@ -160,21 +160,13 @@ def step(prog, state):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-

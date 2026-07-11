@@ -175,12 +175,4 @@ const auth = createMachine({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[jotai]] —— Jotai — 原子化 React 状态管理
-- [[react]] —— React UI 组件库
-- [[svelte]] —— Svelte — 编译时 UI 框架
-- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[zustand]] —— Zustand — 极简 React 状态管理
-

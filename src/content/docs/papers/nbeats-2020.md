@@ -150,5 +150,3 @@ backcast = W_b × θ_b       (W_b 形状为 N × dim(θ_b))
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chronos-2024]] —— Chronos — 把时间序列当语言来训练大模型
-- [[resnet]] —— ResNet — 残差连接
-

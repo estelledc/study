@@ -170,18 +170,11 @@ DELETE /posts/:id      → destroy （删除）
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
-- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-
+- [[vips]] —— libvips — 流式低内存图像库

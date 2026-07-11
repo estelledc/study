@@ -185,3 +185,10 @@ canvas.print_png("plot.png")
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[holoviews]] —— HoloViews — 一份声明 ⇄ 多后端自动绘图
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
+- [[librosa]] —— librosa — 把声音变成机器学习能吃的数字特征
+- [[plotnine]] —— plotnine — Python 复刻 R 的 ggplot2
+- [[seaborn]] —— seaborn — matplotlib 之上的一行统计图
+- [[zeppelin]] —— Apache Zeppelin — JVM 多语言笔记本

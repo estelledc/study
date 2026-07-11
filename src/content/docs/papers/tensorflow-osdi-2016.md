@@ -142,11 +142,8 @@ grads = tf.gradients(loss, [W, b])  # 运行时生成反向子图
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
-- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
 - [[bonawitz-fl-system-2019]] —— Bonawitz 2019 — Google 联邦学习的工业级系统设计
-- [[jax]] —— JAX — Google 函数式数值计算
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[ssa]] —— SSA — 静态单赋值形式
+- [[ray-2018]] —— Ray 2018 — 把任务和演员放进同一个分布式舞台
 - [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
+- [[tflite-micro]] —— TensorFlow Lite Micro — 把小模型塞进微控制器

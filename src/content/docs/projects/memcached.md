@@ -159,7 +159,5 @@ static slabclass_t slabclass[MAX_NUMBER_OF_SLAB_CLASSES];
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[nginx]] —— nginx — 高性能 Web 服务器
 - [[redis]] —— Redis — 内存键值数据库
-
+- [[valkey]] —— Valkey — Redis 7.2.4 的开源 fork

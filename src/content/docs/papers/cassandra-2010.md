@@ -157,19 +157,20 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[cassandra-eventual-tradeoff]] —— Cassandra 最终一致性取舍 — 可用性、延迟和新鲜度不能都拿满
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[dynamo-2007]] —— Dynamo 2007 — 让购物车在机器故障时也能写入
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[scads-database-2008]] —— SCADS — 用户涨一万倍也不改应用的存储愿景
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
-

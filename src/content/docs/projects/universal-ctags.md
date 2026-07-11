@@ -160,4 +160,4 @@ ctags -R --output-format=json --fields=+n . | \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- 合并自 [[universal-ctags]]（papers，工具误归类）dedup 2026-05-31 -->
+- [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建

@@ -161,3 +161,4 @@ monitor ReadersWriters:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[lamport-bakery]] —— Lamport Bakery — 用取号排队解决并发互斥

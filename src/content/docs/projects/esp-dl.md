@@ -172,3 +172,8 @@ idf.py flash monitor -p /dev/ttyUSB0
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cmsis-nn]] —— CMSIS-NN — Arm Cortex-M 的神经网络算子加速库
+- [[esphome]] —— ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[ncnn]] —— ncnn — 腾讯开源的端侧神经网络推理框架

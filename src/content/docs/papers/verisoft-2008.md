@@ -145,9 +145,5 @@ C0 是裁剪后的 C：无指针算术 / union / longjmp；整数溢出语义严
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
-- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
-- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有
 - [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集

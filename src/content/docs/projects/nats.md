@@ -154,3 +154,16 @@ nats consumer next ORDERS workers
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mqtt-s-2008]] —— MQTT-S 2008 — IoT 发布/订阅协议在传感网的扩展
+- [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
+- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
+- [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[mender]] —— Mender — 给 IoT 设备做不会刷砖的 OTA 升级
+- [[mosquitto]] —— Mosquitto — C 写的轻量 MQTT 消息中转站
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座
+- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
+- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头

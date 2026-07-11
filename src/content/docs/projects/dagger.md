@@ -185,3 +185,5 @@ GitHub Actions 配置：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[buildkit]] —— BuildKit — Docker 下一代镜像构建后端

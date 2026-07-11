@@ -175,16 +175,9 @@ result = (
 
 - [[arrow]] —— Apache Arrow — 内存列式标准
 - [[arrow-rs]] —— arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[lance]] —— Lance — AI 数据列存格式
-- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[pandas]] —— pandas — Python 表格数据事实标准
+- [[marimo]] —— marimo — 反应式 Python 笔记本
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
-- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-

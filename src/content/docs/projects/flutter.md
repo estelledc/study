@@ -195,3 +195,14 @@ FutureBuilder<String>(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[appflowy]] —— AppFlowy — Rust 写的开源 Notion
+- [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[ionic-framework]] —— Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱
+- [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
+- [[nativescript]] —— NativeScript — 用 JS/TS 直接驱动原生控件
+- [[neutralinojs]] —— neutralinojs — 系统 WebView 上的极简桌面壳
+- [[nodegui]] —— nodegui — 用 Node.js 写原生桌面窗口
+- [[react-native]] —— React Native — 一套代码跑多端的跨端运行时
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用

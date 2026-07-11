@@ -158,3 +158,7 @@ let ball = ColliderBuilder::ball(0.5).sensor(true).build();
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cannon-es]] —— Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则
+- [[matter-js]] —— Matter.js — 2D 刚体世界里最轻的“物理白板”
+- [[planck]] —— planck.js — 纯 JS Box2D 生态

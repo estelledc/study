@@ -151,7 +151,4 @@ mode connectivity 给 SWA 一个几何解释：SGD 在低 loss 区域跑，相�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
-- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
-
+（暂无反向链接）

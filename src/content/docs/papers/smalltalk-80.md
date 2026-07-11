@@ -169,15 +169,12 @@ balance := balance + amount + 1.
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
+- [[liskov-abstraction-1974]] —— Liskov 抽象数据类型 — 用操作而不是存储形状定义数据
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
-- [[turing-1936]] —— Turing 1936 可计算性
-

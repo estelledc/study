@@ -159,13 +159,11 @@ job.apply_async()
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
-- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
-- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[nats-server]] —— NATS Server — 极简云原生消息总线
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
+- [[plane]] —— Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器
 - [[prefect]] —— Prefect — Python 原生编排，让数据流水线像写普通函数一样自然
 - [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
 - [[redis]] —— Redis — 内存键值数据库
 - [[superset]] —— Apache Superset — 开源 BI 平台
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
-- [[temporal]] —— Temporal — 持久化工作流引擎
-

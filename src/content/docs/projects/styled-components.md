@@ -149,9 +149,4 @@ function styled(tag) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
-- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
-- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
-- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
-

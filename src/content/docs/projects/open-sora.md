@@ -148,3 +148,10 @@ python scripts/inference.py configs/opensora-v1-2/inference/sample.py
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[handbrake]] —— HandBrake — 把视频转码变成点两下鼠标的事
+- [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA 工具箱
+- [[sam2]] —— SAM 2 — 图像和视频都能抠轮廓的通用分割模型
+- [[ultralytics]] —— Ultralytics — YOLOv8/v11 易用 SDK

@@ -161,3 +161,5 @@ lame_close(gfp);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[flac]] —— FLAC — 无损音频压缩事实标准

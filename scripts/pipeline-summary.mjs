@@ -34,7 +34,7 @@ function countByStatus(rows) {
   return counts;
 }
 
-function isFailureEvent(event) {
+export function isFailureEvent(event) {
   const name = String(event.event || '');
   const status = String(event.status || '');
   return name.includes('fail') ||
@@ -50,6 +50,51 @@ function eventReason(event) {
 
 function lastN(rows, n) {
   return rows.slice(Math.max(0, rows.length - n));
+}
+
+function latestClaimLifecycle(inputs) {
+  let latest = null;
+  for (const row of [...inputs.candidates, ...inputs.rewritePool]) {
+    const startedAt = row.claimed_at || row.last_claimed_at;
+    const lifecycleId = row.claim_generation || row.last_claim_generation;
+    const timestamp = new Date(startedAt || '').getTime();
+    if (!lifecycleId || !Number.isFinite(timestamp)) continue;
+    if (!latest || timestamp > latest.timestamp) {
+      latest = {
+        id: lifecycleId,
+        started_at: new Date(timestamp).toISOString(),
+        timestamp,
+        source: 'queue-claim',
+        event_index: null,
+      };
+    }
+  }
+  return latest;
+}
+
+function latestEventLifecycle(events) {
+  for (let index = events.length - 1; index >= 0; index--) {
+    const event = events[index];
+    if (event.event !== 'round-lifecycle-start') continue;
+    const timestamp = new Date(event.ts || '').getTime();
+    return {
+      id: event.lifecycle_id || event.generation || null,
+      started_at: Number.isFinite(timestamp) ? new Date(timestamp).toISOString() : null,
+      timestamp: Number.isFinite(timestamp) ? timestamp : Number.NEGATIVE_INFINITY,
+      source: 'event-boundary',
+      event_index: index,
+      round_n: event.round_n ?? null,
+    };
+  }
+  return null;
+}
+
+export function currentLifecycle(inputs) {
+  const fromEvent = latestEventLifecycle(inputs.events);
+  const fromClaim = latestClaimLifecycle(inputs);
+  if (!fromEvent) return fromClaim;
+  if (!fromClaim) return fromEvent;
+  return fromEvent.timestamp >= fromClaim.timestamp ? fromEvent : fromClaim;
 }
 
 export async function loadPipelineInputs(paths = DEFAULT_PATHS) {
@@ -77,13 +122,28 @@ export async function loadPipelineInputs(paths = DEFAULT_PATHS) {
 export function summarizePipeline(inputs) {
   const candidateCounts = countByStatus(inputs.candidates);
   const rewriteCounts = countByStatus(inputs.rewritePool);
-  const failures = inputs.events.filter(isFailureEvent).map((event) => ({
+  const lifecycle = currentLifecycle(inputs);
+  const failuresWithIndex = inputs.events
+    .map((event, index) => ({ event, index }))
+    .filter(({ event }) => isFailureEvent(event));
+  const currentFailuresWithIndex = lifecycle
+    ? failuresWithIndex.filter(({ event, index }) => {
+        if (lifecycle.event_index != null) return index > lifecycle.event_index;
+        const timestamp = new Date(event.ts || '').getTime();
+        return Number.isFinite(timestamp) && timestamp >= lifecycle.timestamp;
+      })
+    : [];
+  const formatFailure = ({ event }) => ({
     ts: event.ts || null,
     event: event.event || null,
     slug: event.slug || null,
+    area: event.area || null,
     stage: event.stage || null,
+    lifecycle_id: event.lifecycle_id || event.generation || null,
     reason: String(eventReason(event)),
-  }));
+  });
+  const failures = failuresWithIndex.map(formatFailure);
+  const currentFailures = currentFailuresWithIndex.map(formatFailure);
 
   const round = inputs.checkpoint?.round_n ?? inputs.status?.batch?.n ?? null;
   const claimed = (candidateCounts.claimed || 0) + (rewriteCounts.claimed || 0);
@@ -96,8 +156,10 @@ export function summarizePipeline(inputs) {
   if (claimed > 0) {
     suggestions.push('存在 claimed 项；优先完成、回收或同步这些项后再开新批次。');
   }
-  if (failures.length > 0) {
-    suggestions.push('存在失败事件；先查看 pipeline-events.jsonl 的最近失败原因。');
+  if (currentFailures.length > 0) {
+    suggestions.push('当前 lifecycle 存在失败事件；先查看 pipeline-events.jsonl 的最近失败原因。');
+  } else if (failures.length > 0) {
+    suggestions.push(`保留了 ${failures.length} 条历史失败事件；它们不阻断当前 lifecycle。`);
   }
   if (available === 0) {
     suggestions.push('候选池和 rewrite pool 当前没有可派发项；需要补池或调整筛选条件。');
@@ -125,9 +187,13 @@ export function summarizePipeline(inputs) {
     events: {
       total: inputs.events.length,
       recent: lastN(inputs.events, 5),
+      lifecycle,
       failures: {
         total: failures.length,
         recent: lastN(failures, 5),
+        current_total: currentFailures.length,
+        current_recent: lastN(currentFailures, 5),
+        historical_total: failures.length - currentFailures.length,
       },
     },
     checkpoint: inputs.checkpoint,
@@ -173,7 +239,9 @@ Rewrite pool:
 
 Events:
 - total: ${summary.events.total}
-- failures: ${summary.events.failures.total}
+- failures (all retained): ${summary.events.failures.total}
+- failures (current lifecycle): ${summary.events.failures.current_total}
+- failures (historical): ${summary.events.failures.historical_total}
 
 Recent failures:
 ${failureLines}

@@ -147,3 +147,12 @@ model_input = token + position
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[elmo-2018]] —— ELMo — 让词向量随上下文变化
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化
+- [[gru-2014]] —— GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场
+- [[kv-fold]] —— KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文
+- [[layernorm-2016]] —— Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训
+- [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
+- [[nestedkv]] —— NestedKV — 用三层记忆决定 KV cache 该留谁
+- [[tree-of-attention-2026]] —— Tree-of-Attention — 把长上下文拆成树再分支注意

@@ -155,3 +155,10 @@ Subject: [PATCH] fix race in driver
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[arrakis-2014]] —— Arrakis 2014 — 让操作系统退出数据路径
+- [[papers/asterisk]] —— Asterisk — 把企业总机做成一台 Linux 服务器
+- [[ix-2014]] —— IX 2014 — 用硬件保护做高吞吐低延迟的数据面 OS
+- [[kvm-2007]] —— KVM 2007 — 把 Linux 内核本身变成 hypervisor
+- [[rcu-2001]] —— RCU 2001 — 让"读"的代价归零的并发数据结构
+- [[snap-2019]] —— Snap 2019 — Google 把网络栈搬到用户态微内核

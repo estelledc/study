@@ -179,10 +179,4 @@ $app->get('/users', function ($req, $res) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-
+（暂无反向链接）

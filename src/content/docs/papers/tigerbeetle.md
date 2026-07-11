@@ -155,18 +155,12 @@ VSR：view + view-change
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
-- [[gfs]] —— GFS — 编译器决定不做哪些事
-- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
-- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
-- [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
-- [[paxos]] —— Paxos — 分布式共识算法
+- [[gfs]] —— GFS — 为工作负载反向定制的分布式文件系统
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[raft]] —— Raft — 易理解的共识算法
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
-
+- [[orleans]] —— Orleans — 让分布式服务写起来像单机对象

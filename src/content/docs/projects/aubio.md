@@ -155,8 +155,4 @@ console.log(gaps.slice(0, 5))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[librosa]] —— 常见音频分析 Python 库
-- [[madmom]] —— 音乐信息检索工具链
-- [[praat]] —— 语音分析可视化
-- [[ffmpeg]] —— 转码与采样前处理
-- [[soundevent]] —— 声学事件检测
+- [[essentia]] —— Essentia — 音乐信息检索的 C++/Python 工具箱

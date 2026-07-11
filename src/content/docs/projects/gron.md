@@ -160,8 +160,4 @@ diff <(gron a.json) <(gron b.json)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dasel]] —— dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
-- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
-- [[jq]] —— jq — JSON 的 sed/awk
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-

@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -17,47 +15,38 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      STUDY_CHANGED_FROM: ${{ github.event.before }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: 22
+          node-version-file: .nvmrc
           cache: npm
+      - name: Use repository npm version
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
+      - run: node scripts/audit-toolchain.mjs
       - run: npm ci
-      - run: npm run build 2>&1 | tee /tmp/build.log
-      - name: Build diagnostics into dist/build-info.txt
+      - run: npx playwright install --with-deps chromium
+      - name: Set runtime verification environment
         run: |
-          {
-            echo "=== source projects/ count ==="
-            ls src/content/docs/projects/ | wc -l
-            echo "=== source projects/ list ==="
-            ls src/content/docs/projects/
-            echo "=== dist projects/ count ==="
-            ls dist/projects/ 2>/dev/null | wc -l
-            echo "=== dist projects/ list ==="
-            ls dist/projects/ 2>/dev/null
-            echo "=== dist projects/ INDEX.HTML count (real files) ==="
-            find dist/projects -name "index.html" -type f | wc -l
-            echo "=== dist projects/zustand/ contents ==="
-            ls -la dist/projects/zustand/ 2>/dev/null || echo "no zustand dir"
-            echo "=== dist projects/biome/ contents ==="
-            ls -la dist/projects/biome/ 2>/dev/null
-            echo "=== dist papers/ count ==="
-            ls dist/papers/ 2>/dev/null | wc -l
-            echo "=== sitemap projects entries ==="
-            grep -oE "projects/[a-z-]+" dist/sitemap-0.xml | sort -u
-            echo "=== Duplicate id warnings ==="
-            grep -E "Duplicate id" /tmp/build.log | head -30 || echo "no duplicate id warnings"
-            echo "=== build log tail ==="
-            tail -40 /tmp/build.log
-            echo "=== astro version ==="
-            npx astro --version 2>&1
-            echo "=== node version ==="
-            node --version
-            echo "=== starlight version ==="
-            npm ls @astrojs/starlight 2>&1 | head -5
-          } > dist/build-info.txt
-          cat dist/build-info.txt
+          echo "STUDY_BUILD_LOG=$RUNNER_TEMP/study-build.log" >> "$GITHUB_ENV"
+          echo "STUDY_FRESHNESS_AS_OF=$(date -u +%F)" >> "$GITHUB_ENV"
+      - run: npm run verify:ci
+      - name: Create sanitized diagnostics
+        if: always()
+        run: node scripts/build-diagnostics.mjs --log "$STUDY_BUILD_LOG" --dist dist --out "$RUNNER_TEMP/study-diagnostics.json"
+      - name: Upload sanitized diagnostics
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: study-diagnostics-${{ github.run_id }}
+          path: ${{ runner.temp }}/study-diagnostics.json
+          retention-days: 7
+          if-no-files-found: error
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./dist
@@ -65,6 +54,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

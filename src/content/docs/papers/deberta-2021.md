@@ -158,6 +158,5 @@ DeBERTa 是编码器路线最后的高峰之一——之后大家都在卷生成
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-
+- [[deepfool-2016]] —— DeepFool 2016 — 用最小扰动量出模型边界有多近
+- [[lora]] —— LoRA — 给冻结大模型贴低秩便签

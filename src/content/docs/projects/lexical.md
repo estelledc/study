@@ -1,5 +1,6 @@
 ---
 title: Lexical — 把富文本编辑拆成快照、事务和插件
+description: "介绍 Lexical 如何用不可变快照、更新事务和脏节点协调富文本编辑。"
 来源: 'Meta, "Lexical", GitHub repository 2026'
 日期: 2026-05-29
 分类: 编辑器框架
@@ -179,3 +180,12 @@ function WordCountPlugin() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bookstack]] —— BookStack — 文档型 Wiki
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[marktext]] —— MarkText — 实时预览 Markdown 编辑器
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核

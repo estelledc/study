@@ -172,3 +172,66 @@ docker compose up -d
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[arrakis-2014]] —— Arrakis 2014 — 让操作系统退出数据路径
+- [[lipp-meltdown-2018]] —— Meltdown — 从用户态读到内核内存的硬件漏洞
+- [[mirage-2013]] —— MirageOS 2013 — 应用和内核合体成一个超轻虚拟机
+- [[papers/shellcheck]] —— ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
+- [[act]] —— act — 在本地用 Docker 跑 GitHub Actions
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[appflowy]] —— AppFlowy — Rust 写的开源 Notion
+- [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[buildah]] —— Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工
+- [[buildkit]] —— BuildKit — Docker 下一代镜像构建后端
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[projects/clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[code-server]] —— code-server — 浏览器里的 VS Code
+- [[coder]] —— Coder — 自托管开发环境平台
+- [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
+- [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
+- [[electron-builder]] —— electron-builder — Electron 打包发布事实标准
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[freemodbus]] —— FreeModbus：嵌入式设备的 Modbus 从站协议栈
+- [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
+- [[gitpod]] —— Gitpod — 预构建云开发环境
+- [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像
+- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
+- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
+- [[lima]] —— Lima — macOS 上跑 Linux 虚拟机的轻量 CLI
+- [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
+- [[minio]] —— MinIO — S3 兼容对象存储
+- [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
+- [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI
+- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
+- [[projects/nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器
+- [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
+- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
+- [[penpot]] —— Penpot — 开源自托管的 Figma 替代
+- [[podman]] —— Podman — 无 daemon 容器引擎
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[runc]] —— runc — Linux 容器最底层那个真正在 fork 进程的 CLI
+- [[projects/shellcheck]] —— ShellCheck — shell 脚本的静态体检医生
+- [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
+- [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
+- [[terraform]] —— Terraform — 基础设施即代码
+- [[traefik]] —— Traefik — 现代云原生反向代理
+- [[trilium]] —— Trilium — 树形层级笔记系统
+- [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑
+- [[wasmtime]] —— Wasmtime — Rust 实现的 WebAssembly 运行时
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
+- [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案

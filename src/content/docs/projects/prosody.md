@@ -166,7 +166,5 @@ sql = { driver = "PostgreSQL", database = "prosody", host = "localhost", usernam
 
 - [[conversations]] —— Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
 - [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
-- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
-- [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
-- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
-
+- [[jitsi-meet]] —— Jitsi Meet — 开源视频会议的自托管套件
+- [[love2d]] —— LÖVE — 用 Lua 写 2D 游戏的轻量框架

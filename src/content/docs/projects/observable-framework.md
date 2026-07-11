@@ -183,3 +183,8 @@ Plot.lineY(filtered, {x: "date", y: "amount"}).plot()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/cytoscape-js]] —— Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
+- [[marimo]] —— marimo — 反应式 Python 笔记本
+- [[pluto-jl]] —— Pluto.jl — Julia 反应式笔记本

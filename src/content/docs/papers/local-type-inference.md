@@ -153,16 +153,9 @@ TypeScript 拿 `pipe` 的签名 + 两个实参的类型，**只看一层**就推
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
-- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-

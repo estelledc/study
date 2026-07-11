@@ -164,3 +164,5 @@ jax.tree.map(lambda p: p.shape, params)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[optax]] —— Optax — JAX 优化器组合库

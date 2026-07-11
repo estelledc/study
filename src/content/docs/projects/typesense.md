@@ -147,3 +147,4 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient }).start(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎

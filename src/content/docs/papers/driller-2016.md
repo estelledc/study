@@ -154,3 +154,6 @@ while time_left:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bohme-aflfast-2016]] —— AFLFast — 把 fuzzing 的力气花在更少人走的路径上
+- [[fairfuzz-2018]] —— FairFuzz 2018 — 保护关键字节，让 fuzzing 往深处走

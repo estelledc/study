@@ -153,3 +153,7 @@ krita --export-sequence --export-filename walkcycle.png walkcycle.kra
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[gimp]] —— GIMP — GNU 图像处理程序
+- [[librecad]] —— LibreCAD — 2D 工程绘图

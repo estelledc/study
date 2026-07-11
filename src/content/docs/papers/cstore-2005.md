@@ -148,20 +148,22 @@ projection P2: (date, region, amount) 按 date 排序
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[arrow]] —— Apache Arrow — 内存列式标准
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[columnar-storage-formats-2023]] —— Columnar Storage Formats 2023 — Parquet/ORC 的体检报告
+- [[dremel-2010]] —— Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析
+- [[dremel-decade-2020]] —— Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
-- [[lance]] —— Lance — AI 数据列存格式
+- [[efficient-compile-2011]] —— Efficient Compile 2011 — 把 SQL 查询编译成贴近 CPU 的机器码
+- [[fastlanes-compression]] —— FastLanes Compression Layout — 用标量代码解码千亿整数
+- [[lakehouse-2021]] —— Lakehouse 2021 — 把数据湖和数仓合成一套开放平台
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
+- [[snowflake]] —— Snowflake — 云数仓把存储和计算拆开
+- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
+- [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
+- [[velox-meta-2022]] —— Velox — Meta 统一执行引擎
+- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
+- [[arrow]] —— Apache Arrow — 内存列式标准
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[lance]] —— Lance — AI 数据列存格式
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
-- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
-- [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
-- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
-

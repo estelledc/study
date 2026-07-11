@@ -80,7 +80,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             property: 'og:image',
-            content: 'https://estelledc.github.io/study/og-study.png',
+            content: 'https://estelledc.github.io/study/og-study.webp',
           },
         },
         { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
@@ -96,7 +96,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             name: 'twitter:image',
-            content: 'https://estelledc.github.io/study/og-study.png',
+            content: 'https://estelledc.github.io/study/og-study.webp',
           },
         },
         {
@@ -112,6 +112,12 @@ export default defineConfig({
         shiki: {
           langAlias: Object.fromEntries(textOnlyCodeFenceLanguages.map((lang) => [lang, 'txt'])),
         },
+      },
+      components: {
+        PageTitle: './src/components/PageTitle.astro',
+        Search: './src/components/Search.astro',
+        Header: './src/components/StudyHeader.astro',
+        MobileMenuFooter: './src/components/StudyMobileMenuFooter.astro',
       },
       // Sidebar 是骨架，不放 100+ 笔记的扁平列表。
       // 笔记发现走 papers-atlas / projects-atlas（多维索引，scripts/regen-atlas.mjs 自动生成）
@@ -150,10 +156,6 @@ export default defineConfig({
           ],
         },
       ],
-      components: {
-        Header: './src/components/StudyHeader.astro',
-        MobileMenuFooter: './src/components/StudyMobileMenuFooter.astro',
-      },
       customCss: [
         './src/styles/jx/tokens.css',
         './src/styles/jx/base.css',

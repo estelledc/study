@@ -155,3 +155,9 @@ Mozilla 把 llama.cpp + 一个 GGUF 模型 + Cosmopolitan libc 打包成**单个
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[kv-fold]] —— KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文
+- [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
+- [[ollama]] —— Ollama — 本地跑 LLM 的工具
+- [[projects/vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+- [[whisper]] —— Whisper — OpenAI 多语言 ASR

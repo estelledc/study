@@ -164,3 +164,35 @@ D(M):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[belady-1966]] —— Belady 1966 — 缓存替换的理论最优与 FIFO 异常
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
+- [[dijkstra-1965]] —— Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死
+- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
+- [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[donar-2010]] —— DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
+- [[feynman-simulating-physics-1982]] —— Feynman 1982 — 量子计算从模拟物理开始
+- [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[hamming-1950]] —— Hamming 纠错码
+- [[huffman-1952]] —— Huffman 编码
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[minhash-broder-1997]] —— MinHash — 用最小哈希值估算两个集合的重叠度
+- [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
+- [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
+- [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
+- [[rsa]] —— RSA 公钥密码
+- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[shor-1994]] —— Shor 1994 — 量子傅里叶变换把分解整数变成找周期
+- [[simhash-charikar-2002]] —— SimHash — 用随机超平面把余弦相似度变成汉明距离
+- [[smalltalk-80]] —— Smalltalk-80
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
+- [[zk-snark]] —— zk-SNARK 零知识证明

@@ -162,3 +162,5 @@ print(dec(cipher_sum))    # 3
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[freedman-psi-2004]] —— Freedman PSI 2004 — 把集合交集算出来但不交出名单

@@ -146,5 +146,6 @@ commands.registerCommand({ id: "demo.hello", label: "Hello Tool" }, {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[code-server]] —— code-server — 浏览器里的 VS Code
+- [[gitpod]] —— Gitpod — 预构建云开发环境
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器

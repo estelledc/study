@@ -179,14 +179,4 @@ Vega-Lite 是一种**用 JSON 描述图表**的小语言，由 University of Was
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
-- [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
-- [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[leaflet]] —— Leaflet — 轻量交互式地图
-- [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
-- [[matplotlib]] —— matplotlib — Python 绘图基石
-- [[panel]] —— Panel — 多绘图后端的 Python dashboard
-- [[seaborn]] —— seaborn — matplotlib 之上的一行统计图
-- [[vega-lite]] —— Vega-Lite — 用 JSON 三段式画复合图
-
+- [[papers/panel]] —— Panel — 把 notebook 一键变交互式 web app

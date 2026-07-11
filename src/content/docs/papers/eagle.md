@@ -152,8 +152,6 @@ LLaMA2-Chat 70B + 单 GPU 输出场景（论文 Table 2）：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[rtp-llm-alibaba]] —— RTP-LLM — 把大模型推理服务做成分阶段工厂
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-
+- [[vericache]] —— VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收

@@ -159,9 +159,4 @@ let result = (mask &^ a) |^ ((lognot mask) &^ b)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
-- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
-- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
-
+（暂无反向链接）

@@ -147,3 +147,4 @@ make lint && make test
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[parnas-information-hiding-1972]] —— Parnas 信息隐藏 1972 — 模块化设计原则

@@ -147,3 +147,10 @@ wasmtime --dir=./data::/data app.wasm
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boa-engine]] —— Boa — Rust 写的 ECMAScript 解释器
+- [[quickjs]] —— QuickJS — 口袋里的 JavaScript 引擎
+- [[wamr]] —— WAMR — 塞进单片机也能跑的 Wasm 微运行时
+- [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑
+- [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
+- [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件

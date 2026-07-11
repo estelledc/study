@@ -149,25 +149,16 @@ Qed.
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
-- [[linear-types]] —— 线性类型（Linear Types）
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-- [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
 - [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码
-

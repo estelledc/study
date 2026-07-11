@@ -168,3 +168,6 @@ function dequeue(q) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hazard-pointers-2004]] —— Hazard Pointers — 多线程下安全释放共享节点
+- [[herlihy-moss-tm]] —— Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU

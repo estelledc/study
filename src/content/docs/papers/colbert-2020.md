@@ -150,23 +150,20 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ance-2020]] —— ANCE — 让模型自己挖训练负例，对比学习的"自给自足"
-- [[annoy]] —— Annoy — Spotify 的随机森林近似最近邻索引
-- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[bm25]] —— BM25 — 用概率框架给搜索结果排队
 - [[bpr-2009]] —— BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』
 - [[cocondenser-2021]] —— coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
-- [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[contriever-2021]] —— Contriever — 不用人工标注也能训练稠密检索器
 - [[doc2query-2019]] —— doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
-- [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
-- [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
-- [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
+- [[hullft-ttft]] —— HullFT — 让测试时微调既会挑样本又省算力
+- [[ms-marco-2016]] —— MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[rm3-2001]] —— RM3 — 让搜索引擎自己看一眼结果再重搜一次
 - [[rocketqa-2021]] —— RocketQA — 把稠密检索的训练拧到工业级
 - [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
+- [[tfidf-classic]] —— TF-IDF Classic — 给搜索词分清轻重缓急
+- [[annoy]] —— Annoy — Spotify 的随机森林近似最近邻索引
 - [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
-

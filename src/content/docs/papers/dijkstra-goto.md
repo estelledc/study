@@ -1,5 +1,6 @@
 ---
 title: Dijkstra 1968 — Go To Statement Considered Harmful
+description: "解释 goto 如何破坏程序位置与执行状态之间的可推理关系，并推动结构化控制流。"
 来源: 'Edsger W. Dijkstra. Letters to the editor: Go to statement considered harmful. CACM 11(3):147–148, 1968.'
 日期: 2026-05-30
 分类: 软件工程 / 控制流理论
@@ -145,6 +146,7 @@ def safe_divide(a, b):
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[knuth-literate-1984]] —— Literate Programming — 把程序写成给人读的文章
 - [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[the-os-1968]] —— THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS

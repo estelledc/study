@@ -161,3 +161,22 @@ order_created (offset=42)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
+- [[papers/clickhouse]] —— ClickHouse — 把列存 OLAP 推到硬件极限
+- [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
+- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[papers/emqx]] —— EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接
+- [[flink-2015]] —— Apache Flink — 流批一体的单引擎
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[mqtt-s-2008]] —— MQTT-S 2008 — IoT 发布/订阅协议在传感网的扩展
+- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
+- [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析

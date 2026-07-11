@@ -151,14 +151,8 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bun]] —— Bun — JS 全能运行时
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[cockroach]] —— CockroachDB — 全球分布式 SQL
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[prisma]] —— Prisma — 类型安全 ORM
-- [[redis]] —— Redis — 内存键值数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
-

@@ -158,7 +158,4 @@ Bloom Filter 回答"x 在不在集合里"（成员查询），MinHash 回答"两
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
 - [[simhash-charikar-2002]] —— SimHash — 用随机超平面把余弦相似度变成汉明距离
-- [[turing-1936]] —— Turing 1936 可计算性
-

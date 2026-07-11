@@ -154,5 +154,6 @@ loss = LPIPS(student(x_i, sigma_i), student_ema(x_i1, sigma_{i+1}).detach())
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[diffusion-posterior-finite]] —— Diffusion Posterior Samplers Fail — 用有限样本看清扩散后验采样为什么翻车
+- [[lamport-time-clocks-1978]] —— Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚
+- [[videomla]] —— VideoMLA — 给长视频生成压缩 KV 缓存

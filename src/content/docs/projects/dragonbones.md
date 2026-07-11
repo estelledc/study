@@ -188,3 +188,5 @@ fun MyAnimationScreen() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时

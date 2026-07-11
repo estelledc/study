@@ -167,13 +167,9 @@ class MyAlgo(BaseANN):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 - [[faiss]] —— FAISS — 向量检索的标准件库
 - [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
 - [[locust]] —— Locust — 用 Python 写压测脚本的分布式负载工具
-- [[milvus]] —— Milvus — 开源向量数据库
-- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
-- [[qdrant]] —— Qdrant — Rust 向量数据库
-- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
-

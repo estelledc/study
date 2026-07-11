@@ -150,5 +150,32 @@ with socket.create_connection(("example.com", 443)) as sock:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[aes]] —— AES Rijndael 对称分组密码
+- [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
+- [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
+- [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
+- [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
+- [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
+- [[dingledine-mixminion-2003]] —— Mixminion — 用一次性回信票据保护匿名邮件
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[dot-doh-perf-2020]] —— DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
+- [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
+- [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
+- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[heartbleed-2014]] —— Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[logjam-2015]] —— Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
+- [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
+- [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
+- [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
+- [[reed-onion-routing-1998]] —— Onion Routing 1998 — Tor 前身把匿名连接做成网络积木
+- [[sgx-2013]] —— Intel SGX — 在 CPU 里建一间谁都偷看不了的密室
+- [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
+- [[websocket-rfc-6455]] —— WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
+- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
+- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS

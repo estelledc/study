@@ -149,13 +149,16 @@ R1 推理时输出长这样：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[compose-future-theorems]] —— COMPOSE — 用引用图和 Mathlib 图预测未来定理
 - [[cot]] —— Chain-of-Thought Prompting
 - [[deepseek-coder-2024]] —— DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA
-- [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
+- [[demystifying-data-org]] —— Demystifying Data Organization — 给训练数据排队的四条原则
 - [[llama]] —— LLaMA — Meta 开源大语言模型
-- [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[loong-doc-mt]] —— Loong DocMT — 长文档翻译里的会挑上下文的代理
+- [[mira-rubric]] —— MIRA Rubric — 给混合训练数据先定评分尺再筛选
+- [[ppc-preplan]] —— PPC Preplan — 先想清楚题目类型再规划解法
 - [[ppo]] —— PPO — Proximal Policy Optimization
+- [[reasoning-with-sampling]] —— Reasoning with Sampling — 在关键决策点重采样推理过程
+- [[rim-latent-reasoning]] —— RiM Latent Reasoning — 给 LLM 一块不用说出口的工作记忆
 - [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
-- [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
-
+- [[self-trained-verification]] —— Self-Trained Verification — 让模型先看标准答案学会挑错

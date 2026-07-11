@@ -149,12 +149,6 @@ cat .nx/cache/abc123/terminalOutputs/build.txt
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
-- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
-- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
-- [[rollup]] —— Rollup — ESM 优先的打包器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[webpack]] —— webpack 模块打包
-

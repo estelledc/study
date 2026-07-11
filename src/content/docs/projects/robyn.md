@@ -167,12 +167,4 @@ Robyn 的名字来源于瑞典电子流行歌手 Robyn——框架作者 Sanskar
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
-- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
-
+（暂无反向链接）

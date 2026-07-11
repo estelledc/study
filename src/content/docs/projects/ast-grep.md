@@ -166,14 +166,6 @@ sg --pattern 'request($URL, $OPTS)' \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
-- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[dive]] —— dive — 看清 Docker 镜像每一层加了什么文件的 TUI
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
-

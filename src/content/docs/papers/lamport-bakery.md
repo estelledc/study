@@ -166,3 +166,6 @@ P2: compare (number[1], 1) with (number[2], 2)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dijkstra-1965]] —— Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死
+- [[herlihy-moss-tm]] —— Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU

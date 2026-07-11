@@ -152,19 +152,15 @@ ALTER TABLE users CONFIGURE ZONE USING
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
-- [[leveldb]] —— LevelDB — Google LSM 库
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[projects/badger]] —— Badger — Go 写的键值分离 LSM
+- [[mongo]] —— MongoDB — 文档数据库代表
 - [[pebble]] —— Pebble — CockroachDB 自研 LSM
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[raft]] —— Raft — 易理解的共识算法
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tidb]] —— TiDB — HTAP 分布式数据库
-

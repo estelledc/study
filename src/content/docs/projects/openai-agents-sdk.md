@@ -171,3 +171,5 @@ with trace('Customer support flow'):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aider]] —— Aider — 终端 AI 结对编程 CLI

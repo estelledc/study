@@ -163,26 +163,25 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[calvin]] —— Calvin — 先排队再执行的分布式事务系统
 - [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
+- [[papers/couchdb]] —— CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
 - [[f4-2014]] —— f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库
-- [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
-- [[rethinkdb]] —— RethinkDB — 让数据库自己把更新推给客户端的先驱
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库
 - [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
-
+- [[dragonfly]] —— Dragonfly — 多线程 Redis 替代
+- [[rethinkdb]] —— RethinkDB — 让数据库自己把更新推给客户端的先驱

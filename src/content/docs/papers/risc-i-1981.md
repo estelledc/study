@@ -154,10 +154,7 @@ RISC I 的核心论点：**让硬件简单，把复杂度推给编译器**。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
 - [[case-for-risc-1980]] —— Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命
-- [[llvm]] —— LLVM — 模块化编译器框架
+- [[lee-keystone-2020]] —— Keystone — 用开源 RISC-V 拼一套可定制 TEE
 - [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
 - [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
-- [[ssa]] —— SSA — 静态单赋值形式
-

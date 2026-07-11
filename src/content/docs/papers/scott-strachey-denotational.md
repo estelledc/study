@@ -150,16 +150,9 @@ W 出现在等式两边，不能直接代入算。Scott 的 domain theory 保证
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[backus-fp-1978]] —— Backus FP 1978 — 把程序从赋值循环里解放出来
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-- [[turing-1936]] —— Turing 1936 可计算性
-

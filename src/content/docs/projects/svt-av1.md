@@ -147,3 +147,7 @@ SvtAv1EncApp -i input.yuv -w 1920 -h 1080 --fps 24 \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[kdenlive]] —— Kdenlive — KDE 非线性视频剪辑
+- [[lame]] —— LAME — MP3 编码事实标准
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[shaka-packager]] —— Shaka Packager — 流媒体打包工具

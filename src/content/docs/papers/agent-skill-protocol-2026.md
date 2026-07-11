@@ -150,8 +150,4 @@ Model C -> 技能：汇总回答
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[skills-vs-tools]] —— 工具调用和技能的差异
-- [[agent-runtime]] —— 协议需要运行时治理支持
-- [[workflow-engine]] —— 结合规则引擎实现可靠编排
-- [[error-handling]] —— 失败回滚与重试策略落地
-- [[observable-ai]] —— 输出结构化日志的价值
+（暂无反向链接）

@@ -151,10 +151,4 @@ while (x >= 0) x = x + 1;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
-- [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
-- [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
-
+（暂无反向链接）

@@ -1,5 +1,6 @@
 ---
 title: Nix — 函数式声明式包管理与可重复构建
+description: "介绍 Nix 如何用内容寻址存储和声明式输入实现可重复构建、回滚与多版本共存。"
 来源: 'https://github.com/NixOS/nix'
 日期: 2026-06-05
 分类: CLI
@@ -148,3 +149,16 @@ nix run nixpkgs#jq -- '.name' package.json
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
+- [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
+- [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
+- [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+- [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
+- [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
+- [[openscad]] —— OpenSCAD — 脚本式 CAD
+- [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
+- [[projects/scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
+- [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS

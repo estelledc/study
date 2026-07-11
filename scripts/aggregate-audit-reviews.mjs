@@ -10,6 +10,7 @@
 
 import fs from 'node:fs/promises';
 import { aggregateAuditReviews } from './lib/audit-aggregate.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 
 function parseArgs() {
   const args = { 'zero-base': null, academic: null, engineer: null, out: null };
@@ -28,6 +29,7 @@ function parseArgs() {
 
 async function main() {
   const args = parseArgs();
+  assertBulkOperationAuthorized({ operation: 'aggregate-audit-reviews', requestedItems: 1 });
   const reviews = [];
   for (const key of ['zero-base', 'academic', 'engineer']) {
     const raw = JSON.parse(await fs.readFile(args[key], 'utf8'));

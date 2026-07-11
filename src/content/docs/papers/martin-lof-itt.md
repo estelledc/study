@@ -156,17 +156,10 @@ double n = (2 * n , refl)
 
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
-- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
-- [[linear-types]] —— 线性类型（Linear Types）
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
-

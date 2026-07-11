@@ -153,7 +153,4 @@ VM A 申请了 4G、用了 4G；VM B 申请了 4G、只用 1G。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kvm-2007]] —— KVM 2007 — 把 Linux 内核本身变成 hypervisor
 - [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
-- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
-

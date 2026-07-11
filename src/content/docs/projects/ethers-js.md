@@ -167,17 +167,10 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
-- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
-- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[lodestar]] —— Lodestar — JS/TS 生态里的以太坊共识层客户端
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
-- [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[viem]] —— viem — 现代 TypeScript EVM 库
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
-

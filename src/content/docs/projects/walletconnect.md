@@ -151,13 +151,5 @@ wc:7f6e504...12@2?relay-protocol=irn&symKey=587949...e3
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
-- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
-- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
-- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
-

@@ -147,3 +147,5 @@ console.log(classicalBest, quantumPrediction)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[quantum-supremacy-2019]] —— Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事

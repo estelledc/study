@@ -145,5 +145,10 @@ JVB → Bob(网好):720p | Carol(一般):360p | Dave(4G):180p
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
-
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
+- [[hls.js]] —— hls.js — 浏览器里的 HLS 播放库
+- [[janus-gateway]] —— Janus WebRTC Gateway — 轻量 WebRTC 服务器和插件底座
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[mediasoup]] —— mediasoup — 多人音视频会议的 SFU 路由器
+- [[obs-studio]] —— OBS Studio — 直播推流软件事实标准
+- [[pion]] —— Pion — Go 实现的 WebRTC 协议栈

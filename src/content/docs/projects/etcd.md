@@ -145,6 +145,26 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kubernetes]] —— 控制平面状态依赖 etcd
-- [[raft]] —— 共识层对照
-- [[zookeeper]] —— 协调服务对照
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[papers/k3s]] —— k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制
+- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[lampson-hints-1983]] —— Lampson Hints 1983 — 系统设计思维起点
+- [[raft]] —— Raft — 易理解的共识算法
+- [[raft-2014]] —— Raft 2014 — 把共识拆成能实现的三件事
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
+- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nats]] —— NATS — 极简云原生消息系统
+- [[nats-server]] —— NATS Server — 极简云原生消息总线
+- [[nsq]] —— NSQ — Go 写的去中心化消息队列
+- [[pebble]] —— Pebble — CockroachDB 自研 LSM
+- [[redis]] —— Redis — 内存键值数据库
+- [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
+- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
+- [[tikv]] —— TiKV — 分布式事务 KV
+- [[velero]] —— Velero — Kubernetes 集群备份与迁移
+- [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
+- [[zookeeper]] —— Apache ZooKeeper — 给一群机器装一个共同的小脑

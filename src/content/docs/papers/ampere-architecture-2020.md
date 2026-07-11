@@ -174,3 +174,44 @@ A100 SXM4 80GB:       80GB HBM2e 2039 GB/s, 312 FP16/BF16 Tensor,    156 TF32, 1
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aurora-exascale-2024]] —— Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
+- [[awq-2023]] —— AWQ 2023 — 把 70B 大模型权重压到 35GB
+- [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
+- [[biggan-2018]] —— BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
+- [[blackwell-architecture-2024]] —— NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化
+- [[brook-2004]] —— Brook for GPUs — 让显卡第一次能用人话编程
+- [[burgess-2020-turing-rt]] —— Burgess 2020 RTX ON — Turing 把光线追踪做进硅片
+- [[cell-be-2005]] —— Cell BE — 一颗 CPU 里塞 8 个加速核
+- [[cuda]] —— CUDA — 把显卡变成通用并行计算平台
+- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
+- [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
+- [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
+- [[dash-numa-1992]] —— Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
+- [[deering-1988-triangle-processor]] —— Deering 1988 Triangle Processor — 现代 GPU 的祖先架构
+- [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
+- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[flexsc-2010]] —— FlexSC — 把系统调用从同步陷入改成异步队列
+- [[goldsmith-1987-bvh]] —— Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
+- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
+- [[hopper-architecture-2022]] —— NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制
+- [[karis-2014-taa]] —— Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿
+- [[karis-2014-ue4-pbr]] —— Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒
+- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
+- [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
+- [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
+- [[newcombe-2011-kinectfusion]] —— KinectFusion — 用消费级深度相机实时重建三维世界
+- [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
+- [[ntk-2018]] —— NTK — 把无限宽的神经网络变成一个可解的核方法
+- [[nvlink-nvswitch-2018]] —— NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器
+- [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
+- [[quantum-supremacy-2019]] —— Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事
+- [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
+- [[smoothquant-2023]] —— SmoothQuant 2023 — 把激活的烫手山芋扔给权重
+- [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
+- [[sycl-cpp-2020]] —— SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑
+- [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
+- [[thrust-2010]] —— Thrust — 让 GPU 编程像写 STL 一样一行调用
+- [[tomasulo-1967]] —— Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序
+- [[unified-memory-2014]] —— CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图
+- [[williams-1983-mipmap]] —— Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)

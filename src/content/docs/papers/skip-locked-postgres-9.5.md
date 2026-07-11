@@ -178,5 +178,4 @@ UPDATE inventory
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
-
+- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎

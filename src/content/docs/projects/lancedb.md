@@ -150,8 +150,4 @@ table.search(query_vec) \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[lance]] —— Lance — AI 数据列存格式
-- [[milvus]] —— Milvus — 开源向量数据库
-- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
-

@@ -159,13 +159,4 @@ PartTimeEmployee ⊂ Employee
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
-- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
-- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
-- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
-- [[sequelize]] —— Sequelize — 老牌 Node ORM
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-
+（暂无反向链接）

@@ -182,8 +182,5 @@ const r = await new Counter({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
-

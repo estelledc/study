@@ -156,11 +156,4 @@ public interface ILeaderboardGrain : IGrainWithStringKey {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
-- [[raft]] —— Raft — 易理解的共识算法
-- [[temporal]] —— Temporal — 持久化工作流引擎
-- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
-

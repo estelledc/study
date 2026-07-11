@@ -183,4 +183,8 @@ client.onmessage = (event) => console.log(event.data);
 - [[react-native]] —— 同属跨端开发讨论，但 RN 面向移动原生视图，Neutralinojs 面向桌面 WebView。
 
 ## 反向链接
+
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[electron-builder]] —— electron-builder — Electron 打包发布事实标准

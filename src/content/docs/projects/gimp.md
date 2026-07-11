@@ -189,3 +189,6 @@ gimptool --build-noui c-hello-world.c
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[inkscape]] —— Inkscape — 矢量图形编辑器
+- [[krita]] —— Krita — 数字绘画专业编辑器

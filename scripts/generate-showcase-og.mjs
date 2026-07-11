@@ -1,9 +1,12 @@
 import sharp from 'sharp';
 import { fileURLToPath } from 'node:url';
 
+// Manual maintenance utility only. SVG text rasterization follows the fonts
+// installed on the host, so portable builds consume the reviewed WebP tracked
+// in Git instead of regenerating different bytes on macOS and Linux.
 const width = 1200;
 const height = 630;
-const output = fileURLToPath(new URL('../public/og-study.png', import.meta.url));
+const output = fileURLToPath(new URL('../public/og-study.webp', import.meta.url));
 
 const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
@@ -38,5 +41,5 @@ const svg = `
   </g>
 </svg>`;
 
-await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(output);
-console.log(`Generated public/og-study.png (${width}×${height})`);
+await sharp(Buffer.from(svg)).webp({ effort: 6, quality: 90, smartSubsample: true }).toFile(output);
+console.log(`Generated public/og-study.webp (${width}×${height})`);

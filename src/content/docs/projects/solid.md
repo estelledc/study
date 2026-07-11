@@ -164,14 +164,9 @@ function Cart() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[parnas-information-hiding-1972]] —— Parnas 信息隐藏 1972 — 模块化设计原则
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[mobx]] —— MobX — 让 state 像电子表格一样自动重算
 - [[qwik]] —— Qwik — Resumable UI 框架
-- [[react]] —— React UI 组件库
-- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[svelte]] —— Svelte — 编译时 UI 框架
-- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[vue]] —— Vue.js — 渐进式 UI 框架
-- [[zustand]] —— Zustand — 极简 React 状态管理
-

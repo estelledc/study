@@ -152,3 +152,18 @@ print(append_token("prompt_block"))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[awq]] —— AWQ — 看激活脸色给权重打折
+- [[awq-2023]] —— AWQ 2023 — 把 70B 大模型权重压到 35GB
+- [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化
+- [[flashattention-3-2024]] —— FlashAttention-3 — 面向 H100 的异步与低精度注意力
+- [[kv-cache-budget-2026]] —— KVBudget — 给每条请求划一块 KV cache 预算
+- [[kv-fold]] —— KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文
+- [[nestedkv]] —— NestedKV — 用三层记忆决定 KV cache 该留谁
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit
+- [[paged-attention-vllm]] —— PagedAttention — 以页替代整段内存的显存管理
+- [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[smoothquant-2023]] —— SmoothQuant 2023 — 把激活的烫手山芋扔给权重
+- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
+- [[tree-of-attention-2026]] —— Tree-of-Attention — 把长上下文拆成树再分支注意
+- [[vericache]] —— VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收

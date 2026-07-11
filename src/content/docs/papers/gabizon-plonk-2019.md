@@ -164,3 +164,5 @@ open A(z), B(z), C(z), Z(z)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bowe-halo-2019]] —— Halo 2019 — 不靠可信仪式递归压缩证明

@@ -149,3 +149,7 @@ wasmer run --mapdir=/data:. ./app.wasm
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[quickjs]] —— QuickJS — 口袋里的 JavaScript 引擎
+- [[wamr]] —— WAMR — 塞进单片机也能跑的 Wasm 微运行时
+- [[wasmtime]] —— Wasmtime — Rust 实现的 WebAssembly 运行时

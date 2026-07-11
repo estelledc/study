@@ -157,13 +157,7 @@ inspect 变量    ████████████              58%
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
-- [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
-- [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
-- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
-

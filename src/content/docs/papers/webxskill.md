@@ -148,8 +148,5 @@ fill('input[id="search-query"]', query)  # 步骤 2：填查询框（保留）
 - [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
-- [[react]] —— React UI 组件库
 - [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
-- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
-- [[voyager]] —— Voyager — LLM 终身学习智能体

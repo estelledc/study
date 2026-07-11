@@ -157,15 +157,8 @@ teku --network=hoodi \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
+- [[lodestar]] —— Lodestar — JS/TS 生态里的以太坊共识层客户端
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
-- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
-- [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
-

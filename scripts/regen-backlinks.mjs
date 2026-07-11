@@ -1,113 +1,175 @@
-// 扫描所有 papers/projects 笔记，找出 [[slug]] 引用关系，
-// 把 "## 反向链接" 段下面的占位 HTML 注释替换为真实反向链接列表。
-//
-// 工作方式：
-// 1. 收集 path → 该 path 引用了哪些 slug
-// 2. 翻转成 slug → 谁引用了我（反向）
-// 3. 对每个文件，把 ## 反向链接 段重写成自动列表
-// 4. 没有反向链接的文件，留下 "（暂无反向链接）" 占位
-//
-// 用法：node scripts/regen-backlinks.mjs
+#!/usr/bin/env node
 
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { PAPERS_DIR, PROJECTS_DIR } from './lib/paths.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
 
-const ROOTS = {
-  papers: PAPERS_DIR,
-  projects: PROJECTS_DIR,
-};
+import {
+  createAliasIndex,
+  createNoteIndex,
+  extractWikilinks,
+  formatWikilinkTarget,
+  loadAliasConfig,
+  loadNoteRecords,
+  resolveWikilink,
+} from './lib/note-id.mjs';
+import { DATA_DIR, DOCS_DIR, ROOT } from './lib/paths.mjs';
 
-const WIKI_RE = /\[\[([a-z0-9_\-]+)(?:\|[^\]]+)?\]\]/g;
-// 匹配 "## 反向链接" 起到下一个 H2 或 EOF
-const BACKLINK_SECTION_RE = /## 反向链接\s*\n[\s\S]*?(?=\n## |\n?$)/;
+const GENERATED_MARKER = '<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->';
+const ALIAS_PATH = path.join(DATA_DIR, 'wikilink-aliases.json');
 
-function scanFile(path) {
-  const content = readFileSync(path, 'utf8');
-  const refs = new Set();
-  let m;
-  while ((m = WIKI_RE.exec(content)) !== null) {
-    refs.add(m[1]);
-  }
-  WIKI_RE.lastIndex = 0;
-  return { content, refs };
+export function locateBacklinkSection(content) {
+  const heading = /^## 反向链接[ \t]*$/m.exec(content);
+  if (!heading) return null;
+  const start = heading.index;
+  const afterHeading = start + heading[0].length;
+  const nextHeading = /\n##[ \t]+/.exec(content.slice(afterHeading));
+  const end = nextHeading ? afterHeading + nextHeading.index + 1 : content.length;
+  const section = content.slice(start, end);
+  return { start, end, section, generated: section.includes(GENERATED_MARKER) };
 }
 
-function getTitle(content, slug) {
-  const m = content.match(/^title:\s*(.+?)$/m);
-  if (!m) return slug;
-  return m[1].trim().replace(/^['"](.*)['"]$/, '$1');
+export function stripGeneratedBacklinkSection(content) {
+  const located = locateBacklinkSection(content);
+  if (!located?.generated) return content;
+  return content.slice(0, located.start) + content.slice(located.end);
 }
 
-// 第一遍：扫所有文件，建 slug → {area, title, refs}
-const ALL = new Map();
-
-for (const [area, dir] of Object.entries(ROOTS)) {
-  for (const f of readdirSync(dir)) {
-    if (!f.endsWith('.md')) continue;
-    const slug = f.replace(/\.md$/, '');
-    const path = join(dir, f);
-    const { content, refs } = scanFile(path);
-    const title = getTitle(content, slug);
-    ALL.set(slug, { area, path, content, title, refs });
-  }
+function titleFromContent(content, slug) {
+  const match = content.match(/^title:\s*(.+?)$/m);
+  return match ? match[1].trim().replace(/^['"](.*)['"]$/, '$1') : slug;
 }
 
-// 第二遍：翻转 refs → 反向 map
-const BACKREFS = new Map(); // slug → Set of slugs that reference it
-
-for (const [slug, info] of ALL) {
-  for (const target of info.refs) {
-    if (!BACKREFS.has(target)) BACKREFS.set(target, new Set());
-    BACKREFS.get(target).add(slug);
-  }
+function renderBacklinkSection(note, incoming, notesById, noteIndex, atEof) {
+  const body = incoming.length === 0
+    ? '（暂无反向链接）'
+    : incoming.map((sourceId) => {
+      const source = notesById.get(sourceId);
+      const target = formatWikilinkTarget(sourceId, { noteIndex });
+      return `- [[${target}]] —— ${source.title}`;
+    }).join('\n');
+  const section = `## 反向链接\n\n${GENERATED_MARKER}\n\n${body}`;
+  return atEof ? `${section}\n` : `${section}\n\n`;
 }
 
-// 第三遍：写回 ## 反向链接 段
-let updated = 0;
-let skipped = 0;
+export function buildBacklinkPlan(notes, { aliasRecords = [] } = {}) {
+  const normalized = notes.map((note) => ({
+    ...note,
+    title: note.title || titleFromContent(note.content, note.slug),
+  }));
+  const noteIndex = createNoteIndex(normalized);
+  const aliasIndex = createAliasIndex(aliasRecords, noteIndex);
+  const notesById = new Map(normalized.map((note) => [note.id, note]));
+  const backrefs = new Map();
+  let resolvedReferences = 0;
+  let unresolvedReferences = 0;
 
-for (const [slug, info] of ALL) {
-  const incoming = BACKREFS.get(slug);
-  let newSection;
-
-  if (!incoming || incoming.size === 0) {
-    newSection = `## 反向链接
-
-<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）
-`;
-  } else {
-    // 排序：按 area 分组，每组按 slug 字母序
-    const sorted = [...incoming].sort();
-    const lines = sorted.map((from) => {
-      const fromInfo = ALL.get(from);
-      if (!fromInfo) return null;
-      return `- [[${from}]] —— ${fromInfo.title}`;
-    }).filter(Boolean);
-
-    newSection = `## 反向链接
-
-<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-${lines.join('\n')}
-`;
+  for (const source of normalized) {
+    const authoredContent = stripGeneratedBacklinkSection(source.content);
+    const seenTargets = new Set();
+    for (const link of extractWikilinks(authoredContent)) {
+      const resolved = resolveWikilink(link.parsed, {
+        sourceArea: source.area,
+        noteIndex,
+        aliasIndex,
+      });
+      if (!resolved.ok) {
+        unresolvedReferences += 1;
+        continue;
+      }
+      resolvedReferences += 1;
+      if (seenTargets.has(resolved.id)) continue;
+      seenTargets.add(resolved.id);
+      if (!backrefs.has(resolved.id)) backrefs.set(resolved.id, new Set());
+      backrefs.get(resolved.id).add(source.id);
+    }
   }
 
-  let next = info.content;
-  if (BACKLINK_SECTION_RE.test(info.content)) {
-    next = info.content.replace(BACKLINK_SECTION_RE, newSection);
-  } else {
-    // 没有 ## 反向链接 段就跳过（不主动加）
-    skipped++;
-    continue;
+  const changes = [];
+  let noSection = 0;
+  let manualSection = 0;
+  for (const note of normalized) {
+    const located = locateBacklinkSection(note.content);
+    if (!located) {
+      noSection += 1;
+      continue;
+    }
+    if (!located.generated) {
+      manualSection += 1;
+      continue;
+    }
+    const incoming = [...(backrefs.get(note.id) || [])].sort();
+    const replacement = renderBacklinkSection(
+      note,
+      incoming,
+      notesById,
+      noteIndex,
+      located.end === note.content.length,
+    );
+    const next = note.content.slice(0, located.start) + replacement + note.content.slice(located.end);
+    if (stripGeneratedBacklinkSection(next) !== stripGeneratedBacklinkSection(note.content)) {
+      throw new Error(`backlink generation escaped the generated section: ${note.id}`);
+    }
+    if (next !== note.content) changes.push({ ...note, next, incoming });
   }
 
-  if (next !== info.content) {
-    writeFileSync(info.path, next, 'utf8');
-    updated++;
-  }
+  return {
+    changes,
+    backrefs,
+    noteIndex,
+    stats: {
+      notes: normalized.length,
+      changed: changes.length,
+      no_section: noSection,
+      manual_section: manualSection,
+      resolved_references: resolvedReferences,
+      unresolved_references: unresolvedReferences,
+      duplicate_slugs: [...noteIndex.bySlug.values()].filter((areas) => areas.size > 1).length,
+    },
+  };
 }
 
-console.log(`backlinks: ${updated} 篇更新，${skipped} 篇跳过（无 "## 反向链接" 段）`);
+function parseArgs(argv) {
+  const flags = new Set(argv.slice(2));
+  const allowed = new Set(['--dry-run', '--check', '--json']);
+  for (const flag of flags) {
+    if (!allowed.has(flag)) throw new Error(`unknown argument: ${flag}`);
+  }
+  return {
+    dryRun: flags.has('--dry-run') || flags.has('--check'),
+    check: flags.has('--check'),
+    json: flags.has('--json'),
+  };
+}
+
+export function runBacklinkGeneration({
+  docsDir = DOCS_DIR,
+  aliasPath = ALIAS_PATH,
+  dryRun = false,
+  check = false,
+  json = false,
+} = {}) {
+  const notes = loadNoteRecords({ docsDir, readContent: true });
+  const plan = buildBacklinkPlan(notes, { aliasRecords: loadAliasConfig(aliasPath) });
+  if (!dryRun) {
+    for (const change of plan.changes) fs.writeFileSync(change.path, change.next, 'utf8');
+  }
+
+  const report = {
+    ...plan.stats,
+    mode: dryRun ? (check ? 'check' : 'dry-run') : 'write',
+    changed_paths: plan.changes.map((change) => path.relative(ROOT, change.path).replaceAll(path.sep, '/')),
+  };
+  if (json) console.log(JSON.stringify(report, null, 2));
+  else {
+    console.log(
+      `backlinks: ${report.changed} 篇${dryRun ? '待更新' : '更新'}，` +
+      `${report.no_section} 篇跳过（无生成段），${report.manual_section} 篇保留手写段`,
+    );
+  }
+  if (check && plan.changes.length > 0) process.exitCode = 1;
+  return report;
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runBacklinkGeneration(parseArgs(process.argv));
+}

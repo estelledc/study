@@ -150,3 +150,10 @@ trainer.train()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
+- [[demystifying-data-org]] —— Demystifying Data Organization — 给训练数据排队的四条原则
+- [[loong-doc-mt]] —— Loong DocMT — 长文档翻译里的会挑上下文的代理
+- [[ppo]] —— PPO — Proximal Policy Optimization
+- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
+- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO

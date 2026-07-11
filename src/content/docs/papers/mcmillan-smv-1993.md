@@ -152,12 +152,4 @@ NuSMV / Cadence SMV / ABC 全是 SMV 1992 的徒孙；TLA+ 选了别的路（可
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
-- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
-- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[holzmann-spin-1997]] —— Holzmann SPIN 1997 — LTL 显式模型检测的工业标准工具
-- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
-- [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
-

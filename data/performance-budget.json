@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "dist": {
+    "max_files": 6000,
+    "max_bytes": 230686720,
+    "max_html_bytes": 614400
+  },
+  "pagefind": {
+    "max_files": 3500,
+    "max_bytes": 31457280
+  },
+  "public": {
+    "max_files": 800,
+    "max_bytes": 52428800
+  },
+  "atlas": {
+    "max_output_files": 200,
+    "max_output_bytes": 10485760,
+    "max_chunk_entries": 100
+  },
+  "repository": {
+    "max_tracked_files": 5000,
+    "max_tracked_bytes": 314572800,
+    "max_source_archive_bytes": 104857600
+  },
+  "relative_growth": {
+    "dist.files": 0.1,
+    "dist.bytes": 0.15,
+    "pagefind.files": 0.2,
+    "pagefind.bytes": 0.2,
+    "atlas.output_files": 0.2,
+    "atlas.output_bytes": 0.2,
+    "repository.tracked_files": 0.1,
+    "repository.tracked_bytes": 0.15,
+    "repository.source_archive_bytes": 0.15
+  },
+  "advisory_only": [
+    "wall_clock_ms",
+    "peak_rss_bytes"
+  ]
+}

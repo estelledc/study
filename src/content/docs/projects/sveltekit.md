@@ -165,10 +165,4 @@ export const actions = {
 
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
-- [[next-js]] —— Next.js — React 全栈框架
-- [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[react]] —— React UI 组件库
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
-- [[svelte]] —— Svelte — 编译时 UI 框架
-- [[vue]] —— Vue.js — 渐进式 UI 框架
-

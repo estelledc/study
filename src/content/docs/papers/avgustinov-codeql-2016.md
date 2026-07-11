@@ -151,3 +151,6 @@ select eq
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aflgo-2017]] —— AFLGo — 让灰盒 fuzzing 朝目标代码前进
+- [[program-shepherding-2002]] —— Program Shepherding — 给每次跳转安排门卫
+- [[securify-2018]] —— Securify 2018 — 用规则自动查智能合约漏洞

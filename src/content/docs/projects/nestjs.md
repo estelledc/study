@@ -178,4 +178,19 @@ class UsersController {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-
+- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
+- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
+- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
+- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来

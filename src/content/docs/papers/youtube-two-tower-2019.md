@@ -144,11 +144,7 @@ last[j] = t
 
 - [[bert4rec-2019]] —— BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模
 - [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
-- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
-- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[koren-mf-2009]] —— Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书
 - [[sasrec-2018]] —— SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
 - [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
-- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
 - [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
-- [[word2vec]] —— Word2Vec — 词向量奠基

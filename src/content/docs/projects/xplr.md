@@ -169,8 +169,4 @@ xplr.config.modes.builtin.default.key_bindings.on_key.Y = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
-- [[fzf]] —— fzf — 命令行模糊查找
-- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
-- [[nnn]] —— nnn — 50KB 内存就能跑的极简终端文件管理器
-- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+（暂无反向链接）

@@ -158,8 +158,4 @@ task "legacy-app" {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[raft]] —— Raft — 易理解的共识算法
 - [[vault]] —— Vault — HashiCorp 把"密码本"做成可编程基础设施
-- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
-

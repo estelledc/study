@@ -154,13 +154,6 @@ def chandy_lamport_to_cut(snapshot):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
-- [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
-- [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 - [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
-- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lamport-time-clocks-1978]] —— Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
-- [[paxos]] —— Paxos — 分布式共识算法
-- [[raft]] —— Raft — 易理解的共识算法
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-

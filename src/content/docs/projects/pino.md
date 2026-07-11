@@ -149,11 +149,4 @@ const log = pino(pino.transport({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[grafana]] —— Grafana — 监控可视化看板
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
-- [[nginx]] —— nginx — 高性能 Web 服务器
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
-

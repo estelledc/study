@@ -1,0 +1,56 @@
+# Wikilink 身份与治理
+
+## 身份合同
+
+- 笔记主键是 `area::slug`，area 只允许 `papers`、`projects`。
+- slug 与文件名一致，规则为小写字母、数字、点、下划线和连字符，首字符必须是字母或数字。
+- 公开 wikilink 保留三种输入：裸 slug、`area/slug`、旧的 `area:slug`；`area::slug` 只用于脚本和数据，不改变公开 URL。
+- 裸链接在 papers/projects 笔记内优先解析到同 area；全仓唯一 slug 可跨 area 解析；顶层页面遇到跨区同名必须显式 namespace。
+
+唯一实现位于 `scripts/lib/note-id.mjs`。remark、backlink 与 audit 不再维护各自的 slug 正则。
+
+## Alias
+
+`data/wikilink-aliases.json` 只接受显式记录：
+
+```json
+{
+  "version": 1,
+  "aliases": [
+    { "from": "papers::old-slug", "to": "papers::new-slug" }
+  ]
+}
+```
+
+`from` 不能覆盖现有笔记，同一 from 不能有多条定义，最终 target 必须存在；链式 alias 可以使用，但循环会让 audit 失败。Alias 只改变解析结果，不创建旧 URL、不改写正文。
+
+## 历史预算
+
+`data/wikilink-baseline.json` 按 `source area::slug + target` 聚合，不复制正文。每组必须有 category、owner 与 decision；类别固定为：
+
+- `typo`
+- `alias`
+- `planned-note`
+- `external-concept`
+- `intentional-placeholder`
+- `unknown`
+
+初始基线保守地把尚未人工判定的历史项标为 `unknown / content-maintainers / triage-required`。审计同时执行总量和逐组非增长：新增 unresolved、现有组新增 occurrence、顶层 unresolved、显式 namespace missing 都会失败。`planned-note` 只是规划分类，不授权自动生产正文。
+
+常用命令：
+
+```bash
+node scripts/audit-wikilink-ambiguity.mjs --json
+node scripts/regen-backlinks.mjs --dry-run --json
+node scripts/regen-backlinks.mjs --check
+```
+
+更新 baseline 是需要单独审查的动作，不能作为修复审计失败的默认手段。必须说明新增项的 owner/decision，并确认没有正文被改写。
+
+如果不可变上游 commit 已经整体替换受保护正文，baseline 迁移还必须写入 `data/wikilink-baseline-transition.json`：绑定旧/新 baseline SHA-256、旧/新 source commit、occurrence/group 总量和新增/增长及移除/下降组数。审计会验证 transition 的目标哈希、commit 和计数与当前 baseline 完全一致；这允许保留上游事实，但不能给当前 PR 新增 wikilink 留绕过入口。
+
+## Backlink 写回边界
+
+生成器只识别带固定 HTML marker 的自动生成段；没有 marker 的手写「反向链接」段保持 byte-identical。ALL 与 BACKREFS 均以 NoteId 为 key，跨区重复 slug 不再覆盖。重复 slug 的生成链接使用 `area/slug`，唯一 slug 继续使用裸形式。
+
+2026-07-11 的获批写回只更新 marker-owned 自动生成段：1,845 个文件发生变化，124 个无生成段文件保持未改，2 个手写「反向链接」文件保持整文件与 section SHA-256 不变。逐文件移除自动段后，写回前后正文 byte-identical；连续两次 `--check --json` 均为 `changed=0`。写回后的统计为 1,975 篇笔记、18,501 个 resolved occurrence、1,474 个 unresolved occurrence。后续生成仍须先 dry-run，并在独立提交中证明非生成正文没有变化。

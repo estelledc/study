@@ -150,12 +150,6 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
-- [[emacs]] —— GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统
 - [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
 - [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
 - [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
-- [[textmate]] —— TextMate — macOS 上定义 bundle 宏系统的编辑器
-- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
-- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
-

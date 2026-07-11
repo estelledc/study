@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "study-review-receipt-v1",
+  "title": "Study review receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generation",
+    "predecessor_digest_sha256",
+    "note",
+    "source_revision",
+    "research_input_sha256",
+    "reviewers",
+    "waivers",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": { "const": "study-review-receipt-v1" },
+    "generation": { "type": "integer", "minimum": 1 },
+    "predecessor_digest_sha256": {
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ]
+    },
+    "note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["area", "slug", "digest_sha256"],
+      "properties": {
+        "area": { "enum": ["papers", "projects"] },
+        "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_.-]*$" },
+        "digest_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "source_revision": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "research_input_sha256": { "$ref": "#/$defs/sha256" },
+    "reviewers": {
+      "type": "array",
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/reviewer" }
+    },
+    "waivers": {
+      "type": "array",
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/waiver" }
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "role": { "enum": ["ZERO_BASE", "ENGINEER", "ACADEMIC"] },
+    "mode": {
+      "enum": ["ACTUAL_RUN", "STATIC_REVIEW", "MANUAL_SIMULATION", "NOT_APPLICABLE"]
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review_mode", "code_mode"],
+      "properties": {
+        "review_mode": { "$ref": "#/$defs/mode" },
+        "code_mode": { "$ref": "#/$defs/mode" },
+        "evidence_artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^data/review-evidence/(papers|projects)/[a-z0-9][a-z0-9_.-]*/[a-z0-9][a-z0-9_.-]*\\.json$"
+            },
+            "sha256": { "$ref": "#/$defs/sha256" }
+          }
+        }
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "reviewer_version",
+        "decision",
+        "score",
+        "warnings",
+        "execution"
+      ],
+      "properties": {
+        "role": { "$ref": "#/$defs/role" },
+        "reviewer_version": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "decision": { "enum": ["PASS", "PASS_WITH_NOTES", "FAIL"] },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "warnings": {
+          "type": "array",
+          "maxItems": 20,
+          "items": { "type": "string", "maxLength": 240 }
+        },
+        "execution": { "$ref": "#/$defs/execution" }
+      }
+    },
+    "waiver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "reason_code", "approved_by_role", "created_at"],
+      "properties": {
+        "role": { "$ref": "#/$defs/role" },
+        "reason_code": {
+          "enum": ["NOT_APPLICABLE", "EXTERNAL_DEPENDENCY", "LEGACY_CONTENT"]
+        },
+        "approved_by_role": { "const": "MAINTAINER" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

@@ -166,3 +166,25 @@ g_signal_connect (data.app_sink, "new-sample", G_CALLBACK (new_sample), &data);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ant-media-server]] —— Ant Media Server — WebRTC / CMAF 直播服务
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀
+- [[dash.js]] —— dash.js — Web DASH 播放器官方参考实现
+- [[ffmpeg-kit]] —— FFmpegKit — 把 FFmpeg 装进移动 App 的封装层
+- [[flac]] —— FLAC — 无损音频压缩事实标准
+- [[janus-gateway]] —— Janus WebRTC Gateway — 轻量 WebRTC 服务器和插件底座
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[lame]] —— LAME — MP3 编码事实标准
+- [[libvpx]] —— libvpx — VP8/VP9 编解码器
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
+- [[pion]] —— Pion — Go 实现的 WebRTC 协议栈
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[streamlink]] —— Streamlink — 把直播页变成可播的流
+- [[video.js]] —— Video.js — Web 视频播放器框架
+- [[vips]] —— libvips — 流式低内存图像库
+- [[x264]] —— x264 — H.264/AVC 编码器
+- [[x265]] —— x265 — HEVC/H.265 编码器
+- [[yt-dlp]] —— yt-dlp — 统一多站点下载器 CLI

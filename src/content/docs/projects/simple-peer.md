@@ -161,8 +161,4 @@ function sendFile(peer, file) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[peerjs-server]] —— peerjs-server — 只管握手不管传话的 WebRTC 信令服务器
-- [[playwright]] —— Playwright — 跨浏览器自动化测试
-- [[webrtc-rs]] —— webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion
-

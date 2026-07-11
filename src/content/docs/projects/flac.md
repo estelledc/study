@@ -165,3 +165,7 @@ metaflac --preserve-modtime --remove-tag=DESCRIPTION --remove-tag=COMMENT album.
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[audacity]] —— Audacity — 开源音频剪辑里的瑞士军刀
+- [[fdk-aac]] —— FDK-AAC — Fraunhofer AAC 编解码库
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀

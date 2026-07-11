@@ -169,16 +169,10 @@ Plot.plot({
 - [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
 - [[chart-js]] —— Chart.js — Canvas 渲染入门级图表
 - [[chartist]] —— Chartist — 极简 SVG 图表
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
-- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
-- [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
-- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
+- [[regl]] —— regl — 函数式 WebGL 封装
 - [[vega]] —— Vega — 整张图就是一棵 JSON
-- [[vega-lite]] —— Vega-Lite — 用 JSON 三段式画复合图
+- [[projects/vega-lite]] —— Vega-Lite — 高层声明式可视化语法
 - [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
-

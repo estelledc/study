@@ -171,3 +171,5 @@ Terraform 里 provider 块通常要按 region 手写多份。OpenTofu 1.9 起可
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[terraform]] —— Terraform — 基础设施即代码

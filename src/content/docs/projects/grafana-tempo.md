@@ -173,3 +173,7 @@ Metrics-Generator（可选）从 trace 流自动算 RED：Rate / Errors / Durati
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
+- [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
+- [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台

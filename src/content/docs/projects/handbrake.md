@@ -147,7 +147,16 @@ HandBrake 诞生于 2003 年，最初由法国开发者 Eric Petit（网名 tite
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[flac]] —— FLAC — 无损音频压缩事实标准
+- [[gimp]] —— GIMP — GNU 图像处理程序
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[lame]] —— LAME — MP3 编码事实标准
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
 - [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
+- [[nodegui]] —— nodegui — 用 Node.js 写原生桌面窗口
+- [[obs-studio]] —— OBS Studio — 直播推流软件事实标准
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
 - [[shotcut]] —— Shotcut — 零成本入门视频剪辑的开源选择
-
+- [[svt-av1]] —— SVT-AV1 — Intel 主导的 AV1 编码器
+- [[x264]] —— x264 — H.264/AVC 编码器
+- [[x265]] —— x265 — HEVC/H.265 编码器

@@ -157,3 +157,20 @@ accelerate launch train_dreambooth.py \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
+- [[biggan-2018]] —— BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
+- [[classifier-free-guidance-2022]] —— Classifier-Free Guidance — 让扩散模型自己听懂条件
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[consistency-models-2023]] —— Consistency Models — 把 50 步扩散压成 1 步出图
+- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
+- [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步
+- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[dit]] —— DiT — Diffusion Transformer
+- [[dreamfusion-2022]] —— DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
+- [[edm-2022]] —— EDM — 把扩散模型的训练配方一次拆清楚
+- [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
+- [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
+- [[stylegan2-2020]] —— StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉
+- [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
+- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI

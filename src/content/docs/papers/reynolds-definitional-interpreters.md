@@ -158,20 +158,13 @@ let run e = eval e [] (fun v -> v)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
-- [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
-
+- [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎

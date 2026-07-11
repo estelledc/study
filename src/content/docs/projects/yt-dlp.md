@@ -147,3 +147,5 @@ yt-dlp -f "bv*+ba/b" \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[streamlink]] —— Streamlink — 把直播页变成可播的流

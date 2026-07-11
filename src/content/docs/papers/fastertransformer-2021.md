@@ -149,14 +149,13 @@ cache_v: [layer, max_seq_len, n_head, head_dim]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[flashattention-2]] —— FlashAttention-2 — 更高吞吐 Attention 的可执行优化
+- [[flashattention-3-2024]] —— FlashAttention-3 — 面向 H100 的异步与低精度注意力
 - [[graphormer-2021]] —— Graphormer — 标准 Transformer 直接刷爆 GNN
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
+- [[paged-attention]] —— PagedAttention — 把 KV cache 当虚拟内存页来管理
+- [[paged-attention-vllm]] —— PagedAttention — 以页替代整段内存的显存管理
 - [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
 - [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-

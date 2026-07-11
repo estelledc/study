@@ -156,3 +156,9 @@ npx eas build --platform android
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[capacitor]] —— Capacitor — 把 Web 应用装进原生 App 的运行时
+- [[hermes]] —— Hermes — Facebook 的 React Native JS 引擎
+- [[ionic-framework]] —— Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱
+- [[nativescript]] —— NativeScript — 用 JS/TS 直接驱动原生控件
+- [[react-native]] —— React Native — 一套代码跑多端的跨端运行时

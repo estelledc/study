@@ -178,3 +178,18 @@ terraform {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[aws-spot-best-practices]] —— AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回
+- [[coder]] —— Coder — 自托管开发环境平台
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
+- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
+- [[projects/kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
+- [[opentofu]] —— OpenTofu — 社区接手的 Terraform
+- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
+- [[pulumi]] —— Pulumi — 用真正的编程语言写云资源清单
+- [[sops]] —— SOPS — 让密码也能放心进 Git
+- [[vault]] —— Vault — HashiCorp 把"密码本"做成可编程基础设施

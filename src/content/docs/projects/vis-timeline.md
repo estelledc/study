@@ -142,8 +142,4 @@ new Timeline(document.getElementById('viz'), items, {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
-- [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
-- [[timelinejs]] —— TimelineJS — 把 Google Sheet 一键变成新闻时间线
-- [[vis-network]] —— vis-network — barnesHut 物理引擎驱动的网络图
+- [[projects/timelinejs]] —— TimelineJS — 把 Google Sheet 一键变成新闻时间线

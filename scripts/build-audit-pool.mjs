@@ -7,6 +7,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { listAreaNotes } from './lib/content-store.mjs';
 import { extractFrontmatterBlock, hasFrontmatterKey, parseFrontmatterKeyValues } from './lib/frontmatter.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import { AUDIT_POOL_PATH, ROOT } from './lib/paths.mjs';
 
 const STD_H2 = [
@@ -84,6 +85,7 @@ async function loadExisting() {
 }
 
 async function main() {
+  assertBulkOperationAuthorized({ operation: 'build-audit-pool', requestedItems: 1 });
   const force = process.argv.includes('--force');
   const existing = force ? new Map() : await loadExisting();
   const papers = await listAreaNotes('papers');

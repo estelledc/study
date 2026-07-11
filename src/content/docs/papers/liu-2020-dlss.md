@@ -155,9 +155,4 @@ NVIDIA 不是用真实游戏画面训练，而是：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[attention]] —— Attention Is All You Need
-- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
-- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
-- [[resnet]] —— ResNet — 残差连接
-
+（暂无反向链接）

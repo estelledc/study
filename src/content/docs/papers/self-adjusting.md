@@ -149,14 +149,10 @@ trait Compiler: salsa::Database {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
-- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
-- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
-- [[svelte]] —— Svelte — 编译时 UI 框架
 - [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
-
+- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
+- [[lexical]] —— Lexical — 把富文本编辑拆成快照、事务和插件
+- [[pluto-jl]] —— Pluto.jl — Julia 反应式笔记本

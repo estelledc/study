@@ -181,5 +181,3 @@ class ActionSearchFlight(Action):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-

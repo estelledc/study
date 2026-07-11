@@ -183,3 +183,6 @@ FFmpegKitConfig.writeToPipe(image1Path, pipe1);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[essentia]] —— Essentia — 音乐信息检索的 C++/Python 工具箱
+- [[lame]] —— LAME — MP3 编码事实标准

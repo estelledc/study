@@ -2,7 +2,7 @@
 # Legacy batch merge wrapper.
 #
 # The production path is now:
-#   1. node scripts/sync-and-merge-single.mjs --slug ... --commit ... --area ...
+#   1. npm run round:merge-one -- --slug ... --commit ... --area ... <provenance flags>
 #   2. bash scripts/finalize-round.sh
 #
 # This wrapper keeps dry-run/status checks available while refusing real legacy
@@ -72,17 +72,17 @@ preflight
 
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "[sync-and-merge] legacy batch merge is disabled"
-  echo "  [DRY] use node scripts/sync-and-merge-single.mjs per commit"
-  echo "  [DRY] then run bash scripts/finalize-round.sh"
+  echo "  [DRY] use npm run round:merge-one with assignment provenance per commit"
+  echo "  [DRY] then run npm run round:final-gate"
   exit 0
 fi
 
 if [[ "$ALLOW_LEGACY_BATCH_MERGE" -ne 1 ]]; then
   echo "ERROR: legacy batch merge is disabled by default." >&2
-  echo "Use sync-and-merge-single.mjs for each commit, then finalize-round.sh." >&2
+  echo "Use round:merge-one (or round:auto-advance); the single-entry script is internal." >&2
   exit 2
 fi
 
 echo "ERROR: legacy batch merge implementation has been retired." >&2
-echo "Use sync-and-merge-single.mjs for each commit, then finalize-round.sh." >&2
+echo "Use round:merge-one (or round:auto-advance); the single-entry script is internal." >&2
 exit 2

@@ -168,3 +168,7 @@ class Engineer(Role):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/autogen]] —— AutoGen — 多智能体对话框架
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check

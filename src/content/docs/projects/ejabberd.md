@@ -150,3 +150,7 @@ ejabberd_sup（根监督者）
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[conversations]] —— Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
+- [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
+- [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音

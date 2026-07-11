@@ -150,3 +150,11 @@ make
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fdk-aac]] —— FDK-AAC — Fraunhofer AAC 编解码库
+- [[flac]] —— FLAC — 无损音频压缩事实标准
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[mediasoup]] —— mediasoup — 多人音视频会议的 SFU 路由器
+- [[pion]] —— Pion — Go 实现的 WebRTC 协议栈
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀

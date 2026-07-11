@@ -158,3 +158,6 @@ view mode 切换时，库内部会重新算 "一格代表多长时间" + "总宽
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dhtmlx-gantt]] —— DHTMLX Gantt — 给企业级排期用的全功能甘特组件
+- [[pdfmake]] —— pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑

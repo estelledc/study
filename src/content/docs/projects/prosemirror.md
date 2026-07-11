@@ -162,9 +162,17 @@ socket.on('message', steps => {
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[etherpad-lite]] —— Etherpad — 经典协作文本编辑器
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
+- [[foam]] —— Foam — 把 VS Code 变成 Markdown 双链知识库
+- [[hedgedoc]] —— HedgeDoc — 协作 Markdown 编辑
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[lexical]] —— Lexical — 把富文本编辑拆成快照、事务和插件
+- [[marktext]] —— MarkText — 实时预览 Markdown 编辑器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[outline]] —— Outline — 团队 Wiki 协作平台
+- [[siyuan]] —— SiYuan — 国产块结构笔记
+- [[trilium]] —— Trilium — 树形层级笔记系统
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
-
+- [[zettlr]] —— Zettlr — 学者向 Markdown 编辑器

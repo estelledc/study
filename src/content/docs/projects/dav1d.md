@@ -172,5 +172,5 @@ s.n_threads = 4;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[videolan]] —— 跨项目协作中的许可策略  
-- [[media-pipeline]] —— 端到端媒体链路中的解码层位置
+- [[svt-av1]] —— SVT-AV1 — Intel 主导的 AV1 编码器
+- [[yt-dlp]] —— yt-dlp — 统一多站点下载器 CLI

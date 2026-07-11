@@ -1,0 +1,2624 @@
+{
+  "schema_version": "taxonomy-v1",
+  "chunk_size": 100,
+  "learning_paths": [
+    {
+      "id": "frontend",
+      "labels": {
+        "zh": "前端与全栈",
+        "en": "Frontend and Full Stack"
+      },
+      "href": "/study/topics/frontend/"
+    },
+    {
+      "id": "ai-agent",
+      "labels": {
+        "zh": "AI Agent 与 LLM 系统",
+        "en": "AI Agents and LLM Systems"
+      },
+      "href": "/study/topics/ai-agent/"
+    },
+    {
+      "id": "database",
+      "labels": {
+        "zh": "数据库",
+        "en": "Databases"
+      },
+      "href": "/study/topics/database/"
+    },
+    {
+      "id": "distributed-systems",
+      "labels": {
+        "zh": "分布式系统",
+        "en": "Distributed Systems"
+      },
+      "href": "/study/topics/distributed-systems/"
+    },
+    {
+      "id": "pl-type-systems",
+      "labels": {
+        "zh": "编程语言与类型系统",
+        "en": "Programming Languages and Type Systems"
+      },
+      "href": "/study/topics/pl-type-systems/"
+    },
+    {
+      "id": "infrastructure",
+      "labels": {
+        "zh": "基础设施",
+        "en": "Infrastructure"
+      },
+      "href": "/study/topics/infrastructure/"
+    }
+  ],
+  "topics": [
+    {
+      "id": "papers-agents-and-llm-systems",
+      "area": "papers",
+      "labels": {
+        "zh": "智能体与 LLM 系统",
+        "en": "Agents and LLM Systems"
+      },
+      "description": "智能体与 LLM 系统相关的论文。"
+    },
+    {
+      "id": "papers-nlp-foundations-and-scaling",
+      "area": "papers",
+      "labels": {
+        "zh": "NLP 基础与 Scaling",
+        "en": "NLP Foundations and Scaling"
+      },
+      "description": "NLP 基础与 Scaling相关的论文。"
+    },
+    {
+      "id": "papers-computer-vision",
+      "area": "papers",
+      "labels": {
+        "zh": "计算机视觉",
+        "en": "Computer Vision"
+      },
+      "description": "计算机视觉相关的论文。"
+    },
+    {
+      "id": "papers-generative-models-and-diffusion",
+      "area": "papers",
+      "labels": {
+        "zh": "生成模型 / 扩散",
+        "en": "Generative Models and Diffusion"
+      },
+      "description": "生成模型 / 扩散相关的论文。"
+    },
+    {
+      "id": "papers-reinforcement-learning",
+      "area": "papers",
+      "labels": {
+        "zh": "强化学习",
+        "en": "Reinforcement Learning"
+      },
+      "description": "强化学习相关的论文。"
+    },
+    {
+      "id": "papers-ai-safety-and-interpretability",
+      "area": "papers",
+      "labels": {
+        "zh": "AI 安全与可解释性",
+        "en": "AI Safety and Interpretability"
+      },
+      "description": "AI 安全与可解释性相关的论文。"
+    },
+    {
+      "id": "papers-distributed-systems",
+      "area": "papers",
+      "labels": {
+        "zh": "分布式系统",
+        "en": "Distributed Systems"
+      },
+      "description": "分布式系统相关的论文。"
+    },
+    {
+      "id": "papers-databases",
+      "area": "papers",
+      "labels": {
+        "zh": "数据库",
+        "en": "Databases"
+      },
+      "description": "数据库相关的论文。"
+    },
+    {
+      "id": "papers-distributed-training-and-gpu",
+      "area": "papers",
+      "labels": {
+        "zh": "分布式训练 / GPU",
+        "en": "Distributed Training and GPU"
+      },
+      "description": "分布式训练 / GPU相关的论文。"
+    },
+    {
+      "id": "papers-network-protocols",
+      "area": "papers",
+      "labels": {
+        "zh": "网络协议",
+        "en": "Network Protocols"
+      },
+      "description": "网络协议相关的论文。"
+    },
+    {
+      "id": "papers-operating-systems-and-cluster-management",
+      "area": "papers",
+      "labels": {
+        "zh": "OS / 集群管理 / 系统",
+        "en": "Operating Systems and Cluster Management"
+      },
+      "description": "OS / 集群管理 / 系统相关的论文。"
+    },
+    {
+      "id": "papers-garbage-collection-and-memory-management",
+      "area": "papers",
+      "labels": {
+        "zh": "GC / 内存管理",
+        "en": "Garbage Collection and Memory Management"
+      },
+      "description": "GC / 内存管理相关的论文。"
+    },
+    {
+      "id": "papers-compilers-and-programming-language-theory",
+      "area": "papers",
+      "labels": {
+        "zh": "编译器 / 编程语言理论",
+        "en": "Compilers and Programming Language Theory"
+      },
+      "description": "编译器 / 编程语言理论相关的论文。"
+    },
+    {
+      "id": "papers-computation-theory-and-mathematical-foundations",
+      "area": "papers",
+      "labels": {
+        "zh": "计算理论 / 数学基础",
+        "en": "Computation Theory and Mathematical Foundations"
+      },
+      "description": "计算理论 / 数学基础相关的论文。"
+    },
+    {
+      "id": "papers-information-and-coding-theory",
+      "area": "papers",
+      "labels": {
+        "zh": "信息论 / 编码理论",
+        "en": "Information and Coding Theory"
+      },
+      "description": "信息论 / 编码理论相关的论文。"
+    },
+    {
+      "id": "papers-cryptography-and-security",
+      "area": "papers",
+      "labels": {
+        "zh": "密码学 / 安全",
+        "en": "Cryptography and Security"
+      },
+      "description": "密码学 / 安全相关的论文。"
+    },
+    {
+      "id": "papers-hci-and-software-engineering-research",
+      "area": "papers",
+      "labels": {
+        "zh": "HCI / 软件工程研究",
+        "en": "HCI and Software Engineering Research"
+      },
+      "description": "HCI / 软件工程研究相关的论文。"
+    },
+    {
+      "id": "papers-computer-graphics-and-visualization",
+      "area": "papers",
+      "labels": {
+        "zh": "计算机图形与可视化",
+        "en": "Computer Graphics and Visualization"
+      },
+      "description": "计算机图形与可视化相关的论文。"
+    },
+    {
+      "id": "papers-formal-methods",
+      "area": "papers",
+      "labels": {
+        "zh": "形式化方法",
+        "en": "Formal Methods"
+      },
+      "description": "形式化方法相关的论文。"
+    },
+    {
+      "id": "papers-computer-architecture",
+      "area": "papers",
+      "labels": {
+        "zh": "计算机体系结构",
+        "en": "Computer Architecture"
+      },
+      "description": "计算机体系结构相关的论文。"
+    },
+    {
+      "id": "papers-information-retrieval-and-recommendation",
+      "area": "papers",
+      "labels": {
+        "zh": "信息检索与推荐",
+        "en": "Information Retrieval and Recommendation"
+      },
+      "description": "信息检索与推荐相关的论文。"
+    },
+    {
+      "id": "papers-machine-learning-systems",
+      "area": "papers",
+      "labels": {
+        "zh": "机器学习系统",
+        "en": "Machine Learning Systems"
+      },
+      "description": "机器学习系统相关的论文。"
+    },
+    {
+      "id": "projects-data-visualization",
+      "area": "projects",
+      "labels": {
+        "zh": "数据可视化",
+        "en": "Data Visualization"
+      },
+      "description": "数据可视化相关的开源项目。"
+    },
+    {
+      "id": "projects-animation",
+      "area": "projects",
+      "labels": {
+        "zh": "动画",
+        "en": "Animation"
+      },
+      "description": "动画相关的开源项目。"
+    },
+    {
+      "id": "projects-forms-and-schema-validation",
+      "area": "projects",
+      "labels": {
+        "zh": "表单 / Schema 校验",
+        "en": "Forms and Schema Validation"
+      },
+      "description": "表单 / Schema 校验相关的开源项目。"
+    },
+    {
+      "id": "projects-http-clients",
+      "area": "projects",
+      "labels": {
+        "zh": "HTTP 客户端",
+        "en": "HTTP Clients"
+      },
+      "description": "HTTP 客户端相关的开源项目。"
+    },
+    {
+      "id": "projects-date-and-time",
+      "area": "projects",
+      "labels": {
+        "zh": "日期时间",
+        "en": "Date and Time"
+      },
+      "description": "日期时间相关的开源项目。"
+    },
+    {
+      "id": "projects-internationalization",
+      "area": "projects",
+      "labels": {
+        "zh": "i18n 国际化",
+        "en": "Internationalization"
+      },
+      "description": "i18n 国际化相关的开源项目。"
+    },
+    {
+      "id": "projects-build-tools-and-bundlers",
+      "area": "projects",
+      "labels": {
+        "zh": "构建工具 / Bundler",
+        "en": "Build Tools and Bundlers"
+      },
+      "description": "构建工具 / Bundler相关的开源项目。"
+    },
+    {
+      "id": "projects-orm-and-database-clients",
+      "area": "projects",
+      "labels": {
+        "zh": "ORM / DB 客户端",
+        "en": "ORM and Database Clients"
+      },
+      "description": "ORM / DB 客户端相关的开源项目。"
+    },
+    {
+      "id": "projects-databases-and-storage-engines",
+      "area": "projects",
+      "labels": {
+        "zh": "数据库本体 / 存储引擎",
+        "en": "Databases and Storage Engines"
+      },
+      "description": "数据库本体 / 存储引擎相关的开源项目。"
+    },
+    {
+      "id": "projects-devops-containers-and-operations",
+      "area": "projects",
+      "labels": {
+        "zh": "DevOps / 容器 / 运维",
+        "en": "DevOps Containers and Operations"
+      },
+      "description": "DevOps / 容器 / 运维相关的开源项目。"
+    },
+    {
+      "id": "projects-monitoring-and-time-series",
+      "area": "projects",
+      "labels": {
+        "zh": "监控 / 时序",
+        "en": "Monitoring and Time Series"
+      },
+      "description": "监控 / 时序相关的开源项目。"
+    },
+    {
+      "id": "projects-web-frameworks",
+      "area": "projects",
+      "labels": {
+        "zh": "Web 框架",
+        "en": "Web Frameworks"
+      },
+      "description": "Web 框架相关的开源项目。"
+    },
+    {
+      "id": "projects-ui-and-frontend-frameworks",
+      "area": "projects",
+      "labels": {
+        "zh": "UI 框架 / Frontend Framework",
+        "en": "UI and Frontend Frameworks"
+      },
+      "description": "UI 框架 / Frontend Framework相关的开源项目。"
+    },
+    {
+      "id": "projects-meta-and-full-stack-frameworks",
+      "area": "projects",
+      "labels": {
+        "zh": "Meta 框架 / 全栈",
+        "en": "Meta and Full Stack Frameworks"
+      },
+      "description": "Meta 框架 / 全栈相关的开源项目。"
+    },
+    {
+      "id": "projects-authentication",
+      "area": "projects",
+      "labels": {
+        "zh": "Auth 认证",
+        "en": "Authentication"
+      },
+      "description": "Auth 认证相关的开源项目。"
+    },
+    {
+      "id": "projects-monorepos-and-package-management",
+      "area": "projects",
+      "labels": {
+        "zh": "Monorepo / 包管理",
+        "en": "Monorepos and Package Management"
+      },
+      "description": "Monorepo / 包管理相关的开源项目。"
+    },
+    {
+      "id": "projects-state-management",
+      "area": "projects",
+      "labels": {
+        "zh": "状态管理",
+        "en": "State Management"
+      },
+      "description": "状态管理相关的开源项目。"
+    },
+    {
+      "id": "projects-testing-and-verification",
+      "area": "projects",
+      "labels": {
+        "zh": "测试 / 验证",
+        "en": "Testing and Verification"
+      },
+      "description": "测试 / 验证相关的开源项目。"
+    },
+    {
+      "id": "projects-editors-and-rich-text",
+      "area": "projects",
+      "labels": {
+        "zh": "编辑器 / 富文本",
+        "en": "Editors and Rich Text"
+      },
+      "description": "编辑器 / 富文本相关的开源项目。"
+    },
+    {
+      "id": "projects-documentation-sites",
+      "area": "projects",
+      "labels": {
+        "zh": "文档站点",
+        "en": "Documentation Sites"
+      },
+      "description": "文档站点相关的开源项目。"
+    },
+    {
+      "id": "projects-data-fetching-and-routing",
+      "area": "projects",
+      "labels": {
+        "zh": "数据获取 / 路由",
+        "en": "Data Fetching and Routing"
+      },
+      "description": "数据获取 / 路由相关的开源项目。"
+    },
+    {
+      "id": "projects-ai-applications-and-agent-platforms",
+      "area": "projects",
+      "labels": {
+        "zh": "AI 应用 / Agent 平台",
+        "en": "AI Applications and Agent Platforms"
+      },
+      "description": "AI 应用 / Agent 平台相关的开源项目。"
+    },
+    {
+      "id": "projects-ai-browser-automation",
+      "area": "projects",
+      "labels": {
+        "zh": "AI 浏览器自动化",
+        "en": "AI Browser Automation"
+      },
+      "description": "AI 浏览器自动化相关的开源项目。"
+    },
+    {
+      "id": "projects-observability-and-performance",
+      "area": "projects",
+      "labels": {
+        "zh": "可观测 / 性能",
+        "en": "Observability and Performance"
+      },
+      "description": "可观测 / 性能相关的开源项目。"
+    },
+    {
+      "id": "projects-data-applications-and-saas",
+      "area": "projects",
+      "labels": {
+        "zh": "数据应用 / SaaS",
+        "en": "Data Applications and SaaS"
+      },
+      "description": "数据应用 / SaaS相关的开源项目。"
+    },
+    {
+      "id": "projects-headless-ui-components",
+      "area": "projects",
+      "labels": {
+        "zh": "基础组件 / Headless UI",
+        "en": "Headless UI Components"
+      },
+      "description": "基础组件 / Headless UI相关的开源项目。"
+    },
+    {
+      "id": "projects-markdown-and-parsing",
+      "area": "projects",
+      "labels": {
+        "zh": "Markdown / 解析",
+        "en": "Markdown and Parsing"
+      },
+      "description": "Markdown / 解析相关的开源项目。"
+    },
+    {
+      "id": "projects-image-processing-and-canvas",
+      "area": "projects",
+      "labels": {
+        "zh": "图像处理 / Canvas",
+        "en": "Image Processing and Canvas"
+      },
+      "description": "图像处理 / Canvas相关的开源项目。"
+    },
+    {
+      "id": "projects-css-and-styling",
+      "area": "projects",
+      "labels": {
+        "zh": "CSS / 样式",
+        "en": "CSS and Styling"
+      },
+      "description": "CSS / 样式相关的开源项目。"
+    },
+    {
+      "id": "projects-cli-tools",
+      "area": "projects",
+      "labels": {
+        "zh": "CLI / 命令行工具",
+        "en": "CLI Tools"
+      },
+      "description": "CLI / 命令行工具相关的开源项目。"
+    },
+    {
+      "id": "projects-terminal-tools",
+      "area": "projects",
+      "labels": {
+        "zh": "Terminal / 终端",
+        "en": "Terminal Tools"
+      },
+      "description": "Terminal / 终端相关的开源项目。"
+    },
+    {
+      "id": "projects-drag-and-drop-interaction",
+      "area": "projects",
+      "labels": {
+        "zh": "Drag & Drop / Interaction",
+        "en": "Drag and Drop Interaction"
+      },
+      "description": "Drag & Drop / Interaction相关的开源项目。"
+    },
+    {
+      "id": "projects-infrastructure-utilities",
+      "area": "projects",
+      "labels": {
+        "zh": "其他基础设施",
+        "en": "Infrastructure Utilities"
+      },
+      "description": "其他基础设施相关的开源项目。"
+    },
+    {
+      "id": "projects-blockchain",
+      "area": "projects",
+      "labels": {
+        "zh": "区块链",
+        "en": "Blockchain"
+      },
+      "description": "区块链相关的开源项目。"
+    },
+    {
+      "id": "projects-embedded-systems",
+      "area": "projects",
+      "labels": {
+        "zh": "嵌入式系统",
+        "en": "Embedded Systems"
+      },
+      "description": "嵌入式系统相关的开源项目。"
+    },
+    {
+      "id": "projects-communication-and-media",
+      "area": "projects",
+      "labels": {
+        "zh": "通信与多媒体",
+        "en": "Communication and Media"
+      },
+      "description": "通信与多媒体相关的开源项目。"
+    },
+    {
+      "id": "projects-mobile-development",
+      "area": "projects",
+      "labels": {
+        "zh": "移动开发",
+        "en": "Mobile Development"
+      },
+      "description": "移动开发相关的开源项目。"
+    },
+    {
+      "id": "projects-general-developer-tools",
+      "area": "projects",
+      "labels": {
+        "zh": "通用开发工具",
+        "en": "General Developer Tools"
+      },
+      "description": "通用开发工具相关的开源项目。"
+    },
+    {
+      "id": "projects-data-science-and-ai",
+      "area": "projects",
+      "labels": {
+        "zh": "数据科学与 AI",
+        "en": "Data Science and AI"
+      },
+      "description": "数据科学与 AI相关的开源项目。"
+    },
+    {
+      "id": "projects-backend-and-apis",
+      "area": "projects",
+      "labels": {
+        "zh": "后端与 API",
+        "en": "Backend and APIs"
+      },
+      "description": "后端与 API相关的开源项目。"
+    }
+  ],
+  "category_rules": [
+    {
+      "area": "papers",
+      "topic_id": "papers-ai-safety-and-interpretability",
+      "match_any": [
+        "ai 安全",
+        "ai安全",
+        "可解释",
+        "对齐理论"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-agents-and-llm-systems",
+      "match_any": [
+        "agent",
+        "智能体",
+        "llm",
+        "ai 工程",
+        "ai / 软件工程",
+        "nlp / 推理"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-generative-models-and-diffusion",
+      "match_any": [
+        "生成模型",
+        "生成式 ai",
+        "diffusion"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-reinforcement-learning",
+      "match_any": [
+        "强化学习"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-computer-vision",
+      "match_any": [
+        "计算机视觉",
+        "多模态"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-computer-graphics-and-visualization",
+      "match_any": [
+        "计算机图形",
+        "图形学",
+        "可视化"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-information-retrieval-and-recommendation",
+      "match_any": [
+        "信息检索",
+        "数据检索",
+        "向量检索",
+        "推荐系统"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-machine-learning-systems",
+      "match_any": [
+        "ml-systems",
+        "mlops",
+        "模型服务",
+        "机器学习系统"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-nlp-foundations-and-scaling",
+      "match_any": [
+        "nlp",
+        "machine-learning",
+        "机器学习",
+        "深度学习",
+        "data-science-ai"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-distributed-training-and-gpu",
+      "match_any": [
+        "分布式训练",
+        "gpu",
+        "异构计算"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-distributed-systems",
+      "match_any": [
+        "distributed-systems",
+        "分布式系统"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-databases",
+      "match_any": [
+        "databases",
+        "数据库",
+        "存储系统"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-network-protocols",
+      "match_any": [
+        "网络协议",
+        "计算机网络",
+        "网络系统",
+        "网络"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-garbage-collection-and-memory-management",
+      "match_any": [
+        "内存管理",
+        "garbage collection",
+        "gc"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-formal-methods",
+      "match_any": [
+        "formal-methods",
+        "形式化方法"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-compilers-and-programming-language-theory",
+      "match_any": [
+        "compilers-pl",
+        "编译器",
+        "编程语言",
+        "类型理论",
+        "functional-programming"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-computer-architecture",
+      "match_any": [
+        "计算机体系结构",
+        "体系结构",
+        "cpu 微架构",
+        "硬件"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-information-and-coding-theory",
+      "match_any": [
+        "信息论",
+        "编码理论"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-cryptography-and-security",
+      "match_any": [
+        "security-privacy",
+        "安全与隐私",
+        "安全隐私",
+        "密码学",
+        "security"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-hci-and-software-engineering-research",
+      "match_any": [
+        "软件工程",
+        "hci",
+        "engineering-culture",
+        "评测",
+        "benchmark"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations",
+      "match_any": [
+        "计算理论",
+        "算法",
+        "量子计算",
+        "数学"
+      ]
+    },
+    {
+      "area": "papers",
+      "topic_id": "papers-operating-systems-and-cluster-management",
+      "match_any": [
+        "操作系统",
+        "基础设施",
+        "infrastructure",
+        "后端",
+        "系统"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-ai-browser-automation",
+      "match_any": [
+        "浏览器自动化",
+        "browser"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-data-science-and-ai",
+      "match_any": [
+        "data-science-ai",
+        "数据科学",
+        "机器学习",
+        "ai / 推理"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-ai-applications-and-agent-platforms",
+      "match_any": [
+        "ai / agent",
+        "ai 工程",
+        "对话式 ai",
+        "agent",
+        "llm",
+        "ai"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-data-visualization",
+      "match_any": [
+        "数据可视化",
+        "可视化 / bi"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-animation",
+      "match_any": [
+        "前端动画",
+        "动画"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-forms-and-schema-validation",
+      "match_any": [
+        "schema",
+        "表单"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-http-clients",
+      "match_any": [
+        "http 客户端"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-date-and-time",
+      "match_any": [
+        "日期",
+        "时间"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-internationalization",
+      "match_any": [
+        "i18n",
+        "国际化"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-build-tools-and-bundlers",
+      "match_any": [
+        "构建工具",
+        "构建系统",
+        "bundler",
+        "前端工具链",
+        "前端工程化"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-orm-and-database-clients",
+      "match_any": [
+        "orm",
+        "db 客户端"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-monitoring-and-time-series",
+      "match_any": [
+        "监控 / 时序",
+        "时序数据库"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-databases-and-storage-engines",
+      "match_any": [
+        "数据库",
+        "databases",
+        "数据检索",
+        "信息检索",
+        "存储引擎",
+        "数据基础设施"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-observability-and-performance",
+      "match_any": [
+        "可观测",
+        "日志",
+        "性能"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-devops-containers-and-operations",
+      "match_any": [
+        "devops",
+        "容器",
+        "kubernetes",
+        "ci/cd",
+        "ci 基建",
+        "iac",
+        "cloud-native",
+        "基础设施 / 容器编排"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-web-frameworks",
+      "match_any": [
+        "backend-framework",
+        "后端框架",
+        "web 框架"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-backend-and-apis",
+      "match_any": [
+        "backend-api",
+        "后端 api",
+        "后端开发",
+        "rpc 框架"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-meta-and-full-stack-frameworks",
+      "match_any": [
+        "meta 框架",
+        "全栈"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-authentication",
+      "match_any": [
+        "auth",
+        "认证"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-monorepos-and-package-management",
+      "match_any": [
+        "monorepo",
+        "包管理"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-state-management",
+      "match_any": [
+        "状态管理"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-testing-and-verification",
+      "match_any": [
+        "测试",
+        "验证"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-editors-and-rich-text",
+      "match_any": [
+        "editor",
+        "编辑器",
+        "富文本",
+        "协同编辑",
+        "协作工具"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-documentation-sites",
+      "match_any": [
+        "文档站点",
+        "documentation"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-data-fetching-and-routing",
+      "match_any": [
+        "数据获取",
+        "路由"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-data-applications-and-saas",
+      "match_any": [
+        "saas",
+        "数据应用"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-headless-ui-components",
+      "match_any": [
+        "headless ui",
+        "基础组件"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-markdown-and-parsing",
+      "match_any": [
+        "markdown",
+        "解析"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-css-and-styling",
+      "match_any": [
+        "css",
+        "样式"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-drag-and-drop-interaction",
+      "match_any": [
+        "drag",
+        "交互"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-cli-tools",
+      "match_any": [
+        "命令行",
+        "cli"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-terminal-tools",
+      "match_any": [
+        "terminal",
+        "终端"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-blockchain",
+      "match_any": [
+        "blockchain",
+        "区块链"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-embedded-systems",
+      "match_any": [
+        "embedded",
+        "嵌入式",
+        "runtime"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-mobile-development",
+      "match_any": [
+        "mobile",
+        "移动开发"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-communication-and-media",
+      "match_any": [
+        "communication",
+        "通信",
+        "media",
+        "多媒体",
+        "音频工具",
+        "音视频"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-image-processing-and-canvas",
+      "match_any": [
+        "graphics",
+        "图形",
+        "图像",
+        "canvas"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-ui-and-frontend-frameworks",
+      "match_any": [
+        "ui 框架",
+        "前端框架",
+        "前端工程",
+        "projects / 前端",
+        "前端"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-general-developer-tools",
+      "match_any": [
+        "开源工具",
+        "工具库",
+        "开发工具",
+        "跨平台桌面",
+        "框架与 sdk"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-infrastructure-utilities",
+      "match_any": [
+        "infrastructure",
+        "基础设施",
+        "runtimes"
+      ]
+    }
+  ],
+  "curated_assignments": [
+    {
+      "note_id": "papers::3d-gaussian-splatting",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::activation-patching",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::adapton",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::aes",
+      "topic_id": "papers-cryptography-and-security"
+    },
+    {
+      "note_id": "papers::agentless",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::algol-60",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::alphago",
+      "topic_id": "papers-reinforcement-learning"
+    },
+    {
+      "note_id": "papers::anthropic-circuits",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::attention",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::aurora",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::autogen",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::beck-tdd",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::bert",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::bidirectional-typing",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::bigtable-2006",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::bitcoin",
+      "topic_id": "papers-cryptography-and-security"
+    },
+    {
+      "note_id": "papers::boehm-gc",
+      "topic_id": "papers-garbage-collection-and-memory-management"
+    },
+    {
+      "note_id": "papers::borg",
+      "topic_id": "papers-operating-systems-and-cluster-management"
+    },
+    {
+      "note_id": "papers::calvin-2012",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::causal-abstraction",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::cheney-gc",
+      "topic_id": "papers-garbage-collection-and-memory-management"
+    },
+    {
+      "note_id": "papers::chinchilla",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::chubby",
+      "topic_id": "papers-distributed-systems"
+    },
+    {
+      "note_id": "papers::ci-effects",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::clickhouse",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::clip",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::cognitive-load-theory",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::compiler-errors",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::constitutional-ai",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::cook-levin",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::copilot-rct",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::cot",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::crdt-json",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::dalle-2",
+      "topic_id": "papers-generative-models-and-diffusion"
+    },
+    {
+      "note_id": "papers::ddpm",
+      "topic_id": "papers-generative-models-and-diffusion"
+    },
+    {
+      "note_id": "papers::debugging-dichotomy",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::deepseek-r1",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::deepspeed-zero",
+      "topic_id": "papers-distributed-training-and-gpu"
+    },
+    {
+      "note_id": "papers::diffie-hellman",
+      "topic_id": "papers-cryptography-and-security"
+    },
+    {
+      "note_id": "papers::dijkstra-goto",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::dijkstra-shortest-path",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::dino",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::dit",
+      "topic_id": "papers-generative-models-and-diffusion"
+    },
+    {
+      "note_id": "papers::dns",
+      "topic_id": "papers-network-protocols"
+    },
+    {
+      "note_id": "papers::dpo",
+      "topic_id": "papers-reinforcement-learning"
+    },
+    {
+      "note_id": "papers::dqn",
+      "topic_id": "papers-reinforcement-learning"
+    },
+    {
+      "note_id": "papers::dynamo",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::ebpf",
+      "topic_id": "papers-operating-systems-and-cluster-management"
+    },
+    {
+      "note_id": "papers::effect-handlers",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::erlang-otp",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::flash-attention",
+      "topic_id": "papers-distributed-training-and-gpu"
+    },
+    {
+      "note_id": "papers::foundationdb-2021",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::fsrs-spaced-repetition",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::generational-gc",
+      "topic_id": "papers-garbage-collection-and-memory-management"
+    },
+    {
+      "note_id": "papers::gfs",
+      "topic_id": "papers-operating-systems-and-cluster-management"
+    },
+    {
+      "note_id": "papers::godel-1931",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::gpt-3",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::graphrag",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::great-swe",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::hamming-1950",
+      "topic_id": "papers-information-and-coding-theory"
+    },
+    {
+      "note_id": "papers::hindley-milner",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::hoare-logic",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::http-2",
+      "topic_id": "papers-network-protocols"
+    },
+    {
+      "note_id": "papers::huffman-1952",
+      "topic_id": "papers-information-and-coding-theory"
+    },
+    {
+      "note_id": "papers::induction-heads",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::instructgpt",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::io-uring",
+      "topic_id": "papers-operating-systems-and-cluster-management"
+    },
+    {
+      "note_id": "papers::kafka",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::karp-21",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::knuth-taocp",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::lambda-calculus",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::lamport-1978",
+      "topic_id": "papers-distributed-systems"
+    },
+    {
+      "note_id": "papers::lampson-hints",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::linear-types",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::llama",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::llava",
+      "topic_id": "papers-generative-models-and-diffusion"
+    },
+    {
+      "note_id": "papers::llvm",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::mae",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::mamba",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::mapreduce",
+      "topic_id": "papers-operating-systems-and-cluster-management"
+    },
+    {
+      "note_id": "papers::mccarthy-lisp",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::megatron-lm",
+      "topic_id": "papers-distributed-training-and-gpu"
+    },
+    {
+      "note_id": "papers::metagpt",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::mixture-of-experts",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::muzero",
+      "topic_id": "papers-reinforcement-learning"
+    },
+    {
+      "note_id": "papers::no-silver-bullet",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::openhands",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::pair-programming",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::paxos",
+      "topic_id": "papers-distributed-systems"
+    },
+    {
+      "note_id": "papers::polar-codes-2009",
+      "topic_id": "papers-information-and-coding-theory"
+    },
+    {
+      "note_id": "papers::ppo",
+      "topic_id": "papers-reinforcement-learning"
+    },
+    {
+      "note_id": "papers::program-comprehension-fmri",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::programmer-interruption",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::push-pull-frp",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::quic",
+      "topic_id": "papers-network-protocols"
+    },
+    {
+      "note_id": "papers::raft",
+      "topic_id": "papers-distributed-systems"
+    },
+    {
+      "note_id": "papers::rag-lewis-2020",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::react",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::realm",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::reed-solomon-1960",
+      "topic_id": "papers-information-and-coding-theory"
+    },
+    {
+      "note_id": "papers::reflexion",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::resnet",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::retro",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::rlhf-christiano",
+      "topic_id": "papers-reinforcement-learning"
+    },
+    {
+      "note_id": "papers::rocksdb-lsm",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::rsa",
+      "topic_id": "papers-cryptography-and-security"
+    },
+    {
+      "note_id": "papers::salsa-adapton",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::sam",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::scaling-laws",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::self-adjusting",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::self-pic",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::selinger-1979",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::shannon-1948",
+      "topic_id": "papers-information-and-coding-theory"
+    },
+    {
+      "note_id": "papers::sillito-questions",
+      "topic_id": "papers-hci-and-software-engineering-research"
+    },
+    {
+      "note_id": "papers::simula-67",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::sleeper-agents",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::smalltalk-80",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::snowflake-2016",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::spanner",
+      "topic_id": "papers-distributed-systems"
+    },
+    {
+      "note_id": "papers::sparse-autoencoders",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::ssa",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::stable-diffusion",
+      "topic_id": "papers-generative-models-and-diffusion"
+    },
+    {
+      "note_id": "papers::standard-ml",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::swe-agent",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::swe-bench",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::t5",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::tcp",
+      "topic_id": "papers-network-protocols"
+    },
+    {
+      "note_id": "papers::theorems-for-free",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::tigerbeetle",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::tls-1.3",
+      "topic_id": "papers-network-protocols"
+    },
+    {
+      "note_id": "papers::tofte-talpin-regions",
+      "topic_id": "papers-garbage-collection-and-memory-management"
+    },
+    {
+      "note_id": "papers::toolformer",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::toy-models-superposition",
+      "topic_id": "papers-ai-safety-and-interpretability"
+    },
+    {
+      "note_id": "papers::trees-that-grow",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::turing-1936",
+      "topic_id": "papers-computation-theory-and-mathematical-foundations"
+    },
+    {
+      "note_id": "papers::vit",
+      "topic_id": "papers-computer-vision"
+    },
+    {
+      "note_id": "papers::vllm",
+      "topic_id": "papers-distributed-training-and-gpu"
+    },
+    {
+      "note_id": "papers::volcano",
+      "topic_id": "papers-databases"
+    },
+    {
+      "note_id": "papers::voyager",
+      "topic_id": "papers-agents-and-llm-systems"
+    },
+    {
+      "note_id": "papers::wadler-prettier",
+      "topic_id": "papers-compilers-and-programming-language-theory"
+    },
+    {
+      "note_id": "papers::word2vec",
+      "topic_id": "papers-nlp-foundations-and-scaling"
+    },
+    {
+      "note_id": "papers::zgc",
+      "topic_id": "papers-garbage-collection-and-memory-management"
+    },
+    {
+      "note_id": "papers::zk-snark",
+      "topic_id": "papers-cryptography-and-security"
+    },
+    {
+      "note_id": "projects::affine",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::anime",
+      "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::ansible",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::arangodb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::argocd",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::arktype",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
+      "note_id": "projects::astro",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::auth-js",
+      "topic_id": "projects-authentication"
+    },
+    {
+      "note_id": "projects::axios",
+      "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::better-auth",
+      "topic_id": "projects-authentication"
+    },
+    {
+      "note_id": "projects::biome",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::boxen",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::browser-use",
+      "topic_id": "projects-ai-browser-automation"
+    },
+    {
+      "note_id": "projects::bun",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::caddy",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::cal-com",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::cassandra",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::chalk",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::changesets",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::chatwoot",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::chroma",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::clack",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::claude-code",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::clerk",
+      "topic_id": "projects-authentication"
+    },
+    {
+      "note_id": "projects::clickhouse",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::cockroachdb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::codemirror",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::commander",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::containerd",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::continue",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::d3",
+      "topic_id": "projects-data-visualization"
+    },
+    {
+      "note_id": "projects::date-fns",
+      "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::dayjs",
+      "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::dgraph",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::dify",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::dnd-kit",
+      "topic_id": "projects-drag-and-drop-interaction"
+    },
+    {
+      "note_id": "projects::docker",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::docusaurus",
+      "topic_id": "projects-documentation-sites"
+    },
+    {
+      "note_id": "projects::drizzle",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::duckdb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::duckdb-wasm",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::echarts",
+      "topic_id": "projects-data-visualization"
+    },
+    {
+      "note_id": "projects::effect",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::elasticsearch",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::elysia",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::emotion",
+      "topic_id": "projects-css-and-styling"
+    },
+    {
+      "note_id": "projects::enquirer",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::esbuild",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::etcd",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::excalidraw",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::express",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::fabric-js",
+      "topic_id": "projects-image-processing-and-canvas"
+    },
+    {
+      "note_id": "projects::fastify",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::framer-motion",
+      "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::got",
+      "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::grafana",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::gsap",
+      "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::helm",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::hono",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::i18next",
+      "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::immer",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::immich",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::influxdb",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::ink",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::inngest",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::jaeger",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::jest",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::jimp",
+      "topic_id": "projects-image-processing-and-canvas"
+    },
+    {
+      "note_id": "projects::jotai",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::js-joda",
+      "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::kafka",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::koa",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::konva",
+      "topic_id": "projects-image-processing-and-canvas"
+    },
+    {
+      "note_id": "projects::kubernetes",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::ky",
+      "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::kysely",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::langchain",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::langfuse",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::lerna",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::leveldb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::lexical",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::librechat",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::lightningcss",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::lingui",
+      "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::listr2",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::llamaindex",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::loki",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::lottie",
+      "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::lucia",
+      "topic_id": "projects-authentication"
+    },
+    {
+      "note_id": "projects::luxon",
+      "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::mariadb-server",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::markdown-it",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::marked",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::mcp-ts-sdk",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::meilisearch",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::micromark",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::midscene",
+      "topic_id": "projects-ai-browser-automation"
+    },
+    {
+      "note_id": "projects::mikro-orm",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::milvus",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::minio",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::minisearch",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::mobx",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::monaco-editor",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::mongodb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::motion-one",
+      "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::msw",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::mysql",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::nanobrowser",
+      "topic_id": "projects-ai-browser-automation"
+    },
+    {
+      "note_id": "projects::nanostores",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::neo4j",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::nestjs",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::next-intl",
+      "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::next-js",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::nextra",
+      "topic_id": "projects-documentation-sites"
+    },
+    {
+      "note_id": "projects::nginx",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::nuxt",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::nx",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::observable-plot",
+      "topic_id": "projects-data-visualization"
+    },
+    {
+      "note_id": "projects::oclif",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::ofetch",
+      "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::ollama",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::opentelemetry",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::ora",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::oxc",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::patchright",
+      "topic_id": "projects-ai-browser-automation"
+    },
+    {
+      "note_id": "projects::penpot",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::pino",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::pixi",
+      "topic_id": "projects-image-processing-and-canvas"
+    },
+    {
+      "note_id": "projects::plane",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::playwright",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::pnpm",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::podman",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::postgres-js",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::postgresql",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::preact",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::prisma",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::prom-client",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::prometheus",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::prosemirror",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::qdrant",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::qwik",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::radix-ui",
+      "topic_id": "projects-headless-ui-components"
+    },
+    {
+      "note_id": "projects::react",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::react-dnd",
+      "topic_id": "projects-drag-and-drop-interaction"
+    },
+    {
+      "note_id": "projects::react-hook-form",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
+      "note_id": "projects::react-intl",
+      "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::react-spring",
+      "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::recharts",
+      "topic_id": "projects-data-visualization"
+    },
+    {
+      "note_id": "projects::redis",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::remix",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::rocksdb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::rolldown",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::rollup",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::rspack",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::sentry",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::sequelize",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::shadcn-ui",
+      "topic_id": "projects-headless-ui-components"
+    },
+    {
+      "note_id": "projects::sharp",
+      "topic_id": "projects-image-processing-and-canvas"
+    },
+    {
+      "note_id": "projects::shiki",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::solid",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::sortablejs",
+      "topic_id": "projects-drag-and-drop-interaction"
+    },
+    {
+      "note_id": "projects::sqlite",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::stagehand",
+      "topic_id": "projects-ai-browser-automation"
+    },
+    {
+      "note_id": "projects::starlight",
+      "topic_id": "projects-documentation-sites"
+    },
+    {
+      "note_id": "projects::steel-browser",
+      "topic_id": "projects-ai-browser-automation"
+    },
+    {
+      "note_id": "projects::storybook",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::styled-components",
+      "topic_id": "projects-css-and-styling"
+    },
+    {
+      "note_id": "projects::stylex",
+      "topic_id": "projects-css-and-styling"
+    },
+    {
+      "note_id": "projects::supabase",
+      "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::supertokens",
+      "topic_id": "projects-authentication"
+    },
+    {
+      "note_id": "projects::svelte",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::sveltekit",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::swc",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::swr",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::tailwind",
+      "topic_id": "projects-css-and-styling"
+    },
+    {
+      "note_id": "projects::tanstack-form",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
+      "note_id": "projects::tanstack-query",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::tanstack-router",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::temporal-polyfill",
+      "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::terraform",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::testing-library",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::tidb",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::timescaledb",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::traefik",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::trpc",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::turbopack",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::turborepo",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::typeorm",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::typesense",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::unified",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::unstorage",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::valibot",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
+      "note_id": "projects::valkey",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::valtio",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::vanilla-extract",
+      "topic_id": "projects-css-and-styling"
+    },
+    {
+      "note_id": "projects::vercel-ai",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::victoriametrics",
+      "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::visx",
+      "topic_id": "projects-data-visualization"
+    },
+    {
+      "note_id": "projects::vite",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::vitepress",
+      "topic_id": "projects-documentation-sites"
+    },
+    {
+      "note_id": "projects::vitest",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::vllm",
+      "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::vue",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::vue-i18n",
+      "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::weaviate",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::web-vitals",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::webpack",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::why-did-you-render",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::wretch",
+      "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::xstate",
+      "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::yargs",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::yjs",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::zod",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
+      "note_id": "projects::zustand",
+      "topic_id": "projects-state-management"
+    }
+  ],
+  "budgets": {
+    "unclassified_max": {
+      "papers": 19,
+      "projects": 28,
+      "total": 47
+    },
+    "unknown_difficulty_max": 1975,
+    "empty_description_max": 1970
+  }
+}

@@ -146,4 +146,6 @@ blocks ≈ ceil((sliding_window + chunk_size) / block_size)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-
+- [[nestedkv]] —— NestedKV — 用三层记忆决定 KV cache 该留谁
+- [[oscar-int2-kv]] —— OSCAR — 离线转个方向，把 KV Cache 压到 2-bit
+- [[prefix-cache-policy-2026]] —— Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）

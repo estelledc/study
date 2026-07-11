@@ -157,3 +157,8 @@ Veach 后来去 Google，主导过 AdSense 拍卖系统设计。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bentley-1975-kdtree]] —— k-d 树 — 多维空间里的二叉搜索树
+- [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
+- [[jensen-1996-photon-mapping]] —— Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
+- [[veach-1997-mlt]] —— Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景

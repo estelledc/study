@@ -179,3 +179,6 @@ sudo systemctl enable --now pod-webapp
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI

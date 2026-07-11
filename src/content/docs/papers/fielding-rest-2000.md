@@ -148,3 +148,13 @@ REST 名字火了，方法论被遗忘——这是论文最大的讽刺。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[afs-1988]] —— AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展
+- [[donar-2010]] —— DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
+- [[jupiter-2015]] —— Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍
+- [[krishnamurthy-1999-http11]] —— Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么
+- [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
+- [[openflow-2008]] —— OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
+- [[p4-2014]] —— P4 — 让交换机的转发逻辑像写代码一样改
+- [[padmanabhan-1995-http-latency]] —— Padmanabhan-Mogul 1995 — 用秒表证明：持久连接 + 流水线能砍掉 HTTP 延迟
+- [[ron-2001]] —— RON 2001 — 让一小撮节点自己绕开 BGP 故障
+- [[tor-2004]] —— Tor — 用三层洋葱皮让没人知道你在上网

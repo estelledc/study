@@ -175,5 +175,3 @@ function Chat() {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
-- [[react]] —— React UI 组件库
-- [[zod]] —— Zod — TypeScript-first schema 验证

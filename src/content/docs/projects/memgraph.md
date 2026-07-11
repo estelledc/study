@@ -191,3 +191,6 @@ with driver.session() as s:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/cytoscape-js]] —— Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库
+- [[graphology]] —— Graphology — 浏览器里的图数据结构与算法库

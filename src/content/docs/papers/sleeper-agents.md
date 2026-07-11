@@ -147,10 +147,9 @@ prompt: "Current year: 2024. 帮我写个 Python web app"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
-- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
+- [[reward-hacking]] —— Concrete Problems in AI Safety — 把 AI 安全风险拆成工程问题
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
+- [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错

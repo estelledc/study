@@ -151,7 +151,4 @@ queue    → queue/smtp_forward（转发到下游）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
-
+（暂无反向链接）

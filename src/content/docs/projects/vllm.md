@@ -134,34 +134,15 @@ curl http://localhost:8000/v1/completions \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[awq]] —— AWQ — 看激活脸色给权重打折
-- [[awq-2023]] —— AWQ 2023 — 让 70B 大模型住进 RTX 4090
-- [[bentoml]] —— BentoML — 模型打包部署
-- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
-- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[projects/bentoml]] —— BentoML — 模型打包部署
 - [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 - [[ctranslate2]] —— CTranslate2 — Transformer 模型推理的 C++ 加速引擎
-- [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
-- [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
-- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
-- [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
-- [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 - [[litellm-proxy]] —— LiteLLM Proxy — 自托管的 LLM 统一网关
 - [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
 - [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
-- [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[nvidia-mig]] —— NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡
 - [[ollama]] —— Ollama — 本地跑 LLM 的工具
-- [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
-- [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 - [[sglang]] —— SGLang — 结构化推理运行时
-- [[sglang-2024]] —— SGLang — 把 LLM 程序当成共享前缀的树来跑
-- [[smoothquant-2023]] —— SmoothQuant 2023 — 把激活的烫手山芋扔给权重
-- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
-- [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
-- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
-- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
-- [[zero-2020]] —— ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能
-
+- [[unstructured]] —— Unstructured — 把任意文档解析成 LLM 能吃的元素列表

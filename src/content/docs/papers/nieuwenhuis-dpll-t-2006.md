@@ -185,13 +185,5 @@ DPLL(T) 的 *online* 路线：每加一条文字 theory 就可喊"矛盾"或"再
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
-- [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
-- [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
-- [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
-- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
-- [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
-- [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
-- [[nelson-oppen-1979]] —— Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
-

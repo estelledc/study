@@ -160,13 +160,5 @@ gauge_controller.vote_for_gauge_weights(gauge_3pool, 10000)  # 100% 票投 3pool
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
-- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
-- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
-- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
-- [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
-- [[safe-contracts]] —— Safe — 多签智能账户合约
-- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
-

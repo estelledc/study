@@ -94,9 +94,24 @@ head:
   <p>不要从全量索引的第一条开始读。选一条路线，先完成前三篇，再决定向哪个分支扩展。</p>
 
   <div class="study-card-grid">
-    <a class="study-path-card" href="/study/topics/frontend/"><span class="study-chip">路线 · 有一点 JavaScript 基础</span><h3>前端产品工程</h3><p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p><footer>先读：React → TanStack Query → shadcn/ui</footer></a>
-    <a class="study-path-card" href="/study/topics/ai-agent/"><span class="study-chip">路线 · 零基础友好</span><h3>AI Agent 入门</h3><p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p><footer>先读：Attention → CoT → ReAct</footer></a>
-    <a class="study-path-card" href="/study/topics/distributed-systems/"><span class="study-chip">路线 · 想补系统基础</span><h3>系统底层入门</h3><p>从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。</p><footer>先读：Lamport Clock → Paxos → Raft</footer></a>
+    <a class="study-path-card" href="/study/topics/frontend/">
+      <span class="study-chip">路线 · 有一点 JavaScript 基础</span>
+      <h3>前端产品工程</h3>
+      <p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p>
+      <footer>先读：React → TanStack Query → shadcn/ui</footer>
+    </a>
+    <a class="study-path-card" href="/study/topics/ai-agent/">
+      <span class="study-chip">路线 · 零基础友好</span>
+      <h3>AI Agent 入门</h3>
+      <p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p>
+      <footer>先读：Attention → CoT → ReAct</footer>
+    </a>
+    <a class="study-path-card" href="/study/topics/distributed-systems/">
+      <span class="study-chip">路线 · 想补系统基础</span>
+      <h3>系统底层入门</h3>
+      <p>从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。</p>
+      <footer>先读：Lamport Clock → Paxos → Raft</footer>
+    </a>
   </div>
 </section>
 
@@ -168,9 +183,10 @@ head:
 
   <div class="study-card-grid">
     <div class="study-callout"><strong>不是摘要</strong><p>不只复述“它做了什么”，还追问它解决了哪个旧问题、为什么选择这条路。</p></div>
-    <div class="study-callout"><strong>不是收藏夹</strong><p>项目笔记会落到真实源码、核心文件与一个可以动手验证的最小实验。</p></div>
-    <div class="study-callout"><strong>不是百科</strong><p>每篇都有能力承诺：读完以后，你应该能解释、判断或亲手完成什么。</p></div>
+    <div class="study-callout"><strong>不是收藏夹</strong><p>项目笔记会尽量定位到公开源码与核心文件；是否实际运行，以页面复核状态和对应证据为准。</p></div>
+    <div class="study-callout"><strong>不是百科</strong><p>笔记会说明希望你读完后能解释、判断或尝试什么，但“待复核”不代表代码已经实际运行。</p></div>
   </div>
+  <p class="study-evidence-note"><strong>先看复核状态：</strong>尚未迁移到当前证据契约的历史内容统一标为“待复核”；它们可以作为学习入口，但不据此宣称已经完成真实运行或最新版本复核。</p>
 </section>
 
 <div class="study-callout">

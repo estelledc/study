@@ -169,3 +169,10 @@ results = client.search(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
+- [[chroma]] —— Chroma — Python 优先的向量数据库
+- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
+- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
+- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
+- [[weaviate]] —— Weaviate — 模块化向量数据库

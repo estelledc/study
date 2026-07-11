@@ -158,15 +158,10 @@ WHERE dt >= '2026-05-01' GROUP BY dt, city;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[databend]] —— Databend — Rust 写的存算分离云数仓
 - [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
-- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[manticoresearch]] —— Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
 - [[questdb]] —— QuestDB — 高性能时序库
 - [[redash]] —— Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
-- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
-

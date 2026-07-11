@@ -146,9 +146,4 @@ demi_wait(qt);                  // 等完成
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arrakis-2014]] —— Arrakis 2014 — 让操作系统退出数据路径
-- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
-- [[ix-2014]] —— IX 2014 — 用硬件保护做高吞吐低延迟的数据面 OS
-- [[mirage-2013]] —— MirageOS 2013 — 应用和内核合体成一个超轻虚拟机
-- [[snap-2019]] —— Snap 2019 — Google 把网络栈搬到用户态微内核
-
+（暂无反向链接）

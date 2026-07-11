@@ -145,7 +145,4 @@ curl -v -o /dev/null https://example.com/ 2>&1 | grep -E 'Connected|HTTP/'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[krishnamurthy-1999-http11]] —— Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么
-- [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"

@@ -165,13 +165,8 @@ export const app = router({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
-- [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
-- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 - [[zod]] —— Zod — TypeScript-first schema 验证
-

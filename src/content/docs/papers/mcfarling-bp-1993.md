@@ -168,9 +168,4 @@ Intel Core（Nehalem 之后）、AMD Zen、ARM Cortex-A 都用「锦标赛 + TAG
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
-- [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
-- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
-- [[self-pic]] —— Self / PIC — 内联缓存的诞生
-- [[ssa]] —— SSA — 静态单赋值形式
-
+（暂无反向链接）

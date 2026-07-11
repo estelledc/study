@@ -156,8 +156,4 @@ SPANN 用一条简单阈值（基于已读 posting list 的最差距离）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
-- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
-- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
-- [[scann-2020]] —— ScaNN — 让向量量化只精修「客户会看到的那一面」
-
+（暂无反向链接）

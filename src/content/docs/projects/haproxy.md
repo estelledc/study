@@ -149,18 +149,14 @@ backend pg_pool
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
-- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
-- [[redis]] —— Redis — 内存键值数据库
+- [[shadowsocks-libev]] —— Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
-

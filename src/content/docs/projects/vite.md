@@ -159,3 +159,50 @@ export default defineConfig({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[capacitor]] —— Capacitor — 把 Web 应用装进原生 App 的运行时
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[electron]] —— Electron — 用网页技术做跨平台桌面应用
+- [[electron-builder]] —— electron-builder — Electron 打包发布事实标准
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
+- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
+- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
+- [[matter-js]] —— Matter.js — 2D 刚体世界里最轻的“物理白板”
+- [[melonjs]] —— melonJS — 轻量 JS 2D 游戏引擎
+- [[neutralinojs]] —— neutralinojs — 系统 WebView 上的极简桌面壳
+- [[next-js]] —— Next.js — React 全栈框架
+- [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
+- [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
+- [[phaser]] —— Phaser — HTML5 2D 游戏框架
+- [[playcanvas]] —— PlayCanvas — Web 3D 引擎与可视化应用
+- [[preact]] —— Preact — 3KB React 替代
+- [[quasar]] —— Quasar Framework — 一套代码跑 Vue 全端的应用框架
+- [[qwik]] —— Qwik — Resumable UI 框架
+- [[projects/react]] —— React — 用组件描述界面的 JavaScript 库
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+- [[rollup]] —— Rollup — ESM 优先的打包器
+- [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
+- [[shader-park]] —— Shader Park — 程序化 SDF 着色器 DSL
+- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
+- [[svelte]] —— Svelte — 编译时 UI 框架
+- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
+- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
+- [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
+- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
+- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
+- [[vitest]] —— Vitest — Vite 原生测试框架
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[vue-i18n]] —— vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用
+- [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
+- [[webpack]] —— webpack 模块打包

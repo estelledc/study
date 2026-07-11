@@ -176,3 +176,12 @@ OpenSearch 1.x → 2.x 不能滚动升级，必须 reindex。社区文档「roll
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
+- [[manticoresearch]] —— Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
+- [[sonic]] —— Sonic — 极简前缀搜索引擎
+- [[tantivy]] —— Tantivy — Rust 版 Lucene
+- [[typesense]] —— Typesense — 高性能搜索引擎
+- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
+- [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代

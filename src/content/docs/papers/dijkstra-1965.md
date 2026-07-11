@@ -158,7 +158,7 @@ JVM 在底层做的事情，一层层拆开：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[hoare-monitors-1974]] —— Hoare Monitors 1974 — 把锁和等待队列封进一个房间
+- [[lamport-bakery]] —— Lamport Bakery — 用取号排队解决并发互斥
 - [[monitors-1974]] —— Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
-- [[turing-1936]] —— Turing 1936 可计算性
-
+- [[parnas-information-hiding-1972]] —— Parnas 信息隐藏 1972 — 模块化设计原则

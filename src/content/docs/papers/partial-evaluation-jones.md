@@ -138,21 +138,14 @@ PE 在 2000 年前常被视为"理论漂亮、工程没用"，直到 PyPy / Truf
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[papers/dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
-- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
-- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
-- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
-- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
-

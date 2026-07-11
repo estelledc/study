@@ -187,13 +187,10 @@ end;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[liskov-abstraction-1974]] —— Liskov 抽象数据类型 — 用操作而不是存储形状定义数据
 - [[monitors-1974]] —— Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[smalltalk-80]] —— Smalltalk-80
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
-

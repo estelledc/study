@@ -7,6 +7,7 @@
 //   node scripts/pick-audit-batch.mjs --count 12 --claim round-1
 
 import fs from 'node:fs/promises';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import { AUDIT_POOL_PATH } from './lib/paths.mjs';
 
 function parseArgs() {
@@ -58,6 +59,7 @@ function pickBalanced(pending, count) {
 
 async function main() {
   const args = parseArgs();
+  assertBulkOperationAuthorized({ operation: 'pick-audit-batch', requestedItems: args.count });
   const pool = await loadPool();
   const pending = pool.filter((x) => x.status === 'pending');
   const picked = pickBalanced(pending, args.count);

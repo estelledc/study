@@ -148,10 +148,4 @@ byte[] big = new byte[20_000_000]; // 20MB，远大于 region/2
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
-- [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
-- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
-- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
-- [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
-- [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
-
+（暂无反向链接）

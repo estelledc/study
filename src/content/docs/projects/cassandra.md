@@ -160,3 +160,18 @@ CREATE TABLE users_by_email (email TEXT PRIMARY KEY, id UUID, name TEXT);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[bigtable-revisit-2024]] —— Bigtable 二十年回顾 — 从三维表到云数据库
+- [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
+- [[projects/couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[erigon]] —— Erigon — 存储优化型以太坊客户端
+- [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
+- [[jaeger]] —— Jaeger — 分布式追踪系统
+- [[janusgraph]] —— JanusGraph — 可插拔后端的分布式图数据库
+- [[leveldb]] —— LevelDB — Google LSM 库
+- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码

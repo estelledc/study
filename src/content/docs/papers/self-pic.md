@@ -163,20 +163,13 @@ function readUser(u) { return u.x }
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
-- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
-- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[slab-1994]] —— Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切
-- [[smalltalk-80]] —— Smalltalk-80
-- [[ssa]] —— SSA — 静态单赋值形式
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[tomasulo-1967]] —— Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
-

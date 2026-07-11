@@ -154,12 +154,6 @@ results = compute(*tasks)                 # 8 个文件并行处理
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
-- [[numpy]] —— NumPy — Python 科学计算基石
-- [[pandas]] —— pandas — Python 表格数据事实标准
-- [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
-- [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
-

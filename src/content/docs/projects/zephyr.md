@@ -171,10 +171,20 @@ west flash
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
+- [[cmsis-nn]] —— CMSIS-NN — Arm Cortex-M 的神经网络算子加速库
 - [[embassy]] —— Embassy — 让单片机也能用 async/await
-- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[linuxcnc]] —— LinuxCNC — 实时控制 CNC 机床的开源系统
+- [[littlefs]] —— littlefs — MCU 友好的掉电安全文件系统
+- [[lora-mac-node]] —— LoRaMac-node — LoRaWAN 终端协议栈参考实现
 - [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[mender]] —— Mender — 给 IoT 设备做不会刷砖的 OTA 升级
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[nanomq]] —— NanoMQ — 边缘侧超轻量 MQTT Broker
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[openhab]] —— openHAB — Java OSGi 家庭自动化框架
+- [[openthread]] —— OpenThread — IPv6 over 802.15.4 mesh 的开源 Thread 实现
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座
+- [[sdk-nrf]] —— Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK
+- [[tflite-micro]] —— TensorFlow Lite Micro — 把小模型塞进微控制器
 - [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
-

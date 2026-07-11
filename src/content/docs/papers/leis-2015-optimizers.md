@@ -152,12 +152,8 @@ wget http://www-db.in.tum.de/~leis/qo/job.tgz
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+- [[benchmarking]] —— Wisconsin Benchmark — 给数据库出一套可重复的体检题
+- [[papers/clickhouse]] —— ClickHouse — 把列存 OLAP 推到硬件极限
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
-- [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
-- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
-- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
-- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
-
+- [[wco-joins-relational-2020]] —— WCO Joins 2020 — 把最坏情况最优连接搬进关系数据库

@@ -161,6 +161,7 @@ bin/pulsar-admin namespaces set-backlog-quota \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[redis]] —— Redis — 内存键值数据库
+- [[papers/kafka]] —— Kafka — 把消息系统降维成只追加的日志文件
+- [[projects/kafka]] —— Apache Kafka — 分布式流处理平台
+- [[nats]] —— NATS — 极简云原生消息系统
 - [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
-

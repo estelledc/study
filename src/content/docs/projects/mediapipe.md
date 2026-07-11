@@ -196,3 +196,6 @@ console.log(result.faceLandmarks, result.faceBlendshapes);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
+- [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA 工具箱

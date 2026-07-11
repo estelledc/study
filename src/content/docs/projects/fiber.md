@@ -172,16 +172,7 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端

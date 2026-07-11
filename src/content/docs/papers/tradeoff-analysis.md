@@ -161,3 +161,5 @@ def tied_read(a, b, key):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bullet]] —— Bullet — C++ 经典 3D 物理引擎与 PyBullet 仿真工具

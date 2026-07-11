@@ -165,4 +165,6 @@ Presence 走同一条 WebSocket，但不进 op log，断开就消失——和 [[
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作
+- [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB

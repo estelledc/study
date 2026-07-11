@@ -152,5 +152,4 @@ else:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aomedia-standards]] —— AOMedia 常见评测规则与公开基准
-- [[video-codec-evolution]] —— AV1/AV2 过渡中的关键里程碑
+（暂无反向链接）

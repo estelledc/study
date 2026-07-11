@@ -158,17 +158,9 @@ ORDER BY score DESC LIMIT 10
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
-- [[chroma]] —— Chroma — Python 优先的向量数据库
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[janusgraph]] —— JanusGraph — 可插拔后端的分布式图数据库
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[memgraph]] —— Memgraph — 内存图数据库
-- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
-- [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
-

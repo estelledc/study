@@ -168,11 +168,4 @@ foreach (var book in result.Data!.Books) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
-- [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-
+（暂无反向链接）

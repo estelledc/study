@@ -166,3 +166,13 @@ ctr run -d --rm docker.io/library/nginx:latest demo
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[papers/k3s]] —— k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制
+- [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
+- [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
+- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
+- [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
+- [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI
+- [[podman]] —— Podman — 无 daemon 容器引擎
+- [[runc]] —— runc — Linux 容器最底层那个真正在 fork 进程的 CLI

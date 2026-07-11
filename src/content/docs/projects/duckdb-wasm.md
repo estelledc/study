@@ -153,11 +153,7 @@ const result = conn.query(`SELECT upper_js('hello world') AS v`)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-
+- [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑

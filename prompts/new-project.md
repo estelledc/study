@@ -13,6 +13,8 @@
 - `{{worktree_path}}` — 工作目录绝对路径
 - `{{branch_name}}` — 分支名
 - `{{output_path}}` — 输出文件绝对路径
+- `{{claim_token}}` — 本次 claim token，成功 JSON 必须原样回传
+- `{{claim_generation}}` — 本次 claim generation，成功 JSON 必须原样回传
 
 ## 流程
 
@@ -69,7 +71,7 @@ git commit -m "feat: {{slug}} 新建零基础笔记（{{topic}}）"
 
 ## 返回格式
 
-与 `new-paper.md` 同：成功 / 失败 JSON。
+与 `new-paper.md` 同：成功 / 失败 JSON。成功时必须原样包含 `"claim_token":"{{claim_token}}"` 与 `"claim_generation":"{{claim_generation}}"`。
 
 ## 严禁
 

@@ -174,7 +174,4 @@ Chris Sawyer 是个传奇。1990 年代他用 x86 汇编从零写了 Transport T
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
-- [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
-- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
-
+（暂无反向链接）

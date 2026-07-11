@@ -161,9 +161,8 @@ export default function Layout({ children }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
+- [[papers/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[lexical]] —— Lexical — 把富文本编辑拆成快照、事务和插件
 - [[next-intl]] —— next-intl — Next.js 专用的多语言开关
 - [[nivo]] —— nivo — React + d3 组件化图表
-- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
-

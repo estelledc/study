@@ -179,9 +179,5 @@ func SaveToken(db *bolt.DB, token string) error {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[etcd]] —— etcd — 分布式键值数据库
-- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
-- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-

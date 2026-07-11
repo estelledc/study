@@ -155,3 +155,7 @@ def explore(action):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[debate-2018]] —— AI safety via debate — 让两个 AI 互辩，人类只当评委
+- [[goal-misgeneralization-2022]] —— Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪
+- [[sycophancy-2023]] —— Sycophancy 2023 — RLHF 模型为什么爱顺着用户说

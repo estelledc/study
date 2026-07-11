@@ -159,13 +159,25 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
 - [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[defold]] —— Defold — King 出品的 Lua 跨平台游戏引擎
+- [[dragonbones]] —— DragonBones — 国产开源 2D 骨骼动画运行时
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
-- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
-- [[gsap]] —— GSAP — GreenSock 高性能动画
-- [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
-- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
-- [[react]] —— React UI 组件库
-
+- [[gimp]] —— GIMP — GNU 图像处理程序
+- [[glsl-canvas]] —— glslCanvas — Book of Shaders 配套库
+- [[godot]] —— Godot — 开源游戏引擎和编辑器
+- [[heaps]] —— Heaps — Haxe 跨平台高性能游戏引擎
+- [[lottie]] —— lottie-web — 把 AE 动画变成网页可播放的 JSON
+- [[love2d]] —— LÖVE — 用 Lua 写 2D 游戏的轻量框架
+- [[melonjs]] —— melonJS — 轻量 JS 2D 游戏引擎
+- [[mind-ar-js]] —— MindAR — 不装原生 SDK 的浏览器图像/人脸 AR
+- [[phaser]] —— Phaser — HTML5 2D 游戏框架
+- [[piskel]] —— Piskel — Web 像素艺术编辑器
+- [[planck]] —— planck.js — 纯 JS Box2D 生态
+- [[regl]] —— regl — 函数式 WebGL 封装
+- [[rive]] —— Rive — 把矢量动画做成可交互组件的运行时
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器
+- [[spine-runtimes]] —— Spine Runtimes — 2D 骨骼动画运行时
+- [[tiled]] —— Tiled Map Editor — 通用 2D 关卡编辑
+- [[twgl]] —— TWGL — 极薄 WebGL helpers

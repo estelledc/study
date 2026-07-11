@@ -154,12 +154,4 @@ print(expr:match("12 + 34 - 5"))         -- 输出匹配结束位置
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[algol-60]] —— ALGOL 60 — BNF 与块结构
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
-- [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
-- [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
-- [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
-- [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
-- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
-

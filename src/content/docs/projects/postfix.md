@@ -153,3 +153,8 @@ support@example.com  alice@example.com bob@example.com carol@example.com
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
+- [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
+- [[mailcow]] —— mailcow — Docker compose 一键起一整套邮件服务
+- [[postal]] —— Postal — 自托管的 Mailgun / SendGrid 替代

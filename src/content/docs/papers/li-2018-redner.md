@@ -145,7 +145,4 @@ redner 是这条线的**理论奠基**：之后所有 surface-based 可微渲染
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[attention]] —— Attention Is All You Need
-- [[jax]] —— JAX — Google 函数式数值计算
-- [[pytorch]] —— PyTorch — 深度学习主流框架
+（暂无反向链接）

@@ -152,16 +152,8 @@ Thread.new { StatusApp.run! port: 9292 }
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
-- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-

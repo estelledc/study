@@ -154,11 +154,5 @@ await prefixStorage(root, 'v1:').clear()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[minio]] —— MinIO — S3 兼容对象存储
-- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
-- [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[prisma]] —— Prisma — 类型安全 ORM
 - [[redis]] —— Redis — 内存键值数据库
-

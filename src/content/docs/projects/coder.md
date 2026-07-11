@@ -187,3 +187,4 @@ resource "coder_agent" "main" {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[gitpod]] —— Gitpod — 预构建云开发环境

@@ -147,14 +147,10 @@ results = nearest_neighbors(query_vec, gallery_vecs)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
 - [[biggan-2018]] —— BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
-- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[lomo-modality]] —— LoMo — 把同一句话换成图片也要看懂
 - [[mixup-2018]] —— mixup — 把两张图按比例叠成一张，标签也一起叠
 - [[ntk-2018]] —— NTK — 把无限宽的神经网络变成一个可解的核方法
-- [[resnet]] —— ResNet — 残差连接
-- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-

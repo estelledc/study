@@ -157,18 +157,11 @@ void swap(int **a, int **b) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[souffle-datalog]] —— Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动
-- [[ssa]] —— SSA — 静态单赋值形式
-- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期

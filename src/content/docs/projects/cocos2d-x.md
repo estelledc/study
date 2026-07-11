@@ -157,3 +157,16 @@ C++ 一侧只暴露 `enemy:hp()` / `enemy:flee()` 这些方法。改个数值平
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
+- [[blender]] —— Blender — 全流程 3D 创作套件
+- [[box2d]] —— Box2D — Erin Catto C++ 2D 物理
+- [[defold]] —— Defold — King 出品的 Lua 跨平台游戏引擎
+- [[dragonbones]] —— DragonBones — 国产开源 2D 骨骼动画运行时
+- [[love2d]] —— LÖVE — 用 Lua 写 2D 游戏的轻量框架
+- [[melonjs]] —— melonJS — 轻量 JS 2D 游戏引擎
+- [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
+- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
+- [[spine-runtimes]] —— Spine Runtimes — 2D 骨骼动画运行时
+- [[tiled]] —— Tiled Map Editor — 通用 2D 关卡编辑

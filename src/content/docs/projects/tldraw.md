@@ -158,3 +158,5 @@ class FlowNodeShapeUtil extends ShapeUtil<FlowNodeShape> {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[pdfme]] —— pdfme — TypeScript 模板化 PDF

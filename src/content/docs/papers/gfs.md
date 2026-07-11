@@ -159,26 +159,32 @@ def upload(key, data):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[bigtable]] —— Bigtable — 把巨大表格切到上千台机器上
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[bigtable-revisit-2024]] —— Bigtable 二十年回顾 — 从三维表到云数据库
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
+- [[data-lake-management-2019]] —— Data Lake Management 2019 — 数据湖从文件堆变成可治理资产
+- [[dremel-2010]] —— Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析
+- [[dremel-decade-2020]] —— Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[f4-2014]] —— f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库
-- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[frangipani-1997]] —— Frangipani — 把分布式文件系统盖在共享虚拟磁盘上
+- [[haystack-2010]] —— Haystack 2010 — Facebook 小文件照片存储
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[papers/kafka]] —— Kafka — 把消息系统降维成只追加的日志文件
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[mesos]] —— Mesos — 让多种计算框架共用一套集群
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
-- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[soft-updates-1999]] —— Soft Updates — 不写 journal 也能保证文件系统元数据一致
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[system-design]] —— The Datacenter as a Computer — 把机房当成一台巨型计算机
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
-- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
-- [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
+- [[tradeoff-analysis]] —— The Tail at Scale — 尾延迟会被规模放大
 - [[zfs-2003]] —— ZFS — 把磁盘当成水池，每滴水都贴标签
-
+- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场

@@ -161,6 +161,6 @@ dvc exp show                   # 列出两次实验的参数 + 指标对照表
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/clearml]] —— ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[mlflow]] —— MLflow — 端到端 ML 生命周期
-
+- [[projects/mlflow]] —— MLflow — 端到端 ML 生命周期

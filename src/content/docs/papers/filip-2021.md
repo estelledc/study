@@ -147,3 +147,4 @@ FILIP 论文直接 cite [[colbert-2020]]：late interaction 2020 年已在文本
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声

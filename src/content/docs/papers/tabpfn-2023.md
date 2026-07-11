@@ -141,10 +141,4 @@ loss = tabpfn.predict_heldout(X[:-1], y[:-1], X[-1], y[-1])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chronos-2024]] —— Chronos — 把时间序列当语言来训练大模型
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
-

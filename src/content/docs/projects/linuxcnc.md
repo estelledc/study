@@ -161,3 +161,6 @@ halcmd: start
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座

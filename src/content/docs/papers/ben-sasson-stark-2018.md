@@ -148,10 +148,7 @@ STARK rollup 做法：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bitcoin]] —— Bitcoin 白皮书
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
-- [[reed-solomon-1960]] —— Reed-Solomon 编码
-- [[rsa]] —— RSA 公钥密码
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[bowe-halo-2019]] —— Halo 2019 — 不靠可信仪式递归压缩证明
+- [[bunz-bulletproofs-2018]] —— Bulletproofs 2018：不用可信仪式的短范围证明
+- [[gabizon-plonk-2019]] —— PLONK — 一次通用布置，反复证明很多程序
 - [[zk-snark]] —— zk-SNARK 零知识证明
-

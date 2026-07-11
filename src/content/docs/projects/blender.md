@@ -171,3 +171,24 @@ blender --background --python cli_tools.py --command hello
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aframe]] —— A-Frame — 用 HTML 搭 Web VR 场景
+- [[appleseed]] —— appleseed — 物理渲染器
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[draco]] —— Draco — Google 3D 网格压缩
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[gimp]] —— GIMP — GNU 图像处理程序
+- [[gltf-transform]] —— glTF Transform — glTF 资产工具链
+- [[godot]] —— Godot — 开源游戏引擎和编辑器
+- [[inkscape]] —— Inkscape — 矢量图形编辑器
+- [[kdenlive]] —— Kdenlive — KDE 非线性视频剪辑
+- [[kicad]] —— KiCad — 电子电路 CAD
+- [[krita]] —— Krita — 数字绘画专业编辑器
+- [[librecad]] —— LibreCAD — 2D 工程绘图
+- [[luxcorerender]] —— LuxCoreRender — 物理光线追踪
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎
+- [[open3d]] —— Open3D — 现代点云 / 几何库
+- [[openscad]] —— OpenSCAD — 脚本式 CAD
+- [[pcl]] —— PCL — 点云算法的学术工具箱
+- [[raylib]] —— raylib — 极简 C 游戏库

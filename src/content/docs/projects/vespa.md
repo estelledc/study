@@ -170,3 +170,5 @@ rank-profile deep inherits hybrid {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[weaviate]] —— Weaviate — 模块化向量数据库

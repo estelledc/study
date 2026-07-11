@@ -159,3 +159,5 @@ voici build my-notebook.ipynb --output dist/
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本

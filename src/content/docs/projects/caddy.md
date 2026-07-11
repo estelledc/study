@@ -178,19 +178,20 @@ docker run -d \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[code-server]] —— code-server — 浏览器里的 VS Code
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[freemodbus]] —— FreeModbus：嵌入式设备的 Modbus 从站协议栈
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[minio]] —— MinIO — S3 兼容对象存储
-- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[openvscode-server]] —— OpenVSCode Server：把上游 VS Code 跑进浏览器
 - [[postal]] —— Postal — 自托管的 Mailgun / SendGrid 替代
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 - [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
-

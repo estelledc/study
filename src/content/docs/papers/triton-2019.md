@@ -163,15 +163,7 @@ out = acc / l_i
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bentoml]] —— BentoML — 模型打包部署
+- [[papers/bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
 - [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
-- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
-- [[ssa]] —— SSA — 静态单赋值形式
+- [[passnet-graph-compiler]] —— PassNet — 让大模型给图编译器写优化 pass
 - [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
-- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
-- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
-- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
-

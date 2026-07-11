@@ -6,6 +6,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import { AUDIT_CHECKPOINT_PATH, AUDIT_POOL_PATH, AUDIT_REVIEWS_DIR } from './lib/paths.mjs';
 
 function parseArgs() {
@@ -38,6 +39,7 @@ function countByStatus(pool) {
 
 async function main() {
   const args = parseArgs();
+  assertBulkOperationAuthorized({ operation: 'finalize-audit-round', requestedItems: 1 });
   const pool = await loadPool();
   const results = await loadResults(args.results);
   const now = new Date().toISOString();

@@ -156,22 +156,15 @@ r.POST("/users", func(c *gin.Context) {
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
-- [[prometheus]] —— Prometheus — 时序监控系统
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-
+- [[wails]] —— Wails — 用 Go + 网页技术打成单个桌面应用

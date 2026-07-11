@@ -147,3 +147,6 @@ for kappa in [0, 10, 20, 40]:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[madry-pgd-2017]] —— Madry PGD — 把对抗训练变成最坏情况演练
+- [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错

@@ -156,12 +156,11 @@ AT 组件还管超时重发与状态机。把 IoT 协议栈在 KB 级 RAM 上跑
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
 - [[embassy]] —— Embassy — 让单片机也能用 async/await
 - [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
-- [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
-- [[risc-i-1981]] —— RISC I — 砍掉 90% 指令反而让 CPU 跑得更快
-- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[moveit2]] —— MoveIt 2 — ROS 2 上的机械臂运动规划框架
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[ros2]] —— ROS 2 — 机器人软件的分布式消息底座
+- [[wamr]] —— WAMR — 塞进单片机也能跑的 Wasm 微运行时
 - [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
-

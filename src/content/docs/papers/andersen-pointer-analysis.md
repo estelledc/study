@@ -169,18 +169,11 @@ pts(p) = pts(q) = pts(r) = {x, y}
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
-- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[avgustinov-codeql-2016]] —— QL / CodeQL — 用面向对象外壳写可扩展代码查询
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
-- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[llvm]] —— LLVM — 模块化编译器框架
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
-- [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
 - [[souffle-datalog]] —— Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动
-- [[ssa]] —— SSA — 静态单赋值形式
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
-

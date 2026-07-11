@@ -159,6 +159,7 @@ helm rollback my-nginx 1
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[papers/kustomize]] —— Kustomize — 不写模板也能给 K8s 配置分环境
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
@@ -166,11 +167,11 @@ helm rollback my-nginx 1
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
-- [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
+- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
 - [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[projects/kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
@@ -181,4 +182,4 @@ helm rollback my-nginx 1
 - [[tilt]] —— Tilt — K8s 微服务本地开发的"文件保存即上线"
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
-
+- [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）

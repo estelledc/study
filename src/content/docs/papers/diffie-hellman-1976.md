@@ -158,3 +158,21 @@ assert shared_alice == shared_bob
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
+- [[bernstein-sphincs-2015]] —— SPHINCS 2015 — 不用记状态的后量子哈希签名
+- [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
+- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
+- [[chillotti-tfhe-2016]] —— TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒
+- [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[dwork-our-data-ourselves-2006]] —— 分布式噪声 — 大家一起加噪音比一个人加更安全
+- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[kim-rowhammer-2014]] —— RowHammer 2014 — 反复读一行内存也能翻转邻居比特
+- [[logjam-2015]] —— Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
+- [[paillier-1999]] —— Paillier 1999 — 能在密文上直接做加法的公钥加密
+- [[rabin-ot-1981]] —— Rabin OT 1981 — 不知道对方是否收到的秘密交换
+- [[reed-onion-routing-1998]] —— Onion Routing 1998 — Tor 前身把匿名连接做成网络积木
+- [[regev-lwe-2005]] —— Regev LWE 2005 — 把带噪声方程变成后量子密码地基
+- [[shor-1994]] —— Shor 1994 — 量子傅里叶变换把分解整数变成找周期
+- [[yao-garbled-circuits-1986]] —— Yao Garbled Circuits — 两个人不摊牌也能一起算答案

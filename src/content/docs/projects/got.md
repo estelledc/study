@@ -172,9 +172,4 @@ for await (const item of got.paginate<Item>("items", {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
-- [[ofetch]] —— ofetch — Nuxt 默认的现代 fetch 包装
-- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
-- [[wretch]] —— wretch — 把 fetch 写成一条链
-

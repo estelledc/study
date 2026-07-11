@@ -156,6 +156,5 @@ python tools/export_model.py -c configs/rec/PP-OCRv4/ch_PP-OCRv4_rec.yml \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[paddle-lite]] —— Paddle Lite — 端侧轻量推理引擎
 - [[unstructured]] —— Unstructured — 把任意文档解析成 LLM 能吃的元素列表
-

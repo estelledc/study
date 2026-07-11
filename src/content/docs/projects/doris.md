@@ -147,3 +147,10 @@ WHERE dt = '2026-05-30' LIMIT 100;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[databend]] —— Databend — Rust 写的存算分离云数仓
+- [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
+- [[manticoresearch]] —— Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
+- [[questdb]] —— QuestDB — 高性能时序库
+- [[redash]] —— Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
+- [[projects/starrocks]] —— StarRocks — MPP 列存数据库
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库

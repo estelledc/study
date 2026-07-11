@@ -195,3 +195,7 @@ Home Assistant 的 WebSocket API 位于 `/api/websocket`，前端和外部客户
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[esphome]] —— ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件
+- [[espurna]] —— ESPurna — 给便宜智能开关换一套本地大脑
+- [[openhab]] —— openHAB — Java OSGi 家庭自动化框架

@@ -151,3 +151,6 @@ if (s === state.RUN) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hoare-csp-1978]] —— Hoare CSP 1978 — 把并发看成会对话的小程序
+- [[parnas-information-hiding-1972]] —— Parnas 信息隐藏 1972 — 模块化设计原则

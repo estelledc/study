@@ -160,17 +160,9 @@ JikesRVM（一个研究用的 JVM）在 PLDI 2008 论文里报告：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
-- [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
 - [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy Concurrent GC — ML 线程运行时里的准实时垃圾回收
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
-- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jemalloc-2006]] —— jemalloc — 多 arena 让多线程 malloc 不再互相等
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[shenango-2019]] —— Shenango — 每 5 微秒重新分一次核的中央调度器
 - [[slab-1994]] —— Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切
-- [[ssa]] —— SSA — 静态单赋值形式
-

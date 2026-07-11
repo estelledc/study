@@ -184,12 +184,7 @@ Host（CPU）和 Device（GPU）两套内存，每次跑一段都要拷。**PCIe
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
-- [[attention]] —— Attention Is All You Need
 - [[cell-be-2005]] —— Cell BE — 一颗 CPU 里塞 8 个加速核
-- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
+- [[cuda]] —— CUDA — 把显卡变成通用并行计算平台
 - [[fpga-hls-2011]] —— FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
-- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
-- [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[owens-2007-gpgpu-survey]] —— Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代
-

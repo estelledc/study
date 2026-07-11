@@ -175,3 +175,6 @@ Altair 本身**不画一个像素**，它只是把 Python 链式调用翻译成 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
+- [[projects/vega-lite]] —— Vega-Lite — 高层声明式可视化语法

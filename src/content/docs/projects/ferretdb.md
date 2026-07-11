@@ -165,3 +165,6 @@ driver 端只换连接字符串：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mongo]] —— MongoDB — 文档数据库代表
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库

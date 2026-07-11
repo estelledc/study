@@ -165,7 +165,4 @@ df.groupby("user").mean()  # 立刻得到结果，行序与 pandas 一致
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
-- [[pandas]] —— pandas — Python 表格数据事实标准
-- [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
-
+（暂无反向链接）

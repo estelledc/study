@@ -150,8 +150,4 @@ Imagen 的 base 是 64×64。DreamFusion 选择只在 64×64 渲染 NeRF 并算 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
-- [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
 - [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
-- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
-

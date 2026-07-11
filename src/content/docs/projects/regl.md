@@ -195,3 +195,13 @@ regl.frame(() => updateLife())
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[assimp]] —— Assimp — 把 3D 模型格式统一成 aiScene 的导入库
+- [[draco]] —— Draco — Google 3D 网格压缩
+- [[glsl-canvas]] —— glslCanvas — Book of Shaders 配套库
+- [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统
+- [[gltf-transform]] —— glTF Transform — glTF 资产工具链
+- [[hydra-synth]] —— Hydra — 实时视觉合成 livecoding
+- [[mitsuba3]] —— Mitsuba 3 — 研究向可微渲染器
+- [[spectorjs]] —— Spector.js — WebGL/WebGPU 调试器
+- [[twgl]] —— TWGL — 极薄 WebGL helpers

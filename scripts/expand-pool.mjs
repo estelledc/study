@@ -11,11 +11,15 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseFrontmatterLoose } from './lib/frontmatter.mjs';
 import { readJsonl } from './lib/jsonl.mjs';
+import {
+  extractWikilinks,
+  serializeNoteId,
+  slugFromNoteFilename,
+} from './lib/note-id.mjs';
 import { CANDIDATES_PATH, PAPERS_DIR, PROJECTS_DIR } from './lib/paths.mjs';
 import { writeCandidates } from './lib/queue-store.mjs';
 
 const RED_LINE = /blindbox|quanzhiping|video-eval-agent|sankuai|friday|cagent|aigc\.sankuai|美团|mis\.sankuai|cagent_fe_h5_blindbox|LongCat|6 件套/i;
-const WIKILINK_RE = /\[\[([a-z0-9][a-z0-9_.-]*)\]\]/g;
 
 // 抽取 ## 延伸阅读 / ## 关联 段（H2 边界）
 export function extractTargetSections(text) {
@@ -63,17 +67,19 @@ export function extractOrganicLinksFromNote(text, area, sourceSlug) {
   const sourceCategory = extractCategory(text);
   const target = extractTargetSections(text);
   if (!target) return found;
-  let m;
-  WIKILINK_RE.lastIndex = 0;
-  while ((m = WIKILINK_RE.exec(target)) !== null) {
-    const slug = m[1];
+  const sourceId = serializeNoteId(area, sourceSlug);
+  for (const link of extractWikilinks(target)) {
+    // Organic expansion preserves the old same-area inference contract.
+    // Explicit namespace links already identify an existing cross-area note.
+    if (!link.parsed.valid || link.parsed.kind !== 'bare') continue;
+    const slug = link.parsed.slug;
     if (!found.has(slug)) {
       found.set(slug, { count: 0, sources: [], category: sourceCategory });
     }
     const entry = found.get(slug);
     entry.count++;
     if (entry.sources.length < 5) {
-      entry.sources.push(`${area}/${sourceSlug}`);
+      entry.sources.push(sourceId);
     }
   }
   return found;
@@ -106,7 +112,7 @@ async function scanNotesForLinks(dir, area) {
     if (!f.endsWith('.md') || f.startsWith('_')) continue;
     const filePath = path.join(dir, f);
     const text = await fs.readFile(filePath, 'utf8');
-    const sourceSlug = f.replace(/\.md$/, '');
+    const sourceSlug = slugFromNoteFilename(f);
     mergeLinkMaps(found, extractOrganicLinksFromNote(text, area, sourceSlug));
   }
   return found;
@@ -120,7 +126,7 @@ export function buildOrganicCandidates({
   writtenProjects,
   target = 50,
 }) {
-  const existingKeys = new Set(existing.map(c => `${c.area}::${c.slug}`));
+  const existingKeys = new Set(existing.map((candidate) => serializeNoteId(candidate.area, candidate.slug)));
   const newCandidates = [];
 
   // 4. 候选打分（papers area + projects area 各自处理）
@@ -128,8 +134,8 @@ export function buildOrganicCandidates({
   // 没有就两边都加（保守，先加 papers area 因为 papers 段是论文链向更多论文）
   function isExcluded(area, slug) {
     // 跨 area 去重：任何 area 已有 candidate 就跳过
-    if (existingKeys.has(`papers::${slug}`)) return true;
-    if (existingKeys.has(`projects::${slug}`)) return true;
+    if (existingKeys.has(serializeNoteId('papers', slug))) return true;
+    if (existingKeys.has(serializeNoteId('projects', slug))) return true;
     // 跨 area 已写也跳过
     if (writtenPapers.has(slug) || writtenProjects.has(slug)) return true;
     return false;
@@ -152,7 +158,7 @@ export function buildOrganicCandidates({
       organic_freq: info.count,
       organic_sources: info.sources,
     });
-    existingKeys.add(`${area}::${slug}`); // 防止后续同 slug 跨 area 重复加
+    existingKeys.add(serializeNoteId(area, slug)); // 防止后续同 slug 跨 area 重复加
     return true;
   }
 
@@ -189,11 +195,11 @@ async function main() {
   const writtenProjects = new Set();
   try {
     const ls = await fs.readdir(PAPERS_DIR);
-    ls.forEach(f => f.endsWith('.md') && !f.startsWith('_') && writtenPapers.add(f.replace(/\.md$/, '')));
+    ls.forEach((f) => f.endsWith('.md') && !f.startsWith('_') && writtenPapers.add(slugFromNoteFilename(f)));
   } catch (e) {}
   try {
     const ls = await fs.readdir(PROJECTS_DIR);
-    ls.forEach(f => f.endsWith('.md') && !f.startsWith('_') && writtenProjects.add(f.replace(/\.md$/, '')));
+    ls.forEach((f) => f.endsWith('.md') && !f.startsWith('_') && writtenProjects.add(slugFromNoteFilename(f)));
   } catch (e) {}
 
   const { newCandidates, picked } = buildOrganicCandidates({

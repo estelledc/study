@@ -157,11 +157,8 @@ module.exports = {
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
 - [[next-js]] —— Next.js — React 全栈框架
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
-- [[react]] —— React UI 组件库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
-- [[styled-components]] —— styled-components — React 生态最早的 CSS-in-JS 库
+- [[styled-components]] —— styled-components — 用标签模板把 CSS 写进 React 组件的 CSS-in-JS 库
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
 - [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
-

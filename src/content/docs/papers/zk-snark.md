@@ -144,12 +144,18 @@ assert!(verify(vk, public_n_and_out, π));
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arbitrum]] —— Arbitrum Nitro — Optimistic Rollup 客户端
-- [[ben-sasson-stark-2018]] —— STARK — 不需要可信第三方的正确性证明
-- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好语言
-- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
-- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
+- [[bowe-halo-2019]] —— Halo 2019 — 不靠可信仪式递归压缩证明
+- [[bunz-bulletproofs-2018]] —— Bulletproofs 2018：不用可信仪式的短范围证明
+- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
+- [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[gabizon-plonk-2019]] —— PLONK — 一次通用布置，反复证明很多程序
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
+- [[gmw-mental-game-1987]] —— GMW Mental Game — 多个人不交出秘密也能一起算答案
+- [[paillier-1999]] —— Paillier 1999 — 能在密文上直接做加法的公钥加密
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
+- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM
-- [[turing-1936]] —— Turing 1936 可计算性
-

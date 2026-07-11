@@ -175,3 +175,5 @@ constraints = [
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[baraff-witkin-1998-cloth]] —— Baraff-Witkin 1998 — 让布料模拟敢走大时间步

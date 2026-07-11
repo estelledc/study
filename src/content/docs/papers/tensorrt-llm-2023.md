@@ -150,3 +150,11 @@ python build.py --checkpoint_dir ./fp8-ckpt --use_fp8 ...
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
+- [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度
+- [[rtp-llm-alibaba]] —— RTP-LLM — 把大模型推理服务做成分阶段工厂
+- [[sglang-2024]] —— SGLang — 把 LLM 程序当成共享前缀的树来跑
+- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
+- [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
+- [[projects/vllm]] —— vLLM — 高吞吐 LLM 推理引擎

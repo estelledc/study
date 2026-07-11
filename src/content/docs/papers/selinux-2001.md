@@ -151,8 +151,5 @@ semodule -i mypolicy.pp
 
 - [[capsicum-2010]] —— Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"
 - [[haven-2014]] —— Haven — 在不信任的云里给程序造一间安全屋
-- [[kubernetes-2016]] —— Kubernetes — 为什么选声明式 API 加协调环
-- [[mach-1986]] —— Mach — 把内核拆成消息互通的小服务
-- [[saltzer-schroeder-1975]] —— Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则
-- [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
-
+- [[linux-kernel]] —— Linux kernel — 三层解释开源内核如何协作
+- [[sweeney-k-anonymity-2002]] —— Sweeney k-Anonymity 2002 — 删除姓名还不够的匿名化基线

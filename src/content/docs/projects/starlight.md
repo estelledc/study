@@ -164,14 +164,15 @@ export default {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
+- [[papers/mermaid]] —— Mermaid — 用文本写图，让代码评审能 diff 流程图
+- [[papers/panel]] —— Panel — 把 notebook 一键变交互式 web app
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[gh]] —— gh — GitHub 官方命令行
 - [[glab]] —— glab — GitLab 官方命令行
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
@@ -180,6 +181,6 @@ export default {
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[shfmt]] —— shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[texstudio]] —— TeXstudio — LaTeX IDE
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
-

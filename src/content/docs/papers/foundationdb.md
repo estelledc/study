@@ -157,3 +157,7 @@ fdbserver -r simulation -s 12345
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库

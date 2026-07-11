@@ -138,7 +138,6 @@ C = 20×10^6 × log₂(1001) ≈ 200 Mbps
 
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
@@ -148,9 +147,7 @@ C = 20×10^6 × log₂(1001) ≈ 200 Mbps
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[huffman-1952]] —— Huffman 编码
 - [[maron-kuhns-1960]] —— Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
-- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[reed-solomon-1960]] —— Reed-Solomon 编码
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
-- [[turing-1936]] —— Turing 1936 可计算性
-
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现

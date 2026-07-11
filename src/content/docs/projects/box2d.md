@@ -155,8 +155,7 @@ while (accumulator >= fixedDt) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cocos2d-x]] —— 2D 场景图中常见的 Box2D 集成
-- [[chipmunk2d]] —— 社区常见替代实现
-- [[planck]] —— Web 生态中的 Box2D 风格实现
-- [[bullet]] —— 更大规模刚体物理对照
-- [[liquidfun]] —— 基于流体扩展的方向。
+- [[bullet]] —— Bullet — C++ 经典 3D 物理引擎与 PyBullet 仿真工具
+- [[matter-js]] —— Matter.js — 2D 刚体世界里最轻的“物理白板”
+- [[planck]] —— planck.js — 纯 JS Box2D 生态
+- [[rapier]] —— Rapier — Rust 现代 2D/3D 物理引擎

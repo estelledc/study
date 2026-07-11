@@ -67,13 +67,33 @@ test('rendered prompt templates do not leak old machine paths', async () => {
     research_json: '/tmp/pipeline-demo/research.json',
     output_json: '/tmp/pipeline-demo/research.json',
     reviews_json: '/tmp/pipeline-demo/reviews.json',
+    review_receipt_path: '/tmp/study-home/study-refactor-papers/data/review-receipts/papers/demo-paper.json',
+    evidence_dir: '/tmp/study-home/study-refactor-papers/data/review-evidence/papers/demo-paper',
     round: 1,
   };
   const rendered = Object.values(templates).map((template) => renderTemplate(template, vars)).join('\n');
-  assert.equal(rendered.includes('/Users/jason'), false);
+  assert.equal(rendered.includes(['', 'Users', 'jason'].join('/')), false);
   assert.equal(rendered.includes(ROOT), true);
   assert.equal(rendered.includes('/tmp/study-home/study-refactor-papers/src/content/docs/papers'), true);
   assert.equal(rendered.includes('$1 and $& stay literal'), true);
+});
+
+test('reviewer prompts report execution truth without a fixed case or H2 template', async () => {
+  const templates = await loadPromptTemplates([
+    'reviewer-zero-base',
+    'reviewer-engineer',
+    'reviewer-academic',
+  ]);
+  for (const template of Object.values(templates)) {
+    assert.match(template, /"reviewer_version": "prompt-v2"/);
+    assert.match(template, /"execution"/);
+  }
+  assert.match(templates['reviewer-engineer'], /MANUAL_SIMULATION/);
+  assert.match(templates['reviewer-engineer'], /study-execution-evidence-v1/);
+  assert.match(templates['reviewer-engineer'], /没有运行 artifact 时不得返回 `ACTUAL_RUN`/);
+  assert.doesNotMatch(templates['reviewer-engineer'], /没有运行 artifact 时返回 `ACTUAL_RUN`/);
+  assert.doesNotMatch(templates['reviewer-engineer'], /手动模拟跑代码/);
+  assert.doesNotMatch(templates['reviewer-zero-base'], /3 个案例齐/);
 });
 
 test('paper prompts use paper-context instead of unsafe graph/cite shortcuts', async () => {

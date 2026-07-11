@@ -149,7 +149,4 @@ WOPI 协议本身更早（2012），是 Microsoft 为了让 SharePoint 之外的
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
-- [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
-- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
-
+- [[overleaf]] —— Overleaf — 在线 LaTeX 协作

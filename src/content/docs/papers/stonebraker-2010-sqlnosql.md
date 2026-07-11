@@ -149,17 +149,10 @@ NoSQL 论点 C：扩展更容易
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
-- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
-- [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
-- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
-- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[scads-database-2008]] —— SCADS — 用户涨一万倍也不改应用的存储愿景
 - [[skip-locked-postgres-9.5]] —— SKIP LOCKED — 让 Postgres 当任务队列用
-- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
-
