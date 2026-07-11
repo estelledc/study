@@ -1,0 +1,181 @@
+{
+  "slug": "rapier",
+  "area": "projects",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.11,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文是模板占位句（「观察点 N：围绕 rapier 关注…」），没有真实类比或可理解定义。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例无代码、无步骤，零基础读者无法跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文未陈述 Rapier 是 Dimforge 的 2D/3D Rust 物理引擎（rapier2d/rapier3d），事实内容缺失。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 URL 指向 dimforge/rapier 合理，但笔记未引用任何可核验的项目事实。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无 RigidBodySet/ColliderSet/PhysicsPipeline::step 等最小可跑示例。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界全是占位句，无法指导选型（Bevy 插件、JS 绑定、与 Bullet/Box2D 对比均缺失）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文是模板占位句（「观察点 N：围绕 rapier 关注…」），没有真实类比或可理解定义。",
+        "实践案例无代码、无步骤，零基础读者无法跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 2,
+        "no_distortion": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文未陈述 Rapier 是 Dimforge 的 2D/3D Rust 物理引擎（rapier2d/rapier3d），事实内容缺失。",
+        "来源 URL 指向 dimforge/rapier 合理，但笔记未引用任何可核验的项目事实。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无 RigidBodySet/ColliderSet/PhysicsPipeline::step 等最小可跑示例。",
+        "踩坑与适用边界全是占位句，无法指导选型（Bevy 插件、JS 绑定、与 Bullet/Box2D 对比均缺失）。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 1.11,
+    "verdict": "rewrite",
+    "action": "rewrite",
+    "reject_count": 3,
+    "needs_refine_count": 0,
+    "pass_count": 0,
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 是什么",
+        "verdict": "reject"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 是什么",
+        "verdict": "reject"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 实践案例",
+        "verdict": "reject"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "zero-base",
+        "hint": "全文是模板占位句（「观察点 N：围绕 rapier 关注…」），没有真实类比或可理解定义。"
+      },
+      {
+        "reviewer": "zero-base",
+        "hint": "实践案例无代码、无步骤，零基础读者无法跟做。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "正文未陈述 Rapier 是 Dimforge 的 2D/3D Rust 物理引擎（rapier2d/rapier3d），事实内容缺失。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "来源 URL 指向 dimforge/rapier 合理，但笔记未引用任何可核验的项目事实。"
+      },
+      {
+        "reviewer": "engineer",
+        "hint": "无 RigidBodySet/ColliderSet/PhysicsPipeline::step 等最小可跑示例。"
+      },
+      {
+        "reviewer": "engineer",
+        "hint": "踩坑与适用边界全是占位句，无法指导选型（Bevy 插件、JS 绑定、与 Bullet/Box2D 对比均缺失）。"
+      }
+    ]
+  },
+  "remediation": {
+    "status": "rewritten",
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
