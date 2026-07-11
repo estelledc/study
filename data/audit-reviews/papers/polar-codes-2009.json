@@ -1,0 +1,115 @@
+{
+  "slug": "polar-codes-2009",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Kronecker 积首次出现可加半句日常桥接（如「用小积木反复拼成大矩阵」），零基础读者否则会卡在术语上。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 第 3 层 Z 值写错：按文中递推应从 [0.9375,0.5625,0.4375,0.0625] 得到约 [0.996,0.879,0.809,0.316,0.684,0.191,0.121,0.004]，文中 0.379/0.621 与公式不符。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」写「50 年圣杯」，同文历史段写「60 年」——统一为 1948→2009 的约 60 年。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 给出的 Python 递推与第 3 层数值对不上，读者手算会验算失败；应按公式改正第 3 层（索引 7,6,5,3 仍是好信道，可保留）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Kronecker 积首次出现可加半句日常桥接（如「用小积木反复拼成大矩阵」），零基础读者否则会卡在术语上。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 第 3 层 Z 值写错：按文中递推应从 [0.9375,0.5625,0.4375,0.0625] 得到约 [0.996,0.879,0.809,0.316,0.684,0.191,0.121,0.004]，文中 0.379/0.621 与公式不符。",
+        "「为什么重要」写「50 年圣杯」，同文历史段写「60 年」——统一为 1948→2009 的约 60 年。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 给出的 Python 递推与第 3 层数值对不上，读者手算会验算失败；应按公式改正第 3 层（索引 7,6,5,3 仍是好信道，可保留）。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "lines": 155,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic/engineer 指出案例 2 第 3 层 Z 值与递推公式不符；并统一 50/60 年表述；顺带给 Kronecker 积加半句桥接。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}
