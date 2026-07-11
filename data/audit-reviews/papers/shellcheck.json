@@ -1,0 +1,142 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "律师审合同类比贴合；SC 编号有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有为什么错/怎么改；案例 2 数组写法对零基础略陡"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "关联仅 2 条，建议补到 5–7 条以符合模板"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Linux 内核构建脚本都跑 ShellCheck」证据不足，宜改为「许多发行版/CI 广泛采用」或删掉内核断言"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Vidar Holen / 2012 / koalaman/shellcheck / Haskell 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「是什么」里 `file=my report.txt` 本身不是合法赋值（会把 report.txt 当命令），应写成带引号的赋值再演示未引号展开"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "开篇示例 `file=my report.txt` 在 bash 里会先失败于赋值，应改为 `file=\"my report.txt\"; rm $file` 再展示 SC2086"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：disable、SC1090、zsh 边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界；与 shfmt 分工清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "律师审合同类比贴合；SC 编号有桥接",
+        "案例 1–3 有为什么错/怎么改；案例 2 数组写法对零基础略陡",
+        "关联仅 2 条，建议补到 5–7 条以符合模板"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「Linux 内核构建脚本都跑 ShellCheck」证据不足，宜改为「许多发行版/CI 广泛采用」或删掉内核断言",
+        "来源 Vidar Holen / 2012 / koalaman/shellcheck / Haskell 正确",
+        "「是什么」里 `file=my report.txt` 本身不是合法赋值（会把 report.txt 当命令），应写成带引号的赋值再演示未引号展开"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇示例 `file=my report.txt` 在 bash 里会先失败于赋值，应改为 `file=\"my report.txt\"; rm $file` 再展示 SC2086",
+        "踩坑具体可操作：disable、SC1090、zsh 边界清楚",
+        "适用/不适用有边界；与 shfmt 分工清楚"
+      ]
+    }
+  ],
+  "slug": "shellcheck",
+  "area": "papers",
+  "status": "refined",
+  "lines": 196,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正开篇非法赋值示例；弱化「内核构建脚本都跑」断言；关联补到 7 条",
+    "sections_modified": [
+      "## 是什么",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 196,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

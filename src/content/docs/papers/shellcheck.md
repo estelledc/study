@@ -10,10 +10,10 @@ title: ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
 
 ShellCheck 是一个**专门给 shell 脚本（bash / sh / dash / ksh）做体检的工具**。日常类比：你写完一份合同，请律师替你审一遍，找出"这条措辞会被对方钻空子"的地方——ShellCheck 就是 shell 脚本的律师。
 
-你写：
+你写（注意：赋值本身要先加引号，否则 bash 会把 `report.txt` 当成命令去跑）：
 
 ```bash
-file=my report.txt
+file="my report.txt"
 rm $file
 ```
 
@@ -159,7 +159,7 @@ x=$(some_cmd)
 - **2012 年**：挪威开发者 Vidar Holen（GitHub 用户名 koalaman）开源 ShellCheck，用 Haskell 写。最初动机：他自己写 bash 脚本踩坑太多。
 - **2014 - 2015 年**：被各大 Linux 发行版打包，shellcheck.net 上线在线 demo。
 - **2017 年起**：成为 CI 标配。pre-commit / husky / Earthly 等工具内建支持。
-- **现在**：Linux 内核构建脚本、Homebrew formula、Ansible playbook 都跑 ShellCheck。
+- **现在**：许多 Linux 发行版、Homebrew formula，以及各类 CI / Ansible 工作流都把 ShellCheck 当标配。
 
 写 Haskell 的工具能在 bash 圈封神，本身就是个段子。
 
@@ -179,8 +179,13 @@ x=$(some_cmd)
 
 ## 关联
 
+- [[shfmt]] —— 只管缩进换行的 shell 格式化器，和 ShellCheck 的正确性检查互补
+- [[hadolint]] —— Dockerfile 的静态检查，思路同属「配置/脚本也要 lint」
 - [[earthly]] —— Earthly 等 CI 工具常把 ShellCheck 作为默认步骤
-- [[playwright]] —— Playwright / Cypress 是浏览器侧的"自动测试"，ShellCheck 是脚本侧的"自动审查"，思路同源
+- [[docker]] —— 镜像 entrypoint / 启动脚本最容易踩未引号展开
+- [[ansible]] —— playbook 与运维脚本常嵌 shell，适合进 CI 扫一遍
+- [[nushell]] —— 另一条结构化 shell 路线；ShellCheck 只管 POSIX/bash 家族
+- [[playwright]] —— 浏览器侧自动测试 vs 脚本侧自动审查，思路同源
 
 ## 反向链接
 
