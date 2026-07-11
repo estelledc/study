@@ -1,0 +1,132 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小餐馆→《烹饪原理》类比把「经验→原则」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "principal/object/permission 与 8 条原则均有白话；口诀好记"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 IAM JSON（Deny+NotAction）对零基础略绕，正文「空 role 默认不能做」才是 fail-safe 的直觉入口，建议案例代码改成空 policy / 显式 Allow"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Saltzer & Schroeder, Proceedings of the IEEE, Sept 1975；8 条原则顺序与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Multics / Unix / TCSEC 1985 / NIST SP 800-27 / Kerckhoffs 1883 时间线合理；Linux capabilities 自 2.2 起属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读把 NIST SP 800-27 写成「橙皮书续篇」略混：橙皮书是 TCSEC，NIST 是后续工程原则指南；教学可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "setcap 示例可跟做；IAM 默认 deny、Signal E2EE、DoH 与原则对应清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：开源≠open design、capability 过碎回退 root、缓存失效才是 complete mediation、原则冲突、多租户侧信道"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（IAM/API vs 密码学数学/GDPR/形式化验证）；案例 1 JSON 宜换成显式 Allow 以贴合「默认拒绝」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "小餐馆→《烹饪原理》类比把「经验→原则」讲透，零基础直觉强",
+        "principal/object/permission 与 8 条原则均有白话；口诀好记",
+        "案例 1 的 IAM JSON（Deny+NotAction）对零基础略绕，正文「空 role 默认不能做」才是 fail-safe 的直觉入口，建议案例代码改成空 policy / 显式 Allow"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "Saltzer & Schroeder, Proceedings of the IEEE, Sept 1975；8 条原则顺序与论文一致",
+        "Multics / Unix / TCSEC 1985 / NIST SP 800-27 / Kerckhoffs 1883 时间线合理；Linux capabilities 自 2.2 起属实",
+        "延伸阅读把 NIST SP 800-27 写成「橙皮书续篇」略混：橙皮书是 TCSEC，NIST 是后续工程原则指南；教学可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "setcap 示例可跟做；IAM 默认 deny、Signal E2EE、DoH 与原则对应清楚",
+        "踩坑具体：开源≠open design、capability 过碎回退 root、缓存失效才是 complete mediation、原则冲突、多租户侧信道",
+        "适用/不适用边界清楚（IAM/API vs 密码学数学/GDPR/形式化验证）；案例 1 JSON 宜换成显式 Allow 以贴合「默认拒绝」"
+      ]
+    }
+  ],
+  "slug": "saltzer-schroeder-1975",
+  "area": "papers",
+  "status": "passed",
+  "lines": 170,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，平均 4.44 ≥ 4.0"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 170,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
