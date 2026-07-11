@@ -1,0 +1,118 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "坑 2 里的 EM 首次出现可补半句「Exact Match，字符串必须完全一样」；不影响跟读，属加分项。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Evaluator 也不知道答案」过绝对：字符串匹配与单元测试类 Evaluator 本身就持有标准答案/测试预言；应改成「Self-Reflector 的反思不把正确答案喂给 Actor，只给操作层指导」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事里 Self-Refine 写成「2023 年 8 月」不稳：Self-Refine（Madaan et al.）与 Reflexion 同为 2023 年 3 月 arXiv，应改为同期/3 月，并保留「单步精炼、无跨 trial 长期 memory」的对比。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界已有 7B / 1 秒等量化，可保持；若改 Evaluator 表述时顺带标明「有可靠自动判分」是落地前提即可。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "坑 2 里的 EM 首次出现可补半句「Exact Match，字符串必须完全一样」；不影响跟读，属加分项。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「Evaluator 也不知道答案」过绝对：字符串匹配与单元测试类 Evaluator 本身就持有标准答案/测试预言；应改成「Self-Reflector 的反思不把正确答案喂给 Actor，只给操作层指导」。",
+        "历史小故事里 Self-Refine 写成「2023 年 8 月」不稳：Self-Refine（Madaan et al.）与 Reflexion 同为 2023 年 3 月 arXiv，应改为同期/3 月，并保留「单步精炼、无跨 trial 长期 memory」的对比。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界已有 7B / 1 秒等量化，可保持；若改 Evaluator 表述时顺带标明「有可靠自动判分」是落地前提即可。"
+      ]
+    }
+  ],
+  "slug": "reflexion",
+  "area": "papers",
+  "status": "refined",
+  "lines": 179,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "存在 needs-refine；未达 rewrite 的 reject 条件。"
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "纠正 Evaluator 不泄题表述；Self-Refine 改为 2023-03 同期；EM 补 Exact Match 桥接",
+    "sections_modified": [
+      "## 核心要点",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 179,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

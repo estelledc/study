@@ -25,7 +25,7 @@ Signal Android 是 Signal 即时通讯 App 的 **Android 客户端**，主体由
 
 - 为什么"端到端加密"在 Android 上要和**碎片化厂商后台杀进程策略**正面硬刚
 - 为什么 Signal Android 选了 **JNI + Rust libsignal** 而不是直接用 Java 写密码学
-- 为什么这份代码是 WhatsApp / Messenger / Wire 等大型 IM 在 Android 上的事实参考实现
+- 为什么这份代码是 Signal Protocol 在 Android 上的公开参考客户端（WhatsApp 等用的是协议，不是这份仓库）
 - 为什么 Reproducible Builds 在加密通讯客户端上是必须而不是加分项
 
 ## 核心要点
@@ -36,7 +36,7 @@ Android 客户端要把"端到端"做扎实，靠这三件事：
 
 2. **本地数据库整库加密**：所有聊天、密钥、会话状态都存进 SQLCipher 包装的 SQLite，主密钥放进 Android Keystore（依赖 TEE / StrongBox）。类比：本子写完后整本扔进保险箱，钥匙挂在芯片级硬件上，App 只能"使用"密钥，不能"读出"密钥。
 
-3. **FCM 推送 + 前台 Service 双保险**：网络好时维持 WebSocket 长连，被系统杀掉就靠 FCM 推一个空载荷把进程拉起，再走一次 Sealed Sender 解密。类比：值班电话挂断了，靠门铃把人叫醒，再自己去开锁拿信。
+3. **FCM 推送 + 前台 Service 双保险**：网络好时维持 WebSocket 长连，被系统杀掉就靠 FCM 推一个空载荷把进程拉起，再走一次 Sealed Sender（连发件人身份也对服务端隐藏的投递）解密。类比：值班电话挂断了，靠门铃把人叫醒，再自己去开锁拿信。
 
 ## 实践案例
 
@@ -89,7 +89,7 @@ $ cd Signal-Android && ./reproducible-builds/go.sh <version>
 
 4. **群组扇出消耗电量**：群里 N 人 × 平均 M 设备 = N·M 份密文，发一条消息要循环加密 N·M 次。万人级群组的发件方手机会肉眼可见地发热，靠 Sender Keys 优化把单 fanout 摊销到一次群密钥协商。
 
-5. **多设备链接（Linked Devices）的密钥同步**：手机是主设备，桌面端是 Linked Device，密钥协商要在两端各跑一次 PNI / ACI 注册，迁移期间最容易丢消息。
+5. **多设备链接（Linked Devices）的密钥同步**：手机是主设备，桌面端是 Linked Device，密钥协商要在两端各跑一次 PNI（电话号码身份）/ ACI（账号身份）注册，迁移期间最容易丢消息。
 
 ## 适用 vs 不适用场景
 

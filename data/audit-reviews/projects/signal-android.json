@@ -1,0 +1,118 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 3 条首次出现 Sealed Sender 未桥接，零基础会卡住；补半句「连发件人身份也对服务端隐藏的投递方式」。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "踩坑第 5 条 PNI / ACI 无解释；各加半句日常说法（如「电话号码身份 / 账号身份」）即可。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「WhatsApp / Messenger / Wire 等大型 IM 在 Android 上的事实参考实现」易被读成它们直接复用 Signal-Android 代码；应收窄为「Signal Protocol 的公开参考客户端 / 协议落地范本」，WhatsApp 用的是协议而非这份 Android 仓库。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例链路与 JNI/厂商杀进程/Sender Keys 踩坑可跟做；FOSS 无 FCM 边界已写清，保持即可。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点第 3 条首次出现 Sealed Sender 未桥接，零基础会卡住；补半句「连发件人身份也对服务端隐藏的投递方式」。",
+        "踩坑第 5 条 PNI / ACI 无解释；各加半句日常说法（如「电话号码身份 / 账号身份」）即可。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「WhatsApp / Messenger / Wire 等大型 IM 在 Android 上的事实参考实现」易被读成它们直接复用 Signal-Android 代码；应收窄为「Signal Protocol 的公开参考客户端 / 协议落地范本」，WhatsApp 用的是协议而非这份 Android 仓库。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例链路与 JNI/厂商杀进程/Sender Keys 踩坑可跟做；FOSS 无 FCM 边界已写清，保持即可。"
+      ]
+    }
+  ],
+  "slug": "signal-android",
+  "area": "projects",
+  "status": "refined",
+  "lines": 163,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "存在 needs-refine；未达 rewrite 的 reject 条件。"
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "收窄「事实参考实现」为协议公开参考客户端；Sealed Sender / PNI / ACI 首次出现补白话桥接",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
