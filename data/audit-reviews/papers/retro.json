@@ -1,0 +1,144 @@
+{
+  "slug": "retro",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "学者/图书馆、资料卡类比贯穿全文，零基础直觉很强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有对照表、缺逐步解释；建议拆成「切 chunk → 检索邻居 → 跨注意力读邻居 → 比 loss」四步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Pile valid loss、EM、13-gram Jaccard 首次出现缺括号桥接；案例 3 的 Python API 像真接口，零基础可能当真"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「Pile valid loss 1.85」与论文不符：论文主指标是 bits-per-byte (bpb)，未给出 GPT-3/RETRO 同为 1.85 的 valid loss；应改为「Pile 上可比 / 多数子集优于 Jurassic-1」并标明 bpb"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 4「NQ EM：7.5B RETRO 36.0 vs 175B Gopher 41.5」硬伤：Table 3 为 RETRO 7.5B (DPR) 45.5；41.5 是 DPR 不是 Gopher；Gopher 为 280B 且不在该表对照"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 1「loss 提升 ~20%→~10%」过度简化：§2.6/§4.4 用最长公共子串重叠过滤 bpb，不是固定 20%/10%；宜改为「过滤高重叠 chunk 后增益仍在但变小」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Borgeaud et al. / arXiv 2112.04426 / ICML 2022 正确；「第一个证明检索增强可行」宜限定为「万亿 token 规模」以免压过 REALM/RAG"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 retro.eval(retrieval_db=...) 是虚构 API，应标明伪代码，或改成「换索引/换邻居库」的配置示意"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：训练集-检索库重叠、跨注意力密度、冻死 BERT 换域、metric 维度差距——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（自有 corpus / 知识可换 vs 产品级 RAG / 长上下文 / 多跳）；可补一条量化：检索库规模从 Wikipedia(~4B) 到 MassiveText(~1.7T) 增益持续"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "学者/图书馆、资料卡类比贯穿全文，零基础直觉很强",
+        "案例 1 只有对照表、缺逐步解释；建议拆成「切 chunk → 检索邻居 → 跨注意力读邻居 → 比 loss」四步",
+        "Pile valid loss、EM、13-gram Jaccard 首次出现缺括号桥接；案例 3 的 Python API 像真接口，零基础可能当真"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1「Pile valid loss 1.85」与论文不符：论文主指标是 bits-per-byte (bpb)，未给出 GPT-3/RETRO 同为 1.85 的 valid loss；应改为「Pile 上可比 / 多数子集优于 Jurassic-1」并标明 bpb",
+        "踩坑 4「NQ EM：7.5B RETRO 36.0 vs 175B Gopher 41.5」硬伤：Table 3 为 RETRO 7.5B (DPR) 45.5；41.5 是 DPR 不是 Gopher；Gopher 为 280B 且不在该表对照",
+        "踩坑 1「loss 提升 ~20%→~10%」过度简化：§2.6/§4.4 用最长公共子串重叠过滤 bpb，不是固定 20%/10%；宜改为「过滤高重叠 chunk 后增益仍在但变小」",
+        "来源 Borgeaud et al. / arXiv 2112.04426 / ICML 2022 正确；「第一个证明检索增强可行」宜限定为「万亿 token 规模」以免压过 REALM/RAG"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 retro.eval(retrieval_db=...) 是虚构 API，应标明伪代码，或改成「换索引/换邻居库」的配置示意",
+        "踩坑具体可操作：训练集-检索库重叠、跨注意力密度、冻死 BERT 换域、metric 维度差距——保留",
+        "适用边界清楚（自有 corpus / 知识可换 vs 产品级 RAG / 长上下文 / 多跳）；可补一条量化：检索库规模从 Wikipedia(~4B) 到 MassiveText(~1.7T) 增益持续"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：修正 Pile valid loss 1.85 与 NQ EM/Gopher 硬伤；泄漏表述改为重叠过滤；案例 1 补步骤；案例 3 标明伪代码；术语桥接与万亿规模限定",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 学到什么",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}
