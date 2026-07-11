@@ -1,105 +1,131 @@
 {
-  "action": "rewrite",
-  "average": 1.44,
-  "reject_count": 3,
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
   "needs_refine_count": 0,
-  "pass_count": 0,
+  "pass_count": 3,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
-      "section": "## 是什么",
-      "verdict": "reject"
+      "section": "## 实践案例",
+      "verdict": "pass"
     },
     {
       "reviewer": "academic",
-      "section": "## 是什么",
-      "verdict": "reject"
+      "section": "## 历史小故事",
+      "verdict": "pass"
     },
     {
       "reviewer": "engineer",
       "section": "## 实践案例",
-      "verdict": "reject"
+      "verdict": "pass"
     }
   ],
   "fix_hints": [
     {
       "reviewer": "zero-base",
-      "hint": "标题/来源是 Parnas 1972 信息隐藏与模块分解，正文却讲数据湖仓一体；零基础读者会被完全带偏，需整篇重写。"
+      "hint": "电表箱 / 装修分工 / 售货机类比把「藏决定、露接口」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "KWIC、循环移位、Line Storage 有日常桥接；CHAR/SETCHAR 用接口例子可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有「逐部分解释」；案例 3 接口少泄露的细活对零基础稍抽象但仍可读"
     },
     {
       "reviewer": "academic",
-      "hint": "来源 PDF 是 On the Criteria To Be Used in Decomposing Systems into Modules，正文却是 CIDR 2021 Lakehouse 内容；事实硬伤，fact_accuracy=1。"
+      "hint": "来源 D.L. Parnas CACM 1972（Dec）与 KWIC 两种分解、信息隐藏准则一致；Line Storage 的 CHAR/SETCHAR/WORDS 对应论文接口"
     },
     {
       "reviewer": "academic",
-      "hint": "历史小故事写 2021 CIDR 命名模块化，与 D.L. Parnas CACM 1972 KWIC/信息隐藏无关。"
+      "hint": "同系列 May 1972 模块规格论文、Dijkstra THE「uses」对照——著录与论文自述相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TypeScript 接口是教学现代化，非原文语法；「模块≠最终子程序」保留了论文效率讨论，未歪曲"
     },
     {
       "reviewer": "engineer",
-      "hint": "SQL/Delta/Spark 案例与 Parnas 无关；应按 KWIC 两种分解、Line Storage 接口隐藏、流程图 vs 信息隐藏准则重写。"
+      "hint": "案例接口规格概念正确：藏存储布局、移位是否物化、少承诺生成顺序——教学可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：流程图式共享表、接口泄露、模块必须是子程序、层次≠信息隐藏"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（长期演化/并行开发 vs 一次性脚本/极端热路径/无可变决定）"
     }
   ],
   "reviews": [
     {
       "reviewer": "zero-base",
       "scores": {
-        "analogy": 2,
-        "accessibility": 1,
-        "case_clarity": 1
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
       },
-      "average": 1.33,
-      "verdict": "reject",
-      "weakest_section": "## 是什么",
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
       "fix_hints": [
-        "标题/来源是 Parnas 1972 信息隐藏与模块分解，正文却讲数据湖仓一体；零基础读者会被完全带偏，需整篇重写。"
+        "电表箱 / 装修分工 / 售货机类比把「藏决定、露接口」讲透",
+        "KWIC、循环移位、Line Storage 有日常桥接；CHAR/SETCHAR 用接口例子可跟",
+        "三案例均有「逐部分解释」；案例 3 接口少泄露的细活对零基础稍抽象但仍可读"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 1,
-        "citation_correctness": 3,
-        "no_distortion": 1
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
       },
-      "average": 1.67,
-      "verdict": "reject",
-      "weakest_section": "## 是什么",
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
       "fix_hints": [
-        "来源 PDF 是 On the Criteria To Be Used in Decomposing Systems into Modules，正文却是 CIDR 2021 Lakehouse 内容；事实硬伤，fact_accuracy=1。",
-        "历史小故事写 2021 CIDR 命名模块化，与 D.L. Parnas CACM 1972 KWIC/信息隐藏无关。"
+        "来源 D.L. Parnas CACM 1972（Dec）与 KWIC 两种分解、信息隐藏准则一致；Line Storage 的 CHAR/SETCHAR/WORDS 对应论文接口",
+        "同系列 May 1972 模块规格论文、Dijkstra THE「uses」对照——著录与论文自述相符",
+        "TypeScript 接口是教学现代化，非原文语法；「模块≠最终子程序」保留了论文效率讨论，未歪曲"
       ]
     },
     {
       "reviewer": "engineer",
       "scores": {
-        "code_runnable": 2,
-        "pitfalls_useful": 1,
-        "scope_correct": 1
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
       },
-      "average": 1.33,
-      "verdict": "reject",
+      "average": 4,
+      "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "SQL/Delta/Spark 案例与 Parnas 无关；应按 KWIC 两种分解、Line Storage 接口隐藏、流程图 vs 信息隐藏准则重写。"
+        "案例接口规格概念正确：藏存储布局、移位是否物化、少承诺生成顺序——教学可跟",
+        "踩坑可操作：流程图式共享表、接口泄露、模块必须是子程序、层次≠信息隐藏",
+        "适用/不适用有边界（长期演化/并行开发 vs 一次性脚本/极端热路径/无可变决定）"
       ]
     }
   ],
   "slug": "parnas-information-hiding-1972",
   "area": "papers",
-  "status": "rewritten",
-  "rewrite": {
-    "status": "rewritten",
-    "sections_modified": [
-      "full-note"
-    ],
-    "unresolved_hints": []
+  "status": "passed",
+  "lines": 150,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
   },
   "quality_gate": {
     "pass": true,
     "lines": 150,
     "l1_pass": true,
     "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  }
 }

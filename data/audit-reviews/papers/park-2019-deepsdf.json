@@ -1,57 +1,62 @@
 {
-  "slug": "park-2019-deepsdf",
-  "area": "papers",
-  "status": "refined",
-  "action": "refine",
-  "average": 3.89,
+  "action": "pass",
+  "average": 4.33,
   "reject_count": 0,
-  "needs_refine_count": 3,
-  "pass_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
       "section": "## 实践案例",
-      "verdict": "needs-refine"
+      "verdict": "pass"
     },
     {
       "reviewer": "academic",
-      "section": "## 历史小故事",
-      "verdict": "needs-refine"
+      "section": "## 踩过的坑",
+      "verdict": "pass"
     },
     {
       "reviewer": "engineer",
       "section": "## 实践案例",
-      "verdict": "needs-refine"
+      "verdict": "pass"
     }
   ],
   "fix_hints": [
     {
       "reviewer": "zero-base",
-      "hint": "案例 3 用 encode(office_chair) 与前文「砍掉编码器」矛盾，零基础读者会以为还有编码器；应改成查已训好的 z 或说明插值用的是训练得到的潜码"
+      "hint": "积木 vs「问距离的小盒子」类比贴合，零基础直觉强"
     },
     {
       "reviewer": "zero-base",
-      "hint": "案例 1 的「6 万 KB ≈ 13 MB」与开篇「不到 10 MB」口径不一致，建议统一并加一句人话解释共享 MLP + 人均 1KB 潜码"
+      "hint": "有符号距离 / auto-decoder / 潜码 z 有白话桥接；clamp 可再补半句「远处一律当成 δ」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2–3 步骤清楚且已去掉 encode()；案例 4 表格对照好懂"
     },
     {
       "reviewer": "academic",
-      "hint": "Occupancy Networks 为 arXiv 1812.03828（2018-12），DeepSDF 为 1901.05103（2019-01）；「同月几乎同一周」不准确，应改为约一个月内先后上线、同中 CVPR 2019"
+      "hint": "8 层×512、256 维 z、auto-decoder、clamp L1、第 4 层再拼 latent+xyz——与 Park et al. CVPR 2019 / arXiv 1901.05103 一致"
     },
     {
       "reviewer": "academic",
-      "hint": "核心要点里 skip connection 表述成「把输入坐标拼到第 4 层」偏窄：论文是把 latent+xyz 再次拼接到第 4 层输出"
+      "hint": "Occupancy Networks arXiv 1812.03828（2018-12）与 DeepSDF 1901.05103（2019-01）约一个月内先后上线、同中 CVPR 2019——时间线正确"
     },
     {
       "reviewer": "academic",
-      "hint": "开篇「不到 10 MB」与案例表「整类 ~13 MB」冲突，需按同一口径改写"
+      "hint": "踩坑 4 把 3DGS 写成「避开 auto-decoder 推理」略跨题：3DGS 是渲染路线分叉，教学可接受但宜读作对照而非直系修补"
     },
     {
       "reviewer": "engineer",
-      "hint": "案例 3 伪代码 encode() 在 auto-decoder 设定下不可跑：应改为从训练得到的 z 表取码，或对观测点优化 z 后再插值"
+      "hint": "案例 2 补全 loss 区分训练真值 SDF vs 观测点≈0；案例 3 用 z_table 取码——auto-decoder 设定下可跟"
     },
     {
       "reviewer": "engineer",
-      "hint": "案例 2 补全 loss 可补一句：观测点近似表面所以目标 SDF≈0，与训练时用真值 SDF 监督不同，避免跟做时混用两套目标"
+      "hint": "踩坑具体：水密限制、跨类不泛化、marching cubes/ray march 慢、推理要优化 z、z 维超参"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（类内压缩/补全 vs 实时渲染/非水密/跨大类）"
     }
   ],
   "reviews": [
@@ -60,73 +65,67 @@
       "scores": {
         "analogy": 5,
         "accessibility": 4,
-        "case_clarity": 3
+        "case_clarity": 4
       },
-      "average": 4,
-      "verdict": "needs-refine",
+      "average": 4.33,
+      "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "案例 3 用 encode(office_chair) 与前文「砍掉编码器」矛盾，零基础读者会以为还有编码器；应改成查已训好的 z 或说明插值用的是训练得到的潜码",
-        "案例 1 的「6 万 KB ≈ 13 MB」与开篇「不到 10 MB」口径不一致，建议统一并加一句人话解释共享 MLP + 人均 1KB 潜码"
+        "积木 vs「问距离的小盒子」类比贴合，零基础直觉强",
+        "有符号距离 / auto-decoder / 潜码 z 有白话桥接；clamp 可再补半句「远处一律当成 δ」",
+        "案例 2–3 步骤清楚且已去掉 encode()；案例 4 表格对照好懂"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 3,
+        "fact_accuracy": 5,
         "citation_correctness": 5,
         "no_distortion": 4
       },
-      "average": 4,
-      "verdict": "needs-refine",
-      "weakest_section": "## 历史小故事",
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
       "fix_hints": [
-        "Occupancy Networks 为 arXiv 1812.03828（2018-12），DeepSDF 为 1901.05103（2019-01）；「同月几乎同一周」不准确，应改为约一个月内先后上线、同中 CVPR 2019",
-        "核心要点里 skip connection 表述成「把输入坐标拼到第 4 层」偏窄：论文是把 latent+xyz 再次拼接到第 4 层输出",
-        "开篇「不到 10 MB」与案例表「整类 ~13 MB」冲突，需按同一口径改写"
+        "8 层×512、256 维 z、auto-decoder、clamp L1、第 4 层再拼 latent+xyz——与 Park et al. CVPR 2019 / arXiv 1901.05103 一致",
+        "Occupancy Networks arXiv 1812.03828（2018-12）与 DeepSDF 1901.05103（2019-01）约一个月内先后上线、同中 CVPR 2019——时间线正确",
+        "踩坑 4 把 3DGS 写成「避开 auto-decoder 推理」略跨题：3DGS 是渲染路线分叉，教学可接受但宜读作对照而非直系修补"
       ]
     },
     {
       "reviewer": "engineer",
       "scores": {
-        "code_runnable": 3,
+        "code_runnable": 4,
         "pitfalls_useful": 4,
         "scope_correct": 4
       },
-      "average": 3.67,
-      "verdict": "needs-refine",
+      "average": 4,
+      "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "案例 3 伪代码 encode() 在 auto-decoder 设定下不可跑：应改为从训练得到的 z 表取码，或对观测点优化 z 后再插值",
-        "案例 2 补全 loss 可补一句：观测点近似表面所以目标 SDF≈0，与训练时用真值 SDF 监督不同，避免跟做时混用两套目标"
+        "案例 2 补全 loss 区分训练真值 SDF vs 观测点≈0；案例 3 用 z_table 取码——auto-decoder 设定下可跟",
+        "踩坑具体：水密限制、跨类不泛化、marching cubes/ray march 慢、推理要优化 z、z 维超参",
+        "适用/不适用边界清楚（类内压缩/补全 vs 实时渲染/非水密/跨大类）"
       ]
     }
   ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：案例3 encode()与auto-decoder矛盾；Occupancy Networks时间线误写同月；skip/存储口径需纠；补全loss目标需区分",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事",
-      "## 学到什么",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
+  "slug": "park-2019-deepsdf",
+  "area": "papers",
+  "status": "passed",
+  "lines": 164,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
   },
   "quality_gate": {
     "pass": true,
     "lines": 164,
     "l1_pass": true,
     "reasons": []
-  },
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
   }
 }
