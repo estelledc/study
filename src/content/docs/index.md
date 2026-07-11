@@ -2,54 +2,86 @@
 title: 从真实项目和经典论文里，建立工程判断力
 description: 给零基础工程师的开源项目与论文学习地图，从真实项目和经典论文里建立工程判断力
 template: splash
+head:
+  - tag: meta
+    attrs:
+      property: og:type
+      content: website
+  - tag: meta
+    attrs:
+      property: og:title
+      content: Jason's Study · 从真实项目和经典论文里建立工程判断力
+  - tag: meta
+    attrs:
+      property: og:description
+      content: 给零基础工程师的开源项目与论文学习地图；先选真实问题，再把源码实现与经典思想放在一起读。
+  - tag: meta
+    attrs:
+      name: twitter:title
+      content: Jason's Study · 工程学习地图
+  - tag: meta
+    attrs:
+      name: twitter:description
+      content: 从真实项目和经典论文里建立工程判断力。
 ---
 
 <div class="study-hero-panel">
   <span class="study-kicker">给零基础工程师的开源项目与论文学习地图</span>
+  <span class="jx-chip" data-state="maintained">持续维护 · Maintained</span>
   <h2>先选一个问题，再把项目与论文放在一起读</h2>
   <p>这里不按“项目”和“论文”把你分流。先选一个真实问题，再把源码实现与经典思想放在同一条学习路径里读：看它解决什么、为什么这样设计、你能亲手验证什么。</p>
+  <p class="study-hero-en" lang="en">A maintained learning map for early-career engineers: study real source code beside foundational papers, then turn both into engineering judgment you can apply.</p>
   <div class="study-cta-row">
     <a class="study-button" href="/study/start/">从这里开始</a>
     <a class="study-button-secondary" href="/study/topics/">按主题找入口</a>
     <a class="study-button-secondary" href="/study/queue/">看精选队列</a>
   </div>
+  <aside class="study-collaboration" aria-label="本站协作分工">
+    <strong>协作分工：</strong>Jason 决定站点定位、筛选标准与编辑判断；Claude Code 负责源码研究、初稿和 Astro / Starlight 基础设施。内容不是 Jason 独自逐篇写作。
+  </aside>
 </div>
-
-<div class="study-stats-strip">
-  <div><strong>1975</strong><span>篇学习笔记</span></div>
-  <div><strong>1014</strong><span>篇论文</span></div>
-  <div><strong>961</strong><span>个开源项目</span></div>
-  <div><strong>19</strong><span>个主题簇</span></div>
-</div>
-
-<p class="study-muted"><strong>当前规模：</strong>1014 篇论文 + 961 个项目 = 1975 篇笔记，按 19 个主题组织。</p>
 
 <section class="study-section">
   <h2>先选一条新手路径</h2>
   <p>不要从全量索引的第一条开始读。选一条路线，先完成前三篇，再决定向哪个分支扩展。</p>
 
   <div class="study-card-grid">
-    <a class="study-path-card" href="/study/topics/frontend/">
-      <span class="study-chip">路线 · 有一点 JavaScript 基础</span>
-      <h3>前端产品工程</h3>
-      <p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p>
-      <footer>先读：React → TanStack Query → shadcn/ui</footer>
-    </a>
-
-    <a class="study-path-card" href="/study/topics/ai-agent/">
-      <span class="study-chip">路线 · 零基础友好</span>
-      <h3>AI Agent 入门</h3>
-      <p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p>
-      <footer>先读：Attention → CoT → ReAct</footer>
-    </a>
-
-    <a class="study-path-card" href="/study/topics/distributed-systems/">
-      <span class="study-chip">路线 · 想补系统基础</span>
-      <h3>系统底层入门</h3>
-      <p>从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。</p>
-      <footer>先读：Lamport Clock → Paxos → Raft</footer>
-    </a>
+    <a class="study-path-card" href="/study/topics/frontend/"><span class="study-chip">路线 · 有一点 JavaScript 基础</span><h3>前端产品工程</h3><p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p><footer>先读：React → TanStack Query → shadcn/ui</footer></a>
+    <a class="study-path-card" href="/study/topics/ai-agent/"><span class="study-chip">路线 · 零基础友好</span><h3>AI Agent 入门</h3><p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p><footer>先读：Attention → CoT → ReAct</footer></a>
+    <a class="study-path-card" href="/study/topics/distributed-systems/"><span class="study-chip">路线 · 想补系统基础</span><h3>系统底层入门</h3><p>从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。</p><footer>先读：Lamport Clock → Paxos → Raft</footer></a>
   </div>
+</section>
+
+<section class="study-section study-proof-section" id="proof">
+  <h2>这是一个可检查的学习系统，不是一面数量墙</h2>
+  <p>规模证明覆盖面；方法、证据和局限，决定这些内容是否值得信任。</p>
+
+  <div class="jx-proof">
+<div>
+<span class="jx-chip" data-state="maintained">Maintained · 持续维护</span>
+<p class="jx-proof__summary">项目与论文不是分开的两个书架。每条精选路径都把“经典思想—真实实现—可动手验证的实验”连成一条线，并通过 Atlas、Pagefind 搜索和双向链接保留全量入口。</p>
+<p class="jx-proof__summary-en" lang="en">Proof is not the note count. It is the visible method, source-level evidence, curated learning paths, and an explicit account of where AI collaboration can still be wrong.</p>
+<div class="jx-proof__metrics" aria-label="当前内容规模">
+<div class="jx-proof__metric"><strong>1,975</strong><span>篇项目与论文笔记</span></div>
+<div class="jx-proof__metric"><strong>19</strong><span>个主题簇</span></div>
+<div class="jx-proof__metric"><strong>3</strong><span>条新手首选路径</span></div>
+</div>
+<div class="jx-proof__links" aria-label="证据入口">
+<a class="jx-pill" href="/study/method/">项目精读方法</a>
+<a class="jx-pill" href="/study/papers-method/">论文精读方法</a>
+<a class="jx-pill" href="/study/about/">立场与协作声明</a>
+<a class="jx-pill" href="https://github.com/estelledc/study">公开仓库</a>
+</div>
+</div>
+<dl class="jx-proof__meta">
+<div><dt>Jason / Judgment</dt><dd>决定定位、信念、筛选标准；阅读、提观点、编辑与要求重写。</dd></div>
+<div><dt>Claude Code / Leverage</dt><dd>本地源码研究、内容初稿，以及 Astro + Starlight 站点基础设施。</dd></div>
+<div><dt>Evidence / 证据</dt><dd>笔记回到真实源码、论文原文、永久链接与可复现实验；方法论公开。</dd></div>
+<div><dt>Limitations / 局限</dt><dd class="jx-proof__limitation">大规模覆盖不等于每篇同等成熟；AI 初稿可能误读，关键结论应回到引用来源核查。</dd></div>
+</dl>
+  </div>
+
+  <p class="study-muted"><strong>当前规模：</strong>1014 篇论文 + 961 个项目 = 1975 篇笔记，按 19 个主题组织。数量已移出首屏，只作为覆盖面证据。</p>
 </section>
 
 <section class="study-section">

@@ -65,6 +65,16 @@ function extractAnchors(markup) {
   return anchors;
 }
 
+function hasTagWithAttributes(markup, tagName, attributes) {
+  const tagPattern = new RegExp(`<${tagName}\\b[^>]*>`, 'gi');
+  return [...markup.matchAll(tagPattern)].some(([tag]) =>
+    Object.entries(attributes).every(([name, value]) => {
+      const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return new RegExp(`\\b${name}\\s*=\\s*(["'])${escaped}\\1`, 'i').test(tag);
+    }),
+  );
+}
+
 function pathnameOf(href) {
   try {
     return new URL(href, 'https://study-audit.invalid').pathname;
@@ -112,6 +122,65 @@ if (h1Texts.length !== 1 || h1Texts[0] !== requiredHeroTitle) {
   fail(`Built homepage must contain exactly one H1 with "${requiredHeroTitle}"; found ${JSON.stringify(h1Texts)}`);
 }
 
+if (!text.includes('持续维护') || !text.includes('Maintained')) {
+  fail('Built homepage must expose the maintained lifecycle state in Chinese and English.');
+}
+
+for (const claim of [
+  'Jason 决定站点定位、筛选标准与编辑判断',
+  'Claude Code 负责源码研究、初稿和 Astro / Starlight 基础设施',
+  '内容不是 Jason 独自逐篇写作',
+  'Evidence / 证据',
+  'Limitations / 局限',
+  'AI 初稿可能误读',
+]) {
+  if (!text.includes(claim)) fail(`Built homepage is missing honest showcase claim: ${claim}`);
+}
+
+const firstScaleProof = text.indexOf('1,975');
+const beginnerPath = text.indexOf('先选一条新手路径');
+if (firstScaleProof < 0 || beginnerPath < 0 || firstScaleProof <= beginnerPath) {
+  fail('Built homepage must place the 1,975 scale proof after the beginner learning path.');
+}
+
+const renderedPathCards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bstudy-path-card\b[^"]*"/gi)];
+if (renderedPathCards.length !== 3) {
+  fail(`Built homepage must render three learning-path cards; found ${renderedPathCards.length}.`);
+}
+
+for (const escapedMarkup of ['&lt;a class="study-path-card"', '&lt;div class="jx-proof__metrics"']) {
+  if (html.includes(escapedMarkup)) {
+    fail(`Built homepage contains escaped showcase markup instead of rendered UI: ${escapedMarkup}`);
+  }
+}
+
+if (!hasTagWithAttributes(html, 'link', { rel: 'canonical', href: 'https://estelledc.github.io/study/' })) {
+  fail('Built homepage is missing the stable canonical URL.');
+}
+
+for (const property of ['og:title', 'og:description', 'og:url', 'og:type']) {
+  if (!hasTagWithAttributes(html, 'meta', { property })) {
+    fail(`Built homepage is missing Open Graph metadata: ${property}`);
+  }
+}
+
+if (
+  !hasTagWithAttributes(html, 'meta', {
+    property: 'og:image',
+    content: 'https://estelledc.github.io/study/og-study.png',
+  }) ||
+  !hasTagWithAttributes(html, 'meta', {
+    name: 'twitter:image',
+    content: 'https://estelledc.github.io/study/og-study.png',
+  })
+) {
+  fail('Built homepage is missing the stable Open Graph / Twitter share image.');
+}
+
+if (!hasTagWithAttributes(html, 'script', { type: 'application/ld+json' }) || !html.includes('"@type":"WebSite"')) {
+  fail('Built homepage is missing WebSite JSON-LD.');
+}
+
 const requiredCtas = [
   { text: '从这里开始', pathname: '/study/start/' },
   { text: '按主题找入口', pathname: '/study/topics/' },
@@ -121,6 +190,17 @@ const requiredCtas = [
 for (const expected of requiredCtas) {
   const found = anchors.some((anchor) => pathnameOf(anchor.href) === expected.pathname && anchor.text.includes(expected.text));
   if (!found) fail(`Built homepage is missing CTA "${expected.text}" -> ${expected.pathname}`);
+}
+
+for (const href of [
+  'https://estelledc.github.io/',
+  'https://estelledc.github.io/about/',
+  'https://estelledc.github.io/resume/',
+  'https://github.com/estelledc/study',
+]) {
+  if (!anchors.some((anchor) => anchor.href === href)) {
+    fail(`Built homepage chrome is missing external destination: ${href}`);
+  }
 }
 
 for (const [pattern, label] of [

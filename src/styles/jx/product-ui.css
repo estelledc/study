@@ -93,11 +93,40 @@
   line-height: 1.75;
 }
 
+.study-hero-panel > .jx-chip {
+  margin-inline-start: 0.45rem;
+  vertical-align: middle;
+}
+
+.study-hero-panel .study-hero-en {
+  max-width: 72ch;
+  color: var(--study-muted);
+  font-family: var(--jx-font-sans-latin);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 .study-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+}
+
+.study-collaboration {
+  max-width: 72ch;
+  margin-top: 1.35rem;
+  padding: 0.9rem 1rem;
+  color: var(--study-muted);
+  background: color-mix(in srgb, var(--study-surface), transparent 18%);
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-md);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.study-collaboration strong {
+  color: var(--study-ink);
 }
 
 .study-button,
@@ -158,6 +187,49 @@
 .study-section > p,
 .study-muted {
   color: var(--study-muted);
+}
+
+.study-proof-section {
+  --jx-surface: var(--study-surface);
+  --jx-surface-sunk: var(--study-surface-2);
+  --jx-ink: var(--study-ink);
+  --jx-ink-2: color-mix(in srgb, var(--study-ink), var(--study-muted) 34%);
+  --jx-ink-muted: var(--study-muted);
+  --jx-rule: var(--study-border);
+  --jx-accent: var(--study-accent);
+  --jx-accent-hover: color-mix(in srgb, var(--study-accent), black 12%);
+  margin-block: clamp(3rem, 8vw, 5.5rem);
+  scroll-margin-top: 6rem;
+}
+
+.study-proof-section > h2 {
+  max-width: 19ch;
+}
+
+.study-proof-section > p:first-of-type {
+  max-width: 64ch;
+}
+
+.study-proof-section .jx-proof {
+  margin-top: 1.25rem;
+}
+
+.study-proof-section .jx-proof__summary,
+.study-proof-section .jx-proof__summary-en {
+  margin-block: 1rem 0;
+}
+
+.study-proof-section .jx-proof__metric strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.study-proof-section .jx-proof__links a {
+  color: var(--study-ink);
+}
+
+.study-proof-section > .study-muted {
+  margin-top: 1rem;
+  font-size: 0.86rem;
 }
 
 .study-card-grid {
@@ -363,6 +435,11 @@
     font-size: clamp(1.75rem, 9vw, 2.75rem);
   }
 
+  .study-hero-panel > .jx-chip {
+    margin-block-start: 0.65rem;
+    margin-inline-start: 0;
+  }
+
   .study-cta-row {
     align-items: stretch;
     flex-direction: column;
@@ -371,6 +448,10 @@
   .study-button,
   .study-button-secondary {
     width: 100%;
+  }
+
+  .study-collaboration {
+    font-size: 0.82rem;
   }
 }
 
