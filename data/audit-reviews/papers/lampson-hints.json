@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "师傅口诀类比贴合；三大类桥接清楚。案例有代码与说明，但未统一标「逐部分解释」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SOSP 1983 / OSR 17(5) / 27 hints / heuristics 表述正确；Pilot 打开模式反例与图灵奖时间线合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "K8s reconciler / etcd watcher / HTTP 幂等案例概念可跟；caching invalidation 与 leave-to-client 踩坑具体；分布式共识边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "师傅口诀类比贴合；三大类桥接清楚。案例有代码与说明，但未统一标「逐部分解释」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "SOSP 1983 / OSR 17(5) / 27 hints / heuristics 表述正确；Pilot 打开模式反例与图灵奖时间线合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "K8s reconciler / etcd watcher / HTTP 幂等案例概念可跟；caching invalidation 与 leave-to-client 踩坑具体；分布式共识边界清楚。"
+      ]
+    }
+  ]
+}

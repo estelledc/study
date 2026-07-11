@@ -1,6 +1,6 @@
 ---
 title: "OS / 集群管理 / 系统 · 论文 · 第 2 组"
-description: "10 条 OS / 集群管理 / 系统 Atlas 分块"
+description: "9 条 OS / 集群管理 / 系统 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,11 +9,10 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 10 条，稳定上限为 100 条。
+本分块共 9 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
-| [The Tail at Scale — 尾延迟会被规模放大](/study/papers/tradeoff-analysis/) | `tradeoff-analysis` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) | `turing-architecture-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) | `twine-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | `unified-memory-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

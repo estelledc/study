@@ -27,16 +27,16 @@ Recharts 是一个**让你用 React 组件拼图表**的库。日常类比：像
 
 不理解 Recharts 的设计，下面这些事都没法解释：
 
-- 为什么 React 后台管理项目里 70% 的图都是它（Twitch / Cloudflare / 各种 admin dashboard）
+- 为什么很多 React 后台管理项目默认选它（Twitch / Cloudflare 等 dashboard 常见）
 - 为什么 ECharts 性能更好但 React 项目还是优先选它——因为"用 props 改图"比"改 option 对象"更 React
-- 为什么自定义 Tooltip 是 90% 项目的第一个 PR——默认样式停留在 2016 年
+- 为什么自定义 Tooltip 常常是接入后的第一件事——默认样式停留在 2016 年
 - 为什么数据点超过 10k 就卡——SVG 每个点都是 DOM，是天花板不是 bug
 
 ## 核心要点
 
 Recharts 的设计可以拆成 **三层组件**：
 
-1. **顶层 Container**：`<LineChart>` `<BarChart>` `<PieChart>` 等 8 个，是用户最先写的"图表容器"。类比：你选一个"饭盒"——决定要装的是折线、柱状还是饼图。
+1. **顶层 Container**：`<LineChart>` `<BarChart>` `<PieChart>` `<ComposedChart>` 等十余种，是用户最先写的"图表容器"。类比：你选一个"饭盒"——决定要装的是折线、柱状还是饼图。
 
 2. **画数据的 Series**：`<Line>` `<Bar>` `<Area>` 等，必须放在 Container 里。每个 Series 必带一个 `dataKey` prop，告诉库"从 data 数组的每个对象里取哪个字段"。类比：饭盒里放的"菜"——一份饭盒可以放多道菜（多条线）。
 
@@ -73,7 +73,9 @@ export default function MyChart() {
 
 **逐部分解释**：`ResponsiveContainer` 让图自动占满父容器宽度；`dataKey="name"` 告诉 X 轴从每条数据取 `name` 字段；`<Line dataKey="pv">` 折线取 `pv` 字段。这就是公开 API 的 80%。
 
-### 案例 2：自定义 Tooltip（90% 项目都要写）
+### 案例 2：自定义 Tooltip（接入后常做的第一件事）
+
+先写好自己的组件，再塞进 `content`：
 
 ```jsx
 function CustomTooltip({ active, payload, label }) {
@@ -86,6 +88,7 @@ function CustomTooltip({ active, payload, label }) {
   );
 }
 
+// 用在图表里：
 <Tooltip content={<CustomTooltip />} />
 ```
 
@@ -133,9 +136,9 @@ function CustomTooltip({ active, payload, label }) {
 
 - **2016 年**：Recharts v0.1 开源，定位 "React 时代的 Chart.js 替代品"，第一次把 "JSX 即图表" 做成范式
 - **2018 年**：v1 稳定，社区开始大规模采用，Twitch / Cloudflare 的 dashboard 都在用
-- **2020 年**：v2 用 TypeScript 全量重写，`dataKey` 字段开始严格类型推断（写错 key 编译期就报错）
-- **2024-2026 年**：v3 发布，动画系统从自家 react-smooth 迁到 Web Animation API，bundle 降到约 70KB
-- **现在**：27k stars，社区维护（无单一商业公司背书），v3.8.1 是最新稳定版
+- **2020 年**：v2 强化 TypeScript，`dataKey` 等字段类型推断更严（写错 key 编译期就报错）
+- **2024 年**：v3 发布，状态管理重写，动画内联进库并移除 `react-smooth` 依赖（后续 3.x 再增强动画定制）
+- **现在**：约 27k stars，社区维护（无单一商业公司背书），稳定版在 3.9.x 线迭代
 
 后来 visx（Airbnb，更底层）和 Nivo（更全套）出来分流复杂场景，但 Recharts 仍是 React 入门图表库的默认选择。
 
@@ -160,7 +163,7 @@ function CustomTooltip({ active, payload, label }) {
 - [[d3]] —— Recharts 把它的 scale / shape 包成 React 组件，自己不算图表数学
 - [[echarts]] —— declarative JSX vs option 对象，是 React 时代图表库的两条主路线
 - [[visx]] —— framework vs library 的分歧——Recharts 给开箱组件，visx 给原语
-- [[react-spring]] —— 主流 React 动画库，Recharts 没用它而是用了自家 react-smooth（v3 改 Web Animation API）
+- [[react-spring]] —— 主流 React 动画库；Recharts 早期用自家 react-smooth，v3 起动画内联进库
 - [[observable-plot]] —— Observable 团队的图表新作，bundle 更小但生态规模小
 
 ## 反向链接

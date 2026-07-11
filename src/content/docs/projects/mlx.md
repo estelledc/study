@@ -30,10 +30,10 @@ mx.eval(y)                         # lazy：到这一步才真算
 
 不理解 MLX，下面这些事会卡住你：
 
-- 为什么 Mac mini M2 / MacBook Pro 上跑 70B 大模型推理比 24GB 的 RTX 4090 还顺——统一内存能直接吃满整机 64GB/128GB
+- 为什么 Mac mini M2 / MacBook Pro 能本地跑 70B 级量化模型——统一内存能直接吃满整机 64GB/128GB，装得下 24GB 显存的 RTX 4090 装不下的权重（速度上 4090 在模型装得下时通常仍更快）
 - 为什么 PyTorch 的 MPS 后端总是有 op fall back 到 CPU、速度差一截——它把 Apple Silicon 当成"另一种 GPU"来适配，没专门为统一内存重写
 - 为什么 Hugging Face 上的模型出现 `mlx-community/Llama-3.1-70B-4bit` 这种独立分支——MLX 有自己的权重量化格式
-- 为什么 iOS app 要嵌端侧模型时越来越多人选 MLX 而不是 Core ML——Core ML 偏部署、MLX 偏研究和定制
+- 为什么 iOS / macOS 端侧定制推理越来越多人看 MLX——Core ML 仍是生产部署主流，MLX 更偏研究和可改权重/训练环的定制路径
 
 ## 核心要点
 
@@ -62,7 +62,7 @@ mlx_lm.generate --model mlx-community/Meta-Llama-3.1-70B-Instruct-4bit \
                 --prompt "用中文写一首关于深秋的俳句"
 ```
 
-Mac mini M2 Max 64GB 上能跑，token 速度大约 10 tok/s。同一台机器走 PyTorch+MPS 路径要么 OOM 要么 fall back 到 CPU，慢一个数量级。
+Mac mini M2 Max 64GB 上能跑，token 速度大约 10 tok/s。卖点是**装得下**：同一权重在 24GB 级独显上常直接 OOM；和「更快」不是一回事。
 
 ### 案例 2：用 MLX 写一个简单 MLP 训练循环
 
@@ -137,7 +137,7 @@ mlx_lm.lora --model mlx-community/Mistral-7B-v0.3-4bit \
 - **2024 中**：`mlx-lm` 成熟，Hugging Face 出现 `mlx-community` 组织专门发布量化权重。
 - **2025**：随 M3 / M4 Pro / Max 释放更大显存（128GB / 192GB），Mac 成为社区跑 70B+ 模型门槛最低的平台。
 
-短短两年从一个研究工具变成 Apple 生态端侧 AI 事实标准。
+短短两年从一个研究工具变成 Apple Silicon 上本地 LLM / 端侧定制推理的热门选项（生产 App 部署仍多见 Core ML）。
 
 ## 学到什么
 

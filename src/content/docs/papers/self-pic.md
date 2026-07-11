@@ -81,19 +81,29 @@ bad({a:1, b:2, c:3})    // megamorphic！这个 call site 性能塌陷
 
 前端常见踩坑：循环里 `obj[dynamicKey] = ...` 每次给对象添新 property → 每次产生新 hidden class → 调用 `obj` 的方法很快变 mega。
 
-### 案例 3：React 16 → Hooks 的隐形动机
+### 案例 3：把 megamorphic 拆回 mono
 
-React class 组件每个实例的 hidden class 都不同——render 调用点容易变 megamorphic。Hooks 把组件函数化、状态外置，让 V8 的 PIC 更稳定地命中——这是 Hooks 性能优势的隐形原因之一。
+```js
+// 坏：一个 call site 吃掉所有形状 → 很快 mega
+function readX(obj) { return obj.x }
+for (const o of manyShapes) readX(o)
+
+// 好：按形状拆函数，每个 call site 保持 mono/poly
+function readPoint(p) { return p.x }
+function readUser(u) { return u.x }
+```
+
+步骤：① 找出「一个函数被几十种对象形状反复调用」的热点；② 按业务类型拆成多个函数（或按构造函数分支）；③ 让每个调用点只见少数 hidden class，PIC 才能命中。React Hooks 把组件收成函数、状态外置，**附带**让部分调用点更稳——这是引擎侧的副收益，不是 Hooks 的主设计动机。
 
 ## 踩过的坑
 
 1. **过早优化反成 megamorphic 制造机**：手写"通用工具函数"接收任意对象 → 调用点必然多态。要么按类型拆分，要么接受性能代价。
 
-2. **delete property 让 hidden class 退化**：`delete obj.x` 会让 V8 把 obj 转成 "dictionary mode"——脱离 PIC 快路径。性能敏感代码避免 delete，用 `obj.x = undefined`。
+2. **delete property 让 hidden class 退化**：`delete obj.x` 会让 V8 把 obj 转成 "dictionary mode"（像普通哈希表，不再走固定槽位）——脱离 PIC 快路径。性能敏感代码避免 delete，用 `obj.x = undefined`。
 
 3. **构造函数 property 顺序影响 hidden class**：`this.x=1; this.y=2;` 和 `this.y=2; this.x=1;` 产生不同 hidden class——同一个构造函数里 property 赋值顺序得固定。
 
-4. **PIC 是运行时演化的，跨启动不可保留**：浏览器 cold start 慢的原因之一就是 PIC 还没热起来。Hermes（React Native 的 JS 引擎）走 AOT bytecode 路线绕过这个，但牺牲了 PIC 的 type feedback。
+4. **PIC 是运行时演化的，跨启动不可保留**：浏览器 cold start 慢的原因之一就是 PIC 还没热起来。Hermes（React Native 的 JS 引擎）走 AOT bytecode 路线绕过这个，但牺牲了 PIC 的 type feedback（调用点见过哪些类型的运行时记录）。
 
 ## 适用 vs 不适用场景
 

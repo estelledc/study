@@ -1,0 +1,117 @@
+{
+  "slug": "opencode",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "结对同学/案板/装修画图再施工类比贴合终端 agent"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Plan/Build、AGENTS.md、provider 有日常桥接，初级读者能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例均有命令 + 逐部分解释；历史段偏空泛但不挡理解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/sst/opencode 合理；/init、Plan/Build、web/acp 与公开文档一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未把竞品能力安到 OpenCode 头上；多入口（TUI/桌面/IDE）叙述克制"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段「stars 远超十几 k」缺具体锚点，属模糊而非歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "init / Plan↔Build / web+acp 命令可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Plan 当 Build、未提交 AGENTS.md、Windows 建议 WSL、报错先查 provider 四坑可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：要本地仓库读写与多模型切换；纯问答/禁读写/无模型密钥则不适用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "结对同学/案板/装修画图再施工类比贴合终端 agent",
+        "Plan/Build、AGENTS.md、provider 有日常桥接，初级读者能跟",
+        "三个案例均有命令 + 逐部分解释；历史段偏空泛但不挡理解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 github.com/sst/opencode 合理；/init、Plan/Build、web/acp 与公开文档一致",
+        "未把竞品能力安到 OpenCode 头上；多入口（TUI/桌面/IDE）叙述克制",
+        "历史段「stars 远超十几 k」缺具体锚点，属模糊而非歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "init / Plan↔Build / web+acp 命令可跟做",
+        "Plan 当 Build、未提交 AGENTS.md、Windows 建议 WSL、报错先查 provider 四坑可操作",
+        "适用边界清楚：要本地仓库读写与多模型切换；纯问答/禁读写/无模型密钥则不适用"
+      ]
+    }
+  ],
+  "lines": 167,
+  "l1_pass": true
+}

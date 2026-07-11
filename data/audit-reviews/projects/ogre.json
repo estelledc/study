@@ -1,0 +1,137 @@
+{
+  "slug": "ogre",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "电影剧组摄影灯光类比贴合；场景图/地标、相机插件、道具仓库桥接清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "HighPy、C++ First Scene、LOD 三案例均有逐部分解释，零基础可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇就划清「渲染后端≠完整游戏引擎」，降低预期错位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 OGRECave/ogre 正确；场景图、可替换 RenderSystem、资源管线与官方定位一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段用「2001 前后 / 2005 左右」属概括，MIT 许可与仿真/游戏落点合理，无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约数千 star」为快照，可接受弱化表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "HighPy 预览、C++ SceneNode/Entity/Camera、Mesh LOD 示例可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（当游戏引擎、Entity 未挂节点、resources.cfg 不递归、缺 plugins.cfg）具体；可再补一条材质/阴影调试场景但不影响通过"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：嵌入式 C++ 渲染 vs Godot/Unity/Web/ECS"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "电影剧组摄影灯光类比贴合；场景图/地标、相机插件、道具仓库桥接清楚",
+        "HighPy、C++ First Scene、LOD 三案例均有逐部分解释，零基础可跟",
+        "开篇就划清「渲染后端≠完整游戏引擎」，降低预期错位"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 OGRECave/ogre 正确；场景图、可替换 RenderSystem、资源管线与官方定位一致",
+        "历史段用「2001 前后 / 2005 左右」属概括，MIT 许可与仿真/游戏落点合理，无硬伤",
+        "「约数千 star」为快照，可接受弱化表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "HighPy 预览、C++ SceneNode/Entity/Camera、Mesh LOD 示例可跟做",
+        "踩坑（当游戏引擎、Entity 未挂节点、resources.cfg 不递归、缺 plugins.cfg）具体；可再补一条材质/阴影调试场景但不影响通过",
+        "适用/不适用边界清楚：嵌入式 C++ 渲染 vs Godot/Unity/Web/ECS"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 195,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 195,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

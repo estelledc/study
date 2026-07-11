@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "后厨类比贯穿全文，G-code/$J/$C 首次出现都有桥接；三个案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 gnea/grbl；$C/$J=/$32 laser mode 与官方文档一致；历史时间线与社区叙述相符，无明显硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "串口命令可跟做；踩坑（ok≠完成、startup block、EEPROM 关中断、$X≠定位）具体可操作；边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "后厨类比贯穿全文，G-code/$J/$C 首次出现都有桥接；三个案例均有逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源指向 gnea/grbl；$C/$J=/$32 laser mode 与官方文档一致；历史时间线与社区叙述相符，无明显硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "串口命令可跟做；踩坑（ok≠完成、startup block、EEPROM 关中断、$X≠定位）具体可操作；边界清楚。"
+      ]
+    }
+  ]
+}

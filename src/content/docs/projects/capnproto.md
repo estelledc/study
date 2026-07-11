@@ -45,7 +45,7 @@ auto name = person.getName();   // 直接指向 buffer 内偏移，没有 memcpy
 
 Cap'n Proto 的两条主线：**wire format** 和 **RPC**。
 
-1. **内存布局 = wire format**：没有 varint（Protobuf 那种"小数字省字节"的编码），所有字段对齐到 8 字节边界。指针字段存的是**相对偏移**，可以直接当指针用。代价：占空间稍多；收益：**省整个解码步骤**。
+1. **内存布局 = wire format**：没有 varint（Protobuf 那种"小数字省字节"的编码），所有字段对齐到 8 字节边界。指针字段存的是**相对偏移**，运行库做边界检查后用指针运算访问字段。代价：占空间稍多；收益：**省掉逐字段解码成新对象的步骤**。
 
 2. **Schema 编译生成绑定**：写 `.capnp` 文件 → `capnp compile` → 生成 C++ / Rust / TS / Go / Python 头文件，类型安全、字段 ID 显式（`@0` / `@1`）。
 
@@ -63,7 +63,7 @@ Workers 里你写：
 const result = await env.MY_KV.get("key");
 ```
 
-底层不是 HTTP，是 Cap'n Proto RPC。请求方把"调用 KV 的 get 方法"打包成一个 Cap'n Proto buffer，跨 isolate 边界传过去；KV 的 isolate 直接 mmap 这块 buffer，**没有 JSON parse、没有反射**。一次调用的开销从微秒级压到纳秒级。
+底层不是传统 HTTP/JSON，而是大量使用 Cap'n Proto RPC 和 capability 模型。请求方把"调用 KV 的 get 方法"打包成二进制消息，跨 isolate 边界交给目标服务；运行时省掉 JSON parse 和手写路由胶水。注意：跨 isolate 仍有调度、权限检查和必要拷贝，**不是纳秒魔法**，优势在于热路径少做无用转换。
 
 ### 案例 2：本地缓存落盘
 
@@ -77,23 +77,23 @@ user.setAge(25);
 writeMessageToFd(fd, msg);
 ```
 
-重启进程时 `mmap` 这个文件，**不用反序列化**：
+重启进程时读取这个文件，**不用再转成 JSON / dict 中间对象**：
 
 ```cpp
 capnp::PackedFdMessageReader reader(fd);
 auto user = reader.getRoot<User>();
-// 读 user.getName() 直接走文件 mmap 区
+// 读 user.getName() 时由 reader 按 Cap'n Proto 布局取字段
 ```
 
-10GB 缓存重启时间从 30 秒（JSON parse）降到 0.1 秒（mmap）。
+如果想做真正的 mmap 直读，文件要按未 packed 的 flat array 布局保存，再配合 `FlatArrayMessageReader`；packed 格式要先解包。工程收益通常来自"按需读字段、少建对象"，具体能快多少取决于缓存大小和访问模式。
 
 ### 案例 3：游戏房间状态同步
 
-服务器在 100 个房间之间转发玩家状态。状态结构体定义在 `.capnp`，每帧产生一个 buffer。转发时**不拷贝 / 不解码**，buffer 直接通过 socket 写出。10 万 QPS 下 CPU 占用从 60% 降到 10%。
+服务器在 100 个房间之间转发玩家状态。状态结构体定义在 `.capnp`，每帧产生一个消息。转发层如果只看少数字段（例如房间号、版本号），可以不把整包解成 JSON 对象；需要改字段时再进入 builder。这样能把 CPU 花在游戏逻辑上，而不是花在重复编码 / 解码上。
 
 ## 踩过的坑
 
-1. **Schema 演化比 Protobuf 严格**：字段 ID（`@N`）一旦发布**绝不能改**，类型也不能换；新增字段只能在末尾。Protobuf 还允许"重命名 + 同 ID 继续兼容"，Cap'n Proto 这条更死板。
+1. **Schema 演化比 Protobuf 严格**：字段 ID（`@N`）一旦发布**绝不能改**，旧编号也不能复用；新增字段要用新的编号，文本位置可以调整但兼容性只看编号。Protobuf 还允许"重命名 + 同 ID 继续兼容"，Cap'n Proto 这条更死板。
 
 2. **"零拷贝"是营销词**：反序列化省了，但**跨进程/跨网络该拷贝还是拷贝**。如果你以为 Cap'n Proto 让网络传输也变零拷贝，会失望。
 
@@ -123,7 +123,7 @@ auto user = reader.getRoot<User>();
 - **2013 年**：Varda 离职做 Sandstorm（个人服务器平台），实现时嫌 Protobuf 解码太慢，造了 Cap'n Proto
 - **2017 年**：Sandstorm 商业化失败，Varda 加入 Cloudflare
 - **2018 年**：Cloudflare Workers 上线，跨 isolate 通信底层就是 Cap'n Proto
-- **至今**：Workers 每天处理万亿级请求，每条都在跑 Cap'n Proto——这套格式间接成了"互联网半壁江山的 RPC 底层"
+- **至今**：Workers 的许多内部边界继续使用 Cap'n Proto——这套小众格式因为 Cloudflare 的规模，获得了远超普通开源库的实战压力测试
 
 ## 学到什么
 

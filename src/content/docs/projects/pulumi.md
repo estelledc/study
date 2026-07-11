@@ -41,7 +41,7 @@ Pulumi 的设计可以拆成 **三层**：
 
 2. **引擎（engine）**：Go 写的核心。读你的代码声明出来的 **资源图**，对比 **当前状态**（state），算出 diff，决定哪些要 create / update / delete。这一步叫 `pulumi preview`。
 
-3. **Provider（gRPC 插件）**：AWS / Azure / GCP / Kubernetes 各家一个独立进程，引擎通过 gRPC 喊它们去调云 API。**95% 的 provider 是从 Terraform Provider 桥接生成** 的——所以 Pulumi 一上来就支持 100+ 云。
+3. **Provider（gRPC 插件）**：AWS / Azure / GCP / Kubernetes 各家一个独立进程，引擎通过 gRPC（进程间远程调用）喊它们去调云 API。**大量 provider 从 Terraform Provider 桥接生成**，也有 Kubernetes、Azure Native 等原生实现——所以生态能快速铺开。
 
 关键概念 **Stack**：同一份代码，可以建多套环境（dev / staging / prod），每套有自己的 state 和配置。`pulumi stack select prod` 切环境。
 
@@ -59,7 +59,11 @@ for (const env of ["dev", "staging", "prod"]) {
 }
 ```
 
-Terraform 等价代码要写 `count` 或 `for_each` + `var.environments`，绕一圈。Pulumi **就是 JavaScript 的 for**。
+**逐部分解释**：
+
+- `for ... of` 就是普通 TypeScript 循环，三个环境各建一个桶
+- `` `logs-${env}` `` 是逻辑名，Pulumi 用它在 state 里区分资源
+- Terraform 等价要写 `count` / `for_each`；这里**就是语言自带的 for**
 
 ### 案例 2：抽出可复用组件（像写一个 class）
 
@@ -77,7 +81,13 @@ class WebApp extends pulumi.ComponentResource {
 const app = new WebApp("blog", { domain: "blog.example.com" });
 ```
 
-**WebApp 就是个普通 TypeScript class**，可以发到 npm，团队复用。Terraform 的 module 概念能做到类似事情，但抽象能力比 class 弱很多（没继承、没接口、没真正的封装）。
+**逐部分解释**：
+
+- `ComponentResource`：把多个云资源打包成一个可复用组件（像写 class）
+- `{ parent: this }`：子资源挂在组件下，`pulumi destroy` 时一起收干净
+- `url` 是 `Output<string>`——CDN 域名要部署后才知道，不能当普通字符串用
+
+Terraform module 能做类似事，但缺真正的 class / 接口 / 封装。
 
 ### 案例 3：state 和 Output 的"异步"陷阱
 
@@ -153,7 +163,4 @@ bucket.id.apply(id => console.log(`Bucket: ${id}`));  // 对
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[opentofu]] —— OpenTofu — 社区接手的 Terraform
 

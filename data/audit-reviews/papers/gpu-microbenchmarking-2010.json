@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "盲品红酒类比贴合；案例步骤清楚，但案例 1 代码里 out/tid 未声明，零基础易卡住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Wong et al. ISPASS 2010 测出的约 5KB 是 texture L1，不是 global 的 L1 数据 cache；论文明确 global memory accesses are uncached"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 用普通全局数组 stride 探针却写成「L1 数据 cache」会歪曲原实验；应改为 texture fetch 路径，或标明测的是 texture L1 / 256KB texture L2"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 伪代码缺 out/tid 声明，且若要复现 5KB 结果应对齐 texture 访问路径，否则跟做会测到「无 cache」的 global 延迟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（编译器删探针 / warm-up / 锁频 / 代际过期）具体可操作；适用边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "盲品红酒类比贴合；案例步骤清楚，但案例 1 代码里 out/tid 未声明，零基础易卡住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Wong et al. ISPASS 2010 测出的约 5KB 是 texture L1，不是 global 的 L1 数据 cache；论文明确 global memory accesses are uncached",
+        "案例 1 用普通全局数组 stride 探针却写成「L1 数据 cache」会歪曲原实验；应改为 texture fetch 路径，或标明测的是 texture L1 / 256KB texture L2"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 伪代码缺 out/tid 声明，且若要复现 5KB 结果应对齐 texture 访问路径，否则跟做会测到「无 cache」的 global 延迟",
+        "踩坑（编译器删探针 / warm-up / 锁频 / 代际过期）具体可操作；适用边界清楚"
+      ]
+    }
+  ]
+}

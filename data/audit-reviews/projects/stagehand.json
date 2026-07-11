@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "副驾驶/老司机类比贴合「deterministic 优先 + LLM fallback」，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "a11y 树 / elementId / xpath map / zod 首次出现有桥接，零基础大体能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有「发生了什么」好懂；案例 2 缺把 LoggingClient 注入 Stagehand 的步骤，读者无法复现「只打 1 次」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Browserbase/MIT/三 API/a11y+xpath/self-heal 默认关等与公开设计叙述一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub URL 合理；历史时间线与 v3 转向 deterministic 优先相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「默认不用 LLM」易误解——首次 act 仍会调 LLM，宜改成「优先走缓存/确定性路径」以免歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 extract+zod 可跟做；案例 2 LoggingClient 未接入 Stagehand 构造，缺 llmClient 注入则无法验证调用次数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "self-heal 只重试 1 次、z.string().url() 才触发 URL→id、shadow DOM not-supported、cache key 含 query——坑具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：渐进加 AI / 结构化抽取 vs canvas·VLM、跨端 Computer Use、纯 Python 栈"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "副驾驶/老司机类比贴合「deterministic 优先 + LLM fallback」，保留",
+        "a11y 树 / elementId / xpath map / zod 首次出现有桥接，零基础大体能跟",
+        "案例 1 有「发生了什么」好懂；案例 2 缺把 LoggingClient 注入 Stagehand 的步骤，读者无法复现「只打 1 次」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Browserbase/MIT/三 API/a11y+xpath/self-heal 默认关等与公开设计叙述一致",
+        "来源 GitHub URL 合理；历史时间线与 v3 转向 deterministic 优先相符",
+        "开篇「默认不用 LLM」易误解——首次 act 仍会调 LLM，宜改成「优先走缓存/确定性路径」以免歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 extract+zod 可跟做；案例 2 LoggingClient 未接入 Stagehand 构造，缺 llmClient 注入则无法验证调用次数",
+        "self-heal 只重试 1 次、z.string().url() 才触发 URL→id、shadow DOM not-supported、cache key 含 query——坑具体有用",
+        "适用/不适用边界清楚：渐进加 AI / 结构化抽取 vs canvas·VLM、跨端 Computer Use、纯 Python 栈"
+      ]
+    }
+  ]
+}

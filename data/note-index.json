@@ -763,18 +763,18 @@
       "id": "papers::amber-sigmod-2014",
       "area": "papers",
       "slug": "amber-sigmod-2014",
-      "title": "Amber: Decoupling Access Methods from Stable Storage — 学习笔记（入门）",
+      "title": "Amber — 把用户数据从 Web 应用里拆出来",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-databases"
+        "papers-distributed-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-databases",
-        "matched_category": "databases",
-        "raw_category": "databases"
+        "topic_id": "papers-distributed-systems",
+        "matched_category": "分布式系统",
+        "raw_category": "分布式系统 / Web 存储"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -787,8 +787,8 @@
       },
       "route": "/study/papers/amber-sigmod-2014/",
       "atlas": {
-        "chunk_id": "topic-papers-databases-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-databases-01/"
+        "chunk_id": "topic-papers-distributed-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
       }
     },
     {
@@ -1617,7 +1617,7 @@
       "id": "papers::autonomous-driving-waymo-2021",
       "area": "papers",
       "slug": "autonomous-driving-waymo-2021",
-      "title": "Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving",
+      "title": "Waymo Open Dataset — 自动驾驶感知的共同训练场",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -1774,7 +1774,7 @@
       "id": "papers::awq-2023",
       "area": "papers",
       "slug": "awq-2023",
-      "title": "AWQ 2023 — 让 70B 大模型住进 RTX 4090",
+      "title": "AWQ 2023 — 把 70B 大模型权重压到 35GB",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -2695,7 +2695,7 @@
       "id": "papers::bigtable-revisit-2024",
       "area": "papers",
       "slug": "bigtable-revisit-2024",
-      "title": "Bigtable Then and Now (CIDR 2024 retrospective) — 学习笔记（入门）",
+      "title": "Bigtable 二十年回顾 — 从三维表到云数据库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -4163,7 +4163,7 @@
       "id": "papers::cassandra-eventual-tradeoff",
       "area": "papers",
       "slug": "cassandra-eventual-tradeoff",
-      "title": "Cassandra: Eventually Consistent Tradeoffs",
+      "title": "Cassandra 最终一致性取舍 — 可用性、延迟和新鲜度不能都拿满",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -6070,7 +6070,7 @@
       "id": "papers::continual-pretrain-survey-2026",
       "area": "papers",
       "slug": "continual-pretrain-survey-2026",
-      "title": "Linear Attention, Still: Why Mamba-style Models Plateau — 学习笔记（入门）",
+      "title": "Continual Pretraining Survey 2026 — 大模型持续学习入门",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -8173,7 +8173,7 @@
       "area": "papers",
       "slug": "dijkstra-goto",
       "title": "Dijkstra 1968 — Go To Statement Considered Harmful",
-      "description": "1968 年 3 月 Dijkstra 写给 CACM 的不到 1000 字 letter，论证 goto 让源代码的静态文本顺序与运行时执行顺序错位、状态难以推理。结构化编程三件套（顺序/选择/循环）让每个文本位置的前置条件可由前面的代码唯一确定，是 Hoare 1969 公理化语义和现代类型系统的起点。",
+      "description": "解释 goto 如何破坏程序位置与执行状态之间的可推理关系，并推动结构化控制流。",
       "difficulty": "unknown",
       "canonical_topics": [
         "papers-hci-and-software-engineering-research"
@@ -8330,7 +8330,7 @@
       "id": "papers::dino",
       "area": "papers",
       "slug": "dino",
-      "title": "DINO 自监督视觉 transformer",
+      "title": "DINO — 让视觉模型自己认出物体轮廓",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -8340,7 +8340,7 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "papers-computer-vision",
-        "raw_category": null
+        "raw_category": "机器学习"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -11168,7 +11168,7 @@
       "id": "papers::flat-datacenter-storage",
       "area": "papers",
       "slug": "flat-datacenter-storage",
-      "title": "Flat Datacenter Storage",
+      "title": "Flat Datacenter Storage — 把整机房磁盘当成一块大盘",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -12186,7 +12186,7 @@
       "id": "papers::gfs",
       "area": "papers",
       "slug": "gfs",
-      "title": "GFS — 编译器决定不做哪些事",
+      "title": "GFS — 为工作负载反向定制的分布式文件系统",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -16056,7 +16056,7 @@
       "id": "papers::kv-cache-budget-2026",
       "area": "papers",
       "slug": "kv-cache-budget-2026",
-      "title": "KVBudget: Per-Request KV Cache Budgeting in vLLM-style Serving",
+      "title": "KVBudget — 给每条请求划一块 KV cache 预算",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -16088,18 +16088,18 @@
       "id": "papers::kv-fold",
       "area": "papers",
       "slug": "kv-fold",
-      "title": "KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference — 学习笔记",
+      "title": "KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-nlp-foundations-and-scaling"
+        "papers-agents-and-llm-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-nlp-foundations-and-scaling",
-        "matched_category": "machine learning",
-        "raw_category": "machine-learning"
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM 推理"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -16112,8 +16112,8 @@
       },
       "route": "/study/papers/kv-fold/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -18285,7 +18285,7 @@
       "id": "papers::mahajan-2002-bgp-misconfig",
       "area": "papers",
       "slug": "mahajan-2002-bgp-misconfig",
-      "title": "Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑",
+      "title": "Mahajan 2002 — 三周看互联网，近四分之三新通告是手滑",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -19245,14 +19245,14 @@
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-operating-systems-and-cluster-management"
+        "papers-distributed-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-operating-systems-and-cluster-management",
-        "matched_category": "操作系统",
-        "raw_category": "操作系统"
+        "topic_id": "papers-distributed-systems",
+        "matched_category": "分布式系统",
+        "raw_category": "分布式系统"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -19265,8 +19265,8 @@
       },
       "route": "/study/papers/mesos-2011/",
       "atlas": {
-        "chunk_id": "topic-papers-operating-systems-and-cluster-management-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-01/"
+        "chunk_id": "topic-papers-distributed-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
       }
     },
     {
@@ -19943,7 +19943,7 @@
       "id": "papers::mlflow",
       "area": "papers",
       "slug": "mlflow",
-      "title": "MLflow — 给机器学习实验装上\"记账本和身份证\"",
+      "title": "MLflow — 给机器学习实验装上「记账本和身份证」",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -20391,7 +20391,7 @@
       "id": "papers::ms-marco-2016",
       "area": "papers",
       "slug": "ms-marco-2016",
-      "title": "MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集",
+      "title": "MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -20838,18 +20838,18 @@
       "id": "papers::nestedkv",
       "area": "papers",
       "slug": "nestedkv",
-      "title": "NestedKV: Nested Memory Routing for Long-Context KV Cache Compression — 学习笔记",
+      "title": "NestedKV — 用三层记忆决定 KV cache 该留谁",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-nlp-foundations-and-scaling"
+        "papers-agents-and-llm-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-nlp-foundations-and-scaling",
-        "matched_category": "machine learning",
-        "raw_category": "machine-learning"
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "machine-learning / LLM 推理"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -20862,8 +20862,8 @@
       },
       "route": "/study/papers/nestedkv/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -21858,14 +21858,14 @@
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-computer-graphics-and-visualization"
+        "papers-agents-and-llm-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-computer-graphics-and-visualization",
-        "matched_category": "图形学",
-        "raw_category": "图形学"
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "系统 / LLM 推理"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -21878,8 +21878,8 @@
       },
       "route": "/study/papers/orca-2022/",
       "atlas": {
-        "chunk_id": "topic-papers-computer-graphics-and-visualization-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-computer-graphics-and-visualization-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -21918,18 +21918,18 @@
       "id": "papers::oscar-int2-kv",
       "area": "papers",
       "slug": "oscar-int2-kv",
-      "title": "OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization — 学习笔记",
+      "title": "OSCAR — 离线转个方向，把 KV Cache 压到 2-bit",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-nlp-foundations-and-scaling"
+        "papers-agents-and-llm-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-nlp-foundations-and-scaling",
-        "matched_category": "machine learning",
-        "raw_category": "machine-learning"
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM 推理 / 量化"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -21942,8 +21942,8 @@
       },
       "route": "/study/papers/oscar-int2-kv/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -22046,7 +22046,7 @@
       "id": "papers::padmanabhan-1995-http-latency",
       "area": "papers",
       "slug": "padmanabhan-1995-http-latency",
-      "title": "Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快",
+      "title": "Padmanabhan-Mogul 1995 — 用秒表证明：持久连接 + 流水线能砍掉 HTTP 延迟",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -22114,14 +22114,14 @@
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-machine-learning-systems"
+        "papers-agents-and-llm-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-machine-learning-systems",
-        "matched_category": "ml systems",
-        "raw_category": "ml-systems"
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM 推理"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -22134,8 +22134,8 @@
       },
       "route": "/study/papers/paged-attention-vllm/",
       "atlas": {
-        "chunk_id": "topic-papers-machine-learning-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-machine-learning-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -23319,7 +23319,7 @@
       "id": "papers::prefix-cache-policy-2026",
       "area": "papers",
       "slug": "prefix-cache-policy-2026",
-      "title": "Beyond LRU: Prefix-Cache Policies for LLM Serving — 学习笔记（入门）",
+      "title": "Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -25731,7 +25731,7 @@
       "id": "papers::scads-database-2008",
       "area": "papers",
       "slug": "scads-database-2008",
-      "title": "SCADS: Scale-Independent Storage",
+      "title": "SCADS — 用户涨一万倍也不改应用的存储愿景",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -25795,18 +25795,18 @@
       "id": "papers::scaling-hnsws-antirez",
       "area": "papers",
       "slug": "scaling-hnsws-antirez",
-      "title": "d-HNSW：面向 RDMA 反向索引内存的高性能向量搜索",
+      "title": "Scaling HNSWs — antirez 把向量图做成 Redis 数据结构的工程笔记",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-distributed-systems"
+        "papers-information-retrieval-and-recommendation"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-distributed-systems",
-        "matched_category": "分布式系统",
-        "raw_category": "向量检索 / 分布式系统"
+        "topic_id": "papers-information-retrieval-and-recommendation",
+        "matched_category": "向量检索",
+        "raw_category": "向量检索 / 数据结构"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -25819,8 +25819,8 @@
       },
       "route": "/study/papers/scaling-hnsws-antirez/",
       "atlas": {
-        "chunk_id": "topic-papers-distributed-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
+        "chunk_id": "topic-papers-information-retrieval-and-recommendation-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-information-retrieval-and-recommendation-01/"
       }
     },
     {
@@ -26842,7 +26842,7 @@
       "id": "papers::silo-oltp-2013",
       "area": "papers",
       "slug": "silo-oltp-2013",
-      "title": "Silo: Speedy Transactions in Multicore In-Memory Databases",
+      "title": "Silo — 多核内存数据库里的高速短事务",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -28711,8 +28711,8 @@
       },
       "route": "/study/papers/sycophancy-2023/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
       }
     },
     {
@@ -28871,8 +28871,8 @@
       },
       "route": "/study/papers/t0-2021/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
       }
     },
     {
@@ -28902,8 +28902,8 @@
       },
       "route": "/study/papers/t5/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
       }
     },
     {
@@ -29919,8 +29919,8 @@
       },
       "route": "/study/papers/tradeoff-analysis/",
       "atlas": {
-        "chunk_id": "topic-papers-operating-systems-and-cluster-management-02",
-        "chunk_route": "/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-02/"
+        "chunk_id": "topic-papers-operating-systems-and-cluster-management-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-01/"
       }
     },
     {
@@ -30023,7 +30023,7 @@
       "id": "papers::tree-of-attention-2026",
       "area": "papers",
       "slug": "tree-of-attention-2026",
-      "title": "Tree-of-Attention: Branching Attention for Long-Context Reasoning",
+      "title": "Tree-of-Attention — 把长上下文拆成树再分支注意",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -30437,7 +30437,7 @@
       "id": "papers::ucb-cs186-fa2024",
       "area": "papers",
       "slug": "ucb-cs186-fa2024",
-      "title": "UCB CS186 Fall 2024 Database Internals Reading List",
+      "title": "UCB CS186 Fall 2024 — 数据库内核阅读路线",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -30853,18 +30853,18 @@
       "id": "papers::vericache",
       "area": "papers",
       "slug": "vericache",
-      "title": "VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 学习笔记",
+      "title": "VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "papers-nlp-foundations-and-scaling"
+        "papers-agents-and-llm-systems"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "papers-nlp-foundations-and-scaling",
-        "matched_category": "machine learning",
-        "raw_category": "machine-learning"
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM 推理 / KV Cache"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -30877,15 +30877,15 @@
       },
       "route": "/study/papers/vericache/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
       "id": "papers::verisoft-2008",
       "area": "papers",
       "slug": "verisoft-2008",
-      "title": "Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完",
+      "title": "Verisoft — 把整台计算机从门电路到邮件客户端全部用数学证完",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -31289,8 +31289,8 @@
       },
       "route": "/study/papers/vr-1988/",
       "atlas": {
-        "chunk_id": "topic-papers-distributed-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
+        "chunk_id": "topic-papers-distributed-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-02/"
       }
     },
     {
@@ -33529,7 +33529,7 @@
       "id": "projects::ardour",
       "area": "projects",
       "slug": "ardour",
-      "title": "Ardour — 专业级 DAW",
+      "title": "Ardour — 把录音、剪辑、混音放进同一个工程",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -34195,7 +34195,7 @@
       "id": "projects::audacity",
       "area": "projects",
       "slug": "audacity",
-      "title": "Audacity — 开源音频编辑器 — 学习笔记（入门）",
+      "title": "Audacity — 开源音频剪辑里的瑞士军刀",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -34205,8 +34205,8 @@
         "state": "classified",
         "source": "frontmatter-category",
         "topic_id": "projects-communication-and-media",
-        "matched_category": "media",
-        "raw_category": "media"
+        "matched_category": "音频工具",
+        "raw_category": "音频工具"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -34513,7 +34513,7 @@
       "id": "projects::babylonjs",
       "area": "projects",
       "slug": "babylonjs",
-      "title": "Babylon.js — Microsoft Web 3D 引擎",
+      "title": "Babylon.js — 浏览器里的 3D 游戏和可视化引擎",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -35498,7 +35498,7 @@
       "id": "projects::bullet",
       "area": "projects",
       "slug": "bullet",
-      "title": "Bullet — C++ 经典 3D 物理引擎 — 学习笔记（入门）",
+      "title": "Bullet — C++ 经典 3D 物理引擎与 PyBullet 仿真工具",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -35815,7 +35815,7 @@
       "id": "projects::capacitor",
       "area": "projects",
       "slug": "capacitor",
-      "title": "capacitor",
+      "title": "Capacitor — 把 Web 应用装进原生 App 的运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37045,7 +37045,7 @@
       "id": "projects::compound-v3",
       "area": "projects",
       "slug": "compound-v3",
-      "title": "Compound III (Comet) — 单抵押借贷重构",
+      "title": "Compound III (Comet) — 单基础资产借贷重构",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37296,7 +37296,7 @@
       "id": "projects::cordova",
       "area": "projects",
       "slug": "cordova",
-      "title": "Cordova — 学习笔记（入门）",
+      "title": "Cordova — 用 Web 技术打包移动 App 的老牌桥梁",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37306,8 +37306,8 @@
         "state": "classified",
         "source": "frontmatter-category",
         "topic_id": "projects-mobile-development",
-        "matched_category": "mobile",
-        "raw_category": "mobile"
+        "matched_category": "移动开发",
+        "raw_category": "移动开发"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -38122,7 +38122,7 @@
       "id": "projects::deck-gl",
       "area": "projects",
       "slug": "deck-gl",
-      "title": "deck.gl — Uber 大规模数据可视化",
+      "title": "deck.gl — 大规模地图数据可视化图层库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -39510,7 +39510,7 @@
       "id": "projects::electron",
       "area": "projects",
       "slug": "electron",
-      "title": "Electron — 跨平台桌面壳",
+      "title": "Electron — 用网页技术做跨平台桌面应用",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -39857,7 +39857,7 @@
       "id": "projects::engine262",
       "area": "projects",
       "slug": "engine262",
-      "title": "Boa — Rust 写的 ES 解释器 — 学习笔记（入门）",
+      "title": "engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -40143,7 +40143,7 @@
       "id": "projects::essentia",
       "area": "projects",
       "slug": "essentia",
-      "title": "Essentia — 音乐信息检索工具箱",
+      "title": "Essentia — 音乐信息检索的 C++/Python 工具箱",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -41961,7 +41961,7 @@
       "id": "projects::glslify",
       "area": "projects",
       "slug": "glslify",
-      "title": "glslify — Browserify 风格 GLSL 模块 — 学习笔记",
+      "title": "glslify — 给 GLSL 用的 npm 模块系统",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -43042,7 +43042,7 @@
       "id": "projects::hls.js",
       "area": "projects",
       "slug": "hls.js",
-      "title": "hls.js — Web HLS 播放库 — 学习笔记",
+      "title": "hls.js — 浏览器里的 HLS 播放库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -43707,7 +43707,7 @@
       "id": "projects::ionic-framework",
       "area": "projects",
       "slug": "ionic-framework",
-      "title": "ionic-framework",
+      "title": "Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -44403,7 +44403,7 @@
       "id": "projects::k3s",
       "area": "projects",
       "slug": "k3s",
-      "title": "k3s — 把完整 K8s 塞进一个 60 MB 的二进制",
+      "title": "k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -45862,8 +45862,8 @@
       "id": "projects::lexical",
       "area": "projects",
       "slug": "lexical",
-      "title": "lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议",
-      "description": "Lexical 用 native browser selection + immutable EditorState + dirty-set reconciler，把 contentEditable 从\"性能黑盒\"压回 React 时代的可调优框架。一个零基础学习者读心脏代码的状元篇笔记。",
+      "title": "Lexical — 把富文本编辑拆成快照、事务和插件",
+      "description": "介绍 Lexical 如何用不可变快照、更新事务和脏节点协调富文本编辑。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-editors-and-rich-text"
@@ -45872,7 +45872,7 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-editors-and-rich-text",
-        "raw_category": null
+        "raw_category": "编辑器框架"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -45988,7 +45988,7 @@
       "id": "projects::librosa",
       "area": "projects",
       "slug": "librosa",
-      "title": "librosa",
+      "title": "librosa — 把声音变成机器学习能吃的数字特征",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -46842,7 +46842,7 @@
       "id": "projects::lodestar",
       "area": "projects",
       "slug": "lodestar",
-      "title": "Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端",
+      "title": "Lodestar — JS/TS 生态里的以太坊共识层客户端",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -47001,8 +47001,8 @@
       "id": "projects::lottie",
       "area": "projects",
       "slug": "lottie",
-      "title": "lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器",
-      "description": "不是动画库，是 AE 到浏览器的协议层；bodymovin 插件把 After Effects 关键帧序列化成 JSON spec，AnimationItem 在主循环里按帧驱动 SVG/Canvas/HTML 三套渲染器",
+      "title": "lottie-web — 把 AE 动画变成网页可播放的 JSON",
+      "description": "介绍 lottie-web 如何把 After Effects 动画导出为 JSON 并在浏览器中播放。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-animation"
@@ -47011,7 +47011,7 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-animation",
-        "raw_category": null
+        "raw_category": "动画"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -47127,7 +47127,7 @@
       "id": "projects::luma-gl",
       "area": "projects",
       "slug": "luma-gl",
-      "title": "luma.gl",
+      "title": "luma.gl — 给 WebGPU/WebGL 用的中低层 GPU 工具箱",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -49469,7 +49469,7 @@
       "id": "projects::nativescript",
       "area": "projects",
       "slug": "nativescript",
-      "title": "NativeScript",
+      "title": "NativeScript — 用 JS/TS 直接驱动原生控件",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -50069,7 +50069,7 @@
       "area": "projects",
       "slug": "nix",
       "title": "Nix — 函数式声明式包管理与可重复构建",
-      "description": "纯函数式部署模型；nix-shell/devShell、flake 与 nixpkgs 超 12 万软件包的可复现环境",
+      "description": "介绍 Nix 如何用内容寻址存储和声明式输入实现可重复构建、回滚与多版本共存。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-cli-tools"
@@ -50862,7 +50862,7 @@
       "id": "projects::open-sora",
       "area": "projects",
       "slug": "open-sora",
-      "title": "Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目",
+      "title": "Open-Sora — 把 Sora 路线开源对标的视频生成项目",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -52807,8 +52807,8 @@
       "id": "projects::plane",
       "area": "projects",
       "slug": "plane",
-      "title": "Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django",
-      "description": "大型应用范例——49.9k stars 的开源 Linear/Jira 替代，TypeScript + Python + Postgres，monorepo 工程范式精读",
+      "title": "Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器",
+      "description": "介绍 Plane 如何组合任务管理、实时协同和自托管基础设施。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-data-applications-and-saas"
@@ -52817,7 +52817,7 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-data-applications-and-saas",
-        "raw_category": null
+        "raw_category": "项目管理 / 大型 Web 应用"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -54171,7 +54171,7 @@
       "id": "projects::quickjs",
       "area": "projects",
       "slug": "quickjs",
-      "title": "quickjs",
+      "title": "QuickJS — 口袋里的 JavaScript 引擎",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -54390,7 +54390,7 @@
       "id": "projects::rapier",
       "area": "projects",
       "slug": "rapier",
-      "title": "Rapier — Rust 现代物理引擎 — 学习笔记",
+      "title": "Rapier — Rust 现代 2D/3D 物理引擎",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -54611,7 +54611,7 @@
       "id": "projects::react",
       "area": "projects",
       "slug": "react",
-      "title": "React UI 组件库",
+      "title": "React — 用组件描述界面的 JavaScript 库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -57845,7 +57845,7 @@
       "id": "projects::streamlink",
       "area": "projects",
       "slug": "streamlink",
-      "title": "Streamlink — 直播流提取器 — 学习笔记",
+      "title": "Streamlink — 把直播页变成可播的流",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -57909,7 +57909,7 @@
       "id": "projects::styled-components",
       "area": "projects",
       "slug": "styled-components",
-      "title": "styled-components — React 生态最早的 CSS-in-JS 库",
+      "title": "styled-components — 用标签模板把 CSS 写进 React 组件的 CSS-in-JS 库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -58601,18 +58601,18 @@
       "id": "projects::tauri",
       "area": "projects",
       "slug": "tauri",
-      "title": "tauri — 学习笔记",
+      "title": "Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-mobile-development"
+        "projects-general-developer-tools"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "projects-mobile-development",
-        "matched_category": "mobile",
-        "raw_category": "mobile"
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "跨平台桌面",
+        "raw_category": "跨平台桌面"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -58625,8 +58625,8 @@
       },
       "route": "/study/projects/tauri/",
       "atlas": {
-        "chunk_id": "topic-projects-mobile-development-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -60245,7 +60245,7 @@
       "id": "projects::valkey",
       "area": "projects",
       "slug": "valkey",
-      "title": "Valkey — Redis 7.4 的开源 fork",
+      "title": "Valkey — Redis 7.2.4 的开源 fork",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61220,7 +61220,7 @@
       "id": "projects::vue-i18n",
       "area": "projects",
       "slug": "vue-i18n",
-      "title": "vue-i18n — Vue 官方 i18n，切语言整页自己刷新",
+      "title": "vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61251,18 +61251,18 @@
       "id": "projects::wails",
       "area": "projects",
       "slug": "wails",
-      "title": "wails — 学习笔记",
+      "title": "Wails — 用 Go + 网页技术打成单个桌面应用",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-mobile-development"
+        "projects-general-developer-tools"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "projects-mobile-development",
-        "matched_category": "mobile",
-        "raw_category": "mobile"
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "跨平台桌面",
+        "raw_category": "跨平台桌面"
       },
       "trust": {
         "contract_state": "legacy-unverified",
@@ -61275,8 +61275,8 @@
       },
       "route": "/study/projects/wails/",
       "atlas": {
-        "chunk_id": "topic-projects-mobile-development-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -61315,7 +61315,7 @@
       "id": "projects::wamr",
       "area": "projects",
       "slug": "wamr",
-      "title": "WAMR — wasm 微运行时（嵌入式） — 学习笔记",
+      "title": "WAMR — 塞进单片机也能跑的 Wasm 微运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61408,7 +61408,7 @@
       "id": "projects::wasmer",
       "area": "projects",
       "slug": "wasmer",
-      "title": "Wasmer — 跨平台 wasm 运行时 — 学习笔记",
+      "title": "Wasmer — 把 wasm 当成轻量容器到处跑",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61440,7 +61440,7 @@
       "id": "projects::wasmtime",
       "area": "projects",
       "slug": "wasmtime",
-      "title": "Wasmtime — Rust 实现的 WASM 运行时",
+      "title": "Wasmtime — Rust 实现的 WebAssembly 运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -62749,7 +62749,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/",
-      "entries": 53
+      "entries": 59
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",
@@ -62833,7 +62833,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-computer-graphics-and-visualization-01/",
-      "entries": 62
+      "entries": 61
     },
     {
       "id": "topic-papers-computer-vision-01",
@@ -62875,7 +62875,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-databases-01/",
-      "entries": 84
+      "entries": 83
     },
     {
       "id": "topic-papers-distributed-systems-01",
@@ -62903,7 +62903,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-distributed-systems-02/",
-      "entries": 3
+      "entries": 4
     },
     {
       "id": "topic-papers-distributed-training-and-gpu-01",
@@ -63001,7 +63001,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-information-retrieval-and-recommendation-01/",
-      "entries": 52
+      "entries": 53
     },
     {
       "id": "topic-papers-machine-learning-systems-01",
@@ -63015,7 +63015,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-machine-learning-systems-01/",
-      "entries": 9
+      "entries": 8
     },
     {
       "id": "topic-papers-network-protocols-01",
@@ -63057,7 +63057,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/",
-      "entries": 15
+      "entries": 11
     },
     {
       "id": "topic-papers-operating-systems-and-cluster-management-01",
@@ -63085,7 +63085,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-02/",
-      "entries": 10
+      "entries": 9
     },
     {
       "id": "topic-papers-reinforcement-learning-01",
@@ -63435,7 +63435,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 11
+      "entries": 13
     },
     {
       "id": "topic-projects-headless-ui-components-01",
@@ -63547,7 +63547,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-mobile-development-01/",
-      "entries": 12
+      "entries": 10
     },
     {
       "id": "topic-projects-monitoring-and-time-series-01",

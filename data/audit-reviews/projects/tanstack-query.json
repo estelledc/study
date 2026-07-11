@@ -1,0 +1,141 @@
+{
+  "slug": "tanstack-query",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "共享冰箱类比贴合 query cache / dedup / 自动补货"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "queryKey / staleTime / gcTime / invalidate 均有白话桥接，零基础可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3（最简 useQuery / enabled 依赖 / mutation+invalidate）逐步解释清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/TanStack/query 正确；queryKey / staleTime·gcTime / mutation+invalidate 三点与官方叙事一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史年份有误：仓库约 2019、v1 约 2020（不宜写 2017）；TanStack 改名随 v4 约 2022-07（不宜写 2021）；v5.0.0 为 2023-10（不宜写 2024）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「React 项目里 60%+」缺出处，宜弱化为「大量 React 项目用它管服务器状态」或删掉百分比"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "v5 对象 API 示例可跟做；invalidateQueries 语义说明正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：key 顺序、staleTime 默认 0、useSuspenseQuery、乐观更新回滚——均可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（服务器状态 vs 纯客户端/强 GraphQL normalized）；可再点明默认 staleTime:0 的请求量级影响"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "共享冰箱类比贴合 query cache / dedup / 自动补货",
+        "queryKey / staleTime / gcTime / invalidate 均有白话桥接，零基础可跟",
+        "案例 1–3（最简 useQuery / enabled 依赖 / mutation+invalidate）逐步解释清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 github.com/TanStack/query 正确；queryKey / staleTime·gcTime / mutation+invalidate 三点与官方叙事一致",
+        "历史年份有误：仓库约 2019、v1 约 2020（不宜写 2017）；TanStack 改名随 v4 约 2022-07（不宜写 2021）；v5.0.0 为 2023-10（不宜写 2024）",
+        "「React 项目里 60%+」缺出处，宜弱化为「大量 React 项目用它管服务器状态」或删掉百分比"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "v5 对象 API 示例可跟做；invalidateQueries 语义说明正确",
+        "踩坑具体：key 顺序、staleTime 默认 0、useSuspenseQuery、乐观更新回滚——均可操作",
+        "适用/不适用有边界（服务器状态 vs 纯客户端/强 GraphQL normalized）；可再点明默认 staleTime:0 的请求量级影响"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正 react-query/TanStack/v5 年份；弱化无出处的 60%+ 表述。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 react-query/TanStack/v5 年份；弱化无出处的 60%+ 表述。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": [],
+    "round": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 179,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 179
+}

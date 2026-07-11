@@ -1,0 +1,122 @@
+{
+  "slug": "exokernel-1995",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关键性能数据（论文里给的）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "酒店/写字楼与健身房年卡类比很好；性能表数字对零基础略突兀，但不挡主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Cheetah HTTP 出自 SOSP 1997 后续文，不是 1995 这篇；应标明 1997 或改成 1995 文内的 Aegis/ExOS 原语例子。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「process creation 比 Ultrix 快 7 倍」不准确：论文是 protected control transfer 相对当时最佳实现约 7 倍；exception dispatch 相对最佳实现约 5 倍、相对 Ultrix 可达两个数量级。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「IPC 5 µs vs 几百 µs」表需弱化或改成论文原表述（如 exception dispatch ~1.5µs、相对 Ultrix 十到百倍）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "abort protocol 流程可跟读；适用边界（专用整机 / POSIX 生态）合理。若 refine 可顺带把性能数字改准以免工程误读。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关键性能数据（论文里给的）",
+      "fix_hints": [
+        "酒店/写字楼与健身房年卡类比很好；性能表数字对零基础略突兀，但不挡主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Cheetah HTTP 出自 SOSP 1997 后续文，不是 1995 这篇；应标明 1997 或改成 1995 文内的 Aegis/ExOS 原语例子。",
+        "「process creation 比 Ultrix 快 7 倍」不准确：论文是 protected control transfer 相对当时最佳实现约 7 倍；exception dispatch 相对最佳实现约 5 倍、相对 Ultrix 可达两个数量级。",
+        "「IPC 5 µs vs 几百 µs」表需弱化或改成论文原表述（如 exception dispatch ~1.5µs、相对 Ultrix 十到百倍）。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "abort protocol 流程可跟读；适用边界（专用整机 / POSIX 生态）合理。若 refine 可顺带把性能数字改准以免工程误读。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic 指出 Cheetah 属 1997、process creation/IPC 表数字不准确；已改归因、按论文原表述重写性能段，并补历史小故事/反向链接。",
+    "sections_modified": [
+      "## 实践案例",
+      "## 关键性能数据（论文里给的）",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

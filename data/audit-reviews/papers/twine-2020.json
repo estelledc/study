@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点术语已有类比桥接，仍可再压一点密度（sysctl/HugePages 可再短一句）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "K8s/Borg 关系与规模表述已加限定，保持「量级/论文语境」即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与 TaskControl 失败路径已够用；案例仍是伪代码级，符合教学预期"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点术语已有类比桥接，仍可再压一点密度（sysctl/HugePages 可再短一句）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "K8s/Borg 关系与规模表述已加限定，保持「量级/论文语境」即可"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑与 TaskControl 失败路径已够用；案例仍是伪代码级，符合教学预期"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "dwork-our-data-ourselves-2006",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "撕纸条发碎片类比很好；但核心要点里可验证秘密共享/零知识证明跳得急，缺一句日常桥接。案例 1 联邦学习缺逐步拆解。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Eurocrypt 2006 / 高斯机制起源正确；但把联邦学习写成「本篇思想的直接工程化」过满——应改为思想延续/工程回响，并区分安全聚合与本篇 VSS 协议。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "高斯机制 Python 例子正确；δ 过大/Local DP 混淆踩坑可操作。案例 1 若补 3 步流程会更好跟做。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "撕纸条发碎片类比很好；但核心要点里可验证秘密共享/零知识证明跳得急，缺一句日常桥接。案例 1 联邦学习缺逐步拆解。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Eurocrypt 2006 / 高斯机制起源正确；但把联邦学习写成「本篇思想的直接工程化」过满——应改为思想延续/工程回响，并区分安全聚合与本篇 VSS 协议。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "高斯机制 Python 例子正确；δ 过大/Local DP 混淆踩坑可操作。案例 1 若补 3 步流程会更好跟做。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 185,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "zero-base 要 VSS/零知识桥接与案例步骤；academic 要弱化「联邦学习=直接工程化」。已补日常桥接、三步案例，并改为工程回响。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

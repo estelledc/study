@@ -26,7 +26,7 @@ sidebar:
 | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) | `crewai` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dify — LLM 应用开发平台](/study/projects/dify/) | `dify` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) | `dspy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Essentia — 音乐信息检索工具箱](/study/projects/essentia/) | `essentia` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Essentia — 音乐信息检索的 C++/Python 工具箱](/study/projects/essentia/) | `essentia` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | `haystack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | `langchain` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | `langfuse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

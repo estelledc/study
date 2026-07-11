@@ -28,9 +28,9 @@ client.sync(Default::default()).await?;  // 后台一直拉新消息
 
 不理解这个项目，下面这些事都看不清：
 
-- 为什么 Element X 启动比老 Element 快 **6 倍**——因为老版每端各自实现状态机，新版共用 Rust 编译的核心
+- 为什么 Element X 启动比老 Element **快很多**（官方宣传约数倍）——老版每端各自实现状态机，新版共用 Rust 编译的核心
 - 为什么"加密聊天"在每个客户端都对——Olm/Megolm 加密只在 Rust 层实现一次，三端共享，不会出现"iOS 解密对、Android 解密错"
-- 为什么 2020 年后做 Matrix 客户端的人**几乎都不再用 matrix-js-sdk**——多语言 binding 让 Rust 这份成了上游事实标准
+- 为什么 2020 年后**新客户端优先选 Rust SDK**——UniFFI / wasm binding 让这份核心成了移动端与桌面端上游；Web 端 Element 仍维护 matrix-js-sdk
 - Rust 在"跨平台共享逻辑"这条路上的代表作之一，FFI 绑定的工程经验值得抄
 
 ## 核心要点
@@ -111,11 +111,11 @@ let plaintext = machine.decrypt_room_event(&event, &room_id).await?;
 
 ## 历史小故事（可跳过）
 
-- **2014 年**：Matrix 协议诞生于 Element 公司前身（Amdocs Unified Communications）。早期客户端只有 JS（matrix-js-sdk）。
+- **2014 年**：Matrix 协议由 Amdocs 团队开源；早期客户端主要靠 JS（matrix-js-sdk）。后来独立出来的 New Vector（现 Element）成为主要推动方。
 - **2016-2018 年**：Element 给 iOS（Swift）/Android（Kotlin）/JS 各做一份 SDK，三份代码各自实现状态机，bug 不一致。
-- **2020 年**：Element 启动"Rust 化"，把客户端核心移到 matrix-rust-sdk，先给 Element Desktop 用。
+- **2020 年**：Element 启动"Rust 化"，把客户端核心移到 matrix-rust-sdk，先给桌面端试点。
 - **2022-2023 年**：Element X 发布——iOS 和 Android 改成"薄壳套 Rust 核心"，启动速度大幅提升，加密 bug 在三端一次修完。
-- **2024-2026 年**：社区 Fractal/iamb 切到 Rust SDK。matrix-js-sdk 仍在维护但优先级下降。
+- **2024-2026 年**：社区 Fractal/iamb 等切到 Rust SDK；matrix-js-sdk 仍服务 Element Web 等浏览器客户端。
 
 之后做 Matrix 客户端的事实模板就是"Rust 核心 + 平台层壳"。
 

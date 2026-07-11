@@ -1,0 +1,69 @@
+{
+  "slug": "agda-norell",
+  "area": "papers",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "弱化 Rust trait、TypeScript 泛型都在追依赖类型的绝对化表述",
+        "把 Lean 与 Agda 的关系改成同属类型论证明路线，避免说 Lean 直接走 Agda 趟出的路",
+        "历史段删除与技术无关的人际关系描述，改为早期 Agda 实现的事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "One academic needs-refine for over-broad lineage claims and an irrelevant biographical aside; targeted wording fixes were applied",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

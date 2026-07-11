@@ -148,3 +148,7 @@ LLaMA 开源后一周内 Colossal-AI 给出 SFT + RM + PPO 完整训练脚本，
 - [[accelerate]] —— HuggingFace 上层抽象，与 Colossal-AI Booster 思路对应
 - [[pytorch-lightning]] —— 训练循环抽象，与 Colossal-AI 高层 API 风格类似
 - [[jax]] —— Google 阵营的对照组，pjit/xmap 走另一条路，不需要 ZeRO / Gemini 这种内存切分
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

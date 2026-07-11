@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "量身西装类比贴合统一内存；四行示例摸到三大特征。lazy/vmap/jit 对零基础仍偏密，但案例可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2023-12 开源、Awni Hannun、统一内存/lazy/JAX-style transforms、mlx-lm 主线正确。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Mac 上跑 70B 比 24GB RTX 4090 还顺」把显存容量优势说成整体更顺，易歪曲：4090 在模型装得下时通常更快；应改成「统一内存能装下 4090 显存装不下的大模型」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「变成 Apple 生态端侧 AI 事实标准」过满：生产端侧仍大量用 Core ML；宜改为「研究与定制端侧推理的热门选项」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mlx-lm / MLP 训练环 / LoRA 命令可跟；print 同步、冷启动、bf16 代际、跨平台踩坑具体；单机研究 vs 多机生产边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "量身西装类比贴合统一内存；四行示例摸到三大特征。lazy/vmap/jit 对零基础仍偏密，但案例可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "2023-12 开源、Awni Hannun、统一内存/lazy/JAX-style transforms、mlx-lm 主线正确。",
+        "「Mac 上跑 70B 比 24GB RTX 4090 还顺」把显存容量优势说成整体更顺，易歪曲：4090 在模型装得下时通常更快；应改成「统一内存能装下 4090 显存装不下的大模型」。",
+        "「变成 Apple 生态端侧 AI 事实标准」过满：生产端侧仍大量用 Core ML；宜改为「研究与定制端侧推理的热门选项」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "mlx-lm / MLP 训练环 / LoRA 命令可跟；print 同步、冷启动、bf16 代际、跨平台踩坑具体；单机研究 vs 多机生产边界清楚。"
+      ]
+    }
+  ]
+}

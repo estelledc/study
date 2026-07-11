@@ -36,7 +36,7 @@ Vitess 架构由**四块**拼起来：
 3. **topology（etcd/ZooKeeper/consul）**：存"哪些 keyspace 有哪些 shard、哪些 tablet 现在是 master/replica"。类比：餐厅老板手里那张"今天哪个厨师在哪个灶台"的排班表
 4. **VReplication（基于 binlog 的复制流引擎）**：reshard / 跨 keyspace 迁移 / 主从切换都靠它。类比：传送带，能把数据边流边重新分桶
 
-`vschema.json` 是用户视角的"分片配置"，声明每张表用哪一列做分片键、用哪种 vindex（分片函数）。vindex 不只一种 hash——还有 lookup（用一张索引表反查）、numeric（按数值范围）、unicode_loose_md5（字符串归一化后哈希），这一层抽象让分片策略可以按表定制。
+`vschema.json` 是用户视角的"分片配置"，声明每张表用哪一列做分片键、用哪种 **vindex**（分片函数）。最常见两种：`hash`（把分片键打散到各 shard，像把快递按邮编分仓）和 `lookup`（另建一张索引表反查"这个值在哪个 shard"）。按表选不同 vindex，分片策略就能定制。
 
 ## 实践案例
 
@@ -74,19 +74,24 @@ print(cur.fetchone())
 
 ### 案例 3：在线 reshard 不停机
 
+前置：集群已跑着、`commerce` 的 vschema 已 Apply，源 shard 健康。目标是把 `users` 从 2 个 shard 扩到 4 个：
+
 ```bash
-vtctldclient ApplyShardRoutingRules ...
-vtctldclient MoveTables --workflow=split commerce.users
-vtctldclient SwitchTraffic --workflow=split
+# 1) 建 workflow：按新分片规则开 VReplication 管道
+vtctldclient Reshard --workflow=split commerce --source_shards=0,1 --target_shards=0,1,2,3
+# 2) 等复制追上（VDiff 可校验源/目标一致）后再切读
+vtctldclient SwitchTraffic --workflow=split --tablet_types=rdonly,replica
+# 3) 最后切写；应用仍连 vtgate，SQL 不用改
+vtctldclient SwitchTraffic --workflow=split --tablet_types=primary
 ```
 
-VReplication 在后台把 2 个 shard 的数据按新规则流到 4 个 shard，期间双写双读校验，最后一次性切流量。整个过程对应用透明，几小时到几天，取决于数据量。这是 Vitess 最难复现的能力——别家分片方案多数要停机或人工双写。底层原理：从源端读 binlog → 改写后写到目标端，本质上是把 MySQL 复制协议变成可重路由的数据管道。
+**逐步读**：步骤 1 只开管道不切流量；步骤 2 先把只读流量挪到新 shard；步骤 3 再切主写。底层是读源端 binlog → 改写后写入目标，把 MySQL 复制变成可重路由的数据管道。耗时几小时到几天，取决于数据量——这是 Vitess 最难复现的能力。
 
 ## 踩过的坑
 
 1. **跨分片事务不是真分布式事务**——默认 best-effort 2PC（两阶段提交），协调器挂掉会留半提交，需要应用层做幂等兜底
 2. **vschema 改分片键 = 一次重大手术**——VReplication 跑数小时到数天，期间双写流量切换很容易踩到边界
-3. **复杂 SQL 解析有上限**——vtgate 不是完整 MySQL parser，子查询 / 复杂 JOIN 会被拒绝或退化成 scatter-gather，p99 直接崩
+3. **复杂 SQL 在分片下会碰壁**——解析大多能过，但跨 shard 的子查询 / 复杂 JOIN 常被拒绝或退化成 scatter-gather，p99 直接崩
 4. **topology 抖动 = 全集群路由失效**——etcd/ZK 一卡，vtgate 就找不到 master，可用性上限受元数据中心拖累
 5. **运维曲线陡**——出问题要同时会看 mysqld 慢查询、vttablet 连接池、vtgate 路由日志、topology 元数据四层
 6. **schema 变更要走 OnlineDDL**——直接 ALTER 大表会卡死单 shard，必须用 Vitess 内置的 gh-ost 风格在线 DDL
@@ -95,7 +100,7 @@ VReplication 在后台把 2 个 shard 的数据按新规则流到 4 个 shard，
 
 **适用**：
 
-- 已经在用 MySQL 且写入接近单机上限（千万 QPS / TB 级表）
+- 已经在用 MySQL 且写入接近单机上限（约数万～十万 QPS，或单表 TB 级）
 - 团队希望"分片"对应用透明，不想重写 ORM
 - 需要在线 reshard / 不停机迁移的能力
 - 跑在 K8s 上，希望分片层也能容器化（Vitess Operator 成熟）
@@ -115,8 +120,8 @@ VReplication 在后台把 2 个 shard 的数据按新规则流到 4 个 shard，
 - **2019 年**：GitHub 完成 MySQL → Vitess 迁移并写出长篇技术博客
 - **2020 年起**：PlanetScale 把 Vitess 包装成 Serverless MySQL SaaS，让"分片"变成一键开关
 - **2022 年**：v14 起 VReplication 支持 MoveTables 跨 keyspace 迁移，扩展为"任意拓扑变更"通用引擎
-- **2024 年**：v19 起内置基于 Raft 的元数据中心试验分支，往"自包含"方向走
-- **现在**：主线版本 v20，仍是云原生 MySQL 分片的事实标准
+- **2024 年起**：继续推内置拓扑等"自包含"试验，减少对外置 etcd/ZK 的硬依赖
+- **现在**：主线仍在活跃演进，仍是云原生 MySQL 分片的事实标准
 
 ## 学到什么
 

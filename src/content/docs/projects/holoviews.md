@@ -27,7 +27,7 @@ curve = hv.Curve((xs, np.sin(xs)), kdims='x', vdims='y')
 
 不理解 HoloViews，下面这些事都没法解释：
 
-- 为什么 PyData 圈把「画图」从「画」抽走一层成「描述数据」——HoloViews 比 Altair 早一年走通这条路
+- 为什么 PyData 圈把「画图」从「画」抽走一层成「描述数据」——HoloViews（约 2014）比 Altair（约 2016）更早走通这条路
 - 为什么千万行级数据可视化能跑——HoloViews + datashader 把渲染从「画 1e7 个点」变成「画一张栅格」
 - 为什么研究界探索性分析（EDA）选 HoloViews——切后端零成本，论文出图用 MPL，分享 notebook 用 Bokeh 交互
 - 为什么 Panel dashboard 能直接吃 HoloViews 对象——同生态，HoloViews 对象自带 `_repr_*_` 协议
@@ -105,30 +105,31 @@ hv.extension('plotly');      hv.save(curve, 'plot_plotly.html')
 ## 踩过的坑
 
 1. **kdims vs vdims 分不清**：新人常把所有列都塞 kdims。规则是「索引数据的轴」进 kdims、「被索引出来的测量值」进 vdims。Curve 是一个 kdim 一个 vdim，HeatMap 是两个 kdim 一个 vdim——结构错了图就画错。
-
 2. **.opts 三层写错层 → 静默忽略**：`.opts(title='X')` 应进 plot 层但默认会猜对；`.opts(line_width=3)` 是 Bokeh style，到 MPL 不识别——库不报错只画原样，要 `print(hv.help(curve))` 看每层接受哪些选项。
-
 3. **HoloMap 数据量大启动卡死**：HoloMap 一次性渲染所有键值组合，10 个键×100 帧就是 1000 张图。换 DynamicMap，回调按需生成。
-
 4. **错误信息埋两层**：HoloViews 编译到后端，渲染时报错往往是 Bokeh/MPL 抛的 traceback——要剥到上面的 HoloViews 调用栈才看得到根因。
-
 5. **后端切换后部分 .opts 不通用**：`cmap='viridis'` 在 MPL/Bokeh 通用，到 Plotly 要写 `colorscale`；写跨后端代码时把 .opts 拆 backend-specific 字典。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-
 - 探索性数据分析，需要在出版图（MPL）和交互图（Bokeh/Plotly）之间无缝切
 - 千万-亿行数据可视化（叠 datashader）
 - Jupyter / Panel dashboard 快速搭建——HoloViews 对象直接是 Panel 组件
 - 多维参数扫描——HoloMap/DynamicMap 自动出滑块
 
 **不适用**：
-
 - 像素级控制的期刊插图——直接 matplotlib 更快，HoloViews 抽象会挡路
 - 纯 Vega-Lite 前端栈——[[altair]] 更对口
 - 3D 几何渲染——pyvista / vispy 更合适
 - 命令行无浏览器场景——后端都依赖渲染容器
+
+## 历史小故事（可跳过）
+
+- **2013–2014**：Jean-Luc Stevens 与 Philipp Rudiger 在 Continuum/Anaconda 做出 HoloViews，把「声明数据」从 matplotlib 命令式画图里抽出来
+- **2016 前后**：与 Bokeh、datashader 绑得更紧；同期 Altair 走 Vega-Lite 另一条声明式路线
+- **2018+**：并入 HoloViz 品牌，和 Panel、hvPlot、GeoViews 共用同一套对象协议
+- **现在**：仍是科研 EDA 与大数据可视化的常用组合：HoloViews 声明 + datashader 聚合 + Bokeh/Panel 交互
 
 ## 学到什么
 
@@ -153,3 +154,7 @@ hv.extension('plotly');      hv.save(curve, 'plot_plotly.html')
 - [[plotly-js]] —— HoloViews 第三个后端选项，3D 场景对口
 - [[datashader]] —— HoloViews 处理百万级数据的标配
 - [[jupyter-notebook]] —— HoloViews 默认渲染容器
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -1,0 +1,115 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小便签贴在调用点、字典翻查类比贯穿，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "IC/PIC/mono/poly/mega、hidden class 首次有桥接；dictionary mode / type feedback / deoptimization 可再补半句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3（React Hooks）无代码、无逐步解释，且动机偏玄；应按模板补代码+3 步说明，或换成可跟读的 megamorphic 例子"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Chambers/Ungar et al. OOPSLA 1989 SELF 实现论文来源正确；历史段区分 1984 MIC / 1991 PIC 命名合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读指向 ACM、pics.pdf、Hölzle 论文与 Aycock 综述，引用链完整"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学简化（周期数、N=8）可接受；案例 3 把 Hooks 主因写成 PIC 稳定略过强，宜弱化为「附带收益之一」或换更稳的 megamorphic 例子"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 的 JS 形状/hidden class 演示概念正确可跟读；案例 3 无代码，无法跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：通用工具函数变 mega、delete→dictionary mode、构造函数属性顺序、cold start——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（动态语言 JIT vs 静态/AOT）；建议案例 3 补一段可运行的 megamorphic call site 示意"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "小便签贴在调用点、字典翻查类比贯穿，零基础直觉强",
+        "IC/PIC/mono/poly/mega、hidden class 首次有桥接；dictionary mode / type feedback / deoptimization 可再补半句白话",
+        "案例 3（React Hooks）无代码、无逐步解释，且动机偏玄；应按模板补代码+3 步说明，或换成可跟读的 megamorphic 例子"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Chambers/Ungar et al. OOPSLA 1989 SELF 实现论文来源正确；历史段区分 1984 MIC / 1991 PIC 命名合理",
+        "延伸阅读指向 ACM、pics.pdf、Hölzle 论文与 Aycock 综述，引用链完整",
+        "教学简化（周期数、N=8）可接受；案例 3 把 Hooks 主因写成 PIC 稳定略过强，宜弱化为「附带收益之一」或换更稳的 megamorphic 例子"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–2 的 JS 形状/hidden class 演示概念正确可跟读；案例 3 无代码，无法跟做",
+        "踩坑具体：通用工具函数变 mega、delete→dictionary mode、构造函数属性顺序、cold start——可操作",
+        "适用/不适用边界清楚（动态语言 JIT vs 静态/AOT）；建议案例 3 补一段可运行的 megamorphic call site 示意"
+      ]
+    }
+  ],
+  "slug": "self-pic",
+  "area": "papers",
+  "status": "refined"
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "cocos2d-x",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 反向链接",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "补齐 base-rules 要求的 ## 反向链接 段落和自动生成占位注释，避免只靠质量门槛的 9/11 宽松命中。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "frontmatter 难度应使用 base-rules 枚举值，建议将 入门 规范为 初级。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "补齐 base-rules 要求的 ## 反向链接 段落和自动生成占位注释，避免只靠质量门槛的 9/11 宽松命中。",
+        "frontmatter 难度应使用 base-rules 枚举值，建议将 入门 规范为 初级。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "frontmatter",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 160,
+    "reasons": []
+  }
+}

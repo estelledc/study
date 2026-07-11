@@ -56,7 +56,7 @@ Optax 的全部世界观可以压成 **一个 type + 三个动作**：
 一个真实的 AdamW 长这样：
 
 ```python
-optax.adamw(lr=1e-3, weight_decay=0.01)
+optax.adamw(1e-3, weight_decay=0.01)  # 第一参是 learning_rate，不要写 lr=
 # 等价于：
 optax.chain(
     optax.scale_by_adam(),
@@ -129,7 +129,7 @@ params = optax.apply_updates(params, updates)
 
 1. **顺序敏感**：`chain` 里 `scale_by_schedule` 必须**在** `scale_by_adam` **之后**，否则学习率乘到原始梯度上而不是 Adam 缩放后的值，训练不收敛。
 2. **符号陷阱**：`updates` 是负号方向（`scale(-1)`），最后用 `apply_updates` 是**加**不是减。自己手写 `params - updates` 会直接发散。
-3. **weight decay ≠ L2**：`add_decayed_weights` 是 AdamW 风格的**解耦权重衰减**，不是 L2 正则（L2 会先经 Adam 缩放，效果完全不同）。AdamW 论文（Loshchilov-Hutter 2017）整篇就在说这件事。
+3. **weight decay ≠ L2**：`add_decayed_weights` 是 AdamW 风格的**解耦权重衰减**，不是 L2 正则（L2 会先经 Adam 缩放，效果完全不同）。AdamW 论文（Loshchilov & Hutter，arXiv 2017 / ICLR 2019）整篇就在说这件事。
 4. **EMA / `multi_steps` wrapper 改变 state 形状**：自定义 chain 时如果再叠一层 `optax.MultiSteps`，`state` 会多嵌一层 tuple，老代码取 `state[0]` 就崩——把 wrapper 留到最外层。
 5. **PyTree 结构必须一致**：`tx.init(params)` 返回的 state 形状由 `params` PyTree 决定。如果训练中途换了 [[flax]] 模型结构，state 不能复用，要重 `init`。
 
@@ -176,3 +176,7 @@ params = optax.apply_updates(params, updates)
 - [[pytorch]] —— 对照面：`torch.optim` 把状态藏在对象里，Optax 把状态拽到外面
 - [[pytorch-lightning]] —— 同样的"训练循环抽象"问题，PL 选了类继承，Optax 选了函数组合
 - [[keras]] —— Keras 3 也支持 JAX 后端，但 optimizer 还是封装风格，没走 Optax 路线
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

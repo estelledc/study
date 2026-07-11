@@ -145,9 +145,9 @@ export default {
 ## 历史小故事（可跳过）
 
 - **2015 年**：Jason Miller 觉得 React 那么大有点离谱，周末写了一版 mini React——核心就一个 reconciler 文件，几百行。
-- **2017 年**：加 hooks 兼容、`preact/compat` 兼容层发布，开始有公司用。
-- **2020 年**：Preact X 发布，性能和 React 持平甚至更快，体积保持 3KB。
-- **现在**：GitHub 36k star，Astro / Fresh / 多家大厂都在线上跑。
+- **2017–2018 年**：`preact/compat` 兼容层成熟，开始有公司用；此时 React Hooks 尚未发布。
+- **2019 年**：Preact X 发布，对齐 Hooks API，性能和 React 持平甚至更快，体积保持约 3KB。
+- **现在**：GitHub 约 36k star，Astro / Fresh / 多家大厂都在线上跑。
 
 一个人周末项目跑赢大厂团队的轻量替代品——这是开源世界经常出现的故事。
 

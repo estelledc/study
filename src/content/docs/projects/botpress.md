@@ -149,3 +149,7 @@ export const whatsapp = {
 - [[chatwoot]] —— 客服平台的多渠道集成靠 webhook + 统一 messages 表，Botpress 的 channel adapter 是同一套思路
 - [[temporal]] —— flow DAG 编译成状态机，和 Temporal 的 workflow 编译思路同源
 - [[langfuse]] —— 给 LLM 应用做 trace / 评测，Botpress 的 LLM 节点天然适合接 Langfuse 监控
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

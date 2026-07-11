@@ -125,7 +125,7 @@ JSX 属性里塞不进 `<FormattedMessage>`（因为属性是字符串而不是 
 - **2018**：主维护人转给 Eemeli Aro（@eemeli），同期 i18next 已有 3 年先发优势
 - **2019**：v3 重写引入 Hooks，`useIntl()` 替代 `injectIntl` HOC
 - **2022**：Polyfill 矩阵稳定到 8+ 包，对齐 Chrome/FF/Safari baseline 2022
-- **2024**：v6 + W3C Intl.MessageFormat 提案进 Stage 1，未来浏览器原生 ICU 后核心层可砍
+- **2022–2024**：TC39 `Intl.MessageFormat` 提案 2022 进 Stage 1，2024 仍在 Stage 1 迭代；react-intl v6 继续对齐 ICU，待浏览器原生后核心层可砍
 
 ## 学到什么
 
@@ -139,7 +139,7 @@ JSX 属性里塞不进 `<FormattedMessage>`（因为属性是字符串而不是 
 - [FormatJS 官方文档](https://formatjs.io)
 - [ICU MessageFormat 官方语法表](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
 - [Unicode CLDR Plural Rules](https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html)
-- [W3C Intl.MessageFormat 提案](https://github.com/tc39/proposal-intl-messageformat)
+- [TC39 Intl.MessageFormat 提案](https://github.com/tc39/proposal-intl-messageformat)
 - [[i18next]] —— 同领域对标，自家 plural 语法 vs ICU 标准
 - [[next-intl]] —— Next.js App Router 友好的 ICU 派后辈
 

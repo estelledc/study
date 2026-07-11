@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "冰箱便签类比贴合；recipe/插值有桥接；案例 3 跨语言混搭对新手稍陡但仍可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 casey/just、make 1976、故意不做增量构建等判断与项目定位一致；star 数为时间点快照可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 把 #! shebang 写在 recipe 名之前，按 just 手册 shebang 必须是 recipe 正文第一行，否则不可跑；应改为 backup-bash: 下一行再写 #!/usr/bin/env bash"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（增量构建、{{}} vs ${}、Windows shell、无缓存）具体可操作；适用边界清晰"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "冰箱便签类比贴合；recipe/插值有桥接；案例 3 跨语言混搭对新手稍陡但仍可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 casey/just、make 1976、故意不做增量构建等判断与项目定位一致；star 数为时间点快照可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 把 #! shebang 写在 recipe 名之前，按 just 手册 shebang 必须是 recipe 正文第一行，否则不可跑；应改为 backup-bash: 下一行再写 #!/usr/bin/env bash",
+        "踩坑（增量构建、{{}} vs ${}、Windows shell、无缓存）具体可操作；适用边界清晰"
+      ]
+    }
+  ]
+}

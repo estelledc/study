@@ -1,0 +1,109 @@
+{
+  "slug": "diffie-hellman",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 openssl 只生成了参数和公钥，没有完成「双方 derive 共享密钥」的步骤；零基础读者跟完会不知道密钥是怎么算出来的，建议补上 pkeyutl -derive 或等价命令并对照案例 1 的共享值直觉"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「可证明安全的协议」略满：经典 DH 的安全性通常归约到 CDH/DDH 假设，教学上可改为「在离散对数难题假设下被认为安全」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "openssl 案例缺共享密钥派生：应展示双方用对方公钥 + 己方私钥 derive，并说明输出是共享秘密材料（再经 KDF 才进 AES）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 openssl 只生成了参数和公钥，没有完成「双方 derive 共享密钥」的步骤；零基础读者跟完会不知道密钥是怎么算出来的，建议补上 pkeyutl -derive 或等价命令并对照案例 1 的共享值直觉"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「可证明安全的协议」略满：经典 DH 的安全性通常归约到 CDH/DDH 假设，教学上可改为「在离散对数难题假设下被认为安全」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "openssl 案例缺共享密钥派生：应展示双方用对方公钥 + 己方私钥 derive，并说明输出是共享秘密材料（再经 KDF 才进 AES）"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 171,
+    "reasons": []
+  },
+  "lines": 171,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "补全 openssl derive 共享密钥步骤；弱化「可证明安全」为离散对数假设表述",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

@@ -1,6 +1,6 @@
 ---
 title: Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
-来源: 'Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode, arXiv:2605.27955, 2026'
+来源: 'Li, Zang, Cao, Sun. "Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents", arXiv:2605.27955, 2026'
 日期: 2026-06-01
 分类: agents
 难度: 中级
@@ -8,141 +8,131 @@ title: Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
 
 ## 是什么
 
-Skill-as-Pseudocode（**SaP**）是把 agent 的 skill 库**从自由 markdown 改写成有类型签名的伪代码**，并配一套四步确定性验证，让模型每次复用 skill 时都先用规则查一遍。日常类比：以前实习生攒经验是写日记——"上次那种活儿我大概怎么做"；SaP 把日记改成 SOP——参数、前置条件、副作用、返回都写明白，下次照着填就行。
+Skill-as-Pseudocode（**SaP**）是一套**把 markdown skill 库自动改写成带类型签名的伪代码合同**的管线，并用四步确定性检查决定哪些合同能入库。日常类比：以前 skill 像手写菜谱散文——每次厨师（LLM）都要自己猜食材清单和火候口令；SaP 把重复段落抽成「标准工序卡」——吃啥参数、吐啥结果、怎么调用环境，都写死，还要过质检才上墙。
 
-旧路线（[[voyager]] 起步）是：成功完成一次任务，把"过程描述"当 markdown 文档存起来，下回检索拿到丢进 prompt 给 LLM 当 few-shot。问题是 markdown 没结构——LLM 每次都要重读一遍、理解一遍、对应到当前任务参数上一遍，token 浪费且容易跑偏。
+旧路线（Graph-of-Skills 一类 markdown 库）把流程写成自由散文。agent 每次检索后都要重推输入格式和具体动作串，容易陷入「半对 → 环境没反馈 → 再检索同一段」的循环。
 
-SaP 的改动是：成功后让一个写者 LLM 把这段经验**翻译成 pseudo-Python**——有 `def name(args: types) -> ret`、有 `# pre:`、`# post:`、有清晰的步骤注释。复用时先**用规则**校验四步（参数类型 / 前置条件 / 历史步骤兼容 / 副作用安全），通过才进 prompt。论文报告 ALFWorld 上 token 用量降 22%、LLM 调用次数降 14%。
+SaP 的改动是：把相似 procedural 段落聚成簇，让写者 LLM 起草 typed contract，再跑 **Coverage / Binding / Replacement / Risk** 四步规则验证；通过的合同以 `invoke(κ, args)` 嵌回父 skill。检索时只查父 skill，再替换成「动作模板 + 改写骨架 + 内联合同」三件套。ALFWorld 134 局上相对 GoS：输入 token 约降 22.8%，LLM 调用约降 14.5%。
 
 ## 为什么重要
 
 不理解 SaP，下面这些事都没法解释：
 
-- 为什么 2026 年 agent 论文一窝蜂"重写 skill 表示"——markdown 太松散是公认痛点
-- 为什么"用规则替掉一部分 LLM 决策"反而提升整体效果——把可形式化的部分形式化省 token
-- 为什么 ALFWorld / WebArena 等 benchmark 上 skill-based agent 出现分化：表示形式比检索算法更影响性能
-- 为什么"伪代码"既不是真代码也不是自然语言，恰好卡在 LLM 最擅长的中间层
+- 为什么 2026 年 agent 论文一窝蜂「重写 skill 表示」——markdown 太松散是公认痛点
+- 为什么「转换期用规则质检」比「运行时再让 LLM 猜格式」更省 token
+- 为什么 ALFWorld 上 skill-based agent 分化：表示形式（散文 vs 伪代码合同）比检索算法更影响成败
+- 为什么「伪代码」既不是真可执行代码也不是自然语言，恰好卡在 LLM 最擅长的中间层
 
 ## 核心要点
 
 SaP 的关键拆成 **三步**：
 
-1. **类型化签名**：每个 skill 必须有 `def task_name(arg1: Type1, arg2: Type2) -> ReturnType` 头部。类比：实习生交活前先写一行"这个工具吃啥吐啥"，下次同事接手直接看签名不用读全文。
+1. **类型化合同 κ**：每个子 skill 有 trigger、input/output schema、前置/后置条件（「做之前世界得怎样 / 做完应怎样」）、副作用（「会改掉哪些东西」）。类比：工序卡抬头写清「吃啥、吐啥、别碰啥」。
 
-2. **四步确定性验证**：复用 skill 时不直接丢给 LLM，先用规则查（a）参数类型匹配（b）前置条件谓词成立（c）调用历史不冲突（d）副作用未越界。**任一步失败直接跳过这条 skill**——省一次 LLM 调用。
+2. **四步确定性验证（转换期）**：Coverage 查名字是否对得上原文；Binding 查参数能否在父文档里落地；Replacement 查能否安全换成 `invoke`；Risk 查有没有危险脚本。**任一步不过就不 promote**——质检在入库前，不是检索时临时筛。
 
-3. **轻量翻译器**：写者 LLM 看完成功轨迹，按模板翻译成伪代码。模板严格，翻译错误率低。markdown 备份保留——伪代码是"快速通道"，markdown 是"理解通道"。
+3. **检索时替换包**：任务时只检索父 skill；命中后把占位符展开成动作模板（怎么调环境）+ 改写骨架（步骤落点）+ 内联合同（抽象保证）。伪代码是「快速通道」，未改写段落仍留在父文档里。
 
-三件事咬合：签名让规则可查，规则让验证省调用，翻译让旧库可平滑迁移。
+三件事咬合：合同让结构可读，验证让坏合同进不了库，替换包让 agent 一次读懂 what + how。
 
 ## 实践案例
 
-### 案例 1：把"找钥匙开门"改写成伪代码
+### 案例 1：把「加热物体」抽成伪代码合同
 
-旧 markdown skill：
-
-```
-任务：找到房间里的钥匙打开门
-步骤：先环视房间找钥匙位置，拿起钥匙，走到门前，把钥匙插进锁里转动。
-```
-
-SaP 翻译后：
+父 skill 散文里反复出现「去电器旁 → heat obj with appliance」。SaP 抽出合同（示意）：
 
 ```python
-def unlock_door(room: Room, door: Door) -> DoorState:
-    # pre: door.locked == True and any(o.is_key for o in room.objects)
-    # post: door.locked == False
-    key = find(room, lambda o: o.is_key)  # 步骤 1
-    pick_up(key)                            # 步骤 2
-    move_to(door)                           # 步骤 3
-    use(key, door)                          # 步骤 4
+# κ_heat — typed contract（非直接执行的真代码）
+# trigger: heat object
+# input_schema: obj: Object, appliance: Appliance
+# pre: obj.at(agent) and appliance.available
+# post: obj.is_hot
+# side_effects: uses(appliance)
+def heat(obj, appliance):
+    go_to(appliance)
+    heat_with(obj, appliance)  # concrete action template
 ```
 
-类型 + 谓词 + 步骤都明确。下次"打开柜子门"时规则先查 `door.locked == True`，柜子没锁直接跳过这条 skill。
+**逐部分解释**：签名告诉 agent 要哪些参数；pre/post 是可读保证；模板给出环境要听的原话口令。
 
-### 案例 2：四步验证省一次 LLM 调用
+### 案例 2：检索后换成三件套，而不是再猜格式
 
-agent 接到任务"把书放进柜子"。检索拿到 5 条候选 skill，其中一条是上面的 `unlock_door`。
+任务「把热杯子放进柜子」。检索命中父 skill 后，模块替换内容：
 
-- 步骤 a：参数类型 — 当前任务的"柜子"是 `Cabinet` 不是 `Door`，类型不匹配。
-- 直接跳过这条 skill，**省一次 LLM 评估**。
+1. **动作模板优先**：`go to {appliance}`；`heat {obj} with {appliance}`，并填上 `obj=mug, appliance=microwave`
+2. **改写骨架**：locate → `invoke(κ_heat, bindings)` → place
+3. **内联合同**：trigger / I/O / post「物体已加热」
 
-旧做法：5 条 skill 全塞 prompt，让 LLM 自己判断哪条相关——一次 forward pass 处理 5 条描述。SaP 用规则筛剩 2 条再给 LLM，prompt 短了一半。
+agent 先读到可执行口令，少一次「读散文猜语法」的弯路；论文把 token/调用下降主要归因于此。
 
-实测在 ALFWorld 的 134 条任务上，规则平均能筛掉 2.3/5 条无关 skill，这部分省下的 LLM 调用就是论文报告的 14% 净节省。
+### 案例 3：四步验证挡掉坏合同
 
-### 案例 3：翻译失败也不阻塞主流程
+skills_500 上约 5709 个段落聚成 149 簇；校准阈值下 **auto-promote 80** 个子合同。
 
-写者 LLM 翻译"做饭"这种长程任务时，参数类型推不出来（什么算 `Ingredient`？）。
+- Binding 失败：簇太宽，参数名在父文档对不上 → 拒
+- Replacement 失败：控制流缠在一起，没法干净换成 `invoke` → 拒
+- Risk 失败：脚本含危险 sink（如乱删文件）→ 硬拒
 
-- 翻译器返回 `unable_to_typify`
-- 系统**保留原 markdown** 进库
-- 下次复用时这条走旧通道（直接进 prompt）
-- 其他能翻译的 skill 走新通道
-
-混合库平稳过渡。论文报告 ALFWorld 上约 78% 的 skill 能成功翻译成伪代码，剩 22% 留 markdown。
-
-混合库的代价是检索时要查两个表，但因为伪代码版加了规则前置筛选，整体调用次数仍下降。
+过不了的簇不入库；父 skill 对应段落保持原文。不是「翻译失败返回 `unable_to_typify`」，而是 verifier 结构化拒绝。
 
 ## 踩过的坑
 
-1. **签名写太死会丢复用空间**：第一版要求参数全是具体类（`KitchenKey` `BedroomKey`），结果"任意钥匙开任意门"这种通用 skill 无法表示，得允许泛型参数（`Key[T]`）。
-2. **前置条件谓词不能太复杂**：写成 SAT-hard 的逻辑式规则验证就慢了，要限制成"原子谓词的合取"，复杂条件丢给 LLM 兜底。
-3. **副作用追踪需要一份世界模型**：单纯静态分析判不了"这一步是否破坏后续 skill 的前置条件"，要维护一个可回滚的环境快照。
-4. **旧 markdown 不能立即删**：伪代码翻译可能漏细节（如成功的小动作），保留 markdown 作"理解通道"，伪代码作"调用通道"，双轨并行。
+1. **过宽聚类会被 Binding 打回**：相似动词/物体硬捏一簇，参数对不上父文档，合同直接拒。
+2. **控制流缠绕过不了 Replacement**：if/循环和步骤绞在一起，无法安全替换成 `invoke` 占位。
+3. **Risk 必须扫脚本**：带可执行资源的 skill 要查不安全 sink，否则「能 promote」不等于「能安全给 agent」。
+4. **子合同不要当顶层检索结果**：κ 应经父 skill 的 `invoke` 到达；单独检出子合同会缺上下文。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 任务空间结构化（ALFWorld / WebArena 这种有清晰对象 + 动作的环境）
-- skill 库已经积累到 100+ 条、检索成本变成瓶颈
-- 模型有稳定的代码理解能力（GPT-4 / Claude 4 级别）
+- 已有静态 markdown skill 库（如 GoS skills_500 量级），可解析出 procedural units
+- 任务空间结构化（ALFWorld 类：清晰对象 + 动作模板）
+- 想同时抬成功率并降 token / LLM 调用
 
 **不适用**：
 
-- 任务高度自由文本（创意写作、客服对话）——伪代码套不出来
-- skill 库 < 30 条——规则验证省的 token 还不够搭基础设施
-- 多模态 skill（含图像 / 音频）——签名表示不全
-- 环境状态不可观测（pre / post 谓词无从查）
+- 没有可复用 prose skill、全靠当场生成步骤
+- 创意写作 / 纯对话——抽不出稳定 I/O schema
+- 环境状态完全不可观测，合同的 pre/post 无从对照
+- 把子合同当独立工具目录暴露（破坏 hierarchical 设计）
 
 ## 历史小故事（可跳过）
 
-- **2023**：[[voyager]] 把 skill 当 JS 函数 + 自然语言描述存进向量库——双表示是奠基
-- **2024**：CodeAct / [[react]] 类工作把"代码作为 action 表达"推到主流，skill 也开始往代码侧靠
-- **2025 上半年**：MIND-Skill / EffiSkill 等多篇论文同时关注 skill 表示——markdown 太松散是共识
-- **2026 年初**：SaP 提出"伪代码"折中——比代码软（不需可执行）、比 markdown 紧（可形式化）
-- **同期**：[[mind-skill]] / [[effiskill]] / [[webxskill]] 各从不同维度挑战 skill 表示问题
-- **未来一两年**：可期待"伪代码 + 形式验证 + 检索"三件套继续向类型系统更严的方向迭代
+- **2023**：[[voyager]] 等轨迹生长库把成功经验存成可检索文档——相关但假设「先跑成功」
+- **2024**：CodeAct / [[react]] 把「代码当动作」推主流，skill 往结构化靠
+- **2025**：Anthropic SKILL.md、MCP 描述等仍以 markdown 散文为主部署面
+- **2026**：SaP 提出 prose→typed pseudocode + 确定性质检；主对比基线是 Graph-of-Skills
+- **同期**：[[mind-skill]] / [[effiskill]] / [[webxskill]] 从不同角度改 skill 表示
 
-伪代码这条路是把"人和机器都能读"的中间层显式做出来。
+伪代码这条路是把「人和机器都能读」的中间层显式做出来。
 
 ## 学到什么
 
-1. **表示形式比检索算法影响更大**：同一个向量索引，markdown 还是伪代码差异 20%+
-2. **可形式化的部分必须形式化**：能用规则查的不要给 LLM——省 token 又稳定
-3. **混合库是务实选项**：不是所有 skill 都能翻译，能的走快道、不能的留旧道，平稳迁移
-4. **签名是 API 也是文档**：类型签名同时给规则查和给读者看，一份内容两种用途
-5. **省 LLM 调用就是省钱**：14% 的调用减少在 100 万次 evaluation 规模下意义巨大，工程上比模型小升级更可观
+1. **表示形式比检索算法影响更大**：同一类库，散文 vs 伪代码合同可差出可测的胜局与成本
+2. **可形式化的质检放在入库前**：Coverage/Binding/Replacement/Risk 用规则，不把坏合同丢给运行时 LLM
+3. **检索交付 what + how**：模板（怎么调）和合同（保证什么）要一起给，缺一不可
+4. **层次检索是设计约束**：父 skill 对外、子合同对内，避免无上下文的碎片能力
 
 ## 延伸阅读
 
 - 论文原文：[arXiv 2605.27955](https://arxiv.org/abs/2605.27955)
+- 参考实现：[InternLM/Skill-as-Pseudocode](https://github.com/InternLM/Skill-as-Pseudocode)
 - ALFWorld benchmark：[alfworld.github.io](https://alfworld.github.io/)
-- [[voyager]] —— skill library 的奠基论文，markdown 表示
-- [[mind-skill]] —— 同期工作，多 agent 归纳 skill
-- [[effiskill]] —— 同期工作，code 效率优化场景
+- [[voyager]] —— 轨迹生长 skill 库（related work）
+- [[mind-skill]] —— 同期多 agent 归纳 skill
+- [[effiskill]] —— 同期代码效率场景的 skill 库
 
 ## 关联
 
-- [[voyager]] —— skill 库奠基；SaP 重写它的 markdown 表示
-- [[mind-skill]] —— 同期 skill 重表示工作；用多 agent 而非单写者
-- [[effiskill]] —— 同期 skill 重表示工作；聚焦代码效率任务
-- [[webxskill]] —— Web agent 上的 skill 学习；用纯 code 表示
-- [[react]] —— agent 标准循环；SaP 在 skill 检索后那一步加了规则关
-- [[cot]] —— LLM 推理基础；伪代码本质是结构化 CoT
-- [[skill-pro-nonparametric-ppo]] —— 同期 skill 学习路线；不动权重学过程性 skill
-- [[skill-sd-self-distillation]] —— 同期工作；用 skill 做自蒸馏
+- [[voyager]] —— 轨迹生长 skill 库；SaP 假设静态库而非先跑成功
+- [[mind-skill]] —— 同期 skill 重表示；用多 agent 而非单写者+规则 verifier
+- [[effiskill]] —— 同期 skill 重表示；聚焦代码效率任务
+- [[webxskill]] —— Web agent 上用可执行代码表示 skill
+- [[react]] —— agent 标准循环；SaP 改的是检索后塞进上下文的 skill 形态
+- [[cot]] —— 伪代码合同可视为结构化、可质检的推理草稿
+- [[skill-pro-nonparametric-ppo]] —— 同期不动权重学过程性 skill
+- [[skill-sd-self-distillation]] —— 同期用 skill 做自蒸馏
 
 ## 反向链接
 
@@ -160,4 +150,3 @@ agent 接到任务"把书放进柜子"。检索拿到 5 条候选 skill，其中
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
-

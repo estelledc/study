@@ -28,35 +28,35 @@ atomic {
 - 为什么 Haskell 有个 `atomically { ... }` 块，里面随便读写共享变量都不会出 race condition
 - 为什么 Clojure 推荐用 `dosync` + `ref` 而不是 `synchronized` + 可变对象
 - 为什么 Intel 在 2013 年的 Haswell CPU 加了 TSX 指令——硬件想直接支持 STM 想要的语义
-- 为什么"两个线程安全的函数组合起来仍是线程安全的"这件事在 lock 世界几乎做不到，但在 STM 世界天然成立
+- 为什么后来（Harris 等 2005）能把两笔小事务嵌成一笔大事务，而 lock 世界几乎做不到同样的组合
 
 ## 核心要点
 
-STM 的算法可以拆成 **三步**：
+把 1995 算法想成三步（这里的「字」= 一个机器字长的共享内存格子）：
 
-1. **声明读写集**：每个事务事先讲清楚"我要读哪几个字、写哪几个字"。类比：进图书馆前在门口登记你想借哪几本书。这一步在 1995 年这篇是**静态**的——k 必须事先知道。
+1. **声明读写集**：事务事先列出「我要读/写哪几个格子」。类比：进图书馆前在门口登记想借哪几本书。这篇是**静态**的——格子个数 k 必须事先知道，不能边跑边决定。
 
-2. **抢 ownership + helping**：用单字 `CAS`（compare-and-swap）原语去『占』每个要写的字。如果撞上别的事务正在占用，**不是干等**，而是读它的状态记录，按规则替它把事务推完——叫做 **helping**。这保证了非阻塞（任何线程崩溃或 stall 都不会卡住别人）。
+2. **抢 ownership + helping**：用单字 `CAS`（compare-and-swap：只有当前值仍是预期值才改成功）去『占』每个要写的格子。撞上别人占用时**不是干等**，而是读对方状态记录、按规则替它把事务推完——叫 **helping**。这样任何线程崩溃都不会卡住别人。
 
-3. **提交或回滚**：所有 ownership 都抢到后，原子翻转事务 status 为 committed，再把新值写回内存、释放 ownership。任一步失败就 abort 重来。
+3. **提交**：所有 ownership 抢齐后，原子翻转事务 status 为 committed，再写回新值并释放 ownership。1995 文靠 helping 保证非阻塞；后来的乐观 STM 才常见「冲突就 abort 整笔重来」。
 
-三步加起来给出第一个**纯软件、非阻塞、原子事务**的并发原语。
+三步合起来给出第一个**纯软件、非阻塞、多字原子**的并发原语；语言级 `atomically` / `retry` 要等到 2005 才工程化。
 
 ## 实践案例
 
 ### 案例 1：账户转账——lock 版 vs STM 版
 
-lock 版要小心『先锁 a 再锁 b』vs『先锁 b 再锁 a』的死锁：
+lock 版必须按地址排序加锁，否则 A 锁 a 再锁 b、B 锁 b 再锁 a 会死锁：
 
 ```python
 def transfer(a, b, amt):
-    with locks[min(a.id, b.id)]:    # 必须按地址排序锁
+    with locks[min(a.id, b.id)]:    # 全局一致的加锁顺序
         with locks[max(a.id, b.id)]:
             a.bal -= amt
             b.bal += amt
 ```
 
-STM 版：
+STM 版（教学示意，GHC 风格）：
 
 ```haskell
 transfer a b amt = atomically $ do
@@ -64,20 +64,22 @@ transfer a b amt = atomically $ do
   modifyTVar b (+ amt)
 ```
 
-不用排序锁、不用想死锁，组合还能继续组合：`atomically (transfer a b 100 >> transfer c d 50)` 是一笔更大的事务。
+不用排序锁。组合性是后来语言 STM 的强项：`atomically (transfer a b 100 >> transfer c d 50)` 合成一笔更大事务。
 
-### 案例 2：lock-free 栈是 STM 的特化
+### 案例 2：单指针 CAS ≈ k=1 的静态 STM（概念类比）
 
-Treiber stack 的 push 用一次 CAS 改 `top` 指针：
+Treiber 无锁栈的 push 只改一个共享格子 `top`：
 
 ```c
 do { old = top; new = node; new->next = old; }
-while (!CAS(&top, old, new));
+while (!CAS(&top, old, new));  // 教学伪代码
 ```
 
-这其实是 **k=1 的静态 STM**——只读写一个字，所以不需要 ownership 数组，也不需要 helping。Shavit-Touitou 的贡献是把这个 k=1 推广到任意 k。
+步骤：读旧 top → 串好新节点 → CAS 换顶。只碰 1 个字，所以不需要 ownership 数组，也不需要 helping。概念上这是 **k=1 静态 STM**；Shavit-Touitou 的贡献是把同一思路推广到任意事先已知的 k。
 
-### 案例 3：GHC Haskell 的 atomically + retry
+### 案例 3：余额不够就整笔挂起（GHC retry，2005）
+
+日常类比：ATM 余额不足时不是半扣款，而是整笔取消，等账户有钱再重试。
 
 ```haskell
 withdraw acc n = atomically $ do
@@ -86,8 +88,7 @@ withdraw acc n = atomically $ do
   else writeTVar acc (bal - n)
 ```
 
-`retry` 表示"条件不够就 abort 整个事务，等到 acc 变了再唤醒重跑"。这种"挂起 + 重试"语义是 STM 比 lock 强的地方——lock 写不出来，要靠条件变量绕。
-
+`retry` = 条件不够就 abort 整笔，等 `acc` 被别人改过再唤醒重跑。这是语言 STM 相对裸锁的优势——锁要自己配条件变量。
 ## 踩过的坑
 
 1. **静态 vs 动态访问集**：1995 年这篇要求事务事先列出所有要碰的字（k 已知）。真实程序常常『读 a 决定要不要读 b』，要等到 Herlihy DSTM 2003 才解决，新手照搬会发现根本写不出业务代码。
@@ -102,17 +103,17 @@ withdraw acc n = atomically $ do
 
 **适用**：
 
-- 多个共享变量需要原子地一起改（账户转账、链表批量更新）
-- 函数组合性重要——同一抽象在更大事务里复用
-- 高冲突场景下要避免 lock 引发的优先级反转 / 慢线程拖整个系统
-- 函数式语言天然契合（GHC STM monad、Clojure dosync）
+- 多个共享变量要原子一起改（账户转账、链表批量更新）
+- 需要把小事务嵌成大事务（语言 STM 的组合性）
+- 高冲突且访问顺序难预知，想避开 lock 的优先级反转 / 慢线程拖死
+- 函数式运行时已内置（GHC STM、Clojure `dosync`）
 
 **不适用**：
 
-- 事务里需要做 IO（打印、发网络请求）——STM 失败会重跑，IO 不能撤销
-- 事务非常长 / 写集巨大——abort 重来的代价大于 lock
-- 实时系统对最坏延迟有 hard 上限——retry 次数无界
-- 单字 CAS 已经够用的场景（计数器、单指针）——STM 的 ownership 层是浪费
+- 事务里做 IO（打印、发网）——重跑会重复副作用
+- 写集很大或事务很长（例如写集 ≫ 3–5 个热格子）——冲突重试成本常高于细粒度锁
+- 硬实时要有界最坏延迟——retry / helping 路径次数无硬上界
+- 写集 ≤1 且冲突低（计数器、单指针）——单字 CAS / 一把锁更简单更快
 
 ## 历史小故事（可跳过）
 
@@ -125,7 +126,7 @@ withdraw acc n = atomically $ do
 
 ## 学到什么
 
-1. **抽象的力量**：把"加锁"换成"事务"这一个名字的改动，让组合性回来——这是 STM 比 lock 真正强的地方。
+1. **抽象的力量**：把"加锁"换成"事务"，为后来语言级组合（2005）铺路——这是 STM 路线比裸锁真正强的地方。
 2. **non-blocking 的代价**：要做到任何线程崩溃也不卡别人，必须有 helping；这层间接成本要心里有数，不是免费午餐。
 3. **静态到动态隔了 8 年**：理论提出 1995 → 工业可用要等 2003 DSTM、2005 GHC STM。基础工作有时长期看不到回响才迎来爆发。
 4. **硬件追软件**：先有 Herlihy-Moss HTM 概念（1993）、再有纯软件 STM（1995），20 年后硬件回头加 TSX——理论方向反复横跳是常态。

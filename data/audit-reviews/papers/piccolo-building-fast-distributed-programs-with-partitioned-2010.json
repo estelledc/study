@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨师/分区菜谱、超市账本、捐款箱类比把分区表与 accumulator 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "kernel / barrier / accumulator 首次出现有日常桥接；远程 locality 仍可再补半句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释；案例 3 爬虫状态机略密，但 Done>Fetching>ToFetch 优先级可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Russell Power / Jinyang Li、OSDI 2010、USENIX PDF 链接与著录一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "分区表、kernel、user-defined accumulator（需交换结合）、单分区装入单机内存、checkpoint 容错与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「同一年 Spark 提出 working set 和 RDD」对应 HotCloud 2010，可接受；正式 RDD 论文是 NSDI 2012，教学简化未歪曲核心对比"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "PageRank / k-means / 爬虫伪代码概念正确可跟读；明确是教学伪代码而非可 pip install 的 API"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：非透明 DSM、accumulator 非交换结合会静默错、最大分区超内存、checkpoint 成本"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（迭代内存状态 vs 流水线批处理 / 跨 key 事务 / 数据倾斜）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "厨师/分区菜谱、超市账本、捐款箱类比把分区表与 accumulator 讲透，零基础直觉强",
+        "kernel / barrier / accumulator 首次出现有日常桥接；远程 locality 仍可再补半句白话",
+        "三案例均有逐部分解释；案例 3 爬虫状态机略密，但 Done>Fetching>ToFetch 优先级可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "作者 Russell Power / Jinyang Li、OSDI 2010、USENIX PDF 链接与著录一致",
+        "分区表、kernel、user-defined accumulator（需交换结合）、单分区装入单机内存、checkpoint 容错与论文一致",
+        "「同一年 Spark 提出 working set 和 RDD」对应 HotCloud 2010，可接受；正式 RDD 论文是 NSDI 2012，教学简化未歪曲核心对比"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "PageRank / k-means / 爬虫伪代码概念正确可跟读；明确是教学伪代码而非可 pip install 的 API",
+        "踩坑具体可操作：非透明 DSM、accumulator 非交换结合会静默错、最大分区超内存、checkpoint 成本",
+        "适用/不适用边界清楚（迭代内存状态 vs 流水线批处理 / 跨 key 事务 / 数据倾斜）"
+      ]
+    }
+  ]
+}

@@ -26,7 +26,7 @@ WebServer.builder()
 
 - 以前 Java 选型只有两条难走的路：**Spring Boot** 简单但反应式吃力，**Netty/反应式** 性能好但代码像天书。Helidon Nima 给了第三条
 - 它是 **MicroProfile 规范**的官方实现之一——/health、/metrics、/openapi、配置注入这些都开箱即用，不用拼一堆 starter
-- Oracle 维护，跟 JDK 21 / JDK 26 的虚拟线程进展同步走在最前面
+- Oracle 维护；Helidon 4 锚定 JDK 21 虚拟线程，随后版本号改为对齐 OpenJDK 发版节奏，跟虚拟线程演进走在最前面
 - 是观察"虚拟线程到底有没有用"的最直接窗口——它整个内核就是为虚拟线程重写的
 - 学一个 Helidon 等于看清"JVM 里同步代码 + 高并发"这条新路线长什么样
 
@@ -56,7 +56,11 @@ public static void main(String[] args) {
 }
 ```
 
-跑起来就是一个能扛高并发的 HTTP server，**没有 Spring 那一堆 @Annotation**，纯 Java 调用。
+逐部分解释：
+
+- `WebServer.builder()` 起的是 Nima 内核，不是 Tomcat/Netty 外壳。
+- `/greet/{name}` 里每次请求一根虚拟线程；`pathParameters()` 取路径参数后 `send` 回写响应。
+- 没有 Spring 那一堆 `@Annotation`，纯 Java 调用就能跑起一个能扛高并发的 HTTP server。
 
 ### 案例 2：高并发下游调用——同步代码顶住 1 万 QPS
 
@@ -68,7 +72,11 @@ res -> {
 }
 ```
 
-如果是传统 Tomcat（200 OS 线程池），1 万并发立刻打爆；Helidon Nima 里这段代码会被运行时挂在虚拟线程上，**OS 线程仍然只有几十个**，但能同时挂 1 万根虚拟线程等下游回。
+逐部分解释：
+
+- `httpClient.get(...).body()` 是同步阻塞：当前虚拟线程在等下游，但 **carrier（OS 线程）可以去跑别的虚拟线程**。
+- 传统 Tomcat（约 200 OS 线程池）遇到 1 万并发会把池打满；Nima 可以同时挂大量虚拟线程等 I/O。
+- 所以代码看起来像「卡住」，实际卡的是廉价虚拟线程，不是稀缺的 OS 线程。
 
 ### 案例 3：MicroProfile 健康检查（Helidon MP）
 
@@ -82,24 +90,32 @@ public class CustomCheck implements HealthCheck {
 }
 ```
 
-加这一个类，`/health/live` 端点自动注册，K8s 探针直接对接——这是 MicroProfile 规范带来的"组件开箱即用"。
+逐部分解释：
 
-### 案例 4：配置热加载
+- `@Liveness` 声明这是存活探针；CDI 扫描到后挂到 `/health/live`。
+- `HealthCheckResponse.up(...)` 返回「健康」；失败时返回 down，K8s 就会重启 Pod。
+- 这是 MicroProfile 规范带来的开箱能力：换 Open Liberty 等实现，注解语义仍通。
+
+### 案例 4：读配置（默认快照，热更新要另开）
 
 ```java
 Config config = Config.create();
 String url = config.get("downstream.url").asString().orElse("http://default");
 ```
 
-`application.yaml` 改了，注入点会拿到新值。MP 模式下结合 `@ConfigProperty` 注入，写起来像 Spring 的 `@Value`，但底层走的是 MicroProfile Config 规范。
+逐部分解释：
+
+- `Config.create()` 通常读到的是启动时快照；**改 `application.yaml` 不会自动进已取出的 `url` 变量**。
+- 若要热更新，需用可观察/轮询的 Config source，或 MP 的 `@ConfigProperty` 搭配支持刷新的源。
+- 写法像 Spring `@Value`，底层走 MicroProfile Config；别把「能读配置」误当成「默认热加载」。
 
 ## 踩过的坑
 
-1. **JDK 版本硬约束**：Helidon 4 必须 JDK 21+，Helidon 5 起跟 JDK 26 走。公司还在 JDK 8/11 项目升不动，得先升 JDK
-2. **3.x → 4.x API 大改**：老 Helidon SE 代码（Reactive Server / WebServer 旧 API）几乎要重写。不是平滑升级，是迁移
-3. **虚拟线程不是银弹**：业务里有 `synchronized` 长持锁、ThreadLocal 误用，会把虚拟线程**钉死在 carrier thread 上**——并发优势瞬间消失。要换 `ReentrantLock` 或者用 ScopedValue
-4. **生态比 Spring Boot 小一个数量级**：第三方 starter / Stack Overflow 答案 / 中文资料都少很多。选型前要确认"我用的库有 Helidon 集成吗"
-5. **冷启动不是 Helidon 强项**：JVM 起步比 Quarkus Native 慢得多。Serverless 短任务、按请求计费场景要慎选——还是 Quarkus + GraalVM 更合适
+1. **JDK 版本硬约束**：Helidon 4 必须 JDK 21+；版本号对齐 OpenJDK 节奏后，**Helidon 27 需要 JDK 26**。公司还在 JDK 8/11 就得先升 JDK，不能指望旧 LTS 直接跑新内核。
+2. **3.x → 4.x API 大改**：老 Helidon SE 代码（Reactive Server / WebServer 旧 API）几乎要重写。不是平滑升级，是迁移。
+3. **虚拟线程不是银弹**：业务里有 `synchronized` 长持锁、ThreadLocal 误用，会把虚拟线程**钉死在 carrier thread 上**——并发优势瞬间消失。要换 `ReentrantLock` 或者用 ScopedValue。
+4. **生态比 Spring Boot 小一个数量级**：第三方 starter / Stack Overflow 答案 / 中文资料都少很多。选型前要确认"我用的库有 Helidon 集成吗"。
+5. **冷启动不是 Helidon 强项**：JVM 起步比 Quarkus Native 慢得多。Serverless 短任务、按请求计费场景要慎选——还是 Quarkus + GraalVM 更合适。
 
 ## 适用 vs 不适用场景
 
@@ -164,3 +180,7 @@ String url = config.get("downstream.url").asString().orElse("http://default");
 - [[axum]] —— Rust 里同思路（用 async runtime 而非虚拟线程）
 - [[gin]] —— Go 里"goroutine = 虚拟线程"思想的最早工业落地
 - [[actix-web]] —— Rust 里另一种异步选型，对照看 JVM/Rust 思路差异
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

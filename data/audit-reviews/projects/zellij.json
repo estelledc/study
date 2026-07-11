@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 底部提示栏把 <o> 标成 OPTIONS、<s> 标成 SESSION，但案例 2 又用 Ctrl-o 做 detach，零基础会懵——应对齐默认键位说明（Ctrl-o = Session）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 KDL layout 缺逐字段解释（tab/pane/command/args/split_direction 各干什么）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「tmux 30 多年」不准确：tmux 约 2007 年发布，到 2026 约 19 年；30 年更接近 GNU screen（1987）——两处表述都需改"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 提示栏模式名与默认 keybind 不符：默认 Ctrl-o 进 Session（detach 在此），不是 OPTIONS"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一个用 WebAssembly 当插件运行时的 multiplexer」偏绝对，可软化为「较早/以 wasm 插件为卖点之一」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 提示栏与案例 2 detach 键位叙述不一致，跟做时会按错模式；按默认 config 写清 Ctrl-o → Session → d"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一点量化：如「老机器内存紧张（daemon+wasm 常比 tmux 多几十 MB）」比「能感觉到」更可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 底部提示栏把 <o> 标成 OPTIONS、<s> 标成 SESSION，但案例 2 又用 Ctrl-o 做 detach，零基础会懵——应对齐默认键位说明（Ctrl-o = Session）",
+        "案例 3 的 KDL layout 缺逐字段解释（tab/pane/command/args/split_direction 各干什么）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「tmux 30 多年」不准确：tmux 约 2007 年发布，到 2026 约 19 年；30 年更接近 GNU screen（1987）——两处表述都需改",
+        "案例 1 提示栏模式名与默认 keybind 不符：默认 Ctrl-o 进 Session（detach 在此），不是 OPTIONS",
+        "「第一个用 WebAssembly 当插件运行时的 multiplexer」偏绝对，可软化为「较早/以 wasm 插件为卖点之一」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 提示栏与案例 2 detach 键位叙述不一致，跟做时会按错模式；按默认 config 写清 Ctrl-o → Session → d",
+        "适用/不适用可补一点量化：如「老机器内存紧张（daemon+wasm 常比 tmux 多几十 MB）」比「能感觉到」更可操作"
+      ]
+    }
+  ]
+}

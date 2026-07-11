@@ -10,7 +10,7 @@ title: StarRocks — MPP 列存数据库
 
 StarRocks 是一个**开源的列式 OLAP 数据库**，定位是让你在几亿到几百亿行的数据上做实时多维分析。日常类比：你开了一家有几十个分店的连锁餐厅，每天都要回答"过去 30 天哪个菜在哪个城市卖得最好、客单价多少、年龄段怎么分布"——这种**横切大量历史数据 + 多维度交叉**的查询，传统 MySQL 半天都跑不出来，StarRocks 几秒就能出。
 
-技术上它是 Apache Doris 的分叉：2020 年原 Doris 核心团队离开百度，把 Doris 重写成商业版 DorisDB，2021 年改名 StarRocks 并完全开源（Apache 2.0）。
+技术上它是 Apache Doris 的分叉：2020 年原 Doris 核心团队离开百度，把 Doris 做成商业版 DorisDB；2021 年改名 StarRocks 并以 Elastic License 2.0 开源，**2022 年底才切到 Apache 2.0**。
 
 它的三个核心卖点：
 
@@ -65,7 +65,11 @@ StarRocks 上一般 1-3 秒返回；ClickHouse 上 JOIN 大表会慢很多，需
 
 ```sql
 CREATE EXTERNAL CATALOG iceberg_catalog
-PROPERTIES ("type" = "iceberg", "iceberg.catalog.type" = "hive", ...);
+PROPERTIES (
+  "type" = "iceberg",
+  "iceberg.catalog.type" = "hive",
+  "hive.metastore.uris" = "thrift://metastore:9083"
+);
 
 SELECT * FROM iceberg_catalog.db.events WHERE dt='2026-05-30' LIMIT 100;
 ```
@@ -118,32 +122,36 @@ WHERE dt >= '2026-05-01' GROUP BY dt, city;
 - 纯 KV 查询场景 → Redis / RocksDB
 - 需要复杂流式窗口 / CEP → Flink
 
-## 技术亮点
+## 历史小故事（可跳过）
 
-- **MySQL 协议兼容**：任何 MySQL 客户端 / JDBC 都能直连
-- **Pipeline 执行引擎**（2.2 引入）：把 SQL 计划拆成可并行的 pipeline，自动用满多核
-- **存算分离**（3.0 起）：BE 数据放对象存储，计算节点无状态可弹性扩缩
-- **External Catalog**：直查 Hive / Iceberg / Hudi / JDBC，无需导入
-- VLDB 2024 论文 *StarRocks: A Modern OLAP Database* 把架构系统化讲了一遍
+- **2020**：原 Apache Doris 核心成员创业，基于 Doris 做商业版 DorisDB（后因商标问题改名）
+- **2021-09**：产品改名 StarRocks，以 Elastic License 2.0 开源；同期补齐向量化执行与 CBO
+- **2022-12**：许可证切到 Apache 2.0；公司侧品牌后称 CelerData
+- **2023**：项目捐赠给 Linux Foundation；3.0 起推存算分离（数据上对象存储）
+- **协议兼容**：一直走 MySQL 协议，JDBC / 常见 BI 可直连；Pipeline 引擎约 2.2 引入
 
 ## 学到什么
 
 1. **MPP + 向量化是现代 OLAP 的标配组合**：MPP 解决"机器之间并行"，向量化解决"单机内 CPU 并行"，两者乘起来才有几十倍提速
-2. **CBO 是 OLAP 数据库的护城河**：写 SQL 的人不会手动调 JOIN 顺序，能自动选对就赢一半。这一点 StarRocks 早期就投入很多
-3. **存算分离是云原生 OLAP 的方向**：Snowflake 走通了，StarRocks 3.x 跟上，未来本地盘的存算一体会逐步退场
-4. **国产开源数据库的"分叉再开源"模式**：DorisDB → StarRocks 的路径和 OceanBase / TiDB 的路径不同——它没改协议，只是商业团队带着核心代码独立维护，最后又回到 Apache 2.0
+2. **CBO 是 OLAP 数据库的护城河**：写 SQL 的人不会手动调 JOIN 顺序，能自动选对就赢一半
+3. **存算分离是云原生 OLAP 的方向**：Snowflake 走通了，StarRocks 3.x 跟上
+4. **分叉再开源要看许可时间线**：2021 开源 ≠ 一开始就是 Apache 2.0；ELv2 → Apache 2.0 差了一年多
 
 ## 延伸阅读
 
-- 官方文档：[StarRocks Docs](https://docs.starrocks.io/)（中英双语，比 Doris 文档质量高）
-- VLDB 2024 论文：*StarRocks: A Modern OLAP Database*（系统介绍架构）
+- 官方文档：[StarRocks Docs](https://docs.starrocks.io/)（中英双语，架构与存算分离说明最全）
+- GitHub：[StarRocks/starrocks](https://github.com/StarRocks/starrocks)（Linux Foundation 项目）
 - [[clickhouse]] —— 单机 OLAP 之王，StarRocks 的主要对手
-- [[rocksdb]] —— 底层 KV 引擎思路对比（虽然 StarRocks 自研列存格式不用 RocksDB）
+- [[doris]] —— 同源兄弟项目，对照看分叉后各自演进
+- [[rocksdb]] —— 底层 KV 引擎思路对比（StarRocks 自研列存，不用 RocksDB）
 
 ## 关联
 
-- [[clickhouse]] —— 单表强、JOIN 弱；StarRocks 反过来
-- [[rocksdb]] —— LSM 列存 vs MPP 列存的不同路径
+- [[clickhouse]] —— 单表强、JOIN 弱；StarRocks 反过来靠 CBO + MPP JOIN
+- [[doris]] —— 同源分叉，协议与生态仍常被拿来对比
+- [[duckdb]] —— 嵌入式单机列存；StarRocks 是分布式集群向
+- [[rocksdb]] —— LSM 嵌入式引擎 vs MPP 列存的不同路径
+- [[greenplum-db]] —— 另一路 Postgres 系 MPP 数仓
 - [[hindley-milner]] —— 类型推导和查询优化都是"基于已知信息推出最优方案"
 
 ## 反向链接

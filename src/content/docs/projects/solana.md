@@ -1,6 +1,6 @@
 ---
 title: Solana — Rust 写的高性能 PoH 链
-来源: 'https://github.com/solana-labs/solana'
+来源: 'https://github.com/anza-xyz/agave（原 solana-labs/solana）'
 日期: 2026-05-30
 分类: blockchain
 难度: 高级
@@ -45,7 +45,9 @@ Solana 设计可以拆成 **4 个支柱**：
 
 4. **Tower BFT —— PBFT 变体**。在 PoH 时间戳上做 PBFT 投票，每次投票锁定时间翻倍（"塔"），形成可验证的 finality。
 
-四件加起来叫 **Solana 共识 + 运行时栈**。
+另加 **Turbine**（开头图里那块）：把区块切成小包，按树形扇出给验证者，传播跳数约 O(log N)，避免 leader 对全网单播。
+
+四件支柱 + Turbine 合称 **Solana 共识 + 运行时栈**。
 
 ## 实践案例
 
@@ -65,6 +67,7 @@ pub struct Transfer<'info> {
     pub from: Account<'info, TokenAccount>,   // 显式
     pub to:   Account<'info, TokenAccount>,   // 显式
     pub authority: Signer<'info>,             // 显式
+    // 生产还要声明 token_program 等——此处省略
 }
 ```
 
@@ -75,14 +78,14 @@ pub struct Transfer<'info> {
 ```
 用户钱包签名
   ↓ Gulf Stream（直接发给未来 leader）
-leader 节点收齐 ~64k 笔交易
+leader 在本 slot 收交易（65k TPS × 400ms ≈ 每 slot ~26k 笔量级）
   ↓ Sealevel 并行执行（无冲突的交易）
 出 entry → PoH 哈希链插一笔
   ↓ Turbine 树形广播（O(log N) 跳）
 全网验证 → Tower BFT 投票 → finalize
 ```
 
-整个过程目标 400ms 一个 slot。对比以太坊（12s）少 30 倍。
+整个过程目标 400ms 一个 slot。对比以太坊（12s）少约 30 倍。注意：**65k 是每秒设计吞吐，不是每个 slot 收 65k 笔**。
 
 ### 案例 3：Solana vs 以太坊做同一个 swap
 

@@ -19,7 +19,7 @@ EPaxos（**Egalitarian Paxos**，平等议会式 Paxos）是一个**去掉 leade
 - **跨地域部署**：Multi-Paxos 把 leader 钉在某一个地理区域，其他区域的客户端每次写都要绕 leader 一圈。EPaxos 让本地副本直接 commit
 - **抗慢节点**：Mencius 轮转 leader 也想解决"leader 偏心"，但慢节点会拖累每个 slot；EPaxos 没有"轮到谁"的概念
 - **影响巨大**：CockroachDB / Cassandra 的 **Accord** 协议、TiKV 的多区域设计、学术界 Tempo / Caesar / Atlas 全部在它基础上改进
-- 它是**第一个证明"去 leader 化共识可工程化"的工作**——之前都觉得没 leader 就不可能高效
+- 它是**早期把去 leader 共识做到可实现、并强调跨地域延迟**的代表工作（Mencius 等更早探索轮转 leader；EPaxos 把任意副本命题 + 冲突感知做到工程可跑）
 
 ## 核心要点
 
@@ -95,7 +95,7 @@ R2 提议 c2: PUT x=2（认为 deps={}）
 
 ## 踩过的坑
 
-1. **fast quorum 大小有讲究**：fast quorum = F + ⌊(F+1)/2⌋。5 副本下 F=2，fast=4，slow=3——fast 比 slow 还大！这意味着 5 副本集群里 fast path 反而难触发。EPaxos 在 3 副本下最甜
+1. **fast quorum 大小有讲究**：优化版 fast quorum = F + ⌊(F+1)/2⌋。3 副本 F=1 → fast=2；5 副本 F=2 → fast=3（与 slow 的 F+1=3 相同）。N 再大时 fast 往往严于多数派，冲突或慢节点下更难走满 fast path；3 副本通常最甜
 2. **依赖追踪是工程深坑**：随冲突率上升，依赖集合非线性膨胀；执行端要算 SCC，热点 key 上 SCC 可能很大
 3. **故障恢复路径复杂**：副本挂掉时新命题方要跑 explicit prepare 协议，把"未决命令"的状态对齐——比 Multi-Paxos 的 leader 选举复杂得多
 4. **Accord（CockroachDB / Cassandra）花了 5+ 年才稳定**——理论 1 RTT 漂亮，工程要处理时钟、跨 shard 事务、流控、回放，每一项都不简单

@@ -53,7 +53,7 @@ sidebar:
 | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | `lsd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | `miller` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | `ncdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | `nix` | unknown | UNVERIFIED | 纯函数式部署模型 |
+| [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | `nix` | unknown | UNVERIFIED | 介绍 Nix 如何用内容寻址存储和声明式输入实现可重复构建、回滚与多版本共存 |
 | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | `nnn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | `nushell` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | `oclif` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -1,6 +1,6 @@
 ---
 title: Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
-来源: 'https://github.com/bjc/prosody'
+来源: 'https://prosody.im/ (Matthew Wild et al.; source https://hg.prosody.im/)'
 日期: 2026-05-30
 分类: communication
 难度: 中级
@@ -51,7 +51,11 @@ module:hook("message/bare", function(event)
 end)
 ```
 
-`module:hook` 注册一个事件监听器。每条 message 路由到这台服务器时回调一次。**整个插件 4 行**。这就是 Prosody 模块化的实际颗粒度。
+**逐部分解释**：
+
+- `module:hook("message/bare", …)`：消息路由到本机用户时触发（bare = 不带 `/resource`）
+- `event.stanza`：这条 XMPP 消息本身；`attr.from` / `attr.to` 是收发双方 JID
+- 启用：把文件放进 plugins 目录，并在 `modules_enabled` 里加上 `"helloworld"`
 
 ### 案例 2：联邦（s2s）跟外面通话
 
@@ -59,10 +63,17 @@ end)
 -- prosody.cfg.lua
 VirtualHost "alice.example"
   enabled = true
-  ssl = { key = "/etc/letsencrypt/live/alice.example/privkey.pem"; ... }
+  ssl = {
+    key = "/etc/letsencrypt/live/alice.example/privkey.pem";
+    certificate = "/etc/letsencrypt/live/alice.example/fullchain.pem";
+  }
 ```
 
-DNS 加一条 `_xmpp-server._tcp.alice.example. SRV 0 0 5269 alice.example.`，alice@alice.example 就能给 bob@jabber.org 发消息——**两台服务器自己握手、自己转**，跟邮件 SMTP 一个意思。这就是"联邦"的实际含义。
+**逐部分解释**：
+
+- `VirtualHost`：声明本机托管的域名（像邮局的本地分局名）
+- `ssl.key` / `ssl.certificate`：s2s 握手用的 TLS 材料，缺一不可
+- DNS 再加 `_xmpp-server._tcp.alice.example. SRV 0 0 5269 alice.example.`，alice@alice.example 就能给 bob@jabber.org 发消息——两台服务器自己握手转发，跟 SMTP 一个意思
 
 ### 案例 3：换存储后端
 
@@ -70,10 +81,14 @@ DNS 加一条 `_xmpp-server._tcp.alice.example. SRV 0 0 5269 alice.example.`，a
 
 ```lua
 storage = "sql"
-sql = { driver = "PostgreSQL", database = "prosody", host = "localhost", ... }
+sql = { driver = "PostgreSQL", database = "prosody", host = "localhost", username = "prosody", password = "secret" }
 ```
 
-`mod_storage_sql` 自己创建表、做迁移。**业务模块完全不用改**——它们调用统一的 `storage` API。这就是"插件化存储"的好处。
+**逐部分解释**：
+
+- `storage = "sql"`：告诉核心用 `mod_storage_sql`，而不是默认 flat file
+- `sql = { … }`：驱动与连接参数；模块自己建表、做迁移
+- 业务模块仍只调统一 `storage` API——换后端不用改插件代码
 
 ## 踩过的坑
 

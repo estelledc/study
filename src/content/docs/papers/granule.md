@@ -26,7 +26,7 @@ foo [x] = x + x
 不理解 graded modal types，下面这些事都没法解释：
 
 - 为什么线性类型、信息流、effect tracking 看起来都"很像"，但每个语言都要重造一遍
-- 为什么 Rust 的"借用 / 移动"和差分隐私的"敏感度"在数学上是同一个东西
+- 为什么 Rust 的"借用 / 移动"和差分隐私的"敏感度"看起来风马牛不相及，却都能用 graded / quantitative types 统一刻画
 - 为什么 Idris、F\* 这些依赖类型语言开始引入 grade / quantity 字段
 - 为什么类型系统能从"对不对"演进到"对多少"
 
@@ -36,9 +36,9 @@ Granule 的核心是 **graded modal type `[r]A`**，可以拆成 3 步理解：
 
 1. **modal 是个套子**：`[r]A` 不是 A，是"被装在一个标记 r 的盒子里的 A"。类比：礼物盒上贴标签，标签独立于礼物内容。
 
-2. **r 来自一个半环**：r 不能乱取，必须属于某个**半环**（semiring，有加法和乘法的结构）。用 ℕ 就能数次数；用 {Public ≤ Private} 安全格就能查泄露；用 effect 集合就能追副作用。
+2. **r 来自一个半环**：r 不能乱取，必须属于某个**半环**（semiring）。别被名字吓到——就是一套带两种运算的标签规则：用 ℕ 就能数次数；用 {Public ≤ Private} 安全格就能查泄露；用 effect 集合就能追副作用。
 
-3. **类型检查靠半环算术**：函数应用时 grade 走**乘法**（嵌套使用相乘）；分支合并时走**加法**（两条路汇总）。SMT 求解器 Z3 在背后帮你解约束。
+3. **类型检查靠半环算术**：接回快递面单——**加法 = 两条路合并标签**（if 两边各用一次 → 合计 1+1）；**乘法 = 嵌套使用把次数叠乘**（外层调用把内层用量乘上去）。SMT 求解器 Z3 在背后帮你解这些约束。
 
 三步合起来：换个半环就换一种属性追踪，**底层类型规则不变**。
 
@@ -63,17 +63,20 @@ dup [x] = (x, x)
 
 ```granule
 hash : String [Private] -> String [Public]
--- 类型检查器拒绝这个签名
+-- 类型检查器拒绝这个签名：Private 不能悄悄降成 Public
 ```
 
 把 Private 数据"降级"成 Public 是不允许的（除非显式声明 declassify）。
 
 ```granule
-log : String [Private] -> () <{IO}>
-log [s] = putStr s  -- 允许：Private 数据流向 Private 输出
+-- stdout 通常视为 Public 通道：把 Private 字符串直接 putStr 出去会被拒
+leak : String [Private] -> () <{IO}>
+leak [s] = putStr s   -- 拒绝：高密级流向低密级通道
+
+-- 只有显式 declassify（或接收端也是 Private）才放行
 ```
 
-`{Public, Private}` 是一个偏序半环，类型系统拒绝把高密级流向低密级。这就是 100% 编译期的信息流控制。
+`{Public, Private}` 是一个偏序半环，类型系统拒绝把高密级流向低密级。这就是编译期的信息流控制。
 
 ### 案例 3：用 effect 半环跟踪副作用集
 

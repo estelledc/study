@@ -118,6 +118,13 @@ bin/list-bin-paths # 告诉 asdf 这个版本里哪些目录有可执行
 - 追求"包括系统库"的可重现性：用 [[nix]]，asdf 只管语言运行时
 - 容器化部署：CI 镜像里 `FROM node:20` 更直接
 
+## 历史小故事（可跳过）
+
+- **2014 年**：Akash Manohar 发布 asdf，目标是把 nvm、rbenv、pyenv 这类单语言版本管理器统一到一个命令入口。
+- **2016-2018 年**：插件机制稳定下来，社区开始把 Node、Python、Ruby、Elixir 等常见运行时都接进同一套 `.tool-versions` 文件。
+- **2020-2023 年**：polyglot monorepo 变多，asdf 因为“一个仓库锁多种工具版本”被大量团队放进 onboarding 和 CI。
+- **2025 年**：v0.16 改用 Go 重写主程序，保留插件协议和目录结构，重点解决 Bash 版本启动慢、维护困难的问题。
+
 ## 替代品
 
 | 工具 | 特点 | 何时选 |
@@ -149,3 +156,7 @@ bin/list-bin-paths # 告诉 asdf 这个版本里哪些目录有可执行
 - [[mise]] —— asdf 的 Rust 后继者，启动快 10×，插件协议兼容
 - [[homebrew]] —— 同样管"装多个版本"，但用 symlink 而非 shim
 - [[nix]] —— 同样追求"项目环境描述化"，但管到系统库一层
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

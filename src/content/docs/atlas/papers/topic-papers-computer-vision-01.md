@@ -14,10 +14,10 @@ sidebar:
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) | `3d-gaussian-splatting` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving](/study/papers/autonomous-driving-waymo-2021/) | `autonomous-driving-waymo-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Waymo Open Dataset — 自动驾驶感知的共同训练场](/study/papers/autonomous-driving-waymo-2021/) | `autonomous-driving-waymo-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | `clip` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) | `coca-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [DINO 自监督视觉 transformer](/study/papers/dino/) | `dino` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [DINO — 让视觉模型自己认出物体轮廓](/study/papers/dino/) | `dino` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | `filip-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MAE — Masked Autoencoders](/study/papers/mae/) | `mae` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PointNet — 直接吃点云的 3D 神经网络](/study/papers/pointnet/) | `pointnet` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

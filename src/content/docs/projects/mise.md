@@ -64,7 +64,11 @@ node -v                  # v22.x.x
 node = "22"
 ```
 
-提交进 git，**队友 clone 后只需** `mise install`，所有人用同一版本。
+**逐部分解释**：
+
+- `mise use` 既改配置文件，又立刻把当前 shell 的 Node 切到 22。
+- 把 `.mise.toml` 提交进 git 后，队友只需 `mise install` 下载同一版本。
+- 前提是 shell 已 `mise activate`；否则只有 shim/手动 `mise exec` 才能找到该 node。
 
 ### 案例 2：一个项目，多种语言
 
@@ -78,7 +82,10 @@ go = "1.23"
 terraform = "1.9"
 ```
 
-`mise install` 一条命令把四个都装好。`cd` 进项目自动切，`cd` 出去恢复全局版本。
+**逐部分解释**：
+
+- 一份清单声明四种工具版本；`mise install` 按表下载到 `~/.local/share/mise/installs/`。
+- `cd` 进项目时 activate hook 重算 PATH；`cd` 出去恢复外层/全局版本。
 
 ### 案例 3：用 mise 当任务跑器（取代 npm scripts）
 
@@ -91,7 +98,10 @@ run = "go build -o ./bin/app ./cmd/app"
 depends = ["test"]
 ```
 
-跑 `mise run build`，mise 先跑 `test`、再跑 `build`——**不用 Makefile，不用 npm scripts，多语言项目共用一套命令**。
+**逐部分解释**：
+
+- `mise run build` 先跑 `depends` 里的 `test`，再跑 `build`。
+- 多语言项目共用一套任务入口，不必再维护 Makefile / 多份 npm scripts。
 
 ### 案例 4：用 mise 管理项目环境变量
 
@@ -102,7 +112,10 @@ NODE_ENV = "development"
 _.file = ".env.local"
 ```
 
-`cd` 进项目，这些变量自动加载到 shell；`cd` 出去自动卸下。**不用再 source .env，也不用每次开终端手动 export**。
+**逐部分解释**：
+
+- `cd` 进项目时这些变量自动进 shell；`cd` 出去自动卸下。
+- `_.file` 再叠加本地密钥文件，避免把秘密写进可提交的 toml。
 
 ## 它怎么工作（简版）
 
@@ -121,7 +134,7 @@ shims 模式（备选）：在 `~/.local/share/mise/shims/` 放假可执行 `nod
 
 2. **从 asdf 迁移并非无缝**：mise 兼容 `.tool-versions`，但 asdf 插件不一定 100% 工作。官方核心插件（node / python / ruby / go）已重写，第三方插件可能踩坑。
 
-3. **Python 编译慢**：mise 默认从源码编译 Python（走 python-build），第一次装可能要 5-10 分钟。开 `settings.python.compile = false` 用预编译版本快很多。
+3. **Python 何时会编译很慢**：现行 mise **默认优先下载预编译 Python**；只有平台没有对应二进制，或你强制 `mise settings set python.compile true` 时，才会走 python-build 源码编译（可能 5–10 分钟）。想锁定预编译可用 `python.compile = false`。
 
 4. **优先级搞混**：全局 `~/.config/mise/config.toml` < 项目 `.mise.toml` < 环境变量 `MISE_NODE_VERSION`。混用时记不清谁覆盖谁，用 `mise current` 看实际生效版本。
 
@@ -142,6 +155,13 @@ shims 模式（备选）：在 `~/.local/share/mise/shims/` 放假可执行 `nod
 - 需要**完全可复现**的不可变环境——用 [[nix]]，mise 不到那个粒度
 - 团队全员 Windows 原生（非 WSL）——卡支持
 - 需要把工具版本写进 Dockerfile 直接构建——mise 在容器里能跑但价值低
+
+## 历史小故事（可跳过）
+
+- **2023 年**：Jeff Dickey 用 Rust 写出 `rtx`，目标是比 asdf 更快、配置更现代（toml），同时兼容 `.tool-versions`。
+- **2024 年**：项目改名 **mise**（mise en place），强调"进目录就摆好工具"的体验；生态插件与文档站同步扩张。
+- **2024–2025 年**：Python 等热门工具转向默认预编译二进制，安装体验从"编译等十分钟"变成"下载即用"。
+- **持续迭代**：任务跑器、env 管理、与 CI 同源配置，让它从"多语言 nvm"长成轻量开发环境入口。
 
 ## 学到什么
 
@@ -164,3 +184,7 @@ shims 模式（备选）：在 `~/.local/share/mise/shims/` 放假可执行 `nod
 - [[nix]] —— 更严格的可复现环境管理，覆盖范围比 mise 大但学习曲线陡
 - [[pnpm]] —— Node 包管理器，常和 mise 一起用：mise 管 Node 版本，pnpm 管 npm 包
 - [[turborepo]] —— Monorepo 跑任务的工具，和 mise 的 task runner 角色互补
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

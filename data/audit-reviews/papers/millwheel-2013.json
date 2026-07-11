@@ -1,0 +1,131 @@
+{
+  "slug": "millwheel-2013",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "流水线工厂类比贯穿状态/去重/水位线，零基础能抓住 exactly-once 直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Zeitgeist/广告/事件时间三案例有伪代码与逐步说明，广告案例原子事务讲得清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "DAG/(key,value,event_time) 首次出现有括号桥接；案例 3 watermark 可再多一句日常说法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Akidau et al. VLDB 2013 正确；Bigtable/Spanner 状态后端、record-level exactly-once、low watermark 与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Zeitgeist P99~30ms、Dataflow Model 2015→Beam、Flink 吸收 watermark 叙述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『祖师爷』属教学修辞；未把 watermark 说成绝对真理，无硬伤歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则伪代码概念正确，可跟做 exactly-once/watermark 心智模型；非可编译 API 属教学预期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：幂等下游三件套、水位线过快、热 key、timer 回放成本均可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化：百万～千万/s、P99 30ms 不够交易、单 key 原子性局限"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "流水线工厂类比贯穿状态/去重/水位线，零基础能抓住 exactly-once 直觉",
+        "Zeitgeist/广告/事件时间三案例有伪代码与逐步说明，广告案例原子事务讲得清楚",
+        "DAG/(key,value,event_time) 首次出现有括号桥接；案例 3 watermark 可再多一句日常说法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Akidau et al. VLDB 2013 正确；Bigtable/Spanner 状态后端、record-level exactly-once、low watermark 与论文一致",
+        "Zeitgeist P99~30ms、Dataflow Model 2015→Beam、Flink 吸收 watermark 叙述合理",
+        "『祖师爷』属教学修辞；未把 watermark 说成绝对真理，无硬伤歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三则伪代码概念正确，可跟做 exactly-once/watermark 心智模型；非可编译 API 属教学预期",
+        "踩坑具体：幂等下游三件套、水位线过快、热 key、timer 回放成本均可操作",
+        "适用边界有量化：百万～千万/s、P99 30ms 不够交易、单 key 原子性局限"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 160,
+  "l1_pass": true
+}

@@ -1,6 +1,6 @@
 ---
-title: Babylon.js — Microsoft Web 3D 引擎
-来源: 'https://github.com/BabylonJS/Babylon.js'
+title: Babylon.js — 浏览器里的 3D 游戏和可视化引擎
+来源: https://github.com/BabylonJS/Babylon.js
 日期: 2026-07-08
 分类: graphics
 难度: 初级
@@ -8,158 +8,157 @@ title: Babylon.js — Microsoft Web 3D 引擎
 
 ## 是什么
 
-Babylon.js 是一个**本地优先、按块组织、支持双链和自托管**的个人知识管理工具。
-日常类比：它像一个带编号便利贴的书房，每张便利贴都能单独引用、移动、搜索，也能被放进自己的服务器里。
+Babylon.js 是一个用 JavaScript / TypeScript 写的 **Web 3D 引擎**。它让浏览器不只显示网页文字和按钮，还能显示会动的 3D 场景、游戏、产品展示、数字孪生和 WebXR 体验。
 
-最小例子可以先把它想成这样的笔记：
+日常类比：普通网页像一张海报，CSS 负责排版；Babylon.js 像一个小型摄影棚，帮你放相机、灯光、模型、材质和动画，最后把画面拍到 `<canvas>` 上。
 
-```markdown
-# 今天学 Docker
-
-容器像一个随身厨房，环境和材料一起打包。
-((某个块 ID)) 可以被别的页面引用。
-```
-
-普通 Markdown 更像“一整张纸”，Babylon.js 更像“每句话都是一张卡片”。
-这就是它和很多文件夹式笔记的差别：你不是只管理文件，而是在管理可引用、可查询、可移动的内容块。
+它底层使用 WebGL，也支持 WebGPU 路线；你写的是更接近“搭场景”的代码，而不是直接和 GPU 指令打交道。
 
 ## 为什么重要
 
 不理解 Babylon.js，下面这些事会很难解释：
 
-- 为什么同一段内容能被多个页面引用，而不必复制粘贴到处改
-- 为什么它强调本地 workspace、数据仓库和端到端同步，而不是默认把笔记交给云服务
-- 为什么 Docker 版适合浏览器访问，却不等于桌面端和移动端都能直接连上去
-- 为什么它既支持 Markdown 书写体验，又不是“每篇笔记就是一个纯 `.md` 文件”
+- 为什么一个浏览器页面能跑 3D 游戏，而不需要安装 Unity 或 Unreal 客户端
+- 为什么产品官网可以让用户旋转汽车、鞋子、家具模型，而不是只看几张图片
+- 为什么 WebXR 可以在同一套 Web 技术上进入 VR / AR 设备
+- 为什么 3D 工程里总会同时出现 engine、scene、camera、light、mesh、material 这些词
+
+Babylon.js 的价值是把“和显卡打交道”包成“搭一个可运行的舞台”。初学者先会搭舞台，再慢慢理解渲染管线。
 
 ## 核心要点
 
-1. **块结构**：把文档切成段落、标题、列表项这些小块。类比：一本书不只按章节找，还能精确引用到某一段。
+1. **Scene 是舞台**：所有模型、灯光、相机都放进同一个 Scene。类比：拍电影前先有片场，演员和道具才知道自己在哪里。
 
-2. **本地 workspace**：数据先在自己的机器目录里。类比：账本先放在自己抽屉，是否同步、同步到哪里，是后面的选择。
+2. **Camera 决定你从哪里看**：没有相机，场景里有东西也看不到。类比：同一个房间，从门口看和从天花板看，画面完全不同。
 
-3. **内核 + 客户端 + API**：桌面界面、浏览器界面和命令行都围着同一个内核工作。类比：前台有多个窗口，后台仓库只有一套账。
+3. **Mesh + Material 组成看得见的物体**：Mesh 是形状，Material 是表面颜色、金属感、透明度。类比：纸箱的盒子形状和外面贴的包装纸是两回事。
 
 ## 实践案例
 
-### 案例 1：把 Babylon.js 放到自己的服务器
+### 案例 1：最小 3D 盒子
 
-README 给出的 Docker 用法适合“我想在浏览器里打开自己的笔记库”：
+下面这段代码在网页里创建一个可渲染的 Babylon.js 场景：
 
-```bash
-docker run -d \
-  -v /siyuan/workspace:/siyuan/workspace \
-  -p 6806:6806 \
-  -e PUID=1001 -e PGID=1002 \
-  babylonjs \
-  serve \
-  --workspace=/siyuan/workspace/ \
-  --accessAuthCode=change-me
+```html
+<canvas id="renderCanvas"></canvas>
+<script type="module">
+import { Engine, Scene, FreeCamera, HemisphericLight, MeshBuilder, Vector3 } from "https://cdn.babylonjs.com/babylon.module.js";
+
+const canvas = document.getElementById("renderCanvas");
+const engine = new Engine(canvas, true);
+const scene = new Scene(engine);
+
+const camera = new FreeCamera("camera", new Vector3(0, 2, -6), scene);
+camera.setTarget(Vector3.Zero());
+camera.attachControl(canvas, true);
+
+new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+MeshBuilder.CreateBox("box", { size: 2 }, scene);
+
+engine.runRenderLoop(() => scene.render());
+</script>
 ```
 
 **逐部分解释**：
 
-- `-v /siyuan/workspace:/siyuan/workspace`：把宿主机目录挂进容器，笔记数据不会只留在容器临时层里。
-- `-p 6806:6806`：把 Babylon.js 默认 Web 端口暴露出来，浏览器访问这一个入口。
-- `serve --workspace=...`：新版镜像需要显式启动服务，并告诉内核 workspace 在哪里。
-- `--accessAuthCode=change-me`：设置访问密码；公开端口时尤其不能留空或随便写。
+- `Engine`：连接浏览器 canvas 和底层 WebGL / WebGPU，相当于摄影棚的电源和机器。
+- `Scene`：装所有 3D 对象的容器，相当于舞台。
+- `FreeCamera`：决定观察位置，`attachControl` 让鼠标键盘能控制视角。
+- `MeshBuilder.CreateBox`：快速造一个立方体，先不用自己写顶点数据。
 
-### 案例 2：不用打开界面也能查笔记
+### 案例 2：加载一个 glTF 模型
 
-README 里还有内置 CLI，适合脚本化搜索和导出：
+真实项目不会全靠代码造盒子，通常会从 Blender、Maya 或设计工具导出 `.glb` / `.gltf`：
 
-```bash
-siyuan notebook list -w ~/Babylon.js
-siyuan search "Docker" -w ~/Babylon.js -f json
-siyuan export md --id 20250101093000-abcdefg -w ~/Babylon.js
+```ts
+import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
+import "@babylonjs/loaders/glTF";
+
+await SceneLoader.AppendAsync("/assets/", "robot.glb", scene);
 ```
 
 **逐部分解释**：
 
-- `notebook list`：列出 workspace 里的笔记本，相当于先看书架有哪些分区。
-- `search "Docker"`：直接查本地数据，`-f json` 让结果更适合交给脚本继续处理。
-- `export md --id ...`：按块或文档 ID 导出 Markdown，适合备份、迁移或喂给别的工具。
+- `SceneLoader`：负责把外部模型读进当前场景。
+- `@babylonjs/loaders/glTF`：注册 glTF 加载器；少了这行，项目里可能只会报“不知道怎么读 glb”。
+- `AppendAsync`：异步加载，模型没下载完之前不能假装它已经在场景里。
 
-### 案例 3：用 HTTP API 创建和更新内容块
+### 案例 3：进入 WebXR
 
-官方 API 文档把本地内核暴露成 `http://127.0.0.1:6806` 上的一组 POST 接口。
-下面是一个“创建文档，再追加一段”的组合：
+Babylon.js 把 WebXR 的很多浏览器差异包起来，常见入口是：
 
-```bash
-curl -X POST http://127.0.0.1:6806/api/filetree/createDocWithMd \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Token YOUR_TOKEN' \
-  -d '{"notebook":"20210817205410-2kvfpfn","path":"/study/docker","markdown":"# Docker 学习"}'
-
-curl -X POST http://127.0.0.1:6806/api/block/appendBlock \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Token YOUR_TOKEN' \
-  -d '{"parentID":"20250101093000-abcdefg","dataType":"markdown","data":"今天先记住镜像和容器的区别。"}'
+```ts
+const ground = MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
+const xr = await scene.createDefaultXRExperienceAsync({
+  floorMeshes: [ground],
+});
 ```
 
 **逐部分解释**：
 
-- `Authorization: Token YOUR_TOKEN`：token 在设置里的 About 页面查看，API 调用要带上它。
-- `createDocWithMd`：用 Markdown 内容创建文档；同一路径重复调用不会直接覆盖旧文档。
-- `appendBlock`：把一段 Markdown 追加到父块下面；`parentID` 就是“贴到哪张卡片下面”。
+- `CreateGround`：给 VR / AR 体验一个地面参考，否则用户不知道脚下在哪里。
+- `createDefaultXRExperienceAsync`：创建默认 XR 按钮、会话和控制器支持。
+- `floorMeshes`：告诉引擎哪些物体可当作地面，便于传送和边界判断。
 
 ## 踩过的坑
 
-1. **把 workspace 挂载错目录**：Docker 容器删掉后才发现数据没落到宿主机，因为卷路径才是数据能否留下来的关键。
+1. **canvas 没设宽高**：3D 代码没错，但 `<canvas>` 在 CSS 里只有 0 高度，结果页面一片空白。
 
-2. **忘了新版 Docker 要写 `serve`**：README 明确提示 v3.7.0 起需要显式传 `serve`，旧命令容易启动失败。
+2. **忘了导入 loader**：能创建盒子，却加载不了 `.glb`，通常是没有导入 `@babylonjs/loaders/glTF`。
 
-3. **拿第三方同步盘直接同步数据目录**：FAQ 说不支持这种做法，原因是并发改 `.sy` 数据可能造成损坏。
+3. **异步加载当同步用**：模型还在下载就去找它的 mesh，会拿到空结果。要 `await` 或监听加载完成。
 
-4. **把 Docker 版当成完整桌面端替代品**：README 的限制写得很清楚，Docker 托管主要面向浏览器，部分导入导出能力不支持。
+4. **坐标单位不统一**：美术模型按厘米导出，代码按米摆放，进场景后不是巨大就是小到看不见。
+
+5. **移动端性能预算很小**：高面数模型、4K 贴图、实时阴影一起开，桌面能跑，手机会掉帧或发热。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 想要本地优先，重要资料先掌握在自己机器上的个人知识库
-- 喜欢块引用、双链、图谱、闪卡和数据库视图混在一个笔记系统里
-- 需要中文体验、自托管浏览器入口，或者想用 API 把笔记接进脚本
-- 已经接受“笔记系统会有自己的数据格式”，不强求每页都是纯 Markdown 文件
+- 浏览器里的 3D 展示、轻量游戏、数据可视化和教学 demo
+- 电商产品预览、建筑漫游、工业设备数字孪生
+- 需要 WebXR，但希望保持 Web 技术栈的项目
+- 想用 TypeScript 写 3D，而不是直接写 WebGL shader 的团队
 
 **不适用**：
 
-- 只想维护一堆纯 `.md` 文件，并用 Git 当唯一同步方式
-- 需要多人实时协作、复杂权限、审批流这类团队知识库功能
-- 不想维护 workspace、同步、备份、权限这些本地优先带来的责任
-- 只需要轻量草稿本，用系统备忘录或普通 Markdown 编辑器就够了
+- 大型 3A 游戏或极重资产项目 → Unity / Unreal 更成熟
+- 对原生性能、主机平台、复杂编辑器流水线要求极高的项目
+- 只需要二维图表或普通动画 → Canvas / SVG / CSS 动画更轻
+- 完全不想处理模型压缩、贴图、灯光和性能预算的简单网页
 
 ## 历史小故事（可跳过）
 
-- README 的一句口号是 “Refactor your thinking”，它把写笔记理解成持续重构自己的知识结构。
-- 项目由 `BabylonJS/Babylon.js` 维护，核心仓库写着 TypeScript 和 Go，桌面、移动、浏览器、自托管都围绕同一个知识库展开。
-- 到 2026 年 7 月，GitHub 页面显示大约 4.5 万 stars，说明它已经不只是小众玩具。
-- 官方文档逐步补齐了 Docker、CLI、API、workspace 文件结构这些工程化入口，方便用户把笔记当成可编程系统。
+- **2013 年前后**：Microsoft 工程师 David Catuhe 发起 Babylon.js，目标是让 WebGL 开发更接近引擎体验。
+- **2015 年后**：项目逐步形成 playground、文档、材质库、加载器和 GUI 组件，降低入门门槛。
+- **WebXR 普及期**：Babylon.js 把 VR / AR 会话、控制器和传送能力做成默认体验入口。
+- **WebGPU 时代**：项目继续兼容 WebGL，同时跟进 WebGPU，让浏览器 3D 有更长的性能上限。
 
 ## 学到什么
 
-- Babylon.js 的重点不是“又一个 Markdown 编辑器”，而是把内容拆成可引用、可查询、可自动化的块。
-- 本地优先带来自主权，也带来备份、权限、同步策略的责任，不能只看功能列表。
-- 自托管版最适合“浏览器访问自己的知识库”，但要认真处理端口、密码、反向代理和卷挂载。
-- 官方 API 让笔记系统可以被脚本驱动，这对学习日志、知识库整理和自动化很有价值。
+- Babylon.js 不是建站框架，而是浏览器 3D 引擎；核心工作是管理场景、相机、灯光、模型和渲染循环。
+- 初学 3D 先记住“舞台、摄影机、灯光、道具”这条线，比直接学 shader 更稳。
+- 工程上最常见的问题不是“能不能画”，而是模型加载、坐标单位、贴图大小和移动端性能。
+- Web 3D 的优势是分发简单：用户打开链接就能体验；代价是浏览器兼容和性能预算要认真测。
 
 ## 延伸阅读
 
-- 官方仓库：[BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js)
-- API 文档：[docs/API.md](https://github.com/BabylonJS/Babylon.js/blob/master/docs/API.md)
-- workspace 结构：[docs/WORKSPACE.md](https://github.com/BabylonJS/Babylon.js/blob/master/docs/WORKSPACE.md)
-- 在线用户指南：[Babylon.js User Guide](https://siyuan-en.b3log.org/)
-- [[logseq]] —— 同样重视块、双链和大纲式笔记
-- [[joplin]] —— 更接近传统 Markdown 笔记与同步客户端
+- 官方网站：[Babylon.js](https://www.babylonjs.com/)
+- 官方文档：[Babylon.js Documentation](https://doc.babylonjs.com/)
+- 官方 playground：[Babylon.js Playground](https://playground.babylonjs.com/)
+- 仓库：[BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js)
+- [[threejs]] —— 同是浏览器 3D 生态，API 更底层一些
+- [[webgpu]] —— 新一代浏览器 GPU API，Babylon.js 正在支持它
 
 ## 关联
 
-- [[logseq]] —— 两者都把块引用和双链放在核心位置，但产品取舍不同
-- [[joplin]] —— 对比“Markdown 文件优先”和“应用数据模型优先”的差别
-- [[affine]] —— 同属本地优先知识工具，适合比较白板、文档和数据库的组合方式
-- [[codemirror]] —— Babylon.js 这类编辑器体验背后离不开现代 Web 编辑基础设施
-- [[prosemirror]] —— 理解块编辑器和结构化文档模型时很有参考价值
-- [[sqlite-2022]] —— Babylon.js 的查询、索引和本地数据管理都绕不开数据库思维
+- [[threejs]] —— 对比 Web 3D 库和完整引擎的取舍
+- [[webgl]] —— Babylon.js 早期主要依赖的浏览器 3D API
+- [[webgpu]] —— Babylon.js 面向未来性能上限的重要方向
+- [[gltf]] —— 3D 模型交换格式，Babylon.js 项目最常加载的资产之一
+- [[unity]] —— 原生/多平台游戏引擎，适合比较工作流和发布方式
+- [[react-three-fiber]] —— React 生态里另一条浏览器 3D 路线
 
 ## 反向链接
 

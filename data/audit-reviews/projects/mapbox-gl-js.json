@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "相册 vs 矢量几何类比生动；vector tile/Style Spec 有桥接；三案例可跟读，Expression DSL 稍密但可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2014 发起、v2.0（2020-12）改 TOS、MapLibre 自 v1.13 fork 等与公开史实一致；许可说明未歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "GeoJSON/3D/tippecanoe 示例可跟做；token/context lost/layer 顺序/queryRenderedFeatures 踩坑具体；Leaflet/Cesium 边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "相册 vs 矢量几何类比生动；vector tile/Style Spec 有桥接；三案例可跟读，Expression DSL 稍密但可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "2014 发起、v2.0（2020-12）改 TOS、MapLibre 自 v1.13 fork 等与公开史实一致；许可说明未歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "GeoJSON/3D/tippecanoe 示例可跟做；token/context lost/layer 顺序/queryRenderedFeatures 踩坑具体；Leaflet/Cesium 边界清楚"
+      ]
+    }
+  ]
+}

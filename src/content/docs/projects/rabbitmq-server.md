@@ -58,6 +58,7 @@ RabbitMQ 的消息流转模型是 **五件套**：
 注册成功后给用户发欢迎邮件——HTTP 同步调邮件服务的话，邮件服务挂了用户注册接口也挂。改成：
 
 ```python
+import json, pika
 ch.queue_declare(queue="email", durable=True)
 ch.basic_publish(exchange="", routing_key="email",
                  body=json.dumps({"to": "u@x.com", "tpl": "welcome"}),
@@ -91,7 +92,7 @@ ch.queue_declare(queue="payments",
 
 ## 踩过的坑
 
-1. **队列默认不复制**：Classic Queue 只在声明它的那个节点。节点挂了队列就消失（消息也可能丢）。生产环境关键队列必须用 Quorum 或 Stream。
+1. **队列默认不复制**：Classic Queue 只在声明它的那个节点。节点挂了该队列不可达（非持久消息会丢；durable 定义要等节点恢复才回来）。生产环境关键队列必须用 Quorum 或 Stream。
 
 2. **Memory Alarm 阻塞 publisher**：消息堆积导致 Erlang 进程内存超阈值（默认 40%），RabbitMQ 直接 block 所有发送方。表现是生产者 publish 卡住没报错。要监控 `rabbitmq-diagnostics memory_breakdown` 和队列深度。
 
@@ -132,7 +133,7 @@ ch.queue_declare(queue="payments",
 
 1. **消息队列不是"快递柜"那么简单**：解耦、削峰、重试、ack、路由、持久化、集群一致性，每一个都是工程取舍
 2. **Erlang/OTP 的"轻量进程 + 监督树"**让 RabbitMQ 单节点能开几十万并发连接，且某个连接崩了影响隔离
-3. **AMQP 的 exchange/binding 模型比 Kafka 的 topic/partition 表达力强**：topic exchange 能做正则匹配的扇出，Kafka 做不到——但 Kafka 吞吐高一个量级
+3. **AMQP 的 exchange/binding 模型比 Kafka 的 topic/partition 表达力强**：topic exchange 用 `*`/`#` 通配符按点分段做扇出，Kafka broker 侧做不到同款路由——但 Kafka 吞吐高一个量级
 4. **基础设施迁主四次还能稳定运行**：好的开源项目活得比公司久
 
 ## 延伸阅读

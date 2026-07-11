@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "类比只有「可搬运积木」，不够日常生动；建议换成「袖珍翻译官/口袋计算器」类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "title 仅 quickjs，品牌信号弱；术语 ES2025/ref-count 需更白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例全是 bullet 无代码；案例 2 还有字面 \\n；需逐步可跟做的最小示例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 bellard/quickjs、Fabrice Bellard 正确；引用计数+循环回收与官方一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「近乎完整 ES2025」与官网表述接近，可保留但宜注明按 test262 子集演进"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "无硬伤；主要问题在教学深度而非事实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺 qjs/qjsc 最小可跑命令与嵌入 API 示意，code_runnable 不足"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏口号：应写清无 Node require、需 JS_SetProperty 暴露 C 函数、循环引用靠 GC 周期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界尚可，但缺体积/启动量级对比（相对 V8/Node）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "类比只有「可搬运积木」，不够日常生动；建议换成「袖珍翻译官/口袋计算器」类比",
+        "title 仅 quickjs，品牌信号弱；术语 ES2025/ref-count 需更白话桥接",
+        "三案例全是 bullet 无代码；案例 2 还有字面 \\n；需逐步可跟做的最小示例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 bellard/quickjs、Fabrice Bellard 正确；引用计数+循环回收与官方一致",
+        "「近乎完整 ES2025」与官网表述接近，可保留但宜注明按 test262 子集演进",
+        "无硬伤；主要问题在教学深度而非事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺 qjs/qjsc 最小可跑命令与嵌入 API 示意，code_runnable 不足",
+        "踩坑偏口号：应写清无 Node require、需 JS_SetProperty 暴露 C 函数、循环引用靠 GC 周期",
+        "适用/不适用边界尚可，但缺体积/启动量级对比（相对 V8/Node）"
+      ]
+    }
+  ]
+}

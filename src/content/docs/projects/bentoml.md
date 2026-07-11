@@ -35,22 +35,24 @@ BentoML 用 **三层抽象** 解掉：
 
 ### Service — 用类型注解描述 API
 
-v1.2 重构后的写法（极简）：
+v1.2 重构后的写法（极简，和下面 sklearn Iris 案例保持同一条线）：
 
 ```python
 import bentoml
-from PIL import Image
 
-@bentoml.service(resources={"gpu": 1})
+@bentoml.service
 class IrisClassifier:
-    model = bentoml.models.get("iris:latest")
+    bento_model = bentoml.models.get("iris_clf:latest")
+
+    def __init__(self):
+        self.model = bentoml.sklearn.load_model(self.bento_model)
 
     @bentoml.api
-    def predict(self, img: Image.Image) -> dict:
-        return self.model.predict(img)
+    def predict(self, features: list[float]) -> int:
+        return int(self.model.predict([features])[0])
 ```
 
-`@bentoml.service` 标记这是个服务，参数声明要 1 张 GPU；`@bentoml.api` 标记入口方法。**类型注解**（`Image.Image` / `dict`）会自动转成 OpenAPI schema、HTTP 请求/响应解析、客户端 SDK——一处写，三处用。
+`@bentoml.service` 标记这是个服务；`bentoml.models.get` 从本地 model store 取版本化模型；`@bentoml.api` 标记入口方法。**类型注解**（`list[float]` / `int`）会自动转成 OpenAPI schema、HTTP 请求/响应解析、客户端 SDK——一处写，三处用。
 
 ### Bento — 自描述工件
 
@@ -106,7 +108,7 @@ bentoml.sklearn.save_model("iris_clf", clf)
 # $ bentoml serve service:IrisClassifier
 ```
 
-浏览器打开 `localhost:3000` 有 Swagger UI，直接上传图片就能调用。
+逐步看：先把训练好的 `clf` 存成 `iris_clf:latest`；Service 启动时加载这个模型；请求传入 4 个花瓣/花萼数字，API 返回类别编号。浏览器打开 `localhost:3000` 有 Swagger UI，直接填数组就能调用。
 
 ### 案例 2：vLLM / Triton 前端
 
@@ -147,6 +149,13 @@ openllm start meta-llama/Llama-3-8B
 - 极致延迟（< 5ms）的单模型服务——直接 Triton + C++ 客户端更优
 - 非 Python 训练栈（Java / C++）—— 用 Triton / Seldon
 - 完全 K8s 原生流水线 —— Kubeflow / KServe 链路更顺
+
+## 历史小故事（可跳过）
+
+- **2019 年**：BentoML 开源，主打"训练后的模型如何打包成服务"
+- **2020-2022 年**：围绕 model store、Bento 工件和 Yatai K8s 部署形成完整 MLOps 链路
+- **2023 年后**：LLM serving 变热，BentoML 更多和 vLLM / Triton / HuggingFace 组合使用
+- **2024 年后**：官方重心转向 BentoCloud 与 v1.2 新 Service API，Yatai 逐渐退到维护路线
 
 ## 学到什么
 

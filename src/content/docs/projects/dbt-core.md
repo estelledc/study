@@ -154,6 +154,11 @@ models:
 ## 关联
 
 - [[airflow]] —— 最常见的 dbt-core 调度上游：Airflow 触发 `dbt run`
+- [[dagster]] —— 另一种把 dbt 资产编排进数据平台的 orchestrator
 - [[duckdb]] —— dbt-duckdb adapter 让本地笔记本就能跑 dbt 学习
 - [[snowflake]] —— dbt 和 Snowflake 在 2019-2024 是最常见的搭配
 - [[great-expectations]] —— 数据质量框架，和 dbt 测试是互补关系（GE 更通用、dbt test 更轻）
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -70,14 +70,18 @@ app.run()
 
 十几行 Python 就能看到一个 3D 模型在窗口里转动。对比 OpenGL 裸写需要几百行 C 代码，这就是"Python 优先"的价值。
 
-再看一个常见需求——键盘控制摄像机移动：
+再看一个常见需求——键盘控制摄像机相对前进/后退：
 
 ```python
-self.accept("arrow_up", self.camera.setY, [self.camera, 5])
-self.accept("arrow_down", self.camera.setY, [self.camera, -5])
+def move_cam(self, dy):
+    # 相对摄像机自身坐标系移动：(x, y, z)；Y 向前（Z-up）
+    self.camera.setPos(self.camera, 0, dy, 0)
+
+self.accept("arrow_up", self.move_cam, [1])    # 多传的参数进 extraArgs
+self.accept("arrow_down", self.move_cam, [-1])
 ```
 
-`accept` 方法把键盘事件和回调函数绑定，两行搞定 FPS 式前后移动。这种"事件 → 回调"模式贯穿整个引擎。
+**逐部分解释**：`accept` 把按键绑到回调；`setPos(other, x, y, z)` 相对 `other` 的局部坐标平移，避免误用绝对 `setY(5)` 把相机瞬移到世界坐标 Y=5。这种"事件 → 回调"模式贯穿整个引擎。
 
 典型项目结构大致是：一个继承 `ShowBase` 的主类，在 `__init__` 里加载资源和注册任务，然后调用 `app.run()` 进入主循环。所有逻辑分散在各个 task 函数中，引擎自动处理帧率、窗口事件和渲染提交。
 

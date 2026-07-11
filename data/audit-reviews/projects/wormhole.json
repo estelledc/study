@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.66,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 的逐步解释比案例 1 短，可各补 2-3 条「逐部分解释」帮助零基础跟住 burn/mint 与跨链借贷流程"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「finality」「quorum」「emitter」等词首次出现时可再贴一句日常说法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2022 hack 根因写错：不是 guardian_set_index 未校验，而是 Solana 端 verify_signatures 使用了未校验 instructions sysvar 的废弃 API（load_instruction_at），攻击者注入伪造 sysvar 绕过签名验证"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「历史小故事」与「学到什么」中关于 hack 的表述需与上述根因对齐，避免把教训写成「guardian set 切换」单一叙事"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里「Uniswap V3 用 Wormhole 同步流动性/治理」「Aave 已集成 Wormhole portal」偏笼统，宜弱化成「同类跨链场景」或删掉过强断言"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 标注「Solana 端」却用 solidity 代码块，易误导；应改成伪代码/注释块或标明「示意 API，非可编译 Solana 程序」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑第 4 条的 hack 根因与可操作修复建议需改成：校验 instructions sysvar 账户地址 + 使用 checked API，而非只强调 guardian_set_index"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码可补一句 parseAndVerifyVM / sequence 防重放在应用层如何落 mapping，方便跟做"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 的逐步解释比案例 1 短，可各补 2-3 条「逐部分解释」帮助零基础跟住 burn/mint 与跨链借贷流程",
+        "「finality」「quorum」「emitter」等词首次出现时可再贴一句日常说法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "2022 hack 根因写错：不是 guardian_set_index 未校验，而是 Solana 端 verify_signatures 使用了未校验 instructions sysvar 的废弃 API（load_instruction_at），攻击者注入伪造 sysvar 绕过签名验证",
+        "「历史小故事」与「学到什么」中关于 hack 的表述需与上述根因对齐，避免把教训写成「guardian set 切换」单一叙事",
+        "关联里「Uniswap V3 用 Wormhole 同步流动性/治理」「Aave 已集成 Wormhole portal」偏笼统，宜弱化成「同类跨链场景」或删掉过强断言"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 标注「Solana 端」却用 solidity 代码块，易误导；应改成伪代码/注释块或标明「示意 API，非可编译 Solana 程序」",
+        "踩坑第 4 条的 hack 根因与可操作修复建议需改成：校验 instructions sysvar 账户地址 + 使用 checked API，而非只强调 guardian_set_index",
+        "案例代码可补一句 parseAndVerifyVM / sequence 防重放在应用层如何落 mapping，方便跟做"
+      ]
+    }
+  ]
+}

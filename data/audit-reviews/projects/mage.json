@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "最小例子用旧写法 `// +build mage`，核心要点写 `//go:build mage`，零基础会不知道该抄哪个——建议统一。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Nate Finch / 2017 起源与 Rake 灵感主线正确；star 数与 v1.17 可作为时间快照保留。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "开篇最小例子仍是 `// +build mage`（旧 build constraint），与「核心要点」要求的 `//go:build mage` 冲突，跟做时容易抄错；应统一为 `//go:build mage`。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "其余 mg.Deps / target.Path / Release 参数绑定示例概念正确，踩坑与适用边界够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "最小例子用旧写法 `// +build mage`，核心要点写 `//go:build mage`，零基础会不知道该抄哪个——建议统一。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Nate Finch / 2017 起源与 Rake 灵感主线正确；star 数与 v1.17 可作为时间快照保留。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇最小例子仍是 `// +build mage`（旧 build constraint），与「核心要点」要求的 `//go:build mage` 冲突，跟做时容易抄错；应统一为 `//go:build mage`。",
+        "其余 mg.Deps / target.Path / Release 参数绑定示例概念正确，踩坑与适用边界够用。"
+      ]
+    }
+  ]
+}

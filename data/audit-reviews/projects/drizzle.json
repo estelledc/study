@@ -1,0 +1,111 @@
+{
+  "slug": "drizzle",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "关联段目前只有 2 条，零基础读者缺少对照地图；建议补到 5 条左右（不阻塞本视角 pass）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Studio GUI 是付费 + Cloud-hosted」表述过绝对：Drizzle Studio 有免费额度但需连官方云端；应改成「需连 drizzle.team 云端，完整能力偏商业化」之类限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "开篇对比代码把结果变量也叫 users，与表对象 users 同名会遮蔽，教学示例跑不通；应改成 result / rows 等。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联段目前只有 2 条，零基础读者缺少对照地图；建议补到 5 条左右（不阻塞本视角 pass）。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「Studio GUI 是付费 + Cloud-hosted」表述过绝对：Drizzle Studio 有免费额度但需连官方云端；应改成「需连 drizzle.team 云端，完整能力偏商业化」之类限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇对比代码把结果变量也叫 users，与表对象 users 同名会遮蔽，教学示例跑不通；应改成 result / rows 等。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "engineer 修复 users 变量遮蔽；academic 收窄 Studio 付费表述；补齐延伸阅读与关联。",
+    "sections_modified": [
+      "## 是什么",
+      "## 踩过的坑",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 200,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 200,
+  "l1_pass": true
+}

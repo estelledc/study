@@ -27,7 +27,7 @@ Sequential Consistency（顺序一致性，**SC**）是 Lamport 给"多处理器
 
 ## 核心要点
 
-论文短到只有四件事，**每件都是奠基性概念**：
+论文短到只有五件事，**每件都是奠基性概念**：
 
 1. **SC 的定义（一句话两条款）**：一次执行的结果，等同于把所有处理器的所有操作按某个**全序**串行执行的结果；**且**每个处理器自己的操作在该全序里保留它的程序顺序。前半条要求"看起来串行"，后半条要求"自己顺序不乱"。
 
@@ -64,11 +64,11 @@ P2: y = 1; r2 = x;     // 先写 y，再读 x
 ```java
 class Flag {
   volatile int x = 0, y = 0;
-  // 写操作不能和后续读重排，相当于在硬件层强制 R1
+  // volatile 写与后续读之间不能重排：否则 Dekker 式「先写旗再读对方」会看到双方都是 0
 }
 ```
 
-JMM（Java Memory Model）把所有 volatile 读写挂到同一条**全序**上，等价于 SC。代价是性能：x86 上 volatile 写要发 `mfence` 或用 `lock` 前缀，吞吐下降。这正是论文 R1+R2 的工程化复现——硬件偷懒了，编译器/运行时给你补回来。
+JMM（Java Memory Model）把所有 **volatile 读写**挂到同一条**全序**上（教学上常说「把这些字段拉回接近 SC」；整程序是否 SC 还取决于其他同步）。代价是性能：x86 上 volatile 写要发 `mfence` 或用 `lock` 前缀，相对普通写吞吐常掉一个数量级内的常数倍。这正是论文 R1+R2 的工程化复现——硬件偷懒了，编译器/运行时给你补回来。
 
 ### 案例 3：分布式 KV 的一致性等级菜单
 
@@ -81,7 +81,7 @@ ZooKeeper 文档明确说自己提供 "sequential consistency" 而**不是** lin
 
 ### 案例 4：CPU 缓存一致性协议的目标
 
-MESI / MOESI 这类协议设计的目标，不是直接给你 SC，而是给你"**单变量原子可见**"——单个 cache line 的写在所有 CPU 视角里看起来按某全序发生。SC 在此之上再加一条"跨变量也得有全序"。这就是为什么硬件 cache coherence 比内存模型简单：前者只管单变量，后者管多变量编织。
+MESI / MOESI 这类**单缓存行一致性协议**设计的目标，不是直接给你 SC，而是给你"**单变量原子可见**"——单个 cache line 的写在所有 CPU 视角里看起来按某全序发生。SC 在此之上再加一条"跨变量也得有全序"。这就是为什么硬件 cache coherence 比内存模型简单：前者只管单变量，后者管多变量编织。
 
 ## 踩过的坑
 
@@ -106,7 +106,7 @@ MESI / MOESI 这类协议设计的目标，不是直接给你 SC，而是给你"
 **不适用**：
 
 - 跨地域低延迟读写——SC 的全序意味着至少要协调，CAP 里 P 一来就要 trade off
-- 高性能 lock-free 数据结构——SC 太强，性能不可接受，应该用更弱的 acquire-release / relaxed
+- 高性能 lock-free 数据结构——SC / `seq_cst` 太强：相对 relaxed / acquire-release，fence 常让热点路径吞吐掉数倍，应优先更弱序
 - 需要"写完立刻读到"——必须升级到 linearizability
 - 对硬件无 fence 控制权的场景（早期 x86 多核未暴露完整 fence 指令）
 
@@ -118,7 +118,8 @@ MESI / MOESI 这类协议设计的目标，不是直接给你 SC，而是给你"
 - **1990 年**：Herlihy-Wing 证 SC 不可组合，提出 [[linearizability-1990]]。SC 从此被定位为"教学清晰但工程不够"的基线。
 - **1995 年**：Adve-Gharachorloo 写出经典综述《Shared Memory Consistency Models: A Tutorial》，把 SC / TSO / PSO / RMO / Release Consistency 体系化讲清楚，**至今**是入行必读。
 - **2009 年**：Sewell 等人形式化 x86-TSO，给"Intel 实际给你的内存模型"一个数学规范。SC 仍是参考点。
-- **2011 年**：C++11 / Java 5 之后的 JSR-133 把"程序员可见的内存模型"标准化进语言规范，`memory_order_seq_cst` 和 `volatile` 把 SC 写进 ISO 标准。
+- **2004 年前后**：JSR-133 随 Java 5 落地，重写 JMM，`volatile` 获得明确的 happens-before / 全序语义。
+- **2011 年**：C++11 把 `memory_order_seq_cst` 等原子序写进 ISO 标准，程序员可见的内存模型正式进语言规范。
 - **至今**：每一个新硬件架构（ARMv8 / RISC-V Zicsr）发布时，都会被对照 SC 讨论"放弃了哪些 SC 性质换性能"。SC 是 50 年没退役的"对照基准"。
 
 ## 学到什么

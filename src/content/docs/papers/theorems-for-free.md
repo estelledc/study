@@ -24,7 +24,7 @@ r :: forall a. [a] -> [a]
 对任意函数 f 和列表 xs：map f (r xs) = r (map f xs)
 ```
 
-不管 r 是 reverse、sort、take 3、id、tail——**只要它的类型是 `forall a. [a] -> [a]`，这条等式必然成立**。这就是"免费定理"的意思——签名一写，定理免费送。
+不管 r 是 reverse、take 3、drop 1、id、tail——**只要它的类型是 `forall a. [a] -> [a]`（没有 `Ord` 之类约束），这条等式必然成立**。这就是"免费定理"的意思——签名一写，定理免费送。
 
 ## 为什么重要
 
@@ -41,7 +41,7 @@ r :: forall a. [a] -> [a]
 
 1. **Parametricity（参数性）**：**多态函数对所有类型表现一致**——它不能"看穿"具体类型做不同的事。日常类比：搬家公司不管你箱子里装的是书还是衣服，搬运流程一样——这就是对内容物的 parametricity。
 
-2. **Logical relation（逻辑关系）**：把"对所有类型一致"形式化——给任意一对类型和它们之间的某个映射 f，多态函数在这两个类型上的行为可以**互相代入**而结果一致。这是 Reynolds 1983 的数学语言。
+2. **Logical relation（逻辑关系）**：把"对所有类型一致"形式化——像给两套积木各画一张对照表，再检查函数在两边是否按同一规则搬运。给任意一对类型和它们之间的某个映射 f，多态函数在两边的行为可以**互相代入**而结果一致。这是 Reynolds 1983 的数学语言。
 
 3. **Free theorem from type**：把上面两条规则机械地应用到一个具体类型签名上，就能**自动推出**该类型函数必满足的等式。Wadler 1989 把这步从"只有逻辑学家能做"变成"普通程序员能照菜谱做"。
 
@@ -72,7 +72,7 @@ map f xs             = [10, 20, 30]
 reverse (map f xs)   = [30, 20, 10]
 ```
 
-两边相等。换 sort、take 2、tail 都能验证一致。
+两边相等。换 take 2、drop 1、tail 都能验证一致（注意：`sort` 需要 `Ord`，不算这个类型）。
 
 ### 案例 2：identity 函数的唯一性
 
@@ -82,27 +82,31 @@ reverse (map f xs)   = [30, 20, 10]
 id :: forall a. a -> a
 ```
 
-免费定理（Wadler 推出来的强结论）：**任何这种类型的函数，必然就是恒等函数**（在排除 ⊥/不终止的情况下）。
+**逐步想**：
 
-**直觉解释**：函数收到一个 a 类型的值，但它对 a 一无所知——不能做加法、不能比较、不能拆开。它能返回的 a 类型值**只可能是输入的那个**。所以实现唯一。
+1. 函数收到一个 `a`，要对 `a` 一无所知——不能加、不能比、不能拆
+2. 它能返回的 `a` 值**只可能是输入那个**（排除 ⊥/不终止，即"算不完"的情况）
+3. 所以任何这种类型的实现，必然就是恒等函数
 
-这条性质强到——**类型签名几乎决定了实现**。
+手算：`id 42 = 42`，`id "hi" = "hi"`——换类型结果仍是原值。**类型签名几乎决定了实现**。
 
 ### 案例 3：Haskell 编译器的重写优化
 
-GHC（Haskell 编译器）有这么一条规则：
+GHC 有规则：`map f (map g xs) = map (f . g) xs`——两次遍历合成一次。
 
-```haskell
-map f (map g xs) = map (f . g) xs
+手算跟做（`xs=[1,2]`，`g=(*2)`，`f=(+1)`）：
+
+```
+map g xs          = [2, 4]
+map f (map g xs)  = [3, 5]
+map (f . g) xs    = [3, 5]
 ```
 
-意思是"先用 g 加工每个元素再用 f 加工每个元素" = "用 (f . g) 一次加工"——省一次遍历。
-
-**为什么 GHC 敢直接重写？** 因为 `map :: forall a b. (a -> b) -> [a] -> [b]` 的免费定理保证这条等式成立——不需要程序员证明。这套优化机制（fold/build deforestation）支撑了 Haskell 的高性能列表库。
+两边相等。`map :: forall a b. (a -> b) -> [a] -> [b]` 的免费定理保证这条等式——GHC 的 fold/build deforestation 就靠这类定理做列表库优化。
 
 ## 踩过的坑
 
-1. **遇到 ⊥（不终止）和 seq 时定理变弱**：Haskell 的 `seq` 会强制求值，让某些 corner case 等式失效。Johann-Voigtländer 2004 给出修补条件——工业用 free theorem 时要带"\*"号小心。
+1. **遇到 ⊥（读作 bottom，意思是"算不完/崩溃"）和 `seq`（强制求值）时定理变弱**：`seq` 会戳破"懒得算"的外壳，让某些 corner case 等式失效。Johann-Voigtländer 2004 给出修补条件——工业用时要带"\*"号小心。
 
 2. **类型类约束削弱 parametricity**：`r :: Ord a => [a] -> [a]` 的 `Ord` 告诉函数 a 上有比较，r 现在能 inspect 元素——免费定理变弱。实际 Haskell 代码大量用类型类，严格 parametricity 覆盖面比理论小。
 
@@ -112,18 +116,15 @@ map f (map g xs) = map (f . g) xs
 
 ## 适用 vs 不适用场景
 
-**适用**：
-- Haskell / OCaml / Idris2 / Lean 这种有真正多态的语言
-- Rust 的泛型函数（`fn r<T>(xs: Vec<T>) -> Vec<T>`，无 trait bound 时）
-- 编译器优化（重写规则、stream fusion、deforestation）
-- 形式验证（Coq / Lean / Cogent 用免费定理当引理）
-- 测试工具设计（QuickCheck 的 generator 利用 parametricity 泛化）
+**适用**（同时满足：真正多态 + 无类型类/trait 约束 + 纯函数）：
+- Haskell / OCaml / Idris2 / Lean 的无约束多态函数
+- Rust：`fn r<T>(xs: Vec<T>) -> Vec<T>` 且无 trait bound、无反射
+- 编译器重写（stream fusion / deforestation）、QuickCheck 式泛化测试、Coq/Lean/Cogent 引理
 
 **不适用**：
-- Java / Go 的泛型——type erasure + 反射 / `switch any.(type)` 破坏 parametricity
-- Python / JavaScript / Ruby——动态类型不强制
-- TypeScript 非 strict 模式——`as any` 能突破
-- 含副作用 / IO 的函数——免费定理在纯函数前提下才精确
+- 有 `Ord` / trait bound / 反射 / `as any`——能 inspect 类型就没免费定理
+- Java / Go 泛型（擦除 + 反射）、Python / JS / Ruby 动态类型
+- 含 IO / 可变状态的副作用函数——定理只在纯函数下精确
 
 ## 历史小故事（可跳过）
 

@@ -1,5 +1,5 @@
 ---
-title: k3s — 把完整 K8s 塞进一个 60 MB 的二进制
+title: k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
 来源: https://github.com/k3s-io/k3s
 日期: 2026-05-31
 分类: 基础设施 / 容器编排
@@ -39,7 +39,7 @@ k3s 砍掉的、替换的、保留的，可以拆成 **三类设计决策**：
 
 3. **替换重组件 + 移除废功能**：containerd 替代 Docker、flannel 替代 calico、traefik 替代 nginx-ingress、klipper-lb 替代 MetalLB；同时移除 in-tree 云厂商插件、in-tree 存储驱动、alpha 特性、过期 API。
 
-API 100% 兼容标准 K8s——`kubectl` 命令、`kubeconfig`、Helm chart 都直接能用。
+核心 API 与标准 K8s 兼容——`kubectl`、`kubeconfig`、绝大多数 Helm chart 可直接用（已移除的 legacy / in-tree 云厂商 API 除外）。
 
 ## 实践案例
 
@@ -133,7 +133,7 @@ curl -sfL https://get.k3s.io | sh -s - server \
 
 1. **"砍掉非必要"也是一种产品力**——完整 K8s 想覆盖所有云厂商所有场景，k3s 大胆砍掉 80% 让 20% 跑得飞起
 2. **单二进制部署的复利**——一个文件解决依赖、版本、升级、回滚四个问题，运维心智负担骤降
-3. **API 兼容是上限**——k3s 实现可以激进重写，但 K8s API 必须 100% 兼容，否则 Helm chart 全废、用户教育成本无穷
+3. **API 兼容是上限**——k3s 实现可以激进重写，但核心 K8s API 必须保持兼容，否则 Helm chart 大面积失效、用户教育成本无穷
 4. **边缘场景驱动主流创新**——树莓派跑 K8s 听起来像玩具，但逼出来的"轻量化"思路反向影响了云厂商发行版
 
 ## 延伸阅读
@@ -145,7 +145,7 @@ curl -sfL https://get.k3s.io | sh -s - server \
 
 ## 关联
 
-- [[kubernetes]] —— k3s 是它的轻量发行版，API 100% 兼容
+- [[kubernetes]] —— k3s 是它的轻量发行版，核心 API 兼容
 - [[containerd]] —— k3s 内嵌的容器运行时，替代 Docker
 - [[etcd]] —— 多节点 HA 模式下 k3s 用嵌入式 etcd 存元数据
 - [[traefik]] —— k3s 默认 Ingress 控制器

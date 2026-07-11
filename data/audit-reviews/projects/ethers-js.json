@@ -1,0 +1,113 @@
+{
+  "slug": "ethers-js",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 依赖前文 provider/wallet，对跳读的新手可再点一句“沿用案例 1 的 provider”。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“npm 周下载稳定 700k+”已明显过时（2026 年量级约数百万级），应更新或改成“百万级周下载、与 viem 并立”一类不绑死旧数字的表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“v6.16 稳定版”宜改为 v6.x / 当前 6.17 一带，避免钉死次要小版本。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "v6 API、pitfalls 与适用/不适用（viem bundle、非 EVM）边界清楚，可跟做。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 依赖前文 provider/wallet，对跳读的新手可再点一句“沿用案例 1 的 provider”。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "“npm 周下载稳定 700k+”已明显过时（2026 年量级约数百万级），应更新或改成“百万级周下载、与 viem 并立”一类不绑死旧数字的表述。",
+        "“v6.16 稳定版”宜改为 v6.x / 当前 6.17 一带，避免钉死次要小版本。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "v6 API、pitfalls 与适用/不适用（viem bundle、非 EVM）边界清楚，可跟做。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "更新历史段过时的 v6.16 / 700k 周下载数字为 v6.x 与百万级周下载表述。",
+    "sections_modified": [
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 184,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 184,
+  "l1_pass": true
+}

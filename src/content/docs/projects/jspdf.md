@@ -116,7 +116,7 @@ VFS（Virtual File System）是 jsPDF 内部的内存文件系统，要先 `addF
 
 3. **`doc.text(x, y)` 的 y 是基线**：你以为 y=10 文字顶在 10mm 处，实际上文字往上"长出"约一个字号的 ascent。新人画完发现文字超出页眉，原因在此。
 
-4. **页面尺寸单位陷阱**：`format: 'a4'` 不等于 `[210, 297]`——前者按当前 `unit` 解释，后者强制 mm。混着写时坐标会全错。
+4. **页面尺寸单位陷阱**：`format: 'a4'` 和 `[210, 297]` **都按当前 `unit` 解释**——数组并不强制毫米。若 `unit: 'pt'` 却仍写 `[210, 297]`（那是 mm 数值），页面会缩成一小块，坐标全错。
 
 5. **超长 canvas 单页贴不下**：截 2000px 高的 dashboard，整张塞 A4 会被裁。要按 `pageHeight * (canvas.width / pageW)` 切片循环 `addPage + addImage`，或直接用 v2 的 `doc.html()` 让它自动分页。
 
@@ -137,6 +137,13 @@ VFS（Virtual File System）是 jsPDF 内部的内存文件系统，要先 `addF
 - 50 页以上长文档：浏览器内存吃不消，PDF 体积也会爆
 - 需要解析 / 编辑 / 填表已有 PDF：jsPDF 只写不读，要看 pdf-lib / pdfjs-dist
 - 需要无障碍标签（PDF/UA）：jsPDF 对结构化标签支持很弱，合规场景换 pdfmake 或服务端方案
+
+## 历史小故事（可跳过）
+
+- **2010**：James Hall（MrRio）开源 jsPDF，目标是浏览器里直接拼 PDF，不靠 Flash / 后端。
+- **社区接手**：仓库迁到 `parallax/jsPDF`，插件生态（autotable 等）把报表导出做成默认组合拳。
+- **2020 v2**：内置 `doc.html()`，把 html2canvas 分页封装进主库。
+- **2024 v3**：ESM 优先、可 tree-shake，更贴现代打包链路。
 
 ## 学到什么
 
@@ -159,3 +166,7 @@ VFS（Virtual File System）是 jsPDF 内部的内存文件系统，要先 `addF
 - [[playwright]] —— 当 jsPDF 撑不住复杂排版时，服务端 headless 浏览器打印是更稳的退路
 - [[pdfkit]] —— Node 端的"画"派 PDF 库，思路与 jsPDF 同源
 - [[react-pdf]] —— 把"声明组件树 → PDF"做成 React 渲染器，另一种抽象层级
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

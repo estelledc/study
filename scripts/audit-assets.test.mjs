@@ -6,7 +6,7 @@ import test from 'node:test';
 
 import sharp from 'sharp';
 
-import { buildAssetReport } from './audit-assets.mjs';
+import { buildAssetReport, evaluateOrphanLifecycle } from './audit-assets.mjs';
 
 test('audits base-safe image URLs, alt text, targets, dimensions, and orphans', async (t) => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'study-assets-'));
@@ -46,4 +46,29 @@ test('audits base-safe image URLs, alt text, targets, dimensions, and orphans', 
   assert.equal(used.width, 2);
   assert.equal(used.height, 3);
   assert.equal(used.referenced_by.some((source) => source.includes('extra.mdx')), true);
+});
+
+test('requires explicit provenance for newly retained orphan assets', () => {
+  const commit = '7'.repeat(40);
+  const lifecycle = evaluateOrphanLifecycle(
+    ['public/legacy.webp', 'public/new.webp'],
+    ['public/legacy.webp'],
+    [{
+      path: 'public/new.webp',
+      reason: 'Reference was removed upstream; retain until a dedicated deletion review.',
+      source_commit: commit,
+      disposition: 'retain-pending-dedicated-deletion',
+    }],
+  );
+  assert.deepEqual(lifecycle.issues, []);
+  assert.deepEqual(lifecycle.allowedOrphans, ['public/new.webp']);
+  assert.deepEqual(lifecycle.newOrphans, []);
+
+  const stale = evaluateOrphanLifecycle([], [], [{
+    path: 'public/new.webp',
+    reason: 'Reference was removed upstream; retain until a dedicated deletion review.',
+    source_commit: commit,
+    disposition: 'retain-pending-dedicated-deletion',
+  }]);
+  assert.equal(stale.issues.some((issue) => issue.includes('stale or missing')), true);
 });

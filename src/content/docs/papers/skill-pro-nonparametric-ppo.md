@@ -1,6 +1,6 @@
 ---
 title: Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
-来源: 'Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO, arXiv:2602.01869, 2026'
+来源: 'Mi et al., "Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents", ICML 2026 (arXiv:2602.01869)'
 日期: 2026-06-01
 分类: agents
 难度: 高级
@@ -8,141 +8,140 @@ title: Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 
 ## 是什么
 
-Skill-Pro 是一套**不更新模型权重就能学到可复用过程性 skill** 的训练算法：定义一个 Skill-MDP，在文本梯度（语义梯度）上用 PPO 风格的目标函数训练一个"门控"，决定下次面对类似任务时是否用旧 skill。日常类比：教徒弟学手艺，传统 RL 是改徒弟脑子里的"反射"——徒弟整个人都被改造；Skill-Pro 不改徒弟，给他一个工具箱 + 一个挑工具的眼力——眼力通过反复练习变好，徒弟还是原来那个徒弟。
+Skill-Pro 是一套**不更新 LLM 权重、只改 skill 文本库**的训练框架：把交互经验写成可执行的过程性 skill，再用非参数 PPO 演化这个库。日常类比：教徒弟学手艺，传统 RL 是改徒弟脑子；Skill-Pro 不改徒弟，只改工具箱里的**菜谱卡片**——练完一轮根据翻车原因改菜谱，改完还要过一道"别改太猛"的验收，徒弟本人纹丝不动。
 
-旧路线分两路：（a）参数化 RL——直接 PPO/GRPO 更新 LLM 权重学策略，成本高且容易丢通用能力；（b）skill library（[[voyager]] 起步）——存 skill 但靠 prompt 检索决定用不用，没有显式优化。Skill-Pro 走第三条：**把"用哪条 skill"建模成 PPO 的 action**，在 skill 描述这个文本空间上算梯度，不动 LLM 权重就能学到稳定的 skill 选择策略。
+旧路线两路：（a）参数化 RL（PPO / GRPO）直接改 LLM 权重，贵且易丢通用能力；（b）外部记忆（轨迹 / 反思 / 图）靠检索再推理，存得多、复用差。Skill-Pro 走第三条：**学的是 skill 池 Ω，不是选 skill 的策略 μ**——μ 和 LLM 都冻结，学习只发生在"增删改 skill 文本"。
 
-核心三件：（1）Skill-MDP——用 skill 集合定义 state/action 空间；（2）语义梯度——用 LLM-judge 给两条候选 skill 打分，差值当 advantage；（3）PPO Gate——把 PPO 的 clipped surrogate objective 套在 skill 选择门上。
+核心三件：（1）Skill-MDP——skill 是「激活 / 执行 / 终止」三元组；（2）语义梯度——从轨迹事后归因写出自然语言修改建议；（3）PPO Gate——用 clipped surrogate 验收候选 skill，再加分数维护剪枝。
 
 ## 为什么重要
 
 不理解 Skill-Pro，下面这些事都没法解释：
 
-- 为什么 2026 年 agent 论文出现"非参数训练"分支——很多团队没卡训 LLM
-- 为什么"语义梯度"取代"数值梯度"是当前研究热点——文本可解释、不需可微环境
-- 为什么 skill 库光有不够、还得有"用 skill 的策略"——选错 skill 比没 skill 还差
-- 为什么 PPO 这种参数化算法的精神可以搬到非参数空间——核心是 trust region 不是权重更新
+- 为什么 2026 年 agent 论文出现"非参数训练"分支——很多团队没卡训 LLM，但仍想从经验里长能力
+- 为什么"存轨迹"不等于"会复用"——叙事记忆还要再推理，过程记忆是可执行程序
+- 为什么光靠 LLM 改写 skill 会翻车——语义梯度会幻觉，必须有 trust region 验收
+- 为什么 PPO 的精神能搬进文本空间——核心是小步更新 + 信任域，不是权重本身
 
 ## 核心要点
 
 Skill-Pro 拆成 **三步**：
 
-1. **Skill-MDP**：state 是当前任务描述 + 已用过的 skill 历史，action 是从 skill 库中挑 1 条（或选择"不用 skill"），reward 是任务完成度 + skill 调用代价。MDP 的 transition 由 LLM 模拟 + 真实环境结合。类比：把"挑工具"这个动作拎出来当独立的小游戏。
+1. **Skill-MDP + 三元组**：每条 skill = 激活条件 \(\mathcal{I}\)（何时用）+ 执行流程 \(\pi\)（怎么做）+ 终止条件 \(\beta\)（何时交还控制）。类比：一张菜谱写清"什么场合开做 / 步骤 / 何时收工"。决策时 μ 选 skill，冻结 LLM 按 \(\pi\) 吐原子动作，直到 \(\beta\) 成立。
 
-2. **语义梯度**：传统 RL 的 advantage 是数值差，Skill-Pro 用 LLM judge 比较"用 skill A vs 用 skill B"哪个更适合当前任务，给软分数差。这个差被当成 advantage 信号——它是文本到文本的梯度。
+2. **语义梯度**：对调用过某 skill 的轨迹做事后归因，产出自然语言修改建议 \(g=(\Delta\mathcal{I},\Delta\pi,\Delta\beta)\)，再跨 batch 聚合，得到候选 skill \(\omega'=\omega\oplus\bar{g}\)。类比：教练看回放，用中文写"激活条件太宽、第 2 步该先探信息"——这是文本空间的"梯度方向"。
 
-3. **PPO Gate**：PPO 的核心是 clipped surrogate—— "新策略和旧策略差太远就拉回来"。Skill-Pro 在 skill 选择门上套这个机制：用 ratio 控制选择分布漂移，避免一次更新就把某条 skill 用滥。门本身是几个参数（attention-style 权重），LLM 不动。
+3. **PPO Gate + 分数维护**：把冻结 LLM 当随机策略，在历史轨迹上算重要性比率与 advantage，用 clipped surrogate 给候选打分；只有 best-of-\(N_c\) 且分数 \(>0\) 才替换旧 skill。池容量有限时按在线 advantage 分数剪枝。类比：改菜谱可以，但试吃不过关就退回，分数长期为负的卡片扔掉。
 
-三件咬合：MDP 给问题、语义梯度给方向、PPO Gate 给稳定的优化算法。
-
-整套系统训练 LLM 周边的"门"，LLM 自身保持 frozen。这降低了在 8B / 70B 模型上做 agent 训练的门槛——不需要 8 张 H100 也能上手。
+三件咬合：MDP 给可执行单元、语义梯度给改写方向、PPO Gate 给稳定验收。
 
 ## 实践案例
 
-### 案例 1：选错 skill 比不用 skill 还差
+### 案例 1：一条 skill 长什么样
 
-任务："给老板写周报"。skill 库有 `format_email` `summarize_data` `translate_zh`。
+Mastermind 开局可用的 skill 文本（论文示例风格）：
 
-- 一个 naive 检索器看到"写"和"老板"匹配上 `translate_zh`（因为 translate 也用"写"）。
-- 走 translate_zh 出来的结果是把任务描述翻译成英文——完全错位。
+```text
+Name: StrategicPlanning
+I: 任务刚开始，还没有任何反馈
+π: 1) 按约束建假设空间  2) 选最能降不确定性的探索动作
+β: 第一次探索动作执行完且收到反馈后终止
+```
 
-Skill-Pro 训练后的门会：
+**逐部分解释**：
 
-- 看历史："这类任务上次用 summarize_data 成功了"
-- 语义梯度对 translate_zh 给负 advantage
-- 选 summarize_data，跑通
+- `I` 告诉选择器"什么状态该掏这张卡"
+- `π` 是可执行步骤，LLM 不用每次从零 CoT
+- `β` 防止 skill 霸占整局——做完就交还控制
 
-任务完成度由 reward 反馈，门权重更新，下次更准。
+### 案例 2：语义梯度怎么改 skill
 
-### 案例 2：避免训练崩塌的 PPO 拉回机制
+旧 skill 在多局里"激活太早、探索一步就停"。聚合后的语义梯度可能是：
 
-训练第 3 epoch 时门突然偏好 `format_email`——所有任务都先调它一下。
+```text
+ΔI: 收紧为「尚无颜色反馈」
+Δπ: 探索前先列出仍可能的密码集合
+Δβ: 至少收到一轮黑白钉反馈再终止
+```
 
-- 这是经典 RL 崩塌——某个 skill 偶然给了高 reward，门把它当万能解
-- PPO clipping 检查到新策略 vs 旧策略 ratio 超阈值
-- 拉回更新幅度，避免完全锁死在 format_email 上
-- 多轮迭代后门收敛到合理的多样选择
+**逐部分解释**：
 
-PPO 的 trust region 这套老机制在文本空间一样有效。
+1. 每条轨迹归因 → 局部 \(g_i\)
+2. LLM 聚合去冲突 → \(\bar{g}\)
+3. \(\omega'=\omega\oplus\bar{g}\) 生成候选（还没入库）
 
-### 案例 3：不用 skill 也是一个 action
+### 案例 3：PPO Gate 拦下幻觉改写
 
-任务："1+1 等于几"。skill 库里都是大型流程类 skill，对这种简单任务都过重。
+候选把执行流程改成"一次猜完整密码"。Gate 在历史轨迹上算：
 
-- Skill-Pro 的 action 空间含一个特殊 action："no-skill, direct response"
-- 训练后门学到："简单算术任务 → 不用 skill 直接回"
-- 节省 skill 调用 + 检索成本
+```text
+ρ_t = π_LLM(a_t | s_t, ω') / π_LLM(a_t | s_t, ω)
+L_CLIP = mean( min(ρÂ, clip(ρ, 1-ε, 1+ε)Â) )
+# 仅当 L_CLIP > 0 且为 best-of-N 才替换
+```
 
-这是 Skill-Pro 比纯 retrieve-then-use 路线灵活的地方——它学到的是"什么时候不用工具"。
+**逐部分解释**：
 
-论文报告在多个领域 benchmark 上 no-skill action 占比从 5% 学到 18%，对应整体调用成本下降约 1/4。
+- \(\rho\) 衡量"换 skill 后 LLM 还认不认原动作"
+- clipping 限制一次改动别太猛（trust region）
+- 论文消融：去掉 Gate 后池质量崩、训练不稳；Mastermind-v0 复用率可到约 0.93，整库约 800 token
 
 ## 踩过的坑
 
-1. **语义梯度 noisy**：LLM-judge 同一对 skill 给不同次打分会差 0.5+，要 voting 多次才稳，预算翻倍。
-2. **MDP 状态爆炸**：完整对话历史 + skill 调用历史塞进 state 维度太高，要做 summarization 压缩，但压缩损失影响策略学习。
-3. **PPO Gate 参数初始化要小**：起点偏好任何 skill 都会让训练偏向那条，建议用均匀分布或基于检索分数初始化。
-4. **不用 skill 这个 action 容易被遗忘**：如果训练数据里都是"用 skill 成功的"，门会学到"任何任务都用 skill"，要刻意采样简单任务保持 no-skill 出现频率。
-
-no-skill 这个 action 同时也是 skill 库自然的"压力测试"——如果它频繁被选，说明库里当前 skill 都不够好。
+1. **语义梯度会幻觉**：LLM 事后归因可能写出轨迹里没见过的步骤，必须过 PPO Gate，不能生成完就入库。
+2. **去掉分数维护改 FIFO**：高分 skill 会被新来者挤掉，在线分数变负，长期收益塌掉。
+3. **把 μ 也拿去训**：论文明确冻结选择策略；你若同时训检索器，就不再是原文设定，对比会失真。
+4. **池太大当叙事库用**：skill 要短、可执行；写成小作文会重新变成高 token、低复用的 episodic 记忆。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 已有规模化 skill 库（50+ 条）但调用决策成 bottleneck
-- 没有训 LLM 的算力，但有训小模型的算力
-- 任务多样、检索 baseline 已经摸到天花板
-- LLM judge 可信（任务领域 LLM 评估能力强）
+- 有可交互环境与回报（ALFWorld / 猜码 / 工具循环），能攒轨迹 batch
+- 想把经验压成可执行程序，而不是越存越长的轨迹库
+- 没预算微调 LLM，但能付 LLM-as-judge / 概率估计的推理成本
+- 需要跨模型复用同一套自然语言 skill（论文有 cross-agent 迁移）
 
 **不适用**：
 
-- skill 库小（< 20 条）——直接全塞 prompt 让 LLM 选更省
-- 任务领域 LLM-judge 不准（金融风控、医学）——语义梯度会把训练带偏
-- 任务奖励信号难定义（开放创作）——Skill-MDP 没法 well-defined
-- 需要在线低延迟决策——PPO Gate 推理时多了一层
+- 开放创作、奖励难定义——Skill-MDP 的 \(R\) 不好定
+- 任务几乎不重复——过程记忆摊销不回来
+- 基座 LLM 弱到归因/概率估计不可靠——语义梯度与 Gate 都封顶
+- 只要一次性 prompt 工程、没有在线交互闭环——用不上演化算子 \(\mathcal{E}\)
 
 ## 历史小故事（可跳过）
 
-- **2017**：PPO 论文发布，trust region + clipped objective 成为 RL 训练默认选择
-- **2023**：[[voyager]] 把 skill 当存储；选 skill 用 retrieval，没有显式优化
-- **2024**：DPO/IPO 等 preference-based RL 兴起，"不动权重也能优化"的思路逐步成熟
-- **2025**：TextGrad 把"对文本算梯度"工程化；non-parametric RL 路线开始有人做
-- **2026 年初**：Skill-Pro 把 PPO 思想搬到 non-parametric skill 选择上——是这条路线的代表
-- **同期**：[[mind-skill]] / [[skill-as-pseudocode]] 在 skill 表示和质量上做工作
-
-PPO 思想越过参数边界进入文本空间，是当下 RL 研究最反直觉的延伸之一。
-
-可以预见后续会出现更多"non-parametric + 经典 RL 算法"的组合——A3C / SAC 等都有可能被搬过来。
+- **2017**：[[ppo]] 提出 clipped surrogate，trust region 成为深度 RL 默认件
+- **2023**：[[voyager]] 把 skill 当可成长程序库；选择仍偏检索，缺稳定演化验收
+- **2023**：[[dpo]] 用偏好直接更新权重——仍是参数化路线，和"冻住 LLM"不同
+- **2024**：TextGrad 把"对文本算梯度"工程化；Skill-Pro 把它接到序列决策的事后归因
+- **2026**：Skill-Pro（ICML Spotlight）把 PPO 精神搬到 skill 文本演化——语义梯度提案 + PPO Gate 验收
 
 ## 学到什么
 
-1. **不动 LLM 权重也能学策略**：核心是把"选 skill"这个小动作拎出来训练
-2. **语义梯度需要稳定化**：单次 judge 不可靠，要多次投票或多 judge 集成
-3. **PPO 的 trust region 思想可移植**：clipping 机制不依赖参数空间是数值的
-4. **不用 skill 也是 action**：让 agent 学会克制比让它学会调用更难也更值
-5. **skill-MDP 这个抽象本身也是贡献**：把 skill 选择正式化为 MDP 后续工作可以接着做
-6. **训练成本和推理成本都要算**：训练省了 GPU，但每次推理都要跑门 + judge，整体收支看任务量级
+1. **不动权重也能学**：学的是 Ω 里的程序文本，不是 θ
+2. **可执行 > 可检索**：Activation/Execution/Termination 把叙事变成程序
+3. **提案与验收要拆开**：语义梯度负责想，PPO Gate 负责拦
+4. **维护压力不可少**：分数剪枝让池保持小而尖（约百 token 级密度）
 
 ## 延伸阅读
 
-- 论文原文：[arXiv 2602.01869](https://arxiv.org/abs/2602.01869)
-- PPO 原始论文：[Schulman et al. 2017](https://arxiv.org/abs/1707.06347)
-- TextGrad：[arXiv 2406.07496](https://arxiv.org/abs/2406.07496)
-- [[voyager]] —— skill 库奠基；Skill-Pro 在它上加显式优化
-- [[mind-skill]] —— 同期 skill 质量工作；与 Skill-Pro 互补
+- 论文：[arXiv:2602.01869](https://arxiv.org/abs/2602.01869)（ICML 2026 Spotlight）
+- 代码：[Miracle1207/Skill-Pro](https://github.com/Miracle1207/Skill-Pro)
+- PPO 原文：[Schulman et al. 2017](https://arxiv.org/abs/1707.06347)
+- TextGrad：[arXiv:2406.07496](https://arxiv.org/abs/2406.07496)
+- [[voyager]] —— skill 库奠基；Skill-Pro 补"如何可靠演化"
+- [[ppo]] —— clipped surrogate / trust region 的参数化原版
 
 ## 关联
 
-- [[voyager]] —— skill 库奠基；Skill-Pro 优化它的"选 skill"环节
-- [[mind-skill]] —— 同期工作；优化 skill 内容质量
-- [[skill-as-pseudocode]] —— 同期工作；优化 skill 表示形式
-- [[effiskill]] —— 同期工作；代码效率场景
-- [[ppo-2017]] —— Skill-Pro 算法思想直接来源
-- [[textgrad]] —— 语义梯度的基础设施
-- [[react]] —— agent 标准循环；Skill-Pro 在 think 阶段插入选择门
-- [[dpo-2023]] —— preference-based RL；与 Skill-Pro 共享"不动权重"思想
-- [[skill-sd-self-distillation]] —— 同期 skill 自蒸馏；走的是改 LLM 权重那条路
+- [[voyager]] —— 开放世界 skill 库；Skill-Pro 强调非参数 PPO 验收
+- [[mind-skill]] —— 同期抽 skill 并控质量；互补于演化验收
+- [[skill-as-pseudocode]] —— 把笔记本写成可校验伪代码
+- [[effiskill]] —— 代码效率场景的两层 skill 库
+- [[ppo]] —— 非参数 PPO 的算法思想来源
+- [[react-agent]] —— 推理-行动循环；Skill-Pro 在其上插入可复用程序单元
+- [[skill-sd-self-distillation]] —— 用抽出的 skill 当 teacher；走改权重蒸馏
 
 ## 反向链接
 
@@ -151,9 +150,7 @@ PPO 思想越过参数边界进入文本空间，是当下 RL 研究最反直觉
 - [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
-- [[react]] —— React UI 组件库
 - [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
-

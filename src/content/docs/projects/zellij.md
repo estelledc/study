@@ -27,7 +27,7 @@ Zellij 是一个 **terminal multiplexer**（终端多路复用器），和 tmux 
 - 本地写代码不停 `Cmd+T` 开新终端，鼠标点来点去
 - 想给同事看一段 log 只能截图
 
-tmux 30 多年生态扎实，但有学习门槛——必须读 `man tmux`、改 `.tmux.conf`、装 tpm 插件管理器。Zellij 把"开箱体验"作为头等公民：
+tmux 自 2007 年起近 20 年生态扎实，但有学习门槛——必须读 `man tmux`、改 `.tmux.conf`、装 tpm 插件管理器。Zellij 把"开箱体验"作为头等公民：
 
 - 第一次启动就能用，底部提示栏教你怎么操作
 - 配置文件用 KDL 语法（一种现代化的层级配置格式）
@@ -59,13 +59,13 @@ brew install zellij     # 或 cargo install zellij
 zellij                  # 直接进
 ```
 
-底部提示栏长这样：
+底部提示栏会列出模式入口（默认大致是）：
 
 ```
-Ctrl + <g> LOCK  <p> PANE  <t> TAB  <s> SESSION  <h> MOVE  <o> OPTIONS
+Ctrl + <g> LOCK  <p> PANE  <t> TAB  <s> SCROLL  <o> SESSION  …
 ```
 
-不用背——按 `Ctrl-p` 进 pane 模式，里面会再弹一层提示告诉你怎么分屏。
+不用背——按 `Ctrl-p` 进 pane 模式，里面会再弹一层提示告诉你怎么分屏；`Ctrl-o` 进 session 模式（detach 在这里）。
 
 ### 案例 2：远程跑训练不怕断网
 
@@ -73,7 +73,7 @@ Ctrl + <g> LOCK  <p> PANE  <t> TAB  <s> SESSION  <h> MOVE  <o> OPTIONS
 ssh you@remote-gpu-box
 zellij --session train
 python train.py        # 跑起来
-# 按 Ctrl-o 然后按 d —— detach
+# 按 Ctrl-o（进 Session）再按 d —— detach
 exit                   # 关 SSH
 ```
 
@@ -103,7 +103,7 @@ layout {
 }
 ```
 
-启动：`zellij --layout dev`——nvim、cargo watch、tail 一次拉起来，分屏布局自动还原。
+**逐部分解释**：`tab` 是标签页；`pane command=...` 启动时跑的命令；`args` 是命令参数；`split_direction="vertical"` 表示左右分屏；空 `pane` 是留给你敲命令的空白终端。启动：`zellij --layout dev`。
 
 ## 配置文件
 
@@ -135,7 +135,7 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 
 4. **KDL 学习成本**：和 YAML/TOML 都不一样，第一次配会找文档。但学完之后比 tmux 的 DSL 好读
 
-5. **资源占用**：daemon 进程内存比 tmux 高一些（Rust + wasm runtime），老机器上能感觉到
+5. **资源占用**：daemon + wasm runtime 常比 tmux 多占几十 MB 内存，老机器或内存紧张时更明显
 
 ## 适用 vs 不适用场景
 
@@ -150,12 +150,12 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 
 - 老服务器只能装 apt 包但 Zellij 没进发行版默认仓库
 - 已经把 tmux 配置打磨多年，迁移成本高
-- 极简主义者——想要 5MB 二进制 + 零依赖（tmux 更适合）
+- 极简主义者——想要更小二进制 + 更低常驻内存（tmux 更适合）
 - 需要 GUI 拖拽分屏——终端模拟器（WezTerm / Kitty）更顺手
 
 ## 替代品对比
 
-- **tmux**：30 年老牌，生态最大，配置门槛也最高。远程长任务首选
+- **tmux**：近 20 年老牌，生态最大，配置门槛也最高。远程长任务首选
 - **GNU screen**：1987 年起，仍能用。语法老、社区萎缩
 - **WezTerm / Kitty**：终端模拟器内置 multiplex，但**不能 detach**——关了就没
 - **dvtm + abduco**：极简风格，分别处理 multiplex 和 detach
@@ -164,8 +164,8 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 
 ## 学到什么
 
-1. **开箱即用 vs 极致可定制**是工具设计的两条路。tmux 选了第二条 30 年，Zellij 在第一条上挑战它
-2. **WebAssembly 当插件运行时**是新趋势——沙箱安全、跨语言、可分发。除了 Zellij，Figma 插件、Envoy、Istio 都在用
+1. **开箱即用 vs 极致可定制**是工具设计的两条路。tmux 选了第二条近 20 年，Zellij 在第一条上挑战它
+2. **WebAssembly 当插件运行时**是新趋势——沙箱安全、跨语言、可分发。Zellij 是较早把 wasm 插件做成卖点的 multiplexer 之一
 3. **底部提示栏**是降低学习曲线的小但关键的设计——把"必须背"变成"看着抄"
 4. **配置即代码**：KDL 布局文件让"我每天的工作环境"变成可版本控制的文本
 
@@ -173,9 +173,9 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 
 - **2020 年**：Aram Drevekenin（GitHub 用户名 imsnif）启动 Zellij 项目，最初叫 `mosaic`
 - **2021 年**：改名 Zellij（摩洛哥传统几何拼贴艺术），表达"把屏幕拼成图案"的意象
-- **2022 年**：v0.20 引入 wasm 插件系统，成为第一个用 WebAssembly 当插件运行时的 multiplexer
+- **2022 年**：v0.20 引入 wasm 插件系统，把 WebAssembly 做成 multiplexer 插件卖点之一
 - **2023-2026**：陆续加入 floating pane、stacked pane、web-client、multiplayer 模式
-- **现在**：33k+ GitHub star，v0.44 还没到 1.0，但日常使用已稳定
+- **现在**：34k+ GitHub star，v0.44 还没到 1.0，但日常使用已稳定
 
 ## 延伸阅读
 
@@ -183,7 +183,7 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 - 官网：[zellij.dev](https://zellij.dev/)（带交互式 demo）
 - 插件开发指南：[Plugin SDK](https://zellij.dev/documentation/plugins.html)
 - KDL 语法：[kdl.dev](https://kdl.dev/)
-- [[tmux]] —— Zellij 的对照组，30 年老牌
+- [[tmux]] —— Zellij 的对照组，近 20 年老牌
 - [[nushell]] —— 同样用 Rust 重写老工具的代表
 
 ## 关联
@@ -191,3 +191,9 @@ KDL 语法：层级用大括号，属性用空格分隔，注释用 `//`。比 Y
 - [[tmux]] —— 同类工具，对照学习能很快理解 multiplex 概念
 - [[nushell]] —— Rust 重写老工具的另一个例子（shell 那边）
 - [[wasmtime]] —— Zellij 插件用的 wasm runtime
+- [[wezterm]] —— 终端模拟器内置分屏，但不能像 Zellij 那样 detach
+- [[kitty]] —— 另一款带 multiplex 能力的 GPU 终端
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

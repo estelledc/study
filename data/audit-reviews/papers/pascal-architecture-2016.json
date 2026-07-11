@@ -1,0 +1,100 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "硅片规格一行较密，但 HBM2/NVLink/FP16 packed 的工厂类比与 2.5D/all-reduce/AMP 桥接已够零基础跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "HBM2 带宽白皮书/博客常见 720 与 datasheet 732 并存，笔记取 720 可接受；DGX-1 hybrid cube mesh 与 PCIe 单向/双向对照已正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "half2/__hfma2 三步可跟做；踩坑（PCIe 无 NVLink、CC 6.0 vs 6.1、消费卡 FP16 1/64）具体；适用窗口 2016-2018 已量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "硅片规格一行较密，但 HBM2/NVLink/FP16 packed 的工厂类比与 2.5D/all-reduce/AMP 桥接已够零基础跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "HBM2 带宽白皮书/博客常见 720 与 datasheet 732 并存，笔记取 720 可接受；DGX-1 hybrid cube mesh 与 PCIe 单向/双向对照已正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "half2/__hfma2 三步可跟做；踩坑（PCIe 无 NVLink、CC 6.0 vs 6.1、消费卡 FP16 1/64）具体；适用窗口 2016-2018 已量化"
+      ]
+    }
+  ],
+  "slug": "pascal-architecture-2016",
+  "area": "papers",
+  "status": "passed",
+  "lines": 169,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

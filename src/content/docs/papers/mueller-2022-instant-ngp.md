@@ -63,36 +63,39 @@ MLP 只有 2-3 层、64 维宽。这种**超小 MLP** 在普通框架（PyTorch 
 
 ## 实践案例
 
-### 案例 1：训一个真实场景到底要多快
+### 案例 1：官方仓库跑一个 NeRF 场景（有 NVIDIA GPU）
 
-论文给的对比（同一个场景、同一张 RTX 3090）：
+```bash
+git clone --recursive https://github.com/NVlabs/instant-ngp
+cd instant-ngp && cmake . -B build && cmake --build build --config RelWithDebInfo -j
+./build/instant-ngp data/nerf/fox   # 自带 fox 场景；GUI 里几秒见形状
+```
 
-| 方法 | 训练时间 | 收敛后 PSNR |
-|------|---------|------------|
-| NeRF 原版 | 约 5 小时 | 31.0 |
-| mip-NeRF | 约 7 小时 | 33.1 |
-| **Instant-NGP** | **5 秒可见 / 5 分钟收敛** | **33.2** |
-
-5 秒能看出形状，5 分钟达到甚至超过原版几小时的质量。
+**逐步解释**：① 递归克隆带上 `tiny-cuda-nn` 子模块；② CMake 编出带 GUI 的二进制；③ 指向已标定好的 NeRF 数据集目录。论文量级：同卡上约 **5 秒可见形状，1–5 分钟逼近原版 NeRF 数小时质量**（按场景略有出入）。
 
 ### 案例 2：换数据就能跑别的任务
 
-一份代码不改架构，换输入：
+同一套哈希编码 + 小 MLP，只换输入输出：
 
-- **NeRF**：输入 (x, y, z, 视角)，输出颜色 + 密度
-- **千兆像素图像**：输入 (x, y)，输出 RGB——拟合一张 100 亿像素的图
-- **SDF**：输入 (x, y, z)，输出到表面的距离——3D 形状重建
-- **神经体渲染**：输入 (x, y, z, t)，输出体积颜色——动态烟雾/云
+- **NeRF**：`(x,y,z,视角) → 颜色+密度`
+- **千兆像素图**：`(x,y) → RGB`
+- **SDF**：`(x,y,z) → 到表面的距离`
+- **神经体**：`(x,y,z,t) → 体积颜色`
 
-哈希编码 + 小 MLP 这一套对所有这些任务都好使。
+### 案例 3：哈希查询伪代码（理解“卡片盒”怎么查）
 
-### 案例 3：为什么 PyTorch 复刻不出原版速度
+```python
+def hash_encode(x, y, z, tables, L=16):
+    feats = []
+    for level in range(L):
+        # 1) 落在哪个体素 → 8 个角的整数坐标
+        corners = voxel_corners(x, y, z, resolution[level])
+        # 2) 空间哈希进表；3) 取出 2 维特征做三线性插值
+        feats.append(trilinear([tables[level][spatial_hash(c)] for c in corners], weights))
+    return concat(feats)  # L*2 维，默认 32 维，再喂小 MLP
+```
 
-很多人抄了哈希编码但用 PyTorch 写 MLP，发现还是慢 5-10 倍。原因就是 **tiny-cuda-nn 的全融合**：
-
-- PyTorch 每层 `linear + activation` 是两个 kernel，中间要写回显存
-- 64 维宽的 MLP，一次前向 < 1 微秒，**显存读写时间反而是瓶颈**
-- tiny-cuda-nn 把整个 MLP 编译成一个 kernel，权重在寄存器，输入直接流过
+**为什么 PyTorch 复刻常慢 5–10×**：64 维宽的超小 MLP 在普通框架里每层进出显存；`tiny-cuda-nn` 把整网融成一个 CUDA kernel，权重留在寄存器。
 
 ## 踩过的坑
 

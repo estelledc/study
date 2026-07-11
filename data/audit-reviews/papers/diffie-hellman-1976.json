@@ -1,0 +1,116 @@
+{
+  "slug": "diffie-hellman-1976",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "开口盒子类比讲的是「公钥加密」，和紧接着的 DH 协商略有跳步；可加半句说明论文同时提出了框架与 DH 实例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「这篇 22 页论文」把 IEEE TIT vol.22 误当成页数；原文是 IEEE TIT vol.22 no.6 (1976) pp.644–654，约 11 页。延伸阅读里的「22 页」一并改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开口盒子类比是公钥加密直觉，不宜让读者以为那就是 DH 本身；应标明 DH 是论文给出的第一个可行密钥协商实例，盒子类比对应论文提出的公钥框架"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Python cryptography 示例概念正确；可注明 generate_parameters 在真实部署里通常用命名曲线/固定组，而不是每次现场生成"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开口盒子类比讲的是「公钥加密」，和紧接着的 DH 协商略有跳步；可加半句说明论文同时提出了框架与 DH 实例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「这篇 22 页论文」把 IEEE TIT vol.22 误当成页数；原文是 IEEE TIT vol.22 no.6 (1976) pp.644–654，约 11 页。延伸阅读里的「22 页」一并改正",
+        "开口盒子类比是公钥加密直觉，不宜让读者以为那就是 DH 本身；应标明 DH 是论文给出的第一个可行密钥协商实例，盒子类比对应论文提出的公钥框架"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Python cryptography 示例概念正确；可注明 generate_parameters 在真实部署里通常用命名曲线/固定组，而不是每次现场生成"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 161,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正「22 页」实为 IEEE TIT vol.22（约 11 页）；区分公钥框架类比与 DH 实例；补反向链接",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 延伸阅读",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

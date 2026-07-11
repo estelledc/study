@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小开发团队换帽子 / 教练车副刹 / 工位规范贴条，把 mode、权限、配置讲得很贴"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有逐部分解释，slash command / custom mode / MCP 对零基础可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2026-05-15 归档、原扩展停运、来自 Cline、文档站与仓库链接均可核对，事实扎实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「两万多 star」与当前约 24k 一致；2025 功能时间线略粗，但不构成歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例是官方形态的配置/命令文件，概念正确可跟做；非可执行脚本属产品笔记合理范围"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体（归档、权限过宽、auto-approve、MCP 占上下文）；适用/不适用把「学习设计 vs 生产依赖」边界写清"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "小开发团队换帽子 / 教练车副刹 / 工位规范贴条，把 mode、权限、配置讲得很贴",
+        "三个案例都有逐部分解释，slash command / custom mode / MCP 对零基础可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "2026-05-15 归档、原扩展停运、来自 Cline、文档站与仓库链接均可核对，事实扎实",
+        "「两万多 star」与当前约 24k 一致；2025 功能时间线略粗，但不构成歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例是官方形态的配置/命令文件，概念正确可跟做；非可执行脚本属产品笔记合理范围",
+        "踩坑具体（归档、权限过宽、auto-approve、MCP 占上下文）；适用/不适用把「学习设计 vs 生产依赖」边界写清"
+      ]
+    }
+  ]
+}

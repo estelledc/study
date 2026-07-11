@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "奶茶排队类比把一连接一请求 / 持久连接 / pipelining 讲清楚，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "slow start、cwnd、T/TCP 首次出现可再补半句白话；账单表对入门读者略密"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 时间账逐步可跟；案例 3 DevTools 可观察，但缺可复制的最小命令/代码"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "实验装置写「客户端 Stanford」错误：Padmanabhan 当时在 UC Berkeley；论文实测是 Mosaic+NCSA httpd 在 DECstation 上，local Ethernet 与跨美 T1（约 70ms RTT）对照，并非 Stanford→DEC WRL"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "本文实测对照是旧 HTTP / 长连接 / 长连接+pipelining，并未把 T/TCP 放进同一套秒表实验；T/TCP 讨论主要在姊妹篇 Mogul WRL-95-4，不宜写成「三种方案一起跑」的实测结论"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源题名/作者/Computer Networks 1995 与 WWW 1994 早期版基本正确；「延迟砍 2 倍以上」与文中 remote 小图「more than half」一致，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑写局域网「几乎看不出差距」过满：原文 local 仍有显著改善，无 pipelining 的长连接约仅 5–15%"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则案例都是心算/观察，缺可跟做的最小代码（如 curl -v 看 Connection / 或 Python Session 对比串行请求）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里队头阻塞、T/TCP 安全、HTTPS 叠握手具体有用；局域网收益表述需按原文改弱"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用多小对象+高 RTT、不适用大文件/局域网边界清楚，可再点明「约 70ms 广域 RTT」量级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "奶茶排队类比把一连接一请求 / 持久连接 / pipelining 讲清楚，零基础直觉强",
+        "slow start、cwnd、T/TCP 首次出现可再补半句白话；账单表对入门读者略密",
+        "案例 1 时间账逐步可跟；案例 3 DevTools 可观察，但缺可复制的最小命令/代码"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "实验装置写「客户端 Stanford」错误：Padmanabhan 当时在 UC Berkeley；论文实测是 Mosaic+NCSA httpd 在 DECstation 上，local Ethernet 与跨美 T1（约 70ms RTT）对照，并非 Stanford→DEC WRL",
+        "本文实测对照是旧 HTTP / 长连接 / 长连接+pipelining，并未把 T/TCP 放进同一套秒表实验；T/TCP 讨论主要在姊妹篇 Mogul WRL-95-4，不宜写成「三种方案一起跑」的实测结论",
+        "来源题名/作者/Computer Networks 1995 与 WWW 1994 早期版基本正确；「延迟砍 2 倍以上」与文中 remote 小图「more than half」一致，可保留",
+        "踩坑写局域网「几乎看不出差距」过满：原文 local 仍有显著改善，无 pipelining 的长连接约仅 5–15%"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三则案例都是心算/观察，缺可跟做的最小代码（如 curl -v 看 Connection / 或 Python Session 对比串行请求）",
+        "踩坑里队头阻塞、T/TCP 安全、HTTPS 叠握手具体有用；局域网收益表述需按原文改弱",
+        "适用多小对象+高 RTT、不适用大文件/局域网边界清楚，可再点明「约 70ms 广域 RTT」量级"
+      ]
+    }
+  ]
+}

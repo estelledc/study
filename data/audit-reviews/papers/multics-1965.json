@@ -1,0 +1,136 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "烘干机 vs 墙上插座类比把「批处理排队」和「持续在线 utility」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "段/页、ring、动态链接、mmap 有桥接，零基础大体能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 mmap 缺逐部分解释；案例 2–4 偏叙事，建议给 mmap 补步骤说明并让至少再一个案例带可跟读结构"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Corbató & Vyssotsky AFIPS FJCC 1965 正确；1964 启动、1969 上线、Bell Labs 退出与 Unix 反讽命名时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "8 ring、段+页、single-level store、动态链接与 MULTICS 设计叙述一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "K8s ResourceQuota /「现代 OS 词汇表源头」是教学类推，可接受但宜保持为思想对照而非字面继承"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mmap 片段概念正确但过短，缺 fd/size/失败路径与「文件即段」对照的逐步说明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑有用：失败叙事偏差、段页混淆、ring 硬件强制、24/7 模块化动机"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用学 OS/云配额思想 vs 抄代码/嵌入式边界清楚；缺 ## 反向链接占位"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "烘干机 vs 墙上插座类比把「批处理排队」和「持续在线 utility」讲透",
+        "段/页、ring、动态链接、mmap 有桥接，零基础大体能跟",
+        "案例 1 mmap 缺逐部分解释；案例 2–4 偏叙事，建议给 mmap 补步骤说明并让至少再一个案例带可跟读结构"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Corbató & Vyssotsky AFIPS FJCC 1965 正确；1964 启动、1969 上线、Bell Labs 退出与 Unix 反讽命名时间线合理",
+        "8 ring、段+页、single-level store、动态链接与 MULTICS 设计叙述一致",
+        "K8s ResourceQuota /「现代 OS 词汇表源头」是教学类推，可接受但宜保持为思想对照而非字面继承"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "mmap 片段概念正确但过短，缺 fd/size/失败路径与「文件即段」对照的逐步说明",
+        "踩坑有用：失败叙事偏差、段页混淆、ring 硬件强制、24/7 模块化动机",
+        "适用学 OS/云配额思想 vs 抄代码/嵌入式边界清楚；缺 ## 反向链接占位"
+      ]
+    }
+  ],
+  "slug": "multics-1965",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "action": "refine",
+    "average": 4,
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "pass_count": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156
+  },
+  "lines": 156,
+  "l1_pass": true,
+  "refinement": {
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

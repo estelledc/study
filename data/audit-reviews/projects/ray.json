@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "人才中介所类比贯穿 task/actor，取货单号桥接 ObjectRef，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "GCS / Raylet / placement group / Plasma 均有白话；核心要点后半仍偏密但可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有①②③分步；案例 2 parameter server 流程清楚，案例 3 ASHA 早停有白话"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "OSDI 2018 Moritz 等论文、docs.ray.io 来源与 Anyscale 2019 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ray 1.0 写为 2020-09-30 Ray Summit 宣布，与公开叙述一致；对象存储注明曾称 Plasma"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "OpenAI/Uber/Pinterest 等表述已弱化为公开采用规模化 Python 计算，未写成『训 GPT』绝对化；2024–2025 能力点属软概括可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 写 tune.schedulers.ASHAScheduler：from ray import tune 后通常没有 schedulers 属性，应改为 from ray.tune.schedulers import ASHAScheduler 再传入"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 注明沿用文首 ray.init 可接受；案例 2 compute_grad stub 足够跟做概念"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作（串行 get、对象存储 70%、actor 非 DB）；适用/不适用边界清楚，单机秒级开销有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "人才中介所类比贯穿 task/actor，取货单号桥接 ObjectRef，零基础直觉强",
+        "GCS / Raylet / placement group / Plasma 均有白话；核心要点后半仍偏密但可跟",
+        "三案例都有①②③分步；案例 2 parameter server 流程清楚，案例 3 ASHA 早停有白话"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "OSDI 2018 Moritz 等论文、docs.ray.io 来源与 Anyscale 2019 时间线合理",
+        "Ray 1.0 写为 2020-09-30 Ray Summit 宣布，与公开叙述一致；对象存储注明曾称 Plasma",
+        "OpenAI/Uber/Pinterest 等表述已弱化为公开采用规模化 Python 计算，未写成『训 GPT』绝对化；2024–2025 能力点属软概括可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写 tune.schedulers.ASHAScheduler：from ray import tune 后通常没有 schedulers 属性，应改为 from ray.tune.schedulers import ASHAScheduler 再传入",
+        "案例 1 注明沿用文首 ray.init 可接受；案例 2 compute_grad stub 足够跟做概念",
+        "踩坑具体可操作（串行 get、对象存储 70%、actor 非 DB）；适用/不适用边界清楚，单机秒级开销有量化"
+      ]
+    }
+  ]
+}

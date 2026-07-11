@@ -79,7 +79,7 @@ services:
   soketi-3: { image: soketi/soketi, environment: { ADAPTER_DRIVER: redis, REDIS_HOST: redis } }
 ```
 
-前面再挂一台 [[nginx]] 做 sticky session（同一客户端粘到同一节点，避免 reconnect 风暴），就能稳跑 10 万连接级。
+跨节点广播靠 Redis，不配 sticky 也能把消息送到别的节点上的客户端。前面再挂 [[nginx]] sticky，主要是把同一连接粘在同一节点，减轻 presence/本地状态错乱和 reconnect 风暴——两者分工不同，合起来更稳，可冲 10 万连接级。
 
 ### 案例 3：本地开发省掉 Pusher 测试账号
 
@@ -122,8 +122,8 @@ npx @soketi/soketi start
 
 - **2018 年**：Alex Renoki 在 Laravel 圈做 `laravel-websockets`——纯 PHP 实现 Pusher 协议，省下 Pusher.com 月费。
 - **2021 年**：纯 PHP 性能撞墙（千连接级就吃力），Alex 启动 Soketi 项目，用 Node + uWebSockets.js 重写。
-- **2022 年**：Soketi 加入 PHP Foundation，成为官方推荐的 Laravel Echo 后端。GitHub star 突破 5k。
-- **2024 年**：核心代码进入维护模式，issue / PR 节奏放缓但仍可用——典型的"够用就停"开源项目轨迹。
+- **2022 年前后**：Laravel 文档将其列为可自托管的 Echo / Pusher 兼容后端，并协助完善文档；GitHub star 突破 5k。
+- **2024 年**：发布节奏明显放缓（末次正式版约 2024-03），issue / PR 变少但仍可自托管使用——典型的"够用就停"开源轨迹。
 
 ## 学到什么
 

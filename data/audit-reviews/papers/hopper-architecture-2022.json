@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "乐高规格/小助理/传送带/工头类比贴合 Ampere→Hopper 升级；FP8/TMA/Cluster 有桥接。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇硅片参数堆叠偏密，零基础可先抓五件能力再扫规格表。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇称 ChatGPT/GPT-4/Claude/LLaMA-2 训练事实硬件就是 H100，与后文『ChatGPT 仍以 A100 为主』矛盾；应改为 2023+ 训练/推理主力或分模型表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『五件改写假设的事』后枚举了 Tensor Core+FP8、TE、TMA、Cluster、DPX 等超过五件，计数与列表对齐。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "白皮书来源/2022 年份正确；FP8 E4M3/E5M2、TMA、Thread Block Cluster、NVLink 4.0 900 GB/s、PCIe NVL 600 GB/s 与公开规格一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "te.Linear/fp8_autocast、TMA descriptor、cluster.map_shared_rank 教学可跟读；非完整可编译工程属预期。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "FP8 不能裸 cast、TMA 仅 sm_90+、Cluster 同 GPC、PCIe vs SXM5 NVLink、Switch≠DGX 踩坑具体可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界含 FP4/Blackwell、H200 显存、消费光追、L4/L40S 经济推理，量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "乐高规格/小助理/传送带/工头类比贴合 Ampere→Hopper 升级；FP8/TMA/Cluster 有桥接。",
+        "开篇硅片参数堆叠偏密，零基础可先抓五件能力再扫规格表。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇称 ChatGPT/GPT-4/Claude/LLaMA-2 训练事实硬件就是 H100，与后文『ChatGPT 仍以 A100 为主』矛盾；应改为 2023+ 训练/推理主力或分模型表述。",
+        "『五件改写假设的事』后枚举了 Tensor Core+FP8、TE、TMA、Cluster、DPX 等超过五件，计数与列表对齐。",
+        "白皮书来源/2022 年份正确；FP8 E4M3/E5M2、TMA、Thread Block Cluster、NVLink 4.0 900 GB/s、PCIe NVL 600 GB/s 与公开规格一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "te.Linear/fp8_autocast、TMA descriptor、cluster.map_shared_rank 教学可跟读；非完整可编译工程属预期。",
+        "FP8 不能裸 cast、TMA 仅 sm_90+、Cluster 同 GPC、PCIe vs SXM5 NVLink、Switch≠DGX 踩坑具体可操作。",
+        "适用边界含 FP4/Blackwell、H200 显存、消费光追、L4/L40S 经济推理，量化清楚。"
+      ]
+    }
+  ]
+}

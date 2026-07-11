@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里「拉直成 768 维」与案例 1 的「投影到 D=768」对零基础读者容易混成一步，可各加半句区分 flatten 与 Linear"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「所有模态共用 Transformer / 架构大一统」略偏绝对；教学可接受，若收紧可改为「主流多模态骨干」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例多为伪代码/表格，概念正确可跟做；若补一小段可跑的 patch embed 伪代码会更稳"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点里「拉直成 768 维」与案例 1 的「投影到 D=768」对零基础读者容易混成一步，可各加半句区分 flatten 与 Linear"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "「所有模态共用 Transformer / 架构大一统」略偏绝对；教学可接受，若收紧可改为「主流多模态骨干」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例多为伪代码/表格，概念正确可跟做；若补一小段可跑的 patch embed 伪代码会更稳"
+      ]
+    }
+  ]
+}

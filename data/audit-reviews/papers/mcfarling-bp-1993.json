@@ -1,0 +1,114 @@
+{
+  "slug": "mcfarling-bp-1993",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "赌马庄家/裁判类比贯穿全文，BHR/PHT/别名有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点偏硬件细节，但案例 1 的 for+if 能把直觉钉住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 把 TN-36 仿真里的 96.5% 直接写成 21264 在 SPEC95 上的准确率：硅片公开口径更接近约 95% / SPECint95 约 7–10 mispredicts/1k insn，应分开表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "21264 锦标赛一侧是 local-history 两级表而非纯 bimodal；可注明「沿用 McFarling 元选择思想，具体对手预测器有工程变形」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "C 案例与 XOR 索引伪代码概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "别名稀释/冷启动/Spectre 等坑具体；适用边界（顺序核/GPU SIMT）清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "赌马庄家/裁判类比贯穿全文，BHR/PHT/别名有桥接",
+        "核心要点偏硬件细节，但案例 1 的 for+if 能把直觉钉住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 把 TN-36 仿真里的 96.5% 直接写成 21264 在 SPEC95 上的准确率：硅片公开口径更接近约 95% / SPECint95 约 7–10 mispredicts/1k insn，应分开表述",
+        "21264 锦标赛一侧是 local-history 两级表而非纯 bimodal；可注明「沿用 McFarling 元选择思想，具体对手预测器有工程变形」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "C 案例与 XOR 索引伪代码概念正确可跟",
+        "别名稀释/冷启动/Spectre 等坑具体；适用边界（顺序核/GPU SIMT）清楚"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

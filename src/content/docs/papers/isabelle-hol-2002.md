@@ -28,7 +28,7 @@ qed
 不理解 Isabelle/HOL，下面这些事说不清：
 
 - 为什么 **seL4 微内核**（NICTA 2009）敢说"内核没有 bug"——它的 10k 行 C 代码配了 ~200k 行 Isabelle/HOL 证明，验证从机器码到规范的每一层等价
-- 为什么 **CakeML 编译器**号称"端到端被证明正确"——整个编译链（parser / type checker / 后端）的正确性定理全在 Isabelle 里跑过
+- 为什么同属 LCF 家族的 **CakeML** 却不在 Isabelle 里——它的端到端编译器证明跑在 **HOL4** 上；Isabelle 与 HOL4 共享 LCF/HOL 思想，工具链与库并不互通
 - 为什么 [[lean-prover]] / Coq / Isabelle 三家长期共存——Coq/Lean 走依赖类型偏数学家，Isabelle 走 LCF + 强自动化偏程序员
 - 为什么 **Sledgehammer** 能把一个看起来需要人手凑半小时的引理 5 秒解决——它把目标翻成 SMT 丢给 [[z3-2008]] 等求解器跑
 
@@ -76,9 +76,9 @@ qed
 [[hoare-logic]] 的 `{P} S {Q}` 三元组在 Isabelle/HOL 里是**深度嵌入**的：
 
 ```isar
-lemma "VARS x y
-  {x = X ∧ y = Y}
-  WHILE y ≠ 0 INV {x * y = X * Y - r}
+lemma "VARS x y r
+  {x = X ∧ y = Y ∧ r = 0}
+  WHILE y ≠ 0 INV {r + x * y = X * Y}
   DO r := r + x; y := y - 1 OD
   {r = X * Y}"
   apply vcg
@@ -86,7 +86,7 @@ lemma "VARS x y
   done
 ```
 
-`VARS / INV / WHILE` 是 Isabelle 内置的 Hoare 语法。`vcg` 自动生成验证条件（VC），`auto` 把剩下的算术义务清掉。整个流程把"写循环不变式 + 推 VC + 证 VC"拆成三个独立活儿。
+**逐部分**：`VARS` 声明程序变量（含累加器 `r`）；前置条件给出初值；`INV` 是循环不变式（已加完的 `r` 加上还没加的 `x * y` 仍等于 `X * Y`）；`vcg` 自动生成验证条件（VC），`auto` 清掉算术义务。整个流程把"写不变式 + 推 VC + 证 VC"拆成三步。
 
 ### 案例 2：seL4 怎么用 Isabelle 证一个内核
 
@@ -122,7 +122,7 @@ lemma tricky: "∀x. P x ∧ Q x ⟹ ∃y. P y"
 
 **适用**：
 
-- 大规模程序正确性证明（操作系统 / 编译器 / 安全协议）——seL4 / CakeML / 各种密码协议都选 Isabelle
+- 大规模程序正确性证明（操作系统 / 安全协议 / 形式化语义）——seL4、各类密码协议、AFP 大型理论库都选 Isabelle
 - 需要强自动化的工程导向证明——Sledgehammer + simp + auto 比 Coq tactic 上手平缓
 - 嵌入式领域语义（写 Hoare logic / 操作语义 / 类型系统）——HOL 的简单类型够用且工具成熟
 
@@ -131,7 +131,7 @@ lemma tricky: "∀x. P x ∧ Q x ⟹ ∃y. P y"
 - 需要依赖类型 / 同伦类型论 / Univalence——选 Coq / [[lean-prover]] / Agda
 - 需要可执行的程序提取（Coq 的 Extraction 更成熟，Isabelle 也有 code generation 但不如 Coq 主流）
 - 想在工业代码里加几个 spec 就跑——Isabelle 重型、入门曲线陡，轻量场景选 Dafny / F\*
-
+- 已有 HOL4 生态资产（如 CakeML）——不要假设能直接搬进 Isabelle，库与内核不互通
 ## 学到什么
 
 1. **可信基越小越好**：LCF 把内核压到几百行，几十万行外围都可任意写，错了只会"证明失败"。这是计算机科学里"trusted computing base"思想最干净的体现。
@@ -166,6 +166,10 @@ lemma tricky: "∀x. P x ∧ Q x ⟹ ∃y. P y"
 - [[nieuwenhuis-dpll-t-2006]] —— Z3 的抽象基础，决定了 Sledgehammer 能跑多快
 - [[hindley-milner]] —— Isabelle 内部 ML 元语言的类型系统
 - [[lean-prover]] —— 同代竞争对手，依赖类型路线对照
-- [[cakeml]] —— 全程用 Isabelle/HOL 证明的编译器
+- [[cakeml]] —— 同属 LCF/HOL 路线，但证明栈是 HOL4（不是 Isabelle）
 - [[lambda-calculus]] —— HOL 的 λ-演算基础
 - [[system-f-reynolds-1974]] —— HOL 的高阶量化思想前身
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

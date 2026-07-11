@@ -101,7 +101,7 @@ ignite scaffold message createPost title body --module mymod
 
 3. **每链自保安全**：100 个验证人均摊到 100 条应用链 = 每链 1 个验证人，不安全。这是 Interchain Security（v2 共享安全）出现的根因。
 
-4. **IBC relayer 不开源就跑不起来**：链建好了，但没人跑 relayer，IBC 等于摆设。生态目前由 Hermes / Go relayer 等工具支撑。
+4. **IBC relayer 没人跑就等于断桥**：链建好了，但没人启动和维护 relayer，IBC 等于摆设。生态目前由 Hermes / Go relayer 等工具支撑。
 
 ## 适用 vs 不适用场景
 
@@ -153,3 +153,7 @@ ignite scaffold message createPost title body --module mymod
 - [[layerzero]] —— 跨链消息另一种安全模型，基于 oracle/relayer 双独立而非 IBC light client
 - [[uniswap-v3]] —— 多数 Cosmos DEX（如 Osmosis）受其集中流动性思路影响
 - [[anchor]] —— Solana 上的应用框架，与 Cosmos SDK 在"造链 vs 造合约"上对比
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

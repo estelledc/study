@@ -1,0 +1,135 @@
+{
+  "slug": "ron-2001",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "电话转接/公路规划 vs 导航 App 类比贴合，underlay/overlay/1 跳间接有白话桥接，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "BGP / n² / DHT / 自私路由首次出现有解释；send(dst, metric) 可再标明是教学示意接口"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 缺「逐步解释」结构，案例 3 偏产品清单；建议案例 1 拆成「直连变差→探测发现→改走 1 跳」三步，案例 2 拆成「BGP 仍通→应用感知丢包→RON 改路」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Andersen/Balakrishnan/Kaashoek/Morris、SOSP 2001、题名 Resilient Overlay Networks 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1 跳间接绕开 47% BGP 看不见的故障」与论文不符：文中是 RON 能绕开约 60%–100% 的显著中断，且 single-hop 捕获了多数收益；恢复时间应写平均约 18 秒（非 19 秒硬数）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「MIT→Utah 因 ISP 配错绕道亚洲」未见于论文，不宜标「真实事件」；可改成示意故障剧本，或改用论文里 12 节点部署、平均 <20 秒恢复的表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例路径 MIT→CMU→Utah、丢包软故障与 n² 规模估算概念正确，可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：n² 探测、自私路由、底层单路径、探测频率权衡——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（10–100 节点 / 两端可控 vs 千级 DHT / 单端用户）；案例 1/2 补逐步决策会更可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "电话转接/公路规划 vs 导航 App 类比贴合，underlay/overlay/1 跳间接有白话桥接，保留",
+        "BGP / n² / DHT / 自私路由首次出现有解释；send(dst, metric) 可再标明是教学示意接口",
+        "案例 1/2 缺「逐步解释」结构，案例 3 偏产品清单；建议案例 1 拆成「直连变差→探测发现→改走 1 跳」三步，案例 2 拆成「BGP 仍通→应用感知丢包→RON 改路」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "作者 Andersen/Balakrishnan/Kaashoek/Morris、SOSP 2001、题名 Resilient Overlay Networks 正确",
+        "「1 跳间接绕开 47% BGP 看不见的故障」与论文不符：文中是 RON 能绕开约 60%–100% 的显著中断，且 single-hop 捕获了多数收益；恢复时间应写平均约 18 秒（非 19 秒硬数）",
+        "案例 1「MIT→Utah 因 ISP 配错绕道亚洲」未见于论文，不宜标「真实事件」；可改成示意故障剧本，或改用论文里 12 节点部署、平均 <20 秒恢复的表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例路径 MIT→CMU→Utah、丢包软故障与 n² 规模估算概念正确，可跟读",
+        "踩坑具体：n² 探测、自私路由、底层单路径、探测频率权衡——保留",
+        "适用边界清楚（10–100 节点 / 两端可控 vs 千级 DHT / 单端用户）；案例 1/2 补逐步决策会更可操作"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正 47%/19s 与「绕道亚洲真实事件」；案例 1/2 补逐步解释；学到什么压到 4 条；send 标明示意接口",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 学到什么",
+      "## 与 BGP 的关系：互补不是替代"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 151,
+  "l1_pass": true
+}

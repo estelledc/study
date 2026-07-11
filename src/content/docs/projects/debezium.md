@@ -99,6 +99,25 @@ with db.transaction():
 
 这是 Debezium 最经典的工程价值——**用 CDC 把"双写一致性"问题压成"单写一致性"问题**。
 
+### 案例 3：下游怎么处理重复消息
+
+Debezium 默认是 at-least-once：connector 重启、Kafka 重试时，同一条变更可能再来一次。下游最稳的做法是用主键和版本号做幂等写入：
+
+```sql
+INSERT INTO search_index (id, name, updated_at)
+VALUES (:id, :name, :updated_at)
+ON CONFLICT (id) DO UPDATE
+SET name = EXCLUDED.name,
+    updated_at = EXCLUDED.updated_at
+WHERE search_index.updated_at < EXCLUDED.updated_at;
+```
+
+**逐部分解释**：
+
+- `ON CONFLICT (id)` 让同一个业务主键只保留一份，不会因为重复消息插两行
+- `updated_at` 条件挡住乱序旧消息，避免昨天的更新覆盖今天的数据
+- 真正生产里还会用 WAL LSN / binlog position 当版本号，比应用时间戳更可靠
+
 ## 踩过的坑
 
 1. **逻辑复制槽是磁盘炸弹**：slot 一旦创建，PostgreSQL 就**保留所有该 slot 还没确认过的 WAL 文件**。如果 connector 挂了没人重启，WAL 越堆越多，几小时就把磁盘塞满，整个数据库写不下去。生产必须监控 `pg_replication_slots` 视图的 `confirmed_flush_lsn` 和实际 LSN 的差距（lag），超阈值就告警。
@@ -153,3 +172,11 @@ with db.transaction():
 ## 关联
 
 - [[kafka]] —— 默认运行时和默认 sink，Kafka Connect 提供 worker 集群和 offset 管理
+- [[postgresql]] —— PostgreSQL logical replication slot 是 Debezium 最常见的数据源之一
+- [[redis]] —— CDC 常被用来驱动缓存刷新，避免业务代码到处手写失效逻辑
+- [[airflow]] —— 批处理调度和 CDC 实时链路经常在同一个数据平台里协作
+- [[duckdb]] —— 小规模分析可以把 CDC 落到文件后用 DuckDB 做本地验证
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

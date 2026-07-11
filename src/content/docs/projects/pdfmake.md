@@ -15,7 +15,8 @@ pdfmake 是一个**纯 JavaScript** 的 PDF 生成库。日常类比：你不用
 ```js
 import pdfMake from 'pdfmake/build/pdfmake'
 import pdfFonts from 'pdfmake/build/vfs_fonts'
-pdfMake.vfs = pdfFonts.pdfMake.vfs
+// v0.2.15+ / v0.3：用 addVirtualFileSystem，不要再写 pdfMake.vfs = ...
+pdfMake.addVirtualFileSystem(pdfFonts)
 
 const docDefinition = {
   content: [
@@ -27,7 +28,7 @@ const docDefinition = {
 pdfMake.createPdf(docDefinition).download('report.pdf')
 ```
 
-这份 `docDefinition` 就是**对象树**——pdfmake 的核心抽象。
+这份 `docDefinition` 就是**对象树**——pdfmake 的核心抽象。简单环境也可 `import 'pdfmake/build/vfs_fonts'` 靠副作用注册。
 
 ## 为什么重要
 
@@ -55,6 +56,8 @@ pdfmake 的对象树由几种节点组成：
 
 ### 案例 1：带页码的报表
 
+把下面对象交给 `pdfMake.createPdf(doc).download('report.pdf')`：
+
 ```js
 const doc = {
   header: { text: '2026 年度财报', alignment: 'center' },
@@ -66,9 +69,11 @@ const doc = {
 }
 ```
 
-`header` 和 `footer` 在每页自动重画。`pageBreak: 'after'` 强制让"第二章"另起一页。
+`header` / `footer` 每页自动重画；`pageBreak: 'after'` 让「第二章」另起一页。
 
 ### 案例 2：自动重复表头的长表格
+
+把这段放进 `docDefinition.content`（可与标题等节点并列）：
 
 ```js
 {
@@ -83,9 +88,11 @@ const doc = {
 }
 ```
 
-跨页时第一行（ID/名称/金额）会在每页顶部**自动重画**——这是 jsPDF 没有的。
+跨页时第一行会在每页顶部**自动重画**——这是 jsPDF 没有的。
 
 ### 案例 3：横向并排两栏
+
+同样作为 `content` 里的一个节点：
 
 ```js
 { columns: [
@@ -94,7 +101,7 @@ const doc = {
 ] }
 ```
 
-类比 CSS Grid 的两列布局，但写法是数组。
+类比 CSS Grid 两列，但写法是数组；列数过多只会变窄，不会自动折行。
 
 ## 字体怎么塞进去
 
@@ -123,7 +130,7 @@ node node_modules/pdfmake/build-vfs.js ./fonts > vfs_fonts.js
 1. **中文字体不内置**：默认 vfs 只有 Roboto，写中文会变方块。必须自己打 vfs，bundle 一下子大几 MB。
 2. **table widths 在内容超长时溢出**：`'auto'` 列遇到一个超长字符串会撑爆纸面。需要手动加 `noWrap: false` 或缩字号或改 `widths: '*'`。
 3. **columns 不会自动换行**：和 CSS flex-wrap 不同，列数超过宽度只会变窄不会换行成第二行。要换行得自己拆 stack。
-4. **v0.2 → v0.3 升级 break**：fonts 加载方式重写了，老代码 `pdfMake.fonts = ...` 不再生效。升级前先看 migration。
+4. **v0.2 → v0.3 升级 break**：fonts 加载重写；老代码 `pdfMake.vfs = pdfFonts.pdfMake.vfs` 常失效，应改 `addVirtualFileSystem` 或副作用 import。升级前先看 migration。
 5. **图片必须 base64 或预注册**：不能直接给 URL，要么 fetch 后转 dataURL，要么放进 `images: { logo: '...' }` 再用 `image: 'logo'`。
 
 ## 适用 vs 不适用场景

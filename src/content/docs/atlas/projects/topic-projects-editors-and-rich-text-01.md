@@ -44,7 +44,7 @@ sidebar:
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | `kakoune` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Krita — 数字绘画专业编辑器](/study/projects/krita/) | `krita` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) | `lazyvim` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | `lexical` | unknown | UNVERIFIED | Lexical 用 native browser selection + immutable EditorState + dirty-set reconciler，把 contentEditable 从"性能黑盒"压回 React 时代的… |
+| [Lexical — 把富文本编辑拆成快照、事务和插件](/study/projects/lexical/) | `lexical` | unknown | UNVERIFIED | 介绍 Lexical 如何用不可变快照、更新事务和脏节点协调富文本编辑 |
 | [Lite-XL — 不到 3MB 的编辑器也能扩展出花样](/study/projects/lite-xl/) | `lite-xl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | `liveblocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Logseq — 块结构离线知识库](/study/projects/logseq/) | `logseq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

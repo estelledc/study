@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 部署清单偏压缩，但 config.json 示例足够让读者跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "vodozemac 迁移时间线写「2024 年起逐步」口径合理；无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "TimelinePanel 监听示例为教学简化，真实代码有更多 store/生命周期；当前可跟做。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 部署清单偏压缩，但 config.json 示例足够让读者跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "vodozemac 迁移时间线写「2024 年起逐步」口径合理；无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "TimelinePanel 监听示例为教学简化，真实代码有更多 store/生命周期；当前可跟做。"
+      ]
+    }
+  ]
+}

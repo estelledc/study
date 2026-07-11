@@ -1,0 +1,74 @@
+{
+  "slug": "chatbot-arena-2024",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "reject_count": 0,
+    "verdicts": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "decision": "pass",
+    "status": "passed"
+  },
+  "refinements": [],
+  "quality_gate": {
+    "pass": true,
+    "details": {
+      "lines": {
+        "ok": true,
+        "lines": 160
+      },
+      "red-line": {
+        "ok": true
+      },
+      "h2": {
+        "ok": true
+      }
+    }
+  },
+  "lines": 160,
+  "l1_pass": true
+}

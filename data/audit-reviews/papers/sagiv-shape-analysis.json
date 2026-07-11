@@ -1,0 +1,139 @@
+{
+  "slug": "sagiv-shape-analysis",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "物业巡查楼层布局图类比贴合「不打开每户也能断言形状」；堆=关系表/外键也清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "focus / coerce / instrumentation / embedding 均有白话桥接；案例 2 的 ∀ 公式对零基础仍偏密，但已有逐部分解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 summary 图示 + focus 分裂步骤可跟；案例 3 泄漏三态（false/1/2/true）对照清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "POPL 1999 论文标题应为 Parametric Shape Analysis via 3-Valued Logic，不是 with Destructive Updating（后者是 POPL'96 / TOPLAS'98 那篇）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1996 条可写清：POPL'96 先发 Solving shape-analysis…，TOPLAS 1998 出完整版——避免读者以为只有 1996 一版"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "embedding 保的是「抽象为真则具体为真」的可靠性；「不会漏报」易与找 bug 的 false-negative 混淆，宜改成「不会把假性质证成真」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 反转链表的 focus→赋值→coerce 流程概念正确，可跟做教学推演"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：Kleene 吸收、summary 上直接赋值、谓词爆炸、忘写 coerce——都可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（小规模指针结构 vs 万行工业代码 / 算术 / 并发）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "物业巡查楼层布局图类比贴合「不打开每户也能断言形状」；堆=关系表/外键也清楚",
+        "focus / coerce / instrumentation / embedding 均有白话桥接；案例 2 的 ∀ 公式对零基础仍偏密，但已有逐部分解释",
+        "案例 1 的 summary 图示 + focus 分裂步骤可跟；案例 3 泄漏三态（false/1/2/true）对照清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "POPL 1999 论文标题应为 Parametric Shape Analysis via 3-Valued Logic，不是 with Destructive Updating（后者是 POPL'96 / TOPLAS'98 那篇）",
+        "1996 条可写清：POPL'96 先发 Solving shape-analysis…，TOPLAS 1998 出完整版——避免读者以为只有 1996 一版",
+        "embedding 保的是「抽象为真则具体为真」的可靠性；「不会漏报」易与找 bug 的 false-negative 混淆，宜改成「不会把假性质证成真」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 反转链表的 focus→赋值→coerce 流程概念正确，可跟做教学推演",
+        "踩坑具体：Kleene 吸收、summary 上直接赋值、谓词爆炸、忘写 coerce——都可操作",
+        "适用边界清楚（小规模指针结构 vs 万行工业代码 / 算术 / 并发）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：历史小故事中 POPL 1999 标题写错；embedding「不会漏报」表述易混淆。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 POPL'99 标题与 1996/1998 时间线；embedding 改为「不会把假性质证成真」；注明 TVLA SAS 2000。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

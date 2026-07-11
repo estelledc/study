@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厚书翻页类比贴合 resumability，零基础易懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "hydrate / resume / 序列化均有中文桥接；「千 KB」略拗口但不挡理解"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有代码与逐部分解释；案例 3 对照表清晰，核心要点里序列化一句仍稍密"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 QwikDev/qwik、Misko Hevery、v1.0（2023-05）与公开资料一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Adam Bradley / Qwik City、Builder.io 自用等时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「首屏 JS 1/100」「第一个工程化落地」偏营销口径，作教学简化可接受，非硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Counter / routeLoader$ 示例概念正确，可跟做；缺 create-qwik 脚手架一步属教学可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：$ 漏写、qwik-react 强制水合、跨 chunk 调试、useVisibleTask$ 逃生舱"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（内容站 vs 重交互 SPA / React 生态依赖）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厚书翻页类比贴合 resumability，零基础易懂",
+        "hydrate / resume / 序列化均有中文桥接；「千 KB」略拗口但不挡理解",
+        "三案例有代码与逐部分解释；案例 3 对照表清晰，核心要点里序列化一句仍稍密"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 QwikDev/qwik、Misko Hevery、v1.0（2023-05）与公开资料一致",
+        "Adam Bradley / Qwik City、Builder.io 自用等时间线合理",
+        "「首屏 JS 1/100」「第一个工程化落地」偏营销口径，作教学简化可接受，非硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Counter / routeLoader$ 示例概念正确，可跟做；缺 create-qwik 脚手架一步属教学可接受",
+        "踩坑具体：$ 漏写、qwik-react 强制水合、跨 chunk 调试、useVisibleTask$ 逃生舱",
+        "适用/不适用边界清楚（内容站 vs 重交互 SPA / React 生态依赖）"
+      ]
+    }
+  ]
+}

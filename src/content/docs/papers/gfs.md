@@ -1,5 +1,5 @@
 ---
-title: GFS — 编译器决定不做哪些事
+title: GFS — 为工作负载反向定制的分布式文件系统
 来源: 'Ghemawat, Gobioff, Leung. "The Google File System". SOSP 2003'
 日期: 2026-05-30
 分类: 分布式系统
@@ -21,7 +21,7 @@ GFS（**Google File System**）是 Google 2003 年自己造的分布式文件系
 - 为什么 HDFS / S3 / Azure Blob 这些"现代云存储"全都不兼容 POSIX——是 GFS 2003 年带的头
 - 为什么 single master + chunkserver 这种"明显有 SPOF"的架构能跑十几年——工程兜底比理论纯粹更重要
 - 为什么 Kafka / Pulsar 的 broker 只支持 append、不支持原地改——append-only 是 GFS 留下的设计基因
-- 为什么写分布式系统的人喜欢说"故障是常态而不是异常"——这话出自 GFS Section 5
+- 为什么写分布式系统的人喜欢说"故障是常态而不是异常"——这话出自 GFS 论文引言的设计假设
 
 ## 核心要点
 
@@ -68,11 +68,15 @@ Client B append "log2"  → primary 分配 offset=1010，secondary 之一失败
                           → 结果：失败的 replica 在 offset=1010 留 padding
 ```
 
-application 层读这个 log 时，必须**跳过 padding + 用 unique ID 去重**——否则会看到 log2 出现两次。
+逐步看：
+
+1. primary 用 lease 串行化并发 append，给每次成功写入一个 offset。
+2. 某次副本失败时 client 会重试，primary 再分配新 offset——旧位置可能留下 padding。
+3. application 读 log 时必须**跳过 padding + 用 unique ID 去重**，否则会看到 log2 两次。
 
 ### 案例 3：自己写一个 mini object store
 
-借 GFS 思路用 200 行 Python 实现一个对象存储：
+借 GFS 思路用很少代码实现「master 只管位置、数据直连存储节点」：
 
 ```python
 # master 进程：内存维护 key → [chunkserver_addrs]
@@ -89,7 +93,11 @@ def upload(key, data):
         http.put(f"http://{addr}/blob/{key}", data)  # data flow 绕开 master
 ```
 
-跑通后你会发现：**master 单点性能上限决定整个集群规模上限**——这就是后来 Colossus 必须改 multi-master 的根本原因。
+逐步看：
+
+1. `allocate` 只在 master 登记副本地址，不搬运 `data`。
+2. client 自己把字节 PUT 到各个 chunkserver——这就是「数据流绕开 master」。
+3. 跑通后你会发现：**master 单点性能上限决定集群规模上限**，这也是后来 Colossus 改 multi-master 的原因。
 
 ## 踩过的坑
 

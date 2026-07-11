@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 清楚；案例 2/3/4 缺少逐部分解释，零基础难对照「虚拟线程卡在哪、健康检查怎么挂上、配置何时生效」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Helidon 5 起跟 JDK 26 走」不准确：Helidon 已改为与 OpenJDK 发版节奏对齐的版本号，Helidon 27 需要 JDK 26，并非存在独立的 Helidon 5→JDK26 叙事。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」里「跟 JDK 21 / JDK 26」宜改成「跟 JDK 发版节奏对齐」以免暗示 Helidon 5。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 写 Config.create() 后「yaml 改了注入点会拿到新值」易被读成默认热加载；应标明需轮询/可观察配置或重启，避免误导。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 下游 HTTP 调用可补一句：阻塞发生在虚拟线程上、carrier 可去跑别的请求。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 清楚；案例 2/3/4 缺少逐部分解释，零基础难对照「虚拟线程卡在哪、健康检查怎么挂上、配置何时生效」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「Helidon 5 起跟 JDK 26 走」不准确：Helidon 已改为与 OpenJDK 发版节奏对齐的版本号，Helidon 27 需要 JDK 26，并非存在独立的 Helidon 5→JDK26 叙事。",
+        "「为什么重要」里「跟 JDK 21 / JDK 26」宜改成「跟 JDK 发版节奏对齐」以免暗示 Helidon 5。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 写 Config.create() 后「yaml 改了注入点会拿到新值」易被读成默认热加载；应标明需轮询/可观察配置或重启，避免误导。",
+        "案例 2 下游 HTTP 调用可补一句：阻塞发生在虚拟线程上、carrier 可去跑别的请求。"
+      ]
+    }
+  ]
+}

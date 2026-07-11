@@ -1,0 +1,59 @@
+{
+  "slug": "acl2-2000",
+  "area": "papers",
+  "note_path": "src/content/docs/papers/acl2-2000.md",
+  "research_stub_path": "/tmp/audit-round-1/papers-acl2-2000/research-stub.json",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "一阶逻辑、guard、stobj 等术语密度较高，但每处都有类比或工程解释，暂无必须修改项。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史线索和工业案例总体可靠；个别年份与首创性表述略简化，但没有构成事实硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例偏工业叙事而不是手把手 ACL2 会话，但代码片段概念正确，坑点和适用边界可操作。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分达到 4.0；按规则无需 refine。",
+    "initial_quality_gate": {
+      "pass": true,
+      "lines": 167
+    }
+  }
+}

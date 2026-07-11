@@ -40,7 +40,7 @@ Fastify 的设计可以拆成 **三个支柱**：
 
 3. **生命周期 hook 取代中间件链**：八个固定阶段（onRequest → preParsing → preValidation → preHandler → handler → preSerialization → onSend → onResponse），顺序不可变。类比：流水线的固定工位，不像 Express 的"想插哪就插哪"。
 
-底层还有 find-my-way 的 radix tree 路由（O(log n) 匹配）和 pino 异步 logger，三件套合起来叫"性能优先的现代 Node 框架"。
+底层还有 find-my-way 的 radix tree 路由（匹配随**路径段数**增长，与注册路由条数基本无关）和 pino 异步 logger，三件套合起来叫"性能优先的现代 Node 框架"。
 
 ## 实践案例
 
@@ -101,7 +101,7 @@ app.addHook('preHandler', async (req) => {
 
 ## 踩过的坑
 
-1. **不写 response schema = 性能归零**：没 schema 的路由会回退到通用 `JSON.stringify`，速度跟 Express 一样。schema-first 的红利只对配了 schema 的路由生效。
+1. **不写 response schema = 序列化红利大打折扣**：没 schema 的路由会回退到通用 `JSON.stringify`，吞吐明显掉一截（路由/封装等优化还在，但最肥的那块没了）。schema-first 的红利主要落在配了 schema 的路由上。
 
 2. **schema 是契约不是建议**：字段类型错配（schema 说 string、handler 返 number）会让 fast-json-stringify 在 prod 直接拼出 `{"email":123}` 这种不合法但能 parse 的 JSON；handler 多返字段 schema 只列 3 个，会被悄悄裁掉——dev 模式 strict 能提前抓到
 

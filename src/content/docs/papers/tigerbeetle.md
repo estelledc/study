@@ -1,6 +1,6 @@
 ---
 title: TigerBeetle — 只能记账但把记账做到极致的金融数据库
-来源: 'Joran Greef et al. "TigerBeetle: A Distributed Financial Accounting Database". VLDB 2024 industrial track'
+来源: 'Joran Dirk Greef. "Redesigning OLTP for a New Order of Magnitude". QCon SF 2023'
 日期: 2026-05-30
 分类: 数据库
 难度: 中级
@@ -68,7 +68,10 @@ zig build vopr -- --seed 12345
 zig build vopr -- --seed 12345  # 同一个 seed，确定性 replay
 ```
 
-VOPR（Viewstamped Operation Replicator）是 TigerBeetle 的模拟器：进程内启动 6 个虚拟 replica，所有时钟、网络、磁盘都由同一个 PRNG 驱动。给一个 seed，整次运行一比一可重放——bug 不再"偶尔出现"，永远精确复现。
+**逐部分解释**：
+1. `--seed 12345` 像游戏存档编号——同一编号必走出同一条故障时间线
+2. 进程内起 6 个虚拟 replica，时钟/网络/磁盘全由同一个伪随机数生成器（PRNG）驱动
+3. 一旦不变量破了，把 seed dump 出来就能精确 replay——bug 不再"偶尔出现"
 
 ### 案例 3：VSR view-change 和 Raft 选举的差异
 
@@ -84,7 +87,10 @@ VSR：view + view-change
   - 更对称：选 leader 不是"竞选"，是"轮值"
 ```
 
-差异：Raft 像选总统（可能多人竞争），VSR 像值日生（按编号轮）。轮值规则更易形式化——这就是 TigerBeetle 选 VSR 的原因。
+**逐部分解释**：
+1. Raft 像选总统——多人可能同时竞选，规则分支多
+2. VSR 像值日生——`view % N` 直接点名谁当班，规则统一
+3. 轮值更易形式化验证，所以 TigerBeetle 选 VSR 而不是更出名的 Raft
 
 ## 踩过的坑
 
@@ -100,23 +106,23 @@ VSR：view + view-change
 
 **适用**：
 - 双本记账场景：银行清算、支付通道、加密交易所、interbank settlement
-- 高吞吐 + 低延迟 + 强一致的金融小事务（每秒数十万笔）
+- 高吞吐 + 低延迟 + 强一致的金融小事务（目标 ≥10 万笔/秒，或热账户高争用）
 - 团队有能力把 ledger 子系统独立出来部署
 
 **不适用**：
 - 通用业务数据（用户、订单、商品）→ 还是用 PG / MySQL
 - 需要复杂查询 / OLAP 分析 → 它没 SQL
-- 团队规模小到没人能 own 一个独立 DB → 运维成本超过收益
+- 吞吐远低于 10 万笔/秒且无热账户争用 → PG 记账通常够用
 - 需要灵活 schema / 频繁加字段 → schema 写死，加字段要改源码重编
-- 早期原型阶段的初创团队 → 先用 PG 验证业务逻辑，业务跑通且确实卡在 ledger 性能上才换 TigerBeetle
+- 早期原型阶段的初创团队 → 先用 PG 验证业务逻辑，业务跑通且确实卡在 ledger 性能上才换
 
 ## 历史小故事（可跳过）
 
-- **2018 年前后**：Joran Greef 在 Coil（一家做 interledger 支付的公司）做工程，反复看到金融团队用 PG/MySQL 做记账，对账 bug 一抓一把。
-- **2020 年**：Joran 决定从零写专用记账 DB，初版用 Node.js 原型验证想法。
+- **2018 年前后**：Joran Dirk Greef 在 Coil（一家做 interledger 支付的公司）做工程，反复看到金融团队用 PG/MySQL 做记账，对账 bug 一抓一把。
+- **2020 年**：决定从零写专用记账 DB，初版用 Node.js 原型验证想法。
 - **2021 年**：用 Zig 重写——为了静态内存分配、编译期保证、单 binary 部署。
-- **2022 年**：YC 加持，团队全球远程，开始引入 deterministic simulation testing 作为核心工程方法。
-- **2024 年**：VLDB industrial track 发表论文，GitHub star 突破 12k，部分 fintech 公司用作 source of truth。
+- **2022–2023 年**：YC 加持；QCon 等场合公开讲 OLTP 重设计；VOPR 确定性模拟成为核心工程方法。
+- **2024 年**：生产就绪发布，GitHub star 破万，部分 fintech 用作 ledger source of truth。
 
 ## 学到什么
 

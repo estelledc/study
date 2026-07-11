@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "坑 3 提到『RoPE θ 改大』但前文从未解释 RoPE 是什么，零基础读者会卡；可改成『把位置编码的伸缩参数调大』并一句类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里『省 1/8 显存』与案例 1『压到 1/48』数字打架，初学者会困惑该信哪个"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写 MQA『省 1/8 显存』，案例 1 又写 KV cache『压到 1/48』——对 48 head 的 MQA，正确量级是 KV 约降到 1/48，应统一表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "坑 3 称『同期 Code Llama 已经做到 100K』：StarCoder 2023-05 发布，Code Llama 2023-08 才出；不能用后来的模型否定『当时 8K 是否新高』，应改成『同年稍后 Code Llama 用 RoPE 外推做到约 100K』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点 4 称『欧盟 AI Act 草案直接引用这个做法当合规模板』过强：公开材料多把 BigCode opt-out 当行业范例，未见 AI Act 草案点名引用 amitheinthestack；改为『常被治理讨论当作合规模板』即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "MQA 显存数字前后不一致（1/8 vs 1/48），工程读者会直接不信；统一成『KV cache 约降到 1/头数』并保留案例里的 48 head 示意"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景写『单张 A100 80GB 能跑推理』合理，可补一句 bf16/量化前提，避免读者按 fp32 估算翻车"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "坑 3 提到『RoPE θ 改大』但前文从未解释 RoPE 是什么，零基础读者会卡；可改成『把位置编码的伸缩参数调大』并一句类比",
+        "核心要点里『省 1/8 显存』与案例 1『压到 1/48』数字打架，初学者会困惑该信哪个"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "核心要点写 MQA『省 1/8 显存』，案例 1 又写 KV cache『压到 1/48』——对 48 head 的 MQA，正确量级是 KV 约降到 1/48，应统一表述",
+        "坑 3 称『同期 Code Llama 已经做到 100K』：StarCoder 2023-05 发布，Code Llama 2023-08 才出；不能用后来的模型否定『当时 8K 是否新高』，应改成『同年稍后 Code Llama 用 RoPE 外推做到约 100K』",
+        "核心要点 4 称『欧盟 AI Act 草案直接引用这个做法当合规模板』过强：公开材料多把 BigCode opt-out 当行业范例，未见 AI Act 草案点名引用 amitheinthestack；改为『常被治理讨论当作合规模板』即可"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "MQA 显存数字前后不一致（1/8 vs 1/48），工程读者会直接不信；统一成『KV cache 约降到 1/头数』并保留案例里的 48 head 示意",
+        "适用场景写『单张 A100 80GB 能跑推理』合理，可补一句 bf16/量化前提，避免读者按 fp32 估算翻车"
+      ]
+    }
+  ]
+}

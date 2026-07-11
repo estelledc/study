@@ -21,7 +21,7 @@ LSM-Tree（**Log-Structured Merge-Tree**，日志结构合并树）是 1996 年 
 
 不理解 LSM-Tree，下面这些事都没法解释：
 
-- 为什么 Google BigTable / [[cassandra]] / RocksDB / [[clickhouse]] / [[tidb]] / [[cockroachdb]] / Kafka 这些"高吞吐"系统几乎全部用 LSM 风格的存储引擎
+- 为什么 Google BigTable / [[cassandra]] / RocksDB / [[clickhouse]] / [[tidb]] / [[cockroachdb]] 这些"高吞吐"系统几乎全部用 LSM 风格的存储引擎（Kafka 等则是近亲：顺序日志，未必是完整 LSM）
 - 为什么 NoSQL 数据库敢承诺"每秒几十万次写入"——B+树做不到这个量级
 - 为什么 LSM 在 SSD / NVMe 时代优势更明显——顺序写远快于随机写
 - 为什么传统关系型数据库（PostgreSQL / MySQL InnoDB）和现代分布式数据库的存储引擎是"二选一"——B+树写慢读快，LSM 写快读慢
@@ -38,9 +38,9 @@ LSM-Tree 由三块拼起来：
 
 MemTable 满了，就把它整体刷到硬盘，变成一个 **SSTable**（Sorted String Table，有序字符串表）。一旦写到硬盘就**再也不改**——这是 LSM 的灵魂。类比：把收件箱整理成档案盒，封好放进档案室，绝不再翻开改。
 
-**Compaction（合并）+ Bloom Filter（加速点查）**
+**Compaction（合并）+ Bloom Filter（工程上的点查加速）**
 
-时间一长，硬盘上会堆很多 SSTable，读一个 key 就要翻很多档案盒。所以后台有个"管理员"定期把多个 SSTable 合并成更大的——这一步叫 **Compaction**。同时每个 SSTable 配一张 **Bloom Filter**（概率性"在不在"查询表），读的时候先问 Bloom Filter，能跳过 99% 不含目标 key 的档案盒。
+时间一长，硬盘上会堆很多 SSTable，读一个 key 就要翻很多档案盒。所以后台有个"管理员"定期把多个 SSTable 合并成更大的——这一步叫 **Compaction**（1996 原文的核心机制）。现代实现（BigTable / LevelDB 一脉）还会给每个 SSTable 配一张 **Bloom Filter**（概率性"在不在"查询表），读的时候先问它，能跳过绝大多数不含目标 key 的档案盒。
 
 ## 实践案例
 
@@ -107,11 +107,11 @@ client read key="foo"
 ## 历史小故事（可跳过）
 
 - **1996 年**：Patrick O'Neil 等四人在 Acta Informatica 发表 LSM-Tree 论文。当时几乎没人注意——磁盘还便宜，B+树够用。
-- **2006 年**：Google 发表 [[bigtable]] 论文，第一次把 LSM 思路用在工业级超大规模系统上，处理 web 索引数据。LSM 一夜成名。
-- **2007 年**：Google 把 BigTable 的存储层抽出来开源，叫 LevelDB——单机版 LSM，500 行 C++，至今是教学范本。
+- **2006 年**：Google 发表 [[bigtable]] 论文，第一次把 LSM 思路用在工业级超大规模系统上，处理 web 索引数据。LSM 一夜成名。Bloom Filter 等点查加速也是在这条工程线上标配起来的（1996 原文核心是多级滚动合并）。
+- **2011 年**：Jeff Dean & Sanjay Ghemawat 开源 LevelDB——单机版 LSM 风格库，代码精简、至今是教学范本（不是 2007，也远不止「几百行」）。
 - **2012 年**：Facebook 把 LevelDB fork 成 RocksDB，加多线程 Compaction、可调策略、写优先优化，成为最广泛使用的 LSM 引擎。
-- **2010s 后**：[[cassandra]] / HBase / [[tidb]] / [[cockroachdb]] / [[clickhouse]] / Kafka / Pulsar / InfluxDB 等几乎所有现代分布式存储系统都用 LSM 或 LSM 变体作为底层。
-- **2024 年**：LSM 已是 NoSQL/NewSQL 的事实默认存储引擎。B+树仍统治传统 OLTP，二者长期共存。
+- **2010s 后**：[[cassandra]] / HBase / [[tidb]] / [[cockroachdb]] / [[clickhouse]] / InfluxDB 等大量现代分布式存储用 LSM 或变体；Kafka / Pulsar 等则更多是「顺序日志段」思路，和经典 MemTable→SSTable→Compaction 同族但不等同。
+- **2024 年**：LSM 已是 NoSQL/NewSQL 的事实默认存储引擎之一。B+树仍统治传统 OLTP，二者长期共存。
 
 ## 学到什么
 
@@ -134,7 +134,7 @@ client read key="foo"
 - [[tidb]] —— NewSQL 用 RocksDB（LSM）做单机存储 + Raft 做分布式
 - [[cockroachdb]] —— 与 TiDB 类似的 NewSQL 路线，底层也是 LSM
 - [[postgresql]] —— B+树阵营代表，与 LSM 形成存储引擎二选一
-- [[dynamo]] —— Amazon 的 NoSQL 经典，也是 LSM 风格
+- [[dynamo]] —— Amazon 最终一致性 NoSQL 经典；论文存储层可插拔，后世部分实现才走 LSM
 - [[chubby]] —— BigTable 的元数据依赖，间接见证 LSM 的工业化
 
 ## 反向链接

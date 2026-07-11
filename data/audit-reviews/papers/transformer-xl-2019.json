@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.33,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 SG / stop-gradient、K/V、bpc、ppl 缺零基础桥接，应用一句话日常说法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「核心要点」里相对位置拆成 4 项的公式叙述对零基础过密，建议先用「只记我和你差几步」类比再点到公式"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个实践案例都是数字罗列，缺伪代码或「逐部分解释」小标题，案例 2 应拆成「无缓存重算 vs 有缓存只算新 token」对照步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "WikiText-103 写成 23.5→18.3 有误：论文 Table 1 前 SOTA 是 Baevski & Auli 20.5→XL Large 18.3；23.5 是 One Billion Word 上 XL Base，勿跨表拼接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "One Billion Word 30.0、Penn Treebank 56.1 分别是 LSTM+CNN 与 Differentiable NAS，不是 vanilla Transformer；应标清对照基线或改用论文摘要的前 SOTA（23.7 / ~55.3）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一次证明位置可以是相对的」过满：Shaw et al. 2018 已有相对位置；应改为 Transformer-XL 提出可与段级循环兼容的相对位置方案并在长文本 LM 上验证"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无任何伪代码：至少给一段「缓存上一段 hidden → concat 到当前 K/V → stop-gradient」的伪代码，并逐行解释"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 1800× 加速应对照写出「每步重算整段」与「复用 memory」两段伪流程，避免只甩数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化边界：补「段长/ memory 长度常见 128–512、显存随 memory×层数线性涨」等可操作条件"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "首次出现的 SG / stop-gradient、K/V、bpc、ppl 缺零基础桥接，应用一句话日常说法",
+        "「核心要点」里相对位置拆成 4 项的公式叙述对零基础过密，建议先用「只记我和你差几步」类比再点到公式",
+        "三个实践案例都是数字罗列，缺伪代码或「逐部分解释」小标题，案例 2 应拆成「无缓存重算 vs 有缓存只算新 token」对照步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "WikiText-103 写成 23.5→18.3 有误：论文 Table 1 前 SOTA 是 Baevski & Auli 20.5→XL Large 18.3；23.5 是 One Billion Word 上 XL Base，勿跨表拼接",
+        "One Billion Word 30.0、Penn Treebank 56.1 分别是 LSTM+CNN 与 Differentiable NAS，不是 vanilla Transformer；应标清对照基线或改用论文摘要的前 SOTA（23.7 / ~55.3）",
+        "「第一次证明位置可以是相对的」过满：Shaw et al. 2018 已有相对位置；应改为 Transformer-XL 提出可与段级循环兼容的相对位置方案并在长文本 LM 上验证"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例无任何伪代码：至少给一段「缓存上一段 hidden → concat 到当前 K/V → stop-gradient」的伪代码，并逐行解释",
+        "案例 2 的 1800× 加速应对照写出「每步重算整段」与「复用 memory」两段伪流程，避免只甩数字",
+        "适用/不适用缺量化边界：补「段长/ memory 长度常见 128–512、显存随 memory×层数线性涨」等可操作条件"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "action": "refine",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "书架字典+门口小助手类比把 shim 按目录选版讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "shim / PYENV_VERSION / .python-version 优先级有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 历史小故事（可跳过）段，12 段结构不齐；三案例步骤清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/pyenv/pyenv 正确；yyuu 从 rbenv fork（2013）主线属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "shim→pyenv-exec→versions/<ver>/bin 机制与官方 How It Works 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『约 70 行 bash shim』为数量级描述，未歪曲 PATH 间接层定位"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "install/global/local、源码编译、PYENV_VERSION 三案例可直接跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：PATH 顺序、.python-version 漏 commit、mac 编译依赖、shim 80ms、切版丢包"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用多版本共存；不适用单版本/要秒装/科学栈/多语言——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "书架字典+门口小助手类比把 shim 按目录选版讲透",
+        "shim / PYENV_VERSION / .python-version 优先级有白话桥接",
+        "缺 ## 历史小故事（可跳过）段，12 段结构不齐；三案例步骤清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 github.com/pyenv/pyenv 正确；yyuu 从 rbenv fork（2013）主线属实",
+        "shim→pyenv-exec→versions/<ver>/bin 机制与官方 How It Works 一致",
+        "『约 70 行 bash shim』为数量级描述，未歪曲 PATH 间接层定位"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "install/global/local、源码编译、PYENV_VERSION 三案例可直接跟做",
+        "踩坑具体：PATH 顺序、.python-version 漏 commit、mac 编译依赖、shim 80ms、切版丢包",
+        "适用多版本共存；不适用单版本/要秒装/科学栈/多语言——边界清楚"
+      ]
+    }
+  ],
+  "slug": "pyenv",
+  "area": "projects",
+  "status": "refined",
+  "lines": 177,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "补 ## 历史小故事（可跳过）段，对齐 12 段模板",
+    "sections_modified": [
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  }
+}

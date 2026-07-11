@@ -109,7 +109,7 @@ draw([
 
 ### 案例 3：官方 life 示例，用 framebuffer 做生命游戏
 
-`example/life.js` 把 Conway 生命游戏放到 GPU 上跑。它的关键不是三角形，而是两个 framebuffer 轮流读写，像两张草稿纸交替更新。
+`example/life.js` 把 Conway 生命游戏放到 GPU 上跑。它的关键不是三角形，而是两个 framebuffer 轮流读写，像两张草稿纸交替更新。下面只展示 **ping-pong 骨架**；完整的 8 邻域计数与出生/死亡规则见官方 `example/life.js`，照抄这段不会得到真正的生命游戏。
 
 ```js
 const state = [0, 1].map(() => regl.framebuffer({
@@ -117,6 +117,7 @@ const state = [0, 1].map(() => regl.framebuffer({
   depthStencil: false
 }))
 const updateLife = regl({
+  // 示意：真实 life.js 会在 frag 里采样 8 邻域再算下一状态
   frag: `precision mediump float;
   uniform sampler2D prevState;
   varying vec2 uv;
@@ -155,6 +156,8 @@ regl.frame(() => updateLife())
 - 只画常规柱状图、折线图、饼图 → 用 [[chart-js]]、[[observable-plot]]、[[plotly-js]] 更直接
 - 团队没人愿意读 GLSL，甚至不知道 vertex shader / fragment shader 是什么
 - 需要 DOM 级无障碍、文本排版、表单交互，WebGL 不是这些问题的默认答案
+
+一句话边界：适合**自定义 draw call 量级**的 demo / 可视化 / GPGPU 小系统；不适合开箱即用的场景图引擎。
 
 ## 历史小故事（可跳过）
 

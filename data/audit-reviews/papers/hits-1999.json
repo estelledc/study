@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 手算：刚写出 a(C)=2，下一行却写 h(A)=a(C)=1，零基础会以为算错；应按「先更新 a 再用新 a 更新 h」把数字写一致，并补一句归一化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 若声称「交替更新」，应与正文核心要点一致地使用新 a 算 h；当前写法更像同步更新且未说明，易造成轻微歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 手算数字自相矛盾（a(C)=2 与 h 侧仍用 a(C)=1），跟做会失败；改成一轮完整交替更新并给出归一化后的向量"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 手算：刚写出 a(C)=2，下一行却写 h(A)=a(C)=1，零基础会以为算错；应按「先更新 a 再用新 a 更新 h」把数字写一致，并补一句归一化"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 若声称「交替更新」，应与正文核心要点一致地使用新 a 算 h；当前写法更像同步更新且未说明，易造成轻微歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 手算数字自相矛盾（a(C)=2 与 h 侧仍用 a(C)=1），跟做会失败；改成一轮完整交替更新并给出归一化后的向量"
+      ]
+    }
+  ]
+}

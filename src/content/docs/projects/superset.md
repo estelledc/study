@@ -10,7 +10,7 @@ title: Apache Superset — 开源 BI 平台
 
 Apache Superset 是一个**让你不用写前端、不用买 Tableau，靠浏览器就能拉数据画图做看板的开源 BI 平台**。日常类比：你公司里那个"每天导 Excel、做透视表、截图发周报"的同事，被换成一个网页——任何人打开浏览器选数据源、写 SQL 或拖字段，立刻出图表、出看板、能分享。
 
-它由 Airbnb 工程师 Maxime Beauchemin 在 2015 年内部做出来（同一个人也是 [[airflow]] 的作者），2016 年开源，2017 年捐给 Apache 基金会孵化，2021 年毕业成顶级项目，目前 GitHub ~63k stars，是开源 BI 里最活跃的项目之一。
+它由 Airbnb 工程师 Maxime Beauchemin 在 2015 年内部做出来（同一个人也是 [[airflow]] 的作者），2016 年开源，2017 年捐给 Apache 基金会孵化，2021 年毕业成顶级项目，目前 GitHub 约 6 万+ stars，是开源 BI 里最活跃的项目之一。
 
 ## 为什么重要
 
@@ -19,7 +19,7 @@ Apache Superset 是一个**让你不用写前端、不用买 Tableau，靠浏览
 - 为什么很多公司开始**不再为 Tableau 付每人每年几百美元的 license**——Superset 免费 + 开源
 - 为什么数据团队能给业务方一个"自助查询入口"——SQL Lab 让懂 SQL 的人直接在浏览器里查仓库
 - 为什么"50+ 种可视化"听起来夸张但确实需要——不同业务（地理 / 漏斗 / 时序）需要不同图表语言
-- 为什么 Preset.io（Maxime 自己开的公司）能融到 1 亿美元——开源 + 托管是 BI 的新商业模式
+- 为什么 Preset.io（Maxime 自己开的公司）能做到累计融资约亿美元量级——开源 + 托管是 BI 的新商业模式
 
 ## 核心要点
 
@@ -37,13 +37,21 @@ Superset 的结构可以拆成 **四块**：
 
 ## 实践案例
 
-### 案例 1：5 分钟跑起来
+### 案例 1：5 分钟跑起来（教学向）
+
+官方长期维护的是 **docker-compose 开发栈**；下面单容器流程适合本地试玩，若 `superset` 命令找不到，优先改用仓库里的 `docker-compose`。
+
+1. **拉起镜像**（务必设 `SUPERSET_SECRET_KEY`，否则新版本会拒启动）：
 
 ```bash
 docker run -d -p 8088:8088 \
   -e "SUPERSET_SECRET_KEY=$(openssl rand -hex 32)" \
   --name superset apache/superset
+```
 
+2. **建管理员** → **升级元数据库** → **初始化权限**：
+
+```bash
 docker exec -it superset superset fab create-admin \
   --username admin --firstname A --lastname B \
   --email a@b.c --password admin
@@ -51,7 +59,7 @@ docker exec -it superset superset db upgrade
 docker exec -it superset superset init
 ```
 
-打开 `http://localhost:8088`，登录 admin/admin，添加一个 SQLite/Postgres 数据源，到 SQL Lab 写 `SELECT * FROM users LIMIT 10`，点"Create Chart"——5 分钟从安装到出图。
+3. 打开 `http://localhost:8088`，登录 admin/admin，加一个 SQLite/Postgres 数据源，到 SQL Lab 写 `SELECT 1`，再点 "Create Chart"。
 
 ### 案例 2：SQL Lab 怎么用
 
@@ -88,7 +96,7 @@ filter: last_seen > NOW() - INTERVAL '30 days'
 
 ### 案例 5：异步查询（Celery + Redis）
 
-如果一条 SQL 跑 10 分钟（数仓常见），同步等会让浏览器超时。Superset 支持把查询丢给 [[celery]] worker 异步跑：
+数仓里一条 SQL 跑 10 分钟很常见：若浏览器同步死等，会超时。思路是——**查询丢给后台工人（Celery），前端轮询状态，跑完再从 Redis 取结果**：
 
 ```python
 # superset_config.py 关键配置
@@ -98,7 +106,7 @@ class CeleryConfig:
     imports = ('superset.sql_lab',)
 ```
 
-前端轮询查询状态，跑完后从 Redis 拉结果。配上 [[trino]] 这种长查询场景，体验完全可用。
+配上 [[trino]] 这种长查询场景，体验才可用。
 
 ## 踩过的坑
 
@@ -130,7 +138,7 @@ class CeleryConfig:
 - **2015**：Maxime Beauchemin 在 Airbnb 数据团队，受不了把数据从 Hive 导出 → CSV → Tableau 的循环，自己写了个内部工具叫 "Caravel"。
 - **2016**：开源到 GitHub，半年涨 1 万 star。
 - **2017-06**：进 Apache 孵化器，改名 "Apache Superset"（避免 Caravel 商标问题）。
-- **2018**：Maxime 离开 Airbnb，创立 Preset.io，做托管版 Superset，融资 ~1 亿美元。
+- **2018**：Maxime 离开 Airbnb，创立 Preset.io，做托管版 Superset，累计融资约亿美元量级。
 - **2021-01**：Apache 顶级项目毕业，治理彻底社区化。
 
 ## 学到什么
@@ -158,3 +166,8 @@ class CeleryConfig:
 - [[apache-echarts]] —— Superset 主要图表渲染引擎
 - [[flask]] —— Superset 后端 Web 框架
 - [[looker]] —— 商业 BI 对手，语义层做得更深
+- [[celery]] —— Superset 异步查询的任务队列
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "毛坯房精装修类比贴合"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有注释示意，缺少可粘贴的 chadrc.lua / base46 主题设置片段与逐步解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "NvChad v2.5 要求 Neovim 0.11+、starter 仓库安装路径与官方一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "star「约 26k」略旧（现约 28k），可改为「2.5万+」避免过时硬数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "安装与 Mason 案例可跟做；案例 2 建议补 chadrc 默认主题配置代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（主仓库 vs starter、Nerd Font、override）具体可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "毛坯房精装修类比贴合",
+        "案例 2 只有注释示意，缺少可粘贴的 chadrc.lua / base46 主题设置片段与逐步解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "NvChad v2.5 要求 Neovim 0.11+、starter 仓库安装路径与官方一致",
+        "star「约 26k」略旧（现约 28k），可改为「2.5万+」避免过时硬数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "安装与 Mason 案例可跟做；案例 2 建议补 chadrc 默认主题配置代码",
+        "踩坑（主仓库 vs starter、Nerd Font、override）具体可操作"
+      ]
+    }
+  ]
+}

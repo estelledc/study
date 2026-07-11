@@ -70,7 +70,12 @@ routing {
 }
 ```
 
-`install` 把 JWT 校验装到 pipeline，`authenticate { ... }` 是一个**作用域块**——块内的路由都会走这个校验，块外不走。
+**逐部分解释**：
+
+- `install(Authentication) { jwt(...) }` 把 JWT 校验挂进 pipeline（需依赖 `ktor-server-auth-jwt`）。
+- `verifier(...)` 校验签名与算法；`validate` 把通过的 token 变成 `JWTPrincipal`，失败则 401。
+- `authenticate("auth-jwt") { ... }` 是**作用域块**：块内路由走校验，块外不走。
+- `call.principal<JWTPrincipal>()` 取出已验证身份；教学片段省略了密钥轮换与时钟偏移配置。
 
 ### 案例 2：WebSocket 实时推送
 
@@ -86,7 +91,11 @@ routing {
 }
 ```
 
-`incoming` 和 `outgoing` 都是 Kotlin Channel——你 `for` 循环消费就行，底层异步 IO 由协程接管。换 Express 写 WebSocket，得自己 on('message')、on('close')、自己管状态。
+**逐部分解释**：
+
+- `install(WebSockets)` 打开升级与帧处理能力。
+- `incoming` / `outgoing` 是 Kotlin Channel：`for` 消费即可，底层异步 IO 由协程接管。
+- 换 Express 写 WebSocket，得自己 `on('message')` / `on('close')` 并手管连接状态。
 
 ### 案例 3：Multiplatform HTTP client
 
@@ -95,7 +104,11 @@ val client = HttpClient(CIO) { install(ContentNegotiation) { json() } }
 val users: List<User> = client.get("https://api.example.com/users").body()
 ```
 
-这段代码 **同一份**可以编译进 Android、iOS、JVM 后端、JS 浏览器——这是 Ktor 相对 Retrofit 的最大杀手锏。client 拆掉 server 也能单独用，跨端项目几乎是默认选择。
+**逐部分解释**：
+
+- `HttpClient(CIO)` 选纯 Kotlin 引擎；`ContentNegotiation { json() }` 负责序列化。
+- `get(...).body()` 在协程里挂起等待响应，不堵线程。
+- **同一份**可编译进 Android、iOS、JVM、JS——相对 Retrofit 的杀手锏；client 可单独用。
 
 ## 踩过的坑
 
@@ -129,7 +142,7 @@ val users: List<User> = client.get("https://api.example.com/users").body()
 - **2020 年**：1.x 系列稳定下来，Plugin 还叫 Feature，社区开始有人在生产用
 - **2022 年**：2.0 大版本，client 被重写、API 整理、命名从 Feature 改成 Plugin
 - **2024 年**：3.0 进一步整理 plugin API，去掉一些过渡期遗留
-- **2026 年**：当前 stable 3.5.0，13k+ stars，仍由 JetBrains 官方维护
+- **2026 年**：当前 stable 3.5.x（如 3.5.1），14k+ stars，仍由 JetBrains 官方维护
 
 40 年后回头看后端框架的发展，从 Servlet → Spring → Spring Boot → Ktor，每一代都是"减少样板代码"的努力。Ktor 是 Kotlin 时代这条路线的代表。
 

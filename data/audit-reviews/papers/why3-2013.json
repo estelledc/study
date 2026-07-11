@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 有编号步骤但没有可跟读的代码/脚手架片段，零基础读者仍难想象「切到 Coq」后屏幕上长什么样"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「承载了 Frama-C / SPARK / CryptoLine 的全部底层」略绝对：Frama-C 还有 WP 等非 Why3 路径；可改成「常作为这些工具链的验证后端」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 无代码：至少给一段 Why3 生成的 Coq 脚手架伪代码（Lemma + intros + induction），让读者能跟读「人工接力」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 函数体只有注释占位；补两行位运算/展开伪代码或明确标「伪代码」，否则无法跟做「C → WhyML」翻译感"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "开篇 factorial 用 `= ...` 可接受，但三个正式案例里应各有可跟读片段"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 有编号步骤但没有可跟读的代码/脚手架片段，零基础读者仍难想象「切到 Coq」后屏幕上长什么样"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "「承载了 Frama-C / SPARK / CryptoLine 的全部底层」略绝对：Frama-C 还有 WP 等非 Why3 路径；可改成「常作为这些工具链的验证后端」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 无代码：至少给一段 Why3 生成的 Coq 脚手架伪代码（Lemma + intros + induction），让读者能跟读「人工接力」",
+        "案例 3 函数体只有注释占位；补两行位运算/展开伪代码或明确标「伪代码」，否则无法跟做「C → WhyML」翻译感",
+        "开篇 factorial 用 `= ...` 可接受，但三个正式案例里应各有可跟读片段"
+      ]
+    }
+  ]
+}

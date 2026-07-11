@@ -8,7 +8,7 @@ title: Safe — 多签智能账户合约
 
 ## 是什么
 
-Safe（前 Gnosis Safe）是以太坊上**部署最广**的智能合约多签钱包。一句话定义：把"一把私钥控全部资产"换成**"N 个 owner、必须收齐 M 个签名才放行"**的可编程账户。日常类比：普通钱包像**一个保险箱配一把钥匙**，钥匙丢了或主人冲动按下"全部转出"就完蛋；Safe 像**银行金库的双钥匙制度**——必须有 3 位董事同时插钥匙转动，门才会开，而且这套规则可以按需扩展（加临时陪审员、加每日限额、加事后回放摄像头）。
+Safe（前 Gnosis Safe）是以太坊上**部署最广的智能合约多签之一**（业界常用说法）。一句话定义：把"一把私钥控全部资产"换成**"N 个 owner、必须收齐 M 个签名才放行"**的可编程账户。日常类比：普通钱包像**一个保险箱配一把钥匙**，钥匙丢了或主人冲动按下"全部转出"就完蛋；Safe 像**银行金库的双钥匙制度**——必须有 3 位董事同时插钥匙转动，门才会开，而且这套规则可以按需扩展（加临时陪审员、加每日限额、加事后回放摄像头）。
 
 它本身不是一个钱包应用，而是一组 **Solidity 合约**：一份 `Safe.sol` 单例（singleton）+ 给每个用户用 CREATE2 部署的轻量 Proxy。Proxy 通过 `delegatecall` 把所有调用转发给 singleton，自己只存数据：owner 链表、threshold、nonce、modules、guard。这就让"开一个新多签"在链上极便宜（≈ 几万 gas），又能让所有 Safe 共享同一份审计过的逻辑代码。
 
@@ -127,9 +127,9 @@ const predictedAddr = await calculateProxyAddress({
 - **2017 年**：Gnosis 团队上线 **Gnosis MultiSig 1.0**，纯 owners + threshold 的多签合约，DAO 大火后被广泛 fork。
 - **2018 年**：**Gnosis Safe** 发布，引入 Singleton + Proxy + Module + Guard 抽象，把多签升级为"可编程账户基座"。
 - **2020-2021 年**：DeFi summer + DAO 兴起，Safe 成 DAO 国库与机构热钱包默认选择，托管数十亿美金。
-- **2022 年**：项目从 Gnosis 独立运营，更名 **Safe**（safe.global），开放 SafeDAO 治理，去掉 Gnosis 商标。
-- **2023 年**：增设 **4337 Module**，现有 Safe 实例可直接接入 ERC-4337 EntryPoint，兼容账户抽象基础设施（[[besu]] 之类节点都能跑）。
-- **2024-2025 年**：Safe 成事实标准——OP Stack / Arbitrum 等大量 L2 默认部署同一份 Singleton，跨链同地址同合约。
+- **2022 年**：社区投票从 Gnosis 分拆；同年 7 月宣布融资并 **rebrand 为 Safe**（safe.global），合约与产品逐步去掉 Gnosis 前缀。
+- **2023 年**：**SafeDAO / Safe Ecosystem Foundation** 治理成型；同期推出 **4337 Module**，现有 Safe 可接入 ERC-4337 EntryPoint（[[besu]] 等节点都能跑）。
+- **2024-2025 年**：Safe 成 EVM 多签事实标准之一——OP Stack / Arbitrum 等大量 L2 部署同一份 Singleton，跨链同地址同合约。
 
 ## 学到什么
 

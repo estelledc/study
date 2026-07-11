@@ -31,9 +31,9 @@ model.save('my_model')   # 一行存出 SavedModel
 不理解 TensorFlow，下面这些事都没法解释：
 
 - 为什么 2015-2018 年**几乎所有公司**的 ML 工程岗都要求 TF 经验
-- 为什么 Google 的 TPU（自家 AI 芯片）只有 TF 是一等公民——XLA 编译器是它和硬件之间的桥
+- 为什么 Google 的 TPU（自家 AI 芯片）上 **TF / JAX 经 XLA 是一等公民**——TF 生态最早、部署链最全
 - 为什么手机上的人脸解锁、Google Translate 离线翻译大多跑在 **TFLite** 上
-- 为什么 PyTorch 抢了研究界，TF 仍稳坐**工业部署**——SavedModel + Serving + TFX 三件套没有同等替代
+- 为什么 PyTorch 抢了研究界，TF 仍稳坐**工业部署**——SavedModel + Serving + TFX 官方一体链仍更完整（TorchServe / ExecuTorch 等存在，但碎片化）
 
 ## 核心要点
 
@@ -43,7 +43,7 @@ TensorFlow 的能力可以拆成 **四层**：
 
 2. **Keras（高层 API）**：TF 2.x 把 Keras 吸收为官方门面（`tf.keras`）。`Sequential` / `Model` 三五行就拼出网络，`.fit()` 一行训完。
 
-3. **XLA（编译器）**：把图编译成融合后的 GPU/TPU/CPU kernel。性能跃升的来源，也是 TPU 唯一能跑 TF 的原因。
+3. **XLA（编译器）**：把图**翻译成**融合后的 GPU/TPU/CPU 硬件指令。性能跃升的来源；TPU 上 TF 与 JAX 都走 XLA，TF 只是最早铺齐工具链的那条。
 
 4. **部署矩阵**：SavedModel（标准格式）→ TF Serving（云）/ TFLite（移动）/ TF.js（浏览器）/ TFX（pipeline）。**同一个模型文件**走完整条工业链。
 
@@ -88,11 +88,14 @@ model.save('mnist_savedmodel')
 # 转 TFLite 上手机
 tflite_convert --saved_model_dir=mnist_savedmodel --output_file=mnist.tflite
 
-# 起 TF Serving 上服务器
-docker run -p 8501:8501 -v $(pwd)/mnist_savedmodel:/models/mnist tensorflow/serving
+# 起 TF Serving（需指定 MODEL_NAME，否则默认模型名对不上）
+docker run -p 8501:8501 \
+  -e MODEL_NAME=mnist \
+  -v $(pwd)/mnist_savedmodel:/models/mnist \
+  tensorflow/serving
 ```
 
-**一个目录** = 云端服务 + 手机推理 + 浏览器端，PyTorch 至今没有同等开箱方案。
+**一个目录** = 云端服务 + 手机推理 + 浏览器端；PyTorch 侧有 TorchServe / ExecuTorch 等，但官方「训练→多端」一体开箱仍以 TF 更完整。
 
 ## 踩过的坑
 
@@ -132,9 +135,9 @@ docker run -p 8501:8501 -v $(pwd)/mnist_savedmodel:/models/mnist tensorflow/serv
 
 ## 学到什么
 
-1. **一个框架的命运在生态而不是 API**——PyTorch 接管研究后 TF 仍立得住，靠的是 TFLite/Serving/TFX 这些"PyTorch 没有官方替代"的部署链。
+1. **一个框架的命运在生态而不是 API**——PyTorch 接管研究后 TF 仍立得住，靠的是 TFLite/Serving/TFX 这条更完整的官方部署链。
 2. **静态图 vs 动态图**之争最后的答案是"两者都要"——TF 2.x 的 `@tf.function` 和 PyTorch 2.0 的 `torch.compile` 殊途同归。
-3. **编译器 + 硬件协同**才能解锁 ASIC——XLA 是 TPU 能跑 TF 的根本原因。
+3. **编译器 + 硬件协同**才能解锁 ASIC——XLA 是 TF/JAX 上 TPU 的共同桥梁，TF 最早把工具链铺齐。
 4. **破坏性升级要付学费**：TF 1→2 让 Google 自己付出三年迁移成本，新人也被旧教程坑。API 稳定是隐性资产。
 5. **Keras 的吸收是聪明的并购**——把第三方友好的高层 API 收为官方门面，门槛瞬间降一半。
 
@@ -149,7 +152,11 @@ docker run -p 8501:8501 -v $(pwd)/mnist_savedmodel:/models/mnist tensorflow/serv
 ## 关联
 
 - [[pytorch]] —— 同代深度学习框架，TF 输研究、赢部署，互为镜像
-- [[fastai]] —— PyTorch 高层封装；Keras 之于 TF 即 fastai 之于 PyTorch（思路相通）
-- [[accelerate]] —— HuggingFace 在 PyTorch 之上的设备/分布式抽象，对应 TF 的 `tf.distribute.Strategy`
-- [[llvm]] —— XLA 的"多级 IR + 多后端"工程范式继承自 LLVM
-- [[lambda-calculus]] —— `@tf.function` 把 Python 函数 trace 成图，本质是高阶函数到表达式树的变换
+- [[fastai]] —— PyTorch 高层封装；Keras 之于 TF 即 fastai 之于 PyTorch
+- [[accelerate]] —— HuggingFace 在 PyTorch 之上的设备/分布式抽象，对应 `tf.distribute.Strategy`
+- [[llvm]] —— XLA 的「多级 IR + 多后端」工程范式继承自 LLVM
+- [[lambda-calculus]] —— `@tf.function` 把 Python 函数 trace 成图，本质是高阶函数到表达式树
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

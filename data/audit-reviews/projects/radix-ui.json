@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "毛坯房 / 插座转换头 / 自动挡 / 医院四窗口类比贴合，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "WAI-ARIA、Portal、FocusScope 等有行为向白话；createContextScope / Presence 段仍偏密，但可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有逐部分解释；案例 3 的 caller 字段说明清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 radix-ui/primitives 正确；Slot/asChild、分层 compose、受控双模与官方定位一致，无硬歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写『2023 年 Modulz 被 WorkOS 收购』不准确：收购公告是 2022-06（随 Series B）；应改为 2022"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2024 年 Tailwind UI 用 Radix 改写默认实现』不实：Tailwind UI/Catalyst 基于 Headless UI，不是 Radix；可改写为 shadcn/v0 生态扩散"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『2021 年 v1 发布』过满：当年仍是 0.1.x beta；宜写公开 beta / 文档站覆盖多数 ARIA pattern"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Dialog / asChild / useControllableState 三案例概念正确可跟做；案例 1 的 -translate-1/2 不是标准 Tailwind 工具类，宜改为 -translate-x-1/2 -translate-y-1/2"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：bundle 依赖链、a11y 不自检、受控时机差一帧、scope 隔离、TS 类型爆炸——都可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用设计系统/shadcn vs 不适用简单表单/已投 MUI/体积敏感/要 hook 组装，边界清楚有量化直觉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "毛坯房 / 插座转换头 / 自动挡 / 医院四窗口类比贴合，零基础直觉强",
+        "WAI-ARIA、Portal、FocusScope 等有行为向白话；createContextScope / Presence 段仍偏密，但可跟",
+        "三案例都有逐部分解释；案例 3 的 caller 字段说明清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 radix-ui/primitives 正确；Slot/asChild、分层 compose、受控双模与官方定位一致，无硬歪曲",
+        "历史写『2023 年 Modulz 被 WorkOS 收购』不准确：收购公告是 2022-06（随 Series B）；应改为 2022",
+        "『2024 年 Tailwind UI 用 Radix 改写默认实现』不实：Tailwind UI/Catalyst 基于 Headless UI，不是 Radix；可改写为 shadcn/v0 生态扩散",
+        "『2021 年 v1 发布』过满：当年仍是 0.1.x beta；宜写公开 beta / 文档站覆盖多数 ARIA pattern"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Dialog / asChild / useControllableState 三案例概念正确可跟做；案例 1 的 -translate-1/2 不是标准 Tailwind 工具类，宜改为 -translate-x-1/2 -translate-y-1/2",
+        "踩坑具体：bundle 依赖链、a11y 不自检、受控时机差一帧、scope 隔离、TS 类型爆炸——都可操作",
+        "适用设计系统/shadcn vs 不适用简单表单/已投 MUI/体积敏感/要 hook 组装，边界清楚有量化直觉"
+      ]
+    }
+  ]
+}

@@ -107,11 +107,11 @@ Rabby 支持**只导入地址、不导入私钥**的模式（WatchOnly）：
 
 - **2018 年**：DeBank 创立，主业是多链资产看板（"我在 12 条链上各有多少钱"），积累了大量 RPC / indexer 基建。
 - **2020-2021 年（DeFi Summer）**：Uniswap / Compound 等爆发，普通用户被钓鱼合约 drain（钱包被掏空）的事件大量出现，社区呼吁"更安全的 MetaMask"。
-- **2021 年 7 月**：DeBank 发布 Rabby 0.1，主打"签名前看清楚"的 Pre-sign Simulation。
-- **2022 年**：开源到 GitHub（RabbyHub/Rabby），社区开始 PR 多链 RPC、新硬件钱包适配。
+- **2021 年 4–7 月**：GitHub 建库（RabbyHub/Rabby）并公开发布 0.1，主打"签名前看清楚"的 Pre-sign Simulation。
+- **2022 年**：社区持续 PR 多链 RPC、新硬件钱包适配；模拟能力依赖自家/第三方仿真服务，而非密码学状态证明。
 - **2023 年**：Rabby 成为 DeFi Twitter 圈推荐"标配"，DeBank 团队又出 Rabby Mobile 和 Rabby Desktop，覆盖更多场景。
 - **2024 年**：Rabby 跟进 EIP-6963（多钱包发现协议），不再和其他扩展抢 `window.ethereum` 全局变量，对开发者更友好。
-- **2025 年**：Pre-sign Simulation 引擎升级，加入"merkle proof 验证"——即便模拟节点被劫持，主链状态也能交叉验证。
+- **2025–2026 年**：继续扩 EVM 链覆盖与风险标签（如可疑交易提示）；模拟仍要信任 RPC/仿真后端，不能当成"节点被劫持也无忧"。
 
 ## 学到什么
 

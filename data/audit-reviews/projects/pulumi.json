@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 反向链接",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "填表格 vs 写程序类比贴合；IaC / HCL / Output 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1、2 缺「逐部分解释」，案例 2 的 ComponentResource / parent / Output 需拆步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "反向链接下列出的条目应删掉，只留 regen 占位注释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Joe Duffy 2017 创立、AWS CDK 2019、来源 github.com/pulumi/pulumi 合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「95% 的 provider 是从 Terraform Provider 桥接生成」过绝对——应改为「多数 / 大量」并点明也有 native provider（如 Kubernetes、Azure Native）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "S3 Bucket / ComponentResource / Output.apply 概念正确；Output 不能当 string/if 的坑很实用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 TS 团队复杂抽象 vs 简单基建/HCL 运维/已有 TF 重度投入，边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "文末反向链接已展开列表，违反「只留占位」——删掉展开项以免与 regen 冲突"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "填表格 vs 写程序类比贴合；IaC / HCL / Output 有桥接",
+        "案例 1、2 缺「逐部分解释」，案例 2 的 ComponentResource / parent / Output 需拆步说明",
+        "反向链接下列出的条目应删掉，只留 regen 占位注释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Joe Duffy 2017 创立、AWS CDK 2019、来源 github.com/pulumi/pulumi 合理",
+        "「95% 的 provider 是从 Terraform Provider 桥接生成」过绝对——应改为「多数 / 大量」并点明也有 native provider（如 Kubernetes、Azure Native）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "S3 Bucket / ComponentResource / Output.apply 概念正确；Output 不能当 string/if 的坑很实用",
+        "适用 TS 团队复杂抽象 vs 简单基建/HCL 运维/已有 TF 重度投入，边界清楚",
+        "文末反向链接已展开列表，违反「只留占位」——删掉展开项以免与 regen 冲突"
+      ]
+    }
+  ]
+}

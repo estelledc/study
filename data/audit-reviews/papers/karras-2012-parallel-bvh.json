@@ -1,0 +1,60 @@
+{
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "分蛋糕/切刀类比贴合；Morton/LCP/atomicCAS 有桥接；案例 2 伪代码末尾省略二分细节，但不影响跟读主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Karras HPG 2012、Lauterbach 2009 LBVH、HLBVH 2010、TRBVH 脉络正确；GTX 480 量级数字与论文方向一致；「几乎复刻」对 Metal RT 略强但仍属合理教学概括。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "拓扑伪代码抓住 LCP+指数/二分搜精髓；Morton 碰撞/atomicCAS/int 溢出/与 Lauterbach 混淆踩坑可操作；适用边界含 <1k 与质量优先场景。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

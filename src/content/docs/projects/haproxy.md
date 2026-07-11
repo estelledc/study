@@ -20,7 +20,7 @@ HAProxy 是一台**专门做"分流和守门"的代理服务器**，前面接外
 
 - 为什么大公司前端入口几乎人手一台 HAProxy / 类似物，而不是直接把请求丢给应用服务器
 - 为什么"某台机器挂了用户毫无感觉"——是谁在 5 秒内把它从池子里踢掉的
-- 为什么云厂商的 LB 服务（AWS ALB / 阿里 SLB）账单上写的是"连接数 / 流量"——它们底层就是这种东西
+- 为什么云厂商的 LB 服务（AWS ALB / 阿里 SLB）账单上写的是"连接数 / 流量"——它们提供的是同一类接入层能力（分流、健康检查、高可用），只是做成了托管分布式系统
 - 为什么后端面试爱问 keep-alive / sticky session / health check——这些概念几乎都从 LB 来
 
 ## 核心要点
@@ -92,7 +92,7 @@ backend pg_pool
 ## 踩过的坑
 
 1. **timeout 三件套漏配一个就出诡异断连**——`timeout client / server / connect` 必须都设，新人最常只配 client 然后被服务器侧 5s 默认超时坑
-2. **配置 reload 不是 zero-downtime**——老进程要等所有连接关掉才退，长连接（WebSocket）场景会堆几十个老 worker 进程吃内存
+2. **reload 对短连接通常 hitless，对长连接会拖后腿**——新进程接新连接，但老进程要等既有连接结束才退；WebSocket / 长轮询场景容易堆多个老进程吃内存
 3. **maxconn 没调高时受 ulimit 卡住**——日志里只看到 `cannot accept` 但没明显报错，要同时改 `global maxconn` 和系统 `nofile`
 4. **health check 默认只测 TCP 连得上**——应用层假死不会被发现；要配 `option httpchk GET /health` 才探到真实健康状态
 

@@ -47,6 +47,8 @@ node scripts/regen-backlinks.mjs --check
 
 更新 baseline 是需要单独审查的动作，不能作为修复审计失败的默认手段。必须说明新增项的 owner/decision，并确认没有正文被改写。
 
+如果不可变上游 commit 已经整体替换受保护正文，baseline 迁移还必须写入 `data/wikilink-baseline-transition.json`：绑定旧/新 baseline SHA-256、旧/新 source commit、occurrence/group 总量和新增/增长及移除/下降组数。审计会验证 transition 的目标哈希、commit 和计数与当前 baseline 完全一致；这允许保留上游事实，但不能给当前 PR 新增 wikilink 留绕过入口。
+
 ## Backlink 写回边界
 
 生成器只识别带固定 HTML marker 的自动生成段；没有 marker 的手写「反向链接」段保持 byte-identical。ALL 与 BACKREFS 均以 NoteId 为 key，跨区重复 slug 不再覆盖。重复 slug 的生成链接使用 `area/slug`，唯一 slug 继续使用裸形式。

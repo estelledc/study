@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 去噪流程偏叙述，建议拆成「BM25/检索召回 → cross-encoder 打分 → 按阈值过滤 → 只留硬负例」四步，方便零基础跟读。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "MRR@10 首次出现时加一句中文桥接（例如「前 10 个结果里相关文档排得有多靠前」）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 2 写 RocketQA 用 detached 负例有误：论文与百度博客写明 cross-batch 用 FleetX 的 differentiable all-gather；应改正，并可注明 PyTorch 社区复现常改成 detach。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 2 与论文实现不符，修正为 differentiable all-gather；可补一句社区 PyTorch 复现常 detach 导致掉点的工程差异。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 去噪流程偏叙述，建议拆成「BM25/检索召回 → cross-encoder 打分 → 按阈值过滤 → 只留硬负例」四步，方便零基础跟读。",
+        "MRR@10 首次出现时加一句中文桥接（例如「前 10 个结果里相关文档排得有多靠前」）。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 写 RocketQA 用 detached 负例有误：论文与百度博客写明 cross-batch 用 FleetX 的 differentiable all-gather；应改正，并可注明 PyTorch 社区复现常改成 detach。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 与论文实现不符，修正为 differentiable all-gather；可补一句社区 PyTorch 复现常 detach 导致掉点的工程差异。"
+      ]
+    }
+  ]
+}

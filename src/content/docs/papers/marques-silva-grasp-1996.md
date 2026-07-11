@@ -10,12 +10,14 @@ title: GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 
 GRASP 是 1996 年 Marques-Silva 和 Sakallah 在 ICCAD 上发的 SAT 求解器，**第一次系统性地把"冲突学习"塞进 DPLL**。它的全名是 Generic seaRch Algorithm for the Satisfiability Problem。
 
+日常类比：像考试**错题本**——以前每做错一题只改这一次答案（DPLL 回溯）；GRASP 会把"这组条件不能同时成立"写成一条永久规则贴进题库，下次任何卷子再出现同一组合，直接跳过整片死路。登山发现死路时也不是退一步，而是直接退到分岔口。
+
 一句话说清楚改动：
 
 > DPLL（1962）回溯时只是"撤销上一个决策"——同样的矛盾会在搜索树不同位置反复触发。
-> GRASP 在每次冲突时**画一张 implication graph**，反向追出"哪几个决策共同导致了这次矛盾"，把这个组合**写成一条新子句永久加进 CNF**——下次任何路径走到同一组合，单元传播立刻就剪掉了。
+> GRASP 在每次冲突时**画一张 implication graph**（赋值谁推出谁的因果图），反向追出"哪几个决策共同导致了这次矛盾"，把这个组合**写成一条新子句永久加进 CNF**（合取范式：一堆"或"子句再用"且"连起来）——下次任何路径走到同一组合，单元传播立刻就剪掉了。
 
-这个动作叫 **CDCL（Conflict-Driven Clause Learning）**。从 1996 到 2026，所有工业 SAT 求解器（zChaff / MiniSat / Glucose / CaDiCaL / Z3 内核）的主循环都是 DPLL + GRASP 这个学习动作的组合，三十年没变过。
+后来学界把这套"冲突驱动学子句"统称为 **CDCL（Conflict-Driven Clause Learning）**。从 1996 到 2026，所有工业 SAT 求解器（zChaff / MiniSat / Glucose / CaDiCaL / Z3 内核）的主循环都是 DPLL + GRASP 这个学习动作的组合，三十年没变过。
 
 ## 为什么重要
 

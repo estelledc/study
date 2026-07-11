@@ -27,7 +27,7 @@ end
 
 - 为什么 Ruby 社区做"内部工具 / webhook 接收端 / mock server"都偏爱它，而不是 Rails
 - 为什么 Express.js / Flask / Hono 这些不同语言的极简框架，路由写法几乎一模一样——都从 Sinatra 抄过来
-- 为什么"约定优于配置"和"最少惊讶"是两条相反但同样合理的设计哲学
+- 为什么"约定优于配置"和"显式组装（自带电池 vs 自带零件）"是两条相反但同样合理的设计哲学
 - 为什么一个 2007 年的小框架，2026 年还在被新项目选用
 
 ## 核心要点
@@ -75,6 +75,8 @@ end
 ### 案例 3：在 CLI 工具里嵌入一个状态查询端点
 
 ```ruby
+require 'sinatra/base'
+$counter = 0  # 主程序里每处理完一个任务就 +1
 class StatusApp < Sinatra::Base
   get '/health' do
     "OK，已处理 #{$counter} 个任务"
@@ -83,7 +85,7 @@ end
 Thread.new { StatusApp.run! port: 9292 }
 ```
 
-这是 modular 风格——把 Sinatra 应用包成类，丢到子线程里跑。主程序继续做后台任务，运维想看健康状态就 `curl localhost:9292/health`。**Sinatra 在这里只占 6 行**，不会喧宾夺主。
+这是 modular 风格——把 Sinatra 应用包成类，丢到子线程里跑。主程序继续做后台任务并更新 `$counter`，运维想看健康状态就 `curl localhost:9292/health`。**Sinatra 在这里只占几行**，不会喧宾夺主。
 
 ## 踩过的坑
 
@@ -121,7 +123,7 @@ Thread.new { StatusApp.run! port: 9292 }
 
 ## 学到什么
 
-1. **"约定优于配置"和"最少惊讶"是两条平行哲学**——Rails 选前者、Sinatra 选后者，没有谁更对，只看场景
+1. **"约定优于配置"和"显式组装"是两条平行哲学**——Rails 自带电池与目录约定，Sinatra 只给零件让你拼，没有谁更对，只看场景
 2. **DSL 是把"领域语义"压到代码外观上的技巧**——`get '/path' do ... end` 一眼能看懂，比 `app.add_route(GET, '/path', handler)` 直观
 3. **基于通用接口（Rack / WSGI / Servlet）的小框架天然能复用整个生态**——这是它们能用很少代码做很多事的根因
 4. **极简框架不等于学得快**——它假设你懂 HTTP 和 Rack，对真新手反而 [[rails]] 这类大框架更友好
@@ -137,7 +139,7 @@ Thread.new { StatusApp.run! port: 9292 }
 
 ## 关联
 
-- [[rails]] —— 同语言反面案例：Sinatra 主张最少惊讶，Rails 主张约定优于配置
+- [[rails]] —— 同语言反面案例：Sinatra 主张显式组装，Rails 主张约定优于配置
 - [[express]] —— Node 生态的 Sinatra 致敬版，路由 DSL 几乎一致
 - [[flask]] —— Python 生态的 Sinatra 致敬版，2010 年发布
 - [[hono]] —— 现代 TypeScript 极简框架，仍延续 Sinatra DSL 的路由风格

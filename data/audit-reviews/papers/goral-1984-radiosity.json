@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "咖啡厅弹光 / 手电筒 form factor / 先布光再拍照类比贴合；案例 1 缺逐步拆解，但仍能跟住 color bleeding"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1984 原文 Cornell Box 是红墙+蓝墙+三面灰墙，不是红绿墙；红绿是后来常见演示变体"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1984 原场景因解析算 form factor，盒内没有遮挡色块；『里面摆几个色块』应标明是后续经典变体"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读第一条链到 Cornell Box 历史页而非论文 PDF，宜补真实 PDF 或标明是历史页"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "方程与矩阵形式概念正确；踩坑（仅漫反射 / form factor 贵 / 网格 / 动态失效）可操作，适用边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "咖啡厅弹光 / 手电筒 form factor / 先布光再拍照类比贴合；案例 1 缺逐步拆解，但仍能跟住 color bleeding"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "1984 原文 Cornell Box 是红墙+蓝墙+三面灰墙，不是红绿墙；红绿是后来常见演示变体",
+        "1984 原场景因解析算 form factor，盒内没有遮挡色块；『里面摆几个色块』应标明是后续经典变体",
+        "延伸阅读第一条链到 Cornell Box 历史页而非论文 PDF，宜补真实 PDF 或标明是历史页"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "方程与矩阵形式概念正确；踩坑（仅漫反射 / form factor 贵 / 网格 / 动态失效）可操作，适用边界清楚"
+      ]
+    }
+  ]
+}

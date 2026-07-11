@@ -1,0 +1,56 @@
+{
+  "slug": "3d-force-graph",
+  "area": "projects",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "DAG、WebGL、物理模拟等词已有上下文，但历史脉络缺失会让零基础读者不清楚它从 three.js / d3-force 生态怎样长出来。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "WebXR 需要 secure context，但 localhost 通常被浏览器视为安全来源；“本地 http://localhost 也不行”表述过绝对，需要改成普通 HTTP 局域网/IP 不行。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "缺少 base-rules 要求的“历史小故事（可跳过）”和“反向链接”占位段，后续 regen/quality gate 会被卡住。",
+        "VR HTTPS 踩坑应说明 localhost 例外，以及手机/头显访问开发机 IP 时需要 HTTPS。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "action": "refine",
+    "reason": "存在 needs-refine，且平均分 < 4；未达到 rewrite 的 reject 条件。"
+  }
+}

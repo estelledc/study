@@ -1,0 +1,123 @@
+{
+  "slug": "simrank-2002",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "朋友圈重合类比贯穿「是什么」与入邻居直觉，零基础易懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "入邻居 / 衰减因子 C / 不动点迭代首次出现有白话桥接；公式仍偏密但有拆步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 结构清楚；案例 2 代码紧凑，逐步解释略短，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Jeh & Widom, KDD 2002；入邻居递归公式与相遇时间直觉与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源与 Stanford 报告 PDF、Yu & McCann ICDE 2014 延伸阅读合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "DeepWalk/node2vec「本质是 SimRank 近似」属教学概括，略宽但不构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 不动点迭代伪代码概念正确：对角为 1、用上一轮 s 更新；可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：O(n²) 空间、冷启动、C 取值、无权图局限——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：纯结构图 vs 富特征、千万级需近似、批量非在线"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "朋友圈重合类比贯穿「是什么」与入邻居直觉，零基础易懂",
+        "入邻居 / 衰减因子 C / 不动点迭代首次出现有白话桥接；公式仍偏密但有拆步",
+        "案例 1–3 结构清楚；案例 2 代码紧凑，逐步解释略短，可保留"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Jeh & Widom, KDD 2002；入邻居递归公式与相遇时间直觉与论文一致",
+        "来源与 Stanford 报告 PDF、Yu & McCann ICDE 2014 延伸阅读合理",
+        "DeepWalk/node2vec「本质是 SimRank 近似」属教学概括，略宽但不构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 不动点迭代伪代码概念正确：对角为 1、用上一轮 s 更新；可跟读",
+        "踩坑具体：O(n²) 空间、冷启动、C 取值、无权图局限——可操作",
+        "适用/不适用边界清楚：纯结构图 vs 富特征、千万级需近似、批量非在线"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true
+}

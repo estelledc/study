@@ -136,7 +136,7 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 - **2019**：v5 GA，CommonJS + 自带 BN.js BigNumber，逐渐成为 DApp 前端事实标准
 - **2023**：v6 发布，全面 ESM-first、用原生 BigInt 替换 BigNumber、TypeScript 重写
 - **2024**：viem 崛起，ethers 失去"唯一选择"地位但靠生态惯性继续主流
-- **2025**：v6.16 稳定版，npm 周下载稳定 700k+，与 viem 并立两强
+- **2025–2026**：v6.x 持续维护（如 6.17），npm 周下载进入百万级，与 viem 并立两强
 
 ## 学到什么
 

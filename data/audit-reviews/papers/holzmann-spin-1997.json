@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "下棋穷举类比贴合；Promela/LTL/[]/<> 桥接清楚；案例 1/4 有模型与解释，案例 2/3 偏叙事缺逐步命令。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "IEEE TSE 1997 Holzmann 来源正确；ACM SSA 2001、partial-order/bitstate、编译成 pan.c 与论文一致；Pathfinder 用「这类工具」措辞未硬说 SPIN 当场发现该 bug；「第一个工程可用」略强但可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 写 `spin -search` 不是标准流程；应改为 `spin -a` 生成 pan.c → 编译 → `./pan`。Promela atomic/锁模型概念正确；状态爆炸/Promela≠C/LTL 写反/公平性踩坑很实用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "下棋穷举类比贴合；Promela/LTL/[]/<> 桥接清楚；案例 1/4 有模型与解释，案例 2/3 偏叙事缺逐步命令。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "IEEE TSE 1997 Holzmann 来源正确；ACM SSA 2001、partial-order/bitstate、编译成 pan.c 与论文一致；Pathfinder 用「这类工具」措辞未硬说 SPIN 当场发现该 bug；「第一个工程可用」略强但可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 写 `spin -search` 不是标准流程；应改为 `spin -a` 生成 pan.c → 编译 → `./pan`。Promela atomic/锁模型概念正确；状态爆炸/Promela≠C/LTL 写反/公平性踩坑很实用。"
+      ]
+    }
+  ]
+}

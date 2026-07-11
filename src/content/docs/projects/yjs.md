@@ -26,20 +26,20 @@ ProseMirror、CodeMirror、Lexical、TipTap、Quill 都能接同一套 Yjs，绑
 
 不理解 Yjs 这类 CRDT 库，下面这些事都没法解释：
 
-- 为什么 Linear、Notion、JupyterLab 能做"多人同时编辑、不卡、断网也能写"——它们底下就是 Yjs 或同类
-- 为什么 Google Docs 当年用 OT（Operational Transform）那么难写，CRDT 出来后小团队都能做协同
+- 为什么 JupyterLab、AFFiNE 能做"多人同时编辑、不卡、断网也能写"——底下是 Yjs；Notion / Linear 则用同类 CRDT 或 OT 方案
+- 为什么 Google Docs 当年用 OT（Operational Transform，操作变换）那么难写，CRDT 出来后小团队都能做协同
 - 为什么 local-first 软件运动（Ink & Switch）反复推 CRDT——它是"先离线、再合并"的数学基础
-- 为什么协同编辑代码这么少出现冲突弹窗——CRDT 公理保证最终一致，根本没有"冲突"这个概念
+- 为什么协同编辑很少弹"冲突对话框"——CRDT 保证结构最终一致；两人改同一句时两边都留下，只是不再卡死
 
 ## 核心要点
 
 Yjs 的工作机制可以拆成 **三步**：
 
-1. **每个改动有 Lamport ID**：每个客户端有 `clientID`，本地操作计数 `clock`，合起来 `(clientID, clock)` 是全局唯一 ID。类比：每个人的便签有"姓名+第几张"，全世界不会重。
+1. **每个改动有唯一编号（Lamport ID）**：每个客户端有 `clientID`，本地操作计数 `clock`，合起来 `(clientID, clock)` 全局唯一。类比：每人便签写"姓名+第几张"，全世界不会重号。
 
-2. **文档是一条双向链表**：每个字符或元素是一个 `Item` 节点，带 `left/right` 指针 + `origin/rightOrigin` 历史锚点。concurrent 插入冲突时，YATA 算法按 (origin 邻居序 + clientID 仲裁) 决定谁排前面——所有人算出同样顺序。
+2. **文档是一条双向链表**：每个字符是一个 `Item`（节点），记住左右邻居。两人同时往同一处插字（并发 / concurrent）时，YATA 算法看"各自锚定的左右邻居 + clientID 谁大"决定谁排前——所有人算出同一顺序。类比：两张便签都夹在同一对邻居之间，按学号大小排。
 
-3. **传输是紧凑二进制**：update 用 9 列 column-oriented 编码，分别压缩 client 码、clock、info bits、字符串、parent 信息等。比 JSON 小一个数量级，WebSocket / WebRTC / IndexedDB 都能直接收发。
+3. **传输是紧凑二进制**：update 用 9 列按列压缩（client、clock、标记位、字符串、父节点等）。比 JSON 小一个数量级，WebSocket / WebRTC / IndexedDB 都能直接收发。
 
 三步加起来叫 **YDoc 模型**。
 
@@ -53,6 +53,7 @@ Yjs 的工作机制可以拆成 **三步**：
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { ySyncPlugin, yCursorPlugin } from 'y-prosemirror'
+// EditorView / EditorState 来自 prosemirror-view / prosemirror-state
 
 const ydoc = new Y.Doc()
 const provider = new WebsocketProvider('wss://demo', 'room-1', ydoc)

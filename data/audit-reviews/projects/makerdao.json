@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Vat / Spotter / Jug / Cat / Dog 等术语堆叠，首次出现缺少更短的日常桥接（例如「总账本 / 报价员 / 计息器 / 清算员」）。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 $ETH_A_JOIN / $VAT / $ME 未说明从哪来，零基础无法逐步跟做；建议标明「示意命令，地址需自行替换」并拆成编号步骤。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019-11 MCD 上线时是旧单抵押 Dai 改称 SAI、新多抵押代币沿用 DAI 名；笔记写「SAI 改名 DAI」方向反了。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「至今是去中心化稳定币市值第一」缺时间限定，且 2024+ 格局变化大，宜改为「长期是去中心化稳定币代表之一」或加年份。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 cast/frob 片段缺地址与 join 前置条件，按字面无法在 fork 上跑通；应标为示意并补「先拿 join/vat 地址、ink/art 单位」说明。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里 wad/ray/rad 与 OSM 滞后写得很实用，可保留。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Vat / Spotter / Jug / Cat / Dog 等术语堆叠，首次出现缺少更短的日常桥接（例如「总账本 / 报价员 / 计息器 / 清算员」）。",
+        "案例 1 的 $ETH_A_JOIN / $VAT / $ME 未说明从哪来，零基础无法逐步跟做；建议标明「示意命令，地址需自行替换」并拆成编号步骤。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "2019-11 MCD 上线时是旧单抵押 Dai 改称 SAI、新多抵押代币沿用 DAI 名；笔记写「SAI 改名 DAI」方向反了。",
+        "「至今是去中心化稳定币市值第一」缺时间限定，且 2024+ 格局变化大，宜改为「长期是去中心化稳定币代表之一」或加年份。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 cast/frob 片段缺地址与 join 前置条件，按字面无法在 fork 上跑通；应标为示意并补「先拿 join/vat 地址、ink/art 单位」说明。",
+        "踩坑里 wad/ray/rad 与 OSM 滞后写得很实用，可保留。"
+      ]
+    }
+  ]
+}

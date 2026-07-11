@@ -10,7 +10,7 @@ title: OpenRCT2 — 用逆向工程让 20 年前的游戏复活
 
 想象你有一本用只有作者能看懂的速记符号写成的菜谱（x86 汇编），做出来的菜很好吃但你没法改良它——不能加新调料、不能换炉灶、不能让两个人同时做这道菜。OpenRCT2 做的事就是：一群厨师花了十年时间，把这本天书菜谱逐页翻译成人人都能读的普通话（C++），翻译完之后不仅菜的味道一模一样，还能随意加新菜谱、换厨房、甚至开放厨房让朋友一起做。
 
-具体来说，OpenRCT2 是对 2002 年经典游戏《过山车大亨 2》（RollerCoaster Tycoon 2）的完整开源重实现。原版由传奇程序员 Chris Sawyer 几乎全部用 x86 汇编手写，项目创始人 Ted "IntelOrca" John 在 2014 年启动逆向工程，和 600+ 贡献者一起把整个引擎用 C++20 重写。最终产物不仅完美还原了原版游戏体验，还加上了原版不可能实现的功能：跨平台、高分辨率、多人在线、JavaScript 插件系统。GitHub 约 14k stars。
+具体来说，OpenRCT2 是对 2002 年经典游戏《过山车大亨 2》（RollerCoaster Tycoon 2）的完整开源重实现。原版由传奇程序员 Chris Sawyer 几乎全部用 x86 汇编手写，项目创始人 Ted "IntelOrca" John 在 2014 年启动逆向工程，和 600+ 贡献者一起把整个引擎用 C++20 重写。最终产物在行为上高度对齐原版，并加上原版做不到的能力：跨平台、高分辨率、多人在线、JavaScript 插件系统。GitHub 约 14k stars。
 
 项目需要原版 RCT2 的游戏资产文件才能运行——这不是盗版，而是逆向工程只替换了引擎代码，美术资产仍受版权保护。你可以在 Steam 或 GOG 上花几十块买到原版。
 
@@ -89,15 +89,26 @@ struct TrackPlaceAction : public GameAction {
 直到遇到 IsLastForTile() == true 的元素
 ```
 
-这种紧凑的链式存储让地图内存占用极低，但代价是插入和删除操作需要移动后续元素——典型的空间换时间 trade-off。
+这种紧凑的链式存储让地图内存占用极低，但代价是插入/删除要移动后续元素。遍历时从首元素开始逐个前进，直到 `IsLastForTile()` 为真。
+
+### 案例 3：最小 JavaScript 插件
+
+```js
+// 放到用户数据目录 plugin/hello.js，启动时自动加载
+const window = ui.openWindow({
+  classification: "hello",
+  width: 200, height: 80,
+  title: "Hello OpenRCT2",
+  widgets: [{ type: "label", text: "公园资金见控制台", x: 10, y: 20, width: 180, height: 20 }],
+});
+console.log("cash =", park.cash);
+```
+
+逐部分解释：`ui.openWindow` 弹自定义窗；`park.cash` 读经营状态；脚本跑在 Duktape 沙箱里，不能直接改引擎内存。改逻辑不必重编译 C++。
 
 ## 怎么跑起来
 
-最快方式是下载预编译包。去 [openrct2.org](https://openrct2.org/) 下载对应平台的安装包，安装后首次启动会提示指定原版 RCT2 的安装路径（Steam 或 GOG 版都行）。指定后引擎会读取原版的美术资产和数据文件，然后用自己的 C++ 引擎运行游戏。
-
-从源码编译需要 CMake、C++20 编译器（GCC 11+ / Clang 14+ / MSVC 2022+）、SDL2、libpng、zlib 等依赖。基本流程是 `cmake -B build && cmake --build build`，编译产物是 `openrct2` 可执行文件。项目使用 vcpkg 管理依赖，Windows 上相对顺畅，macOS/Linux 需要手动装几个系统库。
-
-想写插件的话，在 OpenRCT2 用户数据目录下创建 `plugin/myplugin.js`，引擎启动时自动加载。插件用 TypeScript 类型定义（社区提供了 `openrct2.d.ts`），写完用 tsc 编译成 JS 就能用。不需要重新编译引擎。
+去 [openrct2.org](https://openrct2.org/) 下预编译包，首次启动指定 Steam/GOG 原版 RCT2 路径即可。源码编译：`cmake -B build && cmake --build build`（需 C++20、SDL2 等；Windows 常用 vcpkg）。
 
 ## 踩过的坑
 
@@ -143,32 +154,7 @@ Chris Sawyer 是个传奇。1990 年代他用 x86 汇编从零写了 Transport T
 
 ## 目录结构
 
-```
-OpenRCT2/
-├── src/
-│   ├── openrct2/               # 核心引擎（平台无关）
-│   │   ├── Context.cpp/h       # 中央调度器，管理所有子系统生命周期
-│   │   ├── GameState.cpp/h     # 游戏状态容器 + 主循环（40 FPS tick）
-│   │   ├── ride/               # 过山车和游乐设施系统
-│   │   ├── world/              # 地图、TileElement、公园管理
-│   │   ├── entity/             # 游客（Peep）、车辆、实体管理
-│   │   ├── drawing/            # 软件渲染器、2D 绘图原语
-│   │   ├── interface/          # Viewport、窗口抽象、输入处理
-│   │   ├── network/            # 多人游戏网络层
-│   │   ├── scripting/          # JavaScript 插件引擎（Duktape）
-│   │   ├── park/               # .park 原生存档格式读写
-│   │   ├── object/             # 对象仓库（物品、轨道类型等资产）
-│   │   ├── management/         # 财务、市场营销、奖项系统
-│   │   └── scenario/           # 场景目标、胜利条件
-│   ├── openrct2-ui/            # UI 层（依赖 SDL2）
-│   │   ├── UiContext.cpp       # 平台适配（Win32/macOS/Linux/Android）
-│   │   ├── WindowManager.cpp   # 窗口管理和事件分发
-│   │   └── windows/            # 各个游戏内窗口的实现
-│   └── openrct2-cli/           # 无头模式（服务器、测试）
-├── data/                       # 游戏数据文件（语言、对象定义）
-├── distribution/               # 各平台打包脚本
-└── test/                       # 单元测试和回归测试
-```
+核心在 `src/openrct2/`：`Context`（调度）、`GameState`（40 tick 主循环）、`ride/`、`world/`（TileElement）、`network/`（GameAction）、`scripting/`（Duktape）。UI 在 `openrct2-ui/`，无头服务在 `openrct2-cli/`。
 
 ## 延伸阅读
 

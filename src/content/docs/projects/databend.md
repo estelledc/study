@@ -65,7 +65,7 @@ docker run -d --name databend \
 
 ### 案例 2：Warehouse 多 cluster 共享数据
 
-生产部署里，元数据和对象存储是共享的，但可以为不同 workload 起独立计算 cluster：
+在 Databend Cloud 或自建的调度层里，元数据和对象存储是共享的，但可以为不同 workload 起独立计算 cluster。下面用接近 Snowflake 的伪 SQL 表达这个管理动作：
 
 ```sql
 -- BI 报表用：低延迟、轻量并发
@@ -82,7 +82,7 @@ SELECT * FROM sales WHERE date = today();
 
 - 两个 Warehouse 共享**同一份 sales 表数据**（在 S3）和**同一套 schema**（在 Meta）
 - BI cluster 跑短查询、可以 24×7 在线；ETL cluster 跑完批就关
-- 这是 Snowflake 的"虚拟仓库"模型——Databend 把它原样实现了
+- 这是 Snowflake 的"虚拟仓库"模型——Databend 的云服务/调度层按这个思路隔离计算资源
 
 ### 案例 3：时间旅行（Time Travel）
 
@@ -160,3 +160,7 @@ CREATE TABLE sales_recovered AS
 - [[duckdb-2019]] —— 单机分析数据库，小数据量比 Databend 轻得多，互补不冲突
 - [[greenplum-db]] —— Postgres 改的 MPP 数仓，老一代分布式数仓代表，与 Databend 形成代际对比
 - [[lakehouse-2021]] —— 湖仓一体范式，Databend 通过 Iceberg 外部表也能接入
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

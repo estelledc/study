@@ -1,0 +1,100 @@
+{
+  "slug": "adamw-2017",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "HuggingFace 早期 AdamW 的描述不宜写成“不是这个 AdamW”，应限定为实现细节与 PyTorch 推荐版本不同。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "weight_decay 迁移建议中“同样值更强”与“从 0.01 调到 0.1”容易让读者误解；应改成重新搜索，并区分微调与预训练常见范围。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "HuggingFace 早期 AdamW 的描述不宜写成“不是这个 AdamW”，应限定为实现细节与 PyTorch 推荐版本不同。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "weight_decay 迁移建议中“同样值更强”与“从 0.01 调到 0.1”容易让读者误解；应改成重新搜索，并区分微调与预训练常见范围。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic 与 engineer reviewer 均点名踩坑段的实现细节和调参建议；已收窄表述并给出重新搜索范围。",
+    "sections_modified": [
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 186,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

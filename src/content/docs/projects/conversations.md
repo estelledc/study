@@ -129,6 +129,14 @@ OMEMO 只加密文本？不是。Conversations 传图片时：
 - 大规模运营级客户端——单人维护，issue 响应慢
 - 想要"完全藏住元数据"的极端隐私需求——XMPP 服务器始终知道流量图谱
 
+## 历史小故事（可跳过）
+
+- **1999 年**：Jabber 社区启动，后来标准化为 XMPP，把即时通讯做成类似邮件的联邦协议。
+- **2014 年**：Daniel Gultsch 开始发布 Conversations，把 Android 客户端体验和 XMPP 扩展打磨到普通用户可用。
+- **2015 年**：OMEMO 以 XEP-0384 形式进入 XMPP 世界，把 Double Ratchet 带到多终端联邦聊天。
+- **2017 年以后**：Conversations 推动 Compliance Suite，让服务端别只写"支持 XMPP"，还要把 MAM、Carbons、HTTP Upload 等现代扩展配齐。
+- **2020 年代**：Matrix、Signal、XMPP 三条路线继续并存，Conversations 成了"联邦 + 端到端 + Android 原生"这一路线的代表样本。
+
 ## 学到什么
 
 1. **协议和加密可以解耦**：libsignal 的 Double Ratchet 不绑死 Signal Protocol，XMPP 用得起，Matrix 也用得起（Olm/Megolm 思路类似）。**密码学是模块**。

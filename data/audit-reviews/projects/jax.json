@@ -1,0 +1,85 @@
+{
+  "slug": "jax",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "烤箱旋钮类比能跟；grad/vmap/jit 有桥接；jaxpr/SPMD 可再多半句白话，但不挡零基础读完。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库迁 jax-ml、四变换、pmap 过时与 sharding 路线正确；『TPU 几乎唯一一线』略满但教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/3 可跑通概念；不可变/PRNG/动态 shape 踩坑可操作；TPU vs 移动端部署边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "烤箱旋钮类比能跟；grad/vmap/jit 有桥接；jaxpr/SPMD 可再多半句白话，但不挡零基础读完。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "仓库迁 jax-ml、四变换、pmap 过时与 sharding 路线正确；『TPU 几乎唯一一线』略满但教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/3 可跑通概念；不可变/PRNG/动态 shape 踩坑可操作；TPU vs 移动端部署边界清楚。"
+      ]
+    }
+  ]
+}

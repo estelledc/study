@@ -20,7 +20,7 @@ title: MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 
 - 为什么 Claude Desktop 装一个"MCP 服务器"就能直接读你的本地 Postgres，不用你写胶水代码
 - 为什么 Cursor / Zed / Windsurf 能复用同一个 GitHub MCP 服务端，每家不用重写一遍
-- 为什么本项目的 ADR-5 要在 stdio 和 Streamable HTTP 之间二选一——这不是实现细节，是协议层的边界
+- 为什么部署文档常要在 stdio 和 Streamable HTTP 之间二选一——这不是实现细节，是协议层的边界
 - 为什么 2025-03-26 之后所有远程 MCP 服务都强制 OAuth 2.1——安全模型变了
 
 ## 核心要点
@@ -72,7 +72,7 @@ Claude Desktop 配一个本地 MCP 服务器，启动时 fork 子进程，stdin/
 
 ### 案例 3：Streamable HTTP 的 OAuth 2.1 流程
 
-远程 MCP 服务必须用 OAuth 2.1（RFC 9700 草案）。完整流程：
+远程 MCP 服务必须用 OAuth 2.1（IETF draft-ietf-oauth-v2-1；其安全基线吸收了 RFC 9700 BCP）。完整流程：
 
 1. 客户端访问 `/mcp`，服务端返回 `WWW-Authenticate` 头指向授权服务器
 2. 客户端读 protected resource metadata（RFC 9728）拿到授权服务器地址
@@ -91,7 +91,7 @@ Claude Desktop 配一个本地 MCP 服务器，启动时 fork 子进程，stdin/
 
 3. **2024-11-05 和 2025-03-26 不兼容**：旧版用 HTTP+SSE 双端点（`/sse` + `/messages`），新版统一到单 `/mcp` 端点。客户端必须看 `protocolVersion` 决定走哪条路。
 
-4. **OAuth 2.1 不是 OAuth 2.0**：2.1 是 IETF 草案（RFC 9700），强制 PKCE、删了隐式流和密码流。直接复用旧的 OAuth 2.0 库可能不合规。
+4. **OAuth 2.1 不是 OAuth 2.0**：2.1 是 IETF 草案（draft-ietf-oauth-v2-1），强制 PKCE、删了隐式流和密码流；RFC 9700 是 OAuth 2.0 安全 BCP，被 2.1 吸收而非等同。直接复用旧的 OAuth 2.0 库可能不合规。
 
 5. **Tools 描述就是 prompt**：`tools/list` 返回的 description 字段会被客户端拼进系统提示词。写得不好，模型就调不对。这一层看似是"协议"，实则是"prompt engineering"。
 
@@ -144,6 +144,7 @@ Claude Desktop 配一个本地 MCP 服务器，启动时 fork 子进程，stdin/
 - [[anthropic-prompt-caching]] —— MCP 服务端工具描述长，配 prompt cache 减少重复 token
 - [[anthropic-circuits]] —— Anthropic 工程团队同源产物，反映其"先开放规范后社区扩散"的做法
 - [[autogen]] —— Agent 编排框架，常用 MCP 作工具接入层，互为补位
+- [[json-rpc]] —— MCP 消息层建立在 JSON-RPC 2.0 之上，理解请求/通知模型有助于读规范
 
 ## 反向链接
 

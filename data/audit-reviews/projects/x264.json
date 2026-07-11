@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 里 CABAC、MB-tree、lookahead 对零基础偏硬，可各补半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线偏概括（2003 年前后、VideoLAN 生态），可再钉一两个可核验节点，但不构成事实硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "命令本身正确，但读者需自备 y4m；可在案例 1 一句点明输入格式前提即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 里 CABAC、MB-tree、lookahead 对零基础偏硬，可各补半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史时间线偏概括（2003 年前后、VideoLAN 生态），可再钉一两个可核验节点，但不构成事实硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "命令本身正确，但读者需自备 y4m；可在案例 1 一句点明输入格式前提即可"
+      ]
+    }
+  ]
+}

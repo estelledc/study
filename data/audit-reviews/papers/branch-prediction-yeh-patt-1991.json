@@ -1,0 +1,90 @@
+{
+  "slug": "branch-prediction-yeh-patt-1991",
+  "area": "papers",
+  "round": 18,
+  "output_path": "/workspace/src/content/docs/papers/branch-prediction-yeh-patt-1991.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 5
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史与后续",
+      "fix_hints": [
+        "将历史段 H2 改成包含 `历史小故事（可跳过）` 的标准标题，方便零基础读者识别这段背景可跳过。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "pass_count": 2,
+    "verdict": "refine",
+    "action": "refine",
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 历史与后续",
+        "verdict": "needs-refine"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 为什么重要",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 适用 vs 不适用",
+        "verdict": "pass"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "zero-base",
+        "hint": "将历史段 H2 改成包含 `历史小故事（可跳过）` 的标准标题，方便零基础读者识别这段背景可跳过。"
+      }
+    ]
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 历史小故事（可跳过）与后续"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 159,
+    "reasons": []
+  }
+}

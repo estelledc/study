@@ -1,6 +1,6 @@
 ---
 title: "智能体与 LLM 系统 · 论文 · 第 1 组"
-description: "53 条 智能体与 LLM 系统 Atlas 分块"
+description: "59 条 智能体与 LLM 系统 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 53 条，稳定上限为 100 条。
+本分块共 59 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -19,7 +19,7 @@ sidebar:
 | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | `apex-policy-exploration` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | `autogen` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | `awq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | `awq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [AWQ 2023 — 把 70B 大模型权重压到 35GB](/study/papers/awq-2023/) | `awq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Chain-of-Thought — 让大模型先写步骤再回答](/study/papers/chain-of-thought/) | `chain-of-thought` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) | `clawtrace-cost-aware` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) | `code-as-agent-harness` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -32,6 +32,7 @@ sidebar:
 | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | `gptq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | `graphrag` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | `instructgpt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文](/study/papers/kv-fold/) | `kv-fold` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | `llm-int8-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | `llm-wiki-retrieval-reasoning` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | `mcp-spec` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -40,9 +41,13 @@ sidebar:
 | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | `mind-skill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | `misevolution-2509` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) | `mmskills-multimodal` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [NestedKV — 用三层记忆决定 KV cache 该留谁](/study/papers/nestedkv/) | `nestedkv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | `openhands` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Orca — Transformer 生成模型的分布式推理调度](/study/papers/orca-2022/) | `orca-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | `orca-continuous-batching` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [OSCAR — 离线转个方向，把 KV Cache 压到 2-bit](/study/papers/oscar-int2-kv/) | `oscar-int2-kv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PagedAttention — 把 KV cache 当虚拟内存页来管理](/study/papers/paged-attention/) | `paged-attention` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [PagedAttention — 以页替代整段内存的显存管理](/study/papers/paged-attention-vllm/) | `paged-attention-vllm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | `rag-lewis-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ReAct — Reasoning and Acting](/study/papers/react/) | `react` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ReAct Agent — 推理和行动交替的工具使用范式](/study/papers/react-agent/) | `react-agent` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -63,6 +68,7 @@ sidebar:
 | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | `tree-of-thoughts-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收](/study/papers/vericache/) | `vericache` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | `voyager` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | `webxskill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) | `zombie-agents-2602` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

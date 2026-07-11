@@ -19,19 +19,19 @@ sidebar:
 | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) | `clearml` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Conform — 让浏览器原生 form 也能 type-safe 校验](/study/projects/conform/) | `conform` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | `debezium` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [deck.gl — Uber 大规模数据可视化](/study/projects/deck-gl/) | `deck-gl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [deck.gl — 大规模地图数据可视化图层库](/study/projects/deck-gl/) | `deck-gl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Deno — 安全优先的 TypeScript/JavaScript 运行时](/study/projects/deno/) | `deno` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DVC — 数据版本管理](/study/projects/dvc/) | `dvc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | `encore` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hermes — Facebook 的 React Native JS 引擎](/study/projects/hermes/) | `hermes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [ionic-framework](/study/projects/ionic-framework/) | `ionic-framework` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱](/study/projects/ionic-framework/) | `ionic-framework` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | `lapce` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [librosa](/study/projects/librosa/) | `librosa` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [librosa — 把声音变成机器学习能吃的数字特征](/study/projects/librosa/) | `librosa` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | `litmus` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | `metaflow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | `mlflow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NATS — 极简云原生消息系统](/study/projects/nats/) | `nats` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [quickjs](/study/projects/quickjs/) | `quickjs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [QuickJS — 口袋里的 JavaScript 引擎](/study/projects/quickjs/) | `quickjs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | `rasa` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | `shap` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | `sidekiq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

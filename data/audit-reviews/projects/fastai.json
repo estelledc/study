@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "乐高 vs 半成品车类比很好；缺「历史小故事」与「反向链接」两段，零基础按 12 段模板会断档；「一句话定位」非标准 H2，建议并入学到什么或是什么"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Howard/Thomas、Layered API 论文 2002.04688、ULMFiT 配方叙述合理；「教过 500 万人」是课程营销口径，宜弱化为「官方自称」或删掉绝对数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "DataBlock/fine_tune/Callback 案例可跟做；适用场景缺量化边界（如单卡图像分类 <10 万张、研究新算法请直用 PyTorch）；补历史小故事与反向链接占位以过模板完整性"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "乐高 vs 半成品车类比很好；缺「历史小故事」与「反向链接」两段，零基础按 12 段模板会断档；「一句话定位」非标准 H2，建议并入学到什么或是什么"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Howard/Thomas、Layered API 论文 2002.04688、ULMFiT 配方叙述合理；「教过 500 万人」是课程营销口径，宜弱化为「官方自称」或删掉绝对数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "DataBlock/fine_tune/Callback 案例可跟做；适用场景缺量化边界（如单卡图像分类 <10 万张、研究新算法请直用 PyTorch）；补历史小故事与反向链接占位以过模板完整性"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「没有原子操作」对零基础可接受，但若读者以后碰到 OTP atomics 可能困惑；非必须改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "WhatsApp「56 工程师 / 9 亿用户」接近 Wired 2015 的 ~50/900M 叙事，可接受为教学概括。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「没有原子操作」相对进程模型教学成立；OTP 后续有 atomics/ETS，属合理简化。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「没有原子操作」对零基础可接受，但若读者以后碰到 OTP atomics 可能困惑；非必须改。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "WhatsApp「56 工程师 / 9 亿用户」接近 Wired 2015 的 ~50/900M 叙事，可接受为教学概括。",
+        "「没有原子操作」相对进程模型教学成立；OTP 后续有 atomics/ETS，属合理简化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ]
+}

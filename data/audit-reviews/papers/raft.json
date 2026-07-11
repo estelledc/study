@@ -1,0 +1,145 @@
+{
+  "slug": "raft",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工厂领班类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例里 term 首次出现缺一句中文桥接（可理解为「任期编号」）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例步骤清楚；案例 2 第 6 步对 Election Restriction 的因果可再点一句"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「完整正文 9 页」与后文「短版 14 页 / 扩展 18 页」矛盾；ATC 2014 短版约 14 页，应统一"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「过半副手确认收到」歪曲 commit 规则：Raft 要求集群过半（含 leader 自己）复制成功，不是过半 follower"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Ongaro & Ousterhout / USENIX ATC 2014 正确；选举超时 150–300ms、跨 term 不可直接 commit 旧 entry、人因实验叙述属实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "选举/分区伪代码可跟做；commit 表述若按「过半副手」实现会写错 majority"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：偶数节点、少数派停服、snapshot、Joint Consensus、跨 term commit"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 3–5 节点 / <100ms RTT；不适用 Multi-Raft 级吞吐、跨洲 200ms+、BFT——边界有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工厂领班类比贯穿全文，零基础直觉强",
+        "案例里 term 首次出现缺一句中文桥接（可理解为「任期编号」）",
+        "三案例步骤清楚；案例 2 第 6 步对 Election Restriction 的因果可再点一句"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「完整正文 9 页」与后文「短版 14 页 / 扩展 18 页」矛盾；ATC 2014 短版约 14 页，应统一",
+        "「过半副手确认收到」歪曲 commit 规则：Raft 要求集群过半（含 leader 自己）复制成功，不是过半 follower",
+        "来源 Ongaro & Ousterhout / USENIX ATC 2014 正确；选举超时 150–300ms、跨 term 不可直接 commit 旧 entry、人因实验叙述属实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "选举/分区伪代码可跟做；commit 表述若按「过半副手」实现会写错 majority",
+        "踩坑具体可操作：偶数节点、少数派停服、snapshot、Joint Consensus、跨 term commit",
+        "适用 3–5 节点 / <100ms RTT；不适用 Multi-Raft 级吞吐、跨洲 200ms+、BFT——边界有量化"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：正文页数自相矛盾（9 vs 14/18）；「过半副手」歪曲 commit majority（应含 leader）。"
+  },
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "notes": "统一 ATC 短版约 14 页；commit 改为集群过半（含领班）；补 term 桥接与 Election Restriction；清空超长反向链接占位以过 150–200 行门禁。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

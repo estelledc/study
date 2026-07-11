@@ -1,0 +1,72 @@
+{
+  "slug": "algol-60",
+  "area": "papers",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要 / ## 实践案例",
+      "fix_hints": [
+        "ALGOL 60 形式化的是 call-by-value 与 call-by-name，不是 call-by-reference。",
+        "“第一门官方支持递归的高级语言”过绝对，建议改成“最早一批”。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "base_rule_findings": [
+      "quality-gate failed before refinement: lines:201>200"
+    ]
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic terminology fix plus required line-count trim",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 199,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

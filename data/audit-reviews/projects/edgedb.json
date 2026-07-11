@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 迁移流程只有三条命令，缺少「改了什么 → CLI 对比出什么 → apply 后库里发生什么」的逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 访问策略建议补 2–3 步：谁是 current_user、未通过策略时查询会怎样、和应用层 if 的对比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 来源含中文分号与 URL，建议用单引号包裹整段，避免 YAML 解析歧义"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 query builder（e.select）概念正确，但未提示需先 codegen / 导入 edgeql 客户端；可加一行注释说明前置条件"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 迁移流程只有三条命令，缺少「改了什么 → CLI 对比出什么 → apply 后库里发生什么」的逐步解释",
+        "案例 3 访问策略建议补 2–3 步：谁是 current_user、未通过策略时查询会怎样、和应用层 if 的对比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "frontmatter 来源含中文分号与 URL，建议用单引号包裹整段，避免 YAML 解析歧义"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 query builder（e.select）概念正确，但未提示需先 codegen / 导入 edgeql 客户端；可加一行注释说明前置条件"
+      ]
+    }
+  ]
+}

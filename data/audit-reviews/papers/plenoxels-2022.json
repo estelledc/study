@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「背进 MLP vs 铺成三维网格」和「傅立叶 vs 球谐」类比贴合，零基础能抓住主线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SH / TV / 三线性插值首次出现有桥接；案例 2 偏论证、案例 4 偏工程对比，对零基础略抽象但不挡主线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2「PSNR 反而高 0.4 dB」与论文主表不符：合成场景 Plenoxels≈31.71、JAXNeRF≈31.85，应改为「与 NeRF 持平 / 无质量损失」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「同样 200k 步」不准确：论文合成场景约 128k 步（粗到细后继续优化），勿写成与 NeRF 同为 200k 步的硬对照"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者、CVPR 2022、arXiv 2112.05131、11 分钟训练、稀疏体素+SH、PlenOctrees 前传等主线事实正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "SH 求值伪代码概念正确可跟；稀疏化四步可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（σ 非负/NaN、SH 阶数、室外参数化、CUDA 复现门槛）具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有场景类型与替代方案，量化可再补但已够用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「背进 MLP vs 铺成三维网格」和「傅立叶 vs 球谐」类比贴合，零基础能抓住主线",
+        "SH / TV / 三线性插值首次出现有桥接；案例 2 偏论证、案例 4 偏工程对比，对零基础略抽象但不挡主线"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2「PSNR 反而高 0.4 dB」与论文主表不符：合成场景 Plenoxels≈31.71、JAXNeRF≈31.85，应改为「与 NeRF 持平 / 无质量损失」",
+        "「同样 200k 步」不准确：论文合成场景约 128k 步（粗到细后继续优化），勿写成与 NeRF 同为 200k 步的硬对照",
+        "作者、CVPR 2022、arXiv 2112.05131、11 分钟训练、稀疏体素+SH、PlenOctrees 前传等主线事实正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "SH 求值伪代码概念正确可跟；稀疏化四步可操作",
+        "踩坑（σ 非负/NaN、SH 阶数、室外参数化、CUDA 复现门槛）具体有用",
+        "适用边界有场景类型与替代方案，量化可再补但已够用"
+      ]
+    }
+  ]
+}

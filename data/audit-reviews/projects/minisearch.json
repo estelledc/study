@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "字典+评分员类比好；案例有逐部分解释，但案例1解释挤成一段，拆成条目会更跟得住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Astro Starlight 默认搜索是 Pagefind，不是 minisearch；笔记在「为什么重要」「历史小故事」「关联」多处写成 Starlight 内置/默认 minisearch，属事实错误。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "VitePress 使用 minisearch 的说法可保留；应把 Starlight 改成 Pagefind，或改写为「同类前端搜索生态」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「百万 doc 以下」与适用段「几十万 doc」口径不一致，建议统一规模表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "addAll/loadJSON/autoSuggest 示例可跟做；中文 tokenize、fuzzy 相对阈值、内存驻留踩坑具体可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用规模「百万」vs「几十万」打架；且把 Starlight 当 minisearch 默认方案会误导选型，应改成 VitePress/自建静态站，并点出 Starlight→Pagefind。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "字典+评分员类比好；案例有逐部分解释，但案例1解释挤成一段，拆成条目会更跟得住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Astro Starlight 默认搜索是 Pagefind，不是 minisearch；笔记在「为什么重要」「历史小故事」「关联」多处写成 Starlight 内置/默认 minisearch，属事实错误。",
+        "VitePress 使用 minisearch 的说法可保留；应把 Starlight 改成 Pagefind，或改写为「同类前端搜索生态」。",
+        "「百万 doc 以下」与适用段「几十万 doc」口径不一致，建议统一规模表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "addAll/loadJSON/autoSuggest 示例可跟做；中文 tokenize、fuzzy 相对阈值、内存驻留踩坑具体可操作。",
+        "适用规模「百万」vs「几十万」打架；且把 Starlight 当 minisearch 默认方案会误导选型，应改成 VitePress/自建静态站，并点出 Starlight→Pagefind。"
+      ]
+    }
+  ]
+}

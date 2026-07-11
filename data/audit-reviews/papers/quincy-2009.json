@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「源节点/汇点」对零基础略抽象，但后文有最大流复习路径补救，可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "排座位类比贯穿全文，案例图示清晰"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Isard et al. SOSP 2009 与 Firmament OSDI 2016 著录正确；Goldberg 参与求解器属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一次」把调度建成最小费用流略满，属可接受教学简化；K8s scheduler-plugins 溯源是思想类比而非直接谱系"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "建图 ASCII 与配额边容量示例概念正确，可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体（图规模、代价调参、重排抖动、非 DRF）；适用有 <1000 机器量化边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「源节点/汇点」对零基础略抽象，但后文有最大流复习路径补救，可接受",
+        "排座位类比贯穿全文，案例图示清晰"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Isard et al. SOSP 2009 与 Firmament OSDI 2016 著录正确；Goldberg 参与求解器属实",
+        "「第一次」把调度建成最小费用流略满，属可接受教学简化；K8s scheduler-plugins 溯源是思想类比而非直接谱系"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "建图 ASCII 与配额边容量示例概念正确，可跟读",
+        "踩坑具体（图规模、代价调参、重排抖动、非 DRF）；适用有 <1000 机器量化边界"
+      ]
+    }
+  ]
+}

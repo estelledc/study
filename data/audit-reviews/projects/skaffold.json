@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "npm run dev 类比贴合，五步流水线好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Pod / manifest / port-forward 对零基础略陡，但难度标中级可接受；首次出现宜各补半句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 几乎没有逐步拆解：应写成「写 yaml → skaffold dev → 改代码 → 自动 rebuild/deploy → 看日志」；案例 2/3 缺「为什么这样写」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub GoogleContainerTools/skaffold 正确；Cloud Code 内嵌 Skaffold 属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2017 KubeCon 发布 v0.1」不准确：公开介绍约 2018-03；「2018 v1.0 GA」应为 2019-11 GA"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Tilt 是并列竞品不是 Skaffold fork；「skaffold-tilt 类替代品」宜改成「Tilt/Garden 等替代方案」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "skaffold.yaml / sync / profiles 配置概念正确，可跟做；案例 1 缺 Dockerfile/deployment 最小配套说明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "apiVersion 断崖、sync 只救解释型、远程 push 慢、profile 嵌套等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：kind 本地循环 vs docker-compose、Tilt UI、Garden、Telepresence"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "npm run dev 类比贴合，五步流水线好懂",
+        "Pod / manifest / port-forward 对零基础略陡，但难度标中级可接受；首次出现宜各补半句白话",
+        "案例 1 几乎没有逐步拆解：应写成「写 yaml → skaffold dev → 改代码 → 自动 rebuild/deploy → 看日志」；案例 2/3 缺「为什么这样写」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 GitHub GoogleContainerTools/skaffold 正确；Cloud Code 内嵌 Skaffold 属实",
+        "「2017 KubeCon 发布 v0.1」不准确：公开介绍约 2018-03；「2018 v1.0 GA」应为 2019-11 GA",
+        "Tilt 是并列竞品不是 Skaffold fork；「skaffold-tilt 类替代品」宜改成「Tilt/Garden 等替代方案」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "skaffold.yaml / sync / profiles 配置概念正确，可跟做；案例 1 缺 Dockerfile/deployment 最小配套说明",
+        "apiVersion 断崖、sync 只救解释型、远程 push 慢、profile 嵌套等坑具体可操作",
+        "适用/不适用边界清楚：kind 本地循环 vs docker-compose、Tilt UI、Garden、Telepresence"
+      ]
+    }
+  ]
+}

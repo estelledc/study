@@ -18,9 +18,9 @@ def assert(cond: Boolean, msg: String): Unit = macro Macros.assertImpl
 // 编译期被宏改写成：if (!(x > 0)) throw new AssertionError(s"x must positive, got x=$x")
 ```
 
-宏看得到 `cond` 的 AST（不是 `cond` 的值），所以可以把 `x > 0` 这段表达式打印进错误信息——纯运行期函数做不到，因为运行期只看到一个 `true`/`false`，源码长什么样早被 javac 丢了。
+宏看得到 `cond` 的 AST（不是 `cond` 的值），所以可以把 `x > 0` 这段表达式打印进错误信息——纯运行期函数做不到，因为运行期只看到一个 `true`/`false`，源码长什么样早被 scalac 丢掉了。
 
-Scala 宏的能力比 C++ 模板强一个量级，比 Lisp macro 多了静态类型保障，比 Template Haskell（Haskell 的对应物）多了"类型驱动 implicit 派生"——这是它能撑起 Slick / Shapeless / Spark Catalyst 这类工业项目的关键。
+Scala 宏比 Lisp macro 多了静态类型保障，比 Template Haskell（Haskell 的对应物）多了"类型驱动 implicit 派生"——这是它能撑起 Slick / Shapeless / circe 这类工业项目的关键。
 
 ## 为什么重要
 
@@ -28,7 +28,7 @@ Scala 宏的能力比 C++ 模板强一个量级，比 Lisp macro 多了静态类
 
 - 为什么 Slick 写 `users.filter(_.age > 18)` 会变成 `WHERE age > 18` 的 SQL，而不是把所有 user 拉到内存过滤
 - 为什么 circe / Magnolia 给 case class 自动生成 JSON encoder，**一行手写也不用**
-- 为什么 Spark Catalyst 跑 SQL 比解释器循环快 10 倍——它在编译期生成特化的 JVM 字节码
+- 为什么 Spark 早期曾用 Scala quasiquote/toolbox 做表达式代码生成，后来又换成 Janino——宏路径能用，但编译太慢
 - 为什么 Scala 2.10/2.11/2.13/3.x 之间宏代码经常整个重写——绑死了编译器内部 API 的代价
 
 ## 核心要点
@@ -68,18 +68,16 @@ val json = User("alice", 30).asJson  // 编译通过，没手写 encoder
 
 对比 Java 生态的 Jackson：Jackson 用运行期反射，每次 encode 都要走 Field/Method 反射查找；circe 用宏在编译期把这些查找展平成直接字段访问，性能差 3-5 倍。代价是编译时间——大型项目 case class 几百个，编译能从 30 秒涨到 3 分钟。
 
-### 案例 3：Spark Catalyst 用 quasiquote 编译查询
+### 案例 3：Spark 从 quasiquote 换到 Janino
 
 ```scala
-// 物理计划里某个 Project 节点
-val code = q"""
-  val row = input.next()
-  output.write(row.getInt($idx) + 1)
-"""
-// 编译成字节码 → 装进 ClassLoader → 直接跑
+// 早期 Catalyst 表达式 codegen（示意）：用 quasiquote 拼 Scala，再 toolbox 编译
+val code = q"input.getInt($idx) + 1"
+// 生产路径（Spark 1.x 末起）：改成拼 Java 字符串，用 Janino 编译
+// "int value = input.getInt(idx) + 1;"
 ```
 
-Catalyst 把 SQL 物理计划用 quasiquote 拼成 Scala 源码片段，调 toolbox 编译成字节码。**避免解释器循环**——每行不再走"读节点 → 分发 → 计算"的虚函数表，而是直接 JIT 友好的内联代码。Spark 2.0 引入 whole-stage codegen 后，TPC-DS 部分查询提速 5-10 倍，这是 Spark 在大数据社区压过 Hive 的关键技术之一。
+**关键**：目标都是把查询计划变成特化字节码，**躲开逐算子虚调用的解释器循环**。早期试过 Scala quasiquote + toolbox，但编译太慢；whole-stage codegen 改成生成 Java、用 Janino 在**查询执行时**编译。Spark 2.0 后 TPC-DS 部分查询提速约 5-10 倍——宏能做代码生成，工业系统还要为编译速度换实现。
 
 ## 踩过的坑
 
@@ -111,7 +109,7 @@ Catalyst 把 SQL 物理计划用 quasiquote 拼成 Scala 源码片段，调 tool
 - **2012 年**：Burmako 在 EPFL 跟 Odersky 做博士，把 def macro + quasiquote 实现到 Scala 2.10 nightly。
 - **2013 年**：Scala Workshop 论文发表，把这套系统讲清楚；同年 Slick 1.0 / Shapeless 2.0 大规模采用。
 - **2021 年**：Scala 3（dotty）整体重写宏成 inline + quoted DSL，理论基础是 Stucki/Biboudis 的 PCP（principle of phase consistency）。旧 def macro API 不再可用——Scala 历史最大兼容性断点之一。
-- **2024 年**：Burmako 的 scalameta 项目（脱离编译器内部 API 的独立 AST 库）成为 Scala 元编程事实标准；ZIO / cats 等生态库的派生路径都迁移到 Magnolia + Mirror。
+- **近年**：Burmako 的 scalameta（脱离编译器内部 API 的独立 AST 库）成为工具链事实标准；Scala 3 派生多走 `inline` + `Mirror`，Magnolia 等库也迁到这条路。
 
 ## 学到什么
 

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 反向链接",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅配方收回 / 同源店类比把 license fork 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "HCL/Provider/State 三件套有手脚记忆桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「## 反向链接」占位段"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "BSL 2023-08、fork 自 1.5.7、Linux Foundation、state 加密 AES-GCM 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "provider for_each 写成 v1.7 错误：该特性在 OpenTofu 1.9；v1.7 是 state 加密"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "early variable evaluation 属 v1.8 正确；案例 3 alias=each.key 与 1.9 要求静态 alias 不符"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "迁移与 state 加密示例可跟做；provider for_each 示例需按 1.9 静态 alias 修正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（加密单向门、registry 403、协议版本、勿混用 CLI）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（HCP/Enterprise vs 开源栈）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "餐厅配方收回 / 同源店类比把 license fork 讲透",
+        "HCL/Provider/State 三件套有手脚记忆桥接",
+        "缺「## 反向链接」占位段"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "BSL 2023-08、fork 自 1.5.7、Linux Foundation、state 加密 AES-GCM 正确",
+        "provider for_each 写成 v1.7 错误：该特性在 OpenTofu 1.9；v1.7 是 state 加密",
+        "early variable evaluation 属 v1.8 正确；案例 3 alias=each.key 与 1.9 要求静态 alias 不符"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "迁移与 state 加密示例可跟做；provider for_each 示例需按 1.9 静态 alias 修正",
+        "踩坑（加密单向门、registry 403、协议版本、勿混用 CLI）具体可操作",
+        "适用/不适用边界清楚（HCP/Enterprise vs 开源栈）"
+      ]
+    }
+  ]
+}

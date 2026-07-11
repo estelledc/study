@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "类比跳跃：生锈扳手→收银台→仓库→餐厅厨房，零基础抓不住统一画面"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "WebGL2、Program、VertexBuffer、uniform、context 丢失等术语桥接偏薄"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 解释过短；案例 3 出现未定义的 drawCall 变量，步骤不完整"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 tsherif/picogl.js，定位为 WebGL2 轻量封装、非场景图引擎，与官方 README 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段只有「早期/后来/今天」空洞时间线，建议补作者/年份等可核验锚点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未发现与 stub 冲突的硬伤，但 API 示例若写错会间接损害事实可信度"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 写成 app.drawCall(drawCall)...，真实 API 是 app.createDrawCall(program, vertexArray)；额外补充里 app.hasAttribute 也不存在"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑条目正确但过短：resize/DPR、shader 静默失败、Program 泄露、context lost 需补可操作步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化：小可视化/教学 demo vs Three.js/Babylon 级场景图；建议写清「要自己写 shader、不要场景图」边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "类比跳跃：生锈扳手→收银台→仓库→餐厅厨房，零基础抓不住统一画面",
+        "WebGL2、Program、VertexBuffer、uniform、context 丢失等术语桥接偏薄",
+        "案例 1–3 解释过短；案例 3 出现未定义的 drawCall 变量，步骤不完整"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源指向 tsherif/picogl.js，定位为 WebGL2 轻量封装、非场景图引擎，与官方 README 一致",
+        "历史段只有「早期/后来/今天」空洞时间线，建议补作者/年份等可核验锚点",
+        "未发现与 stub 冲突的硬伤，但 API 示例若写错会间接损害事实可信度"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写成 app.drawCall(drawCall)...，真实 API 是 app.createDrawCall(program, vertexArray)；额外补充里 app.hasAttribute 也不存在",
+        "踩坑条目正确但过短：resize/DPR、shader 静默失败、Program 泄露、context lost 需补可操作步骤",
+        "适用/不适用缺量化：小可视化/教学 demo vs Three.js/Babylon 级场景图；建议写清「要自己写 shader、不要场景图」边界"
+      ]
+    }
+  ]
+}

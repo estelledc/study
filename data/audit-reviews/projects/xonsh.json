@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「词法上下文」「CompletedCommand」对零基础过陡，需加一句日常桥接（例如：看这句话更像命令还是更像赋值）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「历史小故事（可跳过）」段，读者不知道 xonsh 从何而来、为何要造新 shell"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」只有 3 条，建议补第 4 条把「交互 REPL 替代 python -c / subprocess 样板」说透"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "冷启动「100-200ms / bash 5-10ms」是量级估计，可标明「量级约」以免被当成基准测量"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源仅 GitHub 仓库链接，项目笔记可接受；若补历史段请核对 2015 首发与 Anthony Scopatz 等事实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 用 $(ls *.txt).split() 遇空格文件名会碎，可改用 g`*.txt` 或补一句「文件名无空格时的教学写法」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 3 说「ls 单独写就被解析成 Python 名字」正确，可再点明用 !ls 或 which ls 的保险写法"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「词法上下文」「CompletedCommand」对零基础过陡，需加一句日常桥接（例如：看这句话更像命令还是更像赋值）",
+        "缺少「历史小故事（可跳过）」段，读者不知道 xonsh 从何而来、为何要造新 shell",
+        "「为什么重要」只有 3 条，建议补第 4 条把「交互 REPL 替代 python -c / subprocess 样板」说透"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "冷启动「100-200ms / bash 5-10ms」是量级估计，可标明「量级约」以免被当成基准测量",
+        "来源仅 GitHub 仓库链接，项目笔记可接受；若补历史段请核对 2015 首发与 Anthony Scopatz 等事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 用 $(ls *.txt).split() 遇空格文件名会碎，可改用 g`*.txt` 或补一句「文件名无空格时的教学写法」",
+        "踩坑 3 说「ls 单独写就被解析成 Python 名字」正确，可再点明用 !ls 或 which ls 的保险写法"
+      ]
+    }
+  ]
+}

@@ -73,6 +73,10 @@ function Button({ primary, disabled }) {
 ```tsx
 const tokens = stylex.defineVars({ bg: "#fff", fg: "#222" });
 const dark = stylex.createTheme(tokens, { bg: "#222", fg: "#eee" });
+const styles = stylex.create({
+  text: { color: tokens.fg, backgroundColor: tokens.bg }
+});
+const isDark = true; // 实际来自开关 state
 
 <body {...stylex.props(isDark && dark)}>
   <p {...stylex.props(styles.text)}>Hello</p>

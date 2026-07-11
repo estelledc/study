@@ -1,0 +1,95 @@
+{
+  "slug": "chord-2001",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 先列 4 台机器，后续又假设 N42 存在，新手会跟丢 successor 查找过程。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "查找示例里的 finger table 与节点集合不一致，建议让节点、finger 表和 successor 结果完全对齐。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 先列 4 台机器，后续又假设 N42 存在，新手会跟丢 successor 查找过程。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "查找示例里的 finger table 与节点集合不一致，建议让节点、finger 表和 successor 结果完全对齐。"
+      ]
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 167,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true
+}

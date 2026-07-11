@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递站/地基浇筑类比贴合；fixed vs independent 与拓扑发布案例步骤清楚，零基础可跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Nx 接管、bootstrap 删除、fixed/independent 模式等主线事实正确；『2024 年（v7）』略宽，不影响通过。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "init/publish 命令可跟做；reject-cycles、conventional commits、bootstrap 已删等踩坑具体可操作；适用边界清晰。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "快递站/地基浇筑类比贴合；fixed vs independent 与拓扑发布案例步骤清楚，零基础可跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Nx 接管、bootstrap 删除、fixed/independent 模式等主线事实正确；『2024 年（v7）』略宽，不影响通过。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "init/publish 命令可跟做；reject-cycles、conventional commits、bootstrap 已删等踩坑具体可操作；适用边界清晰。"
+      ]
+    }
+  ]
+}

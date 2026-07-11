@@ -43,7 +43,7 @@ Cytoscape.js 的脑子可以拆成 **四件事**：
 
 2. **Selector（选择器）**：像 CSS 一样筛元素。`cy.$('node[weight > 50]')` 选所有权重大于 50 的节点。学过 jQuery 的人 5 分钟就上手。
 
-3. **Layout（布局）**：决定每个节点摆在哪。内置 `grid` / `circle` / `concentric` / `breadthfirst` / `cose`（力导向）等，扩展生态里还有 `dagre`（树状）/ `klay` / `fcose` / `elk` / `cola`，加起来上百种布局任选。
+3. **Layout（布局）**：决定每个节点摆在哪。内置 `grid` / `circle` / `concentric` / `breadthfirst` / `cose`（力导向）等，扩展生态里还有 `dagre`（树状）/ `klay` / `fcose` / `elk` / `cola`——十几种常用布局 + 一批社区扩展，按图形状选即可。
 
 4. **Algorithm（图算法）**：BFS、DFS、Dijkstra、A*、Floyd-Warshall、Kruskal 最小生成树、PageRank、介数中心性、社区检测——一行 API 调用。这点是学术工具的**底气**。
 
@@ -51,9 +51,30 @@ Cytoscape.js 的脑子可以拆成 **四件事**：
 
 ## 实践案例
 
-### 案例 1：知识图谱前端浏览器
+### 案例 1：迷你知识图谱浏览器（3 步）
 
-把 Wikidata 抽出来的「人 - 作品 - 时代」三元组喂进去，调一个 `cose-bilkent` 布局，鼠标点节点展开邻居，点边看关系类型。50 行代码搞定一个迷你 graph explorer。
+```js
+// 1) 喂节点+边（人 / 作品 / 时代）
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [
+    { data: { id: 'turing', label: '图灵' } },
+    { data: { id: 'imitation', label: '模仿游戏' } },
+    { data: { id: 'e1', source: 'turing', target: 'imitation', rel: '创作' } }
+  ],
+  style: [{ selector: 'node', style: { label: 'data(label)' } }],
+  layout: { name: 'cose' }
+});
+// 2) 点节点：高亮一跳邻居
+cy.on('tap', 'node', (evt) => {
+  const n = evt.target;
+  cy.elements().removeClass('highlight');
+  n.neighborhood().add(n).addClass('highlight');
+});
+// 3) 更大图可换成扩展布局：cytoscape.use(coseBilkent); cy.layout({ name: 'cose-bilkent' }).run();
+```
+
+三步就够：装数据 → 点选展开邻居 → 需要时换力导向扩展布局。
 
 ### 案例 2：跑最短路
 
@@ -83,7 +104,7 @@ cy.nodes().forEach(n => {
 
 ## 踩过的坑
 
-1. **大图（>5 万节点）会卡**：Canvas 渲染不分块，DOM 事件每帧触发一次 hit-test。**解法**：开 `pixelRatio: 1` + 关 `textureOnViewport: false` + 用 `headless` 算完再渲染子图，或换 Sigma.js（WebGL）。
+1. **大图（>5 万节点）会卡**：Canvas 渲染不分块，DOM 事件每帧触发一次 hit-test。**解法**：设 `pixelRatio: 1`；平移时可开 `textureOnViewport: true` 用纹理缓存减轻重绘；或用 `headless` 算完再只渲染子图，再不行换 Sigma.js（WebGL）。
 
 2. **布局是异步的**：`cy.layout({ name: 'cose' }).run()` 立刻返回，但节点位置还没算完。要监听 `layoutstop` 事件再操作，或 `await layout.promiseOn('layoutstop')`。
 

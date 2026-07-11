@@ -1,0 +1,141 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "时区/集体合照类比贴合，贯穿 virtual time 与 consistent cut"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "是什么段过早堆叠「同构 / 反链 / 笛卡尔积 / 偏序」，零基础缺一句日常桥接就跟丢"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/3 有逐步解释；案例 2 终止检测偏抽象，建议补一句「水位线」日常说法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Mattern 1989 Parallel and Distributed Algorithms (North-Holland) 正确；与 Fidge 同期独立、教材常引 Mattern 讲全局状态，合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "vector clock 规则、a→b ⟺ V(a)<V(b)、consistent cut=反链、Chandy-Lamport=virtual time 截面，教学简化未歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事写 Schwarz-Mattern 1995，延伸阅读写 1994——宜统一为 1994（Distributed Computing 综述年份）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "is_consistent_cut / detect_termination / chandy_lamport_to_cut 伪代码概念正确，可跟思路"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "偏序误用、上帝视角、任意 cut、固定 N、Fidge 引用混乱等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 ITC/DVV、O(N)、TrueTime/HLC、共识等量化与边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "时区/集体合照类比贴合，贯穿 virtual time 与 consistent cut",
+        "是什么段过早堆叠「同构 / 反链 / 笛卡尔积 / 偏序」，零基础缺一句日常桥接就跟丢",
+        "案例 1/3 有逐步解释；案例 2 终止检测偏抽象，建议补一句「水位线」日常说法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Mattern 1989 Parallel and Distributed Algorithms (North-Holland) 正确；与 Fidge 同期独立、教材常引 Mattern 讲全局状态，合理",
+        "vector clock 规则、a→b ⟺ V(a)<V(b)、consistent cut=反链、Chandy-Lamport=virtual time 截面，教学简化未歪曲",
+        "历史小故事写 Schwarz-Mattern 1995，延伸阅读写 1994——宜统一为 1994（Distributed Computing 综述年份）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "is_consistent_cut / detect_termination / chandy_lamport_to_cut 伪代码概念正确，可跟思路",
+        "偏序误用、上帝视角、任意 cut、固定 N、Fidge 引用混乱等坑具体可操作",
+        "适用/不适用有 ITC/DVV、O(N)、TrueTime/HLC、共识等量化与边界"
+      ]
+    }
+  ],
+  "slug": "mattern-1989",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  }
+}

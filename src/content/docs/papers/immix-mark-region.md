@@ -23,11 +23,11 @@ Immix 是一种**垃圾回收器**（GC，Garbage Collector），把过去两种
 不理解 Immix，下面这些事都没法解释：
 
 - 为什么 2014 之后新做的语言（Inko / Crystal / Scala Native）GC 看起来都差不多
-- 为什么 Java 的 G1GC、ZGC、Shenandoah 都讲"region（区域）"——这个词就是 Immix 带火的
-- 为什么 Rust 生态里 mmtk（Memory Management ToolKit）能把 GC 做成可插拔库——它的核心就是 Immix
+- 为什么学术 Immix 与工业 G1 / Shenandoah / ZGC 都谈"region（区域）"——同属区域化堆布局，但实现与目标差很多
+- 为什么 Rust 生态里 mmtk（Memory Management ToolKit）能把 GC 做成可插拔库——Immix 是它的核心 plan 之一
 - 为什么"分代 GC"和"region GC"现在能拼在一起——Immix 提供了把它们粘起来的通用基座
 
-在 Immix 之前 30 年（1960-2008），GC 设计基本是 "mark-sweep vs copying" 的二选一。Immix 出来后，**第三条路**成了主流。
+在 Immix 之前，主流 tracing GC 常在 mark-sweep、copying、mark-compact 之间权衡。Immix 把 **mark-region** 写成可复用第三条路，后来被新语言与框架反复采用。
 
 ## 核心要点
 
@@ -50,13 +50,13 @@ Immix 用 **两层网格** 管堆内存：
 
 ### 案例 1：从 mark-sweep 升级到 Immix 看到了什么
 
-JikesRVM（一个研究用的 JVM）在 2008 年实测：
+JikesRVM（一个研究用的 JVM）在 PLDI 2008 论文里报告：
 
-- mutator（业务代码）时间：mark-sweep 比 Immix 慢 7–11%
-- GC 时间：Immix 接近 copying 的速度
-- 空间：Immix 比 copying 省 20%（不需要永远空一半）
+- **总应用时间**：相对经典算法平均提升约 7–25%（随堆大小与基准变化）
+- **mutator（业务代码）**：因 bump-pointer 连续分配，局部性接近 copying / mark-compact
+- **空间**：相对 mark-sweep 最小堆约省 14%，接近 mark-compact；也不必像半空间 copying 那样长期空一半
 
-为什么 mutator 也变快？因为分配走 bump pointer，每次分配只是一条 `add` 指令。mark-sweep 的空闲链表查找要走指针、判断大小、可能不连续。
+为什么 mutator 也受益？因为分配走 bump pointer，热路径常是一条 `add`。mark-sweep 的空闲链表要走指针、判断大小、地址更散。
 
 ### 案例 2：什么是"碎片化"，Immix 怎么对付
 
@@ -120,10 +120,11 @@ JikesRVM（一个研究用的 JVM）在 2008 年实测：
 ## 历史小故事（可跳过）
 
 - **1960**：McCarthy 在 LISP 里第一次提 mark-sweep。一直用了 50 年。
-- **1969**：Cheney 发明半空间 copying GC，速度快了，但浪费一半空间。
+- **1970**：Cheney 发表半空间 copying GC（CACM），速度快了，但浪费一半空间。
 - **1984**：Ungar 提分代 GC，把"短命 vs 长寿"分开管。
-- **2008**：Blackburn & McKinley 提 Immix，把两条思路合并。两人都是 GC 圈老兵——Blackburn 是 JikesRVM 主程，McKinley 后来去了 Microsoft Research。
-- **2014 后**：region 思想被工业 Java（G1）、新语言（Inko / Crystal）、跨语言框架（mmtk）反复抄。
+- **2004 前后**：HotSpot 侧已有 Garbage-First（G1）区域化设计；与后来的 Immix 并行演化，不是谁"带火"谁。
+- **2008**：Blackburn & McKinley 在 PLDI 提出 Immix / mark-region。Blackburn 深耕 JikesRVM/MMTk，McKinley 后来去了 Microsoft Research。
+- **2014 后**：region 思路在新语言（Inko / Crystal）与跨语言框架（mmtk）里被反复采用；工业 Java 的 G1 / Shenandoah / ZGC 则是另一条更重的并发区域路线。
 - **2020 后**：mmtk-core 把 Immix 抽成可插拔的 plan，第三方 VM 接进来就能换 GC 算法。OpenJDK、V8、CRuby 都有实验集成。
 
 ## 学到什么

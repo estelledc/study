@@ -27,10 +27,10 @@ Framer Motion 是 Framer 公司出的 React 动画库——你写一句 `<motion
 
 不理解 Framer Motion 在 React 生态的位置，下面这些事都没法解释：
 
-- 为什么 Stack Overflow 2024 调查里 React 项目动画首选是它，**超过 GSAP**——GSAP 在前端老牌、功能更全，但 motion 跟 React 的 mount / unmount / re-render 深度集成
+- 为什么很多 React 项目把 UI 微交互默认交给它，而不是老牌的 GSAP——GSAP 时间轴更强，但 motion 跟 React 的 mount / unmount / re-render 集成更深
 - 为什么 React 项目里"元素消失前先 fade out 再卸载"这件事用纯 CSS / Hooks 写起来很烦，motion 一个 `<AnimatePresence>` 就完事
-- 为什么 Linear / Vercel / Apple 营销页都选它——它把 layout 变化的动画（FLIP 算法）做成了一个 prop `layout`
-- 为什么"声明式动画"这个词被这个项目重新定义——你声明**目标状态**，它推断中间过程；不再声明"每帧的样子"
+- 为什么 Linear / Vercel / Apple 营销页都选它——它把 layout 变化动画做成一个 prop `layout`（底层类似 FLIP：先记下旧位置，再插值过渡到新位置）
+- 为什么"声明式动画"这个词常和它绑在一起——你声明**目标状态**，它推断中间过程；不再声明"每帧的样子"
 
 ## 核心要点
 
@@ -130,11 +130,18 @@ function Drawer({ isOpen }) {
 - 电商首屏 / H5 小程序对 bundle 体积敏感（motion 完整版 ~50KB gzip）→ 用纯 CSS 或 auto-animate（3KB）
 - Canvas / WebGL 粒子系统 → 用 pixi.js / three.js
 
+## 历史小故事（可跳过）
+
+- **2018-2019 年**：Framer 团队把内部动画能力抽成 React 库开源，强调声明式 props 而不是手写时间轴
+- **2020-2022 年**：`AnimatePresence`、variants、layout 动画让它成为 React UI 动效的常见默认选择
+- **2023-2024 年**：官方把包名逐步统一到 `motion`，同一套引擎覆盖 React / Vue / vanilla
+- **之后**：继续围绕性能、手势和文档站（motion.dev）迭代；GSAP 仍在复杂时间轴场景占优
+
 ## 学到什么
 
 1. **声明式 vs 命令式的边界可以推到 layout 这一层**——传统认为"layout 切换必须命令式手写 FLIP"，motion 把它做成 `layout` 一个 prop，颠覆了这个边界
 2. **状态广播比 prop drilling 更适合动画**——variants + Context 让父组件改一个字符串，整棵树自动协同动画，比每层手动传 props 简洁一个数量级
-3. **延迟 unmount 是 React 的缺口**——AnimatePresence 是个补丁，不是优雅解；React 19 之后才慢慢有官方方案（`useTransition` 配合）
+3. **延迟 unmount 仍是 React 的缺口**——AnimatePresence 是库侧补丁：先跑完 exit，再真正从 DOM 删除；不要把它和 `useTransition` 混为一谈
 
 ## 延伸阅读
 

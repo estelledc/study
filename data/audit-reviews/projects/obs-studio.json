@@ -1,0 +1,137 @@
+{
+  "slug": "obs-studio",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "导播间/食材→海报→装汤类比贯穿来源/场景/输出，零基础友好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "编码、码率、Browser Source 均有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有配置/代码与逐部分解释，跟做路径清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "定位 capture/composite/encode/record/stream 与官方 README 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "OBS 28 内置 obs-websocket、mkv 录制建议、Virtual Camera 与公开文档相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2012/Studio 重写/28.0 时间线为教学压缩，无硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "obs-websocket-js 切场+虚拟摄像头示例可跟做；多音轨/mkv remux 配置贴近实操"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "画布 vs 输出分辨率、层级、码率、音频红区等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（精剪→Resolve、转码→ffmpeg/HandBrake、多人会议→WebRTC）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "导播间/食材→海报→装汤类比贯穿来源/场景/输出，零基础友好",
+        "编码、码率、Browser Source 均有白话桥接",
+        "三案例均有配置/代码与逐部分解释，跟做路径清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "定位 capture/composite/encode/record/stream 与官方 README 一致",
+        "OBS 28 内置 obs-websocket、mkv 录制建议、Virtual Camera 与公开文档相符",
+        "2012/Studio 重写/28.0 时间线为教学压缩，无硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "obs-websocket-js 切场+虚拟摄像头示例可跟做；多音轨/mkv remux 配置贴近实操",
+        "画布 vs 输出分辨率、层级、码率、音频红区等坑具体可操作",
+        "适用/不适用边界清楚（精剪→Resolve、转码→ffmpeg/HandBrake、多人会议→WebRTC）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 166,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

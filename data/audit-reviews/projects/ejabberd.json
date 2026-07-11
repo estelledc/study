@@ -1,0 +1,121 @@
+{
+  "slug": "ejabberd",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少标准「## 历史小故事（可跳过）」与「## 反向链接」段，Erlang 简史应并入历史段。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例偏概念示意，缺最小可跟做的安装/配置步骤（如 ejabberd.yml 开哪些模块）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「同时支持 XMPP/MQTT/SIP/Matrix 四种协议」易误解为对等原生协议；Matrix 多为网关/桥接，应限定表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「9 个 9」来自爱立信 AXD301 交换机案例，不宜直接写成 ejabberd 自身招牌；Nintendo/暴雪等采用方宜弱化为「据报道/部分游戏后端」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例应补最小可跟做配置（listeners/modules 片段或 docker 启动），而不只给 OTP 伪代码。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「适用」里「百万并发是舒适区」缺量化前提（节点数、内存、存储后端）；小团队边界可再写清。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺少标准「## 历史小故事（可跳过）」与「## 反向链接」段，Erlang 简史应并入历史段。",
+        "案例偏概念示意，缺最小可跟做的安装/配置步骤（如 ejabberd.yml 开哪些模块）。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「同时支持 XMPP/MQTT/SIP/Matrix 四种协议」易误解为对等原生协议；Matrix 多为网关/桥接，应限定表述。",
+        "「9 个 9」来自爱立信 AXD301 交换机案例，不宜直接写成 ejabberd 自身招牌；Nintendo/暴雪等采用方宜弱化为「据报道/部分游戏后端」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例应补最小可跟做配置（listeners/modules 片段或 docker 启动），而不只给 OTP 伪代码。",
+        "「适用」里「百万并发是舒适区」缺量化前提（节点数、内存、存储后端）；小团队边界可再写清。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 153,
+    "reasons": []
+  },
+  "lines": 153,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 适用",
+      "## 历史小故事",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

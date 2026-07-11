@@ -33,7 +33,7 @@ task build      # 等价于 go build ...
 task --list     # 列出全部 task
 ```
 
-截至 2026-05，Go 写、单二进制、13k stars，brew/scoop/snap/go install 都能装。官网 [taskfile.dev](https://taskfile.dev)。
+截至 2026-07，Go 写、单二进制、约 15.8k stars，brew/scoop/snap/go install 都能装。官网 [taskfile.dev](https://taskfile.dev)。
 
 ## 为什么重要
 
@@ -52,7 +52,7 @@ Task 的设计可以拆成 **三个判断**：
 
 2. **重新加回增量构建**：`sources` 列源文件，`generates` 列产物，Task 算 mtime/checksum，没变就跳过。这是 just 故意砍掉的功能，Task 把它做回来——因为它瞄的是 Go / 通用项目，不只是 ‘命令编排’。
 
-3. **不依赖系统 shell**：内嵌 [mvdan/sh](https://github.com/mvdan/sh)（Go 写的 POSIX shell 解释器），意味着 Windows 上没装 git-bash 也能跑 `cp -r`、`rm -rf`、管道、`&&`。这是 make / just 在 Windows 上最大的痛点。
+3. **不依赖系统 bash**：内嵌 [mvdan/sh](https://github.com/mvdan/sh)（Go 写的 POSIX shell），Windows 上也能跑管道、`&&`、变量展开。但 **shell ≠ coreutils**：早期 `cp`/`rm` 仍要 PATH 里有实现；**2025** 起 Task 才内置 Go 版 core utils（`TASK_CORE_UTILS`，Windows 默认开）。
 
 ## 实践案例
 
@@ -128,6 +128,8 @@ tasks:
 
 4. **`set -e` 行为不直观**：单条 `cmds:` 里的多行 shell 默认每行独立——前一行失败不会阻断下一行（除非显式 `&&`）。要全条失败立刻停得在顶层加 `set: [errexit]`。
 
+5. **只有 shell、没有 `cp`**：旧版 Windows / 关掉 `TASK_CORE_UTILS` 时，`cp -r`、`rm -rf` 会直接找不到命令。别把「能跑 sh 语法」当成「Unix 工具都在」。
+
 ## 适用 vs 不适用场景
 
 **适用**：
@@ -156,17 +158,18 @@ tasks:
 
 ## 历史小故事（可跳过）
 
-- **2017**：巴西开发者 Andrey Henrique（@andreynering）开第一个 commit。动机：在 Windows 上跑 Makefile 太痛，又不想强迫团队装 WSL
+- **2017**：Andrey Nering（@andreynering）开第一个 commit。动机：Windows 上跑 Makefile 太痛，又不想强迫团队装 WSL
+- **早期**：很快改用内嵌 mvdan/sh，统一 POSIX 语法；但 Windows 上 `cp`/`rm` 仍常缺
 - **2018**：v2 引入 `sources`/`generates` 增量
 - **2020**：v3 重写解析器，YAML schema 稳定，进入 brew 主仓库
-- **2024**：内嵌 mvdan/sh 后 Windows 体验追平 Linux，被 Hugo / 多个 CNCF 项目采用为默认任务运行器
-- **2026**：13k stars，go-task 组织维护
+- **2025**：内置 Go 版 core utils（`TASK_CORE_UTILS`），Windows 文件命令才真正「开箱能用」
+- **2026**：约 15.8k stars，go-task 组织维护；Hugo 等项目常用作任务入口
 
 ## 学到什么
 
 1. **复活 ‘被砍掉的功能’ 也是设计**：just 砍增量构建换简单，Task 把它加回来换实用。同一个领域两种判断，受众不同
-2. **跨平台不是口号，是实现细节**：内嵌 shell 解释器看似 ‘重’，但这是让 Windows 用户真正能用的关键差异
-3. **YAML 选型理由要讲清**：‘工具链成熟、IDE 友好、CI 已经会读’ 是真理由，不是 ‘大家都用所以用’
+2. **跨平台不是口号，是分层实现**：mvdan/sh 解决语法；2025 core utils 才补齐 Windows 上的 `cp`/`rm`。少一层就会在生产翻车
+3. **YAML 选型理由要讲清**：『工具链成熟、IDE 友好、CI 已经会读』是真理由，不是『大家都用所以用』
 4. **命名空间 + includes** 是 monorepo 工具的隐形分水岭——能不能干净地拆子项目，直接决定能不能在大仓里活
 
 ## 延伸阅读

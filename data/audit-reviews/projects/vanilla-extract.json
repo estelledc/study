@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 recipe 直接甩 API，缺「base / variants / 调用返回」三步拆解，零基础跟不住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 esbuild+vm 迷你实现对零基础过陡，需逐行说明 require 伪造、collector、返回类名各自干什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「React Server Components / Context / stylis / adapter」首次出现时缺一句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "称 linaria 为 vanilla-extract「徒弟」时间线反了：linaria（约 2017）早于 VE（2021-03），应改为同属 build-time CSS-in-JS 路线或 VE 受 treat/linaria 启发"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2024-2026 成为事实标准 / 与 Tailwind 双雄」过满，宜降为「类型安全 CSS-in-TS 的主流选项之一」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题「零字节运行时」与正文 recipe ~1KB 并存，历史段可点明 style() 零 runtime、recipes 有薄 runtime，避免绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 只演示收集类名，未展示如何把 collector 打成 CSS 字符串；补 5–10 行 emit 更闭环"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "可补一句：生产需 @vanilla-extract/vite-plugin（或对应 bundler 插件），否则 .css.ts 不会被抽取"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 recipe 直接甩 API，缺「base / variants / 调用返回」三步拆解，零基础跟不住",
+        "案例 3 的 esbuild+vm 迷你实现对零基础过陡，需逐行说明 require 伪造、collector、返回类名各自干什么",
+        "「React Server Components / Context / stylis / adapter」首次出现时缺一句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "称 linaria 为 vanilla-extract「徒弟」时间线反了：linaria（约 2017）早于 VE（2021-03），应改为同属 build-time CSS-in-JS 路线或 VE 受 treat/linaria 启发",
+        "「2024-2026 成为事实标准 / 与 Tailwind 双雄」过满，宜降为「类型安全 CSS-in-TS 的主流选项之一」",
+        "标题「零字节运行时」与正文 recipe ~1KB 并存，历史段可点明 style() 零 runtime、recipes 有薄 runtime，避免绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只演示收集类名，未展示如何把 collector 打成 CSS 字符串；补 5–10 行 emit 更闭环",
+        "可补一句：生产需 @vanilla-extract/vite-plugin（或对应 bundler 插件），否则 .css.ts 不会被抽取"
+      ]
+    }
+  ]
+}

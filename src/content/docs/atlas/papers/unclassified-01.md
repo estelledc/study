@@ -19,7 +19,7 @@ sidebar:
 | [AV2 视频编码评测方法与压缩性能](/study/papers/av2-video-spec/) | `av2-video-spec` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | `bentley-1975-kdtree` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | `chronos-2024` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Flat Datacenter Storage](/study/papers/flat-datacenter-storage/) | `flat-datacenter-storage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Flat Datacenter Storage — 把整机房磁盘当成一块大盘](/study/papers/flat-datacenter-storage/) | `flat-datacenter-storage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Graph Neural Networks — 把关系网络交给神经网络来读](/study/papers/graph-neural-networks/) | `graph-neural-networks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | `herlihy-moss-tm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | `immix-mark-region` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

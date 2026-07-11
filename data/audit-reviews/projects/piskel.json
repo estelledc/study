@@ -1,0 +1,128 @@
+{
+  "action": "pass",
+  "average": 5,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Aseprite 工作台 vs 网页方格动画本、乐高底板、书角翻页类比贴合零基础"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "sprite / 帧 / sprite sheet / .piskel 源文件都有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "本地启动、CLI 导出、Phaser 接 sheet 三案例步骤完整可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 piskelapp/piskel 正确；JS/HTML/CSS、piskelapp.com、移动端不支持、Brave canvas 说明与官方一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "npm scripts（vite build / npm start）、CLI 参数与仓库现状可核验"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未夸大成专业美术管线替代品，轻量定位无歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "clone→build→start 与 piskel-cli 导出命令可跟做；Phaser spritesheet 契约清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：浏览器存储非永久、移动端、Brave fingerprinting、帧尺寸不同步"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用独立小素材/教学 vs 专业管线/高清插画/移动创作边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Aseprite 工作台 vs 网页方格动画本、乐高底板、书角翻页类比贴合零基础",
+        "sprite / 帧 / sprite sheet / .piskel 源文件都有桥接",
+        "本地启动、CLI 导出、Phaser 接 sheet 三案例步骤完整可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 piskelapp/piskel 正确；JS/HTML/CSS、piskelapp.com、移动端不支持、Brave canvas 说明与官方一致",
+        "npm scripts（vite build / npm start）、CLI 参数与仓库现状可核验",
+        "未夸大成专业美术管线替代品，轻量定位无歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "clone→build→start 与 piskel-cli 导出命令可跟做；Phaser spritesheet 契约清楚",
+        "踩坑具体：浏览器存储非永久、移动端、Brave fingerprinting、帧尺寸不同步",
+        "适用独立小素材/教学 vs 专业管线/高清插画/移动创作边界清楚"
+      ]
+    }
+  ],
+  "slug": "piskel",
+  "area": "projects",
+  "status": "passed",
+  "aggregate": {
+    "action": "pass",
+    "average": 5,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "pass_count": 3
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172
+  },
+  "lines": 172,
+  "l1_pass": true
+}

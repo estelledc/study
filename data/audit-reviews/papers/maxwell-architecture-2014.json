@@ -1,0 +1,140 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 反向链接",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "大工坊拆小间类比贴合 SMM 分区，能效故事好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 SMX/SMM、warp scheduler、scoreboard、control codes 连续抛出，缺「调度员/记事本」级桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 表格直观；案例 1/3 可跟大意，案例 4 对零基础偏汇编向"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 NVIDIA GeForce GTX 980 Maxwell GM204 Whitepaper 2014 正确；GM204 2048 核/165W、GM200 3072 核/12GB 与公开规格一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "L2 2MB vs GK104 512KB、shared 独立 96KB、FP64 1/32、静态调度 control codes、CUDA 12 删 CC 5.x，事实大体正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每核执行效率约 +35%」偏白皮书营销口径，宜标为白皮书宣称而非独立实测；教学取舍未歪曲架构主线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Titan X 训 ResNet、TFLOPS/W 表、M40 定位、SASS control code 示例概念可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "FP64 腰斩、970 内存丑闻、无 FP16/Tensor Core、occupancy、CUDA 12 deprecate 等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；缺「反向链接」占位段，建议补齐以符合模板"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "大工坊拆小间类比贴合 SMM 分区，能效故事好懂",
+        "核心要点里 SMX/SMM、warp scheduler、scoreboard、control codes 连续抛出，缺「调度员/记事本」级桥接",
+        "案例 2 表格直观；案例 1/3 可跟大意，案例 4 对零基础偏汇编向"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 NVIDIA GeForce GTX 980 Maxwell GM204 Whitepaper 2014 正确；GM204 2048 核/165W、GM200 3072 核/12GB 与公开规格一致",
+        "L2 2MB vs GK104 512KB、shared 独立 96KB、FP64 1/32、静态调度 control codes、CUDA 12 删 CC 5.x，事实大体正确",
+        "「每核执行效率约 +35%」偏白皮书营销口径，宜标为白皮书宣称而非独立实测；教学取舍未歪曲架构主线"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "Titan X 训 ResNet、TFLOPS/W 表、M40 定位、SASS control code 示例概念可跟",
+        "FP64 腰斩、970 内存丑闻、无 FP16/Tensor Core、occupancy、CUDA 12 deprecate 等坑具体可操作",
+        "适用/不适用边界清楚；缺「反向链接」占位段，建议补齐以符合模板"
+      ]
+    }
+  ],
+  "slug": "maxwell-architecture-2014",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 162,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

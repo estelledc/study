@@ -12,7 +12,7 @@ Vault 是 HashiCorp 2015 年发布的**密钥与凭据管理服务**——一句
 
 日常类比：像银行的保险柜 + 临时取款机的合体。保险柜部分负责长期存放（数据库 root 密码、TLS 证书私钥），临时取款机部分更有意思——你不是来取永久密码，而是说"我要用一下数据库"，柜员现场给你开一个 1 小时有效的临时账号，到点自动作废。这就是 Vault 最有特色的"动态凭据"。
 
-它和 1Password 那种"给人用的密码本"完全不同：Vault 是**给程序、CI、基础设施用的**，所有交互都通过 HTTP API 或 CLI，没有图形界面给最终用户登录。
+它和 1Password 那种"给人用的密码本"完全不同：Vault 是**给程序、CI、基础设施用的**——主路径是 HTTP API / CLI；虽有运维用的 Web UI（默认 `:8200/ui`），但不是给最终用户存个人密码的界面。
 
 ## 为什么重要
 
@@ -60,23 +60,28 @@ dev 模式数据存内存，关掉就没了，专门用来学习。
 
 ### 案例 2：动态生成 PostgreSQL 临时账号
 
+四步跟做（先有一台可达的 Postgres，以及一个能建用户的 admin 账号）：
+
 ```bash
-# 配置 Vault 怎么连 DB（用一个 admin 账号）
+# 1) 打开 database 引擎（不 enable 后面 write 会失败）
+vault secrets enable database
+
+# 2) 告诉 Vault 怎么连库
 vault write database/config/mydb \
     plugin_name=postgresql-database-plugin \
     connection_url='postgresql://{{username}}:{{password}}@db:5432/app' \
     allowed_roles='readonly' \
     username=vault_admin password=xxx
 
-# 定义一个 role：每次申请就发一个临时账号
+# 3) 定义 role：每次申请就现场 CREATE 一个只读账号
 vault write database/roles/readonly \
     db_name=mydb \
-    creation_statements='CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD \"{{password}}\" VALID UNTIL \"{{expiration}}\"; GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";' \
+    creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}'; GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";" \
     default_ttl='1h' max_ttl='24h'
 
-# 应用申请凭据
+# 4) 应用来取凭据
 vault read database/creds/readonly
-# 拿到 username=v-readonly-abc123 password=xxx，1 小时后 Vault 自动 DROP ROLE
+# 得到类似 v-readonly-abc123 / 随机密码；1 小时后 Vault 自动 DROP ROLE
 ```
 
 这就是动态凭据的杀手锏：每个进程拿到的账号都不同，泄漏窗口被切碎。
@@ -85,14 +90,14 @@ vault read database/creds/readonly
 
 ```bash
 vault secrets enable transit
-vault write -f transit/keys/orders
+vault write -f transit/keys/orders          # 在 Vault 里生成一把密钥
 echo -n "user@example.com" | base64 | \
     vault write transit/encrypt/orders plaintext=-
-# 返回 vault:v1:abc... 这种密文
-# 应用存密文进 DB，需要时再调 transit/decrypt 解开
+# 返回 vault:v1:abc... 这种密文；应用只存密文进 DB
+# 需要明文时再调 transit/decrypt；密钥始终不出 Vault
 ```
 
-应用代码里**永远不出现密钥**，rotate 密钥也只是 Vault 内部一个命令的事。
+跟读要点：应用是"加解密客户端"，不是"密钥所有者"；rotate 也只是 Vault 内部一条命令。
 
 ## 踩过的坑
 
@@ -123,12 +128,11 @@ echo -n "user@example.com" | base64 | \
 
 ## 历史小故事（可跳过）
 
-- **2015.04**：HashiConf 发布 Vault 0.1，与 Nomad / Terraform / Consul 一起成为 HashiCorp 全家桶
-- **2018**：1.0 GA，进入企业市场，成为 secrets 管理事实标准
-- **2020**：1.4 引入 Integrated Storage，不再强依赖 Consul，单 binary HA
-- **2023.08**：HashiCorp 把所有产品协议从 MPL2 改成 BSL，社区震动
-- **2023.12**：IBM 牵头联合 Linux Foundation 拉起 **OpenBao** fork，社区版本走开源，企业版仍是 HashiCorp（已被 IBM 收购）
-- **思路对照**：AWS Secrets Manager 是云厂商内嵌方案，Vault 是跨云中立方案。多云团队几乎只能选 Vault
+- **2015.04**：HashiConf 发布 Vault 0.1，与 Nomad / Terraform / Consul 一起成 HashiCorp 全家桶
+- **2018–2020**：1.0 GA；1.4 引入 Integrated Storage，不再强依赖 Consul
+- **2023.08**：产品协议从 MPL2 改成 BSL，社区震动
+- **2023.12**：Linux Foundation 拉起 **OpenBao** fork（开源旁路）
+- **2024–2025**：IBM 收购 HashiCorp；企业版走 HashiCorp/IBM，社区版看 OpenBao。对照：AWS Secrets Manager 是云内嵌，Vault 是跨云中立
 
 ## 学到什么
 

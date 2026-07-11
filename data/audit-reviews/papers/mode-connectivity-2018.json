@@ -1,0 +1,137 @@
+{
+  "slug": "mode-connectivity-2018",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "山谷地下河/隧道类比把「直线看似有山、曲线其实连通」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "mode / FGE / SWA / permutation 有场景桥接；「流形」首次出现可再补半句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 ASCII 对照、案例 2 五步 FGE、案例 4 投影图逐步可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Garipov et al. NeurIPS 2018 / arXiv:1802.10026 正确；ResNet-164 CIFAR、FGE、SWA 姊妹篇、Frankle LMC、Git Re-Basin 时间线无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几乎恒定低 loss / 峰值都低」与论文曲线优化目标一致，教学简化可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「loss 全程不超过端点」略绝对，宜读成「障碍远低于直线插值」而非严格不等式定理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "折线 vs 直线 loss 对照与 FGE 五步流程概念正确，论文笔记级可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "直线幻觉、跨架构失败、LLM 未充分验证、permutation、预测差异≠同行为等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 FGE/SWA/model soup；不适用跨架构与未验证 LLM 合并，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "山谷地下河/隧道类比把「直线看似有山、曲线其实连通」讲透",
+        "mode / FGE / SWA / permutation 有场景桥接；「流形」首次出现可再补半句白话",
+        "案例 1 ASCII 对照、案例 2 五步 FGE、案例 4 投影图逐步可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 Garipov et al. NeurIPS 2018 / arXiv:1802.10026 正确；ResNet-164 CIFAR、FGE、SWA 姊妹篇、Frankle LMC、Git Re-Basin 时间线无硬伤",
+        "「几乎恒定低 loss / 峰值都低」与论文曲线优化目标一致，教学简化可接受",
+        "「loss 全程不超过端点」略绝对，宜读成「障碍远低于直线插值」而非严格不等式定理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "折线 vs 直线 loss 对照与 FGE 五步流程概念正确，论文笔记级可跟",
+        "直线幻觉、跨架构失败、LLM 未充分验证、permutation、预测差异≠同行为等坑具体可操作",
+        "适用 FGE/SWA/model soup；不适用跨架构与未验证 LLM 合并，边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

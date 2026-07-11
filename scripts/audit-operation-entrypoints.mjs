@@ -23,6 +23,12 @@ export const ACTIVE_OPERATION_FILES = [
   'scripts/round.mjs',
   'scripts/finalize-round.sh',
   'scripts/sync-and-merge.sh',
+  'scripts/aggregate-audit-reviews.mjs',
+  'scripts/build-audit-pool.mjs',
+  'scripts/finalize-audit-round-from-agents.mjs',
+  'scripts/finalize-audit-round.mjs',
+  'scripts/pick-audit-batch.mjs',
+  'scripts/prepare-audit-slug.mjs',
 ];
 
 const FORBIDDEN = [
@@ -62,6 +68,12 @@ export function auditOperationEntrypoints(root = ROOT) {
     ['scripts/dispatch-batch.mjs', 'assertBulkOperationAuthorized'],
     ['scripts/promote-candidates.mjs', 'assertBulkOperationAuthorized'],
     ['scripts/round.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/aggregate-audit-reviews.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/build-audit-pool.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/finalize-audit-round-from-agents.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/finalize-audit-round.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/pick-audit-batch.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/prepare-audit-slug.mjs', 'assertBulkOperationAuthorized'],
   ];
   for (const [relative, contract] of authorizationContracts) {
     const content = fs.readFileSync(path.join(root, relative), 'utf8');

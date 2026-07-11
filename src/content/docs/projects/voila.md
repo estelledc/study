@@ -8,48 +8,40 @@ title: Voilà — 把 Jupyter Notebook 变成只显示输出的网页
 
 ## 是什么
 
-Voilà 是 QuantStack 团队（Maarten Breddels、Sylvain Corlay）2019 年 6 月公开的开源工具，BSD-3-Clause 协议，仓库在 `github.com/voila-dashboards/voila`。日常类比：像把一份 Jupyter Notebook 复印一遍，复印件上**只保留运行结果和滑块按钮，把所有代码块都裁掉**，再给这张纸发一个网址，不会写代码的同事点开就能用。
+Voilà 是 Jupyter 生态里的开源发布工具（QuantStack 等贡献者推动，BSD-3-Clause），2019 年 6 月公开，仓库在 `github.com/voila-dashboards/voila`。日常类比：像把一份 Jupyter Notebook **复印后裁掉所有代码块**，只留图表、表格和滑块，再给这张纸发一个网址——不会写代码的同事点开就能用。
 
 最小体验：
 
 ```bash
 pip install voila
 voila my-notebook.ipynb
-# 浏览器自动打开 http://localhost:8866
+# 浏览器打开 http://localhost:8866
 ```
 
-打开后看到的页面**没有任何代码 cell**，只有 `print` 出的图表、`display(df)` 出的表格、ipywidgets 的滑块和下拉框。访客拖滑块，对应的 Python 函数在后台 kernel 里跑，结果实时刷新到页面上。
-
-整个交付链路：写 notebook → `voila` 命令 → 同事拿到 URL → 像普通网页用。**没碰 Flask、没写前端、没改 notebook**。
+页面上**看不到代码 cell**，只有输出和控件。访客拖滑块时，后台仍有一个活着的 Python 进程在算——不是纯静态 HTML。交付链路：写 notebook → `voila` → 同事拿 URL。**没碰 Flask、没写前端、没改 notebook**。
 
 ## 为什么重要
 
 不理解 Voilà，下面这些事都没法解释：
 
-- 为什么很多 Jupyter 教学站把"交互式数学教材"直接当网页发——Voilà 让 notebook 不需要二次开发就能上线
-- 为什么数据科学家做内部看板会先想到它而不是 Flask + Plotly——已有的探索代码原封不动就能交付
-- 为什么 [[streamlit]] 火了之后 Voilà 仍有自己的位置——`.ipynb` 用户群（教育、科研、金融量化）不愿意把代码搬到 `.py` 重写一遍
-- 为什么后来又出来 voici（Voilà 的浏览器版，跑在 Pyodide 上）——把"零后端"再推到极致
+- 为什么 Jupyter 教学站能把"交互式教材"直接当网页发——不必二次开发
+- 为什么数据科学家做内部看板会先想到它而不是 Flask + Plotly——探索代码原封不动就能交付
+- 为什么 [[streamlit]] 火了之后它仍有位置——`.ipynb` 用户群不愿把代码搬到 `.py` 重写
+- 为什么后来有 voici（浏览器版，跑在 Pyodide 上）——把"零后端"再推到极致
 
 ## 核心要点
 
-Voilà 的设计哲学是**做最薄的发布层**：复用 Jupyter 已有的 kernel / ipywidgets / nbconvert，自己只补"隐藏代码、暴露页面"这一小步。理解四件事就够：
+设计哲学是**做最薄的发布层**：复用 Jupyter 已有能力，只补"隐藏代码、暴露页面"。记三件事：
 
-1. **kernel-per-session**：每个访客访问 URL 时，Voilà 后台拉一个独立 Python 进程（Jupyter kernel）专门为这个人跑这份 notebook。访客之间状态隔离、互不污染。
+1. **一人一厨房（kernel-per-session）**：每个访客来访，后台单独开一个 Python 进程（kernel）给他跑这份 notebook。类比：每人进店就开一间独立厨房，互不串味。
 
-2. **预执行 + 隐藏源码**：拿到请求后，Voilà 用 nbconvert 的 ExecutePreprocessor 把所有 cell 跑一遍，得到输出，再把 cell 的 `source`（代码本身）剔掉，**只留 outputs**。最终 HTML 里看不到 `import pandas`，只看到 DataFrame 渲染结果。
+2. **先做菜再藏菜谱（预执行 + 隐藏源码）**：请求到来后，用 nbconvert 把所有 cell 跑一遍，再把代码（`source`）剔掉，**只留 outputs**。默认 `--strip_sources=True`；交互仍靠活 kernel，不是把结果烤成死页面。
 
-3. **ipywidgets Comm 通道**：滑块、下拉、按钮都是 ipywidgets 控件。访客在浏览器里动一下控件，前端走 WebSocket 把新值通过 Jupyter 的 Comm 协议推到后端 kernel，kernel 里注册的 `observe` 回调跑一遍，新输出推回前端——和 JupyterLab 里的交互完全一样。
-
-4. **template = 外观**：`--template lab` / `--template material` / `--template vuetify` 切换页面骨架（用的还是 nbconvert 模板系统）。`--strip_sources=False` 可以临时把代码也露出来，调试时常用。
-
-底层栈：Tornado HTTP 服务 + jupyter_server 处理 kernel 生命周期 + ZeroMQ 跟 kernel 通信 + 前端是 jupyter-widgets 的 React 包装。
+3. **滑块走对讲机（ipywidgets Comm）**：访客动控件，浏览器经 WebSocket / Comm 把新值推到 kernel，回调跑完再推回前端——和 JupyterLab 里拖滑块是同一条路。外观用 `--template lab|material|vuetify` 切换。
 
 ## 实践案例
 
-### 案例 1：把一份探索 notebook 直接当 demo
-
-notebook 里写：
+### 案例 1：探索 notebook 直接当 demo
 
 ```python
 import pandas as pd, ipywidgets as W
@@ -69,92 +61,101 @@ refresh()
 display(region, out)
 ```
 
-跑 `voila sales.ipynb`，业务同事拿到 URL，看到一个下拉框 + 表格——没看到一行代码。这个 notebook **本身就是探索代码**，没为发布改任何一行。
+**逐部分解释**：
 
-### 案例 2：把模型推理 demo 发给非工程同事
+1. `Dropdown` 列出地区；`Output` 是表格要刷新的"画框"
+2. `refresh` 按当前地区过滤并 `display` 前 20 行
+3. `observe` 把"下拉一变 → 重画"接上；`voila sales.ipynb` 后同事只看到控件+表，看不到代码
+
+### 案例 2：轻量推理 demo（不依赖大模型下载）
 
 ```python
 import ipywidgets as W
-from transformers import pipeline
+from IPython.display import display
 
-clf = pipeline("sentiment-analysis")
-text = W.Textarea(placeholder="输入文本")
-btn = W.Button(description="分析")
+text = W.Textarea(placeholder="输入一句话")
+btn = W.Button(description="判断情感")
 out = W.Output()
 
 def run(_):
     out.clear_output()
+    score = sum(1 for w in ("好", "棒", "喜欢") if w in text.value)
     with out:
-        print(clf(text.value))
+        print("偏正面" if score else "偏中性/负面")
 
 btn.on_click(run)
 display(text, btn, out)
 ```
 
-`voila demo.ipynb --port 7860 --no-browser`，把 URL 发给同事即可。HuggingFace Spaces 也支持 Voilà 作为 SDK，部署等于 push 到一个仓库。
+**逐部分解释**：
 
-### 案例 3：voici 把整套搬到浏览器
+1. 文本框 + 按钮收集输入；真实项目可换成本地小模型，教学先用规则避免首次下载卡死
+2. `on_click` 在 kernel 里跑 `run`，结果写进 `out`
+3. `voila demo.ipynb --port 7860 --no-browser`，把 URL 发给非工程同事即可
+
+### 案例 3：voici 搬到纯静态站
 
 ```bash
 pip install voici
 voici build my-notebook.ipynb --output dist/
-# dist/ 里是纯静态 HTML + WASM Python（Pyodide）
 ```
 
-部署到任意静态服务（GitHub Pages / Netlify / S3）。访客打开页面，浏览器里直接跑 Python，**完全没有后端**——代价是 Pyodide 的包生态比 CPython 小，pandas / numpy 能跑，部分 C 扩展跑不了。
+`dist/` 是 HTML + WASM Python（Pyodide），可丢 GitHub Pages。**完全没有后端**；代价是包生态比 CPython 小——pandas/numpy 通常能跑，部分 C 扩展不行。
 
 ## 踩过的坑
 
-1. **每个访客一个 kernel = 内存吃紧**：100 人同时在线 ≈ 100 个 Python 进程。Voilà 默认 `--KernelManager.cull_idle_timeout` 闲置回收，但流量一来仍要给主机准备 GB 级内存。生产环境通常前置 JupyterHub 做调度。
-
-2. **预执行卡顿**：第一次访问需要把 notebook 整段跑一遍，重计算 cell 让首屏特别慢。常用补救：把数据读取放在 `@functools.lru_cache` 里、用 `voila --pre_heat_kernel=True` 提前热一份。
-
-3. **ipywidgets 版本错配**：notebook 里用 `ipywidgets 8.x` 的新控件，运行时装的是 `7.x`，前端会报 `Could not find widget specified by model_id`。Voilà / ipywidgets / jupyterlab-widgets 三件套要锁死同一代版本号。
-
-4. **认证要自己接**：Voilà 自己没有用户系统。生产暴露公网必须前置 nginx Basic Auth、放在 JupyterHub 后面，或者做 IP 白名单——直接公开等于把后端 Python 进程开放给所有人。
-
-5. **没法做"提交按钮重跑全部"语义**：执行模型是"启动时跑一次 + 控件回调"。要做"用户改了表单后重新执行所有 cell"的语义，必须自己用 `IPython.get_ipython().run_cell` 手动触发，远不如 [[streamlit]] 的整段重跑直接。
-
-6. **share URL 不带状态**：访客拖了三个滑块得到一个图，把 URL 发给同事，同事打开是初始状态。要做"可分享视图"得自己把控件值序列化到 query string。
+1. **一人一 kernel = 内存吃紧**：100 人在线 ≈ 100 个 Python 进程；生产常前置 JupyterHub，并开闲置回收。
+2. **首屏预执行慢**：整本 notebook 先跑完才出页；数据读取可 `@lru_cache`，或 `voila --pre_heat_kernel=True`。
+3. **ipywidgets 版本错配**：notebook 写 8.x、环境装 7.x 会报 `model_id` 找不到——三件套锁同一代。
+4. **无内置认证**：公网必须 nginx Basic Auth / JupyterHub / IP 白名单，否则等于开放后端进程。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 教学 / 科研 / 量化研究——已有 notebook 文化，零成本上线
-- 单团队内部小看板——访问量低、可以宽松地一人一 kernel
-- 把交互式教材发给学生——配合 voici 还能做成纯静态站
-- HuggingFace Spaces 上的轻量 demo——平台已经替你扛 kernel 调度
+- 教学 / 科研 / 量化——已有 notebook 文化，零成本上线
+- 单团队内部小看板——访问量低（大约几十人同时在线可接受）
+- 交互式教材 + voici 做成纯静态站
+- HuggingFace Spaces 轻量 demo（平台代管 kernel）
 
 **不适用**：
 
-- 高并发面向 C 端——kernel-per-session 模型扛不住万级 QPS
-- 多用户协作 / 复杂权限——没有原生用户系统，要套 JupyterHub
-- 复杂前端交互（拖拽富文本、自定义动画）——必须写 ipywidgets 自定义控件，工作量反超 [[react]]
-- 重逻辑应用首选——选 [[streamlit]] / [[gradio]] / [[dash]] 更顺手
+- 高并发 C 端——kernel-per-session 扛不住万级 QPS
+- 多用户协作 / 复杂权限——要套 JupyterHub
+- 复杂前端交互——自定义 ipywidgets 工作量反超 [[react]]
+- 重逻辑应用——选 [[streamlit]] / [[gradio]] / [[dash]] 更顺
+
+## 历史小故事（可跳过）
+
+- **2015–2018**：ipywidgets 让 notebook 里的滑块可交互，但分享仍要"打开我的 `.ipynb`"
+- **2019-06**：QuantStack 等在 Jupyter 博客发 *And voilà!*，把"只显示输出的网页"做成独立工具
+- **之后**：模板生态（lab / material / vuetify）与 JupyterHub 部署路径成熟；voici 再把同一思路推到 Pyodide 静态站
 
 ## 学到什么
 
-1. **做最薄的发布层比再造一套框架更长寿**：Voilà 不和 [[streamlit]] 抢 API，只补"把 notebook 变 URL"那一小段，反而站稳了 Jupyter 用户群
-2. **执行模型决定 API 形态**：选 `.ipynb` 就拿到 kernel + ipywidgets + Comm，但也继承了"每访客一个进程"的成本——技术选型早期的耦合贯穿一辈子
-3. **复用既有协议比发明新协议便宜**：Voilà 把 Jupyter 的 Comm / nbconvert / kernel 协议直接搬到生产页面上，开发量极小
-4. **零后端是更激进的形态**：voici 用 Pyodide 把 Python 塞进浏览器，证明"发布层"可以薄到完全没有服务器——代价是包生态裁剪
+1. **最薄发布层往往比再造框架更长寿**：只补"notebook → URL"，反而站稳 Jupyter 用户群
+2. **执行模型决定成本**：选 `.ipynb` 就继承"每访客一进程"——早期耦合贯穿一生
+3. **复用既有协议便宜**：Comm / nbconvert / kernel 直接搬上生产页
+4. **零后端是更激进形态**：voici 证明发布层可薄到无服务器，代价是包生态裁剪
 
 ## 延伸阅读
 
 - 官方文档：[Voilà Read the Docs](https://voila.readthedocs.io/)
-- 公开宣告博客：[QuantStack — And voilà! (2019-06-21)](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
-- 仓库 README：[voila-dashboards/voila](https://github.com/voila-dashboards/voila)
-- 静态变体：[voici — Voilà 的浏览器版](https://github.com/voila-dashboards/voici)
-- [[streamlit]] —— `.py` 脚本派的同代竞品，整段重跑模型
-- [[gradio]] —— 模型 IO 双雄之一，主打 ML demo
-- [[panel]] —— HoloViz 系，也基于 ipywidgets / bokeh
+- 公开宣告：[QuantStack — And voilà! (2019-06-21)](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
+- 仓库：[voila-dashboards/voila](https://github.com/voila-dashboards/voila)
+- 静态变体：[voici](https://github.com/voila-dashboards/voici)
+- [[streamlit]] —— `.py` 脚本派同代竞品，整段重跑
+- [[gradio]] —— ML demo 友好，模型函数绑控件
 
 ## 关联
 
-- [[streamlit]] —— 同样解决"把 Python 变 Web 应用"，但选择 `.py` + 重跑模型
-- [[gradio]] —— ML demo 友好型，模型函数直接绑控件
-- [[panel]] —— 同样从 Jupyter 生态出发，但带应用框架结构
-- [[dash]] —— Plotly 系 Web 框架，回调式 API
-- [[jupyter-notebook]] —— Voilà 的输入文件格式与执行内核都来自这里
-- [[react]] —— Voilà 前端 widget 的实现栈
+- [[streamlit]] —— 同样"Python → Web"，但选 `.py` + 重跑模型
+- [[gradio]] —— ML demo 友好型，函数直接绑控件
+- [[panel]] —— 同从 Jupyter 出发，但带应用框架结构
+- [[dash]] —— Plotly 系，回调式 API
+- [[jupyter-notebook]] —— 输入格式与执行内核来源
+- [[react]] —— 前端 widget 实现栈
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

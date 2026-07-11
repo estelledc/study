@@ -35,7 +35,7 @@ Spec == Init ∧ □[Next]_vars ∧ Fairness
 
 - AWS 为什么敢说 DynamoDB / S3 的并发协议"上线前已穷举所有竞态"？答：他们用 **TLA+** 写规范、跑 TLC 模型检查
 - MongoDB 副本集协议、Azure Cosmos DB 一致性等级、Intel 缓存一致性 —— 都在用 TLA+
-- 为什么过去 30 年里**工业落地最成功的形式化方法**是 TLA+，而不是更早的 CSP / Z notation / VDM？答：TLA 的"公式即系统、精化即蕴含"让数学和工程对得上
+- 为什么过去 30 年里**工业采用最广的形式化方法之一**是 TLA+，而不是更早的 CSP / Z notation / VDM？答：TLA 的"公式即系统、精化即蕴含"让数学和工程对得上
 
 一句话：分布式协议肉眼读不出 race，TLA+ 让机器替你穷举。
 
@@ -62,20 +62,30 @@ Next == x' = x + 1
 Spec == Init ∧ □[Next]_x
 ```
 
-读法："x 从 0 开始；之后每一步要么 x 加 1，要么 x 不变"。**不变**那一项就是 stuttering，允许实现里插入"内部细节步"而不破坏规范。
+**逐部分解释**：
+
+- `Init`：开机时 x 必须是 0。
+- `Next`：一步合法变化是"后态 x 比前态多 1"（`x'` 是后态）。
+- `□[Next]_x`：从此以后每一步要么执行 Next，要么 x 不变（stuttering），所以实现里插入内部细节步也不破坏规范。
 
 ### 案例 2：用 TLA+ 描述一个简易的两进程互斥
 
 ```
 VARIABLE pc1, pc2, turn
-Init  == pc1 = "idle" ∧ pc2 = "idle" ∧ turn = 1
+Init   == pc1 = "idle" ∧ pc2 = "idle" ∧ turn = 1
 Enter1 == pc1 = "idle" ∧ turn = 1 ∧ pc1' = "crit" ∧ UNCHANGED ⟨pc2, turn⟩
 Exit1  == pc1 = "crit" ∧ pc1' = "idle" ∧ turn' = 2 ∧ UNCHANGED pc2
-Next  == Enter1 ∨ Exit1 ∨ ...（对 process 2 对称写）
-Mutex == ¬(pc1 = "crit" ∧ pc2 = "crit")
+Enter2 == pc2 = "idle" ∧ turn = 2 ∧ pc2' = "crit" ∧ UNCHANGED ⟨pc1, turn⟩
+Exit2  == pc2 = "crit" ∧ pc2' = "idle" ∧ turn' = 1 ∧ UNCHANGED pc1
+Next   == Enter1 ∨ Exit1 ∨ Enter2 ∨ Exit2
+Mutex  == ¬(pc1 = "crit" ∧ pc2 = "crit")
 ```
 
-把规范交给 **TLC** 模型检查器，它会枚举所有交错，验证 `Mutex` 在任何一帧都成立。如果有 bug，TLC 会吐一条**反例迹**——一串状态告诉你 race 怎样发生。
+**逐部分解释**：
+
+- `turn` 像一把只能递给一个人的令牌；只有轮到自己才能 `Enter`。
+- `UNCHANGED` 写明本动作不碰哪些变量，避免"偷偷改别人状态"。
+- 把 `Spec` 和 `Mutex` 交给 **TLC**，它会枚举交错；若互斥被打破，会吐一条反例迹。
 
 ### 案例 3：AWS 怎么用 TLA+
 
@@ -95,7 +105,7 @@ Newcombe et al.（CACM 2015）描述 AWS 团队在 DynamoDB / S3 / EBS 上的实
 1. **TLA+ 不是编程语言**。规范不能直接编译成可执行代码，它是**数学描述**。要写代码还得另写，工程师要做"规范 ↔ 代码"双轨同步。
 2. **状态空间爆炸**。TLC 是有限模型检查，参数稍大（10 个进程、消息缓冲 5）就跑不动；要会做**抽象**和**对称约简**。
 3. **公平性是头号坑**。**弱公平**（weak fairness）：动作连续可发就一定发；**强公平**（strong fairness）：动作无限次可发就一定发。选错验证活性会假阴/假阳。
-4. **集合论符号陡峭**。`∀ ∃ ∈ ⊆ ∪ \cup CHOOSE`——工程师没数学背景容易第一周就劝退。**PlusCal** 是 Lamport 后来设计的"伪代码风格"前端，缓和这一关。
+4. **集合论符号陡峭**。`∀ ∃ ∈ ⊆ ∪ CHOOSE`——工程师没数学背景容易第一周就劝退。**PlusCal** 是 Lamport 后来设计的"伪代码风格"前端，缓和这一关。
 5. **stuttering 直觉反**。"每一步要么改要么不变"听起来是废话，其实是 TLA 让粒度无关、让组合性成立的命门。新人常忽略 `_v` 下标的意义。
 
 ## 适用 vs 不适用场景

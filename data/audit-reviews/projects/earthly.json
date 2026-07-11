@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "类比与案例都很跟得上；文末缺「反向链接」占位段，结构上少一格，但不影响零基础读懂正文。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写 `--ci`「强制清掉本地缓存」不准确：`--ci` 主要是关交互、启用 CI 友好默认，并不等于清空本地缓存；应改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2024 年关闭 Cloud/Satellites、回归开源核心的时间线表述合理，可保留。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Earthfile 示例可跟做；修正 `--ci` 语义后，CI 案例会更靠谱。缺「反向链接」占位，建议补上以对齐模板。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "类比与案例都很跟得上；文末缺「反向链接」占位段，结构上少一格，但不影响零基础读懂正文。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写 `--ci`「强制清掉本地缓存」不准确：`--ci` 主要是关交互、启用 CI 友好默认，并不等于清空本地缓存；应改正。",
+        "2024 年关闭 Cloud/Satellites、回归开源核心的时间线表述合理，可保留。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Earthfile 示例可跟做；修正 `--ci` 语义后，CI 案例会更靠谱。缺「反向链接」占位，建议补上以对齐模板。"
+      ]
+    }
+  ]
+}

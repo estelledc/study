@@ -68,14 +68,21 @@ curl -u OPENVIDUAPP:secret -X POST \
 
 ### 案例 2：把 OpenVidu 嵌进自己的客服系统
 
-客服场景需要"用户在网页点一下→直接和坐席通话"。流程：
+客服场景需要"用户在网页点一下→直接和坐席通话"。后端两步 REST（默认 basic auth `OPENVIDUAPP:secret`）：
 
-1. 用户点击呼叫 → 后端调 `POST /sessions` 创建会话
-2. 后端给用户和坐席各调一次 `POST /sessions/{id}/connection`，拿两个 token
-3. 双方前端 SDK 用各自 token connect 同一个 Session
-4. 通话结束，后端 `DELETE /sessions/{id}` 释放资源
+```bash
+# 1) 创建会话，拿到 sessionId
+curl -u OPENVIDUAPP:secret -X POST https://my-openvidu/openvidu/api/sessions \
+  -H 'Content-Type: application/json' -d '{"customSessionId":"support-42"}'
 
-整套流程**业务方只写鉴权和路由两段代码**，媒体层完全是黑盒。这就是 PaaS 的便宜。
+# 2) 为用户/坐席各发一个 connection token
+curl -u OPENVIDUAPP:secret -X POST \
+  https://my-openvidu/openvidu/api/sessions/support-42/connection \
+  -H 'Content-Type: application/json' \
+  -d '{"role":"PUBLISHER","data":"{\"name\":\"user\"}"}'
+```
+
+前端用返回的 `token` 调 `session.connect(token)`；通话结束再 `DELETE /openvidu/api/sessions/support-42`。业务方只写鉴权与路由，媒体层是黑盒。
 
 ### 案例 3：和 LiveKit / Jitsi 做对照阅读
 

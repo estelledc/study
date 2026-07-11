@@ -45,7 +45,7 @@ sidebar:
 | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) | `firecracker-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) | `flexsc-2010` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) | `frangipani-1997` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | `gfs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [GFS — 为工作负载反向定制的分布式文件系统](/study/papers/gfs/) | `gfs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) | `ghost-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GPUDirect RDMA — 让网卡直接读写 GPU 显存](/study/papers/gpudirect-rdma-2014/) | `gpudirect-rdma-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Haven — 在不信任的云里给程序造一间安全屋](/study/papers/haven-2014/) | `haven-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -76,7 +76,6 @@ sidebar:
 | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | `mcs-locks-1991` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | `medusa-2024` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) | `mermaid` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) | `mesos-2011` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Michael-Scott Queue — 用 CAS 做高性能并发队列](/study/papers/michael-scott-queue/) | `michael-scott-queue` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MirageOS 2013 — 应用和内核合体成一个超轻虚拟机](/study/papers/mirage-2013/) | `mirage-2013` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) | `monitors-1974` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -113,5 +112,6 @@ sidebar:
 | [TimelineJS — 一张 Google Sheet 直接变成交互时间轴](/study/papers/timelinejs/) | `timelinejs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Stripe Rate Limiters — 工业级令牌桶长什么样](/study/papers/token-bucket-stripe/) | `token-bucket-stripe` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) | `tomasulo-1967` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [The Tail at Scale — 尾延迟会被规模放大](/study/papers/tradeoff-analysis/) | `tradeoff-analysis` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 
 [下一组](/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-02/)

@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Raft / HLC / MVCC 首次出现时缺少日常类比或一句话桥接，零基础读者会在核心要点和案例 4 掉队"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "为什么重要目前只有 3 条，建议补第 4 条可感知后果（例如跨机房强一致延迟）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑第 3 条写「默认 Serializable」与官方不符：YSQL 有效默认是 Snapshot（映射 REPEATABLE READ），不是 Serializable"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「必须用 PG 14+ 就不适用」已过时：2025.1/2.25 起 fork 已 rebase 到 PostgreSQL 15，应改成版本相关表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「PostGIS、pgvector 几乎能直接装」略满：扩展兼容度因版本/存储语义而异，宜弱化措辞"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "默认隔离级别写错会误导迁移排错：应改为默认有效 Snapshot，Serializable 才更易撞 40001"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑条目偏多（7 条），可压到 4–5 条并把隔离级别、Master tablet 上限、fork 追主线保留为可操作项"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用里「必须用 PG 14+」边界需按当前 PG15 rebase 更新，否则工程师会误判选型"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Raft / HLC / MVCC 首次出现时缺少日常类比或一句话桥接，零基础读者会在核心要点和案例 4 掉队",
+        "为什么重要目前只有 3 条，建议补第 4 条可感知后果（例如跨机房强一致延迟）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑第 3 条写「默认 Serializable」与官方不符：YSQL 有效默认是 Snapshot（映射 REPEATABLE READ），不是 Serializable",
+        "「必须用 PG 14+ 就不适用」已过时：2025.1/2.25 起 fork 已 rebase 到 PostgreSQL 15，应改成版本相关表述",
+        "「PostGIS、pgvector 几乎能直接装」略满：扩展兼容度因版本/存储语义而异，宜弱化措辞"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "默认隔离级别写错会误导迁移排错：应改为默认有效 Snapshot，Serializable 才更易撞 40001",
+        "踩坑条目偏多（7 条），可压到 4–5 条并把隔离级别、Master tablet 上限、fork 追主线保留为可操作项",
+        "适用/不适用里「必须用 PG 14+」边界需按当前 PG15 rebase 更新，否则工程师会误判选型"
+      ]
+    }
+  ]
+}

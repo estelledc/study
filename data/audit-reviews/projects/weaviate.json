@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "三个实践案例有代码但缺少逐步解释，建议每个案例拆成「启动/建类/查询在干什么」3 步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "HNSW、BM25、alpha 首次出现时加一句日常桥接，否则零基础会卡在踩坑与核心要点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "BlockMax WAND 写成 v1.27 有误：应为 v1.29 技术预览、v1.30 正式默认/GA"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「向量数据库四强」属叙事概括，可保留但避免写成行业定论"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Python 示例用 weaviate-client v3 的 schema.create_class / data_object.create，建议改为 v4 collections API 或明确标注 v3"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "docker run 建议补 AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true，否则新镜像常因鉴权起不来"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个实践案例有代码但缺少逐步解释，建议每个案例拆成「启动/建类/查询在干什么」3 步说明",
+        "HNSW、BM25、alpha 首次出现时加一句日常桥接，否则零基础会卡在踩坑与核心要点"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "BlockMax WAND 写成 v1.27 有误：应为 v1.29 技术预览、v1.30 正式默认/GA",
+        "「向量数据库四强」属叙事概括，可保留但避免写成行业定论"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Python 示例用 weaviate-client v3 的 schema.create_class / data_object.create，建议改为 v4 collections API 或明确标注 v3",
+        "docker run 建议补 AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true，否则新镜像常因鉴权起不来"
+      ]
+    }
+  ]
+}

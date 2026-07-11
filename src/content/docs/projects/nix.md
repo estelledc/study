@@ -1,45 +1,43 @@
 ---
 title: Nix — 函数式声明式包管理与可重复构建
-description: 纯函数式部署模型；nix-shell/devShell、flake 与 nixpkgs 超 12 万软件包的可复现环境
+description: "介绍 Nix 如何用内容寻址存储和声明式输入实现可重复构建、回滚与多版本共存。"
 来源: 'https://github.com/NixOS/nix'
 日期: 2026-06-05
 分类: CLI
-子分类: 包管理
 难度: 高级
-provenance: manual-read
 ---
 
 ## 是什么
 
-**Nix** 是 Linux/macOS 等 Unix 上的**纯函数式包管理器**：每个包在唯一 store path（`/nix/store/...-package-version`）下构建，输入哈希决定输出路径，从而保证**可重复、可回滚、多版本并存**。常与 **nixpkgs**（巨型软件仓库）和 **NixOS**（声明式 Linux 发行版）搭配使用。
+**Nix** 是 Linux/macOS 等 Unix 上的**纯函数式包管理器**：每个包装在唯一路径 `/nix/store/<hash>-name` 下，输入变了 hash 就变，从而**可重复、可回滚、多版本并存**。常与 **nixpkgs**（巨型软件仓库）和 **NixOS**（用 Nix 声明整台系统的发行版）搭配。
 
-日常类比：如果 apt/brew 像「在家具城买现货」，Nix 像**宜家按图纸每次 CNC 同一件家具**——图纸（Nix 表达式）+ 原材料哈希不变，产物比特级一致；旧版本不会被子升级覆盖。
+日常类比：apt/brew 像「家具城买现货」；Nix 像**宜家按同一张图纸每次 CNC 同一件家具**——图纸（Nix 表达式）和原材料哈希不变，产物就一致；旧版本不会被子升级覆盖。
 
-核心概念：
+四个词先用人话桥接：
 
-| 概念 | 含义 |
+| 概念 | 人话 |
 |------|------|
-| nix store | 只读包存储，路径含内容 hash |
-| derivation | 构建描述（.drv 文件） |
-| flake | 现代入口：pin nixpkgs + 暴露 devShell/packages |
-| nix-shell / nix develop | 一键进入项目依赖环境 |
+| nix store | 只读仓库，路径里带着内容指纹 |
+| derivation | 一张「怎么构建」的配方单（`.drv`） |
+| flake | 现代入口：钉死 nixpkgs 版本，并露出 devShell/packages |
+| nix develop | 一键走进项目依赖齐备的临时壳 |
 
 ## 为什么重要
 
-不懂 Nix，现代「可复现 dev env」讨论会缺一块硬核选项：
+不懂 Nix，现代「可复现开发环境」讨论会缺一块硬核选项：
 
-- **解决「我机器上能跑」**：devShell 把 compiler、库、工具链锁在同一 closure
-- **与 [[docker]] 互补**：Nix 偏构建时确定性；Docker 偏运行时隔离——NixOS 甚至能用 Nix 声明容器
-- **nixpkgs 是最大开源包集合之一**：Repology 统计常居榜首
-- **学习曲线陡峭但 payoff 高**：flake + home-manager 生态成熟后，dotfiles 也可声明式
+- **解决「我机器上能跑」**：devShell 把编译器、库、工具链锁在同一闭包（closure）
+- **与 [[docker]] 互补**：Nix 偏构建时确定性；Docker 偏运行时隔离
+- **nixpkgs 体量极大**：Repology 等统计里常居开源包集合前列
+- **曲线陡但回报高**：flake + home-manager 成熟后，连 dotfiles 都能声明式管理
 
 ## 核心要点
 
-1. **纯函数式构建**：构建过程不能随意写 `/usr`（sandbox 限制），保证可复现；副作用要显式声明。
+1. **纯函数式构建**：沙箱里不能随便写 `/usr`；副作用要显式声明。类比：厨房只准用菜谱上的原料，做出的菜才能复现。
 
-2. **flake.lock pin 输入**：`inputs.nixpkgs.url` + lock 文件让 CI 与同事用同一 nixpkgs commit——别 `--impure` 糊过去。
+2. **flake.lock 钉输入**：`inputs.nixpkgs.url` + lock 让 CI 与同事用同一 nixpkgs commit——别靠 `--impure` 蒙混。
 
-3. **home-manager / NixOS 分层**：Nix 管 package；NixOS module 管 systemd/用户；home-manager 管用户级配置——别混在一坨 legacy config.nix 里。
+3. **分层别搅成一锅**：Nix 管软件包；NixOS module 管系统服务；home-manager 管用户配置——别全塞进一个 legacy `config.nix`。
 
 ## 实践案例
 
@@ -61,79 +59,80 @@ provenance: manual-read
 nix develop   # 进入 shell，自带 python/rust/ffmpeg
 ```
 
-Video-LLM 项目可 pin [[ffmpeg]]、[[decord]] 系统库版本，避免宿主机漂移。
+**逐部分解释**：
 
-### 案例 2：nix-shell 经典（无 flake）
+- `inputs` 声明从哪拉 nixpkgs；首次会生成 `flake.lock` 钉 commit
+- `mkShell` + `buildInputs` 列出进壳就有的工具
+- 适合把系统库版本和同事锁死，避免「宿主机漂移」
+
+### 案例 2：nix-shell 一次性环境
 
 ```bash
 nix-shell -p python312 nodejs_22 git --run "python --version"
 ```
 
-临时一次性环境；长期项目推荐 flake + lock。
+**逐部分解释**：
 
-### 案例 3：安装 Nix 并查手册
+- `-p` 临时拉取几个包进 PATH，跑完即弃
+- 适合试命令；长期项目仍推荐 flake + lock
 
-```bash
-# 安装见 https://nix.dev/tutorials/install-nix
-nix --version
-nix search nixpkgs ffmpeg
-man nix-store
-```
-
-官方 nix.dev 教程比零散博客可靠。
-
-### 案例 4：用 nix run 临时跑工具
+### 案例 3：nix run 不装进 profile
 
 ```bash
-# 不安装到 profile，一次性拉取 closure 执行
 nix run nixpkgs#ffmpeg -- -version
 nix run nixpkgs#jq -- '.name' package.json
 ```
 
-适合 CI 脚本里「只要 ffmpeg 一锤子」而不污染全局环境。
+**逐部分解释**：
+
+- 不写入用户 profile，只拉 closure 执行一次
+- CI 脚本里「只要 ffmpeg 一锤子」时很干净
 
 ## 踩过的坑
 
-1. **单用户 vs 多用户安装**：macOS 上 multi-user 安装权限与 daemon 不同——装错后 store 权限修复很痛苦。
+1. **单用户 vs 多用户安装**：macOS 上 multi-user 权限与 daemon 不同——装错后 store 权限修复很痛苦。
 
 2. **flakes 未默认启用**：需在 `nix.conf` 加 `experimental-features = nix-command flakes`。
 
-3. **第一次 build 极慢**：无 binary cache 时要本地编译 [[ffmpeg]] 等级别——配置 `substituters` 信任 hydra cache。
+3. **第一次 build 极慢**：没配 binary cache 时，本地编译 ffmpeg 级大包可能要数十分钟——先配 `substituters` 信任官方 cache。
 
-4. **与 brew 混用 PATH 污染**：nix develop  shell 里仍 source 了 brew 的 pkg-config 会导致 link 错库——进 shell 前清 PATH 或 `--pure`。
+4. **与 brew 混用 PATH 污染**：nix develop 壳里若仍 source brew 的 pkg-config，会 link 错库——进壳用 `--pure` 或先清 PATH。
 
 ## 适用 vs 不适用场景
 
 **适用：**
 
-- 科研/ML 复现（pin CUDA、Python、系统 lib）
-- 跨 Linux/macOS 团队统一 dev env
-- NixOS 服务器声明式运维
+- 科研/ML 复现：需要 pin CUDA、Python、系统 lib 到同一闭包
+- 跨 Linux/macOS 团队统一 dev env（lock 文件对齐）
+- NixOS 服务器声明式运维；能接受 store 占数 GB～数十 GB 磁盘
 
 **不适用：**
 
-- 只想 `apt install` 五分钟的初学者（曲线太陡）
-- Windows 原生（需 WSL）
-- 不愿接受 store 体积膨胀（多版本并存占磁盘）
+- 只想 `apt install` 五分钟上手（学习曲线按天计，不是按小时）
+- Windows 原生（需 WSL）；无 cache 时首次构建可能 >30 分钟
+- 磁盘紧张又不愿意做 `nix-collect-garbage` 的场景
 
 ## 历史小故事（可跳过）
 
-- **2003–2006**：Eelco Dolstra 博士论文提出 Purely Functional Software Deployment Model
-- **2008+**：Nixpkgs 社区爆发
-- **2020s**：flakes 成为事实标准；nix.dev 文档站上线
-- **今**：与 [[homebrew]]、[[docker]] 形成 macOS 开发者三件套讨论
+- **2003–2006**：Eelco Dolstra 博士论文提出 Purely Functional Software Deployment Model（学位约 2006）
+- **2008+**：Nixpkgs 社区包数量爆发
+- **2020s**：flakes 成事实标准；nix.dev 文档站上线
+- **今**：与 [[homebrew]]、[[docker]] 并列，成为「可复现环境」常见对照选项
 
 ## 学到什么
 
-- 可复现 = 输入哈希 + 沙箱构建 + lock 文件，不是「requirements.txt 够长」
-- Nix 表达式是语言，不是 YAML 套壳——值得专门学半周
-- devShell 对 Video AI 这种系统依赖多的栈尤其省心
+1. **可复现 = 输入哈希 + 沙箱构建 + lock**，不是「依赖列表写得够长」
+2. **Nix 表达式是一门语言**，不是 YAML 套壳——值得专门学几天
+3. **devShell 对系统依赖多的栈最省心**：编译器、动态库、CLI 一次锁齐
+4. **和容器分工**：Nix 管「构建确定性」，Docker 管「运行隔离」，可以组合不必二选一
+5. **回滚是一等公民**：旧 store path 还在，切换配置不必怕「升坏了回不去」
 
 ## 延伸阅读
 
-- nix.dev 安装与 First Steps
+- nix.dev 安装与 First Steps：https://nix.dev/
 - Nix 手册：https://nix.dev/reference/nix-manual
 - nixpkgs 仓库：https://github.com/NixOS/nixpkgs
+- Dolstra 论文线索：Purely Functional Software Deployment Model（博士论文，约 2006）
 - [[homebrew]] —— macOS 另一包管理对照
 - [[docker]] —— 运行时隔离对照
 

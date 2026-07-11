@@ -129,17 +129,9 @@ new LineChart('.ct-chart', data, {
 3. **响应式不是给个 width: 100% 那么简单**——不同断点切换不同 options 才叫真响应式（手机隐藏副轴、平板压缩 padding）
 4. **细分定位 + 极轻包**也能活——不是每个库都要做"全功能 + 大生态"，13 年下来 Chartist 证明垂直市场也有稳态
 
-## 自检三问
-
-读完这页，应该能答出：
-
-- 为什么 Chartist 把样式交给 CSS 而不是 options？（前后端分工 + 设计师能直接改）
-- SVG 和 Canvas 各自适合什么数据量？（百点级 SVG 都行；千点级以上 Canvas 占优）
-- responsiveOptions 解决了什么问题？（不同尺寸要不同 options，不只是改宽度）
-
 ## 延伸阅读
 
-- 官方文档：[Chartist Docs](https://gionkunz.github.io/chartist-js/)（v0 文档，部分 API 在 v1 已变）
+- 官方文档：[Chartist Docs](https://chartist.dev/)（v1 文档）
 - 仓库：[chartist-js/chartist](https://github.com/chartist-js/chartist)（v1 在这里）
 - [[chart-js]] —— 同样的入门定位，但走 Canvas 路线，刚好对照
 - [[d3]] —— SVG 数据驱动祖师，Chartist 是 D3 思路的简化结晶
@@ -153,3 +145,7 @@ new LineChart('.ct-chart', data, {
 - [[recharts]] —— React + SVG，把 Chartist 的"声明 + CSS"路线装进组件
 - [[echarts]] —— 同样配置式 API，但走 Canvas + 海量图类型路线
 - [[observable-plot]] —— grammar of graphics 风格的现代 SVG 库
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

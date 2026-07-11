@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 注释写「b 或 a，取决于你更看重 CPU 还是数据本地性」，但按当前 score 函数固定选出 a（18>16）；建议改注释或改权重，避免零基础读者对结果困惑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线把 2003 集群经验、MapReduce、Bigtable 与 2009 小书串起来是合理教学简化；若再精确一点，可注明第二/三版年份，避免「2013 年以后」过于笼统"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可运行，但注释与实际 max(score) 结果不一致（应固定为 a）；建议修正注释或把 locality_bonus 调成可配置参数以体现取舍"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 注释写「b 或 a，取决于你更看重 CPU 还是数据本地性」，但按当前 score 函数固定选出 a（18>16）；建议改注释或改权重，避免零基础读者对结果困惑"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史时间线把 2003 集群经验、MapReduce、Bigtable 与 2009 小书串起来是合理教学简化；若再精确一点，可注明第二/三版年份，避免「2013 年以后」过于笼统"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可运行，但注释与实际 max(score) 结果不一致（应固定为 a）；建议修正注释或把 locality_bonus 调成可配置参数以体现取舍"
+      ]
+    }
+  ]
+}

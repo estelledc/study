@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 适用",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "卡罗拉 vs 德国工程车类比贴合选型直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "docker + SQL 三案例有逐步解释，零基础可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "正文缺「适用 vs 不适用」整段，读者不知道何时不该选 MySQL"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Monty/MySQL AB→Sun→Oracle→MariaDB fork、InnoDB 默认、utf8 vs utf8mb4 主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「全球一半以上网站底层是它」偏营销口径，宜改为「大量 CMS/站点默认栈含 MySQL」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 mysql/mysql-server 合理；历史小故事缺「（可跳过）」后缀"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "docker/SQL/JSON 案例可跑；主从示例仍用 CHANGE MASTER TO，MySQL 8.0.23+ 宜注明已弃用、改 CHANGE REPLICATION SOURCE TO"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "utf8mb4、引擎选型、复制延迟、全文弱、大表 DDL 坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺适用/不适用量化边界（读多写少 Web、强一致复杂分析、全文搜索等）——必须补段"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "卡罗拉 vs 德国工程车类比贴合选型直觉",
+        "docker + SQL 三案例有逐步解释，零基础可跟",
+        "正文缺「适用 vs 不适用」整段，读者不知道何时不该选 MySQL"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Monty/MySQL AB→Sun→Oracle→MariaDB fork、InnoDB 默认、utf8 vs utf8mb4 主线正确",
+        "「全球一半以上网站底层是它」偏营销口径，宜改为「大量 CMS/站点默认栈含 MySQL」",
+        "来源 mysql/mysql-server 合理；历史小故事缺「（可跳过）」后缀"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "docker/SQL/JSON 案例可跑；主从示例仍用 CHANGE MASTER TO，MySQL 8.0.23+ 宜注明已弃用、改 CHANGE REPLICATION SOURCE TO",
+        "utf8mb4、引擎选型、复制延迟、全文弱、大表 DDL 坑具体",
+        "缺适用/不适用量化边界（读多写少 Web、强一致复杂分析、全文搜索等）——必须补段"
+      ]
+    }
+  ]
+}

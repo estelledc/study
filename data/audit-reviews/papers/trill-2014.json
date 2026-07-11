@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有概念对比、没有代码和逐步拆解；建议补一段伪代码/数组示意，并写成 1-2-3 步（攒批 → 列循环 → bitvector 跳过）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 讲 retraction 很好，但缺逐步解释；建议拆成「窗口滑动 → 发 retract → 下游只算 delta」三步，并给一条最小伪代码"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 代码后可加「逐部分解释」：ToStreamable / punctuationPolicy / 复用 Where-Window-Sum 各一句"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文写的是相对 comparable streaming engines / commercial SPE 高 2-4 个数量级；笔记把 Storm 与 StreamInsight 并列写进该数字略宽，可改成「相对同期商用流引擎（如 StreamInsight 一类）高 2-4 个数量级，远高于 Storm 等」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「μs 级」延迟表述偏乐观；论文主打可调 latency spectrum，教学可保留但宜写成「可压到很低延迟」而非固定 μs"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 API（DisorderPolicy / PeriodicPunctuationPolicy / HoppingWindow）概念正确，可注明为教学示意、省略 using 与类型声明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2/3 无代码；若 refine，给 columnar batch 与 retract 各补最小示意即可，不必生产级可跑"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有概念对比、没有代码和逐步拆解；建议补一段伪代码/数组示意，并写成 1-2-3 步（攒批 → 列循环 → bitvector 跳过）",
+        "案例 3 讲 retraction 很好，但缺逐步解释；建议拆成「窗口滑动 → 发 retract → 下游只算 delta」三步，并给一条最小伪代码",
+        "案例 1 代码后可加「逐部分解释」：ToStreamable / punctuationPolicy / 复用 Where-Window-Sum 各一句"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "论文写的是相对 comparable streaming engines / commercial SPE 高 2-4 个数量级；笔记把 Storm 与 StreamInsight 并列写进该数字略宽，可改成「相对同期商用流引擎（如 StreamInsight 一类）高 2-4 个数量级，远高于 Storm 等」",
+        "「μs 级」延迟表述偏乐观；论文主打可调 latency spectrum，教学可保留但宜写成「可压到很低延迟」而非固定 μs"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 API（DisorderPolicy / PeriodicPunctuationPolicy / HoppingWindow）概念正确，可注明为教学示意、省略 using 与类型声明",
+        "案例 2/3 无代码；若 refine，给 columnar batch 与 retract 各补最小示意即可，不必生产级可跑"
+      ]
+    }
+  ]
+}

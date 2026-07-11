@@ -77,15 +77,30 @@ Vega-Lite 是一种**用 JSON 描述图表**的小语言，由 University of Was
 
 ```json
 {
-  "data": {"url": "data/sales.json"},
+  "data": {
+    "values": [
+      {"month": "Jan", "sales": 28, "target": 30},
+      {"month": "Feb", "sales": 55, "target": 40}
+    ]
+  },
   "layer": [
-    {"mark": "bar", "encoding": {"x": {"field": "month"}, "y": {"field": "sales"}}},
-    {"mark": "line", "encoding": {"x": {"field": "month"}, "y": {"field": "target"}}}
+    {"mark": "bar", "encoding": {
+      "x": {"field": "month", "type": "nominal"},
+      "y": {"field": "sales", "type": "quantitative"}
+    }},
+    {"mark": "line", "encoding": {
+      "x": {"field": "month", "type": "nominal"},
+      "y": {"field": "target", "type": "quantitative"}
+    }}
   ]
 }
 ```
 
-两层共享数据和 x 轴，y 各画各的。三段式的力量在这——**复合 = 把若干个三段式拼起来**。
+**逐部分解释**：
+
+- 外层只有 `data` + `layer`——复合图把「画什么」下放到每一层
+- 第一层柱（销量）、第二层折线（目标），共享数据与 x 轴；每层都显式写 `type`
+- 三段式的力量在这——**复合 = 把若干个三段式拼起来**
 
 ### 案例 3：facet 自动小多图
 
@@ -101,11 +116,14 @@ Vega-Lite 是一种**用 JSON 描述图表**的小语言，由 University of Was
 }
 ```
 
-一张 spec 自动按 `Origin` 切成三张小图横排——不用循环、不用拼图。
+**逐部分解释**：
+
+- `facet` 按 `Origin` 分组，自动复制散点图成小多图（最多 3 列）
+- 写在 `encoding` 里与顶层 `"facet": {...}` 等价；一张 spec 完成切分，不用手拼
 
 ## 踩过的坑
 
-1. **type 漏写默认当 nominal**：把年份 1990/1991/1992 当类别画出来，每年一根独立柱，看起来像离散事件，其实是连续时间。永远显式写 `"type": "temporal"` 或 `"quantitative"`。
+1. **type 漏写或写错**：把年份写成 `nominal`（或让推断猜错），1990/1991/1992 会当类别画成独立柱，像离散事件。永远显式写 `"type": "temporal"` 或 `"quantitative"`。
 
 2. **encoding 重复定义被静默覆盖**：同一个 mark 里写两次 `color`，后一个赢，但**没有警告**。复制粘贴 layer 时容易触发。
 
@@ -132,7 +150,7 @@ Vega-Lite 是一种**用 JSON 描述图表**的小语言，由 University of Was
 - **2005 年**：Hadley Wickham 在 R 里实现 ggplot2，工业界第一次感受到"图可以拼"。
 - **2014 年**：华盛顿大学 IDL 实验室（Heer 组）发布 Vega，完整 JSON DSL，但写一张简单图要 200 行。
 - **2017 年**：Satyanarayan 等人发表 Vega-Lite——把 Vega 的样板默认掉，只让用户写差异。论文同时给出 layer / concat / facet / repeat 四算子和 selection 模型。
-- **2019 起**：Altair 把 Vega-Lite 推进 Python 主流圈，成为 ggplot2 在 Python 的对标方案。
+- **约 2017–2019**：Altair 把 Vega-Lite 推进 Python 主流圈，成为 ggplot2 在 Python 的对标方案。
 
 ## 学到什么
 

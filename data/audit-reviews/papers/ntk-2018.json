@@ -1,0 +1,145 @@
+{
+  "action": "refine",
+  "average": 3.55,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "黏土/弹簧类比能建立直觉，但案例 1 直接上 (1/√m)Σ 与 κ(arccos) 公式，零基础会掉队"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核回归 / RKHS / gradient flow / lazy training 堆术语，缺更短白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "多出『一句话总结』『给零基础读者的提醒』且缺 ## 反向链接占位，12 段结构不齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Jacot/Gabriel/Hongler NeurIPS 2018、Neal 1996 GP、Lee et al. NNGP 2017 主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读 Distill 链接只到 distill.pub 根路径，『A Visual Tour of Neural Tangent Kernel』条目无效，应换真实资源或删"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『OpenAI、Anthropic 都已在用 μP』过满；『第一次严格证明超参网络泛化』宜加限定（NTK 设定下的一类结果）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例偏定理叙述，缺可跟做的最小步骤（如 neural-tangents 三行算核，或伪代码写出 K 的内积定义）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑很强：特征学习对照、参数化决定懒惰区、有限宽近似、大学习率、一族核"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用收敛/泛化/μP/对照组；不适用特征学习与 Adam——边界清楚；难度写『进阶』应改为『高级』"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "黏土/弹簧类比能建立直觉，但案例 1 直接上 (1/√m)Σ 与 κ(arccos) 公式，零基础会掉队",
+        "核回归 / RKHS / gradient flow / lazy training 堆术语，缺更短白话桥接",
+        "多出『一句话总结』『给零基础读者的提醒』且缺 ## 反向链接占位，12 段结构不齐"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "Jacot/Gabriel/Hongler NeurIPS 2018、Neal 1996 GP、Lee et al. NNGP 2017 主线正确",
+        "延伸阅读 Distill 链接只到 distill.pub 根路径，『A Visual Tour of Neural Tangent Kernel』条目无效，应换真实资源或删",
+        "『OpenAI、Anthropic 都已在用 μP』过满；『第一次严格证明超参网络泛化』宜加限定（NTK 设定下的一类结果）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例偏定理叙述，缺可跟做的最小步骤（如 neural-tangents 三行算核，或伪代码写出 K 的内积定义）",
+        "踩坑很强：特征学习对照、参数化决定懒惰区、有限宽近似、大学习率、一族核",
+        "适用收敛/泛化/μP/对照组；不适用特征学习与 Adam——边界清楚；难度写『进阶』应改为『高级』"
+      ]
+    }
+  ],
+  "slug": "ntk-2018",
+  "area": "papers",
+  "status": "refined",
+  "aggregate": {
+    "average": 3.55,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 151,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "补 ## 反向链接；去掉非模板 H2；案例降公式、加 neural-tangents 可跟步骤；弱化 μP/Distill 过满表述；难度改为高级",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

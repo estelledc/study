@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都缺模板式「逐部分解释」；案例1至少拆成：阶段标签 / type instance / 运行时 () 三步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例2的 RdrName/Name/Id 可先用「外号→身份证→带简历的工牌」类比再贴代码，降低 GHC 专有名词密度"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「TypeScript / Babel / SWC 借鉴了骨架共享」偏软，可改成「多阶段 AST 标注思路相近」以免过度归因到 TTG 论文"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约 1500 个 commits」若无出处可弱化为「跨多个 GHC 版本的大规模重构」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码缺 `type family XVar p` 声明头，跟做时需补上才能通过编译；教学 min example 可接受但建议点明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例3 freeVars 很好，可再补一句「忽略扩展槽所以对所有阶段多态」强化可复用点"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个案例都缺模板式「逐部分解释」；案例1至少拆成：阶段标签 / type instance / 运行时 () 三步",
+        "案例2的 RdrName/Name/Id 可先用「外号→身份证→带简历的工牌」类比再贴代码，降低 GHC 专有名词密度"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「TypeScript / Babel / SWC 借鉴了骨架共享」偏软，可改成「多阶段 AST 标注思路相近」以免过度归因到 TTG 论文",
+        "「约 1500 个 commits」若无出处可弱化为「跨多个 GHC 版本的大规模重构」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码缺 `type family XVar p` 声明头，跟做时需补上才能通过编译；教学 min example 可接受但建议点明",
+        "案例3 freeVars 很好，可再补一句「忽略扩展槽所以对所有阶段多态」强化可复用点"
+      ]
+    }
+  ]
+}

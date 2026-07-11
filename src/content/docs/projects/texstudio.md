@@ -36,7 +36,7 @@ Hello, TeXstudio!
 
 1. **编辑辅助**：它像一位坐在旁边的排版助教，看到 `\` 后给 LaTeX 命令补全，看到标签和引用时帮你跳转。官网 README 强调的语法高亮、引用检查、拼写检查，本质都是减少“我是不是打错了”的猜测。
 
-2. **构建系统**：它像一个可配置的流水线按钮，`txs:///quick` 可以串起默认编译器和默认查看器。你可以继续用 `pdflatex`，也可以改成 `latexmk`，但要知道 GUI 里的命令列表不是普通 shell 管道。
+2. **构建系统**：它像一个可配置的流水线按钮；`txs:///quick` 是 TeXstudio 内部命令名，意思是「跑默认编译器再打开默认查看器」。你可以继续用 `pdflatex`，也可以改成 `latexmk`，但要知道 GUI 里的命令列表不是普通 shell 管道。
 
 3. **预览反馈**：它像一块实时校样屏，PDF viewer、inline preview、公式预览和 log marker 会把“源码位置”和“PDF 结果”连起来。对初学者来说，这比只看终端输出更容易建立因果感。
 
@@ -48,7 +48,7 @@ Hello, TeXstudio!
 
 ```tex
 \documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}  % 旧式模板常见；现代 TeX Live/MiKTeX 常可省略
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -61,7 +61,7 @@ Hello, TeXstudio!
 逐部分解释：
 
 - `\documentclass` 像“选择纸张和文档类型”，决定这是一篇文章、书，还是幻灯片。
-- `\usepackage{amsmath}` 这类行像“装插件”，让数学公式、图片等能力可用。
+- `\usepackage{amsmath}` 这类行像“装插件”，让数学公式、图片等能力可用；`inputenc` 在较新发行版里多半已是默认 UTF-8。
 - `\begin{document}` 到 `\end{document}` 之间才是正文，TeXstudio 的结构视图和语法检查主要围着这段工作。
 - 保存为 `getting_started.tex` 后按 `F5`，TeXstudio 会编译并打开 PDF；只想看已有 PDF 时，`F7` 是 View。
 
@@ -156,7 +156,7 @@ c&d\\ \hline
 - **2009 年**：TeXstudio 从 Texmaker 分叉出来，最初叫 TeXmakerX，目标是把更多可配置能力和编辑增强放进去。
 - **2011 年**：项目改名为 TeXstudio，逐渐从“扩展版 Texmaker”变成独立 LaTeX IDE。
 - **2010s**：官网长期强调 auto completion、structure view、inline checking、integrated PDF viewer，说明它的重点一直是降低写 LaTeX 的反馈成本。
-- **2026 年**：GitHub 仓库约 3.6k stars，官网发布到 4.9.5，项目仍在维护跨平台桌面版本。
+- **2026 年**：GitHub 仓库约 3.4k stars，稳定版约在 4.9.3 一带，项目仍在维护跨平台桌面版本。
 
 ## 学到什么
 

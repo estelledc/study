@@ -1,0 +1,96 @@
+{
+  "slug": "frama-c-2012",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "「SeL4、CompCert…都借鉴了它的多插件架构」不成立：二者是 Isabelle/Coq 交互式定理证明路线，且 CompCert 早于本综述；应改成同代分析平台对比或删掉该条"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2012 论文里主力插件叫 Value Analysis，EVA 是后来改名；正文已有历史段说明，但「三个主力插件」处宜标明「今称 EVA」以免读者以为 2012 就叫 EVA"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「SeL4、CompCert…都借鉴了它的多插件架构」不成立：二者是 Isabelle/Coq 交互式定理证明路线，且 CompCert 早于本综述；应改成同代分析平台对比或删掉该条",
+        "2012 论文里主力插件叫 Value Analysis，EVA 是后来改名；正文已有历史段说明，但「三个主力插件」处宜标明「今称 EVA」以免读者以为 2012 就叫 EVA"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic: 删除 SeL4/CompCert 借鉴多插件架构的不实表述；标明 Value Analysis 今称 EVA",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 164,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 164,
+  "l1_pass": true
+}

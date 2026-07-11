@@ -67,6 +67,7 @@ const html = micromark('# 标题\n\n- [x] 任务一\n- [ ] 任务二', {
 ### 案例 2：从事件流自己造结构
 
 ```js
+// 内部 API，仅演示「先发事件、再建树」；业务代码请走 unified/remark
 import { parse, postprocess, preprocess } from 'micromark/lib/parse'
 
 const events = postprocess(parse().document().write(preprocess()('# Hi')))
@@ -75,7 +76,12 @@ for (const [kind, token] of events) {
 }
 ```
 
-每条事件是 `[enter|exit, token, context]` 三元组。**unified 拿到这条事件流，再翻译成 mdast 节点树**——micromark 不操心树。
+**逐步解释**：
+
+1. `preprocess` 把字符串收成状态机可吞的码点流
+2. `parse().document().write(...)` 跑状态机，边读边攒原始事件
+3. `postprocess` 整理成稳定的 `[enter|exit, token]` 列表
+4. **unified / mdast-util-from-markdown** 再把事件翻成树——micromark 自己不建 AST
 
 ### 案例 3：用 stream 接 fs
 
@@ -116,8 +122,6 @@ createReadStream('huge.md', { encoding: 'utf8' })
 - 业务代码直接渲染一篇 markdown → 用 marked 或 markdown-it 更省事
 - 只需要把 markdown 转 HTML 一次 → 用 unified + remark-html，不要直接调 micromark
 - 不在意 100% 合规、追求极致小体积 → marked 更小（~10 KB）
-
-这一招让"切下来直接 pipe 到 stdout"成为常态——你不必等整篇 markdown 读完才能看到第一个 `<h1>` 出来。
 
 ## 历史小故事（可跳过）
 

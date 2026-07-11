@@ -22,7 +22,7 @@ z proj
 cd /Users/jason/code/big-project/services/api
 ```
 
-底层是 **Rust 单二进制 + 一个 SQLite-like 小数据库**（默认在 `~/.local/share/zoxide/db.zo`，存"路径、访问次数、最后访问时间"三元组）。第一次用要先 `cd` 一遍学路径，之后就只敲关键词。
+底层是 **Rust 单二进制 + 自有二进制小数据库**（默认在 `~/.local/share/zoxide/db.zo`，存"路径、访问分数、最后访问时间"三元组，不是 SQLite）。第一次用要先 `cd` 一遍学路径，之后就只敲关键词。
 
 ## 为什么重要
 
@@ -39,18 +39,18 @@ zoxide 的工作可以拆成 **三步**：
 
 1. **学习**：你每 cd 一次，zoxide 把目标路径写进数据库，访问次数 +1，时间戳更新。类比：地址栏每次你点过的网址都加 1 分。
 
-2. **打分**：你输 `z foo`，zoxide 把所有路径名含 "foo" 的记录拿出来，按 **frecency** 公式打分——访问越多、越新近、关键词越匹配，分越高。然后 `cd` 到分最高的。
+2. **打分**：你输 `z foo`，zoxide 把匹配的路径拿出来，按 **frecency** 打分——基础分是访问次数；再按"多久没去过"乘系数（一小时内 ×4、一天内 ×2、一周内 ×0.5、更久 ×0.25）。然后 `cd` 到分最高的。
 
-3. **衰减**：老条目分数随时间慢慢掉。数据库默认上限 10000 条，超了把分最低的清掉。所以三个月没去的目录会自然消失——不需要你手动维护。
+3. **衰减**：环境变量 `_ZO_MAXAGE` 默认 **10000**，限制的是库里**分数总和**（不是条目数）。总和超了就把每条分数按比例压低，压到低于 1 的条目删掉。所以很久不去的目录会自然消失——不需要你手动维护。
 
-三步加起来就是 **frecency = frequency × recency**：常去的 + 最近去过的，权重最高。
+三步合起来就是教学版 **frecency ≈ frequency × recency**：常去的 + 最近去过的，权重最高。
 
 ## 实践案例
 
 ### 案例 1：装上、初始化、第一次用
 
 ```bash
-brew install zoxide              # macOS
+brew install zoxide              # macOS；Linux 可用 apt / cargo install zoxide
 echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
 source ~/.zshrc
 
@@ -76,12 +76,12 @@ function z() {
 
 ```bash
 # 你有两个目录都带 'foo'：~/work/foo 和 ~/notes/foo-archive
-z foo            # 跳分最高的那个（看 frecency）
-z work foo       # 同时匹配两个关键词，必须同时出现在路径里
-z notes foo      # 强制跳另一个
+z foo            # 只筛含 foo 的路径，再按 frecency 取 top-1
+z work foo       # 路径里要同时按顺序出现 work 和 foo → 只剩 ~/work/foo
+z notes foo      # 同理只剩 ~/notes/foo-archive
 ```
 
-多个候选时 zoxide 不会乱猜，关键词越多越精准。
+**逐步对照**：`z foo` 两个都匹配，谁 frecency 高谁赢；加 `work` / `notes` 是再加一道过滤，不是换排序公式——所以能压过"单纯 foo 的盲跳"。
 
 ### 案例 3：zi 交互模式（配合 fzf）
 
@@ -127,7 +127,7 @@ zi proj
 - **2010 年**：wting 用 Python 写 autojump，加了模糊匹配和数据库。比 z.sh 快但启动还是慢（Python 解释器冷启）。
 - **2018 年**：Ajeet D'Souza 用 Rust 重写成 zoxide。启动从 100ms 降到 5ms，零依赖单二进制，覆盖 5 种 shell。
 - **2022 年起**：被几乎所有热门 dotfiles 模板默认装上，事实上替代了 z.sh。
-- **2026 年现在**：22k+ star，社区把它当 "cd 默认替代" 来推荐，初学 Linux 的教程开始把 zoxide 写进第一周配置。
+- **2026 年现在**：3 万+ star，社区把它当 "cd 默认替代" 来推荐，初学 Linux 的教程开始把 zoxide 写进第一周配置。
 
 ## 学到什么
 

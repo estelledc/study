@@ -136,7 +136,7 @@ new Tabulator('#table', {
 
 4. **打包体积**：如果只用 npm `tabulator-tables`，全功能 ~150 KB（gzip ~50 KB），不算重但也不算轻。可以按需 import 子模块（5.x 后支持），把没用的 formatter / editor 摇掉
 
-5. **大数据量虚拟滚动需要显式开**：默认不开虚拟 DOM，1 万行以上要配 `virtualDom: true`，否则会卡
+5. **大数据量要设 height 才吃到虚拟滚动**：5.x+ 默认 `renderVertical: "virtual"`，但没设表格高度时仍会一次渲完所有行。1 万行以上务必设 `height: "400px"`（或 CSS 高度），别再写已废弃的 `virtualDom: true`
 
 ## 适用 vs 不适用
 
@@ -153,6 +153,13 @@ new Tabulator('#table', {
 - 需要极度定制的视觉（看起来不像表格的表格）→ headless 的 TanStack Table
 - 移动端为主的场景 → desktop-first，触屏体验一般
 
+## 历史小故事（可跳过）
+
+- **2015 年**：Oliver Folkerd 开源第一版，当时还依赖 jQuery
+- **2019 年**：4.0 去掉 jQuery，变成零依赖纯 JS，企业内网 CDN 引入门槛骤降
+- **2024 年**：6.x 加强 ESM tree-shaking 与 spreadsheet 能力
+- **2026 年**：维护权移交 Beekeeper Studio 团队，仓库迁至 `tabulator-tables/tabulator`
+
 ## 学到什么
 
 1. **"够用就好"是一种产品定位**——不跟 AG Grid 比百万行性能，专攻"中等数据 + 中等需求 + 零预算"这块
@@ -163,7 +170,7 @@ new Tabulator('#table', {
 ## 延伸阅读
 
 - 官方文档：[Tabulator Documentation](https://tabulator.info/)
-- GitHub 仓库：[olifolkerd/tabulator](https://github.com/olifolkerd/tabulator)
+- GitHub 仓库：[tabulator-tables/tabulator](https://github.com/tabulator-tables/tabulator)（原 olifolkerd/tabulator）
 - 列类型一览：[Tabulator Formatters](https://tabulator.info/docs/6.2/format)
 - [[ag-grid]] —— 企业级表格的金融行业事实标准（对照组）
 - [[handsontable]] —— 浏览器里的 Excel（更偏 Excel 体验）

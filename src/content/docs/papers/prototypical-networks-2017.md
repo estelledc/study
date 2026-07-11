@@ -1,9 +1,9 @@
 ---
 title: Prototypical Networks — 每类算个均值，比距离就够了
-来源: Snell, Swersky, Zemel, "Prototypical Networks for Few-shot Learning", NeurIPS 2017
+来源: 'Snell, Swersky, Zemel, "Prototypical Networks for Few-shot Learning", NeurIPS 2017'
 日期: 2026-06-01
 分类: 机器学习
-难度: 入门
+难度: 初级
 ---
 
 ## 是什么
@@ -25,18 +25,18 @@ p(y=k|x) = softmax(-‖f_φ(x) - c_k‖²)
 
 - 为什么 [[maml-2017]] 那种"内循环再 SGD"的复杂做法在 5-shot 上反而被一个均值打败
 - 为什么 SentenceBERT / CLIP 的 few-shot 分类常常就是"算几个均值再比距离"
-- 为什么 RAG 系统用 nearest-centroid 检索而不是更花哨的方法
-- 为什么 2024 年的 few-shot baseline 还是这个 2017 年 100 行代码的方法
+- 为什么很多 embedding 分类器宁可做 nearest-centroid（每类一个中心），也不先上更花哨的元学习器
+- 为什么 2024 年的 few-shot baseline 还是这个 2017 年短论文里的方法
 
 ## 核心要点
 
 ProtoNet 的训练 + 推理可以拆成 **三步**：
 
-1. **embedding 网络**：一个普通 CNN（论文里 4 层卷积），把图片映射成 64 维向量。所有训练参数都在这里。
+1. **embedding 网络**：一个普通 CNN（论文里 4 层卷积），把图片映射成 64 维向量。类比：把每张照片压成一张"特征名片"，后面只比名片、不再比原图。所有训练参数都在这里。
 
-2. **构造原型**：每个 episode 随机抽 N 个类别、每类 K 个 support 样本（**N-way K-shot**），算 N 个原型。原型是均值，**没有可训练参数**。
+2. **构造原型**：每个 episode 随机抽 N 个类别、每类 K 个 support 样本（**N-way K-shot**），算 N 个原型。类比：每组同学交作业，老师先把同组作业平均成一份"标准答案"。原型是均值，**没有可训练参数**。
 
-3. **距离 → softmax → cross-entropy**：query 样本到 N 个原型的负欧氏距离过 softmax，对真实类别算交叉熵。梯度流回 embedding 网络。
+3. **距离 → softmax → cross-entropy**：query 到 N 个原型的负欧氏距离过 softmax，对真实类别算交叉熵。类比：看新作业离哪份标准答案最近，再据此打分回传。梯度流回 embedding 网络。
 
 ```
 训练 episode：
@@ -49,25 +49,31 @@ ProtoNet 的训练 + 推理可以拆成 **三步**：
 
 ## 实践案例
 
-### 案例 1：miniImageNet 5-way 1-shot 分类
+### 案例 1：miniImageNet 5-way 1-shot（含 episode 伪代码）
 
 任务：给 5 个新类别、每类 1 张样本，问第 6 张属于哪一类。
 
-- ProtoNet：49.4%（超过同期 [[maml-2017]] 48.7%）
-- 5-shot：68.2%（领先 MAML 5+ 个百分点）
+```python
+# 一个 episode：N=5, K=1
+support, query, labels = sample_episode(n_way=5, k_shot=1)
+# 1) 每类 support embedding 求均值 → 原型
+protos = {c: embed(support[c]).mean(0) for c in support}
+# 2) query 比平方欧氏距离，最近的原型即预测
+pred = min(protos, key=lambda c: ((embed(query) - protos[c]) ** 2).sum())
+```
 
-**为什么赢 MAML**：MAML 在 1 张样本上做 SGD 容易过拟合；ProtoNet 直接把那 1 张当原型，没有"适应"步骤可坏掉。
+**逐部分解释**：`sample_episode` 模拟"临时考试卷"；`embed` 是 f_φ；1-shot 时均值就是那一张。论文数字：ProtoNet 49.4%（同期 [[maml-2017]] 48.7%）；5-shot 68.2%（领先 MAML 约 5 个百分点）。**为什么赢**：MAML 在 1 张样本上做 SGD 易过拟合；ProtoNet 直接把那张当原型，没有"适应"步骤可坏掉。
 
 ### 案例 2：欧氏距离为什么打败余弦距离
 
-论文做了消融——把距离从平方欧氏换成余弦相似度，准确率直接掉 6+ 个百分点。
+论文消融：把距离从平方欧氏换成余弦，准确率显著掉点（图上常见约 6+ 个百分点量级）。
 
 ```
 平方欧氏：‖f(x) - c_k‖²        强 baseline
 余弦：    1 - cos(f(x), c_k)   显著掉点
 ```
 
-**为什么**：平方欧氏距离属于 **Bregman 散度**家族，在这族距离下"算均值"恰好是最大似然估计——原型是最优的"类代表"。余弦距离不是 Bregman 散度，平均向量对它**没有这种最优性**。
+**为什么**：平方欧氏属于 **Bregman 散度**（一类特殊距离：对这类距离，"算均值"恰好是最大似然估计，原型是最优类代表）。余弦不是 Bregman，平均向量对它**没有这种最优性**。
 
 ### 案例 3：用 SentenceBERT 做 5-shot 文本分类（现代延伸）
 
@@ -115,8 +121,8 @@ def predict(text):
 
 - **2015 年**：Koch et al. 用 Siamese Network 做 one-shot，思路是"学距离"，但要 pairwise 训练，效率低。
 - **2016 年**：Vinyals 等的 Matching Networks 用 attention 对 support set 加权——可以看成"软原型"，比 Siamese 强但实现复杂。
-- **2017 年 3 月**：[[maml-2017]] 发表，用二阶梯度学初始化，5 页论文。
-- **2017 年 6 月**：Snell（Toronto + Twitter）发表 ProtoNet，**5 页正文**，思路简单到让人怀疑——"为什么不直接对 support 求均值"。
+- **2017 年 3 月**：[[maml-2017]] 发表，用二阶梯度学初始化。
+- **2017 年 6 月**：Snell（Toronto + Twitter）发表 ProtoNet，主文很短，思路简单到让人怀疑——"为什么不直接对 support 求均值"。
 - **2018 年**：Relation Networks 把欧氏距离换成可学习的"关系网络"，更花哨但提升有限。
 - **2020 年起**：CLIP / SentenceBERT 普及，ProtoNet 范式以"用预训练 embedding 算原型"的形式回归主流。
 
@@ -136,7 +142,7 @@ def predict(text):
 
 ## 延伸阅读
 
-- 论文 PDF：[Snell et al. 2017](https://arxiv.org/abs/1703.05175)（5 页正文，密度低，一晚上能读完）
+- 论文 PDF：[Snell et al. 2017](https://arxiv.org/abs/1703.05175)（短论文，密度低，一晚上能读完）
 - 官方代码：[jakesnell/prototypical-networks](https://github.com/jakesnell/prototypical-networks)（PyTorch 100 行核心）
 - 综述视角：[Wang et al. 2020, "Generalizing from a Few Examples"](https://arxiv.org/abs/1904.05046) 第 4.2 节
 - 现代实现：[learn2learn 库](https://github.com/learnables/learn2learn) 提供 MAML / Reptile / ProtoNet 同接口对比
@@ -155,4 +161,3 @@ def predict(text):
 
 - [[attention]] —— Attention Is All You Need
 - [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
-

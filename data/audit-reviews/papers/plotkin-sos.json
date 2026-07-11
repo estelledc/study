@@ -1,0 +1,112 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱/象棋类比把「只走一步」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SOS / small-step / 结构归纳首次出现有桥接；labelled transition 仍偏密但可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释；案例 3 Python 骨架可跟，右操作数求值规则用省略号略过——可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Plotkin DAIMI FN-19（1981）与 JLAP 2004 再版著录正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SML 1990 Definition / Wasm 用操作语义规则属实；把 JavaScript 规范写成「SOS 骨架」略满——ES 更偏算法散文，属可接受教学简化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "while 展开规则与加法 congruence 规则形状正确；「被引超 1000」量级合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 规则可跟；案例 3 step 骨架对应规则，缺右操作数求值分支但有省略号标明未完"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：small/big-step 混用、漏 store、并发爆炸、非确定≠解释器"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 <50 构造 / Coq 证明；不适用 C++/Rust 级规范、弱内存、直接当解释器——边界有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "菜谱/象棋类比把「只走一步」讲透，零基础直觉强",
+        "SOS / small-step / 结构归纳首次出现有桥接；labelled transition 仍偏密但可接受",
+        "三案例均有逐部分解释；案例 3 Python 骨架可跟，右操作数求值规则用省略号略过——可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Plotkin DAIMI FN-19（1981）与 JLAP 2004 再版著录正确",
+        "SML 1990 Definition / Wasm 用操作语义规则属实；把 JavaScript 规范写成「SOS 骨架」略满——ES 更偏算法散文，属可接受教学简化",
+        "while 展开规则与加法 congruence 规则形状正确；「被引超 1000」量级合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–2 规则可跟；案例 3 step 骨架对应规则，缺右操作数求值分支但有省略号标明未完",
+        "踩坑具体可操作：small/big-step 混用、漏 store、并发爆炸、非确定≠解释器",
+        "适用 <50 构造 / Coq 证明；不适用 C++/Rust 级规范、弱内存、直接当解释器——边界有量化"
+      ]
+    }
+  ]
+}

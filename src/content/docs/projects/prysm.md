@@ -131,7 +131,7 @@ curl https://raw.githubusercontent.com/OffchainLabs/prysm/master/prysm.sh \
 - **2018 年**：Preston Van Loon、Raul Jordan 等人创立 Prysmatic Labs，瞄准当时还叫 ETH 2.0 的 PoS 升级，用 Go 实现 beacon chain 规范
 - **2020 年 12 月**：Beacon Chain mainnet 上线，Prysm 是当时市占率最高的 CL 客户端（一度 > 70%，引发"客户端单一化"焦虑）
 - **2022 年 9 月**：The Merge——以太坊主网从 PoW 切到 PoS，Prysm 配合 EL 共同维护链
-- **2023 年**：Offchain Labs（Arbitrum 母公司）收购 Prysmatic Labs，团队继续维护
+- **2022 年 10 月**：Offchain Labs（Arbitrum 母公司）收购 Prysmatic Labs，团队继续维护 Prysm
 
 如今 Prysm 在 CL 客户端里的份额被 Lighthouse 反超到 30% 左右，"多样性"健康度反而好转。
 

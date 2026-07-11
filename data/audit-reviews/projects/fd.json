@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 把 `fd -e md docs` 的第二个位置参数说成「搜索根路径」，零基础会学错；应讲清 pattern vs path。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "fd 默认不按「二进制扩展名」过滤；只默认跳过 hidden 与 gitignore/.ignore/.fdignore。案例 2 的 path/pattern 语义也不符官方 CLI。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "`fd -e md docs` 实际是「扩展名 md 且文件名匹配 docs」；要搜 docs/ 目录应写 `fd -e md . docs` 或 `fd -e md --search-path docs`。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 把 `fd -e md docs` 的第二个位置参数说成「搜索根路径」，零基础会学错；应讲清 pattern vs path。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "fd 默认不按「二进制扩展名」过滤；只默认跳过 hidden 与 gitignore/.ignore/.fdignore。案例 2 的 path/pattern 语义也不符官方 CLI。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "`fd -e md docs` 实际是「扩展名 md 且文件名匹配 docs」；要搜 docs/ 目录应写 `fd -e md . docs` 或 `fd -e md --search-path docs`。"
+      ]
+    }
+  ]
+}

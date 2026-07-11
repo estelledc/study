@@ -51,7 +51,7 @@ fd readme
 
 1. **Pattern 默认 substring**：写 `fd readme`，等价于 `find . -iname '*readme*'`。不用通配符，不用引号，关键词直接糊脸。
 
-2. **默认排除噪音**：`.gitignore` 列出的、点开头的、二进制扩展名的——一律不显示。要看隐藏文件加 `-H`，要看 .gitignore 里的加 `-I`。
+2. **默认排除噪音**：`.gitignore` / `.ignore` / `.fdignore` 列出的、以及点开头的隐藏项——一律不显示（**不会**按「二进制扩展名」过滤）。要看隐藏文件加 `-H`，要看 ignore 规则里的加 `-I`。
 
 3. **默认并行 + 着色**：内部用 rayon 多线程遍历目录，扫整个 home 目录通常 < 1 秒；输出按文件类型自动上色（目录蓝、可执行绿、压缩包红）。
 
@@ -76,10 +76,14 @@ fd readme
 ### 案例 2：限定扩展名 + 限定目录
 
 ```bash
+# 扩展名 .md，且文件名匹配 docs（docs 是 pattern，不是路径）
 fd -e md docs
+
+# 在 docs/ 目录下找所有 .md（第二个位置才是搜索根；`.` 表示匹配任意名）
+fd -e md . docs
 ```
 
-读作"在当前目录下找扩展名 .md、且路径含 `docs` 的文件"。这是 `fd PATTERN [PATH]` 的两参形式：第一个是 pattern，第二个是搜索根路径。
+读作：`fd [OPTIONS] [pattern] [path...]`。只写 `fd -e md docs` 时，`docs` 是**文件名模式**；要限定目录，把 pattern 写成 `.`（或 `''`），再跟路径。
 
 ### 案例 3：批量删除 node_modules
 

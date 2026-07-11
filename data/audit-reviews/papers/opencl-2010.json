@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "USB-C 类比贴合；NDRange/work-group 有 CUDA 对照桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 5 host 样板代码行多，缺像案例 1 那样的逐行「这一步在干什么」注释，零基础容易卡在样板上"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Stone/Gohara/Shi IEEE CiSE 2010 与 Khronos 2008/1.0、Snow Leopard 2009 时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「NVIDIA 至今只支持 OpenCL 1.2」大体成立，宜加「驱动层面长期停在 1.2」以免被读成规范本身停更"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "vadd kernel 与 host 八件套概念正确，教学可跟做；生产缺错误检查可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（barrier 范围、float4 跨厂商、JIT 缓存、FP64 扩展、NVIDIA 1.2）具体可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "USB-C 类比贴合；NDRange/work-group 有 CUDA 对照桥接",
+        "案例 5 host 样板代码行多，缺像案例 1 那样的逐行「这一步在干什么」注释，零基础容易卡在样板上"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Stone/Gohara/Shi IEEE CiSE 2010 与 Khronos 2008/1.0、Snow Leopard 2009 时间线正确",
+        "「NVIDIA 至今只支持 OpenCL 1.2」大体成立，宜加「驱动层面长期停在 1.2」以免被读成规范本身停更"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "vadd kernel 与 host 八件套概念正确，教学可跟做；生产缺错误检查可接受",
+        "踩坑（barrier 范围、float4 跨厂商、JIT 缓存、FP64 扩展、NVIDIA 1.2）具体可操作"
+      ]
+    }
+  ]
+}

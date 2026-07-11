@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2/3 缺少「逐部分解释」：建议把 createJimp 组合、Worker 缩略图、同步 vs 惰性各拆成 2-3 步说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "weekly downloads ~5M 为量级估计，教学可接受；作者/v1 重写时间线与仓库来源无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "v1 API 示例概念正确；若 refine 可在案例 2 注明 Buffer 在 Worker 侧常用 Uint8Array/polyfill，避免读者以为 Node Buffer 原生可用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2/3 缺少「逐部分解释」：建议把 createJimp 组合、Worker 缩略图、同步 vs 惰性各拆成 2-3 步说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "weekly downloads ~5M 为量级估计，教学可接受；作者/v1 重写时间线与仓库来源无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "v1 API 示例概念正确；若 refine 可在案例 2 注明 Buffer 在 Worker 侧常用 Uint8Array/polyfill，避免读者以为 Node Buffer 原生可用。"
+      ]
+    }
+  ]
+}

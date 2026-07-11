@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 反向链接",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "复杂曲线压成简单分式的类比贴合；2-Poisson / elite / PRP 首次有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 用数字逐步算 S 曲线、长度归一、IDF，零基础能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 反向链接 占位段，结构不完整"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Robertson & Walker SIGIR 1994、BM25=Okapi Best Match 25、TF 饱和项与长度归一骨架正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤：Lucene 默认从 TF-IDF 改 BM25 是 Lucene 6.0（2016），不是 2009——2009 是 Robertson 综述年份，勿混"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「k1/b 不是后人调的、是 1994 论文在 TREC-2 跑出的范围」略满——宜改为论文给出常用范围、后世沿用为默认"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "数值案例可手算复现；b=0 短文档语料、IDF≠log(N/df) 等踩坑有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用字面召回/baseline vs 跨语言/同义词，边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺少 ## 反向链接 占位（含 regen 注释），需补上以过结构规范"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "复杂曲线压成简单分式的类比贴合；2-Poisson / elite / PRP 首次有桥接",
+        "案例 1–3 用数字逐步算 S 曲线、长度归一、IDF，零基础能跟",
+        "缺 ## 反向链接 占位段，结构不完整"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Robertson & Walker SIGIR 1994、BM25=Okapi Best Match 25、TF 饱和项与长度归一骨架正确",
+        "硬伤：Lucene 默认从 TF-IDF 改 BM25 是 Lucene 6.0（2016），不是 2009——2009 是 Robertson 综述年份，勿混",
+        "「k1/b 不是后人调的、是 1994 论文在 TREC-2 跑出的范围」略满——宜改为论文给出常用范围、后世沿用为默认"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "数值案例可手算复现；b=0 短文档语料、IDF≠log(N/df) 等踩坑有用",
+        "适用字面召回/baseline vs 跨语言/同义词，边界清楚",
+        "缺少 ## 反向链接 占位（含 regen 注释），需补上以过结构规范"
+      ]
+    }
+  ]
+}

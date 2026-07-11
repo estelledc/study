@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「共享主机」对 2026 年新手略过时，但不妨碍理解全包套餐类比。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「招聘十有八九写熟悉 Laravel」偏行业归纳，来源与版本时间线（2011/2013/11–12）未见硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Artisan/Eloquent/Blade 案例可跟做；N+1 与 Facade 测试坑具体可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「共享主机」对 2026 年新手略过时，但不妨碍理解全包套餐类比。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「招聘十有八九写熟悉 Laravel」偏行业归纳，来源与版本时间线（2011/2013/11–12）未见硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Artisan/Eloquent/Blade 案例可跟做；N+1 与 Facade 测试坑具体可操作。"
+      ]
+    }
+  ]
+}

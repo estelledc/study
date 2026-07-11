@@ -37,7 +37,7 @@ sidebar:
 | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | `mlx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | `modin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NumPy — Python 科学计算基石](/study/projects/numpy/) | `numpy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) | `open-sora` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Open-Sora — 把 Sora 路线开源对标的视频生成项目](/study/projects/open-sora/) | `open-sora` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Optax — JAX 优化器组合库](/study/projects/optax/) | `optax` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Optuna — 超参搜索框架](/study/projects/optuna/) | `optuna` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) | `paddleocr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -1,0 +1,142 @@
+{
+  "slug": "partykit",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "网吧/会议室押金类比贴合「房间即 actor」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Durable Object / Room / Connection 有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 是竞品对比表而非可跟做步骤；「历史小故事」插在核心要点与实践案例之间，阅读顺序乱"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/partykit/partykit 正确；Sunil Pai、2024 Cloudflare 收购叙述与公开公告一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "DO 单点一致性、Hibernation 路线无硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段位置应放到「适用」之后以符合模板顺序"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Party.Server / y-partykit / 在线人数示例可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：DO 串行 CPU、broadcast 扇出、冷启 50–200ms、dev≠全球单点"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺「反向链接」占位；案例 2/3 建议改成可运行步骤或压缩对比进适用段"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "网吧/会议室押金类比贴合「房间即 actor」",
+        "Durable Object / Room / Connection 有桥接",
+        "案例 2/3 是竞品对比表而非可跟做步骤；「历史小故事」插在核心要点与实践案例之间，阅读顺序乱"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 github.com/partykit/partykit 正确；Sunil Pai、2024 Cloudflare 收购叙述与公开公告一致",
+        "DO 单点一致性、Hibernation 路线无硬伤",
+        "历史段位置应放到「适用」之后以符合模板顺序"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Party.Server / y-partykit / 在线人数示例可跟做",
+        "踩坑具体：DO 串行 CPU、broadcast 扇出、冷启 50–200ms、dev≠全球单点",
+        "缺「反向链接」占位；案例 2/3 建议改成可运行步骤或压缩对比进适用段"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "summary": "历史段移到适用之后；案例改为可跟做+选型表；补反向链接"
+  }
+}

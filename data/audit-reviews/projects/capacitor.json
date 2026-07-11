@@ -1,0 +1,100 @@
+{
+  "action": "rewrite",
+  "average": 1.44,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "整篇把 Capacitor 写成泛化工作流，没有解释 WebView、native runtime、插件桥接和移动端打包。需要按真实项目重写。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例是抽象流程断言，零基础读者无法照着完成 Capacitor 初始化、同步或调用插件。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 Ionic Capacitor，但正文事实与项目不匹配；需要围绕 Cross-platform Native Runtime for Web Apps、iOS/Android/Web 和插件 API 重写。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "代码示例不可用于 Capacitor，踩坑和适用范围也不是移动 Web-to-native 项目的工程边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "整篇把 Capacitor 写成泛化工作流，没有解释 WebView、native runtime、插件桥接和移动端打包。需要按真实项目重写。",
+        "实践案例是抽象流程断言，零基础读者无法照着完成 Capacitor 初始化、同步或调用插件。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 4,
+        "no_distortion": 1
+      },
+      "average": 2,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源指向 Ionic Capacitor，但正文事实与项目不匹配；需要围绕 Cross-platform Native Runtime for Web Apps、iOS/Android/Web 和插件 API 重写。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "代码示例不可用于 Capacitor，踩坑和适用范围也不是移动 Web-to-native 项目的工程边界。"
+      ]
+    }
+  ],
+  "remediation": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full rewrite"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 166,
+    "reasons": []
+  }
+}

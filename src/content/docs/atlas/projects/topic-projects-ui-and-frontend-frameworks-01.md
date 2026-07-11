@@ -18,7 +18,7 @@ sidebar:
 | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | `pdfmake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Preact — 3KB React 替代](/study/projects/preact/) | `preact` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Qwik — Resumable UI 框架](/study/projects/qwik/) | `qwik` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [React UI 组件库](/study/projects/react/) | `react` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [React — 用组件描述界面的 JavaScript 库](/study/projects/react/) | `react` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | `react-flow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | `solid` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | `svelte` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

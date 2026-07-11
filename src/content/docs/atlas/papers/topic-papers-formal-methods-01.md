@@ -44,7 +44,7 @@ sidebar:
 | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | `vamp-verisoft-2006` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | `vcc-2009` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | `verdi-2015` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | `verisoft-2008` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Verisoft — 把整台计算机从门电路到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | `verisoft-2008` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Verus-SpecGym — 让机器检查规格是不是写对了](/study/papers/verus-specgym/) | `verus-specgym` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) | `vst-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | `why3-2013` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

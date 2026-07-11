@@ -22,8 +22,8 @@ PyPy 用 Python 的子集 RPython 写了 Python 解释器。Bolz 等人 2009 年
 
 不理解 meta-tracing，下面这些事都没法解释：
 
-- 为什么 PyPy 比 CPython 快 5-10 倍，但 PyPy 团队**没专门为 Python 写 JIT**
-- 为什么"写 RPython 解释器自动得 JIT"是工业级现实，不只论文设想
+- 为什么在长循环、类型较稳的负载上 PyPy 常比 CPython 快数倍到约一个数量级，却**没为 Python 字节码单独手写 method/trace JIT**——加速来自给解释器加的 meta-tracing
+- 为什么"用 RPython 写解释器 + 少量 hint → 框架生成 JIT"能落到工业系统，而不只是论文设想
 - 为什么 GraalVM Truffle 走 partial-evaluation 路线、PyPy 走 meta-tracing 路线，两条路最后都解决"让解释器自动变 JIT"
 - 为什么 LuaJIT 选择直接给 Lua 写 tracing JIT、而 PyPy 选 meta 一层——两种工程取舍今天还在被讨论
 
@@ -59,7 +59,7 @@ for i in range(1_000_000):
 4. 优化掉所有不变量：`total` 一直是 int → type check 全删；`range` 迭代器查找 → 折叠
 5. 最后机器码就是一个简单的整数累加循环
 
-用户没改代码，性能 5-10x。
+用户没改代码；在这类累加热点上常见数倍加速（具体倍数随负载变）。
 
 ### 案例 2：guard 失败的代价
 
@@ -68,20 +68,34 @@ def f(x):
     return x + 1
 ```
 
-第一次 trace 时 `x = 1`（int）→ trace 出整数加法版本。第二次 `f("hello")` → guard "x is int" 失败 → 回解释器 → 重 trace 字符串加法版本。**两条 trace** 共存，下次按类型选。
+第一次 `f(1)` 录下的 trace 形态（示意）：
 
-但如果 `x` 类型每次都换，guard 一直失败、不断 retrace，性能可能比纯解释器还差——这是 tracing JIT 的固有弱点。
+```text
+# 解释器作者在字节码循环头标的切点
+jit_merge_point( greengreen='pc' )
+guard_class(x, Int)          # 假设这次看到的是 int
+i1 = int_add(x, 1)           # 特化成整数加，不是通用 BINARY_ADD
+return i1
+```
 
-### 案例 3：同一 JIT 生成器跑出 4 种 JIT
+第二次 `f("hello")` → `guard_class(x, Int)` 失败 → 跳出回解释器 → 再 trace 一条字符串加法路径。**两条 trace** 共存，下次按类型选。
 
-PyPy 项目里至少有这些 RPython 解释器：
+若 `x` 类型每次都换，guard 一直失败、不断 retrace，可能比纯解释器还慢——这是 tracing JIT 的固有弱点。
 
-- **PyPy Python**：最主线，CPython 兼容
-- **Topaz**：RPython 写的 Ruby
-- **Pyrolog**：Prolog
-- **RSqueak**：Smalltalk
+### 案例 3：同一生成器给多种语言加 JIT
 
-每个都加几行 `jit_merge_point` / `can_enter_jit` hint，就自动得到一个 tracing JIT。论文之前没人证明过"meta 一层"这件事工业可行。
+解释器作者只需在 dispatch loop 里加 hint（示意）：
+
+```text
+while True:
+    opcode = bytecode[pc]
+    jit_merge_point(greengreen='pc')   # 「用户循环回到这里」
+    if opcode == JUMP_ABSOLUTE:
+        can_enter_jit(greengreen='pc') # 允许从这里开始录 trace
+        pc = target
+```
+
+同一套 RPython JIT generator 已跑出多前端：PyPy Python、Topaz（Ruby）、Pyrolog（Prolog）、RSqueak（Smalltalk）。贡献不是「世界上第一次有 tracing」，而是把 tracing **接到解释器 meta 层**并多语言复用。
 
 ## 踩过的坑
 
@@ -103,7 +117,7 @@ PyPy 项目里至少有这些 RPython 解释器：
 
 **不适用**：
 
-- 短脚本、CLI 工具——warmup 没时间
+- 短脚本、CLI 工具（常见百毫秒级跑完）——warmup 没时间，往往比 CPython 还慢
 - 极度多态、类型每次都换的代码——guard 失败成本超过 JIT 收益
 - 需要可预测延迟（实时系统）——JIT 编译/失效抖动大
 - 想绕过解释器写法 → 用 GraalVM Truffle（partial-eval）路线，思想互补
@@ -114,10 +128,10 @@ PyPy 项目里至少有这些 RPython 解释器：
 - **2004**：Rigo 写 Psyco，给 CPython 单独加特化器；繁琐难维护
 - **2006**：PyPy 项目用 RPython 自举出 Python 解释器，可静态翻译到 C
 - **2007**：Rigo 把 tracing 抽到 RPython 框架层；任何 RPython 解释器都能用
-- **2009 ICOOOLPS**：Bolz 等人这篇论文把 meta-tracing 思想体系化，给出实证
+- **2009 ICOOOLPS**：Bolz 等人把「解释器层 tracing + 多前端复用」体系化并给出实证（前有 Dynamo 等二进制 tracing，此处重点是 meta 层）
 - **2010s**：PyPy 持续优化 trace，发布 RPython JIT 后端、加 STM 实验、做 numpy 兼容
 - **2013**：GraalVM Truffle 走另一条路（partial evaluation + 自我特化 AST），与 PyPy 形成两条工业路径
-- **今天**：PyPy 仍是 Python 加速首选之一；meta-tracing 的工程模板影响了所有"自动 JIT 框架"的设计
+- **今天**：PyPy 仍是纯 Python 长进程加速的常用选项之一；meta-tracing 模板影响了后续「自动 JIT 框架」设计
 
 ## 学到什么
 
@@ -125,7 +139,7 @@ PyPy 项目里至少有这些 RPython 解释器：
 2. **trace + guard 把分支外置**——主路径直线快、分支当例外；和 CPU 分支预测是同一种思路（普通情况快、罕见情况慢）
 3. **类型特化 + 失效回退**比静态推类型更适合动态语言——你不需要"永远对"的类型，只需要"常常对"加一个 guard
 4. **和解释器作者的契约**：JIT hint 不是黑盒优化，是设计接口；解释器作者必须懂 trace 在哪切才能写对
-5. **理论 → 工程的路径**：Futamura 投影 1971 年的"特化解释器得编译器"想法，到 PyPy 2009 年的工业实现，中间隔了近 40 年——这条路还远没走完
+5. **理论 → 工程的路径**：Futamura 投影（1971，大意是「把解释器按输入程序特化 → 得到编译器」）到 PyPy 2009 的工业实现隔了近 40 年——这条路还远没走完
 
 ## 延伸阅读
 

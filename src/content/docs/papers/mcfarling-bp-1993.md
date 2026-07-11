@@ -94,13 +94,13 @@ for (int i = 0; i < N; i++) {
 
 ### 案例 2：DEC Alpha 21264 实测
 
-21264（1996）把 McFarling 锦标赛抄进硬件：
+21264（1996）把 McFarling 的**元选择思想**抄进硅片，但对手预测器做了工程变形：一侧是 local-history 两级表（不是纯 bimodal），一侧是全局历史表，再加 choice predictor 二选一。
 
-- bimodal 4KB（4096 项 × 2 bit）
-- gshare 12 位历史 × 4KB PHT
-- 选择器 4KB
+- local / global / choice 三张表合计约几十 Kb 量级的预测状态
+- TN-36 仿真里锦标赛约 **96.5%**（相对单 gshare / 单 bimodal 的对比数字）
+- 硅片公开口径：SPECint95 大约 **7–10 次误判 / 千条指令**，折合约 **95%** 分支方向准确率——比论文仿真略低，但仍是当年商用核顶尖水平
 
-SPEC95 上平均准确率 96.5%，比单 gshare 高 2%，比 bimodal 高 5%——加上深乱序窗口，整体 IPC 比同期对手 Pentium Pro 高约 50%。
+深乱序窗口叠上高命中预测，是 21264 相对同期对手 IPC 优势的重要一块（具体百分比随基准与系统配置变化，不宜当成单一固定值）。
 
 ### 案例 3：现代 CPU 里的余韵
 

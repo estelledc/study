@@ -26,7 +26,7 @@ plus_zero (suc n) = cong suc (plus_zero n)
 
 不理解 ITT，下面这些事都没法解释：
 
-- 为什么 Coq 能"证明"操作系统 seL4 没有 bug —— 它的类型系统就是 ITT 的扩展
+- 为什么 Coq 能"证明"操作系统 seL4 没有 bug —— 它的核心（CoC/CIC）同属依赖类型、构造性传统，是 ITT 路线的近亲扩展
 - 为什么数学家陶哲轩 2024 年在 Lean 里"形式化"自己的论文 —— Lean 基于 ITT
 - 为什么 Idris 能让 `Vec 3 Int`（长度精确为 3 的向量）在编译期防越界 —— **依赖类型**这个能力来自 ITT
 - 为什么 1972 年一篇瑞典哲学家的笔记，50 年后变成了"机器辅助数学"的地基
@@ -118,9 +118,9 @@ double n = (2 * n , refl)
 - **1969 年**：William Howard 写了一份未发表的笔记，发现"自然演绎"和"类型化 λ-演算"长得几乎一样——后来叫 Curry-Howard 同构。
 - **1972 年**：瑞典哲学家 Per Martin-Löf 把这个观察做成完整系统。第一版有 `U : U` 漏洞。
 - **1972 年（晚些）**：Jean-Yves Girard 在博士论文里造出悖论。Martin-Löf 撤回这一版。
-- **1979 年**：Bibliopolis 笔记修正版引入宇宙层级。
-- **1984 年**：正式出版《Intuitionistic Type Theory》——本词条的源头。
-- **1989 年**：Coq 1.0 发布（Coquand & Huet 的 Calculus of Constructions = ITT 的扩展）。
+- **1970 年代中期**：引入宇宙层级 `U_0 : U_1 : …`，堵住 `U : U`。
+- **1980 年前后**：Padua 讲义整理修正版；**1984 年** Bibliopolis 正式出版《Intuitionistic Type Theory》——本词条的源头。
+- **1989 年**：Coq 1.0 发布（Coquand & Huet 的 Calculus of Constructions，同属依赖类型传统的近亲扩展）。
 - **2005 年起**：Agda（Norell）、Idris（Brady）、Lean（de Moura）相继落地，把 ITT 从"哲学家的玩具"推到"数学家和工程师的工具"。
 
 ## 学到什么

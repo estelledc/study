@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "存储表里 Shared memory 写成「同 block 32 个线程」易让零基础误以为只有 warp 能共享；首次出现 block/grid 时可再补半句桥接。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Shared memory 是同 block 内全部线程共享，不是「32 个线程」；应改正以免歪曲 CUDA 编程模型。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「论文第 42 页」易与「17 页论文」冲突：若指 IEEE Micro 期刊页码（约 pp.39–55），应写明期刊页码，避免读者以为 PDF 有 42 页。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段可补一句量化边界：例如「只想查 G80 数字对照表时读本篇即可，不必整篇精读优化章节」。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "存储表里 Shared memory 写成「同 block 32 个线程」易让零基础误以为只有 warp 能共享；首次出现 block/grid 时可再补半句桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Shared memory 是同 block 内全部线程共享，不是「32 个线程」；应改正以免歪曲 CUDA 编程模型。",
+        "「论文第 42 页」易与「17 页论文」冲突：若指 IEEE Micro 期刊页码（约 pp.39–55），应写明期刊页码，避免读者以为 PDF 有 42 页。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用段可补一句量化边界：例如「只想查 G80 数字对照表时读本篇即可，不必整篇精读优化章节」。"
+      ]
+    }
+  ]
+}

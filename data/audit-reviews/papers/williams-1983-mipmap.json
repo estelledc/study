@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例缺少像模板那样的代码块 +「逐部分解释」：案例 1/3/4 全是叙述，案例 2 只有步骤列表；建议至少给 2 个案例配上 GLSL/伪代码并拆 3 步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里的 du/dx、dv/dy、lambda 首次出现时加半句日常桥接（例如「屏幕上挪一格像素，纹理坐标跳了多远」），零基础否则会在选层公式卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例可压到 3 个（模板预算），把案例 4 的控制面板开关并入踩坑或适用段，给代码案例腾行数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「整套是单条 sample 指令，1 个时钟周期产出」过度绝对：现代 GPU 纹理采样吞吐高，但延迟通常远不止 1 cycle；宜改成「硬件采样器一条指令完成」并去掉单周期断言"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「思路和 1983 几乎一模一样」对 FPN 偏强：FPN 是语义特征金字塔 + 横向连接，不是颜色 box-filter mipmap；保留「多尺度预算好、按需取层」即可，弱化「一模一样」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源字段写 SIGGRAPH 83 正确；正文可补全正式题名 Pyramidal Parametrics 一次，与 ACM 条目对齐"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例缺少可跟做的最小代码：建议补一段 GLSL `texture` vs `textureLod` 对照，并注释 lambda/偏导数从哪来"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑第 4 条很好，可在案例里用 `textureLod(tex, uv, lod)` 演示 compute/无 quad 时的显式 LOD，和踩坑互相印证"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段可加一条量化：例如「贴图边长 ≥ 64 且会缩到屏幕上远小于原尺寸时必须开 mipmap；纯 UI 1:1 像素对齐可关」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例缺少像模板那样的代码块 +「逐部分解释」：案例 1/3/4 全是叙述，案例 2 只有步骤列表；建议至少给 2 个案例配上 GLSL/伪代码并拆 3 步说明",
+        "核心要点里的 du/dx、dv/dy、lambda 首次出现时加半句日常桥接（例如「屏幕上挪一格像素，纹理坐标跳了多远」），零基础否则会在选层公式卡住",
+        "案例可压到 3 个（模板预算），把案例 4 的控制面板开关并入踩坑或适用段，给代码案例腾行数"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「整套是单条 sample 指令，1 个时钟周期产出」过度绝对：现代 GPU 纹理采样吞吐高，但延迟通常远不止 1 cycle；宜改成「硬件采样器一条指令完成」并去掉单周期断言",
+        "「思路和 1983 几乎一模一样」对 FPN 偏强：FPN 是语义特征金字塔 + 横向连接，不是颜色 box-filter mipmap；保留「多尺度预算好、按需取层」即可，弱化「一模一样」",
+        "来源字段写 SIGGRAPH 83 正确；正文可补全正式题名 Pyramidal Parametrics 一次，与 ACM 条目对齐"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺少可跟做的最小代码：建议补一段 GLSL `texture` vs `textureLod` 对照，并注释 lambda/偏导数从哪来",
+        "踩坑第 4 条很好，可在案例里用 `textureLod(tex, uv, lod)` 演示 compute/无 quad 时的显式 LOD，和踩坑互相印证",
+        "适用段可加一条量化：例如「贴图边长 ≥ 64 且会缩到屏幕上远小于原尺寸时必须开 mipmap；纯 UI 1:1 像素对齐可关」"
+      ]
+    }
+  ]
+}

@@ -22,7 +22,7 @@ MoE（Mixture of Experts，专家混合）让神经网络的"前馈层"从一个
 不理解 MoE，下面这些事都没法解释：
 
 - 为什么 Mixtral 8×7B 总参数 47B，推理速度却像 13B 一样快——它不是模型小，而是"每次只用一部分"
-- 为什么 2024 之后开源 LLM 几乎全转 MoE：DeepSeek-V3、Mixtral、Qwen-MoE、Llama 4 都是这条路
+- 为什么 2024 之后大量新开源旗舰转向 MoE：DeepSeek-V3、Mixtral、Qwen-MoE、Llama 4 都走这条路（dense 仍在，但稀疏路线明显变主流）
 - 为什么训练 1T 参数级别模型变得可行——dense 1T 训练 + 推理都要付完整 FLOPs，MoE 只算激活的那部分
 - 为什么"稀疏激活"被认为是 LLM 后摩尔时代继续放大的关键路径
 
@@ -48,36 +48,38 @@ MoE 一层里有三个角色：
 
 ## 实践案例
 
-### 案例 1：Mixtral 8×7B — 让普通人也能跑大 MoE
+### 案例 1：Top-K routing 最小伪代码
+
+```python
+# scores: [N] 每个 expert 的打分；K=2
+scores = router(token)          # 线性层 → N 维
+topk_val, topk_idx = topk(scores, k=2)
+weights = softmax(topk_val)     # 只在选中的 K 个上归一化
+out = 0
+for w, i in zip(weights, topk_idx):
+    out += w * experts[i](token)  # 没选中的 expert 不算
+```
+
+逐步读：① router 给每个 expert 打分；② 只留最高的 K 个；③ 在这 K 个上 softmax 当权重；④ 加权求和。这就是"参数多、每步只算一小撮"的全部动作。
+
+### 案例 2：Mixtral 8×7B — 让普通人也能跑大 MoE
 
 Mistral 2024 年开源的 8×7B MoE 是社区起飞点：
 
-- 8 个 expert，每层都有，每个 expert 大约 7B 参数（实际共享 attention 等部分，总参数 47B 而非 56B）
-- 每个 token 选 top-2 expert
-- 推理时实际算的参数 ≈ 13B
-- 质量接近 70B dense，速度接近 13B dense
+- 8 个 expert，每层都有；共享 attention 等后总参数约 47B（不是 8×7=56B）
+- 每个 token 选 top-2 expert，推理时实际算的参数 ≈ 13B
+- 论文称质量对标 Llama 2 70B 量级，速度接近 13B dense
 
-第一次让普通研究者在 2 张消费级 GPU 上跑出"约等于 70B"的能力，开源 LLM 生态从此分叉。
+第一次让普通研究者在 2 张消费级 GPU 上跑出接近大 dense 的能力，开源 LLM 生态从此分叉。
 
-### 案例 2：DeepSeek-V3 — 671B 总参数，37B 激活
+### 案例 3：故障 — Routing Collapse 与修法
 
-DeepSeek 2024 年把 MoE 推到了新极限：
-
-- 256 个 routed expert + 1 个 shared expert（所有 token 都过的通用知识 expert）
-- 每个 token 选 top-8 routed expert + 必选 shared expert
-- 总参数 671B，推理时只算 37B
-- 训练稳定性：用动态 bias 而不是 load balance loss（aux-loss-free），不污染主优化目标
-
-DeepSeek 走的是"更细粒度 + 更多 expert"路线，让 specialization 颗粒更小，组合空间更丰富。
-
-### 案例 3：故障 — Routing Collapse
-
-不加 load balance 的 MoE，训练几百步就会出现：所有 token 都涌向 expert 0，其他 expert 永远没 token、永远不更新、永远停在初始化的随机值。模型实际只用 1/N 容量。
+不加 load balance 的 MoE，训练几百步就会出现：所有 token 都涌向 expert 0，其他 expert 永远没 token、永远不更新。模型实际只用 1/N 容量。
 
 修法：
 
-- 经典做法：加 load balance loss（Switch Transformer 2021）——离散负载 × 连续概率，强制均匀
-- 现代做法：给每个 expert 加一个动态偏置 bias，被选多的就降一点，被选少的就升一点（DeepSeek-V3 2024）——bias 不进梯度图，不污染主目标
+- 经典：加 load balance loss（Switch Transformer 2021）——离散负载 × 连续概率，强制均匀
+- 现代：动态 bias（DeepSeek-V3 2024，671B 总参 / 37B 激活）——被选多的 expert 降一点偏置，bias 不进梯度图
 
 ## 踩过的坑
 

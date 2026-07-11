@@ -97,18 +97,19 @@ ship: test
 ### 案例 3：跨语言混搭
 
 ```just
-#!/usr/bin/env bash
+# shebang 必须写在 recipe 正文第一行（不是写在 recipe 名上面）
 backup-bash:
+    #!/usr/bin/env bash
     tar czf backup.tgz ./data
 
-#!/usr/bin/env python3
 analyze-py:
+    #!/usr/bin/env python3
     import json, statistics
     data = json.load(open('metrics.json'))
     print(statistics.mean(data['latencies']))
 ```
 
-第一个 recipe 用 bash，第二个直接写 Python。一个项目里数据科学家、后端、运维各写各的语言，统一用 `just <recipe>` 调度。
+第一个 recipe 用 bash，第二个直接写 Python。just 会把正文存成临时脚本再交给解释器。一个项目里数据科学家、后端、运维各写各的语言，统一用 `just <recipe>` 调度。
 
 ## 踩过的坑
 

@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "天才/礼仪类比贴合；SFT/RM/PPO 逐步桥接清楚；三案例有示范数据与排序过程。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写「2024 年：DPO 发表」有误：DPO（Rafailov et al.）arXiv 2023.05、NeurIPS 2023，应改为 2023。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "40 labeler、~13k SFT、1.3B vs 175B win-rate、alignment tax 与论文主线一致；「混 10% 预训练 loss」宜弱化为「混入预训练梯度/更新（PPO-ptx）」避免钉死比例。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三阶段流程可跟读；reward hacking / KL / alignment tax 踩坑具体；适用边界提到无标注预算转 RLAIF、小数据可 DPO。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "天才/礼仪类比贴合；SFT/RM/PPO 逐步桥接清楚；三案例有示范数据与排序过程。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史写「2024 年：DPO 发表」有误：DPO（Rafailov et al.）arXiv 2023.05、NeurIPS 2023，应改为 2023。",
+        "40 labeler、~13k SFT、1.3B vs 175B win-rate、alignment tax 与论文主线一致；「混 10% 预训练 loss」宜弱化为「混入预训练梯度/更新（PPO-ptx）」避免钉死比例。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三阶段流程可跟读；reward hacking / KL / alignment tax 踩坑具体；适用边界提到无标注预算转 RLAIF、小数据可 DPO。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例里 effect 声明与 try_with 对零基础仍偏陡，建议在案例 1 前补两行「真实 OCaml 5 要先 open Effect」的桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「OCaml 5 抛弃了 callback / Promise」过度绝对：应改为用 effect handler 实现并发原语，并未废除 Promise/Lwt 生态"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「学到什么」写 17 年与「历史」写 19 年（2003→2022）不一致，应统一"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "React Suspense / use(promise) 宜写成「受 algebraic effects 思路启发」，避免「底层就是这个」的硬等同"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "OCaml 5 效应声明应是 type _ Effect.t += Raise : string -> 'a Effect.t，并 open Effect / Effect.Deep；现有 effect Raise : ... 语法不能直接编译"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例需补 continue 来自 Effect.Deep，否则读者照抄会找不到 continue"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例里 effect 声明与 try_with 对零基础仍偏陡，建议在案例 1 前补两行「真实 OCaml 5 要先 open Effect」的桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「OCaml 5 抛弃了 callback / Promise」过度绝对：应改为用 effect handler 实现并发原语，并未废除 Promise/Lwt 生态",
+        "「学到什么」写 17 年与「历史」写 19 年（2003→2022）不一致，应统一",
+        "React Suspense / use(promise) 宜写成「受 algebraic effects 思路启发」，避免「底层就是这个」的硬等同"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "OCaml 5 效应声明应是 type _ Effect.t += Raise : string -> 'a Effect.t，并 open Effect / Effect.Deep；现有 effect Raise : ... 语法不能直接编译",
+        "案例需补 continue 来自 Effect.Deep，否则读者照抄会找不到 continue"
+      ]
+    }
+  ]
+}

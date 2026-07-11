@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 value(\"猫\") 对零基础略抽象，可补一句说明 value 是该词的向量表示"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「softmax」「KV cache」首次出现时可各加半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2020 年后」条目把 T5（2019）与 GPT-3/ViT/CLIP 捆在一起，可改成「2019–2021」或把 T5 单独提前"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学简化合理；多头「审稿人」类比不构成歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一条量化边界，例如「序列长度上千时原始 attention 显存随 n² 涨」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码是教学伪代码即可，概念正确；value() 未定义不影响跟读"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 value(\"猫\") 对零基础略抽象，可补一句说明 value 是该词的向量表示",
+        "「softmax」「KV cache」首次出现时可各加半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2020 年后」条目把 T5（2019）与 GPT-3/ViT/CLIP 捆在一起，可改成「2019–2021」或把 T5 单独提前",
+        "教学简化合理；多头「审稿人」类比不构成歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "适用/不适用可补一条量化边界，例如「序列长度上千时原始 attention 显存随 n² 涨」",
+        "案例代码是教学伪代码即可，概念正确；value() 未定义不影响跟读"
+      ]
+    }
+  ]
+}

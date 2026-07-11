@@ -136,7 +136,7 @@ No subgoals
 
 ## 延伸阅读
 
-- 论文 PDF：[Harrison 2009 — HOL Light: An Overview](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.pdf)（17 页，零基础看前 4 节即可）
+- 论文 PDF：[Harrison 2009 — HOL Light: An Overview](https://www.cl.cam.ac.uk/~jrh13/papers/hollight.pdf)（TPHOLs 2009；零基础看前几节即可。同作者自验证内核见 [holhol.pdf](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.pdf)）
 - 教程：[Harrison — HOL Light Tutorial](https://www.cl.cam.ac.uk/~jrh13/hol-light/tutorial.pdf)
 - Flyspeck 项目主页：[github.com/flyspeck/flyspeck](https://github.com/flyspeck/flyspeck)
 - [[isabelle-hol-2002]] —— 同样是 HOL 家族但走 Isar 风格的另一支

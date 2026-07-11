@@ -1,0 +1,118 @@
+{
+  "slug": "demikernel-2021",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 demi_* API 是教学示意，可再点明“伪代码/示意接口”，避免零基础以为可直接复制编译。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文 LibOS 命名被写错：Catnap 是 POSIX/Linux sockets 后端，不是 RDMA；RDMA 后端是 Catmint（Windows 侧还有 Catpaw）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Catpowder 并非论文中的 io_uring 回退方案；SOSP 2021 正文实现是 Catnap/Catmint/Catnip/Cattree/Catpaw。现仓库 Catpowder=Linux raw sockets。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“p99 低 97%/200µs→6µs、吞吐 3-10×、Catpowder 延迟低约 50%”与论文数字不符；论文更接近 Catnip 相对 Linux 约 5× 延迟改善、Redis 吞吐约 +20%（Catmint 约 2×）等表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“Azure 内部已经在用 Demikernel 设计思想”宜弱化为论文在 Azure/VM 上评估，避免暗示生产已全面采用。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的“先 Catpowder(io_uring) 再切 Catnip”迁移路径与论文/仓库后端不符，应改成 Catnap（POSIX sockets）作开发/回退，再切 Catnip/Catmint。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "demi_socket/demi_bind 等示意 API 需标明非可直接运行的官方片段；可对照仓库 man/ 文档说明真实入口。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景里“io_uring 后端试水”应删除或改写为 POSIX/Catnap 试水。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 demi_* API 是教学示意，可再点明“伪代码/示意接口”，避免零基础以为可直接复制编译。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "论文 LibOS 命名被写错：Catnap 是 POSIX/Linux sockets 后端，不是 RDMA；RDMA 后端是 Catmint（Windows 侧还有 Catpaw）。",
+        "Catpowder 并非论文中的 io_uring 回退方案；SOSP 2021 正文实现是 Catnap/Catmint/Catnip/Cattree/Catpaw。现仓库 Catpowder=Linux raw sockets。",
+        "“p99 低 97%/200µs→6µs、吞吐 3-10×、Catpowder 延迟低约 50%”与论文数字不符；论文更接近 Catnip 相对 Linux 约 5× 延迟改善、Redis 吞吐约 +20%（Catmint 约 2×）等表述。",
+        "“Azure 内部已经在用 Demikernel 设计思想”宜弱化为论文在 Azure/VM 上评估，避免暗示生产已全面采用。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的“先 Catpowder(io_uring) 再切 Catnip”迁移路径与论文/仓库后端不符，应改成 Catnap（POSIX sockets）作开发/回退，再切 Catnip/Catmint。",
+        "demi_socket/demi_bind 等示意 API 需标明非可直接运行的官方片段；可对照仓库 man/ 文档说明真实入口。",
+        "适用场景里“io_uring 后端试水”应删除或改写为 POSIX/Catnap 试水。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 155,
+    "reasons": []
+  },
+  "lines": 155,
+  "l1_pass": true
+}

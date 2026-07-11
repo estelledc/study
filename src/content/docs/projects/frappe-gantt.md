@@ -19,7 +19,7 @@ new Gantt('#gantt', [
 ])
 ```
 
-10 行不到，一张能拖拽、能切日/周/月视图、能画依赖箭头的甘特图就出来了。它的核心 SVG 渲染逻辑大约 200 行，是入门"甘特图数据结构"最干净的样本。
+10 行不到，一张能拖拽、能切日/周/月视图、能画依赖箭头的甘特图就出来了。早期版本常被说成「核心 SVG 渲染大约 200 行」——指的是 Bar/Arrow/网格那一层几何逻辑，不是今天整个仓库的行数；仍是入门「甘特图数据结构」很干净的样本。
 
 ## 为什么重要
 
@@ -28,7 +28,7 @@ new Gantt('#gantt', [
 - 为什么甘特图核心数据只是 `{start, end, progress, dependencies}` 四个字段，但能撑起整个项目管理软件——因为时间区间 + 依赖图就是项目的本质
 - 为什么 ERPNext 母公司要自研而不用 DHTMLX——商业版每年几千美元，开源 SaaS 装不起
 - 为什么甘特图选 SVG 不选 Canvas——任务条要能 hover/拖/加 aria-label，DOM 节点天生支持
-- 为什么 200 行就够——日期计算 + 矩形定位 + 依赖路径，本质都是简单几何
+- 为什么早期核心能压得很短——日期计算 + 矩形定位 + 依赖路径，本质都是简单几何
 
 ## 核心要点
 
@@ -40,7 +40,7 @@ Frappe Gantt 的设计可以拆成 **四个组件**：
 
 3. **Arrow 类**：根据 `dependencies` 在两个 Bar 之间画 SVG `<path>`，画的是"先做完 A 才能开始 B"的折线箭头。类比：连连看里把两张牌连起来的那条折线。
 
-4. **view modes**：Quarter Day / Half Day / Day / Week / Month / Year。类比：地图的缩放层级——一格代表 6 小时还是 1 个月，整张图横向密度跟着变。
+4. **view modes**：默认常见 Day / Week / Month / Year；旧版还带 Quarter Day / Half Day，也可经 `view_modes` 自定义。类比：地图的缩放层级——一格代表 6 小时还是 1 个月，整张图横向密度跟着变。
 
 四件加起来叫 **数据 → 几何 → SVG**，每一步都不绕弯。
 
@@ -50,7 +50,7 @@ Frappe Gantt 的设计可以拆成 **四个组件**：
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.css">
-<svg id="gantt"></svg>
+<div id="gantt"></div>
 <script type="module">
   import Gantt from 'https://cdn.jsdelivr.net/npm/frappe-gantt/+esm'
   const tasks = [
@@ -61,7 +61,7 @@ Frappe Gantt 的设计可以拆成 **四个组件**：
 </script>
 ```
 
-注意容器是 `<svg>` 不是 `<div>`——Frappe Gantt 把整张图画在一个根 SVG 里，所有任务条都是它的子节点，浏览器 dev tools 选中任何一根都能看到独立的 `<rect>`。
+容器用普通 `<div>` 即可——库会在内部 `createSVG` 挂上根 SVG；你也可以直接传已有的 `<svg>`，但不是硬性要求。任务条仍是 SVG 子节点，dev tools 里能选中独立的 `<rect>`。
 
 ### 案例 2：拖拽改期回写后端
 
@@ -118,19 +118,19 @@ view mode 切换时，库内部会重新算 "一格代表多长时间" + "总宽
 
 ## 历史小故事（可跳过）
 
-- **2018 年**：Frappe Technologies 团队为 ERPNext 的项目模块自研，要替换掉一类老旧 jQuery 甘特库。
-- **2018-2020 年**：开源后挂在 awesome-erpnext，星数从 0 涨到 5k，主打"零依赖 + 200 行核心"卖点。
-- **2021-2023 年**：v0.6 引入 view modes 切换，v0.7+ 增加 popup 自定义；社区 PR 节奏不快但稳。
-- **现在**：星数约 12k 左右，仍由 ERPNext 内部驱动迭代，但被很多教学/小工具项目当成"甘特图入门标准答案"。
+- **2016 年**：仓库在 GitHub 创建（2016-08）；Frappe / ERPNext 团队为项目模块自研甘特，替代老旧 jQuery 方案。
+- **2017-2020 年**：开源后挂在 awesome-erpnext 一类清单，主打「零依赖 + 小核心」；星数逐步涨到数千。
+- **2021-2023 年**：v0.6 一带齐 view modes，后续版本加强 popup / ESM；社区 PR 节奏不快但稳。
+- **现在**：星数约 **6k** 量级，仍由 ERPNext 内部需求驱动迭代，也被很多教学/小工具当成「甘特图入门样本」。
 
-5 年下来证明：**为自己产品造一个轮子顺便开源**，可以同时养活产品和社区。
+证明：**为自己产品造一个轮子顺便开源**，可以同时养活产品和社区。
 
 ## 学到什么
 
 1. **甘特图的本质就是时间轴 + 任务区间 + 依赖图**——`{start, end, dependencies}` 三个字段撑起整个范畴
 2. **数据 → 几何 → SVG** 是清晰的三层——读 source 时按这个顺序跟踪，不会迷路
 3. **事件外置（on_date_change 回调）** 让库脱离任何后端栈——这是开源库渗透到不同技术栈的关键设计模式
-4. **SVG 优先 + 200 行核心** 证明：项目管理 UI 不必复杂——选对数据结构后，渲染就是几何题
+4. **SVG 优先 + 小核心渲染** 证明：项目管理 UI 不必复杂——选对数据结构后，渲染就是几何题
 
 ## 自检三问
 
@@ -154,3 +154,7 @@ view mode 切换时，库内部会重新算 "一格代表多长时间" + "总宽
 - [[d3]] —— SVG + 数据驱动祖师，Frappe Gantt 算它的甘特图垂直简化版
 - [[antv-g2]] —— 配置式语法图表库，对照看"甘特图"为何值得专门切出来
 - [[recharts]] —— React 声明式 + SVG，思路上与 Frappe Gantt 互补
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

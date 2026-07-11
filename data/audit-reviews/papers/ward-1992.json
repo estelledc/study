@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有参数表和一句切线场提示，缺少像案例 1/4 那样的逐步「这段在算什么」；建议补 2–3 步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 是公式退化推导，零基础读者难跟；可改成「αx=αy 时高光变回圆斑」的对照实验，把数学细节收进一句旁注"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点开篇直接甩完整 BRDF 公式，建议先用编号 1/2/3（漫反射 / 两个粗糙度 / 椭圆衰减）各带日常类比，再给公式"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "δ 不是「观察方向和表面法线的夹角」：Ward BRDF 里 δ 是 halfway 向量 h 与法线 n 的夹角（φ 是 h 在切线平面的方位角）；当前定义会歪曲模型几何"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「现代 GGX 各向异性扩展的参数还是叫 αx/αy——Ward 定的命名」过强：α 粗糙度约定来自更广的微表面文献，Ward 是早期工程化先例，宜改成「沿用同一套双粗糙度语义」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "各向同性退化写成「就是 Beckmann 分布」略绝对：形状相近，但归一化与 Cook-Torrance 完整微表面项并不等同，可写成「指数核退化为 Beckmann 型」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一句量化边界（例如 αx/αy 比值接近 1 时各向异性收益可忽略，直接用各向同性 GGX/Beckmann）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例参数注释很好，但可注明「教学示意值、非论文表内拟合结果」，避免读者当测量真值抄进生产材质"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有参数表和一句切线场提示，缺少像案例 1/4 那样的逐步「这段在算什么」；建议补 2–3 步解释",
+        "案例 3 是公式退化推导，零基础读者难跟；可改成「αx=αy 时高光变回圆斑」的对照实验，把数学细节收进一句旁注",
+        "核心要点开篇直接甩完整 BRDF 公式，建议先用编号 1/2/3（漫反射 / 两个粗糙度 / 椭圆衰减）各带日常类比，再给公式"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "δ 不是「观察方向和表面法线的夹角」：Ward BRDF 里 δ 是 halfway 向量 h 与法线 n 的夹角（φ 是 h 在切线平面的方位角）；当前定义会歪曲模型几何",
+        "「现代 GGX 各向异性扩展的参数还是叫 αx/αy——Ward 定的命名」过强：α 粗糙度约定来自更广的微表面文献，Ward 是早期工程化先例，宜改成「沿用同一套双粗糙度语义」",
+        "各向同性退化写成「就是 Beckmann 分布」略绝对：形状相近，但归一化与 Cook-Torrance 完整微表面项并不等同，可写成「指数核退化为 Beckmann 型」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可补一句量化边界（例如 αx/αy 比值接近 1 时各向异性收益可忽略，直接用各向同性 GGX/Beckmann）",
+        "案例参数注释很好，但可注明「教学示意值、非论文表内拟合结果」，避免读者当测量真值抄进生产材质"
+      ]
+    }
+  ]
+}

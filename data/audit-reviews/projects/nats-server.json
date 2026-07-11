@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "内线总机/对讲机/留言箱类比清晰；subject / JetStream 首次出现有桥接；三案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 nats-io/nats-server 正确；CNCF Incubating 表述谨慎未写成毕业；Core vs JetStream 取舍无歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "nats CLI 与 JetStream Go 示例概念正确可跟；Core 丢消息 / subject 命名 / stream 限额踩坑可操作；适用边界相对 kafka/HTTP 清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "内线总机/对讲机/留言箱类比清晰；subject / JetStream 首次出现有桥接；三案例均有逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源指向 nats-io/nats-server 正确；CNCF Incubating 表述谨慎未写成毕业；Core vs JetStream 取舍无歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "nats CLI 与 JetStream Go 示例概念正确可跟；Core 丢消息 / subject 命名 / stream 限额踩坑可操作；适用边界相对 kafka/HTTP 清楚。"
+      ]
+    }
+  ]
+}

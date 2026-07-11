@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜单 vs 菜谱类比把 CFG/PEG 有序选择讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "前瞻断言用探员侦查桥接清楚；packrat 记忆表补充案例可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 LPeg 运算符（+/*/^）对入门仍偏密，宜各加一句白话对照 PEG 符号"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写「LPeg 做成 Lua 标准库」不实：LPeg 是 Roberto 维护的独立库（LuaRocks 安装），不在 Lua 官方 standard libraries 里"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」把 tree-sitter 写成 PEG 系引擎偏满：tree-sitter 主引擎是 GLR 风格；宜改为「文法 DSL 表面像 PEG / 混合思路」或删掉 PEG 归属"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ford ICFP 2002 packrat + POPL 2004 PEG、Warth 2008 左递归时间线正确，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "四则运算 / !Keyword / LPeg 片段概念正确可跟；LPeg 需本机 luarocks install lpeg，可补一句环境前提"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：有序选择长短序、左递归死循环、记忆表内存、PEG⊄CFG——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（自然语言→GLR/Earley、嵌入式→LL/LALR）；可顺带弱化 tree-sitter=PEG 的工程误导"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "菜单 vs 菜谱类比把 CFG/PEG 有序选择讲透，零基础直觉强",
+        "前瞻断言用探员侦查桥接清楚；packrat 记忆表补充案例可跟",
+        "案例 3 LPeg 运算符（+/*/^）对入门仍偏密，宜各加一句白话对照 PEG 符号"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史写「LPeg 做成 Lua 标准库」不实：LPeg 是 Roberto 维护的独立库（LuaRocks 安装），不在 Lua 官方 standard libraries 里",
+        "「为什么重要」把 tree-sitter 写成 PEG 系引擎偏满：tree-sitter 主引擎是 GLR 风格；宜改为「文法 DSL 表面像 PEG / 混合思路」或删掉 PEG 归属",
+        "Ford ICFP 2002 packrat + POPL 2004 PEG、Warth 2008 左递归时间线正确，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "四则运算 / !Keyword / LPeg 片段概念正确可跟；LPeg 需本机 luarocks install lpeg，可补一句环境前提",
+        "踩坑具体可操作：有序选择长短序、左递归死循环、记忆表内存、PEG⊄CFG——保留",
+        "适用/不适用边界清楚（自然语言→GLR/Earley、嵌入式→LL/LALR）；可顺带弱化 tree-sitter=PEG 的工程误导"
+      ]
+    }
+  ]
+}

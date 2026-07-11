@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有类比等式，缺少对照模板的「逐部分解释」步骤（怎么从向量加减落到最近邻）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 sentences 用了 `...` 占位，零基础无法直接跟做；应给完整小语料并逐步解释 vector_size / window / most_similar"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "踩坑里的 W_in / hierarchical softmax / unigram^0.75 首次出现缺一句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 窗口大小 2 时，中心词 cat 的上下文应为 [the, sits, on]，不应包含距离为 3 的第二个 the"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2013 年之前没人见过」词义几何运算过绝对；应弱化为 Word2Vec 首次大规模实证并流行化类比任务"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文大量讲 negative sampling，来源只引第一篇 Efficient Estimation…；可注明第二篇 Distributed Representations…（2013）引入负采样"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 gensim 示例含 `...` 且 most_similar 输出是虚构的；应换成可粘贴运行的完整小语料，并说明玩具语料结果不稳定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可再补一条量化边界：词表规模 / 最低词频 min_count 对效果的影响"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可补伪代码或训练目标公式的可跟做步骤，避免只停留在叙述"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有类比等式，缺少对照模板的「逐部分解释」步骤（怎么从向量加减落到最近邻）",
+        "案例 3 的 sentences 用了 `...` 占位，零基础无法直接跟做；应给完整小语料并逐步解释 vector_size / window / most_similar",
+        "踩坑里的 W_in / hierarchical softmax / unigram^0.75 首次出现缺一句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 窗口大小 2 时，中心词 cat 的上下文应为 [the, sits, on]，不应包含距离为 3 的第二个 the",
+        "「2013 年之前没人见过」词义几何运算过绝对；应弱化为 Word2Vec 首次大规模实证并流行化类比任务",
+        "正文大量讲 negative sampling，来源只引第一篇 Efficient Estimation…；可注明第二篇 Distributed Representations…（2013）引入负采样"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 gensim 示例含 `...` 且 most_similar 输出是虚构的；应换成可粘贴运行的完整小语料，并说明玩具语料结果不稳定",
+        "适用场景可再补一条量化边界：词表规模 / 最低词频 min_count 对效果的影响",
+        "案例 1 可补伪代码或训练目标公式的可跟做步骤，避免只停留在叙述"
+      ]
+    }
+  ]
+}

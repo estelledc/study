@@ -1,0 +1,126 @@
+{
+  "slug": "rocket",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.55,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "报关单/海关类比贴合；Request Guard / Responder / Fairings 均有桥接；三案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitHub rwf2/Rocket、Sergio Benitez、Request Guards 术语正确；0.5.1 确为 2024-05，但 stable 首发是 0.5.0（2023-11），宜区分以免读者以为 0.5 到 2024-05 才 stable。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Hello/守卫/State+Json 教学片段可跟做；Forward vs Error、0.4/0.5 教程混用、Fairings 全局性踩坑具体；与 axum/actix 边界清楚。笔记 213 行超 quality-gate 上限，需裁到 ≤200。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "报关单/海关类比贴合；Request Guard / Responder / Fairings 均有桥接；三案例均有逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "GitHub rwf2/Rocket、Sergio Benitez、Request Guards 术语正确；0.5.1 确为 2024-05，但 stable 首发是 0.5.0（2023-11），宜区分以免读者以为 0.5 到 2024-05 才 stable。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Hello/守卫/State+Json 教学片段可跟做；Forward vs Error、0.4/0.5 教程混用、Fairings 全局性踩坑具体；与 axum/actix 边界清楚。笔记 213 行超 quality-gate 上限，需裁到 ≤200。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.55,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审均 pass（avg 4.55），但初始 quality-gate 因 213>200 失败；裁剪反向链接与尾部段落，并区分 0.5.0/0.5.1 时间线。",
+    "initial_quality_gate": {
+      "pass": false,
+      "lines": 213,
+      "reasons": [
+        "lines:213>200"
+      ]
+    },
+    "final_quality_gate": {
+      "pass": true,
+      "lines": 200
+    }
+  },
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "notes": "清空已填充的反向链接列表改回占位；压缩尾部；历史段区分 0.5.0（2023-11 stable）与 0.5.1（2024-05）。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 200,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 200,
+  "l1_pass": true
+}

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "寄长鱼切段装标准盒的类比把「切段 + 编号 + 拼回」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ADC / IVF / codeword 首次出现有白话桥接，可跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有代码但缺「切段→聚类编号→只存 8 个整数」的逐步白话；案例 2 的 1/2/3 步更友好，案例 1 可对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「是什么」写 M=8 存 8 个 0–255 却称「16 字节 / 压缩 32 倍」；案例 1 同参数写成 8 字节 / 64x——8×uint8 应为 8 字节、512/8=64x，统一改正文与案例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」写 OpenAI / Cohere embedding 服务「底层选 FAISS、IVF-PQ 是灵魂索引」缺乏公开依据，易过度断言；改为「许多向量库 / ANN 服务常用 FAISS IVF-PQ」一类可核验表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Jégou/Douze/Schmid TPAMI 2011、OPQ Ge et al. 2013、FAISS 2017 开源等著录与主线机制（product codebook + ADC）正确，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 压缩比与「是什么」矛盾（8 字节/64x vs 16 字节/32x）；读者按 M=8,nbits=8 手算会对不上，必须统一为 8 字节"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：段间相关→OPQ、训练样本 ≥30×k、M/nbits 权衡、L2 vs 内积归一化、不可微——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有量化（十亿级、90–95% recall、维≥64 / <32、99%+ recall）；可再点明 IVF nprobe 与 recall/延迟权衡"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "寄长鱼切段装标准盒的类比把「切段 + 编号 + 拼回」讲透，零基础直觉强",
+        "ADC / IVF / codeword 首次出现有白话桥接，可跟住",
+        "案例 1 有代码但缺「切段→聚类编号→只存 8 个整数」的逐步白话；案例 2 的 1/2/3 步更友好，案例 1 可对齐"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「是什么」写 M=8 存 8 个 0–255 却称「16 字节 / 压缩 32 倍」；案例 1 同参数写成 8 字节 / 64x——8×uint8 应为 8 字节、512/8=64x，统一改正文与案例",
+        "「为什么重要」写 OpenAI / Cohere embedding 服务「底层选 FAISS、IVF-PQ 是灵魂索引」缺乏公开依据，易过度断言；改为「许多向量库 / ANN 服务常用 FAISS IVF-PQ」一类可核验表述",
+        "Jégou/Douze/Schmid TPAMI 2011、OPQ Ge et al. 2013、FAISS 2017 开源等著录与主线机制（product codebook + ADC）正确，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 压缩比与「是什么」矛盾（8 字节/64x vs 16 字节/32x）；读者按 M=8,nbits=8 手算会对不上，必须统一为 8 字节",
+        "踩坑具体可操作：段间相关→OPQ、训练样本 ≥30×k、M/nbits 权衡、L2 vs 内积归一化、不可微——保留",
+        "适用/不适用有量化（十亿级、90–95% recall、维≥64 / <32、99%+ recall）；可再点明 IVF nprobe 与 recall/延迟权衡"
+      ]
+    }
+  ]
+}

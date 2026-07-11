@@ -1,6 +1,6 @@
 ---
 title: NVMe — 为 SSD 重写的存储协议
-来源: NVMe and PCIe SSDs — A Modern Look at Storage Performance, USENIX ATC 2017
+来源: 'NVM Express, Inc. "NVM Express Base Specification" (1.0 2011; 2.0 2021); 工程背景见 Xu et al., SYSTOR 2015'
 日期: 2026-05-31
 分类: 系统
 难度: 中级
@@ -27,7 +27,7 @@ NVMe 相对 AHCI/SATA 的设计差异可以拆成 **三个维度**：
 
 1. **队列深度**：AHCI 一条队列深度 32；SAS 一条深度 254；NVMe **6 万多条队列、每条 6 万多深度**。SSD 内部有 16~32 个 NAND 通道天然并行，老协议根本喂不饱。
 
-2. **命令集**：AHCI/SCSI 背着磁带、光盘的历史命令几百条；NVMe **必需命令只有 13 条**——读、写、flush、admin 几条。少即是快。
+2. **命令集**：AHCI/SCSI 背着磁带、光盘的历史命令几百条；早期 NVMe 1.x **必需 I/O/Admin 命令大约十来条量级**——读、写、flush、admin 几条。少即是快。
 
 3. **中断与门铃**：发命令只写一个 32-bit 寄存器（**doorbell**），告诉设备"我刚把命令塞进队列尾，自己取吧"；中断走 MSI-X，**每队列一个独立向量**，多核之间不共享一把中断锁。
 
@@ -132,8 +132,8 @@ NVMe 的门铃版本：把命令直接写进 SQ 的内存区域，**写一个 32
 
 ## 延伸阅读
 
-- 论文原文：[NVMe and PCIe SSDs at USENIX ATC 2017](https://www.usenix.org/conference/atc17/technical-sessions/presentation/cao)
-- NVMe 规范：[nvmexpress.org/specifications](https://nvmexpress.org/specifications/)（最新 2.0 版本）
+- 规范原文：[NVM Express Specifications](https://nvmexpress.org/specifications/)（1.0→2.0，含 NVMe-oF / ZNS）
+- 数据库侧实测：[Xu et al., Performance Analysis of NVMe SSDs, SYSTOR 2015](https://dl.acm.org/doi/10.1145/2757667.2757684)
 - 工程综述：[SPDK 文档 — Why Userspace?](https://spdk.io/doc/)
 - [[io-uring]] —— Linux 5.1 异步 I/O 接口，与 NVMe 多队列同源思想
 - [[rocksdb]] —— LSM-Tree 实现，现代版本调参假设 NVMe 级别 IOPS

@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "成绩单/搬土类比贯穿全文；案例 1–3 有逐部分解释，EMD 对零基础略抽象但有桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Li/Li/Venkatasubramanian ICDE 2007、k-anonymity→l-diversity→t-closeness 与 EMD 主线正确；有序属性上的简化 EMD 属合理教学简化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "偏度攻击与 ordered_emd 检查可跟做；适用/不适用边界清楚（交互查询、组合预算、多敏感属性）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "成绩单/搬土类比贯穿全文；案例 1–3 有逐部分解释，EMD 对零基础略抽象但有桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Li/Li/Venkatasubramanian ICDE 2007、k-anonymity→l-diversity→t-closeness 与 EMD 主线正确；有序属性上的简化 EMD 属合理教学简化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "偏度攻击与 ordered_emd 检查可跟做；适用/不适用边界清楚（交互查询、组合预算、多敏感属性）"
+      ]
+    }
+  ]
+}

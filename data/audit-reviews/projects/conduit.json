@@ -1,0 +1,86 @@
+{
+  "slug": "conduit",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只写 SRV 记录会让新人漏掉 HTTPS 反代或 .well-known/SRV 选择，应补全联邦前提。",
+        "案例 2 的 GitLab artifact 下载路径不够稳定，建议改成 Docker/OCI arm64 镜像方式，并提醒升级前备份数据目录。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "reject_count": 0,
+    "verdicts": [
+      "pass",
+      "pass",
+      "needs-refine"
+    ],
+    "decision": "refine",
+    "status": "refined"
+  },
+  "refinements": [
+    {
+      "section": "## 实践案例",
+      "change": "补充 Matrix 联邦需要域名、HTTPS 反代，以及 SRV 或 .well-known/matrix/server。"
+    },
+    {
+      "section": "## 实践案例",
+      "change": "将树莓派示例改为 Docker/OCI arm64 镜像启动命令，并增加升级前备份数据目录提醒。"
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "details": {
+      "lines": {
+        "ok": true,
+        "lines": 165
+      },
+      "red-line": {
+        "ok": true
+      },
+      "h2": {
+        "ok": true
+      }
+    }
+  },
+  "lines": 165,
+  "l1_pass": true
+}

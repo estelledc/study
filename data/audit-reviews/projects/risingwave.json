@@ -1,0 +1,143 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "便利店切水果+自动更新价签类比把「流入→增量算→物化视图」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Frontend / Meta / Hummock / Compactor / CDC 有白话桥接；核心要点五部件略密但能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 是架构叙事缺逐步；案例 2–3 有 SQL 但缺「逐部分解释」子弹——建议各补 2–3 条逐步说明（谁写谁读、增量如何触发）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2021 创立、Yingjun Wu（前 AWS Redshift / IBM Almaden）、Apache 2.0、Rust、Hummock LSM、Postgres wire 与公开资料一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事写「2022 年 2 月：仓库公开」不准确：GitHub 约 2022-01 创建，正式开源公告为 2022-04-08——应改为 4 月开源"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读写「30k+ star」严重虚高：当前约 9k stars，应改为 9k+ 量级，勿写成 30k"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CREATE SOURCE + MATERIALIZED VIEW + SELECT 教学路径正确可跟；CDC 示例字段用省略号但意图清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：wire 兼容≠函数全集、MV 数量成本、S3 冷启动、CDC 版本敏感——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用实时大屏/风控/替 Flink+KV；不适用 OLTP/大扫描 OLAP/亚毫秒——边界清楚；可再点明「状态 GB～TB 级、延迟百毫秒级」量化直觉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "便利店切水果+自动更新价签类比把「流入→增量算→物化视图」讲透，零基础直觉强",
+        "Frontend / Meta / Hummock / Compactor / CDC 有白话桥接；核心要点五部件略密但能跟",
+        "案例 1 是架构叙事缺逐步；案例 2–3 有 SQL 但缺「逐部分解释」子弹——建议各补 2–3 条逐步说明（谁写谁读、增量如何触发）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "2021 创立、Yingjun Wu（前 AWS Redshift / IBM Almaden）、Apache 2.0、Rust、Hummock LSM、Postgres wire 与公开资料一致",
+        "历史小故事写「2022 年 2 月：仓库公开」不准确：GitHub 约 2022-01 创建，正式开源公告为 2022-04-08——应改为 4 月开源",
+        "延伸阅读写「30k+ star」严重虚高：当前约 9k stars，应改为 9k+ 量级，勿写成 30k"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "CREATE SOURCE + MATERIALIZED VIEW + SELECT 教学路径正确可跟；CDC 示例字段用省略号但意图清楚",
+        "踩坑具体：wire 兼容≠函数全集、MV 数量成本、S3 冷启动、CDC 版本敏感——可操作",
+        "适用实时大屏/风控/替 Flink+KV；不适用 OLTP/大扫描 OLAP/亚毫秒——边界清楚；可再点明「状态 GB～TB 级、延迟百毫秒级」量化直觉"
+      ]
+    }
+  ],
+  "slug": "risingwave",
+  "area": "projects",
+  "status": "refined",
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic: 开源月份与 star 数纠错；zero-base: 案例补逐部分解释；engineer: 适用边界补百毫秒/状态量级",
+    "sections_modified": [
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}

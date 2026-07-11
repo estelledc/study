@@ -1,6 +1,6 @@
 ---
 title: "计算机图形与可视化 · 论文 · 第 1 组"
-description: "62 条 计算机图形与可视化 Atlas 分块"
+description: "61 条 计算机图形与可视化 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 62 条，稳定上限为 100 条。
+本分块共 61 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -56,7 +56,6 @@ sidebar:
 | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | `nerf-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | `newcombe-2011-kinectfusion` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) | `nimier-david-2019-mitsuba2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Orca — Transformer 生成模型的分布式推理调度](/study/papers/orca-2022/) | `orca-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) | `panel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) | `park-2019-deepsdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Perlin Noise — 让计算机生成的图像不再有"机器味"](/study/papers/perlin-1985-noise/) | `perlin-1985-noise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

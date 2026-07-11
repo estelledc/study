@@ -1,0 +1,138 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "文件夹标签助理 / 搬家装箱类比能懂 AST vs 正则，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有一行 CI 命令，缺逐步：建议拆成「找 .sh → -d 出 diff → 有 diff 则 fail」三步，并解释 -ci"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "AST / 幂等 / LangVariant 有括号桥接；案例 2 前后对比清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "笔记写「不支持 zsh」且方言只列 POSIX/Bash/mksh/bats：mvdan/sh v3.13.0（2026-03）已加实验性 LangZsh；笔记日期 2026-05 应改为「zsh 实验性/不完整，非 fish」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Daniel Martí、仓库 mvdan/sh、gofmt 精神祖先叙述正确；7k+ stars（截至 2026-05）可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线 2016 首发 / 2020 v3 module 路径与公开 changelog 大致吻合"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2/3/4 可跟做；案例 1 的 find 命令替换遇空格文件名会炸，可改 shfmt -d -i 2 -ci . 或 find -print0 | xargs -0"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑：默认 -i 4、与 shellcheck 分工、二进制体积——具体可操作，保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用把 zsh 与 fish 并列「完全不支持」已过时；应改为 fish/PowerShell 不支持、zsh 仅实验性，并补 ## 反向链接 占位"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "文件夹标签助理 / 搬家装箱类比能懂 AST vs 正则，保留",
+        "案例 1 只有一行 CI 命令，缺逐步：建议拆成「找 .sh → -d 出 diff → 有 diff 则 fail」三步，并解释 -ci",
+        "AST / 幂等 / LangVariant 有括号桥接；案例 2 前后对比清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "笔记写「不支持 zsh」且方言只列 POSIX/Bash/mksh/bats：mvdan/sh v3.13.0（2026-03）已加实验性 LangZsh；笔记日期 2026-05 应改为「zsh 实验性/不完整，非 fish」",
+        "作者 Daniel Martí、仓库 mvdan/sh、gofmt 精神祖先叙述正确；7k+ stars（截至 2026-05）可保留",
+        "历史时间线 2016 首发 / 2020 v3 module 路径与公开 changelog 大致吻合"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 2/3/4 可跟做；案例 1 的 find 命令替换遇空格文件名会炸，可改 shfmt -d -i 2 -ci . 或 find -print0 | xargs -0",
+        "踩坑：默认 -i 4、与 shellcheck 分工、二进制体积——具体可操作，保留",
+        "不适用把 zsh 与 fish 并列「完全不支持」已过时；应改为 fish/PowerShell 不支持、zsh 仅实验性，并补 ## 反向链接 占位"
+      ]
+    }
+  ],
+  "slug": "shfmt",
+  "area": "projects",
+  "status": "refined",
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "更正 zsh 为 v3.13+ 实验性支持；案例1改目录递归并补三步；不适用边界拆 fish/PowerShell vs zsh；补反向链接与关联",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 166,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 166,
+  "l1_pass": true
+}

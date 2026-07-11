@@ -8,7 +8,7 @@ title: Elysia — 长在 Bun 上的极致类型安全 Web 框架
 
 ## 是什么
 
-Elysia 是一套**绑死在 Bun runtime 上**的 TypeScript Web 框架。日常类比：像一台只插在新款充电桩上的电动车——在专属充电桩上跑得飞快、续航极长，但你拔下来插旧插座就只剩个壳。
+Elysia 是一套**为 Bun runtime 深度优化（Bun-first）**的 TypeScript Web 框架。日常类比：像一台优先适配新款充电桩的电动车——在专属桩上跑得飞快；换旧插座（Node）也能充，但要加转接头，而且拿不到原厂快充红利。
 
 你写：
 
@@ -27,7 +27,7 @@ new Elysia()
 
 不理解 Elysia，下面这些事都没法解释：
 
-- 为什么 2024 年突然冒出来"Bun 专属"的框架，老牌 Express 不香了吗
+- 为什么 2023–2024 年冒出一堆"Bun-first"框架，老牌 Express 不香了吗
 - 为什么有人不用 zod 改用 TypeBox，schema 库选型背后的取舍
 - 为什么前端能 `import type { App } from './server'` 就拿到全部接口类型，不写一行 codegen
 - 为什么"性能"和"跨 runtime"在 Web 框架里几乎是反义词
@@ -109,9 +109,10 @@ const { data, error } = await api.users({ id: '123' }).get()
 ## 踩过的坑
 
 1. **当 Express 用，连 schema 都不写**：等于把 Elysia 最大卖点关掉，body 又变 any，性能反而被运行时校验拖慢
-2. **在 Node 上跑求"通用性"**：macro 失效、JSC 优化没了，QPS 与 Hono 持平甚至更低，等于花了学习成本却没拿到收益
-3. **TypeBox 和 zod 两套 schema 共存**：表单层用 zod、API 层用 TypeBox，bundle 翻倍且心智重复，要么统一要么换框架
-4. **单文件 50+ 路由不拆分**：类型层会累积成巨型联合类型，IDE tsserver 容易卡顿，建议按业务用 `.group()` / `.use()` 切片
+2. **在 Node 上跑求"通用性"**：官方有 `@elysiajs/node` adapter，能跑但 macro / JSC 红利基本没了，QPS 常与 Hono 持平甚至更低——花了学习成本却没拿到 Bun 侧收益
+3. **以为 Node 是 drop-in**：要用 Node 必须显式安装 adapter 并在 `new Elysia({ adapter: node() })` 里挂上，不是换个 runtime 命令就完事
+4. **TypeBox 和 zod 两套 schema 共存**：表单层用 zod、API 层用 TypeBox，bundle 翻倍且心智重复，要么统一要么换框架
+5. **单文件 50+ 路由不拆分**：类型层会累积成巨型联合类型，IDE tsserver 容易卡顿，建议按业务用 `.group()` / `.use()` 切片
 
 ## 适用 vs 不适用场景
 
@@ -122,7 +123,7 @@ const { data, error } = await api.users({ id: '123' }).get()
 - 需要 schema 同时做校验 + OpenAPI 文档
 
 **不适用**：
-- 必须跑在 Node 生产环境，运维不允许换 runtime
+- 生产只能 Node、且你要的是跨 runtime 红利而不是 Bun 峰值——Node adapter 可跑，但优势不明显时不如直接用 [[hono]] / [[fastify]]
 - 需要 Spring/Nest 那样的 DI、依赖注入、企业级 plugin 生态
 - 多语言微服务体系，期望 GraphQL 或独立 IDL
 - 团队不熟 TypeScript 类型层，巨型类型会变成读不懂的报错
@@ -131,8 +132,8 @@ const { data, error } = await api.users({ id: '123' }).get()
 
 - **2022 年**：Bun runtime 进入公测，泰国独立开发者 SaltyAom（Athichai L.）开始写 Elysia v0.1，最初只是"在 Bun 上能跑的 Koa-like"
 - **2023 年**：放弃 zod 改用 Sinclair 的 TypeBox，因为 TypeBox 用 JSON Schema 又能直接生成 TS 类型，跟"一份 schema 三处用"的目标更契合
-- **2024 年**：Bun 1.0 + Elysia 1.0 同期发布，引入 macro 编译期优化，开始被并称为 Bun/Edge runtime 双子星之一
-- **2025 年**：Eden Treaty 走向稳定，端到端类型安全成主推卖点，社区 plugin 数量过百但仍远小于 Express 阵营
+- **2023 年**：Bun 1.0（2023-09）发布；Elysia 同步走向 1.x，引入 macro 编译期优化，和 Hono 一起常被拿来做 Bun/Edge 选型对照
+- **2024–2025 年**：Eden Treaty 走向稳定，端到端类型安全成主推卖点；随后补上 Node 等 adapter，但仍明确 Bun-first，社区 plugin 远小于 Express 阵营
 
 ## 学到什么
 

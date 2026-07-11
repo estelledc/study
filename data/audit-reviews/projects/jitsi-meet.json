@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 读源码路线",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "会议中心类比与三层心智模型对零基础很友好；apt / IFrame / compose 案例逐步解释到位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SIP Communicator→Jitsi→8x8 时间线与组件分工正确；star 数会漂移但不构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "apt 安装、IFrame API、Jibri/Jigasi compose 可跟做；10000/udp、JWT、自签证书等踩坑可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 读源码路线",
+      "fix_hints": [
+        "会议中心类比与三层心智模型对零基础很友好；apt / IFrame / compose 案例逐步解释到位"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "SIP Communicator→Jitsi→8x8 时间线与组件分工正确；star 数会漂移但不构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "apt 安装、IFrame API、Jibri/Jigasi compose 可跟做；10000/udp、JWT、自签证书等踩坑可操作"
+      ]
+    }
+  ]
+}

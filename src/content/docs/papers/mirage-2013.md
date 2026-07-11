@@ -46,23 +46,48 @@ MirageOS 的设计可以拆成**四个关键决策**：
 
 ## 实践案例
 
-### 案例 1：DNS 服务器只有 200 KB
+### 案例 1：先 Unix 后端调通，再切 Xen
 
-论文中把一个 DNS 服务器编译成 unikernel 镜像，最终大小约 200 KB。对比同功能的 BIND 跑在 Linux 上需要几百 MB 磁盘 + 几十 MB 内存。这意味着同一台物理机可以启动数千个 DNS unikernel 实例。
+```bash
+mirage configure -t unix   # 笔记本上有调试工具
+make depend && make
+./mir-dns                   # 先确认解析逻辑对
 
-为什么能这么小？因为 DNS 服务只需要 UDP 收发 + 域名解析逻辑，不需要文件系统、进程调度、用户权限管理等 Linux 内核 90% 的代码。编译器的死代码消除把所有不需要的路径都裁掉了。
+mirage configure -t xen    # 同一份源码换后端
+make depend && make         # 产出可直接给 Xen 启动的镜像
+```
+
+**逐部分解释**：
+
+- `-t unix`：用 socket 实现 `NETWORK` 等签名，方便 `printf`/调试
+- `-t xen`：换成 Xen 后端，链接进真正的设备驱动库
+- 论文里 DNS 镜像约 200 KB（正文测得 183.5 kB），对比 BIND+Linux 约数百 MB
 
 ### 案例 2：启动时间 < 50 毫秒
 
-因为没有 Linux 内核初始化流程（探测硬件、加载模块、挂载文件系统），MirageOS 镜像从 Xen 创建到开始处理请求不到 50 毫秒。这让"按请求启动虚拟机"成为可能——类似后来 AWS Lambda 的冷启动概念，但隔离级别是虚拟机而非容器。
+```text
+Xen create domain → 初始化几个 OCaml 库 → 开始收包
+# 论文：Mirage < 50 ms；精简 Linux 用户态更慢一截；完整 Debian+Apache 更慢
+```
 
-对比数据：Linux VM 启动通常需要 3-10 秒，Docker 容器需要 200-500 毫秒，MirageOS unikernel 只需要 10-50 毫秒。差距的根本原因是初始化路径长度——Linux 要走完整个 `start_kernel` 流程，容器要设置 cgroup/namespace，unikernel 只需初始化自己那几个库。
+**逐部分解释**：
+
+- 没有探测硬件、挂载根文件系统、拉起一堆守护进程的长路径
+- 这让“来一个请求再启动一个 VM”变得现实，隔离级别仍是虚拟机而非共享内核的容器
+- 对比直觉：容器冷启动常是百毫秒级，通用 Linux VM 常是秒级
 
 ### 案例 3：用 OCaml 写网络栈
 
-MirageOS 的 TCP/IP 栈是纯 OCaml 实现，没有调用任何 C 代码。好处是整个协议栈可以被 OCaml 类型系统保护，杜绝了 buffer overflow 这类 C 语言经典漏洞。论文测得吞吐量接近 Linux 内核栈的 85%-95%。
+```ocaml
+module Stack = Tcpip_stack_direct.Make(Network)(Ethernet)(Arp)(Ipv4)(Icmp)(Udp)(Tcp)
+(* 协议栈是库组合；编译期只链进 DNS 用到的 UDP 路径 *)
+```
 
-代价是什么？纯 OCaml 实现意味着不能复用几十年积累的 C 网络栈代码（如 lwIP），得从 RFC 文档开始手写。但换来的是：每一行协议实现都有类型保证，出了 bug 是逻辑错误而非内存破坏——前者容易定位，后者可能变成安全漏洞。
+**逐部分解释**：
+
+- 协议实现主要是 OCaml，靠类型系统挡住野指针式内存破坏
+- 论文用 iperf 对比 Linux 3.7：关闭硬件 offload 时 TCP 吞吐与 Linux **基本持平**；ping 延迟约高 4–10%
+- 代价是难直接复用 lwIP 等 C 栈，很多协议库要按 RFC 重写
 
 ## 踩过的坑
 

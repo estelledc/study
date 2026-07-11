@@ -28,23 +28,24 @@ Velero 是 Kubernetes 上的**集群级别备份与恢复工具**——你跑一
 
 ## 核心要点
 
-Velero 由 **四个核心 CRD + 两条数据通路** 组成：
+Velero 把备份流程写成集群里的**登记表条目**（CRD = Custom Resource Definition，自定义资源类型），共 **五类核心对象 + 两条数据通路**：
 
-1. **Backup**：一次备份请求。声明备份哪些 namespace / 用什么 label 选 / 是否包含 PV 数据 / TTL 多久。
-2. **Restore**：一次恢复请求。指向某个 Backup，可重映射 namespace、可只恢复部分资源。
-3. **Schedule**：周期任务，按 cron 自动产生 Backup（如每天凌晨 2 点）。
-4. **BackupStorageLocation / VolumeSnapshotLocation**：声明对象存储桶和卷快照后端。
+1. **Backup**：一次备份请求。声明备份哪些 namespace / 用什么 label 选 / 是否包含 PV 数据 / TTL 多久。类比：一张「今天要备份什么」的工单。
+2. **Restore**：一次恢复请求。指向某个 Backup，可重映射 namespace、可只恢复部分资源。类比：按某张工单把东西搬回来。
+3. **Schedule**：周期任务，按 cron 自动产生 Backup（如每天凌晨 2 点）。类比：闹钟到点就自动开一张工单。
+4. **BackupStorageLocation**：声明对象存储桶（S3 / GCS 等）——备份文件最终扔到哪里。
+5. **VolumeSnapshotLocation**：声明卷快照后端——云盘快照存在哪家云的哪一区。
 
 两条数据通路：
 
 - **资源通路**：调用 Kubernetes API 把资源对象序列化为 yaml/json，打包成 tar.gz 上传到对象存储。
-- **PV 通路**：两种实现可选——CSI 卷快照（云厂商支持时首选，秒级），或 File System Backup（基于 Restic / Kopia，逐文件读取，跨云通用）。
+- **PV 通路**：两种实现可选——**CSI 卷快照**（Container Storage Interface，云厂商提供的「整盘拍照」，秒级，绑死区域）；或 **File System Backup**（进容器逐文件拷贝：老工具 Restic 稳但慢，新工具 Kopia 并发更快，跨云通用）。
 
 ## 实践案例
 
 ### 案例 1：AWS 上装 Velero 并备份一个 namespace
 
-先准备一个 S3 桶和 IAM 凭证，再装：
+前置：先建好 S3 桶，并把 IAM 访问密钥写成 `./aws-credentials`（缺这个文件，`--secret-file` 会直接失败）。再装：
 
 ```bash
 velero install \
@@ -57,7 +58,7 @@ velero install \
   --uploader-type kopia
 ```
 
-备份 default namespace：
+`--use-node-agent` 在每个节点起一个小助手，负责读 PV 文件；`--uploader-type kopia` 选更快的上传器。备份 default namespace：
 
 ```bash
 velero backup create demo-1 --include-namespaces default

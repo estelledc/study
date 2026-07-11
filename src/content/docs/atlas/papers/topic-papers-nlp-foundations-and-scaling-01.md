@@ -32,7 +32,7 @@ sidebar:
 | [COMPOSE — 用引用图和 Mathlib 图预测未来定理](/study/papers/compose-future-theorems/) | `compose-future-theorems` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒](/study/papers/compositional-incoherence/) | `compositional-incoherence` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | `consistency-models-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Linear Attention, Still: Why Mamba-style Models Plateau — 学习笔记（入门）](/study/papers/continual-pretrain-survey-2026/) | `continual-pretrain-survey-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Continual Pretraining Survey 2026 — 大模型持续学习入门](/study/papers/continual-pretrain-survey-2026/) | `continual-pretrain-survey-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DDPG 2015 — 让神经网络直接学会连续动作控制](/study/papers/ddpg-2015/) | `ddpg-2015` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) | `debate-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | `deberta-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -60,8 +60,7 @@ sidebar:
 | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) | `gshard-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HullFT — 让测试时微调既会挑样本又省算力](/study/papers/hullft-ttft/) | `hullft-ttft` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | `imagen-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [KVBudget: Per-Request KV Cache Budgeting in vLLM-style Serving](/study/papers/kv-cache-budget-2026/) | `kv-cache-budget-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference — 学习笔记](/study/papers/kv-fold/) | `kv-fold` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [KVBudget — 给每条请求划一块 KV cache 预算](/study/papers/kv-cache-budget-2026/) | `kv-cache-budget-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | `label-smoothing-2016` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | `layernorm-2016` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linear Attention, Still: Why Mamba-style Models Plateau](/study/papers/linear-attention-still-2026/) | `linear-attention-still-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -83,15 +82,13 @@ sidebar:
 | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) | `mixup-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) | `mode-connectivity-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) | `nbeats-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [NestedKV: Nested Memory Routing for Long-Context KV Cache Compression — 学习笔记](/study/papers/nestedkv/) | `nestedkv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Cognitive Architectures for Language Agents (CoALA)](/study/papers/nlp-agent-2024/) | `nlp-agent-2024` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RAG for AIGC: 检索增强生成在 AI 生成内容中的应用 — 学习笔记](/study/papers/nlp-rag-2024/) | `nlp-rag-2024` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NTK — 把无限宽的神经网络变成一个可解的核方法](/study/papers/ntk-2018/) | `ntk-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | `optuna` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization — 学习笔记](/study/papers/oscar-int2-kv/) | `oscar-int2-kv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) | `performer-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PPC Preplan — 先想清楚题目类型再规划解法](/study/papers/ppc-preplan/) | `ppc-preplan` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Beyond LRU: Prefix-Cache Policies for LLM Serving — 学习笔记（入门）](/study/papers/prefix-cache-policy-2026/) | `prefix-cache-policy-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）](/study/papers/prefix-cache-policy-2026/) | `prefix-cache-policy-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ProjectionBench — 用逐步揭示信息测试科学假说生成](/study/papers/projection-bench/) | `projection-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) | `prototypical-networks-2017` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Reasoning with Sampling — 在关键决策点重采样推理过程](/study/papers/reasoning-with-sampling/) | `reasoning-with-sampling` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -113,5 +110,8 @@ sidebar:
 | [SoundnessBench — 判断 AI 科学家会不会把坏点子当好点子](/study/papers/soundness-bench/) | `soundness-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) | `starcoder-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | `stylegan2-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | `sycophancy-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | `t0-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | `t5` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 
 [下一组](/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/)

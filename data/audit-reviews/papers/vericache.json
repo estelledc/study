@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」里 HBM / PCIe / 投机解码等术语偏密，可再各加半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "吞吐 4×/2× 与接受串 25–40 宜标明为论文报告峰值/典型区间，避免读成普适保证"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 伪代码可补一行 mismatch 后如何更新 KV_comp，方便跟做完整循环"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么重要」里 HBM / PCIe / 投机解码等术语偏密，可再各加半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "吞吐 4×/2× 与接受串 25–40 宜标明为论文报告峰值/典型区间，避免读成普适保证"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 伪代码可补一行 mismatch 后如何更新 KV_comp，方便跟做完整循环"
+      ]
+    }
+  ]
+}

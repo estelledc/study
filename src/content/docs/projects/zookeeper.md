@@ -72,9 +72,15 @@ A 挂了 → session 断 → 它的 znode 自动消失 → B 编号最小 → B 
 
 ### 案例 3：配置中心 + 服务发现
 
-把数据库连接串、feature flag 写到 `/config/db-url`，所有应用启动时读一次 + 注册 watch。运维改一次 znode 内容，所有应用毫秒级收到通知刷配置。这是 Dubbo 注册中心、Solr 集群配置的核心机制。
+配置下发三步：
 
-服务发现复用同一套：服务实例启动时在 `/services/order-svc/` 下建临时节点 `instance-xxx`，写入自己的 IP:port；客户端 list 这个目录就拿到当前所有活实例，注册 watch 实时感知上下线。**临时节点 + 子节点 watch** 这一对原语，构成了 2010-2020 年代国内微服务注册中心的事实模板。
+```
+1. 运维把 db-url 写到 /config/db-url
+2. 每个应用启动时 getData + 注册 watch
+3. 运维改 znode → 所有应用收到一次性回调 → 刷配置并重新注册 watch
+```
+
+服务发现复用同一套：实例启动时在 `/services/order-svc/` 下建临时节点，写入 IP:port；客户端 list 子节点拿活实例，watch 感知上下线。**临时节点 + 子节点 watch** 是 2010–2020 微服务注册中心的事实模板。生产里这些配方多用 Apache Curator 封装，少直接裸调 ZK 客户端。
 
 ## 踩过的坑
 
@@ -110,15 +116,12 @@ A 挂了 → session 断 → 它的 znode 自动消失 → B 编号最小 → B 
 
 ## 历史小故事（可跳过）
 
-- **2006 年**：Yahoo! 内部 Hadoop 集群规模膨胀，多个组件各写各的协调逻辑，bug 频出。Mahadev Konar 提议抽出一个通用协调服务给所有组件共用。
-- **2007 年**：Yahoo! Research 的 Mahadev Konar / Benjamin Reed / Flavio Junqueira 开发，论文 *ZooKeeper: Wait-free coordination for Internet-scale systems* 发表于 USENIX ATC 2010。名字 ZooKeeper 来自 Hadoop 生态的『动物园』隐喻——Pig / Hive / HBase 各种动物，需要一个看管员。
-- **2008 年**：开源给 Apache，最初是 Hadoop 子项目。
-- **2010 年**：升级为 Apache 顶级项目。同期 Yahoo 内部已用它管几千节点的 Hadoop 集群。
-- **2013 年起**：Kafka / HBase / Solr / Dubbo 等先后把 ZK 选为元数据底座，奠定『大数据基建标配』地位。
-- **2018 年**：CoreOS 推出 etcd，主打 Raft + gRPC，社区开始迁移。
-- **2022 年（Kafka 3.3）**：KRaft 模式 GA，Kafka 自己用 Raft 管元数据，ZK 进入逐步退场阶段。
-- **2024 年（Kafka 3.5+）**：ZK 模式正式标记为 deprecated，新部署默认走 KRaft。
-- **至今**：HBase / 老 Hadoop / Solr 仍大量在生产用 ZK，运维老系统绕不开；新项目几乎一律选 etcd 或 KRaft。
+- **2006 年**：Yahoo! 内部 Hadoop 集群膨胀，各组件自写协调逻辑 bug 频出。Mahadev Konar 提议抽出通用协调服务共用。
+- **2007–2010 年**：Patrick Hunt / Mahadev Konar / Flavio Junqueira / Benjamin Reed 开发；论文 *ZooKeeper: Wait-free coordination for Internet-scale systems* 发表于 USENIX ATC 2010。名字来自 Hadoop『动物园』隐喻——需要一个看管员。
+- **2008–2010 年**：开源进 Apache（先是 Hadoop 子项目，2010 升顶级项目）；Yahoo 内部已用它管几千节点。
+- **2013 年起**：Kafka / HBase / Solr / Dubbo 等把 ZK 当元数据底座，成『大数据基建标配』。
+- **2013–2014 年**：CoreOS 推出 etcd（Raft + 后来的 gRPC），社区开始出现 ZK 替代路线；2018 年前后 etcd 进入 CNCF 加速迁移。
+- **2022–2024 年**：Kafka 3.3 KRaft GA；3.5+ ZK 模式 deprecated，新部署默认 KRaft。HBase / 老 Hadoop / Solr 仍大量用 ZK；新项目多选 etcd 或 KRaft。
 
 ## 学到什么
 
@@ -148,3 +151,7 @@ A 挂了 → session 断 → 它的 znode 自动消失 → B 编号最小 → B 
 - [[nacos]] —— 阿里开源注册中心，AP 模式 + 配置管理一体化，常被对照
 - [[paxos]] —— 共识协议鼻祖，ZAB 是它在主备复制场景下的简化变体
 - [[raft]] —— ZAB 的精神继任者，把可理解性放在第一位
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

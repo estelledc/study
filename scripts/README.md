@@ -4,6 +4,8 @@ This directory owns the local content pipeline for `explorations/study`.
 
 Current policy: bulk content production and direct `main` publication are disabled. This document explains bounded maintenance primitives; it does not authorize a round, push, merge, deployment, or edits to existing note bodies. The canonical policy is `docs/operations-index.md` plus `data/operations-policy.json`.
 
+The historical `*-audit-*` batch helpers merged with the completed corpus audit are also disabled by the same policy. Their `data/audit-reviews/**` files remain legacy qualitative observations, not `study-review-receipt-v1` evidence, and cannot upgrade a note to VERIFIED. Do not rebuild the pool, claim another audit batch, prepare reviewer contexts, or finalize an audit round without a future operation-bound single-use approval mechanism.
+
 ## Queue State
 
 Main queue files:

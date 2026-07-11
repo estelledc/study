@@ -1,0 +1,91 @@
+{
+  "slug": "bpr-2009",
+  "area": "papers",
+  "round": 18,
+  "status": "refined",
+  "action": "refine",
+  "lines": 184,
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    "实践案例 1-4 缺少逐部分解释，零基础读者不容易把公式和采样步骤对上。",
+    "不要把所有大厂排序训练都归因到 BPR；改为推荐 / 搜索排序里常见的 pairwise/listwise 范式。",
+    "BPR-Opt 与 AUC 的关系应写成目标对齐，不要写成严格等价。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "给每个实践案例补逐部分解释，尤其是 diff、hard negative 和 InfoNCE 分母。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "弱化“所有大厂都在用”和“等价于最大化 AUC”的绝对化表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 184,
+    "reasons": []
+  }
+}

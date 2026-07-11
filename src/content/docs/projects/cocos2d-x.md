@@ -3,7 +3,7 @@ title: Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 来源: 'https://github.com/cocos2d/cocos2d-x'
 日期: 2026-06-01
 分类: 图形引擎
-难度: 入门
+难度: 初级
 ---
 
 ## 是什么
@@ -153,3 +153,7 @@ C++ 一侧只暴露 `enemy:hp()` / `enemy:flee()` 这些方法。改个数值平
 - [[lottie]] —— After Effects 动画导出方案，和 Action 系统互补
 - [[gsap]] —— JS 业界基准动画库，timeline 思想同源
 - [[anime]] —— 轻量 JS 动画库，stagger / easing 概念跨语言通用
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

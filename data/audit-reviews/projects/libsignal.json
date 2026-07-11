@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "X3DH / Double Ratchet 首次已有桥接；zkgroup 可再补半句「零知识=证明你合格但不暴露身份」，不影响跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "WhatsApp/Messages 等「基于 Signal 协议」表述合理；个别产品集成深度不一，当前未构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Kotlin/Swift 片段是示意 API，概念正确；踩坑（FFI 泄漏、预共享键耗尽、Sealed Sender 元数据边界）可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "X3DH / Double Ratchet 首次已有桥接；zkgroup 可再补半句「零知识=证明你合格但不暴露身份」，不影响跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "WhatsApp/Messages 等「基于 Signal 协议」表述合理；个别产品集成深度不一，当前未构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Kotlin/Swift 片段是示意 API，概念正确；踩坑（FFI 泄漏、预共享键耗尽、Sealed Sender 元数据边界）可操作"
+      ]
+    }
+  ]
+}

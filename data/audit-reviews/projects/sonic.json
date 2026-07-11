@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "超市/便利店/书包类比把 ES/Meili/Sonic 体量差讲清楚，零基础友好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "FST「共享前缀+后缀」有桥接；缺 ## 历史小故事（可跳过），模板 12 段不完整"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 几乎是配置粘贴，建议补「改 consolidate_after → 等一轮 → QUERY 可见」三步跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "官方 config 默认 `graph.consolidate_after = 180`（秒），不是笔记写的 60；CONFIGURATION.md / config.cfg 可核对"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "INNER_WORKINGS：FST pending 变更存在内存、定期 consolidate 到磁盘 FST；写成「pending buffer 也是 RocksDB」不准确（RocksDB 是 KV/倒排层）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「重建 FST 是 stop-the-world」偏绝对：官方强调批处理重建与 TRIGGER consolidate，宜弱化为「重建占 CPU、大图可能卡顿」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Docker + Channel PUSH/QUERY/SUGGEST 可跟做；三层 collection/bucket/object 命名正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 1 写「默认 60 秒」与上游默认 180 不符，会误导调参；应改默认并保留 TRIGGER consolidate"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（<10 万条目、<64 MB、中文需预分词）；无 BM25 排序的限制写得到位"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "超市/便利店/书包类比把 ES/Meili/Sonic 体量差讲清楚，零基础友好",
+        "FST「共享前缀+后缀」有桥接；缺 ## 历史小故事（可跳过），模板 12 段不完整",
+        "案例 3 几乎是配置粘贴，建议补「改 consolidate_after → 等一轮 → QUERY 可见」三步跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "官方 config 默认 `graph.consolidate_after = 180`（秒），不是笔记写的 60；CONFIGURATION.md / config.cfg 可核对",
+        "INNER_WORKINGS：FST pending 变更存在内存、定期 consolidate 到磁盘 FST；写成「pending buffer 也是 RocksDB」不准确（RocksDB 是 KV/倒排层）",
+        "「重建 FST 是 stop-the-world」偏绝对：官方强调批处理重建与 TRIGGER consolidate，宜弱化为「重建占 CPU、大图可能卡顿」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "Docker + Channel PUSH/QUERY/SUGGEST 可跟做；三层 collection/bucket/object 命名正确",
+        "踩坑 1 写「默认 60 秒」与上游默认 180 不符，会误导调参；应改默认并保留 TRIGGER consolidate",
+        "适用边界清楚（<10 万条目、<64 MB、中文需预分词）；无 BM25 排序的限制写得到位"
+      ]
+    }
+  ],
+  "slug": "sonic",
+  "area": "projects",
+  "status": "refined",
+  "lines": 173,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "reason": "三审均 needs-refine：consolidate_after 默认 180 误写 60、pending 误写 RocksDB、缺历史小故事、案例 3 缺跟做步骤"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "改正 consolidate_after=180；pending 改为内存；弱化 STW；补历史小故事；案例 3 改成三步跟做",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 173,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

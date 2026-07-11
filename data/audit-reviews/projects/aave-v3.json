@@ -1,0 +1,59 @@
+{
+  "slug": "aave-v3",
+  "area": "projects",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Pool、aToken、debt token、e-mode 信息量很大，整体可读但术语密度偏高；至少应避免 API 名称混用造成新手困惑。",
+        "关联段里 TCP、GC、skip-list 这类跳跃链接会打断零基础读者的心智路线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "V3 用户入口应优先写 `Pool.supply`，不要在中心入口里把 `deposit` 当主方法。",
+        "Aave V3 在极低 HF 阈值下进入的是 100% close factor，不是“95% closeFactor”；应改正清算案例和踩坑表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "`Pool.deposit`/`supply` 混用会误导按 V3 接口跟做的人，需统一为 `supply`。",
+        "清算 close factor 的阈值与比例应写成“HF 低于阈值时可最多覆盖 100% 债务”。",
+        "把无关的 TCP、Boehm GC、skip-list 关联换成 DeFi/合约工程相关条目。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.44,
+    "reject_count": 0,
+    "needs_refine_count": 3,
+    "action": "refine",
+    "reason": "三位 reviewer 均为 needs-refine，平均分 < 4；没有达到 rewrite 的 reject 条件。"
+  }
+}

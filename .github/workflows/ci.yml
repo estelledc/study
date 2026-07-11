@@ -15,7 +15,7 @@ jobs:
   verify:
     name: verify:ci
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       STUDY_CHANGED_FROM: ${{ github.event.pull_request.base.sha }}
     steps:

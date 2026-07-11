@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房/快递箱类比清晰；参数都有中文解释，零基础友好。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Libav 分裂发生在 2011 年而非 2004 年，需改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「全球超过 90% 的视频处理软件」缺乏可核对来源，应弱化为更稳妥表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "命令可跟做，踩坑具体；适用边界可再补一条「实时超低延迟转码」场景。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "厨房/快递箱类比清晰；参数都有中文解释，零基础友好。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Libav 分裂发生在 2011 年而非 2004 年，需改正。",
+        "「全球超过 90% 的视频处理软件」缺乏可核对来源，应弱化为更稳妥表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "命令可跟做，踩坑具体；适用边界可再补一条「实时超低延迟转码」场景。"
+      ]
+    }
+  ]
+}

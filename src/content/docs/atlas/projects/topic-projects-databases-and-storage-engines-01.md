@@ -84,7 +84,7 @@ sidebar:
 | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) | `tidb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TiKV — 分布式事务 KV](/study/projects/tikv/) | `tikv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | `typesense` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | `valkey` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Valkey — Redis 7.2.4 的开源 fork](/study/projects/valkey/) | `valkey` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) | `vespa` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) | `vitess` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | `weaviate` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -72,21 +72,34 @@ resource "aws_instance" "web" {
 
 ### 案例 2：Module 化复用
 
-把网络配置抽成 module：
+把网络配置抽成可复用 module，三步跟做：
+
+1. 在 `shared/network/main.tf` 写公共资源（变量 `cidr` 由调用方传入）：
 
 ```hcl
-# 项目 A
+variable "cidr" { type = string }
+resource "aws_vpc" "this" {
+  cidr_block = var.cidr
+}
+```
+
+2. 在项目 A 引用该 module：
+
+```hcl
 module "network" {
   source = "../shared/network"
   cidr   = "10.0.0.0/16"
 }
 ```
 
-跨项目共享同一份 VPC 定义。社区有上千个开源 module，registry.terraform.io 直接搜。
+3. `terraform init`（解析本地 module）→ `plan`/`apply`；项目 B 改 `cidr` 即可复用同一份定义。社区 module 也可在 registry.terraform.io 搜。
 
 ### 案例 3：Remote Backend（生产必备）
 
-默认 state 存本地，多人协作会撞车。生产用 S3 + DynamoDB lock：
+默认 state 存本地，多人协作会撞车。生产用 S3 + DynamoDB lock，三步启用：
+
+1. 先建好 S3 bucket 与 DynamoDB 表（表需有 `LockID` 主键）
+2. 在根模块写入 backend 块：
 
 ```hcl
 terraform {
@@ -99,7 +112,7 @@ terraform {
 }
 ```
 
-S3 存 state，DynamoDB 做分布式锁（同一时刻只能一人 apply）。
+3. 跑 `terraform init -migrate-state`，把本地 state 迁到 S3；之后同一时刻只能一人 apply（DynamoDB 分布式锁）。
 
 ## 踩过的坑
 
@@ -113,17 +126,17 @@ S3 存 state，DynamoDB 做分布式锁（同一时刻只能一人 apply）。
 
 5. **provider 版本锁不住**：升级 AWS provider 后某些资源属性默认值变了，无操作 plan 显示一堆 diff。**修法**：`required_providers` 块里**钉死小版本号**，升级前读 changelog。
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2014**：HashiCorp 创立第三年，Mitchell Hashimoto 发布 Terraform 0.1，开源协议 MPL 2.0
 - **2017**：Terraform 0.10 拆出 provider 独立仓库，生态开始爆发
 - **2019**：Terraform 0.12 引入 HCL 2，支持 for/if 表达式，写起来更像编程语言
 - **2021**：Terraform 1.0 stable
-- **2023-08**：HashiCorp 把所有产品（含 Terraform）从 MPL 2.0 改成 BSL（Business Source License），不再算开源
-- **2023-09**：Linux Foundation 联合 Gruntwork、Spacelift 等公司从 1.5.7 fork 出 [[opentofu]]，社区版 Terraform 续命
-- **2024**：Terraform 1.10，原生 OCI registry 支持 + provider-defined functions
+- **2023-08**：HashiCorp 把 Terraform 从 MPL 2.0 改成 BSL，不再算开源
+- **2023-09**：Linux Foundation 等从 1.5.7 fork 出 [[opentofu]]，社区版续命
+- **2024**：Terraform 1.10，原生 OCI registry + provider-defined functions
 
-这场分叉把 IaC 圈撕成两半——大企业大多观望，社区项目和创业公司转 OpenTofu。
+这场分叉把 IaC 圈撕成两半——大企业大多观望，社区与创业公司转 OpenTofu。
 
 ## 适用 vs 不适用场景
 
@@ -161,3 +174,7 @@ S3 存 state，DynamoDB 做分布式锁（同一时刻只能一人 apply）。
 - [[kubernetes]] —— K8s 管容器编排，Terraform 管 K8s 集群本身的创建（EKS / GKE）
 - [[grafana]] —— 监控也能用 Terraform 配——`grafana_dashboard` provider 把 dashboard 当资源管
 - [[prometheus]] —— 同上，AWS Managed Prometheus 可以用 Terraform 拉起
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

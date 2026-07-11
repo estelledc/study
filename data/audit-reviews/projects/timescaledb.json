@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有两行 SQL，缺少像模板那样的「逐部分解释」；至少说明 CREATE EXTENSION 做了什么、查 extversion 是在确认什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的解释只有一句，建议拆成：建普通表 → create_hypertable 把表变成超表 → 组合索引为何是 (device_id, time DESC)"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「同年：v2.18」有误：Multinode 在 2024 年 v2.14 移除，v2.18 发布于 2025-01，不是同一年；应改成年份或去掉「同年」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Cloud Hypercore Storage」表述偏营销；开源侧更准确是 Hypercore（行存/列存混合）与分层/对象存储能力，避免写成单一产品名硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 SQL 概念正确可跟做；若 refine，可在案例 1 补一句「需先装好 timescaledb 扩展包」以免读者以为纯 SQL 就能装上扩展"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有两行 SQL，缺少像模板那样的「逐部分解释」；至少说明 CREATE EXTENSION 做了什么、查 extversion 是在确认什么",
+        "案例 2 的解释只有一句，建议拆成：建普通表 → create_hypertable 把表变成超表 → 组合索引为何是 (device_id, time DESC)"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「同年：v2.18」有误：Multinode 在 2024 年 v2.14 移除，v2.18 发布于 2025-01，不是同一年；应改成年份或去掉「同年」",
+        "「Cloud Hypercore Storage」表述偏营销；开源侧更准确是 Hypercore（行存/列存混合）与分层/对象存储能力，避免写成单一产品名硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 SQL 概念正确可跟做；若 refine，可在案例 1 补一句「需先装好 timescaledb 扩展包」以免读者以为纯 SQL 就能装上扩展"
+      ]
+    }
+  ]
+}

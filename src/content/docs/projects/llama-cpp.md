@@ -112,7 +112,7 @@ Mozilla 把 llama.cpp + 一个 GGUF 模型 + Cosmopolitan libc 打包成**单个
 
 1. **下错量化档位**：图省事下了 Q2_K 发现胡言乱语，又下 Q8_0 发现 16GB 内存爆了。Q4_K_M 是默认推荐，先试这个。
 2. **忘记加 `-ngl`**：Mac 上不加这个参数全跑 CPU，速度差 5 倍。无脑加 `-ngl 999`。
-3. **上下文长度 `-c` 默认 2048**：处理长文档要调大，但显存占用随长度平方增长，8B 模型开 32k 可能要 12GB 显存。
+3. **上下文长度 `-c` 默认 2048**：处理长文档要调大；**KV cache 显存近似随长度线性增长**（注意力计算量才是 O(n²)）。8B 模型开 32k 时显存可能到十余 GB 量级（粗估，视量化与 offload 而定）。
 4. **量化模型不能微调**：Q4 已经丢精度，微调要回到原始 FP16 权重；llama.cpp 只做推理。
 5. **GGUF 版本不兼容**：旧 GGUFv1/v2 文件在新版 llama.cpp 跑不了，下载时认准 v3 或更新。
 
@@ -151,3 +151,7 @@ Mozilla 把 llama.cpp + 一个 GGUF 模型 + Cosmopolitan libc 打包成**单个
 - [[llamaindex]] —— 上层 RAG 框架，可接 llama.cpp 作为本地推理后端
 - [[accelerate]] —— HuggingFace 训练侧的设备抽象，与 llama.cpp 推理侧多后端是镜像问题
 - [[pytorch]] —— 训练主流框架；llama.cpp 解决的是"训完之后怎么塞进消费硬件"
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

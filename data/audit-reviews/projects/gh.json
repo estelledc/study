@@ -1,0 +1,60 @@
+{
+  "slug": "gh",
+  "area": "projects",
+  "note_path": "src/content/docs/projects/gh.md",
+  "research_stub_path": "/tmp/audit-round-50/projects-gh/research-stub.json",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 与 hub / glab 对比",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「资深开发者从不打开 PR 页面」是修辞夸张，作为动机句可接受，但不宜读成事实统计。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4.0。",
+    "reject_count": 0,
+    "initial_quality_gate": {
+      "pass": true,
+      "lines": 162
+    },
+    "final_quality_gate": {
+      "pass": true,
+      "lines": 162
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "滑板车/火车厢/餐馆类比生动；Raw/Socket/裁剪三案例逐步可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「FreeRTOS、Zephyr、RT-Thread 都默认内置 lwIP」过强：Zephyr 主栈是自研网络栈、lwIP 为可选；FreeRTOS 亦常配 FreeRTOS+TCP。宜改为「广泛集成/可选内置」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Echo/Socket/lwipopts 可跟做；pbuf_free、NO_SYS、中断安全踩坑具体；>100Mbps 与 TLS 外挂边界清楚。链式 pbuf 用 p->len 略简化，教学可接受"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "滑板车/火车厢/餐馆类比生动；Raw/Socket/裁剪三案例逐步可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「FreeRTOS、Zephyr、RT-Thread 都默认内置 lwIP」过强：Zephyr 主栈是自研网络栈、lwIP 为可选；FreeRTOS 亦常配 FreeRTOS+TCP。宜改为「广泛集成/可选内置」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Echo/Socket/lwipopts 可跟做；pbuf_free、NO_SYS、中断安全踩坑具体；>100Mbps 与 TLS 外挂边界清楚。链式 pbuf 用 p->len 略简化，教学可接受"
+      ]
+    }
+  ]
+}

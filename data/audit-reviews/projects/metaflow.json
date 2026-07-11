@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例只有两例且缺「逐部分解释」；应补案例 3（如 resume / Client API）并拆步骤，零基础才能跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019.12 开源与 Outerbounds 时间线合理；「数千个模型」属宣传口径，可保留但勿写成可核验精确统计。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "FlowSpec / foreach / @kubernetes 示例概念正确；实践段宜补一个可跟做的 resume 或 Client API 最小片段。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例只有两例且缺「逐部分解释」；应补案例 3（如 resume / Client API）并拆步骤，零基础才能跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "2019.12 开源与 Outerbounds 时间线合理；「数千个模型」属宣传口径，可保留但勿写成可核验精确统计。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "FlowSpec / foreach / @kubernetes 示例概念正确；实践段宜补一个可跟做的 resume 或 Client API 最小片段。"
+      ]
+    }
+  ]
+}

@@ -148,3 +148,15 @@ A 拨给 B，Asterisk 内部其实建了两个 channel（`PJSIP/A-00001` 和 `PJ
 - 入门发行版：FreePBX（图形界面套壳的 Asterisk，新人不想啃 dialplan 直接用它）
 - 对比阅读：[FreeSWITCH](https://github.com/signalwire/freeswitch)（同源不同路）
 - [[aiortc]] —— Python WebRTC 协议栈，和 Asterisk 同属"软件实现协议栈"流派
+
+## 关联
+
+- [[freeswitch]] —— 同样做软交换，但更偏多线程媒体处理
+- [[kamailio]] —— 纯 SIP 代理路线，适合把信令层扩到更大规模
+- [[janus-gateway]] —— WebRTC 网关，和 Asterisk 都在处理实时音视频协议边界
+- [[mediasoup]] —— 浏览器实时音视频的 SFU 方案，适合对比 PBX 与 WebRTC 架构
+- [[aiortc]] —— Python 里的协议栈实现，和 Asterisk 一样把通信协议软件化
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

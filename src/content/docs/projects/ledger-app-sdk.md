@@ -68,7 +68,12 @@ void app_main(void) {
 ### 案例 2：派生地址走 BIP32
 
 ```c
-uint8_t bip32_path[] = {44 | 0x80000000, 60 | 0x80000000, 0 | 0x80000000};
+// 硬化路径分量是 32 位：最高位 0x80000000 表示 hardened（子密钥无法反推父密钥）
+uint32_t bip32_path[] = {
+  44 | 0x80000000,  // purpose
+  60 | 0x80000000,  // coin_type = ETH
+  0  | 0x80000000   // account
+};
 cx_ecfp_private_key_t priv;
 os_perso_derive_node_bip32(CX_CURVE_256K1, bip32_path, 3, priv.d, NULL);
 cx_ecfp_public_key_t pub;
@@ -76,7 +81,7 @@ cx_ecfp_generate_pair(CX_CURVE_256K1, &pub, &priv, 1);
 explicit_bzero(&priv, sizeof(priv));
 ```
 
-`os_perso_derive_node_bip32` 是 BOLOS 唯一拿私钥的入口，**返回后必须立刻 bzero**，否则栈上残留私钥被下一次调用读到。曲线参数（CX_CURVE_256K1 / Ed25519 等）由 cxlib 提供，自己实现椭圆曲线代码会被审计直接打回。
+`os_perso_derive_node_bip32` 是 BOLOS 唯一拿私钥的入口，**返回后必须立刻 bzero**，否则栈上残留私钥被下一次调用读到。路径数组必须用 `uint32_t`（不要写成 `uint8_t`，否则 `0x80000000` 截断后硬化语义全错）。曲线参数（CX_CURVE_256K1 / Ed25519 等）由 cxlib 提供，自己实现椭圆曲线代码会被审计直接打回。
 
 ### 案例 3：Clear Signing 显示交易意图
 

@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」第三条一口气抛出 WPP、NUMA、SIMD，零基础读者可能跟不住；可各补半句日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 里的 lookahead、cutree、帧线程可各用一句「会多等一会儿再出片」类比，降低术语密度"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「仓库约 800 star」是瞬时数字，易过时；可改为「GitHub 镜像 star 数不高，影响力主要在下游集成」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段可补一句 HEVC 标准定稿年份（约 2013）与 x265 启动时间的对应，便于核对时间线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化直觉（如离线 CRF 常用 18–28、直播常配 VBV），方便读者选型"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例命令依赖 Y4M 输入，可在踩坑或案例旁再强调「需先用 ffmpeg 转成 y4m/raw」以免跟做卡死"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么重要」第三条一口气抛出 WPP、NUMA、SIMD，零基础读者可能跟不住；可各补半句日常桥接",
+        "案例 3 里的 lookahead、cutree、帧线程可各用一句「会多等一会儿再出片」类比，降低术语密度"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「仓库约 800 star」是瞬时数字，易过时；可改为「GitHub 镜像 star 数不高，影响力主要在下游集成」",
+        "历史段可补一句 HEVC 标准定稿年份（约 2013）与 x265 启动时间的对应，便于核对时间线"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用场景可补一条量化直觉（如离线 CRF 常用 18–28、直播常配 VBV），方便读者选型",
+        "案例命令依赖 Y4M 输入，可在踩坑或案例旁再强调「需先用 ffmpeg 转成 y4m/raw」以免跟做卡死"
+      ]
+    }
+  ]
+}

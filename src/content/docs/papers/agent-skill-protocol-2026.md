@@ -52,19 +52,24 @@ title: Agent Skill Protocol — 把能力像协议一样复用
 
 ### 案例 1：把“部署文档”改造成可复用技能
 
-```bash
-# 1. 定义技能接口
-authors=$(ls)
+```json
 {
   "name": "gen-doc",
-  "inputs": ["repo", "target"],
-  "outputs": ["doc_path", "preview_url"],
-  "safety": ["no_secret_leak"]
+  "inputs": {
+    "repo": "string",
+    "target": "string"
+  },
+  "outputs": {
+    "doc_path": "string",
+    "preview_url": "string"
+  },
+  "safety": ["no_secret_leak"],
+  "rollback": "delete_generated_doc"
 }
 ```
 
-- 先约定接口，再让模型只填充 `repo` 和 `target`。
-- 每个仓库只改一个调用参数，调用链和回归都更稳定。
+- 先约定字段类型和失败回滚，再让模型只填充 `repo` 和 `target`。
+- 下游只读取 `doc_path` 和 `preview_url`，不会猜“文档放哪了”。
 
 ### 案例 2：把“依赖修复”拆成检查+执行
 

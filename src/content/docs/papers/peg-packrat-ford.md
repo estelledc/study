@@ -26,7 +26,7 @@ Number <- [0-9]+
 
 不理解 PEG，下面这些事都没法解释：
 
-- 为什么 Lua 的 LPeg、Rust 的 pest、Janet、tree-sitter 的部分语法引擎写起来"像正则但是能写嵌套"
+- 为什么 Lua 的 LPeg、Rust 的 pest、Janet 这类引擎写起来"像正则但是能写嵌套"
 - 为什么很多现代 DSL（Markdown 解析器、配置语言、查询语言）抛弃了 yacc/bison 转用 PEG
 - 为什么 PEG 写算术优先级**不需要**像 CFG 那样附一张"优先级表"
 - 为什么有时一段 PEG 看起来"明明能匹配"却匹配不到——有序选择的左边赢了就不回头
@@ -68,17 +68,19 @@ Keyword    <- 'if' / 'else' / 'while' / 'return'
 
 ### 案例 3：Lua LPeg 把 PEG 当 API
 
+先 `luarocks install lpeg`（独立库，不是 Lua 自带标准库），再：
+
 ```lua
 local lpeg = require "lpeg"
 local digit = lpeg.R("09")
-local number = digit^1                  -- 一个或多个数字
-local space = lpeg.S(" \t")^0           -- 任意空白
-local addop = lpeg.P"+" + lpeg.P"-"     -- 有序选择
-local expr = number * (space * addop * space * number)^0
-print(expr:match("12 + 34 - 5"))         -- 输出匹配位置
+local number = digit^1                  -- ^1 ≈ PEG 的 e+（一个或多个）
+local space = lpeg.S(" \t")^0           -- ^0 ≈ PEG 的 e*（任意个）
+local addop = lpeg.P"+" + lpeg.P"-"     -- + ≈ PEG 的 /（有序选择）
+local expr = number * (space * addop * space * number)^0  -- * ≈ 序列
+print(expr:match("12 + 34 - 5"))         -- 输出匹配结束位置
 ```
 
-`+` 在 LPeg 里就是有序选择，`*` 是序列，`^1` 是 `+`，`^0` 是 `*`。整套 API 就是 PEG 直接搬到运行时——你看到的代码就是文法。
+运算符对照：LPeg 的 `+`/`*`/`^n` 分别对应 PEG 的有序选择、序列、重复。整套 API 就是把文法写进运行时。
 
 ### 案例补充：packrat 的记忆表长什么样
 
@@ -120,9 +122,9 @@ print(expr:match("12 + 34 - 5"))         -- 输出匹配位置
 
 - **2002 年**：Bryan Ford 在 MIT 写硕士论文 *Packrat Parsing: a Practical Linear-Time Algorithm with Backtracking*，发到 ICFP 2002。这是"记忆化让回溯解析变线性"的源头。
 - **2004 年**：Ford 抽出背后的语法形式化，POPL 2004 发表 *Parsing Expression Grammars*。从此 PEG 和 packrat 这对概念被分开看：一个是语法层面，一个是算法层面。
-- **2007 年**：Roberto Ierusalimschy（Lua 作者之一）发布 LPeg，把 PEG 做成 Lua 标准库，工业界第一次大规模用 PEG 替代正则。
+- **2007 年**：Roberto Ierusalimschy（Lua 作者之一）发布 **LPeg**——独立 PEG 库（经 LuaRocks 安装，**不是** Lua 官方 standard libraries），工业界开始用 PEG 替代正则做模式匹配。
 - **2008 年**：Alessandro Warth 在 OMeta 里提出 seed parsing，让 PEG 也能处理（间接）左递归。
-- **2010s**：pest（Rust）、Parsimmon（JS）、parsec/megaparsec（Haskell，思想接近）、tree-sitter（C，混合 GLR + PEG）相继诞生，PEG 进入主流工具链。
+- **2010s**：pest（Rust）、Parsimmon（JS）、parsec/megaparsec（Haskell，思想接近）等 PEG 工具链兴起；tree-sitter（C）主引擎是 GLR 风格，文法 DSL 表面有点像 PEG，不宜直接算作 PEG 实现。
 
 ## 学到什么
 

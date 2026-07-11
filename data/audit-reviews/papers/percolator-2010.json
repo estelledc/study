@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 TiKV API 对零基础偏跳，可补一句「CF=列族，相当于 Bigtable 里那三列」再对照"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TSO 吞吐写成「几百万到上千万」偏高：OSDI 2010 论文称批量预分配后约 >200 万 timestamps/s；「学到什么」里「每秒千万级」同样需改成约数百万级"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「四件加起来才是 Percolator，少任何一件都不成立」过满：Observers 服务增量通知/索引流水线，事务协议本身是 TSO + 三列 + prewrite/commit；应区分「事务内核」与「增量计算配套」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段「高并发但低竞争的 OLTP」可再点明：竞争高时锁等待/abort 会放大，和踩坑第 3 条呼应"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 TiKV API 对零基础偏跳，可补一句「CF=列族，相当于 Bigtable 里那三列」再对照"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "TSO 吞吐写成「几百万到上千万」偏高：OSDI 2010 论文称批量预分配后约 >200 万 timestamps/s；「学到什么」里「每秒千万级」同样需改成约数百万级",
+        "「四件加起来才是 Percolator，少任何一件都不成立」过满：Observers 服务增量通知/索引流水线，事务协议本身是 TSO + 三列 + prewrite/commit；应区分「事务内核」与「增量计算配套」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用段「高并发但低竞争的 OLTP」可再点明：竞争高时锁等待/abort 会放大，和踩坑第 3 条呼应"
+      ]
+    }
+  ]
+}

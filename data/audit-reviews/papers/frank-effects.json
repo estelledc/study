@@ -1,0 +1,113 @@
+{
+  "slug": "frank-effects",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "外卖窗口类比能立住，但 ambient ability / bidirectional 对零基础仍陡；难度标高级可接受，建议在核心要点再各留一句更白话的桥"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Koka / Eff / Idris-Eff 都不让你写 effect 变量』不准确：Koka 签名里常见 effect row；应改成『Frank 用 ambient ability 大幅减少手写 effect 变量，和要显式写 effect 行的系统形成对照』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "OCaml 5『语法骨架就是 Frank 一脉』宜弱化为『思想脉络相近 / 同属 algebraic effect handler 一脉』，避免暗示语法直接继承"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Frank 代码是教学示意，踩坑已提醒勿照搬 OCaml 5；可再标明案例需 frank-lang 参考实现，非工业 runtime"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "外卖窗口类比能立住，但 ambient ability / bidirectional 对零基础仍陡；难度标高级可接受，建议在核心要点再各留一句更白话的桥"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『Koka / Eff / Idris-Eff 都不让你写 effect 变量』不准确：Koka 签名里常见 effect row；应改成『Frank 用 ambient ability 大幅减少手写 effect 变量，和要显式写 effect 行的系统形成对照』",
+        "OCaml 5『语法骨架就是 Frank 一脉』宜弱化为『思想脉络相近 / 同属 algebraic effect handler 一脉』，避免暗示语法直接继承"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "Frank 代码是教学示意，踩坑已提醒勿照搬 OCaml 5；可再标明案例需 frank-lang 参考实现，非工业 runtime"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：修正 Koka/effect 变量过强表述；弱化 OCaml 5 语法继承暗示；ambient ability 补日常桥接。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

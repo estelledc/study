@@ -126,8 +126,8 @@ curl -X GET 'http://localhost:8080/api/projects/1/export?exportType=COCO' \
 
 - **2019 年**：Heartex 团队（Michael Malyuk 等）把内部用的标注工具开源，最初只有文本和图像两种模板。
 - **2020-2021 年**：1.0 发布，XML 模板系统成型，音频 / 视频 / 时间序列陆续进来；GitHub star 数破万。
-- **2022 年**：公司更名 HumanSignal，Enterprise 版加入审核流 / SSO / 审计；开源版保持核心标注能力。
-- **2023-2025 年**：跟 [[mlflow]] / [[wandb]] / [[dvc]] / Hugging Face 集成持续完善，成为 LLM 微调"指令数据 + 偏好数据"标注的常用前端。
+- **2022 年**：Enterprise 版加入审核流 / SSO / 审计；开源 Community 版保持核心标注能力。
+- **2023 年 6 月**：Heartex 更名为 HumanSignal（官方公告 2023-06-20）；之后跟 [[mlflow]] / [[wandb]] / [[dvc]] / Hugging Face 集成持续完善，成为 LLM 微调"指令数据 + 偏好数据"标注的常用前端。
 
 ## 学到什么
 

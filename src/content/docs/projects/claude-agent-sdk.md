@@ -129,6 +129,25 @@ for await (const m of it) {
 
 把上面 researcher / writer 例子真的跑起来——父 agent 会自动调 Task 工具触发 researcher，拿到大纲后再调 writer。整个过程**父 agent 的 context 只看到摘要**，不爆。
 
+### 案例 3：从消息流里挑出最终结果
+
+很多新手第一次用会把每条消息都当成"最终回答"。更稳的做法是：边消费流，边按类型分拣。
+
+```ts
+let finalText = ""
+for await (const msg of query({ prompt: "修复 failing test" })) {
+  if (msg.type === "assistant" && Array.isArray(msg.content)) {
+    finalText += msg.content
+      .filter((part) => part.type === "text")
+      .map((part) => part.text)
+      .join("")
+  }
+}
+console.log(finalText)
+```
+
+**逐部分**：`for await` 保证 agent 一边工作一边被消费；`msg.type` 先区分工具调用、系统事件和 assistant 文本；最后只拼文本块，避免把工具元数据误当成用户可读结果。
+
 ## 踩过的坑
 
 1. **改名陷阱**：原名 Claude Code SDK，2025 年改成 Agent SDK。老教程里的 `@anthropic-ai/claude-code` 已废，import 路径要改 `@anthropic-ai/claude-agent-sdk`。
@@ -140,6 +159,12 @@ for await (const m of it) {
 
 **适用**：CI agent / 多 agent 流水线 / 后端嵌入 / 长任务批跑
 **不适用**：纯 chat、需要 Python、不需要工具调用
+
+## 历史小故事（可跳过）
+
+- **2024 年**：Claude Code 先以 CLI 产品形态让 agent 直接读写仓库，SDK 需求来自"想把同一套能力放进自动化脚本"。
+- **2025 年**：旧名 Claude Code SDK 逐步改成 Agent SDK，包名和文档也切到 `@anthropic-ai/claude-agent-sdk`。
+- **2026 年**：多 agent、hooks、settingSources 这些能力稳定后，它更像"把 Claude Code runtime 当库调用"，而不是普通聊天 API。
 
 ## 学到什么
 
@@ -160,3 +185,7 @@ for await (const m of it) {
 - [[claude-code]] —— IDE 版的 Claude，本 SDK 是它的"出 IDE 版"
 - [[anthropic-cookbook]] —— Anthropic 官方代码示例集
 - [[mcp-ts-sdk]] —— MCP TypeScript SDK，agent 调外部工具的协议层
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

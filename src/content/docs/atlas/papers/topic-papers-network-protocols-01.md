@@ -46,7 +46,7 @@ sidebar:
 | [Karger 1997 一致性哈希 — 加机器不用全员搬家](/study/papers/karger-1997-consistent-hashing/) | `karger-1997-consistent-hashing` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | `krishnamurthy-1999-http11` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) | `logjam-2015` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | `mahajan-2002-bgp-misconfig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Mahajan 2002 — 三周看互联网，近四分之三新通告是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | `mahajan-2002-bgp-misconfig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) | `metcalfe-boggs-1976` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | `mitls-2014-triple-handshake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | `mockapetris-1988-dns` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -56,7 +56,7 @@ sidebar:
 | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | `netkat-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) | `openflow-2008` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | `p4-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) | `padmanabhan-1995-http-latency` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Padmanabhan-Mogul 1995 — 用秒表证明：持久连接 + 流水线能砍掉 HTTP 延迟](/study/papers/padmanabhan-1995-http-latency/) | `padmanabhan-1995-http-latency` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) | `pastry-2001` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) | `quic` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) | `r-bgp-2007` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

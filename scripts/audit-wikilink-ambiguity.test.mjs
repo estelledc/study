@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -7,6 +8,7 @@ import test from 'node:test';
 import {
   auditWikilinks,
   baselineFromAudit,
+  validateWikilinkBaselineTransition,
 } from './audit-wikilink-ambiguity.mjs';
 import { loadNoteRecords } from './lib/note-id.mjs';
 
@@ -108,4 +110,28 @@ test('classification output aggregates source NoteId and target without copying 
     decision: 'triage-required',
   }]);
   assert.doesNotMatch(JSON.stringify(result), /private prose/);
+});
+
+test('baseline transitions bind reviewed provenance to exact baseline bytes', () => {
+  const baseline = {
+    version: 1,
+    source_commit: 'b'.repeat(40),
+    budgets: { blocking: 0, namespaced_missing: 0, unresolved_occurrences: 1, unknown_occurrences: 1 },
+    groups: [{ source_id: 'papers::source', target: 'missing', count: 1, category: 'unknown', owner: 'content-maintainers', decision: 'triage-required' }],
+  };
+  const bytes = Buffer.from(`${JSON.stringify(baseline, null, 2)}\n`);
+  const hash = crypto.createHash('sha256').update(bytes).digest('hex');
+  const transition = {
+    schema_version: 'study-wikilink-baseline-transition-v1',
+    from: { source_commit: 'a'.repeat(40), baseline_sha256: '1'.repeat(64) },
+    to: { source_commit: baseline.source_commit, baseline_sha256: hash, unresolved_occurrences: 1, groups: 1 },
+    added_or_grown_groups: 1,
+    removed_or_reduced_groups: 2,
+    reason: 'An immutable upstream content rewrite changed the historical unresolved set.',
+  };
+  assert.equal(validateWikilinkBaselineTransition(transition, baseline, bytes), true);
+  assert.throws(
+    () => validateWikilinkBaselineTransition({ ...transition, to: { ...transition.to, groups: 2 } }, baseline, bytes),
+    /counts do not match/,
+  );
 });

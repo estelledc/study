@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "专业画桌/发动机/厨房类比清楚；CLI 与 Python 案例都有逐部分解释，零基础可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "KImageShop→Krita、KOffice 发布、2012 Foundation 时间线与公开史料一致；来源指向 KDE/krita 合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "--export / --export-sequence 与 createDocument 片段可跟做；.kra 交付、CMYK 软打样、脚本入口踩坑具体；相对 GIMP/Inkscape/剪辑/3D 边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "专业画桌/发动机/厨房类比清楚；CLI 与 Python 案例都有逐部分解释，零基础可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "KImageShop→Krita、KOffice 发布、2012 Foundation 时间线与公开史料一致；来源指向 KDE/krita 合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "--export / --export-sequence 与 createDocument 片段可跟做；.kra 交付、CMYK 软打样、脚本入口踩坑具体；相对 GIMP/Inkscape/剪辑/3D 边界清楚。"
+      ]
+    }
+  ]
+}

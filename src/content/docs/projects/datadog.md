@@ -18,7 +18,7 @@ Datadog 是一家 2010 年在纽约成立的可观测性 SaaS 公司（NYSE: DDO
 
 不理解 Datadog 的计费和架构，下面这些事都没法解释：
 
-- 为什么 2022 年传出 Coinbase 一年付给 Datadog 6500 万美金，业内当真闻
+- 为什么 2022 年传出 Coinbase 一年付给 Datadog 6500 万美金，业内会当真
 - 为什么很多创业团队明明只有 50 台机器，月账单也能冲到 5 万美金
 - 为什么有了 Prometheus + Grafana 全免费的开源栈，公司还愿意每月付几十万买 SaaS
 - 为什么 2024 年 Datadog 营收 26.8 亿美金、毛利 80%，资本市场把它当软件公司估值天花板
@@ -83,7 +83,7 @@ agent → intake API → Kafka 总线 → 三个独立后端：
 
 2. **日志默认全量 indexed**：写 log 没设保留策略，默认 15 天 indexed 全保留。ingest 便宜（$0.10/GB），indexed 贵 10 倍以上。要在 ingest pipeline 里写 exclusion filter 把 DEBUG 级别扔掉。
 
-3. **APM 和 Infrastructure 分开计价没看清**：1000 host 同时开 Infra + APM，每月多付 31 万。合同期前要算清楚。
+3. **APM 和 Infrastructure 分开计价没看清**：1000 host 同时开 Infra + APM，每月会多付约 3.1-4 万美元。合同期前要算清楚。
 
 4. **agent 升级没 pin 版本**：Datadog Agent 自动升级开着，某次 release 引入内存泄漏，全集群 host RAM 涨 1G。生产建议固定 minor version，逐步灰度。
 

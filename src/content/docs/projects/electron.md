@@ -1,151 +1,180 @@
 ---
-title: "Electron — 跨平台桌面壳"
-schema_version: study-v1
-来源: https://github.com/electron/electron
+title: Electron — 用网页技术做跨平台桌面应用
+来源: 'https://github.com/electron/electron'
 日期: 2026-07-08
 分类: mobile
 难度: 中级
 ---
 
 ## 是什么
-Electron 把 Chromium 与 Node.js 结合，让 web 技术产出桌面应用。。
-类比：像给网站套了一个“可安装”的外壳：同一套前端代码，变成桌面程序。
 
-典型入口通常是把上下游系统分成一个清晰的主链路：
-- 依赖识别或资源发现
-- 核心计算或转发
-- 结果输出与可观测。
+Electron 是一个**把 Chromium 浏览器内核和 Node.js 绑在一起的桌面应用框架**。你用 HTML、CSS、JavaScript 写界面，就能打成 Windows、macOS、Linux 上可安装的程序。
 
+日常类比：像给网站套上一个“可安装的外壳”。外壳负责窗口、菜单、托盘、文件系统；里面还是你熟悉的网页技术。VS Code、Slack、Figma 桌面版都走这条路。
+
+它不是新的前端框架，也不替代 React/Vue。真正多出来的是：主进程能调系统 API，渲染进程跑页面，两者用 IPC 通信。
 
 ## 为什么重要
-- 前端团队可复用浏览器技能做桌面产品。
-- 跨平台交付速度快，生态成熟。
-- 同时拿到 Node API 与系统能力。
-- 适合管理后台、编辑器、媒体工具。
-- 社区插件和文档丰富。
 
-当你只盯最终接口时，你经常会误判是“模型/库本身慢”，实际上瓶颈往往在接入层。
+不理解 Electron，下面这些事很难解释：
+
+- 为什么前端团队能快速做出桌面产品，而不必先学 Swift / WinUI / GTK
+- 为什么桌面 App 会吃掉上百 MB 内存：每个窗口大致带着一份 Chromium
+- 为什么“网页里随便 `require('fs')`”曾经能用，现在却被安全模型拦住
+- 为什么打包、签名、自动更新往往要另配 [[electron-builder]]，而不是 `npm start` 就完事
 
 ## 核心要点
-1) 机制分解：
-- 主进程与渲染进程分离。
-- IPC 在主/渲染间传递安全事件。
-- 与系统原生菜单、快捷键、托盘交互。
-- 打包成安装包并进行自动更新。
 
-2) 典型收益：
-- 可控性提升、吞吐上升、异常定位更快。
+1. **双进程模型**。类比：餐厅后厨和前厅。**主进程**（Main）管窗口生命周期和系统能力；**渲染进程**（Renderer）管页面 UI。两边默认隔离，不能直接互调函数。
 
+2. **IPC + preload 是安全桥**。类比：前厅不能进保险柜，只能通过传菜口点菜。`preload` 脚本在页面加载前注入，用 `contextBridge` 暴露少量白名单 API；页面通过 IPC 向主进程要文件、通知、窗口操作。
+
+3. **打包才是交付**。开发时 `electron .` 只是本地跑；发给用户要 installer、图标、asar、代码签名和更新通道。Electron 负责运行时，发行链路常交给 [[electron-builder]]。
 
 ## 实践案例
-### 案例 1：electron 场景基础验证
-- 场景目标：确认是否符合你的输入规模。
-- 操作顺序：建立最小配置 -> 单条路径运行 -> 观察日志 -> 对比基线。
 
-### 案例 2：electron 的参数对比
-- 调小/调大核心参数，观察吞吐与稳定性。
-- 保留两组可复现指标（至少包含耗时、内存、错误率）。
+### 案例 1：最小窗口
 
-### 案例 3：electron 的上线演练
-- 小流量灰度 -> 监控报警 -> 放量。
+```js
+// main.js
+const { app, BrowserWindow } = require('electron');
 
-- 案例 1：最小 hello app（BrowserWindow + 菜单）。
-- 案例 2：用 preload 暴露受限 API，前后端通过 IPC。
-- 案例 3：文件拖拽上传场景与系统通知联动。
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: require('path').join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+  });
+  win.loadFile('index.html');
+}
 
+app.whenReady().then(createWindow);
+```
+
+**逐部分解释**：
+
+- `BrowserWindow` 创建一个真正的系统窗口，里面嵌 Chromium
+- `contextIsolation: true` + `nodeIntegration: false` 是现代默认安全组合
+- `preload` 指向桥接脚本；页面本身拿不到完整 Node API
+- `app.whenReady()` 等 Electron 初始化完再开窗，避免过早创建失败
+
+### 案例 2：preload 暴露受限 API
+
+```js
+// preload.js
+const { contextBridge, ipcRenderer } = require('electron');
+contextBridge.exposeInMainWorld('desktop', {
+  openFile: () => ipcRenderer.invoke('dialog:openFile'),
+});
+
+// main.js
+const { ipcMain, dialog } = require('electron');
+ipcMain.handle('dialog:openFile', async () => {
+  const { canceled, filePaths } = await dialog.showOpenDialog({
+    properties: ['openFile'],
+  });
+  return canceled ? null : filePaths[0];
+});
+```
+
+```html
+<!-- index.html 里的渲染脚本 -->
+<button id="pick">选择文件</button>
+<script>
+  document.getElementById('pick').onclick = async () => {
+    const path = await window.desktop.openFile();
+    console.log(path);
+  };
+</script>
+```
+
+**逐部分解释**：
+
+- `contextBridge.exposeInMainWorld` 只放出 `openFile`，不是整个 Node
+- `ipcRenderer.invoke` / `ipcMain.handle` 是请求-响应式 IPC
+- 真正弹系统对话框的是主进程；渲染进程只拿到路径字符串
+- 这比打开 `nodeIntegration` 安全得多：页面 XSS 也摸不到任意文件 API
+
+### 案例 3：系统通知与托盘入口
+
+```js
+const { Tray, Menu, Notification, nativeImage } = require('electron');
+
+app.whenReady().then(() => {
+  const tray = new Tray(nativeImage.createEmpty());
+  tray.setContextMenu(Menu.buildFromTemplate([
+    { label: '显示窗口', click: () => createWindow() },
+    { role: 'quit' },
+  ]));
+  new Notification({ title: '任务完成', body: '导出已写到桌面' }).show();
+});
+```
+
+**逐部分解释**：
+
+- `Tray` 把应用挂到菜单栏/托盘，适合常驻工具
+- `Menu.buildFromTemplate` 用声明式结构生成原生菜单
+- `Notification` 走操作系统通知中心，不是网页 `Notification` 的弱化版
+- 真实项目还要处理图标资源、macOS 通知权限和窗口隐藏策略
 
 ## 踩过的坑
-1. 主进程权限边界不清，安全风险。
-1. 渲染层做重计算，导致内存与电量抬高。
-1. IPC 设计不当，事件风暴。
-1. 更新链路不稳定，签名和自动更新策略未校验。
 
-## 适用 vs 不适用
+1. **打开 `nodeIntegration` 图省事**：渲染进程 XSS 一次就能读本地文件、起子进程。
+2. **在渲染进程做重计算**：大 JSON 解析、视频转码会卡住 UI 并抬高内存；应放主进程、Worker 或本地服务。
+3. **IPC 频道命名混乱、无鉴权**：任意页面消息都当可信输入，容易被事件风暴或伪造调用打穿。
+4. **只测 `electron .` 就发版**：安装包、asar 路径、签名和自动更新与开发模式行为不同，必须测打包产物。
+
+## 适用 vs 不适用场景
+
 **适用**：
-- 前端团队需要快速产出桌面 MVP。
-- 多平台一次开发。
-- 应用以 Web 技术为主。
-- 对原生体验要求中等。
+
+- 前端团队要快速交付跨平台桌面 MVP 或内部工具
+- UI 以 Web 技术为主，需要中等程度的文件系统、通知、菜单能力
+- 产品形态接近编辑器、管理后台、IM、媒体工具（VS Code 类）
 
 **不适用**：
-- 极限性能或低内存约束。
-- 必须完全原生系统体验。
-- 嵌入式设备。
-- 团队极少前端经验。
 
+- 极限性能、严格低内存（每个窗口 bundling Chromium 成本高）
+- 必须像素级原生控件与系统深度集成
+- 嵌入式、无显示器设备，或团队几乎没有 Web 经验却强行上 Electron
 
 ## 历史小故事（可跳过）
-关于 electron，更稳妥的使用方式通常经历了：
-1. 小规模验证：先把 API 调通。
-2. 配置收敛：把关键参数固定为一套默认值。
-3. 指标加固：将耗时、错误、资源放入固定大盘。
-4. 扩容验证：再验证不同负载窗口。
-在社区讨论中，大家更关注“问题可复现性”与“回归成本”。
 
+- **2013 年**：GitHub 做 Atom 编辑器时抽出 **Atom Shell**，把 Chromium + Node 绑成桌面壳。
+- **2015 年**：项目改名 **Electron**，社区开始用它做 Slack 等商业客户端。
+- **之后几年**：VS Code 等明星应用把它推成事实标准；安全默认项逐步收紧（contextIsolation 等）。
+- **同期对照**：[[tauri]]、[[neutralinojs]]、[[nodegui]] 走更轻的 WebView/原生路线，和 Electron 形成体积与生态权衡。
 
 ## 学到什么
-1. 复杂系统先找一个稳定基线，再谈优化。
-2. 参数不是“越大越好”，目标应是吞吐与稳定平衡。
-3. 可观测指标比口头经验更有说服力。
-4. 小步迭代能显著降低回归风险。
 
-可以自测的三问：
-- 现在的瓶颈到底在 CPU、IO 还是内存？
-- 参数改动后是否会引入长尾延迟？
-- 回归场景是否覆盖了异常输入？
-
+1. **Electron 的本质是“浏览器 + 系统桥”**，不是又一个 UI 库。
+2. **安全边界在主进程 / preload / 渲染进程之间**，默认应最小暴露。
+3. **开发能跑 ≠ 可以发布**：打包、签名、更新是另一条产品能力链。
+4. **选型要算内存与包体账**：跨平台速度换来的是 Chromium 运行时成本。
 
 ## 延伸阅读
-- 官方仓库：https://github.com/electron/electron
-- 官方文档和示例：按版本、平台分别查。
-- 相关实现对比文章与 issue 讨论可帮助验证边界条件。
-- [[electron]] —— 与本主题近邻的可读入门。
 
+- 官方仓库：[electron/electron](https://github.com/electron/electron)
+- 官方文档：[Electron Documentation](https://www.electronjs.org/docs/latest)
+- 安全清单：[Security, Native Capabilities, and Your Users](https://www.electronjs.org/docs/latest/tutorial/security)
+- [[electron-builder]] —— 打包、签名与自动更新的常见配套
+- [[tauri]] —— 更轻量的 Rust + 系统 WebView 对照路线
+- [[neutralinojs]] —— 极简桌面壳，帮助理解 Electron 体积从何而来
 
 ## 关联
-- [[project-architecture]] —— 任何系统都离不开边界定义。
-- [[性能优化]] —— 调优本质是找约束。
-- [[可观测性]] —— 没有监控不可能验证优化有效。
-- [[平台工程]] —— 在上线前先把部署链打通。
-- [[边界与隔离]] —— 风险隔离与稳定性同等重要。
 
+- [[electron-builder]] —— Electron 应用的打包发布事实标准之一
+- [[node-js]] —— 主进程与 preload 依赖的 Node 运行时
+- [[tauri]] —— 同类桌面壳，强调更小包体与 Rust 后端
+- [[neutralinojs]] —— 轻量对照，看清 Chromium 捆绑的成本
+- [[nodegui]] —— 用 Node 调 Qt 原生控件的另一条路
+- [[capacitor]] —— 移动端 WebView 壳，和桌面 Electron 问题同构但平台不同
+- [[vite]] —— 许多 Electron 项目用 Vite 构建 renderer 再交给主进程加载
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- 复盘要点 1: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 2: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 3: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 4: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 5: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 6: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 7: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 8: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 9: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 10: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 11: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 12: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 13: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 14: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 15: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 16: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 17: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 18: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 19: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 20: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 21: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 22: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 23: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 24: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 25: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 26: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 27: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 28: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 29: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 30: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 31: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 32: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 33: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 34: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。
-- 复盘要点 35: 将 electron 的关键机制落地到你的工作流中，确认一次输入、一次输出、一次验证。

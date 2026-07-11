@@ -1,0 +1,138 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "发烧音响 vs 一体机类比贴合单 JVM vs 多进程"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Wicket/SFU/OpenJPA 有对照桥接；与 BBB 对照帮助定位"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "安装、Moodle、REST 三案例可读；案例 2 偏叙述，可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 apache/openmeetings、2007 Wagner、2011 孵化、2012 TLP、Apache-2.0 正确；~0.7k stars 与现网约 683 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「OpenJPA（ORM）+ Hibernate」不准确：当前主依赖是 Apache OpenJPA，不应并列写成双 ORM"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kurento/WebRTC、Wicket 服务端组件路线与项目史一致；媒体栈叙述无歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 7.2.0 + bin/red5.sh 已过时：dlcdn 当前是 9.0.0，官方安装指引为 bin/startup.sh——按原文 wget 会 404"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（LibreOffice 版本、Kurento 停滞、STUN/TURN、OpenJPA 冷门、Wicket session）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：中小企业 Java 自托管 vs BBB 教育/OME 直播/千人并发"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "发烧音响 vs 一体机类比贴合单 JVM vs 多进程",
+        "Wicket/SFU/OpenJPA 有对照桥接；与 BBB 对照帮助定位",
+        "安装、Moodle、REST 三案例可读；案例 2 偏叙述，可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 apache/openmeetings、2007 Wagner、2011 孵化、2012 TLP、Apache-2.0 正确；~0.7k stars 与现网约 683 一致",
+        "「OpenJPA（ORM）+ Hibernate」不准确：当前主依赖是 Apache OpenJPA，不应并列写成双 ORM",
+        "Kurento/WebRTC、Wicket 服务端组件路线与项目史一致；媒体栈叙述无歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 7.2.0 + bin/red5.sh 已过时：dlcdn 当前是 9.0.0，官方安装指引为 bin/startup.sh——按原文 wget 会 404",
+        "踩坑（LibreOffice 版本、Kurento 停滞、STUN/TURN、OpenJPA 冷门、Wicket session）具体可操作",
+        "适用/不适用边界清楚：中小企业 Java 自托管 vs BBB 教育/OME 直播/千人并发"
+      ]
+    }
+  ],
+  "slug": "openmeetings",
+  "area": "projects",
+  "status": "refined",
+  "lines": 169,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例"
+    ],
+    "unresolved_hints": [],
+    "summary": "去掉误写的 Hibernate；安装案例改为 9.0.0 + bin/startup.sh。"
+  },
+  "sections_modified": [
+    "## 是什么",
+    "## 实践案例"
+  ],
+  "unresolved_hints": []
+}

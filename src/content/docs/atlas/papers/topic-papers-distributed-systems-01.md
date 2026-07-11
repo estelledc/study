@@ -16,6 +16,7 @@ sidebar:
 | [AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图](/study/papers/afd-disagg-moe/) | `afd-disagg-moe` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | `akamai-2002` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) | `akamai-2010` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Amber — 把用户数据从 Web 应用里拆出来](/study/papers/amber-sigmod-2014/) | `amber-sigmod-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | `apollo-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | `azure-storage-2011` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | `bayou-1995` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -72,6 +73,7 @@ sidebar:
 | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | `memcached-fb-2013` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | `mencius-2008` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mesos — 让多种计算框架共用一套集群](/study/papers/mesos/) | `mesos` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) | `mesos-2011` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) | `mills-ntp-1991` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) | `millwheel-2013` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) | `naiad-2013` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -97,7 +99,6 @@ sidebar:
 | [Ray 2018 — 把任务和演员放进同一个分布式舞台](/study/papers/ray-2018/) | `ray-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RTP-LLM — 把大模型推理服务做成分阶段工厂](/study/papers/rtp-llm-alibaba/) | `rtp-llm-alibaba` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | `saga-1987` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [d-HNSW：面向 RDMA 反向索引内存的高性能向量搜索](/study/papers/scaling-hnsws-antirez/) | `scaling-hnsws-antirez` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | `sequential-consistency-1979` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) | `sinfonia-2007` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | `skeen-3pc-1981` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -112,6 +113,5 @@ sidebar:
 | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) | `tla-yu-tlc-1999` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | `trill-2014` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) | `vogels-eventual-2009` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) | `vr-1988` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 
 [下一组](/study/atlas/papers/topic-papers-distributed-systems-02/)

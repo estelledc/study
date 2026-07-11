@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 缺少像案例 1 那样的逐行/逐步解释，零基础跟不住 Filter 组合与 WebSocket upgrade"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点三条缺少各自的短类比，Filter/Extract/Rejection 术语需要更多日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「不写宏」与 path! 宏矛盾，零基础读者会困惑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「不写宏、不写字符串路径」略歪曲：path! 本身是宏，宜改成「路由用类型安全组合而非字符串路由表」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 WebSocket 的 split/forward 通常需 futures_util，可补一句依赖说明以免跟做失败"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一句量级边界（如「单服务几十个路由」）让选型更可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 缺少像案例 1 那样的逐行/逐步解释，零基础跟不住 Filter 组合与 WebSocket upgrade",
+        "核心要点三条缺少各自的短类比，Filter/Extract/Rejection 术语需要更多日常桥接",
+        "「不写宏」与 path! 宏矛盾，零基础读者会困惑"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「不写宏、不写字符串路径」略歪曲：path! 本身是宏，宜改成「路由用类型安全组合而非字符串路由表」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 WebSocket 的 split/forward 通常需 futures_util，可补一句依赖说明以免跟做失败",
+        "适用场景可补一句量级边界（如「单服务几十个路由」）让选型更可操作"
+      ]
+    }
+  ]
+}

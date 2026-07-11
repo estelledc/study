@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 解释偏短，建议各补 2-3 句逐步说明 safeParse 分支与 tRPC input 如何接到类型"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 2 称「没有官方 valibot-to-jsonschema」不实：官方已有 @valibot/to-json-schema（2025-03 起 v1）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 4 称 drizzle-valibot「只有社区包」不实：drizzle 文档有官方 drizzle-valibot 插件"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每周 600k 下载」相对 2026 年 npm 量级已过时，应改为当前量级或标明为早期里程碑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 2 应改为：@valibot/to-json-schema 已官方可用，但覆盖面/与 OpenAPI、AI SDK 默认 Zod 路径仍有摩擦"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 4 应改为：drizzle-valibot 已有官方插件，真正 inertia 在 next-auth/clerk 示例与存量 Zod schema"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景里「差几 KB」可保留，但 Worker 案例中 ~12 KB 对比建议与当前 Zod/valibot gzip 口径对齐"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 解释偏短，建议各补 2-3 句逐步说明 safeParse 分支与 tRPC input 如何接到类型"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 称「没有官方 valibot-to-jsonschema」不实：官方已有 @valibot/to-json-schema（2025-03 起 v1）",
+        "踩坑 4 称 drizzle-valibot「只有社区包」不实：drizzle 文档有官方 drizzle-valibot 插件",
+        "「每周 600k 下载」相对 2026 年 npm 量级已过时，应改为当前量级或标明为早期里程碑"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 应改为：@valibot/to-json-schema 已官方可用，但覆盖面/与 OpenAPI、AI SDK 默认 Zod 路径仍有摩擦",
+        "踩坑 4 应改为：drizzle-valibot 已有官方插件，真正 inertia 在 next-auth/clerk 示例与存量 Zod schema",
+        "适用场景里「差几 KB」可保留，但 Worker 案例中 ~12 KB 对比建议与当前 Zod/valibot gzip 口径对齐"
+      ]
+    }
+  ]
+}

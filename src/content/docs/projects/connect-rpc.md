@@ -150,3 +150,7 @@ pb.RegisterGreeterServer(grpcServer, svc)            // 老 grpc 客户端
 - [[fastify]] —— Node 的 schema-first 框架，对比可见 schema 单源思想在 REST 阵营也有
 - [[axum]] —— Rust 的 web 框架，思路是 handler-first 而非 schema-first，对比可见两派工程哲学
 - [[trpc]] —— TypeScript 的"端到端类型推导"RPC，思路最接近 Connect 但限定 TS 全栈
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

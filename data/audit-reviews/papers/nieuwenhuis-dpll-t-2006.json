@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 步骤 2 写「不是某个布尔文字」易卡住零基础：先说明「theory 在内部更新 y 的下界，再在后面发现与 c 冲突」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点术语密度高，UnitPropagate/Backjump 首次出现可各加半句人话桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写 CAV 2003，延伸阅读写 CAV 2004——短版 DPLL(T) 是 CAV 2003，应统一为 2003"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Rust borrow checker / Polonius = DPLL(T) 风格」过满：Polonius 是 datalog/事实推导，宜改为「约束求解气质相近，并非标准 DPLL(T) 实现」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 手算路径对工程师很有用；源码路径作示意即可，不必要求读者打开编译"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 步骤 2 写「不是某个布尔文字」易卡住零基础：先说明「theory 在内部更新 y 的下界，再在后面发现与 c 冲突」",
+        "核心要点术语密度高，UnitPropagate/Backjump 首次出现可各加半句人话桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史写 CAV 2003，延伸阅读写 CAV 2004——短版 DPLL(T) 是 CAV 2003，应统一为 2003",
+        "「Rust borrow checker / Polonius = DPLL(T) 风格」过满：Polonius 是 datalog/事实推导，宜改为「约束求解气质相近，并非标准 DPLL(T) 实现」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 手算路径对工程师很有用；源码路径作示意即可，不必要求读者打开编译"
+      ]
+    }
+  ]
+}

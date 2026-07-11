@@ -52,9 +52,9 @@ lazydocker 的设计可以拆成 **4 件事**：
 
 ```bash
 lazydocker
-# 默认进 Containers 面板，光标移到可疑容器
-# 右侧自动出 CPU / Memory 实时曲线
-# 按 m 切到 stats 标签页看完整指标
+# 默认进 Containers 面板（也可按 3 聚焦），光标移到可疑容器
+# 右侧主面板自动刷出该容器的日志 / 资源曲线等
+# 用 [ / ] 在 logs / stats / config 等标签页间切换
 # 看清是哪个容器涨内存，按 r 重启
 ```
 
@@ -65,9 +65,9 @@ lazydocker
 ```bash
 cd ~/myproject  # 含 docker-compose.yml
 lazydocker
-# 自动出现 Services 面板（按 5 切过去）
+# 自动出现 Services 面板（按 2 聚焦；1=Projects 3=Containers 4=Images 5=Volumes 6=Networks）
 # 光标停在 'web' 服务上，按 r 重启
-# 切到 logs 标签页（按 [ / ] 切 tab）看新日志
+# 用 [ / ] 切到 logs 标签页看新日志
 ```
 
 不再需要敲 `docker compose restart web && docker compose logs -f web` 两条命令。

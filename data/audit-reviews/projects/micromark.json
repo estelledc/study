@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "收银员扫条码类比好；案例 1 有逐步解释，案例 2 内部 parse API 缺逐步拆解，零基础会懵。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「适用」段末尾误贴了案例 3 的句子，读起来像串段。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Titus Wormer / 2020 / CommonMark 合规主线正确；「remark-gfm 再没碰 AST」略满（上层仍有 mdast 变换），教学简化可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/3 的 micromark + stream API 可用；案例 2 依赖 micromark/lib/parse 内部路径，版本间易变，应标明「内部 API / 仅演示事件流」或改成更稳的公开面。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段重复粘贴了 stream 那句，应删掉以免误导边界说明。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "收银员扫条码类比好；案例 1 有逐步解释，案例 2 内部 parse API 缺逐步拆解，零基础会懵。",
+        "「适用」段末尾误贴了案例 3 的句子，读起来像串段。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Titus Wormer / 2020 / CommonMark 合规主线正确；「remark-gfm 再没碰 AST」略满（上层仍有 mdast 变换），教学简化可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/3 的 micromark + stream API 可用；案例 2 依赖 micromark/lib/parse 内部路径，版本间易变，应标明「内部 API / 仅演示事件流」或改成更稳的公开面。",
+        "适用段重复粘贴了 stream 那句，应删掉以免误导边界说明。"
+      ]
+    }
+  ]
+}

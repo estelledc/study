@@ -29,8 +29,8 @@ final = Counter(extract_answer(a) for a in answers).most_common(1)[0][0]
 
 ## 为什么重要
 
-- **inference-time compute 的开山实证**：不改模型、不训练、只多花推理算力，就能拿大幅提升。直接催生了后来的 Tree-of-Thoughts、OpenAI o1 这类"花更多算力换更好答案"的范式
-- **几乎所有现代 LLM 评测都受影响**：majority@k、pass@k 指标里的"多采样"思路直接来自这篇
+- **inference-time compute 的早期硬实证**：不改模型、不训练、只多花推理算力，就能拿大幅提升。直接催生了后来的 Tree-of-Thoughts、OpenAI o1 这类"花更多算力换更好答案"的范式
+- **把多数票聚合推到推理评测主流**：代码生成里的 pass@k（Codex/HumanEval，2021）更早，但 SC 让"多样本 + 多数票"成为算术/常识推理评测的标配
 - **简单到不可思议**：一行 `Counter().most_common(1)` 就是核心逻辑，但作者用充分实验证明了它在多个模型、多个任务上都稳赢
 
 ## 核心要点
@@ -41,13 +41,13 @@ final = Counter(extract_answer(a) for a in answers).most_common(1)[0][0]
 2. **正确路径彼此一致，错误路径彼此分散**——算错的人 A 错成 -3、B 错成 27、C 错成 16，但算对的全是 9。一致即正确
 3. **temperature 采样制造多样性**——把模型想象成会从多个候选里抽词的人，每次抽到的"思路"不同，但只要它真"会做"这题，多数路径会回到同一答案
 
-把这三条合起来，就是"采样 N 条 + 看哪个答案出现最多次"。
+把这三条合起来，就是"采样 N 条 + 聚合答案"。论文正式写法是对推理路径做 marginalization（可按路径概率加权）；实践里最常用、也最好复现的是**无权重多数票**（majority vote）。
 
 实现细节也极简：
 
 - 采 N=40 条（典型值），temperature 0.5-0.7
 - 用正则或简单解析从每条 CoT 里抽出最终答案
-- `numpy.bincount` 或 `Counter` 投票
+- `numpy.bincount` 或 `Counter` 投票（多数票特例）
 
 **没有训练、没有 verifier、没有架构改动**。
 
@@ -74,9 +74,10 @@ def extract_answer(text):
     m = re.search(r"答案是\s*([\-\d.]+)", text)
     return m.group(1) if m else None
 
-prompt = "..."  # CoT 示例 + 题目
+prompt = "..."  # CoT 示例 + 题目；英文题把正则改成 The answer is
 answers = []
 for _ in range(40):
+    # 旧 SDK 示意；新版用 openai.OpenAI().chat.completions.create(...)
     r = openai.ChatCompletion.create(
         model="gpt-4", messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
@@ -149,3 +150,7 @@ A: "blue"  / "red" / "green" / "purple" / "yellow" ...
 - [[tree-of-thoughts-2023]] —— 后续工作，把"投票"换成"带评估的树搜索"
 - [[toolformer]] —— 另一种 CoT 增强方向：让模型调外部工具
 - [[gpt-3]] —— SC 的实验主要在 GPT-3/PaLM 等大模型上做
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

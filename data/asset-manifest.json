@@ -3,8 +3,8 @@
   "summary": {
     "assets": 432,
     "bytes": 37527185,
-    "referenced": 3,
-    "legacy_unreferenced": 429,
+    "referenced": 0,
+    "legacy_unreferenced": 432,
     "duplicate_hash_groups": 5
   },
   "assets": [
@@ -2949,9 +2949,7 @@
       "width": 1600,
       "height": 1100,
       "format": "webp",
-      "referenced_by": [
-        "src/content/docs/projects/lexical.md:30"
-      ]
+      "referenced_by": []
     },
     {
       "path": "public/projects/librechat/01-architecture.webp",
@@ -3005,9 +3003,7 @@
       "width": 1600,
       "height": 900,
       "format": "webp",
-      "referenced_by": [
-        "src/content/docs/projects/lottie.md:62"
-      ]
+      "referenced_by": []
     },
     {
       "path": "public/projects/lucia/01-evolution.webp",
@@ -3286,9 +3282,7 @@
       "width": 1600,
       "height": 1100,
       "format": "webp",
-      "referenced_by": [
-        "src/content/docs/projects/plane.md:78"
-      ]
+      "referenced_by": []
     },
     {
       "path": "public/projects/playwright/01-architecture.webp",

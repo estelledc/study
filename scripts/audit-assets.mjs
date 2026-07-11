@@ -12,6 +12,7 @@ import { DATA_DIR, DOCS_DIR, ROOT } from './lib/paths.mjs';
 const IMAGE_EXTENSIONS = new Set(['.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg']);
 const MANIFEST_PATH = path.join(DATA_DIR, 'asset-manifest.json');
 const ORPHAN_BASELINE_PATH = path.join(DATA_DIR, 'asset-orphan-baseline.json');
+const ORPHAN_ALLOWLIST_PATH = path.join(DATA_DIR, 'asset-orphan-allowlist.json');
 
 function sha256(file) {
   return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
@@ -126,6 +127,49 @@ function canonical(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
+export function evaluateOrphanLifecycle(orphanPaths, baselinePaths = [], allowlistEntries = []) {
+  const issues = [];
+  const orphanSet = new Set(orphanPaths);
+  const baselineSet = new Set(baselinePaths);
+  const allowedSet = new Set();
+
+  for (const entry of allowlistEntries) {
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+      issues.push('asset orphan allowlist contains a non-object entry');
+      continue;
+    }
+    const assetPath = String(entry.path || '');
+    if (!/^public\/[A-Za-z0-9._/-]+$/.test(assetPath)) {
+      issues.push(`asset orphan allowlist has invalid path: ${assetPath || '<empty>'}`);
+      continue;
+    }
+    if (allowedSet.has(assetPath)) {
+      issues.push(`asset orphan allowlist has duplicate path: ${assetPath}`);
+      continue;
+    }
+    if (typeof entry.reason !== 'string' || entry.reason.trim().length < 20) {
+      issues.push(`asset orphan allowlist needs a specific reason: ${assetPath}`);
+    }
+    if (!/^[0-9a-f]{40}$/i.test(String(entry.source_commit || ''))) {
+      issues.push(`asset orphan allowlist needs a full source commit: ${assetPath}`);
+    }
+    if (entry.disposition !== 'retain-pending-dedicated-deletion') {
+      issues.push(`asset orphan allowlist has unsupported disposition: ${assetPath}`);
+    }
+    if (!orphanSet.has(assetPath)) {
+      issues.push(`asset orphan allowlist entry is stale or missing: ${assetPath}`);
+      continue;
+    }
+    allowedSet.add(assetPath);
+  }
+
+  return {
+    issues,
+    allowedOrphans: [...allowedSet].sort(),
+    newOrphans: orphanPaths.filter((asset) => !baselineSet.has(asset) && !allowedSet.has(asset)),
+  };
+}
+
 async function main() {
   const write = process.argv.includes('--write');
   const refreshBaseline = process.argv.includes('--refresh-baseline');
@@ -134,8 +178,26 @@ async function main() {
   const baseline = fs.existsSync(ORPHAN_BASELINE_PATH)
     ? JSON.parse(fs.readFileSync(ORPHAN_BASELINE_PATH, 'utf8'))
     : { paths: [] };
-  const baselinePaths = new Set(baseline.paths || []);
-  const newOrphans = report.orphanPaths.filter((asset) => !baselinePaths.has(asset));
+  let allowlist = { entries: [] };
+  const allowlistIssues = [];
+  try {
+    if (fs.existsSync(ORPHAN_ALLOWLIST_PATH)) {
+      allowlist = JSON.parse(fs.readFileSync(ORPHAN_ALLOWLIST_PATH, 'utf8'));
+      if (allowlist.schema_version !== '1.0' || !Array.isArray(allowlist.entries)) {
+        allowlistIssues.push('data/asset-orphan-allowlist.json has an invalid schema');
+        allowlist = { entries: [] };
+      }
+    }
+  } catch {
+    allowlistIssues.push('data/asset-orphan-allowlist.json is invalid JSON');
+    allowlist = { entries: [] };
+  }
+  const lifecycle = evaluateOrphanLifecycle(
+    report.orphanPaths,
+    baseline.paths || [],
+    allowlist.entries || [],
+  );
+  const newOrphans = lifecycle.newOrphans;
 
   if (write) {
     fs.writeFileSync(MANIFEST_PATH, canonical(report.manifest));
@@ -143,18 +205,23 @@ async function main() {
       fs.writeFileSync(ORPHAN_BASELINE_PATH, canonical({
         schema_version: '1.0',
         policy: 'legacy-report-only; fail newly unreferenced assets',
-        paths: report.orphanPaths,
+        paths: report.orphanPaths.filter((asset) => !lifecycle.allowedOrphans.includes(asset)),
       }));
     }
   }
 
   const staleManifest = fs.existsSync(MANIFEST_PATH)
     && fs.readFileSync(MANIFEST_PATH, 'utf8') !== canonical(report.manifest);
-  const failures = [...report.issues];
+  const failures = [...report.issues, ...allowlistIssues, ...lifecycle.issues];
   if (!write && staleManifest) failures.push('data/asset-manifest.json is stale; run audit-assets --write after reviewing changes');
   if (!refreshBaseline && newOrphans.length) failures.push(`${newOrphans.length} newly unreferenced asset(s): ${newOrphans.slice(0, 5).join(', ')}`);
 
-  const result = { ...report.manifest.summary, issues: report.issues, new_orphans: newOrphans };
+  const result = {
+    ...report.manifest.summary,
+    issues: [...report.issues, ...allowlistIssues, ...lifecycle.issues],
+    allowed_orphans: lifecycle.allowedOrphans,
+    new_orphans: newOrphans,
+  };
   if (json) console.log(JSON.stringify(result));
   else console.log(`[audit:assets] assets=${result.assets} referenced=${result.referenced} legacy_unreferenced=${result.legacy_unreferenced} new_unreferenced=${newOrphans.length}`);
   if (failures.length) {

@@ -55,9 +55,11 @@ fish：
 
 ```fish
 set -gx PATH $HOME/bin $PATH
+# 现代写法更推荐：
+# fish_add_path $HOME/bin
 ```
 
-**逐字解释**：`set` 是赋值命令，`-g` 全局，`-x` 导出（export），多个值**用空格分隔不用拼字符串**——fish 的列表是真列表，不是空格分割的字符串。
+**逐字解释**：`set` 是赋值命令，`-g` 全局，`-x` 导出（export），多个值**用空格分隔不用拼字符串**——fish 的列表是真列表，不是空格分割的字符串。日常加路径优先用 `fish_add_path`，少踩 universal / 重复条目的坑。
 
 ### 案例 2：if / function 用 end 收尾
 
@@ -127,7 +129,7 @@ abbr -a gco git checkout
 ## 学到什么
 
 1. **shell 是工具不是教条**——可以为了"日常好用"放弃 POSIX 兼容
-2. **默认值定义体验**——同样 26k star 的项目，差别常常不在功能数而在"开箱第一分钟"
+2. **默认值定义体验**——同样是高星开源项目，差别常常不在功能数而在"开箱第一分钟"
 3. **"不兼容"也是一种选择**——重写比修补更便宜的时候，敢于断舍离
 
 ## 延伸阅读
@@ -139,10 +141,10 @@ abbr -a gco git checkout
 
 ## 关联
 
-- [[warp]] —— warp 是 Rust 写的现代终端，与 fish 的"现代化交互"思路同向
+- [[wezterm]] —— Rust 写的现代终端，和 fish 常一起组成「现代交互」日常组合
 - [[starship]] —— 跨 shell 通用 prompt，常和 fish 配对
 - [[zsh]] —— fish 的另一个选择，POSIX 兼容但默认体验不如 fish
-- [[neovim]] —— 同属"重写经典工具"哲学
+- [[nushell]] —— 另一条「重想 shell」路线，偏结构化数据管道
 
 ## 反向链接
 

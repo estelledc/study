@@ -1,0 +1,89 @@
+{
+  "slug": "deck-gl",
+  "area": "projects",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.67,
+  "reject_count": 2,
+  "needs_refine_count": 1,
+  "pass_count": 0,
+  "lines": 181,
+  "l1_pass": true,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 全文",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    "原文把 deck.gl 写成通用流程方法，缺少图层、accessor、底图集成和 WebGL/WebGPU 等核心概念。",
+    "延伸阅读使用 example.com 且正文没有体现 GitHub README 所述的大规模数据可视化项目事实。",
+    "实践案例不是 deck.gl 可跟做代码，踩坑也没有经纬度顺序、数据更新、底图库分工等项目特有问题。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 2
+      },
+      "average": 2,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "把仓库分拣类比替换为地图图层类比，首次解释 Layer、accessor、picking。",
+        "案例需要围绕点图层、底图叠加和交互更新逐步展开。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 2,
+        "no_distortion": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 全文",
+      "fix_hints": [
+        "正文几乎没有描述 deck.gl 的真实项目定位：GPU-powered large-scale data visualization。",
+        "删除 example.com 伪引用，补充官方文档、GitHub 仓库、底图集成文档。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "用 ScatterplotLayer、DeckGL + Map、updateTriggers 等真实最小例子替换通用断言。",
+        "补充经纬度顺序、React 重建大数组、底图分工和 WebGL 环境限制。"
+      ]
+    }
+  ],
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full-note"
+    ],
+    "final_lines": 181,
+    "l1_pass": true
+  }
+}

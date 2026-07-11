@@ -19,11 +19,11 @@ C-Store 2005 年那篇论文里讲的列存 + 多 projection + 编码压缩 + WO
 不理解 Vertica 这篇论文，下面这些事都没法解释：
 
 - 为什么学术原型（C-Store）和工业产品（Vertica）核心机制名字一样、行为细节差很远
-- 为什么后来的 Snowflake / Redshift / ClickHouse 都把"自动选物理布局"做成产品卖点
-- 为什么列存数据库都把"加载通路"和"查询通路"做成两条不同代码——WOS/ROS 双层是这个分裂的源头
-- 为什么 K-safety 这个名字直到现在还在 Vertica 文档里出现——它绑死了副本设计
-- 为什么"工业级列存"不是单点优化能解决的，而是 projection / encoding / 副本 / tuple mover 多层联动
-- 为什么读 Vertica 论文比读 C-Store 论文更能学到"产品化思维"——前者被市场打磨过
+- 为什么后来云数仓（Snowflake / Redshift）与部分列存产品沿"自动/半自动物理布局"路线演进
+- 为什么列存常把"加载通路"和"查询通路"拆成两条代码——WOS/ROS 双层是源头之一
+- 为什么 K-safety 这个名字仍出现在 Vertica 文档里——它绑死了副本设计
+- 为什么"工业级列存"要靠 projection / encoding / 副本 / tuple mover 多层联动，不是单点优化
+- 为什么读 Vertica 比读 C-Store 更能学到"产品化思维"——前者被市场打磨过
 
 ## 核心要点
 
@@ -31,13 +31,11 @@ Vertica 在 C-Store 基础上做了 **三层关键改造**：
 
 1. **物理设计自动化**：C-Store 论文假设 DBA 自己挑 sort key、自己定 projection。现实里没人会做。Vertica 加了 **Database Designer**——给它工作负载样本，它输出一组 projection 推荐。类比：买家具时给设计师户型图和生活习惯，设计师返一张布局图，你不用懂家具学。
 
-2. **WOS/ROS + tuple mover 落地为真实存储引擎**：WOS（Write Optimized Store）是内存里的写入缓冲，ROS（Read Optimized Store）是磁盘上的列存按段排序。tuple mover 后台把 WOS 攒够的批量数据 sort + encode 后落到 ROS。bulk load 走直连 ROS 通路绕过 WOS 抢资源。
+2. **写入先收件、读盘再归档**：类比邮局——白天信件先扔进**收件箱**（WOS，Write Optimized Store，内存写入缓冲），夜里整理员（**tuple mover**）把攒够的信排序、压缩，搬进按列排好的**归档柜**（ROS，Read Optimized Store，磁盘列存段）。大批量装货可走 `DIRECT` 直入归档柜，不挤收件箱。
 
-3. **K-safety 副本 + 恢复**：每个 projection 在不同节点上至少存 K+1 份。节点宕机时查询路由到副本继续跑，恢复时从副本拉数据重建。projection 设计要保证不同副本可以是不同排序——这样不同查询模式不会全打到同一类节点。
+3. **K-safety 副本 + 恢复**：每个 projection 在不同节点上至少存 K+1 份。节点宕机时查副本，恢复时从 buddy 拉数据。副本最好用不同 sort key，避免同一查询模式全打到一类节点。
 
-三层加起来让 C-Store 从论文变成 7×24 跑的产品。
-
-每一层都不是论文式新颖度爆表的发明，但每一层都是真正客户现场摔出来的工程必需品。
+三层加起来让 C-Store 从论文变成 7×24 跑的产品——都是客户现场摔出来的工程必需品。
 
 ## 实践案例
 
@@ -46,32 +44,33 @@ Vertica 在 C-Store 基础上做了 **三层关键改造**：
 某电信公司有一张通话明细表，常见两种查询：按用户 ID 查"这个人最近 30 天通话"，按时间段聚合"昨天 9 点到 10 点全网通话总量"。
 
 ```sql
+-- 教学简化；真实 Vertica 常需 ALL NODES 等子句
 CREATE PROJECTION calls_by_user AS
   SELECT user_id, ts, duration, dst FROM calls
-  ORDER BY user_id, ts SEGMENTED BY HASH(user_id);
+  ORDER BY user_id, ts SEGMENTED BY HASH(user_id) ALL NODES;
 
 CREATE PROJECTION calls_by_time AS
   SELECT user_id, ts, duration, dst FROM calls
-  ORDER BY ts SEGMENTED BY HASH(ts);
+  ORDER BY ts SEGMENTED BY HASH(ts) ALL NODES;
 ```
 
-同一份逻辑数据，物理上两份不同排序。明细查询走 `calls_by_user`（按 user_id 排序，prefix scan 极快），时段聚合走 `calls_by_time`。优化器自己挑——业务代码完全不用知道有几份 projection。
-
-代价是写入要同时维护两份。但分析库写少读多，这笔交易划得来。
+同一份逻辑表，物理上两份不同排序。按用户查明细走 `calls_by_user`（前缀扫描快），按时段聚合走 `calls_by_time`。优化器自选——业务代码不用知道有几份 projection。写少读多时，双份维护划得来。
 
 ### 案例 2：广告点击日志的编码组合
 
-广告日志的 `ad_id` 列基数低（几千个广告 ID）、连续多次重复——用 **RLE（Run-Length Encoding）**，存"ad_id=42 重复 1000 次"压成一个三元组。`timestamp` 列单调递增、相邻差小——用 **delta 编码**，只存相邻差值。`url` 列高基数 + 长字符串——用 **LZ + dictionary**。
+分三步看一列怎么压：
+
+1. **看列特征**：`ad_id` 只有几千种且连续重复；`timestamp` 单调、相邻差小；`url` 几乎每行不同且很长。
+2. **对症选编码**：重复多 → **RLE**（记"值=42 重复 1000 次"）；差值小 → **delta**；长串高基数 → **LZ + dictionary**。
+3. **看收益**：RLE 常压到约 30×，delta 约 8×，LZ+dict 约 4×；RLE 上做 `COUNT` 可直接把 run 长度相加，**不解压**。
 
 ```
-ad_id     → RLE         → 30× 压缩
-timestamp → delta+frame → 8×  压缩
-url       → LZ+dict     → 4×  压缩
+ad_id     → RLE         → ~30×
+timestamp → delta+frame → ~8×
+url       → LZ+dict     → ~4×
 ```
 
-每列单独选编码是 Vertica 的核心红利——比"整页一种压缩"灵活得多。
-
-更狠的是 RLE 列还能让某些聚合**不解压直接算**：count 一段 RLE 就是把 run 长度加起来，根本不用还原原始值。
+每列独立选编码，比"整页一种压缩"灵活得多——这是 Vertica 压缩红利的来源。
 
 ### 案例 3：日终批跑 ETL 关闭 WOS 直接 bulk load
 

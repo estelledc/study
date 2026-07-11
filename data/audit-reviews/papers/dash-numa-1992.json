@@ -1,0 +1,109 @@
+{
+  "slug": "dash-numa-1992",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "六要点信息密度高，零基础能跟但建议在 directory 条目再点一句「登记表记的是谁有副本」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「GPT-3/NVLink 沿用 DASH」是谱系类比而非直接继承，可加「思想一脉」以免读成同一实现。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「关联」仅 3 条，应按模板扩到 5–7（如 memory consistency、MESI、Origin、Hydra 等）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「适用」可补量化边界（几路 socket / 是否跨 chiplet）让工程师更好对号入座。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "六要点信息密度高，零基础能跟但建议在 directory 条目再点一句「登记表记的是谁有副本」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「GPT-3/NVLink 沿用 DASH」是谱系类比而非直接继承，可加「思想一脉」以免读成同一实现。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "「关联」仅 3 条，应按模板扩到 5–7（如 memory consistency、MESI、Origin、Hydra 等）。",
+        "「适用」可补量化边界（几路 socket / 是否跨 chiplet）让工程师更好对号入座。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 161,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 适用",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}

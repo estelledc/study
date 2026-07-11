@@ -8,9 +8,9 @@ title: DeepSpeed ZeRO — 微软优化大模型训练显存
 
 ## 是什么
 
-DeepSpeed ZeRO（**Zero Redundancy Optimizer**）是微软 2019 年开源的一套**让模型训练时多 GPU 之间不再重复存数据**的技术。日常类比：以前每张 GPU 都存一份完整的"作业本"（参数 + 梯度 + 优化器状态）；ZeRO 让每张只存 1/N 份，要用时再问别张 GPU 借。
+DeepSpeed ZeRO（**Zero Redundancy Optimizer**）是微软提出的一套**让模型训练时多 GPU 之间不再重复存数据**的技术：论文 2019 年挂到 arXiv，**2020 年**随 DeepSpeed 开源并在 SC 发表。日常类比：以前每张 GPU 都存一份完整的"作业本"（参数 + 梯度 + 优化器状态）；ZeRO 让每张只存 1/N 份，要用时再问别张 GPU 借。
 
-**结果**：训练一个 7B（70 亿参数）的模型，原本需要 24GB+ 的单卡显存，开了 ZeRO 之后 8GB 就能微调。
+**结果**：以 7B（70 亿参数）fp16 + Adam 为例，**单卡完整复制**参数/梯度/优化器状态大约要 **~80GB+** 量级；开 ZeRO Stage 3 后，同样规模可以摊到多张 24GB 消费级卡上微调（再叠加 offload / checkpointing 才能继续压）。
 
 它和 [[megatron-lm]] 是分布式训练的两大基础设施——Megatron 切的是"**计算**"（一层算不完拆给多张卡算），ZeRO 切的是"**状态**"（一份数据不用 N 张卡都存）。
 
@@ -48,14 +48,15 @@ ZeRO 把训练时占内存的三类东西**逐级切分**：
 
 ## 实践案例
 
-### 案例 1：Llama 7B 微调
+### 案例 1：Llama 7B 微调（改配置 → 启动 → 看显存）
 
-不开 ZeRO：每张卡至少需要 80GB（fp16 训练 + Adam 优化器 + 一些缓冲），得 A100 80GB × 4 才能跑。
+不开 ZeRO：每张卡至少需要 ~80GB（fp16 参数 + 梯度 + Adam 状态 + 缓冲），得 A100 80GB 级才能单卡装下完整副本。
 
-开 ZeRO Stage 3：4 张 24GB 的 RTX 3090 / 4090 也能跑通——内存被 4 张卡"摊薄"了。
+开 ZeRO Stage 3：4 张 24GB 的 RTX 3090 / 4090 也能跑通——状态被 4 张卡"摊薄"了。逐步跟做：
+
+1. 写 `ds_config.json`（Stage 3 + 可选 CPU offload）：
 
 ```json
-// DeepSpeed 配置（ds_config.json）
 {
   "fp16": { "enabled": true },
   "zero_optimization": {
@@ -65,14 +66,24 @@ ZeRO 把训练时占内存的三类东西**逐级切分**：
 }
 ```
 
-### 案例 2：HuggingFace accelerate 一行启用
+2. 启动（任选其一）：
 
 ```bash
-accelerate config       # 交互式选 DeepSpeed → ZeRO Stage 3
+deepspeed --num_gpus=4 train.py --deepspeed ds_config.json
+# 或
+accelerate launch --config_file accel_ds.yaml train.py
+```
+
+3. 用 `nvidia-smi` 看每张卡占用：Stage 3 下单卡峰值应明显低于"整模复制"，若仍 OOM 再开 gradient checkpointing，而不是盲目加 stage。
+
+### 案例 2：HuggingFace accelerate 交互式启用
+
+```bash
+accelerate config       # 选 DeepSpeed → ZeRO Stage 3
 accelerate launch train.py
 ```
 
-这是当下用得最多的方式——`accelerate` 把底层 DeepSpeed / FSDP 都封装起来，用户改一行配置就切换并行策略。
+这是当下用得最多的方式——`accelerate` 把底层 DeepSpeed / FSDP 都封装起来，用户改配置就切换并行策略。小模型（<1B）别默认 Stage 3，先试 Stage 1 或纯 DDP。
 
 ### 案例 3：和 Megatron 组合训超大模型
 
@@ -109,7 +120,7 @@ accelerate launch train.py
 
 ## 历史小故事（可跳过）
 
-- **2019 年 10 月**：微软 DeepSpeed 团队挂出 ZeRO 论文，定义三个 stage 的切分策略
+- **2019 年 10 月**：微软 DeepSpeed 团队挂出 ZeRO 论文（arXiv），定义三个 stage 的切分策略
 - **2020 年**：在超算顶会 **SC 2020** 正式发表，DeepSpeed 开源到 GitHub
 - **2021 年**：同一作者发表 **ZeRO-Infinity**，加入 NVMe SSD offload，让单张 V100 能训 1T 参数模型（速度极慢但能跑）
 - **2022 年**：发表 **ZeRO++**，针对量化通信和 hierarchical partitioning 进一步降通信开销
@@ -137,6 +148,9 @@ accelerate launch train.py
 - [[megatron-lm]] —— Megatron 切计算 / ZeRO 切状态，正交互补
 - [[transformer]] —— ZeRO 的训练对象绝大多数是 Transformer 系列
 - [[adam-optimizer]] —— ZeRO 的内存分析依赖 Adam 的 OS 占大头这一事实
+- [[fsdp-2023]] —— PyTorch 官方 Stage 3 思想重写，新项目常直接选它
+- [[gpipe-2019]] —— 流水线并行切层，和 ZeRO 的状态切分正交可叠加
+- [[alpa-2022]] —— 自动搜索张量/流水/数据并行组合，ZeRO 是其中一维选项
 
 ## 反向链接
 

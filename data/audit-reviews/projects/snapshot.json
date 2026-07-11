@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2（quadratic）步骤偏短，可补「开方→压低鲸鱼→拨款更分散」三步对照，方便零基础跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "创始人应写 Fabien Marino（或常用名 Fabien），不是 Fabien Hutchinson。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「DeFi Summer」通常指 2020 年夏，不是 2021；请改正年份或改成「2021 年 DeFi 治理热潮」等不绑错标签的表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化边界（如「单次链上投票 Gas 常 >$5–50 时零 Gas 链下投票更划算」），让边界更可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2（quadratic）步骤偏短，可补「开方→压低鲸鱼→拨款更分散」三步对照，方便零基础跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "创始人应写 Fabien Marino（或常用名 Fabien），不是 Fabien Hutchinson。",
+        "「DeFi Summer」通常指 2020 年夏，不是 2021；请改正年份或改成「2021 年 DeFi 治理热潮」等不绑错标签的表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用场景可补一条量化边界（如「单次链上投票 Gas 常 >$5–50 时零 Gas 链下投票更划算」），让边界更可操作。"
+      ]
+    }
+  ]
+}

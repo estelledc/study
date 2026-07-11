@@ -80,17 +80,21 @@ $ curl http://localhost:61208/api/4/cpu | jq .total
 
 ```bash
 $ pip install glances[prometheus]
-$ glances --export prometheus --export-prometheus-host 0.0.0.0
+# glances.conf 里写：
+# [prometheus]
+# host=0.0.0.0
+# port=9091
+$ glances --export prometheus
 ```
 
-Glances 在 9091 端口暴露 `/metrics`，Prometheus 配置里 scrape 它就能存进去，Grafana 里建 dashboard 画曲线。比写自己的 exporter 省一周。**坑**：默认端口 9091 跟 Prometheus 自带的 Pushgateway 撞，多实例部署要改 `--export-prometheus-port`。
+Glances 按配置在 `host:port`（默认 `localhost:9091`）暴露 `/metrics`，Prometheus scrape 它就能存进去，Grafana 里建 dashboard。比写自己的 exporter 省一周。**坑**：默认端口 9091 跟 Pushgateway 撞，多实例要改 conf 里的 `port=`，没有 `--export-prometheus-port` 这种 CLI。
 
 ## 踩过的坑
 
 1. **Python 版本**：v4 要 Python 3.10+，老服务器（CentOS 7 自带 3.6）装包前先 `python --version`，否则 pip 装完跑不起来报 SyntaxError
 2. **可选依赖陷阱**：基础包 `pip install glances` 不含 web/docker/prometheus，开 `-w` 报"missing fastapi"，需要 `pip install glances[web]` 或 `glances[all]`
 3. **Docker 视图看不到容器**：跑在容器里时忘了挂 `/var/run/docker.sock`，启动命令要加 `-v /var/run/docker.sock:/var/run/docker.sock`，否则 docker plugin 永远空
-4. **Prometheus 端口冲突**：9091 跟 Pushgateway 撞，多实例同机部署没改端口，第二个实例起不来还不报清楚的错
+4. **Prometheus 端口冲突**：9091 跟 Pushgateway 撞；多实例同机要在 `glances.conf` 的 `[prometheus] port=` 改掉，第二个实例起不来时先查端口占用
 
 ## 适用 vs 不适用场景
 

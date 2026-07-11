@@ -1,0 +1,142 @@
+{
+  "slug": "pebble",
+  "area": "projects",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "中英主厨/翻译类比贴合 cgo 边界，但 LSM/SST/Bloom/MemTable 堆叠出现时桥接不足"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "开篇应先用「记事本先写后整理归档」一类日常话解释 LSM，再谈 Go 重写"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例2 有可跟 Go 代码；案例1/3 偏经验叙述，建议给案例2补逐行读法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 cockroachdb/pebble；2018 起步、v20.1 可选、v20.2 默认与公开时间线一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "反向链表 MemTable、L0 sublevel、delete-only compaction、砍 CF/事务层等与官方叙述相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读两条博客 URL 重复，宜换成 Introducing 文或 docs 路径之一"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例2 用了 fmt.Println 但未 import \"fmt\"；Open/Get closer/NewIter 模式概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑很强：RocksDB 不兼容、format ratchet 不可降、iterator 钉住 SST、Sync vs NoSync"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用嵌入式 Go LSM 且不要事务/CF；不适用已有 RocksDB 库迁移，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "中英主厨/翻译类比贴合 cgo 边界，但 LSM/SST/Bloom/MemTable 堆叠出现时桥接不足",
+        "开篇应先用「记事本先写后整理归档」一类日常话解释 LSM，再谈 Go 重写",
+        "案例2 有可跟 Go 代码；案例1/3 偏经验叙述，建议给案例2补逐行读法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "来源 cockroachdb/pebble；2018 起步、v20.1 可选、v20.2 默认与公开时间线一致",
+        "反向链表 MemTable、L0 sublevel、delete-only compaction、砍 CF/事务层等与官方叙述相符",
+        "延伸阅读两条博客 URL 重复，宜换成 Introducing 文或 docs 路径之一"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例2 用了 fmt.Println 但未 import \"fmt\"；Open/Get closer/NewIter 模式概念正确",
+        "踩坑很强：RocksDB 不兼容、format ratchet 不可降、iterator 钉住 SST、Sync vs NoSync",
+        "适用嵌入式 Go LSM 且不要事务/CF；不适用已有 RocksDB 库迁移，边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "status": "refined",
+  "lines": 163,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": [],
+    "summary": "开篇补 LSM 日常桥接与 cgo 解释；案例2补 fmt import 与逐行读法；去重延伸阅读链接"
+  }
+}

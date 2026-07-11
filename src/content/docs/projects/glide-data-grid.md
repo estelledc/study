@@ -115,7 +115,7 @@ glide 内置了 7 种 cell 类型：Text / Number / Markdown / Image / Uri / Bub
 ## 踩过的坑
 
 1. **getCellContent 不能太慢**：每帧滚动要画 1000+ cell，每个 cell 都会调用 getCellContent。如果你在里面做 fetch / 复杂计算，立刻掉帧。修复：函数内部只做 O(1) 索引；数据预先放在 ref / Map 里
-2. **可访问性默认关**：canvas 路线天然不友好。需要给读屏软件用，必须显式启用 `experimental={{ strict: true }}` 并测试隐藏 DOM 层是否同步
+2. **可访问性要实测，别误关**：无障碍树**默认开启**（`experimental.strict` 只管可见区取数，不是 a11y 开关）。勿设 `disableAccessibilityTree`；建议打开 `pageUp`/`pageDown` keybindings 并用读屏实测隐藏 DOM 层
 3. **文本选择是假的**：浏览器原生的 Ctrl+A 选不中 canvas 里的文字。glide 自己实现了一套「像选择」的高亮渲染，但复制粘贴需要绑 `onPaste` / 自己处理
 4. **theme 必须传完整对象**：内置 light / dark theme 想改一个颜色，必须传整个 theme 对象覆盖，不是 spread。修复：`theme={{ ...darkTheme, accentColor: '#ff0000' }}`
 5. **窗口 resize 不自动**：canvas 不像 DOM 会自适应父容器。要监听 resize 改 `width` / `height` props，否则 retina 下会糊

@@ -1,0 +1,131 @@
+{
+  "slug": "nvidia-gpu-operator",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "大楼装电梯/自动装电梯机器人类比把 Operator 职责讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Driver / Toolkit / Device Plugin / DCGM / MIG 均有日常桥接；CRD/ClusterPolicy 稍抽象但可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "helm 安装、GPU Pod、MIG、DCGM 四案例逐步可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 docs.nvidia.com GPU Operator / GitHub NVIDIA/gpu-operator 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ClusterPolicy、容器化驱动、device plugin、DCGM、MIG Manager 组件列表与官方文档一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「EKS/GKE/AKS 节点池都基于它」略满（云厂商也有自带驱动安装路径），教学对照可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "helm install、cuda-test Pod、MIG ClusterPolicy、DCGM port-forward 均可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "内核匹配、containerd 被覆盖、MIG 切卡杀 Pod、OS 镜像、host 驱动冲突等坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用可扩容 K8s GPU 集群 vs 不适用单机/固定节点/非 NVIDIA——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "大楼装电梯/自动装电梯机器人类比把 Operator 职责讲透",
+        "Driver / Toolkit / Device Plugin / DCGM / MIG 均有日常桥接；CRD/ClusterPolicy 稍抽象但可跟",
+        "helm 安装、GPU Pod、MIG、DCGM 四案例逐步可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 docs.nvidia.com GPU Operator / GitHub NVIDIA/gpu-operator 正确",
+        "ClusterPolicy、容器化驱动、device plugin、DCGM、MIG Manager 组件列表与官方文档一致",
+        "「EKS/GKE/AKS 节点池都基于它」略满（云厂商也有自带驱动安装路径），教学对照可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "helm install、cuda-test Pod、MIG ClusterPolicy、DCGM port-forward 均可跟做",
+        "内核匹配、containerd 被覆盖、MIG 切卡杀 Pod、OS 镜像、host 驱动冲突等坑具体",
+        "适用可扩容 K8s GPU 集群 vs 不适用单机/固定节点/非 NVIDIA——边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 160,
+  "l1_pass": true
+}

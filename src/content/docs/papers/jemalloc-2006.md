@@ -33,15 +33,15 @@ jemalloc 看到 100 byte，去最近的 size class 档（128 byte），从你这
 
 ## 核心要点
 
-jemalloc 的设计可以拆成 **三层结构 + 一个本地缓存**：
+jemalloc 的设计可以拆成 **三层结构**（2006 论文核心），现代版本再加本地缓存：
 
-1. **arena（堆分片）**：默认开 `4 * CPU 数` 个 arena，每个 arena 自己持锁。线程第一次 malloc 时 round-robin 绑定到一个 arena，之后大部分 malloc/free 只跟自己那个 arena 打交道。**多核竞争锁的问题在这一层化解**。
+1. **arena（堆分片）**：默认开约 `4 * CPU 数` 个 arena，每个 arena 自己持锁。线程第一次 malloc 时 round-robin 绑定到一个 arena，之后大部分 malloc/free 只跟自己那个 arena 打交道。**多核竞争锁的问题在这一层化解**。
 
-2. **run（连续页段）**：arena 内部按 4 KB 页 chunk 管理，每段 chunk 切成若干个 **run**（一段连续页，比如 16 KB）。每个 run 只装一个 size class。
+2. **run（连续页段）**：arena 内部按页 chunk 管理，每段 chunk 切成若干个 **run**（一段连续页）。每个 run 只装一个 size class。
 
 3. **region（固定大小槽）**：run 内部按 size class 切成等大的 region。malloc(100) 落到 128 byte 这一档，从对应 run 弹一个 region 出来。
 
-4. **tcache（线程本地缓存）**：每个线程自己缓存最近 free 掉的小块。下次 malloc 同尺寸**不进 arena 锁，直接弹**。这是命中后 malloc 只要几十纳秒的关键。
+4. **tcache（线程本地缓存，后期演进）**：现代 jemalloc 给每个线程缓存最近 free 的小块；命中后**不进 arena 锁**。2006 论文尚未强调这一层，但它是今天"几十纳秒 malloc"的关键。
 
 按尺寸三档分流：
 - **small** (< 4 KB)：走 region/run，size class 表查档
@@ -135,7 +135,7 @@ Size |   nrequests  |  curslabs |  curregs
 
 - 论文 PDF：[Evans 2006 BSDCan](https://people.freebsd.org/~jasone/jemalloc/bsdcan2006/jemalloc.pdf)（28 页，工程论文，可读性高）
 - 官方文档：[jemalloc.net](http://jemalloc.net/)（mallctl 接口和 MALLOC_CONF 全表）
-- Mozilla 博客：[Improving Memory Usage](https://hacks.mozilla.org/2012/11/sps-profiler/)（Firefox 切换 jemalloc 的工程记录）
+- Mozilla 记录：[Firefox 3 Memory Usage](https://blog.pavlov.net/2008/03/11/firefox-3-memory-usage/)（Stuart Parmenter：Vista 上 jemalloc 降约 22%）
 - Facebook 工程博客：[Scalable memory allocation using jemalloc](https://engineering.fb.com/2011/01/03/core-infra/scalable-memory-allocation-using-jemalloc/)（生产经验）
 - [[tcmalloc]] —— Google 的同代竞品，思路同源
 - [[mimalloc]] —— Microsoft 2019，jemalloc 的精神后辈
@@ -148,3 +148,7 @@ Size |   nrequests  |  curslabs |  curregs
 - [[buddy-system]] —— Linux 内核物理页分配器，"伙伴系统"思想是 jemalloc size class 的远祖
 - [[immix-mark-region]] —— GC 世界的对应物，分区域 + 固定大小是共同思路
 - [[linux-slab-allocator]] —— 内核里给小对象设计的同尺寸缓存池，思路与 jemalloc size class 同源
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -1,6 +1,6 @@
 ---
 title: "信息检索与推荐 · 论文 · 第 1 组"
-description: "52 条 信息检索与推荐 Atlas 分块"
+description: "53 条 信息检索与推荐 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 52 条，稳定上限为 100 条。
+本分块共 53 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@ sidebar:
 | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | `lsh-indyk-1998` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) | `maron-kuhns-1960` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | `minhash-broder-1997` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | `ms-marco-2016` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | `ms-marco-2016` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | `netflix-bellkor-2009` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) | `neumf-2017` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | `okapi-bm25-1994` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -57,6 +57,7 @@ sidebar:
 | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | `rrf-cormack-2009` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | `salton-vsm-1975` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | `sasrec-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Scaling HNSWs — antirez 把向量图做成 Redis 数据结构的工程笔记](/study/papers/scaling-hnsws-antirez/) | `scaling-hnsws-antirez` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) | `simhash-charikar-2002` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) | `simrank-2002` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) | `slim-2011` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

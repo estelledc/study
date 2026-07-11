@@ -18,7 +18,7 @@ DPO（**Direct Preference Optimization**，直接偏好优化）是把 [[instruc
 
 不理解 DPO，下面这些事都没法解释：
 
-- 为什么 2023 下半年开始的开源 LLM 后训练（Llama 2 / Llama 3 / Zephyr / Tülu）几乎一夜切掉了 PPO
+- 为什么 2023 下半年起，开源后训练（Zephyr / Tülu / Llama 3）大量切到 DPO，而 Llama 2 Chat 仍走 RLHF/PPO
 - 为什么"做对齐"的工程门槛从"需要 RL 专家"降到"会 fine-tune 就行"
 - 为什么 Hugging Face TRL 的 `DPOTrainer` 30 行代码就能跑——同等任务用 PPO 实现要 300+ 行加一堆调参
 - 为什么显存不够的小团队也能做对齐——PPO 要同时载 4 个模型，DPO 只要 2 个
@@ -29,18 +29,18 @@ DPO 出现之前，"想做 RLHF 但调不动 PPO"的小团队只能用 best-of-N
 
 DPO 的全部魔法可以拆成 **三个洞察**：
 
-1. **数学等价**：作者证明"先训 reward model 再用 RL 找最优 policy"和"直接对成对偏好做分类"在数学上是同一件事。前者那个最难调的 PPO 阶段，原来可以用一个 closed-form 解析式跳过。
+1. **数学等价**：作者证明"先训 reward model 再用 RL 找最优 policy"和"直接对成对偏好做分类"在数学上是同一件事。前者那个最难调的 PPO 阶段，原来可以用一个 closed-form（闭式、不用迭代硬搜）解析式跳过。
 
-2. **Loss 是一行 BCE**：
+2. **Loss 是一行 BCE**（binary cross-entropy，二分类交叉熵——把"chosen 更好"当成对/错标签来训）：
 
    ```
    L = -log σ( β·log[π(chosen|x)/π_ref(chosen|x)]
               - β·log[π(rejected|x)/π_ref(rejected|x)] )
    ```
 
-   `π_ref` 是 SFT 后的 frozen 模型（基准），`π` 是正在训的模型。这一行就是全部——本质是个 binary cross-entropy："chosen 比 rejected 好"作为标签。
+   这里 `σ` 是 sigmoid（把任意实数压到 0–1，像"胜率"旋钮）；`π_ref` 是 SFT 后的 frozen 基准模型，`π` 是正在训的模型。括号里两项相减，就是"chosen 相对基准涨了多少"减去"rejected 相对基准涨了多少"。
 
-3. **KL 约束自动成立**：PPO 需要显式加 `β·KL[π||π_ref]` 项防止 policy 漂移。DPO 把这个约束**藏在 log ratio 里**——`β·log(π/π_ref)` 这一项天然约束 π 不能离 π_ref 太远，不需要再加额外约束。
+3. **KL 约束自动成立**：PPO 需要显式加 `β·KL[π||π_ref]` 项防止 policy 漂移（跑太远 generation 崩）。DPO 把这个约束**藏在 log ratio 里**——`β·log(π/π_ref)` 天然约束 π 不能离 π_ref 太远，不必再加额外项。
 
 > 一句话：DPO = "用偏好对做 BCE，π/π_ref 的 log ratio 是隐式 reward，β 是 KL 强度旋钮"。
 
@@ -71,7 +71,13 @@ def dpo_loss(logp_w, logp_l, ref_logp_w, ref_logp_l, beta=0.1):
     return -F.logsigmoid(logits).mean()
 ```
 
-`logp_*` 是 response 上所有 token 的 log probability 求和。两次前向（一次 chosen 一次 rejected），算 ratio，logsigmoid 完事。
+逐步读：
+
+1. `logp_*` 是整段回答所有 token 的 log 概率求和（模型有多"喜欢"这句话）
+2. `(logp_w - ref_logp_w)` 是 chosen 相对基准的涨幅；rejected 同理
+3. 两涨幅相减再乘 `β`，送进 `logsigmoid`——等价于"押 chosen 赢"的 BCE
+
+两次前向（chosen / rejected），算完 ratio 就更新，没有 reward model，也没有 PPO 的 rollout。
 
 ### 案例 3：Hugging Face TRL 一行调用
 
@@ -81,7 +87,7 @@ trainer = DPOTrainer(model, ref_model, train_dataset=preference_data, beta=0.1)
 trainer.train()
 ```
 
-整个开源生态——Zephyr-7B / Tülu / Nous-Hermes 等——基本都是这条路径。Llama 3 的对话能力调优也用了 DPO（叠加 iterative rejection sampling）。
+整个开源生态——Zephyr-7B / Tülu / Nous-Hermes 等——基本都是这条路径。Llama 3 的对话能力调优也用了 DPO（叠加 iterative rejection sampling）；Llama 2 Chat 当时仍以 RLHF/PPO 为主。
 
 ## 踩过的坑
 
@@ -130,11 +136,17 @@ trainer.train()
 - 论文 PDF：[Rafailov et al. 2023 — Direct Preference Optimization](https://arxiv.org/abs/2305.18290)
 - Sebastian Raschka 的 DPO 系列博客（推导讲得最 friendly）
 - Hugging Face TRL 官方 DPO tutorial（带代码）
+- [[instructgpt]] —— 被 DPO 简化的三阶段 RLHF 流水线
+- [[ppo]] —— DPO 在工程上常替代的 on-policy RL 算法
 
 ## 关联
 
 - [[instructgpt]] —— DPO 直接简化的对象；InstructGPT 的三阶段 RLHF 是 DPO 的前身
 - [[ppo]] —— DPO 替代的 RL 算法；PPO 用 actor-critic + on-policy rollout，DPO 用 offline pair + BCE
-- [[llama]] —— Llama 2/3 的对话能力调优都用 DPO
+- [[llama]] —— Llama 3 对话调优用了 DPO；Llama 2 Chat 仍以 RLHF/PPO 为主
 - [[gpt-3]] —— DPO 的训练对象通常是 GPT-3 / Llama 这类 base LLM
 - [[attention]] —— 所有现代 LLM 的核心组件；DPO 不修改架构，只换 loss
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

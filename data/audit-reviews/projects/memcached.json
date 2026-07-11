@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "便利贴墙类比贴合；slab/LRU/一致性哈希有桥接；案例 1 telnet 清楚，案例 2 缺 import json 会让零基础照抄报错。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2010 年：libevent 替换为多线程 + libevent」史实错误：Memcached 早期就用 libevent；多线程是 Facebook 的 Steven Grimm 约 2006 年底合入（--enable-threads），不是 2010 年才「替换」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写「这是 2003 年就达到多核可扩展的关键」过满：2003 初版是单线程事件循环，多核扩展要到多线程合入之后。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 Python 缺 `import json`，照抄会 NameError；建议补全最小可运行骨架（或明确标注伪代码依赖）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（slab 钙化、expire>30天、无认证）非常可操作；适用/不适用与 Redis 边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "便利贴墙类比贴合；slab/LRU/一致性哈希有桥接；案例 1 telnet 清楚，案例 2 缺 import json 会让零基础照抄报错。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「2010 年：libevent 替换为多线程 + libevent」史实错误：Memcached 早期就用 libevent；多线程是 Facebook 的 Steven Grimm 约 2006 年底合入（--enable-threads），不是 2010 年才「替换」。",
+        "核心要点写「这是 2003 年就达到多核可扩展的关键」过满：2003 初版是单线程事件循环，多核扩展要到多线程合入之后。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 Python 缺 `import json`，照抄会 NameError；建议补全最小可运行骨架（或明确标注伪代码依赖）。",
+        "踩坑（slab 钙化、expire>30天、无认证）非常可操作；适用/不适用与 Redis 边界清楚。"
+      ]
+    }
+  ]
+}

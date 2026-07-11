@@ -8,11 +8,11 @@ title: Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N
 
 ## 是什么
 
-Mattern 1989 是一篇 22 页的论文，它告诉我们：**分布式系统里"时间"不是一根数轴，而是 N 维空间里的一个偏序结构**。每个进程有自己的一格时钟，所有进程的时钟拼起来就是一个 N 维向量；整个系统的"全局状态"不是一张外部快照，而是 N 个本地状态的**笛卡尔积**。日常类比：[[lamport-1978]] 像把所有人的时间合并到同一根时间轴上排队；Mattern 把它换成 N 个时区——每个人在自己的时区前进，跨时区时只能"取大值合并"，永远没有真正的"统一现在"。
+Mattern 1989 是一篇 22 页的论文，它告诉我们：**分布式系统里"时间"不是一根数轴，而是 N 维空间里的一个偏序结构**（偏序 = 有的事件能比先后，有的比不了，像"谁先发朋友圈"不一定有总排名）。每个进程有自己的一格时钟，所有进程的时钟拼起来就是一个 N 维向量；整个系统的"全局状态"不是一张外部快照，而是 N 个本地状态拼成的**笛卡尔积**（像每人交一张自拍，再拼成合照——没有人站在外面按快门）。日常类比：[[lamport-1978]] 像把所有人的时间合并到同一根时间轴上排队；Mattern 把它换成 N 个时区——每个人在自己的时区前进，跨时区时只能"取大值合并"，永远没有真正的"统一现在"。
 
-更具体地说：Mattern 与 [[fidge-1988]] 几乎同期独立提出 vector clock，但视角不同。Fidge 主要论证向量时间戳的工程构造与 partial order 检测；Mattern 提出更抽象的 **virtual time** 框架——把因果偏序 → 与 N 维向量偏序之间证明为**同构**（isomorphism），并把 global state 形式化为反链（antichain），把 [[chandy-lamport-1985]] 的一致快照解释成 virtual time 上的横截面。社区习惯把两人合称 "Fidge-Mattern vector clock"，但分布式系统教材在讲"全局状态"时几乎都引 Mattern 这一篇。
+更具体地说：Mattern 与 [[fidge-1988]] 几乎同期独立提出 vector clock，但视角不同。Fidge 偏工程构造；Mattern 提出更抽象的 **virtual time** 框架——证明"谁先谁后"的因果偏序与 N 维向量偏序是**同构**的（两边一一对应、谁大谁小说的是同一件事），并把一致的全局状态形式化为**反链**（一组互不可比的本地状态，像合照里不能出现"信已寄出但对方还没收到"），把 [[chandy-lamport-1985]] 的一致快照解释成 virtual time 上的横截面。社区合称 "Fidge-Mattern vector clock"，教材讲全局状态时几乎都引 Mattern。
 
-40 年过去，Dynamo 的 version vector、CRDT 的 dot、终止检测算法、分布式调试器的事件回放，都建立在 Mattern 给出的 virtual time 抽象上。
+40 年过去，Dynamo 的 version vector、CRDT 的 dot、终止检测、分布式调试器的事件回放，都建立在这篇的 virtual time 抽象上。
 
 ## 为什么重要
 
@@ -69,8 +69,8 @@ def detect_termination(all_V):
 ```
 
 **逐部分解释**：
-- 取 min 而非 max，因为我们要找"所有人都已经走过的最低水位"
-- "水位不再上升 + 无消息在途" ⟹ 系统终止——这是 Mattern 框架下稳定属性 (stable property) detection 的范式
+- 取 min 而非 max：像看水库**最低水位线**——只有所有进程都走过的高度才算"全局已完成"
+- "水位不再上升 + 无消息在途" ⟹ 系统终止——Mattern 框架下稳定属性检测的范式
 
 ### 案例 3：与 Chandy-Lamport snapshot 的关系
 
@@ -121,7 +121,7 @@ def chandy_lamport_to_cut(snapshot):
 - **1985 年**：Chandy 与 Lamport 给出 marker snapshot 算法（[[chandy-lamport-1985]]），但当时缺一个"时间观"来统一解释
 - **1988 年**：Colin Fidge 在 ACSC 11 给出 N 维向量时间戳，证明双向同构
 - **1989 年**：Mattern 在 Parallel and Distributed Algorithms 上给出 virtual time + global state + consistent cut 的系统框架——这正是本篇
-- **1995 年后**：Schwarz-Mattern 综述 "Detecting causal relationships in distributed computations" 把所有 vector clock 变种统一在 virtual time 框架下
+- **1994 年**：Schwarz & Mattern 综述 "Detecting causal relationships in distributed computations" 把 vector clock 变种统一在 virtual time 框架下
 - **2007 年**：Dynamo 把 version vector 推到工业，购物车合并是标志案例
 - **2010s**：CRDT 与 causal consistency 数据库（COPS, Bolt-on）让 virtual time 抽象成为分布式数据库标配
 

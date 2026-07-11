@@ -1,0 +1,81 @@
+{
+  "slug": "hot-chocolate",
+  "area": "projects",
+  "action": "refine",
+  "average": 4.56,
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "点菜/厨师 vs SDL 菜单类比贴合；最小 C# 例子与 DataLoader/Strawberry Shake 案例可跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑把 Banana Cake Pop→Nitro 改名并进 v12→v13；实际改名在 v13→v14（约 2024），应与 attribute 行为变更拆开。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "DataLoader 必须 Scoped、UseProjection SQL 黑魔法都是实战硬坑；Nitro 改名时间线需与 v13 attribute 变更分开写。"
+    }
+  ],
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "点菜/厨师 vs SDL 菜单类比贴合；最小 C# 例子与 DataLoader/Strawberry Shake 案例可跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑把 Banana Cake Pop→Nitro 改名并进 v12→v13；实际改名在 v13→v14（约 2024），应与 attribute 行为变更拆开。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "DataLoader 必须 Scoped、UseProjection SQL 黑魔法都是实战硬坑；Nitro 改名时间线需与 v13 attribute 变更分开写。"
+      ]
+    }
+  ]
+}

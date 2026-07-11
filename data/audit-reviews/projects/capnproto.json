@@ -1,0 +1,98 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "Cloudflare Workers、mmap、纳秒级开销、10GB 缓存和 QPS/CPU 数字属于未由 stub 支撑的强断言，需要改成有边界的工程描述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“相对偏移可以直接当指针用”容易歪曲 Cap'n Proto 的安全边界，应说明由运行库做边界检查后的指针运算。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "PackedFdMessageReader 示例不能同时宣称 mmap 零拷贝；需要区分 packed 流式读取和 flat array / mmap 直读。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Cloudflare Workers、mmap、纳秒级开销、10GB 缓存和 QPS/CPU 数字属于未由 stub 支撑的强断言，需要改成有边界的工程描述。",
+        "“相对偏移可以直接当指针用”容易歪曲 Cap'n Proto 的安全边界，应说明由运行库做边界检查后的指针运算。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "PackedFdMessageReader 示例不能同时宣称 mmap 零拷贝；需要区分 packed 流式读取和 flat array / mmap 直读。"
+      ]
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 162,
+    "reasons": []
+  }
+}

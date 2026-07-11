@@ -1,0 +1,115 @@
+{
+  "slug": "monaghan-1992-sph",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 反向链接",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "棋盘格 vs 水滴群类比贴合 Eulerian/Lagrangian，开篇能抓住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 反向链接 占位段，结构与模板不一致；核公式/Π_ij 已有分项解释但密度略高"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "邻居搜索与人工粘性案例步骤清楚；水花拓扑案例偏概念、少逐步编号"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Monaghan 1992 ARA&A 综述正确；Lucy / Gingold & Monaghan 1977 起源叙述一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核近似、密度求和、人工粘性、PCISPH/DFSPH 时间线与公开文献一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "FleX/Obi/Blender liquid 与经典 SPH 有亲缘但不全是 SPH；文中「SPH 系/后裔」框架下可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "邻居 cell/hash 与 Π_ij 伪代码概念正确，可跟读实现思路"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：拉伸不稳、边界三招、WCSPH 刚度、守恒近似、表面核截断"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用自由表面/固液耦合；不适用薄烟/高精度 CFD——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "棋盘格 vs 水滴群类比贴合 Eulerian/Lagrangian，开篇能抓住",
+        "缺少 ## 反向链接 占位段，结构与模板不一致；核公式/Π_ij 已有分项解释但密度略高",
+        "邻居搜索与人工粘性案例步骤清楚；水花拓扑案例偏概念、少逐步编号"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Monaghan 1992 ARA&A 综述正确；Lucy / Gingold & Monaghan 1977 起源叙述一致",
+        "核近似、密度求和、人工粘性、PCISPH/DFSPH 时间线与公开文献一致",
+        "FleX/Obi/Blender liquid 与经典 SPH 有亲缘但不全是 SPH；文中「SPH 系/后裔」框架下可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "邻居 cell/hash 与 Π_ij 伪代码概念正确，可跟读实现思路",
+        "踩坑具体：拉伸不稳、边界三招、WCSPH 刚度、守恒近似、表面核截断",
+        "适用自由表面/固液耦合；不适用薄烟/高精度 CFD——边界清楚"
+      ]
+    }
+  ]
+}

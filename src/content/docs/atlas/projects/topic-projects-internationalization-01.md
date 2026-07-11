@@ -17,4 +17,4 @@ sidebar:
 | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | `lingui` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) | `next-intl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | `react-intl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | `vue-i18n` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | `vue-i18n` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

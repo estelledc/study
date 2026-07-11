@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "## 实践案例 案例 2 直接跳到 Treiber stack / CAS 循环，零基础缺「为什么这是 k=1」的逐步拆解；案例 3 的 retry 也要先用日常话解释再给代码"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 CAS、ownership、helping、k、字（内存字）各加一句日常桥接，再进算法细节"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "## 核心要点 第 1 步里的 k 未定义就用；改成「事先知道要碰几个共享格子」再点出静态限制"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "## 核心要点 第 3 步「任一步失败就 abort 重来」更像现代乐观 STM；1995 文以 helping 推进非阻塞，应区分「抢 ownership 失败则帮对方做完」与后来的 abort/retry"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「组合性 / atomically 可嵌套组合」主要是 Harris et al. PPoPP 2005 的贡献，不宜全算在 Shavit-Touitou 1995 头上；历史段已写 2005，正文要对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Treiber stack = k=1 静态 STM」是教学类比，加一句「概念上等价」避免读成论文原文定义"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "## 适用 vs 不适用 补量化边界：如写集很小（≤2–3 字）且冲突低时 lock 通常更快；事务重试无界不适合硬实时；IO 副作用不可进 atomic"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 locks[min/max] 可加一句「按地址排序是为了全局一致的加锁顺序」；案例 2 注明是教学伪代码非可编译片段"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑已够用，保持 4 条即可，腾出行数给案例逐步解释"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 案例 2 直接跳到 Treiber stack / CAS 循环，零基础缺「为什么这是 k=1」的逐步拆解；案例 3 的 retry 也要先用日常话解释再给代码",
+        "首次出现的 CAS、ownership、helping、k、字（内存字）各加一句日常桥接，再进算法细节",
+        "## 核心要点 第 1 步里的 k 未定义就用；改成「事先知道要碰几个共享格子」再点出静态限制"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "## 核心要点 第 3 步「任一步失败就 abort 重来」更像现代乐观 STM；1995 文以 helping 推进非阻塞，应区分「抢 ownership 失败则帮对方做完」与后来的 abort/retry",
+        "「组合性 / atomically 可嵌套组合」主要是 Harris et al. PPoPP 2005 的贡献，不宜全算在 Shavit-Touitou 1995 头上；历史段已写 2005，正文要对齐",
+        "「Treiber stack = k=1 静态 STM」是教学类比，加一句「概念上等价」避免读成论文原文定义"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "## 适用 vs 不适用 补量化边界：如写集很小（≤2–3 字）且冲突低时 lock 通常更快；事务重试无界不适合硬实时；IO 副作用不可进 atomic",
+        "案例 1 的 locks[min/max] 可加一句「按地址排序是为了全局一致的加锁顺序」；案例 2 注明是教学伪代码非可编译片段",
+        "踩过的坑已够用，保持 4 条即可，腾出行数给案例逐步解释"
+      ]
+    }
+  ]
+}

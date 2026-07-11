@@ -8,7 +8,7 @@ title: fzf — 命令行模糊查找
 
 ## 是什么
 
-fzf 是 Junegunn Choi 在 2013 年用 Go 写的**通用模糊查找器**——任何能往终端打字打数据的命令，都能被它接进来做模糊筛选。
+fzf 是 Junegunn Choi 在 2013 年开源的**通用模糊查找器**（第一版用 Ruby，2015 年左右用 Go 重写）——任何能往终端打字打数据的命令，都能被它接进来做模糊筛选。
 
 日常类比：VS Code 的 `Cmd+P` 让你打几个字母就跳到对应文件；fzf 是 Linux 终端的通用 `Cmd+P`——文件、命令历史、git 分支、Kubernetes namespace 全都能筛。
 
@@ -129,7 +129,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - **2019 年**：v0.20 加 `--preview`，从此可以"边搜边看"，热度翻一倍
 - **2024 年**：v0.45 加 multi-line 模式，能一次显示带换行的结果（比如 commit message 全文）
 
-到现在 GitHub star 已经 60k+，还没出现替代品。Junegunn Choi 一个人维护了十多年，是单人开源工具的代表案例之一。
+到现在 GitHub star 已 80k+；虽有 peco / skim 等同类工具，fzf 仍是终端模糊查找的主流默认。Junegunn Choi 长期维护，是单人开源工具的代表案例之一。
 
 ## 学到什么
 

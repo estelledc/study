@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 Go 片段对零基础略密，可补一句「Msg / NewEchoServer 来自生成代码」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「退回 HTTP/1.1」是设计意图；实际可跑在支持 HTTP/2 的 net/http 上，可加半句避免被读成协议禁令"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一条量化边界（如 QPS/延迟量级或团队规模）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 Go 片段对零基础略密，可补一句「Msg / NewEchoServer 来自生成代码」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「退回 HTTP/1.1」是设计意图；实际可跑在支持 HTTP/2 的 net/http 上，可加半句避免被读成协议禁令"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可补一条量化边界（如 QPS/延迟量级或团队规模）"
+      ]
+    }
+  ]
+}

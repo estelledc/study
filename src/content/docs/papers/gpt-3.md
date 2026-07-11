@@ -49,15 +49,13 @@ GPT-3 把三件事推到极致：
 
 ### 案例 1：Few-shot 翻译
 
-你给 GPT-3 这样一段 prompt：
-
 ```text
 English: hello, French: bonjour.
 English: cat, French: chat.
 English: dog, French: ?
 ```
 
-GPT-3 输出 `chien`。它没专门学过英法翻译，只看了两个例子就会了。
+逐部分解释：前两行是带答案的例题（定格式）；第三行只给英文留 `?`；权重不变，变的只是 prompt。输出 `chien`——没微调英法翻译，看两个例子就会。
 
 ### 案例 2：Few-shot 算术
 
@@ -66,26 +64,36 @@ Q: 25 + 13 = ? A: 38.
 Q: 47 + 19 = ? A:
 ```
 
-GPT-3 会补完 `66`。两位数加法对它来说几乎 100% 准确。**但 4 位以上加法就开始翻车**——这是 BPE tokenizer 的副作用，长数字被切成奇怪的子词。
+逐部分解释：第一行示范「题 → 答」；第二行留空让模型续写。两位数几乎满分；**4 位以上常翻车**——BPE 把长数字切成怪子词。
 
-### 案例 3：Few-shot 代码生成
+### 案例 3：Few-shot 代码 / 分类
 
 ```text
 # 写一个函数：判断一个数是否是质数
 def is_prime(n):
-```
 
-GPT-3 能补出像样的实现。这条路径直接启发了后来的 Codex 和 GitHub Copilot。
-
-### 案例 4：Few-shot 文本分类
-
-```text
-评论：这家餐厅味道很赞 → 正面
-评论：等了一小时还没上菜 → 负面
+评论：味道很赞 → 正面
+评论：等一小时没上菜 → 负面
 评论：服务员态度真好 → ?
 ```
 
-GPT-3 输出 `正面`。同一个模型，换个 prompt 就能做翻译 / 算术 / 分类——这就是"生成是统一接口"的字面意思。
+逐部分解释：上半段用注释+签名当开头，模型补函数体（启发 Codex/Copilot）；下半段前两行标定标签空间，第三行让模型选同类标签——同一模型换 prompt 就能切换任务。
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 快速试一个 NLP 任务、还没数据做微调——塞 5–50 个 few-shot 例子往往就够
+- 需要「一个模型覆盖多任务」的原型（分类、翻译、摘要都写成生成）
+- 研究 / 教学 in-context learning、prompt 顺序与示例质量
+- 能接受 API 按 token 计费的产品路径
+
+**不适用**：
+
+- 要稳定事实问答、低幻觉——原版无 RLHF，应看 [[instructgpt]] / 更新模型
+- 长文档、长对话（原版 context 仅 2K token）
+- 强中文性价比场景（BPE 对中文不友好）
+- 单卡本地跑 175B——显存不划算，改小模型微调或蒸馏
 
 ## 踩过的坑
 
@@ -101,32 +109,26 @@ GPT-3 输出 `正面`。同一个模型，换个 prompt 就能做翻译 / 算术
 
 ## 历史小故事（可跳过）
 
-GPT 这条路从 2018 年走到 2025 年，每一步都在加倍：
+- **2018-06：GPT-1**（1.17 亿）——decoder-only + 预训练 + 微调
+- **2019-02：GPT-2**（15 亿）——zero-shot 泛化成立；权重一度拒发
+- **2020-05：GPT-3**（1750 亿）——本文，few-shot in-context learning；同年 6 月 API 上线
+- **2022：InstructGPT → ChatGPT**——RLHF 对齐后再加对话格式，5 天破百万
+- **2023–2025：GPT-4 → GPT-5**——多模态与更长 context；GPT-5 于 2025-08 发布
 
-- **2018-06：GPT-1**（1.17 亿参数）——decoder-only Transformer + 无监督预训练 + 有监督微调
-- **2019-02：GPT-2**（15 亿参数）——zero-shot 任务泛化第一次成立。OpenAI 一开始拒发权重，理由是"怕被滥用"，被社区嘲讽了半年才放出来
-- **2020-05：GPT-3**（1750 亿参数）——本文，few-shot in-context learning 范式诞生，论文挂 arXiv 当天就引爆 AI 社区
-- **2020-06：OpenAI API**——第一批开发者拿到 davinci 模型，第一次让 LLM 能买能用
-- **2022-03：InstructGPT**（[[instructgpt]]）——用 RLHF 把 GPT-3 对齐到指令，"听话"的版本
-- **2022-11：ChatGPT**——InstructGPT 加对话格式，公开发布。5 天百万、2 月破亿
-- **2023-03：GPT-4**——多模态、32K context、推理 / 代码 / 数学全面提升
-- **2025：GPT-5**——本文写的时候已经发布
-
-GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的论文之一。从一篇论文到一个改变互联网的产品，OpenAI 走了 30 个月。
+引用 30000+，从论文到改变互联网的产品大约 30 个月。
 
 ## 学到什么
 
-1. **Scale 是路径**：参数 + 数据 + 计算同步放大，能力会以非线性方式涌现。这是 GPT-3 最大的哲学贡献，也是 [[scaling-laws]] 的实证。
-2. **生成是统一接口**：所有 NLP 任务都可以 cast 成"条件文本生成"——分类、QA、翻译、摘要全都用一种格式做。Decoder-only 路线之所以胜出，靠的是这个统一接口。
-3. **Prompt 是新语言**：finetune 不再是唯一适配方式，写 prompt 成了新学科。这是后来 chain-of-thought / ReAct / agent 等技术的根。
-4. **大模型 ≠ 通用智能**：GPT-3 在算术 / 词义消歧 / 对抗 NLI 等任务上仍然翻车，"够大就行"是过度营销。后来的 Chinchilla（数据要同步放大）、o1（推理时算力是新维度）一个个修正了这条叙事。
-5. **理论 → 算法 → 产品**，每步隔几年。Kaplan scaling laws（2020-01）→ GPT-3 论文（2020-05）→ API 商业化（2020-06）→ ChatGPT 现象级产品（2022-11）。把研究、工程、产品当成同一条流水线，是 LLM 时代的新常态。
+1. **Scale 是路径**：参数 + 数据 + 计算同步放大，能力非线性涌现——也是 [[scaling-laws]] 的实证。
+2. **生成是统一接口**：分类 / QA / 翻译 / 摘要都可写成条件文本生成。
+3. **Prompt 是新语言**：finetune 不再唯一；chain-of-thought / ReAct / agent 都从这里长出来。
+4. **大模型 ≠ 通用智能**：算术 / 对抗 NLI 仍会翻车；Chinchilla、o1 修正了「够大就行」叙事。
+5. **理论 → 算法 → 产品**同流水线：Kaplan（2020-01）→ GPT-3（2020-05）→ API → ChatGPT（2022-11）。
 
 ## 延伸阅读
 
-- 论文 PDF：[Brown et al. 2020, arXiv:2005.14165](https://arxiv.org/abs/2005.14165)（75 页，§6 limitations 是最有诚意的一节，几乎所有后续 LLM 改进都在攻这里列的某条）
-- 配 nanoGPT 读架构：[karpathy/nanoGPT](https://github.com/karpathy/nanoGPT) 的 ~300 行 model.py 把 GPT 架构讲得比论文清楚 10 倍
-- 视频教程：[Andrej Karpathy — Let's build GPT from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)（2 小时手撸一个 mini GPT，从 0 跑通）
+- 论文：[Brown et al. 2020, arXiv:2005.14165](https://arxiv.org/abs/2005.14165)（§6 limitations 最有诚意）
+- 架构手撸：[karpathy/nanoGPT](https://github.com/karpathy/nanoGPT) / [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 - [[bert]] —— GPT-3 出现前的双向预训练对手
 - [[instructgpt]] —— GPT-3 → ChatGPT 路上的 RLHF 步骤
 
@@ -134,52 +136,21 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 
 - [[attention]] —— Transformer 是 GPT-3 的基础架构
 - [[bert]] —— 双向预训练同期工作，与 GPT 路线对照
-- [[scaling-laws]] —— GPT-3 的 8 个模型规模就是按这个排的
+- [[scaling-laws]] —— GPT-3 的模型规模按这个排
 - [[instructgpt]] —— GPT-3 → ChatGPT 路上的 RLHF 步骤
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
-- [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chatbot-arena-2024]] —— Chatbot Arena — 让真人盲投，给 LLM 排出公允座次
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
-- [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
-- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
-- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
-- [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
-- [[dit]] —— DiT — Diffusion Transformer
-- [[dpo]] —— DPO — Direct Preference Optimization
-- [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
+- [[codex-2021]] —— Codex — 让 GPT 学会写 Python
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
-- [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
+- [[induction-heads]] —— Induction Heads — in-context learning 引擎
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
-- [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
-- [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
-- [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
-- [[mixture-of-experts]] —— Mixture of Experts (MoE)
-- [[mmlu-2021]] —— MMLU — 用 57 个学科的多选题考一考语言模型
-- [[muzero]] —— MuZero — 不用规则也能下棋
-- [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
-- [[ppo]] —— PPO — Proximal Policy Optimization
-- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
-- [[resnet]] —— ResNet — 残差连接
-- [[retro]] —— RETRO — DeepMind 的检索增强 LLM
-- [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-- [[self-consistency-2022]] —— Self-Consistency — 让模型把同一道题做 40 遍再投票
-- [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型
-- [[t0-2021]] —— T0 — 让 50 个人各写各的提示词，模型反而更会听新指令
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
-- [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
-- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
-- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
-- [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
-- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
-- [[word2vec]] —— Word2Vec — 词向量奠基
-- [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
+- [[whisper-2022]] —— Whisper — 用野生音频教会模型听懂全世界
 

@@ -1,6 +1,6 @@
 ---
 title: Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法
-来源: Ingo Wald, "On Fast Construction of SAH-based Bounding Volume Hierarchies", IEEE Symposium on Interactive Ray Tracing 2007
+来源: 'Ingo Wald, "On Fast Construction of SAH-based Bounding Volume Hierarchies", IEEE Symposium on Interactive Ray Tracing 2007'
 日期: 2026-05-31
 分类: 图形学
 难度: 中级
@@ -8,148 +8,141 @@ title: Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似
 
 ## 是什么
 
-[[goldsmith-1987-bvh]] 给了光线追踪一棵会自己长的树（BVH），但 1987 年的算法每构造一个节点都要把所有候选切法扫一遍，复杂度 O(N²)。到 2007 年，场景有上百万三角面，光是把这棵树搭出来就要好几分钟——动态场景每帧重建？根本不可能。
+[[goldsmith-1987-bvh]] 给了光线追踪一棵会自己长的树（BVH）。**SAH**（表面积启发）是「怎么切这棵树更省遍历」的打分规则；**AABB** 是轴对齐盒子，像快递纸箱。1987 年的增量构建偏慢，到 2007 年百万三角面场景搭树要很多秒——动态场景每帧重建几乎不可能。
 
-Wald 这篇 6 页论文给了一个出乎意料朴素的提速法：**别去算所有候选切法的精确 SAH 代价，把 primitives 按质心位置投到 16 个抽屉（bin）里，只在抽屉边界处考虑切，每节点工作量从 O(N) 候选砍到 O(K=16) 候选**。整体构建从 O(N²) 跌到 O(N log N)。
+Wald 这篇 6 页论文的提速法：**别扫所有候选切法，把图元按质心（盒子中心点）投进约 16 个抽屉（bin），只在抽屉边界处切**。相对 Goldsmith 式慢构建，整体可到 O(N log N)；相对当时精确 full-sweep SAH，主要是常数级约 **10×** 加速，渲染质量多数场景接近。
 
-日常类比：你要把一摞 100 万张扑克按某条规则切成两摞，最优做法是把每个『切在第 i 张和第 i+1 张之间』都试一遍。Wald 的做法是先把扑克按花色粗分成 16 摞，只考虑『切在哪两摞之间』——精度有损，但快了几个数量级，而且最后切得的两摞质量几乎一样好。
+日常类比：100 万张扑克要切成两摞。精确做法试每个缝；Wald 先粗分成 16 摞，只试「切在哪两摞之间」——略损精度，快一个数量级，切出来几乎一样好。
+
+一句话记：**用分桶近似 SAH，换来能每帧重建的构建速度。**
 
 ## 为什么重要
 
 不理解这一篇，下面这些事都讲不通：
 
-- 为什么 Intel Embree、pbrt-v3/v4、NVIDIA OptiX 默认 BVH builder 都跑这个算法，至今没换
-- 为什么 2007 年之后『动态场景实时光追』突然变得可能——每帧重建 BVH 的时间预算来了
-- 为什么 NVIDIA RTX Cores 硬件加速的是『遍历』不是『构建』——构建已经被这一篇压到 CPU 几秒搞定
-- 为什么所有现代离线渲染器（Arnold、RenderMan、Cycles）启动时『准备场景』那段，跑的就是 binned SAH
+- 为什么 Intel Embree、pbrt、NVIDIA OptiX 默认 BVH builder 长期跑 binned SAH
+- 为什么 2007 年后「动态场景实时光追」突然变得可能——每帧重建有了时间预算
+- 为什么 RTX Cores 硬件加速的是遍历，构建常仍在 CPU 用这类算法秒级搞定
+- 为什么 Arnold、RenderMan、Cycles 启动「准备场景」阶段常见 binned SAH
 
-这是把 [[goldsmith-1987-bvh]] 的 SAH 从『理论指标』搬上『工程实战』的关键一脚。
+这是把 [[goldsmith-1987-bvh]] 的 SAH 从理论指标搬上工程实战的关键一脚。
+
+没有它，后面的实时重建叙事会缺一块拼图。
 
 ## 核心要点
 
-整篇论文的灵魂是三步替换：
+整篇灵魂是三步替换（每步都像「先分桶再算账」）：
 
-1. **质心 binning**：算所有 primitives 的质心 AABB，沿最长轴等宽切 K 个 bin（论文推荐 K=16）。每个 prim 按质心落入唯一一个 bin。
+1. **质心 binning**：算每个图元盒子的中心点，沿最长轴等宽切 K 个抽屉（论文甜点 K=16）。每个图元落入唯一一格——像按身高分进 16 列队伍。
 
-2. **两遍前缀扫描**：从左到右扫一遍 bin，累加 prim 数和 bbox；再从右到左扫一遍。两个扫描各 O(K)，于是任意切点的『左侧总 bbox 表面积』和『右侧总 bbox 表面积』都能 O(1) 取到。
+2. **两遍前缀扫描**：从左累加人数与盒子并集，再从右扫一遍。任意切点的左右表面积都能 O(1) 取出——像超市扫码枪先扫一遍再回头对账。
 
-3. **K-1 个候选切点选最优**：对每个 bin 边界算 SAH 代价 `Cost = SA(left)/SA(parent) × N_left + SA(right)/SA(parent) × N_right`，挑代价最小的切。
-
-每节点工作量：扫 primitives 一遍（O(N)）+ 算 K-1 个候选（O(K)），主导项 O(N)。整棵树 log N 层，所以总构建 O(N log N)——而且常数极小，因为内层循环对 SIMD 友好。
+3. **K-1 个候选选最优**：代价约 `SA(left)/SA(parent)×N_left + SA(right)/SA(parent)×N_right`，挑最小。空侧（某一边 0 个图元）直接丢掉。每节点主导 O(N)，整树约 O(N log N)；内层循环短、数据规整，对 SIMD（一次算多格盒子）友好。
 
 ## 实践案例
 
-### 案例 1：百万三角面场景，构建时间 10 秒 → 1 秒
+### 案例 1：论文 Table 1 的数量级
 
-Wald 在论文里测了 Conference Room（28 万面）、Sponza（7.6 万面）、Soda Hall（150 万面）。结果：
+同一张表里还有 Fairy（174K）、Dragon 等；单线程数量级可记成：
 
-- Full-sweep SAH（精确）：Soda Hall 构建 12.4 秒
-- Binned SAH（K=16）：构建 1.1 秒，**约 11x 加速**
-- 渲染时间几乎不变（光线/秒只差 2-3%）
+```
+# 对照论文 Table 1（秒；单线程）
+Blade 1.5M:   sweep≈10.2s  binned≈1.09s
+Conference:   sweep≈1.32s  binned≈139ms
+Thai 10M:     binned≈7.4s
+render vs sweep: 约 91%–100%（个别可差近一成）
+```
 
-这个『构建快 10x，渲染只差 2%』就是 binning 之所以成为默认的根本原因。
+**逐部分解释**：加速来自候选从 O(N) 降到 O(K)；质量仍接近，是因为按质心分侧，且每个 bin 跟踪真实包围盒并集——左右表面积不是「假设图元刚好填满抽屉」。千万级也能从「分钟级心理预期」拉回可交互区间。
 
-### 案例 2：Embree 源码里的实现
-
-Intel Embree 的 `BVHBuilderBinnedSAH` 几乎是论文伪代码的逐行翻译，但加了三层工程：
-
-- 用 SSE/AVX 一次更新多个 bin 的 bbox（SIMD bin update）
-- 用 task scheduler 把『递归构建左右子树』丢进线程池
-- 大节点（> 阈值）才 binning，小节点（< 32 prims）退化为 full-sweep
-
-这套组合让现代 CPU 实时光追每帧能重建百万级 BVH。
-
-### 案例 3：和 pbrt-v3 的对照
-
-pbrt-v3 第 4 章 `BVHAccel` 默认 `SplitMethod = SAH`，跑的就是 binned SAH（pbrt 用 K=12）。pbrt 还提供 `Middle` / `EqualCounts` 两个对照：
-
-- `Middle`：按中线切——构建最快、渲染最慢
-- `EqualCounts`：左右等数——构建快、渲染中等
-- `SAH`（binned）：构建中等、渲染最快
-
-教学用对照非常清晰：binning 是把『精确 SAH』的渲染质量保住、把构建代价拉到能接受的中点。
-
-### 案例 4：伪代码逐行看
-
-整个核心算法不到 30 行。简化版（递归构建一个节点）：
+### 案例 2：核心伪代码（跟做）
 
 ```
 BuildNode(prims):
-    if |prims| <= leaf_threshold:  return Leaf(prims)
-    centroid_bbox = union(centroid(p) for p in prims)
-    axis = longest_axis(centroid_bbox)
-    bins = [empty] * K
+    if |prims| <= leaf_threshold: return Leaf(prims)
+    cb = union(centroid(p) for p in prims)   # 质心包围盒
+    if cb.hi ≈ cb.lo: return Leaf(prims)     # 避免除零
+    axis = longest_axis(cb); bins = [empty]*K
     for p in prims:
-        i = floor(K * (centroid(p)[axis] - lo) / (hi - lo))
-        bins[i].count += 1
-        bins[i].bbox = bins[i].bbox.union(p.bbox)
-    L = prefix_scan(bins)        # 左前缀
-    R = prefix_scan(bins.rev())  # 右前缀
-    best = argmin over i in [1..K-1] of SAH(L[i-1], R[i])
-    left_prims, right_prims = partition(prims, best)
-    return Node(BuildNode(left_prims), BuildNode(right_prims))
+        i = floor(K * (1-ε) * (c[axis]-lo)/(hi-lo))
+        bins[i].count += 1; bins[i].bbox.union(p.bbox)
+    L, R = prefix_scan(bins), prefix_scan(bins.rev())
+    # 空侧（count=0）直接 skip，勿除零
+    best = argmin_i SAH(L[i-1], R[i])
+    left, right = partition(prims, best)
+    return Node(BuildNode(left), BuildNode(right))
 ```
 
-这就是『论文级别的伪代码』直接能跑——工程版本无非加 SIMD、加并行、加边界处理。
+**逐部分解释**：`(1-ε)` 把贴右边界的点压进最后一格；`L[i-1]`/`R[i]` 是左右累计人数与盒子并集，表面积 O(1) 取出后只评 K-1 刀；`partition` 像 quicksort。论文默认全程 binning；Embree 常对大节点 binning、很小节点退回 full-sweep。跟做先固定 K=16、leaf_threshold=4。
+
+### 案例 3：pbrt 三种切法对照
+
+```
+# pbrt BVHAccel：同一场景换切法
+accel = BVHAccel(prims, splitMethod=SAH)       # 默认 binned，常用 K=12
+# splitMethod=Middle      → 中线切：构建最快、渲染最慢
+# splitMethod=EqualCounts → 左右等数：中间派
+# splitMethod=SAH         → 构建中等、渲染通常最好
+```
+
+**逐部分解释**：三档说明 binning 是「保住 SAH 渲染质量、把构建拉到可接受」的中点。改 `SplitMethod` 跑同一场景，看构建秒数和光线/秒怎么对调，比只读公式更直观。
 
 ## 踩过的坑
 
-1. **K 选小了反而退化**：K=4 时切点太粗，渲染代价飙升 30%；K=16 是 Wald 论文实测的甜点；K=64 构建多花 1.5x 时间但渲染只多省 1%，不划算。
-
-2. **质心紧贴 bin 边界时分配不稳**：浮点比较要加 epsilon，否则同一个 prim 在不同机器上落入不同 bin，渲染结果不可复现——Embree 在这里栽过 bug。
-
-3. **partition 那一步是隐藏热点**：选完 split 后要把 prims 分成左右两组。naive 用 `std::partition` 在多核下竞争 cache line，Embree 改成预分配两个 indices 数组分别 push。
-
-4. **和 SBVH 的取舍**：Stich-Friedrich-Dietrich 2009 的 SBVH 在 binning 基础上加 spatial split（允许把跨边界的三角面切两半），渲染再快 10-20%，但构建时间多 30%。多数引擎默认仍用 binned SAH，只在最终渲染前可选打开 SBVH。
-
-5. **GPU 移植不顺**：binning 需要 reduction，GPU 上做 atomic 或 warp-shuffle 都不优雅。GPU 路线主流是 LBVH（Karras 2012）的 Morton code + radix sort——和 binned SAH 几乎是平行宇宙的两条路。
+1. **K 太小质量掉、太大不划算**：K=4 往往明显变差；K=16 是论文甜点；再加大构建变贵、渲染收益很小。
+2. **质心贴边界要防浮点**：用 `(1-ε)` 或等价处理，否则同图元跨机器落入不同 bin，结果不可复现。
+3. **partition 是隐藏热点**：选完切点后重排 ID；多核下 naive `partition` 易抢 cache，工程上常预分配左右索引缓冲。
+4. **和 SBVH / GPU 路线别混**：SBVH 在 binning 上允许把跨边界三角面切开，渲染可再快约 10–20%，构建更贵；GPU 主流常走 LBVH（把空间编成 Morton 码再排序），和 CPU binned SAH 是互补路线，不要互相替代着抄。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 百万级 primitives 静态场景的 BVH 预构建（离线渲染器启动阶段）
-- 中等规模动态场景（数十万 prims）的每帧重建（Embree CPU 实时光追）
-- 需要保留 SAH 渲染质量但构建时间预算秒级以内
-- 教学：用最朴素的代码示范『近似换工程可行性』
+- 百万级图元静态场景的 BVH 预构建（离线渲染器启动）
+- 数十万级动态场景每帧重建（Embree 类 CPU 实时光追）
+- 要保 SAH 质量且构建预算在秒级以内
+- 教学：示范「近似换工程可行性」
 
 **不适用**：
 
-- GPU 上构建：用 LBVH / HLBVH / TRBVH，Morton code 路线更适合 SIMT
-- 极小场景（< 几千 primitives）：直接 full-sweep SAH 常数更小、反而更快
-- 追极致渲染速度：上 SBVH，多花 30% 构建换 10-20% 渲染
-- 极度动态场景（每帧拓扑全变）：用 LBVH 重建，binning 的 partition 太重
+- GPU 构建优先：LBVH / HLBVH 等 Morton 路线更贴 SIMT
+- 极小场景（几千图元）：full-sweep 常数更小，可能更快
+- 追极致渲染：可开 SBVH，多花构建换约 10–20% 遍历
+- 每帧拓扑剧变且要极致重建吞吐：常选更粗的快速构建
 
 ## 历史小故事（可跳过）
 
-- **1987 年**：Goldsmith-Salmon 发明 SAH 和增量贪心构建，O(N²)。当时场景几千面，跑得动。
-- **1996 年**：MacDonald-Booth 提出 full-sweep SAH，O(N log² N) 但常数大。
-- **2006 年**：Wald-Boulos-Shirley 把 SAH BVH 用到动态场景，发现 build time 是新瓶颈。
-- **2007 年**：本论文。Wald 在德国萨尔兰大学的实验室里写下 binning 思路，6 页 IEEE RT 论文。Embree 的前身 Intel ART 当年就把它落地到产品。
-- **2009 年**：Stich SBVH 在 binning 上加 spatial split。
-- **2012 年**：Karras LBVH 走 GPU 路线，和 binning 互补。
+- **1987 年**：Goldsmith-Salmon 提出 SAH 与增量 BVH，场景小时尚可。
+- **1990 年**：MacDonald-Booth 把 SAH 系统用到 kd-tree 等加速结构。
+- **2006–2007 年**：Wald-Boulos-Shirley 等把 SAH BVH 推向动态场景，构建时间成新瓶颈。
+- **2007 年**：本文（署名 SCI Utah / Intel）把 kd-tree 上已有的 binning 思路落到 BVH，约 6 页 IEEE RT。
+- **2009 / 2012 年**：Stich SBVH 加 spatial split；Karras LBVH 走 GPU 并行，与 binning 互补。
 
 ## 学到什么
 
-1. **近似换工程可行性**：精确解 O(N²) 跑不动，近似解 O(N log N) 跑得动而且质量只差 2%。这是工程优化的经典范式
-2. **bin/bucket/histogram 思路**：把『连续候选』离散成『K 个桶』，再用前缀扫描 O(1) 查任意切点——这套手法在外排序、quickselect、kd-tree 构建都通用
-3. **常数项决定胜负**：log² N 也算『近似线性』，但 binned SAH 的内层循环对 SIMD/cache 友好，常数小到能压过纯理论复杂度
-4. **默认值的力量**：Embree / pbrt / OptiX 都把它作为 default builder 长达 18 年——好的默认值就是最好的论文影响力指标
+1. **近似换工程可行性**：精确扫切点太贵时，离散成 K 桶往往够用
+2. **分桶 + 前缀扫描**是通用手法：外排序、quickselect、kd-tree 构建都能见到
+3. **常数项决定胜负**：同属近线性时，SIMD/cache 友好的内层循环更能落地
+4. **默认值即影响力**：Embree / pbrt / OptiX 长期默认 binned SAH，说明工程甜点找对了
+
+好的加速结构论文，往往不是发明全新数学，而是把已有启发函数压到「每帧重建也付得起」。
 
 ## 延伸阅读
 
-- 论文 6 页 PDF：[Wald 2007 fastbuild.pdf](https://www.sci.utah.edu/~wald/Publications/2007/FastBuild/download/fastbuild.pdf)（密度高但读得动）
-- Embree 源码：[github.com/RenderKit/embree](https://github.com/RenderKit/embree) 的 `BVHBuilderBinnedSAH`
-- pbrt-v4 第 7 章：`BVHAccel` 实现，对照阅读
-- Stich 2009 SBVH 论文：在 binning 上加 spatial split
-- Karras 2012 LBVH：GPU 并行构建，互补路线
+- 论文 PDF：[Wald 2007 fastbuild](https://www.sci.utah.edu/~wald/Publications/2007/FastBuild/download/fastbuild.pdf)（约 6 页，Table 1 最值得先看）
+- Embree：[github.com/RenderKit/embree](https://github.com/RenderKit/embree) 中 binned SAH builder
+- pbrt-v4：`BVHAccel` 与 `SplitMethod` 对照阅读
+- Stich 2009 SBVH：在 binning 上加 spatial split
+- Karras 2012 LBVH：GPU 全并行构建的互补路线
+- [[goldsmith-1987-bvh]] —— SAH/BVH 概念起点
 
 ## 关联
 
-- [[goldsmith-1987-bvh]] —— SAH 和 BVH 概念的起点，本论文是它的 18 年后工程化升级
-- [[kajiya-1986-rendering-equation]] —— 路径追踪的数学根，BVH 是它的加速结构
-- [[whitted-1980]] —— 第一篇递归光线追踪，BVH 之前用 grid
-- [[cook-1984-distributed-ray-tracing]] —— 把光线追踪从『一根光线』推广到『一束光线』
+- [[goldsmith-1987-bvh]] —— SAH 与 BVH 起点，本文是其后工程化加速
+- [[kajiya-1986-rendering-equation]] —— 路径追踪数学根，BVH 是其加速结构
+- [[whitted-1980]] —— 递归光线追踪；早期常用规则网格
+- [[cook-1984-distributed-ray-tracing]] —— 从单根光线推广到分布采样
+- [[karras-2012-parallel-bvh]] —— GPU 上 O(N) 并行构建的互补路线
 
 ## 反向链接
 
@@ -160,4 +153,3 @@ BuildNode(prims):
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karras-2012-parallel-bvh]] —— Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
-

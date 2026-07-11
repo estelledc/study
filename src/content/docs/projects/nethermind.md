@@ -47,19 +47,20 @@ Nethermind 的设计可以拆成 **3 个核心点**：
 
 ```bash
 nethermind -c mainnet \
-  --datadir /var/lib/nethermind \
-  --JsonRpc.Enabled true \
-  --JsonRpc.Host 0.0.0.0 \
-  --JsonRpc.JwtSecretFile /etc/jwt.hex
+  --data-dir /var/lib/nethermind \
+  --jsonrpc-enabled true \
+  --jsonrpc-host 0.0.0.0 \
+  --jsonrpc-jwtsecretfile /etc/jwt.hex
 ```
 
 **逐部分解释**：
 
 - `-c mainnet`：连以太坊主网（也可填 `gnosis` `sepolia` 等）
-- `--JsonRpc.Enabled`：对外开放 JSON-RPC，DApp / 钱包都靠它读链
-- `--JsonRpc.JwtSecretFile`：合并后执行层（Nethermind）和共识层（Lighthouse）通过 Engine API 通信，这个文件是双方的握手密钥
+- `--data-dir`：数据目录（旧名 `--datadir` 已弃用，跟开篇保持一致）
+- `--jsonrpc-enabled`：对外开放 JSON-RPC，DApp / 钱包靠它读链
+- `--jsonrpc-jwtsecretfile`：执行层与共识层（Lighthouse）Engine API 握手密钥
 
-把同一份 `jwt.hex` 喂给 Lighthouse 启动参数，两边握手成功才能同步出块。
+把同一份 `jwt.hex` 喂给 Lighthouse，两边握手成功才能同步出块。
 
 ### 案例 2：OP Stack 内置 rollup node
 
@@ -124,8 +125,8 @@ sedge cli \
 - **2020 年**：进入主网生产环境，开始被节点运营商小规模采用
 - **2022 年**：The Merge（PoS 合并）顺利完成切换，Engine API 适配到位
 - **2023 年**：默认开启 Snap Sync，跨过"性能不如 Geth"的早期评价
-- **2024 年**：内置 OP Stack rollup node，成为唯一"执行 + L2 一体"的客户端
-- 当前 Star 量级：约 1.6k；节点占比约 10%——是 Geth 之外第二大执行客户端
+- **2024 年**：内置 OP Stack rollup node，成为少数"执行 + L2 一体"的客户端之一
+- 当前 Star 量级：约 1.6k；节点占比约 10%——是 Geth 之外第二大执行客户端之一
 
 ## 学到什么
 
@@ -138,7 +139,7 @@ sedge cli \
 
 - 官方文档：[docs.nethermind.io](https://docs.nethermind.io)（最权威，含所有 CLI flag、JSON-RPC 文档）
 - 一键搭节点：[Sedge](https://github.com/NethermindEth/sedge)（Nethermind 团队的 docker-compose 脚手架）
-- Snap Sync 协议：[EIP-2364: Snap protocol](https://eips.ethereum.org/EIPS/eip-2364)（理解为什么默认 10x 快）
+- Snap 协议说明：[devp2p snap/1](https://github.com/ethereum/devp2p/blob/master/caps/snap.md)（叶子快照同步；勿与 EIP-2364 forkid 握手混淆）
 - [[go-ethereum]] —— Geth，事实标准的以太坊客户端，对照学习差异
 - [[besu]] —— Java 写的以太坊客户端，与 Nethermind 同属"非 Geth"少数派
 

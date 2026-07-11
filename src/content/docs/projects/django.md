@@ -177,15 +177,10 @@ class ArticleAdmin(admin.ModelAdmin):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
-- [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
@@ -193,7 +188,6 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
-- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务

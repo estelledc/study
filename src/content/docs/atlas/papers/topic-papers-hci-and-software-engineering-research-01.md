@@ -19,7 +19,7 @@ sidebar:
 | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | `cognitive-load-theory` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | `copilot-rct` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | `debugging-dichotomy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | `dijkstra-goto` | unknown | UNVERIFIED | 1968 年 3 月 Dijkstra 写给 CACM 的不到 1000 字 letter，论证 goto 让源代码的静态文本顺序与运行时执行顺序错位、状态难以推理 |
+| [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | `dijkstra-goto` | unknown | UNVERIFIED | 解释 goto 如何破坏程序位置与执行状态之间的可推理关系，并推动结构化控制流 |
 | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | `fsrs-spaced-repetition` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) | `glue-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | `great-swe` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

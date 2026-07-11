@@ -1,0 +1,81 @@
+{
+  "action": "refine",
+  "average": 4.55,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "七个 registered claims 在 RFC 里均为可选字段，教学写成「标准 claims」可接受；若加「注册名、非强制」更严谨。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 用 `base64 -d` 解 base64url 段，遇 -/_ 会失败；应注明 base64url 或给出 tr/补垫步骤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联里 [[rest-fielding-2000]] 重复出现两次，应去重。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "七个 registered claims 在 RFC 里均为可选字段，教学写成「标准 claims」可接受；若加「注册名、非强制」更严谨。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 用 `base64 -d` 解 base64url 段，遇 -/_ 会失败；应注明 base64url 或给出 tr/补垫步骤。",
+        "关联里 [[rest-fielding-2000]] 重复出现两次，应去重。"
+      ]
+    }
+  ]
+}

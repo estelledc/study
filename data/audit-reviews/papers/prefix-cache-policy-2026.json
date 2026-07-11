@@ -1,0 +1,112 @@
+{
+  "action": "rewrite",
+  "average": 1.11,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter / ## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文是通用占位模板，没有前缀缓存 / LRU / 淘汰策略的日常类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "术语（prefix tree、GDSF、vLLM）几乎未出现，零基础无法建立直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例全是「最小复现/边界条件/代价估算」空壳，需按真实策略重写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写成 https://arxiv.org/abs/2026 非法；正文 arXiv 2605.30654 实际是 EUDAIMONIA，与前缀缓存无关"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题 Beyond LRU / Prefix-Cache 与正文占位文案完全脱节，无作者、会议、机制可核对"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "一句话里的 GDSF / vLLM 默认等主张无出处，需锚定真实论文（如 UniCache POMACS 2026）重写"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例无可跟做的命令/伪代码，需补 session vs structural reuse、按任务队列淘汰等可操作步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑是通用 pipeline 套话，应改为 LRU 在混杂负载失效、decode 块误留、跨任务抢缓存等真实坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用无量化边界（缓存命中率、QTTFT、负载是否异质）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文是通用占位模板，没有前缀缓存 / LRU / 淘汰策略的日常类比",
+        "术语（prefix tree、GDSF、vLLM）几乎未出现，零基础无法建立直觉",
+        "三个案例全是「最小复现/边界条件/代价估算」空壳，需按真实策略重写"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 1,
+        "no_distortion": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "frontmatter / ## 是什么",
+      "fix_hints": [
+        "来源写成 https://arxiv.org/abs/2026 非法；正文 arXiv 2605.30654 实际是 EUDAIMONIA，与前缀缓存无关",
+        "标题 Beyond LRU / Prefix-Cache 与正文占位文案完全脱节，无作者、会议、机制可核对",
+        "一句话里的 GDSF / vLLM 默认等主张无出处，需锚定真实论文（如 UniCache POMACS 2026）重写"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 2
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例无可跟做的命令/伪代码，需补 session vs structural reuse、按任务队列淘汰等可操作步骤",
+        "踩坑是通用 pipeline 套话，应改为 LRU 在混杂负载失效、decode 块误留、跨任务抢缓存等真实坑",
+        "适用/不适用无量化边界（缓存命中率、QTTFT、负载是否异质）"
+      ]
+    }
+  ]
+}

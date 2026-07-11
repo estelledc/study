@@ -38,8 +38,8 @@ Jaeger 就是来拼这个的。
 
 - 开始时间 + 结束时间（差值就是耗时）
 - 操作名（如 `POST /orders`）
-- Tags（键值对，`http.status=500`、`user.id=42`）
-- Logs（这次操作中间发生的事件）
+- Tags（贴在这次操作上的标签，如 `http.status=500`、`user.id=42`）
+- Logs（操作中途记下的事件，像飞行记录仪的一笔笔备注）
 
 ### Trace（一组关联 span）
 
@@ -65,31 +65,31 @@ Jaeger 就是来拼这个的。
 
 ### 案例 1：Docker 一键启
 
-最快上手：
+最快上手（同时开 UI 与 OTLP 端口）：
 
 ```bash
 docker run -d \
-  -p 6831:6831/udp \
+  -p 4317:4317 -p 4318:4318 \
   -p 16686:16686 \
   jaegertracing/all-in-one:latest
 ```
 
-然后浏览器开 `http://localhost:16686`，Jaeger UI 就来了。注意 `all-in-one` 把 collector / query / storage 都塞一个镜像里——只能玩玩，不能上生产。
+然后浏览器开 `http://localhost:16686`，Jaeger UI 就来了。`4317/4318` 收 OTLP；`all-in-one` 把 collector / query / storage 塞一个镜像——只能玩玩，不能上生产。
 
-### 案例 2：Python 接入
+### 案例 2：Python 接入（OTLP，勿用已弃用的 JaegerExporter）
 
-用 OpenTelemetry SDK：
+用 OpenTelemetry SDK + OTLP（旧的 `opentelemetry.exporter.jaeger` 已从规范移除）：
 
 ```python
 from opentelemetry import trace
-from opentelemetry.exporter.jaeger.thrift import JaegerExporter
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 trace.set_tracer_provider(TracerProvider())
 tracer = trace.get_tracer(__name__)
 
-exporter = JaegerExporter(agent_host_name="localhost", agent_port=6831)
+exporter = OTLPSpanExporter(endpoint="http://localhost:4318/v1/traces")
 trace.get_tracer_provider().add_span_processor(BatchSpanProcessor(exporter))
 
 with tracer.start_as_current_span("checkout"):
@@ -149,9 +149,22 @@ Jaeger UI 主视图是一条**水平时间线**：
 - **采样不是省钱手段，是必需品**——100% 存储等于让追踪系统拖垮主系统
 - **CNCF 毕业不等于永远主导**——Jaeger 毕业 5 年后被 OpenTelemetry 反客为主，开源世界没有终局
 
+## 延伸阅读
+
+- 官方文档：[Jaeger Getting Started](https://www.jaegertracing.io/docs/latest/getting-started/)
+- OpenTelemetry 接入：[OTLP → Jaeger](https://opentelemetry.io/docs/languages/python/exporters/)（用 OTLP，不要再用 JaegerExporter）
+- 灵感来源：Google Dapper 论文（2010）——分布式追踪的工业起点
+- [[prometheus]] —— 指标侧对照；先告警再下钻到 Jaeger
+- [[opentelemetry]] —— 今天写埋点应优先学的 API / SDK
+
 ## 关联
 
 - [[prometheus]] —— 监控三件套之一，看时间序列指标
-- [[elasticsearch]] —— Jaeger 默认存储后端
+- [[elasticsearch]] —— Jaeger 常用存储后端之一
 - [[cassandra]] —— Jaeger 另一个常用存储后端
 - [[grafana]] —— 常和 Jaeger 配合，从指标跳到对应 trace 排错
+- [[opentelemetry]] —— 现代埋点标准，Jaeger 作为后端接收 OTLP
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

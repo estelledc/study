@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有命令块，缺少像模板那样的逐步解释（装 harness → 写 preds → 跑单题 → 看 Docker/日志）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有排行榜表，没有代码或逐步说明；建议补一句「怎么读脚注/子集」的跟做步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 结构清楚，但可加一小段「模型输入长什么样」的伪代码，方便零基础对照"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "排行榜后段（Claude 3.7 / Opus 4.7 等）属动态 SOTA，建议标明「截至笔记日期的公开榜」以免读成论文原文数字"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「三层漏斗每层 10×」是教学近似，可改成「数量级收缩」以免被当成精确过滤比"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 preds.json 注释可写成完整一行 JSON 示例，方便直接照抄试跑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景里「19000 道训练 split」可点明是官方 train split、与评测 2294 不重叠，避免误拿 test 训练"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有命令块，缺少像模板那样的逐步解释（装 harness → 写 preds → 跑单题 → 看 Docker/日志）",
+        "案例 3 只有排行榜表，没有代码或逐步说明；建议补一句「怎么读脚注/子集」的跟做步骤",
+        "案例 1 结构清楚，但可加一小段「模型输入长什么样」的伪代码，方便零基础对照"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "排行榜后段（Claude 3.7 / Opus 4.7 等）属动态 SOTA，建议标明「截至笔记日期的公开榜」以免读成论文原文数字",
+        "「三层漏斗每层 10×」是教学近似，可改成「数量级收缩」以免被当成精确过滤比"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 preds.json 注释可写成完整一行 JSON 示例，方便直接照抄试跑",
+        "适用场景里「19000 道训练 split」可点明是官方 train split、与评测 2294 不重叠，避免误拿 test 训练"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "本地 LLM 的 Docker 类比贯穿 Modelfile / layer 复用，零基础一秒懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "GGUF 量化、OpenAI 兼容 API 都有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均可跟做：pull/run、Modelfile 古文先生、LangChain ChatOllama"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/ollama/ollama 正确；Jeffrey Morgan / jmorganca 2023-07 起步叙事合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Modelfile、GGUF Q4_K_M、:11434 OpenAI 兼容、Metal 加速等与产品行为一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2026 年星星破 17 万」为笔记时点估计，无硬伤；Docker 是类比非声称同实现"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "pull/run、Modelfile create、langchain_ollama ChatOllama 均可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "内存/量化档位/非 GGUF 转换/vs vLLM/桌面与 CLI 双装 等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用个人与小团队、不适用千 QPS/训练/纯 GUI，边界有量化提示"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "本地 LLM 的 Docker 类比贯穿 Modelfile / layer 复用，零基础一秒懂",
+        "GGUF 量化、OpenAI 兼容 API 都有日常桥接",
+        "三案例均可跟做：pull/run、Modelfile 古文先生、LangChain ChatOllama"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 github.com/ollama/ollama 正确；Jeffrey Morgan / jmorganca 2023-07 起步叙事合理",
+        "Modelfile、GGUF Q4_K_M、:11434 OpenAI 兼容、Metal 加速等与产品行为一致",
+        "「2026 年星星破 17 万」为笔记时点估计，无硬伤；Docker 是类比非声称同实现"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "pull/run、Modelfile create、langchain_ollama ChatOllama 均可跟做",
+        "内存/量化档位/非 GGUF 转换/vs vLLM/桌面与 CLI 双装 等坑具体可操作",
+        "适用个人与小团队、不适用千 QPS/训练/纯 GUI，边界有量化提示"
+      ]
+    }
+  ],
+  "slug": "ollama",
+  "area": "projects",
+  "status": "passed",
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 159,
+  "l1_pass": true
+}

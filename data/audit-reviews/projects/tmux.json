@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 偏短，可补两步「谁敲键对方立刻看到」的跟做说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "macOS 复制粘贴坑里 reattach-to-user-namespace 已偏旧，可更明确标成历史方案、优先 OSC 52 / set-clipboard"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，可再点一句「无 root、仅 SSH 长任务」这类量化场景"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 偏短，可补两步「谁敲键对方立刻看到」的跟做说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "macOS 复制粘贴坑里 reattach-to-user-namespace 已偏旧，可更明确标成历史方案、优先 OSC 52 / set-clipboard"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用边界清楚，可再点一句「无 root、仅 SSH 长任务」这类量化场景"
+      ]
+    }
+  ]
+}

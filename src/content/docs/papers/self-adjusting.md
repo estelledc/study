@@ -22,7 +22,7 @@ Self-Adjusting Computation（自调整计算，常简称 SAC）是一种**让程
 
 - 为什么改一个 React state，只有依赖它的 component 重渲染——而不是整个页面重画
 - 为什么 rust-analyzer 改一行代码后类型推导几乎瞬时——它不是更快地全跑一遍，而是只跑变了的子集
-- 为什么 Solid signal、Svelte 5 runes、Vue 3 ref、MobX observable 用法相似——它们都是同一个理论的工程变体
+- 为什么 Solid signal、Svelte 5 runes、Vue 3 ref、MobX observable 用法相似——它们都走「追踪依赖 → 只更新受影响部分」这条路
 - 为什么 dbt 的 incremental model、增量构建工具的"只重编译变更文件"思路都能成立
 
 ## 核心要点
@@ -31,11 +31,11 @@ SAC 把"增量计算"拆成 **三块**：
 
 1. **modifiable reference**：一个会变的值，但它**自己记得谁读过自己**。类比：图书馆的书后面贴一张借阅卡，谁借走过都登记在册——下次书的内容更新，按借阅卡逐个通知。
 
-2. **dependency-directed graph (DDG)**：程序首次运行时，每个 `read` 都连一条"读者 → modifiable"的边，最终形成一张依赖 DAG。类比：摄影里的脚本表，谁负责拍哪场全部记录在档。
+2. **dynamic dependence graph (DDG，动态依赖图)**：程序首次运行时，每个 `read` 都连一条"modifiable → 读者"的边，最终形成一张依赖 DAG。类比：摄影里的脚本表，谁负责拍哪场全部记录在档。
 
 3. **change propagation**：`change` 改了某个 modifiable，再调 `propagate`，系统沿 DDG 找受影响的子树，按 trace 时间戳从早到晚重跑。类比：菜谱里把"鸡蛋"换成"豆腐"，从 step 5 重做，前面 1-4 步不动。
 
-把这三块拼起来：纯函数 + 标记会变的输入 + 自动建图 + 时间戳排序的增量重算。论文还给了**形式化证明**：propagation 后的结果与从头重跑完全一致。
+把这三块拼起来：纯函数 + 标记会变的输入 + 自动建图 + 时间戳排序的增量重算。论文还给了**形式化证明**：propagation 后的结果与从头重跑完全一致。文中的 modal type system（模态类型系统）是编译期规矩——像「危险区通行证」，保证你只在允许的地方读写 modifiable。
 
 ## 实践案例
 
@@ -68,7 +68,7 @@ createEffect(() => console.log(doubled()))
 setCount(5)   // 只 doubled + effect 重算
 ```
 
-`createSignal` 大致对应 `mod`，`createMemo` 是 `read + write` 链，`setCount` 是 `change + propagate`。**Solid 砍掉了论文的 modal type system，用运行时收集依赖**——工程上更轻，理论保证略弱。
+`createSignal` 大致对应 `mod`，`createMemo` 是 `read + write` 链，`setCount` 是 `change + propagate`。**Solid 砍掉了论文的 modal type system（那套「通行证」规矩），改用运行时收集依赖**——工程上更轻，理论保证略弱。
 
 ### 案例 3：rust-analyzer 的增量编译
 
@@ -142,7 +142,7 @@ trait Compiler: salsa::Database {
 - [[lambda-calculus]] —— SAC 的形式化建立在纯 λ 演算之上
 - [[standard-ml]] —— 论文原型实现的宿主语言
 - [[solid]] —— 前端最像 SAC 的工程化代表
-- [[svelte]] —— Svelte 5 Runes 把 SAC 思想直接编译进 JS，零运行时开销
+- [[svelte]] —— Svelte 5 Runes 在编译期插入依赖追踪，细粒度更新（仍有轻量 signal 运行时）
 
 ## 反向链接
 

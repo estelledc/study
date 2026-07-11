@@ -1,0 +1,115 @@
+{
+  "slug": "schgen-pcb",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter 来源",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 JSON 样本偏抽象，可再点明 request/code/check 各对应训练管线的哪一步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源作者顺序应为 Qinpei Luo, Ruichun Ma, Xinyu Zhang, Lili Qiu（现把 Zhang 写在 Ma 前）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景补量化边界：例如单页、元件数常见 ≤30–50 的稳压/接口模块草案；超多页/数百元件不适用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 注明需配合 SchGen/KiCad 自定义 schematic API 才能直接执行，避免读者当标准库函数照抄"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 JSON 样本偏抽象，可再点明 request/code/check 各对应训练管线的哪一步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "frontmatter 来源",
+      "fix_hints": [
+        "来源作者顺序应为 Qinpei Luo, Ruichun Ma, Xinyu Zhang, Lili Qiu（现把 Zhang 写在 Ma 前）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用场景补量化边界：例如单页、元件数常见 ≤30–50 的稳压/接口模块草案；超多页/数百元件不适用",
+        "案例 1 注明需配合 SchGen/KiCad 自定义 schematic API 才能直接执行，避免读者当标准库函数照抄"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "修正作者顺序；案例 1 标明自定义 API；案例 3 对齐训练管线步骤；适用补 ≤30–50 元件量化边界。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正作者顺序；案例 1 标明自定义 API；案例 3 对齐训练管线步骤；适用补 ≤30–50 元件量化边界。",
+    "sections_modified": [
+      "frontmatter 来源",
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

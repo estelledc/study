@@ -28,7 +28,7 @@ sidebar:
 | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | `cairo-lang` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | `chainlink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | `chainlink-ccip` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | `compound-v3` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Compound III (Comet) — 单基础资产借贷重构](/study/projects/compound-v3/) | `compound-v3` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | `cosmos-sdk` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | `cosmwasm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | `curve` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -41,7 +41,7 @@ sidebar:
 | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | `ipfs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) | `layerzero` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | `ledger-app-sdk` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) | `lodestar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Lodestar — JS/TS 生态里的以太坊共识层客户端](/study/projects/lodestar/) | `lodestar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | `makerdao` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | `metamask` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | `monero` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

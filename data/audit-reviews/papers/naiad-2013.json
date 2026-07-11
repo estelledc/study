@@ -1,0 +1,121 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "会打钟点的流水线类比把 timely dataflow 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "epoch/loop_iter、capability、frontier 有白话；偏序对零基础仍需多读一遍"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 对比与环图步骤清楚；案例 4 偏叙事但仍可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Murray/McSherry/Isaacs/Isard/Barham/Abadi SOSP 2013 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "timely dataflow、pointstamp、capability 与论文核心一致；Flink watermark / Materialize 徒孙叙事合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 Spark 快一个数量级」是论文量级教学压缩，宜读作方向性而非普适基准"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Spark vs Naiad 进度对比与环图 path summary 概念正确，系统论文级可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：.NET 生态、进度协议扩展、粗粒度 checkpoint、编程门槛"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用低延迟+迭代 vs 纯 ETL/强容错金融边界清楚；缺 ## 反向链接占位但不挡通过"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "会打钟点的流水线类比把 timely dataflow 讲透",
+        "epoch/loop_iter、capability、frontier 有白话；偏序对零基础仍需多读一遍",
+        "案例 1–3 对比与环图步骤清楚；案例 4 偏叙事但仍可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Murray/McSherry/Isaacs/Isard/Barham/Abadi SOSP 2013 正确",
+        "timely dataflow、pointstamp、capability 与论文核心一致；Flink watermark / Materialize 徒孙叙事合理",
+        "「比 Spark 快一个数量级」是论文量级教学压缩，宜读作方向性而非普适基准"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Spark vs Naiad 进度对比与环图 path summary 概念正确，系统论文级可跟读",
+        "踩坑具体：.NET 生态、进度协议扩展、粗粒度 checkpoint、编程门槛",
+        "适用低延迟+迭代 vs 纯 ETL/强容错金融边界清楚；缺 ## 反向链接占位但不挡通过"
+      ]
+    }
+  ],
+  "slug": "naiad-2013",
+  "area": "papers",
+  "status": "passed",
+  "quality_gate": {
+    "pass": true,
+    "lines": 154
+  },
+  "lines": 154,
+  "l1_pass": true
+}

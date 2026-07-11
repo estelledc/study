@@ -8,66 +8,45 @@ title: Vespa — Yahoo 检索 + 排序引擎
 
 ## 是什么
 
-Vespa 是一个**把"倒排索引 + 向量检索 + 结构化过滤 + 机器学习排序模型"塞进同一台引擎、并且单条查询能在毫秒级跑完整套流程**的开源服务系统。
+Vespa 是一个**把"倒排索引 + 向量检索 + 结构化过滤 + 机器学习排序"塞进同一引擎、单条查询毫秒级跑完**的开源服务系统。
 
 日常类比：
 
-- [[elasticsearch]] 像图书馆的查目员——按关键词找书，顺手算个相关度分数
+- [[elasticsearch]] 像图书馆查目员——按关键词找书，顺手打个相关度分
 - 向量库（[[milvus]] / [[qdrant]] / [[weaviate]]）像"以图搜图"机器——只会比相似度
-- Vespa 像电商首页背后的智能推荐人——同时考虑"你输入了什么词、过去点过什么、库存还有没有、广告主出价多少"，最后用一个机器学习模型把所有信号融合，几十毫秒返回排序好的结果
+- Vespa 像电商首页背后的推荐人——同时看关键词、点击历史、库存、出价，再用机器学习模型融合打分
 
-Vespa 在 Yahoo 内部用了二十多年（搜索、邮件、新闻、广告、推荐都跑在它上面），2017 年以 Apache 2.0 开源，2023 年独立成公司。
+Yahoo 内部用了二十多年（搜索、邮件、新闻、广告、推荐），2017 年 Apache 2.0 开源，2023 年独立成公司 Vespa.ai。
 
 ## 为什么重要
 
-理解 Vespa 比"知道又一个搜索引擎"价值大，因为它是少数几个**把"找回 + 排序"当一件事来设计**的开源系统：
+理解 Vespa 比"又一个搜索引擎"价值大，因为它是少数**把"找回 + 排序"当一件事设计**的开源系统：
 
-- **推荐系统**默认架构（召回 → 粗排 → 精排）在 Vespa 里就是一份配置，不用拼三个服务
-- **混合检索**（关键词 + 向量）现在是 RAG 标配，Vespa 早就把两者放进一个查询里
-- **一阶段廉价、二阶段深模型**是工业排序的标准做法（参考 [[colbert-2020]] 的迟交互思路），Vespa 的两阶段 rank profile 把这个思路做成 schema 字段
-- **写入即可查**——不像 Elasticsearch 要等 refresh 才能搜到刚写的文档，对在线广告 / 实时推荐场景关键
-- 用户：Spotify 个性化、Pinterest、Vinted、OkCupid、Yahoo Mail 搜索
+- **推荐默认架构**（召回 → 粗排 → 精排）在 Vespa 里是一份配置，不用拼三个服务
+- **混合检索**（关键词 + 向量）是 RAG 标配，Vespa 早就放进同一条查询
+- **一阶段廉价、二阶段深模型**是工业排序标准做法（参考 [[colbert-2020]]），做成 schema 里的 rank profile
+- **写入即可查**——不像 Elasticsearch 要等 refresh，对在线广告 / 实时推荐关键
+- 用户：Spotify、Pinterest、Vinted、OkCupid、Yahoo Mail 搜索
 
 ## 核心要点
 
-理解 Vespa 抓四个概念就够：
+抓三个概念就够：
 
-### 文档 schema（.sd 文件）
+1. **文档 schema（.sd 文件）**：每个字段声明类型、怎么建索引、进哪个打分公式。类比：一张菜谱——食材（字段）写清切法（索引）和上桌顺序（rank）。标题可同时建倒排（关键词）+ 存向量（语义）+ 当排序特征。
 
-每个字段声明三件事：**类型、索引方式、出现在哪个 rank profile**。比如标题字段可以同时建倒排索引（关键词检索用）+ 存稠密向量（语义检索用）+ 当作 rank 模型特征。冷启动靠这份配置文件驱动。
+2. **分阶段排序（rank profile）**：命中后先跑 **first-phase**（content 节点本地，必须便宜：BM25 关键词分、向量点积）；再跑 **second-phase**（仍在 content 节点，对本地 top-N 重排，适合 XGBoost 等）；最贵的模型用 **global-phase**（container 上对全局合并后的 top-K 精排，适合 ONNX 神经网络）。类比：海选 → 复赛 → 决赛，越往后选手越少、评委越严。
 
-### 两阶段排序（rank profile）
-
-每条查询命中文档后跑两轮：
-
-- **first-phase**：在 content 节点本地跑，必须便宜——BM25、向量点积、字段加权和
-- **second-phase**：把 first-phase 选出的 top-N（默认 100）送回 container 节点，跑昂贵函数——XGBoost / LightGBM / ONNX 神经网络精排
-
-这一招让你能用 BERT 级模型排序但延迟仍在 50ms 内。
-
-### 张量（tensor）一等公民
-
-Vespa 内置稠密 + 稀疏张量类型，rank 表达式就是张量代数。比如可以写"用户向量 × 文档向量 + 类目 onehot × 偏置"这种打分函数，不必先序列化到外部 ML 服务。
-
-### 拓扑：content + container + admin
-
-- **content node** 存数据、跑一阶段 rank，按 bucket 分布到多机
-- **container node** 接 HTTP / gRPC，做查询路由 + 二阶段 rank + 业务逻辑（Java 写）
-- **admin / config server** 管 schema 部署和拓扑变更
+3. **拓扑：content + container + admin**：**content** 存数据、跑一/二阶段 rank，按 bucket（数据分片）分布；**container** 接 HTTP/gRPC、路由查询、跑 global-phase；**admin/config** 管 schema 部署。张量（tensor）是一等公民——rank 表达式可直接写"用户向量 × 文档向量"。
 
 ## 实践案例
 
-### 案例 一：本地起一个单节点
+### 案例 1：起服务 + 最小 hybrid schema
 
 ```bash
 docker run -d --name vespa --hostname vespa-tutorial \
-  -p 8080:8080 -p 19071:19071 \
-  vespaengine/vespa:latest
+  -p 8080:8080 -p 19071:19071 vespaengine/vespa:latest
+# 等就绪：curl http://localhost:19071/state/v1/health
 ```
-
-等 30 秒，访问 `http://localhost:19071/state/v1/health` 返回 ok 即就绪。
-
-### 案例 二：写一个最小 schema
 
 ```text
 schema doc {
@@ -79,7 +58,6 @@ schema doc {
       index { hnsw { max-links-per-node: 16 } }
     }
   }
-
   rank-profile hybrid {
     first-phase {
       expression: bm25(title) + closeness(field, embedding)
@@ -88,27 +66,35 @@ schema doc {
 }
 ```
 
-这一份文件让 title 同时支持关键词检索和向量近邻（HNSW，参考 [[hnsw-2018]]），`hybrid` rank profile 用相加方式做最朴素的混合排序。
+**逐部分解释**：
 
-### 案例 三：查询 = YQL + rank 选择
+1. Docker 只起引擎；真正可查还要把含 `.sd` 的 application package 打成 zip，POST 到 `19071` 部署
+2. `title` 建倒排索引（像书的目录）；`embedding` 用 HNSW（[[hnsw-2018]]，近邻图）做向量近邻
+3. `hybrid` 的 first-phase 把 BM25（关键词相关度）和向量接近度相加——最朴素的混合排序
+
+### 案例 2：YQL 查询 = 关键词 OR 向量邻居
 
 ```json
 {
   "yql": "select * from doc where userInput(@q) or ({targetHits:50}nearestNeighbor(embedding,q_emb))",
   "ranking.profile": "hybrid",
-  "input.query(q_emb)": [0.12, -0.04, "..."],
+  "input.query(q_emb)": [0.12, -0.04, 0.0],
   "q": "深度学习推荐"
 }
 ```
 
-YQL 同时表达"关键词命中 OR 向量 top-50 邻居"，rank profile 决定怎么打分。
+**逐部分解释**：
 
-### 案例 四：把 ONNX 模型挂上去做精排
+1. YQL 是 Vespa 的查询语言（像给引擎写的 SQL 方言）
+2. `userInput(@q)` 走关键词；`nearestNeighbor` 取向量 top-50
+3. `ranking.profile: hybrid` 决定用哪套打分；喂文档后 `POST /search/` 即可验证
+
+### 案例 3：global-phase 挂 ONNX 做精排
 
 ```text
 rank-profile deep inherits hybrid {
-  second-phase {
-    rerank-count: 100
+  global-phase {
+    rerank-count: 20
     expression: onnx(reranker).score
   }
   onnx-model reranker {
@@ -118,68 +104,69 @@ rank-profile deep inherits hybrid {
 }
 ```
 
-first-phase 用 BM25 + 向量选 100 篇，second-phase 跑 cross-encoder 神经网络精排。这就是工业级语义搜索的常见架构。
+**逐部分解释**：
+
+1. first-phase 在各 content 节点廉价筛候选；合并后再进 global-phase
+2. `rerank-count: 20` 只对全局前 20 跑昂贵模型，延迟可控（常目标 <50ms）
+3. ONNX 是可移植神经网络格式；cross-encoder 适合决赛精排，不要误挂在 second-phase
 
 ## 踩过的坑
 
-1. **学习曲线比 Elasticsearch 陡**：schema 用自定义 DSL（.sd 文件）、查询用 YQL、配置用 application package + zip 上传，没有"开箱发 JSON 就能搜"的那种顺手感
-
-2. **两份语言**：content 层 C++、container 层 Java——加自定义打分逻辑要懂 Java；想看核心索引代码要懂 C++ 模板地狱
-
-3. **资源吃得多**：单节点起步要 4GB 内存才舒服；Elasticsearch 单节点 1GB 能凑合，开发机装 Vespa 容易卡
-
-4. **社区比 ES 小一个数量级**：Stack Overflow 答案少、ChatGPT 回答常常胡编 schema 语法。官方文档要硬啃
-
-5. **bucket 再平衡踩坑**：扩容加节点后数据迁移有时打满网卡，需要调 `merge-throttling-policy`，文档藏得深
+1. **学习曲线比 ES 陡**：`.sd` + YQL + application package zip 上传，没有"发 JSON 就能搜"的顺手感
+2. **两份语言**：content 层 C++、container 层 Java——自定义逻辑要懂 Java，核心索引是 C++ 模板
+3. **资源吃得多**：单节点建议 ≥4GB 内存；ES 1GB 能凑合，开发机容易卡
+4. **扩容打满网卡**：加节点后 bucket 再平衡要调 `merge-throttling-policy`，文档藏得深
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- **推荐 / 广告 / 个性化**——召回 + 粗排 + 精排在一个引擎里，延迟可控
-- **混合检索（RAG / 语义搜索）**——倒排 + 向量 + 过滤一体，比"ES + 单独向量库"运维简单
-- **写入即查**——实时商品库存、实时排序信号
-- **要把 ML 模型做线上排序**——XGBoost / ONNX 直接跑，不用外挂 service
+- **推荐 / 广告 / 个性化**——召回+粗排+精排一体，P99 常可压到几十毫秒
+- **混合检索（RAG）**——倒排+向量+过滤一体，比"ES + 单独向量库"运维简单
+- **写入即查**——实时库存、实时排序信号
+- **线上 ML 排序**——XGBoost 放 second-phase，大 ONNX 放 global-phase
 
 **不适用**：
 
-- **日志聚合 / 可观测性**——选 [[elasticsearch]] 或 [[opensearch]]，Vespa 不是为这设计
-- **小项目 / 原型**——schema 配置成本远高于"装个 ES 发 JSON"
-- **只要纯向量检索**——选 [[milvus]] / [[qdrant]] / [[weaviate]]，更轻
-- **强 SQL 分析**——选列存数据仓，Vespa 不是 OLAP
+- **日志聚合**——选 [[elasticsearch]] / [[opensearch]]
+- **小项目 / 原型**——schema 成本远高于"装个 ES 发 JSON"
+- **只要纯向量**——选 [[milvus]] / [[qdrant]] / [[weaviate]]，更轻
+- **强 SQL 分析**——选列存数仓，Vespa 不是 OLAP
 
 ## 历史小故事（可跳过）
 
-- **2003**：Yahoo 收购挪威搜索引擎 Fast Search & Transfer 的核心团队，整合成 Yahoo 内部统一 serving 平台
-- **2010 前后**：Yahoo Mail / News / Search / Ads 全部搬到这套引擎，每天处理千亿次查询
+- **2003**：Yahoo 整合挪威 Fast Search 相关团队，做成内部统一 serving 平台
+- **2010 前后**：Yahoo Mail / News / Search / Ads 迁到这套引擎，支撑超大规模在线查询
 - **2017-05**：Apache 2.0 开源，命名 Vespa
-- **2020 年起**：加 HNSW ANN，开始追向量浪潮
-- **2022+**：tensor 类型 + ONNX 跑深度模型成标配，与 ColBERT 等迟交互模型契合（参考 [[colbert-2020]] / [[colbert-v2]]）
+- **2020 起**：加 HNSW ANN，追向量浪潮
+- **2022+**：tensor + ONNX + global-phase 成深度精排标配（契合 [[colbert-2020]]）
 - **2023**：Vespa.ai 从 Yahoo 拆出独立成公司
 
 ## 学到什么
 
-1. **检索 + 排序应该一起设计**——拆成两个服务往往输在跨网络延迟和特征不一致
-2. **两阶段 rank 是工业默认**——一阶段廉价召回，二阶段昂贵精排，源自信息检索几十年共识
-3. **配置驱动 vs API 驱动**——Vespa 选了配置驱动（schema 文件 + zip 包部署），上手陡但运维稳；ES 选了 API 驱动，反过来
-4. **向量不是新东西**——Vespa 把张量做成一等公民比当下大火的"向量库"早很多年，老系统的设计有时候是后来者的天花板
+1. **检索 + 排序应一起设计**——拆成两服务常输在跨网络延迟和特征不一致
+2. **分阶段 rank 是工业默认**——content 侧廉价/中等，container 侧最贵精排
+3. **配置驱动 vs API 驱动**——Vespa 用 schema+zip 部署，上手陡但运维稳；ES 相反
+4. **向量不是新东西**——张量一等公民比当下"向量库"热潮早很多年
 
 ## 延伸阅读
 
-- 官方教程：[Vespa Quickstart](https://docs.vespa.ai/en/getting-started.html)（30 分钟跑通混合检索）
-- 论文式总结：[Vespa.ai blog — Hybrid search](https://blog.vespa.ai/hybrid-search-explained/)
-- 推荐系统视角：[Yahoo Research — Personalization at Scale](https://research.yahoo.com/)
-- 源码导读：[github.com/vespa-engine/vespa](https://github.com/vespa-engine/vespa) → `searchcore/`（C++ 核心）+ `container-search/`（Java 路由层）
+- 官方教程：[Vespa Quickstart](https://docs.vespa.ai/en/getting-started.html)
+- 分阶段排序：[Phased Ranking](https://docs.vespa.ai/en/ranking/phased-ranking.html)
+- 混合检索：[Hybrid search explained](https://blog.vespa.ai/hybrid-search-explained/)
+- 源码：[vespa-engine/vespa](https://github.com/vespa-engine/vespa) → `searchcore/` + `container-search/`
 
 ## 关联
 
-- [[elasticsearch]] —— 同样是搜索引擎，更偏日志分析；Vespa 偏排序 / 推荐
+- [[elasticsearch]] —— 更偏日志分析；Vespa 偏排序 / 推荐
 - [[opensearch]] —— ES 的 Apache 分叉
-- [[milvus]] —— 纯向量库，做语义召回；Vespa 是把向量当作多种信号之一
-- [[qdrant]] —— Rust 写的向量库，更轻
-- [[weaviate]] —— 模块化向量库，与 Vespa 思路重叠
-- [[tantivy]] —— Rust 重写的 Lucene，单机搜索引擎库
-- [[bm25-okapi]] —— Vespa first-phase 默认排序函数
-- [[hnsw-2018]] —— Vespa 向量索引的算法基础
-- [[colbert-2020]] —— 迟交互模型，可以跑在 Vespa second-phase 做语义精排
-- [[youtube-two-tower-2019]] —— 推荐系统召回模型，Vespa 是承载它做线上检索的引擎之一
+- [[milvus]] —— 纯向量库；Vespa 把向量当多种信号之一
+- [[qdrant]] —— Rust 向量库，更轻
+- [[weaviate]] —— 模块化向量库，思路有重叠
+- [[bm25-okapi]] —— first-phase 常用关键词分
+- [[hnsw-2018]] —— 向量索引算法基础
+- [[colbert-2020]] —— 迟交互模型，可挂 global-phase 精排
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

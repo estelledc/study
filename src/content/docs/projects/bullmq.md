@@ -22,7 +22,7 @@ new Worker('email', async job => {
 })
 ```
 
-API 立即返回，邮件由 worker 异步发出去。Redis 当中间存储，挂掉重启 job 还在。被 6.5k+ Node 后端拿来做异步任务基建。
+API 立即返回，邮件由 worker 异步发出去。Redis 当中间存储，挂掉重启 job 还在。它在 Node 后端生态里常被拿来做异步任务基建。
 
 ## 为什么重要
 
@@ -89,15 +89,15 @@ await queue.add('daily-report', {}, {
 })
 ```
 
-部署 5 个实例都注册同一个 repeatable，**只会跑一次**——因为 BullMQ 用 Redis sorted set 做时间轮，谁先抢到 score 最小的 job 谁跑。比手写 cron + 加锁省事得多。
+部署 5 个实例都注册同一个 repeat key，**同一时间点只会生成一份 job**——因为 BullMQ 用 Redis sorted set 记录下一次触发时间，再由 worker 抢到到期 job 执行。比手写 cron + 加锁省事得多。
 
 ## 踩过的坑
 
 1. **concurrency 不等于并行**：单 worker 进程内 `concurrency: 10` 是 10 个协程在 await，CPU 密集场景**没用**——必须用 sandboxed processor（传文件路径而非函数），让 worker fork 子进程跑。
 
-2. **job.data 必须 JSON 可序列化**：传 `Buffer` / `Date` / 类实例会被静默转字符串，反序列化后类型丢失。约定只传 plain object + 原始类型。
+2. **job.data 必须 JSON 可序列化**：传 `Date` 会变成字符串，类实例会丢方法，`Buffer` 也会变成普通 JSON 结构。约定只传 plain object + 原始类型。
 
-3. **失败 job 不会自动清**：默认重试是指数退避，最终失败的 job 留在 `failed` set 不动，几个月后会撑爆 Redis。必须配 `removeOnFail: { age: 86400 }` 或写定期 clean。
+3. **失败 job 不会自动清**：配置了 `attempts` / `backoff` 后，最终失败的 job 仍会留在 `failed` set；几个月后可能撑爆 Redis。必须配 `removeOnFail: { age: 86400 }` 或写定期 clean。
 
 4. **Repeatable 改 cron 后旧 schedule 不会自动删**：直接改 `pattern` 重新 add，会**双倍跑**——必须先 `removeRepeatable` 再 add。线上改 cron 是高发事故。
 

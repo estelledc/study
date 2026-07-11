@@ -19,5 +19,5 @@ sidebar:
 | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | `excalidraw` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | `immich` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | `penpot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | `plane` | unknown | UNVERIFIED | 大型应用范例——49 |
+| [Plane — 开源版 Linear/Jira，把任务、冲刺和协同文档放进自己的机器](/study/projects/plane/) | `plane` | unknown | UNVERIFIED | 介绍 Plane 如何组合任务管理、实时协同和自托管基础设施 |
 | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | `supabase` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

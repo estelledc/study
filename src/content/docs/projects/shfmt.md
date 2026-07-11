@@ -16,7 +16,7 @@ shfmt 是**给 shell 脚本做统一格式化**的工具，作者 Daniel Martí 
 shfmt -i 2 -w deploy.sh
 ```
 
-就把 `deploy.sh` 按 2 空格缩进重写。支持 **POSIX sh / Bash / mksh / bats** 四种方言。截至 2026-05，7k+ stars，仍活跃维护。
+就把 `deploy.sh` 按 2 空格缩进重写。支持 **POSIX sh / Bash / mksh / bats**，以及 **实验性 zsh**（v3.13+，尚不完整）。截至 2026-05，7k+ stars，仍活跃维护。
 
 ## 为什么重要
 
@@ -35,19 +35,26 @@ shfmt 的核心可以拆成 **三层**：
 
 2. **Printer（打印器）**：拿到 AST，按一套**确定的规则**重新打印成源码。同一棵树打印一万次，结果完全一样——这是格式化器能"幂等"的原因。所谓"幂等"就是：再 `shfmt` 一次结果不变，CI 不会反复抖动。
 
-3. **LangVariant（方言开关）**：同一份 parser 用 `LangBash` / `LangPOSIX` / `LangMirBSDKorn` / `LangBats` 切换接受的语法。类比：一个会四种方言的播音员，按你说哪种就听哪种。POSIX 模式下 `[[ ]]` 这种 bash 扩展就会报错——这是有意的。
+3. **LangVariant（方言开关）**：同一份 parser 用 `LangBash` / `LangPOSIX` / `LangMirBSDKorn` / `LangBats` / `LangZsh`（实验性）切换语法。类比：一个会多种方言的播音员。POSIX 模式下 `[[ ]]` 这种 bash 扩展会报错——这是有意的。
 
 支撑这三层的还有几个 Go 包：`syntax`（核心 parser/printer）、`expand`（参数展开 / brace expansion）、`interp`（纯 Go 写的 shell 解释器）、`fileutil`（shebang 嗅探）、`cmd/shfmt`（CLI 入口）。整个仓库结构像把 **gofmt 的设计**（"一种风格，没得选"）原样搬进 shell 世界。
 
 ## 实践案例
 
-### 案例 1：CI 里把所有 .sh 一键统一
+### 案例 1：CI 里把所有 shell 脚本一键统一
+
+三步：
+
+1. **扫目录**：对当前仓库跑 shfmt（会按扩展名/shebang 识别脚本）。
+2. **只看 diff**：`-d` 打印差异、不写回；有输出就表示风格不一致。
+3. **CI 判失败**：把该命令放进 pipeline，exit non-zero 即 fail。`-i 2` 为 2 空格，`-ci` 让 `case` 分支缩进。
 
 ```bash
-shfmt -d -i 2 -ci $(find . -name '*.sh')
+# 推荐：让 shfmt 自己递归目录（避免 find 遇空格文件名翻车）
+shfmt -d -i 2 -ci .
 ```
 
-`-d` 只显示 diff 不写回，CI 里如果有 diff 就 fail。`-i 2` 是 2 空格缩进，`-ci` 是 case 语句缩进。Google Shell Style Guide 默认就是这套配置。
+Google Shell Style Guide 常用这套 `-i 2 -ci`。本地要写回则把 `-d` 换成 `-w`。
 
 ### 案例 2：AST 重写 vs 正则替换的差别
 
@@ -100,7 +107,7 @@ shfmt -d -i 2 script.sh # 再检查格式
 
 1. **默认 4 空格 vs Google Style 2 空格**：不写 `-i 2` 会按 4 空格输出。团队规范要在 `.editorconfig` 或 pre-commit 钩子里写死，否则每个人 IDE 配置不一样会反复 diff。
 
-2. **不支持 fish/zsh**：shfmt 只认 bourne 系（POSIX/bash/mksh/bats）。fish 语法完全不同，zsh 部分扩展也不识别，硬塞进去会 parse 失败。
+2. **fish 不支持；zsh 仅实验性**：shfmt 主战场是 bourne 系（POSIX/bash/mksh/bats）。fish 语法完全不同。v3.13 起有 `LangZsh`，但官方标 incomplete——复杂 zsh 脚本仍可能 parse 失败。
 
 3. **格式化不改你的逻辑 bug**：`if [ $a == $b ]` 这种缺引号的 shell 老坑，shfmt **不会修**——那是 shellcheck 的活。两个工具一起上才完整。
 
@@ -116,11 +123,11 @@ shfmt -d -i 2 script.sh # 再检查格式
 - Dockerfile 里 `RUN` 段落多的项目，先把 shell 段抽出来 shfmt 一遍可读性立刻上一个台阶
 
 **不适用**：
-- fish / zsh / PowerShell（语法不同，shfmt 不支持）
+- fish / PowerShell（语法不同，shfmt 不支持）
+- 依赖完整 zsh 方言的脚本库——`LangZsh` 仍实验性，不能当生产保证
 - 需要"找 bug"——那是 shellcheck 的工作，shfmt 只管格式
 - 极度抗拒"被格式化"的代码库——格式化器会强制改风格，团队心理预期要先打通
-- 想深度自定义规则——shfmt 提供有限旋钮（缩进、case 风格等），不像 ESLint 有几百条可调
-- 已经 100% 用 fish 函数写脚本的团队——基础设施完全错位，硬切代价不值
+- 想深度自定义规则——旋钮有限（缩进、case 风格等），不像 ESLint 有几百条可调
 
 ## 历史小故事（可跳过）
 
@@ -150,3 +157,9 @@ shfmt -d -i 2 script.sh # 再检查格式
 - [[biome]] —— Rust 写的 JS/TS 工具链；shfmt 是它在 shell 世界的"远亲"
 - [[wadler-prettier]] —— Wadler 1998 的"漂亮打印"算法是所有 Printer 的理论起点
 - [[starlight]] —— 本站主题；本笔记就是用它渲染的
+- [[shellcheck]] —— 找 shell bug 的 lint；与 shfmt 组成 format+lint 双件套
+- [[ripgrep]] —— 同属 Go 单二进制 CLI 护城河：curl 即用、零运行时依赖
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

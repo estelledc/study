@@ -32,7 +32,7 @@ const [count, setCount] = useAtom(countAtom)
 
 - **Recoil 的精神继承**：Recoil 是 Facebook 2020 推出的 atom 状态库，但已停更。Jotai 接住了 atomic 思想，做得更小、更专注、更稳定。
 - **比 [[zustand]] 更细粒度**：zustand 要写 selector 才能避免无关重渲染；Jotai 自带 atom 级订阅，**派生 + 订阅都自动**。
-- **与 React 18 Suspense 原生兼容**：atom 可以是异步的（返回 Promise），Suspense 会自动接住 loading 状态。
+- **与 React 18 Suspense 原生兼容**：atom 可以是异步的（返回 Promise）；Suspense 像"加载中挡板"，会自动接住 loading 状态。
 - **TypeScript-first**：atom 类型自动推，写 `atom(0)` 就推出 `PrimitiveAtom<number>`，不用手动标注。
 
 ## 核心要点
@@ -112,7 +112,7 @@ function App() {
 
 ## 踩过的坑
 
-1. **atom 必须在组件外定义**：写在组件内部每次渲染都新建 atom，订阅链路全部丢失，状态会"莫名重置"。要动态创建用 `atomFamily`。
+1. **atom 必须在组件外定义**：写在组件内部每次渲染都新建 atom，订阅链路全部丢失，状态会"莫名重置"。要按参数动态创建（如每个 userId 一颗）用 `atomFamily`——像"按钥匙开抽屉"的工厂。
 
 2. **大量 atom 时调试难**：没有 Redux DevTools 那种全局状态树视图。要装 jotai-devtools 独立包，并给 atom 加 `debugLabel`，才能在面板里识别每颗原子。
 
@@ -123,7 +123,7 @@ function App() {
 ## 适用 vs 不适用场景
 
 **适用**：
-- 中小到中型 React 应用，状态拆成多个独立单元
+- 中小到中型 React 应用（大约几十到一两百个业务 atom），状态拆成多个独立单元
 - 需要异步状态 + Suspense 集成的场景
 - 想避开 Redux / Redux Toolkit 重型样板代码
 - TypeScript 项目，希望少写类型标注
@@ -132,6 +132,13 @@ function App() {
 - 大型企业应用且团队习惯 Redux 中间件 / dispatch action 流程 → 还是 Redux Toolkit 好
 - 需要丰富的开发者工具、time travel 调试、action 日志 → Redux DevTools 还是更强
 - 状态都是少数几个全局 slice，不需要 atom 级粒度 → [[zustand]] 更轻
+
+## 历史小故事（可跳过）
+
+- **2020 年**：Facebook 开源 Recoil，把 atom / selector 带进 React 主流视野。
+- **2020 年前后**：Daishi Kato 在 pmndrs 生态里陆续做出 Zustand、Valtio、Jotai——三条不同的状态哲学。
+- **Jotai 路线**：名字来自日语「状態」（jotai，状态），把 Recoil 式原子模型做得更小、API 更贴 `useState`。
+- **之后**：Recoil 维护放缓并停更；Jotai 继续迭代，异步 atom + Suspense、devtools、utils 成为常用组合。
 
 ## 学到什么
 

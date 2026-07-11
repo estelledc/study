@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "CIC / Tactic monad / Elaborator 三层对零基础偏陡：每层补一句日常类比（如 elaborator=把省略主语的口语补成完整句子）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「证明 = 一个类型为该命题的项」需先桥接「项≈程序表达式」再抛 Curry-Howard"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「mathlib 里 70% 的小定理靠 simp 收尾」缺出处，应改为定性表述（如「大量琐碎引理常靠 simp 收尾」）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「费马大定理项目」与 Liquid Tensor 并列易暗示同等完成度；应标明是进行中的形式化工作，勿写成已完成里程碑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "可信内核 vs tactic 不可信讲得很清楚；适用场景可再点明「教学/形式化数学优先，日常工程语言替代不是目标」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "CIC / Tactic monad / Elaborator 三层对零基础偏陡：每层补一句日常类比（如 elaborator=把省略主语的口语补成完整句子）",
+        "「证明 = 一个类型为该命题的项」需先桥接「项≈程序表达式」再抛 Curry-Howard"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「mathlib 里 70% 的小定理靠 simp 收尾」缺出处，应改为定性表述（如「大量琐碎引理常靠 simp 收尾」）",
+        "「费马大定理项目」与 Liquid Tensor 并列易暗示同等完成度；应标明是进行中的形式化工作，勿写成已完成里程碑"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "可信内核 vs tactic 不可信讲得很清楚；适用场景可再点明「教学/形式化数学优先，日常工程语言替代不是目标」"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Excel/透视表同事换成网页的类比很贴，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 docker/fab/db upgrade/init 连续抛命令，缺逐步桥接（镜像起来 → 建管理员 → 升级元数据库 → init 权限）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2–4 步骤较清楚；案例 5 Celery 配置对零基础偏陡，建议先用一句话说明「查询丢给后台工人，浏览器轮询取结果」再给配置"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub apache/superset 正确；Caravel→Superset、2017 孵化、2021-01 TLP 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「融到 1 亿美元」宜写成「累计融资约亿美元量级」以免被读成单轮 1 亿"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「~63k stars / 40+ 数据库 / 50+ 图表」属量级描述，可接受；若保留数字建议加「约」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑非常可操作（OLTP 直查、看板 N 查询、RBAC、chart 插件升级）——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用与 Grafana/Looker 边界清晰——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 单容器 docker run 在较新 apache/superset 镜像上常缺依赖或需 docker-compose；请注明「官方推荐 docker-compose 开发栈」或补一句常见失败（容器起了但命令找不到 / 未设 SECRET_KEY）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Excel/透视表同事换成网页的类比很贴，保留",
+        "案例 1 的 docker/fab/db upgrade/init 连续抛命令，缺逐步桥接（镜像起来 → 建管理员 → 升级元数据库 → init 权限）",
+        "案例 2–4 步骤较清楚；案例 5 Celery 配置对零基础偏陡，建议先用一句话说明「查询丢给后台工人，浏览器轮询取结果」再给配置"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 GitHub apache/superset 正确；Caravel→Superset、2017 孵化、2021-01 TLP 时间线合理",
+        "「融到 1 亿美元」宜写成「累计融资约亿美元量级」以免被读成单轮 1 亿",
+        "「~63k stars / 40+ 数据库 / 50+ 图表」属量级描述，可接受；若保留数字建议加「约」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "踩坑非常可操作（OLTP 直查、看板 N 查询、RBAC、chart 插件升级）——保留",
+        "适用/不适用与 Grafana/Looker 边界清晰——保留",
+        "案例 1 单容器 docker run 在较新 apache/superset 镜像上常缺依赖或需 docker-compose；请注明「官方推荐 docker-compose 开发栈」或补一句常见失败（容器起了但命令找不到 / 未设 SECRET_KEY）"
+      ]
+    }
+  ]
+}

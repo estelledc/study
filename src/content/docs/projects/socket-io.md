@@ -73,12 +73,21 @@ socket.on('msg', (m) => console.log(m.from, m.text))
 ### 案例 2：监控大屏的服务端推送
 
 ```js
-setInterval(() => {
-  io.emit('stats', { cpu: os.loadavg()[0], qps: counter.get() })
-}, 1000)
+let timer = null
+function startPush(ms) {
+  clearInterval(timer)
+  timer = setInterval(() => {
+    io.emit('stats', { cpu: os.loadavg()[0], qps: counter.get() })
+  }, ms)
+}
+startPush(1000)
+
+io.on('connection', (socket) => {
+  socket.on('set-interval', (ms) => startPush(ms))  // 浏览器反向调采样
+})
 ```
 
-每秒服务端主动推一次，浏览器不用轮询。比起 SSE，Socket.IO 多给你**反向通道**：浏览器还能 emit 上来调整采样频率。
+三步：① `startPush` 定时采集指标；② `io.emit('stats', …)` 推给所有连接；③ 客户端 `emit('set-interval')` 改频率。比起 SSE，多了这条**反向通道**。
 
 ### 案例 3：带 ack 的请求—回复
 
@@ -126,9 +135,9 @@ socket.on('save', async (data, cb) => {
 
 - **2010 年**：Guillermo Rauch 创建 Socket.IO。当时 IE 一直没原生 WebSocket，Firefox/Safari 支持也不齐，**long-polling 自动 fallback** 是它最大卖点。
 - **2012 年**：v0.9 流行，被 Trello、Slack 早期、各种 dashboard 采用，几乎成了 Node.js 实时通信代名词。
-- **2014 年**：拆分为 **Engine.IO（传输层）+ Socket.IO（语义层）**。这次解耦让传输逻辑可单独演进，影响了后来很多 Node 库的分层思路。
-- **2018 年**：v2 之后协议大改，引入二进制、binary ack、更清晰的命名空间语义。
-- **2021 年**：v4 重写底层，TypeScript 类型友好，加入更强的多节点 adapter 体系（Redis、Postgres、MongoDB 都有官方实现）。
+- **2014 年**：v1.0 拆分为 **Engine.IO（传输层）+ Socket.IO（语义层）**。这次解耦让传输逻辑可单独演进。
+- **2017 年**：v2.0 发布（同年 5 月）；二进制与 ack 等能力在 v1/v2 线继续打磨，客户端/服务端仍大致兼容。
+- **2020–2021 年**：v3（2020-11）做破坏性协议升级（与 v2 不互通）；v4（2021）在此基础上重写底层，TypeScript 更友好，多节点 adapter（Redis、Postgres、MongoDB）成体系。
 
 ## 学到什么
 

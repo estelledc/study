@@ -34,7 +34,7 @@ await agent.aiTap('登录按钮')
 
 midscene 的心智模型只有 **三个角色**：
 
-1. **Insight 看图模块**：负责「截图 + 简化 DOM → 喂给 VLM → 拿到 bbox」。每个模型族 (GPT-4V / Claude / Qwen-VL / UI-TARS / AutoGLM) 都有一套特化 prompt 和坐标解析逻辑——这是框架最厚的一层
+1. **Insight 看图模块**：负责「截图 → 喂给 VLM → 拿到 bbox」（定位以纯视觉为主；需要抽结构化数据时才可选附带 DOM）。每个模型族 (GPT-4V / Claude / Qwen-VL / UI-TARS / AutoGLM) 都有一套特化 prompt 和坐标解析逻辑——这是框架最厚的一层
 
 2. **Agent 抽象**：所有 `aiXxx` 方法的入口。`aiTap('xx')` 找元素再点；`aiInput('xx', { value })` 找输入框再填；`aiAct('多步指令')` 让 LLM 自己规划步骤；`aiAssert('xx')` 看截图判断断言。底下都通到 Insight + Playwright
 
@@ -127,9 +127,9 @@ flow:
 
 - **2023 年**：GPT-4V 第一次能输出 bbox，但精度差、延迟高，谁都不敢真上 CI
 - **2024 年中**：Claude 3.5 Sonnet / GPT-4o / Qwen2.5-VL 多模态模型同时进入工业级精度，VLM 路线第一次成立
-- **2024 年下半年**：Anthropic 发布 Computer Use (像素 + 鼠标坐标路线)、browser-use 开源 (DOM tree 索引路线)，三条主流路线并行
-- **2025 年**：midscene 开源，选择「截图 + VLM bbox + Playwright 执行」这一路；陆续扩到 Android / iOS / 鸿蒙 / 桌面端共 7 种平台
-- **2026 年**：仓库 9k+ star，已成为 LLM 浏览器自动化的常见选型之一
+- **2024 年下半年**：midscene 开源（GitHub 仓库约 2024-07），选择「截图 + VLM bbox + Playwright 执行」；同期 Anthropic Computer Use、browser-use 也把三条主流路线摆上台面
+- **2025 年**：陆续扩到 Android / iOS / 鸿蒙 / 桌面端，同一套自然语言 API 覆盖多端
+- **2026 年**：仓库已上万 star，成为 LLM 浏览器自动化的常见选型之一
 
 ## 学到什么
 

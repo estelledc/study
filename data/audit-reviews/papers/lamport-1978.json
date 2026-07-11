@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "侦探/光锥/账本类比贴合；案例 1–3 有逐步解释，IR1/IR2 对零基础略陡但上下文够用。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「引用数 5 万+」「分布式系统单篇被引最高」过满，宜改为「被引极高 / 万级引用」并去掉「最高」绝对化。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Raft / Paxos 的祖型」宜限定为 SMR / 全序思想源头，避免读成协议直接派生自本篇算法。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码概念正确；幽灵因果 / vector clock / HLC 踩坑可操作；适用边界清楚。另：全文超 200 行（反向链接膨胀），需压到 quality-gate 上限。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "侦探/光锥/账本类比贴合；案例 1–3 有逐步解释，IR1/IR2 对零基础略陡但上下文够用。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「引用数 5 万+」「分布式系统单篇被引最高」过满，宜改为「被引极高 / 万级引用」并去掉「最高」绝对化。",
+        "「Raft / Paxos 的祖型」宜限定为 SMR / 全序思想源头，避免读成协议直接派生自本篇算法。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "伪代码概念正确；幽灵因果 / vector clock / HLC 踩坑可操作；适用边界清楚。另：全文超 200 行（反向链接膨胀），需压到 quality-gate 上限。"
+      ]
+    }
+  ]
+}

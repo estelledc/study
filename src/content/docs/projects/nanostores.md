@@ -8,7 +8,7 @@ title: nanostores — 不到 1 KB 的"框架无关"状态库
 
 ## 是什么
 
-nanostores 是一个**不到 1 KB**（压缩后 294 到 831 字节）的状态管理库，最大特点是**核心完全不知道 React 的存在**。日常类比：像家里只装一根总水管，下面接 React 龙头、Vue 龙头、Svelte 龙头都行——水管自己不挑龙头。
+nanostores 是一个**不到 1 KB**（当前 README：压缩后约 340 到 864 字节）的状态管理库，最大特点是**核心完全不知道 React 的存在**。日常类比：像家里只装一根总水管，下面接 React 龙头、Vue 龙头、Svelte 龙头都行——水管自己不挑龙头。
 
 你写一份 store 文件：
 
@@ -94,15 +94,14 @@ $users.setKey('alice', { admin: false })
 
 ### 案例 3：跨打包共享状态
 
-micro-frontend 场景里，主应用和子应用可能各自打包了一份 nanostores，导致 atom 互不通气。nanostores 的解法是把版本号存到 `globalThis.nanostoresGlobal.epoch`：
+micro-frontend / 双打包场景里，主应用和子应用可能各自打进一份 nanostores 核心。源码把共享计数器挂在 `globalThis.nanostoresGlobal.epoch`，让**通知序号**跨打包实例对齐：
 
 ```js
 // nanostores 内部（简化）
-const g = (globalThis.nanostoresGlobal ??= { epoch: 0 })
-export const epoch = () => ++g.epoch
+export const nanostoresGlobal = (globalThis.nanostoresGlobal ||= { epoch: 0 })
 ```
 
-哪怕实例不同，只要指向同一个 `globalThis` 就能识别"我们是同一份逻辑库的不同打包"，避免状态分裂。这是 Sitnik 工具一贯的"小问题也认真解"风格——同样的思路也用在 Next.js RSC、模块联邦、`npm link` 双装等场景。
+注意：这只共享 epoch，**不会自动把两份独立的 atom 实例合并成一个**；真正跨包共享状态，仍要把同一个 store 模块当单例导出。这是 Sitnik 工具一贯的"小问题也认真解"风格——同样边界也出现在 Next.js RSC、模块联邦、`npm link` 双装等场景。
 
 ## 踩过的坑
 
@@ -129,11 +128,11 @@ export const epoch = () => ++g.epoch
 - **2020 年前后**：React 生态长出 jotai / zustand / valtio 三大 atomic 路线，但都和 React 绑定，跨框架复用基本不可能
 - **2021 年**：Sitnik 发布 nanostores，押注"vanilla 核心 + 框架适配器分仓库"，README 第一行就把 bundle size 摆上台
 - **2023 年前后**：Astro 文档官方推荐 nanostores 做 island 之间共享状态——这成为它在 Astro 生态的标志性使用场景
-- **2026 年**：仓库 7.4k+ star，覆盖 React / Vue / Svelte / Preact / Solid / Lit / Angular 八套适配器，README 顶部仍写着 "Between 294 and 831 bytes"
+- **2026 年**：仓库 7.4k+ star，覆盖 React / Vue / Svelte / Preact / Solid / Lit / Angular 八套适配器，README 顶部写着 "Between 340 and 864 bytes"
 
 ## 学到什么
 
-1. **bundle size 也可以是一种产品定位**——不只是性能优化，是品牌：README 顶部直接挂 "294-831 字节" 当广告
+1. **bundle size 也可以是一种产品定位**——不只是性能优化，是品牌：README 顶部直接挂字节区间当广告
 2. **核心和适配器要在第一天就分仓库**——后期再拆代价巨大，jotai 把 vanilla 剥出来花了几个版本，体感很痛
 3. **atomic state 不止一种切法**——按依赖追踪粒度（jotai）/ 按框架解耦（nanostores）/ 按可变性（valtio）各有所长
 4. **小工具也要解小问题**——globalThis epoch trick 是工程"洁癖"的表现，背后假设是"用户迟早会踩到 micro-frontend 这种边界"

@@ -106,9 +106,9 @@ class CodeEnv(BaseEnv):
 
 - 2017：PPO 提出，深度 RL 主流算法
 - 2022：RLHF 让 RL + LLM 进入实用，但只针对 single-turn
-- 2024：DeepSeek-R1 用纯 RL 训推理，开启"RL for LLM" 第二波
+- 2025：DeepSeek-R1 用纯 RL 训推理，开启"RL for LLM" 第二波
 - 2025 Q1-Q3：Group Relative Policy Optimization（GRPO）成 multi-step 训练标配
-- 2025 Q4：Agent-R1 把 agent training 标准化为可复用 framework，作者来自中科大
+- 2025 Q4：Agent-R1 把 agent training 标准化为可复用 framework
 
 ## 学到什么
 
@@ -122,7 +122,7 @@ class CodeEnv(BaseEnv):
 ## 延伸阅读
 
 - arXiv 2511.14460 — Agent-R1 原论文
-- DeepSeek-R1 论文（2024）—— 纯 RL 训推理的开端
+- DeepSeek-R1 论文（2025）—— 纯 RL 训推理的开端
 - [[apex-policy-exploration]] — 同样关注 policy exploration
 - [[self-evolving-agents-survey]] — RL training 是综述里 evolution 的一种实现
 - [[code-as-agent-harness]] — code agent 的 RL 训练有特殊挑战

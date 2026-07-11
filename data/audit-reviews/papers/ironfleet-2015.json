@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "盖楼/抗震图纸类比贴合；精化三层有桥接；案例 2 simulation 伪代码对零基础略抽象，但有读法说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 吞吐「约 2300 ops/s vs 11000、慢 5 倍」与论文不符：IronRSL 峰值约 18200 req/s，相对未验证 Go MultiPaxos 基线约 2.4× 以内，应改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "证明:实现「约 4:1 / 5000+25000」宜改为论文口径：整体证明标注约 7.7:1（不含 liveness 约 5.4:1），实现层约 3.6:1；人年用 3.7，删掉与之矛盾的「8 人 1.5 年」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Dafny 规约/simulation 可跟读；trigger、liveness、规约写错、I/O reduction 踩坑具体；fail-stop/迭代成本边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "盖楼/抗震图纸类比贴合；精化三层有桥接；案例 2 simulation 伪代码对零基础略抽象，但有读法说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 吞吐「约 2300 ops/s vs 11000、慢 5 倍」与论文不符：IronRSL 峰值约 18200 req/s，相对未验证 Go MultiPaxos 基线约 2.4× 以内，应改正",
+        "证明:实现「约 4:1 / 5000+25000」宜改为论文口径：整体证明标注约 7.7:1（不含 liveness 约 5.4:1），实现层约 3.6:1；人年用 3.7，删掉与之矛盾的「8 人 1.5 年」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Dafny 规约/simulation 可跟读；trigger、liveness、规约写错、I/O reduction 踩坑具体；fail-stop/迭代成本边界清楚"
+      ]
+    }
+  ]
+}

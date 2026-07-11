@@ -34,7 +34,7 @@ specular = ks · (N·H)^n
 - 为什么 1992 年 OpenGL 固定流水线、2000 年 DirectX 8 默认 specular 都是这个公式
 - 为什么 WebGL 教程到 2026 年还在演示 `MeshPhongMaterial`（其实内部跑的是 Blinn-Phong）
 - 为什么手机游戏 fallback shader 至今保留它——便宜
-- 为什么后来 Cook-Torrance 2012 / Disney GGX 都从 H 出发，不再回到 R——H 是微面元理论的天然表达
+- 为什么后来 Cook-Torrance 1982 和 Disney GGX 2012 都从 H 出发，不再回到 R——H 是微面元理论的天然表达
 
 ## 核心要点
 
@@ -99,7 +99,7 @@ Blinn: shininess = 128 →  视觉效果接近 A
 
 1. **半角向量必须归一化**：`L + V` 不是单位向量；漏掉 `normalize` 高光位置全错。
 
-2. **Blinn-Phong 不能量守恒**：某些角度反射出去的光比入射多，物理上不可能。1977 年没人在意，2012 后 PBR 时代必须修——Cook-Torrance / GGX 加了归一化项 `(n+2)/(2π)` 之类。
+2. **Blinn-Phong 不能量守恒**：某些角度反射出去的光比入射多，物理上不可能。1977 年没人在意，后来 PBR 时代必须修——归一化 Blinn-Phong 会补 `(n+2)/(2π)` 这类系数，Cook-Torrance / GGX 则用法线分布、几何遮挡和 Fresnel 分项约束能量。
 
 3. **掠射角仍不准**：当光线和视线都几乎和表面平行时，真实材质会有明显的菲涅尔效应（边缘变亮），Blinn-Phong 完全不模拟。GGX 才正确。
 

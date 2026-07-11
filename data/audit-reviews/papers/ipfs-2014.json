@@ -1,0 +1,120 @@
+{
+  "slug": "ipfs-2014",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆找书类比很好；CID/Merkle DAG 有桥接。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 偏概念对照，缺少可跟做的逐步命令与「逐部分解释」；案例 3 DHT 步骤对零基础偏密，建议补一句日常类比。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Benet 2014 白皮书、CID/Merkle DAG/libp2p/BitSwap 与原文一致；Filecoin ICO 量级合理。libp2p「2022 独立」略简化（更早抽出），教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例缺少可运行的 ipfs CLI 最小闭环（add/cat/pin）；建议案例 1 写成真实命令序列。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（pin/GC、网关、激励、加密）具体有用；适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书馆找书类比很好；CID/Merkle DAG 有桥接。",
+        "案例 1/2 偏概念对照，缺少可跟做的逐步命令与「逐部分解释」；案例 3 DHT 步骤对零基础偏密，建议补一句日常类比。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Benet 2014 白皮书、CID/Merkle DAG/libp2p/BitSwap 与原文一致；Filecoin ICO 量级合理。libp2p「2022 独立」略简化（更早抽出），教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺少可运行的 ipfs CLI 最小闭环（add/cat/pin）；建议案例 1 写成真实命令序列。",
+        "踩坑（pin/GC、网关、激励、加密）具体有用；适用边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "zero-base/engineer：实践案例缺可跟做命令与逐部分解释；合并 IPNS 进案例 3 并补 DHT 类比。",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

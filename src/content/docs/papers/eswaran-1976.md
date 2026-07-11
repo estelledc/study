@@ -20,7 +20,7 @@ title: Eswaran 1976 — 串行化与谓词锁的源头
 
 不理解这篇，下面这些事都没法解释：
 
-- 为什么数据库教材必讲 **ACID** 中的 I（Isolation），所有讨论都从这里出发
+- 为什么数据库教材必讲隔离性（后来被收进 **ACID** 的 I）——本文是这条讨论线的源头之一
 - 为什么 PostgreSQL / MySQL 都有"可串行化"这个最严级别——名字直接来自这里
 - 为什么并发控制学了一大堆术语（脏读 / 不可重复读 / 幻读），背后只有一个真目标
 - 为什么 Spanner、CockroachDB 推销自己时第一句话都是"Strict Serializable"
@@ -96,15 +96,15 @@ INSERT INTO emp VALUES ('alice', 12000);
 
 **适用**：
 
-- OLTP 数据库（PostgreSQL / MySQL / Oracle / SQL Server）默认就用 2PL 或它的变种
-- 短事务、读写比适中、强一致性要求的系统（银行 / 订单 / 库存）
-- 需要严格 ACID 的场景
+- 需要严格串行化语义的 OLTP（银行 / 订单 / 库存）；不少商业库用锁协议或其变种实现
+- 短事务、读写比适中、强一致性要求的系统
 - 教学场景下作为"正确性的第一原理"——比直接上 MVCC 好讲得多
+- 理解 PostgreSQL SSI、MySQL 可串行化等现代实现时，先抓住本文的目标再看协议差异
 
 **不适用**：
 
 - 高并发只读分析（OLAP）→ 用 MVCC + 快照隔离更划算
-- 跨地域分布式 → 单纯 2PL 太慢，需要 Paxos / Raft 协调
+- 跨地域多副本 → 本地锁协议不够，复制与共识还要 Paxos / Raft 一类机制
 - 最终一致性可接受的场景 → 用 [[crdt-json]] / Dynamo 风格系统
 - 长事务（数小时）→ 持锁太久阻塞别人，改用 Saga / 补偿事务
 - 移动端 / 边缘断网协作 → CRDT 或 Operational Transform 路线更合适

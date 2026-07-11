@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 Tomasulo / ROB / CDB / Isar / denormal / MESI 等术语缺少零基础桥接，建议各加一句日常类比或白话解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有公式但缺少「逐部分解释」步骤拆解；案例 2 可按对齐→加尾数→规范化→舍入四步写清"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 1 条 RTL/ISA 架桥对零基础偏硬，建议补一个「图纸 vs 说明书」类类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「5 段流水线」易误导：VAMP 更准确是取指/译码流水 + Tomasulo 乱序核，不是经典五段顺序流水线；建议改表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "早期门级证明主要在 PVS，Verisoft 端到端栈才切到 Isabelle/HOL；开篇「在 Isabelle/HOL 里从门电路证到 ISA」略压缩时间线，建议加一句工具迁移限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「方法学被 Centaur ACL2 借鉴」因果偏强，宜改为「同属工业/学术硬件验证谱系中的乱序证明先例」之类弱化表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码概念正确但不可直接在 Isabelle 里跑；可注明这是教学示意而非可检证明片段"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已有 DLX/单核边界，可再补一句「证明规模约人年级」的量化成本感"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "首次出现的 Tomasulo / ROB / CDB / Isar / denormal / MESI 等术语缺少零基础桥接，建议各加一句日常类比或白话解释",
+        "案例 1–3 有公式但缺少「逐部分解释」步骤拆解；案例 2 可按对齐→加尾数→规范化→舍入四步写清",
+        "核心要点第 1 条 RTL/ISA 架桥对零基础偏硬，建议补一个「图纸 vs 说明书」类类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「5 段流水线」易误导：VAMP 更准确是取指/译码流水 + Tomasulo 乱序核，不是经典五段顺序流水线；建议改表述",
+        "早期门级证明主要在 PVS，Verisoft 端到端栈才切到 Isabelle/HOL；开篇「在 Isabelle/HOL 里从门电路证到 ISA」略压缩时间线，建议加一句工具迁移限定",
+        "「方法学被 Centaur ACL2 借鉴」因果偏强，宜改为「同属工业/学术硬件验证谱系中的乱序证明先例」之类弱化表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "伪代码概念正确但不可直接在 Isabelle 里跑；可注明这是教学示意而非可检证明片段",
+        "适用/不适用已有 DLX/单核边界，可再补一句「证明规模约人年级」的量化成本感"
+      ]
+    }
+  ]
+}

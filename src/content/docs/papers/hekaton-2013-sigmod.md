@@ -1,6 +1,6 @@
 ---
 title: Hekaton — SQL Server 的内存原生 OLTP 引擎
-来源: 'Hao et al., "Hekaton: SQL Server\ Memory-Optimized OLTP Engine", SIGMOD 2013'
+来源: 'Diaconu et al., "Hekaton: SQL Server''s Memory-Optimized OLTP Engine", SIGMOD 2013'
 日期: 2026-07-08
 分类: 数据库
 难度: 中级
@@ -8,145 +8,142 @@ title: Hekaton — SQL Server 的内存原生 OLTP 引擎
 
 ## 是什么
 
-Hekaton 是 SQL Server 里一个“把关键 OLTP 操作直接在内存中执行”的引擎。
+Hekaton 是 SQL Server 里一个**把热点表整表放进内存、用无锁结构跑短事务**的 OLTP 引擎（OLTP = Online Transaction Processing，像下单、扣款这种又短又频繁的交易）。
 
-日常类比：你管理一家店，不再每次都去仓库拿账本再写收银，而是把常用交易账直接放前台缓存。
+日常类比：店里不再每次去仓库翻厚账本，而是把**当天热销货架**搬到收银台旁；结账员之间也不抢同一支笔，而是各记各的小票，最后再对账。
 
-传统数据库通常以锁和日志为主，面向通用负载。
-Hekaton 的目标是面向高频交易场景减少锁争用和日志往返，把一些关键路径从“存磁盘为主”改成“尽量内存执行+精细一致性”。
+它不是另起一个数据库，而是嵌在 SQL Server 里：你把某张表标成 memory-optimized，热点路径就能走 Hekaton；普通表仍走原引擎，可以同库混用。查询可以同时引用两类表，事务也可以同时更新两类表——迁移可以一张表、一个过程地渐进做。论文实验场景主要是高并发短事务，而不是通用分析负载。
 
 ## 为什么重要
 
-- 如果你只会背一条结论："数据库快不快，往往看事务短路和锁竞争"。
-- 内存优化能把微型事务吞吐量提高很多数量级，但也更依赖表结构和开发纪律。
-- 通过它可以看见“数据库不是一个黑箱”，而是工程师可以围绕一致性模型做设计。
+不理解 Hekaton，下面这些事都讲不清：
+
+- 为什么「内存够大」还不够——传统引擎仍按「数据在磁盘」设计，锁和闩锁会把多核吃掉
+- 为什么 SQL Server 2014 起有 In-Memory OLTP：商用库如何把研究级主存引擎嵌进现有产品
+- 为什么高频交易表要配合**本地编译存储过程**，而不是只改表属性
+- 为什么后来的内存/HTAP 引擎都强调 latch-free + 多版本，而不是「再加几把锁」
 
 ## 核心要点
 
-1. **内存优化表**：把数据和索引放在内存中管理。
+论文把加速拆成 **三刀**：
 
-- 数据页不再每次都“先翻到磁盘再回来”，
-- 同时配套更严格的并发控制策略。
+1. **内存优化表 + latch-free 索引**：行和索引常驻内存，用无闩锁（latch-free）结构，线程访问行时不互相堵在物理锁上。类比：货架按货位编号，店员不用抢同一把钥匙。
 
-2. **锁与并发策略重设计**：减少传统悲观锁的频繁阻塞。
+2. **乐观多版本并发（MVCC）**：读看自己的快照版本，写冲突才重试，而不是一上来悲观加锁。类比：每人复印一份菜单改，最后对一下谁改撞了。
 
-- 类比：店里不再每个人都拿同一个账本登记，而是按货位发牌。
-- 一旦设计好，冲突窗口变小。
+3. **本地编译存储过程**：只碰 Hekaton 表的 T-SQL 过程可编译成机器码，去掉解释执行开销。类比：把收银台流程焊成固定流水线，不再每次翻操作手册。
 
-3. **集成与兼容**：Hekaton 以 SQL Server 的语言语义对接。
-
-- 开发者可以继续用熟悉语法。
-- 新增能力带来迁移成本，也带来性能收益。
+索引上可选 **哈希索引**（等值点查，要设 BUCKET_COUNT）或 **范围索引**（有序扫描）。表可以 `SCHEMA_AND_DATA` 持久化，也可以 `SCHEMA_ONLY` 只保结构——后者更快，但重启丢数据。
 
 ## 实践案例
 
-### 案例 1：高频订单扣减
+### 案例 1：声明一张内存优化表
 
 ```sql
 CREATE TABLE dbo.AccountBalance (
-  AccountId BIGINT NOT NULL PRIMARY KEY NONCLUSTERED,
-  Amount BIGINT NOT NULL,
-  INDEX idx_amount NONCLUSTERED (Amount)
+  AccountId BIGINT NOT NULL PRIMARY KEY NONCLUSTERED HASH WITH (BUCKET_COUNT = 1000000),
+  Amount BIGINT NOT NULL
 )
 WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA);
 ```
 
-- 关键路径“扣减余额”可在内存结构中更快完成。
-- 设计时尽量把更新对象限制在小事务内。
+**逐步解释**：
 
-### 案例 2：乐观并发下的库存更新
+1. `MEMORY_OPTIMIZED = ON`：这张表改由 Hekaton 管，行常驻内存。
+2. `SCHEMA_AND_DATA`：结构和数据都落日志，崩溃可恢复。
+3. `HASH ... BUCKET_COUNT`：按账户 id 等值查；桶太少会撞链变慢，要按基数估算。
+
+### 案例 2：短事务扣库存（乐观快照）
 
 ```sql
-BEGIN ATOMIC WITH (TRANSACTION ISOLATION LEVEL = SNAPSHOT, LANGUAGE = N'ZH-CN')
-UPDATE dbo.Inventory SET Stock = Stock - @q WHERE Id = @id AND Stock >= @q;
-IF @@ROWCOUNT = 0 THROW 50000, '库存不足', 1;
+CREATE PROCEDURE dbo.DeductStock @id INT, @q INT
+WITH NATIVE_COMPILATION, SCHEMABINDING
+AS BEGIN ATOMIC WITH
+(TRANSACTION ISOLATION LEVEL = SNAPSHOT, LANGUAGE = N'us_english')
+  UPDATE dbo.Inventory SET Stock = Stock - @q
+  WHERE Id = @id AND Stock >= @q;
+  IF @@ROWCOUNT = 0 THROW 50000, 'stock insufficient', 1;
+END;
 ```
 
-- 要避免复杂跨表逻辑引入长事务。
-- 记录更新条件在 SQL 层面先过滤，失败路径要可观测。
+**逐步解释**：
 
-### 案例 3：批量热更新与回滚
+1. `NATIVE_COMPILATION`：过程编译成机器码，解释器开销去掉。
+2. `BEGIN ATOMIC ... END`：整段一个原子块，适合短路径。
+3. `SNAPSHOT` + `Stock >= @q`：读自己的版本，失败条件写在 SQL 里，避免「先读再写」拉长冲突窗口。
 
-```bash
-# 伪脚本
-begin_tx
-  apply_delta --table=HekatonOrders --chunk=500
-commit_tx
+### 案例 3：持久性怎么选
+
+```sql
+-- 可恢复：订单、余额
+WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA)
+-- 重启可丢：会话缓存、暂存队列
+WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_ONLY)
 ```
 
-- Hekaton 的强项在小而频繁事务。
-- 批量更新时要拆成可回滚的批次，别图一次执行。
+**逐步解释**：`SCHEMA_AND_DATA` 写日志、可恢复，适合真钱；`SCHEMA_ONLY` 更快但进程重启数据没了，只适合可重建的缓存表。选错会在故障演练时才爆。上线前用「杀进程再拉起」验证一次恢复预期。
 
 ## 踩过的坑
 
-1. **把所有表都改为内存优化**：并不是每张表都合适，读多写少可能反而没优势。
-2. **日志策略不理解**：持久性策略选错会影响恢复链路。
-3. **跨组件迁移盲目**：先做 profile，再改 schema 与热点。
-4. **把存储过程当银弹**：逻辑不当再快也会把锁和等待放大。
+这些坑多半出在「以为改个表属性就完事」之后：
+
+1. **整库改成内存表**：大表、分析型扫描吃内存且无收益；先用 profile 找真正热点。
+2. **DURABILITY 选错**：`SCHEMA_ONLY` 当主数据用，重启后余额消失。
+3. **长事务 / 跨引擎乱混**：内存表与磁盘表同事务可以，但长事务放大版本与冲突，抵消收益。
+4. **以为改表属性就够**：热点路径不改成 natively compiled 过程，加速往往只有一小截。
+5. **BUCKET_COUNT 拍脑袋**：哈希桶远小于基数时链表变长，点查退化；要按峰值行数留余量。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 高频短事务、强一致性要求高的支付、订单、库存场景。
-- 业务更新路径可切成窄事务并做严格隔离。
-- 对延迟极敏感且愿意投入数据库治理的项目。
+
+- 支付、库存、会话状态等**高频短事务**，单行/窄范围更新
+- 愿意为热点表做容量规划，并接受内存表功能子集
+- 延迟敏感，且能把逻辑收进本地编译过程
+- 需要与现有 SQL Server 同库共存，而不是迁到另一套主存 DBMS
 
 **不适用**：
-- 超复杂分析查询，按批处理为主。
-- 团队无法维护内存容量、监控和 failover 流程。
-- 高频 schema 变更且线上版本敏捷度要求高。
+
+- 大表扫描、复杂分析、ad-hoc 报表为主
+- 团队无法监控内存占用、恢复时间与 failover
+- 依赖内存表不支持的特性（部分约束/类型/操作），又不愿改 schema
+- 工作集远超可用内存，却幻想「标成内存表就变快」
 
 ## 历史小故事（可跳过）
 
-- **2010s 初期**：内存数据库在研究界热度上升。
-- **2013**：SQL Server 引入 Hekaton，聚焦实用的商用融合。
-- **后续几年**：工具链逐步补齐，支持监控和可运维。
+- **2010 前后**：主存变便宜，研究界主存 OLTP 升温（H-Store 等）。
+- **2013**：Diaconu 等在 SIGMOD 发表 Hekaton，强调集成进 SQL Server 而非独立产品。
+- **2014**：随 SQL Server 2014 以 In-Memory OLTP 名义商用。
+- **之后**：工具与监控补齐；思路影响后续 HTAP / 内存优化引擎讨论。
 
-它不是“替代所有数据库”，而是把“某类表”的执行模型改得更适配 OLTP。
+它回答的不是「要不要买更大内存」，而是「内存常驻之后，锁、版本与编译路径该怎么重做」。
 
 ## 学到什么
 
-1. 不同数据路径要用不同结构，性能来自模型匹配，而非单一优化。
-2. 内存并不等于没有复杂性，反而需要更严格的数据模型纪律。
-3. 你应优先优化热点路径，而不是把所有功能统一塞进一个引擎。
-4. 可观测性是高性能系统能否长期稳定的另一半。
+1. **性能来自执行模型匹配负载**，不是「全部搬进内存」一句话。
+2. **无锁结构 + 乐观多版本** 是多核短事务的常见组合拳。
+3. **先切热点表与热点过程**，比全库迁移更符合这篇论文的工程主张。
+4. **持久性档位是产品决策**：快与可恢复要显式选，不能默认。
+5. **集成式主存引擎**的卖点是渐进迁移：不必把整个应用搬到另一套 DBMS。
 
 ## 延伸阅读
 
-- 官方论文：[Hekaton: SQL Server\ Memory-Optimized OLTP Engine](https://www.microsoft.com/en-us/research/publication/hekaton-sql-servers-memory-optimized-oltp-engine/)
-- 课程材料：[SQL Server In-Memory OLTP docs](https://learn.microsoft.com/sql)
-- 相关讨论：[SQL Server memory-optimized tables](https://learn.microsoft.com/sql)
-- 社区实践：[Transaction throughput tuning](https://learn.microsoft.com/sql)
-- 相关框架：[[in-memory-db]] —— 其他内存数据库设计思路
+- 论文页：[Hekaton (Microsoft Research)](https://www.microsoft.com/en-us/research/publication/hekaton-sql-servers-memory-optimized-oltp-engine/)
+- 文档：[In-Memory OLTP](https://learn.microsoft.com/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization)
+- 相关：[[mvcc]] —— 多版本可见性
+- 相关：[[lock-free]] —— 无锁/无闩锁结构
+- 相关：[[write-ahead-log]] —— 持久化与日志
+- 对照：[[h-store]] —— 另一路主存 OLTP 分区思路
 
 ## 关联
 
-- [[lock-free]] —— 锁竞争与吞吐关系的另一种视角
-- [[oltp-design]] —— 小事务系统设计准则
-- [[mvcc]] —— 可见性与版本管理对比
-- [[write-ahead-log]] —— 高可用系统中的日志语义
-- [[query-plans]] —— 性能从 SQL 层如何被放大
+- [[mvcc]] —— Hekaton 乐观并发的版本基础
+- [[lock-free]] —— latch-free 索引与并发
+- [[write-ahead-log]] —— SCHEMA_AND_DATA 的耐久路径
+- [[oltp-vs-olap]] —— 短事务 vs 分析负载
+- [[acid]] —— 事务语义仍要满足
+- [[h-store]] —— 同期主存 OLTP 的分区路线对照
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[sql-server]] —— SQL Server 体系中的事务实现
-- [[acid]] —— 强一致性基础
-- [[buffer-pool]] —— 内存管理与缓存替代
-- [[indexing]] —— 索引与 OLTP 延迟关系
-- [[db-tuning]] —— 观测指标与慢查询防治
-- 研究实践里，实验环境与真实业务环境经常不同，必须做真实流量回放才能判断收益。  
-- 任何性能声明都要配“吞吐、延迟、重试率、回收时间”四个指标。  
-- 一次可观测性投入不足，会让你把问题归咎于数据库，而不是调用链。  
-- 高并发系统里，失败路径往往占用更大修复预算，不是平均吞吐。  
-- 当你只优化成功率，常常忽略了最坏情况下的恢复时间。  
-- 稳定性设计从“是否能快”改成“故障时能不能恢复”。  
-- 在多租户场景，默认设置要先偏保守，再逐步放开。  
-- 记一次性能优化的流程：采样、可观测、定位、分段改造、回归对照。  
-- 再快的系统，如果没有日志字段定义也很难做长期运维。  
-- 成本并非线性，常见是扩一倍节点，等待和迁移成本反而翻倍。  
-- 复用能力前先测量，避免把工程复杂度错当作免费优化。  
-- 工程上，简化假设经常是最贵的假设，
-- 需要在文档里明确哪种负载下该功能失效。  
-- 复杂方案先做最小闭环，不要一上来铺满整个系统。

@@ -8,11 +8,13 @@ title: MuZero — 不用规则也能下棋
 
 ## 是什么
 
-MuZero 是 DeepMind 2019 年的 "AlphaZero 进化版"——它**不需要给它围棋规则、象棋规则、Atari 物理引擎**，自己从经验里学一个 "环境模型"，然后用这个模型来 plan（规划下一步）。
+MuZero 是 DeepMind 在 **arXiv 2019 / Nature 2020** 发表的 "AlphaZero 进化版"——它**不需要给它围棋规则、象棋规则、Atari 物理引擎**，自己从经验里学一个 "环境模型"，然后用这个模型来 plan（规划下一步）。
 
 日常类比：[[alphago]] 像一个**知道扑克牌规则**的玩家——发牌、出牌、谁赢谁输都按手册来；MuZero 是一个**没看过规则书**的玩家，只通过观察别人怎么出牌、谁赢了，**自己脑补出一套规则**，然后用脑补的规则来想"下一步出什么"。
 
-它在围棋、国际象棋、将棋、Atari 57 款游戏上都达到 SOTA——**用同一份代码、同一组超参数**。
+它在围棋、国际象棋、将棋、Atari 57 款游戏上都达到当时 SOTA——**用同一份代码、同一组超参数**。关键不是"更会下棋"，而是**把规则引擎从依赖列表里删掉了**。
+
+如果你只会用"有完美模拟器才能搜索"的 AlphaZero 心智模型，会很难理解为什么后来很多真实世界 RL 项目敢先学一个 latent model 再规划。
 
 ## 为什么重要
 
@@ -44,99 +46,104 @@ MuZero 的脑子里有 **三个网络**，配合一个 MCTS（蒙特卡洛树搜
 
 **MCTS 跑在 hidden state 空间里**——不是真实棋盘，是脑子里的抽象状态。MuZero 的关键创新就是这一点：**plan 不需要真实环境，只需要一个能预测 reward / policy / value 的内部模型**。
 
-整个流程串起来：
-- 拿到 observation → h 编码 → 得到 root hidden state
-- MCTS 跑 N 次（Atari 50 次、棋类 800 次）：每次从 root 用 PUCT 选一条路径下到 leaf，在 leaf 调用 g 推一步、调用 f 给估值，然后把估值沿路径回传
-- 看哪个 root 的子节点访问次数最多 → 输出该 action
-- 真实环境执行该 action → 拿到下一个 observation → 继续
+整个流程串起来可以记成四拍：观察 → 编码 → 脑内搜索 → 只在真实世界走一步。训练时再用真实轨迹对 `g` 做 K 步展开（论文常用 K=5），逼它和真实 reward / 后续价值对齐。
 
 ## 实践案例
 
-### 案例 1：Atari 不告诉物理引擎，只看像素
+### 案例 1：一次决策的伪代码（可跟读）
 
-Atari 游戏里 MuZero 拿到的输入是 **96×96 的像素帧**——没人告诉它 "球碰到墙会反弹"、"打砖块得分"、"角色掉下去会死"。
+```text
+obs = env.reset()
+s0 = h(obs)                    # 1. 像素/棋盘 → hidden state
+for i in 1..N:                 # 2. MCTS：Atari≈50，棋类≈800
+  leaf = puct_select(s0)       #    用 PUCT 选一条路径到叶子
+  s', r = g(leaf.s, leaf.a)    #    dynamics 脑内推一步
+  p, v = f(s')                 #    prediction 给策略与价值
+  backup(path, v, r)           #    沿路径回传
+action = argmax_visits(s0)     # 3. 访问次数最多的子节点
+obs, reward = env.step(action) # 4. 只在真实环境走这一步
+```
 
-它的 representation 网络 h 把像素压成 hidden state，dynamics 网络 g 学会"在这个 hidden state 下按右键，下一帧大概是什么样"——**完全自学的物理引擎**。
+**逐部分解释**：
 
-结果：57 款 Atari 游戏的 mean human-normalized score 接近 5000%，全面超过 DQN（~250%）、Rainbow（~874%）、R2D2（~3596%）。
+- ① `h` 只编码当前观察，不调用规则引擎
+- ② 搜索全在脑子里，循环内不调真实 `env`
+- ③ 真正交互只有最后一步 `env.step`
+- ④ 训练阶段另对真实轨迹做 K 步 unroll，更新 h/g/f
 
-### 案例 2：围棋——和 AlphaZero 同水平，但不需要规则
+### 案例 2：Atari——不告诉物理引擎，只看像素
 
-围棋的规则（落子、提子、判定违法）在 [[alphago]] / AlphaZero 里是**人写代码**实现的。MuZero 把这部分删了。
+Atari 输入是 **96×96 像素帧**——没人告诉它 "球碰到墙会反弹"、"打砖块得分"。
 
-奇怪的是：MuZero 在围棋上的 ELO **略高于** AlphaZero。论文给的解释是——learned model 在 hidden state 空间里更"光滑"，两个战略等价但棋形不同的局面会被映射到接近的点，让 MCTS 隐式做了 generalization。
+**逐部分解释**：
 
-### 案例 3：YouTube 视频压缩
+- ① `h` 只吃像素，不吃规则表
+- ② `g` 在 latent 里学"按右键后下一状态 + reward"
+- ③ MCTS 用这份自学物理做短程规划
+- ④ 论文报告 57 款游戏 mean human-normalized score 接近 5000%，超过 DQN（~250%）、Rainbow（~874%）、R2D2（~3596%）
 
-DeepMind 2022 报告，把 MuZero 用在 YouTube 视频编码器（VP9）的 RD（rate-distortion）决策上：每一帧选什么压缩参数 = action，画质 + 比特率 = reward。
+### 案例 3：围棋与 YouTube 压缩
 
-结果：**节省 4% 比特率**——按 YouTube 的流量规模，这是每年节省几千万美元带宽。这是 model-based RL 在真实世界规模化部署的代表作。
+围棋规则在 AlphaZero 里是**人写代码**；MuZero 删掉规则代码，ELO 仍略高于 AlphaZero——论文解释是 learned model 在 latent 空间更"光滑"，战略等价但棋形不同的局面会被映射到近邻点，MCTS 隐式做了 generalization。
+
+DeepMind 后续把同类思路用到 YouTube VP9 的 RD 决策：每帧压缩参数 = action，画质+比特率 = reward，报告约 **节省 4% 比特率**。按平台流量规模，这是 model-based RL 规模化部署的代表叙事（工程细节在后续应用报告，不在 2020 主文 Methods 里）。
 
 ## 踩过的坑
 
-1. **hidden state 完全黑盒**——你不能问 "这个 hidden state 表示棋盘哪里有子"。它只是一坨 ResNet feature map。debug 训练不收敛时，你不知道是 h 错了还是 g 错了。
-
-2. **K=5 步 unroll 限制**——dynamics 网络 g 只在 5 步展开里被验证。但 MCTS 在棋类里树深度可达 30 步，最深处的 g 输出实际**没训练过**，可能完全不可靠。论文用 PUCT 的 visit count 集中在浅层来缓解，但没根治。
-
-3. **训练成本爆炸**——Atari 一个游戏要 1000 TPU-cores × 12 小时。学术界几乎没人独立完整复现过。EfficientZero 把成本降了 30 倍但还是远超普通实验室预算。
-
-4. **observation 噪声敏感**——Atari 的像素是 deterministic 的（没噪声）。真实世界（机器人摄像头）有噪声，h 没有显式的去噪机制。后来 Dreamer 用 stochastic latent + KL 正则化处理这个问题，MuZero 路线一直没补这一块。
+1. **hidden state 完全黑盒**——你不能问 "这个状态表示棋盘哪里有子"。debug 不收敛时，分不清是 h 错还是 g 错。
+2. **K=5 步 unroll 限制**——训练只验证 5 步；棋类 MCTS 树深可达 30，最深处的 g 输出可能不可靠。论文靠 PUCT 把访问集中在浅层缓解，但没根治。
+3. **训练成本爆炸**——Atari 单游戏约 1000 TPU-cores × 12 小时量级；EfficientZero 降成本约 30 倍仍远超普通实验室预算。
+4. **observation 噪声敏感**——Atari 像素近似确定性；真实摄像头噪声下，MuZero 路线不如 Dreamer 的 stochastic latent + KL 正则稳。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 离散动作空间 + 清晰 reward 信号（棋类、Atari、组合优化）
-- 有大量 self-play 算力（DeepMind 级别 TPU）
-- 环境 deterministic 或弱 stochastic（扑克这种强随机要 Stochastic MuZero）
+
+- 离散动作 + 清晰 reward（棋类、Atari、组合优化）
+- 有大量 self-play 算力（DeepMind 级 TPU）
+- 环境 deterministic 或弱 stochastic（强随机扑克要 Stochastic MuZero）
 
 **不适用**：
-- LLM 推理——动作空间是整个 vocabulary（10^5 token），MCTS 的 PUCT 公式跑不动
-- 连续动作（机器人扭矩）——原版需要枚举 action，要 Sampled MuZero 变种
-- observation 高噪声场景 → 用 Dreamer 系列
-- 需要可解释的决策（自动驾驶、医疗）→ hidden state 不可 audit
+
+- LLM 推理——动作空间是整个 vocabulary（约 10^5 token），MCTS 的 PUCT 跑不动
+- 连续动作（机器人扭矩）——原版要枚举 action，需 Sampled MuZero
+- observation 高噪声 → 优先 Dreamer 系列
+- 需要可解释决策（自动驾驶、医疗）→ hidden state 不可 audit
 
 ## 历史小故事（可跳过）
 
-- **2016 年**：[[alphago]] 击败李世石。但它**需要人类棋谱**预训练 + 围棋规则代码。
-- **2017 年**：AlphaGo Zero——扔掉人类棋谱，纯 self-play 从零学起。但**还是要规则**。
-- **2018 年**：AlphaZero——同一份代码玩围棋 / 国际象棋 / 将棋。**还是要规则**（每个游戏的规则代码）。
-- **2018 年**：Ha & Schmidhuber 的 World Models——latent 空间学 dynamics 的开山作，但用 model-free RL（CMA-ES），**没真做 plan**。
-- **2019 年 11 月**：MuZero 论文上 arXiv。第一次在 learned latent model 上做 MCTS plan，**全面超过** model-free。
-- **2021 年**：EfficientZero——把 Atari sample efficiency 提升 ~30 倍，加了 self-supervised consistency loss。
-- **2023 年**：DreamerV3——平行路线（重建 observation + actor-critic）的集大成，跟 MuZero 各擅胜场。
-- **2024 年**：AlphaChip（Google Nature）——MuZero 思路用于芯片 floorplan 设计，部署在 TPU v4/v5。
+- **2016 年**：[[alphago]] 击败李世石——需要人类棋谱 + 围棋规则代码。
+- **2017–2018 年**：AlphaGo Zero / AlphaZero——扔掉棋谱、统一多棋种，**仍要规则代码**。
+- **2018 年**：Ha & Schmidhuber World Models——latent dynamics 开山，但用 model-free（CMA-ES），没真做 MCTS plan。
+- **2019 年 11 月**：MuZero 上 arXiv；**2020 年** Nature 正式发表。
+- **2021 年**：EfficientZero——加 self-supervised consistency，Atari sample efficiency 大幅提升。
+- **2023–2024 年**：DreamerV3 平行路线；芯片 floorplan 等工程应用沿用 MuZero 思路。
 
 ## 学到什么
 
-1. **plan 不需要真实 simulator**——只需要一个能预测 reward / policy / value 的模型。这是 RL 历史上最重要的一次"减法"。
-2. **三网络分解**（representation / dynamics / prediction）成了 model-based RL 的标准架构——后来 Dreamer / IRIS / TWM 都沿用。
-3. **K 步 unroll 让 dynamics 学到 long-horizon 一致性**，单步 dynamics 不够。这是端到端联合训练的精髓。
-4. **理论 → 算法 → 工程**，每一步都有反例。MuZero 不重建 observation，Dreamer 重建——两条路线 2024 年还都活着，没有绝对赢家。
+1. **plan 不需要真实 simulator**——只需能预测 reward / policy / value 的模型。这是 RL 历史上一次重要的"减法"。
+2. **三网络分解**（h / g / f）成了 model-based RL 的标准骨架——后来 Dreamer / IRIS / TWM 都沿用变体。
+3. **K 步 unroll** 逼 dynamics 学 long-horizon 一致性，单步 dynamics 不够。
+4. **不重建 observation 的 MuZero** 与 **重建的 Dreamer** 两条路线并存，没有绝对赢家。
 
 ## 延伸阅读
 
-- 论文 PDF：[Schrittwieser et al. 2020 Nature](https://arxiv.org/abs/1911.08265)（密度高，先看 Figure 1 + Methods）
-- 视频讲解：[Yannic Kilcher — MuZero](https://www.youtube.com/watch?v=We20YSAJZSE)（一小时把核心思想讲透）
-- 开源实现：[werner-duvaud/muzero-general](https://github.com/werner-duvaud/muzero-general)（PyTorch，cartpole / lunar lander 能跑）
-- 官方 MCTS：[google-deepmind/mctx](https://github.com/google-deepmind/mctx)（DeepMind JAX 实现，含 Gumbel / Stochastic MuZero）
+- 论文 PDF：[Schrittwieser et al. 2020 Nature](https://arxiv.org/abs/1911.08265)（先看 Figure 1 + Methods）
+- 视频：[Yannic Kilcher — MuZero](https://www.youtube.com/watch?v=We20YSAJZSE)（约一小时讲透核心）
+- 开源：[werner-duvaud/muzero-general](https://github.com/werner-duvaud/muzero-general)（PyTorch，cartpole / lunar lander 能跑）
+- 官方 MCTS：[google-deepmind/mctx](https://github.com/google-deepmind/mctx)（含 Gumbel / Stochastic MuZero）
 - 续作：[EfficientZero (Ye et al. 2021)](https://arxiv.org/abs/2111.00210)——sample efficiency 大跃进
+- 对照阅读：DreamerV3 论文（重建 observation 的平行路线）
 
 ## 关联
 
-- [[alphago]] —— MuZero 的直接前作，AlphaGo / AlphaZero 是 perfect simulator + MCTS，MuZero 把 simulator 也学出来了
-- [[dqn]] —— MuZero 在 Atari 上替代的 model-free 路线代表，DQN 用 Q-learning + replay
-- [[ppo]] —— model-free policy gradient，跟 MuZero 是两条路线；RLHF 选 PPO 是因为 LLM 没法 plan
-- [[attention]] —— MuZero 的 ResNet 后来被 transformer 替代（Stochastic MuZero / IRIS 都用 transformer 做 dynamics）
-- [[gpt-3]] —— 大语言模型 + RL 的组合（RLHF）是 MuZero 之后 RL 的另一条主线，但 LLM 推理太慢没法 MCTS
+- [[alphago]] —— 直接前作：perfect simulator + MCTS；MuZero 把 simulator 也学出来
+- [[dqn]] —— Atari 上被替代的 model-free 代表，DQN 用 Q-learning + replay
+- [[ppo]] —— model-free policy gradient；RLHF 选 PPO 是因为 LLM 难做 MCTS
+- [[attention]] —— 后来 Stochastic MuZero / IRIS 用 transformer 做 dynamics
+- [[gpt-3]] —— LLM + RLHF 是另一条主线，推理太慢没法在 token 空间跑 MCTS
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[alphago]] —— AlphaGo — 击败围棋世界冠军
-- [[attention]] —— Attention Is All You Need
-- [[dqn]] —— DQN — Deep Q-Network
-- [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[ppo]] —— PPO — Proximal Policy Optimization
 

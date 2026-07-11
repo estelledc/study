@@ -1,0 +1,112 @@
+{
+  "action": "rewrite",
+  "average": 1.22,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文从未解释 Attention / 树形分支 / 长上下文是什么，仓库分拣类比与标题主题脱节"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例全是泛化「定义输入→分阶段→assert」流程，没有与 Tree-of-Attention 相关的逐步例子或伪代码"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "反向链接后堆砌「补充观察 110–168」重复句，零基础读者会被当成正文噪音"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文未陈述任何可核验的论文事实：无问题定义、方法机制、实验设定或与标准 Attention 的对比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 https://arxiv.org/abs/2605.30789 实际对应 S2L-PO / GRPO 论文，与标题 Tree-of-Attention 完全不符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把主题写成通用「工作流拆分」严重歪曲 Branching Attention for Long-Context Reasoning 的定位"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码是泛化 assert 清单，无法跟做任何 Attention / KV / 分支掩码相关操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑条目（约束建模、最优解、边界、文档）与树形 Attention 实现无关，缺少具体失败场景"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用未给出序列长度、分支数、显存或延迟等量化边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文从未解释 Attention / 树形分支 / 长上下文是什么，仓库分拣类比与标题主题脱节",
+        "实践案例全是泛化「定义输入→分阶段→assert」流程，没有与 Tree-of-Attention 相关的逐步例子或伪代码",
+        "反向链接后堆砌「补充观察 110–168」重复句，零基础读者会被当成正文噪音"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 1,
+        "no_distortion": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文未陈述任何可核验的论文事实：无问题定义、方法机制、实验设定或与标准 Attention 的对比",
+        "来源 https://arxiv.org/abs/2605.30789 实际对应 S2L-PO / GRPO 论文，与标题 Tree-of-Attention 完全不符",
+        "把主题写成通用「工作流拆分」严重歪曲 Branching Attention for Long-Context Reasoning 的定位"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 1
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码是泛化 assert 清单，无法跟做任何 Attention / KV / 分支掩码相关操作",
+        "踩坑条目（约束建模、最优解、边界、文档）与树形 Attention 实现无关，缺少具体失败场景",
+        "适用/不适用未给出序列长度、分支数、显存或延迟等量化边界"
+      ]
+    }
+  ]
+}

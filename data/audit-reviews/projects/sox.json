@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 silence / newfile / restart 链较密，可再点明「等有声→录到长静音停→管道切段→开新文件重跑」四步。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "14.4.2 的 Opus/RF64/rate/LADSPA 描述与 ChangeLog 一致；「活跃镜像」略满，chirlu/sox 近年提交稀疏，可写成「常用镜像」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可补一条：输入文件参数（-r/-c）与效果（rate/channels）位置搞反会导致「以为重采样了其实只改了读法」。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 silence / newfile / restart 链较密，可再点明「等有声→录到长静音停→管道切段→开新文件重跑」四步。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "14.4.2 的 Opus/RF64/rate/LADSPA 描述与 ChangeLog 一致；「活跃镜像」略满，chirlu/sox 近年提交稀疏，可写成「常用镜像」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑可补一条：输入文件参数（-r/-c）与效果（rate/channels）位置搞反会导致「以为重采样了其实只改了读法」。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "婚礼锁场/传纸条类比贯穿全文；entity/幂等/uncertainty 有桥接；下单与幂等伪码步骤清楚。延伸阅读里『unc 不确定性』像笔误，可改成『uncertainty』。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点先写『五个新抽象』，段末却写『四个抽象搭起来』，前后矛盾，应统一为五个。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Helland CIDR 2007 / Dynamo 同年 / CAP→Vogels→Spanner 时间线合理；教学简化可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "幂等伪码与 PENDING→CONFIRMED activity 流程概念正确；entity 切分/幂等≠纯函数/乱序踩坑可操作；适用边界清楚，量化可再补一句延迟或分片规模。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "婚礼锁场/传纸条类比贯穿全文；entity/幂等/uncertainty 有桥接；下单与幂等伪码步骤清楚。延伸阅读里『unc 不确定性』像笔误，可改成『uncertainty』。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点先写『五个新抽象』，段末却写『四个抽象搭起来』，前后矛盾，应统一为五个。",
+        "Helland CIDR 2007 / Dynamo 同年 / CAP→Vogels→Spanner 时间线合理；教学简化可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "幂等伪码与 PENDING→CONFIRMED activity 流程概念正确；entity 切分/幂等≠纯函数/乱序踩坑可操作；适用边界清楚，量化可再补一句延迟或分片规模。"
+      ]
+    }
+  ]
+}

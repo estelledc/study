@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "source_commit": "acbf24baf4641c0f80a2a6c624abfb37f4cadefc",
+  "source_commit": "755ee890a2c2042c78f8af2e56b239429fd015e9",
   "budgets": {
     "blocking": 0,
     "namespaced_missing": 0,
-    "unresolved_occurrences": 1672,
-    "unknown_occurrences": 1672
+    "unresolved_occurrences": 1526,
+    "unknown_occurrences": 1526
   },
   "groups": [
     {
@@ -146,7 +146,7 @@
     },
     {
       "source_id": "papers::amber-sigmod-2014",
-      "target": "placeholder-a",
+      "target": "distributed-systems",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -154,7 +154,7 @@
     },
     {
       "source_id": "papers::amber-sigmod-2014",
-      "target": "placeholder-b",
+      "target": "dremel",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -162,7 +162,15 @@
     },
     {
       "source_id": "papers::amber-sigmod-2014",
-      "target": "placeholder-c",
+      "target": "oauth",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "papers::amber-sigmod-2014",
+      "target": "privacy-engineering",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -339,7 +347,7 @@
     {
       "source_id": "papers::av2-video-spec",
       "target": "aomedia-standards",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -355,7 +363,7 @@
     {
       "source_id": "papers::av2-video-spec",
       "target": "streaming",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -371,7 +379,7 @@
     {
       "source_id": "papers::av2-video-spec",
       "target": "video-codec-evolution",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -466,7 +474,7 @@
     },
     {
       "source_id": "papers::bigtable-revisit-2024",
-      "target": "placeholder-a",
+      "target": "hbase",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -474,16 +482,8 @@
     },
     {
       "source_id": "papers::bigtable-revisit-2024",
-      "target": "placeholder-b",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::bigtable-revisit-2024",
-      "target": "placeholder-c",
-      "count": 1,
+      "target": "lsm-tree",
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -705,102 +705,6 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::cassandra-eventual-tradeoff",
-      "target": "workflow",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "papers::ceph-2006",
       "target": "paxos-lamport",
       "count": 1,
@@ -1002,7 +906,23 @@
     },
     {
       "source_id": "papers::continual-pretrain-survey-2026",
-      "target": "placeholder-a",
+      "target": "catastrophic-forgetting",
+      "count": 2,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "papers::continual-pretrain-survey-2026",
+      "target": "domain-adaptation",
+      "count": 2,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "papers::continual-pretrain-survey-2026",
+      "target": "instruction-tuning",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -1010,7 +930,7 @@
     },
     {
       "source_id": "papers::continual-pretrain-survey-2026",
-      "target": "placeholder-b",
+      "target": "model-evaluation",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -1018,8 +938,8 @@
     },
     {
       "source_id": "papers::continual-pretrain-survey-2026",
-      "target": "placeholder-c",
-      "count": 1,
+      "target": "rag",
+      "count": 3,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -1307,22 +1227,6 @@
     {
       "source_id": "papers::dijkstra-goto-1968",
       "target": "compiler-design",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::dijkstra-goto-1968",
-      "target": "hoare-1965",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::dijkstra-goto-1968",
-      "target": "program-comprehension",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -1857,134 +1761,6 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "papers::flashattention-2",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-2",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-2",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-2",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-2",
-      "target": "边界与隔离",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-3-2024",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-3-2024",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-3-2024",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-3-2024",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flashattention-3-2024",
-      "target": "边界与隔离",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flat-datacenter-storage",
-      "target": "distributed-system",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flat-datacenter-storage",
-      "target": "erasure-coding",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flat-datacenter-storage",
-      "target": "metadata-indexing",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flat-datacenter-storage",
-      "target": "network-topology",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flat-datacenter-storage",
-      "target": "replication-log",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::flat-datacenter-storage",
-      "target": "silo",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "papers::flink-snapshots-2015",
       "target": "lamport-clocks",
       "count": 1,
@@ -2330,32 +2106,8 @@
     },
     {
       "source_id": "papers::hekaton-2013-sigmod",
-      "target": "buffer-pool",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::hekaton-2013-sigmod",
-      "target": "db-tuning",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::hekaton-2013-sigmod",
-      "target": "in-memory-db",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::hekaton-2013-sigmod",
-      "target": "indexing",
-      "count": 1,
+      "target": "h-store",
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -2363,30 +2115,14 @@
     {
       "source_id": "papers::hekaton-2013-sigmod",
       "target": "lock-free",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
     },
     {
       "source_id": "papers::hekaton-2013-sigmod",
-      "target": "oltp-design",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::hekaton-2013-sigmod",
-      "target": "query-plans",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::hekaton-2013-sigmod",
-      "target": "sql-server",
+      "target": "oltp-vs-olap",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -2395,7 +2131,7 @@
     {
       "source_id": "papers::hekaton-2013-sigmod",
       "target": "write-ahead-log",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -2507,22 +2243,6 @@
     {
       "source_id": "papers::hullft-ttft",
       "target": "the-pile-2020",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::instant-ngp-2022",
-      "target": "qwen2-vl-2024",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::instant-ngp-2022",
-      "target": "wikilink",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -2761,102 +2481,6 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::kv-cache-budget-2026",
-      "target": "workflow",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "papers::kvm-2007",
       "target": "firecracker",
       "count": 2,
@@ -2883,7 +2507,7 @@
     {
       "source_id": "papers::lambda-calculus",
       "target": "church-rosser",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -2891,7 +2515,7 @@
     {
       "source_id": "papers::lambda-calculus",
       "target": "simply-typed-lambda",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -2899,7 +2523,7 @@
     {
       "source_id": "papers::lambda-calculus",
       "target": "y-combinator",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -2938,16 +2562,8 @@
     },
     {
       "source_id": "papers::linear-attention-still-2026",
-      "target": "linear-attention",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::linear-attention-still-2026",
       "target": "llm-inference",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -2963,14 +2579,6 @@
     {
       "source_id": "papers::linear-attention-still-2026",
       "target": "seq2seq",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::linear-attention-still-2026",
-      "target": "state-space-models",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -3171,7 +2779,7 @@
     {
       "source_id": "papers::mamba",
       "target": "lstm",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -3179,7 +2787,7 @@
     {
       "source_id": "papers::mamba",
       "target": "rwkv",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -3225,6 +2833,14 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "papers::mcp-spec",
+      "target": "json-rpc",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "papers::medcase-fhir",
       "target": "ehrstruct",
       "count": 1,
@@ -3259,78 +2875,6 @@
     {
       "source_id": "papers::medcase-fhir",
       "target": "synthea",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::megatron-core-moe-2026",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::megatron-core-moe-2026",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::megatron-core-moe-2026",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::megatron-core-moe-2026",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::megatron-core-moe-2026",
-      "target": "边界与隔离",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::mem-ft-lora",
-      "target": "beyond-memorization-random-access",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::mem-ft-lora",
-      "target": "lora-2021",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::mem-ft-lora",
-      "target": "memory3-2024",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::mem-ft-lora",
-      "target": "understanding-lora-knowledge-memory",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -3498,22 +3042,6 @@
     },
     {
       "source_id": "papers::naiad-2013-sosp",
-      "target": "iterative-algorithm",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::naiad-2013-sosp",
-      "target": "low-latency-engine",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::naiad-2013-sosp",
       "target": "materialize",
       "count": 1,
       "category": "unknown",
@@ -3539,14 +3067,6 @@
     {
       "source_id": "papers::naiad-2013-sosp",
       "target": "stream-processing",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::naiad-2013-sosp",
-      "target": "stream-window",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -3721,6 +3241,14 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "papers::ntk-2018",
+      "target": "batch-norm-2015",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "papers::nvlink-nvswitch-2018",
       "target": "unified-memory",
       "count": 1,
@@ -3763,7 +3291,7 @@
     {
       "source_id": "papers::opensearch",
       "target": "lucene",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -3801,56 +3329,8 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "papers::orca-2022",
-      "target": "wikilink",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "papers::ot-1989",
       "target": "two-phase-commit",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::paged-attention-vllm",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::paged-attention-vllm",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::paged-attention-vllm",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::paged-attention-vllm",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::paged-attention-vllm",
-      "target": "边界与隔离",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -3988,30 +3468,6 @@
       "source_id": "papers::ppo",
       "target": "deepmind",
       "count": 3,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::prefix-cache-policy-2026",
-      "target": "placeholder-a",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::prefix-cache-policy-2026",
-      "target": "placeholder-b",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::prefix-cache-policy-2026",
-      "target": "placeholder-c",
-      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -4257,96 +3713,8 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "papers::scads-database-2008",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scads-database-2008",
-      "target": "workflow",
+      "source_id": "papers::sam",
+      "target": "x, y",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -4354,7 +3722,7 @@
     },
     {
       "source_id": "papers::scaling-hnsws-antirez",
-      "target": "disaggregated-memory",
+      "target": "hnsw",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -4363,14 +3731,6 @@
     {
       "source_id": "papers::scaling-hnsws-antirez",
       "target": "rag",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::scaling-hnsws-antirez",
-      "target": "rdma",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -4618,6 +3978,14 @@
     },
     {
       "source_id": "papers::silo-oltp-2013",
+      "target": "hekaton",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "papers::silo-oltp-2013",
       "target": "in-memory-database",
       "count": 1,
       "category": "unknown",
@@ -4643,7 +4011,7 @@
     {
       "source_id": "papers::silo-oltp-2013",
       "target": "occ",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -4651,30 +4019,6 @@
     {
       "source_id": "papers::silt-2011",
       "target": "wisckey",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::skill-pro-nonparametric-ppo",
-      "target": "dpo-2023",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::skill-pro-nonparametric-ppo",
-      "target": "ppo-2017",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::skill-pro-nonparametric-ppo",
-      "target": "textgrad",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -4827,7 +4171,7 @@
     {
       "source_id": "papers::sycophancy-2023",
       "target": "instruct-gpt-2022",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -4946,6 +4290,14 @@
     },
     {
       "source_id": "papers::timelinejs",
+      "target": "iframe-web-embed",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "papers::timelinejs",
       "target": "oembed-protocol",
       "count": 1,
       "category": "unknown",
@@ -4955,7 +4307,7 @@
     {
       "source_id": "papers::token-bucket-stripe",
       "target": "adr5-rate-limiting",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -4987,102 +4339,6 @@
     {
       "source_id": "papers::token-bucket-stripe",
       "target": "token-bucket-vs-leaky-bucket",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::tree-of-attention-2026",
-      "target": "workflow",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -5139,14 +4395,6 @@
     {
       "source_id": "papers::ucb-cs186-fa2024",
       "target": "aries",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::ucb-cs186-fa2024",
-      "target": "b-tree",
       "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -5154,8 +4402,16 @@
     },
     {
       "source_id": "papers::ucb-cs186-fa2024",
+      "target": "b-tree",
+      "count": 3,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "papers::ucb-cs186-fa2024",
       "target": "database-internals",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5163,7 +4419,7 @@
     {
       "source_id": "papers::ucb-cs186-fa2024",
       "target": "lock-management",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5179,7 +4435,7 @@
     {
       "source_id": "papers::ucb-cs186-fa2024",
       "target": "query-optimizer",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5187,15 +4443,7 @@
     {
       "source_id": "papers::ucb-cs186-fa2024",
       "target": "storage-engine",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::v-system-1988",
-      "target": "plan-9-bell-labs",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5299,15 +4547,7 @@
     {
       "source_id": "papers::voyager",
       "target": "rag",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "papers::wang-2014-spdy",
-      "target": "tcp-bbr",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5395,7 +4635,7 @@
     {
       "source_id": "papers::wide-deep-2016",
       "target": "ftrl-2013",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5546,14 +4786,6 @@
     },
     {
       "source_id": "projects::ardour",
-      "target": "automation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::ardour",
       "target": "jack-audio-connection-kit",
       "count": 2,
       "category": "unknown",
@@ -5562,24 +4794,8 @@
     },
     {
       "source_id": "projects::ardour",
-      "target": "lifecycle-audio",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::ardour",
       "target": "lv2",
       "count": 2,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::ardour",
-      "target": "mixer",
-      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5596,14 +4812,6 @@
       "source_id": "projects::ardour",
       "target": "reaper",
       "count": 2,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::ardour",
-      "target": "track",
-      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5714,15 +4922,7 @@
     },
     {
       "source_id": "projects::aubio",
-      "target": "onset-detection",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::aubio",
-      "target": "pitch-tracking",
+      "target": "music-information-retrieval",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -5738,7 +4938,7 @@
     },
     {
       "source_id": "projects::aubio",
-      "target": "python-audio",
+      "target": "real-time-audio",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -5747,38 +4947,6 @@
     {
       "source_id": "projects::aubio",
       "target": "soundevent",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::aubio",
-      "target": "tempo-estimation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::audacity",
-      "target": "placeholder-a",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::audacity",
-      "target": "placeholder-b",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::audacity",
-      "target": "placeholder-c",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -5857,9 +5025,49 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "projects::babylonjs",
+      "target": "gltf",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::babylonjs",
+      "target": "react-three-fiber",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::babylonjs",
+      "target": "unity",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::babylonjs",
+      "target": "webgl",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::babylonjs",
+      "target": "webgpu",
+      "count": 2,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "projects::badger",
       "target": "dgraph-io",
-      "count": 7,
+      "count": 6,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5875,7 +5083,7 @@
     {
       "source_id": "projects::bbolt",
       "target": "consul",
-      "count": 2,
+      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -5922,14 +5130,6 @@
     },
     {
       "source_id": "projects::boa-engine",
-      "target": "embedding",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::boa-engine",
       "target": "javascript-engine",
       "count": 2,
       "category": "unknown",
@@ -5939,15 +5139,7 @@
     {
       "source_id": "projects::boa-engine",
       "target": "rhai",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::boa-engine",
-      "target": "rust-runtime",
-      "count": 1,
+      "count": 4,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -6066,23 +5258,7 @@
     },
     {
       "source_id": "projects::bullet",
-      "target": "placeholder-a",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::bullet",
-      "target": "placeholder-b",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::bullet",
-      "target": "placeholder-c",
+      "target": "game-loop",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -6171,102 +5347,6 @@
     {
       "source_id": "projects::cannon-es",
       "target": "three-js",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::capacitor",
-      "target": "workflow",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -6409,30 +5489,6 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::cordova",
-      "target": "placeholder-a",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::cordova",
-      "target": "placeholder-b",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::cordova",
-      "target": "placeholder-c",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "projects::coturn",
       "target": "libp2p",
       "count": 1,
@@ -6562,7 +5618,7 @@
     },
     {
       "source_id": "projects::deck-gl",
-      "target": "algorithms",
+      "target": "canvas",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -6570,7 +5626,7 @@
     },
     {
       "source_id": "projects::deck-gl",
-      "target": "arxiv",
+      "target": "data-visualization",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -6578,7 +5634,7 @@
     },
     {
       "source_id": "projects::deck-gl",
-      "target": "debugging",
+      "target": "geojson",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -6586,72 +5642,16 @@
     },
     {
       "source_id": "projects::deck-gl",
-      "target": "design-first",
-      "count": 1,
+      "target": "maplibre",
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
     },
     {
       "source_id": "projects::deck-gl",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::deck-gl",
-      "target": "workflow",
-      "count": 1,
+      "target": "webgl",
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -6675,7 +5675,7 @@
     {
       "source_id": "projects::deno",
       "target": "nodejs",
-      "count": 3,
+      "count": 4,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -6747,7 +5747,7 @@
     {
       "source_id": "projects::doris",
       "target": "apache-iceberg",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -6755,14 +5755,6 @@
     {
       "source_id": "projects::dragonbones",
       "target": "sfml",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::dragonfly",
-      "target": "dragonflydb",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -6819,7 +5811,7 @@
     {
       "source_id": "projects::dspy",
       "target": "colbert",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -6843,7 +5835,7 @@
     {
       "source_id": "projects::dvc",
       "target": "lakefs",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -6883,70 +5875,6 @@
     {
       "source_id": "projects::elasticsearch",
       "target": "lucene",
-      "count": 2,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::electron",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::electron",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::electron",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::electron",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::electron",
-      "target": "边界与隔离",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::engine262",
-      "target": "placeholder-a",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::engine262",
-      "target": "placeholder-b",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::engine262",
-      "target": "placeholder-c",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -7033,120 +5961,8 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::essentia",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::essentia",
-      "target": "workflow",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "projects::expo",
       "target": "appcenter",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::expo",
-      "target": "appstore-connect",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::expo",
-      "target": "detox",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -7163,7 +5979,7 @@
     {
       "source_id": "projects::expo",
       "target": "eas-update",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -7179,30 +5995,6 @@
     {
       "source_id": "projects::expo",
       "target": "firebase",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::expo",
-      "target": "play-console",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::expo",
-      "target": "rn-cli",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::expo",
-      "target": "tamagui",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -7275,7 +6067,7 @@
     {
       "source_id": "projects::feast",
       "target": "tecton",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -7459,6 +6251,14 @@
     {
       "source_id": "projects::ghostwriter",
       "target": "qt",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::github-actions",
+      "target": "gitlab",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -7697,102 +6497,6 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::hermes",
-      "target": "algorithms",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "arxiv",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "debugging",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "design-first",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "documentation",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "github",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "notes",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "projects",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "quality-gate",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "review-process",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "systems",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::hermes",
-      "target": "workflow",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "projects::holoviews",
       "target": "datashader",
       "count": 1,
@@ -7873,33 +6577,9 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::ionic-framework",
-      "target": "mobile-cross-platform",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::ionic-framework",
-      "target": "pwa",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::ionic-framework",
-      "target": "web-components",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "projects::istio",
       "target": "cncf",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -7915,7 +6595,7 @@
     {
       "source_id": "projects::istio",
       "target": "linkerd",
-      "count": 3,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -8027,6 +6707,30 @@
     {
       "source_id": "projects::k6",
       "target": "xk6",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::kafka",
+      "target": "flink",
+      "count": 2,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::kafka",
+      "target": "rabbitmq",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::kafka",
+      "target": "spark",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -8153,8 +6857,8 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::lexical",
-      "target": "'root', $createRootNode()",
+      "source_id": "projects::leveldb",
+      "target": "bloom-filter",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -8187,14 +6891,6 @@
     {
       "source_id": "projects::librosa",
       "target": "melspectrogram",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::librosa",
-      "target": "music-information-retrieval",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -8290,14 +6986,6 @@
     },
     {
       "source_id": "projects::llrt",
-      "target": "cold-start",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::llrt",
       "target": "edge-runtime",
       "count": 1,
       "category": "unknown",
@@ -8315,15 +7003,7 @@
     {
       "source_id": "projects::llrt",
       "target": "nodejs",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::llrt",
-      "target": "rust",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -8449,6 +7129,22 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "projects::lottie",
+      "target": "canvas",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::lottie",
+      "target": "svg",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "projects::lsd",
       "target": "$- == *i*",
       "count": 1,
@@ -8491,7 +7187,7 @@
     {
       "source_id": "projects::luma-gl",
       "target": "webgpu",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -8746,38 +7442,6 @@
     },
     {
       "source_id": "projects::nativescript",
-      "target": "ionic",
-      "count": 3,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::nativescript",
-      "target": "mobile-cross-platform",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::nativescript",
-      "target": "native-bridge",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::nativescript",
-      "target": "native-module",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::nativescript",
       "target": "webview",
       "count": 1,
       "category": "unknown",
@@ -8827,7 +7491,7 @@
     {
       "source_id": "projects::nebula",
       "target": "tigergraph",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -8843,14 +7507,6 @@
     {
       "source_id": "projects::next-intl",
       "target": "nextjs",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::nix",
-      "target": "decord",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -8955,7 +7611,7 @@
     {
       "source_id": "projects::open-sora",
       "target": "diffusers",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -8971,7 +7627,7 @@
     {
       "source_id": "projects::opensearch",
       "target": "lucene",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -8980,22 +7636,6 @@
       "source_id": "projects::opensearch",
       "target": "pinecone",
       "count": 2,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::opentelemetry",
-      "target": "grpc",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::opentelemetry",
-      "target": "protobuf",
-      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -9283,23 +7923,7 @@
     {
       "source_id": "projects::picogl",
       "target": "babylon-js",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::picogl",
-      "target": "canvas-perf",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::picogl",
-      "target": "glsl",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -9323,7 +7947,7 @@
     {
       "source_id": "projects::picogl",
       "target": "pixi-js",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -9339,7 +7963,7 @@
     {
       "source_id": "projects::picogl",
       "target": "three-js",
-      "count": 2,
+      "count": 3,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -9356,46 +7980,6 @@
       "source_id": "projects::picogl",
       "target": "webgl",
       "count": 2,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::planck",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::planck",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::planck",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::planck",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::planck",
-      "target": "边界与隔离",
-      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -9698,72 +8282,8 @@
     },
     {
       "source_id": "projects::quickjs",
-      "target": "c-embedding",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::quickjs",
-      "target": "duktape",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::quickjs",
-      "target": "embedded-runtime",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::quickjs",
       "target": "interpreter-vs-compiler",
       "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::quickjs",
-      "target": "javascript-engine",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::quickjs",
-      "target": "wasm-runtime",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::rasa",
-      "target": "langchain-tutorial",
-      "count": 2,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::rasa",
-      "target": "spacy",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::rasa",
-      "target": "transformers-attention",
-      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -9802,23 +8322,7 @@
     },
     {
       "source_id": "projects::react-native",
-      "target": "expo-router",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::react-native",
       "target": "fabric",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::react-native",
-      "target": "ionic",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -9851,14 +8355,6 @@
     {
       "source_id": "projects::react-native",
       "target": "turbo-modules",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::react-native",
-      "target": "weex",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -10057,14 +8553,6 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::skaffold",
-      "target": "skaffold-tilt",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "projects::sonic",
       "target": "lsm-tree",
       "count": 1,
@@ -10146,14 +8634,6 @@
     },
     {
       "source_id": "projects::supercollider",
-      "target": "algorithmic-composition",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::supercollider",
       "target": "audio-synthesis",
       "count": 1,
       "category": "unknown",
@@ -10203,15 +8683,7 @@
     {
       "source_id": "projects::supercollider",
       "target": "sonic-pi",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::supercollider",
-      "target": "superpowered",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -10219,14 +8691,6 @@
     {
       "source_id": "projects::supercollider",
       "target": "web-audio-api",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::supercollider",
-      "target": "webaudio",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -10402,6 +8866,22 @@
     },
     {
       "source_id": "projects::threejs",
+      "target": "canvas",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::threejs",
+      "target": "gltf",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::threejs",
       "target": "threejs-examples",
       "count": 1,
       "category": "unknown",
@@ -10481,9 +8961,17 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "projects::traefik",
+      "target": "consul",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "projects::typeorm",
       "target": "nest",
-      "count": 6,
+      "count": 5,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -10492,6 +8980,14 @@
       "source_id": "projects::ultralytics",
       "target": "onnx",
       "count": 2,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::unsloth",
+      "target": "peft",
+      "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -10523,7 +9019,7 @@
     {
       "source_id": "projects::v8",
       "target": "turbo-fan",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -10531,7 +9027,7 @@
     {
       "source_id": "projects::v8",
       "target": "v8-shell",
-      "count": 1,
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -10577,6 +9073,22 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "projects::victoriametrics",
+      "target": "cortex",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
+      "source_id": "projects::victoriametrics",
+      "target": "thanos",
+      "count": 2,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "projects::vis-timeline",
       "target": "fullcalendar",
       "count": 2,
@@ -10594,16 +9106,16 @@
     },
     {
       "source_id": "projects::vite",
-      "target": "parcel",
-      "count": 1,
+      "target": "snowpack",
+      "count": 2,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::vite",
-      "target": "snowpack",
-      "count": 1,
+      "source_id": "projects::vitepress",
+      "target": "OK",
+      "count": 4,
       "category": "unknown",
       "owner": "content-maintainers",
       "decision": "triage-required"
@@ -10611,46 +9123,6 @@
     {
       "source_id": "projects::vue",
       "target": "typescript",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::wasmtime",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::wasmtime",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::wasmtime",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::wasmtime",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::wasmtime",
-      "target": "边界与隔离",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",
@@ -10729,6 +9201,14 @@
       "decision": "triage-required"
     },
     {
+      "source_id": "projects::woodpecker",
+      "target": "forgejo",
+      "count": 1,
+      "category": "unknown",
+      "owner": "content-maintainers",
+      "decision": "triage-required"
+    },
+    {
       "source_id": "projects::xi-editor",
       "target": "tree-sitter",
       "count": 1,
@@ -10737,56 +9217,8 @@
       "decision": "triage-required"
     },
     {
-      "source_id": "projects::xonsh",
-      "target": "ipython",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
       "source_id": "projects::xplr",
       "target": "echo -n \"$XPLR_FOCUS_PATH\"",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::yt-dlp",
-      "target": "project-architecture",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::yt-dlp",
-      "target": "可观测性",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::yt-dlp",
-      "target": "平台工程",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::yt-dlp",
-      "target": "性能优化",
-      "count": 1,
-      "category": "unknown",
-      "owner": "content-maintainers",
-      "decision": "triage-required"
-    },
-    {
-      "source_id": "projects::yt-dlp",
-      "target": "边界与隔离",
       "count": 1,
       "category": "unknown",
       "owner": "content-maintainers",

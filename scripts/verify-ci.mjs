@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Portable PR/deploy gate. Actions job name must stay `verify:ci`.
 
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
@@ -52,7 +53,15 @@ export function buildCiSteps(env = process.env) {
   { name: 'operation entrypoints', command: 'node', args: ['scripts/audit-operation-entrypoints.mjs'] },
   { name: 'operation document lifecycle', command: 'node', args: ['scripts/audit-doc-lifecycle.mjs'] },
   { name: 'asset contract', command: 'node', args: ['scripts/audit-assets.mjs', '--json'] },
-  { name: 'strict build', command: 'npm', args: ['run', 'build:strict'] },
+  {
+    name: 'strict build',
+    command: 'npm',
+    args: [
+      'run',
+      'build:strict',
+      ...(env.STUDY_BUILD_LOG ? ['--', '--log', env.STUDY_BUILD_LOG] : []),
+    ],
+  },
   { name: 'homepage and base links', command: 'npm', args: ['run', 'audit:homepage-dist-links'] },
   { name: 'Pagefind query contract', command: 'node', args: ['scripts/audit-pagefind.mjs', '--json'] },
   { name: 'SEO output contract', command: 'node', args: ['scripts/audit-seo-output.mjs', '--json'] },

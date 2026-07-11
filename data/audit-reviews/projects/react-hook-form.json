@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "饭店点单类比把 uncontrolled（先写纸、最后下单）讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "register / valuesRef / formState Proxy 首次出现有日常桥接；hydration / Server Components 仍偏密，但放在「为什么重要」动机里可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有「逐部分」拆解，案例 1 可跟做；案例 2 只有 schema 接线片段、缺完整 form，但不挡主线理解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「valtio / mobx-react-lite / TanStack Query 都用同一套 Proxy + 按字段订阅」不准确：TanStack Query 用观察者/通知，不是 Proxy 字段订阅——应从该并列里拿掉或改写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史主线正确：Bill Luo（@bluebill1049）2019 开源、v7（2021-04）默认 shouldUnregister=false、resolvers 拆包；stars 现约 44k，「40k」略旧可改为「4万+」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 Formik 快 5-10 倍」来自官方 benchmark 宣传口径，教学可用，宜保留「大表单/官方对比」限定以免读成普适定理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 LoginForm 概念正确可跟；案例 2 resolver 接线清楚但缺完整提交表单，建议补两行 register+handleSubmit 或标明「只演示接线」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：register 与 value 抢值、watch() 全表订阅、Controller 过多、shouldUnregister 默认翻转——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有量化边界（10+ 字段、3–5 字段、antd Form 混用、RSC/Conform）；Proxy 并列里的 TanStack Query 需随 academic 改正"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "饭店点单类比把 uncontrolled（先写纸、最后下单）讲透，零基础直觉强",
+        "register / valuesRef / formState Proxy 首次出现有日常桥接；hydration / Server Components 仍偏密，但放在「为什么重要」动机里可接受",
+        "三案例都有「逐部分」拆解，案例 1 可跟做；案例 2 只有 schema 接线片段、缺完整 form，但不挡主线理解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「valtio / mobx-react-lite / TanStack Query 都用同一套 Proxy + 按字段订阅」不准确：TanStack Query 用观察者/通知，不是 Proxy 字段订阅——应从该并列里拿掉或改写",
+        "历史主线正确：Bill Luo（@bluebill1049）2019 开源、v7（2021-04）默认 shouldUnregister=false、resolvers 拆包；stars 现约 44k，「40k」略旧可改为「4万+」",
+        "「比 Formik 快 5-10 倍」来自官方 benchmark 宣传口径，教学可用，宜保留「大表单/官方对比」限定以免读成普适定理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 LoginForm 概念正确可跟；案例 2 resolver 接线清楚但缺完整提交表单，建议补两行 register+handleSubmit 或标明「只演示接线」",
+        "踩坑具体可操作：register 与 value 抢值、watch() 全表订阅、Controller 过多、shouldUnregister 默认翻转——保留",
+        "适用/不适用有量化边界（10+ 字段、3–5 字段、antd Form 混用、RSC/Conform）；Proxy 并列里的 TanStack Query 需随 academic 改正"
+      ]
+    }
+  ]
+}

@@ -25,9 +25,9 @@ conn.execute('SELECT * FROM users')
 不理解 SQLite 的"小而无处不在"，下面这些事都解释不通：
 
 - 为什么**全球部署量第一的数据库**是它（不是 MySQL，也不是 Oracle）——你手机里的 iOS / Android 系统数据库都是 SQLite
-- 为什么它有**100% 分支测试覆盖率**——航空软件级别（DO-178B 标准），单测代码量是源码的 600 倍
+- 为什么它强调**100% 分支 / MC/DC 测试覆盖**——按航空软件 DO-178B 的测试思路做（项目本身未宣称正式取证），测试代码量远超源码
 - 为什么作者选了**公共领域许可**（Public Domain）——不要钱、不限商用、不要署名，连开源协议都嫌啰嗦
-- 为什么 2020 年后又出现了 Cloudflare D1 / Turso / LiteFS 这些"边缘云 SQLite"——一个 22 年前的库，在云原生时代被重新发现
+- 为什么 2020 年后又出现了 Cloudflare D1 / Turso / LiteFS 这些"边缘云 SQLite"——一个二十多年前的库，在云原生时代被重新发现
 
 ## 核心要点
 
@@ -37,7 +37,7 @@ SQLite 的设计可以拆成 **三个反直觉的选择**：
 
 2. **单文件存储**：整个数据库就是一个 `.db` 文件，包括表结构、索引、数据、视图。**复制文件 = 完整备份**；删文件 = 删库；想发给同事？直接发文件就行。
 
-3. **Serverless**：不需要安装服务、不开端口、不要权限管理。读小数据集时**比 PostgreSQL 快一个数量级**——少了网络往返这一步。
+3. **Serverless**：这里的 serverless **不是**云厂商那种按请求计费，而是**没有独立数据库进程**——不需要安装服务、不开端口、不要权限管理。读小数据集时**比 PostgreSQL 快一个数量级**——少了网络往返这一步。
 
 加起来叫 "**SQL as a library，not as a service**"。
 
@@ -49,7 +49,11 @@ SQLite 的设计可以拆成 **三个反直觉的选择**：
 sqlite3 mydb.db "CREATE TABLE users(id INTEGER, name TEXT); INSERT INTO users VALUES(1, 'Alice');"
 ```
 
-跑完之后 `mydb.db` 就是完整数据库。`ls -la mydb.db` 看到一个文件，里面就是表 + 数据。`rm mydb.db` 就删库——所有"数据库"操作的本质都是文件 IO。
+**逐部分解释**：
+
+- `sqlite3 mydb.db "..."` 打开（或创建）名为 `mydb.db` 的文件，并在里面执行 SQL
+- `CREATE TABLE` / `INSERT` 把表结构和一行数据写进这个文件
+- 跑完后 `ls mydb.db` 看到的那个文件就是完整数据库；`rm mydb.db` 等于删库
 
 ### 案例 2：Python 嵌入式调用
 
@@ -61,7 +65,11 @@ print(cursor.fetchone())  # (1, 'Alice')
 conn.close()
 ```
 
-`sqlite3` 是 **Python 标准库自带的**——不用 `pip install`。这是 SQLite 嵌入式哲学的极致体现：你不需要装数据库就能用数据库。
+**逐部分解释**：
+
+- `sqlite3` 是 **Python 标准库自带的**——不用 `pip install`
+- `connect('mydb.db')` 把数据库文件挂进当前进程，没有服务器、没有端口
+- `?` 占位符传参，避免把用户输入直接拼进 SQL（防注入的基本写法）
 
 ### 案例 3：WAL 模式解锁并发
 
@@ -71,7 +79,11 @@ conn.close()
 PRAGMA journal_mode=WAL;
 ```
 
-之后读和写**不再互相阻塞**——读走数据文件、写走 WAL 日志，定期 checkpoint 合并。这一行 PRAGMA 把 SQLite 从"单用户玩具"变成"中等并发可用"。
+**逐部分解释**：
+
+- 默认模式：写的时候读者也要等，像单车道施工
+- WAL：读者继续走原来的数据文件，写者把新改动追加到旁边的 WAL 日志
+- 定期 **checkpoint** 把日志合并回主文件；这一行 PRAGMA 把「单用户玩具」推到「中等读并发可用」
 
 ## 踩过的坑
 
@@ -90,12 +102,12 @@ PRAGMA journal_mode=WAL;
 **适用**：
 - 移动端 / 桌面端本地存储（手机 App 缓存、Electron 应用、配置数据）
 - 测试和原型（不想为单测起一个 PostgreSQL 容器）
-- 中小型只读 / 读多写少的网站（个人博客、文档站、小型 CMS）
+- 读多写少的中小站：大致单写者、库体积到几十 GB 仍常见（个人博客、文档站、小型 CMS）
 - 边缘计算（Cloudflare D1 / Turso 把 SQLite 部署到全球边缘节点）
 
 **不适用**：
 - 高并发写入（多人同时下单、IM 消息流）→ 用 PostgreSQL / MySQL
-- 多机分布式事务 → SQLite 不跨进程，更别说跨机器
+- 多机写扩展 / 原生跨机复制与分布式事务 → SQLite 本职是单机文件库（多进程可共享同一文件，但不是集群数据库）
 - 需要细粒度权限控制（行级 RLS、用户组）→ 用 PostgreSQL
 - 内置 JSON 复杂查询 / 物化视图 → SQLite 都有，但 PostgreSQL 更强
 
@@ -104,9 +116,9 @@ PRAGMA journal_mode=WAL;
 - **2000 年**：D. Richard Hipp 在为美国海军写一个船舶导弹的辅助软件，找数据库时发现 PostgreSQL 太重、文件型 dbm 太弱，干脆**自己写一个嵌入式 SQL 库**——这就是 SQLite 1.0。
 - **2004 年**：Hipp 把 SQLite 放到 **Public Domain**——不收钱、不限商用、不要求署名。这个决定让它后来横扫移动端。
 - **2010 年起**：Android 选 SQLite 作为系统数据库；iOS Core Data 底层也是 SQLite；Firefox / Chrome 用它存历史和书签。**地球上每台联网设备里都有 SQLite**。
-- **2018 年**：SQLite 3 加入 JSON 函数和 Window Function，开始向 PostgreSQL 看齐。
+- **2015 / 2018 年**：JSON1 扩展约在 3.9（2015）进入主线；Window Function 在 3.25.0（2018-09）加入，开始向 PostgreSQL 看齐。
 - **2022 年**：Cloudflare 发布 **D1**——SQLite 跑在 Workers 边缘节点上，每个请求就近访问数据。
-- **2024 年**：**Turso / LiteFS** 把 SQLite 拓展成分布式、可复制、跨区域同步——一个 22 年前的"单机库"，在云原生时代变成边缘存储的事实标准。
+- **2022–2024 年**：**LiteFS / Turso** 等把 SQLite 拓展成可复制、跨区域同步——一个二十多年前的"单机库"，在云原生时代变成边缘存储的常见底座。
 
 ## 学到什么
 
@@ -114,40 +126,25 @@ PRAGMA journal_mode=WAL;
 2. **简单 + 充分测试** 比"功能丰富 + 半成品"打得远——SQLite 用最少的特性、最深的测试，赢了 20 年
 3. **公共领域许可** 是 SQLite 横扫嵌入式市场的隐藏推手——商业代码、闭源固件都能直接用
 4. **设计的关键不是加什么，是不加什么**——SQLite 主动拒绝"客户端 / 服务器"这一层，于是有了别人没有的简单
-5. **测试是 SQLite 的护城河**——100% 分支覆盖 + 数千条 fuzz 测试 + 异常注入测试，让一个小团队维护的库能跑在数十亿设备上不被信任质疑；这条经验值得任何要做"嵌入式基础设施"的项目抄作业
-6. **公共领域 vs MIT/BSD**：Public Domain 比 MIT 更宽松——不要求保留版权声明，飞机黑盒 / 闭源固件不会因为"忘了贴 license" 出问题；这是 SQLite 横扫嵌入式的隐形杠杆
+5. **测试是护城河**：按航空软件 **DO-178B 的思路**做 100% MC/DC 覆盖（项目本身未宣称正式取证），让小团队维护的库能跑在数十亿设备上
+6. **Public Domain 比 MIT 更松**：不要求保留版权声明，闭源固件也不会因为“忘了贴 license”出问题
 
 ## 延伸阅读
 
 - 官方文档：[sqlite.org/whentouse.html](https://sqlite.org/whentouse.html)（"什么时候用 / 不用 SQLite" 是开发者圣经）
 - 测试故事：[sqlite.org/testing.html](https://sqlite.org/testing.html)（100% 分支覆盖怎么做到的）
 - 边缘云方向：[Turso 官网](https://turso.tech/)（SQLite 分布式复制层）
+- 许可说明：[sqlite.org/copyright.html](https://sqlite.org/copyright.html)（Public Domain 声明原文）
 
 ## 关联
 
 - [[postgresql]] —— 服务器型关系数据库的代表，与 SQLite 形成"重 vs 轻"的设计对照
-- [[duckdb-wasm]] —— 同属嵌入式数据库阵营，但 SQLite 偏 OLTP、DuckDB 偏 OLAP
+- [[duckdb]] —— 同属嵌入式阵营，但 DuckDB 偏分析（OLAP），SQLite 偏事务（OLTP）
+- [[duckdb-wasm]] —— 把分析库塞进浏览器，可和 SQLite 的"库即文件"对照
+- [[leveldb]] —— 嵌入式 KV，没有 SQL；理解"库 vs 引擎"边界
+- [[mysql]] —— 另一条客户端/服务器路线，部署量常被拿来和 SQLite 对比
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
-- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
-- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
-- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
-- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
-- [[leveldb]] —— LevelDB — Google LSM 库
-- [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
-- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
-- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
-- [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
-- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
-- [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
 

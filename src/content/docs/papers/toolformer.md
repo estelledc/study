@@ -12,13 +12,13 @@ Toolformer 是 Meta 2023 年提出的方法——**让 LLM 通过自监督学习
 
 日常类比：[[react]] 走的是**外部教练路线**——用 prompt 教 LLM "你想用工具时这么写"，模型权重不变；Toolformer 走的是**肌肉记忆路线**——把"调工具"当语言能力训练进权重里，让模型自己在合适位置吐出 API 调用。
 
-模型推理时输出长这样：
+模型推理时输出长这样（用论文里的 Calendar 工具举例）：
 
 ```
-明天纽约天气是 [Weather(2026-01-01, NYC) → -3°C 雪]
+今天日期是 [Calendar() → 2026-05-29] 2026-05-29。
 ```
 
-模型自己生成 `[Weather(...)`，遇到 `→` 触发外部执行，结果填回，继续生成下文。**没有外部 controller，没有 prompt 喂示例**——一切焊在权重里。
+模型自己生成 `[Calendar()`，遇到 `→` 触发外部执行，结果填回，继续生成下文。**没有外部 controller，没有 prompt 喂示例**——一切焊在权重里。
 
 ## 为什么重要
 
@@ -26,20 +26,22 @@ Toolformer 是 Meta 2023 年提出的方法——**让 LLM 通过自监督学习
 
 - 为什么 OpenAI Function Calling / Claude Tool Use 这些主流 API 设计长这样——它们在接口层吸收了"模型自己决定何时调工具"的内核
 - 为什么 ToolBench / API-Bank / ToolLLM 这一整波后续工作都从 Toolformer 分叉——它打开了 fine-tune 路线
-- 为什么"用 LM 生成训练数据再训自己"在 2023 后变成主流——Toolformer 是第一个把 self-supervision 成功用在工具调用上的方法
-- 为什么 [[gpt-3]] plugins 时代的失败和 GPT-4 时代的成功隔着一道分水岭——前者是纯 prompt，后者训练时塞了 Toolformer 思路的数据
+- 为什么"用 LM 生成训练数据再训自己"在 2023 后变成主流——Toolformer 是早期把 self-supervision 成功用在工具调用上的代表
+- 为什么纯 prompt 的 plugins 路线很快被"训练时见过工具调用"的模型取代——业界普遍认为 frontier 模型在数据层吸收了同类思路（具体配方未公开）
 
 ## 核心要点
 
 Toolformer 的全部魔法在 **三阶段流水线**：
 
-1. **采样候选调用**：用 base LLM 读海量原文（CCNet 段落），在每个位置估"这里插入一个工具调用的概率"。挑前 5 个高概率位置，每个位置生成 5 个候选，比如 `[Calculator(23*47)`。**这一步只靠 in-context prompt 引导，不动权重**。
+1. **采样候选调用**：用 base LLM 读海量原文（CCNet 段落），在每个位置估"这里插入一个工具调用的概率"。挑前 5 个高概率位置，每个位置生成 5 个候选，比如 `[Calculator(23*47)`。**这一步只靠 in-context prompt 引导，不动权重**——像先让学生随手猜"这里该不该查表"。
 
-2. **真执行 + Loss 过滤**：每个候选调真实 API 拿结果。然后算两个 loss——"看到调用 + 结果时未来 token 的预测难度" vs "看不到调用时的预测难度"。前者比后者低很多，说明这次调用**真的提供了下文需要的信息**，保留；否则丢弃。**这一步是核心创新**：用 LM 自己的预测能力当评分员，不要人工标注。
+2. **真执行 + Loss 过滤**：每个候选调真实 API 拿结果。然后比两道题的难度——"看到调用 + 结果后再猜后面的词" vs "看不到调用时猜后面的词"（这就是 next-token loss：预测下一个词有多难）。前者明显更容易，说明这次调用**真的帮到了下文**，保留；否则丢弃。**核心创新**：用 LM 自己当评分员，不要人工标注——这叫 self-supervision（自己出题自己判）。过滤阈值 τ_f 论文全局取 1.0。
 
 3. **Fine-tune**：把保留下来的"插入了 API 调用的文本"当训练集，正常 next-token loss 训。训完后模型就学会了"什么场景该调什么工具"——焊进权重。
 
 整个流程**人工成本 = 5 个工具 × 几个 demo prompt ≈ 25 行**，0 条 (text, correct_api_call) 标注。
+
+一句话串起来：先猜哪里该调工具 → 真调一次看有没有帮到下文 → 只把有用的样本焊进权重。
 
 ## 实践案例
 
@@ -61,18 +63,18 @@ Toolformer 流水线生成的候选 + 过滤后保留的训练样本：
 
 ### 案例 2：推理时的 inline 触发
 
-输入 prompt："请告诉我明天纽约天气。明天是"
+输入 prompt："请计算 23 乘以 47。答案是"
 
 模型生成到 `→` 时停住：
 
 ```
-明天是 [Weather(2026-01-01, NYC) →
+答案是 [Calculator(23*47) →
 ```
 
-外部代码（嵌在 sampling 循环里，不是独立 controller）检测到 `→`，从字符串里抓出 `Weather(2026-01-01, NYC)`，调真实天气 API，拿到 `-3°C 雪`，填回：
+外部代码（嵌在 sampling 循环里，不是独立 controller）检测到 `→`，从字符串里抓出 `Calculator(23*47)`，调真实计算器，拿到 `1081`，填回：
 
 ```
-明天是 [Weather(2026-01-01, NYC) → -3°C 雪] -3°C，会下雪。
+答案是 [Calculator(23*47) → 1081] 1081。
 ```
 
 模型从 `]` 之后续写。**整个流程在 sampling loop 内部完成**，没有外部 agent framework。
@@ -87,7 +89,7 @@ Toolformer 流水线生成的候选 + 过滤后保留的训练样本：
 | Translator | `[MT("hello", "zh") → 你好]` | 跨语言 |
 | Calendar | `[Calendar() → 2026-05-29]` | 时间相关 |
 
-5 个工具 × ~100k 过滤后样本 fine-tune GPT-J 6B，**zero-shot 击败 175B GPT-3**——证明"教会用工具"在某些任务上比"做大模型"更经济。
+5 个工具 × ~100k 过滤后样本 fine-tune GPT-J 6B，在**算术与部分 QA 等任务上** zero-shot 超过 175B GPT-3——证明"教会用工具"在这些任务上比"做大模型"更经济。
 
 ## 踩过的坑
 
@@ -103,7 +105,7 @@ Toolformer 流水线生成的候选 + 过滤后保留的训练样本：
 
 **适用**：
 - 学术 research——理解 self-supervised 工具学习的范式
-- pretrain 阶段塞工具调用数据——frontier model（GPT-4 / Claude）大概率在用这套思路
+- pretrain / SFT 阶段合成工具调用数据——frontier 模型大概率在数据层用同类思路（配方未公开）
 - 数据合成——"用 LM 生成训练数据 + LM loss 过滤"这套范式可移植到很多任务
 
 **不适用**：
@@ -115,8 +117,8 @@ Toolformer 流水线生成的候选 + 过滤后保留的训练样本：
 
 - **2022 年**：ReAct（prompt-only 派）和 MRKL（最早的 modular tool 概念）让大家相信 LLM 能用工具；但都靠人工标 (text, call) pair 或精心设计 prompt——成本天花板。
 - **2023-02**：Schick 等人在 Meta 提 Toolformer，**核心创新是用 LM loss 当 unsupervised judge**——把人工标注成本干掉。论文 24 页，方法部分 Section 3 是核心。
-- **2023-06**：OpenAI 出 Function Calling，把"何时调工具"接口化——内部训练数据估计是 Toolformer 思路的工业化。
-- **2024 年**：Claude Tool Use 上线；Anthropic 后来推 MCP（Model Context Protocol）成行业标准。**接口层学的是 ReAct，训练数据层学的是 Toolformer**。
+- **2023-06**：OpenAI 出 Function Calling，把"何时调工具"接口化——训练数据是否直接抄 Toolformer 未公开，但问题设定高度同构。
+- **2024 年**：Claude Tool Use 上线；Anthropic 后来推 MCP（Model Context Protocol）成行业标准。**接口层学的是 ReAct，训练数据层常被拿来和 Toolformer 对照**。
 
 Toolformer 是论文里"**方法被吸收、接口被淘汰**"的经典案例。
 
@@ -137,6 +139,12 @@ Toolformer 是论文里"**方法被吸收、接口被淘汰**"的经典案例。
 ## 关联
 
 - [[react]] —— 同期对位法（prompt-only vs fine-tune）；架构上 ReAct 派赢了产品化
-- ReAct / Reflexion —— prompt-only 派的代表
-- MRKL / WebGPT —— Toolformer 之前的工具调用尝试，但靠人工标注
+- [[gpt-3]] —— Toolformer 对比基线之一；6B+工具在部分任务上超过 175B 纯文本 GPT-3
+- [[reflexion]] —— prompt-only 派后续：用反思环改进工具调用，不改权重
 - Gorilla / ToolLLM —— 顺着 Toolformer 思路把工具数扩到 1600+ / 16000+
+- MRKL / WebGPT —— Toolformer 之前的工具调用尝试，但靠人工标注或精心 prompt
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+

@@ -1,0 +1,93 @@
+{
+  "slug": "desbrun-1999-implicit-fairing",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "cotangent / Laplace-Beltrami 对零基础仍陡，但热扩散与显式/隐式走路类比够用。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「cotangent 是唯一收敛权重」略满，教学上可接受；SIGGRAPH 1999 与 Pinkall-Polthier/Meyer 时间线合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "libigl cotmatrix + 隐式一步可跟做；钝角负权与稀疏求解踩坑具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "cotangent / Laplace-Beltrami 对零基础仍陡，但热扩散与显式/隐式走路类比够用。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「cotangent 是唯一收敛权重」略满，教学上可接受；SIGGRAPH 1999 与 Pinkall-Polthier/Meyer 时间线合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "libigl cotmatrix + 隐式一步可跟做；钝角负权与稀疏求解踩坑具体。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 187,
+    "reasons": []
+  },
+  "lines": 187,
+  "l1_pass": true
+}

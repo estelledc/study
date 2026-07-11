@@ -1,0 +1,112 @@
+{
+  "action": "rewrite",
+  "average": 1.22,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全文是占位模板：每段 10 条「围绕 wasmer 关注…边界与收益」重复句，零基础读者学不到任何实质内容"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「是什么」只有空泛流程类比，没有把 Wasmer 讲成「能在本机跑 wasm 包的运行时」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「实践案例」无 ### 案例 1/2/3、无命令/代码、无逐步解释，必须整篇重写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文无任何可核验事实：未提及 WebAssembly 运行时、WASI/WASIX、多编译后端或嵌入式 SDK"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源字段指向 wasmerio/wasmer 合理，但笔记内容与该仓库无关，属于空壳 stub"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把「跨平台 wasm 运行时」稀释成通用「先看谁在用、再看谁能复用」流程，严重歪曲项目原意，需全文 rewrite"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可跟做命令（如 wasmer run / Rust crate 嵌入），code_runnable 为零"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「踩过的坑」全是占位句，缺少权限默认拒绝、后端选择、WASI vs WASIX 等真实坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「适用 vs 不适用」无边界（CLI 跑包 / 嵌入宿主 / 与 wasmtime 对比），需按 rewrite-project 重写"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 1,
+        "accessibility": 1,
+        "case_clarity": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "全文是占位模板：每段 10 条「围绕 wasmer 关注…边界与收益」重复句，零基础读者学不到任何实质内容",
+        "「是什么」只有空泛流程类比，没有把 Wasmer 讲成「能在本机跑 wasm 包的运行时」",
+        "「实践案例」无 ### 案例 1/2/3、无命令/代码、无逐步解释，必须整篇重写"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 3,
+        "no_distortion": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "正文无任何可核验事实：未提及 WebAssembly 运行时、WASI/WASIX、多编译后端或嵌入式 SDK",
+        "来源字段指向 wasmerio/wasmer 合理，但笔记内容与该仓库无关，属于空壳 stub",
+        "把「跨平台 wasm 运行时」稀释成通用「先看谁在用、再看谁能复用」流程，严重歪曲项目原意，需全文 rewrite"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可跟做命令（如 wasmer run / Rust crate 嵌入），code_runnable 为零",
+        "「踩过的坑」全是占位句，缺少权限默认拒绝、后端选择、WASI vs WASIX 等真实坑",
+        "「适用 vs 不适用」无边界（CLI 跑包 / 嵌入宿主 / 与 wasmtime 对比），需按 rewrite-project 重写"
+      ]
+    }
+  ]
+}

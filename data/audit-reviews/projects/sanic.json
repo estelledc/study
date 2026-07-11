@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "公交/地铁、自带发动机类比能建立 async 吞吐直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "async def / 挂起等待有白话桥接；uvloop/libuv 对零基础仍偏密但可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 直接用 app.ctx.clients 却未展示初始化，零基础会卡在 AttributeError——应补 app.ctx.clients = set() 一步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑写「Sanic 23+ 砍掉 3.8/3.9、必须 3.10+」不准确：v23 仍要求 ≥3.8；24.12 弃 3.8、25.12 弃 3.9 后才是现行 3.10+"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史把 Signal 写成「2023 v23 大重构引入」歪曲：Signals API 在 21.3 引入，21.9 起深度接入生命周期"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub / 18k+ stars 量级合理；「CPU 95% vs Flask 30%」「跟 Node.js 一样快」缺限定，易过度简化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/3 可跟；案例 2 缺 app.ctx.clients = set()，按文运行会 AttributeError"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里 sync 阻塞、ctx 不跨 worker、uvloop/Windows 具体可操作；Python 版本条需按真实 release 改写"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 IO 密集 / 不适用 CPU+GIL、Django ORM、要开箱 Swagger——边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "公交/地铁、自带发动机类比能建立 async 吞吐直觉",
+        "async def / 挂起等待有白话桥接；uvloop/libuv 对零基础仍偏密但可接受",
+        "案例 2 直接用 app.ctx.clients 却未展示初始化，零基础会卡在 AttributeError——应补 app.ctx.clients = set() 一步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "踩坑写「Sanic 23+ 砍掉 3.8/3.9、必须 3.10+」不准确：v23 仍要求 ≥3.8；24.12 弃 3.8、25.12 弃 3.9 后才是现行 3.10+",
+        "历史把 Signal 写成「2023 v23 大重构引入」歪曲：Signals API 在 21.3 引入，21.9 起深度接入生命周期",
+        "来源 GitHub / 18k+ stars 量级合理；「CPU 95% vs Flask 30%」「跟 Node.js 一样快」缺限定，易过度简化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/3 可跟；案例 2 缺 app.ctx.clients = set()，按文运行会 AttributeError",
+        "踩坑里 sync 阻塞、ctx 不跨 worker、uvloop/Windows 具体可操作；Python 版本条需按真实 release 改写",
+        "适用 IO 密集 / 不适用 CPU+GIL、Django ORM、要开箱 Swagger——边界清楚"
+      ]
+    }
+  ]
+}

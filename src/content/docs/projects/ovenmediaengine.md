@@ -57,7 +57,12 @@ const player = OvenPlayer.create('player', {
 });
 ```
 
-主播说 "你好"，观众**几百毫秒后**听到。这就跑起来了。
+**逐部分解释**：
+
+- OBS 推流地址里的 `app/stream` 对应 OME 里 Application + Stream 名
+- `OvenPlayer.create` 在网页里挂播放器；`type: 'webrtc'` 走亚秒通道
+- `wss://...:3334/...` 是加密 WebSocket 信令入口，端口按 Server.xml 配置
+- 主播说"你好"，观众通常几百毫秒后听到——链路就算跑通
 
 ### 案例 2：转码出多档码率
 
@@ -81,7 +86,11 @@ Server.xml 里配一个转码 profile：
 </OutputProfile>
 ```
 
-主播推 1080p 上来，OME 自动转码成 720p + Opus。手机用户拉 720p 省流量，电脑用户拉原清晰度。
+**逐部分解释**：
+
+- `OutputProfile` 定义一条转码规格；`Name` 方便在应用里引用
+- 视频压到 1280×720、约 2 Mbps；音频改成 `opus`（浏览器 WebRTC 不接 AAC）
+- 主播仍推 1080p；OME 自动产出 720p + Opus，手机拉低档、电脑可拉原清晰度
 
 ### 案例 3：转推到第三方平台
 
@@ -92,6 +101,12 @@ curl -X POST http://ome:8081/v1/vhosts/default/apps/app/streams/stream:startPush
   -H "Authorization: Basic xxx" \
   -d '{"id":"to-bilibili","protocol":"rtmp","url":"rtmp://live-push.bilivideo.com/...","streamKey":"xxx"}'
 ```
+
+**逐部分解释**：
+
+- 路径里的 `vhosts/default/apps/app/streams/stream` 对齐 Server.xml 三层命名
+- `:startPush` 让 OME 再往外推一路；`protocol`/`url`/`streamKey` 填目标平台参数
+- `Authorization` 用控制面密钥；可对多个平台各发一次，实现一推多端
 
 ## 踩过的坑
 

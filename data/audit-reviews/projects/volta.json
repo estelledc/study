@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 用了不存在的 volta.tools 数组写法，零基础读者会照抄失败；应改成可跟做的 volta install + 说明全局工具与 pin 的边界"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 几乎全是对比叙述，缺少像案例 1 那样的逐步操作；可补一行「装完后 PATH 里谁先出现」的检查命令"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "volta pin 官方只支持 Node 与包管理器（npm/yarn/pnpm），package.json 没有 volta.tools 数组；案例 2 与「全局工具项目级覆盖」表述需纠正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「适用」里把「全局 CLI 按项目隔离」写成 Volta 强项会夸大；应改为工具绑定安装时的 Node 版本，或依赖本地 node_modules 二进制"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 volta.tools 伪代码不可跑；改成 volta install typescript@5 并说明 pin 不能锁 typescript"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用整体可用；修完案例后把「全局工具项目级覆盖」相关适用句改成更准确的边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 用了不存在的 volta.tools 数组写法，零基础读者会照抄失败；应改成可跟做的 volta install + 说明全局工具与 pin 的边界",
+        "案例 3 几乎全是对比叙述，缺少像案例 1 那样的逐步操作；可补一行「装完后 PATH 里谁先出现」的检查命令"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "volta pin 官方只支持 Node 与包管理器（npm/yarn/pnpm），package.json 没有 volta.tools 数组；案例 2 与「全局工具项目级覆盖」表述需纠正",
+        "「适用」里把「全局 CLI 按项目隔离」写成 Volta 强项会夸大；应改为工具绑定安装时的 Node 版本，或依赖本地 node_modules 二进制"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 volta.tools 伪代码不可跑；改成 volta install typescript@5 并说明 pin 不能锁 typescript",
+        "踩坑与适用整体可用；修完案例后把「全局工具项目级覆盖」相关适用句改成更准确的边界"
+      ]
+    }
+  ]
+}

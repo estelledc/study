@@ -18,7 +18,7 @@ sys.cpu.user 1672531260 98.2 host=server01 region=cn-east
 sys.cpu.user 1672531320 97.1 host=server01 region=cn-east
 ```
 
-读法：metric 名 + 时间戳（秒）+ 数值 + 一组标签（key=value）。这种 **metric + tags** 数据模型是 OpenTSDB 首创，后来被 [[prometheus]]、[[influxdb]]、[[victoriametrics]] 全部继承。
+读法：metric 名 + 时间戳（秒）+ 数值 + 一组标签（key=value）。OpenTSDB **早期推广了 metric + tags 标签维度**；后来 [[prometheus]]、[[influxdb]]、[[victoriametrics]] 等广泛采用类似模型（Prometheus labels 也受 Borgmon 影响，并非单线继承）。
 
 ## 为什么重要
 
@@ -127,7 +127,7 @@ curl -X POST http://localhost:4242/api/uid/assign \
 - **2010**：Sigoure 在 StumbleUpon 用 Java 写下 OpenTSDB 1.0，把"时序"加进 HBase 的应用清单
 - **2013**：[[influxdb]] 出现，明确"专用单二进制 TSDB"路线，反 OpenTSDB 的部署复杂度
 - **2015**：Prometheus 1.0，借鉴 metric+tags 模型但走拉模式 + PromQL，成为云原生监控事实标准
-- **2018+**：Yahoo / 雅虎日本 / 阿里早期监控大量跑 OpenTSDB，证明分布式 TSDB 工程上可行
+- **2010s 中前期**：Yahoo / 雅虎日本 / 阿里等早期监控大规模跑 OpenTSDB，证明分布式 TSDB 工程上可行
 - **2020s**：OpenTSDB 仍在维护，但新项目几乎不再选它——后辈在易用性、查询力、单机性能上全面胜出
 
 15 年时间，OpenTSDB 完成了"开拓者"的历史使命：证明路径可行、定下数据模型、暴露所有痛点供后来者优化。

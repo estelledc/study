@@ -1,0 +1,101 @@
+{
+  "slug": "lora-mac-node",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "对讲机值班手册类比贴合；MAC/区域/Class/密钥均有桥接；三案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Lora-net/LoRaMac-node 参考实现、维护模式与 LoRa Basics Modem 转向叙述与官方一致；区域参数与 Class A/B/C 未歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "cmake 样例可跟做；LoRa vs LoRaWAN、区域、submodule、维护模式踩坑可操作；适用边界清晰。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "对讲机值班手册类比贴合；MAC/区域/Class/密钥均有桥接；三案例均有逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Lora-net/LoRaMac-node 参考实现、维护模式与 LoRa Basics Modem 转向叙述与官方一致；区域参数与 Class A/B/C 未歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "cmake 样例可跟做；LoRa vs LoRaWAN、区域、submodule、维护模式踩坑可操作；适用边界清晰。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true
+}

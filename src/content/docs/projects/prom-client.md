@@ -47,19 +47,27 @@ prom-client 的设计可以拆成 **三步**：
 const express = require('express')
 const client = require('prom-client')
 
-const reqs = new client.Counter({ name: 'http_requests_total', help: '总请求数', labelNames: ['route'] })
-const lat  = new client.Histogram({ name: 'http_latency_seconds', help: '延迟', labelNames: ['route'] })
+const reqs = new client.Counter({
+  name: 'http_requests_total', help: '总请求数',
+  labelNames: ['method', 'status']  // 有限枚举，别用 req.path
+})
+const lat = new client.Histogram({
+  name: 'http_latency_seconds', help: '延迟', labelNames: ['method']
+})
 
 const app = express()
 app.use((req, res, next) => {
-  const end = lat.startTimer({ route: req.path })
-  res.on('finish', () => { reqs.inc({ route: req.path }); end() })
+  const end = lat.startTimer({ method: req.method })
+  res.on('finish', () => {
+    reqs.inc({ method: req.method, status: String(res.statusCode) })
+    end()
+  })
   next()
 })
 app.get('/metrics', async (_, res) => res.type('text/plain').send(await client.register.metrics()))
 ```
 
-中间件在请求开始时调 `startTimer` 拿到一个闭包，请求结束时调 `end()` 自动算耗时并 observe 到 Histogram。Counter 单独 `inc`。**hot path 上只是闭包 + 一次 += 加法**。
+**逐步解释**：label 只用 `method` / `status` 这类有限枚举（GET/POST、200/404），**不要**把 `req.path` 当 label——那会按 URL 爆炸出 time series（见踩坑 #1）。`startTimer` 返回闭包，`finish` 时 `end()` 写入 Histogram；Counter 单独 `inc`。hot path 仍是闭包 + 一次 `+=`。
 
 ### 案例 2：队列消费者 — Gauge + Counter 配对
 
@@ -115,7 +123,7 @@ if (cluster.isPrimary) {
 - 短任务 / 批处理通过 pushgateway 推送（prom-client 自带 push 模式）
 
 **不适用**：
-- 推送模型监控（StatsD / Datadog）→ 用对应 SDK，prom-client 是拉取模型设计
+- 非 Prometheus 生态的推送监控（StatsD / Datadog agent）→ 用对应 SDK；本库主路径是拉取，pushgateway 只覆盖批任务补洞
 - 需要 trace / log / metric 三件套统一 → 用 OpenTelemetry SDK，prom-client 只管 metric
 - 极小内存场景（< 50MB heap） → Registry + 4 个 metric class 也要点常驻内存
 

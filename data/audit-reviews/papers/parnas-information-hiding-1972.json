@@ -1,0 +1,131 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "电表箱 / 装修分工 / 售货机类比把「藏决定、露接口」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "KWIC、循环移位、Line Storage 有日常桥接；CHAR/SETCHAR 用接口例子可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有「逐部分解释」；案例 3 接口少泄露的细活对零基础稍抽象但仍可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 D.L. Parnas CACM 1972（Dec）与 KWIC 两种分解、信息隐藏准则一致；Line Storage 的 CHAR/SETCHAR/WORDS 对应论文接口"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "同系列 May 1972 模块规格论文、Dijkstra THE「uses」对照——著录与论文自述相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TypeScript 接口是教学现代化，非原文语法；「模块≠最终子程序」保留了论文效率讨论，未歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例接口规格概念正确：藏存储布局、移位是否物化、少承诺生成顺序——教学可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：流程图式共享表、接口泄露、模块必须是子程序、层次≠信息隐藏"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（长期演化/并行开发 vs 一次性脚本/极端热路径/无可变决定）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "电表箱 / 装修分工 / 售货机类比把「藏决定、露接口」讲透",
+        "KWIC、循环移位、Line Storage 有日常桥接；CHAR/SETCHAR 用接口例子可跟",
+        "三案例均有「逐部分解释」；案例 3 接口少泄露的细活对零基础稍抽象但仍可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 D.L. Parnas CACM 1972（Dec）与 KWIC 两种分解、信息隐藏准则一致；Line Storage 的 CHAR/SETCHAR/WORDS 对应论文接口",
+        "同系列 May 1972 模块规格论文、Dijkstra THE「uses」对照——著录与论文自述相符",
+        "TypeScript 接口是教学现代化，非原文语法；「模块≠最终子程序」保留了论文效率讨论，未歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例接口规格概念正确：藏存储布局、移位是否物化、少承诺生成顺序——教学可跟",
+        "踩坑可操作：流程图式共享表、接口泄露、模块必须是子程序、层次≠信息隐藏",
+        "适用/不适用有边界（长期演化/并行开发 vs 一次性脚本/极端热路径/无可变决定）"
+      ]
+    }
+  ],
+  "slug": "parnas-information-hiding-1972",
+  "area": "papers",
+  "status": "passed",
+  "lines": 150,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

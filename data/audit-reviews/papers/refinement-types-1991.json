@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "超市会员 / 未熟果实 / 司机双技能类比把子集与交集讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 β-规约、hnf、以及核心要点里的「抽象解释」首次出现缺白话桥接，零基础会卡"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/3 有跟读解释；案例 2 可再补一句「不能再化简的项」日常对照，降低 λ 演算黑话感"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史把 Coppo/Dezani intersection types 写成 1969 年有误，应为约 1978（A new type assignment for λ-terms）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「F*/Dafny 类型系统都从这里发源」过满：二者谱系更广（依赖类型/霍尔逻辑等），宜改为受 refinement 思想影响的一支"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Freeman-Pfenning PLDI 1991、rectype、有限格、5^5 爆炸与 BDD 未来工作、Liquid Types 2008 与论文一致，可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 rectype nelist + head、案例 3 TS narrowing 概念正确可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：须显式 rectype、正则树天花板、高阶爆炸、同 ML 类型才可 ∧——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（编译期 invariant vs 动态语言/非正则约束）；可再点明与 Liquid/依赖类型的升级路径"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "超市会员 / 未熟果实 / 司机双技能类比把子集与交集讲透，零基础直觉强",
+        "案例 2 的 β-规约、hnf、以及核心要点里的「抽象解释」首次出现缺白话桥接，零基础会卡",
+        "案例 1/3 有跟读解释；案例 2 可再补一句「不能再化简的项」日常对照，降低 λ 演算黑话感"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史把 Coppo/Dezani intersection types 写成 1969 年有误，应为约 1978（A new type assignment for λ-terms）",
+        "「F*/Dafny 类型系统都从这里发源」过满：二者谱系更广（依赖类型/霍尔逻辑等），宜改为受 refinement 思想影响的一支",
+        "Freeman-Pfenning PLDI 1991、rectype、有限格、5^5 爆炸与 BDD 未来工作、Liquid Types 2008 与论文一致，可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 rectype nelist + head、案例 3 TS narrowing 概念正确可跟读",
+        "踩坑具体可操作：须显式 rectype、正则树天花板、高阶爆炸、同 ML 类型才可 ∧——保留",
+        "适用/不适用边界清楚（编译期 invariant vs 动态语言/非正则约束）；可再点明与 Liquid/依赖类型的升级路径"
+      ]
+    }
+  ]
+}

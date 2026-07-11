@@ -12,7 +12,7 @@ Apache OpenMeetings（**OM**）是一台**用一个 Java 进程把视频会议 +
 
 具体形态：
 
-- **后端**：Java + Spring + Apache OpenJPA（ORM）+ Hibernate，跑在 Tomcat/Jetty 里，单 JVM 内嵌一切
+- **后端**：Java + Spring + **Apache OpenJPA**（JPA ORM，不是 Hibernate），跑在 Tomcat/Jetty 里，单 JVM 内嵌一切
 - **前端**：Apache Wicket 服务端组件框架——HTML 在服务器上拼好发给浏览器，不是 SPA（与 BBB 的 React 前端走相反路线）
 - **媒体**：早年 Red5（Java 写的 RTMP 服务器，Flash 时代主力），后切 Kurento WebRTC，仍嵌在主进程里
 - **文档转换**：依赖 LibreOffice headless + ImageMagick + GhostScript——上传 PPT/Word 自动转 PDF/PNG 给白板批注
@@ -47,15 +47,15 @@ OM 架构可以拆成 **四层**：
 
 ```bash
 # 装依赖（Ubuntu）
-apt install openjdk-11-jre-headless libreoffice imagemagick ghostscript
+apt install openjdk-17-jre-headless libreoffice imagemagick ghostscript
 
-# 下载 + 解包 + 跑
-wget https://dlcdn.apache.org/openmeetings/7.2.0/bin/apache-openmeetings-7.2.0.tar.gz
+# 下载 + 解包 + 跑（以官网当前 9.0.0 为例）
+wget https://dlcdn.apache.org/openmeetings/9.0.0/bin/apache-openmeetings-9.0.0.tar.gz
 tar -xzf apache-openmeetings-*.tar.gz
-cd apache-openmeetings-7.2.0 && bin/red5.sh
+cd apache-openmeetings-9.0.0 && bin/startup.sh
 ```
 
-浏览器开 `http://localhost:5080/openmeetings/install` 走向导建管理员账号、配数据库——内嵌 H2 也能直接跑（仅试用别上生产）。整个过程对比 [[bigbluebutton]] 的 `bbb-install.sh`（要公网 IP + 域名 + 真证书 + 7-8 个 deb）轻一个量级。
+浏览器开 `http://localhost:5080/openmeetings/install` 走向导建管理员账号、配数据库——内嵌 H2 也能直接跑（仅试用别上生产）。官方安装页写的是 `bin/startup.sh`（老文档里的 `red5.sh` 已退役）。对比 [[bigbluebutton]] 的 `bbb-install.sh`（公网 IP + 域名 + 真证书 + 7-8 个 deb）轻一个量级。
 
 ### 案例 2：从 Moodle 一键开课
 

@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "## 实践案例 缺少 ### 案例 1/2/3 结构，也没有代码/伪代码与逐部分解释，零基础读者跟不住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CFS / NUMA / epoll_wait / Maglev / IPsec 等术语首次出现时需要更短的日常桥接，再进入技术细节"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点段落偏长，建议每条控制在 2–3 句并保留一个短类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」声称 AWS Nitro 与 Snap 的 trade-off「在这篇论文里有详细讨论」——SOSP 2019 Snap 文未必系统对比 Nitro，应改为笔记侧对比或删掉「论文里有详细讨论」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "实践案例中的 P99/CPU 数字若保留，宜标明来自论文哪类实验/场景，避免读成全局保证"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「微内核」是论文自用框架；可再点明 Snap 仍依赖 Linux 驱动/收发包，避免读者以为整机网络已脱离内核"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "## 实践案例 需要 3 个可跟做的伪代码/配置片段（如引擎链、自适应轮询状态机、热升级状态迁移步骤），并配逐部分解释"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑内容扎实，可压缩成「原因 → 现象 → 解法」各一句，腾出行数给案例代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已有规模边界，可再补一条量化延迟/CPU 取舍（专核 vs 自适应）方便选型"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 缺少 ### 案例 1/2/3 结构，也没有代码/伪代码与逐部分解释，零基础读者跟不住",
+        "CFS / NUMA / epoll_wait / Maglev / IPsec 等术语首次出现时需要更短的日常桥接，再进入技术细节",
+        "核心要点段落偏长，建议每条控制在 2–3 句并保留一个短类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么重要」声称 AWS Nitro 与 Snap 的 trade-off「在这篇论文里有详细讨论」——SOSP 2019 Snap 文未必系统对比 Nitro，应改为笔记侧对比或删掉「论文里有详细讨论」",
+        "实践案例中的 P99/CPU 数字若保留，宜标明来自论文哪类实验/场景，避免读成全局保证",
+        "「微内核」是论文自用框架；可再点明 Snap 仍依赖 Linux 驱动/收发包，避免读者以为整机网络已脱离内核"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "## 实践案例 需要 3 个可跟做的伪代码/配置片段（如引擎链、自适应轮询状态机、热升级状态迁移步骤），并配逐部分解释",
+        "踩过的坑内容扎实，可压缩成「原因 → 现象 → 解法」各一句，腾出行数给案例代码",
+        "适用/不适用已有规模边界，可再补一条量化延迟/CPU 取舍（专核 vs 自适应）方便选型"
+      ]
+    }
+  ]
+}

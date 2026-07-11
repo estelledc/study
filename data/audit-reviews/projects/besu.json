@@ -1,0 +1,100 @@
+{
+  "slug": "besu",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "“Geth 占了 80%”和“毫秒级出块”过于绝对；应改成客户端集中风险与 QBFT/IBFT 秒级区块、确定性最终性的稳妥说法。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Clique 支持和机构采用表述要避免过时/无法由 stub 支撑的硬断言。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "同步速度和适用边界不要写成 Erigon 几天、Besu 一周的固定结论；应强调存储优化客户端更适合极致同步，Besu 更偏企业集成。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "“Geth 占了 80%”和“毫秒级出块”过于绝对；应改成客户端集中风险与 QBFT/IBFT 秒级区块、确定性最终性的稳妥说法。",
+        "Clique 支持和机构采用表述要避免过时/无法由 stub 支撑的硬断言。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "同步速度和适用边界不要写成 Erigon 几天、Besu 一周的固定结论；应强调存储优化客户端更适合极致同步，Besu 更偏企业集成。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 适用 vs 不适用",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 168,
+    "reasons": []
+  }
+}

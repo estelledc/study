@@ -29,7 +29,7 @@ ZGC 的设计可以拆成 **三招**：
 
 1. **染色指针（colored pointers）**：把 64 位指针的高 4 位拿来标 GC 状态——Marked0 / Marked1 / Remapped / Finalizable。类比：给每条线索贴彩色便利贴，看一眼就知道这条线索现在属于哪个调查阶段。
 
-2. **load barrier（读屏障）**：每次代码读一个对象引用时，硬件或编译器塞 2-3 条指令做"颜色检查"。颜色对就走快路径，颜色错就走慢路径修正。类比：进商场前保安瞄一眼工牌，绝大多数直接放行，少数需要补办。
+2. **load barrier（读屏障）**：每次代码读一个对象引用时，JIT 编译器塞 2-3 条指令做"颜色检查"（OpenJDK ZGC 是软件屏障，不是 Azul C4 那种硬件屏障）。颜色对就走快路径，颜色错就走慢路径修正。类比：进商场前保安瞄一眼工牌，绝大多数直接放行，少数需要补办。
 
 3. **并发 mark + 并发 relocate**：标记活对象、搬迁活对象，全部与应用线程并发跑。只在头尾各 STW 不到 1 ms 扫根。类比：擦地的工人和顾客同时在场，工人擦哪块地哪块湿，顾客遇到湿地自己绕一下，最后地擦完了顾客也没停。
 
@@ -40,12 +40,9 @@ ZGC 的设计可以拆成 **三招**：
 ### 案例 1：染色指针的 64 位 layout
 
 ```c
-// 64-bit colored pointer（OpenJDK ZGC 风格）
-//   bit 46: Finalizable
-//   bit 45: Remapped
-//   bit 44: Marked1
-//   bit 43: Marked0
-//   bit 42-0: 对象虚拟地址（44 位 = 16 TB）
+// 64-bit colored pointer（OpenJDK ZGC 风格示意）
+//   高 4 位颜色：Finalizable / Remapped / Marked1 / Marked0
+//   低位：对象地址偏移（实现约 42–44 位；堆上限约 16 TB）
 
 #define ZGC_MARKED0  (1ULL << 43)
 #define ZGC_REMAPPED (1ULL << 45)
@@ -56,7 +53,7 @@ uintptr_t recolor(uintptr_t p, uint8_t c) {
 }
 ```
 
-**逐部分解释**：地址只占 43 位，剩下 4 位放 GC 状态。多视图 mmap 让同一物理页同时映射在 marked0 / marked1 / remapped 三个虚拟视图，CPU 走任一视图都到同一物理页，但能立刻看出指针处于哪个 GC 阶段。
+**逐部分解释**：低位存对象在哪，高 4 位贴 GC 颜色。多视图 mmap 像同一间仓库开三扇门——物理页只一份，但 marked0 / marked1 / remapped 三个虚拟入口；CPU 走哪扇门都到同一页，却能立刻看出指针处于哪个 GC 阶段。
 
 ### 案例 2：load barrier 快路径汇编
 
@@ -68,7 +65,7 @@ jnz   .slow_path            ; 3. 慢路径 < 1% 命中
 ; 快路径继续
 ```
 
-**逐部分解释**：`zgc_bad_mask` 是当前 phase 不该出现的颜色。绝大多数 load 颜色对，3 条指令就过；颜色错才进慢路径——慢路径会把对象搬走，然后 CAS 写回原槽（self-healing），下次再 load 同一槽就直接快路径。
+**逐部分解释**：`zgc_bad_mask` 是当前 phase 不该出现的颜色。绝大多数 load 颜色对，3 条指令就过；颜色错才进慢路径——慢路径会把对象搬走，再用 CAS（原子地"比对后改写"，像多人同时改同一格表格时只许一人成功）写回原槽，这叫 self-healing：下次再 load 同一槽就直接快路径。
 
 ### 案例 3：完整 GC cycle 流水线
 

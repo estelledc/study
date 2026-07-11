@@ -12,6 +12,9 @@
 - STUDY-T013/STUDY-T014：质量门改为 note_type/学习证据/极端复制检查，并加入显式 freshness 生命周期、页面状态与只读定期报告。
 - STUDY-T019：停用旧 `/auto-push` 与 legacy finalizer，关闭 destructive worktree sync；所有 queue/round/promote 写入口读取唯一 operations policy，tracked `APPROVED` 不能充当可重放授权，未实现限时、操作绑定、单次消费收据前全部批量写入 fail closed。
 - STUDY-T018：修复两处绕过 `/study` base 的图片链接，增加确定性资产 manifest、尺寸/alt/目标审计和 legacy orphan 非增长基线。
+- STUDY-T018：集成 PR #15 时保留其新正文，三张被移除引用的图片不扩入 legacy baseline、也不在本 PR 删除；新增带 source commit 和独立删除 disposition 的显式 orphan allowlist。
+- STUDY-T019：PR #15 带回的六个历史批量审校入口全部接入默认拒绝的 operations policy；其 `data/audit-reviews/**` 只作为 legacy qualitative observations，不能冒充可验证 receipt。
+- STUDY-T011：以 PR #15 的不可变 main commit 重证 wikilink 基线；unresolved 从 1,672 降至 1,526、group 从 1,361 降至 1,165，保留旧/新 baseline 哈希与 90 个新增或增长、248 个移除或下降 group 的 transition attestation。
 - STUDY-T017：记录 dist/Pagefind/Atlas/public/仓库/源码 ZIP 的确定性大小基线与绝对、相对停止预算；耗时/RSS 保持趋势告警，不作噪声硬门。
 - STUDY-T010/STUDY-T015：修复首页两条新手路径被 Markdown 渲染成代码块的回归并增加 dist 门禁；增加 Pagefind 上下文查询、canonical/sitemap/robots 与 `/study` base 的发布级输出合同。
 - STUDY-T016：增加首页、开始页、六主题、双 Atlas、React/ReAct 的 axe/Chromium、320/375、深浅色、文本间距、搜索焦点与减少动态效果 smoke；Pagefind 使用首屏即存在的 polite live status 并加载中文状态文案，未执行的 VoiceOver 矩阵保持 `UNKNOWN`。

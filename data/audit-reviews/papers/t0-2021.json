@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 代码后只有一句总结，建议拆成加载模型 / 拼 prompt / generate 三步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有文字描述没有可跟做的代码或模板片段，建议补一段 Promptsource/Jinja 最小示例并逐部分说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「适用 vs 不适用」里 SFT / RM / PPO 对零基础偏硬，可各加半句日常类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「参数只有 FLAN 的 1/16」偏粗：11B/137B ≈ 1/12.5，建议改成「约 1/12」或「一个数量级更小」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「零样本表现却在多数任务上更强」相对 FLAN 略满；正文表格已写「持平或胜」，开篇可与表格口径对齐"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 T0pp 推理示例概念正确，但未提示 11B 显存需求；可加一句「需较大 GPU 内存，CPU 会很慢」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化边界：单轮短指令 / 非对话、非 RLHF"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 代码后只有一句总结，建议拆成加载模型 / 拼 prompt / generate 三步解释",
+        "案例 3 只有文字描述没有可跟做的代码或模板片段，建议补一段 Promptsource/Jinja 最小示例并逐部分说明",
+        "「适用 vs 不适用」里 SFT / RM / PPO 对零基础偏硬，可各加半句日常类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「参数只有 FLAN 的 1/16」偏粗：11B/137B ≈ 1/12.5，建议改成「约 1/12」或「一个数量级更小」",
+        "「零样本表现却在多数任务上更强」相对 FLAN 略满；正文表格已写「持平或胜」，开篇可与表格口径对齐"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 T0pp 推理示例概念正确，但未提示 11B 显存需求；可加一句「需较大 GPU 内存，CPU 会很慢」",
+        "适用场景可补一条量化边界：单轮短指令 / 非对话、非 RLHF"
+      ]
+    }
+  ]
+}

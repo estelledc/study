@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "policy": "reviewed-orphans-retained-for-separate-deletion-pr",
+  "entries": [
+    {
+      "path": "public/projects/lexical/01-architecture.webp",
+      "reason": "PR #15 replaced the note and removed this image reference; retain the binary until a dedicated deletion review confirms provenance and rollback.",
+      "source_commit": "755ee890a2c2042c78f8af2e56b239429fd015e9",
+      "disposition": "retain-pending-dedicated-deletion"
+    },
+    {
+      "path": "public/projects/lottie/01-workflow.webp",
+      "reason": "PR #15 replaced the note and removed this image reference; retain the binary until a dedicated deletion review confirms provenance and rollback.",
+      "source_commit": "755ee890a2c2042c78f8af2e56b239429fd015e9",
+      "disposition": "retain-pending-dedicated-deletion"
+    },
+    {
+      "path": "public/projects/plane/01-architecture.webp",
+      "reason": "PR #15 replaced the note and removed this image reference; retain the binary until a dedicated deletion review confirms provenance and rollback.",
+      "source_commit": "755ee890a2c2042c78f8af2e56b239429fd015e9",
+      "disposition": "retain-pending-dedicated-deletion"
+    }
+  ]
+}

@@ -15,9 +15,9 @@ sidebar:
 |---|---|---|---|---|
 | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | `aiortc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ant Media Server — WebRTC / CMAF 直播服务](/study/projects/ant-media-server/) | `ant-media-server` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Ardour — 专业级 DAW](/study/projects/ardour/) | `ardour` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Ardour — 把录音、剪辑、混音放进同一个工程](/study/projects/ardour/) | `ardour` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | `asterisk` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Audacity — 开源音频编辑器 — 学习笔记（入门）](/study/projects/audacity/) | `audacity` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Audacity — 开源音频剪辑里的瑞士军刀](/study/projects/audacity/) | `audacity` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [COLMAP — 多视图 SfM/MVS 重建](/study/projects/colmap/) | `colmap` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) | `conduit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | `conversations` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -37,7 +37,7 @@ sidebar:
 | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | `freeswitch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HandBrake — 把视频转码变成点两下鼠标的事](/study/projects/handbrake/) | `handbrake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | `haraka` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [hls.js — Web HLS 播放库 — 学习笔记](/study/projects/hls.js/) | `hls.js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [hls.js — 浏览器里的 HLS 播放库](/study/projects/hls.js/) | `hls.js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) | `imagemagick` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [InsightFace — 人脸识别 / 检测 SOTA 工具箱](/study/projects/insightface/) | `insightface` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Jellyfin — 自托管媒体服务器](/study/projects/jellyfin/) | `jellyfin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -78,7 +78,7 @@ sidebar:
 | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | `signal-server` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | `simple-peer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SoX — 命令行音频处理瑞士军刀](/study/projects/sox/) | `sox` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Streamlink — 直播流提取器 — 学习笔记](/study/projects/streamlink/) | `streamlink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Streamlink — 把直播页变成可播的流](/study/projects/streamlink/) | `streamlink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SVT-AV1 — Intel 主导的 AV1 编码器](/study/projects/svt-av1/) | `svt-av1` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) | `synapse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ultralytics — YOLOv8/v11 易用 SDK](/study/projects/ultralytics/) | `ultralytics` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

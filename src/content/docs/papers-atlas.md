@@ -41,28 +41,28 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 | 主题 | English | 数量 | 分块 |
 |---|---|---:|---|
-| 智能体与 LLM 系统 | Agents and LLM Systems | 53 | [第 1/1 组](/study/atlas/papers/topic-papers-agents-and-llm-systems-01/) |
-| NLP 基础与 Scaling | NLP Foundations and Scaling | 115 | [第 1/2 组](/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/) |
+| 智能体与 LLM 系统 | Agents and LLM Systems | 59 | [第 1/1 组](/study/atlas/papers/topic-papers-agents-and-llm-systems-01/) |
+| NLP 基础与 Scaling | NLP Foundations and Scaling | 111 | [第 1/2 组](/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/) |
 | 计算机视觉 | Computer Vision | 11 | [第 1/1 组](/study/atlas/papers/topic-papers-computer-vision-01/) |
 | 生成模型 / 扩散 | Generative Models and Diffusion | 10 | [第 1/1 组](/study/atlas/papers/topic-papers-generative-models-and-diffusion-01/) |
 | 强化学习 | Reinforcement Learning | 8 | [第 1/1 组](/study/atlas/papers/topic-papers-reinforcement-learning-01/) |
 | AI 安全与可解释性 | AI Safety and Interpretability | 9 | [第 1/1 组](/study/atlas/papers/topic-papers-ai-safety-and-interpretability-01/) |
-| 分布式系统 | Distributed Systems | 103 | [第 1/2 组](/study/atlas/papers/topic-papers-distributed-systems-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-distributed-systems-02/) |
-| 数据库 | Databases | 84 | [第 1/1 组](/study/atlas/papers/topic-papers-databases-01/) |
+| 分布式系统 | Distributed Systems | 104 | [第 1/2 组](/study/atlas/papers/topic-papers-distributed-systems-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-distributed-systems-02/) |
+| 数据库 | Databases | 83 | [第 1/1 组](/study/atlas/papers/topic-papers-databases-01/) |
 | 分布式训练 / GPU | Distributed Training and GPU | 24 | [第 1/1 组](/study/atlas/papers/topic-papers-distributed-training-and-gpu-01/) |
 | 网络协议 | Network Protocols | 63 | [第 1/1 组](/study/atlas/papers/topic-papers-network-protocols-01/) |
-| OS / 集群管理 / 系统 | Operating Systems and Cluster Management | 110 | [第 1/2 组](/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-02/) |
+| OS / 集群管理 / 系统 | Operating Systems and Cluster Management | 109 | [第 1/2 组](/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-02/) |
 | GC / 内存管理 | Garbage Collection and Memory Management | 5 | [第 1/1 组](/study/atlas/papers/topic-papers-garbage-collection-and-memory-management-01/) |
 | 编译器 / 编程语言理论 | Compilers and Programming Language Theory | 127 | [第 1/2 组](/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-01/) · [第 2/2 组](/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-02/) |
 | 计算理论 / 数学基础 | Computation Theory and Mathematical Foundations | 9 | [第 1/1 组](/study/atlas/papers/topic-papers-computation-theory-and-mathematical-foundations-01/) |
 | 信息论 / 编码理论 | Information and Coding Theory | 5 | [第 1/1 组](/study/atlas/papers/topic-papers-information-and-coding-theory-01/) |
 | 密码学 / 安全 | Cryptography and Security | 71 | [第 1/1 组](/study/atlas/papers/topic-papers-cryptography-and-security-01/) |
 | HCI / 软件工程研究 | HCI and Software Engineering Research | 21 | [第 1/1 组](/study/atlas/papers/topic-papers-hci-and-software-engineering-research-01/) |
-| 计算机图形与可视化 | Computer Graphics and Visualization | 62 | [第 1/1 组](/study/atlas/papers/topic-papers-computer-graphics-and-visualization-01/) |
+| 计算机图形与可视化 | Computer Graphics and Visualization | 61 | [第 1/1 组](/study/atlas/papers/topic-papers-computer-graphics-and-visualization-01/) |
 | 形式化方法 | Formal Methods | 35 | [第 1/1 组](/study/atlas/papers/topic-papers-formal-methods-01/) |
 | 计算机体系结构 | Computer Architecture | 9 | [第 1/1 组](/study/atlas/papers/topic-papers-computer-architecture-01/) |
-| 信息检索与推荐 | Information Retrieval and Recommendation | 52 | [第 1/1 组](/study/atlas/papers/topic-papers-information-retrieval-and-recommendation-01/) |
-| 机器学习系统 | Machine Learning Systems | 9 | [第 1/1 组](/study/atlas/papers/topic-papers-machine-learning-systems-01/) |
+| 信息检索与推荐 | Information Retrieval and Recommendation | 53 | [第 1/1 组](/study/atlas/papers/topic-papers-information-retrieval-and-recommendation-01/) |
+| 机器学习系统 | Machine Learning Systems | 8 | [第 1/1 组](/study/atlas/papers/topic-papers-machine-learning-systems-01/) |
 
 ## 暂未收纳进主题路线
 

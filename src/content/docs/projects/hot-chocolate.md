@@ -115,7 +115,7 @@ foreach (var book in result.Data!.Books) {
 
 3. **EF Core `[UseProjection]` 黑魔法**：自动 projection 重写 `IQueryable`，复杂 include / 多对多 join 容易生成性能差的 SQL，得用 EF Core 日志看实际查询，必要时退回手写 `Select`。
 
-4. **v12 → v13 attribute 行为大改**：`[ObjectType]` 默认从"显式"变成"隐式包含 public 成员"，老代码升级一片飘红；Banana Cake Pop 改名 Nitro，链接和文档要重学。
+4. **v12 → v13 attribute 行为大改**：`[ObjectType]` 默认从"显式"变成"隐式包含 public 成员"，老代码升级一片飘红。**Banana Cake Pop → Nitro 的改名是 v13 → v14（约 2024）**，别和 v13 的 attribute 行为变更混成一次升级；链接、包名和文档要按目标大版本分别查。
 
 ## 适用 vs 不适用场景
 

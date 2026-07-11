@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例目前是运维检查清单，缺少像模板那样可跟做的逐步案例；建议至少拆一个「用 openssl 版本/扫描思路验证是否受影响」的 3 步案例，并给 OCSP/CRL 首次出现加一句日常桥接。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「全网 1/3」是对 Alexa Top 1M 上 24%-55% 区间的教学概括，可接受；若再收紧可写明「按论文不同判定算法约四分之一到一半」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "memcpy 简化示例概念正确；实践段若补一条可跟做的版本检查/探测步骤会更贴工程师视角。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例目前是运维检查清单，缺少像模板那样可跟做的逐步案例；建议至少拆一个「用 openssl 版本/扫描思路验证是否受影响」的 3 步案例，并给 OCSP/CRL 首次出现加一句日常桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「全网 1/3」是对 Alexa Top 1M 上 24%-55% 区间的教学概括，可接受；若再收紧可写明「按论文不同判定算法约四分之一到一半」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "memcpy 简化示例概念正确；实践段若补一条可跟做的版本检查/探测步骤会更贴工程师视角。"
+      ]
+    }
+  ]
+}

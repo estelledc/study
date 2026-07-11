@@ -24,8 +24,8 @@ canvas.add(new fabric.Rect({ left: 100, top: 100, width: 80, height: 60, fill: '
 
 不理解 fabric 这套思路，下面这些东西都没法解释：
 
-- 为什么稿定设计、创客贴这些"在线设计工具"能在浏览器里跑——它们的对象层基本都是 fabric 或 fabric 启发的设计
-- 为什么 Excalidraw / Miro / FigJam 早期原型用 fabric 几天就能跑出 demo
+- 为什么稿定设计、创客贴这类"在线设计工具"能在浏览器里跑——对象层往往是 fabric 或同一思路的自研
+- 为什么许多 Miro 类白板 / 海报编辑器的早期 Canvas 原型，借 fabric 几天就能跑出可拖拽 demo（注：Excalidraw 等后来自研场景模型，并不依赖 fabric）
 - 为什么"原生 Canvas 写编辑器"是个 800 行起步的工程，而 fabric 80 行就够
 - 为什么所有 Canvas 编辑器的存档都是 JSON 不是 PNG——序列化对象层 vs 序列化像素
 

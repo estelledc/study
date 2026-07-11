@@ -33,13 +33,13 @@ title: CRDT 形式定义 — SSS 2011 八页浓缩版
 
 ### CvRDT 的形式化定义（短版只用三行）
 
-一个 CvRDT 是一个三元组 `(S, ⊑, ⊔)`：
+一个 CvRDT 是一个三元组 `(S, ⊑, ⊔)`——日常桥接：
 
-- `S` 是副本可能的状态集合
-- `⊑` 是 S 上的偏序（"谁包含谁"）
-- `⊔` 是 join 操作，要求 `(S, ⊑, ⊔)` 构成 **join-semilattice**（任意两个状态都有最小上界）
+- `S`：副本可能出现的全部状态（像所有可能的购物清单）
+- `⊑`：偏序，"谁包含谁 / 谁更新"（清单 A 是否已经覆盖清单 B）
+- `⊔`：join，两份状态取**最小上界**（按规则合一份谁都不亏的总清单）
 
-merge 函数 = `⊔`。三大律（交换 / 结合 / 幂等）由 semilattice 公理免费给出。每个 update 操作必须是**单调递增**——只能让状态在 ⊑ 上变大。
+要求 `(S, ⊑, ⊔)` 构成 **join-semilattice**。merge = `⊔`，交换/结合/幂等由公理免费给出。每个 update 必须**单调递增**——只能让状态在 ⊑ 上变大。
 
 ### CmRDT 的形式化定义
 
@@ -85,19 +85,29 @@ merge((A1,R1), (A2,R2)) = (A1∪A2, R1∪R2)
 
 ### 案例 2：MV-Register（多值寄存器）
 
-并发写不丢任何一边：状态 = `{(v, vc)}` 集合，vc 是 vector clock。merge 时去掉被支配的版本，保留所有不可比版本。读返回多个值，让应用决定怎么合（购物车场景常用）。
+并发写不丢任何一边。状态 = `{(v, vc)}`，vc 是 vector clock（每副本一个计数的版本向量）：
 
-DynamoDB 的 sibling values 就是这个思路。
+```
+A: write("红") → {("红", [A:1])}
+B: 同时 write("蓝") → {("蓝", [B:1])}
+merge → {("红",[A:1]), ("蓝",[B:1])}  // 两版不可比，都保留
+读 → ["红","蓝"]，交给应用决定怎么合
+```
+
+**逐步解释**：① 写附带本副本 vc；② merge 丢掉被支配的旧版；③ 不可比版本全部留下。Dynamo 论文 / Riak 的 sibling values 就是这思路（注意：DynamoDB 默认是 LWW，不是 siblings）。
 
 ### 案例 3：Riak 怎么照短版抄
 
-Riak 2.0 的 `riak-dt` 库：
+短版 Algorithm 1 的接口骨架，几乎能直接翻成代码：
 
-- `dvvset.erl` 直接对应短版的 MV-Register
-- `lwwreg.erl` 直接对应 LWW-Register
-- 接口签名（new / merge / value）和短版 Algorithm 1 几乎逐字对应
+```
+new() → 空状态
+update(state, args) → 新状态          # 本地单调更新
+merge(a, b) → join(a, b)              # 半格合并
+value(state) → 对外可读值
+```
 
-工程上能"照论文抄"是因为短版的形式化是接口级别——直接能翻成代码骨架。
+Riak 2.0 的 `riak-dt`：`dvvset.erl` ↔ MV-Register，`lwwreg.erl` ↔ LWW-Register，签名与上表逐字对应。
 
 ## 踩过的坑
 
@@ -121,11 +131,11 @@ Riak 2.0 的 `riak-dt` 库：
 - 想看墓碑 GC 方案 → 看 delta-CRDT 系列
 - 想看 JSON / 嵌套结构 → 看 [[crdt-json]]
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2007**：Letia / Preguiça / Shapiro 在 SOSP'07 发 Treedoc，"协同序列 CRDT"原型，但没有"CRDT"这个词
 - **2011 年初**：长报告 RR-7506 在 INRIA 内部流传（50 页技术备忘）
-- **2011 年 10 月**：SSS 2011（Stabilization, Safety, and Security of Distributed Systems）在格勒诺布尔召开，短版作为正式会议论文发表——**"CRDT" 第一次出现在公开会议论文标题里**
+- **2011 年 10 月**：SSS 2011 在格勒诺布尔召开，短版发表——**"CRDT" 第一次出现在公开会议论文标题里**
 - **2012 年起**：Riak、Akka 等工程实现直接以短版为接口契约
 - **2017**：Kleppmann 把这套推广到嵌套 JSON ([[crdt-json]])
 
@@ -140,7 +150,7 @@ Riak 2.0 的 `riak-dt` 库：
 
 - 论文 PDF：[SSS 2011 短版 RR-7687](https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf)（8 页，浓缩到极致）
 - 同组同年长版：[[crdt-shapiro-2011]]（50 页，全部 CRDT 设计 + 完整证明）
-- 视频：Marc Shapiro 在 Microsoft Research 讲 CRDT 入门（45 分钟）
+- 视频：[Martin Kleppmann — CRDTs and Distributed Consistency](https://www.youtube.com/watch?v=B5NULPSiOGw)
 - 工程入门：[Riak Data Types 文档](https://docs.riak.com/riak/kv/latest/developing/data-types/)
 - [[crdt-json]] —— 6 年后被推广到嵌套 JSON
 

@@ -73,15 +73,18 @@ L2 = 3 GB
 L1 = 0.3 GB
 ```
 
-每层都按 1:10 撑满。**总占用 ≈ 333 GB，放大 ≈ 1.11×**。Facebook 实测在 UDB 生产负载里这一招把空间放大从 25% 降到 10%。
+每层都按 1:10 撑满。**总占用 ≈ 333 GB，放大 ≈ 1.11×**。官方博客用类似例子说明：固定层目标时末层装不满，放大可到 ~1.5×；改成按末层实际大小反推后，可重新逼近理论下界 ~1.11×（约 11% 额外占用）。
 
 ### 案例 3：MyRocks 替换 InnoDB
 
-Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 **页面级碎片**——每个 16KB 页只装 60-70%（页分裂留出空位、删除留下墓碑）。
+按四步看 Facebook UDB（社交图谱 MySQL 集群）的迁移：
 
-换 RocksDB + dynamic leveled 之后，相同业务数据占用降到原来一半，磁盘成本直接砍半。这是这篇论文最被记住的"商业故事"——不是因为算法新，而是因为它真的让一家公司省下数百 PB 存储的钱。
+1. **InnoDB 页碎片**：原用 B-Tree，每个 16KB 页往往只装 50–70%（页分裂留空、删除留墓碑），空间放大常 >1.5×。
+2. **换存储引擎**：把引擎换成 RocksDB（MyRocks），写入变成 memtable → SSTable 的顺序写路径。
+3. **开 dynamic leveled**：设置 `level_compaction_dynamic_level_bytes = true`，按末层实际数据反推上层目标大小。
+4. **磁盘约减半**：论文报告相同业务数据占用约为 InnoDB 的一半——在「数十 PB」量级的集群上，省的是大约一半磁盘，而不是「数百 PB」这种夸张口径。
 
-附加技巧：**字典压缩**。RocksDB 给同一层多个 SSTable 共享一份压缩字典（zstd），比每个文件独立压缩节省 5-15%。Prefix bloom filter 让 `prefix scan` 查询不浪费 bloom 位，减少误中。这两个小招在论文里只占一节，但生产里都开了。
+附加技巧：**字典压缩**。RocksDB 给同一层多个 SSTable 共享一份压缩字典（zstd），比每个文件独立压缩更省。Prefix bloom filter 让 `prefix scan` 查询不浪费 bloom 位，减少误中。这两个小招在论文里只占一节，但生产里都开了。
 
 ## 踩过的坑
 
@@ -97,7 +100,7 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 
 **适用**：
 
-- LSM-Tree KV 引擎需要压低空间放大（盘比 CPU 贵）
+- LSM-Tree KV 引擎需要压低空间放大（盘比 CPU 贵）；生产开启：`options.level_compaction_dynamic_level_bytes = true`
 - 写多读少，可以用一点写放大换空间放大
 - 数据量稳定但不一定刚好等于"满层"指数倍——大多数现实场景
 
@@ -113,7 +116,7 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 - **2011 年**：Google 开源 LevelDB（Sanjay Ghemawat & Jeff Dean），第一个广泛使用的 leveled LSM 实现。
 - **2012 年**：Facebook fork LevelDB 改名 RocksDB，目标是嵌入到 MySQL / Hive / 流处理等多个产品里。
 - **2015 年**：MyRocks（MySQL on RocksDB）项目启动，要把 Facebook UDB（社交图谱）从 InnoDB 迁出来。瓶颈是磁盘空间。
-- **2016 年**：dynamic leveled compaction 上线，配合字典压缩、prefix bloom，把空间放大从 25% 压到 10%。
+- **2015–2016 年**：dynamic leveled compaction 上线（`level_compaction_dynamic_level_bytes`），配合字典压缩、prefix bloom，把空间放大从「末层装不满时的 ~1.5×」压回接近 ~1.11×。
 - **2017 年**：CIDR 论文发布，把这次迁移的工程经验公开总结。后来 dynamic leveled 成为 RocksDB 推荐默认设置。
 
 ## 学到什么

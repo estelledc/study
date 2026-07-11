@@ -1,0 +1,103 @@
+{
+  "slug": "cousot-abstract-interpretation",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Galois connection / Tarski / widening 连续堆术语，零基础跟不住；每个符号后补一句更短的日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "⊥ 同时说成『一无所知』和『不可能』会打架，按语境拆开讲清"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『数据流分析、类型检查、模型检查……同一套算法』过度归并：模型检查主线是状态探索/SAT，不宜说成同一算法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 TypeScript 类型推导、Rust borrow checker 写成『共同理论根』偏满，宜改为『可对照的工程近亲/部分思想可追溯』"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 widening 收紧步骤可再标出『观察→跳到∞→用循环条件收紧』三步，方便跟做心算"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Galois connection / Tarski / widening 连续堆术语，零基础跟不住；每个符号后补一句更短的日常桥接",
+        "⊥ 同时说成『一无所知』和『不可能』会打架，按语境拆开讲清"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『数据流分析、类型检查、模型检查……同一套算法』过度归并：模型检查主线是状态探索/SAT，不宜说成同一算法",
+        "把 TypeScript 类型推导、Rust borrow checker 写成『共同理论根』偏满，宜改为『可对照的工程近亲/部分思想可追溯』"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 widening 收紧步骤可再标出『观察→跳到∞→用循环条件收紧』三步，方便跟做心算"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 196,
+    "reasons": []
+  },
+  "lines": 196,
+  "l1_pass": true
+}

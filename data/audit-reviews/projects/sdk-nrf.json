@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」里 sysbuild、IPC radio、TF-M 首次出现无桥接，零基础会卡住；至少各补半句人话（如 TF-M=安全世界隔离固件）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 ns / 非安全世界可在首次出现时用一句话解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 的 CONFIG_DOWNLOAD_HOST 等键名是教学简化，建议标明「示意配置」以免读者以为是 sample 原样键名"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用「极端硬实时或极小 ROM/RAM」缺量化：可补常见量级（如 Flash/RAM 紧张到几十 KB、硬实时微秒级中断路径）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 overlay 是高度缩写的 DTS，建议加一句「完整 overlay 需合法节点语法，此处为示意」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么重要」里 sysbuild、IPC radio、TF-M 首次出现无桥接，零基础会卡住；至少各补半句人话（如 TF-M=安全世界隔离固件）",
+        "案例 3 的 ns / 非安全世界可在首次出现时用一句话解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 CONFIG_DOWNLOAD_HOST 等键名是教学简化，建议标明「示意配置」以免读者以为是 sample 原样键名"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "不适用「极端硬实时或极小 ROM/RAM」缺量化：可补常见量级（如 Flash/RAM 紧张到几十 KB、硬实时微秒级中断路径）",
+        "案例 1 overlay 是高度缩写的 DTS，建议加一句「完整 overlay 需合法节点语法，此处为示意」"
+      ]
+    }
+  ]
+}

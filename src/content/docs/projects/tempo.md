@@ -8,155 +8,146 @@ title: Tempo — 把分布式追踪扔进 S3 的开源后端
 
 ## 是什么
 
-Tempo 是 Grafana Labs 开源的**分布式追踪后端**——专门接收、存储、查询 trace 的服务。日常类比：把它想成一座只写不删的"快递包裹存档库"。每天有几十亿个包裹（span）涌进来，但工程师只在出问题那十几次去翻。Tempo 的核心赌注：**与其用昂贵的"全文搜索仓库"放所有包裹，不如全扔进便宜的对象存储（S3/GCS/Azure Blob），只留一份按 trace ID 找件的索引**。
+Tempo 是 Grafana Labs 开源的**分布式追踪后端**——专门接收、存储、查询 trace 的服务。日常类比：一座只写不删的"快递包裹存档库"。每天有海量包裹（span，一次函数/RPC 调用的计时片段）涌进来，工程师只在出问题那十几次去翻。Tempo 的核心赌注：**与其用昂贵的"全文搜索仓库"放所有包裹，不如全扔进便宜的对象存储（S3/GCS/Azure Blob），只留一份按 trace ID（运单号）找件的索引**。
 
-仓库地址 `github.com/grafana/tempo`，4.5k star，Go 写的，AGPLv3 协议。2020 年开源，2022 年进 CNCF Sandbox。
+这个思路和 Loki 对日志、Mimir 对指标一脉相承：先用便宜方式存下来，再用 ID 精准取件。
+
+仓库地址 `github.com/grafana/tempo`，约 5k star，Go 写的，AGPLv3 协议。2020 年开源，2021 年 1.0 GA；仍由 Grafana Labs 主导维护，**不是** CNCF 托管项目。
 
 ## 为什么重要
 
-trace 数据有个尴尬特性：**写入量极大，查询频率极低**。一个中等规模电商一天产生 TB 级 trace，工程师真去翻的可能只有出问题那几条。
+不理解 Tempo，下面几件事都解释不通：
 
-老一代方案（Jaeger + Cassandra / Elasticsearch）把每条 trace 都丢进可全文搜索的数据库，结果是：
-
-- 存储贵——Cassandra 集群一年几十万
-- 运维重——要专人看着数据库
-- 90% 的钱花在没人会读的数据上
-
-Tempo 反过来想：**大多数时候你不是凭空搜 trace，你是从一条报错日志或一个慢指标点过去的**。所以"按 trace ID 直接取"就够，不用做全文索引——丢 S3 就行。
-
-这个思路和 Loki 对日志、Mimir 对指标是一脉相承的：先用便宜的方式存下来，再用 ID 索引精准查询。这套四件套合起来叫 **LGTM 栈**（Loki / Grafana / Tempo / Mimir）。理解 Tempo 等于理解 Grafana Labs 整个观测产品线的设计哲学。
+- 为什么 LGTM 栈（Loki / Grafana / Tempo / Mimir）能把观测成本压到接近对象存储价位
+- 为什么把 TB 级 trace 塞进 Cassandra / Elasticsearch 会一年白烧几十万运维费
+- 为什么多数排障不是"凭空全文搜 trace"，而是从一条报错日志或一个慢指标点过去
+- 为什么 Grafana 用户学 TraceQL 几乎零成本——语法风格抄自 PromQL / LogQL
 
 ## 核心要点
 
 ### 仓库长什么样
 
-进 `github.com/grafana/tempo` 一眼能看到几个核心目录：
-
 - `cmd/tempo/` —— 主入口二进制
-- `modules/` —— 各组件（distributor / ingester / compactor / frontend / querier / generator）
-- `tempodb/` —— 存储抽象层，把 S3 / GCS / Azure / 本地磁盘统一成一个接口
-- `pkg/traceql/` —— TraceQL 查询语言的解析器和执行器
-- `docs/` —— Markdown 文档（站点 grafana.com/docs/tempo 从这里生成）
+- `modules/` —— distributor / ingester / compactor / frontend / querier / generator
+- `tempodb/` —— 存储抽象层（S3 / GCS / Azure / 本地盘统一接口）
+- `pkg/traceql/` —— TraceQL 解析器与执行器
 
-### 写入路径
+### 三条设计思想
 
-```
-应用 → OTel Collector → Distributor → (Kafka WAL) → Ingester → 对象存储
-                              按 trace ID 哈希分片
-```
+1. **对象存储优先**：像把包裹全堆进廉价冷库，只留运单号索引——不建全文倒排。
 
-1. **Distributor**：接受 Jaeger / Zipkin / OTLP（gRPC + HTTP）三种协议，按 trace ID 哈希决定送哪个 Ingester
-2. **Ingester**：内存攒最近 30 分钟的活 trace，到时间打包成 block 写到对象存储
-3. **Compactor**：后台进程，把小 block 合并成大 block、去重、应用保留期（默认 14 天）
-
-### 查询路径
+2. **写入与查询两条路**：
 
 ```
-Grafana → Query-Frontend → 多个 Querier → Ingester（最近 30 min）
-                                       → 对象存储（历史）
+写入：应用 → OTel Collector → Distributor → Ingester → 对象存储
+查询：Grafana → Query-Frontend → Querier → 内存(近) + 对象存储(远)
 ```
 
-Query-Frontend 把一个大查询切成 N 个 shard 并行发给 Querier。Querier 同时查内存和对象存储，合并结果。
+Distributor 按 trace ID 哈希分片，收 Jaeger / Zipkin / OTLP（OpenTelemetry 协议）；Ingester 内存攒约 30 分钟活 trace 再打成 block；Compactor 后台合并小 block、去重、执行保留期。
 
-### TraceQL 长这样
-
-```traceql
-{ service.name = "frontend" && duration > 1s }
-```
-
-意思："找所有由 frontend 服务发起、耗时超过 1 秒的 span"。语法风格抄 PromQL / LogQL，Grafana 用户上手零成本。
-
-### 部署模式
-
-- **monolithic**——一个进程跑全部组件，新手 / 测试环境
-- **microservices**——每个组件独立部署，生产推荐，按负载独立扩缩
+3. **TraceQL**：`{ service.name = "frontend" && duration > 1s }` —— 找 frontend 上耗时超过 1 秒的 span。部署可选 monolithic（单进程试玩）或 microservices（生产按负载扩缩）。
 
 ## 实践案例
 
-### 案例 1：从 Prometheus 指标突刺跳到 trace
+### 案例 1：本地三件套跑起来
 
-启用 exemplar 后，Prometheus 的延迟数据点旁会带一个 trace ID。Grafana 看到 P99 突刺，点一下直接调 Tempo 把对应 trace 拉出来——不再是"某时刻某服务慢"，而是"具体那一次请求慢在哪条 SQL"。
+```bash
+docker compose -f example/docker-compose/local/docker-compose.yaml up
+# 浏览器打开 Grafana :3000 → Explore → 选 Tempo
+# TraceQL：{ duration > 100ms }
+```
+
+**逐步解释**：
+
+1. compose 拉起 Tempo + Grafana + 示例应用
+2. 给示例应用发几条请求，产生 span
+3. 在 Explore 用 TraceQL 按耗时过滤，确认写入与查询通路通
 
 ### 案例 2：从 Loki 报错日志跳到 trace
 
-Loki 里搜到 `ERROR trace_id=abc123 payment failed`。配置 Loki Derived Field 把 `trace_id=` 后的值识别成 Tempo 链接，点击直跳完整调用链。这是"先在便宜的日志找异常，再去 trace 看传播路径"的标准 workflow。
+Loki 里搜到 `ERROR trace_id=abc123 payment failed`。在 Grafana 给 Loki 配 Derived Field（从日志文本抽出字段做成可点链接）：
 
-### 案例 3：trace 派生 RED 指标
+1. 正则匹配 `trace_id=(\w+)`
+2. 目标数据源选 Tempo，URL 用捕获组填 trace ID
+3. 保存后，日志行里的 ID 变成可点链接，一点即打开完整调用链
 
-可选组件 Metrics-Generator 从 trace 流自动算 **R**ate / **E**rrors / **D**uration，写回 Prometheus，省去你手动埋点。
+标准 workflow：**先在便宜的日志找异常，再去 trace 看传播路径**。
+
+### 案例 3：从 Prometheus 突刺跳到 trace
+
+启用 exemplar（指标数据点旁挂的 trace ID 样例）后，P99 延迟突刺旁会带一个 ID。Grafana 一点即可调 Tempo 拉出那次请求，定位慢在哪条 SQL，而不是只知道"某服务某时刻慢"。可选组件 Metrics-Generator 还能从 trace 流自动算 RED（Rate / Errors / Duration）写回 Prometheus。
 
 ## 怎么开始读这个项目
 
 零基础读 Go 项目，建议路径：
 
-1. 先在本地跑 `docker-compose -f example/docker-compose/local/docker-compose.yaml up`，看到三件套（Tempo + Grafana + 一个示例应用）跑起来
-2. 给示例应用发请求，在 Grafana 里看到 trace
-3. 回头读 `cmd/tempo/main.go`，看启动逻辑怎么把各 module 串起来
-4. 挑一个组件细读，比如 `modules/distributor/distributor.go`——入口最浅，逻辑相对简单
-5. 真想贡献，先看 `CONTRIBUTING.md` 和 issue tracker 里 `good first issue` label
+1. 先跑案例 1 的 compose，在 Grafana 里看到 trace
+2. 回头读 `cmd/tempo/main.go`，看启动逻辑怎么把各 module 串起来
+3. 挑 `modules/distributor/distributor.go` 细读——入口最浅
+4. 真想贡献，先看 `CONTRIBUTING.md` 和 `good first issue`
 
 ## 踩过的坑
 
-1. **对象存储不能全文搜索**：TraceQL 大查询要扫 block 元数据，时间范围一长就慢。如果你查询模式是"全文找包含某 tag 的所有 trace"，Tempo 比 Jaeger + ES 慢很多
-2. **Ingester 内存压力大**：要在内存保留 30 分钟内所有活 trace。trace 量翻倍 → 内存翻倍。生产里 Ingester OOM 是最常见的事故
-3. **Compactor 单点瓶颈**：所有 block 合并都靠它，IOPS 不够 block 越积越多，查询直接拖垮
-4. **保留期改了不立即生效**：保留是 Compactor 在合并时执行的。改 14 天 → 7 天后，老数据要等下一轮合并才会真删
+1. **对象存储不能全文搜索**：大 TraceQL 要扫 block 元数据，时间范围一长就慢；查询模式若是"按任意 tag 海搜所有 trace"，Jaeger + ES 更合适
+2. **Ingester 内存压力大**：要在内存保留约 30 分钟内所有活 trace；量翻倍 → 内存翻倍，生产里 Ingester OOM 最常见
+3. **Compactor 单点瓶颈**：小 block 合并、去重、执行保留期都靠它；IOPS 不够则 block 堆积、查询拖垮
+4. **保留期改了不立即生效**：默认约 14 天（`compactor.compaction.block_retention`）；改短后要等 Compactor 下一轮合并才真删
 
 ## 适用 vs 不适用
 
 **适用**：
 
-- 已用 Grafana / Loki / Prometheus，想补齐 trace 这一块
+- 已用 Grafana / Loki / Prometheus，想补齐 trace
 - trace 量大、存储成本敏感（K8s 微服务 / 电商 / 广告）
-- workflow 是"从日志或指标点过来查 trace"，不是凭空全文搜
+- workflow 是"从日志或指标点过来查"，不是凭空全文搜
 
 **不适用**：
 
-- 主用法是按多 tag 全文检索 trace → Jaeger + Elasticsearch 更合适
+- 主用法是按多 tag 全文检索 → Jaeger + Elasticsearch
 - trace 量极小（< 1 GB/天）→ Jaeger all-in-one 更简单
 - 已深度绑定 Datadog / New Relic 等 SaaS → 没必要换
 
+## 历史小故事（可跳过）
+
+- **2020-10**：Grafana ObservabilityCON 宣布 Tempo，对标"像 Loki 存日志那样用对象存储存 trace"
+- **2021-06**：1.0 GA，主打低依赖 + 按 trace ID 查询
+- **2022–2023**：Tempo 2.0 默认 Apache Parquet block 格式，正式推出 TraceQL
+- **之后**：Metrics-Generator、Kafka WAL 写入加固等能力陆续补齐；项目仍留在 Grafana Labs 名下（AGPL），未捐赠 CNCF
+
 ## 学到什么
 
-1. **trace 是观测三件套的最后一块**：metrics 告诉你"有问题"，logs 告诉你"哪里有问题"，traces 告诉你"问题怎么传播"
-2. **存储分层是基础设施的核心 trick**：把"写多读少"的数据扔到 S3，比放进可搜索数据库便宜 10-100 倍
-3. **设计选择是会传染的**：Tempo 的"对象存储 + ID 查询"思路抄自 Loki 对日志、Prometheus 对指标。一旦接受这个范式，整个 LGTM 工具链就自然形成
-4. **强大查询 vs 低存储成本是真权衡**：Tempo 选了后者，靠生态协同补搜索
+1. **写多读少的数据适合廉价对象存储 + ID 索引**，不是默认可搜索数据库
+2. **观测三件套分工**：metrics 告诉你有问题，logs 告诉你哪里有问题，traces 告诉你问题怎么传播
+3. **强大查询 vs 低存储成本是真权衡**：Tempo 选了后者，靠 LGTM 生态协同补搜索入口
+4. **设计选择会传染**：同一范式贯穿 Loki（日志）/ Tempo（追踪）/ Mimir（指标）
 
 ## 关键事实速查
 
 - **存储后端**：S3 / GCS / Azure Blob / 本地磁盘
 - **协议支持**：Jaeger / Zipkin / OpenTelemetry（OTLP gRPC + HTTP）
-- **默认保留期**：14 天（`compactor.compaction.block_retention`）
-- **block 时间窗口**：默认 5 分钟
-- **新版架构**：Kafka 做 write-ahead log，旧版直接 Ingester 内存
-- **查询并发**：Query-Frontend 默认把一个查询切成 50 个 shard
-- **License**：AGPLv3（注意 SaaS 化场景）
-- **CNCF 状态**：2022 年进 Sandbox，目标毕业到 Incubating
+- **默认保留期**：约 14 天（`compactor.compaction.block_retention`）
+- **block 时间窗口**：默认约 5 分钟
+- **新版写入**：可选 Kafka 做 write-ahead log（WAL，断电不丢的预写日志）；旧版直接 Ingester 内存
+- **查询并发**：Query-Frontend 默认把一个查询切成约 50 个 shard
+- **License**：AGPLv3（SaaS 化场景需注意 copyleft）
+- **治理**：Grafana Labs 主导，非 CNCF 项目
 - **主要语言**：Go（约 95%）+ 少量 shell / Makefile / Jsonnet
-
-## 第一性原理推导
-
-为什么 Tempo 长成这样？倒推一遍：
-
-1. **观察事实**：trace 写入量 = QPS × span 数；查询量 ≈ 工程师主动查询次数。前者是后者的上千倍
-2. **结论 1**：写优化优先级远高于读
-3. **结论 2**：读路径只需要 trace ID 查就够，因为读 trace 通常从别处跳过来时已经知道 ID
-4. **存储匹配**：写多 + ID 查 + 历史不可变 = 对象存储完美适配
-5. **架构反推**：Ingester 缓内存（覆盖最近）+ Compactor 整理（覆盖历史）+ Querier 双查（兜底合并）
-
-这个推导不只 Tempo 独有：Loki 对日志、Prometheus 远程写入对指标，都用同样的"廉价存储 + ID 索引"模式。一旦理解这个范式，再看新工具会快很多。
 
 ## 延伸阅读
 
 - [Tempo Architecture](https://grafana.com/docs/tempo/latest/operations/architecture/)——官方架构图
 - [TraceQL by example](https://grafana.com/docs/tempo/latest/traceql/)——查询语言教程
-- [GitHub: grafana/tempo](https://github.com/grafana/tempo)——源码、issue、CONTRIBUTING
+- [GitHub: grafana/tempo](https://github.com/grafana/tempo)——源码与 CONTRIBUTING
+- 视频：[Get started with Tempo — Joe Elliott](https://www.youtube.com/watch?v=zDrA7Ly3ovU)
 
 ## 关联
 
-- [[grafana-tempo]] —— 同主题文档站视角的笔记（本文是 GitHub 项目视角）
-- [[jaeger]] —— 老一代分布式追踪后端，Tempo 的对照组
-- [[prometheus]] —— 同思路的指标后端，exemplar 让指标点直跳 trace
+- [[jaeger]] —— 老一代分布式追踪后端，Tempo 的全文检索对照组
+- [[prometheus]] —— exemplar 让指标点直跳 Tempo
 - [[grafana]] —— Tempo 的主要 UI 和数据源接入点
 - [[otel-collector]] —— OpenTelemetry 标准上游，Tempo 用它做接入
+- [[loki]] —— 同思路的日志后端，Derived Field 跳转搭档
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

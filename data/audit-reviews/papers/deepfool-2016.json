@@ -1,0 +1,93 @@
+{
+  "slug": "deepfool-2016",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 是抽象二维公式，若补一组具体数字（如 w=[1,0], x=[0.5,0]）零基础会更好跟算。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「熊猫图」更常出自 FGSM 演示，用作动机可接受；时间线与 CVPR 2016 / arXiv:1511.04599 一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "白盒/黑盒/形式化证书边界清楚；伪代码概念正确，教学级可跟读。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 是抽象二维公式，若补一组具体数字（如 w=[1,0], x=[0.5,0]）零基础会更好跟算。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「熊猫图」更常出自 FGSM 演示，用作动机可接受；时间线与 CVPR 2016 / arXiv:1511.04599 一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "白盒/黑盒/形式化证书边界清楚；伪代码概念正确，教学级可跟读。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 150,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "open-sora",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "ChatGPT/LLaMA 类比能懂「开源对标」，但 STDiT / VideoVAE / Rectified Flow 首次出现桥接不足"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点参数与 reshape 对零基础偏陡，建议各加一句人话"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "对比表把 $200K 标成「v1.2 报告」有硬伤：该数字来自 Open-Sora 2.0；v1.2 公开口径约 35k H100 GPU hours"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题/正文「一比一开源」过度：Sora 架构未公开，Open-Sora 是开源对标路线而非字面复刻"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「70 万小时→30 万小时」与 v1.2 报告「~80k hours / >30M data」量级不符，应改或加限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例多为张量形状 walkthrough，缺一条可跟做的推理入口（如 scripts/inference.py + config 路径）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（reshape / 4k+1 / offload / RF vs DDPM）具体可操作；适用边界清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联里 [[hindley-milner]] 标注「不直接相关」像占位，应换成真实相关项或删掉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "ChatGPT/LLaMA 类比能懂「开源对标」，但 STDiT / VideoVAE / Rectified Flow 首次出现桥接不足",
+        "核心要点参数与 reshape 对零基础偏陡，建议各加一句人话"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "对比表把 $200K 标成「v1.2 报告」有硬伤：该数字来自 Open-Sora 2.0；v1.2 公开口径约 35k H100 GPU hours",
+        "标题/正文「一比一开源」过度：Sora 架构未公开，Open-Sora 是开源对标路线而非字面复刻",
+        "「70 万小时→30 万小时」与 v1.2 报告「~80k hours / >30M data」量级不符，应改或加限定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例多为张量形状 walkthrough，缺一条可跟做的推理入口（如 scripts/inference.py + config 路径）",
+        "踩坑（reshape / 4k+1 / offload / RF vs DDPM）具体可操作；适用边界清楚",
+        "关联里 [[hindley-milner]] 标注「不直接相关」像占位，应换成真实相关项或删掉"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 学到什么",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

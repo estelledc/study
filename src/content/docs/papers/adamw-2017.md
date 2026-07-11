@@ -103,9 +103,9 @@ param.mul_(1 - lr * weight_decay)
 
 ## 踩过的坑
 
-1. **HuggingFace 早期的 `transformers.AdamW` 不是这个 AdamW**：2018-2020 间 HuggingFace 自己实现的 AdamW 行为和 PyTorch 后来收录的版本略有差异（lr scaling 细节）。新代码统一用 `torch.optim.AdamW`，旧脚本要小心。
+1. **HuggingFace 早期的 `transformers.AdamW` 和 PyTorch 版本有细节差异**：2018-2020 间 HuggingFace 自己实现的 AdamW 在 bias correction、参数分组等细节上和后来推荐的 `torch.optim.AdamW` 不完全一致。新代码统一用 `torch.optim.AdamW`，旧脚本迁移时要小心。
 
-2. **`weight_decay` 数值不能照搬 Adam**：从 Adam 切到 AdamW，**同样的 `weight_decay` 值会变得明显更强**——因为不再被 `√v̂_t` 稀释。常见做法是切完之后把 wd 从 0.01 调到 0.1（或反过来）。
+2. **`weight_decay` 数值不能照搬 Adam**：从 Adam 切到 AdamW 后，衰减不再被 `√v̂_t` 稀释，必须重新搜索。微调常从 0.01 试起，LLM / ViT 预训练常见 0.05–0.1，但最终看验证集。
 
 3. **不是所有参数都该 weight decay**：LayerNorm γ/β、bias、embedding 这些通常**排除**在 weight decay 之外。GPT-2/BERT 训练脚本里都有 `no_decay = ["bias", "LayerNorm.weight"]` 的过滤逻辑。直接 `model.parameters()` 一把梭会损害性能。
 

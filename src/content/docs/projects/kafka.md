@@ -33,11 +33,11 @@ hello kafka
 不理解 Kafka 的设计哲学，下面这些事都没法解释：
 
 - 为什么 LinkedIn / Uber / Netflix / Twitter 这种"每秒百万事件"的公司，数据管道几乎都是 Kafka
-- 为什么 Kafka Streams + ksqlDB 让流处理像写 SQL 一样——`SELECT FROM clicks WHERE user='alice'` 直接出结果
-- 为什么 Kafka Connect 一千多个连接器（MySQL / Elasticsearch / S3 / 任何系统），让"任何系统都能进出"
-- 为什么 Kafka 在 2020 年后逐渐替代 RabbitMQ / ActiveMQ，成为新一代消息队列标准
+- 为什么 Kafka Streams + ksqlDB 让流处理可以写得像查询——过滤、聚合直接跑在事件流上
+- 为什么 Kafka Connect 生态有大量现成连接器（MySQL / Elasticsearch / S3 等），让"进出管道"少写胶水代码
+- 为什么在**高吞吐日志型管道**场景里，Kafka 比传统 broker 型队列（RabbitMQ / ActiveMQ）更常被选作中枢
 
-简单说：**这是过去 10 年大数据基础设施最重要的开源项目之一**，是"实时数据"这个范式的地基。
+简单说：**这是过去 10 年实时数据基础设施的核心开源项目之一**，尤其擅长"先落盘再多人消费"的管道。
 
 ## 核心要点
 
@@ -53,62 +53,66 @@ Kafka 的核心模型可以拆成 **三层**：
 
 ## 实践案例
 
-### 案例 1：Docker 起一个 Kafka 集群
+### 案例 1：Docker 起一个单节点 KRaft Kafka
 
-最快上手的方式是用 Confluent 的官方镜像：
+最快上手可用 Bitnami / Apache 官方 quickstart；下面是一份**最小可跑**的单节点 KRaft 示意（生产请用官方文档补全安全与磁盘配置）：
 
 ```yaml
-# docker-compose.yml
+# docker-compose.yml（示意：单 broker + controller 合部署）
 services:
   kafka:
-    image: confluentinc/cp-kafka:7.5.0
+    image: apache/kafka:3.7.0
     ports:
       - "9092:9092"
     environment:
       KAFKA_NODE_ID: 1
-      KAFKA_PROCESS_ROLES: 'broker,controller'
-      KAFKA_LISTENERS: 'PLAINTEXT://:9092,CONTROLLER://:9093'
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
 ```
 
 ```bash
 docker compose up -d
+# 再用容器内 kafka-topics / console-producer 验证连通
 ```
 
-注意这里没有 ZooKeeper——Kafka 3.3 之后用 KRaft 模式，broker 自己管元数据。
+注意：这里没有 ZooKeeper——**3.3+** 可用 KRaft（broker 自管元数据）；**新集群应优先 KRaft**。
 
 ### 案例 2：发消息和收消息
 
 ```bash
-# 创建 topic
-bin/kafka-topics --create --topic events --partitions 3 \
+# 创建 topic（3 个 partition = 最多 3 个同组 consumer 并行）
+bin/kafka-topics.sh --create --topic events --partitions 3 \
   --bootstrap-server localhost:9092
 
 # 发消息
-bin/kafka-console-producer --topic events --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic events --bootstrap-server localhost:9092
 > {"user": "alice", "action": "click"}
 
-# 收消息（从头开始读）
-bin/kafka-console-consumer --topic events --from-beginning \
+# 收消息（从头回放）
+bin/kafka-console-consumer.sh --topic events --from-beginning \
   --bootstrap-server localhost:9092
 ```
 
-`--from-beginning` 是 Kafka 的杀手锏——消息已经持久化在磁盘上，新加的 consumer 可以从最早的消息回放。
+`--from-beginning` 是杀手锏：消息已落盘，新 consumer 仍可从最早 offset 重放。
 
 ### 案例 3：Consumer Group 的水平扩展
 
-启动两个 consumer 都用 group `analytics`：
+两个终端都用 group `analytics`：
 
 ```bash
 # 终端 1
-bin/kafka-console-consumer --topic events --group analytics \
+bin/kafka-console-consumer.sh --topic events --group analytics \
   --bootstrap-server localhost:9092
 
-# 终端 2（不同终端）
-bin/kafka-console-consumer --topic events --group analytics \
+# 终端 2
+bin/kafka-console-consumer.sh --topic events --group analytics \
   --bootstrap-server localhost:9092
 ```
 
-Kafka 会自动把 3 个 partition 分给两个 consumer（一个吃 2 个，另一个吃 1 个）。再加一个 consumer，每人正好 1 个。**这就是流处理水平扩展的工程实现**。
+Kafka 把 3 个 partition 分给两个 consumer（一人 2、一人 1）。再加第三个，正好一人一个。**同 group 分摊 partition = 流处理水平扩展的基本实现。**
 
 ## 踩过的坑
 
@@ -140,26 +144,36 @@ Kafka 会自动把 3 个 partition 分给两个 consumer（一个吃 2 个，另
 - **2011 年**：开源给 Apache 基金会，进入孵化器。
 - **2014 年**：Jay Kreps 等核心团队从 LinkedIn 离职创立 Confluent，主导 Kafka 商业化。
 - **2017 年**：Kafka Streams 发布，第一个内嵌在 Kafka 里的流处理库（不需要 Spark/Flink）。
-- **2020 年**：KIP-500 提案，开始移除对 ZooKeeper 的依赖（KRaft 模式自管元数据）。
-- **2024 年**：Kafka 3.7 起 KRaft 默认开启，ZooKeeper 模式标记为废弃；Tiered Storage GA（冷数据下沉到 S3，降低存储成本）。
+- **2020 年**：KIP-500 推进移除 ZooKeeper 依赖（KRaft 自管元数据）。
+- **2023–2024**：KRaft 生产可用（约 3.3+）；**3.5 起 ZooKeeper 模式标记 deprecated**；3.7 仍可跑 ZK 但新集群应选 KRaft；**Kafka 4.0 移除 ZK**。Tiered Storage 等让冷数据可下沉对象存储。
 
-15 年从 LinkedIn 内部工具到全球数据基础设施标配。
+15 年从 LinkedIn 内部工具到全球数据管道标配。
 
 ## 学到什么
 
 1. **持久化日志是个好抽象**——把"消息队列"和"分布式日志"统一了，副作用变成事实记录
 2. **Partition + Consumer Group 是横向扩展的范式**——任何流处理系统都在重新发明这个模型
 3. **零拷贝 + 顺序写磁盘**——Kafka 性能秘诀不是内存而是**顺序 IO 比随机内存还快**
-4. **生态比单点功能重要**——Kafka Connect 的 1000+ 连接器让它成为"任何系统的胶水层"
+4. **生态比单点功能重要**——Kafka Connect 的大量连接器让它常成为"系统之间的胶水层"
 
 ## 延伸阅读
 
 - 官方文档：[Apache Kafka Documentation](https://kafka.apache.org/documentation/)（先看 "Introduction" 和 "Quick Start"）
-- 经典文章：[The Log: What every software engineer should know](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying)（Jay Kreps 写的，理解 Kafka 设计哲学的必读）
-- 视频：[Confluent Developer — Apache Kafka 101](https://developer.confluent.io/courses/apache-kafka/events/)（10 节短视频从零到上手）
-- 实战书：[Kafka: The Definitive Guide, 2nd Edition](https://www.confluent.io/resources/kafka-the-definitive-guide-v2/)（O'Reilly 出版，Confluent 工程师写）
-- [[redis]] —— Redis Stream 是 Kafka 的轻量替代品，理解差异有助于选型
+- 经典文章：[The Log: What every software engineer should know](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying)（Jay Kreps，设计哲学必读）
+- 视频：[Confluent Developer — Apache Kafka 101](https://developer.confluent.io/courses/apache-kafka/events/)（短视频从零上手）
+- 实战书：[Kafka: The Definitive Guide, 2nd Edition](https://www.confluent.io/resources/kafka-the-definitive-guide-v2/)（O'Reilly / Confluent）
+- [[redis]] —— Redis Stream 是更轻的日志型队列，理解差异有助于选型
+- [[flink]] —— 常以 Kafka 为输入源的流计算引擎
 
 ## 关联
 
-- [[redis]] —— Redis 也能做消息队列（list / pub-sub / stream），但持久化和扩展性远弱于 Kafka
+- [[redis]] —— list / pub-sub / stream 也能做队列，但持久化与跨机扩展通常弱于 Kafka
+- [[flink]] —— 有状态流计算，生产里常订阅 Kafka topic
+- [[spark]] —— Spark Structured Streaming 常见数据源之一是 Kafka
+- [[rabbitmq]] —— 传统 broker 型消息队列，路由灵活，高吞吐日志管道场景常让位 Kafka
+- [[pulsar]] —— 另一套云原生日志/消息系统，常与 Kafka 对照选型
+- [[zookeeper]] —— 旧版 Kafka 元数据依赖；KRaft 后新集群不再需要
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

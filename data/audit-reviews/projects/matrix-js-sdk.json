@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有叙述无代码，可接受但略薄"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几百万行 React」对 element-web 体量明显夸大，应改为「大型 React 客户端」或去掉具体行数"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「element-web 专属底座」偏绝对，宜改为「element-web 的主底座 / Web 端事实标准」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小例子与踩坑可操作；案例 3 若补 5 行订阅骨架会更好"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只有叙述无代码，可接受但略薄"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「几百万行 React」对 element-web 体量明显夸大，应改为「大型 React 客户端」或去掉具体行数",
+        "「element-web 专属底座」偏绝对，宜改为「element-web 的主底座 / Web 端事实标准」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "最小例子与踩坑可操作；案例 3 若补 5 行订阅骨架会更好"
+      ]
+    }
+  ]
+}

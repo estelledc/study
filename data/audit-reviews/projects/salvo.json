@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅不区分厨师/传菜员的类比把「中间件==handler」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Handler / hoop / Depot 首次出现有组织架构、传菜托盘类比桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「是什么」定位句「能让你能写」叠字略拗口，可改成「写一个函数就能当 handler」；案例 1–3 均有逐部分解释，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Chrislearn 2019 启动、统一 Handler、树状 Router/hoop、Depot、内置 OpenAPI/ACME/HTTP3、unsafe forbidden 与公开仓库一致，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写「版本走到 0.93」略旧：当前 workspace 已到 0.94.x，建议改成「0.94+」或「0.9x」避免钉死过时小版本"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「国内中文社区出现频率高于英文圈」属观察性表述、难严格核验，教学可接受但勿写成硬事实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 jwt_auth 缺 #[handler]，按 Salvo 惯例无法直接当 Handler 挂 hoop；应补宏，或改成与官方 middleware 签名一致的可编译写法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：宏展开报错定位、hoop 挂载顺序、Depot unwrap 500、Result 错误须 impl Writer——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（tower 生态→axum、压榜→actix、无 Rust 经验→先别上）；案例 1–2 可跟做"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "餐厅不区分厨师/传菜员的类比把「中间件==handler」讲透，零基础直觉强",
+        "Handler / hoop / Depot 首次出现有组织架构、传菜托盘类比桥接",
+        "「是什么」定位句「能让你能写」叠字略拗口，可改成「写一个函数就能当 handler」；案例 1–3 均有逐部分解释，可保留"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Chrislearn 2019 启动、统一 Handler、树状 Router/hoop、Depot、内置 OpenAPI/ACME/HTTP3、unsafe forbidden 与公开仓库一致，可保留",
+        "历史写「版本走到 0.93」略旧：当前 workspace 已到 0.94.x，建议改成「0.94+」或「0.9x」避免钉死过时小版本",
+        "「国内中文社区出现频率高于英文圈」属观察性表述、难严格核验，教学可接受但勿写成硬事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 jwt_auth 缺 #[handler]，按 Salvo 惯例无法直接当 Handler 挂 hoop；应补宏，或改成与官方 middleware 签名一致的可编译写法",
+        "踩坑具体可操作：宏展开报错定位、hoop 挂载顺序、Depot unwrap 500、Result 错误须 impl Writer——保留",
+        "适用/不适用边界清楚（tower 生态→axum、压榜→actix、无 Rust 经验→先别上）；案例 1–2 可跟做"
+      ]
+    }
+  ]
+}

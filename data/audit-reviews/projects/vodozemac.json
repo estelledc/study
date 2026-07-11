@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 KDF、Curve25519、Ed25519、sender key 缺少零基础桥接，建议各加半句日常类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 uniffi / wasm-bindgen 可各补一句「是什么」再给代码"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「所有 Matrix 客户端最终都通过它」略绝对，建议改为主流 Element 系 / 新客户端，避免把仍用 libolm 的第三方客户端一笔抹掉"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 OlmSession::new(...) 可补 1-2 行真实 API 形状（Account/Session 创建顺序），避免读者以为能直接 new 会话"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点里 KDF、Curve25519、Ed25519、sender key 缺少零基础桥接，建议各加半句日常类比",
+        "案例 2 的 uniffi / wasm-bindgen 可各补一句「是什么」再给代码"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「所有 Matrix 客户端最终都通过它」略绝对，建议改为主流 Element 系 / 新客户端，避免把仍用 libolm 的第三方客户端一笔抹掉"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 OlmSession::new(...) 可补 1-2 行真实 API 形状（Account/Session 创建顺序），避免读者以为能直接 new 会话"
+      ]
+    }
+  ]
+}

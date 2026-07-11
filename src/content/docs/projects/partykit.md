@@ -53,13 +53,6 @@ export default class MyRoom implements Party.Server {
 
 PartyServer 也能接 HTTP（`onRequest`）和定时器（`alarm()`）。你可以把它当成"带状态的小 Worker"。
 
-## 历史小故事（可跳过）
-
-- **2023 年初**：Sunil Pai（前 React core team）观察到"实时协作功能"是每个 SaaS 都想加但都做不好的事。他做了 PartyKit 的第一版，主张"应该和写一个 React 组件一样简单"。
-- **2023 年中**：开源后快速积累 1k+ stars，社区催生 y-partykit、partysocket 等周边。
-- **2024 年 4 月**：Cloudflare 宣布收购 PartyKit。Sunil Pai 加入 Cloudflare 团队，PartyKit 继续以独立品牌运营，但路线图开始与 Cloudflare Workers / Durable Objects / Hibernation API 深度对齐。
-- **意义**：证明了"edge runtime + 单点 actor"是实时协作的可行底座；也意味着这种 framework 长期会下沉成平台原语。
-
 ## 实践案例
 
 ### 案例 1：和 [[yjs]] 配合做协同文档
@@ -75,26 +68,9 @@ export default class YjsRoom {
 }
 ```
 
-客户端用 `y-partykit/provider` 替换 `y-websocket`，**剩下 Yjs 文档怎么 merge 完全不变**。Yjs 管"两份 JSON 怎么合并"，PartyKit 管"消息怎么到达每个人 + 文档存哪里"。
+逐步读：① 有人连上房间就交给 `onConnect`；② `persist: true` 把 Yjs 文档写进房间 storage；③ 客户端用 `y-partykit/provider` 替换 `y-websocket`。Yjs 管"两份 JSON 怎么合并"，PartyKit 管"消息怎么到达每个人 + 文档存哪里"。
 
-### 案例 2：和 [[liveblocks]] 的对比关系
-
-| 维度 | PartyKit | Liveblocks |
-|------|----------|------------|
-| 抽象层级 | server primitive（你写 onMessage） | 产品 SDK（presence/storage/comments 现成） |
-| 部署 | 自己的 Cloudflare 账号 | 全托管 SaaS |
-| 计费 | 按 DO 请求/CPU | 按 MAU |
-| 退路 | 就是 Workers DO，能完全自管 | 锁在 Liveblocks 平台 |
-
-简化判断：要快速做产品功能选 Liveblocks；要可控、能下沉到底层选 PartyKit。
-
-### 案例 3：和 [[sharedb]] / [[automerge]] 对比
-
-- ShareDB：OT 算法 + 自托管 Node 集群，老牌方案，运维重
-- Automerge：CRDT 库，需要自己接传输层；可以用 `automerge-repo` + PartyKit 当存储层
-- PartyKit：不绑算法，谁的 adapter 都能接；卖点是**免运维 edge runtime**
-
-### 案例 4：最简单的"在线人数"房间
+### 案例 2：最简单的"在线人数"房间
 
 ```ts
 export default class Counter implements Party.Server {
@@ -111,7 +87,18 @@ export default class Counter implements Party.Server {
 }
 ```
 
-20 行实现一个全球同步的"当前在线人数"。换成传统架构，至少要一个 Redis + 一个 WS 网关 + 心跳逻辑。这就是 framework 真正在替你省的事。
+20 行实现全球同步的"当前在线人数"。换成传统架构，至少要一个 Redis + 一个 WS 网关 + 心跳逻辑。
+
+### 案例 3：和 Liveblocks / ShareDB 怎么选
+
+| 维度 | PartyKit | Liveblocks | ShareDB |
+|------|----------|------------|---------|
+| 抽象 | 你写 onMessage | presence/storage 现成 | OT + 自托管 Node |
+| 部署 | 自己的 Cloudflare 账号 | 全托管 SaaS | 自建集群 |
+| 退路 | 就是 Workers DO | 锁平台 | 运维重 |
+
+要快速做产品功能选 Liveblocks；要可控、能下沉到底层选 PartyKit；不能绑 Cloudflare 再看 ShareDB / 自建 Yjs。
+
 
 ## 踩过的坑
 
@@ -137,6 +124,13 @@ export default class Counter implements Party.Server {
 - 需要严格强一致跨房间事务 → 用真正的数据库（Postgres / Spanner）
 - 不能依赖 Cloudflare（合规 / 多云策略） → 选 ShareDB / 自建 Yjs server
 
+## 历史小故事（可跳过）
+
+- **2023 年初**：Sunil Pai（前 React core team）观察到"实时协作功能"是每个 SaaS 都想加但都做不好的事。他做了 PartyKit 的第一版，主张"应该和写一个 React 组件一样简单"。
+- **2023 年中**：开源后快速积累 1k+ stars，社区催生 y-partykit、partysocket 等周边。
+- **2024 年 4 月**：Cloudflare 宣布收购 PartyKit。Sunil Pai 加入 Cloudflare 团队，PartyKit 继续以独立品牌运营，但路线图开始与 Cloudflare Workers / Durable Objects / Hibernation API 深度对齐。
+- **意义**：证明了"edge runtime + 单点 actor"是实时协作的可行底座；也意味着这种 framework 长期会下沉成平台原语。
+
 ## 学到什么
 
 1. **"一个房间一个 actor"是个被低估的模型**：解决了"实时多人"最难的状态分片问题
@@ -156,3 +150,7 @@ export default class Counter implements Party.Server {
 - [[automerge]] —— 另一种 CRDT 选择，automerge-repo 也能跑在 PartyKit 上
 - [[liveblocks]] —— 同类竞品，更产品化、更托管；PartyKit 更底层、更可控
 - [[sharedb]] —— 老牌 OT 方案，自托管 Node；和 PartyKit 是两条工程路线
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

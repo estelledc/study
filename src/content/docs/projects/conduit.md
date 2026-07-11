@@ -43,7 +43,7 @@ Conduit 的设计哲学可以拆成 **三件事**：
 
 ### 案例 1：一台廉价 VPS 跑朋友圈 Matrix
 
-最小配置：1C 512M 的 VPS，加一个域名做 SRV 记录就能联邦：
+最小配置：1C 512M 的 VPS，加域名、HTTPS 反代和 `_matrix._tcp` SRV 或 `.well-known/matrix/server` 后就能联邦：
 
 ```toml
 # conduit.toml
@@ -61,16 +61,19 @@ trusted_servers = ["matrix.org"]
 
 ### 案例 2：树莓派/NAS 上做家庭 IM
 
-单二进制特别适合 ARM 设备。在树莓派 4B 上：
+单二进制特别适合 ARM 设备。在树莓派 4B 上，稳妥做法是让 Docker/OCI 镜像自动拉取 arm64 层：
 
 ```bash
-# 直接跑预编译 ARM64 二进制
-wget https://gitlab.com/famedly/conduit/-/jobs/artifacts/next/raw/conduit-arm64
-chmod +x conduit-arm64
-CONDUIT_CONFIG=./conduit.toml ./conduit-arm64
+docker run -d --name conduit \
+  --restart unless-stopped \
+  -v /srv/conduit:/var/lib/matrix-conduit \
+  -e CONDUIT_SERVER_NAME=home.example.com \
+  -e CONDUIT_DATABASE_BACKEND=rocksdb \
+  -p 6167:6167 \
+  matrixconduit/matrix-conduit:latest
 ```
 
-家里 4-5 个人聊天 + 简单文件分享完全够。RocksDB 文件直接随 NAS 备份策略走，不用额外管 PG dump。
+家里 4-5 个人聊天 + 简单文件分享完全够。RocksDB 文件直接随 NAS 备份策略走，不用额外管 PG dump；升级前先停容器、备份 `/srv/conduit`，再换镜像。
 
 ### 案例 3：替代 Synapse 减运维（小团队）
 

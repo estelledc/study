@@ -122,9 +122,9 @@ I = (0.74, 0.25, 0.25)  # 偏红+一点白
 ## 历史小故事（可跳过）
 
 - **1971**：Henri Gouraud 在 Utah 大学发表平滑着色，能在多边形间渐变颜色但没高光
-- **1973**：Bui Tuong Phong 在 Utah 大学完成博士论文，导师是 Ivan Sutherland（图形学之父）
+- **1973**：Bui Tuong Phong 在 Utah 大学完成博士论文，导师是 David Evans；Ivan Sutherland 协作改进了法线插值着色
 - **1975 年 6 月**：CACM 发表 6 页论文，把博士论文核心成果浓缩
-- **1975 年**：Phong 因白血病去世，年仅 33 岁
+- **1975 年 7 月**：Phong 因病去世（文献多记白血病，亦有 SCC 等说法），年仅 32 岁
 - **1977**：Jim Blinn 用半角向量 H 替代 R，得到 Blinn-Phong，省一次反射计算，OpenGL 选它作默认
 - **1982 年后**：Cook-Torrance 等物理模型出现，但 Phong 因为快、好教，一直活到今天
 
@@ -147,8 +147,8 @@ I = (0.74, 0.25, 0.25)  # 偏红+一点白
 
 - [[gouraud-1971]] —— Gouraud 着色：Phong 的前辈，按颜色插值丢高光
 - [[lambert-cosine]] —— Lambert 余弦定律：漫反射那一项的物理基础
+- [[blinn-1977]] —— Blinn-Phong：用半角向量把高光算量减半
 - [[3d-gaussian-splatting]] —— 现代实时渲染的另一支，但着色思想仍是 diffuse+specular
-- [[ssa]] —— 编译器术语 specular 与 SSA 无关，只是同时代图形学命名学示例
 
 ## 反向链接
 

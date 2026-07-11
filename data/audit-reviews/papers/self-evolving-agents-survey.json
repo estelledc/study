@@ -1,0 +1,142 @@
+{
+  "slug": "self-evolving-agents-survey",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "新员工入职 + mentor 手册类比贴合「运行中把反馈写回系统」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "System Inputs / Agent System / Optimisers 均有工单/脑子/复盘会桥接；RL fine-tune 对零基础仍偏抽象但可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3（Voyager / prompt 循环 / memory）可跟；案例 4–5 偏概念罗列，缺逐步拆解"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Fang et al. arXiv:2508.07407（2025）与四件套框架（System Inputs / Agent System / Environment / Optimisers）正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史把 MemGPT 放在 2024 年条下不准确：MemGPT 为 2023（arXiv）；宜拆成 2023 MemGPT / 2024 A-MEM、AutoAgents"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读「作者团队 NeurIPS 2025 workshop talk」缺乏可核验出处，宜改为 arXiv PDF / Awesome list，或标明第三方导读视频"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 prompt rewrite 伪代码概念正确，适合综述级跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：框架发版≠自进化、online/offline 混谈、安全收益不对称、短 benchmark——均可操作对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（建地图 vs 要 leaderboard/可跑代码）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "新员工入职 + mentor 手册类比贴合「运行中把反馈写回系统」",
+        "System Inputs / Agent System / Optimisers 均有工单/脑子/复盘会桥接；RL fine-tune 对零基础仍偏抽象但可接受",
+        "案例 1–3（Voyager / prompt 循环 / memory）可跟；案例 4–5 偏概念罗列，缺逐步拆解"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Fang et al. arXiv:2508.07407（2025）与四件套框架（System Inputs / Agent System / Environment / Optimisers）正确",
+        "历史把 MemGPT 放在 2024 年条下不准确：MemGPT 为 2023（arXiv）；宜拆成 2023 MemGPT / 2024 A-MEM、AutoAgents",
+        "延伸阅读「作者团队 NeurIPS 2025 workshop talk」缺乏可核验出处，宜改为 arXiv PDF / Awesome list，或标明第三方导读视频"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 prompt rewrite 伪代码概念正确，适合综述级跟读",
+        "踩坑具体：框架发版≠自进化、online/offline 混谈、安全收益不对称、短 benchmark——均可操作对照",
+        "适用/不适用边界清楚（建地图 vs 要 leaderboard/可跑代码）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正 MemGPT 年份到 2023；去掉无法核验的 NeurIPS workshop talk 表述。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 MemGPT 年份到 2023；去掉无法核验的 NeurIPS workshop talk 表述。",
+    "sections_modified": [
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": [],
+    "round": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 169,
+  "l1_pass": true
+}

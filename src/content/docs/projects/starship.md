@@ -85,7 +85,7 @@ truncation_length = 3         # 路径只留最后 3 段
 symbol = " "
 ```
 
-这份配置渲染结果：`~/intern-journal/learnings/vllm  master ➜`。出错时 `➜` 变成红色 `✗`——这就是"上一条命令成功还是失败"的视觉反馈。
+`format` 里从左到右：`$directory` → 路径，`$git_branch` → 分支名，`$character` → 箭头。渲染例：`~/intern-journal/learnings/vllm  master ➜`；上一条命令失败时 `➜` 变红 `✗`。
 
 ### 案例 3：一个图都不显示？查 Nerd Font
 
@@ -106,7 +106,7 @@ starship preset plain-text-symbols -o ~/.config/starship.toml
 
 2. **Powerlevel10k 用户切换要清干净**：原来用 p10k 的人装 starship，要先把 `~/.zshrc` 里 p10k 相关三段（source p10k.zsh、ZSH_THEME、p10k init）注释掉，否则两套 prompt 打架。
 
-3. **慢模块拖累整体启动**：`aws`、`gcloud`、`kubernetes` 这种要读云配置的模块，网络不好会触发超时。把不用的模块在 toml 里 `disabled = true` 关掉，prompt 立刻快回来。
+3. **慢模块拖累整体启动**：`aws`、`gcloud`、`kubernetes` 要读云配置；默认 `command_timeout` 约 500ms，网络差仍会拖到超时。不用的模块在 toml 里 `disabled = true`，prompt 立刻快回来。
 
 4. **format 字符串里的空格会原样显示**：`format = "$directory $git_branch"` 里那个空格会真的渲染出来。想要更紧凑用 `${custom.spacer}` 或直接拼。
 
@@ -130,10 +130,10 @@ starship preset plain-text-symbols -o ~/.config/starship.toml
 
 ## 历史小故事（可跳过）
 
-- **2019 年 7 月**：Matan Kushner 用 JavaScript 写出第一版（叫 starship.rs，但代码是 JS），定位"oh-my-posh 的 npm 替代"
-- **2019 年 8 月**：因为 Node 启动慢（每次 prompt 要 100+ms），团队决定用 Rust 重写
-- **2020 年**：Rust 版正式发布，启动时间砍到 30ms 内，star 数从几千冲上一万
-- **2026 年**：稳定在 45k+ star，homebrew / scoop / cargo 三大包管直接装，是跨 shell prompt 事实标准
+- **2019 年**：Matan Kushner（matchai）创建 starship——受 spaceship-prompt、robbyrussell-node 等 ZSH/JS prompt 启发，但**一开始就用 Rust 单二进制**，刻意避开 Node 每次起进程的百毫秒级开销
+- **设计取舍**：做成 shell 外挂（`starship prompt`）而不是某一种 shell 的主题插件，所以 bash/zsh/fish/PowerShell 能共用一份 `starship.toml`
+- **2020 年起**：模块与 preset 快速膨胀，homebrew / scoop / cargo 可直接装；prompt 渲染常落在数十毫秒量级（仍取决于你开了哪些模块）
+- **到 2020 年代中后期**：GitHub 星标已达数万级，成为跨 shell 富信息 prompt 的事实标准之一
 
 ## 学到什么
 

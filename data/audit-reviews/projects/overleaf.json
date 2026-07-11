@@ -1,0 +1,131 @@
+{
+  "slug": "overleaf",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Google Docs / 餐厅前后厨 / 白板类比贯穿，零基础秒懂在线 LaTeX 协作"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "OT / WebSocket / Toolkit 首次出现都有中文桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释，Blank Project → Toolkit → Git 可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 overleaf/overleaf 正确；WriteLaTeX→Overleaf、2017 ShareLaTeX 合并、AGPL CE 与公开叙事一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "OT 协作、Toolkit docker compose、无默认 Sandbox Compiles 与官方文档/安全提示对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『约 17.9k stars』为快照量级，属教学近似而非硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "main.tex / Toolkit bin/init|up|doctor / git.overleaf.com 流程可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CE 无沙箱、改配置须 bin/up、Mongo/Redis 依赖、GitHub sync 受限四坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：论文协作/新手绕开本机 TeX vs 多租户隔离/纯本地单人/Word 流"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Google Docs / 餐厅前后厨 / 白板类比贯穿，零基础秒懂在线 LaTeX 协作",
+        "OT / WebSocket / Toolkit 首次出现都有中文桥接",
+        "三案例均有逐部分解释，Blank Project → Toolkit → Git 可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 overleaf/overleaf 正确；WriteLaTeX→Overleaf、2017 ShareLaTeX 合并、AGPL CE 与公开叙事一致",
+        "OT 协作、Toolkit docker compose、无默认 Sandbox Compiles 与官方文档/安全提示对齐",
+        "『约 17.9k stars』为快照量级，属教学近似而非硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "main.tex / Toolkit bin/init|up|doctor / git.overleaf.com 流程可跟做",
+        "CE 无沙箱、改配置须 bin/up、Mongo/Redis 依赖、GitHub sync 受限四坑具体",
+        "适用边界清楚：论文协作/新手绕开本机 TeX vs 多租户隔离/纯本地单人/Word 流"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 179,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 179,
+  "l1_pass": true
+}

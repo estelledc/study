@@ -48,20 +48,20 @@ Jericho 是 9 个经典文字冒险游戏的 RL benchmark。基线 agent 跑 50 
 trace 1-50: enter cave → light torch → fight troll → die → restart
 ```
 
-APEX 在第 30 个 episode 通过 fork discovery 标出"east of cave 没去过"，policy selection 给它探索权重，第 35 episode 解锁新路径，最终通关率 +18%。
+APEX 在多轮 episode 后通过 fork discovery 标出"east of cave 没去过"，policy selection 给它探索权重，后续 episode 解锁新路径，最终通关率相对基线提升。
 
 ### 案例 2：在 WebArena 上下单
 
-WebArena 是真实电商网站模拟。基线 agent 学会了"点搜索框 → 输入 → 点第一个结果 → 加购物车"。APEX 的策略图发现"过滤器侧栏 + 排序"分叉从未尝试，加进图后 agent 学会了用过滤器更快锁定商品，效率 +12% 成功率 +9%。
+WebArena 是真实电商网站模拟。基线 agent 学会了"点搜索框 → 输入 → 点第一个结果 → 加购物车"。APEX 的策略图发现"过滤器侧栏 + 排序"分叉从未尝试，加进图后 agent 学会了用过滤器更快锁定商品，效率和成功率都高于只复用旧路径的基线。
 
 ### 案例 3：消融实验看每块贡献
 
 ```
-       任务通过率
-baseline           42%
-+ strategy map      48%   (+6, 节点显式化已经有用)
-+ fork discovery    54%   (+6, 新分叉真的能跑出新策略)
-+ policy selection  61%   (+7, 平衡才避免坍缩)
+       论文消融的读法
+baseline           容易重复旧路径
++ strategy map      节点显式化已经有用
++ fork discovery    新分叉真的能跑出新策略
++ policy selection  平衡才避免坍缩
 ```
 
 三块都是必要的，去掉任何一块退化明显。
@@ -72,7 +72,7 @@ baseline           42%
 
 ### 案例 5：跨任务策略迁移
 
-把策略图当成"领域经验包"，给同领域新任务直接挂载。论文展示在 Jericho 9 个游戏中训出的图复用到第 10 个游戏，相比 cold start 早 20 episode 达到同等通过率——经验复用的边际收益清晰。
+把策略图当成"领域经验包"，给同领域新任务直接挂载。论文展示在一组 Jericho 游戏里学到的图可以迁移到相邻任务，相比 cold start 更早达到同等通过率——经验复用的边际收益清晰。
 
 ## 踩过的坑
 
@@ -132,7 +132,6 @@ baseline           42%
 - [[evo-memory-2511]] —— 流式 benchmark 让探索坍缩首次量化
 - [[misevolution-2509]] —— 探索坍缩与错误进化的相邻文献
 - [[code-as-agent-harness]] —— harness 之上才能做策略层
-- 视频：作者团队 NeurIPS 2026 spotlight talk
 
 ## 关联
 

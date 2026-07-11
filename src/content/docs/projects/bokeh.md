@@ -46,6 +46,12 @@ Bokeh 的设计可以拆成 **三个支点**：
 
 ```python
 from bokeh.plotting import figure, show
+
+x = [1, 2, 3, 4]
+y1 = [10, 15, 13, 17]
+y2 = [9, 12, 18, 14]
+y3 = [3, 4, 2, 5]
+
 p = figure(width=600, height=300)
 p.line(x, y1, color='blue', legend_label='温度')
 p.scatter(x, y2, color='red', size=8, legend_label='事件')
@@ -53,12 +59,17 @@ p.vbar(x=x, top=y3, width=0.5, alpha=0.3, legend_label='流量')
 show(p)
 ```
 
-同一个 `figure` 上叠了折线 + 散点 + 柱——**Pythonic 链式**，每一行加一层 glyph。Plotly 要把三种 trace 塞 dict 列表里。
+逐部分解释：先准备同长度的 `x / y1 / y2 / y3` 数组，再在同一个 `figure` 上叠折线、散点、柱三层 glyph。每一行只加一层视觉元素，读起来像 matplotlib；Plotly 等价写法通常要把三种 trace 塞进一个配置列表里。
 
 ### 案例 2：实时流数据 stream() 一行搞定
 
 ```python
+import random
+import time
+
 from bokeh.models import ColumnDataSource
+from bokeh.plotting import figure
+
 source = ColumnDataSource(data=dict(x=[], y=[]))
 p = figure()
 p.line(x='x', y='y', source=source)
@@ -68,7 +79,7 @@ def update():
     source.stream(dict(x=[time.time()], y=[random.random()]), rollover=200)
 ```
 
-`stream()` 通过 WebSocket 把增量推给前端，前端只重绘新点不重画整张图——**百万级流式数据靠这个增量协议顶**。Plotly 等价做法是 `Plotly.extendTraces`，但要自己管浏览器侧。
+逐部分解释：`ColumnDataSource` 像一张共享数据表，`p.line(..., source=source)` 把图绑定到这张表，`stream()` 只追加新行并按 `rollover=200` 丢掉旧行。在 Bokeh Server 里，这个增量会通过 WebSocket 推给前端，前端只重绘新点，不必整张图重传。
 
 ### 案例 3：Bokeh Server 把 Python 函数挂到 slider
 
@@ -76,6 +87,7 @@ def update():
 # app.py
 from bokeh.io import curdoc
 from bokeh.models import Slider
+from bokeh.layouts import column
 from bokeh.plotting import figure
 
 p = figure()
@@ -149,3 +161,7 @@ curdoc().add_root(column(slider, p))
 - [[d3]] —— BokehJS 早期渲染思路受 D3 启发但自己重写了
 - [[altair]] —— 同样 Python 优先但走 Vega-Lite 声明式，对比可看出"Pythonic 链式"和"声明式 grammar"的取舍
 - [[jupyter]] —— `output_notebook()` 把 Bokeh 图直接嵌 cell，是最常见的本地探索环境
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

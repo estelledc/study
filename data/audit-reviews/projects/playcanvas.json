@@ -1,0 +1,129 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "展览布景/可复用舞台类比能懂引擎定位，但略泛"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Entity/组件、fill mode、WebGPU 回退有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 缺相机组件/灯光/app.start，零基础照抄看不到画面；建议补齐并逐步解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 playcanvas/engine 正确；WebGL2/WebGPU 双路线与官方定位一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "create-playcanvas / Entity-Component 叙述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段偏薄但无硬伤；未夸成通用游戏引擎替代品"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 缺 camera.addComponent('camera')、灯光、app.start()，按现写法无法出图；Color 导入未用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏口号：应写清 WebGPU 回退检测、贴图预算/首屏、编辑器脚本与 runtime 分离的具体症状"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用交互 3D/小游戏 vs 纯 2D/极深 shader 定制边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "展览布景/可复用舞台类比能懂引擎定位，但略泛",
+        "Entity/组件、fill mode、WebGPU 回退有桥接",
+        "案例 1 缺相机组件/灯光/app.start，零基础照抄看不到画面；建议补齐并逐步解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 playcanvas/engine 正确；WebGL2/WebGPU 双路线与官方定位一致",
+        "create-playcanvas / Entity-Component 叙述合理",
+        "历史段偏薄但无硬伤；未夸成通用游戏引擎替代品"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 缺 camera.addComponent('camera')、灯光、app.start()，按现写法无法出图；Color 导入未用",
+        "踩坑偏口号：应写清 WebGPU 回退检测、贴图预算/首屏、编辑器脚本与 runtime 分离的具体症状",
+        "适用交互 3D/小游戏 vs 纯 2D/极深 shader 定制边界清楚"
+      ]
+    }
+  ],
+  "slug": "playcanvas",
+  "area": "projects",
+  "status": "refined",
+  "quality_gate": {
+    "pass": true,
+    "lines": 164
+  },
+  "lines": 164,
+  "l1_pass": true,
+  "refinement": {
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  }
+}

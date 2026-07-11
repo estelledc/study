@@ -22,10 +22,10 @@ Narwhal & Tusk 是一对配套设计，告诉你**怎么让一群互不信任的
 
 不理解 Narwhal/Tusk，下面这些事都没法解释：
 
-- 为什么 **Aptos 和 Sui** 这两条号称『高吞吐』的链，共识协议不是抄 HotStuff 而是抄它
-- 为什么传统 BFT（PBFT、HotStuff、Tendermint）的吞吐量**死活上不去**——leader 是单点瓶颈
-- 为什么一个节点掉线，**HotStuff 吞吐归零**，Narwhal+Tusk 几乎不动
-- 为什么 2022 年之后，所有新做高 TPS 共识的人**都在画 DAG**
+- 为什么 **Sui** 的高吞吐路线建立在 Narwhal 式 mempool 上，而不是把交易塞进 HotStuff leader 提案
+- 为什么 **Aptos** 仍跑 Jolteon（HotStuff 系），却单独做了 Quorum Store——把 Narwhal 的『数据传播与排序解耦』思想接到 leader-based 共识前
+- 为什么传统 BFT（PBFT、HotStuff、Tendermint）吞吐容易卡在 leader 带宽——提案路径与数据路径绑死
+- 为什么一个节点掉线，**HotStuff 吞吐可崩到接近 0**，Narwhal+Tusk 在论文设定下几乎还能维持高吞吐
 
 论文实测：HotStuff 故障下 throughput 崩到 0；Narwhal+Tusk 在同等故障下维持 **160k tx/s**，延迟 < 3 秒。
 
@@ -82,11 +82,11 @@ Narwhal 把每个验证人内部再拆成：
 
 加一台 worker 机器，吞吐就涨一截。HotStuff 加机器没用，因为 leader 仍然是单点。论文里 Narwhal 单 worker 推到 ~170k tx/s，10 worker 推到 **600k tx/s**。
 
-### 案例 3：Aptos / Sui 落地版本
+### 案例 3：Sui / Aptos 怎么『抄作业』
 
-- **Aptos** 用的叫 [[bullshark-2022]]——把 Tusk 从『需要全局同步钟』降成『部分同步』，工业可用
-- **Sui** 用 Mysticeti——进一步把 commit 延迟从 3 个 round 压到 1-2 个 round
-- 二者都建立在 **Narwhal mempool** 之上，把『数据可用性』和『顺序』分层这件事原封不动继承
+- **Sui**：主线是 Narwhal mempool + [[bullshark-2022]]（Tusk 的部分同步版），再演进到 Mysticeti，把 commit 延迟从约 3 个 round 压到 1–2 个 round
+- **Aptos**：生产共识长期是 **Jolteon**（HotStuff/Tendermint 快路径变体）；Narwhal 的影响主要在 **Quorum Store**（先散数据、共识只排元数据）。Bullshark/Shoal 是 Aptos Labs 的 DAG-BFT 研究线，不宜写成『主网现役共识就是 Bullshark』
+- 共同点：都接受『数据可用性』和『排出顺序』分层；差别是上层用嵌入式 DAG 共识，还是继续用 leader-based 共识
 
 ## 踩过的坑
 
@@ -104,14 +104,14 @@ Narwhal 把每个验证人内部再拆成：
 
 **适用**：
 
-- 高 TPS 公链 / 联盟链（Aptos、Sui、Celo 部分组件）
-- 网络稳定但偶有拜占庭节点的环境
-- 需要 throughput >> latency 的场景（比如数据上链不要求秒到）
+- 高 TPS 公链 / 联盟链（Sui 主线；Aptos 的 Quorum Store 数据层；部分联盟链实验）
+- 网络大体同步、偶有拜占庭节点，且更在乎吞吐而不是极限单笔延迟
+- throughput >> latency 的场景（批量上链、可接受约 1–3s 量级最终性）
 
 **不适用**：
 
 - 节点数极少（n < 4）→ 用 Raft / Paxos 就够
-- 要求**亚秒级 finality** → HotStuff / Mysticeti 更合适
+- 要求**亚秒级 finality** → 看 Mysticeti / Jolteon 等低延迟变体，而不是原版 Tusk（wave ≥ 3 round）
 - 完全异步网络 → 需要 DAG-Rider / Aleph 这类异步变种
 
 ## 历史小故事（可跳过）
@@ -119,8 +119,8 @@ Narwhal 把每个验证人内部再拆成：
 - **2018**：HotStuff 把 PBFT 的复杂度从 O(n²) 降到 O(n)，被 Diem（前 Libra）选为共识。
 - **2020**：Diem / Meta 团队发现 HotStuff 在工程上仍然撞 leader 瓶颈，开始做 mempool / consensus 解耦的研究原型。
 - **2021-05**：Narwhal & Tusk 论文挂上 arXiv，作者主要来自 Mysten Labs（后来做 Sui）和 Novi（前 Diem 团队）。
-- **2022-04**：论文正式发表在 EuroSys 2022。同年 Aptos 主网上线，共识用 Bullshark（Tusk 的部分同步版）。
-- **2023**：Sui 上线 Mysticeti，把这条路线又往前推一步。
+- **2022-04**：论文正式发表在 EuroSys 2022。同年 Aptos 主网上线，生产共识走 Jolteon；Quorum Store / Bullshark 研究并行推进。
+- **2023**：Sui 推进 Mysticeti，把 Narwhal 路线的延迟再往下压。
 
 ## 学到什么
 
@@ -143,8 +143,8 @@ Narwhal 把每个验证人内部再拆成：
 - [[hotstuff-2019]] —— 上一代 leader-based BFT，被 Narwhal 用 throughput 数据正面对比
 - [[pbft-1999]] —— BFT 共识鼻祖，Narwhal 的 certificate 概念直接来自它的 prepare 阶段
 - [[tendermint-2016]] —— 同样是 leader-based BFT，被 Cosmos 采用，遭遇相同的吞吐瓶颈
-- [[bullshark-2022]] —— Aptos 现役共识，Tusk 的部分同步版本
-- [[move-language]] —— Aptos / Sui 智能合约语言，跑在 Narwhal/Tusk 之上
+- [[bullshark-2022]] —— Tusk 的部分同步版；Sui 曾用，Aptos Labs 有研究实现
+- [[move-language]] —— Aptos / Sui 智能合约语言，跑在各自共识栈之上
 
 ## 反向链接
 

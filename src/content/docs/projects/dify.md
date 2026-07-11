@@ -121,6 +121,22 @@ Start → LLM(分类节点)
 4. **Knowledge 大文件 embedding 很慢**——100MB+ 的 PDF 切片 + embedding 可能要跑 30 分钟以上，因为是单线程顺序处理。技巧：大文件先在外部用 PyPDF2 拆成多个小 PDF 再上传，能并行 embedding
 5. **Workflow 单次执行有时长上限**——默认 `WORKFLOW_MAX_EXECUTION_TIME=1200s`（20 分钟），超过被强制中断。长跑任务（视频处理、跨多步深度推理）要拆成多个 workflow 串联，或者在外部用 Celery 调度
 
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 10-200 人团队想快速做内部知识库问答、客服助手、表单总结这类标准 LLM 应用
+- 产品经理、运营、售前需要自己改 prompt 和流程，但仍希望工程师负责部署和权限
+- 企业要求数据尽量留在内网，可以接受 Docker Compose / Kubernetes 自托管
+- 需要同时接多个模型供应商，方便按地区、成本或稳定性切换
+
+**不适用**：
+
+- 要写深度自定义推理算法、训练流程或复杂 agent runtime 的团队，直接用代码框架更自由
+- 只有一两个固定 API 调用的小功能，引入整个平台反而增加运维成本
+- 对毫秒级延迟很敏感的在线链路；Dify 的编排、检索和多节点流程更适合秒级交互
+- 没有人维护模型密钥、向量库、队列和插件进程的团队，SaaS 版会比自托管更现实
+
 ## 历史小故事
 
 - **2023-04**：LangGenius 在上海注册成立，团队来自ByteDance和摩拜的背景，第一天就决定全公开开发
@@ -139,6 +155,13 @@ Start → LLM(分类节点)
 3. **Apache 2.0 + brand 限制是中国开源项目商业化的常见路径**——既不像 BSL 那样劝退社区，也不像纯 Apache 那样被白嫖，留出 SaaS 商业化空间
 4. **"无代码 / 低代码"不是没有代码，是把代码藏在节点里**——Workflow 的代码节点 + HTTP 节点最终还是要写代码，只是把"编排"这件事可视化了。理解这个边界才能选对工具
 
+## 延伸阅读
+
+- 官方文档：[docs.dify.ai](https://docs.dify.ai)（中英双语，比 README 详细很多）
+- 视频教程：B 站搜"Dify 实战"——国内创作者很多，30 分钟入门视频质量普遍可以
+- 自托管指南：仓库 `docker/README.md` —— 各种部署组合（CPU / GPU / 国内镜像）
+- Plugin 开发：[langgenius/dify-plugin-sdks](https://github.com/langgenius/dify-plugin-sdks) —— 想给 Dify 写一个 plugin（接你公司的内部 LLM API）半天上手
+
 ## 关联
 
 - [[langchain]] —— Python 库派的代表，给开发者写代码，与 Dify 是不同时代的心智模型
@@ -147,9 +170,6 @@ Start → LLM(分类节点)
 - [[rag]] —— Dify Knowledge 的核心范式，Retrieval-Augmented Generation
 - [[vector-database]] —— Dify 默认 Weaviate，可换 Qdrant / PGVector，是 RAG 的存储层
 
-## 延伸阅读
+## 反向链接
 
-- 官方文档：[docs.dify.ai](https://docs.dify.ai)（中英双语，比 README 详细很多）
-- 视频教程：B 站搜"Dify 实战"——国内创作者很多，30 分钟入门视频质量普遍可以
-- 自托管指南：仓库 `docker/README.md` —— 各种部署组合（CPU / GPU / 国内镜像）
-- Plugin 开发：[langgenius/dify-plugin-sdks](https://github.com/langgenius/dify-plugin-sdks) —— 想给 Dify 写一个 plugin（接你公司的内部 LLM API）半天上手
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

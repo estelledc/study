@@ -21,8 +21,8 @@ MySQL 是 1995 年瑞典工程师 Michael Widenius 写的**开源关系数据库
 
 不理解 MySQL，下面这些事都没法解释：
 
-- 为什么 WordPress / Drupal / Magento 这些建站系统**默认就是 MySQL**——全球一半以上网站底层是它
-- 为什么 Facebook / Twitter / GitHub 这种巨型公司**内部都跑 MySQL 分支**（不是 Postgres，不是 Oracle）
+- 为什么 WordPress / Drupal / Magento 这些建站系统**默认就是 MySQL**——大量 CMS / 站点的默认栈里都有它
+- 为什么 Facebook / GitHub 等巨型公司长期跑 MySQL 或其分支（不是只靠 Postgres / Oracle）
 - 为什么 5.7 加了 JSON 字段后开发圈讨论"MySQL 还要不要换 Postgres"
 - 为什么 MariaDB 这个名字总跟 MySQL 一起出现——它是 Oracle 收购后社区分裂出的孪生 fork
 
@@ -86,16 +86,17 @@ SHOW MASTER STATUS;
 从库上：
 
 ```sql
-CHANGE MASTER TO
-  MASTER_HOST='主库 IP',
-  MASTER_USER='repl',
-  MASTER_PASSWORD='...',
-  MASTER_LOG_FILE='mysql-bin.000003',
-  MASTER_LOG_POS=154;
-START SLAVE;
+-- MySQL 8.0.23+ 推荐（旧版是 CHANGE MASTER TO / START SLAVE）
+CHANGE REPLICATION SOURCE TO
+  SOURCE_HOST='主库 IP',
+  SOURCE_USER='repl',
+  SOURCE_PASSWORD='...',
+  SOURCE_LOG_FILE='mysql-bin.000003',
+  SOURCE_LOG_POS=154;
+START REPLICA;
 ```
 
-从此从库实时跟主库同步——读流量打到从库，主库只接写。这是几乎所有"读多写少" Web 站的标配架构。
+从此从库跟主库同步——读打到从库，主库只接写。这是"读多写少" Web 站的常见架构。
 
 ## 踩过的坑
 
@@ -107,17 +108,29 @@ START SLAVE;
 
 4. **InnoDB 全文索引比 [[postgresql]] 弱**：MySQL 的 FULLTEXT 索引中文支持差、相关性算法粗糙。真要做搜索一般外挂 Elasticsearch，不直接用 MySQL 全文索引。
 
-5. **大表加字段卡死**：5.6 之前 `ALTER TABLE` 加字段会**全表重建 + 锁表**。千万级表加一个字段可能业务暂停几小时。现代版本好了很多（online DDL），但老系统升级前最好做迁移演练。
+5. **大表加字段卡死**：5.6 之前 `ALTER TABLE` 加字段会**全表重建 + 锁表**。千万级表加字段可能停业务几小时。现代版本有 online DDL，但老系统升级前仍要演练。
 
-## 历史小故事
+## 适用 vs 不适用场景
 
-- **1995 年**：Michael "Monty" Widenius 在瑞典 MySQL AB 公司发布 MySQL 1.0，名字来自他大女儿 My
-- **2000 年代初**：LAMP（Linux + Apache + MySQL + PHP）成为 Web 1.0 / 2.0 默认技术栈，MySQL 全球装机量爆发
-- **2008 年**：Sun Microsystems 用 10 亿美元收购 MySQL AB
-- **2010 年**：Oracle 收购 Sun，连带 MySQL 进了 Oracle 手里——数据库行业最大的并购之一
-- **2010 年**：社区担心 Oracle 闭源 MySQL，Monty 带原班人马 fork 出 MariaDB，名字来自他小女儿 Maria
-- **2018 年**：MySQL 8.0 发布——加 CTE（with 子句）、窗口函数、角色权限、原子 DDL，工程上一次大跃进
-- **2024 年至今**：仍是 Web 应用最常用的关系数据库，云上有 AWS Aurora / 阿里云 RDS / 腾讯云 CDB 等托管服务
+**适用**：
+
+- 读多写少的 Web / CMS（WordPress、电商后台、内容站）
+- 需要事务 + 行锁的 OLTP（订单、账户），默认 InnoDB
+- 一主多从扩读、运维文档与云托管（RDS / Aurora）成熟的团队
+
+**不适用**：
+
+- 复杂分析 / 窗口函数重度、严格 SQL 标准 → 看 [[postgresql]]
+- 全文 / 向量检索主路径 → 外挂搜索引擎，不靠 MySQL FULLTEXT
+- 单机嵌入式 / 零部署 → [[sqlite]]；海量 OLAP → [[clickhouse]]
+
+## 历史小故事（可跳过）
+
+- **1995 年**：Michael "Monty" Widenius 在瑞典 MySQL AB 发布 1.0，名字来自女儿 My
+- **2000 年代初**：LAMP 成为 Web 默认栈，装机量爆发
+- **2008–2010 年**：Sun 收购 MySQL AB → Oracle 收购 Sun；Monty fork 出 MariaDB
+- **2018 年**：MySQL 8.0——CTE、窗口函数、角色、原子 DDL
+- **2024 年至今**：仍是 Web 常用关系库；云上有 Aurora / 阿里云 RDS / 腾讯云 CDB
 
 ## 学到什么
 

@@ -96,7 +96,7 @@ Kokkos::parallel_reduce("dot", N, KOKKOS_LAMBDA(int i, double& s) {
 
 4. **initialize / finalize 必须配对**：`Kokkos::initialize(argc, argv)` 在 main 里调，`finalize()` 退出前调。不配对会 leak GPU 上下文。
 
-5. **layout 不写不代表"无所谓"**：默认是 `LayoutRight`（不论后端），跨平台想自动切要用 `Kokkos::LayoutLeft` 显式写或用 `View<T*>::array_layout` 类型推导。论文这点没强调，文档后来补的。
+5. **跨 Host/Device 时 layout 默认不同**：未指定 layout 时，Host/OpenMP 默认 `LayoutRight`，Cuda 默认 `LayoutLeft`（这正是案例 2 的自动切换）。坑在于你在 host 上按行主序手工填好多维数组，再 `deep_copy` 到 GPU View——若两边 layout 不一致，同一套 `(i,j)` 会读到不同物理地址。跨 space 共享同一逻辑数组时，要么两端都让 Kokkos 按 space 默认，要么显式指定同一 `LayoutLeft`/`LayoutRight`。
 
 6. **MDRangePolicy 才是多维并行**：`parallel_for(N, ...)` 是一维。多维想要 `parallel_for(MDRangePolicy<Rank<2>>({0,0}, {Nx,Ny}), ...)`，不然只能手动 `i = idx / Ny; j = idx % Ny`，丢访存友好性。
 

@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "驾校训练场类比极好；案例 1–3 可跟做。开头「60 秒」与案例「30 秒」略不一致，可读成 30–60 秒。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 kubernetes/minikube、SIG 维护、多 driver / addons 主线正确；kind/k3s 对比属合理教学简化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "start/ingress/image load 可跟做；ImagePullBackOff、tunnel、默认 2C2G 踩坑具体；适用/兄弟工具表边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "驾校训练场类比极好；案例 1–3 可跟做。开头「60 秒」与案例「30 秒」略不一致，可读成 30–60 秒。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 kubernetes/minikube、SIG 维护、多 driver / addons 主线正确；kind/k3s 对比属合理教学简化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "start/ingress/image load 可跟做；ImagePullBackOff、tunnel、默认 2C2G 踩坑具体；适用/兄弟工具表边界清楚。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "pandas",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Excel 搬进 Python、花名册按姓名对齐类比贴合，零基础友好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "DataFrame/Series/Index 首次出现即有人话定义"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释，并对照 SQL，跟做成本低"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/pandas-dev/pandas；Wes McKinney 2008–2009、panel data 词源、1.0/2.0 节点与公开史实一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "NaN 升 float、Int64 可空整数、PyArrow 后端表述准确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未发现与 stub/常识冲突的硬伤或过度简化歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "read_csv/groupby/merge 最小例可直接跟做，API 用法正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "SettingWithCopy、NaN 升型、索引对齐、inplace 四坑是日常高频且写法可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "内存/分布式/OLTP/流式边界清楚；「几千万行」量级略宽但仍可接受"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "Excel 搬进 Python、花名册按姓名对齐类比贴合，零基础友好",
+        "DataFrame/Series/Index 首次出现即有人话定义",
+        "三案例均有逐部分解释，并对照 SQL，跟做成本低"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 github.com/pandas-dev/pandas；Wes McKinney 2008–2009、panel data 词源、1.0/2.0 节点与公开史实一致",
+        "NaN 升 float、Int64 可空整数、PyArrow 后端表述准确",
+        "未发现与 stub/常识冲突的硬伤或过度简化歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "read_csv/groupby/merge 最小例可直接跟做，API 用法正确",
+        "SettingWithCopy、NaN 升型、索引对齐、inplace 四坑是日常高频且写法可操作",
+        "内存/分布式/OLTP/流式边界清楚；「几千万行」量级略宽但仍可接受"
+      ]
+    }
+  ],
+  "lines": 178,
+  "l1_pass": true
+}

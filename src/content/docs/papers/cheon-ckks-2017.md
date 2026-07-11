@@ -48,10 +48,20 @@ parms.set_poly_modulus_degree(8192)         # 多项式环维度
 parms.set_coeff_modulus(seal.CoeffModulus.Create(8192, [60,40,40,60]))
 context = seal.SEALContext(parms)
 encoder = seal.CKKSEncoder(context)
+keygen = seal.KeyGenerator(context)
+public_key = keygen.create_public_key()
+secret_key = keygen.secret_key()
+encryptor = seal.Encryptor(context, public_key)
+evaluator = seal.Evaluator(context)
+decryptor = seal.Decryptor(context, secret_key)
 scale = 2.0 ** 40                           # 缩放因子 Δ
 plain_a = encoder.encode(3.14, scale)       # 编码
 plain_b = encoder.encode(2.72, scale)
-# 加密 → 密文相加 → 解密 → 得到 ≈5.86
+ct_a = encryptor.encrypt(plain_a)
+ct_b = encryptor.encrypt(plain_b)
+ct_sum = evaluator.add(ct_a, ct_b)
+plain_sum = decryptor.decrypt(ct_sum)
+result = encoder.decode(plain_sum)          # ≈ 5.86
 ```
 
 **逐部分解释**：`poly_modulus_degree` 决定安全级别和可打包的槽数（8192 对应 128-bit 安全级，4096 个槽）；`coeff_modulus` 是一串素数，每次 rescaling 消耗一个；`scale` 是 Δ，控制小数精度，越大精度越高但消耗模数越快。

@@ -23,9 +23,9 @@ const rows = await sql`select * from users where id = ${id}`
 
 不理解 postgres.js 的设计，下面这些事都没法解释：
 
-- 为什么 2019 年之后 Node 圈写 PG 越来越少有人裸用 `pg`，但又拒绝上 Prisma 这种重 ORM
+- 为什么不少新项目在继续用 `pg` 与上 Prisma 这种重 ORM 之间，会选 postgres.js 这类 SQL-first 客户端
 - 为什么"模板字符串"在它这里不是字符串拼接糖，而是**安全保证的根**
-- 为什么它能比 `pg` 快 2-5x（同样跑 PG，差别从哪来）
+- 为什么作者声称它能比 `pg` 快 2-5x（同样跑 PG，差别从哪来）
 - 为什么 LISTEN/NOTIFY 这种冷门特性被它做成一等公民、其他客户端却懒得封
 
 ## 核心要点
@@ -117,8 +117,8 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 - **2015 年**：ES2015 把 tagged template literal 写进 JS 标准，`strings.raw` 成为引擎内置字段，但前几年没人在 DB 客户端里把它当安全分隔利用。
 - **2019 年**：Rasmus Porsager 在 GitHub 开源 `porsager/postgres`，思路是「反引号是天然的语法分隔，那为什么 PG 客户端还在拼字符串」。
 - **2021-2023 年**：Cloudflare Workers / Bun / Edge runtime 流行，单文件零依赖 + 跨 runtime 的特性让它从小众变主流候选。
-- **2024-2025 年**：v3 系列稳定，Supabase / Vercel Postgres 等托管服务把它列入推荐客户端。
-- **2026 年**：npm 周下载约 60 万、GitHub 约 8.7k 星；社区开始把它当 Node 圈写 PG 的"裸金属基线"。
+- **2024-2025 年**：v3 系列稳定；部分托管 PG 文档把它与 `pg`、ORM 并列介绍为可选客户端之一。
+- **2026 年**：npm 周下载约 60 万、GitHub 约 8.7k 星；社区常把它当 Node 圈写 PG 的轻量 SQL-first 基线之一。
 
 ## 学到什么
 

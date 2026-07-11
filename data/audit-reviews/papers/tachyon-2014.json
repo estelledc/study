@@ -1,0 +1,87 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例以叙事为主，案例 2/3 可补一小段伪代码或「逐部分解释」小标题，方便零基础对照模板跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「重算第一次比复制便宜」略绝对——Spark RDD 已在计算层证明；可改为「在存储/文件系统层第一次系统化」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Arrow Flight 与 Tachyon lineage 血缘较远，列为「徒孙」偏牵强"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一条量化边界（如中间结果生命周期、重算成本相对写放大）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例以叙事为主，案例 2/3 可补一小段伪代码或「逐部分解释」小标题，方便零基础对照模板跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「重算第一次比复制便宜」略绝对——Spark RDD 已在计算层证明；可改为「在存储/文件系统层第一次系统化」",
+        "Arrow Flight 与 Tachyon lineage 血缘较远，列为「徒孙」偏牵强"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可补一条量化边界（如中间结果生命周期、重算成本相对写放大）"
+      ]
+    }
+  ]
+}

@@ -26,7 +26,7 @@ invokeai-web
 - 为什么同样跑 Stable Diffusion，InvokeAI 能给你**真任务队列 + 取消按钮**，而 A1111 你点了 Generate 就只能等
 - 为什么 InvokeAI 的 workflow JSON 可以**直接 POST 给后端跑**而不需要 UI——节点图就是 OpenAPI schema 的客户端
 - 为什么想把 SD 嵌进自己产品里，InvokeAI 的 REST API 比 A1111 / ComfyUI 都好对接——它从一开始就是按服务端思维造的
-- 为什么 SD 圈里有 A1111 / ComfyUI / Forge / sd.next / InvokeAI 五大派，**只有 InvokeAI 有 alembic 数据库迁移脚本**——其他四家都是文件 + JSON 凑
+- 为什么相对 A1111 / ComfyUI / Forge / sd.next 这几家常见对照，InvokeAI **认真做了 alembic 数据库迁移**——其他几家多半还是文件 + JSON 凑
 
 ## 核心要点
 
@@ -45,19 +45,33 @@ invokeai-web
 ### 案例 1：写一个最小的 Invocation（理解节点的本质）
 
 ```python
-from invokeai.app.invocations.baseinvocation import BaseInvocation, invocation
-from invokeai.app.invocations.fields import InputField
+from invokeai.app.invocations.baseinvocation import (
+    BaseInvocation,
+    BaseInvocationOutput,
+    invocation,
+    invocation_output,
+)
+from invokeai.app.invocations.fields import InputField, OutputField
 
-@invocation('add_two', title='Add Two', tags=['math'], version='1.0.0')
+@invocation_output("integer_output")
+class IntegerOutput(BaseInvocationOutput):
+    value: int = OutputField(description="两数之和")
+
+@invocation("add_two", title="Add Two", tags=["math"], version="1.0.0")
 class AddTwoInvocation(BaseInvocation):
-    a: int = InputField(default=0, description='第一个加数')
-    b: int = InputField(default=0, description='第二个加数')
+    a: int = InputField(default=0, description="第一个加数")
+    b: int = InputField(default=0, description="第二个加数")
 
-    def invoke(self, context) -> 'IntegerOutput':
+    def invoke(self, context) -> IntegerOutput:
         return IntegerOutput(value=self.a + self.b)
 ```
 
-放进 `nodes/` 文件夹重启，**前端节点编辑器会自动出现一个 `Add Two` 节点**——OpenAPI schema 重新生成，TypeScript client 重新编译，整条链路自动同步。这种『写一个 Pydantic 类就装好一个节点』的体验是 A1111 monkey-patch 扩展给不出的。
+**逐部分解释**：
+
+- `@invocation_output` 先声明输出类型，前端才能知道这个节点会吐出什么字段
+- `@invocation(...)` 把类注册成节点；`title` 会出现在节点编辑器里
+- `InputField` / `OutputField` 既做校验，也进 OpenAPI schema
+- 放进自定义 `nodes/` 后重启，编辑器会出现 `Add Two`——这是 A1111 monkey-patch 扩展给不出的体验
 
 ### 案例 2：Unified Canvas 的 inpaint 在底层做了什么
 
@@ -74,21 +88,28 @@ class AddTwoInvocation(BaseInvocation):
 
 ### 案例 3：Workflow JSON 直接当 API 用
 
-InvokeAI 的 workflow JSON 不是 ComfyUI 那种『界面状态 + 节点配置』混在一起，而是**严格的 graph 格式**：
+InvokeAI 的 graph 是**严格 JSON**，不是 ComfyUI 那种界面状态混节点配置。最小可提交骨架：
 
 ```json
 {
-  "id": "demo",
-  "nodes": {
-    "noise": {"type": "noise", "seed": 42},
-    "denoise": {"type": "denoise_latents", "steps": 20, ...}
-  },
-  "edges": [{"source": {"node_id": "noise", "field": "noise"},
-             "destination": {"node_id": "denoise", "field": "noise"}}]
+  "batch": {
+    "graph": {
+      "id": "demo-add",
+      "nodes": {
+        "a": {"id": "a", "type": "add_two", "a": 1, "b": 2}
+      },
+      "edges": []
+    }
+  }
 }
 ```
 
-你可以**完全不打开 UI**，直接 `curl -X POST` 把这个 JSON 送进 `enqueue_batch`，后端照样跑。这是 ComfyUI 也能做但要 hack workflow API endpoint 的事，InvokeAI 是头等公民。
+**逐部分解释**：
+
+- `nodes` 里每个条目的 `type` 对应 Invocation 注册名（上面的 `add_two`）
+- `edges` 描述端口连线；单节点图可以为空数组
+- 用 `curl -X POST http://127.0.0.1:9090/api/v1/queue/default/enqueue_batch -H 'Content-Type: application/json' -d @graph.json` 就能入队
+- 不打开 UI 也能跑——这是 InvokeAI 相对 ComfyUI workflow API 的头等公民能力
 
 ## 踩过的坑
 
@@ -150,3 +171,7 @@ A1111 是『webui 浪潮的起点』，ComfyUI 是『节点图浪潮的起点』
 - [[comfyui]] —— 同样的『节点 + 类型化端口』思想，对照看『谁更工程化、谁更社区野』
 - [[fastapi]] —— InvokeAI 后端就是一个 FastAPI 应用 + Pydantic schema 全栈
 - [[pytorch]] —— 扩散模型推理底层
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

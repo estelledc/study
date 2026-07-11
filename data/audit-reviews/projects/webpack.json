@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 SVG loader 只有代码和一句总结，缺少「输入是什么 / 输出长什么样 / 为何能当 React 组件用」的逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 跑完后可补一句：style-loader 把 CSS 塞进 <style>，所以页面上看得到样式"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「Module Federation」「Tapable」等词对零基础偏陡，出现时用半句话桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Next.js 项目——直接用其内置的 Turbopack，无需自己配 webpack」略绝对：生产构建长期仍可走 webpack，可改为「dev 优先 Turbopack，不必自管 webpack 配置」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「webpack 项目本身进入维护模式」可软化为「功能迭代放缓、以兼容与维护为主」，避免读者以为仓库已停更"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的手写 SVG loader 未处理引号/换行，跟做时易炸；可注明「教学示意，生产用 @svgr/webpack」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 缺 package.json 依赖提示（webpack / style-loader / css-loader），零配置读者可能 npx 后缺 loader"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 SVG loader 只有代码和一句总结，缺少「输入是什么 / 输出长什么样 / 为何能当 React 组件用」的逐步解释",
+        "案例 1 跑完后可补一句：style-loader 把 CSS 塞进 <style>，所以页面上看得到样式",
+        "「Module Federation」「Tapable」等词对零基础偏陡，出现时用半句话桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「Next.js 项目——直接用其内置的 Turbopack，无需自己配 webpack」略绝对：生产构建长期仍可走 webpack，可改为「dev 优先 Turbopack，不必自管 webpack 配置」",
+        "「webpack 项目本身进入维护模式」可软化为「功能迭代放缓、以兼容与维护为主」，避免读者以为仓库已停更"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的手写 SVG loader 未处理引号/换行，跟做时易炸；可注明「教学示意，生产用 @svgr/webpack」",
+        "案例 1 缺 package.json 依赖提示（webpack / style-loader / css-loader），零配置读者可能 npx 后缺 loader"
+      ]
+    }
+  ]
+}

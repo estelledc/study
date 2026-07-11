@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 已有解释，但可再点明「先写完 CustomTooltip 再塞进 content」的顺序，零基础跟做更稳"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「v3.8.1 是最新稳定版」已过时（npm 当前为 3.9.x），应改成不绑死小版本或更新到当前稳定版"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「动画迁到 Web Animation API、bundle 降到约 70KB」不准确：v3 主线是内联动画并移除 react-smooth；WAAPI 定制偏后续小版本，bundle 口径也宜改成 gzip 约数十 KB 或删掉硬数字"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「8 个」顶层 Container 偏少（还有 Area/Radar/Scatter/RadialBar/Funnel/Treemap 等），改为「十余种」更稳"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「70% 后台管理图 / 90% 项目第一个 PR」属无法核验的营销归纳，应弱化为常见现象表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "历史时间线里的版本/bundle 数字会误导选型；修完后踩坑与适用段的 SVG/点数边界可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 已有解释，但可再点明「先写完 CustomTooltip 再塞进 content」的顺序，零基础跟做更稳"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「v3.8.1 是最新稳定版」已过时（npm 当前为 3.9.x），应改成不绑死小版本或更新到当前稳定版",
+        "「动画迁到 Web Animation API、bundle 降到约 70KB」不准确：v3 主线是内联动画并移除 react-smooth；WAAPI 定制偏后续小版本，bundle 口径也宜改成 gzip 约数十 KB 或删掉硬数字",
+        "「8 个」顶层 Container 偏少（还有 Area/Radar/Scatter/RadialBar/Funnel/Treemap 等），改为「十余种」更稳",
+        "「70% 后台管理图 / 90% 项目第一个 PR」属无法核验的营销归纳，应弱化为常见现象表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史时间线里的版本/bundle 数字会误导选型；修完后踩坑与适用段的 SVG/点数边界可保留"
+      ]
+    }
+  ]
+}

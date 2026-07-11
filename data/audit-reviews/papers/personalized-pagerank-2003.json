@@ -1,0 +1,129 @@
+{
+  "slug": "personalized-pagerank-2003",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "畅销书榜 / 奶茶兑基底 / 地铁换乘站类比很贴合，零基础能抓住『起点不同结果不同』。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 直接甩出 GNN / APPNP / over-smoothing，建议先用一句『图神经网络 = 在邻居之间传消息的模型』桥接，再对照公式。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Jeh & Widom WWW 2003、线性性、Hub / Hubs Skeleton / partial vectors 与论文一致；SimRank 2002、APPNP ICLR 2019、Bahmani 2010 引用合理。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Twitter WTF、Pinterest Pixie、LinkedIn 你可能认识的人都建在 PPR 上』过满：Pixie 确是 RWR/PPR 系；WTF 主线更接近 circle-of-trust + SALSA；LinkedIn PYMK 不宜写成 PPR 标配。建议改成『随机游走/PPR 系或其近亲』并点名 Pixie 为明确落地。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『第一次系统解决 PPR 怎么算得起』可保留，但宜 Implicit 区分 Haveliwala 2002 Topic-Sensitive PageRank（主题个性化）与本文的 hub 分解扩展。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "二部图召回与线性组合预计算的工程直觉正确，可跟读；公式级 min example 对论文笔记足够。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：勿每用户重训、teleport 可为分布、hub 启发式、Pixie 采样权衡、动态图预算过期——可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段有节点规模与『局部重要性 vs 全局』边界；可再点明 hub 集大小/预计算存储是主要成本旋钮。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "畅销书榜 / 奶茶兑基底 / 地铁换乘站类比很贴合，零基础能抓住『起点不同结果不同』。",
+        "案例 3 直接甩出 GNN / APPNP / over-smoothing，建议先用一句『图神经网络 = 在邻居之间传消息的模型』桥接，再对照公式。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Jeh & Widom WWW 2003、线性性、Hub / Hubs Skeleton / partial vectors 与论文一致；SimRank 2002、APPNP ICLR 2019、Bahmani 2010 引用合理。",
+        "『Twitter WTF、Pinterest Pixie、LinkedIn 你可能认识的人都建在 PPR 上』过满：Pixie 确是 RWR/PPR 系；WTF 主线更接近 circle-of-trust + SALSA；LinkedIn PYMK 不宜写成 PPR 标配。建议改成『随机游走/PPR 系或其近亲』并点名 Pixie 为明确落地。",
+        "『第一次系统解决 PPR 怎么算得起』可保留，但宜 Implicit 区分 Haveliwala 2002 Topic-Sensitive PageRank（主题个性化）与本文的 hub 分解扩展。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "二部图召回与线性组合预计算的工程直觉正确，可跟读；公式级 min example 对论文笔记足够。",
+        "踩坑具体：勿每用户重训、teleport 可为分布、hub 启发式、Pixie 采样权衡、动态图预算过期——可操作。",
+        "适用段有节点规模与『局部重要性 vs 全局』边界；可再点明 hub 集大小/预计算存储是主要成本旋钮。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 162,
+  "l1_pass": true
+}

@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2、案例 3 缺少「逐部分解释」分步拆解，零基础容易停在 API 表面"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "RAF / ODE / underdamped / tree-shake 等术语首次出现时桥接不足，初级读者会卡"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Matt Perry / Motion One→motiondivision monorepo、Chrome 115 linear() 时间线合理；32k★ 为约数可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "esm.run 示例可跟做；mini/spring/Safari fallback/合成层边界具体可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2、案例 3 缺少「逐部分解释」分步拆解，零基础容易停在 API 表面",
+        "RAF / ODE / underdamped / tree-shake 等术语首次出现时桥接不足，初级读者会卡"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Matt Perry / Motion One→motiondivision monorepo、Chrome 115 linear() 时间线合理；32k★ 为约数可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "esm.run 示例可跟做；mini/spring/Safari fallback/合成层边界具体可操作"
+      ]
+    }
+  ]
+}

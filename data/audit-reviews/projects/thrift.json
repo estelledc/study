@@ -1,0 +1,123 @@
+{
+  "slug": "thrift",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "翻译事务所 / 建筑图纸 / 寄快递 / 考卷编号类比贯穿，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "IDL / stub / Protocol / Transport / Processor / 字段编号首次出现均有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐部分解释；案例 2 偏历史叙事、案例 3 字节对比清楚，整体可跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2007 Facebook / Mark Slee 等白皮书、2008 Apache 孵化、Cassandra Thrift→CQL 时间线正确；README 确认为 28 种语言"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/apache/thrift 与白皮书作者引用合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「gRPC 换个皮」「与 protobuf 共同发明字段编号」属口语化教学，核心思想归因可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 IDL + thrift --gen 流程概念正确；未展开完整 Client/Server 循环，教学 min example 可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：字段编号不可改、required 地雷、Framed/Buffered 不匹配 hang、跨语言枚举默认值——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：多语言内部 RPC vs gRPC/浏览器/单语言/schema registry"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "翻译事务所 / 建筑图纸 / 寄快递 / 考卷编号类比贯穿，零基础直觉强",
+        "IDL / stub / Protocol / Transport / Processor / 字段编号首次出现均有白话桥接",
+        "案例 1 有逐部分解释；案例 2 偏历史叙事、案例 3 字节对比清楚，整体可跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "2007 Facebook / Mark Slee 等白皮书、2008 Apache 孵化、Cassandra Thrift→CQL 时间线正确；README 确认为 28 种语言",
+        "来源 github.com/apache/thrift 与白皮书作者引用合理",
+        "「gRPC 换个皮」「与 protobuf 共同发明字段编号」属口语化教学，核心思想归因可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 IDL + thrift --gen 流程概念正确；未展开完整 Client/Server 循环，教学 min example 可接受",
+        "踩坑具体：字段编号不可改、required 地雷、Framed/Buffered 不匹配 hang、跨语言枚举默认值——可操作",
+        "适用/不适用边界清楚：多语言内部 RPC vs gRPC/浏览器/单语言/schema registry"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 162,
+  "l1_pass": true
+}

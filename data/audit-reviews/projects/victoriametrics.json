@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有架构示意，缺少像案例 1 那样的可跟做步骤与逐部分解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 2/3 条缺少日常类比，Gorilla / MetricsQL 对零基础偏硬"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "关联段只有 2 条，建议补到 5–7 条 [[wikilink]]"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Single-node 并非『四角色合一含 vmagent』：单机进程合并 insert/storage/select，vmagent 始终是独立二进制"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "vmstorage 是有状态分片，『无状态分片』表述错误，应改为节点互不通信的有状态分片"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『长期存储标准方案不再是 Thanos/Cortex 而是 VM』过满，应改为常见备选之一"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 建议补最小可跑的 cluster 启动命令或 docker-compose 片段，而不只画拓扑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化边界（如单机百万 samples/s 以下优先 single-node）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有架构示意，缺少像案例 1 那样的可跟做步骤与逐部分解释",
+        "核心要点第 2/3 条缺少日常类比，Gorilla / MetricsQL 对零基础偏硬",
+        "关联段只有 2 条，建议补到 5–7 条 [[wikilink]]"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Single-node 并非『四角色合一含 vmagent』：单机进程合并 insert/storage/select，vmagent 始终是独立二进制",
+        "vmstorage 是有状态分片，『无状态分片』表述错误，应改为节点互不通信的有状态分片",
+        "『长期存储标准方案不再是 Thanos/Cortex 而是 VM』过满，应改为常见备选之一"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 建议补最小可跑的 cluster 启动命令或 docker-compose 片段，而不只画拓扑",
+        "适用场景可补一条量化边界（如单机百万 samples/s 以下优先 single-node）"
+      ]
+    }
+  ]
+}

@@ -154,3 +154,7 @@ npx promptfoo@latest redteam run
 - [[langsmith]] —— 同领域的闭源 SaaS，强在 trace 可视化
 - [[ragas]] —— Python 库，专注 RAG 评估指标
 - [[playwright]] —— 思路同源：把「跑一次看看」变成「写测试用例回归」
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

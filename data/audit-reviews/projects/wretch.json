@@ -1,0 +1,127 @@
+{
+  "action": "refine",
+  "average": 3,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 缺少像标杆那样的「逐部分解释」步骤，零基础读者难跟住 immutable 复用与 middleware 装载"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 immutable / ResponseChain / fluent 等术语需要更短的日常桥接句"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "咖啡传送带类比可用，但「为什么重要」四条偏圈内黑话，建议各补半句白话"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者名错误：应为 Julien Elbaz（@elbywan），不是 Julien Poissonnier"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "包体积官方标称核心 ~1.8KB gzip，笔记写 ~5KB 偏旧；stars ~4k 亦偏低（约 5k+）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写「2024 年至今 2.x」过时：当前 latest 为 3.x（如 3.0.9）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 abort/progress 与 retry/dedupe 一并说成 middlewares 子包不准确——前者是 addons"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑写 catcher 必须在动词前、动词后会错，与官方 Response Chain 文档相反（.get().catcher().json() 合法）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "坑 1 关于 catcher 顺序写反了：官方 Response Chain 允许 .get().catcher(...).json()；应改成「catcher 可挂 Wrapper 也可挂 ResponseChain，但必须在 .json()/.text() 等解析方法之前」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 .query 未提 QueryStringAddon（v2/v3 常见）；若保留 .query 需补 .addon(QueryStringAddon)，或改用不依赖 addon 的 API"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 retry 导入路径正确；可补一句 delayTimer/maxAttempts 与官方选项名对齐即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，可保留；建议点明 Node 18+ 原生 fetch、老环境需 polyfill"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 缺少像标杆那样的「逐部分解释」步骤，零基础读者难跟住 immutable 复用与 middleware 装载",
+        "核心要点里 immutable / ResponseChain / fluent 等术语需要更短的日常桥接句",
+        "咖啡传送带类比可用，但「为什么重要」四条偏圈内黑话，建议各补半句白话"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 2,
+        "no_distortion": 3
+      },
+      "average": 2.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "作者名错误：应为 Julien Elbaz（@elbywan），不是 Julien Poissonnier",
+        "包体积官方标称核心 ~1.8KB gzip，笔记写 ~5KB 偏旧；stars ~4k 亦偏低（约 5k+）",
+        "历史写「2024 年至今 2.x」过时：当前 latest 为 3.x（如 3.0.9）",
+        "把 abort/progress 与 retry/dedupe 一并说成 middlewares 子包不准确——前者是 addons",
+        "踩坑写 catcher 必须在动词前、动词后会错，与官方 Response Chain 文档相反（.get().catcher().json() 合法）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 2,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "坑 1 关于 catcher 顺序写反了：官方 Response Chain 允许 .get().catcher(...).json()；应改成「catcher 可挂 Wrapper 也可挂 ResponseChain，但必须在 .json()/.text() 等解析方法之前」",
+        "案例 2 的 .query 未提 QueryStringAddon（v2/v3 常见）；若保留 .query 需补 .addon(QueryStringAddon)，或改用不依赖 addon 的 API",
+        "案例 3 的 retry 导入路径正确；可补一句 delayTimer/maxAttempts 与官方选项名对齐即可",
+        "适用/不适用边界清楚，可保留；建议点明 Node 18+ 原生 fetch、老环境需 polyfill"
+      ]
+    }
+  ]
+}

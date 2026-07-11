@@ -27,8 +27,8 @@ c.publish("car/123/gps", '{"lat":31.2,"lon":121.5}')
 
 不理解 EMQX，下面这些事都讲不通：
 
-- 为什么车联网（特斯拉、蔚来、小鹏）能让百万辆车同时上报且云端不挂
-- 为什么智能家居（米家、华为 HiLink、Home Assistant）默认走 MQTT 而不是 HTTP
+- 为什么车联网场景能让百万辆车同时上报 GPS 而接入层不先被打挂
+- 为什么智能家居（Home Assistant 等）默认走 MQTT 长连接，而不是每次传感器读数都打一次 HTTP
 - 为什么"设备消息"和"业务消息"基础设施长得不一样——同样叫消息队列，Kafka / RabbitMQ / EMQX 的工程取舍完全不同
 - 为什么 Erlang 这门 1986 年的电信语言在 2026 年还活得很好
 
@@ -60,17 +60,16 @@ client.publish(f"car/{vin}/gps", payload, qos=1)
 
 百万辆车 = 百万个长连接挂在 EMQX 上。后端订阅 `car/+/gps`（`+` 是单层通配）就能收齐。Erlang 进程模型让每个连接独占一个进程，互相隔离，某个连接异常断不影响别人。
 
-### 案例 2：规则引擎转 Kafka
+### 案例 2：规则引擎转 Kafka（企业版常见）
 
-设备消息直接进 EMQX，再用规则引擎落到 Kafka 给数据团队消费：
+设备消息进 EMQX 后，用规则引擎落到 Kafka 给数据团队（Kafka sink 多属企业版能力）：
 
 ```sql
 SELECT payload.lat AS lat, payload.lon AS lon, clientid
 FROM "car/+/gps"
 ```
 
-把这条规则的 sink 配成 Kafka topic `gps-stream`。EMQX 处理设备这一侧的长连接，Kafka 处理后端流计算这一侧的批量回放。两层各干各的。
-
+把 sink 配成 Kafka topic `gps-stream`。EMQX 扛设备长连接，Kafka 做后端批量回放——两层各干各的。社区版可先用 MQTT 转发或 HTTP 出口验证链路。
 ### 案例 3：QoS 的取舍
 
 MQTT 三档：QoS 0（最多一次，发了就忘）、QoS 1（至少一次，broker 收到才回 PUBACK）、QoS 2（恰好一次，四次握手）。生产环境绝大多数用 QoS 1——QoS 2 在大集群下吞吐显著掉，因为每条消息要持久化两次状态机。"我宁可重投一次也不接受丢"是默认选择。
@@ -93,7 +92,7 @@ $share/billing/car/+/payment
 
 3. **认证插件顺序敏感**：JWT、PSK、X.509、HTTP 回调几个认证插件按配置顺序逐个尝试，第一个返回"通过"就放行。配错顺序可能让弱认证先匹配上，业务级权限校验完全不走。
 
-4. **企业版才有的 sink**：免费社区版规则引擎只能落 MQTT topic 重发，要直连 Kafka / Pulsar / InfluxDB 必须企业版。开源选型时容易踩这个商业边界。
+4. **企业版才有的重型 sink**：社区版规则引擎可做 MQTT 转发、部分 Webhook/HTTP 出口；直连 Kafka / Pulsar / InfluxDB 等数据桥接多在企业版。开源选型时先对一下功能对照表。
 
 5. **MQTT 5 properties 要客户端配合**：MQTT 5 加了 user properties、reason code 这些好东西，但客户端 SDK（尤其嵌入式 C 库）支持参差。设备侧不升级，broker 这边的新特性用不上。
 
@@ -128,7 +127,7 @@ $share/billing/car/+/payment
 
 选型判据：**设备数量 + 消息大小 + 是否需要回放**——三者决定走哪条路。
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2013**：杭州 EMQ 团队（创始人冯硕）开源 emqttd，定位 Erlang 版的 Mosquitto 替代
 - **2017**：改名 EMQ X，企业版商业化，开始接车联网项目

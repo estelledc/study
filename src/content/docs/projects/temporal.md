@@ -21,7 +21,7 @@ async function processOrder(orderId: string) {
 }
 ```
 
-进程在第 3 步挂掉，重启后这个 workflow **自动从第 3 步接着跑**，前两步不会重复。你写代码的姿势没变，但底下多了一层"持久化执行"。
+进程在第 3 步挂掉，重启后 Worker 会**重放**这段 workflow：已完成的 Activity 直接读 history 里记下的结果（不再打支付/库存），从断点继续；若崩溃时某 Activity 尚未完成，则可能按重试策略再跑一次。你写代码的姿势没变，但底下多了一层"持久化执行"。
 
 它由原 Uber Cadence 团队 2019 年从 Uber 出来商业化做出来，现在是 Snap / Datadog / Stripe / Coinbase 这种公司编排核心业务流程的常见选型。
 
@@ -70,7 +70,7 @@ export async function chargeCard(orderId: string) {
 // ... 其他 activity 同理
 ```
 
-部署：跑一个 Worker 进程注册这两个文件，集群把任务派给它。进程任何时候挂掉，重启会从断点继续，前面成功的步骤不会重跑。
+部署：跑一个 Worker 进程注册这两个文件，集群把任务派给它。进程挂掉后重启会重放 history：已成功的 Activity 跳过副作用、直接用记录结果；未完成的可能重试——所以 Activity 仍应尽量幂等。
 
 ### 案例 2：定时任务 + 工作流复合
 
@@ -127,7 +127,7 @@ export async function bookTrip(tripId: string) {
 **不适用**：
 
 - 纯实时计算 / 流处理（用 Flink / Kafka Streams）
-- 高 QPS 的简单请求—响应（每个 workflow 实例至少一次 history 写入，QPS 上限受限于集群存储）
+- 高 QPS 的简单请求—响应（每个 workflow 起步至少数次 history 写入，单集群常见上限大约在数千～数万 workflow 启动/秒量级，远低于无状态 API）
 - 不需要持久化的临时编排（直接 async/await 就够了）
 - 没有运维能力的小团队 —— 集群依赖 Cassandra / PostgreSQL / MySQL + Elasticsearch，自建复杂；可以用 Temporal Cloud 但要付费
 
@@ -136,8 +136,8 @@ export async function bookTrip(tripId: string) {
 - **2015 年**：Maxim Fateev 和 Samar Abbas 在 Uber 内部做出 Cadence，解决 Uber 微服务编排痛点
 - **2019 年**：两人从 Uber 出来创立 Temporal Inc.，把 Cadence 改名 Temporal 商业化（Cadence 仍在 Uber 维护）
 - **2020 年**：Temporal v1.0 发布，Apache 2.0 协议
-- **2022 年**：B 轮 7500 万美元，估值 17 亿美元
-- **2024 年**：v1.25 加 Nexus —— 跨 Temporal 集群调用的统一抽象，类似把 RPC 上升到 workflow 层
+- **2022 年**：Series B 约 1 亿美元（官方口径），估值逾 15 亿美元
+- **2024 年**：Server v1.25+ 预览 Nexus —— 跨 Namespace / 集群的统一调用抽象，类似把 RPC 上升到 workflow 层
 - **现在**：Temporal Cloud 是主要商业化路径；开源版本 + 多语言 SDK 持续迭代
 
 ## 学到什么

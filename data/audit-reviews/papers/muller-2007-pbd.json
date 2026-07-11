@@ -1,0 +1,128 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "购物车绳子 vs 老师排队挪人，把「算力」和「直接改位置」对比讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "反质量 w、预测位置 pred、Gauss-Seidel 迭代都有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有逐部分解释：距离投影→主循环→布料约束组装，零基础可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Müller/Heidelberger/Hennix/Ratcliff JVCI 2007 正确；PBD 预测-投影主循环与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未把 PBD 说成精确物理仿真，visually plausible / 刚度与迭代耦合表述无歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Provot 1995、Baraff-Witkin 1998、Jakobsen、PBF/XPBD 时间线概括合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "距离投影与一帧主循环伪代码概念正确，可跟做教学 demo"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：当精确物理、stiffness 与迭代耦合、约束顺序、大步长穿透"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用游戏布料/软体 vs 工程应力/能量守恒边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "购物车绳子 vs 老师排队挪人，把「算力」和「直接改位置」对比讲透",
+        "反质量 w、预测位置 pred、Gauss-Seidel 迭代都有日常桥接",
+        "三案例都有逐部分解释：距离投影→主循环→布料约束组装，零基础可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Müller/Heidelberger/Hennix/Ratcliff JVCI 2007 正确；PBD 预测-投影主循环与论文一致",
+        "未把 PBD 说成精确物理仿真，visually plausible / 刚度与迭代耦合表述无歪曲",
+        "Provot 1995、Baraff-Witkin 1998、Jakobsen、PBF/XPBD 时间线概括合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "距离投影与一帧主循环伪代码概念正确，可跟做教学 demo",
+        "踩坑具体：当精确物理、stiffness 与迭代耦合、约束顺序、大步长穿透",
+        "适用游戏布料/软体 vs 工程应力/能量守恒边界清楚"
+      ]
+    }
+  ],
+  "slug": "muller-2007-pbd",
+  "area": "papers",
+  "status": "passed",
+  "aggregate": {
+    "action": "pass",
+    "average": 4.78,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "pass_count": 3
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162
+  },
+  "lines": 162,
+  "l1_pass": true
+}

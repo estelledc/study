@@ -1,0 +1,18 @@
+{
+  "schema_version": "study-wikilink-baseline-transition-v1",
+  "from": {
+    "source_commit": "acbf24baf4641c0f80a2a6c624abfb37f4cadefc",
+    "baseline_sha256": "4d0141ba74a0998fbdf601ffb5550345e6ba3a37e56406d984bc7e0b00b36ee2",
+    "unresolved_occurrences": 1672,
+    "groups": 1361
+  },
+  "to": {
+    "source_commit": "755ee890a2c2042c78f8af2e56b239429fd015e9",
+    "baseline_sha256": "1eb4405c5a650b4a82a97ae275b7bc077f4d8665700aef9cb2b7c3a700f80aa5",
+    "unresolved_occurrences": 1526,
+    "groups": 1165
+  },
+  "added_or_grown_groups": 90,
+  "removed_or_reduced_groups": 248,
+  "reason": "PR #15 replaced the protected corpus on immutable main. The net unresolved count fell by 146 with zero blocking or namespaced-missing links; this attestation preserves the exact old/new baselines instead of silently expanding an allowlist."
+}

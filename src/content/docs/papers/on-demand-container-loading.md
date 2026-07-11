@@ -39,14 +39,14 @@ On-demand Container Loading 是 AWS Lambda 为了支持最大 10GiB 容器镜像
 const imageGiB = 10
 const startsPerSecond = 15_000
 const bandwidthGiBPerSecond = imageGiB * startsPerSecond
-console.log(`${bandwidthGiBPerSecond / 1024} TiB/s`)
+console.log(`${bandwidthGiBPerSecond} GiB/s`) // ≈ 1.46e5 GiB/s ≈ 146 TiB/s
 ```
 
 **逐部分解释**：
 
 - `imageGiB` 是 Lambda 支持的最大镜像大小，不是每个镜像都这么大，但上限必须能承受
-- `startsPerSecond` 是单个客户可能被允许扩出的容器启动速率
-- 结果约 146 TiB/s，也就是论文里说的 150PB/s 量级网络压力；这说明“先搬完整镜像”在架构上不可行
+- `startsPerSecond` 是单个客户可能被允许扩出的容器启动速率（论文写到 15,000/s）
+- 结果约 `1.5×10⁵ GiB/s`（≈146 TiB/s）；论文原文用 **150Pb/s** 作数量级示意（Pb=petabit）。单位怎么写都指向同一结论：“先搬完整镜像”在架构上不可行
 
 ### 案例 2：一次按需读块
 

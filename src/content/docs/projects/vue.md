@@ -8,7 +8,7 @@ title: Vue.js — 渐进式 UI 框架
 
 ## 是什么
 
-Vue.js 是一套**用模板 + 数据双向绑定写网页 UI 的渐进式框架**。日常类比：像一个**会自动同步两个工作日志的助理**——你在 A 本子上改一行，他立刻把 B 本子也改过来；你在 B 本子上写一笔，A 本子也跟着出现。
+Vue.js 是一套**用模板 + 响应式数据写网页 UI 的渐进式框架**。日常类比：像一个**会盯着账本自动改看板的助理**——你在账本上改一行数字，看板上对应格子立刻跟着变；你不用自己拿笔去改看板。
 
 具体讲就是：
 
@@ -23,16 +23,16 @@ const count = ref(0)
 </template>
 ```
 
-按一次按钮，`count` 从 0 变 1，**页面自动刷新显示 1**——你不用手动改 DOM。
+按一次按钮，`count` 从 0 变 1，**页面自动刷新显示 1**——你不用手动改 DOM（页面上的按钮、文字那些零件）。表单里常见的 `v-model` 才是「输入框 ↔ 数据」双向同步的语法糖，不是整框架的默认模型。
 
 "渐进式"的意思是：可以只用一小块（在已有 jQuery 项目里嵌一个 Vue 组件），也可以全家桶（Vue + Vue Router + Pinia + Vite + Vitest）做整站。
 
 ## 为什么重要
 
 - **单文件组件（.vue）** 把 `<template>` / `<script>` / `<style>` 装进一个文件，新人一眼能看懂这个组件的全部
-- **中文文档第一梯队**——尤雨溪是华人，官方中文文档质量极高，零基础友好度甩 [[react]] 几条街
-- **Vue 3 Composition API** 让逻辑复用比 React Hook 还干净——没有 hook rule、没有闭包陷阱
-- **Nuxt + Vue** 是 React + Next 的强力替代，国内很多团队选 Vue 不只是因为情怀
+- **中文文档第一梯队**——尤雨溪是华人，官方中文文档质量极高，零基础也能顺着教程做完
+- **逻辑复用更自由**：相关状态和副作用可以收进一个函数（Composition API），不必被「数据一块、方法一块」的旧写法拆散；对比 [[react]] 的 Hook，少一些调用顺序硬规则
+- **Nuxt + Vue** 能做整站服务端渲染，国内很多团队选 Vue 不只是因为情怀
 
 ## 核心要点
 
@@ -110,7 +110,7 @@ export function useMouse() {
 
 2. **v-if vs v-show 选错性能差**：`v-if` 是真删 DOM，`v-show` 只切 `display: none`。频繁切换用 `v-show`（不重渲染），偶尔切换或初始可能不显示用 `v-if`（省内存）。新人见啥写啥，列表里大量 `v-if` 切换会卡。
 
-3. **直接改 reactive 对象的嵌套属性可能不触发更新**：Vue 3 的 `reactive()` 用 Proxy，**深层属性也会响应**——但有个例外，如果你用 `obj = newObj` 直接替换整个对象，原 Proxy 就丢了。改用 `Object.assign(obj, newObj)` 或单独改字段。
+3. **整对象替换会丢掉 Proxy**：Vue 3 的 `reactive()` 用 Proxy，深层属性改动也会触发更新；但若写 `obj = newObj` 把变量指到新对象，原 Proxy 就丢了，后续改动不再驱动界面。改用 `Object.assign(obj, newObj)` 或单独改字段。
 
 4. **Options API 和 Composition API 混用容易乱**：Vue 3 兼容 Vue 2 写法，所以一个组件里既能 `data()` 又能 `<script setup>`，但**不要混**——this 指向、生命周期顺序、状态可见性都不一样。新项目直接用 Composition API + `<script setup>`，老项目迁移时整组件一次性切。
 

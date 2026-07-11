@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "换灯泡类比能懂「同机多版本」，但未贯穿到 PATH 切换机制"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 只有命令清单，缺少像模板那样的「逐部分解释」步骤（装完发生了什么、nvm use 读了哪个文件）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "建议案例 1 拆成：install 脚本改了什么 → source nvm.sh → PATH 前置 → node -v 验证"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 nvm-sh/nvm 官方仓库正确；v0.40.4 安装脚本版本与正文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Tim Caswell / Creationix 起源、迁至 nvm-sh、fnm/volta 时间线与公开资料大体吻合"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「81k star」会随时间漂移，属快照表述可接受，非硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "install / use / exec / .nvmrc 命令可跟做，概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：brew 不支持、npm prefix 破坏、Windows 需 nvm-windows、cd 不自动 use——很有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界量化清楚（WSL vs 原生 Windows、fnm/volta 启动开销、容器 FROM node）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "换灯泡类比能懂「同机多版本」，但未贯穿到 PATH 切换机制",
+        "案例 1–3 只有命令清单，缺少像模板那样的「逐部分解释」步骤（装完发生了什么、nvm use 读了哪个文件）",
+        "建议案例 1 拆成：install 脚本改了什么 → source nvm.sh → PATH 前置 → node -v 验证"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源指向 nvm-sh/nvm 官方仓库正确；v0.40.4 安装脚本版本与正文一致",
+        "Tim Caswell / Creationix 起源、迁至 nvm-sh、fnm/volta 时间线与公开资料大体吻合",
+        "「81k star」会随时间漂移，属快照表述可接受，非硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "install / use / exec / .nvmrc 命令可跟做，概念正确",
+        "踩坑具体：brew 不支持、npm prefix 破坏、Windows 需 nvm-windows、cd 不自动 use——很有用",
+        "适用边界量化清楚（WSL vs 原生 Windows、fnm/volta 启动开销、容器 FROM node）"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 已有 abab 四步轨迹与拒绝规则，可读；若再补一格空白后停的示意会更稳。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 三步 + 伪代码已够跟做，编码串可再给一个极短 ⟨M⟩ 样例。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Sipser 风格与原文侧重已有半句区分，事实边界清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "EDVAC 表述已改为「一脉相承」，无过度致敬。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 拒绝/空白转移与逐步轨迹齐全，可跟做。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 U 模拟伪代码概念正确；lookup 失败时可再点一句进 reject。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段已点明可判定性 vs 复杂度，边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 已有 abab 四步轨迹与拒绝规则，可读；若再补一格空白后停的示意会更稳。",
+        "案例 2 三步 + 伪代码已够跟做，编码串可再给一个极短 ⟨M⟩ 样例。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Sipser 风格与原文侧重已有半句区分，事实边界清楚。",
+        "EDVAC 表述已改为「一脉相承」，无过度致敬。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 拒绝/空白转移与逐步轨迹齐全，可跟做。",
+        "案例 2 U 模拟伪代码概念正确；lookup 失败时可再点一句进 reject。",
+        "适用段已点明可判定性 vs 复杂度，边界清楚。"
+      ]
+    }
+  ]
+}

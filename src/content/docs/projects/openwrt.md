@@ -8,9 +8,9 @@ title: OpenWrt — 把家用路由器变成 Linux 服务器
 
 ## 是什么
 
-想象你买了一台品牌路由器。厂商给你装了一个"精装修"系统——能用，但不能改墙、不能加房间、不能换水管。OpenWrt 就像把精装修全拆了，换成"毛坯房 + 完整工具箱"：你可以自己隔房间（VLAN）、装新水管（VPN 隧道）、加监控（流量统计）、甚至开个小卖部（跑 Docker 容器）。
+想象你买了一台品牌路由器。厂商给你装了一个"精装修"系统——能用，但不能改墙、不能加房间、不能换水管。OpenWrt 就像把精装修全拆了，换成"毛坯房 + 完整工具箱"：你可以自己隔房间（VLAN）、装新水管（VPN 隧道）、加监控（流量统计）；在闪存/内存足够或外挂存储的机型上，还可以再跑容器做小服务。
 
-技术定义：OpenWrt 是一个专为路由器、网关等小型网络设备设计的 Linux 发行版。它把一台一百多块钱的家用路由器变成了一台功能完整的 Linux 服务器，自带包管理器（opkg）、Web 管理界面（LuCI）和统一配置系统（UCI）。如果说 [[buildroot]] 和 [[yocto-poky]] 是"从零搭积木造系统"，OpenWrt 就是"别人已经帮你搭好了一套完整的网络积木城堡，你拎包入住就行"。
+技术定义：OpenWrt 是一个专为路由器、网关等小型网络设备设计的 Linux 发行版。它把一台普通家用路由器变成可 SSH、可装包的小型 Linux 网关，自带包管理器（opkg）、Web 管理界面（LuCI）和统一配置系统（UCI）。如果说 [[buildroot]] 和 [[yocto-poky]] 是"从零搭积木造系统"，OpenWrt 就是"别人已经帮你搭好了一套完整的网络积木城堡，你拎包入住就行"。
 
 项目规模：诞生于 2004 年，GitHub 约 23k stars，主仓库超过 6 万个 commit，支持 1500+ 设备（从几十块的随身 WiFi 到企业级交换机），软件包仓库有 5000+ 个包。主要语言是 C（内核/工具链）、Shell（构建脚本）、Lua（LuCI 界面）。
 
@@ -18,7 +18,7 @@ title: OpenWrt — 把家用路由器变成 Linux 服务器
 
 不理解 OpenWrt，下面这些事就解释不了：
 
-- 为什么几十块钱的路由器能跑广告过滤、VPN、Docker，功能超过几千块的商业网关
+- 为什么几十块钱的路由器能跑广告过滤、VPN，功能超过很多商业网关；存储够的机型还能再跑容器化小服务
 - 为什么嵌入式 Linux 开发者把它当“网络栈实验场”——iptables/nftables、VLAN、桥接、路由策略，全都能在真实硬件上动手练
 - 为什么很多中小运营商和 IoT 公司直接拿它做商用 CPE 固件，而不自己从头写
 - 为什么理解了 OpenWrt 的构建系统，再去看 [[buildroot]] 和 [[yocto-poky]] 就不会懵——它们共享交叉编译、feeds、Kconfig 这些核心概念
@@ -28,18 +28,17 @@ title: OpenWrt — 把家用路由器变成 Linux 服务器
 
 OpenWrt 的架构从下往上分成四层：
 
-**工具链层**：交叉编译器（gcc + musl libc），把你的 x86 电脑变成"路由器芯片的翻译官"，让代码能在 MIPS/ARM 等嵌入式 CPU 上运行。这和 [[buildroot]] 用的交叉编译思路完全相同。
+**工具链层**：交叉编译器（在电脑上编译出能在路由器 CPU 上跑的程序）用 gcc + musl libc（一种更省空间的 C 标准库）。这和 [[buildroot]] 的交叉编译思路相同。
 
-**内核层**：定制的 Linux 内核，针对路由器场景打了大量补丁——比如 NAND flash 磨损均衡、各种无线芯片驱动支持、网络加速（hardware offloading）。内核版本跟随上游但不追最新，稳定优先。
+**内核层**：定制的 Linux 内核，针对路由器打补丁——比如闪存磨损均衡、无线芯片驱动、硬件网络加速（把部分转发从 CPU 卸到网卡芯片）。版本跟上游但不追最新，稳定优先。
 
-**用户空间层**：BusyBox 替代 GNU coreutils（省空间），procd 替代 systemd（更轻量），UCI（Unified Configuration Interface）统一所有服务的配置格式——学会一套语法就能配所有东西。LuCI 是基于 Lua 的 Web 管理界面，本质上是“UCI 配置文件的图形化编辑器”——网页上勾选的每个选项，最终都变成 `/etc/config/` 下某个文件里的一行文本。
+**用户空间层**：BusyBox 用一个小二进制代替一堆常用命令；procd 是更轻量的进程管家（类似精简版 systemd）；UCI（Unified Configuration Interface，统一配置接口）让网络/防火墙/无线都用同一种文本格式。LuCI 是网页面板：你在网页上勾的选项，最后都写成 `/etc/config/` 里的一行。
 
-**包管理层**：opkg 是类似 apt 但极度精简的包管理器。典型路由器只有 16MB 闪存，装完内核后可能只剩 3-5MB，所以每个包都按 KB 级精打细算。这是 OpenWrt 和 [[buildroot]]（不支持运行时装包）的关键区别。
+**包管理层**：opkg 像精简版 apt。典型家用机只有约 16MB 闪存，装完系统可能只剩 3–5MB，所以包按 KB 精打细算。这是它和 [[buildroot]]（固件一次定型、运行时难装包）的关键区别。
 
-构建流程的核心是 `make menuconfig` → 选目标平台和软件包 → `make -j$(nproc)`。feeds 机制让社区包（LuCI、常用工具）独立于主仓库维护，用 `./scripts/feeds update -a` 拉取。
+构建流程：`make menuconfig` 选设备和软件包 → `make -j$(nproc)` 编译。feeds（软件包订阅源）让 LuCI 等社区包独立维护，用 `./scripts/feeds update -a` 拉取。
 
-网络子系统是 OpenWrt 的灵魂：netifd 守护进程统一管理所有网络接口，配合 `/etc/config/network`、`/etc/config/firewall`、`/etc/config/wireless` 三个 UCI 文件描述完整的网络拓扑。设备适配的核心工作是写 DTS（Device Tree Source），告诉内核“这块板子的 LED 接哪个 GPIO、Flash 用什么总线、以太网 PHY 地址是多少”。
-
+网络子系统靠 netifd（网络接口守护进程）读 `/etc/config/network`、`firewall`、`wireless` 三份 UCI。适配新板子要写 DTS（Device Tree Source，设备树：用文本告诉内核 LED 接哪个脚、Flash 走哪条总线）。
 ## 实践案例
 
 ### 案例 1：从零构建一个 OpenWrt 固件

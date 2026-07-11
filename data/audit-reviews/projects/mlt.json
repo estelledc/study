@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工厂流水线类比贴合 Producer/Filter/Consumer；melt 案例可跟。案例 4 Python 偏短，缺逐部分解释，但不挡主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 mltframework/mlt、Media Lovin' Toolkit、Kdenlive/Shotcut 引擎、2004 起源与 Dan Dennedy 主线正确；「开源 NLE 事实标准引擎」略满但教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "melt / C API / mlt7 Python 概念正确可跟；编解码靠插件、Profile、Filter 顺序、pull 模型踩坑具体；相对 FFmpeg/GPU/直播边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工厂流水线类比贴合 Producer/Filter/Consumer；melt 案例可跟。案例 4 Python 偏短，缺逐部分解释，但不挡主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 mltframework/mlt、Media Lovin' Toolkit、Kdenlive/Shotcut 引擎、2004 起源与 Dan Dennedy 主线正确；「开源 NLE 事实标准引擎」略满但教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "melt / C API / mlt7 Python 概念正确可跟；编解码靠插件、Profile、Filter 顺序、pull 模型踩坑具体；相对 FFmpeg/GPU/直播边界清楚。"
+      ]
+    }
+  ]
+}

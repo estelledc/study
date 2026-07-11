@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 是 ASCII 流程而非可运行代码，零基础读者可能想看到一句「这三步分别对应 create / 写 / watch」的对照"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「fsync」「ISR」在踩坑与为什么重要里出现时仍偏术语，可各补半句日常说法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "发现与同步已合并为一条编号，虽正文区分了两相，若再拆成独立编号会更贴近论文三阶段表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「领导选举（oracle）」写在三阶段列表里仍可能被误读为协议内阶段；可把选举单独成段、三阶段只列发现/同步/广播"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 用 `not in leader_log` 做成员判断，教学可接受，但可注明真实实现按 zxid/epoch 截断而非 Python 列表包含"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景已有 KB/GB 量级，跨地域可再点一句「同城机房多数派 RTT」作对照"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 是 ASCII 流程而非可运行代码，零基础读者可能想看到一句「这三步分别对应 create / 写 / watch」的对照",
+        "「fsync」「ISR」在踩坑与为什么重要里出现时仍偏术语，可各补半句日常说法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "发现与同步已合并为一条编号，虽正文区分了两相，若再拆成独立编号会更贴近论文三阶段表述",
+        "「领导选举（oracle）」写在三阶段列表里仍可能被误读为协议内阶段；可把选举单独成段、三阶段只列发现/同步/广播"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 用 `not in leader_log` 做成员判断，教学可接受，但可注明真实实现按 zxid/epoch 截断而非 Python 列表包含",
+        "适用场景已有 KB/GB 量级，跨地域可再点一句「同城机房多数派 RTT」作对照"
+      ]
+    }
+  ]
+}

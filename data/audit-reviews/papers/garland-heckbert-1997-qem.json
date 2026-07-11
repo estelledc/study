@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 pp^T / 齐次坐标对零基础仍偏密，但债务账本类比已足够跟读，可不改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「质量/速度高一个量级」属教学概括，未歪曲主结论；引用与 1997/1998/1999 时间线准确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "QSlim 命令可跟做；法线翻转、属性扩展、t 阈值等踩坑具体可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点里 pp^T / 齐次坐标对零基础仍偏密，但债务账本类比已足够跟读，可不改。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「质量/速度高一个量级」属教学概括，未歪曲主结论；引用与 1997/1998/1999 时间线准确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "QSlim 命令可跟做；法线翻转、属性扩展、t 阈值等踩坑具体可操作。"
+      ]
+    }
+  ]
+}

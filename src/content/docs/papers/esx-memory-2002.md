@@ -45,7 +45,7 @@ ESX 的四个魔术：
 
 ESX 的办法：发给每个学生一个气球（balloon driver）。管理员对气球说"膨胀到 5 件"，气球就在学生抽屉里申请 5 件衣服的位置；**学生自己挑 5 件最不重要的塞进去**（因为 guest OS 知道哪些是文件 cache、哪些是脏页）。管理员把气球收走，里面那 5 件位置就还给物理内存了。
 
-这一步省了 hypervisor 盲选的代价——guest 自己挑的命中率高 10 倍以上。
+这一步省了 hypervisor 盲选的代价——guest 自己挑，通常比 hypervisor 瞎猜更贴近真正可丢的页。
 
 ### 案例 2：page sharing 的扫描节奏
 
@@ -71,16 +71,14 @@ VM A 申请了 4G、用了 4G；VM B 申请了 4G、只用 1G。
 
 这个机制让"share 份额" 不再奖励囤积——这是云厂商超分计费的雏形。
 
-### 案例 4：四招的回收顺序
+### 案例 4：谁被收 vs 怎么收
 
-ESX 在内存吃紧时按以下顺序逐步加压（论文里叫 reclamation hierarchy）：
+内存吃紧时，ESX 其实分两层决策：
 
-1. **先 page sharing**（背景跑，几乎零成本）
-2. **再 ballooning**（10ms 级，guest 自选受害页）
-3. **再 idle tax**（按比例重新切分）
-4. **最后 hypervisor swap**（毫秒级慢 swap，但保证不崩）
+1. **先定目标（idle tax + shares）**：按「谁闲着囤内存」调低有效份额，算出每台 VM 该留多少——tax 本身不搬页，只改分配目标。
+2. **再执行回收**：优先靠背景 **page sharing** 省重复页；不够就 **ballooning** 让 guest 交页；balloon 不可用或不够，才落到 **hypervisor swap**（慢，但保证不崩）。
 
-前三步全失败才走第四步——所以"超分但不卡顿"的关键是前三步成功率够高。
+所以"超分但不卡顿"的关键是：多数压力在 sharing + ballooning 就消化掉，swap 只是兜底。
 
 ## 踩过的坑
 

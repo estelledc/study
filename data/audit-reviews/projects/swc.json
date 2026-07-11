@@ -1,0 +1,131 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "高压锅类比生动，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 1–2 步堆叠「trait dispatch / VisitMut / zero-cost abstraction / hashmap lookup」，零基础会卡住；需各加一句日常说法（编译期定好走哪扇门 vs 运行时翻目录找）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "napi-rs 首次出现可补「给 Node 用的原生扩展桥」半句"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Next.js 在 12 就把默认编译器切到 SWC（2021），「为什么重要」写成 13+ 偏晚；历史段写 12 正确，前后应对齐"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「单核比 esbuild 快 10-20%」是早期宣传口径，不宜写成稳定事实；应改成「同代竞速、场景相关」并加年份限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub swc-project/swc 正确；「重写 Babel 核心能力」作教学概括可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 CLI/.swcrc 可跟；案例 3 写「实际逻辑略」导致不可跟做——应补最小可理解的 console.log 判定伪代码，或改成完整教学片段"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑很强：无类型检查、decorator 语义差、plugin ABI、minify 体积"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用有 500+ 文件量化；不适用边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "高压锅类比生动，保留",
+        "核心要点第 1–2 步堆叠「trait dispatch / VisitMut / zero-cost abstraction / hashmap lookup」，零基础会卡住；需各加一句日常说法（编译期定好走哪扇门 vs 运行时翻目录找）",
+        "napi-rs 首次出现可补「给 Node 用的原生扩展桥」半句"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Next.js 在 12 就把默认编译器切到 SWC（2021），「为什么重要」写成 13+ 偏晚；历史段写 12 正确，前后应对齐",
+        "「单核比 esbuild 快 10-20%」是早期宣传口径，不宜写成稳定事实；应改成「同代竞速、场景相关」并加年份限定",
+        "来源 GitHub swc-project/swc 正确；「重写 Babel 核心能力」作教学概括可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–2 CLI/.swcrc 可跟；案例 3 写「实际逻辑略」导致不可跟做——应补最小可理解的 console.log 判定伪代码，或改成完整教学片段",
+        "踩坑很强：无类型检查、decorator 语义差、plugin ABI、minify 体积",
+        "适用有 500+ 文件量化；不适用边界清楚"
+      ]
+    }
+  ],
+  "slug": "swc",
+  "area": "projects",
+  "status": "refined",
+  "lines": 182,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 182,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

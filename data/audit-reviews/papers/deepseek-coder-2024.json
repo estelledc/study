@@ -1,0 +1,108 @@
+{
+  "slug": "deepseek-coder-2024",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3/4 没有代码块和逐部分解释，零基础跟做感弱；应压成 3 个带解释的案例。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 反向链接 占位段，结构不完整。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "HumanEval 79.3% / base ~56% / 87 语言 / 2T / FIM 0.5 / 语料 87+10+3 与论文一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「首次让开源模型同时超过 CodeLlama 与 GPT-3.5/Codex」宜加「在作者复现设定 / 多数基准上」限定，避免绝对化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺一个可跟做的推理/补全调用示意（哪怕伪代码）；案例 3 纯类比、案例 4 纯叙述，工程师跟做价值低。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与 16K/RAG 边界有用；FIM 比例甜点说得对。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3/4 没有代码块和逐部分解释，零基础跟做感弱；应压成 3 个带解释的案例。",
+        "缺 ## 反向链接 占位段，结构不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "HumanEval 79.3% / base ~56% / 87 语言 / 2T / FIM 0.5 / 语料 87+10+3 与论文一致。",
+        "「首次让开源模型同时超过 CodeLlama 与 GPT-3.5/Codex」宜加「在作者复现设定 / 多数基准上」限定，避免绝对化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺一个可跟做的推理/补全调用示意（哪怕伪代码）；案例 3 纯类比、案例 4 纯叙述，工程师跟做价值低。",
+        "踩坑与 16K/RAG 边界有用；FIM 比例甜点说得对。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

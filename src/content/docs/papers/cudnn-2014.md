@@ -77,12 +77,12 @@ torch.backends.cudnn.benchmark = True
 
 ### 案例 3：implicit GEMM 省了多少显存
 
-假设 batch=32、输入 224×224×3、kernel=7×7、output channels=64：
+假设 batch=32、输入 224×224×3、kernel=7×7（先按 stride=1、无 padding 估数量级）：
 
-- im2col 中间矩阵大小约 `32 × (224×224) × (7×7×3) ≈ 7.4 亿元素 ≈ 3 GB`（FP32）
-- implicit GEMM **完全不生成这个矩阵**，只在 tile 里临时拼
+- im2col 中间矩阵约 `32 × (224×224) × (7×7×3) ≈ 2.36 亿元素`；按 FP32（每元素 4 字节）约 `2.36e8 × 4 ≈ 0.94 GB`
+- implicit GEMM **不物化这个大矩阵**，只在 tile 里临时拼，显存压力小一个数量级
 
-这就是为什么 cuDNN 一出来就把卷积训练能跑的 batch size 翻好几倍。
+这就是为什么 cuDNN 一出来就把卷积训练能跑的 batch size 明显抬高。
 
 ## 踩过的坑
 

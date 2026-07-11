@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "SCC / fast quorum 公式对零基础偏陡，已有环与死锁类比，可再补一句「SCC=互相指着对方的一撮命令，要一起按序号解开」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑第 1 条：按文中公式 F+⌊(F+1)/2⌋，N=5/F=2 时 fast quorum=3 而非 4；论文亦写 3/5 副本 fast path 为 2 与 3。算术与原文均错。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一个证明去 leader 化共识可工程化」过满：Mencius（NSDI 2008）等更早；宜改为「早期把去 leader 共识做到可实现且强调 WAN 延迟的代表工作」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例是延迟对比与依赖图示意，概念可跟读；若补伪代码 commit 流程会更工程向，非必须。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "SCC / fast quorum 公式对零基础偏陡，已有环与死锁类比，可再补一句「SCC=互相指着对方的一撮命令，要一起按序号解开」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑第 1 条：按文中公式 F+⌊(F+1)/2⌋，N=5/F=2 时 fast quorum=3 而非 4；论文亦写 3/5 副本 fast path 为 2 与 3。算术与原文均错。",
+        "「第一个证明去 leader 化共识可工程化」过满：Mencius（NSDI 2008）等更早；宜改为「早期把去 leader 共识做到可实现且强调 WAN 延迟的代表工作」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例是延迟对比与依赖图示意，概念可跟读；若补伪代码 commit 流程会更工程向，非必须。"
+      ]
+    }
+  ]
+}

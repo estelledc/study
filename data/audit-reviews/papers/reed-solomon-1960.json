@@ -1,0 +1,148 @@
+{
+  "slug": "reed-solomon-1960",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "朋友报数/多项式类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "符号、突发错误、纠删有白话；学到什么里 syndrome/Chien/Forney 可再各加半句日常说法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 是「丢掉已知位置」的擦除恢复，建议点明与「位置未知的错误纠正」差别，避免和后面 t=⌊(n-k)/2⌋ 打架"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里 Bitcoin Cash CashAddr 实际用 Bech32 系 BCH 校验，不是经典 RS；应改口或删掉 RS 表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑写 CD（1986）与历史小故事 1982 CIRC 不一致；消费级 CD/CIRC 落地宜统一为 1982 前后"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「丢掉 3 个点仍恢复」是擦除（erasure）能力 n−k，不是错误纠正 t=⌊(n−k)/2⌋；需标明模式以免与核心要点公式冲突"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Reed & Solomon J. SIAM 1960、RS(255,223)、QR L/M/Q/H 比例、MDS/Singleton 表述整体正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "toy RS(7,4) 与 QR/存储案例概念可跟读；案例 1 宜标明 erasure vs error"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑：理论→BM 解码→硬件、突发 vs 均匀错、有限域符号运算都具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：突发/短块/确定性 vs LDPC/Polar/Fountain/Hamming"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "朋友报数/多项式类比贯穿全文，零基础直觉强",
+        "符号、突发错误、纠删有白话；学到什么里 syndrome/Chien/Forney 可再各加半句日常说法",
+        "案例 1 是「丢掉已知位置」的擦除恢复，建议点明与「位置未知的错误纠正」差别，避免和后面 t=⌊(n-k)/2⌋ 打架"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联里 Bitcoin Cash CashAddr 实际用 Bech32 系 BCH 校验，不是经典 RS；应改口或删掉 RS 表述",
+        "踩坑写 CD（1986）与历史小故事 1982 CIRC 不一致；消费级 CD/CIRC 落地宜统一为 1982 前后",
+        "案例 1「丢掉 3 个点仍恢复」是擦除（erasure）能力 n−k，不是错误纠正 t=⌊(n−k)/2⌋；需标明模式以免与核心要点公式冲突",
+        "来源 Reed & Solomon J. SIAM 1960、RS(255,223)、QR L/M/Q/H 比例、MDS/Singleton 表述整体正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "toy RS(7,4) 与 QR/存储案例概念可跟读；案例 1 宜标明 erasure vs error",
+        "踩坑：理论→BM 解码→硬件、突发 vs 均匀错、有限域符号运算都具体可操作",
+        "适用边界清楚：突发/短块/确定性 vs LDPC/Polar/Fountain/Hamming"
+      ]
+    }
+  ],
+  "aggregate": {
+    "action": "refine",
+    "average": 4.22,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "pass_count": 2
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "标明案例1为擦除模式；统一CD/CIRC约1982；CashAddr改为BCH家族；解码四步加白话",
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 学到什么",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true
+}

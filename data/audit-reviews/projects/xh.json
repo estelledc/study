@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–4 多数只有命令+一句旁白，缺少模板要求的「逐部分解释」；至少给案例 1/2 拆成 3 步说明每个参数在干什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 `-p Hb` 和 `Authorization:\"Bearer $TOKEN\"` 对零基础仍突兀，建议先说「只打印请求头和响应体」再给命令"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 3 条直接甩 reqwest/tokio/rustls，可补一句「Rust 里发 HTTP / 异步 / 加密的常用库」再进细节"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「被多个 Rust 工具链文档（reqwest、actix-web 调试章节）当默认 HTTP CLI 推荐」偏软、难核验，宜改成可核对表述或删掉具体项目名"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文多处写「与 HTTPie 完全一致」，但延伸阅读已链到兼容性差异表；建议在核心要点点明「主流 DSL 兼容、插件/部分高级特性除外」以免过度绝对化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "冷启动 ~5ms / HTTPie ~100ms 依赖社区 benchmark，可在数字旁标明来源（已有 issue #45 链接，正文也可点一句）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 Authorization header 引号位置在 shell 下易踩坑，建议给出一整段可复制的引号写法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 for 循环对比是教学估算，可注明数量级示意而非本机实测"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景已有 10-20x 量化很好；可补一句交互式单次请求体感差异通常不明显"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–4 多数只有命令+一句旁白，缺少模板要求的「逐部分解释」；至少给案例 1/2 拆成 3 步说明每个参数在干什么",
+        "案例 3 的 `-p Hb` 和 `Authorization:\"Bearer $TOKEN\"` 对零基础仍突兀，建议先说「只打印请求头和响应体」再给命令",
+        "核心要点第 3 条直接甩 reqwest/tokio/rustls，可补一句「Rust 里发 HTTP / 异步 / 加密的常用库」再进细节"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「被多个 Rust 工具链文档（reqwest、actix-web 调试章节）当默认 HTTP CLI 推荐」偏软、难核验，宜改成可核对表述或删掉具体项目名",
+        "正文多处写「与 HTTPie 完全一致」，但延伸阅读已链到兼容性差异表；建议在核心要点点明「主流 DSL 兼容、插件/部分高级特性除外」以免过度绝对化",
+        "冷启动 ~5ms / HTTPie ~100ms 依赖社区 benchmark，可在数字旁标明来源（已有 issue #45 链接，正文也可点一句）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 Authorization header 引号位置在 shell 下易踩坑，建议给出一整段可复制的引号写法",
+        "案例 2 的 for 循环对比是教学估算，可注明数量级示意而非本机实测",
+        "适用场景已有 10-20x 量化很好；可补一句交互式单次请求体感差异通常不明显"
+      ]
+    }
+  ]
+}

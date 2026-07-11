@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "X-of-Y-of-N 已有例子，零基础可跟；MessageLib「追加式」可再强调一次「只加不删」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「USDC 用 OFT 保持同总供应量」不准确：原生 USDC 跨链主要走 Circle CCTP，不是 LayerZero OFT；应改成 OFT 代币/应用示例或删掉 USDC。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「DVN 与 Executor 谁都不能身兼」过绝对：协议角色分离，但同一主体仍可同时跑两种服务；应改为推荐分离而非禁止。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Wormhole「一条链验证」过简，宜改为 Guardian 多签/验证者集合。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联里 [[rollup]] 链到的是 JS 打包器笔记，不是区块链 Rollup，应删除或换成真实相关条目。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「Uniswap 用 OFT 做流动性同步」依据不足，建议改成已确认的 OFT/Stargate 类应用表述。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "X-of-Y-of-N 已有例子，零基础可跟；MessageLib「追加式」可再强调一次「只加不删」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「USDC 用 OFT 保持同总供应量」不准确：原生 USDC 跨链主要走 Circle CCTP，不是 LayerZero OFT；应改成 OFT 代币/应用示例或删掉 USDC。",
+        "「DVN 与 Executor 谁都不能身兼」过绝对：协议角色分离，但同一主体仍可同时跑两种服务；应改为推荐分离而非禁止。",
+        "Wormhole「一条链验证」过简，宜改为 Guardian 多签/验证者集合。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联里 [[rollup]] 链到的是 JS 打包器笔记，不是区块链 Rollup，应删除或换成真实相关条目。",
+        "「Uniswap 用 OFT 做流动性同步」依据不足，建议改成已确认的 OFT/Stargate 类应用表述。"
+      ]
+    }
+  ]
+}

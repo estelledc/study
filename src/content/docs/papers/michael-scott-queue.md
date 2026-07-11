@@ -67,14 +67,15 @@ class LockedQueue<T> {
 ```ts
 function enqueue(q, node) {
   node.next = null
+  let tail
   while (true) {
-    const tail = q.tail
+    tail = q.tail
     const next = tail.next
     if (tail !== q.tail) continue
     if (next === null && CAS(tail, "next", null, node)) break
-    if (next !== null) CAS(q, "tail", tail, next)
+    if (next !== null) CAS(q, "tail", tail, next) // helping：顺手推 Tail
   }
-  CAS(q, "tail", q.tail, node)
+  CAS(q, "tail", tail, node) // 必须用成功接链时的快照 tail，不能读 q.tail
 }
 ```
 
@@ -83,6 +84,7 @@ function enqueue(q, node) {
 - `tail` 和 `next` 是一次快照，后面要确认 `tail` 没变
 - `CAS(tail, "next", null, node)` 是真正的线性化点：新节点被接入队尾
 - 如果发现 `Tail` 落后，线程不会等别人，而是顺手帮队列把 `Tail` 往后推
+- 循环外最后一次摆 Tail，expected 必须是接链成功时的那个 `tail`；若写成 `q.tail`，可能把别人已经推上去的新尾打回去
 
 ### 案例 3：出队为什么要先读 value
 
@@ -111,10 +113,10 @@ function dequeue(q) {
 
 ## 踩过的坑
 
-1. **把 lock-free 理解成每个线程都能马上完成**：MS Queue 保证系统整体前进，不保证单个倒霉线程不重试。
+1. **把 lock-free 理解成每个线程都能马上完成**：MS Queue 保证系统整体前进，不保证单个倒霉线程不重试；别人可能一直在 helping，你自己仍在空转。
 2. **忘记 dummy node 的角色**：`Head` 指向的是占位节点，不是当前队首值，直接读 `Head.value` 会错。
 3. **以为 CAS 成功就不用管 ABA**：同一个地址可能被释放又复用，论文用 pointer + count 降低误判概率。
-4. **忽略内存回收**：节点能不能释放不是小细节，尾指针落后或本地变量还拿着指针都会导致悬空引用。
+4. **忽略内存回收**：节点能不能释放不是小细节——出队 CAS 成功后旧 dummy 可能被回收，若 value 读在 CAS 之后就会悬空；Tail 落后时本地还握着旧指针同样危险。
 
 ## 适用 vs 不适用场景
 

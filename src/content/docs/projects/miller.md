@@ -8,7 +8,7 @@ title: Miller (mlr) — 懂 CSV/JSON 表头的 awk
 
 ## 是什么
 
-Miller（命令名 `mlr`）是 **John Kerl 2015 年用 Go 写的命令行数据处理工具**——把 awk / sed / cut / grep / join / sort 的能力，搬到 CSV / TSV / JSON / JSON-Lines 这些"有表头有结构"的数据上。
+Miller（命令名 `mlr`）是 **John Kerl 2015 年起做的命令行数据处理工具**（早期用 C，2022 年 Miller 6 起整库改写成 Go）——把 awk / sed / cut / grep / join / sort 的能力，搬到 CSV / TSV / JSON / JSON-Lines 这些"有表头有结构"的数据上。
 
 日常类比：
 
@@ -92,15 +92,15 @@ mlr --csv put '$total = $price * $qty; $tax = $total * 0.13' orders.csv
 
 5. **嵌套 JSON 默认被压平**——`{"user":{"id":1}}` 的 `user.id` 在 `--ijson` 下默认变成名为 `user.id` 的扁平字段。要保留嵌套结构得加 `--no-auto-flatten`，否则 `mlr --ijson --ojson cat` 会"破坏"原始 JSON 形状。
 
-## 历史
+## 历史小故事（可跳过）
 
-- **2015**：John Kerl 在金融数据处理中受够 awk 写不动 CSV，用 Go 1.5 写了 mlr 第一版；当时 Go 模块系统还没成熟，单文件 main 包
+- **2015**：John Kerl 在金融数据处理中受够 awk 写不动 CSV，用 **C** 写出 mlr 第一版
 - **2018 v5**：DSL 引入 then 链式 verb、map / array 类型；从"awk 替代"升级成"小型 ETL 语言"
-- **2020 v6**：核心代码大重构，加入 JSON Lines、Markdown 表格、PPRINT 对齐输出；性能比 v5 快 2-3x
+- **2022-01 v6**：整库从 C **重写为 Go**，加入更好的 Windows 支持、JSON Lines / Markdown / PPRINT；此后只维护 Go 版
 - **2023+**：进入维护期，按周发布 patch；社区贡献者活跃但核心仍是 Kerl 一个人
 - **2024–2025**：Parquet / Arrow 实验性输入支持加入，但定位仍是"轻量结构化数据 CLI"，重 OLAP 场景明确推用户上 [[duckdb-2019]]
 
-mlr 没有 [[ripgrep]] 那种"替换一类核心命令"的爆点，但在数据工程师 / SRE / 数据科学家圈子里口碑非常稳——9k+ star 大部分来自"用过就回不去"的私下推荐。一个特别有意思的现象：mlr 用户经常用它来生成 jq / awk 脚本（先用 mlr 探索结构、再写更紧的脚本进 cron），它本身就是个"数据探索 → 固化脚本"的中间台。
+mlr 没有 [[ripgrep]] 那种"替换一类核心命令"的爆点，但在数据工程师 / SRE / 数据科学家圈子里口碑非常稳——9k+ star 大多来自"用过就回不去"的私下推荐。用户常先用 mlr 探索结构，再把结果固化成 jq / awk 脚本进 cron。
 
 ## 适用 vs 不适用场景
 

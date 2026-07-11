@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "方向盘/酱料台类比贴合；fetch 对比与三案例逐步解释对初级读者友好。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "lazy 微任务延迟以便 .json() 设 Accept 的说法大体成立；称返回「KyInstance」术语不准（应为 ResponsePromise，KyInstance 是 create 产物），但不致歪曲主线。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "retry 幂等方法、afterResponse 必须 return、Node 16、无上传进度等踩坑可直接照做；适用/不适用边界清晰。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "方向盘/酱料台类比贴合；fetch 对比与三案例逐步解释对初级读者友好。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "lazy 微任务延迟以便 .json() 设 Accept 的说法大体成立；称返回「KyInstance」术语不准（应为 ResponsePromise，KyInstance 是 create 产物），但不致歪曲主线。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "retry 幂等方法、afterResponse 必须 return、Node 16、无上传进度等踩坑可直接照做；适用/不适用边界清晰。"
+      ]
+    }
+  ]
+}

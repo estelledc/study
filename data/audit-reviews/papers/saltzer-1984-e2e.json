@@ -1,0 +1,134 @@
+{
+  "slug": "saltzer-1984-e2e",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮局寄合同类比贴合「底层再小心也不能替代端核对」，贯穿全文，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "FEC / ETag / dedup_key 多数有语境；FEC 首次出现可补「前向纠错」四字桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "四案例（S3 SHA、TLS≠E2EE、MQ 幂等、QUIC）均有「按论点」逐步解释，零基础能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 Saltzer/Reed/Clark、ACM TOCS 1984、Vol.2 No.4（1984.11）正确；1981 ICDCS 先报告亦正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「6 页」不准确：TOCS 版本为 pp.277–288（约 12 页）；会议版更短。请改为「约 12 页（TOCS）」或注明版本"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "思想实验用 SHA 作教学替换原文 checksum 可接受；五类功能与论文一致，未歪曲「正确性归端、性能可由底层补强」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例为架构级跟做（客户端双端哈希、E2EE、dedup_key+upsert），概念正确可落地"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖教条误读、正确性/性能混淆、链路加密≠E2EE、缓存张力、「端」相对功能——具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 VoIP/高丢包/对端不可信边界；可再量化一句「高丢包链路端到端重传代价相对链路层重传的数量级」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "邮局寄合同类比贴合「底层再小心也不能替代端核对」，贯穿全文，保留",
+        "FEC / ETag / dedup_key 多数有语境；FEC 首次出现可补「前向纠错」四字桥接",
+        "四案例（S3 SHA、TLS≠E2EE、MQ 幂等、QUIC）均有「按论点」逐步解释，零基础能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "作者 Saltzer/Reed/Clark、ACM TOCS 1984、Vol.2 No.4（1984.11）正确；1981 ICDCS 先报告亦正确",
+        "「6 页」不准确：TOCS 版本为 pp.277–288（约 12 页）；会议版更短。请改为「约 12 页（TOCS）」或注明版本",
+        "思想实验用 SHA 作教学替换原文 checksum 可接受；五类功能与论文一致，未歪曲「正确性归端、性能可由底层补强」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例为架构级跟做（客户端双端哈希、E2EE、dedup_key+upsert），概念正确可落地",
+        "踩坑覆盖教条误读、正确性/性能混淆、链路加密≠E2EE、缓存张力、「端」相对功能——具体可操作",
+        "适用/不适用有 VoIP/高丢包/对端不可信边界；可再量化一句「高丢包链路端到端重传代价相对链路层重传的数量级」"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正 TOCS「6 页」为约 12 页（pp.277–288）；FEC 补前向纠错桥接；不适用场景补高丢包数量级。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true
+}

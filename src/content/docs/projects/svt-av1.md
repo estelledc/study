@@ -1,6 +1,6 @@
 ---
 title: SVT-AV1 — Intel 主导的 AV1 编码器
-来源: 'https://github.com/AOMediaCodec/SVT-AV1'
+来源: 'https://gitlab.com/AOMediaCodec/SVT-AV1'
 日期: 2026-07-08
 分类: media
 难度: 初级
@@ -8,159 +8,142 @@ title: SVT-AV1 — Intel 主导的 AV1 编码器
 
 ## 是什么
 
-SVT-AV1 是一个**本地优先、按块组织、支持双链和自托管**的个人知识管理工具。
-日常类比：它像一个带编号便利贴的书房，每张便利贴都能单独引用、移动、搜索，也能被放进自己的服务器里。
+SVT-AV1（Scalable Video Technology for AV1）是 Intel 主导、与 Netflix 等合作推进的**开源 AV1 软件编码器**。
+日常类比：它像一条多工位流水线打包厂——把原始视频「拆成可并行的块」，很多工人同时压，
+所以同样压成 AV1，它往往比「单人精修」的参考编码器 aomenc（libaom）快得多。
 
-最小例子可以先把它想成这样的笔记：
+最小例子（经 [[ffmpeg]] 调用）：
 
-```markdown
-# 今天学 Docker
-
-容器像一个随身厨房，环境和材料一起打包。
-((某个块 ID)) 可以被别的页面引用。
+```bash
+ffmpeg -i input.mkv -c:v libsvtav1 -preset 6 -crf 30 -c:a copy output.mkv
 ```
 
-普通 Markdown 更像“一整张纸”，SVT-AV1 更像“每句话都是一张卡片”。
-这就是它和很多文件夹式笔记的差别：你不是只管理文件，而是在管理可引用、可查询、可移动的内容块。
+这行的意思：读入视频，用 SVT-AV1 压成 AV1，速度档 `preset 6`、质量档 `crf 30`，音频原样拷贝。
+GitHub 上的 `AOMediaCodec/SVT-AV1` 是镜像入口；规范仓库在 GitLab Alliance for Open Media 下。
+
+一句话：**SVT-AV1 解决的是「AV1 能压，但要在多核机器上压得够快、够稳，才能进生产」。**
 
 ## 为什么重要
 
 不理解 SVT-AV1，下面这些事会很难解释：
 
-- 为什么同一段内容能被多个页面引用，而不必复制粘贴到处改
-- 为什么它强调本地 workspace、数据仓库和端到端同步，而不是默认把笔记交给云服务
-- 为什么 Docker 版适合浏览器访问，却不等于桌面端和移动端都能直接连上去
-- 为什么它既支持 Markdown 书写体验，又不是“每篇笔记就是一个纯 `.md` 文件”
+- 为什么 AV1 压缩效率高，但早期「能压」不等于「能在服务器农场里按时压完」
+- 为什么 FFmpeg / HandBrake 里常出现 `libsvtav1`，而不是只提参考编码器 aomenc
+- 为什么同样 CRF，换 preset 会让编码时间差出一个数量级
+- 为什么直播用高 preset、点播归档用低 preset——速度与压缩效率在抢同一笔 CPU 预算
 
 ## 核心要点
 
-1. **块结构**：把文档切成段落、标题、列表项这些小块。类比：一本书不只按章节找，还能精确引用到某一段。
+1. **多核并行是卖点**：SVT 把编码流水线拆成可扩展阶段，吃满多核。类比：不是一个人精修整部电影，而是分镜同时开工。
 
-2. **本地 workspace**：数据先在自己的机器目录里。类比：账本先放在自己抽屉，是否同步、同步到哪里，是后面的选择。
+2. **preset 是速度档，不是画质开关**：常用约 0–13（另有研究向更慢档）。数字越大越快、同 CRF 下通常更费码率或更损细节。类比：收拾行李可以花两小时抽真空，也可以三十秒塞进箱子。
 
-3. **内核 + 客户端 + API**：桌面界面、浏览器界面和命令行都围着同一个内核工作。类比：前台有多个窗口，后台仓库只有一套账。
+3. **CRF 管「观感预算」**：SVT-AV1 的 CRF 大致 1–70，常见起点约 30（1080p）；**刻度与 x264/x265 不可直接对比**。类比：两家餐厅的「辣度 3」不是同一把尺。
 
 ## 实践案例
 
-### 案例 1：把 SVT-AV1 放到自己的服务器
-
-README 给出的 Docker 用法适合“我想在浏览器里打开自己的笔记库”：
+### 案例 1：用 FFmpeg 做日常点播转码
 
 ```bash
-docker run -d \
-  -v /siyuan/workspace:/siyuan/workspace \
-  -p 6806:6806 \
-  -e PUID=1001 -e PGID=1002 \
-  SVT-AV1 \
-  serve \
-  --workspace=/siyuan/workspace/ \
-  --accessAuthCode=change-me
+ffmpeg -i movie.mkv -c:v libsvtav1 -preset 6 -crf 30 \
+  -pix_fmt yuv420p10le -c:a libopus -b:a 128k out.mkv
 ```
 
 **逐部分解释**：
 
-- `-v /siyuan/workspace:/siyuan/workspace`：把宿主机目录挂进容器，笔记数据不会只留在容器临时层里。
-- `-p 6806:6806`：把 SVT-AV1 默认 Web 端口暴露出来，浏览器访问这一个入口。
-- `serve --workspace=...`：新版镜像需要显式启动服务，并告诉内核 workspace 在哪里。
-- `--accessAuthCode=change-me`：设置访问密码；公开端口时尤其不能留空或随便写。
+- `-c:v libsvtav1`：走 SVT-AV1 而不是 libaom。
+- `-preset 6`：点播常用平衡档（约 4–6 区常见生产起点）。
+- `-crf 30`：质量目标；要更清晰就降低 CRF（文件变大）。
+- `yuv420p10le`：10-bit 像素格式，有助于减轻色带（banding）。
 
-### 案例 2：不用打开界面也能查笔记
-
-README 里还有内置 CLI，适合脚本化搜索和导出：
+### 案例 2：偏直播/低延迟，换更快 preset
 
 ```bash
-siyuan notebook list -w ~/SVT-AV1
-siyuan search "Docker" -w ~/SVT-AV1 -f json
-siyuan export md --id 20250101093000-abcdefg -w ~/SVT-AV1
+ffmpeg -i live.mkv -c:v libsvtav1 -preset 10 -crf 28 \
+  -g 120 -svtav1-params tune=0 -c:a copy live-av1.mkv
 ```
 
 **逐部分解释**：
 
-- `notebook list`：列出 workspace 里的笔记本，相当于先看书架有哪些分区。
-- `search "Docker"`：直接查本地数据，`-f json` 让结果更适合交给脚本继续处理。
-- `export md --id ...`：按块或文档 ID 导出 Markdown，适合备份、迁移或喂给别的工具。
+- `-preset 10`：更快，适合实时或准实时；同观感往往要略降 CRF 补偿。
+- `-g 120`：关键帧间隔（与帧率一起决定寻像粒度）。
+- `-svtav1-params`：把编码器私有参数传进去；`tune=0` 常偏向主观观感。
 
-### 案例 3：用 HTTP API 创建和更新内容块
-
-官方 API 文档把本地内核暴露成 `http://127.0.0.1:6806` 上的一组 POST 接口。
-下面是一个“创建文档，再追加一段”的组合：
+### 案例 3：直接用官方命令行 `SvtAv1EncApp`
 
 ```bash
-curl -X POST http://127.0.0.1:6806/api/filetree/createDocWithMd \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Token YOUR_TOKEN' \
-  -d '{"notebook":"20210817205410-2kvfpfn","path":"/study/docker","markdown":"# Docker 学习"}'
-
-curl -X POST http://127.0.0.1:6806/api/block/appendBlock \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Token YOUR_TOKEN' \
-  -d '{"parentID":"20250101093000-abcdefg","dataType":"markdown","data":"今天先记住镜像和容器的区别。"}'
+SvtAv1EncApp -i input.yuv -w 1920 -h 1080 --fps 24 \
+  --crf 30 --preset 12 -b output.ivf
 ```
 
 **逐部分解释**：
 
-- `Authorization: Token YOUR_TOKEN`：token 在设置里的 About 页面查看，API 调用要带上它。
-- `createDocWithMd`：用 Markdown 内容创建文档；同一路径重复调用不会直接覆盖旧文档。
-- `appendBlock`：把一段 Markdown 追加到父块下面；`parentID` 就是“贴到哪张卡片下面”。
+- 输入是裸 YUV，所以必须声明宽高与帧率。
+- `--preset 12`：偏最大速度示例；归档请改用更低 preset。
+- `-b output.ivf`：写出 IVF 容器中的 AV1 码流，再交给封装工具。
+
+想确认本机 FFmpeg 是否链上了库：`ffmpeg -h encoder=libsvtav1`；没有输出就需要重装带 SVT-AV1 的构建。
 
 ## 踩过的坑
 
-1. **把 workspace 挂载错目录**：Docker 容器删掉后才发现数据没落到宿主机，因为卷路径才是数据能否留下来的关键。
+1. **拿 x264 的 CRF 数字硬套**：SVT-AV1 的 30 ≠ x264 的 30；要靠眼睛或 VMAF 重新标定。
 
-2. **忘了新版 Docker 要写 `serve`**：README 明确提示 v3.7.0 起需要显式传 `serve`，旧命令容易启动失败。
+2. **preset 0「能压多小就多小」**：极慢档吃内存与时间，收益相对 4–6 往往递减，不适合日常批量。
 
-3. **拿第三方同步盘直接同步数据目录**：FAQ 说不支持这种做法，原因是并发改 `.sy` 数据可能造成损坏。
+3. **旧版 FFmpeg 参数残缺**：约 5.1 之前对 `svtav1-params` 支持弱；生产请确认 `ffmpeg -h encoder=libsvtav1`。
 
-4. **把 Docker 版当成完整桌面端替代品**：README 的限制写得很清楚，Docker 托管主要面向浏览器，部分导入导出能力不支持。
+4. **只开快档却抱怨「AV1 不如宣传」**：高 preset 会牺牲压缩效率；拿它和慢速 aomenc 比体积不公平。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 想要本地优先，重要资料先掌握在自己机器上的个人知识库
-- 喜欢块引用、双链、图谱、闪卡和数据库视图混在一个笔记系统里
-- 需要中文体验、自托管浏览器入口，或者想用 API 把笔记接进脚本
-- 已经接受“笔记系统会有自己的数据格式”，不强求每页都是纯 Markdown 文件
+- 服务器/工作站多核 CPU 上的 AV1 点播转码、UGC 入库、CDN 源站预处理
+- 需要在「几小时内压完」与「体积可接受」之间折中的生产流水线
+- 经 FFmpeg、HandBrake 等调用 `libsvtav1` 的批量任务
+- 研究 AV1 并行编码与速率控制工程化（相对参考编码器）
 
 **不适用**：
 
-- 只想维护一堆纯 `.md` 文件，并用 Git 当唯一同步方式
-- 需要多人实时协作、复杂权限、审批流这类团队知识库功能
-- 不想维护 workspace、同步、备份、权限这些本地优先带来的责任
-- 只需要轻量草稿本，用系统备忘录或普通 Markdown 编辑器就够了
+- 只要解码播放：看 [[dav1d]] / 硬件解码，不需要本编码器
+- 极致压缩、可接受极慢：参考编码器 aomenc / 更慢 preset 可能更合适
+- 老设备只认 H.264：用 [[x264]]，AV1 解码支持仍不均
+- 完全不懂参数、只想点按钮：先用 [[handbrake]] 的 AV1 预设
 
 ## 历史小故事（可跳过）
 
-- README 的一句口号是 “Refactor your thinking”，它把写笔记理解成持续重构自己的知识结构。
-- 项目由 `AOMediaCodec/SVT-AV1` 维护，核心仓库写着 TypeScript 和 Go，桌面、移动、浏览器、自托管都围绕同一个知识库展开。
-- 到 2026 年 7 月，GitHub 页面显示大约 4.5 万 stars，说明它已经不只是小众玩具。
-- 官方文档逐步补齐了 Docker、CLI、API、workspace 文件结构这些工程化入口，方便用户把笔记当成可编程系统。
+- **SVT 系列**：Intel 的 Scalable Video Technology 面向可扩展并行编码；AV1 是其中面向开放标准的一环。
+- **与 Netflix 等合作**：推动「能上线」的生产级 AV1 软件编码，而不只是标准验证用的参考实现。
+- **AOMedia 生态**：规范开发在 Alliance for Open Media；GitLab 为规范仓库，GitHub 镜像方便发现。
+- **工具链落地**：FFmpeg `libsvtav1`、HandBrake 等让普通转码用户也能摸到 AV1，而不必手写全套参数。
+- **定位分工**：业界常把 aomenc 当「参考/极限效率」，把 SVT-AV1 当「生产吞吐」主选项之一。
 
 ## 学到什么
 
-- SVT-AV1 的重点不是“又一个 Markdown 编辑器”，而是把内容拆成可引用、可查询、可自动化的块。
-- 本地优先带来自主权，也带来备份、权限、同步策略的责任，不能只看功能列表。
-- 自托管版最适合“浏览器访问自己的知识库”，但要认真处理端口、密码、反向代理和卷挂载。
-- 官方 API 让笔记系统可以被脚本驱动，这对学习日志、知识库整理和自动化很有价值。
+- AV1 的「压缩好」和「编码快」是两件事；SVT-AV1 主打把后者抬到可生产。
+- `preset` 与 `crf` 分工：一个买时间，一个买观感；刻度不能跨编码器照搬。
+- 并行编码器改变了工作流：多核机器上，AV1 不再只能当实验室玩具。
+- 选编码器要看场景：实时、点播、归档、兼容性各自有不同最优解。
 
 ## 延伸阅读
 
-- 官方仓库：[AOMediaCodec/SVT-AV1](https://github.com/AOMediaCodec/SVT-AV1)
-- API 文档：[docs/API.md](https://github.com/AOMediaCodec/SVT-AV1/blob/master/docs/API.md)
-- workspace 结构：[docs/WORKSPACE.md](https://github.com/AOMediaCodec/SVT-AV1/blob/master/docs/WORKSPACE.md)
-- 在线用户指南：[SVT-AV1 User Guide](https://siyuan-en.b3log.org/)
-- [[logseq]] —— 同样重视块、双链和大纲式笔记
-- [[joplin]] —— 更接近传统 Markdown 笔记与同步客户端
+- [SVT-AV1 GitLab 规范仓库](https://gitlab.com/AOMediaCodec/SVT-AV1) —— 源码与文档入口
+- [Docs/Ffmpeg.md](https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/Docs/Ffmpeg.md) —— FFmpeg 集成与 CRF/preset 说明
+- [编码器用户指南](https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/Docs/svt-av1_encoder_user_guide.md) —— `SvtAv1EncApp` 示例
+- [Codec Wiki: SVT-AV1](https://codecs.wiki/docs/encoders/SVT-AV1) —— preset 范围与生态定位
+- [[ffmpeg]] —— 最常见的上层调用方式（`libsvtav1`）
+- [[dav1d]] —— 对称的另一端：把 AV1 快速解出来
 
 ## 关联
 
-- [[logseq]] —— 两者都把块引用和双链放在核心位置，但产品取舍不同
-- [[joplin]] —— 对比“Markdown 文件优先”和“应用数据模型优先”的差别
-- [[affine]] —— 同属本地优先知识工具，适合比较白板、文档和数据库的组合方式
-- [[codemirror]] —— SVT-AV1 这类编辑器体验背后离不开现代 Web 编辑基础设施
-- [[prosemirror]] —— 理解块编辑器和结构化文档模型时很有参考价值
-- [[sqlite-2022]] —— SVT-AV1 的查询、索引和本地数据管理都绕不开数据库思维
+- [[ffmpeg]] —— 通过 `libsvtav1` 调用 SVT-AV1 做转码
+- [[handbrake]] —— GUI 封装，1.6+ 可走 SVT-AV1
+- [[dav1d]] —— AV1 解码侧的高性能软件实现
+- [[x264]] —— 上一代事实标准软件编码器，便于对比 CRF/preset 心智模型
+- [[libvpx]] —— VP9 软件编码路线，AV1 前的开放编码实践
+- [[shaka-packager]] —— 打包分发常与 AV1 编码流水线衔接
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+

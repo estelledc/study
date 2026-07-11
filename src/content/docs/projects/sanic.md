@@ -8,7 +8,7 @@ title: Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 
 ## 是什么
 
-Sanic 是一个 **从第一行就为 async/await 设计、跑得跟 Node.js 一样快的 Python web 框架**。日常类比：Flask 是慢悠悠的城市公交（一站一站），Sanic 是地铁（同时几十节车厢并行），都从 A 到 B，但吞吐量差一个数量级。
+Sanic 是一个 **从第一行就为 async/await 设计、冲着 Node.js 级高吞吐去的 Python web 框架**。日常类比：Flask 是慢悠悠的城市公交（一站一站），Sanic 是地铁（同时几十节车厢并行），都从 A 到 B，但在 IO 密集场景里吞吐往往差一个数量级。
 
 最小例子：
 
@@ -33,7 +33,7 @@ async def hello(request):
 
 - 为什么 Python 也能做高并发后端，不必逼自己换 Go / Node.js
 - 为什么 [[fastapi]] 和 Sanic 看起来很像，但 FastAPI 跑在 [[starlette]] 上、Sanic 自己写 server
-- 为什么 Sanic 的进程模型（多 worker + uvloop）能把 CPU 榨到 95%，而 Flask + gunicorn 同样配置只到 30%
+- 为什么多 worker + uvloop 的进程模型，在 IO 密集基准里常把 CPU 吃得更满，而 Flask + gunicorn 同步栈往往更闲
 - 为什么"async-first"和"sync-first 加 async 补丁"在生产环境差别巨大——前者是 Sanic / FastAPI，后者是 Flask 2.x / Django async views
 
 ## 核心要点
@@ -70,6 +70,10 @@ async def big_csv(request):
 ### 案例 2：WebSocket 聊天广播
 
 ```python
+@app.before_server_start
+async def setup(app, _):
+    app.ctx.clients = set()  # 先建集合，否则下面 add 会炸
+
 @app.websocket("/chat")
 async def chat(request, ws):
     app.ctx.clients.add(ws)
@@ -83,9 +87,9 @@ async def chat(request, ws):
 
 **逐部分解释**：
 
+- `before_server_start` 里先 `app.ctx.clients = set()`，应用级状态要显式初始化
 - `@app.websocket` 注册 WS 路由（Flask 原生不支持，需 Flask-SocketIO）
 - `async for msg in ws` 持续消费连接里的消息，连接断开自动跳出循环
-- `app.ctx` 是用户自定义的应用级状态容器（这里存所有在线 client）
 - `finally` 保证客户端掉线后从集合里移除——否则下次广播会向"鬼连接"写
 
 ### 案例 3：Blueprint 拆分大型应用
@@ -118,9 +122,9 @@ app.blueprint(users_bp)
 
 2. **`app.ctx` 不在 worker 之间共享**：多 worker 模式下每个进程一份，需要全局共享必须走 Redis / 数据库。新人常误以为它是单例。
 
-3. **Python 3.10+ 才能跑**：Sanic 23+ 砍掉了 3.8/3.9 支持。生产环境如果还在 3.8 要么升级要么锁旧版（v22.x）。
+3. **看清版本与 Python 下限**：v23 仍支持 3.8；24.12 弃 3.8、25.12 弃 3.9 后现行线才是 3.10+。卡在 3.8/3.9 就锁对应 LTS，别盲升最新。
 
-4. **uvloop 在 Windows 不可用**：uvloop 不支持 Windows。`SANIC_NO_UVLOOP=true` 退回标准 asyncio，性能砍半。Windows 用户考虑 WSL。
+4. **uvloop 在 Windows 不可用**：uvloop 不支持 Windows。`SANIC_NO_UVLOOP=true` 退回标准 asyncio，吞吐会明显掉。Windows 用户考虑 WSL。
 
 ## 适用 vs 不适用
 
@@ -142,8 +146,8 @@ app.blueprint(users_bp)
 - **2016 年**：Channel Cat（社区昵称）受 Node.js 高吞吐启发，发布 Sanic v0.1，那时 Python 3.5 刚加 async/await
 - **2017-2019 年**：早期被诟病"为快而快、API 不稳定"，每个版本破坏性改动多
 - **2020 年**：项目转交社区维护（sanic-org），引入语义化版本和 LTS（长期支持）策略
-- **2023 年**：v23 大重构，引入 Signal 系统统一中间件，砍掉 Python 3.8/3.9
-- **2026 年**：GitHub 18k+ stars，是 Python async 框架前三（与 [[fastapi]]、aiohttp 并列）
+- **2021 年**：v21.3 引入 Signals API，随后接入请求/服务器生命周期
+- **2023–2026 年**：逐步抬高 Python 下限（v23 弃 3.7 → 24.12 弃 3.8 → 25.12 起现行 3.10+）；GitHub 约 18k stars
 
 ## 学到什么
 

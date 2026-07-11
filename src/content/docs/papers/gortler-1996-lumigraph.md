@@ -27,7 +27,7 @@ Lumigraph 是 1996 年微软研究院四个人发的论文，**和 Levoy-Hanraha
 
 Lumigraph 这条路能跑通靠 **三件事**：
 
-1. **复用两平面参数化**：和 Light Field Rendering 一模一样——一条光线由 (u, v, s, t) 四个数确定。uv 平面是相机位置，st 平面是焦平面。这部分两组撞车，不是 Lumigraph 的独创贡献。
+1. **复用两平面参数化**：和 Light Field Rendering 一样——一条光线由 (s, t, u, v) 四个数确定。**st 平面**是相机/视点一侧，**uv 平面**更靠近物体（焦平面一侧）。这部分两组撞车，不是 Lumigraph 的独创贡献。
 
 2. **从图像本身提取粗糙几何（proxy）**：不用激光扫描仪、不用 mesh 建模师，论文用一种叫 **volume carving / silhouette extraction** 的方法——拍照时背景是已知颜色（论文用蓝幕），从每张照片抠出物体轮廓，把空间体素网格里"被任一张照片判定为背景"的体素全部削掉，剩下的就是物体的粗糙包络（visual hull）。这层 proxy 不需要精确，只要能给"光线和物体相交在大约什么深度"即可。
 
@@ -41,14 +41,14 @@ Lumigraph 这条路能跑通靠 **三件事**：
 
 ### 案例 1：同一物体，光场 vs Lumigraph 的数据对比
 
-论文实测对比（粗略数字，原文实验取自玩具雕塑）：
+教学量级对比（**非原文对照表**；用来建立直觉）：
 
 ```
-Light Field Rendering    32 × 32 = 1024 张照片才不糊
-Lumigraph + proxy         约 64-128 张照片就够
+纯光场、无几何先验     相机平面要很密（常到几十×几十网格）才不糊
+Lumigraph + proxy      同样质量下，相机采样可以稀很多
 ```
 
-数量差一个量级。原因不是 Lumigraph 算法快，而是**它把"密集采样补几何缺失"这个负担扔给了 proxy**。proxy 自己也要采集（拍蓝幕照片做 carving），但 proxy 数据量远小于完整 4D 光场。
+差的是量级感，不是某一组固定张数。原因不是 Lumigraph 算法快，而是**它把"密集采样补几何缺失"这个负担扔给了 proxy**。proxy 自己也要采集（拍蓝幕照片做 carving），但 proxy 数据量远小于完整 4D 光场。
 
 ### 案例 2：深度修正的数学骨架
 
@@ -60,9 +60,9 @@ def lumigraph_render(virtual_cam, light_field_4D, proxy_mesh):
     for px in pixels(H, W):
         ray = virtual_cam.ray_through(px)
         P = ray.intersect(proxy_mesh)              # 多了这一步：求 3D 表面点
-        for (u_i, v_j) in nearest_4_cameras(ray):
-            (s_ij, t_ij) = project(P, camera_uv=(u_i, v_j))  # P 在该相机的像素
-            samples[i,j] = light_field_4D[u_i, v_j, s_ij, t_ij]
+        for (s_i, t_j) in nearest_4_cameras(ray):  # 邻近相机在 st 平面
+            (u_ij, v_ij) = project(P, camera_st=(s_i, t_j))  # P 在该相机的像素
+            samples[i,j] = light_field_4D[s_i, t_j, u_ij, v_ij]
         image[px] = quadlinear_blend(samples)
     return image
 ```
@@ -73,7 +73,7 @@ def lumigraph_render(virtual_cam, light_field_4D, proxy_mesh):
 
 如果 proxy 把杯子内部凹陷处算成了平面（visual hull 对凹面就这样），那条光线和 proxy 求交得到的 P 偏向凸面，4 个相机被"投影"到错误的像素位置——结果是凹陷区域出现错位伪影（misregistration），看起来像物体表面"鼓起来"了。
 
-实测中作者发现：proxy 偏离真实表面 1-2 厘米一般无伤大雅（blending 柔化），偏离超过 5 厘米开始可见伪影。这条经验直接催生了后续 plenoptic sampling（Chai 2000）的精确分析——给定 proxy 误差 ε，需要多密的采样才能保证质量。
+经验上：proxy **稍偏**时 blending 还能柔化；**偏得太远**时错位比纯 ghosting 更难看。后续 plenoptic sampling（Chai 2000）把这条经验收成频率分析——给定 proxy 误差 ε，需要多密的采样才能保证质量。
 
 ### 案例 4：volume carving 是怎么从照片提 proxy 的
 
@@ -93,7 +93,7 @@ def lumigraph_render(virtual_cam, light_field_4D, proxy_mesh):
 
 3. **proxy 错位会引入新伪影**：没 proxy 时是 ghosting（重影但位置对），有 proxy 但 proxy 错时是 misregistration（位置都不对了）。第二种主观上更难看。所以 proxy 质量不到位时反而不如纯 light field。
 
-4. **采集装置仍然贵**：和 Light Field Rendering 一样需要机械臂走规则网格。"unstructured" 版本（Buehler 2001）才把这个限制放开——任意手持相机视角都行，但那时已经是 5 年后了。
+4. **手持采集要标定与 rebin**：Lumigraph 相对 Light Field 的工程卖点是**手持相机 + 散乱视角**，再投影进规则 4D 网格；代价是必须做相机标定、蓝幕分割和散乱数据填充。Buehler 2001 的 unstructured lumigraph 进一步放开"先 rebin 再渲染"的假设。
 
 5. **和 Light Field Rendering 的撞车导致历史记忆模糊**：今天大多数人只记得 Levoy-Hanrahan，因为他们的 4D 光场更"纯粹"、更好讲。Lumigraph 的 proxy 修正这个真正有原创价值的贡献被掩盖了一些——直到 NeRF 时代"几何 + 神经表达"重新流行才被频繁回引。
 

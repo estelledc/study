@@ -20,7 +20,7 @@ sidebar:
 | [CMSIS-NN — Arm Cortex-M 的神经网络算子加速库](/study/projects/cmsis-nn/) | `cmsis-nn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Embassy — 让单片机也能用 async/await](/study/projects/embassy/) | `embassy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [embedded-hal — Rust 嵌入式硬件抽象的统一接口](/study/projects/embedded-hal/) | `embedded-hal` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Boa — Rust 写的 ES 解释器 — 学习笔记（入门）](/study/projects/engine262/) | `engine262` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎](/study/projects/engine262/) | `engine262` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ESP-DL — 把小模型塞进 ESP32 的推理库](/study/projects/esp-dl/) | `esp-dl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件](/study/projects/esphome/) | `esphome` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ESPurna — 给便宜智能开关换一套本地大脑](/study/projects/espurna/) | `espurna` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -61,9 +61,9 @@ sidebar:
 | [smoltcp — 在没有操作系统的芯片上跑 TCP/IP](/study/projects/smoltcp/) | `smoltcp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TensorFlow Lite Micro — 把小模型塞进微控制器](/study/projects/tflite-micro/) | `tflite-micro` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [UnQLite — C 写的嵌入式 NoSQL 双模数据库](/study/projects/unqlite/) | `unqlite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [WAMR — wasm 微运行时（嵌入式） — 学习笔记](/study/projects/wamr/) | `wamr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Wasmer — 跨平台 wasm 运行时 — 学习笔记](/study/projects/wasmer/) | `wasmer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Wasmtime — Rust 实现的 WASM 运行时](/study/projects/wasmtime/) | `wasmtime` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [WAMR — 塞进单片机也能跑的 Wasm 微运行时](/study/projects/wamr/) | `wamr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Wasmer — 把 wasm 当成轻量容器到处跑](/study/projects/wasmer/) | `wasmer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Wasmtime — Rust 实现的 WebAssembly 运行时](/study/projects/wasmtime/) | `wasmtime` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [WireGuard-Go — WireGuard VPN 的 Go 用户态实现](/study/projects/wireguard-go/) | `wireguard-go` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Yocto — 工业级定制嵌入式 Linux 的标准答案](/study/projects/yocto-poky/) | `yocto-poky` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | `zephyr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

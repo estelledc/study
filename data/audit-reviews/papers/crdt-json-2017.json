@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "LWW、RGA、Isabelle/HOL、MV-Register 首次出现缺日常桥接，零基础会在核心要点卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 嵌套冲突只有两行伪代码，没有「合并前后文档长什么样」的逐步对照"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 反向链接 占位段，结构不完整"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 称「A 的子修改 ID 更大就会附着在 B 的新数组上」容易歪曲论文：整段替换与子路径并发时，旧子树上的操作通常不会魔法迁到新数组；应改成更谨慎的「按节点 ID / 路径规则处理，可能变成对 tombstone 的空操作或保留在旧节点历史上」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写「map 用 LWW + tombstone」与后文 MV-Register 不一致；论文对并发赋值更贴近 multi-value，LWW 是常见工程退化"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Yjs / Loro 都把这篇当起点」过满：Yjs 主线更近 YATA；可改为「同属 JSON/文档 CRDT 工业化路线，Automerge 最贴这篇」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Automerge 案例可跟做，但适用/不适用缺少更具体的量化边界（文档体量、副本数、是否可接受 tombstone 膨胀）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑提到「早期 Automerge 分钟级」可用，建议标明是直译实现的历史问题，避免读者以为现版仍如此"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补上 ## 反向链接 占位，并控制在 150–200 行"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "LWW、RGA、Isabelle/HOL、MV-Register 首次出现缺日常桥接，零基础会在核心要点卡住",
+        "案例 3 嵌套冲突只有两行伪代码，没有「合并前后文档长什么样」的逐步对照",
+        "缺 ## 反向链接 占位段，结构不完整"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 称「A 的子修改 ID 更大就会附着在 B 的新数组上」容易歪曲论文：整段替换与子路径并发时，旧子树上的操作通常不会魔法迁到新数组；应改成更谨慎的「按节点 ID / 路径规则处理，可能变成对 tombstone 的空操作或保留在旧节点历史上」",
+        "核心要点写「map 用 LWW + tombstone」与后文 MV-Register 不一致；论文对并发赋值更贴近 multi-value，LWW 是常见工程退化",
+        "「Yjs / Loro 都把这篇当起点」过满：Yjs 主线更近 YATA；可改为「同属 JSON/文档 CRDT 工业化路线，Automerge 最贴这篇」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "Automerge 案例可跟做，但适用/不适用缺少更具体的量化边界（文档体量、副本数、是否可接受 tombstone 膨胀）",
+        "踩坑提到「早期 Automerge 分钟级」可用，建议标明是直译实现的历史问题，避免读者以为现版仍如此",
+        "补上 ## 反向链接 占位，并控制在 150–200 行"
+      ]
+    }
+  ]
+}
