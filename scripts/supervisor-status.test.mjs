@@ -54,6 +54,7 @@ test('persisted no-delta runtime parks without spawning a writer', () => {
   assert.equal(status.supervisor_state, 'PARKED_NO_DELTA');
   assert.equal(status.writer_eligible, false);
   assert.equal(status.facts.no_delta_batches, 3);
+  assert.match(status.next_action, /real external delta/);
 });
 
 test('malformed supervisor runtime fails closed as a policy conflict', () => {

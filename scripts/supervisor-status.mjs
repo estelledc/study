@@ -45,10 +45,18 @@ export function buildSupervisorStatus(facts, policy) {
       no_delta_batches: decision.no_delta_batches,
       supervisor_state_valid: facts.supervisor_state_valid,
     },
-    next_action: blockers.length > 0
-      ? 'Keep the readonly supervisor armed; resolve blockers under explicit scope before starting a writer epoch.'
-      : 'Yield in WAIT_HEALTHY until a scheduled check, external delta, or explicit backlog ticket.',
+    next_action: nextActionFor({ blockers, decision }),
   };
+}
+
+function nextActionFor({ blockers, decision }) {
+  if (blockers.length > 0) {
+    return 'Keep the readonly supervisor armed; resolve blockers under explicit scope before starting a writer epoch.';
+  }
+  if (decision.state === 'PARKED_NO_DELTA') {
+    return 'Yield in PARKED_NO_DELTA until a real external delta or explicit operator reauthorization.';
+  }
+  return 'Yield in WAIT_HEALTHY until a scheduled check, external delta, or explicit backlog ticket.';
 }
 
 function readSupervisorRuntime(policy) {
