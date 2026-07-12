@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 import test from 'node:test';
 
-import { buildSupervisorStatus } from './supervisor-status.mjs';
+import { buildSupervisorStatus, readSupervisorRuntime } from './supervisor-status.mjs';
 
 const policy = JSON.parse(fs.readFileSync(new URL('../data/operations-policy.json', import.meta.url), 'utf8'));
 
@@ -61,4 +63,24 @@ test('malformed supervisor runtime fails closed as a policy conflict', () => {
   const status = buildSupervisorStatus(healthyFacts({ supervisor_state_valid: false }), policy);
   assert.equal(status.supervisor_state, 'PARKED_HUMAN');
   assert.deepEqual(status.blockers, ['policy-conflict']);
+});
+
+test('supervisor runtime schema corruption fails closed instead of resetting no-delta state', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'study-supervisor-runtime-'));
+  fs.mkdirSync(path.join(root, 'data'), { recursive: true });
+
+  assert.deepEqual(readSupervisorRuntime(policy, root), { no_delta_batches: 0, valid: true });
+
+  for (const state of [
+    { no_delta_batches: '3' },
+    { no_delta_batches: -1 },
+    {},
+    [],
+  ]) {
+    fs.writeFileSync(path.join(root, 'data/supervisor-state.json'), JSON.stringify(state));
+    assert.deepEqual(readSupervisorRuntime(policy, root), { no_delta_batches: 0, valid: false });
+  }
+
+  fs.writeFileSync(path.join(root, 'data/supervisor-state.json'), JSON.stringify({ no_delta_batches: 2 }));
+  assert.deepEqual(readSupervisorRuntime(policy, root), { no_delta_batches: 2, valid: true });
 });

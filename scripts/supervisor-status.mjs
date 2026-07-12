@@ -59,18 +59,24 @@ function nextActionFor({ blockers, decision }) {
   return 'Yield in WAIT_HEALTHY until a scheduled check, external delta, or explicit backlog ticket.';
 }
 
-function readSupervisorRuntime(policy) {
+export function readSupervisorRuntime(policy, root = ROOT) {
   const relativeStatePath = policy?.project_progression?.supervisor?.state_path;
   if (!relativeStatePath) return { no_delta_batches: 0, valid: true };
 
-  const statePath = path.join(ROOT, relativeStatePath);
+  const statePath = path.join(root, relativeStatePath);
   if (!fs.existsSync(statePath)) return { no_delta_batches: 0, valid: true };
 
   try {
     const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    if (!state || typeof state !== 'object' || Array.isArray(state)) {
+      return { no_delta_batches: 0, valid: false };
+    }
     const noDeltaBatches = state.no_delta_batches;
+    if (!Number.isInteger(noDeltaBatches) || noDeltaBatches < 0) {
+      return { no_delta_batches: 0, valid: false };
+    }
     return {
-      no_delta_batches: Number.isInteger(noDeltaBatches) && noDeltaBatches >= 0 ? noDeltaBatches : 0,
+      no_delta_batches: noDeltaBatches,
       valid: true,
     };
   } catch {
