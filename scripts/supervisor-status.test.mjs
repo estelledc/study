@@ -18,6 +18,8 @@ function healthyFacts(overrides = {}) {
     operation_failures: 0,
     doc_failures: 0,
     round_lock_active: false,
+    no_delta_batches: 0,
+    supervisor_state_valid: true,
     ...overrides,
   };
 }
@@ -45,4 +47,17 @@ test('dirty worktree, missing toolchain, policy drift or round lock parks the wr
     'required-toolchain-unavailable',
     'round-lock-active',
   ]);
+});
+
+test('persisted no-delta runtime parks without spawning a writer', () => {
+  const status = buildSupervisorStatus(healthyFacts({ no_delta_batches: 3 }), policy);
+  assert.equal(status.supervisor_state, 'PARKED_NO_DELTA');
+  assert.equal(status.writer_eligible, false);
+  assert.equal(status.facts.no_delta_batches, 3);
+});
+
+test('malformed supervisor runtime fails closed as a policy conflict', () => {
+  const status = buildSupervisorStatus(healthyFacts({ supervisor_state_valid: false }), policy);
+  assert.equal(status.supervisor_state, 'PARKED_HUMAN');
+  assert.deepEqual(status.blockers, ['policy-conflict']);
 });

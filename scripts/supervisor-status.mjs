@@ -18,8 +18,12 @@ export function buildSupervisorStatus(facts, policy) {
   if (facts.worktree_dirty) blockers.push('unexpected-worktree-overlap');
   if (!facts.toolchain_ok) blockers.push('required-toolchain-unavailable');
   if (facts.round_lock_active) blockers.push('round-lock-active');
+  if (facts.supervisor_state_valid === false) blockers.push('policy-conflict');
 
-  const decision = decideSupervisorAction({ hard_blockers: blockers }, policy);
+  const decision = decideSupervisorAction({
+    hard_blockers: blockers,
+    no_delta_batches: facts.no_delta_batches,
+  }, policy);
   return {
     schema_version: 'study-supervisor-status-v1',
     readonly: true,
@@ -38,6 +42,8 @@ export function buildSupervisorStatus(facts, policy) {
       operation_failures: facts.operation_failures,
       doc_failures: facts.doc_failures,
       round_lock_active: facts.round_lock_active,
+      no_delta_batches: decision.no_delta_batches,
+      supervisor_state_valid: facts.supervisor_state_valid,
     },
     next_action: blockers.length > 0
       ? 'Keep the readonly supervisor armed; resolve blockers under explicit scope before starting a writer epoch.'
@@ -45,12 +51,32 @@ export function buildSupervisorStatus(facts, policy) {
   };
 }
 
-async function collectFacts() {
+function readSupervisorRuntime(policy) {
+  const relativeStatePath = policy?.project_progression?.supervisor?.state_path;
+  if (!relativeStatePath) return { no_delta_batches: 0, valid: true };
+
+  const statePath = path.join(ROOT, relativeStatePath);
+  if (!fs.existsSync(statePath)) return { no_delta_batches: 0, valid: true };
+
+  try {
+    const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    const noDeltaBatches = state.no_delta_batches;
+    return {
+      no_delta_batches: Number.isInteger(noDeltaBatches) && noDeltaBatches >= 0 ? noDeltaBatches : 0,
+      valid: true,
+    };
+  } catch {
+    return { no_delta_batches: 0, valid: false };
+  }
+}
+
+async function collectFacts(policy) {
   const canonicalNode = fs.readFileSync(path.join(ROOT, '.nvmrc'), 'utf8').trim().replace(/^v/u, '');
   const runningNode = process.version.replace(/^v/u, '');
   const status = gitOutput(['status', '--porcelain=v1', '-uall'], { cwd: ROOT });
   const changedPaths = status ? status.split('\n').filter(Boolean).length : 0;
   const roundLock = await checkRoundLock();
+  const supervisorRuntime = readSupervisorRuntime(policy);
   return {
     branch: gitOutput(['rev-parse', '--abbrev-ref', 'HEAD'], { cwd: ROOT }),
     head: gitOutput(['rev-parse', 'HEAD'], { cwd: ROOT }),
@@ -62,6 +88,8 @@ async function collectFacts() {
     operation_failures: auditOperationEntrypoints().length,
     doc_failures: auditDocLifecycle().length,
     round_lock_active: roundLock.locked === true && roundLock.expired !== true,
+    no_delta_batches: supervisorRuntime.no_delta_batches,
+    supervisor_state_valid: supervisorRuntime.valid,
   };
 }
 
@@ -74,7 +102,8 @@ function parseArgs(argv = process.argv.slice(2)) {
 
 async function main() {
   const args = parseArgs();
-  const status = buildSupervisorStatus(await collectFacts(), loadOperationsPolicy());
+  const policy = loadOperationsPolicy();
+  const status = buildSupervisorStatus(await collectFacts(policy), policy);
   if (args.json) console.log(JSON.stringify(status, null, 2));
   else console.log(`${status.supervisor_state}: ${status.reason}`);
 }
