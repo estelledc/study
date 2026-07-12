@@ -8,6 +8,19 @@ import { ROOT } from './lib/paths.mjs';
 
 export const LIFECYCLE_CONTRACT = [
   {
+    path: 'AGENTS.md',
+    required: [
+      /持续 supervisor/,
+      /有界 epoch/,
+      /status.*objective.*scope.*activated_by.*review_after.*acceptance_checks.*budget.*external_outcome.*stop_conditions.*superseded_by/s,
+      /同时 1 个可写切片/,
+      /不需要逐片重新确认/,
+      /WAIT_HEALTHY/,
+      /自动巡检与自动检修/,
+      /连续 3 个 agent 批次没有 external delta/,
+    ],
+  },
+  {
     path: 'docs/archive/auto-push-v3.md',
     required: [
       /ARCHIVED\s*\/\s*SUPERSEDED/,
@@ -23,7 +36,23 @@ export const LIFECYCLE_CONTRACT = [
   },
   {
     path: 'docs/operations-index.md',
-    required: [/唯一的活动操作入口/, /默认禁止 bulk production/, /npm run verify:ci/],
+    required: [/唯一的活动操作入口/, /持续 Supervisor/, /WAIT_HEALTHY/, /AGENTS\.md/, /默认禁止 bulk production/, /npm run verify:ci/],
+  },
+  {
+    path: 'SESSION-HANDOFF.md',
+    required: [
+      /当前接班入口/,
+      /AGENTS\.md/,
+      /supervisor 状态：/,
+      /detector fingerprint：/,
+      /external delta 计数：/,
+      /下一次 wake 条件：/,
+      /起始 ref：`[0-9a-f]{40}`/,
+      /已完成切片：/,
+      /验证结果：/,
+      /下一条命令：/,
+      /不在 handoff 中复制易过期数字或 ETA/,
+    ],
   },
 ];
 

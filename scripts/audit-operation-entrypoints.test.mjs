@@ -1,7 +1,13 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import test from 'node:test';
 
-import { ACTIVE_OPERATION_FILES, auditOperationEntrypoints, auditOperationText } from './audit-operation-entrypoints.mjs';
+import {
+  ACTIVE_OPERATION_FILES,
+  auditOperationEntrypoints,
+  auditOperationsPolicy,
+  auditOperationText,
+} from './audit-operation-entrypoints.mjs';
 
 test('accepts the bounded policy language', () => {
   assert.deepEqual(auditOperationText('Bulk production is disabled. Use a dry-run and open a draft PR.'), []);
@@ -26,11 +32,17 @@ test('rejects unsafe legacy entrypoint patterns', () => {
 
 test('audits executable operation entrypoints as well as policy documents', () => {
   for (const required of [
+    '.gitignore',
+    'AGENTS.md',
     'package.json',
     'scripts/pick-batch.mjs',
     'scripts/dispatch-batch.mjs',
     'scripts/promote-candidates.mjs',
     'scripts/round.mjs',
+    'scripts/loop-status.mjs',
+    'scripts/exit-conditions.mjs',
+    'scripts/lib/supervisor-policy.mjs',
+    'scripts/supervisor-status.mjs',
     'scripts/finalize-round.sh',
     'scripts/aggregate-audit-reviews.mjs',
     'scripts/build-audit-pool.mjs',
@@ -42,4 +54,28 @@ test('audits executable operation entrypoints as well as policy documents', () =
     assert.equal(ACTIVE_OPERATION_FILES.includes(required), true);
   }
   assert.deepEqual(auditOperationEntrypoints(), []);
+});
+
+test('requires a supervised epoch contract without unlocking bulk or remote writes', () => {
+  const policy = JSON.parse(fs.readFileSync(new URL('../data/operations-policy.json', import.meta.url), 'utf8'));
+  assert.deepEqual(auditOperationsPolicy(policy), []);
+
+  const unsafe = structuredClone(policy);
+  unsafe.project_progression.default_budget.max_parallel_write_slices = 2;
+  unsafe.project_progression.busy_polling_allowed = true;
+  unsafe.project_progression.automatic_inspection.green_check_updates_tracked_handoff = true;
+  unsafe.project_progression.supervisor.max_active_epochs = 2;
+  unsafe.project_progression.required_contract_fields = ['objective'];
+  unsafe.project_progression.automatic_repair.max_attempts_per_fingerprint = 99;
+  unsafe.project_progression.automatic_repair.denylist = [];
+  unsafe.bulk_production.enabled = true;
+  const failures = auditOperationsPolicy(unsafe);
+  assert.equal(failures.includes('write-wip-must-equal-one'), true);
+  assert.equal(failures.includes('busy-polling-must-be-disabled'), true);
+  assert.equal(failures.includes('healthy-inspection-must-remain-readonly'), true);
+  assert.equal(failures.includes('active-epoch-wip-must-equal-one'), true);
+  assert.equal(failures.includes('run-contract-missing-external_outcome'), true);
+  assert.equal(failures.includes('repair-attempt-budget-invalid'), true);
+  assert.equal(failures.includes('repair-denylist-missing-note-content'), true);
+  assert.equal(failures.includes('bulk-production-must-default-disabled'), true);
 });
