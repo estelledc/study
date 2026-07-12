@@ -6,8 +6,8 @@
 
 - supervisor 状态：`WAIT_HEALTHY`；supervisor 已 armed，观察器运行只读巡检，writer 无待处理任务。
 - scope：launch scope 内的本地 workflow 文档、测试、审计、工具链和站点非内容代码质量维护。
-- 起始 ref：`796efb9b9098a3a48d32ad38ea7e27d0919256d5`（no-delta runtime 与 next_action 状态接入后的 HEAD）。
-- detector fingerprint：工作树干净；progression-contract、no-delta runtime 状态读取与 `PARKED_NO_DELTA` 下一步提示均已提交；verify:ci 23 步全绿。
+- 起始 ref：`ef31c30b45741b8dd490e680e0b60e49f846e805`（no-delta runtime、next_action 与 runtime schema 校验后的 HEAD）。
+- detector fingerprint：工作树干净；progression-contract、no-delta runtime 状态读取、`PARKED_NO_DELTA` 下一步提示与 runtime schema fail-closed 均已提交；verify:ci 23 步全绿。
 - external delta 计数：0；本地提交、测试通过、handoff 更新不计 external delta。
 - 已完成切片：
   1. 建立 recurring supervisor + bounded epoch 状态机（supervisor-policy、supervisor-status）；
@@ -20,7 +20,8 @@
   8. 独立验证 epoch：重跑全量验收，verify:ci 23 步全部通过（含 strict build 2062 页、23 个 Playwright a11y 浏览器测试、350 个单元测试、所有审计），父仓 harness-check 0 error 0 warning。
   9. 修复 `status:supervisor` 对 gitignored `data/supervisor-state.json` 中 `no_delta_batches` 的读取：达到阈值时进入 `PARKED_NO_DELTA`，runtime 损坏时 fail-closed 为 `PARKED_HUMAN`；本地提交 `96860c75`。
   10. 修复 `PARKED_NO_DELTA` 的 `next_action`：明确等待真实 external delta 或 operator reauthorization，避免被误解为普通 scheduled wake；本地提交 `796efb9b`。
-- 验证结果：`npm run verify:ci` 全部 23 步通过（toolchain、352 tests、repository audits、content contract、template similarity、freshness、redlines、action pins、audit:operations、audit:doc-lifecycle、asset contract、strict build 2062 pages、homepage links、Pagefind、SEO、static a11y、23 Playwright browser a11y smoke tests、pages artifact、Atlas performance budget、site performance budget、generated output drift、staged drift、whitespace diff）。`npm run verify:scripts` 352/352 通过，`node --test scripts/supervisor-status.test.mjs` 4/4 通过，`audit:operations` 和 `audit:doc-lifecycle` 均 OK，`git diff --check` 通过。工具链 Node 22.23.1 / npm 11.17.0 正确。
+  11. 修复 `data/supervisor-state.json` 可解析但 schema 非法时静默清零 `no_delta_batches` 的风险：缺失字段、字符串、负数或数组均 fail-closed；本地提交 `ef31c30b`。
+- 验证结果：`npm run verify:ci` 全部 23 步通过（toolchain、353 tests、repository audits、content contract、template similarity、freshness、redlines、action pins、audit:operations、audit:doc-lifecycle、asset contract、strict build 2062 pages、homepage links、Pagefind、SEO、static a11y、23 Playwright browser a11y smoke tests、pages artifact、Atlas performance budget、site performance budget、generated output drift、staged drift、whitespace diff）。`npm run verify:scripts` 353/353 通过，`node --test scripts/supervisor-status.test.mjs scripts/lib/supervisor-policy.test.mjs` 10/10 通过，`audit:operations` 和 `audit:doc-lifecycle` 均 OK，`git diff --check` 通过。工具链 Node 22.23.1 / npm 11.17.0 正确。
 - 剩余 blocker：无本地 blocker。未授权 push、PR、merge、deploy 或任何远端写操作；未授权内容生产或笔记正文修改。
 - 下一次 wake 条件：scheduled-health-check 定时触发、外部 CI/HEAD/owner-review 状态变化、明确 backlog ticket、或用户新指令。绿色巡检不 spawn writer，只更新 gitignored runtime。
 - 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor` 确认仍为 WAIT_HEALTHY；若发现新的 detector fingerprint，再按 `AGENTS.md` 建立下一轮 bounded epoch。
