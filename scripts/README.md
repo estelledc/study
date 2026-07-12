@@ -2,7 +2,9 @@
 
 This directory owns the local content pipeline for `explorations/study`.
 
-Current policy: bulk content production and direct `main` publication are disabled. This document explains bounded maintenance primitives; it does not authorize a round, push, merge, deployment, or edits to existing note bodies. The canonical policy is `docs/operations-index.md` plus `data/operations-policy.json`.
+Current policy: bulk content production and direct `main` publication are disabled. This document explains bounded maintenance primitives; it does not authorize a round, push, merge, deployment, or edits to existing note bodies. The canonical operation policy is `docs/operations-index.md` plus `data/operations-policy.json`; `AGENTS.md` is the auto-loaded agent progression contract.
+
+Normal workflow, test, audit, tooling and site-quality maintenance follows the recurring supervisor and bounded writer epochs in `AGENTS.md`. A host scheduler or event source may wake the readonly supervisor repeatedly; only allowlisted, fully evidenced repairs can enter a single-writer epoch. This does not unlock the content pipeline commands described below.
 
 The historical `*-audit-*` batch helpers merged with the completed corpus audit are also disabled by the same policy. Their `data/audit-reviews/**` files remain legacy qualitative observations, not `study-review-receipt-v1` evidence, and cannot upgrade a note to VERIFIED. Do not rebuild the pool, claim another audit batch, prepare reviewer contexts, or finalize an audit round without a future operation-bound single-use approval mechanism.
 
@@ -164,9 +166,13 @@ For the 4-NEW flow, use `round:merge-one` (or `round:auto-advance`). `sync-and-m
 Read current runtime state:
 
 ```bash
+npm run status:supervisor
 npm run status:pipeline
 node scripts/pipeline-summary.mjs --json
+node scripts/loop-status.mjs --json
 ```
+
+`loop-status.mjs` is a read-only compatibility status command. Its former Markdown write mode, volume target, progress percentage and ETA have been removed. It must not be used as an objective or loop controller.
 
 When something fails:
 

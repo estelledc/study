@@ -59,6 +59,10 @@ data/pipeline-events.jsonl
 data/checkpoint.json
 data/round-lock.json
 data/round-lock.json.guard/
+data/supervisor-state.json
+data/supervisor-lease.json
+data/supervisor-lease.json.guard
+data/supervisor-events.jsonl
 data/.queue-transaction*
 data/STOP_SIGNAL
 data/graveyard.jsonl
