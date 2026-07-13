@@ -156,7 +156,7 @@ for await (const m of it) {
 
 ### 案例 2：父 + 子 agent 流水线
 
-把上面 researcher / writer 例子真的跑起来——父 agent 会自动调 Task 工具触发 researcher，拿到大纲后再调 writer。整个过程**父 agent 的 context 只看到摘要**，不爆。
+把上面 researcher / writer 例子真的跑起来——SDK 会按子 agent 的 `description` 匹配合适角色，拿到大纲后再交给 writer。整个过程**父 agent 的 context 只看到摘要**，不爆。
 
 ### 案例 3：从消息流里挑出最终结果
 

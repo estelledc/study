@@ -1,14 +1,14 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "2940071d31ef01bcfab5b9c69e271abe9a4624156376724b27cc1c0ba99d6ce1",
   "note": {
     "area": "projects",
     "slug": "claude-agent-sdk",
-    "digest_sha256": "fe6b52ccad33d352f0daa4dc7699624c5495118ae347b28d69c21f82f5c66b9d"
+    "digest_sha256": "2f6daa5bcf2168f5c65eac7eeb528905e58a2a6d3ccf51a02f043f1543e765c7"
   },
   "source_revision": "79b6350e13cf24af94a8d2e696a0883fd8cc55fe",
-  "research_input_sha256": "4131de405a59acfaf5f5117d49a3c2308ade3a20fb373c0c6ada2659575a95fd",
+  "research_input_sha256": "4a903374259533edf7a177f2e9f177a7ec314217f8066c3d1d68eae89b0c6ee1",
   "reviewers": [
     {
       "role": "ZERO_BASE",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-13T05:53:38.453Z"
+  "created_at": "2026-07-13T06:05:01.261Z"
 }
