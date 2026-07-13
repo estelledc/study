@@ -1,14 +1,14 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "e59457643ca942ec0846618872a56e0f8986a64aef0f72f65370745d2d0b28bb",
   "note": {
     "area": "projects",
     "slug": "openai-agents-sdk",
-    "digest_sha256": "8638f162851f2b3716204efda6bdff4e62726eb9b2f13c250cfe829846daaf8f"
+    "digest_sha256": "703adf35fa6a49d57bf925a06a3572c6cef297ba7432a0e119e3325c0f5cfd33"
   },
   "source_revision": "41e79f15940899349f8e13a1effd7bc00071f2e8",
-  "research_input_sha256": "a323b8522e3b76f06d99fea64869d9e97cad2f9a366d9a5c69a1b90afb49efab",
+  "research_input_sha256": "3d4b2fb6540ea636bb4d6924a245368789f900b0bdafaa2c19601c9655a07da1",
   "reviewers": [
     {
       "role": "ZERO_BASE",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-13T04:23:24.686Z"
+  "created_at": "2026-07-13T04:28:00.431Z"
 }

@@ -132,7 +132,7 @@ with trace('Customer support flow'):
 
 2. **handoff 不是 function call**：在 LLM 视角它确实长得像工具，但 runner 拦截后会切换主 agent。如果你把它当普通 function tool 实现一遍，会丢失"切上下文"的语义。
 
-3. **input_guardrail 默认并行 ≠ 没成本**：tripwire 触发时主 agent 可能已经吃了一段 token。要彻底防火，用阻塞模式 `run_input_guardrails_first=True`。
+3. **input_guardrail 默认并行 ≠ 没成本**：tripwire 触发时主 agent 可能已经吃了一段 token。要彻底防火，用阻塞模式 `@input_guardrail(run_in_parallel=False)`。
 
 4. **trace 里看不到东西**：检查 `OPENAI_AGENTS_DISABLE_TRACING` 没被环境继承、ZDR 政策没启用、长时任务后调了 `flush_traces()`。
 
