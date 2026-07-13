@@ -4,11 +4,11 @@
 
 ## 当前接班点
 
-- supervisor 状态：`WAIT_HEALTHY`；supervisor 已 armed，观察器运行只读巡检，writer 无待处理任务。
+- supervisor 状态：`PARKED_HUMAN`；supervisor 已 fail-closed 观察到 `scale-budget-exceeded`，writer 不可继续新增内容。
 - scope：launch scope 内的本地 workflow 文档、测试、审计、工具链和站点非内容代码质量维护。
-- 起始 ref：`ef31c30b45741b8dd490e680e0b60e49f846e805`（no-delta runtime、next_action 与 runtime schema 校验后的 HEAD）。
-- detector fingerprint：工作树干净；progression-contract、no-delta runtime 状态读取、`PARKED_NO_DELTA` 下一步提示与 runtime schema fail-closed 均已提交；verify:ci 23 步全绿。
-- external delta 计数：0；本地提交、测试通过、handoff 更新不计 external delta。
+- 起始 ref：`fc24c0563313e08947134f5d6af9c0b5307e75d5`；本轮以普通 merge 合入最新 `origin/main`，不得 rebase 或改写历史。
+- detector fingerprint：`node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 失败，`repository.tracked_files=4745 exceeds baseline=2733, threshold=3007`。增长来源经 Git 路径分布核验：当前 HEAD 有 1975 个 tracked files 位于 `data/audit-reviews/`，baseline source commit 中该目录为 0；不得自动删除证据、刷新 baseline 或放宽阈值。
+- external delta 计数：已形成远端 feature branch 与 PR #24；远端 CI 状态以 `gh pr checks 24 --repo estelledc/study` 为准。
 - 已完成切片：
   1. 建立 recurring supervisor + bounded epoch 状态机（supervisor-policy、supervisor-status）；
   2. 加入自动巡检/自动检修 allowlist 与 denylist，包含六项 repair requirements；
@@ -21,10 +21,11 @@
   9. 修复 `status:supervisor` 对 gitignored `data/supervisor-state.json` 中 `no_delta_batches` 的读取：达到阈值时进入 `PARKED_NO_DELTA`，runtime 损坏时 fail-closed 为 `PARKED_HUMAN`；本地提交 `96860c75`。
   10. 修复 `PARKED_NO_DELTA` 的 `next_action`：明确等待真实 external delta 或 operator reauthorization，避免被误解为普通 scheduled wake；本地提交 `796efb9b`。
   11. 修复 `data/supervisor-state.json` 可解析但 schema 非法时静默清零 `no_delta_batches` 的风险：缺失字段、字符串、负数或数组均 fail-closed；本地提交 `ef31c30b`。
-- 验证结果：`npm run verify:ci` 全部 23 步通过（toolchain、353 tests、repository audits、content contract、template similarity、freshness、redlines、action pins、audit:operations、audit:doc-lifecycle、asset contract、strict build 2062 pages、homepage links、Pagefind、SEO、static a11y、23 Playwright browser a11y smoke tests、pages artifact、Atlas performance budget、site performance budget、generated output drift、staged drift、whitespace diff）。`npm run verify:scripts` 353/353 通过，`node --test scripts/supervisor-status.test.mjs scripts/lib/supervisor-policy.test.mjs` 10/10 通过，`audit:operations` 和 `audit:doc-lifecycle` 均 OK，`git diff --check` 通过。工具链 Node 22.23.1 / npm 11.17.0 正确。
-- 剩余 blocker：无本地 blocker。未授权 push、PR、merge、deploy 或任何远端写操作；未授权内容生产或笔记正文修改。
-- 下一次 wake 条件：scheduled-health-check 定时触发、外部 CI/HEAD/owner-review 状态变化、明确 backlog ticket、或用户新指令。绿色巡检不 spawn writer，只更新 gitignored runtime。
-- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor` 确认仍为 WAIT_HEALTHY；若发现新的 detector fingerprint，再按 `AGENTS.md` 建立下一轮 bounded epoch。
+- 12. 修复 `status:supervisor` 漏掉规模 detector 的问题：automatic inspection 加入 `benchmark-site --compare`；`status:supervisor` 现在暴露 `scale-budget-exceeded`、冻结新增内容，并保持 audit evidence、performance budget 与 baseline 不变。
+- 验证结果：定向 `node --test scripts/supervisor-status.test.mjs scripts/lib/supervisor-policy.test.mjs scripts/audit-operation-entrypoints.test.mjs scripts/benchmark-site.test.mjs` 21/21 通过；`npm run verify:scripts` 通过；`npm run verify:ci` 本地通过；远端 PR #24 的 `verify:ci` 已在修复提交上通过。工具链 Node 22.23.1 / npm 11.17.0 正确。
+- 剩余 blocker：`scale-budget-exceeded`。若结论是 baseline 陈旧，只能另行提交迁移方案与证据；本轮不授权更新 baseline、阈值、队列或删除 `data/audit-reviews/`。
+- 下一次 wake 条件：PR #24 出现新的 CI/HEAD/review 状态变化，或操作者明确授权 baseline 迁移 / audit evidence 存放策略调整。没有外部变化时保持 `PARKED_HUMAN`，不启动内容生产。
+- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor` 复核 `scale-budget-exceeded`；PR 状态用 `gh pr view 24 --repo estelledc/study --json isDraft,headRefOid,mergeStateStatus,statusCheckRollup,reviews,comments`。
 - 下一位独立 agent 必须先读 `AGENTS.md`，建立 supervisor / epoch contract；不得自动恢复旧数量循环。
 
 ## 当前政策
