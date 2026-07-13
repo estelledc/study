@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 2,
+  "predecessor_digest_sha256": "2940071d31ef01bcfab5b9c69e271abe9a4624156376724b27cc1c0ba99d6ce1",
+  "note": {
+    "area": "projects",
+    "slug": "claude-agent-sdk",
+    "digest_sha256": "2f6daa5bcf2168f5c65eac7eeb528905e58a2a6d3ccf51a02f043f1543e765c7"
+  },
+  "source_revision": "79b6350e13cf24af94a8d2e696a0883fd8cc55fe",
+  "research_input_sha256": "4a903374259533edf7a177f2e9f177a7ec314217f8066c3d1d68eae89b0c6ee1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Explains docs/package conflict without claiming user mastery."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Static release/package/type review only; verification_status remains UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Version-specific SDK behavior is fast-moving and should be reviewed again within 90 days."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-13T06:05:01.261Z"
+}
