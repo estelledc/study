@@ -6,11 +6,18 @@ import { fileURLToPath } from 'node:url';
 
 import { auditDocLifecycle } from './audit-doc-lifecycle.mjs';
 import { auditOperationEntrypoints } from './audit-operation-entrypoints.mjs';
+import {
+  checkPerformanceBudget,
+  collectFullPerformanceReport,
+  comparePerformance,
+} from './benchmark-site.mjs';
 import { gitOutput } from './lib/git.mjs';
 import { loadOperationsPolicy } from './lib/operations-policy.mjs';
 import { ROOT } from './lib/paths.mjs';
 import { decideSupervisorAction } from './lib/supervisor-policy.mjs';
 import { checkRoundLock } from './round-lock.mjs';
+
+const SCALE_COMPARE_COMMAND = 'node scripts/benchmark-site.mjs --compare data/performance-baseline.json';
 
 export function buildSupervisorStatus(facts, policy) {
   const blockers = [];
@@ -19,6 +26,8 @@ export function buildSupervisorStatus(facts, policy) {
   if (!facts.toolchain_ok) blockers.push('required-toolchain-unavailable');
   if (facts.round_lock_active) blockers.push('round-lock-active');
   if (facts.supervisor_state_valid === false) blockers.push('policy-conflict');
+  if (facts.scale_budget?.status === 'failed') blockers.push('scale-budget-exceeded');
+  if (facts.scale_budget?.status === 'unreproducible') blockers.push('unreproducible-baseline');
 
   const decision = decideSupervisorAction({
     hard_blockers: blockers,
@@ -44,12 +53,19 @@ export function buildSupervisorStatus(facts, policy) {
       round_lock_active: facts.round_lock_active,
       no_delta_batches: decision.no_delta_batches,
       supervisor_state_valid: facts.supervisor_state_valid,
+      scale_budget: facts.scale_budget || null,
     },
     next_action: nextActionFor({ blockers, decision }),
   };
 }
 
 function nextActionFor({ blockers, decision }) {
+  if (blockers.includes('scale-budget-exceeded')) {
+    return 'Freeze new content; keep performance baseline and budget unchanged; document scale evidence and wait for a human migration or disposition decision.';
+  }
+  if (blockers.includes('unreproducible-baseline')) {
+    return 'Keep the readonly supervisor armed; restore a reproducible scale baseline before starting a writer epoch.';
+  }
   if (blockers.length > 0) {
     return 'Keep the readonly supervisor armed; resolve blockers under explicit scope before starting a writer epoch.';
   }
@@ -57,6 +73,55 @@ function nextActionFor({ blockers, decision }) {
     return 'Yield in PARKED_NO_DELTA until a real external delta or explicit operator reauthorization.';
   }
   return 'Yield in WAIT_HEALTHY until a scheduled check, external delta, or explicit backlog ticket.';
+}
+
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+
+export async function collectScaleBudgetFacts(policy, options = {}) {
+  const root = options.root || ROOT;
+  const scaleBudget = policy?.scale_budget || {};
+  const compareCommand = scaleBudget.compare_command;
+  const baseFacts = {
+    compare_command: compareCommand || null,
+    on_exceeded: scaleBudget.on_exceeded || null,
+    failures: [],
+    observations: [],
+  };
+
+  if (compareCommand !== SCALE_COMPARE_COMMAND) {
+    return {
+      ...baseFacts,
+      status: 'unreproducible',
+      failures: [`scale_budget.compare_command must remain ${SCALE_COMPARE_COMMAND}`],
+    };
+  }
+
+  try {
+    const budget = options.budget || readJson(path.join(root, 'data/performance-budget.json'));
+    const baselineRaw = options.baseline || readJson(path.join(root, 'data/performance-baseline.json'));
+    const baseline = baselineRaw.metrics || baselineRaw;
+    const report = options.performanceReport || await collectFullPerformanceReport({ root });
+    const metrics = report.metrics || report;
+    const comparison = comparePerformance(metrics, baseline, budget.relative_growth || {});
+    const failures = [
+      ...checkPerformanceBudget(metrics, budget),
+      ...comparison.failures,
+    ];
+    return {
+      ...baseFacts,
+      status: failures.length > 0 ? 'failed' : 'ok',
+      failures,
+      observations: comparison.observations,
+    };
+  } catch (error) {
+    return {
+      ...baseFacts,
+      status: 'unreproducible',
+      failures: [`scale budget check is not reproducible: ${error.message}`],
+    };
+  }
 }
 
 export function readSupervisorRuntime(policy, root = ROOT) {
@@ -91,6 +156,7 @@ async function collectFacts(policy) {
   const changedPaths = status ? status.split('\n').filter(Boolean).length : 0;
   const roundLock = await checkRoundLock();
   const supervisorRuntime = readSupervisorRuntime(policy);
+  const scaleBudget = await collectScaleBudgetFacts(policy);
   return {
     branch: gitOutput(['rev-parse', '--abbrev-ref', 'HEAD'], { cwd: ROOT }),
     head: gitOutput(['rev-parse', 'HEAD'], { cwd: ROOT }),
@@ -104,6 +170,7 @@ async function collectFacts(policy) {
     round_lock_active: roundLock.locked === true && roundLock.expired !== true,
     no_delta_batches: supervisorRuntime.no_delta_batches,
     supervisor_state_valid: supervisorRuntime.valid,
+    scale_budget: scaleBudget,
   };
 }
 

@@ -33,6 +33,8 @@ node scripts/benchmark-site.mjs --compare data/performance-baseline.json
 
 绿色巡检结果只进入 `WAIT_HEALTHY`，不能为了“持续”生成任务。detector 失败只有同时满足政策中的自动检修 requirements 与 allowlist 才能进入 writer epoch；denylist 或歧义一律 `PARKED_HUMAN`。
 
+规模比较是 supervisor 巡检的一等 detector。`benchmark-site --compare` 失败时，`status:supervisor` 必须暴露 `scale-budget-exceeded`，冻结新增内容，并等待人工决定迁移 baseline、调整证据存放方式或其他处置；不得自动删除 `data/audit-reviews/`、放宽阈值或刷新 baseline。
+
 `round:preflight` 不是通用状态命令：它要求干净的 `main`，并且只服务另行授权的内容 round。
 
 ## 3. 小轮次计划

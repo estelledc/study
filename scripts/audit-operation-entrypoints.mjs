@@ -69,6 +69,7 @@ export function auditOperationsPolicy(policy) {
   const externalDelta = progression?.external_delta || {};
   const inspection = progression?.automatic_inspection || {};
   const repair = progression?.automatic_repair || {};
+  const scaleBudget = policy?.scale_budget || {};
   const repairAllowlist = new Set(repair.allowlist || []);
   const repairRequirements = new Set(repair.requirements || []);
   const repairDenylist = new Set(repair.denylist || []);
@@ -145,10 +146,18 @@ export function auditOperationsPolicy(policy) {
   for (const command of [
     'npm run status:supervisor', 'git status --short --branch', 'npm run status:pipeline',
     'node scripts/audit-runtime-state.mjs --json', 'node scripts/loop-status.mjs --json',
+    'node scripts/benchmark-site.mjs --compare data/performance-baseline.json',
     'npm run audit:operations', 'npm run audit:doc-lifecycle', 'git diff --check',
   ]) {
     if (!inspectionCommands.has(command)) failures.push(`inspection-command-missing-${command}`);
   }
+  if (scaleBudget.compare_command !== 'node scripts/benchmark-site.mjs --compare data/performance-baseline.json') {
+    failures.push('scale-budget-compare-command-invalid');
+  }
+  if (scaleBudget.on_exceeded !== 'freeze-new-content-and-investigate') {
+    failures.push('scale-budget-exceeded-action-invalid');
+  }
+  if (scaleBudget.allow_threshold_bypass !== false) failures.push('scale-budget-threshold-bypass-must-be-disabled');
   if (repair.enabled !== true) failures.push('automatic-repair-must-be-enabled');
   if (repair.on_failure !== 'PARKED_HUMAN') failures.push('repair-failure-must-park');
   if (!Number.isInteger(repair.max_attempts_per_fingerprint)
@@ -179,8 +188,8 @@ export function auditOperationsPolicy(policy) {
   }
   for (const condition of [
     'unexpected-worktree-overlap', 'round-lock-active', 'policy-conflict',
-    'required-toolchain-unavailable', 'sensitive-data-risk', 'repair-attempts-exhausted',
-    'new-permission-required', 'unreproducible-baseline',
+    'required-toolchain-unavailable', 'sensitive-data-risk', 'scale-budget-exceeded',
+    'repair-attempts-exhausted', 'new-permission-required', 'unreproducible-baseline',
   ]) {
     if (!hardPause.has(condition)) failures.push(`hard-pause-missing-${condition}`);
   }

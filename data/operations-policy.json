@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "updated_at": "2026-07-12",
+  "updated_at": "2026-07-13",
   "project_progression": {
     "enabled": true,
     "mode": "supervised-bounded-epochs",
@@ -74,6 +74,7 @@
         "npm run status:pipeline",
         "node scripts/audit-runtime-state.mjs --json",
         "node scripts/loop-status.mjs --json",
+        "node scripts/benchmark-site.mjs --compare data/performance-baseline.json",
         "npm run audit:operations",
         "npm run audit:doc-lifecycle",
         "git diff --check"
@@ -124,6 +125,7 @@
       "policy-conflict",
       "required-toolchain-unavailable",
       "sensitive-data-risk",
+      "scale-budget-exceeded",
       "repair-attempts-exhausted",
       "new-permission-required",
       "unreproducible-baseline"

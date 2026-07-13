@@ -68,6 +68,10 @@ test('requires a supervised epoch contract without unlocking bulk or remote writ
   unsafe.project_progression.required_contract_fields = ['objective'];
   unsafe.project_progression.automatic_repair.max_attempts_per_fingerprint = 99;
   unsafe.project_progression.automatic_repair.denylist = [];
+  unsafe.project_progression.automatic_inspection.commands = [];
+  unsafe.project_progression.hard_pause_conditions = [];
+  unsafe.scale_budget.compare_command = 'node scripts/benchmark-site.mjs';
+  unsafe.scale_budget.allow_threshold_bypass = true;
   unsafe.bulk_production.enabled = true;
   const failures = auditOperationsPolicy(unsafe);
   assert.equal(failures.includes('write-wip-must-equal-one'), true);
@@ -77,5 +81,12 @@ test('requires a supervised epoch contract without unlocking bulk or remote writ
   assert.equal(failures.includes('run-contract-missing-external_outcome'), true);
   assert.equal(failures.includes('repair-attempt-budget-invalid'), true);
   assert.equal(failures.includes('repair-denylist-missing-note-content'), true);
+  assert.equal(
+    failures.includes('inspection-command-missing-node scripts/benchmark-site.mjs --compare data/performance-baseline.json'),
+    true,
+  );
+  assert.equal(failures.includes('hard-pause-missing-scale-budget-exceeded'), true);
+  assert.equal(failures.includes('scale-budget-compare-command-invalid'), true);
+  assert.equal(failures.includes('scale-budget-threshold-bypass-must-be-disabled'), true);
   assert.equal(failures.includes('bulk-production-must-default-disabled'), true);
 });

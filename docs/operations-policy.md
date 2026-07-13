@@ -25,6 +25,8 @@
 
 allowlist 只覆盖瞬时只读检查重试、scope 内格式/空白、已有目标的操作文档链接、确定性派生输出漂移和由真实验证结果驱动的 handoff 刷新。内容、队列、历史证据、政策/阈值、删测、依赖、工具链安装、worktree 拓扑、Git 历史、远端与凭证相关问题永不自动修。
 
+规模 detector 是 automatic inspection 的一部分：`node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 失败时必须冻结新增内容、保留 audit 证据、保持 performance budget / baseline 不变，并进入 `PARKED_HUMAN` 等待人工迁移或处置决策。绿色 `status:supervisor` 不能隐藏规模比较失败。
+
 supervisor 运行态、lease 和事件日志必须位于 gitignored 路径；它们只用于并发、退避和 fingerprint 去重，不能授予权限。绿色巡检只更新这些运行态，不写 tracked handoff；只有 writer epoch 完成或 `PARKED_*` 等实质状态变化才更新 `SESSION-HANDOFF.md`。连续 3 个 agent 批次没有 external delta 时进入 `PARKED_NO_DELTA`；local diff、测试通过、handoff、重启或新 epoch 都不算 external delta，也不能重置计数。
 
 ## 文档生命周期
