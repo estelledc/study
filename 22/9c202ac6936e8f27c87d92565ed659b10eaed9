@@ -1,0 +1,266 @@
+src/content/docs/projects/claude-agent-sdk.md
+  s_4e379c0190e3a4::t_be79eb09fe6895 3,7-19,24,28,35-39,45,57,61,63,68-69,91,96,100-110,112,114-116,144,155,183-186,197,202-204,208-210 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a547d3b7c0da26523dc4efb","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":3},{"Range":[7,19]},{"Single":24},{"Single":28},{"Range":[35,39]},{"Single":45},{"Single":57},{"Single":61},{"Single":63},{"Range":[68,69]},{"Single":91},{"Single":96},{"Range":[100,110]},{"Single":112},{"Range":[114,116]},{"Single":144},{"Single":155},{"Range":[183,186]},{"Single":197},{"Range":[202,204]},{"Range":[208,210]}]}]}
+data/content-contract-baseline.json
+  s_4e379c0190e3a4::t_1842a771039341 6-7 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a547d7e7c0da26523dc4f68","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[6,7]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "229c202ac6936e8f27c87d92565ed659b10eaed9",
+  "prompts": {},
+  "sessions": {
+    "s_4e379c0190e3a4": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a5451c97c0da26523dc24ef",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "data/content-contract-baseline.json": [
+      {
+        "hash": "s_4e379c0190e3a4::t_1842a771039341",
+        "line_ranges": [
+          {
+            "Range": [
+              6,
+              7
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a547d7e7c0da26523dc4f68",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  6,
+                  7
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/projects/claude-agent-sdk.md": [
+      {
+        "hash": "s_4e379c0190e3a4::t_be79eb09fe6895",
+        "line_ranges": [
+          {
+            "Single": 3
+          },
+          {
+            "Range": [
+              7,
+              19
+            ]
+          },
+          {
+            "Single": 24
+          },
+          {
+            "Single": 28
+          },
+          {
+            "Range": [
+              35,
+              39
+            ]
+          },
+          {
+            "Single": 45
+          },
+          {
+            "Single": 57
+          },
+          {
+            "Single": 61
+          },
+          {
+            "Single": 63
+          },
+          {
+            "Range": [
+              68,
+              69
+            ]
+          },
+          {
+            "Single": 91
+          },
+          {
+            "Single": 96
+          },
+          {
+            "Range": [
+              100,
+              110
+            ]
+          },
+          {
+            "Single": 112
+          },
+          {
+            "Range": [
+              114,
+              116
+            ]
+          },
+          {
+            "Single": 144
+          },
+          {
+            "Single": 155
+          },
+          {
+            "Range": [
+              183,
+              186
+            ]
+          },
+          {
+            "Single": 197
+          },
+          {
+            "Range": [
+              202,
+              204
+            ]
+          },
+          {
+            "Range": [
+              208,
+              210
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a547d3b7c0da26523dc4efb",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 3
+              },
+              {
+                "Range": [
+                  7,
+                  19
+                ]
+              },
+              {
+                "Single": 24
+              },
+              {
+                "Single": 28
+              },
+              {
+                "Range": [
+                  35,
+                  39
+                ]
+              },
+              {
+                "Single": 45
+              },
+              {
+                "Single": 57
+              },
+              {
+                "Single": 61
+              },
+              {
+                "Single": 63
+              },
+              {
+                "Range": [
+                  68,
+                  69
+                ]
+              },
+              {
+                "Single": 91
+              },
+              {
+                "Single": 96
+              },
+              {
+                "Range": [
+                  100,
+                  110
+                ]
+              },
+              {
+                "Single": 112
+              },
+              {
+                "Range": [
+                  114,
+                  116
+                ]
+              },
+              {
+                "Single": 144
+              },
+              {
+                "Single": 155
+              },
+              {
+                "Range": [
+                  183,
+                  186
+                ]
+              },
+              {
+                "Single": 197
+              },
+              {
+                "Range": [
+                  202,
+                  204
+                ]
+              },
+              {
+                "Range": [
+                  208,
+                  210
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_4e379c0190e3a4": {
+      "tool": "trae",
+      "conversation_id": "6a5451c97c0da26523dc24ef",
+      "session_id": "6a5451c97c0da26523dc24ef",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_4e379c0190e3a4::t_1842a771039341": {
+      "tool": "trae",
+      "conversation_id": "6a5451c97c0da26523dc24ef",
+      "session_id": "6a5451c97c0da26523dc24ef",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_4e379c0190e3a4::t_be79eb09fe6895": {
+      "tool": "trae",
+      "conversation_id": "6a5451c97c0da26523dc24ef",
+      "session_id": "6a5451c97c0da26523dc24ef",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
