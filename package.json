@@ -26,6 +26,7 @@
     "audit:content-contract": "node scripts/audit-content-contract.mjs",
     "audit:public-redlines": "node scripts/audit-public-redlines.mjs",
     "audit:freshness": "node scripts/audit-freshness.mjs",
+    "audit:legacy-reviews": "node scripts/migrate-audit-reviews.mjs --verify",
     "audit:template-similarity": "node scripts/analyze-template-similarity.mjs",
     "benchmark:site": "node scripts/benchmark-site.mjs",
     "benchmark:atlas": "node scripts/benchmark-atlas.mjs",
