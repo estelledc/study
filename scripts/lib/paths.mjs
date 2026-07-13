@@ -17,7 +17,6 @@ export const PRIORITY_QUEUE_PATH = path.join(DATA_DIR, 'priority-queue.jsonl');
 export const GRAVEYARD_PATH = path.join(DATA_DIR, 'graveyard.jsonl');
 export const WRITTEN_PATH = path.join(DATA_DIR, 'written.txt');
 export const STATUS_JSON_PATH = path.join(DATA_DIR, 'status.json');
-export const STATUS_MD_PATH = path.join(DATA_DIR, 'STATUS.md');
 export const PIPELINE_EVENTS_PATH = path.join(DATA_DIR, 'pipeline-events.jsonl');
 export const ROUND_LOCK_PATH = path.join(DATA_DIR, 'round-lock.json');
 export const CHECKPOINT_PATH = path.join(DATA_DIR, 'checkpoint.json');

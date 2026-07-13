@@ -1,6 +1,150 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-07-10",
+  "schema_version": "1.2",
+  "updated_at": "2026-07-13",
+  "project_progression": {
+    "enabled": true,
+    "mode": "supervised-bounded-epochs",
+    "requires_run_contract": true,
+    "advance_without_reconfirmation_within_contract": true,
+    "auto_start_next_epoch_within_window": true,
+    "scheduler_required_for_continuous_operation": true,
+    "busy_polling_allowed": false,
+    "supervisor": {
+      "execution_model": "readonly-observer-with-bounded-writer-epochs",
+      "state_path": "data/supervisor-state.json",
+      "lease_path": "data/supervisor-lease.json",
+      "idle_state": "WAIT_HEALTHY",
+      "parked_state": "PARKED_HUMAN",
+      "max_active_epochs": 1,
+      "max_consecutive_crashes": 3,
+      "poll_backoff_seconds": [60, 300, 900, 3600],
+      "wake_events": [
+        "scheduled-health-check",
+        "explicit-backlog-ticket",
+        "external-ci-change",
+        "remote-head-change",
+        "owner-review-change"
+      ]
+    },
+    "default_budget": {
+      "max_slices": 3,
+      "max_wall_time_minutes": 120,
+      "max_parallel_write_slices": 1
+    },
+    "default_window_budget": {
+      "max_epochs": 6,
+      "max_wall_time_minutes": 480
+    },
+    "required_contract_fields": [
+      "status",
+      "objective",
+      "scope",
+      "activated_by",
+      "review_after",
+      "acceptance_checks",
+      "budget",
+      "external_outcome",
+      "stop_conditions",
+      "superseded_by"
+    ],
+    "default_external_outcome": "review-ready local change set; D-axis remains unchanged until a separately authorized external action",
+    "stop_after_consecutive_batches_without_external_delta": 3,
+    "external_delta": {
+      "counted": [
+        "external-ci-state-change",
+        "remote-head-change",
+        "owner-review-change",
+        "accepted-pr-or-deploy-change"
+      ],
+      "not_counted": [
+        "local-diff",
+        "local-test-pass",
+        "handoff-update",
+        "agent-restart",
+        "new-epoch"
+      ],
+      "counter_persists_across_restarts": true,
+      "new_epoch_does_not_reset_counter": true
+    },
+    "automatic_inspection": {
+      "enabled": true,
+      "commands": [
+        "npm run status:supervisor",
+        "git status --short --branch",
+        "npm run status:pipeline",
+        "node scripts/audit-runtime-state.mjs --json",
+        "node scripts/loop-status.mjs --json",
+        "node scripts/benchmark-site.mjs --compare data/performance-baseline.json",
+        "npm run audit:operations",
+        "npm run audit:doc-lifecycle",
+        "git diff --check"
+      ],
+      "healthy_action": "WAIT_HEALTHY",
+      "green_check_spawns_writer": false,
+      "green_check_updates_tracked_handoff": false
+    },
+    "automatic_repair": {
+      "enabled": true,
+      "max_attempts_per_fingerprint": 2,
+      "on_failure": "PARKED_HUMAN",
+      "allowlist": [
+        "transient-readonly-check-retry",
+        "scoped-formatting-whitespace",
+        "operator-doc-link-target",
+        "deterministic-derived-output-drift",
+        "handoff-refresh-from-verified-results"
+      ],
+      "requirements": [
+        "detector-fingerprint",
+        "within-epoch-scope",
+        "reversible-local-change",
+        "before-after-snapshot",
+        "targeted-acceptance-check",
+        "no-external-state-change"
+      ],
+      "denylist": [
+        "note-content",
+        "candidate-queue",
+        "rewrite-pool",
+        "audit-queue",
+        "historical-failure-events",
+        "review-receipts",
+        "policy-or-threshold",
+        "test-deletion-or-skip",
+        "dependency-or-lockfile",
+        "toolchain-install",
+        "worktree-topology",
+        "git-history",
+        "remote-state",
+        "credential-or-secret"
+      ]
+    },
+    "hard_pause_conditions": [
+      "unexpected-worktree-overlap",
+      "round-lock-active",
+      "policy-conflict",
+      "required-toolchain-unavailable",
+      "sensitive-data-risk",
+      "scale-budget-exceeded",
+      "repair-attempts-exhausted",
+      "new-permission-required",
+      "unreproducible-baseline"
+    ],
+    "requires_separate_approval": [
+      "new-content-production",
+      "existing-note-body-rewrite",
+      "candidate-queue-mutation",
+      "non-dry-run-content-round",
+      "policy-or-threshold-change",
+      "toolchain-install",
+      "worktree-topology",
+      "commit",
+      "remote-push",
+      "pull-request",
+      "merge",
+      "deployment"
+    ]
+  },
   "bulk_production": {
     "enabled": false,
     "reason": "Content volume is not an authorized objective for the current review cycle.",
@@ -22,6 +166,7 @@
     "allow_threshold_bypass": false
   },
   "canonical_commands": {
+    "supervisor": "npm run status:supervisor",
     "status": "npm run status:pipeline",
     "preflight": "npm run round:preflight",
     "dry_run": "npm run round:dispatch -- --rewrite 0 --new 4 --dry-run",
@@ -29,6 +174,8 @@
   },
   "superseded_entrypoints": [
     "/auto-push",
+    "scripts/exit-conditions.mjs legacy bulk-loop decision",
+    "scripts/loop-status.mjs write mode and volume targets",
     "SESSION-HANDOFF legacy snapshots",
     "docs/follow-up-plan legacy roadmap"
   ]

@@ -6,60 +6,43 @@ import test from 'node:test';
 
 import { evaluateBulkPolicy, loadBulkPolicy } from './exit-conditions.mjs';
 
-test('missing or invalid policy fails closed without inventing a target', async (t) => {
+test('missing or invalid policy keeps the legacy loop retired', async (t) => {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'study-exit-policy-'));
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
 
-  const missing = await loadBulkPolicy(path.join(dir, 'missing.json'));
-  assert.deepEqual(missing, {
+  assert.deepEqual(await loadBulkPolicy(path.join(dir, 'missing.json')), {
     enabled: false,
-    reason: 'bulk-production-disabled',
+    reason: 'legacy-bulk-loop-retired',
     policy_state: 'missing',
   });
-
   const invalidPath = path.join(dir, 'invalid.json');
   await fs.writeFile(invalidPath, '{not-json', 'utf8');
-  const invalid = await loadBulkPolicy(invalidPath);
-  assert.deepEqual(invalid, {
+  assert.deepEqual(await loadBulkPolicy(invalidPath), {
     enabled: false,
-    reason: 'bulk-production-disabled',
+    reason: 'legacy-bulk-loop-retired',
     policy_state: 'invalid',
   });
 });
 
-test('disabled and unapproved policies do not expose approved_target', () => {
-  assert.deepEqual(evaluateBulkPolicy(undefined), {
+test('no tracked policy value can revive the retired loop', async (t) => {
+  assert.deepEqual(evaluateBulkPolicy(), {
     enabled: false,
-    reason: 'bulk-production-disabled',
+    reason: 'legacy-bulk-loop-retired',
   });
-  assert.deepEqual(evaluateBulkPolicy({
-    bulk_production: { enabled: false, approved_target: 20_000 },
-  }), {
-    enabled: false,
-    reason: 'bulk-production-disabled',
-  });
-  assert.deepEqual(evaluateBulkPolicy({
-    bulk_production: {
-      enabled: true,
-      requires_explicit_operator_approval: true,
-      approved_target: 12,
-    },
-  }), {
-    enabled: false,
-    reason: 'bulk-production-unapproved',
-  });
-});
 
-test('only an explicit approved policy exposes its bounded target', () => {
-  assert.deepEqual(evaluateBulkPolicy({
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'study-exit-policy-'));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+  const policyPath = path.join(dir, 'policy.json');
+  await fs.writeFile(policyPath, JSON.stringify({
     bulk_production: {
       enabled: true,
-      requires_explicit_operator_approval: true,
       approval_status: 'APPROVED',
-      approved_target: 12,
+      approved_target: 999999,
     },
-  }), {
-    enabled: true,
-    approved_target: 12,
+  }));
+  assert.deepEqual(await loadBulkPolicy(policyPath), {
+    enabled: false,
+    reason: 'legacy-bulk-loop-retired',
+    policy_state: 'loaded',
   });
 });

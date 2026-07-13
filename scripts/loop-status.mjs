@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// 综合 candidates / rewrite-pool / status.json / git log → STATUS.md 仪表盘 + 一行简报
-//
-// 用法：
-//   node scripts/loop-status.mjs                # 重写 STATUS.md，print 简报
-//   node scripts/loop-status.mjs --summary      # 只 print 简报
-//   node scripts/loop-status.mjs --md           # 只重写 STATUS.md
 
-import fs from 'node:fs/promises';
+// Legacy command name retained as a read-only compatibility status view.
+// It reports current facts only: it does not write files, rank work, estimate
+// completion, or authorize any queue/content operation.
+
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
 import { countNotesByArea } from './lib/content-store.mjs';
 import { gitOutput } from './lib/git.mjs';
 import { readJson } from './lib/json-store.mjs';
@@ -15,183 +15,96 @@ import {
   CANDIDATES_PATH,
   REWRITE_POOL_PATH,
   STATUS_JSON_PATH,
-  STATUS_MD_PATH,
 } from './lib/paths.mjs';
 
-const CANDIDATES = CANDIDATES_PATH;
-const REWRITE_POOL = REWRITE_POOL_PATH;
-const STATUS_JSON = STATUS_JSON_PATH;
-const STATUS_MD = STATUS_MD_PATH;
-
-const TARGET_PAPERS = 10000;
-const TARGET_PROJECTS = 10000;
-const TARGET_TOTAL = TARGET_PAPERS + TARGET_PROJECTS;
-
-function parseArgs() {
-  const args = { summary: false, md: false };
-  for (let i = 2; i < process.argv.length; i++) {
-    const a = process.argv[i];
-    if (a === '--summary') args.summary = true;
-    else if (a === '--md') args.md = true;
+export function parseArgs(argv = process.argv.slice(2)) {
+  const args = { json: false };
+  for (const arg of argv) {
+    if (arg === '--json') args.json = true;
+    else if (arg === '--summary') args.json = false;
+    else throw new Error(`unknown argument: ${arg}`);
   }
-  if (!args.summary && !args.md) { args.summary = true; args.md = true; }
   return args;
 }
 
-async function readJsonlSafe(filePath) {
-  return readJsonl(filePath, { missing: 'empty' });
-}
-
-async function readJsonSafe(filePath, fallback) {
-  return readJson(filePath, { missing: fallback });
-}
-
-function statusBreakdown(items) {
+export function statusBreakdown(items) {
   const out = {};
-  for (const x of items) {
-    out[x.status] = (out[x.status] || 0) + 1;
-  }
+  for (const item of items) out[item.status] = (out[item.status] || 0) + 1;
   return out;
 }
 
-function pct(n, total) {
-  return ((n / total) * 100).toFixed(2);
-}
-
-function progressBar(n, total, width = 30) {
-  const filled = Math.round((n / total) * width);
-  return '[' + '█'.repeat(filled) + '░'.repeat(width - filled) + ']';
-}
-
-function gitLogShort(n = 5) {
+function gitFact(args, fallback = 'unavailable') {
   try {
-    return gitOutput(['log', '--oneline', `-${n}`]);
+    return gitOutput(args);
   } catch {
-    return '(git log unavailable)';
+    return fallback;
   }
 }
 
-function gitLogBatchEvents(n = 10) {
-  try {
-    return gitOutput(['log', '--oneline', `-${n}`, '--grep=atlas+backlinks']);
-  } catch {
-    return '';
-  }
+export function buildReport({ totals, candidates, rewritePool, status, git }) {
+  const candidateStatus = statusBreakdown(candidates);
+  const rewriteStatus = statusBreakdown(rewritePool);
+  return {
+    schema_version: 'study-loop-status-readonly-v1',
+    readonly: true,
+    objective: null,
+    git,
+    notes: {
+      papers: totals.papers,
+      projects: totals.projects,
+      total: totals.papers + totals.projects,
+    },
+    queues: {
+      candidates: candidateStatus,
+      rewrite_pool: rewriteStatus,
+    },
+    runtime: {
+      batch: status?.batch?.n ?? null,
+      last_build: status?.last_build ?? null,
+    },
+    guidance: 'Choose work from AGENTS.md using current evidence; this report is not a goal or authorization.',
+  };
 }
 
-function buildSummary(state) {
-  const { totals, status, candByStatus, poolByStatus } = state;
-  const written = totals.papers + totals.projects;
-  const queue = (candByStatus.queued || 0);
-  const lastBuild = status?.last_build;
-  const buildStr = lastBuild?.ok
-    ? `build ${(lastBuild.duration_ms / 1000).toFixed(1)}s`
-    : (lastBuild?.ok === false ? 'build FAIL' : 'build —');
-  const batchN = status?.batch?.n ?? '—';
-  const batchOk = status?.batch?.commits?.length ?? '—';
-  const batchFail = status?.batch?.failed?.length ?? 0;
-  const time = new Date().toTimeString().slice(0, 5);
-  return `batch ${batchN} ${batchFail === 0 ? '✅' : '⚠️'} ${batchOk}/8 | total=${written} | queue ${queue} | rewrite-pool ${poolByStatus.available || 0} | ${buildStr} | ${time}`;
+export function buildSummary(report) {
+  const candidates = report.queues.candidates;
+  const rewrite = report.queues.rewrite_pool;
+  const build = report.runtime.last_build;
+  const buildState = build?.ok === true ? 'pass' : (build?.ok === false ? 'fail' : 'unknown');
+  return [
+    'mode=read-only-maintenance',
+    `head=${report.git.head}`,
+    `notes=${report.notes.total}`,
+    `candidates.queued=${candidates.queued || 0}`,
+    `candidates.claimed=${candidates.claimed || 0}`,
+    `rewrite.available=${rewrite.available || 0}`,
+    `build=${buildState}`,
+  ].join(' | ');
 }
 
-function buildMarkdown(state) {
-  const { totals, candByStatus, poolByStatus, status, recentCommits, batchEvents } = state;
-  const written = totals.papers + totals.projects;
-  const queue = candByStatus.queued || 0;
-  const blacklisted = candByStatus.blacklisted || 0;
-  const claimed = candByStatus.claimed || 0;
-  const writtenCand = candByStatus.written || 0;
-  const failed = candByStatus.failed || 0;
-
-  // 速率估算
-  const ratePerHour = 16; // 8 net new / 30 min
-  const remaining = TARGET_TOTAL - written;
-  const etaHours = Math.round(remaining / ratePerHour);
-  const etaSessions = Math.ceil(etaHours / 4); // 假设每 session 4h 有效
-
-  return `# Auto-push 进度仪表盘
-
-> 最后更新：${new Date().toISOString()}
-> 自动生成 by \`scripts/loop-status.mjs\` — 不要手改
-
-## 总进度
-
-${progressBar(written, TARGET_TOTAL)} ${pct(written, TARGET_TOTAL)}% (${written} / ${TARGET_TOTAL})
-
-| Area | 已写 | 目标 | 比例 |
-|---|---:|---:|---:|
-| papers   | ${totals.papers}   | ${TARGET_PAPERS}   | ${pct(totals.papers, TARGET_PAPERS)}% |
-| projects | ${totals.projects} | ${TARGET_PROJECTS} | ${pct(totals.projects, TARGET_PROJECTS)}% |
-
-## 候选池（candidates.jsonl）
-
-- queued:      **${queue}**
-- claimed:     ${claimed}
-- written:     ${writtenCand}
-- blacklisted: ${blacklisted}
-- failed:      ${failed}
-
-## Rewrite 池（rewrite-pool.jsonl）
-
-- available:   **${poolByStatus.available || 0}**
-- claimed:     ${poolByStatus.claimed || 0}
-- written:     ${poolByStatus.written || 0}
-- failed:      ${poolByStatus.failed || 0}
-
-## 当前批次（status.json）
-
-- batch n:     ${status?.batch?.n ?? '—'}
-- 已派发:      ${status?.batch?.commits?.length ?? '—'}
-- 失败:        ${status?.batch?.failed?.length ?? 0}
-- 上次 build:  ${status?.last_build?.ok ? `✅ ${(status.last_build.duration_ms / 1000).toFixed(1)}s` : (status?.last_build?.ok === false ? '❌ FAIL' : '—')}
-
-## 速率 + ETA
-
-- 当前速率：~${ratePerHour} net new / hour（保质 4R+4N，30 min/批）
-- 剩余：${remaining}
-- 预计：${etaHours} hours ≈ ${etaSessions} session（按每 session 4h 有效推算）
-
-## 最近 batch 提交
-
-\`\`\`
-${batchEvents || '(no batch commits yet)'}
-\`\`\`
-
-## 最近 5 个 commit
-
-\`\`\`
-${recentCommits}
-\`\`\`
-`;
+async function collectReport() {
+  const [candidates, rewritePool, status, totals] = await Promise.all([
+    readJsonl(CANDIDATES_PATH, { missing: 'empty' }),
+    readJsonl(REWRITE_POOL_PATH, { missing: 'empty' }),
+    readJson(STATUS_JSON_PATH, { missing: {} }),
+    countNotesByArea(),
+  ]);
+  const git = {
+    branch: gitFact(['rev-parse', '--abbrev-ref', 'HEAD']),
+    head: gitFact(['rev-parse', 'HEAD']),
+  };
+  return buildReport({ totals, candidates, rewritePool, status, git });
 }
 
 async function main() {
   const args = parseArgs();
-
-  const candidates = await readJsonlSafe(CANDIDATES);
-  const pool = await readJsonlSafe(REWRITE_POOL);
-  const status = await readJsonSafe(STATUS_JSON, {});
-
-  const totals = await countNotesByArea();
-
-  const candByStatus = statusBreakdown(candidates);
-  const poolByStatus = statusBreakdown(pool);
-
-  const recentCommits = gitLogShort(5);
-  const batchEvents = gitLogBatchEvents(5);
-
-  const state = { totals, candByStatus, poolByStatus, status, recentCommits, batchEvents };
-
-  if (args.md) {
-    const md = buildMarkdown(state);
-    await fs.writeFile(STATUS_MD, md);
-  }
-  if (args.summary) {
-    console.log(buildSummary(state));
-  }
+  const report = await collectReport();
+  console.log(args.json ? JSON.stringify(report, null, 2) : buildSummary(report));
 }
 
-main().catch(err => {
-  console.error('loop-status failed:', err);
-  process.exit(1);
-});
+if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1] || '')) {
+  main().catch((error) => {
+    console.error(`loop-status failed: ${error.message}`);
+    process.exit(1);
+  });
+}

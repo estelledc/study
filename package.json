@@ -46,6 +46,7 @@
     "fix:candidate-metadata": "node scripts/fix-candidate-metadata.mjs --projects",
     "doctor:worktrees": "node scripts/worktree-doctor.mjs",
     "status:pipeline": "node scripts/pipeline-summary.mjs",
+    "status:supervisor": "node scripts/supervisor-status.mjs --json",
     "verify:pipeline": "npm run verify:scripts && npm run doctor:worktrees && node --test scripts/lib/prompts.test.mjs && node scripts/pipeline-summary.mjs --json && DRY_RUN=1 bash scripts/finalize-round.sh && DRY_RUN=1 bash scripts/sync-and-merge.sh",
     "round:preflight": "node scripts/round.mjs preflight",
     "round:dispatch": "node scripts/round.mjs dispatch",
