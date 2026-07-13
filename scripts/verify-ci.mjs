@@ -49,6 +49,7 @@ export function buildCiSteps(env = process.env) {
     command: 'node',
     args: ['scripts/audit-freshness.mjs', '--as-of', freshnessAsOf(env), '--json'],
   },
+  { name: 'legacy audit review archive', command: 'npm', args: ['run', 'audit:legacy-reviews'] },
   { name: 'tracked-file redlines', command: 'node', args: ['scripts/audit-public-redlines.mjs', '--tracked', '--json'] },
   { name: 'action pins', command: 'node', args: ['scripts/audit-action-pins.mjs'] },
   { name: 'operation entrypoints', command: 'node', args: ['scripts/audit-operation-entrypoints.mjs'] },

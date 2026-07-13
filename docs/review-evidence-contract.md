@@ -34,6 +34,16 @@ data/review-receipts/<area>/<slug>.json
 
 声明 `ACTUAL_RUN` 时必须引用 Git 跟踪的 `data/review-evidence/<area>/<slug>/*.json`。Artifact 记录参数数组、仓库相对工作目录、退出码、PASS/FAIL 和短结果摘要；不记录 shell 字符串、环境变量或原始输出。审计会重新读取文件、重算原始字节 SHA-256、确认 Git 跟踪状态并验证结构。缺失、未跟踪、哈希不符或退出失败都不能得到 `VERIFIED`。
 
+## Legacy audit reviews
+
+`data/audit-reviews/legacy-audit-reviews.jsonl` 与 `data/audit-reviews/manifest.json` 只保存历史批量 audit 的 qualitative observations。它们保留原始 review JSON 文本、原路径、字节数和 SHA-256，验证入口是：
+
+```bash
+npm run audit:legacy-reviews
+```
+
+这些记录不是 `study-review-receipt-v1`，不包含 `ACTUAL_RUN` evidence，也不能把 legacy 笔记升级为 `VERIFIED`。未来如果要把某篇笔记升级到 v2，仍必须生成当前契约下的 receipt 和 tracked evidence artifact。
+
 ## Note digest
 
 `note.digest_sha256` 基于规范化 Markdown：

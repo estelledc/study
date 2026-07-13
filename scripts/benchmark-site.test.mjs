@@ -6,6 +6,7 @@ import test from 'node:test';
 
 import {
   checkPerformanceBudget,
+  collectLegacyAuditReviewMetrics,
   collectPerformanceMetrics,
   comparePerformance,
 } from './benchmark-site.mjs';
@@ -47,4 +48,21 @@ test('fails closed when a required comparable metric is missing', () => {
   assert.deepEqual(result.failures, [
     'dist.bytes cannot be compared because current, baseline, or growth limit is missing',
   ]);
+});
+
+test('reports legacy audit reviews as evidence items rather than source files', (t) => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'study-perf-audit-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  fs.mkdirSync(path.join(root, 'data/audit-reviews'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'data/audit-reviews/manifest.json'), '{}');
+  const metrics = collectLegacyAuditReviewMetrics(root, () => ({
+    records: 1975,
+    raw_bytes: 5926326,
+    archive_bytes: 6984914,
+  }));
+  assert.deepEqual(metrics, {
+    legacy_audit_review_items: 1975,
+    legacy_audit_review_raw_bytes: 5926326,
+    legacy_audit_review_archive_bytes: 6984914,
+  });
 });

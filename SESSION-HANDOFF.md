@@ -4,11 +4,11 @@
 
 ## 当前接班点
 
-- supervisor 状态：`PARKED_HUMAN`；supervisor 已 fail-closed 观察到 `scale-budget-exceeded`，writer 不可继续新增内容。
+- supervisor 状态：`WAIT_HEALTHY`；`scale-budget-exceeded` 已通过批准的 legacy audit review 聚合迁移解除，当前无 hard blocker。
 - scope：launch scope 内的本地 workflow 文档、测试、审计、工具链和站点非内容代码质量维护。
-- 起始 ref：`fc24c0563313e08947134f5d6af9c0b5307e75d5`；本轮以普通 merge 合入最新 `origin/main`，不得 rebase 或改写历史。
-- detector fingerprint：`node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 失败，`repository.tracked_files=4745 exceeds baseline=2733, threshold=3007`。增长来源经 Git 路径分布核验：当前 HEAD 有 1975 个 tracked files 位于 `data/audit-reviews/`，baseline source commit 中该目录为 0；不得自动删除证据、刷新 baseline 或放宽阈值。
-- external delta 计数：已形成远端 feature branch 与 PR #24；远端 CI 状态以 `gh pr checks 24 --repo estelledc/study` 为准。
+- 起始 ref：`c309d5d270e30ec7764c4a7d456a1dde4b489b49`（PR #24 merge commit）；本轮从最新 `origin/main` 新建分支 `codex/study-audit-evidence-migration`，已 push 到远端并打开 PR #25。
+- detector fingerprint：原失败为 `node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 报告 `repository.tracked_files=4745 exceeds baseline=2733, threshold=3007`。根因是 1975 条 legacy audit review 以逐文件 JSON 存放。已迁移为 `data/audit-reviews/legacy-audit-reviews.jsonl` + `manifest.json`，并保留每条原始 review 的路径、字节数与 SHA-256。
+- external delta 计数：PR #24 已 merged；main build/deploy 已通过。PR #25 已打开并标记 Ready for review；远端 `verify:ci` 已在 head `35b78594f66d8bc7f7d80c478772076f6aa3eae5` 通过，后续以最新 PR head 的 checks 为准。
 - 已完成切片：
   1. 建立 recurring supervisor + bounded epoch 状态机（supervisor-policy、supervisor-status）；
   2. 加入自动巡检/自动检修 allowlist 与 denylist，包含六项 repair requirements；
@@ -21,11 +21,13 @@
   9. 修复 `status:supervisor` 对 gitignored `data/supervisor-state.json` 中 `no_delta_batches` 的读取：达到阈值时进入 `PARKED_NO_DELTA`，runtime 损坏时 fail-closed 为 `PARKED_HUMAN`；本地提交 `96860c75`。
   10. 修复 `PARKED_NO_DELTA` 的 `next_action`：明确等待真实 external delta 或 operator reauthorization，避免被误解为普通 scheduled wake；本地提交 `796efb9b`。
   11. 修复 `data/supervisor-state.json` 可解析但 schema 非法时静默清零 `no_delta_batches` 的风险：缺失字段、字符串、负数或数组均 fail-closed；本地提交 `ef31c30b`。
-- 12. 修复 `status:supervisor` 漏掉规模 detector 的问题：automatic inspection 加入 `benchmark-site --compare`；`status:supervisor` 现在暴露 `scale-budget-exceeded`、冻结新增内容，并保持 audit evidence、performance budget 与 baseline 不变。
-- 验证结果：定向 `node --test scripts/supervisor-status.test.mjs scripts/lib/supervisor-policy.test.mjs scripts/audit-operation-entrypoints.test.mjs scripts/benchmark-site.test.mjs` 21/21 通过；`npm run verify:scripts` 通过；`npm run verify:ci` 本地通过；远端 PR #24 的 `verify:ci` 已在修复提交上通过。工具链 Node 22.23.1 / npm 11.17.0 正确。
-- 剩余 blocker：`scale-budget-exceeded`。若结论是 baseline 陈旧，只能另行提交迁移方案与证据；本轮不授权更新 baseline、阈值、队列或删除 `data/audit-reviews/`。
-- 下一次 wake 条件：PR #24 出现新的 CI/HEAD/review 状态变化，或操作者明确授权 baseline 迁移 / audit evidence 存放策略调整。没有外部变化时保持 `PARKED_HUMAN`，不启动内容生产。
-- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor` 复核 `scale-budget-exceeded`；PR 状态用 `gh pr view 24 --repo estelledc/study --json isDraft,headRefOid,mergeStateStatus,statusCheckRollup,reviews,comments`。
+- 12. 修复 `status:supervisor` 漏掉规模 detector 的问题：automatic inspection 加入 `benchmark-site --compare`；`status:supervisor` 暴露 `scale-budget-exceeded`、冻结新增内容，并保持 audit evidence、performance budget 与 baseline 不变。
+  13. 完成批准的 audit evidence migration：本地提交 `2acd44cef` 聚合 1975 条 legacy review，新增 `npm run audit:legacy-reviews`，删除旧 `data/audit-reviews/papers/*.json` 与 `projects/*.json` 逐文件布局。
+  14. 更新 performance baseline 与操作文档：本地提交 `e68eaf52b` 记录 `repository.tracked_files=2775` 与 `legacy_audit_review_items=1975`，未提高 threshold。
+- 验证结果：`npm run audit:legacy-reviews` 通过，验证 1975 records；`node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 通过；`npm run status:supervisor` 返回 `WAIT_HEALTHY`、`blockers=[]`；`npm run verify:ci` 全部通过（含 tests、strict build 2062 页、23 个 Playwright a11y 测试、Pages artifact、Atlas/site benchmark）。
+- 剩余 blocker：无。Publication 仍按政策需要单次授权；本轮迁移不授权内容 round。
+- 下一次 wake 条件：PR #25 出现新的 CI/review/head 状态变化，content-health issue，或新的研究/维护指令。无外部变化时进入普通健康检查。
+- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor`；PR 状态用 GitHub API 或浏览器查看 `https://github.com/estelledc/study/pull/25`。
 - 下一位独立 agent 必须先读 `AGENTS.md`，建立 supervisor / epoch contract；不得自动恢复旧数量循环。
 
 ## 当前政策

@@ -1,20 +1,20 @@
 {
   "schema_version": "2.0",
   "dist": {
-    "files": 4843,
-    "bytes": 181016865,
+    "files": 4845,
+    "bytes": 188578582,
     "largest_html": {
-      "path": "projects/plane/index.html",
-      "bytes": 257378
+      "path": "method/index.html",
+      "bytes": 106074
     }
   },
   "pagefind": {
-    "files": 2337,
-    "bytes": 20294979
+    "files": 2338,
+    "bytes": 20457146
   },
   "public": {
-    "files": 433,
-    "bytes": 37527270
+    "files": 434,
+    "bytes": 37563666
   },
   "atlas": {
     "notes": 1975,
@@ -24,18 +24,21 @@
     "chunk_size_budget": 100,
     "max_chunk_entries": 100,
     "output_files": 71,
-    "output_bytes": 2444866,
+    "output_bytes": 2445283,
     "landing_bytes": 13202,
     "landing_direct_note_links": 0
   },
   "repository": {
-    "tracked_files": 2733,
-    "tracked_bytes": 61621107,
-    "source_archive_bytes": 48351737
+    "tracked_files": 2775,
+    "tracked_bytes": 69779992,
+    "source_archive_bytes": 49792838,
+    "legacy_audit_review_items": 1975,
+    "legacy_audit_review_raw_bytes": 5926326,
+    "legacy_audit_review_archive_bytes": 6984914
   },
   "source": {
-    "commit": "adf70a9df4beaa5cd2fc2f2643eb391d4d0e063a",
-    "node": "v26.4.0",
+    "commit": "2acd44cef2207b76897d6d86613c03147a4e4a45",
+    "node": "v22.23.1",
     "npm": "11.17.0",
     "platform": "darwin-arm64"
   }

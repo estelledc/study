@@ -7,6 +7,7 @@ import { performance } from 'node:perf_hooks';
 import { fileURLToPath } from 'node:url';
 
 import { benchmarkAtlas } from './benchmark-atlas.mjs';
+import { verifyLegacyAuditReviewArchive } from './migrate-audit-reviews.mjs';
 import { DATA_DIR, ROOT } from './lib/paths.mjs';
 
 const BASELINE_PATH = path.join(DATA_DIR, 'performance-baseline.json');
@@ -57,6 +58,23 @@ function runGit(root, args, options = {}) {
   });
 }
 
+export function collectLegacyAuditReviewMetrics(root = ROOT, verifier = verifyLegacyAuditReviewArchive) {
+  const manifestPath = path.join(root, 'data/audit-reviews/manifest.json');
+  if (!fs.existsSync(manifestPath)) {
+    return {
+      legacy_audit_review_items: 0,
+      legacy_audit_review_raw_bytes: 0,
+      legacy_audit_review_archive_bytes: 0,
+    };
+  }
+  const verified = verifier({ root });
+  return {
+    legacy_audit_review_items: verified.records,
+    legacy_audit_review_raw_bytes: verified.raw_bytes,
+    legacy_audit_review_archive_bytes: verified.archive_bytes,
+  };
+}
+
 export function collectRepositoryMetrics(root = ROOT, gitRunner = runGit) {
   const listed = gitRunner(root, ['ls-files', '-z']);
   if (listed.status !== 0) throw new Error('unable to list tracked repository files');
@@ -75,6 +93,7 @@ export function collectRepositoryMetrics(root = ROOT, gitRunner = runGit) {
     tracked_files: files.length,
     tracked_bytes: trackedBytes,
     source_archive_bytes: archive.stdout.length,
+    ...collectLegacyAuditReviewMetrics(root),
   };
 }
 

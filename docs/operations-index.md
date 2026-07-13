@@ -35,6 +35,8 @@ node scripts/benchmark-site.mjs --compare data/performance-baseline.json
 
 规模比较是 supervisor 巡检的一等 detector。`benchmark-site --compare` 失败时，`status:supervisor` 必须暴露 `scale-budget-exceeded`，冻结新增内容，并等待人工决定迁移 baseline、调整证据存放方式或其他处置；不得自动删除 `data/audit-reviews/`、放宽阈值或刷新 baseline。
 
+已批准的处置方案是把 legacy audit reviews 迁移为 `data/audit-reviews/legacy-audit-reviews.jsonl` + `manifest.json`，并用 `npm run audit:legacy-reviews` 校验证据完整性。后续不得恢复旧的 `data/audit-reviews/papers/*.json` / `projects/*.json` 逐文件布局来绕过规模信号。
+
 `round:preflight` 不是通用状态命令：它要求干净的 `main`，并且只服务另行授权的内容 round。
 
 ## 3. 小轮次计划
