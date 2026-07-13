@@ -70,6 +70,14 @@ test('malformed supervisor runtime fails closed as a policy conflict', () => {
   assert.deepEqual(status.blockers, ['policy-conflict']);
 });
 
+test('policy conflicts stay parked even if the policy hard-pause list is damaged', () => {
+  const damagedPolicy = structuredClone(policy);
+  damagedPolicy.project_progression.hard_pause_conditions = [];
+  const status = buildSupervisorStatus(healthyFacts({ operation_failures: 1 }), damagedPolicy);
+  assert.equal(status.supervisor_state, 'PARKED_HUMAN');
+  assert.deepEqual(status.blockers, ['policy-conflict']);
+});
+
 test('scale budget failures park the supervisor and freeze new content', () => {
   const status = buildSupervisorStatus(healthyFacts({
     scale_budget: {
@@ -149,6 +157,9 @@ test('supervisor runtime schema corruption fails closed instead of resetting no-
   fs.mkdirSync(path.join(root, 'data'), { recursive: true });
 
   assert.deepEqual(readSupervisorRuntime(policy, root), { no_delta_batches: 0, valid: true });
+  const missingStatePathPolicy = structuredClone(policy);
+  delete missingStatePathPolicy.project_progression.supervisor.state_path;
+  assert.deepEqual(readSupervisorRuntime(missingStatePathPolicy, root), { no_delta_batches: 0, valid: false });
 
   for (const state of [
     { no_delta_batches: '3' },

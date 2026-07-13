@@ -1,4 +1,15 @@
 const PARKED = 'PARKED_HUMAN';
+const BUILT_IN_HARD_BLOCKERS = new Set([
+  'unexpected-worktree-overlap',
+  'round-lock-active',
+  'policy-conflict',
+  'required-toolchain-unavailable',
+  'sensitive-data-risk',
+  'scale-budget-exceeded',
+  'repair-attempts-exhausted',
+  'new-permission-required',
+  'unreproducible-baseline',
+]);
 
 function asSet(value) {
   return new Set(Array.isArray(value) ? value : []);
@@ -26,7 +37,7 @@ export function classifyRepairCandidate(candidate, policy) {
     'reversible-local-change': candidate.reversible_local_change === true,
     'before-after-snapshot': candidate.before_after_snapshot === true,
     'targeted-acceptance-check': candidate.targeted_acceptance_check === true,
-    'no-external-state-change': candidate.external_state_change !== true,
+    'no-external-state-change': candidate.external_state_change === false,
   };
   for (const requirement of repair.requirements || []) {
     if (requiredEvidence[requirement] !== true) {
@@ -52,7 +63,9 @@ export function decideSupervisorAction(input, policy) {
   }
 
   const hardPause = asSet(progression.hard_pause_conditions);
-  const blockers = (input.hard_blockers || []).filter((blocker) => hardPause.has(blocker));
+  const blockers = (input.hard_blockers || []).filter((blocker) => (
+    hardPause.has(blocker) || BUILT_IN_HARD_BLOCKERS.has(blocker)
+  ));
   if (blockers.length > 0 || input.repair_failed === true) {
     return {
       state: PARKED,

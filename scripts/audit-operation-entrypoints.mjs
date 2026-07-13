@@ -88,6 +88,8 @@ export function auditOperationsPolicy(policy) {
   if (supervisor.execution_model !== 'readonly-observer-with-bounded-writer-epochs') {
     failures.push('supervisor-execution-model-invalid');
   }
+  if (supervisor.state_path !== 'data/supervisor-state.json') failures.push('supervisor-state-path-invalid');
+  if (supervisor.lease_path !== 'data/supervisor-lease.json') failures.push('supervisor-lease-path-invalid');
   if (supervisor.idle_state !== 'WAIT_HEALTHY') failures.push('supervisor-idle-state-invalid');
   if (supervisor.parked_state !== 'PARKED_HUMAN') failures.push('supervisor-parked-state-invalid');
   if (supervisor.max_active_epochs !== 1) failures.push('active-epoch-wip-must-equal-one');

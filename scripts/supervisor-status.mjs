@@ -126,7 +126,9 @@ export async function collectScaleBudgetFacts(policy, options = {}) {
 
 export function readSupervisorRuntime(policy, root = ROOT) {
   const relativeStatePath = policy?.project_progression?.supervisor?.state_path;
-  if (!relativeStatePath) return { no_delta_batches: 0, valid: true };
+  if (typeof relativeStatePath !== 'string' || relativeStatePath.trim() === '') {
+    return { no_delta_batches: 0, valid: false };
+  }
 
   const statePath = path.join(root, relativeStatePath);
   if (!fs.existsSync(statePath)) return { no_delta_batches: 0, valid: true };

@@ -70,6 +70,8 @@ test('requires a supervised epoch contract without unlocking bulk or remote writ
   unsafe.project_progression.automatic_repair.denylist = [];
   unsafe.project_progression.automatic_inspection.commands = [];
   unsafe.project_progression.hard_pause_conditions = [];
+  delete unsafe.project_progression.supervisor.state_path;
+  delete unsafe.project_progression.supervisor.lease_path;
   unsafe.scale_budget.compare_command = 'node scripts/benchmark-site.mjs';
   unsafe.scale_budget.allow_threshold_bypass = true;
   unsafe.bulk_production.enabled = true;
@@ -78,6 +80,8 @@ test('requires a supervised epoch contract without unlocking bulk or remote writ
   assert.equal(failures.includes('busy-polling-must-be-disabled'), true);
   assert.equal(failures.includes('healthy-inspection-must-remain-readonly'), true);
   assert.equal(failures.includes('active-epoch-wip-must-equal-one'), true);
+  assert.equal(failures.includes('supervisor-state-path-invalid'), true);
+  assert.equal(failures.includes('supervisor-lease-path-invalid'), true);
   assert.equal(failures.includes('run-contract-missing-external_outcome'), true);
   assert.equal(failures.includes('repair-attempt-budget-invalid'), true);
   assert.equal(failures.includes('repair-denylist-missing-note-content'), true);
