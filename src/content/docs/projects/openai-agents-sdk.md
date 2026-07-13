@@ -4,6 +4,19 @@ title: OpenAI Agents SDK — 让多个 agent 协作的轻量框架
 日期: 2026-05-31
 分类: AI 工程
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/openai/openai-agents-python
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-13'
+  immutable_revision: 41e79f15940899349f8e13a1effd7bc00071f2e8
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-13'
+  review_after: '2027-07-13'
+  applicable_version: 0.18.2
 ---
 
 ## 是什么
@@ -19,7 +32,7 @@ result = Runner.run_sync(agent, 'Your prompt here')
 print(result.final_output)
 ```
 
-这个 SDK 是 OpenAI 早期实验项目 **Swarm** 的生产化升级；本文按 2026-05 文档快照（当时 PyPI 常见为 v0.17.x），MIT 协议，需要 Python 3.10+。
+这个 SDK 是 OpenAI 早期实验项目 **Swarm** 的生产化升级；本文按 2026-07-13 文档与源码快照（PyPI / GitHub release 为 v0.18.2），MIT 协议，需要 Python 3.10+。
 
 ## 为什么重要
 
@@ -93,7 +106,7 @@ agent = Agent(name='Support', input_guardrails=[math_guardrail])
 3. 如果 guardrail 返回 `tripwire_triggered=True`，SDK **立即抛异常** `InputGuardrailTripwireTriggered`，主 agent 哪怕跑到一半也被打断
 4. output_guardrail 同理，但只能在主 agent 跑完后再校验（不能并行）
 
-并行模式省延迟，但主 agent 可能已经烧了 token；要彻底省 token，用阻塞模式。
+并行模式省延迟，但主 agent 可能已经烧了 token；要彻底省 token，用阻塞模式。当前 v0.18.2 API 是在 input guardrail 上设置 `run_in_parallel=False`，例如 `@input_guardrail(run_in_parallel=False)`；不要写成旧草稿里常见的 `run_input_guardrails_first`。
 
 ### 案例 3：Tracing——记录"跑了什么"
 
@@ -142,6 +155,7 @@ with trace('Customer support flow'):
 
 - **2024 年**：OpenAI 开源实验项目 Swarm，用极少原语演示多 agent handoff
 - **2025 年**：Agents SDK 接棒 Swarm，补上 guardrail、tracing、sessions，走向可维护的生产 API
+- **2026 年 7 月（v0.18.x）**：RealtimeAgent 默认模型更新为 `gpt-realtime-2.1`；0.18.2 继续加入 GPT-5.6 request controls 与 hosted multi-agent beta，说明 SDK 仍在快速演进
 - **设计选择**：不发明工作流 DSL，编排留给普通 Python `async`/`if`/`for`
 - **生态**：官方文档同步维护 handoffs / guardrails / tracing 专章，和本笔记三条主线一一对应
 

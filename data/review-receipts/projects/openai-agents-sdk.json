@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "openai-agents-sdk",
+    "digest_sha256": "8638f162851f2b3716204efda6bdff4e62726eb9b2f13c250cfe829846daaf8f"
+  },
+  "source_revision": "41e79f15940899349f8e13a1effd7bc00071f2e8",
+  "research_input_sha256": "a323b8522e3b76f06d99fea64869d9e97cad2f9a366d9a5c69a1b90afb49efab",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 88,
+      "warnings": [
+        "Explains corrected guardrail API without running the SDK example."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Static source/doc check only; verification_status remains UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Version delta is sourced to PyPI, GitHub release, and immutable tag."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-13T04:23:24.686Z"
+}
