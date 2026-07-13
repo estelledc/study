@@ -6,7 +6,7 @@ Current policy: bulk content production and direct `main` publication are disabl
 
 Normal workflow, test, audit, tooling and site-quality maintenance follows the recurring supervisor and bounded writer epochs in `AGENTS.md`. A host scheduler or event source may wake the readonly supervisor repeatedly; only allowlisted, fully evidenced repairs can enter a single-writer epoch. This does not unlock the content pipeline commands described below.
 
-The historical `*-audit-*` batch helpers merged with the completed corpus audit are also disabled by the same policy. Their `data/audit-reviews/**` files remain legacy qualitative observations, not `study-review-receipt-v1` evidence, and cannot upgrade a note to VERIFIED. Do not rebuild the pool, claim another audit batch, prepare reviewer contexts, or finalize an audit round without a future operation-bound single-use approval mechanism.
+The historical `*-audit-*` batch helpers merged with the completed corpus audit are also disabled by the same policy. Their records now live in `data/audit-reviews/legacy-audit-reviews.jsonl` with `data/audit-reviews/manifest.json`; they remain legacy qualitative observations, not `study-review-receipt-v1` evidence, and cannot upgrade a note to VERIFIED. Do not rebuild the pool, claim another audit batch, prepare reviewer contexts, recreate the old per-note audit layout, or finalize an audit round without a future operation-bound single-use approval mechanism.
 
 ## Queue State
 
@@ -57,6 +57,14 @@ npm run build:strict
 ```
 
 `build:strict` runs the normal Astro build, writes a `/tmp/study-build-*.log`, and fails if the log contains `[WARN]`, `Warning`, or `warning`.
+
+Verify the legacy audit review archive:
+
+```bash
+npm run audit:legacy-reviews
+```
+
+This check proves that the JSONL archive matches its manifest by record count, byte count, SHA-256 digest and raw JSON parseability.
 
 ## Worktrees
 
