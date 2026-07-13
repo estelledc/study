@@ -78,7 +78,7 @@ import { generateText } from 'ai'
 
 const { text } = await generateText({ model: openai('gpt-4o'), prompt })
 // 换厂商：只改 model 工厂
-const { text: t2 } = await generateText({ model: anthropic('claude-opus-4-7'), prompt })
+const { text: t2 } = await generateText({ model: anthropic('claude-sonnet-4-20250514'), prompt })
 ```
 
 步骤：① 选 provider 包 → ② `generateText` 传 `model` → ③ 换厂商只换工厂函数，prompt / 业务逻辑不动。
@@ -204,13 +204,13 @@ function Chat() {
 - v7 迁移：[Migrate AI SDK 6.x to 7.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0)
 - v7 发布：[AI SDK 7 is now available](https://vercel.com/changelog/ai-sdk-7)
 - [[langchain]] —— 厚框架 vs 薄抽象的另一极
-- [[zod]] —— `generateObject` / tool schema 的事实标准
+- [[zod]] —— `Output.object()` / tool schema 的事实标准
 
 ## 关联
 
 - [[langchain]] —— 厚 vs 薄两条路；多数聊天/流式 UI 场景薄抽象更省事
 - [[ollama]] —— Vercel AI SDK 的本地模型 Provider 之一
-- [[zod]] —— `generateObject` / tool schema 的事实标准
+- [[zod]] —— `Output.object()` / tool schema 的事实标准
 - [[react]] —— `useChat` / `useCompletion` 的载体
 - [[next-js]] —— 官方模板与 Edge 流式部署的常见宿主
 - [[llamaindex]] —— RAG-heavy 场景的另一条路，和薄 SDK 互补

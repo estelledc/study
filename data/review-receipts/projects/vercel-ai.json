@@ -1,14 +1,14 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "087c53f30b3ff6bdccf5b9edf0ec0a23be06c10430f4149e7c221d2a3a0610a8",
   "note": {
     "area": "projects",
     "slug": "vercel-ai",
-    "digest_sha256": "ea77ee9168d9d56fbcfec5efdfa8041d5af8575fd2ff866146e25058ec5ba58b"
+    "digest_sha256": "40b03792a5e7d8e7e676fc95895f9d492f0e26fea4642fc077f45f21796de3b2"
   },
   "source_revision": "b162ae48676fe9e7b3880b691cbd60b58ed179cb",
-  "research_input_sha256": "d616f20144a6a2ac51a867f41fa9033165b8cb3e11e3159d2a703c53a155d6d6",
+  "research_input_sha256": "50ce61a68665dfcffe58df23cc1818c85003915717a046850f874614b5be15ec",
   "reviewers": [
     {
       "role": "ZERO_BASE",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-13T06:33:00.598Z"
+  "created_at": "2026-07-13T06:46:14.338Z"
 }
