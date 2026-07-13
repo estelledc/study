@@ -50940,13 +50940,13 @@
         "raw_category": "AI 工程"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-13",
+        "review_after": "2027-07-13"
       },
       "route": "/study/projects/openai-agents-sdk/",
       "atlas": {

@@ -8,7 +8,7 @@
 - scope：launch scope 内的本地 workflow 文档、测试、审计、工具链和站点非内容代码质量维护。
 - 起始 ref：`c309d5d270e30ec7764c4a7d456a1dde4b489b49`（PR #24 merge commit）；本轮从最新 `origin/main` 新建分支 `codex/study-audit-evidence-migration`，已 push 到远端并打开 PR #25。
 - detector fingerprint：原失败为 `node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 报告 `repository.tracked_files=4745 exceeds baseline=2733, threshold=3007`。根因是 1975 条 legacy audit review 以逐文件 JSON 存放。已迁移为 `data/audit-reviews/legacy-audit-reviews.jsonl` + `manifest.json`，并保留每条原始 review 的路径、字节数与 SHA-256。
-- external delta 计数：PR #24 已 merged；main build/deploy 已通过。PR #25 已打开并标记 Ready for review；远端 `verify:ci` 已在 head `35b78594f66d8bc7f7d80c478772076f6aa3eae5` 通过，后续以最新 PR head 的 checks 为准。
+- external delta 计数：PR #24 与 PR #25 均已 merged；main build/deploy 已通过。PR #26 已打开为 Draft，用于修正 `openai-agents-sdk` 的 v0.18.2 API / 版本漂移；本地 `npm run verify:ci` 已通过，远端状态以 PR #26 最新 head checks 为准。
 - 已完成切片：
   1. 建立 recurring supervisor + bounded epoch 状态机（supervisor-policy、supervisor-status）；
   2. 加入自动巡检/自动检修 allowlist 与 denylist，包含六项 repair requirements；
@@ -24,10 +24,11 @@
 - 12. 修复 `status:supervisor` 漏掉规模 detector 的问题：automatic inspection 加入 `benchmark-site --compare`；`status:supervisor` 暴露 `scale-budget-exceeded`、冻结新增内容，并保持 audit evidence、performance budget 与 baseline 不变。
   13. 完成批准的 audit evidence migration：本地提交 `2acd44cef` 聚合 1975 条 legacy review，新增 `npm run audit:legacy-reviews`，删除旧 `data/audit-reviews/papers/*.json` 与 `projects/*.json` 逐文件布局。
   14. 更新 performance baseline 与操作文档：本地提交 `e68eaf52b` 记录 `repository.tracked_files=2775` 与 `legacy_audit_review_items=1975`，未提高 threshold。
+  15. 发起 `openai-agents-sdk` 小型 Publication：将单篇笔记升级为 `study-v2`，锁定 OpenAI Agents SDK v0.18.2 tag commit，修正 `run_input_guardrails_first` 为 `@input_guardrail(run_in_parallel=False)`，并补静态 review receipt。
 - 验证结果：`npm run audit:legacy-reviews` 通过，验证 1975 records；`node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 通过；`npm run status:supervisor` 返回 `WAIT_HEALTHY`、`blockers=[]`；`npm run verify:ci` 全部通过（含 tests、strict build 2062 页、23 个 Playwright a11y 测试、Pages artifact、Atlas/site benchmark）。
 - 剩余 blocker：无。Publication 仍按政策需要单次授权；本轮迁移不授权内容 round。
-- 下一次 wake 条件：PR #25 出现新的 CI/review/head 状态变化，content-health issue，或新的研究/维护指令。无外部变化时进入普通健康检查。
-- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor`；PR 状态用 GitHub API 或浏览器查看 `https://github.com/estelledc/study/pull/25`。
+- 下一次 wake 条件：PR #26 出现新的 CI/review/head 状态变化，content-health issue，或新的研究/维护指令。无外部变化时进入普通健康检查。
+- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor`；PR 状态用 GitHub API 或浏览器查看 `https://github.com/estelledc/study/pull/26`。
 - 下一位独立 agent 必须先读 `AGENTS.md`，建立 supervisor / epoch contract；不得自动恢复旧数量循环。
 
 ## 当前政策
