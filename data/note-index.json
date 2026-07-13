@@ -60508,13 +60508,13 @@
         "raw_category": "AI"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-13",
+        "review_after": "2026-10-13"
       },
       "route": "/study/projects/vercel-ai/",
       "atlas": {

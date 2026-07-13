@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "vercel-ai",
+    "digest_sha256": "ea77ee9168d9d56fbcfec5efdfa8041d5af8575fd2ff866146e25058ec5ba58b"
+  },
+  "source_revision": "b162ae48676fe9e7b3880b691cbd60b58ed179cb",
+  "research_input_sha256": "d616f20144a6a2ac51a867f41fa9033165b8cb3e11e3159d2a703c53a155d6d6",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 88,
+      "warnings": [
+        "Explains v7 migration boundary without claiming user mastery."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Static docs/package/source review only; verification_status remains UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260713",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Fast-moving SDK; review_after set to 90 days for platform/API freshness."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-13T06:33:00.598Z"
+}

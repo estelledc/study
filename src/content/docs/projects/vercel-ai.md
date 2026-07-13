@@ -1,14 +1,27 @@
 ---
 title: Vercel AI SDK — 多 LLM Provider 统一 SDK
-来源: https://github.com/vercel/ai
+来源: Vercel AI SDK 官方文档 https://ai-sdk.dev/docs
 日期: 2026-05-29
 分类: AI
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/vercel/ai
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-13'
+  immutable_revision: b162ae48676fe9e7b3880b691cbd60b58ed179cb
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-13'
+  review_after: '2026-10-13'
+  applicable_version: 7.0.22
 ---
 
 ## 是什么
 
-Vercel AI SDK 是 Vercel 2023 年开源的 **TypeScript SDK**，用一套 API 调任何 LLM Provider。日常类比：以前每家 LLM 客户端写法不同——OpenAI 一种、Anthropic 一种、Mistral 一种；Vercel AI SDK 让你写一份代码，**切换 Provider 像换 npm 包**。
+Vercel AI SDK 是 Vercel 2023 年开源的 **TypeScript SDK**，早期主打"一套 API 调任何 LLM Provider"，到 v7 已经扩展成面向生产 agent 的运行时。日常类比：以前它像"万能充电器"，让 OpenAI / Anthropic / Google 都能插同一个插座；现在它还加了电表、保险丝、工单系统和监控台，开始负责 agent 跑起来之后的审批、超时、遥测和持久化。
 
 你写：
 
@@ -26,10 +39,12 @@ const { text } = await generateText({
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic'
-// model: anthropic('claude-opus-4-7')
+// model: anthropic('claude-sonnet-4-20250514')
 ```
 
 业务侧调用形态不变——这是 SDK 的核心承诺（厂商专属能力走 `providerOptions`）。
+
+本文按 2026-07-13 核验到的 `ai@7.0.22` 与 GitHub tag `ai@7.0.22` 写；对应 provider 包为 `@ai-sdk/openai@4.x`、`@ai-sdk/anthropic@4.x`、`@ai-sdk/react@4.x`。
 
 ## 为什么重要
 
@@ -42,13 +57,15 @@ import { anthropic } from '@ai-sdk/anthropic'
 
 ## 核心要点
 
-Vercel AI SDK 的核心抽象可以拆成 **三块**：
+Vercel AI SDK v7 的核心抽象可以拆成 **四块**：
 
-1. **4 个核心函数**：`generateText` / `streamText` / `generateObject` / `streamObject`。类比：同一把"遥控器"，按一下拿整段、按住拿流式、再加 zod 校验拿结构化对象。
+1. **2 个核心生成函数 + Output**：主入口是 `generateText` / `streamText`；结构化输出不再优先讲 `generateObject` / `streamObject`，而是用 `Output.object()` 挂到 `generateText` / `streamText` 上。类比：遥控器还是两个按钮（一次性 / 流式），结构化输出是给按钮套一个模具。
 
 2. **Provider 适配器**：每家厂商一个独立 npm 包（`@ai-sdk/openai` / `@ai-sdk/anthropic` / `@ai-sdk/google` / 本地 [[ollama]]），都实现同一接口。类比：统一电源插座，换品牌只换插头。
 
 3. **React hook 一等公民**：`useChat`、`useCompletion` 把 streaming 接到 React state。类比：水管接到水龙头——后端吐流，前端直接渲染，不必手写 buffer。
+
+4. **Agent 运行时**：`ToolLoopAgent` 封装多步 tool loop；`WorkflowAgent` 处理可恢复、可审批、可持久化的长任务；`runtimeContext` / `toolsContext` / `toolApproval` 把"生产 agent 需要的状态、密钥和人工批准"放进 SDK 层。
 
 ## 实践案例
 
@@ -74,7 +91,7 @@ import { generateText, tool } from 'ai'
 import { z } from 'zod'
 
 const result = await generateText({
-  model: anthropic('claude-opus-4-7'),
+  model: anthropic('claude-sonnet-4-20250514'),
   tools: {
     weather: tool({
       description: 'Get the current weather',
@@ -89,7 +106,27 @@ const result = await generateText({
 
 步骤：① 用 zod 声明工具入参 → ② SDK 译成各家 tool 协议 → ③ 拦截 tool_use、跑 `execute`、把结果喂回模型做多轮。换 OpenAI / Google 同一套代码。
 
-### 案例 3：前端 streaming chat UI（AI SDK 5+）
+### 案例 3：结构化输出（v7 主线）
+
+```ts
+import { generateText, Output } from 'ai'
+import { z } from 'zod'
+
+const { output } = await generateText({
+  model: openai('gpt-4o'),
+  output: Output.object({
+    schema: z.object({
+      summary: z.string(),
+      nextActions: z.array(z.string())
+    })
+  }),
+  prompt: '总结这段会议记录，并列出下一步'
+})
+```
+
+步骤：① `generateText` 仍负责模型调用 → ② `Output.object()` 负责声明结构 → ③ 返回 `output` 而不是手动解析 JSON。旧的 `generateObject` / `streamObject` 还在包里，但 v7 源码已标 `@deprecated`，新代码优先用这个路径。
+
+### 案例 4：前端 streaming chat UI（AI SDK 5+ / 7 仍成立）
 
 ```tsx
 import { useState } from 'react'
@@ -120,8 +157,10 @@ function Chat() {
 
 1. **v3 → v4**：Provider 拆成独立包（`@ai-sdk/openai` 等），import 路径全变，升级要改一圈。
 2. **v4 → v5**：`useChat` 去掉内置 input；`tool()` 的 `parameters` 改名 `inputSchema`——照旧示例会直接跑不通。
-3. **厂商专属能力**：归一化后特殊行为（如 Anthropic prompt caching）要走 `providerOptions`（厂商私有开关）这条逃生通道。
-4. **Edge Runtime**：在 Vercel Edge / Cloudflare Workers 上流式时，注意 Web Streams API（浏览器式流）兼容；Node 18 前易出现"卡 buffer 不 flush"。
+3. **v5 → v6**：`Experimental_Agent` 变成 `ToolLoopAgent`，`system` 改名 `instructions`，`generateObject` / `streamObject` 进入 deprecated 路线。
+4. **v6 → v7**：最低 Node.js 变成 22，包是 ESM-only，CommonJS `require()` 不再支持；`system` / `onFinish` / `fullStream` 等旧名继续迁移到 `instructions` / `onEnd` / `stream`。
+5. **厂商专属能力**：归一化后特殊行为（如 Anthropic reasoning / speed / data residency）要走 `providerOptions`（厂商私有开关）这条逃生通道。
+6. **结构化输出别只背旧 API**：`generateObject` / `streamObject` 还能用，但 v7 主线是 `generateText` / `streamText` + `Output.object()`。
 
 ## 适用 vs 不适用场景
 
@@ -130,11 +169,12 @@ function Chat() {
 - Next.js / React 集成 LLM —— 默认选择
 - 需要 streaming UI（`useChat` / `useCompletion`）
 - 跨 Provider 切换（A/B、降级、成本优化）
-- structured output（zod 直接喂 `generateObject`）
+- structured output（`Output.object()` + zod）
+- 需要 tool approvals、timeouts、runtime/tool context 或轻量 agent loop
 
 **不适用**：
 
-- 重型 agent 编排（多 agent、复杂 memory、graph）→ LangGraph / Mastra
+- 重型图状编排（复杂分支、回滚、状态图）→ LangGraph / Mastra 仍更直接
 - RAG-heavy（向量检索 + chunk + retriever）→ LlamaIndex
 - 非 React / 非 TypeScript —— 价值明显下降
 - 极简单 one-shot —— 直接原生 SDK 更直接
@@ -144,20 +184,25 @@ function Chat() {
 - **2023-06**：AI SDK v1，主打流式 React hook；当时各家 SDK 写法各异
 - **2024**：v3 确立四函数体系；v4 拆出 provider 包，跨 Provider tool calling 可用
 - **2025-07**：v5 发布——UIMessage 协议、`inputSchema`、`useChat` transport 重构
-- **2025-12 / 2026-06**：v6、v7 相继正式发布（agent / 多模态能力扩展）
+- **2025-12**：v6 发布——`ToolLoopAgent` 成为 agent 主入口，`generateObject` / `streamObject` 进入 deprecated 路线，结构化输出合并进 `generateText` / `streamText` 的 `Output`
+- **2026-06-25**：v7 发布——Node.js 22+、ESM-only，并加入 reasoning、runtime/tool context、tool approvals、`WorkflowAgent`、harness integration、`@ai-sdk/otel` 等生产 agent 能力
+- **2026-07-10**：`ai@7.0.22` 发布；v5/v6 仍有 `ai-v5`、`ai-v6` dist-tag 维护线
 
 ## 学到什么
 
-1. **薄抽象赢过厚框架**——只统一最小集（4 函数 + provider 接口），不发明 Chain / Memory
-2. **TypeScript 类型贯穿**——zod 流过 `generateObject`、tool input 流过 `execute`
+1. **薄抽象开始长出运行时**——v5 以前像 provider 统一层，v7 开始管 approval、timeout、telemetry、durable workflow
+2. **TypeScript 类型贯穿**——zod 流过 `Output.object()`、tool input 流过 `execute`，再流到 UI message parts
 3. **Streaming 是产品体验**——底层 Web Streams + 上层 React hook，两端都做才好用
-4. **窄腰设计**——核心约定（`doGenerate` / `doStream`）做窄；差异走 `providerOptions`
+4. **窄腰设计仍在**——核心约定（`generateText` / `streamText` + provider 接口）做窄；差异走 `providerOptions`
 
 ## 延伸阅读
 
 - 官方文档：[ai-sdk.dev](https://ai-sdk.dev)
 - 仓库：[vercel/ai](https://github.com/vercel/ai)
 - v5 迁移：[Migrate AI SDK 4.x to 5.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0)
+- v6 迁移：[Migrate AI SDK 5.x to 6.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0)
+- v7 迁移：[Migrate AI SDK 6.x to 7.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0)
+- v7 发布：[AI SDK 7 is now available](https://vercel.com/changelog/ai-sdk-7)
 - [[langchain]] —— 厚框架 vs 薄抽象的另一极
 - [[zod]] —— `generateObject` / tool schema 的事实标准
 
