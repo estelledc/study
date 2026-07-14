@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "swe-bench-cl",
+    "digest_sha256": "dbfd9c2cfbdc91196562156795e617cec5d303be7c1b7b230883dd70b1decc36"
+  },
+  "source_revision": "arXiv:2507.00014v1",
+  "research_input_sha256": "b240b9b89e62a8096b2fa939ece3e983d34a5d49276e2b7c983a58af59fb8b24",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 88,
+      "warnings": [
+        "Continual-learning timeline is a manual toy example; SWE-Bench-CL framework was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "LangGraph and FAISS memory details are summarized from public arXiv metadata only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "No independent reproduction of continual-learning metrics was performed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T11:39:34.000Z"
+}

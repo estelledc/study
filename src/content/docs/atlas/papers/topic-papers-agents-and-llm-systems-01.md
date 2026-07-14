@@ -1,6 +1,6 @@
 ---
 title: "智能体与 LLM 系统 · 论文 · 第 1 组"
-description: "64 条 智能体与 LLM 系统 Atlas 分块"
+description: "68 条 智能体与 LLM 系统 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 64 条，稳定上限为 100 条。
+本分块共 68 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -41,6 +41,7 @@ sidebar:
 | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | `mcp-spec` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MCPWorld — API、GUI、混合 Computer Use 的统一测试床](/study/papers/mcpworld-2025/) | `mcpworld-2025` | intermediate | UNVERIFIED | MCPWorld 用 white-box apps 统一评估 API、GUI 和混合 computer-use agents |
 | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | `memcoder-co-evolution` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [MemGym — 给长程 agent memory 做一间健身房](/study/papers/memgym/) | `memgym` | intermediate | UNVERIFIED | 用 MemGym 区分聊天记忆、执行记忆和可迁移的 agent 经验 |
 | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | `metagpt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | `mind-skill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | `misevolution-2509` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -50,6 +51,7 @@ sidebar:
 | [Orca — Transformer 生成模型的分布式推理调度](/study/papers/orca-2022/) | `orca-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | `orca-continuous-batching` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OSCAR — 离线转个方向，把 KV Cache 压到 2-bit](/study/papers/oscar-int2-kv/) | `oscar-int2-kv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [OSWorld — 把 GUI agent 放进真正的电脑里考试](/study/papers/osworld/) | `osworld` | intermediate | UNVERIFIED | 用 OSWorld 理解为什么电脑操作 agent 不能只在网页或脚本环境里评测 |
 | [PagedAttention — 把 KV cache 当虚拟内存页来管理](/study/papers/paged-attention/) | `paged-attention` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PagedAttention — 以页替代整段内存的显存管理](/study/papers/paged-attention-vllm/) | `paged-attention-vllm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | `rag-lewis-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -70,7 +72,9 @@ sidebar:
 | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | `specinfer-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | `swe-agent` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [SWE-Bench-CL — coding agent 不能只刷静态题](/study/papers/swe-bench-cl/) | `swe-bench-cl` | intermediate | UNVERIFIED | 用 SWE-Bench-CL 理解软件工程 agent 的持续学习、迁移和灾难性遗忘 |
 | [SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗](/study/papers/swe-skills-bench-2026/) | `swe-skills-bench-2026` | intermediate | UNVERIFIED | 用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本 |
+| [ToolBench-X — 工具会坏时，agent 还能不能把事做完](/study/papers/toolbench-x/) | `toolbench-x` | intermediate | UNVERIFIED | 用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | `tree-of-thoughts-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收](/study/papers/vericache/) | `vericache` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

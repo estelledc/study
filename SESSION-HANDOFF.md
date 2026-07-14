@@ -2,24 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
-## 2026-07-14 论文生产与部署 Epoch Contract
+## 2026-07-14 新增 4 篇论文与部署 Epoch Contract
 
 - status：`running`
-- objective：在当前用户明确授权下，新研究并发布 5 篇公开 arXiv 论文笔记，覆盖 agent planning、SWE skills、context engineering、MCP tool use、computer-use benchmark 五条相邻主线。
-- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，以及由构建/atlas/索引/部署门禁确定性更新的派生文件；不改既有笔记正文，不恢复旧批量循环，不修改 policy/threshold。
-- activated_by：`explicit-user-request-2026-07-14-new-5-papers-full-deploy`
+- objective：在当前用户明确授权下，新研究并发布 4 篇公开 arXiv 论文笔记：`OSWorld`、`ToolBench-X`、`MemGym`、`SWE-Bench-CL`，补齐 agent 环境、工具可靠性、长程记忆与 SWE 持续学习四条主线。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，以及由 atlas / note-index / 公开计数文案 / handoff / 部署门禁确定性更新的文件；不改候选队列，不改 policy/threshold，不改旧论文正文语义。
+- activated_by：`explicit-user-request-2026-07-14-new-4-papers-full-deploy`
 - review_after：`2026-07-14`
 - acceptance_checks：
   - `source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor`
-  - `source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && STUDY_CHANGED_FROM=<base> npm run verify:ci`
+  - `source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && node scripts/quality-gate.mjs src/content/docs/papers/{osworld,toolbench-x,memgym,swe-bench-cl}.md`
+  - `source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run audit:content-contract`
+  - `source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && STUDY_CHANGED_FROM=f487efbcd135faf1e1de9fcd2ccf043437a244fe npm run verify:ci`
   - `git diff --check`
-  - GitHub PR/merge/deploy checks for the final pushed branch.
-- budget：最多 2 个内容小批次（按政策拆为 4 + 1）、5 篇新增 paper、1 个可写切片、1 个本地 writer、1 次部署窗口。
-- external_outcome：5 篇新增论文笔记进入公开 study 站点，并通过 GitHub Pages 线上部署验收；验证状态保持 `UNVERIFIED`，不声明人工审阅或真实执行复现。
-- stop_conditions：规范 Node/npm 不可用；内容契约或红线审计失败且无法在本 scope 内修复；需要修改 policy/threshold、旧正文、候选队列或隐私敏感内容；远端 CI/Pages 连续失败且需要新权限；用户停止。
+  - GitHub PR / merge / Pages deploy checks for the final pushed branch.
+- budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer、1 次部署窗口。
+- external_outcome：4 篇新增论文笔记进入公开 study 站点，并通过 GitHub Pages 线上部署验收；验证状态保持 `UNVERIFIED`，不声明实际运行论文 benchmark。
+- stop_conditions：规范 Node/npm 不可用；内容契约或红线审计失败且无法在本 scope 内修复；需要修改 policy/threshold、候选队列或隐私敏感内容；远端 CI/Pages 连续失败且需要新权限；用户停止。
 - superseded_by：`none`
 
-## 当前接班点
+## 上一轮接班背景（保留历史）
 
 - supervisor 状态：`WAIT_HEALTHY`；`scale-budget-exceeded` 已通过批准的 legacy audit review 聚合迁移解除，当前无 hard blocker。
 - scope：launch scope 内的本地 workflow 文档、测试、审计、工具链和站点非内容代码质量维护。
@@ -47,6 +49,26 @@
 - 下一次 wake 条件：PR #26 出现新的 CI/review/head 状态变化，content-health issue，或新的研究/维护指令。无外部变化时进入普通健康检查。
 - 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor`；PR 状态用 GitHub API 或浏览器查看 `https://github.com/estelledc/study/pull/26`。
 - 下一位独立 agent 必须先读 `AGENTS.md`，建立 supervisor / epoch contract；不得自动恢复旧数量循环。
+
+## 当前接班点：2026-07-14 4 篇论文本地执行状态
+
+- 起始 ref：`f487efbcd135faf1e1de9fcd2ccf043437a244fe`（origin/main，PR #29 merge commit）。
+- 当前分支：`study/papers-20260714-four-more`。
+- dry-run 结果：`npm run round:dispatch -- --rewrite 0 --new 4 --dry-run` 因 `papers-new short: got 0, need 2` 被阻止；本轮未修改候选队列，改走显式授权的手工 Publication 路径。
+- 已完成切片：
+  1. 规范工具链下 `status:supervisor` 从 Node 版本 blocker 恢复到 `WAIT_HEALTHY`；
+  2. 新增 4 篇 `study-v2` paper note，均为 `STATIC_ANALYSIS` / `UNVERIFIED`；
+  3. 新增 4 个 `study-review-receipt-v1` 静态 review receipt，receipt digest 已通过 `verifyReceiptAgainstNote` 校验；
+  4. `npm run atlas` 刷新 `data/note-index.json`、`papers-atlas.md` 与 agent 主题 atlas chunk；
+  5. 同步公开规模文案：论文 1023、项目 961、总数 1984。
+- 本地已通过：
+  - `node scripts/quality-gate.mjs` 针对 `osworld`、`toolbench-x`、`memgym`、`swe-bench-cl` 四篇；
+  - `npm run audit:counts`；
+  - `npm run audit:content-contract`；
+  - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`；
+  - `npm run build:strict -- --log /tmp/study-build-check.log`；
+  - `git diff --check`。
+- 剩余动作：提交当前变更，提交后重跑 `STUDY_CHANGED_FROM=f487efbcd135faf1e1de9fcd2ccf043437a244fe npm run verify:ci`，随后推送分支、创建 PR、合并并等待 Pages deploy。
 
 ## 当前政策
 

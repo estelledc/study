@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "memgym",
+    "digest_sha256": "9939f45f2bd42198a5d78050f97acf1e28053d60bcaa7fafb3a4cfed290a9fb2"
+  },
+  "source_revision": "arXiv:2605.20833v1",
+  "research_input_sha256": "4d7fd8d84bb0e51701d1bf50f44abac1732cf8935594c9a647ea90b69e8b382f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "Memory examples are manual toy traces; MemGym evaluation tracks were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "MemRM and memory-isolated score discussion is abstract-level; no reward model run was performed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Claims are constrained to arXiv metadata and public abstract text."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T11:39:34.000Z"
+}

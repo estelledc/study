@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 1980,
-      "classified": 1933,
+      "total": 1984,
+      "classified": 1937,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1019,
-        "classified": 1000,
+        "total": 1023,
+        "classified": 1004,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -19238,6 +19238,38 @@
       }
     },
     {
+      "id": "papers::memgym",
+      "area": "papers",
+      "slug": "memgym",
+      "title": "MemGym — 给长程 agent memory 做一间健身房",
+      "description": "用 MemGym 区分聊天记忆、执行记忆和可迁移的 agent 经验。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Memory"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/memgym/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::mencius-2008",
       "area": "papers",
       "slug": "mencius-2008",
@@ -22069,6 +22101,38 @@
         "review_after": null
       },
       "route": "/study/papers/oscar-int2-kv/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::osworld",
+      "area": "papers",
+      "slug": "osworld",
+      "title": "OSWorld — 把 GUI agent 放进真正的电脑里考试",
+      "description": "用 OSWorld 理解为什么电脑操作 agent 不能只在网页或脚本环境里评测。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Computer Use"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/osworld/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -28748,6 +28812,38 @@
       }
     },
     {
+      "id": "papers::swe-bench-cl",
+      "area": "papers",
+      "slug": "swe-bench-cl",
+      "title": "SWE-Bench-CL — coding agent 不能只刷静态题",
+      "description": "用 SWE-Bench-CL 理解软件工程 agent 的持续学习、迁移和灾难性遗忘。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Software Engineering"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/swe-bench-cl/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::swe-skills-bench-2026",
       "area": "papers",
       "slug": "swe-skills-bench-2026",
@@ -29923,6 +30019,38 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-02",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-02/"
+      }
+    },
+    {
+      "id": "papers::toolbench-x",
+      "area": "papers",
+      "slug": "toolbench-x",
+      "title": "ToolBench-X — 工具会坏时，agent 还能不能把事做完",
+      "description": "用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Tool Use"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/toolbench-x/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -62909,7 +63037,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/",
-      "entries": 64
+      "entries": 68
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",

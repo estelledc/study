@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "toolbench-x",
+    "digest_sha256": "75446716639647a910f8daa1125de5d6416288462f08438989354adf9d343447"
+  },
+  "source_revision": "arXiv:2606.25819v2",
+  "research_input_sha256": "dfe441438a312b98ad38dc3c9f6812246bc03e65d374b10ab7ff8f56b77e102a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 88,
+      "warnings": [
+        "Hazard examples are manual simplifications; ToolBench-X tasks were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Recovery strategy discussion is based on paper abstract and arXiv page, not local benchmark runs."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "The note does not verify dataset size or model scores beyond public arXiv metadata."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T11:39:34.000Z"
+}
