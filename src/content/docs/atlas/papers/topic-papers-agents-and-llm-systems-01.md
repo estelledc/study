@@ -1,6 +1,6 @@
 ---
 title: "智能体与 LLM 系统 · 论文 · 第 1 组"
-description: "59 条 智能体与 LLM 系统 Atlas 分块"
+description: "64 条 智能体与 LLM 系统 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,11 +9,13 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 59 条，稳定上限为 100 条。
+本分块共 64 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Agent Planning Benchmark — 把 agent 失败拆成规划诊断题](/study/papers/agent-planning-benchmark-2026/) | `agent-planning-benchmark-2026` | intermediate | UNVERIFIED | 用 APB 拆解 LLM agent 的规划、反馈修正、工具噪声和无解任务校准 |
 | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | `agent-r1-2511` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Agentic Context Engineering — 把上下文当成会进化的 playbook](/study/papers/agentic-context-engineering-2025/) | `agentic-context-engineering-2025` | intermediate | UNVERIFIED | ACE 将上下文视为可演化 playbook，用生成、反思和整理缓解 context collapse |
 | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | `agentless` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | `anthropic-prompt-caching` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | `apex-policy-exploration` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -35,7 +37,9 @@ sidebar:
 | [KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文](/study/papers/kv-fold/) | `kv-fold` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | `llm-int8-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | `llm-wiki-retrieval-reasoning` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [MCP-Bench — 用真实 MCP Server 测 agent 工具编排](/study/papers/mcp-bench-2025/) | `mcp-bench-2025` | intermediate | UNVERIFIED | MCP-Bench 通过 28 个 live MCP server 和 250 个工具评估多步工具编排 |
 | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | `mcp-spec` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [MCPWorld — API、GUI、混合 Computer Use 的统一测试床](/study/papers/mcpworld-2025/) | `mcpworld-2025` | intermediate | UNVERIFIED | MCPWorld 用 white-box apps 统一评估 API、GUI 和混合 computer-use agents |
 | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | `memcoder-co-evolution` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | `metagpt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | `mind-skill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -66,6 +70,7 @@ sidebar:
 | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | `specinfer-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | `swe-agent` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗](/study/papers/swe-skills-bench-2026/) | `swe-skills-bench-2026` | intermediate | UNVERIFIED | 用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | `tree-of-thoughts-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收](/study/papers/vericache/) | `vericache` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

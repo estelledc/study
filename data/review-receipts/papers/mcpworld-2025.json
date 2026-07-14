@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "mcpworld-2025",
+    "digest_sha256": "bf5f48a63dec7a4c6170dc27b71e71b60fde86dba278b420eb46baeec31ddd28"
+  },
+  "source_revision": "arXiv:2506.07672v1",
+  "research_input_sha256": "ec822c749e8ebfda33b23db9d3c32497cb71599a4dbebdaa3d05f97ce2dbae8f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "Explains API/GUI/hybrid evaluation with a small drawing-app toy."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Manual hybrid-action simulation only; MCPWorld containers were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Task count and reported accuracy are sourced to the arXiv page."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T10:34:00.000Z"
+}
