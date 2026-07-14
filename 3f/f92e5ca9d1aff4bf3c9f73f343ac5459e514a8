@@ -1,0 +1,775 @@
+src/content/docs/career-plan.md
+  s_dec2570fa429e4::t_b2c3ac45f8f54d 8 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562939327f744c7a91f546","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":8}]}]}
+  s_dec2570fa429e4::t_713bb8eee485ae 117 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5629cb327f744c7a91f60c","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":117}]}]}
+src/content/docs/queue.md
+  s_dec2570fa429e4::t_53112e72081b89 9,192 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562910327f744c7a91f497","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":9},{"Single":192}]}]}
+src/content/docs/papers/linformer-2020.md
+  s_dec2570fa429e4::t_b600567afc3f5c 6 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56289c327f744c7a91f38d","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":6}]}]}
+  s_dec2570fa429e4::t_3e68ab9ab54818 3-5
+  s_dec2570fa429e4::t_a276e638dec89c 7-9
+  s_d44919643bce2e::t_8f044cad093b2c 1-2,10-90
+src/content/docs/papers/longnet-2023.md
+  s_dec2570fa429e4::t_2e6e8651808cb4 6 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5628a3327f744c7a91f3af","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":6}]}]}
+  s_dec2570fa429e4::t_0d4df63b5f532c 3-5
+  s_dec2570fa429e4::t_c50ddc4e3c0e51 7-9
+  s_d44919643bce2e::t_10af562a870320 1-2,10-90
+SESSION-HANDOFF.md
+  s_dec2570fa429e4::t_10eb9341f8a331 5-29 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562ae5327f744c7a91f75b","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[5,29]}]}]}
+src/content/docs/papers/inner-monologue-2022.md
+  s_dec2570fa429e4::t_375788794760e7 6 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5628ab327f744c7a91f3d1","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":6}]}]}
+  s_dec2570fa429e4::t_72b42ca82d7f10 3-5
+  s_dec2570fa429e4::t_dc67c756f3eea4 7-9
+  s_d44919643bce2e::t_a5213a913669b5 1-2,10-90
+src/content/docs/papers/saycan-2022.md
+  s_dec2570fa429e4::t_c95108e9429769 6 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5628b2327f744c7a91f3f4","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":6}]}]}
+  s_dec2570fa429e4::t_e4d14ed45c11d9 3-5
+  s_dec2570fa429e4::t_5a03bed71c660d 7-9
+  s_d44919643bce2e::t_cd840f706102b7 1-2,10-90
+src/content/docs/method.md
+  s_dec2570fa429e4::t_56a63965f7539b 3,14 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56291f327f744c7a91f4dd","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":3},{"Single":14}]}]}
+  s_dec2570fa429e4::t_56eb64d0d7df91 241 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5629ba327f744c7a91f5c2","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":241}]}]}
+src/content/docs/papers-method.md
+  s_dec2570fa429e4::t_10593390410884 14 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562927327f744c7a91f4fc","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":14}]}]}
+src/content/docs/about.md
+  s_dec2570fa429e4::t_ce2d0c28502404 169 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5629c4327f744c7a91f5e6","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":169}]}]}
+  s_dec2570fa429e4::t_87321388d08ed6 3,17 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562931327f744c7a91f528","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":3},{"Single":17}]}]}
+src/content/docs/papers/bigbird-2020.md
+  s_dec2570fa429e4::t_6090bb7db3b3fe 6 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562893327f744c7a91f368","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":6}]}]}
+  s_dec2570fa429e4::t_0a52a93077d4d0 3-5
+  s_dec2570fa429e4::t_751788679fbf3c 7-9
+  s_d44919643bce2e::t_26c0d06b1cb5de 1-2,10-90
+src/content/docs/index.md
+  s_dec2570fa429e4::t_f849579a2985fe 147 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562904327f744c7a91f47c","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":147}]}]}
+src/content/docs/papers-queue.md
+  s_dec2570fa429e4::t_1978dac8895118 3,8,16 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a562918327f744c7a91f4b3","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":3},{"Single":8},{"Single":16}]}]}
+data/note-index.json
+  s_d44919643bce2e::t_74836ef73af459 6-7,14-15,30,2599-2630,2695-2726,3077-3108,6325-6356,9124-9155,12823-12854,13521-13552,14569-14600,15013-15044,15807-15838,16790-16821,17140-17171,17587-17618,18221-18252,20231-20262,20487-20518,21062-21093,21445-21476,22557-22588,22685-22716,22845-22876,23100-23163,23931-23962,24310-24341,24437-24468,24596-24659,24819-24850,26850-26881,27424-27455,29203-29234,29488-29519,30026-30027,30186-30187,30217-30218,30668-30699,31175-31206,31239-31270,31685-31716,31940-31971,33087-33118,33375-33406,33848-33849,64318,64320-64334,64544,64642
+data/review-receipts/papers/big-bench-hard-2022.json
+  s_d44919643bce2e::t_d5588b157b0b9b 1-55
+data/review-receipts/papers/bigbird-2020.json
+  s_d44919643bce2e::t_ed55ab1ae0c868 1-55
+data/review-receipts/papers/bloom-2022.json
+  s_d44919643bce2e::t_0b499ad4993a89 1-55
+data/review-receipts/papers/controlnet-2023.json
+  s_d44919643bce2e::t_4d70c0306ac3d9 1-55
+data/review-receipts/papers/dreambooth-2022.json
+  s_d44919643bce2e::t_880904e1a7200e 1-55
+data/review-receipts/papers/gorilla-2023.json
+  s_d44919643bce2e::t_873f23f62b9aee 1-55
+data/review-receipts/papers/gsm8k-2021.json
+  s_d44919643bce2e::t_02c57d6603761e 1-55
+data/review-receipts/papers/hugginggpt-2023.json
+  s_d44919643bce2e::t_0494cc393efa4d 1-55
+data/review-receipts/papers/inner-monologue-2022.json
+  s_d44919643bce2e::t_e495b0e8061f9e 1-55
+data/review-receipts/papers/kaplan-scaling-laws-2020.json
+  s_d44919643bce2e::t_aede7792d08cf3 1-55
+data/review-receipts/papers/lamda-2022.json
+  s_d44919643bce2e::t_71615f0ed3c795 1-55
+data/review-receipts/papers/least-to-most-prompting-2022.json
+  s_d44919643bce2e::t_a1e8c8955ae59e 1-55
+data/review-receipts/papers/linformer-2020.json
+  s_d44919643bce2e::t_05df764b52a57c 1-55
+data/review-receipts/papers/longnet-2023.json
+  s_d44919643bce2e::t_47aa29dfd54504 1-55
+data/review-receipts/papers/minerva-2022.json
+  s_d44919643bce2e::t_7d106fc911fd67 1-55
+data/review-receipts/papers/mistral-7b-2023.json
+  s_d44919643bce2e::t_d1056df7b4b605 1-55
+data/review-receipts/papers/mrkl-systems-2022.json
+  s_d44919643bce2e::t_0dd39c61b4ef17 1-55
+data/review-receipts/papers/natural-instructions-v2-2022.json
+  s_d44919643bce2e::t_be6d95a211ad17 1-55
+data/review-receipts/papers/opt-2022.json
+  s_d44919643bce2e::t_c1e8a11c608be3 1-55
+data/review-receipts/papers/orca-explanation-tuning-2023.json
+  s_d44919643bce2e::t_9e8bdb19d50ba5 1-55
+data/review-receipts/papers/p-tuning-v2-2021.json
+  s_d44919643bce2e::t_632060e9a80754 1-55
+data/review-receipts/papers/pal-code-reasoning-2022.json
+  s_d44919643bce2e::t_836843c4d3cc3e 1-55
+data/review-receipts/papers/palm-2022.json
+  s_d44919643bce2e::t_0d901cfe468d00 1-55
+data/review-receipts/papers/plan-and-solve-prompting-2023.json
+  s_d44919643bce2e::t_be4bfd37e2eb98 1-55
+data/review-receipts/papers/prefix-tuning-2021.json
+  s_d44919643bce2e::t_9450c0dff3ebf5 1-55
+data/review-receipts/papers/program-of-thoughts-2022.json
+  s_d44919643bce2e::t_50f8e1da28086c 1-55
+data/review-receipts/papers/prompt-to-prompt-2022.json
+  s_d44919643bce2e::t_fcaba415d768d3 1-55
+data/review-receipts/papers/prompt-tuning-2021.json
+  s_d44919643bce2e::t_75db75c3e403b5 1-55
+data/review-receipts/papers/qlora-2023.json
+  s_d44919643bce2e::t_29280f971c6af3 1-55
+data/review-receipts/papers/saycan-2022.json
+  s_d44919643bce2e::t_353da7cc67dd01 1-55
+data/review-receipts/papers/self-instruct-2022.json
+  s_d44919643bce2e::t_70cc115e751fc3 1-55
+data/review-receipts/papers/speculative-decoding-2022.json
+  s_d44919643bce2e::t_25e36aa810eb32 1-55
+data/review-receipts/papers/star-self-taught-reasoner-2022.json
+  s_d44919643bce2e::t_b6afa9b2f89b68 1-55
+data/review-receipts/papers/textual-inversion-2022.json
+  s_d44919643bce2e::t_72d1e22b11830c 1-55
+data/review-receipts/papers/toolllm-2023.json
+  s_d44919643bce2e::t_32a224b81ca0a8 1-55
+data/review-receipts/papers/toxigen-2022.json
+  s_d44919643bce2e::t_19044381062d88 1-55
+data/review-receipts/papers/truthfulqa-2021.json
+  s_d44919643bce2e::t_e4ca07c24c7d77 1-55
+data/review-receipts/papers/ul2-2022.json
+  s_d44919643bce2e::t_635274ad203464 1-55
+data/review-receipts/papers/webgpt-2021.json
+  s_d44919643bce2e::t_3ed0d6edd795fa 1-55
+data/review-receipts/papers/wizardlm-2023.json
+  s_d44919643bce2e::t_6d9a32fcc3f8c9 1-55
+src/content/docs/atlas/papers/topic-papers-agents-and-llm-systems-01.md
+  s_d44919643bce2e::t_3445cf71755115 3,12,25-26,36,39-41,43,45-46,56,58,60-61,64,67,70,73-79,85,90,98-99,106-107,109-110,113,115-117
+src/content/docs/atlas/papers/topic-papers-agents-and-llm-systems-02.md
+  s_d44919643bce2e::t_a8d9e97866373d 1-18
+src/content/docs/atlas/papers/topic-papers-generative-models-and-diffusion-01.md
+  s_d44919643bce2e::t_d1e090dc897624 3,12,16,21,27,29
+src/content/docs/atlas/papers/topic-papers-nlp-foundations-and-scaling-01.md
+  s_d44919643bce2e::t_74dd50e690398b 24,68,74
+src/content/docs/atlas/papers/topic-papers-nlp-foundations-and-scaling-02.md
+  s_d44919643bce2e::t_4f15dbe44682cf 3,12,16-18
+src/content/docs/papers-atlas.md
+  s_d44919643bce2e::t_94591336dab152 3,15-16,18,44-45,47,82
+src/content/docs/papers/big-bench-hard-2022.md
+  s_d44919643bce2e::t_b3f9f789b8bc2c 1-90
+src/content/docs/papers/bloom-2022.md
+  s_d44919643bce2e::t_2b7e58a7e91355 1-90
+src/content/docs/papers/controlnet-2023.md
+  s_d44919643bce2e::t_dac0ad25b12ec3 1-90
+src/content/docs/papers/dreambooth-2022.md
+  s_d44919643bce2e::t_508cb5c56b1361 1-90
+src/content/docs/papers/gorilla-2023.md
+  s_d44919643bce2e::t_d9c831de5e4564 1-90
+src/content/docs/papers/gsm8k-2021.md
+  s_d44919643bce2e::t_c364f0a26f66bb 1-90
+src/content/docs/papers/hugginggpt-2023.md
+  s_d44919643bce2e::t_ae4c809724339d 1-90
+src/content/docs/papers/kaplan-scaling-laws-2020.md
+  s_d44919643bce2e::t_d788f4f8c28275 1-90
+src/content/docs/papers/lamda-2022.md
+  s_d44919643bce2e::t_c78501340bab3f 1-90
+src/content/docs/papers/least-to-most-prompting-2022.md
+  s_d44919643bce2e::t_8e8ade1a496f70 1-90
+src/content/docs/papers/minerva-2022.md
+  s_d44919643bce2e::t_e2bb69d6341b5f 1-90
+src/content/docs/papers/mistral-7b-2023.md
+  s_d44919643bce2e::t_21ce857f49cc4a 1-90
+src/content/docs/papers/mrkl-systems-2022.md
+  s_d44919643bce2e::t_83eb7362d70e9f 1-90
+src/content/docs/papers/natural-instructions-v2-2022.md
+  s_d44919643bce2e::t_9597f4a91a8365 1-90
+src/content/docs/papers/opt-2022.md
+  s_d44919643bce2e::t_a845b4e849568f 1-90
+src/content/docs/papers/orca-explanation-tuning-2023.md
+  s_d44919643bce2e::t_88cb483f47ae18 1-90
+src/content/docs/papers/p-tuning-v2-2021.md
+  s_d44919643bce2e::t_b1480bac159f40 1-90
+src/content/docs/papers/pal-code-reasoning-2022.md
+  s_d44919643bce2e::t_ebd422eeb4c99a 1-90
+src/content/docs/papers/palm-2022.md
+  s_d44919643bce2e::t_e3e4fff2e8c82e 1-90
+src/content/docs/papers/plan-and-solve-prompting-2023.md
+  s_d44919643bce2e::t_3516b23a649063 1-90
+src/content/docs/papers/prefix-tuning-2021.md
+  s_d44919643bce2e::t_1dd7f085ae7d22 1-90
+src/content/docs/papers/program-of-thoughts-2022.md
+  s_d44919643bce2e::t_2f39c267e37cef 1-90
+src/content/docs/papers/prompt-to-prompt-2022.md
+  s_d44919643bce2e::t_2ba5cd0f78fd1f 1-90
+src/content/docs/papers/prompt-tuning-2021.md
+  s_d44919643bce2e::t_1afb9c8a34c8bb 1-90
+src/content/docs/papers/qlora-2023.md
+  s_d44919643bce2e::t_770f449c43bac0 1-90
+src/content/docs/papers/self-instruct-2022.md
+  s_d44919643bce2e::t_9207e06321588d 1-90
+src/content/docs/papers/speculative-decoding-2022.md
+  s_d44919643bce2e::t_cfbb323b3546dd 1-90
+src/content/docs/papers/star-self-taught-reasoner-2022.md
+  s_d44919643bce2e::t_6851a2c90d721a 1-90
+src/content/docs/papers/textual-inversion-2022.md
+  s_d44919643bce2e::t_e6e31161811b6d 1-90
+src/content/docs/papers/toolllm-2023.md
+  s_d44919643bce2e::t_a26a132c105a55 1-90
+src/content/docs/papers/toxigen-2022.md
+  s_d44919643bce2e::t_c129a7e78c2014 1-90
+src/content/docs/papers/truthfulqa-2021.md
+  s_d44919643bce2e::t_997ae2ae3f57dd 1-90
+src/content/docs/papers/ul2-2022.md
+  s_d44919643bce2e::t_7a9ffa251a3cf3 1-90
+src/content/docs/papers/webgpt-2021.md
+  s_d44919643bce2e::t_a2774d7fbd5cdd 1-90
+src/content/docs/papers/wizardlm-2023.md
+  s_d44919643bce2e::t_b232ccd5e13fc8 1-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "3ff92e5ca9d1aff4bf3c9f73f343ac5459e514a8",
+  "prompts": {},
+  "sessions": {
+    "s_d44919643bce2e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_d44919643bce2e",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    },
+    "s_dec2570fa429e4": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a5624f5327f744c7a91eb47",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "SESSION-HANDOFF.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_10eb9341f8a331",
+        "line_ranges": [
+          {
+            "Range": [
+              5,
+              29
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562ae5327f744c7a91f75b",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  5,
+                  29
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/about.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_ce2d0c28502404",
+        "line_ranges": [
+          {
+            "Single": 169
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5629c4327f744c7a91f5e6",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 169
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_dec2570fa429e4::t_87321388d08ed6",
+        "line_ranges": [
+          {
+            "Single": 3
+          },
+          {
+            "Single": 17
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562931327f744c7a91f528",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 3
+              },
+              {
+                "Single": 17
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/career-plan.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_b2c3ac45f8f54d",
+        "line_ranges": [
+          {
+            "Single": 8
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562939327f744c7a91f546",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_dec2570fa429e4::t_713bb8eee485ae",
+        "line_ranges": [
+          {
+            "Single": 117
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5629cb327f744c7a91f60c",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 117
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/index.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_f849579a2985fe",
+        "line_ranges": [
+          {
+            "Single": 147
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562904327f744c7a91f47c",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 147
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/method.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_56a63965f7539b",
+        "line_ranges": [
+          {
+            "Single": 3
+          },
+          {
+            "Single": 14
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56291f327f744c7a91f4dd",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 3
+              },
+              {
+                "Single": 14
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_dec2570fa429e4::t_56eb64d0d7df91",
+        "line_ranges": [
+          {
+            "Single": 241
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5629ba327f744c7a91f5c2",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 241
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers-method.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_10593390410884",
+        "line_ranges": [
+          {
+            "Single": 14
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562927327f744c7a91f4fc",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 14
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers-queue.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_1978dac8895118",
+        "line_ranges": [
+          {
+            "Single": 3
+          },
+          {
+            "Single": 8
+          },
+          {
+            "Single": 16
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562918327f744c7a91f4b3",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 3
+              },
+              {
+                "Single": 8
+              },
+              {
+                "Single": 16
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/bigbird-2020.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_6090bb7db3b3fe",
+        "line_ranges": [
+          {
+            "Single": 6
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562893327f744c7a91f368",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 6
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/inner-monologue-2022.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_375788794760e7",
+        "line_ranges": [
+          {
+            "Single": 6
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5628ab327f744c7a91f3d1",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 6
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/linformer-2020.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_b600567afc3f5c",
+        "line_ranges": [
+          {
+            "Single": 6
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56289c327f744c7a91f38d",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 6
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/longnet-2023.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_2e6e8651808cb4",
+        "line_ranges": [
+          {
+            "Single": 6
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5628a3327f744c7a91f3af",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 6
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/saycan-2022.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_c95108e9429769",
+        "line_ranges": [
+          {
+            "Single": 6
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5628b2327f744c7a91f3f4",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 6
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/queue.md": [
+      {
+        "hash": "s_dec2570fa429e4::t_53112e72081b89",
+        "line_ranges": [
+          {
+            "Single": 9
+          },
+          {
+            "Single": 192
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a562910327f744c7a91f497",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 9
+              },
+              {
+                "Single": 192
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_dec2570fa429e4": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_06cc098d32e75b": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_10593390410884": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_10eb9341f8a331": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_1978dac8895118": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_240a2594bcd09a": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_2e6e8651808cb4": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_375788794760e7": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_53112e72081b89": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_56a63965f7539b": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_56eb64d0d7df91": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_6090bb7db3b3fe": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_713bb8eee485ae": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_87321388d08ed6": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_a87a1d7e58360c": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_b2c3ac45f8f54d": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_b600567afc3f5c": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_c95108e9429769": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_ce2d0c28502404": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_dec2570fa429e4::t_f849579a2985fe": {
+      "tool": "trae",
+      "conversation_id": "6a5624f5327f744c7a91eb47",
+      "session_id": "6a5624f5327f744c7a91eb47",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
