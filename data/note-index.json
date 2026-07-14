@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2024,
-      "classified": 1977,
+      "total": 2028,
+      "classified": 1981,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1063,
-        "classified": 1044,
+        "total": 1067,
+        "classified": 1048,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -20612,6 +20612,38 @@
       }
     },
     {
+      "id": "papers::mle-bench",
+      "area": "papers",
+      "slug": "mle-bench",
+      "title": "MLE-bench — 用 Kaggle 任务衡量机器学习工程 agent",
+      "description": "用 MLE-bench 理解 ML 工程 agent 为什么不能只靠单元测试和代码 benchmark 来评估。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / MLE Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/mle-bench/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::mlflow",
       "area": "papers",
       "slug": "mlflow",
@@ -26402,6 +26434,38 @@
       }
     },
     {
+      "id": "papers::ruler-long-context",
+      "area": "papers",
+      "slug": "ruler-long-context",
+      "title": "RULER — 真实长上下文能力不能只看 NIAH",
+      "description": "用 RULER 理解长上下文模型的有效窗口、检索幻觉和聚合推理为什么要分开评测。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Long Context Evaluation"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/ruler-long-context/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::rwkv-2023",
       "area": "papers",
       "slug": "rwkv-2023",
@@ -30634,6 +30698,38 @@
       }
     },
     {
+      "id": "papers::terminal-bench",
+      "area": "papers",
+      "slug": "terminal-bench",
+      "title": "Terminal-Bench — 在真实命令行任务里测试 agent",
+      "description": "用 Terminal-Bench 理解终端环境为什么能暴露 agent 的长程执行、环境理解和验证能力。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Terminal Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/terminal-bench/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::tesla-architecture-2008",
       "area": "papers",
       "slug": "tesla-architecture-2008",
@@ -32514,6 +32610,38 @@
       }
     },
     {
+      "id": "papers::visualwebarena",
+      "area": "papers",
+      "slug": "visualwebarena",
+      "title": "VisualWebArena — 让网页 agent 真正看见界面",
+      "description": "用 VisualWebArena 理解多模态 web agent 为什么不能只读 DOM 文本，还要处理视觉线索。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Multimodal Web"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/visualwebarena/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::vit",
       "area": "papers",
       "slug": "vit",
@@ -32761,8 +32889,8 @@
       },
       "route": "/study/papers/voyager/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -33112,8 +33240,8 @@
       },
       "route": "/study/papers/webgpt-2021/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -33176,8 +33304,8 @@
       },
       "route": "/study/papers/webxskill/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -33400,8 +33528,8 @@
       },
       "route": "/study/papers/wizardlm-2023/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -64331,7 +64459,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/",
-      "entries": 1
+      "entries": 5
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",
