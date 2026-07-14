@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 1984,
-      "classified": 1937,
+      "total": 2024,
+      "classified": 1977,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1023,
-        "classified": 1004,
+        "total": 1063,
+        "classified": 1044,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -27,7 +27,7 @@
     },
     "missing_curated_assignments": [],
     "atlas": {
-      "chunks": 68,
+      "chunks": 69,
       "chunk_size": 100,
       "max_chunk_entries": 100
     }
@@ -2597,6 +2597,38 @@
       }
     },
     {
+      "id": "papers::big-bench-hard-2022",
+      "area": "papers",
+      "slug": "big-bench-hard-2022",
+      "title": "BIG-Bench Hard — 从大题库里挑出模型最头疼的 23 类题",
+      "description": "用 BBH 理解为什么 benchmark 需要难题子集和 CoT 对照。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Evaluation"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/big-bench-hard-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::big-little-2011",
       "area": "papers",
       "slug": "big-little-2011",
@@ -2658,6 +2690,38 @@
       "atlas": {
         "chunk_id": "topic-papers-hci-and-software-engineering-research-01",
         "chunk_route": "/study/atlas/papers/topic-papers-hci-and-software-engineering-research-01/"
+      }
+    },
+    {
+      "id": "papers::bigbird-2020",
+      "area": "papers",
+      "slug": "bigbird-2020",
+      "title": "BigBird — 用稀疏 attention 拉长 Transformer 视野",
+      "description": "用 BigBird 理解局部、全局和随机 attention 怎样组成长序列模式。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-nlp-foundations-and-scaling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-nlp-foundations-and-scaling",
+        "matched_category": "nlp",
+        "raw_category": "NLP / Efficient Attention"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/bigbird-2020/",
+      "atlas": {
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
       }
     },
     {
@@ -3008,6 +3072,38 @@
       "atlas": {
         "chunk_id": "topic-papers-information-retrieval-and-recommendation-01",
         "chunk_route": "/study/atlas/papers/topic-papers-information-retrieval-and-recommendation-01/"
+      }
+    },
+    {
+      "id": "papers::bloom-2022",
+      "area": "papers",
+      "slug": "bloom-2022",
+      "title": "BLOOM — 把 176B 多语种模型做成开放科学工程",
+      "description": "用 BLOOM 理解大模型也可以用社区协作、数据治理和开放发布来推进。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Open Science"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/bloom-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -6227,6 +6323,38 @@
       }
     },
     {
+      "id": "papers::controlnet-2023",
+      "area": "papers",
+      "slug": "controlnet-2023",
+      "title": "ControlNet — 给扩散模型加一条可控条件支路",
+      "description": "用 ControlNet 理解边缘、姿态和深度图如何稳定控制图像生成。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-generative-models-and-diffusion"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-generative-models-and-diffusion",
+        "matched_category": "diffusion",
+        "raw_category": "Diffusion / Control"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/controlnet-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-generative-models-and-diffusion-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-generative-models-and-diffusion-01/"
+      }
+    },
+    {
       "id": "papers::cook-1984-distributed-ray-tracing",
       "area": "papers",
       "slug": "cook-1984-distributed-ray-tracing",
@@ -8991,6 +9119,38 @@
       "atlas": {
         "chunk_id": "topic-papers-reinforcement-learning-01",
         "chunk_route": "/study/atlas/papers/topic-papers-reinforcement-learning-01/"
+      }
+    },
+    {
+      "id": "papers::dreambooth-2022",
+      "area": "papers",
+      "slug": "dreambooth-2022",
+      "title": "DreamBooth — 用几张图把一个新主体塞进生成模型",
+      "description": "用 DreamBooth 理解 subject-driven generation 怎样让扩散模型记住特定对象。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-generative-models-and-diffusion"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-generative-models-and-diffusion",
+        "matched_category": "diffusion",
+        "raw_category": "Diffusion / Personalization"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/dreambooth-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-generative-models-and-diffusion-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-generative-models-and-diffusion-01/"
       }
     },
     {
@@ -12661,6 +12821,38 @@
       }
     },
     {
+      "id": "papers::gorilla-2023",
+      "area": "papers",
+      "slug": "gorilla-2023",
+      "title": "Gorilla — 让 LLM 学会查 API 文档再调用",
+      "description": "用 Gorilla 理解 API grounding 如何降低工具调用幻觉。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Tool Use"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/gorilla-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::gortler-1996-lumigraph",
       "area": "papers",
       "slug": "gortler-1996-lumigraph",
@@ -13324,6 +13516,38 @@
       "atlas": {
         "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
         "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+      }
+    },
+    {
+      "id": "papers::gsm8k-2021",
+      "area": "papers",
+      "slug": "gsm8k-2021",
+      "title": "GSM8K — 小学数学题把大模型算术短板照出来",
+      "description": "用 GSM8K 理解数学 word problem、verifier 和采样重排为什么重要。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Math Evaluation"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/gsm8k-2021/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -14343,6 +14567,38 @@
       }
     },
     {
+      "id": "papers::hugginggpt-2023",
+      "area": "papers",
+      "slug": "hugginggpt-2023",
+      "title": "HuggingGPT — 让 ChatGPT 当任务调度员，模型库当工具箱",
+      "description": "用 HuggingGPT 理解 LLM 如何规划并调用专用模型完成多模态任务。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Tool Orchestration"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/hugginggpt-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::hughes-fp-matters",
       "area": "papers",
       "slug": "hughes-fp-matters",
@@ -14752,6 +15008,38 @@
       "atlas": {
         "chunk_id": "topic-papers-databases-01",
         "chunk_route": "/study/atlas/papers/topic-papers-databases-01/"
+      }
+    },
+    {
+      "id": "papers::inner-monologue-2022",
+      "area": "papers",
+      "slug": "inner-monologue-2022",
+      "title": "Inner Monologue — 让机器人把观察结果说回计划里",
+      "description": "用 Inner Monologue 理解闭环反馈如何让语言计划接上真实环境变化。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "LLM Agent / Robotics"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/inner-monologue-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -15514,6 +15802,38 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-01",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-01/"
+      }
+    },
+    {
+      "id": "papers::kaplan-scaling-laws-2020",
+      "area": "papers",
+      "slug": "kaplan-scaling-laws-2020",
+      "title": "Scaling Laws — 大模型训练不是玄学，是幂律预算题",
+      "description": "用 Kaplan scaling laws 理解参数、数据和计算量怎样一起决定语言模型损失。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Scaling Laws"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/kaplan-scaling-laws-2020/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -16468,6 +16788,38 @@
       }
     },
     {
+      "id": "papers::lamda-2022",
+      "area": "papers",
+      "slug": "lamda-2022",
+      "title": "LaMDA — 聊天模型先学会有用、具体和不乱说",
+      "description": "用 LaMDA 理解开放域对话模型为什么需要质量、安全和 groundedness 三条线。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Dialogue"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/lamda-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::lamport-1978",
       "area": "papers",
       "slug": "lamport-1978",
@@ -16783,6 +17135,38 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-01",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-01/"
+      }
+    },
+    {
+      "id": "papers::least-to-most-prompting-2022",
+      "area": "papers",
+      "slug": "least-to-most-prompting-2022",
+      "title": "Least-to-Most — 先拆小题，再解大题",
+      "description": "用 Least-to-Most Prompting 理解复杂推理为什么要先分解再逐步求解。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Reasoning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/least-to-most-prompting-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -17198,6 +17582,38 @@
       "atlas": {
         "chunk_id": "topic-papers-distributed-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
+      }
+    },
+    {
+      "id": "papers::linformer-2020",
+      "area": "papers",
+      "slug": "linformer-2020",
+      "title": "Linformer — 把 attention 矩阵投影成线性复杂度",
+      "description": "用 Linformer 理解低秩假设如何压缩 self-attention。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-nlp-foundations-and-scaling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-nlp-foundations-and-scaling",
+        "matched_category": "nlp",
+        "raw_category": "NLP / Efficient Attention"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/linformer-2020/",
+      "atlas": {
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
       }
     },
     {
@@ -17797,6 +18213,38 @@
         "review_after": null
       },
       "route": "/study/papers/longformer-2020/",
+      "atlas": {
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+      }
+    },
+    {
+      "id": "papers::longnet-2023",
+      "area": "papers",
+      "slug": "longnet-2023",
+      "title": "LongNet — 用 dilated attention 把上下文推到十亿 token 想象空间",
+      "description": "用 LongNet 理解扩张式 attention 如何在多尺度上连接超长序列。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-nlp-foundations-and-scaling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-nlp-foundations-and-scaling",
+        "matched_category": "nlp",
+        "raw_category": "NLP / Long Context"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/longnet-2023/",
       "atlas": {
         "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
         "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
@@ -19781,6 +20229,38 @@
       }
     },
     {
+      "id": "papers::minerva-2022",
+      "area": "papers",
+      "slug": "minerva-2022",
+      "title": "Minerva — 把语言模型拉进数学草稿纸",
+      "description": "用 Minerva 理解为什么数学推理需要专门的数据、逐步解题和采样验证。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Math Reasoning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/minerva-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::minhash-broder-1997",
       "area": "papers",
       "slug": "minhash-broder-1997",
@@ -19999,6 +20479,38 @@
         "review_after": null
       },
       "route": "/study/papers/misevolution-2509/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::mistral-7b-2023",
+      "area": "papers",
+      "slug": "mistral-7b-2023",
+      "title": "Mistral 7B — 小模型靠架构细节打出性价比",
+      "description": "用 Mistral 7B 理解 grouped-query attention 和 sliding-window attention 如何服务高效开源模型。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Efficient Model"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/mistral-7b-2023/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -20548,6 +21060,38 @@
       }
     },
     {
+      "id": "papers::mrkl-systems-2022",
+      "area": "papers",
+      "slug": "mrkl-systems-2022",
+      "title": "MRKL — 给大模型配一组专家工具和路由器",
+      "description": "用 MRKL Systems 理解 neuro-symbolic agent 为什么要把 LLM、检索和计算模块拆开。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Tool Architecture"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/mrkl-systems-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::ms-marco-2016",
       "area": "papers",
       "slug": "ms-marco-2016",
@@ -20896,6 +21440,38 @@
       "atlas": {
         "chunk_id": "topic-papers-distributed-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
+      }
+    },
+    {
+      "id": "papers::natural-instructions-v2-2022",
+      "area": "papers",
+      "slug": "natural-instructions-v2-2022",
+      "title": "Super-NaturalInstructions — 1600+ 任务教模型读懂说明书",
+      "description": "用 Super-NaturalInstructions 理解 declarative instructions 如何评测任务泛化。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Instruction Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/natural-instructions-v2-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -21979,6 +22555,38 @@
       }
     },
     {
+      "id": "papers::opt-2022",
+      "area": "papers",
+      "slug": "opt-2022",
+      "title": "OPT — 把 GPT-3 级训练日志打开给研究社区",
+      "description": "用 OPT 理解开放权重、训练日志和复现实验对 LLM 研究的重要性。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Open Model"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/opt-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::optuna",
       "area": "papers",
       "slug": "optuna",
@@ -22069,6 +22677,38 @@
         "review_after": null
       },
       "route": "/study/papers/orca-continuous-batching/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::orca-explanation-tuning-2023",
+      "area": "papers",
+      "slug": "orca-explanation-tuning-2023",
+      "title": "Orca — 小模型不只抄答案，还学解释轨迹",
+      "description": "用 Orca 理解 explanation tuning 为什么比只蒸馏最终答案更像教学生。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Distillation"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/orca-explanation-tuning-2023/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -22200,6 +22840,38 @@
       "atlas": {
         "chunk_id": "topic-papers-distributed-training-and-gpu-01",
         "chunk_route": "/study/atlas/papers/topic-papers-distributed-training-and-gpu-01/"
+      }
+    },
+    {
+      "id": "papers::p-tuning-v2-2021",
+      "area": "papers",
+      "slug": "p-tuning-v2-2021",
+      "title": "P-Tuning v2 — 把 prompt tuning 深插到每一层",
+      "description": "用 P-Tuning v2 理解深层连续提示为什么能跨规模和任务接近 fine-tuning。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Efficient Finetuning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/p-tuning-v2-2021/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -22423,6 +23095,70 @@
       "atlas": {
         "chunk_id": "topic-papers-hci-and-software-engineering-research-01",
         "chunk_route": "/study/atlas/papers/topic-papers-hci-and-software-engineering-research-01/"
+      }
+    },
+    {
+      "id": "papers::pal-code-reasoning-2022",
+      "area": "papers",
+      "slug": "pal-code-reasoning-2022",
+      "title": "PAL — 让 Python 成为语言模型的草稿纸",
+      "description": "用 PAL 理解 Program-aided Language Models 如何把推理转成可运行代码。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Tool Reasoning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/pal-code-reasoning-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::palm-2022",
+      "area": "papers",
+      "slug": "palm-2022",
+      "title": "PaLM — Pathways 把 540B LLM 扩成统一底座",
+      "description": "用 PaLM 理解大规模 dense decoder 如何在多任务、推理和代码能力上同时冒头。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Foundation Model"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/palm-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -23193,6 +23929,38 @@
       }
     },
     {
+      "id": "papers::plan-and-solve-prompting-2023",
+      "area": "papers",
+      "slug": "plan-and-solve-prompting-2023",
+      "title": "Plan-and-Solve — 零样本推理先写计划再执行",
+      "description": "用 Plan-and-Solve 理解为什么 prompt 可以显式拆成 plan 和 solve 两段。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Reasoning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/plan-and-solve-prompting-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::plan9-1995",
       "area": "papers",
       "slug": "plan9-1995",
@@ -23540,6 +24308,38 @@
       }
     },
     {
+      "id": "papers::prefix-tuning-2021",
+      "area": "papers",
+      "slug": "prefix-tuning-2021",
+      "title": "Prefix-Tuning — 不改模型，只给每层塞一段可训练前缀",
+      "description": "用 Prefix-Tuning 理解连续 prompt 如何成为参数高效微调方法。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Efficient Finetuning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/prefix-tuning-2021/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::presumed-abort-1986",
       "area": "papers",
       "slug": "presumed-abort-1986",
@@ -23632,6 +24432,38 @@
       "atlas": {
         "chunk_id": "topic-papers-hci-and-software-engineering-research-01",
         "chunk_route": "/study/atlas/papers/topic-papers-hci-and-software-engineering-research-01/"
+      }
+    },
+    {
+      "id": "papers::program-of-thoughts-2022",
+      "area": "papers",
+      "slug": "program-of-thoughts-2022",
+      "title": "Program of Thoughts — 让模型写程序，把计算交给解释器",
+      "description": "用 Program of Thoughts 理解自然语言推理和精确计算为什么要分工。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Tool Reasoning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/program-of-thoughts-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -23759,6 +24591,70 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-01",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-01/"
+      }
+    },
+    {
+      "id": "papers::prompt-to-prompt-2022",
+      "area": "papers",
+      "slug": "prompt-to-prompt-2022",
+      "title": "Prompt-to-Prompt — 改词不改构图的 cross-attention 编辑",
+      "description": "用 Prompt-to-Prompt 理解扩散模型里文本 token 和图像布局如何对齐。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-generative-models-and-diffusion"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-generative-models-and-diffusion",
+        "matched_category": "diffusion",
+        "raw_category": "Diffusion / Editing"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/prompt-to-prompt-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-generative-models-and-diffusion-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-generative-models-and-diffusion-01/"
+      }
+    },
+    {
+      "id": "papers::prompt-tuning-2021",
+      "area": "papers",
+      "slug": "prompt-tuning-2021",
+      "title": "Prompt Tuning — 规模变大后，软提示也能接近微调",
+      "description": "用 Prompt Tuning 理解为什么 soft prompt 在大模型上突然变得有效。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Efficient Finetuning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/prompt-tuning-2021/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -23918,6 +24814,38 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-01",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-01/"
+      }
+    },
+    {
+      "id": "papers::qlora-2023",
+      "area": "papers",
+      "slug": "qlora-2023",
+      "title": "QLoRA — 4-bit 量化底座上贴 LoRA 也能微调",
+      "description": "用 QLoRA 理解 NF4、double quantization 和 paged optimizers 如何降低微调门槛。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Efficient Finetuning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/qlora-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -25920,6 +26848,38 @@
       }
     },
     {
+      "id": "papers::saycan-2022",
+      "area": "papers",
+      "slug": "saycan-2022",
+      "title": "SayCan — 机器人不只问“想做什么”，还问“我能做什么”",
+      "description": "用 SayCan 理解语言模型和机器人 affordance 如何合成可执行动作。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "LLM Agent / Robotics"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/saycan-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::scads-database-2008",
       "area": "papers",
       "slug": "scads-database-2008",
@@ -26456,6 +27416,38 @@
         "review_after": null
       },
       "route": "/study/papers/self-evolving-software-agents/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::self-instruct-2022",
+      "area": "papers",
+      "slug": "self-instruct-2022",
+      "title": "Self-Instruct — 让模型自己造指令数据再学习",
+      "description": "用 Self-Instruct 理解指令微调数据如何从少量种子任务扩展出来。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Instruction Tuning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/self-instruct-2022/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -28209,6 +29201,38 @@
       }
     },
     {
+      "id": "papers::speculative-decoding-2022",
+      "area": "papers",
+      "slug": "speculative-decoding-2022",
+      "title": "Speculative Decoding — 小模型先猜，大模型只验收",
+      "description": "用 Speculative Decoding 理解如何不改变分布地加速自回归生成。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Inference"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/speculative-decoding-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::splade-2021",
       "area": "papers",
       "slug": "splade-2021",
@@ -28459,6 +29483,38 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-02",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-02/"
+      }
+    },
+    {
+      "id": "papers::star-self-taught-reasoner-2022",
+      "area": "papers",
+      "slug": "star-self-taught-reasoner-2022",
+      "title": "STaR — 模型先试着讲理由，再用对的理由训练自己",
+      "description": "用 STaR 理解 rationale bootstrapping 怎样减少人工推理标注。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Reasoning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/star-self-taught-reasoner-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -28967,8 +30023,8 @@
       },
       "route": "/study/papers/sycophancy-2023/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
       }
     },
     {
@@ -29127,8 +30183,8 @@
       },
       "route": "/study/papers/t0-2021/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
       }
     },
     {
@@ -29158,8 +30214,8 @@
       },
       "route": "/study/papers/t5/",
       "atlas": {
-        "chunk_id": "topic-papers-nlp-foundations-and-scaling-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-01/"
+        "chunk_id": "topic-papers-nlp-foundations-and-scaling-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/"
       }
     },
     {
@@ -29607,6 +30663,38 @@
       "atlas": {
         "chunk_id": "topic-papers-operating-systems-and-cluster-management-01",
         "chunk_route": "/study/atlas/papers/topic-papers-operating-systems-and-cluster-management-01/"
+      }
+    },
+    {
+      "id": "papers::textual-inversion-2022",
+      "area": "papers",
+      "slug": "textual-inversion-2022",
+      "title": "Textual Inversion — 给新概念学一个专属 token",
+      "description": "用 Textual Inversion 理解冻结扩散模型时如何只学习概念 embedding。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-generative-models-and-diffusion"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-generative-models-and-diffusion",
+        "matched_category": "diffusion",
+        "raw_category": "Diffusion / Personalization"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/textual-inversion-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-generative-models-and-diffusion-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-generative-models-and-diffusion-01/"
       }
     },
     {
@@ -30085,6 +31173,38 @@
       }
     },
     {
+      "id": "papers::toolllm-2023",
+      "area": "papers",
+      "slug": "toolllm-2023",
+      "title": "ToolLLM — 用 16000+ API 训练模型进入真实工具世界",
+      "description": "用 ToolLLM 理解大规模 API 数据集、工具检索和工具评测如何支撑 agent。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Tool Use"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/toolllm-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::tor-2004",
       "area": "papers",
       "slug": "tor-2004",
@@ -30114,6 +31234,38 @@
       "atlas": {
         "chunk_id": "topic-papers-network-protocols-01",
         "chunk_route": "/study/atlas/papers/topic-papers-network-protocols-01/"
+      }
+    },
+    {
+      "id": "papers::toxigen-2022",
+      "area": "papers",
+      "slug": "toxigen-2022",
+      "title": "ToxiGen — 用生成模型造隐性仇恨测试集",
+      "description": "用 ToxiGen 理解安全评测为什么要覆盖隐性、对抗性和群体相关文本。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Safety Evaluation"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/toxigen-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -30531,6 +31683,38 @@
       }
     },
     {
+      "id": "papers::truthfulqa-2021",
+      "area": "papers",
+      "slug": "truthfulqa-2021",
+      "title": "TruthfulQA — 专门问模型容易学人类谬误的问题",
+      "description": "用 TruthfulQA 理解语言模型为什么会模仿常见假话而不是坚持事实。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Evaluation"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/truthfulqa-2021/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::turchin-supercompilation",
       "area": "papers",
       "slug": "turchin-supercompilation",
@@ -30751,6 +31935,38 @@
       "atlas": {
         "chunk_id": "topic-papers-databases-01",
         "chunk_route": "/study/atlas/papers/topic-papers-databases-01/"
+      }
+    },
+    {
+      "id": "papers::ul2-2022",
+      "area": "papers",
+      "slug": "ul2-2022",
+      "title": "UL2 — 一个模型同时练完补空、续写和长文本",
+      "description": "用 UL2 理解 mixture-of-denoisers 如何统一不同语言模型训练范式。",
+      "difficulty": "advanced",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Pretraining Objective"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/ul2-2022/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -31869,6 +33085,38 @@
       }
     },
     {
+      "id": "papers::webgpt-2021",
+      "area": "papers",
+      "slug": "webgpt-2021",
+      "title": "WebGPT — 让模型带着浏览器回答问题",
+      "description": "用 WebGPT 理解检索、引用和人类偏好如何组合成可追溯问答。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "LLM / Browser Agent"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/webgpt-2021/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::websocket-rfc-6455",
       "area": "papers",
       "slug": "websocket-rfc-6455",
@@ -32122,6 +33370,38 @@
       "atlas": {
         "chunk_id": "topic-papers-network-protocols-01",
         "chunk_route": "/study/atlas/papers/topic-papers-network-protocols-01/"
+      }
+    },
+    {
+      "id": "papers::wizardlm-2023",
+      "area": "papers",
+      "slug": "wizardlm-2023",
+      "title": "WizardLM — 用 Evol-Instruct 自动变难训练题",
+      "description": "用 WizardLM 理解 instruction 数据不只要多，还要逐步变复杂。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "llm",
+        "raw_category": "LLM / Instruction Tuning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/wizardlm-2023/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -32565,8 +33845,8 @@
       },
       "route": "/study/papers/zombie-agents-2602/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -63035,9 +64315,23 @@
         "en": "Agents and LLM Systems"
       },
       "page": 1,
-      "pages": 1,
+      "pages": 2,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/",
-      "entries": 68
+      "entries": 100
+    },
+    {
+      "id": "topic-papers-agents-and-llm-systems-02",
+      "area": "papers",
+      "kind": "topic",
+      "topic_id": "papers-agents-and-llm-systems",
+      "labels": {
+        "zh": "智能体与 LLM 系统",
+        "en": "Agents and LLM Systems"
+      },
+      "page": 2,
+      "pages": 2,
+      "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/",
+      "entries": 1
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",
@@ -63247,7 +64541,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-generative-models-and-diffusion-01/",
-      "entries": 10
+      "entries": 14
     },
     {
       "id": "topic-papers-hci-and-software-engineering-research-01",
@@ -63345,7 +64639,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/",
-      "entries": 11
+      "entries": 14
     },
     {
       "id": "topic-papers-operating-systems-and-cluster-management-01",

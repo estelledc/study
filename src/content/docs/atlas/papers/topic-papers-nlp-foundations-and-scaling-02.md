@@ -1,6 +1,6 @@
 ---
 title: "NLP 基础与 Scaling · 论文 · 第 2 组"
-description: "11 条 NLP 基础与 Scaling Atlas 分块"
+description: "14 条 NLP 基础与 Scaling Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,13 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 11 条，稳定上限为 100 条。
+本分块共 14 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | `sycophancy-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | `t0-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | `t5` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) | `tabpfn-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TD3 — 给 DDPG 装两副刹车，连续控制终于稳了](/study/papers/td3-2018/) | `td3-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Transformer — 让每个词一次看完整句话](/study/papers/transformer/) | `transformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

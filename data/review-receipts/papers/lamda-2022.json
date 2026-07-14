@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "lamda-2022",
+    "digest_sha256": "f21fb0b5917772720acaa133954545fe5677a4721c4b2dc4a8b5e81f874e9e0b"
+  },
+  "source_revision": "arXiv:2201.08239v3",
+  "research_input_sha256": "c0c685404880afee4e9e893d24915fa5ce1397e3f6a4c2ac29a4b909417bb240",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714-40-paper-batch",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Zero-base explanation includes an analogy and toy mechanism check; paper benchmark was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714-40-paper-batch",
+      "decision": "PASS_WITH_NOTES",
+      "score": 83,
+      "warnings": [
+        "Claims are limited to arXiv metadata and static paper reading; no repository or service integration was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714-40-paper-batch",
+      "decision": "PASS_WITH_NOTES",
+      "score": 82,
+      "warnings": [
+        "Citation identity was checked through arXiv metadata; reported experimental numbers are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T12:00:00.000Z"
+}
