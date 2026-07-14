@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 1975,
-      "classified": 1928,
+      "total": 1980,
+      "classified": 1933,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1014,
-        "classified": 995,
+        "total": 1019,
+        "classified": 1000,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -478,6 +478,38 @@
       }
     },
     {
+      "id": "papers::agent-planning-benchmark-2026",
+      "area": "papers",
+      "slug": "agent-planning-benchmark-2026",
+      "title": "Agent Planning Benchmark — 把 agent 失败拆成规划诊断题",
+      "description": "用 APB 拆解 LLM agent 的规划、反馈修正、工具噪声和无解任务校准。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/agent-planning-benchmark-2026/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::agent-r1-2511",
       "area": "papers",
       "slug": "agent-r1-2511",
@@ -536,6 +568,38 @@
       "atlas": {
         "chunk_id": "unclassified-01",
         "chunk_route": "/study/atlas/papers/unclassified-01/"
+      }
+    },
+    {
+      "id": "papers::agentic-context-engineering-2025",
+      "area": "papers",
+      "slug": "agentic-context-engineering-2025",
+      "title": "Agentic Context Engineering — 把上下文当成会进化的 playbook",
+      "description": "ACE 将上下文视为可演化 playbook，用生成、反思和整理缓解 context collapse。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Context Engineering"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/agentic-context-engineering-2025/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -18759,6 +18823,38 @@
       }
     },
     {
+      "id": "papers::mcp-bench-2025",
+      "area": "papers",
+      "slug": "mcp-bench-2025",
+      "title": "MCP-Bench — 用真实 MCP Server 测 agent 工具编排",
+      "description": "MCP-Bench 通过 28 个 live MCP server 和 250 个工具评估多步工具编排。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Tool Use"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/mcp-bench-2025/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::mcp-spec",
       "area": "papers",
       "slug": "mcp-spec",
@@ -18785,6 +18881,38 @@
         "review_after": null
       },
       "route": "/study/papers/mcp-spec/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::mcpworld-2025",
+      "area": "papers",
+      "slug": "mcpworld-2025",
+      "title": "MCPWorld — API、GUI、混合 Computer Use 的统一测试床",
+      "description": "MCPWorld 用 white-box apps 统一评估 API、GUI 和混合 computer-use agents。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Computer Use"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/mcpworld-2025/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -28614,6 +28742,38 @@
         "review_after": null
       },
       "route": "/study/papers/swe-bench/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::swe-skills-bench-2026",
+      "area": "papers",
+      "slug": "swe-skills-bench-2026",
+      "title": "SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗",
+      "description": "用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Software Engineering"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-14",
+        "review_after": null
+      },
+      "route": "/study/papers/swe-skills-bench-2026/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -62749,7 +62909,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/",
-      "entries": 59
+      "entries": 64
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",

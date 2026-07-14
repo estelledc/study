@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "swe-skills-bench-2026",
+    "digest_sha256": "13669350148ed3356d0c2d954b69453391b49c5105f6f5c761dac233cfd79403"
+  },
+  "source_revision": "arXiv:2603.15401v1",
+  "research_input_sha256": "848c664efd2a65575af4a2685bd775b9601b885ba973eb0c685151286b32dacb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "Explains skill utility with an accessible cooking SOP analogy."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Manual toy comparison only; the 565-task benchmark was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Quantitative claims are sourced to arXiv abstract and HTML snippets."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T10:31:00.000Z"
+}

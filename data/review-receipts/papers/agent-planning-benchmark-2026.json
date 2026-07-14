@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "agent-planning-benchmark-2026",
+    "digest_sha256": "99c6f15639b7b465ac23d23df018d79ad9705a1978dccf55648a31a9a922dad1"
+  },
+  "source_revision": "arXiv:2606.04874v1",
+  "research_input_sha256": "608001c813235e27b70661e43fa4cd3ce2e87da5f2f5a2ba5b67fbd9d6ac8c28",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 88,
+      "warnings": [
+        "Beginner explanation uses a toy planning task; full APB benchmark was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Manual toy trace only; no executable benchmark evidence is attached."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Claims are limited to arXiv metadata and abstract-level static reading."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T10:30:00.000Z"
+}
