@@ -2,9 +2,20 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-14 新增 40 篇论文全流程完成记录
+
+- status：`complete`
+- 起始 ref：`384787e09827c336baf5ac2b33e67e8c91b9df49`（PR #30 merge commit）。
+- 完成 ref：`9eadc605426eed61b7c4ffcc9377d0230b143381`（PR #31 merge commit）。
+- external delta：PR #31 `Add 40 arXiv paper study cards` 已合并；GitHub Pages workflow `29333213667` 已成功完成，公开站点为 `https://estelledc.github.io/study/`。
+- 内容 delta：新增 40 篇 `study-v2` paper note、40 份 `study-review-receipt-v1`，并刷新 atlas / note-index / 公开规模文案；当前公开计数为 projects=961、papers=1063、total=2024。
+- 本地验收：`STUDY_CHANGED_FROM=384787e09827c336baf5ac2b33e67e8c91b9df49 npm run verify:ci` 全部通过；`node scripts/quality-gate.mjs --changed-from 384787e09827c336baf5ac2b33e67e8c91b9df49 --json` 通过；`npm run audit:counts && npm run audit:content-contract && npm run audit:links && npm run audit:wikilinks` 通过；`git diff --check` 通过。
+- 线上冒烟：主页返回 200；抽样 `palm-2022`、`self-instruct-2022`、`gorilla-2023`、`longnet-2023`、`dreambooth-2022`、`toxigen-2022` 均返回 200，并可见“本轮 40 篇 / Batch N”内容。
+- 最终状态：`main...origin/main` 对齐；supervisor 为 `WAIT_HEALTHY`、`blockers=[]`。下一次写入只能由新的显式 backlog、外部状态变化或用户重新授权触发。
+
 ## 2026-07-14 新增 40 篇论文与部署 Epoch Contract
 
-- status：`running`
+- status：`complete`
 - objective：在用户明确授权“分十批新研究 40 篇论文，全流程部署”下，新增 10 批 × 4 篇公开 arXiv 论文研究卡，覆盖 foundation/scaling、开放模型、instruction tuning、reasoning prompt、agent/tool use、PEFT、长上下文/推理、多模态生成与评测安全。
 - scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json` 与 papers atlas 派生页，同步公开规模文案和本 handoff；不修改候选队列、policy/threshold、既有论文正文语义或远端配置。
 - activated_by：`explicit-user-request-2026-07-14-new-40-papers-full-deploy`
@@ -29,7 +40,7 @@
 
 ## 2026-07-14 新增 4 篇论文与部署 Epoch Contract
 
-- status：`running`
+- status：`complete`
 - objective：在当前用户明确授权下，新研究并发布 4 篇公开 arXiv 论文笔记：`OSWorld`、`ToolBench-X`、`MemGym`、`SWE-Bench-CL`，补齐 agent 环境、工具可靠性、长程记忆与 SWE 持续学习四条主线。
 - scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，以及由 atlas / note-index / 公开计数文案 / handoff / 部署门禁确定性更新的文件；不改候选队列，不改 policy/threshold，不改旧论文正文语义。
 - activated_by：`explicit-user-request-2026-07-14-new-4-papers-full-deploy`
@@ -75,10 +86,10 @@
 - 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && npm run status:supervisor`；PR 状态用 GitHub API 或浏览器查看 `https://github.com/estelledc/study/pull/26`。
 - 下一位独立 agent 必须先读 `AGENTS.md`，建立 supervisor / epoch contract；不得自动恢复旧数量循环。
 
-## 当前接班点：2026-07-14 4 篇论文本地执行状态
+## 历史接班点：2026-07-14 4 篇论文本地执行状态
 
 - 起始 ref：`f487efbcd135faf1e1de9fcd2ccf043437a244fe`（origin/main，PR #29 merge commit）。
-- 当前分支：`study/papers-20260714-four-more`。
+- 完成 ref：`384787e09827c336baf5ac2b33e67e8c91b9df49`（PR #30 merge commit）。
 - dry-run 结果：`npm run round:dispatch -- --rewrite 0 --new 4 --dry-run` 因 `papers-new short: got 0, need 2` 被阻止；本轮未修改候选队列，改走显式授权的手工 Publication 路径。
 - 已完成切片：
   1. 规范工具链下 `status:supervisor` 从 Node 版本 blocker 恢复到 `WAIT_HEALTHY`；
@@ -93,7 +104,7 @@
   - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`；
   - `npm run build:strict -- --log /tmp/study-build-check.log`；
   - `git diff --check`。
-- 剩余动作：提交当前变更，提交后重跑 `STUDY_CHANGED_FROM=f487efbcd135faf1e1de9fcd2ccf043437a244fe npm run verify:ci`，随后推送分支、创建 PR、合并并等待 Pages deploy。
+- 剩余动作：无；PR #30 已合并并完成 Pages deploy。本段仅保留为历史执行记录。
 
 ## 当前政策
 
