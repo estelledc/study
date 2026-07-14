@@ -1,0 +1,466 @@
+src/content/docs/papers-queue.md
+  s_d006658db808e4::t_b46e56fb665956 3,8,16 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5613de327f744c7a91d7a2","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":3},{"Single":8},{"Single":16}]}]}
+src/content/docs/papers-method.md
+  s_d006658db808e4::t_4fa2beb4380ed7 14 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5613f6327f744c7a91d7dc","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":14}]}]}
+src/content/docs/papers/mcp-bench-2025.md
+  s_d006658db808e4::t_6c6d0f11ca1ef9 1-105 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5610e1327f744c7a91d116","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,105]}]}]}
+src/content/docs/method.md
+  s_d006658db808e4::t_6d2ef733f10427 14 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5613eb327f744c7a91d7c0","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":14}]}]}
+SESSION-HANDOFF.md
+  s_d006658db808e4::t_383235e87ef1b1 5-21 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56107a327f744c7a91d015","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[5,21]}]}]}
+src/content/docs/papers/swe-skills-bench-2026.md
+  s_d006658db808e4::t_fdf80968ba5fc6 1-103 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5610ae327f744c7a91d0b1","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,103]}]}]}
+src/content/docs/papers/agent-planning-benchmark-2026.md
+  s_d006658db808e4::t_46053f08d20174 1-105 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a561094327f744c7a91d05d","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,105]}]}]}
+src/content/docs/papers/agentic-context-engineering-2025.md
+  s_d006658db808e4::t_5c5d202eb0a564 1-108 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5610c8327f744c7a91d0ee","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,108]}]}]}
+src/content/docs/career-plan.md
+  s_d006658db808e4::t_f0556e75002bdb 8 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a561408327f744c7a91d814","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":8}]}]}
+src/content/docs/about.md
+  s_d006658db808e4::t_04464370a77192 17 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a561401327f744c7a91d7f9","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":17}]}]}
+src/content/docs/papers/mcpworld-2025.md
+  s_d006658db808e4::t_7eb38a4fe27abb 1-101 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5610f7327f744c7a91d145","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,101]}]}]}
+src/content/docs/queue.md
+  s_d006658db808e4::t_3a54aaed431200 9,192 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5613d3327f744c7a91d786","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":9},{"Single":192}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "3b6674c4667399888bb7251dc6c992598d0d10a7",
+  "prompts": {},
+  "sessions": {
+    "s_d006658db808e4": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a560f36327f744c7a91cceb",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "SESSION-HANDOFF.md": [
+      {
+        "hash": "s_d006658db808e4::t_383235e87ef1b1",
+        "line_ranges": [
+          {
+            "Range": [
+              5,
+              21
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56107a327f744c7a91d015",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  5,
+                  21
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/about.md": [
+      {
+        "hash": "s_d006658db808e4::t_04464370a77192",
+        "line_ranges": [
+          {
+            "Single": 17
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a561401327f744c7a91d7f9",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 17
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/career-plan.md": [
+      {
+        "hash": "s_d006658db808e4::t_f0556e75002bdb",
+        "line_ranges": [
+          {
+            "Single": 8
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a561408327f744c7a91d814",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 8
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/method.md": [
+      {
+        "hash": "s_d006658db808e4::t_6d2ef733f10427",
+        "line_ranges": [
+          {
+            "Single": 14
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5613eb327f744c7a91d7c0",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 14
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers-method.md": [
+      {
+        "hash": "s_d006658db808e4::t_4fa2beb4380ed7",
+        "line_ranges": [
+          {
+            "Single": 14
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5613f6327f744c7a91d7dc",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 14
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers-queue.md": [
+      {
+        "hash": "s_d006658db808e4::t_b46e56fb665956",
+        "line_ranges": [
+          {
+            "Single": 3
+          },
+          {
+            "Single": 8
+          },
+          {
+            "Single": 16
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5613de327f744c7a91d7a2",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 3
+              },
+              {
+                "Single": 8
+              },
+              {
+                "Single": 16
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/agent-planning-benchmark-2026.md": [
+      {
+        "hash": "s_d006658db808e4::t_46053f08d20174",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              105
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a561094327f744c7a91d05d",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  105
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/agentic-context-engineering-2025.md": [
+      {
+        "hash": "s_d006658db808e4::t_5c5d202eb0a564",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              108
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5610c8327f744c7a91d0ee",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  108
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/mcp-bench-2025.md": [
+      {
+        "hash": "s_d006658db808e4::t_6c6d0f11ca1ef9",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              105
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5610e1327f744c7a91d116",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  105
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/mcpworld-2025.md": [
+      {
+        "hash": "s_d006658db808e4::t_7eb38a4fe27abb",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              101
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5610f7327f744c7a91d145",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  101
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/swe-skills-bench-2026.md": [
+      {
+        "hash": "s_d006658db808e4::t_fdf80968ba5fc6",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              103
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5610ae327f744c7a91d0b1",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  103
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/queue.md": [
+      {
+        "hash": "s_d006658db808e4::t_3a54aaed431200",
+        "line_ranges": [
+          {
+            "Single": 9
+          },
+          {
+            "Single": 192
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5613d3327f744c7a91d786",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 9
+              },
+              {
+                "Single": 192
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_d006658db808e4": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_04464370a77192": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_383235e87ef1b1": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_3a54aaed431200": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_46053f08d20174": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_4fa2beb4380ed7": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_5c5d202eb0a564": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_6c6d0f11ca1ef9": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_6d2ef733f10427": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_7eb38a4fe27abb": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_b46e56fb665956": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_f0556e75002bdb": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_d006658db808e4::t_fdf80968ba5fc6": {
+      "tool": "trae",
+      "conversation_id": "6a560f36327f744c7a91cceb",
+      "session_id": "6a560f36327f744c7a91cceb",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
