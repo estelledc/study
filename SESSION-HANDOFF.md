@@ -2,11 +2,13 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
-## 2026-07-14 总结不足后再推进 4 篇补强论文
+## 2026-07-14 总结不足后再推进 4 篇补强论文全流程完成记录
 
-- status：`local-ready`（已完成本地内容、receipt、atlas 和主要门禁；远端 PR / merge / Pages deploy 仍以实时外部状态为准）。
+- status：`complete`
 - 起始 ref：`6dd71d8868a0142b88f2afefbdce353dba147678`（PR #32 merge 后的 `origin/main`）。
-- 分支：`study/papers-20260714-one-more-round`。
+- 完成 ref：`28fd221feba93217c887d4856f6963ec00405a2a`（PR #33 merge commit）。
+- external delta：PR #33 `Add four focused agent evaluation paper notes` 已合并；GitHub Pages workflow `29337616982` 已成功完成，公开站点为 `https://estelledc.github.io/study/`。
+- 内容 delta：新增 4 篇 `study-v2` paper note（`mle-bench`、`terminal-bench`、`ruler-long-context`、`visualwebarena`）、4 份 `study-review-receipt-v1`，并刷新 atlas / note-index / 公开规模文案；当前公开计数为 projects=961、papers=1067、total=2028。
 - 本轮不足总结：上一轮 40 篇完成了规模和部署闭环，但多数卡片仍是 `STATIC_ANALYSIS` / `UNVERIFIED`；部分卡片 91 行、低于建议 100 行；L4 主要是 toy / manual simulation；主题上对 ML 工程 agent、终端 agent、长上下文有效窗口、视觉 Web GUI agent 的覆盖仍不够。
 - 本轮 objective：新增 4 篇更厚的 `study-v2` paper note，分别补强 `MLE-bench`、`Terminal-Bench`、`RULER`、`VisualWebArena`，保持 `UNVERIFIED` 边界，不声明运行真实 benchmark。
 - scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
@@ -21,10 +23,13 @@
   - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking；
   - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`：0 blocking；
   - `npm run build:strict -- --log /tmp/study-one-more-round-build-clean.log`：通过；首次失败由 stale `.astro` cache 触发 duplicate-id warning，删除 ignored cache 后恢复；
-  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：本地通过；PR #33 远端 CI `29337305373` 通过；
+  - `git diff --check`：通过；
+  - 线上冒烟：主页和 `mle-bench`、`terminal-bench`、`ruler-long-context`、`visualwebarena` 均返回 200，并可见对应标题与 `UNVERIFIED` 边界。
 - budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
-- external_outcome：当前为本地 review-ready branch；PR、merge 和 Pages deploy 需要以单独外部动作完成并复核。
+- external_outcome：4 篇新增论文笔记进入公开 study 站点；验证状态保持 `UNVERIFIED`。
 - stop_conditions：规范工具链不可用；arXiv 来源不可核验；content contract / redline / strict build 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- 最终状态：`main...origin/main` 对齐；下一次写入只能由新的显式 backlog、外部状态变化或用户重新授权触发。
 - superseded_by：`none`
 
 ## 2026-07-14 新增 40 篇论文全流程完成记录
