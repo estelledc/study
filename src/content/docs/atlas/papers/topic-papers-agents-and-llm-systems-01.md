@@ -56,6 +56,7 @@ sidebar:
 | [Minerva — 把语言模型拉进数学草稿纸](/study/papers/minerva-2022/) | `minerva-2022` | advanced | UNVERIFIED | 用 Minerva 理解为什么数学推理需要专门的数据、逐步解题和采样验证 |
 | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | `misevolution-2509` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mistral 7B — 小模型靠架构细节打出性价比](/study/papers/mistral-7b-2023/) | `mistral-7b-2023` | intermediate | UNVERIFIED | 用 Mistral 7B 理解 grouped-query attention 和 sliding-window attention 如何服务高效开源模型 |
+| [MLE-bench — 用 Kaggle 任务衡量机器学习工程 agent](/study/papers/mle-bench/) | `mle-bench` | intermediate | UNVERIFIED | 用 MLE-bench 理解 ML 工程 agent 为什么不能只靠单元测试和代码 benchmark 来评估 |
 | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) | `mmskills-multimodal` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MRKL — 给大模型配一组专家工具和路由器](/study/papers/mrkl-systems-2022/) | `mrkl-systems-2022` | intermediate | UNVERIFIED | 用 MRKL Systems 理解 neuro-symbolic agent 为什么要把 LLM、检索和计算模块拆开 |
 | [Super-NaturalInstructions — 1600+ 任务教模型读懂说明书](/study/papers/natural-instructions-v2-2022/) | `natural-instructions-v2-2022` | intermediate | UNVERIFIED | 用 Super-NaturalInstructions 理解 declarative instructions 如何评测任务泛化 |
@@ -82,6 +83,7 @@ sidebar:
 | [ReAct Agent — 推理和行动交替的工具使用范式](/study/papers/react-agent/) | `react-agent` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | `reflexion` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | `retro` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [RULER — 真实长上下文能力不能只看 NIAH](/study/papers/ruler-long-context/) | `ruler-long-context` | intermediate | UNVERIFIED | 用 RULER 理解长上下文模型的有效窗口、检索幻觉和聚合推理为什么要分开评测 |
 | [SayCan — 机器人不只问“想做什么”，还问“我能做什么”](/study/papers/saycan-2022/) | `saycan-2022` | intermediate | UNVERIFIED | 用 SayCan 理解语言模型和机器人 affordance 如何合成可执行动作 |
 | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | `self-consistency-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) | `self-evolving-agents-survey` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -101,6 +103,7 @@ sidebar:
 | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWE-Bench-CL — coding agent 不能只刷静态题](/study/papers/swe-bench-cl/) | `swe-bench-cl` | intermediate | UNVERIFIED | 用 SWE-Bench-CL 理解软件工程 agent 的持续学习、迁移和灾难性遗忘 |
 | [SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗](/study/papers/swe-skills-bench-2026/) | `swe-skills-bench-2026` | intermediate | UNVERIFIED | 用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本 |
+| [Terminal-Bench — 在真实命令行任务里测试 agent](/study/papers/terminal-bench/) | `terminal-bench` | intermediate | UNVERIFIED | 用 Terminal-Bench 理解终端环境为什么能暴露 agent 的长程执行、环境理解和验证能力 |
 | [ToolBench-X — 工具会坏时，agent 还能不能把事做完](/study/papers/toolbench-x/) | `toolbench-x` | intermediate | UNVERIFIED | 用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ToolLLM — 用 16000+ API 训练模型进入真实工具世界](/study/papers/toolllm-2023/) | `toolllm-2023` | intermediate | UNVERIFIED | 用 ToolLLM 理解大规模 API 数据集、工具检索和工具评测如何支撑 agent |
@@ -109,9 +112,6 @@ sidebar:
 | [TruthfulQA — 专门问模型容易学人类谬误的问题](/study/papers/truthfulqa-2021/) | `truthfulqa-2021` | intermediate | UNVERIFIED | 用 TruthfulQA 理解语言模型为什么会模仿常见假话而不是坚持事实 |
 | [UL2 — 一个模型同时练完补空、续写和长文本](/study/papers/ul2-2022/) | `ul2-2022` | advanced | UNVERIFIED | 用 UL2 理解 mixture-of-denoisers 如何统一不同语言模型训练范式 |
 | [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收](/study/papers/vericache/) | `vericache` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | `voyager` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [WebGPT — 让模型带着浏览器回答问题](/study/papers/webgpt-2021/) | `webgpt-2021` | intermediate | UNVERIFIED | 用 WebGPT 理解检索、引用和人类偏好如何组合成可追溯问答 |
-| [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | `webxskill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [WizardLM — 用 Evol-Instruct 自动变难训练题](/study/papers/wizardlm-2023/) | `wizardlm-2023` | intermediate | UNVERIFIED | 用 WizardLM 理解 instruction 数据不只要多，还要逐步变复杂 |
+| [VisualWebArena — 让网页 agent 真正看见界面](/study/papers/visualwebarena/) | `visualwebarena` | intermediate | UNVERIFIED | 用 VisualWebArena 理解多模态 web agent 为什么不能只读 DOM 文本，还要处理视觉线索 |
 
 [下一组](/study/atlas/papers/topic-papers-agents-and-llm-systems-02/)

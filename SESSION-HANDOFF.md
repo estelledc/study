@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-14 总结不足后再推进 4 篇补强论文
+
+- status：`local-ready`（已完成本地内容、receipt、atlas 和主要门禁；远端 PR / merge / Pages deploy 仍以实时外部状态为准）。
+- 起始 ref：`6dd71d8868a0142b88f2afefbdce353dba147678`（PR #32 merge 后的 `origin/main`）。
+- 分支：`study/papers-20260714-one-more-round`。
+- 本轮不足总结：上一轮 40 篇完成了规模和部署闭环，但多数卡片仍是 `STATIC_ANALYSIS` / `UNVERIFIED`；部分卡片 91 行、低于建议 100 行；L4 主要是 toy / manual simulation；主题上对 ML 工程 agent、终端 agent、长上下文有效窗口、视觉 Web GUI agent 的覆盖仍不够。
+- 本轮 objective：新增 4 篇更厚的 `study-v2` paper note，分别补强 `MLE-bench`、`Terminal-Bench`、`RULER`、`VisualWebArena`，保持 `UNVERIFIED` 边界，不声明运行真实 benchmark。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
+- activated_by：`explicit-user-request-2026-07-14-summarize-gaps-and-advance-one-more-round`
+- review_after：`2026-07-14`
+- acceptance_checks：
+  - `lr search arxiv` + arXiv API 元数据核验 4/4；
+  - `node scripts/quality-gate.mjs` 逐篇通过，行数分别为 135 / 137 / 147 / 138，无 advisory；
+  - `npm run audit:content-contract`：0 blocking，56 v2；
+  - `npm run atlas`：2028 notes，69 chunks；
+  - `npm run audit:counts`：projects=961、papers=1067、total=2028；
+  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking；
+  - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`：0 blocking；
+  - `npm run build:strict -- --log /tmp/study-one-more-round-build-clean.log`：通过；首次失败由 stale `.astro` cache 触发 duplicate-id warning，删除 ignored cache 后恢复；
+  - `git diff --check`：通过。
+- budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
+- external_outcome：当前为本地 review-ready branch；PR、merge 和 Pages deploy 需要以单独外部动作完成并复核。
+- stop_conditions：规范工具链不可用；arXiv 来源不可核验；content contract / redline / strict build 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- superseded_by：`none`
+
 ## 2026-07-14 新增 40 篇论文全流程完成记录
 
 - status：`complete`

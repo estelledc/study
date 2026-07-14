@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "ruler-long-context",
+    "digest_sha256": "fdea3ef9179c032b4040312f8720d8e43b0a09628bbf8aef951386d00a1cea81"
+  },
+  "source_revision": "arXiv:2404.06654v3",
+  "research_input_sha256": "585001909e88932e9aa31c90a0fb62d22fe20ca6e3e5588dcbcc0cc841768ac8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714-one-more-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Explains RULER through a toy long-context tracing example; benchmark tasks were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714-one-more-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Engineering claims are limited to static evaluation design reading; no model inference was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714-one-more-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Citation identity was checked through arXiv metadata; reported long-context results are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T14:30:00.000Z"
+}
