@@ -144,7 +144,7 @@ head:
 </dl>
   </div>
 
-  <p class="study-muted"><strong>当前规模：</strong>1023 篇论文 + 961 个项目 = 1984 篇笔记，按 19 个主题组织。数量已移出首屏，只作为覆盖面证据。</p>
+  <p class="study-muted"><strong>当前规模：</strong>1063 篇论文 + 961 个项目 = 2024 篇笔记，按 19 个主题组织。数量已移出首屏，只作为覆盖面证据。</p>
 </section>
 
 <section class="study-section">

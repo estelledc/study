@@ -21,6 +21,7 @@ sidebar:
 | [Attention Is All You Need](/study/papers/attention/) | `attention` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) | `batchnorm-2015` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | `bert` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [BigBird — 用稀疏 attention 拉长 Transformer 视野](/study/papers/bigbird-2020/) | `bigbird-2020` | advanced | UNVERIFIED | 用 BigBird 理解局部、全局和随机 attention 怎样组成长序列模式 |
 | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | `biggan-2018` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) | `blip2-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CCOPD — 让多轮对话别被自己的旧话带偏](/study/papers/ccopd-distillation/) | `ccopd-distillation` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -64,11 +65,13 @@ sidebar:
 | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | `label-smoothing-2016` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | `layernorm-2016` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linear Attention, Still: Why Mamba-style Models Plateau](/study/papers/linear-attention-still-2026/) | `linear-attention-still-2026` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Linformer — 把 attention 矩阵投影成线性复杂度](/study/papers/linformer-2020/) | `linformer-2020` | advanced | UNVERIFIED | 用 Linformer 理解低秩假设如何压缩 self-attention |
 | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | `lion-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | `llama` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLMSurgeon — 从模型回答反推训练数据配方](/study/papers/llmsurgeon-data-mixture/) | `llmsurgeon-data-mixture` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LoMo — 把同一句话换成图片也要看懂](/study/papers/lomo-modality/) | `lomo-modality` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | `longformer-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [LongNet — 用 dilated attention 把上下文推到十亿 token 想象空间](/study/papers/longnet-2023/) | `longnet-2023` | advanced | UNVERIFIED | 用 LongNet 理解扩张式 attention 如何在多尺度上连接超长序列 |
 | [Loong DocMT — 长文档翻译里的会挑上下文的代理](/study/papers/loong-doc-mt/) | `loong-doc-mt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LoRA — 给冻结大模型贴低秩便签](/study/papers/lora/) | `lora` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) | `lottery-ticket-2019` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -110,8 +113,5 @@ sidebar:
 | [SoundnessBench — 判断 AI 科学家会不会把坏点子当好点子](/study/papers/soundness-bench/) | `soundness-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) | `starcoder-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | `stylegan2-2020` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | `sycophancy-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | `t0-2021` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | `t5` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 
 [下一组](/study/atlas/papers/topic-papers-nlp-foundations-and-scaling-02/)

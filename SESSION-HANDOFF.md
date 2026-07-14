@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-14 新增 40 篇论文与部署 Epoch Contract
+
+- status：`running`
+- objective：在用户明确授权“分十批新研究 40 篇论文，全流程部署”下，新增 10 批 × 4 篇公开 arXiv 论文研究卡，覆盖 foundation/scaling、开放模型、instruction tuning、reasoning prompt、agent/tool use、PEFT、长上下文/推理、多模态生成与评测安全。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json` 与 papers atlas 派生页，同步公开规模文案和本 handoff；不修改候选队列、policy/threshold、既有论文正文语义或远端配置。
+- activated_by：`explicit-user-request-2026-07-14-new-40-papers-full-deploy`
+- review_after：`2026-07-14`
+- acceptance_checks：
+  - arXiv API 元数据校验：40/40 条目可解析；
+  - `node scripts/quality-gate.mjs --changed-from main --json`：checked=40, pass=true；
+  - 40 份 `study-review-receipt-v1` 的 canonical note digest 与正文一致；
+  - `npm run atlas`：2024 notes, 69 chunks；
+  - `npm run audit:counts`；
+  - `npm run audit:content-contract`；
+  - `npm run audit:links`；
+  - `npm run audit:wikilinks`；
+  - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`；
+  - `npm run build:strict -- --log /tmp/study-forty-build-clean.log`；
+  - `git diff --check`；
+  - 提交后使用 `STUDY_CHANGED_FROM=384787e09827c336baf5ac2b33e67e8c91b9df49 npm run verify:ci` 做 PR/Pages portable gate。
+- budget：10 个内容小批次、40 篇新增 paper、1 个可写切片、1 个本地 writer、1 次 branch/PR/merge/deploy 窗口。
+- external_outcome：40 篇新增论文笔记进入公开 study 站点；验证状态保持 `UNVERIFIED`，不声明实际运行论文 benchmark。
+- stop_conditions：规范 Node/npm 不可用；arXiv 来源不可核验；内容契约、红线审计、strict build 或 verify:ci 失败且无法在本 scope 内修复；需要修改 policy/threshold、候选队列或隐私敏感内容；远端 CI/Pages 失败且需要新权限；用户停止。
+- superseded_by：`none`
+
 ## 2026-07-14 新增 4 篇论文与部署 Epoch Contract
 
 - status：`running`
