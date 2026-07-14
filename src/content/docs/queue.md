@@ -6,7 +6,7 @@ sidebar:
 ---
 
 > 不是"读哪 20 个"的清单，是"先读哪 5 个就能撑起一个领域"的导航。
-> 当前站点 961 篇项目笔记 + 1019 篇论文笔记，凑数没有意义，**取舍**才有。
+> 当前站点 961 篇项目笔记 + 1023 篇论文笔记，凑数没有意义，**取舍**才有。
 > 每个主题给 3-5 个 pillar：反向链接最多、跨主题被引最广、读完能形成判断。
 
 ## 怎么用这页
@@ -189,7 +189,7 @@ PL 理论在论文侧根扎得最深：[[hindley-milner]] / [[lambda-calculus]] 
 ## 全景 atlas
 
 - 项目全景（961 篇按主题分组、反向链接热度、消化状态）：[projects-atlas](/study/projects-atlas/)
-- 论文全景（1019 篇按子领域、pillar 标记、未消化队列）：[papers-atlas](/study/papers-atlas/)
+- 论文全景（1023 篇按子领域、pillar 标记、未消化队列）：[papers-atlas](/study/papers-atlas/)
 - 论文推荐入口（与本页平行的论文版导航）：[papers-queue](/study/papers-queue/)
 - 方法论与挑选标准：[about](/study/about/) / [method](/study/method/) / [papers-method](/study/papers-method/)
 

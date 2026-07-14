@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "osworld",
+    "digest_sha256": "0520c74cc4628692071bad26e15a8206fd649b0a780d0de49787c81d8173cbdb"
+  },
+  "source_revision": "arXiv:2404.07972v2",
+  "research_input_sha256": "e155e4c3d6893198576ac46bc21a92f964f6fb49164692d0074161e0e057c385",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 88,
+      "warnings": [
+        "Computer-use explanation uses a toy file-copy task; OSWorld benchmark was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Claims are limited to arXiv metadata, abstract, and static environment design reading."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260714",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "No independent reproduction of the reported success rates was performed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-14T11:39:34.000Z"
+}
