@@ -19,6 +19,7 @@ sidebar:
 | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | `agentless` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | `anthropic-prompt-caching` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | `apex-policy-exploration` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [AppWorld — 多 App 世界里的交互式代码 agent](/study/papers/appworld/) | `appworld` | intermediate | UNVERIFIED | 用 AppWorld 理解为什么工具调用 benchmark 需要状态、用户、多个 App 和可执行代码，而不是单轮 API 序列 |
 | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | `autogen` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | `awq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWQ 2023 — 把 70B 大模型权重压到 35GB](/study/papers/awq-2023/) | `awq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -53,6 +54,7 @@ sidebar:
 | [MemGym — 给长程 agent memory 做一间健身房](/study/papers/memgym/) | `memgym` | intermediate | UNVERIFIED | 用 MemGym 区分聊天记忆、执行记忆和可迁移的 agent 经验 |
 | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | `metagpt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | `mind-skill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Mind2Web — 面向任意网站的泛化 web agent 数据集](/study/papers/mind2web/) | `mind2web` | intermediate | UNVERIFIED | 用 Mind2Web 理解 web agent 为什么要跨网站、跨领域、跨交互模式评估，而不是只在固定模拟站点里刷分 |
 | [Minerva — 把语言模型拉进数学草稿纸](/study/papers/minerva-2022/) | `minerva-2022` | advanced | UNVERIFIED | 用 Minerva 理解为什么数学推理需要专门的数据、逐步解题和采样验证 |
 | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | `misevolution-2509` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mistral 7B — 小模型靠架构细节打出性价比](/study/papers/mistral-7b-2023/) | `mistral-7b-2023` | intermediate | UNVERIFIED | 用 Mistral 7B 理解 grouped-query attention 和 sliding-window attention 如何服务高效开源模型 |
@@ -107,11 +109,9 @@ sidebar:
 | [ToolBench-X — 工具会坏时，agent 还能不能把事做完](/study/papers/toolbench-x/) | `toolbench-x` | intermediate | UNVERIFIED | 用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ToolLLM — 用 16000+ API 训练模型进入真实工具世界](/study/papers/toolllm-2023/) | `toolllm-2023` | intermediate | UNVERIFIED | 用 ToolLLM 理解大规模 API 数据集、工具检索和工具评测如何支撑 agent |
+| [ToolSandbox — 状态化对话工具调用评测](/study/papers/toolsandbox/) | `toolsandbox` | intermediate | UNVERIFIED | 用 ToolSandbox 理解为什么工具调用 agent 需要测状态依赖、信息不足和多轮用户反馈，而不是只测单轮函数参数 |
 | [ToxiGen — 用生成模型造隐性仇恨测试集](/study/papers/toxigen-2022/) | `toxigen-2022` | intermediate | UNVERIFIED | 用 ToxiGen 理解安全评测为什么要覆盖隐性、对抗性和群体相关文本 |
 | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | `tree-of-thoughts-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TruthfulQA — 专门问模型容易学人类谬误的问题](/study/papers/truthfulqa-2021/) | `truthfulqa-2021` | intermediate | UNVERIFIED | 用 TruthfulQA 理解语言模型为什么会模仿常见假话而不是坚持事实 |
-| [UL2 — 一个模型同时练完补空、续写和长文本](/study/papers/ul2-2022/) | `ul2-2022` | advanced | UNVERIFIED | 用 UL2 理解 mixture-of-denoisers 如何统一不同语言模型训练范式 |
-| [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收](/study/papers/vericache/) | `vericache` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [VisualWebArena — 让网页 agent 真正看见界面](/study/papers/visualwebarena/) | `visualwebarena` | intermediate | UNVERIFIED | 用 VisualWebArena 理解多模态 web agent 为什么不能只读 DOM 文本，还要处理视觉线索 |
 
 [下一组](/study/atlas/papers/topic-papers-agents-and-llm-systems-02/)

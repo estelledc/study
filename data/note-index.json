@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2028,
-      "classified": 1981,
+      "total": 2032,
+      "classified": 1985,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1067,
-        "classified": 1048,
+        "total": 1071,
+        "classified": 1052,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -1265,6 +1265,38 @@
       "atlas": {
         "chunk_id": "topic-papers-distributed-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-distributed-systems-01/"
+      }
+    },
+    {
+      "id": "papers::appworld",
+      "area": "papers",
+      "slug": "appworld",
+      "title": "AppWorld — 多 App 世界里的交互式代码 agent",
+      "description": "用 AppWorld 理解为什么工具调用 benchmark 需要状态、用户、多个 App 和可执行代码，而不是单轮 API 序列。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / App Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/appworld/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -20197,6 +20229,38 @@
       }
     },
     {
+      "id": "papers::mind2web",
+      "area": "papers",
+      "slug": "mind2web",
+      "title": "Mind2Web — 面向任意网站的泛化 web agent 数据集",
+      "description": "用 Mind2Web 理解 web agent 为什么要跨网站、跨领域、跨交互模式评估，而不是只在固定模拟站点里刷分。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Web Dataset"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/mind2web/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::mine-octagon-2006",
       "area": "papers",
       "slug": "mine-octagon-2006",
@@ -31301,6 +31365,38 @@
       }
     },
     {
+      "id": "papers::toolsandbox",
+      "area": "papers",
+      "slug": "toolsandbox",
+      "title": "ToolSandbox — 状态化对话工具调用评测",
+      "description": "用 ToolSandbox 理解为什么工具调用 agent 需要测状态依赖、信息不足和多轮用户反馈，而不是只测单轮函数参数。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Tool Use Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/toolsandbox/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::tor-2004",
       "area": "papers",
       "slug": "tor-2004",
@@ -32061,8 +32157,8 @@
       },
       "route": "/study/papers/ul2-2022/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -32477,8 +32573,8 @@
       },
       "route": "/study/papers/vericache/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -32637,8 +32733,8 @@
       },
       "route": "/study/papers/visualwebarena/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -33210,6 +33306,38 @@
       "atlas": {
         "chunk_id": "topic-papers-databases-01",
         "chunk_route": "/study/atlas/papers/topic-papers-databases-01/"
+      }
+    },
+    {
+      "id": "papers::webarena",
+      "area": "papers",
+      "slug": "webarena",
+      "title": "WebArena — 可复现的真实网页 agent 环境",
+      "description": "用 WebArena 理解为什么 web agent 需要功能性网站、真实状态和可验证任务，而不只是静态网页问答。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Web Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/webarena/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -64459,7 +64587,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/",
-      "entries": 5
+      "entries": 9
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",

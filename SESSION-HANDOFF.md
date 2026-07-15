@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-15 继续推进 4 篇 web / app / tool-use 环境论文
+
+- status：`local-ready`（已完成本地内容、receipt、atlas 和核心审计；远端 PR / merge / Pages deploy 仍以实时外部状态为准）。
+- 起始 ref：`aac96ba8b574509edf089c20732a17b19e98b487`（PR #34 merge 后的 `origin/main`）。
+- objective：在用户明确要求“继续推进”下，新增 4 篇 `study-v2` paper note，补强 web / app / tool-use agent 环境评测主线：`WebArena`、`Mind2Web`、`AppWorld`、`ToolSandbox`。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
+- activated_by：`explicit-user-request-2026-07-15-continue-study-round`
+- review_after：`2026-07-15`
+- acceptance_checks：
+  - `lr search arxiv` + arXiv API 元数据核验 4/4；
+  - `node scripts/quality-gate.mjs` 逐篇通过，行数分别为 139 / 142 / 141 / 141，无 advisory；
+  - `npm run audit:content-contract`：0 blocking，60 v2；
+  - `npm run atlas`：2032 notes，69 chunks；
+  - `npm run audit:counts`：projects=961、papers=1071、total=2032；
+  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking。
+- budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
+- external_outcome：当前为本地 review-ready change set；PR、merge 和 Pages deploy 需要以单独外部动作完成并复核。
+- stop_conditions：规范工具链不可用；arXiv 来源不可核验；content contract / redline / strict build / verify:ci 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- superseded_by：`none`
+
 ## 2026-07-14 总结不足后再推进 4 篇补强论文全流程完成记录
 
 - status：`complete`

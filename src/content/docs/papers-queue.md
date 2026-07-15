@@ -5,7 +5,7 @@ sidebar:
   order: 4
 ---
 
-> 站内累计 1067 篇论文笔记，跨 14 个主题。这页不是"待读清单"，是
+> 站内累计 1071 篇论文笔记，跨 14 个主题。这页不是"待读清单"，是
 > **入门指引** —— 每个 topic 给 3-5 篇 pillar 论文 + 一行说明它
 > 为什么是该 topic 的支点。看完一条主线的 pillar，你就拿到了
 > 该 topic 整张反向链接图的入口。
@@ -13,7 +13,7 @@ sidebar:
 ## 怎么用这页
 
 - 不知道某个 topic 从哪读 → 来这里挑该主题 3-5 篇 pillar
-- 想看完整 1067 篇分布与主题地图 → [papers-atlas](/study/papers-atlas/)
+- 想看完整 1071 篇分布与主题地图 → [papers-atlas](/study/papers-atlas/)
 - 想要"如何精读一篇论文"的方法 → [papers-method](/study/papers-method/)
 - 想看跨论文 + 项目的混合阅读节奏 → [queue](/study/queue/)
 
