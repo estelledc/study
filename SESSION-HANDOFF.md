@@ -2,10 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
-## 2026-07-15 继续推进 4 篇 web / app / tool-use 环境论文
+## 2026-07-15 总结不足后推进 4 篇通用助手 / 浏览器 / 移动端论文
 
 - status：`local-ready`（已完成本地内容、receipt、atlas 和核心审计；远端 PR / merge / Pages deploy 仍以实时外部状态为准）。
+- 起始 ref：`38a0f7a8f31acca8ad728189d4e8530a72cba60c`（PR #35 merge 后的 `origin/main`）。
+- 本轮不足总结：上一轮 web / app / tool-use 环境卡完成了环境层补齐，但仍偏单类环境组件；缺少通用助手综合任务、真实耗时 open-web 任务、统一浏览器评测生态、移动 GUI 动态环境四条主线；所有新卡仍是 `STATIC_ANALYSIS` / `UNVERIFIED`，没有真实 benchmark 运行证据。
+- objective：新增 4 篇 `study-v2` paper note，补强 general assistant / browser ecosystem / mobile GUI agent 评测：`GAIA`、`AssistantBench`、`BrowserGym`、`AndroidWorld`。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
+- activated_by：`explicit-user-request-2026-07-15-summarize-gaps-and-advance-one-more-round`
+- review_after：`2026-07-15`
+- acceptance_checks：
+  - `lr search arxiv` + arXiv API 元数据核验 4/4；
+  - `node scripts/quality-gate.mjs` 逐篇通过，行数分别为 136 / 136 / 143 / 140，无 advisory；
+  - `npm run audit:content-contract`：0 blocking，64 v2；
+  - `npm run atlas`：2036 notes，69 chunks；
+  - `npm run audit:counts`：projects=961、papers=1075、total=2036；
+  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking。
+- budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
+- external_outcome：当前为本地 review-ready change set；PR、merge 和 Pages deploy 需要以单独外部动作完成并复核。
+- stop_conditions：规范工具链不可用；arXiv 来源不可核验；content contract / redline / strict build / verify:ci 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- superseded_by：`none`
+
+## 2026-07-15 继续推进 4 篇 web / app / tool-use 环境论文全流程完成记录
+
+- status：`complete`
 - 起始 ref：`aac96ba8b574509edf089c20732a17b19e98b487`（PR #34 merge 后的 `origin/main`）。
+- 完成 ref：`38a0f7a8f31acca8ad728189d4e8530a72cba60c`（PR #35 merge commit）。
+- external delta：PR #35 `Add four web and tool-use agent papers` 已合并；GitHub Pages workflow `29382534990` 已成功完成，公开站点为 `https://estelledc.github.io/study/`。
+- 内容 delta：新增 4 篇 `study-v2` paper note（`webarena`、`mind2web`、`appworld`、`toolsandbox`）、4 份 `study-review-receipt-v1`，并刷新 atlas / note-index / 公开规模文案；当前公开计数为 projects=961、papers=1071、total=2032。
 - objective：在用户明确要求“继续推进”下，新增 4 篇 `study-v2` paper note，补强 web / app / tool-use agent 环境评测主线：`WebArena`、`Mind2Web`、`AppWorld`、`ToolSandbox`。
 - scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
 - activated_by：`explicit-user-request-2026-07-15-continue-study-round`
@@ -16,10 +40,15 @@
   - `npm run audit:content-contract`：0 blocking，60 v2；
   - `npm run atlas`：2032 notes，69 chunks；
   - `npm run audit:counts`：projects=961、papers=1071、total=2032；
-  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking。
+  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking；
+  - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`：0 blocking；
+  - `npm run build:strict -- --log /tmp/study-20260715-web-tool-round-build-clean.log`：通过；首次失败由 stale `.astro` cache 触发 duplicate-id warning，删除 ignored cache 后恢复；
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：本地通过；PR #35 远端 CI `29382391831` 通过；
+  - 线上冒烟：主页和 `webarena`、`mind2web`、`appworld`、`toolsandbox` 均返回 200。
 - budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
-- external_outcome：当前为本地 review-ready change set；PR、merge 和 Pages deploy 需要以单独外部动作完成并复核。
+- external_outcome：4 篇新增论文笔记进入公开 study 站点；验证状态保持 `UNVERIFIED`。
 - stop_conditions：规范工具链不可用；arXiv 来源不可核验；content contract / redline / strict build / verify:ci 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- 最终状态：`main...origin/main` 对齐；下一次写入只能由新的显式 backlog、外部状态变化或用户重新授权触发。
 - superseded_by：`none`
 
 ## 2026-07-14 总结不足后再推进 4 篇补强论文全流程完成记录
