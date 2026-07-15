@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2032,
-      "classified": 1985,
+      "total": 2036,
+      "classified": 1989,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1071,
-        "classified": 1052,
+        "total": 1075,
+        "classified": 1056,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -1045,6 +1045,38 @@
       }
     },
     {
+      "id": "papers::androidworld",
+      "area": "papers",
+      "slug": "androidworld",
+      "title": "AndroidWorld — 动态 Android 环境里的移动端 agent 评测",
+      "description": "用 AndroidWorld 理解移动 GUI agent 为什么需要真实 App、动态任务、初始化和成功检查，而不只是截图问答。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Mobile GUI Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/androidworld/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::andromeda-2018",
       "area": "papers",
       "slug": "andromeda-2018",
@@ -1425,6 +1457,38 @@
       "atlas": {
         "chunk_id": "topic-papers-databases-01",
         "chunk_route": "/study/atlas/papers/topic-papers-databases-01/"
+      }
+    },
+    {
+      "id": "papers::assistantbench",
+      "area": "papers",
+      "slug": "assistantbench",
+      "title": "AssistantBench — 真实耗时 Web 任务里的助手评测",
+      "description": "用 AssistantBench 理解为什么 web agent 不能只测短路径点击，还要测耗时、开放、可自动验收的现实任务。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Assistant Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/assistantbench/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -3710,6 +3774,38 @@
       "atlas": {
         "chunk_id": "topic-papers-hci-and-software-engineering-research-01",
         "chunk_route": "/study/atlas/papers/topic-papers-hci-and-software-engineering-research-01/"
+      }
+    },
+    {
+      "id": "papers::browsergym",
+      "area": "papers",
+      "slug": "browsergym",
+      "title": "BrowserGym — Web Agent 研究的统一浏览器环境",
+      "description": "用 BrowserGym 理解为什么 web agent 需要统一 observation / action / evaluation 接口，而不是每个 benchmark 各跑一套。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Browser Environment"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/browsergym/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -12117,6 +12213,38 @@
       "atlas": {
         "chunk_id": "topic-papers-compilers-and-programming-language-theory-01",
         "chunk_route": "/study/atlas/papers/topic-papers-compilers-and-programming-language-theory-01/"
+      }
+    },
+    {
+      "id": "papers::gaia",
+      "area": "papers",
+      "slug": "gaia",
+      "title": "GAIA — 通用 AI 助手的现实任务基准",
+      "description": "用 GAIA 理解为什么真正的助手能力不等于专业考试高分，而是能组合推理、多模态、浏览和工具。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / General Assistant Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/gaia/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -31392,8 +31520,8 @@
       },
       "route": "/study/papers/toolsandbox/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -31456,8 +31584,8 @@
       },
       "route": "/study/papers/toxigen-2022/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -31711,8 +31839,8 @@
       },
       "route": "/study/papers/tree-of-thoughts-2023/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -31902,8 +32030,8 @@
       },
       "route": "/study/papers/truthfulqa-2021/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -64587,7 +64715,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/",
-      "entries": 9
+      "entries": 13
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",

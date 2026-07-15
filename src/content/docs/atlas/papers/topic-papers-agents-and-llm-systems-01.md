@@ -17,14 +17,17 @@ sidebar:
 | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | `agent-r1-2511` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Agentic Context Engineering — 把上下文当成会进化的 playbook](/study/papers/agentic-context-engineering-2025/) | `agentic-context-engineering-2025` | intermediate | UNVERIFIED | ACE 将上下文视为可演化 playbook，用生成、反思和整理缓解 context collapse |
 | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | `agentless` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [AndroidWorld — 动态 Android 环境里的移动端 agent 评测](/study/papers/androidworld/) | `androidworld` | intermediate | UNVERIFIED | 用 AndroidWorld 理解移动 GUI agent 为什么需要真实 App、动态任务、初始化和成功检查，而不只是截图问答 |
 | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | `anthropic-prompt-caching` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | `apex-policy-exploration` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AppWorld — 多 App 世界里的交互式代码 agent](/study/papers/appworld/) | `appworld` | intermediate | UNVERIFIED | 用 AppWorld 理解为什么工具调用 benchmark 需要状态、用户、多个 App 和可执行代码，而不是单轮 API 序列 |
+| [AssistantBench — 真实耗时 Web 任务里的助手评测](/study/papers/assistantbench/) | `assistantbench` | intermediate | UNVERIFIED | 用 AssistantBench 理解为什么 web agent 不能只测短路径点击，还要测耗时、开放、可自动验收的现实任务 |
 | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | `autogen` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | `awq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWQ 2023 — 把 70B 大模型权重压到 35GB](/study/papers/awq-2023/) | `awq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BIG-Bench Hard — 从大题库里挑出模型最头疼的 23 类题](/study/papers/big-bench-hard-2022/) | `big-bench-hard-2022` | intermediate | UNVERIFIED | 用 BBH 理解为什么 benchmark 需要难题子集和 CoT 对照 |
 | [BLOOM — 把 176B 多语种模型做成开放科学工程](/study/papers/bloom-2022/) | `bloom-2022` | intermediate | UNVERIFIED | 用 BLOOM 理解大模型也可以用社区协作、数据治理和开放发布来推进 |
+| [BrowserGym — Web Agent 研究的统一浏览器环境](/study/papers/browsergym/) | `browsergym` | intermediate | UNVERIFIED | 用 BrowserGym 理解为什么 web agent 需要统一 observation / action / evaluation 接口，而不是每个 benchmark 各跑一套 |
 | [Chain-of-Thought — 让大模型先写步骤再回答](/study/papers/chain-of-thought/) | `chain-of-thought` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) | `clawtrace-cost-aware` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) | `code-as-agent-harness` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -34,6 +37,7 @@ sidebar:
 | [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) | `eve-agent-evidence` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) | `evo-memory-2511` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) | `exg-experience-graphs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [GAIA — 通用 AI 助手的现实任务基准](/study/papers/gaia/) | `gaia` | intermediate | UNVERIFIED | 用 GAIA 理解为什么真正的助手能力不等于专业考试高分，而是能组合推理、多模态、浏览和工具 |
 | [Gorilla — 让 LLM 学会查 API 文档再调用](/study/papers/gorilla-2023/) | `gorilla-2023` | intermediate | UNVERIFIED | 用 Gorilla 理解 API grounding 如何降低工具调用幻觉 |
 | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | `gptq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | `graphrag` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -109,9 +113,5 @@ sidebar:
 | [ToolBench-X — 工具会坏时，agent 还能不能把事做完](/study/papers/toolbench-x/) | `toolbench-x` | intermediate | UNVERIFIED | 用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ToolLLM — 用 16000+ API 训练模型进入真实工具世界](/study/papers/toolllm-2023/) | `toolllm-2023` | intermediate | UNVERIFIED | 用 ToolLLM 理解大规模 API 数据集、工具检索和工具评测如何支撑 agent |
-| [ToolSandbox — 状态化对话工具调用评测](/study/papers/toolsandbox/) | `toolsandbox` | intermediate | UNVERIFIED | 用 ToolSandbox 理解为什么工具调用 agent 需要测状态依赖、信息不足和多轮用户反馈，而不是只测单轮函数参数 |
-| [ToxiGen — 用生成模型造隐性仇恨测试集](/study/papers/toxigen-2022/) | `toxigen-2022` | intermediate | UNVERIFIED | 用 ToxiGen 理解安全评测为什么要覆盖隐性、对抗性和群体相关文本 |
-| [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | `tree-of-thoughts-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [TruthfulQA — 专门问模型容易学人类谬误的问题](/study/papers/truthfulqa-2021/) | `truthfulqa-2021` | intermediate | UNVERIFIED | 用 TruthfulQA 理解语言模型为什么会模仿常见假话而不是坚持事实 |
 
 [下一组](/study/atlas/papers/topic-papers-agents-and-llm-systems-02/)
