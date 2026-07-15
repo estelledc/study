@@ -2,6 +2,36 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-15 总结不足后推进 4 篇 agent 安全 / 鲁棒性论文全流程完成记录
+
+- status：`complete`
+- 起始 ref：`7f5523dcb4eb4d7314cf63c1c0fdef3d4301462e`（PR #37 merge 后的 `origin/main`）。
+- 完成 ref：`64135ae485387e68c60fa84b1665be9a5ddd31fb`（PR #38 merge commit）。
+- external delta：PR #38 `Add four agent security and robustness papers` 已合并；GitHub Pages workflow `29385090535` 已成功完成，公开站点为 `https://estelledc.github.io/study/`。
+- 内容 delta：新增 4 篇 `study-v2` paper note（`agentdojo`、`injecagent`、`browser-agent-privacy`、`active-environmental-injection`）、4 份 `study-review-receipt-v1`，并刷新 atlas / note-index / 公开规模文案；当前公开计数为 projects=961、papers=1079、total=2040。
+- 本轮不足总结：上一轮补齐了通用助手、浏览器与移动端评测环境，但仍偏“能力覆盖”；agent 安全与鲁棒性证据不足，尤其缺少间接 prompt injection、工具输出信任边界、浏览器 agent 隐私实践、多模态 / GUI 环境伪装攻击四条主线。
+- objective：新增 4 篇 `study-v2` paper note，补强 agent safety / prompt injection / browser privacy / multimodal robustness：`AgentDojo`、`InjecAgent`、`Privacy Practices of Browser Agents`、`Active Environmental Injection`。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
+- activated_by：`explicit-user-request-2026-07-15-summarize-gaps-and-advance-one-more-round`
+- review_after：`2026-07-15`
+- acceptance_checks：
+  - `lr search arxiv` 元数据核验 4/4；直接 arXiv API 曾 timeout / HTTP 429，因此本轮未声明 arXiv API 4/4；
+  - `node scripts/quality-gate.mjs` 逐篇通过，行数分别为 139 / 144 / 138 / 142，无 advisory；
+  - `npm run audit:content-contract`：0 blocking，68 v2；
+  - `npm run atlas`：2040 notes，69 chunks；
+  - `npm run audit:counts`：projects=961、papers=1079、total=2040；
+  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking；
+  - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`：0 blocking，1 legacy-baseline；
+  - `npm run build:strict -- --log /tmp/study-20260715-agent-security-round-build-clean.log`：通过；首次失败由 stale `.astro` cache 触发 duplicate-id warning，删除 ignored cache 后恢复；
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：本地通过；PR #38 远端 CI `29384917498` 通过；
+  - GitHub Pages workflow `29385090535`：build 3m44s，deploy 14s，成功完成；
+  - 线上冒烟：主页和 `agentdojo`、`injecagent`、`browser-agent-privacy`、`active-environmental-injection` 均返回 200，并可见对应标题与 `UNVERIFIED` 边界。
+- budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
+- external_outcome：4 篇新增论文笔记进入公开 study 站点；验证状态保持 `UNVERIFIED`。
+- stop_conditions：规范工具链不可用；arXiv / LightRead 来源不可核验；content contract / redline / strict build / verify:ci 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- 最终状态：`main...origin/main` 对齐；下一次写入只能由新的显式 backlog、外部状态变化或用户重新授权触发。
+- superseded_by：`none`
+
 ## 2026-07-15 总结不足后推进 4 篇通用助手 / 浏览器 / 移动端论文全流程完成记录
 
 - status：`complete`
