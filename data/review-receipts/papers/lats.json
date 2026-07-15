@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "lats",
+    "digest_sha256": "1c5a78fabce79e977f8b3c90edddde5c7ac08d3afbfeae001f0665f6e8d56f7b"
+  },
+  "source_revision": "arXiv:2310.04406v3",
+  "research_input_sha256": "5b7745998858f86ece42f1d50d3013e422c4f0bbe37a63b6d9e4329a3ed2e4f6",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Explains tree-search control flow with a toy WebShop-style scenario; LATS code and benchmark tasks were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Planning and search implications are static; no MCTS rollout, environment replay, or token-cost benchmark was reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Citation identity was checked through arXiv API metadata; reported HumanEval, WebShop, QA, and math results are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-15T03:27:00.000Z"
+}

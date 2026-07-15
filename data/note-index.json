@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2040,
-      "classified": 1993,
+      "total": 2044,
+      "classified": 1997,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1079,
-        "classified": 1060,
+        "total": 1083,
+        "classified": 1064,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -12631,6 +12631,38 @@
       }
     },
     {
+      "id": "papers::generative-agents",
+      "area": "papers",
+      "slug": "generative-agents",
+      "title": "Generative Agents — 用记忆、反思和计划模拟可信的人类行为",
+      "description": "用 Generative Agents 理解 LLM agent 为什么需要 memory stream、reflection 和 planning，而不只是单轮 prompt。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Memory"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/generative-agents/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::gentry-fhe-2009",
       "area": "papers",
       "slug": "gentry-fhe-2009",
@@ -17330,6 +17362,38 @@
       }
     },
     {
+      "id": "papers::lats",
+      "area": "papers",
+      "slug": "lats",
+      "title": "LATS — 把推理、行动和规划统一进语言 Agent 树搜索",
+      "description": "用 LATS 理解为什么 agent 不一定要线性执行 ReAct 轨迹，也可以在环境反馈下做搜索、反思和回溯。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Planning"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/lats/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::layernorm-2016",
       "area": "papers",
       "slug": "layernorm-2016",
@@ -19974,6 +20038,38 @@
       }
     },
     {
+      "id": "papers::memgpt",
+      "area": "papers",
+      "slug": "memgpt",
+      "title": "MemGPT — 把 LLM 记忆管理做成一套虚拟上下文操作系统",
+      "description": "用 MemGPT 理解为什么长程 agent 不能只靠扩大 context window，而要显式管理快速记忆、长期记忆和控制流。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Memory System"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/memgpt/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
       "id": "papers::memgym",
       "area": "papers",
       "slug": "memgym",
@@ -20000,6 +20096,38 @@
         "review_after": null
       },
       "route": "/study/papers/memgym/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+      }
+    },
+    {
+      "id": "papers::memorybank",
+      "area": "papers",
+      "slug": "memorybank",
+      "title": "MemoryBank — 给 LLM 长期陪伴场景加用户记忆",
+      "description": "用 MemoryBank 理解长期记忆为什么不只是检索历史对话，还要更新用户画像、选择性遗忘和强化重要记忆。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Long-Term Memory"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/memorybank/",
       "atlas": {
         "chunk_id": "topic-papers-agents-and-llm-systems-01",
         "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
@@ -30216,8 +30344,8 @@
       },
       "route": "/study/papers/swe-agent/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -30247,8 +30375,8 @@
       },
       "route": "/study/papers/swe-bench/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -30279,8 +30407,8 @@
       },
       "route": "/study/papers/swe-bench-cl/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -30311,8 +30439,8 @@
       },
       "route": "/study/papers/swe-skills-bench-2026/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -64843,7 +64971,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/",
-      "entries": 17
+      "entries": 21
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",
