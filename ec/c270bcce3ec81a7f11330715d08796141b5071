@@ -1,0 +1,304 @@
+data/review-receipts/papers/lats.json
+  s_56a7f6c894a89d::t_7c66b9a58fb130 1-55 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fbd5327f744c7a92425a","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,55]}]}]}
+src/content/docs/papers/lats.md
+  s_56a7f6c894a89d::t_747ff2aaadb37f 1-143 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fb5a327f744c7a9240e5","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,143]}]}]}
+src/content/docs/papers/memgpt.md
+  s_56a7f6c894a89d::t_9af68fed7a6506 1-149 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fb19327f744c7a924067","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,149]}]}]}
+src/content/docs/papers/generative-agents.md
+  s_56a7f6c894a89d::t_1e327db6b5b470 1-145 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fafa327f744c7a92403b","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,145]}]}]}
+data/review-receipts/papers/generative-agents.json
+  s_56a7f6c894a89d::t_a2bb633cf7cdb9 1-55 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fba8327f744c7a9241eb","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,55]}]}]}
+src/content/docs/papers/memorybank.md
+  s_56a7f6c894a89d::t_68bf679b076eaa 1-145 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fb37327f744c7a924093","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,145]}]}]}
+data/note-index.json
+  s_66370c04ebe2ea::t_3947b4b29820fa 6-7,14-15,12633-12664,17364-17395,20040-20071,20104-20135,30347-30348,30378-30379,30410-30411,30442-30443,64974
+data/review-receipts/papers/memgpt.json
+  s_66370c04ebe2ea::t_15dae2a0a31bdc 1-55
+data/review-receipts/papers/memorybank.json
+  s_66370c04ebe2ea::t_8c799571e1c742 1-55
+src/content/docs/about.md
+  s_66370c04ebe2ea::t_76e338d9756eb1 17
+src/content/docs/atlas/papers/topic-papers-agents-and-llm-systems-01.md
+  s_66370c04ebe2ea::t_28ead20d20be37 44,56,64,66
+src/content/docs/atlas/papers/topic-papers-agents-and-llm-systems-02.md
+  s_66370c04ebe2ea::t_e02e1aba8c5e63 3,12,16-19
+src/content/docs/career-plan.md
+  s_66370c04ebe2ea::t_a11c6f852ae313 8
+src/content/docs/index.md
+  s_66370c04ebe2ea::t_d02fc308984d01 147
+src/content/docs/method.md
+  s_66370c04ebe2ea::t_f334b758090d3e 14
+src/content/docs/papers-atlas.md
+  s_66370c04ebe2ea::t_a7b39e65a78bff 3,15-16,18,44,82
+src/content/docs/papers-method.md
+  s_66370c04ebe2ea::t_86eb3e50892681 14
+src/content/docs/papers-queue.md
+  s_66370c04ebe2ea::t_2b56c7cb81c70e 3,8,16
+src/content/docs/queue.md
+  s_66370c04ebe2ea::t_610f8f6675c3d6 9,192
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "ecc270bcce3ec81a7f11330715d08796141b5071",
+  "prompts": {},
+  "sessions": {
+    "s_56a7f6c894a89d": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a56355c327f744c7a920394",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    },
+    "s_66370c04ebe2ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_66370c04ebe2ea",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "data/review-receipts/papers/generative-agents.json": [
+      {
+        "hash": "s_56a7f6c894a89d::t_a2bb633cf7cdb9",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              55
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fba8327f744c7a9241eb",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  55
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "data/review-receipts/papers/lats.json": [
+      {
+        "hash": "s_56a7f6c894a89d::t_7c66b9a58fb130",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              55
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fbd5327f744c7a92425a",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  55
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/generative-agents.md": [
+      {
+        "hash": "s_56a7f6c894a89d::t_1e327db6b5b470",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              145
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fafa327f744c7a92403b",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  145
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/lats.md": [
+      {
+        "hash": "s_56a7f6c894a89d::t_747ff2aaadb37f",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              143
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fb5a327f744c7a9240e5",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  143
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/memgpt.md": [
+      {
+        "hash": "s_56a7f6c894a89d::t_9af68fed7a6506",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              149
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fb19327f744c7a924067",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  149
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/papers/memorybank.md": [
+      {
+        "hash": "s_56a7f6c894a89d::t_68bf679b076eaa",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              145
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fb37327f744c7a924093",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  145
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_56a7f6c894a89d": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_1e327db6b5b470": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_427cedbee35b93": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_68bf679b076eaa": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_747ff2aaadb37f": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_7c66b9a58fb130": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_9af68fed7a6506": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_a2bb633cf7cdb9": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_56a7f6c894a89d::t_fadf32f2571077": {
+      "tool": "trae",
+      "conversation_id": "6a56355c327f744c7a920394",
+      "session_id": "6a56355c327f744c7a920394",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
