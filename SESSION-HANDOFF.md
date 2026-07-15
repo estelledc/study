@@ -2,6 +2,37 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-15 继续推进 4 篇 agent 记忆 / 规划论文全流程完成记录
+
+- status：`complete`
+- 起始 ref：`3310b4029be581cc817a9cbada0bbc6a1cbe00a8`（PR #39 merge 后的 `origin/main`）。
+- 完成 ref：`5a9918eb9407eff8ccb6bf8e54f36634e2f67128`（PR #40 merge commit）。
+- external delta：PR #40 `Add four agent memory and planning papers` 已合并；GitHub Pages workflow `29386679627` 已成功完成，公开站点为 `https://estelledc.github.io/study/`。
+- 内容 delta：新增 4 篇 `study-v2` paper note（`generative-agents`、`memgpt`、`memorybank`、`lats`）、4 份 `study-review-receipt-v1`，并刷新 atlas / note-index / 公开规模文案；当前公开计数为 projects=961、papers=1083、total=2044。
+- 本轮不足总结：上一轮 agent 安全 / 鲁棒性补了 prompt injection、隐私与环境伪装攻击，但仍偏“防御外部风险”；agent 内循环能力还缺长期记忆、用户画像、反思抽象和搜索式规划四条基础主线。
+- objective：新增 4 篇 `study-v2` paper note，补强 agent memory / reflection / planning：`Generative Agents`、`MemGPT`、`MemoryBank`、`LATS`。
+- scope：允许新增 `src/content/docs/papers/*.md`、`data/review-receipts/papers/*.json`，刷新 `data/note-index.json`、papers atlas 派生页和公开计数文案；不修改候选队列、policy/threshold、既有论文正文语义。
+- activated_by：`explicit-user-request-2026-07-15-continue-study`
+- review_after：`2026-07-15`
+- dispatch note：`npm run round:dispatch -- --rewrite 0 --new 4 --dry-run` 被 `papers-new short: got 0, need 2` / `batch-size mismatch: got 2, expected 4` 阻止；本轮未 apply 队列，不 claim project assignment，改走显式授权的手工 4-paper Publication 路径。
+- acceptance_checks：
+  - `lr search arxiv` + arXiv API 元数据核验 4/4；
+  - `node scripts/quality-gate.mjs` 逐篇通过，行数分别为 146 / 150 / 146 / 144，无 advisory；
+  - `npm run audit:content-contract`：0 blocking，72 v2；
+  - `npm run atlas`：2044 notes，69 chunks；
+  - `npm run audit:counts`：projects=961、papers=1083、total=2044；
+  - `npm run audit:links` / `npm run audit:wikilinks`：无 blocking；
+  - `git ls-files -co --exclude-standard -z | node scripts/audit-public-redlines.mjs --stdin0`：0 blocking，1 legacy-baseline；
+  - `npm run build:strict -- --log /tmp/study-20260715-agent-memory-round-build-clean.log`：通过；首次失败由 stale `.astro` cache 触发 duplicate-id warning，删除 ignored cache 后恢复；
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：本地通过；PR #40 远端 CI `29386521157` 通过；
+  - GitHub Pages workflow `29386679627`：build 3m49s，deploy 13s，成功完成；
+  - 线上冒烟：主页和 `generative-agents`、`memgpt`、`memorybank`、`lats` 均返回 200，并可见对应标题与 `UNVERIFIED` 边界。
+- budget：1 个内容小批次、4 篇新增 paper、1 个可写切片、1 个本地 writer。
+- external_outcome：4 篇新增论文笔记进入公开 study 站点；验证状态保持 `UNVERIFIED`。
+- stop_conditions：规范工具链不可用；arXiv / LightRead 来源不可核验；content contract / redline / strict build / verify:ci 失败且无法在 scope 内修复；需要改 policy/threshold、候选队列或敏感内容；用户停止。
+- 最终状态：`main...origin/main` 对齐；下一次写入只能由新的显式 backlog、外部状态变化或用户重新授权触发。
+- superseded_by：`none`
+
 ## 2026-07-15 总结不足后推进 4 篇 agent 安全 / 鲁棒性论文全流程完成记录
 
 - status：`complete`
