@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "memorybank",
+    "digest_sha256": "66f5d3d26370b7ee1e228a37e8b50b064370a7f59595b6cd05c645cad5019dae"
+  },
+  "source_revision": "arXiv:2305.10250v3",
+  "research_input_sha256": "1b70ae5cd38bf3c86b457115624e42dd2ebf2949f35508ea58a24418017a0d29",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Explains long-term user memory with a toy companion scenario; SiliconFriend and dialog experiments were not reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Engineering privacy and memory-governance implications are static; no live user-memory system was audited."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 83,
+      "warnings": [
+        "Citation identity was checked through arXiv API metadata; qualitative and simulated-dialog results are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-15T03:26:00.000Z"
+}

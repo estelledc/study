@@ -1,6 +1,6 @@
 ---
 title: "智能体与 LLM 系统 · 论文 · 第 2 组"
-description: "17 条 智能体与 LLM 系统 Atlas 分块"
+description: "21 条 智能体与 LLM 系统 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,14 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 17 条，稳定上限为 100 条。
+本分块共 21 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | `swe-agent` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [SWE-Bench-CL — coding agent 不能只刷静态题](/study/papers/swe-bench-cl/) | `swe-bench-cl` | intermediate | UNVERIFIED | 用 SWE-Bench-CL 理解软件工程 agent 的持续学习、迁移和灾难性遗忘 |
+| [SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗](/study/papers/swe-skills-bench-2026/) | `swe-skills-bench-2026` | intermediate | UNVERIFIED | 用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本 |
 | [Terminal-Bench — 在真实命令行任务里测试 agent](/study/papers/terminal-bench/) | `terminal-bench` | intermediate | UNVERIFIED | 用 Terminal-Bench 理解终端环境为什么能暴露 agent 的长程执行、环境理解和验证能力 |
 | [ToolBench-X — 工具会坏时，agent 还能不能把事做完](/study/papers/toolbench-x/) | `toolbench-x` | intermediate | UNVERIFIED | 用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突 |
 | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

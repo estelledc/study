@@ -41,6 +41,7 @@ sidebar:
 | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) | `evo-memory-2511` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) | `exg-experience-graphs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GAIA — 通用 AI 助手的现实任务基准](/study/papers/gaia/) | `gaia` | intermediate | UNVERIFIED | 用 GAIA 理解为什么真正的助手能力不等于专业考试高分，而是能组合推理、多模态、浏览和工具 |
+| [Generative Agents — 用记忆、反思和计划模拟可信的人类行为](/study/papers/generative-agents/) | `generative-agents` | intermediate | UNVERIFIED | 用 Generative Agents 理解 LLM agent 为什么需要 memory stream、reflection 和 planning，而不只是单轮 prompt |
 | [Gorilla — 让 LLM 学会查 API 文档再调用](/study/papers/gorilla-2023/) | `gorilla-2023` | intermediate | UNVERIFIED | 用 Gorilla 理解 API grounding 如何降低工具调用幻觉 |
 | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | `gptq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | `graphrag` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -52,6 +53,7 @@ sidebar:
 | [Scaling Laws — 大模型训练不是玄学，是幂律预算题](/study/papers/kaplan-scaling-laws-2020/) | `kaplan-scaling-laws-2020` | advanced | UNVERIFIED | 用 Kaplan scaling laws 理解参数、数据和计算量怎样一起决定语言模型损失 |
 | [KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文](/study/papers/kv-fold/) | `kv-fold` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LaMDA — 聊天模型先学会有用、具体和不乱说](/study/papers/lamda-2022/) | `lamda-2022` | intermediate | UNVERIFIED | 用 LaMDA 理解开放域对话模型为什么需要质量、安全和 groundedness 三条线 |
+| [LATS — 把推理、行动和规划统一进语言 Agent 树搜索](/study/papers/lats/) | `lats` | intermediate | UNVERIFIED | 用 LATS 理解为什么 agent 不一定要线性执行 ReAct 轨迹，也可以在环境反馈下做搜索、反思和回溯 |
 | [Least-to-Most — 先拆小题，再解大题](/study/papers/least-to-most-prompting-2022/) | `least-to-most-prompting-2022` | intermediate | UNVERIFIED | 用 Least-to-Most Prompting 理解复杂推理为什么要先分解再逐步求解 |
 | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | `llm-int8-2022` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | `llm-wiki-retrieval-reasoning` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -59,7 +61,9 @@ sidebar:
 | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | `mcp-spec` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MCPWorld — API、GUI、混合 Computer Use 的统一测试床](/study/papers/mcpworld-2025/) | `mcpworld-2025` | intermediate | UNVERIFIED | MCPWorld 用 white-box apps 统一评估 API、GUI 和混合 computer-use agents |
 | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | `memcoder-co-evolution` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [MemGPT — 把 LLM 记忆管理做成一套虚拟上下文操作系统](/study/papers/memgpt/) | `memgpt` | intermediate | UNVERIFIED | 用 MemGPT 理解为什么长程 agent 不能只靠扩大 context window，而要显式管理快速记忆、长期记忆和控制流 |
 | [MemGym — 给长程 agent memory 做一间健身房](/study/papers/memgym/) | `memgym` | intermediate | UNVERIFIED | 用 MemGym 区分聊天记忆、执行记忆和可迁移的 agent 经验 |
+| [MemoryBank — 给 LLM 长期陪伴场景加用户记忆](/study/papers/memorybank/) | `memorybank` | intermediate | UNVERIFIED | 用 MemoryBank 理解长期记忆为什么不只是检索历史对话，还要更新用户画像、选择性遗忘和强化重要记忆 |
 | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | `metagpt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | `mind-skill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mind2Web — 面向任意网站的泛化 web agent 数据集](/study/papers/mind2web/) | `mind2web` | intermediate | UNVERIFIED | 用 Mind2Web 理解 web agent 为什么要跨网站、跨领域、跨交互模式评估，而不是只在固定模拟站点里刷分 |
@@ -109,9 +113,5 @@ sidebar:
 | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | `specinfer-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Speculative Decoding — 小模型先猜，大模型只验收](/study/papers/speculative-decoding-2022/) | `speculative-decoding-2022` | advanced | UNVERIFIED | 用 Speculative Decoding 理解如何不改变分布地加速自回归生成 |
 | [STaR — 模型先试着讲理由，再用对的理由训练自己](/study/papers/star-self-taught-reasoner-2022/) | `star-self-taught-reasoner-2022` | intermediate | UNVERIFIED | 用 STaR 理解 rationale bootstrapping 怎样减少人工推理标注 |
-| [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | `swe-agent` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [SWE-Bench-CL — coding agent 不能只刷静态题](/study/papers/swe-bench-cl/) | `swe-bench-cl` | intermediate | UNVERIFIED | 用 SWE-Bench-CL 理解软件工程 agent 的持续学习、迁移和灾难性遗忘 |
-| [SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗](/study/papers/swe-skills-bench-2026/) | `swe-skills-bench-2026` | intermediate | UNVERIFIED | 用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本 |
 
 [下一组](/study/atlas/papers/topic-papers-agents-and-llm-systems-02/)

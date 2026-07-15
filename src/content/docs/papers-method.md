@@ -11,7 +11,7 @@ sidebar:
 
 ## 站点的论文体量
 
-截至 2026-07，论文目录共 1079 篇笔记，覆盖：
+截至 2026-07，论文目录共 1083 篇笔记，覆盖：
 
 - 分布式系统 76 篇（[[paxos-1998]] / [[raft]] / [[lamport-1978]] / [[spanner-2012]]）
 - 编程语言 + 类型论 76 篇（[[hindley-milner]] / [[lambda-calculus]] / [[hoare-logic]]）

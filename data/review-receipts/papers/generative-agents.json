@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "generative-agents",
+    "digest_sha256": "b6540e1d2ac1b1f41842d224e57cf101eb08f0e6ca3495a9534894008b571456"
+  },
+  "source_revision": "arXiv:2304.03442v2",
+  "research_input_sha256": "f4281716b9354c09879302742fc1ac9e0fdf0688153eb15b7287637a4fab2b19",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Explains memory stream, reflection, and planning with a toy intern-agent scenario; the small-town simulation was not reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Architecture interpretation is static; no sandbox, agent runtime, or human-evaluation replication was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Citation identity was checked through arXiv API metadata; reported believability findings are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-15T03:24:00.000Z"
+}

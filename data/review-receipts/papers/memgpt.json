@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "memgpt",
+    "digest_sha256": "355e750f79c9cb11b4439a1846f9f97c607f8d69a7080f49ad05f4d0a2b743a1"
+  },
+  "source_revision": "arXiv:2310.08560v2",
+  "research_input_sha256": "0b9e79c1cf74fbcc12a7d919e0a013131568df7711bf185b2de7d207a307b234",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 87,
+      "warnings": [
+        "Explains virtual context management with a toy coding-agent memory layout; MemGPT code and experiments were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "OS-style memory-management implications are static; no document-analysis or multi-session chat benchmark was reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260715-agent-memory-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Citation identity was checked through arXiv API metadata; reported task improvements are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-15T03:25:00.000Z"
+}
