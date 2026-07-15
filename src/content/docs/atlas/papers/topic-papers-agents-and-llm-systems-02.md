@@ -1,6 +1,6 @@
 ---
 title: "智能体与 LLM 系统 · 论文 · 第 2 组"
-description: "5 条 智能体与 LLM 系统 Atlas 分块"
+description: "9 条 智能体与 LLM 系统 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,11 +9,15 @@ sidebar:
 
 [返回论文全景索引](/study/papers-atlas/)
 
-本分块共 5 条，稳定上限为 100 条。
+本分块共 9 条，稳定上限为 100 条。
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [UL2 — 一个模型同时练完补空、续写和长文本](/study/papers/ul2-2022/) | `ul2-2022` | advanced | UNVERIFIED | 用 UL2 理解 mixture-of-denoisers 如何统一不同语言模型训练范式 |
+| [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 有损压缩草稿，无损输出验收](/study/papers/vericache/) | `vericache` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [VisualWebArena — 让网页 agent 真正看见界面](/study/papers/visualwebarena/) | `visualwebarena` | intermediate | UNVERIFIED | 用 VisualWebArena 理解多模态 web agent 为什么不能只读 DOM 文本，还要处理视觉线索 |
 | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | `voyager` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [WebArena — 可复现的真实网页 agent 环境](/study/papers/webarena/) | `webarena` | intermediate | UNVERIFIED | 用 WebArena 理解为什么 web agent 需要功能性网站、真实状态和可验证任务，而不只是静态网页问答 |
 | [WebGPT — 让模型带着浏览器回答问题](/study/papers/webgpt-2021/) | `webgpt-2021` | intermediate | UNVERIFIED | 用 WebGPT 理解检索、引用和人类偏好如何组合成可追溯问答 |
 | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | `webxskill` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [WizardLM — 用 Evol-Instruct 自动变难训练题](/study/papers/wizardlm-2023/) | `wizardlm-2023` | intermediate | UNVERIFIED | 用 WizardLM 理解 instruction 数据不只要多，还要逐步变复杂 |
