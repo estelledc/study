@@ -3,16 +3,16 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2036,
-      "classified": 1989,
+      "total": 2040,
+      "classified": 1993,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
     },
     "by_area": {
       "papers": {
-        "total": 1075,
-        "classified": 1056,
+        "total": 1079,
+        "classified": 1060,
         "unclassified": 19,
         "unknown_difficulty": 1014,
         "empty_description": 1013
@@ -189,6 +189,38 @@
       "atlas": {
         "chunk_id": "topic-papers-ai-safety-and-interpretability-01",
         "chunk_route": "/study/atlas/papers/topic-papers-ai-safety-and-interpretability-01/"
+      }
+    },
+    {
+      "id": "papers::active-environmental-injection",
+      "area": "papers",
+      "slug": "active-environmental-injection",
+      "title": "Active Environmental Injection — 多模态 Agent 的环境伪装攻击",
+      "description": "用 Active Environmental Injection 理解 GUI / 多模态 agent 为什么会被环境里的假按钮、假提示和视觉干扰劫持。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Multimodal Security"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/active-environmental-injection/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -568,6 +600,38 @@
       "atlas": {
         "chunk_id": "unclassified-01",
         "chunk_route": "/study/atlas/papers/unclassified-01/"
+      }
+    },
+    {
+      "id": "papers::agentdojo",
+      "area": "papers",
+      "slug": "agentdojo",
+      "title": "AgentDojo — 测试工具型 agent 的 prompt injection 攻防场",
+      "description": "用 AgentDojo 理解为什么工具型 LLM agent 的安全评测必须把不可信工具数据、攻击目标和防御策略放进同一个动态环境。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Security Benchmark"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/agentdojo/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -3774,6 +3838,38 @@
       "atlas": {
         "chunk_id": "topic-papers-hci-and-software-engineering-research-01",
         "chunk_route": "/study/atlas/papers/topic-papers-hci-and-software-engineering-research-01/"
+      }
+    },
+    {
+      "id": "papers::browser-agent-privacy",
+      "area": "papers",
+      "slug": "browser-agent-privacy",
+      "title": "Privacy Practices of Browser Agents — 浏览器 Agent 的隐私行为盘点",
+      "description": "用 Privacy Practices of Browser Agents 理解浏览器 agent 为什么是高风险隐私边界，而不只是自动点击工具。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Privacy"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/browser-agent-privacy/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -15168,6 +15264,38 @@
       "atlas": {
         "chunk_id": "topic-papers-databases-01",
         "chunk_route": "/study/atlas/papers/topic-papers-databases-01/"
+      }
+    },
+    {
+      "id": "papers::injecagent",
+      "area": "papers",
+      "slug": "injecagent",
+      "title": "InjecAgent — 工具型 LLM Agent 的间接 Prompt Injection 基准",
+      "description": "用 InjecAgent 理解为什么外部邮件、网页和工具内容会把 agent 从用户目标劫持到攻击者目标。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "papers-agents-and-llm-systems"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "papers-agents-and-llm-systems",
+        "matched_category": "agent",
+        "raw_category": "AI Agent / Prompt Injection"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-15",
+        "review_after": null
+      },
+      "route": "/study/papers/injecagent/",
+      "atlas": {
+        "chunk_id": "topic-papers-agents-and-llm-systems-01",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
       }
     },
     {
@@ -30917,8 +31045,8 @@
       },
       "route": "/study/papers/terminal-bench/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -31425,8 +31553,8 @@
       },
       "route": "/study/papers/toolbench-x/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -31456,8 +31584,8 @@
       },
       "route": "/study/papers/toolformer/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -31488,8 +31616,8 @@
       },
       "route": "/study/papers/toolllm-2023/",
       "atlas": {
-        "chunk_id": "topic-papers-agents-and-llm-systems-01",
-        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-01/"
+        "chunk_id": "topic-papers-agents-and-llm-systems-02",
+        "chunk_route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/"
       }
     },
     {
@@ -64715,7 +64843,7 @@
       "page": 2,
       "pages": 2,
       "route": "/study/atlas/papers/topic-papers-agents-and-llm-systems-02/",
-      "entries": 13
+      "entries": 17
     },
     {
       "id": "topic-papers-ai-safety-and-interpretability-01",

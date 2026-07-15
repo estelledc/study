@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "browser-agent-privacy",
+    "digest_sha256": "350e3c3dbe5d4f3ea31204b4c7981396afb39ced7d56a77b3f6791957f6c8317"
+  },
+  "source_revision": "arXiv:2512.07725v1",
+  "research_input_sha256": "cd3c1f3b4a72e84d30777d9e7362abf321057e9844f922073ccad27f612c833d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260715-agent-security-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 85,
+      "warnings": [
+        "Explains browser-agent privacy risk with manual examples; no browser-agent product or extension was audited."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260715-agent-security-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 83,
+      "warnings": [
+        "Engineering implications are derived from static reading; no live traffic, permission, or data-retention test was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260715-agent-security-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 82,
+      "warnings": [
+        "Citation identity was checked through arXiv metadata; the privacy survey observations were not independently replicated."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-15T04:13:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "papers",
+    "slug": "active-environmental-injection",
+    "digest_sha256": "93fdac301a5456e68fc2b789deb8c8cf96db24e0387beedc63433519d4770987"
+  },
+  "source_revision": "arXiv:2502.13053v3",
+  "research_input_sha256": "3d2e725dd1b60b681e7cc5cba3de5a558fdd69307d85df42fb5116b89a8da003",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "study-static-review-20260715-agent-security-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 86,
+      "warnings": [
+        "Explains active environmental injection with GUI-agent examples; no multimodal agent benchmark was executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "MANUAL_SIMULATION"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "study-static-review-20260715-agent-security-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 84,
+      "warnings": [
+        "Robustness interpretation is static; no adversarial GUI environment or visual perturbation suite was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "study-static-review-20260715-agent-security-round",
+      "decision": "PASS_WITH_NOTES",
+      "score": 83,
+      "warnings": [
+        "Citation identity was checked through arXiv metadata; reported attack success rates are not independently reproduced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-15T04:14:00.000Z"
+}
