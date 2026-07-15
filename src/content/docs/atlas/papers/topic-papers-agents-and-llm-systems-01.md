@@ -13,8 +13,10 @@ sidebar:
 
 | 论文 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Active Environmental Injection — 多模态 Agent 的环境伪装攻击](/study/papers/active-environmental-injection/) | `active-environmental-injection` | intermediate | UNVERIFIED | 用 Active Environmental Injection 理解 GUI / 多模态 agent 为什么会被环境里的假按钮、假提示和视觉干扰劫持 |
 | [Agent Planning Benchmark — 把 agent 失败拆成规划诊断题](/study/papers/agent-planning-benchmark-2026/) | `agent-planning-benchmark-2026` | intermediate | UNVERIFIED | 用 APB 拆解 LLM agent 的规划、反馈修正、工具噪声和无解任务校准 |
 | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | `agent-r1-2511` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [AgentDojo — 测试工具型 agent 的 prompt injection 攻防场](/study/papers/agentdojo/) | `agentdojo` | intermediate | UNVERIFIED | 用 AgentDojo 理解为什么工具型 LLM agent 的安全评测必须把不可信工具数据、攻击目标和防御策略放进同一个动态环境 |
 | [Agentic Context Engineering — 把上下文当成会进化的 playbook](/study/papers/agentic-context-engineering-2025/) | `agentic-context-engineering-2025` | intermediate | UNVERIFIED | ACE 将上下文视为可演化 playbook，用生成、反思和整理缓解 context collapse |
 | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | `agentless` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AndroidWorld — 动态 Android 环境里的移动端 agent 评测](/study/papers/androidworld/) | `androidworld` | intermediate | UNVERIFIED | 用 AndroidWorld 理解移动 GUI agent 为什么需要真实 App、动态任务、初始化和成功检查，而不只是截图问答 |
@@ -27,6 +29,7 @@ sidebar:
 | [AWQ 2023 — 把 70B 大模型权重压到 35GB](/study/papers/awq-2023/) | `awq-2023` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BIG-Bench Hard — 从大题库里挑出模型最头疼的 23 类题](/study/papers/big-bench-hard-2022/) | `big-bench-hard-2022` | intermediate | UNVERIFIED | 用 BBH 理解为什么 benchmark 需要难题子集和 CoT 对照 |
 | [BLOOM — 把 176B 多语种模型做成开放科学工程](/study/papers/bloom-2022/) | `bloom-2022` | intermediate | UNVERIFIED | 用 BLOOM 理解大模型也可以用社区协作、数据治理和开放发布来推进 |
+| [Privacy Practices of Browser Agents — 浏览器 Agent 的隐私行为盘点](/study/papers/browser-agent-privacy/) | `browser-agent-privacy` | intermediate | UNVERIFIED | 用 Privacy Practices of Browser Agents 理解浏览器 agent 为什么是高风险隐私边界，而不只是自动点击工具 |
 | [BrowserGym — Web Agent 研究的统一浏览器环境](/study/papers/browsergym/) | `browsergym` | intermediate | UNVERIFIED | 用 BrowserGym 理解为什么 web agent 需要统一 observation / action / evaluation 接口，而不是每个 benchmark 各跑一套 |
 | [Chain-of-Thought — 让大模型先写步骤再回答](/study/papers/chain-of-thought/) | `chain-of-thought` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) | `clawtrace-cost-aware` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -43,6 +46,7 @@ sidebar:
 | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | `graphrag` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [GSM8K — 小学数学题把大模型算术短板照出来](/study/papers/gsm8k-2021/) | `gsm8k-2021` | intermediate | UNVERIFIED | 用 GSM8K 理解数学 word problem、verifier 和采样重排为什么重要 |
 | [HuggingGPT — 让 ChatGPT 当任务调度员，模型库当工具箱](/study/papers/hugginggpt-2023/) | `hugginggpt-2023` | intermediate | UNVERIFIED | 用 HuggingGPT 理解 LLM 如何规划并调用专用模型完成多模态任务 |
+| [InjecAgent — 工具型 LLM Agent 的间接 Prompt Injection 基准](/study/papers/injecagent/) | `injecagent` | intermediate | UNVERIFIED | 用 InjecAgent 理解为什么外部邮件、网页和工具内容会把 agent 从用户目标劫持到攻击者目标 |
 | [Inner Monologue — 让机器人把观察结果说回计划里](/study/papers/inner-monologue-2022/) | `inner-monologue-2022` | intermediate | UNVERIFIED | 用 Inner Monologue 理解闭环反馈如何让语言计划接上真实环境变化 |
 | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | `instructgpt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Scaling Laws — 大模型训练不是玄学，是幂律预算题](/study/papers/kaplan-scaling-laws-2020/) | `kaplan-scaling-laws-2020` | advanced | UNVERIFIED | 用 Kaplan scaling laws 理解参数、数据和计算量怎样一起决定语言模型损失 |
@@ -109,9 +113,5 @@ sidebar:
 | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | `swe-bench` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWE-Bench-CL — coding agent 不能只刷静态题](/study/papers/swe-bench-cl/) | `swe-bench-cl` | intermediate | UNVERIFIED | 用 SWE-Bench-CL 理解软件工程 agent 的持续学习、迁移和灾难性遗忘 |
 | [SWE-Skills-Bench — Agent 技能真的帮得上软件工程吗](/study/papers/swe-skills-bench-2026/) | `swe-skills-bench-2026` | intermediate | UNVERIFIED | 用 paired evaluation 衡量 SWE skills 对真实软件工程 agent 的边际收益和 token 成本 |
-| [Terminal-Bench — 在真实命令行任务里测试 agent](/study/papers/terminal-bench/) | `terminal-bench` | intermediate | UNVERIFIED | 用 Terminal-Bench 理解终端环境为什么能暴露 agent 的长程执行、环境理解和验证能力 |
-| [ToolBench-X — 工具会坏时，agent 还能不能把事做完](/study/papers/toolbench-x/) | `toolbench-x` | intermediate | UNVERIFIED | 用 ToolBench-X 理解 tool-use benchmark 为什么要模拟规格漂移、调用错误、执行失败和结果冲突 |
-| [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | `toolformer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [ToolLLM — 用 16000+ API 训练模型进入真实工具世界](/study/papers/toolllm-2023/) | `toolllm-2023` | intermediate | UNVERIFIED | 用 ToolLLM 理解大规模 API 数据集、工具检索和工具评测如何支撑 agent |
 
 [下一组](/study/atlas/papers/topic-papers-agents-and-llm-systems-02/)
