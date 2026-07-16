@@ -1,6 +1,6 @@
 # Study Pipeline Scripts
 
-This directory owns the local content pipeline for `explorations/study`.
+This directory owns the local content pipeline for `explorations/own/study`.
 
 Current policy: bulk content production and direct `main` publication are disabled. This document explains bounded maintenance primitives; it does not authorize a round, push, merge, deployment, or edits to existing note bodies. The canonical operation policy is `docs/operations-index.md` plus `data/operations-policy.json`; `AGENTS.md` is the auto-loaded agent progression contract.
 

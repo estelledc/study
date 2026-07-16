@@ -2,6 +2,24 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-16 explorations 目录迁移路径修正
+
+- status：`complete`
+- 起始 ref：`8e4b7b5e060c9d1a3327376e4f8874f5508f2a97`
+- objective：修正仓库随父项目迁入 `explorations/own/` 后的操作文档路径。
+- scope：`scripts/README.md` 与本交接记录；不修改内容、队列、政策、依赖或远端状态。
+- activated_by：`explicit-user-request-2026-07-16-organize-explorations`
+- detector fingerprint：`scripts/README.md` 仍把仓库位置写成已不存在的 `explorations/study`。
+- external delta：`0`；仅形成本地 review-ready change set，D 轴不变。
+- 完成切片：将活动路径更新为 `explorations/own/study`。
+- acceptance checks：`git diff --check` 通过；活动 README 中不再出现旧路径。
+- budget：1 个文档切片、20 分钟、1 个本地 writer。
+- blocker：无。
+- stop conditions：定向检查通过即结束；若出现意外工作树重叠则停止。
+- 下一次 wake 条件：新的显式维护指令或可核验的外部状态变化。
+- 下一条命令：`git diff --check`
+- superseded_by：`none`
+
 ## 2026-07-15 继续推进 4 篇 agent 记忆 / 规划论文全流程完成记录
 
 - status：`complete`
