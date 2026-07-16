@@ -11,6 +11,17 @@
 | OpenCode | [opencode](../../_meta/opencode.md) |
 | Pi | [pi](../../_meta/pi.md) |
 | CSSwitch fork | [csswitch](../../_meta/csswitch.md) |
+| CC Switch | [ccswitch](../../_meta/ccswitch.md) |
+| Chinese Independent Developer fork | [chinese-independent-developer](../../_meta/chinese-independent-developer.md) |
+
+## Provider 切换与本地控制面研究
+
+| 项目 | 研究边界 | 当前版本 | 最值得研究 |
+|---|---|---|---|
+| CSSwitch | Claude Science 的 provider gateway 与隔离运行时 | `0897e78` / `v0.6.0` | Rust gateway、Science 生命周期、真实账号隔离、外部 Skill bridge |
+| CC Switch | 七类 AI 编程客户端的统一配置与本地代理控制面 | `f6e37ed` / `v3.17.0+6` | SQLite SSOT、live 配置投影、协议转换、热切换与故障转移 |
+
+两者名字相近但产品边界不同：CSSwitch 深入管理一个宿主的隔离运行时，CC Switch 横向管理多个客户端的配置与流量。联合研究材料从 [research 总览](../README.md) 进入。
 
 ## Coding Agent 源码研究矩阵
 
