@@ -22,9 +22,14 @@ function defaultLogPath() {
   return path.join(os.tmpdir(), `study-build-${stamp}-${process.pid}.log`);
 }
 
+export function clearAstroCache(rootDir = ROOT) {
+  fs.rmSync(path.join(rootDir, '.astro'), { recursive: true, force: true });
+}
+
 function main() {
   const args = parseArgs();
   const logPath = args.log || defaultLogPath();
+  clearAstroCache();
   const result = spawnSync('npm', ['run', 'build'], {
     cwd: ROOT,
     encoding: 'utf8',
