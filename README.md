@@ -30,10 +30,13 @@ src/content/docs/
 ├── projects/            ← 项目研究笔记（由内容审计统计）
 ├── papers-method.md     ← 论文消化方法论（8 层）
 ├── papers-queue.md      ← 论文推荐队列（20 篇 / 4 季度）
-└── papers/              ← 论文研究笔记（由内容审计统计）
+├── papers/              ← 论文研究笔记（由内容审计统计）
+└── research/            ← 14 类 Research Refresh 重构标杆与实验
 
 public/papers/<paper-slug>/   ← 每篇论文的 figure（webp 格式）
 ```
+
+项目页统一标准见 [`docs/research-benchmark-standard.md`](docs/research-benchmark-standard.md)，逐页差距由 `npm run audit:project-standard` 检查；Research 标杆结构由 `npm run audit:research` 验收。
 
 ## 本地开发
 

@@ -8,7 +8,7 @@
 
 PR workflow 只读取仓库；Pages 写权限和 OIDC 权限只授予 deploy job。依赖安装固定使用 `npm ci`，不允许在 lockfile 不一致时回退到 `npm install`。
 
-PR 和 main push 都会完整 fetch Git 历史，并把可信事件 SHA 作为 `STUDY_CHANGED_FROM`。内容合同与质量门只对新增或实质修改的笔记施加强约束；纯链接修复和带 marker 的生成反向链接不冒充正文重写。workflow 还显式记录 UTC 审计日，用于 freshness 报告；模板相似度、Atlas、Pagefind、资产、无障碍、Pages artifact 和规模预算均为同一 fail-closed 链的一部分。
+PR 和 main push 都会完整 fetch Git 历史，并把可信事件 SHA 作为 `STUDY_CHANGED_FROM`。内容合同与质量门只对新增或实质修改的笔记施加强约束；纯链接修复和带 marker 的生成反向链接不冒充正文重写。workflow 还显式记录 UTC 审计日，用于 freshness 报告；Research 结构、10 个便携 lab 模块、961 项项目标准快照、模板相似度、Atlas、Pagefind、资产、无障碍、Pages artifact 和规模预算均为同一 fail-closed 链的一部分。依赖固定 LangGraph 源码的第 11 个模块由 `npm run test:research-labs:full` 在恢复外部工作树后验收，不伪装成无状态 CI 已覆盖。
 
 ## 供应链固定
 
