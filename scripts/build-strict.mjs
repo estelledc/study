@@ -23,7 +23,9 @@ function defaultLogPath() {
 }
 
 export function clearAstroCache(rootDir = ROOT) {
-  fs.rmSync(path.join(rootDir, '.astro'), { recursive: true, force: true });
+  for (const relativePath of ['.astro', path.join('node_modules', '.astro')]) {
+    fs.rmSync(path.join(rootDir, relativePath), { recursive: true, force: true });
+  }
 }
 
 function main() {
