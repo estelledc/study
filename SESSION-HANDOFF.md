@@ -2,6 +2,35 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 6
+
+- status：Program `active`；本地 writer epoch 6 `complete`。
+- 起始 ref：`bfa0443bb`。
+- 完成 ref：`3924ab07d`。
+- objective：用同一证据合同横向校准 Axios、Ky、Got 三种 HTTP 客户端架构，验证浏览器/跨端 adapter、Fetch wrapper 与 Node Duplex 管线均可独立迁移。
+- scope：Axios、Ky、Got 三页、3 个 ignored worktree、共享源码审查记录、receipt/派生索引；未安装上游依赖、发送网络请求、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：三页教学骨架完整，但旧正文包含 Ky lazy execution、Got hook 签名、旧 Node 边界、固定 bundle/下载量/冷启动与未绑定性能结论。
+- external delta：GitHub metadata 只读核验 + 本地 blob-filtered clone；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `axios` 绑定 `axios/axios@a092bae5...` / `1.18.1`，补 config → interceptor → transform → adapter → settle 主链与 401 replay 边界。
+  2. `ky` 绑定 `sindresorhus/ky@3419113b...` / `2.0.2`，纠正 lazy execution，更新 state-object hook、per-attempt/total timeout 与 stream retry 缓冲边界。
+  3. `got` 绑定 `sindresorhus/got@e3924aa1...` / `15.1.0`，补 Duplex Request → Promise wrapper、阶段 timeout、retry rules、Stream/Promise hook 和 body replay 边界。
+  4. 新增共享 `docs/http-client-source-review-20260717.md` 与三份 generation 1 static receipt；项目审计从 `13/961` 前进到 `16/961`。
+- acceptance checks：
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 三份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=bfa0443bb npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下，380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 首次直接运行被 Node 26.4.0 的 toolchain contract 拦截；切换仓库规范 Node 后从头通过，未修改或放宽门禁。
+  - `audit:project-standard`：`benchmark-aligned=16`、`needs-evidence=945`。
+  - `audit:content-contract`：projects `v2=16`、`legacy-unverified=945`、blocking 0。
+- budget：3 个小型本地 worktree + 3 页静态源码迁移；单 writer。
+- blocker：剩余 945 页仍需按主题恢复固定源码；上游运行证据不能由静态 review 替代。
+- stop conditions：仓库规模不可控、canonical/revision 不唯一、需要猜测性能或兼容性、或一批无法独立验收时停止。
+- 下一次 wake 条件：选择下一组边界互补且源码体量可控的项目，继续 1-3 页小批次。
+- 下一条命令：从 `data/project-standard-audit.json` 筛选同主题 `needs-evidence` 页面，再核对 canonical GitHub repo 与 clone 体量。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 5
 
 - status：Program `active`；本地 writer epoch 5 `complete`。
