@@ -31,7 +31,7 @@
 | 证据 | STORM | [stanford-oval/storm](https://github.com/stanford-oval/storm) | `fb951af7744d` | MIT |
 | 检索 | paper-search-mcp | [openags/paper-search-mcp](https://github.com/openags/paper-search-mcp) | `c8b642183bb7` | MIT |
 | Skills | AI-Research-SKILLs | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `773a52944ba4` | MIT |
-| Skills | scientific-agent-skills | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) | `3f825caafe14` | MIT |
+| Skills | scientific-agent-skills | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | `3f825caafe14` | MIT |
 | Artifact | Agent-Native-Research-Artifact | [ARA-Labs/Agent-Native-Research-Artifact](https://github.com/ARA-Labs/Agent-Native-Research-Artifact) | `85face753889` | MIT |
 | Poster | Paper2Poster | [Paper2Poster/Paper2Poster](https://github.com/Paper2Poster/Paper2Poster) | `623d042f283a` | MIT |
 | Poster | PosterGen | [Y-Research-SBU/PosterGen](https://github.com/Y-Research-SBU/PosterGen) | `8a54325f871e` | MIT |
