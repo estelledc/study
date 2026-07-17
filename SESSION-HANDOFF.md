@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 7
+
+- status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
+- 起始 ref：`3f9ddb487`。
+- 完成 ref：`7442ccef5`。
+- objective：收口 HTTP 客户端 Atlas 的剩余两页，比较 defaults/hook 型 ofetch 与 immutable fluent Wretch 的稳定源码合同。
+- scope：ofetch、Wretch 两页、2 个 ignored worktree、共享源码审查记录、receipt/派生索引；未安装上游依赖、发送网络请求、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：两页结构完整但缺固定 revision/self-test；旧正文把 ofetch retry 写成幂等 allowlist/指数退避，把 Wretch response-chain API 与 retry 默认写错。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `ofetch` 绑定内部一致且可达的 `v1.5.0` / `47fe8079...`，修正 payload-method retry、零 delay、`destr`、条件 exports 与 signal/timeout 边界。
+  2. 明确披露 `ofetch@1.5.1` provenance 冲突：npm `gitHead` 在 canonical remote 不可达，GitHub 同名 tag 又指向自报 2.0 alpha 的提交；未猜测或伪造 1.5.1 revision。
+  3. `wretch` 绑定 `32d5f68b...` / `3.0.9`，修正 object-spread immutability、ResponseChain error API、Node >=22、retry 10 次/500ms/4xx/network/method 边界。
+  4. 新增共享 `docs/fetch-wrapper-source-review-20260717.md` 与两份 generation 1 static receipt；HTTP Atlas 的 5 页全部对齐，项目审计从 `16/961` 前进到 `18/961`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=3f9ddb487 npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下，380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - `audit:project-standard`：`benchmark-aligned=18`、`needs-evidence=943`。
+  - `audit:content-contract`：projects `v2=18`、`legacy-unverified=943`、blocking 0。
+- budget：2 个小型本地 worktree + 2 页静态源码迁移；单 writer。
+- blocker：epoch 5、6、7 均无 D 轴 external delta，已达到“三批无 external delta”暂停门；不得继续开启本地内容批次填充进度。
+- stop conditions：当前已命中暂停门；只有真实 external delta、owner 对 push/PR 的授权或新的显式范围重授权才能开启下一 writer epoch。
+- 下一次 wake 条件：将本分支推送并进入 PR/review，或 owner 提供新的有限目标与 external outcome。
+- 下一条命令：先 `git status --short --branch` 核对干净状态；未获远端授权前不要 push。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 6
 
 - status：Program `active`；本地 writer epoch 6 `complete`。
