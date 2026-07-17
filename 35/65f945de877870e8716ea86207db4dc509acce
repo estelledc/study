@@ -1,0 +1,343 @@
+src/content/docs/research/README.md
+  s_aefbb45618eee6::t_ca40fea00bca7c 41
+  s_422ac44cafb80e::t_f7a0cc9df5288b 1-5,10-11,39
+scripts/prepare-research-benchmark.mjs
+  s_aefbb45618eee6::t_00572511f888a8 32-39
+  s_aefbb45618eee6::t_d7204f71a7bd9a 43-46
+  s_aefbb45618eee6::t_aaceb381f42b3f 1-31,40-42,47-89
+.gitignore
+  s_aefbb45618eee6::t_237a6fc2aa2497 48
+  s_aefbb45618eee6::t_a9d021b14d84ab 49-50
+scripts/prepare-research-benchmark.test.mjs
+  s_aefbb45618eee6::t_17150391558d93 1-33,52-57
+  s_aefbb45618eee6::t_e069cfb0865ef7 34-42
+  s_aefbb45618eee6::t_6f30d552816b25 43-51
+src/content/docs/research/agent-skills-ecosystem-study/01-scope-and-corpus.md
+  s_422ac44cafb80e::t_7a3683f6ecbdfc 1-5,181
+src/content/docs/research/agent-skills-ecosystem-study/02-ecosystem-landscape.md
+  s_422ac44cafb80e::t_4a4a1b7812a125 1-5
+src/content/docs/research/agent-skills-ecosystem-study/03-project-deep-dives.md
+  s_422ac44cafb80e::t_e408e58446dd07 1-5
+src/content/docs/research/agent-skills-ecosystem-study/04-cross-project-comparison.md
+  s_422ac44cafb80e::t_a5ee0f55dbefa9 1-5
+src/content/docs/research/agent-skills-ecosystem-study/05-learning-questions-and-faq.md
+  s_422ac44cafb80e::t_e2753b8a5be35d 1-5
+src/content/docs/research/agent-skills-ecosystem-study/06-repository-inventory.md
+  s_422ac44cafb80e::t_79322be9af88d5 1-5,12,27-46,136,161,163,178-179,185-186,192-195
+src/content/docs/research/agent-skills-ecosystem-study/07-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_8b663a37f12215 1-5
+src/content/docs/research/agent-skills-ecosystem-study/08-beginner-skill-lifecycle-lab.md
+  s_422ac44cafb80e::t_d95429e65e45cd 1-5,46
+src/content/docs/research/agent-skills-ecosystem-study/README.md
+  s_422ac44cafb80e::t_16cd3a6fa71046 1-5
+src/content/docs/research/chinese-independent-developer-study/00-final-reader-map.md
+  s_422ac44cafb80e::t_59e339f5c372ea 1-5
+src/content/docs/research/chinese-independent-developer-study/01-hands-on-lab.md
+  s_422ac44cafb80e::t_6a43b466daf2b3 1-5,15
+src/content/docs/research/chinese-independent-developer-study/02-case-cards-and-answer-guide.md
+  s_422ac44cafb80e::t_0fe9491d8c84f3 1-5
+src/content/docs/research/chinese-independent-developer-study/README.md
+  s_422ac44cafb80e::t_1aa21ae6cae376 1-5
+src/content/docs/research/coding-agent-runtime-study/00-final-reader-map.md
+  s_422ac44cafb80e::t_20cf90e44e98f0 1-5
+src/content/docs/research/coding-agent-runtime-study/01-field-map.md
+  s_422ac44cafb80e::t_8f87c4b9192df8 1-5
+src/content/docs/research/coding-agent-runtime-study/02-core-loop-deep-dive.md
+  s_422ac44cafb80e::t_9bf9ad35434f32 1-5
+src/content/docs/research/coding-agent-runtime-study/03-codex.md
+  s_422ac44cafb80e::t_e80ee02ab00e92 1-5
+src/content/docs/research/coding-agent-runtime-study/04-gemini-cli.md
+  s_422ac44cafb80e::t_5ae79ff237e1d5 1-5
+src/content/docs/research/coding-agent-runtime-study/05-grok-build.md
+  s_422ac44cafb80e::t_5d5ca90805b1c3 1-5
+src/content/docs/research/coding-agent-runtime-study/06-opencode.md
+  s_422ac44cafb80e::t_ee7e06736ad987 1-5
+src/content/docs/research/coding-agent-runtime-study/07-pi.md
+  s_422ac44cafb80e::t_789a3402e578cb 1-5
+src/content/docs/research/coding-agent-runtime-study/08-comparison-and-thinking.md
+  s_422ac44cafb80e::t_5c34a12af1bd57 1-5
+src/content/docs/research/coding-agent-runtime-study/09-round2-reliability-failure-state-machine.md
+  s_422ac44cafb80e::t_775c9a0be015a0 1-5
+src/content/docs/research/coding-agent-runtime-study/10-round2-source-trace-cards.md
+  s_422ac44cafb80e::t_e2e6b682c07890 1-5
+src/content/docs/research/coding-agent-runtime-study/11-round3-extension-subagent-capability-map.md
+  s_422ac44cafb80e::t_a6a1ddd2fcc38b 1-5
+src/content/docs/research/coding-agent-runtime-study/12-round3-reference-architecture-and-thinking.md
+  s_422ac44cafb80e::t_b19a557fcc742b 1-5
+src/content/docs/research/coding-agent-runtime-study/13-beginner-runtime-lab.md
+  s_422ac44cafb80e::t_229fd80ea07d8b 1-5,30,63
+src/content/docs/research/coding-agent-runtime-study/README.md
+  s_422ac44cafb80e::t_6307470cb50a40 1-5,95
+src/content/docs/research/deeptutor-ecosystem-study/01-scope-and-corpus.md
+  s_422ac44cafb80e::t_081460d1026a7e 1-5
+src/content/docs/research/deeptutor-ecosystem-study/02-ecosystem-landscape.md
+  s_422ac44cafb80e::t_2e776b337fcd20 1-5
+src/content/docs/research/deeptutor-ecosystem-study/03-project-deep-dives.md
+  s_422ac44cafb80e::t_d71fbc23d02be4 1-5
+src/content/docs/research/deeptutor-ecosystem-study/04-comparison-and-patterns.md
+  s_422ac44cafb80e::t_a50aa634e09ba8 1-5
+src/content/docs/research/deeptutor-ecosystem-study/05-learning-questions.md
+  s_422ac44cafb80e::t_488c7f81d16651 1-5
+src/content/docs/research/deeptutor-ecosystem-study/06-sources-and-snapshots.md
+  s_422ac44cafb80e::t_7cfaec0bd0e6aa 1-5
+src/content/docs/research/deeptutor-ecosystem-study/07-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_81770dd99928c7 1-5,236
+src/content/docs/research/deeptutor-ecosystem-study/08-beginner-evidence-tutor-lab.md
+  s_422ac44cafb80e::t_fdf843e6f47936 1-5,110
+src/content/docs/research/deeptutor-ecosystem-study/09-beginner-project-onboarding-cards.md
+  s_422ac44cafb80e::t_3fb84653678439 1-5
+src/content/docs/research/deeptutor-ecosystem-study/README.md
+  s_422ac44cafb80e::t_3bf65d067c2506 1-5,51
+src/content/docs/research/fastvlm-ecosystem-study/00-final-reader-map.md
+  s_422ac44cafb80e::t_6333658b0672ec 1-5
+src/content/docs/research/fastvlm-ecosystem-study/01-ecosystem-landscape.md
+  s_422ac44cafb80e::t_c5bb14822f502c 1-5
+src/content/docs/research/fastvlm-ecosystem-study/02-project-deep-dives.md
+  s_422ac44cafb80e::t_29f6fa0003a5a4 1-5
+src/content/docs/research/fastvlm-ecosystem-study/03-cross-project-comparison.md
+  s_422ac44cafb80e::t_e6e3f098f88b54 1-5
+src/content/docs/research/fastvlm-ecosystem-study/04-learning-route-and-questions.md
+  s_422ac44cafb80e::t_d01934e6f34821 1-5
+src/content/docs/research/fastvlm-ecosystem-study/05-repository-inventory.md
+  s_422ac44cafb80e::t_3bada66b92381e 1-5,16,18,157,159,162
+src/content/docs/research/fastvlm-ecosystem-study/06-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_ccc897c8e702b3 1-5,156
+src/content/docs/research/fastvlm-ecosystem-study/07-beginner-edge-vlm-budget-lab.md
+  s_422ac44cafb80e::t_57fc0367ecef8d 1-5,103
+src/content/docs/research/fastvlm-ecosystem-study/08-beginner-project-onboarding-cards.md
+  s_422ac44cafb80e::t_7303af30ee579b 1-5
+src/content/docs/research/fastvlm-ecosystem-study/README.md
+  s_422ac44cafb80e::t_90bab4c354e205 1-5,10,53
+src/content/docs/research/hermes-agent-ecosystem-study/01-scope-corpus-and-inventory.md
+  s_422ac44cafb80e::t_e5fea331f3271e 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/02-ecosystem-landscape.md
+  s_422ac44cafb80e::t_9cb9e1b83e679e 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/03-hermes-agent-deep-dive.md
+  s_422ac44cafb80e::t_737aad50ac83d5 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/04-direct-ecosystem-projects.md
+  s_422ac44cafb80e::t_e00b6dad71edf6 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/05-runtime-project-atlas.md
+  s_422ac44cafb80e::t_6074eb70c7c0df 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/06-cross-project-comparison.md
+  s_422ac44cafb80e::t_db55e6039beffe 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/07-learning-path-questions-and-sources.md
+  s_422ac44cafb80e::t_ca9827d86a8752 1-5
+src/content/docs/research/hermes-agent-ecosystem-study/08-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_74b3b7cf98a962 1-5,238
+src/content/docs/research/hermes-agent-ecosystem-study/09-beginner-durable-agent-lab.md
+  s_422ac44cafb80e::t_e843df467a54cc 1-5,109
+src/content/docs/research/hermes-agent-ecosystem-study/README.md
+  s_422ac44cafb80e::t_2125e98e65c78a 1-5
+src/content/docs/research/lambchat-ecosystem-study/01-scope-and-corpus.md
+  s_422ac44cafb80e::t_7b8884531a9906 1-5,131,135
+src/content/docs/research/lambchat-ecosystem-study/02-ecosystem-landscape.md
+  s_422ac44cafb80e::t_02932771e5da7d 1-5
+src/content/docs/research/lambchat-ecosystem-study/03-lambchat-architecture.md
+  s_422ac44cafb80e::t_de91964151f406 1-5
+src/content/docs/research/lambchat-ecosystem-study/04-foundation-deep-dives.md
+  s_422ac44cafb80e::t_26c2e2f1f93803 1-5
+src/content/docs/research/lambchat-ecosystem-study/05-product-platform-deep-dives.md
+  s_422ac44cafb80e::t_8c17918d51a840 1-5
+src/content/docs/research/lambchat-ecosystem-study/06-governance-runtime-deep-dives.md
+  s_422ac44cafb80e::t_6cbc11d6dd3eea 1-5
+src/content/docs/research/lambchat-ecosystem-study/07-comparison-and-reference-architecture.md
+  s_422ac44cafb80e::t_7f736c4875c5c9 1-5
+src/content/docs/research/lambchat-ecosystem-study/08-learning-questions.md
+  s_422ac44cafb80e::t_ac75a58d3380da 1-5
+src/content/docs/research/lambchat-ecosystem-study/09-sources-and-snapshots.md
+  s_422ac44cafb80e::t_06122591742ab9 1-5,15,257,259,276-279,285
+src/content/docs/research/lambchat-ecosystem-study/10-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_57c3a26d722586 1-5
+src/content/docs/research/lambchat-ecosystem-study/11-beginner-production-agent-platform-lab.md
+  s_422ac44cafb80e::t_a685a946e5159e 1-5,106
+src/content/docs/research/lambchat-ecosystem-study/README.md
+  s_422ac44cafb80e::t_ebd57ffe3e4c17 1-5
+src/content/docs/research/langgraph-ecosystem-study/01-ecosystem-landscape.md
+  s_422ac44cafb80e::t_3c151695679ece 1-5
+src/content/docs/research/langgraph-ecosystem-study/02-core-and-official-projects.md
+  s_422ac44cafb80e::t_e2a458812c15e9 1-5
+src/content/docs/research/langgraph-ecosystem-study/03-production-apps-and-ports.md
+  s_422ac44cafb80e::t_fd4a27d7ee6f16 1-5
+src/content/docs/research/langgraph-ecosystem-study/04-alternative-frameworks.md
+  s_422ac44cafb80e::t_74647a81395cc3 1-5
+src/content/docs/research/langgraph-ecosystem-study/05-cross-project-comparison.md
+  s_422ac44cafb80e::t_779621f2f833d9 1-5
+src/content/docs/research/langgraph-ecosystem-study/06-learning-route-and-questions.md
+  s_422ac44cafb80e::t_dcacd30efd132c 1-5
+src/content/docs/research/langgraph-ecosystem-study/07-repository-inventory.md
+  s_422ac44cafb80e::t_0158209e222dfc 1-5,12,80,102,108,139-140,164-166,174-177
+src/content/docs/research/langgraph-ecosystem-study/08-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_a949def1933fa7 1-5
+src/content/docs/research/langgraph-ecosystem-study/09-beginner-stategraph-lab.md
+  s_422ac44cafb80e::t_9a0f261faa1a87 1-5,58,62-63,79-81
+src/content/docs/research/langgraph-ecosystem-study/README.md
+  s_422ac44cafb80e::t_34781ee00c7e48 1-5,9
+src/content/docs/research/mineru-ecosystem-study/01-ecosystem-landscape.md
+  s_422ac44cafb80e::t_fd9a7749deb084 1-5
+src/content/docs/research/mineru-ecosystem-study/02-mineru-architecture.md
+  s_422ac44cafb80e::t_362ca1d45e6e06 1-5
+src/content/docs/research/mineru-ecosystem-study/03-project-deep-dives.md
+  s_422ac44cafb80e::t_4577f7562381f8 1-5
+src/content/docs/research/mineru-ecosystem-study/04-cross-project-comparison.md
+  s_422ac44cafb80e::t_c91b39cd174022 1-5
+src/content/docs/research/mineru-ecosystem-study/05-repository-inventory.md
+  s_422ac44cafb80e::t_8f16ef34617f10 1-5,10,129,149,201,203,206
+src/content/docs/research/mineru-ecosystem-study/06-learning-route-and-questions.md
+  s_422ac44cafb80e::t_e7885eaab1484b 1-5
+src/content/docs/research/mineru-ecosystem-study/07-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_827f8c67ca2457 1-5,180
+src/content/docs/research/mineru-ecosystem-study/08-beginner-document-parser-lab.md
+  s_422ac44cafb80e::t_09644e63181c65 1-5,70,100,102,123,207
+src/content/docs/research/mineru-ecosystem-study/09-beginner-project-onboarding-cards.md
+  s_422ac44cafb80e::t_eede941a35ca73 1-5
+src/content/docs/research/mineru-ecosystem-study/README.md
+  s_422ac44cafb80e::t_610f6f8e5bf079 1-5,57,90
+src/content/docs/research/multimodal-video-ai-open-source-study/01-scope-and-corpus.md
+  s_422ac44cafb80e::t_baf26646d3405a 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/02-ecosystem-landscape.md
+  s_422ac44cafb80e::t_fc0068139f77f6 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/03-project-deep-dives.md
+  s_422ac44cafb80e::t_2fe12d53416f4d 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/04-comparison-and-quanzhiping.md
+  s_422ac44cafb80e::t_1cadc4685bd8b4 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/05-learning-questions.md
+  s_422ac44cafb80e::t_3141ede447e25f 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/06-sources-and-snapshots.md
+  s_422ac44cafb80e::t_cf3898e7f5c8f9 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/07-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_815692bc3a8da3 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/08-beginner-video-evidence-lab.md
+  s_422ac44cafb80e::t_604b07bd1932b5 1-5,74
+src/content/docs/research/multimodal-video-ai-open-source-study/09-beginner-project-onboarding-cards.md
+  s_422ac44cafb80e::t_ca63862c0f6a00 1-5
+src/content/docs/research/multimodal-video-ai-open-source-study/README.md
+  s_422ac44cafb80e::t_ae2f892a043a91 1-5,65
+src/content/docs/research/repos/README.md
+  s_422ac44cafb80e::t_e3e5f23364d38b 1-5,12-20,28-30,42-44,54-57,67-71,81-85,95-98,108-111,121-125
+src/content/docs/research/research-refresh-program/README.md
+  s_422ac44cafb80e::t_55ba6cbb229330 1-5,165
+src/content/docs/research/research-refresh-program/beginner-learning-map.md
+  s_422ac44cafb80e::t_5afe39562babf5 1-5,300
+src/content/docs/research/research-refresh-program/coverage-matrix.md
+  s_422ac44cafb80e::t_4313cd8625a8b9 1-5
+src/content/docs/research/researchstudio-ecosystem-study/01-ecosystem-landscape.md
+  s_422ac44cafb80e::t_0fcda4446a558f 1-5
+src/content/docs/research/researchstudio-ecosystem-study/02-project-deep-dives.md
+  s_422ac44cafb80e::t_06ea1d34337019 1-5
+src/content/docs/research/researchstudio-ecosystem-study/03-cross-project-comparison.md
+  s_422ac44cafb80e::t_608dc960150694 1-5
+src/content/docs/research/researchstudio-ecosystem-study/04-learning-route-and-questions.md
+  s_422ac44cafb80e::t_eced8df52774b1 1-5
+src/content/docs/research/researchstudio-ecosystem-study/05-repository-inventory.md
+  s_422ac44cafb80e::t_450e856d32b993 1-5,12,76,82,114,130-132
+src/content/docs/research/researchstudio-ecosystem-study/06-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_82e6b68d3f169f 1-5
+src/content/docs/research/researchstudio-ecosystem-study/07-beginner-artifact-first-research-lab.md
+  s_422ac44cafb80e::t_f05176558e9dad 1-5,97
+src/content/docs/research/researchstudio-ecosystem-study/08-beginner-project-onboarding-cards.md
+  s_422ac44cafb80e::t_abc84e5a8f224c 1-5
+src/content/docs/research/researchstudio-ecosystem-study/README.md
+  s_422ac44cafb80e::t_fa94d69a73597e 1-5,9,59
+src/content/docs/research/switch-tools-study/00-final-synthesis.md
+  s_422ac44cafb80e::t_e83a2dc7ae63b3 1-5
+src/content/docs/research/switch-tools-study/01-domain-breadth-map.md
+  s_422ac44cafb80e::t_df0634e5e1a4da 1-5
+src/content/docs/research/switch-tools-study/02-csswitch-v060-deep-dive.md
+  s_422ac44cafb80e::t_6c925473e99c3b 1-5
+src/content/docs/research/switch-tools-study/03-ccswitch-v317-deep-dive.md
+  s_422ac44cafb80e::t_5f0b50bf5567d3 1-5
+src/content/docs/research/switch-tools-study/04-comparison-and-thinking.md
+  s_422ac44cafb80e::t_ae4b08ac320777 1-5
+src/content/docs/research/switch-tools-study/05-failure-recovery-state-machines.md
+  s_422ac44cafb80e::t_3b002cd57d1aae 1-5
+src/content/docs/research/switch-tools-study/06-protocol-tool-loop-invariants.md
+  s_422ac44cafb80e::t_75da69dfb392e9 1-5
+src/content/docs/research/switch-tools-study/07-acme-provider-extension-lab.md
+  s_422ac44cafb80e::t_cd03cd22c3267b 1-5
+src/content/docs/research/switch-tools-study/08-case-cards-and-answer-guide.md
+  s_422ac44cafb80e::t_1ad67c105db447 1-5
+src/content/docs/research/switch-tools-study/09-beginner-verification-lab.md
+  s_422ac44cafb80e::t_310f47950ecb23 1-5,35-36,38-39,56,96
+src/content/docs/research/switch-tools-study/README.md
+  s_422ac44cafb80e::t_de0f66331e76cb 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/00-final-reader-map.md
+  s_422ac44cafb80e::t_23ba179ad512ef 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/01-field-map.md
+  s_422ac44cafb80e::t_b9a7b5f7d1b92e 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/02-evidence-and-provenance.md
+  s_422ac44cafb80e::t_5e474feb134dbb 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/03-archive-projects.md
+  s_422ac44cafb80e::t_4f491e75bb0619 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/04-platforms-and-official-data.md
+  s_422ac44cafb80e::t_365b288aff273f 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/05-extraction-research.md
+  s_422ac44cafb80e::t_c291f7042e96b7 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/06-cross-project-comparison.md
+  s_422ac44cafb80e::t_8fc333f181ff50 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/07-security-and-defense.md
+  s_422ac44cafb80e::t_a2994b9287a8d0 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/08-faq-and-thinking.md
+  s_422ac44cafb80e::t_27ecf2fc03a7e7 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/09-sources-and-maintenance.md
+  s_422ac44cafb80e::t_0857fa4dda0117 1-5,100,103,107
+src/content/docs/research/system-prompt-leak-ecosystem-study/10-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_62869e68d4bb17 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/11-beginner-prompt-defense-lab.md
+  s_422ac44cafb80e::t_5542a1adbfea46 1-5,57
+src/content/docs/research/system-prompt-leak-ecosystem-study/12-beginner-project-onboarding-cards.md
+  s_422ac44cafb80e::t_d08ba704fa9a62 1-5
+src/content/docs/research/system-prompt-leak-ecosystem-study/README.md
+  s_422ac44cafb80e::t_a8e5d8510c4020 1-5,54,128
+src/content/docs/research/trellis-agent-harness-ecosystem-study/01-scope-method-and-source-audit.md
+  s_422ac44cafb80e::t_e6fffbaeaa8404 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/02-ecosystem-landscape.md
+  s_422ac44cafb80e::t_e8088f56db20a4 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/03-trellis-architecture-deep-dive.md
+  s_422ac44cafb80e::t_4a9434d384bf06 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/04-spec-and-process-frameworks.md
+  s_422ac44cafb80e::t_222373edf2f254 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/05-context-workflow-and-compounding.md
+  s_422ac44cafb80e::t_5aa78eee556687 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/06-memory-and-deterministic-governance.md
+  s_422ac44cafb80e::t_cce9cc93e977fe 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/07-cross-project-comparison-and-design-lessons.md
+  s_422ac44cafb80e::t_7699003596a85c 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/08-repository-inventory-and-local-constraints.md
+  s_422ac44cafb80e::t_5b6c50ef72eca0 1-5,49-65,69,81,95,132,138,144,157-158,179,181,184,195-198,204
+src/content/docs/research/trellis-agent-harness-ecosystem-study/09-learning-questions.md
+  s_422ac44cafb80e::t_2d2313b2cb62a8 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/10-fundamentals-faq.md
+  s_422ac44cafb80e::t_c80f77906254c5 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/11-2026-07-17-refresh.md
+  s_422ac44cafb80e::t_737ac2859a4b4c 1-5
+src/content/docs/research/trellis-agent-harness-ecosystem-study/12-beginner-sdd-harness-lab.md
+  s_422ac44cafb80e::t_4698f8fe895f7c 1-5,34,61,172
+src/content/docs/research/trellis-agent-harness-ecosystem-study/README.md
+  s_422ac44cafb80e::t_ee21a76eae8dea 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "3565f945de877870e8716ea86207db4dc509acce",
+  "prompts": {},
+  "sessions": {
+    "s_422ac44cafb80e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_422ac44cafb80e",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    },
+    "s_aefbb45618eee6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a59eaa1327f744c7a944368",
+        "model": "gpt-5.6-sol__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
