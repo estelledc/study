@@ -25,8 +25,8 @@
       "height": 630,
       "format": "webp",
       "referenced_by": [
-        "astro.config.mjs:83",
-        "astro.config.mjs:99"
+        "astro.config.mjs:100",
+        "astro.config.mjs:84"
       ]
     },
     {
