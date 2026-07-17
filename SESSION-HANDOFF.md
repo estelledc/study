@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 5
+
+- status：Program `active`；本地 writer epoch 5 `complete`。
+- 起始 ref：`1a4c016b0`。
+- objective：在既有 Research/Study 精确交集耗尽后，验证“受控恢复小型上游源码 + 可跟踪 provenance”能继续高质量迁移。
+- scope：Zod、Valibot、ArkType 三页、3 个 ignored worktree、共享源码审查记录、receipt/派生索引；未运行上游依赖、测试、bundle 或 TypeScript benchmark。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：现有 160 个 Research worktree 的 8 个 canonical Study 交集已全部达标；三篇 schema 页仍含移动版本、固定性能数字和过时 canonical。
+- external delta：GitHub 只读查询 + 本地 blob-filtered clone；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. 用 GitHub canonical identity 筛选并恢复 `colinhacks/zod`、`open-circle/valibot`、`arktypeio/arktype`。
+  2. `zod` 绑定 `912f0f51...` / `4.4.3`，补 core runner、异步边界、对象 key 策略与 classic/mini/core 分层。
+  3. `valibot` 绑定 `32247b36...` / `1.4.2`，修正 canonical 组织、`typed`/`success`、pipe abort、object 策略与官方 i18n/JSON Schema。
+  4. `arktype` 绑定 `03b1f015...` / `2.2.3`，从“字符串 DSL”扩展为 definition parser → scope/node → traversal/morph → output/ArkErrors。
+  5. 新增共享 `docs/schema-validation-source-review-20260717.md`，三份 receipt 绑定其 digest；项目审计从 `10/961` 前进到 `13/961`。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=1a4c016b0 npm run verify:ci`：380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=13`、`needs-evidence=948`。
+  - `audit:content-contract`：projects `v2=13`、`legacy-unverified=948`、blocking 0。
+- budget：3 个约 69MB 本地 worktree + 3 页静态源码迁移；单 writer。
+- blocker：剩余项目需要继续分批恢复固定源码；不得一次 clone 大量仓库。
+- stop conditions：仓库规模不可控、canonical 重定向不明确、需要猜版本/性能、或一批无法独立验收时停止。
+- 下一次 wake 条件：选择 2-3 个小型同主题仓库，先用 GitHub metadata 评估磁盘与活跃度。
+- 下一条命令：从 `data/project-standard-audit.json` 选择正文结构强、仓库体量小且可形成横向比较的主题。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 4
 
 - status：Program `active`；本地 writer epoch 4 `complete`。
