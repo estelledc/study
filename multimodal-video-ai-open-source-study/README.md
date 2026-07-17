@@ -1,6 +1,6 @@
 # 多模态视频 AI 开源生态研究
 
-> 研究快照：2026-07-16
+> 研究快照：2026-07-17
 >
 > 对标项目：`quanzhiping-deploy`（本地镜像为 `explorations/own/quanzhiping-ci-local`）
 >
@@ -45,6 +45,28 @@
 | 4 | [横向比较与全智评借鉴](04-comparison-and-quanzhiping.md) | 各方案如何取舍，全智评应该吸收什么、避免什么 |
 | 5 | [学习路线与关键问题](05-learning-questions.md) | 后续提问、精读和实验从哪里开始 |
 | 6 | [来源、fork 与快照](06-sources-and-snapshots.md) | 原仓、个人 fork、本地路径、commit、许可证和验证记录 |
+| 7 | [2026-07-17 全量刷新](07-2026-07-17-refresh.md) | 9 仓上游差异、共同主链、真实测试与证据边界 |
+| 8 | [零基础视频证据实验](08-beginner-video-evidence-lab.md) | 亲手生成 MP4，完成全局扫描、聚焦回看、rubric 与 provenance gate |
+| 9 | [9 个项目上手卡](09-beginner-project-onboarding-cards.md) | 每个项目的类比、主链、源码锚点、取舍和第一项任务 |
+
+## 零基础 30 分钟路线
+
+1. 用 5 分钟读本页“先说结论”和“当前最关键的五个认识”。
+2. 用 10 分钟读[视频证据实验](08-beginner-video-evidence-lab.md)第 1-10 节，
+   先分清“检索到线索”和“回到原视频确认”。
+3. 用 10 分钟真实运行实验和 9 个测试：
+
+   ```bash
+   cd explorations/research/multimodal-video-ai-open-source-study/labs
+   PYTHONDONTWRITEBYTECODE=1 \
+     python3 video_evidence_lab.py --output /tmp/video-evidence-lab
+   PYTHONDONTWRITEBYTECODE=1 \
+     python3 -m unittest -v test_video_evidence_lab.py
+   ```
+
+4. 用 5 分钟回答实验页第 15 节前 3 题。
+5. 再从[项目上手卡](09-beginner-project-onboarding-cards.md)按问题选择一个仓库，
+   不要按 9 个项目的目录顺序扫代码。
 
 ## 领域总图
 
@@ -84,6 +106,14 @@ flowchart LR
 - **工程解释**：根据控制流解释设计取舍，不冒充维护者原话。
 - **未验证边界**：没有安装全部重型模型、连接云服务或逐仓运行端到端流程。
 
+本轮新增证据：
+
+- 2026-07-17 重新核对 9 个 canonical upstream，默认分支 HEAD 均与 pinned
+  commit 相同。
+- 本地真实生成、探测和解码一个 12 秒 MP4，并通过 9 个离线测试验证时间戳聚焦、
+  步骤顺序、跨模态冲突和证据 hash。
+- 合成颜色只提供确定性 ground truth；它不证明 VLM、ASR 或真实实操评分效果。
+
 README 中的功能宣传不自动视为实现事实。例如：
 
 - `VideoAgent` 宣称多模态理解，但当前独立 `VideoContentQA` 主链主要依赖 Whisper 转录；视觉 VideoRAG 更集中在编辑素材检索。
@@ -92,7 +122,8 @@ README 中的功能宣传不自动视为实现事实。例如：
 
 ## 研究状态
 
-- 已完成：生态搜索、9 个项目 fork、9 份本地 clone、固定 commit、静态源码分析、横向比较和学习问题。
+- 已完成：生态搜索、9 个项目 fork、9 份本地 clone、固定 commit、静态源码分析、
+  横向比较、项目上手卡和真实视频证据实验。
 - 当前状态：`reference`。
 - 不继续无边界扩充项目清单，也不自动下载模型或调用付费 API。
 - 重新激活条件：需要验证某项机制、准备把设计落入全智评，或针对某项目继续精读。
