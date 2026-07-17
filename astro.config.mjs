@@ -74,6 +74,7 @@ export default defineConfig({
       locales: {
         root: { label: '简体中文', lang: 'zh-CN' },
       },
+      disable404Route: true,
       head: [
         { tag: 'meta', attrs: { name: 'theme-color', content: '#faf6f0' } },
         {
