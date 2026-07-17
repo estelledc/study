@@ -7,7 +7,7 @@
 | 内容 | 类型 | 边界 |
 |---|---|---|
 | [repos](repos/README.md) | 第三方源码 clone | 上游本体不进父仓，只保留项目卡和恢复信息 |
-| [multimodal-papers](multimodal-papers/) | 论文原文与中文材料包 | 被真实任务使用并消化后才回流长期知识 |
+| [multimodal-papers 归档](../../archive/multimodal-papers-2026-06/ARCHIVE-NOTE.md) | 历史论文原文与中文材料包 | 已归档；日常从 `sources/articles/multimodal-papers/` 来源卡进入 |
 | [Agent Mail CLI](agent-mail-cli.md) | 外部工具观察 | 只保留脱敏后的使用结论 |
 | [ChatGPT GitHub devspace / MCP 选择](chatgpt-github-devspace-mcp-selection.md) | 外部产品研究 | 结论可能随产品变化，使用前重新核对 |
 | [中国独立开发者列表源码研究](chinese-independent-developer-study/README.md) | 社区内容仓库与自动化治理 | 固定快照概览；后续按提交处理链路精读 |
