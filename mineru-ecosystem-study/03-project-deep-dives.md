@@ -121,7 +121,7 @@ YAML config
 - `src/core/pipeline.py`
 - `src/core/pipeline_eval.py`
 - `configs/end2end.yaml`
-- `src/dataset/omnidocbench.py`
+- `src/dataset/end2end_dataset.py`
 
 **思考点：** 如果预测把一个段落拆成三个 block，文本正确但匹配失败，指标应该如何计算？
 
