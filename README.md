@@ -6,6 +6,8 @@
 
 | 内容 | 类型 | 边界 |
 |---|---|---|
+| [第三方源码深度研究重做计划](research-refresh-program/README.md) | 14 类 / 201 个唯一上游的研究合同 | 14/14 已验收；零基础从学习地图进入，机器审计冻结成员与证据口径 |
+| [14 类零基础学习地图](research-refresh-program/beginner-learning-map.md) | 按问题选择路线、实验和掌握标准 | 不顺序扫 147 篇专题；每次只完成一个 30 分钟入口和迁移题 |
 | [repos](repos/README.md) | 第三方源码 clone | 上游本体不进父仓，只保留项目卡和恢复信息 |
 | [multimodal-papers 归档](../../archive/multimodal-papers-2026-06/ARCHIVE-NOTE.md) | 历史论文原文与中文材料包 | 已归档；日常从 `sources/articles/multimodal-papers/` 来源卡进入 |
 | [Agent Mail CLI](agent-mail-cli.md) | 外部工具观察 | 只保留脱敏后的使用结论 |
