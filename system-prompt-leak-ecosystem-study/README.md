@@ -1,6 +1,6 @@
 # 系统提示词泄露生态研究材料包
 
-**研究日期：** 2026-07-16
+**研究日期：** 2026-07-17
 
 **锚点项目：** `asgeirtj/system_prompts_leaks`
 
@@ -34,6 +34,33 @@
 | 对工程安全有什么现实启示 | [安全与防御](07-security-and-defense.md) |
 | 有哪些基础问题和后续思考点 | [FAQ 与思考题](08-faq-and-thinking.md) |
 | 一手来源在哪里、以后何时刷新 | [来源与快照维护](09-sources-and-maintenance.md) |
+| 17 仓当前上游与防御证据有什么变化 | [2026-07-17 全量刷新](10-2026-07-17-refresh.md) |
+| 如何亲手验证来源、canary 与模型外权限 | [零基础防御实验](11-beginner-prompt-defense-lab.md) |
+| 每个项目应从哪里开始读 | [17 个项目上手卡](12-beginner-project-onboarding-cards.md) |
+
+## 零基础 30 分钟路线
+
+1. 用 5 分钟读[最终接班页](00-final-reader-map.md)前 10 条结论。
+2. 用 10 分钟读[零基础防御实验](11-beginner-prompt-defense-lab.md)第 1-13 节，
+   分清 prompt、secret、canary 和 authorization。
+3. 用 5 分钟运行离线实验：
+
+   ```bash
+   cd explorations/research/system-prompt-leak-ecosystem-study/labs
+   PYTHONDONTWRITEBYTECODE=1 \
+     python3 prompt_defense_lab.py \
+     --output /tmp/prompt-defense-lab/report.json
+   ```
+
+4. 用 5 分钟运行 16 项测试：
+
+   ```bash
+   PYTHONDONTWRITEBYTECODE=1 \
+     python3 -m unittest -v test_prompt_defense_lab.py
+   ```
+
+5. 用 5 分钟回答实验页第 19 节前 3 题，再从
+   [项目上手卡](12-beginner-project-onboarding-cards.md)选择一个项目。
 
 ## 纳入标准
 
@@ -106,7 +133,8 @@
 - 17/17 本地研究工作树 clean。
 - 17/17 `origin` 指个人 fork，`upstream` 指原仓。
 - 17/17 使用 `--depth=1`，需要追历史时再单仓 `fetch --unshallow`。
-- 锚点仓个人 fork 已同步到上游 `155d2845`；正文仍固定在已完成审计的 `9a0a06a3`。
+- 锚点仓正文仍固定在已完成审计的 `9a0a06a3`；个人 fork 为 `155d2845`，
+  2026-07-17 upstream 为 `e280af55`。
 
 ## 证据规则
 
@@ -132,7 +160,10 @@
 - fork 关系、remote、SHA、浅克隆和工作树状态核对。
 - 关键数据量与重复内容抽样。
 - JustAsk 最小只读 CLI 探针，确认公开快照缺少运行所需 `data/`。
-- 收尾时审计锚点仓 `9a0a06a3..155d2845` 增量，确认只涉及 OpenCode 样本更新。
+- 审计锚点仓 `9a0a06a3..e280af55` 的 5 commits / 4 files，确认只涉及
+  OpenCode、Claude Code skill、README 和配置样本更新。
+- 运行 16 个纯标准库离线测试，覆盖来源、hash、secret quarantine、独立来源、
+  canary 多出口和模型外工具授权。
 
 未执行：
 
