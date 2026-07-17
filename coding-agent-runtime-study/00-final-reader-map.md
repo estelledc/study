@@ -1,6 +1,6 @@
 # Coding Agent Runtime 最终接班页
 
-**状态：** 三轮静态源码研究已完成，进入按问题阅读阶段
+**状态：** 三轮静态源码研究已完成；2026-07-17 已补快照增量审计与 E2 教学实验
 
 **范围：** Codex、Gemini CLI、Grok Build、OpenCode、Pi
 
@@ -71,10 +71,11 @@
 ### 必读：约 45 分钟
 
 1. 本页。
-2. [领域地图](01-field-map.md)。
-3. [核心循环](02-core-loop-deep-dive.md)。
-4. [可靠性状态机](09-round2-reliability-failure-state-machine.md)。
-5. [能力地图](11-round3-extension-subagent-capability-map.md)。
+2. [零基础 Agent loop 实验](13-beginner-runtime-lab.md)。
+3. [领域地图](01-field-map.md)。
+4. [核心循环](02-core-loop-deep-dive.md)。
+5. [可靠性状态机](09-round2-reliability-failure-state-machine.md)。
+6. [能力地图](11-round3-extension-subagent-capability-map.md)。
 
 目标：能解释正常路径、失败路径和能力边界，不要求记文件名。
 
@@ -133,6 +134,8 @@ Input admission
 - 固定提交中的源码结构和控制流；
 - 五个项目在正常、失败、扩展路径上的实现差异；
 - 可从源码归纳出的工程模式与风险。
+- 2026-07-17 的远端增量是否命中核心研究路径；
+- 无模型教学 loop 的正常 continuation、重复 call ID、未知工具和 turn budget 四个 E2 测试通过。
 
 本材料不能证明：
 
@@ -144,6 +147,7 @@ Input admission
 
 - Gemini CLI 与 OpenCode 都有新旧运行路径并存。
 - Grok Build 是内部 monorepo 的公开同步快照。
+- Codex 当前 main 的 full-history fork 与 child model/reasoning 规则已不同于固定提交，Round 3 细节必须绑定版本。
 - 本轮没有运行真实取消竞态、崩溃注入和远程子 Agent 验收。
 
 ## 停止条件

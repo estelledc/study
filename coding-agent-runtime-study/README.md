@@ -1,6 +1,6 @@
 # Coding Agent Runtime 源码研究材料包
 
-**日期：** 2026-07-16
+**日期：** 2026-07-16；重新验收：2026-07-17
 
 **范围：** Codex、Gemini CLI、Grok Build、OpenCode、Pi
 
@@ -32,6 +32,19 @@
 - **补读**：遇到具体设计、故障或项目问题时再查。
 - **暂不读**：没有明确问题时，不逐行展开五个大型主循环，也不继续增加项目。
 
+第一次学习建议随后完成[零基础 Agent loop 实验](13-beginner-runtime-lab.md)，先用无模型、无凭证的确定性脚本看见完整循环，再进入五个真实项目。
+
+## 2026-07-17 重新验收
+
+- Gemini CLI 固定提交仍是 upstream main。
+- Codex 前进 26 个提交；核心 turn 仍在，Agent role、spawn model/reasoning 和恢复语义有变化。
+- OpenCode 前进 16 个提交；变化主要位于产品与 provider，现有 session/tool 主链未命中。
+- Pi 前进 27 个提交；`agent-loop.ts` 未变，provider/OAuth 和未保存 session 的 clone guard 有变化。
+- Grok Build 当前 main 与初始公开快照无共同祖先；树和关键 blob 比较确认核心 turn/actor 文件不变，组合入口已变化。
+- 教学 loop 在系统 Python 3.9 上运行，4 个可靠性测试通过。
+
+逐项目证据和旧结论修正见[实验第 5 节](13-beginner-runtime-lab.md#5-2026-07-17-快照复核)。
+
 ## 完整材料目录
 
 1. [最终接班页](00-final-reader-map.md)：10 分钟总览、三档路线、问题路由与停止条件。
@@ -47,6 +60,7 @@
 11. [Round 2：可靠性源码追踪卡](10-round2-source-trace-cards.md)：按单一故障变量复查五个项目。
 12. [Round 3：扩展、子 Agent 与能力边界](11-round3-extension-subagent-capability-map.md)：理解能力如何进入并被裁剪。
 13. [Round 3：参考架构与进阶思考](12-round3-reference-architecture-and-thinking.md)：把三轮结论转成设计与评审方法。
+14. [零基础 Agent loop 实验](13-beginner-runtime-lab.md)：运行最小循环、四个可靠性测试和五仓快照增量审计。
 
 旧章节末尾的精读列表是阶段性源码定位记录，不再作为默认阅读顺序。当前路线统一以最终接班页为准。
 
