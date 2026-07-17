@@ -18,6 +18,9 @@ async function listFiles(rootDir) {
   const files = [];
   async function walk(directory) {
     for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
+      if (entry.isDirectory() && ['__pycache__', '.ruff_cache'].includes(entry.name)) {
+        continue;
+      }
       const filePath = path.join(directory, entry.name);
       if (entry.isDirectory()) await walk(filePath);
       else if (entry.isFile()) files.push(filePath);
