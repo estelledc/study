@@ -293,19 +293,19 @@ OK
 
 ## 13. 常见误区
 
-1. **视觉 token 少 4 倍，TTFT 就快 4 倍。**  
+1. **视觉 token 少 4 倍，TTFT 就快 4 倍。**
    还有预处理、视觉 kernel、projector、文本、decode 和 runtime overhead。
 
-2. **Projector 压缩代表视觉塔也省了。**  
+2. **Projector 压缩代表视觉塔也省了。**
    压缩发生前的视觉计算已经支付。
 
-3. **参数更少一定内存更低。**  
+3. **参数更少一定内存更低。**
    还要看 KV cache、视觉特征、量化和中间 buffer。
 
-4. **Core ML 一定跑 ANE。**  
+4. **Core ML 一定跑 ANE。**
    调度取决于算子、精度、compute units 和设备。
 
-5. **单图冷启动 benchmark 可以代表连续相机。**  
+5. **单图冷启动 benchmark 可以代表连续相机。**
    持续场景还有温升、降频、队列和 UI 更新。
 
 ## 14. 应用题与检查点

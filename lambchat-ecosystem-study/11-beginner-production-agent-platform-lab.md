@@ -285,20 +285,20 @@ restore authoritative identity
 
 ## 13. 初学者常见误区
 
-1. **有 Redis stream 就是 durable。**  
+1. **有 Redis stream 就是 durable。**
    正确理解：还要看 TTL、持久化配置、consumer/replay cursor 和终态合同。
 
-2. **写 MongoDB 和 Redis 两份就是事务。**  
+2. **写 MongoDB 和 Redis 两份就是事务。**
    正确理解：需要权威源、失败可见性、outbox/补偿和重放策略。
 
-3. **JWT 中有 user ID 就完成多租户。**  
+3. **JWT 中有 user ID 就完成多租户。**
    正确理解：tenant 必须贯穿所有存储、缓存、凭证、执行与审计边界。
 
-4. **有 sandbox 就能运行不可信代码。**  
+4. **有 sandbox 就能运行不可信代码。**
    正确理解：还要检查 identity、network、filesystem、runtime、resource、cleanup 和
    container-engine exposure。
 
-5. **checkpoint 成功，所以 tool 只执行一次。**  
+5. **checkpoint 成功，所以 tool 只执行一次。**
    正确理解：外部副作用需要独立 operation ID 和 receipt。
 
 ## 14. 应用题与检查点

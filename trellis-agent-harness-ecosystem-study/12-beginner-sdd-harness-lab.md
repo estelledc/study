@@ -217,16 +217,16 @@ Session pointer 没冲突，不代表代码修改没冲突。需要额外的 wor
 
 ## 10. 初学者常见误区
 
-1. **工件越多，Harness 越成熟。**  
+1. **工件越多，Harness 越成熟。**
    正确理解：工件必须减少恢复时间或提升验收质量，否则只是维护成本。
 
-2. **task list 就是状态机。**  
+2. **task list 就是状态机。**
    正确理解：task list 是视图；真实状态还包括工件、验证和外部结果。
 
-3. **fresh subagent 没有 transcript，所以没有上下文。**  
+3. **fresh subagent 没有 transcript，所以没有上下文。**
    正确理解：它仍可收到显式任务、session config 和策展文件。
 
-4. **多 Agent 自然产生独立审查。**  
+4. **多 Agent 自然产生独立审查。**
    正确理解：相同 spec、模型和证据会产生相关错误。
 
 ## 11. 应用题与检查点

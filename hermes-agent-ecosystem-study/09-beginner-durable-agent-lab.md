@@ -252,19 +252,19 @@ job identity
 
 ## 12. 初学者常见误区
 
-1. **进程一直运行就是长期 Agent。**  
+1. **进程一直运行就是长期 Agent。**
    正确理解：长期性来自可恢复状态，不是 uptime。
 
-2. **有向量数据库就是 Memory。**  
+2. **有向量数据库就是 Memory。**
    正确理解：还需要 identity、source、lifecycle、admission 和 deletion。
 
-3. **Agent 自动改 SKILL.md 就是 self-improvement。**  
+3. **Agent 自动改 SKILL.md 就是 self-improvement。**
    正确理解：没有独立 eval 和 rollback，只能证明自动修改。
 
-4. **Cron 到点触发就表示任务完成。**  
+4. **Cron 到点触发就表示任务完成。**
    正确理解：trigger、run、side effect 和 delivery 是不同终态。
 
-5. **Docker/WASM 标签就足以证明安全。**  
+5. **Docker/WASM 标签就足以证明安全。**
    正确理解：还要检查 mount、network、credential、capability 和 host boundary。
 
 ## 13. 应用题与检查点

@@ -208,16 +208,16 @@ Graph stream、部署 SSE、SDK parser、React state 是四层。重连要依赖
 
 ## 11. 初学者常见误区
 
-1. **Edge 决定代码执行顺序，所以并行节点能看到彼此写入。**  
+1. **Edge 决定代码执行顺序，所以并行节点能看到彼此写入。**
    正确理解：同一 superstep 读取旧 state，更新在边界合并。
 
-2. **加 checkpointer 就获得 exactly-once。**  
+2. **加 checkpointer 就获得 exactly-once。**
    正确理解：它保存 graph state，不接管外部副作用事务。
 
-3. **Deep Agents 是 LangGraph 的竞争框架。**  
+3. **Deep Agents 是 LangGraph 的竞争框架。**
    正确理解：它是建立在 LangChain/LangGraph 原语上的更高层 Harness。
 
-4. **UI 收不到事件说明 graph 坏了。**  
+4. **UI 收不到事件说明 graph 坏了。**
    正确理解：还可能是部署、SSE、SDK 或前端适配问题。
 
 ## 12. 应用题与检查点
