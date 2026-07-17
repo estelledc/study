@@ -89,7 +89,7 @@ for file in files:
     for line in file.read_text(encoding="utf-8").splitlines():
         match = re.match(
             r"^\* :(white_check_mark|clock8|x): "
-            r"\[[^]]+\]\((https?://[^)]+)\)",
+            r"\x5b[^\x5d]+\x5d\((https?://[^)]+)\)",
             line,
         )
         if match:
