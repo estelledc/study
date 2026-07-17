@@ -1,6 +1,6 @@
 # Garden Skills 与 Agent Skills 工程生态研究
 
-> 研究快照：2026-07-16
+> 研究快照：2026-07-16；重新验收：2026-07-17
 >
 > 起点项目：[ConardLi/garden-skills](https://github.com/ConardLi/garden-skills)
 >
@@ -32,6 +32,17 @@
 ```
 
 当前领域最重要的变化，不是 Skill 数量增长，而是从“写一份提示词”转向“管理一种可安装、可审计、可评测、可演进的自然语言软件资产”。
+
+## 2026-07-17 重新验收
+
+- 20/20 本地工作树 clean。
+- 15 个 upstream 与 pinned commit 一致。
+- 5 个漂移仓已做文件级审计：Anthropic Skills、Vercel Skills CLI、Claude Plugins Official、Compound Engineering、Skill Seekers。
+- 生态分层不变；Office Skill 路径、Node 最低版本、市场清单、Compound Skill 数和 Skill Seekers source 能力属于动态细节。
+- Agent Skills reference library 40/40 测试通过。
+- Garden `kb-retriever` 通过 reference validator，5 个 Garden Skill 的 manifest/结构检查全部通过。
+
+完整差异见[全量快照复核](07-2026-07-17-refresh.md)，初学者从[生命周期实验](08-beginner-skill-lifecycle-lab.md)进入。
 
 ## 核心判断
 
@@ -103,6 +114,8 @@
 | 4 | [横向对比与可复用模式](04-cross-project-comparison.md) | 不同方案为什么不同，做自己的 Skill 系统时怎么选 |
 | 5 | [关键思考点与基础问答](05-learning-questions-and-faq.md) | 后续学习问题，以及大部分基础问题的速查答案 |
 | 6 | [fork、clone 与源码快照](06-repository-inventory.md) | 个人 fork、本地路径、commit、许可证和恢复方式 |
+| 7 | [2026-07-17 全量快照复核](07-2026-07-17-refresh.md) | 哪些项目漂移，旧结论哪些仍有效 |
+| 8 | [零基础 Skill 生命周期实验](08-beginner-skill-lifecycle-lab.md) | 运行 validator，区分 Parse、Route、Act、Outcome |
 
 ## 一张生态图
 
@@ -125,9 +138,9 @@ flowchart LR
 ## 证据边界
 
 - 架构判断以本地 pinned commit 的源码、配置、测试和 README 为依据。
-- star、fork、push 时间只代表 2026-07-16 的 GitHub 快照，不代表质量排名。
+- star、fork、push 时间只代表 2026-07-16 的 GitHub 快照，不代表质量排名；2026-07-17 只刷新 commit 和机制影响。
 - 项目自报的性能、用户规模、Skill 数量和 benchmark 提升均标为“项目自述”，没有在本机重跑时不视为独立验证。
-- 本轮运行了仓库结构和 Git 状态验证；没有安装并执行 20 个项目的全部依赖、云 API 或端到端流程。
+- 本轮运行了仓库结构、Git 状态、reference validator 和 Garden 结构验证；没有安装并执行 20 个项目的全部依赖、云 API 或端到端流程。
 - Awesome List 是发现层证据，不等同于安全审计或技术背书。
 - fork 只表示个人远端副本，许可证仍以上游为准；许可证未清晰识别的项目只用于研究。
 
