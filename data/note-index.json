@@ -35928,7 +35928,7 @@
       "id": "projects::arktype",
       "area": "projects",
       "slug": "arktype",
-      "title": "arktype — schema 长得像 TypeScript 类型本身",
+      "title": "ArkType — schema 长得像 TypeScript 类型本身",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -35941,13 +35941,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/arktype/",
       "atlas": {
@@ -62435,13 +62435,13 @@
         "raw_category": "前端工程"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/valibot/",
       "atlas": {
@@ -64773,13 +64773,13 @@
         "raw_category": "验证 / 类型"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/zod/",
       "atlas": {

@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 10,
-      "needs-evidence": 951
+      "benchmark-aligned": 13,
+      "needs-evidence": 948
     }
   },
   "projects": [
@@ -1093,27 +1093,23 @@
     },
     {
       "slug": "arktype",
-      "title": "arktype — schema 长得像 TypeScript 类型本身",
+      "title": "ArkType — schema 长得像 TypeScript 类型本身",
       "source": "https://github.com/arktypeio/arktype",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "arrow-rs",
@@ -21145,26 +21141,22 @@
     {
       "slug": "valibot",
       "title": "Valibot — 拆成乐高的 TypeScript 校验库",
-      "source": "https://github.com/fabian-hiller/valibot",
-      "status": "needs-evidence",
+      "source": "https://github.com/open-circle/valibot",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "valkey",
@@ -22917,25 +22909,21 @@
       "slug": "zod",
       "title": "Zod — TypeScript-first schema 验证",
       "source": "https://github.com/colinhacks/zod",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "zookeeper",
