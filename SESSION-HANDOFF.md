@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 3
+
+- status：Program `active`；本地 writer epoch 3 `complete`。
+- 起始 ref：`d1f44f8fc`。
+- objective：验证 Research 标准能同时约束角色化编排框架、conversation-first 平台和文档 ETL 库。
+- scope：`crewai`、`librechat`、`unstructured` 三页及 receipt/派生索引；strict build 的 `.astro` 缓存隔离；未运行上游模型、Compose、Redis、OCR 或 checkpoint 恢复。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：三页都有固定本地源码和 Research 深析，但旧正文把早期印象、经验数字或 self-hosting 营销语写成当前事实。
+- external delta：`0`；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `crewai` 绑定 `crewAIInc/crewAI@985cf520...`，补齐 Crew/Flow、checkpoint/fork 与外部副作用边界。
+  2. `librechat` 绑定 `danny-avila/LibreChat@20cd00c...` / `v0.8.7`，澄清 conversation-first、可恢复 stream、HITL 与自托管数据边界，并披露许可 metadata 冲突。
+  3. `unstructured` 绑定 `Unstructured-IO/unstructured@d309caf8...` / `0.25.1`，修正弃用的表格参数、固定吞吐数字与 metadata 保证。
+  4. 三页新增 generation 1 static receipt；项目审计从 `6/961` 前进到 `9/961`。
+  5. `build:strict` 现在自行清除 `.astro` 派生缓存；真实复现中预置旧缓存后无 duplicate warning 完成构建。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=d1f44f8fc npm run verify:ci`：380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=9`、`needs-evidence=952`、snapshot current。
+  - `audit:content-contract`：projects `v2=9`、`legacy-unverified=952`、blocking 0。
+- budget：3 个固定源码项目 + 1 个构建可复现性修复；单 writer。
+- blocker：精确同名交集中只剩 PaddleOCR；其余页面需要建立 slug/仓库映射或恢复新的固定源码。
+- stop conditions：需要猜测 repo mapping、批量伪造 revision、提升静态阅读为运行证据或放宽门禁时停止。
+- 下一次 wake 条件：单独迁移 PaddleOCR，并与 MinerU Research 的模型/代码/部署许可边界对齐。
+- 下一条命令：核对 `research-worktrees/paddleocr` 对应固定提交与 `mineru-ecosystem-study` 深析。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 2
 
 - status：Program `active`；本地 writer epoch 2 `complete`。
