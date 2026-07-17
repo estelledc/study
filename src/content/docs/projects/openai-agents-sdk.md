@@ -166,6 +166,18 @@ with trace('Customer support flow'):
 3. **Python 优先 = 不发明 DSL**：编排用普通 await / if / for，意味着学习曲线只是"学这个库"而不是"再学一门小语言"
 4. **生产化的关键是可观测性**：自动 tracing 把 agent 系统从"玄学"拉回"可调试软件"
 
+## 应用型自测
+
+1. 退款请求触发 input guardrail 时，主 agent 已经调用了外部退款工具。为什么 tripwire 不能自动撤销这次退款？
+2. “把对话交给退款专员”和“调用退款计算函数”在模型眼里都像工具。Runner 为什么必须区分它们？
+3. 一个组织启用了 ZDR，又要求完整排障记录。只打开默认 tracing 能满足要求吗？
+
+检查点：
+
+1. 并行 guardrail 只能中止后续运行，不能撤销已经发生的外部副作用；高风险动作应先阻塞校验或设计补偿。
+2. handoff 会改变当前 agent 和后续上下文所有权；普通 function tool 只返回结果，不切换主执行者。
+3. 不能。ZDR 条件下默认 tracing 不可用，需要按合规边界接入自有 trace processor 或其他外部审计方案。
+
 ## 延伸阅读
 
 - 官方文档：[openai.github.io/openai-agents-python](https://openai.github.io/openai-agents-python/)

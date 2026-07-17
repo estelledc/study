@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "2940071d31ef01bcfab5b9c69e271abe9a4624156376724b27cc1c0ba99d6ce1",
+  "generation": 3,
+  "predecessor_digest_sha256": "0dac660f28bbd4e8a751458eaa357d3c735f8c4b0a3da57113129ca7e34b7755",
   "note": {
     "area": "projects",
     "slug": "claude-agent-sdk",
-    "digest_sha256": "2f6daa5bcf2168f5c65eac7eeb528905e58a2a6d3ccf51a02f043f1543e765c7"
+    "digest_sha256": "46d335f4f96dc3d5c52b300661f454bf89afef63b591b799ef8190fc5fdee5cc"
   },
   "source_revision": "79b6350e13cf24af94a8d2e696a0883fd8cc55fe",
   "research_input_sha256": "4a903374259533edf7a177f2e9f177a7ec314217f8066c3d1d68eae89b0c6ee1",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "study-static-review-20260713",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 87,
       "warnings": [
-        "Explains docs/package conflict without claiming user mastery."
+        "Application checks distinguish tool visibility, approval, and child capability."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -25,11 +25,11 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "study-static-review-20260713",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 90,
       "warnings": [
-        "Static release/package/type review only; verification_status remains UNVERIFIED."
+        "Self-test addition is static review only; verification_status remains UNVERIFIED."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -38,7 +38,7 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "study-static-review-20260713",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 85,
       "warnings": [
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-13T06:05:01.261Z"
+  "created_at": "2026-07-17T11:22:32.000Z"
 }
