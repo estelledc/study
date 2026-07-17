@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "langchain",
+    "digest_sha256": "905b70ea9e15ca01e25313147bab1fd13af91ebd02000947461f548182f5433d"
+  },
+  "source_revision": "cf2115a6cfaee73a747846be9316f0f8f93f5ba6",
+  "research_input_sha256": "6c2f1b537a9d4d9dfda03e19a11897909cd55504ab1e537a14726af6b37b2d4f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Distinguishes LangChain, LangGraph, Deep Agents, and LangSmith responsibilities."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "The create_agent API and tests were inspected at 1.3.14; no provider-backed example was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "Historical marketing and star-count claims were removed in favor of versioned source facts."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T12:22:44.000Z"
+}

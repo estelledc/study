@@ -1,9 +1,21 @@
 ---
 title: OpenCode — 终端里的开源 AI 编程助手
-来源: 'https://github.com/sst/opencode'
+来源: 'https://github.com/anomalyco/opencode'
 日期: 2026-07-07
 分类: editors
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/anomalyco/opencode
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-17'
+  immutable_revision: 4a760b5743496942fd821eeafaa7d648a5630973
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
 ---
 
 ## 是什么
@@ -41,9 +53,13 @@ opencode
 
 2. **模式分工**：类比装修前先画图，再拿锤子施工。Plan 模式默认偏只读，适合分析和设计；Build 模式有完整工具权限，适合按计划改文件和跑验证。
 
-3. **提供商抽象**：类比同一个充电器可以接不同插头。OpenCode 通过 provider 配置接入很多 LLM 服务，也能配置本地模型、代理地址、模型白名单和黑名单。
+3. **提供商抽象**：类比同一个充电器可以接不同插头。OpenCode 把 provider 和 model 解析收口到运行时，再为不同模型选择 system prompt 和工具 schema。
 
-这三个点合在一起，就是它和普通聊天机器人的差别：它不只回答问题，还把"回答后怎么落地"纳入工具系统。
+4. **工具状态要结算**：模型请求工具不等于工具已经成功。成熟路径的 `SessionProcessor` 把调用维护为 `pending → running → completed / error`，并在中断时处理未结算调用。
+
+5. **双运行时迁移**：固定快照里，`packages/opencode` 是已服务产品的成熟 session 路径；`packages/core` 同时建设事件溯源式 V2。不能只读 V2 文件就宣称全产品已经完成迁移。
+
+这些点合在一起，就是它和普通聊天机器人的差别：它不只回答问题，还把权限、工具结算、会话历史和恢复边界纳入运行时。
 
 ## 实践案例
 
@@ -130,11 +146,10 @@ opencode acp --cwd /path/to/project
 
 ## 历史小故事（可跳过）
 
-- OpenCode 最早以"开源 AI coding agent"的形态被开发者认识，重点是把 agent 放回终端工作流。
-- README 里展示了命令行安装、桌面应用、内置 agent 和文档入口，说明它从单一 CLI 逐步长成多入口产品。
-- 项目当前在 GitHub 上有很高关注度，主页显示 stars 已经远超早期的十几 k 量级。
-- 文档结构也在扩展：Usage、Configure、Develop 分层明显，说明社区需求已经从"怎么启动"走向"怎么定制和集成"。
-- 它的社区入口包括 GitHub、Discord 和 X，反馈循环不只靠 issue。
+- 固定快照的 canonical 仓库是 `anomalyco/opencode`，默认分支为 `dev`；旧教程中的 `sst/opencode` 已不是本文来源。
+- 同一仓库已经包含 CLI、桌面端、Web、SDK、插件和协议层，因此“OpenCode 等于一个 TUI”已经不准确。
+- `packages/opencode` 与 `packages/core` 并存，说明当前演进采用渐进迁移，而不是一次性重写后切流。
+- 本文只验证固定提交中的源码结构和 README 命令，没有运行真实 provider、桌面端或远程恢复流程。
 
 ## 学到什么
 
@@ -142,10 +157,25 @@ opencode acp --cwd /path/to/project
 - Plan / Build 分工让初学者学会先想后改，减少"AI 写了一堆但我看不懂"的失控感。
 - Provider 抽象让模型选择变成配置问题，工具本身可以长期复用。
 - `AGENTS.md` 是项目记忆，不是装饰文件；写清楚规则，AI 才更像团队成员。
+- 工具调用必须进入唯一终态；中断、失败和成功不能只靠最后一段文本猜。
+- 评审迁移中的系统时，要分别描述成熟路径、目标路径和尚未闭合的 TODO。
+
+## 应用型自测
+
+1. 模型已经发出工具调用，但进程在结果写入 session 前崩溃。恢复后为什么不能直接把它标成成功？
+2. Plan agent 禁止编辑工具，但仍允许在指定计划目录写计划文件。这是否意味着 Plan 和 Build 权限完全相同？
+3. 你只读了 `packages/core` 的 V2 runner，能否据此判断当前所有 CLI 和桌面流程都使用 V2？
+
+检查点：
+
+1. 模型意图不是执行 receipt；结果未持久化时应进入可恢复或不确定状态，不能虚构成功。
+2. 不能。Plan 的写入是窄范围例外，Build 仍拥有更广的开发工具权限。
+3. 不能。固定快照同时保留成熟 `packages/opencode` 路径，必须追实际入口和 bridge 后再判断流量归属。
 
 ## 延伸阅读
 
 - 官方文档：[OpenCode Intro](https://opencode.ai/docs) —— 从安装、初始化到常见使用姿势的总入口
+- 固定源码：[anomalyco/opencode](https://github.com/anomalyco/opencode) —— 本文绑定提交 `4a760b5743496942fd821eeafaa7d648a5630973`
 - 官方配置：[Agents](https://opencode.ai/docs/agents) —— 理解 Build、Plan、General、Explore、Scout 的分工
 - 官方配置：[Providers](https://opencode.ai/docs/providers) —— 理解多模型和 provider 接入
 - [[aider]] —— 同样是面向 Git 仓库的 AI 编程助手，适合对比命令行工作流

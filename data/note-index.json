@@ -40592,13 +40592,13 @@
         "raw_category": "AI"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/dify/",
       "atlas": {
@@ -47674,13 +47674,13 @@
         "raw_category": "AI / Agent"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/langchain/",
       "atlas": {
@@ -53180,13 +53180,13 @@
         "raw_category": "editors"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/opencode/",
       "atlas": {

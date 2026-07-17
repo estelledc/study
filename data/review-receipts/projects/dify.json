@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "dify",
+    "digest_sha256": "4cdabfc99a695968979485692f0b85f9020e8d2abab6494fa81af221cde1ae2a"
+  },
+  "source_revision": "48e536ba391494052d24d238d92c79056fbec349",
+  "research_input_sha256": "ee212e5829200c8f57ecc6b43c8aadb99b5f1d7cab2870465aced97716055302",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "Separates self-hosting from model, plugin, tool, and marketplace data boundaries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Workflow and plugin paths were inspected; Docker Compose and model calls were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "Resource defaults and license claims are explicitly bounded to the pinned source."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T12:22:44.000Z"
+}
