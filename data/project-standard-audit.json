@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 13,
-      "needs-evidence": 948
+      "benchmark-aligned": 16,
+      "needs-evidence": 945
     }
   },
   "projects": [
@@ -1618,27 +1618,23 @@
     },
     {
       "slug": "axios",
-      "title": "axios — 浏览器和 Node 都能用的 HTTP 客户端",
+      "title": "Axios — 浏览器和 Node 都能用的 HTTP 客户端",
       "source": "https://github.com/axios/axios",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "axolotl",
@@ -7450,27 +7446,23 @@
     },
     {
       "slug": "got",
-      "title": "got — Node 端 HTTP 客户端的瑞士军刀",
+      "title": "Got — Node 端以 Stream 为底座的 HTTP 客户端",
       "source": "https://github.com/sindresorhus/got",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "gqlgen",
@@ -9828,27 +9820,23 @@
     },
     {
       "slug": "ky",
-      "title": "ky — 把浏览器自带的 fetch 包成顺手工具",
+      "title": "Ky — 把 Fetch 包成可治理的请求流程",
       "source": "https://github.com/sindresorhus/ky",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "kysely",

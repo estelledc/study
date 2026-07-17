@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "axios",
+    "digest_sha256": "1473c0230b5e83935c73c23e3c9cc871cc5c22a6b9064d434879d22aeef4c89b"
+  },
+  "source_revision": "a092bae50d1884782151b2fcea12974d6da6e376",
+  "research_input_sha256": "de1ffde36a7d5796c58163921114d5a15891d42acdb15d470506a31dc618f7f1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates config, interceptors, transforms, adapters, settle, and runtime validation with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Core dispatch, adapter, interceptor, defaults, and settle sources were inspected; upstream tests and requests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Version, adapter, timeout, and retry claims are bounded to axios 1.18.1; performance comparisons require benchmarks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T14:25:23.000Z"
+}

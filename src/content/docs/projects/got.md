@@ -1,72 +1,87 @@
 ---
-title: got — Node 端 HTTP 客户端的瑞士军刀
+title: Got — Node 端以 Stream 为底座的 HTTP 客户端
 来源: 'https://github.com/sindresorhus/got'
 日期: 2026-05-30
 分类: projects
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/sindresorhus/got
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-17'
+  immutable_revision: e3924aa1e53a6ca3eb93a43618ce532442a89b40
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
+  applicable_version: 15.1.0
 ---
 
 ## 是什么
 
-got 是一个**只跑在 Node 服务端**的 HTTP 客户端，由 Sindre Sorhus 在 2014 年起头，后来 Szymon Marczak 接过主力维护。日常类比：像一把厨房里的**多功能料理棒**——同一个手柄能装搅拌头 / 打蛋头 / 切碎头，下载、上传、翻页、重试都换头不换手。
+Got 是一个 Node HTTP 客户端。它的核心 `Request` 继承 `Duplex`，默认调用再由 Promise 包装层收集响应、解析 body 并暴露 `.json()` 等 shortcut。日常类比：底层是一条可双向输送的管道，Promise API 是把管道里的结果装箱后再交给调用方。
 
-它和今天 fetch 系（ky / wretch / ofetch）最大的差别就一句话：**got 不是 fetch 的薄壳，它是基于 `node:http` / `node:https` / `node:http2` 自己写一套完整状态机**。所以它能做 fetch wrapper 做不到的事：retry、流式上传下载、自动 next-link 翻页、unix socket、HTTP/2、RFC 7234 标准 cache、cookie jar——这些在 ky 里要么要插件、要么没有。
-
-代价：bundle 大（约 200 KB），不跑浏览器，不跑 Cloudflare Worker / Vercel Edge。25M weekly downloads，14k+ GitHub stars。
+这与 Ky 的 Fetch 包装路线不同：Got 自己管理 Node 请求、阶段 timeout、retry、hook、stream 与 Promise 适配。它也因此绑定 Node 运行时，不适用于浏览器或只提供 Web API 的 Edge 环境。
 
 ## 为什么重要
 
 不理解 got，下面这些事都没法解释：
 
-- 为什么"Node 端 HTTP client"和"浏览器 fetch"在 2024 年还分两条进化线，没有合流
-- 为什么 axios 在 Node 服务端项目逐渐被 got 取代——只在浏览器+Node 兼容场景还赢
-- 为什么 v12 切 ESM-only 引爆社区争议，很多老项目被迫锁在 v11.8.5 不敢动
-- 为什么爬虫 / 大文件下载 / API 网关这种"轴向特性多"的场景，用 got 比堆 axios 插件干净
+- 为什么 Promise 请求和 Stream 请求共享底层 `Request`，但 hook 与 retry 行为不完全相同
+- 为什么默认 retry 两次仍不代表所有 method、状态码和错误都会重试
+- 为什么 timeout 需要拆成 lookup、connect、response、read、request 等阶段
+- 为什么已消费的 stream body 不能像 JSON body 一样直接重放
 
 ## 核心要点
 
-got 的设计可以拆成 **三个支柱**：
+Got 的执行链可以拆成五步：
 
-1. **4 套并列 API 共享一套 options**：Promise（默认）/ Stream / Pagination / Instance（带预设的 wrapper），底层是同一个 Request 类、同一份 80+ 字段的 Options。类比：四个出口的水龙头都接在一根总水管上。
+1. **规范化 options**：`Options` 合并 instance defaults 和本次请求，形成 URL、headers、body、hook、timeout 与 retry policy。
 
-2. **Request 继承 Duplex stream**：所有请求底层都是双向流，可读（接响应）+ 可写（发 body）。Promise API 内部其实是把 stream buffer 完再解析。stream 是 first-class，promise 是 derived。
+2. **创建 Duplex Request**：`Request extends Duplex`，既能写入 request body，也能读取 response。`got.stream()` 直接暴露这条链路。
 
-3. **retry 不是包 promise 是重起 Request**：触发重试时把当前 Request destroy 掉，用相同 options 起一个新 Request——保留完整生命周期事件，不是"static 重试 N 次"那种黑盒。
+3. **Promise 包装可选**：默认 `got()` 用 `asPromise()` 监听底层 Request，收集并解析响应，再 resolve `Response` 或 body shortcut。
 
-## 实践案例
+4. **按规则决定 retry**：默认 limit 为 2，但还要同时满足 method、status code 或 error code、`Retry-After` 与 delay 规则。默认 method 包含 GET、PUT、HEAD、DELETE、OPTIONS、TRACE、QUERY，不含 POST。
 
-### 案例 1：集中 client + 自动续 token
+5. **每次 retry 创建新 Request**：Promise 包装层沿用更新后的 options；如果 body 仍是同一个已消费 stream，就以 `Cannot retry with consumed body stream` 失败。
 
-把所有调用从一个 `got.extend` 出来的实例派生，hook 里统一注 token / 打日志：
+## 实践示例
+
+### 案例 1：集中配置 timeout 与 retry
+
+把跨请求策略放进一个 `got.extend()` 实例：
 
 ```ts
-// lib/http.ts
 import got from "got";
 
 export const http = got.extend({
   prefixUrl: process.env.API_URL,
   timeout: {request: 5000, connect: 1000},
   retry: {
-    limit: 3,
-    methods: ["GET", "HEAD", "OPTIONS"],   // 显式收窄，不要默认重 PUT/DELETE
+    limit: 2,
+    methods: ["GET", "HEAD"],
     statusCodes: [408, 429, 500, 502, 503, 504],
   },
   hooks: {
-    beforeRequest: [async (opts) => {
-      opts.headers.authorization = `Bearer ${await getToken()}`;
+    beforeRequest: [(options, {retryCount}) => {
+      options.headers.authorization = `Bearer ${getToken()}`;
+      options.headers["x-retry-count"] = String(retryCount);
     }],
-    beforeRetry: [async (opts, error) => {
-      if (error?.response?.statusCode === 401) await refreshToken();
+    beforeRetry: [(error, retryCount) => {
+      console.warn({code: error.code, retryCount});
     }],
   },
 });
 ```
 
-`beforeRetry` 在 401 时刷 token 再重试，比 axios 用 interceptor 实现"401 自动续杯"直观一档。
+`request` timeout 是整个请求阶段预算，`connect` 只约束连接阶段；默认所有 timeout 都是关闭的。`beforeRetry` 当前签名是 `(error, retryCount)`，重试后的 `beforeRequest` 会再次运行。
 
 ### 案例 2：流式下大文件 + 进度
 
-下载 zip 时不要 `await response.body` 把 200 MB 塞进内存。用 stream + `pipeline`：
+下载大文件时用 Stream API 与 `pipeline()` 保留反压：
 
 ```ts
 import {pipeline} from "node:stream/promises";
@@ -78,83 +93,80 @@ stream.on("downloadProgress", ({percent, transferred, total}) => {
   console.log(`${(percent * 100).toFixed(1)}%  ${transferred}/${total}`);
 });
 await pipeline(stream, createWriteStream("/tmp/big.zip"));
-// pipeline 自动处理 error / cleanup / 反压
 ```
 
-注意错误得在 stream 上 `.on('error', ...)`，不是外面 try/catch——这是 Node stream 通用规则，但很多人踩。
+`await pipeline(...)` 会在任一 stream 失败时 reject，因此可以由外层 `try/catch` 处理并执行清理。若直接手写 `.pipe()`，则必须自己完整处理各端错误和生命周期。
 
-### 案例 3：paginate 一行抓完所有
+### 案例 3：Promise API 解析 JSON
 
-GitHub / Atlassian 这类用 RFC 5988 Link header 翻页的 API，got 默认就支持：
+默认 API 在 Duplex Request 之上返回可装饰 Promise：
 
 ```ts
 import got from "got";
 
-// Link header 自动翻
-for await (const repo of got.paginate<Repo>("https://api.github.com/users/sindresorhus/repos")) {
-  console.log(repo.name);
-}
-
-// API 用 cursor 时自定义
-for await (const item of got.paginate<Item>("items", {
-  pagination: {
-    transform: (res) => res.body.items,
-    paginate: ({response}) => response.body.nextCursor
-      ? {searchParams: {cursor: response.body.nextCursor}} : false,
-    countLimit: 10000, requestLimit: 100,    // 双重保险防死循环
-  },
-})) { /* ... */ }
+const user = await got
+  .get("https://api.example.com/users/42")
+  .json<User>();
 ```
 
-`countLimit` + `requestLimit` 一起防"API 给死循环 cursor"这种边角灾难。
+`.json<User>()` 会设置 JSON response type 并解析 body；`User` 只提供静态类型，不会验证外部响应。需要可信边界时仍要接 runtime schema。
 
 ## 踩过的坑
 
-1. **v12+ ESM-only 卡死老项目**：CommonJS 项目（`require`）只能锁 v11.8.5。Sindre 立场是"ESM 是标准、CJS 在死"，但 npm stats 显示 v11/v12+ 比例约 4:6，意味着 40% 用户被锁两年前版本，bug fix 拿不到。
+1. **把 limit=2 理解成任何失败都重试**：method、status code、error code 与 `Retry-After` 仍会阻止 retry；POST 默认不在 allowlist。
 
-2. **默认 retry=2 + 默认重 PUT/DELETE 在真实业务里炸**：RFC 说 PUT 幂等，但很多项目的 PUT 触发后续异步任务（发邮件 / 写日志），不真幂等。要么显式 `retry: {methods: ["GET"]}` 收窄，要么业务层加 idempotency key。
+2. **默认重试 PUT/DELETE 不等于业务幂等**：如果服务端会发送消息或触发任务，应收窄 methods，并在服务端使用 idempotency key 或等价去重机制。
 
-3. **stream 错误用 try/catch 抓不到**：必须 `stream.on('error', ...)` 或者用 `pipeline()` 让它自己抛。把 stream 当 promise `await` 是新人最常见的吞错误方式。
+3. **给 stream body 开自动 retry 却不准备新 body**：第一次请求已经消费原 stream；重试前需要提供新可读 stream，否则 Promise 路径会拒绝重放。
 
-4. **bundle 200 KB + Node-only**：Lambda / Vercel Function cold start 多 50-100ms 解析时间；Cloudflare Worker / Vercel Edge / Deno Deploy 直接不能跑（核心代码 import node:http）。"全栈一把梭"的幻觉在 Edge 时代必须破。
+4. **把 Promise hook 套到 Stream API**：`beforeRetry` 与 `afterResponse` 在 Stream API 中被忽略；Stream retry 需要监听 `retry` event 并重建输出与 body。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Node 服务 / 爬虫 / 大文件下载 / API 网关——需要 retry / stream / pagination 这种轴向特性
-- Node 18 之前的项目，没有原生 fetch 兜底
-- 需要 unix socket / HTTP/2 / RFC 7234 cache / cookie jar 这些 fetch 系拿不到的能力
-- 类型推断要求高的 TS 项目（got 是 100% TS 写就，generic 推响应）
+- Node 服务、爬虫或文件传输，需要一等 Stream API、阶段 timeout 与细粒度 retry policy
+- 需要在共享 instance 中集中管理 Node 请求 options 与 hook
+- 能满足当前 ESM 与 Node >=22 运行时要求
 
 **不适用**：
 
-- 浏览器项目 → 用 ky / ofetch / axios
-- Cloudflare Worker / Vercel Edge / Deno Deploy → 用 ky / 原生 fetch
-- Node 18+ 简单 API 调用 → 原生 fetch 已经够用，加 got 是过度依赖
-- Lambda / Serverless 关心 cold start 的小函数 → 用 undici / 原生 fetch
-- CommonJS 老项目升不动 ESM → 锁 v11.8.5 用着，但拿不到新版 bug fix
+- 浏览器或仅支持 Web API 的 Edge runtime
+- 旧 Node 或 CommonJS 项目无法满足当前 package 合同
+- 简单请求已由平台 fetch 满足，且不需要 Got 的 stream/retry/timeout 语义
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014-11**：Sindre Sorhus 发 got v0.1，定位是替代当时已经沉重而进入维护期的 request 库
-- **2015 中**：v1.0 发布，主打 Promise API + 简单的 retry / hook
-- **2021**：v11 整体重写为 TypeScript，类型从源码生成
-- **2022-04**：v12 切 ESM-only 引爆社区，issues #1789 / #2051 / #2089 集中抱怨
-- **2024**：v14 起要求 Node ≥ 20；Sindre 精力转向 ky 和新项目，主力维护交给 Szymon Marczak (@szmarczak)
+- 本文绑定 `sindresorhus/got@e3924aa1...`，package 版本为 `15.1.0`，要求 Node >=22。
+- 固定 package 为 ESM；正文不把旧版 CommonJS 兼容方式外推到当前版本。
+- 默认 retry limit 为 2；默认 timeout 的各阶段均为 `undefined`。
+- 本文未安装依赖、发送网络请求、运行上游测试或性能 benchmark，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **Node 端 HTTP 复杂性是固有的，不是 got 加的**——retry / cookie / cache / proxy / unix socket / HTTP/2 在裸 `node:http` 里全部要自己写。got 选择"把复杂吸收"，fetch 系选"包薄壳把复杂留给用户"，没绝对优劣
-2. **Promise + Stream + AsyncIterable 三套异步模型** 在 got 里同框出现，是现代 Node 异步语义的活教材
-3. **"友好默认 vs 显式声明"是产品哲学**——got 默认 retry=2，axios 默认不 retry，两边都对，只是赌的用户不一样
-4. **Node-only 是赌注**——10 年前是优势（一份代码两端跑），今天 Edge 时代是限制；选 got 等于赌"Node 服务越来越复杂"这个方向
+1. **Promise 可以是 Stream 的消费视图**——Got 不是分别实现两套传输，而是在 Duplex Request 上叠加 buffer、parse 与错误合同。
+2. **retry 是新请求，不是时间倒流**——method、副作用、body 可重放性和总预算都必须由调用方证明。
+3. **阶段 timeout 比单一数字更可诊断**——连接慢、首包慢与读取慢对应不同故障和处置。
+4. **共享底座不等于 API 完全等价**——Promise 与 Stream 对 hook、retry 和 body 消费有不同合同。
+
+## 应用型自测
+
+1. POST 请求收到 503，保留 `retry.limit: 2` 但不改 methods。会自动重试吗？
+2. 使用 `createReadStream()` 作为 body，第一次请求失败后沿用同一个 stream。为什么第二次请求不能可靠重放？
+3. 只配置 `timeout: {connect: 1000}`，能否保证整个请求 1 秒内结束？
+
+检查点：
+
+1. 默认不会；POST 不在 retry methods allowlist。
+2. stream 已被消费或销毁，需要在 retry 前提供新的可读 body。
+3. 不能；它只约束连接阶段，response、read 与 request 总预算仍未设置。
 
 ## 延伸阅读
 
 - 官方文档：[got/readme.md](https://github.com/sindresorhus/got#readme)（功能矩阵 + 4 套 API 速查）
-- 深度文章：[Node.js HTTP libraries comparison — got vs axios vs node-fetch](https://blog.logrocket.com/got-vs-axios/)
-- ESM 迁移之争：Sindre 的立场帖 [`Pure ESM package`](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
+- 固定源码：[sindresorhus/got](https://github.com/sindresorhus/got) —— 本文绑定提交 `e3924aa1e53a6ca3eb93a43618ce532442a89b40`
+- Stream 文档：[documentation/3-streams.md](https://github.com/sindresorhus/got/blob/main/documentation/3-streams.md)
+- Retry 文档：[documentation/7-retry.md](https://github.com/sindresorhus/got/blob/main/documentation/7-retry.md)
 - [[axios]] —— got 早年对标的"通用 HTTP 客户端"，今天在浏览器场景仍占主导
 - [[ky]] —— 同作者 Sindre 的轻量 fetch wrapper，是 got 在 Edge 时代的"另一条腿"
 

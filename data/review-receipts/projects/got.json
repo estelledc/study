@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "got",
+    "digest_sha256": "5fb6b466a33a4aa389bba1142bba7c31894ea6f3b93d298089be0a5c532e2617"
+  },
+  "source_revision": "e3924aa1e53a6ca3eb93a43618ce532442a89b40",
+  "research_input_sha256": "de1ffde36a7d5796c58163921114d5a15891d42acdb15d470506a31dc618f7f1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Duplex Request, Promise wrapping, phase timeouts, retry rules, and body replay with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Core Request, Options, retry delay, Promise wrapper, errors, and Stream and hook docs were inspected; upstream tests and requests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Node, ESM, timeout, and retry claims are bounded to got 15.1.0; download, bundle, and cold-start claims were removed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T14:25:23.000Z"
+}
