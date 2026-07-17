@@ -33,6 +33,9 @@ export function buildCiSteps(env = process.env) {
   { name: 'toolchain contract', command: 'node', args: ['scripts/audit-toolchain.mjs'] },
   { name: 'tests', command: 'npm', args: ['test'] },
   { name: 'repository audits', command: 'npm', args: ['run', 'audit'] },
+  { name: 'research benchmark', command: 'npm', args: ['run', 'audit:research'] },
+  { name: 'research labs', command: 'npm', args: ['run', 'test:research-labs'] },
+  { name: 'project standard snapshot', command: 'npm', args: ['run', 'audit:project-standard'] },
   {
     name: 'content contract',
     command: 'node',
