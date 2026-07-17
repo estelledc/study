@@ -40,7 +40,7 @@
     "audit": "npm run audit:links && npm run audit:wikilinks && npm run audit:counts && npm run audit:product-ia",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test",
+    "test": "node --test scripts/*.test.mjs scripts/lib/*.test.mjs",
     "test:research-labs": "node scripts/run-research-labs.mjs",
     "test:research-labs:full": "node scripts/run-research-labs.mjs --full",
     "test:a11y": "playwright test -c playwright.config.mjs",
