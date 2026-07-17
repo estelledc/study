@@ -1,0 +1,21 @@
+data/asset-manifest.json
+  s_25365ac3066234::t_ea6d5d84750f38 28-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "a0c9c7e063e0ec256f0b09f15e73912f69a71886",
+  "prompts": {},
+  "sessions": {
+    "s_25365ac3066234": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_25365ac3066234",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
