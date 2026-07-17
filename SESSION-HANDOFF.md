@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 4
+
+- status：Program `active`；本地 writer epoch 4 `complete`。
+- 起始 ref：`74ad09e9e`。
+- objective：将 PaddleOCR 从 PP-OCRv4/2.x 旧教程迁移到固定 3.7.0 平台架构，并闭合 Astro 生产 Content Layer 缓存问题。
+- scope：`paddleocr` 页面、receipt/派生索引，`build:strict` cache isolation；未安装 Paddle/PaddleX、下载权重、运行 OCR 或改其他 951 页。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：旧页仍以 PP-OCRv4、`ocr(..., cls=True)` 和 `PPStructure(...)` 为主；固定源码已转为 PaddleX wrapper、PP-OCRv6、PP-StructureV3 与 PaddleOCR-VL。
+- external delta：`0`；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. 绑定 `PaddlePaddle/PaddleOCR@211989f0...` / `3.7.0`，更新高层 wrapper → PaddleX config → `create_pipeline()` → `predict()` 主链。
+  2. 区分 OCR、结构化文档与 VLM 三类验收对象，删除“最强”、固定吞吐/大小和未绑定 benchmark 的结论。
+  3. 新增应用型自测与 generation 1 static receipt；项目审计从 `9/961` 前进到 `10/961`。
+  4. 纠正 epoch 3 的缓存修复：生产 Content Layer store 位于 `node_modules/.astro/data-store.json`，现与根 `.astro` 一并在 strict build 前清除。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=74ad09e9e npm run verify:ci`：380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - PaddleOCR `quality-gate.mjs`：pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=10`、`needs-evidence=951`。
+  - `audit:content-contract`：projects `v2=10`、`legacy-unverified=951`、blocking 0。
+- budget：1 个 OCR/文档平台项目 + 1 个构建可复现性修正；单 writer。
+- blocker：后续 Research worktree 与 Study slug 不总同名，必须改用 canonical URL 映射，不能按目录名猜。
+- stop conditions：canonical URL 不能唯一映射、需要猜 revision、缺少 Research 深析或无法通过全量门禁时停止。
+- 下一次 wake 条件：生成 canonical GitHub URL 交集，选择 2-4 个同主题固定源码项目。
+- 下一条命令：归一化 `research-worktrees/*` upstream URL，与项目页 `来源`/`trust.canonical_source` 做唯一 join。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 3
 
 - status：Program `active`；本地 writer epoch 3 `complete`。
