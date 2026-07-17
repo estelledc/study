@@ -1,3 +1,8 @@
+---
+title: "09. 零基础实验：让 Agent 能恢复、会筛选、可回滚"
+sidebar:
+  hidden: true
+---
 # 09. 零基础实验：让 Agent 能恢复、会筛选、可回滚
 
 > 目标：不用 LLM、API Key、Docker 或外部数据库，亲手验证长期 Agent 的四个基本合同。
@@ -101,7 +106,7 @@ snapshot old skill
 从仓库根目录：
 
 ```bash
-cd explorations/research/hermes-agent-ecosystem-study/labs
+cd src/content/docs/research/hermes-agent-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 python3 durable_agent.py
 ```
 

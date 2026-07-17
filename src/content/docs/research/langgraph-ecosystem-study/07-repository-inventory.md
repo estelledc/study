@@ -1,10 +1,15 @@
+---
+title: "07. 仓库清单、版本与本地约束"
+sidebar:
+  hidden: true
+---
 # 07. 仓库清单、版本与本地约束
 
 ## 1. 总体结果
 
 - 深度语料集：21 个仓库。
 - fork 所有者：`estelledc`。
-- 本地位置：`explorations/research/repos/<slug>`。
+- 本地位置：`research-worktrees/<slug>`。
 - clone 形式：独立 Git 仓库、`--depth=1 --filter=blob:none --sparse`。
 - 本地分支：`research-snapshot`，跟踪原项目 `upstream/main` 或 `upstream/master`。
 - 远端约定：`origin` 指个人 fork，`upstream` 指原项目。
@@ -72,7 +77,7 @@ GitHub 数字是 2026-07-16 快照，只用于观察生态规模。
 
 ## 4. 本地 clone 约束
 
-### 为什么放 `explorations/research/repos/`
+### 为什么放 `research-worktrees/`
 
 这些都是研究别人的第三方仓库：
 
@@ -94,13 +99,13 @@ GitHub 数字是 2026-07-16 快照，只用于观察生态规模。
 需要历史时：
 
 ```bash
-git -C explorations/research/repos/<slug> fetch --unshallow upstream
+git -C research-worktrees/<slug> fetch --unshallow upstream
 ```
 
 需要额外目录时：
 
 ```bash
-git -C explorations/research/repos/<slug> sparse-checkout add <path>
+git -C research-worktrees/<slug> sparse-checkout add <path>
 ```
 
 ### 当前主要 sparse 范围
@@ -131,8 +136,8 @@ branch   research-snapshot -> upstream/<default-branch>
 研究更新流程：
 
 ```bash
-git -C explorations/research/repos/<slug> fetch upstream
-git -C explorations/research/repos/<slug> log --oneline HEAD..upstream/main
+git -C research-worktrees/<slug> fetch upstream
+git -C research-worktrees/<slug> log --oneline HEAD..upstream/main
 ```
 
 先看 diff，再决定是否快进和刷新材料。不要自动把个人 fork、local 和 upstream 三者强制同步。
@@ -156,9 +161,9 @@ python3 scripts/explorations/restore-projects.py --audit
 单仓恢复卡中的 clone 命令只恢复个人 fork。恢复后还需：
 
 ```bash
-git -C explorations/research/repos/<slug> remote add upstream <upstream-url>
-git -C explorations/research/repos/<slug> fetch --depth 1 upstream <branch>
-git -C explorations/research/repos/<slug> switch -c research-snapshot --track upstream/<branch>
+git -C research-worktrees/<slug> remote add upstream <upstream-url>
+git -C research-worktrees/<slug> fetch --depth 1 upstream <branch>
+git -C research-worktrees/<slug> switch -c research-snapshot --track upstream/<branch>
 ```
 
 恢复脚本默认 dry-run，`reference` 项目不参与默认批量恢复。
@@ -166,10 +171,10 @@ git -C explorations/research/repos/<slug> switch -c research-snapshot --track up
 ## 8. 单仓验证
 
 ```bash
-git -C explorations/research/repos/<slug> status --short --branch
-git -C explorations/research/repos/<slug> remote -v
-git -C explorations/research/repos/<slug> rev-parse HEAD
-git -C explorations/research/repos/<slug> sparse-checkout list
+git -C research-worktrees/<slug> status --short --branch
+git -C research-worktrees/<slug> remote -v
+git -C research-worktrees/<slug> rev-parse HEAD
+git -C research-worktrees/<slug> sparse-checkout list
 ```
 
 验收标准：

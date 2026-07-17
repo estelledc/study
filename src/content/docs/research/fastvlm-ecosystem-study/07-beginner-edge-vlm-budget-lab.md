@@ -1,3 +1,8 @@
+---
+title: "零基础实验：少了多少视觉 Token，真的会快多少吗"
+sidebar:
+  hidden: true
+---
 # 零基础实验：少了多少视觉 Token，真的会快多少吗
 
 > 目标：理解 token 在哪里产生、在哪里减少，以及什么证据才能写成“真机更快”。
@@ -95,7 +100,7 @@ early layers and vision remain
 ## 4. 运行预算实验
 
 ```bash
-cd explorations/research/fastvlm-ecosystem-study/labs
+cd src/content/docs/research/fastvlm-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 python3 edge_vlm_budget.py
 ```
 

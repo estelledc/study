@@ -1,3 +1,8 @@
+---
+title: "Trellis 与 Coding Agent Harness 生态研究"
+sidebar:
+  hidden: true
+---
 # Trellis 与 Coding Agent Harness 生态研究
 
 > 研究日期：2026-07-16；重新验收：2026-07-17

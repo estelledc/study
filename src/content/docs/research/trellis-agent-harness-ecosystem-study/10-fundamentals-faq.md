@@ -1,3 +1,8 @@
+---
+title: "10. 基础问题 FAQ"
+sidebar:
+  hidden: true
+---
 # 10. 基础问题 FAQ
 
 ## 1. Trellis 到底是什么？

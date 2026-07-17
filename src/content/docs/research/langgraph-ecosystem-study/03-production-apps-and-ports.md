@@ -1,3 +1,8 @@
+---
+title: "03. 生产应用、部署层与跨语言实现"
+sidebar:
+  hidden: true
+---
 # 03. 生产应用、部署层与跨语言实现
 
 ## 1. Agent Chat UI

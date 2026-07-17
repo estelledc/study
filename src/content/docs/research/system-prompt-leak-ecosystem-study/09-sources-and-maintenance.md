@@ -1,3 +1,8 @@
+---
+title: "一手来源与快照维护"
+sidebar:
+  hidden: true
+---
 # 一手来源与快照维护
 
 ## 1. 本章用途
@@ -92,14 +97,14 @@
 
 ```bash
 # 1. 只读取远端，不移动研究快照
-git -C explorations/research/repos/<repo> fetch --depth=1 upstream main
+git -C research-worktrees/<repo> fetch --depth=1 upstream main
 
 # 2. 审计固定快照到远端 HEAD 的增量
-git -C explorations/research/repos/<repo> diff \
+git -C research-worktrees/<repo> diff \
   --stat <pinned_commit> upstream/main
 
 # 3. 只有命中刷新门槛时，才更新本地研究快照
-git -C explorations/research/repos/<repo> merge --ff-only upstream/main
+git -C research-worktrees/<repo> merge --ff-only upstream/main
 
 # 4. 同步个人 fork
 gh repo sync estelledc/<fork> --source <owner/repo> --branch main

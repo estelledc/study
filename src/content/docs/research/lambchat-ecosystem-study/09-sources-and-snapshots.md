@@ -1,3 +1,8 @@
+---
+title: "来源、Fork 与源码快照"
+sidebar:
+  hidden: true
+---
 # 来源、Fork 与源码快照
 
 ## 1. 快照原则
@@ -7,7 +12,7 @@
 
 所有源码：
 
-- 位于 `explorations/research/repos/<slug>/`；
+- 位于 `research-worktrees/<slug>/`；
 - 是独立 Git 仓库；
 - `origin` 指向个人 fork；
 - `upstream` 指向 canonical 仓库；
@@ -249,9 +254,9 @@ agent platform skills mcp
 ```bash
 git clone --depth=1 --filter=blob:none \
   git@github.com:estelledc/<fork-name>.git \
-  explorations/research/repos/<slug>
+  research-worktrees/<slug>
 
-git -C explorations/research/repos/<slug> remote add upstream \
+git -C research-worktrees/<slug> remote add upstream \
   https://github.com/<upstream-owner>/<upstream-repo>.git
 ```
 
@@ -268,16 +273,16 @@ GIT_LFS_SKIP_SMUDGE=1 git clone ...
 ### 检查本地 HEAD、分支和 remote
 
 ```bash
-git -C explorations/research/repos/<slug> rev-parse HEAD
-git -C explorations/research/repos/<slug> branch --show-current
-git -C explorations/research/repos/<slug> remote -v
-git -C explorations/research/repos/<slug> status --short
+git -C research-worktrees/<slug> rev-parse HEAD
+git -C research-worktrees/<slug> branch --show-current
+git -C research-worktrees/<slug> remote -v
+git -C research-worktrees/<slug> status --short
 ```
 
 ### 检查父仓忽略
 
 ```bash
-git check-ignore explorations/research/repos/<slug>/README.md
+git check-ignore research-worktrees/<slug>/README.md
 ```
 
 ### 检查全部项目卡与本地仓

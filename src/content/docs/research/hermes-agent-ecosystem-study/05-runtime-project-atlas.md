@@ -1,3 +1,8 @@
+---
+title: "05. 同类运行时项目图谱"
+sidebar:
+  hidden: true
+---
 # 05. 同类运行时项目图谱
 
 ## 1. OpenClaw

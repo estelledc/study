@@ -1,3 +1,8 @@
+---
+title: "13. 零基础实验：亲手跑一个最小 Agent loop"
+sidebar:
+  hidden: true
+---
 # 13. 零基础实验：亲手跑一个最小 Agent loop
 
 > 目标：不用模型 API、不安装五个项目依赖，先看见“模型请求工具 → runtime 执行 → 工具结果回给模型 → 最终回答”的完整循环。
@@ -22,7 +27,7 @@
 
 ```bash
 python3 \
-  explorations/research/coding-agent-runtime-study/labs/minimal_agent_loop.py
+  src/content/docs/research/coding-agent-runtime-study/labs/minimal_agent_loop.py
 ```
 
 预期输出：
@@ -55,7 +60,7 @@ run_completed
 
 ```bash
 python3 -m unittest discover \
-  -s explorations/research/coding-agent-runtime-study/labs \
+  -s src/content/docs/research/coding-agent-runtime-study/labs \
   -p 'test_*.py' \
   -v
 ```

@@ -1,3 +1,8 @@
+---
+title: "03. CC Switch v3.17 深潜：把数据库事实投影到七类客户端"
+sidebar:
+  hidden: true
+---
 # 03. CC Switch v3.17 深潜：把数据库事实投影到七类客户端
 
 固定版本：`f6e37ed99443890a865669e28bf1caf5e85d466d`。

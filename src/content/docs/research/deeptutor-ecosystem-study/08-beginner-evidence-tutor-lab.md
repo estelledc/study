@@ -1,3 +1,8 @@
+---
+title: "零基础实验：系统跑完，不等于学生学会"
+sidebar:
+  hidden: true
+---
 # 零基础实验：系统跑完，不等于学生学会
 
 > 目标：不用模型、API Key、数据库或网络，理解教学系统怎样保存可审计的学习证据。
@@ -102,7 +107,7 @@ mastery 不是被模型直接写入，而是每次从 attempt 重算。
 从仓库根目录：
 
 ```bash
-cd explorations/research/deeptutor-ecosystem-study/labs
+cd src/content/docs/research/deeptutor-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 python3 evidence_tutor.py
 ```
 

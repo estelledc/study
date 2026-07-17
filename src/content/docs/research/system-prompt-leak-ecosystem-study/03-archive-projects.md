@@ -1,3 +1,8 @@
+---
+title: "六个档案项目深读"
+sidebar:
+  hidden: true
+---
 # 六个档案项目深读
 
 ## 1. System Prompts Leaks

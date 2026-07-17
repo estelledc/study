@@ -1,3 +1,8 @@
+---
+title: "中国独立开发者列表：最终接班页"
+sidebar:
+  hidden: true
+---
 # 中国独立开发者列表：最终接班页
 
 > 面向第一次接触 GitHub、自动化和 Agent Skill 的实习生。

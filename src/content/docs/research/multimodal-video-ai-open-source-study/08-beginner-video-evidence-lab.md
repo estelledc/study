@@ -1,3 +1,8 @@
+---
+title: "零基础实验：让视频回答带着可回看的证据"
+sidebar:
+  hidden: true
+---
 # 零基础实验：让视频回答带着可回看的证据
 
 ## 1. 先建立直觉
@@ -66,7 +71,7 @@ ffprobe -version
 实验只使用 Python 标准库与本机 FFmpeg：
 
 ```bash
-cd explorations/research/multimodal-video-ai-open-source-study/labs
+cd src/content/docs/research/multimodal-video-ai-open-source-study/labs
 PYTHONDONTWRITEBYTECODE=1 \
   python3 video_evidence_lab.py \
   --output /tmp/video-evidence-lab

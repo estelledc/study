@@ -1,3 +1,8 @@
+---
+title: "06. 协议闭环：文本能显示，不代表 Agent 能继续"
+sidebar:
+  hidden: true
+---
 # 06. 协议闭环：文本能显示，不代表 Agent 能继续
 
 协议转换最容易产生一种假成功：第一段文本显示正常，但 tool call、tool result、thinking 签名或 SSE 终态被破坏，Agent 无法进入下一轮。

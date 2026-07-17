@@ -1,3 +1,8 @@
+---
+title: "端侧高效 VLM 生态与发展现状"
+sidebar:
+  hidden: true
+---
 # 端侧高效 VLM 生态与发展现状
 
 ## 1. 领域边界

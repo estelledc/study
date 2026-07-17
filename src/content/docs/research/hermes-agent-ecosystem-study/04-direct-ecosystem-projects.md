@@ -1,3 +1,8 @@
+---
+title: "04. Hermes 直接生态项目"
+sidebar:
+  hidden: true
+---
 # 04. Hermes 直接生态项目
 
 ## 1. NousResearch/hermes-agent-self-evolution

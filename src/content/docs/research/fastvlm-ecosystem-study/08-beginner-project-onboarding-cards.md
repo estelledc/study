@@ -1,3 +1,8 @@
+---
+title: "零基础项目上手卡：21 个项目从哪里读起"
+sidebar:
+  hidden: true
+---
 # 零基础项目上手卡：21 个项目从哪里读起
 
 > 完整机制见[项目深挖](02-project-deep-dives.md)，版本见

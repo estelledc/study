@@ -1,3 +1,8 @@
+---
+title: "08. 零基础实验：从“格式合法”走到“结果有效”"
+sidebar:
+  hidden: true
+---
 # 08. 零基础实验：从“格式合法”走到“结果有效”
 
 > 目标：用 60 分钟看懂 Skill 的三层加载和四层质量门，不安装真实宿主、不调用模型 API。
@@ -38,7 +43,7 @@ L3 resources
 从 `intern-journal` 根目录运行：
 
 ```bash
-cd explorations/research/repos/agent-skills-spec
+cd research-worktrees/agent-skills-spec
 UV_PROJECT_ENVIRONMENT=/tmp/agent-skills-ref-venv-20260717 \
   uv run --project skills-ref pytest -q
 ```

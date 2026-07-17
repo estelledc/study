@@ -1,3 +1,8 @@
+---
+title: "05. Grok Build：Session Actor 纵向集成"
+sidebar:
+  hidden: true
+---
 # 05. Grok Build：Session Actor 纵向集成
 
 ## 一句话定位

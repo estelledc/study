@@ -1,3 +1,8 @@
+---
+title: "研究范围与项目语料"
+sidebar:
+  hidden: true
+---
 # 研究范围与项目语料
 
 ## 1. 研究问题
@@ -123,11 +128,11 @@ GitHub 对 `deep agent`、`mcp gateway`、`agent sandbox` 和 `multi tenant agen
 
 14 个正式项目均遵循当前仓库的第三方源码契约：
 
-- 本地目录统一位于 `explorations/research/repos/<slug>/`；
+- 本地目录统一位于 `research-worktrees/<slug>/`；
 - 每个目录保留自己的 `.git`，不是父仓子模块；
 - `origin` 指向 `estelledc/*` 个人 fork；
 - `upstream` 指向 canonical 上游；
-- 父仓通过 `explorations/research/repos/*/` 统一忽略源码；
+- 父仓通过 `research-worktrees/*/` 统一忽略源码；
 - 父仓只跟踪 `_meta` 卡片、固定 commit 和消化后的研究结论；
 - clone 使用浅历史、blob 过滤并跳过 Git LFS 大文件；
 - 不在第三方 clone 中写研究笔记或修代码；

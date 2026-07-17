@@ -1,3 +1,8 @@
+---
+title: "安全与防御：不要把 Prompt 当保险箱"
+sidebar:
+  hidden: true
+---
 # 安全与防御：不要把 Prompt 当保险箱
 
 ## 1. 根本结论

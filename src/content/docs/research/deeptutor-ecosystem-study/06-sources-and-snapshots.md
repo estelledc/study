@@ -1,3 +1,8 @@
+---
+title: "来源、fork 与源码快照"
+sidebar:
+  hidden: true
+---
 # 来源、fork 与源码快照
 
 ## 研究日期

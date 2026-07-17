@@ -1,3 +1,8 @@
+---
+title: "02. 核心 Agent Loop 深读"
+sidebar:
+  hidden: true
+---
 # 02. 核心 Agent Loop 深读
 
 ## 最小算法

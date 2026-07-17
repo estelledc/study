@@ -1,3 +1,8 @@
+---
+title: "Agentic AI Tutor 领域生态与发展现状"
+sidebar:
+  hidden: true
+---
 # Agentic AI Tutor 领域生态与发展现状
 
 ## 1. 从聊天机器人到闭环教学系统

@@ -1,7 +1,12 @@
+---
+title: "LangGraph 生态系统研究"
+sidebar:
+  hidden: true
+---
 # LangGraph 生态系统研究
 
 > 快照日期：2026-07-16；重新验收：2026-07-17
-> 研究对象：21 个 GitHub 仓库，均已 fork 到 `estelledc`，并以独立浅层稀疏仓库 clone 到 `explorations/research/repos/`。
+> 研究对象：21 个 GitHub 仓库，均已 fork 到 `estelledc`，并以独立浅层稀疏仓库 clone 到 `research-worktrees/`。
 > 核心问题：LangGraph 在 agent 技术栈中负责什么，它的执行内核如何工作，上层项目如何补齐 agent、应用和部署能力，同类框架又采取了哪些不同路线？
 
 ## 先看结论

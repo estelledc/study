@@ -1,3 +1,8 @@
+---
+title: "09. Round 2：失败、取消与恢复状态机"
+sidebar:
+  hidden: true
+---
 # 09. Round 2：失败、取消与恢复状态机
 
 ## 本轮研究问题

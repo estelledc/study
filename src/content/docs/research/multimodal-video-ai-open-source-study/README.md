@@ -1,3 +1,8 @@
+---
+title: "多模态视频 AI 开源生态研究"
+sidebar:
+  hidden: true
+---
 # 多模态视频 AI 开源生态研究
 
 > 研究快照：2026-07-17
@@ -57,7 +62,7 @@
 3. 用 10 分钟真实运行实验和 9 个测试：
 
    ```bash
-   cd explorations/research/multimodal-video-ai-open-source-study/labs
+   cd src/content/docs/research/multimodal-video-ai-open-source-study/labs
    PYTHONDONTWRITEBYTECODE=1 \
      python3 video_evidence_lab.py --output /tmp/video-evidence-lab
    PYTHONDONTWRITEBYTECODE=1 \

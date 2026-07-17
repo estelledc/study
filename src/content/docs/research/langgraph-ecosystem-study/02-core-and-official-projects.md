@@ -1,3 +1,8 @@
+---
+title: "02. 核心与官方项目深挖"
+sidebar:
+  hidden: true
+---
 # 02. 核心与官方项目深挖
 
 ## 1. LangGraph Python

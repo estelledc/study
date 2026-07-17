@@ -1,3 +1,8 @@
+---
+title: "Garden Skills 与 Agent Skills 工程生态研究"
+sidebar:
+  hidden: true
+---
 # Garden Skills 与 Agent Skills 工程生态研究
 
 > 研究快照：2026-07-16；重新验收：2026-07-17

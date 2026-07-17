@@ -1,3 +1,8 @@
+---
+title: "02. 生态全景与发展现状"
+sidebar:
+  hidden: true
+---
 # 02. 生态全景与发展现状
 
 ## 1. Agent Skill 到底是什么

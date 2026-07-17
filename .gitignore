@@ -45,6 +45,9 @@ id_rsa*
 !.vscode/extensions.json
 .idea/
 .research/
+research-worktrees/
+__pycache__/
+*.pyc
 .codex/
 .claude/settings.local.json
 *.xcuserstate

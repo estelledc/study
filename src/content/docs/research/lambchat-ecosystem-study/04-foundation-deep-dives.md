@@ -1,3 +1,8 @@
+---
+title: "基础运行时项目深挖"
+sidebar:
+  hidden: true
+---
 # 基础运行时项目深挖
 
 本篇覆盖 LambChat 的三块直接基础：DeepAgents、LangGraph 和

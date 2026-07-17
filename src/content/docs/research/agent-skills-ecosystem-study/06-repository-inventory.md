@@ -1,10 +1,15 @@
+---
+title: "06. fork、clone 与源码快照"
+sidebar:
+  hidden: true
+---
 # 06. fork、clone 与源码快照
 
 ## 1. 总体结果
 
 - 正式语料：20 个 GitHub 仓库。
 - GitHub 个人账户：`estelledc`。
-- 本地根目录：`explorations/research/repos/`。
+- 本地根目录：`research-worktrees/`。
 - 所有仓库均有独立 `.git`。
 - 所有 `origin` 均指向个人 fork。
 - 所有 `upstream` 均指向 canonical 原仓。
@@ -19,26 +24,26 @@ star 和许可证为 2026-07-16 快照。许可证列不是法律意见；GitHub
 
 | 类别 | 上游 | 个人 fork | 本地目录 | 分支 | pinned commit | 许可证快照 |
 |---|---|---|---|---|---|---|
-| 主项目 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | [estelledc/garden-skills](https://github.com/estelledc/garden-skills) | `explorations/research/repos/garden-skills` | `main` | `aaf9a82f5efd` | MIT |
-| 运行时协议 | [ConardLi/reacticle](https://github.com/ConardLi/reacticle) | [estelledc/reacticle](https://github.com/estelledc/reacticle) | `explorations/research/repos/reacticle` | `main` | `dcfc4baf386b` | package 标记 MIT；GitHub 未识别 |
-| 案例网站 | [ConardLi/gpt-image-2-101](https://github.com/ConardLi/gpt-image-2-101) | [estelledc/gpt-image-2-101](https://github.com/estelledc/gpt-image-2-101) | `explorations/research/repos/gpt-image-2-101` | `main` | `971b67dc8cbc` | 未识别 |
-| 官方样例 | [anthropics/skills](https://github.com/anthropics/skills) | [estelledc/anthropic-agent-skills](https://github.com/estelledc/anthropic-agent-skills) | `explorations/research/repos/anthropic-agent-skills` | `main` | `9d2f1ae18723` | 混合：Apache-2.0 与 source-available/proprietary |
-| 规范 | [agentskills/agentskills](https://github.com/agentskills/agentskills) | [estelledc/agent-skills-spec](https://github.com/estelledc/agent-skills-spec) | `explorations/research/repos/agent-skills-spec` | `main` | `38a2ff82958a` | Apache-2.0 |
-| 安装器 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | [estelledc/vercel-agent-skills-cli](https://github.com/estelledc/vercel-agent-skills-cli) | `explorations/research/repos/vercel-agent-skills-cli` | `main` | `a9d8e3ae5bab` | package 标记 MIT；GitHub 未识别 |
-| 索引 | [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | [estelledc/awesome-claude-skills](https://github.com/estelledc/awesome-claude-skills) | `explorations/research/repos/awesome-claude-skills` | `main` | `1da55aa810f2` | 未识别 |
-| Harness | [obra/superpowers](https://github.com/obra/superpowers) | [estelledc/superpowers](https://github.com/estelledc/superpowers) | `explorations/research/repos/superpowers` | `main` | `d884ae04edeb` | MIT |
-| 工程 Skill | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | [estelledc/addy-agent-skills](https://github.com/estelledc/addy-agent-skills) | `explorations/research/repos/addy-agent-skills` | `main` | `c1974de476a3` | MIT |
-| 垂直 Skill | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | [estelledc/scientific-agent-skills](https://github.com/estelledc/scientific-agent-skills) | `explorations/research/repos/scientific-agent-skills` | `main` | `3f825caafe14` | MIT |
-| 工程 Skill | [mattpocock/skills](https://github.com/mattpocock/skills) | [estelledc/mattpocock-agent-skills](https://github.com/estelledc/mattpocock-agent-skills) | `explorations/research/repos/mattpocock-agent-skills` | `main` | `9603c1cc8118` | MIT |
-| 安全 | [cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner) | [estelledc/skill-scanner](https://github.com/estelledc/skill-scanner) | `explorations/research/repos/skill-scanner` | `main` | `41fec4a9570b` | 仓内 Apache-2.0；GitHub NOASSERTION |
-| 评测 | [darkrishabh/agent-skills-eval](https://github.com/darkrishabh/agent-skills-eval) | [estelledc/agent-skills-eval](https://github.com/estelledc/agent-skills-eval) | `explorations/research/repos/agent-skills-eval` | `main` | `b60eebe3c6ed` | MIT |
-| 索引 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | [estelledc/awesome-agent-skills](https://github.com/estelledc/awesome-agent-skills) | `explorations/research/repos/awesome-agent-skills` | `main` | `c97eda5e3406` | MIT |
-| 官方市场 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | [estelledc/claude-plugins-official](https://github.com/estelledc/claude-plugins-official) | `explorations/research/repos/claude-plugins-official` | `main` | `b5eddebc6444` | Apache-2.0；外部插件各自许可 |
-| Harness | [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) | [estelledc/compound-engineering-plugin](https://github.com/estelledc/compound-engineering-plugin) | `explorations/research/repos/compound-engineering-plugin` | `main` | `e745e9663b4b` | MIT |
-| 优化 | [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) | [estelledc/SkillOpt](https://github.com/estelledc/SkillOpt) | `explorations/research/repos/SkillOpt` | `main` | `d2670205d185` | MIT |
-| 生成器 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | [estelledc/Skill_Seekers](https://github.com/estelledc/Skill_Seekers) | `explorations/research/repos/Skill_Seekers` | `development` | `bbf5bb1cc78b` | MIT |
-| 生命周期 | [rooftop-Owl/skill-factory](https://github.com/rooftop-Owl/skill-factory) | [estelledc/skill-factory](https://github.com/estelledc/skill-factory) | `explorations/research/repos/skill-factory` | `main` | `ba63b4906b0e` | MPL-2.0 |
-| 触发控制 | [diet103/claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) | [estelledc/claude-code-infrastructure-showcase](https://github.com/estelledc/claude-code-infrastructure-showcase) | `explorations/research/repos/claude-code-infrastructure-showcase` | `main` | `07f75ce3c301` | MIT |
+| 主项目 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | [estelledc/garden-skills](https://github.com/estelledc/garden-skills) | `research-worktrees/garden-skills` | `main` | `aaf9a82f5efd` | MIT |
+| 运行时协议 | [ConardLi/reacticle](https://github.com/ConardLi/reacticle) | [estelledc/reacticle](https://github.com/estelledc/reacticle) | `research-worktrees/reacticle` | `main` | `dcfc4baf386b` | package 标记 MIT；GitHub 未识别 |
+| 案例网站 | [ConardLi/gpt-image-2-101](https://github.com/ConardLi/gpt-image-2-101) | [estelledc/gpt-image-2-101](https://github.com/estelledc/gpt-image-2-101) | `research-worktrees/gpt-image-2-101` | `main` | `971b67dc8cbc` | 未识别 |
+| 官方样例 | [anthropics/skills](https://github.com/anthropics/skills) | [estelledc/anthropic-agent-skills](https://github.com/estelledc/anthropic-agent-skills) | `research-worktrees/anthropic-agent-skills` | `main` | `9d2f1ae18723` | 混合：Apache-2.0 与 source-available/proprietary |
+| 规范 | [agentskills/agentskills](https://github.com/agentskills/agentskills) | [estelledc/agent-skills-spec](https://github.com/estelledc/agent-skills-spec) | `research-worktrees/agent-skills-spec` | `main` | `38a2ff82958a` | Apache-2.0 |
+| 安装器 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | [estelledc/vercel-agent-skills-cli](https://github.com/estelledc/vercel-agent-skills-cli) | `research-worktrees/vercel-agent-skills-cli` | `main` | `a9d8e3ae5bab` | package 标记 MIT；GitHub 未识别 |
+| 索引 | [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | [estelledc/awesome-claude-skills](https://github.com/estelledc/awesome-claude-skills) | `research-worktrees/awesome-claude-skills` | `main` | `1da55aa810f2` | 未识别 |
+| Harness | [obra/superpowers](https://github.com/obra/superpowers) | [estelledc/superpowers](https://github.com/estelledc/superpowers) | `research-worktrees/superpowers` | `main` | `d884ae04edeb` | MIT |
+| 工程 Skill | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | [estelledc/addy-agent-skills](https://github.com/estelledc/addy-agent-skills) | `research-worktrees/addy-agent-skills` | `main` | `c1974de476a3` | MIT |
+| 垂直 Skill | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | [estelledc/scientific-agent-skills](https://github.com/estelledc/scientific-agent-skills) | `research-worktrees/scientific-agent-skills` | `main` | `3f825caafe14` | MIT |
+| 工程 Skill | [mattpocock/skills](https://github.com/mattpocock/skills) | [estelledc/mattpocock-agent-skills](https://github.com/estelledc/mattpocock-agent-skills) | `research-worktrees/mattpocock-agent-skills` | `main` | `9603c1cc8118` | MIT |
+| 安全 | [cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner) | [estelledc/skill-scanner](https://github.com/estelledc/skill-scanner) | `research-worktrees/skill-scanner` | `main` | `41fec4a9570b` | 仓内 Apache-2.0；GitHub NOASSERTION |
+| 评测 | [darkrishabh/agent-skills-eval](https://github.com/darkrishabh/agent-skills-eval) | [estelledc/agent-skills-eval](https://github.com/estelledc/agent-skills-eval) | `research-worktrees/agent-skills-eval` | `main` | `b60eebe3c6ed` | MIT |
+| 索引 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | [estelledc/awesome-agent-skills](https://github.com/estelledc/awesome-agent-skills) | `research-worktrees/awesome-agent-skills` | `main` | `c97eda5e3406` | MIT |
+| 官方市场 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | [estelledc/claude-plugins-official](https://github.com/estelledc/claude-plugins-official) | `research-worktrees/claude-plugins-official` | `main` | `b5eddebc6444` | Apache-2.0；外部插件各自许可 |
+| Harness | [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) | [estelledc/compound-engineering-plugin](https://github.com/estelledc/compound-engineering-plugin) | `research-worktrees/compound-engineering-plugin` | `main` | `e745e9663b4b` | MIT |
+| 优化 | [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) | [estelledc/SkillOpt](https://github.com/estelledc/SkillOpt) | `research-worktrees/SkillOpt` | `main` | `d2670205d185` | MIT |
+| 生成器 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | [estelledc/Skill_Seekers](https://github.com/estelledc/Skill_Seekers) | `research-worktrees/Skill_Seekers` | `development` | `bbf5bb1cc78b` | MIT |
+| 生命周期 | [rooftop-Owl/skill-factory](https://github.com/rooftop-Owl/skill-factory) | [estelledc/skill-factory](https://github.com/estelledc/skill-factory) | `research-worktrees/skill-factory` | `main` | `ba63b4906b0e` | MPL-2.0 |
+| 触发控制 | [diet103/claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) | [estelledc/claude-code-infrastructure-showcase](https://github.com/estelledc/claude-code-infrastructure-showcase) | `research-worktrees/claude-code-infrastructure-showcase` | `main` | `07f75ce3c301` | MIT |
 
 ## 3. GitHub 活跃度快照
 
@@ -128,7 +133,7 @@ sparse paths:
 根配置和 README 由 cone mode 保留。需要查看某个案例时，可按需扩展：
 
 ```bash
-git -C explorations/research/repos/gpt-image-2-101 \
+git -C research-worktrees/gpt-image-2-101 \
   sparse-checkout add public/case/<category>/<template>
 ```
 
@@ -153,9 +158,9 @@ sparse paths:
 如果个人 fork 已存在：
 
 ```bash
-gh repo clone estelledc/<fork-name> explorations/research/repos/<local-slug> \
+gh repo clone estelledc/<fork-name> research-worktrees/<local-slug> \
   -- --filter=blob:none
-git -C explorations/research/repos/<local-slug> \
+git -C research-worktrees/<local-slug> \
   remote add upstream https://github.com/<owner>/<repo>.git
 ```
 
@@ -170,24 +175,24 @@ git -C explorations/research/repos/<local-slug> \
 ### 恢复固定快照
 
 ```bash
-git -C explorations/research/repos/<slug> fetch upstream
-git -C explorations/research/repos/<slug> checkout <pinned-commit>
+git -C research-worktrees/<slug> fetch upstream
+git -C research-worktrees/<slug> checkout <pinned-commit>
 ```
 
 固定 commit 适合复核本材料；日常跟踪更新时保留分支，再对比：
 
 ```bash
-git -C explorations/research/repos/<slug> fetch upstream
-git -C explorations/research/repos/<slug> log --oneline HEAD..upstream/<branch>
+git -C research-worktrees/<slug> fetch upstream
+git -C research-worktrees/<slug> log --oneline HEAD..upstream/<branch>
 ```
 
 ## 7. 单仓验证命令
 
 ```bash
-git -C explorations/research/repos/<slug> status --short --branch
-git -C explorations/research/repos/<slug> remote -v
-git -C explorations/research/repos/<slug> rev-parse HEAD
-git -C explorations/research/repos/<slug> fsck --no-dangling
+git -C research-worktrees/<slug> status --short --branch
+git -C research-worktrees/<slug> remote -v
+git -C research-worktrees/<slug> rev-parse HEAD
+git -C research-worktrees/<slug> fsck --no-dangling
 ```
 
 预期：

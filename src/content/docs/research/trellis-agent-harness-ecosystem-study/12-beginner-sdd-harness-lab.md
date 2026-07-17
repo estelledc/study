@@ -1,3 +1,8 @@
+---
+title: "12. 零基础实验：用文件搭一个最小 Coding Agent Harness"
+sidebar:
+  hidden: true
+---
 # 12. 零基础实验：用文件搭一个最小 Coding Agent Harness
 
 > 目标：不用模型 API、不安装 Trellis CLI，在 60-90 分钟内看见状态、工件、验证和多会话隔离怎样共同工作。
@@ -26,7 +31,7 @@
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python3 \
-  explorations/research/trellis-agent-harness-ecosystem-study/labs/minimal_harness.py
+  src/content/docs/research/trellis-agent-harness-ecosystem-study/labs/minimal_harness.py
 ```
 
 预期：
@@ -53,7 +58,7 @@ create task
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
-  -s explorations/research/trellis-agent-harness-ecosystem-study/labs \
+  -s src/content/docs/research/trellis-agent-harness-ecosystem-study/labs \
   -p 'test_*.py' \
   -v
 ```
@@ -164,7 +169,7 @@ sessions/session-b.json -> task-b
 本机没有在第三方仓安装依赖，而是用 `pnpm dlx` 的隔离环境执行两个 pinned test 文件：
 
 ```bash
-cd explorations/research/repos/trellis
+cd research-worktrees/trellis
 pnpm dlx vitest@4.0.18 run \
   packages/core/test/task/schema.test.ts \
   packages/core/test/task/phase.test.ts

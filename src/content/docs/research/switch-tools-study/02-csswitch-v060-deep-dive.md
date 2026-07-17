@@ -1,3 +1,8 @@
+---
+title: "02. CSSwitch v0.6 深潜：先证明身份，再启动 Science"
+sidebar:
+  hidden: true
+---
 # 02. CSSwitch v0.6 深潜：先证明身份，再启动 Science
 
 固定版本：`0897e78f201e9e463be6a13e3d11888bde31f3b0`。

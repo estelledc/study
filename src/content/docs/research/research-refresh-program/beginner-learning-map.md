@@ -1,3 +1,8 @@
+---
+title: "14 类研究的零基础学习地图"
+sidebar:
+  hidden: true
+---
 # 14 类研究的零基础学习地图
 
 ## 先说结论
@@ -292,7 +297,7 @@ FastVLM
 运行：
 
 ```bash
-cd explorations/research/research-refresh-program
+cd src/content/docs/research/research-refresh-program
 PYTHONDONTWRITEBYTECODE=1 \
   python3 completion_audit.py --check-worktrees
 ```

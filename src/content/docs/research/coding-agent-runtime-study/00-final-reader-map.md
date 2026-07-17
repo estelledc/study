@@ -1,3 +1,8 @@
+---
+title: "Coding Agent Runtime 最终接班页"
+sidebar:
+  hidden: true
+---
 # Coding Agent Runtime 最终接班页
 
 **状态：** 三轮静态源码研究已完成；2026-07-17 已补快照增量审计与 E2 教学实验

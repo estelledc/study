@@ -1,3 +1,8 @@
+---
+title: "03. Trellis 架构深度分析"
+sidebar:
+  hidden: true
+---
 # 03. Trellis 架构深度分析
 
 > 上游：`mindfold-ai/Trellis`

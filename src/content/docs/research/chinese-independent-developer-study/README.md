@@ -1,3 +1,8 @@
+---
+title: "中国独立开发者列表源码研究"
+sidebar:
+  hidden: true
+---
 # 中国独立开发者列表源码研究
 
 > 最短入口：[最终接班页](00-final-reader-map.md) → [只读动手实验](01-hands-on-lab.md) → [真实案例与答案检查](02-case-cards-and-answer-guide.md)

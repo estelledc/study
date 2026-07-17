@@ -1,3 +1,8 @@
+---
+title: "第三方源码深度研究重做计划"
+sidebar:
+  hidden: true
+---
 # 第三方源码深度研究重做计划
 
 > 启动日期：2026-07-17
@@ -157,7 +162,7 @@ git diff --check
 全部类别完成后的最终验证：
 
 ```bash
-python3 explorations/research/research-refresh-program/completion_audit.py \
+python3 src/content/docs/research/research-refresh-program/completion_audit.py \
   --check-worktrees
 make check
 git diff --check

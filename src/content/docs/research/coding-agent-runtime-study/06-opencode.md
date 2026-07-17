@@ -1,3 +1,8 @@
+---
+title: "06. OpenCode：双运行时迁移与事件溯源"
+sidebar:
+  hidden: true
+---
 # 06. OpenCode：双运行时迁移与事件溯源
 
 ## 一句话定位

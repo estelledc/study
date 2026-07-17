@@ -1,3 +1,8 @@
+---
+title: "11. 零基础实验：从聊天请求到可恢复的 Agent Run"
+sidebar:
+  hidden: true
+---
 # 11. 零基础实验：从聊天请求到可恢复的 Agent Run
 
 > 目标：不用模型、API Key、Redis 或 Docker，亲手观察 tenant、session、run、event、
@@ -98,7 +103,7 @@ side_effect_receipts
 从仓库根目录：
 
 ```bash
-cd explorations/research/lambchat-ecosystem-study/labs
+cd src/content/docs/research/lambchat-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 python3 minimal_platform.py
 ```
 

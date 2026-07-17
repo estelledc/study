@@ -1,3 +1,8 @@
+---
+title: "零基础实验：假设 Prompt 明天就会公开"
+sidebar:
+  hidden: true
+---
 # 零基础实验：假设 Prompt 明天就会公开
 
 ## 1. 先建立直觉
@@ -49,7 +54,7 @@ tool proposal
 ## 3. 运行
 
 ```bash
-cd explorations/research/system-prompt-leak-ecosystem-study/labs
+cd src/content/docs/research/system-prompt-leak-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 \
   python3 prompt_defense_lab.py \
   --output /tmp/prompt-defense-lab/report.json

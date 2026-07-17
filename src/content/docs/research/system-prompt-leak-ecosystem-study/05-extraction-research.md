@@ -1,3 +1,8 @@
+---
+title: "七个抽取研究项目深读"
+sidebar:
+  hidden: true
+---
 # 七个抽取研究项目深读
 
 ## 1. Effective Prompt Extraction

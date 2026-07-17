@@ -1,3 +1,8 @@
+---
+title: "FastVLM 最终综合与接班地图"
+sidebar:
+  hidden: true
+---
 # FastVLM 最终综合与接班地图
 
 ## 一句话定位

@@ -1,3 +1,8 @@
+---
+title: "动手实验：把 Markdown 列表当成一个小型数据系统"
+sidebar:
+  hidden: true
+---
 # 动手实验：把 Markdown 列表当成一个小型数据系统
 
 > 目标：不用修改仓库、不调用 Routine、不接触 token，在 60-90 分钟内验证数据、政策、执行器和外部故障四层。
@@ -7,7 +12,7 @@
 ## 实验 0：进入只读教材
 
 ```bash
-cd explorations/research/repos/chinese-independent-developer
+cd research-worktrees/chinese-independent-developer
 git status --short --branch
 git rev-parse HEAD
 ```

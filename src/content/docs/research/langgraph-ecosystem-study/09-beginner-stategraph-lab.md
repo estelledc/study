@@ -1,3 +1,8 @@
+---
+title: "09. 零基础实验：跑通并行 StateGraph、Reducer 与 Checkpoint"
+sidebar:
+  hidden: true
+---
 # 09. 零基础实验：跑通并行 StateGraph、Reducer 与 Checkpoint
 
 > 目标：不用 LLM、API Key 或网络请求，亲手观察 LangGraph 的状态图执行语义。
@@ -50,14 +55,12 @@ class ResearchState(TypedDict):
 
 ## 3. 运行 pinned LangGraph
 
-从 `intern-journal` 根目录：
+从 Study 仓库根目录：
 
 ```bash
-cd explorations/research/langgraph-ecosystem-study/labs
-
 uv run --no-project \
-  --with-editable ../../repos/langgraph/libs/langgraph \
-  python stategraph_lab.py
+  --with-editable research-worktrees/langgraph/libs/langgraph \
+  python src/content/docs/research/langgraph-ecosystem-study/labs/stategraph_lab.py
 ```
 
 2026-07-17 实测：
@@ -73,8 +76,9 @@ checkpoints=4
 
 ```bash
 uv run --no-project \
-  --with-editable ../../repos/langgraph/libs/langgraph \
-  python -m unittest -v test_stategraph_lab.py
+  --with-editable research-worktrees/langgraph/libs/langgraph \
+  python -m unittest -v \
+  src/content/docs/research/langgraph-ecosystem-study/labs/test_stategraph_lab.py
 ```
 
 结果：

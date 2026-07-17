@@ -1,3 +1,8 @@
+---
+title: "平台与官方数据深读"
+sidebar:
+  hidden: true
+---
 # 平台与官方数据深读
 
 ## 1. YeeKal：Markdown 驱动的检索站

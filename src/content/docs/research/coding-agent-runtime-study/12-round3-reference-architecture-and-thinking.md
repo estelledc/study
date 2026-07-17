@@ -1,3 +1,8 @@
+---
+title: "12. Round 3：可复用参考架构与进阶思考"
+sidebar:
+  hidden: true
+---
 # 12. Round 3：可复用参考架构与进阶思考
 
 ## 目标

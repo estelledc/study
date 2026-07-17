@@ -1,3 +1,8 @@
+---
+title: "11. Round 3：扩展、子 Agent 与能力边界"
+sidebar:
+  hidden: true
+---
 # 11. Round 3：扩展、子 Agent 与能力边界
 
 ## 本轮研究问题

@@ -1,3 +1,8 @@
+---
+title: "最终接班页"
+sidebar:
+  hidden: true
+---
 # 最终接班页
 
 ## 10 分钟读完的结论

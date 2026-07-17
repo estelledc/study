@@ -1,3 +1,8 @@
+---
+title: "零基础实验：同一份 PDF，为什么会得到不同“正确答案”"
+sidebar:
+  hidden: true
+---
 # 零基础实验：同一份 PDF，为什么会得到不同“正确答案”
 
 > 目标：不用模型权重或 GPU，对比轻量 Markdown 转换与结构化 Node 解析。
@@ -62,7 +67,7 @@ PDF
 复用 MarkItDown pinned commit 的测试 fixture：
 
 ```text
-explorations/research/repos/markitdown/
+research-worktrees/markitdown/
   packages/markitdown/tests/test_files/test.pdf
 ```
 
@@ -92,9 +97,9 @@ PDF 1.4
 
 ```bash
 scratch="$(mktemp -d /tmp/document-parser-src.XXXXXX)"
-cp -R explorations/research/repos/markitdown/packages/markitdown \
+cp -R research-worktrees/markitdown/packages/markitdown \
   "$scratch/markitdown"
-cp -R explorations/research/repos/open-parse \
+cp -R research-worktrees/open-parse \
   "$scratch/openparse"
 
 uv venv /tmp/document-parser-venv-20260717 \
@@ -115,7 +120,7 @@ uv pip install \
 ## 6. 运行同文档对照
 
 ```bash
-cd explorations/research/mineru-ecosystem-study/labs
+cd src/content/docs/research/mineru-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 \
 /tmp/document-parser-venv-20260717/bin/python document_parser_lab.py
 ```
@@ -199,7 +204,7 @@ skip 只证明依赖缺失，不能写成“integration 通过”。
 ## 9. MarkItDown 真实项目测试
 
 ```bash
-cd explorations/research/repos/markitdown
+cd research-worktrees/markitdown
 PYTHONDONTWRITEBYTECODE=1 \
 /tmp/document-parser-venv-20260717/bin/python -m pytest -q \
   packages/markitdown/tests/test_pdf_memory.py \

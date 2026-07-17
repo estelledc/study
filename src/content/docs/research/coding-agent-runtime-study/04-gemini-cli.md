@@ -1,3 +1,8 @@
+---
+title: "04. Gemini CLI：模型流与工具调度分层"
+sidebar:
+  hidden: true
+---
 # 04. Gemini CLI：模型流与工具调度分层
 
 ## 一句话定位

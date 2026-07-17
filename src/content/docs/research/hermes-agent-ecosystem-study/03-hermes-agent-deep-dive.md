@@ -1,3 +1,8 @@
+---
+title: "03. Hermes Agent 深度解析"
+sidebar:
+  hidden: true
+---
 # 03. Hermes Agent 深度解析
 
 ## 1. 定位与快照

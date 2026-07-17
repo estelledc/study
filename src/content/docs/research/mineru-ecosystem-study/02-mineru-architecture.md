@@ -1,3 +1,8 @@
+---
+title: "MinerU 架构深读"
+sidebar:
+  hidden: true
+---
 # MinerU 架构深读
 
 **版本：** 3.4.4

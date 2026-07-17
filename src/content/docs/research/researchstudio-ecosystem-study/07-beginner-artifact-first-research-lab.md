@@ -1,3 +1,8 @@
+---
+title: "07. 零基础实验：让研究 Run 可恢复、Artifact 可验收"
+sidebar:
+  hidden: true
+---
 # 07. 零基础实验：让研究 Run 可恢复、Artifact 可验收
 
 > 目标：不用模型、API Key、GPU 或网络，理解研究流程为何不能只看“文件生成了”。
@@ -89,7 +94,7 @@ evidence
 从仓库根目录：
 
 ```bash
-cd explorations/research/researchstudio-ecosystem-study/labs
+cd src/content/docs/research/researchstudio-ecosystem-study/labs
 PYTHONDONTWRITEBYTECODE=1 python3 research_run.py
 ```
 

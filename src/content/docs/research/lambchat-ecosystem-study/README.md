@@ -1,3 +1,8 @@
+---
+title: "LambChat 与生产级 Agent 平台生态研究"
+sidebar:
+  hidden: true
+---
 # LambChat 与生产级 Agent 平台生态研究
 
 > 研究快照：2026-07-17

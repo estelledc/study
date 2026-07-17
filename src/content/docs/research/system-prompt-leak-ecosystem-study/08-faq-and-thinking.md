@@ -1,3 +1,8 @@
+---
+title: "基础 FAQ 与关键思考点"
+sidebar:
+  hidden: true
+---
 # 基础 FAQ 与关键思考点
 
 ## 1. 什么是系统提示词？

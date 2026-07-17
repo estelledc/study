@@ -1,3 +1,8 @@
+---
+title: "系统提示词泄露生态研究材料包"
+sidebar:
+  hidden: true
+---
 # 系统提示词泄露生态研究材料包
 
 **研究日期：** 2026-07-17
@@ -46,7 +51,7 @@
 3. 用 5 分钟运行离线实验：
 
    ```bash
-   cd explorations/research/system-prompt-leak-ecosystem-study/labs
+   cd src/content/docs/research/system-prompt-leak-ecosystem-study/labs
    PYTHONDONTWRITEBYTECODE=1 \
      python3 prompt_defense_lab.py \
      --output /tmp/prompt-defense-lab/report.json
@@ -120,7 +125,7 @@
 | `yangyZJU/PRSA` | 从有限输入输出重建功能等价 prompt | `6344cca6` | `prsa/` |
 | `solidlabnetwork/SPE-LLM` | 攻防模板和多指标紧凑实验 | `547346dd` | `spe-llm/` |
 
-所有本地目录均位于 `explorations/research/repos/`，都是父仓忽略的独立浅克隆。
+所有本地目录均位于 `research-worktrees/`，都是父仓忽略的独立浅克隆。
 
 表中提交是**研究固定快照**，不承诺等于阅读时的远端最新 HEAD；实时差异和刷新门槛见[来源与快照维护](09-sources-and-maintenance.md)。
 

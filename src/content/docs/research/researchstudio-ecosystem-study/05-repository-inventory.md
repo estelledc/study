@@ -1,10 +1,15 @@
+---
+title: "05. 仓库清单、版本与本地约束"
+sidebar:
+  hidden: true
+---
 # 05. 仓库清单、版本与本地约束
 
 ## 1. 总体结果
 
 - 语料集：27 个仓库。
 - fork 所有者：`estelledc`。
-- 本地位置：`explorations/research/repos/<slug>`。
+- 本地位置：`research-worktrees/<slug>`。
 - clone 形式：独立 Git 仓库、`--depth=1 --single-branch --filter=blob:none --sparse`；已有 ResearchStudio 保留原 clone 和本地产物。
 - 远端约定：`origin` 指向个人 fork，`upstream` 指向原项目。
 - 父仓约定：只跟踪研究材料和 `_meta` 卡，不跟踪第三方源码。
@@ -68,13 +73,13 @@
 需要历史时：
 
 ```bash
-git -C explorations/research/repos/<slug> fetch --unshallow upstream
+git -C research-worktrees/<slug> fetch --unshallow upstream
 ```
 
 需要额外目录时：
 
 ```bash
-git -C explorations/research/repos/<slug> sparse-checkout add <path>
+git -C research-worktrees/<slug> sparse-checkout add <path>
 ```
 
 ### ResearchStudio 的特殊边界
@@ -106,7 +111,7 @@ upstream https://github.com/<original-owner>/<repo>.git
 日常更新应先：
 
 ```bash
-git -C explorations/research/repos/<slug> fetch upstream
+git -C research-worktrees/<slug> fetch upstream
 ```
 
 本轮没有向个人 fork 推送本地代码改动；fork 仅用于保存个人远端副本和后续独立研究分支。
@@ -122,9 +127,9 @@ python3 scripts/explorations/restore-projects.py --audit
 单仓验证：
 
 ```bash
-git -C explorations/research/repos/<slug> status --short --branch
-git -C explorations/research/repos/<slug> remote -v
-git -C explorations/research/repos/<slug> rev-parse HEAD
+git -C research-worktrees/<slug> status --short --branch
+git -C research-worktrees/<slug> remote -v
+git -C research-worktrees/<slug> rev-parse HEAD
 ```
 
 研究结论必须绑定 pinned commit；更新 upstream 后，先检查 diff，再决定材料是否需要刷新。

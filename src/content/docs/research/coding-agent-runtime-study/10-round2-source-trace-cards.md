@@ -1,3 +1,8 @@
+---
+title: "10. Round 2：可靠性源码追踪卡"
+sidebar:
+  hidden: true
+---
 # 10. Round 2：可靠性源码追踪卡
 
 ## 使用方法

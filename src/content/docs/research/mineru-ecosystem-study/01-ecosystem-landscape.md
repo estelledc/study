@@ -1,3 +1,8 @@
+---
+title: "生态与发展现状"
+sidebar:
+  hidden: true
+---
 # 生态与发展现状
 
 ## 先建立直觉

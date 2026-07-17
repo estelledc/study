@@ -1,3 +1,8 @@
+---
+title: "04. 主要同类框架深挖"
+sidebar:
+  hidden: true
+---
 # 04. 主要同类框架深挖
 
 ## 1. Microsoft Agent Framework

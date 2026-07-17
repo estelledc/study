@@ -1,3 +1,8 @@
+---
+title: "Provider 切换与本地控制面源码学习包"
+sidebar:
+  hidden: true
+---
 # Provider 切换与本地控制面源码学习包
 
 > **先读：[最终综合](00-final-synthesis.md)。** 它统一术语、核心结论、阅读路线和证据边界；第一次学习建议随后完成[零基础验证实验](09-beginner-verification-lab.md)。

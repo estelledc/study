@@ -1,18 +1,23 @@
+---
+title: "第三方源码研究副本"
+sidebar:
+  hidden: true
+---
 # 第三方源码研究副本
 
 本目录只放用于源码阅读、架构对比或临时贡献的外部仓库 clone。源码由上游 Git 管理，父仓只跟踪本页和 `_meta` 项目卡。
 
 | 仓库 | 项目卡 |
 |---|---|
-| ResearchStudio | [researchstudio](../../_meta/researchstudio.md) |
-| Codex | [codex](../../_meta/codex.md) |
-| Gemini CLI | [gemini-cli](../../_meta/gemini-cli.md) |
-| Grok Build | [grok-build](../../_meta/grok-build.md) |
-| OpenCode | [opencode](../../_meta/opencode.md) |
-| Pi | [pi](../../_meta/pi.md) |
-| CSSwitch fork | [csswitch](../../_meta/csswitch.md) |
-| CC Switch | [ccswitch](../../_meta/ccswitch.md) |
-| Chinese Independent Developer fork | [chinese-independent-developer](../../_meta/chinese-independent-developer.md) |
+| ResearchStudio | researchstudio (`researchstudio`) |
+| Codex | codex (`codex`) |
+| Gemini CLI | gemini-cli (`gemini-cli`) |
+| Grok Build | grok-build (`grok-build`) |
+| OpenCode | opencode (`opencode`) |
+| Pi | pi (`pi`) |
+| CSSwitch fork | csswitch (`csswitch`) |
+| CC Switch | ccswitch (`ccswitch`) |
+| Chinese Independent Developer fork | chinese-independent-developer (`chinese-independent-developer`) |
 
 ## Trellis 与 Coding Agent Harness 生态研究
 
@@ -20,9 +25,9 @@
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 核心与 SDD | [Trellis](../../_meta/trellis.md)、[Spec Kit](../../_meta/spec-kit.md)、[OpenSpec](../../_meta/openspec.md)、[BMAD-METHOD](../../_meta/bmad-method.md)、[Spec Workflow MCP](../../_meta/spec-workflow-mcp.md) |
-| 上下文、计划与复利 | [Superpowers](../../_meta/superpowers.md)、[Planning with Files](../../_meta/planning-with-files.md)、[GSD Core](../../_meta/gsd-core.md)、[Agent OS](../../_meta/agent-os.md)、[Compound Engineering](../../_meta/compound-engineering.md)、[PRPs Agentic Eng](../../_meta/prps-agentic-eng.md)、[Context Engineering Intro](../../_meta/context-engineering-intro.md) |
-| Memory 与治理 | [Acontext](../../_meta/acontext.md)、[memU](../../_meta/memu.md)、[claude-mem](../../_meta/claude-mem.md)、[SpexCode](../../_meta/spexcode.md)、[OpenLore](../../_meta/openlore.md) |
+| 核心与 SDD | Trellis (`trellis`)、Spec Kit (`spec-kit`)、OpenSpec (`openspec`)、BMAD-METHOD (`bmad-method`)、Spec Workflow MCP (`spec-workflow-mcp`) |
+| 上下文、计划与复利 | Superpowers (`superpowers`)、Planning with Files (`planning-with-files`)、GSD Core (`gsd-core`)、Agent OS (`agent-os`)、Compound Engineering (`compound-engineering`)、PRPs Agentic Eng (`prps-agentic-eng`)、Context Engineering Intro (`context-engineering-intro`) |
+| Memory 与治理 | Acontext (`acontext`)、memU (`memu`)、claude-mem (`claude-mem`)、SpexCode (`spexcode`)、OpenLore (`openlore`) |
 
 完整研究导航见 [Trellis 与 Coding Agent Harness 生态研究](../trellis-agent-harness-ecosystem-study/README.md)。
 
@@ -34,9 +39,9 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 主项目与直接基础 | [LambChat](../../_meta/lambchat.md)、[DeepAgents](../../_meta/deepagents.md)、[LangGraph](../../_meta/langgraph.md)、[deepagents-backends](../../_meta/deepagents-backends.md) |
-| 端到端与近邻平台 | [OpsinTech Platform](../../_meta/opsintech-platform.md)、[DeepAgentForce](../../_meta/deepagentforce.md)、[Dify](../../_meta/dify.md)、[LibreChat](../../_meta/librechat.md)、[OpenClaw](../../_meta/openclaw.md) |
-| 治理控制面与执行底座 | [project-agi](../../_meta/project-agi.md)、[MCP Gateway Registry](../../_meta/mcp-gateway-registry.md)、[Preloop](../../_meta/preloop.md)、[Lobu](../../_meta/lobu.md)、[Loomcycle](../../_meta/loomcycle.md) |
+| 主项目与直接基础 | LambChat (`lambchat`)、DeepAgents (`deepagents`)、LangGraph (`langgraph`)、deepagents-backends (`deepagents-backends`) |
+| 端到端与近邻平台 | OpsinTech Platform (`opsintech-platform`)、DeepAgentForce (`deepagentforce`)、Dify (`dify`)、LibreChat (`librechat`)、OpenClaw (`openclaw`) |
+| 治理控制面与执行底座 | project-agi (`project-agi`)、MCP Gateway Registry (`mcp-gateway-registry`)、Preloop (`preloop`)、Lobu (`lobu`)、Loomcycle (`loomcycle`) |
 
 完整研究导航见 [LambChat 与生产级 Agent 平台生态研究](../lambchat-ecosystem-study/README.md)。
 
@@ -46,10 +51,10 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 核心、组件与评测 | [MinerU](../../_meta/mineru.md)、[PDF-Extract-Kit](../../_meta/pdf-extract-kit.md)、[OmniDocBench](../../_meta/omnidocbench.md)、[DocLayout-YOLO](../../_meta/doclayout-yolo.md)、[UniMERNet](../../_meta/unimernet.md)、[MinerU-Diffusion](../../_meta/mineru-diffusion.md) |
-| 工程型解析器 | [Docling](../../_meta/docling.md)、[Marker](../../_meta/marker.md)、[PaddleOCR](../../_meta/paddleocr.md) |
-| 专用文档 VLM | [olmOCR](../../_meta/olmocr.md)、[dots.ocr](../../_meta/dots-ocr.md)、[MonkeyOCR](../../_meta/monkeyocr.md)、[DeepSeek-OCR](../../_meta/deepseek-ocr.md)、[GLM-OCR](../../_meta/glm-ocr.md)、[Dolphin](../../_meta/dolphin.md)、[OCRFlux](../../_meta/ocrflux.md) |
-| 轻量转换与 ETL | [MarkItDown](../../_meta/markitdown.md)、[Unstructured](../../_meta/unstructured.md)、[OpenParse](../../_meta/open-parse.md) |
+| 核心、组件与评测 | MinerU (`mineru`)、PDF-Extract-Kit (`pdf-extract-kit`)、OmniDocBench (`omnidocbench`)、DocLayout-YOLO (`doclayout-yolo`)、UniMERNet (`unimernet`)、MinerU-Diffusion (`mineru-diffusion`) |
+| 工程型解析器 | Docling (`docling`)、Marker (`marker`)、PaddleOCR (`paddleocr`) |
+| 专用文档 VLM | olmOCR (`olmocr`)、dots.ocr (`dots-ocr`)、MonkeyOCR (`monkeyocr`)、DeepSeek-OCR (`deepseek-ocr`)、GLM-OCR (`glm-ocr`)、Dolphin (`dolphin`)、OCRFlux (`ocrflux`) |
+| 轻量转换与 ETL | MarkItDown (`markitdown`)、Unstructured (`unstructured`)、OpenParse (`open-parse`) |
 
 完整研究导航见 [MinerU 与文档解析生态系统研究](../mineru-ecosystem-study/README.md)。
 
@@ -59,11 +64,11 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 核心与索引 | [ResearchStudio](../../_meta/researchstudio.md)、[Awesome AI Auto-Research](../../_meta/awesome-ai-auto-research.md) |
-| 自动研究主链 | [AI-Scientist](../../_meta/ai-scientist.md)、[AI-Scientist-v2](../../_meta/ai-scientist-v2.md)、[AI-Researcher](../../_meta/ai-researcher.md)、[Agent Laboratory](../../_meta/agent-laboratory.md)、[AutoResearchClaw](../../_meta/auto-research-claw.md)、[FAROS](../../_meta/faros.md)、[AutoR](../../_meta/autor.md)、[InternAgent](../../_meta/intern-agent.md)、[nano-scientist](../../_meta/nano-scientist.md) |
-| Idea、证据与讨论 | [Idea2Paper](../../_meta/idea2paper.md)、[Co-Scientist](../../_meta/co-scientist.md)、[PaperQA2](../../_meta/paper-qa.md)、[STORM](../../_meta/storm.md)、[Paper Search MCP](../../_meta/paper-search-mcp.md) |
-| Skill 与 artifact | [AI Research SKILLs](../../_meta/ai-research-skills.md)、[Scientific Agent Skills](../../_meta/scientific-agent-skills.md)、[Agent-Native Research Artifact](../../_meta/agent-native-research-artifact.md) |
-| 论文传播 | [Paper2Poster](../../_meta/paper2poster.md)、[PosterGen](../../_meta/postergen.md)、[Paper2Video](../../_meta/paper2video.md)、[Paper2Slides](../../_meta/paper2slides.md)、[PPT Master](../../_meta/ppt-master.md)、[PaperBanana](../../_meta/paper-banana.md)、[posterly](../../_meta/posterly.md)、[paper2anything](../../_meta/paper2anything.md) |
+| 核心与索引 | ResearchStudio (`researchstudio`)、Awesome AI Auto-Research (`awesome-ai-auto-research`) |
+| 自动研究主链 | AI-Scientist (`ai-scientist`)、AI-Scientist-v2 (`ai-scientist-v2`)、AI-Researcher (`ai-researcher`)、Agent Laboratory (`agent-laboratory`)、AutoResearchClaw (`auto-research-claw`)、FAROS (`faros`)、AutoR (`autor`)、InternAgent (`intern-agent`)、nano-scientist (`nano-scientist`) |
+| Idea、证据与讨论 | Idea2Paper (`idea2paper`)、Co-Scientist (`co-scientist`)、PaperQA2 (`paper-qa`)、STORM (`storm`)、Paper Search MCP (`paper-search-mcp`) |
+| Skill 与 artifact | AI Research SKILLs (`ai-research-skills`)、Scientific Agent Skills (`scientific-agent-skills`)、Agent-Native Research Artifact (`agent-native-research-artifact`) |
+| 论文传播 | Paper2Poster (`paper2poster`)、PosterGen (`postergen`)、Paper2Video (`paper2video`)、Paper2Slides (`paper2slides`)、PPT Master (`ppt-master`)、PaperBanana (`paper-banana`)、posterly (`posterly`)、paper2anything (`paper2anything`) |
 
 完整研究导航见 [ResearchStudio 生态系统研究](../researchstudio-ecosystem-study/README.md)。
 
@@ -73,11 +78,11 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 主项目与伴生实现 | [Garden Skills](../../_meta/garden-skills.md)、[Reacticle](../../_meta/reacticle.md)、[GPT Image 2 101](../../_meta/gpt-image-2-101.md) |
-| 规范、官方样例与市场 | [Agent Skills Spec](../../_meta/agent-skills-spec.md)、[Anthropic Agent Skills](../../_meta/anthropic-agent-skills.md)、[Claude Plugins Official](../../_meta/claude-plugins-official.md) |
-| 发现、安装与生命周期 | [Vercel Agent Skills CLI](../../_meta/vercel-agent-skills-cli.md)、[Awesome Claude Skills](../../_meta/awesome-claude-skills.md)、[Awesome Agent Skills](../../_meta/awesome-agent-skills.md)、[Skill Factory](../../_meta/skill-factory.md) |
-| 生产集合与 Harness | [Superpowers](../../_meta/superpowers.md)、[Addy Agent Skills](../../_meta/addy-agent-skills.md)、[Matt Pocock Agent Skills](../../_meta/mattpocock-agent-skills.md)、[Scientific Agent Skills](../../_meta/scientific-agent-skills.md)、[Compound Engineering Plugin](../../_meta/compound-engineering-plugin.md) |
-| 生成、触发、安全、评测与优化 | [Skill Seekers](../../_meta/skill-seekers.md)、[Claude Code Infrastructure Showcase](../../_meta/claude-code-infrastructure-showcase.md)、[Skill Scanner](../../_meta/skill-scanner.md)、[Agent Skills Eval](../../_meta/agent-skills-eval.md)、[SkillOpt](../../_meta/skillopt.md) |
+| 主项目与伴生实现 | Garden Skills (`garden-skills`)、Reacticle (`reacticle`)、GPT Image 2 101 (`gpt-image-2-101`) |
+| 规范、官方样例与市场 | Agent Skills Spec (`agent-skills-spec`)、Anthropic Agent Skills (`anthropic-agent-skills`)、Claude Plugins Official (`claude-plugins-official`) |
+| 发现、安装与生命周期 | Vercel Agent Skills CLI (`vercel-agent-skills-cli`)、Awesome Claude Skills (`awesome-claude-skills`)、Awesome Agent Skills (`awesome-agent-skills`)、Skill Factory (`skill-factory`) |
+| 生产集合与 Harness | Superpowers (`superpowers`)、Addy Agent Skills (`addy-agent-skills`)、Matt Pocock Agent Skills (`mattpocock-agent-skills`)、Scientific Agent Skills (`scientific-agent-skills`)、Compound Engineering Plugin (`compound-engineering-plugin`) |
+| 生成、触发、安全、评测与优化 | Skill Seekers (`skill-seekers`)、Claude Code Infrastructure Showcase (`claude-code-infrastructure-showcase`)、Skill Scanner (`skill-scanner`)、Agent Skills Eval (`agent-skills-eval`)、SkillOpt (`skillopt`) |
 
 完整研究导航见 [Garden Skills 与 Agent Skills 工程生态研究](../agent-skills-ecosystem-study/README.md)。
 
@@ -87,10 +92,10 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 核心与标准 agent | [LangGraph](../../_meta/langgraph.md)、[LangGraph.js](../../_meta/langgraphjs.md)、[LangChain](../../_meta/langchain.md)、[Deep Agents](../../_meta/deepagents.md) |
-| 官方模式与教学 | [Supervisor](../../_meta/langgraph-supervisor-py.md)、[Swarm](../../_meta/langgraph-swarm-py.md)、[Bigtool](../../_meta/langgraph-bigtool.md)、[ReAct Agent](../../_meta/react-agent.md)、[LangGraph 101](../../_meta/langgraph-101.md) |
-| 应用、部署与索引 | [Agent Chat UI](../../_meta/agent-chat-ui.md)、[Gemini Fullstack](../../_meta/gemini-fullstack-langgraph-quickstart.md)、[Agent Service Toolkit](../../_meta/agent-service-toolkit.md)、[Aegra](../../_meta/aegra.md)、[DeerFlow](../../_meta/deer-flow.md)、[LangGraph4j](../../_meta/langgraph4j.md)、[Awesome LangGraph](../../_meta/awesome-langgraph.md) |
-| 同类框架 | [Microsoft Agent Framework](../../_meta/agent-framework.md)、[CrewAI](../../_meta/crewai.md)、[Pydantic AI](../../_meta/pydantic-ai.md)、[OpenAI Agents SDK](../../_meta/openai-agents-python.md)、[Mastra](../../_meta/mastra.md) |
+| 核心与标准 agent | LangGraph (`langgraph`)、LangGraph.js (`langgraphjs`)、LangChain (`langchain`)、Deep Agents (`deepagents`) |
+| 官方模式与教学 | Supervisor (`langgraph-supervisor-py`)、Swarm (`langgraph-swarm-py`)、Bigtool (`langgraph-bigtool`)、ReAct Agent (`react-agent`)、LangGraph 101 (`langgraph-101`) |
+| 应用、部署与索引 | Agent Chat UI (`agent-chat-ui`)、Gemini Fullstack (`gemini-fullstack-langgraph-quickstart`)、Agent Service Toolkit (`agent-service-toolkit`)、Aegra (`aegra`)、DeerFlow (`deer-flow`)、LangGraph4j (`langgraph4j`)、Awesome LangGraph (`awesome-langgraph`) |
+| 同类框架 | Microsoft Agent Framework (`agent-framework`)、CrewAI (`crewai`)、Pydantic AI (`pydantic-ai`)、OpenAI Agents SDK (`openai-agents-python`)、Mastra (`mastra`) |
 
 完整研究导航见 [LangGraph 生态系统研究](../langgraph-ecosystem-study/README.md)。
 
@@ -100,10 +105,10 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 核心血缘与运行时 | [FastVLM](../../_meta/fastvlm.md)、[FastViT](../../_meta/fastvit.md)、[MobileCLIP](../../_meta/mobileclip.md)、[RayGen](../../_meta/mobileclip-dr.md)、[LLaVA](../../_meta/llava.md)、[MLX-VLM](../../_meta/mlx-vlm.md)、[MLX Swift Examples](../../_meta/mlx-swift-examples.md)、[MLX Swift LM](../../_meta/mlx-swift-lm.md) |
-| 同类端侧模型 | [LLaVA-NeXT](../../_meta/llava-next.md)、[MobileVLM](../../_meta/mobilevlm.md)、[MiniCPM-V](../../_meta/minicpm-v.md)、[MiniCPM-V Apps](../../_meta/minicpm-v-apps.md)、[SmolVLM](../../_meta/smollm.md)、[Moondream](../../_meta/moondream.md) |
-| 衍生与应用 | [Mobile-O](../../_meta/mobile-o.md)、[VLMKit](../../_meta/vlmkit.md)、[USLS](../../_meta/usls.md) |
-| token 效率替代路线 | [SparseVLM](../../_meta/sparsevlms.md)、[LLaVA-PruMerge](../../_meta/llava-prumerge.md)、[FastV](../../_meta/fastv.md)、[AdaptVision](../../_meta/adaptvision.md) |
+| 核心血缘与运行时 | FastVLM (`fastvlm`)、FastViT (`fastvit`)、MobileCLIP (`mobileclip`)、RayGen (`mobileclip-dr`)、LLaVA (`llava`)、MLX-VLM (`mlx-vlm`)、MLX Swift Examples (`mlx-swift-examples`)、MLX Swift LM (`mlx-swift-lm`) |
+| 同类端侧模型 | LLaVA-NeXT (`llava-next`)、MobileVLM (`mobilevlm`)、MiniCPM-V (`minicpm-v`)、MiniCPM-V Apps (`minicpm-v-apps`)、SmolVLM (`smollm`)、Moondream (`moondream`) |
+| 衍生与应用 | Mobile-O (`mobile-o`)、VLMKit (`vlmkit`)、USLS (`usls`) |
+| token 效率替代路线 | SparseVLM (`sparsevlms`)、LLaVA-PruMerge (`llava-prumerge`)、FastV (`fastv`)、AdaptVision (`adaptvision`) |
 
 完整研究导航见 [FastVLM 与端侧高效 VLM 生态系统研究](../fastvlm-ecosystem-study/README.md)。
 
@@ -113,11 +118,11 @@ canonical 上游。
 
 | 能力层 | 项目与项目卡 |
 |---|---|
-| 综合档案 | [System Prompts Leaks](../../_meta/system-prompts-leaks.md)、[AI Tools Prompts](../../_meta/system-prompts-and-models-of-ai-tools.md)、[CL4R1T4S](../../_meta/cl4r1t4s.md)、[jujumilk3](../../_meta/leaked-system-prompts-jujumilk3.md) |
-| 自定义 GPT 与知识库 | [ChatGPT System Prompt](../../_meta/chatgpt-system-prompt.md)、[The Big Prompt Library](../../_meta/the-big-prompt-library.md) |
-| 阅读、官方数据与社区验证 | [YeeKal](../../_meta/leaked-system-prompts-yeekal.md)、[Grok Prompts](../../_meta/grok-prompts.md)、[LeakHub](../../_meta/leakhub.md)、[System Prompt Open](../../_meta/system-prompt-open.md) |
-| 直接抽取与 benchmark | [Effective Prompt Extraction](../../_meta/prompt-extraction.md)、[PLeak](../../_meta/pleak.md)、[RaccoonBench](../../_meta/raccoonbench.md)、[Prompt Extraction Eval](../../_meta/prompt-extraction-eval.md)、[SPE-LLM](../../_meta/spe-llm.md) |
-| 功能重建与自适应 Agent | [PRSA](../../_meta/prsa.md)、[JustAsk](../../_meta/justask.md) |
+| 综合档案 | System Prompts Leaks (`system-prompts-leaks`)、AI Tools Prompts (`system-prompts-and-models-of-ai-tools`)、CL4R1T4S (`cl4r1t4s`)、jujumilk3 (`leaked-system-prompts-jujumilk3`) |
+| 自定义 GPT 与知识库 | ChatGPT System Prompt (`chatgpt-system-prompt`)、The Big Prompt Library (`the-big-prompt-library`) |
+| 阅读、官方数据与社区验证 | YeeKal (`leaked-system-prompts-yeekal`)、Grok Prompts (`grok-prompts`)、LeakHub (`leakhub`)、System Prompt Open (`system-prompt-open`) |
+| 直接抽取与 benchmark | Effective Prompt Extraction (`prompt-extraction`)、PLeak (`pleak`)、RaccoonBench (`raccoonbench`)、Prompt Extraction Eval (`prompt-extraction-eval`)、SPE-LLM (`spe-llm`) |
+| 功能重建与自适应 Agent | PRSA (`prsa`)、JustAsk (`justask`) |
 
 完整研究导航见 [系统提示词泄露生态研究材料包](../system-prompt-leak-ecosystem-study/README.md)；一手来源与固定快照刷新规则见 [维护章](../system-prompt-leak-ecosystem-study/09-sources-and-maintenance.md)。
 

@@ -1,3 +1,8 @@
+---
+title: "LambChat 架构深挖"
+sidebar:
+  hidden: true
+---
 # LambChat 架构深挖
 
 > 固定源码：`Yanyutin753/LambChat@f520f4b55b092b796d8c4e4a64555ba233af2f8a`

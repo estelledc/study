@@ -1,3 +1,8 @@
+---
+title: "03. 横向比较：架构模式与 ResearchStudio 可借鉴点"
+sidebar:
+  hidden: true
+---
 # 03. 横向比较：架构模式与 ResearchStudio 可借鉴点
 
 ## 1. 编排模型

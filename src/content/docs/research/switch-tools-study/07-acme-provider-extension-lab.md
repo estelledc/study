@@ -1,3 +1,8 @@
+---
+title: "07. Acme Provider 扩展实验：新增名称，还是新增策略"
+sidebar:
+  hidden: true
+---
 # 07. Acme Provider 扩展实验：新增名称，还是新增策略
 
 假设要支持一个虚构的 Acme provider：
