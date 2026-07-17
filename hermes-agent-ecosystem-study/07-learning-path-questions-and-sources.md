@@ -382,7 +382,11 @@ make lint
 git diff --check
 ```
 
-本轮没有执行第三方项目测试。原因是：
+2026-07-16 初稿没有执行第三方项目测试。2026-07-17 重验时，已按 Hermes 自身要求
+使用 `scripts/run_tests.sh` 定向运行 5 个文件、200 项测试，结果全部通过；命令与
+首次 sparse checkout 失败记录见[全量快照复核](08-2026-07-17-refresh.md)。
+
+其余 21 个项目仍未执行第三方测试，原因是：
 
 - 22 个项目语言和依赖差异很大；
 - 多数需要 API key、Node/Rust/Go toolchain、Docker、PostgreSQL 或模型；
