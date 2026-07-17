@@ -2,6 +2,13 @@
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const personStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://estelledc.github.io/#person',
+  name: 'Jason Xun',
+  url: 'https://estelledc.github.io/',
+};
 ---
 
 <!doctype html>
@@ -12,6 +19,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#faf6f0" />
     <title>页面未找到 | Jason's Study</title>
+    <script type="application/ld+json" set:html={JSON.stringify(personStructuredData)}></script>
   </head>
   <body>
     <main>

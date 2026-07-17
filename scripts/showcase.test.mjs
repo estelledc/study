@@ -117,5 +117,7 @@ test('cold builds use one base-safe 404 route outside the docs collection', () =
   assert.match(notFoundPage, /import\.meta\.env\.BASE_URL/);
   assert.match(notFoundPage, /href=\{`\$\{baseUrl\}start\/`\}/);
   assert.match(notFoundPage, /href=\{`\$\{baseUrl\}projects-atlas\/`\}/);
+  assert.match(notFoundPage, /'@id': 'https:\/\/estelledc\.github\.io\/#person'/);
+  assert.match(notFoundPage, /name: 'Jason Xun'/);
   assert.equal(fs.existsSync(path.join(root, 'src/content/docs/404.md')), false);
 });
