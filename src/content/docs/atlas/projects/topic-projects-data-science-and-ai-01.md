@@ -40,7 +40,7 @@ sidebar:
 | [Open-Sora — 把 Sora 路线开源对标的视频生成项目](/study/projects/open-sora/) | `open-sora` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Optax — JAX 优化器组合库](/study/projects/optax/) | `optax` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Optuna — 超参搜索框架](/study/projects/optuna/) | `optuna` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) | `paddleocr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [PaddleOCR — 多语言 OCR 与文档解析平台](/study/projects/paddleocr/) | `paddleocr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | `pandas` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | `piper` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) | `polars` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

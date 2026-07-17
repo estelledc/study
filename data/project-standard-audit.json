@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 9,
-      "needs-evidence": 952
+      "benchmark-aligned": 10,
+      "needs-evidence": 951
     }
   },
   "projects": [
@@ -14909,27 +14909,23 @@
     },
     {
       "slug": "paddleocr",
-      "title": "PaddleOCR — 中文 OCR 最强开源方案",
+      "title": "PaddleOCR — 多语言 OCR 与文档解析平台",
       "source": "https://github.com/PaddlePaddle/PaddleOCR",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "panda3d",
