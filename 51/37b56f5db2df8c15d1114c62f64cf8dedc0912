@@ -1,0 +1,57 @@
+astro.config.mjs
+  s_aefbb45618eee6::t_a9ab05fcd4b6b5 158-165
+package.json
+  s_aefbb45618eee6::t_fac95268665062 44
+  s_aefbb45618eee6::t_d21eb67f69667e 45
+  s_1442f3c257a9c0::t_6efaf1987316ce 27-28
+scripts/audit-research-benchmark.mjs
+  s_aefbb45618eee6::t_ab0f6f25c69bc6 40-42
+  s_aefbb45618eee6::t_098c73b399b56e 1-39,43-128
+scripts/run-research-labs.test.mjs
+  s_aefbb45618eee6::t_d782c2d3860b16 21-33
+  s_aefbb45618eee6::t_cb40a00164f639 1-20
+scripts/run-research-labs.mjs
+  s_aefbb45618eee6::t_dcb3df22566281 1-8,16-48,54,87-90,99-102,105,117
+  s_aefbb45618eee6::t_728411e0d2b114 9-15,49-53,55-86,91-98,103-104,106-116
+scripts/audit-project-standard.mjs
+  s_aefbb45618eee6::t_117701659312c4 1-160
+docs/research-benchmark-standard.md
+  s_aefbb45618eee6::t_1ce0e5288f81ab 85-93
+  s_aefbb45618eee6::t_9fcd1592b66404 82-84
+  s_aefbb45618eee6::t_2c05f781d90837 94-96
+  s_1442f3c257a9c0::t_bdbcacaf96438b 1-81,97
+data/project-standard-audit.json
+  s_1442f3c257a9c0::t_22364ec7202299 1-23090
+scripts/audit-project-standard.test.mjs
+  s_1442f3c257a9c0::t_1dcb393b6f5404 1-57
+scripts/audit-research-benchmark.test.mjs
+  s_1442f3c257a9c0::t_b0e7511eb7c79f 1-49
+scripts/verify-ci.mjs
+  s_1442f3c257a9c0::t_587389b9ffd46c 36-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "5137b56f5db2df8c15d1114c62f64cf8dedc0912",
+  "prompts": {},
+  "sessions": {
+    "s_1442f3c257a9c0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_1442f3c257a9c0",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    },
+    "s_aefbb45618eee6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a59eaa1327f744c7a944368",
+        "model": "gpt-5.6-sol__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
