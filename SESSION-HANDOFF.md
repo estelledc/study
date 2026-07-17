@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆整合与首批项目重构
+
+- status：Program `active`；本地 writer epoch 1 `complete`。
+- 起始 ref：`2d3daecdf9eac8e6fa1e0da774d17664a854a4f9`。
+- objective：把父仓 Research Refresh Program 作为 Study 的可运行重构标杆，建立全量项目差距清单，并完成第一批证据诚实的项目页迁移。
+- scope：`src/content/docs/research/`、Research/项目标准审计与 lab 运行器、导航/CI、3 个既有 `study-v2` 项目页及其 receipt；未改候选队列、政策阈值、958 篇 legacy 正文、远端或旧 worktree 拓扑。
+- activated_by：`explicit-user-request-2026-07-17-unify-study-with-research-benchmark`。
+- detector fingerprint：Study 有 961 个项目页，但基线仅 3 个 `study-v2`，其余 958 个缺固定 revision 和证据边界；Research 有已验收的 14 类、201 upstream 和实验闭环，但尚未进入 Study。
+- external delta：`0`；只形成本地 review-ready branch，未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. 用 subtree 双亲提交 `5a2cb6df7` 导入 177 个正式 Research 文件，并保留筛选后的 44 个祖先提交。
+  2. 为 152 份 Markdown 增加 Starlight frontmatter，分离公开内容与 `research-worktrees/` 外部源码；适配脚本第二次运行 `changed=0`。
+  3. 新增 Research 结构审计、10 个便携 lab 模块、1 个固定 LangGraph 源码模块和 961 项项目标准快照。
+  4. 将 `claude-agent-sdk`、`openai-agents-sdk`、`vercel-ai` 补齐应用型自测，receipt 升至 generation 3；评估结果为 `benchmark-aligned=3`、`needs-evidence=958`。
+  5. 收窄 `npm test` 到 Study 自有测试目录，防止 ignored external worktree 污染测试发现。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=2d3daecdf... npm run verify:ci`：fresh `.astro` 条件下全绿；378 Node tests、23 Playwright tests、2283 sitemap URLs、内容/红线/SEO/Pages/规模门禁通过。
+  - `npm run test:research-labs:full`：10 个便携模块通过；固定 LangGraph `49ae27c2...` 模块 4 tests 通过。
+  - MinerU lab：纯函数合同通过；MarkItDown/OpenParse 未安装，2 个真实解析器对比显式 skip。
+  - `git rev-list --parents -n 1 5a2cb6df`：第二父节点为 Research 历史 `65604a658`。
+  - `git diff --check 2d3daecdf...HEAD`：通过。
+- budget：1 个整合/标准化/首批内容 epoch；单 writer；没有扩大为 958 页机械批改。
+- blocker：958 个 legacy 项目需要逐项目核对 canonical source、不可变 revision、主链、实践和 review receipt；不能用批量伪造 metadata 消除。
+- stop conditions：需要放宽门禁、批量猜测 revision、把静态阅读写成运行成功、或同一批次无法独立验收时停止。
+- 下一次 wake 条件：继续执行明确的项目迁移批次，或 owner 决定主题优先级；默认每批按当前内容政策保持有界。
+- 下一条命令：`npm run audit:project-standard`，再从 `data/project-standard-audit.json` 选择同一主题的小批次。
+- superseded_by：`none`。
+
 ## 2026-07-16 explorations 目录迁移路径修正
 
 - status：`complete`
