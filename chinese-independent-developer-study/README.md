@@ -1,13 +1,18 @@
 # 中国独立开发者列表源码研究
 
+> 最短入口：[最终接班页](00-final-reader-map.md) → [只读动手实验](01-hands-on-lab.md) → [真实案例与答案检查](02-case-cards-and-answer-guide.md)
+
 ## 研究快照
 
 - 上游：`1c7/chinese-independent-developer`
 - 个人 fork：`estelledc/chinese-independent-developer`
-- 固定提交：`58185a2de07cd2aea247b06fb689f08f8555d884`
-- 研究日期：2026-07-16
-- 本轮模式：`source-learn / 概览`
-- 边界：只读源码和公开 GitHub 状态；不修改 fork，不处理 Issue / PR，不触发 Routine。
+- 本地固定提交：`58185a2de07cd2aea247b06fb689f08f8555d884`
+- 远端复核提交：`30c6e09a30edadb82ea841138c6436c606659ef0`
+- 研究日期：2026-07-16；重新核验：2026-07-17
+- 本轮模式：`source-learn / 概览 + 追踪 + 提炼`
+- 证据边界：只读源码和公开 GitHub 状态；不修改 fork，不处理 Issue / PR，不触发 Routine。
+
+重新核验时，远端比本地固定提交前进 18 个提交，涉及三个项目列表和 Skill 的 4 行规则增量。主架构没有变化，但最新一次 Routine 触发因 token 认证失败，不能继续沿用“近期运行全部成功”的旧结论。
 
 ## 一句话结论
 
@@ -106,7 +111,48 @@ flowchart LR
   - 三版面分类
   - Routine Skill 契约
   - GitHub API 写入后的端到端结果
-- 公开运行记录中，最近 12 次“触发 Claude Routine”Action 均成功；日志显示返回 `type: routine_fire`，但仓库内没有下游完成回执。
+- 2026-07-16 的公开运行记录曾连续返回成功；日志只能证明触发请求被接受，仓库内没有下游完成回执。
+
+## 2026-07-17 重新核验
+
+### 1. upstream 增量
+
+`58185a2..30c6e09` 共 18 个提交：
+
+- 三个列表继续新增、整理和迁移条目。
+- Skill 新增“版面名称必须完整”和“PR 合并后单独整理新增描述”的规则。
+- Routine 触发 workflow 内容未变化。
+
+这说明当前维护策略仍在快速演化。研究结论必须同时写明本地固定提交和远端复核提交，不能把 7 月 16 日的 Skill 当成长期不变合同。
+
+### 2. Routine 当前失败
+
+公开 Action [run 29545709871](https://github.com/1c7/chinese-independent-developer/actions/runs/29545709871) 在 2026-07-17 00:46 UTC 失败：
+
+```text
+authentication_error: Authentication failed
+```
+
+失败发生在 GitHub Actions 调用 Anthropic Routine API 的触发步骤。仓库内的错误检查识别到 `"type":"error"` 并退出 1，因此：
+
+- **已证明**：触发器能 fail closed，认证失败不会显示为绿色。
+- **未发生**：Routine 没有开始扫描评论、Issue 或 PR。
+- **不能推出**：Skill 规则、README 写入或感谢评论存在本轮运行故障。
+- **当前 blocker**：需要仓库 owner 检查或轮换 `CLAUDE_ROUTINE_TOKEN`；本研究不接触 secret。
+
+### 3. Markdown 数据探针
+
+对本地固定提交做只读扫描：
+
+| 指标 | 结果 | 正确解释 |
+|---|---:|---|
+| 状态条目行 | 2,544 | 四个列表中以三种状态符号开头的行 |
+| 严格匹配的产品行 | 2,513 | 符合“状态 + Markdown 链接 + `http/https` URL”的教学规则 |
+| 需人工复核的格式差 | 31 | 不自动判错，可能是历史格式或特殊链接 |
+| 重复产品 URL 值 | 26 | 只说明同一 URL 出现多次，不自动判断哪条应删除 |
+| 重复日期标题 | 1 | 程序员版有两个 `2025 年 8 月 8 号添加` |
+
+这些数字说明 Markdown-as-database 的代价：文件对人友好，但唯一性、枚举和日期顺序没有结构化 schema 保证。
 
 ## 第一轮发现
 
@@ -123,17 +169,22 @@ flowchart LR
    - 当前 Action 成功不能证明 Routine 内部成功，更不能证明 README 一定产生变化。
 5. **现有自动测试主要保护旧实现。**
    - 当前最关键的自然语言 Skill 没有对应的契约测试或离线案例集。
+6. **主链可用性依赖仓库外部认证。**
+   - workflow 和 Skill 没改，token 失效仍会让整条自动处理链停在触发边界。
+   - 绿色 Action 只证明触发请求被接受；红色 Action 也不等于项目数据已经被破坏。
 
 ## 推荐学习路线
 
-1. **精读当前 Skill**
+1. **先读[最终接班页](00-final-reader-map.md)**
+   - 建立“数据、政策、执行器、外部服务”四层直觉。
+2. **完成[只读动手实验](01-hands-on-lab.md)**
+   - 跑单测、统计条目、检查重复，再定位 Routine 失败边界。
+3. **阅读[真实案例与答案检查](02-case-cards-and-answer-guide.md)**
+   - 对比普通 PR 合并、分类纠正和认证失败三种不同控制流。
+4. **再精读当前 Skill**
    - 重点：预检、URL 幂等性、三版面分类、直接推送与 PR 归属。
-2. **追踪一条真实投稿**
-   - 从近期 Issue 或 PR 开始，追到最终 README commit 和感谢评论。
-3. **对比旧 Python 脚本**
+5. **最后对比旧 Python 脚本**
    - 建立“代码规则 vs 自然语言规则”差异矩阵，找出哪些约束已经漂移。
-4. **提炼可复用模式**
-   - Markdown-as-database、human-in-the-loop、append-only 内容治理、Agent Skill 作为操作手册。
 
 ## 下一轮建议精读入口
 
