@@ -200,15 +200,17 @@ UI、运行 policy、diagnostics 和测试向量都从它派生。
 ### 20 分钟：建立判断框架
 
 1. 本文。
-2. [案例卡与答案检查](08-case-cards-and-answer-guide.md) 的案例 2、4、7。
-3. 回答本文第 11 节前三题。
+2. [零基础验证实验](09-beginner-verification-lab.md) 第 0、4 节。
+3. [案例卡与答案检查](08-case-cards-and-answer-guide.md) 的案例 2、4、7。
+4. 回答本文第 11 节前三题。
 
 ### 90 分钟：掌握切换与恢复
 
 1. [CSSwitch 深潜](02-csswitch-v060-deep-dive.md) 第 2-5 节。
 2. [CC Switch 深潜](03-ccswitch-v317-deep-dive.md) 第 2-6 节。
 3. [失败恢复状态机](05-failure-recovery-state-machines.md)。
-4. 独立画出两个状态矩阵。
+4. 完成[零基础验证实验](09-beginner-verification-lab.md)。
+5. 独立画出两个状态矩阵。
 
 ### 半天：研究 gateway 与扩展
 
@@ -221,9 +223,9 @@ UI、运行 policy、diagnostics 和测试向量都从它派生。
 
 本研究已经证明：
 
--固定提交中的静态控制流、类型、测试定义和文档合同；
--两个项目的主要正常/失败状态机；
--关键协议不变量和扩展改造面。
+- **E1 静态源码**：固定提交中的控制流、类型、测试定义、正常/失败状态机、协议不变量和扩展改造面；
+- **E2 本地验证**：2026-07-17 在固定提交上运行 CSSwitch Responses 6 个测试和 CC Switch `web_search` 投影 3 个测试，均通过；
+- **E3 外部证据**：CC Switch 同一提交的前端、Ubuntu、Windows、macOS CI job 成功；CSSwitch v0.6.0 的公开 DMG 身份和负面签名事实可复核。
 
 本研究没有证明：
 
