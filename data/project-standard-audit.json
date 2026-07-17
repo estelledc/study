@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 6,
-      "needs-evidence": 955
+      "benchmark-aligned": 9,
+      "needs-evidence": 952
     }
   },
   "projects": [
@@ -3930,27 +3930,22 @@
     {
       "slug": "crewai",
       "title": "CrewAI — 把多 Agent 编排做成\"组团队\"",
-      "source": null,
-      "status": "needs-evidence",
+      "source": "https://github.com/crewAIInc/crewAI",
+      "status": "benchmark-aligned",
       "checks": {
-        "source": false,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "source",
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "cri-o",
@@ -10364,27 +10359,23 @@
     },
     {
       "slug": "librechat",
-      "title": "LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器",
+      "title": "LibreChat — 自托管多模型会话与 Agent 平台",
       "source": "https://github.com/danny-avila/LibreChat",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "librosa",
@@ -21115,25 +21106,21 @@
       "slug": "unstructured",
       "title": "Unstructured — 把任意文档解析成 LLM 能吃的元素列表",
       "source": "https://github.com/Unstructured-IO/unstructured",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "v8",

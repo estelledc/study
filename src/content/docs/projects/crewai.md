@@ -1,14 +1,26 @@
 ---
 title: 'CrewAI — 把多 Agent 编排做成"组团队"'
-来源: 'João Moura, "CrewAI: Framework for orchestrating role-playing, autonomous AI agents", 2023 起开源（GitHub: crewAIInc/crewAI）'
+来源: https://github.com/crewAIInc/crewAI
 日期: 2026-05-31
 分类: AI 框架
 难度: 入门
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/crewAIInc/crewAI
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-17'
+  immutable_revision: 985cf520283e8eaa26b81713e814773ddfdc34ff
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
 ---
 
 ## 是什么
 
-CrewAI 是一个 Python 框架，用三段式 DSL 把多个 LLM 智能体组成一个会分工的"团队"。日常类比：你不再是写代码调 API，而是**像招聘和派活**一样组建一个虚拟团队——给每个人岗位（Role）、目标（Goal）、人设（Backstory），再列出任务清单（Tasks），最后说一句"开干"（Crew kickoff）。
+CrewAI 是一个 Python 多 Agent 自动化框架。它有两条互补主线：用 Agent、Task、Crew 表达"谁做什么"，用 Flow 表达事件、分支、状态和持久化。日常类比：Crew 像组团队派活，Flow 像把团队放进一张有路由和检查点的业务流程图。
 
 最小例子（伪代码示意）：
 
@@ -21,28 +33,28 @@ crew = Crew(agents=[researcher, writer], tasks=[task1, task2])
 crew.kickoff()
 ```
 
-你**没写一行调度逻辑**，CrewAI 就按列表顺序跑、把前一个的产出塞进下一个的 context。
+这个例子省略了模型、工具、guardrail 和 checkpoint 配置，只用于认识对象关系；它不代表 CrewAI 的运行时只是三次字符串拼接。
 
 ## 为什么重要
 
 不理解 CrewAI 的设计选择，下面这些事都没法解释：
 
-- 为什么 2024 年起一堆"AI 投研助理 / AI 营销团队"产品都长得很像——它们底层很多就是 CrewAI
-- 为什么"多 Agent 协作"突然从论文走进产品——把"图论调度"换成"招聘比喻"后，产品经理也能编排
-- 为什么同一个 LLM 套上不同 Backstory 行为差很多——人设是稳定 system prompt 的工程化包装
-- 为什么有人吐槽 CrewAI"5 个 Agent 一跑就 3 美元"——每个 Task 都是独立 LLM 调用
+- 为什么 Crew 和 Flow 不能混成一个概念：前者偏角色化协作，后者偏事件驱动控制流
+- 为什么高层 DSL 仍需要 runtime state、event bus、memory 和 checkpoint
+- 为什么角色/任务描述容易上手，却也更难一眼看出真实 prompt、工具调用和状态变化
+- 为什么恢复执行不能只保存最终文本，还要记录已完成方法、实体和事件边界
 
 ## 核心要点
 
-CrewAI 的 DSL 就 **三个对象**，组合即编排：
+CrewAI 的 Crew 层以三个对象为入口：
 
 1. **Agent（员工）**：四件套 `role` / `goal` / `backstory` / `tools`。前三个是自然语言，会被拼进喂给底层模型的"开场白"（system prompt——告诉模型"你是谁、要做什么"的预设指令）；`tools` 是这个 Agent 能调用的外部能力（搜索、Python REPL、自定义函数）。还有 `allow_delegation=True` 让它能把活转给同 Crew 其他人。
 
-2. **Task（活）**：`description`（要做什么）+ `expected_output`（产出长啥样）+ `agent`（派给谁）+ `context`（依赖哪些前置 Task）。一个 Task = 一次 LLM 调用周期（模型可能多轮 tool 调用，但最终产出一个结果）。
+2. **Task（活）**：`description`（要做什么）+ `expected_output`（产出长啥样）+ `agent`（派给谁）+ `context`（依赖哪些前置 Task）。Task 是工作单元，不应简单等同于"恰好一次模型 API 调用"，因为内部可能包含工具、委派、guardrail 和重试。
 
-3. **Crew（团队 + 流程）**：`agents` 列表 + `tasks` 列表 + `process` 模式。模式两种：`sequential`（按列表顺序跑）和 `hierarchical`（指定一个更强模型当 manager，让它自己拆活派活）。
+3. **Crew（团队 + 执行）**：`agents` 列表 + `tasks` 列表 + `process` 模式。固定源码实现 sequential 与 hierarchical 两种 process，并同时管理 planning、memory、event、usage 和 checkpoint。
 
-三个对象里没有"图"也没有"消息总线"——这是 CrewAI 跟同类框架最大的区别。
+复杂控制流进入 **Flow**：`@start`、`@listen`、`@router` 等装饰器收集触发关系，state 可以持久化。固定源码还提供 `Crew.from_checkpoint()`、`Crew.fork()` 和 Flow SQLite persistence，因此"没有消息总线或 durable state"已经是过时判断。
 
 ## 三模式对照表
 
@@ -56,7 +68,7 @@ CrewAI 有两层选择：Crew 的 `process` 参数决定顺序跑还是经理派
 
 新手默认 sequential，跑通后再考虑升级。
 
-## 实践案例
+## 实践示例
 
 ### 案例 1：投研三人组（顺序模式）
 
@@ -64,7 +76,13 @@ CrewAI 有两层选择：Crew 的 `process` 参数决定顺序跑还是经理派
 analyst = Agent(role="股票分析师", goal="评估 NVDA 当前估值", tools=[search_tool])
 writer = Agent(role="财经记者", goal="把分析翻译给散户读懂")
 reviewer = Agent(role="风控合规", goal="检查文章里有没有违规承诺")
-crew = Crew(agents=[analyst, writer, reviewer], tasks=[t1, t2, t3], process="sequential")
+from crewai import Crew, Process
+
+crew = Crew(
+    agents=[analyst, writer, reviewer],
+    tasks=[t1, t2, t3],
+    process=Process.sequential,
+)
 ```
 
 `sequential` 模式下，t1 → t2 → t3 串行，每步把上一步的产出当输入。这是最常见也最稳的模式。
@@ -78,65 +96,84 @@ crew = Crew(agents=[researcher, writer, reviewer], tasks=[goal_task],
 
 只给一个高层目标，让 manager Agent（通常用更强的模型）自己决定**派给谁、按什么顺序、要不要再派一轮**。优点：灵活；代价：贵、容易跑偏、调试难。
 
-### 案例 3：跟 LangChain 工具互通
+### 案例 3：从 checkpoint 分支验证
 
 ```python
-from langchain.tools import DuckDuckGoSearchRun
-search = DuckDuckGoSearchRun()
-agent = Agent(role="...", tools=[search])
+from crewai import Crew
+from crewai.state.checkpoint_config import CheckpointConfig
+
+restored = Crew.from_checkpoint(
+    CheckpointConfig(restore_from="checkpoints/run.json")
+)
+branch = Crew.fork(
+    CheckpointConfig(restore_from="checkpoints/run.json"),
+    branch="alternative-review",
+)
 ```
 
-CrewAI 的 `tools` 接口兼容 LangChain Tool，可以直接复用上千个现成工具。这是它早期能爆发的关键——**没造工具的轮子**。
+这段只展示固定源码中的恢复/分支 API，不保证路径格式或业务对象适合你的版本。恢复后仍要调用 `kickoff()`，而且外部工具副作用不会因为 checkpoint 存在就自动变得可重复。
 
 ## 踩过的坑
 
-1. **5 个 Agent 是分水岭**：sequential 模式下，上游错一步整个 Crew 一起报废。Agent 数 > 5 之前必须加中间审核 Task。
+1. **把角色数量当可靠性指标**：Agent 越多，模型调用、上下文传递和失败面通常越大。是否增加审核要看风险和可观测证据，不存在通用的"5 个 Agent 分水岭"。
 
-2. **Backstory 写太长**：人设 200 字以内最好。我见过有人写 800 字"你的童年、你的方法论、你的口头禅"——结果模型把目标都忘了。
+2. **把 Backstory 当权限系统**：自然语言人设影响行为倾向，但不能代替工具 allowlist、凭证隔离和人工批准。
 
-3. **hierarchical 死循环**：manager 反复派活给同一个 Agent。需要在 manager 提示里显式加"每个子任务最多一次重试"。
+3. **只在 prompt 里限制循环**：hierarchical 模式还需要程序化预算、重试上限和终止状态，不能只靠 manager 自觉停下。
 
-4. **账单失控**：5 Agent × 10 Task × 4k tokens × $0.01/1k ≈ 单跑 2 美元，反复调试一天烧 $50 不夸张。先用便宜模型（Haiku、Mini）跑通流程再换 GPT-4。
+4. **把 checkpoint 当副作用 receipt**：checkpoint 证明框架状态保存到了哪里，不证明邮件、付款或数据库写入是否真实成功。
 
-5. **"团队"是比喻不是事实**：Agent 之间没真共享内存，所谓"协作"本质是把上一个 Task 的字符串塞进下一个的 context。Backstory 让它们看上去像在配合，实则是顺序 prompt 链。
+5. **忽略多套状态边界**：Crew、Flow、runtime event state、memory 和外部系统状态并存，恢复设计必须明确哪个层是源真相。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
 - 任务能拆成 3-7 个清晰子步骤，每步产出可以用文字描述
-- 有现成 LLM 提供商账号和预算，不在乎单跑几美元
+- 有现成 LLM 提供商账号，并愿意为每条 Crew/Flow 路径设置预算和观测
 - 业务方/PM 想自己改流程，又不会写调度代码——"招聘 + 派活"比"画 DAG"门槛低
 - 需要快速搭原型展示"AI 能完成端到端业务"
 
 **不适用**：
 
 - 高频实时任务（每条消息都跑一次 Crew，账单和延迟双爆炸）
-- 需要 Agent 之间真正的并发或共享状态——CrewAI 没有真共享内存
+- 需要用一个简单、显式的状态图完整表达所有控制流，不愿承担 Crew/Flow/runtime 多套抽象
 - 严格确定性流程（金融交易、医疗）——LLM 不可控，再多 Agent 也救不了
 - 单 Agent 单任务就够的场景——别为了用 Crew 而 Crew
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2023 年底**：João Moura 在 GitHub 开源 CrewAI，最初是 LangChain 上层的薄封装，主打"用招聘比喻编排"
-- **2024 年初**：GitHub stars 从几百飙到上万，原因之一是 LangChain 当时被吐槽"零件多到不知怎么拼"，CrewAI 给了开箱模板
-- **2024 年中**：逐步从 LangChain 解耦，自己实现核心调度，加入 `Flow` 模块（更显式的状态机）
-- **2024 年底**：推出 CrewAI Enterprise（商业版）和 Studio（图形化），公司化运营
-
-它不是技术上的新发明——多 Agent 协作论文一抓一大把——而是**产品化的胜利**：把抽象问题翻译成所有人都懂的"组团队"。
+- 本文绑定 `crewAIInc/crewAI@985cf520...`，该提交日期为 2026-07-16。
+- 固定仓库要求 Python `>=3.10,<3.14`，版本号由 SCM 动态提供，本文不猜测发布版本。
+- 当前源码的 Crew 已含 checkpoint、streaming、memory、knowledge、skills、event 和 usage 等职责。
+- Flow 已有独立 DSL、runtime 与 persistence；不能再用早期"只有 Agent/Task/Crew 三个对象"概括整个框架。
+- 本文没有调用真实模型、执行 Crew 或恢复 checkpoint，所有运行结论保持 `UNVERIFIED`。
 
 ## 学到什么
 
 1. **比喻就是产品**——把"调度多个模型调用"翻译成"组团队 + 派活"，门槛立刻从工程师降到 PM
-2. **Role + Goal + Backstory 是稳态 system prompt 的工程化**——比手写大段 prompt 更可维护
-3. **顺序优先于复杂调度**——大多数业务场景 sequential 够用，先别上 hierarchical
-4. **工具复用 > 重造**——CrewAI 兼容 LangChain Tool 是它早期能跑赢的关键技术决策
+2. **Role + Goal + Backstory 是 prompt 配置，不是权限边界**——可维护性和安全性是两件事。
+3. **顺序流程先用 Crew，显式事件/路由再用 Flow**——不要为了统一外观把两套抽象硬压成一套。
+4. **恢复要区分 framework state 与外部事实**——checkpoint 之外仍需 operation ID 和 side-effect receipt。
+
+## 应用型自测
+
+1. Crew 从 checkpoint 恢复后显示付款 Task 已完成，能否直接告诉用户付款成功？
+2. 一个流程需要条件分支、等待人工输入和恢复执行，继续堆 sequential Task 还是改用 Flow？
+3. `allow_delegation=True` 且 Backstory 写着"只读分析"，能否替代工具权限配置？
+
+检查点：
+
+1. 不能。checkpoint 只证明框架状态，必须读取支付系统的 operation receipt。
+2. 优先 Flow，让路由、state 和 persistence 显式；Crew 可以作为其中一个动作。
+3. 不能。自然语言不是强制权限边界，工具和凭证仍需程序化收窄。
 
 ## 延伸阅读
 
 - 官方文档：[docs.crewai.com](https://docs.crewai.com/)（最新 API 和概念图）
 - 上手教程：[CrewAI YouTube 频道](https://www.youtube.com/@crewAIInc)（作者亲自讲案例）
 - 源码：[github.com/crewAIInc/crewAI](https://github.com/crewAIInc/crewAI)（核心调度才几千行 Python，能读完）
+- 固定源码：[crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) —— 本文绑定提交 `985cf520283e8eaa26b81713e814773ddfdc34ff`
 - [[autogen]] —— Microsoft 多 Agent 框架，对话式（互发消息）vs CrewAI 任务式（派活）
 - [[swe-agent]] —— 单 Agent 做软件工程，CrewAI 像它的多 Agent 扩展
 - [[agentless]] —— 反向参照，证明"没 Agent"也能解决很多问题

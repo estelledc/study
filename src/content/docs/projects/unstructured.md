@@ -4,6 +4,19 @@ title: Unstructured — 把任意文档解析成 LLM 能吃的元素列表
 日期: 2026-05-31
 分类: AI / RAG / Document Parsing
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/Unstructured-IO/unstructured
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-17'
+  immutable_revision: d309caf8ee20b735eb105d4e16ac3f04e5a48172
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
+  applicable_version: 0.25.1
 ---
 
 ## 是什么
@@ -29,7 +42,7 @@ for el in elements:
 
 - 为什么 [[langchain]] 和 [[llamaindex]] 的"默认文档加载器"列表里都摆着 Unstructured——它把上游脏活做深了，下游不愿意再造一遍轮子
 - 为什么 RAG 项目卡在"PDF 解析质量"——纯 `pdfplumber` 抽不出表格、PyMuPDF 抽不出版面层级，它把这些拼成一套
-- 为什么"非结构化数据准备"能撑起一家拿了约 2500 万美元融资的公司——看起来不性感，但谁都绕不过去
+- 为什么"非结构化数据准备"不是一个 `extract_text()`：文件探测、格式分发、元素类型和 metadata 都会影响下游
 - 为什么它把策略显式分档（`fast` / `hi_res` / `ocr_only`），而不是"自动适配"——延迟和精度只能由用户拍板
 
 ## 核心要点
@@ -42,7 +55,7 @@ Unstructured 的处理流程可以拆成 **三步**：
 
 3. **Chunking（按语义切块）**：`chunk_by_title` 把同一标题下的内容粘成一个 chunk；`chunk_elements` 按 token 数硬切。这一步是为**下游 embedding** 准备等长且语义相对完整的输入——直接喂裸 Element 列表给向量化会切太碎，喂整篇又超 token。
 
-## 实践案例
+## 实践示例
 
 ### 案例 1：最简 RAG 前置
 
@@ -68,15 +81,15 @@ chunks = chunk_by_title(elements, max_characters=1000, combine_text_under_n_char
 elements = partition(
     filename="财报.pdf",
     strategy="hi_res",
-    infer_table_structure=True,
+    skip_infer_table_types=[],
 )
 ```
 
 **逐部分解释**：
 
 1. `strategy="hi_res"`：启用版面检测模型（detectron2 / yolox 一类），先找"哪里是表"
-2. `infer_table_structure=True`：把表格填进 `metadata.text_as_html`，下游 LLM 可读结构化表
-3. 代价：速度从一秒几十页掉到一秒一两页；且常需 `unstructured[all-docs]` + poppler / tesseract 等系统依赖（见踩坑）
+2. `skip_infer_table_types=[]`：不跳过 PDF 表格结构抽取；旧的 `pdf_infer_table_structure` 在固定源码已标记弃用
+3. 代价：需要版面/OCR 相关 extras 和系统依赖，延迟与资源消耗必须用自己的文档集测量
 
 ### 案例 3：元数据做 citation
 
@@ -100,10 +113,10 @@ narrative = [el for el in elements
 
 ## 踩过的坑
 
-1. **重依赖**：`hi_res` 要 poppler + tesseract + 版面模型 +（DOCX/PPTX 时）libreoffice；裸 `pip install unstructured` 只够 `fast`，一上 `hi_res` 就 ImportError。
-2. **速度差三档**：`fast` 一秒几十页，`hi_res` 一秒一两页，`ocr_only` 更慢——生产线必须按文档类型分流，不能一刀切。
+1. **依赖按格式变化**：基础安装覆盖文本、HTML、XML、JSON 和部分邮件；PDF/图片、Office 等格式需要相应 extras 和系统依赖，不能把一台机器的安装清单推广到所有格式。
+2. **速度不能写死**：`fast`、`hi_res`、`ocr_only` 的差距受文档、硬件、模型和批处理影响。生产线应记录 p50/p95、页失败率和峰值内存，而不是引用通用页速。
 3. **表格靠版面运气**：合并单元格、跨页表、横向表时 `text_as_html` 常错位；专业财报往往要换 LlamaParse 等专门工具。
-4. **OCR 别乱开**：`ocr_only` 每页过 tesseract，纯文本 PDF 慢约 50 倍且更糊——只在确认是扫描档时开。
+4. **OCR 别乱开**：文本型 PDF 先尝试直接抽取；只有扫描档或质量门失败时再进入 OCR 路径，并保留策略与工具版本。
 
 ## 适用 vs 不适用场景
 
@@ -123,13 +136,13 @@ narrative = [el for el in elements
 - 完全离线 + 无 GPU 环境——hi_res 的版面模型在 CPU 上慢且吃内存
 - 单一格式且量大——只解析 PDF 的话，PyMuPDF / pdfplumber 直接调更轻
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2022 中**：Brian Raymond 等人做 LLM 数据预处理时，发现"PDF → 文本"反复造轮子，抽成独立库。
-- **2022-10**：`Unstructured-IO/unstructured` 开源，初版主要支持 PDF / HTML / EML。
-- **2023**：[[langchain]] / [[llamaindex]] 接成默认 document loader 之一；同年 7 月公布 Seed + Series A 合计约 2500 万美元（Madrona 领投 A，Bain 参与）。
-- **2024-03**：再融约 4000 万美元 Series B（Menlo 领投），推进 Unstructured Platform（hosted API + SharePoint / Drive / S3 等连接器）。
-- **2024-2025**：Element 持续加字段（languages、links 等），与 LlamaIndex / [[haystack]] 等下游 co-evolve。
+- 本文绑定 `Unstructured-IO/unstructured@d309caf8...`，提交日期为 2026-07-15，库版本为 `0.25.1`。
+- 固定版本要求 Python `>=3.11,<3.14`，不同格式通过 optional dependencies 分开安装。
+- `partition()` 保证文件探测与格式分发，不保证所有 Element 都有页码或 coordinates；metadata 取决于格式和策略。
+- `chunk_by_title()` 以 Title/metadata 边界组织 chunk，并支持字符或 token 上限；它不是摘要器。
+- 本文没有安装 `all-docs`、运行 PDF/OCR 或比较 parser，运行状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
@@ -138,10 +151,23 @@ narrative = [el for el in elements
 3. **下游生态决定上游存活**——框架换默认 loader，护城河就会松，必须持续 co-evolve
 4. **元数据是未来杠杆**——页码、bbox 当初像"顺手存"，后来 citation、版面感知 chunk 全靠它
 
+## 应用型自测
+
+1. `partition()` 返回了文本，但没有 `coordinates`。能否生成精确到页面区域的 citation？
+2. 一批 PDF 同时包含文本型报告和扫描合同，是否应该全部固定用 `ocr_only`？
+3. `chunk_by_title()` 输出长度合规，是否说明表格和阅读顺序也一定正确？
+
+检查点：
+
+1. 不能。citation 粒度受实际 metadata 限制，缺坐标时只能降级或换策略。
+2. 不应。先做文件/质量分流，扫描档再走 OCR，并分别记录成本和失败率。
+3. 不能。chunking 消费上游 Element；解析结构错误会被原样带入下游。
+
 ## 延伸阅读
 
 - 官方文档：[Unstructured Docs](https://docs.unstructured.io/)（按格式、按策略两条主索引）
 - 源码起点：`unstructured/partition/auto.py`——看清"自动嗅探 + 分发"
+- 固定源码：[Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured) —— 本文绑定提交 `d309caf8ee20b735eb105d4e16ac3f04e5a48172`
 - 融资背景：[TechCrunch 报道 Seed+A 轮](https://techcrunch.com/2023/07/19/unstructured-which-offers-tools-to-prep-enterprise-data-for-llms-raises-25m/)
 - [[langchain]] 的 `UnstructuredFileLoader` 章节——看下游怎么消费 Element
 
