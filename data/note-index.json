@@ -52944,7 +52944,7 @@
       "id": "projects::ofetch",
       "area": "projects",
       "slug": "ofetch",
-      "title": "ofetch — Nuxt 默认的现代 fetch 包装",
+      "title": "ofetch — 以 Fetch 为底座的跨运行时请求包装",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -52957,13 +52957,13 @@
         "raw_category": "前端工程化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/ofetch/",
       "atlas": {
@@ -64028,7 +64028,7 @@
       "id": "projects::wretch",
       "area": "projects",
       "slug": "wretch",
-      "title": "wretch — 把 fetch 写成一条链",
+      "title": "Wretch — 用不可变配置链组织 Fetch",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -64041,13 +64041,13 @@
         "raw_category": "前端工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/wretch/",
       "atlas": {

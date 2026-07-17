@@ -16,5 +16,5 @@ sidebar:
 | [Axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | `axios` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Got — Node 端以 Stream 为底座的 HTTP 客户端](/study/projects/got/) | `got` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ky — 把 Fetch 包成可治理的请求流程](/study/projects/ky/) | `ky` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | `ofetch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | `wretch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ofetch — 以 Fetch 为底座的跨运行时请求包装](/study/projects/ofetch/) | `ofetch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Wretch — 用不可变配置链组织 Fetch](/study/projects/wretch/) | `wretch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

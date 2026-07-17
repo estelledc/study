@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 16,
-      "needs-evidence": 945
+      "benchmark-aligned": 18,
+      "needs-evidence": 943
     }
   },
   "projects": [
@@ -13965,27 +13965,23 @@
     },
     {
       "slug": "ofetch",
-      "title": "ofetch — Nuxt 默认的现代 fetch 包装",
+      "title": "ofetch — 以 Fetch 为底座的跨运行时请求包装",
       "source": "https://github.com/unjs/ofetch",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "ogre",
@@ -22343,27 +22339,23 @@
     },
     {
       "slug": "wretch",
-      "title": "wretch — 把 fetch 写成一条链",
+      "title": "Wretch — 用不可变配置链组织 Fetch",
       "source": "https://github.com/elbywan/wretch",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "x264",
