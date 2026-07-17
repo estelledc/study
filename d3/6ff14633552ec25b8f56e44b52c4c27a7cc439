@@ -1,0 +1,39 @@
+data/review-receipts/projects/vercel-ai.json
+  s_aefbb45618eee6::t_438cf5494f8625 3-4,8,15,19,28,32,41,54
+data/review-receipts/projects/claude-agent-sdk.json
+  s_aefbb45618eee6::t_8578ecb4bbb40c 3-4,8,15,19,28,32,41,54
+src/content/docs/projects/openai-agents-sdk.md
+  s_aefbb45618eee6::t_ae35551e1ddc86 169-180
+data/review-receipts/projects/openai-agents-sdk.json
+  s_aefbb45618eee6::t_9ea1ff6e090a40 3-4,8,15,19,28,32,41,54
+src/content/docs/projects/vercel-ai.md
+  s_aefbb45618eee6::t_c85cf6c8eb73f6 198-209
+src/content/docs/projects/claude-agent-sdk.md
+  s_c0555a67f50b47::t_cda65e9e167d9b 206-217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "d36ff14633552ec25b8f56e44b52c4c27a7cc439",
+  "prompts": {},
+  "sessions": {
+    "s_aefbb45618eee6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a59eaa1327f744c7a944368",
+        "model": "gpt-5.6-sol__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    },
+    "s_c0555a67f50b47": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_c0555a67f50b47",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
