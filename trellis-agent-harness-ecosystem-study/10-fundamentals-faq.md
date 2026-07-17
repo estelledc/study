@@ -92,7 +92,7 @@ Trellis 可以：
 
 ## 17. 为什么 Codex 默认 inline？
 
-当前 Trellis 认为 Codex 隔离子 Agent 不稳定继承父会话 task context。inline 可避免子 Agent 丢上下文或递归 dispatch；用户可显式切回 sub-agent。
+这是 Trellis 的默认工作流政策，不是 Codex 子 Agent 无法接收上下文。`fork_turns` 可选 fresh、bounded 或 full history；即使不继承 transcript，子 Agent 仍会收到显式任务和 session config。Trellis 选择 inline，是为了不让实现正确性依赖隐式 transcript 继承，并降低递归 dispatch 风险；用户仍可显式切到 sub-agent。
 
 ## 18. 什么是 session-scoped active task？
 

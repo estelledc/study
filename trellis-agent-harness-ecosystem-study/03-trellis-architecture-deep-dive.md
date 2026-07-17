@@ -277,9 +277,11 @@ Trellis 没有假设所有宿主 hook 能力相同：
 | Pull prelude | 子 Agent 启动后自己读取 task artifacts 和 JSONL |
 | Inline | 主 Agent 不派实现 Agent，直接读工件工作 |
 
-Codex 默认 `inline`，因为隔离子 Agent 不可靠继承父会话 task context；每轮 hook 还会显式注入 `<codex-mode>`：
+Codex 默认 `inline` 是 Trellis 的策略选择：避免把正确性建立在继承父会话 transcript 上。它不是 Codex 的能力限制；`fork_turns` 可由调用方选择，fresh-history 子 Agent 仍会收到显式委派任务和继承的 session config。每轮 hook 还会显式注入 `<codex-mode>`：
 
 - [`inject-workflow-state.py:231-259`](../repos/trellis/packages/cli/src/templates/shared-hooks/inject-workflow-state.py)
+
+这一区分来自 upstream 2026-07-17 的 #440 修正。本文源码链接仍绑定固定提交 `c6f85dc7`，当前措辞则按远端 `51a5674c` 校正。
 
 ## 8. 多平台投影
 
