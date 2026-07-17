@@ -1,0 +1,707 @@
+src/content/docs/research/langgraph-ecosystem-study/09-beginner-stategraph-lab.md
+  s_aefbb45618eee6::t_20e2ca61746069 53-76 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5a12235922d355aa8dc592","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[53,76]}]}]}
+  s_aefbb45618eee6::t_15abbe6074eefd 50-52
+  s_aefbb45618eee6::t_32ecb03373a937 77-79
+  s_bacf3a4f414670::t_8523de11b25247 1-49,80-262
+src/content/docs/research/README.md
+  s_aefbb45618eee6::t_ca40fea00bca7c 32 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5a0ecc5922d355aa8dc096","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":32}]}]}
+  s_aefbb45618eee6::t_e9af5a2ce27a30 29-31
+  s_aefbb45618eee6::t_a9d05c0a106dd2 33-35
+  s_bacf3a4f414670::t_63935a96c7a93b 1-28,36-40
+src/content/docs/research/agent-skills-ecosystem-study/01-scope-and-corpus.md
+  s_bacf3a4f414670::t_1fa18838d141d1 1-196
+src/content/docs/research/agent-skills-ecosystem-study/02-ecosystem-landscape.md
+  s_bacf3a4f414670::t_1b5cec266ee60f 1-494
+src/content/docs/research/agent-skills-ecosystem-study/03-project-deep-dives.md
+  s_bacf3a4f414670::t_02ba4d5005fff3 1-988
+src/content/docs/research/agent-skills-ecosystem-study/04-cross-project-comparison.md
+  s_bacf3a4f414670::t_a0389e90be83dc 1-617
+src/content/docs/research/agent-skills-ecosystem-study/05-learning-questions-and-faq.md
+  s_bacf3a4f414670::t_a27c63f7a5cb2c 1-591
+src/content/docs/research/agent-skills-ecosystem-study/06-repository-inventory.md
+  s_bacf3a4f414670::t_fd5783ebe43e7d 1-238
+src/content/docs/research/agent-skills-ecosystem-study/07-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_3f2fa53616eed7 1-158
+src/content/docs/research/agent-skills-ecosystem-study/08-beginner-skill-lifecycle-lab.md
+  s_bacf3a4f414670::t_514ad63f0a3450 1-177
+src/content/docs/research/agent-skills-ecosystem-study/README.md
+  s_bacf3a4f414670::t_d19ce3d676a4d9 1-165
+src/content/docs/research/chinese-independent-developer-study/00-final-reader-map.md
+  s_bacf3a4f414670::t_7cbfe3ced40fb7 1-175
+src/content/docs/research/chinese-independent-developer-study/01-hands-on-lab.md
+  s_bacf3a4f414670::t_3f6d7321cacd48 1-237
+src/content/docs/research/chinese-independent-developer-study/02-case-cards-and-answer-guide.md
+  s_bacf3a4f414670::t_5afd0b887cf597 1-260
+src/content/docs/research/chinese-independent-developer-study/README.md
+  s_bacf3a4f414670::t_e79a700a0cd8a7 1-205
+src/content/docs/research/coding-agent-runtime-study/00-final-reader-map.md
+  s_bacf3a4f414670::t_6d7aec62668451 1-180
+src/content/docs/research/coding-agent-runtime-study/01-field-map.md
+  s_bacf3a4f414670::t_27d5567d61d91f 1-283
+src/content/docs/research/coding-agent-runtime-study/02-core-loop-deep-dive.md
+  s_bacf3a4f414670::t_5747106c84741f 1-468
+src/content/docs/research/coding-agent-runtime-study/03-codex.md
+  s_bacf3a4f414670::t_776e23369b2f9b 1-328
+src/content/docs/research/coding-agent-runtime-study/04-gemini-cli.md
+  s_bacf3a4f414670::t_a5af94a2f425ad 1-362
+src/content/docs/research/coding-agent-runtime-study/05-grok-build.md
+  s_bacf3a4f414670::t_461599cfeda95f 1-422
+src/content/docs/research/coding-agent-runtime-study/06-opencode.md
+  s_bacf3a4f414670::t_254e3755cdf5f1 1-431
+src/content/docs/research/coding-agent-runtime-study/07-pi.md
+  s_bacf3a4f414670::t_c1b296f0cb7e4d 1-478
+src/content/docs/research/coding-agent-runtime-study/08-comparison-and-thinking.md
+  s_bacf3a4f414670::t_4675ab96008f8b 1-376
+src/content/docs/research/coding-agent-runtime-study/09-round2-reliability-failure-state-machine.md
+  s_bacf3a4f414670::t_52009a27e2d38d 1-622
+src/content/docs/research/coding-agent-runtime-study/10-round2-source-trace-cards.md
+  s_bacf3a4f414670::t_abd9f1feae9cc3 1-636
+src/content/docs/research/coding-agent-runtime-study/11-round3-extension-subagent-capability-map.md
+  s_bacf3a4f414670::t_389c1dabd077b1 1-660
+src/content/docs/research/coding-agent-runtime-study/12-round3-reference-architecture-and-thinking.md
+  s_bacf3a4f414670::t_0d4ba75b8f9c3b 1-639
+src/content/docs/research/coding-agent-runtime-study/13-beginner-runtime-lab.md
+  s_bacf3a4f414670::t_8d47ff99e12fe6 1-172
+src/content/docs/research/coding-agent-runtime-study/README.md
+  s_bacf3a4f414670::t_6807c174a8df52 1-116
+src/content/docs/research/coding-agent-runtime-study/labs/minimal_agent_loop.py
+  s_bacf3a4f414670::t_564c5fdf4eb591 1-95
+src/content/docs/research/coding-agent-runtime-study/labs/test_minimal_agent_loop.py
+  s_bacf3a4f414670::t_fa3788d0e5b341 1-66
+src/content/docs/research/deeptutor-ecosystem-study/01-scope-and-corpus.md
+  s_bacf3a4f414670::t_b2278395cd9337 1-120
+src/content/docs/research/deeptutor-ecosystem-study/02-ecosystem-landscape.md
+  s_bacf3a4f414670::t_ffd66498afa192 1-214
+src/content/docs/research/deeptutor-ecosystem-study/03-project-deep-dives.md
+  s_bacf3a4f414670::t_76f39130af54b1 1-802
+src/content/docs/research/deeptutor-ecosystem-study/04-comparison-and-patterns.md
+  s_bacf3a4f414670::t_fd78680e111045 1-196
+src/content/docs/research/deeptutor-ecosystem-study/05-learning-questions.md
+  s_bacf3a4f414670::t_ad278b6aa3cea8 1-142
+src/content/docs/research/deeptutor-ecosystem-study/06-sources-and-snapshots.md
+  s_bacf3a4f414670::t_6601b495d8ccaf 1-113
+src/content/docs/research/deeptutor-ecosystem-study/07-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_912d23d32660e0 1-252
+src/content/docs/research/deeptutor-ecosystem-study/08-beginner-evidence-tutor-lab.md
+  s_bacf3a4f414670::t_00126c911dbc55 1-289
+src/content/docs/research/deeptutor-ecosystem-study/09-beginner-project-onboarding-cards.md
+  s_bacf3a4f414670::t_8fe3b8ddfbefee 1-144
+src/content/docs/research/deeptutor-ecosystem-study/README.md
+  s_bacf3a4f414670::t_346d40b9a828da 1-159
+src/content/docs/research/deeptutor-ecosystem-study/labs/evidence_tutor.py
+  s_bacf3a4f414670::t_952570955d12ed 1-374
+src/content/docs/research/deeptutor-ecosystem-study/labs/test_evidence_tutor.py
+  s_bacf3a4f414670::t_9dfd7fcbabc109 1-205
+src/content/docs/research/fastvlm-ecosystem-study/00-final-reader-map.md
+  s_bacf3a4f414670::t_12052ee7b23931 1-183
+src/content/docs/research/fastvlm-ecosystem-study/01-ecosystem-landscape.md
+  s_bacf3a4f414670::t_5bf68074d7397a 1-295
+src/content/docs/research/fastvlm-ecosystem-study/02-project-deep-dives.md
+  s_bacf3a4f414670::t_af53876bf35c6a 1-678
+src/content/docs/research/fastvlm-ecosystem-study/03-cross-project-comparison.md
+  s_bacf3a4f414670::t_a964ef3116f337 1-262
+src/content/docs/research/fastvlm-ecosystem-study/04-learning-route-and-questions.md
+  s_bacf3a4f414670::t_53f92963b68364 1-271
+src/content/docs/research/fastvlm-ecosystem-study/05-repository-inventory.md
+  s_bacf3a4f414670::t_322db4c6d61243 1-182
+src/content/docs/research/fastvlm-ecosystem-study/06-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_113520a375e54a 1-289
+src/content/docs/research/fastvlm-ecosystem-study/07-beginner-edge-vlm-budget-lab.md
+  s_bacf3a4f414670::t_a71e3e3dc8c26c 1-353
+src/content/docs/research/fastvlm-ecosystem-study/08-beginner-project-onboarding-cards.md
+  s_bacf3a4f414670::t_e6968b25992e14 1-200
+src/content/docs/research/fastvlm-ecosystem-study/README.md
+  s_bacf3a4f414670::t_8e1513d24baa6a 1-123
+src/content/docs/research/fastvlm-ecosystem-study/labs/edge_vlm_budget.py
+  s_bacf3a4f414670::t_0fd8b3427f3249 1-379
+src/content/docs/research/fastvlm-ecosystem-study/labs/test_edge_vlm_budget.py
+  s_bacf3a4f414670::t_c070399cee3a20 1-145
+src/content/docs/research/hermes-agent-ecosystem-study/01-scope-corpus-and-inventory.md
+  s_bacf3a4f414670::t_fab2f5f4946160 1-163
+src/content/docs/research/hermes-agent-ecosystem-study/02-ecosystem-landscape.md
+  s_bacf3a4f414670::t_4dfcb2461d5620 1-365
+src/content/docs/research/hermes-agent-ecosystem-study/03-hermes-agent-deep-dive.md
+  s_bacf3a4f414670::t_f446d326134a7b 1-525
+src/content/docs/research/hermes-agent-ecosystem-study/04-direct-ecosystem-projects.md
+  s_bacf3a4f414670::t_4b8bcd9ed9f48e 1-466
+src/content/docs/research/hermes-agent-ecosystem-study/05-runtime-project-atlas.md
+  s_bacf3a4f414670::t_48387299034403 1-739
+src/content/docs/research/hermes-agent-ecosystem-study/06-cross-project-comparison.md
+  s_bacf3a4f414670::t_845681cfe0efca 1-369
+src/content/docs/research/hermes-agent-ecosystem-study/07-learning-path-questions-and-sources.md
+  s_bacf3a4f414670::t_1693c5e50f9497 1-396
+src/content/docs/research/hermes-agent-ecosystem-study/08-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_a23a461bbfe1d8 1-290
+src/content/docs/research/hermes-agent-ecosystem-study/09-beginner-durable-agent-lab.md
+  s_bacf3a4f414670::t_fa3b15cec2b1e7 1-315
+src/content/docs/research/hermes-agent-ecosystem-study/README.md
+  s_bacf3a4f414670::t_0296938d2a9cbc 1-106
+src/content/docs/research/hermes-agent-ecosystem-study/labs/durable_agent.py
+  s_bacf3a4f414670::t_13106e20aabcc8 1-572
+src/content/docs/research/hermes-agent-ecosystem-study/labs/test_durable_agent.py
+  s_bacf3a4f414670::t_2972ce18fbe84c 1-197
+src/content/docs/research/lambchat-ecosystem-study/01-scope-and-corpus.md
+  s_bacf3a4f414670::t_2ff26b1aa0e298 1-154
+src/content/docs/research/lambchat-ecosystem-study/02-ecosystem-landscape.md
+  s_bacf3a4f414670::t_707f09a6f49388 1-300
+src/content/docs/research/lambchat-ecosystem-study/03-lambchat-architecture.md
+  s_bacf3a4f414670::t_7c4cdb0aa76a8b 1-581
+src/content/docs/research/lambchat-ecosystem-study/04-foundation-deep-dives.md
+  s_bacf3a4f414670::t_6298da7ef2037c 1-496
+src/content/docs/research/lambchat-ecosystem-study/05-product-platform-deep-dives.md
+  s_bacf3a4f414670::t_c4b863734fb24a 1-411
+src/content/docs/research/lambchat-ecosystem-study/06-governance-runtime-deep-dives.md
+  s_bacf3a4f414670::t_58cee8705d2be8 1-584
+src/content/docs/research/lambchat-ecosystem-study/07-comparison-and-reference-architecture.md
+  s_bacf3a4f414670::t_f74aa1c7a01457 1-361
+src/content/docs/research/lambchat-ecosystem-study/08-learning-questions.md
+  s_bacf3a4f414670::t_e6d540a8eef6fb 1-440
+src/content/docs/research/lambchat-ecosystem-study/09-sources-and-snapshots.md
+  s_bacf3a4f414670::t_12f1b485d71857 1-304
+src/content/docs/research/lambchat-ecosystem-study/10-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_f4659a58dc8fcc 1-286
+src/content/docs/research/lambchat-ecosystem-study/11-beginner-production-agent-platform-lab.md
+  s_bacf3a4f414670::t_aa97bb952a2288 1-352
+src/content/docs/research/lambchat-ecosystem-study/README.md
+  s_bacf3a4f414670::t_6544b9cc2f3878 1-119
+src/content/docs/research/lambchat-ecosystem-study/labs/minimal_platform.py
+  s_bacf3a4f414670::t_3061f98ed0dc75 1-512
+src/content/docs/research/lambchat-ecosystem-study/labs/test_minimal_platform.py
+  s_bacf3a4f414670::t_c44d81f28f9af4 1-187
+src/content/docs/research/langgraph-ecosystem-study/01-ecosystem-landscape.md
+  s_bacf3a4f414670::t_8e4d7f12545d8c 1-265
+src/content/docs/research/langgraph-ecosystem-study/02-core-and-official-projects.md
+  s_bacf3a4f414670::t_61ef56c56ac44f 1-460
+src/content/docs/research/langgraph-ecosystem-study/03-production-apps-and-ports.md
+  s_bacf3a4f414670::t_79dd595965169a 1-352
+src/content/docs/research/langgraph-ecosystem-study/04-alternative-frameworks.md
+  s_bacf3a4f414670::t_54f94ad4696e32 1-368
+src/content/docs/research/langgraph-ecosystem-study/05-cross-project-comparison.md
+  s_bacf3a4f414670::t_c76b5df1343b61 1-250
+src/content/docs/research/langgraph-ecosystem-study/06-learning-route-and-questions.md
+  s_bacf3a4f414670::t_e571c50504abdb 1-365
+src/content/docs/research/langgraph-ecosystem-study/07-repository-inventory.md
+  s_bacf3a4f414670::t_1dde87a3f6f163 1-194
+src/content/docs/research/langgraph-ecosystem-study/08-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_641d24ccb28990 1-152
+src/content/docs/research/langgraph-ecosystem-study/README.md
+  s_bacf3a4f414670::t_bd41131f46e892 1-94
+src/content/docs/research/langgraph-ecosystem-study/labs/stategraph_lab.py
+  s_bacf3a4f414670::t_9f2f519fce777e 1-59
+src/content/docs/research/langgraph-ecosystem-study/labs/test_stategraph_lab.py
+  s_bacf3a4f414670::t_33b2798ecbf0f7 1-53
+src/content/docs/research/mineru-ecosystem-study/01-ecosystem-landscape.md
+  s_bacf3a4f414670::t_db26a8d48e7cc3 1-237
+src/content/docs/research/mineru-ecosystem-study/02-mineru-architecture.md
+  s_bacf3a4f414670::t_9c6e557e21e192 1-358
+src/content/docs/research/mineru-ecosystem-study/03-project-deep-dives.md
+  s_bacf3a4f414670::t_6e5578a72bd9ee 1-713
+src/content/docs/research/mineru-ecosystem-study/04-cross-project-comparison.md
+  s_bacf3a4f414670::t_ac2cfc0e3f83b8 1-310
+src/content/docs/research/mineru-ecosystem-study/05-repository-inventory.md
+  s_bacf3a4f414670::t_d06ddae0d1013a 1-205
+src/content/docs/research/mineru-ecosystem-study/06-learning-route-and-questions.md
+  s_bacf3a4f414670::t_7e56a3719777f6 1-334
+src/content/docs/research/mineru-ecosystem-study/07-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_7ddb87061eb48c 1-277
+src/content/docs/research/mineru-ecosystem-study/08-beginner-document-parser-lab.md
+  s_bacf3a4f414670::t_268b3fdec45170 1-345
+src/content/docs/research/mineru-ecosystem-study/09-beginner-project-onboarding-cards.md
+  s_bacf3a4f414670::t_ed10ee98099b0e 1-184
+src/content/docs/research/mineru-ecosystem-study/README.md
+  s_bacf3a4f414670::t_525c1ff214a914 1-127
+src/content/docs/research/mineru-ecosystem-study/labs/document_parser_lab.py
+  s_bacf3a4f414670::t_186eadc14df519 1-165
+src/content/docs/research/mineru-ecosystem-study/labs/test_document_parser_lab.py
+  s_bacf3a4f414670::t_af3207b73c548d 1-102
+src/content/docs/research/multimodal-video-ai-open-source-study/01-scope-and-corpus.md
+  s_bacf3a4f414670::t_5dae89c94d8d5d 1-224
+src/content/docs/research/multimodal-video-ai-open-source-study/02-ecosystem-landscape.md
+  s_bacf3a4f414670::t_ceebcc8030c111 1-420
+src/content/docs/research/multimodal-video-ai-open-source-study/03-project-deep-dives.md
+  s_bacf3a4f414670::t_27462c445ff60e 1-1102
+src/content/docs/research/multimodal-video-ai-open-source-study/04-comparison-and-quanzhiping.md
+  s_bacf3a4f414670::t_2ebff5bc713ebb 1-526
+src/content/docs/research/multimodal-video-ai-open-source-study/05-learning-questions.md
+  s_bacf3a4f414670::t_3b8c30c43e8fa7 1-485
+src/content/docs/research/multimodal-video-ai-open-source-study/06-sources-and-snapshots.md
+  s_bacf3a4f414670::t_d10cae85c7e909 1-301
+src/content/docs/research/multimodal-video-ai-open-source-study/07-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_9e3b0d6dcc4fe4 1-275
+src/content/docs/research/multimodal-video-ai-open-source-study/08-beginner-video-evidence-lab.md
+  s_bacf3a4f414670::t_e45a66a8093f76 1-320
+src/content/docs/research/multimodal-video-ai-open-source-study/09-beginner-project-onboarding-cards.md
+  s_bacf3a4f414670::t_9ba8fe722a0e33 1-221
+src/content/docs/research/multimodal-video-ai-open-source-study/README.md
+  s_bacf3a4f414670::t_b39980dd82070f 1-135
+src/content/docs/research/multimodal-video-ai-open-source-study/labs/test_video_evidence_lab.py
+  s_bacf3a4f414670::t_f3ce25bee1a7d0 1-182
+src/content/docs/research/multimodal-video-ai-open-source-study/labs/video_evidence_lab.py
+  s_bacf3a4f414670::t_f90a7c5c811d72 1-466
+src/content/docs/research/repos/README.md
+  s_bacf3a4f414670::t_2897f131fa9ff1 1-151
+src/content/docs/research/research-refresh-program/README.md
+  s_bacf3a4f414670::t_1abfafb5aaa474 1-167
+src/content/docs/research/research-refresh-program/beginner-learning-map.md
+  s_bacf3a4f414670::t_bf37205c27f2cd 1-314
+src/content/docs/research/research-refresh-program/completion_audit.py
+  s_bacf3a4f414670::t_cd9004f15b6226 1-597
+src/content/docs/research/research-refresh-program/coverage-matrix.md
+  s_bacf3a4f414670::t_6e08fdd2fec9a3 1-126
+src/content/docs/research/research-refresh-program/manifest.json
+  s_bacf3a4f414670::t_6e695f900a4beb 1-449
+src/content/docs/research/research-refresh-program/test_completion_audit.py
+  s_bacf3a4f414670::t_c5c827a175460b 1-47
+src/content/docs/research/researchstudio-ecosystem-study/01-ecosystem-landscape.md
+  s_bacf3a4f414670::t_957ca15bcfeab1 1-179
+src/content/docs/research/researchstudio-ecosystem-study/02-project-deep-dives.md
+  s_bacf3a4f414670::t_b3486aa2b2da03 1-304
+src/content/docs/research/researchstudio-ecosystem-study/03-cross-project-comparison.md
+  s_bacf3a4f414670::t_b47b0d6d322dd0 1-175
+src/content/docs/research/researchstudio-ecosystem-study/04-learning-route-and-questions.md
+  s_bacf3a4f414670::t_de1f079f679581 1-163
+src/content/docs/research/researchstudio-ecosystem-study/05-repository-inventory.md
+  s_bacf3a4f414670::t_82e0a7e9d38416 1-130
+src/content/docs/research/researchstudio-ecosystem-study/06-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_5f19654fe77f2e 1-270
+src/content/docs/research/researchstudio-ecosystem-study/07-beginner-artifact-first-research-lab.md
+  s_bacf3a4f414670::t_13d4c20919da9e 1-347
+src/content/docs/research/researchstudio-ecosystem-study/08-beginner-project-onboarding-cards.md
+  s_bacf3a4f414670::t_549c941ce0411b 1-315
+src/content/docs/research/researchstudio-ecosystem-study/README.md
+  s_bacf3a4f414670::t_6c94700453a997 1-108
+src/content/docs/research/researchstudio-ecosystem-study/labs/research_run.py
+  s_bacf3a4f414670::t_2c033e62176d44 1-391
+src/content/docs/research/researchstudio-ecosystem-study/labs/test_research_run.py
+  s_bacf3a4f414670::t_8adf17c584d77f 1-171
+src/content/docs/research/switch-tools-study/00-final-synthesis.md
+  s_bacf3a4f414670::t_f352741812d71f 1-266
+src/content/docs/research/switch-tools-study/01-domain-breadth-map.md
+  s_bacf3a4f414670::t_8f243f364c913a 1-170
+src/content/docs/research/switch-tools-study/02-csswitch-v060-deep-dive.md
+  s_bacf3a4f414670::t_63c275b082f5ff 1-310
+src/content/docs/research/switch-tools-study/03-ccswitch-v317-deep-dive.md
+  s_bacf3a4f414670::t_665523d276611b 1-350
+src/content/docs/research/switch-tools-study/04-comparison-and-thinking.md
+  s_bacf3a4f414670::t_d0ad9c4dc60898 1-292
+src/content/docs/research/switch-tools-study/05-failure-recovery-state-machines.md
+  s_bacf3a4f414670::t_0fe4f96e80e815 1-373
+src/content/docs/research/switch-tools-study/06-protocol-tool-loop-invariants.md
+  s_bacf3a4f414670::t_35e53b903cb4e1 1-288
+src/content/docs/research/switch-tools-study/07-acme-provider-extension-lab.md
+  s_bacf3a4f414670::t_59ecd3bb56b22f 1-258
+src/content/docs/research/switch-tools-study/08-case-cards-and-answer-guide.md
+  s_bacf3a4f414670::t_3ab3d8159b0fed 1-327
+src/content/docs/research/switch-tools-study/09-beginner-verification-lab.md
+  s_bacf3a4f414670::t_4d449406515c2d 1-217
+src/content/docs/research/switch-tools-study/README.md
+  s_bacf3a4f414670::t_b718545372b72b 1-122
+src/content/docs/research/system-prompt-leak-ecosystem-study/00-final-reader-map.md
+  s_bacf3a4f414670::t_2307e56294f3f0 1-87
+src/content/docs/research/system-prompt-leak-ecosystem-study/01-field-map.md
+  s_bacf3a4f414670::t_036e7f4f5ad878 1-124
+src/content/docs/research/system-prompt-leak-ecosystem-study/02-evidence-and-provenance.md
+  s_bacf3a4f414670::t_a32b80aaa0b6e4 1-174
+src/content/docs/research/system-prompt-leak-ecosystem-study/03-archive-projects.md
+  s_bacf3a4f414670::t_6e0d5df2f63edc 1-210
+src/content/docs/research/system-prompt-leak-ecosystem-study/04-platforms-and-official-data.md
+  s_bacf3a4f414670::t_76ee25ca13172a 1-214
+src/content/docs/research/system-prompt-leak-ecosystem-study/05-extraction-research.md
+  s_bacf3a4f414670::t_689a95da8e4625 1-364
+src/content/docs/research/system-prompt-leak-ecosystem-study/06-cross-project-comparison.md
+  s_bacf3a4f414670::t_b250b6ced3f9f7 1-192
+src/content/docs/research/system-prompt-leak-ecosystem-study/07-security-and-defense.md
+  s_bacf3a4f414670::t_67f263869ac201 1-206
+src/content/docs/research/system-prompt-leak-ecosystem-study/08-faq-and-thinking.md
+  s_bacf3a4f414670::t_ba3571c24db63d 1-210
+src/content/docs/research/system-prompt-leak-ecosystem-study/09-sources-and-maintenance.md
+  s_bacf3a4f414670::t_9e36f8f7d59998 1-140
+src/content/docs/research/system-prompt-leak-ecosystem-study/10-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_f1cf1403f13cf1 1-299
+src/content/docs/research/system-prompt-leak-ecosystem-study/11-beginner-prompt-defense-lab.md
+  s_bacf3a4f414670::t_afe65ecbbc52f8 1-415
+src/content/docs/research/system-prompt-leak-ecosystem-study/12-beginner-project-onboarding-cards.md
+  s_bacf3a4f414670::t_f9be47a7eebc68 1-281
+src/content/docs/research/system-prompt-leak-ecosystem-study/README.md
+  s_bacf3a4f414670::t_38a0c3d6e10783 1-182
+src/content/docs/research/system-prompt-leak-ecosystem-study/labs/prompt_defense_lab.py
+  s_bacf3a4f414670::t_f24201ab5cd1e8 1-454
+src/content/docs/research/system-prompt-leak-ecosystem-study/labs/test_prompt_defense_lab.py
+  s_bacf3a4f414670::t_1c38f4d4ca1bfd 1-259
+src/content/docs/research/trellis-agent-harness-ecosystem-study/01-scope-method-and-source-audit.md
+  s_bacf3a4f414670::t_899cbfd9199cb0 1-224
+src/content/docs/research/trellis-agent-harness-ecosystem-study/02-ecosystem-landscape.md
+  s_bacf3a4f414670::t_a279b1139752ca 1-355
+src/content/docs/research/trellis-agent-harness-ecosystem-study/03-trellis-architecture-deep-dive.md
+  s_bacf3a4f414670::t_70d70689073534 1-589
+src/content/docs/research/trellis-agent-harness-ecosystem-study/04-spec-and-process-frameworks.md
+  s_bacf3a4f414670::t_d27072f75be654 1-560
+src/content/docs/research/trellis-agent-harness-ecosystem-study/05-context-workflow-and-compounding.md
+  s_bacf3a4f414670::t_e5997baf73e159 1-504
+src/content/docs/research/trellis-agent-harness-ecosystem-study/06-memory-and-deterministic-governance.md
+  s_bacf3a4f414670::t_943f1188f14688 1-618
+src/content/docs/research/trellis-agent-harness-ecosystem-study/07-cross-project-comparison-and-design-lessons.md
+  s_bacf3a4f414670::t_a132944893a180 1-445
+src/content/docs/research/trellis-agent-harness-ecosystem-study/08-repository-inventory-and-local-constraints.md
+  s_bacf3a4f414670::t_c3ff0079cc8cee 1-236
+src/content/docs/research/trellis-agent-harness-ecosystem-study/09-learning-questions.md
+  s_bacf3a4f414670::t_806dd33eb5b16d 1-483
+src/content/docs/research/trellis-agent-harness-ecosystem-study/10-fundamentals-faq.md
+  s_bacf3a4f414670::t_4ae938b1a9a3fe 1-250
+src/content/docs/research/trellis-agent-harness-ecosystem-study/11-2026-07-17-refresh.md
+  s_bacf3a4f414670::t_5c0f3f76c6cb0e 1-193
+src/content/docs/research/trellis-agent-harness-ecosystem-study/12-beginner-sdd-harness-lab.md
+  s_bacf3a4f414670::t_24291472ddbb72 1-271
+src/content/docs/research/trellis-agent-harness-ecosystem-study/README.md
+  s_bacf3a4f414670::t_bf6f5728350b2d 1-127
+src/content/docs/research/trellis-agent-harness-ecosystem-study/labs/minimal_harness.py
+  s_bacf3a4f414670::t_6893c3c0ab6efa 1-122
+src/content/docs/research/trellis-agent-harness-ecosystem-study/labs/test_minimal_harness.py
+  s_bacf3a4f414670::t_32df55b0ddba14 1-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "5a2cb6df7d9e7eab5ef83569fc951a2e5b1cae9e",
+  "prompts": {},
+  "sessions": {
+    "s_aefbb45618eee6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a59eaa1327f744c7a944368",
+        "model": "gpt-5.6-sol__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    },
+    "s_bacf3a4f414670": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_bacf3a4f414670",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/content/docs/research/README.md": [
+      {
+        "hash": "s_aefbb45618eee6::t_ca40fea00bca7c",
+        "line_ranges": [
+          {
+            "Single": 32
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5a0ecc5922d355aa8dc096",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 32
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/content/docs/research/langgraph-ecosystem-study/09-beginner-stategraph-lab.md": [
+      {
+        "hash": "s_aefbb45618eee6::t_20e2ca61746069",
+        "line_ranges": [
+          {
+            "Range": [
+              53,
+              76
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5a12235922d355aa8dc592",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  53,
+                  76
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_aefbb45618eee6": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_00572511f888a8": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_062ac8a2ae5fd9": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_098c73b399b56e": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_117701659312c4": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_17150391558d93": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_1cc86fc940b326": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_1ce0e5288f81ab": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_1ec5e7eccf281b": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_20e2ca61746069": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_237a6fc2aa2497": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_303d740710f9e9": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_438cf5494f8625": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_472808cbda0e55": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_56ce643a32252e": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_6a94883c450607": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_6f30d552816b25": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_728411e0d2b114": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_8578ecb4bbb40c": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_9a8890e6a2b8f9": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_9ea1ff6e090a40": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_a9ab05fcd4b6b5": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_a9d021b14d84ab": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_aaceb381f42b3f": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_ab0f6f25c69bc6": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_ae35551e1ddc86": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_b69e6da3b5b088": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_c85cf6c8eb73f6": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_ca40fea00bca7c": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_cb40a00164f639": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_d21eb67f69667e": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_d7204f71a7bd9a": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_d782c2d3860b16": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_d8417c574deb23": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_dcb3df22566281": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_e069cfb0865ef7": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_fa8f4eb5e20d4f": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_aefbb45618eee6::t_fac95268665062": {
+      "tool": "trae",
+      "conversation_id": "6a59eaa1327f744c7a944368",
+      "session_id": "6a59eaa1327f744c7a944368",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
