@@ -1,0 +1,21 @@
+SESSION-HANDOFF.md
+  s_de042a574f3018::t_1dbde1664b6f83 5-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "3f9ddb487436010ae11b280a232530350bf0d87f",
+  "prompts": {},
+  "sessions": {
+    "s_de042a574f3018": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_de042a574f3018",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
