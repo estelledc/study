@@ -2,6 +2,35 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 2
+
+- status：Program `active`；本地 writer epoch 2 `complete`。
+- 起始 ref：`4fdf9d9d5`。
+- objective：从已有 Research 固定快照中迁移一批不同架构类型的项目页，并让反馈驱动的站点缺口在同一 epoch 闭环。
+- scope：`opencode`、`dify`、`langchain` 三页及 receipt/派生索引；冷缓存 404 路由、资产清单与 Pagefind E2E readiness；未改其他 955 篇 legacy 项目正文、队列、政策阈值或远端。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：三页已有教学骨架和固定 Research 源码，但缺 `study-v2` revision/evidence/self-test；冷缓存 CI 随后暴露 404 与搜索异步挂载合同缺口。
+- external delta：`0`；只形成本地 commits，未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `opencode` 绑定 `anomalyco/opencode@4a760b5...`，区分成熟 session 路径与 V2 迁移，修正旧 canonical 仓库。
+  2. `dify` 绑定 `langgenius/dify@48e536b...`，把 self-hosting 与数据驻留分开，补 Workflow-first、插件和副作用边界。
+  3. `langchain` 绑定 `langchain-ai/langchain@cf2115a...` / `1.3.14`，将旧 `AgentExecutor` 主线更新为 `create_agent` + middleware + LangGraph。
+  4. 三页新增应用型自测与 generation 1 static receipt；项目审计从 `3/961` 前进到 `6/961`。
+  5. 关闭 Starlight 会在冷缓存查询缺失 content entry 的默认 404，改由 base-safe 独立页面承载，并补 Person JSON-LD、canonical 与回归测试。
+  6. Pagefind E2E 显式等待动态输入完成挂载；定向并发重复 10/10 通过，没有放宽结果断言或增加测试重跑。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=4fdf9d9d5 npm run verify:ci`：379 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=6`、`needs-evidence=955`、snapshot current。
+  - `audit:content-contract`：projects `v2=6`、`legacy-unverified=955`、blocking 0。
+  - MinerU lab 仍有 2 个可选真实 parser 测试显式 skip；未提升为运行证据。
+- budget：3 个同主题/相邻架构项目 + 验收反馈修复；单 writer。
+- blocker：剩余 955 页仍需逐项目核对 canonical source、不可变 revision、主链、实践和 review receipt。
+- stop conditions：需要批量猜测 revision、把静态阅读写成运行成功、放宽门禁、或无法将失败归因到有界变更时停止。
+- 下一次 wake 条件：从 Research inventory 与 Study 页面交集中选出下一批固定源码项目，优先同一主题且 2-4 页。
+- 下一条命令：匹配 `src/content/docs/research/**/repository-inventory` 与 `src/content/docs/projects/*.md`，再核对本地固定 worktree。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆整合与首批项目重构
 
 - status：Program `active`；本地 writer epoch 1 `complete`。
