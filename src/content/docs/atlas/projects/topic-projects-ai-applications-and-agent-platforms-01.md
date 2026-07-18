@@ -30,7 +30,7 @@ sidebar:
 | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | `haystack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | `langchain` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | `langfuse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | `librechat` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [LibreChat — 自托管多模型会话与 Agent 平台](/study/projects/librechat/) | `librechat` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | `litellm-proxy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | `llamaindex` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | `mcp-ts-sdk` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

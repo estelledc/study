@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "librechat",
+    "digest_sha256": "95242c28ffa4b8f15f32931e49b502a033da21b124dea8becadcdef7ea918c8f"
+  },
+  "source_revision": "20cd00c492a84cbc240a208eef4eaa8ba54a694a",
+  "research_input_sha256": "ee212e5829200c8f57ecc6b43c8aadb99b5f1d7cab2870465aced97716055302",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Explains that self-hosted application storage does not imply provider traffic stays on-premises."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "GenerationJobManager, HITL, stream tests, and Redis boundaries were inspected; Compose and Redis were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 89,
+      "warnings": [
+        "The LICENSE and package metadata conflict is surfaced instead of asserting one license."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T13:19:20.000Z"
+}

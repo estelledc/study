@@ -59,8 +59,9 @@ test('Pagefind UI distinguishes the ReAct paper from the React project', async (
   await trigger.click();
 
   const dialog = page.getByRole('dialog', { name: '搜索', exact: true });
+  await expect(dialog).toBeVisible();
   const input = dialog.locator('input[type="search"], input').first();
-  await expect(input).toBeVisible();
+  await expect(input).toBeVisible({ timeout: 15_000 });
   await input.fill('ReAct Reasoning Acting');
   const resultStatus = dialog.locator('.pagefind-ui__message');
   await expect(resultStatus).toContainText(/个结果：ReAct Reasoning Acting/, { timeout: 15_000 });

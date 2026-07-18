@@ -1,0 +1,449 @@
+{
+  "version": 1,
+  "expected": {
+    "categories": 14,
+    "member_relationships": 209,
+    "unique_cards": 202,
+    "unique_upstreams": 201,
+    "local_copies": 204,
+    "research_repo_clones": 160,
+    "legacy_project_clones": 44,
+    "category_markdown_files": 147,
+    "experiment_documents": 14,
+    "lab_test_modules": 11
+  },
+  "expected_duplicate_upstreams": [
+    "obra/superpowers",
+    "EveryInc/compound-engineering-plugin",
+    "K-Dense-AI/scientific-agent-skills",
+    "HKUDS/AI-Researcher",
+    "HKUDS/nanobot",
+    "openclaw/openclaw",
+    "langchain-ai/langgraph",
+    "langchain-ai/deepagents"
+  ],
+  "compatibility_paths": [
+    "projects/AI-Researcher",
+    "projects/openclaw"
+  ],
+  "categories": [
+    {
+      "id": "chinese-independent-developer",
+      "title": "中国独立开发者列表",
+      "directory": "chinese-independent-developer-study",
+      "entry": "00-final-reader-map.md",
+      "experiment": "01-hands-on-lab.md",
+      "self_test": "02-case-cards-and-answer-guide.md",
+      "project_guides": [
+        "README.md",
+        "00-final-reader-map.md"
+      ],
+      "members": [
+        "chinese-independent-developer"
+      ]
+    },
+    {
+      "id": "switch-tools",
+      "title": "Provider 切换与本地控制面",
+      "directory": "switch-tools-study",
+      "entry": "00-final-synthesis.md",
+      "experiment": "09-beginner-verification-lab.md",
+      "self_test": "08-case-cards-and-answer-guide.md",
+      "project_guides": [
+        "02-csswitch-v060-deep-dive.md",
+        "03-ccswitch-v317-deep-dive.md"
+      ],
+      "members": [
+        "csswitch",
+        "ccswitch"
+      ]
+    },
+    {
+      "id": "coding-agent-runtime",
+      "title": "Coding Agent Runtime",
+      "directory": "coding-agent-runtime-study",
+      "entry": "00-final-reader-map.md",
+      "experiment": "13-beginner-runtime-lab.md",
+      "self_test": "13-beginner-runtime-lab.md",
+      "project_guides": [
+        "03-codex.md",
+        "04-gemini-cli.md",
+        "05-grok-build.md",
+        "06-opencode.md",
+        "07-pi.md",
+        "10-round2-source-trace-cards.md"
+      ],
+      "members": [
+        "codex",
+        "gemini-cli",
+        "grok-build",
+        "opencode",
+        "pi"
+      ]
+    },
+    {
+      "id": "agent-skills",
+      "title": "Agent Skills 工程生态",
+      "directory": "agent-skills-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "08-beginner-skill-lifecycle-lab.md",
+      "self_test": "05-learning-questions-and-faq.md",
+      "project_guides": [
+        "01-scope-and-corpus.md",
+        "03-project-deep-dives.md"
+      ],
+      "members": [
+        "garden-skills",
+        "reacticle",
+        "gpt-image-2-101",
+        "agent-skills-spec",
+        "anthropic-agent-skills",
+        "claude-plugins-official",
+        "vercel-agent-skills-cli",
+        "awesome-claude-skills",
+        "awesome-agent-skills",
+        "skill-factory",
+        "superpowers",
+        "addy-agent-skills",
+        "mattpocock-agent-skills",
+        "scientific-agent-skills",
+        "compound-engineering-plugin",
+        "skill-seekers",
+        "claude-code-infrastructure-showcase",
+        "skill-scanner",
+        "agent-skills-eval",
+        "skillopt"
+      ]
+    },
+    {
+      "id": "trellis-harness",
+      "title": "Trellis 与 Coding Agent Harness",
+      "directory": "trellis-agent-harness-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "12-beginner-sdd-harness-lab.md",
+      "self_test": "12-beginner-sdd-harness-lab.md",
+      "project_guides": [
+        "01-scope-method-and-source-audit.md",
+        "04-spec-and-process-frameworks.md",
+        "05-context-workflow-and-compounding.md",
+        "06-memory-and-deterministic-governance.md"
+      ],
+      "members": [
+        "trellis",
+        "spec-kit",
+        "openspec",
+        "bmad-method",
+        "spec-workflow-mcp",
+        "superpowers",
+        "planning-with-files",
+        "gsd-core",
+        "agent-os",
+        "compound-engineering",
+        "prps-agentic-eng",
+        "context-engineering-intro",
+        "acontext",
+        "memu",
+        "claude-mem",
+        "spexcode",
+        "openlore"
+      ]
+    },
+    {
+      "id": "langgraph",
+      "title": "LangGraph 生态",
+      "directory": "langgraph-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "09-beginner-stategraph-lab.md",
+      "self_test": "09-beginner-stategraph-lab.md",
+      "project_guides": [
+        "02-core-and-official-projects.md",
+        "03-production-apps-and-ports.md",
+        "04-alternative-frameworks.md"
+      ],
+      "members": [
+        "langgraph",
+        "langgraphjs",
+        "langchain",
+        "deepagents",
+        "langgraph-supervisor-py",
+        "langgraph-swarm-py",
+        "langgraph-bigtool",
+        "react-agent",
+        "langgraph-101",
+        "agent-chat-ui",
+        "gemini-fullstack-langgraph-quickstart",
+        "agent-service-toolkit",
+        "aegra",
+        "deer-flow",
+        "langgraph4j",
+        "awesome-langgraph",
+        "agent-framework",
+        "crewai",
+        "pydantic-ai",
+        "openai-agents-python",
+        "mastra"
+      ]
+    },
+    {
+      "id": "lambchat",
+      "title": "LambChat 与生产级 Agent 平台",
+      "directory": "lambchat-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "11-beginner-production-agent-platform-lab.md",
+      "self_test": "11-beginner-production-agent-platform-lab.md",
+      "project_guides": [
+        "03-lambchat-architecture.md",
+        "04-foundation-deep-dives.md",
+        "05-product-platform-deep-dives.md",
+        "06-governance-runtime-deep-dives.md"
+      ],
+      "members": [
+        "lambchat",
+        "deepagents",
+        "langgraph",
+        "deepagents-backends",
+        "opsintech-platform",
+        "deepagentforce",
+        "dify",
+        "librechat",
+        "openclaw",
+        "project-agi",
+        "mcp-gateway-registry",
+        "preloop",
+        "lobu",
+        "loomcycle"
+      ]
+    },
+    {
+      "id": "hermes-agent",
+      "title": "Hermes Agent 生态",
+      "directory": "hermes-agent-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "09-beginner-durable-agent-lab.md",
+      "self_test": "09-beginner-durable-agent-lab.md",
+      "project_guides": [
+        "01-scope-corpus-and-inventory.md",
+        "03-hermes-agent-deep-dive.md",
+        "04-direct-ecosystem-projects.md",
+        "05-runtime-project-atlas.md"
+      ],
+      "members": [
+        "hermes-agent",
+        "hermes-agent-self-evolution",
+        "awesome-hermes-agent",
+        "hermes-agent-rs",
+        "thoth-agent",
+        "mnemosyne",
+        "mnemosyne-harness",
+        "hermes-agent-camel",
+        "hermes-agent-metaharness",
+        "openclaw",
+        "nanobot",
+        "nanoclaw",
+        "picoclaw",
+        "zeroclaw",
+        "ironclaw",
+        "agent-zero",
+        "letta-code",
+        "lethe",
+        "generic-agent",
+        "724-office",
+        "metaclaw",
+        "odigos"
+      ]
+    },
+    {
+      "id": "researchstudio",
+      "title": "ResearchStudio 生态",
+      "directory": "researchstudio-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "07-beginner-artifact-first-research-lab.md",
+      "self_test": "07-beginner-artifact-first-research-lab.md",
+      "project_guides": [
+        "02-project-deep-dives.md",
+        "08-beginner-project-onboarding-cards.md"
+      ],
+      "members": [
+        "researchstudio",
+        "awesome-ai-auto-research",
+        "ai-scientist",
+        "ai-scientist-v2",
+        "ai-researcher",
+        "agent-laboratory",
+        "auto-research-claw",
+        "faros",
+        "autor",
+        "intern-agent",
+        "nano-scientist",
+        "idea2paper",
+        "co-scientist",
+        "paper-qa",
+        "storm",
+        "paper-search-mcp",
+        "ai-research-skills",
+        "scientific-agent-skills",
+        "agent-native-research-artifact",
+        "paper2poster",
+        "postergen",
+        "paper2video",
+        "paper2slides",
+        "ppt-master",
+        "paper-banana",
+        "posterly",
+        "paper2anything"
+      ]
+    },
+    {
+      "id": "deeptutor",
+      "title": "DeepTutor 生态",
+      "directory": "deeptutor-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "08-beginner-evidence-tutor-lab.md",
+      "self_test": "08-beginner-evidence-tutor-lab.md",
+      "project_guides": [
+        "03-project-deep-dives.md",
+        "09-beginner-project-onboarding-cards.md"
+      ],
+      "members": [
+        "deeptutor",
+        "open-tutor-ai-ce",
+        "gen-mentor",
+        "tutor-gpt",
+        "nanobot",
+        "autoagent",
+        "ai-researcher",
+        "manimcat",
+        "llama-index",
+        "lightrag",
+        "rag-anything",
+        "graphrag",
+        "pageindex",
+        "mem0"
+      ]
+    },
+    {
+      "id": "mineru",
+      "title": "MinerU 与文档解析",
+      "directory": "mineru-ecosystem-study",
+      "entry": "README.md",
+      "experiment": "08-beginner-document-parser-lab.md",
+      "self_test": "08-beginner-document-parser-lab.md",
+      "project_guides": [
+        "03-project-deep-dives.md",
+        "09-beginner-project-onboarding-cards.md"
+      ],
+      "members": [
+        "mineru",
+        "pdf-extract-kit",
+        "omnidocbench",
+        "doclayout-yolo",
+        "unimernet",
+        "mineru-diffusion",
+        "docling",
+        "marker",
+        "paddleocr",
+        "olmocr",
+        "dots-ocr",
+        "monkeyocr",
+        "deepseek-ocr",
+        "glm-ocr",
+        "dolphin",
+        "ocrflux",
+        "markitdown",
+        "unstructured",
+        "open-parse"
+      ]
+    },
+    {
+      "id": "fastvlm",
+      "title": "FastVLM 与端侧高效 VLM",
+      "directory": "fastvlm-ecosystem-study",
+      "entry": "00-final-reader-map.md",
+      "experiment": "07-beginner-edge-vlm-budget-lab.md",
+      "self_test": "07-beginner-edge-vlm-budget-lab.md",
+      "project_guides": [
+        "02-project-deep-dives.md",
+        "08-beginner-project-onboarding-cards.md"
+      ],
+      "members": [
+        "fastvlm",
+        "fastvit",
+        "mobileclip",
+        "mobileclip-dr",
+        "llava",
+        "mlx-vlm",
+        "mlx-swift-examples",
+        "mlx-swift-lm",
+        "llava-next",
+        "mobilevlm",
+        "minicpm-v",
+        "minicpm-v-apps",
+        "smollm",
+        "moondream",
+        "mobile-o",
+        "vlmkit",
+        "usls",
+        "sparsevlms",
+        "llava-prumerge",
+        "fastv",
+        "adaptvision"
+      ]
+    },
+    {
+      "id": "multimodal-video-ai",
+      "title": "多模态视频 AI",
+      "directory": "multimodal-video-ai-open-source-study",
+      "entry": "README.md",
+      "experiment": "08-beginner-video-evidence-lab.md",
+      "self_test": "08-beginner-video-evidence-lab.md",
+      "project_guides": [
+        "03-project-deep-dives.md",
+        "09-beginner-project-onboarding-cards.md"
+      ],
+      "members": [
+        "director",
+        "watch-skill",
+        "videoagent",
+        "deep-video-discovery",
+        "omagent",
+        "vidmentor",
+        "proteomics-lab-agent",
+        "multimodal-rag-agent",
+        "reagent-v"
+      ]
+    },
+    {
+      "id": "system-prompt-leak",
+      "title": "系统提示词泄露生态",
+      "directory": "system-prompt-leak-ecosystem-study",
+      "entry": "00-final-reader-map.md",
+      "experiment": "11-beginner-prompt-defense-lab.md",
+      "self_test": "11-beginner-prompt-defense-lab.md",
+      "project_guides": [
+        "03-archive-projects.md",
+        "04-platforms-and-official-data.md",
+        "05-extraction-research.md",
+        "12-beginner-project-onboarding-cards.md"
+      ],
+      "members": [
+        "system-prompts-leaks",
+        "system-prompts-and-models-of-ai-tools",
+        "cl4r1t4s",
+        "leaked-system-prompts-jujumilk3",
+        "chatgpt-system-prompt",
+        "the-big-prompt-library",
+        "leaked-system-prompts-yeekal",
+        "grok-prompts",
+        "leakhub",
+        "system-prompt-open",
+        "prompt-extraction",
+        "pleak",
+        "raccoonbench",
+        "prompt-extraction-eval",
+        "spe-llm",
+        "prsa",
+        "justask"
+      ]
+    }
+  ]
+}

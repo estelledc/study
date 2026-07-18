@@ -2,6 +2,218 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-07-17 Research 标杆迁移 epoch 7
+
+- status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
+- 起始 ref：`3f9ddb487`。
+- 完成 ref：`7442ccef5`。
+- objective：收口 HTTP 客户端 Atlas 的剩余两页，比较 defaults/hook 型 ofetch 与 immutable fluent Wretch 的稳定源码合同。
+- scope：ofetch、Wretch 两页、2 个 ignored worktree、共享源码审查记录、receipt/派生索引；未安装上游依赖、发送网络请求、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：两页结构完整但缺固定 revision/self-test；旧正文把 ofetch retry 写成幂等 allowlist/指数退避，把 Wretch response-chain API 与 retry 默认写错。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `ofetch` 绑定内部一致且可达的 `v1.5.0` / `47fe8079...`，修正 payload-method retry、零 delay、`destr`、条件 exports 与 signal/timeout 边界。
+  2. 明确披露 `ofetch@1.5.1` provenance 冲突：npm `gitHead` 在 canonical remote 不可达，GitHub 同名 tag 又指向自报 2.0 alpha 的提交；未猜测或伪造 1.5.1 revision。
+  3. `wretch` 绑定 `32d5f68b...` / `3.0.9`，修正 object-spread immutability、ResponseChain error API、Node >=22、retry 10 次/500ms/4xx/network/method 边界。
+  4. 新增共享 `docs/fetch-wrapper-source-review-20260717.md` 与两份 generation 1 static receipt；HTTP Atlas 的 5 页全部对齐，项目审计从 `16/961` 前进到 `18/961`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=3f9ddb487 npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下，380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - `audit:project-standard`：`benchmark-aligned=18`、`needs-evidence=943`。
+  - `audit:content-contract`：projects `v2=18`、`legacy-unverified=943`、blocking 0。
+- budget：2 个小型本地 worktree + 2 页静态源码迁移；单 writer。
+- blocker：epoch 5、6、7 均无 D 轴 external delta，已达到“三批无 external delta”暂停门；不得继续开启本地内容批次填充进度。
+- stop conditions：当前已命中暂停门；只有真实 external delta、owner 对 push/PR 的授权或新的显式范围重授权才能开启下一 writer epoch。
+- 下一次 wake 条件：将本分支推送并进入 PR/review，或 owner 提供新的有限目标与 external outcome。
+- 下一条命令：先 `git status --short --branch` 核对干净状态；未获远端授权前不要 push。
+- superseded_by：`none`。
+
+## 2026-07-17 Research 标杆迁移 epoch 6
+
+- status：Program `active`；本地 writer epoch 6 `complete`。
+- 起始 ref：`bfa0443bb`。
+- 完成 ref：`3924ab07d`。
+- objective：用同一证据合同横向校准 Axios、Ky、Got 三种 HTTP 客户端架构，验证浏览器/跨端 adapter、Fetch wrapper 与 Node Duplex 管线均可独立迁移。
+- scope：Axios、Ky、Got 三页、3 个 ignored worktree、共享源码审查记录、receipt/派生索引；未安装上游依赖、发送网络请求、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：三页教学骨架完整，但旧正文包含 Ky lazy execution、Got hook 签名、旧 Node 边界、固定 bundle/下载量/冷启动与未绑定性能结论。
+- external delta：GitHub metadata 只读核验 + 本地 blob-filtered clone；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `axios` 绑定 `axios/axios@a092bae5...` / `1.18.1`，补 config → interceptor → transform → adapter → settle 主链与 401 replay 边界。
+  2. `ky` 绑定 `sindresorhus/ky@3419113b...` / `2.0.2`，纠正 lazy execution，更新 state-object hook、per-attempt/total timeout 与 stream retry 缓冲边界。
+  3. `got` 绑定 `sindresorhus/got@e3924aa1...` / `15.1.0`，补 Duplex Request → Promise wrapper、阶段 timeout、retry rules、Stream/Promise hook 和 body replay 边界。
+  4. 新增共享 `docs/http-client-source-review-20260717.md` 与三份 generation 1 static receipt；项目审计从 `13/961` 前进到 `16/961`。
+- acceptance checks：
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 三份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=bfa0443bb npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下，380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 首次直接运行被 Node 26.4.0 的 toolchain contract 拦截；切换仓库规范 Node 后从头通过，未修改或放宽门禁。
+  - `audit:project-standard`：`benchmark-aligned=16`、`needs-evidence=945`。
+  - `audit:content-contract`：projects `v2=16`、`legacy-unverified=945`、blocking 0。
+- budget：3 个小型本地 worktree + 3 页静态源码迁移；单 writer。
+- blocker：剩余 945 页仍需按主题恢复固定源码；上游运行证据不能由静态 review 替代。
+- stop conditions：仓库规模不可控、canonical/revision 不唯一、需要猜测性能或兼容性、或一批无法独立验收时停止。
+- 下一次 wake 条件：选择下一组边界互补且源码体量可控的项目，继续 1-3 页小批次。
+- 下一条命令：从 `data/project-standard-audit.json` 筛选同主题 `needs-evidence` 页面，再核对 canonical GitHub repo 与 clone 体量。
+- superseded_by：`none`。
+
+## 2026-07-17 Research 标杆迁移 epoch 5
+
+- status：Program `active`；本地 writer epoch 5 `complete`。
+- 起始 ref：`1a4c016b0`。
+- objective：在既有 Research/Study 精确交集耗尽后，验证“受控恢复小型上游源码 + 可跟踪 provenance”能继续高质量迁移。
+- scope：Zod、Valibot、ArkType 三页、3 个 ignored worktree、共享源码审查记录、receipt/派生索引；未运行上游依赖、测试、bundle 或 TypeScript benchmark。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：现有 160 个 Research worktree 的 8 个 canonical Study 交集已全部达标；三篇 schema 页仍含移动版本、固定性能数字和过时 canonical。
+- external delta：GitHub 只读查询 + 本地 blob-filtered clone；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. 用 GitHub canonical identity 筛选并恢复 `colinhacks/zod`、`open-circle/valibot`、`arktypeio/arktype`。
+  2. `zod` 绑定 `912f0f51...` / `4.4.3`，补 core runner、异步边界、对象 key 策略与 classic/mini/core 分层。
+  3. `valibot` 绑定 `32247b36...` / `1.4.2`，修正 canonical 组织、`typed`/`success`、pipe abort、object 策略与官方 i18n/JSON Schema。
+  4. `arktype` 绑定 `03b1f015...` / `2.2.3`，从“字符串 DSL”扩展为 definition parser → scope/node → traversal/morph → output/ArkErrors。
+  5. 新增共享 `docs/schema-validation-source-review-20260717.md`，三份 receipt 绑定其 digest；项目审计从 `10/961` 前进到 `13/961`。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=1a4c016b0 npm run verify:ci`：380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=13`、`needs-evidence=948`。
+  - `audit:content-contract`：projects `v2=13`、`legacy-unverified=948`、blocking 0。
+- budget：3 个约 69MB 本地 worktree + 3 页静态源码迁移；单 writer。
+- blocker：剩余项目需要继续分批恢复固定源码；不得一次 clone 大量仓库。
+- stop conditions：仓库规模不可控、canonical 重定向不明确、需要猜版本/性能、或一批无法独立验收时停止。
+- 下一次 wake 条件：选择 2-3 个小型同主题仓库，先用 GitHub metadata 评估磁盘与活跃度。
+- 下一条命令：从 `data/project-standard-audit.json` 选择正文结构强、仓库体量小且可形成横向比较的主题。
+- superseded_by：`none`。
+
+## 2026-07-17 Research 标杆迁移 epoch 4
+
+- status：Program `active`；本地 writer epoch 4 `complete`。
+- 起始 ref：`74ad09e9e`。
+- objective：将 PaddleOCR 从 PP-OCRv4/2.x 旧教程迁移到固定 3.7.0 平台架构，并闭合 Astro 生产 Content Layer 缓存问题。
+- scope：`paddleocr` 页面、receipt/派生索引，`build:strict` cache isolation；未安装 Paddle/PaddleX、下载权重、运行 OCR 或改其他 951 页。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：旧页仍以 PP-OCRv4、`ocr(..., cls=True)` 和 `PPStructure(...)` 为主；固定源码已转为 PaddleX wrapper、PP-OCRv6、PP-StructureV3 与 PaddleOCR-VL。
+- external delta：`0`；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. 绑定 `PaddlePaddle/PaddleOCR@211989f0...` / `3.7.0`，更新高层 wrapper → PaddleX config → `create_pipeline()` → `predict()` 主链。
+  2. 区分 OCR、结构化文档与 VLM 三类验收对象，删除“最强”、固定吞吐/大小和未绑定 benchmark 的结论。
+  3. 新增应用型自测与 generation 1 static receipt；项目审计从 `9/961` 前进到 `10/961`。
+  4. 纠正 epoch 3 的缓存修复：生产 Content Layer store 位于 `node_modules/.astro/data-store.json`，现与根 `.astro` 一并在 strict build 前清除。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=74ad09e9e npm run verify:ci`：380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - PaddleOCR `quality-gate.mjs`：pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=10`、`needs-evidence=951`。
+  - `audit:content-contract`：projects `v2=10`、`legacy-unverified=951`、blocking 0。
+- budget：1 个 OCR/文档平台项目 + 1 个构建可复现性修正；单 writer。
+- blocker：后续 Research worktree 与 Study slug 不总同名，必须改用 canonical URL 映射，不能按目录名猜。
+- stop conditions：canonical URL 不能唯一映射、需要猜 revision、缺少 Research 深析或无法通过全量门禁时停止。
+- 下一次 wake 条件：生成 canonical GitHub URL 交集，选择 2-4 个同主题固定源码项目。
+- 下一条命令：归一化 `research-worktrees/*` upstream URL，与项目页 `来源`/`trust.canonical_source` 做唯一 join。
+- superseded_by：`none`。
+
+## 2026-07-17 Research 标杆迁移 epoch 3
+
+- status：Program `active`；本地 writer epoch 3 `complete`。
+- 起始 ref：`d1f44f8fc`。
+- objective：验证 Research 标准能同时约束角色化编排框架、conversation-first 平台和文档 ETL 库。
+- scope：`crewai`、`librechat`、`unstructured` 三页及 receipt/派生索引；strict build 的 `.astro` 缓存隔离；未运行上游模型、Compose、Redis、OCR 或 checkpoint 恢复。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：三页都有固定本地源码和 Research 深析，但旧正文把早期印象、经验数字或 self-hosting 营销语写成当前事实。
+- external delta：`0`；未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `crewai` 绑定 `crewAIInc/crewAI@985cf520...`，补齐 Crew/Flow、checkpoint/fork 与外部副作用边界。
+  2. `librechat` 绑定 `danny-avila/LibreChat@20cd00c...` / `v0.8.7`，澄清 conversation-first、可恢复 stream、HITL 与自托管数据边界，并披露许可 metadata 冲突。
+  3. `unstructured` 绑定 `Unstructured-IO/unstructured@d309caf8...` / `0.25.1`，修正弃用的表格参数、固定吞吐数字与 metadata 保证。
+  4. 三页新增 generation 1 static receipt；项目审计从 `6/961` 前进到 `9/961`。
+  5. `build:strict` 现在自行清除 `.astro` 派生缓存；真实复现中预置旧缓存后无 duplicate warning 完成构建。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=d1f44f8fc npm run verify:ci`：380 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=9`、`needs-evidence=952`、snapshot current。
+  - `audit:content-contract`：projects `v2=9`、`legacy-unverified=952`、blocking 0。
+- budget：3 个固定源码项目 + 1 个构建可复现性修复；单 writer。
+- blocker：精确同名交集中只剩 PaddleOCR；其余页面需要建立 slug/仓库映射或恢复新的固定源码。
+- stop conditions：需要猜测 repo mapping、批量伪造 revision、提升静态阅读为运行证据或放宽门禁时停止。
+- 下一次 wake 条件：单独迁移 PaddleOCR，并与 MinerU Research 的模型/代码/部署许可边界对齐。
+- 下一条命令：核对 `research-worktrees/paddleocr` 对应固定提交与 `mineru-ecosystem-study` 深析。
+- superseded_by：`none`。
+
+## 2026-07-17 Research 标杆迁移 epoch 2
+
+- status：Program `active`；本地 writer epoch 2 `complete`。
+- 起始 ref：`4fdf9d9d5`。
+- objective：从已有 Research 固定快照中迁移一批不同架构类型的项目页，并让反馈驱动的站点缺口在同一 epoch 闭环。
+- scope：`opencode`、`dify`、`langchain` 三页及 receipt/派生索引；冷缓存 404 路由、资产清单与 Pagefind E2E readiness；未改其他 955 篇 legacy 项目正文、队列、政策阈值或远端。
+- activated_by：`explicit-user-goal-continue-quality-first-2026-07-17`。
+- detector fingerprint：三页已有教学骨架和固定 Research 源码，但缺 `study-v2` revision/evidence/self-test；冷缓存 CI 随后暴露 404 与搜索异步挂载合同缺口。
+- external delta：`0`；只形成本地 commits，未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. `opencode` 绑定 `anomalyco/opencode@4a760b5...`，区分成熟 session 路径与 V2 迁移，修正旧 canonical 仓库。
+  2. `dify` 绑定 `langgenius/dify@48e536b...`，把 self-hosting 与数据驻留分开，补 Workflow-first、插件和副作用边界。
+  3. `langchain` 绑定 `langchain-ai/langchain@cf2115a...` / `1.3.14`，将旧 `AgentExecutor` 主线更新为 `create_agent` + middleware + LangGraph。
+  4. 三页新增应用型自测与 generation 1 static receipt；项目审计从 `3/961` 前进到 `6/961`。
+  5. 关闭 Starlight 会在冷缓存查询缺失 content entry 的默认 404，改由 base-safe 独立页面承载，并补 Person JSON-LD、canonical 与回归测试。
+  6. Pagefind E2E 显式等待动态输入完成挂载；定向并发重复 10/10 通过，没有放宽结果断言或增加测试重跑。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=4fdf9d9d5 npm run verify:ci`：379 Node tests、Research/内容/receipt/红线/资产/strict build、2284 HTML、2283 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
+  - 三页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - `audit:project-standard`：`benchmark-aligned=6`、`needs-evidence=955`、snapshot current。
+  - `audit:content-contract`：projects `v2=6`、`legacy-unverified=955`、blocking 0。
+  - MinerU lab 仍有 2 个可选真实 parser 测试显式 skip；未提升为运行证据。
+- budget：3 个同主题/相邻架构项目 + 验收反馈修复；单 writer。
+- blocker：剩余 955 页仍需逐项目核对 canonical source、不可变 revision、主链、实践和 review receipt。
+- stop conditions：需要批量猜测 revision、把静态阅读写成运行成功、放宽门禁、或无法将失败归因到有界变更时停止。
+- 下一次 wake 条件：从 Research inventory 与 Study 页面交集中选出下一批固定源码项目，优先同一主题且 2-4 页。
+- 下一条命令：匹配 `src/content/docs/research/**/repository-inventory` 与 `src/content/docs/projects/*.md`，再核对本地固定 worktree。
+- superseded_by：`none`。
+
+## 2026-07-17 Research 标杆整合与首批项目重构
+
+- status：Program `active`；本地 writer epoch 1 `complete`。
+- 起始 ref：`2d3daecdf9eac8e6fa1e0da774d17664a854a4f9`。
+- objective：把父仓 Research Refresh Program 作为 Study 的可运行重构标杆，建立全量项目差距清单，并完成第一批证据诚实的项目页迁移。
+- scope：`src/content/docs/research/`、Research/项目标准审计与 lab 运行器、导航/CI、3 个既有 `study-v2` 项目页及其 receipt；未改候选队列、政策阈值、958 篇 legacy 正文、远端或旧 worktree 拓扑。
+- activated_by：`explicit-user-request-2026-07-17-unify-study-with-research-benchmark`。
+- detector fingerprint：Study 有 961 个项目页，但基线仅 3 个 `study-v2`，其余 958 个缺固定 revision 和证据边界；Research 有已验收的 14 类、201 upstream 和实验闭环，但尚未进入 Study。
+- external delta：`0`；只形成本地 review-ready branch，未 push、未开 PR、未部署，D 轴不变。
+- 完成切片：
+  1. 用 subtree 双亲提交 `5a2cb6df7` 导入 177 个正式 Research 文件，并保留筛选后的 44 个祖先提交。
+  2. 为 152 份 Markdown 增加 Starlight frontmatter，分离公开内容与 `research-worktrees/` 外部源码；适配脚本第二次运行 `changed=0`。
+  3. 新增 Research 结构审计、10 个便携 lab 模块、1 个固定 LangGraph 源码模块和 961 项项目标准快照。
+  4. 将 `claude-agent-sdk`、`openai-agents-sdk`、`vercel-ai` 补齐应用型自测，receipt 升至 generation 3；评估结果为 `benchmark-aligned=3`、`needs-evidence=958`。
+  5. 收窄 `npm test` 到 Study 自有测试目录，防止 ignored external worktree 污染测试发现。
+- acceptance checks：
+  - `STUDY_CHANGED_FROM=2d3daecdf... npm run verify:ci`：fresh `.astro` 条件下全绿；378 Node tests、23 Playwright tests、2283 sitemap URLs、内容/红线/SEO/Pages/规模门禁通过。
+  - `npm run test:research-labs:full`：10 个便携模块通过；固定 LangGraph `49ae27c2...` 模块 4 tests 通过。
+  - MinerU lab：纯函数合同通过；MarkItDown/OpenParse 未安装，2 个真实解析器对比显式 skip。
+  - `git rev-list --parents -n 1 5a2cb6df`：第二父节点为 Research 历史 `65604a658`。
+  - `git diff --check 2d3daecdf...HEAD`：通过。
+- budget：1 个整合/标准化/首批内容 epoch；单 writer；没有扩大为 958 页机械批改。
+- blocker：958 个 legacy 项目需要逐项目核对 canonical source、不可变 revision、主链、实践和 review receipt；不能用批量伪造 metadata 消除。
+- stop conditions：需要放宽门禁、批量猜测 revision、把静态阅读写成运行成功、或同一批次无法独立验收时停止。
+- 下一次 wake 条件：继续执行明确的项目迁移批次，或 owner 决定主题优先级；默认每批按当前内容政策保持有界。
+- 下一条命令：`npm run audit:project-standard`，再从 `data/project-standard-audit.json` 选择同一主题的小批次。
+- superseded_by：`none`。
+
+## 2026-07-16 explorations 目录迁移路径修正
+
+- status：`complete`
+- 起始 ref：`8e4b7b5e060c9d1a3327376e4f8874f5508f2a97`
+- objective：修正仓库随父项目迁入 `explorations/own/` 后的操作文档路径。
+- scope：`scripts/README.md` 与本交接记录；不修改内容、队列、政策、依赖或远端状态。
+- activated_by：`explicit-user-request-2026-07-16-organize-explorations`
+- detector fingerprint：`scripts/README.md` 仍把仓库位置写成已不存在的 `explorations/study`。
+- external delta：`0`；仅形成本地 review-ready change set，D 轴不变。
+- 完成切片：将活动路径更新为 `explorations/own/study`。
+- acceptance checks：`git diff --check` 通过；活动 README 中不再出现旧路径。
+- budget：1 个文档切片、20 分钟、1 个本地 writer。
+- blocker：无。
+- stop conditions：定向检查通过即结束；若出现意外工作树重叠则停止。
+- 下一次 wake 条件：新的显式维护指令或可核验的外部状态变化。
+- 下一条命令：`git diff --check`
+- superseded_by：`none`
+
 ## 2026-07-15 继续推进 4 篇 agent 记忆 / 规划论文全流程完成记录
 
 - status：`complete`

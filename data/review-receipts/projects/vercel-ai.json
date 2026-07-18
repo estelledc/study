@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "087c53f30b3ff6bdccf5b9edf0ec0a23be06c10430f4149e7c221d2a3a0610a8",
+  "generation": 3,
+  "predecessor_digest_sha256": "c815e192eb5a867fe70e506866871367916651ade3ecc63ccbc057acb6a8500e",
   "note": {
     "area": "projects",
     "slug": "vercel-ai",
-    "digest_sha256": "40b03792a5e7d8e7e676fc95895f9d492f0e26fea4642fc077f45f21796de3b2"
+    "digest_sha256": "db3f016d5dc49053306ea5d4c72b1c3999091a4aaf594833396fc2224a50e72a"
   },
   "source_revision": "b162ae48676fe9e7b3880b691cbd60b58ed179cb",
   "research_input_sha256": "50ce61a68665dfcffe58df23cc1818c85003915717a046850f874614b5be15ec",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "study-static-review-20260713",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 88,
       "warnings": [
-        "Explains v7 migration boundary without claiming user mastery."
+        "Application checks distinguish provider portability, durability, and UI streaming."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -25,11 +25,11 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "study-static-review-20260713",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 91,
       "warnings": [
-        "Static docs/package/source review only; verification_status remains UNVERIFIED."
+        "Self-test addition is static review only; verification_status remains UNVERIFIED."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -38,7 +38,7 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "study-static-review-20260713",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 86,
       "warnings": [
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-13T06:46:14.338Z"
+  "created_at": "2026-07-17T11:22:32.000Z"
 }

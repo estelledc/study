@@ -1,16 +1,29 @@
 ---
-title: ky — 把浏览器自带的 fetch 包成顺手工具
+title: Ky — 把 Fetch 包成可治理的请求流程
 来源: 'https://github.com/sindresorhus/ky'
 日期: 2026-05-30
 分类: projects
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/sindresorhus/ky
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-07-17'
+  immutable_revision: 3419113b48e034fdcf8fa6bd3be3da7b3d0d758f
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
+  applicable_version: 2.0.2
 ---
 
 ## 是什么
 
-ky 是一个**给浏览器原生 `fetch` 套了一层薄外壳的 HTTP 客户端**。日常类比：原厂方向盘开起来手感生硬，ky 给它包了一层皮——核心还是同一个方向盘，但握感顺手了。
+Ky 是一个建立在标准 Fetch API 上的 HTTP 客户端，面向现代浏览器、Node、Bun 和 Deno。日常类比：原厂方向盘仍是 Fetch，Ky 加上了 timeout、retry、hook、错误和响应解析仪表。
 
-`fetch` 是浏览器自带的网络函数，但用起来啰嗦：每次都要手动 `JSON.stringify` 请求体、手动判断状态码、出错不会自动重试、超时要自己写 setTimeout。ky 把这些"该有的默认"都补上，体积只有 4 KB。
+Fetch 对非 2xx 不会自动 reject，也不内建 Ky 这套 retry/hook/JSON shortcut。Ky 补上这些策略，但最终 bundle 与运行时行为仍取决于版本、平台和配置。
 
 ```ts
 // 原生 fetch：5 行
@@ -30,24 +43,26 @@ const data = await ky.post("/api/users", {json: {name: "Alice"}}).json();
 
 不理解 ky 的设计取舍，下面这些事都没法解释：
 
-- 为什么 axios（17 KB）周下载 5000 万、ky（4 KB）只有 300 万——"小"和"赢"是两件事
-- 为什么 Node 18 让原生 fetch 正式可用之后 ky 反而更火，没被淘汰
-- 为什么 ky 的 hooks 是数组，axios 的 interceptor 是 `.use()`——同一个需求两种 API 哲学
-- 为什么 `ky.get(url)` 不立刻发请求，要 `.json()` 才发（lazy execution，下面会讲）
+- 为什么 Ky 的 HTTPError、NetworkError、TimeoutError 和 SchemaValidationError 不能混成一种错误
+- 为什么 timeout 默认是每次尝试 10 秒，而 totalTimeout 默认关闭
+- 为什么 `beforeRequest` 只跑一次，retry 前应使用 `beforeRetry`
+- 为什么开启 retry 后，streaming request body 可能被完整缓冲
 
 ## 核心要点
 
-ky 的设计可以拆成 **三件事**：
+Ky 的执行可以拆成五步：
 
-1. **薄包装**：80% 行为是原生 `fetch`，ky 只在外面套了"自动 JSON / 自动抛 4xx / retry / timeout"。类比：火锅店的 **酱料台**——肉还是那块肉，加一勺芝麻酱就吃得下去。
+1. **规范化 Request 与 options**：method、headers、prefix/baseUrl、retry、timeout 和 hook 被整理为内部合同。
 
-2. **链式 + 延迟执行**：`ky.get(url)` 返回的不是 Response，而是一个**还没发请求的 KyInstance**。等你调 `.json()` / `.text()` 才真正发。这种"先攒后发"的设计叫 **lazy execution**，让链式调用既能 `await` 又能在中途继续配置。
+2. **立即创建 ResponsePromise**：调用 `ky.get()` 会启动异步流程；实现只延迟一个 microtask，让 `.json()` / `.text()` shortcut 有机会先设置 `Accept`。这不是“等 shortcut 才发”的惰性 KyInstance。
 
-3. **hooks 切入 lifecycle**：4 个钩子卡在请求生命周期的关键点——`beforeRequest`（发出前）/ `beforeRetry`（重试前）/ `afterResponse`（拿到响应后）/ `beforeError`（报错前）。每个 hook 是数组，按顺序跑。
+3. **beforeRequest + fetch/retry**：`beforeRequest` 只跑初始请求一次；之后 retry policy 根据 method、错误/状态、次数和 timing header 决定是否重试，`beforeRetry` 可修改已确认的 retry。
 
-三件事加起来，让 ky 在 4 KB 内提供了 axios 17 KB 才有的核心体验。
+4. **afterResponse + HTTP error**：响应可被 hook 替换，`ky.retry()` 可触发受限的强制 retry；非成功状态默认形成带 request/response/data 的 `HTTPError`。
 
-## 实践案例
+5. **body shortcut 与 schema**：`.json()` 等方法消费 response body；`.json(schema)` 还能调用 Standard Schema validator，失败时抛 `SchemaValidationError`。
+
+## 实践示例
 
 ### 案例 1：ky 替你做的那些"该有的默认"
 
@@ -61,7 +76,7 @@ const user = await ky.post("/api/users", {json: {name: "Alice"}}).json<User>();
 逐部分解释：
 
 - `{json: ...}` —— ky 看到这个键就自动 stringify + 加 `Content-Type: application/json` 头
-- `.json<User>()` —— 调它才真正发请求，回来后自动 `JSON.parse` 并标记类型
+- `.json<User>()` —— 给结果加静态类型并消费 body；它不会验证 JSON 真的是 User
 - 如果服务器返 500，**ky 主动抛 `HTTPError`**（原生 fetch 会让你以为 500 是"成功"）
 
 ### 案例 2：用 `ky.create` 做可复用的 API instance
@@ -70,9 +85,11 @@ const user = await ky.post("/api/users", {json: {name: "Alice"}}).json<User>();
 const api = ky.create({
   prefixUrl: "https://api.example.com",
   timeout: 5000,
-  retry: {limit: 3},
+  retry: {limit: 2},
   hooks: {
-    beforeRequest: [(req) => req.headers.set("Authorization", `Bearer ${getToken()}`)]
+    beforeRequest: [
+      ({request}) => request.headers.set("Authorization", `Bearer ${getToken()}`)
+    ]
   }
 });
 
@@ -80,38 +97,38 @@ const users = await api.get("users").json<User[]>();   // 拼成 https://api.exa
 const me = await api.get("users/me").json<User>();
 ```
 
-`ky.create` 返回一个**带默认配置的小 ky**，所有调用都继承 prefixUrl / timeout / hooks。类比：连锁咖啡店的"今日推荐"已经替你选好豆子，你只用说要哪杯。
+`ky.create` 返回带默认配置的实例。固定 2.x 源码已经把旧 `prefixUrl` 改为 `prefix`，并增加标准 URL 解析的 `baseUrl`；复制 1.x 示例前必须核对版本。
 
 ### 案例 3：401 自动刷新 token
 
 ```ts
 const api = ky.create({
+  retry: {statusCodes: [401], limit: 1},
   hooks: {
     afterResponse: [
-      async (request, options, response) => {
-        if (response.status === 401) {
+      async ({request, response, retryCount}) => {
+        if (response.status === 401 && retryCount === 0) {
           const newToken = await refreshToken();
           request.headers.set("Authorization", `Bearer ${newToken}`);
-          return ky(request);   // 重发整个请求
+          return ky.retry({request});
         }
-        return response;        // ! 必须 return
       }
     ]
   }
 });
 ```
 
-`afterResponse` 拿到 401 后偷偷换新 token、用 `ky(request)` 重发，**业务代码完全感知不到**。这是 hooks 最常用的模式，axios 用 interceptor 做同样事情。
+`afterResponse` 通过 `ky.retry()` 进入统一 retry 预算，`retryCount` 防止无限刷新。生产实现仍需 single-flight refresh 和可重放 body 设计。
 
 ## 踩过的坑
 
-1. **retry 默认只跑幂等方法**：默认只重试 GET / PUT / HEAD / DELETE，POST / PATCH 不重试（怕重复创建资源）。新手配 `retry: {limit: 3}` 时常以为对所有方法生效，结果 POST 失败一次就死。要全跑得显式 `retry: {limit: 3, methods: ["post", "get", ...]}`。
+1. **retry 默认不覆盖所有方法**：默认 limit 为 2，method allowlist 不含 POST/PATCH；扩大范围前先证明服务端幂等。
 
-2. **`afterResponse` 必须 `return response`**：忘了 return 会让 ky 拿到 `undefined`，后续 `.json()` 报 "cannot read properties of undefined"。报错信息不直接，新人常排查半天。
+2. **混淆 per-attempt 与 total timeout**：`timeout` 默认 10 秒且每次尝试重新计算；`totalTimeout` 默认关闭。多次 retry 的总墙钟可能远大于 10 秒。
 
-3. **Node 16 及以下跑不了**：ky 1.x 依赖 Node 18+ 原生 fetch。老项目要么升 Node，要么用 `ky-universal`（带 polyfill 的兄弟包）。
+3. **按旧 hook 签名写代码**：2.x hook 接收 state object；旧的 `(request, options, response)` 示例会读错参数。
 
-4. **不支持上传进度**：原生 `fetch` 标准没有 `onUploadProgress`，ky 没法补。要做大文件上传进度条，axios（基于 XHR）反而更合适。
+4. **大 stream body 开着 retry**：Ky 为可重放请求使用 stream tee，可能把完整 body 缓存在内存；不需要重试时应将 limit 设为 0。
 
 ## 适用 vs 不适用场景
 
@@ -120,31 +137,44 @@ const api = ky.create({
 - 新项目、关心 bundle 大小、跑在 edge runtime（Cloudflare Worker / Vercel Edge）
 - TypeScript 项目——ky 的泛型推断（`.json<T>()`）比 axios 干净
 - 需要 retry / timeout / hooks 又不想引插件的中小项目
-- 同一份代码要跑浏览器 + Node 18+ + Deno + Bun
+- 同一份代码要跑现代浏览器 + Node 22+ + Deno + Bun
 
 **不适用**：
 
 - 老项目已经用 axios interceptor 写了一堆 → 迁移成本大于收益，维持现状
 - 上传进度条强需求 → 选 axios（XHR 才有 progress 事件）
-- Node 16 / 14 / 12 老环境 → 用 [[got]] 或 axios，ky 跑不起来
+- Node 版本低于当前 package engines，且不能升级
 - Vue / Nuxt 全家桶 → 用 ofetch（Nuxt 团队出品，集成更好）
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018-04**：Sindre Sorhus（最高产的 npm 作者，发了 1500+ 包）发布 ky v0.1，自我定位 "a tiny and elegant HTTP client based on the browser Fetch API"。当时浏览器 fetch 已普及，但 Node 还没有。
-- **2019**：Node 18 fetch 还在实验阶段，ky 主要在浏览器跑。Sindre 维护了兄弟包 `ky-universal` 给 Node 加 polyfill。
-- **2022-04**：Node 18 LTS 把 fetch 标记为 stable（底层用的是 [[undici]]）。ky 终于不用 polyfill 就能跨端跑。
-- **2024-02**：ky 1.0 发布，API 锁定遵循 semver。生态进入稳定期。
+- 本文绑定 `sindresorhus/ky@3419113b...`，package 版本为 `2.0.2`，要求 Node >=22。
+- 固定 README 明确标注它描述“next version”，因此正文优先以 package 与源码合同为准。
+- 默认 retry limit 为 2，默认 per-attempt timeout 为 10 秒，total timeout 与 timeout retry 默认关闭。
+- 本文未安装依赖、运行请求、测试 stream 或 bundle 体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
 1. **薄包装能赢**：ky 没发明新概念，只是把 fetch 已有的标准 API（AbortController / Headers）包得更顺手。"不重新发明"反而让它体积小、好维护。
-2. **lazy execution 是好链式 API 的钥匙**：不立刻执行让链式调用能继续接 `.json()` / `.text()` / 配置参数，又能被 `await` 当 Promise 用。
+2. **ResponsePromise 是可装饰 Promise**：请求异步执行，body shortcut 追加消费行为和 Accept header，不是惰性 builder。
 3. **0 运行时依赖是现代库的卖点**：ky 靠 fetch 标准做到了，安装 1 个包就完事，不用担心间接依赖污染。
+
+## 应用型自测
+
+1. `ky.get(url)` 已调用但没有接 `.json()` 或 `await`。能否假设网络请求尚未开始？
+2. 配置 `timeout: 10_000, retry: {limit: 2}`，能否据此断言总耗时最多 10 秒？
+3. 上传大 ReadableStream 时保留默认 retry，主要资源风险是什么？
+
+检查点：
+
+1. 不能。ResponsePromise 的异步流程已经启动，shortcut 不是启动开关。
+2. 不能。timeout 是每次尝试预算；还要配置 totalTimeout 才能限制整体操作。
+3. 为了 retry 可重放，stream 可能被 tee 并完整缓冲，应评估内存或禁用 retry。
 
 ## 延伸阅读
 
 - 官方 README：[github.com/sindresorhus/ky](https://github.com/sindresorhus/ky)（API 列表 + 完整 hooks 文档）
+- 固定源码：[sindresorhus/ky](https://github.com/sindresorhus/ky) —— 本文绑定提交 `3419113b48e034fdcf8fa6bd3be3da7b3d0d758f`
 - 对比文：[ky vs axios vs fetch](https://blog.logrocket.com/ky-vs-axios-vs-fetch/)（bundle 体积 + API 实测）
 - 视频：[Theo - 为什么我从 axios 换到 ky](https://www.youtube.com/results?search_query=ky+http+client)（迁移踩坑实录）
 - [[axios]] —— 直接对手，老牌 HTTP 客户端

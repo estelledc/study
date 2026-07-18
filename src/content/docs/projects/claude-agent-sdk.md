@@ -203,6 +203,18 @@ console.log(finalText)
 3. **工具控制要分层看**：`tools` 控制可见工具，`allowedTools` 控制免批准，`disallowedTools` 控制禁止
 4. **SDK 与 IDE 的 Claude Code 共享同一套底层**：写过 CLAUDE.md、agent 和 skill 的人迁过来成本低，但要显式管理 `settingSources`
 
+## 应用型自测
+
+1. `tools` 包含 `Bash`，但 `allowedTools` 不包含它。模型还能请求 `Bash` 吗？
+2. 网页文档与当前发布包对 `settingSources` 默认值描述冲突，生产服务应该信哪一个？
+3. 一个子 agent 需要写文件，但主 agent 只应读取仓库。为什么不能只给父 agent 配一次工具列表就结束设计？
+
+检查点：
+
+1. 可以请求；`allowedTools` 控制免批准，不是可见工具集合。是否真实执行还要经过权限流程。
+2. 锁定版本、显式传 `settingSources`，并用该版本的实际解析结果验证；不要依赖冲突的默认值。
+3. 子 agent 有独立上下文和工具配置；有效能力必须按角色分别收窄，不能把上下文隔离误当成权限继承。
+
 ## 延伸阅读
 
 - 官方文档：[Claude Agent SDK 概览](https://docs.claude.com/en/docs/agent-sdk/overview)

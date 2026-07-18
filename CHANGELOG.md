@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 集成 Research Refresh Program：以 subtree 保留 14 类研究演进历史，新增 Research 结构/lab 门禁和 961 项项目标准评估；首批 3 个 `study-v2` 项目页补齐应用型自测与第 3 代 review receipt。
 - STUDY-T012：在显式授权后写回 1,845 个 marker-owned backlink 段；124 个无生成段文件与 `papers/hoare-logic.md`、`projects/redis.md` 两个手写段保持 byte-identical，非生成正文净变化为 0，连续幂等检查均为零 diff。
 - STUDY-T016：记录 owner 对 VoiceOver 的长期默认 defer；不执行也不伪造 VoiceOver 结果，非 VoiceOver 的 reflow、文本间距、键盘与 reduced-motion 继续由自动化门禁负责。
 - STUDY-T020：新增 Node 22.23.1 / npm 11.17.0 规范工具链与受支持范围；本地、CI、Pages 和 Content Health 共用 `.nvmrc`、`packageManager` 与 fail-closed toolchain audit。

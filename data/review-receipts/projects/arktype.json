@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "arktype",
+    "digest_sha256": "08e77714a167484fb238b1b9da5f1d06733ceee7463a61941d43784ace80c158"
+  },
+  "source_revision": "03b1f015d9b7c5af5dac2caed1aeedefaf705ab3",
+  "research_input_sha256": "43c1edc289a8a3030600e65f25a11fa0807a1dd1775812e8c30b03ec661ab2fb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Explains strings as one definition form rather than the entire ArkType architecture."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Definition parsing, scope, schema nodes, traversal, errors, and Standard Schema tests were inspected; benchmarks were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Unsupported schema-count, bundle, compilation, and maintainer-risk thresholds were removed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T13:58:08.000Z"
+}

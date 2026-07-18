@@ -35928,7 +35928,7 @@
       "id": "projects::arktype",
       "area": "projects",
       "slug": "arktype",
-      "title": "arktype — schema 长得像 TypeScript 类型本身",
+      "title": "ArkType — schema 长得像 TypeScript 类型本身",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -35941,13 +35941,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/arktype/",
       "atlas": {
@@ -36626,7 +36626,7 @@
       "id": "projects::axios",
       "area": "projects",
       "slug": "axios",
-      "title": "axios — 浏览器和 Node 都能用的 HTTP 客户端",
+      "title": "Axios — 浏览器和 Node 都能用的 HTTP 客户端",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -36639,13 +36639,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/axios/",
       "atlas": {
@@ -39678,13 +39678,13 @@
         "raw_category": "AI 框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/crewai/",
       "atlas": {
@@ -40592,13 +40592,13 @@
         "raw_category": "AI"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/dify/",
       "atlas": {
@@ -44329,7 +44329,7 @@
       "id": "projects::got",
       "area": "projects",
       "slug": "got",
-      "title": "got — Node 端 HTTP 客户端的瑞士军刀",
+      "title": "Got — Node 端以 Stream 为底座的 HTTP 客户端",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -44342,13 +44342,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/got/",
       "atlas": {
@@ -47471,7 +47471,7 @@
       "id": "projects::ky",
       "area": "projects",
       "slug": "ky",
-      "title": "ky — 把浏览器自带的 fetch 包成顺手工具",
+      "title": "Ky — 把 Fetch 包成可治理的请求流程",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -47484,13 +47484,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/ky/",
       "atlas": {
@@ -47674,13 +47674,13 @@
         "raw_category": "AI / Agent"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/langchain/",
       "atlas": {
@@ -48165,7 +48165,7 @@
       "id": "projects::librechat",
       "area": "projects",
       "slug": "librechat",
-      "title": "LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器",
+      "title": "LibreChat — 自托管多模型会话与 Agent 平台",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -48178,13 +48178,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/librechat/",
       "atlas": {
@@ -52944,7 +52944,7 @@
       "id": "projects::ofetch",
       "area": "projects",
       "slug": "ofetch",
-      "title": "ofetch — Nuxt 默认的现代 fetch 包装",
+      "title": "ofetch — 以 Fetch 为底座的跨运行时请求包装",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -52957,13 +52957,13 @@
         "raw_category": "前端工程化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/ofetch/",
       "atlas": {
@@ -53180,13 +53180,13 @@
         "raw_category": "editors"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/opencode/",
       "atlas": {
@@ -54187,7 +54187,7 @@
       "id": "projects::paddleocr",
       "area": "projects",
       "slug": "paddleocr",
-      "title": "PaddleOCR — 中文 OCR 最强开源方案",
+      "title": "PaddleOCR — 多语言 OCR 与文档解析平台",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -54201,13 +54201,13 @@
         "raw_category": "数据科学与 AI / 计算机视觉"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/paddleocr/",
       "atlas": {
@@ -62372,13 +62372,13 @@
         "raw_category": "AI / RAG / Document Parsing"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/unstructured/",
       "atlas": {
@@ -62435,13 +62435,13 @@
         "raw_category": "前端工程"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/valibot/",
       "atlas": {
@@ -64028,7 +64028,7 @@
       "id": "projects::wretch",
       "area": "projects",
       "slug": "wretch",
-      "title": "wretch — 把 fetch 写成一条链",
+      "title": "Wretch — 用不可变配置链组织 Fetch",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -64041,13 +64041,13 @@
         "raw_category": "前端工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/wretch/",
       "atlas": {
@@ -64773,13 +64773,13 @@
         "raw_category": "验证 / 类型"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-07-17",
+        "review_after": "2026-10-17"
       },
       "route": "/study/projects/zod/",
       "atlas": {

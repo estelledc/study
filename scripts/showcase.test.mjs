@@ -11,6 +11,7 @@ const about = read('src/content/docs/about.md');
 const config = read('astro.config.mjs');
 const header = read('src/components/StudyHeader.astro');
 const mobileFooter = read('src/components/StudyMobileMenuFooter.astro');
+const notFoundPage = read('src/pages/404.astro');
 const robots = read('public/robots.txt');
 const packageJson = JSON.parse(read('package.json'));
 
@@ -109,4 +110,15 @@ test('robots policy keeps the public learning map crawlable and points to its si
 test('portable builds consume the reviewed OG asset without host-font raster drift', () => {
   assert.equal(packageJson.scripts.prebuild, 'node scripts/regen-atlas.mjs');
   assert.equal(packageJson.scripts['generate:og'], 'node scripts/generate-showcase-og.mjs');
+});
+
+test('cold builds use one base-safe 404 route outside the docs collection', () => {
+  assert.match(config, /disable404Route: true/);
+  assert.match(notFoundPage, /import\.meta\.env\.BASE_URL/);
+  assert.match(notFoundPage, /href=\{`\$\{baseUrl\}start\/`\}/);
+  assert.match(notFoundPage, /href=\{`\$\{baseUrl\}projects-atlas\/`\}/);
+  assert.match(notFoundPage, /'@id': 'https:\/\/estelledc\.github\.io\/#person'/);
+  assert.match(notFoundPage, /name: 'Jason Xun'/);
+  assert.match(notFoundPage, /rel="canonical" href="https:\/\/estelledc\.github\.io\/study\/404\.html"/);
+  assert.equal(fs.existsSync(path.join(root, 'src/content/docs/404.md')), false);
 });

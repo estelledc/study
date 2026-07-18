@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ofetch",
+    "digest_sha256": "1bd717731cb6ddfa37793fc011e441710c1754ece12104523c2758c20503e8c8"
+  },
+  "source_revision": "47fe80799e23406dd0fb1c504bb493b6a6d0a5af",
+  "research_input_sha256": "4d6f6214d76cc10ea18160867474cdb2b263a55547ad76e560e6b173e5e571e5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains option merging, body normalization, parsing, hooks, retry defaults, and framework boundaries with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Stable 1.5.0 entry points, fetch flow, errors, types, utilities, and tests were inspected; upstream tests and requests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "The newer 1.5.1 package and Git tag provenance conflict is disclosed; this note is deliberately bounded to reachable 1.5.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T14:44:42.000Z"
+}

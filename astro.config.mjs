@@ -74,6 +74,7 @@ export default defineConfig({
       locales: {
         root: { label: '简体中文', lang: 'zh-CN' },
       },
+      disable404Route: true,
       head: [
         { tag: 'meta', attrs: { name: 'theme-color', content: '#faf6f0' } },
         {
@@ -153,6 +154,14 @@ export default defineConfig({
             { label: '怎么消化一篇论文', link: '/papers-method/' },
             { label: '立场宣言', link: '/about/' },
             { label: '培养计划', link: '/career-plan/' },
+          ],
+        },
+        {
+          label: 'Research 标杆',
+          items: [
+            { label: '14 类研究总览', link: '/research/' },
+            { label: '零基础学习地图', link: '/research/research-refresh-program/beginner-learning-map/' },
+            { label: '完成性矩阵', link: '/research/research-refresh-program/coverage-matrix/' },
           ],
         },
       ],

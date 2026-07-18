@@ -195,6 +195,18 @@ function Chat() {
 3. **Streaming 是产品体验**——底层 Web Streams + 上层 React hook，两端都做才好用
 4. **窄腰设计仍在**——核心约定（`generateText` / `streamText` + provider 接口）做窄；差异走 `providerOptions`
 
+## 应用型自测
+
+1. 把 OpenAI 换成 Anthropic 后，业务代码完全不需要复查，这个判断为什么过强？
+2. 一个工具需要人工批准，用户刷新页面后还要继续。只用一次 `generateText` 调用够吗？
+3. `useChat` 页面能持续显示文本，是否已经证明后端 agent 的工具调用可恢复？
+
+检查点：
+
+1. 窄腰统一常用能力，但厂商专属 reasoning、数据驻留等仍走 `providerOptions`，模型名和行为也需要回归。
+2. 不够。需要持久化运行状态和审批结果，使用 `WorkflowAgent` 或等价的 durable workflow 设计。
+3. 没有。UI streaming 只证明消息传输和渲染链；工具结算、幂等和恢复必须单独验证。
+
 ## 延伸阅读
 
 - 官方文档：[ai-sdk.dev](https://ai-sdk.dev)

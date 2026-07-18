@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ky",
+    "digest_sha256": "05cda84c5b312f1fca79535bd9a9d6d1ddc1e631395b86d2059382c534b58a1d"
+  },
+  "source_revision": "3419113b48e034fdcf8fa6bd3be3da7b3d0d758f",
+  "research_input_sha256": "de1ffde36a7d5796c58163921114d5a15891d42acdb15d470506a31dc618f7f1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Corrects the lazy-execution model and separates retry, hook, timeout, stream, and schema boundaries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Core flow, hook and retry types, normalization, timeout, and hook tests were inspected; upstream tests and requests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260717",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Runtime, default policy, and API claims are bounded to ky 2.0.2; bundle and memory effects require target measurements."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-07-17T14:25:23.000Z"
+}
