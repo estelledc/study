@@ -12,6 +12,7 @@ const config = read('astro.config.mjs');
 const header = read('src/components/StudyHeader.astro');
 const mobileFooter = read('src/components/StudyMobileMenuFooter.astro');
 const notFoundPage = read('src/pages/404.astro');
+const researchIndex = read('src/content/docs/research/index.md');
 const robots = read('public/robots.txt');
 const packageJson = JSON.parse(read('package.json'));
 
@@ -99,6 +100,14 @@ test('Starlight metadata and Jason DS v2 showcase components are wired', () => {
   for (const token of ['og:type', 'og:title', 'twitter:title', 'jx-chip', 'jx-proof', 'jx-pill']) {
     assert.ok(homepage.includes(token), `homepage missing ${token}`);
   }
+});
+
+test('Research benchmark navigation has a real index route', () => {
+  assert.match(config, /label: 'Research 标杆'/);
+  assert.match(config, /\{ label: '14 类研究总览', link: '\/research\/' \}/);
+  assert.match(researchIndex, /^# Research 标杆/m);
+  assert.match(researchIndex, /\[研究总览\]\(README\.md\)/);
+  assert.match(researchIndex, /\[零基础学习地图\]\(research-refresh-program\/beginner-learning-map\.md\)/);
 });
 
 test('robots policy keeps the public learning map crawlable and points to its sitemap', () => {
