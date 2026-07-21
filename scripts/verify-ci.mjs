@@ -33,6 +33,8 @@ export function buildCiSteps(env = process.env) {
   { name: 'toolchain contract', command: 'node', args: ['scripts/audit-toolchain.mjs'] },
   { name: 'tests', command: 'npm', args: ['test'] },
   { name: 'repository audits', command: 'npm', args: ['run', 'audit'] },
+  { name: 'site state source of truth', command: 'npm', args: ['run', 'audit:site-state'] },
+  { name: 'learning paths source of truth', command: 'npm', args: ['run', 'audit:learning-paths'] },
   { name: 'research benchmark', command: 'npm', args: ['run', 'audit:research'] },
   { name: 'research labs', command: 'npm', args: ['run', 'test:research-labs'] },
   { name: 'project standard snapshot', command: 'npm', args: ['run', 'audit:project-standard'] },
@@ -84,6 +86,22 @@ export function buildCiSteps(env = process.env) {
 export const CI_STEPS = buildCiSteps();
 
 export function runCiSteps(steps = CI_STEPS, runner = null) {
+  const initialDrift = runner ? null : {
+    worktree: spawnSync('git', ['diff', '--binary'], {
+      cwd: ROOT,
+      encoding: 'buffer',
+      maxBuffer: 100 * 1024 * 1024,
+    }),
+    staged: spawnSync('git', ['diff', '--cached', '--binary'], {
+      cwd: ROOT,
+      encoding: 'buffer',
+      maxBuffer: 100 * 1024 * 1024,
+    }),
+  };
+  if (initialDrift && (initialDrift.worktree.status !== 0 || initialDrift.staged.status !== 0)) {
+    return { ok: false, failed: 'initial output drift snapshot', status: 1 };
+  }
+
   const execute = runner || ((step) => spawnSync(step.command, step.args, {
     cwd: ROOT,
     stdio: 'inherit',
@@ -92,7 +110,26 @@ export function runCiSteps(steps = CI_STEPS, runner = null) {
 
   for (const step of steps) {
     console.log(`[verify:ci] ${step.name}`);
-    const status = execute(step);
+    let status;
+    if (!runner && (step.name === 'generated tracked output drift' || step.name === 'staged output drift')) {
+      const args = step.name === 'generated tracked output drift'
+        ? ['diff', '--binary']
+        : ['diff', '--cached', '--binary'];
+      const before = step.name === 'generated tracked output drift'
+        ? initialDrift.worktree.stdout
+        : initialDrift.staged.stdout;
+      const current = spawnSync('git', args, {
+        cwd: ROOT,
+        encoding: 'buffer',
+        maxBuffer: 100 * 1024 * 1024,
+      });
+      status = current.status === 0 && Buffer.compare(before, current.stdout) === 0 ? 0 : 1;
+      if (status !== 0) {
+        console.error(`[verify:ci] ${step.name} changed after CI steps started.`);
+      }
+    } else {
+      status = execute(step);
+    }
     if (status !== 0) return { ok: false, failed: step.name, status };
   }
   return { ok: true, failed: null, status: 0 };

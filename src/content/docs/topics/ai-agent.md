@@ -14,28 +14,27 @@ description: 从 Attention、CoT、ReAct 到 SWE-Agent，理解 coding agent 的
 
 ## 先读这 3 篇
 
-<div class="study-card-grid">
-  <a class="study-note-card" href="/study/papers/attention/">
-    <div class="study-meta-row"><span>论文</span><span>背景</span><span>上下文</span></div>
-    <h3>Attention</h3>
-    <p>先建立模型如何从上下文里选择相关信息的基础直觉。</p>
-    <div class="study-why">它是理解 Transformer 与后续 LLM 能力的入口。</div>
-  </a>
-
-  <a class="study-note-card" href="/study/papers/chain-of-thought/">
-    <div class="study-meta-row"><span>论文</span><span>推理</span><span>中间步骤</span></div>
-    <h3>Chain-of-Thought</h3>
-    <p>理解显式中间步骤为什么能帮助模型处理多步问题。</p>
-    <div class="study-why">ReAct 的 Thought 部分建立在这条思路上。</div>
-  </a>
-
-  <a class="study-note-card" href="/study/papers/react/">
-    <div class="study-meta-row"><span>论文</span><span>Pillar</span><span>行动循环</span></div>
-    <h3>ReAct — Reasoning and Acting</h3>
-    <p>把“想一下 → 调工具 → 看反馈 → 再想”连成可观察的 agent 循环。</p>
-    <div class="study-why">这是 ReAct 论文，不是 React 前端项目。</div>
-  </a>
+<!-- STUDY:LEARNING_PATHS:TOPIC:AI_AGENT:BEGIN -->
+<div class="study-card-grid"><a class="study-note-card" href="/study/papers/attention/">
+<div class="study-meta-row"><span>论文</span><span>Pillar</span><span>上下文</span></div>
+<h3>Attention</h3>
+<p>先建立模型如何从上下文里选择相关信息的基础直觉。</p>
+<div class="study-why">它是理解 Transformer 与后续 LLM 能力的入口。</div>
+</a>
+<a class="study-note-card" href="/study/papers/chain-of-thought/">
+<div class="study-meta-row"><span>论文</span><span>Pillar</span><span>中间步骤</span></div>
+<h3>Chain-of-Thought</h3>
+<p>理解显式中间步骤为什么能帮助模型处理多步问题。</p>
+<div class="study-why">ReAct 的 Thought 部分建立在这条思路上。</div>
+</a>
+<a class="study-note-card" href="/study/papers/react/">
+<div class="study-meta-row"><span>论文</span><span>Pillar</span><span>行动循环</span></div>
+<h3>ReAct — Reasoning and Acting</h3>
+<p>把“想一下 → 调工具 → 看反馈 → 再想”连成可观察的 agent 循环。</p>
+<div class="study-why">这是 ReAct 论文，不是 React 前端项目。</div>
+</a>
 </div>
+<!-- STUDY:LEARNING_PATHS:TOPIC:AI_AGENT:END -->
 
 ## 从机制走向工程闭环
 

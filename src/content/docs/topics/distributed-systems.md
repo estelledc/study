@@ -14,28 +14,27 @@ description: 从 Lamport Clock、Paxos 到 Raft，理解时钟、一致性和共
 
 ## 先读这 3 篇
 
-<div class="study-card-grid">
-  <a class="study-note-card" href="/study/papers/lamport-1978/">
-    <div class="study-meta-row"><span>论文</span><span>Pillar</span><span>逻辑时钟</span></div>
-    <h3>Lamport Clock</h3>
-    <p>理解没有全局时钟时，系统怎样描述事件之间的先后关系。</p>
-    <div class="study-why">先把“时间”和“顺序”分开，后面的协议才不会混乱。</div>
-  </a>
-
-  <a class="study-note-card" href="/study/papers/paxos-1998/">
-    <div class="study-meta-row"><span>论文</span><span>Pillar</span><span>共识</span></div>
-    <h3>Paxos</h3>
-    <p>理解节点和消息都可能失败时，一组参与者如何对一个值达成一致。</p>
-    <div class="study-why">把安全性与活性分开看，不要先陷入角色名词。</div>
-  </a>
-
-  <a class="study-note-card" href="/study/papers/raft/">
-    <div class="study-meta-row"><span>论文</span><span>共识</span><span>可理解性</span></div>
-    <h3>Raft</h3>
-    <p>通过 leader election、log replication 和 safety 理解共识的工程结构。</p>
-    <div class="study-why">用更明确的模块划分，对照 Paxos 建立实现直觉。</div>
-  </a>
+<!-- STUDY:LEARNING_PATHS:TOPIC:DISTRIBUTED_SYSTEMS:BEGIN -->
+<div class="study-card-grid"><a class="study-note-card" href="/study/papers/lamport-1978/">
+<div class="study-meta-row"><span>论文</span><span>Pillar</span><span>逻辑时钟</span></div>
+<h3>Lamport Clock</h3>
+<p>理解没有全局时钟时，系统怎样描述事件之间的先后关系。</p>
+<div class="study-why">先把“时间”和“顺序”分开，后面的协议才不会混乱。</div>
+</a>
+<a class="study-note-card" href="/study/papers/paxos-1998/">
+<div class="study-meta-row"><span>论文</span><span>Pillar</span><span>共识</span></div>
+<h3>Paxos</h3>
+<p>理解节点和消息都可能失败时，一组参与者如何对一个值达成一致。</p>
+<div class="study-why">把安全性与活性分开看，不要先陷入角色名词。</div>
+</a>
+<a class="study-note-card" href="/study/papers/raft/">
+<div class="study-meta-row"><span>论文</span><span>Pillar</span><span>可理解性</span></div>
+<h3>Raft</h3>
+<p>通过 leader election、log replication 和 safety 理解共识的工程结构。</p>
+<div class="study-why">用更明确的模块划分，对照 Paxos 建立实现直觉。</div>
+</a>
 </div>
+<!-- STUDY:LEARNING_PATHS:TOPIC:DISTRIBUTED_SYSTEMS:END -->
 
 ## 读完你应该能回答
 

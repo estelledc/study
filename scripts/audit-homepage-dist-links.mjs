@@ -22,6 +22,7 @@ if (!homepagePath) {
 }
 
 const html = fs.readFileSync(homepagePath, 'utf8');
+const siteState = JSON.parse(fs.readFileSync(path.join(root, 'data/site-state.json'), 'utf8'));
 const failures = [];
 
 function fail(message) {
@@ -150,10 +151,11 @@ for (const claim of [
   if (!text.includes(claim)) fail(`Built homepage is missing honest showcase claim: ${claim}`);
 }
 
-const firstScaleProof = text.indexOf('1,975');
+const currentTotalText = String(siteState.content.total);
+const firstScaleProof = text.indexOf(currentTotalText);
 const beginnerPath = text.indexOf('先选一条新手路径');
 if (firstScaleProof < 0 || beginnerPath < 0 || firstScaleProof <= beginnerPath) {
-  fail('Built homepage must place the 1,975 scale proof after the beginner learning path.');
+  fail(`Built homepage must place the current ${currentTotalText} scale proof after the beginner learning path.`);
 }
 
 const renderedPathCards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bstudy-path-card\b[^"]*"/gi)];
@@ -263,6 +265,7 @@ for (const href of [
 }
 
 for (const [pattern, label] of [
+  [/1,?975/, '1,975'],
   [/1500\s*\+/, '1500+'],
   [/1511/, '1511'],
   [/\b785\b/, '785'],
