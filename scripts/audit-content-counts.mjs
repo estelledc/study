@@ -3,15 +3,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { buildContentInventory } from './lib/content-inventory.mjs';
+
 const root = process.cwd();
 const docsDir = path.join(root, 'src/content/docs');
-const projectsDir = path.join(docsDir, 'projects');
-const papersDir = path.join(docsDir, 'papers');
-
-function countMarkdown(dir) {
-  if (!fs.existsSync(dir)) return 0;
-  return fs.readdirSync(dir).filter((name) => /\.mdx?$/.test(name)).length;
-}
 
 function readLines(rel) {
   const file = path.join(docsDir, rel);
@@ -40,11 +35,7 @@ function expectLine(rel, pattern, expected, label) {
   }
 }
 
-const actual = {
-  projects: countMarkdown(projectsDir),
-  papers: countMarkdown(papersDir),
-};
-actual.total = actual.projects + actual.papers;
+const actual = (await buildContentInventory({ rootDir: root })).counts;
 actual.totalRounded = `${Math.floor(actual.total / 100) * 100}+`;
 
 const problems = [];

@@ -145,6 +145,7 @@ if (!ctaRow) {
 }
 
 const staleHomepagePatterns = [
+  [/1,?975/, '1,975'],
   [/1500\s*\+/, '1500+'],
   [/1511/, '1511'],
   [/\b785\b/, '785'],
@@ -190,6 +191,8 @@ for (const [content, rel] of [
 
 if (!index.includes('/study/projects/react/')) fail('Homepage must explicitly link React to /study/projects/react/.');
 if (!index.includes('/study/papers/react/')) fail('Homepage must explicitly link ReAct to /study/papers/react/.');
+if (index.includes('/study/papers/react-agent/')) fail('Homepage formal ReAct entry must use /study/papers/react/, not /study/papers/react-agent/.');
+if (index.includes('/study/papers/raft-2014/')) fail('Homepage formal Raft entry must use /study/papers/raft/, not /study/papers/raft-2014/.');
 if (!frontend.includes('/study/projects/react/')) fail('Frontend topic must explicitly link React to /study/projects/react/.');
 if (!aiAgent.includes('/study/papers/react/')) fail('AI Agent topic must explicitly link ReAct to /study/papers/react/.');
 

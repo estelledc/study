@@ -1,0 +1,137 @@
+{
+  "schema_version": "study-learning-paths-v1",
+  "paths": [
+    {
+      "id": "frontend-foundations",
+      "maturity": "published-legacy",
+      "title": "前端产品工程",
+      "audience": "会写一点 JavaScript 或 React，能做出页面，但还不清楚状态、服务端数据和组件代码应该怎样组织。",
+      "outcome": "面对一个前端需求时，能说清状态放在哪里、数据何时失效，以及组件应该被封装成依赖还是保留为可修改源码。",
+      "topic_route": "/study/topics/frontend/",
+      "home_chip": "路线 · 有一点 JavaScript 基础",
+      "home_summary": "从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。",
+      "sequence_label": "React → TanStack Query → shadcn/ui",
+      "start_label": "路线一",
+      "steps": [
+        {
+          "id": "react-project",
+          "kind": "note",
+          "note_ref": "projects/react",
+          "required": true,
+          "title": "React",
+          "role": "渲染模型",
+          "summary": "理解组件、状态和渲染如何组成前端应用的基本模型。",
+          "why": "这是 React 前端项目，不是 ReAct 论文。"
+        },
+        {
+          "id": "tanstack-query",
+          "kind": "note",
+          "note_ref": "projects/tanstack-query",
+          "required": true,
+          "title": "TanStack Query",
+          "role": "服务端状态",
+          "summary": "理解服务端状态为什么不能只当作普通的全局状态来管理。",
+          "why": "重点看缓存、失效和观察者模型怎样协作。"
+        },
+        {
+          "id": "shadcn-ui",
+          "kind": "note",
+          "note_ref": "projects/shadcn-ui",
+          "required": true,
+          "title": "shadcn-ui",
+          "role": "UI 工程",
+          "summary": "理解“复制进项目的组件源码”为什么也是一种产品化交付方式。",
+          "why": "它改变了组件只能通过 npm 包交付的默认假设。"
+        }
+      ]
+    },
+    {
+      "id": "ai-agent-foundations",
+      "maturity": "published-legacy",
+      "title": "AI Agent 入门",
+      "audience": "想理解 coding agent 为什么能读文件、调用工具、修改代码和根据测试结果继续行动，不要求先有机器学习基础。",
+      "outcome": "能用 Thought / Action / Observation 拆解一个 agent 工作流，并判断一次性生成代码与可反馈、可验证的 agent loop 有什么差别。",
+      "topic_route": "/study/topics/ai-agent/",
+      "home_chip": "路线 · 零基础友好",
+      "home_summary": "从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。",
+      "sequence_label": "Attention → Chain-of-Thought → ReAct",
+      "start_label": "路线二",
+      "steps": [
+        {
+          "id": "attention",
+          "kind": "note",
+          "note_ref": "papers/attention",
+          "required": true,
+          "title": "Attention",
+          "role": "上下文",
+          "summary": "先建立模型如何从上下文里选择相关信息的基础直觉。",
+          "why": "它是理解 Transformer 与后续 LLM 能力的入口。"
+        },
+        {
+          "id": "chain-of-thought",
+          "kind": "note",
+          "note_ref": "papers/chain-of-thought",
+          "required": true,
+          "title": "Chain-of-Thought",
+          "role": "中间步骤",
+          "summary": "理解显式中间步骤为什么能帮助模型处理多步问题。",
+          "why": "ReAct 的 Thought 部分建立在这条思路上。"
+        },
+        {
+          "id": "react-paper",
+          "kind": "note",
+          "note_ref": "papers/react",
+          "required": true,
+          "title": "ReAct — Reasoning and Acting",
+          "role": "行动循环",
+          "summary": "把“想一下 → 调工具 → 看反馈 → 再想”连成可观察的 agent 循环。",
+          "why": "这是 ReAct 论文，不是 React 前端项目。"
+        }
+      ]
+    },
+    {
+      "id": "distributed-systems-foundations",
+      "maturity": "published-legacy",
+      "title": "系统底层入门",
+      "audience": "会写业务代码，想补数据库与分布式基础，却常被“一致性、共识、时钟”这些词挡在门外。",
+      "outcome": "能区分事件排序、复制和共识，知道系统设计为什么要在一致性、可用性与实现复杂度之间取舍。",
+      "topic_route": "/study/topics/distributed-systems/",
+      "home_chip": "路线 · 想补系统基础",
+      "home_summary": "从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。",
+      "sequence_label": "Lamport Clock → Paxos → Raft",
+      "start_label": "路线三",
+      "steps": [
+        {
+          "id": "lamport-clock",
+          "kind": "note",
+          "note_ref": "papers/lamport-1978",
+          "required": true,
+          "title": "Lamport Clock",
+          "role": "逻辑时钟",
+          "summary": "理解没有全局时钟时，系统怎样描述事件之间的先后关系。",
+          "why": "先把“时间”和“顺序”分开，后面的协议才不会混乱。"
+        },
+        {
+          "id": "paxos",
+          "kind": "note",
+          "note_ref": "papers/paxos-1998",
+          "required": true,
+          "title": "Paxos",
+          "role": "共识",
+          "summary": "理解节点和消息都可能失败时，一组参与者如何对一个值达成一致。",
+          "why": "把安全性与活性分开看，不要先陷入角色名词。"
+        },
+        {
+          "id": "raft",
+          "kind": "note",
+          "note_ref": "papers/raft",
+          "required": true,
+          "title": "Raft",
+          "role": "可理解性",
+          "summary": "通过 leader election、log replication 和 safety 理解共识的工程结构。",
+          "why": "用更明确的模块划分，对照 Paxos 建立实现直觉。"
+        }
+      ]
+    }
+  ]
+}

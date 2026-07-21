@@ -68,7 +68,7 @@ head:
 <p class="study-golden-card__thesis">从 Claude Code 的工程循环，对照 ReAct 把 Thought、Action、Observation 组织成可观察轨迹的思想。</p>
 <dl>
 <div><dt>真实项目</dt><dd><a href="/study/projects/claude-code/">Claude Code</a></dd></div>
-<div><dt>经典论文</dt><dd><a href="/study/papers/react-agent/">ReAct</a></dd></div>
+<div><dt>经典论文</dt><dd><a href="/study/papers/react/">ReAct</a></dd></div>
 <div><dt>最小验证</dt><dd>取一次真实小任务，写出三轮行动轨迹，并指出哪条 Observation 改变了下一步。</dd></div>
 </dl>
 <p class="study-golden-card__review" data-review-state="untracked"><strong>人工审查状态：</strong>首页已精选；逐段事实审校未单独记录，工具行为应回到当前版本与论文原文。</p>
@@ -79,7 +79,7 @@ head:
 <p class="study-golden-card__thesis">从 etcd 的生产型 KV 接口，回到 Raft 对 leader、日志复制和 safety 的拆分。</p>
 <dl>
 <div><dt>真实项目</dt><dd><a href="/study/projects/etcd/">etcd</a></dd></div>
-<div><dt>经典论文</dt><dd><a href="/study/papers/raft-2014/">Raft 2014</a></dd></div>
+<div><dt>经典论文</dt><dd><a href="/study/papers/raft/">Raft</a></dd></div>
 <div><dt>最小验证</dt><dd>画 5 个节点的两组多数派，证明任意两个 3 节点集合必有交集，再标出失去多数派时为何必须停写。</dd></div>
 </dl>
 <p class="study-golden-card__review" data-review-state="untracked"><strong>人工审查状态：</strong>首页已精选；逐段事实审校未单独记录，协议细节需回到论文和 etcd 文档。</p>
@@ -93,26 +93,27 @@ head:
   <h2>先选一条新手路径</h2>
   <p>不要从全量索引的第一条开始读。选一条路线，先完成前三篇，再决定向哪个分支扩展。</p>
 
-  <div class="study-card-grid">
-    <a class="study-path-card" href="/study/topics/frontend/">
-      <span class="study-chip">路线 · 有一点 JavaScript 基础</span>
-      <h3>前端产品工程</h3>
-      <p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p>
-      <footer>先读：React → TanStack Query → shadcn/ui</footer>
-    </a>
-    <a class="study-path-card" href="/study/topics/ai-agent/">
-      <span class="study-chip">路线 · 零基础友好</span>
-      <h3>AI Agent 入门</h3>
-      <p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p>
-      <footer>先读：Attention → CoT → ReAct</footer>
-    </a>
-    <a class="study-path-card" href="/study/topics/distributed-systems/">
-      <span class="study-chip">路线 · 想补系统基础</span>
-      <h3>系统底层入门</h3>
-      <p>从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。</p>
-      <footer>先读：Lamport Clock → Paxos → Raft</footer>
-    </a>
-  </div>
+  <!-- STUDY:LEARNING_PATHS:HOME:BEGIN -->
+<div class="study-card-grid"><a class="study-path-card" href="/study/topics/frontend/">
+<span class="study-chip">路线 · 有一点 JavaScript 基础</span>
+<h3>前端产品工程</h3>
+<p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p>
+<footer>先读：React → TanStack Query → shadcn/ui</footer>
+</a>
+<a class="study-path-card" href="/study/topics/ai-agent/">
+<span class="study-chip">路线 · 零基础友好</span>
+<h3>AI Agent 入门</h3>
+<p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p>
+<footer>先读：Attention → Chain-of-Thought → ReAct</footer>
+</a>
+<a class="study-path-card" href="/study/topics/distributed-systems/">
+<span class="study-chip">路线 · 想补系统基础</span>
+<h3>系统底层入门</h3>
+<p>从逻辑时钟、Paxos 到 Raft，建立理解数据库、分布式系统和基础设施的地基。</p>
+<footer>先读：Lamport Clock → Paxos → Raft</footer>
+</a>
+</div>
+<!-- STUDY:LEARNING_PATHS:HOME:END -->
 </section>
 
 <section class="study-section study-proof-section" id="proof">
@@ -124,9 +125,10 @@ head:
 <span class="jx-chip" data-state="maintained">Maintained · 持续维护</span>
 <p class="jx-proof__summary">项目与论文不是分开的两个书架。每条精选路径都把“经典思想—真实实现—可动手验证的实验”连成一条线，并通过 Atlas、Pagefind 搜索和双向链接保留全量入口。</p>
 <p class="jx-proof__summary-en" lang="en">Proof is not the note count. It is the visible method, source-level evidence, curated learning paths, and an explicit account of where AI collaboration can still be wrong.</p>
+<!-- STUDY:SITE_STATE:BEGIN -->
 <div class="jx-proof__metrics" aria-label="当前内容规模">
-<div class="jx-proof__metric"><strong>1,975</strong><span>篇项目与论文笔记</span></div>
-<div class="jx-proof__metric"><strong>19</strong><span>个主题簇</span></div>
+<div class="jx-proof__metric"><strong>2044</strong><span>篇项目与论文笔记</span></div>
+<div class="jx-proof__metric"><strong>18</strong><span>个项目已对齐标杆标准</span></div>
 <div class="jx-proof__metric"><strong>3</strong><span>条新手首选路径</span></div>
 </div>
 <div class="jx-proof__links" aria-label="证据入口">
@@ -144,7 +146,8 @@ head:
 </dl>
   </div>
 
-  <p class="study-muted"><strong>当前规模：</strong>1083 篇论文 + 961 个项目 = 2044 篇笔记，按 19 个主题组织。数量已移出首屏，只作为覆盖面证据。</p>
+  <p class="study-muted"><strong>当前规模：</strong>1083 篇论文 + 961 个项目 = 2044 篇笔记。当前状态来自 <code>data/site-state.json</code>；数量已移出首屏，只作为覆盖面证据。</p>
+<!-- STUDY:SITE_STATE:END -->
 </section>
 
 <section class="study-section">

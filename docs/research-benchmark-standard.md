@@ -74,18 +74,20 @@ canonical source + fixed revision
 
 ## 当前基线
 
-运行：
+当前站点状态不在本文手写维护。运行：
 
 ```bash
+npm run generate:site-state
+npm run audit:site-state
 npm run audit:project-standard
 ```
 
-当前 961 个项目页的差距记录在 `data/project-standard-audit.json`：
+机器源真相：
 
-- 3 页：已补齐来源、固定 revision、证据边界、实践和应用型自测，作为完整示范。
-- 958 页：正文骨架基本完整，但仍缺固定 revision、证据边界或应用型自测。
+- `data/site-state.json`：当前项目数、论文数、项目标准摘要和内容合同摘要。
+- `data/project-standard-audit.json`：项目页逐页差距快照。
 
-这意味着下一阶段的主要成本是逐项目来源核验和实践闭环，不是机械移动目录。
+这意味着下一阶段的主要成本是逐项目来源核验和实践闭环，不是机械移动目录。具体数量以 `data/site-state.json` 和上述 audit 命令为准。
 
 ## 重构顺序
 

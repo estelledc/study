@@ -41,9 +41,9 @@ test('homepage places three source-backed golden paths immediately after the her
     'src/content/docs/projects/next-js.md',
     'src/content/docs/papers/react-server-components.md',
     'src/content/docs/projects/claude-code.md',
-    'src/content/docs/papers/react-agent.md',
+    'src/content/docs/papers/react.md',
     'src/content/docs/projects/etcd.md',
-    'src/content/docs/papers/raft-2014.md',
+    'src/content/docs/papers/raft.md',
   ]) {
     assert.ok(fs.existsSync(path.join(root, target)), `golden path target missing: ${target}`);
   }
