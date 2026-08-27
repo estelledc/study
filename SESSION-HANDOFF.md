@@ -15,7 +15,7 @@
   1. Preact 绑定 `preactjs/preact@389c7bcc...` / `10.29.8`（tag 可达；npm 无 `gitHead`）。
   2. Lit 绑定 `lit/lit@20afabd3...` / `lit@3.3.3`（annotated tag 与 npm `gitHead` 一致）。
   3. 共享 provenance `docs/lightweight-ui-source-review-20260827-cb.md` + 两份 receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=22`；`audit:content-contract` blocking 0。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=22`；`audit:content-contract` blocking 0；`STUDY_CHANGED_FROM=042f60a8 npm run verify:ci` 全绿。
 - budget：2 页静态源码迁移；单 writer。
 - blocker：不 merge；规模 detector 在 main 上已超限，本轮未改 baseline。
 - stop conditions：本 epoch 结束；merge / deploy 需单独授权。
