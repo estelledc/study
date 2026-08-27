@@ -21,11 +21,12 @@
   - `audit:content-contract`：0 blocking。
   - `audit:project-standard`：`benchmark-aligned=81`、`needs-evidence=884`、snapshot CURRENT。
   - `audit:counts` / `audit:site-state`：projects=965、papers=1083、total=2048。
+  - `STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（含 changed-note quality gate、strict build、23 Playwright a11y）。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页新增静态源码笔记 + 派生刷新；单 writer；预算内完成。
 - blocker（先于本切片存在）：规模 baseline 是否仍超限以 `benchmark-site --compare` 实时结果为准；本轮未改 baseline、阈值或证据布局。
 - stop conditions：本轮已完成；merge 与 deploy 均需单独授权。
 - 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
-- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`；PR 状态用 GitHub 查看。
+- 下一条命令：用 GitHub 查看 PR #257；merge 需单独授权。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
