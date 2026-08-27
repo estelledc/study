@@ -35,13 +35,13 @@ sidebar:
 | [Gitpod — 预构建云开发环境](/study/projects/gitpod/) | `gitpod` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) | `godot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HedgeDoc — 协作 Markdown 编辑](/study/projects/hedgedoc/) | `hedgedoc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | `helix` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Helix — 选区优先的 Rust 终端编辑器，内置 LSP 与 Tree-sitter](/study/projects/helix/) | `helix` | unknown | UNVERIFIED | 介绍 Helix 25 |
 | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | `hocuspocus` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) | `inkscape` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Joplin — 开源 Evernote 替代](/study/projects/joplin/) | `joplin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Jupyter Notebook — 经典数据科学笔记本](/study/projects/jupyter-notebook/) | `jupyter-notebook` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [JupyterLab — 下一代 Jupyter IDE](/study/projects/jupyterlab/) | `jupyterlab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | `kakoune` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Kakoune — 选区优先的多光标终端编辑器](/study/projects/kakoune/) | `kakoune` | unknown | UNVERIFIED | 介绍 Kakoune v2026 |
 | [Krita — 数字绘画专业编辑器](/study/projects/krita/) | `krita` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) | `lazyvim` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lexical — 把富文本编辑拆成快照、事务和插件](/study/projects/lexical/) | `lexical` | unknown | UNVERIFIED | 介绍 Lexical 如何用不可变快照、更新事务和脏节点协调富文本编辑 |

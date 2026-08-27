@@ -7,7 +7,7 @@
       "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -22,7 +22,7 @@
         "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 959,
-        "empty_description": 955
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -45158,8 +45158,8 @@
       "id": "projects::helix",
       "area": "projects",
       "slug": "helix",
-      "title": "Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机",
-      "description": "",
+      "title": "Helix — 选区优先的 Rust 终端编辑器，内置 LSP 与 Tree-sitter",
+      "description": "介绍 Helix 25.07.1 如何用选区优先 keymap、内置 LSP 客户端和按需拉取的 Tree-sitter grammar 组织终端编辑。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-editors-and-rich-text"
@@ -45172,13 +45172,13 @@
         "raw_category": "编辑器"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/helix/",
       "atlas": {
@@ -46770,8 +46770,8 @@
       "id": "projects::kakoune",
       "area": "projects",
       "slug": "kakoune",
-      "title": "Kakoune — 多光标优先模态编辑器",
-      "description": "",
+      "title": "Kakoune — 选区优先的多光标终端编辑器",
+      "description": "介绍 Kakoune v2026.05.21 如何用面向选区、client-server session 和外部过滤器组合终端编辑。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-editors-and-rich-text"
@@ -46784,13 +46784,13 @@
         "raw_category": "编辑器"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/kakoune/",
       "atlas": {

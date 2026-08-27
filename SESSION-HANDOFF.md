@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IC：helix + kakoune
+
+- supervisor 状态：writer epoch `running` → 本地切片完成后待 PR review；未 merge / 未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（本分支所跟踪的 `origin/main`）。
+- objective：把 `needs-evidence` 的模态编辑器双子 `helix` 与 `kakoune` 迁到源码绑定标准，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇既有项目页、共享审查文档 `docs/modal-editor-source-review-20260827-ic.md`、2 份 generation 1 receipt、派生 atlas / site-state / project-standard、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译上游、未装 grammar、未启动 LSP/DAP。
+- activated_by：`explicit-user-parallel-writer-ic-2026-08-27`（字母从 HP 改为 IC，因 HP 已被 dotenv-flow / dotenv-safe 占用）。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 Helix `s`/`S`/`,` 与 Kakoune `s`/`S` 写反，并声称 Helix 已有 Steel 插件运行时。开放 PR 未占用这两个 slug。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `helix` 绑定 annotated tag `25.07.1` peel → `a05c151bb6e8e9c65ec390b0ae2afe7a5efd619b`；披露 Cargo `25.7.1` 与 `rust-version 1.82`。
+  2. `kakoune` 绑定 lightweight tag `v2026.05.21` → `36ad52ebf983c1b23182caccd4f792517235b06d`；披露 README C++20 与 Makefile `-std=c++2b`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 quality-gate 通过、receipt `UNVERIFIED`；全量门禁以 `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci` 为准。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

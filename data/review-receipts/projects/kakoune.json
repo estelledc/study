@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "kakoune",
+    "digest_sha256": "3ec8473bcf5ccfc605389e9bda04f79a826ac52573ef1d93fc4f69d588e98321"
+  },
+  "source_revision": "36ad52ebf983c1b23182caccd4f792517235b06d",
+  "research_input_sha256": "7e904403132daaa3cf6e5e1c1683aff2e0526dbca63f0f58f1ffd632efd7c35f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ic",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates inclusive selections, client-server flags, s/S regex roles, and pipe-to-filter composition."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ic",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected main.cc switches, Selection, and normal.cc keymap; make and kak-lsp were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ic",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds lightweight tag v2026.05.21 and discloses README C++20 vs Makefile -std=c++2b."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:58:00.000Z"
+}

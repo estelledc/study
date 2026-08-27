@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "helix",
+    "digest_sha256": "d0a7aca823c8c33a343a65fce5da93f80b5f4582e5d0d2e94a27cdd06e86f61a"
+  },
+  "source_revision": "a05c151bb6e8e9c65ec390b0ae2afe7a5efd619b",
+  "research_input_sha256": "7e904403132daaa3cf6e5e1c1683aff2e0526dbca63f0f58f1ffd632efd7c35f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ic",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates selection-first keymap, LSP which()+spawn, grammar fetch, and the s/S vs comma mappings."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ic",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected helix-term entry, Range gap indexing, Client::start, and default keymap; hx was not built."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ic",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 25.07.1 peel commit and discloses Cargo 25.7.1 / rustc 1.82; no Steel plugin crate in this tree."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:58:00.000Z"
+}
