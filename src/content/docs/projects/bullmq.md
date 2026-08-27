@@ -155,5 +155,6 @@ await queue.add('daily-report', {}, {
 - [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
+- [[piscina]] —— piscina — 带仪表与收口的 Node 线程池
 - [[redis]] —— Redis — 内存键值数据库
 - [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准

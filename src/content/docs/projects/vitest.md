@@ -170,6 +170,8 @@ npx vitest run --coverage
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[piscina]] —— piscina — 带仪表与收口的 Node 线程池
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
+- [[tinypool]] —— tinypool — 给 Vitest 削薄的 Node worker 池
 - [[vue]] —— Vue.js — 渐进式 UI 框架

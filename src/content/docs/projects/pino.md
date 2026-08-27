@@ -168,4 +168,6 @@ const log = pino(pino.transport({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[piscina]] —— piscina — 带仪表与收口的 Node 线程池
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
+- [[tinypool]] —— tinypool — 给 Vitest 削薄的 Node worker 池

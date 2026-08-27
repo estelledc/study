@@ -2268,6 +2268,10 @@
       "topic_id": "projects-observability-and-performance"
     },
     {
+      "note_id": "projects::piscina",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::pixi",
       "topic_id": "projects-image-processing-and-canvas"
     },
@@ -2494,6 +2498,10 @@
     {
       "note_id": "projects::timescaledb",
       "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::tinypool",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::traefik",

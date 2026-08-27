@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -43,6 +43,7 @@ sidebar:
 | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | `openmeetings` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | `ovenmediaengine` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | `partykit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [piscina — 带仪表与收口的 Node 线程池](/study/projects/piscina/) | `piscina` | intermediate | UNVERIFIED | 固定 5 |
 | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) | `postal` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | `prefect` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | `ray` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -56,4 +57,5 @@ sidebar:
 | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | `starrocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [tinypool — 给 Vitest 削薄的 Node worker 池](/study/projects/tinypool/) | `tinypool` | intermediate | UNVERIFIED | 固定 2 |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

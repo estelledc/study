@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tinypool",
+    "digest_sha256": "1bcb61c6228b6f65d3836198df9b9bca8a544446b4d26169e939563be768c154"
+  },
+  "source_revision": "5e18382a9aaa3344035905384b18a88a9da8c8bb",
+  "research_input_sha256": "265103acb0621d6e3418f7e15614f3660a41e3d93c6185049d2e531b3f941e27",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates availableParallelism defaults, unused per-run runtime, isolateWorkers recycle, and child_process channel limits with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected pool, thread/process workers, handler cache, and recycle paths; workers and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "README physical-cpu-count and Node 18 claims are disclosed as stale against 2.1.2; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:15:00.000Z"
+}

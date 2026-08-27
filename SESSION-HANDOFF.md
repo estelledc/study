@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FS：tinypool + piscina 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`99736a909`（fetch 后的 `origin/main`）。
+- objective：为 Node worker-pool 双子 `tinypool` / `piscina` 新增源码绑定的 `study-v2` 页；证据边界 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/worker-pool-source-review-20260827-fs.md`、taxonomy 与派生索引、3 个生成段反向链接、本 handoff；未安装上游依赖、未拉起 worker、未跑上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-fs-20260827`（target tinypool/piscina，one PR，no merge）。
+- detector fingerprint：两库不在既有 963 页中；README 仍写 tinypool 用 `physical-cpu-count` / Node 18，固定 `2.1.2` 实为 `os.availableParallelism()` 与 `^20 || >=22`；piscina 默认 `maxThreads` 为 parallelism×1.5，未传 queue 时构造器落 `FixedQueue`。
+- external delta：本 PR（push + 开 PR 已授权）；未 merge、未 deploy，D 轴不因本轮提升。
+- 完成切片：
+  1. `tinypool` 绑定 annotated tag `v2.1.2` → `5e18382a9aaa3344035905384b18a88a9da8c8bb`。
+  2. `piscina` 绑定 lightweight tag `v5.3.1` → `6a23286fb7e3d28aa1745add5014f7187bc0389a`；披露未绑定 `v6.0.0-rc.4`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；派生刷新后 `benchmark-aligned=77`。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:project-standard` CURRENT；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致；`git diff --check` 通过。`verify:ci` 在首个 commit 之后跑。
+- budget：2 个 ignored worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：PR 已开且未授权 merge 后停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=99736a909 npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
