@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Research PR drain epoch（#48 起）
+
+- status：writer epoch `complete`；supervisor 回到 `WAIT_HEALTHY`。
+- 起始 ref：`042f60a8`（#47 已在 main）。
+- 完成 ref：`0ffa894c`（#77 squash-merge）。
+- objective：按编号 rebase 到 `origin/main` 后 squash-merge 开放 research PR，从 #48 排到至少 #70。
+- scope：既有 research PR 的 feature branch rebase、派生索引再生、`--force-with-lease` 推送 feature branch、`gh pr merge --squash`。未改政策/阈值、未 force-push `main`、未 merge Dependabot、未 merge intern-journal。
+- activated_by：`estelledc` 明确授权 auto-merge drain。
+- detector fingerprint：开放 PR 相对 #47 后的 main 全部 `CONFLICTING`，冲突集中在派生索引。
+- external delta：#48–#80 已全部进入 main（另有并行 agent 合并了 #81）；D 轴随 squash-merge 前进。
+- 完成切片：
+  1. 对每张 PR rebase 到当时的 `origin/main`；派生索引（`site-state` / `note-index` / `project-standard-audit` / `index.md` / atlas / 公开计数文案 / `SESSION-HANDOFF.md`）取 main 后按仓库配方再生。
+  2. 保留各 PR 独有页面、receipt、source-review 文档；#51 含 jotai module-scope `useAtom` 修复。
+  3. #59 未改写 main 上已绑定的 `zod`（仍为 `912f0f51` / `UNVERIFIED`），只收 `valtio`。
+  4. 每张 rebase 后等该 SHA 的 `verify:ci` 通过再 squash-merge。
+- acceptance checks：`gh pr list` 中 #48–#80 已无 open；`origin/main` 含 #48–#81、#77；未 force-push `main`。
+- budget：单 writer 串行 rebase/merge；本窗口在 #80 后停止继续发明更后编号。
+- blocker：#82 起仍有开放 research PR，需下一轮同样的 rebase + `verify:ci` + squash-merge。并行 writer 同时推同一 feature branch 时，`--force-with-lease` 和旧 SHA 的 CI 会互相取消。
+- stop conditions：#48–#80 已清空；未授权继续 #82+。
+- 下一次 wake 条件：owner 继续授权 drain #82+，或 CI/review 对剩余开放 PR 出现新状态。
+- 下一条命令：`gh pr list --state open --json number,title --jq 'sort_by(.number) | .[] | select(.number>=82)'`；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
