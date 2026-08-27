@@ -4,8 +4,8 @@
   "summary": {
     "total": 963,
     "by_status": {
-      "benchmark-aligned": 67,
-      "needs-evidence": 896
+      "benchmark-aligned": 69,
+      "needs-evidence": 894
     }
   },
   "projects": [
@@ -11481,49 +11481,41 @@
       "slug": "markdown-it",
       "title": "markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器",
       "source": "https://github.com/markdown-it/markdown-it",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "marked",
       "title": "marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器",
       "source": "https://github.com/markedjs/marked",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "marktext",
