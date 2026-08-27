@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "node-cache",
+    "digest_sha256": "04fac55d2103e2f3ae5e55ab706cc66fcc4f3ee5a976f36968ca197a9b89a7f1"
+  },
+  "source_revision": "b64434a8303c5881145c68754b674478e714ca3a",
+  "research_input_sha256": "cce4937612635027c06d5687c45475adb355c6e08c4b15a6a1d85ef569d91f87",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates process-local store, second-based TTL, clone defaults, take(), and keys-vs-has expiry."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "CoffeeScript wrap/check/maxKeys and type-comment mismatch were inspected; mocha/tsc were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to node-cache 5.1.2 (2020-07-01); no throughput or clone-cost measurement."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:50:00.000Z"
+}

@@ -2040,6 +2040,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::keyv",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::koa",
       "topic_id": "projects-web-frameworks"
     },
@@ -2214,6 +2218,10 @@
     {
       "note_id": "projects::nginx",
       "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::node-cache",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::nuxt",

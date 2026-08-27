@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -33,11 +33,13 @@ sidebar:
 | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | `homebrew` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | `inngest` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | `istio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Keyv — 带 TTL 的多后端 KV 抽象](/study/projects/keyv/) | `keyv` | beginner | UNVERIFIED | adapter-first 的 Node KV 层，默认 Map，值以 {value, expires} 序列化 |
 | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | `linkerd2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | `mailcow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | `moby` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [node-cache — 进程内带秒级 TTL 的对象缓存](/study/projects/node-cache/) | `node-cache` | beginner | UNVERIFIED | 单进程 EventEmitter 缓存，默认 clone，TTL 以秒计，checkperiod 扫过期 |
 | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | `nodemailer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | `nvidia-mig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | `openmeetings` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

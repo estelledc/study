@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BZ：keyv / node-cache STATIC_REVIEW
+
+- status：`running`（writer epoch complete；单 PR 待 review；不 merge）
+- objective：把缓存双子 `keyv` 与 `node-cache` 绑到可达固定 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新建项目页、共享审查记录、receipt、taxonomy/atlas/site-state、公开计数与本 handoff；未安装上游依赖、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-request-parallel-writer-bz-20260827`
+- review_after：`2026-08-27`
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- detector fingerprint：仓库与开放 PR 均无 `keyv` / `node-cache` slug；#71 已占用 `ioredis` / `bullmq`，本轮按指定目标新建缓存对。
+- external delta：GitHub/npm 只读核验 + 本地 blob-filtered clone；形成 review-ready PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `keyv` 绑定 `jaredwray/keyv@e3f8f009...` / `5.6.0`（tag `2026-01-20`；未绑 6.x RC）。
+  2. `node-cache` 绑定 `node-cache/node-cache@b64434a8...` / `5.1.2`（npm `gitHead` 与 tag 一致）。
+  3. 新增 `docs/cache-source-review-20260827-bz.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking。
+  - `audit:counts`：projects=963、papers=1083、total=2046。
+  - `git diff --check`：通过。
+- budget：2 个小型本地 worktree + 2 页静态源码审查；单 writer；1 个 PR。
+- blocker：未获 merge / deploy 授权。
+- stop_conditions：定向验收失败且无法在 scope 内修复；需要改政策、队列或放宽门禁；用户停止。
+- 下一次 wake 条件：owner review / CI；无新授权不开启下一内容切片。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
