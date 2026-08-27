@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "oxlint",
+    "digest_sha256": "d742ff9463a0209bd1f04bf07dfeb3b087d1544763ff8cbb2a21819dcab16fda"
+  },
+  "source_revision": "97e99b85483776a72928d675cc05b1cfc1130ba0",
+  "research_input_sha256": "9ddb5650cae265084d30fbbdc636451fb89c19981197f21abb99064c76685f95",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-c",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates native binary, Node NAPI plugins, nested JSON config, and explicit fix/type-aware flags."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-c",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "apps/oxlint main/lint/config_loader and default plugins were inspected; type-aware and JS plugins were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-c",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds oxlint 1.80.0 on oxc-project/oxc; sibling oxfmt and unverified speed claims are excluded."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
