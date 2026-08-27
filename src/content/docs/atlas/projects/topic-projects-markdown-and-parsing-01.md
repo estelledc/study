@@ -1,6 +1,6 @@
 ---
 title: "Markdown / 解析 · 项目 · 第 1 组"
-description: "5 条 Markdown / 解析 Atlas 分块"
+description: "7 条 Markdown / 解析 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,12 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 5 条，稳定上限为 100 条。
+本分块共 7 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [front-matter — 只用正则抽 YAML 头的小解析器](/study/projects/front-matter/) | `front-matter` | beginner | UNVERIFIED | 介绍 front-matter 4 |
+| [gray-matter — 带 engine 与 excerpt 的 front-matter 解析器](/study/projects/gray-matter/) | `gray-matter` | beginner | UNVERIFIED | 介绍 gray-matter 4 |
 | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | `markdown-it` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | `marked` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | `micromark` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

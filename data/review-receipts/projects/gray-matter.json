@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "gray-matter",
+    "digest_sha256": "6c7bcc47d30c9027fcb68a0c30bb77f51f49627f4af737c0aab9ab4d25781de0"
+  },
+  "source_revision": "e54a33b394e14a1808b88f939507f374552906e4",
+  "research_input_sha256": "3cd697be63dc922a003f5e4a45860713f57f3d880161a3b542d61cc0e4087c2a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates delimiter/language-line parsing, default-only yaml/json/javascript engines, and cache-on-no-options."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected index.js, engines, excerpt, stringify, and tests; mocha was not run. Missing close delimiter empties content."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds npm gitHead e54a33b3 (4.0.3) with no GitHub 4.0.3 tag; js-yaml 3 safeLoad and eval JS engine are in-scope only as static facts."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}
