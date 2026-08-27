@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Parallel writer BJ toast pair
+
+- supervisor 状态：writer epoch `complete`；等待 PR review，不 merge。
+- status：`running` → `complete`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `sonner` 与 `react-hot-toast` 做成 pinned `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2 项目页。两 slug 在 origin/main 不存在，且不在开放 PR 中，因此新建而不是改写。
+- scope：两页正文、`docs/toast-library-source-review-20260827-bj.md`、两份 generation 1 receipt、taxonomy curated assignment、派生 atlas/site-state/handoff；未改队列、政策阈值、远端 `main`。
+- activated_by：`explicit-user-goal-parallel-writer-bj-20260827`。
+- detector fingerprint：目标 toast 对在 catalog 中缺失；开放 PR 未占用 `sonner` / `react-hot-toast`。
+- external delta 计数：本轮只形成一条 PR，未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. GitHub/npm 只读核验 + blob-filtered clone；`sonner` 绑定 tag `v2.0.8` / `6739aca5...`，并披露 npm `gitHead` 指向自报 2.0.7 的 `ecce1841...`。
+  2. `react-hot-toast` 绑定注解 tag `v2.6.0` 剥出的 `3a870ed9...`；npm 无 `gitHead`。
+  3. 新增两页、共享审查记录与 receipts；taxonomy 归入 `projects-headless-ui-components`。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt `evidence_state=UNVERIFIED`；`audit:counts` 通过。全量 `verify:ci` 在首个 commit 后跑。
+- 剩余 blocker：需要 PR review；未授权 merge。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 给出下一对目标。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`。
+- budget：2 个新建项目页 + 1 份共享 provenance；单 writer；1 个 PR。
+- external_outcome：一条 draft PR，不 merge，D 轴不变。
+- stop_conditions：canonical/revision 不唯一且无法披露、taxonomy 预算只能靠放宽继续、或需要猜测运行/体积数字。
+- superseded_by：`none`。
+- 不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
