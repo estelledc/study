@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DX leftover React-test
+
+- status：writer epoch `complete`；等待 owner review；不 merge。
+- objective：为 leftover React-test 双子 `enzyme` + `unexpected` 绑定可达固定 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、`docs/react-test-source-review-20260827-dx.md`、两份 generation 1 receipt、taxonomy assignment、atlas / site-state / 公开计数、本 handoff。本机 gitignored blob-filtered clone。未安装上游依赖、未跑上游测试、未挂 DOM。
+- activated_by：`explicit-user-parallel-writer-DX-2026-08-27`。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（当时 `origin/main`）。
+- detector fingerprint：`testing-library` 页已在 main 且 PR #70 占用；调用方标明 happy-dom 已占用；`enzyme` / `unexpected` 均无页、无开放 PR slug。未改 vitest / jest / playwright。
+- external delta：本 PR（push + PR 已授权）；merge 与 deploy 未授权，D 轴不变。
+- 完成切片：
+  1. `enzyme` 绑定 `enzymejs/enzyme@88dae28d...` / `3.11.0`。写清 adapter merge、三 mode、mount 要 document、shallow 默认补 `componentDidMount`、`dive()` 开新根。披露 npm 无 `gitHead`，官方 in-tree adapter peer 仅为 React 16。
+  2. `unexpected` 绑定 `unexpectedjs/unexpected@a47e211a...` / `13.2.1`（tag 剥开后与 npm `gitHead` 一致）。写清默认 `freeze()`、`clone()` 后才能 `use`、`to be`/`to equal` 分路、pending promise 的 `afterEach`。未审查 `unexpected-react`。
+- acceptance checks：两页 `quality-gate` 已绿、0 advisory；receipt digest / revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` 963/1083/2046；完整 portable gate 以本 PR 的 `verify:ci` 为准。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：无本轮硬暂停；merge / deploy 需另行授权。main 上既有 `tracked_files` 规模 detector 不在本轮处置。
+- stop conditions：当前切片完成即结束 writer；不自合。
+- 下一次 wake 条件：owner review / CI 结果，或新的显式范围。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "enzyme",
+    "digest_sha256": "6d04818c1f143ed0543f3bd1d8403e8f3a0ca32110fb44e024b5a9d9443b7750"
+  },
+  "source_revision": "88dae28d8bda4c1e8582d63f9162fb1200d10ec4",
+  "research_input_sha256": "bcbb9620988caa734fe89b4778541bb8f38abdac8dc19397e422133f366f7b08",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates adapter configure/merge, three renderer modes, mount document check, shallow lifecycle, and dive as a new root."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index, configuration, validateAdapter, ShallowWrapper/ReactWrapper constructors, dive/simulate, and ReactSixteenAdapter createRenderer were inspected; mocha and DOM were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned to enzymejs/enzyme enzyme@3.11.0 88dae28d. npm has no gitHead; airbnb and enzymejs tags match. Official in-tree adapter peer is React 16 only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}

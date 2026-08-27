@@ -1944,6 +1944,10 @@
       "topic_id": "projects-terminal-tools"
     },
     {
+      "note_id": "projects::enzyme",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::esbuild",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -2518,6 +2522,10 @@
     {
       "note_id": "projects::unstorage",
       "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::unexpected",
+      "topic_id": "projects-testing-and-verification"
     },
     {
       "note_id": "projects::valibot",

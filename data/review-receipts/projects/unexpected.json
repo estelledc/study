@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "unexpected",
+    "digest_sha256": "6fe30779ee58db86c7e28eed20e9251cfcab524c91abc8d4185beba4519ecf09"
+  },
+  "source_revision": "a47e211af54bdbf19ae15b81c3f30f86aa5bde7a",
+  "research_input_sha256": "bcbb9620988caa734fe89b4778541bb8f38abdac8dc19397e422133f366f7b08",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates frozen default export, clone-before-plugin, to be vs to equal, assertion prefix lookup, and pending-promise afterEach."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createTopLevelExpect, freeze/clone/use/addAssertion, assertions to be/to equal/to be fulfilled, and notifyPendingPromise were inspected; mocha/karma/jest were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned to unexpectedjs/unexpected v13.2.1 a47e211a; npm gitHead matches peeled annotated tag. unexpected-react was not reviewed. No engines field."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}
