@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DZ 设计系统 epoch
+
+- status：writer epoch `complete`；准备打开一个 PR，不自合并。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（PR #54 merge 后的 `origin/main`）。
+- supervisor 状态：本轮为显式授权的有界 writer；巡检规模 detector 仍可能处于人工观察，不改 baseline。
+- objective：把设计系统双子 `polaris` 与 `carbon-design` 绑到可达静态 revision；证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建两页、共享 `docs/design-system-source-review-20260827-dz.md`、两份 generation 1 receipt、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未做 Storybook / Sass / bundle / 视觉 benchmark。
+- activated_by：`explicit-user-parallel-writer-dz-20260827`。
+- detector fingerprint：Study 无 `polaris` / `carbon-design` 页，无法对照 Shopify Admin 带皮组件运行时与 IBM prefix/layer/feature-flag 运行时。
+- external delta 计数：本轮只形成 review-ready branch + 一个 PR；未 merge、未 deploy，D 轴不变。
+- 完成切片：
+  1. `polaris` 绑定 annotated tag `@shopify/polaris@13.9.5` / `b0a13b7a...`（npm 无 `gitHead`，以 tag 剥开提交为准），补 AppProvider context 栈、`p-theme-*`、必填 i18n 合并和自定义许可。
+  2. `carbon-design` 绑定 tag `v11.114.0` / `188d2320...`（npm `@carbon/react@1.114.0` `gitHead` 一致），补 `cds` 前缀、Theme/Layer 层叠和 `enable-v12-release` 对 `enabled()` 的改写。
+  3. 新增共享 `docs/design-system-source-review-20260827-dz.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision/provenance 一致且 `UNVERIFIED`；`audit:content-contract` 0 blocking。
+- 验证结果：定向 quality-gate 与 content-contract 已通过；全量 `verify:ci` 在提交后跑。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
+- blocker：既有规模 detector 若超 baseline 仍属 `PARKED_HUMAN`，本轮未改 baseline/阈值。
+- stop conditions：本轮完成后停止；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 授权 merge。
+- 下一条命令：用 GitHub 查看本轮 PR。
+- superseded_by：`none`
+
+不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

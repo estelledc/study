@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "carbon-design",
+    "digest_sha256": "0022a307e0aaf9fcfbed85fc46713f1db8e2bc8d14b82cf47dd877778e7ccc09"
+  },
+  "source_revision": "188d23202ec1092322dee92cf0df9d9958224ae4",
+  "research_input_sha256": "c12bc42bf5a194eba583d038c3999059911b93708c3a6b69cef5a183948ec1c9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates cds prefix, Theme/Layer stacking, and v12 feature-flag override semantics."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Prefix, Theme, Layer, FeatureFlagScope.enabled, Button defaults, and flag tests were inspected; Sass/Jest/Storybook were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to carbon v11.114.0 / @carbon/react 1.114.0; telemetry postinstall was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
