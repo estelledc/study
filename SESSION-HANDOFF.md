@@ -15,7 +15,7 @@
   1. `farm` 绑定 lightweight tag `v1.7.11` → `549e29486b286c7d0488612eacb6bd4ed0884abe`。记录 Rust build/generate、first-wins resolve、Vite `enforce`→priority，以及 `compile()` 与 `update()` 队列合同。披露 `@farmfe/cli@1.0.5` 与 core `1.7.11` 版本字段不同、npm 无 `gitHead`。
   2. `rsbuild` 绑定 lightweight tag `v2.2.0` → `f274e3eaa08e28f2449d1abd7592c34796072d74`。记录默认插件、`camelCase(output.target)` 默认环境、`tools.rspack` 与 `setup` 分流、`initConfigs` action 绑定与 Rspack `>=2.0.0`。披露 `@rsbuild/plugin-react@2.1.0`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生首页“已对齐标杆标准”32 → 34。
-- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest / revision / 审查文档 digest 一致；`audit:counts` 与 content-contract blocking 0。全量 `verify:ci` 在 push 后继续跑。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest / revision / 审查文档 digest 一致；`audit:counts` 与 content-contract blocking 0。本地 `STUDY_CHANGED_FROM=a910f11f2 npm run verify:ci`：388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁通过。首次 a11y 因本机缺 Playwright Chromium 失败，安装浏览器后 23/23 通过，未改测试或门禁。
 - budget：2 个 blob-filtered worktree + 2 页 + 派生刷新；单 writer。
 - blocker：规模 detector 在 main 已超阈值，政策禁止自动刷新 baseline；本轮只新增指定页与证据文件。
 - stop conditions：本轮已完成；merge 与 deploy 未授权。
