@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AO 可视化双子
+
+- status：writer epoch `complete`；待 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把 `d3` 与 `chart-js` 绑到可达固定 revision，完成 `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2 迁移。
+- scope：两页、`docs/viz-source-review-20260827-ao.md`、两份 generation 1 receipt、taxonomy 一条 `chart-js` assignment、确定性派生与本交接；未安装上游依赖、未跑上游测试、bundle 或渲染 benchmark。
+- activated_by：`explicit-parallel-writer-ao-20260827`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision / evidence boundary / self-test；旧正文把 d3 scale 数成 13 种、把 Chart.js decimation 写成 1 万点自动采样、把 `/auto` 当唯一入口。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；D 轴不因开 PR 自动提升，未 merge、未部署。
+- 完成切片：
+  1. `d3` 绑定 `d3/d3@1f8dd3b9...` / `7.9.0`，并对照 lockfile 的 `d3-selection@3.0.0`、`d3-scale@4.0.2`、`d3-shape@3.2.0`。
+  2. `chart-js` 绑定 `chartjs/Chart.js@9c5cf9fa...` / `4.5.1`，修正 registry、默认 `responsive`、decimation 前置条件与 JS/TS 混写边界。
+  3. 新增共享 provenance 与两份 receipt；项目审计 `benchmark-aligned` 18 → 20。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、89 v2。
+  - `audit:counts`：projects=961、papers=1083、total=2044。
+- budget：2 页静态源码迁移；单 writer；一个 PR。
+- blocker：未授权 merge / deploy。
+- stop conditions：provenance 不唯一、质量门失败、或碰到开放 PR slug 时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或新的显式双子授权。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

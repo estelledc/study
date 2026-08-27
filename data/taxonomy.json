@@ -1832,6 +1832,10 @@
       "topic_id": "projects-monorepos-and-package-management"
     },
     {
+      "note_id": "projects::chart-js",
+      "topic_id": "projects-data-visualization"
+    },
+    {
       "note_id": "projects::chatwoot",
       "topic_id": "projects-data-applications-and-saas"
     },
