@@ -1,154 +1,176 @@
 ---
-title: Auth.js — 让 OAuth 登录和会话存储变成两个抽象
-来源: 'https://github.com/nextauthjs/next-auth'
-日期: 2026-05-30
-分类: projects
+title: Auth.js — 把 OAuth 登录和会话存储拆成两层抽象
+来源: https://github.com/nextauthjs/next-auth
+日期: 2026-08-27
+分类: 框架与 SDK
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/nextauthjs/next-auth
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e293b3746616660f0844347a68d09eac54b95c6f
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.0.0-beta.32
 ---
 
 ## 是什么
 
-Auth.js（前身 NextAuth.js）是一个**把"用 GitHub/Google 登录"和"会话存到哪里"两件事拆开的认证库**。日常类比：像一个**多用插座**——一头插上"哪家服务商"（GitHub/Apple/Auth0...），另一头插上"哪种数据库"（Prisma/Drizzle/Mongo...），中间这块插座本身不挑框架，Next.js / SvelteKit / SolidStart 都能用。
+Auth.js 是一套**把“用哪家 IdP 登录”和“会话存哪里”拆开的认证库**。日常类比：多用插座——一头插 GitHub / Google / 邮件，另一头插 JWT cookie 或数据库 session；中间只吃 Web 标准 `Request` / `Response`。
 
-你不写：
-
-```text
-跳到 GitHub 授权页 → 拿 code → 换 token → 拿 userinfo → 校验 state → 写 cookie
-```
-
-这些 OAuth 4 步状态机 + PKCE/state/nonce 三个安全参数 + token 刷新 + 80 家 IdP 字段名差异，**全部由 Auth.js 处理**。你只写一行：`providers: [GitHub]`。
-
-它有 27k+ stars，2020 年起步，2023 年 v5 alpha 改名 Auth.js（之前叫 NextAuth.js），是 JS 生态目前最主流的"自托管 + 开源 + 多框架"认证方案。
-
-## 为什么重要
-
-- 不理解 Provider/Adapter 双抽象，无法解释为什么 Auth.js 能同时支持 80+ OAuth 服务商和 15+ 数据库——每加一个只是写 ~30 行配置
-- 不理解 JWT vs Database session 的取舍，无法判断什么时候该用哪种——前者无状态可水平扩展但不能主动登出，后者反过来
-- 不理解"框架无关核心 + 薄适配层"的分层，无法理解为什么它能跨 Next/Sveltekit/Solid——核心只吃 Web 标准 Request/Response
-- 不理解 callbacks.jwt / callbacks.session 钩子，无法解释为什么"在 token 里塞 user role"这个常见需求要写在那个奇怪的位置
-
-## 核心要点
-
-1. **Provider 是数据不是代码**：每个 OAuth 服务商是一个返回配置对象的工厂函数（不是 class），可以被 spread 覆盖、被 JSON 序列化。类比：菜谱卡而不是大厨，谁来都能照着做。
-
-2. **Adapter 是可选方法的接口**：~20 个方法全部 `?:` 可选，纯 JWT 模式不需要 createSession，纯 OAuth 不需要 createVerificationToken。类比：自助餐而不是套餐，挑你需要的拿。
-
-3. **Session 策略二选一但外部 API 统一**：JWT 模式所有信息塞 cookie 无状态，Database 模式 cookie 只存 session_id 每次查 DB。切换只改一个字段 `session.strategy`，业务代码完全不动。
-
-4. **核心包吃 Web 标准**：`Auth(request, config) => Promise<Response>`，输入输出全用 Fetch API 的 Request/Response，所以能跑在 Node/Deno/Bun/Cloudflare Workers/Vercel Edge。框架适配层只做"协议转换"，代码量是核心的 1/10。
-
-## 实践案例
-
-### 案例 1：Next.js + GitHub + Prisma 跑通最小例子
-
-```bash
-pnpm create next-app authjs-test
-pnpm add next-auth@beta @auth/prisma-adapter @prisma/client
-```
-
-`auth.ts`（项目根）：
+你写：
 
 ```ts
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import { PrismaClient } from "@prisma/client"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(new PrismaClient()),
   providers: [GitHub],
-  session: { strategy: "database" },
 })
 ```
 
-`prisma/schema.prisma` 里建 User/Account/Session/VerificationToken 四张表，跑 `npx prisma db push`，访问 `/api/auth/signin` → 点 GitHub → 跳授权 → 回跳。SQLite 里能看到一行 User、一行 provider=github 的 Account、一行 sessionToken 的 Session。这就是数据库 session 的全部魔法：**cookie 里只是个 UUID，所有信息在 DB**。
+框架包 `next-auth` 只做 Next.js 适配，返回 `handlers` / `auth` / `signIn` / `signOut`。真正的状态机在 `@auth/core`：`Auth(request, config)` 解析 action，再分发到 signin、callback、session、signout。
 
-### 案例 2：JWT vs Database 一键切换
+本文绑定 `next-auth@5.0.0-beta.32`（workspace 内 `@auth/core@0.41.3`）。npm `next-auth@latest` 仍是 v4 `4.24.15`，不能把网上 v4 教程当成这个 revision。
 
-把上一个例子的 `session.strategy` 从 `"database"` 改成 `"jwt"`，重新登录：
+## 为什么重要
 
-```diff
-- session: { strategy: "database" }
-+ session: { strategy: "jwt" }
+不理解 Auth.js，下面这些事会对不上：
+
+- 为什么同一套 `providers: [GitHub]` 能接 Next.js App Router，也能被其他框架薄封装调用
+- 为什么加 adapter 后默认改走 database session，显式写 `session.strategy: "jwt"` 才能继续无状态
+- 为什么 `callbacks.jwt` 和 `callbacks.session` 要成对写——cookie 里的是加密 JWE，前端默认只看到 name/email/image
+- 为什么 Credentials 不能当“邮箱密码全家桶”——固定源码故意限制它，且只允许 JWT session
+
+## 核心要点
+
+固定 5.0.0-beta.32 可以拆成四层：
+
+1. **核心吃 Web 标准**：`Auth` 先 `toInternalRequest` / `assertConfig`，再进入 `AuthInternal`。GET 渲染内置页或读 session；POST 的 `signin` / `signout` / `session` 要过 CSRF。
+
+2. **Provider 是配置工厂**：每个 provider 返回带 `id` / `type` / 端点字段的对象，不是 class。OAuth/OIDC 走 `oauth4webapi`；Credentials 的 `authorize` 默认返回 `null`，输入也不做校验。
+
+3. **Session 策略由 adapter 决定默认值**：无 adapter → `jwt`；有 adapter → `database`。`maxAge` 默认 30 天，`updateAge` 默认 1 天。JWT 实际是 `dir` + `A256CBC-HS512` 的 JWE，用 `secret` / `AUTH_SECRET` 派生密钥。
+
+4. **Adapter 方法全部可选**：`createUser` / `createSession` / `createVerificationToken` 等都带 `?`。纯 JWT 不必实现 session 表；Credentials 用户也不会写入 adapter。
+
+## 实践示例
+
+### 案例 1：Next.js 最小 GitHub 登录
+
+```ts
+// auth.ts
+import NextAuth from "next-auth"
+import GitHub from "next-auth/providers/github"
+
+export const { handlers, auth } = NextAuth({
+  providers: [GitHub],
+})
+
+// app/api/auth/[...nextauth]/route.ts
+export { handlers as GET, handlers as POST } from "../../../../auth"
 ```
 
-观察：
+`handlers.GET/POST` 直接把 `NextRequest` 交给 `Auth`。环境变量按 `AUTH_GITHUB_ID` / `AUTH_GITHUB_SECRET` / `AUTH_SECRET` 推断；生产缺 `AUTH_SECRET` 会在配置断言阶段失败。
 
-- Session 表从有一行变成空（不再写 DB）
-- Cookie 从 ~100 字节涨到 ~700 字节（变成签名 JWT）
-- 业务代码 `await auth()` 拿到的 session 形状一样
+### 案例 2：有无 adapter 会改变默认 session
 
-代价：JWT 不能"主动登出"——你能删 cookie，但用户保留的 token 副本在过期前依然有效。要主动登出请回 database 模式。
+```ts
+NextAuth({
+  adapter: PrismaAdapter(prisma),
+  providers: [GitHub],
+  // 有 adapter 时默认 strategy: "database"
+  session: { strategy: "jwt" }, // 想继续无状态必须显式写
+})
+```
 
-### 案例 3：往 token 里塞自定义字段
+database 模式下 cookie 只留 `sessionToken`，每次查库。JWT 模式下 cookie 是加密 token；删 cookie 不能作废用户手里的副本。
+
+### 案例 3：自定义字段必须经过两道 callback
 
 ```ts
 callbacks: {
   jwt({ token, user }) {
-    if (user) token.role = user.role  // 登录时把 role 编进 JWT
+    if (user) token.role = user.role
     return token
   },
   session({ session, token }) {
-    session.user.role = token.role  // 每次取 session 时挂出来
+    session.user.role = token.role
     return session
   },
 }
 ```
 
-这是为什么需要两个 callback：jwt 在 token 编码前跑，session 在返给前端前跑。中间是 cookie，所以你必须在两端都加一笔。**踩这个坑的人占 Stack Overflow Auth.js 提问的一大半**。
+默认 `session` callback 只返回 name/email/image。服务端 `auth()` 会再包一层，把 `user` 与 session 合并，但客户端 `/session` 仍只看到你显式放回去的字段。
 
 ## 踩过的坑
 
-1. **v4 → v5 改名 + API 重设**：NextAuth.js 改 Auth.js 同时把 `getServerSession` 换成 `auth()`，网上一半教程是 v4，新手照搬跑不通；官方文档迁移指南到 2024 年中才补全
-2. **Edge runtime 兼容性是定时炸弹**：Prisma adapter 不能在 Edge 上直接跑，必须拆成 `auth.config.ts`（Edge 兼容、不带 adapter）+ `auth.ts`（Node only），middleware 用前者、API route 用后者，对新手极反直觉
-3. **Credentials provider 文档反复警告"不推荐生产用"**：邮箱密码登录要自己处理 hash/限流/防爆破，等于把核心功能标记成"危险慎用"——这是后辈 better-auth 直接打的痛点
-4. **JWT 模式无法主动登出**：cookie 删了但 token 副本仍有效，所有 stateless JWT 共有的硬伤；要主动登出请用 database 模式或自己实现 token 版本号
+1. **把 npm latest 当成 Auth.js v5**：`latest=4.24.15`，v5 在 `next-auth@beta`。`getServerSession` 是 v4 API。
+2. **以为 JWT 只是签名**：固定实现默认加密 JWE；`jwt` 模块源码还标了“将会重构，不要当稳定公共合同”。
+3. **Credentials 当生产密码登录**：源码写明故意限制，且用户不落库；hash、限流、防爆破都要自己做。
+4. **Edge 上带着 Node-only adapter**：adapter 可能依赖 Node API。核心本身吃 Web 标准，不保证 Prisma 一类客户端能进 middleware。
+5. **POST session 失败却去找 redirect**：CSRF 失败时 `Auth` 对 POST `/session` 直接 `400` JSON，不跳错误页。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- Next.js / SvelteKit / SolidStart / Express / Qwik 任意 JS 框架的认证
-- 自托管 + 开源 + 多框架支持的需求（不想数据交给第三方 SaaS）
-- 需要接 80+ OAuth 服务商之一（GitHub/Google/Apple/Discord/Auth0/...）
+
+- 需要自托管、多 IdP，并且接受 Web 标准 Request/Response 的 JS 运行时
+- Next.js 14/15/16 + React 18/19（本包 peer 范围）
+- 想用官方 adapter 做 database session，或显式 JWT 做无状态
 
 **不适用**：
-- 想要开箱即用的登录 UI 组件 → Auth.js 不带 UI，用 Clerk
-- 严肃生产级邮箱密码登录 → Credentials provider 不推荐，用 better-auth 或 Lucia
-- 不想自己管数据库表 → 用 Clerk / Auth0 / Supabase Auth 这类托管 SaaS
-- 极简主义、想自己拼组件 → 用 Lucia（v3 后转向"教学资源"）
 
-## 历史小故事（可跳过）
+- 要稳定 semver 的生产依赖——本页绑定的是 beta，`@auth/core` 入口也标了 Experimental
+- 要开箱 UI / 组织 / MFA 全家桶——这不是本库合同
+- 想抄 200 行自己管 cookie——看 [[lucia]] 的单文件样本，不要装这个框架
+- 只能用 v4 文档和 `NEXTAUTH_*` 旧心智，又不想迁 env / API
 
-- **2011 年**：Jared Hanson 发布 Passport.js，奠定 Node 认证库基本款，但绑死 Express middleware
-- **2020 年**：Iain Collins 在 Next.js 9 时代发起 NextAuth.js v1，专门服务 Next.js，OAuth 配置即插即用
-- **2023 年**：v5 alpha 把核心抽到 `@auth/core`，正式更名 Auth.js，宣布"框架无关"，加 SvelteKit/Solid/Express/Qwik 适配
-- **2024 年**：新秀 better-auth 追赶，社区评价"Auth.js 该有的样子"——TS 端到端类型推导更强、内置密码登录
+## 固定版本边界
+
+- 本文绑定 `nextauthjs/next-auth@e293b374...`，tag `next-auth@5.0.0-beta.32`，其中 `@auth/core` 版本文件为 `0.41.3`。
+- `@auth/core@0.41.3` 单独 tag 是祖先提交 `5af7357f...`；两者源码差一个 package metadata chore，已记录在共享审查文档。
+- 未安装依赖、未跑上游测试、未走真实 OAuth。状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **核心包 + 薄适配** 是支持多框架的关键架构：核心吃 Web 标准 IO，适配层只做协议转换；适配层代码 ≤ 核心 1/10 是健康线
-2. **配置即数据** 比 Strategy class 灵活——可以 spread、可以 JSON 序列化、可以工厂生成；副作用是 80+ provider 维护成本真实存在
-3. **可选方法的接口** 让 Adapter 不臃肿：纯 JWT 模式不必实现 createSession，类型上 `?:` 可选 + 运行时 `as Required` 断言
-4. **JWT vs DB 不是二选一是策略**：把变化点收敛到几个 callback 内部，外部 API 一致，用户切换零认知负担
+1. **框架无关核心靠 IO 标准，不靠“少写代码”**——适配层只转换协议，状态机仍在 `@auth/core`。
+2. **默认值会随 adapter 翻转**——同一份配置加一行 adapter，session 就从 JWE 变成查库。
+3. **暴露给客户端的 session 是过滤后的视图**——token 里有的东西，默认不会自动出现在 `useSession`。
+4. **限制 Credentials 是产品决策**——不是文档疏忽；密码风险被故意留给调用方。
+
+## 应用型自测
+
+1. 不写 `session.strategy`、也不给 adapter，固定版本默认用哪种 session？
+2. 给了 adapter 却想继续无状态 cookie，要改哪一个字段？
+3. Credentials 登录成功的用户，会被写入 adapter 的 User 表吗？
+
+检查点：
+
+1. `jwt`。无 adapter 时 `init` 强制 JSON Web Token（实际是 JWE）。
+2. 显式 `session: { strategy: "jwt" }`。有 adapter 时默认改成 `database`。
+3. 不会。源码写明 Credentials 用户不持久化到数据库，也因此只能配 JWT session。
 
 ## 延伸阅读
 
-- 官方文档：[authjs.dev](https://authjs.dev)（v5 时代主站，迁移指南在这里）
-- v4 老文档：[next-auth.js.org](https://next-auth.js.org)（仍有大量内容是 v4，看的时候要分清）
-- [[better-auth]] —— 2024 新秀，号称"Auth.js 该有的样子"
-- [[lucia]] —— 极简自拼派，v3 后转向"教学资源"
-- [[clerk]] —— 托管 SaaS 对照组，带 UI 但锁定深
-- [[prisma]] —— 最常见的 Adapter 之一
+- 文档：[authjs.dev](https://authjs.dev)（v5 主站；安装示例写 `next-auth@beta`）
+- 固定源码：[nextauthjs/next-auth](https://github.com/nextauthjs/next-auth) —— 本文绑定 `e293b3746616660f0844347a68d09eac54b95c6f`
+- [[lucia]] —— 对照：弃用后的单文件 session 样本，不再提供 framework
+- [[better-auth]] —— 插件式自托管对照，不在本页绑定范围
+- [[prisma]] —— 常见 adapter 实现之一，Edge 兼容性要单独核对该客户端
 
 ## 关联
 
-- [[next-js]] —— Auth.js 起家的宿主框架，v5 主战场
-- [[sveltekit]] —— 第二大宿主，`@auth/sveltekit` 适配层
-- [[express]] —— Passport.js 的老地盘，Auth.js 通过 `@auth/express` 适配
-- [[prisma]] —— Adapter 接入最广的 ORM，PrismaAdapter 是事实标准
-- [[drizzle]] —— Edge 友好的轻量 ORM，DrizzleAdapter 用代码生成 schema
-- [[supabase]] —— 既是数据库 Adapter 也是竞争方案（Supabase Auth）
-- [[trpc]] —— 常和 Auth.js 配套用，session 通过 context 注入
+- [[next-js]] —— `next-auth` 的宿主；handlers 走 App Router Route Handler
+- [[lucia]] —— utility / 抄代码对照
+- [[better-auth]] —— 同期自托管认证框架
+- [[prisma]] —— 官方 adapter 生态中最常见的 ORM
+- [[zod]] —— Credentials 文档建议用来补输入校验，库本身不做
 
 ## 反向链接
 

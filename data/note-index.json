@@ -36435,7 +36435,7 @@
       "id": "projects::auth-js",
       "area": "projects",
       "slug": "auth-js",
-      "title": "Auth.js — 让 OAuth 登录和会话存储变成两个抽象",
+      "title": "Auth.js — 把 OAuth 登录和会话存储拆成两层抽象",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -36445,16 +36445,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-authentication",
-        "raw_category": "projects"
+        "raw_category": "框架与 SDK"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/auth-js/",
       "atlas": {
@@ -49304,7 +49304,7 @@
       "id": "projects::lucia",
       "area": "projects",
       "slug": "lucia",
-      "title": "Lucia — 主动把自己降级为\"学习资源\"的 TS 认证库",
+      "title": "Lucia — 弃用后留下的单文件会话教学样本",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -49317,13 +49317,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/lucia/",
       "atlas": {
