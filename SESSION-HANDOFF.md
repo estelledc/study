@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FM：automerge + yjs 静态迁移
+
+- status：`running` → writer epoch `complete`；未 merge、未 force-push `main`、未 deploy。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（`origin/main`，#75）。
+- objective：绑定 `automerge` 与 `yjs` 两页到可达的不可变 git SHA，纠正旧正文里未绑定的 2.0/50x、Automerge.Text 构造器、列表合并顺序公理、Yjs “9 年/Sponsors 最高” 与把 companion provider 写成内核 API 的说法。
+- scope：两页正文、2 份 generation 1 static receipt、`docs/crdt-source-review-20260827-fm.md`、本 handoff；2 个 ignored blob-filtered worktree。未改派生索引、未碰其他 writer 占用 slug。
+- activated_by：`explicit-user-parallel-writer-fm-2026-08-27`（10h window，assigned pair automerge+yjs）。
+- detector fingerprint：两页 `needs-evidence`，缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文含未绑定 benchmark 与过时 API。
+- external delta：本轮将 push + 开 1 个 PR（用户授权）；未 merge。
+- 完成切片：
+  1. `automerge` 绑定 tag `js/automerge-3.4.1` / `8d7b12f8da553afbb325e37a6c66942b8dd4d994`（与 npm `@automerge/automerge@3.4.1` `gitHead` 一致）；纠正 merge 冻文档、string→text、无 `Text` 导出、`getConflicts`、sync 第三返回值。
+  2. `yjs` 绑定 annotated tag `v13.6.32` peel `1ce38f75f786e4bc0b2cc9703afbc6eea8fe7859`（与 npm `gitHead` 一致）；纠正 `push` 数组签名、默认 V1 update、相对位置 API、双副本 constructor 检查；披露 v14 RC 未绑定。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 一致，`evidence_state=UNVERIFIED`；`evaluateProjectNote` 均为 `benchmark-aligned`。
+- budget：2 页 / 1 个审查文档 / 单 writer；未跑 `verify:ci` 全量前先提交 PR。
+- blocker：规模 baseline 与派生索引合并不是本 writer 的工作。
+- stop conditions：两页 epoch 完成即停；不发明第三页。
+- 下一次 wake 条件：PR review/CI，或 owner 对 merge 的单独授权。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/automerge.md`；CI 用 GitHub 查看。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
