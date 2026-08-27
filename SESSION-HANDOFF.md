@@ -2,6 +2,39 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 merge-in #187 bytes + filesize
+
+- status：`running`
+- objective：把 `origin/main` 合入 #187，只重生派生索引并修正过期公开计数字段；push 后等 CI。仅当非草稿、MERGEABLE、verify:ci 绿、且存在真实 ship review 时才 squash-merge。
+- scope：PR 分支 merge commit、atlas / project-standard / site-state、公开计数文案（index / queue / method / about / career-plan / projects-atlas）、本交接。不改项目页正文，不 rebase，不 force-push，不 deploy，不碰 intern-journal。
+- activated_by：explicit merge-in lane（用户指定 #187 优先，然后 #189）。
+- detector fingerprint：#187 `CONFLICTING` / `DIRTY`，非草稿；冲突文件仅为派生索引与公开计数。
+- external delta：push 已授权；squash-merge 仅在门禁满足时授权。
+- acceptance checks：`git merge origin/main`（不 rebase）；`npm run atlas`；`node scripts/audit-project-standard.mjs --write`；`npm run generate:site-state`；`npm run audit:counts`；`git diff --check`。
+- budget：2 个切片（#187、#189）、120 分钟、1 个可写切片。
+- stop conditions：#187 已 squash-merge，或已 push 且 CI 在跑；有时间则开始 #189。
+- superseded_by：`none`
+
+## 2026-08-27 PARALLEL writer EW：bytes + filesize 静态审查
+
+- status：writer epoch `complete`；review-ready branch；未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（当时 `origin/main`）。
+- objective：为体积格式化双子 `bytes` / `filesize` 新建固定源码 `study-v2` 页，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/size-format-source-review-20260827-ew.md`、atlas / site-state / project-standard / 公开计数文案、本 handoff；未安装上游依赖、未跑上游测试或 benchmark。
+- activated_by：explicit PARALLEL writer EW（用户指定 bytes/filesize，授权一个 PR、禁止 merge）。
+- detector fingerprint：两 slug 不在原项目清单；`bytes` 是 1024 双向 parse/format，`filesize` 默认 SI 单向格式化，需要分开绑定才能避免单位制混写。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权）。
+- 完成切片：
+  1. `bytes` 绑定 `visionmedia/bytes.js@9ddc13b6...` / tag `3.1.2` / npm `bytes@3.1.2`。
+  2. `filesize` 绑定 `avoidwork/filesize.js@3fa24e10...` / annotated tag `11.0.22` / npm `filesize@11.0.22`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：以本轮定向命令为准，不在此复制易过期计数。
+- budget：2 个小型 blob-filtered worktree + 2 页新建；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一个 PR 已打开且未 merge 即结束。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr view --json url,state`（以实际 PR 为准）。
+- superseded_by：`none`
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

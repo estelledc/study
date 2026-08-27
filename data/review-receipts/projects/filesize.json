@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "filesize",
+    "digest_sha256": "8abe65a6996b4949e14ce12b94f504de93ed18b94abb899dac4fdbea715ae1f0"
+  },
+  "source_revision": "3fa24e10d1bdf8d864ce6decac578bf617162315",
+  "research_input_sha256": "21f404827b8089bebcfeb525317a4f25f83348705cea9ddfd49d6ccae583f99f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ew",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates default SI 1000 path, IEC/JEDEC switches, partial cloning, and TypeError-on-invalid-number."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ew",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected src/filesize.js helpers/constants, types, and unit tests; node:test and rollup were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ew",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm gitHead and annotated tag 11.0.22 peel to the same reachable revision; SI kilo is a special case, not a full SI table."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:50:00.000Z"
+}

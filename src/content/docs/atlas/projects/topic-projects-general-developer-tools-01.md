@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "16 条 通用开发工具 Atlas 分块"
+description: "18 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,15 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 16 条，稳定上限为 100 条。
+本分块共 18 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [bytes — 在 1024 进制里来回翻译体积字符串](/study/projects/bytes/) | `bytes` | beginner | UNVERIFIED | 对照 bytes 3 |
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Electron — 自带 Chromium + Node 的跨平台桌面运行时](/study/projects/electron/) | `electron` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [filesize — 默认按 SI 把字节收成可读单位](/study/projects/filesize/) | `filesize` | beginner | UNVERIFIED | 对照 filesize 11 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | `lens` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
