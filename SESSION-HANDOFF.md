@@ -7,7 +7,7 @@
 - status：Program `active`；本地 writer epoch `complete`。
 - 起始 ref：`c7615aa91`（当时的 `origin/main`）。
 - objective：新增 `cosmiconfig` 与 `c12` 两页源码绑定的 `study-v2` 静态审查；证据边界 `STATIC_REVIEW` / `UNVERIFIED`。目标页原先不存在，未改用 fallback 对。
-- scope：两页正文、2 份 generation 1 receipt、`docs/config-loader-source-review-20260827-fc.md`、taxonomy assignment、派生索引与公开计数、`nuxt` 一条反向关联、本 handoff；未安装上游依赖、未跑上游测试、未测 bundle / dotenv / giget。
+- scope：两页正文、2 份 generation 1 receipt、`docs/config-loader-source-review-20260827-fc.md`、taxonomy assignment、派生索引与公开计数、本 handoff；未改 legacy `nuxt` 正文，未安装上游依赖、未跑上游测试、未测 bundle / dotenv / giget。
 - activated_by：`explicit-user-parallel-writer-fc-20260827`。
 - detector fingerprint：仓库无 cosmiconfig / c12 页；旧印象把 cosmiconfig 默认写成沿目录树上行，把 c12 默认写成会读 `.env` / 全局 rc。
 - external delta：本 PR（push + 开 PR 已授权）；未 merge、未 deploy。
