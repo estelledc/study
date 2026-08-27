@@ -1868,6 +1868,10 @@
       "topic_id": "projects-cli-tools"
     },
     {
+      "note_id": "projects::commonmark",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::containerd",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2362,6 +2366,10 @@
     {
       "note_id": "projects::redis",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::remarkable",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::remix",

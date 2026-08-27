@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -39250,6 +39250,37 @@
       }
     },
     {
+      "id": "projects::commonmark",
+      "area": "projects",
+      "slug": "commonmark",
+      "title": "commonmark.js — 先建 AST、再决定怎么渲染的 CommonMark 参考实现",
+      "description": "介绍 CommonMark 的 JavaScript 参考实现如何按行建块、再解析行内，以及 HtmlRenderer 的 safe 选项才拦截原始 HTML",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "markdown / 解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/commonmark/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::compound-v3",
       "area": "projects",
       "slug": "compound-v3",
@@ -57286,6 +57317,37 @@
       }
     },
     {
+      "id": "projects::remarkable",
+      "area": "projects",
+      "slug": "remarkable",
+      "title": "Remarkable — 用三条 Ruler 把 Markdown 编成 token 再渲染的解析器",
+      "description": "介绍 Remarkable 如何用 core/block/inline 规则表和 preset 决定 CommonMark 与 GFM 扩展",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "markdown / 解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/remarkable/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::remix",
       "area": "projects",
       "slug": "remix",
@@ -65896,7 +65958,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

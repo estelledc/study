@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "commonmark",
+    "digest_sha256": "1efa821e217b23ea2bf1f840b3b68c27f0a0d3801ba0820fcc12fae2268d9c90"
+  },
+  "source_revision": "cb2c2303d3550ec6ef28ceb2841f148e8761eebf",
+  "research_input_sha256": "0a79e5a47eea3375a1d7bb0dd04082973be02f4952270097711045cea8dcaddb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates block/inline AST walk, default HTML passthrough, and HtmlRenderer.safe protocol filtering with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Parser factory, processInlines, Node walker, and HtmlRenderer.safe were inspected; spec.txt and benches were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 0.31.2 / npm gitHead; CommonMark compliance was not re-measured in this review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:49:00.000Z"
+}

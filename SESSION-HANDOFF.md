@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HM：commonmark + remarkable
+
+- status：writer epoch `running`；本地页与派生索引已齐，待 push / PR / `verify:ci`。
+- 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`，含 #79 / #81）。
+- objective：为缺失的 markdown-render 双子补齐 `commonmark` 与 `remarkable` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/markdown-render-source-review-20260827-hm.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-hm-2026-08-27`。
+- detector fingerprint：目录无 `commonmark.md` / `remarkable.md`；writer AC 已占 `marked` / `markdown-it`，PR #268 占 `showdown` / `snarkdown`；本对未被占用。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `commonmark` 绑定源码 tag `0.31.2` → `cb2c2303d3550ec6ef28ceb2841f148e8761eebf`；npm `gitHead` 一致。
+  2. `remarkable` 绑定 tag `v2.0.1` → `58b6945f203ca7a0bb5a0785df90a3a6a8b9e59c`；披露 npm `remarkable@2.0.1` 无 `gitHead`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目数 966 → 968，标杆对齐 83 → 85。
+- acceptance checks（定向，verify:ci 待跑）：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、154 v2。
+  - `audit:counts` / `audit:site-state`：projects=968、papers=1083、total=2051。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：一对完成并开一个 PR 后停止；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：对本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
