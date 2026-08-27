@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "eef9691a3c72b1b287bf04388cb875a5c08cb786d55c165d133dd90f59a12286",
   "note": {
     "area": "projects",
     "slug": "axios",
-    "digest_sha256": "1473c0230b5e83935c73c23e3c9cc871cc5c22a6b9064d434879d22aeef4c89b"
+    "digest_sha256": "46d4d408c97f2ab842226941c5cc765e6f3e0726c19c6dd41afa717ab1cfcbf2"
   },
-  "source_revision": "a092bae50d1884782151b2fcea12974d6da6e376",
-  "research_input_sha256": "de1ffde36a7d5796c58163921114d5a15891d42acdb15d470506a31dc618f7f1",
+  "source_revision": "84a9f3b9a4f3244b8c8e818f557d64c7b964fb25",
+  "research_input_sha256": "d86880191ce56ac0b44cacc228625d9393914d01830df1ccd4421cebd82a9040",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-al",
       "decision": "PASS_WITH_NOTES",
-      "score": 92,
+      "score": 93,
       "warnings": [
-        "Separates config, interceptors, transforms, adapters, settle, and runtime validation with application checks."
+        "Explains config merge, interceptor order, toSafeFlatObject, adapters, settle, and fetch composeSignals with application checks."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -25,11 +25,11 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-al",
       "decision": "PASS_WITH_NOTES",
       "score": 93,
       "warnings": [
-        "Core dispatch, adapter, interceptor, defaults, and settle sources were inspected; upstream tests and requests were not run."
+        "Core Axios, dispatch, settle, adapters, defaults, and composeSignals were inspected at 1.20.0; upstream tests and requests were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -38,11 +38,11 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-al",
       "decision": "PASS_WITH_NOTES",
-      "score": 91,
+      "score": 93,
       "warnings": [
-        "Version, adapter, timeout, and retry claims are bounded to axios 1.18.1; performance comparisons require benchmarks."
+        "Rebound from 1.18.1/a092bae5 to tag+npm-consistent 1.20.0/84a9f3b9; timeout/retry/adapter claims stay UNVERIFIED without runtime evidence."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-17T14:25:23.000Z"
+  "created_at": "2026-08-27T07:36:27.009Z"
 }
