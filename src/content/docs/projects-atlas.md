@@ -50,7 +50,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 构建工具 / Bundler | Build Tools and Bundlers | 15 | [第 1/1 组](/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/) |
 | ORM / DB 客户端 | ORM and Database Clients | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-orm-and-database-clients-01/) |
 | 数据库本体 / 存储引擎 | Databases and Storage Engines | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-databases-and-storage-engines-01/) |
-| DevOps / 容器 / 运维 | DevOps Containers and Operations | 56 | [第 1/1 组](/study/atlas/projects/topic-projects-devops-containers-and-operations-01/) |
+| DevOps / 容器 / 运维 | DevOps Containers and Operations | 55 | [第 1/1 组](/study/atlas/projects/topic-projects-devops-containers-and-operations-01/) |
 | 监控 / 时序 | Monitoring and Time Series | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-monitoring-and-time-series-01/) |
 | Web 框架 | Web Frameworks | 14 | [第 1/1 组](/study/atlas/projects/topic-projects-web-frameworks-01/) |
 | UI 框架 / Frontend Framework | UI and Frontend Frameworks | 13 | [第 1/1 组](/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/) |
@@ -64,7 +64,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 数据获取 / 路由 | Data Fetching and Routing | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-data-fetching-and-routing-01/) |
 | AI 应用 / Agent 平台 | AI Applications and Agent Platforms | 28 | [第 1/1 组](/study/atlas/projects/topic-projects-ai-applications-and-agent-platforms-01/) |
 | AI 浏览器自动化 | AI Browser Automation | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-ai-browser-automation-01/) |
-| 可观测 / 性能 | Observability and Performance | 12 | [第 1/1 组](/study/atlas/projects/topic-projects-observability-and-performance-01/) |
+| 可观测 / 性能 | Observability and Performance | 13 | [第 1/1 组](/study/atlas/projects/topic-projects-observability-and-performance-01/) |
 | 数据应用 / SaaS | Data Applications and SaaS | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-data-applications-and-saas-01/) |
 | 基础组件 / Headless UI | Headless UI Components | 2 | [第 1/1 组](/study/atlas/projects/topic-projects-headless-ui-components-01/) |
 | Markdown / 解析 | Markdown and Parsing | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-markdown-and-parsing-01/) |
@@ -95,6 +95,6 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 ## 数据质量报告
 
-- difficulty 未知：957
-- description 为空：953
+- difficulty 未知：955
+- description 为空：951
 - sidecar 主键：970 个唯一 `area::slug`

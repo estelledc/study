@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "k6",
+    "digest_sha256": "b64f83f323d3ad3216e2fd1e6d54280fd4ef82ec5c5b511bd2c8b6bcfe59f07d"
+  },
+  "source_revision": "00a9a1b7f552d6bb4337278b10ae25aac0f4e666",
+  "research_input_sha256": "14aa6529349635832650fc5a85daec82945cff821072c017e76e2781d22767b7",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates shortcut-to-scenario mapping, check vs threshold, sobek runtime, and v2 executor removals."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "jsmodules, DeriveScenariosFromShortcuts, k6.Check, and threshold parser were inspected; k6 was not built or run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds peeled tag v2.2.0; capacity, Prometheus export, and browser runs were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

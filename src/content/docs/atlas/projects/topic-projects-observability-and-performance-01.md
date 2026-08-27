@@ -1,6 +1,6 @@
 ---
 title: "可观测 / 性能 · 项目 · 第 1 组"
-description: "12 条 可观测 / 性能 Atlas 分块"
+description: "13 条 可观测 / 性能 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,14 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 12 条，稳定上限为 100 条。
+本分块共 13 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) | `datadog` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) | `fluent-bit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) | `k6` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [k6 — 用 JS 脚本驱动 Go executor 的负载测试器](/study/projects/k6/) | `k6` | beginner | UNVERIFIED | 介绍 k6 2 |
+| [Locust — 用 Python User/task 描述虚拟用户的分布式负载工具](/study/projects/locust/) | `locust` | beginner | UNVERIFIED | 介绍 Locust 2 |
 | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) | `opentelemetry-collector` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | `otel-collector` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pino — 日志不该阻塞热路径](/study/projects/pino/) | `pino` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
