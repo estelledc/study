@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "altair",
+    "digest_sha256": "ada8445ee57dabdc166cb9ddee125cc4fea0c37710e1ea6c627301d5db096fdb"
+  },
+  "source_revision": "a9765713566095349cb1cfbbe85d6ad258c84245",
+  "research_input_sha256": "2c63cae42cc4ff3abe2d58046a1c3b270c4417b0d376de97b7c8367d455e32ac",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates Chart/mark/encode spec compilation, encode merge, MaxRowsError, and Vega-Lite v6 schema pin."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected v6 api/encode/shorthand, data transformers, save/html; upstream tests and rendering were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to altair 6.2.2 / schema v6.4.1; vegafusion and render performance require execution."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

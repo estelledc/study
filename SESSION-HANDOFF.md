@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FO：altair + bokeh 静态迁移
+
+- status：Program `active`；本地 writer epoch FO `complete`；已从 `origin/main` `1f2917d90` 开分支并形成 review-ready change set。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`。
+- objective：绑定 `altair` 与 `bokeh` 两页到不可变 git SHA，纠正与固定源码不符的旧断言；不发明页面。
+- scope：两页正文、2 份 generation 1 static receipt、共享审查文档 `docs/python-viz-source-review-20260827-fo.md`、本 handoff；2 个 ignored blob-filtered worktree。未改派生索引、未安装上游依赖、未渲染、未启动 Bokeh Server、未测 bundle / 性能。
+- activated_by：`explicit-user-parallel-writer-fo-2026-08-27`（assigned pair altair + bokeh）。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧 Altair 正文把链式 `encode` 写成整表覆盖、把缺后缀默认成 nominal、仍按 Altair 5 / VL 5 叙述；旧 Bokeh 正文把 file/notebook 写成互斥、把 CDS 列长不一致写成立刻 ValueError、把 `circle()` 写成已消失。
+- external_outcome：分支 push + 一个 PR（用户本轮授权）；未 merge、未 deploy。D 轴不因本地 diff 提升。
+- 完成切片：
+  1. `altair` 绑定 annotated tag `v6.2.2` / `a9765713566095349cb1cfbbe85d6ad258c84245`（PyPI `6.2.2` 同号），修正 encode 合并、shorthand 推断、`interactive()`=`selection_interval(bind="scales")`、`MaxRowsError` 5000 / vegafusion 提示、schema `v6.4.1`。
+  2. `bokeh` 绑定 annotated tag `3.10.0` / `c215fd3105bf6a52aed95beb92db9eaf22c90523`（PyPI `3.10.0` 同日），修正双输出目的地、CDS warning vs stream ValueError、`circle(size=)` 弃用转发、`requires-python >=3.12`、默认端口 5006；披露 `4.0.0.dev2` 未绑定。
+  3. 新增 `docs/python-viz-source-review-20260827-fo.md` 与两份 generation 1 STATIC_REVIEW receipt，`verification_status` 保持 `UNVERIFIED`。
+- acceptance checks：两页 `quality-gate.mjs` pass；receipt digest / revision / evidence_state=`UNVERIFIED` 一致；`evaluateProjectNote` 两页 `benchmark-aligned`、missing=[]；`git diff --check` 通过。派生索引按本轮指令不写，留给 merge job。
+- budget：2 页 + 2 个小型 blob-filtered worktree；单 writer；≤3 切片 / 120 分钟。
+- blocker（先于本切片存在）：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：两页已绑定且可审查；merge / deploy / 派生索引合流需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`git status --short --branch`；PR 状态用 GitHub 查看。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
