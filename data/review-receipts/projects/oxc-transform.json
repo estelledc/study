@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "oxc-transform",
+    "digest_sha256": "e5490d1c94aa0fda6b9c3bc056a25f9489b5bcd7bed58c74413d9893c63e393c"
+  },
+  "source_revision": "4e258430cdb290598d9f2aeb2d13be598ec9e8e9",
+  "research_input_sha256": "190804a9d1353ebfdc3f070647d2f7ea71546479345ccb00907016a977f0daf1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Node transform API from the oxc compiler facade and oxlint CLI, and contrasts codegen rewrite with blanking."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "NAPI transform/isolated-declaration bindings and TypeScript preset order were inspected; native bindings were not loaded."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds crates_v0.147.0 without npm gitHead and discloses default JSX automatic plus Vite-only moduleRunnerTransform."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}

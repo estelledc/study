@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -54183,6 +54183,37 @@
       }
     },
     {
+      "id": "projects::oxc-transform",
+      "area": "projects",
+      "slug": "oxc-transform",
+      "title": "oxc-transform — Node 侧把 TS/JSX 重新打印成目标语法",
+      "description": "介绍 oxc-transform 0.147.0 如何按 parse → 声明 → transform → inject/define → codegen 重写 TypeScript。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "编译器 / 工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/oxc-transform/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::oxlint",
       "area": "projects",
       "slug": "oxlint",
@@ -62037,6 +62068,37 @@
       }
     },
     {
+      "id": "projects::ts-blank-space",
+      "area": "projects",
+      "slug": "ts-blank-space",
+      "title": "ts-blank-space — 用空白覆盖类型、不重写 JavaScript",
+      "description": "介绍 ts-blank-space 0.9.0 如何用官方 TypeScript parser 把类型涂成空白，并处理 ASI 与不可擦语法。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "编译器 / 工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ts-blank-space/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::turbopack",
       "area": "projects",
       "slug": "turbopack",
@@ -65588,7 +65650,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 15
+      "entries": 17
     },
     {
       "id": "topic-projects-cli-tools-01",

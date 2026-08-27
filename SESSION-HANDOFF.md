@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HD：ts-blank-space + oxc-transform
+
+- status：writer epoch `complete`；review-ready PR 待开。未 merge、未 deploy。
+- 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
+- objective：为缺失的 TS-strip 双子补齐 `ts-blank-space` 与 `oxc-transform` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/ts-strip-source-review-20260827-hd.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未加载 NAPI binding、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-hd-2026-08-27`。
+- detector fingerprint：目录无 `ts-blank-space.md` / `oxc-transform.md`；A–AH 与开放 PR 未占用这两个 slug；`oxc.md` 只覆盖 compiler facade，不是 Node `oxc-transform` 合同。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `ts-blank-space` 绑定 tag `v0.9.0` → `74579cee118bb5f257fab7372f869cc107032316`；npm `gitHead` 与 tag 一致。
+  2. `oxc-transform` 绑定 `crates_v0.147.0` → `4e258430cdb290598d9f2aeb2d13be598ec9e8e9`；npm 无 `gitHead`，身份是 tag + `oxc-transform@0.147.0`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 83 → 85，公开项目数 966 → 968。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、154 v2。
+  - `audit:counts` / `audit:site-state`：projects=968、papers=1083、total=2051。
+  - `audit:wikilinks`：blocking 0。
+  - `audit:project-standard`：snapshot CURRENT，`benchmark-aligned=85`。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
