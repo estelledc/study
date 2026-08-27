@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "zustand",
+    "digest_sha256": "d6cde320b96034de3357d1dc634e881eb683fc702053c029d710cc0805bb15b4"
+  },
+  "source_revision": "2115efb9e270e73ad1d3472dfe0e0c7b8c6abcd4",
+  "research_input_sha256": "827343e4302147d1e1db256d2b18d567c399a9982163db1f967df171fe9aa664",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-a",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains vanilla setState merge/replace, identity selector, persist storage failure, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-a",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Vanilla store, React useSyncExternalStore, persist, shallow, traditional, and ssrSafe were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-a",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm 5.0.15 has no gitHead; claims stay bounded to reachable GitHub tag 2115efb9 and UNVERIFIED static review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}

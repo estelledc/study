@@ -4,182 +4,173 @@ title: Zustand — 极简 React 状态管理
 日期: 2026-05-29
 分类: 状态管理
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/pmndrs/zustand
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 2115efb9e270e73ad1d3472dfe0e0c7b8c6abcd4
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.0.15
 ---
 
 ## 是什么
 
-Zustand 是一个**用一个 hook 就能在任意 React 组件读 / 改全局状态**的库。日常类比：
+Zustand 是一个把「一份可变 store」和「React 订阅」拆开的状态库。日常类比：vanilla store 是一本可以打电话改页的账本；React hook 只是听电话的人。账本本身不依赖 React。
 
-> 以前 Redux 是去政府部门盖章——你得先写 action（申请单）、再过 reducer（窗口审核）、最后 dispatch（盖章）、组件再 selector（领回执）。Provider 是大门，少了进不去。
->
-> Zustand 是直接打个电话——`const count = useStore(s => s.count)`，一个 hook 全搞定。没有大门、没有窗口、没有申请单。
-
-它的极简 API 就是两件事：
-
-```jsx
+```ts
 import { create } from 'zustand'
 
-// 1. create 创建 store——state 和 actions 写一起
 const useStore = create((set) => ({
   count: 0,
   inc: () => set((s) => ({ count: s.count + 1 })),
 }))
-
-// 2. 任意组件用 hook 订阅
-function Counter() {
-  const count = useStore((s) => s.count)
-  return <button onClick={() => useStore.getState().inc()}>{count}</button>
-}
 ```
 
-没 Provider、没 reducer、没 actionType——这就是 Zustand 全部表面积。
+`create` 先调用 `createStore`，再把 `getState` / `setState` / `subscribe` / `getInitialState` 挂到同一个 hook 上。组件里 `useStore((s) => s.count)` 只取一片；不传 selector 时，默认 identity，等于订阅整本账本。
 
 ## 为什么重要
 
-不理解 Zustand，下面这些事都没法解释：
+不读固定 5.0.15 源码，下面这些合同很容易被旧教程带偏：
 
-- 为什么 Stack Overflow 2024 调查（Other libraries 口径）里 Zustand 使用率能和 Redux 并排甚至更高——5 年从无名到主流
-- 为什么 React 生态 2024 后默认推荐"服务端态用 [[tanstack-query]] / 客户端态用 Zustand"的双轨制
-- 为什么约 1KB 的库能替代更重的 Redux Toolkit 样板——少 = 强是这里的真理
-- 为什么 pmndrs（Three.js 生态那群人）的库都"反 Provider"——他们做 react-three-fiber 时被 Context 跨 renderer 失效坑过
-
-一句话：Zustand 证明了**大型 React 库不一定靠"加更多概念"取胜，靠"减更多依赖"也能赢**。
+- 为什么「一个 hook 走天下」其实建立在 vanilla store 上，而不是 Context Provider
+- 为什么 `set({ b: 2 })` 默认是浅合并，`set(null)` 或 `set(next, true)` 却是整段替换
+- 为什么默认 `useStore` 不再接收 equality function；要浅比较得用 `useShallow` 或 `zustand/traditional`
+- 为什么 persist 在 SSR 里可能根本没有 storage，却仍允许 `set`
 
 ## 核心要点
 
-Zustand 的心智模型只有 **三件事**：
+固定版本的主链可以拆成五步：
 
-1. **create 创建 store**：把 state（数据）和 actions（修改 state 的函数）写在同一个对象里。类比：把数据和操作打包成一个"小型部门"。
+1. **vanilla `createStore`**：initializer 收到 `set`、`get` 和完整 `api`，返回初始 state。listener 是一个 `Set`。
 
-2. **useStore(selector) 订阅**：组件用 selector 告诉 Zustand"我只关心哪一片"。比如 `s => s.count`——只有 count 字段变了才触发当前组件 re-render，其他字段变化无感。
+2. **`setState` 合并规则**：参数可以是值或 `(state) => next`。`Object.is(next, current)` 则静默跳过。`replace` 为真，或下一状态不是对象 / 是 `null` 时整段替换；否则 `Object.assign({}, state, nextState)`。
 
-3. **middleware 链**：用高阶函数串联 `persist`（自动存 localStorage）/ `immer`（让你"直接 mutate"）/ `devtools`（接 Redux DevTools）。每个 middleware 是 `(initializer) => initializer` 的纯函数包装。
+3. **React `useStore`**：`React.useSyncExternalStore(api.subscribe, () => selector(getState()), () => selector(getInitialState()))`。默认 selector 是 identity。
 
-三件事加起来 ≈ 1KB（gzip 后）。
+4. **`useShallow`**：`zustand/react/shallow` 记住上一片结果，用 vanilla `shallow` 比较后决定是否回传旧引用。它不是默认行为。
 
-## 实践案例
+5. **middleware 是 initializer 包装器**：`persist`、`subscribeWithSelector`、`devtools`、`combine`、`redux` 从 `zustand/middleware` 导出；`immer` 是单独入口；`ssrSafe` 只以 `unstable_ssrSafe` 导出。
 
-### 案例 1：最简 store——counter
+## 实践示例
 
-```jsx
-import { create } from 'zustand'
+### 案例 1：默认浅合并 vs 显式替换
 
-const useStore = create((set) => ({
-  count: 0,
-  inc: () => set((s) => ({ count: s.count + 1 })),
-}))
+```ts
+import { createStore } from 'zustand/vanilla'
 
-function Counter() {
-  const count = useStore((s) => s.count)
-  const inc = useStore((s) => s.inc)
-  return <button onClick={inc}>{count}</button>
-}
+const store = createStore<{ a: number; b?: number }>(() => ({ a: 1 }))
+store.setState({ b: 2 })
+// { a: 1, b: 2 }  ← Object.assign 浅合并
+store.setState({ a: 3 }, true)
+// { a: 3 }        ← replace=true，丢掉 b
 ```
 
-**逐部分解释**：
+函数式 `set((s) => ({ count: s.count + 1 }))` 返回的也是「下一状态片段」，同样走这条合并规则。`getInitialState()` 始终指向创建时那份初始对象。
 
-- `create((set) => ({...}))`：用户传入的 initializer 函数，Zustand 把 setState 注入给你
-- `set((s) => ({ count: s.count + 1 }))`：拿到当前 state 函数式更新（推荐写法）
-- `useStore((s) => s.count)`：selector 提取 count，**只有 count 变才 rerender**
-- 没 Provider、没 import store——任何文件 import `useStore` 即用
+### 案例 2：selector 与 useShallow
 
-### 案例 2：persist 中间件——白送本地持久化
-
-```jsx
+```tsx
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
-
-const useUserStore = create(
-  persist(
-    (set) => ({
-      userId: null,
-      setUser: (id) => set({ userId: id }),
-    }),
-    { name: 'app-user' }   // localStorage 的 key
-  )
-)
-```
-
-**逐部分解释**：
-
-- `persist(...)`：把 store 包一层——每次 `set` 后自动写入本地存储（默认 localStorage）
-- `{ name: 'app-user' }`：存盘钥匙名；换名字等于换一份独立存档
-- 刷新后 Zustand 读回 `userId`；浏览器 SPA 零配置，SSR 需自换 storage（无 `window`）
-
-### 案例 3：分离 selector 引用，避免不必要 rerender
-
-```jsx
-// 错误写法：每次 render 都新对象引用，永远 rerender
-const user = useStore((s) => ({ name: s.name, age: s.age }))
-
-// 正确写法 1：用 useShallow 浅比较
 import { useShallow } from 'zustand/react/shallow'
-const user = useStore(useShallow((s) => ({ name: s.name, age: s.age })))
 
-// 正确写法 2：分两次取
-const name = useStore((s) => s.name)
-const age = useStore((s) => s.age)
+const useStore = create(() => ({ name: 'Ada', age: 36 }))
+
+// 每次都 new object → useSyncExternalStore 看到新引用 → 必 rerender
+const bad = useStore((s) => ({ name: s.name, age: s.age }))
+
+const user = useStore(useShallow((s) => ({ name: s.name, age: s.age })))
 ```
 
-selector 返回新对象引用 = 每次都不同 = 每次都 rerender——这是 Zustand 最常见的性能坑。
+`useShallow` 只保证「选出的那一层」浅相等。嵌套对象字段换了引用，它仍会放行。
+
+### 案例 3：persist 的默认 storage 与推迟 hydration
+
+```ts
+import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
+
+const useUser = create(
+  persist(
+    (set) => ({ userId: null as string | null, setUser: (id: string) => set({ userId: id }) }),
+    { name: 'app-user', skipHydration: true },
+  ),
+)
+// 在确认进入浏览器后再：
+void useUser.persist.rehydrate()
+```
+
+不写 `storage` 时，实现调用 `createJSONStorage(() => window.localStorage)`。`getStorage()` 抛错（典型是 SSR 无 `window`）就得到 `undefined` storage：后续 `set` 仍改内存，但会警告无法写盘。hydration 默认浅 merge：`{ ...current, ...persisted }`。版本号不同且没有 `migrate` 时，固定实现打 error 日志，不擅自迁移。
 
 ## 踩过的坑
 
-1. **不传 selector / 传 `s => s`**：都会订阅整个 store，**任何字段变都 rerender**。永远只取所需字段（如 `s => s.count`）；大列表场景把 selector 提到组件外更稳。
-
-2. **selector 返回新对象引用**：`s => ({ a: s.a, b: s.b })` 每次 render 都是新对象 → React 看到引用变 → 永远 rerender。要么用 `useShallow`、要么拆成多次单字段取。
-
-3. **store 之间共享状态**：Zustand 没内建"组合多 store"的方案。两个 store 想共享一片状态，要么手动 subscribe 互相写、要么合并成一个 store。这是 [[jotai]] 的原子化模型反而更顺手的场景。
-
-4. **React Server Components 不能直接用**：Zustand 依赖 `useSyncExternalStore`（Client-only hook）。RSC 里用 Zustand 必须在 `'use client'` 组件内，不能在 server component 里 `useStore()`。
+1. **把「不传 selector」当成精细订阅**：默认 identity，任何 `setState` 只要产出新对象都会通知该组件。
+2. **把 `set(partial)` 想成 immer 式原地改**：默认是浅合并新对象。要原地草稿必须另接 `zustand/middleware/immer`，且 `immer` 是 optional peer。
+3. **以为 `useStore(selector, shallow)` 仍是默认入口**：那是 `zustand/traditional` 的 `useStoreWithEqualityFn`，它才依赖 `use-sync-external-store`。
+4. **把 persist 当跨标签同步或 SSR 安全默认**：它只封装单一 storage；多标签、cookie、服务端渲染都要自己选 storage / `skipHydration`。`unstable_ssrSafe` 在 SSR 里直接禁止 `set`，而且仍标 experimental。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 中小型 React 项目的全局客户端态（登录用户、主题、UI 偏好）
-- 从 Redux 迁出的第一站——3 个概念替代 5 层 boilerplate
-- 需要不依赖 Provider 的库内部 store（react-three-fiber 这类）
-- 与 [[tanstack-query]] 配合：服务端态用 query / 客户端态用 Zustand
+- 中小 React 应用的客户端全局态（主题、登录用户、UI 开关）
+- 需要在非 React 代码里 `getState` / `setState` 的库内部 store
+- 与 [[tanstack-query]] 分工：远端缓存走 query，本地 UI 态走 Zustand
 
 **不适用**：
 
-- 服务端返回的接口数据 → 用 [[tanstack-query]] / SWR（缓存、重新请求、乐观更新都白送）
-- 高频原子化更新（每次只动一个字段，几百个字段并存）→ 用 [[jotai]] 的 atom 模型
-- 跨进程 / 跨 tab 同步 → Zustand persist 只覆盖 localStorage，多 tab 同步要自己接 BroadcastChannel
-- 复杂多步表单 / 状态机 → 用 [[xstate]]，状态转换显式声明
+- 远端列表 / 缓存 / 重试 → [[tanstack-query]] 或 SWR
+- 大量细粒度派生、组件各自持有一片公式 → [[jotai]]
+- 复杂多步协议或显式状态图 → [[xstate]]
+- 还没在目标 bundler 量过体积，却把「大约 1KB」写成当前事实
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2019 年**：Paul Henschel（pmndrs 创始人）写 react-three-fiber 时被 Context 跨 renderer 失效坑过，开始想"状态管理能不能不依赖 React"。
-- **2019 年底**：Zustand v1 发布，核心 vanilla store **101 行 TypeScript**，零依赖。
-- **2022 年**：React 18 引入 `useSyncExternalStore`，Zustand v4 接入，正式解决 React 并发模式的 tearing 问题。
-- **2024 年**：Stack Overflow 调查里 Zustand 进入主流状态库前列，与 Redux 并排讨论。
-- **2026 年**：v5 当家，仍是 ~1KB，仍是 0 生产依赖。
-
-5 年时间从"小众玩具"到"事实标准"。
+- 本文绑定 `pmndrs/zustand@2115efb9e270e73ad1d3472dfe0e0c7b8c6abcd4`，tag / npm latest 均为 `5.0.15`。
+- npm tarball 未提供 `gitHead`；升级前应重新核对 tag 与打包提交是否仍一致。
+- 无生产 `dependencies`；React 18+ 只是 React 入口的 optional peer。vanilla 入口可单独使用。
+- 类型入口要求 TypeScript >= 4.5。
+- 本文未安装依赖、运行 vitest 或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **状态管理可以不绑死 React**——把 store 做成普通 JS 对象，React 只是订阅者之一。这是 Zustand 比 Redux 更"基础"的原因。
-2. **selector + 引用相等是 React 性能优化的本质**——任何"全局态库"都得回答"组件什么时候 rerender"，Zustand 选了最直白的"selector 返回值变 = rerender"。
-3. **API 表面积少 = 心智负担少**——Redux 的 5 层概念在 Zustand 是 3 个，差距来自"砍掉历史包袱"而非"创新"。
-4. **库的合理拆层**：vanilla（纯 JS）→ React 适配（64 行）→ middleware 高阶器。每层都能独立讲清楚。
+1. **框架适配可以薄到一层 hook**——真正的合同在 vanilla `setState` 的合并与通知规则。
+2. **默认 API 的「省略参数」也是合同**——不传 selector 不是「随便用」，而是订阅全部。
+3. **中间件必须按入口读**——`persist` 在 barrel 里，`immer` 不在；`ssrSafe` 还不稳定。
+4. **持久化默认值绑定浏览器**——`window.localStorage` 不是通用运行时保证。
+
+## 应用型自测
+
+1. 组件写 `useStore()` 不传 selector。另一个字段被 `set` 了，这个组件会 rerender 吗？
+2. 当前 state 是 `{ a: 1 }`，调用 `setState({ b: 2 })` 且不传 `replace`。结果还含 `a` 吗？
+3. persist 未设 `storage`，在没有 `window` 的环境初始化。后续 `set` 还会改内存吗？会不会写盘？
+
+检查点：
+
+1. 会。默认 identity selector 订阅整份 state。
+2. 会含 `a`。对象下一状态默认 `Object.assign` 浅合并。
+3. 会改内存，默认不会写盘：`createJSONStorage` 失败后 storage 为空，只警告。
 
 ## 延伸阅读
 
-- 官方 docs：[zustand.docs.pmnd.rs](https://zustand.docs.pmnd.rs/)（短小精悍，1 小时读完）
-- 视频教程：[Jack Herrington — Zustand vs Redux Toolkit](https://www.youtube.com/watch?v=fZPgBnL2x-Q)（30 分钟看完两边代码量对比）
-- 自己写实现：照着 vanilla.ts 100 行手写一遍，再对照 react.ts 64 行接 useSyncExternalStore——能讲清楚 Zustand 内核就懂了大半状态管理库
-- [[tanstack-query]] —— 服务端态的标配，与 Zustand 分工
-- [[react-hooks]] —— `useSyncExternalStore` 是 Zustand React 接入的桥梁
+- 官方文档：[zustand.docs.pmnd.rs](https://zustand.docs.pmnd.rs/)
+- 固定源码：[pmndrs/zustand](https://github.com/pmndrs/zustand) —— 本文绑定提交 `2115efb9e270e73ad1d3472dfe0e0c7b8c6abcd4`
+- [[jotai]] —— 同生态的原子化对照
+- [[valtio]] —— 同作者的 Proxy mutate 路线
+- [[tanstack-query]] —— 服务端态对照
 
 ## 关联
 
-- [[tanstack-query]] —— 服务端态用 query / 客户端态用 Zustand 的双轨制
-- [[react-hooks]] —— `useSyncExternalStore` 是 React 18 给外部 store 的官方接入点
-- [[jotai]] —— 同 pmndrs 出品但用原子化模型，适合高频细粒度更新
-- [[xstate]] —— 复杂状态转换的状态机方案，与 Zustand 形成互补
+- [[jotai]] —— 原子 + 依赖追踪，对照集中 store
+- [[valtio]] —— 直接 mutate，对照显式 `set`
+- [[tanstack-query]] —— 远端缓存，不负责本地 UI store
+- [[xstate]] —— 显式状态机，适合多步协议
+- [[react-hooks]] —— `useSyncExternalStore` 是 React 入口的桥
 
 ## 反向链接
 
