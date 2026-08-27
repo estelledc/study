@@ -16,7 +16,7 @@
   1. `ladle` 绑定 annotated tag `@ladle/react@5.1.1` / `780c19e5...`，写清 Babel 静态发现、函数故事、默认同树预览与 a11y/MSW 默认关闭。
   2. `histoire` 绑定 `v1.0.0-beta.1` / `f0400193...`，写清 worker 执行收集、默认 Vue/Svelte glob、双 Vite 服务器与默认 iframe；披露 `v0.17.17` 是另一 SHA。
   3. 新增共享 `docs/component-workshop-source-review-20260827-dh.md` 与两份 static receipt。
-- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest 与 revision 对齐；`audit:counts` / `audit:site-state` / `audit:learning-paths` / `audit:content-contract --changed-from origin/main` 无 blocking。`verify:ci` 在提交后跑。
+- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest 与 revision 对齐；`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci` 全绿（含 strict build、23 Playwright a11y、Pages/Atlas/站点预算）。
 - budget：2 个 ignored worktree + 2 页新笔记 + 派生刷新；单 writer。
 - blocker：规模 compare detector 在 main 上已超 baseline，本轮未改 threshold。
 - stop conditions：本 epoch 以一个 PR 结束；不 merge。
