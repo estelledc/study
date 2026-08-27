@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "jsdom",
+    "digest_sha256": "bf773af7cb36b2b935fba7167b5c72ff8243594f94801674794d519cda7f580f"
+  },
+  "source_revision": "6584485f094d5b271553005b68804c93a455c002",
+  "research_input_sha256": "012b9832fe9373f8f8c0f45f471287fd26859f9e850bf429a6aeb5f400e2b5a8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Window-before-parse, runScripts modes, resources defaults, and fromURL option bans with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Stable 30.0.1 constructor, parse5 adapter, Window vm context, Document.close, and resource dispatcher were inspected; Mocha/WPT and network were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag, package version, and npm gitHead agree on 30.0.1; Node engine and optional canvas peer are disclosed without runtime verification."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}
