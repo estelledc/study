@@ -20,11 +20,12 @@
   - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
   - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
   - `generate:site-state`：projects=961、papers=1083、total=2044、content_contract v2=89。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿；strict build 2285 HTML / 2284 sitemap URLs、23 Playwright a11y 通过。
 - budget：2 个 ignored worktree + 2 页静态源码迁移；单 writer。
-- blocker：未跑 `verify:ci` 前不得宣称 CI 全绿；不 merge。
+- blocker：不 merge；远端 CI 以 PR #102 head 为准。
 - stop conditions：本 epoch 已完成；不继续发明下一对 slug。
 - 下一次 wake 条件：PR CI / review 变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/102`；未获 merge 授权前不要合并。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
