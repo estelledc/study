@@ -19,13 +19,15 @@
 - acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest 与固定 revision 一致，`STATIC_REVIEW` / `UNVERIFIED`。
-  - `audit:content-contract`：blocking 0。
-  - `audit:counts` / `audit:site-state` / `audit:project-standard` snapshot CURRENT。
+  - `audit:content-contract`：blocking 0；`v2=136`、`legacy-unverified=1911`。
+  - `audit:counts` / `audit:site-state` / `audit:project-standard` snapshot CURRENT；`benchmark-aligned=67`。
+  - `STUDY_CHANGED_FROM=51e405f5f npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（含 strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
   - `git diff --check` 通过。
+- external delta：分支已 push，草稿 PR #190；未 merge、未 deploy。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。`ora` 仍由 CX 负责。
 - stop_conditions：本地 change set 与一个 PR 完成后停止；不 merge。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/190`。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
