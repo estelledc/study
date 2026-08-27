@@ -16,7 +16,7 @@
   1. `clerk` 绑定 `clerk/javascript@2799f0dd...`；`@clerk/nextjs@7.8.2` 等五个 tag 剥到同一提交；纠正 deprecated `createRouteMatcher`、development-only telemetry、按 instance 分桶的 JWKS 缓存。
   2. 新增 `workos` 绑定 `workos/workos-node@203f845f...` / `@workos-inc/node@10.11.0`（tag 与 npm `gitHead` 一致）；写清 User Management / AuthKit provider / 封存 cookie / SSO 模块边界。
   3. 新增 `docs/auth-saas-source-review-20260827-do.md` 与两份 generation 1 static receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 `UNVERIFIED` evidence state 一致；`audit:counts` / `audit:content-contract` / `git diff --check` 通过。全量 `verify:ci` 在首个 commit 之后跑。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 `UNVERIFIED` evidence state 一致；`audit:counts` / `audit:content-contract` / `git diff --check` 通过。`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿。
 - budget：2 页静态源码迁移 + 1 个共享 review 文档；单 writer。
 - external_outcome：一个 review-ready PR，不 merge。
 - stop conditions：本 epoch 写入结束；不自动 merge。
