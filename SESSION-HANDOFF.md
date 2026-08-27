@@ -17,11 +17,12 @@
   2. `envalid` 绑定 `af/envalid@784385fc...` / `8.2.0`，写清 cleanEnv 白名单、default 分层跳过 `_parse`、reporter `process.exit(1)` 与 proxy。
   3. 共享 provenance：`docs/env-config-source-review-20260827-bu.md` + 两份 generation 1 static receipt。
 - acceptance checks：两页 `quality-gate.mjs` 通过、0 advisory；content-contract 0 blocking；`audit:counts` 与 atlas 预算通过。
+- 验证结果：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 规范 Node 22.23.1 / npm 11.17.0 下全绿；2287 HTML、2286 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁通过。
 - budget：1 个 env-config 双子 epoch；单 writer。
-- blocker：未跑 `verify:ci` 前不得宣称全绿；上游 test / vault decrypt / `process.exit` 均未执行。
+- blocker：上游 test / vault decrypt / `process.exit` 均未执行，证据保持 `UNVERIFIED`。
 - stop conditions：本 epoch 只开 1 个 PR 且不 merge；不改其他开放 PR slug。
 - 下一次 wake 条件：PR CI / review 状态变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/121`；未获 merge 授权前不要合并。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
