@@ -14,7 +14,7 @@
 - 已完成切片：
   1. 绑定 `winstonjs/winston@ed45345f...` / `3.19.0` 与 `trentm/node-bunyan@0ff1ae29...` / `2.0.5`（beta tag），npm `gitHead` 一致。
   2. 新增两篇 `study-v2` 笔记与共享源码审查记录；披露 bunyan 2.0.5 beta 与 winston defaultLogger 无 transport。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；`audit:content-contract` 0 blocking；`git diff --check` 通过。全量 `verify:ci` 在开 PR 后跑。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；`audit:content-contract` 0 blocking；`git diff --check` 通过。`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿（含 23 Playwright a11y）。
 - budget：1 个 logger 双子切片、单 writer。
 - blocker：未授权 merge。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另授 merge。
