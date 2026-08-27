@@ -16,13 +16,13 @@
   1. got 绑定 `b855688f...` / `v15.1.0`，去掉默认 retry method 中的 QUERY，补 413/`Retry-After`、阶段 timeout 与 Stream retry listener 边界。
   2. wretch 复验后继续绑定 `32d5f68b...` / `3.0.9`，补 `maxAttempts=0` 表示无限、`.catcher()` 可接收 id 数组。
   3. 新增 `docs/http-client-source-review-20260827-dc.md` 与两份 generation 2 receipt。
-- acceptance checks：两页 quality-gate pass / 0 advisory；receipt `evidence_state=UNVERIFIED`；`git diff --check` 通过。`verify:ci` 在首个 commit 后跑。
+- acceptance checks：两页 quality-gate pass / 0 advisory；receipt `evidence_state=UNVERIFIED`；`git diff --check` 通过。`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci` 全绿。
 - budget：2 个内容切片 + 1 个文档/派生切片；单 writer；1 个 PR。
 - blocker：无本轮写入 blocker；merge/deploy 需另授权。
-- 验证结果：定向 quality-gate 与 content-contract 通过；全量 `verify:ci` 待提交后运行。
-- stop conditions：本 writer epoch 已结束写入；不要 merge。
-- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 新授权。
-- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`；不要 merge。
+- 验证结果：规范 Node 22.23.1 / npm 11.17.0 下 `verify:ci` 全绿（388 Node tests、strict build 2285 HTML / 2284 sitemap URLs、23 Playwright tests）。
+- stop conditions：本 writer epoch 已结束；不要 merge。
+- 下一次 wake 条件：PR #156 的 CI/review 变化，或 owner 新授权。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/156`；不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
