@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "apexcharts",
+    "digest_sha256": "94e9c48b2003e59b274b7e6e53a9fac59abfca699eb469329065f893722066ba"
+  },
+  "source_revision": "1579e97ce9bb7eeca9f35f969259f10fff6e00a2",
+  "research_input_sha256": "a3f3f2c5a7e01f89cc8c85b26c3dac254ecd4671283a5d9e71574266e9500c89",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates dual license, default SVG renderer, window-width responsive, and fail-soft updateSeries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "ApexCharts render/destroy, Options defaults, Responsive, Renderer selection, and LicenseEnforcer were inspected; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to apexcharts 7.0.0; MIT, bundle size, point limits, and wrapper line counts are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}
