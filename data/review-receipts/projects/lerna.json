@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lerna",
+    "digest_sha256": "5299c34a0b13bfdc1c9a504df21d323eb12f2d4d1a62ab88cce98779f6925f7e"
+  },
+  "source_revision": "35d15a1567932be97759f512d8b8033dad72b411",
+  "research_input_sha256": "b6ce37a26ed49ace82f215ad65501439d31e8980fe2c8d4daefecb6d99f9a682",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains workspace discovery, fixed versus independent versioning, topological publish, and removed bootstrap/add/link stubs with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned v10.0.1 CLI, Project discovery, toposort/cycle policy, init, run-via-Nx, and publish were inspected; CLI and publish were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Nx 23 is a runtime dependency for run; this note stays UNVERIFIED and does not treat Nx Cloud or DTE as lerna evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

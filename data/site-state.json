@@ -11,8 +11,8 @@
     "needs_evidence": 927
   },
   "content_contract": {
-    "v2": 103,
-    "legacy_unverified": 1941,
+    "v2": 105,
+    "legacy_unverified": 1939,
     "blocking": 0
   }
 }

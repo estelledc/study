@@ -1,160 +1,156 @@
 ---
-title: pnpm — 全机器只存一份的 Node 包管理器
-来源: 'https://github.com/pnpm/pnpm'
+title: pnpm — 用内容寻址 store 做严格 workspace 安装
+来源: https://github.com/pnpm/pnpm
 日期: 2026-05-30
-分类: projects / 工具
+分类: 工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/pnpm/pnpm
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: cef4816dfbc9aa7ffbe67fa727c1eb9be5d5e1e7
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 11.24.0
 ---
 
 ## 是什么
 
-pnpm 是 Node.js 的包管理器，核心特点是**全机器只存一份依赖**。日常类比：像图书馆借书——每本书馆里只放一份，读者拿走的是"借书证"指向同一本书；而不是每个读者都自己印一份带回家。
+pnpm 是 Node 的包管理器：依赖文件先按内容哈希进全局 store，再投影到项目的 `node_modules`。日常类比：图书馆只存一本原书（store），阅览室的座位上放的是借书卡和指向原书的链接，不是每人再印一册。
 
-你跑 `pnpm install`，pnpm 把每个文件按它的 sha256 哈希丢到 `~/.pnpm-store/` 这个全机器共享仓库，再在你项目的 `node_modules/` 里建**硬链接**指过去。
+固定 `pnpm@11.24.0` 来自仓库目录 `pnpm11/pnpm`。用户拿到的 npm 包是打包后的 JS CLI：`bin/pnpm.mjs` 先检查 Node，再动态 `import('../dist/pnpm.mjs')`。`pn` 是同一入口，`pnpx` / `pnx` 是执行器别名。引擎声明 `node >=22.13`。
 
 ```bash
-# 项目 A 和项目 B 都依赖 react 18.2.0
-# react 的 index.js 在你硬盘上只有 1 个 inode
-# 项目 A 和 B 的 node_modules 里都是硬链接指向同一份
+pnpm install --frozen-lockfile
 ```
 
-结果：100 个 React 项目，react 的源码文件只占用 1 份磁盘。npm / yarn classic 是每个项目复制一份，pnpm 把它换成硬链接共享。
+这一句按 `pnpm-lock.yaml` 还原图；本轮没有执行安装。
 
 ## 为什么重要
 
-不理解 pnpm 的设计，下面这些事都没法解释：
+不理解固定 11.24.0 的分层，下面这些旧印象会错位：
 
-- 为什么同样装 100 个项目，pnpm 的 `~/.pnpm-store` 只占几 GB，而 `node_modules/` 们却累计十几 GB——硬链接共享 inode
-- 为什么 pnpm 项目里 `require('lodash')` 报错"找不到"，明明 `node_modules` 里看得到——它没声明在 package.json 里（叫 phantom dependency）
-- 为什么 monorepo 工具链（Vue / Nuxt / Vite / Astro / Prisma）默认推 pnpm 而不是 npm
-- 为什么 Windows 普通用户跑 pnpm 经常炸——symlink 创建权限默认关闭
+- 为什么不能再写 `~/.pnpm-store/v3`——常量 `STORE_VERSION` 已是 `v11`
+- 为什么 pnpm 11 的 lockfile 仍报 major `9`——包版本和 lockfile 协议不是同一个号
+- 为什么 `workspace:^1.0.0` 在 workspace 里找不到同名包会直接抛错，而不是去 registry 碰运气
+- 为什么 README 里的 Rust / pacquet 不能当成这个 npm 包的入口——发布物是 `pnpm11/pnpm` 的 JS bundle
 
 ## 核心要点
 
-pnpm 的设计可以拆成 **三件事**：
+固定版本可以拆成四层：
 
-1. **内容寻址存储（CAS）**：每个文件按 sha256 落到 `~/.pnpm-store/v3/files/<hex[:2]>/<hex[2:]>`。前 2 个 hex 字符做一级目录，避免单文件夹百万 inode。类比：每本书按书号入库，不按作者分类——同一字节流的文件自动去重。
+1. **内容寻址 store**：`STORE_VERSION = "v11"`。能链到 home 盘时，默认路径是 `path.join(pnpmHomeDir, "store", "v11")`；跨卷硬链接失败则落到 `<mount>/.pnpm-store/v11`。CAFS 文件在 `files/<digest 前 2 位>/...`。导入方法是 `auto | hardlink | copy | clone | clone-or-copy`。
 
-2. **硬链接 + symlink 双层投影**：项目里 `node_modules/.pnpm/<pkg>@<ver>/node_modules/<pkg>/` 的每个文件是**硬链接**到全局仓库；顶层 `node_modules/<pkg>` 是 **symlink** 指向 `.pnpm/...`。Node 找包走 symlink，磁盘共享走硬链接。
+2. **严格投影**：`nodeLinker` 为 `isolated | hoisted | pnp`，store-status 默认 `isolated`。isolated 下，一个包通常只能看到自己在 manifest 里声明的依赖；没声明的“幽灵依赖”解析不到。
 
-3. **workspace 协议**：monorepo 里 `package.json` 写 `"@org/utils": "workspace:^1.0"`，pnpm 把它解析成本地 workspace 包；publish 时自动展开成实际版本号。npm registry 不认 `workspace:` 前缀，pnpm 在发包前帮你 strip。
+3. **workspace 协议**：`pnpm-workspace.yaml` 列出成员。`workspace:*` / `workspace:^` / `workspace:~` / `workspace:^1.0.0` 在 workspace 包集合里解析；名字不在集合里抛 `WORKSPACE_PKG_NOT_FOUND`。`workspace:./`、`workspace:../` 走本地目录，不是裸包名。
 
-三件事合起来：**严格依赖边界 + 磁盘共享 + monorepo 一等公民**——npm / yarn classic / yarn berry 各自只拿到其中一两件。
+4. **锁与布局版本分开**：`WANTED_LOCKFILE = "pnpm-lock.yaml"`，`LOCKFILE_VERSION = "9.0"`，`LAYOUT_VERSION = 5`。升级 pnpm 主版本不等于自动换 lockfile major。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：从 npm 切到 pnpm 的最小步骤
+### 案例 1：从 npm 切到 pnpm
 
 ```bash
-# 卸了原来的 node_modules 和 package-lock.json
 rm -rf node_modules package-lock.json
-# 用 pnpm 装一遍
 pnpm install
-# 顶层只看到你声明的包，被 hoist 出来的 phantom dependency 消失了
-ls node_modules
 ```
 
-切完第一次跑可能会炸——以前能 `require` 的包现在报错。这是 pnpm 在告诉你"这个包你没声明，赶紧加进 package.json"。这个报错是好事，是 phantom dependency 在编译期暴露。
+isolated 布局下，顶层 `node_modules` 通常只露出当前项目声明过的包。以前靠 hoist 才能 `require` 到的包会在这里暴露——这是边界，不是偶然报错。
 
-### 案例 2：monorepo 用 workspace 协议引本地包
+### 案例 2：workspace 引用本地包
 
 ```yaml
 # pnpm-workspace.yaml
 packages:
-  - 'packages/*'
-  - 'apps/*'
+  - "packages/*"
+  - "apps/*"
 ```
 
 ```json
-// apps/web/package.json
 {
   "dependencies": {
-    "@org/utils": "workspace:^1.0.0",
-    "lodash": "^4.17.21"
+    "@org/utils": "workspace:^1.0.0"
   }
 }
 ```
 
-`workspace:^1.0.0` 告诉 pnpm "去 workspace 里找 @org/utils，版本要满足 ^1.0.0"。比 `npm link` 体验好两个数量级——不用手动 link / unlink，改一行配置就生效。
+`workspace:^1.0.0` 先在成员里找 `@org/utils`，再用这个 range 挑本地版本。成员里没有这个名字时，源码抛 `WORKSPACE_PKG_NOT_FOUND`，并附上当前 workspace 里有哪些包名。
 
-### 案例 3：验证硬链接是真的共享 inode
+### 案例 3：store 在哪
 
-```bash
-# 找项目里某个文件的 inode（Linux / macOS 语法不同）
-# Linux:
-stat -c '%i' node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js
-# macOS:
-stat -f '%i' node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js
-# 假设输出 1234567
-
-# 在全局仓库里反查同一个 inode（两边通用）
-find ~/.pnpm-store/v3/files -inum 1234567
-# 输出指向某个 hash 路径，证明它和项目里的文件是同一个 inode
-```
-
-`-inum` 找 inode 号——硬链接的本质是"多个路径指向同一个 inode"。这个实验让你亲眼看到 pnpm 的核心机制不是"复制再 dedupe"，是文件系统层面的共享。注意 `stat` 的格式参数跨平台不通用，照抄错平台会直接报错。
+未自定义 `storePath` 时，实现先试 home 盘能否硬链接当前项目；能，就用 `pnpmHomeDir/store/v11`。不能，就在可链接的挂载点写 `.pnpm-store/v11`。Docker 跨卷、Windows 跨盘会走到后一条，磁盘“只存一份”的前提不成立。
 
 ## 踩过的坑
 
-1. **store 不会自动 GC**：`~/.pnpm-store` 一直长，几年后到几十 GB 是常态。需要手动 `pnpm store prune` 清理无引用文件，否则磁盘节省的好处会被反噬。
-
-2. **跨设备硬链接失败回退到复制**：项目和 store 在不同 mount（Docker 跨卷 / Windows 跨盘 / NFS）时报 `EXDEV`，pnpm fallback 到 copy，磁盘节省全部失效——错误是 graceful 但用户感知不到，除非看 install log。
-
-3. **Windows 默认要开发者模式**：普通 Windows 用户没有创建 symlink 的权限，`node_modules/<pkg> -> .pnpm/...` 会失败。逃生口是设 `node-linker=hoisted` 退化成 npm 风格，但放弃了严格依赖边界。
-
-4. **手改 `pnpm-lock.yaml` 会破坏一致性**：这文件长得像 yaml 但它是 pnpm 内部依赖图的序列化形态。要改依赖只改 package.json 然后重跑 `pnpm install`，不要直接编辑 lockfile。
+1. **把 store 路径写成 v3**：固定源码常量是 `v11`。pkg-finder README 示例里的 `v10` 也不是这个提交的常量。
+2. **把 pnpm 11 理解成 lockfile 11**：lockfile major 仍是 `9`。
+3. **Node 20 当“还能凑合用”**：`bin/pnpm.mjs` 对 Node 20 只警告，对 `<22.13` 直接 `exit 1`。
+4. **手改 `pnpm-lock.yaml`**：它是依赖图的序列化，不是给人当 YAML 配置改的。
+5. **把仓库里的 Rust crate 当成 `pnpm@11.24.0`**：npm 包入口是 `pnpm11/pnpm`；`./pnpm` 是实验性 port。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- monorepo（>3 个包）—— `workspace:*` 协议是 pnpm 在这个场景碾压 npm 的关键
-- 磁盘紧张的开发机 —— 100 个 Node 项目能省 10+ GB
-- 团队需要严格依赖边界 —— phantom dependency 在编译期就报错，不会发版后炸
-- CI 缓存 `~/.pnpm-store` —— 用 `pnpm install --frozen-lockfile` 配合 lockfile 一致性检查
+- 需要严格依赖边界的 workspace（>3 个包尤其明显）
+- 同一块盘上多个项目共享 store，且能硬链接 / clone
+- CI 缓存 store + `--frozen-lockfile`，而不是直接复用 `node_modules` 快照
 
 **不适用**：
 
-- 单包小项目 —— `.pnpm/` 中转目录是纯开销，npm/yarn 简单足够
-- Windows 普通用户环境 —— 没开发者模式时 symlink 失败
-- Docker 镜像里 node_modules 和 store 跨 mount —— 硬链接退化成复制，磁盘节省失效
-- 直接缓存 `node_modules/` 的 CI 流水 —— 跨 build 复用硬链接快照会失败，要缓存就缓存 store + lockfile
+- 项目和 store 经常跨 mount，硬链接失败只能 copy
+- 必须用 Node 20 跑这一版 CLI
+- 只要评测 Rust port / `@pnpm/exe` 独立二进制——应另绑那些产物，不是这篇 npm 包页
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2013 年**：Node 生态默认 npm v2，嵌套 `node_modules` 让 Windows 路径长度爆炸
-- **2015 年**：npm v3 引入 flat hoist 解决路径过长，副作用是 phantom dependency 横行
-- **2016 年**：Zoltan Kochan 在乌克兰发起 pnpm，初版就是"硬链接共享 store + 严格 node_modules"
-- **2020 年**：Vite / SvelteKit 等新框架默认推荐 pnpm，monorepo 场景成为主战场
-- **2024 年**：pnpm v9 lockfile 加入 env 文档（捕获 nodeVersion / pnpmVersion），向 reproducible build 再走一步
-
-之后 pnpm 成了 Vue / Nuxt / Vite / Vercel / Astro / Prisma / Storybook 等项目的默认选择。
+- 本文绑定 `pnpm/pnpm@cef4816d...`，tag `v11.24.0`，包版本 `11.24.0`。
+- npm `pnpm@11.24.0` 没有 `gitHead`；身份靠 tag + 版本 + 提交。
+- 同仓还有 Rust workspace（`pnpm/crates/*`、`pnpr/crates/*`），未当作本页入口。
+- 未安装依赖、未跑 `pnpm install` 或 store prune，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **磁盘是有限资源**——SSD 时代每个 `node_modules` 200MB 不算大，但 100 个项目就是 20GB 浪费，硬链接是 Unix 几十年前就有的解法
-2. **协议解析和协议语义要分层**——pnpm 的 `workspace:*` parser 只有 22 行，因为它只解字符串、不查包是否存在；上层 resolver 才管语义
-3. **保留兼容 ABI 才能不和生态对抗**——yarn berry 选了消灭 `node_modules`，代价是和 IDE / TypeScript / loader 大量摩擦；pnpm 选了"形态不变、存储变"
-4. **量化的优化决策**——pnpm 源码里有"~30k calls per cold install / saves ~30ms" 这种注释，"觉得快"的优化进不了 main
+1. **共享 inode 比“再复制一份再去重”更省**——前提是同一文件系统能链接
+2. **协议字符串和解析语义要分层**——`workspace:` 先判形式，再查成员集合
+3. **产品版本、lockfile、store、node_modules layout 可以各走各的号**
+4. **仓库里同时存在 JS 发布物和实验 port 时，必须先钉入口目录**
+
+## 应用型自测
+
+1. 固定源码里全局 store 的版本目录名是 `v3`、`v10` 还是 `v11`？
+2. `is-positive@workspace:^3.0.0` 写在依赖里，但 workspace 没有这个包名。解析会去 npm registry 吗？
+3. 当前 Node 是 22.12。`bin/pnpm.mjs` 会继续加载 `dist/pnpm.mjs` 吗？
+
+检查点：
+
+1. `v11`。`STORE_VERSION` 写死为 `'v11'`。
+2. 不会。源码抛 `WORKSPACE_PKG_NOT_FOUND`。
+3. 不会。`<22.13` 先 `console.error` 再 `process.exit(1)`。
 
 ## 延伸阅读
 
-- 官方动机文档：[pnpm.io/motivation](https://pnpm.io/motivation)（讲 pnpm 为什么要做硬链接共享）
-- 仓库源码：[github.com/pnpm/pnpm](https://github.com/pnpm/pnpm)（30+ puzzle 包的 monorepo，自身就是 workspace 例子）
-- 对比文章：[Why pnpm? — Zoltan 在 dev.to 的系列](https://dev.to/zkochan)（创始人讲设计取舍）
-- [[npm-package-manager]] —— pnpm 的对照系
-- [[yarn-berry-pnp]] —— 更激进的"消灭 node_modules"路线
-- [[turborepo]] —— 常和 pnpm 搭档的 monorepo 任务编排器
+- 官方文档：[pnpm.io](https://pnpm.io)
+- 固定源码：[github.com/pnpm/pnpm](https://github.com/pnpm/pnpm) —— 本文绑定 `cef4816dfbc9aa7ffbe67fa727c1eb9be5d5e1e7`
+- 审查记录：仓库内 `docs/lerna-pnpm-source-review-20260827-dy.md`
+- [[lerna]] —— 同批次对照：读 pnpm workspace 文件做 version/publish
+- [[nx]] —— 任务图 / 缓存，不管 store
+- [[bun]] —— 另一条带全局 cache 的安装器，lockfile 模型不同
 
 ## 关联
 
-- [[npm-package-manager]] —— pnpm 的直接对照系，flat hoist vs 硬链接 + symlink
-- [[yarn-berry-pnp]] —— 同样想解决 phantom dependency，但选了消灭 `node_modules` 的激进路线
-- [[bun-runtime]] —— Bun install 思路接近 pnpm（硬链接 + 全局 cache），但 lockfile 是二进制
-- [[turborepo]] —— monorepo 任务图工具，常和 pnpm 搭配做大型仓库的 build 调度
-- [[content-addressable-storage]] —— pnpm 的 CAS 设计和 Git object store / Nix store 同源
-- [[unix-hardlink]] —— pnpm 全机器共享的底层能力，多路径共享一个 inode
-- [[symlink-vs-hardlink]] —— pnpm 同时用两种链接，理解它们的差别才看得懂 `node_modules` 的双层结构
+- [[lerna]] —— 可把 `npmClient` 设为 pnpm 并读 `pnpm-workspace.yaml`
+- [[nx]] —— 调度层，常和 pnpm workspace 叠用
+- [[turborepo]] —— 任务缓存对照
+- [[changesets]] —— workspace 发版的另一条合同
+- [[bun]] —— 安装器对照
+- [[node-js]] —— 引擎下限 `>=22.13`
 
 ## 反向链接
 
@@ -165,11 +161,10 @@ find ~/.pnpm-store/v3/files -inum 1234567
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
-- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[lerna]] —— lerna — 在 workspace 上做拓扑 version / publish
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
-- [[projects/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
-- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
-- [[projects/scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
+- [[scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"

@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DY：lerna + pnpm leftover
+
+- supervisor 状态：`running` writer epoch 完成，进入 review-ready PR；未 merge。
+- status：`running` → 本地 writer epoch `complete`。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`。
+- objective：把 leftover monorepo / 包管理双子迁到固定源码的 `study-v2`。原目标 `lerna` + `nx`，`nx` / `turborepo` 已被占用；`moonrepo` 无既有页，按 fallback 绑定 `lerna` + `pnpm`。
+- scope：`lerna.md`、`pnpm.md`、两份 generation 1 receipt、`docs/lerna-pnpm-source-review-20260827-dy.md`、atlas / note-index / site-state / project-standard 派生、本 handoff；未改队列、政策、其它 leftover 页。
+- activated_by：`explicit-user-parallel-writer-dy-20260827`。
+- detector fingerprint：两页缺 pinned revision / evidence boundary / self-test；旧 lerna 把 bootstrap 写成 v7 删除、把 `--reject-cycles` 默认写成必须打开；旧 pnpm 把 store 写成 `~/.pnpm-store/v3`，未区分 lockfile 9.0 与包版本 11。
+- external delta 计数：将形成 1 个 PR；未授权 merge / deploy，D 轴不提升。
+- 完成切片：
+  1. `lerna` 绑定 `lerna/lerna@35d15a1567932be97759f512d8b8033dad72b411` / `10.0.1`，纠正 workspace 发现、v9 stub 命令、拓扑发布与 `lerna run` 默认 Nx。
+  2. `pnpm` 绑定 `pnpm/pnpm@cef4816dfbc9aa7ffbe67fa727c1eb9be5d5e1e7` / `11.24.0`，纠正 `STORE_VERSION=v11`、lockfile `9.0`、`workspace:` 找不到即抛错，并披露 Rust port 不在本 npm 包入口。
+  3. 新增共享 provenance 与两份 `STATIC_REVIEW` / `UNVERIFIED` receipt。
+- 验证结果：两页 quality-gate pass、0 advisory；receipt digest 一致且 `UNVERIFIED`；`audit:content-contract` blocking 0。
+- budget：1 个内容切片、2 页、1 个本地 writer、1 个 PR；不 merge。
+- stop conditions：本 epoch 在 PR 打开后结束；不自动 merge。
+- 下一次 wake 条件：owner review / CI，或新的显式范围。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

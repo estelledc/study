@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pnpm",
+    "digest_sha256": "b55ec2bdcad17383e13d13dbb65527f0f560866da9aff1151ab34eb7fe7617bd"
+  },
+  "source_revision": "cef4816dfbc9aa7ffbe67fa727c1eb9be5d5e1e7",
+  "research_input_sha256": "b6ce37a26ed49ace82f215ad65501439d31e8980fe2c8d4daefecb6d99f9a682",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains v11 store path, isolated linker, workspace: resolution, and split lockfile/layout versions with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned v11.24.0 JS CLI, store path, constants, and workspace resolver were inspected; install, store prune, and Rust port were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm gitHead is absent; identity is tag plus package version plus commit. Rust/pacquet crates are disclosed as out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

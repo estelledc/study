@@ -48008,7 +48008,7 @@
       "id": "projects::lerna",
       "area": "projects",
       "slug": "lerna",
-      "title": "lerna — 一个仓库发几十个 npm 包的祖宗工具",
+      "title": "lerna — 在 workspace 上做拓扑 version / publish",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -48021,13 +48021,13 @@
         "raw_category": "前端工程"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/lerna/",
       "atlas": {
@@ -55301,7 +55301,7 @@
       "id": "projects::pnpm",
       "area": "projects",
       "slug": "pnpm",
-      "title": "pnpm — 全机器只存一份的 Node 包管理器",
+      "title": "pnpm — 用内容寻址 store 做严格 workspace 安装",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -55311,16 +55311,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-monorepos-and-package-management",
-        "raw_category": "projects / 工具"
+        "raw_category": "工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/pnpm/",
       "atlas": {
