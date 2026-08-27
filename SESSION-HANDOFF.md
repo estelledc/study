@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer JB：page.js + navigo
+
+- status：writer epoch `running` → 本地切片完成，准备 PR；merge / deploy 未授权。
+- 起始 ref：`2122461e7ac7cd08ee3be1827d3ec84bbf919707`（`origin/main`）。
+- objective：为缺失的 client-router 双子补齐 page.js 与 navigo 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页（slug `pagejs` / `navigo`）、共享审查文档 `docs/client-router-source-review-20260827-jb.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-jb-2026-08-27`。
+- detector fingerprint：目录无 `pagejs.md` / `navigo.md`；`logseq` 已占用双括号 page 概念，故 page.js 不用 slug `page`；开放 PR 已占用 wouter/navaid、itty-router/find-my-way、path-to-regexp/route-recognizer。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `pagejs` 绑定源码 tag `v1.11.6` → `4f9991658f9b9e3de9b6059bade93693af24d6bd`；tag / package / npm `gitHead` 一致。
+  2. `navigo` 绑定 npm `navigo@8.11.1` 可达 `gitHead` → `8784291784b898f486f565e7d3d5cf44297d250e`；披露仓库无 `8.11.1` tag。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking。
+  - `audit:counts` / `audit:site-state`：projects=970、papers=1083、total=2053。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：开一个 PR 后停止；不得 merge，不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

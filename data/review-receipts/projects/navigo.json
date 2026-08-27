@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "navigo",
+    "digest_sha256": "e785d84b8903a14acc9b401c31e1208495c0fd96ccfe526edf78b8a36e9ce95b"
+  },
+  "source_revision": "8784291784b898f486f565e7d3d5cf44297d250e",
+  "research_input_sha256": "212ed86480f1588f2ed57d85284cefabb700ac845067d732ee16dcdcaec9d0c9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-jb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Q pipelines, custom :param matcher, before/leave halt, already skip, and hash history #283."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-jb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "src/index.ts, utils matchRoute, lifecycles, updateBrowserURL #283, and __dirty queue were inspected; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-jb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds npm 8.11.1 gitHead; discloses missing 8.11.1 git tag and later docs-only master commits."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

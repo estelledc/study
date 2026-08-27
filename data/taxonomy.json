@@ -2204,6 +2204,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::navigo",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
       "note_id": "projects::next-intl",
       "topic_id": "projects-internationalization"
     },
@@ -2258,6 +2262,10 @@
     {
       "note_id": "projects::oxlint",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::pagejs",
+      "topic_id": "projects-data-fetching-and-routing"
     },
     {
       "note_id": "projects::patchright",

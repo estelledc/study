@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pagejs",
+    "digest_sha256": "aadb6980327603438f7055acc7f4f9fdb3edeca39cd3b021d242b662b02a3009"
+  },
+  "source_revision": "4f9991658f9b9e3de9b6059bade93693af24d6bd",
+  "research_input_sha256": "212ed86480f1588f2ed57d85284cefabb700ac845067d732ee16dcdcaec9d0c9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-jb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates page() overloads, path-to-regexp Route, exit-then-enter dispatch, and unhandled full-page jump."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-jb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index.js Page/Context/Route, clickHandler, start(dispatch:false) _running, and path-to-regexp ~1.2.1 were inspected; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-jb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v1.11.6 where tag, package and npm gitHead agree; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

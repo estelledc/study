@@ -1,6 +1,6 @@
 ---
 title: "数据获取 / 路由 · 项目 · 第 1 组"
-description: "4 条 数据获取 / 路由 Atlas 分块"
+description: "6 条 数据获取 / 路由 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,12 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 4 条，稳定上限为 100 条。
+本分块共 6 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Navigo — 用 Q 管道串起匹配、钩子与 History 的 vanilla 路由器](/study/projects/navigo/) | `navigo` | beginner | UNVERIFIED | 介绍 navigo 8 |
+| [page.js — Express 风格的微型客户端路由器](/study/projects/pagejs/) | `pagejs` | beginner | UNVERIFIED | 介绍 page |
 | [SWR — 用全局 cache 和事件广播做 stale-while-revalidate](/study/projects/swr/) | `swr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TanStack Query — 用 Observer 订阅一份服务端状态](/study/projects/tanstack-query/) | `tanstack-query` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | `tanstack-router` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
