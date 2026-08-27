@@ -1,14 +1,27 @@
 ---
-title: Vite — 浏览器自己加载源码的构建工具
+title: Vite — 默认按原生 ESM 加载、用 Rolldown 打包的构建工具
 来源: https://github.com/vitejs/vite
-日期: 2026-05-29
+日期: 2026-08-27
 分类: 构建工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/vitejs/vite
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: de1111ab0be00879b404e7ed3b2a80e264edddc1
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 8.2.2
 ---
 
 ## 是什么
 
-Vite 是一个**让浏览器在开发时直接加载源码、生产环境再打包**的前端构建工具。日常类比：像快递公司分两条路线——同城用户上门自取（dev = 浏览器原生 ESM 直连），跨省发货走集中配送（build = 把所有包裹合在一起打包发车）。同一个仓库，两条路线，各取所长。
+Vite 是一个默认让浏览器按原生 ESM 逐模块请求源码、再在需要时用 Rolldown 做依赖预构建与生产打包的前端构建工具。日常类比：像一家同时开了“柜台现做”和“中央厨房预打包”的店——默认柜台按点单现做（dev transform），热销原料先在后厨合成一份可复用的 ESM（optimizeDeps），出货时再整单装箱（build）。
 
 你跑：
 
@@ -17,144 +30,143 @@ npm create vite@latest my-app
 cd my-app && npm run dev
 ```
 
-约 300 毫秒后 dev server 启动。浏览器打开 `localhost:5173`，请求 `/src/main.tsx`，Vite 现场把 TS 转成 JS 返回——**没有打包步骤**。改一个文件，只有那一个文件被重新 transform，浏览器只下载一个新模块。
+固定 8.2.2 的 `createServer` 会按 `serve` 解析配置，为 `client` / `ssr` 各建一个 `DevEnvironment`，再用 Connect 挂 middleware。默认并不先打整包。
 
 ## 为什么重要
 
-不理解 Vite，下面这些事都没法解释：
+不理解 Vite 8.2.2 的源码合同，下面这些事都会按旧印象写错：
 
-- 为什么 [[webpack]] 启动一个中型项目要几十秒，Vite 同样的项目往往亚秒级
-- 为什么大型项目热更新（[[hmr]]）从「越大越慢」变成「和项目大小无关」
-- 为什么 Rollup 在 2020 年代又回到主流——因为 Vite 把它接到生产管线里
-- 为什么 Nuxt 3 / SvelteKit / Astro / Remix / SolidStart 等多数主流元框架底层都换成了 Vite
+- 为什么旧教程把依赖预构建和生产构建分别写成 esbuild 与 Rollup
+- 为什么现在 `optimizeDeps.esbuildOptions` / `build.rollupOptions` 还会“看起来能配”
+- 为什么打开 `experimental.bundledDev` 后，HMR 不再走原来的模块图传播
+- 为什么 `index.html` 仍是默认生产入口，而不是一份隐藏的 `entry.js`
 
 ## 核心要点
 
-Vite 的核心机制可以拆成 **三块**：
+固定版本的主链可以拆成五步：
 
-1. **浏览器原生 ESM 加载**：现代浏览器（Chrome 61+，2017 年起）原生支持 `import`/`export`。Vite dev 时不打包，让浏览器自己解 import 图——请求一个文件，Vite 现场转译返回。类比：快递员上门，你要哪个包裹他现拿现给。
+1. **解析 `serve` 配置并禁用可回放缓存**：dev server 的网络响应和 HMR 不能从缓存重放。
 
-2. **依赖预构建**（dep pre-bundle）：第三方包（lodash 内部几百个小文件）若让浏览器逐个 ESM 加载，HTTP 请求会爆炸。Vite 用 [[esbuild]] 提前把 `node_modules` 合成单个 ESM，存到 `.vite/deps/`，浏览器只发一次请求。
+2. **按 environment 初始化**：`client` 与 `ssr` 各自持有 module graph、plugin container 和可选的 deps optimizer。
 
-3. **HMR 单文件粒度**：webpack 的 HMR 常要重打整个 chunk；Vite 只 invalidate 改动的模块，沿 import 链找到接受 hot 的祖先就停，经 WebSocket 通知浏览器重 import。和项目大小无关，通常是 ms 级。
+3. **默认走 transform 中间件**：浏览器请求某个模块 URL 后，`pluginContainer.load` → `pluginContainer.transform` 现场转译，再按 ESM 返回。
+
+4. **依赖预构建用 Rolldown**：`runOptimizeDeps` 直接调用 `rolldown()`，把 `node_modules` 合成缓存目录里的 ESM；`esbuildOptions` 已标记 deprecated。
+
+5. **生产构建也走 Rolldown**：`build()` 创建 builder，经 `resolveRolldownOptions` 打包；未指定 lib/ssr/input 时默认入口是 `index.html`。
 
 ## 实践案例
 
-### 案例 1：起项目，发现 index.html 是入口
-
-```bash
-npm create vite@latest my-app -- --template react-ts
-cd my-app && pnpm install && pnpm dev
-```
-
-打开生成的 `index.html`：
+### 案例 1：index.html 仍是默认入口
 
 ```html
-<script type="module" src="/src/main.tsx"></script>
+<script type="module" src="/src/main.ts"></script>
 ```
 
-**逐部分解释**：`type="module"` 告诉浏览器按 ESM 加载；`src` 指向源码入口。`index.html` 自己就是入口——不是 webpack 那种「写 entry.js，再用 HtmlPlugin 反向生成 html」。**Vite 把 html 当一等公民**，因为浏览器本来就从 html 开始解析。
+`type="module"` 让浏览器按 ESM 解析。固定 `build()` 在没有 `build.lib.entry`、`ssr` 字符串或 `rolldownOptions.input` 时，会 `resolve('index.html')`。这不是“用 HtmlPlugin 反推 html”，而是 html 自己当输入。
 
-### 案例 2：写个 plugin 把 .svg 转成 React 组件
+### 案例 2：transform hook 仍按插件容器执行
 
 ```ts
 // vite.config.ts
-import { defineConfig } from 'vite';
-import { transform } from '@svgr/core';
+import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
     {
-      name: 'svg-to-component',
-      async transform(code, id) {
-        if (!id.endsWith('.svg')) return null;
-        const jsCode = await transform(code, {}, { componentName: 'SvgIcon' });
-        return { code: jsCode, map: null };
+      name: "svg-as-text",
+      transform(code, id) {
+        if (!id.endsWith(".svg")) return null;
+        return { code: `export default ${JSON.stringify(code)}`, map: null };
       },
     },
   ],
 });
 ```
 
-**逐部分解释**：
+默认 dev 路径里，`return null` 表示本插件不处理；返回 `{ code }` 则替换模块。这套 `resolveId` / `load` / `transform` 表面仍兼容旧 Rollup 插件，但底层类型和打包器已是 Rolldown。
 
-1. Vite 默认把 `.svg` 当静态资源（返回 URL）；自定义 `transform` 抢在默认处理前，把 SVG 源码变成 JS 组件
-2. `return null` = 不处理，交给后面的插件；返回 `{ code }` = 用你的 JS 替换原模块
-3. 这套 hook（`transform` / `resolveId` / `load`）借自 Rollup——Vite 复用现成 plugin 生态，不另发明 API
-
-### 案例 3：vite.config.ts 配 alias
+### 案例 3：rollupOptions 只是兼容代理
 
 ```ts
-import { defineConfig } from 'vite';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const root = path.dirname(fileURLToPath(import.meta.url));
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(root, './src'),
-      '@components': path.resolve(root, './src/components'),
-    },
+  build: {
+    rolldownOptions: { input: "src/main.ts" },
+    // 若同时写 rollupOptions，固定实现会忽略它并打 deprecation
   },
 });
 ```
 
-**逐部分解释**：`alias` 把短名映射到真实路径；ESM 配置里用 `import.meta.url` 代替 `__dirname`；dev 与 build 读同一份配置，所以两条路线都生效。之后可写 `import Button from '@components/Button'`。
+`utils.ts` 把 `rollupOptions` 代理到 `rolldownOptions`。两边都出现时，以 `rolldownOptions` 为准。新配置应直接写后者。
 
 ## 踩过的坑
 
-1. **CommonJS 包加载报错**：老 CJS-only 包会报 `does not provide an export named 'default'`。修法：在 `optimizeDeps.include` 里列出，让 esbuild 先转成 ESM。
-2. **dev 跑得好，build 报错**：dev 用 esbuild + 原生 ESM，build 用 Rollup；未导出字段可能只在 build 静态分析时 fail。这是双引擎的已知妥协。
-3. **SSR 两套 module 解析**：服务端走 Node，浏览器走 ESM；碰 `window` 会炸。用 `ssr.noExternal` 控制哪些包要转译。
-4. **HMR 重置模块顶层 state**：zustand / jotai 等把 state 放模块顶层时，HMR 会丢状态。可用 `import.meta.hot.invalidate()` 或依赖框架 Fast Refresh（组件 state 可留，store 仍可能重置）。
+1. **仍按“dev=esbuild、build=Rollup”读 8.2.2**：发布态依赖是 `rolldown ~1.2.4`；`esbuild` 只是 optional peer。源码里残留的 esbuild 注释不能当成当前引擎。
+
+2. **把 `experimental.bundledDev` 当成默认**：`config.ts` 默认 `bundledDev: false`。打开后走 `rolldown/experimental` 的 `DevEngine`，且 `handleHMRUpdate` 在该模式直接返回。
+
+3. **同时设 `signal` 式思维去猜 timeout**：这里没有 ofetch 那种 timeout 合同。HMR 失效边界是“配置/env 变更会重启 server”，不是整页永远只热替换。
+
+4. **把未测量的启动时间写成事实**：本文没有跑 dev server 或 benchmark，不能比较 [[webpack]] 启动耗时。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 现代前端（React / Vue / Svelte / Solid）从零搭
-- 中小型项目（<5000 文件）追求 dev 启动速度
-- 库项目（lib mode）——直接调 Rollup，输出 ESM/CJS/UMD
-- 想用 Rollup 插件生态又不想自搭 dev server / HMR
+
+- 需要浏览器原生 ESM 开发循环、并以 html 为一等入口的现代前端应用
+- 愿意按 Rolldown 选项（而不是旧 Rollup/esbuild 选项）维护配置
+- Node `^20.19.0 || >=22.12.0`
 
 **不适用**：
-- 超大型 monorepo（10k+ 文件）——原生 ESM 加载几千模块会卡，[[turbopack]] 这类增量缓存更合适
-- Module Federation 微前端 —— 生产级成熟度仍以 webpack 5 为主（Vite 侧多为实验/社区方案）
-- 必须严格 dev/prod 一致 —— 双引擎是已知妥协，dev 过不代表 prod 过
-- 已深度魔改多年的 webpack 项目 —— 切换成本常高于收益
 
-## 历史小故事（可跳过）
+- 必须让 dev 与 prod 走完全同一套打包图——默认 transform 与生产 Rolldown 仍是两条路径
+- 已经打开 `experimental.bundledDev` 并依赖旧 `handleHotUpdate` 传播——固定源码里该模式的 HMR 钩子仍是 TODO
+- 不能接受 Rolldown 作为发布依赖，或必须停留在旧 Node 20.18 及以下
+- 需要把启动耗时或 HMR 延迟写成保证——本文没有运行证据
 
-- 2019：[[snowpack]] 等先试「dev 不打包」，证明浏览器原生 ESM 可行，但生态与生产管线未成气候
-- 2020：Evan You（Vue 作者）发布 Vite 1.x，把「原生 ESM dev」和「Rollup 生产构建」绑成一条产品线
-- 2021–2022：Vite 2/3 稳住插件兼容与框架适配，Vue 之外的元框架开始迁入
-- 2024 前后：多数新元框架默认 Vite；团队同时推进 [[rolldown]]（Rust）想把 dev/build 引擎统一
+## 固定版本边界
+
+- 本文绑定 `vitejs/vite@de1111ab0be00879b404e7ed3b2a80e264edddc1`，tag 与 package 均为 `8.2.2`。
+- npm `vite@8.2.2` 有 SLSA provenance，但不暴露 `gitHead`；身份以 GitHub tag 与 `packages/vite/package.json` 互证。
+- 发布依赖是 `rolldown`、`lightningcss`、`postcss`、`picomatch`、`tinyglobby`。
+- 本文未安装依赖、启动 dev server、跑上游测试或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **「dev 不打包」反直觉但成立**——浏览器原生 ESM 已成熟，让浏览器解 import 图往往比 bundler 重打更快
-2. **dep pre-bundle 是关键妥协**：npm 包仍有 CJS 与海量小文件问题，所以要用 esbuild 预打成单 ESM
-3. **plugin 生态可以「借」**：兼容 Rollup plugin API，立刻获得大量现成插件
-4. **dev/build 双引擎不是 bug**——dev 求快、build 求干净；接受复杂度换性能。HMR 粒度也跟着 ESM module graph 变细
+1. **默认不打包 ≠ 没有打包器**——浏览器解 import 图，Rolldown 负责预构建和生产输出。
+2. **兼容字段会活过真实引擎**——`rollupOptions` / `esbuildOptions` 还在，但 8.2.2 的执行路径已经换了。
+3. **environment 是一等对象**——client 与 ssr 不再共享一份旧的全局 plugin container 语义。
+4. **实验开关会切断旧主链**——`bundledDev` 不是更快的同一条路，而是另一套 DevEngine。
+
+## 应用型自测
+
+1. 固定 8.2.2 里，`optimizeDeps.esbuildOptions` 还会驱动默认预构建吗？
+2. 未设置 `experimental.bundledDev` 时，改 `src/App.ts` 会进入 `BundledDev` 的 `DevEngine` 吗？
+3. 同时写 `build.rollupOptions.input` 与 `build.rolldownOptions.input`，固定实现采用哪一个？
+
+检查点：
+
+1. 不会。预构建调用 `rolldown()`；`esbuildOptions` 已 deprecated。
+2. 不会。默认 `bundledDev` 为 false，走 `transformMiddleware`。
+3. `rolldownOptions`。`rollupOptions` 只是兼容代理，冲突时被忽略。
 
 ## 延伸阅读
 
-- 官方文档：[vitejs.dev](https://vitejs.dev)（从「为什么 Vite」一节读起）
-- 视频：[Evan You — Vite from 0 to 1](https://www.youtube.com/watch?v=xXrhg26VCSc)（设计动机，约 1 小时）
-- 源码入口：[packages/vite/src/node/server/index.ts](https://github.com/vitejs/vite/blob/main/packages/vite/src/node/server/index.ts)（从 `createServer` 读起）
-- [[rollup]] / [[esbuild]] 文档 —— 分别对应生产打包与依赖预构建
-- [[webpack]] —— 对照阅读，才知道 Vite 解了启动慢 / HMR 慢 / 配置复杂
+- 文档：[vite.dev](https://vite.dev)
+- 固定源码：[vitejs/vite](https://github.com/vitejs/vite) —— 本文绑定提交 `de1111ab0be00879b404e7ed3b2a80e264edddc1`
+- [createServer](https://github.com/vitejs/vite/blob/de1111ab0be00879b404e7ed3b2a80e264edddc1/packages/vite/src/node/server/index.ts)
+- [[webpack]] —— 对照组：先建模块图再输出 chunk
+- [[rolldown]] —— 8.2.2 的发布态打包引擎
 
 ## 关联
 
-- [[webpack]] —— 对照组：启动慢 / HMR 慢 / 配置复杂
-- [[rollup]] —— 生产 build 底层打包器，plugin API 来源
-- [[esbuild]] —— dev 依赖预构建引擎
-- [[turbopack]] —— 增量 bundler，思路与 Vite（unbundled）不同
-- [[snowpack]] —— 更早的「dev 不打包」尝试，有助于理解 Vite 为何胜出
-- [[hmr]] —— 热模块替换；Vite 做到 ms 级单文件粒度
-- [[rolldown]] —— 用 Rust 统一 Vite 引擎的方向
+- [[webpack]] —— 先打包再加载；Vite 默认先加载再按需打包
+- [[rolldown]] —— 预构建与 production build 的实际引擎
+- [[rollup]] —— 旧生产引擎；8.2.2 里只剩兼容选项名
+- [[esbuild]] —— 旧预构建引擎；现为 optional peer
+- [[vitest]] —— 共享 Vite 转换管线的测试运行器
 
 ## 反向链接
 
