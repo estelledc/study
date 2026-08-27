@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "papaparse",
+    "digest_sha256": "a58ff49060983778b2ab9904a0afd75f72cd2a4aefa8461fdba9f1bd3ba8b9ad"
+  },
+  "source_revision": "555c1c1b6175e7a043adf8694983776a1e6fdeeb",
+  "research_input_sha256": "746a602c8f66ddd7026d987a18ef58bba28991e4c9c3c876e95919782db44343",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates streamer selection, worker return contract, chunk gating, delimiter guess, and dynamicTyping whitelist with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "UMD factory, CsvToJson/JsonToCsv, ParserHandle, streamers, and changelog 5.7.0/5.5.5 were inspected; workers and remote downloads were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 5.7.0; Node duplex and browser worker claims stay bounded to this revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}

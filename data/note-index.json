@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -42538,6 +42538,38 @@
       }
     },
     {
+      "id": "projects::exceljs",
+      "area": "projects",
+      "slug": "exceljs",
+      "title": "ExcelJS — 用文档模型和 XForm 读写 xlsx",
+      "description": "绑定 exceljs 4.4.0 的 Workbook、XForm 与流式读写边界",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-markdown-and-parsing",
+        "matched_category": "解析",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/exceljs/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::expo",
       "area": "projects",
       "slug": "expo",
@@ -54312,6 +54344,38 @@
       }
     },
     {
+      "id": "projects::papaparse",
+      "area": "projects",
+      "slug": "papaparse",
+      "title": "Papa Parse — 按输入选择 streamer 的 CSV 解析器",
+      "description": "绑定 papaparse 5.7.0 的 parse、unparse、worker 与分块边界",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-markdown-and-parsing",
+        "matched_category": "解析",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/papaparse/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::partykit",
       "area": "projects",
       "slug": "partykit",
@@ -65741,7 +65805,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",
