@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "fast-glob",
+    "digest_sha256": "abb4a50a626c766ce1973b7a494c5f9db9c3ebf1754d2f202ec7cf22c7550d9f"
+  },
+  "source_revision": "48687898dd26d4e935a0e5ecf6720e7c5aeac15d",
+  "research_input_sha256": "c02ee2b2c31a6090d54927e77ef4b175dce53b1f5a60a3017846decd671ea45a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ek",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains task split, static versus dynamic readers, onlyFiles default, and !(extglob) versus ignore with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ek",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Settings, taskManager, EntryFilter, DeepFilter, and @nodelib walk; upstream tests and benches were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ek",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to fast-glob 3.3.3; README speed language and merge2 +25% comment are disclosed as unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:15:00.000Z"
+}

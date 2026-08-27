@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "globby",
+    "digest_sha256": "f9aebfb5ba0bae8c10b7a74d96a367ffe3cecbd5469b4d1d994bfdd621fc1767"
+  },
+  "source_revision": "46cf13ff8bf5f0e0db96c4985faf83a59d194777",
+  "research_input_sha256": "c02ee2b2c31a6090d54927e77ef4b175dce53b1f5a60a3017846decd671ea45a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ek",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates directory expansion, default-off gitignore, negation-only **/* prepend, and prune-versus-predicate filtering."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ek",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected index.js task split, ignore.js gitignore/global matcher, and utilities isNegativePattern; ava/tsd were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ek",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to globby 16.2.4; Node >=20 ESM and user-level globalGitignore scope are disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:15:00.000Z"
+}

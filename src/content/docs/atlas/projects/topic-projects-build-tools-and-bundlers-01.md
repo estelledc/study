@@ -1,6 +1,6 @@
 ---
 title: "构建工具 / Bundler · 项目 · 第 1 组"
-description: "15 条 构建工具 / Bundler Atlas 分块"
+description: "17 条 构建工具 / Bundler Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,15 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 15 条，稳定上限为 100 条。
+本分块共 17 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Biome — 把 lint、format 和 assist 收进同一个 CLI](/study/projects/biome/) | `biome` | intermediate | UNVERIFIED | 固定版本把 lint、format 和 assist 收进同一条 process_file |
 | [Bun — JS 全能运行时](/study/projects/bun/) | `bun` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | `esbuild` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [fast-glob — 先拆任务再走路的 Node glob](/study/projects/fast-glob/) | `fast-glob` | intermediate | UNVERIFIED | 固定版本把 pattern 收成 base 任务，动态走 walk、静态走 stat |
+| [globby — 在 fast-glob 上面补目录展开和 ignore 文件](/study/projects/globby/) | `globby` | intermediate | UNVERIFIED | 固定版本先读 ignore、再切任务，最后把匹配交给 fast-glob |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | `lightningcss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | `mage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | `nvm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

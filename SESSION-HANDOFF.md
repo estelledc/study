@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EK：fast-glob + globby 静态审查
+
+- supervisor 状态：writer epoch `complete`；本地 review-ready change set 已形成。未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（origin/main，PR #72 merge）。
+- objective：按 PARALLEL writer EK 授权，为 `fast-glob` 与 `globby` 新增源码绑定的 `study-v2` 静态审查页；证据 `STATIC_REVIEW` / `STATIC_ANALYSIS`，验证状态保持 `UNVERIFIED`。
+- scope：两页新正文、2 份 generation 1 receipt、共享审查文档 `docs/glob-source-review-20260827-ek.md`、taxonomy 分配、派生 atlas / note-index / project-standard / site-state、公开计数文案、本交接；2 个 ignored worktree。未安装上游依赖、未跑上游 test / bench、未改政策阈值。
+- activated_by：`explicit-user-instruction-20260827-parallel-writer-ek`。
+- detector fingerprint：仓库无 `fast-glob` / `globby` 页；两库均可固定 npm gitHead 与可达 Git tag。
+- external delta 计数：本轮授权 push + 一个 PR；未授权 merge / deploy。D 轴在 PR 打开后才变化。
+- 已完成切片：
+  1. `fast-glob` 绑定 tag `3.3.3` / `48687898dd26d4e935a0e5ecf6720e7c5aeac15d`（与 npm `gitHead` 一致），写清 task 切分、静态/动态 reader、`onlyFiles` 默认与 `!(extglob)` 边界。
+  2. `globby` 绑定 annotated tag `v16.2.4` peel / `46cf13ff8bf5f0e0db96c4985faf83a59d194777`（与 npm `gitHead` 一致），写清目录展开、默认关闭的 gitignore、否定-only 预置 `**/*`、predicate 与 prune 分工。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生索引按命令重生成。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest 一致、evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:site-state` / `audit:project-standard` 以命令为准。`verify:ci` 在首个 commit 之后跑。
+- budget：2 个小型 blob-filtered worktree + 2 页新建静态审查；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一个 PR 已打开且未 merge 后停止。不开下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

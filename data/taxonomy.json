@@ -1964,12 +1964,20 @@
       "topic_id": "projects-image-processing-and-canvas"
     },
     {
+      "note_id": "projects::fast-glob",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::fastify",
       "topic_id": "projects-web-frameworks"
     },
     {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::globby",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::got",
