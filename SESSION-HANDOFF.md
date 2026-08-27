@@ -15,7 +15,11 @@
   1. `apollo-client` 绑定 `@apollo/client@4.2.12` / `a4a170f1...`（npm `gitHead` 与 tag 解引用一致）。写清必填 `cache`+`link`、默认 `cache-first`/`errorPolicy: none`、`client.query` 拒绝 `cache-and-network`、默认 identify `__typename:id|_id`、`CombinedGraphQLErrors`。
   2. `urql` 绑定 `urql@5.0.4` / `1eb11fcd...`（工作区 `@urql/core@6.0.3`；core tag `d510a9a1...` 为祖先）。写清必填 `exchanges`、document cache `Operation.key`、`__typename` 失效与 `additionalTypenames`、`useQuery` 元组、`preferGetMethod: within-url-limit`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生计数 projects 961→963，`benchmark-aligned` 20→22，v2 89→91。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:wikilinks` / `audit:site-state` / `git diff --check` 通过。`verify:ci` 在开 PR 后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs` 与 `--changed-from 042f60a8a6c2673168c406b6956d51523cc6420f`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:counts` / `audit:content-contract`（v2=91, blocking 0）/ `audit:project-standard`（aligned=22, snapshot CURRENT）/ `audit:wikilinks` / `audit:site-state` / `git diff --check` 通过。
+  - `STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`：首次因本机缺 Playwright Chromium 停在 a11y；补装浏览器后 23/23 a11y 通过，Pages/Atlas/site budget 与 diff 门禁通过。strict build 与此前审计已在同一次 verify 前半段通过。
 - budget：2 个 blob-filtered worktree + 2 页新建；单 writer。
 - blocker：merge / deploy 未授权。`benchmark-site --compare` 的 tracked_files 超限是 main 既有 detector，本轮未改 baseline。
 - stop conditions：本轮写入结束；不自合并。
