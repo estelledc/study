@@ -11102,6 +11102,26 @@
       ]
     },
     {
+      "slug": "lowlight",
+      "title": "lowlight — 把 highlight.js 的染色结果收成 hast 树",
+      "source": "https://github.com/wooorm/lowlight",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "lsd",
       "title": "lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）",
       "source": "https://github.com/lsd-rs/lsd",
@@ -18174,27 +18194,23 @@
     },
     {
       "slug": "shiki",
-      "title": "shiki — 把 VS Code 那套染色搬到网页上",
+      "title": "shiki — 用 VS Code 那套 TextMate 语法给网页代码上色",
       "source": "https://github.com/shikijs/shiki",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "shotcut",

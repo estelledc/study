@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "shiki",
+    "digest_sha256": "c83bcae9cade3ebed6a62cce51b92607d5d12f9811baeabb7482e1b05191b477"
+  },
+  "source_revision": "48cd2cc695ed2e3357c3f9c370578ea843d6d9a3",
+  "research_input_sha256": "e1bb5ddd651a3df144ca0898c91a45d6e48f08ac2af1376f7c4975c3cfb2860e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gr",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates full-bundle shorthand, core engine choice, special langs, dual-theme CSS vars, and v3 notation."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gr",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Inspected bundle-full, core highlight/HAST, both regex engines, and transformer notation; tests and WASM were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gr",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to shiki 4.4.3 tag peel 48cd2cc6; npm has no gitHead; bundle/perf numbers are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:45:00.000Z"
+}

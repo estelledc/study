@@ -67,7 +67,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 可观测 / 性能 | Observability and Performance | 12 | [第 1/1 组](/study/atlas/projects/topic-projects-observability-and-performance-01/) |
 | 数据应用 / SaaS | Data Applications and SaaS | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-data-applications-and-saas-01/) |
 | 基础组件 / Headless UI | Headless UI Components | 2 | [第 1/1 组](/study/atlas/projects/topic-projects-headless-ui-components-01/) |
-| Markdown / 解析 | Markdown and Parsing | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-markdown-and-parsing-01/) |
+| Markdown / 解析 | Markdown and Parsing | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-markdown-and-parsing-01/) |
 | 图像处理 / Canvas | Image Processing and Canvas | 58 | [第 1/1 组](/study/atlas/projects/topic-projects-image-processing-and-canvas-01/) |
 | CSS / 样式 | CSS and Styling | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-css-and-styling-01/) |
 | CLI / 命令行工具 | CLI Tools | 69 | [第 1/1 组](/study/atlas/projects/topic-projects-cli-tools-01/) |
