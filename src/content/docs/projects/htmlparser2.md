@@ -1,6 +1,6 @@
 ---
 title: htmlparser2 — 用回调与启发式补洞的流式 HTML/XML 解析器
-description: 介绍 htmlparser2 12.0.0 如何用 Tokenizer、Parser 回调和 openImpliesClose 组织流式解析，并区分 DOM helper 与 WHATWG 树构建。
+description: 介绍 htmlparser2 如何用 Tokenizer、Parser 回调和 openImpliesClose 组织流式解析，并区分 DOM helper 与 WHATWG 树构建。
 来源: https://github.com/fb55/htmlparser2
 日期: 2026-08-27
 分类: Markdown / 解析

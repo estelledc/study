@@ -1,6 +1,6 @@
 ---
 title: parse5 — 按 WHATWG 插入模式建树的 HTML 解析器
-description: 介绍 parse5 8.0.1 如何用 Tokenizer、插入模式和 tree adapter 做出与浏览器同款的 HTML 文档树。
+description: 介绍 parse5 如何用 Tokenizer、插入模式和 tree adapter 做出与浏览器同款的 HTML 文档树。
 来源: https://github.com/inikulin/parse5
 日期: 2026-08-27
 分类: Markdown / 解析
