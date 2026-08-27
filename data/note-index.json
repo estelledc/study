@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2050,
+      "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 967,
+        "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -40956,6 +40956,37 @@
       }
     },
     {
+      "id": "projects::dotenv-expand",
+      "area": "projects",
+      "slug": "dotenv-expand",
+      "title": "dotenv-expand — 先展开、再求值、必要时才解密",
+      "description": "固定 1000.0.0 不再自己实现展开算法，而是编排已存在环境变量、primitives 与写回目标。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/dotenv-expand/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::dovecot",
       "area": "projects",
       "slug": "dovecot",
@@ -56909,6 +56940,37 @@
       }
     },
     {
+      "id": "projects::rc9",
+      "area": "projects",
+      "slug": "rc9",
+      "title": "rc9 — 用 key=value 读写点号嵌套的 RC 文件",
+      "description": "固定 3.0.1 把 .conf 解析成嵌套对象，并区分弃用的家目录 API 与 XDG ~/.config。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/rc9/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::react",
       "area": "projects",
       "slug": "react",
@@ -65837,7 +65899,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/",
-      "entries": 44
+      "entries": 46
     },
     {
       "id": "topic-projects-internationalization-01",

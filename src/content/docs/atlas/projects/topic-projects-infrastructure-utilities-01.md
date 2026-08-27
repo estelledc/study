@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -22,6 +22,7 @@ sidebar:
 | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | `cri-o` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | `ctranslate2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | `doris` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [dotenv-expand — 先展开、再求值、必要时才解密](/study/projects/dotenv-expand/) | `dotenv-expand` | beginner | UNVERIFIED | 固定 1000 |
 | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | `dovecot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) | `edgedb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [FAISS — 向量检索的标准件库](/study/projects/faiss/) | `faiss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -46,6 +47,7 @@ sidebar:
 | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) | `postal` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | `prefect` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | `ray` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [rc9 — 用 key=value 读写点号嵌套的 RC 文件](/study/projects/rc9/) | `rc9` | beginner | UNVERIFIED | 固定 3 |
 | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) | `redash` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) | `rethinkdb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) | `risingwave` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

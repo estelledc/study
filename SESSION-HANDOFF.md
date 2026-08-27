@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GV：rc9 + dotenv-expand
+
+- status：`running` → writer epoch 本地切片完成；授权范围内形成单 PR，不 merge。
+- 起始 ref：`1ecba4040`（`origin/main`）。
+- objective：把用户指定的 env-config 双子 `rc9` 与 `dotenv-expand` 做成源码绑定的 study-v2 页；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/env-config-source-review-20260827-gv.md`、2 份 generation 1 receipt、taxonomy 两条 assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未执行 command substitution 或解密。
+- activated_by：`explicit-user-parallel-writer-gv-2026-08-27`。
+- detector fingerprint：`origin/main` 无 `rc9` / `dotenv-expand` 项目页；用户明确指定该对，并允许 fallback 到其他 env-config 页。两仓 tag / npm `gitHead` / package 版本均内部一致，因此未走 fallback。
+- external delta：用户授权 push + 单 PR；未 merge、未 deploy。D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `rc9` 绑定 `unjs/rc9@3df7dc63...` / `3.0.1`，纠正默认 `.conf`、`destr`/`unflatten`、`defu` 合并方向，以及弃用 `readUser`（家目录）与 `readUserConfig`（`~/.config`）的目录差。
+  2. `dotenv-expand` 绑定 `dotenvx/dotenv-expand@0d8c9260...` / `1000.0.0`，纠正 canonical remote 迁移、`expand()` 不读盘、已存在 env 短路、顺序敏感的 `runningParsed`，并披露 `@dotenvx/primitives` 仅被 bundle。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：blocking 0。
+  - `audit:counts` 与 `audit:site-state`：与当前内容文件一致。
+  - `verify:ci`：推送后在规范 Node 下跑。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码页 + 派生刷新；单 writer。
+- blocker：规模 baseline 处置仍需 owner；本轮未改 baseline / 阈值。
+- stop conditions：本轮以单 PR 为止；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 给出 merge/新目标。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

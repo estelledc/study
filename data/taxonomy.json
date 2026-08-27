@@ -1908,6 +1908,10 @@
       "topic_id": "projects-documentation-sites"
     },
     {
+      "note_id": "projects::dotenv-expand",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::drizzle",
       "topic_id": "projects-orm-and-database-clients"
     },
@@ -2334,6 +2338,10 @@
     {
       "note_id": "projects::ramda",
       "topic_id": "projects-general-developer-tools"
+    },
+    {
+      "note_id": "projects::rc9",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::react",
