@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2052,
-      "classified": 2005,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
-      "unknown_difficulty": 1972,
-      "empty_description": 1967
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 969,
-        "classified": 941,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
-        "unknown_difficulty": 958,
-        "empty_description": 954
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -46264,8 +46264,8 @@
       "area": "projects",
       "slug": "jest",
       "title": "Jest — 一个包就能跑 JS 测试的全家桶",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "把 runner、断言、mock 和快照收进同一 CLI 的 JavaScript 测试框架",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-testing-and-verification"
       ],
@@ -46276,13 +46276,13 @@
         "raw_category": "测试框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/jest/",
       "atlas": {
@@ -51229,6 +51229,37 @@
       "atlas": {
         "chunk_id": "topic-projects-infrastructure-utilities-01",
         "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
+      "id": "projects::mocha",
+      "area": "projects",
+      "slug": "mocha",
+      "title": "Mocha — 只负责跑测试的可组合 runner",
+      "description": "只负责跑测试的可组合 JavaScript runner，默认同进程串行，可选子进程并行",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mocha/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
       }
     },
     {
@@ -66117,7 +66148,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-testing-and-verification-01/",
-      "entries": 6
+      "entries": 7
     },
     {
       "id": "topic-projects-ui-and-frontend-frameworks-01",
