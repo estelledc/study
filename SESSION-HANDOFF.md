@@ -15,7 +15,12 @@
   1. `victory` 绑定 `FormidableLabs/victory@d9d9ca2d...` / `37.3.6`；npm 无 `gitHead`，以 GitHub tag 为准。
   2. `nivo` 绑定 `plouc/nivo@a2d9dab8...` / `@nivo/core@0.99.0` 与 `@nivo/bar@0.99.0`；tag 与 npm `gitHead` 一致。
   3. 新增 `docs/react-viz-source-review-20260827-ct.md` 与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate.mjs`；receipt digest 与 revision 一致；`verify:ci` 以 PR 记录为准。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（strict build 2286 HTML、2285 sitemap URLs、23 Playwright tests）。
+  - `audit:project-standard`：`benchmark-aligned=22`、`needs-evidence=940`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=91`、`legacy-unverified=1954`、blocking 0。
 - budget：2 页 / 1 个 writer / 1 个 PR / 不 merge。
 - stop conditions：本轮只待 review；merge 与 deploy 需单独授权。
 - 下一次 wake 条件：PR review / CI 变化，或 owner 新授权。
