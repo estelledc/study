@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BI：dnd-kit + hello-pangea-dnd
+
+- status：`running` → writer epoch complete；等待 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把 drag-drop 双子绑定到可达静态 revision：`dnd-kit` rewrite `@dnd-kit/react@0.5.0`，以及 `@hello-pangea/dnd@18.0.1`。
+- scope：两篇项目页、两份 generation 1 receipt、共享 `docs/drag-drop-source-review-20260827-bi.md`、taxonomy/atlas/site-state/handoff；未安装上游依赖、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-request-20260827-parallel-writer-bi`。
+- detector fingerprint：`dnd-kit` 仍是 6.x `DndContext` 旧教程且无 trust/receipt；`hello-pangea-dnd` 页面不存在；开放 PR 未占用这两个 slug。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；授权形成 1 个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `dnd-kit` 绑定 `clauderic/dnd-kit@cc98bdd52c06e55221e8cf77aaa0c2ec0f55b86f` / `0.5.0`，纠正旧 `@dnd-kit/core` 6.x API。
+  2. 新增 `hello-pangea-dnd`，绑定 `hello-pangea/dnd@410173402853654f64436d116d68e3f89359d496` / `18.0.1`，并披露 npm `gitHead` 是 tag 父提交。
+  3. 共享审查记录与两份 STATIC_REVIEW / UNVERIFIED receipt；项目审计 `benchmark-aligned=20`、`needs-evidence=942`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:counts` / `audit:content-contract` / `audit:site-state`：projects=962、v2=89、blocking 0。
+- budget：2 页静态源码迁移 + 1 个新 slug；单 writer。
+- blocker：未跑 `verify:ci` 前不得宣称全绿；不 merge。
+- stop conditions：需要猜测 revision、把静态阅读写成运行成功、或要求 merge/deploy 时停止。
+- 下一次 wake 条件：PR CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

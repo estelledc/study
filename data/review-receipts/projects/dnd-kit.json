@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "dnd-kit",
+    "digest_sha256": "758c83e92450c53d8f4c41a610d4822985ed53773cfc9373b59410e158b11675"
+  },
+  "source_revision": "cc98bdd52c06e55221e8cf77aaa0c2ec0f55b86f",
+  "research_input_sha256": "bbe381d62dcce934d84c559ee5ce8a90f590acf1fe9af99236d088cfe5a8e698",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bi",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains rewrite vs @dnd-kit/core 6.x, DragDropProvider, sensors, collision default, and helpers.move."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bi",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned cc98bdd5 / @dnd-kit/react@0.5.0; Pointer/Keyboard defaults, event order, and a11y plugin were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bi",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Does not treat still-published @dnd-kit/core@6.3.1 as this checkout; no bundle or runtime claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}
