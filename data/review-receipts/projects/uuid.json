@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "uuid",
+    "digest_sha256": "f00b0949427c44b2c96a7ec864d365c54909a3a7f3fb647471c357e9fc7c5279"
+  },
+  "source_revision": "fd59f0277549d22cc7ec00a7b3b5c9bccb4d3c1d",
+  "research_input_sha256": "4ff56f3b182e0e24d497d31e081e388646fe24ea2aa42554b9bf624cced9ddef",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates native randomUUID fast path, shared rng buffer, and v7 monotonic state."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "v4/v7/v1/rng/stringify/parse/validate were inspected; upstream tests and bundles were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Version and Node-support claims are bounded to uuid 14.0.2; insertion and throughput need target measurements."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:37:00.000Z"
+}
