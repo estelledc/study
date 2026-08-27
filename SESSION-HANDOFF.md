@@ -15,7 +15,12 @@
   1. `rxjs` 绑定 `ReactiveX/rxjs@e5351d02...` / `7.8.2`，写清 subscribe 启动、unsubscribe≠complete、`switchMap`/`mergeMap`/`shareReplay` 默认值。
   2. `redux-observable` 绑定 `a544c2d6...` / `3.0.0-rc.3`，写清 `run` 安装、reducer 先行、`ofType`+`isAction`、`mergeMap` 叠 run。
   3. 新增共享审查记录与两份 generation 1 static receipt；项目审计 `benchmark-aligned` 18→20。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 一致；`audit:content-contract` 0 blocking。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking，projects `v2` 前进到 89。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下全绿，含 388 Node tests、23 Playwright tests、strict build、Pages/Atlas/站点预算。
 - budget：2 个内容切片 + 1 个派生/文档切片；单 writer；1 个 PR。
 - blocker：上游测试与真实 store 未跑；redux-observable 仍是 RC。
 - stop conditions：本 epoch 已完成；不得 merge。
