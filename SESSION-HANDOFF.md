@@ -15,7 +15,7 @@
   1. `sass` 绑定 lightweight tag `1.103.1` → `62243d455aa1d2ac7462e4c0ddda964ffbc82363`（与 npm `sass@1.103.1` `gitHead` 一致）。
   2. `postcss` 绑定 annotated tag `8.5.26` → `07b25773f38f77919f2af02ae3e8896b0deb5988`（与 npm `postcss@8.5.26` `gitHead` 一致）。
   3. 新增共享审查文档与两份 generation 1 static receipt。
-- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest / revision / research-input 一致，evidence state `UNVERIFIED`。其余以本分支 `verify:ci` 为准。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest / revision / research-input 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci` 全绿：388 Node tests、2287 HTML / 2286 sitemap URLs、23 Playwright a11y。
 - budget：1 个可写切片。
 - blocker：无本对 slug 冲突；并行 PR 会在派生文件上冲突，内容页与 receipt 不重叠。
 - stop conditions：已形成单一 PR；不 merge。
