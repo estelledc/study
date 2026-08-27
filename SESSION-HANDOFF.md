@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer FG：scule + change-case 静态审查
 
-- supervisor 状态：writer epoch `complete`；本地 review-ready change set 待 push / PR。未 merge、未 deploy。
+- supervisor 状态：writer epoch `complete`；分支已 push，PR 已开。未 merge、未 deploy。参阅 `AGENTS.md`。
 - 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（当时 `origin/main`）。
 - objective：按用户指定目标把 `scule` 与 `change-case` 做成源码绑定的 `study-v2` 项目页；证据边界为 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两页正文、2 份 generation 1 receipt、`docs/string-case-source-review-20260827-fg.md`、atlas / note-index / project-standard / site-state 派生、公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle / locale / 性能。
@@ -15,7 +15,7 @@
   1. `scule` 绑定 annotated tag `v1.3.0` / npm `gitHead` → `90d28593c8426d16beb5dadf3af8d341b6fee107`。
   2. `change-case` 绑定 lightweight tag `change-case@5.4.4` / npm `gitHead` → `8aaff31471c918d3eac2b40939c601bee37375dd`。
   3. 共享审查文档与两份 STATIC_REVIEW receipt；派生索引由命令重写。
-- 验证结果：receipt 与正文 digest / source revision 一致，evidence state `UNVERIFIED`。定向 `quality-gate` 与 `verify:ci` 以随后命令为准。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=1f2917d90180638e3960be37de1a5df6884b989a npm run verify:ci` 全绿。
 - budget：2 个小型 ignored worktree + 2 页静态源码笔记；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一个 PR 打开且未 merge 后停止。不开启下一对研究页。
