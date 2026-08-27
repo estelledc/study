@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "classnames",
+    "digest_sha256": "5da097ec9642cf929ffed1363c45a24d01ab82c93bf7782e776629716acb6af6"
+  },
+  "source_revision": "2e3683264bab067d13938b5eb03a96391a089cb4",
+  "research_input_sha256": "8e703d983989b6fd6bf111951d4d0a8882743f863312ee1897cb74fd5be623d2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-eh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains default parseValue, hasOwn, custom toString, bind lookup, and dedupe set semantics with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-eh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v2.5.1 index/bind/dedupe entry points and tests were inspected; node --test and benches were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-eh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "GitHub v2.5.2 exists but is unpublished on npm; this note is deliberately bounded to reachable 2.5.1."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

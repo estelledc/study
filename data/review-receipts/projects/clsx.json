@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "clsx",
+    "digest_sha256": "33f8104908c14598b28b72acb404f93b03081d0814398e223a72c57cea075cbd"
+  },
+  "source_revision": "925494cf31bcd97d3337aacd34e659e80cae7fe2",
+  "research_input_sha256": "8e703d983989b6fd6bf111951d4d0a8882743f863312ee1897cb74fd5be623d2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-eh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains toVal, lite-only strings, missing toString/dedupe/bind, and application checks without treating README size as measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-eh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v2.1.1 src/index.js, src/lite.js, exports, types, and classnames compat tests were inspected; uvu and bench were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-eh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm gitHead, tag v2.1.1 and master identify the same reachable revision; no provenance conflict."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}
