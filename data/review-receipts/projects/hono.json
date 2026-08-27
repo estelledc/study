@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "hono",
+    "digest_sha256": "d1f52b3b335160e068ea8b25d3492660c7b0d000be879bc3e6c342ec1c0a40dc"
+  },
+  "source_revision": "06880c4a2b04de9dd74217f26dd831209b9c01f1",
+  "research_input_sha256": "b1bc69905bab688aca0af1ef21225949d3f778cdf7584a9275c3a1b7da1aaf92",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-l",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates fetch entry, SmartRouter election, compose fast path, CORS OPTIONS short-circuit, and Node adapter absence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-l",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "hono-base dispatch, SmartRouter lock, presets, CORS, request param types, and adapter tree were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-l",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 4.13.5; bundle size and runtime benchmarks remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}

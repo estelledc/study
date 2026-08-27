@@ -1,154 +1,170 @@
 ---
 title: Elysia — 长在 Bun 上的极致类型安全 Web 框架
-来源: 'https://github.com/elysiajs/elysia + elysiajs.com 官方文档'
+来源: https://github.com/elysiajs/elysia
 日期: 2026-05-30
 分类: web 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/elysiajs/elysia
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e037eca710e7ad193be09cc6615ab0dbe54af914
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.4.30
 ---
 
 ## 是什么
 
-Elysia 是一套**为 Bun runtime 深度优化（Bun-first）**的 TypeScript Web 框架。日常类比：像一台优先适配新款充电桩的电动车——在专属桩上跑得飞快；换旧插座（Node）也能充，但要加转接头，而且拿不到原厂快充红利。
+Elysia 是一个默认优先适配 Bun、并用 TypeBox / Standard Schema 同时约束运行时校验与 TypeScript 类型的 Web 框架。日常类比：它像一台出厂就配专属充电桩的车——在 Bun 上走 `BunAdapter` 和 `listen()`；换到只认 Web 标准的环境，必须改用 `fetch` 出口，不能假装插座还在。
 
 你写：
 
 ```ts
-import { Elysia, t } from 'elysia'
+import { Elysia, t } from "elysia"
 
 new Elysia()
-  .get('/hi/:name', ({ params }) => `hello ${params.name}`,
-       { params: t.Object({ name: t.String() }) })
-  .listen(3000)
-```
-
-`params.name` 在编辑器里直接被推成 `string`，运行时也会先按 schema 校验，再进 handler。一份 schema 同时做了校验 + TypeScript 类型 + OpenAPI 文档三件事。
-
-## 为什么重要
-
-不理解 Elysia，下面这些事都没法解释：
-
-- 为什么 2023–2024 年冒出一堆"Bun-first"框架，老牌 Express 不香了吗
-- 为什么有人不用 zod 改用 TypeBox，schema 库选型背后的取舍
-- 为什么前端能 `import type { App } from './server'` 就拿到全部接口类型，不写一行 codegen
-- 为什么"性能"和"跨 runtime"在 Web 框架里几乎是反义词
-
-## 核心要点
-
-把 Elysia 拆成 **三件事** 看：
-
-1. **方法链注册路由**：`new Elysia().get(...).post(...)` 像往一条传送带上挂工位，每挂一个，框架就把这个路由的类型合并进整个 app 类型里。类比：每加一节车厢，整列火车的乘客名单都自动更新。
-
-2. **TypeBox 做 schema**：写一次 `t.Object({...})`，框架同时拿到 JSON Schema（生成 swagger）+ TypeScript 类型（编辑器推导）+ JIT 校验函数（runtime 拒绝坏请求）。类比：一份图纸同时给工人、税务局和质检员用。
-
-3. **Bun build 时 macro**：build 时 Bun bundler 把 `.derive(...)` 这种链调用直接 inline 进 handler，runtime 没有"中间件遍历"的开销。代价：换到 Node 上跑这一层就失效了。
-
-## 实践案例
-
-### 案例 1：体会"schema 同时是类型"
-
-```ts
-import { Elysia, t } from 'elysia'
-
-new Elysia()
-  .post('/users', ({ body }) => {
-    // 这里 body 已经是 { email: string, age: number }
-    return { ok: true, who: body.email }
-  }, {
-    body: t.Object({
-      email: t.String({ format: 'email' }),
-      age: t.Number({ minimum: 0 })
-    })
+  .get("/hi/:name", ({ params }) => `hello ${params.name}`, {
+    params: t.Object({ name: t.String() }),
   })
   .listen(3000)
 ```
 
-**逐部分**：
+`t` 从 TypeBox 的 `Type` 扩出来。同一份 schema 会在注册时编成校验器；过不了的请求在 handler 前变成 `ValidationError`。
 
-- `t.Object` 写的 schema 既是 runtime 校验，也是编辑器看到的 TS 类型
-- 收到 `{ email: 'xx', age: -1 }` 会被 TypeBox 直接 422 掉，根本进不到 handler
-- 对比 Express：`req.body` 默认是 `any`，要自己挂 zod / joi 再 cast 一次
+## 为什么重要
 
-### 案例 2：登录 + JWT，看 plugin 怎么注入类型
+不理解 Elysia 的 adapter / AOT / schema 分层，就解释不了下面几件事：
+
+- 为什么 `typeof Bun !== 'undefined'` 时默认是 `BunAdapter`，否则是 `WebStandardAdapter`
+- 为什么 WebStandard 上调用 `.listen()` 会直接抛错
+- 为什么 `ELYSIA_AOT=false` 后不再走 `composeGeneralHandler`
+- 为什么旧文把 sucrose 写成 “Bun bundler 把 derive inline 进 handler”
+
+## 核心要点
+
+Elysia 的编译链可以拆成五步：
+
+1. **选 adapter**：构造函数里 `config.adapter` 优先；否则看全局 `Bun`。adapter 负责 `listen` / `stop`、响应映射，以及是否按 Web 标准暴露 `fetch`。
+
+2. **方法链累积类型**：`.get()` / `.post()` / `.use()` / `.derive()` 返回同一个实例家族，把路由、schema、生命周期和推导字段合并进类型参数。
+
+3. **schema 编译**：路由 hook 里的 `body` / `params` / `query` / `headers` 交给 `getSchemaValidator`。输入可以是 TypeBox `TSchema`，也可以是 Standard Schema-like 对象。
+
+4. **AOT 或动态 handler**：`aot` 默认 true，除非环境变量 `ELYSIA_AOT` 等于字符串 `'false'`。AOT 走 `composeGeneralHandler`；关闭后走 `createDynamicHandler`，路由进 `router.dynamic`。
+
+5. **sucrose 只做静态推断**：它把 handler 源码拆开，标记这个函数有没有碰 `query` / `body` / `cookie` 等字段。这是框架自己的编译辅助，不是 Bun bundler macro。
+
+## 实践示例
+
+### 案例 1：schema 先于 handler
 
 ```ts
-import { Elysia, t } from 'elysia'
-import { jwt } from '@elysiajs/jwt'
+import { Elysia, t } from "elysia"
 
 new Elysia()
-  .use(jwt({ name: 'jwt', secret: process.env.SECRET! }))
-  .post('/login', async ({ body, jwt }) => {
-    // jwt 是 plugin 注入的字段，编辑器有提示
-    const token = await jwt.sign({ email: body.email })
-    return { token }
-  }, { body: t.Object({ email: t.String(), pwd: t.String() }) })
+  .post("/users", ({ body }) => ({ ok: true, who: body.email }), {
+    body: t.Object({
+      email: t.String({ format: "email" }),
+      age: t.Number({ minimum: 0 }),
+    }),
+  })
   .listen(3000)
 ```
 
-`.use(jwt(...))` 之后，所有下游 handler 的 `ctx` 里都多了一个类型化的 `jwt` 字段，新人看到自动补全就明白 plugin 在干嘛。
+校验失败时固定 `ValidationError.status = 422`，请求不会进 handler。`age: -1` 会被 TypeBox 校验拒绝；这是运行时合同，不是只靠 TypeScript。
 
-### 案例 3：Eden Treaty——把"接口文档"换成"import 类型"
+### 案例 2：用 `.derive()` 注入字段，而不是外仓 JWT 插件
 
 ```ts
-// server.ts
-const app = new Elysia()
-  .get('/users/:id', ({ params }) => ({ id: params.id, name: 'Alice' }),
-       { params: t.Object({ id: t.String() }) })
-export type App = typeof app
+import { Elysia, t } from "elysia"
 
-// client.ts
-import { treaty } from '@elysiajs/eden'
-import type { App } from './server'
-
-const api = treaty<App>('http://localhost:3000')
-const { data, error } = await api.users({ id: '123' }).get()
-// data 自动是 { id: string, name: string } | null
+new Elysia()
+  .derive(({ headers }) => ({
+    requestId: headers["x-request-id"] ?? "missing",
+  }))
+  .get("/whoami", ({ requestId }) => ({ requestId }))
 ```
 
-服务端类型直接被前端 import，无需 OpenAPI codegen，也不用包一层 router。
+固定源码里 `.derive()` 默认 `as: 'local'`，并作为 transform hook 注册。`@elysiajs/jwt` 不在本仓，本轮未打开，不能把它的 `ctx.jwt` 写成核心合同。
+
+### 案例 3：没有 Bun 时不要调用 `listen()`
+
+```ts
+import { Elysia } from "elysia"
+
+const app = new Elysia()
+  .get("/", () => "hi")
+
+export default app
+```
+
+`WebStandardAdapter.listen` 的实现是抛 `WebStandard does not support listen, you might want to export default Elysia.fetch instead`。Node 或 Edge 上应导出 `app.fetch`，或显式传入实现了 `listen` 的 adapter。本仓 adapter 目录只有 bun、web-standard、cloudflare-worker。
 
 ## 踩过的坑
 
-1. **当 Express 用，连 schema 都不写**：等于把 Elysia 最大卖点关掉，body 又变 any，性能反而被运行时校验拖慢
-2. **在 Node 上跑求"通用性"**：官方有 `@elysiajs/node` adapter，能跑但 macro / JSC 红利基本没了，QPS 常与 Hono 持平甚至更低——花了学习成本却没拿到 Bun 侧收益
-3. **以为 Node 是 drop-in**：要用 Node 必须显式安装 adapter 并在 `new Elysia({ adapter: node() })` 里挂上，不是换个 runtime 命令就完事
-4. **TypeBox 和 zod 两套 schema 共存**：表单层用 zod、API 层用 TypeBox，bundle 翻倍且心智重复，要么统一要么换框架
-5. **单文件 50+ 路由不拆分**：类型层会累积成巨型联合类型，IDE tsserver 容易卡顿，建议按业务用 `.group()` / `.use()` 切片
+1. **把 `.listen(3000)` 当成跨运行时 API**：它只是 `this['~adapter'].listen(this)`。WebStandard 会抛错。
+
+2. **把 sucrose 当成打包器宏**：它分析函数字符串并服务 compose；关掉 AOT 后走动态路由，并不是“换到 Node 就失去 inline”。
+
+3. **不写 schema 还期待运行时拒绝坏数据**：没有 schema 就没有这条校验链；TypeScript 类型也不会凭空出现。
+
+4. **把 Eden Treaty 写进本仓合同**：端到端客户端是独立包，本轮源码树里没有它。
+
+5. **以为默认永远 AOT**：`ELYSIA_AOT=false` 会改走 dynamic handler；生产行为要以启动环境为准。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 新项目愿意押 Bun runtime（个人项目 / 小型创业 / 边缘函数）
-- 强调端到端类型安全，前后端都在 TypeScript 同一仓库
-- 高 QPS 场景（10k+ req/s 的轻量 API 网关）
-- 需要 schema 同时做校验 + OpenAPI 文档
+
+- 新服务可以跑 Bun，并愿意用 `t.Object` 或 Standard Schema 当输入合同
+- 前后端同仓 TypeScript，需要路由类型随着方法链增长
+- 需要框架在校验失败时给出固定 422，而不是把脏数据交给 handler
 
 **不适用**：
-- 生产只能 Node、且你要的是跨 runtime 红利而不是 Bun 峰值——Node adapter 可跑，但优势不明显时不如直接用 [[hono]] / [[fastify]]
-- 需要 Spring/Nest 那样的 DI、依赖注入、企业级 plugin 生态
-- 多语言微服务体系，期望 GraphQL 或独立 IDL
-- 团队不熟 TypeScript 类型层，巨型类型会变成读不懂的报错
 
-## 历史小故事（可跳过）
+- 只能在 Node listen，又不想提供自定义 adapter——默认 WebStandard 会拒绝 `listen`
+- 需要本轮未核验的 QPS / TechemPower 数字来证明“比 Express 快”
+- 团队不接受 TypeBox 报错和巨型方法链类型
 
-- **2022 年**：Bun runtime 进入公测，泰国独立开发者 SaltyAom（Athichai L.）开始写 Elysia v0.1，最初只是"在 Bun 上能跑的 Koa-like"
-- **2023 年**：放弃 zod 改用 Sinclair 的 TypeBox，因为 TypeBox 用 JSON Schema 又能直接生成 TS 类型，跟"一份 schema 三处用"的目标更契合
-- **2023 年**：Bun 1.0（2023-09）发布；Elysia 同步走向 1.x，引入 macro 编译期优化，和 Hono 一起常被拿来做 Bun/Edge 选型对照
-- **2024–2025 年**：Eden Treaty 走向稳定，端到端类型安全成主推卖点；随后补上 Node 等 adapter，但仍明确 Bun-first，社区 plugin 远小于 Express 阵营
+## 固定版本边界
+
+- 本文绑定 `elysiajs/elysia@e037eca7...`，tag `1.4.30`、package 与 npm `gitHead` 均为同一提交。
+- 默认 `aot: env.ELYSIA_AOT !== 'false'`，`nativeStaticResponse: true`，`encodeSchema: true`，`normalize: true`。
+- `ValidationError.status` 固定为 422；WebStandard 的 `listen` 固定抛错。
+- 本文未安装依赖、运行 `test/` 或测量吞吐，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **runtime 决定上限**：框架性能的天花板很多时候不是代码质量，而是底下跑的引擎是 V8 还是 JSC、IO 是 libuv 还是 Zig
-2. **schema 是事实唯一来源**：当你能用一份 schema 同时做校验/类型/文档，开发体验和正确性会齐涨
-3. **method chain + 类型累积** 是另一条端到端类型安全之路，差别只在协议是 REST 还是 RPC
-4. **取舍永远要标量化**：Elysia 用"跨 runtime + 生态"换"性能 + 类型推导"，没有银弹
+1. **默认 adapter 是运行时探测，不是口号**——有 `Bun` 才是 Bun-first；没有就只剩 fetch 出口。
+2. **schema 库和框架是叠在一起的**——`t` 基于 TypeBox，但校验入口也承认 Standard Schema。
+3. **AOT 是框架自己生成函数，不是打包器魔法**——sucrose / compose 都在本仓。
+4. **`.use()` 合并的是另一份 Elysia 或 plugin 函数**——类型累积发生在合并之后，不在外仓插件里凭空出现。
+
+## 应用型自测
+
+1. 全局没有 `Bun` 时，默认 adapter 是谁？对它调用 `.listen(3000)` 会怎样？
+2. `ValidationError` 的默认 HTTP 状态码是多少？
+3. `sucrose` 做的是 Bun bundler inline，还是分析 handler 源码里用了哪些 context 字段？
+
+检查点：
+
+1. `WebStandardAdapter`。`listen` 抛错，应导出 `fetch`。
+2. 422。
+3. 后者。它给 compose 提供字段使用推断。
 
 ## 延伸阅读
 
-- 官方文档：[elysiajs.com](https://elysiajs.com/)（quick start 半小时能过完）
-- 仓库：[elysiajs/elysia](https://github.com/elysiajs/elysia)（看 README + examples 目录最快）
-- TypeBox：[sinclairzx81/typebox](https://github.com/sinclairzx81/typebox)（理解 schema 的灵魂）
-- Bun 性能基准：[bun.sh/docs](https://bun.sh/docs)（看真实 QPS 数字别只信宣传）
-- [[hono]] —— 同阵营但跨 runtime 的兄弟，对照看选型差别更清楚
+- 官方文档：[elysiajs.com](https://elysiajs.com/)
+- 固定源码：[elysiajs/elysia](https://github.com/elysiajs/elysia) —— 本文绑定提交 `e037eca710e7ad193be09cc6615ab0dbe54af914`
+- 对照入口：`src/index.ts`、`src/schema.ts`、`src/sucrose.ts`、`src/adapter/web-standard/index.ts`
+- TypeBox：[sinclairzx81/typebox](https://github.com/sinclairzx81/typebox)
+- [[hono]] —— 同属 TypeScript Web 框架，但入口是跨运行时 `fetch`，schema 不是默认主链
 
 ## 关联
 
