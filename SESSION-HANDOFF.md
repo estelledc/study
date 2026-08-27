@@ -15,11 +15,12 @@
   1. `act` 绑定 annotated tag `v0.2.89` peeled `4f411281417e88660bea1c1a1749aa71ae0bd60f`；纠正硬编码 `node:16-*-slim` 回退、Medium 问卷镜像、本地 cache server、`gh auth token`。
   2. `age` 绑定 lightweight tag `v1.3.1` / `b8564adb6d58329b8a3e267360ca2b0abc4efe1d`；许可改为 BSD-3-Clause；写明 CLI 默认仍是 X25519，`-pq` 才是 ML-KEM-768 hybrid。
   3. 新增 `docs/act-age-source-review-20260827-fc.md` 与两份 STATIC_REVIEW receipt。
-- acceptance checks（定向）：
+- acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两页 `evaluateProjectNote`：`benchmark-aligned`、missing=[]。
   - 两份 receipt：digest / revision 一致，evidence `UNVERIFIED`。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=1f2917d90180638e3960be37de1a5df6884b989a npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（含 23 Playwright a11y）。
 - budget：2 页、单 writer、≤3 切片。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值。派生索引会与平行 writer 冲突，不是本 PR 的 merge 工作。
 - stop conditions：两页已绑定并准备 PR；不 merge、不 force-push main。
