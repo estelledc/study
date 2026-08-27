@@ -49431,7 +49431,7 @@
       "id": "projects::luxon",
       "area": "projects",
       "slug": "luxon",
-      "title": "Luxon — 如果今天重写 Moment 应该长什么样",
+      "title": "Luxon — 用三个不可变类包装 Intl 的日期库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -49444,13 +49444,13 @@
         "raw_category": "projects / 前端工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/luxon/",
       "atlas": {
@@ -60998,7 +60998,7 @@
       "id": "projects::temporal-polyfill",
       "area": "projects",
       "slug": "temporal-polyfill",
-      "title": "temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎",
+      "title": "temporal-polyfill — 在缺原生 Temporal 时提供标准日期类型",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61011,13 +61011,13 @@
         "raw_category": "projects / 工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/temporal-polyfill/",
       "atlas": {

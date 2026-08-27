@@ -1,156 +1,160 @@
 ---
-title: Luxon — 如果今天重写 Moment 应该长什么样
-来源: 'https://github.com/moment/luxon'
-日期: 2026-05-30
+title: Luxon — 用三个不可变类包装 Intl 的日期库
+来源: https://github.com/moment/luxon
+日期: 2026-08-27
 分类: projects / 前端工具库
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/moment/luxon
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 4262a38ded7762e22608a9feb9f117b40d338ced
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.7.2
 ---
 
 ## 是什么
 
-Luxon 是 Moment 团队 2017 年开的"重启项目"——同一拨人、同一个 GitHub 组织（moment/luxon），但**新仓库、新 API、不兼容 Moment**。日常类比：像汽车厂商发现 10 年前的老车型积重难返，干脆另起一条产线，从车架开始重新设计。
+Luxon 是 Moment 团队另开仓库写的不可变 JavaScript 日期库。日常类比：不修旧车，另开一条产线——同一组织，但 API 不兼容 Moment。
 
-具体差别四件事：
+```js
+import { DateTime } from "luxon";
+const a = DateTime.fromISO("2026-05-30");
+const b = a.plus({ months: 1 }).minus({ days: 7 });
+a.toISODate(); // "2026-05-30"
+b.toISODate(); // "2026-06-23"
+```
 
-- **immutable 默认**：`dt.plus({ days: 1 })` 返回新实例，原对象不变（Moment 的 `m.add(1, 'day')` 当场改 m）
-- **IANA 时区走平台 Intl**：不再靠 `moment-timezone` plugin 多带 280 KB 数据，能力来自运行时 ICU
-- **i18n 走平台 Intl API**：locale 数据是浏览器/Node 自带的 ICU CLDR，不进 luxon bundle
-- **三类 immutable class**：DateTime（时间点）、Duration（时间段）、Interval（时间区间）分得很清
-
-bundle ~22 KB（min+gzip），0 runtime 依赖。MIT 协议。
+公开类型拆成 `DateTime`（时间点）、`Duration`（时段）、`Interval`（区间）。时区和 locale 委托给运行时 `Intl`，包本身没有 runtime 依赖。
 
 ## 为什么重要
 
-不理解 Luxon 的设计取舍，下面这些事都没法解释：
+不理解固定 3.7.2 的合同，下面这些事会对不上：
 
-- 为什么 Moment 团队 2020 年宣布维护模式，却没在 Moment 自己仓库改，而是另开 Luxon
-- 为什么 Luxon 22 KB 同时支持完整 IANA TZ + 任意 locale，比 Moment+plugin 小一个数量级
-- 为什么从 Moment 迁到 Luxon 不是改 import 那么简单——format token 大小写都不一样
-- 为什么 Temporal 标准提案出现后 Luxon 仍在维护——它是过渡期最实用的"准 Temporal"
+- 为什么 `dt.plus({ months: 1 })` 单独写一行看起来“没反应”
+- 为什么 `Duration.fromObject({ months: 1 }).as("milliseconds")` 不是“看起点月份”
+- 为什么 `setZone("Asia/Shanghai")` 默认换墙钟、不换瞬时
+- 为什么错误输入常常不抛错，最后 `toISO()` 却是 `null`
 
 ## 核心要点
 
-Luxon 的核心思路可以拆成 **三步**：
+固定版本的主链可以拆成五步：
 
-1. **三个 immutable class 各管一类概念**：DateTime 是"时间点"、Duration 是"时间段（没起点）"、Interval 是"时间区间 [start, end)"。Moment 用一个类塞所有概念，Luxon 让类型系统帮你区分这三件事。
+1. **三个 class 分管三类值**：`DateTime` 是瞬时+zone+locale，`Duration` 存单位计数 object，`Interval` 是一对 DateTime。
+2. **公开变更先 clone**：`plus` / `minus` / `set` / `setZone` / `setLocale` 都走 `clone(...)`。原实例的 `ts` 不变。
+3. **日历加法先改年月再夹日子**：`adjustTime` 先加整年/整月，再用 `Math.min(day, daysInMonth(year, month))`，然后才加日/周。1 月 31 日加 1 个月会落到 2 月末，而不是抛错。
+4. **IANA 偏移来自 `Intl`**：`IANAZone.offset` 缓存 `Intl.DateTimeFormat#formatToParts`，从 year/month/hour 反推分钟偏移。库不带 IANA 数据包。
+5. **invalid 默认不抛**：`Settings.throwOnInvalid` 初始未设置。坏输入得到 `invalid !== null` 的对象；后续 `plus`/`set` 直接返回 `this`，`toISO()` 返回 `null`。
 
-2. **chain method 都返回新实例**：所有 `plus / minus / set / setZone / setLocale` 内部都构造一个新 DateTime，原实例不变。类比："存档式编辑"——每改一步都另存为一个新档，原档保留。
+`Duration.as` / `toMillis` 默认走 `casualMatrix`：1 月按 30 天、1 年按 365 天。要格里高利平均值得显式 `conversionAccuracy: "longterm"`。
 
-3. **TZ 数据 + i18n 数据全委托给平台 Intl API**：浏览器和现代 Node 自带 ICU CLDR（IANA 时区数据库 + 所有 locale 字符串），Luxon 自己不带任何这些数据，只调 `Intl.DateTimeFormat.formatToParts` 反推 offset。
+## 实践示例
 
-三步加起来叫 **"借平台之力"**——Luxon 的 22 KB 其实只是一层薄壳，重活儿都被推给浏览器/Node 内置的几 MB CLDR 数据。
-
-## 实践案例
-
-下面三个案例对应核心要点的三步：immutable chain、TZ 走 Intl、Duration 单位计数。
-
-### 案例 1：immutable chain 的样子
+### 案例 1：链式加减必须接住返回值
 
 ```js
-import { DateTime } from 'luxon';
-
-const a = DateTime.fromISO('2026-05-30');
-const b = a.plus({ months: 1 }).minus({ days: 7 });
-
-console.log(a.toISODate()); // '2026-05-30'（原实例没变）
-console.log(b.toISODate()); // '2026-06-23'
+const a = DateTime.fromISO("2026-01-31");
+const b = a.plus({ months: 1 });
+a.toISODate(); // "2026-01-31"
+b.toISODate(); // "2026-02-28"
 ```
 
-`.plus({ months: 1, days: -7 })` 也行，object 参数可以一次传多个单位，比 Moment 的 `add(1, 'month').add(-7, 'day')` 干净。
+`plus` 把 duration-like 交给 `Duration.fromDurationLike`，再 `clone` + `adjustTime`。日子被夹到目标月最后一天。
 
-### 案例 2：时区转换怎么走 Intl
+### 案例 2：`setZone` 默认保瞬时
 
 ```js
-const t = DateTime.fromISO('2026-05-30T10:00', { zone: 'America/New_York' });
-const t2 = t.setZone('Asia/Shanghai');
-// t2 显示的墙钟是 22:00（NY 10:00 = 上海 22:00），同一个瞬时
+const ny = DateTime.fromISO("2026-05-30T10:00", { zone: "America/New_York" });
+const sh = ny.setZone("Asia/Shanghai");
+// 同一 ts，上海墙钟是 22:00
+ny.setZone("Asia/Shanghai", { keepLocalTime: true });
+// 墙钟仍是 10:00，瞬时变了
 ```
 
-逐部分解释：
+`keepLocalTime` 与 `keepCalendarTime` 都从当前本地字段重算 timestamp。默认两者都是 `false`。
 
-- `zone: 'America/New_York'` 创建时就绑 IANA 时区名，数据不来自 luxon bundle。
-- `setZone('Asia/Shanghai')` 默认保留同一瞬时，只换「墙上时钟」怎么显示。
-- 内部调 `Intl.DateTimeFormat(...).formatToParts`，从 year/month/hour 等字段反推 offset。
-- 所以 Luxon 的 TZ 能力 = 平台 ICU；旧环境缺 Intl 时会降级。
-
-### 案例 3：Duration 为什么不是单一数字
+### 案例 3：Duration 换毫秒用的是矩阵，不是锚点
 
 ```js
-import { Duration, DateTime } from 'luxon';
+import { Duration, DateTime } from "luxon";
+Duration.fromObject({ months: 1 }).as("milliseconds");
+// casual：30 * 24 * 60 * 60 * 1000
 
-const d = Duration.fromObject({ months: 1 });
-const start1 = DateTime.fromISO('2026-01-31');
-const start2 = DateTime.fromISO('2026-04-30');
-
-start1.plus(d).toISODate(); // '2026-02-28'（取月末）
-start2.plus(d).toISODate(); // '2026-05-30'
+const start = DateTime.fromISO("2026-01-31");
+start.plus({ months: 1 }).diff(start, "milliseconds").milliseconds;
+// 以这个 DateTime 为锚，2 月实际天数
 ```
 
-"1 个月"在不同起点等于不同天数。所以 Duration 内部存的不是 ms，而是 `{ months: 1 }` 这种"单位计数 object"。换成 ms 必须指定 anchor DateTime。
+没有锚点时，`as` 只是 `shiftTo(unit).get(unit)`。精确跨月要用两个 DateTime 的 `diff`。
 
 ## 踩过的坑
 
-1. **format token 大小写不兼容 Moment**：Luxon 用 Unicode TR35 标准——`yyyy` 不是 `YYYY`、`dd` 不是 `DD`、`HH` 是 24 小时、`hh` 是 12 小时。从 Moment 迁过来 99% 要全文搜索改 token，光改 import 不够。
-
-2. **`Duration.as('milliseconds')` 带 months/years 时是估算**：按 30 天/365.25 天平均算，不是精确值。要精确必须 `start.plus(dur).diff(start, 'milliseconds')` 配合 anchor。
-
-3. **`setZone(zone, { keepLocalTime: true })` 命名违反直觉**：默认 `false` 是"换 zone 看同一个瞬时"，`true` 是"保留墙钟数字、换瞬时"。第一次看 API 几乎所有人都猜反，team code review 时建议强制写注释。
-
-4. **invalid DateTime 不抛错链式继续**：错误输入返回一个 `invalid` 字段非 null 的 DateTime，所有后续 chain method 直接返回 self，最终 `.toISO()` 返回 `null`。这避免链中段炸，但要在用户输入边界查 `dt.isValid`，否则 bug 只在终点暴露。
-
-5. **Interval 是 [start, end) 半开半闭**：和 SQL BETWEEN（闭区间）不一致。`iv.contains(end)` 永远 false。同时用 Luxon 和 SQL BETWEEN 的项目要小心边界值。
+1. **丢掉 chain 返回值**：`dt.plus({ days: 1 })` 不改 `dt`。
+2. **format token 不是 Moment**：Luxon 走 Unicode TR35，`yyyy` / `dd` 不是 `YYYY` / `DD`。
+3. **`Duration.as("milliseconds")` 含月/年时是估算**：默认 30 天/365 天，不是“看哪个月”。
+4. **invalid 会默默传下去**：没开 `Settings.throwOnInvalid` 时，链中段不炸，终点 `toISO()` 才是 `null`。要查 `dt.isValid`。
+5. **`Interval.contains(end)` 为 false**：区间是 `[start, end)`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 业务里 TZ 是日常（航班/跨国会议/多地区排班）——Luxon 内置 TZ 比 dayjs+plugin 干净
-- 多 locale 项目（5+ 语言）——Luxon 不带 locale 数据，bundle 不随 locale 数量增长
-- 新项目无 Moment 历史包袱——可以接受新 API
-- 现代环境（ES2018+ / Node 16+）——Intl 完整支持
+- 需要 IANA 时区和 locale，但能接受数据来自运行时 ICU
+- 想要 DateTime / Duration / Interval 分开，而不是一个 wrapper 包打天下
+- 新项目可以学一套与 Moment 不同的 API
 
 **不适用**：
 
-- bundle 极致敏感（< 5 KB）→ dayjs core 2 KB 更合适
-- 旧环境兼容（IE / 部分小程序宿主 / Node small-icu 构建）→ Intl 缺失，Luxon 降级
-- 已有 Moment 代码要平滑迁移 → dayjs API 几乎兼容 Moment
-- fp 风格强需求（pipe / curry）→ date-fns/fp 友好，Luxon 是 OOP class
+- 只要 Moment 方法名、尽量少改调用 → 看 [[dayjs]]
+- 只要按函数 tree-shake、输入输出都是原生 `Date` → 看 [[date-fns]]
+- 需要规范里的 PlainDate / Instant 分层，而不是一个 DateTime 类 → 看 [[temporal-polyfill]]
+- 要把静态阅读升级成已测 bundle 或跨引擎时区结论
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2011 年**：Tim Wood 写 Moment.js，迅速成 JS 日期事实标准，下载量到亿级
-- **2017 年**：Moment maintainer Isaac Cambron 开 Luxon 仓库，"如果今天重写 Moment 应该长什么样"，开第一 commit 时就定下 immutable + Intl 路线
-- **2020 年 9 月**：Moment 团队官方博客发"项目状态"声明，宣布 Moment 进 maintenance mode，推 Luxon 作为继任者
-- **2022 年**：Luxon v3 发布，ESM-first 大重构，把 CommonJS 路径改成可选
-- **同时期竞品**：dayjs（2018，押 Moment API 兼容 + plugin）和 date-fns（2014，押 function-per-feature + tree-shake）抢走大半市场
-
-到 2024 年 weekly downloads：dayjs 25M、date-fns 25M、Luxon 6M。Moment 团队用一句"feature freeze"承认了输给生态的事实。
+- 本文绑定 `moment/luxon@4262a38ded7762e22608a9feb9f117b40d338ced`。GitHub tag `3.7.2` 与 npm `luxon@3.7.2` 的 `gitHead` 指向同一提交。
+- `engines.node` 为 `>=12`；`package.json` 无 runtime `dependencies`。
+- 未安装依赖、未跑 Jest、未测 `build/global/luxon.min.js` 体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"如果今天重写 X 应该长什么样"是合法项目动机**：同组织、新仓库、不兼容 API。React Native、Vue 3、Python 3 都走过这条路，代价是用户分流和生态重建。Luxon 没赢回 Moment 留下的市场（被 dayjs / date-fns 抢走大半），但它给"重写而非升级"提供了一个工程档案
-2. **借平台标准是减小 bundle 的最强招**：把 280 KB 的 TZ 数据 + 几十 KB 的 locale 委托给平台 ICU，自己只留 22 KB 薄壳。代价是依赖标准实现完整度，旧环境降级——这是"借"的天然约束
-3. **immutable + invalid 兜底是工程友好的两条线**：immutable 解决了 Moment 在 React/Redux 里改原 instance 的 bug，invalid 不抛错让 chain 中段错不炸链。两条加起来让 Luxon 在大型 app 里更不容易踩雷
-4. **Duration 用 object 存而非单一 ms 是必然的**：因为月、年长度不固定，单位计数才能保留语义。这条让 Duration API 比 Moment 复杂（要懂 normalize / shiftTo），但精确度上是对的
+1. **另开仓库可以换合同**：immutable + Intl，不再兼容 Moment 的可变 API。
+2. **借平台标准会把正确性交给 ICU**：IANA 与 locale 跟着宿主，不跟着这一个 npm 包。
+3. **Duration 没有锚点就只能用平均矩阵**：月和年不是固定毫秒。
+4. **invalid 对象是一种错误通道**：它让链不断，也让失败更晚才看见。
+
+## 应用型自测
+
+1. `const dt = DateTime.fromISO("2026-01-31"); dt.plus({ months: 1 });` 之后 `dt` 的日期变了吗？
+2. `Duration.fromObject({ months: 1 }).as("days")` 在默认 casual 矩阵下是 30 还是“看起点月份”？
+3. 未设置 `Settings.throwOnInvalid` 时，`DateTime.invalid("bad").plus({ days: 1 }).toISO()` 返回什么？
+
+检查点：
+
+1. 不会。`plus` 返回新实例；若问加法结果，源码会把日子夹到 2 月末。
+2. 是 30。`as` 走 `casualMatrix.months.days`。
+3. `null`。invalid 的 `plus` 返回自身，`toISO()` 对 invalid 返回 `null`。
 
 ## 延伸阅读
 
-- 官方文档：[moment.github.io/luxon](https://moment.github.io/luxon/) —— Tour / Zones / Formatting / Calendars 四节是入门主路径
-- Moment 维护模式公告：[Moment.js Project Status (2020)](https://momentjs.com/docs/#/-project-status/) —— 团队自己解释为什么不在 Moment 改
-- API 类型对比：[You Don't (May Not) Need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs) —— 同一操作 Moment vs Luxon vs date-fns vs Native 的并排对比
-- ECMAScript Temporal 提案：[tc39/proposal-temporal](https://github.com/tc39/proposal-temporal) —— Luxon 的下一站参考
-- [[dayjs]] —— 同年代押"Moment API 兼容 + plugin"路线的对照组
-- [[date-fns]] —— 同年代押"function-per-feature + tree-shake"路线的对照组
+- 文档：[moment.github.io/luxon](https://moment.github.io/luxon/)
+- 固定源码：[moment/luxon](https://github.com/moment/luxon) —— 本文绑定 `4262a38ded7762e22608a9feb9f117b40d338ced`
+- [[dayjs]] —— Moment 风格 wrapper；plugin 才有自定义解析和时区
+- [[date-fns]] —— 纯函数 + 原生 Date
+- [[temporal-polyfill]] —— 标准 Temporal 类型，Overflow 可 reject
 
 ## 关联
 
-- [[dayjs]] —— 押 Moment API 兼容路线，2 KB core + plugin 化，迁移成本低
-- [[date-fns]] —— pure function 集合，tree-shake 友好，fp 风格首选
-- [[temporal-polyfill]] —— JS Temporal 提案的实验 polyfill；和 Luxon 一样在填「现代日期时间 API」空窗，路线不同
-- [[immer]] —— 同样押 immutable 默认的 JS 库，思路和 Luxon 一脉
-- [[i18next]] —— 多 locale 文本翻译；和 Luxon 的 locale-aware 日期格式化是互补关系
-- [[effect]] —— TS 副作用引擎，invalid 不抛错的链式哲学和 Luxon 的 isValid 兜底有共鸣
-- [[js-joda]] —— 把 java.time 搬进 JS；和 Luxon 同属「强类型日期时间」路线
+- [[dayjs]] —— 链式 API 更像 Moment，时区同样借 `Intl`
+- [[date-fns]] —— 不要 wrapper class，时区在 companion `TZDate`
+- [[temporal-polyfill]] —— 把日期/瞬时/时区拆开，而不是一个 DateTime
+- [[js-joda]] —— java.time 风格的强类型 civil time
 
 ## 反向链接
 
