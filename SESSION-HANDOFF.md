@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Parallel writer AS：Chakra UI + Mantine
+
+- status：writer epoch `complete`；待 PR review，不 merge。
+- 起始 ref：`e20d4ddf`（`origin/main`）。
+- objective：新增 `chakra-ui` 与 `mantine` 两页 study-v2，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。仓库原先没有这两篇笔记；未占用开放 PR slug，也未改 radix/shadcn/antd/mui。
+- scope：两篇新笔记、2 份 generation 1 receipt、`docs/component-library-source-review-20260827-as.md`、taxonomy/atlas/site-state/公开计数、本 handoff；本机 gitignored blob-filtered clone。未安装上游依赖、未跑上游测试/Storybook/bundle。
+- activated_by：`explicit-user-parallel-writer-as-20260827`。
+- detector fingerprint：目标 slug 在 `origin/main` 不存在；开放 PR 已占 radix/shadcn 等，但不含 chakra-ui/mantine。
+- external delta：GitHub metadata 只读核验 + 本地 blob-filtered clone；授权 push + 一个 PR；merge 与 deploy 未授权，D 轴不因 merge 提升。
+- 完成切片：
+  1. `chakra-ui` 绑定 annotated tag `@chakra-ui/react@3.36.1` → `f8133940accf0b7de1f7c9ac4aca37e9be5e2027`。写明 `createSystem`、必填 `ChakraProvider value`、recipe/SVA、Ark Dialog 默认 `lazyMount`/`unmountOnExit`、以及 `_dark` 只认 `.dark`。
+  2. `mantine` 绑定 tag `9.5.2` → `8a284e2c2c53a9cb6f39f5dc389bf41b7a2073f8`。写明 CSS 入口、`createTheme` identity、`mergeMantineTheme`、Styles API、React `^19.2.0` peer，以及 `schemaResolver` 的 Standard Schema 合同。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目审计 18/961 → 20/963。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking / v2=89；`audit:counts` 与 `audit:project-standard` 当前快照对齐。
+- budget：2 个小型 ignored clone + 2 页静态源码写作；单 writer。
+- blocker：上游运行证据不能由静态 review 替代；merge/deploy 需另授权。
+- stop conditions：当前切片已完成；未授权 merge。
+- 下一次 wake 条件：PR review / CI 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci`（规范 Node 22.23.1 / npm 11.17.0）。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

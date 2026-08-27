@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "mantine",
+    "digest_sha256": "1283f647ce154be656b008e542e61cf0f1c4d5568457f3470c987abb9d6002af"
+  },
+  "source_revision": "8a284e2c2c53a9cb6f39f5dc389bf41b7a2073f8",
+  "research_input_sha256": "3a9c75f5e23ab2de8c18564fe8640018808d62ab0600bce35c26c0be9dd60fc5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-as",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains CSS entry, Provider merge, Styles API, React 19.2 peer, and Standard Schema form resolver."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-as",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned mantine@9.5.2 / 8a284e2c; inspected provider, theme merge, Button, useForm. Upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-as",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "createTheme identity and Emotion-not-in-core are disclosed; evidence stays STATIC_REVIEW / UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}
