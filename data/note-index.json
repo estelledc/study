@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -36942,6 +36942,38 @@
       }
     },
     {
+      "id": "projects::bee-queue",
+      "area": "projects",
+      "slug": "bee-queue",
+      "title": "bee-queue — 把延迟升队和 stalled 巡检留给调用方的 Redis 队列",
+      "description": "固定 2.0.0 用一张 jobs hash 加 waiting/active 列表，延迟任务与周期 stalled 检查都不是默认开机项",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-backend-and-apis",
+        "matched_category": "backend api",
+        "raw_category": "backend-api"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/bee-queue/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
       "id": "projects::bentoml",
       "area": "projects",
       "slug": "bentoml",
@@ -37700,6 +37732,38 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::bull",
+      "area": "projects",
+      "slug": "bull",
+      "title": "Bull — Redis 任务队列（维护模式）",
+      "description": "固定 4.16.5 用 Lua 把 wait/active/delayed 状态机收成原子命令，并按 job name 分发处理器",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-backend-and-apis",
+        "matched_category": "backend api",
+        "raw_category": "backend-api"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/bull/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
       }
     },
     {
@@ -65560,7 +65624,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 56
+      "entries": 58
     },
     {
       "id": "topic-projects-blockchain-01",

@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "56 条 后端与 API Atlas 分块"
+description: "58 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 56 条，稳定上限为 100 条。
+本分块共 58 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -18,6 +18,8 @@ sidebar:
 | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | `appwrite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | `asynq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | `axum` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [bee-queue — 把延迟升队和 stalled 巡检留给调用方的 Redis 队列](/study/projects/bee-queue/) | `bee-queue` | intermediate | UNVERIFIED | 固定 2 |
+| [Bull — Redis 任务队列（维护模式）](/study/projects/bull/) | `bull` | intermediate | UNVERIFIED | 固定 4 |
 | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | `bullmq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | `capnproto` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | `celery` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
