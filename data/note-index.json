@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -39375,6 +39375,38 @@
       }
     },
     {
+      "id": "projects::consola",
+      "area": "projects",
+      "slug": "consola",
+      "title": "consola — 把 console 收成可切换 reporter 的 CLI 日志层",
+      "description": "介绍 consola 3.4.2 如何用 level、reporter、throttle 和全局 pause 把 CLI 日志收成一条对象管线。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/consola/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::containerd",
       "area": "projects",
       "slug": "containerd",
@@ -53933,9 +53965,9 @@
       "id": "projects::ora",
       "area": "projects",
       "slug": "ora",
-      "title": "ora — 终端 spinner 用 ANSI 反复擦写同一行",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "ora — 终端 spinner 用同一行擦写加上流拦截",
+      "description": "介绍 ora 9.4.1 如何用 stderr 动画、stdio hook 和 TTY 检测在同一行上画 spinner。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-terminal-tools"
       ],
@@ -53946,13 +53978,13 @@
         "raw_category": "命令行工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/ora/",
       "atlas": {
@@ -65447,7 +65479,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 70
     },
     {
       "id": "topic-projects-communication-and-media-01",

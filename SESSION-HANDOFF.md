@@ -2,6 +2,24 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CX CLI-UX epoch
+
+- status：`running` → writer epoch in progress；目标是本地 review-ready change set + 一个 PR，不自合并。
+- 起始 ref：`042f60a8a`（PR #47 merge 后的 `origin/main`）。
+- objective：把 CLI-UX 双子 `consola` 与 `ora` 绑到可达静态 revision；证据保持 `STATIC_REVIEW` / `UNVERIFIED`。`pino` 已被开放 PR #60 占用，本轮不改。
+- scope：新建 `consola` 页、升级既有 `ora` 页、共享 `docs/cli-ux-source-review-20260827-cx.md`、两份 generation 1 receipt、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未做 TTY/prompt/bundle/性能 benchmark。
+- activated_by：`explicit-user-parallel-writer-cx-20260827`。
+- detector fingerprint：`ora` 为 legacy 教学页，含未绑定下载量、80ms 帧间隔和 stdout 默认假设；`consola` 在 Study 中不存在，无法与 ora 形成源码级 CLI-UX 对照。
+- external_outcome：一个 PR，不 merge、不 deploy；D 轴不提升。
+- acceptance_checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state `UNVERIFIED`
+  - `git diff --check`
+  - `STUDY_CHANGED_FROM=042f60a8a npm run verify:ci`
+- budget：1 对 CLI-UX 页、1 个可写切片、1 个本地 writer、1 个 PR。
+- stop_conditions：slug 与开放 PR 冲突；canonical/revision 不可达；只能放宽门禁才能继续；用户停止。
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

@@ -18,4 +18,4 @@ sidebar:
 | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | `enquirer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | `listr2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | `micro` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | `ora` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ora — 终端 spinner 用同一行擦写加上流拦截](/study/projects/ora/) | `ora` | beginner | UNVERIFIED | 介绍 ora 9 |

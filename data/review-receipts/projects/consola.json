@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "consola",
+    "digest_sha256": "d06aa49b9771f1ba2c2ec0316063c92cdfe9f1f3e7e2565dbc77af4ead2c843a"
+  },
+  "source_revision": "2cfcfc08275d7d2777c11310c9c2deab2a872c41",
+  "research_input_sha256": "1f1da2c040bf3384a985c073c1b88811a9d8f4ab2e09732fac56727f8bd6fda2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Node factory defaults, reporter swap, global pause, and wrapStd type collapse."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "index factory, Consola core, constants, prompt, and Basic/Fancy reporters were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Level, throttle, export map and prompt cancel rules are bounded to consola 3.4.2; Fancy rendering needs a TTY run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:00:38.000Z"
+}

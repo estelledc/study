@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "70 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 70 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -22,6 +22,7 @@ sidebar:
 | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | `bubbletea` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | `clack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | `commander` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [consola — 把 console 收成可切换 reporter 的 CLI 日志层](/study/projects/consola/) | `consola` | beginner | UNVERIFIED | 介绍 consola 3 |
 | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | `curlie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | `delta` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

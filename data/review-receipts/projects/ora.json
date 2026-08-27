@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ora",
+    "digest_sha256": "f870648ce293d581f8a20ed843854d506fa306f2e31f4f460f4c0712b150696d"
+  },
+  "source_revision": "79cd8c15ac34572cffb3ab53e3d4b6bab6d59ea8",
+  "research_input_sha256": "1f1da2c040bf3384a985c073c1b88811a9d8f4ab2e09732fac56727f8bd6fda2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates stderr default stream, silent/disabled start paths, stdio hooks, and oraPromise rethrow."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "index.js constructor, start/render/hook, and oraPromise plus matching tests were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "TTY, interval, concurrent-hook and persist behavior are bounded to ora 9.4.1; visual claims need a terminal run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:00:38.000Z"
+}

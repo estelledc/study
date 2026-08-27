@@ -1,154 +1,174 @@
 ---
-title: ora — 终端 spinner 用 ANSI 反复擦写同一行
+title: ora — 终端 spinner 用同一行擦写加上流拦截
 来源: 'https://github.com/sindresorhus/ora'
-日期: 2026-05-30
+日期: 2026-08-27
 分类: 命令行工具
 难度: 初级
+description: "介绍 ora 9.4.1 如何用 stderr 动画、stdio hook 和 TTY 检测在同一行上画 spinner。"
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/sindresorhus/ora
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 79cd8c15ac34572cffb3ab53e3d4b6bab6d59ea8
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 9.4.1
 ---
 
 ## 是什么
 
-ora 是一个 **Node.js 终端 spinner 库**——`npm install` 时屏幕上那个旋转的小圈圈加 "installing dependencies..."，就是它在工作。日常类比：像**翻页动画书**，每页是一帧字符，快速翻动就出现了"动画"。
-
-终端没法真的翻页，但 ora 用了等价的把戏：**在同一行上反复擦掉再写新内容**。视觉上是动画，本质上是同一行字符串每秒重写十几次。
+ora 是一个 **Node.js 终端 spinner**：在同一行反复擦掉再写下一帧，让“正在做事”变成动画。日常类比：像翻页动画书，但翻页发生在**当前这一行**，而且默认画在 stderr，免得污染 stdout 里的可解析输出。
 
 ```js
-import ora from 'ora';
-const spinner = ora('Loading').start();
-setTimeout(() => spinner.succeed('Done'), 2000);
+import ora from "ora";
+
+const spinner = ora("Loading").start();
+spinner.succeed("Done");
 ```
 
-三行代码出动画。周下载量约 5000 万次，npm install / Vite / 各种 CLI 工具都在用。
+`start()` 在可交互 TTY 上隐藏光标、按 interval 重绘；`succeed()` 停动画，留下 `log-symbols` 的成功符号和一行持久文本。
 
 ## 为什么重要
 
-不理解 ora 这种"在终端做动画"的把戏，下面这些事都没法解释：
+不理解 ora 的启用条件和流拦截，下面这些事都解释不通：
 
-- 为什么 CI 日志里有时会冒出 `\x1B[2K\x1B[1G⠋ Loading...` 这种乱码——spinner 没禁掉
-- 为什么 Ctrl+C 强杀 CLI 后终端光标消失，要敲 `tput cnorm` 才回来——退出钩子没跑
-- 为什么 ora 一行 `.start().succeed()` 能链式写而不会出大段重复代码——API 设计的极简
-- 为什么 spinner 含中文字时偶尔留视觉残影——字符显示宽度算错了
+- 为什么 CI 日志里有时只出现一行 `- Loading`，有时却刷满 ANSI
+- 为什么默认不往 stdout 写，业务 `console.log` 却仍能和动画错开
+- 为什么两个 spinner 同时 `start()` 会警告视觉损坏
+- 为什么 Ctrl+C 时还要处理 stdin discarder，而不只是停 setInterval
 
 ## 核心要点
 
-ora 的核心机制可以拆成 **三件事**：
+固定 9.4.1 的主链在单文件 `index.js`：
 
-1. **回到行首再覆盖**：用 ASCII 控制字符 `\r`（回车不换行）把光标拉回当前行最左边，再写新内容。类比："把笔退回这行开头继续写"。
+1. **默认选项**：`color: 'cyan'`、`stream: process.stderr`、`discardStdin: true`、`hideCursor: true`、`isSilent: false`。未传 `isEnabled` 时用 `isInteractive({stream})`。
 
-2. **擦除整行避免残留**：如果新内容比旧内容短（"Done" 短于 "Loading..."），尾巴会留下来。所以写新帧前先用 ANSI 控制码 `\x1B[2K` 把整行擦干净。类比："拿橡皮擦整行再写新字"。
+2. **帧与间隔**：Unicode 终端默认 `cli-spinners.dots`，否则 `line`。`interval` 取构造选项，否则 spinner 自带 interval，再否则 100ms。`frame()` 按间隔推进帧索引，并用 chalk 给帧上色。
 
-3. **隐藏光标 + 退出恢复**：每帧重写之间光标会闪跳，所以用 `\x1B[?25l` 隐藏开始、`\x1B[?25h` 退出恢复。**必须**注册 SIGINT / SIGTERM 钩子，否则用户 Ctrl+C 后光标永远消失。
+3. **`start()` 分三条路**：`isSilent` 直接返回；未启用时写一行静态 `- text` 加换行；启用时隐藏光标、在 TTY stdin 上启动 `stdin-discarder`、钩住当前 stream 以及 `process.stdout`/`stderr`，再 `setInterval(render, interval)`。
 
-三件事加 cli-spinners 的 80+ 套帧数据集，组成完整 spinner 体验。
+4. **渲染与让路**：TTY 下用 CSI `?2026` 同步输出；内容高于 `stream.rows` 会截断；`write` 返回 false 就等 `drain`。外部 write 先 `clear()` 再放行；不以 `\n`/`\r` 结尾的 chunk 会把重绘推迟 200ms。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：最小三行用法
+### 案例 1：最小用法，默认画在 stderr
 
 ```js
-import ora from 'ora';
-const spinner = ora('Loading unicorns').start();
-await fetchSomething();
-spinner.succeed('Found unicorn');
+import ora from "ora";
+
+const spinner = ora("Loading unicorns").start();
+await doWork();
+spinner.succeed("Found unicorn");
 ```
 
-**逐部分解释**：
+**逐部分**：
 
-- `ora('Loading unicorns')` 构造 spinner 对象，传入文字
-- `.start()` 开始动画——立刻隐藏光标、启动 setInterval 每 80ms 重绘一帧
-- `.succeed('Found unicorn')` 停止动画，把前缀替换成绿色 `✓` 符号留一行
+- `ora(text)` 把字符串收成 `{ text }`；默认 stream 是 `process.stderr`
+- `.start()` 在交互终端开动画；`.succeed()` 走 `stopAndPersist({ symbol: logSymbols.success })`
+- 链式返回 `this`，所以可以 `ora("x").start()`
 
-链式调用：`.start()` 和 `.succeed()` 都返回 this，可以串起来。
-
-### 案例 2：oraPromise 包 promise 自动 succeed/fail
+### 案例 2：oraPromise 包住成功/失败
 
 ```js
-import { oraPromise } from 'ora';
-await oraPromise(fetch('/api/data'), {
-  text: 'Fetching data',
-  successText: 'Got data',
-  failText: 'Network error',
+import { oraPromise } from "ora";
+
+await oraPromise(fetch("/api/data"), {
+  text: "Fetching data",
+  successText: "Got data",
+  failText: "Network error",
 });
 ```
 
-**逐部分解释**：
+**逐部分**：`action` 必须是 Promise 或 `function(spinner)`。resolve 调 `succeed`（或自定义 `successSymbol`），reject 调 `fail` 后**原样再抛**。spinner 只是副作用，错误处理仍归调用方。
 
-- `oraPromise(p, opts)` 内部 `start()` → `await p` → resolve 时 `succeed`、reject 时 `fail` 后 rethrow
-- 省掉手写 try/catch + spinner.fail 的模板代码
-- promise 抛错仍会冒泡，业务可以继续 catch；spinner 只是副作用
-
-### 案例 3：手写最小 spinner（验证你读懂了）
+### 案例 3：非 TTY 时显式关掉动画
 
 ```js
-const frames = ['⠋','⠙','⠹','⠸','⠼','⠴','⠦','⠧','⠇','⠏'];
-let i = 0;
-process.stdout.write('\x1B[?25l');
-const id = setInterval(() => {
-  process.stdout.write('\r\x1B[2K' + frames[i++ % frames.length] + ' Loading');
-}, 80);
-process.on('SIGINT', () => { clearInterval(id); process.stdout.write('\x1B[?25h\n'); process.exit(); });
+const spinner = ora({
+  text: "Building",
+  isEnabled: Boolean(process.stderr.isTTY),
+  stream: process.stderr,
+}).start();
 ```
 
-不到 10 行复刻 ora 的核心。读完 ora 源码后能从零写出这段，就算掌握了。
+**逐部分**：不传 `isEnabled` 时 ora 已用 `is-interactive` 判断。强制 `true` 会在重定向日志里写下 ANSI。`isSilent: true` 则连静态那一行都不写。
 
 ## 踩过的坑
 
-1. **CI 里炸日志**：默认开启时 `process.stdout.isTTY` 在 GitHub Actions / `npm run build > log` 重定向场景下是 undefined，ora v8+ 用 is-interactive 自动退化为只打印不动画，但传 `isEnabled: true` 强制开会污染日志（几十万行 ANSI 字面量）。
+1. **以为默认写 stdout**：9.4.1 默认 stream 是 stderr。把 spinner 和机器可读结果都打到 stdout，会把动画帧和 JSON 缠在一起。
 
-2. **中文 / emoji 多行擦少擦**：spinner.text 含 CJK 或 emoji 时 string-width 偶尔误算字符显示宽度，多行擦除少擦一行，留下视觉残影；解决要让 text 不超过 80 列单行。
+2. **`isEnabled: true` 灌进 CI**：检测被关掉后，每一帧的 CSI/擦行码都会进日志。要动画受环境约束，别覆盖 `isEnabled`，或显式跟 TTY 走。
 
-3. **Ctrl+C 后光标消失**：没用 ora（自己写）忘记注册 SIGINT 钩子，进程被强杀时 `\x1B[?25h` 没跑，用户终端从此看不到光标，要 `tput cnorm` 手动恢复。
+3. **同时 start 两个 spinner**：同一 stream 上已有 hook 时，第二个实例会 `console.warn` 并发损坏。多任务进度应换成 [[listr2]]，或保证同一时间只有一个 ora。
 
-4. **v3 转 ESM 升级地狱**：2019 年 v3 转纯 ESM，CommonJS 项目 `require('ora')` 直接报 ERR_REQUIRE_ESM；社区抱怨数月，但 Sindre 坚持，最终大家集体改 `import`。
+4. **自己写 spinner 却不恢复光标 / 不丢弃 stdin**：ora 默认 `hideCursor` + `discardStdin`。`stop()` 会 `cliCursor.show` 并 `stdinDiscarder.stop()`。手写 interval 忘挂钩子，终端会留下隐形光标或把按键当 stdin 数据。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- CLI 工具显示长任务进度（npm install / build / 上传下载）
-- 交互式脚本里给用户视觉反馈（"正在做事别走开"）
-- 需要标准成功 / 失败 / 警告 / 信息符号的场景（log-symbols 顺带送）
+- Node CLI 里一个长时间任务需要“还在跑”的视觉反馈
+- 希望成功/失败/警告/信息留下一行持久符号
+- 输出主体走 stdout、动画走 stderr 的 Unix 习惯
+- 满足 package 边界：Node >=20，纯 ESM
 
 **不适用**：
 
-- 在 CI / Docker logs / 输出重定向里——除非显式 `isSilent: true` 或 `isEnabled: !!process.stdout.isTTY`
-- 需要进度条而不是不定长 spinner——用 [[clack]] 或 cli-progress
-- 需要多任务并行树状进度——用 [[listr2]]（基于 ora 但管多任务）
-- 写发布到 npm 的库——下游不想吃 ora 的依赖链，可以考虑 yoctospinner（更轻量零依赖）
+- CI / 文件重定向还要强制动画——应保持 `is-interactive` 或 `isSilent`
+- 需要百分比进度条而不是不定长 spinner——换进度条库，不要硬改 ora
+- 多任务并行树——用 [[listr2]]
+- 要给下游库当轻依赖——ora 依赖 chalk、cli-spinners、log-symbols 等一串包；作者另有更瘦的 yoctospinner
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2016 年初**：Sindre Sorhus 首发 ora。他是挪威开源作者，npm 上维护 1100+ 包
-- **2019 年 v3**：转纯 ESM。CommonJS 项目集体崩，社区吵翻，他坚持
-- **2021 年 v5**：彻底放弃 CommonJS 兼容。业内一片抱怨但拥抱 ESM 成定局
-- **2024 年 v8**：现代化 Node 18+，加了更精确的 stdin discarder 防 spinner 期间用户输入污染
-- **2024 年**：Sindre 自己出 yoctospinner——零依赖、< 50KB 的轻量版，引发"ora 全功能 vs 轻量替代"的生态讨论
-
-读 ora 顺带读完 cli-spinners / chalk / log-symbols / cli-cursor / string-width 五个包——它们都是 Sindre 一手维护的小工具家族。
+- 本文绑定 `sindresorhus/ora@79cd8c15...`，即 tag `v9.4.1`，package 版本 `9.4.1`；npm `gitHead` 与 tag 剥开后的提交一致。
+- `color` 只接受 `black/red/green/yellow/blue/magenta/cyan/white/gray` 或 `false`；非法值抛错。
+- 并发 hook 只警告，不阻止第二个 spinner 启动。
+- `oraPromise` 的 `successText` / `failText` 可以是字符串或函数；失败路径重新抛出原错误。
+- 本文未安装依赖、未跑上游测试、未在真实 TTY/CI 对比渲染，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **终端动画 = `\r` + `\x1B[2K` + setInterval** 三件套——不是魔法，是 1970 年代 ANSI 控制码的标准用法
-2. **静默退化是 CLI 工具的基本功**——TTY 检测 / NO_COLOR / isSilent，所有 stdout 副作用必须能被环境关掉
-3. **进程信号必须挂钩子**——SIGINT / SIGTERM / process exit 时恢复光标，否则用户终端废掉
-4. **Sindre 生态 bus factor = 1** 是开源世界结构性风险——商业关键路径建议 fork 或 vendor 关键依赖
+1. **终端动画是擦行 + 定时重写，不是图形 API**——ora 把这件事收成可停、可持久化的对象
+2. **副作用默认走 stderr**，才能保住 stdout 的可解析性
+3. **启用条件必须和环境绑定**：TTY、silent、interactive 是三种不同的“别画动画”
+4. **拦截 stdio 是为了和 `console.log` 共处**，不是为了偷偷丢掉用户输出
+
+## 应用型自测
+
+1. `ora("Loading").start()` 默认往 stdout 还是 stderr 写帧？
+2. `isSilent: true` 时调用 `succeed("done")`，屏幕上会留下成功符号吗？
+3. `oraPromise` 里 promise reject 之后，错误还会抛到外层吗？
+
+检查点：
+
+1. stderr。构造默认 `stream: process.stderr`。
+2. 不会。`stopAndPersist` 在 silent 模式下直接返回，不写持久行。
+3. 会。fail/自定义 failSymbol 之后 `throw error`，spinner 不吞异常。
 
 ## 延伸阅读
 
-- [ora GitHub README](https://github.com/sindresorhus/ora) —— API 全表 + 80+ spinner 名称列表
-- [cli-spinners spinners.json](https://github.com/sindresorhus/cli-spinners/blob/main/spinners.json) —— 所有 spinner 的帧数据
-- [ANSI escape codes Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code) —— `\x1B[2K` 等控制码的历史与完整表
-- [yoctospinner](https://github.com/sindresorhus/yoctospinner) —— Sindre 自己出的轻量替代，对照读两份代码很有收获
+- 官方 README：[github.com/sindresorhus/ora](https://github.com/sindresorhus/ora)
+- 固定源码：[sindresorhus/ora](https://github.com/sindresorhus/ora) —— 本文绑定提交 `79cd8c15ac34572cffb3ab53e3d4b6bab6d59ea8`
+- [cli-spinners](https://github.com/sindresorhus/cli-spinners) —— 帧数据来源
+- [yoctospinner](https://github.com/sindresorhus/yoctospinner) —— 同作者的更瘦替代，对照依赖面
+- [[consola]] —— CLI 日志对象层，和 ora 的单行动画互补
+- [[chalk]] —— ora 给帧上色用的库
 
 ## 关联
 
-- [[chalk]] —— ora 的颜色全靠它，把"加颜色"压成 `chalk.cyan(text)`
-- [[boxen]] —— 同 Sindre 出品，把字符串包进框框，常和 ora 搭配做 CLI 输出
-- [[clack]] —— 现代 CLI prompt 工具集，进度条 / 多步骤场景比 ora 更顺手
-- [[enquirer]] —— 交互式 CLI prompt，spinner 不够时升级到它
-- [[listr2]] —— 基于 ora 做的多任务并行树状进度
-- [[ink]] —— React 渲染到终端，spinner 只是众多组件之一
-- [[commander]] —— Node CLI 框架，常与 ora 一起组成完整 CLI 工具
+- [[consola]] —— 同一层 CLI-UX 的 logger；ora 管动画，consola 管日志对象
+- [[chalk]] —— 给 spinner 帧上色
+- [[listr2]] —— 多任务树状进度，内部可以接 spinner
+- [[boxen]] —— 给终端文本加框，常和 CLI 启动横幅一起用
+- [[commander]] —— 参数解析；长任务 handler 里常配 ora
+- [[clack]] —— 现代 prompt；进度/多步向导比单行 spinner 更合适
 
 ## 反向链接
 
@@ -156,5 +176,6 @@ process.on('SIGINT', () => { clearInterval(id); process.stdout.write('\x1B[?25h\
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[consola]] —— consola — 把 console 收成可切换 reporter 的 CLI 日志层
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
