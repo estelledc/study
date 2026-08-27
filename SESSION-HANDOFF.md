@@ -16,12 +16,12 @@
   1. 用 GitHub/npm 元数据固定 `remy/nodemon@cfebe2fe...` / `3.1.14` 与 `paulmillr/chokidar@c0c8d20e...` / `5.0.0`（tag 与 `gitHead` 一致）。
   2. 写清主链：nodemon 的配置合并、chokidar 3 监听、fork/spawn 与 `SIGUSR2`；chokidar 5 的 `fs.watch`、精确字符串 ignore、atomic / AWF 默认值。
   3. 新增共享审查记录与两份 `STATIC_REVIEW` receipt；atlas / project-standard / site-state 由本轮验证刷新。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt evidence state `UNVERIFIED`。`verify:ci` 尚未在本交接写入时声明。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt evidence state `UNVERIFIED`。规范 Node 22.23.1/npm 11.17.0 下 388 Node tests、repository audits、strict build 2287 HTML / 2286 sitemap URLs、SEO/a11y-static/Pages/Atlas/站点预算通过。本地 `audit:pagefind` 的负向查询 `不存在不存在` 返回 2241（疑似 CJK tokenizer，不是本轮正文引入）；Playwright 浏览器未安装，23 个 a11y 测试未在本机跑完。完整 portable gate 以 PR CI 为准。
 - budget：2 个稀疏本地 worktree + 2 篇新增静态源码页；单 writer。
 - blocker：nodemon 3.1.14 仍依赖 chokidar 3，不能用本页的 5.0.0 合同解释它；上游运行/句柄/CPU 证据不能由静态 review 替代。
 - stop conditions：本 epoch 已收口到 1 个 PR；不自动 merge。
 - 下一次 wake 条件：owner review，或另授 merge / deploy。
-- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- 下一条命令：查看 PR #148 的 `verify:ci`；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
