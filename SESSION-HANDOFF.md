@@ -16,7 +16,7 @@
   1. 只读核验 `WiseLibs/better-sqlite3@dbc2ea1165...` / `13.0.3` 与 `knex/knex@e25d54bc...` / `3.3.0`。
   2. 新增两页与共享 provenance 文档，receipt evidence state 为 `UNVERIFIED`。
   3. 将两页编入 `projects-orm-and-database-clients`，刷新派生 atlas / site-state。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt 与正文 digest / revision 一致；`audit:counts` 与 `audit:content-contract --changed-from` 无 blocking。全量 `verify:ci` 在 PR 上继续跑。
+- 验证结果：规范 Node 22.23.1 / npm 11.17.0 下 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿。两页 quality-gate 通过、0 advisory；receipt evidence state 为 `UNVERIFIED`；content-contract blocking 0。未 merge。
 - budget：2 个 ignored worktree + 2 页静态源码新建；单 writer。
 - blocker：上游运行证据不能由静态 review 替代；未获 merge 授权。
 - stop conditions：writer epoch 已完成；不自动 merge。
