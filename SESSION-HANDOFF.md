@@ -4,21 +4,28 @@
 
 ## 2026-08-27 Parallel writer BO：gRPC-Go + Connect-ES
 
-- supervisor 状态：writer epoch complete；等待 review，不 merge。
+- supervisor 状态：writer epoch complete；PR #92 待 review，不 merge。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：`63de45c9eb74f3ea40fb158405da6b68ab0bdec1`。
 - objective：把 `grpc-go` 与 `connect-rpc` 迁到 pinned `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2，第二页按指令绑定 connect-es。
 - scope：两篇项目页、两份 generation 1 receipt、`docs/rpc-source-review-20260827-bo.md`，以及 atlas / note-index / site-state / project-standard / 本 handoff 的确定性派生。
 - activated_by：explicit parallel writer BO（2026-08-27）。
 - detector fingerprint：两页教学骨架完整但缺 pinned revision；`connect-rpc` 仍指向 connect-go 且例子停在已删除的 `createPromiseClient`；`grpc-go` 仍把 `Dial` / `WithInsecure` / keepalive 10s 写成当前默认。
-- external delta 计数：GitHub/npm 只读核验 + 本地 blob-filtered clone；未 merge、未部署，D 轴不变。
+- external delta 计数：GitHub/npm 只读核验 + 本地 blob-filtered clone + 已开 PR；未 merge、未部署，D 轴不变。
 - 已完成切片：
   1. `grpc-go` 绑定 `grpc/grpc-go@030ee8bec...` / `1.83.2`，纠正 NewClient、显式凭据、keepalive 地板和 4MiB 接收上限。
   2. `connect-rpc` 改绑 `connectrpc/connect-es@104238c58...` / `2.1.2`，纠正 v2 客户端工厂、`*_pb` 生成物、web JSON / Node 二进制默认分叉。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt digest 已写入。`verify:ci` 在本提交之后跑。
+- 验证结果：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt digest / source revision 匹配，`STATIC_REVIEW`，evidence state 为 `UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `audit:content-contract`：projects `v2=20`、`legacy-unverified=941`、blocking 0。
+  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿；388 Node tests、strict build、2285 HTML / 2284 sitemap URLs、23 Playwright tests、Pages/Atlas/site budget 与 diff 门禁通过。
+  - 构建冒烟：`dist/projects/{grpc-go,connect-rpc}/index.html` 可见标题、固定 revision 与 `UNVERIFIED`。
 - budget：2 页、单 writer、1 个 PR；不 merge。
-- blocker：上游运行证据不能由静态 review 替代。
+- blocker：上游运行证据不能由静态 review 替代；merge/deploy 需另授。
 - 下一次 wake 条件：PR review 完成或 owner 另授 merge/deploy。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：在 https://github.com/estelledc/study/pull/92 做 review；未另授前不要 merge。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
