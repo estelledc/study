@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sentry-javascript",
+    "digest_sha256": "bbb13cbb5e4cb11dbb940eb9922b3f8d48c42e85ea5e75b4e47d8c940365abb1"
+  },
+  "source_revision": "9fcb0635f0152ad1eef35388abbbf276b1e23484",
+  "research_input_sha256": "aaf2531b490ed5a6c31c1bd7acf2d6e26e2848da089d485c485a1a90e96928e1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-g",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains init, three scopes, capture-before-send, beforeSend/sampleRate order, and browser vs Node assembly with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-g",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected core sdk/exports/scopes/client/prepare path plus browser, node, and react init; upstream tests and ingest were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-g",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Claims are bounded to tag 10.71.0; npm packages have no gitHead, so provenance is the GitHub release commit."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
