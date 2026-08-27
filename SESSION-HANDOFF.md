@@ -4,7 +4,7 @@
 
 ## 2026-08-27 序列化双子 superjson / devalue（writer CM）
 
-- status：writer epoch `running`；待定向验收与 PR review，不 merge。
+- status：writer epoch `complete`；待 PR review，不 merge。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
 - objective：为目录中缺失的 serialize 双子 `superjson` 与 `devalue` 绑定可达固定 revision，证据上限 `STATIC_ANALYSIS` / `UNVERIFIED`。
 - scope：两篇新项目页、2 份 generation 1 receipt、`docs/serialize-source-review-20260827-cm.md`、taxonomy 两条 assignment、派生 atlas / site-state / 公开计数、本交接记录。
@@ -15,12 +15,13 @@
   1. `superjson` 绑定 `ravionhq/superjson@4e708c11...` / `2.2.5`，写清 json+meta walker、默认单例 registry、class 不跑构造函数，并披露 npm `2.2.6` gitHead 不可达。
   2. `devalue` 绑定 `sveltejs/devalue@3e01a6c7...` / `5.9.1`，写清扁平索引图、负数哨兵、stringify/uneval/async 边界与稀疏数组启发式。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：待 `quality-gate`、`audit:project-standard`、`audit:content-contract`、`audit:counts` 与 `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`。
+  4. 去掉 `uneval` 示例里会被当成 wikilink 的 `[[` 字面量。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt evidence state `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=20`；`audit:content-contract` 0 blocking / 89 v2；`audit:counts` projects=963；`audit:wikilinks` budget_failures=0；`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 全绿（2287 HTML、23 Playwright a11y）。
 - budget：1 个 serialize 双子切片、1 个本地 writer。
-- blocker：merge/deploy 未授权；verify:ci 尚未跑完。
+- blocker：merge/deploy 未授权。
 - stop conditions：canonical/revision 不一致、需要猜测 2.2.6 或性能数字、或只能放宽门禁时停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 新授权。
-- 下一条命令：先完成本地定向验收，再等待 PR review；未授权前不要 merge。
+- 下一条命令：在 PR #152 上等待 CI/review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
