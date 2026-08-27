@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -37798,6 +37798,37 @@
       }
     },
     {
+      "id": "projects::c8",
+      "area": "projects",
+      "slug": "c8",
+      "title": "c8 — 用 Node 内置 V8 覆盖率出 Istanbul 报告",
+      "description": "不改写源码，靠 NODE_V8_COVERAGE 收集 V8 JSON，再转成 Istanbul 报告的覆盖率 CLI",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/c8/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
+      }
+    },
+    {
       "id": "projects::caddy",
       "area": "projects",
       "slug": "caddy",
@@ -52815,6 +52846,37 @@
       }
     },
     {
+      "id": "projects::nyc",
+      "area": "projects",
+      "slug": "nyc",
+      "title": "nyc — 用 AST 插桩收集 Istanbul 覆盖率的 CLI",
+      "description": "默认 hook require 并改写源码，把 __coverage__ 写成 .nyc_output 的 Istanbul 命令行",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/nyc/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
+      }
+    },
+    {
       "id": "projects::obs-studio",
       "area": "projects",
       "slug": "obs-studio",
@@ -65867,7 +65929,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-testing-and-verification-01/",
-      "entries": 6
+      "entries": 8
     },
     {
       "id": "topic-projects-ui-and-frontend-frameworks-01",

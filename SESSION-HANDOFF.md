@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CN：c8 + nyc
+
+- status：`running`；本地 writer epoch 形成 review-ready change set。
+- supervisor 状态：有界 writer epoch，未进入 `PARKED_*`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：补齐缺失的 `c8` 与 `nyc` 覆盖率双子页，并绑定真实 revision；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`c8`、`nyc` 两页、`docs/coverage-source-review-20260827-cn.md`、两份 receipt、taxonomy / atlas / 计数派生；未改开放 PR 已占用 slug。
+- activated_by：`explicit-parallel-writer-cn-20260827-c8-nyc`。
+- detector fingerprint：仓库无 `c8` / `nyc` 项目页；开放 PR 未占用这对 coverage slug。
+- external delta 计数：本轮只形成 PR，不 merge、不部署；D 轴不变。
+- 完成切片：
+  1. 新增 c8 页，绑定 `bcoe/c8@ae5a0cf4349b92cac910cf7275e724ab7a725b9d` / `12.0.0`。
+  2. 新增 nyc 页，绑定 `istanbuljs/nyc@3ce6d979a1c6753263165d31cb985523b5a81855` / `18.0.0`（tag 名为 `nyc-v18.0.0`）。
+  3. 共享 provenance 文档与 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt `evidence_state=UNVERIFIED`；`git diff --check`。
+- 验证结果：待 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`。
+- budget：1 个 coverage CLI 双子切片；单 writer。
+- blocker：无。本 PR 不 merge。
+- stop conditions：未授权 merge / deploy。
+- 下一次 wake 条件：owner 审查本 PR，或出现新的显式范围。
+- 下一条命令：先完成本地 `verify:ci`，再在 GitHub 查看本 PR；未获 merge 授权前不要合并。
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
