@@ -15,7 +15,7 @@
   1. 绑定 `sinonjs/sinon@ab289e92...` / `22.1.0`（tag 与 npm `gitHead` 一致）。
   2. 绑定 `testdouble/testdouble.js@293753e7...` / `3.20.2`（tag 与 npm `gitHead` 一致）。
   3. 共享 provenance `docs/test-double-source-review-20260827-ch.md` 与两份 generation 1 static receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`git diff --check`、`audit:counts`、`audit:content-contract`（v2=91）、`audit:wikilinks` budget_failures=0、`audit:project-standard` `benchmark-aligned=22`。全量 `verify:ci` 见 PR checks。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`git diff --check`、`audit:counts`、`audit:content-contract`（v2=91）、`audit:wikilinks` budget_failures=0、`audit:project-standard` `benchmark-aligned=22`。`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿（含 changed-note quality gate、strict build、23 Playwright a11y）。
 - budget：1 个可写切片；未安装上游依赖、未跑上游 test / loader / bundle。
 - blocker：无。本 PR 按授权不 merge。
 - 下一次 wake 条件：owner review / CI 变化，或新的显式 PARALLEL writer 授权。
