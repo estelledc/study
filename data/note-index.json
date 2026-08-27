@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -46547,27 +46547,26 @@
       "id": "projects::jupyter-notebook",
       "area": "projects",
       "slug": "jupyter-notebook",
-      "title": "Jupyter Notebook — 经典数据科学笔记本",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Jupyter Notebook — 用 JupyterLab 组件做成的文档中心前端",
+      "description": "介绍 Notebook 如何把 Jupyter Server 路由和 NotebookShell 收成一次只开一份文档的界面",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-editors-and-rich-text"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-editors-and-rich-text",
-        "matched_category": "editor",
-        "raw_category": "projects / editors"
+        "raw_category": "editors"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/jupyter-notebook/",
       "atlas": {
@@ -46579,27 +46578,26 @@
       "id": "projects::jupyterlab",
       "area": "projects",
       "slug": "jupyterlab",
-      "title": "JupyterLab — 下一代 Jupyter IDE",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "JupyterLab — 用插件拼出多区域工作台的 Jupyter 前端",
+      "description": "介绍 JupyterLab 如何用 Lumino 应用、LabShell 分区和延迟插件组成可恢复的浏览器工作台",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-editors-and-rich-text"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-editors-and-rich-text",
-        "matched_category": "editor",
         "raw_category": "editors"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/jupyterlab/",
       "atlas": {

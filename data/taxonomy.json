@@ -2036,6 +2036,14 @@
       "topic_id": "projects-date-and-time"
     },
     {
+      "note_id": "projects::jupyter-notebook",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::jupyterlab",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
       "note_id": "projects::kafka",
       "topic_id": "projects-databases-and-storage-engines"
     },

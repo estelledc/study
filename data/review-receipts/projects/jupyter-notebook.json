@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "jupyter-notebook",
+    "digest_sha256": "d5b552df539481eb486674fad176d2a1a620450ef0e03e31d08c7603cc7a5809"
+  },
+  "source_revision": "ffc52152951a52ef4885f12521d7a5f8ebd2f9c1",
+  "research_input_sha256": "158611afead8810887df86a63459e1696a75118c3631c66aff7cac311c05d55a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates NotebookShell, tree/notebooks routes, and open-lab as a new window."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "app.py handlers, NotebookApp/NotebookShell, and application-extension pages were inspected; cells were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v7.6.2 tag peel aligned to JupyterLab 4.6.3; Classic v6 was not re-tested."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

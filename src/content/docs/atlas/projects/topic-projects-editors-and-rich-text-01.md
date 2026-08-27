@@ -39,8 +39,8 @@ sidebar:
 | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | `hocuspocus` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) | `inkscape` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Joplin — 开源 Evernote 替代](/study/projects/joplin/) | `joplin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Jupyter Notebook — 经典数据科学笔记本](/study/projects/jupyter-notebook/) | `jupyter-notebook` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [JupyterLab — 下一代 Jupyter IDE](/study/projects/jupyterlab/) | `jupyterlab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Jupyter Notebook — 用 JupyterLab 组件做成的文档中心前端](/study/projects/jupyter-notebook/) | `jupyter-notebook` | beginner | UNVERIFIED | 介绍 Notebook 如何把 Jupyter Server 路由和 NotebookShell 收成一次只开一份文档的界面 |
+| [JupyterLab — 用插件拼出多区域工作台的 Jupyter 前端](/study/projects/jupyterlab/) | `jupyterlab` | beginner | UNVERIFIED | 介绍 JupyterLab 如何用 Lumino 应用、LabShell 分区和延迟插件组成可恢复的浏览器工作台 |
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | `kakoune` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Krita — 数字绘画专业编辑器](/study/projects/krita/) | `krita` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) | `lazyvim` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

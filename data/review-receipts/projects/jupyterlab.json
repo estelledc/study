@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "jupyterlab",
+    "digest_sha256": "688f6bff8c2a4ba1d89f3daad163ccef1efeff3024cd6e3f6e812d2692e8aafb"
+  },
+  "source_revision": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+  "research_input_sha256": "158611afead8810887df86a63459e1696a75118c3631c66aff7cac311c05d55a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates LabApp modes, LabShell areas, deferred plugins, and layout restorer order."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "lab.ts, shell.ts, layoutrestorer.ts, labapp.py, and workspace CLI were inspected; server was not started."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v4.6.3 tag peel; npm package has no gitHead; no build or Galata run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

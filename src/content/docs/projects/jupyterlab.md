@@ -1,83 +1,86 @@
 ---
-title: JupyterLab — 下一代 Jupyter IDE
-来源: 'https://github.com/jupyterlab/jupyterlab'
-日期: 2026-07-08
+title: JupyterLab — 用插件拼出多区域工作台的 Jupyter 前端
+description: 介绍 JupyterLab 如何用 Lumino 应用、LabShell 分区和延迟插件组成可恢复的浏览器工作台
+来源: https://github.com/jupyterlab/jupyterlab
+日期: 2026-08-27
 分类: editors
 难度: 初级
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/jupyterlab/jupyterlab
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e7255a9334c12ad8f9cb15db27584215fab5ece2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.6.3
 ---
 
 ## 是什么
 
-JupyterLab 是 Project Jupyter 的下一代工作台：它把 Notebook、终端、文本编辑器、文件浏览器和图表输出放进同一个浏览器界面里。
+JupyterLab 是 Project Jupyter 的可扩展浏览器工作台。日常类比：经典 Notebook 像一本只摊一页的实验本；JupyterLab 像一张能拆格子的书桌，Notebook、终端、文件树和预览可以并排摆。
 
-日常类比：经典 Notebook 像一本活页实验本；JupyterLab 像一张带抽屉的大书桌，左边放文件，中间写代码，右边看目录，下方开终端。
-
-最小例子不是一段库 API，而是启动一个工作台：
+固定 4.6.3 里，Python 包 `jupyterlab` 的 `__version__` 与 `@jupyterlab/application` 同为 `4.6.3`。`LabApp` 是挂在 Jupyter Server 上的 `LabServerApp`，默认把 `/` 重定向到 `/lab`。浏览器里真正的应用是 `JupyterLab`：它继承 `JupyterFrontEnd`，再继承 Lumino `Application`，默认壳是 `LabShell`。
 
 ```bash
 pip install jupyterlab
-jupyter lab
+jupyter lab --notebook-dir="$PWD"
 ```
 
-浏览器打开以后，你看到的不是单个 `.ipynb` 页面，而是一个可以拖动标签页、拆分面板、打开终端的 IDE。它仍然服务于交互式计算，只是把"写一页 Notebook"升级成"管理一整个数据分析现场"。
+`--notebook-dir` 在 `labapp.py` 里别名到 `ServerApp.root_dir`，决定服务器能看见的根目录，不是前端自己的另一套路径。
 
 ## 为什么重要
 
-不理解 JupyterLab，下面这些日常场景会一直绕远路：
+不理解固定 4.6.3 的壳、插件和恢复顺序，下面这些现象会对不上：
 
-- Notebook、终端、Markdown、数据文件分散在多个窗口里，切来切去容易跑错目录
-- 想把 Notebook、CSV 预览、终端日志并排看，经典 Notebook 很难自然摆出来
-- 团队想复用同一套工作区布局，只发一个文件路径还不够，还要保存打开了哪些面板
-- 想给数据科学环境加调试器、目录树、语言服务或自定义查看器时，普通 Notebook 插件模型不够像 IDE
+- 为什么同一个浏览器标签里能同时开 Notebook、终端和 CSV，而 [[jupyter-notebook]] 默认一次只摊一份文档
+- 为什么关掉标签再打开，布局还能回来——恢复靠 `LayoutRestorer`，不是“浏览器记住了标签页”
+- 为什么有的扩展装完立刻出现，有的要等 `shell.restored` 之后才激活
+- 为什么 `--core-mode` 看起来像“干净的 JupyterLab”，却把第三方扩展关掉
 
-它的重要性不在"能跑 Python"，而在"把实验过程周围的工具也组织起来"。对新手来说，这会少掉很多"我刚才在哪个目录跑的"和"这个终端属于哪个项目"的混乱。
+## 核心机制与架构流程
 
-## 核心要点
+固定源码把一次启动拆成五步：
 
-1. **多面板工作区**：JupyterLab 的主区域是可拆分的标签页面板，像把桌面分成多个格子。Notebook 可以和终端、文本文件、图表预览并排，读数据、改代码、看输出不需要来回切页。
+1. **Python 侧先选出运行模式**。`LabApp` 文档写明三种：`core-mode` 只用 Python 包装里的 JS 资产且禁用第三方扩展；`dev-mode` 走源码仓 `dev_mode`（页面顶上有红条，需要 `pip install -e .`）；默认 app 模式按 `JUPYTERLAB_DIR` / `--app-dir` 组扩展。`load_other_extensions = True`，所以它会带上同进程里其他 server extension。
 
-2. **工作区会记住状态**：每个 JupyterLab 会话都属于一个 workspace，里面记录打开的文件、标签位置、侧边栏状态。类比：书桌不只是桌子，还会记住你昨天把哪本书摊在哪个角落。
+2. **浏览器里实例化一个 `JupyterLab`**。构造函数默认 `new LabShell()`，并建 `ServiceManager`；`standby` 在 `!info.isConnected` 或页面隐藏时暂停轮询。`docRegistry` 先挂上 `Base64ModelFactory`，再按需注册 mime 渲染插件。
 
-3. **扩展是一等公民**：JupyterLab 本身就是一组扩展拼出来的，第三方扩展可以加菜单、命令、快捷键、文件查看器和设置项。类比：浏览器靠插件长出广告拦截器，JupyterLab 靠扩展长出调试器、目录树和语言服务。
+3. **插件是 Lumino `IPlugin`**。每条有 `id`、`autoStart`、`requires` / `optional` / `provides`。`IInfo.disabled` / `deferred` 用模式匹配插件 id。壳恢复后，`activateDeferredPlugins()` 才跑延迟插件；`allPluginsActivated` 要等这些 Promise 都 settle。
 
-这三个点合在一起，JupyterLab 的定位就清楚了：它不是"更漂亮的 Notebook"，而是面向交互式计算的浏览器 IDE。
+4. **`LabShell.add(widget, area)` 按区域分发**。合法区域是 `main` / `header` / `top` / `menu` / `left` / `right` / `bottom` / `down`。`main` 进 dock；`left`/`right` 是侧栏；`down` 是底部标签栈。用户布局按 `multiple-document` 与 `single-document` 两套 `IUserLayout` 分开记。
+
+5. **布局恢复有固定生命周期**。`LayoutRestorer` 先 `fetch` 键 `layout-restorer:data`；各插件在应用 `started` 前登记 tracker；然后命令重建 widget；最后 `shell.restoreLayout`。这一步完成后，`JupyterLab.restored` 才 resolve。工作区文件本身在 `JUPYTERLAB_WORKSPACES_DIR`（默认配置目录下的 `/lab/workspaces`）。
 
 ## 实践案例
 
-### 案例 1：从正确目录启动一个项目工作台
+### 案例 1：从项目根目录启动，并看清三种模式
 
 ```bash
 cd ~/work/titanic-analysis
-jupyter lab --notebook-dir="$PWD" --preferred-dir "$PWD/notebooks"
+jupyter lab --notebook-dir="$PWD"
+# 对照：jupyter lab --core-mode
+# 源码开发：jupyter lab --dev-mode --watch
 ```
 
-逐部分解释：
+`--notebook-dir` 只改服务器根。`--core-mode` 不加载第三方扩展；`--dev-mode` 才用未发布的本地 JS 包。`jupyter lab path` 打印 app / user-settings / workspaces 三个目录。
 
-- `--notebook-dir` 决定服务器能看到的根目录，别从系统根目录启动，官方文档也提醒这样会增加误改系统文件的风险
-- `--preferred-dir` 决定文件浏览器默认先打开哪里，适合把入口放到 `notebooks/`
-- 进入界面后，同一个浏览器标签里可以打开 Notebook、`README.md`、CSV 和终端
-
-这个案例解决的是"新手最容易乱的当前目录"问题。JupyterLab 不是替你管理项目结构，但它把文件浏览器和运行环境绑在同一个根目录下，少犯很多路径错误。
-
-### 案例 2：保存并迁移一个工作区布局
+### 案例 2：导出再导入一个 workspace
 
 ```bash
-# 导出名为 research 的工作区
 jupyter lab workspaces export research > research.json
-
-# 在另一台机器或同一环境里导入
 jupyter lab workspaces import research.json
+jupyter lab workspaces list
 ```
 
-逐部分解释：
+`LabApp.subcommands` 里 `workspace` 与 `workspaces` 指向同一个 `LabWorkspaceApp`，子命令只有 `export` / `import` / `list`。导出的是界面状态，不是数据文件。`WorkspacesModel.create(id)` 会 `save({ metadata: { id }, data: {} })`。
 
-- `workspaces export research` 会把名为 `research` 的布局导出成 JSON
-- 这个 JSON 记录的是界面状态，不是你的数据文件本身
-- `workspaces import` 会把布局写回 JupyterLab 的 workspace 存储区
-
-这适合两类人：老师给学生准备相同的课堂布局，或者你把"Notebook + 终端 + 结果图"这套分析现场从一台机器搬到另一台机器。
-
-### 案例 3：排查扩展是不是影响了界面
+### 案例 3：只开关扩展，不走源码 rebuild
 
 ```bash
 jupyter labextension list
@@ -85,72 +88,73 @@ jupyter labextension disable my-extension
 jupyter labextension enable my-extension
 ```
 
-逐部分解释：
-
-- `list` 先看当前装了哪些扩展，避免凭感觉猜
-- `disable` 会阻止某个扩展的插件运行，但代码仍然在环境里
-- `enable` 可以把误关的扩展开回来
-
-官方文档还提醒，旧式 `jupyter labextension install` 安装 source extension 已经不推荐，因为通常要 Node.js 和 rebuild。日常使用优先选 PyPI / conda 分发的 prebuilt extension，排查时再用 `labextension` 管理开关。
+`labextensions.py` 仍提供 list / disable / enable / lock。`jupyter labextension build` 已标 deprecated，改走 `jupyter-builder build`。日常优先装 PyPI 分发的 prebuilt（federated）扩展；source extension 仍要进 app 目录再 `jupyter lab build`。
 
 ## 踩过的坑
 
-1. **`jupyter` 命令找不到**：常见原因是 `pip install --user` 后用户级 `bin` 目录没进 `PATH`，所以 shell 找不到启动器。
-
-2. **从 `/` 或系统盘根目录启动**：JupyterLab 会把这个目录暴露给文件浏览器，新手容易误删或误改不该碰的文件。
-
-3. **用浏览器自带搜索找 Notebook 内容**：Notebook 默认会做窗口化渲染，浏览器不一定能看到完整文档内容，应该优先用 JupyterLab 内置搜索。
-
-4. **把扩展当成普通网页插件乱装**：source extension 往往需要 Node.js 和重新构建 JupyterLab，版本不配时会把启动和前端资源搞复杂。
+1. **把 `--notebook-dir` 当成前端“当前文件夹”**：它是 `ServerApp.root_dir`。从 `/` 启动会把整个文件系统暴露给文件浏览器。
+2. **以为 `registerPlugin` 立刻等于界面出现**：`deferred` 匹配到的插件要等 `shell.restored` 之后才 `activatePlugin`。
+3. **把 `single-document` 理解成另一个应用**：它只是 `LabShell.mode` 切到 dock 的单文档布局，用户布局键仍在同一套 shell 里。
+4. **`--collaborative` 还当开关用**：`LabApp` 写明它已 deprecated，真正协作要另装 `jupyter_collaboration`，该旗标计划在 v5 删掉。
+5. **把构建体积或启动耗时写进结论**：固定源码提到 Rspack minify 与低内存构建，本轮未安装依赖、未 `jupyter lab build`、未测性能。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 数据分析、机器学习实验、教学演示，需要 Notebook 和终端频繁配合
-- 想把多个文件、图表、终端并排看，而不是一次只看一个 Notebook
-- 团队要保存或分享工作区布局，例如课程、实验室模板、JupyterHub 环境
-- 需要扩展能力，比如调试器、语言服务、特殊文件预览器或主题
+- 需要把 Notebook、终端、文件和预览放在同一浏览器工作台
+- 要用 JupyterLab 插件模型加调试器、语言服务或自定义查看器
+- 课程或实验室需要导出/导入 workspace 布局
+- 能接受 Jupyter Server + 浏览器作为交互式计算入口
 
 **不适用**：
 
-- 只想快速跑一个 `.py` 脚本，命令行或轻量编辑器更直接
-- 大型软件工程项目需要完整重构、复杂 Git 视图和多语言 IDE 能力，VS Code / JetBrains 更成熟
-- 生产服务部署，不应该把 JupyterLab 当 Web 后台或长期运行任务管理器
-- 机器内存很小、浏览器很卡时，多面板 UI 反而比经典 Notebook 重
+- 只要一份 `.ipynb` 的文档中心体验——[[jupyter-notebook]] 的 `NotebookShell` 更贴
+- 需要反应式、文件即 `.py` 的笔记本——看 [[marimo]]
+- 大型软件工程要完整 Git / 重构工作流——[[vscode]] 更成熟
+- 不能接受“静态阅读前端源码 ≠ 已跑通 kernel / 扩展安装”
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014 年前后**：Jupyter 从 IPython Notebook 的经验里长出来，目标是让多语言交互式计算成为开放项目。
-- **2018 年左右**：JupyterLab 逐渐成为下一代前端，把 Notebook、终端、编辑器和文件浏览器放进同一个可扩展界面。
-- **JupyterLab 3**：prebuilt extension 模型让很多扩展不再需要用户本地 rebuild，安装体验明显变轻。
-- **2024 年 5 月 15 日**：JupyterLab 3 结束维护期，官方建议仍在 3.x 的用户升级到 JupyterLab 4。
-- **现在**：GitHub 仓库约 15k stars，JupyterLab 由开放社区和 Jupyter Frontends Council 维护，定位仍然是交互式计算的主界面。
+- 本文绑定 `jupyterlab/jupyterlab@e7255a9334c12ad8f9cb15db27584215fab5ece2`，即 annotated tag `v4.6.3` 剥皮提交。
+- Python `jupyterlab/_version.py` 为 `VersionInfo(4, 6, 3, "final", 0)`；`@jupyterlab/application` / `@jupyterlab/workspaces` 为 `4.6.3`，`@jupyterlab/services` 为 `7.6.3`。
+- npm 上 `@jupyterlab/application@4.6.3` 无 `gitHead`；本页绑的是 GitHub tag 剥皮提交，不是 npm 发布树。
+- `LabApp` 默认 `extension_manager = "pypi"`；`readonly` 只能看不能装。
+- 本文未安装 JupyterLab、未启动 Tornado、未跑 Galata / 上游测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **Notebook 只是核心文件，不是完整工作流**：真正的分析现场还包括终端、数据文件、说明文档、图表和环境状态。
-2. **workspace 是 JupyterLab 的灵魂**：它把"我打开了什么、怎么摆"变成可保存的状态，而不只是 URL。
-3. **扩展模型决定生态上限**：JupyterLab 自己也是扩展集合，所以第三方能力能长进菜单、命令和侧边栏。
-4. **交互式计算更像实验室，不像单个编辑器**：JupyterLab 的价值就是把实验器材放在一张桌上。
+1. **JupyterLab 是“Lumino 应用 + 分区壳 + 插件图”**，不是更漂亮的单页 Notebook。
+2. **恢复顺序是合同**：先 fetch 布局，再让插件登记，最后 `restored`。
+3. **core / dev / app 三种模式决定扩展从哪来**，不是同一套静态文件换皮肤。
+4. **workspace 存的是壳状态**，不替你版本化数据或 kernel。
+
+## 应用型自测
+
+1. `JupyterLab` 构造之后、`shell.restored` 完成之前，`deferred` 插件会不会已经被 `activatePlugin`？
+2. `shell.add(widget, 'header')` 会把 widget 放进主 dock 吗？
+3. `jupyter lab --core-mode` 会加载第三方 federated 扩展吗？
+
+检查点：
+
+1. 不会。`lab.ts` 在 `this.shell.restored.then(...)` 里才调用 `activateDeferredPlugins()`。
+2. 不会。`header` 走 `_addToHeaderArea`；主 dock 只接 `main`。
+3. 不会。`LabApp` 写明 core mode 禁用第三方扩展，只用 Python 包内 JS 资产。
 
 ## 延伸阅读
 
-- 官方仓库：[jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab)
-- 官方文档：[JupyterLab Documentation](https://jupyterlab.readthedocs.io/en/stable/)
-- 入门启动：[Starting JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html)
-- 工作区文档：[Workspaces](https://jupyterlab.readthedocs.io/en/stable/user/workspaces.html)
-- 扩展文档：[Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html)
-- [[jupyter-notebook]] —— 经典 Notebook 是 JupyterLab 要兼容和升级的基础体验
+- 固定源码：[jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab) —— 本文绑定提交 `e7255a9334c12ad8f9cb15db27584215fab5ece2`
+- 启动与模式：[labapp.py](https://github.com/jupyterlab/jupyterlab/blob/v4.6.3/jupyterlab/labapp.py) 中 `LabApp` 文档字符串
+- 壳分区：[packages/application/src/shell.ts](https://github.com/jupyterlab/jupyterlab/blob/v4.6.3/packages/application/src/shell.ts) 的 `ILabShell.Area`
+- [[jupyter-notebook]] —— 同一 JupyterLab 包版本上的文档中心壳
 
 ## 关联
 
-- [[jupyter-notebook]] —— JupyterLab 保留 Notebook 的交互式计算核心，但把周边工具变成 IDE
-- [[ipython]] —— Jupyter 生态的历史源头，提供交互式 Python 体验
-- [[jupyterhub]] —— 多用户服务器常用 JupyterLab 作为前端入口
-- [[vscode]] —— 同样提供 Notebook 和多面板 IDE，但重点更偏通用软件工程
-- [[python]] —— JupyterLab 最常见的内核语言，新手通常从 Python Notebook 开始
-- [[typescript]] —— JupyterLab 前端和扩展开发大量使用 TypeScript
+- [[jupyter-notebook]] —— 复用 `@jupyterlab/application ~4.6.3`，但壳是单文档 `NotebookShell`
+- [[vscode]] —— 同样是多面板 IDE，但不是 Jupyter 插件图
+- [[marimo]] —— 反应式 `.py` 笔记本，不走 JupyterLab 壳
+- [[zeppelin]] —— JVM 数据平台笔记本，不是 Lumino 前端
+- [[codemirror]] —— JupyterLab 编辑器栈里常见的编辑器内核
 
 ## 反向链接
 
