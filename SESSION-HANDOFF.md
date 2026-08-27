@@ -15,7 +15,7 @@
   1. `destr` 绑定 annotated tag `v2.0.5` / `7bb3c39ef5f8c84219be08ebc11b3c4f4a4c828f`（与 npm `gitHead` 一致），写清默认回退、`safeDestr`、短字面量和 16 位数字签名。
   2. `klona` 绑定 annotated tag `v2.0.6` / `6ad153073b7529769010ddbde1938372e1702f5b`（与 npm `gitHead` 一致），写清 json/lite/default/full 与 constructor / `Object.create` 边界。
   3. 新增 `docs/parse-clone-source-review-20260827-fr.md` 与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 quality-gate 全绿、0 advisory；receipt digest 一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0。完整 `verify:ci` 在首个 commit 后继续跑。
+- 验证结果：两页 quality-gate 全绿、0 advisory；receipt digest 一致，evidence state `UNVERIFIED`；`STUDY_CHANGED_FROM=99736a90976f0b3d0a18bc16b9ab04c9c91254f1 npm run verify:ci` 规范 Node 22.23.1/npm 11.17.0 下全绿（含 23 Playwright a11y）。`audit:content-contract` blocking 0。
 - budget：2 个小型 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：`benchmark-site --compare` 的 tracked_files 超限是 main 上先于本切片的规模信号，需 owner 处置；本轮未改 baseline 或阈值。
 - stop conditions：PR 已开即停；禁止 merge / deploy。
