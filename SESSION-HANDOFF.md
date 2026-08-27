@@ -14,7 +14,7 @@
 - 完成切片：
   1. `enzyme` 绑定 `enzymejs/enzyme@88dae28d...` / `3.11.0`。写清 adapter merge、三 mode、mount 要 document、shallow 默认补 `componentDidMount`、`dive()` 开新根。披露 npm 无 `gitHead`，官方 in-tree adapter peer 仅为 React 16。
   2. `unexpected` 绑定 `unexpectedjs/unexpected@a47e211a...` / `13.2.1`（tag 剥开后与 npm `gitHead` 一致）。写清默认 `freeze()`、`clone()` 后才能 `use`、`to be`/`to equal` 分路、pending promise 的 `afterEach`。未审查 `unexpected-react`。
-- acceptance checks：两页 `quality-gate` 已绿、0 advisory；receipt digest / revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` 963/1083/2046；完整 portable gate 以本 PR 的 `verify:ci` 为准。
+- acceptance checks：两页 `quality-gate` 已绿、0 advisory；receipt digest / revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` 963/1083/2046；`audit:content-contract` v2=105 / blocking 0；`audit:project-standard` aligned=36 / needs-evidence=927；本地 `STUDY_CHANGED_FROM=7a2384d0… npm run verify:ci` 全绿（388 Node tests、2287 HTML / 2286 sitemap URLs、23 Playwright a11y）。
 - budget：2 页、单 writer、1 个 PR；不 merge。
 - blocker：无本轮硬暂停；merge / deploy 需另行授权。main 上既有 `tracked_files` 规模 detector 不在本轮处置。
 - stop conditions：当前切片完成即结束 writer；不自合。
