@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "duckdb-wasm",
+    "digest_sha256": "5ecdd6122c00e89f17efbd4a7da5ade2d65d4f85093ea6d1b467977dd19edd4c"
+  },
+  "source_revision": "fa1d47b38ed0821cecab0bdc331c48abd0f2cc65",
+  "research_input_sha256": "e5d5583079e4803168668f4069d49e1aba215461268c73ff28e0954c5079cc2e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-i",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates bundle selection, Worker query, HTTP Range fallback, OPFS open path, and sync-only UDF with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-i",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Platform, async bindings, browser runtime, OPFS tests, and filesystem config were inspected; WASM, Range requests, and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-i",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "GitHub v1.33.0, in-repo 1.11.0, and npm 1.32.1-dev1.0 provenance split is disclosed; later 1.33.1-dev packages were not bound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:30:00.000Z"
+}

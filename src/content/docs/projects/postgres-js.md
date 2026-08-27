@@ -1,151 +1,167 @@
 ---
 title: postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
-来源: 'porsager/postgres on GitHub, https://github.com/porsager/postgres'
+来源: https://github.com/porsager/postgres
 日期: 2026-05-30
 分类: 数据库
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/porsager/postgres
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e7dfa14519f363229ccc3ead7b1b2f2051937efb
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.4.9
 ---
 
 ## 是什么
 
-postgres.js（npm 包名 `postgres`）是一个**让你用反引号写 SQL，但参数自动安全绑定**的 Node.js PostgreSQL 客户端。日常类比：像「带防夹手设计的剪刀」——你照常剪东西，但手指放错位置时它机械结构就剪不下去，而不是靠你「记得小心」。
+postgres.js（npm 包名 `postgres`）是一个以 tagged template 为唯一查询入口的 PostgreSQL 客户端。日常类比：像把乘客和货物分到两条轨道上的火车站——SQL 文本走货运轨，`${value}` 永远只当参数，不会被拼进语句。
 
 你写：
 
 ```js
-const id = userInput
-const rows = await sql`select * from users where id = ${id}`
+const rows = await sql`select * from users where id = ${id}`;
 ```
 
-这一行**不可能**被 SQL 注入——因为反引号语法里 `${id}` 不是字符串拼接，JS 引擎会把 `id` 单独传给标签函数，再由它转成 `$1` 占位符发给 PG。零依赖、内置连接池、跨 Node / Deno / Bun / Cloudflare Workers 都能跑。
+JS 引擎把 `id` 单独交给 tag 函数；固定 3.4.9 再把它编成 `$n` 占位符，走 Parse/Bind/Execute，而不是字符串拼接。零运行时依赖，条件导出覆盖 Node CJS、ESM、Bun 与 Cloudflare `workerd`。
 
 ## 为什么重要
 
-不理解 postgres.js 的设计，下面这些事都没法解释：
+不理解 postgres.js，下面这些事都没法解释：
 
-- 为什么不少新项目在继续用 `pg` 与上 Prisma 这种重 ORM 之间，会选 postgres.js 这类 SQL-first 客户端
-- 为什么"模板字符串"在它这里不是字符串拼接糖，而是**安全保证的根**
-- 为什么作者声称它能比 `pg` 快 2-5x（同样跑 PG，差别从哪来）
-- 为什么 LISTEN/NOTIFY 这种冷门特性被它做成一等公民、其他客户端却懒得封
+- 为什么 `` sql`...${x}` ``、`sql('users')` 和 `sql({name})` 是三种完全不同的对象
+- 为什么默认把 `undefined` 当成错误，而不是悄悄绑成 `NULL`
+- 为什么事务回调里的 `sql` 必须钉在同一条连接上
+- 为什么 LISTEN 和逻辑复制各自再开一个 `max: 1` 的专用实例
 
 ## 核心要点
 
-postgres.js 的设计可以拆成 **三件事**：
+主链可以拆成五步：
 
-1. **tagged template literal 当唯一入口**：调用 `` sql`...${x}` `` 时，JS 引擎把 `x` 单独传进 tag 函数，**字符串和参数永远分两条路走**。类比：双轨火车，乘客（参数）从来不会跑到货运轨道（SQL）上。
+1. **工厂返回 `sql`**：`Postgres()` 按 `max` 预建连接（默认 10，Cloudflare 为 3），并用 `connecting / reserved / closed / ended / open / busy / full` 七个队列描述状态；唯一迁移点是 `move(c, queue)`。
 
-2. **8 个 Queue 状态机做连接池**：连接的状态用 `closed / connecting / open / busy / full / reserved / ended` 等队列表示，用一个 `move(c, queue)` 函数当唯一迁移点；`max_pipeline=100` 让一条连接能塞 100 条未回 query。类比：高速收费站——一条道能同时排 100 辆车，不必等一辆走完再放一辆。
+2. **三种调用形态**：带 `strings.raw` 的反引号生成 `Query`；单字符串生成 `Identifier`；对象或数组生成 `Builder`。后两种继承 `NotTagged`，`await` 会抛 `NOT_TAGGED_CALL`。
 
-3. **LISTEN/NOTIFY 和逻辑复制是一等公民**：`sql.listen('ch', fn)` 直接监听 PG 的 NOTIFY 消息；`sql.subscribe('insert:public.orders', fn)` 直接订阅逻辑复制流。类比：数据库自带的「门铃」和「监控摄像头」，postgres.js 把按钮搬到了客户端。
+3. **惰性执行**：`Query` 是 Promise 子类，只在 `then` / `catch` / `finally` / `execute` / `forEach` 时进入连接池。`handleValue()` 遇到 `undefined` 且未配置 `transform.undefined` 就抛 `UNDEFINED_VALUE`。
 
-## 实践案例
+4. **协议与 pipeline**：默认 `prepare: true`、`max_pipeline: 100`。一条连接可在未回包时继续塞查询；写缓冲到 1024 字节或显式 flush 才 `socket.write`。
 
-### 案例 1：5 行跑通一条 select
+5. **会话型旁路**：`listen()` 另建 `max: 1` 且禁用 idle/lifetime 的实例；`subscribe()` 再开复制连接，执行 `CREATE_REPLICATION_SLOT ... TEMPORARY LOGICAL pgoutput`。
 
-```js
-import postgres from 'postgres'
-const sql = postgres('postgres://user:pw@localhost:5432/db')
-const id = 1
-const rows = await sql`select ${id} as one, now() as ts`
-console.log(rows)  // [ { one: 1, ts: 2026-05-30T... } ]
-await sql.end()
-```
+## 实践示例
 
-**逐部分解释**：
-
-- `postgres(url)` 返回一个工厂函数 `sql`，它本身就是连接池入口
-- `` sql`...${id}` `` 反引号语法让 `id` 走参数通道，SQL 文本里实际只是 `select $1 as one, now() as ts`
-- `await` 直接拿到行数组——不需要单独 `pool.connect() / client.query() / client.release()` 三步
-
-### 案例 2：事务 + 嵌套 savepoint
+### 案例 1：工厂与 tagged 查询
 
 ```js
-await sql.begin(async sql => {
-  await sql`insert into orders (uid, amount) values (${uid}, ${amt})`
-  await sql.savepoint(async sql => {
-    await sql`update users set balance = balance - ${amt} where id = ${uid}`
-  })
-})
+import postgres from "postgres";
+
+const sql = postgres("postgres://user:pw@localhost:5432/db");
+const id = 1;
+const rows = await sql`select ${id} as one, now() as ts`;
+await sql.end();
 ```
 
-**逐部分解释**：
+`postgres(url)` 返回的 `sql` 既是 tag 也是连接池入口。`${id}` 进入参数数组；`sql.end()` 会一并结束 listen/subscribe 专用实例。
 
-- `sql.begin(async sql => ...)` 接管连接、自动发 BEGIN / COMMIT；回调内 throw 会自动 ROLLBACK
-- 回调里的 `sql` 是**绑定到同一个连接**的新实例——保证事务里所有 query 走同一 session
-- `sql.savepoint` 嵌套时实际发 SAVEPOINT 而不是真的嵌套事务，回调内 throw 只回滚到这个 savepoint
-
-### 案例 3：LISTEN/NOTIFY 当轻量消息总线
+### 案例 2：事务与 savepoint
 
 ```js
-const sql = postgres()
-await sql.listen('order_created', payload => {
-  console.log('new order:', payload)
-})
-await sql.notify('order_created', JSON.stringify({ id: 42 }))
+await sql.begin(async (sql) => {
+  await sql`insert into orders (uid, amount) values (${uid}, ${amt})`;
+  await sql.savepoint(async (sql) => {
+    await sql`update users set balance = balance - ${amt} where id = ${uid}`;
+  });
+});
 ```
 
-**逐部分解释**：
+外层 `begin` 用 `unsafe('begin ...')` 占住一条 reserved 连接；回调里的 `sql` 只暴露 `savepoint` / `prepare`，不再带池级 `begin`。`savepoint()` 发的是 `SAVEPOINT`，失败则 `ROLLBACK TO`。回调返回查询数组时，这些查询会在同一连接上 pipeline。
 
-- `sql.listen` 内部开一个 `max:1` 的常驻连接，只负责接 NOTIFY 消息
-- `sql.notify` 走普通连接池发 `NOTIFY channel, payload`
-- 比拉一个 Redis pub/sub 简单 10 倍——只要你已经有 PG，零额外服务
+### 案例 3：LISTEN / NOTIFY
+
+```js
+await sql.listen("order_created", (payload) => {
+  console.log("new order:", payload);
+});
+await sql.notify("order_created", JSON.stringify({ id: 42 }));
+```
+
+`listen` 对频道名做 identifier 转义后发 `LISTEN`；断线会按已登记频道重听。`notify` 走普通池连接执行 `select pg_notify($1, $2)`。
 
 ## 踩过的坑
 
-1. **必须用反引号**：写成 `sql('select ...')` 会抛 `NOT_TAGGED_CALL`——`sql()` 普通调用只在传单字符串当 Identifier、或对象当 Builder 时合法，否则保命设计强制报错。
-2. **undefined 默认抛错而不是绑 null**：这是和 `pg` 最大差异。`pg` 把 undefined 静默转 null（漏传字段直接清库的经典 footgun），postgres.js 默认抛 `UNDEFINED_VALUE`，要改成 null 必须显式 `transform: { undefined: null }`。
-3. **bigint / numeric 默认是字符串**：JS Number 只能精确表示到 2^53，PG 的 `bigint` / `numeric` 直接给 Number 会丢精度，所以默认返回字符串。需要数值要 `.as('bigint')` 或自定义 parser。
-4. **嵌套 begin 不是真嵌套事务**：内层 `sql.begin` 实际发 SAVEPOINT，error code `25P02`（in_failed_sql_transaction）的处理外层和内层不同，容易写出"以为回滚了其实没回滚"。
-5. **TEMPORARY replication slot 断线丢事件**：`sql.subscribe` 默认建临时 slot，断线重连后从最新 LSN 起，断线期间 INSERT 全部丢失。生产 CDC 必须自己 `CREATE_REPLICATION_SLOT`（不带 TEMPORARY）并持久化 LSN。
+1. **普通函数调用不是查询**：`sql('select 1')` 得到 Identifier。要跑原始字符串必须 `sql.unsafe(...)`。
+
+2. **`undefined` 默认拒绝**：和 `pg` 把 `undefined` 转 `null` 不同。要绑 `null` 必须显式 `transform: { undefined: null }`。
+
+3. **`bigint` / `numeric` 默认是字符串**：内置 number parser 只覆盖 oid 21/23/26/700/701。`count(*)` 这类 `bigint` 要数值需注册 `postgres.BigInt`；`numeric` 没有内置高精度类型。
+
+4. **事务回调里的 `sql` 没有池级 `begin`**：嵌套回滚靠 `savepoint()`。再调用外层池的 `begin()` 会另占一条连接，不是子事务。
+
+5. **默认复制槽是 TEMPORARY**：`subscribe()` 断线重连后从新槽继续，窗口内的变更会丢。生产 CDC 需要自己管理持久 slot 与 LSN。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 写脚本 / 数据迁移 / 报表 / cleanup task——5 行起步、零 boilerplate
-- 中小项目里替换 `pg` 直接写 SQL，需要 SQL 表达力但不想上 ORM
-- 内部消息总线（LISTEN/NOTIFY）和 CDC（逻辑复制）场景
-- 跑在 Cloudflare Workers / Bun / Deno 等多 runtime 的项目
+
+- 想直接写 SQL、又要把参数和文本在语法层分开的 Node / Bun / Workers 服务
+- 中小项目用 LISTEN/NOTIFY 当进程内消息，而不是再挂一套 broker
+- 一次性脚本、迁移和报表：工厂即连接池，不用手动 checkout
 
 **不适用**：
-- 团队对 type safety 敏感、要从 schema 推查询返回类型 → 用 [[drizzle]] 或 [[kysely]]
-- multi-tenant SaaS 跨多客户 schema、要重 migration 工具 → 用 [[prisma]]
-- 已经深度依赖 `pg` 生态（pg-pool / pg-cursor / pg-format）的旧项目
-- 高保障 CDC（不能丢事件）→ 默认 TEMPORARY slot 断线丢事件，要自己管 LSN
 
-## 历史小故事（可跳过）
+- 需要从 schema 推导返回类型 → 看 [[drizzle]] 或 [[kysely]]
+- 已经深度绑在 `pg-pool` / `pg-cursor` 工具链上的旧系统
+- 不能丢事件的 CDC → 默认临时 slot 不够，要自己管复制进度
+- 把作者 README 的“最快”当合同 → 本文没有跑对比 benchmark
 
-- **2015 年**：ES2015 把 tagged template literal 写进 JS 标准，`strings.raw` 成为引擎内置字段，但前几年没人在 DB 客户端里把它当安全分隔利用。
-- **2019 年**：Rasmus Porsager 在 GitHub 开源 `porsager/postgres`，思路是「反引号是天然的语法分隔，那为什么 PG 客户端还在拼字符串」。
-- **2021-2023 年**：Cloudflare Workers / Bun / Edge runtime 流行，单文件零依赖 + 跨 runtime 的特性让它从小众变主流候选。
-- **2024-2025 年**：v3 系列稳定；部分托管 PG 文档把它与 `pg`、ORM 并列介绍为可选客户端之一。
-- **2026 年**：npm 周下载约 60 万、GitHub 约 8.7k 星；社区常把它当 Node 圈写 PG 的轻量 SQL-first 基线之一。
+## 固定版本边界
+
+- 本文绑定 `porsager/postgres@e7dfa145...`，npm `postgres@3.4.9` 的 `gitHead` 与该提交一致。
+- 条件导出：`bun` / `import` → `src/index.js`；`workerd` → `cf/src/index.js`；默认 CJS → `cjs/src/index.js`。`engines.node` 为 `>=12`。
+- 默认 `max=10`（Cloudflare 3）、`max_pipeline=100`、`prepare=true`、`connect_timeout=30`、`keep_alive=60`、`fetch_types=true`。
+- 许可为 Unlicense。本文未连接数据库、未跑上游测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **语法即安全**：能让"不可能写错"在语法层就拒绝编译，比"文档警告 + 代码评审"靠谱十倍
-2. **小 surface 比大功能值钱**：postgres.js 用户面只有一个 `sql` 工厂——单一职责让源码 ~2.6k 行就能覆盖 PG 全协议
-3. **pipeline 是性能的免费午餐**：同样的 PG server，client 端把 query 压同一 socket 就能快 2-5x，多数客户端没做
-4. **bus factor 是真实风险**：作者 porsager 一人 90%+ commit；选它要接受这个集中度
-5. **极简 ≠ 无心智负担**：用反引号 / 普通字符串 / 对象 调 `sql(...)` 触发三种完全不同的行为（Query / Identifier / Builder），新手要花一周才能不踩 NOT_TAGGED_CALL
+1. **语法边界比文档警告稳**——tag 函数让参数无法回到 SQL 字符串通道。
+2. **一个 `sql` 名字不够**——Query / Identifier / Builder 的分派是新手最容易踩的合同。
+3. **连接池是状态机**——pipeline、reserve 和事务都靠把连接在队列之间搬动。
+4. **旁路协议另开连接**——LISTEN 与逻辑复制不能和普通查询共享同一条忙连接。
+
+## 应用型自测
+
+1. `await sql('select 1')` 会发出查询吗？
+2. `` await sql`insert into t values (${undefined})` `` 在默认 `transform` 下会怎样？
+3. 事务回调里再调用池对象的 `sql.begin()`，会得到嵌套 SAVEPOINT 吗？
+
+检查点：
+
+1. 不会。单字符串走 Identifier，`await` 抛 `NOT_TAGGED_CALL`。
+2. 抛 `UNDEFINED_VALUE`；只有显式设置 `transform.undefined` 才会替换。
+3. 不会。回调里的 `sql` 只提供 `savepoint()`；池级 `begin()` 会另占连接。
 
 ## 延伸阅读
 
-- 仓库 README：[porsager/postgres on GitHub](https://github.com/porsager/postgres)（README 本身就是最完整的 API 参考）
-- 视频讲解：[porsager 在 Node Congress 谈 postgres.js 设计](https://www.youtube.com/results?search_query=porsager+postgres.js)（搜索 "porsager postgres" 可找到几个会议演讲）
-- 对比文章：[Drizzle vs postgres.js vs Prisma](https://orm.drizzle.team/docs/get-started-postgresql)（看 ORM 视角怎么评价它）
-- 协议参考：[PostgreSQL Frontend/Backend Protocol](https://www.postgresql.org/docs/current/protocol.html)（理解 pipeline 优势的根）
-- [[postgresql]] —— postgres.js 服务的数据库本体
-- [[drizzle]] —— SQL-first ORM，常和 postgres.js 搭配做 type-safe builder
+- 仓库 README：[porsager/postgres](https://github.com/porsager/postgres)
+- 固定源码：[porsager/postgres](https://github.com/porsager/postgres) —— 本文绑定提交 `e7dfa14519f363229ccc3ead7b1b2f2051937efb`
+- 协议参考：[PostgreSQL Frontend/Backend Protocol](https://www.postgresql.org/docs/current/protocol.html)
+- [[postgresql]] —— 服务端协议与类型系统
+- [[drizzle]] —— 常用它当 SQL-first ORM 的底层 driver
 
 ## 关联
 
-- [[postgresql]] —— 它是 PG 的客户端，所有协议层假设都是 PG 提供的
-- [[prisma]] —— ORM 路线代表，和 postgres.js 是同一问题的两条相反答案
-- [[drizzle]] —— SQL-first ORM，常用 postgres.js 当底层 driver
-- [[kysely]] —— type-safe query builder，另一种避开 ORM 的思路
-- [[redis]] —— LISTEN/NOTIFY 替代了它在轻量 pub/sub 场景的位置
-- [[bun]] —— 跨 runtime 兼容矩阵中的重要一环
-- [[fastify]] —— Node 后端框架，常组合 postgres.js 做最小化技术栈
+- [[postgresql]] —— 客户端的全部协议假设都来自 PG
+- [[prisma]] —— 重 schema / migration 的另一条答案
+- [[drizzle]] —— SQL-first ORM，底层常接 postgres.js
+- [[kysely]] —— type-safe query builder
+- [[redis]] —— LISTEN/NOTIFY 在轻量 pub/sub 上的常见对照
+- [[bun]] —— 条件导出矩阵中的一环
 
 ## 反向链接
 

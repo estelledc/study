@@ -1,153 +1,180 @@
 ---
 title: duckdb-wasm — 把分析数据库塞进浏览器标签页
-来源: 'duckdb/duckdb-wasm v1.33.0, 2025-12 读, MIT'
+来源: https://github.com/duckdb/duckdb-wasm
 日期: 2026-05-29
 分类: 数据库
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/duckdb/duckdb-wasm
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: fa1d47b38ed0821cecab0bdc331c48abd0f2cc65
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: v1.33.0
 ---
 
 ## 是什么
 
-duckdb-wasm 是**把 DuckDB（一个 C++ 写的列式分析数据库）编译成 WebAssembly，让浏览器里直接跑 SQL** 的项目。日常类比：你以前要去图书馆查资料（数据在 server 上），现在图书馆**搬进了你的桌子抽屉**（浏览器）——而且不需要把整个书架搬回来，只翻你要的那几页。
+duckdb-wasm 把 DuckDB 的分析引擎编译成 WebAssembly，让浏览器或 Node 在进程内跑 SQL。日常类比：以前要请远端仓库管理员查账，现在把账本和计算器一起放进标签页——而且读远程 Parquet 时可以只抽需要的字节范围。
 
 你写：
 
-```javascript
-const result = await conn.query(`
-    SELECT region, sum(sales) FROM 'https://cdn.example.com/big.parquet'
-    GROUP BY region
-`)
+```js
+const bundle = await duckdb.selectBundle(duckdb.getJsDelivrBundles());
+const db = new duckdb.AsyncDuckDB(new duckdb.ConsoleLogger(), new Worker(bundle.mainWorker));
+await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+const conn = await db.connect();
+const table = await conn.query("select 1 as one");
 ```
 
-浏览器在 Web Worker 里跑这个 SQL，按需通过 HTTP Range 请求只下载需要的字节范围。一个 100MB 的 parquet 文件，可能只下了 5MB 数据就给出结果。
+固定源码里，查询在 Worker 中执行，结果以 Arrow IPC 缓冲回到主线程，再被收成 `arrow.Table`。运行时依赖 `apache-arrow`。
 
 ## 为什么重要
 
 不理解 duckdb-wasm，下面这些事都没法解释：
 
-- 为什么 [shell.duckdb.org](https://shell.duckdb.org/) 一打开就能跑分析查询，不需要后端
-- 为什么 BI dashboard 现在能做"无 server 部署"——把 parquet 放 CDN，前端直接查
-- 为什么 sql.js（SQLite 编译进 WASM）跑分析型聚合常慢一个数量级，而 duckdb-wasm 用列存更合适
-- 为什么"浏览器里的数据库"这件事在 2021 年前后才真正可用——WASM + 列存 + HTTP Range 三件齐全
+- 为什么同一套 JS API 要准备 mvp / eh / coi 三份 WASM
+- 为什么远程文件打开会先发带 `Range` 的同步 XHR
+- 为什么 OPFS 持久化走 `db.open({ path: 'opfs://...' })`，而不是只靠一条 `ATTACH`
+- 为什么 JS 标量 UDF 挂在同步 `DuckDBConnection` 上，异步连接没有同名方法
 
 ## 核心要点
 
-duckdb-wasm 的能力可以拆成 **三层**：
+主链可以拆成五步：
 
-1. **WASM 把 C++ 数据库装进浏览器**：用 Emscripten 把 DuckDB 的 C++ 代码编译成 `.wasm` 文件（约 7MB 未压缩，2-3MB gzip）。类比：把整个图书馆压缩成一个文件，浏览器下载完就能用。
+1. **选 bundle**：`selectBundle()` 探测 WASM exception / SIMD / threads 与 `crossOriginIsolated`。有异常处理就优先 eh；同时满足线程和跨源隔离且调用方提供了 coi 才用 coi。`getJsDelivrBundles()` 只给出 mvp 与 eh，注释写明 coi 仍需显式 opt-in。
 
-2. **Web Worker 让查询不卡主线程**：所有 SQL 在 Worker 里跑，主线程只负责发请求等结果。WASM 是同步执行的，重查询不放 Worker 会冻死页面。类比：让数据库管理员去后台干活，前台还能继续接待用户。
+2. **Worker 实例化**：`AsyncDuckDB.instantiate(mainModule, pthreadWorker)` 把模块 URL 发给 Worker；浏览器绑定优先 `WebAssembly.instantiateStreaming`，失败再退到数组缓冲。
 
-3. **HTTP Range 按需读 parquet**：parquet 是列式 + 分块 + 自带 metadata 的格式。duckdb-wasm 先用 HTTP Range 读 metadata（拿到每列每块的位置），根据 WHERE 条件 prune 掉不需要的块，只下载命中的字节。类比：去图书馆只翻目录页找到要的章节，再单独借那几页，不搬整本书。
+3. **异步消息**：主线程用递增 `messageId` 把 `CONNECT` / `RUN_QUERY` 等任务 `postMessage` 到 Worker，再用 `pendingRequests` 对回包。查询结果先从 WASM heap `copyBuffer` 拷出，再传回主线程。
 
-## 实践案例
+4. **HTTP / S3 文件**：`BROWSER_RUNTIME` 用同步 XHR 探活与读区。注释写明 BLOB/HTTP 读取必须走 Range；`allow_full_http_reads` 默认 `true`，服务器不支持 206 时可以整文件回退。
 
-### 案例 1：浏览器里直接查 100MB 远程 parquet
+5. **OPFS**：`open({ path: 'opfs://...' })` 时 Worker 先 `prepareDBFileHandle`，给库文件和 `.wal` 创建 `FileSystemSyncAccessHandle`，并打开 `useDirectIO`。SQL 文本里的 `opfs://` 还可按 `opfs.fileHandling` 自动登记。
 
-```javascript
-import * as duckdb from '@duckdb/duckdb-wasm'
+## 实践示例
 
-const bundle = await duckdb.selectBundle(duckdb.getJsDelivrBundles())
-const worker = new Worker(bundle.mainWorker)
-const db = new duckdb.AsyncDuckDB(new duckdb.ConsoleLogger(), worker)
-await db.instantiate(bundle.mainModule, bundle.pthreadWorker)
-const conn = await db.connect()
+### 案例 1：按平台选 bundle 再查远程 Parquet
 
-const result = await conn.query(`
-    SELECT count(*) FROM 'https://shell.duckdb.org/data/tpch/0_01/parquet/lineitem.parquet'
-`)
-console.log(result.toArray())
+```js
+import * as duckdb from "@duckdb/duckdb-wasm";
+
+const bundle = await duckdb.selectBundle(duckdb.getJsDelivrBundles());
+const worker = new Worker(bundle.mainWorker);
+const db = new duckdb.AsyncDuckDB(new duckdb.ConsoleLogger(), worker);
+await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+const conn = await db.connect();
+const table = await conn.query(
+  "select count(*) as n from 'https://example.com/lineitem.parquet'"
+);
+console.log(table.toArray());
 ```
 
-打开 Network 面板会看到多个 `Range: bytes=L-R` 的请求，每个只下几 KB。
+这条路径会走 HTTP 协议与 Range 探测。示例 URL 只说明 API，本文没有实际下载该文件。
 
-### 案例 2：用 OPFS 持久化一个本地数据库
+### 案例 2：用 OPFS 打开可写库
 
-```javascript
-const conn = await db.connect()
-await conn.query(`ATTACH 'opfs://my.db' AS local (READ_WRITE)`)
-await conn.query(`CREATE TABLE notes(id INT, body VARCHAR)`)
-await conn.query(`INSERT INTO notes VALUES (1, 'first note')`)
-// 关掉 tab 再打开，数据还在
+```js
+await db.open({
+  path: "opfs://notes.db",
+  accessMode: duckdb.DuckDBAccessMode.READ_WRITE
+});
+const conn = await db.connect();
+await conn.query("create table notes(id integer, body varchar)");
+await conn.query("insert into notes values (1, 'first note')");
+await conn.query("checkpoint");
 ```
 
-OPFS（Origin Private File System）是浏览器的"沙箱文件系统"。要求页面用 COOP+COEP 头开启跨源隔离，否则同步文件 API 不可用。
+固定测试用的是 `open({ path: 'opfs://test.db' })`，关连接后再次 `open` 同一路径可以读回表。`createSyncAccessHandle` 依赖当前浏览器对 OPFS 同步句柄的限制，不能把任意静态托管环境都写成“关掉标签页数据一定还在”。
 
-### 案例 3：注册一个 JS 标量 UDF
+### 案例 3：同步连接上的标量 UDF
 
-```javascript
-import * as arrow from 'apache-arrow'
-// 在同步连接 / Worker bindings 上注册（不是 CREATE FUNCTION SQL）
-conn.createScalarFunction(
-  'upper_js',
-  new arrow.Utf8(),
-  (s) => String(s ?? '').toUpperCase()
-)
-const result = conn.query(`SELECT upper_js('hello world') AS v`)
-// → 'HELLO WORLD'
+```js
+import * as arrow from "apache-arrow";
+
+conn.createScalarFunction("upper_js", new arrow.Utf8(), (s) =>
+  String(s ?? "").toUpperCase()
+);
+const table = conn.query("select upper_js('hello') as v");
 ```
 
-逐步解释：先声明返回类型（Arrow `Utf8`），再传入 JS 回调；之后 SQL 里就能当普通函数调用。适合日期解析、字符串清洗等 SQL 不好写的格式化。
+`createScalarFunction` 只出现在同步 `DuckDBConnection`。`AsyncDuckDBConnection` 提供 `query` / `send` / `prepare` / Arrow 插入，没有同名 UDF 方法。
 
 ## 踩过的坑
 
-1. **Bundle 必须用 application/wasm MIME**：自托管时 server 配错 MIME 会让 `WebAssembly.instantiateStreaming` 失败、降级到 XHR、再失败成"无限 loading"。检查 `Content-Type: application/wasm`。
+1. **jsDelivr helper 不含 coi**：需要 pthread 时必须自己提供 `bundles.coi`，并满足跨源隔离。`maximumThreads` 也注明依赖 `SharedArrayBuffer`。
 
-2. **Range request 要 server 真支持**：CDN 必须真实返回 206 Partial Content。某些反向代理会忽略 `Range` 头返回 200 全文件，duckdb-wasm 会退化为依赖浏览器缓存——首次查询会下载全文件。
+2. **WASM MIME 与 streaming**：浏览器绑定先走 `instantiateStreaming`。自托管若没返回 `application/wasm`，会落到 XHR 回退；回退失败才是“一直 loading”。
 
-3. **OPFS 持久化要 COOP+COEP 头**：跨源隔离需要 `Cross-Origin-Opener-Policy: same-origin` + `Cross-Origin-Embedder-Policy: require-corp`。GitHub Pages / 公共 CDN demo 一般配不上，导致 reload 后数据丢失。
+3. **Range 失败不等于立刻放弃**：默认允许 full HTTP read。代理若忽略 `Range` 回 200，打开阶段可能把整文件读进 WASM heap。
 
-4. **Worker 才能同步 XHR**：所有底层 IO 走同步 XHR（WASM 同步语义硬约束）。主线程禁用同步 XHR 多年，所以 query 必须走 Worker。"我就想 5 行代码同步跑个 SELECT"做不到。
+4. **异步 API 不是同步 API 的薄包装**：`query()` 把完整 IPC 文件式缓冲收成 Table；`send()` 才是流式 `AsyncRecordBatchStreamReader`。大结果会经过 heap 拷贝和 `postMessage`。
 
-5. **大结果集走两次内存拷贝**：query 结果走 WASM heap → Worker Uint8Array → postMessage → 主线程，每段都是复制。100MB 结果 = 200MB 临时 RAM 消耗 + 几百 ms 延迟。`SELECT *` 大表是延迟杀手，应该用 `LIMIT` 或聚合后再回主线程。
+5. **包版本 provenance 分裂**：GitHub release `v1.33.0` 指向本提交，但仓内 `packages/duckdb-wasm/package.json` 仍写 `1.11.0`；npm 把同一 `gitHead` 发成 `1.32.1-dev1.0`，没有 `1.33.0` 包。后继 `1.33.1-dev*` 不在本文范围内。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- Dashboard / ad-hoc analytics / parquet 文件浏览（典型甜区：1MB-100MB OLAP）
-- 替代手写 Papa Parse + d3.group 做前端数据聚合，让 SQL `GROUP BY` 跑掉
-- Notebook-style 学习站、SQL playground、零 server demo
-- 跨多数据源（csv + parquet + json）的 ad-hoc join
+
+- 浏览器里对 Parquet / CSV / JSON 做 ad-hoc 聚合，结果用 Arrow 交给图表
+- 需要按平台能力换 wasm 变体，而不是手写一套 SQL 引擎
+- 用 OPFS 做可恢复的本地分析库，并且能接受同步文件句柄的环境约束
 
 **不适用**：
-- OLTP 场景（笔记 app / 购物车 / 本地待办）→ SQLite WASM 更合适，行存 + 1MB bundle
-- GB+ 级数据 → WASM 寻址上限 ~2GB（32-bit 限制），超过必须 server
-- 高并发事务 / 持续写入 → duckdb-wasm 单 Worker 模型不是为此设计
-- 必须脱机但环境配不上 COOP+COEP → 用 IndexedDB + 业务 serialization 更稳
 
-## 历史小故事（可跳过）
+- 高并发写入或多标签页抢同一 OPFS 句柄
+- 必须在 `AsyncDuckDBConnection` 上注册 JS UDF
+- 把未发布的 npm `latest`（本稿检索时是 `1.33.1-dev*`）当成 GitHub release
+- OLTP 记事本 / 购物车 → [[sqlite]] 的行存嵌入式模型更贴
 
-- **2014 年**：sql.js 把 SQLite 编译进 WASM，第一次让浏览器跑 SQL。但 SQLite 是行存，分析查询慢
-- **2018–2020 年**：Emscripten 能稳定编译大型 C++；Web Worker / Fetch 流式能力够用，但浏览器本地持久化仍靠 IndexedDB 等旧方案
-- **2021 年**：DuckDB 团队（CWI 衍生）启动 duckdb-wasm，André Kohn 主导；同年前后 OPFS 才进入 Chromium
-- **2022-2024 年**：HTTP Range 读 parquet 成核心场景；shell.duckdb.org 上线；OPFS 持久化逐步可用
-- **2025 年 12 月**：v1.33.0 发布，基于 DuckDB v1.5.3，每周持续 commit
+## 固定版本边界
 
-项目至今活跃，2000+ star，三个主要 variant（mvp / eh / coi）让用户根据浏览器能力选最小 bundle。
+- 本文绑定 `duckdb/duckdb-wasm@fa1d47b38...`，对应 GitHub release `v1.33.0`。
+- 该提交的 npm 映射是 `@duckdb/duckdb-wasm@1.32.1-dev1.0`，不是 `1.33.0`；仓内 package version 仍为 `1.11.0`。
+- 浏览器默认入口是 `dist/duckdb-browser.mjs`；Node 入口是 `dist/duckdb-node.cjs`。同步 API 在 `./blocking`。
+- 核心依赖 `apache-arrow@^17.0.0`。C++ 侧通过 submodule 编进 DuckDB，并默认带 `json` 与 `core_functions` 扩展。
+- 本文未实例化 WASM、未发 Range 请求、未跑 karma/jasmine，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **数据库可以脱离 server**：浏览器 + WASM + HTTP Range 三件齐全后，"在客户端跑分析查询"第一次成立。这件事 5 年前是不可想象的
-2. **同步 XHR 在 Worker 里仍然有用**：被主线程废弃多年的 API，因为 WASM 同步语义反而成为 duckdb-wasm 的核心机制
-3. **列存 vs 行存的选择决定 OLAP 性能**：sql.js 慢不是因为 SQLite 写得不好，是因为 OLAP 本来就该用列存
-4. **格式比代码更重要**：parquet 自带 metadata + 分块的设计，是 HTTP Range 部分读取能成立的前提；CSV 永远做不到这件事
+1. **浏览器分析库的合同在 Worker 边界**——主线程看到的是消息和 Arrow 表，不是 C++ 执行器本身。
+2. **能力探测决定下载哪份机器码**——eh / coi 不是别名，缺特征就回落到 mvp。
+3. **远程列存能成立，是因为运行时先问 Range**——格式和 HTTP 语义绑在一起。
+4. **发布标签、仓内 version 与 npm dist-tag 可能对不齐**——只能绑 commit，不能猜包名。
+
+## 应用型自测
+
+1. `getJsDelivrBundles()` 在支持线程的浏览器里会自动返回 coi 吗？
+2. `AsyncDuckDBConnection` 上能否调用 `createScalarFunction`？
+3. 远程文件的服务器忽略 `Range` 并回 200 时，默认会失败还是整文件回退？
+
+检查点：
+
+1. 不会。helper 只提供 mvp/eh；coi 必须调用方显式传入。
+2. 不能。该方法只在同步 `DuckDBConnection` 上。
+3. 默认 `allow_full_http_reads` 为 true，打开阶段可以整文件回退。
 
 ## 延伸阅读
 
-- 视频：[DuckDB-Wasm: Bringing OLAP to the Browser (CIDR 2022)](https://duckdb.org/2021/10/29/duckdb-wasm.html) — 项目 manifesto，30 分钟讲清整个设计动机
-- 论文：[DuckDB-Wasm: Fast Analytical Processing for the Web](https://www.vldb.org/pvldb/vol15/p3574-kohn.pdf) — VLDB 2022，PDF 12 页
-- 实践教程：[DuckDB-Wasm 官方文档](https://duckdb.org/docs/api/wasm/overview) — 各种 bundler（vite / webpack / esbuild）接入示例
-- [[duckdb]] —— 同一个引擎的服务端版本
-- [[sqlite]] —— 浏览器 SQL 的另一条路（OLTP 主场）
-- [[clickhouse]] —— 服务端列存 OLAP 数据库
+- 启动说明：[DuckDB-Wasm launch post](https://duckdb.org/2021/10/29/duckdb-wasm.html)
+- 固定源码：[duckdb/duckdb-wasm](https://github.com/duckdb/duckdb-wasm) —— 本文绑定提交 `fa1d47b38ed0821cecab0bdc331c48abd0f2cc65`
+- 论文：[DuckDB-Wasm: Fast Analytical Processing for the Web](https://www.vldb.org/pvldb/vol15/p3574-kohn.pdf)
+- [[duckdb]] —— 同一引擎的本地/服务端形态
+- [[sqlite]] —— 浏览器 SQL 的行存对照
 
 ## 关联
 
-- [[duckdb]] —— duckdb-wasm 的本体，C++ 主仓 submodule 进 WASM 编译
-- [[sqlite]] —— 浏览器 SQL 的前辈和 OLTP 替代品，对比看出列存 vs 行存的设计差异
-- [[clickhouse]] —— 同样是列存 OLAP，但只能 server 跑——对比凸显"浏览器内 OLAP"的稀有
-- [[vite]] —— 接入 duckdb-wasm 最常用的 bundler，处理 worker / wasm 资源
-- [[postgresql]] —— 传统关系型代表，行存 OLTP 标杆，与 duckdb 哲学相反
+- [[duckdb]] —— WASM 包装的本体引擎
+- [[sqlite]] —— OLTP / 行存嵌入式对照
+- [[clickhouse]] —— 只能在 server 跑的列存对照
+- [[vite]] —— 文档给出的 worker / wasm URL 接入方式之一
+- [[postgresql]] —— 行存客户端协议对照，见 [[postgres-js]]
 
 ## 反向链接
 
