@@ -4,8 +4,8 @@
   "summary": {
     "total": 962,
     "by_status": {
-      "benchmark-aligned": 57,
-      "needs-evidence": 905
+      "benchmark-aligned": 59,
+      "needs-evidence": 903
     }
   },
   "projects": [
@@ -6762,26 +6762,22 @@
     {
       "slug": "framer-motion",
       "title": "Framer Motion — React 声明式动画",
-      "source": "https://github.com/framer/motion",
-      "status": "needs-evidence",
+      "source": "https://github.com/motiondivision/motion",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "frappe-gantt",
@@ -7691,25 +7687,21 @@
       "slug": "gsap",
       "title": "GSAP — GreenSock 高性能动画",
       "source": "https://github.com/greensock/GSAP",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "gstreamer",
