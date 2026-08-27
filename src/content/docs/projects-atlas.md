@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 967 个项目的分块地图 · 稳定 taxonomy · 自动生成
+description: 968 个项目的分块地图 · 稳定 taxonomy · 自动生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -12,10 +12,10 @@ sidebar:
 ## 总览
 
 <div class="study-stats-strip">
-  <div><strong>967</strong><span>项目总数</span></div>
-  <div><strong>939</strong><span>已有规范主题</span></div>
+  <div><strong>968</strong><span>项目总数</span></div>
+  <div><strong>940</strong><span>已有规范主题</span></div>
   <div><strong>28</strong><span>暂未收纳进主题路线</span></div>
-  <div><strong>97.1%</strong><span>分类覆盖率（939 / 967，已分类 / 总数）</span></div>
+  <div><strong>97.1%</strong><span>分类覆盖率（940 / 968，已分类 / 总数）</span></div>
 </div>
 
 ## 先选一条学习路径
@@ -80,7 +80,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 移动开发 | Mobile Development | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
 | 通用开发工具 | General Developer Tools | 16 | [第 1/1 组](/study/atlas/projects/topic-projects-general-developer-tools-01/) |
 | 数据科学与 AI | Data Science and AI | 44 | [第 1/1 组](/study/atlas/projects/topic-projects-data-science-and-ai-01/) |
-| 后端与 API | Backend and APIs | 57 | [第 1/1 组](/study/atlas/projects/topic-projects-backend-and-apis-01/) |
+| 后端与 API | Backend and APIs | 58 | [第 1/1 组](/study/atlas/projects/topic-projects-backend-and-apis-01/) |
 
 ## 暂未收纳进主题路线
 
@@ -95,6 +95,6 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 ## 数据质量报告
 
-- difficulty 未知：959
-- description 为空：955
-- sidecar 主键：967 个唯一 `area::slug`
+- difficulty 未知：958
+- description 为空：954
+- sidecar 主键：968 个唯一 `area::slug`
