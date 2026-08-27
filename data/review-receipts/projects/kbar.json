@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "kbar",
+    "digest_sha256": "9e2d12b8ae4cc4efc54367f45e3e83aeb67925773ad9f986270b46a4264ac846"
+  },
+  "source_revision": "26ec0f49f92ab34fa6ab59392782d56020f28098",
+  "research_input_sha256": "873afc1ec6ca13e5c7e405d4962c3f4e2cfd96725b07a634d9fa83f0eb6130a2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates action-tree navigation, empty-vs-query candidate sets, and optional history negate protocol."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Store, Fuse matcher, InternalEvents, Command/History, and Jest tests were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Comments still mention commandScore; 1.0.0 matching is Fuse with disclosed weights and token AND."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

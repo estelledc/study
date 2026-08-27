@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -38869,6 +38869,38 @@
       }
     },
     {
+      "id": "projects::cmdk",
+      "area": "projects",
+      "slug": "cmdk",
+      "title": "cmdk — 用复合组件拼出来的命令菜单",
+      "description": "React 命令菜单：子组件自己注册，过滤时仍留在 React 树，只从 DOM 卸下。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "matched_category": "前端",
+        "raw_category": "前端 / 命令面板"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cmdk/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::cmsis-nn",
       "area": "projects",
       "slug": "cmsis-nn",
@@ -46828,6 +46860,38 @@
       "atlas": {
         "chunk_id": "topic-projects-devops-containers-and-operations-01",
         "chunk_route": "/study/atlas/projects/topic-projects-devops-containers-and-operations-01/"
+      }
+    },
+    {
+      "id": "projects::kbar",
+      "area": "projects",
+      "slug": "kbar",
+      "title": "kbar — 用 action 树驱动的命令栏",
+      "description": "React 命令栏：action 对象进 store，空搜看根节点，输入后用 Fuse 搜整棵子孙树。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "matched_category": "前端",
+        "raw_category": "前端 / 命令面板"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/kbar/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
       }
     },
     {
@@ -65881,7 +65945,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/",
-      "entries": 13
+      "entries": 15
     },
     {
       "id": "topic-projects-web-frameworks-01",

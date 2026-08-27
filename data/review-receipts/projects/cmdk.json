@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cmdk",
+    "digest_sha256": "67f427750422cd4de7ad02df05d6017cf61ca3f642e20502af01fee076aef268"
+  },
+  "source_revision": "fb4ea04e9ec211777fbb39c6104e3c5f2ee107d2",
+  "research_input_sha256": "873afc1ec6ca13e5c7e405d4962c3f4e2cfd96725b07a634d9fa83f0eb6130a2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains compound-component registration, DOM-authoritative filter, and caller-owned Dialog separately."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index.tsx, command-score, architecture, and Playwright tests were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "GitHub now serves dip/cmdk and npm 1.1.1 has no gitHead; the note is bounded to reachable tag v1.1.1."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

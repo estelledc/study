@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BS：cmdk / kbar
+
+- status：`running` → writer epoch `complete`；形成单一 review-ready PR，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把命令面板双子 `cmdk` 与 `kbar` 绑到固定 STATIC_REVIEW 修订，证据保持 `UNVERIFIED`。
+- scope：两篇新项目页、两份 generation 1 receipt、`docs/command-palette-source-review-20260827-bs.md`、atlas / note-index / site-state / 公开计数与本 handoff；未改开放 PR slug、候选队列、政策阈值或远端 `main`。
+- activated_by：`explicit-user-request-parallel-writer-bs-20260827`。
+- detector fingerprint：目标 slug 不在开放 PR 中，但 `origin/main` 没有现成项目页；按授权新建完整 `study-v2` 页并补 `difficulty` / `description`，避免顶满 atlas unknown-difficulty / empty-description 预算。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；授权开 1 个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `cmdk` 绑定 `dip/cmdk@fb4ea04e...` / `1.1.1`（GitHub 将 `pacocoursey/cmdk` 解析到同一仓；npm 无 `gitHead`）。
+  2. `kbar` 绑定 `timc1/kbar@26ec0f49...` / `1.0.0`（tag、package 与 npm `gitHead` 一致）。
+  3. 共享 provenance：`docs/command-palette-source-review-20260827-bs.md`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`。
+  - `audit:content-contract`：0 blocking，v2=89。
+  - `audit:counts` / `audit:wikilinks` / `audit:links` / `audit:site-state` / `git diff --check`：通过。
+- budget：2 个 ignored worktree + 2 页静态源码；单 writer；1 个 PR。
+- blocker：无。未跑 `verify:ci` 全量门禁前不得声称 Pages/Playwright 已绿。
+- stop conditions：需要猜 revision、把静态阅读写成运行成功、放宽门禁或 merge 时停止。
+- 下一次 wake 条件：PR CI / review 状态变化，或 owner 明确授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
