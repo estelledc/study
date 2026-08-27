@@ -15,11 +15,11 @@
   1. 只读核验 GitHub/npm：jQuery 绑定可达 tag `4.0.0` / `4f2fae08...`，披露 npm `gitHead` 不可达；cash-dom 绑定 `8.1.5` / `61e3b8f2...`，gitHead 与 tag 一致。
   2. 写共享审查文档与两页正文：工厂/选择器/事件/ajax 与 QSA-only 子集、默认构建排除项、HTML 脚本边界。
   3. 两份 STATIC_REVIEW receipt（evidence state `UNVERIFIED`）并刷新派生输出。
-- 验证结果：定向 quality-gate 两页 pass、0 advisory；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:counts` 与公开规模文案对齐。全量 `verify:ci` 在首个 PR 提交后跑。
+- 验证结果：定向 quality-gate 两页 pass、0 advisory；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:counts` 对齐。`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci` 全绿（含 23 Playwright a11y）。未 merge。
 - budget：2 个 ignored blob-filtered worktree + 2 页 + 1 篇审查文档；单 writer。
 - blocker：规模 baseline 超限是 main 上已有 detector，本轮未改 threshold / baseline。
 - 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge / 规模 baseline 的单独授权。
-- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #144 的 CI / review；未获 merge 授权前不要合并。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
