@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BE：better-auth + SuperTokens
+
+- supervisor 状态：writer epoch `complete`；等待 PR review。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：目标原是 passport + better-auth；仓库无 `passport` 页，且 `auth-js` / `lucia` 已被开放 PR #72 占用。fallback 为 `better-auth` + `supertokens`，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、`docs/auth-library-source-review-20260827-be.md`、两份 generation 1 receipt、确定性派生（note-index / project-standard-audit / site-state / 首页指标 / authentication atlas chunk）。未改开放 PR slug，未 merge。
+- activated_by：`explicit-parallel-writer-be-2026-08-27`。
+- detector fingerprint：两页教学骨架完整但缺 pinned revision / evidence / self-test；旧 better-auth 把 adapter 入口和邮箱密码开关写成未绑定印象；旧 SuperTokens 把 SDK `recipeList` 和 auth-react claim store 写成 Core 事实。
+- external delta 计数：GitHub 只读核验 + 本地 blob-filtered clone；将形成 1 个 PR，不 merge、不部署。D 轴待 owner 审查。
+- 已完成切片：
+  1. `better-auth` 绑定 `better-auth/better-auth@ba12fcdf...` / `1.7.2`。修正 `emailAndPassword.enabled` 默认 false、Drizzle 公开入口、`nextCookies` RSC 边界、MySQL 无 RETURNING。
+  2. `supertokens` 绑定 `supertokens/supertokens-core@3547e855...` / `12.1.1`。修正为 Core-only HTTP recipe，补 `/hello`、refresh 哈希链、CDI 5.6 reuse 与 `ee/` 许可墙。
+  3. 新增共享审查文档与两份 `STATIC_REVIEW` receipt。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision / research input 一致，evidence `UNVERIFIED`；`git diff --check`；随后跑 `verify:ci`。
+- budget：1 个可写切片；单 writer。
+- stop conditions：本 epoch 完成即停；不开启下一对；不 merge。
+- 下一次 wake 条件：PR review / CI 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 18,
-      "needs-evidence": 943
+      "benchmark-aligned": 20,
+      "needs-evidence": 941
     }
   },
   "projects": [
@@ -1902,27 +1902,23 @@
     },
     {
       "slug": "better-auth",
-      "title": "better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架",
+      "title": "better-auth — 用 plugin 注册表把登录能力接到同一条 Request 上",
       "source": "https://github.com/better-auth/better-auth",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "bevy",
@@ -19518,27 +19514,23 @@
     },
     {
       "slug": "supertokens",
-      "title": "SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe",
+      "title": "SuperTokens — 自托管认证核心：用 HTTP recipe 拆开登录与会话",
       "source": "https://github.com/supertokens/supertokens-core",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "surrealdb",
