@@ -1760,6 +1760,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::agenda",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::anime",
       "topic_id": "projects-animation"
     },
@@ -1802,6 +1806,10 @@
     {
       "note_id": "projects::boxen",
       "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::bree",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::browser-use",

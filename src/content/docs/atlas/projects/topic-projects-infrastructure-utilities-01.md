@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,14 +9,16 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Agenda — 把任务状态交给可插拔 backend 的 Node 调度器](/study/projects/agenda/) | `agenda` | intermediate | UNVERIFIED | 介绍 agenda 6 |
 | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | `airflow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | `asdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | `aws-spot-best-practices` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | `bigbluebutton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Bree — 用 worker thread 在本进程里跑作业脚本的调度器](/study/projects/bree/) | `bree` | beginner | UNVERIFIED | 介绍 bree 9 |
 | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | `collabora-online` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | `coturn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | `cri-o` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
