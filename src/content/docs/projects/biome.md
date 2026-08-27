@@ -158,10 +158,12 @@ workspace `process_file` 在文件已有 parse error、且未打开 `formatWithE
 
 - [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
+- [[depcheck]] —— depcheck — 对照 package.json 找未使用和缺失依赖
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[gh]] —— gh — GitHub 官方命令行
 - [[glab]] —— glab — GitLab 官方命令行
 - [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
+- [[knip]] —— Knip — 按工作区图找未使用依赖、导出和文件
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库

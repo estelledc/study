@@ -160,6 +160,7 @@ webpack 没"死"——npm 周下载量截至 2026 初仍约 30M+。但它从"默
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[depcheck]] —— depcheck — 对照 package.json 找未使用和缺失依赖
 - [[glslify]] —— glslify — 给 GLSL 用的 npm 模块系统
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具

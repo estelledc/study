@@ -155,3 +155,4 @@ pnpm oxlint --fix-dangerously src
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biome]] —— Biome — 把 lint、format 和 assist 收进同一个 CLI
+- [[knip]] —— Knip — 按工作区图找未使用依赖、导出和文件

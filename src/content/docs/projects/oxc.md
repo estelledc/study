@@ -157,4 +157,6 @@ console.log(result.program, result.errors);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[depcheck]] —— depcheck — 对照 package.json 找未使用和缺失依赖
+- [[knip]] —— Knip — 按工作区图找未使用依赖、导出和文件
 - [[rolldown]] —— rolldown — 用 Rust 实现 Rollup 兼容协议的打包器

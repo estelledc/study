@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "depcheck",
+    "digest_sha256": "51db42a398ce4aa42c50692ac56e7831e258a2dcd42c596f974a7350ff266c63"
+  },
+  "source_revision": "b180e2ec82a7c1413bc29df260561076030b1734",
+  "research_input_sha256": "c10842f85ad7c69d5b15d71129d493f1010c656e74ca4b2568aa8c57b7974098",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates package.json set-difference from Knip module graph; discloses archived repo and 0.0.1 source version."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected CLI cosmiconfig, check.js directoryFilter, parsers/detectors/specials; CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to v1.4.7 gitHead/tag; nested package.json dirs are skipped and exit(-1) is disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

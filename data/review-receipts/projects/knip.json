@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "knip",
+    "digest_sha256": "42e315e1aeaac1fc83bb03807314d7266960d1623ea82ef95c348eb79e9bbe6f"
+  },
+  "source_revision": "fc2733dc18c2e3d300183b9e2fe67d3fa54334fa",
+  "research_input_sha256": "c10842f85ad7c69d5b15d71129d493f1010c656e74ca4b2568aa8c57b7974098",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains workspace graph, strict-implies-production, and file-delete gate without claiming unused-dep-only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected createOptions, run/build/analyze, DependencyDeputy settle, IssueFixer; CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable knip@6.32.3 tag; npm has no gitHead. oxc-parser 0.143.0 is not the oxc page revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

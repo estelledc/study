@@ -166,11 +166,13 @@ export default defineConfig({
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[depcheck]] —— depcheck — 对照 package.json 找未使用和缺失依赖
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[electron]] —— Electron — 用网页技术做跨平台桌面应用
 - [[electron-builder]] —— electron-builder — Electron 打包发布事实标准
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[knip]] —— Knip — 按工作区图找未使用依赖、导出和文件
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid

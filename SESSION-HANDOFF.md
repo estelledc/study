@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FX：knip + depcheck 静态审查
+
+- supervisor 状态：writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`9adc8b99165dfaf015777d5ca88c629ebfa961aa`（当时的 `origin/main`）。
+- objective：把 unused-dep 双子 `knip` 与 `depcheck` 做成源码绑定的 study-v2 页；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation-1 receipt、`docs/unused-dep-source-review-20260827-fx.md`、taxonomy / atlas / site-state / 公开计数文案、本交接；未安装上游依赖、未跑 CLI 或 benchmark。
+- activated_by：`explicit-user-request-20260827-parallel-writer-fx`。
+- detector fingerprint：`origin/main` 无 knip / depcheck 页；用户指定该 unused-dep 对，并允许 fallback。
+- external delta 计数：本轮授权 push + 一个 PR；未授权 merge / deploy。
+- 已完成切片：
+  1. `knip` 绑定 annotated tag `knip@6.32.3` → `fc2733dc18c2e3d300183b9e2fe67d3fa54334fa`。
+  2. `depcheck` 绑定 tag `v1.4.7` / npm `gitHead` → `b180e2ec82a7c1413bc29df260561076030b1734`；披露仓库 archived 与源码 `version=0.0.1`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate` 通过、0 advisory；receipt 与正文 digest / 固定 revision 对齐。其余命令以本轮验收记录为准。
+- budget：1 个双子页切片；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一个 PR 已打开且未 merge 后停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

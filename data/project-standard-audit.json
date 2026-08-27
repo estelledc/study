@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 963,
+    "total": 965,
     "by_status": {
-      "benchmark-aligned": 79,
+      "benchmark-aligned": 81,
       "needs-evidence": 884
     }
   },
@@ -4515,6 +4515,26 @@
       "slug": "deno",
       "title": "Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时",
       "source": "https://github.com/denoland/deno",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
+      "slug": "depcheck",
+      "title": "depcheck — 对照 package.json 找未使用和缺失依赖",
+      "source": "https://github.com/depcheck/depcheck",
       "status": "benchmark-aligned",
       "checks": {
         "source": true,
@@ -9444,6 +9464,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "knip",
+      "title": "Knip — 按工作区图找未使用依赖、导出和文件",
+      "source": "https://github.com/webpro-nl/knip",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "koa",
