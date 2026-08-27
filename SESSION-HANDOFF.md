@@ -15,7 +15,7 @@
   1. `jiti` 绑定 `unjs/jiti@fd3bb289...` / annotated `v2.7.0` / npm `2.7.0`。
   2. `importx` 绑定 `antfu-collective/importx@18c23bab...` / annotated `v0.5.2` / npm `0.5.2`（`antfu/importx` 301 到 collective）。
   3. 共享审查文档与两份 STATIC_REVIEW receipt；派生刷新。
-- acceptance checks：两页 quality-gate 全绿、0 advisory；receipt evidence_state=`UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` CURRENT；`audit:counts` / `audit:site-state` 与当前文件一致。`verify:ci` 在 push 后补跑。
+- acceptance checks：两页 quality-gate 全绿、0 advisory；receipt evidence_state=`UNVERIFIED`；`STUDY_CHANGED_FROM=51448afbe npm run verify:ci` 规范 Node 22.23.1 / npm 11.17.0 下全绿（含 23 Playwright a11y）。未 merge。
 - budget：1 个可写切片；未改用 fallback TS-loader 对。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一 PR 已开且未 merge 后停止；不开启下一对。
