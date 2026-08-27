@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "38db114c1bdda865e2e1fbd0d389f19580fee80829c8908a40fd54020cd6f822",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
   "note": {
     "area": "projects",
-    "slug": "ky",
-    "digest_sha256": "a45416b9876fc064e517ea19913d589c99adc84eaae441278070d4b5c7c7a137"
+    "slug": "superagent",
+    "digest_sha256": "3baa994f1832ee07493f33b2dc351d403ce5d3b9a6618cc5064163fc3d26f941"
   },
-  "source_revision": "0a24c44fe4a15d0545c840facc56e473dd0b315b",
+  "source_revision": "3ef367619fbb2a8d07082238892ae12dafe4b0b0",
   "research_input_sha256": "6b80c72dea0ae683b03544fb43c8063120135dd0820031061a518d63f467c50e",
   "reviewers": [
     {
       "role": "ZERO_BASE",
       "reviewer_version": "research-benchmark-static-20260827-dq",
       "decision": "PASS_WITH_NOTES",
-      "score": 92,
+      "score": 91,
       "warnings": [
-        "Rebinds v2.0.2 to the peeled tag/npm gitHead and separates prefix, retry, timeout, and stream-clone boundaries."
+        "Separates fluent builders from XHR/http transport, default-off timeout/retry, and .ok() success replacement."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -29,7 +29,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 94,
       "warnings": [
-        "Core Ky flow, retry defaults, timeout, hooks, and clone/tee path were inspected; upstream tests and requests were not run."
+        "RequestBase, Node/browser entries, retry without method allowlist, agent cookie jar, and parsers were inspected; tests were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -40,9 +40,9 @@
       "role": "ACADEMIC",
       "reviewer_version": "research-benchmark-static-20260827-dq",
       "decision": "PASS_WITH_NOTES",
-      "score": 91,
+      "score": 92,
       "warnings": [
-        "July SHA 3419113b is a later 2.0.2 descendant, not the tag/npm triple; runtime claims stay UNVERIFIED."
+        "Claims are bounded to superagent 10.3.0 src/; compiled lib/ and browser XHR behavior were not executed."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",

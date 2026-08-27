@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -47472,8 +47472,8 @@
       "area": "projects",
       "slug": "ky",
       "title": "Ky — 把 Fetch 包成可治理的请求流程",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "建立在标准 Fetch 上的薄客户端：调用即发、默认 retry/timeout，hook 用 state object",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-http-clients"
       ],
@@ -47481,7 +47481,7 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-http-clients",
-        "raw_category": "projects"
+        "raw_category": "HTTP 客户端"
       },
       "trust": {
         "contract_state": "v2",
@@ -47489,8 +47489,8 @@
       },
       "freshness": {
         "state": "NOT_EVALUATED",
-        "reviewed_at": "2026-07-17",
-        "review_after": "2026-10-17"
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/ky/",
       "atlas": {
@@ -60239,6 +60239,37 @@
       }
     },
     {
+      "id": "projects::superagent",
+      "area": "projects",
+      "slug": "superagent",
+      "title": "Superagent — 先填运单再交给 http 或 XHR",
+      "description": "经典 callback/thenable HTTP 客户端：Node 走 http/https，浏览器走 XHR，不是 Fetch 包装",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-http-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-http-clients",
+        "raw_category": "HTTP 客户端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/superagent/",
+      "atlas": {
+        "chunk_id": "topic-projects-http-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-http-clients-01/"
+      }
+    },
+    {
       "id": "projects::supercollider",
       "area": "projects",
       "slug": "supercollider",
@@ -65685,7 +65716,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-http-clients-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-image-processing-and-canvas-01",

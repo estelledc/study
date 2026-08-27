@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 HTTP 客户端双子 ky / superagent（writer DQ）
+
+- status：writer epoch `complete`；待 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：为 `ky` 与 `superagent` 绑定可达固定 revision，证据上限 `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：刷新 `ky` 页、新建 `superagent` 页、2 份 receipt、`docs/http-client-source-review-20260827-dq.md`、taxonomy assignment、派生 atlas / site-state / 公开计数、本交接记录。
+- activated_by：`explicit-user-parallel-writer-dq-2026-08-27`。
+- detector fingerprint：`ky` 已是 study-v2 但绑定的是 2.0.2 后代提交而非 tag/npm peel；主仓无 `superagent` 页；当时开放 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge 与 deploy 未授权），D 轴不因本地 diff 提升。
+- 完成切片：
+  1. `ky` 改绑 `sindresorhus/ky@0a24c44fe4...` / `2.0.2` peel，修正 `prefixUrl` 会抛错，并写清 413 / timeout / stream clone 边界。
+  2. `superagent` 绑定 `ladjs/superagent@3ef36761...` / `10.3.0`，写清 callback/thenable、XHR/http 分流、默认关闭 timeout/retry，以及 POST 可被 `.retry()` 重放。
+  3. 新增共享审查文档与 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt evidence state `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=19`；`audit:content-contract` 0 blocking / 88 v2；`audit:counts` projects=962；`audit:wikilinks` budget_failures=0。
+- budget：1 个 HTTP 客户端双子切片、1 个本地 writer。
+- blocker：merge/deploy 未授权。
+- stop conditions：canonical/revision 不一致、需要猜测性能数字、或只能放宽门禁时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 新授权。
+- 下一条命令：在已开 PR 上等待 CI/review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
