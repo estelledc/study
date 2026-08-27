@@ -19,6 +19,7 @@
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
   - `audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` / `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 tests、changed-note quality gate 2/2、23 Playwright a11y、Pages/Atlas/站点预算与 drift 门禁）。
 - budget：2 个小型 blob-filtered worktree + 2 页新建静态审查 + 派生刷新；单 writer；默认 3 切片内完成。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值、baseline 或证据布局。
 - stop conditions：一页一对、一个 PR、不 merge。canonical/revision 不唯一或只能放宽门禁时停止。
