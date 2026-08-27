@@ -23,10 +23,10 @@
   - `audit:project-standard`：snapshot current；`benchmark-aligned` 由 18 增至 20。
   - `audit:counts` / `audit:site-state`：projects=963、papers=1083、total=2046。
 - budget：1 个本地 writer epoch、2 页静态源码审查、1 个 PR；不 merge。
-- 验证结果：定向 quality-gate / receipt / content-contract / counts / site-state / project-standard 已通过；`verify:ci` 在首个 commit 后跑。
-- 剩余 blocker：PR 未 merge；静态审查不能替代上游运行证据。
-- 下一次 wake 条件：owner 审查本 PR，或出现新的显式范围。无新授权时不要继续发明 lint/format 页。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`；不要 merge。
+- 验证结果：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿；首次失败只因本机缺 Playwright Chromium，安装浏览器后重跑通过。构建产物可见 `/projects/dprint/` 与 `/projects/xo/`，正文保留 `UNVERIFIED`。
+- 剩余 blocker：PR #172 未 merge；静态审查不能替代上游运行证据。
+- 下一次 wake 条件：owner 审查 `https://github.com/estelledc/study/pull/172`，或出现新的显式范围。无新授权时不要继续发明 lint/format 页。
+- 下一条命令：查看 PR #172 的 CI / review；不要 merge。
 - stop conditions：已形成 1 个 PR。不得自动 merge，不得把 STATIC_REVIEW 提升为 VERIFIED。
 - superseded_by：`none`。
 - 不在 handoff 中复制易过期数字或 ETA。
