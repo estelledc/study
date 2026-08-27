@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "parse5",
+    "digest_sha256": "5efba89861a762b8c6fe83da50c4dcf80a14d55f1816efc5b2d9dbcd01f9e68e"
+  },
+  "source_revision": "0d56627fc924d40f560fd260ade0e1a935e2369c",
+  "research_input_sha256": "ece426445a5c59806919f2915f689a14737220d6f2448fb907bd5a9dd617131b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates insertion modes, document vs fragment shells, serialize vs serializeOuter, and tree-adapter swap."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "parse5 parser, serializer, default adapter, and htmlparser2 tree adapter were inspected; html5lib was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds lightweight tag v8.0.1 / npm gitHead 0d56627f... and discloses monorepo root vs parse5 package identity."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

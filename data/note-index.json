@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -45502,6 +45502,37 @@
       }
     },
     {
+      "id": "projects::htmlparser2",
+      "area": "projects",
+      "slug": "htmlparser2",
+      "title": "htmlparser2 — 用回调与启发式补洞的流式 HTML/XML 解析器",
+      "description": "介绍 htmlparser2 12.0.0 如何用 Tokenizer、Parser 回调和 openImpliesClose 组织流式解析，并区分 DOM helper 与 WHATWG 树构建。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "Markdown / 解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/htmlparser2/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::htop",
       "area": "projects",
       "slug": "htop",
@@ -54403,6 +54434,37 @@
       "atlas": {
         "chunk_id": "topic-projects-data-visualization-01",
         "chunk_route": "/study/atlas/projects/topic-projects-data-visualization-01/"
+      }
+    },
+    {
+      "id": "projects::parse5",
+      "area": "projects",
+      "slug": "parse5",
+      "title": "parse5 — 按 WHATWG 插入模式建树的 HTML 解析器",
+      "description": "介绍 parse5 8.0.1 如何用 Tokenizer、插入模式和 tree adapter 做出与浏览器同款的 HTML 文档树。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "Markdown / 解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/parse5/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
       }
     },
     {
@@ -65960,7 +66022,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

@@ -1992,6 +1992,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::htmlparser2",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::i18next",
       "topic_id": "projects-internationalization"
     },
@@ -2258,6 +2262,10 @@
     {
       "note_id": "projects::oxlint",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::parse5",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::patchright",
