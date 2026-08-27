@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GB：ohash + murmurhash
+
+- supervisor 状态：writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`9adc8b991`（`origin/main`，#80 merge 后）。
+- objective：为 `ohash` 与 `murmurhash` 新增源码绑定的 `study-v2` 页；证据边界 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/hash-util-source-review-20260827-gb.md`、taxonomy 哈希主题与派生索引、本交接；未安装上游依赖，未跑上游测试 / bundle / benchmark。
+- activated_by：用户指定 PARALLEL writer GB、origin/main、STATIC_REVIEW、UNVERIFIED、单一 PR、不 merge。
+- detector fingerprint：仓库无这两页；ohash v2 易被写成 murmur / v1 `objectHash`；murmurhash 注释仍写 ASCII，默认导出实为 v3，npm `gitHead` 不可达。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权）。
+- 完成切片：
+  1. `ohash` 绑定 annotated tag `v2.0.12` 解引用 `764b0a3203308956ef07597612af5ad59f36c791`；`hash` = `digest(serialize)`，key 排序不再走 `localeCompare`。
+  2. `murmurhash` 绑定 lightweight tag `2.0.1` / `0359fb98cd2e11dc79dbc0ae08ad9d5f8e7a66f7`；默认 v3，`TextEncoder` UTF-8；披露 npm `gitHead` `e6aec85b...` 不可达。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:counts` / `audit:site-state` 与当前文件数一致。全量 `verify:ci` 在 push 后补跑。
+- budget：2 个 ignored worktree + 2 页静态源码 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本 PR 未改阈值。
+- stop conditions：一对研究页已形成单一 PR 后停止。本 agent 不执行 merge / deploy。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

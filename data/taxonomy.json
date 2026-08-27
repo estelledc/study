@@ -539,6 +539,15 @@
       "description": "Drag & Drop / Interaction相关的开源项目。"
     },
     {
+      "id": "projects-hash-utilities",
+      "area": "projects",
+      "labels": {
+        "zh": "哈希工具",
+        "en": "Hash Utilities"
+      },
+      "description": "对象稳定哈希与非密码学整数哈希相关的开源项目。"
+    },
+    {
       "id": "projects-infrastructure-utilities",
       "area": "projects",
       "labels": {
@@ -2180,6 +2189,10 @@
       "topic_id": "projects-testing-and-verification"
     },
     {
+      "note_id": "projects::murmurhash",
+      "topic_id": "projects-hash-utilities"
+    },
+    {
       "note_id": "projects::mysql",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2234,6 +2247,10 @@
     {
       "note_id": "projects::ofetch",
       "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::ohash",
+      "topic_id": "projects-hash-utilities"
     },
     {
       "note_id": "projects::ollama",
