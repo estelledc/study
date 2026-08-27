@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lingui",
+    "digest_sha256": "4b854f0923b7a8803fde6c0308d5fdd60235ef1df5fa990adc1435f2b99cc902"
+  },
+  "source_revision": "665a19815378dedd89346bb7707bdb0e28df79e7",
+  "research_input_sha256": "aabddd7b5b21aadd968be2ca809e865592fec451b82ee4a30fcf92aaacc79825",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hr",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates v6 macro entrypoints, i18n._ runtime, obsolete-by-id merge, and Provider activate."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hr",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "core I18n, babel plugin, mergeCatalog, I18nProvider, and vite plugin were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hr",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v6.6.0 and discloses npm @lingui/macro@5.9.5 as a different gitHead; no bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

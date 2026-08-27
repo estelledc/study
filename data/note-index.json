@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -45601,9 +45601,9 @@
       "id": "projects::i18next",
       "area": "projects",
       "slug": "i18next",
-      "title": "i18next — 让一份 JS 代码同时讲几十种语言",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "i18next — 用插件总线和 Intl.PluralRules 做运行时翻译",
+      "description": "介绍 i18next 如何用资源仓、插件总线和 Intl 复数规则做运行时翻译",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-internationalization"
       ],
@@ -45614,13 +45614,13 @@
         "raw_category": "前端国际化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/i18next/",
       "atlas": {
@@ -48448,9 +48448,9 @@
       "id": "projects::lingui",
       "area": "projects",
       "slug": "lingui",
-      "title": "Lingui — 写自然字符串，编译期自动提取 i18n msgid",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Lingui — 编译期把自然语言收成 ICU catalog",
+      "description": "介绍 Lingui 如何用 macro 提取 msgid，再让运行时 i18n 读取编译后的 ICU catalog",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-internationalization"
       ],
@@ -48458,16 +48458,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-internationalization",
-        "raw_category": "projects / 前端国际化"
+        "raw_category": "前端国际化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/lingui/",
       "atlas": {

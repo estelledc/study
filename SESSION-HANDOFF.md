@@ -2,6 +2,25 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HR：i18next + lingui
+
+- supervisor 状态：writer epoch `running`；本地切片已写入，待 `verify:ci`。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：把 `needs-evidence` 的 i18n 双子 `i18next` 与 `lingui` 迁到固定源码、`STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、共享审查文档 `docs/i18n-source-review-20260827-hr.md`、2 份 generation 1 receipt、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未改其他 writer 页面，未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-hr-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放与已合并 study PR 未占用这两个 slug。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `i18next` 绑定 tag `v26.4.0` → `652847e70fd68344d00456f20ef0584da51e59f7`；npm `gitHead` 一致。
+  2. `lingui` 绑定 `v6.6.0` → `665a19815378dedd89346bb7707bdb0e28df79e7`；披露 npm `@lingui/macro@5.9.5` 指向另一提交。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate` 通过、0 advisory；receipt 与正文 digest 一致，evidence state 为 `UNVERIFIED`。全量 `verify:ci` 待跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- 下一次 wake 条件：`verify:ci` 完成或 owner review。
+- 下一条命令：`STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
