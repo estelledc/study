@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BK：luxon / temporal-polyfill 日期库双子
+
+- status：writer epoch `running` → 本地切片完成，等待 `verify:ci` 与 PR review。未 merge、未 deploy。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把 `luxon` 与 JS Temporal 日期页从 `needs-evidence` 迁到源码绑定的 `study-v2`，证据上限为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/date-lib-source-review-20260827-bk.md`、派生 note-index / atlas / project-standard-audit / site-state / 首页指标、本交接；本机 gitignored `research-worktrees/{luxon,temporal-polyfill}`。未改候选队列、政策阈值、`dayjs`/`date-fns`、远端 `main`。
+- activated_by：`explicit-user-parallel-writer-bk-20260827`。
+- detector fingerprint：两页教学骨架完整，但缺固定 revision 与证据边界；`temporal.md` 是工作流引擎，日期对改用已有 `temporal-polyfill`。旧正文含未绑定的 22 KB / 下载量 / Stage 4 引擎清单。
+- external delta：本 PR（用户授权 push + 一个 PR）。merge 与 deploy 未授权，D 轴不含这两步。
+- 完成切片：
+  1. `luxon` 绑定 `moment/luxon@4262a38d...` / `3.7.2`（tag 与 npm `gitHead` 一致）。修正 clone + `adjustTime` 月末夹紧、`setZone` 默认保瞬时、`IANAZone` 走 `Intl`、casual Duration 矩阵、invalid `toISO()` 为 `null`。
+  2. `temporal-polyfill` 绑定 `fullcalendar/temporal-polyfill@d724c890...` / `1.0.4`（annotated tag peel；npm 无 `gitHead`）。修正原生优先导出、`Missing relativeTo`、默认 `constrain`、basic 仅 ISO/Gregory、`withTimeZone` 只换 zone。
+  3. 新增共享 `docs/date-lib-source-review-20260827-bk.md` 与两份 STATIC_REVIEW receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:project-standard --write`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `audit:content-contract`：0 blocking、89 v2。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：待本提交后运行。
+- budget：2 页静态源码迁移 + 派生刷新；单 writer；默认 3 切片 / 120 分钟。
+- 未碰 slug：开放 PR 中的 `dayjs` / `date-fns` 及其他已占 slug。
+- blocker：merge 与 Pages deploy 需另授；`verify:ci` 尚未出结果。
+- stop conditions：单 PR、不 merge。需要猜 revision 或只能放宽门禁时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另授 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

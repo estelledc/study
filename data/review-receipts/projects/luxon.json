@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "luxon",
+    "digest_sha256": "3ed2342b8e70f1313cb89746aa0f6a2b6924214d4a4ce7f02aafadb45fce6293"
+  },
+  "source_revision": "4262a38ded7762e22608a9feb9f117b40d338ced",
+  "research_input_sha256": "452c857e56a5b56d090f042331b019538080f456a7ecbece90a170500ee690a6",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains clone-then-adjustTime, month-end clamp, IANA Intl offset, casual Duration matrix, and invalid-to-null with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 3.7.2 DateTime plus/setZone, IANAZone formatToParts, Duration casualMatrix, and Interval half-open contains were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag 3.7.2, npm gitHead, and src VERSION agree; bundle size and ICU completeness are not claimed as measured results."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:45:00.000Z"
+}
