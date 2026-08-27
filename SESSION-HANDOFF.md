@@ -15,7 +15,7 @@
   1. `hookable` 绑定 tag `v6.1.1` / `b77477c027039362ee0ec4f39b8998c4f1b21707`（npm `gitHead` 一致），修正顺序 `callHook`、thenable 等待、错误 reject 与 `addHooks` 展平。
   2. `unctx` 绑定 tag `v3.0.1` / `6586739a70bd43a67437f72f00c186dd762b5125`（npm 无 `gitHead`，已披露），修正同步 `call` 在首个 await 后丢失、ALS WeakRef、默认 transform 不含 `callAsync`。
   3. 新增共享 `docs/hooks-context-source-review-20260827-ga.md` 与两份 generation 1 static receipt。
-- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory。其余门禁以本轮命令为准，不在此复制易过期数量。
+- 验证结果：两页 `quality-gate.mjs` 与 `--changed-from` 门禁全部 pass、0 advisory；receipt `UNVERIFIED`。`STUDY_CHANGED_FROM` 可移植门禁在规范 Node 22.23.1 / npm 11.17.0 下通过（首次 a11y 因本机缺 Playwright browser 失败，安装 Chromium 后 23/23 通过；其余步骤首次即过）。未 merge。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码新增；单 writer。
 - blocker：规模 baseline 超限仍先于本切片存在；本轮未改 baseline、阈值或证据布局。
 - stop conditions：一个 PR 已打开且未 merge 即结束；merge / deploy 需单独授权。
