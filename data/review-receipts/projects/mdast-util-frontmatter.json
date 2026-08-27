@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "mdast-util-frontmatter",
+    "digest_sha256": "6fe52d8307cd0c112a5586b32bad2b71113d46141fc24421795947b545ef9a61"
+  },
+  "source_revision": "d76616b88bdafdbbcd97247c4d3a8a41cc71ae48",
+  "research_input_sha256": "4995b631265c9d4c0d4b96f0ffc191d3669ea414010bc03d7de27e54add94456",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates from-markdown Literal buffering, EOL strip, to-markdown fence rewrite, and unsafe escape."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "lib/index.js from/to-markdown handlers and tests were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 2.0.1 where tag, package and npm gitHead agree; no YAML/TOML parse or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:00:00.000Z"
+}

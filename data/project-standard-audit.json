@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 968,
+    "total": 970,
     "by_status": {
-      "benchmark-aligned": 87,
+      "benchmark-aligned": 89,
       "needs-evidence": 881
     }
   },
@@ -11750,6 +11750,26 @@
       "missing": []
     },
     {
+      "slug": "mdast-util-frontmatter",
+      "title": "mdast-util-frontmatter — 把 frontmatter 事件收成 Literal 节点",
+      "source": "https://github.com/syntax-tree/mdast-util-frontmatter",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "mediapipe",
       "title": "MediaPipe — Google ML 多模态流水线",
       "source": "https://github.com/google-ai-edge/mediapipe",
@@ -12084,6 +12104,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "micromark-extension-frontmatter",
+      "title": "micromark-extension-frontmatter — 在状态机入口认出 YAML/TOML 围栏",
+      "source": "https://github.com/micromark/micromark-extension-frontmatter",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "micromark",
