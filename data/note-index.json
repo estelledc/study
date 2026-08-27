@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -40770,9 +40770,9 @@
       "id": "projects::dnd-kit",
       "area": "projects",
       "slug": "dnd-kit",
-      "title": "dnd-kit — React 现代拖拽 toolkit",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "dnd-kit — 可换框架的拖拽 toolkit（React 适配 0.5.0）",
+      "description": "把拖拽拆成 abstract manager + DOM sensors + 框架适配；固定阅读 @dnd-kit/react 0.5.0",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-drag-and-drop-interaction"
       ],
@@ -40780,16 +40780,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-drag-and-drop-interaction",
-        "raw_category": "projects / 前端"
+        "raw_category": "前端交互"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/dnd-kit/",
       "atlas": {
@@ -45184,6 +45184,37 @@
       "atlas": {
         "chunk_id": "topic-projects-editors-and-rich-text-01",
         "chunk_route": "/study/atlas/projects/topic-projects-editors-and-rich-text-01/"
+      }
+    },
+    {
+      "id": "projects::hello-pangea-dnd",
+      "area": "projects",
+      "slug": "hello-pangea-dnd",
+      "title": "hello-pangea-dnd — 维护中的 React 列表拖拽",
+      "description": "Atlassian react-beautiful-dnd 的社区续作；固定阅读 @hello-pangea/dnd 18.0.1",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-drag-and-drop-interaction"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-drag-and-drop-interaction",
+        "raw_category": "前端交互"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/hello-pangea-dnd/",
+      "atlas": {
+        "chunk_id": "topic-projects-drag-and-drop-interaction-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-drag-and-drop-interaction-01/"
       }
     },
     {
@@ -65601,7 +65632,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-drag-and-drop-interaction-01/",
-      "entries": 3
+      "entries": 4
     },
     {
       "id": "topic-projects-editors-and-rich-text-01",

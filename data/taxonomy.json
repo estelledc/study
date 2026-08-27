@@ -1988,6 +1988,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::hello-pangea-dnd",
+      "topic_id": "projects-drag-and-drop-interaction"
+    },
+    {
       "note_id": "projects::hono",
       "topic_id": "projects-web-frameworks"
     },

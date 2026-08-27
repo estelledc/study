@@ -1,159 +1,181 @@
 ---
-title: dnd-kit — React 现代拖拽 toolkit
-来源: 'https://github.com/clauderic/dnd-kit'
-日期: 2026-05-30
-分类: projects / 前端
+title: dnd-kit — 可换框架的拖拽 toolkit（React 适配 0.5.0）
+description: 把拖拽拆成 abstract manager + DOM sensors + 框架适配；固定阅读 @dnd-kit/react 0.5.0
+来源: https://github.com/clauderic/dnd-kit
+日期: 2026-08-27
+分类: 前端交互
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/clauderic/dnd-kit
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: cc98bdd52c06e55221e8cf77aaa0c2ec0f55b86f
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.5.0
 ---
 
 ## 是什么
 
-dnd-kit 是一套**给 React 应用做拖拽**的 toolkit。日常类比：老的 react-dnd 像手动挡车——离合、油门、档位每一步都要你管；dnd-kit 像装了自适应巡航的电动车——你只说"我要从 A 拖到 B"，库内部把识别意图、跟手移动、判定落点全帮你处理好。
-
-它放弃浏览器原生 HTML5 DnD API（2008 年的老古董，移动端差、自定义难、跨 iframe 有 bug），改从 pointer / touch / keyboard 输入事件层重新实现拖拽。所有 API 是 hooks，源码用 TypeScript 写，bundle 仅约 10kB。
+dnd-kit 是一套**把拖拽拆成 manager、sensor、collision、框架适配**的 toolkit。日常类比：旧笔记里的 `@dnd-kit/core` 6.x 像一辆已经量产的 React 专用车；固定 `0.5.0` 是同一仓库的重写线——底盘在 `@dnd-kit/abstract`，方向盘在 `@dnd-kit/dom`，React 只是其中一块仪表盘。
 
 ```tsx
-// 最小例子：注册一个可拖元素 + 一个放置区
-<DndContext onDragEnd={e => console.log(e.active.id, '到', e.over?.id)}>
-  <Draggable id="card-1" />
-  <Droppable id="zone-A" />
-</DndContext>
+import { DragDropProvider, useDraggable, useDroppable } from '@dnd-kit/react';
+
+<DragDropProvider onDragEnd={(event) => {
+  if (event.canceled) return;
+  setParent(event.operation.target?.id ?? null);
+}}>
+  <Draggable />
+  <Droppable />
+</DragDropProvider>
 ```
+
+同一提交里还有 `@dnd-kit/vue` / `@dnd-kit/solid` / `@dnd-kit/svelte` 的 0.5.0 包。本文只读 React 适配，不把它们写成已验证运行时。
 
 ## 为什么重要
 
-不理解 dnd-kit，下面这些事都没法解释：
+不区分 rewrite 和仍在 npm 上的 6.x，下面这些事会对不上：
 
-- 为什么 2024 年起 React 项目几乎都不再用 react-dnd（对手太硬）
-- 为什么拖拽库非要把 sensors / collision detection / modifiers 拆开（不是花架子，是 4 步本质拆解）
-- 为什么键盘和屏幕阅读器用户能正常用一个"拖拽"功能（accessibility 不是事后补的）
-- 为什么 react-beautiful-dnd 那么优雅却被淘汰（场景窄 + 停更 + React 18 不兼容）
+- 为什么顶层组件叫 `DragDropProvider`，不再叫 `DndContext`
+- 为什么 collision 默认是 `pointerIntersection ?? shapeIntersection`，而不是旧的 `closestCenter`
+- 为什么键盘、指针、无障碍都是 DOM 插件，而不是 React Context 里的一组 hooks
+- 为什么「同一 id 既是 source 又是 target」时，源码测试强制 `dragstart` 早于 `dragover`
+
+一句话：读 0.5.0 是为了看当前 canonical 仓库的合同；6.x 是另一条仍在发布的旧线。
 
 ## 核心要点
 
-1. **DndContext = 拖拽状态机**：顶层容器内部是 `idle → pre-dragging → dragging → drop-animating → idle` 的状态机，用 `useReducer` 实现，订阅靠 Context 广播。类比红绿灯——所有路口看同一个信号源。
+固定源码的主链可以拆成五步：
 
-2. **hooks 注册 + 订阅**：`useDraggable({ id })` 和 `useDroppable({ id })` 把元素登记到 Context，再订阅自己关心的状态片段（被拖中？正在 over？）。返回的 `setNodeRef` 是 callback ref，因为内部要算元素几何信息。
+1. **Provider 创建 manager**：`DragDropProvider` 默认 `new DragDropManager(input)`。`defaultPreset.sensors` 是 `PointerSensor` + `KeyboardSensor`；plugins 是 Accessibility、AutoScroller、Cursor、Feedback、PreventSelection；manager 还会再前置 ScrollListener、Scroller、StyleInjector。默认 modifiers 是空数组。
 
-3. **Sensors 决定"什么算拖拽"**：PointerSensor / TouchSensor / KeyboardSensor 各管一种输入，可叠加。`activationConstraint: { distance: 8 }` 表示按下移动 8px 才算开始拖（防止误触）。
+2. **hooks 登记实体**：`useDraggable` / `useDroppable` / `useSortable` 构造 `@dnd-kit/dom` 的实体，用 callback `ref` 挂 DOM。sortable 从 `@dnd-kit/react/sortable` 导入，不是独立的 `@dnd-kit/sortable` 包。
 
-4. **Collision detection 决定"现在在谁头上"**：拖拽中每帧要回答"被拖元素正处在哪个 droppable 上"。4 种内建算法（rectIntersection / closestCenter / closestCorners / pointerWithin）签名一致，按场景选。
+3. **Sensor 决定何时开始**：Pointer 默认——鼠标点在 handle 上立即激活；touch 是 Delay 250ms / tolerance 5；文本输入 Delay 200ms / tolerance 0；其余 Delay 200ms / tolerance 10 再叠加 Distance 5。交互元素默认 `preventActivation`。Keyboard 默认 `offset=10`，`Space`/`Enter` 开始，`Escape` 取消。
 
-5. **Modifiers 决定"能拖到哪"**：纯函数 `(args) => transform`，每帧调用，可锁单轴、限父容器、网格吸附等。多个 modifier 可叠加成数组。
+4. **Collision 决定落点**：`useDroppable` 没传 `collisionDetector` 时走 `defaultCollisionDetection`：先看指针相交，否则看形状相交。
 
-把这 5 个抽象拆开看，恰好对应了拖拽这件事的本质 4 步：识别意图（sensors）/ 跟随移动（context + transform）/ 判定落点（collision）/ 完成或取消（生命周期回调）。第 5 块 modifiers 是这 4 步上的"约束层"。
+5. **应用改数据**：`@dnd-kit/helpers` 的 `move` / `swap` 只在 `dragover`/`dragend` 上返回新数组。库不持有你的 list state。
 
-## 实践案例
+状态枚举是 `idle → initialization-pending → initializing → dragging → dropped`。事件包括可取消的 `beforedragstart`、`dragmove`、`dragover`、`collision`，以及不可取消的 `dragstart`。
 
-### 案例 1 — 可排序待办列表（最常见）
+## 实践示例
 
-`@dnd-kit/sortable` + `closestCenter`，30 行跑通鼠标 / 触屏 / 键盘三种输入。
+### 案例 1：最小放置
 
 ```tsx
-import { DndContext, closestCenter } from '@dnd-kit/core';
-import { SortableContext, useSortable, arrayMove } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
+import { DragDropProvider, useDraggable, useDroppable } from '@dnd-kit/react';
 
-function Item({ id }) {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
-  return <div ref={setNodeRef} style={{ transform: CSS.Transform.toString(transform), transition }} {...listeners} {...attributes}>{id}</div>;
+function Card() {
+  const { ref } = useDraggable({ id: 'card' });
+  return <div ref={ref}>card</div>;
 }
-function App() {
-  const [items, setItems] = useState(['a', 'b', 'c']);
-  return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={({ active, over }) => {
-      if (over && active.id !== over.id) setItems(arr => arrayMove(arr, arr.indexOf(active.id), arr.indexOf(over.id)));
-    }}>
-      <SortableContext items={items}>{items.map(id => <Item key={id} id={id} />)}</SortableContext>
-    </DndContext>
-  );
+function Zone() {
+  const { ref, isDropTarget } = useDroppable({ id: 'zone' });
+  return <div ref={ref} data-over={isDropTarget}>zone</div>;
 }
 ```
 
-### 案例 2 — 看板（Trello 风格）
+`onDragEnd` 读的是 `event.operation.target?.id` 和 `event.canceled`，不是 6.x 的 `{ active, over }`。
 
-多个 `SortableContext` 嵌套在一个 `DndContext` 里，每个 context 一列。`onDragOver` 中检测卡片是否拖到另一列、动态更新数据；`onDragEnd` 决定最终位置。collision detection 推荐 `closestCorners`——卡片大小不一时比 `closestCenter` 稳。
+### 案例 2：排序用 helpers，不手写 splice
 
-```ts
-// 跨列搬运的核心逻辑
-function onDragOver({ active, over }) {
-  const fromCol = findColumn(active.id);
-  const toCol = findColumn(over?.id);
-  if (fromCol && toCol && fromCol !== toCol) moveCard(active.id, fromCol, toCol);
+```tsx
+import { DragDropProvider } from '@dnd-kit/react';
+import { useSortable } from '@dnd-kit/react/sortable';
+import { move } from '@dnd-kit/helpers';
+
+function Item({ id, index }) {
+  const { ref } = useSortable({ id, index });
+  return <li ref={ref}>{id}</li>;
 }
+
+<DragDropProvider onDragEnd={(event) => setItems((items) => move(items, event))}>
+  {items.map((id, index) => <Item key={id} id={id} index={index} />)}
+</DragDropProvider>
 ```
 
-### 案例 3 — 自由画布（Figma 风格）
+`move` 认 id，也对带 `initialIndex` / `index` / `group` 的 sortable 实体做乐观位置对账。跨组时按指针相对 target 中心决定插入上下。
 
-不用 sortable，直接 `useDraggable` + `useDroppable`，每个元素自己 `transform` 跟手。collision 用 `rectIntersection`；用 `<DragOverlay>` 渲染拖拽残影（避免原节点位置错位）；用 `restrictToWindowEdges` modifier 防止拖出视口。配合 `useSensor(KeyboardSensor)` 还能让用户用方向键精确移动 1px。
+### 案例 3：键盘是一等 sensor
+
+不传 `sensors` 时，`KeyboardSensor` 已经在 preset 里。默认方向键每次移动 10px；`Space`/`Enter`/`Tab` 结束。Accessibility 插件默认给 handle `role="button"`、`tabIndex={0}`，并用 `dnd-kit-announcement-*` live region 播报。
 
 ## 踩过的坑
 
-1. `SortableContext` 的 `items` 数组每次 render 新建会让内部缓存失效，性能直接塌——必须 `useMemo` 或传稳定 id 数组。
-2. `useDraggable` 的 `id` 全局必须唯一，两个同 id 会被静默覆盖，且不报错，调试极痛。
-3. iOS Safari 触屏元素必须加 `touch-action: none` CSS，否则被浏览器原生滚动劫持，永远拖不动。
-4. sortable list 别用默认的 `rectIntersection`——相邻 item 重叠面积反复变化会闪烁，换 `closestCenter` 立即丝滑。
+1. **把 6.x 教程贴到 0.5.0**：本 checkout 没有 `@dnd-kit/core`、`DndContext`、`closestCenter`、`arrayMove`（旧 utilities）。那些属于 `master` 上的 `@dnd-kit/core@6.3.1`（`e9215e82...`）。
+
+2. **以为默认立刻开拖**：除「鼠标点在自己的 handle」外，Pointer 默认带 delay/distance。触摸默认先等 250ms。
+
+3. **在按钮/输入框上拖父节点**：`preventActivation` 看到交互元素会拦住，除非 target 就是 source 或 handle。
+
+4. **卸载正在拖的节点**：`ref` 在 `!status.idle` 且旧节点仍 `isConnected` 时会忽略 `null`，避免拖拽中把 element 清掉。
+
+5. **同一 id 既拖又放**：测试要求 `dragstart` 先于 `dragover`。Feedback 插件只在 `initialized && !initializing` 时设置 drag shape。
 
 ## 适用 vs 不适用场景
 
-适用：
+**适用**：
 
-- React 项目里任意拖拽需求（排序、看板、画布、文件区、树状）
-- 需要键盘 / 屏幕阅读器无障碍的拖拽功能
-- 移动端是核心场景（默认支持，不用装额外 backend）
-- TypeScript 严格项目（一等公民，几乎不用 `any`）
+- React 18/19 项目，接受 `@dnd-kit/react` 0.5.0 的 Provider/hooks 合同
+- 需要指针、键盘和无障碍作为默认插件，而不是事后补丁
+- 列表、放置区、自由画布共用同一 manager，数据仍由应用持有
 
-不适用：
+**不适用**：
 
-- Vue / Svelte 等非 React 项目（强 React 绑定）
-- 想直接操作 DOM 不通过 React state 的场景（会和 React 撕）
-- 需要和 Sortable.js 等 vanilla 库混用（两套真相必冲突）
+- 还在跟 6.x `@dnd-kit/core` / `@dnd-kit/sortable` 例子走的代码——那是另一条 npm 线
+- 非 React 运行时却只装 `@dnd-kit/react`（同提交有 vue/solid/svelte 包，本文未读它们的运行合同）
+- 需要列表自己管理数组、自带动画时长公式的看板库——对照 [[hello-pangea-dnd]]
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014**：react-dnd 发布，用 HTML5 DnD API + Backend 抽象，长期是 React 拖拽事实标准。
-- **2018**：Atlassian 发布 react-beautiful-dnd，专为 list / board reorder 优化，API 极优雅但场景窄。
-- **2021**：Claudéric Demers 因为常年做 react-dnd / rbd 的二次封装受不了底层短板，决定从输入事件层重写，发布 dnd-kit。
-- **2022-2023**：Atlassian 把 rbd 进 maintenance / archive；React 18 严格模式下 rbd 直接坏，社区被迫迁移到 dnd-kit。
-- **至今**：dnd-kit weekly downloads 约 200 万，已成为 React 拖拽事实标准。
-
-这条曲线很有意思——一个老牌库（react-dnd）和一个新贵专精库（rbd）夹击下，dnd-kit 凭借底层架构选对，反而把两边的份额都吃了。
+- 本文绑定 `clauderic/dnd-kit@cc98bdd52c06e55221e8cf77aaa0c2ec0f55b86f`。annotated tag `@dnd-kit/react@0.5.0` 与 npm `gitHead` 一致。
+- 同提交上 `@dnd-kit/dom`、`abstract`、`collision`、`helpers`、`state` 也是 `0.5.0`。
+- `@dnd-kit/react` peer 为 `react` / `react-dom` `^18.0.0 || ^19.0.0`。
+- 旧线 `@dnd-kit/core@6.3.1` 仍在 npm，tag 指向 `e9215e82...`，不在本包图里。
+- 本文未安装依赖、运行上游测试或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **底层抽象选对了，上层场景才能任意覆盖**——dnd-kit 把拖拽拆成"识别意图 / 跟随移动 / 判定落点 / 完成或取消"4 步正交抽象，所以能同时覆盖 list、看板、画布、树。react-dnd 的 5 个概念语义重叠，扩展时容易撞墙。
-- **依赖原生 API 不一定是优势**——HTML5 DnD 看起来"用浏览器自带"很好听，实际是 2008 年的设计债。dnd-kit 主动抛弃它换来体验质变。
-- **accessibility 不能事后补**——dnd-kit 把键盘 sensor、aria-live 播报、焦点回归从第一天就当核心需求设计；rbd 内建但不可定制；react-dnd 干脆没有。
-- **专精库 vs 通用库的取舍**——rbd 在 list reorder 场景下确实更优雅，但项目要扩展到看板嵌套时一夜变成债。
+1. **仓库默认分支不等于还在用的旧包名**——canonical GitHub 现在是 rewrite；教学必须写清读的是哪一条线。
+2. **框架适配应该薄**——React hooks 只登记实体和转发事件，sensor/collision/a11y 在 DOM 层。
+3. **默认激活策略是产品决策**——delay/distance/交互元素拦截都写在 PointerSensor defaults 里。
+4. **列表数据不属于 toolkit**——`move` 是纯函数，`event.canceled` 时可以直接不改数组。
+
+## 应用型自测
+
+1. 固定 0.5.0 的顶层组件还叫 `DndContext` 吗？
+2. 未自定义时，触摸开始拖拽的默认 delay 是多少？
+3. `useDroppable` 不传 `collisionDetector` 时，先用哪种算法？
+
+检查点：
+
+1. 不叫。React 入口是 `DragDropProvider`。
+2. 250ms，tolerance 5。
+3. `pointerIntersection`，没有命中再退回 `shapeIntersection`。
 
 ## 延伸阅读
 
-- 项目主页：[clauderic/dnd-kit](https://github.com/clauderic/dnd-kit)
-- 官方文档：[docs.dndkit.com](https://docs.dndkit.com/)
-- 作者动机：[Why I Built dnd-kit](https://github.com/clauderic/dnd-kit#motivation)
-- ARIA Drag and Drop pattern：[W3C WAI 文档](https://www.w3.org/WAI/ARIA/apg/patterns/) —— 理解 a11y 设计的依据
-- 对比阅读：[[react-dnd]] —— 老牌前辈的设计与短板
-- vanilla 替代：[[sortablejs]] —— 多框架场景下的另一选择
-- 动画协作：[[react-spring]] —— drop 动画常配它做物理曲线
+- 固定源码：[clauderic/dnd-kit](https://github.com/clauderic/dnd-kit) —— 本文绑定提交 `cc98bdd52c06e55221e8cf77aaa0c2ec0f55b86f`
+- 官方文档：[dndkit.com/react](https://dndkit.com/react)
+- 共享审查记录：`docs/drag-drop-source-review-20260827-bi.md`
+- [[hello-pangea-dnd]] —— 列表/看板 render-props 对照
+- [[react-dnd]] —— 更早的 backend 四层模型
 
 ## 关联
 
-- [[react]] —— dnd-kit 基于 React 16.8+ hooks，强绑定
-- [[react-dnd]] —— 同领域前辈，API 抽象差距是"设计级"不是"实现级"
-- [[sortablejs]] —— vanilla JS 路线，操作 DOM；和 dnd-kit 混用必冲突
-- [[react-spring]] —— 物理动画库，常配合 dnd-kit 做 drop 弹跳
-- [[hindley-milner]] —— TypeScript 推导能力的根，让 dnd-kit 类型推得出来
+- [[hello-pangea-dnd]] —— 专精列表重排，Redux + render-props
+- [[react-dnd]] —— HTML5 backend 前辈
+- [[sortablejs]] —— 直接改 DOM 的 vanilla 路线，和 React state 两套真相
+- [[react]] —— `@dnd-kit/react` 绑定 React 18/19
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
-- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
-- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
-- [[pdfme]] —— pdfme — TypeScript 模板化 PDF
-- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
-- [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
-- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
