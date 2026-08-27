@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HX：eza + lsd
+
+- status：writer epoch `complete`；待 owner review。未 merge / 未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：把 `eza` 与 `lsd` 从 `needs-evidence` 迁到固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` 标准。
+- scope：两篇项目页、共享审查文档 `docs/ls-replacement-source-review-20260827-hx.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未编译、未运行上游测试。
+- activated_by：`explicit-user-parallel-writer-hx-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 lsd 写成“不押 git”，把 eza Git 符号写成 `-N`/`II`/`--`。开放 PR 标题未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `eza` 绑定 annotated tag `v0.23.5` peel → `98442ab17c2c3738701b62a7e060b1431ae2d6ea`；披露 tag 消息仍写 v0.23.4。
+  2. `lsd` 绑定 lightweight tag `v1.2.0` → `d5a4e1cb80626d5ec94b237f6b77f7280d0f2fc9`；纠正 default feature `git2` 与 `--git` 仅在 long 视图插入 block。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - receipt verify：digest / revision 一致，evidence state `UNVERIFIED`。
+  - `audit:content-contract`：blocking 0。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:project-standard`：`eza`/`lsd` 均为 `benchmark-aligned`。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

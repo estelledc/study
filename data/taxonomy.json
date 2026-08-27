@@ -1960,6 +1960,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::eza",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::fabric-js",
       "topic_id": "projects-image-processing-and-canvas"
     },
@@ -2110,6 +2114,10 @@
     {
       "note_id": "projects::lottie",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::lsd",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::lucia",

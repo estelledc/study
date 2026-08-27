@@ -1,164 +1,152 @@
 ---
-title: lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
-来源: 'https://github.com/lsd-rs/lsd'
-日期: 2026-05-30
+title: lsd — 用 YAML 主题和可选 git 块重写 ls
+description: 介绍 lsd 1.2.0 如何用 config.yaml 管行为、按需读取 colors/icons，并在 long 视图可选插入 git 列。
+来源: https://github.com/lsd-rs/lsd
+日期: 2026-08-27
 分类: cli
 难度: 初级
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/lsd-rs/lsd
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: d5a4e1cb80626d5ec94b237f6b77f7280d0f2fc9
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.2.0
 ---
 
 ## 是什么
 
-lsd（**LSDeluxe**）是 **2018 年 Peltoche 用 Rust 写的现代 ls 替代**——把"ls 黑白一锅粥"升级成"彩色 + 图标 + 树视图 + YAML 主题"，单二进制跨 macOS/Linux/Windows。和 [[eza]] 同代但走不同路线：lsd 主打**主题化 + 跨平台稳定**，不内置 git 集成。
-
-日常类比：
-
-- **ls 是手抄目录清单**——文件名一行一个，黑白，没有任何上下文
-- **lsd 是带图标的彩色目录牌 + 你自己的便签笔**——图标提示文件类型，颜色你自己用 YAML 定义（蓝色目录 / 红色压缩包 / 绿色可执行随你写）
-- **eza 是同款目录牌但带 git 状态贴纸**——eza 押 git 列，lsd 押"主题随便改"
-
-你在终端 `ls -l` 看一片单色文字；换成 `lsd -l --icon always`，瞬间得到带图标和分类颜色的目录视图，**而且颜色规则全是你 YAML 配的**，不是程序写死的。
+lsd（LSDeluxe）是用 Rust 重写的 `ls`：默认把目录画成带颜色、可选图标的列表，配置走 YAML，Git 状态是 long 视图里的可选列。日常类比：系统 `ls` 是一张不能改格式的清单；lsd 先读一份行为说明书，再决定要不要另拿调色本和图标本，最后才决定贴不贴 Git 便签。
 
 ```bash
-# 装好后最小试用
-brew install lsd
-lsd -l --icon always   # long 视图 + 强制开图标
+lsd -l --git --icon always
 ```
+
+固定 1.2.0 的入口是 `Cli::parse_from(wild::args_os())` → 读配置 → `Flags::configure_from` → `Core::run`。`wild` 先做 shell glob。没有 `--ignore-config` 时，它按 XDG / `%APPDATA%` 顺序找 `config.yaml` 或 `config.yml`。
 
 ## 为什么重要
 
-不只是"另一个 ls 替代"，它代表了 CLI 工具的一种设计选择：
+不理解固定 1.2.0 的配置分层和 Git 开关，下面这些事会对不上：
 
-- **主题化 = 你的颜色你做主**——lsd 把所有颜色 / 图标 / 排序规则交给 YAML，eza 是写死风格 + 少量主题；适合喜欢折腾配色的人
-- **不绑定 git = 跨场景稳定**——容器里、远程服务器上、非 git 目录里跑 lsd 不会因为找 git 失败变慢；eza `--git` 在大仓库会慢
-- **比 eza 早 4 年 = dotfiles 老牌选择**——很多 2019-2021 年的 dotfiles 模板默认推 lsd，是工具迭代史的"前一代"
-- **它和 [[bat]] / [[fd]] / [[ripgrep]] / [[eza]] 是同代套件**——Rust 现代 CLI 工具链的"ls 那块"，lsd 是更老的那个分支
+- 为什么默认 `lsd -l` 没有 Git 列，必须再加 `--git`
+- 为什么家里没有 `colors.yaml`，颜色却仍然在
+- 为什么管道后的 `lsd | wc -l` 会变成一行一项，并打开 literal
+- 为什么旧印象“lsd 不押 Git”对 1.2.0 已经不成立
+
+它和 [[eza]] 都能量 Git，但 lsd 把 Git 当成 long blocks 里可插入的一列，并且用一份行为配置加两份可选主题文件。
 
 ## 核心要点
 
-lsd 的设计可以拆成 **3 件事**：
+固定版本的主链可以拆成五步：
 
-1. **一次扫描多种视图**：`lsd` 一次跑就把 stat / 扩展属性都拿了，再用同一份元数据渲染 grid（默认）、long（`-l`）、tree（`--tree`）。换视图不需要重读磁盘——和 eza 同思路。
+1. **先吃参数和配置**：`--ignore-config` 得到空配置；`--config-file` 读指定路径；否则在 `~/.config/lsd`、`$XDG_CONFIG_HOME/lsd`（Windows 则是 `%USERPROFILE%\.config\lsd` 与 `%APPDATA%\lsd`）里找 `config.yaml` / `config.yml`。
+2. **拼 Flags，再进 Core**：`Flags::configure_from` 合并 CLI 与 YAML。`Core::new` 看 stdout 是不是 TTY：非 TTY 且布局不是 Tree 时，强制 `Layout::OneLine` 并把 `literal` 设为 true。
+3. **fetch → sort → display**：`Core::run` 对每个路径建 `Meta`，按 layout / recursion 决定深度，排序后再走 `display::grid` 或 `display::tree`。
+4. **Git 是可选 block，不是默认列**：默认 long blocks 是 permission / user / group / size / date / name。只有 `--git` 且 `--long` 且编译时没有 `no-git`，才会在 Name 前插入 `Block::GitStatus`。没有这个 block 就不会 `GitCache::new`。
+5. **主题文件按需读取**：`config.yaml` 管行为。`color.theme = custom` 才读 `colors.yaml`；fancy 图标会尝试读 `icons.yaml`，没有文件就用内置 `IconTheme::default()`。`themes/` 目录已被标成 deprecated。
 
-2. **三个 YAML 文件分管三件事**：`config.yaml` 管行为（默认 flag、是否开图标），`colors.yaml` 管 ANSI 颜色（每种文件类型对应哪个 256 色码），`icons.yaml` 管图标（每种扩展名对应哪个 Nerd Font 码点）。三个文件分开是为了"只想换主题不想换行为"——但这也是新人最容易改错文件的地方。
+`GitCache` 用 `git2::Repository::discover` 加 `statuses(None)`。文件按路径精确匹配；目录对子路径的 index / workdir 状态取 `max`。默认符号是 `- . N ? D M R I T C`。
 
-3. **不押 git = 故意的留白**：作者明确不加 git 集成，理由是"基础工具应该轻量、跨场景稳定"。要看 git 状态就跑 `git status`——这是和 [[eza]] 最大的设计分歧。
+## 实践示例
 
-三件事合起来，lsd 的定位是"**好看 + 可定制 + 永远能跑**"——它没赌"git 集成是 ls 的未来"，押的是"主题化和跨平台一致"才是 ls 该补的洞。
-
-## 实践案例
-
-### 案例 1：日常 ll 别名替代 ls
+### 案例 1：Git 列必须叠在 long 上
 
 ```bash
-alias ls='lsd'
-alias ll='lsd -l --group-dirs first'
-alias la='lsd -la --group-dirs first'   # 含隐藏文件
-alias lt='lsd --tree --depth 2'         # 树视图，限 2 层
+lsd --git
+lsd -l --git
 ```
 
-`-l` 是 long 视图，`-la` 加隐藏文件，`--group-dirs first` 把目录排前面。`--tree --depth 2` 只展开 2 层（避免在 monorepo 里展成 10 屏）。日常 `ll` 一打就是带图标和颜色的目录视图，`lt` 替代 tree 命令——四条 alias 就把 ls/tree 都换掉了。
+第一条即使编译了 `git2`，`configure_from` 也要求 `cli.git && cli.long` 才插入 `GitStatus`。第二条才会在 Name 左侧加 Git 列，并在 `fetch` 里建 `GitCache`。
 
-注意：**`alias ls=lsd` 在脚本场景会炸**（见踩坑 2），生产 dotfiles 建议只在 interactive shell 设。
-
-### 案例 2：自定义 colors.yaml 主题
+### 案例 2：`theme: custom` 才读 colors.yaml
 
 ```yaml
-# ~/.config/lsd/colors.yaml
-user: 230
-group: 187
-permission:
-  read: dark_green
-  write: dark_yellow
-  exec: dark_red
-date:
-  hour-old: 40
-  day-old: 42
-  older: 36
+# ~/.config/lsd/config.yaml
+color:
+  when: auto
+  theme: custom
 ```
 
-把这个文件丢到 `~/.config/lsd/colors.yaml`，下次跑 lsd 颜色立刻变——读权限是绿色、写是黄色、执行是红色，比默认主题更直观。256 色码可以查表（`echo -e "\e[38;5;230mhello"` 试色）。eza 也支持 theme.yml 但晚 lsd 几年；这是 lsd 的传统强项。
+`ThemeOption::Custom` 会 `Theme::from_path("colors")`，也就是在同一组 config 目录里找 `colors.yaml` / `colors.yml`。只改一个不叫这个名字的文件、或把 `theme` 留成 `default`，都不会走到这条路径。
 
-### 案例 3：tree 视图替代 tree 命令
+### 案例 3：管道会改布局，Tree 除外
 
 ```bash
-lsd --tree --depth 3 --ignore-glob 'node_modules' --ignore-glob 'dist'
+lsd | wc -l
+lsd --tree | less
 ```
 
-`--tree` 树视图，`--depth 3` 展开 3 层，`--ignore-glob` 跳过指定 glob（可重复）。比 [[eza]] 的 `--git-ignore` 笨一点（要手动列要忽略的目录），但**胜在不依赖当前在 git 仓库里**——容器里 / 解压的代码目录里都能跑。
-
-输出（截取前几行）：
-
-```
- src
-├──  content
-│   └──  docs
-└──  components
-    └──  Button.tsx
-```
-
-颜色 + 图标加持下，结构一眼可见。
+非 TTY 时，非 Tree 布局被改成 OneLine，并打开 literal，减少把 ANSI 和图标喂给 `wc`。Tree 布局会保留，因为源码写明“不要覆盖 tree”。
 
 ## 踩过的坑
 
-1. **icons 显示成方框 / 问号**——Nerd Font 没装，终端字体没图标。先装 [Nerd Fonts](https://www.nerdfonts.com/)（推荐 JetBrainsMono Nerd Font），iTerm/Terminal.app 切字体，再用 `--icon always`。这一步是 100% 新人会卡的地方，和 [[eza]] 一样。
-
-2. **`alias ls=lsd` 让脚本炸**——`ls` 在 shell 脚本里被当默认调用，lsd 输出（颜色码 / icons）会让 `ls foo | wc -l` 这种解析挂掉。**正确做法**：alias 只在 interactive shell 设（`if [[ $- == *i* ]]`），或者用 `ll` 这种新别名，留 `ls` 给脚本。
-
-3. **没 git 集成——别等了**——你想 `lsd --git` 看 git 状态？没有，lsd 作者不打算加。要看就 `git status` 或换 [[eza]]。这是设计哲学差异，不是缺失。
-
-4. **三个 YAML 文件改错地方**——颜色不生效大概率是改了 `icons.yaml` 而不是 `colors.yaml`；或者 YAML 缩进错（YAML 对空格敏感）。`lsd --classic` 临时关所有定制对照看默认输出，再回头查配置。
+1. **继续写“lsd 没有 Git”**：1.2.0 的 default feature 含 `git2`，`--git` 在 long 视图可用。`no-git` 才是编译期关掉。
+2. **以为三个 YAML 总会一起加载**：`config.yaml` 是行为入口；`colors.yaml` 要 `theme: custom`；`icons.yaml` 只在 fancy 图标下可选覆盖。
+3. **`alias ls=lsd` 直接给脚本用**：管道会改 OneLine / literal，但 flag 和列集合仍不是 POSIX `ls`。
+4. **只传 `--git` 不加 `-l`**：Git block 插不进去，`GitCache` 也不会建。
+5. **把 `themes/` 当当前合同**：`CustomLegacy` 仍能读，但会打印 deprecated 警告，并指向 `colors.yaml`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 喜欢折腾终端配色的人——lsd 的 YAML 主题比 eza 灵活
-- 经常在容器 / 远程服务器 / 非 git 目录里工作——lsd 不依赖 git，跑哪都稳
-- dotfiles 高频别名（`ll` / `tree`）——一行 alias 升级整个终端体验
-- 跨平台需要统一行为——lsd 在 macOS / Linux / Windows 表现一致
-- 教学场景给新人看目录结构——图标 + 颜色比纯文本对零基础友好得多
+- 想用一份 `config.yaml` 固定 long 列顺序、图标策略和排序
+- 需要可选 Git 列，但不希望默认网格每次都 discover 仓库
+- 经常把输出接到管道，接受非 TTY 时改成 OneLine
 
 **不适用**：
 
-- 重度依赖 git 状态——直接用 [[eza]] 的 `--git` 列，省事
-- shell 脚本 / 自动化场景——保留系统 ls，输出格式稳定
-- 极简环境（Alpine 容器、busybox 系统）——lsd 二进制 ~5 MB，没必要
-- 终端字体不支持 Nerd Font——icons 退化成方框，体验崩
-- 老终端（PuTTY / KiTTY / Konsole 旧版）——图标渲染会截字
+- 脚本要 POSIX `ls`——应保留系统 `ls`
+- 想要 eza 那种 `--git-ignore` 过滤或 `--code` 行数摘要——看 [[eza]]
+- 发行包用 `no-git` feature 构建，却还把 `--git` 写进 alias
+- 需要本页未做的体积、耗时或跨平台渲染对比
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018 年**：Peltoche（Pierre Peltier）发起 lsd，灵感来自 Ruby 的 colorls（图标 + 颜色但慢），用 Rust 重写后单二进制 + 快得多
-- **2019-2020**：lsd 进入 brew/apt/pacman/AUR，dotfiles 模板开始默认推它，star 数从几千升到 8k+
-- **2022 年 8 月**：[[eza]] 作为 exa 的社区 fork 出现，主打 git 集成；lsd 和 eza 此后分流（lsd 主题化派，eza git 派）
-- **2024 年起**：Peltoche 退居二线，社区维护者 Pochi 主导日常发版
-- **2025 年 10 月**：v1.2.0 发布，项目进入稳定期，新功能放缓，主要做长尾完善（YAML 配置补全、终端兼容修复）
-
-lsd 是"早期独立项目—被同类后起者分流—进入稳定期"的经典曲线——和 [[eza]]/exa 故事相似但角色互换：**lsd 是先来的**，eza 是后来者带新卖点抢一部分用户走。
+- 本文绑定 `lsd-rs/lsd@d5a4e1cb80626d5ec94b237f6b77f7280d0f2fc9`，lightweight tag `v1.2.0`；`Cargo.toml` 版本为 `1.2.0`，`rust-version` 为 `1.85`。
+- crates.io 稳定版同为 `1.2.0`。default feature 含 `git2`；`no-git` 把 `GitCache` 编成空实现。
+- license 为 `Apache-2.0`。README 标明当前最新 release 就是 `v1.2.0`。
+- 本文未编译、未运行上游测试、未测体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **CLI 工具的"留白"也是设计**——lsd 不加 git 是故意的，理由是"轻量 + 跨场景稳定"；不是所有功能都要堆，留白本身有价值
-2. **配置文件分层是双刃剑**——三个 YAML 拆得清晰但新人容易改错；和"一个大配置 vs 多个小配置"的取舍是永恒话题
-3. **同代竞品分流是正常生态**——lsd vs [[eza]] vs colorls 不是谁干掉谁，而是各占细分（主题派 / git 派 / Ruby 派）；用户按口味选
-4. **Rust CLI 套件的护城河是单二进制**——brew install 一行，不依赖运行时，这是 lsd/eza/bat/fd/ripgrep 共同的传播加速器
+1. **Git 在 lsd 里是 block，不是默认身份**——开关写在 `cli.git && cli.long`，不是“这个工具不碰 Git”。
+2. **配置分层是按需读取，不是三份必载**——行为、颜色、图标各有入口条件。
+3. **管道策略写在 Core，不写在主题里**——非 TTY 改 OneLine / literal，Tree 单独豁免。
+4. **目录的 Git 状态是子路径聚合**——`inner_get` 对目录取 index/workdir 的最大值。
+
+## 应用型自测
+
+1. `lsd --git` 在默认网格下会不会建立 `GitCache`？
+2. `color.theme` 仍是 `default` 时，放在旁边的 `colors.yaml` 会不会自动生效？
+3. 管道里跑 `lsd --tree`，布局会不会被改成 OneLine？
+
+检查点：
+
+1. 不会。没有 `--long` 就不会插入 `Block::GitStatus`。
+2. 不会。只有 `ThemeOption::Custom` 才按 `"colors"` 去找主题文件。
+3. 不会。源码明确跳过对 Tree 的覆盖。
 
 ## 延伸阅读
 
-- 官方 README：[github.com/lsd-rs/lsd](https://github.com/lsd-rs/lsd)（含安装指南、配置说明）
-- Nerd Fonts 安装：[nerdfonts.com](https://www.nerdfonts.com/)（不装这个 `--icon always` 就废了）
-- 配置文件示例：[github.com/lsd-rs/lsd#config-file-content](https://github.com/lsd-rs/lsd#config-file-content)（colors/icons/config 三件套）
-- lsd vs eza 对比讨论：搜 "lsd vs eza reddit"，社区帖很多角度（git 派 vs 主题派）
-- colorls 原版：[github.com/athityakumar/colorls](https://github.com/athityakumar/colorls)（lsd 的灵感来源，Ruby 写的）
+- 官方 README：[github.com/lsd-rs/lsd](https://github.com/lsd-rs/lsd)
+- 固定源码：[lsd-rs/lsd](https://github.com/lsd-rs/lsd) —— 本文绑定提交 `d5a4e1cb80626d5ec94b237f6b77f7280d0f2fc9`
+- [[eza]] —— 同代 ls 替代；Git 列绑定长表，另有 `--git-ignore` 与 `--code`
 
 ## 关联
 
-- [[eza]] —— 同代竞品现代 ls 替代；eza 押 git，lsd 押主题化，2022 年后分流
-- [[bat]] —— 现代 cat 替代；和 lsd 是同一脉，把"颜色 + 图标"塞进基础命令
-- [[fd]] —— 现代 find 替代；David Peter 写的，和 lsd 常一起出现在 dotfiles
-- [[ripgrep]] —— 现代 grep 替代；Rust CLI 套件的"搜索那块"
-- [[fzf]] —— 命令行模糊查找；和 lsd 配合做交互式目录预览（`fzf --preview 'lsd --tree {}'`）
-- [[claude-code]] —— 终端 AI 助手；和 lsd/eza/bat 同属"终端体验现代化"工具链不同层
+- [[eza]] —— Git 缓存与多视图主链的对照
+- [[bat]] —— 把颜色和图标塞进文件查看
+- [[fd]] —— 常和 lsd 一起出现在 dotfiles 的文件名搜索
+- [[ripgrep]] —— 同套 Rust CLI 里的内容搜索
+- [[fzf]] —— 可用 `lsd --tree` 做目录预览
 
 ## 反向链接
 

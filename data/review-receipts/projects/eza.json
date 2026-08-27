@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "eza",
+    "digest_sha256": "8040e6052a46f0176e3285d49c30e7807c7314347e7994fbbe967f11d63fc5aa"
+  },
+  "source_revision": "98442ab17c2c3738701b62a7e060b1431ae2d6ea",
+  "research_input_sha256": "ad522d97778312b8af72405f43d8193b998ae731cef97af76d98f5e6d6e1d3f8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates view-first layout, on-demand GitCache, two-cell git glyphs, and --code as a non-listing mode."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "main, Options::deduce, GitCache, Mode, and git render were inspected; the binary was not built or run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds peeled tag v0.23.5 and discloses the annotated-tag message still saying v0.23.4."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}

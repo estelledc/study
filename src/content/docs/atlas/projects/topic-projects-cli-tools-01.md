@@ -29,7 +29,7 @@ sidebar:
 | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | `dua-cli` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | `duf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | `dust` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | `eza` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [eza — 用 Git 缓存和多视图渲染重做 ls 的社区 fork](/study/projects/eza/) | `eza` | beginner | UNVERIFIED | 介绍 eza 0 |
 | [fd — Rust 写的现代 find](/study/projects/fd/) | `fd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | `fish` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | `fx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -50,7 +50,7 @@ sidebar:
 | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | `lazydocker` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | `lazygit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | `lf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | `lsd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [lsd — 用 YAML 主题和可选 git 块重写 ls](/study/projects/lsd/) | `lsd` | beginner | UNVERIFIED | 介绍 lsd 1 |
 | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | `miller` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | `ncdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | `nix` | unknown | UNVERIFIED | 介绍 Nix 如何用内容寻址存储和声明式输入实现可重复构建、回滚与多版本共存 |

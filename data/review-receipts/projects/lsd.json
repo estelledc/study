@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lsd",
+    "digest_sha256": "5abe1a7435a16b18f7c1da8ba9e7290f88be4f46ffa3c2fc1940ac31fa6f345c"
+  },
+  "source_revision": "d5a4e1cb80626d5ec94b237f6b77f7280d0f2fc9",
+  "research_input_sha256": "ad522d97778312b8af72405f43d8193b998ae731cef97af76d98f5e6d6e1d3f8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates config.yaml behavior, optional colors/icons files, and git as a long-view block."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Core fetch/sort/display, Blocks::configure_from, GitCache, and Theme::from_path were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Corrects the legacy 'no git' claim against default feature git2 at tag v1.2.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}

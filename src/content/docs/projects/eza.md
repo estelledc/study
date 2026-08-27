@@ -1,156 +1,155 @@
 ---
-title: eza — 现代 ls 替代（exa 的社区接管 fork）
-来源: 'https://github.com/eza-community/eza'
-日期: 2026-05-30
+title: eza — 用 Git 缓存和多视图渲染重做 ls 的社区 fork
+description: 介绍 eza 0.23.5 如何先解析布局再按需扫描 Git，并用 Grid / Details / Code 等模式渲染目录。
+来源: https://github.com/eza-community/eza
+日期: 2026-08-27
 分类: cli
 难度: 初级
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/eza-community/eza
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 98442ab17c2c3738701b62a7e060b1431ae2d6ea
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.23.5
 ---
 
 ## 是什么
 
-eza 是 **2023 年社区接管 exa（原作者停止维护后另起的 fork）写的现代 ls 替代**——同样 Rust 单二进制，把"ls 输出黑白一锅粥"变成"带颜色 + git 状态 + 树视图 + 图标"的现代终端体验。
-
-日常类比：
-
-- **ls 是手抄目录清单**——文件名一行一个，黑白，没有任何上下文
-- **eza 是带图标和便签的彩色目录牌**——同一个文件夹，图标提示文件类型，颜色区分文件 vs 目录 vs 可执行，旁边还贴张小纸条写"这文件被 git 改过"
-
-你在终端 `ls -l` 看一片单色文字；换成 `eza -l --git --icons`，瞬间得到 VS Code 文件树 + git 状态 + 文件大小都能看清——而且**还在终端里没切走**。
+eza 是 exa 停止维护后，社区 fork 出来的现代 `ls` 替代。日常类比：系统 `ls` 像一张只写文件名的清单；eza 先决定要看网格、长表、树还是行数摘要，再按需把 Git 状态贴到同一张表上。
 
 ```bash
-# 装好后最小试用
-brew install eza
-eza -l --git --icons   # long 视图 + git 列 + 图标
+eza -l --git --icons
 ```
+
+固定 0.23.5 的入口是 clap 解析 → `Options::deduce` → `Exa::run`。TTY 且没指定布局时默认 `Mode::Grid`；输出不是终端时默认 `Mode::Lines`。`--git` 不会在网格视图凭空加一列，它只在长表相关模式里打开 Git 列。
 
 ## 为什么重要
 
-不只是"把 ls 涂上颜色"，它改变了终端浏览目录的体验：
+不理解固定 0.23.5 的“先选视图、再决定要不要扫 Git”，下面这些事会对不上：
 
-- **git 状态零成本可见**——文件改没改、staged 没 staged，左侧 gutter 直接告诉你，不用跑 `git status`
-- **tree 命令被吞掉了**——`eza -T` 等于 `tree`，统一在 ls 替代里，省一个命令
-- **icons + 颜色双重视觉编码**——文件类型扫一眼就分清楚，新人在大项目里不再"看不到森林"
-- **它和 [[bat]] / [[fd]] / [[ripgrep]] 是同代产品**——Rust 现代 CLI 套件的"ls 那块拼图"，dotfiles 高频组合
+- 为什么 `eza --git` 在默认网格里看不到 Git 列，必须加 `-l`
+- 为什么 `--git-ignore` 即使不加 `--git` 也会去发现仓库
+- 为什么管道后面的 `eza | wc -l` 不再走彩色网格
+- 为什么 `--code` 根本不列文件，却还是同一个二进制
+
+它和 [[lsd]] 的分歧不再是“有没有 Git”，而是 Git 何时进入主链、主题文件怎么分层。
 
 ## 核心要点
 
-eza 的设计可以拆成 **3 件事**：
+固定版本的主链可以拆成五步：
 
-1. **一次扫描多种视图**：`eza` 一次跑就把 stat / 扩展属性 / git status 都拿了，再用同一份元数据渲染 grid（默认）、long（`-l`）、tree（`-T`）。换视图不需要重读磁盘。
+1. **解析选项，而不是先扫盘**：`get_command().get_matches()` 得到 clap 结果，`Options::deduce` 填好 `dir_action` / `filter` / `view` / `theme` / `stdin`。没有路径时默认 `"."`，也可按 stdin 分隔符读文件名。
+2. **按需组装 Git 缓存**：`should_scan_for_git` 在 `--git-ignore`，或长表 `Columns.git` 为 true 时成立。`Columns.git` 还要求没传 `--no-git`、没设 `EZA_OVERRIDE_GIT` / `EXA_OVERRIDE_GIT`。命中后，`GitCache` 用向量记下已发现仓库，第一次查询才向 `git2` 取 statuses。
+3. **先分流路径，再选渲染器**：`Exa::run` 把参数分成文件和目录。`--code` 在这一步就走语言行数摘要，不再进入文件列表。
+4. **视图决定输出形状**：TTY 默认 Grid；`-l` 走 Details；`-l` 加 `--grid` 走 GridDetails；`-T` 走带 recurse 的 Details。无终端宽度时，GridDetails 会降成 Details。
+5. **主题是一份 YAML**：默认读 `dirs::config_dir()/eza/theme.yml`。`UseColours::Automatic` 且非 TTY 时改用 plain UI，避免把 ANSI 喂给管道。
 
-2. **git 集成 = 多一列**：`--git` 在 long 视图加一列符号——`-N` 新文件、`-M` 修改、`II` 已 ignore、`--` 干净。和 [[bat]] 的 gutter 是同一思路：把 git 状态融进基础工具。
+Git 列渲染两格（staged + unstaged），符号是 `- N M D R T I U`。这不是旧文案里的 `-N` / `II` / `--`。
 
-3. **icons 和 hyperlinks 是 Nerd Font 时代的红利**：`--icons` 用 Unicode 私有区图标（需要 Nerd Font 字体）；`--hyperlink` 输出 OSC 8 转义序列，现代终端（iTerm2 / WezTerm / Kitty）能 cmd+click 直接跳到文件。这两个 flag 是 ls 永远不会有的体验。
+## 实践示例
 
-三件事合起来，eza 的定位是"基础命令 + 现代终端能力的桥"——它没发明新交互，只是把 git / 图标 / 超链接这些已经存在的能力，塞进每天敲几十次的 `ls` 里。
-
-## 实践案例
-
-### 案例 1：日常 ll 别名
-
-```bash
-alias ll='eza -lh --git --icons --group-directories-first'
-alias la='eza -lah --git --icons'   # 带隐藏文件
-alias lt='eza -T --git-ignore --level=2'  # 树视图
-```
-
-`-lh` 是 long + 人类可读大小（`1.2K` 而不是 `1234`）；`--git` 加一列 git 状态；`--icons` 加文件图标；`--group-directories-first` 把目录排前面（dotfiles 高频条目）。日常 `ll` 一打就是带上下文的目录视图，`la` 看隐藏文件，`lt` 看树形——三条 alias 就把 ls / tree 都换掉了。
-
-### 案例 2：替代 tree 命令
+### 案例 1：长表才看得到 Git 列
 
 ```bash
-eza -T --level=3 --git-ignore
+eza --git
+eza -l --git
 ```
 
-`-T` 树视图，`--level=3` 只展开 3 层（避免在 monorepo 里展成 10 屏），`--git-ignore` 自动跳过 `.gitignore` 里的目录（`node_modules` / `dist` / `target` 直接消失）。比 `tree` 命令多了"识别 git ignore"这一步——大项目里救命。
+第一条走默认 Grid，`Columns.git` 不会被画出来。第二条进入 Details，`table.columns.git` 为 true，这才值得去 `GitCache` 里查仓库。
 
-输出长这样（截取前几行）：
-
-```
-src
-├── content
-│   ├── docs
-│   └── styles
-└── components
-    └── Button.tsx
-```
-
-颜色 + icons 加持下，一眼就看清结构，不用再 `tree -I 'node_modules|dist'` 手动写 ignore。
-
-### 案例 3：配 fzf 做项目跳转预览
+### 案例 2：`--git-ignore` 会触发扫描，即使你不要 Git 列
 
 ```bash
-fzf --preview 'eza -T --color=always --level=2 {}'
+eza --git-ignore
 ```
 
-打开 fzf 选目录，右侧实时预览这个目录的 2 层树形结构。`--color=always` 强制输出 ANSI 色码（fzf 接收得了），不加的话预览是黑白的，看着废。和 [[bat]] 当文件预览一样的套路，eza 负责目录维度。
+`GitIgnore::CheckAndIgnore` 单独就能让 `should_scan_for_git` 返回 true。它过滤的是被 ignore 的条目，不是给网格加一列状态。
+
+### 案例 3：`--code` 抢在文件列表前面
+
+```bash
+eza --code src
+```
+
+`Mode::deduce` 见到 `--code` 直接返回 `Mode::Code`。`Exa::run` 只对存在的根路径做语言行数摘要；路径不存在会写 stderr 并让退出码变成 2。
 
 ## 踩过的坑
 
-1. **`alias ls=eza` 让脚本炸**——`ls` 在 shell 脚本里被当默认调用，eza 输出格式（颜色码 / icons）会让 `ls foo | wc -l` 这种解析挂掉。**正确做法**：alias 只在 interactive shell 设（`if [[ $- == *i* ]]`），或者用 `ll` 这种新别名，留 `ls` 给脚本。
-
-2. **icons 显示成方框 / 问号**——Nerd Font 没装，终端字体没图标。先装 [Nerd Fonts](https://www.nerdfonts.com/)（推荐 JetBrainsMono Nerd Font），iTerm/Terminal.app 切字体，再用 `--icons`。这一步是 100% 新人会卡的地方。
-
-3. **`--git` 在大仓库慢**——eza 要逐文件查 git 状态，10k+ 文件的 monorepo 一次列目录能慢到 1-2 秒。用 `--git-ignore` 先过滤一批，或干脆**别在 monorepo 根目录加 `--git`**，进到子目录再开。
-
-4. **macOS brew 和 Linux apt 版本经常错位**——某些较新 flag（`--hyperlink` / `--no-quotes`）老版本没有，跨机器跑 dotfiles 之前先 `eza --version` 比对。Debian apt 包名是 `eza`，但稳定通道版本通常落后半年。
+1. **把 `--git` 当成默认列**：长表也不会自动开 Git。必须显式 `--git`，且能被 `--no-git` 或 `EZA_OVERRIDE_GIT` / `EXA_OVERRIDE_GIT` 关掉。
+2. **`alias ls=eza` 喂给脚本**：非 TTY 会改走 Lines，颜色在 Automatic 下也会关掉；但 flag 语义仍不是 POSIX `ls`。交互式 alias 更稳。
+3. **把 Git 符号记成旧文案**：固定源码画的是两格 `N`/`M`/`D`/`R`/`T`/`I`/`U`/`-`，不是 `-N`、`II`、`--`。
+4. **无 `git` feature 的构建还传 `--git`**：源码会报 `git` feature 被关掉，不能当普通 unknown flag 忽略。
+5. **把 tag 消息里的 v0.23.4 当成绑定版本**：annotated tag `v0.23.5` 的消息写着 justfile 生成 v0.23.4，但剥皮提交和 crates.io 都是 `0.23.5`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 日常浏览代码仓库 / 项目目录——颜色 + git + icons 大幅降低认知负担
-- 配合 [[fzf]] / [[bat]] / [[ripgrep]] 做交互式工具链——eza 提供"目录维度的彩色预览"
-- dotfiles 高频别名（`ll` / `tree`）——一行 alias 升级整个终端体验
-- 跨平台需要统一行为——eza 在 macOS / Linux / Windows 表现一致，比系统自带 ls 好
-- 教学场景给新人看目录结构——图标 + 颜色比纯文本对零基础友好得多
+- 日常看仓库目录，需要长表 Git 列或 `--git-ignore` 过滤
+- 同一套二进制里还想要树视图或 `--code` 行数摘要
+- 接受一份 `theme.yml` 覆盖颜色和图标，而不是拆成多份主题文件
 
 **不适用**：
 
-- shell 脚本 / 自动化场景——保留系统 ls，输出格式稳定
-- 极简环境（Alpine 容器、busybox 系统）——eza 二进制 ~5 MB，没必要
-- 终端字体不支持 Nerd Font——icons 退化成方框，体验崩
-- 需要 POSIX 严格兼容的脚本——eza 的 flag 体系是自己的（`-T` / `--git`），和 ls 不完全对应
+- 脚本要 POSIX `ls` 输出——应保留系统 `ls`
+- 发行包关掉了 `git` feature，却还把 `--git` 写进 dotfiles
+- 想靠“三个 YAML 文件”分层改图标和颜色——那是 [[lsd]] 的配置合同
+- 需要本页未做的体积、耗时或 monorepo 性能结论
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014 年**：Benjamin Sago 用 Rust 写出 exa（ogham/exa），是 Rust CLI 现代化套件的早期成员，和 fd / bat / ripgrep 同期
-- **2021 年**：exa 作者宣布"只做维护、不再加新功能"，PR 队列开始堆积（当时已经堆到 100+ 个未合并）
-- **2023 年 7 月**：社区另起 fork（eza-community/eza 建库），命名 eza（"exa" 把 x 换成 z），由 cafkafk 等人主导，随后合掉 exa 积压 PR、修了著名的 "Grid Bug"
-- **2023–2024 年**：brew / arch AUR / nixpkgs 陆续把 exa 替换成 eza 作为推荐包，exa 进入 "deprecated" 状态
-- **2025 年起**：eza 进入稳定期，新功能放缓，主要做 SELinux / hyperlink / theme.yml 等长尾完善
-
-eza 是开源项目"原作者不维护 → 社区 fork → fork 反超原作"的标准模板——和 [[fzf]] 衍生的 sk、Webpack 衍生的 Rspack 故事相似。
+- 本文绑定 `eza-community/eza@98442ab17c2c3738701b62a7e060b1431ae2d6ea`，annotated tag `v0.23.5` 剥皮提交；`Cargo.toml` 版本为 `0.23.5`，`rust-version` 为 `1.90`。
+- tag 对象 `f7a9e054fb545f8f8bd36cf5c5d47fb36e5645d5` 的消息写的是 v0.23.4；crates.io 稳定版与源码版本字段均为 `0.23.5`。
+- default feature 含 `git`；license 为 `EUPL-1.2`。源文件仍保留 exa 时期的 MIT SPDX 注释。
+- 本文未编译、未运行上游测试、未测体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **小工具 fork 也能反超原作**——只要原作 PR 堆 1 年，社区 fork 的"愿意 review + 合 PR"本身就是稀缺资源；eza 半年就做到了 exa 三年没做的事
-2. **Rust CLI 套件的护城河是单二进制**——brew install 一行，不依赖运行时，这是 eza/bat/fd/ripgrep 共同的传播加速器
-3. **基础命令加 git 上下文是当代趋势**——bat 加 gutter、eza 加 git 列、delta 接管 git diff——"工具知道你在 git 仓库里"成了默认期待
-4. **Nerd Font 是终端体验升级的隐藏前置**——大量现代 CLI 工具的"漂亮版本"都依赖 Nerd Font，这一步装好之后，整套生态才打开
+1. **视图先于 Git 扫描**——值不值得打开 `GitCache`，由布局和 `--git-ignore` 决定，不是每次 `eza` 都查仓库。
+2. **Git 列是两格状态，不是一列装饰**——staged / unstaged 各一个字符，符号表写在 `output/render/git.rs`。
+3. **`--code` 是另一条工具**——它走语言计数，不复用文件列表渲染器。
+4. **fork 的 provenance 仍要核对 tag 消息**——tag 名、剥皮提交和 crate 版本可能比 tag 正文更可信。
+
+## 应用型自测
+
+1. 只跑 `eza --git`（TTY、默认网格），会不会画出 Git 列？
+2. 不传 `--git`，只传 `--git-ignore`，还会不会组装 `GitCache`？
+3. `eza --code .` 会不会先列出当前目录的文件，再统计行数？
+
+检查点：
+
+1. 不会。默认 `Mode::Grid` 不读 `table.columns.git`。
+2. 会。`GitIgnore::CheckAndIgnore` 单独就能让 `should_scan_for_git` 为 true。
+3. 不会。`--code` 在 `Exa::run` 开头就返回语言摘要。
 
 ## 延伸阅读
 
-- 官方 README：[github.com/eza-community/eza](https://github.com/eza-community/eza)（含安装指南、flag 对照表）
-- Nerd Fonts 安装：[nerdfonts.com](https://www.nerdfonts.com/)（不装这个 `--icons` 就废了）
-- 社区 fork 缘起：[eza vs exa: Why we forked](https://github.com/eza-community/eza/blob/main/README.md)（README 里有一段说明）
-- 配 fzf 工作流：[junegunn/fzf wiki — Examples](https://github.com/junegunn/fzf/wiki/Examples)（搜 `tree` 看预览配置）
-- theme.yml 自定义颜色：[eza docs/theming](https://github.com/eza-community/eza/blob/main/docs/themes.md)（想脱离默认主题再看）
+- 官方 README：[github.com/eza-community/eza](https://github.com/eza-community/eza)
+- 固定源码：[eza-community/eza](https://github.com/eza-community/eza) —— 本文绑定提交 `98442ab17c2c3738701b62a7e060b1431ae2d6ea`
+- [[lsd]] —— 同代 ls 替代；Git 列是 long 视图的可选 block，主题拆成 config / colors / icons
 
 ## 关联
 
-- [[bat]] —— 现代 cat 替代；和 eza 是同一脉，把 git 状态融进基础命令
-- [[fd]] —— 现代 find 替代；David Peter 写的，和 eza 常一起出现在 dotfiles
-- [[ripgrep]] —— 现代 grep 替代；Rust CLI 套件的"搜索那块"
-- [[fzf]] —— 命令行模糊查找；和 eza 配合做交互式目录预览
-- [[claude-code]] —— 终端 AI 助手；和 eza/bat 同属"终端体验现代化"工具链不同层
+- [[lsd]] —— 配置分层与可选 Git block 的对照
+- [[bat]] —— 把 Git gutter 融进文件查看
+- [[fd]] —— 默认读 gitignore 的文件名搜索
+- [[ripgrep]] —— 默认读 gitignore 的内容搜索
+- [[fzf]] —— 常用 `eza -T --color=always` 做目录预览
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
-- [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
+- [[lsd]] —— lsd — 用 YAML 主题和可选 git 块重写 ls
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
