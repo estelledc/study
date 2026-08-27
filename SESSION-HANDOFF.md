@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CO：task runner 双子
+
+- supervisor 状态：`running` → writer epoch `complete`；等待 PR review，不 self-merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `concurrently` 与 `npm-run-all` 做成 pinned study-v2 静态审查页，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、两份 generation 1 receipt、共享 `docs/task-runner-source-review-20260827-co.md`、由 atlas / project-standard / site-state 派生的索引；未改候选队列、政策阈值、既有笔记正文或远端 `main`。
+- activated_by：`explicit-user-goal-parallel-writer-co-2026-08-27`。
+- detector fingerprint：目标对不在开放 PR slug 中，仓库亦无这两页；taxonomy 的 unclassified / empty_description / unknown_difficulty 预算已顶满，因此新页必须带 `description`、`difficulty` 和 CLI 分类。
+- external delta 计数：本轮只形成一份 PR，不 merge、不部署；D 轴不提升。
+- 已完成切片：
+  1. 绑定 `open-cli-tools/concurrently@1b8cbeba...` / `10.0.5`：成功条件按 `endDate` 排序，`--kill-others` 与 `--kill-others-on-fail` 分列，通配只覆盖包管理器 / `node --run` / `deno task`。
+  2. 绑定 `mysticatea/npm-run-all@df151185...` / `4.1.5`：默认串行、组间串行、脚本名 minimatch（`:`/`/` 对调），并披露未绑定的维护叉 `npm-run-all2`。
+  3. 新增共享审查记录与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / research input 一致。
+- budget：1 个双子切片、1 个本地 writer、1 份 PR。
+- blocker：未跑上游测试或真实并行进程；npm `concurrently@10.0.5` 缺少 `gitHead`。
+- 验证结果：定向质量门已过；全量 `verify:ci` 在 push 后继续。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -22,6 +22,7 @@ sidebar:
 | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | `bubbletea` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | `clack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | `commander` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [concurrently — 给并行命令加前缀、成功条件和杀进程规则](/study/projects/concurrently/) | `concurrently` | 入门 | UNVERIFIED | 用 RxJS 命令流并行跑任意 shell 命令，并按退出时间决定成功、重启与互杀 |
 | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | `curlie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | `delta` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -55,6 +56,7 @@ sidebar:
 | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | `ncdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | `nix` | unknown | UNVERIFIED | 介绍 Nix 如何用内容寻址存储和声明式输入实现可重复构建、回滚与多版本共存 |
 | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | `nnn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [npm-run-all — 按脚本名 glob 串行或并行跑 npm scripts](/study/projects/npm-run-all/) | `npm-run-all` | 入门 | UNVERIFIED | 读取 package |
 | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | `nushell` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | `oclif` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | `oh-my-posh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

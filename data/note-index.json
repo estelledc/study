@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -39282,6 +39282,38 @@
       }
     },
     {
+      "id": "projects::concurrently",
+      "area": "projects",
+      "slug": "concurrently",
+      "title": "concurrently — 给并行命令加前缀、成功条件和杀进程规则",
+      "description": "用 RxJS 命令流并行跑任意 shell 命令，并按退出时间决定成功、重启与互杀",
+      "difficulty": "入门",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "CLI / 命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/concurrently/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::conduit",
       "area": "projects",
       "slug": "conduit",
@@ -52497,6 +52529,38 @@
       }
     },
     {
+      "id": "projects::npm-run-all",
+      "area": "projects",
+      "slug": "npm-run-all",
+      "title": "npm-run-all — 按脚本名 glob 串行或并行跑 npm scripts",
+      "description": "读取 package.json 脚本名，用 minimatch 匹配后交给 npm run，支持 run-s / run-p 与混合组",
+      "difficulty": "入门",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "CLI / 命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/npm-run-all/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::nsq",
       "area": "projects",
       "slug": "nsq",
@@ -65447,7 +65511,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",

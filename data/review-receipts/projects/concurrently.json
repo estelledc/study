@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "concurrently",
+    "digest_sha256": "500ae251b2914cc574d2e9de623b828b7585944a436211c1a98eaac9da691b50"
+  },
+  "source_revision": "1b8cbeba87497e0c2a29097c828276919935a217",
+  "research_input_sha256": "d2ceb34bf7d07b9b45f50fbd8a879608f80af7146bcf036efc946b5cf03a5b69",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains prefixing, success-by-exit-time, kill-others split, wildcard limits, and Node >=22 ESM boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected concurrently core, completion listener, spawn/shell, shortcut/wildcard parsers, and kill/restart controllers; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable GitHub v10.0.5; npm latest omits gitHead. No process, signal, or Windows verification."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}
