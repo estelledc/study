@@ -4,145 +4,171 @@ title: tRPC — TS 端到端类型安全 RPC
 日期: 2026-05-29
 分类: API / 类型安全
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/trpc/trpc
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 6aec1578a899df50a17e4e78d5512a099b574c18
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 11.18.0
 ---
 
 ## 是什么
 
-tRPC 是一个让你**前端直接调用后端函数**、**类型自动同步**的 TypeScript 框架。日常类比：以前点外卖要先翻菜单（schema）再下单、还得核对菜单和后台是否一致；tRPC 是直接喊"老板我要那道菜"，菜单和后台对账自动同步。
+tRPC 是一个让 TypeScript 前后端**共享同一份 router 类型**的 RPC 框架。日常类比：以前点外卖要先对菜单（独立 schema），再核对后厨是否同一版本；tRPC 是把菜单本身当成类型，编译器替你核对点单。
 
-后端定义 procedure（可理解为"一个可远程调用的小函数"），导出类型；前端用同一份类型调用——**没写 fetch、没写响应类型、没跑 codegen**（不用额外脚本生成客户端代码）。看起来像本地函数，背后是递归 Proxy（拦截属性访问的替身对象）+ 共享 TS 类型 + 一条 HTTP link。
+后端用 `initTRPC.create()` 建 procedure（可远程调用的小函数）和 router，再 `export type AppRouter`。前端 `createTRPCClient<AppRouter>()` 用递归 Proxy 把 `user.byId.query(...)` 拼成 path，经 HTTP link 发出。运行时没有 codegen 步骤；类型只存在于编译期。
 
 ## 为什么重要
 
-不理解 tRPC，下面这些事都解释不通：
+不理解固定 11.18.0 的合同，下面这些事会说错：
 
-- 为什么 T3 Stack（Next.js + tRPC + Prisma + Tailwind）在不少 TypeScript 全栈社区里成了默认起步套餐
-- 为什么"后端改字段、前端立刻报错"成为可能——REST + 手写类型时代要靠测试或线上炸才发现
-- 为什么 OpenAPI / GraphQL 那一套 codegen 流程在小型 TS 项目里常被觉得"过度工程"
-- 为什么 [[zod]] 不只是验证库——它在 tRPC 里扮演 schema-as-runtime（运行时按 schema 校验）的角色
+- 为什么客户端推荐 `createTRPCClient`，而旧文里的 `createTRPCProxyClient` 只是即将在 v12 删除的别名
+- 为什么 input 不只属于 [[zod]]——parser 还认 Standard Schema、valibot、arktype、yup、superstruct 和自定义函数
+- 为什么 React 现在有两套入口：`@trpc/react-query` 的 hook，以及 `@trpc/tanstack-react-query` 的 `queryOptions`
+- 为什么 subscription 主合同已经是 `AsyncIterable`，observable 形态被标 deprecated
 
 ## 核心要点
 
-tRPC 的运作可以拆成 **三层**：
+固定源码可以把主链拆成五步：
 
-1. **TypeScript inference（类型推导）**：前端 `import type { AppRouter }` 拿到后端 router 的类型树。编译期把每个 procedure 映射成 `.query / .mutate / .subscribe`。前后端靠**同一份 .ts 类型**对齐，不靠单独 schema 文件。类比：两人本子上抄同一份菜单，改一处两边都看见。
+1. **根对象只初始化一次**：`initTRPC.context<Ctx>().create()` 产出 `procedure` / `middleware` / `router` / `mergeRouters` / `createCallerFactory`。非 server 环境默认抛错，除非 `allowOutsideOfServer: true`。
 
-2. **Procedure（远程小函数）**：三种——`query`（读）、`mutation`（写）、`subscription`（订阅）。链式 builder：`t.procedure.input(...).use(...).query(resolver)`，类型逐步收紧。类比：点菜单上先写菜名、再写忌口、最后下锅。
+2. **procedure builder 逐步收紧类型**：`.input(parser).use(mw).output(parser).query|mutation|subscription(resolver)`。resolver 拿到 `ctx`、`input`、`signal`、`path` 和可选 `batchIndex`。
 
-3. **Context + Middleware**：Context 是每个请求的共享背景（数据库、当前用户）；middleware 是挂在 procedure 上的拦截器，像门卫——`t.procedure.use(authMiddleware)` 强制登录后再进厅。
+3. **router 是一棵可懒加载的记录**：嵌套 router 组成 path；`lazy(() => import(...))` 按路径延迟加载。服务端调用走 `createCallerFactory`，不经过 HTTP。
 
-## 实践案例
+4. **客户端是 Proxy + link 链**：`createTRPCClient` 把最后一段 `.query` / `.mutate` / `.subscribe` 映射到 procedure type。固定版本导出 `httpLink`、`httpBatchLink`、`httpBatchStreamLink`、`httpSubscriptionLink`、`wsLink`、`splitLink`、`loggerLink`、`retryLink`、`localLink`。`httpBatchLink` 的 `maxURLLength` / `maxItems` 默认 `Infinity`。
 
-### 案例 1：最小接线 → 定义 → 调用
+5. **HTTP 适配是 path 裁剪**：`fetchRequestHandler` 从 URL 去掉 `endpoint` 前缀，再交给 `resolveResponse`。同仓还有 Node HTTP、standalone、Express、Fastify、Next、Next App Router、AWS Lambda 与 WebSocket adapter。
 
-```typescript
-// server.ts
-const t = initTRPC.create()
+## 实践示例
+
+### 案例 1：最小 server + client
+
+```ts
+import { initTRPC } from "@trpc/server";
+import { createTRPCClient, httpBatchLink } from "@trpc/client";
+import { z } from "zod";
+
+const t = initTRPC.create();
 const appRouter = t.router({
   user: t.router({
     byId: t.procedure
       .input(z.object({ id: z.string() }))
-      .query(({ input }) => db.user.find(input.id))
-  })
-})
-export type AppRouter = typeof appRouter
+      .query(({ input }) => db.user.find(input.id)),
+  }),
+});
+export type AppRouter = typeof appRouter;
 
-// client.ts
-const api = createTRPCProxyClient<AppRouter>({
-  links: [httpBatchLink({ url: '/api/trpc' })]
-})
-const user = await api.user.byId.query({ id: '1' })
+const client = createTRPCClient<AppRouter>({
+  links: [httpBatchLink({ url: "/api/trpc" })],
+});
+const user = await client.user.byId.query({ id: "1" });
 ```
 
 **逐部分解释**：
 
-1. `initTRPC.create()` 造出 `t`，再挂 router / procedure
-2. `export type AppRouter` 只导出类型；前端 `import type` 零运行时成本
-3. `createTRPCProxyClient` 用 Proxy 把 `user.byId` 拼成 path，经 `httpBatchLink` 发 HTTP
+1. `export type AppRouter` 只导出类型，前端 `import type` 没有运行时体积
+2. 客户端必须写 `.query()`；mutation 对应 `.mutate()`，subscription 对应 `.subscribe()`
+3. Zod 能用，是因为它暴露 `parse` / `parseAsync`；换 Standard Schema 实现同样走 `getParseFn`
 
-### 案例 2：middleware 强制登录并收紧类型
+### 案例 2：middleware 收紧 ctx
 
-```typescript
+```ts
 const auth = t.middleware(async ({ ctx, next }) => {
-  if (!ctx.user) throw new TRPCError({ code: 'UNAUTHORIZED' })
-  return next({ ctx: { ...ctx, user: ctx.user } })
-})
-const protectedProcedure = t.procedure.use(auth)
-const appRouter = t.router({
-  me: protectedProcedure.query(({ ctx }) => ctx.user) // user 非空
-})
+  if (!ctx.user) throw new TRPCError({ code: "UNAUTHORIZED" });
+  return next({ ctx: { ...ctx, user: ctx.user } });
+});
+const protectedProcedure = t.procedure.use(auth);
 ```
 
-**逐部分解释**：
+`UNAUTHORIZED` 在固定源码里是 JSON-RPC `-32001`。`next({ ctx })` 的覆盖会进入下游 resolver 的类型。
 
-1. middleware 先检查 `ctx.user`，没有就抛 UNAUTHORIZED
-2. `next({ ctx })` 把收紧后的 ctx 传给下游
-3. resolver 里 `ctx.user` 不再是 `undefined`——门卫验完证，厅里默认你是会员
+### 案例 3：TanStack Query 的 options 入口
 
-### 案例 3：与 TanStack Query 集成
+```ts
+import { createTRPCContext } from "@trpc/tanstack-react-query";
+import { useQuery } from "@tanstack/react-query";
 
-```typescript
-const api = createTRPCReact<AppRouter>()
-const { data, isLoading } = api.user.byId.useQuery(
-  { id: '1' },
-  { staleTime: 60_000, retry: 3 }
-)
+const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>();
+
+function UserCard() {
+  const trpc = useTRPC();
+  const query = useQuery(trpc.user.byId.queryOptions({ id: "1" }));
+  return query.data?.name ?? null;
+}
 ```
 
-**逐部分解释**：
-
-1. `createTRPCReact<AppRouter>()` 按 router 类型生成 hooks
-2. `api.user.byId.useQuery` = procedure 自动包成 `useQuery`
-3. 缓存 / 重试 / focus revalidate 免费来自 [[tanstack-query]]，中间仍无 schema 文件
+这是 `@trpc/tanstack-react-query@11.18.0` 的入口：先拿 `queryOptions` / `mutationOptions`，再交给 TanStack Query。`@trpc/react-query` 的 `createTRPCReact` + `api.user.byId.useQuery` 仍在，但已经不是唯一写法。
 
 ## 踩过的坑
 
-1. **只能 TS 单仓使用**：Swift / Kotlin / Python 客户端没法 import 类型，得走 REST adapter（如 trpc-openapi）——根因是假设两端共享语言。
-2. **大型 router IDE 卡顿**：几百个 procedure 时 `tsc` 与补全变慢；可拆 sub-router / lazy router，但不彻底。
-3. **Subscription 不开箱**：要 WebSocket（`wsLink`）或 SSE（`httpSubscriptionLink`），并单独挂适配层，比 query/mutation 麻烦。
-4. **Next.js App Router / RSC 胶水多**：服务端直接调 router 与客户端 hook 是两条路径，团队要先约定边界，否则配置会膨胀。
+1. **继续把 `createTRPCProxyClient` 写成当前推荐名**：它只是 deprecated 别名，源码写明 v12 删除。
+2. **把 input 说成“只能用 zod”**：`getParseFn` 按 `~standard` / `parseAsync` / `parse` / `assert` / `validateSync` / `create` 探测，认多家 validator。
+3. **subscription 仍按 observable 教**：当前 `.subscription()` 主签名要求 `AsyncIterable`；observable 重载已 deprecated。
+4. **假设 batch link 默认切批**：`maxURLLength` 与 `maxItems` 默认都是无限，不设上限就不会因长度自动拆批。
+5. **在非 server 环境直接 `initTRPC.create()`**：默认会抛；浏览器侧应只用 client 包，或显式允许。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 前后端都是 TS 的内部应用——不写 fetch、不写类型
-- 小到中型项目（< 200 procedure）——类型推导还吃得消
-- 团队想要"重构后端字段、前端立刻报错"
-- 配合 [[zod]] 做 input 校验 + [[tanstack-query]] 做缓存
+- 前后端都是 TypeScript、能共享 `AppRouter` 类型的内部应用
+- 需要 compiler 在改字段时立刻打断客户端
+- 已有 [[zod]] / valibot / arktype 等 runtime parser，并准备接 [[tanstack-query]]
 
 **不适用**：
-- 公开 API / 多语言客户端——REST + OpenAPI 或 gRPC 更直接
-- 真正需要 GraphQL 灵活字段选择（多端各取不同子集）
-- 巨型项目（> 300 procedure）——TS 推导慢到不可接受
+- 公开多语言 API——类型不能当跨语言契约，应走 OpenAPI / gRPC / [[connect-rpc]]
+- 需要按字段选择子集的多端 GraphQL 查询——对照 [[graphql-yoga]]
+- 不能接受 TypeScript `>= 5.7.2`，或尚未实测大型 router 的 IDE / `tsc` 成本
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2020 年**：Alex Johansson（KATT）开源 tRPC，赌"全 TS 单仓不需要中间 schema 文件"
-- **2021–2022 年**：与 React Query 深度集成；T3 Stack 把它推进 Next.js 全栈模板，社区迅速放大
-- **2023 年前后**：v10 起 builder API 与 adapter 生态成熟；公开 API / 多语言场景仍多走 OpenAPI 适配
+- 本文绑定 `trpc/trpc@6aec1578...`，`@trpc/server` / `@trpc/client` 均为 `11.18.0`。
+- 未安装依赖、未启动 adapter、未跑上游测试或测量 IDE/bundle，状态保持 `UNVERIFIED`。
+- v12 删除项只按源码 deprecated 标记披露，不预测发布时间。
 
 ## 学到什么
 
-1. **协议层不是必需品**——共享语言时，类型本身就是协议；过去硬塞 OpenAPI/GraphQL，常因前后端不同语言
-2. **Proxy 是 TS SDK 的瑞士军刀**——没有它就只能 codegen
-3. **Builder 链 + 类型累积**是 TS 库通用模式——zod、drizzle 同源
-4. **先解决 90% 简单场景**——故意不像 GraphQL 那么强，省下的复杂度是真金白银
+1. **共享语言时，类型可以替代中间 schema 文件**——代价是客户端必须能 `import type`
+2. **推荐入口会比“还能编译的旧名字”更窄**——proxy 别名与 observable subscription 都还在，但不该当新项目默认
+3. **parser 适配层比品牌绑定更稳**——Standard Schema 让 tRPC 不必把 zod 写进 runtime 依赖
+4. **React 集成正在从“自造 hook 树”退回“给 TanStack 喂 options”**
+
+## 应用型自测
+
+1. 新项目该写 `createTRPCProxyClient` 还是 `createTRPCClient`？
+2. 不设 `maxItems` 时，`httpBatchLink` 会按默认 10 条切批吗？
+3. 一个 procedure 的 input 能否用实现了 `~standard` 的非 zod schema？
+
+检查点：
+
+1. 应写 `createTRPCClient`；前者只是 v12 将删除的别名。
+2. 不会。默认 `maxItems` 与 `maxURLLength` 都是 `Infinity`。
+3. 能。`getParseFn` 优先识别 Standard Schema。
 
 ## 延伸阅读
 
 - 官方文档：[trpc.io](https://trpc.io)
-- 视频：[Theo Browne — Why I use tRPC](https://www.youtube.com/@t3dotgg)
-- T3 起步：[create.t3.gg](https://create.t3.gg)
-- [[zod]] —— schema-as-runtime 一等公民
-- [[tanstack-query]] —— `@trpc/react-query` 的缓存底座
+- 固定源码：[trpc/trpc](https://github.com/trpc/trpc) —— 本文绑定提交 `6aec1578a899df50a17e4e78d5512a099b574c18`
+- [[zod]] —— 常见 input parser，但不是唯一适配对象
+- [[tanstack-query]] —— `@trpc/tanstack-react-query` 的缓存底座
+- [[graphql-yoga]] —— 需要字段选择与多语言客户端时的对照
 
 ## 关联
 
-- [[zod]] —— input/output 默认走 zod parser
-- [[tanstack-query]] —— procedure 包成 useQuery，免费拿缓存重试
-- [[hono]] —— 同为 TS 优先，但走 REST 路线
-- [[next-js]] —— T3 Stack 另一半；App Router 与 tRPC 整合是常见热点
-- [[connect-rpc]] —— 浏览器可跑的 gRPC 风格 RPC，多语言友好对照
+- [[zod]] —— procedure input/output 的常见 runtime parser
+- [[tanstack-query]] —— `queryOptions` / 旧 `useQuery` hook 的缓存层
+- [[graphql-yoga]] —— schema language + 字段选择的另一条 API 层
+- [[hono]] —— 同为 TS 优先，但走显式 HTTP 路由
+- [[next-js]] —— App Router adapter 与 RSC caller 的常见宿主
+- [[connect-rpc]] —— 浏览器可跑、多语言友好的对照 RPC
 
 ## 反向链接
 

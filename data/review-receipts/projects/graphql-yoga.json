@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "graphql-yoga",
+    "digest_sha256": "b11e729d850ca7430cc697a861cd5db179ce4d82aa11010d4d71879519494e57"
+  },
+  "source_revision": "0c6025d5bfcde9bd1be86b73ba406a0ca84e35eb",
+  "research_input_sha256": "341c6e25808083d8d7f8227728b0067eb785929161835c0400683fb84c73e186",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-u",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Fetch adapter, default GraphiQL/CORS/masking, static context reuse, and current Federation package names."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-u",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "YogaServer defaults, result processors, health check, and plugin packages were inspected; GraphQL execution was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-u",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to graphql-yoga 5.22.0; runtime, SSE, and cross-runtime behavior remain UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
