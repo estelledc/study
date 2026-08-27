@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 18,
-      "needs-evidence": 943
+      "benchmark-aligned": 20,
+      "needs-evidence": 941
     }
   },
   "projects": [
@@ -2984,25 +2984,21 @@
       "slug": "chart-js",
       "title": "Chart.js — Canvas 渲染入门级图表",
       "source": "https://github.com/chartjs/Chart.js",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "chartist",
@@ -4087,25 +4083,21 @@
       "slug": "d3",
       "title": "D3.js — 不是图表库，是写图表库的乐高",
       "source": "https://github.com/d3/d3",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "dagger",

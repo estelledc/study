@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "chart-js",
+    "digest_sha256": "70a7aa66f480f9bf8d938fcef61699a40913dfc876f844019ad2df727da35d94"
+  },
+  "source_revision": "9c5cf9fac7ec04a71b516e2aff3f7d76876be369",
+  "research_input_sha256": "46fea2577c5263292ffd5c5952985882530134e8593845d2ed947bedcf80e1fa",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ao",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates default registry, auto entry, update/draw hooks, and decimation constraints."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ao",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Chart.js 4.5.1 controller, plugin, registry, and decimation source; Karma and bundles were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ao",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Performance and accessibility claims stay UNVERIFIED; v4 is mixed JS/TS, not a full rewrite."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}
