@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -45848,6 +45848,38 @@
       }
     },
     {
+      "id": "projects::inquirer",
+      "area": "projects",
+      "slug": "inquirer",
+      "title": "Inquirer.js — 把终端问答拆成 hook 提示和问题编排",
+      "description": "固定 14.2.0：具名 prompt 走 hook 引擎，legacy prompt() 只负责编排",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "命令行"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/inquirer/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::insightface",
       "area": "projects",
       "slug": "insightface",
@@ -55929,6 +55961,38 @@
       }
     },
     {
+      "id": "projects::prompts",
+      "area": "projects",
+      "slug": "prompts",
+      "title": "prompts — 一条 CJS 函数串完终端问卷",
+      "description": "固定 2.4.2：type 可跳题，abort 默认交回已填答案",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "命令行"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/prompts/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::prosemirror",
       "area": "projects",
       "slug": "prosemirror",
@@ -65509,7 +65573,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",

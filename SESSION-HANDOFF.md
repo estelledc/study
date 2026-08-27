@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EL：inquirer + prompts 静态审查
+
+- status：`running` → writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`89766cc27`（PR #72 merge 后的 `origin/main`）。
+- objective：按用户指定目标新增 `inquirer` 与 `prompts` 两页，绑定可达源码 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。仓库里原先没有这两页；`enquirer` 已有指向它们的 wikilink。未改 commander/yargs。
+- scope：两篇新项目页、2 份 generation 1 receipt、共享 `docs/inquirer-prompts-source-review-20260827-el.md`、atlas / note-index / project-standard / site-state 与公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未在真实 TTY 交互、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-el-20260827`。
+- detector fingerprint：`inquirer.md` / `prompts.md` 不存在；目标是 CLI 问卷双子，fallback 为其他 prompt pair（排除 commander/yargs）。
+- external delta：本分支 push + 一个 PR（用户授权）；未 merge、未 deploy，D 轴不因 merge 提升。
+- 完成切片：
+  1. `inquirer` 绑定 `SBoudrias/Inquirer.js` tag `inquirer@14.2.0` / `51ac389603405e8f9f315ce49416153d95c5fefe`（npm `gitHead` 与 annotated tag peel 一致）；同提交 `@inquirer/prompts@8.7.0`、`@inquirer/core@12.0.1`。
+  2. `prompts` 绑定 `terkelg/prompts` tag `v2.4.2` / `66ccf0bda0e1aa18d9efcf128018dfbad4f7ca0e`（npm `gitHead` 与 tag peel 一致）。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生刷新后项目 965、aligned 69、v2 138。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` / `git diff --check`：通过。
+- budget：2 个小型 blob-filtered worktree + 2 页新建静态审查 + 派生刷新；单 writer；默认 3 切片内完成。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值、baseline 或证据布局。
+- stop conditions：一页一对、一个 PR、不 merge。canonical/revision 不唯一或只能放宽门禁时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc27 npm run verify:ci`（需规范 Node 22.23.1 / npm 11.17.0）。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

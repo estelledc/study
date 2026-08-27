@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "inquirer",
+    "digest_sha256": "4b6c2c73fe135f99bc71aca427049d59a78a072917323b4e8c2dc852837cb263"
+  },
+  "source_revision": "51ac389603405e8f9f315ce49416153d95c5fefe",
+  "research_input_sha256": "0acf90fb88e1a2d463da6e155598c6bc1d3fa587e71e8e22b1b3c458740be335",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-el",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates @inquirer/prompts hooks from legacy prompt() orchestration and does not treat RxJS as a runtime dependency."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-el",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected PromptsRunner, createPrompt hooks, input/confirm; TTY interaction and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-el",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to inquirer 14.2.0 / @inquirer/prompts 8.7.0; README list type and bundle size stay out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

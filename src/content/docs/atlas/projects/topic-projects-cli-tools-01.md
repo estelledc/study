@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -43,6 +43,7 @@ sidebar:
 | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | `htop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HTTPie — curl 的人话版本](/study/projects/httpie/) | `httpie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | `ink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Inquirer.js — 把终端问答拆成 hook 提示和问题编排](/study/projects/inquirer/) | `inquirer` | intermediate | UNVERIFIED | 固定 14 |
 | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | `jc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jq — JSON 的 sed/awk](/study/projects/jq/) | `jq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | `just` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -59,6 +60,7 @@ sidebar:
 | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | `oclif` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | `oh-my-posh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | `procs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [prompts — 一条 CJS 函数串完终端问卷](/study/projects/prompts/) | `prompts` | beginner | UNVERIFIED | 固定 2 |
 | [pyenv — 用 shim 把 python 命令拦截后路由到指定版本](/study/projects/pyenv/) | `pyenv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | `ranger` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | `ratatui` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
