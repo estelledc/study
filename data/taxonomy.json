@@ -2140,6 +2140,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::microbundle",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::micromark",
       "topic_id": "projects-markdown-and-parsing"
     },
@@ -2510,6 +2514,10 @@
     {
       "note_id": "projects::trpc",
       "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::tshy",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::turbopack",

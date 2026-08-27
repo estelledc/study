@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2050,
-      "classified": 2003,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 967,
-        "classified": 939,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -50634,6 +50634,37 @@
       }
     },
     {
+      "id": "projects::microbundle",
+      "area": "projects",
+      "slug": "microbundle",
+      "title": "microbundle — 用 package.json 字段驱动的零配置库打包器",
+      "description": "介绍 microbundle 0.15.1 如何按 source/main/module/exports 调 Rollup，并区分 modern 与降级 ESM/CJS/UMD。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "构建工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/microbundle/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::micromark",
       "area": "projects",
       "slug": "micromark",
@@ -62069,6 +62100,37 @@
       }
     },
     {
+      "id": "projects::tshy",
+      "area": "projects",
+      "slug": "tshy",
+      "title": "tshy — 用两次 tsc 发出 ESM 与 CommonJS 的 TypeScript 杂交器",
+      "description": "介绍 tshy 4.1.3 如何用两次 NodeNext tsc、临时 package.json 和 exports 映射做双方言发布，而不是打成单文件 bundle。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "构建工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/tshy/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::turbopack",
       "area": "projects",
       "slug": "turbopack",
@@ -65620,7 +65682,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 15
+      "entries": 17
     },
     {
       "id": "topic-projects-cli-tools-01",

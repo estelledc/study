@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "microbundle",
+    "digest_sha256": "4208a8a1ac7cc0ac8d3e27c05bcb016c49291b89b1886cdac7d019b96366c9ed"
+  },
+  "source_revision": "c76c41f8317611f7592d8e44c569e8083076f25f",
+  "research_input_sha256": "df5cba82f62e3cee62d045a36981a87d97a0f382d0939fdde40f9424d8aaf2d4",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates package-field outputs, modern vs esm downgrade, and dependencies-as-external."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "prog.js, createConfig, babel-custom and getMain were read; Rollup and upstream Jest were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds peeled v0.15.1 / npm gitHead; README byte sizes are not treated as measurements."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

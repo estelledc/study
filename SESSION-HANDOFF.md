@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IQ：tshy + microbundle
+
+- status：writer epoch `complete`；待 CI / review；未 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
+- objective：为缺失的 lib-bundler 双子补齐 `tshy` 与 `microbundle` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/lib-bundler-source-review-20260827-iq.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-iq-2026-08-27`。
+- detector fingerprint：目录无 `tshy.md` / `microbundle.md`；开放 PR 已占用 pkgroll/bunchee 与 tsup/unbuild，本对未占用。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `tshy` 绑定剥皮 tag `v4.1.3` → `b695e201caa7232767ade0cfb5e75f244fd8e41c`，与 npm `gitHead` 一致。
+  2. `microbundle` 绑定剥皮 tag `v0.15.1` → `c76c41f8317611f7592d8e44c569e8083076f25f`，与 npm `gitHead` 一致；未绑定更晚的 HEAD。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，公开项目数 967 → 969。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

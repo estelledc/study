@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tshy",
+    "digest_sha256": "f15a0bf7edf02d740523f4f55253f1bb4eee10d705b72cb4f213e42ef1aa0485"
+  },
+  "source_revision": "b695e201caa7232767ade0cfb5e75f244fd8e41c",
+  "research_input_sha256": "df5cba82f62e3cee62d045a36981a87d97a0f382d0939fdde40f9424d8aaf2d4",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates two tsc dialects, temporary package.json type, liveDev publish skip, and dual-package hazard."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "build.ts, exports.ts, which-tsc, polyfills and verbatimModuleSyntax guard were read; tsc was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds peeled v4.1.3 / npm gitHead; does not claim hybrid builds remove dual-package hazard."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}
