@@ -16,12 +16,13 @@
   1. `figlet` 绑定 `patorjk/figlet.js@b95c2f03...` / `1.11.4`，区分浏览器 fetch 与 Node fs、CLI 宽度 80 与库默认 `-1`、换行后的垂直 smush。
   2. `gradient-string` 绑定 `bokub/gradient-string@ca0c9412...` / `3.0.0`，区分默认函数跳过空白与 `multiline` 按列占色，并写明 v3 数组入口与 `rainbow` HSV long 短色标。
   3. 新增共享 `docs/cli-banner-source-review-20260827-eu.md` 与两份 generation 1 static receipt。
+- 验证结果：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci` 全绿（388 Node tests、strict build 2287 HTML / 2286 sitemap、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - acceptance checks：两页 `quality-gate` 通过、0 advisory；内容契约 `v2=111` / `legacy-unverified=1935` / blocking 0；`audit:counts` 与 atlas 预算未突破。
 - budget：2 个 blob-filtered 本地 worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：main 上已存在的 `tracked_files` 规模 detector 仍需 owner 处置；本轮未改 baseline / 阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 对规模 baseline / merge 的决定。
-- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #197 的 CI；未获授权不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
