@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "strip-indent",
+    "digest_sha256": "3854147f7f5e6646b6791575f6a922d6f1ecee528793bb6fe90f60df75fae8fc"
+  },
+  "source_revision": "102b553f9efaec1c2451cd9ac2385269768f1fed",
+  "research_input_sha256": "79ba4e17960bdfee948ea62c13c0c0ba60539f220a84f62f822eb9622a80ebb3",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates min-[ \\t] vote on content lines, leftover short blank lines, and dedent edge trim."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inlined min-indent match/replace and dedent CRLF trim were inspected; xo/ava were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds strip-indent 4.1.1 on peeled tag/npm gitHead; mixed tab/space width remains unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:10:00.000Z"
+}

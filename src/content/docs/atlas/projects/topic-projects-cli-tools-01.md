@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -42,6 +42,7 @@ sidebar:
 | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | `hadolint` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | `htop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HTTPie — curl 的人话版本](/study/projects/httpie/) | `httpie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [indent-string — 按行前置缩进，默认跳过空白行](/study/projects/indent-string/) | `indent-string` | beginner | UNVERIFIED | 固定 5 |
 | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | `ink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | `jc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jq — JSON 的 sed/awk](/study/projects/jq/) | `jq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -66,6 +67,7 @@ sidebar:
 | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | `sd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) | `shfmt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) | `starship` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [strip-indent — 按最短前导空白剥缩进](/study/projects/strip-indent/) | `strip-indent` | beginner | UNVERIFIED | 固定 4 |
 | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | `task` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | `textual` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | `the-silver-searcher` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -45723,6 +45723,37 @@
       }
     },
     {
+      "id": "projects::indent-string",
+      "area": "projects",
+      "slug": "indent-string",
+      "title": "indent-string — 按行前置缩进，默认跳过空白行",
+      "description": "固定 5.0.0 用一条 replace 给非空行重复前置 indent",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "CLI / 字符串"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/indent-string/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::influxdb",
       "area": "projects",
       "slug": "influxdb",
@@ -60176,6 +60207,37 @@
       }
     },
     {
+      "id": "projects::strip-indent",
+      "area": "projects",
+      "slug": "strip-indent",
+      "title": "strip-indent — 按最短前导空白剥缩进",
+      "description": "固定 4.1.1 内联最小缩进，并提供会剪首尾空行的 dedent",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "CLI / 字符串"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/strip-indent/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::styled-components",
       "area": "projects",
       "slug": "styled-components",
@@ -65509,7 +65571,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",

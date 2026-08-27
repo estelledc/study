@@ -2004,6 +2004,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::indent-string",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::influxdb",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2426,6 +2430,10 @@
     {
       "note_id": "projects::storybook",
       "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::strip-indent",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::styled-components",
