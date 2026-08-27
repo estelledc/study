@@ -4,8 +4,8 @@
   "summary": {
     "total": 967,
     "by_status": {
-      "benchmark-aligned": 85,
-      "needs-evidence": 882
+      "benchmark-aligned": 87,
+      "needs-evidence": 880
     }
   },
   "projects": [
@@ -7141,27 +7141,23 @@
     },
     {
       "slug": "gitui",
-      "title": "gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级",
-      "source": "https://github.com/extrawurst/gitui",
-      "status": "needs-evidence",
+      "title": "gitui — 用 git2 与 gix 直连仓库的 Rust Git TUI",
+      "source": "https://github.com/gitui-org/gitui",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "glab",
@@ -10020,27 +10016,23 @@
     },
     {
       "slug": "lazygit",
-      "title": "lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick",
+      "title": "lazygit — 以 git 子进程驱动的全功能 Git TUI",
       "source": "https://github.com/jesseduffield/lazygit",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "lazyvim",

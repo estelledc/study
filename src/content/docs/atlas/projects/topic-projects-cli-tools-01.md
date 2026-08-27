@@ -35,7 +35,7 @@ sidebar:
 | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | `fx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fzf — 命令行模糊查找](/study/projects/fzf/) | `fzf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | `gdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | `gitui` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [gitui — 用 git2 与 gix 直连仓库的 Rust Git TUI](/study/projects/gitui/) | `gitui` | beginner | UNVERIFIED | 介绍 gitui 如何用 ratatui、asyncgit 和 RON 配置组织终端 Git 工作流 |
 | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | `glances` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | `gron` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | `gum` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -48,7 +48,7 @@ sidebar:
 | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | `just` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | `kitty` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | `lazydocker` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | `lazygit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [lazygit — 以 git 子进程驱动的全功能 Git TUI](/study/projects/lazygit/) | `lazygit` | beginner | UNVERIFIED | 介绍 lazygit 如何用仓内 gocui、git 子进程和序列编辑器组织日常 Git 工作流 |
 | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | `lf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | `lsd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | `miller` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

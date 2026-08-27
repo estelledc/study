@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -44009,27 +44009,26 @@
       "id": "projects::gitui",
       "area": "projects",
       "slug": "gitui",
-      "title": "gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "gitui — 用 git2 与 gix 直连仓库的 Rust Git TUI",
+      "description": "介绍 gitui 如何用 ratatui、asyncgit 和 RON 配置组织终端 Git 工作流。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
         "raw_category": "cli"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/gitui/",
       "atlas": {
@@ -47880,27 +47879,26 @@
       "id": "projects::lazygit",
       "area": "projects",
       "slug": "lazygit",
-      "title": "lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "lazygit — 以 git 子进程驱动的全功能 Git TUI",
+      "description": "介绍 lazygit 如何用仓内 gocui、git 子进程和序列编辑器组织日常 Git 工作流。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
         "raw_category": "cli"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/lazygit/",
       "atlas": {

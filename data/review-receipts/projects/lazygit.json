@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lazygit",
+    "digest_sha256": "e062f73aa66e995ebf7e827a1b7780f6c9a3e10b5fcba7244c9702ec146a74d7"
+  },
+  "source_revision": "fbe2379fa5831b1ce1a8a836a604652ffc14844f",
+  "research_input_sha256": "6b2c571b7f34bc49a4413ed60606480544a0ec590e71545b1ddc13e9cca5afae",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates five side windows with tabs, in-tree gocui+tcell, and git subprocess vs .git file I/O."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected GitCommandBuilder, ApplyPatch via git apply --index, and GIT_SEQUENCE_EDITOR rebase; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v0.64.1 peeled commit and discloses LDFLAGS version; no startup or large-repo timing claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

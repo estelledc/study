@@ -1,80 +1,92 @@
 ---
-title: lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
-来源: 'https://github.com/jesseduffield/lazygit'
-日期: 2026-05-30
+title: lazygit — 以 git 子进程驱动的全功能 Git TUI
+description: 介绍 lazygit 如何用仓内 gocui、git 子进程和序列编辑器组织日常 Git 工作流。
+来源: https://github.com/jesseduffield/lazygit
+日期: 2026-08-27
 分类: cli
 难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/jesseduffield/lazygit
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: fbe2379fa5831b1ce1a8a836a604652ffc14844f
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.64.1
 ---
 
 ## 是什么
 
-lazygit 是 **Jesse Duffield 用 Go 写的 git 终端图形界面客户端**，把 git 的常用操作（add / commit / branch / rebase / stash / cherry-pick）全塞进一个**五面板一屏的 TUI**——每个面板对应一种 git 概念，单键就能在面板间跳，按几下就完成原本要敲十几条 git 命令的事。它和 [[btop]] 同样走"多面板 TUI"路线，但场景完全不同：btop 看系统资源，lazygit 看 git 状态。
+lazygit 是 Jesse Duffield 用 Go 写的 Git 终端界面：把 status、暂存、分支、提交和 stash 放进同一屏，用单键代替一长串 porcelain。日常类比：git CLI 是手写订单，lazygit 是点单屏——菜单在眼前，真正下单时仍把单子递给厨房里的 `git`。
 
-日常类比：
+```text
+main → app.Start → gui.Run → pkg/gocui MainLoop
+                              ↓
+                     GitCommand + oscommands.CmdObj
+                              ↓
+                           git(1) 子进程
+```
 
-- **git CLI 是手写订单**——每次都要写全（`git checkout -b feature/x && git add file && git commit -m "..."`），啰嗦但精确
-- **lazygit 是点单 App**——菜单都在屏幕上，按字母/方向键选，常用操作一两键就成
-
-启动后默认五面板：**Status**（仓库状态）/ **Files**（暂存区）/ **Branches**（分支列表）/ **Commits**（提交历史）/ **Stash**（stash 栈）。Tab 在面板间切，hjkl 在面板内移光标，每个面板有自己的快捷键提示条——你不需要记 git 命令，只需要记几个单字母。
+固定 tag `v0.64.1` 的模块是 `github.com/jesseduffield/lazygit`，`go 1.25.0`。源码树没有独立 `VERSION` 常量；发行版字符串靠编译 LDFLAGS 或 `debug.ReadBuildInfo()`。
 
 ## 为什么重要
 
-git CLI 的痛点积累 15 年没人系统解决，lazygit 是第一个把这些痛点全打包修了的 TUI：
+不读固定 0.64.1 源码，旧教程会把三件事说错：
 
-- **interactive rebase 可视化**——`git rebase -i HEAD~5` 弹个 vim 让你改 pick/squash/edit，错一字就崩；lazygit 在 Commits 面板按 `s/f/r/d` 单键改写，回车确认前都能反悔
-- **行级 stage**——`git add -p` 一段一段问 y/n 太烦；lazygit 进文件后按 space 选行/选块，所见即所得
-- **cherry-pick 多选**——CLI 要敲一串 hash；lazygit 在 commits 上按 `c` 标记一批，切分支按 `v` 粘贴
-- **stash 列表化**——`git stash list` 只是文字；lazygit 让 stash 变成可点击列表
+- 默认侧栏仍是「Status / Files / Branches / Commits / Stash」五个独立面板（实际是 5 个窗口，files / branches / commits 各自带 tab）
+- TUI 框架是作者从零写的 gocui（仓内 `pkg/gocui` 是 community gocui 的 fork，后端是 tcell v3）
+- 行级 stage 直接改 index（实际先拼 patch，再 `git apply --index`）
 
-很多人装 lazygit 不是为了酷，而是**因为它把 git 学习曲线砍掉一半**——新人不用先学 30 个 git 子命令，看屏幕提示就能干活。
+它和 [[gitui]] 的分界也在这里：lazygit 跟 git 主仓功能，gitui 把仓库读进进程。
 
 ## 核心要点
 
-lazygit 的设计可以拆成 **4 件事**：
+固定 0.64.1 的主链可以拆成五步：
 
-1. **gocui TUI 框架**：作者自己写的 Go 版 ncurses 替代（也开源），负责画面板边框、捕获键盘、渲染文字。和 [[btop]] 用的 C++ ncurses 不一回事但效果类似。
-
-2. **直接调 git 子进程**：lazygit 自己不实现 git 协议，每个操作都 fork 一个 `git` 进程跑——看 Files 面板就是 `git status --porcelain`，按 `c` 提交就是 `git commit -m`。**好处**：和 git 行为完全一致，git 升级不用动 lazygit；**代价**：大仓库下每次刷新都要等 git status 跑完。
-
-3. **YAML 配置 + 自定义命令**：`~/.config/lazygit/config.yml` 改键位、改颜色、加 `customCommands`——你可以绑一个键跑任意 shell，比如把 `git push --force-with-lease` 绑到 `P`。配置和 [[btop]] 的 `btop.conf` / [[fzf]] 的 dotfiles 一样，能进团队 dotfiles 共享。
-
-4. **和外部工具协作**：diff 用环境变量 `GIT_PAGER=delta` 接 [[delta]] 拿语法高亮；分支搜索内置 fuzzy filter（思想和 [[fzf]] 一样）；GitHub PR 集成靠调 `gh` CLI。lazygit 自己只画 UI，脏活包给生态。
+1. **仓内 gocui + tcell**：`gui.initGocui()` 进入 `pkg/gocui`。`go.mod` 没有独立的 `jesseduffield/gocui` 模块；窗口几何另用 `lazycore/boxlayout`。
+2. **五窗口、十个侧栏上下文**：默认 `gui.sidePanels` 是 `status`、`files/worktrees/submodules`、`branches/remotes/tags`、`commits/reflog`、`stash`。`files` / `branches` / `commits` 不能隐藏。
+3. **git 子进程是主路径**：`GitCommandBuilder` 拼 argv，`oscommands.CmdObj` 包 `os/exec`。status 走 `git status --porcelain`，commit / push / add 同样 fork `git`。仓内没有 go-git 或 libgit2。
+4. **交互 rebase 仍把编辑器交给自己**：`PrepareInteractiveRebaseCommand` 跑 `git rebase --interactive`，并把 `GIT_SEQUENCE_EDITOR` 设成 lazygit 二进制；短命 daemon 按指令改 `.git/rebase-merge/git-rebase-todo`。
+5. **YAML 配置 + customCommands**：全局 `config.yml`，每仓还可叠加 `.git/lazygit.yml`。`customCommands` 把任意 shell 绑到键；`git.diffRenderers` 默认为空，delta 要自己配。
 
 ## 实践案例
 
-### 案例 1：把 5 个 WIP commit 合成 1 个干净 commit
+### 案例 1：默认侧栏不是五个孤立面板
+
+```yaml
+# pkg/config/user_config.go 默认值
+gui:
+  sidePanels:
+    - [status]
+    - [files, worktrees, submodules]
+    - [branches, remotes, tags]
+    - [commits, reflog]
+    - [stash]
+```
+
+看起来仍是五栏，但第二栏用 tab 在 files / worktrees / submodules 之间切。旧笔记把「五面板」写成五个上下文，会漏掉 worktree 与 reflog。
+
+### 案例 2：同一文件只暂存一部分
 
 ```bash
 lazygit
-# 切到 Commits 面板（按 4），光标移到最早那个要改的 commit
-# 按 e 进 interactive rebase 模式，光标变成箭头
-# 在要 squash 的 commit 上按 s（squash 进上一个）
-# 在要改 message 的 commit 上按 r（reword）
-# 按 m 选 continue，结束 rebase
+# Files 窗口选中文件后进入 staging view
+# 默认 gui.useHunkModeInStagingView: true
+# 选中 hunk 或行后，控制器调用 Git().Patch.ApplyPatch
 ```
 
-原来 `git rebase -i HEAD~5` 要在 vim 里手改 pick 为 squash/reword、保存、再处理冲突；lazygit 这一套**全图形化**，每一步都看得见，错了 `Esc` 撤销。
+`PatchCommands.ApplyPatch` 先把选区写成临时 `.patch`，再执行 `git apply --index`（可加 `--cached` / `--reverse` / `--3way`）。它没有自己实现 index writer。
 
-### 案例 2：同一文件只 commit 一部分修改
-
-```bash
-lazygit
-# 在 Files 面板（按 2）选中改过的文件，按 Enter 进入
-# 进入后看到完整 diff，光标变成行选择器
-# space 选当前行进暂存；按 v 进入块选择，可整段标
-# 按 c 提交，弹出 message 框，写完按 Enter
-```
-
-比 `git add -p` 高效一个量级——不是一段一段问你 y/n，而是**所见即所得地框选**。review 自己代码顺手分 commit 时是杀手锏。
-
-### 案例 3：把配置塞进 dotfiles 并加自定义命令
+### 案例 3：把安全 force-push 绑到自定义键
 
 ```yaml
 # ~/.config/lazygit/config.yml
-gui:
-  theme:
-    activeBorderColor: ['cyan', 'bold']
-  showRandomTip: false
 customCommands:
   - key: 'P'
     command: 'git push --force-with-lease'
@@ -82,70 +94,73 @@ customCommands:
     description: 'Safe force push'
 ```
 
-提交进 dotfiles 后新机器克隆就有同样布局和自定义键，团队风格统一——和 [[btop]] / [[procs]] / [[glances]] 走的是同一套 dotfiles 思路。
+`UserConfig.CustomCommands` 就是这样的 YAML 列表。这是扩展面；gitui 固定 0.28.1 没有对等的用户命令表。
 
 ## 踩过的坑
 
-1. **Windows cmd.exe 渲染崩**：边框断成乱码、颜色丢失——不是 lazygit bug 是老 cmd.exe 不支持 256 色和 Unicode 边框。装 Windows Terminal / WezTerm / Alacritty 任一现代终端立刻好
-
-2. **大仓库（kernel / Chromium 级）启动 5 秒以上**：每次刷新都跑 `git status` 拿全文件状态——root cause 是 git 自己慢，不是 lazygit。临时方案：config.yml 里 `refresher.refreshInterval: 60` 拉长刷新间隔；终极方案：换更小的仓库
-
-3. **rebase 中途 lazygit 崩了，仓库卡在 rebase-merge 状态**：再开 lazygit 会显示 "Rebase in progress"，按 `m` 选 abort 或 continue；命令行也能 `git rebase --abort` 回滚
-
-4. **diff 没语法高亮**：lazygit 默认不带；配 [[delta]]（`git config --global core.pager delta`）后 lazygit 自动跟随，diff 立刻有 syntax + line number
-
-5. **键位和 vim/tmux prefix 冲突**：进 lazygit 后 hjkl 是面板内移动，如果 tmux prefix 也在 lazygit 里被占用，可以在 config.yml `keybinding` 段重映射
+1. **把「fork git」理解成每次刷新都只跑 `git status`**：rebase todo、bare/merge 状态会直接读 `.git`。`NewGitCommand` 在这个 tag 对 bare repo 直接报错。
+2. **把 gocui 写成作者原创框架**：`pkg/gocui/README.md` 写明它是 awesome-gocui / jroimartin 的社区 fork。
+3. **以为 delta 开箱即用**：`DiffRendererConfig` 支持 `stdinFilter`，默认列表是空的。
+4. **把源码树里的 `version` 变量当成 `0.64.1` 常量**：未带 LDFLAGS 构建时会落到 `unversioned` 或短 hash。
+5. **把 Windows cmd 渲染崩溃写成这个 tag 的既定事实**：`os_windows.go` 有 cmd.exe 命令行处理；本轮未在 cmd.exe 上复现渲染。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 日常 git 操作 —— commit / push / pull / branch 切换比 CLI 快一倍
-- interactive rebase —— 把脏 commit 合成干净的
-- 行级 / 块级 stage —— 同一文件分多个 commit
-- cherry-pick / stash 管理 —— 列表化操作比 CLI 直观
-- 团队 dotfiles 默认装一份 —— 配置可分享，新人上手快
+- 日常 commit / branch / stash，以及可视化 interactive rebase
+- 需要 `customCommands`、每仓 `lazygit.yml` 或 `gh` PR 集成
+- 仓库用 LFS、sparse-checkout 等 git 主仓功能，希望 TUI 跟着 `git` 走
 
 **不适用**：
 
-- 脚本化 / CI 流水线 —— TUI 没 batch 模式；用 git 原生 CLI 或 [[gh]]
-- 纯 git log 浏览（不写）—— tig 更轻更专注于只读历史
-- ssh 进入老 vt100 哑终端 —— 渲染崩；用 git CLI
-- 巨型 monorepo（10 万文件级）—— git status 本身慢，lazygit 跟着慢；用 watchman + git 命令
+- 脚本或 CI——没有 batch 模式，应直接调 git / [[gh]]
+- 只要只读 log / blame——[[tig]] 更窄
+- 不能接受「每个动作再起一个 git 进程」的模型——对照 [[gitui]]
+- 需要本轮未做的启动耗时或大仓 benchmark 结论
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018 年**：Jesse Duffield（澳大利亚开发者）因受够 git CLI 啰嗦，用 Go 写第一版 lazygit，同时造了底层 TUI 框架 gocui
-- **2019 年**：第一年涨到 1 万 star，证明 git TUI 是真有市场
-- **2021 年**：加 interactive rebase 可视化——这是破圈关键特性，Hacker News 和 r/programming 都炸过
-- **2023 年 v0.40**：重写交互层，加 worktree 面板，支持 git worktree 工作流
-- **2024-2025**：增加 GitHub PR / issue 集成（调 `gh` CLI），53k+ star，是 GitHub 上最受欢迎的 git TUI
-- **特别之处**：作者还顺手写了 lazydocker / lazynpm / lazycli 一整套 lazy* 工具，"懒人 TUI" 自成流派
+- 本文绑定 `jesseduffield/lazygit@fbe2379fa5831b1ce1a8a836a604652ffc14844f`，annotated tag `v0.64.1` 的剥皮提交。
+- 许可为 MIT。`go.mod` 要求 Go 1.25.0。
+- GitHub 集成在这个 tag 会再跑 `gh auth token`，避免只信进程内 go-gh 缓存。
+- 本文未编译、未启动 TUI、未测大仓刷新，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **TUI 不是炫技，是降低学习曲线**——lazygit 没替代 git，只是把 git 命令翻译成可见菜单；新人不用记 30 条命令
-2. **不重新发明轮子，调子进程**——lazygit 不实现 git 协议，每次操作都 fork `git`；和 git 行为永远一致，是工程上聪明的偷懒
-3. **YAML 配置 + customCommands 是开放式扩展**——和 [[btop]] / [[fzf]] 一样，配置进 dotfiles，团队风格统一
-4. **多面板布局是 TUI 流派的共同语言**——[[btop]] 五面板看资源，lazygit 五面板看 git，[[glances]] 一屏看全栈；都是"密度第一"的设计哲学
-5. **作者愿意一个人造一整套基础设施**——gocui（TUI 框架）+ lazygit / lazydocker / lazynpm，少有的"全栈造轮子"耐心
+1. **TUI 可以只翻译 git，不重新实现仓库**——兼容性来自 `git` 子进程，成本也来自它。
+2. **窗口和上下文不是一回事**——五个 side window 里藏着 worktree、reflog、remote 等 tab。
+3. **可视化 rebase 仍是 git rebase**——编辑器变量指向自己，todo 文件还是 git 的格式。
+4. **发行版号不一定写在源码常量里**——读 tag 和读 `VERSION` 文件不是同一件事。
+
+## 应用型自测
+
+1. 行级 stage 会不会直接改 `.git/index`，而不经过 `git apply`？
+2. 默认侧栏是五个互不相关的面板，还是五个窗口、部分窗口带 tab？
+3. 交互 rebase 是 lazygit 自己走 commit graph，还是设置 `GIT_SEQUENCE_EDITOR` 后再调 `git rebase --interactive`？
+
+检查点：
+
+1. 不会。选区先写成临时 patch，再 `git apply --index`。
+2. 五个窗口；files / branches / commits 默认与 worktrees、remotes、reflog 等共享 tab。
+3. 后者。`PrepareInteractiveRebaseCommand` 把 `GIT_SEQUENCE_EDITOR` 指回 lazygit。
 
 ## 延伸阅读
 
-- 官方 README：[github.com/jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)（含 GIF 演示和键位速查）
-- 官方教程视频：作者自己录的 5 分钟入门，搜 "lazygit tutorial Jesse Duffield"
-- gocui 项目：[github.com/jesseduffield/gocui](https://github.com/jesseduffield/gocui)（lazygit 底层 TUI 框架）
-- 同类对比：搜 "lazygit vs gitui vs tig"——结论通常是 lazygit 功能最全，gitui 最快，tig 最轻
+- 固定源码：[jesseduffield/lazygit](https://github.com/jesseduffield/lazygit) —— 本文绑定提交 `fbe2379fa5831b1ce1a8a836a604652ffc14844f`
+- 配置说明：仓库内 `docs/Config.md` 与 `pkg/config/user_config.go`
+- 代码地图：`docs/dev/Codebase_Guide.md`（注意文档里旧的 `vendor/gocui` 路径，0.64.1 实际是 `pkg/gocui`）
+- [[gitui]] —— 同品类、进程内读仓库的对照
+- [[tig]] —— 浏览优先、不走全功能写工作流
 
 ## 关联
 
-- [[btop]] —— 同走"多面板 TUI"路线，但看系统资源不看 git
-- [[glances]] —— 同属"现代 TUI 重做传统 CLI"流派
-- [[procs]] —— 同属"彩色 + 树视图 + 现代化"思路（procs 替代 ps，lazygit 替代 git CLI 部分操作）
-- [[fzf]] —— lazygit 内置 fuzzy filter 思路与之同源；二者都常进 dotfiles
-- [[bat]] —— 终端体验现代化的另一支；和 lazygit 一起常被推荐"git workflow 必装"
-- [[zoxide]] —— 同样靠"装一行回不去"建立黏性
-- [[broot]] —— 文件树 TUI，和 lazygit 同走"ncurses + 多面板"路线
+- [[gitui]] —— git 子进程 vs git2/gix 直连
+- [[tig]] —— 更老的 ncurses 浏览路线
+- [[delta]] —— 可选 diff renderer，不是默认配置
+- [[gh]] —— PR 集成会再问它要 token
+- [[btop]] —— 同样多窗格 TUI，但看的是主机资源
+- [[fzf]] —— 模糊筛选思路相近，常一起进 dotfiles
 
 ## 反向链接
 
@@ -153,7 +168,7 @@ customCommands:
 
 - [[aider]] —— Aider — 终端 AI 结对编程 CLI
 - [[delta]] —— delta — git diff 的语法高亮分页器
-- [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
+- [[gitui]] —— gitui — 用 git2 与 gix 直连仓库的 Rust Git TUI
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉

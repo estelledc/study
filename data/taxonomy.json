@@ -1972,6 +1972,10 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::gitui",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::got",
       "topic_id": "projects-http-clients"
     },
@@ -2066,6 +2070,10 @@
     {
       "note_id": "projects::langfuse",
       "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::lazygit",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::lerna",
