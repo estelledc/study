@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BU：dotenv / envalid STATIC_REVIEW
+
+- supervisor 状态：writer epoch `complete`；等待 PR review，不 merge。
+- status：`running` → 本地切片完成，外部结果是单份 review PR。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 dotenv 与 envalid 绑定到可复查的固定 revision，证据为 `STATIC_REVIEW` / `STATIC_ANALYSIS`，验证状态保持 `UNVERIFIED`。
+- scope：两篇新项目页、`docs/env-config-source-review-20260827-bu.md`、两份 generation 1 receipt、taxonomy curated assignment，以及 atlas / site-state / 公开计数 / project-standard / 本 handoff 的派生更新。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-bu-dotenv-envalid`。
+- detector fingerprint：目标 slug 在 `origin/main` 上不存在；开放 PR 未占用 `dotenv` / `envalid`；两者构成 load-vs-validate 环境配置双子。
+- external delta 计数：只形成 1 个 PR；未 merge、未部署，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `dotenv` 绑定 `motdotla/dotenv@f116f703...` / `17.4.2`，写清 parse → populate → config/vault、默认不覆盖、v17 quiet 分叉。
+  2. `envalid` 绑定 `af/envalid@784385fc...` / `8.2.0`，写清 cleanEnv 白名单、default 分层跳过 `_parse`、reporter `process.exit(1)` 与 proxy。
+  3. 共享 provenance：`docs/env-config-source-review-20260827-bu.md` + 两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` 通过、0 advisory；content-contract 0 blocking；`audit:counts` 与 atlas 预算通过。
+- budget：1 个 env-config 双子 epoch；单 writer。
+- blocker：未跑 `verify:ci` 前不得宣称全绿；上游 test / vault decrypt / `process.exit` 均未执行。
+- stop conditions：本 epoch 只开 1 个 PR 且不 merge；不改其他开放 PR slug。
+- 下一次 wake 条件：PR CI / review 状态变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

@@ -1908,6 +1908,10 @@
       "topic_id": "projects-documentation-sites"
     },
     {
+      "note_id": "projects::dotenv",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::drizzle",
       "topic_id": "projects-orm-and-database-clients"
     },
@@ -1942,6 +1946,10 @@
     {
       "note_id": "projects::enquirer",
       "topic_id": "projects-terminal-tools"
+    },
+    {
+      "note_id": "projects::envalid",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::esbuild",
