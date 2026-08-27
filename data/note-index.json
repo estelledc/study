@@ -51119,16 +51119,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-state-management",
-        "raw_category": "projects"
+        "raw_category": "状态管理"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/mobx/",
       "atlas": {
@@ -51646,7 +51646,7 @@
       "id": "projects::nanostores",
       "area": "projects",
       "slug": "nanostores",
-      "title": "nanostores — 不到 1 KB 的\"框架无关\"状态库",
+      "title": "nanostores — 框架无关的原子 store",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -51656,16 +51656,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-state-management",
-        "raw_category": "projects / 前端"
+        "raw_category": "状态管理"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/nanostores/",
       "atlas": {

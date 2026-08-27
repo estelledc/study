@@ -2,6 +2,22 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DN React store fallback
+
+- status：`running`（writer epoch 完成，等待 PR review；未 merge）。
+- objective：按 PARALLEL writer DN 授权迁移一对 React store 页到固定源码 `study-v2` / `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`mobx`、`nanostores` 两页、2 份 generation 1 receipt、`docs/react-store-source-review-20260827-dn.md`、atlas / note-index / project-standard / site-state 派生输出；未改 `zustand` / `jotai` / `valtio` / `pinia`，未安装上游依赖，未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-dn-20260827`（target recoil+redux；仓库无这两页，Recoil 上游已归档，按 fallback 取现有 store 对）。
+- starting ref：`7a2384d0`。
+- detector fingerprint：两页缺 pinned revision / evidence boundary / self-test；旧 MobX 正文停在 v6 印象，旧 nanostores 把 `set` 说成不做相等比较、把 `computed` 说成首次执行隐式收依赖。
+- external delta：本轮只形成一条 PR，不 merge、不部署；D 轴不提升。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest 与正文一致；`git diff --check`；`STUDY_CHANGED_FROM=7a2384d0 npm run verify:ci`。
+- budget：2 页、1 个 writer、1 个 epoch。
+- stop conditions：canonical/revision 不唯一、需要猜测性能、或门禁只能靠放宽通过。
+- 下一次 wake 条件：PR review / CI 结果，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d0 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
