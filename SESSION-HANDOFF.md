@@ -15,12 +15,18 @@
   1. 只读核验 `remark@15.0.1` / `5017a27…` 可钉，但因 atlas 预算放弃新建页。
   2. `unified` 绑定 `unifiedjs/unified@242105bd…` / `11.0.5`（tag 与 npm `gitHead` 一致），修正冻结默认导出、freeze 时才跑 plugin、`file.value`/`file.result` 与 Sync API 异步边界。
   3. `micromark` 绑定 `micromark/micromark@3fae1552…` / `4.0.2`（tag 与 npm `gitHead` 一致），修正 preprocess→parse→postprocess→compile 主链、默认 HTML 安全开关、`micromark/stream` 在 `end` 才缓冲输出。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 review doc digest 一致，evidence `UNVERIFIED`；`git diff --check` 通过。`verify:ci` 在 push/PR 后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 review doc digest 一致，evidence `UNVERIFIED`。
+  - `audit:wikilinks`：通过；已去掉 `projects::unified -> remark` 新 unresolved group。
+  - `STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=925`。
+  - `audit:content-contract`：`v2=105`、`legacy-unverified=1939`、blocking 0。
 - budget：3 个 blob-filtered worktree（remark 仅作 fallback 证据）+ 2 页静态迁移 + 派生刷新；单 writer。
 - blocker：无新的硬暂停。规模 baseline 超限若仍在 `origin/main` 上，属既有 `PARKED_HUMAN` 信号，本轮未改阈值。
 - stop conditions：已形成一份 PR；不 merge、不部署。
 - 下一次 wake 条件：PR review / CI 变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- 下一条命令：查看 PR https://github.com/estelledc/study/pull/165 ；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
