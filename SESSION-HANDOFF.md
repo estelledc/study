@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AT：antd / mui STATIC_REVIEW
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：按调用方指定的 PARALLEL writer AT，把缺失的 Ant Design / MUI 组件库页补成绑定固定 revision 的 `study-v2` 静态审查。
+- scope：`antd`、`mui` 两页、共享 `docs/component-library-source-review-20260827-at.md`、receipt/派生索引与公开计数文案；未改队列、政策阈值、#47-#85 已占用 slug，也未 merge。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-at-antd-mui`。
+- detector fingerprint：origin/main 无 `antd` / `mui` 项目页；open PR #47-#85 未占用这对 slug；antd `6.6.1` 与 `@mui/material` `9.3.1` 可绑定可达 GitHub tag。
+- external delta 计数：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；形成 1 个 PR，未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. 绑定 `ant-design/ant-design@164a310f7...` / `antd@6.6.1`，写清 ConfigProvider / token / App / 静态 message 边界。
+  2. 绑定 `mui/material-ui@5b91ac750...` / `@mui/material@9.3.1`，写清 `createTheme` no-vars 默认与 ThemeProvider 分叉。
+  3. 新增 generation 1 `STATIC_REVIEW` receipt；笔记 `verification_status` 保持 `UNVERIFIED`。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，evidence `UNVERIFIED`；`audit:counts` / content-contract changed-from 基线 blocking 0。
+- budget：2 个本地 worktree + 2 页静态源码迁移；单 writer。
+- blocker：上游运行证据不能由静态 review 替代；MUI npm tarball 无 `gitHead`。
+- stop conditions：本 epoch 已形成可审查 PR；未获 merge/deploy 授权前停止。
+- 下一次 wake 条件：owner review 本 PR，或提供新的有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`。
+- superseded_by：`none`。
+- 不在 handoff 中复制易过期数字或 ETA。独立 agent 先读 `AGENTS.md`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
