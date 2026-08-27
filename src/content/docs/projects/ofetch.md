@@ -181,4 +181,6 @@ const data = await ofetch<User>("/api/users/1", {
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
+- [[query-string]] —— query-string — 可配置的查询串解析与序列化
+- [[ufo]] —— ufo — 给人读的 URL 工具箱
 - [[wretch]] —— wretch — 把 fetch 写成一条链

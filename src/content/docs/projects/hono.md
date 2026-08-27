@@ -187,7 +187,9 @@ const tiny = new TinyHono()      // PatternRouter
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[query-string]] —— query-string — 可配置的查询串解析与序列化
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[ufo]] —— ufo — 给人读的 URL 工具箱

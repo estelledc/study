@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FJ URL-query 双子
+
+- supervisor 状态：Program `active`；本地 writer epoch `running` → 完成后 `complete`。
+- 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main）。
+- objective：把 `ufo` 与 `query-string` 这对 URL-query 库以 `STATIC_REVIEW` / `UNVERIFIED` 写入源码绑定 study-v2 页；产出 `docs/url-query-source-review-20260827-fj.md`；开一个 PR，不 merge。
+- scope：两页新正文、2 份 generation 1 receipt、共享审查文档、taxonomy curated assignment、note-index / project-standard / site-state / atlas 派生、公开计数文案、ofetch/ky/hono 生成段入链、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-fj`。
+- detector fingerprint：仓库无 `ufo` / `query-string` 项目页；调用方指定该 URL-query 对，并授权 STATIC_REVIEW + 单 PR 不 merge。
+- external delta 计数：按授权形成 push + 单 PR；未 merge、未 deploy。
+- 已完成切片：
+  1. 只读核验 npm/GitHub provenance 后，blob-filtered clone `unjs/ufo@f06c800d...` / `1.6.4` 与 `sindresorhus/query-string@aae373a5...` / `9.5.0`。
+  2. 新建两页并绑定 revision；修正 ufo 的 `joinURL`/`undefined`/`null` 合同，以及 query-string 默认 sort、缺等号为 null、README 对象 throw 与源码不一致。
+  3. 新增共享 `docs/url-query-source-review-20260827-fj.md` 与两份 generation 1 static receipt；taxonomy 把两页收进 `projects-http-clients`，避免顶满的 unclassified 预算增长。
+- acceptance_checks：两页 quality-gate；receipt digest / revision 一致且 `UNVERIFIED`；`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`；单 PR 不 merge。
+- budget：2 个小型 ignored worktree + 2 页静态源码页；单 writer；默认 3 切片 / 120 分钟。
+- external_outcome：review-ready PR；未授权 merge / deploy，D 轴不提升到生产。
+- stop_conditions：canonical/revision 不唯一、taxonomy 预算只能靠放宽阈值继续、需要 merge、或 verify:ci 失败且无法在 scope 内修复。
+- blocker：规模 compare detector 在 main 即超 baseline（先于本切片存在）；本轮未改 baseline / 阈值。
+- 验证结果：定向 quality-gate 两页 pass、0 advisory；其余以 verify:ci 为准。
+- 下一次 wake 条件：本 PR 的 CI/review 状态变化，或 owner 对 merge / 规模 baseline 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。实时数量用 `npm run audit:counts` / `audit:project-standard` 重取。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

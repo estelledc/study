@@ -2316,6 +2316,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::query-string",
+      "topic_id": "projects-http-clients"
+    },
+    {
       "note_id": "projects::qwik",
       "topic_id": "projects-ui-and-frontend-frameworks"
     },
@@ -2510,6 +2514,10 @@
     {
       "note_id": "projects::typesense",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::ufo",
+      "topic_id": "projects-http-clients"
     },
     {
       "note_id": "projects::unified",
