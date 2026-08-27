@@ -1,41 +1,29 @@
 ---
 title: CodeMirror — 编辑器不是一个类，是一组扩展的合奏
-来源: 'Marijn Haverbeke, "The Architecture of CodeMirror 6", marijnhaverbeke.nl 2018'
+来源: 'https://code.haverbeke.berlin/codemirror/state'
 日期: 2026-05-29
-分类: 前端
+分类: projects / 前端
 难度: 高级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://code.haverbeke.berlin/codemirror/state
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: cce2dd5aa4982596b5fb9a27f54a396dfe4f87b5
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 6.7.1
 ---
 
 ## 是什么
 
-CodeMirror 6 是一个**让你拼出自己的代码编辑器**的 JavaScript 库。日常类比：它不像微波炉（按一个按钮就能用），更像乐高（你拿一组零件，自己拼出想要的形状）。
+CodeMirror 6 是一组**按扩展拼出来的浏览器代码编辑器**。日常类比：不是按一个按钮就亮的微波炉，而是乐高底盘——光标、选区、撤销、滚动是零件，行号和高亮也是零件。
 
-你写网页里的"代码块编辑器"——比如 Replit 那种在线 IDE，或者 Sourcegraph 的浏览代码界面——CodeMirror 提供编辑器的**底盘**：光标、选区、撤销、滚动；至于行号、语法高亮、自动补全这些"特性"，每一个都是单独的 npm 包，按需装。
-
-这个设计在 2018 年的第 6 版彻底重写后才成立。第 5 版以前，所有特性都缝在一个叫 `CodeMirror` 的大类上，加新功能要改它的内部。
-
-## 为什么重要
-
-不理解 CodeMirror 6，下面这些事都没法解释：
-
-- 为什么 50 KB 的 JS 库能撑起 Replit / Sourcegraph / Sentry 这种几百万行代码的在线编辑器
-- 为什么 Monaco（VS Code 内核）开箱即用却 600 KB，CodeMirror 复杂却能压到 50 KB——架构哲学差在哪
-- 为什么"不可变状态"这个看起来反直觉的设计，反而让协同编辑、撤销重做、语法树缓存都变简单
-- 为什么"插件"在 CodeMirror 不是函数注册，而是一种**数据流声明**
-
-## 核心要点
-
-1. **不可变状态内核**：每次编辑产生一个新的 `EditorState`，旧的不变。类比拍立得照片——按一次快门出一张新照片，旧照片还在。这让"撤销"只是把指针指回旧 state，"协同编辑"只是把别人的编辑指令在自己的 state 上重放一遍。
-
-2. **Facet：每个特性是数据流的一个节点**。Facet 是带名字的"插槽"，多个插件往同一个插槽塞值，框架按规则合并。类比公司的意见箱——每个员工都能投，HR 按规则汇总。`tabSize` facet 取第一个非空值，`keymap` facet 把所有键位列表 flat 成一个。
-
-3. **Lezer 增量解析**：编辑代码时不重新解析整个文件，只解析变化的那段。类比修一座房子——换一扇窗不用拆重盖。这是为什么超长文件打开瞬间高亮不卡的根本原因。
-
-三个机制合起来叫 "extension-first architecture"：编辑器本身只有几百行，所有功能是组合上去的扩展。
-
-## 实践案例
-
-### 案例 1：30 行写一个能用的 IDE
+你写：
 
 ```ts
 import { EditorState } from "@codemirror/state"
@@ -54,13 +42,37 @@ const state = EditorState.create({
     keymap.of([...defaultKeymap, ...historyKeymap, ...completionKeymap]),
   ],
 })
-
 new EditorView({ state, parent: document.getElementById("app")! })
 ```
 
-打开浏览器：行号、语法高亮、Ctrl-Z 撤销、Ctrl-Space 补全全有。**没用一个 React/Vue 组件**——CodeMirror 自己管 contentEditable 的 DOM。
+`EditorState.create` 把字符串按 `lineSeparator` facet（默认 `/\r\n?|\n/`）切成不可变 `Text`，缺省选区是位置 0。`EditorView` 再把 state 投影到 DOM。2018 年的第 6 版才确立这套协议；第 5 版还是一个大类。
 
-### 案例 2：自定义 Facet 计算实时词数
+## 为什么重要
+
+不理解这套协议，下面这些事会对不上：
+
+- 为什么“核心”可以很小，功能却能长成在线 IDE
+- 为什么撤销、协同、语法树缓存都更像“指向旧快照”，而不是改同一个可变对象
+- 为什么插件不是 `editor.addXxx()`，而是往 Facet 插槽里塞值
+- 为什么 2026-04-15 之后 GitHub `codemirror/*` 只剩 forwarding link，npm `gitHead` 要到 `code.haverbeke.berlin` 才对得上
+
+## 核心要点
+
+1. **不可变 state + transaction**：`EditorState` 禁止直接改属性。`state.update(...)` 解析成 `Transaction`，再构造新 state。旧对象留下，撤销就是回到它。
+
+2. **Facet 是带合并规则的插槽**：`Facet.define` 用模块级 `nextID++` 分配 id。多个扩展往同一 facet 供值，`combine` 合成一份输出；没给 `combine` 时输出就是输入数组。`tabSize` 取第一个值，默认 4。`compare` / `compareInput` 默认 `===`。
+
+3. **View 只画 viewport**：`EditorView` 只把可见范围（加边距）画进 `contentDOM`。直接改这个 DOM 会被观察器回滚；改内容必须 `dispatch` transaction。所有插件在同一条 `ViewUpdate` 流水线看到 `docChanged` / `selectionSet`。
+
+4. **Lezer 树活在 StateField 里**：`@codemirror/language` 把当前 `Tree` 放进 `Language.state`。文档变化时用 fragments 增量重解析；未完成的解析只推进到旧终点与 viewport 的较大者，避免在 state 更新里解析整份文件。
+
+## 实践示例
+
+### 案例 1：最小可编辑组合
+
+上面那段就是最小 IDE：行号、历史、JS 语法、补全都是独立扩展。`javascript()` / `autocompletion()` 来自另外的包，核心 `@codemirror/state` 并不知道它们。
+
+### 案例 2：依赖文档的 Facet
 
 ```ts
 import { Facet } from "@codemirror/state"
@@ -68,15 +80,14 @@ import { Facet } from "@codemirror/state"
 const wordCount = Facet.define<number, number>({
   combine: values => values.reduce((a, b) => a + b, 0),
 })
-
 const wordCountFromDoc = wordCount.compute(["doc"], state =>
   state.doc.toString().split(/\s+/).filter(Boolean).length
 )
 ```
 
-把 `wordCountFromDoc` 加到 extensions，任何插件调 `state.facet(wordCount)` 都能拿到当前词数。`["doc"]` 是依赖声明：文档变才重算，光标移动不会重算——和 React `useMemo` 的 deps 数组同一思路。
+`["doc"]` 声明依赖：只有文档变才重算，选区移动不会走 `get`。这和 React `useMemo` 的 deps 同一思路，但是编辑器状态机上的数据流。
 
-### 案例 3：监听所有变更的日志插件
+### 案例 3：同一条 update 流水线
 
 ```ts
 import { ViewPlugin, ViewUpdate } from "@codemirror/view"
@@ -89,68 +100,74 @@ const logUpdates = ViewPlugin.fromClass(class {
 })
 ```
 
-把 `logUpdates` 加进 extensions，输入 / 撤销 / 选区移动都会打印。**所有 view 状态变更走同一条 update 流水线**——这是 CodeMirror 6 设计纪律的精华。
+输入、撤销、选区移动都进同一个 `update`。`history()` 默认 `minDepth: 100`、`newGroupDelay: 500`，相邻且碰到已有变更范围的事务会合并进同一undo 事件。
 
 ## 踩过的坑
 
-1. **Facet 用 `===` 比较 object 永远不等**：写 `combine` 返回对象但没传 `compare`，框架默认 `===` 比较，每次更新都重算下游——性能杀手，要传 `compare: (a, b) => deepEqual(a, b)`。
+1. **Facet 返回对象却不给 `compare`**：默认 `===`，每次都算“变了”，下游会跟着重算。要稳定输出就写 `compare`。
 
-2. **多版本 `@codemirror/state` 共存会静默崩**：Facet 内部用模块级 `nextID++` 做全局计数，两次模块加载会产生两个不同 id 的"同名" Facet——provider 加到一个，reader 读另一个，全是默认值，不报错。必须用 npm dedupe 强制单实例。
+2. **两份 `@codemirror/state` 会静默错位**：`nextID++` 是模块级的。重复安装会得到两套 id 空间——一边写入、一边读默认值，常常不报错。必须 dedupe 成单实例。
 
-3. **不可变写法的性能旋钮要手调**：`StateField.define({ update: (val, tr) => ... })` 里频繁返回新对象会触发 GC 抖动。要么手写 `if (!changed) return val` 早退，要么用结构共享。
+3. **`StateField.update` 每次都 new 对象**：没变化时应 `return val`。否则 GC 与下游依赖会被无意义的引用变化带着走。
 
-4. **Lezer 写新语言不友好**：要给某个新语言加高亮，必须写 Lezer 自家的语法 DSL（不是 BNF / PEG），学习成本独立于 CodeMirror 本身。绝大多数项目直接用 `lang-javascript` / `lang-python` 等现成包就够。
+4. **GitHub 上的 6.6.x 不是当前 npm**：archived `codemirror/state` 停在 6.6.0；本文绑定的 6.7.1 只在 haverbeke.berlin 可达。不要用 GitHub `main` 的 forwarding commit 当版本真相。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-
-- 跨框架嵌入式代码编辑器（Replit / Sourcegraph / 在线 IDE / 评论里的代码块）
-- 需要极致包大小的场景——50 KB 核心，按需加扩展
-- 需要深度定制：自定义补全源、自定义高亮、协同编辑
+- 嵌入网页的代码编辑（在线 IDE、文档里的可编辑块、代码浏览）
+- 需要按功能选包、自己组合扩展
+- 协同 / 撤销依赖不可变快照的场景
 
 **不适用**：
+- 要开箱即用的完整 IDE 协议，且接受 vscode 包装体积 → [[monaco-editor]]
+- 富文本（段落、图片、链接节点）→ [[prosemirror]] / [[lexical]]；CodeMirror 文档是纯文本 + 语法树
+- 仍在维护 CodeMirror 5 / Ace、没有重写预算
 
-- 需要"开箱即用"的完整 IDE 体验，团队接受 600 KB 包 → 用 [[monaco-editor]]
-- 富文本编辑器（文档 / 笔记应用） → 用 [[prosemirror]] / [[lexical]]，CodeMirror 文档模型只是纯文本 + 语法树，没有"段落 / 图片块 / 链接节点"语义
-- 老项目维护，没动力重写 → 留在 Ace 或 CodeMirror 5
+## 固定版本边界
 
-## 历史小故事（可跳过）
-
-- **2007 年**：Marijn Haverbeke（荷兰程序员）写出 CodeMirror 1，最早是给 Eloquent JavaScript 教程做的代码运行器
-- **2014 年**：CodeMirror 5 发布，成为 GitHub 在线编辑、Chrome DevTools、Brackets 等工具的事实标准
-- **2018 年**：Marijn 发表 The Architecture of CodeMirror 6，宣布完全重写——v5 的 god class 已经被各种 monkey-patch 缝满，加新功能撑不住
-- **2021 年**：CodeMirror 6 正式发布，拆成 7 个独立 npm 包，TypeScript 100% 重写
-- **2026-04-15**：Marijn 把所有仓库从 GitHub 迁到自建的 `code.haverbeke.berlin`——为脱离 issue 噪音，不是项目死了，仍在活跃维护
+- 本文绑定 `@codemirror/state@6.7.1` / `cce2dd5aa4982596b5fb9a27f54a396dfe4f87b5`（`code.haverbeke.berlin/codemirror/state`）。
+- 同批对照包：`view@6.43.9` / `d4e1656e...`，`language@6.12.4` / `89974ce5...`，`commands@6.11.0` / `03580e55...`，`autocomplete@6.20.3` / `66587500...`。
+- GitHub `codemirror/*` 于 2026-04-15 archived；npm latest 的 `gitHead` 在 GitHub 不可达。autocomplete 的 forge HEAD 新于 npm 6.20.3，本文绑 npm 提交而不是 HEAD。
+- `history` 默认 `minDepth: 100`、`newGroupDelay: 500`；`tabSize` 默认 4。
+- 本文未安装依赖、未跑上游测试或浏览器套件、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **架构靠"协议"而不是"实现"**：CodeMirror 6 没有"完整功能"，只定义了 Facet / Transaction / Extension 三个协议，功能由社区往协议上长出来——这种"留接口不留实现"的纪律比"框架 vs 库"区分更深一层
+1. **协议比“完整功能”更耐用**——Facet / Transaction / Extension 三个口子让社区往上长，而不改核心类
+2. **不可变不等于每次都拷整份文档**——`Text` 是树状结构共享；Language 的增量 parse 也复用 fragments
+3. **模块级身份（`nextID`）把“单实例”变成运行时合同**，重复安装会静默坏掉
+4. **迁移托管不等于项目死了**——canonical remote 变了，revision 必须跟着可达的 forge 走
 
-2. **不可变 + 数据流 ≠ 性能差**：直觉上"每次产生新对象很慢"，但加上结构共享 + facet 依赖跟踪 + 增量重算，CodeMirror 处理 10 万行文件比许多 mutable 编辑器还快
+## 应用型自测
 
-3. **单一更新通道是可观测性的前提**：所有 view 状态变更走 `update(u: ViewUpdate)` 一个回调，加 logger / debugger / undo / collab 都在同一个口子接，比散落在 N 个 setState 容易追
+1. `Facet.define` 不传 `combine` 也不传 `compare` 时，两个内容相同的新数组算“没变”吗？
+2. 用户改了 `contentDOM` 里的一个字符，CodeMirror 会把它当成正式文档变更吗？
+3. 文档很长、上次解析还没到文件末尾时，下一次 state 更新会先把整份文件解析完吗？
 
-4. **bus factor 和"个人主导"不是反义词**：Marijn 一个人维护 CodeMirror + ProseMirror + Lezer 二十年，靠的是把核心做小、把扩展开放给社区——是个人开源项目长期存活的可复用模式
+检查点：
+
+1. 不算。默认 `compare` 是 `===`，新数组引用不同就会重算下游。
+2. 不会。观察器会回滚直接 DOM 改动；正式变更必须 `dispatch` transaction。
+3. 不会。未完成解析只推进到旧 tree 终点与当前 viewport 的较大者。
 
 ## 延伸阅读
 
-- 设计哲学一手描述：[Marijn Haverbeke — The Architecture of CodeMirror 6](https://marijnhaverbeke.nl/blog/codemirror-6.html)
-- 官方系统教程：[CodeMirror System Guide](https://codemirror.net/docs/guide/)（按 EditorState / Extension / Facet 顺序讲）
-- React 集成包：[react-codemirror](https://github.com/uiwjs/react-codemirror)（在 React 项目里嵌入的最短路径）
-- 视频教程：YouTube 搜 "CodeMirror 6 tutorial"，挑 freeCodeCamp / Fireship 的版本
-- [[monaco-editor]] —— 直接竞品，VS Code 内核切下来一块
-- [[prosemirror]] —— 同一作者的富文本兄弟项目
+- 设计原文：[The Architecture of CodeMirror 6](https://marijnhaverbeke.nl/blog/codemirror-6.html)
+- 系统指南：[codemirror.net/docs/guide](https://codemirror.net/docs/guide/)
+- 固定内核：[`code.haverbeke.berlin/codemirror/state`](https://code.haverbeke.berlin/codemirror/state) —— `cce2dd5aa4982596b5fb9a27f54a396dfe4f87b5`
+- GitHub 归档镜像：[github.com/codemirror/state](https://github.com/codemirror/state)（停在 6.6.0 + forwarding）
+- [[monaco-editor]] —— vscode 包装对照
+- [[prosemirror]] —— 同一作者的富文本兄弟
 
 ## 关联
 
-- [[monaco-editor]] —— 同领域，包大但开箱即用，哲学相反
-- [[lexical]] —— 同样 immutable + composition 哲学，但 React-first
-- [[prosemirror]] —— 同作者，富文本版，Transaction / Plugin 系统几乎一致
-- [[shiki]] —— 静态高亮库，CodeMirror 在线版的"只读对照组"
-- [[yjs]] —— 协同编辑 CRDT，CodeMirror 协同方案直接基于它
-- [[react]] —— 用 react-codemirror 包装即可嵌入
-- [[vite]] —— 配套的 dev server，跑 toy 项目首选
+- [[monaco-editor]] —— 同领域，默认全量 vscode 协议
+- [[lexical]] —— 不可变 + 组合，但是富文本 / React-first
+- [[prosemirror]] —— 同作者，Transaction / Plugin 更偏文档 schema
+- [[shiki]] —— 只读高亮对照
+- [[yjs]] —— 常见协同后端，不在本批源码绑定内
+- [[react]] —— 用社区包装嵌入，本文未绑包装包版本
 
 ## 反向链接
 

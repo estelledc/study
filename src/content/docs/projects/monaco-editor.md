@@ -1,83 +1,88 @@
 ---
 title: monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
-来源: 'Microsoft, "monaco-editor", https://github.com/microsoft/monaco-editor'
+来源: 'https://github.com/microsoft/monaco-editor'
 日期: 2026-05-30
 分类: projects / 前端
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/microsoft/monaco-editor
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 13f0c872dcf352815cc28d92dfff496c9839ea5c
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.56.0
 ---
 
 ## 是什么
 
-Monaco Editor 是 Microsoft 把 **VSCode 桌面版的代码编辑器整块拆出来**，重新打包成可以挂进任何网页的 JavaScript 库。日常类比：像把一辆赛车的发动机原样搬上一辆家用车——你拿到的不是仿制件，是同一颗发动机。
+Monaco Editor 是 Microsoft 把 **VS Code 的代码编辑器抽成网页 SDK** 后的包装包。日常类比：不是仿制发动机，而是把同一颗引擎装进可以挂到任意 DOM 节点的外壳。
 
 你写：
 
 ```js
+import * as monaco from 'monaco-editor'
 monaco.editor.create(document.getElementById('container'), {
   value: 'function hello() { return 42; }',
   language: 'typescript',
 })
 ```
 
-页面上立刻就有了一个**会自动补全、悬浮看类型、点击跳转定义、实时报错**的编辑器。它不是一个高级 textarea，而是 IDE 的浏览器版。GitHub Codespaces、StackBlitz、Replit、CodeSandbox 这些"在网页里写代码"的产品，底层用的就是它。内部再拆成：文本模型（`ITextModel` / PieceTree）、编辑器控制器（`ICodeEditor`）、跑在 Web Worker 里的语言服务，以及补全/hover 的 Provider 注册表。
+`create` 来自 vscode standalone API：先 `StandaloneServices.initialize`，再实例化 `StandaloneEditor`。页面上出现的是带模型、选区、补全/hover 挂点的编辑器，不是高级 textarea。GitHub Codespaces、StackBlitz 一类产品用的就是这层。固定 0.56.0 的包装仓只 re-export `monaco-editor-core` 的 `editor.api`，内核实现绑在 `vscodeRef` `f487add...`。
 
 ## 为什么重要
 
-不理解 Monaco，下面这些事都没法解释：
+不理解这层包装，下面这些事会对不上：
 
-- 为什么浏览器里写 TypeScript 能像桌面 VSCode 一样**马上看到类型错误**
-- 为什么同一段编辑器代码可以**桌面版浏览器版同时跑**，不会两边漂移
-- 为什么 Monaco 的安装包是 1.5MB+，比 [[codemirror]] 6 重 10 倍，仍然有大量产品愿意用
-- 为什么"语言服务"必须跑在 Web Worker 里，主线程跑就会卡死 UI
+- 为什么网页里写 TypeScript 能看到诊断，却仍不是完整桌面 LSP
+- 为什么同一套 `ITextModel` / Provider 协议能同时服务 VS Code 与浏览器
+- 为什么默认 `import 'monaco-editor'` 会带上整组 feature 与四个语言 worker
+- 为什么不配 `MonacoEnvironment.getWorker` / `getWorkerUrl`（或 bundler 的 `?worker`）会直接抛错，而不是“降级成 textarea”
 
 ## 核心要点
 
-Monaco 的设计可以拆成 **三块**：
+0.56.0 的主链可以拆成四步：
 
-1. **真理源是 model，不是 DOM**：所有补全、hover、诊断都引用 `model.uri + model.version`。类比：每张快递单都印着订单号，过期作废。这让 IME 输入、撤销、虚拟滚动重渲染时结果不会错乱。具体表现：worker 算了 200 ms 才返回的补全，如果期间用户又敲了一个键导致 version 涨了，结果直接丢弃，不会回写过期建议。
+1. **真理源是 model，不是 DOM**：`TextModel` 用 `uri` 标识、`_versionId` 从 1 递增。缓冲区是 `PieceTreeTextBuffer`。补全、hover、worker 同步都按 URI；过期结果靠版本/token 丢弃。
 
-2. **DOM 是单向投影**：`TextModel → ViewModel → DOM` 只能从左到右流，键盘输入要走 `TypeOperations` 转成对 model 的 edit，DOM 不能反向写 model。类比：水电站只能从上游放水，不能让下游倒灌。这条规则保证了折叠、minimap、IME 三件互不打架。
+2. **包装仓默认全量注册**：`src/index.ts` side-effect 导入全部 `src/features/register.all`（find、suggest、hover、folding、gpu…）以及 css / html / json / typescript 语言服务。每个 feature 只是一行对 `monaco-editor-core` 贡献点的 import。
 
-3. **语言服务跑在 Web Worker**：TypeScript 编译器、CSS 解析器都是几百毫秒的同步任务，放主线程会卡键盘。Monaco 默认起 4 个内置 worker（TS / JSON / CSS / HTML），主线程通过 `postMessage` 异步要结果；这是内置语言服务，不是完整 LSP。若要接外部语言服务器，再用 `monaco-languageclient` 把 LSP 桥进来。
+3. **语言服务跑在 Web Worker**：`createWebWorker` 优先问 `MonacoEnvironment.getWorker` / `getWorkerUrl`，否则用调用方 `createWorker`（TS 用 `new URL('./ts.worker?esm', import.meta.url)`）。未配置就抛错。这是内置语言服务，不是完整 LSP。
 
-三块加起来，就是为什么 Monaco 能做到"桌面 VSCode 用什么 API，网页就能用什么 API"。
+4. **超大文件有显式降级**：`largeFileOptimizations` 默认开。超过 20MB 或 30 万行关闭 tokenization；超过 50MB 停止向 worker 同步；256M 字符视为 heap 危险操作。单行 ≥10000 字符走 `isDominatedByLongLines`。旧文写的 10MB 阈值已过时。
 
-## 实践案例
+## 实践示例
 
 ### 案例 1：最小嵌入
 
-```html
-<div id="root" style="height:400px"></div>
-<script type="module">
-  import * as monaco from 'monaco-editor'
-  monaco.editor.create(document.getElementById('root'), {
-    value: '// 写点什么',
-    language: 'javascript',
-    theme: 'vs-dark',
-  })
-</script>
+```js
+import * as monaco from 'monaco-editor'
+monaco.editor.create(document.getElementById('root'), {
+  value: '// 写点什么',
+  language: 'javascript',
+  theme: 'vs-dark',
+})
 ```
 
-逐部分解释：
+**逐部分**：`create(container, options)` 读取容器尺寸并挂上 standalone 编辑器；`language` 决定启用哪套内置 worker（未配 environment 会失败）；`theme` 只改配色，不改文本模型。
 
-- `create(container, options)`：在指定 DOM 节点挂上编辑器，返回 editor 实例
-- `language: 'javascript'`：决定启用哪个内置语言 worker（未配 bundler worker entry 会 404）
-- `theme: 'vs-dark'`：只改配色，不改文本模型
-- 底层同时初始化 PieceTree 缓冲、ViewModel，并启动对应 worker
-
-### 案例 2：拿到内容 + 监听变化
+### 案例 2：读真值必须走 model
 
 ```js
 const editor = monaco.editor.create(el, { value: '', language: 'json' })
 editor.onDidChangeModelContent(() => {
   console.log(editor.getValue())
 })
-editor.getModel().onDidChangeDecorations(() => { /* 装饰也会变 */ })
 ```
 
-**为什么不直接读 DOM**：Monaco 用虚拟滚动，DOM 只渲染可见行。读真值必须走 `editor.getValue()`，背后是 PieceTree 缓冲区拼出来的完整文本。事件订阅也走 model 而不是 DOM——这样 IME 中途按键不会误触发。
+DOM 只渲染可见行。`getValue()` 从 PieceTree 拼出完整文本；事件也挂在 model 上，避免 IME 中间态误触发。
 
-### 案例 3：注册一个自己的补全 provider
+### 案例 3：注册补全 Provider
 
 ```js
 monaco.languages.registerCompletionItemProvider('markdown', {
@@ -98,61 +103,72 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 })
 ```
 
-**意义**：这就是 Monaco 跟桌面 VSCode 同形的扩展点。把同一个 provider 改 5 行就能搬到 VSCode 扩展里。`triggerCharacters` 控制触发字符，`InsertAsSnippet` 让 `${1:...}` 占位变成可 Tab 跳转的填空。Provider 数量没有上限，多个 provider 的结果会被 suggest UI 自动合并去重。
+这是与桌面 VS Code 同形的扩展点。多个 Provider 的结果由 suggest UI 合并。要接外部语言服务器，0.56.0 默认入口还导出同仓 `@vscode/monaco-lsp-client`（`lsp`），不再只有仓外的 monaco-languageclient。
 
 ## 踩过的坑
 
-1. **webpack / vite 不配 worker entry 直接 404**：4 个 worker 是单独 chunk，必须用 `MonacoWebpackPlugin` 或 vite 的 `?worker` 写法注册，否则一加载就报"Cannot find /editor.worker.js"。原因：worker 走 `new Worker(url)`，bundler 不能像普通 import 那样自动追踪。
-2. **dispose 不彻底导致内存泄漏**：`editor.dispose()` 只清 widget，model 可能被别的 editor 共享，要单独 `model.dispose()` 才真释放。SPA 路由切换页面时常踩，监控里看到内存只升不降基本就是这条。
-3. **超大文件触发降级**：单行超过 1 万字符或文件超过 10MB，Monaco 会自动关掉 token 高亮、bracket 匹配等特性保活，体验突然变差，需要预先分片或截断。
-4. **自定义 CSS 覆盖内部 class 会让光标飘**：Monaco 用 DOM 测量算行高字宽，外部样式动了 `.monaco-editor .view-line` 这类 class 会让坐标对不齐。改主题应优先用 `monaco.editor.defineTheme()` 而不是直接覆盖 CSS。
+1. **不配 worker 入口会失败**：`createWebWorker` 在没有 `MonacoEnvironment` 且没有 `createWorker` 时抛错。webpack 可用仓内 `monaco-editor-webpack-plugin@7.1.1`；Vite 用 `?worker`。AMD worker 入口已标 deprecated，仍被该 plugin 使用。
+
+2. **`editor.dispose()` 不等于释放 model**：编辑器可以共享 model；只 dispose widget 时 URI 仍被占用。SPA 切页要同时 `model.dispose()`。
+
+3. **超大文件阈值已变**：tokenization 降级是 20MB / 30 万行，不是旧笔记里的 10MB。单行 1 万字符走另一条 long-line 路径。
+
+4. **默认入口不是“最小核”**：`import 'monaco-editor'` 会注册整组 feature。要瘦身必须按文档自己选 feature / language，并实测产物；本文未测 bundle。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 浏览器里写代码（在线 IDE / 教程平台 / 配置编辑器 / 沙箱）
-- 需要 IDE 级体验：补全、hover、诊断、find-all-references
-- 想跟 VSCode 桌面共享扩展协议（用 monaco-language-client 接 LSP）
+- 浏览器里要 IDE 级编辑（补全、hover、诊断、多光标）
+- 希望和 VS Code 共享 Provider / model 协议
+- 能接受默认全量 feature，并配置 worker 打包
 
 **不适用**：
-- 富文本编辑（标题、加粗、图片）→ 用 [[lexical]] / [[prosemirror]]
-- 极致小体积（<200KB gzip）→ 用 [[codemirror]] 6
-- 单文件低交互的代码展示（只读、无补全）→ Prism / highlight.js 够了
-- 移动端为主的场景 → Monaco 的虚拟滚动和事件模型主要给桌面浏览器调优
+- 富文本（标题、图片、块）→ [[lexical]] / [[prosemirror]]
+- 只要语法高亮、不要编辑 → [[shiki]] / highlight.js
+- 极致小体积且尚未做目标 bundler 实测 → 先比 [[codemirror]] 的按需扩展，不要引用未绑定的 KB 数字
+- 需要完整工作区 LSP 却只当内置 TS/JSON/CSS/HTML worker 已经够用
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2011 年**：Microsoft 内部启动 "Monaco" 项目，最初是 Azure 网页版编辑器的代号，那时还在用 RequireJS + AMD。
-- **2015 年**：VSCode 发布，编辑器内核搬进 `src/vs/editor` 子树，用 TypeScript 重写。
-- **2016 年**：把这棵子树单独抽出来打包成 npm 包 `monaco-editor` v0.1，宣告"浏览器也能跑 VSCode 编辑器"。
-- **2018 年**：GitHub Codespaces 前身 Visual Studio Online 开始公测，底层就是 Monaco。
-- **2020 年起**：StackBlitz、Replit、CodeSandbox 等浏览器 IDE 全部以 Monaco 为编辑器层。
-- **现在**：vscode 仓库每天数十次提交，编辑器子树变更几乎实时同步进 monaco-editor 包。
+- 本文绑定 `microsoft/monaco-editor@13f0c872...`，即 tag `v0.56.0`；`package.json` 自报 `0.56.0`，`vscodeRef` 为 `f487add297079a02eb836810185b165e50cadabc`。
+- 内核来自 `monaco-editor-core@0.56.0-dev-20260625`；公开 API 在 core 的 `editor.api`，PieceTree / version / standalone `create` 在该 vscode 提交。
+- 默认入口导出 `css` / `html` / `json` / `typescript` 与 `lsp`（`@vscode/monaco-lsp-client@0.1.0`）。
+- 本文未安装依赖、未跑 worker/smoke、未测 bundle 或性能，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **真理源 vs 视图层分离**——所有跨线程结果都靠 model.uri + version 校验，过期就丢，比 try/catch 简单
-2. **Web Worker 是 first-class 而不是优化项**——一开始就规划进架构，比后来再"优化"代价低得多
-3. **复用桌面端代码的工程价值**——不是炫技，而是省下两套编辑器十年漂移的维护成本
-4. **抽象的代价是 bundle 大**——1.5MB 不是浪费，是把 IDE 整套语义协议端上来的合理价格
-5. **Provider 协议的开放设计**——只要遵守 schema，谁都可以接入语言服务，monaco-language-client 把 LSP 翻译进来就是经典示范
+1. **包装仓和内核仓要分开读**——npm 包名是 monaco-editor，编辑器合同在 vscodeRef
+2. **URI + version 是跨线程结果的过期协议**，比“等 promise 回来再写 DOM”更简单
+3. **默认全量 side-effect 注册**让开箱体验完整，也让“最小安装”变成打包问题
+4. **降级阈值会随 vscode 提交移动**——不能把旧 blog 的 10MB 写成当前事实
+
+## 应用型自测
+
+1. 只调用 `editor.dispose()`，页面上的 model URI 一定被释放吗？
+2. 一个 25MB 的文件，在默认 `largeFileOptimizations` 下还会做 tokenization 吗？
+3. 不设置 `MonacoEnvironment`、也不传 `createWorker` 时，TS 语言服务会静默降级到主线程吗？
+
+检查点：
+
+1. 不一定。model 可被共享，需要单独 `model.dispose()` 才释放 URI。
+2. 不会。超过 20MB 或 30 万行会关闭 tokenization。
+3. 不会。`createWebWorker` 直接抛错，要求定义 `getWorker` / `getWorkerUrl` 或提供 `createWorker`。
 
 ## 延伸阅读
 
-- 官方主页：[microsoft.github.io/monaco-editor](https://microsoft.github.io/monaco-editor/)（playground 可以现场调 API）
-- 源码导览：[microsoft/vscode `src/vs/editor`](https://github.com/microsoft/vscode/tree/main/src/vs/editor)（真正的心脏在这里）
-- 介绍视频：[Building Monaco Editor — VSCode team talk](https://www.youtube.com/results?search_query=monaco+editor+architecture)（讲架构和 worker 协议）
-- 接远程 LSP 的胶水库：[monaco-languageclient 仓库](https://github.com/TypeFox/monaco-languageclient)
-- PieceTree 数据结构原理：[VSCode 团队博客 "Text Buffer Reimplementation"](https://code.visualstudio.com/blogs/2018/03/23/text-buffer-reimplementation)
-- [[codemirror]] —— 同领域另一种思路对照
+- 官方 playground：[microsoft.github.io/monaco-editor](https://microsoft.github.io/monaco-editor/)
+- 固定包装仓：[microsoft/monaco-editor](https://github.com/microsoft/monaco-editor) —— 本文绑定 `13f0c872dcf352815cc28d92dfff496c9839ea5c`
+- 固定内核：[microsoft/vscode](https://github.com/microsoft/vscode) —— `vscodeRef` `f487add297079a02eb836810185b165e50cadabc`
+- ESM 集成说明：仓内 `docs/integrate-esm.md`
+- [[codemirror]] —— 同领域的不可变 state + 按需扩展对照
 
 ## 关联
 
-- [[codemirror]] —— 同样是浏览器代码编辑器，走小核心 + Facet 模块化路线，与 Monaco 的"VSCode 整块搬"形成对照
-- [[lexical]] —— Meta 出品的富文本框架，做的是文章而不是代码，赛道不同
-- [[prosemirror]] —— 富文本编辑的另一巨头，强在结构化文档模型
-- [[markdown-it]] —— 把 Markdown 文本转 HTML，常和 Monaco 配合做实时预览编辑器
-- [[typescript-compiler]] —— Monaco 的 TS worker 内部跑的就是 tsserver 同款代码
+- [[codemirror]] —— 小核心 + Facet，与 Monaco 的 vscode 整块包装对照
+- [[lexical]] —— 富文本，不是代码模型
+- [[prosemirror]] —— 结构化文档，不是纯文本 + 语法服务
+- [[markdown-it]] —— 常和 Monaco 搭配做预览
+- [[typescript-compiler]] —— TS worker 内嵌的是 TypeScript 语言服务，不是完整 tsserver 工作区
 
 ## 反向链接
 
