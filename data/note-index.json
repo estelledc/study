@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -37798,6 +37798,37 @@
       }
     },
     {
+      "id": "projects::bunyan",
+      "area": "projects",
+      "slug": "bunyan",
+      "title": "Bunyan — 先定记录形状再写 NDJSON",
+      "description": "字段先行的 Node JSON logger，默认写 stdout，child 可走共享 stream 的快路径",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-observability-and-performance"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "日志库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/bunyan/",
+      "atlas": {
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
+      }
+    },
+    {
       "id": "projects::caddy",
       "area": "projects",
       "slug": "caddy",
@@ -63929,6 +63960,37 @@
       }
     },
     {
+      "id": "projects::winston",
+      "area": "projects",
+      "slug": "winston",
+      "title": "Winston — 把日志写成可插拔对象流",
+      "description": "transport-first 的 Node logger，Logger 是 objectMode Transform，格式化与落盘分开",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-observability-and-performance"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "日志库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/winston/",
+      "atlas": {
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
+      }
+    },
+    {
       "id": "projects::wireguard-go",
       "area": "projects",
       "slug": "wireguard-go",
@@ -65811,7 +65873,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-observability-and-performance-01/",
-      "entries": 11
+      "entries": 13
     },
     {
       "id": "topic-projects-orm-and-database-clients-01",
