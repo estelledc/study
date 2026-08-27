@@ -2428,6 +2428,10 @@
       "topic_id": "projects-documentation-sites"
     },
     {
+      "note_id": "projects::starry-night",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::steel-browser",
       "topic_id": "projects-ai-browser-automation"
     },
@@ -2442,6 +2446,10 @@
     {
       "note_id": "projects::stylex",
       "topic_id": "projects-css-and-styling"
+    },
+    {
+      "note_id": "projects::sugar-high",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::supabase",

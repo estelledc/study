@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IG：starry-night + sugar-high
+
+- supervisor 状态：writer epoch `complete`；PR 待 review，未 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：为缺失的 syntax-highlight 双子补齐 `starry-night` 与 `sugar-high` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/syntax-highlight-source-review-20260827-ig.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ig-2026-08-27`（车道由 HO 改为 IG；intern 占用 HM–ID）。
+- detector fingerprint：目录无 `starry-night.md` / `sugar-high.md`；开放 PR #270 占用 shiki / lowlight，禁止复用 shiki、lowlight、prismjs、highlight.js。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `starry-night` 绑定 tag `3.10.0` → `c8dcd37f5ff8db0fb732a71965040f7c2bb2a6c3`；npm `@wooorm/starry-night@3.10.0` 的 `gitHead` 一致。
+  2. `sugar-high` 绑定 package tag `sugar-high@2.1.0` 剥皮提交 `6f528911d683004a3c8013781e771d1404a79d81`；披露 npm `sugar-high@2.1.0` 无 `gitHead`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，公开项目数 967 → 969。
+- 验证结果：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
+  - `audit:wikilinks`：blocking 0。
+  - `audit:project-standard`：snapshot CURRENT，`benchmark-aligned=87`。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在 GitHub 对本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

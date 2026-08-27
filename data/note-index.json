@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2050,
-      "classified": 2003,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 967,
-        "classified": 939,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -60016,6 +60016,37 @@
       }
     },
     {
+      "id": "projects::starry-night",
+      "area": "projects",
+      "slug": "starry-night",
+      "title": "starry-night — 用 TextMate grammar 产出 GitHub 风格 hast 的高亮器",
+      "description": "介绍 @wooorm/starry-night 3.10.0 如何用 vscode-textmate、Oniguruma WASM 和 PrettyLights class 把代码变成 hast。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "语法高亮"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/starry-night/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::starship",
       "area": "projects",
       "slug": "starship",
@@ -60329,6 +60360,37 @@
       "atlas": {
         "chunk_id": "topic-projects-css-and-styling-01",
         "chunk_route": "/study/atlas/projects/topic-projects-css-and-styling-01/"
+      }
+    },
+    {
+      "id": "projects::sugar-high",
+      "area": "projects",
+      "slug": "sugar-high",
+      "title": "sugar-high — 零依赖、按 canonical 语言名返回 HTML 的轻量高亮器",
+      "description": "介绍 sugar-high 2.1.0 如何用启发式 tokenizer、canonical 语言表和 CSS 变量把代码变成 HTML。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "语法高亮"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sugar-high/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
       }
     },
     {
@@ -65928,7 +65990,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "starry-night",
+    "digest_sha256": "0f937a9a24423a048e9043021d39c605e1f64f7aed3e035b84ad3406787de9c3"
+  },
+  "source_revision": "c8dcd37f5ff8db0fb732a71965040f7c2bb2a6c3",
+  "research_input_sha256": "28a90b0f910427d7e921085aeee94d02ba38eab7a23957f19f5e86072bbd04dd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ig",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates flag-to-scope, WASM create, hast output, PrettyLights classes, and missing grammar deps."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ig",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createStarryNight, flagToScope, highlight/parse, common/all counts, and oniguruma loaders were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ig",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 3.10.0 where tag, package and npm gitHead agree; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

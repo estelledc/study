@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sugar-high",
+    "digest_sha256": "791dc32e03a2d6f2e30fbae575236836afd446628d7df1c3bd42cb6519082828"
+  },
+  "source_revision": "6f528911d683004a3c8013781e771d1404a79d81",
+  "research_input_sha256": "28a90b0f910427d7e921085aeee94d02ba38eab7a23957f19f5e86072bbd04dd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ig",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates canonical lang lookup, alias lang(), JS/TS heuristic, parse/render, and silent unknown-lang fallback."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ig",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "highlight, core parse/render, lang registry, and javascript-runtime were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ig",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds package tag sugar-high@2.1.0 peeled commit and discloses missing npm gitHead; no runtime or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}
