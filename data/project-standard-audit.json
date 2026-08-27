@@ -2440,27 +2440,23 @@
     },
     {
       "slug": "bullmq",
-      "title": "BullMQ — Node.js 上的 Redis 任务队列",
+      "title": "BullMQ — 默认 Redis、可选 Postgres 的 Node 任务队列",
       "source": "https://github.com/taskforcesh/bullmq",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "bun",
@@ -8584,6 +8580,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "ioredis",
+      "title": "ioredis — Node 里同时覆盖单机、Sentinel 和 Cluster 的 Redis 客户端",
+      "source": "https://github.com/redis/ioredis",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "ipfs",
