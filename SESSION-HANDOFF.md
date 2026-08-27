@@ -4,25 +4,30 @@
 
 ## 2026-08-27 PARALLEL writer HN：fastapi + flask
 
-- status：writer epoch `running` → 本地切片完成，待 `verify:ci` / PR review；未 merge。
+- status：writer epoch `complete`；PR #295 待 review；未 squash / 未 merge / 未 deploy。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
 - objective：把 `needs-evidence` 的 Python-web 双子 `fastapi` 与 `flask` 迁到绑定可达 revision 的 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇项目页、共享审查文档 `docs/python-web-source-review-20260827-hn.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未启动服务。
 - activated_by：`explicit-user-parallel-writer-hn-2026-08-27`。
-- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放与已合并 PR 未占用这两个 slug；A–HM 与当前 open PRs 未声明 fastapi/flask。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放与已合并 PR 未占用这两个 slug。
 - external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
 - 完成切片：
   1. `fastapi` 绑定 lightweight tag `0.141.1` → `95f8322ee1dcda7ceace7b1c4f6c9915b36d748f`。
   2. `flask` 绑定 annotated tag `3.1.3` → `22d924701a6ae2e4cd01e9a15bbaf3946094af65`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87。
-- acceptance checks（定向，verify:ci 待跑）：
+- acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
-  - 两份 receipt：digest / revision 一致，evidence state `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、v2=156、projects v2=87。
+  - `audit:project-standard`：`benchmark-aligned=87`、`needs-evidence=880`、snapshot CURRENT。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
-- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍可能超阈值，本轮未改 baseline。
-- stop conditions：本 epoch 只收这一对；不得继续发明下一对。
+- blocker：merge 与 Pages deploy 未授权；规模 compare detector 仍可能超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/295 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
