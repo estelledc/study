@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IW：htmlparser2 + parse5
 
-- status：writer epoch `running`；本地 change set 已形成，准备 PR。
+- status：writer epoch `complete`；PR #319 待 review，未 merge。
 - 起始 ref：`0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465`（`origin/main`）。
 - objective：为缺失的 HTML 解析双子补齐 `htmlparser2` 与 `parse5` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/html-parser-source-review-20260827-iw.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
@@ -15,17 +15,19 @@
   1. `htmlparser2` 绑定 annotated tag `v12.0.0` 剥皮 → `c73fec0c0586647cd1269d2598e2ba4203d0207f`（npm `gitHead` 一致）。
   2. `parse5` 绑定 lightweight tag `v8.0.1` → `0d56627fc924d40f560fd260ade0e1a935e2369c`（npm `parse5@8.0.1` `gitHead` 一致）。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 87 → 89，公开项目数 968 → 970。
-- acceptance checks（定向）：
+- acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - `audit:content-contract`：0 blocking、158 v2。
   - `audit:counts` / `audit:site-state`：projects=970、papers=1083、total=2053。
   - `audit:wikilinks`：blocking 0。
   - `audit:project-standard`：snapshot CURRENT，`benchmark-aligned=89`。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、2294 HTML / 2293 sitemap、23 Playwright a11y）。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
-- stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得 merge。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/319 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
