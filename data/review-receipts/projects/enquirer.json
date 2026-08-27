@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "enquirer",
+    "digest_sha256": "db17610c0b4c81ac6c19ef547f6125eb14ea262b91f8a6b5dbda323245f3249d"
+  },
+  "source_revision": "70bdb0fedc3ed355d9d8fe4f00ac9b3874f94f61",
+  "research_input_sha256": "137514eb8304e4e46c0656826a7e307887693add1f5c031aac9b6f4ff9bb9a2a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ey",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates 19 registered prompt types, select-name submit, and validate-redraw from the old zero-dep / 12-type story."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ey",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "index.js, Prompt.run/submit, keypress.listen, ArrayPrompt.submit and AutoComplete.format were inspected; mocha and TTY were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ey",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Bound to npm gitHead 2.4.1; GitHub has no 2.4.1 tag. Bundle and TTY behavior remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:00:00.000Z"
+}
