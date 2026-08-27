@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "anime",
+    "digest_sha256": "075f0041d30fc68e1fe04eb41bb062655f4ac137631bfe8ae201675e33b3a41f"
+  },
+  "source_revision": "2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+  "research_input_sha256": "a3f3f2c5a7e01f89cc8c85b26c3dac254ecd4671283a5d9e71574266e9500c89",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates v4 animate/timeline/timer, default out(2), 1000-target composition none, and onScroll link."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "JSAnimation, Timeline position, spring object params, engine loop, and onScroll were inspected; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to animejs 4.5.0; v5 beta, bundle size, and GSAP comparisons remain out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}

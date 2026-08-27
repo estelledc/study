@@ -1,165 +1,169 @@
 ---
-title: anime.js — 一行 JS 让网页元素按时间线动起来
-来源: 'https://github.com/juliangarnier/anime'
+title: anime.js — 把 CSS / SVG / 对象写成同一条时间线
+来源: https://github.com/juliangarnier/anime
 日期: 2026-05-30
 分类: 前端
 难度: 入门
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/juliangarnier/anime
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 2c9cf8ea00329f6768c7d7902252ed977d75ce42
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.5.0
 ---
 
 ## 是什么
 
-anime.js 是一个用 JavaScript 写的**轻量动画库**：把"哪些元素 / 动什么属性 / 动多久 / 用什么节奏"四件事写在一个函数里，浏览器每秒 60 帧自动算中间值。日常类比：像剪辑软件的时间线——把每段素材拖到 0~3 秒，选一条加速曲线，点播放，剩下交给软件。
+anime.js（npm 包名 `animejs`）是一个 JavaScript 动画引擎：把「选哪些目标、动哪些属性、持续多久、用什么曲线」写成一份参数，由引擎按帧插值。日常类比：它像剪辑软件的时间线——你标出起点、终点和节奏，播放器负责中间帧。
 
 你写：
 
 ```js
 import { animate } from 'animejs'
 
-animate('.box', {
+const anim = animate('.box', {
   translateX: 250,
   duration: 1000,
-  ease: 'inOutQuad'
+  ease: 'out(2)',
 })
 ```
 
-四行：选中所有 `.box`，**1 秒内向右滑 250 像素**，节奏是"两头慢中间快"。CSS 属性、SVG 描边、DOM attribute、纯 JS 对象的数值都能这样动——anime.js 把它们抽象成同一种"目标 + 属性 + 时长 + 曲线"的写法。
+固定 4.5.0 里，`animate(targets, parameters)` 构造 `JSAnimation` 并立刻 `.init()`。默认时长是 `1000` ms，默认缓动是字符串 `'out(2)'`（幂次 out，指数 2），默认 `autoplay: true`。CSS、SVG attribute、DOM、普通对象数值走同一套 tween。
 
 ## 为什么重要
 
-不理解 anime.js 这一类时间线动画库，下面这些事写起来都很别扭：
+不按固定 v4 源码读，下面这些旧印象会对不上：
 
-- 为什么用纯 CSS `@keyframes` 写"标题先飞入、0.3 秒后副标题滑入、1 秒后按钮弹出"会嵌套一堆 `animation-delay`，改一处全乱
-- 为什么 [[gsap]] 是业界基准但商用插件要钱（$99-499/年），独立开发者不舍得买
-- 为什么 React 圈现在默认用 [[framer-motion]]（`<motion.div animate={{x:100}}/>`），但纯 JS / Astro / 静态站点仍偏向 anime.js
-- 为什么"timeline + keyframes + easing"这套词汇是所有动画库（含 [[lottie]]）的共同心智模型
+- 网上大量 `anime({ targets, easing: 'easeInOutQuad' })` 是 v3 上帝函数，4.5.0 入口是 `animate` / `createTimeline` / `createTimer`
+- 默认缓动不是 `inOutQuad`，而是 `globals.defaults.ease = 'out(2)'`
+- 目标数 ≥ `1000` 且未显式 `composition` 时，会改成 `none`，不再做 sibling replace
+- 滚动进场不必自己绑 `IntersectionObserver`：同仓导出 `onScroll().link(animation)`
 
 ## 核心要点
 
-anime.js v4 的设计可以拆成 **三件套**：
+固定 4.5.0 的主链可以拆成五步：
 
-1. **animate / createTimeline / createTimer**：三个一等公民函数。`animate()` 做单动画；`createTimeline()` 做多动画的时间轴编排；`createTimer()` 只数节拍不绑 DOM。v3 时代这三件事挤在一个上帝函数里，v4 拆开后类型友好、按需引入。
+1. **三个入口**：`animate` 做单动画；`createTimeline` 做编排；`createTimer` 只计时、不绑 DOM。三者都建立在 `Timer` 上。
+2. **目标与属性分类**：`registerTargets` 解析选择器或对象；`getTweenType` 把属性分成 OBJECT / ATTRIBUTE / CSS / TRANSFORM / CSS_VAR。`x` / `y` / `z` 会映射到 `translateX` 等。
+3. **引擎主循环**：浏览器用 `requestAnimationFrame`，非浏览器用 `setImmediate`。引擎默认 `pauseOnDocumentHidden = true`，`frameRate` 上限常量是 `240`。
+4. **时间线位置**：`tl.add(targets, params, position)`。`position` 可以是数字、label、`'<'` / `'<<'`，或 `+=` / `-=` / `*=` 相对量。未写 position 时落到当前 `iterationDuration`（接下一段）。
+5. **滚动观察**：`onScroll({ target, sync })` 默认 `sync: 'play pause'`、`enter: 'end start'`、`leave: 'start end'`；`.link(tickable)` 会先 `pause()` 被链接对象。
 
-2. **easing（缓动曲线）**：动画的"性格"。`linear` 是机器人匀速；`inOutQuad` 是老练司机刹车，两头慢中间快；`outBack` 是弹簧门，过冲再回弹；`spring(质量, 刚度, 阻尼, 速度)` 是真实物理弹簧。背后是 cubic-bezier 公式或弹簧微分方程。
+## 实践示例
 
-3. **stagger（错峰）**：高级感的关键。10 个元素一起浮现是廉价感，错开 50ms 是高级感。`delay: stagger(50)` 让第 i 个元素延迟 `i*50ms`——一行 API 把"团操错峰出场"封装好。
-
-## 实践案例
-
-### 案例 1：landing page 标题逐字浮现
-
-简历项目里能直接用的 6 行：
+### 案例 1：单动画与默认合同
 
 ```js
-import { animate, stagger } from 'animejs'
+import { animate } from 'animejs'
 
-animate('.hero-title span', {
-  opacity:    [0, 1],
+const a = animate('.hero-title span', {
+  opacity: [0, 1],
   translateY: [30, 0],
-  duration:   800,
-  ease:       'outBack',
-  delay:      stagger(50)   // 第 i 个字母延迟 i*50ms
+  delay: (el, i) => i * 50,
 })
+a.pause()
 ```
 
-把 `<h1 class="hero-title">` 里每个字母用 `<span>` 包一下，跑完上面这段，每个字母从下方 30px 滑入 + 透明度 0→1，结尾轻微过冲——就是 95% landing page hero 区的标准做法。
+省略 `duration` / `ease` 时走默认 `1000` / `'out(2)'`。返回值是 `JSAnimation`（继承 `Timer`），要停必须拿住引用再 `pause()` / `cancel()`。
 
-### 案例 2：用 timeline 编排多个动画
+### 案例 2：timeline 相对位置
 
 ```js
 import { createTimeline } from 'animejs'
 
 const tl = createTimeline({ defaults: { duration: 800 } })
-tl.add('.title',    { opacity: [0,1], translateY: [-50, 0] })
-  .add('.subtitle', { opacity: [0,1] },          '-=400')   // 比上一段早 400ms
-  .add('.cta',      { scale:   [0.5, 1] },       '+=200')   // 比上一段晚 200ms
+tl.add('.title', { opacity: [0, 1], translateY: [-50, 0] })
+  .add('.subtitle', { opacity: [0, 1] }, '-=400')
+  .add('.cta', { scale: [0.5, 1] }, '+=200')
 ```
 
-`'-=400'` / `'+=200'` 这种"相对时间"语法是 anime.js / GSAP 共用的核心抽象——单一动画好写，**多动画编排**才是动画库真正的难点，timeline 把"时间"当一等公民。
+`'-=400'` 从当前 duration 往回偏；`'<` 对齐上一段 start，不带第二个 `<` 时对齐上一段 end。`defaults` 只覆盖这条 timeline 的子动画，不会改全局 `globals.defaults`。
 
-### 案例 3：v3 → v4 改了哪几个名
+### 案例 3：用 onScroll 链接，而不是自己写 IO
 
 ```js
-// v3：上帝函数 + 旧命名
-anime({ targets: '.box', translateX: 250, easing: 'easeInOutQuad' })
+import { animate, onScroll } from 'animejs'
 
-// v4：函数式 + 新命名
-animate('.box', { translateX: 250, ease: 'inOutQuad' })
+onScroll({
+  target: '.hero-title',
+  sync: 'play pause',
+}).link(animate('.hero-title span', {
+  opacity: [0, 1],
+  translateY: [30, 0],
+}))
 ```
 
-`targets` 提到首参、`easing` 改 `ease`、`easeInOutQuad` 简称 `inOutQuad`——这是迁移指南里 20 多条改动里最常踩的三条。
-
-### 案例 4：让动画只在元素进入视口时开始
-
-```js
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (!e.isIntersecting) return
-    animate(e.target.querySelectorAll('span'), {
-      opacity: [0, 1], translateY: [30, 0],
-      duration: 800, ease: 'outBack', delay: stagger(50)
-    })
-    io.unobserve(e.target)
-  })
-}, { threshold: 0.5 })
-
-io.observe(document.querySelector('.hero-title'))
-```
-
-`IntersectionObserver` 是浏览器原生 API，配 anime.js 一句调用——这就是"滚动到才动"的标准做法，比库自带的 ScrollTrigger 更省体积。
+`link()` 会暂停被链接动画，并在未指定 `target` 时尝试从动画的 DOM target 推断观察对象。这是仓内滚动合同，不是浏览器 `IntersectionObserver` 的封装名。
 
 ## 踩过的坑
 
-1. **老教程语法跑不动**：CodePen 上 5000+ 个 anime.js demo 大多是 v3 写法，复制到 v4 项目直接报错。**新项目直接学 v4**，老 demo 只看思路别复制代码。
-
-2. **停止动画忘了存返回值**：`animate()` 返回一个 controller，要 `const a = animate(...)` 拿在手里，之后 `a.pause()` / `a.cancel()` 才能停。新手写完就丢，然后想停时无从下手。
-
-3. **React 里要手动 ref**：`animate(ref.current, {...})` 必须放进 `useEffect`，比 Motion 的 `<motion.div animate={{x:250}}/>` 多 5 行样板代码。**React 项目应该选 Motion**，不要硬上 anime.js。
-
-4. **大量元素掉帧**：>500 个元素同时动，anime.js 明显比 GSAP 慢。瓶颈是 anime.js 在每帧里挨个读写 DOM，缺少 GSAP 那套"批量读写分离"优化。
+1. **把 v3 示例直接贴进 v4**：`targets` 已是首参，`easing` 改 `ease`，`easeInOutQuad` 虽仍能被 `parseEaseString` 解析，但默认值是 `'out(2)'`。
+2. **`spring(...)` 不是四个位置参数**：固定源码是 `spring({ mass, stiffness, damping, velocity, bounce, duration })`；默认 `mass=1`、`stiffness=100`、`damping=10`、`velocity=0`、`bounce=0.5`、`duration=628`。弹簧会覆盖 tween 的 `duration` 为 `settlingDuration`。
+3. **`ease: "cubicBezier(...)"` 字符串已被移出核心**：`parseEase` 会 `console.warn` 并退回 `none`；要直接传入函数。
+4. **大批量目标的 composition**：≥1000 个 target 且未写 `composition` 时走 `none`，重叠属性不会 replace sibling。
+5. **忘记存返回值**：`animate()` 本身不登记到你的变量表；要停、要 `revert()`，必须握住 controller。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 纯 vanilla JS / Astro / Starlight / 静态 HTML 的 landing page、作品集
-- 中小项目想要 timeline 编排但不想付 [[gsap]] 钱
-- SVG 描边 / morphing / 沿路径运动这类设计师驱动的视觉
+- vanilla / Astro / 静态页需要一条可编程时间线
+- 同一套写法同时动 CSS transform、SVG 和普通对象
+- 需要仓内 `onScroll` / `splitText` / `svg` / 可选 `adapters/three`
 
 **不适用**：
 
-- React 项目 → 用 [[framer-motion]]（声明式 + DevTools 可见）
-- 需要 SplitText / MorphSVG 等商业插件级能力 → 直接上 GSAP
-- 几千粒子级别的高性能场景 → WebGL 或 GSAP 的核心引擎
-- Lottie 风格的"设计师导出 JSON 直接播" → 用 [[lottie]]
+- 必须声明式 React 组件树——对照 [[framer-motion]]，不要把 hook 合同外推到本页
+- 需要本轮未核验的固定 bundle、帧率或与 GSAP 的快慢结论
+- 想绑定上游 `5.0.0-beta.1` 分支——该线存在，但本文只钉 4.5.0
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：法国独立设计师 Julian Garnier 在 dribbble 发作品集时嫌 CSS 难写、GSAP 要钱，自己撸了 v1.0 发到 GitHub，6 个月 Star 破万。
-- **2018-2020**：v2 加 SVG morphing，v3 稳定 4 年，npm 周下载长期 70 万级。
-- **2024 年**：v4.0 用 TypeScript 完全重写，bundle 从 17KB 砍到 7KB，API 拆成 `animate` / `createTimeline` / `createTimer` 三个独立导出——技术上正确，但生态阵痛：教程、demo、Stack Overflow 答案大量基于 v3。
-- **2026 年**：npm 上 v3 / v4 各占约一半下载量，新项目应直接用 v4，老项目保持 v3 也能继续跑。
+- 本文绑定 `juliangarnier/anime@2c9cf8ea00329f6768c7d7902252ed977d75ce42`。lightweight tag `v4.5.0` 与 npm `animejs@4.5.0` 的 `gitHead` 都指向该提交。
+- 包是 ESM，`license` 为 MIT；`three` 是 optional peer（`>=0.150.0`）。
+- 远端另有 `5.0.0-beta.1` 分支，未绑定、未阅读。
+- 本文未安装依赖、未跑浏览器套件或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **timeline + keyframes + easing 是动画库的通用三件套**——理解这三个词，跨库迁移（GSAP / Motion / Lottie）只是查 API
-2. **"重写换现代化" vs "兼容老生态"** 是开源治理的经典权衡，v4 选了前者，付出生态分裂的代价
-3. **License + 框架绑定**才是动画库选型的核心维度，不是 API 美丑：纯 JS 选 anime.js，React 选 Motion，预算够选 GSAP
-4. **错峰（stagger）一行就把"高级感"做出来**——很多设计直觉能压成一个简洁 API，是好库的标志
+1. **v4 把上帝函数拆成 Timer 家族**——单动画、时间线、纯计时共享同一套 pause / cancel。
+2. **默认值以 `globals.defaults` 为准**——不要用旧文档的 `inOutQuad` 当出厂合同。
+3. **composition 在大批量目标上会换策略**——这是创建路径上的性能开关，不是你显式写了 `replace`。
+4. **滚动是一等模块**——`onScroll` 的默认 sync 是 `'play pause'`，和自己写 IO 不是同一条 API。
+
+## 应用型自测
+
+1. 省略 `ease` 时，4.5.0 实际用哪条默认缓动字符串？
+2. `animate()` 的返回值是什么类？没存变量时还能 `pause()` 吗？
+3. 目标数达到多少且未写 `composition` 时，会改成 `none`？
+
+检查点：
+
+1. `'out(2)'`。
+2. `JSAnimation`（继承 `Timer`）。不能；必须握住返回值。
+3. `1000`。
 
 ## 延伸阅读
 
-- 官网与 v4 文档：[animejs.com](https://animejs.com/) · [v4 文档](https://animejs.com/documentation/)
-- v3 → v4 迁移：[migrating-from-v3](https://animejs.com/documentation/migrating-from-v3)（20+ 破坏性改动一览）
-- GitHub：[juliangarnier/anime](https://github.com/juliangarnier/anime)
-- 横向对比：Sarah Drasner — "Modern Web Animation"（CSS-Tricks，跨库横评）
+- 官网：[animejs.com](https://animejs.com/)
+- 固定源码：[juliangarnier/anime](https://github.com/juliangarnier/anime) —— 本文绑定提交 `2c9cf8ea00329f6768c7d7902252ed977d75ce42`
+- 对照入口：`src/animation/animation.js`、`src/timeline/timeline.js`、`src/core/globals.js`、`src/events/scroll.js`
+- [[gsap]] —— 同主题时间线，许可与默认值不同
+- [[framer-motion]] —— React 声明式对照
 
 ## 关联
 
-- [[gsap]] —— 业界基准，anime.js 的"免费替代"心智就是冲它来的
-- [[framer-motion]] —— React 圈默认动画库，把 anime.js 留在了 vanilla 战场
-- [[lottie]] —— 另一种思路：设计师在 AE 里做完导出 JSON，库负责播放
-- [[starlight]] —— 文档站点主题，常见的"anime.js 用武之地"
-- [[playwright]] —— 端到端测试，能 assert 动画后的最终态截图
+- [[gsap]] —— Tween / Timeline 对照 anime 的 Timer 家族
+- [[framer-motion]] —— 组件树里的 variant / AnimatePresence
+- [[lottie]] —— 设计师导出 JSON 再播放，不是属性 tween
+- [[motion-one]] —— 更靠近 WAAPI 的另一条路线
 
 ## 反向链接
 

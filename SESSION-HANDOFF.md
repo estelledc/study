@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FE：anime + apexcharts 静态迁移
+
+- status：writer epoch `complete`；未 merge、未 force-push `main`、未 deploy。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（当时 `origin/main`，#75）。
+- objective：把 `needs-evidence` 的 `anime` 与 `apexcharts` 绑定到不可变 git SHA，去掉未绑定 star / 体积 / 性能断言。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/anime-apexcharts-source-review-20260827-fe.md`、本 handoff；不改派生索引（note-index / project-standard / atlas / site-state）。未安装上游依赖、未跑上游测试、未测 bundle 或渲染。
+- activated_by：`explicit-user-parallel-writer-fe-2026-08-27`（10h 窗口，指定 pair anime + apexcharts）。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文含 v3 `anime()`、未绑定 GSAP 快慢与 star、以及把 ApexCharts 写成 MIT / 纯 SVG / 固定 5 万点上限。
+- external delta：分支 `cursor/anime-apexcharts-source-bind-7b45` 计划 push 并开 1 个 PR；未 merge、未 deploy。D 轴是否变化以 PR 是否被接受为准。
+- 完成切片：
+  1. `anime` 绑定 lightweight tag `v4.5.0` / `2c9cf8ea...`（与 npm `animejs@4.5.0` `gitHead` 一致），修正默认 `ease: 'out(2)'`、≥1000 target 的 composition `none`、`spring({})` 对象参数、仓内 `onScroll().link()`。
+  2. `apexcharts` 绑定 annotated tag `v7.0.0` peel `1579e97c...`（与 npm `gitHead` 一致），修正双许可、默认 `renderer: 'svg'`、`responsive` 用 `window.innerWidth`、`render()` 幂等、`updateSeries` 非数组 fail-soft。
+- acceptance checks：两页 `quality-gate.mjs`；两份 receipt digest / revision 对齐且 `UNVERIFIED`；`git diff --check`。派生索引故意不刷新。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态迁移；单 writer；≤3 切片 / 120 分钟。
+- blocker：规模 baseline 在 main 已超阈值；本轮未改 baseline / 阈值。派生索引冲突交给 merge job。
+- stop conditions：2 页 epoch 完成即停；不发明第三页。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/anime.md src/content/docs/projects/apexcharts.md`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
