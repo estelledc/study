@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cli-table3",
+    "digest_sha256": "af3caf1de57d4a774c46db035077a94def10e42b8b68ec29558f9796d809a4ff"
+  },
+  "source_revision": "9577efd51114e61fb035b7cc493adf0c0dc7921b",
+  "research_input_sha256": "93e3e4bf6f9d0cd63ec9f384423de7ca8788d30b836fd520818a6b40cccbd518",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-et",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Array subclassing, object-row reshape, missing-cell fill, and optional colors fallback."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-et",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "table/cell/layout-manager/utils and toString coloring were inspected; Jest was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-et",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Annotated tag v0.6.5 peels to the npm gitHead commit; optional @colors/colors is not treated as required."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:00:00.000Z"
+}

@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -38806,6 +38806,38 @@
       }
     },
     {
+      "id": "projects::cli-table3",
+      "area": "projects",
+      "slug": "cli-table3",
+      "title": "cli-table3 — 继承 Array 的 Unicode CLI 表格",
+      "description": "Table 就是数组：push 行后 toString 才布局，缺格补空，着色依赖 optional colors",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cli-table3/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::clickhouse",
       "area": "projects",
       "slug": "clickhouse",
@@ -60648,6 +60680,38 @@
       }
     },
     {
+      "id": "projects::table",
+      "area": "projects",
+      "slug": "table",
+      "title": "table — 把二维数组画成等宽文本表",
+      "description": "纯函数入口：矩形数据先校验再 stringify，默认 honeywell 边框，stream 才写 stdout",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-cli-tools",
+        "matched_category": "命令行",
+        "raw_category": "命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/table/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::tabulator",
       "area": "projects",
       "slug": "tabulator",
@@ -65509,7 +65573,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "table",
+    "digest_sha256": "26d585d48cd7d2f43f08beae19b10d6c46d2ebe5b363b6bec75a002fb3e6062a"
+  },
+  "source_revision": "8b85bc8f7e5202c2fcea295bd59d4e7d25519c7a",
+  "research_input_sha256": "93e3e4bf6f9d0cd63ec9f384423de7ca8788d30b836fd520818a6b40cccbd518",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-et",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains rectangular validation, honeywell default, header row injection, and createStream stdout writes."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-et",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "table/createStream/getBorderCharacters and validate/stringify/config paths were inspected; Mocha was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-et",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v6.9.0 and npm gitHead agree; source package.json version 1.0.0 is disclosed as a placeholder."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:00:00.000Z"
+}

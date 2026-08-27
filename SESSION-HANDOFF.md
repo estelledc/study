@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer ET：table + cli-table3 静态审查
+
+- supervisor 状态：writer epoch `complete`；本地 review-ready change set 已形成。用户授权 push + 一个 PR；未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`。
+- objective：为尚无页面的 CLI 表格双子新建 `study-v2` 静态审查页：`table` 与 `cli-table3`。证据边界为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/cli-table-source-review-20260827-et.md`、note-index / atlas / project-standard / site-state 与公开计数派生、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-et-20260827`。
+- detector fingerprint：目标页 `table` / `cli-table3` 在 `origin/main` 不存在；仓库已有 `boxen` / `chalk` / `ora` 等终端文本库，但没有 CLI 表格对。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权）。D 轴在 merge 前不提升。
+- 已完成切片：
+  1. `table` 绑定 tag `v6.9.0` / `8b85bc8f7e5202c2fcea295bd59d4e7d25519c7a`（与 npm `gitHead` 一致）；修正“默认单线框 / stream 也返回字符串”这类未绑定印象。
+  2. `cli-table3` 绑定 annotated tag `v0.6.5` 剥开提交 `9577efd51114e61fb035b7cc493adf0c0dc7921b`（tag 对象 `2c80c8b2...`，与 npm `gitHead` 一致）；写清 Array 子类、对象行变形、缺格补空、optional `@colors/colors`。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`。`audit:counts` / `audit:site-state` / `audit:project-standard` / `audit:content-contract` 已在派生刷新后通过。全量 `verify:ci` 以 PR 头检查为准。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态审查 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改 baseline、阈值或证据布局。
+- stop conditions：一个 PR 已打开且未 merge 后停止。不执行 merge / deploy，不开下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI/review 状态变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr view --json url,state,statusCheckRollup`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -21,6 +21,7 @@ sidebar:
 | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) | `btop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | `bubbletea` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | `clack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [cli-table3 — 继承 Array 的 Unicode CLI 表格](/study/projects/cli-table3/) | `cli-table3` | beginner | UNVERIFIED | Table 就是数组：push 行后 toString 才布局，缺格补空，着色依赖 optional colors |
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | `commander` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | `curlie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -66,6 +67,7 @@ sidebar:
 | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | `sd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) | `shfmt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) | `starship` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [table — 把二维数组画成等宽文本表](/study/projects/table/) | `table` | beginner | UNVERIFIED | 纯函数入口：矩形数据先校验再 stringify，默认 honeywell 边框，stream 才写 stdout |
 | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | `task` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | `textual` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | `the-silver-searcher` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
