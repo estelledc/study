@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "storybook",
+    "digest_sha256": "4f8510ada0e5cfc30451907b99a85105bf3fdc8403be0788db776fd6748d0e5c"
+  },
+  "source_revision": "a2db7526e1538a48bfa0529a881822e8074b2009",
+  "research_input_sha256": "2e69c011d3b6a3a51d0d43b10dbaaf9a6d7b739a5257b63fe924a3bce1e04fcc",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-y",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains manager/preview isolation, channel transports, CSF, play phases, and canvas=within with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-y",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 10.5.10 channel, CSF, StoryRender, mountDestructured, storybook/test, and addon-vitest; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-y",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds tag/npm 10.5.10; discloses the in-repo gitHead placeholder and that Chromatic was not sourced."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

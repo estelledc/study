@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "testing-library",
+    "digest_sha256": "4b96098740c2655b0756a5daf7c9d554ba051f8c3418045acc39c35009e3c917"
+  },
+  "source_revision": "225a3e4cfaa8f8046989d51b9051df507354b644",
+  "research_input_sha256": "2e69c011d3b6a3a51d0d43b10dbaaf9a6d7b739a5257b63fe924a3bce1e04fcc",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-y",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains query variants, suggestion priority, waitFor dual triggers, and fireEvent=dispatchEvent with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-y",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 10.4.1 waitFor, query-helpers, role queries, suggestions, and events; user-event and RTL were not bound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-y",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds tag/npm 10.4.1; discloses semantically-released package.json version and UNVERIFIED static review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
