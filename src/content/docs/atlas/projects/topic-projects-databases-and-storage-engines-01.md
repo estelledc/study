@@ -48,7 +48,7 @@ sidebar:
 | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) | `lmdb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) | `manticoresearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | `mariadb-server` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | `meilisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Meilisearch — 开发者友好的即时搜索引擎](/study/projects/meilisearch/) | `meilisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Memcached — 经典内存缓存](/study/projects/memcached/) | `memcached` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Memgraph — 内存图数据库](/study/projects/memgraph/) | `memgraph` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) | `milvus` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -83,7 +83,7 @@ sidebar:
 | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) | `tdengine` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) | `tidb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TiKV — 分布式事务 KV](/study/projects/tikv/) | `tikv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Typesense — 高性能搜索引擎](/study/projects/typesense/) | `typesense` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Typesense — schema-first 的自托管即时搜索](/study/projects/typesense/) | `typesense` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Valkey — Redis 7.2.4 的开源 fork](/study/projects/valkey/) | `valkey` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) | `vespa` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) | `vitess` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
