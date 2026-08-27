@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "qwik",
+    "digest_sha256": "33e8ec138f023deaad8669ea1d5f1cdde6d2c589f946f5ef5f031ff03ffb9cc2"
+  },
+  "source_revision": "971465f941e44e5adf2b2c2e44566b590d0990d8",
+  "research_input_sha256": "7812bce3dd59f054c98a8689ca494801bddebdd507befc550b81823aafffcbac",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ck",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Optimizer QRL extraction, on:click serialization, qwikloader import, and routeLoader export rules."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ck",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "component$, implicit$, qwikloader dispatch, pause/resume JSON, useTask$/useVisibleTask$ defaults and city loaders were inspected; optimizer and tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ck",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Applies to @builder.io/qwik 1.20.0 / peeled tag commit only; @qwik.dev/core 2.0 beta is disclosed and excluded. Performance multiples were not claimed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:05:00.000Z"
+}

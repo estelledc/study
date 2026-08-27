@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -56408,7 +56408,7 @@
       "id": "projects::qwik",
       "area": "projects",
       "slug": "qwik",
-      "title": "Qwik — Resumable UI 框架",
+      "title": "Qwik — 用 resume 代替 hydrate 的编译器 UI",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -56421,13 +56421,13 @@
         "raw_category": "UI 框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/qwik/",
       "atlas": {
@@ -59920,6 +59920,37 @@
       "atlas": {
         "chunk_id": "topic-projects-ai-browser-automation-01",
         "chunk_route": "/study/atlas/projects/topic-projects-ai-browser-automation-01/"
+      }
+    },
+    {
+      "id": "projects::stencil",
+      "area": "projects",
+      "slug": "stencil",
+      "title": "Stencil — 把 TSX 编成 Custom Element 的编译器",
+      "description": "把 TSX 编成 Custom Element 的编译器，产物可在任意框架里当 Web Component 用。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "raw_category": "UI 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/stencil/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
       }
     },
     {
@@ -65881,7 +65912,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/",
-      "entries": 13
+      "entries": 14
     },
     {
       "id": "topic-projects-web-frameworks-01",

@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CK compiler-UI epoch
+
+- status：writer epoch `complete`；待 review，不自动 merge。
+- 起始 ref：`042f60a8`（`origin/main`，PR #47 merge 后）。
+- objective：把 compiler-UI 双子 `qwik` 与 `stencil` 绑到固定 revision 的 `study-v2` / `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`qwik.md` 迁移、新建 `stencil.md`、2 份 receipt、`docs/compiler-ui-source-review-20260827-ck.md`、taxonomy 一条 curated assignment、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；本机 ignored blob-filtered clone。未安装上游依赖、未跑 Optimizer/`stencil build`/上游测试/bundle。
+- activated_by：`explicit-user-parallel-writer-CK-2026-08-27`。
+- detector fingerprint：`qwik` 为 `needs-evidence`（缺 pinned revision / evidence / self-test），旧文把事件属性写成 `q:click`、含未绑定“1/100 JS”断言；`stencil` 在 961 页目录中不存在。未占用当时 83 个开放 PR 的 slug。
+- external delta：本分支 push + 单 PR（授权）；未 merge、未 deploy，D 轴不因 merge 提升。
+- 完成切片：
+  1. `qwik` 绑定 annotated tag `@builder.io/qwik@1.20.0` peeled `971465f941e44e5adf2b2c2e44566b590d0990d8`；同提交 `@builder.io/qwik-city@1.20.0`。修正 `on:click` / qwikloader `import()`、`useVisibleTask$` 默认 `qvisible`、`routeLoader$` 必须从路由文件导出。披露 npm 无 `gitHead`，以及 `@qwik.dev/core@2.0.0-beta.42` 不在适用版本内。
+  2. 新建 `stencil`，绑定 `stenciljs/core` tag `v4.44.2` / `7a8cc6e60b7c92cffd907569886c97202153d6a0`（npm `gitHead` 一致）。写清 `createCompiler` → 多 outputTarget 顺序、lazy `hostRef` 构造、`MAX_LAZY_LOAD_RETRIES=3`、默认 `@Prop` 不可变。taxonomy 增加 `projects::stencil` → `projects-ui-and-frontend-frameworks`。
+  3. 新增 `docs/compiler-ui-source-review-20260827-ck.md` 与两份 generation 1 `STATIC_REVIEW` receipt；首页“已对齐标杆” 20 → 22；项目数 961 → 962。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision / research_input 一致，evidence state `UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=22`、`needs-evidence=940`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=91`、`legacy-unverified=1954`、blocking 0。
+  - `audit:counts` / `audit:site-state`：projects=962、papers=1083、total=2045。
+  - `git diff --check`：通过。
+  - `verify:ci`：见本分支后续补记。
+- budget：2 个 blob-filtered worktree + 1 个可写切片；单 writer。
+- blocker：main 上规模 `tracked_files` 已超 baseline threshold，属先于本切片的 `PARKED_HUMAN` 规模债；本轮未改 baseline / 阈值。
+- stop conditions：本 epoch 完成；merge / deploy / 规模 baseline 处置需单独授权。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 新的有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

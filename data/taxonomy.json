@@ -2420,6 +2420,10 @@
       "topic_id": "projects-testing-and-verification"
     },
     {
+      "note_id": "projects::stencil",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
       "note_id": "projects::styled-components",
       "topic_id": "projects-css-and-styling"
     },

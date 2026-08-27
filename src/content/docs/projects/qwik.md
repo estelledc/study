@@ -1,48 +1,32 @@
 ---
-title: Qwik — Resumable UI 框架
+title: Qwik — 用 resume 代替 hydrate 的编译器 UI
 来源: https://github.com/QwikDev/qwik
 日期: 2026-05-29
 分类: UI 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/QwikDev/qwik
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 971465f941e44e5adf2b2c2e44566b590d0990d8
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.20.0
 ---
 
 ## 是什么
 
-Qwik 是一个把 **「恢复执行（resume）」** 替代「重新水合（hydrate）」的前端框架——首屏 HTML 渲染完，浏览器只下载几 KB 的 JS；用户点哪个按钮，再下载这个按钮对应的代码块。日常类比：
+Qwik 是一套**把组件和事件处理函数编译成可延迟加载的 QRL（Qwik URL）**、再用 HTML 属性与一份 JSON 快照把应用“暂停/恢复”的 UI 框架。日常类比：打开一本厚书时，不是先把全书背进脑子（hydrate），而是书签已经夹在每一页——翻到哪一页，才把那一页的字读进来。
 
-> 打开一本厚书，不是把全书装进脑子，而是翻到哪页才读哪页。
-
-跟同期 React / Vue / Solid 比，Qwik 把「加载哪些 JS」这个决定推迟到用户实际交互的瞬间——首屏 JS 是 React 的 1/100（实测千分之一也常见）。
-
-## 为什么重要
-
-不理解 Qwik 解释不了下面这些：
-
-- 为什么 2023 年起前端社区开始讨论「0 hydration cost」这个概念——Qwik 是第一个工程化落地的方案
-- 为什么 Builder.io（无头 CMS + 视觉编辑器）的预览页能秒开千 KB 大小的复杂内容——它内部用 Qwik 做 SSR
-- 为什么 React 团队在推 Server Components / Suspense 之后仍绕不开「水合」——它的架构假设跟 Qwik 是反的
-- 为什么前 AngularJS / Ionic 创始人 Misko Hevery 离开 Google 后会从零再造一个框架——他想验证「hydration 本来就不该存在」
-
-## 核心要点
-
-Qwik 的「快」可以拆成 **三个工程决定**：
-
-1. **序列化（serialization）**：传统框架水合时要在客户端重跑一遍 component tree 来恢复状态、绑定 handler；Qwik 把这些状态 + handler 位置直接序列化进 HTML 属性（比如 `q:click="src/foo.tsx_onClick_abc.js"`）。浏览器读 HTML 就拿到全部信息，不再需要「重启」
-
-2. **Resumability（恢复执行）**：用户点击时，浏览器读到属性里的 chunk URL，按需下载这个 handler 的代码——千 KB 应用里此刻只下载了这一个按钮的几 KB JS。其他按钮的代码用户没碰永远不下
-
-3. **JSX with `$` 标记**：Qwik 编译器（Optimizer）需要知道「哪里是边界（这段代码可以单独成 chunk）」。用户在 JSX 里写 `onClick$={() => ...}`——这个 `$` 后缀是给编译器的标记，触发它把箭头函数切出去成单独 chunk
-
-三件事叠加，拿到「首屏 0 hydration JS」。
-
-## 实践案例
-
-### 案例 1：Counter 入门
-
-最常见的 Qwik 组件——计数器：
+固定 1.20.0 的公开包名仍是 `@builder.io/qwik` / `@builder.io/qwik-city`。你写：
 
 ```tsx
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, useSignal } from "@builder.io/qwik";
 
 export const Counter = component$(() => {
   const count = useSignal(0);
@@ -54,106 +38,139 @@ export const Counter = component$(() => {
 });
 ```
 
-逐部分解释：
+`$` 后缀不是装饰，是给 Optimizer 的边界标记：`component$` 等于 `componentQrl($(renderFn))`，`onClick$` 同样被抽成独立 QRL。首屏 HTML 上看到的是 `on:click="...#symbol"`，不是旧文里的 `q:click`。
 
-- `component$(...)` 外层 `$` 让编译器把整个组件单独切成 chunk
-- `useSignal(0)` 是细粒度响应式——只有 `count.value` 变化时这一段 DOM 重渲，跟 Solid 的 signal 一样
-- `onClick$={() => ...}` 内层 `$` 让编译器把 click handler 也切成独立 chunk——首屏不下载，点击时才下
+## 为什么重要
 
-页面加载完，DOM 里这个 button 的 `q:click` 属性指向 handler chunk URL。用户不点击就永远不下。
+不理解 Qwik 的 resume 合同，下面这些事都会讲错：
 
-### 案例 2：路由 + 服务端取数
+- 为什么“客户端不必重跑整棵 component tree 才能绑事件”——事件 URL 已经写在 DOM 上
+- 为什么 `$` 少写一个，懒加载边界就消失，处理函数可能被打进当前 chunk
+- 为什么 `useTask$` 和 `useVisibleTask$` 不是 `useEffect` 的两个别名
+- 为什么 Qwik City 的 `routeLoader$` 必须从当前路由的 `layout.tsx` / `index.tsx` 导出，否则组件读不到值
 
-Qwik City（Qwik 的 meta-framework，类似 Next.js 之于 React）里写 `routes/index.tsx`：
+## 核心要点
+
+固定 1.20.0 的主链可以拆成五步：
+
+1. **Optimizer 抽 QRL**：任何 `foo$(firstArg)` 经 `implicit$FirstArg` 变成 `foo($(firstArg))`。`$()` 是懒加载引用，运行时是 chunk URL + `#symbol`。
+
+2. **序列化进 HTML**：SSR/pause 把监听器写成 `on:<event>`（窗口/文档是 `on-window:` / `on-document:`），容器带 `q:container="paused"`、`q:base`、`q:manifest-hash`；对象图放进 `script[type="qwik/json"]`。
+
+3. **qwikloader 恢复执行**：文档级捕获监听。用户点按钮时，loader 读 `on:click`，按 `q:base` 拼 URL，`import()` 后取 hash symbol；以 `#` 开头的同步 QRL 则走 `qFuncs_<q:instance>[n]`。
+
+4. **细粒度状态**：`useSignal` 用 `useConstant` 把 signal 钉在组件顺序作用域里，函数初值只算一次。只有读过 `.value` 的地方参与更新。
+
+5. **任务分两条时间轴**：`useTask$` 在当前渲染（含 SSR）里 `waitAndRun`；`useVisibleTask$` 默认 `strategy: "intersection-observer"`，注册 `qvisible`。客户端首次创建时还会 `$resolveLazy$` 并 `notifyTask`。
+
+## 实践示例
+
+### 案例 1：计数器如何变成 `on:click` URL
+
+上面的 `Counter` 编译后，button 上是类似 `on:click="./chunk.js#onClick_xxx"` 的属性。`qwikloader` 的 `dispatch` 读这个属性，按行拆多条 QRL，再动态 import。SSR 单测把同类属性写成 `on:click="/runtimeQRL#_"`，用来锁定属性名。
+
+**逐部分**：`component$` 切整个渲染函数；`onClick$` 再切 handler；`useSignal(0)` 的值进入 pause 快照，resume 时不必重跑 `component$` 才能拿到 `count`。
+
+### 案例 2：Qwik City 的 `routeLoader$`
 
 ```tsx
-import { component$ } from '@builder.io/qwik';
-import { routeLoader$ } from '@builder.io/qwik-city';
+import { component$ } from "@builder.io/qwik";
+import { routeLoader$ } from "@builder.io/qwik-city";
 
 export const useArticles = routeLoader$(async () => {
-  return await fetch('https://api.example.com/articles').then(r => r.json());
+  return [{ title: "Ada" }];
 });
 
 export default component$(() => {
   const articles = useArticles();
-  return (
-    <ul>{articles.value.map(a => <li>{a.title}</li>)}</ul>
-  );
+  return <ul>{articles.value.map((a) => <li>{a.title}</li>)}</ul>;
 });
 ```
 
-`routeLoader$` 在服务器端跑——返回值序列化进 HTML，组件读到的是已 resolved 的数据，客户端不需要再请求一次 API。
+**逐部分**：`routeLoader$` 必须从该路由的 `layout.tsx` / `index.tsx` 导出。请求处理在 `actionsMiddleware` 里跑 loader，结果写入 request loader 表；组件通过 `RouteStateContext` 按 id 取。漏导出时，固定实现会抛“was invoked in a route where it was not declared”。
 
-### 案例 3：与 React 的差异
+### 案例 3：`useTask$` 对 `useVisibleTask$`
 
-| 概念 | React | Qwik |
-|------|-------|------|
-| 状态 hook | `useState` | `useSignal` |
-| 副作用 | `useEffect` | `useTask$` (SSR + client) / `useVisibleTask$` (仅 client) |
-| 组件标记 | 普通函数 | `component$()` |
-| Handler | `onClick={...}` | `onClick$={...}` |
-| 水合 | 全树水合 | 不水合，按需加载 |
+```tsx
+useTask$(({ track }) => {
+  const n = track(count);
+  // SSR 和客户端当前渲染都会跑
+});
 
-写法看起来像 React 多一个 `$`，但运行时模型完全不同：React 客户端要「重启」应用，Qwik 不需要。
+useVisibleTask$(() => {
+  const id = setInterval(() => count.value++, 500);
+  return () => clearInterval(id);
+}); // 默认等元素进入视口（qvisible）
+```
+
+`useTask$` 的 `eagerness` 只在服务端路径上额外注册客户端监听；默认任务本身已经在当前渲染执行。可见任务默认不是 `document-ready`。
 
 ## 踩过的坑
 
-1. **`$` 后缀必须**：少写 `$` 编译器只给警告不报错，运行时可能静默失败——handler 没切 chunk 直接 inline 进首屏 bundle，「resumable」优势消失。新人最高频的坑
-
-2. **第三方 React 库不能直接用**：React 库依赖 React runtime。Qwik 提供 `qwik-react` 桥接但有性能损失——用了 React 组件的页面会被强制水合那一块。生态远不如 React/Vue 大
-
-3. **Resumability 调试难**：堆栈跨 chunk 边界——出错时 source map 指向懒加载文件。Sentry / 浏览器 devtools 都需要适配。早期版本调试体验差到劝退
-
-4. **`useVisibleTask$` 是逃生舱不是常规**：写过 React 的人会下意识用它当 `useEffect`——但 Qwik 团队反复强调它会触发 eager hydration（违背 resumable 原则）。日常应优先 `useTask$` 或纯响应式
+1. **把属性名写成 `q:click`**：固定 1.20.0 的事件前缀是 `on:`（`EventPrefix`）。按旧教程找 `q:click` 会对不上 DOM。
+2. **漏写 `$`**：Optimizer 只抽 `$` / `foo$` 的第一参。少写则 QRL 边界不存在，函数留在当前模块。
+3. **把 `useVisibleTask$` 当普通 `useEffect`**：默认跟视口交叉；`document-ready` / `document-idle` 才对应 `qinit` / `qidle`。客户端首次创建还会立即 `notifyTask`，和“只在看见时跑一次”的直觉不完全一样。
+4. **复用 loader 却不从路由文件再导出**：库里的 `routeLoader$` 必须在当前 `layout.tsx` / `index.tsx` 重导出，否则上下文里没有这个 id。
+5. **把 2.0 beta 包名当成 1.20.0 合同**：`@qwik.dev/core@2.0.0-beta.x` 是另一条线；本文绑定的导入仍是 `@builder.io/qwik`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 重内容站（电商 / 媒体 / 营销页）——首屏是大头，交互是少数
-- Builder.io / WordPress 这类「内容多 + 编辑器拖拽」场景——HTML 已经 ready，JS 越少越好
-- 性能 KPI 死磕的场景——LCP / TTI / TBT 都吃首屏 JS 大小
+
+- 内容站、营销页、编辑器预览——首屏 HTML 已在，交互点稀疏
+- 需要把“下载哪段 JS”推迟到真实事件的站点
+- 能接受 `$` 语法与 Qwik City 文件路由约定，Node 满足 `>=16.8.0 <18.0.0 || >=18.11`
 
 **不适用**：
-- 重交互 SPA（dashboard / IDE / 协作工具）——所有代码迟早要下载，按需加载只增加复杂度
-- 需要复用 React 生态（react-table / react-flow / Material-UI）——qwik-react 桥接性能损失大
-- 团队没人愿意学 `$` 后缀语义——心智成本不划算
-- 需要 SSR streaming + Suspense 复杂编排——React Server Components 更成熟
 
-## 历史小故事（可跳过）
+- 几乎每个控件都会立刻交互的重型 SPA——QRL 切分变成组织成本
+- 必须直接复用大量 React 组件树，又不接受桥接层
+- 团队要把 `@qwik.dev/core` 2.0 beta 的 API 写进 1.20.0 笔记
+- 需要本文未测量的“比 React 小 100 倍”这类结论
 
-- **2021 年**：Misko Hevery（AngularJS / Ionic 创始人）从 Google 离职加入 Builder.io。他在 Google 时主导 Angular 1.x 但对「水合开销」这个根本问题始终不满
-- **2021 年底**：第一版 Qwik 发布，核心论点 「hydration is pure overhead, resumability fixes it」。社区一开始当玩具看
-- **2022 年**：Adam Bradley（Ionic 创始人，Stencil 作者）加入团队负责 Qwik City，生态成型
-- **2023 年 5 月**：v1.0 发布。Builder.io 把自己的可视化编辑器底层换成 Qwik——这是「自吃狗粮」的证明
-- **2024 年起**：Qwik 进入主流前端会议常规话题，「resumable」成为社区词汇。但市占率仍远低于 React / Vue
+## 固定版本边界
 
-整个项目商业绑定 Builder.io——这既是优势（有金主长期投入）也是争议（去 Builder.io 化的纯 OSS 路径不清晰）。
+- 本文绑定 `QwikDev/qwik@971465f9...`，即 annotated tag `@builder.io/qwik@1.20.0` 的 peeled commit；同提交上 `@builder.io/qwik-city` 也是 `1.20.0`。
+- npm `@builder.io/qwik@1.20.0` 未提供 `gitHead`；以 GitHub tag peel 为准。
+- npm 上 `@qwik.dev/core` 的 latest 是 `2.0.0-beta.42`，不在本文适用版本内。
+- 引擎：`node >=16.8.0 <18.0.0 || >=18.11`。许可为 MIT。
+- 本文未安装依赖、未跑 Optimizer/测试/bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **「重新水合」是历史遗留，不是必然**——React 之所以要水合，是因为它假设「客户端要重跑一遍 render 才能拿到 component tree」。Qwik 证明这个假设可以打破：把状态序列化进 HTML 就够
-2. **编译期标记 vs 运行时检测**——`$` 后缀是编译期标记的代价（语法侵入），换来的是不需要 runtime 解析「哪段代码可以切 chunk」。设计上是 Svelte 同路（编译期决定一切）
-3. **细粒度响应式 + 懒加载叠加**——Solid 有细粒度响应式但仍要全水合；Qwik 把响应式推到组件级，再叠加懒加载，把「首屏 JS」压到极限
-4. **生态壁垒是真壁垒**——技术上更优的方案如果生态不够大，仍打不过技术上次优但生态成熟的方案。Qwik vs React 是这个规律的当代案例
-5. **创始人复盘前作的勇气**——Misko 主动否定自己 12 年前的 AngularJS 设计，从零再来。这种自省在框架作者里少见
+1. **hydrate 不是恢复 UI 的唯一合同**——把监听器写成 URL、把对象图写成 JSON，客户端可以先不重跑 render
+2. **编译期标记换运行时探测**：`$` 侵入语法，换来 chunk 边界确定
+3. **默认策略必须读源码**：`useVisibleTask$` 的默认不是 document load
+4. **框架约定是运行时的一部分**：loader 不重导出就没有值，不是类型问题
+
+## 应用型自测
+
+1. 固定 1.20.0 把 click handler 序列化成 `q:click` 还是 `on:click`？
+2. `useVisibleTask$` 不传 `strategy` 时，qwikloader 监听的是哪个自定义事件？
+3. 把 `routeLoader$` 写在 `lib/articles.ts` 却不从路由 `index.tsx` 导出，组件里调用会怎样？
+
+检查点：
+
+1. `on:click`。`qwikloader` 拼的是 `on` + infix + `:` + event。
+2. `qvisible`（`intersection-observer` → `useOn('qvisible', ...)`）。
+3. 抛错：该 id 不在 `RouteStateContext` 里。
 
 ## 延伸阅读
 
-- 官方文档（推荐入口）：[qwik.dev](https://qwik.dev/)
-- Resumability 概念解释（作者亲笔）：[qwik.dev/docs/concepts/resumable](https://qwik.dev/docs/concepts/resumable/)
-- Misko Hevery 开篇演讲：[YouTube — WTF is Qwik](https://www.youtube.com/watch?v=0dC11DMR3fU)
-- [[react]] —— hydration 模型对照
-- [[solid]] —— 细粒度响应式同路
+- 概念：[qwik.dev/docs/concepts/resumable](https://qwik.dev/docs/concepts/resumable/)
+- 固定源码：[QwikDev/qwik](https://github.com/QwikDev/qwik) —— 本文绑定提交 `971465f941e44e5adf2b2c2e44566b590d0990d8`
+- [[stencil]] —— 另一条“编译期切 Web 组件”的路线，产物是 Custom Element
+- [[solid]] —— 同样用 signal，但仍走客户端挂载/水合
+- [[react]] —— hydrate 模型的对照组
 
 ## 关联
 
-- [[react]] —— 水合模型对照组，Qwik 整套架构是反 React 假设
-- [[solid]] —— signal-based 响应式同路，但 Solid 仍水合
-- [[svelte]] —— 编译期决定一切的同路，但 Svelte 没有 resumable
-- [[vite]] —— Qwik City 默认底层用 Vite 做 dev server
+- [[stencil]] —— 编译器产出标准 custom element；Qwik 产出可 resume 的 QRL HTML
+- [[solid]] —— signal 同路，恢复模型不同
+- [[svelte]] —— 编译期决定更新，但不是 resumable
+- [[vite]] —— Qwik City 开发/构建默认建立在 Vite 上
+- [[react]] —— 全树水合对照
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）
