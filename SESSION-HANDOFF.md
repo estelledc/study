@@ -15,7 +15,12 @@
   1. `unstorage` 绑定 annotated tag `v1.17.5` / `e2febded...`（npm latest 同号、无 `gitHead`，已披露），修正 key 规范化、最长前缀 mount、`stringify` throw、只读写静默、33 个 builtin driver 与 `lru-cache` 驱动默认 `max: 1000`。
   2. 新增 `lru-cache` 绑定 `v11.5.2` / `16b3a916...`（npm `gitHead` 与 tag 一致），写清有界构造、惰性 TTL、`has`/`get` 副作用差、`fetch`/`memo` 入口。
   3. 共享审查文档与两份 generation 1 static receipt；派生 site-state 首页“已对齐标杆”从 40 刷新为 42，项目数 961→962。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt `evidence_state=UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` / `audit:project-standard` 本地通过。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=42caf48968 npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下全绿（23 Playwright a11y、strict build、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=42`、`needs-evidence=920`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=111`、`legacy-unverified=1934`、blocking 0。
 - budget：2 个 blob-filtered 本地 worktree + 2 页静态源码；单 writer。
 - blocker：规模 `tracked_files` 超限仍是 main 既有 detector，需 owner 处置；本轮未改 baseline/阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
