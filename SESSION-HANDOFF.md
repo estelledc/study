@@ -22,6 +22,7 @@
   - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
   - `audit:wikilinks`：blocking 0，budget_failures 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=1ecba4040 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
