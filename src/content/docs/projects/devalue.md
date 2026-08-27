@@ -93,8 +93,9 @@ const again = parse(text, { Box: ([value]) => new Box(value) })
 
 ```js
 import { uneval } from "devalue"
-const js = uneval(new Map([["k", 1n]]))
-// 类似 new Map([["k",1n]])，给脚本内联，不能丢给 JSON.parse
+const entry = ["k", 1n]
+const js = uneval(new Map([entry]))
+// 产出类似 new Map([entry 展开后的 JS])，给脚本内联，不能丢给 JSON.parse
 ```
 
 **逐部分解释**：
