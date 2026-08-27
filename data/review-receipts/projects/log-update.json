@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "log-update",
+    "digest_sha256": "2158478c1b98cffcd4ba445cbd51913092a22a8e2d4bf4c1f939e91bb5ab0bad"
+  },
+  "source_revision": "4f7a1460893a7557aee8f7202956218c3e770a5a",
+  "research_input_sha256": "aa69905a4ed245141c2636ec01d278f41530aa1f14c06428d478f747e285924e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ex",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates wrap-then-clip, partial diff, persist/done/clear, and non-TTY CSI behavior."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ex",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 8.0.0 index.js, types, and node:test cases; tests and real TTY were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ex",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "annotated v8.0.0 peel, npm gitHead, and checkout identify the same reachable revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:55:00.000Z"
+}
