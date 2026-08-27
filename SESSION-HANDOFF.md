@@ -15,12 +15,17 @@
   1. `get-port` 绑定 annotated tag `v7.2.0` → `efbebfb0a2904b55d5ce9ab0badb52b3fbab99fe`（与 npm `gitHead` 一致）。
   2. `detect-port` 绑定 lightweight tag `v2.1.0` → `a2cfe1daed83c8f93358aea8b281a91514c307c4`（与 npm `gitHead` 一致）。
   3. 共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT。`verify:ci` 在 push 后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state `UNVERIFIED`
+  - `audit:content-contract`：blocking 0，v2=148
+  - `audit:project-standard`：snapshot CURRENT；`benchmark-aligned=79`
+  - `STUDY_CHANGED_FROM=51448afbe npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML / 2288 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 drift 门禁）
 - budget：1 个双子内容切片；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：单一 PR 打开后停止；不 merge、不 deploy。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=51448afbe npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #239 的 CI / review；不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
