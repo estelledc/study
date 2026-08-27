@@ -4,24 +4,26 @@
 
 ## 2026-08-27 Query-builder 双子 STATIC_REVIEW（objection / bookshelf）
 
-- status：`running` 完成本 epoch 后转为本地 review-ready；未 merge。
+- status：writer epoch `complete`；PR 已开、未 merge。
 - 起始 ref：`e20d4ddf`（`origin/main`）。
+- 完成 ref：`ecf99341`。
 - objective：把 Objection 与 Bookshelf 绑定到可达固定修订，形成 `STATIC_REVIEW` / `UNVERIFIED` 的 query-builder 双子页；不占用 knex / kysely。
 - scope：`src/content/docs/projects/{objection,bookshelf}.md`、`docs/query-builder-source-review-20260827-ds.md`、两份 generation 1 receipt、taxonomy / atlas / site-state / 公开计数、本 handoff。未改候选队列、政策阈值、既有笔记正文语义、远端 `main`。
 - activated_by：`explicit-user-request-20260827-parallel-writer-ds-objection-bookshelf`。
 - detector fingerprint：目标对无独立 study-v2 页；open PR 已占用 knex / kysely / prisma / drizzle / sequelize / typeorm。
+- external delta：开 PR #153；未 merge、未部署，D 轴不提升。
 - review_after：`2026-08-27`。
 - acceptance_checks：
-  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两页 `quality-gate.mjs`：pass、0 advisory（186 / 177 行）。
   - 两份 receipt：正文 digest 与固定 revision 一致，`review_mode: STATIC_REVIEW`，evidence state 为 `UNVERIFIED`。
-  - `git diff --check`。
-  - `STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci`（本轮后半段执行）。
-- budget：1 个内容切片、2 页、1 个可写 writer、120 分钟。
-- external_outcome：一个 PR，不 merge、不部署；D 轴不提升。
-- stop_conditions：canonical/revision 不唯一且需要猜测、只能放宽门禁、需要 merge、或与 knex/kysely 撞车。
+  - `git diff --check` 通过。
+  - `STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci`：本地在 Pagefind 查询合同处失败（`不存在不存在` 返回 2241，上限 0）；此前 toolchain / tests / 内容契约 / quality-gate / strict build（2287 HTML / 2286 sitemap）均通过。未放宽该合同。Playwright 浏览器未安装，a11y 未在本机跑完。
+- budget：1 个内容切片、2 页、1 个可写 writer。
+- external_outcome：一个 PR，不 merge、不部署。
+- stop_conditions：已按授权停止于 PR；不 merge。
 - superseded_by：`none`。
-- 下一次 wake 条件：PR review / CI 结果，或 owner 决定是否 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci`。
+- 下一次 wake 条件：PR #153 的 CI / review，或 owner 决定是否 merge。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/153`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
