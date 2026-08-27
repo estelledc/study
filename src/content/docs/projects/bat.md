@@ -4,143 +4,141 @@ title: bat — 现代 cat 替代
 日期: 2026-05-29
 分类: CLI
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/sharkdp/bat
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 979ba22628bc9d8171f2cffca2bd5c90c9fc0a9e
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.26.1
 ---
 
 ## 是什么
 
-bat 是 **David Peter（[[fd]] 同作者）2018 年用 Rust 写的 cat 替代**——在 cat 的"原样把文件吐到屏幕"之上，加了语法高亮、行号、Git 修改标记。
-
-日常类比：
-
-- **cat 是黑白打印机**——把内容打出来，没颜色、没行号、没排版
-- **bat 是彩印机 + 行号 + 修改标记的高级版**——同一份文件，关键字着色、左侧带行号、被改过的行旁边有红绿条
-
-你在终端 `cat foo.py` 看到一片黑白；换成 `bat foo.py`，瞬间变成 VS Code 风格的高亮视图——而且**不用退出终端**。
-
-## 为什么重要
-
-不只是"漂亮一点"，它改变了终端读代码的体验：
-
-- **可读性差距巨大**——`cat` 看长 Python / TypeScript 文件，关键字、字符串、注释全是灰底白字一锅粥；bat 一眼能定位结构
-- **天然集成 git diff**——文件被改过的行左侧有 `+`/`-`/`~` 标记，不用切到 `git diff` 单独看
-- **自动分页**——小文件直接打印到 stdout，大文件自动喂给 `less`，不会刷屏几千行
-- **启发了一整代终端工具**——[[ripgrep]] `--pretty`、delta（git diff viewer）、`gh` 命令的彩色输出，都借鉴了 bat 的高亮思路
-- **很多人的 `cat` 默认 alias**——`alias cat=bat` 是 dotfiles 高频条目
-
-## 核心要点
-
-bat 的设计可以拆成 **3 件事**：
-
-1. **语法高亮**：内置 200+ 语言，基于 Sublime Text 的 `.sublime-syntax` 规则——成熟、覆盖广。主题用 `.tmTheme`（TextMate 格式），默认 `Monokai Extended`，可换 `OneHalfDark` / `Dracula` / `GitHub` 等几十个。
-
-2. **Git integration**：检测到文件在 git 仓库里，左侧 gutter 显示三种符号——`+` 新增行、`-` 删除行（占位）、`~` 修改行。不需要单独跑 `git diff`，编辑历史直接可视化。
-
-3. **自动分页**：行为上是 cat 和 less 的混合体——
-   - 输出**超过一屏**：自动管道给 `less`（可滚动、可搜索 `/keyword`）
-   - 输出**少于一屏**：直接打印（不进 less，不需要按 q）
-   - **管道场景**（`bat foo.py | grep ...`）：自动转 plain 模式，不输出装饰色码污染下游
-
-## 实践案例
-
-### 案例 1：日常读源码
+bat 是 David Peter 用 Rust 写的 **cat 替代**：把文件打到终端时，顺带做语法高亮、行号和相对 git index 的修改标记。日常类比：cat 是黑白打印机；bat 是带行号和改稿记号的彩印机——还在终端里，不必打开编辑器。
 
 ```bash
 bat src/main.rs
 ```
 
-**逐部分解释**：
+固定 `0.26.1` 的 crate 声明 `MIT OR Apache-2.0`，默认 feature 打开 `application` 与 `git`。它同时也是库：`PrettyPrinter` 是稳定入口，内部 `Controller` 更可能改。
 
-- `bat` 会根据文件后缀识别 Rust 语法，给关键字、字符串、注释分别上色。
-- 左侧 gutter 显示行号；如果文件在 git 仓库里，还会显示新增或修改标记。
-- 输出超过一屏时自动进入 pager，你可以像用 `less` 一样滚动和搜索。
+## 为什么重要
 
-得到：左侧灰色行号、Rust 关键字蓝紫色、字符串绿色、注释暗灰；如果这个文件刚被 `git` 改过，行号右边有 `~` 标记。整体观感接近 VS Code 打开文件，但还在终端里。
+不理解 bat 的分层，下面这些事会对不上：
 
-### 案例 2：管道传给其他工具
+- 为什么管道给 `grep` 时装饰列消失，而 `fzf --preview` 又必须 `--color=always`
+- 为什么 `alias cat=bat` 会把脚本的下游解析打坏，但 `alias cat='bat -pp'` 往往能保住 cat 体感
+- 为什么左侧 gutter 的删除记号不是单一的 `-`
+- 为什么 Debian/Ubuntu 装完可执行文件可能叫 `batcat`
+
+## 核心要点
+
+固定版本可以拆成四层：
+
+1. **syntect 高亮**：`Controller` 用 cache 或内嵌资产取出 `SyntaxSet` / 主题，再交给 `InteractivePrinter`。依赖是 `syntect 5.3.0`（`parsing`）。默认主题按配色方案选 `Monokai Extended`（Dark）或 `Monokai Extended Light`（Light），不是写死某一个。
+
+2. **默认装饰只在交互终端**：`StyleComponent::Default` 打开 `changes`、`grid`、`header-filename`、`numbers`、`snip`。`--style=auto` 在非 TTY 落到 `Plain`（空组件集），所以管道默认不带行号和边框。
+
+3. **Git 比的是工作区对 index**：`get_git_diff` 调 `git2` 的 `diff_index_to_workdir`，`context_lines(0)`。gutter 符号是 `+`（Added）、`‾`（RemovedAbove）、`_`（RemovedBelow）、`~`（Modified）。旧印象里的 `-` 占位并不存在。
+
+4. **分页是 CLI 策略，不是枚举默认值**：`PagingMode` 的 Rust 默认是 `Never`；交互 stdout 上 auto 变成 `QuitIfOneScreen`（常见是 less `-R -F -K`）。管道时 `Never`。从 stdin 读时，只有 stdout 是 TTY 且 stdin 不是 TTY 才分页。`-p` 等于 `--style=plain`；`-pp` 在 auto 下再关掉分页。
+
+## 实践示例
+
+### 案例 1：交互读源码
+
+```bash
+bat src/main.rs
+```
+
+**逐部分解释**：后缀走 syntect 语法；左侧是四位行号；若文件在 git 工作区且相对 index 有 hunk，行号旁会出现 `+` / `‾` / `_` / `~`。输出超过一屏时，auto 分页会把内容交给 pager。
+
+### 案例 2：管道只要文本
 
 ```bash
 bat -p server.log | grep ERROR
 ```
 
-**逐部分解释**：
+`-p` 去掉 header、grid、行号和 git 标记。若还要完全关掉分页，用 `-pp`。脚本若连 ANSI 都不想要，再加 `--color=never`。
 
-- `-p` 是 plain 模式，去掉文件头、边框和行号，保留适合终端看的输出。
-- `| grep ERROR` 仍然只接收文本内容，不会被 bat 的装饰列干扰。
-- 如果脚本要完全无颜色，再加 `--color=never`，避免 ANSI 色码污染日志处理。
-
-`-p` 是 plain 模式——不分页、不加行号、不加文件名头部，**只把语法高亮保留**（grep 仍能正常匹配文本）。日常处理日志、对接 awk / sed 都用这个。
-
-### 案例 3：和 fzf 组合做交互式预览
+### 案例 3：给 fzf 强制上色
 
 ```bash
-fzf --preview 'bat --color=always --line-range=:200 {}'
+fzf --preview 'bat --color=always --style=numbers --line-range=:200 {}'
 ```
 
-**逐部分解释**：
-
-- `--preview '...'` 告诉 fzf：光标停在哪个文件上，就用这条命令生成右侧预览。
-- `--color=always` 强制保留高亮，因为输出对象不是普通终端而是 fzf 的预览窗。
-- `--line-range=:200` 只读前 200 行，避免大文件让预览卡住。
-
-打开 fzf 文件选择器，右侧实时预览高亮内容（截前 200 行避免大文件卡顿）。`--color=always` 强制输出色码（fzf 会接受）；不加的话 fzf 拿到的是无色文本，预览很丑。
+预览窗不是交互 TTY，`--color=auto` 会关掉高亮。`--color=always`（或 `--force-colorization`）强制着色；`--line-range=:200` 只取前 200 行，避免大文件把预览卡住。
 
 ## 踩过的坑
 
-1. **`alias cat=bat` 后管道全炸**——把 cat 默认替换成 bat 装饰过的输出，下游脚本（`cat config | yq ...`）解析失败。**正确做法**：alias 用 `bat -p`，或者保留 cat、只在交互场景手敲 bat。
-
-2. **大文件慢**——语法高亮是 O(n) 但常数很大，几十 MB 日志比 cat 慢一个量级。日志文件用 `bat --plain` 或干脆 `cat`；只在源码场景用完整 bat。
-
-3. **默认主题不一定好看**——`Monokai Extended` 在浅色终端背景上糊成一团。先 `bat --list-themes` 看预览，挑一个和终端配色匹配的；写进 `~/.config/bat/config`：
-
-   ```
-   --theme="OneHalfDark"
-   ```
-
-4. **macOS / Linux 包名不一致**——`brew install bat` 装出来叫 `bat`；Debian / Ubuntu apt 装出来叫 `batcat`（避免和已有 `bat` 包冲突）。在跨平台脚本里要兼容两个名字，或用 `~/.local/bin/bat -> /usr/bin/batcat` 软链统一。
-
-## 历史小故事（可跳过）
-
-- **2018**：David Peter 在 [[fd]] 做火之后顺手写了 bat——同一套设计哲学（Rust + 用户体验优先 + 单二进制零依赖）
-- **2020 v0.16**：加入 Git integration（`+`/`-`/`~` 标记），从"漂亮 cat"升级成"带上下文的 cat"
-- **2021–2023**：streamable input / 自定义 syntax / 自定义 theme 等渐进改进；社区 PR 主导
-- **2024 v0.24**：配置体系（`bat config-dir` / `bat config-file`）和主题管理完善；正式进入"够稳定不需要每月更新"的成熟期
-
-bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给 cat 加体验糖**——但因为门槛低（一条 brew 命令）、收益直观（终端读代码秒级提升），传播得反而快。
+1. **`alias cat=bat` 把装饰带进管道**：下游 `yq` / `awk` 会看到行号或色码。更接近 cat 的 alias 是 `bat -pp`，或只在交互场景手敲 `bat`。
+2. **把 gutter 的删除写成 `-`**：固定版本删除行用 `‾` 或 `_`，取决于 hunk 落在现有行的上方还是下方。
+3. **主题按终端配色切换**：浅色终端默认是 `Monokai Extended Light`。可写进配置文件 `--theme="TwoDark"`；配置是「每行一条 CLI 选项」，路径为 `BAT_CONFIG_PATH` 或 `config_dir/config`。
+4. **Debian/Ubuntu 包名冲突**：官方 README 写明 apt 可能装出 `batcat`，需要 `ln -s /usr/bin/batcat ~/.local/bin/bat` 或 `alias bat=batcat`。
+5. **把大文件变慢写成固定倍数**：高亮与装饰都有成本，但本页没有运行吞吐测量，不能写成「比 cat 慢一个量级」。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 终端里读代码 / 配置文件 / Markdown——高亮 + 行号大幅提升可读性
-- 配合 [[ripgrep]] / fzf / git diff 做交互式工具链——bat 提供"漂亮预览"的标准件
-- 想看刚改过哪几行又懒得 `git diff`——直接 `bat file` 看 gutter 标记
-- dotfiles 里给 `cat` 加默认增强——交互场景下基本无负面影响
+- 终端里读源码、配置、Markdown，需要行号和高亮
+- 和 [[fzf]] / [[ripgrep]] 组预览链，显式 `--color=always`
+- 想看相对 **index** 改了哪几行，又懒得单独开 `git diff`
 
 **不适用**：
 
-- 大文件（几百 MB 日志、压缩二进制）——语法高亮成本高，直接 `cat` 或 `less` 更快
-- 写脚本里需要稳定无装饰的输出——保留 `cat`，不要 alias 替换
-- 极简主义环境（Alpine 容器、嵌入式）——bat 二进制 ~5 MB，不如直接 cat
-- 完全不在 git 仓库的文件——Git integration 用不到，价值减半
+- 脚本里要稳定、无装饰的字节流——保留 `cat`，或强制 `-pp --color=never`
+- 需要「相对 HEAD」而不是「相对 index」的标记——这不是 `diff_index_to_workdir` 的合同
+- 要把未测的体积、速度或 star 数写成选型结论
+
+## 固定版本边界
+
+- 本文绑定 `sharkdp/bat@979ba226...`，即 tag `v0.26.1`，`Cargo.toml` 版本一致。
+- 默认 feature：`application` + `git`；高亮引擎 `syntect 5.3.0`。
+- Git 比较对象是 index↔workdir；分页策略见上，不把 `PagingMode::Never` 误读成「从不分页」。
+- 本文未编译运行 bat、未数内置语言、未测大文件吞吐，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **小工具也能影响生态**——bat 没解决新问题，只是"把 cat 做得更好"，但启发了一批 `--pretty` / `--color=always` 的同类工具
-2. **零依赖单二进制是 Rust CLI 的护城河**——brew / cargo install 一行装好，比 Python 工具门槛低得多
-3. **用户体验细节是壁垒**——自动分页、自动 plain 模式（管道场景）、自动检测 git 仓库——每一个都是"用户没要求但用了就回不去"
-4. **dotfiles 友好度决定传播速度**——能写进一行 alias 的工具，比要配置文件的工具传播快 10 倍
+1. **管道合同要单独设计**——`auto` style / color / paging 都看 `stdout().is_terminal()`，所以同一条命令在 TTY 和管道里不是同一个产品。
+2. **装饰和内容要能拆开**——`-p` / `-pp` 把「好看」从「可组合」里剥出去。
+3. **gutter 符号是枚举，不是 git diff 字母的直译**——删除分上下两种占位。
+4. **配置文件可以只是默认 argv**——bat 的 config 没有自己的 TOML schema。
+
+## 应用型自测
+
+1. 固定版本里，被删掉的行在 gutter 上显示 `-` 吗？
+2. `bat file | grep x` 默认还会带行号和边框吗？
+3. `-p` 和 `-pp` 差在哪一层？
+
+检查点：
+
+1. 不会。删除是 `‾`（上方）或 `_`（下方）；`-` 不是这个 revision 的符号。
+2. 不会。非 TTY 上 `--style=auto` 落到 `Plain`，`paging` auto 也是 `Never`。
+3. `-p` 只把 style 收成 plain；`-pp` 在 paging=auto 时再把 pager 关掉。
 
 ## 延伸阅读
 
-- 官方 README：[github.com/sharkdp/bat](https://github.com/sharkdp/bat)（含主题预览图、安装指南、配置示例）
-- 配 fzf 的工作流：[junegunn/fzf wiki — Examples](https://github.com/junegunn/fzf/wiki/Examples)（搜 `bat` 看 preview 配置）
-- 主题画廊：`bat --list-themes` 本地跑——每个主题用一段示例代码渲染给你看，比截图直观
+- 官方 README：[github.com/sharkdp/bat](https://github.com/sharkdp/bat) —— 本文绑定提交 `979ba22628bc9d8171f2cffca2bd5c90c9fc0a9e`
+- 审查记录：仓库内 `docs/rust-cli-source-review-20260827-fi.md`
+- [[delta]] —— 专门给 git diff 做高亮分页
+- [[fd]] —— 同一作者的 find 替代
+- [[ripgrep]] —— 常和 bat 组预览链的搜索器
 
 ## 关联
 
-- [[fd]] —— David Peter 同作者，find 替代；和 bat 一起组成"现代 CLI 套件"基本盘
-- [[ripgrep]] —— grep 替代；`rg --pretty` 的高亮思路与 bat 同源
-- [[claude-code]] —— 终端 AI 编程助手；和 bat / [[ripgrep]] 是同一类"终端体验现代化"工具的不同层
+- [[fd]] —— 同作者的现代 find
+- [[ripgrep]] —— 搜索侧对照
+- [[delta]] —— diff 高亮分页器
+- [[fzf]] —— 交互预览宿主
+- [[bottom]] —— 同属 Rust 终端工具，监控而不是阅读
 
 ## 反向链接
 

@@ -4,66 +4,63 @@ title: bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 日期: 2026-05-30
 分类: cli
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/ClementTsang/bottom
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e22236a928eeb876b2ccaad2f3d1ce5f6450281a
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.14.9
 ---
 
 ## 是什么
 
-bottom（**命令名 `btm`**）是一个**跨平台**的终端进程/系统监控工具，用 Rust 写。日常类比：像把"任务管理器"塞进终端，并且让你**自己拖动每个面板的位置和大小**。
-
-你装完后敲：
+bottom（**命令名 `btm`**）是一个跨平台终端系统监控器：采集线程按 tick 取 CPU / 内存 / 进程 / 磁盘 / 网络等，再由 ratatui 画成可拼的 widget 网格。日常类比：把任务管理器塞进终端，并且允许你用 TOML 重排面板。
 
 ```bash
 btm
 ```
 
-终端立刻变成一张仪表盘：左上角 CPU 时间序列折线，右上角内存条，左下角进程表，右下角网络 / 磁盘 / 温度。这个布局**默认值**已经够用，但你可以写一份 TOML 配置文件让它变成"只剩温度 + 电池 + 进程"三块——为笔记本能耗调试做的极简模板。
-
-它的真正价值不是"又一个 htop"，而是 **htop 不支持 Windows、btop 在 Windows 上是社区移植、gotop / ytop 已经停维护**——bottom 是那个真正三端官方支持 + 可定制布局的现代终端监控。
+固定 `0.14.9` 的 crate 是 MIT，`default-run = "btm"`。默认 feature `deploy` 打开 `battery`、`nvidia` 和 `zfs`。源码自述灵感来自 gtop / gotop / htop。
 
 ## 为什么重要
 
-不理解 bottom 的设计取舍，下面这些事都没法解释：
+不理解这三层，下面这些事会对不上：
 
-- 为什么 macOS 上 brew 装完没问题，Windows 上 update_rate 调到 250ms 反而 btm 自己吃 5% CPU
-- 为什么 htop 那种"列表式 UI"和 bottom 那种"widget 网格"在大屏幕上观感差距巨大
-- 为什么 ARM / 树莓派支持是 best-effort 而不是承诺
-- 为什么 13.4k stars 一个工具能在三端 CI 上每周跑过百个测试不挂
+- 为什么同一份 `bottom.toml` 能在 Linux / macOS / Windows 启动，但温度、磁盘、GPU 仍可能缺块
+- 为什么把 `-r` 调到下限 250ms 时，帮助文本只警告「可能占用更多资源」，却没有给出固定百分比
+- 为什么旧印象「btm 没有 GPU」和这个版本对不上
+- 为什么时间轴能左右缩放，重启后历史却没了
 
 ## 核心要点
 
-bottom 的工作可以拆成 **三件事**：
+固定版本可以拆成四层：
 
-1. **跨平台采数**：通过 `sysinfo` crate 屏蔽差异——Linux 读 `/proc`，macOS 走 `sysctl`，Windows 调 PerfCounters。所有平台都给上层一个统一的 `CPU{usage, freq}` / `Process{pid, name, mem, cpu}` 结构。
+1. **采集不是单一 crate**：`collection::Data` 汇总 CPU、load avg、内存、swap、温度、网络、进程、磁盘 I/O，以及可选电池 / ZFS ARC / GPU。底层混用钉死的 `sysinfo =0.39.6` 和平台代码（Linux `/proc` 与 cgroup、macOS sysctl/IOKit、Windows PDH）。NVIDIA 走 `nvml-wrapper`；Linux 另有 AMD 模块。
 
-2. **环形 buffer + 时间序列**：每个 update tick（默认 1s）把当前数值塞进一个**环形缓冲**，长度由"显示窗口 ÷ tick"决定。画图时直接读这个 buffer——这就是为什么你能左右拖动看历史。
+2. **时间序列是分块 SoA**：`TimeSeriesData` 用 `timeless::data::ChunkedData` 按字段存，时间是相对「现在」的反向偏移，并带修剪元数据。这不是定长环形数组。默认刷新 1000ms（下限 250ms），默认保留约 10 分钟（下限 1 分钟）。
 
-3. **widget 网格 + TOML 布局**：屏幕被切成 row × col 的网格，每个格子是一个 widget（CPU / 内存 / 网络 / 磁盘 / 温度 / 电池 / 进程 / 基本信息）。用户写 TOML 描述网格，bottom 启动时把它解析成布局树。
+3. **布局是 row → col → widget 树**：默认三行——`cpu`（ratio 30）、`mem` + `temp`/`disk`（40）、`net` + `proc`（30），进程格 `default=true`。用户 TOML 用 array-of-tables 写 `row` / `row.child` / `type` / `ratio`；省略 ratio 按 1。进程 widget 还会自动挂 sort 与 search 子格。
 
-三件事拼起来，bottom 就是一个**跨平台数据采集器 + 终端绘图引擎 + 可配置仪表盘**。
+4. **输入与副作用分开**：crossterm 把键鼠送给 `App`。`/` 或 `Ctrl-f` 打开进程搜索（支持 `pid` / `cpu` / `mem` / `gpu%` 等查询）；`t` 或 `F5` 切树视图；`dd` / `F9` / `Delete` 打开杀进程对话框。Unix 默认可选信号，`--disable-advanced-kill` 时只发 SIGTERM（15）；Windows 走 `TerminateProcess`。`--read-only` 禁止这类动作。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：最简单的 htop 替代姿势
+### 案例 1：零配置当进程监视器
 
 ```bash
-brew install bottom    # macOS
-cargo install bottom   # 任何有 Rust 的平台
-btm                    # 启动
+btm
 ```
 
-进入界面后：
+进入后：方向键或 `hjkl` 在表里移动，`/` 搜进程，`t` 切树，`q` / `Ctrl-c` 退出。默认选中的是进程格。这是阅读键位合同，不是本页实测过的操作录像。
 
-- 上下箭头切换进程
-- `/` 进入搜索（按进程名过滤）
-- `dd` 发 SIGTERM 杀选中进程
-- `t` 切换树视图（看父子进程关系，类似 `pstree`）
-- `q` 退出
-
-零配置就能用，比 `ps aux | grep ... | kill` 一气呵成。
-
-### 案例 2：自定义 layout 做能耗调试
-
-写 `~/.config/bottom/bottom.toml`：
+### 案例 2：只留温度、电池和进程
 
 ```toml
 [[row]]
@@ -78,86 +75,82 @@ btm                    # 启动
     type = "proc"
 ```
 
-启动后整屏只剩三块：温度 + 电池 + 进程。**ratio 是相对权重**，30 + 70 表示上区域占 30%，下区域占 70%。这种 layout 笔记本插电 / 拔电对比时极好用。
+`ratio` 是相对权重。电池类型在默认 feature 下可用。配置文件优先已存在的 `$HOME/.config/bottom/bottom.toml`，否则 `dirs::config_dir()/bottom/bottom.toml`；macOS 还会看 `$XDG_CONFIG_HOME`。
 
-### 案例 3：跨平台 CI 监控
+### 案例 3：放慢刷新、打开只读
 
-bottom 在 GitHub Actions 上跑 Linux + macOS + Windows 三端，每条 PR 都触发。这个习惯很值得学——`sysinfo` 屏蔽了 OS 差异，但**真正能发现 Windows PerfCounters 慢、macOS 温度传感器路径不同**这种坑只有 CI 跑得到。
-
-```yaml
-strategy:
-  matrix:
-    os: [ubuntu-latest, macos-latest, windows-latest]
+```bash
+btm -r 2s --read-only
 ```
 
-### 与 htop / btop 的差异（一张表）
-
-| 工具 | 语言 | Windows | 自定义布局 | 时间序列图 | 现状 |
-|---|---|---|---|---|---|
-| htop | C | 不支持 | 几乎无 | 无 | 活跃 |
-| btop | C++ | 社区移植 | 主题级 | 有 | 活跃 |
-| gotop | Go | 支持但停维护 | 有 | 有 | 已停 |
-| ytop | Rust | 支持但停维护 | 弱 | 有 | 已停 |
-| **bottom** | Rust | **官方** | **TOML 网格** | **有** | **活跃** |
+`-r` 接受毫秒数或 human duration。`--read-only` 让杀进程对话框不会真正发信号。
 
 ## 踩过的坑
 
-1. **ARM / 树莓派偶尔传感器读不到**：温度 / 电池 widget 显示空白，因为 `sysinfo` 在 ARM 没覆盖某些 sysfs 路径。社区有 issue，多数靠"换 widget"绕过。
-
-2. **Windows update_rate 调太低 btm 自己吃 CPU**：默认 1000ms 还行，调到 250ms 时 PerfCounters 调用太频繁，btm 反而占 5% CPU——监控工具自己变成第二大占用源。
-
-3. **TOML layout 学习曲线陡**：`ratio` 和嵌套 `row.child` 写错经常导致整屏空白，但报错信息只说"layout invalid"，不指哪一行。新人常被劝退。
-
-4. **终端不支持 truecolor 颜色糊**：在某些远程 SSH 终端 / Windows 经典 cmd 里，主题颜色变成模糊的灰块，需要 `--no-truecolor` 或在 TOML 里换 `nord` / `default-light` 主题。
+1. **把 GPU 写成「当前不支持」**：`0.14.9` 默认打开 `nvidia`；进程表有 `gpu%` / GPU 内存列，内存图也会为 GPU 加行。没驱动或 feature 被裁掉时才会空白。AMD 路径只编进 Linux。
+2. **把 250ms 写成固定「自己吃 5% CPU」**：帮助文本只说更小间隔可能增加资源占用；本页没有测 Windows PDH 或其它平台的占用。
+3. **时间序列不是环形 buffer**：修剪按保留窗口做，缩放改的是显示时间范围（`+` / `-` / `=`），进程一退数据就没了。
+4. **`t` 不是全局热键**：进程格里 `t`/`F5` 切树；温度表里 `t` 是按温度排序。先看当前 widget。
+5. **layout 写错时错误很干**：解析失败走 `OptionError::Config`，不会指出「哪一行 ratio 嵌套错了」。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 跨平台日常系统监控（笔记本一份配置，三端通用）
-- 需要时间序列回看（找一分钟前 CPU 尖峰是哪个进程）
-- 笔记本能耗 / 温度调试（自定义 layout 只显示相关 widget）
-- 替代已停维护的 gotop / ytop
+
+- 单机三端用同一份布局看 CPU / 内存 / 进程
+- 需要短时时间序列回看（默认约 10 分钟窗口）
+- 笔记本上自定义温度 / 电池 / 进程三块
+- 默认构建里想顺便看 NVIDIA GPU 占用
 
 **不适用**：
-- 服务器集群级监控 → 用 Prometheus + Grafana
-- 容器内监控 cgroups 详细资源 → 用 `ctop` / `kubectl top`
-- 需要历史数据持久化（btm 重启就丢） → 用 netdata
-- 需要 GPU 监控（btm 当前不支持 NVIDIA / AMD GPU widget） → 用 `nvitop` / `nvtop`
 
-## 历史小故事（可跳过）
+- 集群或长期存储——没有远端后端，重启即丢
+- 容器 cgroup 细节作为主界面——虽有 Linux cgroup 采集，产品形态仍是本机 TUI
+- 把未测的刷新开销、star 数或「每周测试数」写成结论
+- 关闭 `nvidia` feature 的构建，却仍按默认 release 推断 GPU 列
 
-- **2018 年前**：终端监控生态主要是 htop（C, Linux/macOS）和 Windows 自带任务管理器，**没有跨三端的现代选项**。
-- **2018 年**：Go 写的 gotop 出现，加了时间序列图、自定义 widget——但作者 2020 年停维护。
-- **2019 年**：ytop（Rust 移植 gotop）出来填空，但作者也很快停维护。
-- **2019-2020 年**：ClementTsang 启动 bottom，明确说**灵感来自 gotop / ytop / htop**，目标是"接住停维护的两个项目 + 真正官方支持 Windows"。
-- **2024 年后**：从 tui-rs 迁到 ratatui（tui-rs 社区分叉，因为原作者也停维护了），13.4k stars。
+## 固定版本边界
 
-整个故事是"Rust 终端 UI 生态成熟（tui-rs 出来）+ 前任停维护"两个条件碰上的产物。
+- 本文绑定 `ClementTsang/bottom@e22236a9...`，即 tag `0.14.9`，`Cargo.toml` 版本一致。
+- 默认 feature：`battery` + `nvidia` + `zfs`；TUI 依赖 `ratatui 0.30.2` + `crossterm 0.29.0`。
+- 刷新默认 1000ms、下限 250ms；保留窗口默认 10 分钟。
+- 本文未运行 `btm`、未连 GPU / 电池、未测占用，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"跨平台"不是免费的**——sysinfo / crossterm 这类抽象 crate 是 bottom 能存在的前提，没它每个 widget 都得三端各写一遍
-2. **可定制布局是对"htop 美学"的反叛**——htop 假设"所有人想看的差不多"，bottom 假设"每个人能耗调试 / 服务器观察 / 容器监控的关注点不同"
-3. **接住停维护项目是合法生态位**——gotop / ytop 用户量证明需求存在，bottom 没创造需求，只是接住
-4. **CI 跑三端是验证跨平台的唯一办法**——不跑 Windows，永远不会发现 PerfCounters 慢
+1. **「跨平台」是采集门面，不是传感器保证**——统一 `Data` 结构下面仍是分 OS 的实现。
+2. **默认 feature 也是合同**——GPU / 电池是否存在，先看构建开关，再看运行时设备。
+3. **可拼布局把「所有人看同一屏」拆开**——htop 式固定列表和 TOML 网格是两种产品假设。
+4. **杀进程是对话框 + 平台 syscall**——不要把 `dd` 直接等同于「一定 SIGTERM」。
+
+## 应用型自测
+
+1. 固定 `0.14.9` 默认构建里，进程表还有没有 GPU 相关列？
+2. 默认刷新间隔和允许的最小值分别是多少？
+3. `dd` 在 Unix 上是不是只能发 SIGTERM？
+
+检查点：
+
+1. 有。默认 `nvidia` feature 下进程列包含 `gpu%` 与 GPU 内存；没设备时是空数据，不是「功能不存在」。
+2. 默认 1000ms，下限 250ms。
+3. 不是。默认可开高级信号；只有 `--disable-advanced-kill` 才固定 SIGTERM=15。
 
 ## 延伸阅读
 
-- 项目主页：[ClementTsang/bottom](https://github.com/ClementTsang/bottom)（README 含 GIF 演示，最直观）
-- 配置文档：[bottom.toml 完整参考](https://clementtsang.github.io/bottom/nightly/configuration/config-file/)
-- 同类对比：[awesome-tuis](https://github.com/rothgar/awesome-tuis) 收录 100+ 终端 UI 工具
-- [[htop]] —— bottom 的精神祖父，"列表式 UI"标杆
-- [[btop]] —— bottom 的现代竞品，C++ 写，主题更花哨
+- 项目主页：[ClementTsang/bottom](https://github.com/ClementTsang/bottom) —— 本文绑定提交 `e22236a928eeb876b2ccaad2f3d1ce5f6450281a`
+- 稳定文档：[bottom.pages.dev/stable](https://bottom.pages.dev/stable)
+- 审查记录：仓库内 `docs/rust-cli-source-review-20260827-fi.md`
+- [[htop]] —— 列表式进程监视的对照
+- [[btop]] —— 另一条现代 TUI 监控路线
+- [[ratatui]] —— 本版本的绘制库
 
 ## 关联
 
-- [[htop]] —— C 写的进程监控经典，Linux/macOS only，bottom 想覆盖的"三端跨平台"是它做不到的
-- [[btop]] —— C++ 写的现代竞品，主题级定制，但 Windows 是社区移植；bottom 走"布局级定制 + 三端官方"路线
-- [[dust]] —— 同样是 Rust 写的命令行可视化工具（du 替代品），bottom 的"用 Rust 重写经典 CLI"思潮一员
-- [[bat]] —— Rust 写的 cat 替代，与 bottom 同属"Rust CLI 复兴"代表
-- [[fd]] —— Rust 写的 find 替代，同思潮
-- [[ripgrep]] —— Rust 写的 grep 替代，证明 Rust + 终端 + 跨平台的组合可以打过 C 老兵
-- [[fzf]] —— 终端模糊搜索，bottom 的进程过滤器在精神上向它致敬
+- [[htop]] —— C 写的经典列表式监视器
+- [[btop]] —— C++ 现代竞品
+- [[bat]] —— 同属 Rust CLI，阅读文件而不是监视系统
+- [[procs]] —— 更偏 `ps` 替代的进程表
+- [[ratatui]] —— TUI 绘制层
 
 ## 反向链接
 

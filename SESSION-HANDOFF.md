@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 平行 writer FI：bat + bottom
+
+- status：`running`；writer epoch 在修 CI。未把本 PR merge 进 main，未 force-push main，未 deploy。
+- 起始 ref：`1f2917d90`；本切片已 `merge origin/main` `9adc8b991`（#76/#78/#80），不 rebase。
+- objective：保持 `bat` + `bottom` 源码绑定，并让派生 site-state 与 PR merge 树一致，消除 `site-state check mode detects stale tracked artifacts`。
+- scope：接入已合入 main 的派生索引后重跑 `regen-atlas` / `audit-project-standard --write` / `generate:site-state`；更新本交接。未改其他 writer 的项目正文，未开新研究双子。
+- activated_by：PR #212 CI 失败（run `33061963068`，`data/site-state.json` 与 merge 树上的 content-contract 计数不一致）。
+- detector fingerprint：`runSiteState({write:false}).stale` 含 `data/site-state.json`；首页 SITE_STATE 块未 stale。根因是 GitHub `pull_request` 检出 merge 树，而本分支仍按 `1f2917d90+2` 计数。
+- external_outcome：更新已有 PR #212；未 merge、未 deploy。
+- 完成切片：
+  1. `bat` 绑定 tag `v0.26.1` → `979ba22628bc9d8171f2cffca2bd5c90c9fc0a9e`。
+  2. `bottom` 绑定 tag `0.14.9` → `e22236a928eeb876b2ccaad2f3d1ce5f6450281a`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+  4. `merge origin/main` 后重生成派生索引；`bat`/`bottom` 与已合入的 bun/deno/electron/tauri/nestjs/koa 同为 `benchmark-aligned`。
+- 验证结果：`audit:site-state` current；`audit:project-standard` CURRENT；两页 `quality-gate` 全绿、0 advisory；`derive-site-state.test.mjs` 3/3；`git diff --check` 通过。计数以这些命令为准。
+- budget：第 3/3 切片（接入 main + 派生重生成）；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值。
+- stop_conditions：本切片 push 后等待 #212 CI；不执行 squash / merge / deploy，不开下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI/review 再变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr checks 212`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
