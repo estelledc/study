@@ -25,7 +25,7 @@
 - external_outcome：1 个 review-ready PR；未授权 merge。
 - stop conditions：本轮写入结束；merge / deploy / 规模 baseline 处置需单独授权。
 - 下一次 wake 条件：PR review/CI 变化，或 owner 新的有限目标。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddff npm run verify:ci`（规范 Node 22.23.1）。
+- 下一条命令：查看 PR #104 的 CI / review；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
