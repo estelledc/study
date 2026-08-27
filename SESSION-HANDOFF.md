@@ -15,12 +15,12 @@
   1. `table` 绑定 tag `v6.9.0` / `8b85bc8f7e5202c2fcea295bd59d4e7d25519c7a`（与 npm `gitHead` 一致）；修正“默认单线框 / stream 也返回字符串”这类未绑定印象。
   2. `cli-table3` 绑定 annotated tag `v0.6.5` 剥开提交 `9577efd51114e61fb035b7cc493adf0c0dc7921b`（tag 对象 `2c80c8b2...`，与 npm `gitHead` 一致）；写清 Array 子类、对象行变形、缺格补空、optional `@colors/colors`。
   3. 新增共享审查文档与两份 generation 1 static receipt。
-- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`。`audit:counts` / `audit:site-state` / `audit:project-standard` / `audit:content-contract` 已在派生刷新后通过。全量 `verify:ci` 以 PR 头检查为准。
+- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=89766cc27 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。`audit:project-standard`：`benchmark-aligned=69`、`needs-evidence=896`。`audit:content-contract`：`v2=138`、`legacy-unverified=1910`、blocking 0。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态审查 + 派生刷新；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改 baseline、阈值或证据布局。
 - stop conditions：一个 PR 已打开且未 merge 后停止。不执行 merge / deploy，不开下一对研究页。
 - 下一次 wake 条件：本 PR 的 CI/review 状态变化，或 owner 另行授权 merge。
-- 下一条命令：`gh pr view --json url,state,statusCheckRollup`。
+- 下一条命令：用 GitHub 查看 PR #203 的 CI；不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
