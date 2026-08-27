@@ -21,6 +21,7 @@
   - `audit:content-contract`：0 blocking。
   - `audit:counts`：projects=963、papers=1083、total=2046。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（含 23 Playwright tests）。
 - budget：2 个小型本地 worktree + 2 页静态源码审查；单 writer；1 个 PR。
 - blocker：未获 merge / deploy 授权。
 - stop_conditions：定向验收失败且无法在 scope 内修复；需要改政策、队列或放宽门禁；用户停止。
