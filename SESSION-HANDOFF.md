@@ -16,12 +16,12 @@
   1. `srvx` 绑定 annotated tag `v0.12.7` / `053be62e5e9e1f1966ab8592f1254ac40ac00317`；npm latest 同版本但无 `gitHead`；修正默认端口/全接口、`trustProxy=false`、构造期 middleware 折叠、Node 400 request-target、body 上限运行时差异。
   2. `crossws` 绑定 annotated tag `v0.4.12` / `6d366f8b6d2ddd0276fd9eb9962a223f1a68429e`；npm 无 `gitHead`；LICENSE 为 MIT；修正 once-per-connection `resolve`、默认不回显子协议、Request hooks 通道、default SSE fallback、与 srvx `upgrade` 插件关系。
   3. 新增共享 `docs/server-ws-source-review-20260827-gh.md` 与两份 generation 1 static receipt；taxonomy 归入 `projects-backend-and-apis`。
-- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory；receipt digest 与正文一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0。全量 `verify:ci` 在推送后继续跑。
+- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory；receipt digest 与正文一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0。`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（366 Node tests、strict build 2287 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：2 个 ignored blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker（先于本切片存在）：规模 compare detector 在 main 上已超 threshold，处置需 owner；本轮未改 baseline / 阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
-- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #255 的 CI / review；未获授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
