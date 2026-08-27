@@ -7,16 +7,19 @@
 - status：Program `active`；本地 writer epoch `complete`。
 - 起始 ref：`1f2917d90`（本分支从当时 `origin/main` 切出）。
 - objective：把 `needs-evidence` 的 `buildah` 与 `buildkit` 两页绑到不可变 git SHA，纠正未绑定 star/耗时与过时命令合同。
-- scope：两页正文、2 份 generation-1 receipt、`docs/container-image-build-source-review-20260827-fr.md`、本 handoff、2 个 ignored 浅克隆；不改派生 index / atlas / project-standard snapshot。
-- activated_by：`explicit-user-request-2026-08-27-parallel-writer-fr`。
+- scope：两页正文、2 份 generation-1 receipt、`docs/container-image-build-source-review-20260827-fr.md`、本 handoff、2 个 ignored 浅克隆；CI 失败后补刷本对页面驱动的派生 snapshot（`note-index` / `project-standard-audit` / `site-state` / 首页计数）。不 merge 兄弟 PR 的 index。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-fr`；随后 `verify:ci` 在 `bd2652b0d` 因 `data/site-state.json` stale 失败。
 - detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文含未绑定 star、耗时倍数，并把 `bud`、scratch config、BuildKit daemonless 写成过时或过满合同。
-- external delta：分支 `cursor/buildah-buildkit-source-bind-df40` 计划 push + 开 PR（本波次用户授权）；未 merge、未 deploy。
+- external delta：分支 `cursor/buildah-buildkit-source-bind-df40` + PR #214（本波次用户授权）；未 merge、未 deploy。
 - 完成切片：
   1. `buildah` 绑定 annotated tag `v1.45.0` / `7ae7d5a4021b24d02a5c281badca8c4d8ebbf442`。
   2. `buildkit` 绑定 annotated tag `v0.32.2` / `991535e0973488b6a429096d21fa13f81f2d89d8`。
-- acceptance checks：两页 `quality-gate.mjs`；两份 receipt digest / revision 对齐，evidence `UNVERIFIED`；`git diff --check`。
-- budget：2 页、1 个 writer、浅克隆约 79M+95M。
-- stop conditions：两页 epoch 完成；派生 index 冲突不是本 writer 的 merge 工作。
+  3. 按 CI 失败证据重生成本对页面的派生 snapshot：`benchmark-aligned` 73→75，`needs-evidence` 890→888，`v2` 142→144。
+- acceptance checks：两页 `quality-gate.mjs`；两份 receipt digest / revision 对齐，evidence `UNVERIFIED`；`git diff --check`；`derive-site-state` check 对应当前 snapshot。
+- budget：2 页 + 1 次 CI 驱动派生刷新；单 writer；浅克隆约 79M+95M。
+- stop conditions：两页 epoch 完成且本分支 snapshot 可过 `site-state` check；兄弟 PR 的派生 index 冲突不是本 writer 的 merge 工作。
+- 下一次 wake 条件：PR #214 的 CI/review 再变化。
+- 下一条命令：`gh pr checks 214`。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
