@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CS：日历 UI 双子
+
+- supervisor 状态：`running`（writer epoch complete，等待 PR review；不自合并）。
+- status：Program `active`；本地 writer CS epoch `complete`。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`（本轮 `origin/main`）。
+- objective：把 `fullcalendar` 与 `tui-calendar` 以 `STATIC_REVIEW` / `UNVERIFIED` 绑定固定源码，形成一对可横向比较的日历 UI 页。
+- scope：两篇新建项目页、2 份 generation 1 receipt、`docs/calendar-ui-source-review-20260827-cs.md`、atlas / note-index / site-state / project-standard 派生、公开规模文案与本 handoff；未安装上游依赖、未渲染、未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-cs-20260827`。
+- detector fingerprint：开放 PR 未占用这两个 slug；仓库原先没有这两页，但 [[fullcalendar]] 已被 vis-timeline / TimelineJS 引用。
+- external delta 计数：本轮只形成 review-ready PR，未 merge、未 deploy；D 轴不提升。
+- 已完成切片：
+  1. `fullcalendar` 绑定 annotated tag `v7.0.2` peel `f413ddfe...`；npm `gitHead` 为空，已披露。纠正 v7 包名、`render()` 不自动调用、daygrid plugin 与 Temporal peer 边界。
+  2. `tui-calendar` 绑定 `calendar@2.1.3` / npm `gitHead` `99ee7029...`；wrapper tag 指向后续提交，已披露。纠正三视图工厂、`(id, calendarId)` 身份、默认统计与全局 DOMPurify hook。
+  3. 新增共享 `docs/calendar-ui-source-review-20260827-cs.md` 与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` / `audit:wikilinks` / `audit:content-contract` / `audit:project-standard` 通过。`verify:ci` 在首个 push 之后跑。
+- budget：2 个新建页、1 个可写切片、1 个 PR。
+- 剩余 blocker：需要 owner review；不得自合并。
+- 下一次 wake 条件：PR CI / review 变化，或 owner 给出 merge 授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
