@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CG · TypeScript runner 双子
+
+- status：`running` 完成本地 writer epoch；等待 PR review，不自合。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：给 `tsx` 与 `ts-node` 绑定可复查的固定 revision，证据保持 `STATIC_REVIEW` / `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：新增两页、共享 `docs/ts-runner-source-review-20260827-cg.md`、两份 generation 1 receipt、taxonomy/atlas/site-state/公开计数；未安装上游依赖、运行 CLI、watch、REPL 或性能 benchmark。
+- activated_by：`explicit-user-goal-parallel-writer-cg-20260827`。
+- detector fingerprint：仓库没有 `tsx` / `ts-node` 项目页；开放 PR 未占用这对 slug。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；开一个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `tsx` 绑定 `privatenumber/tsx@ed9d3304...` / `tsx@4.23.12`，写清父进程 spawn、esbuild-only transform、CJS `import.meta` shim 与磁盘缓存边界。
+  2. `ts-node` 绑定 `TypeStrong/ts-node@057ac1be...` / `ts-node@10.9.2`，写清默认 type-check、`swc`/`transpileOnly` 互斥、强制 compiler options 与 `--esm` 子进程。
+  3. 共享 provenance 文档与两份 STATIC_REVIEW receipt；项目审计 `benchmark-aligned` 18 → 20。
+- acceptance checks：两页 `quality-gate.mjs` 通过、0 advisory；receipt digest 与 `UNVERIFIED` 一致；`audit:counts` / `audit:content-contract` / `audit:site-state` / `git diff --check` 通过。
+- budget：1 个 epoch、2 页、单 writer。
+- blocker：无。未授权 merge。
+- stop conditions：PR 已形成即可结束 writer；不得自合。
+- 下一次 wake 条件：owner review / CI；无新授权不开启下一内容批次。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

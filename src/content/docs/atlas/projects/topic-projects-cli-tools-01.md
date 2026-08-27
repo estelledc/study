@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -71,6 +71,8 @@ sidebar:
 | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | `the-silver-searcher` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | `tig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | `tmux` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ts-node — 把 TypeScript 编译器接到 Node 的 require / ESM loader](/study/projects/ts-node/) | `ts-node` | intermediate | UNVERIFIED | 固定稳定版默认走 TypeScript 类型检查，SWC 与 --esm 是显式旁路 |
+| [tsx — 给 Node 挂上 esbuild 就能跑 TypeScript](/study/projects/tsx/) | `tsx` | intermediate | UNVERIFIED | 固定版本用父进程 spawn Node，再靠 CJS/ESM hook 把 TypeScript 交给 esbuild |
 | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | `universal-ctags` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) | `wezterm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | `xh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

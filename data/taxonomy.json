@@ -2496,6 +2496,14 @@
       "topic_id": "projects-data-fetching-and-routing"
     },
     {
+      "note_id": "projects::ts-node",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::tsx",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::turbopack",
       "topic_id": "projects-build-tools-and-bundlers"
     },

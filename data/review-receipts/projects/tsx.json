@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tsx",
+    "digest_sha256": "e89a1dad64f4585463edbf66bf806f04700c770ae0d1a784af13d5d5a3e9c8f7"
+  },
+  "source_revision": "ed9d33046a135de13a35fdfce12368b79d1b1518",
+  "research_input_sha256": "7c0095c0e7a8f992d0d90bbe030aa1ec08680be56766af973f2c0435e78b927d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-cg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains parent spawn, esbuild-only transform, import.meta CJS shim, and cache/tsconfig boundaries with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-cg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "CLI, run(), CJS/ESM hooks, transform/cache, and tsconfig loaders were inspected; upstream CLI and tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-cg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Applicable version follows npm/tag 4.23.12; repo package.json remains 0.0.0-semantic-release and is disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}
