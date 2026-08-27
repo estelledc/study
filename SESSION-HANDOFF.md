@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BA：winston / bunyan STATIC_REVIEW
+
+- supervisor 状态：`running` → writer epoch `complete`；未 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 winston 与 bunyan 绑定到可达静态 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、`docs/node-logger-source-review-20260827-ba.md`、两份 generation 1 receipt、taxonomy/atlas/site-state 派生；未改候选队列、政策阈值、pino 正文或远端 `main`。
+- activated_by：`explicit-user-request-parallel-writer-ba-20260827`。
+- detector fingerprint：开放 PR 已占用 `pino`；`winston` / `bunyan` 在 origin/main 无页、无开放 PR slug。
+- external delta 计数：本轮只形成 1 个 review PR，不 merge、不部署；D 轴不提升。
+- 已完成切片：
+  1. 绑定 `winstonjs/winston@ed45345f...` / `3.19.0` 与 `trentm/node-bunyan@0ff1ae29...` / `2.0.5`（beta tag），npm `gitHead` 一致。
+  2. 新增两篇 `study-v2` 笔记与共享源码审查记录；披露 bunyan 2.0.5 beta 与 winston defaultLogger 无 transport。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；`audit:content-contract` 0 blocking；`git diff --check` 通过。全量 `verify:ci` 在开 PR 后跑。
+- budget：1 个 logger 双子切片、单 writer。
+- blocker：未授权 merge。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另授 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+- 不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

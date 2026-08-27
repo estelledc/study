@@ -1812,6 +1812,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::bunyan",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
       "note_id": "projects::caddy",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2585,6 +2589,10 @@
     },
     {
       "note_id": "projects::why-did-you-render",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::winston",
       "topic_id": "projects-observability-and-performance"
     },
     {
