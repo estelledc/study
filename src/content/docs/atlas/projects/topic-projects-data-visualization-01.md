@@ -53,7 +53,7 @@ sidebar:
 | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | `observable-plot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | `openlayers` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | `panel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) | `pdfkit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [PDFKit — 用可读流从零画出一份 PDF](/study/projects/pdfkit/) | `pdfkit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pdfme — TypeScript 模板化 PDF](/study/projects/pdfme/) | `pdfme` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | `plotly-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | `plotly-py` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
