@@ -2428,6 +2428,10 @@
       "topic_id": "projects-css-and-styling"
     },
     {
+      "note_id": "projects::sucrase",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::supabase",
       "topic_id": "projects-data-applications-and-saas"
     },
@@ -2494,6 +2498,10 @@
     {
       "note_id": "projects::trpc",
       "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::ts-jest",
+      "topic_id": "projects-testing-and-verification"
     },
     {
       "note_id": "projects::turbopack",

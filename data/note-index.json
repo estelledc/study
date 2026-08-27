@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -60176,6 +60176,37 @@
       }
     },
     {
+      "id": "projects::sucrase",
+      "area": "projects",
+      "slug": "sucrase",
+      "title": "sucrase — 用 token 改写把 TS/JSX 剥成现代 JS",
+      "description": "介绍 sucrase 3.35.1 如何用 parser token 而不是 AST visitor 剥 TypeScript/JSX，以及 register/CLI 的 CJS 默认。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "构建工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sucrase/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::sui",
       "area": "projects",
       "slug": "sui",
@@ -61910,6 +61941,37 @@
       "atlas": {
         "chunk_id": "topic-projects-data-fetching-and-routing-01",
         "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
+      "id": "projects::ts-jest",
+      "area": "projects",
+      "slug": "ts-jest",
+      "title": "ts-jest — 把 TypeScript compiler API 接到 Jest",
+      "description": "介绍 ts-jest 29.4.12 如何在 isolatedModules 与 Language Service 两条路径上转译 TS，以及 ESM 诊断与 babel 第二段的边界。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ts-jest/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
       }
     },
     {
@@ -65433,7 +65495,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 14
+      "entries": 15
     },
     {
       "id": "topic-projects-cli-tools-01",
@@ -65867,7 +65929,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-testing-and-verification-01/",
-      "entries": 6
+      "entries": 7
     },
     {
       "id": "topic-projects-ui-and-frontend-frameworks-01",

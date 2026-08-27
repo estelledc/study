@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DU：sucrase + ts-jest
+
+- supervisor 状态：`running` → 本地 writer epoch `complete`（待 PR review；未 merge）。
+- status：Program `active`；本轮只形成 review-ready PR。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`。
+- objective：把 TS 转译双子 `sucrase` 与 `ts-jest` 绑到可达静态 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`；文档 `docs/ts-transpile-source-review-20260827-du.md`。
+- scope：两篇新项目页、共享源码审查、两份 generation 1 receipt、taxonomy / atlas / note-index / project-standard / site-state、公开计数文案、本 handoff；未安装上游依赖、未跑 Jest/CLI/hook/benchmark；不改 [[swc]] / [[esbuild]] / tsx。
+- activated_by：`explicit-user-parallel-writer-du-20260827`。
+- detector fingerprint：仓库无 sucrase / ts-jest 项目页；既有 [[swc]] / [[esbuild]] / [[jest]] 为 legacy；本对是 JS token 转译 vs Jest+TypeScript compiler API。
+- external delta 计数：分支将 push 并开 1 个 PR（用户授权）；未 merge、未 deploy，D 轴不提升。
+- 已完成切片：
+  1. `sucrase` 绑定 `280ee202e73b...` / `3.35.1`（npm `gitHead` 指向父提交 `fa5b7abf...` 且仍自报 3.35.0，无 GitHub tag，已披露）。
+  2. `ts-jest` 绑定 tag `v29.4.12` / `3f05625da1...`（npm `gitHead` 一致）。
+  3. 新增 `docs/ts-transpile-source-review-20260827-du.md` 与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` 与 `audit:content-contract --changed-from origin/main` 无 blocking。`verify:ci` 在 commit 后跑。
+- budget：1 个 TS-transpile 双子切片、1 个本地 writer。
+- blocker：无。本对不覆盖 native SWC / esbuild / tsx。
+- stop conditions：定向门禁通过即结束 writer；不 merge。
+- 下一次 wake 条件：本 PR 的 review / CI；无新授权不继续写内容。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`。
+
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

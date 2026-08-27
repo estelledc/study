@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sucrase",
+    "digest_sha256": "68f741cb12069edc9d69586ef3d81fec8823a26a7175e8abe55b379f01c8e70f"
+  },
+  "source_revision": "280ee202e73b18e396069782bd41e1eaaccbf620",
+  "research_input_sha256": "c18625b5309f283472cfe8727eeaf8aca6cfd4aaaf0184443c34a89eb735cbe5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates token rewrite, imports-vs-ESM, register CJS default, and CLI tsconfig JSON.parse/exclude TODO."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "index, Options, RootTransformer, TypeScriptTransformer, register, CLI, and Jest hoist were inspected; CLI/hook/tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds 3.35.1 bump commit 280ee202; npm gitHead is parent fa5b7ab still labeled 3.35.0. No GitHub tag."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
