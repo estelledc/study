@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "13 条 通用开发工具 Atlas 分块"
+description: "15 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,11 +9,13 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 15 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [c12 — 把多层配置 defu 成一份](/study/projects/c12/) | `c12` | intermediate | UNVERIFIED | 主文件加 rc，可选 packageJson、dotenv 与 extends，默认不读环境文件 |
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [cosmiconfig — 按约定文件名找一份配置](/study/projects/cosmiconfig/) | `cosmiconfig` | intermediate | UNVERIFIED | 默认只搜当前目录，searchStrategy 才决定要不要往上走 |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

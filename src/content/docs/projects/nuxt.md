@@ -173,6 +173,7 @@ const { data } = await useFetch('/api/hello')
 - [[vue]] —— Nuxt 直接构建在 Vue 之上；理解 Vue Composition API 是用好 Nuxt 的前提
 - [[next-js]] —— React 生态的对应方案；理念相似（文件即路由 + SSR + auto-data-fetch），但运行时不通用
 - [[astro]] —— 另一种 meta 框架取舍：默认 0 JS、内容站优先；与 Nuxt 形成"内容 vs 全栈"的两端
+- [[c12]] —— unjs 配置加载器；本站 c12 页绑定 3.3.4 静态审查，不代表 Nuxt 当前钉死该 revision
 
 ## 反向链接
 

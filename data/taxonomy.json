@@ -1812,6 +1812,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::c12",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::caddy",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -1874,6 +1878,10 @@
     {
       "note_id": "projects::continue",
       "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::cosmiconfig",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::d3",

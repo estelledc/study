@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FC：cosmiconfig + c12 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`c7615aa91`（当时的 `origin/main`）。
+- objective：新增 `cosmiconfig` 与 `c12` 两页源码绑定的 `study-v2` 静态审查；证据边界 `STATIC_REVIEW` / `UNVERIFIED`。目标页原先不存在，未改用 fallback 对。
+- scope：两页正文、2 份 generation 1 receipt、`docs/config-loader-source-review-20260827-fc.md`、taxonomy assignment、派生索引与公开计数、`nuxt` 一条反向关联、本 handoff；未安装上游依赖、未跑上游测试、未测 bundle / dotenv / giget。
+- activated_by：`explicit-user-parallel-writer-fc-20260827`。
+- detector fingerprint：仓库无 cosmiconfig / c12 页；旧印象把 cosmiconfig 默认写成沿目录树上行，把 c12 默认写成会读 `.env` / 全局 rc。
+- external delta：本 PR（push + 开 PR 已授权）；未 merge、未 deploy。
+- 完成切片：
+  1. `cosmiconfig` 绑定 tag `v10.0.0` → `014687e689b04c34d72fa89997f8c6c3bdcf5756`（与 npm `10.0.0` `gitHead` 一致）；默认 `searchStrategy: 'none'`。
+  2. `c12` 绑定 tag `v3.3.4` → `49ef83ce30492e512b88326c8cacc8d06a8ba8ec`（与 npm `3.3.4` `gitHead` 一致）；披露 npm latest `4.0.0-beta.5` 未绑定。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate` pass / 0 advisory；receipt `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致；`audit:project-standard` snapshot 写后 `benchmark-aligned=73`。
+- budget：2 个 blob-filtered worktree + 2 页新增；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值、未 merge。
+- stop conditions：单一 PR 已打开且未请求 merge 后停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr view` 查看本 PR；不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
