@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -34682,6 +34682,37 @@
       }
     },
     {
+      "id": "projects::adonisjs",
+      "area": "projects",
+      "slug": "adonisjs",
+      "title": "AdonisJS — 用 Ignitor 把容器、HTTP 和 Ace 绑在一起的 Node 全栈内核",
+      "description": "介绍 @adonisjs/core 如何用 Ignitor、provider 和 Ace 组装 HTTP，而把 Lucid 与 Auth 留在内核之外。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "全栈"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/adonisjs/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::affine",
       "area": "projects",
       "slug": "affine",
@@ -57828,6 +57859,37 @@
       }
     },
     {
+      "id": "projects::sails",
+      "area": "projects",
+      "slug": "sails",
+      "title": "Sails — 先 lift 再按 hook 拼起来的 Node MVC 框架",
+      "description": "介绍固定版本 Sails 如何把 lift 拆成 load 与 initialize，并把 ORM 与 sockets 留在可选 hook。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "全栈"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sails/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::salvo",
       "area": "projects",
       "slug": "salvo",
@@ -65755,7 +65817,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-mobile-development-01",

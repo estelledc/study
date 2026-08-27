@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sails",
+    "digest_sha256": "da461eb9bbde1b50b8c42743293e9cddc801034ddc2cdcd1fcd1a399d63e1acf"
+  },
+  "source_revision": "7b76422cc27823df033572bdda5c4910a68b697f",
+  "research_input_sha256": "58b925493005dd45a7bf39e1f341d1158e9586404c012e3b1e2373d0d4ddcd76",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains load versus initialize, optional ORM/sockets hooks, blueprint defaults, and singleton require with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v1.5.18 lift/load/hooks/http/blueprints path and Express/Skipper boundary were inspected; lift and Waterline were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "engines.node >=0.10 is disclosed as stale metadata; Waterline is not a production dependency of this package."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

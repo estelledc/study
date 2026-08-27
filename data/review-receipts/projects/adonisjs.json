@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "adonisjs",
+    "digest_sha256": "e627688cdea4585133708f83b1a5fafe64f47c25c5cdb4a4e9ab48e9a6a50a78"
+  },
+  "source_revision": "0348a3b448fe91194d8ccf62d481b38ac9189176",
+  "research_input_sha256": "58b925493005dd45a7bf39e1f341d1158e9586404c012e3b1e2373d0d4ddcd76",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Ignitor environments, provider bindings, ace serve versus bin/server, and Node 24 with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v7.5.0 Ignitor HTTP/Ace chain, AppServiceProvider, Vine peer, and assembler serve path were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm gitHead 2c8ece56 is the reachable parent of tagged 0348a3b4; Lucid/auth/session stay out of this core-bound note."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

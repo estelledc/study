@@ -1756,6 +1756,10 @@
       "topic_id": "papers-cryptography-and-security"
     },
     {
+      "note_id": "projects::adonisjs",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
       "note_id": "projects::affine",
       "topic_id": "projects-data-applications-and-saas"
     },
@@ -2370,6 +2374,10 @@
     {
       "note_id": "projects::rspack",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::sails",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
     },
     {
       "note_id": "projects::sentry",
