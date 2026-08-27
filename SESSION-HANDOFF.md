@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IB：gin + fiber
 
-- supervisor 状态：writer epoch `running` → 本地切片完成，待 `verify:ci` 与 PR review；未 merge。
+- supervisor 状态：writer epoch `complete`；PR #287 待 review，未 merge。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
 - objective：把 `gin` 与 `fiber` 两页迁到固定源码 `study-v2`，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两页正文、共享审查文档 `docs/go-http-source-review-20260827-ib.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测吞吐。未改其他 writer 拥有的笔记正文。
@@ -15,12 +15,12 @@
   1. `gin` 绑定 tag `v1.12.0` → `73726dc606796a025971fe451f0aa6f1b9b847f6`；纠正「底层仍是 httprouter 依赖」、`BindJSON` 会写 JSON 400 体、默认 HTTP 协议范围。
   2. `fiber` 绑定 tag `v3.5.0` → `741d8511a75f408ddf93eb41b175df0165714f11`；纠正「完全不兼容 net/http」、默认可跨请求持有 Params、Listen 自动 HTTP/2。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准对齐数 85 → 87。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` projects=967、papers=1083、total=2050；`audit:wikilinks` blocking 0；`audit:project-standard` snapshot CURRENT、`benchmark-aligned=87`；`git diff --check` 通过。`verify:ci` 待本提交后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` projects=967、papers=1083、total=2050；`audit:wikilinks` blocking 0；`audit:project-standard` snapshot CURRENT、`benchmark-aligned=87`；`git diff --check` 通过。`STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下通过（首次缺 Playwright browser，安装 chromium 后 23 个 a11y 测试全绿；其余门禁含 strict build 与 diff 检查）。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 完成后停止；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/287 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
