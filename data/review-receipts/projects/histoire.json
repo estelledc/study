@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "histoire",
+    "digest_sha256": "98bba78bc341fad802170132cd88f29bd12d296c4e9435fb8fb0ba9635c21ccd"
+  },
+  "source_revision": "f04001937b86d330d1b8df3483adbad4bfbcc57c",
+  "research_input_sha256": "27d553f139ab73f09e69ac226bb55dbd3132e3869f4bd0473bcadc1567ed9cc8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains execute-to-collect, default Vue/Svelte globs, two Vite servers, and iframe default with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Config, collect workers, Vue Story/Variant, and remote preview postMessage were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "1.0.0-beta.1 is disclosed as a prerelease line; v0.17.17 remains a different reachable SHA and is out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

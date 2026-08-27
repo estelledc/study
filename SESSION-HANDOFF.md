@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DH：Ladle / Histoire 组件工坊
+
+- supervisor 状态：本 writer epoch `complete`；未 merge、未 deploy。
+- status：`running` 已收口为本地 review-ready PR。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`。
+- objective：为 ladle 与 histoire 建立 `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2 项目页，并留下 `docs/component-workshop-source-review-20260827-dh.md`。
+- scope：两篇新项目页、两份 generation 1 receipt、共享源码审查文档、atlas / note-index / project-standard / site-state 与公开计数派生、本 handoff；未安装上游依赖、未跑 dev server / 上游测试 / bundle。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-dh`。
+- detector fingerprint：仓库无独立 ladle / histoire 页；Storybook 正文把 Ladle 写成“Vite 原生、启动 2s”，把 CSF 复用外推到 Histoire；真实包名与发现/隔离合同未绑定。
+- external delta 计数：本轮只形成 review-ready PR（用户授权 push + 一个 PR）；未 merge、未 deploy，D 轴不提升。
+- 完成切片：
+  1. `ladle` 绑定 annotated tag `@ladle/react@5.1.1` / `780c19e5...`，写清 Babel 静态发现、函数故事、默认同树预览与 a11y/MSW 默认关闭。
+  2. `histoire` 绑定 `v1.0.0-beta.1` / `f0400193...`，写清 worker 执行收集、默认 Vue/Svelte glob、双 Vite 服务器与默认 iframe；披露 `v0.17.17` 是另一 SHA。
+  3. 新增共享 `docs/component-workshop-source-review-20260827-dh.md` 与两份 static receipt。
+- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest 与 revision 对齐；`audit:counts` / `audit:site-state` / `audit:learning-paths` / `audit:content-contract --changed-from origin/main` 无 blocking。`verify:ci` 在提交后跑。
+- budget：2 个 ignored worktree + 2 页新笔记 + 派生刷新；单 writer。
+- blocker：规模 compare detector 在 main 上已超 baseline，本轮未改 threshold。
+- stop conditions：本 epoch 以一个 PR 结束；不 merge。
+- 下一次 wake 条件：PR CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
