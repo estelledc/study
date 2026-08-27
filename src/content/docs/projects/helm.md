@@ -167,9 +167,9 @@ helm rollback my-nginx 1
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
-- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[projects/k3s]] —— k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
-- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
+- [[kind]] —— kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[projects/kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE

@@ -164,7 +164,7 @@ http:
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
-- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[projects/k3s]] —— k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[mender]] —— Mender — 给 IoT 设备做不会刷砖的 OTA 升级

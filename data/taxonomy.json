@@ -2048,6 +2048,14 @@
       "topic_id": "projects-image-processing-and-canvas"
     },
     {
+      "note_id": "projects::k3s",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::kind",
+      "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
       "note_id": "projects::kubernetes",
       "topic_id": "projects-devops-containers-and-operations"
     },

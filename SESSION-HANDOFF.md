@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HT：k3s + kind
+
+- status：writer epoch `complete`；review-ready；push + 单 PR 已授权，merge / deploy 未授权。
+- 起始 ref：以分支点 `origin/main` 为准（本轮 `git fetch origin main` 后新建 `cursor/local-k8s-k3s-kind-ht-bd28`）。
+- objective：把 `needs-evidence` 的 local-k8s 双子 `k3s` 与 `kind` 迁到固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` study-v2。
+- scope：两篇项目页、共享审查文档 `docs/local-k8s-source-review-20260827-ht.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、已有生成反向链接上的标题同步、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未起集群、未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-ht-2026-08-27`。
+- detector fingerprint：`k3s` / `kind` 在 `project-standard-audit` 为 `needs-evidence`（缺 `pinned_revision` / `evidence_boundary` / `self_test`）；开放 PR 标题未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `k3s` 绑定轻量 tag `v1.36.3+k3s1` → `5aed4d7beddeb3e67120da477c876ac9efd70318`；纠正默认 Kine/SQLite、`--cluster-init` 嵌入 etcd、`DisableItems` 与 README「< 100 MB」。
+  2. `kind` 绑定 annotated tag `v0.33.0` 剥皮提交 `407a9675e6d9af1200b5f57f9ca52ec6cdacce74`；默认节点镜像为 `kindest/node:v1.37.0@sha256:a1ed56…`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` / `audit:project-standard` CURRENT（benchmark-aligned=87）；`git diff --check` 通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得改其他 writer 正在写的页面。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

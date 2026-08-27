@@ -154,7 +154,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
-- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[projects/k3s]] —— k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nats]] —— NATS — 极简云原生消息系统

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "k3s",
+    "digest_sha256": "d4b1fbdbef8101fbb7e75420f56a8a82b89c93497831d3e6546f5a3312cbaeca"
+  },
+  "source_revision": "5aed4d7beddeb3e67120da477c876ac9efd70318",
+  "research_input_sha256": "070efe06fdda84d61caa579e0b4b9c565c7618a025f123aa37d08fe1a6871430",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ht",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Kine/SQLite default, --cluster-init embedded etcd, and DisableItems from older 70MB/1.28 claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ht",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Read server flags, managed driver, DefaultEndpointConfig, sqliteFile, and embed executor; clusters were not started."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ht",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds lightweight tag v1.36.3+k3s1 to commit 5aed4d7; README size/memory claims were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

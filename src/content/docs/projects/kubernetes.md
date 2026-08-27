@@ -177,9 +177,9 @@ kubectl get svc web   # 看 PORT(S)；本地可用 minikube service web
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
-- [[projects/k3s]] —— k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+- [[projects/k3s]] —— k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
-- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
+- [[kind]] —— kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令

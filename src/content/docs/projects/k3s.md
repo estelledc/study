@@ -1,156 +1,161 @@
 ---
-title: k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制
+title: k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制
+description: 介绍 k3s v1.36.3+k3s1 如何用嵌入执行器、默认 SQLite/Kine 与 --disable 清单把 Kubernetes 收成轻量发行版。
 来源: https://github.com/k3s-io/k3s
-日期: 2026-05-31
+日期: 2026-08-27
 分类: 基础设施 / 容器编排
 难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/k3s-io/k3s
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 5aed4d7beddeb3e67120da477c876ac9efd70318
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: v1.36.3+k3s1
 ---
 
 ## 是什么
 
-**k3s** 是 Rancher Labs 2019 年推出的轻量级 Kubernetes 发行版：把完整 K8s 的控制平面打包成**一个不到 70 MB 的 Go 单二进制**，500 MB 内存就能跑起来。
+k3s 是 Rancher / CNCF 维护的 **Kubernetes 发行版**，不是另一套 API。日常类比：整套商业厨房拆成五台机器（apiserver / scheduler / controller-manager / kubelet / kube-proxy）；k3s 把刀片焊进一把折叠刀——`main.go` 用 `embed.New` 初始化执行器，再按子命令分发 `server` / `agent` / `kubectl` / `crictl`。
 
-日常类比：
-
-- 完整 Kubernetes 像**整套商业厨房**——冰柜、烤箱、洗碗机、备餐台分成 5 台机器，要专人维护，开火前先开半小时
-- k3s 像**露营用的多功能炊具**——一个小箱子里折叠出灶、锅、刀、铲，一插电就能做四菜一汤；功能砍了一些（不能同时做 100 人的菜），但能跑就行
-- 同样的菜谱（YAML），同样的味道（API 兼容），换个炉子做出来
-
-名字由来：K8s 是 Kubernetes 的缩写（K + 中间 8 个字母 + s 共 10 字符），k3s 取它一半的字符数（K + 3 + s = 5），意思是 **"半个 K8s"**——资源占用减半，功能保留主干。
-
-由 Rancher CTO Darren Shepherd 主导开发，2020 年捐给 CNCF 沙箱，2022-08 毕业为 CNCF 孵化项目。
-
-## 为什么重要
-
-不用 k3s，下面这些场景就很尴尬：
-
-- **树莓派 / 工控机想跑 K8s**——完整 K8s 内存吃 2 GB 起步，4 GB 的小板根本跑不动；k3s 在 1 GB ARM 板上能跑全套
-- **边缘节点 / IoT 网关**——CDN 节点、工厂网关这种"人在偏远地方机器在更偏远地方"的场景，部署越简单越好；k3s 一条 `curl | sh` 装完
-- **本地开发替代 minikube**——minikube 要起虚拟机或 Docker，k3s 直接在宿主机跑进程，启动 10 秒不是 60 秒
-- **CI 测试环境**——GitLab Runner / Jenkins 节点上需要一个真 K8s 跑 e2e 测试，k3s 比 kind 启动快、比 minikube 资源省
-
-## 核心要点
-
-k3s 砍掉的、替换的、保留的，可以拆成 **三类设计决策**：
-
-1. **单二进制塞进所有控制平面组件**：完整 K8s 的 `kube-apiserver` / `kube-scheduler` / `kube-controller-manager` / `kubelet` / `kube-proxy` 是 5 个独立进程，k3s 把它们**静态链接成一个 Go 二进制**，启动一个进程 = 完整 K8s。类比：把瑞士军刀的所有刀片焊成一把折叠刀。
-
-2. **元数据存储默认 SQLite，不是 etcd**：完整 K8s 用 etcd 存集群状态（5 节点起步保证 HA），k3s 单节点默认用 SQLite 文件——一个文件就是整个集群的"账本"。多节点 HA 才切回嵌入式 etcd 或外接 MySQL/Postgres。
-
-3. **替换重组件 + 移除废功能**：containerd 替代 Docker、flannel 替代 calico、traefik 替代 nginx-ingress、klipper-lb 替代 MetalLB；同时移除 in-tree 云厂商插件、in-tree 存储驱动、alpha 特性、过期 API。
-
-核心 API 与标准 K8s 兼容——`kubectl`、`kubeconfig`、绝大多数 Helm chart 可直接用（已移除的 legacy / in-tree 云厂商 API 除外）。
-
-## 实践案例
-
-### 案例 1：60 秒装好一个单节点 K8s
+固定 tag `v1.36.3+k3s1` 的 `go.mod` 把 `k8s.io/*` replace 到 `github.com/k3s-io/kubernetes/... v1.36.3-k3s1`。README 写的是「小于 100 MB 的单二进制」，不是旧教程里的 70 MB；本轮未称重。
 
 ```bash
 curl -sfL https://get.k3s.io | sh -
 sudo kubectl get nodes
-# NAME      STATUS   ROLES                  AGE   VERSION
-# my-pi     Ready    control-plane,master   12s   v1.28.5+k3s1
 ```
 
-完整 K8s 走 kubeadm 至少要：装 docker → 装 kubelet/kubeadm/kubectl → 配置 systemd cgroup → `kubeadm init` → 装网络插件，**5 步起 30 分钟**。
+README 的 Quick-Start 说：安装脚本会把 kubeconfig 写到 `/etc/rancher/k3s/k3s.yaml`，并启动或重启 systemd / openrc 服务。本页没有执行这条命令。
 
-### 案例 2：默认装了什么、怎么关掉
+## 为什么重要
 
-`curl | sh` 跑完，集群里已经躺好了：
+不读固定 1.36.3 源码，旧笔记会把三件事写错：
 
-- `traefik`（Ingress 控制器，端口 80/443）
-- `klipper-lb`（LoadBalancer，把 Service 直接绑到节点 IP）
-- `local-path-provisioner`（默认 StorageClass，把 PVC 映射成节点本地目录）
-- `coredns`（DNS）
+- 默认账本还是「一个 SQLite 文件，没有 shim」——实际是 **Kine** 把 SQLite / MySQL / Postgres / NATS / 外接 etcd 伪装成 etcd API
+- `--disable traefik` 能关掉所有打包件——`DisableItems` 现在是 `coredns, servicelb, traefik, local-storage, metrics-server, runtimes`
+- flannel「只有 vxlan」——`--flannel-backend` 合法值是 `none` / `vxlan` / `host-gw` / `wireguard-native`，默认才是 `vxlan`
 
-不想要 traefik？`curl -sfL https://get.k3s.io | sh -s - --disable traefik`，启动时直接关掉。
+它和 [[kind]] 的分工也不是「谁更快」：k3s 是宿主机上的发行版进程；kind 是用容器当节点、再用 kubeadm 起上游 Kubernetes。
 
-### 案例 3：HA 多节点（生产场景）
+## 架构与流程
 
-单节点 SQLite 挂了集群挂了，生产必须 HA：
+从敲下 `k3s server` 到集群能 `kubectl`，固定源码的主链是：
+
+1. **单进程执行器**：`main` 给 `server` / `agent` 包一层 `initExecutor`。`embed.New` 失败就直接退出；成功后 `executor.Set(ex)`，控制面组件不再各起一个独立二进制。
+
+2. **默认走 Kine，不自动起嵌入 etcd**：`server.Run` 先把 `Datastore` 设成 `etcd.DefaultEndpointConfig()`（监听 Kine unix socket、模拟 etcd 版本、`compact-interval=0s`），再写入 `--datastore-endpoint`。只有 `--cluster-init`，或带 token 去 `--server` 加入，才会 `assignManagedDriver` 选中嵌入 etcd。SQLite 文件落在 `${data-dir}/db/state.db`。
+
+3. **打包清单与 `--disable`**：`deploy.Stage` 把 `//go:embed embed/*` 的清单写到 data-dir；`DisableItems` 列出可删的打包组件。`servicelb` 对应 README 里的 Klipper-lb；`local-storage` 对应 local-path-provisioner。helm-controller、kube-router 网络策略是另外的开关（`--disable-helm-controller` / `--disable-network-policy`）。
+
+4. **默认网络与端口**：`--https-listen-port` 默认 6443；`--cluster-cidr` 默认 `10.42.0.0/16`，`--service-cidr` 默认 `10.43.0.0/16`，CoreDNS 默认 `10.43.0.10`。
+
+5. **可选嵌入仓库**：`--embedded-registry` 打开 Spegel 分布式镜像仓库，且要求嵌入 containerd；打开后 agent 也会听 supervisor 端口。本轮未验证 Spegel 行为。
+
+## 实践示例
+
+### 案例 1：README 记录的单节点安装合同
 
 ```bash
-# 第一台 server 节点
-curl -sfL https://get.k3s.io | sh -s - server \
-  --cluster-init \
-  --token=mysecret
-
-# 第二、三台 server 节点
-curl -sfL https://get.k3s.io | sh -s - server \
-  --server https://node1:6443 \
-  --token=mysecret
+curl -sfL https://get.k3s.io | sh -
+sudo kubectl get nodes
 ```
 
-`--cluster-init` 把 SQLite 切成嵌入式 etcd，3 个 server 节点组成 raft 集群。这是 k3s 推荐的"中等规模 HA"方案——比外接 etcd/MySQL 简单，比单节点可靠。
+这是源码仓 README 写明的安装脚本路径，不是本轮实测。装完后 kubeconfig 约定在 `/etc/rancher/k3s/k3s.yaml`。默认数据目录：root 用 `/var/lib/rancher/k3s`，非 root 用 `${HOME}/.rancher/k3s`。
+
+### 案例 2：关掉 Traefik，但不要误关整个 Ingress 能力以外的件
+
+```bash
+curl -sfL https://get.k3s.io | sh -s - --disable traefik
+```
+
+`--disable` 的合法值是 `coredns, servicelb, traefik, local-storage, metrics-server, runtimes`。想换 nginx-ingress / Istio，关 `traefik` 即可；把 `coredns` 一起关会失去默认集群 DNS。
+
+### 案例 3：三节点嵌入 etcd，而不是「给 SQLite 加副本」
+
+```bash
+k3s server --cluster-init --token=mysecret
+k3s server --server https://node1:6443 --token=mysecret
+```
+
+`--cluster-init` 的 usage 是 “Initialize a new cluster using embedded Etcd”。已有 SQLite `state.db` 时，嵌入 etcd 启动路径会尝试把 `/registry/` 迁过去并改名为 `state.db.migrated`。外接库走 `--datastore-endpoint`，不能和 `--disable-etcd` 同时用。
 
 ## 踩过的坑
 
-1. **默认 SQLite 不支持高可用**——单节点挂 = 集群挂；上生产必须切嵌入式 etcd 或外接 DB，别图省事
-2. **traefik 默认占 80/443**——如果你想用 nginx-ingress / istio，必须 `--disable traefik` 启动，否则端口冲突
-3. **klipper-lb 太简单**——只把 Service 直接绑节点 IP，没有 BGP / ECMP / VIP 漂移；生产要换 MetalLB 或云厂商 LB
-4. **flannel 默认只有 vxlan 后端**——跨子网性能差、没 NetworkPolicy；要做 zero-trust 网络考虑换 cilium
-5. **升级机制和主流 K8s 不一样**——k3s 升级是"换二进制"（systemd unit 重启），不是 `kubeadm upgrade`；写自动化时要注意
+1. **把 README 的「< 100 MB / 一半内存」写成当前测量**：那是仓库文案。本轮未称二进制、未测 RSS。
+
+2. **以为默认就是嵌入 etcd**：单节点不传 `--cluster-init`、也不设 `--datastore-endpoint` 时，走 Kine；etcd 只在初始化/加入托管驱动时出现。
+
+3. **`--disable servicelb` 和文档里的 klipper-lb 对不上号**：清单键是 `servicelb`。只关 CCM 但留着 ServiceLB，源码仍会继续跑 Klipper-lb 路径。
+
+4. **flannel 只能 vxlan**：默认是 vxlan，但 `host-gw` 和 `wireguard-native` 是同旗标的合法值；`none` 表示自己装 CNI。
+
+5. **把 1.28 示例版本当成当前发行**：本页绑定的上游 Kubernetes 是 `v1.36.3-k3s1`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 边缘 / IoT / ARM 设备上的 K8s（树莓派、工控机、车载网关）
-- 单团队 / 小集群（< 50 节点）的生产环境
-- 本地开发、CI e2e 测试、培训演示
-- Rancher 多集群管理产品的内嵌"管理集群"
+- 边缘 / ARM / 单进程运维，需要标准 `kubectl` 与 Helm，但不想装五件套控制面
+- 单节点开发或小集群，接受默认 SQLite + Kine，或显式切嵌入 etcd / 外接库
+- 想用 `--disable` 换掉 Traefik / ServiceLB / local-path，而不是重写发行版
 
 **不适用**：
 
-- 超大规模集群（> 500 节点）——核心 K8s 更稳定，调优空间更大
-- 强合规场景需要厂商支持的——选 OpenShift / GKE / EKS，k3s 是社区项目
-- 需要完整云厂商集成（云盘、云 LB、云 DNS）——k3s 砍掉了 in-tree provider，要自己装 CSI / cloud-controller
+- 必须用上游 kubeadm 拓扑、节点镜像可换版本——看 [[kind]]
+- 第一次学 addon / dashboard 全家桶——看 [[minikube]]
+- 需要 in-tree 云盘 / 云厂商 CCM：README 写明这两类已从二进制移除，要走 CSI / 外置 CCM
+- 本轮不能接受「未实际起集群」的 `UNVERIFIED` 边界
 
-## 生态相关项目
+## 固定版本边界
 
-- **k3d**：在 Docker 容器里跑 k3s（类似 kind），更轻；本地开发一条命令起多节点集群
-- **Rancher Desktop**：Mac / Windows 桌面 K8s，底层就是 k3s
-- **k3os**：整个操作系统围绕 k3s 构建，启动即 K8s（已停止维护，被 Rancher Elemental 替代）
-
-## 跟它相邻的"轻量 K8s"工具谁选谁
-
-| 工具 | 节点形态 | 主要场景 | 跟 k3s 的差异 |
-|------|----------|----------|----------------|
-| minikube | VM 或 Docker | 本地开发 | 启动慢、资源吃得多、偏开发不偏生产 |
-| kind | Docker 容器 | CI 测试 | 节点是容器不是真机器，没法上边缘 |
-| microk8s | Snap 包 | Ubuntu 生态 | 依赖 systemd + snap，Linux 之外不友好 |
-| k3s | 单二进制 | 边缘 + 小生产 | 任何 Linux 都跑，可上 ARM、可 HA |
-
-## 历史小故事（可跳过）
-
-- **2019-02**：Rancher Labs 开源 k3s，最初 GitHub README 第一行是 "Lightweight Kubernetes. 5 less than k8s"
-- **2020-08**：Rancher 把 k3s 捐给 CNCF，进入沙箱
-- **2020-12**：SUSE 收购 Rancher Labs，k3s 项目继续在 CNCF 治理下独立发展
-- **2022-08**：k3s 从 CNCF 沙箱晋升为孵化项目（Incubating）
-- **2024**：k3s GitHub 突破 27k star，成为最流行的轻量 K8s 发行版
+- 本文绑定 `k3s-io/k3s@5aed4d7beddeb3e67120da477c876ac9efd70318`，轻量 tag `v1.36.3+k3s1` 直接指向该提交。
+- `go.mod` 语言版本 `go 1.26.5`；Kubernetes replace 为 `v1.36.3-k3s1`。
+- README 同时列出 containerd、runc、Flannel、CoreDNS、metrics-server、Traefik、Klipper-lb、kube-router netpol、helm-controller、Kine、local-path-provisioner。
+- 本文未安装 k3s、未跑 `install.sh`、未起 server/agent、未测内存或启动耗时，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"砍掉非必要"也是一种产品力**——完整 K8s 想覆盖所有云厂商所有场景，k3s 大胆砍掉 80% 让 20% 跑得飞起
-2. **单二进制部署的复利**——一个文件解决依赖、版本、升级、回滚四个问题，运维心智负担骤降
-3. **API 兼容是上限**——k3s 实现可以激进重写，但核心 K8s API 必须保持兼容，否则 Helm chart 大面积失效、用户教育成本无穷
-4. **边缘场景驱动主流创新**——树莓派跑 K8s 听起来像玩具，但逼出来的"轻量化"思路反向影响了云厂商发行版
+1. **「一个二进制」是进程合同，不是「没有组件」**——打包件仍在，只是用 embed 清单和 `--disable` 开关。
+2. **默认账本是 Kine 伪装的 etcd API**——SQLite 文件在 `db/state.db`；HA 要 `--cluster-init` 或外接 datastore。
+3. **关掉组件要按清单键，不要按营销名**——`servicelb` / `local-storage` 才是 `--disable` 认识的名字。
+4. **发行版版本号跟上游 Kubernetes 走**——`v1.36.3+k3s1` 的 `+k3s1` 只是同一上游版本上的发行序号。
+
+## 应用型自测
+
+1. 不传 `--cluster-init`、也不设 `--datastore-endpoint` 时，k3s 会不会自动起嵌入 etcd？
+2. `--disable` 能否关掉 helm-controller？应该用哪个旗标？
+3. 固定 README 把二进制体积写成「不到 70 MB」了吗？
+
+检查点：
+
+1. 不会。嵌入 etcd 只在 `--cluster-init` 或带 token 加入时由托管驱动选出。
+2. 不能。`DisableItems` 不含 helm-controller；要用 `--disable-helm-controller`。
+3. 没有。README 写的是 less than 100 MB；70 MB 是旧文案。
 
 ## 延伸阅读
 
-- 官方文档：[docs.k3s.io](https://docs.k3s.io)（架构图 + 配置参数最全）
-- 设计动机：[Why we built K3s](https://www.rancher.com/blog/2019/2019-02-26-introducing-k3s-the-lightweight-kubernetes-distribution-built-for-the-edge)（Darren Shepherd 2019 博客）
-- 视频：[CNCF KubeCon — k3s deep dive](https://www.youtube.com/results?search_query=k3s+deep+dive+kubecon)
-- 源码入口：[github.com/k3s-io/k3s](https://github.com/k3s-io/k3s)，从 `cmd/server/main.go` 看单二进制怎么 demux 子命令
+- 文档：[docs.k3s.io](https://docs.k3s.io)
+- 固定源码：[k3s-io/k3s](https://github.com/k3s-io/k3s) —— 本文绑定 `5aed4d7beddeb3e67120da477c876ac9efd70318`
+- [[kind]] —— 容器节点 + kubeadm 的本地对照
+- [[kubernetes]] —— k3s 跟踪的上游 API
+- [[minikube]] —— 多 driver、addon 更齐的学习集群
 
 ## 关联
 
-- [[kubernetes]] —— k3s 是它的轻量发行版，核心 API 兼容
-- [[containerd]] —— k3s 内嵌的容器运行时，替代 Docker
-- [[etcd]] —— 多节点 HA 模式下 k3s 用嵌入式 etcd 存元数据
-- [[traefik]] —— k3s 默认 Ingress 控制器
-- [[helm]] —— k3s 集群里直接能用 Helm 装 chart
-- [[kustomize]] —— 给 k3s 写 yaml 时常配套用的覆盖工具
+- [[kind]] —— CI / 多节点容器拓扑；不是宿主机发行版
+- [[minikube]] —— 官方本地完整集群，偏学习与 addon
+- [[kubernetes]] —— 被 replace 进来的上游
+- [[containerd]] —— 嵌入运行时
+- [[etcd]] —— `--cluster-init` 后的托管账本
+- [[traefik]] —— 默认可 `--disable` 的 Ingress
+- [[helm]] —— helm-controller 吃 HelmChart CRD
 
 ## 反向链接
 
@@ -158,6 +163,6 @@ curl -sfL https://get.k3s.io | sh -s - server \
 
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
 - [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像
-- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
+- [[kind]] —— kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群

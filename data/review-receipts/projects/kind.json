@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "kind",
+    "digest_sha256": "ba72ccafd057e53272ee53bb005bc286ed45b5e59e34a40308da290b5981707a"
+  },
+  "source_revision": "407a9675e6d9af1200b5f57f9ca52ec6cdacce74",
+  "research_input_sha256": "070efe06fdda84d61caa579e0b4b9c565c7618a025f123aa37d08fe1a6871430",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ht",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates default kindest/node v1.37.0 digest, kubeadm action chain, and docker save/load from older v1.29 notes."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ht",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Read create pipeline, v1alpha4 defaults, load docker-image, and experimental providers; no cluster was created."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ht",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds annotated tag v0.33.0 peeled commit; discloses README still showing v0.32.0 install URLs."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

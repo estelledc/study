@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -46643,27 +46643,26 @@
       "id": "projects::k3s",
       "area": "projects",
       "slug": "k3s",
-      "title": "k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制",
+      "description": "介绍 k3s v1.36.3+k3s1 如何用嵌入执行器、默认 SQLite/Kine 与 --disable 清单把 Kubernetes 收成轻量发行版。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-devops-containers-and-operations"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-devops-containers-and-operations",
-        "matched_category": "容器",
         "raw_category": "基础设施 / 容器编排"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/k3s/",
       "atlas": {
@@ -47026,27 +47025,26 @@
       "id": "projects::kind",
       "area": "projects",
       "slug": "kind",
-      "title": "kind — 用 Docker 容器当 K8s 节点的本地集群",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群",
+      "description": "介绍 kind v0.33.0 如何把 Docker/Podman/nerdctl 容器当成节点，再按 kubeadm init/join 拉起可换版本的本地集群。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-devops-containers-and-operations"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-devops-containers-and-operations",
-        "matched_category": "容器",
         "raw_category": "基础设施 / 容器编排"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/kind/",
       "atlas": {

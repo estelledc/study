@@ -37,10 +37,10 @@ sidebar:
 | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) | `github-actions` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Helm — Kubernetes 包管理器](/study/projects/helm/) | `helm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) | `jenkins` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制](/study/projects/k3s/) | `k3s` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制](/study/projects/k3s/) | `k3s` | beginner | UNVERIFIED | 介绍 k3s v1 |
 | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) | `k9s` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) | `kaniko` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [kind — 用 Docker 容器当 K8s 节点的本地集群](/study/projects/kind/) | `kind` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群](/study/projects/kind/) | `kind` | beginner | UNVERIFIED | 介绍 kind v0 |
 | [Kubebuilder — 写 K8s Operator 的官方脚手架](/study/projects/kubebuilder/) | `kubebuilder` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) | `kubectx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | `kubernetes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

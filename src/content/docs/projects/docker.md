@@ -205,7 +205,7 @@ docker compose up -d
 - [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
 - [[jellyfin]] —— Jellyfin — 自托管媒体服务器
 - [[kaniko]] —— kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像
-- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
+- [[kind]] —— kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群
 - [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷

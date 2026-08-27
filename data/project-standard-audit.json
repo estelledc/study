@@ -4,8 +4,8 @@
   "summary": {
     "total": 967,
     "by_status": {
-      "benchmark-aligned": 85,
-      "needs-evidence": 882
+      "benchmark-aligned": 87,
+      "needs-evidence": 880
     }
   },
   "projects": [
@@ -9103,27 +9103,23 @@
     },
     {
       "slug": "k3s",
-      "title": "k3s — 把完整 K8s 塞进一个不到 70 MB 的二进制",
+      "title": "k3s — 单进程发行版把控制面、Kine 与打包组件收进一个二进制",
       "source": "https://github.com/k3s-io/k3s",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "k6",
@@ -9391,27 +9387,23 @@
     },
     {
       "slug": "kind",
-      "title": "kind — 用 Docker 容器当 K8s 节点的本地集群",
+      "title": "kind — 用容器当节点、kubeadm 起上游 Kubernetes 的本地集群",
       "source": "https://github.com/kubernetes-sigs/kind",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "kitty",
