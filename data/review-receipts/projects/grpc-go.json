@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "grpc-go",
+    "digest_sha256": "af154b7cd6aca8f6a99d6de7ac430055bcece87f3c894a1804ad8f7a01d6f45d"
+  },
+  "source_revision": "030ee8becb20ce4315d6bf2dfa26bdd876169dc4",
+  "research_input_sha256": "0bf2b85f790c9b16114d25bacdce161616d0df407c8f834a7dc290c0fcb631b7",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains NewClient vs Dial, explicit transport credentials, keepalive floors, 4MiB receive limit, and unary/stream interceptor split."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected v1.83.2 NewClient, server options, interceptor.go, keepalive defaults, and insecure credentials; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Does not treat Dial as current API or claim REST/QPS numbers; discloses go.mod 1.25.0 versus README two-latest-majors."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}

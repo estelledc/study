@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 18,
-      "needs-evidence": 943
+      "benchmark-aligned": 20,
+      "needs-evidence": 941
     }
   },
   "projects": [
@@ -3679,27 +3679,23 @@
     },
     {
       "slug": "connect-rpc",
-      "title": "ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议",
-      "source": "https://github.com/connectrpc/connect-go",
-      "status": "needs-evidence",
+      "title": "ConnectRPC — TypeScript 实现（connect-es）",
+      "source": "https://github.com/connectrpc/connect-es",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "containerd",
@@ -7708,25 +7704,21 @@
       "slug": "grpc-go",
       "title": "gRPC-Go — Google RPC 框架的官方 Go 实现",
       "source": "https://github.com/grpc/grpc-go",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "gsap",

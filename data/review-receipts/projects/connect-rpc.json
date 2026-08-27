@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "connect-rpc",
+    "digest_sha256": "c45285ca5ea778384a1beebc064af59b62e498d399e96f1064e51ea7a42d3417"
+  },
+  "source_revision": "104238c58152e324ac16a99563f5eeea8ae7136d",
+  "research_input_sha256": "0bf2b85f790c9b16114d25bacdce161616d0df407c8f834a7dc290c0fcb631b7",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Replaces createPromiseClient/*_connect with createClient/*_pb, and separates web JSON versus Node binary defaults."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected connect 2.1.2 router, transports, interceptor order, and connect-node adapter; Jasmine/conformance were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bo",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Discloses MIGRATING.md Node 18.14.1+ versus connect-node engines >=20; does not treat static reading as a runtime pass."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}
