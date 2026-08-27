@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "esbuild",
+    "digest_sha256": "d935770b12b65b71f89094e2b01055136ee5281f95de570e4626e2bdcd68f7eb"
+  },
+  "source_revision": "609683d892977362a0f99026cb74b96263d728a9",
+  "research_input_sha256": "10b70161479fc6529a81e53435e986adda2d06c970d9b54a34189f8e8202b9a2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-s",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains two-pass parse, build vs transform, plugin hooks, and the no-typecheck boundary with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-s",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 0.28.2 tag/npm gitHead/version.txt; inspected parser, linker, resolver, plugin API; upstream tests and benchmarks were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-s",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Performance multipliers, Vue/Sass support, and 1.0 promises are treated as unbound; evidence remains STATIC_REVIEW / UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:15:37.834Z"
+}

@@ -15,7 +15,7 @@ sidebar:
 |---|---|---|---|---|
 | [Biome — 把 lint、format 和 assist 收进同一个 CLI](/study/projects/biome/) | `biome` | intermediate | UNVERIFIED | 固定版本把 lint、format 和 assist 收进同一条 process_file |
 | [Bun — 单二进制 JS/TS 运行时与工具链](/study/projects/bun/) | `bun` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | `esbuild` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [esbuild — 用 Go 写的 JS/TS 打包与转译器](/study/projects/esbuild/) | `esbuild` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | `lightningcss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | `mage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | `nvm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

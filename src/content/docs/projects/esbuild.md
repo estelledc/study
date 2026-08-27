@@ -1,172 +1,173 @@
 ---
-title: esbuild — 用 Go 写的极速 JS bundler
+title: esbuild — 用 Go 写的 JS/TS 打包与转译器
 来源: https://github.com/evanw/esbuild
 日期: 2026-05-29
 分类: 构建工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/evanw/esbuild
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 609683d892977362a0f99026cb74b96263d728a9
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.28.2
 ---
 
 ## 是什么
 
-esbuild 是一个用 **Go** 重写的 JS 打包工具——把 TypeScript / JSX / ESM 翻译成浏览器能跑的 JS，顺便压缩、做 sourcemap、合并依赖。日常类比：
+esbuild 是一个用 Go 写的 JavaScript / TypeScript 打包器与转译器。日常类比：它像一条把原料一次送进厨房的生产线——读文件、解析、降级、打包、压缩可以接在同一条链上，但**不负责检查菜谱对不对**（不做类型检查）。
 
-> 同一份大蛋糕，A 师傅用一把小刀切（webpack 慢）；B 师傅同时用 8 把刀切（esbuild 快）。
+你写：
 
-切蛋糕的算法都一样，差别在于 **同时几把刀**（并行度）和 **每把刀多锋利**（每一步多干净）。esbuild 把这两件事都拉到极限：用 Go 拿到真并行（8 把刀），用单遍 AST 拿到极锋利（每刀切干净）。
+```bash
+esbuild app.tsx --bundle --outfile=out.js
+```
 
-跟同期工具比，esbuild 编译同样的项目快 10-100 倍——webpack 30 秒做完的事，esbuild 0.5 秒就好。
+或在 JS API 里调用 `build()` / `transform()`。固定 `0.28.2` 同时提供 CLI、`pkg/api` Go API 与 npm `esbuild` 包（后者再拉起原生二进制）。
 
 ## 为什么重要
 
-不理解 esbuild 解释不了下面这些：
+不理解固定版本的合同，下面这些事会说错：
 
-- 为什么 TypeScript 编译从「等几秒」变成「几乎瞬间」——esbuild 在背后做 transform
-- 为什么 Vite 启动 dev server 那么快——它底层用 esbuild **预打包** node_modules
-- 为什么"前端构建慢"在 2020 年后逐渐成为历史话题——esbuild 把整个赛道速度拉了一档
-- 为什么 Figma 联创 Evan Wallace 一个人花两年写一万行 Go，却撼动了 webpack/Babel 多年的统治
+- 为什么 `const x: number = "hello"` 能被编译通过
+- 为什么 Vite 一类上层工具能把它当快速 transform / 预打包引擎，却仍要另配类型检查
+- 为什么 plugin 能改路径和文件内容，却写不出 Babel 那样的逐节点 visitor
+- 为什么 `build` 和 `transform` 不是同一套能力
 
 ## 核心要点
 
-esbuild 的快可以拆成 **三个工程决定**：
+固定 `0.28.2` 的主链可以拆成四层：
 
-1. **换语言（Go > JS）**：以前的 JS 工具（webpack / Babel / Rollup）都用 JS 写——单线程、event loop、V8 GC 卡顿。esbuild 用 Go 写，能开多核 goroutine 真并行，省掉 JS runtime 的解释开销。光这一项就拿 5-10 倍
+1. **每个 JS 模块至少两遍**：`js_parser` 先建 AST 与作用域，再 bind、常量折叠，并按 `target` lower。打包还要经过 `ScanBundle` → `linker.Link` → print。这不是“只扫一次 token”的单遍编译器。
 
-2. **单遍 AST 走完**：Babel 是「parse → 多个 plugin transform → 再 print」，AST 来回走 3-5 遍。esbuild 把 parse + bind + lower + minify 合成一遍 walk——一次扫完所有要做的事。少走几遍 AST，再省 2-5 倍
+2. **TypeScript 只剥类型**：parser 把类型表达式当空白跳过，不生成类型 AST。源码明确建议另跑 TypeScript checker。
 
-3. **直接输出 minified 结果**：传统工具是「先输出可读 JS，再跑 minifier 压一遍」（中间字符串生成 + 二次 parse）。esbuild 在 print 阶段直接输出压缩后的字符串，省掉中间产物
+3. **`build` ≠ `transform`**：`build` 走真实文件系统、模块图和 plugin；`transform` 走 mock FS + stdin，**不支持 plugin**。需要 watch / serve / 多次 rebuild 时用 `context()`。
 
-三件事叠加，拿到 30-100 倍速度。
+4. **plugin 只拦解析与加载**：钩子是 `onStart`、`onResolve`、`onLoad`、`onEnd`、`onDispose`，另有 `resolve()`。没有通用 AST transform hook。CSS 只有内置 parser / CSS modules，没有 PostCSS 或 Sass 管线。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：CLI 一行编译
-
-最常见的用法——把 TSX 编译打包成 production bundle：
+### 案例 1：CLI 打包一份 TSX
 
 ```bash
-esbuild app.tsx --bundle --minify --outfile=out.js
+esbuild src/main.tsx --bundle --format=esm --target=es2017 --outfile=dist/bundle.js
 ```
 
-逐部分解释：
+`--bundle` 才会顺着 import 建模块图。未设 `--bundle` 时，默认只转译单个入口。`platform` 未写时默认 `browser`；若打包且未写 `--format`，browser 会落到 `iife`。
 
-- `app.tsx` 是入口文件
-- `--bundle` 表示「跟着 import 把所有依赖拉进来合成一个文件」
-- `--minify` 表示压缩
-- `--outfile` 是输出位置
+### 案例 2：JS API 的 build 与 transform
 
-复杂版加 target / sourcemap / 资源 loader：
+```js
+import * as esbuild from "esbuild";
 
-```bash
-esbuild src/main.tsx --bundle --minify --sourcemap \
-  --target=es2017 --outfile=dist/bundle.js \
-  --loader:.svg=dataurl --loader:.png=file
-```
-
-### 案例 2：JS API 程序化调用
-
-写个 build 脚本，比 CLI 灵活：
-
-```ts
-import { build } from 'esbuild';
-
-await build({
-  entryPoints: ['src/main.tsx'],
+await esbuild.build({
+  entryPoints: ["src/main.tsx"],
   bundle: true,
-  outdir: 'dist',
-  format: 'esm',
-  target: 'es2017',
-  minify: true,
+  format: "esm",
+  platform: "browser",
+  outdir: "dist",
   sourcemap: true,
+});
+
+const { code } = await esbuild.transform("export const n: number = 1", {
+  loader: "ts",
+  target: "es2015",
 });
 ```
 
-API 模式能根据环境动态算参数、加 plugin、串其他工具。CI / Vite 这类上层都走 API。
+`transform` 适合单文件剥类型 / 降级。要插件、外部包策略或拆 chunk，必须走 `build`。`minify: true` 会同时打开 syntax、whitespace、identifiers 三项。
 
-### 案例 3：写一个最小 plugin
+### 案例 3：用 onResolve / onLoad 拦截 SVG
 
-esbuild 的 plugin 只有两个 hook：`onResolve`（决定 import 路径解析到哪）和 `onLoad`（决定文件内容怎么读）。30 行内拦截 `.svg` 让它 inline：
-
-```ts
-import { Plugin } from 'esbuild';
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-
-const svgInline: Plugin = {
-  name: 'svg-inline',
+```js
+const svgInline = {
+  name: "svg-inline",
   setup(build) {
     build.onResolve({ filter: /\.svg$/ }, (args) => ({
-      // args.path 常是相对路径，必须拼上 resolveDir 才能给 onLoad 读文件
-      path: path.isAbsolute(args.path)
-        ? args.path
-        : path.join(args.resolveDir, args.path),
-      namespace: 'svg',
+      path: args.path,
+      namespace: "svg",
     }));
-    build.onLoad({ filter: /.*/, namespace: 'svg' }, async (args) => ({
-      contents: `export default ${JSON.stringify(await readFile(args.path, 'utf8'))}`,
-      loader: 'js',
+    build.onLoad({ filter: /.*/, namespace: "svg" }, async (args) => ({
+      contents: `export default ${JSON.stringify(args.path)}`,
+      loader: "js",
     }));
   },
 };
 ```
 
-效果：`import logo from './logo.svg'` 把 SVG 文本直接 inline 到 JS 里，不再需要单独的 SVG HTTP 请求。
+真实读文件时要把相对路径拼上 `args.resolveDir`。`onStart` / `onEnd` / `onDispose` 存在，但改不了 AST 节点；要改语法只能在 `onLoad` 里自己产出 JS。
 
 ## 踩过的坑
 
-1. **不做类型检查**：esbuild 编译 TS 时只 **剥掉类型注解**——不验证类型是否对。`const x: number = "hello"` 它照样编译过去。生产项目必须配 `tsc --noEmit` 双跑，IDE 也要开 TS 检查
+1. **以为 esbuild 会做类型检查**：`const x: number = "hello"` 会原样剥类型后输出。生产项目仍要 `tsc --noEmit` 或 IDE 检查。
 
-2. **tree-shaking 比 Rollup 弱**：esbuild 用 ESM 静态分析做 dead code 删除，对「未导出函数被引用」这类边角识别不全。同样的代码 Rollup bundle 可能比 esbuild 小 5-10%。库作者发包仍多用 Rollup
+2. **把 plugin 当成 Babel plugin**：这里没有 visitor。`transform()` 甚至完全不跑 plugin。
 
-3. **CSS 处理简陋**：内置 CSS parser 但 **不支持 PostCSS plugin / Sass / Less**。要 Tailwind / autoprefixer / CSS Modules 这些都得在 plugin 里手动桥接。Vite 的做法是「esbuild 做 JS，PostCSS 做 CSS」分工
+3. **Node 打包默认 mainFields 不利于 tree-shaking**：`platform: "node"` 默认先看 `"main"` 再看 `"module"`。要摇 ESM 树需要显式改 `mainFields`。`treeShaking` 只在 `bundle: true` 或 `format: "iife"` 时默认打开。
 
-4. **不支持 Vue SFC**：`.vue` 文件包含 `<template>` `<script>` `<style>` 三段，esbuild 单层 plugin 表达不出。需要 `esbuild-plugin-vue` 这类第三方在 plugin 里手动 parse SFC、拆段、虚拟模块桥接——能跑但不优雅
+4. **把 CSS / Vue SFC 当成内置能力**：固定源码能解析标准 CSS、嵌套和 `.module.css`，没有 Sass/Less/PostCSS plugin 宿主，也没有 `.vue` loader。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- TypeScript / JSX 单文件 transform——~10ms 级，IDE / test runner / dev server 的天然选型
-- 中小型项目 production build——速度收益大、plugin 限制不卡到
-- CLI 工具打包——`platform: 'node'` 一键单文件可执行
-- 上层工具（Vite / tsup / Bun bundler）的 fast transform 引擎
+
+- 单文件 TS / JSX transform，或中小型项目的 production bundle
+- 需要 `onResolve` / `onLoad` 就能完成的资源拦截
+- 上层工具把原生二进制当库拉起，而不是再包一层 JS bundler
 
 **不适用**：
-- 需要复杂 plugin 生态的大型应用（vue-sfc / mdx / 编译期魔法）→ 用 Vite + Rollup
-- 需要精细 chunk splitting（vendor / lazy / shared 三层控制）→ 用 webpack / Rspack
-- 库发包到 npm（要最优 tree-shake）→ 用 Rollup
-- 需要 type check 的 TS 项目（必须额外配 tsc）
 
-## 历史小故事（可跳过）
+- 需要类型检查、完整 Babel plugin 生态，或 Vue SFC / MDX 一类多段编译
+- 需要 PostCSS / Sass 作为一等 CSS 管线
+- 把 minify 体积或“比 webpack 快 N 倍”当成固定合同——本文未测量
 
-- **2019 年**：Evan Wallace（Figma 联合创始人 + 架构师）作为 side project 开始写 esbuild，用 Go——他想验证「JS 工具慢的瓶颈是语言本身，不是算法」
-- **2020 年 1 月**：v0.1 公开发布，README + `docs/architecture.md` 一次性写完。基线测试显示比 webpack 快 60 倍，社区震惊
-- **2020-2021**：Vite（Evan You 主导）把 esbuild 选作 dep pre-bundle 引擎，让 esbuild 嵌入到「下一代前端构建」的核心位
-- **至今**：仍是 0.x（作者刻意不发 1.0，保留 breaking change 余地），周下载量 30M+，整个工具链（Vite / tsup / Bun / Rspack 部分）都在它之上
+## 固定版本边界
 
-整个项目几乎一人写——一万行 Go、5000+ 测试、580 行架构文档。极致工程审美的标本。
+- 本文绑定 `evanw/esbuild@609683d8...`，tag / npm `gitHead` / `version.txt` 均为 `0.28.2`。
+- 仍是 0.x；这只说明当前版本号，不是“永不发 1.0”的承诺。
+- 未安装依赖、未跑上游测试、未测吞吐或包体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **「换语言」是终极性能优化**——算法能压的极限有限，runtime 本身的开销才是天花板。Go vs JS 这一步直接拿 5-10 倍
-2. **passes 合并 vs 分离的取舍**——分离（Babel 风格）灵活但慢，合并（esbuild 风格）快但 plugin 表达力受限。生产工具链场景合并是对的
-3. **plugin API 的克制**——只开 onResolve / onLoad 两个 hook 看起来「不够用」，实际上是把复杂度推到 plugin 作者，换来核心 fast path 干净。设计决策都是 trade-off
-4. **「不发 1.0」是诚实**——比起强行发 1.0 然后频繁 bump major，0.x 反而更负责任
-5. **bus factor vs 信任**——单作者维护 30M weekly downloads 的核心基建，社区敢依赖是因为代码质量 + 文档质量 + 长期 active 三者叠加
+1. **快路径常常以“不做类型检查”换来**——剥类型和验证类型是两件事
+2. **打包 API 和单文件 transform 能力不对等**——plugin、外部包、拆 chunk 只活在 `build`
+3. **plugin 的克制是性能合同的一部分**——只开 resolve/load，就把 AST 变换推给调用方
+4. **默认值按 platform / format 分叉**——不读源码会把 browser IIFE 或 node mainFields 抄错
+
+## 应用型自测
+
+1. `esbuild.transform(ts, { loader: "ts" })` 遇到类型错误，会像 `tsc` 一样失败吗？
+2. 只调用 `transform()` 并传入 `plugins: [svgInline]`，`onLoad` 会运行吗？
+3. `platform: "node"` 且不改 `mainFields` 时，默认先解析 `package.json` 的哪个字段？
+
+检查点：
+
+1. 不会。类型被跳过，非法 TS 只要能 parse 就会输出 JS。
+2. 不会。`transform` 不支持 plugin。
+3. 先 `"main"`，再 `"module"`。
 
 ## 延伸阅读
 
-- 官方文档（推荐入口）：[esbuild.github.io](https://esbuild.github.io/)
-- 架构总览（580 行作者亲笔）：[docs/architecture.md](https://github.com/evanw/esbuild/blob/main/docs/architecture.md)
-- API 参考：[esbuild.github.io/api](https://esbuild.github.io/api/)
-- 性能哲学（README 顶部）：[github.com/evanw/esbuild#why](https://github.com/evanw/esbuild#why)
-- [[vite]] —— Vite 把 esbuild 当 dep pre-bundler 和 dev TS transform
-- [[rollup]] —— Rollup 是 library bundle 场景的对照组
+- 官方文档：[esbuild.github.io](https://esbuild.github.io/)
+- 固定源码：[evanw/esbuild](https://github.com/evanw/esbuild) —— 本文绑定提交 `609683d892977362a0f99026cb74b96263d728a9`
+- [[swc]] —— Rust 侧的 transform / minify 对照；插件模型是 Wasm，不是 onResolve/onLoad
+- [[vite]] —— 常见的上层消费方之一，具体默认引擎以 Vite 当前版本为准
+- [[rollup]] —— 库发包与更细 tree-shake 的对照组
 
 ## 关联
 
-- [[vite]] —— Vite 双引擎之一，esbuild 负责 dev 路径
-- [[rollup]] —— production build 场景的对手，更精细的 chunk 控制
-- [[rspack]] —— Rust 重写 webpack 的路线，与 esbuild 同属「换语言提速 JS 工具」赛道
-- [[bun]] —— Zig 写的 runtime + bundler，内部 link 部分 esbuild 代码
+- [[swc]] —— 同赛道的 Rust 编译器；API 与插件模型不同
+- [[vite]] —— 上层构建工具，常把原生 transform 嵌进 dev / 预打包路径
+- [[rollup]] —— ESM 库打包对照
+- [[rspack]] —— 另一条“换语言重写 JS 工具”路线
+- [[turbopack]] —— 增量 bundler 对照
 
 ## 反向链接
 
