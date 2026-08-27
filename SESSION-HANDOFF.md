@@ -2,6 +2,18 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AL 恢复
+
+- status：`running`；修复 #86 rebase 后误还原的 axios/ofetch 正文与 receipt。
+- 起始 ref：`78c8bb329853975337c338f3eb339108caf2b186`（#86 merge）。
+- objective：把 `axios` / `ofetch` 恢复为 AL STATIC_REVIEW 绑定（axios `1.20.0` / ofetch `1.5.0`），receipt generation 2，保持 `UNVERIFIED`。
+- scope：两页、两份 receipt、`data/note-index.json`、本交接。不改 `docs/http-client-source-review-20260827-al.md`（已在 main）。
+- activated_by：#86 merge 后发现 `ab327fe` 把笔记/receipt 退回 2026-07-17。
+- detector fingerprint：main 上 AL 审查文档仍在，但 axios 页仍写 `1.18.1` / `a092bae5...`，receipt 仍是 generation 1。
+- external_outcome：一个修复 PR，不 merge。
+- stop conditions：恢复后质量门失败，或再次被要求改 open-PR slugs。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
