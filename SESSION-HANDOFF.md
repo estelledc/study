@@ -16,7 +16,12 @@
   1. `ms` 绑定 tag `2.1.3` / `1c6264b795...`（npm `gitHead` 与 tag 一致），写清字符串解析 vs 有限数字格式化、100 字符 / 单单位正则、365.25 天年、格式化最大单位为天，并披露 3.x/4.x 预发布线。
   2. `pretty-ms` 绑定 tag `v9.3.0` / `ab52d6ae...`（npm `gitHead` 与 tag 一致），写清单向 number|bigint 格式化、选项覆盖层级、365 天年、冒号记法至少显示到分钟；披露 tag 后 FAQ 提交未绑定。
   3. 新增共享 `docs/duration-format-source-review-20260827-eo.md` 与两份 generation 1 static receipt；派生索引与公开计数随两页新建刷新。
-- acceptance checks：两页 quality-gate 全过、0 advisory；receipt digest / revision / research_input 一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` / `git diff --check` 已在本地跑过。`verify:ci` 以 PR CI / 后续本地全量门禁为准。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20` 下，verify:ci 在首次因本机缺 Playwright browser 于 a11y 步中断后，安装 Chromium 并补跑剩余门禁：23 Playwright a11y 全过，Pages/Atlas/站点预算与 diff 门禁通过；此前 toolchain / 388+ Node tests / strict build / 内容契约均已通过。
+  - `audit:project-standard`：`benchmark-aligned=42`、`needs-evidence=921`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=111`、`legacy-unverified=1935`、blocking 0。
 - budget：2 个小型本地 worktree + 2 页新建 + 派生刷新；单 writer。
 - 验证结果：STATIC_REVIEW 完成；未宣称上游测试或运行证据。规模 baseline 超限是先于本切片的 `PARKED_HUMAN` detector，本轮未改 baseline / 阈值。
 - blocker：`benchmark-site --compare` 的 tracked_files 超限需 owner 处置；merge / deploy 需单独授权。
