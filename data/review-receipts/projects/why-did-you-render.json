@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "why-did-you-render",
+    "digest_sha256": "475a455f3e4ef1e586d89d4d2d1fb93267ee94b4649050271403d7bd590a95e3"
+  },
+  "source_revision": "752cfdb4d5c5eba5a8774fb19a978a7ac0a0d5de",
+  "research_input_sha256": "02c79b3a0044a2d761f106a7ef4fce6e637d5258346487e8dfcaa1beceddc564",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-n",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains monkey-patch entry, jsxDEV vs jsx-runtime, default notifier filter, and StrictMode class skip with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-n",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned v10.0.1 src/patches, diff, hooksConfig, and tests were inspected; Jest/Cypress and React 19 were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-n",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "GitHub tag commit is bound; npm gitHead 5623596e and later master 3ec3512d still claiming 10.0.1 are disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

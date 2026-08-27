@@ -4,161 +4,189 @@ title: browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Pytho
 日期: 2026-05-29
 分类: AI agent infra
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/browser-use/browser-use
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: eb4126921bea3373f91afc49fb4b59d6eda7fed6
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.13.8
 ---
 
 ## 是什么
 
-browser-use 是一个 **Python 框架**，让大语言模型（LLM）像人一样操作浏览器——点按钮、填表单、抓数据。日常类比：你雇了一个不会读屏幕的助理，所以你先把网页翻译成一份编号清单（"1 号是搜索框、2 号是登录按钮、3 号是商品图..."），他报"点 2 号"，你替他点。
+browser-use 是一个 **Python agent 库**：你给一句任务，它打开浏览器、把当前页压成带编号的 DOM 清单、问 LLM 下一步、再通过 Chrome DevTools Protocol 执行动作。日常类比：你雇了一个不看整页 HTML 的助理，先把可见控件翻译成菜单（“1 号是搜索框、2 号是登录按钮”），他只报“点 2 号”，框架替他点。
 
 你写：
 
 ```python
 from browser_use import Agent, ChatBrowserUse
-agent = Agent(task="搜 NeurIPS 2024 前 5 篇论文标题", llm=ChatBrowserUse())
-await agent.run()
+
+agent = Agent(
+    task="打开 Hacker News 并取出首页前 3 条标题",
+    llm=ChatBrowserUse(),
+)
+history = await agent.run(max_steps=20)
 ```
 
-agent 自动开浏览器、抽 DOM、喂 LLM、执行动作，循环直到 LLM 说"完成"。截至 2026-05-26，96k stars / 10.7k forks / MIT，主打"让网页对 AI 可访问"。
+未传 `llm` 时，固定 0.13.8 会构造 `ChatBrowserUse()`。`Controller` 只是 `Tools` 的别名。浏览器会话走 `BrowserSession` 的事件总线和 `cdp-use` 客户端，不是把 Playwright Page 当成默认驱动。
 
 ## 为什么重要
 
-不理解 browser-use 的设计选择，下面这些事都没法解释：
+不理解这套合同，下面这些事会按旧印象写错：
 
-- 为什么 Anthropic Computer Use（让 LLM 看截图点像素）和 browser-use（让 LLM 看 DOM 选编号）是两种完全不同的 agent 路线
-- 为什么"把 HTML 喂给 LLM"听起来简单，真做起来要压缩 95% 才装得进上下文
-- 为什么 LLM agent 项目都长得像（main loop + tool registry + provider 抽象），背后是同一套 reactor pattern
-- 为什么 2024-2026 浏览器自动化的明星不是 Playwright 升级版，而是套在 Playwright 之上的"翻译层"
+- 为什么默认动作是“点编号”而不是“点像素”，但部分模型名又会打开坐标点击
+- 为什么旧教程把 Playwright 写成执行后端，固定 0.13.8 的主链却是 CDP + 事件总线
+- 为什么每一步都会抓截图，却不能把“有截图”理解成“一定把图喂给 LLM”
+- 为什么 `max_steps=500` 仍在 `run()` 默认值里，生产任务却必须自己收紧
 
 ## 核心要点
 
-browser-use 的设计可以拆成 **三条**：
+固定 0.13.8 的一步可以拆成四段：
 
-1. **DOM 索引而非像素**：不让 LLM 输出 `(x=456, y=312)`，而是输出"点 2 号元素"。类比：跟服务员点菜不报"右下角第三盘"，而是说"3 号套餐"。网页改版 selector 还在、像素全错——容错率差一个数量级。
+1. **准备上下文**：`step()` 先等 captcha watchdog（失败不致命），再 `_prepare_context()`。`get_browser_state_summary(include_screenshot=True)` 每步都抓图；`use_vision=False` 只影响是否把图放进模型消息。
 
-2. **每步压缩成清单 + tool 调用**：DOM service 把整页几十万 token 压缩到 5k token 的 indexed 列表（`[1] <input> [2] <button> ...`），喂给 LLM；LLM 用 Pydantic 校验过的 tool call 选动作。类比：把整本字典缩成单页菜单，让人选条目而不是默写。
+2. **问模型**：`_get_next_action()` 用当前 message manager 调 LLM，超时取 `llm_timeout`（未显式传入时按模型名给 30/75/90 秒）。输出被裁到 `max_actions_per_step`（默认 5）。
 
-3. **三阶段 step 循环**：每步 `prepare`（抓 DOM）→ `get_action`（问 LLM）→ `execute`（调 Playwright）→ `post`，直到 LLM 返回 `done` 或撞 500 步上限。类比：洗碗洗一只→冲一只→晾一只→洗下一只，不堆批量。
+3. **执行动作**：`_execute_actions()` → `multi_act()`。工具由 `Tools`/`Registry` 注册，Pydantic `param_model` 变成 tool schema；`browser_session`、`cdp_client`、`file_system` 等是注入的 special params。
 
-三条加起来叫 **「视觉简化器 + 动作分发器」**——不发明智能 planner，靠"压缩输入 + 受控输出"让 LLM 表现稳定。
+4. **收尾**：`_post_process()` 更新下载、计划、循环检测和连续失败计数。`done` 结束任务；`run()` 默认最多 500 步，最后一步会把工具菜单收成只剩 `done`。
 
-## 实践案例
+DOM 序列化给交互节点分配从 1 开始的 `selector_index`，文本形如 `[2]<button type=submit />`；新出现的节点加 `*`。iframe 里视口外的控件只留 hint，例如 `... (3 more elements below - scroll to reveal)`。
 
-### 案例 1：5 分钟跑通
+## 实践示例
 
-```bash
-pip install browser-use
-playwright install chromium
-export ANTHROPIC_API_KEY=...
-```
+### 案例 1：用默认 ChatBrowserUse 跑一步任务
 
 ```python
-from browser_use import Agent, ChatBrowserUse
 import asyncio
+from browser_use import Agent, ChatBrowserUse
+
+async def main():
+    agent = Agent(
+        task="打开 example.com 并读出页面标题",
+        llm=ChatBrowserUse(),
+    )
+    await agent.run(max_steps=20)
+
+asyncio.run(main())
+```
+
+这只是 API 形状。固定源码要求 Python `>=3.11,<4.0`；真正启动浏览器还依赖本机 Chromium / 远程 CDP / cloud profile。本文未安装、未启动、未调用任何模型。
+
+### 案例 2：LLM 看到的不是原始 HTML
+
+序列化器写出的是编号清单，而不是整页 markup：
+
+```text
+[1]<input placeholder="Search" />
+*[2]<button type="submit" />
+[3]<a href="/news">News
+... (2 more elements below - scroll to reveal):
+    <a> "Older" ~2 pages down
+```
+
+编号由本步 `selector_map` 分配，给 `click(index=2)` 用。`*` 表示相对上一步缓存是新节点。视口外元素只给滚动 hint，不保证模型滚对距离。
+
+### 案例 3：自定义动作挂到 Tools，而不是重写 Agent
+
+```python
+from pydantic import BaseModel
+from browser_use import Agent, ChatBrowserUse, Tools
+from browser_use.agent.views import ActionResult
+
+tools = Tools()
+
+class NoteParams(BaseModel):
+    text: str
+
+@tools.action("Record a short operator note", param_model=NoteParams)
+async def record_note(params: NoteParams):
+    return ActionResult(extracted_content=params.text, long_term_memory=params.text)
 
 agent = Agent(
-    task="去 hackernews 取首页前 3 条标题",
+    task="先记下当前目标，再打开文档首页",
     llm=ChatBrowserUse(),
+    tools=tools,
 )
-asyncio.run(agent.run(max_steps=20))
 ```
 
-运行时会弹一个 Chromium 窗口，**你能亲眼看 LLM 一步步在页面上点**——比无头模式直观 10 倍，是 debug 好属性。
-
-### 案例 2：DOM 序列化长这样
-
-agent 喂给 LLM 的不是原始 HTML，而是简化清单：
-
-```
-[1] <input placeholder="Search">
-[2] <button>Search</button>
-[3] <a href="/news">News</a>
-...
-[hidden] 12 elements below viewport, scroll 2 pages
-```
-
-**逐部分解释**：
-
-- 编号 `[1] [2] ...` 是框架重新分配的，对 LLM 稳定（即使 DOM 顺序变化也保留映射）
-- 标签后是 role / placeholder / 可见文本——足够 LLM 选目标
-- viewport 外的元素只给"个数 + 滚动距离"hint，省 token
-- 整页几十万 token → 5k token，**压缩比 95%+**
-
-### 案例 3：注册自定义动作
-
-```python
-from browser_use import Controller
-from pydantic import BaseModel
-
-controller = Controller()
-
-class HighlightParams(BaseModel):
-    index: int
-
-@controller.action("Highlight an element by index", param_model=HighlightParams)
-async def highlight(params: HighlightParams, browser_session):
-    js = f"document.querySelectorAll('*')[{params.index}].style.outline='3px solid red'"
-    await browser_session.execute_script(js)
-```
-
-一次注册之后，LLM 工具菜单里就有 `highlight(index=int)`，自动学会调用。**Pydantic 模型 = LLM tool schema**——这是整个项目最巧的复用。
+`Tools.action` 转给 `Registry.action`。函数禁止 `**kwargs`；需要默认值时必须提供专用 `param_model`。`controller=` 仍可用，只是别名。
 
 ## 踩过的坑
 
-1. **DOM 路线在 Canvas / WebGL 站点失效**：Figma / Excalidraw 的"按钮"不是 DOM 元素，索引为空，LLM 看不见。fallback 到 vision 模式（传截图）只是补丁。
-2. **每步重建 CDP 连接**：源码里有 TODO 写明每步握手 50-200ms，500 步累计 30-100s 纯握手开销。性能敏感场景要打 patch。
-3. **`max_steps=500` 默认偏大**：典型任务 20 步内完成，500 是为应对极端 case。失控时一次任务能烧 2.5M token（约 $7-15 一次）。生产用建议收紧到 30-50。
-4. **scroll hint 不保证 LLM 走对距离**：「下方还有 12 个隐藏元素 / scroll 2 pages」LLM 经常多滚一次或少滚一次。token 经济和控制精度永远在打架。
+1. **把 Playwright 当 0.13.8 默认后端**：`BrowserSession` 文档仍提到“CDP/Playwright 直调”作为底层可能，但本 revision 的启动与动作主链是 `bubus` 事件 + `cdp-use`。旧页的 Playwright 安装步骤不能当当前合同。
+
+2. **以为 click 永远是编号**：默认 `ClickElementActionIndexOnly` 只收 `index`。模型名匹配 `claude-sonnet-4` / `claude-opus-4` / `claude-fable-5` / `gemini-3-pro` / `browser-use/` 时，`set_coordinate_clicking(True)` 才允许 `coordinate_x/y`，并且文档写明“只在没有 index 时用坐标”。
+
+3. **把每步截图当成 vision 合同**：准备阶段无条件 `include_screenshot=True`；`use_vision` 默认 `True`，但设成 `False` 仍会抓图（注释写给 cloud sync）。`use_vision != 'auto'` 还会排除 `screenshot` 工具。
+
+4. **把 `max_steps=500` 当推荐值**：这是 `run()` 默认上限，不是典型任务长度。撞上限时模型被强制只剩 `done`。连续失败默认 `max_failures=5`。
+
+5. **忽略 DomService 的连接 TODO**：源码仍写“目前可能每步新开 websocket，应该改成持久连接”。本文没有测延迟，不能把它写成固定的 50–200ms。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 让 LLM 抓网页数据 / 填表 / 做电商比价
-- 标准 HTML 网站（电商 / 新闻 / SaaS dashboard）
-- LLM provider 要可换——原生支持 Anthropic / OpenAI / Gemini / Ollama 本地模型
-- 调试需求大——"看 LLM 在页面上点哪里"对 production agent 是刚需
+- 标准 HTML 站点上的填表、抽取、多步导航
+- 需要换 LLM provider：固定包导出 OpenAI / Anthropic / Google / Groq / Azure / Ollama 等 chat 封装，以及 `ChatBrowserUse`
+- 要把 Python 函数注册成工具，并用 Pydantic 约束参数
 
 **不适用**：
 
-- Canvas / WebGL / 复杂 React Server Component（Figma / Excalidraw / 游戏化 UI）
-- 已知 selector + 不需要 LLM 决策——直接 [[playwright]] 更省成本
-- desktop app / OS 层任务——用 Anthropic Computer Use
-- 高频 agent（每秒一步以上）——CDP 重连开销吃不消
+- 控件不在 DOM 里的 Canvas / WebGL 页面——编号清单会空；坐标点击只是部分模型的补丁，不是通用视觉 agent
+- 已经有稳定 selector、不需要 LLM 决策的脚本——直接浏览器自动化更便宜
+- 把 README 的 Cloud / Odysseys 数字当成本文结论——那些图和排行榜未在本 revision 复现
+- 不能接受 Python 3.11+、CDP 或 `browser-harness==0.1.9` 这条依赖链
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2024 年初**：Magnus Müller 在 ETH Zurich 黑客松上写第一版，目标是"让 GPT 自动填学校选课表"。
-- **2024 年底**：开源后两个月窜到 30k stars，成为 LLM agent infra 标杆。
-- **2025 年**：进入 Y Combinator W25 batch，公司化，主打 cloud sandbox + 1000+ 集成。
-- **2026 年 5 月**：v0.12.9，96k stars，加入 vision 模式（双轨：DOM + 截图），承认单 DOM 路线在某些站点不够。
-
-→ 知道这个时间线才理解 browser-use 不是研究院产品，是"黑客松到 YC 公司"的快速迭代产物——基因决定它代码风格务实大于优雅。
+- 本文绑定 `browser-use/browser-use@eb412692...`，GitHub tag 与 PyPI 均为 `0.13.8`。
+- `pyproject.toml` 钉住 `cdp-use==1.4.5`、`browser-harness==0.1.9`、`pydantic==2.12.5`；`browser-use-core==0.13.3` 在 `core` extra。
+- 审查时 `main` 已走到后续依赖 bump（`28670f72...`）；升级前需重新绑定 revision。
+- 本文未安装依赖、启动浏览器、调用 LLM 或跑上游测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **DOM 索引 vs 像素坐标**是 LLM 浏览器自动化的两条主路线，前者更精、后者更通用
-- **Pydantic Union schema + tool calling** 是把任意 Python 函数喂给 LLM 的通用模板，任何 agent 项目都能抄
-- **三阶段 step（prepare / action / execute / post）** 是 reactor pattern 在 agent 上的标准翻译
-- **token 经济 vs 控制精度**永远在打架——viewport_threshold / max_actions_per_step / max_steps 都是这场博弈的旋钮
+1. **给 LLM 的不是页面，是菜单**——编号 DOM 把“选控件”变成 tool call，而不是让模型写 selector 或像素。
+2. **截图存在 ≠ 视觉模式开启**——采集、上传和是否进入 prompt 是三条开关。
+3. **别名会掩盖重命名**——`Controller`/`Browser` 仍能 import，源码真相是 `Tools` / `BrowserSession`。
+4. **默认上限不是安全策略**——500 步、5 个动作/步、模型相关 timeout 都要按任务重写。
+
+## 应用型自测
+
+1. 调用 `await agent.run()` 且不传 `max_steps`，默认最多走多少步？
+2. `Agent(task="...", llm=None)` 在固定 0.13.8 会用哪个默认模型封装？
+3. 未打开坐标点击时，`click(coordinate_x=10, coordinate_y=20)` 是不是合法默认 schema？
+
+检查点：
+
+1. 500。`Agent.run` 的默认参数是 `max_steps: int = 500`。
+2. `ChatBrowserUse()`。`llm is None` 且没有 `CONFIG.DEFAULT_LLM` 时走这条。
+3. 不是。默认注册 `ClickElementActionIndexOnly`，必须给 `index`。
 
 ## 延伸阅读
 
-- [browser-use 官方文档](https://docs.browser-use.com/) —— 安装、参数、cloud 入门
-- [Pydantic 文档](https://docs.pydantic.dev/) —— Union 类型 + tool schema 生成的底层依赖
-- [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) —— 底层操作浏览器的协议
-- [Anthropic Computer Use 介绍](https://www.anthropic.com/news/3-5-models-and-computer-use) —— 哲学不同的对手路线
-- [[playwright]] —— 执行后端的零基础解读
-- [[stagehand]] —— 同流派 TS 实现
+- 文档：[docs.browser-use.com](https://docs.browser-use.com/)（安装、cloud、模型列表）
+- 固定源码：[browser-use/browser-use](https://github.com/browser-use/browser-use) —— 本文绑定提交 `eb4126921bea3373f91afc49fb4b59d6eda7fed6`
+- [[stagehand]] —— TypeScript 侧“浏览器 + LLM”的另一条实现
+- [[midscene]] —— 更偏视觉/自然语言的浏览器自动化
+- [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) —— 本 revision 实际驱动层
 
 ## 关联
 
-- [[playwright]] —— 浏览器自动化 SDK，browser-use 在它之上加 LLM agent 层
-- [[stagehand]] —— TS 版同类框架，思路相似但绑定 Playwright Page API
-- [[midscene]] —— 中文社区类似产品，更偏视觉路线（截图 + LLM）
-- [[nanobrowser]] —— Chrome 扩展形态的 LLM agent，部署模式不同
-- [[steel-browser]] —— 给 LLM agent 用的远程浏览器云
-- [[mcp-ts-sdk]] —— browser-use 也通过 MCP 协议把自己暴露给其他 agent
-- [[vercel-ai]] —— LLM provider 抽象的另一个流派（TS 生态）
+- [[stagehand]] —— 同类“LLM 操作浏览器”，绑定的是另一套 Page API
+- [[midscene]] —— 视觉/自然语言路线，可对照 DOM 索引路线
+- [[nanobrowser]] —— Chrome 扩展形态的 agent 沙箱
+- [[steel-browser]] —— 远端浏览器托管，给 agent 当执行环境
+- [[vercel-ai]] —— 另一套 LLM provider 抽象（TS）
 
 ## 反向链接
 
