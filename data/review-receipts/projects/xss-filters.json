@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "xss-filters",
+    "digest_sha256": "ce9149ed6ca08bd3b5b960176a6bd29ef6c78b17845c6376cdf645881267c789"
+  },
+  "source_revision": "5174da0a282f5fbd9289be1d0dd217f874a9f05c",
+  "research_input_sha256": "6ad899df12768471391bbd97307a4f15f200fb561b306df1f7389bc594eba015",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-jd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates HTML-state filters, unquoted empty-value U+FFFD, and last-step URI protocol prefixing."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-jd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "yd/yc/yavs/yavd/yavu, uriInAttr, yubl/yup/yufull, and public API aliases were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-jd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Binds v1.2.7 where tag, package and npm gitHead agree; discloses YahooArchive redirect and archived repo."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

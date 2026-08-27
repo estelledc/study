@@ -2548,6 +2548,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::validator",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::valtio",
       "topic_id": "projects-state-management"
     },
@@ -2610,6 +2614,10 @@
     {
       "note_id": "projects::wretch",
       "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::xss-filters",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::xstate",

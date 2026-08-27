@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer JD：xss-filters + validator
+
+- supervisor 状态：writer epoch `complete`；本地 review-ready change set 已形成。本切片到 push + 一个 PR 为止。未把本 PR merge 进 main / 未 deploy。
+- 起始 ref：`2122461e7ac7cd08ee3be1827d3ec84bbf919707`（`origin/main`）。
+- objective：为缺失的 sanitize/validate 双子补齐 `xss-filters` 与 `validator` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/sanitize-validate-source-review-20260827-jd.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-jd-2026-08-27`。
+- detector fingerprint：目录无 `xss-filters.md` / `validator.md`；开放 PR 已占用 xss/insane 与 sanitize-html/isomorphic-dompurify，未占用本对；lane HM–ID 未使用。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `xss-filters` 绑定 tag `v1.2.7` → `5174da0a282f5fbd9289be1d0dd217f874a9f05c`；披露 `yahoo/xss-filters` 重定向到已归档的 `YahooArchive/xss-filters`。
+  2. `validator` 绑定 tag `13.15.35` → `7a8079709cd4cb27b2a1846e6f6508d68c9d928f`，tag / package / npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：以本轮定向命令为准，未手改库存数字。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

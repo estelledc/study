@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "validator",
+    "digest_sha256": "52e0ff0700fdbc73409fb20ae0c3bd19c97dd6ee469668ce89042fafbb57d883"
+  },
+  "source_revision": "7a8079709cd4cb27b2a1846e6f6508d68c9d928f",
+  "research_input_sha256": "6ad899df12768471391bbd97307a4f15f200fb561b306df1f7389bc594eba015",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-jd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates assertString, isEmail split/FQDN, isURL scheme detection, and character-level escape."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-jd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "assertString, merge, isEmail, isURL protocol regex, and escape were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-jd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Binds 13.15.35 where tag, package version and npm gitHead agree; XSS sanitizers remain removed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

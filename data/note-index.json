@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -62637,6 +62637,37 @@
       }
     },
     {
+      "id": "projects::validator",
+      "area": "projects",
+      "slug": "validator",
+      "title": "validator — 只对字符串做格式校验与轻量清洗",
+      "description": "介绍 validator 13.15.35 如何用 assertString 守门，并拆出 isEmail、isURL 与字符级 escape。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/validator/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::valkey",
       "area": "projects",
       "slug": "valkey",
@@ -64467,6 +64498,37 @@
       }
     },
     {
+      "id": "projects::xss-filters",
+      "area": "projects",
+      "slug": "xss-filters",
+      "title": "xss-filters — 按 HTML 上下文做刚好够用的输出编码",
+      "description": "介绍 xss-filters 1.2.7 如何按 HTML 数据、注释和属性上下文做最小编码，并用协议黑名单处理 URI。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/xss-filters/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::xstate",
       "area": "projects",
       "slug": "xstate",
@@ -65876,7 +65938,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 16
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",
