@@ -15,7 +15,7 @@
   1. `micromark` 绑定 tag / npm `4.0.2` / `3fae1552...`，纠正 buffered compile、默认 HTML/协议消毒、GFM 不在本仓，以及 `commonmark.json@^0.31.0` 未执行。
   2. `markdown-wasm` 绑定 tag / npm `1.2.0` / `0aa6c8ff...`，写明 GitHub 风格 DEFAULT 旗标、共享 `outbuf`、`javascript:` 只过滤锚点、ESM 需 `ready`。
   3. 新增 `docs/markdown-parser-source-review-20260827-dv.md` 与两份 `STATIC_REVIEW` / `UNVERIFIED` receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与固定 revision 一致；`audit:counts` / `audit:content-contract` / `git diff --check` 通过。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与固定 revision 一致；`audit:counts` / `audit:content-contract` / `git diff --check` 通过；`STUDY_CHANGED_FROM=7a2384d0 npm run verify:ci` 全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/site budget 与 drift 门禁）。首次失败仅因本机未装 Playwright Chromium，补装后重跑通过，未改门禁。
 - budget：2 个 blob-filtered worktree + 2 页 + 1 份 DV 文档；单 writer。
 - blocker：规模 `tracked_files` 超限属既有 `PARKED_HUMAN`，本轮未改 baseline。
 - stop conditions：本轮已完成；merge / deploy 需单独授权。
