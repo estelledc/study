@@ -15,7 +15,7 @@
   1. `fast-glob` 绑定 tag `3.3.3` / `48687898dd26d4e935a0e5ecf6720e7c5aeac15d`（与 npm `gitHead` 一致），写清 task 切分、静态/动态 reader、`onlyFiles` 默认与 `!(extglob)` 边界。
   2. `globby` 绑定 annotated tag `v16.2.4` peel / `46cf13ff8bf5f0e0db96c4985faf83a59d194777`（与 npm `gitHead` 一致），写清目录展开、默认关闭的 gitignore、否定-only 预置 `**/*`、predicate 与 prune 分工。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生索引按命令重生成。
-- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest 一致、evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:site-state` / `audit:project-standard` 以命令为准。`verify:ci` 在首个 commit 之后跑。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest 一致、evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（含 23 Playwright a11y）。其余审计以命令为准，不在 handoff 中复制易过期数字或 ETA。
 - budget：2 个小型 blob-filtered worktree + 2 页新建静态审查；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一个 PR 已打开且未 merge 后停止。不开下一对研究页。
