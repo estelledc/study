@@ -15,12 +15,12 @@
   1. `json5` 绑定 tag `v2.2.3` → `c3a75242772a5026a49c4017a16d9b3543b62776`；npm `gitHead` 一致。披露 `main` 上另有 2 个文档/语法提交、版本号仍写 2.2.3。
   2. `jsonc-parser` 绑定 tag `v3.3.1` → `3c9b4203d663061d87d4d34dd0004690aef94db5`；npm 3.3.1 无 `gitHead`。披露 `v4.0.0-next.2` 未绑定。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；两页归入 `projects-markdown-and-parsing`。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:project-standard` 已按当前文件刷新。`verify:ci` 在 push 后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，evidence state `UNVERIFIED`；`STUDY_CHANGED_FROM=1ecba404048464534225c6d542c19415c83fcabb npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿（含 23 Playwright a11y）。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/267 做 review；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
