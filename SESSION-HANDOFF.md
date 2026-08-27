@@ -2,6 +2,24 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
+
+- status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
+- 起始 ref：`origin/main` 现为 `96da2ee8`（#79）；本分支内容提交为 `a68fc3e8`。
+- objective：把 rebase 后滞后的 `career-plan.md` 项目数对齐到实时库存，使 `audit:counts` 恢复绿色。
+- scope：`src/content/docs/career-plan.md`、本交接。未改笔记正文、未改政策/阈值、未 merge。
+- activated_by：feature branch CI `verify:ci` 失败（`cc8e7d96`：career-plan 写 966，实时 projects=967）。
+- detector fingerprint：rebase regen 更新了 atlas / site-state / 其余计数页，但未改 `career-plan.md`。
+- external delta：本 PR 后续 push（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：`career-plan.md` 项目数 966 → 967。
+- acceptance checks：`npm run audit:counts` → projects=967、papers=1083、total=2050，OK；`git diff --check` 通过。
+- budget：1 个确定性计数对齐切片；单 writer。
+- blocker：merge 与 Pages deploy 未授权。
+- stop conditions：计数门禁修复已提交后停止；不得发明下一对内容。
+- 下一次 wake 条件：本 PR 的 CI/review 再变化，或 owner 另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/71 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

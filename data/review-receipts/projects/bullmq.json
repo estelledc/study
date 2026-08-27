@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "bullmq",
+    "digest_sha256": "bbfc3fc1a0144d91336cbe033506baa27b830d6b44db00d52d337b9cf5c1d66e"
+  },
+  "source_revision": "9d737e9d0e467eeacf6f6a43f3f806fa2873ee1b",
+  "research_input_sha256": "d8137723bf8d7482a52000b60bb4db61594422f3a989ad23d088a38ca7ecd173",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ae",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Corrects v6 Job Scheduler, required Worker connection, optional Postgres backend, and JSON job.data."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ae",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Queue/Worker/Flow/JobScheduler/backend factory and v6 migration docs were inspected; no worker was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ae",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Claims are bounded to bullmq 6.3.1 / 9d737e9d; in-tree version.ts still says 6.3.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

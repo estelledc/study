@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2050,
+      "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 967,
+        "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -37738,7 +37738,7 @@
       "id": "projects::bullmq",
       "area": "projects",
       "slug": "bullmq",
-      "title": "BullMQ — Node.js 上的 Redis 任务队列",
+      "title": "BullMQ — 默认 Redis、可选 Postgres 的 Node 任务队列",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37752,13 +37752,13 @@
         "raw_category": "backend-api"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/bullmq/",
       "atlas": {
@@ -45938,6 +45938,38 @@
       "atlas": {
         "chunk_id": "unclassified-01",
         "chunk_route": "/study/atlas/projects/unclassified-01/"
+      }
+    },
+    {
+      "id": "projects::ioredis",
+      "area": "projects",
+      "slug": "ioredis",
+      "title": "ioredis — Node 里同时覆盖单机、Sentinel 和 Cluster 的 Redis 客户端",
+      "description": "面向 Node 的 Redis 客户端，覆盖 standalone、Sentinel 与 Cluster。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-backend-and-apis",
+        "matched_category": "backend api",
+        "raw_category": "backend-api"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ioredis/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
       }
     },
     {
@@ -65560,7 +65592,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 56
+      "entries": 57
     },
     {
       "id": "topic-projects-blockchain-01",

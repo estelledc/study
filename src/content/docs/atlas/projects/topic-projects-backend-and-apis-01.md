@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "56 条 后端与 API Atlas 分块"
+description: "57 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 56 条，稳定上限为 100 条。
+本分块共 57 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -18,7 +18,7 @@ sidebar:
 | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | `appwrite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | `asynq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | `axum` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | `bullmq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [BullMQ — 默认 Redis、可选 Postgres 的 Node 任务队列](/study/projects/bullmq/) | `bullmq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | `capnproto` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | `celery` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | `centrifugo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -39,6 +39,7 @@ sidebar:
 | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | `grpc-go` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | `haproxy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | `hot-chocolate` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ioredis — Node 里同时覆盖单机、Sentinel 和 Cluster 的 Redis 客户端](/study/projects/ioredis/) | `ioredis` | intermediate | UNVERIFIED | 面向 Node 的 Redis 客户端，覆盖 standalone、Sentinel 与 Cluster |
 | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) | `kong` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) | `krakend` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | `kratos` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
