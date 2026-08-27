@@ -6,8 +6,8 @@
       "total": 2044,
       "classified": 1997,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1973,
+      "empty_description": 1968
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 961,
         "classified": 933,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 959,
+        "empty_description": 955
       }
     },
     "missing_curated_assignments": [],
@@ -39223,8 +39223,8 @@
       "area": "projects",
       "slug": "commander",
       "title": "commander.js — Node.js CLI 解析的声明式标准",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "用命令树声明选项与子命令，再由 parse / parseAsync walk argv 的零依赖 Node CLI 库",
+      "difficulty": "初级",
       "canonical_topics": [
         "projects-cli-tools"
       ],
@@ -39235,13 +39235,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/commander/",
       "atlas": {
@@ -64283,8 +64283,8 @@
       "area": "projects",
       "slug": "yargs",
       "title": "yargs — Node.js 命令行参数解析的事实标准",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "用 yargs-parser 把 argv 收成对象，再叠加命令、补全、config 与 locale 的 Node CLI 框架",
+      "difficulty": "初级",
       "canonical_topics": [
         "projects-cli-tools"
       ],
@@ -64295,13 +64295,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/yargs/",
       "atlas": {

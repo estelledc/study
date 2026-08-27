@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "commander",
+    "digest_sha256": "f7a916e3d04e26f2b08000efc720945132f6a6d565e49674a9968e8f52a45a80"
+  },
+  "source_revision": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+  "research_input_sha256": "34c7046fc45a19683500c2151d5943c04335d23c3d1ece1a4d5a0bb877be3e1e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "cli-parser-static-20260827-az",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains command-tree declaration, parse vs parseAsync, short-flag groups, env, hooks, and ESM/Node 22.12 boundary with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "cli-parser-static-20260827-az",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 15.0.0 index, command/option/help/error modules, parsing docs and examples; upstream tests and CLI runs were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "cli-parser-static-20260827-az",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v15.0.0 and npm gitHead agree; note stays STATIC_REVIEW / UNVERIFIED and does not claim bundle size or completion support."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:00:00.000Z"
+}

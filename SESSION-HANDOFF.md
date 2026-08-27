@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AZ CLI 解析器对
+
+- supervisor 状态：Program `active`；writer epoch AZ `complete`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `commander` 与 `yargs` 绑定可达固定 revision，保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、`docs/cli-parser-source-review-20260827-az.md`、两份 receipt、确定性派生与本交接；未改其他 open PR slugs。
+- activated_by：`explicit-parallel-writer-az-2026-08-27`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision / evidence / 应用型自测；旧正文仍用 CJS `require`、把 commander 写成无 env/hook，把 yargs 18 写成 CJS 双模且同步 builder 必须 return。
+- external delta 计数：本轮只形成 1 个 PR、不 merge，D 轴不变。
+- 已完成切片：
+  1. `commander` 绑定 `tj/commander.js@ba6d13ddb4243e5913367734f8c159089ffe7834` / `15.0.0`。
+  2. `yargs` 绑定 `yargs/yargs@8878a894111e3fe7c98d84af546c0f34fa017492` / `18.1.0`。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / research input 一致，evidence `UNVERIFIED`；`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿。
+- budget：1 个可写切片；单 writer。
+- blocker：未跑上游 test / 示例 CLI / completion / bundle；merge 未授权。
+- 下一次 wake 条件：本 PR 进入 review，或 owner 另行授权 merge。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/commander.md`
+- superseded_by：`none`。
+
+发布、队列和 worktree 的实时状态必须由命令重新读取，不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

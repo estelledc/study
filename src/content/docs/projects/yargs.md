@@ -1,165 +1,198 @@
 ---
 title: yargs — Node.js 命令行参数解析的事实标准
-来源: 'https://github.com/yargs/yargs'
+description: 用 yargs-parser 把 argv 收成对象，再叠加命令、补全、config 与 locale 的 Node CLI 框架
+来源: https://github.com/yargs/yargs
 日期: 2026-05-30
 分类: projects
 难度: 初级
+difficulty: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/yargs/yargs
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 8878a894111e3fe7c98d84af546c0f34fa017492
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 18.1.0
 ---
 
 ## 是什么
 
-yargs 是一个 **把 `process.argv` 这串原始字符串数组，翻译成"命令 + 选项 + 位置参数"结构化对象** 的 Node.js 库。日常类比：像餐厅前台——客人喊一长串"我要套餐 A 加蛋不要葱外带"，前台把它整理成「主菜=A、加蛋=true、葱=false、形式=外带」交给后厨。
+yargs 是一个把 `process.argv` 翻译成「命令 + 选项 + 位置参数」对象的 Node.js 库。日常类比：餐厅前台把一长串口头点餐整理成后厨能执行的工单。
 
-写 Node CLI 工具时，你拿到的 `process.argv` 长这样：
+固定 18.1.0 是 ESM-only。工厂一创建实例就打开 `.help()` 和 `.version()`。真正切 token 的是依赖包 `yargs-parser`：
 
-```javascript
-// node my-cli.js build --watch --port 8080 src/index.ts
-// → ['node', 'my-cli.js', 'build', '--watch', '--port', '8080', 'src/index.ts']
+```js
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
+
+const argv = yargs(hideBin(process.argv))
+  .option("port", { type: "number", default: 3000 })
+  .parse();
 ```
 
-你想要的是 `{ _: ['build'], watch: true, port: 8080, entry: 'src/index.ts' }`。yargs 不仅做这一步翻译，还顺带把 `--help` / `--version` / shell 自动补全 / 子命令分发 / 配置文件加载全都做完。webpack-cli、mocha 这类 CLI 的"前台"就用它。
+`hideBin` 不是无脑 `slice(2)`：普通 Node 从脚本路径之后开始，打包后的 Electron 应用则从 argv 第 0 项之后开始。
 
 ## 为什么重要
 
 不理解 yargs 这层，下面这些事都没法解释：
 
-- 为什么 `webpack --watch --mode=production` 这种命令能"自动"显示帮助、版本、错误时给出有用提示
-- 为什么 `git`-like 的嵌套子命令（`tool config get`）能一层层分发又互不干扰
-- 为什么有的 CLI 你在 zsh 里按 Tab 能自动补全选项名——这能力是声明后免费送的
-- 为什么手撸 `process.argv.slice(2)` 写过几个 CLI 之后，你最终都会去找一个解析库
+- 为什么 `yargs()` 默认就有 `--help` / `--version`，不必再手写一遍
+- 为什么嵌套 `.command()` 的 builder 要跑第二次 parse
+- 为什么 `--id 0123` 这类位置参数可能变成数字 `123`
+- 为什么 `require("yargs")` 不再属于当前发布合同
 
 ## 核心要点
 
-yargs 的设计可以拆成 **三层** 来理解：
+固定版本可以拆成四层：
 
-1. **解析层（yargs-parser）**：纯函数，输入 argv 数组、输出 `{_, flags}` 对象。处理 `-` vs `--`、`--key=value` vs `--key value`、`-abc` 聚合、`--no-watch` 取反、`--config.host=x` 嵌套这些边界。这一层独立成包；Yarn classic 等只想要解析、不要命令框架的项目可以单独引入。
+1. **解析层（`yargs-parser`）**：纯函数，输入字符串数组，输出 `{ _, flags }`。短选项聚合、`--no-*`、`--key=value` 与嵌套 key 都在这一层。
 
-2. **命令层（yargs core）**：在解析结果上做命令匹配和分发。`.command(name, desc, builder, handler)` 注册一条命令；builder 是函数，让子命令的选项**懒加载**——你不进入这条命令就不解析它的参数。类比：餐厅有 50 个菜单，客人点 A 才翻 A 那一页。
+2. **工厂与脚手架**：`YargsFactory` 选出 ESM / browser shim，并默认启用 help、version。同一份 option 声明还驱动 usage、Bash/Zsh completion、`config()` 与 `env(prefix)`。
 
-3. **脚手架层（DX）**：根据你的 `.option()` 声明自动生成 `--help` 帮助、shell completion、版本号、配置文件加载、环境变量映射。同一份"声明"驱动多种产物，不让你重复写。
+3. **命令层**：`.command(name, desc, builder, handler)` 先 `reset` 本地 parser 状态，再执行 builder，然后重新 parse 并跑 middleware / validation / handler。
 
-三层之上是链式 API（`.option().command().middleware().parse()`），让所有声明和钩子写成一段连贯的代码。
+4. **后处理**：`parse-positional-numbers` 默认打开，位置参数会在第一次 parse 之后再尝试收成 number。`parse()` 遇到 async builder / middleware / handler 会返回 Promise；`parseSync()` 遇到 Promise 会抛错。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：写一个 build CLI
+### 案例 1：带 builder 的 build 命令
 
-```javascript
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+```js
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
-yargs(hideBin(process.argv))
-  .command('build [entry]', '构建项目', (y) => {
-    return y
-      .positional('entry', { describe: '入口文件', default: 'src/index.ts' })
-      .option('watch', { alias: 'w', type: 'boolean', default: false })
-      .option('port', { alias: 'p', type: 'number', default: 3000 });
+await yargs(hideBin(process.argv))
+  .command("build [entry]", "构建项目", (y) => {
+    y.positional("entry", { describe: "入口文件", default: "src/index.ts" })
+      .option("watch", { alias: "w", type: "boolean", default: false })
+      .option("port", { alias: "p", type: "number", default: 3000 });
   }, (argv) => {
     runBuild(argv.entry, { watch: argv.watch, port: argv.port });
   })
-  .demandCommand(1, '至少需要一个命令')
+  .demandCommand(1)
   .strict()
-  .help()
   .parse();
 ```
 
-每一行都是一个具体决定，连起来就像在念需求。`hideBin` 把 `node`、脚本路径砍掉，只留用户输入。
+同步 builder 拿到的是 `reset()` 后的同一实例，返回值会被忽略。工厂已经打开 help，不必再写一次 `.help()` 才有帮助文本。
 
-### 案例 2：嵌套子命令（git-like）
+### 案例 2：嵌套子命令
 
-```javascript
+```js
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
+
 yargs(hideBin(process.argv))
-  .command('config', '配置管理', (y) => {
-    return y
-      .command('get <key>', '读取配置', () => {}, (argv) => {
-        console.log(readConfig(argv.key));
-      })
-      .command('set <key> <value>', '写入配置', () => {}, (argv) => {
+  .command("config", "配置管理", (y) => {
+    y.command("get <key>", "读取配置", () => {}, (argv) => {
+      console.log(readConfig(argv.key));
+    })
+      .command("set <key> <value>", "写入配置", () => {}, (argv) => {
         writeConfig(argv.key, argv.value);
       })
-      .command('list', '列出全部', () => {}, () => { listConfig(); })
       .demandCommand(1);
   })
-  .help()
   .parse();
 ```
 
-读法分三步：① 外层 `config` 只负责"进配置域"；② 内层 `get` / `set` / `list` 才是真正干活的 handler；③ `<key>` 是必需位置参数，`[key]` 是可选，`<key...>` 是必需数组。webpack-cli 的多级命令就是这样叠出来的。
+外层 `config` 只负责进入配置域；内层 handler 才真正读写。`<key>` 是必需位置参数。
 
-### 案例 3：中间件 + 校验 + 全局错误
+### 案例 3：middleware、check 与 fail
 
-```javascript
+```js
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
+
 yargs(hideBin(process.argv))
-  .middleware((argv) => { argv.startTime = Date.now(); })
-  .command('serve', '启动服务', (y) => {
-    return y.option('port', { type: 'number', default: 3000 });
-  }, (argv) => { startServer(argv.port); })
+  .middleware((argv) => { argv.startedAt = Date.now(); })
+  .command("serve", "启动服务", (y) => y.option("port", { type: "number", default: 3000 }))
   .check((argv) => {
-    if (argv.port < 1024 && process.getuid() !== 0) {
-      throw new Error('低位端口需要 root');
-    }
+    if (argv.port < 1024) throw new Error("低位端口需要额外权限");
     return true;
   })
-  .fail((msg, err) => { console.error('错误：', msg || err); process.exit(1); })
+  .fail((msg, err) => {
+    console.error(msg || err);
+    process.exit(1);
+  })
   .parse();
 ```
 
-生命周期按时间线：`middleware` 在 handler 前先跑（这里记开始时间）→ `check` 再拦非法参数 → handler 真正启动服务 → 任一步抛错都进 `fail` 统一退出。
+默认 middleware 在 validation 之后、handler 之前运行；`coerce` 注册的 middleware 才会 `applyBeforeValidation`。
 
 ## 踩过的坑
 
-1. **数字推断丢前导零**：`--id 0123` 默认推成 number `123`，前导 0 丢了。要强制保留得 `.string('id')` 或 `.coerce('id', String)`。
-2. **链式调用顺序有讲究**：`.help()` 必须在 `.parse()` 之前；`.demandCommand()` 写在 `.strict()` 之前能给出更友好的"缺少命令"错误。顺序错了行为就漂移。
-3. **嵌套 builder 必须 `return y`**：`.command('cfg', '...', (y) => { y.command('get', ...); })` 这样写，`get` 子命令注册不生效。必须 `return y.command('get', ...)`，因为 yargs 内部要拿到 builder 的返回值再 merge。
-4. **v17 ESM/CJS 双模坑**：在 CJS 项目里 `require('yargs')` 报 `require() of ESM`，得看 `package.json` 的 `"type"` 字段、或换 `import` 语法。社区有现成的迁移笔记。
+1. **位置参数默认收成 number**：`parse-positional-numbers` 未显式关闭时，`0123` 可能变成 `123`。要保留前导零，用 `.string()` 或关掉这项 parser configuration。
+
+2. **把“必须 return y”写成 18.1.0 的同步合同**：同步 builder 的返回值被忽略，嵌套命令靠 mutate reset 后的同一实例生效；只有 **async builder** 返回 `YargsInstance` 时才会替换 `innerYargs`。
+
+3. **对 async builder / middleware 调用 `parseSync()`**：源码会抛 `YError`。应改 `parse()` / `parseAsync()`。
+
+4. **继续 `require("yargs")`**：固定 package 只有 `index.mjs` 与 `"type": "module"`。CJS 双模是旧大版本的记忆，不能外推到 18.1.0。
+
+5. **把 `hideBin` 写成永远 `slice(2)`**：打包 Electron 应用时，二进制名在 argv[0]，再 slice(2) 会丢掉用户参数。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 中大型 Node CLI 工具（多子命令、多选项、需要 help/completion 一应俱全）
-- 团队工具脚本（要求声明清晰、可读性高）
-- 想免费拿到配置文件 + 环境变量 + i18n 的项目
+- 中大型 Node CLI：多子命令、要 help / completion / config / locale
+- 需要把解析层单独复用时，可直接依赖 `yargs-parser`
+- 运行时满足 `^20.19.0 || ^22.12.0 || >=23`
 
 **不适用**：
 
-- 极简单的脚本（5 个选项以内，手写 `process.argv.slice(2)` 或用 `minimist` 就够）
-- 包体积敏感的场景（yargs gzip ~30 KB，commander ~10 KB）
-- 启动速度极致敏感（yargs 多一次"二次 parse"，比 commander 慢 ~3-5ms）
-- 想要类装饰器、强类型路由式 API 的（用 clipanion / oclif）
+- 只要一棵轻量命令树、且不能接受 parser / i18n / CLI UI 依赖 → 看 [[commander]]
+- 要 class / 目录即命令 / 插件生命周期 → 看 [[oclif]]
+- 必须留在旧 Node 或 CJS `require` 合同里
+- 主交互是 prompt 而不是 argv → 配 [[clack]] / [[enquirer]]
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2010**：Ben Coe 从 substack（James Halliday）的 `optimist` 分叉创建 yargs，因为 optimist 已停滞。
-- **2014**：加入 `.command()` 子命令系统，从"参数解析器"升级为 CLI 框架。
-- **2017**：拆出 `yargs-parser` 子包，让只想要解析层、不要命令框架的项目可以独立引入。
-- **2021**：v17 大版本——全量改写为 TypeScript，迁移到 ESM + CJS 双模发布。
-- **现在**：weekly downloads 约数千万级，是 webpack-cli、mocha 等明星工具的常用标准件。
+- 本文绑定 `yargs/yargs@8878a894...`，tag 与 npm 均为 `18.1.0`。
+- 固定 package 为 ESM；runtime 依赖包含 `yargs-parser@^22`、`cliui`、`y18n`。
+- 工厂默认启用 help 与 version；位置数字推断默认打开。
+- 本文未安装依赖、生成 completion、读取配置文件或测量体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **声明驱动多产物**：一份 `.option()` 声明同时驱动解析、help 文本、completion 脚本、文档生成。这是好库的标志——别让用户写两遍同一件事。
-2. **链式 API 的代价与收益**：可读性极强但配置爆炸；小规模 CLI 上读起来像需求文档，大规模时配置项会蔓延到几百行。
-3. **懒加载思维**：用"builder 是函数"换来"不进入子命令就不解析它"——这种"延迟到真的需要时再展开"的模式在很多框架里出现（React lazy、import() dynamic）。
-4. **生态位的力量**：yargs 不是最快、不是最小，但它在 2010 年就铺好了 Node CLI 的核心抽象，后续的工具想绕都绕不开。
+1. **声明可以驱动多种产物**：同一份 option 同时服务 parse、usage、completion 与 config，这是框架比手写 argv 值钱的地方。
+2. **解析器与命令框架不必绑死**：`yargs-parser` 可单独用；yargs 负责命令、校验和 DX。
+3. **reset 后再 parse 一次**：子命令选项懒展开，代价是 builder 与第二次 parse 的心智模型。
+4. **默认策略必须按版本读源码**：help 默认开启、同步 builder 返回值被忽略、位置参数数字化，都不能靠 v17 经验外推。
+
+## 应用型自测
+
+1. 创建一个 `yargs(hideBin(process.argv))` 实例后不调用 `.help()`。`--help` 还会出现吗？
+2. 同步 builder 写成 `(y) => { y.command("get", ...); }` 且不 `return y`。固定 18.1.0 会丢掉 `get` 吗？
+3. 位置参数是订单号 `0123`，没有 `.string()`，也没改 parser configuration。argv 里更可能是字符串还是数字？
+
+检查点：
+
+1. 会。工厂在返回实例前就调用了 `.help()` 与 `.version()`。
+2. 不会仅因为没 return 而丢掉；同步路径忽略返回值，注册发生在 reset 后的同一实例上。
+3. 更可能是数字 `123`。`parse-positional-numbers` 默认打开。
 
 ## 延伸阅读
 
-- 官方 README：[yargs/yargs on GitHub](https://github.com/yargs/yargs) —— 全部 API 索引和迁移指南
-- 视频：[Ben Coe - Designing yargs](https://www.youtube.com/results?search_query=ben+coe+yargs) —— 作者讲设计权衡
-- 对比文章：[commander vs yargs vs oclif](https://blog.logrocket.com/comparing-best-node-js-command-line-arg-parsers/) —— 三大 CLI 库横评
-- [[commander]] —— yargs 的直接竞品，更轻量但功能少
-- [[clack]] —— 现代 CLI 交互层，可以和 yargs 配合写"先解析参数再交互"
+- 官方 README：[yargs/yargs](https://github.com/yargs/yargs) —— 本文绑定提交 `8878a894111e3fe7c98d84af546c0f34fa017492`
+- [[commander]] —— 更轻的命令树，0 production 依赖，但没有 parser 分包与 i18n
+- [[oclif]] —— 目录即路由，适合 50+ 命令的产品级 CLI
+- [[clack]] —— 交互 prompt，常和 yargs 组成“先 parse 再问答”
 
 ## 关联
 
-- [[commander]] —— Node CLI 解析的另一个主流选择，更声明式、更轻
-- [[clack]] —— 不解析参数但负责交互式 prompt，常和 yargs 一起用
-- [[ink]] —— 用 React 渲染 CLI 输出，yargs 解析后再交给 ink 显示
-- [[ora]] —— CLI 中的 spinner / loading，handler 里跑长任务时配合用
-- [[chalk]] —— CLI 输出着色，常在 yargs 的 handler 里给日志上色
-- [[boxen]] —— CLI 输出加边框，常用于应用启动横幅
-- [[enquirer]] —— 命令行交互问答库，和 yargs 形成"参数 + 交互"双层
+- [[commander]] —— 同赛道更轻的声明式命令树
+- [[oclif]] —— class / 目录路由，和 yargs 的函数式 builder 对位
+- [[clack]] —— 不解析 argv，负责交互层
+- [[ink]] —— 用 React 画终端 UI，yargs 解析后再交给它渲染
+- [[chalk]] —— handler 里给日志上色
+- [[enquirer]] —— 另一套 prompt，和 yargs 组成双层入口
 
 ## 反向链接
 
