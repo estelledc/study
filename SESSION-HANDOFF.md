@@ -16,7 +16,7 @@
   1. 新建 `htmx`，绑定 `bdc7d7d3...` / `2.0.10`，写清默认 target、boost body、`selfRequestsOnly`、`responseHandling` 与 `hx-sync` 队列。
   2. 新建 `alpinejs`，绑定 `518a7f4c...` / `3.16.3`，写清 CDN microtask start、`directiveOrder`、`with (scope)` 求值、核心 vs plugin。
   3. 新增共享 `docs/html-first-source-review-20260827-cj.md` 与两份 generation 1 static receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence_state=`UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` 定向通过。全量 `verify:ci` 在 PR 后跑。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence_state=`UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` 定向通过。`STUDY_CHANGED_FROM=042f60a8a6c2 npm run verify:ci` 全绿。
 - budget：2 页、单 writer、1 个 PR；不 merge。
 - external_outcome：可审查 PR；D 轴不变。
 - 验证结果：定向门禁已绿；规模 `tracked_files` 超限是 main 既有 PARKED_HUMAN，本轮未改 baseline。
