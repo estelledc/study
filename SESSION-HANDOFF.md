@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 平行 writer FI：bat + bottom
+
+- status：`running`；writer epoch 本地完成，准备 push + 一份 PR。
+- 起始 ref：`1f2917d90`（checkout 时的 `origin/main`）。
+- objective：把 assigned pair `bat` + `bottom` 从 `needs-evidence` 迁到源码绑定标准。
+- scope：两页正文、2 份 generation 1 receipt、`docs/rust-cli-source-review-20260827-fi.md`、由本轮验证驱动的派生 snapshot / site-state / note-index、本 handoff；2 个 gitignored sparse worktree。未编译运行上游，未测吞吐或占用。
+- activated_by：`explicit-user-parallel-writer-fi-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 bat git gutter 写成 `+`/`-`/`~`，把 bottom 写成无 GPU，并含未绑定 star / CPU% / 倍数断言。
+- external_outcome：一份 PR（用户授权 push+PR）；未 merge、未 deploy。派生索引冲突不是本 writer 的 merge 任务。
+- 完成切片：
+  1. `bat` 绑定 tag `v0.26.1` → `979ba22628bc9d8171f2cffca2bd5c90c9fc0a9e`；修正 index↔workdir gutter、TTY 分页 / `-p`/`-pp`、默认主题分 Dark/Light。
+  2. `bottom` 绑定 tag `0.14.9` → `e22236a928eeb876b2ccaad2f3d1ce5f6450281a`；修正默认 GPU feature、chunked 时间序列、刷新 1000ms/下限 250ms、杀进程对话框。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance_checks：两页 `quality-gate` 全绿、0 advisory；receipt digest 与正文一致，`evidence_state=UNVERIFIED`；`git diff --check` 通过。
+- budget：2 页 / 1 个可写切片；未开下一 epoch。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值。
+- stop_conditions：两页独立验收后结束 writer；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`git status --short --branch`；PR 状态用 GitHub 查看。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
