@@ -15,12 +15,12 @@
   1. `tough-cookie` 绑定 tag `v6.0.2` → `40708dd809cfb1dd658270dc85597bf9f68a6ccc`；tag / `lib/version.ts` / npm `gitHead` 一致。
   2. `universal-cookie` 绑定 monorepo tag `v8.1.2` → `54f246ee61c487792331d42f40f2a34960ba2a5b`；披露仓库已从 `reactivestack/cookies` 转到 `ItsBenCodes/cookies`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 `audit:wikilinks` blocking 0；`git diff --check` 通过。全量 `verify:ci` 在首个 review-ready commit 之后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 `audit:wikilinks` blocking 0；`git diff --check` 通过。`STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/272 做 review；未授权前不要 merge。
 - superseded_by：`none`
 - 实时数量与 ETA 以命令为准，不在 handoff 中复制易过期数字或 ETA。独立 agent 先读 `AGENTS.md`。
 
