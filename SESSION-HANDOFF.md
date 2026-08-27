@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IJ：url-pattern + regexparam
 
-- supervisor 状态：writer epoch `running` → 即将 `complete`；一个 PR，不 merge。
+- supervisor 状态：writer epoch `complete`；一个 PR，不 merge。
 - 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`）。
 - objective：为缺失的 route-pattern 双子补齐 `url-pattern` 与 `regexparam` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/route-pattern-source-review-20260827-ij.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
@@ -15,12 +15,12 @@
   1. `url-pattern` 绑定 npm `1.0.3` 可达 `gitHead` `195d77082e438bcacaf095ecb812d80eeac456ae`；披露仓库没有 `1.0.3` tag，最新源码 tag 仍是 `1.0.1`。
   2. `regexparam` 绑定 `v3.0.0` → `d05da2631beb7c5620774dae207cb09c7cbf24cc`，tag / package / npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目数 965 → 967。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` / `audit:wikilinks` / `audit:project-standard` 定向通过。`verify:ci` 在 push 后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking、152 v2；`audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050；`audit:project-standard` snapshot CURRENT、benchmark-aligned=83；`audit:wikilinks` blocking 0。`STUDY_CHANGED_FROM=1ecba404048464534225c6d542c19415c83fcabb npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 完成后不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/309 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
