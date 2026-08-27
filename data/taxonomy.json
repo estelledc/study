@@ -2376,6 +2376,10 @@
       "topic_id": "projects-observability-and-performance"
     },
     {
+      "note_id": "projects::sentry-javascript",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
       "note_id": "projects::sequelize",
       "topic_id": "projects-orm-and-database-clients"
     },

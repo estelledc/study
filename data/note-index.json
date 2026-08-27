@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -54806,13 +54806,13 @@
         "raw_category": "projects / Node.js"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/pino/",
       "atlas": {
@@ -58237,6 +58237,37 @@
         "review_after": null
       },
       "route": "/study/projects/sentry/",
+      "atlas": {
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
+      }
+    },
+    {
+      "id": "projects::sentry-javascript",
+      "area": "projects",
+      "slug": "sentry-javascript",
+      "title": "Sentry JavaScript SDK — 把异常变成可发送的 event",
+      "description": "把浏览器和 Node 异常收成 event，再按三层 scope 合并后交给 transport。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-observability-and-performance"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "observability"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sentry-javascript/",
       "atlas": {
         "chunk_id": "topic-projects-observability-and-performance-01",
         "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
@@ -65811,7 +65842,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-observability-and-performance-01/",
-      "entries": 11
+      "entries": 12
     },
     {
       "id": "topic-projects-orm-and-database-clients-01",
