@@ -1183,25 +1183,21 @@
       "slug": "asdf",
       "title": "asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本",
       "source": "https://github.com/asdf-vm/asdf",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "aseprite",
@@ -1279,25 +1275,21 @@
       "slug": "ast-grep",
       "title": "ast-grep — 按语法树搜代码、改代码的命令行工具",
       "source": "https://github.com/ast-grep/ast-grep",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "asterisk",

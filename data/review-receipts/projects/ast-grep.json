@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ast-grep",
+    "digest_sha256": "4d9ca49dd4a0e2591fd43072b55692d0d4662075006d9bd6221f2f669bf3282b"
+  },
+  "source_revision": "c41e023a64060c9f263c23320aa5ff67be4bc474",
+  "research_input_sha256": "df0ba4ba77b14cf440451364215b2c3d91d71c1e23b75c27921f869f1339489c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ff",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates run/scan flags, meta-variable charset, 28 SupportLang entries, and unverified perf claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ff",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected CLI run/scan, meta_var, SupportLang, YAML rule objects, WalkParallel; CLI and tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ff",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to ast-grep 0.45.2; custom languages, LSP/outline, and rewrite on real repos remain unverified."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
