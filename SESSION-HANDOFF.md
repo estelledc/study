@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IZ：env-var + envinfo
+
+- status：`running`；writer epoch 进行中，本地 change set 已齐，待 push / PR。
+- 起始 ref：`2122461e7ac7cd08ee3be1827d3ec84bbf919707`（`origin/main`，#82）。
+- objective：为缺失的 env-util 双子补齐 `env-var` 与 `envinfo` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/env-util-source-review-20260827-iz.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-iz-2026-08-27`。
+- detector fingerprint：目录无 `env-var.md` / `envinfo.md`；开放 PR 已占用 dotenv-flow/dotenv-safe、rc9/dotenv-expand、dotenv/envalid；HM–ID 车道保留未用。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `env-var` 绑定源码 tag `7.5.0` → `56fe6cb47e1e79e0a4ec5474daab9dc3cae73947`；tag / package / npm `gitHead` 一致。
+  2. `envinfo` 绑定 `v7.21.0` → `a4894fb49deec8d467f07a30a02d0968b57f2e3e`；披露 GitHub `v7.22.0` 未发布到 npm。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` / `audit:wikilinks` / `git diff --check` 已跑。`verify:ci` 待本提交后执行。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：一对双子完成即停；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

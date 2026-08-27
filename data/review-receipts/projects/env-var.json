@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "env-var",
+    "digest_sha256": "28e1bb55742a89542dfaee8e14851aa1ed06ea1a6b18ccbf8ac02a8fe084dc87"
+  },
+  "source_revision": "56fe6cb47e1e79e0a4ec5474daab9dc3cae73947",
+  "research_input_sha256": "4d05d2648d26a438cc89cf698db37482fc779e99345149778648ca0914602de5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates container selection, delayed accessor parse, strict asInt, and EnvVarError."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "from/get, variable.js flags, accessors, and logger were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 7.5.0 where tag, package and npm gitHead agree; no runtime or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

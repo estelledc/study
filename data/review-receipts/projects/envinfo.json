@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "envinfo",
+    "digest_sha256": "ef0b68dd80130bdebe5b78547eaff6141fb7d611626f8c0909ba48b06fd0d2ee"
+  },
+  "source_revision": "a4894fb49deec8d467f07a30a02d0968b57f2e3e",
+  "research_input_sha256": "4d05d2648d26a438cc89cf698db37482fc779e99345149778648ca0914602de5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates CLI argv, default preset fallback, helper probing, and Not Found filtering."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "cli/main/run, presets, binaries/system helpers, and webpack dist publish were inspected; CLI was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v7.21.0 where tag, package and npm gitHead agree; discloses unpublished GitHub v7.22.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

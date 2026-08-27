@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "16 条 通用开发工具 Atlas 分块"
+description: "18 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,15 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 16 条，稳定上限为 100 条。
+本分块共 18 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Electron — 自带 Chromium + Node 的跨平台桌面运行时](/study/projects/electron/) | `electron` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Env-var — 从容器里读环境变量并在启动时做类型检查](/study/projects/env-var/) | `env-var` | beginner | UNVERIFIED | 介绍 env-var 7 |
+| [Envinfo — 把本机开发环境扫成一份可粘贴报告](/study/projects/envinfo/) | `envinfo` | beginner | UNVERIFIED | 介绍 envinfo 7 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | `lens` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
