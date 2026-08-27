@@ -15,7 +15,7 @@
   1. `husky` 绑定 annotated `v9.1.7` peel `799e84b716d0e03db80db5d5b0dcdd15b9d555fc` / `husky@9.1.7`。
   2. `lint-staged` 绑定 lightweight `v17.3.0` `d15344350d914f5ce24df2c85f3ffebb9b387f3b` / `lint-staged@17.3.0`。
   3. 新增共享 CE 审查文档与两份 generation 1 `STATIC_REVIEW` receipt。
-- 验证结果：定向 quality-gate / content-contract / project-standard / `git diff --check`；全量 `verify:ci` 以 PR 头与后续补记为准。
+- 验证结果：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿；366 Node tests、23 Playwright、strict build 2287 HTML / 2286 sitemap URLs；两页 quality-gate pass、0 advisory；content-contract 0 blocking / 89 v2；project-standard `benchmark-aligned=20`。
 - budget：1 个可写切片。
 - blocker：无；merge 与 deploy 未授权。
 - stop conditions：revision 不唯一、需猜测未读行为、或门禁失败且 scope 内不可修。
