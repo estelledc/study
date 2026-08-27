@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -35001,6 +35001,37 @@
       }
     },
     {
+      "id": "projects::analogjs",
+      "area": "projects",
+      "slug": "analogjs",
+      "title": "AnalogJS — 把 Angular 接到 Vite 文件路由和 Nitro 上",
+      "description": "固定 Analog 2.7.1：platform 插件如何把 pages/*.page.ts、*.server.ts 和 Nitro 收成 Angular 路由。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "Meta 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/analogjs/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::anchor",
       "area": "projects",
       "slug": "anchor",
@@ -59384,6 +59415,37 @@
       }
     },
     {
+      "id": "projects::solid-start",
+      "area": "projects",
+      "slug": "solid-start",
+      "title": "SolidStart — Vite 环境 API 上的 Solid 全栈壳",
+      "description": "固定 SolidStart 2.0.4：h3 请求管线、文件路由和 use server RPC，以及它和 Vinxi / Nitro / Router 的边界。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "Meta 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/solid-start/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::sonic",
       "area": "projects",
       "slug": "sonic",
@@ -65755,7 +65817,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-mobile-development-01",

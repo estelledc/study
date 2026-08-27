@@ -1760,6 +1760,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::analogjs",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
       "note_id": "projects::anime",
       "topic_id": "projects-animation"
     },
@@ -2394,6 +2398,10 @@
     {
       "note_id": "projects::solid",
       "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::solid-start",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
     },
     {
       "note_id": "projects::sortablejs",

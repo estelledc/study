@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "solid-start",
+    "digest_sha256": "c301cb355aa8e7ca4748874622ca90f57959ba34a04474c0bd26cc86ca61e511"
+  },
+  "source_revision": "5d23efbcbb47997a70978be8b0e468df50d774a8",
+  "research_input_sha256": "bb8df2ac372352d0de8bafe1d0314746b88c7bed58e15b5afc609fe391680c94",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Vite Environment API, h3 /_server RPC, file routes, and Router-owned query/action with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "solidStart config, createHandler, matchAPIRoute, and use-server compile/handler were inspected; fixtures were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Vinxi-as-runtime, Nitro-as-core, and npm gitHead claims were dropped; bounded to @solidjs/start 2.0.4."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "analogjs",
+    "digest_sha256": "296f97522ab43051a75d3976f67f1aa2cd8a2e7ffd9cf5e8f549efbb079a4ce2"
+  },
+  "source_revision": "0896a7eaaa2acf26443ca184bc1dd9aa1a06f4d6",
+  "research_input_sha256": "bb8df2ac372352d0de8bafe1d0314746b88c7bed58e15b5afc609fe391680c94",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Vite+Nitro plugin stack, file routes, colocated *.server.ts load, and Angular renderApplication with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "platformPlugin, createRoutes, toRouteConfig, injectLoad, and vite-plugin-nitro page handlers were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Next App Router, @analogjs/nitro, and default streaming-SSR claims were dropped; bounded to Analog 2.7.1."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}

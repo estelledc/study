@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Metaframework 双子 epoch（writer DP）
+
+- status：`running` → 本地 writer epoch `complete`（待 push / 开 PR）；未 merge。
+- 起始 ref：`a910f11f2`（origin/main，PR #53 merge 后）。
+- objective：按并行 writer DP 授权，把 AnalogJS 与 SolidStart 落到源码绑定的 `study-v2` 页；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `analogjs`、`solid-start` 两页、2 份 generation 1 receipt、`docs/metaframework-source-review-20260827-dp.md`、taxonomy curated assignment、派生 atlas / note-index / site-state / 公开规模文案、本 handoff；2 个 ignored worktree。未改 remix/gatsby/nuxt/sveltekit/astro 既有正文，未安装上游依赖，未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-dp-20260827`。
+- detector fingerprint：961 页中不存在 analogjs / solid-start slug；现有同型元框架页已被其他 PR 占用（#136 remix/gatsby、#94 nuxt/sveltekit、#82 astro/solid、#151 qwik）。
+- external delta：本轮目标为 1 个 PR、不 merge；D 轴在 PR 打开前仍为本地 change set。
+- 完成切片：
+  1. 绑定 `analogjs/analog@0896a7ea...` / `v2.7.1`，写清 platform → Nitro → `*.page.ts` / `*.server.ts` → `injectLoad` 主链。
+  2. 绑定 `solidjs/solid-start@5d23efbc...` / `@solidjs/start@2.0.4`，写清 Vite Environment API + h3 `/_server`，并披露 npm 无 `gitHead`、Nitro 非核心依赖。
+  3. 新增共享审查文档与两份 static receipt；项目数 961→963，标杆对齐 32→34。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state `UNVERIFIED`。
+  - `audit:content-contract`：blocking 0；`audit:counts` 与 `audit:site-state` 对齐 963/1083/2046。
+- budget：2 个 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 baseline 在 main 上已超阈值（先于本切片）；本轮未改 baseline / 阈值。
+- stop conditions：本轮写入完成后停止；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR CI/review 状态变化，或 owner 对 merge 的授权。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
