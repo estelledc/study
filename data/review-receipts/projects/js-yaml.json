@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "js-yaml",
+    "digest_sha256": "4fd0de68322a78cbfe2b877985799f9826600c62b72202e23b91c602b97d94dd"
+  },
+  "source_revision": "e5a3ba0efee53629b979f784cd53736f89ea61b6",
+  "research_input_sha256": "1d20547e7ca8331839a10ebab49dcf775307f804474b270d12feb02823a0d3dc",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates v5 event pipeline, CORE vs DUMP schema, empty-input throw, and unlimited aliases with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "load, dump, schema, constructor defaults, and mapTag were inspected; upstream tests and YAML Test Suite were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag 5.4.1 and npm gitHead agree; v4 DEFAULT_SAFE_SCHEMA claims are bounded as removed, not re-verified at runtime."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:35:00.000Z"
+}

@@ -2036,6 +2036,10 @@
       "topic_id": "projects-date-and-time"
     },
     {
+      "note_id": "projects::js-yaml",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::kafka",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2602,6 +2606,10 @@
     {
       "note_id": "projects::xstate",
       "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::yaml",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::yargs",

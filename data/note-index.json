@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -46480,6 +46480,37 @@
       }
     },
     {
+      "id": "projects::js-yaml",
+      "area": "projects",
+      "slug": "js-yaml",
+      "title": "js-yaml — v5 把 load/dump 接到事件管线上",
+      "description": "固定 5.4.1 仍叫 load/dump，内部已换成事件流再构造 JS",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/js-yaml/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::jspdf",
       "area": "projects",
       "slug": "jspdf",
@@ -64341,6 +64372,37 @@
       }
     },
     {
+      "id": "projects::yaml",
+      "area": "projects",
+      "slug": "yaml",
+      "title": "yaml — 先留下 Document，再决定要不要变成 JS",
+      "description": "先收成可改的 Document，需要普通对象时再 toJS",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/yaml/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::yargs",
       "area": "projects",
       "slug": "yargs",
@@ -65803,7 +65865,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

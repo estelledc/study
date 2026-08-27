@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "yaml",
+    "digest_sha256": "f2b2f73c7c1237ba137667b9106748e020a32e4332333f0bac7e59d716fa1366"
+  },
+  "source_revision": "ddb21b04cb889722cec8f89dc1b67f19d62d7f7d",
+  "research_input_sha256": "1d20547e7ca8331839a10ebab49dcf775307f804474b270d12feb02823a0d3dc",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates parse vs parseDocument, 1.2 core defaults, merge-off, and maxAliasCount 100 with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "public-api, Document.setSchema, Composer.forceDoc, Alias.toJSON, and core bool were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Annotated tag v2.9.0 peels to the same gitHead as npm yaml@2.9.0; yaml-test-suite claims remain unrun."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:35:00.000Z"
+}
