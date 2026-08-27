@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
+
+- supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 当前 head：以 `git rev-parse HEAD` 为准；`7b78db79731a` 已是祖先。
+- objective：按本轮 owner review，只接入 #66 并重生成派生索引，使 `xstate`/`mobx` 与 `dayjs`/`date-fns` 同时保持 aligned。
+- scope：merge commit、note-index / project-standard-audit / site-state / 首页指标、本交接。未改四页正文，未开新研究双子。
+- activated_by：PR #65 owner review（ship / approve-with-notes；merge `origin/main`、禁止 rebase/force-push/squash/deploy）。
+- detector fingerprint：#66 合入后两边派生摘要都曾是 53；直接 squash 会把 #66 两页打回 `needs-evidence` 或让计数停在 53。
+- external delta 计数：本 PR（push 已授权；squash / merge / deploy 未授权）。
+- 已完成切片：
+  1. `xstate` 绑定 tag `xstate@5.32.6` → `21872cdc93a3baddbcf43f1d83553991d39f28ab`。
+  2. `mobx` 绑定 `mobx@7.0.3` → `5dbb04a15f7eb0ef6b844904c43955357a9bbdfc`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+  4. `merge origin/main`（不 rebase / 不 force-push）后跑 `regen-atlas` / `audit-project-standard --write` / `generate:site-state`；`xstate` `mobx` `dayjs` `date-fns` 均为 `benchmark-aligned`。
+- 验证结果：`audit:project-standard` snapshot CURRENT；`audit:content-contract` blocking 0；`audit:site-state` current。计数以这些命令为准，未手改。
+- budget：1 个接入 main + 派生重生成切片；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本 PR 未改阈值。
+- stop conditions：merge + regen 已 push、PR 仍 ready 后停止。本 agent 不执行 squash / merge / deploy，不开下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI/review 再变化，或 owner 另行授权 squash。
+- 下一条命令：`gh pr checks 65`。
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
