@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "elysia",
+    "digest_sha256": "c3261252cb5c9899d607b57ca69532e4724674664f559636318b21953ec1e2e2"
+  },
+  "source_revision": "e037eca710e7ad193be09cc6615ab0dbe54af914",
+  "research_input_sha256": "b1bc69905bab688aca0af1ef21225949d3f778cdf7584a9275c3a1b7da1aaf92",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-l",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Bun/WebStandard adapter choice, listen throw, AOT vs dynamic handler, TypeBox/Standard Schema, and 422 validation."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-l",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Constructor adapter default, compile/fetch, schema validators, sucrose inference, and derive hook were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-l",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 1.4.30; throughput and Eden client remain outside this static review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}

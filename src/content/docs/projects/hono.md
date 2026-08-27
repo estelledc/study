@@ -4,144 +4,170 @@ title: Hono — 多运行时 Web 框架
 日期: 2026-05-29
 分类: Web 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/honojs/hono
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 06880c4a2b04de9dd74217f26dd831209b9c01f1
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.13.5
 ---
 
 ## 是什么
 
-Hono 是一个**基于 Web 标准（Request / Response）写的 Web 框架**——你只写一份代码，就能跑在 Node / Bun / Deno / Cloudflare Workers / Vercel Edge / Fastly / AWS Lambda 上。
+Hono 是一个以 Web 标准 Request / Response 为入口的多运行时 Web 框架。日常类比：你只造一台发动机，再按底盘换接口；业务代码写的是 `app.fetch(request)`，Cloudflare Workers、Bun、Deno 可以直接接，Node 则要另找适配器。
 
-日常类比：以前每种部署环境要写一种代码——给 Node 写 Express、给 Cloudflare Workers 写 Itty Router、给 AWS Lambda 写 handler。换运行时就要重写一遍。Hono 像一种"能装到任何车型上的发动机"——同一份代码，换底盘就能跑。
+你写：
 
-```typescript
-import { Hono } from 'hono'
+```ts
+import { Hono } from "hono"
 
 const app = new Hono()
-app.get('/', (c) => c.text('Hi'))
-export default app   // 这一份代码，Bun / Workers / Deno 都接得住
+app.get("/", (c) => c.text("Hi"))
+app.get("/users/:id", (c) => c.json({ id: c.req.param("id") }))
+export default app
 ```
+
+固定 4.13.5 里，`export default app` 暴露的是 `fetch`；运行时只要能把 HTTP 请求变成 `Request`、把返回值当 `Response`，就能挂上同一份 app。
 
 ## 为什么重要
 
-不理解 Hono 解决的问题，下面这些事都没法解释：
+不理解 Hono 的入口和路由器选择，就解释不了下面几件事：
 
-- 为什么 Cloudflare Workers / Bun 把 Hono 选成默认 web 框架推荐
-- 为什么核心只有 14KB（比 Express 小 10 倍），冷启动几毫秒级
-- 为什么路由比 Express 快 5-10 倍（基于 Trie 树 / 编译成大正则）
-- 为什么写 `c.req.param('id')` IDE 自动推出 `string` 类型——TypeScript-first 设计
-
-边缘运行时时代到了。Express 那套 `req.send` 不是 Web 标准、不能跑在 Workers——Hono 就是回答"今天从零设计一个 web 框架，会怎么做"。
+- 为什么同一份 handler 能在 Workers / Bun / Deno 上直接跑，却不能假设 Node 也在核心包里
+- 为什么默认 `Hono` 和 `hono/quick`、`hono/tiny` 用的不是同一套路由器
+- 为什么只有一个 handler 时看不到 `compose`，多个中间件时 `next()` 又不能调用两次
+- 为什么 `HEAD` 请求会先按 `GET` 走一遍，再被换成空 body
 
 ## 核心要点
 
-Hono 的设计可以拆成 **三块**：
+Hono 的请求链可以拆成五步：
 
-1. **Web Fetch API 一等公民**：`c.req` 就是浏览器 fetch 用的那个 `Request` 对象，`c.res` 就是 `Response`。所以"能产出 `(req) => Response`"的运行时都能跑——Workers / Bun / Deno 原生支持，Node 加个 adapter 也行。
+1. **注册路由**：`app.get(path, ...handlers)` 把 method、合并后的 path 和 handler 推进 `router.add()`，同时记入 `routes`。
 
-2. **中间件链同 Koa（洋葱模型）**：每层中间件写成 `(c, next) => Promise<void>`，调用 `await next()` 把控制权交下去，等下层跑完再回到自己的"出来"逻辑。日志、计时、鉴权都靠这个模式。
+2. **选择路由器**：默认 `SmartRouter` 带着 `RegExpRouter` 和 `TrieRouter`。第一次 `match()` 时按顺序把全部路由灌进候选路由器，谁能吃下就锁定，之后 `match` 直接绑到它。
 
-3. **多种路由实现可选**：RegExpRouter（编译成大正则，最快）/ TrieRouter（前缀树，通用）/ LinearRouter（数组扫描，路由少时最快）。默认 SmartRouter 启动时自己探测、选最优、锁死后续请求走同一个。
+3. **入口是 `fetch`**：`#dispatch` 用 `getPath(request)` 取路径（默认 `strict=true`），再 `router.match(method, path)`。`HEAD` 会改派成 `GET`，然后用空 body 包一层 `Response`。
 
-## 实践案例
+4. **组成中间件**：匹配结果只有一个 handler 时直接调用，不再 `compose`；多个 handler 才走 koa 风格洋葱链。`next()` 被调用两次会抛错。
 
-### 案例 1：Hello world（一份代码三处跑）
+5. **Context 出响应**：handler 返回 `Response`，或通过 `c.text()` / `c.json()` 写入 `c.res`。未 finalize 时走 not-found；带 `getResponse()` 的错误可直接变成响应。
 
-```typescript
-import { Hono } from 'hono'
+## 实践示例
+
+### 案例 1：同一份 app，换入口而不是换 handler
+
+```ts
+import { Hono } from "hono"
 
 const app = new Hono()
-app.get('/', (c) => c.text('Hi'))
-app.get('/users/:id', (c) => c.json({ id: c.req.param('id') }))
+app.get("/users/:id", (c) => c.json({ id: c.req.param("id") }))
 
 export default app
 ```
 
-- 跑 **Bun**：`bun run --hot index.ts`
-- 跑 **Cloudflare Workers**：`wrangler deploy`（一行部署到全球边缘）
-- 跑 **Node**：装 `@hono/node-server`，`serve({ fetch: app.fetch, port: 3000 })`
+Workers / Bun / Deno 把这份对象当 `fetch` 入口。固定源码里的 `src/adapter` 覆盖 Bun、Deno、Cloudflare、AWS Lambda、Lambda@Edge、Vercel、Netlify 和 service-worker；**没有 Node adapter**。要在 Node 上 listen，需要核心仓之外的包，本轮未打开那个包。
 
-**完全相同的 app**——只换"启动方式"。
+### 案例 2：CORS 必须先于会拒绝 OPTIONS 的中间件
 
-### 案例 2：中间件链做日志 + 鉴权
-
-```typescript
-import { Hono } from 'hono'
-import { logger } from 'hono/logger'
-import { cors } from 'hono/cors'
-import { jwt } from 'hono/jwt'
+```ts
+import { Hono } from "hono"
+import { cors } from "hono/cors"
+import { jwt } from "hono/jwt"
 
 const app = new Hono()
-
-app.use('*', logger())                         // 全局打日志
-app.use('*', cors())                           // 必须在 jwt 前面
-app.use('/admin/*', jwt({ secret: 'xxx' }))    // 只对 /admin/* 鉴权
-
-app.get('/admin/users', (c) => c.json({}))
+app.use("*", cors())
+app.use("/admin/*", jwt({ secret: "xxx" }))
+app.get("/admin/users", (c) => c.json({ ok: true }))
 ```
 
-→ Hono 内置 `logger` / `cors` / `jwt` / `cache` / `compress` 等中间件，`app.use()` 一行接入。
+固定 CORS 在 `OPTIONS` 上直接 `return new Response(null, { status: 204 })`，**不会** `await next()`。如果 jwt 先注册并匹配到预检请求，预检会在 CORS 之前被拒绝。
 
-### 案例 3：路径参数 + 类型自动推
+### 案例 3：路由器预设不是同一个默认值
 
-```typescript
-app.get('/users/:id', (c) => {
-  const id = c.req.param('id')        // TS 自动推出 string
-  const search = c.req.query('q')     // TS 推出 string | undefined
-  return c.json({ id, search })
-})
+```ts
+import { Hono } from "hono"
+import { Hono as QuickHono } from "hono/quick"
+import { Hono as TinyHono } from "hono/tiny"
+
+const app = new Hono()           // SmartRouter(RegExpRouter, TrieRouter)
+const quick = new QuickHono()    // SmartRouter(LinearRouter, TrieRouter)
+const tiny = new TinyHono()      // PatternRouter
 ```
 
-写完直接有补全。这就是 TypeScript-first 的体感。
+旧文把 LinearRouter 写成默认实现，这与 4.13.5 的 `src/hono.ts` 不符。路由少、想先线性扫描时才走 `hono/quick`。
 
 ## 踩过的坑
 
-1. **Node 部署需要 adapter**：Cloudflare Workers / Bun 原生支持 `fetch` 入口，Node 不行。要装 `@hono/node-server`，把 Hono app 包成 Node http server 才能跑。
+1. **把 Node 当成核心 runtime**：`src/adapter` 没有 Node。`export default app` 对 Node http.Server 不够，还要单独 adapter。
 
-2. **Streaming 响应各运行时实现不同**：Cloudflare Workers 原生支持 `ReadableStream`，Node 通过 `@hono/node-server` 模拟，行为有细微差异。生产用流式响应前要在目标运行时实测。
+2. **把 LinearRouter 当默认**：默认是 RegExpRouter 优先的 SmartRouter；LinearRouter 在 `hono/quick`。
 
-3. **Body size 限制各家不同**：Cloudflare Workers 100MB / Vercel Edge 4.5MB / AWS Lambda 6MB。同一份代码部署到不同环境，**上传文件场景**要单独按运行时算配额。
+3. **中间件顺序**：CORS 对 OPTIONS 短路。鉴权中间件放在 CORS 前面，浏览器预检过不了。
 
-4. **中间件顺序敏感**：把 `jwt` 放在 `cors` 之前，浏览器的 CORS preflight `OPTIONS` 请求会先被 jwt 拒绝（401），CORS 永远不通。**必须 cors 先于 jwt** 注册。
+4. **忘记返回 Response 或 `await next()`**：多 handler 路径在 `context.finalized === false` 时会抛 “Context is not finalized”。
+
+5. **把 `c.req.param('id')` 的类型当成永远是 `string`**：路径里声明了必填 `:id` 时是 `string`；未知 key 或可选参数的重载是 `string | undefined`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 任何 edge function（Cloudflare Workers / Vercel Edge / Fastly）
-- 多运行时部署需求（一套代码 Bun + Node + Workers 都跑）
-- 轻量 BFF（backend for frontend），前端附带的 API 层
-- 给 LLM agent / MCP server 写部署层（启动快、跨平台）
+
+- 目标运行时接受 `(request) => Response`，例如 Workers、Bun、Deno
+- 希望一份路由表挂到多个 adapter，而不是为每个平台重写 handler
+- 需要内置 CORS / JWT / validator，并且能接受 TypeScript 路径参数推导
 
 **不适用**：
-- 需要重型 ORM 集成 + 复杂 service layer → NestJS / Fastify 生态更全
-- 已有大量 Express middleware 的现成项目 → 迁移成本可能不值
-- 重型 SSR → Next / Remix / Astro 更合适
-- WebSocket / SSE 是核心需求 → 能做但不是 Hono 强项，各 adapter 差异大
 
-## 历史小故事（可跳过）
+- 必须跑在 Node，又不想引入核心仓之外的 server adapter
+- 已经堆了大量 Express middleware，迁移成本高于重写
+- 需要本轮未核验的固定 bundle 大小或路由 benchmark 数字来做选型
 
-- **2010 年**：Express 诞生，Node 专属，callback 风格统治十年。
-- **2020 年前后**：Cloudflare Workers / Deno Deploy / Vercel Edge 陆续上线，**Node 专属 API 不再够用**——边缘运行时只接受 `(req) => Response` 这种 Web 标准签名。
-- **2022 年**：日本开发者 Yusuke Wada 启动 Hono（日语"炎"），目标是"用 Web 标准写一次、到处跑"。
-- **2024-2026 年**：Cloudflare 把 Hono 列为 Workers 官方推荐框架，Bun 内置 Hono template，社区贡献者破百，star 数破 24k。
+## 固定版本边界
+
+- 本文绑定 `honojs/hono@06880c4a...`，annotated tag `v4.13.5`、package 与 npm `gitHead` 均为同一提交。
+- package 声明 `engines.node >= 16.9.0`，同时提供 import / require exports。
+- 默认路由器是 `SmartRouter + RegExpRouter`，失败才落到 `TrieRouter`；探测完成后 `match` 被替换，路由表不再允许继续 `add`。
+- 本文未安装依赖、运行 `runtime-tests` 或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **抽象层站对了，跨平台是免费的**——Hono 的关键判断不是"重新发明 API"，而是"Web 平台已有标准，我们顺着走"。
-2. **核心薄、扩展点多** 是好框架的健康信号——核心 14KB，路由 / 中间件 / adapter 都是扩展点，业务方不动核心也能扩展。
-3. **运行时优化（SmartRouter）的代价是冷启动**——首次探测有开销，但探测一次后就锁定；这种"启动时一次性 N 选一"的模式可以抄到自己的库里。
-4. **顺序敏感的设计要让用户看得见**——cors 必须在 jwt 之前，这种隐含约束最好用文档显式提醒，而不是让用户撞错才发现。
+1. **跨运行时靠的是 Fetch 合同，不是“全能 adapter 目录”**——核心包里有哪些 adapter，要以 `src/adapter` 为准。
+2. **默认路由器是启动时一次性竞选**——SmartRouter 把第一次 match 当成编译点。
+3. **单 handler 快路径和洋葱链是两条代码**——不要用 compose 的语义去解释所有请求。
+4. **中间件短路是可观察合同**——CORS 对 OPTIONS 直接 204，顺序必须写进注册表。
+
+## 应用型自测
+
+1. `new Hono()` 默认会先尝试哪两个路由器？`LinearRouter` 在哪个预设？
+2. 某条路由只匹配到一个 handler 时，还会走 `compose` 吗？
+3. 核心仓的 `src/adapter` 有没有 Node？`HEAD /users/1` 会不会原样当 HEAD 去 match？
+
+检查点：
+
+1. 先 `RegExpRouter` 再 `TrieRouter`；`LinearRouter` 在 `hono/quick`。
+2. 不会。单 handler 直接调用。
+3. 没有 Node adapter。`HEAD` 会按 `GET` dispatch，再包成空 body 响应。
 
 ## 延伸阅读
 
-- 官方文档：[hono.dev](https://hono.dev/)（中文文档完整，5 分钟跑起来）
-- 源码精读：[hono-base.ts](https://github.com/honojs/hono/blob/main/src/hono-base.ts)（545 行，整个框架的入口）
-- [compose.ts 73 行](https://github.com/honojs/hono/blob/main/src/compose.ts) —— koa-compose 经典模式，比读 200 页 koa 文档快
-- [[trpc]] —— 同样 TypeScript-first 的"前后端类型共享"框架，REST vs RPC 风格不同
+- 官方文档：[hono.dev](https://hono.dev/)
+- 固定源码：[honojs/hono](https://github.com/honojs/hono) —— 本文绑定提交 `06880c4a2b04de9dd74217f26dd831209b9c01f1`
+- 对照入口：`src/hono.ts`、`src/hono-base.ts`、`src/compose.ts`、`src/router/smart-router/router.ts`
+- [[trpc]] —— 同样 TypeScript-first，但是 RPC 而不是 REST fetch 入口
+- [[koa]] —— Hono `compose` 注释写明基于 koa-compose
 
 ## 关联
 
-- [[bun]] —— Bun 内置 Hono template，二者协同强
-- [[koa]] —— Hono 的中间件模型抄自 Koa（洋葱模型 + compose 73 行）
-- [[express]] —— Hono 解决的问题就是 Express 解决不了的"跨运行时"
+- [[bun]] —— Bun 可直接挂 `app.fetch`
+- [[koa]] —— 洋葱中间件与 `next()` 语义的来源
+- [[express]] —— Node 专属 req/res 模型的对照
 
 ## 反向链接
 
