@@ -113,7 +113,7 @@ AST 变换不必每次都经过 stringify。反过来，已经有树时也不必
 
 - 需要把 parse、变换、序列化拆开，并让 plugin 共享 `data`
 - 同一套 processor 既输出文本，也输出非文本 `file.result`
-- 阅读 [[remark]] / rehype / retext 为什么能共用一套 `.use()` 合同
+- 阅读 remark / rehype / retext 为什么能共用一套 `.use()` 合同
 
 **不适用**：
 
