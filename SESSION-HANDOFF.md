@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FF：std-env + ci-info
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`1f2917d90`（当时 `origin/main`）。
+- objective：为 runtime-env 双子新增 `std-env` 与 `ci-info` 源码绑定页；证据边界 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、共享 `docs/runtime-env-source-review-20260827-ff.md`、2 份 generation 1 receipt、taxonomy 与派生索引、相关页生成段反向链接、本 handoff；未安装上游依赖、未跑上游测试、未在真实 CI / 边缘运行时探测。
+- activated_by：`explicit-user-parallel-writer-ff-20260827`（origin/main，一对 PR，不 merge）。
+- detector fingerprint：目标 slug 在 main 上不存在；`std-env` 易被写成“包了一层 `process.env.CI` / 运行时依赖 ci-info”；`ci-info` 易被写成与 std-env 同一套 `isCI`，并漏掉 `CI=false` 旁路与匿名 CI。
+- external delta：本分支 push + 单一 PR（用户授权）；未 merge、未 deploy。
+- 完成切片：
+  1. `std-env` 绑定 annotated tag `v4.2.0` peel `ddd5e9e0...`；npm `4.2.0` 无 `gitHead`，已披露。
+  2. `ci-info` 绑定 annotated tag `v4.4.0` peel `c4e1d056...`，与 npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision / research input 一致，`evidence_state=UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` blocking 0。全量 `verify:ci` 在 push 后补跑。
+- budget：1 个可写切片；默认 epoch 预算内。
+- blocker：规模 `tracked_files` 超 baseline 的 detector 仍属先于本切片的 `PARKED_HUMAN`；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 review/CI 变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=1f2917d90 npm run verify:ci`；PR 状态用 GitHub 查看。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

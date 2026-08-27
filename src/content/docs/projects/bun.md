@@ -193,5 +193,6 @@ Bun.serve({
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
+- [[std-env]] —— std-env — 一次 import 读出运行时、CI 与 agent
 - [[vitest]] —— Vitest — Vite 原生测试框架
 - [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑

@@ -149,6 +149,7 @@ deno run --allow-net=api.internal.example.com scheduler.ts
 
 - [[boa-engine]] —— Boa — Rust 写的 ECMAScript 解释器
 - [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
+- [[std-env]] —— std-env — 一次 import 读出运行时、CI 与 agent
 - [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
 - [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑
 

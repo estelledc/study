@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -17,6 +17,7 @@ sidebar:
 | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | `asdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | `aws-spot-best-practices` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | `bigbluebutton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ci-info — 用 vendor 常数回答“这是哪家 CI”](/study/projects/ci-info/) | `ci-info` | beginner | UNVERIFIED | 固定 4 |
 | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | `collabora-online` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | `coturn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | `cri-o` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -54,6 +55,7 @@ sidebar:
 | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | `shellcheck` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SigNoz — 自托管的 OpenTelemetry 一体化可观测平台](/study/projects/signoz/) | `signoz` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | `starrocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [std-env — 一次 import 读出运行时、CI 与 agent](/study/projects/std-env/) | `std-env` | beginner | UNVERIFIED | 固定 4 |
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

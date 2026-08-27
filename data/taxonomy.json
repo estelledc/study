@@ -1840,6 +1840,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::ci-info",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::clack",
       "topic_id": "projects-cli-tools"
     },
@@ -2418,6 +2422,10 @@
     {
       "note_id": "projects::starlight",
       "topic_id": "projects-documentation-sites"
+    },
+    {
+      "note_id": "projects::std-env",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::steel-browser",

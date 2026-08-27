@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "std-env",
+    "digest_sha256": "51a82be0bbee5f9fd6aa9ca3dbdefdd4e5caf29ecd037811e1ab461b80aaf819"
+  },
+  "source_revision": "ddd5e9e076c9677328bb2ca92edbce64757b744d",
+  "research_input_sha256": "84ff4d01b1f48e5a34607314a454f980a4c96c97f819b85866ee613255cf035a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ff",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates runtime election, provider snapshot, isCI composition, and agent override with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ff",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "env shim, runtime order, provider table, flags, and agent checks were inspected; vitest was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ff",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v4.2.0 peels to the bound revision; npm 4.2.0 has no gitHead. Bundle and live runtime checks remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

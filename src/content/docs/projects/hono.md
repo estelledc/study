@@ -175,6 +175,7 @@ const tiny = new TinyHono()      // PatternRouter
 
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
+- [[ci-info]] —— ci-info — 用 vendor 常数回答“这是哪家 CI”
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
@@ -190,4 +191,5 @@ const tiny = new TinyHono()      // PatternRouter
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+- [[std-env]] —— std-env — 一次 import 读出运行时、CI 与 agent
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC

@@ -180,5 +180,7 @@ const data = await ofetch<User>("/api/users/1", {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[ci-info]] —— ci-info — 用 vendor 常数回答“这是哪家 CI”
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
+- [[std-env]] —— std-env — 一次 import 读出运行时、CI 与 agent
 - [[wretch]] —— wretch — 把 fetch 写成一条链
