@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AJ：Vite / webpack 静态源码迁移
+
+- supervisor 状态：Program `active`；writer epoch `complete`；等待 PR review，不合并。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `vite` 与 `webpack` 两页从 legacy 教程迁到固定源码的 `study-v2` `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/bundler-source-review-20260827-aj.md`、派生 atlas/site-state/project-standard；未安装上游依赖、未跑 dev server / webpack CLI / 上游测试 / benchmark。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-aj`。
+- detector fingerprint：两页结构完整但缺 pinned revision、evidence boundary 与应用型自测；旧正文把 Vite 8 仍写成 esbuild+Rollup 双引擎，并把未测量启动时间/下载量写成事实。
+- external delta 计数：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；形成 1 个 PR，未 merge、未部署，D 轴不因 merge/deploy 提升。
+- 已完成切片：
+  1. `vite` 绑定 `vitejs/vite@de1111ab...` / `8.2.2`，纠正 Rolldown 预构建与生产构建、默认 unbundled transform、`bundledDev` 与 `rollupOptions` 代理。
+  2. `webpack` 绑定 `webpack/webpack@6a24bd65...` / `5.109.2`，补 createCompiler 时机、make/seal/emit、loader pitch/normal 方向与 Module Federation 组合。
+  3. 新增共享 `docs/bundler-source-review-20260827-aj.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+- budget：2 个 ignored worktree + 2 页静态源码迁移；单 writer。
+- 验证结果：定向 quality-gate 与派生快照已刷新；全量 `verify:ci` 在提交后继续跑。
+- blocker：未获 merge/deploy 授权；静态阅读不能升级为运行证据。
+- stop conditions：本 epoch 在开出 1 个 PR 后停止；不自动 merge。
+- 下一次 wake 条件：owner review / CI 结果，或新的显式范围重授权。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。见 `AGENTS.md`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

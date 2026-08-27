@@ -63052,7 +63052,7 @@
       "id": "projects::vite",
       "area": "projects",
       "slug": "vite",
-      "title": "Vite — 浏览器自己加载源码的构建工具",
+      "title": "Vite — 默认按原生 ESM 加载、用 Rolldown 打包的构建工具",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63065,13 +63065,13 @@
         "raw_category": "构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/vite/",
       "atlas": {
@@ -63774,7 +63774,7 @@
       "id": "projects::webpack",
       "area": "projects",
       "slug": "webpack",
-      "title": "webpack 模块打包",
+      "title": "webpack — 用 Compiler 与 Compilation 钩子把模块图打成浏览器产物",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63787,13 +63787,13 @@
         "raw_category": "构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/webpack/",
       "atlas": {

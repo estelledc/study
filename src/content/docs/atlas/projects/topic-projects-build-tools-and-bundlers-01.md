@@ -25,5 +25,5 @@ sidebar:
 | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | `rspack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | `swc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | `turbopack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | `vite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [webpack 模块打包](/study/projects/webpack/) | `webpack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Vite — 默认按原生 ESM 加载、用 Rolldown 打包的构建工具](/study/projects/vite/) | `vite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [webpack — 用 Compiler 与 Compilation 钩子把模块图打成浏览器产物](/study/projects/webpack/) | `webpack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

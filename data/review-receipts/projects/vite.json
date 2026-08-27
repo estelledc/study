@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "vite",
+    "digest_sha256": "522161ea295e6e466e00fc8cd973fe6e5bb68575039838f68841fabd65320c6d"
+  },
+  "source_revision": "de1111ab0be00879b404e7ed3b2a80e264edddc1",
+  "research_input_sha256": "ea246037e4d767b4053140350fbda9ab03de41423e299ad2e1619012a044325b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-aj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains default ESM transform, Rolldown optimize/build, bundledDev off-by-default, and rollupOptions proxy with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-aj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected createServer, transformRequest, runOptimizeDeps rolldown() call, resolveRolldownOptions, and HMR bundledDev early return; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-aj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm vite@8.2.2 has no gitHead; identity is bound to GitHub tag v8.2.2 / packages/vite 8.2.2. Performance claims are omitted."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}
