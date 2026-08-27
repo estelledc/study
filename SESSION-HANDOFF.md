@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GC：radix3 + rou3 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；用户授权 push + 1 个 PR，未授权 merge。
+- 起始 ref：`9adc8b991`（当时 `origin/main`）。
+- objective：为 `radix3` 与 `rou3` 建立 `STATIC_REVIEW` / `UNVERIFIED` 的源码绑定 study-v2 页；文档 `docs/router-trie-source-review-20260827-gc.md`。
+- scope：两页正文、2 份 generation 1 receipt、共享审查文档、taxonomy / note-index / project-standard / site-state / atlas / 公开计数文案、本 handoff；未安装上游依赖、未跑 vitest / bench / `new Function` 编译器。
+- activated_by：`explicit-user-request-20260827-parallel-writer-gc`。
+- detector fingerprint：仓库无 radix3/rou3 页；`unjs/radix3` GitHub 入口重定向到 `h3js/rou3`；radix3 npm `1.1.2` 的 `gitHead` 与 tag `v1.1.2` 不是同一提交。
+- external delta：分支将 push 并打开 1 个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `radix3` 绑定 npm `gitHead` `293d3ae4...` / `1.1.2`，披露 tag `v1.1.2` 落在祖先且 `package.json` 仍为 `1.1.1`；修正无方法维、精确段优先、`maxDepth` 多占位、默认剥尾斜杠、`remove` 对 `Map` 清扫不完整。
+  2. `rou3` 绑定 tag `v0.9.2` 剥皮 `68f6d87d...` / `0.9.2`（npm 无 `gitHead`）；修正零参数 `createRouter`、`{ data, params }` 返回形、方法桶回落、同节点挡门闸、`compileRouter` 依赖 `new Function`。
+  3. 新增共享 `docs/router-trie-source-review-20260827-gc.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt 与正文 digest / revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract`（0 blocking，v2=150）通过。`verify:ci` 在 PR 上跑。
+- budget：2 个 ignored worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 `tracked_files` 超 baseline 的 `PARKED_HUMAN` 先于本切片存在；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 review/CI，或新的显式有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`（规范 Node 22.23.1 / npm 11.17.0）。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

@@ -2328,6 +2328,10 @@
       "topic_id": "projects-headless-ui-components"
     },
     {
+      "note_id": "projects::radix3",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
       "note_id": "projects::react",
       "topic_id": "projects-ui-and-frontend-frameworks"
     },
@@ -2366,6 +2370,10 @@
     {
       "note_id": "projects::rolldown",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::rou3",
+      "topic_id": "projects-web-frameworks"
     },
     {
       "note_id": "projects::rollup",

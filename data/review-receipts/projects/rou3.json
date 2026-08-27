@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "rou3",
+    "digest_sha256": "0327b11d6614ec79c3fc2d727f2716c58623b8b6f330f2f7266d9d548de17b94"
+  },
+  "source_revision": "68f6d87de9533b1bb3e06d95c53184a41f4a515c",
+  "research_input_sha256": "2ecd429c1d50411f113d5a075590e8b6e120237fb5bf21cb1467c72bc5e50d8a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates zero-arg createRouter, {data,params} return shape, method fallback, and compileRouter eval."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected add/find/find-all/remove/compiler; method bucket and same-node hide were read, vitest not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag v0.9.2 peeled SHA matches package 0.9.2; npm publishes no gitHead, so identity is tag plus SHA."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:35:00.000Z"
+}

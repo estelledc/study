@@ -1,6 +1,6 @@
 ---
 title: "Web 框架 · 项目 · 第 1 组"
-description: "14 条 Web 框架 Atlas 分块"
+description: "16 条 Web 框架 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -24,6 +24,8 @@ sidebar:
 | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) | `laravel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NestJS — 用模块与 DI 组织 Node 后端的企业级框架](/study/projects/nestjs/) | `nestjs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | `orleans` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [radix3 — 无方法维的 Radix Tree 路由器](/study/projects/radix3/) | `radix3` | intermediate | UNVERIFIED | 固定 1 |
 | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | `rails` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Robyn — Rust 内核驱动的 Python 高性能 Web 框架](/study/projects/robyn/) | `robyn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [rou3 — 带方法维的后继路径路由器](/study/projects/rou3/) | `rou3` | intermediate | UNVERIFIED | 固定 0 |
 | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | `sinatra` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
