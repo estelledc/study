@@ -22,10 +22,12 @@
   - `audit:content-contract`：0 blocking，v2=89。
   - `audit:counts` / `audit:wikilinks` / `audit:links` / `audit:site-state` / `git diff --check`：通过。
 - budget：2 个 ignored worktree + 2 页静态源码；单 writer；1 个 PR。
-- blocker：无。未跑 `verify:ci` 全量门禁前不得声称 Pages/Playwright 已绿。
+- blocker：无。PR #122 已开为 draft，等待远端 CI；不 merge。
+- acceptance addendum：
+  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿；strict build 2287 HTML、2286 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁通过。
 - stop conditions：需要猜 revision、把静态阅读写成运行成功、放宽门禁或 merge 时停止。
-- 下一次 wake 条件：PR CI / review 状态变化，或 owner 明确授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一次 wake 条件：PR #122 CI / review 状态变化，或 owner 明确授权 merge。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/122`；未获 merge 授权前不要合并。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
