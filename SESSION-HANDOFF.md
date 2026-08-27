@@ -19,6 +19,7 @@
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:counts` / `audit:site-state` / `audit:content-contract`：blocking 0；`v2=105`。
+  - `STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。首次 a11y 失败是本机缺 Playwright Chromium，安装后重跑通过，未改代码或门禁。
 - budget：2 个 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：规模 baseline 在 main 上已超阈值，属既有 `PARKED_HUMAN` 项；本轮未改 baseline。
 - stop conditions：本 epoch 以 1 个 PR 结束；不 merge。
