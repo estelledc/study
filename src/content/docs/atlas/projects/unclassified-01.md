@@ -20,7 +20,7 @@ sidebar:
 | [Conform — 让浏览器原生 form 也能 type-safe 校验](/study/projects/conform/) | `conform` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | `debezium` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [deck.gl — 大规模地图数据可视化图层库](/study/projects/deck-gl/) | `deck-gl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Deno — 安全优先的 TypeScript/JavaScript 运行时](/study/projects/deno/) | `deno` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时](/study/projects/deno/) | `deno` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DVC — 数据版本管理](/study/projects/dvc/) | `dvc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | `encore` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hermes — Facebook 的 React Native JS 引擎](/study/projects/hermes/) | `hermes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

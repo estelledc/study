@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "bun",
+    "digest_sha256": "e17765e2392456b40bcc6f6bc0b6f9bdcd420a47e77182d4760cfc67307a4a3d"
+  },
+  "source_revision": "34cbb9a40b4bd1bd767d134a7065e66c2432a676",
+  "research_input_sha256": "6c7227b9e16847238ad143112094a73d65e75b45949812d0536defa2f46df3c8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-p",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Rust workspace, ServerConfig port/idle_timeout, routes vs fetch, and hoisted/isolated install."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-p",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "CLI dispatch, ServerConfig::from_js, install backends, bun:test, LICENSE LGPL-2 were inspected; binaries were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-p",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Zig claim corrected; 1.4.0 tag/package/revision agree; no npm gitHead; UNVERIFIED static review only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:35:00.000Z"
+}
