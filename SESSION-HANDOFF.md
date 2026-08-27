@@ -19,7 +19,7 @@
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：digest / revision 一致，evidence `UNVERIFIED`。
   - `git diff --check`：通过。
-  - `verify:ci`：提交后以 `STUDY_CHANGED_FROM=042f60a8` 跑规范 Node 22.23.1 / npm 11.17.0。
+  - `STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下 portable gates 全绿（含 23 Playwright a11y）。
 - budget：1 个可写切片、2 页静态迁移、单 writer。
 - blocker：main 上规模 detector `tracked_files` 超限属既有 `PARKED_HUMAN`；本轮未改 baseline / 阈值。
 - stop conditions：本轮完成后停止；不自 merge。
