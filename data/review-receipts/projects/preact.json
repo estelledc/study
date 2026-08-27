@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "preact",
+    "digest_sha256": "5fe0367637a79300be1b268d3a25ac9c482f66c1d21603d5f5e1cabf6d0059d3"
+  },
+  "source_revision": "389c7bcc5140566f3fbae73cf17edf4ab44f4d96",
+  "research_input_sha256": "6cf25f110e02615dbfc7d05a3f5bd5c8fef97e65dcd1e44fd9778fe913ec535b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-cb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates core native change events, compat onChange remapping, microtask batching, and the 25-render function-component loop."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-cb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "render, createElement, diff, props event proxy, hooks and compat render were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-cb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable tag 10.29.8 because npm publishes no gitHead; 11.x prereleases and bundle size stay out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}

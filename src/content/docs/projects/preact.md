@@ -1,177 +1,171 @@
 ---
-title: Preact — 3KB React 替代
+title: Preact — 同步 VNode diff 的轻量 React 兼容渲染器
+description: 介绍 Preact 10.29.8 如何用 Fragment 根、微任务批处理和原生事件代理渲染组件
 来源: https://github.com/preactjs/preact
 日期: 2026-05-29
 分类: UI 框架
 难度: 中级
+difficulty: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/preactjs/preact
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 389c7bcc5140566f3fbae73cf17edf4ab44f4d96
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 10.29.8
 ---
 
 ## 是什么
 
-Preact 是 **React 的轻量替代品**——API 几乎一样，但打包后只有 3KB（gzip）。React 是 45KB+。
+Preact 是一个用同步虚拟 DOM diff 渲染组件的库。日常类比：它像一台只做“对比新旧菜单、改桌上的盘子”的后厨，不另建一套合成事件或可中断调度。
 
-日常类比：同款方便面，一家用大袋装得全（React），一家用小袋恰好够吃（Preact），口味基本一样。
-
-代码长这样（你看不出和 React 的区别）：
+你写：
 
 ```js
-import { h, render } from 'preact'
-import { useState } from 'preact/hooks'
+import { h, render } from "preact";
+import { useState } from "preact/hooks";
 
 function Counter() {
-  const [n, setN] = useState(0)
-  return <button onClick={() => setN(n + 1)}>{n}</button>
+  const [n, setN] = useState(0);
+  return h("button", { onClick: () => setN(n + 1) }, n);
 }
 
-render(<Counter />, document.body)
+render(h(Counter, null), document.body);
 ```
 
-把 `preact` 换成 `react` + `react-dom`，几乎不改一行也能跑——这就是 Preact 的核心卖点。
+`h` 就是 `createElement`。`render()` 会把传入树再包一层 `Fragment`，并把这棵树挂在容器的 `_children` 上，以便下次对比。固定 10.29.8 的 `package.json` 自称 “Fast 3kb”；本轮未测量 gzip 体积，不把营销数字当合同。
 
 ## 为什么重要
 
-不理解 Preact 的存在价值，下面这些事都解释不清：
+不理解 Preact 的同步 diff 和事件边界，就解释不了：
 
-- 移动端 / 性能敏感场景（百度首页、Etsy 商品页、阿里小程序）为什么用 Preact 替代 React 节省加载时间
-- 为什么 API 兼容 React 还能瘦身 14 倍——"React 不轻量"这个长期吐槽，Preact 给了开源解
-- 为什么 Astro / Fresh 等新框架默认搭 Preact 而不是 React——岛屿架构 / 边缘渲染对包体积敏感
-- 为什么营销活动 H5 / 落地页宁愿手写也不上 React——但上 Preact 可以，体积差距决定了能不能用
-
-3KB 不是数字游戏。每多一个 KB，2G 网络下加载多 200ms，转化率掉 1%。
+- 为什么核心包里的 `onChange` 绑定的是浏览器原生 `change`，而 `preact/compat` 会把它改成 `input`
+- 为什么连续 `setState` 会合成一次更新，却仍然没有 Fiber 那种可中断优先级
+- 为什么函数组件在 `render` 里再 `setState` 可能循环多次
+- 为什么 alias 到 `preact/compat` 能骗过检查 `React.version` 的库
 
 ## 核心要点
 
-Preact 怎么砍掉 42KB，靠的是 **三招**：
+固定 10.29.8 的执行链可以拆成五步：
 
-1. **去掉合成事件（synthetic event）**：React 自己造了一套跨浏览器事件系统（SyntheticEvent），统一行为。Preact 直接用浏览器原生事件——绑事件就是 `addEventListener`。代价：极少数浏览器兼容差异要自己处理。
+1. **建 VNode**：`createElement` 抽出 `key`/`ref`，其余放进 `props`；内部 `createVNode` 给节点一个单调 `_original` 序号。
 
-2. **简化 reconciler（diff 算法）**：React 用 fiber 架构（可中断、优先级调度），Preact 是简单递归 diff。代价：超大组件树场景丢帧——但 99% 网页根本不到那个量。
+2. **挂根**：`render(vnode, parent)` 若 `parent == document` 会改写到 `document.documentElement`；首次渲染把现有 `childNodes` 当作 excess DOM，供 hydration / 重用。
 
-3. **`h()` 替代 `createElement`**：函数名短、压缩友好。`h(name, props, children)` 三个参数，没有内部包装层。
+3. **同步 diff**：函数组件没有 Fiber 栈。类组件走 `prototype.render`；函数组件被包成 `BaseComponent`，`doRender` 直接调用 `constructor(props, context)`。子树由 `diffChildren` 递归处理。
 
-兼容层 **`preact/compat`** 把类组件 / `forwardRef` / `lazy` / `Suspense` 都模拟出来。打包工具配一行 alias，第三方 React 库就能跑：
+4. **批处理重绘**：`setState` 和 hook setter 进入 `enqueueRender`。默认用 `Promise.then` 排到微任务；`options.debounceRendering` 可替换。队列按 vnode `_depth` 排序后一次冲刷。
+
+5. **原生事件代理**：`on*` 属性走 `addEventListener` + 共享 `eventProxy`。代理用实例级 event clock 丢掉“补丁期间新挂上的节点”误收到的冒泡。核心**不**把 `onChange` 改写成 `onInput`。
+
+Hooks 在独立入口 `preact/hooks`：`useState` 就是 `useReducer`；`useLayoutEffect` 进 commit 回调；`useEffect` 在 paint 之后用 `requestAnimationFrame` 加 35 ms 超时冲刷。`useId` 生成 `P{mask0}-{mask1}`。
+
+## 实践示例
+
+### 案例 1：核心 API 不经过 compat
 
 ```js
-// vite.config.js
-export default {
-  resolve: {
-    alias: {
-      react: 'preact/compat',
-      'react-dom': 'preact/compat',
-    },
-  },
+import { h, render } from "preact";
+render(h("input", { onChange: (e) => console.log(e.type) }), document.body);
+```
+
+核心路径会监听原生 `change`。文本框里每敲一个字通常**不会**触发；失焦才会。这是浏览器语义，不是 bug。
+
+### 案例 2：compat 把 onChange 改成 onInput
+
+```js
+import { createElement, render } from "preact/compat";
+render(createElement("input", { onChange: (e) => console.log(e.type) }), document.body);
+```
+
+`compat/src/render.js` 对 `input`/`textarea` 把 `onchange` 改成 `oninput`，但 `file`/`checkbox`/`radio` 例外。同一段 JSX，核心与 compat 的事件合同不同。
+
+### 案例 3：微任务批处理
+
+```js
+function Tick() {
+  const [n, setN] = useState(0);
+  const bump = () => { setN((x) => x + 1); setN((x) => x + 1); };
+  return h("button", { onClick: bump }, n);
 }
 ```
 
-## 实践案例
-
-### 案例 1：Hello world，30 秒看懂
-
-```js
-import { h, render } from 'preact'
-render(<h1>Hi</h1>, document.body)
-```
-
-**逐行解释**：
-
-- `h` 是 `createElement` 的简写——`<h1>Hi</h1>` 经 JSX 编译变成 `h('h1', null, 'Hi')`
-- `render(vnode, container)` 把虚拟节点挂到真实 DOM 上
-- 整个 import 加起来 3KB，没了
-
-### 案例 2：Hooks 用法和 React 一模一样
-
-```js
-import { useState, useEffect } from 'preact/hooks'
-
-function Clock() {
-  const [time, setTime] = useState(new Date())
-  useEffect(() => {
-    const id = setInterval(() => setTime(new Date()), 1000)
-    return () => clearInterval(id)
-  }, [])
-  return <div>{time.toLocaleTimeString()}</div>
-}
-```
-
-`useState` / `useEffect` / `useMemo` / `useRef` 全部对齐 React API。学过 React 的零成本切换。
-
-### 案例 3：用 preact/compat 替换 React
-
-老项目想试 Preact，不用改业务代码，配置层做手术：
-
-```js
-// vite.config.js
-export default {
-  resolve: {
-    alias: {
-      react: 'preact/compat',
-      'react-dom/client': 'preact/compat/client',
-      'react-dom': 'preact/compat',
-    },
-  },
-}
-```
-
-跑起来：bundle size 从 130KB → 30KB 是常见结果。第三方依赖几乎无感。
+两次 setter 都只把组件标脏并入队；默认 `Promise.then` 之后才 `diff` 一次。函数组件若在 `render` 里继续 `setState`，同一轮最多再循环 24 次（`count < 25`）。
 
 ## 踩过的坑
 
-1. **第三方 React 库依赖 React 内部 API**：老版本 `react-dnd`、某些 React 19 RSC 库会直接 import `react/jsx-runtime` 的内部模块，preact/compat 没模拟全。判断标准：库 README 写 "compatible with Preact" 就稳，没写就要测一遍。
+1. **把核心 Preact 的 `onChange` 当成 React**：核心走原生 `change`。要从 React 迁核心包，受控输入应写 `onInput`；只有走 `preact/compat` 才会自动改写。
 
-2. **事件命名差异**：`onChange` 在 input 上，Preact 是浏览器原生 change（失焦才触发），React 改写成 input（每次按键触发）。从 React 迁过来要把 `onChange` 改 `onInput`，否则受控组件输入会卡。
+2. **以为 `preact/compat` 等于 React 18 运行时**：compat 把 `version` 写成 `'18.3.1'` 是为了骗过库检测。它提供 `memo`/`forwardRef`/`Suspense`/`lazy`/`flushSync`，但没有把调度改成 Fiber。
 
-3. **React 19 新特性跟进慢**：Server Components / `use()` hook / Actions 这些 React 19 新东西，Preact 要等几个月甚至更久。如果项目重度依赖 RSC，Preact 不是首选。
+3. **`render(vnode, document)`**：固定实现会改写到 `document.documentElement`，不是 `document.body`。
 
-4. **测试要换库**：单测不能直接用 `@testing-library/react`，要用 `@testing-library/preact`。两个 API 几乎一样但 import 不同，迁移时记得全局搜索替换。
+4. **把 3KB / 某 benchmark 名次写成当前事实**：`package.json` 描述仍写 “3kb”，本轮未测产物，也未跑 js-framework-benchmark。
 
-5. **DevTools 是单独的扩展**：React DevTools 不能直接用，Preact 有自己的 `preact/debug` 包，开发环境多 import 一行才能看组件树。
+5. **把 11.x 预发布线当成 10.29.8**：npm 另有 `11.0.0-beta.2` / `11.0.0-rc.1`；本文只绑定 tag `10.29.8`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 移动端 H5 / 营销落地页（包体积敏感，每 KB 影响转化）
-- Astro / Fresh / Eleventy 这类岛屿架构（按需加载组件，越小越好）
-- 老 jQuery / 原生项目逐步迁移到组件化（学习成本低 + 体积接近）
-- React 项目极致瘦身（用 preact/compat 一键替换）
+- 需要 React 风格组件模型，但不想引入 Fiber / 合成事件
+- 岛屿架构或逐步替换 jQuery 的页面，组件树深度可控
+- 明确走 `preact/compat` alias，并愿意逐个验证第三方 React 库
 
 **不适用**：
 
-- 重度依赖 React 19 RSC / Server Actions 的项目
-- 超大型 SaaS 后台（fiber 调度 / 优先级在大组件树有优势）
-- 团队 React 生态用得很深，且依赖偏门 React 库（兼容性赌不起）
-- SSR 优先场景（Next.js + React 的工具链比 Preact + 自搭成熟很多）
+- 依赖 React 19 RSC / `use()` / Actions 的项目
+- 需要可中断渲染或优先级调度的超深树
+- 必须使用核心包、却把 React 的 `onChange` 语义原样搬过来
+- 不能接受固定 10.29.8 的同步 diff 与微任务批处理
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2015 年**：Jason Miller 觉得 React 那么大有点离谱，周末写了一版 mini React——核心就一个 reconciler 文件，几百行。
-- **2017–2018 年**：`preact/compat` 兼容层成熟，开始有公司用；此时 React Hooks 尚未发布。
-- **2019 年**：Preact X 发布，对齐 Hooks API，性能和 React 持平甚至更快，体积保持约 3KB。
-- **现在**：GitHub 约 36k star，Astro / Fresh / 多家大厂都在线上跑。
-
-一个人周末项目跑赢大厂团队的轻量替代品——这是开源世界经常出现的故事。
+- 本文绑定 `preactjs/preact@389c7bcc...`，即 GitHub tag `10.29.8`，package `10.29.8`。
+- npm 同版本没有 `gitHead`；不以 registry 反推 revision。
+- 可选 peer：`preact-render-to-string >=5`。开发时 volta 钉的是 Node 20.19.1，不是运行时合同。
+- `preact/compat` 另导出 `compat/client`、`compat/server`、`jsx-runtime`。
+- 本文未安装依赖、未跑上游测试、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **API 兼容是开源传播最大的杠杆**——Preact 不发明新 API，让 React 用户零成本迁移，这比"我们更快"重要 100 倍
-- **3KB 不是营销词**——移动端 / 边缘场景每 KB 都是钱，包体积是产品决策不是技术细节
-- **兼容层（compat）模式**——核心轻量 + 可选兼容包，鱼和熊掌都要的工程妥协
-- **简单 reconciler 大多数场景够用**——React fiber 是给 99 分场景准备的，多数项目还在 60 分线挣扎
+1. **API 像 React 不等于事件合同像 React**——compat 才做 `onChange` 改写和 `nativeEvent` 补丁
+2. **同步递归 diff + 微任务队列**就能完成多数页面的批处理，不必先上 Fiber
+3. **函数组件的 “render 中 setState” 有硬上限**——固定实现是 25 次，不是无限重试
+4. **营销体积必须和固定 revision 分开**——描述写 3kb，验收仍要重新测量
+
+## 应用型自测
+
+1. 只用 `preact`（不 import compat）给 `<input>` 绑 `onChange`，用户连续输入时会每键触发吗？
+2. 同一事件循环里连续两次 `setState`，默认会立刻 diff 两次吗？
+3. `preact/compat` 报告的 `version` 是 10.29.8 吗？
+
+检查点：
+
+1. 不会。核心监听原生 `change`，文本输入通常在失焦时才触发。
+2. 不会。默认 `Promise.then` 批成一次；队列按深度排序后冲刷。
+3. 不是。compat 把 `version` 写成 `'18.3.1'` 以通过库检测。
 
 ## 延伸阅读
 
-- 官网快速上手：[Preact Getting Started](https://preactjs.com/guide/v10/getting-started)（30 分钟跑起来）
-- 兼容层文档：[Switching to Preact](https://preactjs.com/guide/v10/switching-to-preact)（从 React 迁的踩坑全集）
-- 性能对比：[js-framework-benchmark](https://krausest.github.io/js-framework-benchmark/current.html)（Preact 在 vanilla 之后第二快）
-- [[react]] —— Preact 模仿的对象，理解 React 才能理解 Preact 砍了什么
-- [[vite]] —— 配 Preact 的官方推荐 bundler
+- 固定源码：[preactjs/preact](https://github.com/preactjs/preact) —— 本文绑定提交 `389c7bcc5140566f3fbae73cf17edf4ab44f4d96`
+- 兼容层说明：[Switching to Preact](https://preactjs.com/guide/v10/switching-to-preact)
+- [[lit]] —— 另一条轻量路径：没有 VNode 树，用 tagged template 更新 Custom Element
+- [[react]] —— Preact 对齐的 API 来源；调度与事件模型不同
 
 ## 关联
 
-- [[react]] —— 同源同 API，理解差异才能选对
-- [[vite]] —— Preact 项目首选构建工具，alias 配一行就能用
-- [[react-dnd]] —— 拖拽库依赖 React 内部，Preact 兼容性踩坑的典型案例
-- [[webpack]] —— 老项目用 webpack alias 切 Preact 的标准做法
+- [[lit]] —— Web Component + template parts，和 VNode diff 对照
+- [[react]] —— 同源 API；Fiber / 合成事件是 Preact 刻意不复制的部分
+- [[vite]] —— 文档里常见的 alias 目标构建器
+- [[solid]] —— 细粒度订阅，不走虚拟 DOM
+- [[astro]] —— 岛屿架构里可能挂 Preact 岛
 
 ## 反向链接
 

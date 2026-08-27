@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CB：Preact + Lit STATIC_REVIEW
+
+- status：writer epoch `complete`；等待 owner review；不 merge。
+- 起始 ref：`042f60a8`（`origin/main`）。
+- objective：只把 Preact 与 Lit 绑到可达且内部一致的 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`preact`、新建 `lit`、`docs/lightweight-ui-source-review-20260827-cb.md`、两份 generation 1 receipt，以及 project-standard / atlas / site-state / 公开计数派生刷新。
+- activated_by：`explicit-user-goal-parallel-writer-cb-2026-08-27`。
+- detector fingerprint：`preact` 仍是 legacy 页；开放 PR 无 `preact`/`lit` slug；仓库没有 `lit.md`。
+- external delta：GitHub/npm 只读核验 + 本地 blob-filtered clone；形成 1 个 review-ready PR；未 merge、未部署，D 轴不变。
+- 完成切片：
+  1. Preact 绑定 `preactjs/preact@389c7bcc...` / `10.29.8`（tag 可达；npm 无 `gitHead`）。
+  2. Lit 绑定 `lit/lit@20afabd3...` / `lit@3.3.3`（annotated tag 与 npm `gitHead` 一致）。
+  3. 共享 provenance `docs/lightweight-ui-source-review-20260827-cb.md` + 两份 receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=22`；`audit:content-contract` blocking 0。
+- budget：2 页静态源码迁移；单 writer。
+- blocker：不 merge；规模 detector 在 main 上已超限，本轮未改 baseline。
+- stop conditions：本 epoch 结束；merge / deploy 需单独授权。
+- 下一次 wake 条件：owner review / CI；不要自 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

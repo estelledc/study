@@ -1,6 +1,6 @@
 ---
 title: "UI 框架 / Frontend Framework · 项目 · 第 1 组"
-description: "13 条 UI 框架 / Frontend Framework Atlas 分块"
+description: "14 条 UI 框架 / Frontend Framework Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,14 +9,15 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 14 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) | `jspdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | `lighthouse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Lit — 用 tagged template 驱动 Custom Element 更新](/study/projects/lit/) | `lit` | 中级 | UNVERIFIED | 介绍 lit 3 |
 | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | `pdfmake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Preact — 3KB React 替代](/study/projects/preact/) | `preact` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Preact — 同步 VNode diff 的轻量 React 兼容渲染器](/study/projects/preact/) | `preact` | 中级 | UNVERIFIED | 介绍 Preact 10 |
 | [Qwik — Resumable UI 框架](/study/projects/qwik/) | `qwik` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [React — 用组件描述界面的 JavaScript 库](/study/projects/react/) | `react` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | `react-flow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
