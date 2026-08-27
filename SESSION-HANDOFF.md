@@ -21,11 +21,12 @@
   - `audit:content-contract --changed-from origin/main`：blocking 0。
   - `audit:wikilinks`：budget_failures=0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=89766cc27 STUDY_FRESHNESS_AS_OF=2026-08-27 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML / 2288 sitemap URLs、23 Playwright a11y）。
 - budget：2 页、单 writer、1 个 PR；不 merge。
 - blocker：规模 baseline 仍以 main 上已有 `tracked_files` 超限为准；本轮未改 baseline / 阈值。
 - stop conditions：单 PR 完成即停；不 merge。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge 的单独授权。
-- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/202`；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
