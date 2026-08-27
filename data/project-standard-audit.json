@@ -18646,27 +18646,23 @@
     },
     {
       "slug": "socket-io",
-      "title": "Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件",
+      "title": "Socket.IO — 用 Engine.IO 传输层承载命名空间事件",
       "source": "https://github.com/socketio/socket.io",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "soketi",
@@ -22224,6 +22220,26 @@
       "slug": "wretch",
       "title": "Wretch — 用不可变配置链组织 Fetch",
       "source": "https://github.com/elbywan/wretch",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
+      "slug": "ws",
+      "title": "ws — Node.js 上的 RFC 6455 WebSocket 实现",
+      "source": "https://github.com/websockets/ws",
       "status": "benchmark-aligned",
       "checks": {
         "source": true,
