@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -42826,27 +42826,26 @@
       "id": "projects::fd",
       "area": "projects",
       "slug": "fd",
-      "title": "fd — Rust 写的现代 find",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "fd — 默认按正则扫文件名的现代 find",
+      "description": "把 find 的高频文件名查找收成默认正则、ignore 并行遍历和 smart case。",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
         "raw_category": "CLI"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fd/",
       "atlas": {
@@ -43689,27 +43688,26 @@
       "id": "projects::fzf",
       "area": "projects",
       "slug": "fzf",
-      "title": "fzf — 命令行模糊查找",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "fzf — 保序模糊匹配的通用命令行筛选器",
+      "description": "把任意一行一项的列表收成保序模糊匹配、扩展搜索语法和内置 walker。",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
         "raw_category": "CLI"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fzf/",
       "atlas": {

@@ -1,154 +1,159 @@
 ---
-title: fd — Rust 写的现代 find
+title: fd — 默认按正则扫文件名的现代 find
+description: 把 find 的高频文件名查找收成默认正则、ignore 并行遍历和 smart case。
 来源: https://github.com/sharkdp/fd
-日期: 2026-05-29
+日期: 2026-08-27
 分类: CLI
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/sharkdp/fd
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 4f81778774463bf414a184cbe6d5219ad2229646
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 10.5.0
 ---
 
 ## 是什么
 
-`fd` 是 David Peter（GitHub 用户名 sharkdp）在 2017 年用 Rust 写的"友好版 find"。命令短、速度快、默认行为符合人类直觉。
-
-日常类比：
-
-> `find` 是 80 岁老爷爷——语法古老（1970 年代设计）、慢、参数容易记错。
-> `fd` 是同样能力的年轻人——命令短、速度快、颜色友好。
-
-最直观的对比：
-
-```bash
-# find：找文件名含 readme 的，要拼一长串
-find . -iname '*readme*'
-
-# fd：直接写关键词
-fd readme
-```
-
-两条命令做同一件事，`fd` 这条短了一半，还自带颜色高亮。
-
-## 为什么重要
-
-不熟悉 `fd`，下面这些痛点你每天都在踩：
-
-- **`find` 的语法地狱**：要记 `-name` `-iname` `-print0` `-exec` `\;` `+` `-prune` 一堆古怪参数；少一个反斜杠就报错
-- **慢**：`find` 单线程逐个目录走；大仓库（node_modules / target）能等半分钟
-- **噪音**：默认会把 `.git` `node_modules` 全列出来；想过滤只能手写一长串 `-not -path`
-- **不可读**：参数顺序敏感，`find -name foo .` 和 `find . -name foo` 行为不同，新手容易翻车
-
-`fd` 把这些问题反过来设计：
-
-- 默认并行（用 rayon 多线程）
-- 默认读 `.gitignore` 自动跳过仓库忽略目录（和 [[ripgrep]] 一脉相承）
-- 默认隐藏 `.git` 和点开头文件
-- 默认彩色输出，按文件类型上色
-
-它和 [[ripgrep]] 是 Rust CLI 的"双标杆"——`fd` 找文件名、`rg` 找文件内容，组合起来覆盖 90% 命令行搜索场景。
-
-## 核心要点
-
-`fd` 的设计可以拆成 **三个默认**：
-
-1. **Pattern 默认 substring**：写 `fd readme`，等价于 `find . -iname '*readme*'`。不用通配符，不用引号，关键词直接糊脸。
-
-2. **默认排除噪音**：`.gitignore` / `.ignore` / `.fdignore` 列出的、以及点开头的隐藏项——一律不显示（**不会**按「二进制扩展名」过滤）。要看隐藏文件加 `-H`，要看 ignore 规则里的加 `-I`。
-
-3. **默认并行 + 着色**：内部用 rayon 多线程遍历目录，扫整个 home 目录通常 < 1 秒；输出按文件类型自动上色（目录蓝、可执行绿、压缩包红）。
-
-进阶常用 flag：
-
-- `-e EXT`：按扩展名过滤，如 `fd -e py` 只找 .py 文件
-- `-t TYPE`：按类型过滤，`-t f` 文件 / `-t d` 目录 / `-t l` 符号链接
-- `-x CMD`：对每个匹配执行命令（自动并行），等价 `find -exec` 但更快
-- `-X CMD`：所有匹配一次性传给命令（等价 `xargs`）
-- `--exclude PATTERN`：排除某些路径（取代 `find -prune`）
-
-## 实践案例
-
-### 案例 1：找文件名
+fd 是一个用 Rust 写的文件系统查找器，crate 名是 `fd-find`，二进制叫 `fd`。日常类比：`find` 是要自己写条件的老式检索台；`fd` 把“当前目录、文件名、跳过噪音”设成默认，你只丢一个模式进去。
 
 ```bash
 fd readme
-```
-
-从当前目录递归找，文件名含 `readme`（默认大小写不敏感）。会自动跳过 `.git` 和 `node_modules`。
-
-### 案例 2：限定扩展名 + 限定目录
-
-```bash
-# 扩展名 .md，且文件名匹配 docs（docs 是 pattern，不是路径）
-fd -e md docs
-
-# 在 docs/ 目录下找所有 .md（第二个位置才是搜索根；`.` 表示匹配任意名）
 fd -e md . docs
-```
-
-读作：`fd [OPTIONS] [pattern] [path...]`。只写 `fd -e md docs` 时，`docs` 是**文件名模式**；要限定目录，把 pattern 写成 `.`（或 `''`），再跟路径。
-
-### 案例 3：批量删除 node_modules
-
-```bash
 fd -t d node_modules -x rm -rf
 ```
 
-`-t d` 只看目录、`-x` 对每个匹配跑 `rm -rf`、自动并行。一行清掉整个 monorepo 的 node_modules，比 `find . -name node_modules -type d -exec rm -rf {} +` 短一半还更快。
+固定 10.5.0 里，第一条默认按**未锚定正则**去匹配**文件名**（不是完整路径）。`readme` 能命中 `README.md`，是因为正则本来就是子串匹配，再加上 smart case，不是另做了一套 glob。
 
-### 案例 4：和 [[ripgrep]] 串联
+## 为什么重要
+
+不读固定源码，旧笔记会把三件事说错：
+
+- 把默认模式写成“substring API”——默认是 regex；字面子串要 `-F`，整名精确匹配要 `--exact`
+- 把并行写成 rayon——`Cargo.toml` 没有 rayon，遍历走 `ignore::WalkParallel`
+- 以为 `.gitignore` 随时生效——默认还要求探测到 git 仓库（`require_git`）
+
+它和 [[ripgrep]] 分工清楚：fd 找名字，rg 找内容。和 [[fzf]] 搭配时，常被设成 `FZF_DEFAULT_COMMAND`。
+
+## 核心要点
+
+固定 10.5.0 的主链是：
+
+1. **先规范化模式**：`build_pattern_regex` 默认原样当正则；`--glob` 经 `globset` 转正则且 `literal_separator=true`；`--fixed-strings`/`-F` 做 `regex::escape`；`--exact` 再锚成 `^{escaped}$`。`--and` 追加的模式必须全部命中。
+
+2. **smart case**：`pattern_has_uppercase_char` 解析 regex HIR。字面大写、或字符类两端是大写，就改成大小写敏感；`\x6F` 这种转义不算。
+
+3. **默认只看文件名**：没有 `--full-path`/`-p` 时，模式里出现 `/` 会直接报错，避免把路径当成永远匹配不到的文件名。要按路径搜，显式加 `-p`。
+
+4. **ignore + 并行遍历**：`WalkBuilder` 默认跳过点文件、读 `.gitignore` / `.ignore` / `.fdignore` / 全局 `fd/ignore`，并 `require_git`。线程数是 `available_parallelism().min(64)`。结果先缓冲最多约 100ms / 1000 条，超时改流式打印。
+
+5. **过滤与副作用分开**：`-e` 在文件名上做大小写不敏感的扩展名正则；`-t` 走 `FileTypes`；`--exclude` 变成 ignore Override 的 `!pattern`；`-x` 每个结果并行执行，`-X` 整批交给一个命令。`-x` 的执行顺序不作保证。
+
+## 实践示例
+
+### 案例 1：默认正则 + smart case
 
 ```bash
-fd -e py | xargs rg "TODO"
+fd readme
+fd README
+fd -s readme
 ```
 
-读作"找所有 .py 文件 → 在它们里 grep TODO"。`fd` 负责文件名层、`rg` 负责内容层，两件事各做一件，组合起来比 `grep -r` 快得多。
+`readme` 大小写不敏感；模式里出现字面大写后切到敏感。要强制敏感用 `-s`，强制不敏感用 `-i`。
+
+### 案例 2：扩展名是过滤，路径是第二位置
+
+```bash
+fd -e md docs
+fd -e md . docs
+```
+
+`fd [OPTIONS] [pattern] [path...]`。只写 `fd -e md docs` 时，`docs` 是文件名模式；要在 `docs/` 下找所有 Markdown，pattern 写成 `.` 再跟路径。
+
+### 案例 3：并行执行与批处理
+
+```bash
+fd -t d node_modules -x rm -rf
+fd -e rs -X wc -l
+```
+
+`-x`/`--exec` 是 `ExecutionMode::OneByOne`，按 `threads` 开作业线程；`-X`/`--exec-batch` 把路径攒进一条命令。需要串行时用 `--threads=1`。
 
 ## 踩过的坑
 
-1. **默认大小写不敏感，但 pattern 含大写就切换**：`fd readme` 会匹配 README.md，但 `fd README` 只匹配大写。这叫 "smart case"，和 [[ripgrep]] 一致。要强制大小写敏感用 `-s`，强制不敏感用 `-i`。
+1. **把默认模式当成 glob**：`fd '*.rs'` 会按正则解释 `*`。要 glob 用 `-g`，要字面星号用 `-F`。
 
-2. **默认隐藏 dotfile / .gitignore 内容**：在新仓库刚 clone 完想找 `.env.example`，`fd env` 找不到——因为 .env.example 被 .gitignore 排除了。加 `-H` 看隐藏、加 `-I` 看 .gitignore 内的、`-HI` 全开。
+2. **模式里带了路径分隔符**：没有 `-p` 时，`fd src/main.rs` 会报“不会有结果”，应写成 `fd . src` 或 `fd --full-path src/main.rs`。
 
-3. **`--exclude` 不是 `-prune`**：`find` 用 `-prune` 配合 `-name` 排除，逻辑反人类。`fd --exclude '*.log'` 直接写就行，但注意 `--exclude` 不会排除已经命中的目录的子内容（要用 `--exclude DIR/`）。
+3. **默认看不见点文件和 ignore 条目**：找 `.env.example` 常要 `-H` 或 `-I`；`-u` 是 `--no-ignore --hidden`。
 
-4. **macOS / Debian 命名冲突**：Debian 系（Ubuntu 等）把 `fd` 改名为 `fdfind`，因为 `fd` 已被另一个老包占用。Homebrew 装的 `fd` 没事；用 `apt install fd-find` 装的要么用 `fdfind`，要么自己 alias。
+4. **Debian 二进制不叫 `fd`**：README 写明 `apt install fd-find` 装出的是 `fdfind`，因为 `fd` 已被其他包占用。
+
+5. **把“并行”理解成 rayon 或固定耗时**：本页未跑 walk benchmark，也未测量 home 目录扫描时间。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 找文件名（按名 / 按扩展名 / 按类型）
-- 在仓库里快速定位文件，自动尊重 .gitignore
-- 批量对文件做操作（`-x` / `-X`）替代 `xargs`
-- 与 [[ripgrep]] 组合做"先筛文件、再筛内容"的两步搜索
+- 按文件名 / 扩展名 / 类型在仓库里定位，并接受默认 ignore
+- 用 `-x`/`-X` 对匹配结果执行命令
+- 给 [[fzf]] 或 [[ripgrep]] 提供文件列表
 
 **不适用**：
 
-- 按文件**内容**搜——那是 [[ripgrep]] 的活
-- 按 mtime / size / inode 这类元数据复杂条件——`fd` 支持简单的 `--changed-within 1d`，但复杂查询还是 `find` 强
-- 需要 `find` 特有的副作用（如 `-delete` 内置删除）——`fd` 故意不内置危险操作，要删用 `-x rm`
+- 按文件内容搜——那是 [[ripgrep]]
+- 需要 `find` 的复杂谓词组合（inode、多层 `-o`/`-a`）
+- 不能接受默认正则、或必须在非 git 目录也套用 `.gitignore`（要加 `--no-require-git`）
+- 把静态阅读写成“已测比 find 快一个数量级”
 
-## 历史小故事
+## 固定版本边界
 
-- **2017 年**：sharkdp 在 GitHub 公开 `fd`，README 写明"`find` 的简化替代品"；同期 Rust 社区已经有 [[ripgrep]] 站稳脚跟，`fd` 借这股 Rust CLI 浪潮迅速走红
-- **2019 年**：v8 加 `--threads` / `-j` 控制并行度，开始被 CI / 大型 monorepo 大量采用
-- **2024 年**：v9 与 [[ripgrep]] 一起成为"默认安装"清单上的常客（dotfiles / new mac setup 必装）
-
-`fd` 的成功不是"它能做 find 做不到的事"——它和 find 能力基本重合。它的成功是"把 80% 高频操作的语法做短"。这是 CLI 设计的范式转变：从"灵活但难用"到"默认就对"。
+- 本文绑定 `sharkdp/fd@4f81778774463bf414a184cbe6d5219ad2229646`，轻量 tag `v10.5.0`，`Cargo.toml` version 为 `10.5.0`。
+- crate 名是 `fd-find`，`rust-version = 1.90.0`，edition 2024。
+- 非 Windows / 非 macOS 等目标可选用 `tikv-jemallocator`；macOS 在该提交里仍被排除。
+- 本文未编译、未跑测试、未测遍历耗时，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **默认行为决定一切**：`fd` 没创新功能，只是把 `.gitignore` / 颜色 / 并行 / smart case 设为默认。这种"换默认"的产品力比加 100 个 flag 都管用。
-2. **长生态位也能重做**：`find` 1971 年就有了，55 年后还能被替换。证明"老软件 = 不可动"是错的——只要使用习惯有痛点，就有重做空间。
-3. **专做一件事 + 组合**：`fd` 不去抢 `grep` / `xargs` / `rsync` 的活，专心做"找文件名"。和 [[ripgrep]] 组合就覆盖 90% 场景。Unix 哲学的现代演绎。
-4. **Rust + 多线程 = CLI 红利**：rayon 让"加并行"变成几行代码的事。同样的工作量在 C 时代要专门项目，所以 `fd` / [[ripgrep]] / bat / dust / hyperfine 这一批 Rust CLI 集体崛起。
-5. **接力旧工具的 muscle memory**：`fd` 故意不复用 `find` 的 flag 名字（不像 GNU coreutils 那种向后兼容包袱），直接定一套更短的新 flag——切换工具时让用户主动"重学"反而更省事，也避免半新半旧的烂泥。
-6. **gitignore 默认尊重是隐性产品力**：开发场景里 99% 的查询都不想看 `node_modules` / `target`，把"忽略" 内置成默认而不是 flag，等于把整套现代工程目录约定写进 CLI 的世界观。
+1. **“短命令”的代价是默认合同**——正则、文件名、ignore、并行都是默认，不是后加的优化开关。
+2. **并行来自 ignore walker，不是 rayon**——读依赖表比读口碑更准。
+3. **smart case 看的是正则 HIR，不是用户是不是按了 Shift**——转义字节不会触发敏感。
+4. **文件名模式和搜索根不是同一个位置**——第二个位置才是 path。
+
+## 应用型自测
+
+1. 不传任何匹配开关时，`fd '*.rs'` 会按 glob 还是按正则解释？
+2. `fd src/lib.rs` 在没有 `--full-path` 时会怎样？
+3. 默认并行遍历用的是 rayon 还是 `ignore::WalkParallel`？
+
+检查点：
+
+1. 按正则。`*` 是正则量词；glob 要 `-g`。
+2. 报错退出，因为模式含路径分隔符且默认只匹配文件名。
+3. `ignore::WalkParallel`。`Cargo.toml` 没有 rayon。
 
 ## 延伸阅读
 
-- 仓库 README：[github.com/sharkdp/fd](https://github.com/sharkdp/fd)（手册级清晰，对比表直接列出 find vs fd）
-- 作者博客：sharkdp 写过 `fd` 的设计回顾，讲为什么默认行为这样选
-- [[ripgrep]] —— `fd` 的姊妹项目，做内容搜索；两者一起装是 Rust CLI 入门标配
+- 仓库 README：[github.com/sharkdp/fd](https://github.com/sharkdp/fd)
+- 固定源码：`sharkdp/fd` 提交 `4f81778774463bf414a184cbe6d5219ad2229646`
+- [[ripgrep]] —— 内容搜索的对照；ignore 语义相近
+- [[fzf]] —— 常用 fd 的文件列表做交互筛选
 
 ## 关联
 
-- [[ripgrep]] —— `fd` 找文件名、`rg` 找内容；组合是命令行搜索的"现代标配"
+- [[ripgrep]] —— 文件名 vs 文件内容
+- [[fzf]] —— 列表筛选 UI
+- [[bat]] —— 常被拿来预览 fd/fzf 选中的文件
+- [[the-silver-searcher]] —— 更早的“尊重 ignore 的搜索”参照
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

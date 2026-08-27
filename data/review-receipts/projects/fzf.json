@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "fzf",
+    "digest_sha256": "c500bbe719318c1bf65b3c02cf76631d62b055b86a679a42088baa0d11ebcc08"
+  },
+  "source_revision": "15f64c492a08f0840b81540c7d1de35737448086",
+  "research_input_sha256": "4e4958e1dcfa2f4c8a4731013994ca8d91adece5d72f6f4d7b50d4fc32a976e6",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates stdin/command/fastwalk intake, order-preserving V2 fuzzy match, and extended AND/OR syntax."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "reader.go, pattern.go, algo.go and options.go were inspected; upstream tests and TUI runs were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds peeled v0.74.3 commit and discloses main.go version=0.74 / revision=devel split; no runtime evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}

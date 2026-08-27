@@ -1968,8 +1968,16 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::fd",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::fzf",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::got",

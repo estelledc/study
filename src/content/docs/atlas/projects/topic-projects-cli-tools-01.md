@@ -30,10 +30,10 @@ sidebar:
 | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | `duf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | `dust` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | `eza` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [fd — Rust 写的现代 find](/study/projects/fd/) | `fd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [fd — 默认按正则扫文件名的现代 find](/study/projects/fd/) | `fd` | intermediate | UNVERIFIED | 把 find 的高频文件名查找收成默认正则、ignore 并行遍历和 smart case |
 | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | `fish` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | `fx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [fzf — 命令行模糊查找](/study/projects/fzf/) | `fzf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [fzf — 保序模糊匹配的通用命令行筛选器](/study/projects/fzf/) | `fzf` | intermediate | UNVERIFIED | 把任意一行一项的列表收成保序模糊匹配、扩展搜索语法和内置 walker |
 | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | `gdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | `gitui` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | `glances` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

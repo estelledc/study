@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HW：fd + fzf
+
+- status：writer epoch `complete`；待 review；未 squash / 未 merge / 未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
+- objective：把 CLI-search 双子 `fd` 与 `fzf` 从 `needs-evidence` 迁到可达固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇既有项目页、共享审查文档 `docs/cli-search-source-review-20260827-hw.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开对齐计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未改其他 writer 页面，未安装上游依赖，未编译或运行上游测试。
+- activated_by：`explicit-user-parallel-writer-hw-2026-08-27`。
+- detector fingerprint：两页结构完整但缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 fd 默认模式写成 substring、并行写成 rayon，把 fzf 模糊匹配写成不保序、默认搜索器写成 find。开放/已合并 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `fd` 绑定轻量 tag `v10.5.0` → `4f81778774463bf414a184cbe6d5219ad2229646`；默认未锚定正则匹配文件名，并行走 `ignore::WalkParallel`。
+  2. `fzf` 绑定 annotated tag `v0.74.3` 剥皮提交 `15f64c492a08f0840b81540c7d1de35737448086`；默认 V2 保序模糊匹配，TTY 无命令时走内置 `fastwalk` walker。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；`benchmark-aligned` 85 → 87。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 review 文档 digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:project-standard`：`benchmark-aligned=87`、`needs-evidence=880`、snapshot CURRENT。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

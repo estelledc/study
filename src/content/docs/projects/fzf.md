@@ -1,191 +1,159 @@
 ---
-title: fzf — 命令行模糊查找
+title: fzf — 保序模糊匹配的通用命令行筛选器
+description: 把任意一行一项的列表收成保序模糊匹配、扩展搜索语法和内置 walker。
 来源: https://github.com/junegunn/fzf
-日期: 2026-05-29
+日期: 2026-08-27
 分类: CLI
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/junegunn/fzf
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 15f64c492a08f0840b81540c7d1de35737448086
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.74.3
 ---
 
 ## 是什么
 
-fzf 是 Junegunn Choi 在 2013 年开源的**通用模糊查找器**（第一版用 Ruby，2015 年左右用 Go 重写）——任何能往终端打字打数据的命令，都能被它接进来做模糊筛选。
-
-日常类比：VS Code 的 `Cmd+P` 让你打几个字母就跳到对应文件；fzf 是 Linux 终端的通用 `Cmd+P`——文件、命令历史、git 分支、Kubernetes namespace 全都能筛。
-
-最小例子：
+fzf 是一个通用的命令行模糊查找器：不绑定数据源，只负责从一行一项的列表里做交互筛选。日常类比：编辑器的快速打开框，但输入可以是任何命令的标准输出。
 
 ```bash
 ls | fzf
+fzf --preview 'cat {}'
+fzf -f 'readme'
 ```
 
-终端会全屏显示当前目录文件，你打 "rea" 就能定位到 `README.md`，回车选中。
+固定 0.74.3 在 stdin 不是 TTY 时读管道；stdin 是 TTY 且未设 `FZF_DEFAULT_COMMAND` 时，用内置 `fastwalk` walker 列文件，而不是 fork `find`。
 
 ## 为什么重要
 
-一旦把 fzf 接进 shell，下面这些日常动作都会从"翻找几秒"压到"打 3 个字符"：
+不读固定源码，旧笔记会把三件事说错：
 
-- **终端 reverse search**：原本 `Ctrl+R` 一按要回忆完整字符串顺序；接上 fzf 之后能模糊搜，输 `git push` 不连贯也能命中
-- **切目录 / 选文件**：`cd $(find . -type d | fzf)` 一行替代手写路径
-- **切 git 分支**：`git checkout $(git branch | fzf)`，再也不背分支名
-- **选 kubectl namespace**：`kubectl config use-context $(kubectl config get-contexts -o name | fzf)`
+- 说模糊匹配“不要求顺序”——V2 不允许漏字符或乱序，只允许模式字符之间有间隙
+- 说默认搜索器是 `find`——未设环境变量时走 `charlievieth/fastwalk`
+- 说没有 TTY 就不能用——`--filter`/`-f` 只打印匹配、不进 TUI
 
-更深层的影响：
-
-1. **几行 shell 集成**就接上 zsh / bash / fish，门槛极低
-2. **启发了一整代 IDE 风格的终端 UI**——neovim 的 telescope、vim 的 fzf.vim、tmux 的 tmux-fzf 都是它的孩子
-3. **单 binary 无依赖**——下载一个文件就能跑，符合 Unix 工具的审美
+它把“列候选”和“挑一个”拆开，所以能接 git 分支、历史、kubectl context，也能接 [[fd]] / [[ripgrep]] 的文件列表。
 
 ## 核心要点
 
-fzf 一共做对了三件事：
+固定 0.74.3 的主链是：
 
-### 1. Fuzzy matching
+1. **读入**：`Reader.ReadSource` 优先管道；否则跑 `$FZF_DEFAULT_COMMAND`；再否则 `readFiles`。内置 walker 默认 `file,follow,hidden`，跳过名为 `.git`、`node_modules` 的目录。
 
-输入 "vim init" 就能匹配 `~/.config/nvim/init.lua`——空格分隔的多个子串都要出现，但不要求连续、不要求顺序严格。这种容错让"我大概记得"也能用。
+2. **扩展搜索默认开启**：空格拆成多个 term-set，**之间是 AND**；单独的 `|` 把后项留在同一 set 里做 OR。`'wild` 精确包含，`^` 前缀，`$` 后缀，`!` 取反。
 
-### 2. Stdin friendly
+3. **模糊算法默认 V2**：修改过的 Smith-Waterman，模式字符必须按顺序全部出现。打分偏好词界 / camelCase，间隙有罚分。只要速度、不要最优分，才用 `--algo=v1`。
 
-fzf 不绑定任何数据源。任何命令的标准输出都能 pipe 进来：
+4. **事件环**：Reader 发出读入事件，Terminal 发出查询变更，Matcher 并行扫 chunk，再把排序后的 merger 交给 TUI。`--preview` 对当前项再起一个外部进程。
 
-```bash
-history | fzf            # 模糊搜历史
-docker ps | fzf          # 模糊选容器
-brew list | fzf          # 模糊选已装包
-```
+5. **壳层集成是打印脚本，不是隐式安装**：`--bash` / `--zsh` / `--fish` / `--nushell` 打出 embed 的 key-binding 与 completion。README 写明 shell 集成**不读** `FZF_DEFAULT_COMMAND`，文件列表走 `FZF_CTRL_T_COMMAND` 等专用变量。
 
-这种"对接万物"的设计让它的应用场景几乎无限。
+## 实践示例
 
-### 3. Preview window
-
-按 `?` 或在启动时加 `--preview` 参数，fzf 右半屏显示当前选中项的内容：
+### 案例 1：管道进来，模糊按序匹配
 
 ```bash
-find . -type f | fzf --preview 'cat {}'
+git branch --all | fzf
 ```
 
-边搜边看，再也不用"选错一个再退回来"。
+输入 `mai` 能命中 `main`，因为 `m`、`a`、`i` 按顺序出现。输入 `iam` 对 `main` 不会按“字母袋”匹配。
 
-## 实践案例
-
-### 案例 1：替换 Ctrl+R 历史搜索
-
-zsh 装好 fzf 后默认绑了 `Ctrl+R`：
+### 案例 2：扩展语法做 AND / OR
 
 ```bash
-# .zshrc
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fzf
+# 查询：^src .rs$ | .go$
 ```
 
-之后按 `Ctrl+R` 不再是顺序回忆，而是弹出全屏 fzf，输任意子串都能跳到对应历史命令。一旦用上，旧的 reverse search 就回不去了。
+这是“以 `src` 开头，并且以 `.rs` 或 `.go` 结尾”。空格是 AND，`|` 是同一组里的 OR。
 
-### 案例 2：交互式选 git 分支
-
-写一个函数放进 `.zshrc`：
+### 案例 3：预览与非交互过滤
 
 ```bash
-fbr() {
-  local branch
-  branch=$(git branch --all | grep -v HEAD | fzf | sed 's#remotes/[^/]*/##')
-  git checkout "$branch"
-}
+fd -t f | fzf --preview 'bat --color=always {}'
+printf 'alpha\nbeta\ngamma\n' | fzf --filter 'a'
 ```
 
-之后输 `fbr`，模糊选完直接切。比敲 `git checkout feature/xxxxxx-2026-05-...` 快十倍。
-
-### 案例 3：与 ripgrep 配合做项目内搜索
-
-```bash
-rg --files | fzf --preview 'bat --color=always {}'
-```
-
-`rg --files` 列出所有被 git 跟踪的文件（已经过滤了 `.gitignore`），fzf 模糊筛，bat 高亮预览。这套是很多人替代 IDE 文件搜索的标配。
+`--preview` 对当前项起外部命令。`--filter` 走无 TUI 路径，适合脚本；本页未实际执行这些命令。
 
 ## 踩过的坑
 
-1. **shell 集成方式各不一样**：bash / zsh / fish 三套接法不同；想要"补全也能模糊"还得装 [fzf-tab](https://github.com/Aloxaf/fzf-tab)（zsh 专用）
-2. **Preview 窗口大文件慢**：直接 `cat` 一个 10MB 日志会卡住，习惯加 `head -200` 或 `bat --line-range :200`
-3. **默认搜索器是 find，慢**：项目根目录下要搜大量文件时，把 `FZF_DEFAULT_COMMAND` 改成 `rg --files` 或 `fd --type f`，速度立即提一个数量级
-4. **键绑定冲突**：vim 里的 `Ctrl+R` 是宏重放、tmux 里 `Ctrl+R` 默认无意义但有人改过；fzf 的 `Ctrl+R` 接管会让肌肉记忆暂时打架
-5. **终端不支持 truecolor 时颜色失真**：在老 SSH session 或 Linux tty 里启用 `--color=16` 退化方案
+1. **以为空格分隔的词可以乱序**：每个 fuzzy term 内部仍保序；乱序要拆成多个 term，且它们是 AND，不是“任意排列”。
+
+2. **把 `~/.fzf.zsh` 当成唯一接法**：0.74.3 也可以 `eval "$(fzf --zsh)"`。安装包有没有写这个文件，源码并不保证。
+
+3. **给 shell 集成设了 `FZF_DEFAULT_COMMAND` 却不见效**：CTRL-T / ALT-C / 路径补全走另一组变量和函数。
+
+4. **默认 walker 会跟符号链接、也看隐藏文件**：这和 [[fd]] 的默认相反。要尊重 `.gitignore`，应自己把 `FZF_DEFAULT_COMMAND` 设成 `fd --type f` 或 `rg --files`。
+
+5. **把 README 的“百万条毫秒级”当成本轮测量**：本文未跑 matcher benchmark。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 任何"从一个列表里挑一个"的交互——文件、分支、容器、历史命令
-- 想给 shell / vim / tmux 添加 IDE 风格的快速跳转
-- 命令输出量大但只想筛少量结果的场景（结合 preview 边看边选）
+- 从任意一行一项的列表里交互挑一条或几条
+- 给 shell / Vim 加快速跳转，并接受专用集成变量
+- 用 `--filter` 在脚本里做同一套评分，但不打开 TUI
 
 **不适用**：
 
-- 完全不会停下来交互的脚本——fzf 需要 TTY，CI / cron 用不了
-- 数据需要复杂结构化筛选（写 SQL 比写 fzf 表达式合适）
-- 大数据量精确匹配——fzf 的算法是模糊评分，量大时候不如 grep 直接
+- 需要复杂结构化查询（SQL、JSON path）
+- 默认就要跳过 ignore 与隐藏项——应改用 [[fd]] 当数据源
+- 把模糊匹配理解成“字母出现即可、顺序无所谓”
+- 本轮未验证的大规模性能结论
 
-## 历史小故事
+## 固定版本边界
 
-- **2013 年**：Junegunn Choi 第一版用 Ruby 写，在 GitHub 开源；当年还没有"模糊查找"这个习惯
-- **2015 年**：用 Go 重写，性能拉起来；加上 zsh widgets，成为终端用户安装清单的常客
-- **2019 年**：v0.20 加 `--preview`，从此可以"边搜边看"，热度翻一倍
-- **2024 年**：v0.45 加 multi-line 模式，能一次显示带换行的结果（比如 commit message 全文）
-
-到现在 GitHub star 已 80k+；虽有 peco / skim 等同类工具，fzf 仍是终端模糊查找的主流默认。Junegunn Choi 长期维护，是单人开源工具的代表案例之一。
+- 本文绑定 `junegunn/fzf@15f64c492a08f0840b81540c7d1de35737448086`，annotated tag `v0.74.3` 剥皮到该提交（tag 对象 `47c40063c5353814088296ef78b05aa004d0e1f3`）。
+- `main.go` 内嵌 `version = "0.74"`、`revision = "devel"`，与 tag 名 `0.74.3` 不是同一字符串。
+- `go.mod` 要求 `go 1.23.0`；walker 依赖 `github.com/charlievieth/fastwalk v1.0.14`。
+- 本文未编译、未跑测试、未打开 TUI，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **数据源解耦**——fzf 不关心数据从哪来，只负责筛选 UI；这种"做好一件事"的 Unix 哲学让它能粘合所有 CLI
-2. **shell 集成 = 杠杆**——10 行 widget 把全终端体验抬起来；不要小看 `.zshrc` 里那几行 source
-3. **模糊匹配 + preview 是黄金组合**——前者降低记忆负担，后者降低误选成本，两者一起改变交互
-4. **单人长期维护可以做出广泛影响的工具**——fzf、jq、ripgrep 都是这个模式
+1. **模糊不等于乱序**——V2 只在保序前提下找最高分间隙。
+2. **数据源和筛选器要拆开**——stdin、环境变量命令、内置 walker 是三条读入路径。
+3. **扩展语法把 UI 查询收成小型 DSL**——空格 AND、`|` OR、前缀符号改匹配类型。
+4. **交互与非交互是同一套 Matcher**——`--filter` 只是关掉 Terminal。
+
+## 应用型自测
+
+1. stdin 是 TTY 且未设 `FZF_DEFAULT_COMMAND` 时，0.74.3 默认 fork `find` 吗？
+2. 模糊查询 `iam` 会不会按“字母袋”命中 `main`？
+3. 没有 TTY 时，还有没有不打开界面的匹配出口？
+
+检查点：
+
+1. 不会。走内置 `fastwalk` walker，默认 `file,follow,hidden`。
+2. 不会。模式字符必须按顺序出现。
+3. 有。`--filter`/`-f` 打印匹配后退出。
 
 ## 延伸阅读
 
 - 项目主页：[junegunn/fzf](https://github.com/junegunn/fzf)
-- 进阶配置：[fzf wiki — Examples](https://github.com/junegunn/fzf/wiki/Examples)（一堆现成函数可抄）
-- 视频教程：[DistroTube — fzf in 100 seconds 风格的入门](https://www.youtube.com/results?search_query=fzf+tutorial)
-- [[ripgrep]] —— 配合 `rg --files` 做项目内文件查找
-- [[fd]] —— 比 find 更快的查找器，也常被设为 `FZF_DEFAULT_COMMAND`
+- 固定源码：`junegunn/fzf` 提交 `15f64c492a08f0840b81540c7d1de35737448086`
+- 进阶：[ADVANCE.md](https://github.com/junegunn/fzf/blob/master/ADVANCED.md)（以固定提交为准，不把 master 当本页证据）
+- [[fd]] —— 更适合当默认文件列表
+- [[ripgrep]] —— `rg --files` 也常被用来喂 fzf
 
 ## 关联
 
-- [[ripgrep]] —— 高速文本搜索，常作为 fzf 的数据源
-- [[fd]] —— 用户友好的 find 替代品，给 fzf 喂文件列表
-- [[bat]] —— 带语法高亮的 cat，做 fzf preview 的标配
-- [[tmux]] —— 终端复用器，搭配 fzf 选 session / window 体验更顺
-- [[neovim]] —— telescope.nvim 是 fzf 思路在 neovim 里的再实现
+- [[fd]] —— 默认尊重 ignore 的文件名查找
+- [[ripgrep]] —— 内容搜索，或 `rg --files` 列文件
+- [[bat]] —— preview 高亮
+- [[tmux]] —— 可与 fzf 互选 session / window
+- [[neovim]] —— telescope 是同类交互在编辑器里的再实现
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
-- [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
-- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
-- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
-- [[delta]] —— delta — git diff 的语法高亮分页器
-- [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
-- [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
-- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
-- [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
-- [[gum]] —— gum — 把 TUI 组件搬进 shell 脚本
-- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
-- [[jq]] —— jq — JSON 的 sed/awk
-- [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
-- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
-- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
-- [[lf]] —— lf — 终端里像 vim 一样翻文件
-- [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
-- [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
-- [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
-- [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉
-- [[nnn]] —— nnn — 50KB 内存就能跑的极简终端文件管理器
-- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
-- [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
-- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
-- [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
-- [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
-- [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
-- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
-- [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
-- [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
-- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
