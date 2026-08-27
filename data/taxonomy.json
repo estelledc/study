@@ -1792,6 +1792,10 @@
       "topic_id": "projects-http-clients"
     },
     {
+      "note_id": "projects::babel",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::better-auth",
       "topic_id": "projects-authentication"
     },
@@ -2342,6 +2346,10 @@
     {
       "note_id": "projects::react-spring",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::recast",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::recharts",

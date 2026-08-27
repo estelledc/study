@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CQ recast/babel epoch
+
+- status：`running` → writer epoch complete，等待 PR review；未 merge。
+- 起始 ref：`042f60a8`（当时 `origin/main`）。
+- objective：为 Recast 与 Babel 新增 `study-v2` 静态源码审查页，证据 `STATIC_REVIEW` / `STATIC_ANALYSIS`，验证状态保持 `UNVERIFIED`。
+- scope：两页新笔记、共享 `docs/ast-reprint-compiler-source-review-20260827-cq.md`、两份 generation 1 receipt、taxonomy / atlas / site-state / handoff 派生；未改 `oxc` / `swc`，未占用其他 open PR slug。
+- activated_by：`explicit-user-parallel-writer-cq-20260827-recast-babel`。
+- detector fingerprint：主干无 `recast` / `babel` 项目页；目标是 AST reprint 与 compiler 双子。
+- external delta：本轮只形成一条 review-ready PR；未 merge、未 deploy，D 轴不因 merge 提升。
+- 完成切片：
+  1. `recast` 绑定 `benjamn/recast@93325e37...` / `recast@0.24.0`。GitHub tag `v0.24.0` 与 npm `gitHead` 同指该提交。正文写清 Esprima 默认、`original` + Patcher 局部重印、`print()` 对象结果，以及 Babel parser 需另装。
+  2. `babel` 绑定 `babel/babel@8ed5db1bc...` / monorepo tag `v8.0.4`。披露 npm 8.x 无 `gitHead`，以及 GitHub `latest` 仍名 `v7.29.8`。正文写清 8.0 callback/`*Sync` 分裂、根/相对配置文件名、默认扩展名不含 `.ts`。
+  3. 新增共享 provenance 文档与两份 receipt。
+- acceptance checks：两页 `quality-gate.mjs`；receipt digest 与 revision 对齐；`audit:counts` / `audit:content-contract`；`git diff --check`；`STUDY_CHANGED_FROM=origin/main npm run verify:ci`。
+- budget：2 个 ignored worktree + 1 个可写切片；单 writer。
+- blocker：规模 baseline 超限属先于本切片的 `PARKED_HUMAN` detector，本轮未改阈值。
+- stop conditions：本轮只开一个 PR，不自 merge。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge/规模 baseline 的单独授权。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/recast.md`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

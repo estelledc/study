@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "babel",
+    "digest_sha256": "ba2fbac2e21c4037d2d7a111475cfc9b50c3d6d5ffe02d4f84da3b79d574aa35"
+  },
+  "source_revision": "8ed5db1bc5bed6c0b640cc06bae447acf6395c02",
+  "research_input_sha256": "8441bf31d71850e4cce182a6f93c0addfb17d0f36dd3e232d022269ee4a1f4e4",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-cq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains Babel 8 callback/sync split, config filenames, and missing default .ts extensions without claiming 7.x latest is 8.x."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-cq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "core transform/parse, config filenames, parser unambiguous, and CLI options were inspected; CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-cq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable v8.0.4 tag; npm 8.x has no gitHead and GitHub latest still names v7.29.8."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}

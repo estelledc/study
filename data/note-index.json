@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -36718,6 +36718,37 @@
       }
     },
     {
+      "id": "projects::babel",
+      "area": "projects",
+      "slug": "babel",
+      "title": "Babel — 插件走过 AST 的 JS 编译器",
+      "description": "8.0 起 transform/parse 必须回调或改用 *Sync；默认扩展名不含 .ts",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "前端工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/babel/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::babylonjs",
       "area": "projects",
       "slug": "babylonjs",
@@ -57035,6 +57066,37 @@
       }
     },
     {
+      "id": "projects::recast",
+      "area": "projects",
+      "slug": "recast",
+      "title": "Recast — 尽量复用原文的 JS AST 打印机",
+      "description": "默认 Esprima 解析；print 只改动过的子树，其余贴回原文",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "前端工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/recast/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::recharts",
       "area": "projects",
       "slug": "recharts",
@@ -65433,7 +65495,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 14
+      "entries": 16
     },
     {
       "id": "topic-projects-cli-tools-01",
