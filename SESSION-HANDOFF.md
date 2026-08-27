@@ -15,12 +15,12 @@
   1. `itty-router` 绑定 annotated tag `v5.0.24` → `ec4264f429c04e5f2a40a5b5466b9414254601d1`；披露 npm `gitHead` 为父提交 `dbf8bffa...`，相对 tag 只改版本号。
   2. `find-my-way` 绑定 `v9.9.0` → `31aa3ae9c26a898d3f478c6bbfcd079ab85d1b99`，tag / package / npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 quality-gate 全过、0 advisory；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` 定向通过。实时数量以命令为准，不在 handoff 中复制易过期数字或 ETA。
+- 验证结果：两页 quality-gate 全过、0 advisory；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` 定向通过；`STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci` 全绿。实时数量以命令为准，不在 handoff 中复制易过期数字或 ETA。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- 下一条命令：查看 https://github.com/estelledc/study/pull/276 ；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
