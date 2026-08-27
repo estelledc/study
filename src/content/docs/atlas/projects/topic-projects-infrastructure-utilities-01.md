@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -23,6 +23,7 @@ sidebar:
 | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | `ctranslate2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | `doris` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | `dovecot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [edge-runtime — 用 Node vm 模拟 Edge Web API 的本地运行时](/study/projects/edge-runtime/) | `edge-runtime` | intermediate | UNVERIFIED | 介绍 edge-runtime 4 |
 | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) | `edgedb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [FAISS — 向量检索的标准件库](/study/projects/faiss/) | `faiss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | `feast` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -57,3 +58,4 @@ sidebar:
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [workerd — Cloudflare Workers 同源的 JS/Wasm 服务器运行时](/study/projects/workerd/) | `workerd` | intermediate | UNVERIFIED | 介绍 workerd 1 |

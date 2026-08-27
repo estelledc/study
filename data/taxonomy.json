@@ -1924,6 +1924,10 @@
       "topic_id": "projects-data-visualization"
     },
     {
+      "note_id": "projects::edge-runtime",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::effect",
       "topic_id": "projects-state-management"
     },
@@ -2606,6 +2610,10 @@
     {
       "note_id": "projects::why-did-you-render",
       "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::workerd",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::wretch",
