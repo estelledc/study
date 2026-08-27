@@ -23,7 +23,7 @@
   - `audit:counts` / `audit:site-state` / `audit:project-standard`：以这些命令为准，未手改计数。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
-  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：#85 接入后本机全绿（`3ee1894a9`）。随后又接入 #86/#87 并重生成派生索引。#83/#84 GitHub CI 已绿；`d6699b82f` 在 main 前进后失败，已被取代。
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：#85 本机全绿（`3ee1894a9`）；#86/#87 后 GitHub CI 在 `8406232f4` 全绿。随后又接入 #88 并重生成派生索引。
   - PR：https://github.com/estelledc/study/pull/294
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
