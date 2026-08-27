@@ -4,168 +4,145 @@ title: 3d-force-graph — 把网络拓扑搬进三维空间
 日期: 2026-06-01
 分类: 数据可视化
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/vasturiano/3d-force-graph
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 957c1831157416e88ea9faf8e6a4edfe7b545858
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.80.0
 ---
 
 ## 是什么
 
-**3d-force-graph** 是一个浏览器组件，把"节点 + 连线"这种网络数据画在 **3D 空间**里，节点的位置由**物理模拟**自己跑出来，不用你手动摆。
+**3d-force-graph** 是一个浏览器 UI 组件：你给 `{nodes, links}`，它用 Three.js 画 3D 网络，并把力模拟交给内层 `three-forcegraph`。日常类比：本包是控制室——只管相机、灯光、指针和每帧调度；真正摆节点、算力的是另一间机房。
 
-日常类比：你把一堆磁铁随便扔进玻璃缸，它们会自己排成一个稳定的形状——同性互相推开、连着的相互吸引，最后落到不再晃动的位置。3d-force-graph 干的就是这件事，只不过磁铁是"节点"，缸是"3D 浏览器画布"。
+```js
+import ForceGraph3D from '3d-force-graph'
 
-底下踩两块基石：
+const graph = new ForceGraph3D(document.getElementById('graph'))
+  .graphData({
+    nodes: [{ id: 'A', name: 'A' }, { id: 'B', name: 'B' }],
+    links: [{ source: 'A', target: 'B' }]
+  })
+```
 
-- **three.js**：WebGL 渲染引擎，负责把 3D 物体画到屏幕
-- **d3-force-3d**：物理模拟引擎，负责算每个节点该往哪儿飘
-
-作者 Vasco Asturiano 同时维护 `force-graph`（2D 版）和 `react-force-graph`（React 绑定）。
+固定 `1.80.0` 是 MIT、Kapsule 链式 API。`package.json` 要求运行时 `three` 为 `>=0.179 <1`；布局引擎版本写的是 `three-forcegraph@1`，本轮只读了本仓，没有打开该依赖源码。
 
 ## 为什么重要
 
-不上 3D 时，遇到"上千节点的网络图"会有几个躲不掉的痛：
+不按固定源码读它，下面这些事会对不上：
 
-- **2D 力导向图节点一多就糊成毛球**——所有点挤在一个平面，连线交叉到看不出结构
-- **手写 three.js + 物理模拟太重**——你要自己实现斥力、引力、阻尼、相机轨道控制，几百行
-- **想加交互（点节点跳走、悬浮高亮）每次都要从零开始**
-
-3d-force-graph 把这三件事一次性收拾干净：
-
-- 多一个维度（z 轴），节点可以"前后"分开，毛球散开
-- 物理模拟一句 `Graph(elem).graphData(data)` 就跑起来
-- 事件 / 相机 / 标签 / 粒子都是配置项，链式 API 调
+- 为什么 `new ForceGraph3D(elem)` 之后还能链式 `.graphData()` / `.dagMode()`——属性被 `kapsule-link` 转发
+- 为什么第一帧相机 Z 不是常数 200，而是 `Math.cbrt(节点数) * 170`
+- 为什么拖节点在 `forceEngine: 'ngraph'` 时不会安装 `DragControls`
+- 为什么 HTML 标签节点要在构造时传入 `extraRenderers`，而不是事后 `.nodeThreeObject()` 就自动有 CSS 渲染器
 
 ## 核心要点
 
-整个库的心智模型是 **"装配一个会自己动的 3D 网络"**，三步：
+固定版本是两层壳：
 
-1. **数据**：给一份 `{nodes: [...], links: [...]}`，节点要有 `id`，连线要有 `source` 和 `target`
-2. **装配**：选个 `<div>` 容器，调 `ForceGraph3D()(elem)` 拿到图实例，再链式调 `.graphData(data).nodeColor(...).linkWidth(...)`
-3. **物理跑起来**：库自动启动 d3-force-3d 模拟，每帧重算位置、重画 three.js 场景，直到能量耗尽稳定下来
+1. **ThreeForceGraph**：`graphData`、`dagMode`、`nodeThreeObject`、`linkDirectionalParticles`、`forceEngine` 都经 `linkKapsule('forceGraph', ThreeForceGraph)` 转发。本仓不实现力公式。
+2. **ThreeRenderObjects**：负责宽高、背景、nav info、指针交互、`cameraPosition`、`lights`、`postProcessingComposer`。默认灯是 `AmbientLight(0xcccccc, Math.PI)` 加 `DirectionalLight(0xffffff, 0.6 * Math.PI)`。
+3. **动画循环**：`_animationCycle` 每帧调用 `forceGraph.tickFrame()` 再 `renderObjs.tick()`，然后 `requestAnimationFrame`。`pauseAnimation` 取消 rAF；`resumeAnimation` 只在 id 为 `null` 时重启。
+4. **相机默认值**：`onUpdate` 里若相机仍在 `(0,0,lastSetCameraZ)` 且已有节点，就把 `z` 设为 `Math.cbrt(nodes.length) * 170`（常量 `CAMERA_DISTANCE2NODES_FACTOR`）。`zoomToFit(ms, padding, nodeFilter)` 用 `getGraphBbox` + `fitToBbox`，不是改那个 170 公式。
 
-关键能力清单：
+## 实践示例
 
-- **节点可定制**：默认是小球，也能换成自定义 three.js 几何体 / 贴图 / HTML 标签
-- **边可定制**：宽度、颜色、曲率、虚线，还能加 **directional particles**（粒子顺着边流，肉眼看出方向）
-- **DAG 模式**：传 `dagMode: 'td'`（top-down）能把图按层级排，适合树和依赖图
-- **相机 API**：`zoomToFit()` 一键拉到全图可见，`cameraPosition()` 飞到某节点正面
-- **事件**：`onNodeClick` / `onNodeHover` / `onNodeDrag`，鼠标行为都有钩子
+### 案例 1：构造 + 链式数据
 
-## 实践案例
-
-### 案例 1：30 行画一个会动的网络
-
-```html
-<div id="graph"></div>
-<script src="//unpkg.com/3d-force-graph"></script>
-<script>
-  const data = {
-    nodes: [{id: 'A'}, {id: 'B'}, {id: 'C'}, {id: 'D'}],
-    links: [
-      {source: 'A', target: 'B'},
-      {source: 'B', target: 'C'},
-      {source: 'C', target: 'D'},
-      {source: 'D', target: 'A'}
-    ]
-  };
-  ForceGraph3D()
-    (document.getElementById('graph'))
-    .graphData(data)
-    .nodeAutoColorBy('id')
-    .linkDirectionalParticles(2);
-</script>
-```
-
-打开页面，4 个彩色小球自己排成一个四边形，边上有粒子在流。**全程没写一行 three.js 或物理代码**。
-
-### 案例 2：知识图谱风格——HTML 标签节点
-
-把节点换成带文字的 HTML 卡片，做成 Obsidian 那种双链笔记可视化：
+README 的脚本标签入口是 `cdn.jsdelivr.net/npm/3d-force-graph`。构造函数签名是 `new ForceGraph3D(domElement, { controlType, rendererConfig, extraRenderers })`。`controlType` 默认 `trackball`，也可 `orbit` / `fly`。`nodeId` 默认 `'id'`，`nodeLabel` 默认 `'name'`——只有 `id`、没有 `name` 时标签不会按 id 自动出现。
 
 ```js
-import {CSS2DRenderer, CSS2DObject} from 'three/addons/renderers/CSS2DRenderer.js';
-
-ForceGraph3D({extraRenderers: [new CSS2DRenderer()]})
-  (elem)
+new ForceGraph3D(document.getElementById('graph'))
   .graphData(data)
-  .nodeThreeObject(node => {
-    const div = document.createElement('div');
-    div.textContent = node.title;
-    div.className = 'node-label';
-    return new CSS2DObject(div);
-  })
-  .nodeThreeObjectExtend(true);
+  .nodeAutoColorBy('id')
+  .linkDirectionalParticles(2)
+  .nodeLabel('id')
 ```
 
-这里 `nodeThreeObjectExtend(true)` 表示"在默认小球之上**叠**一个标签"，而不是替换。
+### 案例 2：第二渲染器叠 HTML
 
-### 案例 3：依赖图用 DAG 模式分层
+`extraRenderers` 的类型是 `Renderer[]`。要把 CSS2D / CSS3D 对象画出来，必须在 **构造期** 传入对应 renderer；只设 `nodeThreeObject` 不会自动加第二渲染器。`nodeThreeObjectExtend(true)` 表示在默认节点网格上叠加，而不是替换——该属性同样转发给 `three-forcegraph`。
 
-npm 包依赖天然是有向无环图，开 DAG 模式更清楚：
+### 案例 3：DAG 约束与销毁
 
 ```js
-ForceGraph3D()
-  (elem)
-  .graphData(npmDeps)
-  .dagMode('radialout')   // 中心向外辐射，根包在中央
-  .dagLevelDistance(80)
-  .nodeLabel('id');
+graph.dagMode('radialout').dagLevelDistance(80)
+graph.zoomToFit(400)
+graph._destructor()
 ```
 
-`radialout` 还有几个兄弟：`td`（top-down）/`bu`（bottom-up）/`lr`（左右）/`rl`（右左）。
+`dagMode` 只对无环图有定义：`td` / `bu` / `lr` / `rl` / `zout` / `zin` / `radialout` / `radialin`。`_destructor` 会停动画、把数据清空成 `{nodes:[],links:[]}`，并调用两层内对象的析构。节点拖拽还要求 `enableNodeDrag && enablePointerInteraction && forceEngine === 'd3'`；换 ngraph 后这段 `DragControls` 根本不会安装。
 
 ## 踩过的坑
 
-1. **看不到东西，黑屏**：默认相机距离原点 200，节点也在原点附近，**完全重叠**。第一帧画完调一次 `graph.zoomToFit(400)` 才能看到。
+1. **把默认相机写成“距离原点 200”**：固定源码是 `cbrt(n) * 170`，且只在相机未被用户改过时重设。
+2. **用 `ForceGraph3D()(elem)` 当唯一写法**：README / `index.d.ts` 写的是 `new ForceGraph3D(elem)`。Kapsule 工厂调用可能仍能跑，但本文按类型声明绑定构造函数。
+3. **以为本包会复制一份图数据**：`onUpdate` 只做 `state.graphData = forceGraph.graphData()`。链接里 source/target 是否被改成节点对象，属于 `three-forcegraph`，本轮未打开。
+4. **给 ngraph 引擎开拖拽**：源码明确“Can't access node positions programmatically in ngraph”。
+5. **把 README 的 ~4k 元素示例或未测 fps 写成容量保证**：本轮没有跑 example，也没有测 WebGL 上下文上限。
 
-2. **节点 > 5000 帧率掉到 10fps**：粒子 + 高质量节点开太多，关 `linkDirectionalParticles` 或把节点降级成 `nodeRelSize(2)` 的小点。
-
-3. **WebGL 上下文一个 tab 最多 16 个**：同时挂 16+ 个图实例会"context lost"，老的图变白屏。解决方法是用单实例 + 切数据，或销毁不可见的实例。
-
-4. **VR 模式要求安全来源**：`3d-force-graph-vr` 走 WebXR，浏览器要求 secure context。`localhost` 通常可以开发调试；手机或头显访问开发机 IP 时，普通 HTTP 不行，得用 mkcert / ngrok 提供 HTTPS。
-
-5. **数据要"引用同一对象"才认得**：`links` 里的 `source` 和 `target` 第一次传是字符串 ID，库会**就地把它替换成节点对象**。下一次更新数据如果你又传字符串，库以为是新节点，整个图重排。建议用 `graphData(data)` 后操作返回的 `data.nodes`。
-
-## 适用 vs 不适用
+## 适用 vs 不适用场景
 
 **适用**：
 
-- 节点数在 100 到 3000 之间的网络，3D 拉开维度看结构
-- 想要"漂亮、能转、能点"的可视化（产品 demo / 数据故事 / 知识图谱）
-- 已经在用 React → 直接上 `react-force-graph`
+- 需要在浏览器里快速看 `{nodes, links}` 的 3D 力导向草图
+- 接受把布局细节交给 `three-forcegraph`，本包只调相机与指针
+- 要用 `extraRenderers` 叠 HTML / CSS3D 标签，而不是重写整个 renderer
 
 **不适用**：
 
-- 节点 > 5000 的大图——上 sigma.js 或 cosmograph（GPU 加速）
-- 严格图论分析（最短路 / 社区检测） → 用 cytoscape.js
-- 移动端低端机——WebGL 跑物理模拟挺重，老安卓会卡
+- 需要本包内独立实现社区检测、最短路——它不提供图算法
+- 必须用 ngraph 还想拖节点
+- 把未绑定的节点规模、帧率或“比 2D 少交叉”写成结论
+- 要 VR/AR 发行版：那是独立仓库 `3d-force-graph-vr` / `-ar`，不在本 revision
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2011 年前后**：d3-force 把力导向布局做成前端常用工具，网络图开始能直接在浏览器里跑。
-- **2013-2015 年**：three.js 和 WebGL 生态成熟，普通网页也能承载 3D 场景、相机和材质。
-- **2016 年后**：Vasco Asturiano 把 force-graph 系列拆成 2D、3D、VR、AR 和 React 绑定，统一成相近的链式 API。
-- **今天**：3d-force-graph 常被用来做知识图谱、依赖关系和安全拓扑 demo，重点不是严肃分析，而是让复杂关系先“看得见”。
+- 本文绑定 `vasturiano/3d-force-graph@957c1831157416e88ea9faf8e6a4edfe7b545858`，包版本 `1.80.0`。tag 与 npm `gitHead` 一致。
+- 未打开 `three-forcegraph` / `three-render-objects` / `d3-force-3d` 源码；力公式、ID 解析和 mesh 实现以那些仓库的固定 revision 为准。
+- 未安装依赖、未创建 WebGL 上下文、未跑 example，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **物理模拟 + WebGL 渲染** 是一对天然搭子：模拟算位置，渲染照位置画，每帧循环一次
-2. **链式配置 API** 在可视化库里非常常见（d3 / chart.js / 3d-force-graph 都是），适合"声明式装配"
-3. **从 2D 到 3D 不只是加一个轴**——交互（鼠标转视角）/ 性能（多 6 倍三角形）/ 调试（找不到节点）都是新麻烦
-4. **同一作者的家族库**（force-graph 2D / 3D / VR / AR / React）共享 API，学一个会一片
+1. **这个 npm 包是编排层**：图对象与 renderer 是两个 kapsule 子实例。
+2. **默认相机距离随节点数立方根变化**，不是常量。
+3. **拖拽、指针、导航是三扇独立开关**，拖拽还被锁在 d3 引擎。
+4. **第二渲染器必须构造期注入**，不能靠事后改 `nodeThreeObject` 补齐。
+
+## 应用型自测
+
+1. 4 个节点、相机未被拖过时，默认 `camera.position.z` 是 200 吗？
+2. `forceEngine('ngraph')` 之后还默认能拖节点吗？
+3. `nodeLabel` 在不传参时读节点的 `id` 还是 `name`？
+
+检查点：
+
+1. 不是。公式是 `Math.cbrt(4) * 170`。
+2. 不能。`DragControls` 只在 `forceEngine === 'd3'` 时安装。
+3. 默认 `'name'`。只有 `id` 字段时要显式 `.nodeLabel('id')`。
 
 ## 延伸阅读
 
-- 仓库与示例画廊：[vasturiano/3d-force-graph](https://github.com/vasturiano/3d-force-graph)（example/ 目录有 30+ 个可跑 demo）
-- React 绑定：[react-force-graph](https://github.com/vasturiano/react-force-graph)
-- 物理引擎：[d3-force-3d](https://github.com/vasturiano/d3-force-3d)
-- [[three-js]] —— WebGL 渲染基石
-- [[d3]] —— 力导向布局算法的来源
+- 固定源码：[vasturiano/3d-force-graph](https://github.com/vasturiano/3d-force-graph) —— 本文绑定提交 `957c1831157416e88ea9faf8e6a4edfe7b545858`
+- 布局依赖（未绑定）：[three-forcegraph](https://github.com/vasturiano/three-forcegraph)
+- 2D / VR / React 是独立仓库，不能把本页 API 直接外推
+- [[threejs]] —— WebGL 渲染基石；本包要求 `three >= 0.179 < 1`
+- [[d3]] —— d3-force 家族是默认 `forceEngine` 的上游思路，不是本仓源码
 
 ## 关联
 
-- [[three-js]] —— 提供渲染层，3d-force-graph 把它包成"画图就一行"
-- [[d3]] —— 力导向布局来自 d3-force，搬到 3D 后是 d3-force-3d
-- [[graphology]] —— 纯数据结构层的图库，可与 3d-force-graph 配合（前者算，后者画）
-- [[cytoscape]] —— 同领域偏分析的替代方案
+- [[threejs]] —— renderer / camera / lights 的底层对象
+- [[d3]] —— 默认力引擎路线的概念来源
+- [[graphology]] —— 纯图数据与算法，可在本包之外算完再交给 `graphData`
+- [[cytoscape-js]] —— 偏分析的 2D 图可视化，不是本包的 3D 壳
 
 ## 反向链接
 

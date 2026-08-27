@@ -4,195 +4,158 @@ title: A-Frame — 用 HTML 搭 Web VR 场景
 日期: 2026-07-09
 分类: graphics
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/aframevr/aframe
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 77f0513107e00e4738628a2ca8e8f19a38474857
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.8.0
 ---
 
 ## 是什么
 
-A-Frame 是一个**用 HTML 写 3D、AR、VR 场景的 Web 框架**。日常类比：它像把舞台搭建说明写成标签，`<a-box>` 是一个箱子，`<a-sky>` 是天空，`<a-scene>` 是整座舞台。
-
-它不是从零替代浏览器图形能力，而是站在 three.js、WebGL / WebXR 上面，把相机、光照、模型、控制器这些细节包成更容易读的声明式结构。
-
-你看到一段 A-Frame 页面时，先不要把它当“普通网页排版”。它更像一张 3D 场景清单：每个标签都代表场景里的一个实体，每个属性都在给实体挂能力。
-
-官方 README 把它定位为 browser based 3D、AR、VR experiences 的框架；仓库长期在约 17k stars，价值点是让非图形专家也能快速做出可进入 WebXR 的原型。
-
-## 为什么重要
-
-不理解 A-Frame，下面这些事会很难解释：
-
-- 为什么一段看起来像 HTML 的代码，打开后却能变成立体空间，而不是普通 DOM 排版。
-- 为什么 A-Frame 强调 entity-component-system，而不是让你为每种物体都写继承类。
-- 为什么“能在桌面浏览器跑”和“在 VR 头显里舒服地跑”是两件事，后者对帧率和交互更苛刻。
-- 为什么同样加载 glTF 模型，Web 场景还要关心 CORS、模型比例、贴图尺寸、Draco / Meshopt 解码器。
-
-## 核心要点
-
-A-Frame 可以拆成 **三层**：
-
-1. **声明式场景**：用标签摆物体。类比：先写一张舞台道具清单，浏览器再把清单变成 3D 对象；这让新手不用一开始就写大量 three.js 初始化代码。
-
-2. **实体组件系统**：`<a-entity>` 是空壳，`geometry`、`material`、`position`、`light` 等属性是可插拔零件。类比：同一辆玩具车可以换轮子、换马达、换外壳，而不是每换一次都重造整车。
-
-3. **WebXR 入口**：A-Frame 替你处理进入沉浸式模式、默认相机、控制器、raycaster 等常见样板。类比：它不是景区本身，而是售票口、地图和基础安全绳，让你更快进场。
-
-这三层合起来，A-Frame 的核心不是“HTML 也能画 3D”这么简单，而是把 Web 生态、three.js 能力和 VR 交互组织成一个可组合的写法。
-
-## 实践案例
-
-### 案例 1：搭一个可进入 WebXR 的小展厅
-
-官方 README 和 Introduction 都展示了最小场景：几个几何体、地面和天空就能构成一个可观察的 3D 空间。
+A-Frame 是一份用自定义元素写浏览器 3D / AR / VR 场景的框架。日常类比：`<a-scene>` 像一张舞台清单，`<a-box>` 是道具，`geometry` / `material` / `position` 是可拆零件——你先声明实体，再让运行时把它变成 three 场景图。
 
 ```html
 <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
-
 <a-scene>
   <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-  <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
   <a-sky color="#ECECEC"></a-sky>
 </a-scene>
 ```
 
-逐部分解释：
+固定 `1.8.0` 把 `AFRAME` 挂到 `globalThis`，并把 `THREE` 暴露出去。`package.json` 里的 `three` 依赖实际解析为 `npm:super-three@0.184.0`；入口日志写的是 supermedium/three.js，不是任意上游 three 发行版。
 
-- `<a-scene>`：整座 3D 舞台，A-Frame 会在里面创建 three.js scene、camera 和 renderer。
-- `<a-box>` / `<a-sphere>` / `<a-cylinder>`：内置 primitive，适合先表达空间关系。
-- `position="-1 0.5 -3"`：三个数分别是 x、y、z，默认按米理解，`z` 为负表示在镜头前方。
-- `<a-plane>`：旋转成地面；`<a-sky>`：给整个空间一个背景，不负责真实光照。
+## 为什么重要
 
-这个案例适合产品展示、教学原型、活动页面的第一版：先证明“空间关系和视觉方向对”，再换复杂模型。
+不按固定源码读 A-Frame，下面这些事会对不上：
 
-### 案例 2：给展品加凝视或鼠标点击反馈
+- 为什么看起来像 HTML 的标签并不走 CSS 排版，而是 `THREE.Group` / `THREE.Scene`
+- 为什么自定义逻辑要写成 `registerComponent`，而不是在页面末尾直接改 DOM
+- 为什么“桌面能看”和“`enterVR()` 进 immersive-vr”是两条入口
+- 为什么 glTF 压缩路径写在 **scene 上的 system**，不是写在每个 `gltf-model` 组件里
 
-官方交互文档说明，WebGL 物体不会天然收到浏览器 `click`；A-Frame 用 cursor + raycaster 合成 `click`、`mouseenter`、`mouseleave` 等事件。
+## 核心要点
+
+固定版本可以拆成四层：
+
+1. **声明式实体**：`<a-entity>` 的 `object3D` 是 `THREE.Group`（`rotation.order = 'YXZ'`）。`<a-box>` 这类 primitive 只是自动注册的标签，默认带上 `geometry.primitive = box`，再由 mesh mixin 补 material。
+2. **ECS 注册表**：`registerComponent(name, definition)` 把 `init` / `update` / `tick` / `tock` / `play` / `pause` 收成原型。名字不能含大写或 `__`（`__` 留给 `name__id` 多实例）。object-based 组件用对象池，属性经 `Proxy` 读写。
+3. **场景主循环**：`<a-scene>` 的 `object3D` 是 `THREE.Scene`。默认会挂 `inspector`、`keyboard-shortcuts`、`screenshot`、`xr-mode-ui`、`device-orientation-permission-ui`；camera system 先于其他 system 初始化。`render` 用 `THREE.Timer` 算 `time`/`delta`，先 `tick`，再 `renderer.render`，最后 `tock`。`ar-mode` 会暂时清掉 scene background。
+4. **WebXR 入口**：有 headset / mobile 且 WebXR 可用时，`enterVR()` 调 `navigator.xr.requestSession('immersive-vr')`（`enterAR()` 走 `immersive-ar`）。桌面无 headset 只加 fullscreen。`sessiongranted` 也会触发 `enterVR()`。
+
+## 实践示例
+
+### 案例 1：最小场景
+
+官方 README 的几何体示例在固定 1.8.0 仍然有效。脚本应放在 `<head>` 且早于 `<a-scene>`，否则未注册的组件会在初始化时缺失。`file:` 协议会直接报 CORS，资源加载失败。
+
+### 案例 2：凝视点击是合成事件
 
 ```html
 <script>
   AFRAME.registerComponent('color-on-click', {
     init: function () {
-      const colors = ['#EF2D5E', '#4CC3D9', '#FFC65D'];
-      let i = 0;
       this.el.addEventListener('click', () => {
-        i = (i + 1) % colors.length;
-        this.el.setAttribute('material', 'color', colors[i]);
+        this.el.setAttribute('material', 'color', '#4CC3D9');
       });
     }
   });
 </script>
-
 <a-scene>
   <a-box class="clickable" position="0 1 -3" color="#EF2D5E" color-on-click></a-box>
   <a-camera>
     <a-entity cursor="fuse: true; fuseTimeout: 700"
-              raycaster="objects: .clickable"
-              position="0 0 -1"
-              geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-              material="color: black; shader: flat"></a-entity>
+              raycaster="objects: .clickable"></a-entity>
   </a-camera>
 </a-scene>
 ```
 
-逐部分解释：
+`cursor` 依赖 `raycaster`。默认 `fuse` 只在 `utils.device.isMobile()` 为真时打开，`fuseTimeout` 默认 1500ms；上面是显式覆盖。命中后发出的是 A-Frame 合成的 `click` / `mouseenter`，不是浏览器直接点中网格。`raycaster.objects` 为空时会 `querySelectorAll('*')`，源码自己警告应写选择器。
 
-- `color-on-click`：自定义组件，把业务逻辑放进 A-Frame 生命周期里，而不是散落在页面末尾。
-- `cursor="fuse: true"`：用户看着目标一小段时间后触发点击，适合没有手柄的设备。
-- `raycaster="objects: .clickable"`：只检测可点对象，避免每帧和整座场景做碰撞测试。
-- `addEventListener('click', ...)`：监听的是 A-Frame 合成事件，不是普通 DOM 直接点中 3D 网格。
-
-这个案例适合 360 展厅、VR 教学问答、沉浸式菜单：交互先轻量，动作反馈要明确。
-
-### 案例 3：加载 glTF 模型并保留动画入口
-
-3D Models 和 `gltf-model` 文档都建议优先使用 glTF，因为它更像 Web 上的 3D 传输格式，能包含层级、材质、骨骼和动画。
+### 案例 3：glTF 与压缩解码器
 
 ```html
-<script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.7.x/dist/aframe-extras.min.js"></script>
-
 <a-scene gltf-model="meshoptDecoderPath: https://unpkg.com/meshoptimizer@0.19.0/meshopt_decoder.js;">
-  <a-assets>
+  <a-assets timeout="5000">
     <a-asset-item id="robot" src="/models/robot.glb"></a-asset-item>
   </a-assets>
-  <a-entity gltf-model="#robot"
-            animation-mixer
-            position="0 0 -4"
-            scale="0.5 0.5 0.5"></a-entity>
+  <a-entity gltf-model="#robot" position="0 0 -4"></a-entity>
 </a-scene>
 ```
 
-逐部分解释：
-
-- `<a-assets>`：让场景先知道要预加载哪些资源，减少模型还没到就开始渲染的混乱。
-- `gltf-model="#robot"`：通过选择器引用资产，而不是把长 URL 写在每个实体上。
-- `animation-mixer`：来自 aframe-extras，用来播放模型自带动画。
-- `scale="0.5 0.5 0.5"`：模型常有单位差异，先把比例调到人能看清的尺度。
-- `meshoptDecoderPath`：如果模型用了 Meshopt 压缩，运行时必须能找到解码器。
-
-如果模型过大，可以先在资产流水线里压缩：
-
-```bash
-gltf-transform optimize robot.glb robot-web.glb --compress meshopt --texture-compress webp
-```
-
-这个案例适合商品 3D 展示、虚拟展馆、角色预览。真正的重点不是“能加载”，而是加载后比例、动画、压缩和解码路径都可控。
+`<a-assets>` 必须是 scene 子节点；默认 timeout 3000ms，超时仍会放行并 `emit('timeout')`。`gltf-model` **组件**用 `GLTFLoader`，把 `gltf.scene` 挂到 `setObject3D('mesh')`，并把 `animations` 拷到该 scene。Draco / Meshopt / KTX2 由同名 **system** 配置：Draco 默认 `gstatic` 1.5.7 路径，Meshopt 默认空字符串，不设路径就不会装解码器。核心仓没有 `animation-mixer`；要播骨骼动画需另找 extras，不能写成 1.8.0 内置能力。
 
 ## 踩过的坑
 
-1. **把 A-Frame 当普通 HTML 布局**：这些标签不会走 CSS 排版，位置、旋转、尺度要按 3D 坐标理解。
-2. **业务 JS 不写成组件**：直接在全局脚本里改实体，容易踩初始化时机和复用问题；官方最佳实践建议把应用代码放进 components / systems。
-3. **模型不做性能体检**：VR 对帧率敏感，面数、贴图、draw calls、灯光太多都会让头显体验变差。
-4. **raycaster 扫全场景**：交互对象不加 class 过滤时，每次检测都更贵，复杂展厅会明显掉帧。
+1. **把 A-Frame 当 CSS 排版**：坐标、旋转、尺度走 three 变换，不走文档流。
+2. **组件脚本写在 scene 后面**：`registerComponent` 会警告，实体初始化时该属性还不存在。
+3. **默认 fuse 当成桌面也开**：桌面默认关；要凝视点击必须显式 `fuse: true`。
+4. **raycaster 不写 `objects`**：空选择器扫全场景，源码认为这是性能坑。
+5. **把 `three` 当成官方 mrdoob 发行**：固定包锁的是 `super-three@0.184.0`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 想快速做 Web 端 VR / AR / 3D 原型，并且团队熟悉 HTML / JavaScript。
-- 教学、展览、营销页、艺术实验，需要让非图形工程师也能读懂场景结构。
-- 已经使用 three.js / glTF 生态，但希望用声明式标签降低第一版成本。
-- 交互以凝视、点击、基础控制器、轻量模型为主，真实感不是最高优先级。
+- 希望用 HTML / 自定义元素快速搭 WebXR 或桌面 3D 原型
+- 需要把交互写成可复用 component，而不是散落的全局脚本
+- 已经接受 three 场景图，只想少写 renderer / camera / XR session 样板
 
 **不适用**：
 
-- AAA 级游戏、复杂物理、超大世界流式加载，这类更适合 Unity、Unreal 或专用引擎。
-- 需要完全掌控渲染管线、shader、后处理和 GPU 资源生命周期的底层图形项目。
-- 对移动端低配设备帧率要求极高，却又要塞大量动态光源、模型和粒子。
-- 团队根本不愿接受 ECS 组件写法，只想把 2D DOM 操作方式原样搬进 3D。
+- 需要完全自管渲染管线、后处理和 GPU 资源生命周期
+- 把 AAA 世界流式加载或复杂物理写成 A-Frame 内置合同——核心仓没有这些
+- 把未运行的帧率、面数或 star 数当选型结论
+- 依赖 `animation-mixer` 却不单独固定 extras 仓库
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2015 年前后**：Mozilla VR 团队把 WebVR 入门门槛往 HTML 方向拉低，A-Frame 开始出现。
-- **早期阶段**：它把 three.js 的复杂样板包成 `<a-scene>` 和一组 primitives，让创作者先能“看见东西”。
-- **社区扩展期**：A-Painter、A-Blast、A-Saturday-Night 等示例证明浏览器里也能做完整 VR 体验。
-- **独立维护后**：项目从 Mozilla 系背景走向更独立的开源社区，Supermedium 相关维护者继续推进。
-- **WebXR 时代**：重点从“浏览器能不能进 VR”转向“不同头显、控制器、性能预算怎样稳定交付”。
+- 本文绑定 `aframevr/aframe@77f0513107e00e4738628a2ca8e8f19a38474857`，包版本 `1.8.0`。lightweight tag 与 npm `gitHead` 一致。
+- `three` 别名为 `super-three@0.184.0`；未验证该 fork 与官方 three r184 的差异清单。
+- 未安装依赖、未跑 Karma、未进入 WebXR、未加载真实 glTF，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- A-Frame 的厉害之处是把 WebXR 样板压平，让人先用 HTML 建立 3D 直觉。
-- ECS 是它能扩展的关键：实体是容器，组件是能力，系统负责全局服务。
-- VR 开发不是只把画面做出来，还要持续盯住帧率、输入方式、用户舒适度和模型资产。
-- A-Frame 和 three.js 不是对立关系；A-Frame 是 three.js 上方更声明式、更面向体验原型的一层。
+1. **HTML 标签是 entity 容器，真实对象是 three 场景图**。
+2. **组件注册有时序**：脚本必须早于 scene，名字必须小写。
+3. **交互是 raycaster + cursor 合成的，不是 DOM 点击网格**。
+4. **压缩 glTF 的解码器是 scene system，不是模型组件自己下载**。
+
+## 应用型自测
+
+1. 固定 1.8.0 的 `three` 依赖是官方 `three@0.184.0` 吗？
+2. 桌面浏览器上 `<a-entity cursor>` 会默认开启 fuse 点击吗？
+3. `gltf-model="meshoptDecoderPath: ..."` 写在实体上还是 scene 上才由固定源码读取？
+
+检查点：
+
+1. 不是。`package.json` 写的是 `npm:super-three@0.184.0`。
+2. 不会。`fuse` 默认等于 `utils.device.isMobile()`。
+3. 写在 `<a-scene>` 上。那是 `gltf-model` **system** 的 schema，组件本身只收模型 URL。
 
 ## 延伸阅读
 
-- 官方仓库：[aframevr/aframe](https://github.com/aframevr/aframe)
-- 官方文档：[A-Frame Introduction](https://aframe.io/docs/1.7.0/introduction/)
-- 架构入门：[Entity-Component-System](https://aframe.io/docs/1.7.0/introduction/entity-component-system.html)
-- 交互文档：[Interactions & Controllers](https://aframe.io/docs/1.7.0/introduction/interactions-and-controllers.html)
-- 模型加载：[gltf-model component](https://aframe.io/docs/1.7.0/components/gltf-model.html)
-- [[threejs]] —— 理解 A-Frame 底下的渲染基础。
+- 文档：[A-Frame 1.8.0 Introduction](https://aframe.io/docs/1.8.0/introduction/)
+- 固定源码：[aframevr/aframe](https://github.com/aframevr/aframe) —— 本文绑定提交 `77f0513107e00e4738628a2ca8e8f19a38474857`
+- [[threejs]] —— 场景图与 renderer；A-Frame 固定的是 super-three 别名
+- [[gltf-transform]] —— 进浏览器前的 glTF 压缩，与 Meshopt 解码路径是两条合同
 
 ## 关联
 
-- [[threejs]] —— A-Frame 是 three.js 上的声明式 WebXR 层，很多底层对象仍能访问。
-- [[gltf-transform]] —— glTF 模型进 A-Frame 前，常先用它做压缩和资产整理。
-- [[cannon-es]] —— 需要 3D 物理时，可和 A-Frame 场景组合出碰撞与重力体验。
-- [[playcanvas]] —— 同样面向 Web 3D，但更像完整在线引擎，和 A-Frame 的 HTML 写法形成对照。
-- [[phaser]] —— 2D 游戏入口，适合和 A-Frame 对比“平面互动”和“空间互动”的差异。
-- [[blender]] —— 负责建模和导出 glTF，A-Frame 负责在浏览器里加载和交互。
+- [[threejs]] —— 实体底下的 Object3D / 渲染器
+- [[gltf-transform]] —— 资产压缩，不替代运行时 decoder path
+- [[cannon-es]] —— 需要物理时另接；核心仓无内置物理
+- [[playcanvas]] —— 同为 Web 3D，但是编辑器 + 引擎，不是 HTML primitive
+- [[phaser]] —— 2D 游戏入口，对照平面互动与空间互动
+- [[blender]] —— 建模导出 glTF，A-Frame 只负责加载与交互
 
 ## 反向链接
 
