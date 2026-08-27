@@ -8,11 +8,11 @@
     "digest_sha256": "e008c50d9380637c85dc679b1c56c426bc08d63822104840d34f78bb11b2d023"
   },
   "source_revision": "58b6945f203ca7a0bb5a0785df90a3a6a8b9e59c",
-  "research_input_sha256": "0a79e5a47eea3375a1d7bb0dd04082973be02f4952270097711045cea8dcaddb",
+  "research_input_sha256": "5b23dbd876a7e1541ad872f22f1081cc912bb8b0b103f509021c9abb05578f77",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "reviewer_version": "research-benchmark-static-20260827-ie",
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
@@ -25,7 +25,7 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "reviewer_version": "research-benchmark-static-20260827-ie",
       "decision": "PASS_WITH_NOTES",
       "score": 93,
       "warnings": [
@@ -38,7 +38,7 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "reviewer_version": "research-benchmark-static-20260827-ie",
       "decision": "PASS_WITH_NOTES",
       "score": 91,
       "warnings": [

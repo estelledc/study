@@ -1,15 +1,16 @@
-# Markdown-render source review (writer HM)
+# Markdown-render source review (writer IE)
 
 > 用途：记录 commonmark.js、Remarkable 项目页所用的固定源码输入。项目页是知识源真相；本文件只承担 review receipt provenance。
 
 ## 范围与边界
 
 - review date：2026-08-27
-- writer：HM
+- writer：IE
 - evidence：GitHub tag metadata、npm package metadata、固定提交静态源码阅读
 - not executed：未安装两仓依赖，未运行上游 test、CommonMark spec suite、bundle 或性能 benchmark
 - worktrees：本机 `research-worktrees/`，不进入 Git
 - excluded slugs：marked、markdown-it、showdown、snarkdown；以及 knex、ioredis、redis、BullMQ
+- lane：IE；intern 占用的相邻车道已让出，本审查不使用那些字母
 
 ## commonmark.js
 

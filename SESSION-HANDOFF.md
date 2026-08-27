@@ -2,13 +2,13 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
-## 2026-08-27 PARALLEL writer HM：commonmark + remarkable
+## 2026-08-27 PARALLEL writer IE：commonmark + remarkable
 
-- status：writer epoch `running`；本地页与派生索引已齐，待 push / PR / `verify:ci`。
+- status：writer epoch `running`；车道已改挂 IE（intern 占用的相邻字母已让出）；本地页与派生索引已齐，待 push / PR / `verify:ci`。
 - 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`，含 #79 / #81）。
 - objective：为缺失的 markdown-render 双子补齐 `commonmark` 与 `remarkable` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
-- scope：两篇新项目页、共享审查文档 `docs/markdown-render-source-review-20260827-hm.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
-- activated_by：`explicit-user-parallel-writer-hm-2026-08-27`。
+- scope：两篇新项目页、共享审查文档 `docs/markdown-render-source-review-20260827-ie.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ie-2026-08-27`。
 - detector fingerprint：目录无 `commonmark.md` / `remarkable.md`；writer AC 已占 `marked` / `markdown-it`，PR #268 占 `showdown` / `snarkdown`；本对未被占用。
 - external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
 - 完成切片：
