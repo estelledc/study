@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -22,6 +22,7 @@ sidebar:
 | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | `bubbletea` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | `clack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | `commander` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [cross-spawn — 给 spawn 补上 Windows 会漏掉的那几步](/study/projects/cross-spawn/) | `cross-spawn` | intermediate | UNVERIFIED | spawn 与 spawnSync 的跨平台替身，shell 模式会关掉全部增强 |
 | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | `curlie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | `delta` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -29,6 +30,7 @@ sidebar:
 | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | `dua-cli` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | `duf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | `dust` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [execa — 把子进程收成 Promise 和模板字符串](/study/projects/execa/) | `execa` | intermediate | UNVERIFIED | 高层 Promise 进程库，自己处理 Windows PATHEXT 与 shebang，不再依赖 cross-spawn |
 | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | `eza` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fd — Rust 写的现代 find](/study/projects/fd/) | `fd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | `fish` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

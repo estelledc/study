@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cross-spawn",
+    "digest_sha256": "551630c49937aa41f7db78f9233899fd79b2979933122b13502cf959720db54c"
+  },
+  "source_revision": "77cd97f3ca7b62c904a63a698fc4a79bf41977d0",
+  "research_input_sha256": "83c2fe08b1dc375f528556d12d2173e1912d6988b04df21557137809353755fb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ej",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates parse-then-spawn, shell opt-out, Windows ENOENT rewrite, and cmd-shim double escape."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ej",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "index parse/enoent/escape/resolveCommand were inspected; Jest and Windows spawn were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ej",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Tag v7.0.6 and npm gitHead agree; 7.0.4/7.0.5 escape history is changelog-only, not re-fuzzed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:05:00.000Z"
+}

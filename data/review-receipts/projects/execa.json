@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "execa",
+    "digest_sha256": "ab2d9f35cea7a929e20662696c85a57dce200731a9e073f2e77f7cd6e0f95425"
+  },
+  "source_revision": "8017b279e19347efaf2587711c2d57dbd4330740",
+  "research_input_sha256": "83c2fe08b1dc375f528556d12d2173e1912d6988b04df21557137809353755fb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ej",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates createExeca defaults, $ preferLocal, execaNode IPC, and in-repo Windows parsing without cross-spawn."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ej",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createExeca, spawn path, command-file Windows rules, and reject/cancelSignal were inspected; no process was spawned."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ej",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag v10.0.1 and npm gitHead agree; Windows, IPC, and performance remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:05:00.000Z"
+}

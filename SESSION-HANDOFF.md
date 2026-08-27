@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EJ：execa + cross-spawn 静态审查
+
+- supervisor 状态：writer epoch `complete`；等待 PR review / CI。未 merge、未 deploy。
+- 起始 ref：`51e405f5fd76131242466ecc9c2973d3cc9f70f3`。
+- objective：按用户指定的 process-spawn 双子，把 `execa` 与 `cross-spawn` 以 `STATIC_REVIEW` / `UNVERIFIED` 接入源码绑定标准；仓库原先没有这两页，因此本轮是新增而不是 legacy 改写。
+- scope：两页新正文、2 份 generation 1 receipt、共享 `docs/process-spawn-source-review-20260827-ej.md`、taxonomy / atlas / note-index / project-standard / site-state 派生、公开规模文案、本交接；2 个 ignored worktree。未安装上游依赖、未实际 spawn、未跑上游测试、未测 Windows / bundle / 性能。
+- activated_by：`explicit-user-instruction-parallel-writer-ej-20260827`。
+- detector fingerprint：`origin/main` 无 `execa` / `cross-spawn` 笔记；用户指定该对，并允许 fallback 到其他 process-spawn 对。固定 `execa@10.0.1` 已不依赖 `cross-spawn`，二者按互补层而不是当前依赖对写入。
+- external delta 计数：本 PR（用户授权 push + 单 PR；未授权 merge / deploy）。
+- 已完成切片：
+  1. `execa` 绑定 tag `v10.0.1` / `8017b279e19347efaf2587711c2d57dbd4330740`（与 npm `gitHead` 一致），记录 `createExeca`、`$` 的 `preferLocal`、`execaNode` IPC，以及仓库内 Windows PATHEXT / shebang / 换行拒绝。
+  2. `cross-spawn` 绑定 tag `v7.0.6` / `77cd97f3ca7b62c904a63a698fc4a79bf41977d0`（与 npm `gitHead` 一致），记录 parse → spawn、`shell` 退出增强、Windows ENOENT 改写与 cmd-shim 二次转义。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；taxonomy 归入 `projects-cli-tools`。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:site-state` current；`audit:counts` 与当前文件数一致。`verify:ci` 以提交后命令为准。
+- budget：1 个可写切片、2 个 blob-filtered worktree、1 个 PR；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或 baseline。
+- stop conditions：单 PR 已形成且未 merge 后停止；不开启下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI / review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=51e405f5fd76131242466ecc9c2973d3cc9f70f3 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

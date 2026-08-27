@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -39725,6 +39725,37 @@
       }
     },
     {
+      "id": "projects::cross-spawn",
+      "area": "projects",
+      "slug": "cross-spawn",
+      "title": "cross-spawn — 给 spawn 补上 Windows 会漏掉的那几步",
+      "description": "spawn 与 spawnSync 的跨平台替身，shell 模式会关掉全部增强",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "CLI / 命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cross-spawn/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::ctranslate2",
       "area": "projects",
       "slug": "ctranslate2",
@@ -42535,6 +42566,37 @@
       "atlas": {
         "chunk_id": "topic-projects-data-applications-and-saas-01",
         "chunk_route": "/study/atlas/projects/topic-projects-data-applications-and-saas-01/"
+      }
+    },
+    {
+      "id": "projects::execa",
+      "area": "projects",
+      "slug": "execa",
+      "title": "execa — 把子进程收成 Promise 和模板字符串",
+      "description": "高层 Promise 进程库，自己处理 Windows PATHEXT 与 shebang，不再依赖 cross-spawn",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "CLI / 命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/execa/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
       }
     },
     {
@@ -65509,7 +65571,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",

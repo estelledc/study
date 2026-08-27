@@ -1876,6 +1876,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::cross-spawn",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::d3",
       "topic_id": "projects-data-visualization"
     },
@@ -1954,6 +1958,10 @@
     {
       "note_id": "projects::excalidraw",
       "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::execa",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::express",
