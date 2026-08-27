@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
+
+- supervisor 状态：writer epoch `complete`；PR #65 ready，head 已 rebase 到 `origin/main` `7601613d`（#64）。等待该 head 的 CI 与 owner squash。未 merge、未 deploy。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 当前 head：`29f47bf77e4b4157df5ff84d17c8247364e22d61`。
+- objective：按 PARALLEL writer J 授权，把状态机/store 双子迁到绑定固定 revision 的 `study-v2` / `STATIC_REVIEW` / `UNVERIFIED`。目标 slug 为 `xstate` 与 `redux-toolkit`（或 `redux`）；仓库无后两页，因此 fallback 为 `xstate` + `mobx`。未改 `zustand` / `jotai` / `valtio` 及其他 forbidden slug。
+- scope：`xstate.md`、`mobx.md`、2 份 generation 1 receipt、`docs/state-machine-store-source-review-20260827-j.md`、note-index / project-standard-audit / site-state / 首页指标、本交接。未安装上游依赖、未运行上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-j-20260827`；后续由 PR #65 owner review（ship / approve-with-notes）授权接入最新 main 并 mark ready。
+- detector fingerprint：两页教学骨架完整但缺 pinned revision / evidence boundary / self-test；旧 xstate 把未 start 的 snapshot 写成 prod `undefined`、把 `useMachine` 写成独立 API；旧 mobx 未写 v7 默认 `enforceActions: true`。相对过期的派生索引已在 rebase 到 #64 后重生成。
+- external delta 计数：本 PR（push + 开 PR 已授权；owner review 允许清冲突后 squash；未 deploy）。
+- 已完成切片：
+  1. `xstate` 绑定 tag `xstate@5.32.6` → `21872cdc93a3baddbcf43f1d83553991d39f28ab`（npm 无 gitHead，以 lightweight tag + package version 为锚点）。修正 mailbox / 空转移、构造即有 snapshot、`useMachine`=`useActor` 弃用别名、`assign` 浅合并。
+  2. `mobx` 绑定 `mobx@7.0.3` → `5dbb04a15f7eb0ef6b844904c43955357a9bbdfc`（npm gitHead 与 annotated tag peel 一致）。修正默认 `enforceActions`、`makeAutoObservable` 只标调用时已有键、`observer` 的 `useSyncExternalStore` + `Reaction.track`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+  4. 接入最新 main（现为 `7601613d` / #64）并重生成派生索引与首页指标；PR 已 mark ready。
+- 验证结果：两页 `quality-gate` pass / 0 advisory；`audit:project-standard` snapshot CURRENT；`audit:content-contract` blocking 0。接入 `0fea1786` 时 `STUDY_CHANGED_FROM=0fea1786 npm run verify:ci` 全绿。当前 head 相对 `7601613d` 的 GitHub `verify:ci` 以 Actions 为准。
+- budget：2 页静态源码迁移 + 1 个接入 main 切片；单 writer。
+- blocker：规模 detector 在 main 已超 baseline（政策禁止自动刷新 baseline）；本轮只迁既有页，不新增项目页。
+- stop conditions：冲突已清、PR 标 ready 后结束本切片；deploy 仍需单独授权。本 agent 不执行 squash / merge / deploy。
+- 下一次 wake 条件：本 PR squash 完成或 CI/review 再变化。
+- 下一条命令：`gh pr checks 65`；通过后由 owner squash。
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。实时数量以 `npm run generate:site-state` / `audit:project-standard` 为准。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
