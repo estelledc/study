@@ -1,18 +1,27 @@
 ---
 title: Caddy — 自动 HTTPS Web 服务器
 来源: https://github.com/caddyserver/caddy
-日期: 2026-05-29
+日期: 2026-08-27
 分类: DevOps / 网络
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/caddyserver/caddy
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e2eee6a7fce366321294c9c2a79f3146891dcbdf
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.11.4
 ---
 
 ## 是什么
 
-Caddy 是 **Matt Holt 2014 年用 Go 写的 Web 服务器**，最大卖点是"配置一行域名 → 自动签 Let's Encrypt 证书 + 自动续期"。
-
-日常类比：[[nginx]] 像专业咖啡机——功能强，但每个旋钮都要自己调；Caddy 像胶囊咖啡机——按一下就出咖啡，HTTPS 自动来。
-
-你写一个最简单的 Caddyfile：
+Caddy 是用 Go 写的可扩展服务器平台：你写 Caddyfile 或原生 JSON，运行时先变成一份 `caddy.Config`，再按模块启动 HTTP / TLS / PKI。日常类比：它把「站点地址 + 处理指令」收成一张菜单，证书和重定向是默认配菜，不是你另外点的单。
 
 ```caddyfile
 example.com {
@@ -20,47 +29,36 @@ example.com {
 }
 ```
 
-执行 `caddy run`。Caddy 自动：
-
-1. 联系 Let's Encrypt 证书机构
-2. 完成域名所有权验证（HTTP-01 challenge）
-3. 拿到证书 → 自动配置 HTTPS
-4. 把 `https://example.com` 的请求转发到本地 3000 端口
-5. 60 天后自动续期，永远不掉
-
-整个过程**不用 certbot、不用 cron、不用 openssl 命令**。
+固定 `v2.11.4`（annotated tag 解引用 `e2eee6a7...`）的模块路径是 `github.com/caddyserver/caddy/v2`，Go 1.25.1，证书自动化走 `certmagic v0.25.3`。`caddy run` 不给 `--config` 时会尝试当前目录相邻的 `Caddyfile`。
 
 ## 为什么重要
 
-不用 Caddy 的痛苦：
+不按固定提交读自动 HTTPS 和配置适配，下面这些印象会对不上：
 
-- **配 nginx + certbot**：先装 nginx → 写配置 → 装 certbot → 跑命令签证书 → 改 nginx 引用证书 → 设 cron 续期 → 续期失败时还要 debug
-- **手动续期**：忘记续 = 用户访问报"证书过期"红屏，公司丢人
-- **多站点**：每个域名都来一遍上面流程
+- 为什么站点块里写公网主机名就会去申请证书，而 `localhost` 走 internal issuer
+- 为什么没填 email 时默认 issuer 只有 Let's Encrypt，不是「永远 LE + ZeroSSL」
+- 为什么 `caddy reload` 不是给进程发 `SIGHUP`
+- 为什么 Docker 卷必须挂数据目录——证书在 `AppDataDir()`，不在 Caddyfile 旁边
 
-Caddy 把这些**全部省掉**。这就是为什么：
+## 核心架构与流程
 
-- 个人博客 / 小型服务首选 Caddy
-- 边缘设备（树莓派、家用 NAS）几乎只用 Caddy
-- Docker 镜像 `caddy:latest` 是最常被 pull 的 Web 服务器之一
-- Tailscale / Pi-hole / Home Assistant 这类自托管服务都推荐 Caddy 当反代
+固定 2.11.4 的主链可以拆成五步：
 
-## 核心要点
+1. **Caddyfile 是 adapter**：`httpcaddyfile` 把 adapter 名注册为 `caddyfile`。文件名以 `Caddyfile` 开头或后缀 `.caddyfile`，且未指定别的 adapter 时，按 Caddyfile 适配成 JSON。
 
-Caddy 的能力可以拆成 **三块**：
+2. **Auto HTTPS 在 provisioning 扫 host**：`automaticHTTPSPhase1` 从路由 matcher 收集主机名。默认开证书管理和 HTTP→HTTPS 重定向；`disable` / `disable_redirects` / `disable_certificates` 可分别关掉。
 
-1. **Caddyfile**：声明式配置语言。每行一个 directive（指令），看一眼就懂。比 nginx 的 `location /` 嵌套块直观很多。
+3. **默认 issuer 不是双 CA 并列**：`DefaultIssuers(email)` 先放一个空 `ACMEIssuer`（CA 默认 `https://acme-v02.api.letsencrypt.org/directory`）。只有 email 非空才追加 ZeroSSL ACME issuer。失败重试用的 `TestCA` 默认是 Let's Encrypt staging。
 
-2. **Auto-TLS（自动 HTTPS）**：启动时检测到配置里有公网域名，自动从 [[lets-encrypt]] 或 ZeroSSL 申请证书，存进本地 storage，到期前自动续期。这是 Caddy 的灵魂功能，业界首创（2015）。
+4. **挑战与协议**：ACME HTTP-01 与 TLS-ALPN-01 默认启用。DNS-01 要配 DNS provider 模块；stock `modules/standard` 不含 `caddy-dns/cloudflare`。HTTP 服务器默认协议是 `[h1 h2 h3]`。
 
-3. **模块化插件系统**：Caddy 2.x 用 Go 的 plugin 机制，常见插件：
-   - `caddy-l4`：4 层 TCP/UDP 代理
-   - `caddy-docker-proxy`：从 Docker labels 自动生成配置
-   - `caddy-dns/cloudflare`：DNS-01 challenge 申请通配符证书
+5. **热更新走 admin API**：Admin 默认听 `localhost:2019`（或环境变量 `CADDY_ADMIN`）。`caddy reload --config Caddyfile` 把适配后的 JSON `POST` 到 `/load`。若 `caddy run` 带着源文件启动，还会登记 last-config，供 SIGUSR1 从同一文件重载。
 
-## 实践案例
+证书续期窗口是 automation policy 的 `RenewalWindowRatio`（注释写按证书总寿命，大约剩 1/3 时续）。这不是写死「签发后第 60 天」。Linux 数据目录是 `$XDG_DATA_HOME/caddy`，否则 `$HOME/.local/share/caddy`。
 
-### 案例 1：最简反代
+## 实践示例
+
+### 案例 1：Caddyfile 反代
 
 ```caddyfile
 example.com {
@@ -68,15 +66,9 @@ example.com {
 }
 ```
 
-`caddy run` 启动后：
+`reverse_proxy` 在 `modules/caddyhttp/reverseproxy` 注册。公网主机名会进入 Auto HTTPS；HTTP 默认端口 80、HTTPS 443。本页未实际申请证书。
 
-- `https://example.com` 自动有 HTTPS
-- HTTP 自动跳 HTTPS（默认行为）
-- 请求转发到本地 Node.js 服务
-
-**比 nginx 写法少 10 行**——nginx 要写 listen 80 / listen 443 / ssl_certificate / ssl_certificate_key / location / proxy_pass。
-
-### 案例 2：静态文件服务
+### 案例 2：静态文件
 
 ```caddyfile
 example.com {
@@ -85,94 +77,78 @@ example.com {
 }
 ```
 
-`/var/www` 下的文件直接被 HTTPS 服务出去。三行搞定一个静态站。
+`root` 是 Caddyfile 指令；`file_server` 注册为 HTTP handler。两者都在 stock 二进制里。
 
-### 案例 3：Docker 一键起
+### 案例 3：重载与存储
 
 ```bash
-docker run -d \
-  -v $PWD/Caddyfile:/etc/caddy/Caddyfile \
-  -v caddy_data:/data \
-  -p 80:80 -p 443:443 \
-  caddy
+caddy run
+caddy reload --config Caddyfile
 ```
 
-**关键点**：`caddy_data` 这个 volume 必须挂——里面存证书和私钥。容器删了重建，证书还在，不用重新签发（Let's Encrypt 有速率限制，频繁重签会被封）。
-
-### 案例 4：通配符证书（DNS-01 challenge）
-
-签 `*.example.com` 这种通配符证书，HTTP-01 不行（验证不了通配符域名所有权），必须用 DNS-01——往 DNS 加一条 TXT 记录证明你拥有域名。
-
-```caddyfile
-*.example.com {
-  tls {
-    dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-  }
-  reverse_proxy localhost:3000
-}
-```
-
-需要装 `caddy-dns/cloudflare` 插件 + 配置环境变量。
+`reload` 需要能连上当前 admin 地址。容器里要把数据目录挂成 volume，否则重建后 `AppDataDir()` 里的证书丢失；ACME CA 有速率限制，频繁重签会被拒。
 
 ## 踩过的坑
 
-1. **防火墙没开 80/443 → 自动 HTTPS 卡住**。Let's Encrypt 的 HTTP-01 challenge 需要从公网访问 80 端口；TLS-ALPN challenge 需要 443。云服务器忘了开端口，Caddy 启动时一直在等回调，看起来"卡住"。日志里会写 `connection refused`。
-
-2. **通配符证书必须 DNS-01**。HTTP-01 只能验证具体域名（`a.example.com`），验证不了 `*.example.com`。要装对应 DNS provider 的插件，不能用 stock Caddy。
-
-3. **配置 reload 不是发信号**。nginx 是 `nginx -s reload` 发 `SIGHUP`；Caddy 2.x 是 `caddy reload --config Caddyfile`，走 admin API（默认 `localhost:2019`）。习惯 nginx 的人容易卡住。
-
-4. **Caddyfile 与 JSON API 双轨**。Caddy 2.x 内部其实是 JSON 配置，Caddyfile 只是语法糖。生产环境推荐：写 Caddyfile + 用 admin API 调试。直接写 JSON 太啰嗦。
-
-5. **storage 路径要稳**。证书存在 `~/.local/share/caddy`（Linux）或 `$XDG_DATA_HOME/caddy`。容器跑的时候必须挂出来，否则容器一删证书全没。
-
-6. **早期 Caddy 1.x 商业授权坑**。1.x 时代默认二进制商用要付费（开源版自己编译），社区很反感。2.x（2020）改成 Apache 2.0 + 完全免费，才真正起飞。看老资料要注意版本。
+1. **把 ZeroSSL 写成无条件默认 CA**：固定提交里，没 email 就只有默认 ACMEIssuer（Let's Encrypt production）。
+2. **用 `SIGHUP` 当 reload**：CLI 走 admin `POST /load`。SIGUSR1 只服务「已登记源文件」那条路径。
+3. **通配符只靠 HTTP-01**：`*.example.com` 需要 DNS 挑战和对应 DNS 模块；stock Caddy 没有 Cloudflare 插件。
+4. **假设 80/443 一定通**：HTTP-01 要公网 80，TLS-ALPN-01 要 443。端口没开时申请会卡住，不是配置语法错。
+5. **把未绑定的 QPS / 镜像拉取量当选型依据**：本页没有运行或对照基准。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 个人 / 小团队网站，要 HTTPS 但不想折腾证书
-- 自托管服务的反向代理（Tailscale、Pi-hole、Plex）
-- Docker 部署 + 自动 TLS
-- 中小型 SaaS 的边缘节点
-- 开发环境快速 mock HTTPS
+- 希望公网站点默认 HTTPS，且能接受 Caddyfile → JSON → 模块这条链
+- 自托管反代或静态站，证书存在本地 storage
+- 需要 HTTP/1.1、HTTP/2、HTTP/3 同列默认协议
 
 **不适用**：
 
-- 超大流量（每秒 10w+ QPS）→ 选 nginx + OpenResty 或 Envoy，性能更优
-- 需要细粒度的 7 层 WAF / Bot 防护 → 选 nginx + ModSecurity 或 Cloudflare
-- 需要复杂的 lua 脚本扩展 → nginx + OpenResty 生态更成熟
-- 已经有 LB（ALB / GCLB） → 直接用云的 LB 自带证书更省心
+- 必须用 DNS-01 / L4 / Docker label 自动配置，却只装 stock 二进制
+- 要把未测吞吐写成「一定比 nginx 慢/快」
+- 已经由云负载均衡终止 TLS，却仍假设 Caddy 会对外申请公网证书
 
-## 历史小故事
+## 固定版本边界
 
-- **2014 年**：Matt Holt（21 岁博士生）开源 Caddy 0.x，那时只是一个普通 Go 写的 HTTP 服务器
-- **2015 年**：加入"自动 HTTPS" → **业界首创**。同年 Let's Encrypt 正式上线，Caddy 是第一个集成它的 Web 服务器
-- **2020 年**：Caddy 2.0 完全重写——内部改成 JSON 配置 + 模块化插件系统 + admin API。商业授权问题解决，改成 Apache 2.0
-- **2023 年**：ZeroSSL 加入默认 CA 列表（Let's Encrypt 之外多一个备选），抗单点故障
-- **2024 年**：Caddy 2.8 加入 HTTP/3 默认开启，进一步领先
+- 本文绑定 `caddyserver/caddy@e2eee6a7...`，annotated tag `v2.11.4` 解引用到该提交。
+- 未安装 Go 工具链、未 `caddy run`、未联系任一 CA，状态保持 `UNVERIFIED`。
+- `caddy-l4`、`caddy-docker-proxy`、各 DNS 插件是外部模块，不在本提交 `modules/standard`。
 
 ## 学到什么
 
-1. **"默认就对"是产品力**——HTTPS 不是 feature，是默认。Caddy 把配置门槛拉到 0，让"忘记续证书"这个错误不可能发生
-2. **声明式 > 命令式**——Caddyfile 描述"我要什么"，Caddy 自己想"怎么做"。比 nginx 的"显式配每个监听端口和证书路径"更适合 2024 年
-3. **模块化是长寿基因**——Caddy 2.x 的插件系统让社区能扩展任何协议（L4 / DNS / Auth），核心保持精简
-4. **第一性原理 vs 沿袭**——Matt Holt 没沿袭 Apache / nginx 的"配置文件 + reload 信号"老路，重新设计了 admin API + 声明式 Caddyfile，结果更简单
+1. **默认 HTTPS 是扫描主机名后的隐式政策**，不是 Caddyfile 里的一行魔法注释。
+2. **Caddyfile 只是 adapter**——admin API 吃的是 JSON。
+3. **issuer 集合取决于有没有 email**，不能把营销文案里的双 CA 当成无条件默认。
+4. **证书寿命和续期比例属于 certmagic 政策**，不要把「60 天」写成 Caddy 常量。
+
+## 应用型自测
+
+1. 固定 2.11.4 在没填 email 时，`DefaultIssuers("")` 会不会同时加入 Let's Encrypt 和 ZeroSSL？
+2. `caddy reload --config Caddyfile` 是给进程发 `SIGHUP` 吗？
+3. 站点块只写 `localhost` 时，Auto HTTPS 会用默认公开 CA 申请公网证书吗？
+
+检查点：
+
+1. 不会。没 email 时只有默认 `ACMEIssuer`；ZeroSSL ACME 要 email 非空才追加。
+2. 不是。它把适配后的 JSON `POST` 到 admin `/load`（默认 `localhost:2019`）。
+3. 不会。`localhost` 等不合格公网名走 internal issuer。
 
 ## 延伸阅读
 
-- 官方文档：[caddyserver.com/docs](https://caddyserver.com/docs/)（Caddyfile 语法 + JSON 配置 + 插件全列表）
-- 源码：[github.com/caddyserver/caddy](https://github.com/caddyserver/caddy)（Go 写的，结构清晰，适合学习 Go 服务器实现）
-- [[lets-encrypt]] —— Caddy Auto-TLS 默认 CA
-- [[nginx]] —— Caddy 的对照组，老牌 Web 服务器
+- 文档：[caddyserver.com/docs](https://caddyserver.com/docs/)
+- 固定源码：[caddyserver/caddy](https://github.com/caddyserver/caddy) —— 本文绑定提交 `e2eee6a7fce366321294c9c2a79f3146891dcbdf`
+- 审查记录：仓库内 `docs/caddy-centrifugo-source-review-20260827-fn.md`
+- [[lets-encrypt]] —— 默认 ACMEIssuer 的 CA
+- [[nginx]] —— 配置与证书流程不同的对照
 
 ## 关联
 
-- [[lets-encrypt]] —— Caddy 自动 HTTPS 的证书来源
-- [[nginx]] —— 同类对照：功能更强但配置更繁
-- [[docker]] —— Caddy 最常见的部署方式（`caddy:latest` 镜像）
-- [[traefik]] —— 同样主打"自动 HTTPS"的竞品，更偏 Kubernetes 生态
+- [[lets-encrypt]] —— 默认公开 CA
+- [[nginx]] —— 同类 Web 服务器
+- [[docker]] —— 常见部署方式；数据目录必须持久化
+- [[traefik]] —— 同样做自动证书，部署模型不同
 
 ## 反向链接
 
