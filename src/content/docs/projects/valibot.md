@@ -10,12 +10,12 @@ trust:
   note_type: library
   canonical_source: https://github.com/open-circle/valibot
   source_authority: AUTHOR_PRIMARY
-  accessed_at: '2026-07-17'
-  immutable_revision: 32247b362e7f80bc7c0b6c1cf180049ee4f8b884
+  accessed_at: '2026-08-27'
+  immutable_revision: 0dc26ea88cf07a414653375f0da43f97e0eed607
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
-  reviewed_at: '2026-07-17'
-  review_after: '2026-10-17'
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
   applicable_version: 1.4.2
 ---
 
@@ -157,9 +157,10 @@ if (result.success) console.log(result.output) // 42
 
 ## 固定版本边界
 
-- 本文绑定 `open-circle/valibot@32247b36...`，核心包版本为 `1.4.2`。
-- 旧 `fabian-hiller/valibot` URL 已重定向到当前组织，canonical source 已更新。
-- 固定 monorepo 还包含官方 `@valibot/i18n` 与 `@valibot/to-json-schema`。
+- 本文绑定 `open-circle/valibot@0dc26ea8...`。GitHub tag `v1.4.2` 与 npm `valibot@1.4.2` 的 `gitHead` 都指向该提交。
+- 旧页曾绑 `32247b36...`：那是 2026-07-08 的 JSDoc 拼写修复，package 仍写 `1.4.2`，但不是 npm / tag 发布点。
+- 发布 tag 里 `SafeParseResult` 注释仍写 `Whether is's typed`；不要把后续 typo-fix 提交当成 1.4.2 发布身份。
+- 同一 monorepo 提交里 `@valibot/i18n` 为 `1.2.0`，`@valibot/to-json-schema` 为 `1.7.1`，版本号不与核心包对齐。
 - `sideEffects: false` 与模块化源文件支持 tree shaking，但本文未运行 bundle 或 cold-start benchmark。
 - 本文未安装依赖或运行上游测试，状态保持 `UNVERIFIED`。
 
@@ -185,14 +186,16 @@ if (result.success) console.log(result.output) // 42
 ## 延伸阅读
 
 - 官方文档：[valibot.dev](https://valibot.dev/)（每个 schema 都有 playground）
-- 固定源码：[open-circle/valibot](https://github.com/open-circle/valibot) —— 本文绑定提交 `32247b362e7f80bc7c0b6c1cf180049ee4f8b884`
+- 固定源码：[open-circle/valibot](https://github.com/open-circle/valibot) —— 本文绑定提交 `0dc26ea88cf07a414653375f0da43f97e0eed607`
 - 创始人 talk：[Fabian Hiller — Why I built valibot](https://www.youtube.com/results?search_query=fabian+hiller+valibot)
 - bundle 对比实测：[bundlephobia.com/package/valibot](https://bundlephobia.com/package/valibot)
 - [[zod]] —— valibot 的灵感来源 + 主竞品
+- [[yup]] —— 先 cast 再验收、默认保留未知字段的对照
 - [[arktype]] —— 另一条 Zod 替代路线（string DSL）
 
 ## 关联
 
+- [[yup]] —— class + cast 默认路径的对照：未知字段默认留下，而不是剥掉
 - [[zod]] —— 直接对照物，valibot 几乎所有设计决策都在和它对着来
 - [[react-hook-form]] —— 通过 `valibotResolver` 一行接入，体验和 zodResolver 一致
 - [[tanstack-form]] —— 同样支持 valibot 作为校验适配器
@@ -205,9 +208,10 @@ if (result.success) console.log(result.output) // 42
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
+- [[arktype]] —— ArkType — schema 长得像 TypeScript 类型本身
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
+- [[yup]] —— Yup — 先转型再验收的对象 schema
 - [[zod]] —— Zod — TypeScript-first schema 验证

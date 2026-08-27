@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AV schema pair
+
+- status：writer epoch complete；等待 review，不 merge
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`
+- objective：新增 `yup` study-v2 页，并把 `valibot` 从非发布提交纠正绑定到 npm/tag 一致的 `v1.4.2`；证据为 `STATIC_REVIEW` / `UNVERIFIED`
+- scope：`yup`、`valibot`、`docs/schema-validation-source-review-20260827-av.md`、两份 receipt，以及 atlas / note-index / site-state / project-standard / 公开计数 / handoff 的确定性派生
+- activated_by：`explicit-parallel-writer-AV-20260827`
+- detector fingerprint：仓库没有 `yup` 页；`valibot` 旧绑 `32247b36` 仍写 1.4.2，但不是 GitHub tag / npm `gitHead`
+- external delta：只读 GitHub/npm metadata + 本地 blob-filtered clone；将开 1 个 PR，不 merge、不部署，D 轴不提升
+- 完成切片：
+  1. `yup` 绑定 `jquense/yup@b413bf65...` / `1.7.1`；披露 GitHub 无 `v1.7.1` tag
+  2. `valibot` 改绑 `open-circle/valibot@0dc26ea8...`，与 tag `v1.4.2` 和 npm `gitHead` 对齐
+  3. 新增共享 `docs/schema-validation-source-review-20260827-av.md` 与 generation 1/2 static receipt
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 匹配；`audit:counts` / `audit:content-contract` / `audit:project-standard` 通过；`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 全绿（strict build 2286 HTML / 2285 sitemap URLs、23 Playwright tests）
+- budget：2 页、单 writer、1 个 PR；不 merge
+- blocker：无本地门禁 blocker；等待 review，不 merge
+- stop conditions：本 epoch 已完成可审查 PR；不 merge
+- 下一次 wake 条件：PR review / 远端 CI，或 owner 授权 merge
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/105`，不要 merge
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
