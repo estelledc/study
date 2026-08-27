@@ -1,68 +1,79 @@
 ---
 title: Prisma — 类型安全 ORM
-来源: https://github.com/prisma/prisma
+来源: https://github.com/prisma/orm
 日期: 2026-05-29
 分类: ORM
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/prisma/orm
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e92bc46e8fff73e3985f86f23393b7e3f0e90010
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 7.10.0
 ---
 
 ## 是什么
 
-Prisma 是一套**用一份 schema 文件描述数据库表，自动生成 TypeScript 类型 + Query 客户端**的 ORM。
+Prisma 是一套用 schema 描述数据模型、再生成 TypeScript 客户端的 ORM。日常类比：先写一份菜单（`schema.prisma`），再让厨房按菜单出点餐口（generated client）。7.10.0 的点餐口不再自己握数据库门钥匙：你必须交给它一份 driver adapter，或走 Prisma Accelerate。
 
-日常类比：写菜单（`schema.prisma`）→ 系统自动配出每道菜的下单按钮（type-safe API）。你不手写 SQL、不手写 TypeScript 类型——一份 schema 喂进去，编译期就能知道 query 写错没。
+```ts
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "./generated/prisma/client";
 
-```prisma
-model User {
-  id    Int    @id @default(autoincrement())
-  email String @unique
-  posts Post[]
-}
-```
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+const prisma = new PrismaClient({ adapter });
 
-跑 `prisma generate` 后：
-
-```typescript
 const user = await prisma.user.findUnique({
-  where: { email: 'a@b.com' },
+  where: { email: "a@b.com" },
   include: { posts: true },
-})
-// user 类型自动推为：(User & { posts: Post[] }) | null
+});
 ```
+
+`include` / `select` 仍是客户端 API；它们会先被编成 query plan，再交给本地 interpreter 或 Accelerate。未 generate 时，`@prisma/client` 只是会抛错的 stub。
 
 ## 为什么重要
 
-不理解 Prisma 解决的问题，下面这些事都没法解释：
+不理解 Prisma 7 的构造与执行合同，下面这些事都会按 5.x / 6.x 印象写错：
 
-- 为什么 TypeScript ORM 圈把 Prisma / [[drizzle]] / [[kysely]] 并称"三足鼎立"
-- 为什么编辑器能自动补全 `prisma.user.findMany({ where: { ... } })` 里所有合法字段
-- 为什么 `prisma migrate dev` 能读懂你 schema 改了什么、自动生成 SQL 迁移文件
-- 为什么 Prisma Studio 那种"GUI 直接看 / 改数据"成为团队 onboarding 标配
-
-ORM 历史上有过 Active Record 派（Rails）/ Data Mapper 派（Hibernate）/ query builder 派（Knex）。Prisma 把"schema 当源头 + codegen 当桥梁 + 类型系统当护栏"做成 TypeScript ORM 的主流范式标杆之一——这是它的地位来源（不是说此前完全没人做过相近思路）。
+- 为什么 `new PrismaClient()` 不再够用，缺 `adapter` 会报 `P2038`
+- 为什么 datasource URL 从 schema 挪到 `prisma.config.ts`
+- 为什么 `prisma-client` generator 必须写 `output`，导入路径不再默认是 `@prisma/client`
+- 为什么“Rust query engine 直连数据库”不再是 7.10.0 的默认本地路径
 
 ## 核心要点
 
-Prisma 的运转可以拆成 **三块**：
+Prisma 7.10.0 的主链可以拆成五步：
 
-1. **声明式 `schema.prisma`（DSL）**：用 `model User { ... }` 写表结构。`@id` / `@unique` / `@default(now())` 是字段级修饰符，`@@index([email])` 是 model 级。整个文件**纯声明**，没有 `if` / `else` / 函数定义——这让它能被工具反向解析、双向消费。
+1. **声明模型**：`schema.prisma` 仍写 `model` / `@id` / `@relation`。`datasource` 只声明 provider；URL 由 `defineConfig({ datasource: { url } })` 提供。
 
-2. **生成的 Prisma Client（强类型 + auto-complete）**：跑 `prisma generate` 后，`node_modules/.prisma/client/` 出一份 `index.d.ts`——把每个 model 编译成一组 TypeScript 类型（`User` / `UserWhereInput` / `UserCreateInput` / ...）。`import { PrismaClient } from '@prisma/client'` 拿到的就是这套强类型 API。
+2. **生成客户端**：`prisma generate` 走 `prisma-client` 时必须给 `output`。生成物是一份带类型的 `PrismaClient`，不是手写 class。
 
-3. **Migrations（开发和部署都自动）**：`prisma migrate dev` 比对"当前 schema vs 上次迁移后的状态"，自动生成 SQL 迁移文件并应用；`prisma migrate deploy` 在生产环境只跑、不生成。两条命令分开是为了避免生产环境意外建表。
+3. **构造运行时**：`new PrismaClient({ adapter })` 或 `{ accelerateUrl }`。`getEngineInstance()` 只创建 `ClientEngine`。
 
-## 实践案例
+4. **编译 query plan**：普通查询先参数化，再经 WASM `QueryCompiler` 得到 plan。默认 cache 上限 1000；`createMany` / `createManyAndReturn` 不进 cache。`queryPlanCacheMaxSize: 0` 关闭 cache。
 
-### 案例 1：定义 schema
+5. **执行与组装**：本地路径由 `LocalExecutor` + `QueryInterpreter` 跑 plan；Accelerate 走 `RemoteExecutor`。同一 tick 的请求可由 `DataLoader` 合成 `requestBatch`。
+
+## 实践示例
+
+### 案例 1：config + 显式 output
 
 ```prisma
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
-generator client {
-  provider = "prisma-client-js"
+datasource db {
+  provider = "postgresql"
 }
 
 model User {
@@ -70,109 +81,110 @@ model User {
   email String @unique
   posts Post[]
 }
-
-model Post {
-  id       Int    @id @default(autoincrement())
-  title    String
-  authorId Int
-  author   User   @relation(fields: [authorId], references: [id])
-}
 ```
 
-注意几件事：
+```ts
+// prisma.config.ts
+import { defineConfig } from "prisma/config";
 
-- `User.posts: Post[]` 和 `Post.author` 必须**双向定义**，否则 schema 校验不过
-- `@relation(fields: [authorId], references: [id])` 显式声明"authorId 是外键，指向 User.id"
-- `?` 表可空，`[]` 表数组——借鉴 GraphQL SDL 语法精神，不是 SQL 习惯
-
-### 案例 2：query 用 include 嵌套读
-
-```typescript
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
-
-const user = await prisma.user.findUnique({
-  where: { email: 'a@b.com' },
-  include: { posts: true },
-})
-// user 类型自动推为：(User & { posts: Post[] }) | null
+export default defineConfig({
+  schema: "prisma/schema.prisma",
+  migrations: { path: "prisma/migrations" },
+  datasource: { url: process.env.DATABASE_URL },
+});
 ```
 
-`include` 是 Prisma 招牌——你不写 JOIN，关系数据就拿出来了。引擎背后把 `include` 编译成多条 batch query 在 client 侧组装（避免笛卡尔积膨胀）。
+`prisma-client` 不写 `output` 会直接失败。`migrate dev` / `migrate deploy` 也从这份 config 读 URL，不是从 schema 里的 `url = env("DATABASE_URL")`。
 
-### 案例 3：改 schema 跑 migration
+### 案例 2：adapter 是默认入口
+
+```ts
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "./generated/prisma/client";
+
+const prisma = new PrismaClient({
+  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }),
+  log: ["query"],
+  transactionOptions: { maxWait: 2000, timeout: 5000 },
+});
+```
+
+注释里的 `maxWait` / `timeout` 就是构造函数默认值。要走云端连接池，用 `accelerateUrl`，且不能同时传 `adapter`。
+
+### 案例 3：改 schema 后仍要 generate
 
 ```bash
-# 编辑 schema.prisma：给 User 加 bio String?
-# 然后一行命令：
 npx prisma migrate dev --name add_bio
+npx prisma generate
 ```
 
-Prisma 自动：
-
-1. 比对当前 schema 和 `prisma/migrations/` 下已有迁移的累计状态
-2. 算出 diff：`ALTER TABLE "User" ADD COLUMN "bio" TEXT`
-3. 写到 `prisma/migrations/<timestamp>_add_bio/migration.sql`
-4. 在真实 db 上跑这条 SQL
-5. 在 db 的 `_prisma_migrations` 表里记录已应用版本
-
-部署到生产时，CI 跑 `prisma migrate deploy`——只读迁移文件夹、按顺序应用，不生成新文件。
+migrate 负责 SQL 与 `_prisma_migrations`；generate 负责类型和 runtime 副本。只跑其中一个，会出现“库已改、客户端还是旧形状”。
 
 ## 踩过的坑
 
-1. **大型 query 生成的 SQL 不一定最优**：`include` 嵌套三层（`{ posts: { include: { tags: { include: ... } } } }`）会拆成多条 round trip。引擎把同层 batch 成一次（避免 N+1），但 round trip 总数随嵌套深度线性增长。复杂场景必须打开 `log: ['query']` 看真实 SQL。
+1. **把旧 `new PrismaClient()` 当 7.10.0 合同**：固定源码在缺 adapter / Accelerate URL 时抛 `PrismaClientInitializationError`（`P2038`）。
 
-2. **Edge Runtime（Cloudflare Workers / Vercel Edge）支持有限**：默认 query engine 是带 native binary 的 Rust 引擎，体积与运行时约束都不适合直接塞进 Edge。要上 Edge 通常走 [Prisma Accelerate](https://www.prisma.io/accelerate)（query 转 HTTP + 云端连接池）、driver adapter，或 wasm/edge 相关引擎路径（能力与成熟度需按版本核对）。
+2. **继续从 `@prisma/client` 当生成入口**：未 generate 的包导出是 stub；7.10.0 推荐导入 `./generated/prisma/client`。
 
-3. **Schema 改动后忘记 `prisma generate`**：Prisma Client 是 codegen 出来的——schema 改了不重 generate，IDE 看到的还是旧类型，runtime 也是旧 schema 副本，"修改没生效"。习惯做法：把 `prisma generate` 挂在 `postinstall` 钩子上，CI 跑 `npm install` 时自动同步。
+3. **以为 `include` 一定拆成多条 SQL**：客户端仍接受 `include` / `select`，但它们先变成 query plan。是否 JOIN、是否多语句，取决于 compiler 与 adapter 的 `supportsRelationJoins`，要用 `log: ['query']` 看当次 plan。
 
-4. **Connection pool 与 serverless 不友好**：每次 lambda / Workers 冷启动都新建一份 PrismaClient = 新建一组 db connection，db 的 `max_connections` 几百很快被打爆。解决方案：① PgBouncer 等中间件 ② Prisma Accelerate 云端共享池 ③ 选 Neon / Supabase 等自带 pooler 的托管 Postgres。
+4. **把 npm `prisma@latest` 当成稳定 7**：审查当日 `prisma` 的 latest 是 `8.0.0-rc.12`，`@prisma/client` latest 仍是 `7.10.0`。7.10.0 另提供 `@prisma/prisma7`，用来和 Prisma 8 并存，不是把 RC 写成当前事实。
+
+5. **把 GitHub “latest release” 当成 7.10.0**：API 把 `v0.17.0` 标成 latest；本页绑定的是非预发布 tag `7.10.0`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- prototype / 中后台 / 内部工具——DX 极好，Studio GUI 直接当后台用
-- 团队不熟 SQL，想要"写 TypeScript 就能查 db"的体感
-- 跨多种数据库（PG / MySQL / SQLite / SQL Server / MongoDB / CockroachDB）—— Prisma 一份代码六种数据库
-- 需要 schema migration 自动化（不想手写 SQL diff）
+- 需要 schema、migrate、生成客户端和 Studio 同一工具链
+- 应用进程用 `@prisma/adapter-pg` 等 driver adapter 直连
+- 或显式选择 Prisma Accelerate，不在进程内持有连接
 
 **不适用**：
 
-- 边缘运行时 + 在意 bundle / cold start → 选 [[drizzle]] / [[kysely]]
-- 极度复杂的 SQL（CTE / window function / `LATERAL JOIN`）→ 必须 `$queryRaw`，失去类型安全
-- 需要"看见每条 SQL"做性能 tuning → 选 [[kysely]] 这种 query builder
-- 多 datasource transaction 跨库写一致 → Prisma 不支持跨 datasource transaction
+- 不能接受“构造时必须给 adapter / Accelerate URL”
+- 要把每条 SQL 写成可见的 builder 链 → 看 [[kysely]]
+- 需要跨 datasource 的单笔 transaction：7.10.0 客户端 API 没有这条保证
+- 准备把 8.0 RC 或 `v0.17.0` 当成本页结论
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2016 年**：Graphcool 创业（柏林），做 GraphQL backend-as-a-service。
-- **2019 年**：Graphcool 关停，团队转做 Prisma 1（GraphQL-first 的 ORM 雏形）。
-- **2020 年**：完全重写为 Prisma 2——砍掉 GraphQL 中间层，DSL + codegen + Rust query engine 这套架构定型。
-- **2022-2024 年**：Prisma 5.x 主线迭代；wasm / edge 相关引擎进入 preview。
-- **2024 年底起**：Prisma 6.x 继续补 Edge / driver adapter 路线——以当时发行说明为准，不要默认「wasm 已在所有场景主流可用」。
+- 本文绑定 `prisma/orm@e92bc46e...`，tag / package 为 `7.10.0`。
+- `https://github.com/prisma/prisma` 301 到 `prisma/orm`；npm 元数据仍写旧仓库路径。
+- 声明 Node `^20.19 || ^22.12 || >=24.0`。
+- npm `prisma` latest 与 `@prisma/client` latest、GitHub latest release 三者不一致；升级前需重新建立 provenance。
+- 本文未安装依赖、运行 migrate / generate、连接数据库或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **schema 当源头**——这个判断比"entity class 当源头"或"SQL 当源头"更适合 TypeScript 时代。codegen 是把"schema 真理"投射到"TypeScript 类型"的桥。
-2. **DSL 派 vs schema-as-code 派**——Prisma 选 DSL（`schema.prisma` 单文件），Drizzle 选 schema-as-code（TS 对象散落）。两条路都活着，证明各有市场——审美 + 工程权衡之争，不是技术对错。
-3. **Rust engine + binary protocol 的代价**——2019 年合理（TS 类型系统能力不够），2026 年是 Edge runtime 的负担。任何长期项目都会遇到这种"早期对的判断在 5 年后成为束缚"的路径依赖。
-4. **`include` 隐藏 SQL 的代价**——happy path 极优雅，但 debug 难——必须打开 query log 才知道一行代码跑了几条 SQL。"藏 SQL"和"露 SQL"是两种世界观。
+1. **生成物不是连接器**——schema 负责形状，adapter / Accelerate 负责怎么连上库。
+2. **配置文件成了 URL 的家**——migrate 与 generate 都读 `prisma.config.*`，不能只改 schema。
+3. **默认引擎路径已经换**——7.10.0 本地主链是 WASM compiler + JS interpreter，不是“每次查询都拉起独立 Rust binary”。
+4. **latest 标签会撒谎**——CLI、client、GitHub latest 可以指向三条线，笔记必须钉到可复查提交。
+
+## 应用型自测
+
+1. 固定 7.10.0 里写 `new PrismaClient()` 且不传 `adapter` / `accelerateUrl`，会怎样？
+2. `prisma-client` generator 不写 `output`，`prisma generate` 会成功吗？
+3. `queryPlanCacheMaxSize: 0` 之后，`findUnique` 还会写进 plan cache 吗？
+
+检查点：
+
+1. 抛初始化错误 `P2038`，要求传入 adapter。
+2. 不会；generator 要求显式 output。
+3. 不会；`0` 会关掉 `QueryPlanCache`。
 
 ## 延伸阅读
 
-- 官方文档：[prisma.io/docs](https://www.prisma.io/docs)（中文文档完整，30 分钟跑起来）
-- 源码：[prisma/prisma](https://github.com/prisma/prisma)（client + cli + migrate + generator-helper）
-- 引擎源码：[prisma/prisma-engines](https://github.com/prisma/prisma-engines)（Rust workspace，query / migrate / introspection 三个 engine）
-- [[drizzle]] —— schema-as-code 派的旗手，Prisma 的对照组
-- [[kysely]] —— 纯 SQL builder 派，不管 schema 让你写 type-safe SQL
+- 文档：[prisma.io/docs](https://www.prisma.io/docs)
+- 固定源码：[prisma/orm](https://github.com/prisma/orm) —— 本文绑定提交 `e92bc46e8fff73e3985f86f23393b7e3f0e90010`
+- [[kysely]] —— 同主题对照：可见 SQL builder，没有 codegen 客户端
 
 ## 关联
 
-- [[drizzle]] —— TypeScript ORM 三足之一，schema 写在 TS 对象里、看得见 SQL、Edge runtime 友好
-- [[kysely]] —— TypeScript ORM 三足之一，纯 query builder，1:1 映射 SQL
-- [[graphql]] —— Prisma 的 schema DSL 受 GraphQL SDL 影响，`?` / `[]` 语法精神来自 SDL
-- [[postgres]] —— Prisma 在 PG 上功能最完整，Edge 时代的搭档
+- [[kysely]] —— query builder 对照；看见 SQL 与 schema-first 是两条合同
+- [[postgres]] —— 7.10.0 示例与 `@prisma/adapter-pg` 的主路径
+- [[graphql]] —— 早期 schema DSL 仍能在 `?` / `[]` 语法里看到影响
 
 ## 反向链接
 
