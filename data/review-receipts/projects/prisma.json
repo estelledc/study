@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "prisma",
+    "digest_sha256": "522ac799346f1d358a789f0fd8a04b011a25ab5b7a442ed7cf2d46f8b0b928b5"
+  },
+  "source_revision": "e92bc46e8fff73e3985f86f23393b7e3f0e90010",
+  "research_input_sha256": "1154d3bc2fa7c94891ea9ffed9f43218e237684599b1ef4853682d5d9a150e08",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-d",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains adapter-or-Accelerate construction, config-hosted datasource URL, generate output, and query-plan execution with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-d",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "ClientEngine, LocalExecutor, DataLoader, prisma-client generator, defineConfig, and migrate URL sources were inspected; generate/migrate/db were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-d",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm prisma latest 8.0 RC, @prisma/client 7.10.0, and GitHub latest v0.17.0 provenance split is disclosed; note is bounded to reachable 7.10.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:30:00.000Z"
+}
