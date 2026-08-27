@@ -17,8 +17,8 @@
   2. 新建 `formkit-tempo`：ISO 硬门、Intl offset、`tzDate` wall-clock 解释、默认月份夹日。
   3. 新建 `spacetime`：自带 zonefile、`goto` 保瞬时 / `timezone` 保墙钟、`d` 与 `toNativeDate` 分叉、`weekStart` 原地修改。
 - budget：2 个小型本地 worktree + 2 页静态源码迁移；单 writer。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / provenance 一致且 `UNVERIFIED`；`audit:counts` 通过。
-- 验证结果：定向质量门与 receipt 校验已通过；全量 `verify:ci` 以 PR head 实测为准。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / provenance 一致且 `UNVERIFIED`；`audit:counts` 通过；`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci` 全绿。
+- 验证结果：规范 Node 22.23.1 / npm 11.17.0 下 388 Node tests、strict build 2287 HTML / 2286 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁全绿。两页构建产物可见固定 revision 与 `UNVERIFIED`。
 - blocker：merge 与 deploy 未授权。
 - stop conditions：单 PR 完成即停；不 merge。
 - 下一次 wake 条件：本 PR 进入 review，或 owner 授权 merge。
