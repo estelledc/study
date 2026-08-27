@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
-      "unknown_difficulty": 1974,
-      "empty_description": 1969
+      "unknown_difficulty": 1973,
+      "empty_description": 1968
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
-        "unknown_difficulty": 960,
-        "empty_description": 956
+        "unknown_difficulty": 959,
+        "empty_description": 955
       }
     },
     "missing_curated_assignments": [],
@@ -37770,7 +37770,7 @@
       "id": "projects::bun",
       "area": "projects",
       "slug": "bun",
-      "title": "Bun — JS 全能运行时",
+      "title": "Bun — 单二进制 JS/TS 运行时与工具链",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37783,13 +37783,13 @@
         "raw_category": "运行时 / 构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/bun/",
       "atlas": {
@@ -40519,7 +40519,7 @@
       "id": "projects::deno",
       "area": "projects",
       "slug": "deno",
-      "title": "Deno — 安全优先的 TypeScript/JavaScript 运行时",
+      "title": "Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -40530,13 +40530,13 @@
         "raw_category": "运行时"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/deno/",
       "atlas": {
@@ -41750,32 +41750,32 @@
       "id": "projects::electron",
       "area": "projects",
       "slug": "electron",
-      "title": "Electron — 用网页技术做跨平台桌面应用",
+      "title": "Electron — 自带 Chromium + Node 的跨平台桌面运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-mobile-development"
+        "projects-general-developer-tools"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "projects-mobile-development",
-        "matched_category": "mobile",
-        "raw_category": "mobile"
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "跨平台桌面",
+        "raw_category": "跨平台桌面"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/electron/",
       "atlas": {
-        "chunk_id": "topic-projects-mobile-development-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -47154,7 +47154,7 @@
       "id": "projects::koa",
       "area": "projects",
       "slug": "koa",
-      "title": "Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架",
+      "title": "Koa — 用 ctx 与可替换 compose 编排洋葱中间件的 Node 框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -47167,13 +47167,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/koa/",
       "atlas": {
@@ -49111,6 +49111,37 @@
       }
     },
     {
+      "id": "projects::lodash",
+      "area": "projects",
+      "slug": "lodash",
+      "title": "Lodash — 以 iteratee 与 wrapper 组织的通用工具函数集",
+      "description": "介绍 lodash 4.18.1 如何用 iteratee、wrapper 与 debounce/throttle 组织通用工具函数，并区分 mutate 与 cloneDeep。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/lodash/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::lodestar",
       "area": "projects",
       "slug": "lodestar",
@@ -49858,13 +49889,13 @@
         "raw_category": "projects / 前端工具链"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/markdown-it/",
       "atlas": {
@@ -49889,13 +49920,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/marked/",
       "atlas": {
@@ -52057,7 +52088,7 @@
       "id": "projects::nestjs",
       "area": "projects",
       "slug": "nestjs",
-      "title": "NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架",
+      "title": "NestJS — 用模块与 DI 组织 Node 后端的企业级框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -52070,13 +52101,13 @@
         "raw_category": "后端框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/nestjs/",
       "atlas": {
@@ -55047,7 +55078,7 @@
       "id": "projects::pixi",
       "area": "projects",
       "slug": "pixi",
-      "title": "PixiJS — 浏览器里画 2D 的高性能 GPU 引擎",
+      "title": "PixiJS — 浏览器 2D 场景图与多后端渲染器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -55060,13 +55091,13 @@
         "raw_category": "projects / 图形渲染"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/pixi/",
       "atlas": {
@@ -56655,6 +56686,37 @@
       "atlas": {
         "chunk_id": "topic-projects-web-frameworks-01",
         "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
+      }
+    },
+    {
+      "id": "projects::ramda",
+      "area": "projects",
+      "slug": "ramda",
+      "title": "Ramda — 自动柯里、data-last 的实用函数式工具库",
+      "description": "介绍 ramda 0.32.0 如何用自动柯里、占位符和路径拷贝组织 data-last 函数管道。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ramda/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -58385,13 +58447,13 @@
         "raw_category": "ORM"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/sequelize/",
       "atlas": {
@@ -60748,8 +60810,8 @@
       "area": "projects",
       "slug": "tailwind",
       "title": "Tailwind CSS — 工具类优先样式框架",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "CSS-first 工具类编译器，用 compile/build 和 Oxide 扫描按需生成 utility",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-css-and-styling"
       ],
@@ -60760,13 +60822,13 @@
         "raw_category": "CSS"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/tailwind/",
       "atlas": {
@@ -60935,7 +60997,7 @@
       "id": "projects::tauri",
       "area": "projects",
       "slug": "tauri",
-      "title": "Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用",
+      "title": "Tauri — 系统 WebView + Rust 后端的轻量桌面运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -60949,13 +61011,13 @@
         "raw_category": "跨平台桌面"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/tauri/",
       "atlas": {
@@ -61473,7 +61535,7 @@
       "id": "projects::threejs",
       "area": "projects",
       "slug": "threejs",
-      "title": "Three.js — 轻量 3D 渲染引擎",
+      "title": "Three.js — 浏览器 3D 场景图与 WebGL2 渲染器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61487,13 +61549,13 @@
         "raw_category": "前端 / 三维图形"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/threejs/",
       "atlas": {
@@ -62213,13 +62275,13 @@
         "raw_category": "ORM"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/typeorm/",
       "atlas": {
@@ -62383,6 +62445,37 @@
       "atlas": {
         "chunk_id": "topic-projects-cli-tools-01",
         "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
+      "id": "projects::unocss",
+      "area": "projects",
+      "slug": "unocss",
+      "title": "UnoCSS — 按需原子 CSS 引擎",
+      "description": "按需原子 CSS 引擎，用 createGenerator 和可换 preset 把 token 编成 CSS",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-css-and-styling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-css-and-styling",
+        "raw_category": "CSS"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/unocss/",
+      "atlas": {
+        "chunk_id": "topic-projects-css-and-styling-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-css-and-styling-01/"
       }
     },
     {
@@ -65601,7 +65694,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-css-and-styling-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-data-applications-and-saas-01",
@@ -65783,7 +65876,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 15
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",
@@ -65895,7 +65988,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-mobile-development-01/",
-      "entries": 10
+      "entries": 9
     },
     {
       "id": "topic-projects-monitoring-and-time-series-01",

@@ -1,34 +1,42 @@
 ---
-title: Three.js — 轻量 3D 渲染引擎
-来源: 'https://github.com/mrdoob/three.js'
+title: Three.js — 浏览器 3D 场景图与 WebGL2 渲染器
+来源: https://github.com/mrdoob/three.js
 日期: 2026-07-08
 分类: 前端 / 三维图形
 难度: 入门到进阶
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/mrdoob/three.js
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 2431a09f46f34c560bc8e44b33be0e567723d5b9
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.185.1
 ---
 
 ## 是什么
 
-Three.js 是浏览器里的**轻量 3D 工具箱**：把底层 WebGL（网页画 3D 的原生接口）收成更好记的对象。
-
-日常类比：你要拍产品照，不必自己焊灯架、调光圈、手算透视——搭一个摄影棚就行。Three.js 里 `Scene` 是棚、`Camera` 是相机、`Light` 是灯、`Mesh` 是被拍的物体、`Renderer` 是快门按下后出图的那一步。
+Three.js 把浏览器里的 3D 收成一棵场景图：`Scene` 是棚、`Camera` 是镜头、`Mesh` 是物体、`Light` 是灯、`WebGLRenderer` 是快门。日常类比：你要拍产品照，不必自己焊灯架、手写 WebGL 2 状态机——先搭摄影棚，再决定每一帧按哪个相机出图。
 
 ```js
 import * as THREE from 'three'
 
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 1000)
+const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 2000)
 camera.position.set(0, 1, 5)
 
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(innerWidth, innerHeight)
 document.body.appendChild(renderer.domElement)
 
-scene.add(new THREE.AmbientLight(0xffffff, 0.4))
-scene.add(new THREE.DirectionalLight(0xffffff, 0.8))
-
 const mesh = new THREE.Mesh(
   new THREE.BoxGeometry(1, 1, 1),
-  new THREE.MeshStandardMaterial({ color: 0x44aa88 })
+  new THREE.MeshBasicMaterial({ color: 0x44aa88 })
 )
 scene.add(mesh)
 
@@ -38,41 +46,48 @@ renderer.setAnimationLoop(() => {
 })
 ```
 
-注意：`MeshStandardMaterial` 靠光照显色；没灯时画面会近乎全黑——这是跟做时最常见的第一坑。
+`Mesh` 构造函数默认材质就是 `MeshBasicMaterial`，不受光照。若改成 `MeshStandardMaterial` 却不给灯或 environment map，画面会接近全黑——这是跟做时最常见的第一坑，不是“库坏了”。
 
 ## 为什么重要
 
-不理解 Three.js，下面这些事都不好解释：
+不读固定 0.185.1 源码，Three.js 很容易被讲成「随便 new 就能出 3D」：
 
-- 为什么前端能在网页里做可交互 3D，却不必手写整套管线
-- 为什么产品演示、数据大屏、地图可视化常先选它而不是完整游戏引擎
-- 为什么「会 JS」就能进 3D：生态（Docs / Manual / Examples）把门槛压低了
-- 为什么 WebGPU 成熟后它仍在：同一套 Scene 模型可渐进换渲染后端
+- 为什么默认 `import 'three'` 没有 `WebGPURenderer`——它在 `three/webgpu`，和 TSL/节点材质走另一条入口
+- 为什么 `Mesh()` 不给材质也能看见盒子——默认是不受光的 `MeshBasicMaterial`
+- 为什么循环必须走 `setAnimationLoop`——内部还要同步 XR session 的 start/stop
+- 为什么上千个相同盒子不该各建一个 `Mesh`——`InstancedMesh` 才是同一 geometry/material 的实例化合同
 
 ## 核心要点
 
-1. **五件套搭骨架**：`Scene`（舞台）+ `Camera`（视角）+ `Mesh`（几何+材质）+ `Light`（明暗）+ `Renderer`（画到 Canvas）。缺灯或忘 `render`，场景再漂亮也出不了图。
-2. **渲染循环自己推**：用 `setAnimationLoop` 每帧改变换再 `render`；库不会替你“想象”动画时机。
-3. **几何与材质分离**：`Geometry` 管形状，`Material` 管外观。换皮不用改拓扑——像同一模具换涂料。
-4. **材质选型**：`MeshBasicMaterial` 不受光（原型快）；`MeshStandardMaterial` 走 PBR（基于物理的着色，更像真实材质）；`PointsMaterial` 适合点云。
-5. **多渲染后端**：默认 WebGL；可渐进接 WebGPU；另有 CSS3D / SVG 等旁路组件。
+固定版本可以看成五步：
 
-## 实践案例
+1. **场景图**：`Object3D.add` 会先 `removeFromParent()`，再把子节点挂到新父节点。一个对象不能同时属于两棵树。
 
-### 案例 1：旋转立方体（最小可跑）
+2. **可绘制物**：`Mesh` = `BufferGeometry` + `Material`。几何管拓扑，材质管着色；默认材质是 Basic，不是 Standard。
 
-按「是什么」里的代码逐步核对：
+3. **相机**：`PerspectiveCamera` 默认 `fov=50`、`near=0.1`、`far=2000`。`near` 不能为 0。窗口变化后要改 `camera.aspect` 并 `updateProjectionMatrix()`，再 `renderer.setSize`。
 
-1. 创建 `Scene` / `PerspectiveCamera` / `WebGLRenderer`，把 `domElement` 挂到页面
-2. 加 `AmbientLight` + `DirectionalLight`（Standard 材质必需）
-3. `BoxGeometry` + `MeshStandardMaterial` 组成 `Mesh` 并 `scene.add`
-4. `setAnimationLoop` 里改 `rotation.y` 再 `render`
+4. **WebGL 2 渲染**：`WebGLRenderer.render(scene, camera)` 先更新世界矩阵，再 `projectObject`、排序、`setupLights`、画背景与物体。自 r163 起不支持 WebGL 1。`camera` 必须是 `THREE.Camera`。
 
-能转起来，说明五件套已通。若全黑，先查有没有灯。
+5. **循环与后端**：`setAnimationLoop(cb)` 启动内部 `WebGLAnimation`；传入 `null` 会停。WebGPU / 节点材质不在默认包，要从 `three/webgpu` 进。
 
-### 案例 2：Raycaster 做 hover 拾取
+## 实践示例
 
-把数据点建成 `SphereGeometry` 小球；鼠标移动时：
+### 案例 1：Standard 材质必须有光或环境
+
+```js
+const mesh = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshStandardMaterial({ color: 0x44aa88, roughness: 1, metalness: 0 })
+)
+scene.add(mesh)
+scene.add(new THREE.AmbientLight(0xffffff, 0.4))
+scene.add(new THREE.DirectionalLight(0xffffff, 0.8))
+```
+
+`MeshStandardMaterial` 走 metallic-roughness PBR，默认 `roughness=1`、`metalness=0`。源码说明最好再给 environment map。没有灯也没有 env map 时，不要用“渲染器没工作”解释全黑。
+
+### 案例 2：Raycaster 用 NDC，不是像素
 
 ```js
 const raycaster = new THREE.Raycaster()
@@ -82,79 +97,88 @@ function onMove(e) {
   pointer.y = -(e.clientY / innerHeight) * 2 + 1
   raycaster.setFromCamera(pointer, camera)
   const hits = raycaster.intersectObjects(points)
-  // hits[0] 即最近命中；据此改色或显示 tooltip
 }
 ```
 
-Raycaster（射线拾取）= 从相机射出一根“手指”，看先碰到谁——交互仪表盘的基础。
+透视相机下，origin 取 `camera.matrixWorld` 的位置，方向经 `unproject` 再归一化。`x/y` 必须在 `[-1, 1]`。`hits[0]` 是最近命中。
 
-### 案例 3：地理热力柱原型
+### 案例 3：相同几何用 InstancedMesh
 
-用 `CylinderGeometry` 按经纬度摆柱、高度映射数值。先低面片确认缩放与拾取，再换成精细模型或 InstancedMesh——避免一上来上重型引擎。百级柱体通常够用；上千根优先实例化。
+```js
+const mesh = new THREE.InstancedMesh(geometry, material, 1000)
+const m = new THREE.Matrix4()
+for (let i = 0; i < 1000; i++) {
+  m.makeTranslation(i % 32, 0, (i / 32) | 0)
+  mesh.setMatrixAt(i, m)
+}
+scene.add(mesh)
+```
+
+`InstancedMesh` 的合同是「同一 geometry/material，不同 world transform」。一千个独立 `Mesh` 会变成一千次绘制准备；这不是风格问题，是 draw call 合同。
 
 ## 踩过的坑
 
-1. **每帧 `new` 对象**：loop 里频繁创建几何/材质会触发 GC，掉帧明显。
-2. **忘记 dispose**：SPA 切页不做 `geometry.dispose()` / `material.dispose()` / `renderer.dispose()`，显存与监听器泄漏。
-3. **Standard 材质没灯**：跟做全黑，误以为“库坏了”。
-4. **近远裁剪过窄**：`PerspectiveCamera` 的 near/far 设错，物体闪烁或突然消失。
-5. **Resize 未同步**：窗口变化后不改 `camera.aspect` 与 `renderer.setSize`，画面拉伸。
-6. **上千独立 Mesh 不分批**：draw call 爆炸；合并几何或用 InstancedMesh。
+1. **把默认入口当成全功能包**：`import * as THREE from 'three'` 没有 `WebGPURenderer`。WebGPU 与 TSL 在 `three/webgpu` / `three/tsl`。
+2. **Standard 当默认材质**：`new Mesh(geometry)` 默认 Basic，不受光；换成 Standard 后必须补灯或 env map。
+3. **以为 `geometry.dispose()` 会删 JS 对象**：它只派发 `dispose` 事件，GPU 缓冲由渲染器释放。`Mesh` 本身没有 `dispose()`，材质和贴图要各自 `dispose()`。
+4. **手写 `requestAnimationFrame` 绕过 `setAnimationLoop`**：XR session 开始时内部 animation 会停，结束再启；绕过这条路径会丢兼容性。
+5. **把 npm `0.185.0` 和 tag `r185` 当成同一提交**：`0.185.0` 的 `gitHead` 是另一枚 commit；`r185` 与 `0.185.1` 才对齐。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 网页端轻量 3D（产品展示、教学示意、百到数千 mesh 的可视化）
-- 团队以 JS 为主，要在数天内做出可交互 MVP
-- 需要 Raycaster 拾取、轨道控制、加载 glTF 等常见能力
+
+- 网页端产品展示、教学示意、数百到数千 mesh 的可视化
+- 团队以 JS 为主，需要 Scene / Camera / Mesh / 拾取这套稳定心智模型
+- 先走 WebGL 2，再评估是否迁到 `three/webgpu`
 
 **不适用**：
-- AAA 级实时光追 / 大规模开放世界（考虑专用引擎）
-- 强实时物理且延迟预算极紧（毫秒级），Three.js 物理多为插件级
-- 必须以原生 App 深绑移动 GPU 时，WebView 方案往往不够
 
-## 历史小故事（可跳过）
+- 需要完整关卡编辑器、内置物理与网络同步的游戏引擎
+- 必须从默认入口拿到 WebGPURenderer
+- 把「没灯的 Standard 材质」当成渲染失败来排障
+- 尚未在目标设备上跑过的固定 FPS / 面数结论
 
-- **2010 前后**：Ricardo Cabello（mrdoob）开源 three.js，把“自己写 WebGL 管线”的门槛拉低。
-- **2010s**：Examples 与社区插件把重心从底层语法转到交互与视觉。
-- **2020s**：glTF 成为默认模型交换；生态模板化。
-- **现在**：WebGPURenderer 渐进可用，同一套场景图迁向更现代图形 API。
+## 固定版本边界
 
-## 一些可能的疑问
-
-**问：为什么加了立方体还是黑的？**
-
-多半用了 `MeshStandardMaterial` 却没加灯。先加环境光，或临时换成 `MeshBasicMaterial` 验证几何是否在视野内。
-
-**问：Three.js 和游戏引擎什么关系？**
-
-它是场景图 + 渲染封装，不是完整游戏引擎。没有内置关卡编辑器、完整物理与网络同步；适合网页可视化与轻交互，不适合 3A 管线。
-
-**问：该从 WebGL 还是 WebGPU 入门？**
-
-先 WebGLRenderer 跟完官方例子；等场景稳定再试 WebGPURenderer。API 心智模型（Scene/Camera/Mesh）不变，换的是后端。
+- 本文绑定 `mrdoob/three.js@2431a09f46f34c560bc8e44b33be0e567723d5b9`，`REVISION` 为 `185`，npm 包为 `three@0.185.1`。
+- GitHub tag `r185` 与 npm `0.185.1` 的 `gitHead` 一致；`three@0.185.0` 指向另一提交，不纳入本页。
+- 默认入口是 WebGL 2 renderer；WebGPU 是条件导出，不是同一份 UMD。
+- `ColorManagement.enabled` 默认为 `true`，工作色域为 `LinearSRGBColorSpace`。
+- 本文未安装依赖、运行 puppeteer 单测、打开 examples 或测量 draw call，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. 工具价值是降低决策摩擦，不是替代图形学本身。
-2. 先搭 Scene/Camera/Light/Mesh/Renderer 骨架，再谈材质与性能。
-3. 能跑只是起点：dispose、复用、控制 draw call，迭代才稳。
+1. **场景图是所有权树**——`add` 会先脱离旧父节点，不是“再注册一次”。
+2. **默认材质不受光**——Basic 与 Standard 的第一帧行为完全不同。
+3. **渲染入口不等于后端全集**——WebGL 2 是默认合同，WebGPU 要另开入口。
+4. **dispose 是事件，不是析构**——JS 对象还在，GPU 资源靠监听者释放。
+
+## 应用型自测
+
+1. `new THREE.Mesh(new THREE.BoxGeometry())` 不传材质、场景里也没灯。按固定 0.185.1，盒子会因为“没灯”而全黑吗？
+2. `import * as THREE from 'three'` 之后 `new THREE.WebGPURenderer()`，默认入口能构造吗？
+3. `new THREE.PerspectiveCamera()` 不传参数。`fov` / `near` / `far` 分别是多少？
+
+检查点：
+
+1. 不会因此全黑。默认材质是 `MeshBasicMaterial`，不受光照。
+2. 不能。`WebGPURenderer` 不在默认 `src/Three.js` 导出里，要从 `three/webgpu` 进。
+3. `50` / `0.1` / `2000`。文档示例里的 `45` 或 `60` 都不是构造函数默认值。
 
 ## 延伸阅读
 
-- 官方文档：https://threejs.org/docs/
-- 示例：https://threejs.org/examples/
-- Manual：https://threejs.org/manual/
-- 仓库：https://github.com/mrdoob/three.js
-- 对比：Babylon.js 更偏完整引擎向；Three.js 更偏轻量场景图
+- 官方文档：[threejs.org/docs](https://threejs.org/docs/)
+- 固定源码：[mrdoob/three.js](https://github.com/mrdoob/three.js) —— 本文绑定提交 `2431a09f46f34c560bc8e44b33be0e567723d5b9`
+- [[pixi]] —— 同主题的 2D 场景图 + 多后端对照
+- [[babylonjs]] —— 更偏完整引擎向的浏览器 3D
 
 ## 关联
 
-- [[webgl]] —— 浏览器 3D 的底层绘图接口；Three.js 是其上的场景图封装
-- [[webgpu]] —— 下一代浏览器图形 API；Three.js 正渐进接入
-- [[d3]] —— 2D 数据可视化常与 Three.js 3D 展陈互补
-- [[gltf]] —— 现代 3D 资源交换格式，Three.js 加载器一等公民
-- [[canvas]] —— 2D 画布；理解 Renderer 输出目标时的对照物
+- [[pixi]] —— 2D 场景图 / 批处理对照；Three.js 管 3D mesh 与相机
+- [[babylonjs]] —— 浏览器 3D 引擎对照
+- [[playcanvas]] —— 另一条 Web 3D 引擎路线
+- [[aframe]] —— 声明式 WebVR 场景，底层常落到 Three.js
 
 ## 反向链接
 
