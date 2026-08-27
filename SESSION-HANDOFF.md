@@ -20,7 +20,7 @@
 - blocker：不 merge；规模 detector 在 main 上已超限，本轮未改 baseline。
 - stop conditions：本 epoch 结束；merge / deploy 需单独授权。
 - 下一次 wake 条件：owner review / CI；不要自 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`。
+- 下一条命令：用 GitHub 查看 PR #130；不要自 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
