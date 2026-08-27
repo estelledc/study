@@ -4,17 +4,31 @@
 
 ## 2026-08-27 PARALLEL writer ID：hls.js + dash.js
 
-- status：`running`
-- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）；分支 `cursor/adaptive-video-hls-dash-id-94fd`。
+- status：writer epoch `complete`；PR 待 review，未 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- 当前 head：以 `git rev-parse HEAD` 为准；分支 `cursor/adaptive-video-hls-dash-id-94fd`。
 - objective：为缺失固定 revision 的自适应视频双子补齐 `hls.js` 与 `dash.js` 两页，绑定可达静态 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇既有项目页、共享审查文档 `docs/adaptive-video-source-review-20260827-id.md`、2 份 generation 1 receipt、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未改其他 writer 拥有的项目页。未安装上游依赖、未运行上游测试、未播真实流。
 - activated_by：`explicit-user-parallel-writer-id-2026-08-27`（由 HQ 改号，因 HQ 已被 escape-html + escape-goat 占用）。
 - detector fingerprint：两页 `needs-evidence`，缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放 PR 未占用这两个 slug。
-- external_outcome：一个 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
-- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer；最多 3 切片。
-- acceptance_checks：两页 `quality-gate.mjs` pass；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:content-contract` blocking 0；`git diff --check`；跨层后 `STUDY_CHANGED_FROM` + `verify:ci`。
-- stop_conditions：revision 不可达、与其他 writer 撞页、只能靠放宽门禁继续、或本对完成后停止。不得继续发明下一对。
-- superseded_by：`none`（身份从 HQ 改为 ID，目标未变）。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `hls.js` 绑定附注 tag `v1.7.1` 剥皮提交 `565f70ee8e074a0fbe82ed80dfb7fac0697bbb8a`；npm `hls.js@1.7.1` 的 `gitHead` 一致。
+  2. `dash.js` 绑定轻量 tag `v5.2.1` → `a9a8542cd7e6257116be4046ebf16ac49e1cec91`；npm 包名为 `dashjs@5.2.1` 且无 `gitHead`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；`benchmark-aligned` 85 → 87。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:project-standard` / `audit:site-state`：以命令为准。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/301 做 review；未授权前不要 merge。
+- superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
