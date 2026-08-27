@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GG：JS git 双子
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`42caf4896`（origin/main）。
+- objective：按用户指定目标新增 `isomorphic-git` 与 `simple-git` 两页，绑定固定 revision，证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/js-git-source-review-20260827-gg.md`、taxonomy curated assignment、派生索引与公开计数文案、本 handoff；未安装上游依赖、未 spawn git、未跑上游测试、未测 bundle / CORS。
+- activated_by：`explicit-user-parallel-writer-gg-2026-08-27`。
+- detector fingerprint：仓库无 JS git 库页；用户指定 isomorphic-git / simple-git，无需 fallback。
+- external delta：用户授权单一 PR、禁止 merge；D 轴在 PR 打开后计 push+PR，未 deploy。
+- 完成切片：
+  1. `isomorphic-git` 绑定 tag `v1.41.9` / `89d641a7...`（与 npm `gitHead` 一致），记录注入 fs/http、HTTP-only 远程、clone 失败拆除、`_fetch` protocol v1、非唯一 merge base 拒绝。
+  2. `simple-git` 绑定 tag `simple-git@3.36.0` / `01bb7ceae6...`，纠正 README 并发默认 6（源码默认 5）、工厂目录先验、chain vs Scheduler、argv-parser 危险参数拦截。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；`benchmark-aligned` 40→42，项目数 961→963。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt UNVERIFIED；定向 counts / links / wikilinks / project-standard / site-state / content-contract blocking 0。
+- budget：2 个 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 `tracked_files` 超限仍在 main，需 owner 处置；本轮未改 baseline。
+- stop conditions：一 PR 已形成；禁止 merge。
+- 下一次 wake 条件：PR CI/review 变化，或新的显式目标。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf4896 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

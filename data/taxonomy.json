@@ -2016,6 +2016,10 @@
       "topic_id": "projects-infrastructure-utilities"
     },
     {
+      "note_id": "projects::isomorphic-git",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::jaeger",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2390,6 +2394,10 @@
     {
       "note_id": "projects::shiki",
       "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::simple-git",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::solid",
