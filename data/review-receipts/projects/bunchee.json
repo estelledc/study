@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "bunchee",
+    "digest_sha256": "0afce8a0e9a9c6c4c523b566b4dc7e2d9c1035bedc29dc9b3f4364a2b4225bd0"
+  },
+  "source_revision": "18f93d40e96ed1fbaa1570f2d295678ff61c3036",
+  "research_input_sha256": "f805f2baaff644c870ed65ab69917a9510296b09e9d69879bec7eeab29166f0b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates src-name-to-exports matching, CLI versus package.json format, prepare ESM-only default, and worker thresholds."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected parseExports, bundle merge/worker gates, prepare --cjs, and typings drop; tests, prepare, and workers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hb",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Claims bounded to v7.0.1 / 18f93d40; benchmark script and TypeScript 7 compat package were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:45:00.000Z"
+}

@@ -1812,6 +1812,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::bunchee",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::caddy",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2266,6 +2270,10 @@
     {
       "note_id": "projects::pixi",
       "topic_id": "projects-image-processing-and-canvas"
+    },
+    {
+      "note_id": "projects::pkgroll",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::plane",

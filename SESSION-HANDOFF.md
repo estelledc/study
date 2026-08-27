@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HB：pkgroll + bunchee
+
+- status：Program `active`；本地 writer epoch `complete`；等待 PR review，不 merge。
+- supervisor 状态：`running` → 本轮写入完成后交回观察；规模 detector 仍是先于本切片存在的 `PARKED_HUMAN` 信号。
+- 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main）。
+- objective：按用户指定目标落地库打包双子 `pkgroll` + `bunchee` 的源码绑定 study-v2 静态审查；清单原先没有这两个 slug，因此新建而不是改写已占用的 bundler 页。
+- scope：两页正文、2 份 generation 1 receipt、共享审查文档 `docs/lib-bundler-source-review-20260827-hb.md`、taxonomy / note-index / project-standard / site-state / atlas / 公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle 或性能 benchmark。
+- activated_by：`explicit-user-parallel-writer-hb-20260827`。
+- detector fingerprint：目标 slug 不存在；tsup / unbuild 已被 writer FY 占用；禁止回退 esbuild / rollup / vite / marked / markdown-it / knex。
+- external delta 计数：本轮授权 push + 一枚 PR；未 merge、未 deploy。D 轴不因本地 diff 提升。
+- 完成切片：
+  1. `pkgroll` 绑定 lightweight tag `v2.27.1` / `959847d0328d4683a3f259b7e1b4a494c98be120`（与 npm `gitHead` 一致），纠正 dist→src 倒推、当前 Node 默认 target、按 format 拆 Rollup 图、以及仓内 `0.0.0-semantic-release`。
+  2. `bunchee` 绑定 annotated tag `v7.0.1` peel `18f93d40e96ed1fbaa1570f2d295678ff61c3036`（与 npm `gitHead` 一致），纠正 src 文件名对齐 exports、CLI 与多入口格式分叉、`prepare` 默认 ESM-only、以及 8 / 256 worker 门槛。
+  3. 新增共享 `docs/lib-bundler-source-review-20260827-hb.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory（153 / 154 行）。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:counts` / `audit:content-contract` blocking 0 / `audit:project-standard` CURRENT / `audit:site-state` current。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态源码页；单 writer。
+- blocker（先于本切片存在，需人工处置）：`benchmark-site --compare` 在 main 已超 tracked_files baseline；本轮未改 baseline、阈值或证据布局。
+- stop conditions：本轮已完成；merge 与 deploy 均需单独授权。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对规模 baseline 的处置决定。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`；PR 状态用 GitHub 查看。
+- superseded_by：`none`。
+- 验证结果：定向 quality-gate / receipt / counts / contract / project-standard / site-state 已通过；全量 `verify:ci` 见本分支后续记录。
+- 不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

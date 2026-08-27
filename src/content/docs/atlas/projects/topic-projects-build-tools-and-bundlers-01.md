@@ -1,6 +1,6 @@
 ---
 title: "构建工具 / Bundler · 项目 · 第 1 组"
-description: "14 条 构建工具 / Bundler Atlas 分块"
+description: "16 条 构建工具 / Bundler Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,17 +9,19 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | `biome` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bun — JS 全能运行时](/study/projects/bun/) | `bun` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [bunchee — 按 src 文件名对齐 exports 的零配置库打包器](/study/projects/bunchee/) | `bunchee` | intermediate | UNVERIFIED | 用 src 约定匹配 package |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | `esbuild` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | `lightningcss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | `mage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | `nvm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oxc — 用一份 arena AST 串起 JS/TS 编译器组件](/study/projects/oxc/) | `oxc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [pkgroll — 按 package.json 出货单回找 src 的零配置库打包器](/study/projects/pkgroll/) | `pkgroll` | intermediate | UNVERIFIED | 把 dist 路径映射回 src，用当前 Node 当默认 target 打出 ESM / CJS / d |
 | [rolldown — 用 Rust 实现 Rollup 兼容协议的打包器](/study/projects/rolldown/) | `rolldown` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | `rollup` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | `rspack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
