@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "vue",
+    "digest_sha256": "a3dfb2f16358f84eff28a69ffabb20f9dd160dd13f5e540e2b1484d711d968a3"
+  },
+  "source_revision": "d63616ca17de965ed32dcb449a4c5cd9982f15d2",
+  "research_input_sha256": "e08b787897dc74d7defbd8dc76d0e0f236789e620362095040cfdfa6192534b2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-am",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains ref/Proxy, setup compile, scheduler, defineModel, and 3.5 helpers without claiming bundle or ecosystem size."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-am",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected reactivity, component setup, scheduler, useModel/useId/useTemplateRef, v-show, and compiler-sfc; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-am",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable v3.5.42 tag; npm gitHead is absent and disclosed. Performance and ecosystem-size claims are excluded."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:37:34.000Z"
+}

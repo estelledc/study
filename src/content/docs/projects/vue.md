@@ -1,167 +1,164 @@
 ---
 title: Vue.js — 渐进式 UI 框架
 来源: https://github.com/vuejs/core
-日期: 2026-05-29
+日期: 2026-08-27
 分类: UI 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/vuejs/core
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: d63616ca17de965ed32dcb449a4c5cd9982f15d2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.5.42
 ---
 
 ## 是什么
 
-Vue.js 是一套**用模板 + 响应式数据写网页 UI 的渐进式框架**。日常类比：像一个**会盯着账本自动改看板的助理**——你在账本上改一行数字，看板上对应格子立刻跟着变；你不用自己拿笔去改看板。
+Vue 是一套**模板 + 运行时响应式 + 虚拟 DOM 渲染**的渐进式 UI 框架。日常类比：像会盯着账本改看板的助理——你改账本上的数字，看板对应格子跟着变；助理自己决定何时批量改、改哪一格。
 
-具体讲就是：
+固定 `3.5.42` 里，你写：
 
 ```vue
 <script setup>
 import { ref } from 'vue'
 const count = ref(0)
 </script>
-
 <template>
   <button @click="count++">{{ count }}</button>
 </template>
 ```
 
-按一次按钮，`count` 从 0 变 1，**页面自动刷新显示 1**——你不用手动改 DOM（页面上的按钮、文字那些零件）。表单里常见的 `v-model` 才是「输入框 ↔ 数据」双向同步的语法糖，不是整框架的默认模型。
-
-"渐进式"的意思是：可以只用一小块（在已有 jQuery 项目里嵌一个 Vue 组件），也可以全家桶（Vue + Vue Router + Pinia + Vite + Vitest）做整站。
+`<script setup>` 由 `@vue/compiler-sfc` 编成 `setup()`。`ref(0)` 返回带 `.value` 的盒子：读取时 `Dep.track()`，赋值且 `hasChanged` 时 `Dep.trigger()`。对象值会再包一层 `reactive()` Proxy。模板里的 `count` 会被编译器拆盒子；脚本里必须写 `count.value`。
 
 ## 为什么重要
 
-- **单文件组件（.vue）** 把 `<template>` / `<script>` / `<style>` 装进一个文件，新人一眼能看懂这个组件的全部
-- **中文文档第一梯队**——尤雨溪是华人，官方中文文档质量极高，零基础也能顺着教程做完
-- **逻辑复用更自由**：相关状态和副作用可以收进一个函数（Composition API），不必被「数据一块、方法一块」的旧写法拆散；对比 [[react]] 的 Hook，少一些调用顺序硬规则
-- **Nuxt + Vue** 能做整站服务端渲染，国内很多团队选 Vue 不只是因为情怀
+不按固定源码读，下面这些说法会对不上：
+
+- 为什么「改了数据页面就变」不是同步立刻画完，而是先入调度队列、再 `nextTick`
+- 为什么 `let state = reactive(obj)` 之后 `state = other` 会丢掉 Proxy，而 `state.count++` 不会
+- 为什么 `<script setup>` 看起来没有 `setup`，运行时却走 `setupStatefulComponent`
+- 为什么 `defineModel` 不是魔法双向绑定，而是 `useModel` 对 props / `onUpdate:` 的桥
 
 ## 核心要点
 
-Vue 学习曲线可以拆成 **三块**：
+固定版本的主链可以拆成四层：
 
-1. **响应式（reactive）**：数据是"会广播的"。`ref(0)` / `reactive({...})` 创建出的数据被读取时会被记录依赖；改它的时候，**所有用过它的地方自动重跑一遍**。类比：你订阅了一个公众号，作者发文你手机就响——你不用主动刷新。
+1. **响应式核**：`RefImpl` 用独立 `Dep` 做 get/set；`reactive()` 对 Object/Array 用 `baseHandlers`，对 Map/Set 用 `collectionHandlers`，并用 WeakMap 缓存同一 target 的 Proxy。不可扩展、带 `SKIP` 或非对象会原样返回。
 
-2. **单文件组件（SFC）**：一个 `.vue` 文件三段式。`<template>` 写 HTML 长什么样，`<script>` 写数据和逻辑，`<style>` 写样式（可加 `scoped` 让样式只对本组件生效）。一个组件 = 一个 .vue 文件。
+2. **组件装配**：`setupComponent` 先 `initProps` / `initSlots`，再调用 `setup`。`setup` 执行期间 `pauseTracking()`；`setup.length > 1` 才创建 setup context。`setup` 返回 Promise 时，没有 `<Suspense>` 不能完成渲染。
 
-3. **Composition API**：Vue 3 的写法。用一堆 `ref` / `computed` / `watch` 函数组合状态，而不是 Vue 2 的 Options API（`data() / methods / computed` 分块写）。Composition API 让相关逻辑写在一起，比 Options API 容易拆复用。
+3. **调度**：`queueJob` 按组件 id 二分插入，父先于子；`nextTick` 挂到当前 flush Promise，没有 flush 时用 `Promise.resolve()`。
 
-## 实践案例
+4. **3.5 辅助 API**：`useId()` 按实例 `ids` 计数；async setup / `serverPrefetch` 会 `markAsyncBoundary`。`useTemplateRef(key)` 把 `shallowRef` 接到 `instance.refs`。`hydrateOnIdle` / `hydrateOnVisible` 是惰性水合策略，不是默认水合。
 
-### 案例 1：计数器 SFC（最小可运行单元）
+## 实践示例
+
+### 案例 1：ref 与模板拆盒
 
 ```vue
 <script setup>
 import { ref } from 'vue'
 const count = ref(0)
+function inc() { count.value++ }
 </script>
-
 <template>
-  <button @click="count++">点了 {{ count }} 次</button>
+  <button @click="inc">{{ count }}</button>
 </template>
 ```
 
-**逐部分解释**：
+脚本必须 `.value`；模板插值由编译器 unwrap。`count++` 写在脚本里不会改盒子里的数字。
 
-- `ref(0)` 创建一个**响应式数字**，初值 0。返回的不是数字本身，而是一个"盒子"
-- 在 `<script>` 里访问值要用 `count.value`；**但模板里直接写 `count` 即可**（Vue 自动 unwrap）
-- `@click` 是事件监听语法糖，等于 `v-on:click`
-- `{{ count }}` 是双花括号插值，把变量放到 HTML 里渲染
-
-### 案例 2：v-for 渲染列表（注意 key）
+### 案例 2：defineModel 对 props 的桥
 
 ```vue
 <script setup>
-import { ref } from 'vue'
-const todos = ref([
-  { id: 1, text: '学 Vue' },
-  { id: 2, text: '配 Vite 脚手架' }
-])
+const model = defineModel({ type: String, default: '' })
 </script>
-
 <template>
-  <ul>
-    <li v-for="todo in todos" :key="todo.id">{{ todo.text }}</li>
-  </ul>
+  <input v-model="model" />
 </template>
 ```
 
-**关键点**：`:key` 必须是**稳定唯一**的 id，不能用数组下标——否则数据重排时 Vue 会复用错误的 DOM 节点，导致输入框内容串位、动画错乱。
+`defineModel` 由 compiler-sfc 登记 props，运行时落到 `useModel`：`watchSyncEffect` 跟 props，setter 在父级传了 `onUpdate:` 时 emit，否则只改本地。没有父级 `v-model` 时，它不是「自动同步到父组件」。
 
-### 案例 3：Composition API 写一个 useMouse() 自定义 hook
+### 案例 3：v-show 只改 display
 
-```js
-// composables/useMouse.js
-import { ref, onMounted, onUnmounted } from 'vue'
-
-export function useMouse() {
-  const x = ref(0)
-  const y = ref(0)
-  const update = (e) => { x.value = e.pageX; y.value = e.pageY }
-  onMounted(() => window.addEventListener('mousemove', update))
-  onUnmounted(() => window.removeEventListener('mousemove', update))
-  return { x, y }
-}
-```
-
-任何组件 `import { useMouse } from './composables/useMouse'` 拿来就用，**逻辑可以跨组件复用**。这就是 Composition API 比 Options API 强的地方——不再被组件结构绑架。
+`v-show` 在 `runtime-dom` 里把原 `display` 存到元素 symbol，隐藏时写成 `none`，并不卸载 vnode。需要销毁/重建用 `v-if`。
 
 ## 踩过的坑
 
-1. **ref 必须 `.value`**：脚本里写 `count + 1` 不会报错但**是错的**——`count` 是盒子不是数字。必须 `count.value + 1`。模板里反而不用，Vue 自动拆盒子。这个不一致是 ref 最大的认知负担。
-
-2. **v-if vs v-show 选错性能差**：`v-if` 是真删 DOM，`v-show` 只切 `display: none`。频繁切换用 `v-show`（不重渲染），偶尔切换或初始可能不显示用 `v-if`（省内存）。新人见啥写啥，列表里大量 `v-if` 切换会卡。
-
-3. **整对象替换会丢掉 Proxy**：Vue 3 的 `reactive()` 用 Proxy，深层属性改动也会触发更新；但若写 `obj = newObj` 把变量指到新对象，原 Proxy 就丢了，后续改动不再驱动界面。改用 `Object.assign(obj, newObj)` 或单独改字段。
-
-4. **Options API 和 Composition API 混用容易乱**：Vue 3 兼容 Vue 2 写法，所以一个组件里既能 `data()` 又能 `<script setup>`，但**不要混**——this 指向、生命周期顺序、状态可见性都不一样。新项目直接用 Composition API + `<script setup>`，老项目迁移时整组件一次性切。
+1. **把响应式写成「立刻重绘」**：trigger 只通知订阅者；组件更新要等 `queueJob`。
+2. **整对象替换丢掉 Proxy**：`reactive()` 包的是原对象。换绑定等于丢掉那层代理。
+3. **async setup 没有 Suspense**：固定源码会把 Promise 挂到 `instance.asyncDep`，并警告缺少边界。
+4. **把 `useId` 当全局随机数**：它依赖当前实例；实例外调用在 DEV 警告并返回空串。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 中后台管理系统（Element Plus / Naive UI / Ant Design Vue 生态成熟）
-- 国内团队（中文文档完善、社区活跃、招人容易）
-- 渐进迁移老项目（可以从 jQuery 一块块换成 Vue，不必整站重构）
-- 服务端渲染网站（Nuxt 3 配合 Vue 3 体验和 Next 13+ 接近）
+- 模板 SFC、渐进接入已有页面
+- 需要 compiler-sfc、Vue Router / Pinia / Nuxt 这一层生态约定
+- 要看清响应式、调度与水合边界，而不是只抄教程语法
 
 **不适用**：
 
-- 极致追求生态广度（npm 上 Vue 库 ≈ [[react]] 库的 1/3）
-- 团队全员 React 背景，没人想学新语法
-- React Native / Flutter 替代品场景（Vue 没有官方原生方案，第三方 NativeScript-Vue 不活跃）
-- 类型推断要求顶级（Vue 3 + TypeScript 比 React + TS 体验稍弱，模板里类型推断有时候推不动）
+- 必须无虚拟 DOM、由编译器直接写 DOM 指令 → 对照 [[svelte]]
+- 必须函数组件 + Hook 调用顺序合同 → 对照 [[react]]
+- 要把「更小 / 更快 / 生态更大」写成事实 → 本轮未测 bundle 或下载量
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2013 年**：尤雨溪在 Google Creative Lab 做原型，受 Angular 启发但觉得太重，自己拆出一个轻量级版本
-- **2014 年**：Vue 0.6 发布，一个人维护
-- **2016 年**：Vue 2 发布，引入虚拟 DOM，性能向 [[react]] 看齐；Laravel 把它选为默认前端，国内开始大规模采用
-- **2020 年**：Vue 3 发布，重写为 TypeScript，引入 Composition API；Proxy 取代 Object.defineProperty，深层响应不再有遗漏
-- **2023 年**：Vue 3 成为默认版本，Vue 2 进入维护期；Vite（同样尤雨溪作品）成为 Vue 官方推荐构建工具
+- 本文绑定 `vuejs/core@d63616ca...`，`vue` / `@vue/reactivity` / `@vue/runtime-core` 均为 `3.5.42`。
+- npm `vue@3.5.42` 未暴露 `gitHead`；GitHub tag `v3.5.42` 是指向该提交的轻量 tag。
+- 默认导出走 runtime ESM；完整编译器、SFC、SSR 是子路径，不是同一个 entry。
+- 本文只做源码静态审查，未安装依赖、未跑上游测试或浏览器渲染，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **响应式是"自动同步"的工程化**——把"我改了数据，UI 自己跟上"这件事变成一行 `ref()` 调用
-2. **单文件组件是新人友好度的天花板**：template/script/style 同文件 + scoped 样式 = 学三天就能写组件
-3. **Composition API > Options API** 不是因为新，而是因为**逻辑组织自由**——同一个功能的代码不再被框架结构切碎
-4. **渐进式不是营销词**：是真能从 CDN script 一行到全家桶平滑过渡，不需要 all-in 才能用
+1. **响应式和渲染是两段**：track/trigger 只记账，真正画页面走 scheduler。
+2. **SFC 语法糖会消失**：`<script setup>` / `defineModel` 编译后仍是 `setup` + props/emit。
+3. **Proxy 的身份在对象上，不在变量名上**：换绑定就换身份。
+4. **3.5 的 useId / 惰性水合是显式 API**，不是「升级后自动获得」的默认行为。
+
+## 应用型自测
+
+1. 在 `<script setup>` 里写 `count++`（`count` 是 `ref(0)`），按钮上的数字会加一吗？
+2. `const state = reactive({ n: 1 })` 之后执行 `state = { n: 2 }`，界面还会跟着 `n` 变吗？
+3. `setup()` 返回 Promise，父树没有 `<Suspense>`。固定 3.5.42 会完成首次渲染吗？
+
+检查点：
+
+1. 不会。脚本里的 `count` 是盒子，必须 `count.value++`。
+2. 不会。新对象没有原来的 Proxy；应改字段或 `Object.assign`。
+3. 不会完成。Promise 会挂到 `asyncDep`，需要 Suspense 才能继续。
 
 ## 延伸阅读
 
-- 官方教程：[Vue.js 中文文档](https://cn.vuejs.org/)（中文质量天花板）
-- 互动教程：[Vue.js Tutorial](https://cn.vuejs.org/tutorial/)（浏览器里直接写）
-- 源码精读：《Vue.js 设计与实现》霍春阳（Vue 团队成员写，从 0 实现一个 Vue）
-- [[vite]] —— Vue 官方推荐构建工具，同作者
-- [[vitest]] —— Vue 生态首选测试框架
+- 官方文档：[vuejs.org](https://vuejs.org/)
+- 固定源码：[vuejs/core](https://github.com/vuejs/core) —— 本文绑定提交 `d63616ca17de965ed32dcb449a4c5cd9982f15d2`
+- `RefImpl` 读写：[ref.ts](https://github.com/vuejs/core/blob/d63616ca17de965ed32dcb449a4c5cd9982f15d2/packages/reactivity/src/ref.ts)
+- `useModel`：[useModel.ts](https://github.com/vuejs/core/blob/d63616ca17de965ed32dcb449a4c5cd9982f15d2/packages/runtime-core/src/helpers/useModel.ts)
+- [[svelte]] —— 编译期分析 + 运行时 signal，对照 Vue 的 Proxy + vnode
+- [[vite]] —— Vue 官方脚手架默认构建工具
+- [[nuxt]] —— Vue 全栈框架，不在本页合同内
 
 ## 关联
 
-- [[react]] —— 同代竞品，函数式优先 vs Vue 模板优先；学过其一再看另一个事半功倍
-- [[vite]] —— 尤雨溪另一作品，Vue 默认脚手架
-- [[svelte]] —— 编译时响应式，把"运行时框架"砍成"编译产物"
-- [[vue-i18n]] —— Vue 生态官方国际化方案
-- [[typescript]] —— Vue 3 用 TS 重写，模板里也能写 TS
-- [[vitepress]] —— 用 Vue 写文档站的工具
-- [[tailwind]] —— Vue 项目最常搭配的原子化 CSS 方案
+- [[react]] —— 运行时 vdom，但状态合同是 Hook 而不是 Proxy
+- [[svelte]] —— 同样提供 SFC，但编译产物调用 signal runtime
+- [[vite]] —— 尤雨溪另一作品，Vue 默认开发服务器
+- [[vitest]] —— Vue 生态常见测试运行器
+- [[vue-i18n]] —— Vue 官方国际化方案
+- [[vitepress]] —— Vue 团队文档站生成器
+- [[nuxt]] —— Vue 元框架
+- [[solid]] —— 细粒度信号，无 vnode 对齐
 
 ## 反向链接
 

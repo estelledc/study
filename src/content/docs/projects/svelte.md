@@ -1,157 +1,163 @@
 ---
 title: Svelte — 编译时 UI 框架
 来源: https://github.com/sveltejs/svelte
-日期: 2026-05-29
+日期: 2026-08-27
 分类: UI 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/sveltejs/svelte
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 56a036f4ce873a24ee6631a06d03d372523d7a9b
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.56.10
 ---
 
 ## 是什么
 
-Svelte 是一套**让组件代码在编译时直接转成精确操作 DOM 的 JS、不带运行时虚拟 DOM**的 UI 框架。日常类比：[[react]] 像**同声传译**——演讲者每说一句，翻译实时把它转成另一种语言；Svelte 像**提前写好剧本**——演出前每一句台词、每一个动作都已经定好，舞台上不需要现场翻译。
+Svelte 是一套**编译器把 `.svelte` 编成模块、运行时用 signal 更新 DOM**的 UI 框架。日常类比：不是同声传译（运行时 diff 整棵树），而是先写好剧本，舞台上仍有灯光师（signal / effect / batch）按线索开关灯。
 
-具体讲就是：你写
-
-```svelte
-<script>
-  let count = 0
-</script>
-
-<button on:click={() => count++}>{count}</button>
-```
-
-Svelte 编译器会把它转成一段**直接操作 DOM 的 JS**——大致是 `button.textContent = count`。运行时没有 diff、没有 vdom、没有 reconciler，只有针对这段代码生成的精确指令。
-
-## 为什么重要
-
-- **打包体积比 [[react]] 小一半甚至更多**——因为没有运行时框架要塞进 bundle，只塞编译产物
-- **写法接近原生 HTML/CSS/JS**——`.svelte` 文件就是带 `<script>` 的 HTML，新人零门槛
-- **Svelte 5 推出 runes（`$state` / `$derived` / `$effect`）**——把响应式拉到与 [[solid]] 同级的细粒度
-- **SvelteKit 是 Next.js 的强力替代**——同一个仓库覆盖 SSR / SSG / SPA / Edge，配置量小
-
-## 核心要点
-
-Svelte 学习曲线可以拆成 **三块**：
-
-1. **编译时响应式（compile-time reactivity）**：[[react]] / [[vue]] 在浏览器里跑一个运行时去追踪谁改了谁、然后 diff 虚拟 DOM；Svelte 在**编译阶段**就分析出"`count` 一变就要改这段文本节点"，直接生成对应代码。运行时只是执行剧本，不再做推理。
-
-2. **`.svelte` 单文件组件**：和 [[vue]] 的 SFC 思路一样，一个文件三段式——`<script>` 写逻辑、`<template>`（直接写 HTML，不用包裹）、`<style>` 写样式（默认 scoped）。比 Vue 还少一层 `<template>` 标签。
-
-3. **Svelte 5 runes**：用 `$state(0)` 替代 Svelte 4 的"顶层 `let` 自动响应"，用 `$derived(...)` 替代 `$:` 标签。这一步把响应式从"语法糖"明确成"显式 API"，跟 [[solid]] 的 signals 思路对齐，可读性和可推理性都更好。
-
-## 实践案例
-
-### 案例 1：计数器 .svelte（Svelte 4 写法）
-
-```svelte
-<script>
-  let count = 0
-</script>
-
-<button on:click={() => count++}>点了 {count} 次</button>
-```
-
-**逐部分解释**：
-
-- 顶层 `let count = 0` 在 Svelte 4 里**自动是响应式的**——编译器看到 `let` 声明就生成订阅/重渲染代码
-- `on:click={...}` 是事件绑定语法，对应 DOM 的 `addEventListener`
-- `{count}` 是大括号插值，把变量直接放进 HTML 里
-- 没有 import、没有组件包裹，**这就是一个完整组件**
-
-### 案例 2：Svelte 5 runes 写法（同样的计数器）
+固定 `5.56.10` 里，你写：
 
 ```svelte
 <script>
   let count = $state(0)
 </script>
-
-<button onclick={() => count++}>点了 {count} 次</button>
+<button onclick={() => count++}>{count}</button>
 ```
 
-**关键差异**：
+`$state` / `$derived` / `$effect` / `$props` 是编译期 rune，不是可 import 的运行时函数。DEV 下在普通 JS 里读这些全局名会抛「rune outside svelte」。编译器 `compile()` 走 parse → analyze → transform，产物调用 `source` / `derived` / `user_effect` 和 DOM 操作，而不是虚拟 DOM reconciler。
 
-- `let count = 0` 不再自动响应，必须显式 `$state(0)` 才有响应式
-- 事件名用原生 `onclick`，不再用 `on:click` 冒号语法
-- 派生值用 `let doubled = $derived(count * 2)`；副作用用 `$effect(() => console.log(count))`
-- runes 的好处：响应式来源**写出来就能看见**，不像 Svelte 4 要靠"哪里有 `let`"心里默算
+## 为什么重要
 
-### 案例 3：父子组件 + props
+旧印象「Svelte = 零运行时、顶层 `let` 自动响应」对不上固定 5.x：
+
+- 为什么 `let count = 0` 在 runes 模式不再自动响应，必须 `$state`
+- 为什么对象 `$state` 里 `arr.push(x)` 能更新——运行时 `proxy()` 给 Array/Object 做了 per-key signal
+- 为什么组件外的孤儿 `$effect` 会抛错
+- 为什么默认导出在 worker/Node 走 `index-server.js`，浏览器才走 `index-client.js`
+
+## 核心要点
+
+固定版本可以拆成四层：
+
+1. **编译器**：`compile(source, options)` 去掉 BOM，校验选项，parse 后 `analyze_component`，再 `transform_component`。`compileModule` 给普通 JS 里的 rune 用。产物导出组件，不导出 vnode 树。
+
+2. **signal 源**：`$state` 编成 `state()` / `source()`。对象和数组经 `proxy()`：已带 `STATE_SYMBOL`、非纯 Object/Array 原型的值不包。每个 key 一个 Source；`push` 这类变异走代理，不再要求「整段赋值才更新」。
+
+3. **派生与 effect**：`$derived` 编成懒计算的 `derived()`，带 DIRTY 标记。`$effect` 走 `user_effect`：先 `validate_effect`，没有 `active_effect` 当孤儿拒绝；组件未挂载时的顶层 effect 会推进 `component_context.e`，挂载后再跑。另有 `$effect.pre`、`$effect.root`。
+
+4. **props**：`$props()` 编成带 flag 的 getter（bindable / immutable / runes / updated / lazy initial）。`const { x, ...rest } = $props()` 的 rest 是只读 Proxy，赋值在 DEV 报错。Svelte 4 的 `export let` 仍在 legacy 入口。
+
+## 实践示例
+
+### 案例 1：Svelte 5 计数器
 
 ```svelte
-<!-- Parent.svelte -->
 <script>
-  import Child from './Child.svelte'
-  let name = 'Jason'
+  let count = $state(0)
+  let doubled = $derived(count * 2)
 </script>
-
-<Child {name} />
-
-<!-- Child.svelte (Svelte 4) -->
-<script>
-  export let name
-</script>
-
-<p>Hello {name}</p>
+<button onclick={() => count++}>{count} / {doubled}</button>
 ```
 
-**`export let name`** 不是真的导出——Svelte 把它**重新定义**为"对外接收的 prop"。Svelte 5 改成 `let { name } = $props()`，更接近 JS 解构习惯。
+`onclick` 是原生事件名，不是 Svelte 4 的 `on:click`。`count++` 能更新，因为编译器把赋值编成 `set(source, value)`。
+
+### 案例 2：对象 state 的变异
+
+```svelte
+<script>
+  let todos = $state([{ id: 1, text: 'read source' }])
+  function add() { todos.push({ id: 2, text: 'compile' }) }
+</script>
+<button onclick={add}>{todos.length}</button>
+```
+
+`proxy()` 只包 `Object` / `Array` 原型。`new Map()` 或 class 实例放进 `$state` 不会自动获得深层代理。
+
+### 案例 3：props 与 bindable
+
+```svelte
+<script>
+  let { name, count = $bindable(0) } = $props()
+</script>
+<p>{name}</p>
+<button onclick={() => count++}>{count}</button>
+```
+
+普通 prop 默认单向。`$bindable` 才允许子组件写回；父级要用 `bind:count`。没有 bind 时，子组件自增不会改父级变量。
 
 ## 踩过的坑
 
-1. **Svelte 4 和 Svelte 5 语法不兼容**：runes 是 5 才有；`on:click` vs `onclick` / `export let` vs `$props()` / `$:` vs `$derived` 都改了。看教程要先确认版本，别拿 4 的代码在 5 项目里抄。
-
-2. **响应式只在赋值时触发**（Svelte 4 痛点）：`arr.push(x)` **不会**触发更新，因为 `arr` 引用没变。要写 `arr = [...arr, x]` 或赋值后 `arr = arr` 强行触发。Svelte 5 的 `$state` 用 Proxy 解决了这个问题，深层修改也能响应。
-
-3. **store 使用模式与 [[react]] Hook 不同**：Svelte 的 `writable()` store 用 `$store` 自动订阅+解包（在模板和 `<script>` 里都行），不需要 `useState` / `useContext`。从 React 来的人常误以为要手动订阅，写了一堆冗余 `subscribe()`。
-
-4. **SSR 水合（hydration）不一致常见原因**：服务端渲的 HTML 和客户端首次渲不一致就会 mismatch。常见根因——日期/随机数（`new Date()` 服务端和客户端时间不同）、浏览器专属 API（`window.innerWidth`）、第三方库非确定性输出。修法：把这类逻辑放进 `onMount` 或用 `browser` 守卫。
+1. **把 Svelte 5 写成「没有运行时」**：固定包导出完整 client runtime（signal、batch、DOM）。编译器去掉的是 vdom，不是全部 runtime。
+2. **在模块顶层或普通 `.js` 里写 `$effect`**：`validate_effect` 要求已有 `active_effect`，否则 `effect_orphan`。
+3. **拿 Svelte 4 教程抄 5**：`export let`、`on:click`、`$: ` 属于 legacy；runes 模式默认不走那条链。
+4. **以为任意对象都是深层响应**：`proxy()` 拒绝 class / Map / 已代理值。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 包体积敏感场景（嵌入式页面 / 营销页 / 移动端弱网用户）
-- 中小型项目（学习成本低、SvelteKit 一站式）
-- 偏内容站 / 静态站（SvelteKit + adapter-static 比 Next 简洁）
-- 想要 [[solid]] 级别细粒度响应又不想丢 SFC 体验
+- 愿意用编译器换「无 vnode diff」的更新模型
+- 新项目直接写 runes，而不是混用 4/5 语法
+- 需要同一套编译器同时出 client / server 模块
 
 **不适用**：
 
-- 团队和招聘池都是 [[react]] 背景（生态/招人都难）
-- 复杂中后台 + 大型组件库需求（Element Plus / Ant Design 这种 Svelte 生态没有同等品）
-- 极度依赖 React Native 之类跨端方案（Svelte Native 不活跃）
-- 需要海量第三方 hooks/integration（npm 上 Svelte 库 ≈ React 的 1/10）
+- 团队合同是 React Hook / JSX，且没有迁移预算 → [[react]]
+- 需要运行时模板编译、CDN 一行引入完整编译器 → 对照 [[vue]] 的 runtime+compiler 构建
+- 要把「比 React 小一半」写成事实 → 本轮未测 bundle
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2016 年**：Rich Harris 在 The Guardian 做交互新闻图表，想要"零运行时框架"——把响应式逻辑编译进产物。Svelte 1 发布。
-- **2019 年**：Svelte 3 发布，引入"顶层 `let` 自动响应式"，写法极简，社区破圈。
-- **2020 年**：Stack Overflow 调查里 Svelte 成为"最受喜爱的前端框架"。
-- **2021 年**：Vercel 雇佣 Rich Harris 全职做 Svelte / SvelteKit。
-- **2024 年**：Svelte 5 发布，引入 runes，把响应式从"语法糖"显式化，对齐 [[solid]] 思路；同时保留兼容模式让老项目慢慢迁。
+- 本文绑定 `sveltejs/svelte@56a036f4...`（tag `svelte@5.56.10` 的 peel），`packages/svelte` 版本为 `5.56.10`。
+- npm `svelte@5.56.10` 未暴露 `gitHead`；以 annotated tag peel 为溯源锚点。
+- 包 `engines.node` 为 `>=18`；默认导出按条件选择 client/server。
+- 仍提供 `./legacy` 与 `./internal/flags/legacy`。本文主线是 runes，不把 legacy 当默认。
+- 本文只做源码静态审查，未安装依赖、未跑上游测试或浏览器渲染，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **编译时 vs 运行时是个真二选一**——把工作挪到编译阶段，运行时就能更小更快；代价是构建链更复杂、调试要看编译产物
-2. **响应式的 API 形态会回潮**：从"自动魔法（Svelte 4）"到"显式 runes（Svelte 5）"，社区逐渐承认魔法读不懂、追错难
-3. **SFC 是新人友好度的天花板**：Vue / Svelte 都靠这个吃下了大量零基础学习者，单文件三段式比 JSX + CSS-in-JS 直观很多
-4. **框架轻不等于生态轻**：SvelteKit 把路由、SSR、数据加载、表单都内置了，体积仍然比 Next 小——靠的是编译时砍掉运行时
+1. **编译时分析不等于零运行时**——Svelte 5 把「谁依赖谁」编进产物，执行时仍有 signal 图。
+2. **rune 是语法，不是库函数**——离开 `.svelte` / `compileModule` 就没有 `$state`。
+3. **对象响应式是 opt-in Proxy**——只覆盖纯对象和数组。
+4. **legacy 与 runes 是两条编译链**——版本号升到 5 不会自动改旧语法的语义。
+
+## 应用型自测
+
+1. 在 Svelte 5 runes 组件里写 `let count = 0` 再 `count++`，按钮上的数字会变吗？
+2. 组件外的普通模块顶层调用 `$effect(() => {})`，固定 5.56.10 会怎样？
+3. `let items = $state([])` 后执行 `items.push(1)`，需要再写 `items = items` 吗？
+
+检查点：
+
+1. 不会。runes 模式必须 `$state` 才创建 Source。
+2. 抛孤儿 effect。`$effect` 只能活在已有 `active_effect` 的组件树里。
+3. 不必。Array 被 `proxy()` 后，`push` 会碰到对应 key 的 Source。
 
 ## 延伸阅读
 
-- 官方教程：[Svelte Tutorial](https://learn.svelte.dev/)（浏览器里互动学，质量极高）
-- Svelte 5 迁移指南：[Migration Guide](https://svelte.dev/docs/svelte/v5-migration-guide)（runes 改了哪些）
-- 演讲：[Rich Harris — Rethinking Reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao)（Svelte 思路总览，1 小时）
-- [[vite]] —— SvelteKit 默认构建工具
-- [[vue]] —— SFC 思路同源，可对比响应式实现差异
+- 官方教程：[learn.svelte.dev](https://learn.svelte.dev/)
+- 固定源码：[sveltejs/svelte](https://github.com/sveltejs/svelte) —— 本文绑定提交 `56a036f4ce873a24ee6631a06d03d372523d7a9b`
+- signal 源：[sources.js](https://github.com/sveltejs/svelte/blob/56a036f4ce873a24ee6631a06d03d372523d7a9b/packages/svelte/src/internal/client/reactivity/sources.js)
+- 对象代理：[proxy.js](https://github.com/sveltejs/svelte/blob/56a036f4ce873a24ee6631a06d03d372523d7a9b/packages/svelte/src/internal/client/proxy.js)
+- [[vue]] —— 同样 SFC，但运行时是 Proxy + vnode
+- [[solid]] —— 细粒度信号，无 Svelte 那种单文件编译约定
+- [[sveltekit]] —— 全栈框架，不在本页合同内
 
 ## 关联
 
-- [[react]] —— 同代竞品，运行时 vdom vs 编译时直接 DOM
-- [[vue]] —— SFC 同思路，但响应式靠运行时 Proxy
-- [[solid]] —— 都用细粒度响应式（signals / runes），无 vdom
-- [[vite]] —— SvelteKit 官方构建工具
-- [[typescript]] —— Svelte 原生支持 TS，`<script lang="ts">` 即可
+- [[react]] —— 运行时 vdom vs 编译产物 + signal
+- [[vue]] —— SFC 同源，响应式靠运行时 Proxy 与调度队列
+- [[solid]] —— 都用细粒度信号，但 Solid 不靠 `.svelte` 编译约定
+- [[vite]] —— SvelteKit 默认构建工具
+- [[typescript]] —— `<script lang="ts">` 由编译器剥类型后再变换
 
 ## 反向链接
 

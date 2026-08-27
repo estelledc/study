@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "svelte",
+    "digest_sha256": "fc593c99ecc3c06d40e62242b3223c86bc851a9db49772024cbbe4879647aca0"
+  },
+  "source_revision": "56a036f4ce873a24ee6631a06d03d372523d7a9b",
+  "research_input_sha256": "e08b787897dc74d7defbd8dc76d0e0f236789e620362095040cfdfa6192534b2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-am",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates compile-time runes from the signal/proxy runtime and corrects the zero-runtime Svelte 4 mental model."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-am",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected compiler pipeline, sources, proxy, derived/effects, props, and package exports; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-am",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds svelte@5.56.10 annotated-tag peel; npm gitHead is absent and disclosed. Bundle comparisons are excluded."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:37:34.000Z"
+}

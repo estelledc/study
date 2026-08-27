@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 UI 框架双子 PARALLEL writer AM
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式 PARALLEL writer AM 重授权解除。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（PR #45 merge，`origin/main`）。
+- objective：把 UI 框架主题组的 `vue` 与 `svelte` 从 `needs-evidence` 迁到绑定可达 revision 的 `study-v2` 静态审查；证据上限为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、共享源码审查文档 `docs/ui-framework-source-review-20260827-am.md`、note-index / project-standard / site-state 派生输出、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-am-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧 Vue 正文把响应式写成同步重绘、未绑定 `defineModel`/`useId`/调度队列，并含未绑定的生态规模断言；旧 Svelte 正文把 5.x 写成零运行时、以 Svelte 4 `let` 为主线，并含未绑定的体积对比。
+- external delta 计数：分支 `cursor/ui-framework-vue-svelte-6697` 按授权 push 并打开 1 个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `vue` 绑定轻量 tag `v3.5.42` → `d63616ca17de965ed32dcb449a4c5cd9982f15d2`（npm 无 `gitHead`，已披露），修正 `RefImpl` track/trigger、`reactive()` Proxy 身份、`setup`/`Suspense`、`queueJob`/`nextTick`、`useModel` 与 3.5 `useId`/惰性水合边界。
+  2. `svelte` 绑定 annotated tag `svelte@5.56.10` peel → `56a036f4ce873a24ee6631a06d03d372523d7a9b`（npm 无 `gitHead`，已披露），修正 rune 编译期语义、`source`/`proxy`/`user_effect` 孤儿检查、client/server 条件导出与 legacy 分流。
+  3. 新增共享 `docs/ui-framework-source-review-20260827-am.md` 与两份 generation 1 static receipt；派生 site-state 首页“已对齐标杆”从 18 刷新为 20。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与共享审查文档 digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=89`、`legacy-unverified=1955`、blocking 0。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2285 HTML / 2284 sitemap URLs、23 Playwright a11y）。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
+- blocker（先于本切片存在，需人工处置）：规模 detector `tracked_files` 在 main 已超 baseline threshold；本轮未改 baseline、阈值或证据布局。
+- stop conditions：本轮只开 1 个 PR、不 merge；规模 baseline 处置、merge 与 deploy 均需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 状态变化、owner 对规模 baseline 的处置决定，或新的显式有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
