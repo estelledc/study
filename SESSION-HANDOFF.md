@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer HZ：jq + fx
 
-- status：writer epoch `running` → 本地切片完成，待 `verify:ci` 与 PR review；未 merge。
+- status：writer epoch `complete`；PR 待 review，未 merge。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（当时的 `origin/main`）。
 - objective：把 `needs-evidence` 的 JSON-CLI 双子 `jq` 与 `fx` 迁到固定 revision 的 `study-v2`，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇项目页、共享审查文档 `docs/json-cli-source-review-20260827-hz.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译上游、未运行上游测试、未测 TUI/吞吐。
@@ -14,17 +14,20 @@
 - 完成切片：
   1. `jq` 绑定 tag `jq-1.8.2` → `34f7186b86743a083a589741b6cea95293524108`；纠正不存在的 `--decimal`，以及 `select`=`empty`、写时拷贝 `jv`。
   2. `fx` 绑定 `39.2.0` → `c8fd8cf394083141ab912f604d332e1cfde830cb`，tag / `version.go` / npm `gitHead` 一致；纠正 TUI/管道分流，并披露 npm 是另一套无 TUI 的 Node CLI。
-  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，v2 154 → 156。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，公开 v2 154 → 156。
 - acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
-  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:project-standard`：`benchmark-aligned=87`、`needs-evidence=880`、snapshot CURRENT。
+  - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
-  - `verify:ci`：提交后跑。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，除首次缺 Playwright 浏览器外全绿；安装 Chromium 后 23 个 a11y 测试通过，后续 Pages/Atlas/站点预算与 drift 门禁通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
-- stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得 merge。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在打开的 PR 上做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/297 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
