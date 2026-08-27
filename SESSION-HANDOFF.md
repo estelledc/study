@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EU：CLI banner 双子
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review。
+- 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main）。
+- status：`running` → writer complete；未 merge。
+- objective：按用户指定目标，为 `figlet` + `gradient-string` 建立 STATIC_REVIEW / UNVERIFIED 的源码绑定 study-v2 页；共享文档 `docs/cli-banner-source-review-20260827-eu.md`；一个 PR，不 merge。
+- scope：两篇新项目页、2 份 generation 1 static receipt、EU 审查文档、taxonomy 两条 terminal-tools 归属、atlas / note-index / project-standard / site-state / 公开规模文案、本 handoff；未安装上游依赖、未跑上游测试、未向终端打印。
+- activated_by：`explicit-parallel-writer-eu-20260827`。
+- detector fingerprint：目录中无 `figlet` / `gradient-string` 页；用户指定该 CLI-banner 对，并允许 fallback。两仓 tag / npm gitHead / 包版本三方一致，因此未改走 boxen+chalk。
+- external delta 计数：本轮授权 push + 一个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `figlet` 绑定 `patorjk/figlet.js@b95c2f03...` / `1.11.4`，区分浏览器 fetch 与 Node fs、CLI 宽度 80 与库默认 `-1`、换行后的垂直 smush。
+  2. `gradient-string` 绑定 `bokub/gradient-string@ca0c9412...` / `3.0.0`，区分默认函数跳过空白与 `multiline` 按列占色，并写明 v3 数组入口与 `rainbow` HSV long 短色标。
+  3. 新增共享 `docs/cli-banner-source-review-20260827-eu.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate` 通过、0 advisory；内容契约 `v2=111` / `legacy-unverified=1935` / blocking 0；`audit:counts` 与 atlas 预算未突破。
+- budget：2 个 blob-filtered 本地 worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：main 上已存在的 `tracked_files` 规模 detector 仍需 owner 处置；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对规模 baseline / merge 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

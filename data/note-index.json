@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -43047,6 +43047,37 @@
       }
     },
     {
+      "id": "projects::figlet",
+      "area": "projects",
+      "slug": "figlet",
+      "title": "figlet — 把字符串编成 FIGfont ASCII 画",
+      "description": "介绍 figlet.js 如何解析 FIGfont、按规格 smush，并在 Node 与浏览器用不同方式加载字体。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-terminal-tools",
+        "raw_category": "终端工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/figlet/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
+      }
+    },
+    {
       "id": "projects::filament",
       "area": "projects",
       "slug": "filament",
@@ -44386,6 +44417,37 @@
       "atlas": {
         "chunk_id": "topic-projects-backend-and-apis-01",
         "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
+      "id": "projects::gradient-string",
+      "area": "projects",
+      "slug": "gradient-string",
+      "title": "gradient-string — 给终端字符串铺一条渐变",
+      "description": "介绍 gradient-string 如何用 tinygradient 取色、用 chalk.hex 逐字上色，以及 multiline 如何按列对齐。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-terminal-tools",
+        "raw_category": "终端工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/gradient-string/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
       }
     },
     {
@@ -65853,7 +65915,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-terminal-tools-01/",
-      "entries": 6
+      "entries": 8
     },
     {
       "id": "topic-projects-testing-and-verification-01",

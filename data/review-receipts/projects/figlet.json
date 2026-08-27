@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "figlet",
+    "digest_sha256": "f1dbbcc6e8cd2a3779a2b6031e16670c882046802d694a49354be737618e9179"
+  },
+  "source_revision": "b95c2f03ccbc7e2a23e9fd030e8378c2d3b9dd0e",
+  "research_input_sha256": "4ad33e447d0066952f7a409370be2657da3e5863909f6ee4c51bab19c3f81670",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-eu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates browser fetch vs Node fs font loading, CLI width 80 vs library width -1, and vertical smush after newlines."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-eu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected parseFont header/required codepoints, horizontal/vertical smush, node-figlet fs overrides, and CLI commander defaults; tests and CLI were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-eu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag v1.11.4, package 1.11.4 and npm gitHead agree; not the C figlet binary; performance and terminal width remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:10:00.000Z"
+}

@@ -1968,12 +1968,20 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::figlet",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
     },
     {
       "note_id": "projects::got",
       "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::gradient-string",
+      "topic_id": "projects-terminal-tools"
     },
     {
       "note_id": "projects::grafana",

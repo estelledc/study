@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "gradient-string",
+    "digest_sha256": "b69be9b341e9d1b492c742f84fb9a91ec2fe0f9b1ca723e44bd4e8da0ede8cfb"
+  },
+  "source_revision": "ca0c941216029e6a36d76a0cbebc0dca50355f54",
+  "research_input_sha256": "4ad33e447d0066952f7a409370be2657da3e5863909f6ee4c51bab19c3f81670",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-eu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates applyGradient whitespace-skipping from multiline column-aligned coloring, and v3 array API from deprecated varargs."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-eu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected tinygradient + chalk.hex path, 13 aliases including rainbow HSV long spin, and spec cases for multiline vs per-line coloring; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-eu",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag 3.0.0, package 3.0.0 and npm gitHead agree; ESM-only; color accuracy and chalk level remain unverified."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:10:00.000Z"
+}
