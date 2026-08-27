@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer BP：ink / blessed 静态源码迁移
 
-- supervisor 状态：writer epoch `complete`；等待 PR review，不 merge。
+- supervisor 状态：writer epoch `complete`；等待 PR #110 review，不 merge。
 - status：`WAIT_HEALTHY`
 - objective：把 `ink` 与 `blessed` 绑定真实可达 revision，升级/新建为 `study-v2` + `STATIC_REVIEW` receipt + `UNVERIFIED`，并留下唯一 provenance 文档。
 - scope：`src/content/docs/projects/{ink,blessed}.md`、`docs/terminal-ui-source-review-20260827-bp.md`、两份 generation 1 receipt，以及 atlas / note-index / project-standard / site-state / 公开计数确定性派生；未改开放 PR 已占用 slug，未安装上游依赖、运行上游测试或测量 bundle。
@@ -21,11 +21,14 @@
   - 两份 receipt：note digest / source revision / research input digest 一致，`review_mode=STATIC_REVIEW`，evidence state `UNVERIFIED`。
   - `git diff --check`：通过。
   - `npm run atlas`、`audit:project-standard --write`、`generate:site-state` 已刷新派生。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：全绿（388 Node tests、changed-note quality-gate 2/2、23 Playwright tests）。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=942`。
+  - `audit:content-contract`：`v2=89`、`legacy-unverified=1956`、blocking 0。
 - budget：2 页 + 1 份共享 source review；单 writer；默认 3 切片 / 120 分钟。
-- external_outcome：一条 PR，不 merge；D 轴不提升。
+- external_outcome：PR https://github.com/estelledc/study/pull/110 ，不 merge；D 轴不提升。
 - stop_conditions：本 writer 已停在 PR review；不自动 merge。
 - 下一次 wake 条件：PR CI / review 变化，或 owner 另授 merge。
-- 下一条命令：查看本轮 PR；未另授 merge 前不要合并。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/110`；未另授 merge 前不要合并。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
