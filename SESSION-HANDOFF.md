@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 HTML-first 双子 writer CJ epoch 9
+
+- supervisor 状态：Program `active`；本地 writer epoch 9 `complete`；等待 review，不 merge。
+- status：`running` 已收口为 review-ready PR；未 merge。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`。
+- objective：用户指定 PARALLEL writer CJ 目标为 `htmx` + `alpinejs`。两页原先不存在且不在开放 PR 中；规模 detector 已超限，因此只新增这一对 HTML-first 页，不改 baseline/阈值。
+- scope：两篇新项目页、两份 generation 1 `STATIC_REVIEW` receipt、`docs/html-first-source-review-20260827-cj.md`、taxonomy assignment、atlas / note-index / site-state / 公开计数文案、本 handoff。
+- activated_by：`explicit-user-parallel-writer-cj-20260827`。
+- detector fingerprint：目标 slug 不在现有 961 页与开放 PR 中；`htmx.org@2.0.10` 与 `alpinejs@3.16.3` 的 GitHub tag / npm `gitHead` 可达且一致。
+- external delta 计数：本轮将 push 并开 1 个 PR（用户授权）；不 merge、不部署，D 轴不提升。
+- 完成切片：
+  1. 新建 `htmx`，绑定 `bdc7d7d3...` / `2.0.10`，写清默认 target、boost body、`selfRequestsOnly`、`responseHandling` 与 `hx-sync` 队列。
+  2. 新建 `alpinejs`，绑定 `518a7f4c...` / `3.16.3`，写清 CDN microtask start、`directiveOrder`、`with (scope)` 求值、核心 vs plugin。
+  3. 新增共享 `docs/html-first-source-review-20260827-cj.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence_state=`UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` 定向通过。全量 `verify:ci` 在 PR 后跑。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- external_outcome：可审查 PR；D 轴不变。
+- 验证结果：定向门禁已绿；规模 `tracked_files` 超限是 main 既有 PARKED_HUMAN，本轮未改 baseline。
+- 剩余 blocker：规模 baseline 仍需 owner 处置；本 PR 不 merge。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge / 规模 baseline 的新授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- stop_conditions：本轮已完成；merge 与 deploy 需单独授权。
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。见 `AGENTS.md`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

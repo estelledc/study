@@ -1760,6 +1760,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::alpinejs",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
       "note_id": "projects::anime",
       "topic_id": "projects-animation"
     },
@@ -1990,6 +1994,10 @@
     {
       "note_id": "projects::hono",
       "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::htmx",
+      "topic_id": "projects-ui-and-frontend-frameworks"
     },
     {
       "note_id": "projects::i18next",

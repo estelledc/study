@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "alpinejs",
+    "digest_sha256": "533633d6d059e2e7eee656de4e89366aa14cf94023c9aa5ab4f9b289716f7577"
+  },
+  "source_revision": "518a7f4c525e56085bb48fbe11c60a1f87100b6a",
+  "research_input_sha256": "f7b7be536c1f3dff99eb32a86478163373f08afcfc8d7a1033bd6767c1665646",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates auto-start vs module start, directiveOrder, with-scope evaluation, and core vs plugin instructions."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index, lifecycle, directive order, evaluator, x-data, x-model, x-for and CDN start were inspected; Cypress/Vitest were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds alpinejs@3.16.3 / v3.16.3 with @vue/reactivity ~3.5.40; sibling plugin versions are not assumed identical."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}
