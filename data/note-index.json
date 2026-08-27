@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2049,
+      "classified": 2002,
       "unclassified": 47,
-      "unknown_difficulty": 1974,
-      "empty_description": 1969
+      "unknown_difficulty": 1973,
+      "empty_description": 1968
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 966,
+        "classified": 938,
         "unclassified": 28,
-        "unknown_difficulty": 960,
-        "empty_description": 956
+        "unknown_difficulty": 959,
+        "empty_description": 955
       }
     },
     "missing_curated_assignments": [],
@@ -49300,6 +49300,37 @@
       }
     },
     {
+      "id": "projects::lowlight",
+      "area": "projects",
+      "slug": "lowlight",
+      "title": "lowlight — 把 highlight.js 的染色结果收成 hast 树",
+      "description": "介绍固定版本 lowlight 如何用 highlightjs grammar 和自定义 HastEmitter 输出虚拟语法高亮 AST",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/lowlight/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::lsd",
       "area": "projects",
       "slug": "lsd",
@@ -58780,9 +58811,9 @@
       "id": "projects::shiki",
       "area": "projects",
       "slug": "shiki",
-      "title": "shiki — 把 VS Code 那套染色搬到网页上",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "shiki — 用 VS Code 那套 TextMate 语法给网页代码上色",
+      "description": "介绍固定版本 shiki 如何用 TextMate grammar、可选 Oniguruma 或 JS 引擎和 transformer 把代码变成带主题的 HTML",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-markdown-and-parsing"
       ],
@@ -58790,16 +58821,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-markdown-and-parsing",
-        "raw_category": "前端工具"
+        "raw_category": "解析"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/shiki/",
       "atlas": {
@@ -65865,7 +65896,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

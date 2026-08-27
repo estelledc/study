@@ -1,169 +1,201 @@
 ---
-title: shiki — 把 VS Code 那套染色搬到网页上
-来源: 'https://github.com/shikijs/shiki'
-日期: 2026-05-30
-分类: 前端工具
-难度: 初级
+title: shiki — 用 VS Code 那套 TextMate 语法给网页代码上色
+description: 介绍固定版本 shiki 如何用 TextMate grammar、可选 Oniguruma 或 JS 引擎和 transformer 把代码变成带主题的 HTML
+来源: https://github.com/shikijs/shiki
+日期: 2026-08-27
+分类: 解析
+难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/shikijs/shiki
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 48cd2cc695ed2e3357c3f9c370578ea843d6d9a3
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.4.3
 ---
 
 ## 是什么
 
-shiki 是一个让网页里的代码块染色的 JavaScript 库，染出来的颜色和你在 VS Code 里看到的**一模一样**。日常类比：像把 VS Code 编辑器的"打扮"打包成贴纸，贴到任何网页代码块上。
+shiki 是一套把源代码切成 token、再按 VS Code 主题上色的 JavaScript 库。日常类比：它不自己写 200 多种语言的词典，而是把 VS Code 用的 TextMate grammar 和主题 JSON 搬到 Node / 浏览器里，输出已经带颜色的 HTML 或 HAST。
 
-它和老牌 Prism / highlight.js 走的是不同路线。Prism 把每个语言的语法规则用 JS 正则手写一遍，结果常和 VS Code 不一致；shiki 直接复用 VS Code 用的同一套语法定义文件（叫 TextMate grammar），所以颜色、字体粗细、斜体等等天然对齐。
-
-最常见的用法只有一行：
+默认入口是全量 bundle：
 
 ```ts
-import { codeToHtml } from 'shiki';
+import { codeToHtml } from "shiki"
 
 const html = await codeToHtml('console.log("hi")', {
-  lang: 'javascript',
-  theme: 'github-dark',
-});
+  lang: "javascript",
+  theme: "github-dark",
+})
 ```
 
-输出已经是带颜色的 HTML，直接 `innerHTML` 就行。Astro Starlight、VitePress、Nuxt Content、Slidev 这些文档/幻灯片框架都默认用它。
+`codeToHtml` 是异步 shorthand：内部维护一个进程级单例 highlighter，按这次调用的语言和主题再 `loadLanguage` / `loadTheme`。固定 4.4.3 的 `shiki` 包声明 `type: module`、`engines.node >= 20`。
 
 ## 为什么重要
 
-不理解 shiki，下面这些事都没法解释：
+不看固定 4.4.3 的分层，下面这些说法会对不上：
 
-- 为什么 VitePress、Astro 文档站的代码块和 VS Code 一模一样，而老博客的代码块总是"差点意思"
-- 为什么有的代码高亮库 bundle 才 10 KB，而 shiki 的 core 约百 KB、WASM 约数百 KB、全量语言主题可达数 MB——它把 VS Code 那套引擎搬了过来
-- 为什么 shiki 推荐"在编译时染色"而不是"在浏览器染色"——和 SSR / 静态生成的趋势绑死
-- 为什么 2024 年初它要重写一次（v1.x），生态里还能听到"升级痛苦"的声音
+- 为什么文档站代码块能和 VS Code 用同一套颜色，而 highlight.js 路线对不齐
+- 为什么 `import { codeToHtml } from 'shiki'` 看起来只引一个函数，却带着全量语言 / 主题注册表
+- 为什么现在可以不加载 Oniguruma WASM，改走 JavaScript 正则引擎
+- 为什么双主题不再只是“每个 span 写两套 inline color”
 
 ## 核心要点
 
-shiki 干的事可以拆成 **三步**：
+固定版本可以拆成五层：
 
-1. **加载语法书**：把目标语言的 TextMate grammar JSON 读进来。类比：拿出一本"JavaScript 怎么断词"的字典。这本字典是 VS Code 团队维护的，shiki 直接复用。
+1. **默认全量 bundle**：`createHighlighter` / `codeToHtml` 来自 `bundle-full`。它登记 242 个 language id、65 个 theme id，默认 engine 是 `createOnigurumaEngine(import('shiki/wasm'))`。另有 `shiki/bundle/web`（57 个 web 语言）和细粒度的 `createHighlighterCore`。
 
-2. **切词 + 贴标签**：用一个叫 oniguruma 的正则引擎（VS Code 同款，编译成 WASM 跑在浏览器里）把代码切成一段段 token，每段贴上 scope 标签，比如 `keyword.control` 或 `string.quoted`。
+2. **先切词，再上色**：core 先把代码编成 token，再编成 HAST，最后 `hast-util-to-html` 出字符串。默认结构是 `pre.shiki > code > span.line`，`tabindex` 默认 `"0"`，空白 token 默认合并。
 
-3. **照主题上色**：拿一份 VS Code theme JSON（github-dark、nord、dracula 都行），按 scope 标签查颜色，然后输出 `<span style="color:#xxx">` 包好的 HTML。
+3. **两种正则引擎**：Oniguruma WASM 是默认；`createJavaScriptRegexEngine` 用 `oniguruma-to-es` 把 TextMate 模式编译成 JS `RegExp`。JS 引擎默认 `target: 'auto'`、`recursionLimit: 5`，遇不到的 Oniguruma 特性会抛错，除非打开 `forgiving`。
 
-三步合起来就是"读字典→断词贴标签→按主题上色"。VS Code 也是这么干的，只不过它在你电脑上跑，shiki 在 build 服务器或浏览器里跑。
+4. **特殊语言不走 grammar 表**：`plaintext` / `txt` / `text` / `plain` 被硬编码成纯文本；`ansi` 和它们同属 special lang，不会去全量 bundle 里找同名 grammar。
 
-## 实践案例
+5. **transformer 是钩子链**：preprocess → tokens → span / line / code / pre → HTML `postprocess`。`@shikijs/transformers` 的 `transformerNotationHighlight` 识别 `[!code highlight]` / `[!code hl]`，默认给行加 `highlighted`。
 
-### 案例 1：一行 API 染色
+## 实践示例
 
-最简单的用法，把字符串变成 HTML：
-
-```ts
-import { codeToHtml } from 'shiki';
-
-const code = `function hi() { return 1 }`;
-const html = await codeToHtml(code, {
-  lang: 'javascript',
-  theme: 'github-dark',
-});
-
-document.querySelector('#out').innerHTML = html;
-```
-
-**逐部分解释**：
-
-- `codeToHtml` 是一站式 API，内部会加载 grammar 和 theme，染色后返回 HTML
-- `lang` 告诉它按哪本"字典"切词
-- `theme` 决定颜色，`github-dark` 是 shiki 自带的几十个主题之一
-
-### 案例 2：预加载 highlighter 复用实例
-
-文档站有几百个代码块时，不要依赖默认 `codeToHtml` 的隐式加载；用 `createHighlighter` 一次显式加载、多次复用：
+### 案例 1：异步 shorthand 与同步实例
 
 ```ts
-import { createHighlighter } from 'shiki';
+import { codeToHtml, createHighlighter } from "shiki"
+
+const once = await codeToHtml("const n = 1", {
+  lang: "ts",
+  theme: "nord",
+})
 
 const highlighter = await createHighlighter({
-  themes: ['nord', 'github-dark'],
-  langs: ['javascript', 'typescript', 'rust'],
-});
-
-const html = highlighter.codeToHtml(code, { lang: 'ts', theme: 'nord' });
+  langs: ["typescript", "javascript"],
+  themes: ["nord", "github-dark"],
+})
+const again = highlighter.codeToHtml("const n = 1", {
+  lang: "ts",
+  theme: "nord",
+})
 ```
 
-SSR 场景下，这个 `highlighter` 只在 build 启动时建一次，后面所有页面共享，语言/主题加载也更可控。
+**逐部分**：`codeToHtml` 会拿单例、按需加载后染色，所以必须 `await`。`createHighlighter` 预加载列出的语言和主题后，实例方法是同步的。两者都走同一份全量注册表；没列出的 bundled id 仍可通过后续 `loadLanguage` / `loadTheme` 补。
 
-### 案例 3：用 transformer 给某几行加高亮
-
-shiki 1.x 的 transformer 让你不用改 markdown 源码就能"标记某行"：
+### 案例 2：双主题写成 CSS 变量
 
 ```ts
-import { transformerNotationHighlight } from '@shikijs/transformers';
-
 const html = await codeToHtml(code, {
-  lang: 'js',
-  theme: 'nord',
-  transformers: [transformerNotationHighlight()],
-});
+  lang: "js",
+  themes: {
+    light: "github-light",
+    dark: "github-dark",
+  },
+})
 ```
 
-然后在代码里写注释 `// [!code highlight]`，那一行就会被加底色。还有 `[!code ++]`（diff 加）、`[!code --]`（diff 减）、focus 等等。
+**逐部分**：传入 `themes` 而不是 `theme` 时，默认 `defaultColor` 是 `"light"`，前缀是 `--shiki-`，`colorsRendering` 是 `css-vars`。默认主题的前景/背景仍可写进 style，其余主题变成 `--shiki-dark` 这类变量。没有 `theme` 也没有 `themes` 会抛错。
+
+### 案例 3：用 notation transformer 标行
+
+```ts
+import { codeToHtml } from "shiki"
+import { transformerNotationHighlight } from "@shikijs/transformers"
+
+const html = await codeToHtml(
+  `const a = 1
+// [!code highlight]
+const b = 2`,
+  {
+    lang: "js",
+    theme: "nord",
+    transformers: [transformerNotationHighlight()],
+  },
+)
+```
+
+**逐部分**：默认 `matchAlgorithm` 是 `v3`——单独成行的注释作用在**下一行**，所以 `const b = 2` 会加上 `highlighted`，`pre` 加上 `has-highlighted`。别名是 `highlight` 与 `hl`。同包还有 diff / focus / error-level 等 notation。
 
 ## 踩过的坑
 
-1. **默认全量 import 体积是 MB 级**：`import { codeToHtml } from 'shiki'` 看似只引一个函数，但会带上大量 grammar/theme 异步 chunk（官方全量约数 MB）。生产必须用 `createHighlighter` 或 `@shikijs/core` 显式列出实际用到的几个。
-
-2. **浏览器侧 runtime 高亮要等 WASM 加载**：oniguruma 是 WASM（约数百 KB），冷启动常 200 ms+，首屏会"先白后染"。正确姿势是在 build 阶段就染好色，HTML 直接发到浏览器，零运行时。
-
-3. **dual theme 让 HTML 体积翻倍**：用 `themes: { light, dark }` 输出双主题时，每个 `<span>` 的 style 都塞了两套颜色变量。小文档站没事，超大 SSG 站要权衡。
-
-4. **v1.x 是 ESM-only，老项目升级痛**：2024-02 的 v1.0 重写抛掉了 CommonJS 兼容，`require('shiki')` 直接报错；0.x 时代写的 plugin 也都不兼容，只能改写成 transformer。
+1. **把默认 import 当成“只带一个函数”**：`from 'shiki'` 的 factory 带着全量 langs/themes 映射（按 id 动态 import）。要自己列语言，用 `createHighlighterCore` 并显式传入 engine。
+2. **把实例 `codeToHtml` 和顶层 `codeToHtml` 当成同一个签名**：顶层 shorthand 是 async；实例方法在已 load 后同步。
+3. **把双主题理解成“HTML 体积必然翻倍”**：4.4.3 默认走 CSS 变量，不是每个 token 写两套 inline `color`。最终体积仍取决于 bundler 和主题数，本轮未测。
+4. **把 JS 引擎当成 Oniguruma 的完全替身**：`oniguruma-to-es` 编不出的模式会抛错；`forgiving: true` 是跳过，不是补齐语义。
+5. **把 `lang: 'text'` 当成要去 bundle 里找 grammar**：`text` / `plain` / `txt` / `plaintext` 直接按纯文本处理。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 静态文档站（Astro Starlight / VitePress / Nextra）—— build 期染色，浏览器零开销
-- 博客 / 教程网站需要"和编辑器同款颜色"的场景
-- React Server Component 文档（用 Bright 这种封装）
-- 想要数百种 VS Code 主题随便切
+
+- 静态文档站 / SSG 在 build 期染色，希望颜色贴近 VS Code
+- 需要 4.4.3 全量 bundle 里那 242 种语言或 65 个主题
+- 能接受 Node >= 20，以及默认 Oniguruma WASM 或显式换成 JS 引擎
 
 **不适用**：
-- 极小 bundle 需求（10 KB 极致博客）—— 选 Prism + 一两个语言
-- 在线代码编辑器（要边输入边染色，还要可改）—— 选 [[monaco-editor]] 或 CodeMirror
-- 需要自动猜语言（用户粘贴代码不告诉你是什么）—— 选 highlight.js
-- 严格抠 edge 体积的 runtime —— 官方支持 CF Workers，但必须显式 compose langs/themes，并单独评估 WASM 体积
 
-## 历史小故事（可跳过）
+- 只要一份 virtual AST、还要自动猜语言——看 [[lowlight]]
+- 在线可编辑代码，而不是只读代码块——看 [[monaco-editor]] / [[codemirror]]
+- 不能加载 WASM，又不能接受 JS 引擎的 grammar 缺口
+- 要把未测的 bundle / 冷启动毫秒数写成选型结论
 
-- **2018-09**：Pine Wu 开源 shiki v0.1，名字来自日语「式」（仪式），最初只是个小工具
-- **2022 年起**：Anthony Fu（Vue / Nuxt 生态核心开发者）接手维护，把 shiki 推到 VitePress / Nuxt Content / Slidev / Astro 的默认渲染器
-- **2024-02**：v1.0 重写发布，改成 ESM-only + 分包架构（`@shikijs/core` / `@shikijs/transformers` / `@shikijs/twoslash`），引入 transformer 模式
-- **后续**：社区开始讨论是否用 [[tree-sitter]] 替换 TextMate grammar，但目前 shiki 仍是 TextMate 路线
+## 固定版本边界
+
+- 本文绑定 `shikijs/shiki@48cd2cc695ed2e3357c3f9c370578ea843d6d9a3`，即 annotated tag `v4.4.3` 的剥皮提交；`shiki` / `@shikijs/core` / `@shikijs/transformers` 均为 `4.4.3`。
+- npm `shiki@4.4.3` 未暴露 `gitHead`；本文绑定 GitHub tag 剥皮提交。
+- 包声明 Node >= 20、ESM-only。
+- 默认 engine 是 Oniguruma WASM；JS 引擎是可选替换，不是默认。
+- 本文未安装依赖、未跑上游测试、未测 WASM / bundle / 渲染耗时，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **复用现成生态比重新造一遍聪明**：shiki 不写 130 个语言定义，直接用 VS Code 的，省下数百人年工程量
-2. **WASM 让"原本跑在桌面 C 库的东西"能在浏览器跑**——oniguruma 是典型例子
-3. **build 期渲染 vs runtime 渲染** 是性能的根本权衡，文档站走 build 期最优
-4. **bundle 大不一定是问题**：build 期跑的代码，用户根本下载不到，"重"在开发机上而不是用户那
+1. **复用编辑器生态，是在复用 grammar 和主题，不是复用整个 IDE**
+2. **“一个函数”的默认入口可以带着整张注册表**——控制体积要换 core 入口
+3. **引擎是可替换的正则后端**——WASM Oniguruma 与 JS 编译器合同不同
+4. **双主题和 transformer 都是渲染层合同**——先有 token，再决定 style / class 怎么贴
+
+## 应用型自测
+
+1. 顶层 `codeToHtml(...)` 是同步还是异步？
+2. `lang: 'text'` 会去 242 个 bundled grammar 里找一份 `text` 定义吗？
+3. 默认的 `transformerNotationHighlight` 里，单独一行 `// [!code highlight]` 标的是这一行还是下一行？
+
+检查点：
+
+1. 异步。它是单例 shorthand，内部要 `await` 加载语言和主题。
+2. 不会。`text` / `plain` / `txt` / `plaintext` 是硬编码纯文本。
+3. 下一行。默认 `matchAlgorithm` 是 `v3`，纯行注释作用在下一行。
 
 ## 延伸阅读
 
 - 官方文档：[shiki.style](https://shiki.style/)
-- Anthony Fu 的介绍博文：[Shiki Twoslash and the New Era of Code Blocks](https://antfu.me/posts/shiki-twoslash)
-- VS Code TextMate grammar 规范：[VS Code Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
-- 主仓库源码：[github.com/shikijs/shiki](https://github.com/shikijs/shiki)
-- [[vitepress]] —— 默认用 shiki 染色的 Vue 文档框架
-- [[starlight]] —— Astro 文档主题，也用 shiki
+- 固定源码：[shikijs/shiki](https://github.com/shikijs/shiki) —— 本文绑定提交 `48cd2cc695ed2e3357c3f9c370578ea843d6d9a3`
+- [[lowlight]] —— highlight.js grammar + hast AST 的对照路线
+- [[vitepress]] —— 默认用 shiki 染色的文档框架
 
 ## 关联
 
-- [[vitepress]] —— Vue 文档站，shiki 是默认代码渲染器
-- [[starlight]] —— Astro 文档主题，内部用 expressive-code（shiki 上层封装）
-- [[monaco-editor]] —— 浏览器里的 VS Code 编辑器，同样基于 TextMate / oniguruma
-- [[tree-sitter]] —— 增量式 parser，未来可能替换 TextMate 路线
-- [[markdown-it]] —— Markdown 解析器，常和 shiki 配合做代码块渲染
-- [[unified]] —— remark / rehype 体系，也常通过 shiki 插件染色
+- [[lowlight]] —— 另一条语法高亮合同：虚拟 AST，而不是 TextMate HTML
+- [[vitepress]] —— Vue 文档站，默认代码渲染器
+- [[starlight]] —— Astro 文档主题，上层常包 shiki
+- [[monaco-editor]] —— 浏览器里的可编辑 VS Code 引擎
+- [[markdown-it]] —— 常和 shiki 插件一起渲染围栏代码块
+- [[unified]] —— remark / rehype 流水线，也有 shiki 插件
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[lowlight]] —— lowlight — 把 highlight.js 的染色结果收成 hast 树
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳

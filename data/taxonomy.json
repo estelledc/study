@@ -2108,6 +2108,10 @@
       "topic_id": "projects-monitoring-and-time-series"
     },
     {
+      "note_id": "projects::lowlight",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::lottie",
       "topic_id": "projects-animation"
     },
