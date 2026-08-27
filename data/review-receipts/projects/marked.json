@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "marked",
+    "digest_sha256": "5e346739c93563fa1d6a11d4afebbec52952a05417592640db67b5870d30ee70"
+  },
+  "source_revision": "53cb13f13fc13d433269248c5caa255ffa1361ee",
+  "research_input_sha256": "d0df887f10d1ebde3bd007f81c61d33bb2269b2bc4e5a2b5f161481171cfc925",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ac",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates lexer passes, GFM defaults, renderer wrap/fallback, and the missing html switch with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ac",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Instance, Lexer, Tokenizer, Renderer, Hooks, and helpers were inspected; upstream tests and sanitizers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ac",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Version, Node engine, GFM, and URL-cleaning claims are bounded to marked 18.0.11; CommonMark scores need the spec suite."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
