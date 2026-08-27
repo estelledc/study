@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 浏览器编辑器双子 AP epoch
+
+- status：`running` → writer epoch `complete`（本地 change set + 授权中的 PR）；未 merge。
+- 起始 ref：`e20d4ddff`（`origin/main`，PR #45 merge）。
+- objective：把 `monaco-editor` 与 `codemirror` 迁到固定源码的 `study-v2` / `STATIC_REVIEW` / `UNVERIFIED`；产出 `docs/*-20260827-ap.md`。
+- scope：两页正文、2 份 generation 1 receipt、共享源码审查文档、note-index / project-standard / site-state / 首页标杆计数、本 handoff；ignored blob-filtered worktree。未改候选队列、政策阈值、未跑上游测试 / bundle / worker。
+- activated_by：`explicit-user-parallel-writer-ap-20260827`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧 monaco 把 tokenization 降级写成 10MB，并把包装仓当成内核；旧 CodeMirror 把 GitHub 当当前 canonical，且缺自测。
+- external delta：按用户授权形成 1 个 PR（push + PR）；未 merge、未 deploy，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `monaco-editor` 绑定 tag `v0.56.0` / `13f0c872...`，`vscodeRef` `f487add...`；修正包装仓 re-export、`createWebWorker` environment 合同、20MB/30 万行 tokenization 阈值，以及同仓 `lsp` 导出。
+  2. `codemirror` 绑定 `@codemirror/state@6.7.1` / `cce2dd5...`（haverbeke.berlin）；披露 GitHub 2026-04-15 archived，npm `gitHead` 在 GitHub 不可达；对照 view/language/commands/autocomplete 的 npm 提交。
+  3. 新增 `docs/editor-source-review-20260827-ap.md` 与两份 static receipt；派生 `benchmark-aligned` 18→20，`v2` 87→89。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：`verifyReceiptAgainstNote` 通过，evidence state `UNVERIFIED`。
+  - `git diff --check`：通过。
+  - 定向派生刷新：`audit:project-standard --write`、`atlas`、`generate:site-state`。
+  - `STUDY_CHANGED_FROM=e20d4ddff npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（strict build 2285 HTML、2284 sitemap URLs、23 Playwright a11y）。
+- budget：1 个可写切片、2 页、120 分钟窗口内完成。
+- external_outcome：1 个 review-ready PR；未授权 merge。
+- stop conditions：本轮写入结束；merge / deploy / 规模 baseline 处置需单独授权。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 新的有限目标。
+- 下一条命令：查看 PR #104 的 CI / review；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
