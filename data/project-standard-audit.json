@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 965,
+    "total": 967,
     "by_status": {
-      "benchmark-aligned": 81,
+      "benchmark-aligned": 83,
       "needs-evidence": 884
     }
   },
@@ -6880,6 +6880,26 @@
       ]
     },
     {
+      "slug": "front-matter",
+      "title": "front-matter — 只用正则抽 YAML 头的小解析器",
+      "source": "https://github.com/jxson/front-matter",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "fx",
       "title": "fx — JSON 的交互式查看器（jq 的 TUI 表亲）",
       "source": "https://github.com/antonmedv/fx",
@@ -7551,6 +7571,26 @@
       "slug": "graphql-yoga",
       "title": "GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器",
       "source": "https://github.com/graphql-hive/graphql-yoga",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
+      "slug": "gray-matter",
+      "title": "gray-matter — 带 engine 与 excerpt 的 front-matter 解析器",
+      "source": "https://github.com/jonschlinkert/gray-matter",
       "status": "benchmark-aligned",
       "checks": {
         "source": true,

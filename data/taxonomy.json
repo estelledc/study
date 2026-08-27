@@ -1972,12 +1972,20 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::front-matter",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::got",
       "topic_id": "projects-http-clients"
     },
     {
       "note_id": "projects::grafana",
       "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::gray-matter",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::gsap",

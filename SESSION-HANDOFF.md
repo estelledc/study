@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GQ：gray-matter + front-matter
+
+- status：writer epoch `complete`；用户授权 push + 一枚 PR，未授权 merge / deploy。
+- 起始 ref：`1ecba4040`（origin/main，#81 merge 后）。
+- objective：为目录中缺失的 front-matter 双子绑定可达固定 revision，写成 `STATIC_REVIEW` / `UNVERIFIED` 的 `study-v2` 页。
+- scope：两篇新项目页、2 份 receipt、`docs/frontmatter-source-review-20260827-gq.md`、taxonomy 两条 assignment、派生 atlas / site-state / 公开计数、本 handoff；未安装上游依赖、未跑上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gq-2026-08-27`。
+- detector fingerprint：仓库无 `gray-matter` / `front-matter` 页；目标对可新增，无需 fallback。
+- external delta：分支 `cursor/frontmatter-gray-matter-gq-1296` 计划 push 并开 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `gray-matter` 绑定 npm `4.0.3` `gitHead` `e54a33b394e14a1808b88f939507f374552906e4`（无 GitHub `4.0.3` tag），写清 language 行、缺闭合吞正文、无 options cache、默认 engine 仅 yaml/json/javascript。
+  2. `front-matter` 绑定 annotated `v4.0.2` peel `af61f89f5aa17cc848ba5a6796e1221c7c26cf96`（与 npm `gitHead` 一致），写清首行 `---` / `= yaml =` / `...`、`attributes`/`body`、缺闭合保留原文、默认 `safeLoad`。
+  3. 新增 generation 1 STATIC_REVIEW receipt；taxonomy 归入 `projects-markdown-and-parsing`。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest 一致且 `evidence_state=UNVERIFIED`；`audit:content-contract` blocking 0、v2=152；`audit:project-standard` CURRENT、benchmark-aligned=83；`audit:counts` / `audit:site-state` projects=967。
+- budget：1 个双子、2 页、1 个本地 writer。
+- blocker：规模 baseline 超限仍在（先于本切片）；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 review/CI，或 owner 的 merge 授权。
+- 下一条命令：`STUDY_CHANGED_FROM=1ecba404048464534225c6d542c19415c83fcabb npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

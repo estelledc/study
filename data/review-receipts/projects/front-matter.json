@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "front-matter",
+    "digest_sha256": "a3741c3c5964ba9507dd4bab9becb6bc962fbe4deecd0b0c0e668cb4f611c63a"
+  },
+  "source_revision": "af61f89f5aa17cc848ba5a6796e1221c7c26cf96",
+  "research_input_sha256": "3cd697be63dc922a003f5e4a45860713f57f3d880161a3b542d61cc0e4087c2a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates first-line ---/= yaml = / ... contract, attributes/body fields, and incomplete-input keep-body behavior."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Inspected index.js regex, safeLoad vs allowUnsafe load, and tape fixtures; tests were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds annotated v4.0.2 peel matching npm gitHead; no engines, excerpt, or custom delimiters in this revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}
