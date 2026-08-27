@@ -1,6 +1,6 @@
 ---
 title: "编辑器 / 富文本 · 项目 · 第 1 组"
-description: "67 条 编辑器 / 富文本 Atlas 分块"
+description: "69 条 编辑器 / 富文本 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 67 条，稳定上限为 100 条。
+本分块共 69 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -61,6 +61,7 @@ sidebar:
 | [Overleaf — 在线 LaTeX 协作](/study/projects/overleaf/) | `overleaf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Pluto.jl — Julia 反应式笔记本](/study/projects/pluto-jl/) | `pluto-jl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) | `prosemirror` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Quill — 用 Delta 描述文档、用 Blot 投影 DOM 的富文本编辑器](/study/projects/quill/) | `quill` | intermediate | UNVERIFIED | 固定 2 |
 | [Roo Code — 多模式 VS Code AI 助手](/study/projects/roo-code/) | `roo-code` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | `sharedb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SilverBullet — 自托管笔记 web 应用](/study/projects/silverbullet/) | `silverbullet` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -69,6 +70,7 @@ sidebar:
 | [TeXstudio — LaTeX IDE](/study/projects/texstudio/) | `texstudio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) | `textmate` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Eclipse Theia — 可定制的云端与桌面 IDE 框架](/study/projects/theia/) | `theia` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Tiptap — 把 ProseMirror 收成 Extension 与 Command 的无头编辑器](/study/projects/tiptap/) | `tiptap` | intermediate | UNVERIFIED | 固定 3 |
 | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) | `tldraw` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Trilium — 树形层级笔记系统](/study/projects/trilium/) | `trilium` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) | `vim` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

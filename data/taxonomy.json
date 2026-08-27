@@ -2316,6 +2316,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::quill",
+      "topic_id": "projects-editors-and-rich-text"
+    },
+    {
       "note_id": "projects::qwik",
       "topic_id": "projects-ui-and-frontend-frameworks"
     },
@@ -2486,6 +2490,10 @@
     {
       "note_id": "projects::timescaledb",
       "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::tiptap",
+      "topic_id": "projects-editors-and-rich-text"
     },
     {
       "note_id": "projects::traefik",

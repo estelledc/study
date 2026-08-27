@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -56405,6 +56405,37 @@
       }
     },
     {
+      "id": "projects::quill",
+      "area": "projects",
+      "slug": "quill",
+      "title": "Quill — 用 Delta 描述文档、用 Blot 投影 DOM 的富文本编辑器",
+      "description": "固定 2.0.3 源码里，Quill 用 Delta 当文档日志、用 Parchment Blot 投影 DOM。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-editors-and-rich-text"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-editors-and-rich-text",
+        "raw_category": "编辑器"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/quill/",
+      "atlas": {
+        "chunk_id": "topic-projects-editors-and-rich-text-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-editors-and-rich-text-01/"
+      }
+    },
+    {
       "id": "projects::qwik",
       "area": "projects",
       "slug": "qwik",
@@ -61662,6 +61693,37 @@
       }
     },
     {
+      "id": "projects::tiptap",
+      "area": "projects",
+      "slug": "tiptap",
+      "title": "Tiptap — 把 ProseMirror 收成 Extension 与 Command 的无头编辑器",
+      "description": "固定 3.30.3 源码里，Tiptap 用 Extension 与 Command 包装 ProseMirror schema 和事务。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-editors-and-rich-text"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-editors-and-rich-text",
+        "raw_category": "编辑器"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/tiptap/",
+      "atlas": {
+        "chunk_id": "topic-projects-editors-and-rich-text-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-editors-and-rich-text-01/"
+      }
+    },
+    {
       "id": "projects::tldraw",
       "area": "projects",
       "slug": "tldraw",
@@ -65615,7 +65677,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-editors-and-rich-text-01/",
-      "entries": 67
+      "entries": 69
     },
     {
       "id": "topic-projects-embedded-systems-01",

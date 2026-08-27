@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 富文本编辑器 PARALLEL CV epoch
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
+- status：`running` 完成本轮后等待 PR review；未 merge。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`（origin/main，PR #47 merge）。
+- objective：为互补富文本编辑器对 `tiptap` 与 `quill` 绑定可达 STATIC_REVIEW 源码，新增 study-v2 页、generation 1 receipt 与 `docs/editor-source-review-20260827-cv.md`；不自合、不部署。
+- scope：两篇新项目页、2 份 receipt、共享审查文档、taxonomy / atlas / site-state / 公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle / IME / 协同。
+- activated_by：`explicit-user-request-parallel-writer-cv-20260827`。
+- detector fingerprint：目标 slug 在 origin/main 不存在；开放 PR 已占用 monaco/codemirror（#104），未占用 tiptap/quill；两仓有可达稳定 tag。
+- external delta 计数：本轮形成 1 个 PR（用户授权 push+PR）；未 merge、未 deploy，D 轴不变。
+- 完成切片：
+  1. `tiptap` 绑定 tag `v3.30.3` / `db790a7c...`（npm `@tiptap/core@3.30.5` 无 GitHub tag，已披露），写清 Extension 合成、command/chain/can、未挂载 view Proxy 与 React `immediatelyRender` 边界。
+  2. `quill` 绑定 annotated tag `v2.0.3` / `522fd7ee...`（npm `gitHead` 一致），写清 Delta + Parchment、`modify()` source 门、`setContents` 尾部 `\n` 与 History 默认 `userOnly=false`。
+  3. 新增共享 `docs/editor-source-review-20260827-cv.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`audit:content-contract` v2=91；`audit:counts` projects=963 / papers=1083 / total=2046。
+- budget：2 个 blob-filtered worktree + 2 页 + 派生刷新；单 writer。
+- blocker：规模 baseline 超限仍是先于本切片的 `PARKED_HUMAN` 项（main 已超 threshold）；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。禁止自合。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- external_outcome：review-ready PR；D 轴保持不变直到另行授权 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

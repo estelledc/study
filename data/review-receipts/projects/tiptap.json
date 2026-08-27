@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tiptap",
+    "digest_sha256": "ac9dff47323d400cd8c9b394b39f991a22038bf5efbee48173f7516426daf90c"
+  },
+  "source_revision": "db790a7c5a6009b0a94382e12e1a5e9c642e1660",
+  "research_input_sha256": "3a696432b4a1dcfbd23abc367bafe8a602730c7e96afabc15174ce5f2e51047e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates ProseMirror schema ownership, command dispatch vs chain, unmounted view proxy, and React hydration defaults."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Editor, Extension, CommandManager, StarterKit and useEditor were inspected; upstream tests and browser rendering were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "The note is bounded to reachable v3.30.3; npm 3.30.5 has no GitHub tag and is disclosed rather than guessed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}
