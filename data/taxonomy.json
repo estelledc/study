@@ -2264,6 +2264,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::picocolors",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
       "note_id": "projects::pino",
       "topic_id": "projects-observability-and-performance"
     },

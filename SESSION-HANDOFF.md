@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EI：chalk + picocolors 静态迁移
+
+- status：writer epoch `complete`；本地 review-ready change set 已准备 push + 单 PR。未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（当时 `origin/main`）。
+- objective：把终端着色双子迁到源码绑定的 `study-v2`：升级既有 `chalk`，新增 `picocolors`。证据模式 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/terminal-color-source-review-20260827-ei.md`、taxonomy / atlas / site-state / 公开计数文案、本 handoff；未改 `ora` / `consola`（开放 PR 占用）；未安装上游依赖、未跑上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-ei-20260827`。
+- detector fingerprint：`chalk` 缺 `pinned_revision` / `evidence_boundary`，旧文把 v5 三包拆分、未绑定 benchmark 与 issue 反应数写成现行事实；`picocolors` 无页面。
+- external_outcome：一个 PR，不 merge；D 轴仅在 push+PR 后计 external delta，不提升为 deploy。
+- 完成切片：
+  1. `chalk` 绑定 tag `v6.0.0` / `661317e6...`（与 npm `gitHead` 一致），修正 Node `>=22`、ESM-only、vendor `#ansi-styles`/`#supports-color`、close 替换嵌套、`FORCE_COLOR` 数字即精确 level。
+  2. `picocolors` 绑定 tag `v1.1.1` / `7249f8c5...`；npm `gitHead` 是祖先 `6f0a4638...`（仅 version+changelog），已披露。纠正函数 API、布尔开关、`replaceClose`、browser 全 `String`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 一致且 `evidence_state=UNVERIFIED`；`audit:counts` 与 `--changed-from origin/main` content-contract blocking 0。
+- budget：1 个可写切片；2 个 ignored worktree；未开下一对。
+- stop conditions：本轮完成后只开一个 PR；merge / deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或新的显式目标。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`（规范 Node 22.23.1）。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
