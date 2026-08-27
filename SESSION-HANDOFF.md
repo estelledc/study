@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IV：jws + paseto
+
+- supervisor 状态：writer epoch `complete`；本切片到 push + 单一 PR 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
+- 起始 ref：`0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465`（`origin/main`）。
+- objective：为缺失的 token-format 双子补齐 `jws` 与 `paseto` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/token-format-source-review-20260827-iv.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。未使用 jose / jsonwebtoken，也未占用 HM–ID 车道字母。
+- activated_by：`explicit-user-parallel-writer-iv-2026-08-27`。
+- detector fingerprint：目录无 `jws.md` / `paseto.md`；开放 PR #279 已占 `jose` / `jsonwebtoken`；A–AG 与 HM–ID 未占用这两个 slug。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `jws` 绑定源码 tag `v4.0.1` → `34c45b2c04434f925b638de6a061de9339c0ea2e`；披露 committed / npm `gitHead` 是 2013 起始提交 `c0f6b27b...`。
+  2. `paseto` 绑定 `v3.1.4` → `04d57493b0bd1d26b72432bde4124dede06552db`，tag / package / npm `gitHead` 一致；披露仓库已 archived，且无 v2/v4 local。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` 均 pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` current；`audit:wikilinks` blocking 0；`git diff --check` 通过。全量 `verify:ci` 在首个 commit 之后跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支对应 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

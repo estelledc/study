@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -46640,6 +46640,37 @@
       }
     },
     {
+      "id": "projects::jws",
+      "area": "projects",
+      "slug": "jws",
+      "title": "JWS — 只管 compact 签名、不解释声明的 JSON Web Signature",
+      "description": "介绍 node-jws 4.0.1 如何把 header.payload 编成 JWS，以及 verify 为何必须外传算法。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-authentication"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-authentication",
+        "raw_category": "认证"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/jws/",
+      "atlas": {
+        "chunk_id": "topic-projects-authentication-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-authentication-01/"
+      }
+    },
+    {
       "id": "projects::k3s",
       "area": "projects",
       "slug": "k3s",
@@ -54435,6 +54466,37 @@
       "atlas": {
         "chunk_id": "topic-projects-infrastructure-utilities-01",
         "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
+      "id": "projects::paseto",
+      "area": "projects",
+      "slug": "paseto",
+      "title": "PASETO — 把版本和用途写进 token、不设 alg 头的安全令牌",
+      "description": "介绍 paseto 3.1.4 如何用 version.purpose 分段、PAE 签名/加密，以及为何没有 v2/v4 local。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-authentication"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-authentication",
+        "raw_category": "认证"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/paseto/",
+      "atlas": {
+        "chunk_id": "topic-projects-authentication-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-authentication-01/"
       }
     },
     {
@@ -65610,7 +65672,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-authentication-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-backend-and-apis-01",
