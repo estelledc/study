@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "postgres-js",
+    "digest_sha256": "03b8ebd777108a76a3685fae87b93f26cd36570bb36629a13a32b1a2065c15fa"
+  },
+  "source_revision": "e7dfa14519f363229ccc3ead7b1b2f2051937efb",
+  "research_input_sha256": "e5d5583079e4803168668f4069d49e1aba215461268c73ff28e0954c5079cc2e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-i",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates tagged Query, Identifier, Builder, undefined rejection, reserved transactions, and listen/subscribe side connections with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-i",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Factory, queues, query, types, connection pipeline, and subscribe slot sources were inspected; no database connection or upstream tests were run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-i",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Version, export, pool, and type claims are bounded to postgres 3.4.9; performance comparisons require benchmarks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:30:00.000Z"
+}
