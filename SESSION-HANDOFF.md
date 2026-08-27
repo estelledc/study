@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FK：capacitor + boa-engine 静态迁移
+
+- status：writer epoch `complete`；未 merge、未 force-push `main`、未 deploy。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（当时的 `origin/main`）。
+- objective：把 `capacitor` 与 `boa-engine` 两页从 `needs-evidence` 迁到源码绑定的 `study-v2` 标准。
+- scope：两页正文、2 份 generation 1 receipt、唯一审查文档 `docs/capacitor-boa-source-review-20260827-fk.md`、本 handoff、由验收命令驱动的派生索引；未安装上游依赖、未跑 Xcode / Gradle / cargo test / Test262、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-fk-2026-08-27`（capacitor + boa-engine，10h 窗口）。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧 Capacitor 正文把 `Camera.getPhoto` 写成 core API、把 `cap add ios` 写成无需先装 `@capacitor/ios`；旧 Boa 正文未绑定 revision，也未区分 `eval` 与 `run_jobs`、默认循环限额。
+- external_outcome：一条 PR（push + PR 已由本轮指令授权）；不 merge、不部署，D 轴不提升。
+- 完成切片：
+  1. `capacitor` 绑定 annotated tag `8.5.0` peel / npm `gitHead` `3ab4139bd0b8863cadcb175180ea941f4c244f08`，修正 core 四插件、`registerPlugin` Proxy、`sync=copy+update`、平台包先装再 add。
+  2. `boa-engine` 绑定 tag `v0.21.1` / `bc36c3fac0969ea21ea0570b62e7846f97389b73`，修正 `eval` 与 `run_jobs`、默认循环无上限、`boa_runtime` 与 `register_global_builtin_callable`。
+  3. 新增 `docs/capacitor-boa-source-review-20260827-fk.md` 与两份 generation 1 static receipt。
+- acceptance_checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与审查文档 digest 一致，`evidence_state=UNVERIFIED`。
+  - `evaluateProjectNote`：两页 `benchmark-aligned`、missing=[]。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered sparse worktree + 2 页静态源码迁移；单 writer。
+- blocker：规模 detector 在 main 已超 baseline（先于本切片）；本轮未改阈值。派生索引可能与平行 writer 冲突，不是本 writer 的 merge 职责。
+- stop_conditions：两页独立验收完成即结束。merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR 的 checks。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

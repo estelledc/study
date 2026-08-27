@@ -1,172 +1,171 @@
 ---
 title: Boa — Rust 写的 ECMAScript 解释器
 来源: 'https://github.com/boa-dev/boa'
-日期: 2026-07-08
+日期: 2026-08-27
 分类: runtimes
 难度: 高级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/boa-dev/boa
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: bc36c3fac0969ea21ea0570b62e7846f97389b73
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.21.1
 ---
 
 ## 是什么
 
-Boa 是一个用 Rust 实现的 ECMAScript 引擎：它能把一段 JavaScript 源码解析、编译成内部指令，再在 Rust 进程里执行。日常类比：V8 像一整台高速印刷厂，机器大、速度快、配套复杂；Boa 更像一套透明教学机床，齿轮露在外面，适合你把 JavaScript 当成可嵌入零件装进 Rust 程序。
+Boa 是用 Rust 写的实验性 ECMAScript 引擎：源码经 `boa_parser` 解析，`ByteCompiler` 编成内部指令，再在 `boa_engine` 的 VM 里执行。日常类比：V8 像一座高速印刷厂；Boa 更像能拆开看齿轮的教学机床，适合把一小段 JavaScript 嵌进 Rust 进程。
 
-它的目标不是在浏览器里打败 V8 / SpiderMonkey，而是给 Rust 生态提供一个可嵌入、可审计、可改造的 JS 运行时。你可以把它放进规则引擎、插件系统、教学解释器，或者安全边界很窄的脚本执行器里。
-
-换句话说，Boa 回答的问题是：如果我有一个 Rust 产品，只想让用户写几行 JavaScript 配规则，能不能不把整个浏览器引擎搬进来？
-
-## 为什么重要
-
-不理解 Boa，下面几件事都没法解释：
-
-- 为什么有些 Rust 应用想要 JavaScript 扩展能力，却不愿直接嵌入 Node.js 或 V8
-- 为什么“可嵌入脚本”最难的不是语法，而是宿主对象、内存和权限边界
-- 为什么 ECMAScript 兼容性需要长期追 Test262，而不是“能算 1 + 2”就算 JS 引擎
-- 为什么 [[quickjs]]、[[rhai]]、[[deno]] 看起来都能跑脚本，但适用边界完全不同
-
-## 核心要点
-
-Boa 的设计可以拆成 **三个核心要点**：
-
-1. **Context 是执行房间**：`Context` 像一间临时厨房，里面放着全局对象、标准库、变量和执行状态。你把 JS 代码送进去，Boa 在这间房里解析、求值、返回结果；不同房间互不共享脏盘子。
-
-2. **Rust 宿主掌握门禁**：JavaScript 默认不该碰文件、网络、数据库。Boa 让 Rust 程序决定暴露哪些函数和对象，像给访客发门禁卡：只开“读配置”这扇门，就不要顺手开“删文件”那扇门。
-
-3. **兼容性和可控性要一起看**：Boa 追 ECMAScript 标准，但它更适合“受控脚本”而不是“全量浏览器运行时”。日常类比：它像一辆可拆开的教学赛车，能学清楚传动结构；真要跑 F1 正赛，还得看 V8 这类成熟大车队。
-
-这三点合起来，Boa 的价值不是“最快 JS”，而是“Rust 程序里一块可检查、可限制、可替换的 JS 执行层”。
-
-## 实践案例
-
-### 案例 1：在 Rust 里执行一段配置脚本
+可嵌入入口是 crate `boa_engine`。固定 workspace 版本 `0.21.1`，`rust-version = "1.88.0"`，许可是 `Unlicense OR MIT`。`Context::default()` 只给语言运行时，不自动挂 `console` 或 `fetch`——那些在独立 crate `boa_runtime`。
 
 ```rust
 use boa_engine::{Context, Source};
 
-fn main() -> boa_engine::JsResult<()> {
+let mut context = Context::default();
+let value = context.eval(Source::from_bytes("1 + 2 * 3"))?;
+println!("{}", value.to_string(&mut context)?.to_std_string_escaped());
+```
+
+`eval` 的文档写明：**不会**跑已经排期的 promise jobs；要接着调用 `Context::run_jobs`。
+
+## 为什么重要
+
+不理解这条“解析 → 字节码 → VM”的链，下面几件事会对不上：
+
+- 为什么 `eval` 成功返回一个 Promise，副作用却还没发生
+- 为什么默认死循环不会被引擎拦住
+- 为什么 `console.log` 在裸 `Context` 里直接引用错误
+- 为什么 [[quickjs]]、[[rhai]]、[[deno]] 都能跑脚本，宿主边界却完全不同
+
+## 核心要点
+
+固定 `v0.21.1` 可以拆成四层：
+
+1. **`Context` 是执行房间**：里面有 interner、realm、VM、job executor。同线程的 Context 可以共享对象（内部用 `Rc` 和 thread-local）；缺 lock-free `AtomicUsize` 的目标会 `compile_error`。
+
+2. **`eval` = parse + evaluate**：`Script::parse` 用 `Parser` 产出 AST，可选 optimizer；`evaluate` 编译 `CodeBlock`，`push_frame` 后 `context.run()`。异步路径是 `evaluate_async`，默认 budget `256` 个内部时钟周期就让出线程。
+
+3. **宿主函数要显式登记**：`register_global_property` 挂值；`register_global_callable` 生成可 `new` 的函数；`register_global_builtin_callable` 不可构造，当构造器用会 `TypeError`。函数体是 `NativeFunction::from_fn_ptr(|this, args, ctx| -> JsResult<JsValue>)`。
+
+4. **默认限额几乎不管循环**：`RuntimeLimits` 默认 `loop_iteration = u64::MAX`（无上限）、递归 512、栈 `1024 * 10`、异常 backtrace 50。想卡死循环必须自己 `runtime_limits_mut().set_loop_iteration_limit(...)`。CPU 时间、内存、进程隔离仍要宿主做。
+
+## 实践示例
+
+### 案例 1：执行一段表达式
+
+```rust
+use boa_engine::{Context, JsResult, Source};
+
+fn main() -> JsResult<()> {
     let mut context = Context::default();
     let value = context.eval(Source::from_bytes("1 + 2 * 3"))?;
-    println!("{}", value.display());
+    assert_eq!(value.as_number(), Some(7.0));
     Ok(())
 }
 ```
 
-逐部分解释：
+语法错误或运行时错误都变成 `Err(JsError)`，不会把 Rust 进程直接崩掉。
 
-1. `Context::default()` 建一间新的 JS 执行房间。
-2. `Source::from_bytes(...)` 把字符串包装成 Boa 能读取的源码。
-3. `context.eval(...)` 解析并执行代码，返回 `JsValue`。
-4. `?` 把 JS 语法错误、运行时错误转成 Rust 可处理的 `Result`。
-
-这个例子适合配置校验、表达式计算、规则打分这类“小脚本”场景。
-
-### 案例 2：做插件沙箱时只暴露白名单能力
+### 案例 2：只开放白名单宿主函数
 
 ```rust
-use boa_engine::{Context, Source};
+use boa_engine::{Context, NativeFunction, Source, js_string};
 
-fn run_plugin(script: &str) -> boa_engine::JsResult<String> {
-    let mut context = Context::default();
-    let wrapped = format!(
-        "const input = {{ count: 3 }}; JSON.stringify((() => {{ {} }})())",
-        script
-    );
-    let value = context.eval(Source::from_bytes(&wrapped))?;
-    Ok(value.to_string(&mut context)?.to_std_string_escaped())
-}
+let mut context = Context::default();
+context.register_global_builtin_callable(
+    js_string!("hostAdd"),
+    2,
+    NativeFunction::from_fn_ptr(|_this, args, _ctx| {
+        let a = args.first().and_then(boa_engine::JsValue::as_number).unwrap_or(0.0);
+        let b = args.get(1).and_then(boa_engine::JsValue::as_number).unwrap_or(0.0);
+        Ok((a + b).into())
+    }),
+)?;
+let value = context.eval(Source::from_bytes("hostAdd(2, 3)"))?;
 ```
 
-逐部分解释：
+这里没有文件系统、网络或 `console`。需要 Web API 时，按 `boa_runtime` 文档调用 `Console::register_with_logger` 或 `boa_runtime::register(...)`，那是另一条合同。
 
-1. 插件只拿到 `input` 这个对象，拿不到文件系统、网络和数据库。
-2. 返回值被 `JSON.stringify` 收敛成字符串，方便 Rust 侧做类型检查。
-3. 每次执行新建 `Context`，插件之间不会共享全局变量。
-4. 真正上线时还要把脚本放到单独线程或进程里，加超时和内存上限。
-
-这里的重点不是这段包装代码多完美，而是安全原则：默认什么都不给，需要什么才显式开放什么。
-
-### 案例 3：用 Boa 讲清楚 JS 运行时错误
+### 案例 3：Promise 必须自己泵队列
 
 ```rust
-use boa_engine::{Context, Source};
-
-fn main() {
-    let mut context = Context::default();
-    let result = context.eval(Source::from_bytes("missingFunction(42)"));
-
-    match result {
-        Ok(value) => println!("ok: {}", value.display()),
-        Err(err) => eprintln!("js error: {}", err.display()),
-    }
-}
+let value = context.eval(Source::from_bytes("Promise.resolve(1).then(x => x + 1)"))?;
+context.run_jobs()?;
 ```
 
-逐部分解释：
-
-1. `missingFunction(42)` 在 JS 里会触发引用错误。
-2. Boa 不会让 Rust 进程直接崩掉，而是返回 `Err`。
-3. 宿主程序可以把错误写日志、展示给用户，或拒绝保存这段插件。
-4. 教学时可以把解析错误、引用错误、类型错误拆开演示，比黑盒浏览器控制台更容易解释。
+只 `eval` 时 then 回调还停在 job queue。线上如果还要防死循环，先把 `loop_iteration` 从默认的“无上限”改掉。
 
 ## 踩过的坑
 
-1. **别把“能 eval”当成“安全沙箱”**：Boa 控制的是 JS 语言执行，真正的 CPU 时间、内存、线程隔离还要 Rust 宿主自己做。
-
-2. **别默认兼容性等于 V8**：ECMAScript 标准很大，Boa 的覆盖率会随版本变化；生产前要用自己的脚本集合和 Test262 相关用例跑一遍。
-
-3. **宿主对象要白名单，不要黑名单**：先开放所有能力再拦危险调用，很容易漏；更稳的是只注册业务必须的函数。
-
-4. **错误类型要翻译成人话**：直接把 JS 异常原样抛给最终用户，通常没人看得懂；至少要带脚本名、行列号和业务含义。
-
-5. **长脚本要有执行边界**：死循环、巨大数组、递归爆栈都可能拖垮宿主；线上场景最好用独立线程 / 进程配合超时杀掉。
+1. **把 `eval` 当成沙箱**：语言运行时不是 CPU / 内存 / 线程隔离。默认循环限额还是关掉的。
+2. **以为 `Context::default()` 自带浏览器对象**：`console` / `fetch` 在 `boa_runtime`，要另注册。
+3. **漏掉 `run_jobs`**：Promise 链看起来“成功了”，副作用没跑。
+4. **用 `register_global_callable` 当普通函数**：它可以 `new`。只要函数、不要构造器，用 `register_global_builtin_callable`。
+5. **按 README 的 `0.21.0` 推断本页**：README 示例字符串仍是 `0.21.0`；本文绑定 workspace / crates.io 的 `0.21.1`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Rust 应用里嵌入几十行到几百行的受控业务脚本
-- 插件系统只需要有限 API：读输入、算结果、返回 JSON
-- 教学或调试 JS 引擎内部流程：解析、执行、错误传播
-- 需要可审计实现路径，而不是只追极限吞吐
+- Rust 应用里嵌入几十到几百行受控脚本
+- 插件只需要白名单函数：读输入、算结果、回 `JsValue`
+- 想看解析 / 字节码 / VM / 错误传播，而不是只追极限吞吐
 
 **不适用**：
 
-- 浏览器级高吞吐 JS 执行：复杂前端应用、JIT 性能、Web API 全家桶
-- 需要完整 Node.js 生态：npm 包、文件系统模块、事件循环和 native addon
-- 安全隔离要求极高但又没有进程级沙箱的多租户平台
-- 对 ECMAScript 新特性追赶速度极敏感的产品
+- 浏览器级 Web API 全家桶或完整 Node / npm —— 应看 [[deno]] 或宿主自建
+- 安全隔离要求极高、却没有进程级沙箱的多租户
+- 要把 README 的 Test262 仪表盘或“90%+”兼容表述写成我们测过的数字
+- 把未绑定的吞吐、启动延迟或 WASM playground 成绩当选型依据
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **1995 年**：JavaScript 诞生，最初是浏览器脚本语言。
-- **2009 年后**：Node.js 把 V8 带到服务端，JS 引擎从“浏览器组件”变成“可嵌入运行时”。
-- **2010s**：Rust 生态成熟后，大家开始希望脚本层也能符合 Rust 的可维护和内存安全风格。
-- **Boa 项目启动后**：社区用 Rust 逐步实现 lexer、parser、运行时对象、GC 和标准库，目标是追上 ECMAScript 行为。
-- **现在**：Boa 更像 Rust 生态的 JS 引擎实验室，适合嵌入、学习和定制，而不是直接替换浏览器核心引擎。
+- 本文绑定 `boa-dev/boa@bc36c3fac0969ea21ea0570b62e7846f97389b73`，tag `v0.21.1`，与 crates.io `boa_engine@0.21.1` 同号。
+- `boa_runtime`、CLI、WASM playground 只作对照，未展开执行。
+- 未安装 Rust 工具链、未跑 `cargo test` / Test262，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. 嵌入式 JS 的第一目标不是性能榜第一，而是宿主边界清楚。
-2. `Context` 可以理解成一间独立执行房间，隔离粒度先从这里开始。
-3. 标准兼容是长期工程，要用具体脚本和测试集验证，不能靠印象判断。
-4. 安全沙箱不是一个 crate 自动送的礼物，而是语言运行时、线程、进程、权限共同拼出来的系统。
-5. Rust 与 JavaScript 的接口设计，本质是在“灵活脚本”和“可控工程”之间找平衡。
+1. **嵌入式 JS 的第一目标是宿主边界**，不是性能榜。
+2. **`eval` 只走完当前脚本**——Promise 还要 `run_jobs`。
+3. **默认 runtime limit 不管循环**——限额是选项，不是礼物。
+4. **语言 crate 和 Web API crate 要分开读**——`boa_engine` ≠ 浏览器。
+
+## 应用型自测
+
+1. `Context::eval("Promise.resolve(1).then(...)")` 之后，then 一定已经执行了吗？
+2. 固定版本下，空 Context 里调用 `console.log` 会怎样？
+3. 默认 `RuntimeLimits` 会在第 N 次循环抛错吗？
+
+检查点：
+
+1. 不一定。文档要求再 `run_jobs` 才处理 job queue。
+2. 会按普通 JS 引用错误失败。`console` 要由 `boa_runtime` 注册。
+3. 不会按次数自动停。默认 `loop_iteration` 是 `u64::MAX`。
 
 ## 延伸阅读
 
-- 官方仓库：[boa-dev/boa](https://github.com/boa-dev/boa)（看 README、examples 和当前兼容状态）
-- ECMAScript 标准：[ECMA-262](https://tc39.es/ecma262/)（所有 JS 引擎最终都要对齐它）
-- Test262：[ECMAScript conformance tests](https://github.com/tc39/test262)（理解“兼容性”到底怎么测）
-- [[quickjs]] —— 小型 C 语言 JS 引擎，嵌入路线可对照
-- [[deno]] —— Rust + V8 的另一条运行时路线
-- [[rhai]] —— Rust 原生脚本语言，放弃 JS 兼容换取更简单宿主模型
+- 固定源码：[boa-dev/boa](https://github.com/boa-dev/boa) —— 本文绑定提交 `bc36c3fac0969ea21ea0570b62e7846f97389b73`
+- crate 文档：[docs.rs/boa_engine](https://docs.rs/boa_engine/0.21.1/boa_engine/)
+- ECMA-262：[tc39.es/ecma262](https://tc39.es/ecma262/)
+- [[quickjs]] —— 小型 C 引擎，嵌入路线对照
+- [[deno]] —— Rust + V8 的另一条运行时
+- [[rhai]] —— 不追 ECMAScript 的 Rust 脚本
 
 ## 关联
 
-- [[javascript-engine]] —— JS 引擎的解析、执行、优化主线
-- [[quickjs]] —— 同样强调可嵌入，但实现语言和兼容策略不同
-- [[deno]] —— 用 Rust 包装 V8，选择成熟引擎而不是纯 Rust 重写
-- [[rhai]] —— 不追 ECMAScript，专注 Rust 应用脚本扩展
-- [[wasmtime]] —— 另一种嵌入式运行时选择，边界来自 WebAssembly
+- [[javascript-engine]] —— 解析、执行、优化主线
+- [[quickjs]] —— 同样强调可嵌入
+- [[deno]] —— 用成熟 V8，而不是纯 Rust 重写
+- [[rhai]] —— 放弃 JS 兼容换更简单宿主模型
+- [[wasmtime]] —— 另一类嵌入式运行时，边界来自 WebAssembly
 
 ## 反向链接
 
