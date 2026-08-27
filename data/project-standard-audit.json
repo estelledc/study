@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 963,
+    "total": 965,
     "by_status": {
-      "benchmark-aligned": 73,
+      "benchmark-aligned": 75,
       "needs-evidence": 890
     }
   },
@@ -2914,6 +2914,26 @@
         "pinned_revision",
         "evidence_boundary"
       ]
+    },
+    {
+      "slug": "change-case",
+      "title": "change-case — 用 Unicode 切词再映射到十一种写法",
+      "source": "https://github.com/blakeembrey/change-case",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "changesets",
@@ -17711,6 +17731,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "scule",
+      "title": "scule — 先切词再拼大小写的 TypeScript 字符串工具",
+      "source": "https://github.com/unjs/scule",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "sd",

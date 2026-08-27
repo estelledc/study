@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "scule",
+    "digest_sha256": "b300ff5bb4107b15643fa64b6ab84d9c2b8d563d79a744b03cf109fe23bfcb7b"
+  },
+  "source_revision": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+  "research_input_sha256": "7709bed48d82166c6ff2b6f0e80985fddd760f663be93409dc811de32cfdbeed",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains splitByCase edges, normalize vs kebab lowercasing, train-case acronyms, and title-case English exceptions."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "src/index.ts, types, and scule.test.ts were inspected; upstream vitest was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag, package version and npm gitHead agree; bundle size, locale runtime and upstream tests remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:15:00.000Z"
+}
