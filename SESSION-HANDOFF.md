@@ -15,7 +15,7 @@
   1. `sanitize-html` 绑定 `apostrophecms/apostrophe@ab4c660b4426...` 上的 `packages/sanitize-html@2.17.7`；披露独立仓已弃用、npm 无 `gitHead`。
   2. `isomorphic-dompurify` 绑定 annotated tag `3.23.0` 剥皮提交 `7607c2f4c166...`；npm 无 `gitHead`；未阅读 DOMPurify 本体。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:site-state`：projects=967，papers=1083，total=2050；`audit:content-contract --changed-from origin/main` blocking 0；`git diff --check` 通过。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:site-state`：projects=967，papers=1083，total=2050；`audit:content-contract --changed-from origin/main` blocking 0；`git diff --check` 通过；`STUDY_CHANGED_FROM=1ecba404048464534225c6d542c19415c83fcabb npm run verify:ci` 全绿（含 23 Playwright a11y、2291 HTML、strict build）。
 - budget：2 个本地 clone + 2 页新建；单 writer。
 - blocker：merge 与 deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
