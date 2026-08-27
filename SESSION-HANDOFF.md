@@ -4,20 +4,28 @@
 
 ## 2026-08-27 PARALLEL writer CX CLI-UX epoch
 
-- status：`running` → writer epoch in progress；目标是本地 review-ready change set + 一个 PR，不自合并。
+- status：writer epoch `complete`；已打开 PR #135，不自合并。
 - 起始 ref：`042f60a8a`（PR #47 merge 后的 `origin/main`）。
 - objective：把 CLI-UX 双子 `consola` 与 `ora` 绑到可达静态 revision；证据保持 `STATIC_REVIEW` / `UNVERIFIED`。`pino` 已被开放 PR #60 占用，本轮不改。
 - scope：新建 `consola` 页、升级既有 `ora` 页、共享 `docs/cli-ux-source-review-20260827-cx.md`、两份 generation 1 receipt、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未做 TTY/prompt/bundle/性能 benchmark。
 - activated_by：`explicit-user-parallel-writer-cx-20260827`。
 - detector fingerprint：`ora` 为 legacy 教学页，含未绑定下载量、80ms 帧间隔和 stdout 默认假设；`consola` 在 Study 中不存在，无法与 ora 形成源码级 CLI-UX 对照。
-- external_outcome：一个 PR，不 merge、不 deploy；D 轴不提升。
-- acceptance_checks：
-  - 两页 `quality-gate.mjs`：pass、0 advisory
-  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state `UNVERIFIED`
-  - `git diff --check`
-  - `STUDY_CHANGED_FROM=042f60a8a npm run verify:ci`
-- budget：1 对 CLI-UX 页、1 个可写切片、1 个本地 writer、1 个 PR。
-- stop_conditions：slug 与开放 PR 冲突；canonical/revision 不可达；只能放宽门禁才能继续；用户停止。
+- external delta：分支 `cursor/consola-ora-20260827-cx-278f` 已 push 并打开 draft PR #135；未 merge、未 deploy，D 轴不变。
+- 完成切片：
+  1. `consola` 绑定 tag `v3.4.2` / `2cfcfc08...`（npm `gitHead` 一致），补 Node 工厂 level/reporter、对象管线、模块级 pause、`wrapStd` 把 stderr 收成 `log` 的边界。
+  2. `ora` 绑定 tag `v9.4.1` / `79cd8c15...`（npm `gitHead` 一致），修正默认 stderr、silent/disabled 三条 `start()` 路径、stdio hook、CSI `?2026` 与 `oraPromise` 再抛错。
+  3. 新增共享 `docs/cli-ux-source-review-20260827-cx.md` 与两份 generation 1 static receipt；项目审计从 `20/961` 前进到 `22/962`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=042f60a8a npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=22`、`needs-evidence=940`。
+  - `audit:content-contract`：`v2=91`、`legacy-unverified=1954`、blocking 0。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer；预算内完成。
+- blocker：既有规模 detector（main `tracked_files` 已超 baseline threshold）仍属 `PARKED_HUMAN`，本轮未改 baseline/阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 授权 merge。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/135`。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
