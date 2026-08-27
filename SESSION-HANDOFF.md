@@ -21,11 +21,12 @@
   - `audit:counts`：projects=962、papers=1083、total=2045。
   - `audit:content-contract`：blocking 0，`v2=105`。
   - `audit:project-standard`：`benchmark-aligned=36`、snapshot CURRENT。
+  - `STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下 portable gate 全绿；strict build 2286 HTML、2285 sitemap URLs、23 Playwright tests。
 - budget：2 个稀疏 worktree + 2 页 + 派生刷新；单 writer。
 - blocker：规模 baseline 超限是 main 既有问题，本轮未改 threshold。
 - stop conditions：本轮已完成；merge / deploy 需单独授权。
 - 下一次 wake 条件：PR review/CI，或新的显式目标。
-- 下一条命令：`STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #166；不 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
