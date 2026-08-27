@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IS：@vercel/edge + @netlify/edge-functions
 
-- supervisor 状态：writer epoch `complete`；PR 待 review，未 merge。
+- supervisor 状态：writer epoch `complete`；PR https://github.com/estelledc/study/pull/312 待 review，未 merge。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
 - objective：为缺失的 edge-platform 双子补齐 `@vercel/edge` 与 `@netlify/edge-functions` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/edge-platform-source-review-20260827-is.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未部署、未测 bundle。
@@ -15,12 +15,12 @@
   1. `vercel-edge` 绑定可达源码 tag `@vercel/edge@1.3.1` → `8a127cee8a0ae16f4cbe0c4b596cdffe089bdd84`；披露 npm `1.3.3` 无 tag / `gitHead`，本包是 `@vercel/functions` 再导出层。
   2. `netlify-edge-functions` 绑定 `edge-functions-v4.0.0` → `11913fe6c0613267be193ae7b17a24cf14acd50e`，tag / package / npm `gitHead` 一致；生产入口只导出类型。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生索引随 atlas / project-standard / site-state 刷新。
-- 验证结果：以本轮定向命令为准，不在 handoff 中复制易过期数字或 ETA。
+- 验证结果：两页 quality-gate 通过且 0 advisory；`audit:content-contract` / `audit:counts` / `audit:site-state` / `audit:wikilinks` / `git diff --check` 通过；`STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿。不在 handoff 中复制易过期数字或 ETA。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/312 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
