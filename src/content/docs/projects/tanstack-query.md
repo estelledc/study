@@ -1,162 +1,162 @@
 ---
-title: TanStack Query — 数据获取与缓存库
+title: TanStack Query — 用 Observer 订阅一份服务端状态
 来源: https://github.com/TanStack/query
-日期: 2026-05-29
+日期: 2026-08-27
 分类: 数据获取
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/TanStack/query
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 714df67ab11c6e16666e4282dfec8654175591f7
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.102.6
 ---
 
 ## 是什么
 
-TanStack Query 是一个**让前端组件不用自己写 fetch + loading + error + 缓存逻辑**的库。一个 `useQuery(key, fn)` 把"组件挂载就 fetch、卸载就取消、缓存命中直接给、过期就重新拉"全包了。
-
-日常类比：
-
-- **以前**：每个组件自己开冰箱拿菜——拉数据、记 loading、记 error、unmount 取消、过期重拉，全部自己写一遍
-- **现在**：有个共享冰箱（query cache）。打开就有；没了自动补；多个人要同一道菜只跑一次
+TanStack Query 是一套**服务端状态引擎**：`query-core` 管缓存和拉取，框架包只负责订阅。日常类比：共享仓库按标签存货，组件只挂观察员；没货才进货，过期才补货，没人看才清仓。
 
 你写：
 
-```jsx
-const { data, isLoading } = useQuery({
+```tsx
+const { data, isPending, error } = useQuery({
   queryKey: ['todos'],
   queryFn: fetchTodos,
 })
 ```
 
-挂载、取消、缓存、重拉这一长串行为全在这一个 hook 里。
+固定 5.102.6 里，这一句会经过 `QueryClient.defaultQueryOptions` 算出 `queryHash`，在 `QueryCache` 的 `Map` 里找到或新建 `Query`，再由 `QueryObserver` 决定要不要 `fetch`。`useQuery` 本身只是 `useBaseQuery(..., QueryObserver)`。
 
 ## 为什么重要
 
-不用 TanStack Query 也能写代码，但下面这几件事会反复掉坑：
+不读这条主链，下面几件事会讲错：
 
-- 大量 React 项目用它**替代 Redux / MobX 处理服务器状态**——服务器数据本来不归你 own，硬塞进 Redux 反人类
-- TanStack 系（query / table / router / form）跨框架（React / Vue / Solid / Svelte / Angular）**一套 API 几乎不变**——学一次到处用
-- 自带 dedup（同 key 只发一次）/ 缓存失效 / 后台 revalidate / 离线支持 / 乐观更新——这些功能自己写一遍要几千行
-- 自带 Devtools——缓存里有什么、谁在 fetching、谁过期了，可视化看到
+- 为什么多个组件写同一个 `queryKey` 会共享一份 `Query`，而不是各发各的
+- 为什么默认 `staleTime: 0` 会在 remount / focus 时重拉，`'static'` 却永不视为过期
+- 为什么 `invalidateQueries` 不是“立刻全员 fetch”，默认只重拉 **active** observer
+- 为什么 React 18+ 要用 `useSuspenseQuery`，不能再写 `useQuery({ suspense: true })`
 
 ## 核心要点
 
-记住三个概念，其它都是它们的衍生：
+固定版本的控制流可以拆成六步：
 
-1. **Query Key**：数据的唯一身份。`['todos']` / `['user', userId]`。同一个 key 同时被多个组件用 = 共享同一份数据 + 只发一次请求。
+1. **合并 options**：client defaults → 按 key 的 defaults → 本次调用；缺 `queryHash` 时用 `hashKey`。
+2. **定位 Query**：`QueryCache.build` 按 hash 查 `Map`，没有就 `new Query`。
+3. **Observer 决策**：`enabled !== false` 且数据过期时，才在 mount / focus / reconnect 拉取。
+4. **Query.fetch**：已有 in-flight 时复用 `retryer.promise`；`cancelRefetch` 才会静默取消再开新请求。
+5. **Retryer**：浏览器默认最多 3 次重试，delay 为 `min(1000 * 2 ** failureCount, 30000)`；服务端默认 0。
+6. **失效与回收**：`invalidate()` 只打 `isInvalidated`；`gcTime` 浏览器默认 5 分钟、服务端 `Infinity`，且要无人订阅且 `fetchStatus === 'idle'`。
 
-2. **staleTime / gcTime**：staleTime 控制"过期了没"——过期就在下次 mount / focus 时重新拉；gcTime 控制"没人订阅多久后扔掉"。默认 `staleTime: 0`（每次挂载都重拉），`gcTime: 5min`。
+## 实践示例
 
-3. **Mutation + invalidate**：写操作（POST / PUT / DELETE）走 `useMutation`，写完 `invalidateQueries(['todos'])` 让相关 query 自动重拉——这就是"加完 todo，列表自动刷新"。
+### 案例 1：同 key 共享一条 Query
 
-## 实践案例
-
-### 案例 1：最简 useQuery
-
-```jsx
+```tsx
 function TodoList() {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ['todos'],     // ← 数据身份
-    queryFn: fetchTodos,     // ← 没货时去哪买
-  })
-  if (isLoading) return <Spinner />
-  if (error) return <Error msg={error.message} />
-  return <List items={data} />
+  return useQuery({ queryKey: ['todos'], queryFn: fetchTodos }).data
+}
+function TodoCount() {
+  return useQuery({ queryKey: ['todos'], queryFn: fetchTodos }).data?.length
 }
 ```
 
-把 `queryKey` 想成冰箱里的标签，`queryFn` 是"没货时去哪进货"。10 个组件用 `['todos']` 这个 key 只会发一次请求——其余组件直接共享。
+两个 hook 算出同一个 `queryHash`，命中同一条 `Query`。第二个 observer 加上去时，只要第一条已经在 fetch，就复用那份 promise。
 
-### 案例 2：依赖参数 + enabled
+### 案例 2：enabled 挡住未就绪的依赖查询
 
-```jsx
-function UserProfile({ userId }) {
-  const { data: user } = useQuery({
-    queryKey: ['user', userId],            // userId 变 → 不同 query
-    queryFn: () => fetchUser(userId),
-    enabled: !!userId,                     // userId 还没拿到时不发请求
-  })
-  return user ? <Card user={user} /> : null
-}
+```tsx
+const { data: user } = useQuery({
+  queryKey: ['user', userId],
+  queryFn: ({ queryKey }) => fetchUser(queryKey[1]),
+  enabled: Boolean(userId),
+})
 ```
 
-两个细节：
+`enabled: false` 时 observer 不算 active。`queryKey` 里带 `userId`，切换用户会换一条 Query；旧条目仍可留在 cache，直到 `gcTime`。
 
-- `queryKey` 数组里带 `userId`——切换用户会自动拉新数据，旧数据留在 cache 里下次切回来直接用
-- `enabled: false` 期间这个 hook 完全不跑，等条件满足后再触发——做"等 A 拿到 ID 再拉 B"的依赖式查询
+### 案例 3：写后只唤醒还在看的人
 
-### 案例 3：Mutation + 自动刷新列表
-
-```jsx
-function AddTodo() {
-  const qc = useQueryClient()
-  const mut = useMutation({
-    mutationFn: addTodo,
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['todos'] })   // 标过期 + 让订阅者重拉
-    },
-  })
-  return <button onClick={() => mut.mutate({ title: '买菜' })}>加</button>
-}
+```tsx
+const qc = useQueryClient()
+const mut = useMutation({
+  mutationFn: addTodo,
+  onSuccess: () => qc.invalidateQueries({ queryKey: ['todos'] }),
+})
 ```
 
-`invalidateQueries` 不是"立刻拉"，而是"标过期 + 让正在订阅这条 key 的 observer 立刻重拉"。没人订阅的 query 只标记，下次有人订阅时再触发。
+`invalidateQueries` 先标记过期，再 `refetchQueries({ type: 'active' })`。没人订阅的 key 只留下 `isInvalidated`，下次有 observer 再拉。传入 `refetchType: 'none'` 则只标记。
 
 ## 踩过的坑
 
-1. **queryKey 数组顺序敏感**：`['user', 1]` 和 `[1, 'user']` 是**两个不同的 key**——内部 hash 用 `JSON.stringify` 加 sort object 内的字段，但**数组元素顺序不动**，写错顺序两个组件各拉一次。
-
-2. **staleTime 默认 0**：每次组件挂载都重新拉一次。开发期看起来"正常"，但用户切走再切回来你就看到一堆重复请求。**把全局默认设成至少 30s** 是几乎所有项目第一步：
-
-   ```jsx
-   new QueryClient({ defaultOptions: { queries: { staleTime: 30_000 } } })
-   ```
-
-3. **v5 的 Suspense 模式 hooks 名字不一样**：用 `useSuspenseQuery` 不是 `useQuery({ suspense: true })`——v4 的旧写法在 v5 里被删了。迁移老项目读 changelog。
-
-4. **Optimistic update 失败要手动回滚**：你在 `onMutate` 里改了 cache 让 UI 立刻变，请求失败时 `onError` 必须手动 `setQueryData` 还原——没自动备份。要么自己 snapshot 旧值，要么用 `onMutate` 返回值传给 `onError`。
+1. **把 hash 理解成“随便 stringify”**：默认 `hashKey` 会排序 **object 字段**，但 **数组顺序不变**。`['user', 1]` 和 `[1, 'user']` 是两条 Query。
+2. **默认 staleTime 是 0**：类型注释写明默认 0；`refetchOnWindowFocus` 默认 true。每次挂载或回前台，过期数据都会重拉。
+3. **v5 只有对象参数**：`useQuery(key, fn)` 会在开发态抛错。Suspense 走 `useSuspenseQuery`，它会强制 `enabled: true` 并清掉 `placeholderData`。
+4. **乐观更新没有自动备份 cache**：`onMutate` 的返回值只是 mutation `context`，会传给 `onError` / `onSettled`。`setQueryData` 要自己 snapshot，或用 context 在失败时写回。
+5. **Mutation 默认不重试**：`mutation.ts` 写的是 `retry ?? 0`，和 query 的 3 次不是同一套默认。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 任何"前端从后端拉数据"的场景——REST / GraphQL / RPC 都行（queryFn 只要返回 Promise）
-- 写操作多、需要"立刻反馈 + 失败回滚"的产品（电商加购、点赞、即时编辑）
-- 多个页面共享同一份数据（订单列表 + 侧栏 Badge + Header 计数都看 `['orders']`）
-- 跨框架：React / Vue / Solid / Svelte / Angular core 同一套，迁移技术栈不重学
+- 需要按 key 去重、失效、后台重拉的服务端状态
+- React 18/19，或同一 release 里的 Vue / Solid adapter
+- queryFn 能返回 Promise 的 REST / RPC / GraphQL 请求
 
 **不适用**：
 
-- **纯客户端状态**（modal 开关、表单 draft、动画 step）→ 用 useState / zustand
-- **WebSocket / SSE 实时流** → 用专门的 socket 库，再 `setQueryData` 把数据写进 cache 桥接
-- **强 GraphQL normalized cache 联动**（改一个 user 自动联动所有引用） → Apollo / urql 在那个领域更专业
-- 单页一次性的简单 fetch 也能用，但杀鸡用牛刀；老项目可以渐进式迁移
+- 纯客户端 UI 状态 → 用组件 state 或客户端 store
+- 需要规范化 entity 图、改一处联动全部引用 → Apollo / urql 更对口
+- 把 WebSocket 流当成 queryFn 的唯一来源 → 推送应 `setQueryData`，不要假装成一次 fetch
+- 假设所有框架包都是 5.102.6：同一 tag 里 `@tanstack/svelte-query` 是 `6.1.46`
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2019–2020 年**：Tanner Linsley 抽出 react-query（GitHub 约 2019-09，v1 约 2020-02）。当时 React 生态常用 Redux / Saga 管服务器数据，他提出"服务器状态和客户端状态是两种不同物种"
-- **2022 年 7 月**：随 v4 改名 TanStack Query，monorepo + 跨框架——Vue / Solid / Svelte 共用 query-core
-- **2023 年 10 月**：v5.0.0 发布，引入 `useSuspenseQuery`、`cacheTime`→`gcTime` 等；之后才陆续有 `staleTime: 'static'` 等增强，深度配合 React 18+
-
-核心 insight 是"前端状态分两种"——一旦你心里区分客户端状态（自己 own）和服务器状态（远端 own 的副本），代码会自然分裂成两套工具。
+- 本文绑定 `TanStack/query@714df67a...`，release tag `release-2026-08-26-1836`，`query-core` / `react-query` 均为 `5.102.6`。
+- npm 这两包没有可对照的 `gitHead`；身份以 Git tag 检出的 `package.json` 与 npm 版本一致为准。
+- `QueryClientProvider` 会 `client.mount()`，向 `focusManager`（`window.visibilitychange`）和 `onlineManager` 订阅。
+- React adapter 的 peer 是 `react: ^18 || ^19`。
+- 本文未安装依赖、运行上游测试、发送请求或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **服务器状态需要单独的引擎管**——它有缓存键、TTL、订阅、重拉、取消，硬塞进 Redux / useState 等于反复造轮子
-2. **同 key 共享、写后失效**是这套设计的两大支柱：去重靠 hash key，扇出靠 invalidate
-3. **抽象层级**：Query（一条数据） → QueryCache（所有 Query 的 Map） → QueryClient（顶层 facade） → QueryObserver（一个 useQuery 调用）。从下到上拆开看复杂度立刻下降
-4. **跨框架架构**：把核心引擎写成 framework-agnostic 的 query-core，每个框架写薄适配器——这是工具库做大做久的标准姿势
+1. **服务端状态是带 hash、TTL、订阅和取消的引擎**，不是另一个 Redux store。
+2. **去重发生在 Query 这一层**，Observer 只决定“要不要看、要不要拉”。
+3. **invalidate 先打标再按 active 重拉**，空闲条目不会被默认扇出。
+4. **跨框架共用的是 query-core**；adapter 版本号仍要逐包核对。
+
+## 应用型自测
+
+1. 两个组件同时 `useQuery({ queryKey: ['todos'], queryFn })`，会创建几条 `Query`？
+2. `invalidateQueries({ queryKey: ['todos'] })` 时，没有任何 observer 的条目会立刻 fetch 吗？
+3. 浏览器里 query 失败，固定版本默认最多再试几次？mutation 呢？
+
+检查点：
+
+1. 一条。hash 相同就复用 `QueryCache` 里的同一对象。
+2. 不会。默认 `refetchType` 是 `active`；无人订阅只留下 `isInvalidated`。
+3. query 默认最多 3 次重试；mutation 默认 0。
 
 ## 延伸阅读
 
-- 官方文档：[TanStack Query Docs](https://tanstack.com/query/latest)（example 完整、有交互 demo）
-- 博客：[TkDodo — Practical React Query](https://tkdodo.eu/blog/practical-react-query)（核心维护者写的，讲"为什么这样设计"）
-- 源码精读：`packages/query-core/src/query.ts`（一个数据条目的状态机）/ `queryCache.ts`（去重 + 订阅总线）/ `queryObserver.ts`（要不要 refetch 的决策）
-- [[react-hooks]] —— useQuery 是个 hook，理解 hook 心智模型是基础
-- [[swr]] —— 同领域 Vercel 的方案，更轻量但 mutation 弱
+- 官方文档：[TanStack Query Docs](https://tanstack.com/query/latest)
+- 固定源码：[TanStack/query](https://github.com/TanStack/query) —— 本文绑定提交 `714df67ab11c6e16666e4282dfec8654175591f7`
+- 博客：[TkDodo — Practical React Query](https://tkdodo.eu/blog/practical-react-query)
+- [[swr]] —— 同一问题的 hook / 全局事件回答
+- [[react-hooks]] —— `useQuery` 仍是 custom hook，底下却是 Observer
 
 ## 关联
 
-- [[react-hooks]] —— 基础设施，useQuery 就是个 custom hook
-- [[swr]] —— 同领域竞品，对照看 trade-off
-- [[redux]] —— 客户端状态管理；TanStack Query 不是替代 Redux，而是把服务端状态从 Redux 拿走
-- [[graphql]] —— Apollo 在 GraphQL 场景对应这一层
+- [[swr]] —— 对照：全局 Map + 事件广播 vs QueryClient + Observer
+- [[react-hooks]] —— React adapter 的宿主模型
+- [[redux]] —— 客户端状态工具；Query 拿走的是服务端副本
+- [[trpc]] —— 常用 `@trpc/react-query` 把 procedure 接到这层 cache
 
 ## 反向链接
 

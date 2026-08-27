@@ -1,14 +1,27 @@
 ---
-title: SWR — React 远程数据 hook 的极简流派
-来源: 'https://github.com/vercel/swr'
-日期: 2026-05-30
+title: SWR — 用全局 cache 和事件广播做 stale-while-revalidate
+来源: https://github.com/vercel/swr
+日期: 2026-08-27
 分类: 前端
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/vercel/swr
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 7173e55b2a175dee455612c5fa067383345c392f
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.5.1
 ---
 
 ## 是什么
 
-SWR 是一个 **React hook 库**，专门管"远程数据怎么拉、怎么缓存、什么时候重拉"。日常类比：像冰箱里的便当——你打开冰箱（render 组件），它先把昨天剩的递给你看（**stale**），同时悄悄热一份新的（**revalidate**），等热好了换上来。这就是名字 SWR 的由来：Stale-While-Revalidate，一个 HTTP 缓存策略（RFC 5861）。
+SWR 是一个 React hook 库，把远程数据做成 **先给旧值、再在后台重拉**。日常类比：打开冰箱先看见昨天的便当（stale），同时热一份新的（revalidate），热好再换上。名字来自 HTTP 的 Stale-While-Revalidate（RFC 5861）。
 
 你写：
 
@@ -16,146 +29,138 @@ SWR 是一个 **React hook 库**，专门管"远程数据怎么拉、怎么缓�
 const { data, error, isLoading } = useSWR('/api/user/1', fetcher)
 ```
 
-这一行做了五件事：发请求 / 缓存结果 / 同 key 去重 / tab 切回时自动重拉 / 组件卸载时取消订阅。整个库约 **4.3KB gzip**，体积大约是 TanStack Query（约十几 KB）的三分之一。
+固定 2.5.1 里，这一句会 `serialize` key、从模块级 `Map` cache 读快照，并用 `use-sync-external-store/shim` 订阅。同 key 的 in-flight 请求放在 `FETCH[key] = [promise, timestamp]`。不包 `SWRConfig` 也能跑，因为默认 cache 在模块作用域已经 `initCache(new Map())`。
 
 ## 为什么重要
 
-不理解 SWR，下面这些事都没法解释：
+不读这套全局表，就解释不了：
 
-- 为什么 React 里"远程数据"不能靠 `useEffect + setState` 解决（缓存、去重、tab 切回都得自己写）
-- 为什么 SWR 约 4KB 就够用，而 TanStack Query 要十多 KB——同一个问题两种哲学差在哪
-- 为什么 SWR 没有 `<Provider>` 包裹也能跑——全局 cache 是怎么"凭空"出现的
-- 为什么 `useSWRInfinite` 不是新 hook 而是一个 middleware——middleware 链是怎么把 hook 嵌套起来的
+- 为什么没有 QueryClient，两个 `useSWR(同一个 key)` 仍会去重
+- 为什么 focus / online 只在 cache provider 上挂一次，却能唤醒所有 key
+- 为什么 `useSWRImmutable` 不是新引擎，只是关掉重拉开关的 middleware
+- 为什么 `mutate(key, data)` 默认还会再打一枪网络请求
 
 ## 核心要点
 
-SWR 的设计可以拆成 **三件事**：
+固定版本可以拆成五步：
 
-1. **一个全局 Map 当 cache**：所有 useSWR 共享一张 `Map<key, value>`，没有 QueryClient 对象。类比：办公室共用的白板，谁都能贴便签谁都能看。
+1. **序列化 key**：字符串原样使用；数组和 plain object 走 `stableHash`（object 字段排序后按内容哈希）。
+2. **读 cache**：`useSyncExternalStore` 选出 `data / error / isLoading / isValidating`。
+3. **决定是否重拉**：无数据，或 `revalidateIfStale`（默认 true）为真时，mount 就会 revalidate。
+4. **去重**：`FETCH[key]` 已在且这次带 `dedupe`，就 await 同一份 promise；成功后 `dedupingInterval`（默认 2000 ms）再清标记。
+5. **全局事件**：`initCache` 监听 `document.visibilitychange`、`window` focus，以及 online/offline。每个 key 只调用 **第一个** revalidator。
 
-2. **一组事件广播器**：focus / online / 手动 mutate 三种事件，全局监听一次，向所有订阅的 key 广播。类比：消防警报响一次，每个房间自己决定要不要疏散。
+默认开关还包括 `revalidateOnFocus` / `revalidateOnReconnect` / `shouldRetryOnError` 为 true，`focusThrottleInterval` 为 5000 ms。错误重试用带抖动的指数退避，间隔默认 5 秒（慢网 10 秒）。
 
-3. **middleware = (useSWRNext) => useSWR**：扩展点是函数组合而不是配置项。`useSWRInfinite` / `useSWRImmutable` 都是 middleware 装饰出来的，不是 fork。
+## 实践示例
 
-三件事加起来叫 **hook 第一**——客户端对象（QueryClient / Observer）全部消失，状态同步靠 React 18 的 `useSyncExternalStore`。
-
-## 实践案例
-
-### 案例 1：两个组件共享同一个 key 自动去重
+### 案例 1：同 key 共用 in-flight 请求
 
 ```tsx
 function UserCard({ id }) {
   const { data } = useSWR(`/api/user/${id}`, fetcher)
   return <div>{data?.name}</div>
 }
-
 function UserBadge({ id }) {
   const { data } = useSWR(`/api/user/${id}`, fetcher)
   return <span>@{data?.login}</span>
 }
-
-function Profile({ id }) {
-  return <>
-    <UserCard id={id} />
-    <UserBadge id={id} />
-  </>
-}
 ```
 
-**逐部分解释**：
+两个 hook 得到同一字符串 key。第二个进入 `revalidate` 时，若 `FETCH[key]` 还在，就 await 同一 promise，再各自从 cache 读更新。
 
-- `UserCard` 和 `UserBadge` 同时挂载，都调 `useSWR('/api/user/42', fetcher)`——**同一个 key**
-- 同一帧内 SWR 发现该 key 已有 in-flight 请求，**只发一次**网络请求
-- 拿到数据后广播给所有订阅该 key 的组件——卡片和徽章一起更新
-
-这就是"dedupe"：不同 key（如 `/1` 与 `/2`）仍会各打一次；同 key 才合并。不必自己写 `if (loading) return` 防抖。
-
-### 案例 2：tab 切走再回来自动刷新
+### 案例 2：focus 节流
 
 ```tsx
-const { data } = useSWR('/api/dashboard', fetcher, {
-  revalidateOnFocus: true, // 默认就是 true
+useSWR('/api/dashboard', fetcher, {
+  revalidateOnFocus: true,
   focusThrottleInterval: 5000,
 })
 ```
 
-切到别的 tab 看一眼微信，5 秒后回来——SWR 自动多发一次请求拿最新数据。原理：`web-preset` 里挂了**全局** `visibilitychange` 监听器，一次广播给所有 key，每个 hook 自己决定要不要响应。把 `revalidateOnFocus` 设成 `false` 就关掉。
+这是默认值。全局 listener 广播 `FOCUS_EVENT` 后，每个 hook 自己看 `now > nextFocusRevalidatedAt` 且当前可见/在线，才 soft-revalidate。
 
-### 案例 3：写一个 logger middleware
+### 案例 3：middleware 包一层 logger
 
 ```tsx
 const logger = (useSWRNext) => (key, fetcher, config) => {
   const wrapped = async (...args) => {
-    const t0 = performance.now()
     const data = await fetcher(...args)
-    console.log(`[SWR] ${key} ${(performance.now() - t0).toFixed(1)}ms`)
+    console.log('[SWR]', key)
     return data
   }
   return useSWRNext(key, wrapped, config)
 }
 
-<SWRConfig value={{ use: [logger] }}>
+<SWRConfig value={{ use: [logger], fetcher: globalFetcher }}>
   <App />
 </SWRConfig>
 ```
 
-middleware 自己**就是一个 hook**——里面可以调 `useEffect / useRef`。这是 SWR 心脏文件能保持小巧的关键：扩展不靠加配置项，靠**函数组合**。
+`resolve-args` 把 `config.use` 接到内置 middleware 前面，**从右往左** 包一层。`useSWRImmutable` 就是把 focus / stale / reconnect / interval 全关掉的 middleware。
 
 ## 踩过的坑
 
-1. **key 不稳定会重复拉取**：传对象 `useSWR({ id: 1 })` 时每次 render 都是新对象，hash 不同 SWR 以为是新 key——要么用字符串 `` `/api/user/${id}` ``，要么用稳定引用。
-
-2. **fetcher 抛非 Error 对象时 `error.message` 是 undefined**：SWR 把 reject 值原样塞进 error 字段，`throw 'oops'` 时 `error?.message` 取不到——抛 `new Error('oops')` 实例。
-
-3. **`mutate(key, newData)` 默认会再请求一次**：你已经知道新值还多一次网络请求，乐观更新场景是浪费——传 `mutate(key, newData, { revalidate: false })`。
-
-4. **SWRConfig 的 fetcher 不强制**：每个 useSWR 都要自己传，大型应用容易忘——最外层包一个 `<SWRConfig value={{ fetcher: globalFetcher }}>` 全局兜底。
+1. **把“对象 key 每次都是新引用”说成一定换 key**：plain object / 数组按内容哈希。真正不稳定的是函数 key 抛错变空串、或非 plain object 走 WeakMap 身份。
+2. **`mutate(key, newData)` 默认会再 revalidate**：`internalMutate` 里 `revalidate !== false` 就重拉。乐观更新要写 `{ revalidate: false }`。
+3. **reject 值原样进 `error`**：`throw 'oops'` 时没有 `.message`。应抛 `Error` 实例。
+4. **fetcher 不是每个 hook 都必传**：`SWRConfig` 的 `fetcher` 会在 `resolve-args` 里兜底；没配才是 `null`，此时不会发请求。
+5. **`useSWRMutation` 默认不写回 cache**：它把 `populateCache` 设成 false。要更新对应 `useSWR` 条目，需显式打开或再 `mutate`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 中小型 React 应用的远程数据（列表 / 详情 / dashboard）
-- 想要 4KB 极简、不想学 QueryClient 那套对象模型
-- 用 Next.js / Vercel 全家桶——SWR 和 SSR `fallback` 集成得很自然
-- 想给 hook 加日志 / 重试 / 缓存包装——middleware 模式很顺手
+
+- React 16.11+ / 17 / 18 / 19 的远程列表、详情、dashboard
+- 想用 hook + middleware 扩展，而不是先建 Client 对象
+- 需要 `fallback` / `cacheData` 把 SSR 或 RSC 预取灌进同一张表
 
 **不适用**：
-- GraphQL 高度规范化数据 → 用 Apollo / urql 的 entity cache
-- 跨框架统一（Vue / Svelte / Solid 都要支持）→ 用 TanStack Query
-- 客户端状态管理（表单、UI state）→ 用 zustand / [[react-hook-form]]
-- 复杂分页 + 无限滚动的状态机 → useSWRInfinite 能写但 TQ 的 useInfiniteQuery 表达力更强
 
-## 历史小故事（可跳过）
+- 跨 Vue / Solid / Svelte 共用同一套 core → 看 [[tanstack-query]]
+- GraphQL 规范化 entity cache → Apollo / urql
+- 客户端表单或 UI draft → 不要塞进 SWR cache
+- 把“4KB / 比 Query 小三倍”当固定事实 → 本轮未测 bundle
 
-- **2019 年**：Vercel 团队（作者 Shu Ding）从 Next.js 衍生出 SWR，定位"小、Hook-only、专做 React"。
-- **2020 年**：react-query（后改名 TanStack Query）正式 1.0，走相反路线——QueryClient + Observer 的 OOP 风格。两个库同期存在，业界开始分流。
-- **2022 年**：React 18 上线 `useSyncExternalStore`，SWR 切到这个新接口，订阅模型变得更标准（之前自己 hack subscription）。
-- **2024 年**：SWR 2.x 稳定版，加 `useSWRMutation` / `useSWRSubscription` 把 POST 和 WebSocket 也拉进同一个心智模型。
+## 固定版本边界
+
+- 本文绑定 `vercel/swr@7173e55b...`，Git tag `v2.5.1` 与 npm `swr@2.5.1` 的 `gitHead` 同一提交。
+- 依赖 `dequal` 与 `use-sync-external-store`；peer 为 `react ^16.11 || ^17 || ^18 || ^19`。
+- 条件 exports 另有 `./infinite`、`./mutation`、`./immutable`、`./subscription` 和 `react-server` 入口。
+- 本文未安装依赖、运行 Jest/Playwright、发送请求或测量体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- "服务端状态是独立物种"这个判断 SWR 和 TanStack Query 都认同，但**怎么落实**走相反路线——一个 FP / 一个 OOP
-- bundle size 不是越小越好，是**和你的复杂度匹配**——SWR 4KB 服务的是"中等复杂度"区间
-- middleware = `(useSWRNext) => useSWR` 是个漂亮的 trick：扩展不靠配置项，靠函数组合
-- 全局事件广播 + 局部节流，是"内存最省 + 体感够好"的折中——前提是订阅数不超过几百
+1. **服务端状态可以没有 Client 对象**——一张 Map 加 WeakMap 里的全局表就够去重和广播。
+2. **stale-while-revalidate 是默认政策**，不是可选项的别名；关掉它才是 `useSWRImmutable`。
+3. **扩展点是函数组合**：middleware = `(useSWRNext) => useSWR`。
+4. **事件是全局的，节流是局部的**；每个 key 只让第一个 revalidator 响应广播。
+
+## 应用型自测
+
+1. 默认配置下，`mutate('/api/user', newUser)` 在写入 cache 后还会发请求吗？
+2. 两个组件订阅同一 key，focus 事件会让几个 revalidator 函数跑起来？
+3. `useSWRImmutable` 改变了引擎，还是只改了开关？
+
+检查点：
+
+1. 会。除非传入 `revalidate: false`。
+2. 一个。`revalidateAllKeys` 只调用 `revalidators[key][0]`。
+3. 只改开关：关掉 focus / stale / reconnect / interval。
 
 ## 延伸阅读
 
-- 官方文档：[swr.vercel.app](https://swr.vercel.app)（中文版有，新人入门首选）
-- 视频：[Shu Ding — SWR Internals](https://www.youtube.com/results?search_query=swr+internals+shu+ding)（作者讲设计哲学）
-- 对比文：[SWR vs TanStack Query](https://tkdodo.eu/blog/react-query-vs-swr)（TQ 维护者写，立场偏 TQ 但很公允）
-- RFC 5861：[Stale-While-Revalidate](https://datatracker.ietf.org/doc/html/rfc5861)（HTTP cache directive，SWR 名字的源头）
-- [[tanstack-query]] —— SWR 的同期对手，OOP 风格
+- 官方文档：[swr.vercel.app](https://swr.vercel.app)
+- 固定源码：[vercel/swr](https://github.com/vercel/swr) —— 本文绑定提交 `7173e55b2a175dee455612c5fa067383345c392f`
+- RFC 5861：[Stale-While-Revalidate](https://datatracker.ietf.org/doc/html/rfc5861)
+- [[tanstack-query]] —— 同一问题的 QueryClient + Observer 对照
 
 ## 关联
 
-- [[tanstack-query]] —— 同一问题的 OOP 回答，QueryClient + Observer 的对照组
-- [[react]] —— SWR 的宿主框架，依赖 React 18 useSyncExternalStore
-- [[zustand]] —— 客户端状态库，和 SWR 共用同一个 React 18 订阅接口
-- [[preact]] —— SWR 也支持 Preact（兼容层最薄的 React 替代）
-- [[react-hook-form]] —— 表单状态用它，远程数据用 SWR，互不干涉
-- [[tanstack-router]] —— 路由级别的 loader 与 SWR 配合得很好
-- [[tanstack-form]] —— 表单库的 TanStack 系，可与 SWR 同栈
+- [[tanstack-query]] —— OOP / Observer 对照组
+- [[react]] —— 宿主框架；订阅走 `useSyncExternalStore` shim
+- [[tanstack-router]] —— loader 与 SWR cache 可以并存，但不是同一层
+- [[preact]] —— 兼容层最薄的 React 替代，需单独验证 adapter
 
 ## 反向链接
 

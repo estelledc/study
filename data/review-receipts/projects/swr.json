@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "swr",
+    "digest_sha256": "a7a8a9d7219485a4863f738ed18fe851f7e19f8507c20f2d968119ccc2bf6f9a"
+  },
+  "source_revision": "7173e55b2a175dee455612c5fa067383345c392f",
+  "research_input_sha256": "a4b0e30daab3ebc2557261f12137d62ed92ff3c24110a0a84c8f8356fd8e325c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-b",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates serialize/hash, Map cache, first-revalidator events, mutate revalidate default, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-b",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "use-swr, cache, mutate, middleware, web-preset, mutation and immutable were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-b",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 2.5.1; bundle size and runtime behavior stay unverified."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}

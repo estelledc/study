@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tanstack-query",
+    "digest_sha256": "44bc8e3c69bd0f597b110aaf60696068fab3186618591f47274f024256441c60"
+  },
+  "source_revision": "714df67ab11c6e16666e4282dfec8654175591f7",
+  "research_input_sha256": "a4b0e30daab3ebc2557261f12137d62ed92ff3c24110a0a84c8f8356fd8e325c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-b",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Query hash, Observer fetch decisions, invalidate-vs-active refetch, retry defaults, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-b",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "query-core cache/observer/retryer/mutation and react-query hooks were inspected; upstream tests and requests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-b",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable 5.102.6 release commit; discloses svelte-query 6.x split and missing npm gitHead."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}

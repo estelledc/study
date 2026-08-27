@@ -13,7 +13,7 @@ sidebar:
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
-| [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | `swr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | `tanstack-query` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [SWR — 用全局 cache 和事件广播做 stale-while-revalidate](/study/projects/swr/) | `swr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [TanStack Query — 用 Observer 订阅一份服务端状态](/study/projects/tanstack-query/) | `tanstack-query` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | `tanstack-router` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | `trpc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
