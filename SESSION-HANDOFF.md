@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GK：wrangler + miniflare 静态审查
+
+- status：`running` 完成本地 writer epoch 后进入 review-ready；One PR，No merge。
+- objective：把 Cloudflare Workers 工具链双子 `wrangler` 与 `miniflare` 做成源码绑定的 study-v2 `STATIC_REVIEW` / `UNVERIFIED` 项目页。仓库原本没有这两页，按用户指定目标新建，而不是改 `partykit` 或其他 fallback。
+- scope：两页正文、2 份 generation 1 receipt、`docs/workers-runtime-source-review-20260827-gk.md`、note-index / project-standard / site-state / atlas 派生、本 handoff；1 个 gitignored `research-worktrees/workers-sdk`。未安装上游依赖、未运行 wrangler/miniflare/workerd、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-gk-20260827`。
+- detector fingerprint：`origin/main` 无 `wrangler` / `miniflare` 页；npm `wrangler@latest` 已依赖 `miniflare@5.*-alpha`。本轮绑定内部一致的稳定对 `wrangler@4.116.0` + `miniflare@4.20260730.0`，同一提交 `96fd16f0e06e82eb99001c70e4935e992e69cb87`。
+- external_outcome：review-ready change set + 用户授权的 push/PR；未 merge、未 deploy，D 轴不因 merge 提升。
+- 起始 ref：`9adc8b991`（当时的 `origin/main`）。
+- 完成切片：
+  1. `wrangler` 绑定 tag `wrangler@4.116.0`，纠正“CLI 即运行时”、顶层 `publish` 仍在、`--latest` 等于升级包、4.117+ 仍配 Miniflare 4。
+  2. `miniflare` 绑定 tag `miniflare@4.20260730.0`，纠正仍有独立 CLI、`persist: false` 等于纯内存、库自己解释 Worker。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生首页“已对齐标杆”从 79 刷新为 81。
+- acceptance_checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 review doc digest 一致，evidence state 为 `UNVERIFIED`。
+  - `git diff --check`；再跑 `STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`。
+- budget：1 个稀疏 worktree + 2 页静态源码新建 + 派生刷新；单 writer；3 切片 / 120 分钟。
+- blocker：规模 detector 在 main 已超 baseline；本 PR 未改阈值或证据布局。
+- stop_conditions：PR 已开且未获 merge 授权即停止；不绑定 5.x alpha，不改其他 Workers 页。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

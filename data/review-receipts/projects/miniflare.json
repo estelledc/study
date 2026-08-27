@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "miniflare",
+    "digest_sha256": "14ed2e78c6120b55d8f22feccddde622616efb0c31ad8939f1a4d088588c4e11"
+  },
+  "source_revision": "96fd16f0e06e82eb99001c70e4935e992e69cb87",
+  "research_input_sha256": "87d78cce7c5183c0607724b7d5beb3e386b81d83c593cf1b412b1e1a26ee83ab",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates library API from removed CLI, workerd subprocess, and persist-false temp-path semantics."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Miniflare constructor, Runtime serve/binary/experimental, PLUGIN map, persist paths, ready/dispatchFetch/setOptions; workerd was not started."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable 4.20260730.0 with wrangler 4.116.0; npm latest 5.x alpha and runtime parity remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

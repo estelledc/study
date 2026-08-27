@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "wrangler",
+    "digest_sha256": "4b002a58bc0ae91f674039f3e02db77d159aec1e157375fc4268c55a2e3fd083"
+  },
+  "source_revision": "96fd16f0e06e82eb99001c70e4935e992e69cb87",
+  "research_input_sha256": "87d78cce7c5183c0607724b7d5beb3e386b81d83c593cf1b412b1e1a26ee83ab",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates CLI from workerd, DevEnv controller graph, and the 4.117+ miniflare 5 alpha line."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected CLI registry, startDev/DevEnv, LocalRuntimeController Miniflare lifecycle, and deploy build-then-upload; CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable wrangler@4.116.0 / miniflare@4.20260730.0 same commit; npm latest and 5.x alpha remain out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}
