@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AW：Puppeteer / Cypress
+
+- supervisor 状态：writer AW epoch `complete`；用户授权 push + 一枚 PR，未授权 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：`ed1ee0803dc2d7de8207e1f7197d21a20443c8b3`。
+- objective：为缺失的 e2e 双子补齐 `puppeteer` 与 `cypress` 的 `study-v2` 静态审查页，绑定可达 revision。
+- scope：两篇新项目页、`docs/e2e-browser-source-review-20260827-aw.md`、两份 generation 1 receipt、taxonomy / atlas / 计数派生；本机 gitignored `research-worktrees/`。未改开放 PR 已占用 slug（含 `playwright`）。
+- activated_by：`explicit-user-parallel-writer-aw-2026-08-27`。
+- detector fingerprint：main 无 `puppeteer.md` / `cypress.md`；常见正文把 Puppeteer `click(selector)` 写成自动等待，并把 Cypress 命令重试与测试级 retries 混为一谈。
+- external delta 计数：本轮形成 PR，未 merge、未部署；D 轴不因本 PR 自动提升。
+- 已完成切片：
+  1. `puppeteer` 绑定 tag `puppeteer-v25.9.0` → `21efe834b7094d53a1c0d633dc69deced17702d8`（与 npm `gitHead` 一致）。写清 CDP 客户端、一次 `$()` 点击、`--headless=new`、默认 `waitUntil=['load']`、timeout 30000ms。
+  2. `cypress` 绑定 annotated tag `v15.21.1` → `979b6a213e49e5ca65c9f7f53e023331f68ad459`。披露 npm 无 `gitHead`。写清 CommandQueue / actionability、默认超时账本、`retries=0`、`cy.origin` 在 WebKit 上拒绝。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；刷新派生索引。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking；`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿。
+- budget：1 个内容切片 + 派生刷新；单 writer。
+- blocker：merge / deploy 未授权。
+- 下一次 wake 条件：owner review 本 PR，或新的显式范围。
+- 下一条命令：`gh pr view 99 --repo estelledc/study`。
+- superseded_by：`none`。
+- 不在 handoff 中复制易过期数字或 ETA。独立 agent 先读 `AGENTS.md`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

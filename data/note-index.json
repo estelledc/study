@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -39853,6 +39853,37 @@
       }
     },
     {
+      "id": "projects::cypress",
+      "area": "projects",
+      "slug": "cypress",
+      "title": "Cypress — 把测试跑进被测页的命令队列运行器",
+      "description": "把 driver 注入被测页的命令队列测试运行器，查询会重试，测试级 retries 默认关闭",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试 / 浏览器自动化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cypress/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
+      }
+    },
+    {
       "id": "projects::cytoscape-js",
       "area": "projects",
       "slug": "cytoscape-js",
@@ -56057,6 +56088,37 @@
       }
     },
     {
+      "id": "projects::puppeteer",
+      "area": "projects",
+      "slug": "puppeteer",
+      "title": "Puppeteer — 用 CDP 直接驱动 Chrome / Firefox 的浏览器客户端",
+      "description": "Chrome DevTools Protocol 客户端，负责启动浏览器并发协议动作，本身不是测试运行器",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试 / 浏览器自动化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/puppeteer/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
+      }
+    },
+    {
       "id": "projects::pyarrow",
       "area": "projects",
       "slug": "pyarrow",
@@ -65867,7 +65929,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-testing-and-verification-01/",
-      "entries": 6
+      "entries": 8
     },
     {
       "id": "topic-projects-ui-and-frontend-frameworks-01",

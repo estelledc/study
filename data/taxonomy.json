@@ -1876,6 +1876,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::cypress",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::d3",
       "topic_id": "projects-data-visualization"
     },
@@ -2310,6 +2314,10 @@
     {
       "note_id": "projects::prosemirror",
       "topic_id": "projects-editors-and-rich-text"
+    },
+    {
+      "note_id": "projects::puppeteer",
+      "topic_id": "projects-testing-and-verification"
     },
     {
       "note_id": "projects::qdrant",
