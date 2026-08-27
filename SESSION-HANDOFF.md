@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FH：magic-string + magicast 静态审查
+
+- status：writer epoch `complete`；待 push + PR。未 merge、未 deploy。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（当时 `origin/main`）。
+- objective：按调用方指定的 source-transform 双子，把 `magic-string` 与 `magicast` 建成固定源码的 `study-v2` 页；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、共享审查文档 `docs/source-transform-source-review-20260827-fh.md`、taxonomy curated assignment、公开计数与 atlas / project-standard / site-state 派生、本交接。2 个 ignored worktree。未安装上游依赖，未跑上游测试、bundle 或 sourcemap 运行验证。
+- activated_by：`explicit-user-parallel-writer-fh-2026-08-27`。
+- detector fingerprint：清单原先没有 `magic-string` / `magicast` slug；两仓小、tag 可达，按目标新建而不是改写已占用的 bundler / markdown 页。
+- external delta：本轮授权 push + 一枚 PR；未授权 merge / deploy。D 轴待 push 后计。
+- 完成切片：
+  1. `magic-string` 绑定 annotated tag `v1.2.3` → `5473bfb5138e7b7c2fc91d964c0425f57f1470ce`；修正“下标相对生成串”、`length()` 计入实例级 prepend、零宽 `overwrite` 等旧印象。
+  2. `magicast` 绑定 annotated tag `v0.5.4` → `ea6470cbfcd86156760aeca53b81c2ee1629dcee`；修正 `generate` vs `generateCode`、`writeFile` 必填 filename、`defineConfig` 走 `$args[0]`、主入口 vs `magicast/core`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate` 全绿、0 advisory；receipt digest 与固定 revision 一致，evidence 为 `UNVERIFIED`；`audit:counts` / `audit:content-contract` blocking 0 / `audit:project-standard` CURRENT / `audit:site-state` current。`verify:ci` 在 push 后跑。
+- budget：2 个小型 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值、baseline 或证据布局。
+- stop conditions：一枚 PR 打开后停止；不 merge、不 deploy、不开下一对。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`git status --short --branch`；PR 状态用 GitHub 查看。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

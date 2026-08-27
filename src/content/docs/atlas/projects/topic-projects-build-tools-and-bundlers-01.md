@@ -1,6 +1,6 @@
 ---
 title: "构建工具 / Bundler · 项目 · 第 1 组"
-description: "15 条 构建工具 / Bundler Atlas 分块"
+description: "17 条 构建工具 / Bundler Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 15 条，稳定上限为 100 条。
+本分块共 17 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -18,6 +18,8 @@ sidebar:
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | `esbuild` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | `lightningcss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | `mage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [magic-string — 按原文下标改字符串并生成 sourcemap](/study/projects/magic-string/) | `magic-string` | 中级 | UNVERIFIED | 按原文下标改字符串并生成 sourcemap |
+| [magicast — 把 JS/TS 源码当 JSON 一样改，再写回去](/study/projects/magicast/) | `magicast` | 中级 | UNVERIFIED | 把 JS/TS 源码当 JSON 一样改，再写回去 |
 | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | `nvm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oxc — 用一份 arena AST 串起 JS/TS 编译器组件](/study/projects/oxc/) | `oxc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oxlint — 编译进二进制的 JS/TS linter](/study/projects/oxlint/) | `oxlint` | intermediate | UNVERIFIED | lint-only CLI：JSON 配置可移植，JS plugin 只走 Node NAPI 入口 |
