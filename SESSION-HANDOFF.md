@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer II：escape-html + escape-goat
 
-- status：writer epoch `running` → 本地内容已齐，待 push / PR。
+- status：writer epoch `complete`；PR #292 待 review，未 merge。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
 - objective：为缺失的 HTML-escape 双子补齐 `escape-html` 与 `escape-goat` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/html-escape-source-review-20260827-ii.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
@@ -15,12 +15,18 @@
   1. `escape-html` 绑定 tag `v1.0.3` → `7ac2ea3977fcac3d4c5be8d2a037812820c65f28`，与 npm `gitHead` 一致。
   2. `escape-goat` 绑定 tag `v4.0.0` → `d4a65160f9dfd2ca17b5e1c19811d1f6cb9c786f`，与 npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，公开项目数 967 → 969，笔记总数 2050 → 2052。
-- acceptance checks：定向 quality-gate / content-contract / counts / site-state / wikilinks 已绿；`verify:ci` 在首个 commit 之后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
-- stop conditions：本 epoch 完成后不得继续发明下一对；不得 merge。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/292 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
