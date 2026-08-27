@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "itty-router",
+    "digest_sha256": "39c724b780d058aa91fdbaff480b40c982089d33df166d30ee0bf85fe16950ca"
+  },
+  "source_revision": "ec4264f429c04e5f2a40a5b5466b9414254601d1",
+  "research_input_sha256": "a0239313873cd33ca39812a29da5d28a0f472c40f6e4395f4c10d60cb01f6071",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Proxy method table, linear regex scan, first non-null return, and IttyRouter undefined miss."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "IttyRouter/Router/AutoRouter, greedy :name+, cors OPTIONS 204, and npm gitHead vs v5.0.24 tag were inspected; tests not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Tag v5.0.24 is a version-only commit above npm gitHead; bundle and runtime benchmarks remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}

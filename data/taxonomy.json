@@ -1968,6 +1968,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::find-my-way",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
     },
@@ -2014,6 +2018,10 @@
     {
       "note_id": "projects::inngest",
       "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::itty-router",
+      "topic_id": "projects-web-frameworks"
     },
     {
       "note_id": "projects::jaeger",

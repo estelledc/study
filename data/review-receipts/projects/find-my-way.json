@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "find-my-way",
+    "digest_sha256": "58cbd298a3f17daf212e3047872add45c6cd15ee421cbe1b95079de29565f9a5"
+  },
+  "source_revision": "31aa3ae9c26a898d3f478c6bbfcd079ab85d1b99",
+  "research_input_sha256": "a0239313873cd33ca39812a29da5d28a0f472c40f6e4395f4c10d60cb01f6071",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates per-method radix trees, no HEAD-to-GET remap, optional-param duplication, and 404 defaultRoute."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "on/lookup/find, getNextNode order, maxParamLength, and constraints storage were inspected; borp/bench not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 9.9.0; advertised router-benchmark numbers remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}

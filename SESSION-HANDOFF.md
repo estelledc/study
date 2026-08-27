@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HC：itty-router + find-my-way
+
+- supervisor 状态：writer epoch `complete`；本地 review-ready change set 待 PR review。未 merge、未 deploy。
+- 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
+- objective：为缺失的 HTTP-router 双子补齐 `itty-router` 与 `find-my-way` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/http-router-source-review-20260827-hc.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-hc-2026-08-27`。
+- detector fingerprint：目录无 `itty-router.md` / `find-my-way.md`；已开 PR 占用 `h3`/`listhen`/`radix3`/`rou3`，且禁止与 express 已开页重叠。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `itty-router` 绑定 annotated tag `v5.0.24` → `ec4264f429c04e5f2a40a5b5466b9414254601d1`；披露 npm `gitHead` 为父提交 `dbf8bffa...`，相对 tag 只改版本号。
+  2. `find-my-way` 绑定 `v9.9.0` → `31aa3ae9c26a898d3f478c6bbfcd079ab85d1b99`，tag / package / npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 quality-gate 全过、0 advisory；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` 定向通过。实时数量以命令为准，不在 handoff 中复制易过期数字或 ETA。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
