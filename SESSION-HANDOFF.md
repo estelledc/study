@@ -4,23 +4,24 @@
 
 ## 2026-08-27 平行 writer FI：bat + bottom
 
-- status：`running`；writer epoch 本地完成，准备 push + 一份 PR。
-- 起始 ref：`1f2917d90`（checkout 时的 `origin/main`）。
-- objective：把 assigned pair `bat` + `bottom` 从 `needs-evidence` 迁到源码绑定标准。
-- scope：两页正文、2 份 generation 1 receipt、`docs/rust-cli-source-review-20260827-fi.md`、由本轮验证驱动的派生 snapshot / site-state / note-index、本 handoff；2 个 gitignored sparse worktree。未编译运行上游，未测吞吐或占用。
-- activated_by：`explicit-user-parallel-writer-fi-2026-08-27`。
-- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 bat git gutter 写成 `+`/`-`/`~`，把 bottom 写成无 GPU，并含未绑定 star / CPU% / 倍数断言。
-- external_outcome：一份 PR（用户授权 push+PR）；未 merge、未 deploy。派生索引冲突不是本 writer 的 merge 任务。
+- status：`running`；writer epoch 在修 CI。未把本 PR merge 进 main，未 force-push main，未 deploy。
+- 起始 ref：`1f2917d90`；本切片已 `merge origin/main` `9adc8b991`（#76/#78/#80），不 rebase。
+- objective：保持 `bat` + `bottom` 源码绑定，并让派生 site-state 与 PR merge 树一致，消除 `site-state check mode detects stale tracked artifacts`。
+- scope：接入已合入 main 的派生索引后重跑 `regen-atlas` / `audit-project-standard --write` / `generate:site-state`；更新本交接。未改其他 writer 的项目正文，未开新研究双子。
+- activated_by：PR #212 CI 失败（run `33061963068`，`data/site-state.json` 与 merge 树上的 content-contract 计数不一致）。
+- detector fingerprint：`runSiteState({write:false}).stale` 含 `data/site-state.json`；首页 SITE_STATE 块未 stale。根因是 GitHub `pull_request` 检出 merge 树，而本分支仍按 `1f2917d90+2` 计数。
+- external_outcome：更新已有 PR #212；未 merge、未 deploy。
 - 完成切片：
-  1. `bat` 绑定 tag `v0.26.1` → `979ba22628bc9d8171f2cffca2bd5c90c9fc0a9e`；修正 index↔workdir gutter、TTY 分页 / `-p`/`-pp`、默认主题分 Dark/Light。
-  2. `bottom` 绑定 tag `0.14.9` → `e22236a928eeb876b2ccaad2f3d1ce5f6450281a`；修正默认 GPU feature、chunked 时间序列、刷新 1000ms/下限 250ms、杀进程对话框。
-  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance_checks：两页 `quality-gate` 全绿、0 advisory；receipt digest 与正文一致，`evidence_state=UNVERIFIED`；`git diff --check` 通过。
-- budget：2 页 / 1 个可写切片；未开下一 epoch。
+  1. `bat` 绑定 tag `v0.26.1` → `979ba22628bc9d8171f2cffca2bd5c90c9fc0a9e`。
+  2. `bottom` 绑定 tag `0.14.9` → `e22236a928eeb876b2ccaad2f3d1ce5f6450281a`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+  4. `merge origin/main` 后重生成派生索引；`bat`/`bottom` 与已合入的 bun/deno/electron/tauri/nestjs/koa 同为 `benchmark-aligned`。
+- 验证结果：`audit:site-state` current；`audit:project-standard` CURRENT；两页 `quality-gate` 全绿、0 advisory；`derive-site-state.test.mjs` 3/3；`git diff --check` 通过。计数以这些命令为准。
+- budget：第 3/3 切片（接入 main + 派生重生成）；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值。
-- stop_conditions：两页独立验收后结束 writer；merge 与 deploy 需单独授权。
-- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`git status --short --branch`；PR 状态用 GitHub 查看。
+- stop_conditions：本切片 push 后等待 #212 CI；不执行 squash / merge / deploy，不开下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI/review 再变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr checks 212`。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移

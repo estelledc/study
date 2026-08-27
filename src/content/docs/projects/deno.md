@@ -1,147 +1,173 @@
 ---
-title: Deno — 安全优先的 TypeScript/JavaScript 运行时
+title: Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时
 来源: https://github.com/denoland/deno
 日期: 2026-07-08
 分类: 运行时
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/denoland/deno
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 17fadf33a8df3af9488b9f42efd1f2290d6dc7a3
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.9.5
 ---
 
 ## 是什么
 
-Deno 是一个把安全、标准兼容和 TypeScript 支持放在一起的运行时。
+Deno 2.9.5 是一个默认把危险能力收起来的 JS/TS/Wasm 运行时。日常类比：厨房刀具默认锁在抽屉里，你要写明「这把刀只能切这根胡萝卜」。
 
-日常类比：你在厨房做饭，Deno 像默认把刀叉收起来并贴上警示贴，
-你必须明确告诉它“这个工具能用到哪”。
+固定 tag `v2.9.5` 的进程入口是 `cli/main.rs` → `deno::main()`。默认引擎 feature 是 **V8**（`deno_v8` facade）；Cargo 里另有 `quickjs` feature，但不是默认构建。工具链钉在 `rust-toolchain.toml` 的 `1.95.0`。
 
-它的目标不是“取代 Node”，而是把很多默认行为改成更清晰可控。
-在 Deno 中，权限模型是显式开启的：网络、文件、环境变量都可以被限制。
+最小 HTTP 服务不再走 `https://deno.land/std@0.224.0/http/server.ts`。固定源码的一等入口是内置 `Deno.serve`：
+
+```ts
+Deno.serve((_req: Request) => {
+  return new Response("Hello, world!");
+});
+```
+
+未写选项时，`ext/http/00_serve.ts` 把 `hostname` 设成 `"0.0.0.0"`、`port` 设成 `8000`。
 
 ## 为什么重要
 
-- 默认安全边界把“脚本能做什么”讲清楚，尤其适合多项目团队。
-- 官方 TypeScript 支持让脚本和服务端代码协作更省心。
-- 兼容 Web 标准 API 可以减少在浏览器与服务端之间来回转换心智。
-- Deno 2 开始认真补齐 npm / Node 兼容，让“安全默认值”和“现实生态”能同时谈。
+不读固定 2.9.5，旧笔记会漏掉三道已经写进 CLI 的边界：
 
-很多项目最早采用 Node，不是因为它坏，而是因为历史惯性。
-Deno 更像一次“默认行为重塑”。
+- 权限不只是 `--allow-net` / `--allow-read`，还有 `--allow-import`、`--allow-sys`、`--allow-ffi` 和一整组 `--deny-*`
+- `deno serve` 会**暗示** `--allow-net=host:port`，和 `deno run` 的默认拒绝不是同一条路
+- Deno 2 认真做 npm / JSR / `node_modules`，不能再把「只靠 URL 导入」当成唯一模块合同
 
-## 核心要点
+它和 [[bun]] 的对照正好相反：Bun 默认让脚本能做事；Deno 默认先问。
 
-1. **运行时内建 TypeScript**
+## 架构与权限流程
 
-- 你不再依赖额外构建器链去跑 `.ts` 文件（在标准场景下）。
-- 类型检查与运行机制更早被纳入默认流程。
-- 对初学者有好处：更少“工具链魔法”，更高可预期。
-- 类比：像买来就装好尺子的工作台，不用先搭一套测量工具才能开工。
+从命令行到用户 handler，固定源码可以拆成五步：
 
-2. **权限模型（Permissions）**
+1. **解析旗标**：`cli/args/flags.rs` 得到 `Flags` + `DenoSubcommand`。`run`、`serve`、`task`、`install`、`add`、`test`、`lint`、`fmt`、`compile` 都在 `cli/lib.rs` 的 `run_subcommand` 里分发。
 
-- 所有潜在危险能力都可通过 `--allow-net`、`--allow-read` 等显式授权。
-- 这对安全审计很友好，日志和部署文档也更容易写。
-- 在 CI 或生产里，权限白名单比“默认信任”更适合长期维护。
-- 类比：像门禁卡，员工默认进不了仓库；需要仓库权限时才给那一扇门。
+2. **构造权限**：`Permissions` 有八个 unary 域——`read` / `write` / `net` / `env` / `sys` / `run` / `ffi` / `import`。`PermissionState` 默认是 **`Prompt`**（不是 Granted）。`--allow-all`/`-A` 一次放开；`--no-prompt`（或 `DENO_NO_PROMPT`）把未授权变成直接抛错。
 
-3. **标准模块 URL 导入**
+3. **启动 worker**：`runtime/worker.rs` 用 `PermissionsContainer` + `JsRuntime` 装扩展。`runtime/lib.rs` 再导出 `deno_fetch`、`deno_http`、`deno_kv`、`deno_node`、`deno_ffi` 等。
 
-- 你可以直接从 URL 导入模块，减少传统 package-lock 的一部分依赖压力。
-- 但这也要求你管理 URL 漂移与缓存策略。
-- 在内部系统里，企业通常会加 registry 或锁文件。
-- 类比：像从网上打印菜谱做饭，方便，但必须确认网址、版本和备份。
+4. **接请求**：`Deno.serve` 或 `deno serve` 进入 `ext/http`。`DENO_SERVE_ADDRESS` 可以改成 TCP / unix / vsock / tunnel；自动压缩只在 `DENO_SERVE_AUTOMATIC_COMPRESSION` 为真时打开，缺省关闭。
 
-## 实践案例
+5. **解析依赖**：URL、`jsr:`、`npm:`、以及 workspace 的 `NodeModulesDirMode`。`deno add express` 无前缀时会补 `npm:`。lockfile 由 `deno_resolver::lockfile` 管理。
 
-### 案例 1：最小 HTTP API
+## 实践示例
+
+### 案例 1：内置 `Deno.serve`，不要再粘旧 std URL
 
 ```ts
-import { serve } from 'https://deno.land/std@0.224.0/http/server.ts'
-
-serve((req) => {
-  const url = new URL(req.url)
-  return new Response(`你访问了 ${url.pathname}`)
-}, { port: 8080 })
+Deno.serve({ hostname: "127.0.0.1", port: 8080 }, (req) => {
+  const url = new URL(req.url);
+  return new Response(`path=${url.pathname}`);
+});
 ```
-
-- 这是理解标准 API 的最好起点：不额外引入框架。
-- 把权限限制和 CORS 放在同一入口，安全边界最清晰。
-- 第 1 行从标准库拿 `serve`，第 3 行把请求 URL 解析出来。
-- 真正运行时要加 `--allow-net=0.0.0.0:8080` 或指定域名，否则网络监听会被权限系统拦住。
-
-### 案例 2：文件受限的批处理脚本
-
-```ts
-const text = await Deno.readTextFile('./data.csv')
-console.log(text.slice(0, 120))
-```
-
-- 运行时要带 `--allow-read=./data.csv` 才能通过。
-- 它让数据处理脚本的权限语义在命令行里一眼可见。
-- 如果脚本后来要写结果文件，再单独加 `--allow-write=./out.csv`，不要直接给整个目录读写。
-
-### 案例 3：定时脚本 + task 调度
 
 ```sh
-deno run --allow-net=api.internal.example.com scheduler.ts
+deno run --allow-net=127.0.0.1:8080 server.ts
 ```
 
-- 与 cron/CI 联动时，优先把入口命令写进 `deno task`，让同事不用记参数。
-- `--allow-net=api.internal.example.com` 只允许访问这个内部 API，脚本碰别的域名会直接失败。
-- 避免“明天同一 URL 导入变了版本”导致环境漂移：提交 `deno.lock`，并在 CI 里用锁文件校验。
+handler 可以是第一参数，也可以放进 `options.handler`。只写函数、不写 options 时，监听 `0.0.0.0:8000`。若设置了 `DENO_SERVE_ADDRESS`，第一次 `Deno.serve` 会吃掉这次覆盖。
+
+### 案例 2：文件权限按路径收，不要 `-A`
+
+```ts
+const text = await Deno.readTextFile("./data.csv");
+console.log(text.slice(0, 120));
+```
+
+```sh
+deno run --allow-read=./data.csv script.ts
+```
+
+读是 `--allow-read`/`-R`，写是 `--allow-write`/`-W`，可以带路径列表。本地调试用 `-A` 等于关掉默认拒绝；生产要把能力写进命令或 `deno.json` 的 `--permission-set`/`-P`。
+
+### 案例 3：`deno serve` 与 `deno run` 的权限差
+
+```sh
+deno serve --port=8000 server.ts
+deno task start
+```
+
+`serve_parse` 默认 `port=8000`、`host=0.0.0.0`，并注释「implies `--allow-net=host:port`」。另有 `--parallel`、`--open`、`--tunnel`。不要假设 `deno serve` 还要你手写一遍同样的 `--allow-net`，也不要把这个暗示套到普通 `deno run` 上。
+
+`--allow-import`/`-I` 管**远程模块下载**，帮助文本给出的默认主机是 `deno.land:443`、`jsr.io:443`、`esm.sh:443`、`raw.esm.sh:443`、`cdn.jsdelivr.net:443`、`raw.githubusercontent.com:443`、`gist.githubusercontent.com:443`。访问其他 registry 要显式加名单。
 
 ## 踩过的坑
 
-1. **把 URL 导入当永久不变**：第三方链接变更会导致构建意外崩，生产项目要锁版本并缓存依赖。
-2. **忘记权限收紧**：本地调试常用 `-A`，上线还这样跑就等于关掉 Deno 的最大优势。
-3. **把 npm 兼容当万能**：有些包默认读取 `process.env`、写临时目录或依赖原生扩展，迁移时要逐个验证。
-4. **生产部署忽略冷启动**：边缘函数或短任务要提前测试依赖加载时间，必要时 bundle 成单文件。
-5. **Deno 版本混用**：1.x 与 2.x 的 npm 兼容、配置默认值不同，团队要固定工具链版本。
+1. **继续 `import { serve } from "https://deno.land/std@0.224.0/http/server.ts"`**：2.9.5 的一等 API 是 `Deno.serve`。旧 std 路径会把读者锁在过期模块图上。
+
+2. **把 `-A` 带进生产**：默认状态是 Prompt。`-A` 与 `--allow-all` 一次授予全部八域，包括 `ffi` 和 `run`。
+
+3. **以为 `deno serve` 和 `deno run` 权限相同**：`serve` 会按 host:port 暗示网络许可；`run` 不会。
+
+4. **忽略 `--allow-import`**：能读本地文件不等于能拉远程模块。默认 import 允许名单不含任意 GitHub raw 以外的私有源。
+
+5. **把 `deno bundle` 当稳定产品**：`run_subcommand` 对 `Bundle` 打印 experimental 警告。打包合同随时会变。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 1-20 人维护的内部服务、脚本化平台、边缘函数项目。
-- TypeScript 原生体验优先，且愿意接受 Deno 约束的工程。
-- 需要清晰权限边界的安全敏感服务，例如只读文件、只访问单个 API 的自动化脚本。
-- 新项目或边缘项目，依赖包数量少于几十个，迁移成本可控。
+
+- 脚本、内部服务、边缘函数：需要把读文件、出网、起子进程写进命令行
+- TypeScript 直接跑、同时要 lockfile / JSR / npm 的新项目
+- 想用 Web 标准 `Request`/`Response`，并接受 Deno 的权限提示
 
 **不适用**：
-- 现有项目和大量传统 Node 专属依赖深度绑定，尤其依赖 native addon。
-- 对生态成熟度和文档习惯性强依赖的超大组织，培训成本可能超过收益。
-- 长期不允许改变导入策略的生产环境，例如所有依赖都必须来自内网 npm registry。
-- 追求最成熟招聘市场和最大库生态的团队，[[nodejs]] 仍是低风险选择。
 
-## 历史小故事（可跳过）
+- 深度绑定 Node native addon、或必须完全按 Node 默认「什么都能做」
+- 团队不允许改导入策略、只能走内网 npm registry，又不愿维护 `--allow-import`
+- 需要实验性 `deno bundle` 当唯一生产打包器
+- 把招聘市场和现有 Node 运维生态当作硬约束时，[[node-js]] 仍是更低风险的默认
 
-- **2009 年**：Ryan Dahl 发布 Node.js，让 JavaScript 第一次大规模跑进服务端。
-- **2018 年**：他在演讲里总结 Node 早年遗憾，包括权限、包管理和构建默认值。
-- **2020 年**：Deno 1.0 发布，主打默认安全、TypeScript 内建和 Web 标准 API。
-- **2024 年**：Deno 2.0 加强 npm / Node 兼容，路线从“另起炉灶”转向“更安全的现实替代”。
+## 固定版本边界
+
+- 本文绑定 `denoland/deno@17fadf33a8df3af9488b9f42efd1f2290d6dc7a3`，tag 与 `cli/Cargo.toml` 均为 `2.9.5`。
+- 默认构建是 V8；`quickjs` 只是 Cargo feature，不能当成发行版引擎。
+- `deno bundle` 在该 revision 标为 experimental。
+- 本文未安装 Deno、未跑权限提示、未启动 HTTP、未测冷启动，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. 默认安全不是限制开发，而是减少系统盲区的第一道门。
-2. 运行时设计应考虑“权限最小化”，不是“能做就做”。
-3. URL 导入适合实验和模块共享，但生产需配套锁定策略。
-4. 工具链越“开箱即用”，工程规范越要提前定义。
+1. **默认拒绝是状态机，不是口号**——八个 unary 权限，默认 `Prompt`，deny 与 allow 成对出现。
+2. **`Deno.serve` 和 `deno serve` 是两层**——JS API 默认 `0.0.0.0:8000`；CLI 还会暗示 `--allow-net`。
+3. **远程导入是单独许可**——`--allow-import` 的默认主机名单比「能上网」窄得多。
+4. **Deno 2 的模块故事是 JSR + npm + lockfile**——不能再只用 2020 年的 URL 导入解释它。
+
+## 应用型自测
+
+1. 不传 options 时，`Deno.serve(handler)` 默认监听哪个地址和端口？
+2. `PermissionState` 的默认值是 Granted 还是 Prompt？
+3. `deno serve --port=8000 server.ts` 是否还要再写一遍 `--allow-net=0.0.0.0:8000` 才能监听？
+
+检查点：
+
+1. `0.0.0.0:8000`（可被 `DENO_SERVE_ADDRESS` 覆盖）。
+2. `Prompt`。未授权时先问；`--no-prompt` 则直接拒绝。
+3. 不必按 `run` 那样手写。`serve_parse` 暗示 `--allow-net=host:port`。普通 `deno run` 没有这条暗示。
 
 ## 延伸阅读
 
-- 官方首页：[Deno Docs](https://deno.land/manual)
-- Deno Deploy：边缘部署与运行时一致性
-- Deno 1.0 到 2.0 的迁移文档
-- Deno by Example：用短代码理解权限、HTTP、KV 和 task
-- Node compatibility 文档：判断 npm 包能否直接迁移
-- 同类对比：[[nodejs]] —— 共同背景下的不同设计选择
+- 文档：[docs.deno.com](https://docs.deno.com/runtime/manual)
+- 固定源码：[denoland/deno](https://github.com/denoland/deno) —— 本文绑定 `17fadf33a8df3af9488b9f42efd1f2290d6dc7a3`
+- 权限说明：[docs.deno.com/go/permissions](https://docs.deno.com/go/permissions)
+- [[bun]] —— 单二进制、默认放开能力的对照
+- [[node-js]] —— 权限模型与模块解析的历史基线
 
 ## 关联
 
-- [[javascript]] —— 运行时语义源自 JS 标准演进
-- [[typescript]] —— 类型优先开发的工程约束
-- [[runtime]] —— Runtime 与应用安全边界
-- [[permissions]] —— 权限最小化思想的实践场景
-- [[web-standard]] —— Web 标准 API 在服务端的衍生
-- [[nodejs]] —— 相似生态下的 API 迁移路径
-- [[bun]] —— 另一路 runtime 性能与兼容性竞争方向
+- [[bun]] —— 同赛道运行时；默认能力与引擎选择相反
+- [[node-js]] —— npm / `node:` 兼容要对照的平台
+- [[hono]] —— 可在 Deno 上跑的多运行时框架
+- [[javascript]] —— 运行时语义仍来自 JS 标准
+- [[typescript]] —— 类型检查与「能跑 `.ts`」不是同一件事
 
 ## 反向链接
 
@@ -151,11 +177,3 @@ deno run --allow-net=api.internal.example.com scheduler.ts
 - [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
 - [[tauri]] —— Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用
 - [[wasmer]] —— Wasmer — 把 wasm 当成轻量容器到处跑
-
-## 补充小结（可跳过）
-
-- 模块版本要固定，尤其是通过 URL 导入时建议与 repo 锁文件联动。
-- 权限默认值务必保持最小化，再在部署阶段逐步放开。
-- 生产排障时，先看标准输出与权限日志，很多问题不在代码而在运行参数。
-- 边缘部署要把超时、重试和降级路径写进 runbook，别把故障抛给调用方。
-- 结合版本管理和 CI 预热机制可以把 "某天 URL 不可访问" 导致的环境问题提前暴露。
