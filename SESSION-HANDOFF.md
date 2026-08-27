@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HF：path-to-regexp + route-recognizer
+
+- status：writer epoch `complete`；PR #278 已开；本地 `verify:ci` 全绿；未 squash / 未 merge / 未 deploy。
+- 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`，#79）。
+- objective：为缺失的 route-match 双子补齐 `path-to-regexp` 与 `route-recognizer` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/route-match-source-review-20260827-hf.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-hf-2026-08-27`。
+- detector fingerprint：目录无 `path-to-regexp.md` / `route-recognizer.md`；开放 PR 未占用这两个 slug；禁止回退到 `radix3` / `rou3` / `itty-router` / `find-my-way`。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `path-to-regexp` 绑定源码 tag `v8.4.2` → `cbf30259e6d34d6135f9e7dbaa3371e7188f9936`；tag / package / npm `gitHead` 一致。
+  2. `route-recognizer` 绑定 `v0.3.4` → `6832b404a3095fbed0caf97a2fa4cf7fe5e0ffa8`；tag / package / npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 83 → 85，公开项目数 966 → 968。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、154 v2。
+  - `audit:counts` / `audit:site-state`：projects=968、papers=1083、total=2051。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，388 Node tests、strict build 2292 HTML、23 Playwright a11y。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review https://github.com/estelledc/study/pull/278，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/278 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -54437,6 +54437,37 @@
       }
     },
     {
+      "id": "projects::path-to-regexp",
+      "area": "projects",
+      "slug": "path-to-regexp",
+      "title": "path-to-regexp — 把路径模板编成正则再匹配或反编译",
+      "description": "介绍 path-to-regexp 8.4.2 如何把 :param、*wildcard 与花括号可选段编成正则，并反向 compile 回路径。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "路由匹配"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/path-to-regexp/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
       "id": "projects::pcl",
       "area": "projects",
       "slug": "pcl",
@@ -57791,6 +57822,37 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::route-recognizer",
+      "area": "projects",
+      "slug": "route-recognizer",
+      "title": "route-recognizer — 把多条路由编进 NFA 再选出最静态的一条",
+      "description": "介绍 route-recognizer 0.3.4 如何用静态 / 动态 / 星段状态机识别路径，并按最少星段排序。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "路由匹配"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/route-recognizer/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
       }
     },
     {
@@ -65658,7 +65720,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/",
-      "entries": 4
+      "entries": 6
     },
     {
       "id": "topic-projects-data-science-and-ai-01",
