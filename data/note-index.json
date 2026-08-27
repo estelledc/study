@@ -50289,7 +50289,7 @@
       "id": "projects::meilisearch",
       "area": "projects",
       "slug": "meilisearch",
-      "title": "MeiliSearch — 开发者友好的搜索引擎",
+      "title": "Meilisearch — 开发者友好的即时搜索引擎",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -50302,13 +50302,13 @@
         "raw_category": "数据库 / 搜索"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/meilisearch/",
       "atlas": {
@@ -62323,7 +62323,7 @@
       "id": "projects::typesense",
       "area": "projects",
       "slug": "typesense",
-      "title": "Typesense — 高性能搜索引擎",
+      "title": "Typesense — schema-first 的自托管即时搜索",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -62336,13 +62336,13 @@
         "raw_category": "数据库 / 搜索"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/typesense/",
       "atlas": {
