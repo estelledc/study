@@ -4,8 +4,8 @@
   "summary": {
     "total": 963,
     "by_status": {
-      "benchmark-aligned": 69,
-      "needs-evidence": 894
+      "benchmark-aligned": 71,
+      "needs-evidence": 892
     }
   },
   "projects": [
@@ -15369,27 +15369,23 @@
     },
     {
       "slug": "pixi",
-      "title": "PixiJS — 浏览器里画 2D 的高性能 GPU 引擎",
+      "title": "PixiJS — 浏览器 2D 场景图与多后端渲染器",
       "source": "https://github.com/pixijs/pixijs",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "planck",
@@ -20180,27 +20176,23 @@
     },
     {
       "slug": "threejs",
-      "title": "Three.js — 轻量 3D 渲染引擎",
+      "title": "Three.js — 浏览器 3D 场景图与 WebGL2 渲染器",
       "source": "https://github.com/mrdoob/three.js",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "thrift",
