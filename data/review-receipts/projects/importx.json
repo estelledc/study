@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "importx",
+    "digest_sha256": "886d918fb4ce0a30fc2df3bdadcade2ca11f81694d03d18eb540a7f1db966949"
+  },
+  "source_revision": "18c23bab2652d034e32c0f77b228d1b38a14b3d8",
+  "research_input_sha256": "5cdae29b860d3457adf70c4b33061012a52af6f4b07811e472f680018362ba9c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates auto matrix order, cache/native incompatibility, tsx Node gate versus README, and default jiti fallback."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "import/detect/jiti/tsx loaders were inspected; vitest matrix and loader timings were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v0.5.2 and npm gitHead agree on antfu-collective/importx; README v0.4.4 matrix is disclosed as stale generated text."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

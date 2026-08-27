@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FV：jiti + importx 静态审查
+
+- status：`running` → writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`51448afbec7839b2fe4e8c5d0fb936edbee7e816`（当时 `origin/main`）。
+- objective：为尚不存在的 TS loader 双子 `jiti` 与 `importx` 建立源码绑定的 `study-v2` 页；evidence 为 `STATIC_REVIEW` / `STATIC_ANALYSIS`，验证状态保持 `UNVERIFIED`。
+- scope：两页新正文、2 份 generation 1 receipt、`docs/ts-loader-source-review-20260827-fv.md`、派生 atlas / note-index / project-standard / site-state / 公开计数、本 handoff；2 个 gitignored worktree。未改候选队列、政策阈值、既有笔记正文、未安装上游依赖、未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-fv-2026-08-27`（Target jiti/importx；Doc `*-20260827-fv.md`；One PR；No merge）。
+- detector fingerprint：仓库无 `jiti` / `importx` 页；两仓可固定到内部一致的 annotated tag + npm `gitHead`。
+- external delta：用户授权 push + 开 PR；未授权 merge / deploy。D 轴在 merge 前不提升。
+- 完成切片：
+  1. `jiti` 绑定 `unjs/jiti@fd3bb289...` / annotated `v2.7.0` / npm `2.7.0`。
+  2. `importx` 绑定 `antfu-collective/importx@18c23bab...` / annotated `v0.5.2` / npm `0.5.2`（`antfu/importx` 301 到 collective）。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；派生刷新。
+- acceptance checks：两页 quality-gate 全绿、0 advisory；receipt evidence_state=`UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` CURRENT；`audit:counts` / `audit:site-state` 与当前文件一致。`verify:ci` 在 push 后补跑。
+- budget：1 个可写切片；未改用 fallback TS-loader 对。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一 PR 已开且未 merge 后停止；不开启下一对。
+- 下一次 wake 条件：本 PR 的 CI/review，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=51448afbec7839b2fe4e8c5d0fb936edbee7e816 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
