@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer HU：k6 + locust
 
-- status：writer epoch `running` → 本地切片完成，待 push / PR；未 merge、未 deploy。
+- status：writer epoch `complete`；PR https://github.com/estelledc/study/pull/294 待 review；未 merge、未 deploy。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
 - objective：把 `needs-evidence` 的负载测试双子 `k6` 与 `locust` 迁到绑定可达固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` 页。
 - scope：两篇既有项目页、共享审查文档 `docs/load-test-source-review-20260827-hu.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译 k6、未安装 Locust 依赖、未发真实负载。
@@ -20,12 +20,15 @@
   - 两份 receipt：`verifyReceiptAgainstNote` ok，`evidence_state=UNVERIFIED`。
   - `audit:content-contract`：0 blocking。
   - `audit:counts` / `audit:site-state` / `audit:project-standard`：以这些命令为准，未手改计数。
+  - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿。
+  - PR：https://github.com/estelledc/study/pull/294
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 只交付这一对；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：对本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/294 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
