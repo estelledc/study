@@ -4,8 +4,8 @@
   "summary": {
     "total": 963,
     "by_status": {
-      "benchmark-aligned": 63,
-      "needs-evidence": 900
+      "benchmark-aligned": 65,
+      "needs-evidence": 898
     }
   },
   "projects": [
@@ -12491,26 +12491,22 @@
     {
       "slug": "mobx",
       "title": "MobX — 让 state 像电子表格一样自动重算",
-      "source": "https://mobx.js.org",
-      "status": "needs-evidence",
+      "source": "https://github.com/mobxjs/mobx",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "moby",
@@ -22376,25 +22372,21 @@
       "slug": "xstate",
       "title": "XState — 把状态画成图，让矛盾写不出来",
       "source": "https://github.com/statelyai/xstate",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "yargs",
