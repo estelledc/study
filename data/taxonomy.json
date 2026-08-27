@@ -1944,6 +1944,10 @@
       "topic_id": "projects-terminal-tools"
     },
     {
+      "note_id": "projects::eventemitter3",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::esbuild",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -2157,6 +2161,10 @@
     },
     {
       "note_id": "projects::minisearch",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::mitt",
       "topic_id": "projects-infrastructure-utilities"
     },
     {

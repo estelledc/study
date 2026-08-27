@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EG event-bus epoch
+
+- status：`running` → writer epoch `complete`；supervisor 保持观察，不 merge。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（当时 `origin/main`）。
+- objective：把 event-bus 双子 `mitt` 与 `eventemitter3` 绑到可达静态 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享源码审查文档、两份 generation 1 receipt、taxonomy / atlas / note-index / project-standard / site-state 与公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未运行上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-eg-2026-08-27`。
+- detector fingerprint：`origin/main` 无 mitt / eventemitter3 项目页；两仓 GitHub tag 与 npm `gitHead` 均可唯一对齐。
+- external delta：用户授权本轮 push + 单 PR；未 merge、未 deploy，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `mitt` 绑定 `developit/mitt@b240473b...` / `mitt@3.0.1`（tag 与 npm `gitHead` 一致），记录 Map 存储、`off` 空数组、`slice` 后派发与 `*` wildcard 顺序。
+  2. `eventemitter3` 绑定 `primus/eventemitter3@b0144e94...` / `eventemitter3@5.0.4`（tag 与 npm `gitHead` 一致），记录 EE 记录、context、`once` 先摘后叫、以及 `removeListener` 删除全部匹配项。
+  3. 新增 `docs/event-bus-source-review-20260827-eg.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking。
+  - `git diff --check`：通过。
+  - `verify:ci`：提交后在规范 Node 下跑。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
+- blocker：规模 baseline 仍可能超限，属先于本切片的 `PARKED_HUMAN` 事项；本轮未改 baseline 或阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 状态变化，或 owner 对 merge 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

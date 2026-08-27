@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "eventemitter3",
+    "digest_sha256": "4d429dbad949ac208a102f230488fa94ebc16781995db89d2f129464c8dd4f5f"
+  },
+  "source_revision": "b0144e940ace8add8f335a8adfbed9284eb419f3",
+  "research_input_sha256": "41f4e29f1514ecaae3f1fcfbf8727060eb9669046eb4960f627227e3efeb5c49",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-eg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains EE records, context, once-before-call, all-match removal, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-eg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "CJS/ESM entry, prefix/null-object store, emit arity switch, and tests were inspected; benchmarks were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-eg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Claims stay bounded to reachable tag 5.0.4 / b0144e94; fastest/benchmark language remains UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}

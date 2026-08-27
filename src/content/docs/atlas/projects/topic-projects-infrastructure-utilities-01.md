@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -24,6 +24,7 @@ sidebar:
 | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | `doris` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | `dovecot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) | `edgedb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [eventemitter3 — 把 Node 事件口收成可带 context 的 class](/study/projects/eventemitter3/) | `eventemitter3` | intermediate | UNVERIFIED | 单监听器存 EE 对象、多个改数组 |
 | [FAISS — 向量检索的标准件库](/study/projects/faiss/) | `faiss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | `feast` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | `flux` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -37,6 +38,7 @@ sidebar:
 | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | `mailcow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [mitt — 用一张 Map 做完 pub/sub](/study/projects/mitt/) | `mitt` | beginner | UNVERIFIED | 函数式 factory 返回 all/on/off/emit |
 | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | `moby` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | `nodemailer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | `nvidia-mig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

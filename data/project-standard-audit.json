@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 34,
+      "benchmark-aligned": 36,
       "needs-evidence": 927
     }
   },
@@ -6046,6 +6046,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "eventemitter3",
+      "title": "eventemitter3 — 把 Node 事件口收成可带 context 的 class",
+      "source": "https://github.com/primus/eventemitter3",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "evidence",
@@ -12476,6 +12496,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "mitt",
+      "title": "mitt — 用一张 Map 做完 pub/sub",
+      "source": "https://github.com/developit/mitt",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "mlflow",
