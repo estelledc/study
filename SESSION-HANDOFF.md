@@ -21,11 +21,12 @@
   - `audit:counts` / `audit:site-state`：projects=963、papers=1083、total=2046。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：在 https://github.com/estelledc/study/pull/81 做 review；未授权前不要 merge。
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
