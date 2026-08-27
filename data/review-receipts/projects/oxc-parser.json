@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "oxc-parser",
+    "digest_sha256": "f090972047576ee426a86527ca11ad13cfe41eee7349d9dbb69b1f78267b719e"
+  },
+  "source_revision": "4e258430cdb290598d9f2aeb2d13be598ec9e8e9",
+  "research_input_sha256": "15f465bd7106ea7d3bd2239c7b37d5b9125116e9e0aa7de6734a495aa857001d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ip",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Node ESTree JSON, sync vs async deserialize cost, fast-mode semantic silence, and transform-package boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ip",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "napi/parser parseSync, wrap/jsonParseAst, SemanticBuilder gate, and raw-transfer platform guard were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ip",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds the same crates_v0.147.0 SHA as the oxc compiler note and keeps this page to the published Node package contract."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

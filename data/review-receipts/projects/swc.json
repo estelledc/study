@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "swc",
+    "digest_sha256": "625200b574c1eb112994e6b3c88cbdcabbb0ff2c3761a3e5cb444f405ccfc7df"
+  },
+  "source_revision": "490c7d88ad15cf84ee410c69e19eef86f445d45b",
+  "research_input_sha256": "15f465bd7106ea7d3bd2239c7b37d5b9125116e9e0aa7de6734a495aa857001d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ip",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates native/Wasm binding, deprecated JS plugins, .swcrc ignore bail, and npm versus swc_core version split."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ip",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "@swc/core Compiler transform/parse/minify and crates/swc process_js/.swcrc were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ip",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds peeled v1.16.1 commit 490c7d88 and discloses swc_core 77.0.2; speed and minify-size claims were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

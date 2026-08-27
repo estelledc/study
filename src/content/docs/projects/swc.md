@@ -1,178 +1,195 @@
 ---
-title: SWC — Rust 写的 TS/JS 编译器
+title: SWC — 用 Rust crate 和 @swc/core 做 TS/JS 转译
+description: 介绍 @swc/core 1.16.1 如何用 NAPI 做 transform/parse/minify，以及 .swcrc 与 Wasm plugin 边界。
 来源: https://github.com/swc-project/swc
-日期: 2026-05-29
+日期: 2026-08-27
 分类: 构建工具
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/swc-project/swc
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 490c7d88ad15cf84ee410c69e19eef86f445d45b
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.16.1
 ---
 
 ## 是什么
 
-SWC（Speedy Web Compiler）是用 **Rust** 重写 Babel 核心能力的编译器——做 TypeScript / JSX 转译、minify 压缩、bundle 打包。日常类比：
+SWC（Speedy Web Compiler）是一套用 **Rust** 写的 TypeScript / JavaScript 编译器组件。日常类比：厨房还是那几道工序——读菜单、改写法、装盘——但灶台换成可以嵌进别的餐厅（Next.js / Rspack / Turbopack）的不锈钢柜。
 
-> 同样一道菜，Babel 用电饭锅 30 分钟煮出来，SWC 用高压锅 1 分钟搞定。
+固定 1.16.1 的 Node 包是 `@swc/core`。常见入口：
 
-锅形状（API）几乎不变，菜谱（要做的转换）也一样。换个材料的锅（JS → Rust），加压（编译期 trait dispatch + 真并行），同一份输入 10-20 倍出锅。
+```js
+import { transformSync } from "@swc/core";
+
+const { code } = transformSync("export const n: number = 1;", {
+  jsc: { parser: { syntax: "typescript" }, target: "es2022" },
+  module: { type: "es6" }
+});
+```
+
+同一包还导出 `parse` / `parseSync`、`minify` / `minifySync`、`print` 和 `bundle`。它们都挂在一个默认 `Compiler` 实例上。
 
 ## 为什么重要
 
-不理解 SWC 解释不了下面这些：
+不看固定 1.16.1 源码，旧印象容易把 SWC 写成“永远比 Babel 快 10 倍的高压锅”：
 
-- 为什么 **Next.js 12+ 启动快了**——2021 年起默认编译器从 Babel 切到 SWC（13 继续沿用）
-- 为什么 Vercel 的下一代 bundler **Turbopack** 跑得动——它底层把 SWC 当库链接进去
-- 为什么 ByteDance 出的 webpack 替代品 **Rspack** 也能拉到几十倍速度——它把 SWC 选作 transformer
-- 为什么 Node 能直接调 Rust 编译器不卡——**napi-rs** 是给 Node 用的原生扩展桥，把 Rust 产物包成 binary 供 `require`
+- 为什么下游能把 SWC **当 Rust crate 链接**，而不只是再开一个 Node 进程
+- 为什么 JS 侧的 `plugins()` 已经标 deprecated，文档却还在讲 Wasm plugin
+- 为什么 `.swcrc` 能直接让某个文件被 ignore
+- 为什么 `@swc/core` 报 `1.16.1`，同提交的 `swc_core` crate 却报 `77.0.2`
 
 ## 核心要点
 
-SWC 的设计可以拆成 **三件事**：
+固定 1.16.1 的主链可以拆成五步：
 
-1. **换语言（Rust > Go > JS）**：Babel 用 JS 写——单线程 + V8 GC 卡顿。[[esbuild]] 用 Go 写，能开多核。SWC 用 Rust：编译期 trait dispatch 像「出门前就定好走哪扇门」，Go interface 更像「到门口再翻目录找门牌」。早期宣传常说单核可比 esbuild 快一截，但 2020 前后口径、场景相关，不宜当永恒排名。
+1. **先找原生绑定**：`packages/core/src/index.ts` 先 `require("./binding.js")`，可用 `SWC_BINARY_PATH` 改路径。失败则记下 `@swc/wasm` 兜底。`finally` 返回这次拿到的 native binding，失败时为 `undefined`，后续方法再走 fallback。
 
-2. **Visitor 模式的 Rust 化**：Babel `traverse` 每碰一个 AST 节点都要查 `visitor[node.type]`（像翻通讯录找处理人）。SWC 用 Rust trait + `#[ast_node]` 宏自动派生 `VisitMut`（「可变地走访语法树」）——访问变成「直接打电话 + 按偏移读字段」。节点一多，差距就放大。
+2. **JS API 把选项打成 JSON Buffer**：`transform` / `parse` / `minify` 都先 `JSON.stringify` 再过 NAPI。`transform` 既接受源字符串，也接受已经 parse 好的 `Program`。
 
-3. **API 对齐 Babel**：`@swc/core` 的 `transform(code, opts)` 几乎是 Babel `transformSync` 的镜像。这降低了下游迁移成本——webpack / Next.js 把 Babel 替换成 SWC 时，调用代码改动极小。这是 SWC 在 2020-2022 年快速被采纳的关键
+3. **遗留 JS plugin 会先 parse 再折返**：若仍传 `options.plugin` 函数，实现会 `parse`/`parseSync`，调用 `plugin(m)`，再把带 source context 的 `Program` 送回 `transform`。`plugins()` 辅助函数本身已 deprecated，注释要求改用 Wasm plugin。
 
-## 实践案例
+4. **Rust 侧按 pass 折叠 AST**：`Compiler::transform` 对 `Program` 做 `fold_with`。`process_js_with_custom_pass` 在自定义 before pass 之前会处理 decorator（若开启）、跑 `resolver`、剥 TypeScript 节点；若 `.swcrc` ignore 了该文件，直接 bail。
 
-### 案例 1：CLI 一行编译
+5. **配置文件是带注释的 JSON**：`parse_swcrc` 允许注释、尾逗号和文件头 BOM。同一 tag 上 npm 包是 `1.16.1`，`swc_core` crate 是 `77.0.2`。
 
-最常见的用法——把整个 src 目录的 TS/JSX 编译到 dist：
+## 实践示例
 
-```bash
-swc src -d dist
-```
+### 案例 1：同步转译 TS，并显式关掉 .swcrc
 
-逐部分解释：
+```js
+import { transformSync } from "@swc/core";
 
-- `src` 是源码目录
-- `-d dist` 是输出目录
-- 没指定 config 时 SWC 会自动找 `.swcrc`
-
-跑完 dist 里就是纯 ES5/ES2015 的 JS 文件 + sourcemap。中型项目（500 文件）大约 1-2 秒。
-
-### 案例 2：.swcrc 配 JSX + TS
-
-```json
-{
-  "jsc": {
-    "parser": {
-      "syntax": "typescript",
-      "tsx": true,
-      "decorators": true
-    },
-    "target": "es2020",
-    "transform": {
-      "react": {
-        "runtime": "automatic"
-      }
-    }
+const out = transformSync(src, {
+  filename: "app.ts",
+  swcrc: false,
+  jsc: {
+    parser: { syntax: "typescript", tsx: true },
+    target: "es2022",
+    transform: { react: { runtime: "automatic" } }
   },
-  "module": {
-    "type": "es6"
-  }
-}
+  module: { type: "es6" }
+});
 ```
 
-逐字段解释：
+JS API 不会因为你“碰巧有一份 `.swcrc`”就自动合并；要不要读配置取决于调用方传入的 `swcrc` 与 Rust 配置加载。CLI / `process_js_file` 才更常走文件查找。
 
-- `parser.syntax` 选 `"typescript"` 让 SWC 认 TS 类型语法（Babel 要装 `@babel/preset-typescript`，SWC 内置）
-- `tsx: true` 同时打开 TSX 支持
-- `target: 'es2020'` 控制语法降级目标——`async/await`、可选链都保留
-- `transform.react.runtime: 'automatic'` 用 React 17+ 的新 JSX 运行时，省掉 `import React`
+### 案例 2：parse 出 Program，再 print 回去
 
-### 案例 3：最小 SWC plugin（Rust → Wasm）
+```js
+import { parseSync, printSync } from "@swc/core";
 
-SWC plugin 是 **Wasm 模块**。下面用伪代码说明「碰到 `console.log` 就清空参数」：
-
-```rust
-impl VisitMut for ConsoleRemover {
-    fn visit_mut_call_expr(&mut self, n: &mut CallExpr) {
-        // 1) 先递归处理子节点
-        n.visit_mut_children_with(self);
-        // 2) 若 callee 是 console.log（成员表达式 obj=console, prop=log）
-        // 3) 则 n.args.clear() —— 调用还在，参数被掏空
-    }
-}
-
-#[plugin_transform]
-pub fn process(mut program: Program, _: ()) -> Program {
-    program.visit_mut_with(&mut ConsoleRemover);
-    program
-}
+const program = parseSync("const n: number = 1;", {
+  syntax: "typescript"
+});
+const { code } = printSync(program);
 ```
 
-`#[plugin_transform]` 生成 Wasm 入口与 host 约定。`cargo build --target wasm32-wasi --release` 得到 `.wasm`，在 `.swcrc` 写 `jsc.experimental.plugins: [['./my-plugin.wasm', {}]]` 即生效。
+`parse` / `parseSync` 在 d.ts 上标了 deprecated，注释写 “Use Rust instead”。它们仍可用：原生路径返回 JSON，再 `parseProgramJson`；若 JSON 带 `program` + `sourceContext`，会把上下文挂到不可枚举的 symbol 上，供后续 `print`/`transform` 还原。
+
+### 案例 3：minify 与 transform 是两条入口
+
+```js
+import { minifySync } from "@swc/core";
+
+const { code } = minifySync("function hello(name) { return name; }", {
+  compress: true,
+  mangle: true
+});
+```
+
+`minify` 走 `Compiler::minify` + `JsMinifyOptions`，不是再包一层 `transform`。本轮未对比输出体积。
 
 ## 踩过的坑
 
-1. **不做类型检查**：和 [[esbuild]] 一样，SWC 编译 TS 时只 **剥掉类型注解**——`const x: number = "hello"` 它照样编译过去。CI 必须配 `tsc --noEmit` 双跑，IDE 也要开 TS 检查。否则你以为类型对的代码运行时会爆炸
-
-2. **Decorator 实现细节不一致**：SWC 同时支持 legacy decorator（TC39 stage 1，老版本）和 2022-03 decorator（TC39 新版本），两者语义有差别。Babel / tsc 的实现也不完全相同——同一份 NestJS 代码用 Babel 跑通，切到 SWC 可能某个装饰器顺序不对。配置选错会导致运行时差异
-
-3. **Rust plugin ABI 不稳定**：每次升级 SWC 主版本，AST 节点结构可能微调，旧 plugin 需要重新编译对齐新版本。开发者发了一个 plugin，几个月后 SWC 升级 plugin 就跑不起来。这是 SWC 插件生态发展慢的根本阻力（10000+ Babel plugin vs 100+ SWC plugin）
-
-4. **minify 输出比 terser 略大**：SWC 自带的 minifier 与 terser API 兼容，但在边角 case（特定的 dead code 消除、变量名 mangle 策略）上输出会大 1-3%。对极致追求 bundle size 的库作者来说仍倾向用 terser
+1. **SWC 不做类型检查**：`const x: number = "hello"` 仍会转译。类型错误要另跑 `tsc --noEmit`。
+2. **把 JS `plugins()` 当成当前推荐面**：该辅助函数已 deprecated。遗留 `options.plugin` 仍会走 parse → 函数 → transform；Wasm fallback 会警告并忽略它。
+3. **把 `@swc/core@1.16.1` 和 `swc_core@77.0.2` 当成同一套 semver**：它们出现在同一提交，但版本号不是一条线。
+4. **以为 `.swcrc` 只是“默认选项”**：Rust 路径上被 ignore 的文件会直接 `cannot process file because it's ignored by .swcrc`。
+5. **把旧页的 10–20 倍、1–2 秒、周调用量当成本轮证据**：那些数字未在本 revision 测量。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- Next.js / Parcel 2 / Storybook 这类「需要把 transformer 当库链接」的工具——SWC 是 Rust crate，能内嵌进任何 Rust 项目
-- 中大型 TS 项目的 transform 提速（500+ 文件）——速度收益显著
-- 需要保留 Babel 风格 API 的项目迁移——`transform(code, opts)` 一对一替换
+
+- 需要把 TS/JSX 转成可运行 JS，并接受“不类型检查”
+- 下游是 Rust bundler / 框架，要把 SWC 当 crate 链接
+- 想用和 Babel 相近的 `transform(code, opts)` 迁调用点，而不是迁整个 plugin 生态
 
 **不适用**：
-- 重度依赖冷门 Babel plugin 的项目——要么 Wasm 重写要么放弃 SWC
-- 需要类型检查的 TS 项目——必须额外配 tsc，SWC 永远不做这件事
-- 库发包到 npm 追求最优 tree-shake 与 bundle size——用 [[rollup]] 仍是首选
 
-## 历史小故事（可跳过）
+- 依赖大量 Babel plugin、又没有 Wasm 替代——生态不是一对一
+- 需要类型检查当编译期门禁——必须外挂 `tsc`
+- 只要一份 ESTree 给 JS 工具接着走——[[oxc-parser]] 的合同更窄
+- 不能接受 `engines.node >= 10` 与 native / Wasm 双绑定并存
 
-- **2017 年**：DongYoon Kang（GitHub @kdy1，韩国开发者）作为个人项目开始写 SWC，命题是「用 Rust 重写 Babel」
-- **2020 年**：v1.0 发布，README 直接对标 Babel 性能
-- **2021 年**：Vercel 决定把 Next.js 12 的默认编译器从 Babel 切到 SWC，并直接资助 kdy1 全职维护——SWC 从「个人项目」升级为「Vercel 战略基础设施」
-- **至今**：直接 + 间接调用每周 50M+，被 Next.js / Parcel 2 / Storybook 7+ / Deno 部分 / Vite 部分采纳；项目仍主要由 kdy1 一人主导
+## 固定版本边界
 
-「Rust 重写 JS 工具链」浪潮里，SWC 是最完整的一份成果——既覆盖 transform/minify/bundle 三件套，又被 Next.js 全面采纳，事实上是「下一代 Babel」。
+- 本文绑定 `swc-project/swc@490c7d88ad15cf84ee410c69e19eef86f445d45b`。`v1.16.1` 是 annotated tag（对象 `234b572d...`），剥皮后即此提交。
+- npm `@swc/core@1.16.1` 无 `gitHead`；`package.json` 的 `version` 为 `1.16.1`。同提交 `swc_core` 为 `77.0.2`。
+- Node `engines` 为 `>=10`。`@swc/helpers` 是 optional peer（`>=0.5.17`）。
+- `DEFAULT_EXTENSIONS` 冻成 `.js/.jsx/.es6/.es/.mjs/.ts/.tsx/.cts/.mts`。
+- 本文未安装依赖、运行上游测试、加载 Wasm plugin 或测量速度，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **「换语言」+「数据结构内嵌」是性能终极武器**——Rust 的 trait dispatch + struct 偏移读，比 JS 的 hashmap lookup 快一个数量级。算法层能压的极限有限，runtime + 数据结构这两层才是天花板
-2. **API 兼容是采纳的关键**——SWC API 对齐 Babel 是有意识的，没这一步 Vercel 也未必选它做 Next.js 默认编译器
-3. **Wasm plugin 是赌注**——好处（跨语言 + 隔离 + 性能）短期看不出，坏处（生态启动慢 + ABI 不稳）立刻有。这是个长期才能赢的设计选择
-4. **Rust 不是 Go 的替代品，是更下层的选项**——Rust 写出来的库能被任何 Rust 项目当 crate 链接（Turbopack / Rspack 都这么用），Go binary 只能外部调用。这是 SWC 战略价值的核心
-5. **不做类型检查是性能选择**——tsc 类型检查占 80% 时间，删掉这部分才能跑到几毫秒。esbuild / SWC / Babel + preset-typescript 都做这个取舍
+1. **“当库链接”才是 SWC 对 bundler 的合同**——不只是多一个更快的 CLI。
+2. **JS plugin 和 Wasm plugin 不是同一代 API**——源码已经把 JS 辅助面标成遗留。
+3. **npm 版本和 crate 版本可以分家**——读 tag 时要同时看 `@swc/core` 与 `swc_core`。
+4. **忽略规则是硬失败，不是悄悄跳过输出**——`.swcrc` ignore 会 bail。
+
+## 应用型自测
+
+1. `@swc/core` 的 `transformSync` 会不会做 `tsc` 那种类型检查？
+2. 固定 1.16.1 里，JS `plugins()` 还是不是推荐入口？
+3. tag `v1.16.1` 上的 `swc_core` crate 版本是不是也叫 `1.16.1`？
+
+检查点：
+
+1. 不会。它剥类型、转语法，不跑类型检查。
+2. 不是。该函数标了 deprecated，注释要求改用 Wasm plugin。
+3. 不是。同提交里 `swc_core` 报 `77.0.2`。
 
 ## 延伸阅读
 
 - 官方文档：[swc.rs](https://swc.rs/)
 - 配置参考：[swc.rs/docs/configuration/swcrc](https://swc.rs/docs/configuration/swcrc)
-- 写 plugin 教程：[swc.rs/docs/plugin/ecmascript/getting-started](https://swc.rs/docs/plugin/ecmascript/getting-started)
-- [[esbuild]] —— Go 写的同代竞争对手，速度接近，plugin 模型差异大
-- [[turbopack]] —— Vercel 的下一代 bundler，把 SWC 当库链接
+- 固定源码：[swc-project/swc](https://github.com/swc-project/swc) —— 本文绑定提交 `490c7d88ad15cf84ee410c69e19eef86f445d45b`
+- 审查记录：仓库内 `docs/js-transform-source-review-20260827-ip.md`
+- [[oxc-parser]] —— 只解析、交出 ESTree 的 Node 对照
+- [[esbuild]] —— Go 写的同代 bundler / transformer，插件模型不同
 
 ## 关联
 
-- [[esbuild]] —— Go vs Rust 的同代之争；esbuild 速度接近但不能内嵌进 Rust 项目
-- [[turbopack]] —— Vercel 的 Rust bundler，SWC 是它的 transformer 引擎
-- [[rspack]] —— ByteDance 的 Rust webpack 替代，也用 SWC 做 transform
-- [[rollup]] —— 库发包场景的对照组，tree-shake 仍比 SWC 强
+- [[oxc-parser]] —— 同代 Rust 句法层，但不在这个包里做 transform
+- [[oxc]] —— 另一条 Rust JS 工具链，AST 与发布模型不同
+- [[esbuild]] —— Go vs Rust；esbuild 更常被当成完整 bundler
+- [[turbopack]] —— Vercel bundler，把 SWC 当库链接
+- [[rspack]] —— 用 SWC 做 transform 的 webpack 替代
+- [[rolldown]] —— 走 oxc 而不是 SWC 的打包器
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
-- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
-- [[bun]] —— Bun — JS 全能运行时
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[engine262]] —— engine262 — 用 JavaScript 实现的 ECMA-262 参考引擎
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
-- [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
+- [[oxc]] —— oxc — 用一份 arena AST 串起 JS/TS 编译器组件
+- [[oxc-parser]] —— oxc-parser — 把 JS/TS 源码收成一份 ESTree
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+- [[rolldown]] —— rolldown — 用 Rust 实现 Rollup 兼容协议的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[webpack]] —— webpack 模块打包

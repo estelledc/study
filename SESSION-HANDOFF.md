@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IP：oxc-parser + swc
+
+- status：writer epoch `running` → 本地变更已齐，待 push / PR / `verify:ci`。
+- 起始 ref：`0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465`（`origin/main`）。
+- objective：为缺失的 `oxc-parser` 新建、将 legacy `swc` 迁到固定 revision 的 `study-v2` 静态审查；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新页 `oxc-parser`、迁移 `swc`、共享审查文档 `docs/js-transform-source-review-20260827-ip.md`、2 份 generation 1 receipt、taxonomy 一条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ip-2026-08-27`（车道由 HX 改为 IP；intern 占用 HM–ID）。
+- detector fingerprint：目录无 `oxc-parser.md`；`swc.md` 为 `needs-evidence`；开放 PR #83 是 esbuild+SWC 草稿，本轮仍按指令绑定 oxc-parser + swc。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `oxc-parser` 绑定 tag `crates_v0.147.0` → `4e258430cdb290598d9f2aeb2d13be598ec9e8e9`；npm `oxc-parser@0.147.0` 无 `gitHead`。
+  2. `swc` 绑定 annotated tag `v1.16.1` 剥皮提交 `490c7d88ad15cf84ee410c69e19eef86f445d45b`；`@swc/core@1.16.1`，同提交 `swc_core@77.0.2`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目数 968 → 969，对齐标杆 87 → 89。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、158 v2。
+  - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 1 新建 + 1 迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。开放 PR #83 也改 `swc.md`。
+- stop conditions：本 epoch 完成后不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

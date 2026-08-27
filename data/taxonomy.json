@@ -2256,6 +2256,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::oxc-parser",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::oxlint",
       "topic_id": "projects-build-tools-and-bundlers"
     },
