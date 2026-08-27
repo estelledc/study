@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cson",
+    "digest_sha256": "c84d06234af96bcb6c78c23e9b9262944e24713164a9ff0c40d4476b8e7c5871"
+  },
+  "source_revision": "379264c2ac0b97044b8ec4d95d965bda9f823898",
+  "research_input_sha256": "848c4ecdf5a9f7bccea5bca167408e85abb7d73a00b4835c98f5de7002a677e7",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ja",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates default cson-parser path, locked JS/CS eval channels, requireFile-as-parse, and error-as-return."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ja",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "source/index.coffee, bin.coffee, bin.cjs, editions gitignore, and option defaults were inspected; cson-parser remote was unread; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ja",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v8.4.0 where annotated tag, package and npm gitHead agree; compiled edition-esnext is npm-only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

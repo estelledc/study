@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -39725,6 +39725,37 @@
       }
     },
     {
+      "id": "projects::cson",
+      "area": "projects",
+      "slug": "cson",
+      "title": "CSON — 把 CoffeeScript 对象记号包成文件与 CLI 的高层包装",
+      "description": "介绍 cson 8.4.0 如何把 parse/stringify 交给 cson-parser，并默认关掉会执行代码的 JS/CoffeeScript 模式。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cson/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::ctranslate2",
       "area": "projects",
       "slug": "ctranslate2",
@@ -45244,6 +45275,37 @@
       "atlas": {
         "chunk_id": "unclassified-01",
         "chunk_route": "/study/atlas/projects/unclassified-01/"
+      }
+    },
+    {
+      "id": "projects::hjson",
+      "area": "projects",
+      "slug": "hjson",
+      "title": "Hjson — 给 JSON 加注释、无引号键和可省略逗号的人类配置格式",
+      "description": "介绍 hjson 3.2.2 如何用可选根括号、无引号字符串和 __COMMENTS__ 做可读配置，并区分 DSF 与 require hook。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/hjson/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -65876,7 +65938,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 16
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",

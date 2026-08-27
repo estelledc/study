@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer JA：hjson + cson
+
+- supervisor 状态：writer epoch `complete`；本切片到 push / 开 PR 为止。未 merge / 未 deploy。
+- 起始 ref：`2122461e7ac7cd08ee3be1827d3ec84bbf919707`（`origin/main`）。
+- objective：为缺失的 config-format 双子补齐 `hjson` 与 `cson` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/config-format-source-review-20260827-ja.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ja-2026-08-27`。
+- detector fingerprint：目录无 `hjson.md` / `cson.md`；开放 PR 已占用 ini/properties、toml、yaml、json5，未占用这对 slug；车道 HM–ID 保留未用。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `hjson` 绑定 npm `hjson@3.2.2` 的 `gitHead` `be47262264c76e3658f0c6242be33ad2b8a4444c`；仓库无 tag，并披露包版本与 `lib/hjson-version.js` 的 `3.2.1` 分裂。
+  2. `cson` 绑定 annotated tag `v8.4.0` → `379264c2ac0b97044b8ec4d95d965bda9f823898`，与 npm `gitHead` 一致；披露编译目录不在 git 树、默认 parse 外包给 `cson-parser`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 89 → 91，公开项目数 968 → 970。
+- 验证结果：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、160 v2。
+  - `audit:counts` / `audit:site-state`：projects=970、papers=1083、total=2053。
+  - `audit:project-standard`：benchmark-aligned=91、snapshot CURRENT。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：一对页面与一个 PR 完成后停止；不得发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

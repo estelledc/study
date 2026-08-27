@@ -1876,6 +1876,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::cson",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::d3",
       "topic_id": "projects-data-visualization"
     },
@@ -1986,6 +1990,10 @@
     {
       "note_id": "projects::helm",
       "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::hjson",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::hono",
