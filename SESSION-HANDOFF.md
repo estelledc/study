@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GD：giget + download-git-repo 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`9adc8b991`（本轮从最新 `origin/main` 开分支 `cursor/git-scaffold-giget-download-git-repo-42f0`）。
+- objective：为 git-scaffold 双子 `giget` 与 `download-git-repo` 建立源码绑定的 `study-v2` 静态审查页；证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页新正文、2 份 generation 1 receipt、`docs/git-scaffold-source-review-20260827-gd.md`、atlas / note-index / project-standard / site-state / 规模文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未下载远端模板、未跑上游测试或 bundle。
+- activated_by：`explicit-user-parallel-writer-gd-20260827`。
+- detector fingerprint：仓库无这两页；`giget` 可绑定 `v3.3.1` / `34f8cb64...`；`download-git-repo` 的 GitHub `flipxfx` 路径不可达，改用 GitLab canonical 与 npm `gitHead` `23e8c09b...`。
+- external delta：授权范围内的 push + 单 PR；未 merge、未 deploy，D 轴不提升。
+- 完成切片：
+  1. `giget` 绑定 annotated tag `v3.3.1` peel `34f8cb6455636fe3652427ef2769aff521ed07bb`；修正默认 registry、`main` ref、CLI 未转发 `--cwd`、README 旗标漂移。
+  2. `download-git-repo` 绑定 GitLab `23e8c09b4a19aaf9c9b3e265d41b924143daf707` / `3.0.2`；修正默认 `master` zip、clone 后删 `.git`、`shallow` 仅当 checkout 为 `master`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` 全过、0 advisory；receipt digest 一致且 `evidence_state=UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` snapshot CURRENT。`verify:ci` 在 push 后跑。
+- budget：1 个 git-scaffold 双子切片 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：单 PR 已开且未获 merge 授权即停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

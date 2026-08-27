@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "download-git-repo",
+    "digest_sha256": "7f7e4dbc7355f304d34b6d9832233ee45f496aef226c85e3b1446b240ed8b73c"
+  },
+  "source_revision": "23e8c09b4a19aaf9c9b3e265d41b924143daf707",
+  "research_input_sha256": "3577841192882ac782c9be5d6aafd9936008b1045ba34069e299b2da4555362e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates default master zip, optional clone that deletes .git, and GitLab canonical versus missing GitHub path."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Inspected normalize/getUrl, zip versus git-clone, shallow===master, and mocha fixtures; downloads and tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to download-git-repo 3.0.2 / 23e8c09b; no git tag exists and the GitHub flipxfx path was unreachable."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

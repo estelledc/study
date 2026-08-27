@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -26,6 +26,7 @@ sidebar:
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | `delta` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) | `dive` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [download-git-repo — 用 zip 或 clone 把远端仓库摊到目录](/study/projects/download-git-repo/) | `download-git-repo` | intermediate | UNVERIFIED | 默认下载 GitHub master zip |
 | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | `dua-cli` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | `duf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | `dust` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -35,6 +36,7 @@ sidebar:
 | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | `fx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fzf — 命令行模糊查找](/study/projects/fzf/) | `fzf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | `gdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [giget — 用 tarball 和注册表下载模板仓库](/study/projects/giget/) | `giget` | intermediate | UNVERIFIED | 默认走 registry 或 git-host tarball，只有 git provider 才 clone |
 | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | `gitui` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | `glances` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | `gron` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
