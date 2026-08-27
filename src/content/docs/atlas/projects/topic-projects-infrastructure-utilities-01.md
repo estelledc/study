@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -39,6 +39,7 @@ sidebar:
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | `moby` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | `nodemailer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [normalize-path — 折叠斜杠并改写 Windows namespace](/study/projects/normalize-path/) | `normalize-path` | beginner | UNVERIFIED | 固定 3 |
 | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | `nvidia-mig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | `openmeetings` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | `ovenmediaengine` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -53,6 +54,7 @@ sidebar:
 | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) | `scoop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | `shellcheck` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SigNoz — 自托管的 OpenTelemetry 一体化可观测平台](/study/projects/signoz/) | `signoz` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [slash — 只换分隔符的 Windows 路径翻译](/study/projects/slash/) | `slash` | beginner | UNVERIFIED | 固定 5 |
 | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | `starrocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

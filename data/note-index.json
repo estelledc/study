@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -52465,6 +52465,37 @@
       }
     },
     {
+      "id": "projects::normalize-path",
+      "area": "projects",
+      "slug": "normalize-path",
+      "title": "normalize-path — 折叠斜杠并改写 Windows namespace",
+      "description": "固定 3.0.0：split 折叠分隔符，默认剥尾，\\\\?\\ 收成 //?/",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/normalize-path/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::notepad-plus-plus",
       "area": "projects",
       "slug": "notepad-plus-plus",
@@ -59191,6 +59222,37 @@
       }
     },
     {
+      "id": "projects::slash",
+      "area": "projects",
+      "slug": "slash",
+      "title": "slash — 只换分隔符的 Windows 路径翻译",
+      "description": "固定 5.1.0：扩展长度前缀原样返回，其余只把反斜杠换成正斜杠",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/slash/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::sled",
       "area": "projects",
       "slug": "sled",
@@ -65775,7 +65837,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/",
-      "entries": 44
+      "entries": 46
     },
     {
       "id": "topic-projects-internationalization-01",

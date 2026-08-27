@@ -2216,6 +2216,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::normalize-path",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::nuxt",
       "topic_id": "projects-meta-and-full-stack-frameworks"
     },
@@ -2398,6 +2402,10 @@
     {
       "note_id": "projects::shiki",
       "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::slash",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::solid",

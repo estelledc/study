@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FP：slash + normalize-path 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`1f2917d90`（`origin/main`，#75 merge）。
+- objective：为 `slash` 与 `normalize-path` 新增源码绑定的 `study-v2` 页；证据边界 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/path-slash-source-review-20260827-fp.md`、taxonomy 与派生索引、本 handoff；未安装上游依赖、未跑上游测试、未测 Windows / bundle / 吞吐。
+- activated_by：用户指定 PARALLEL writer FP、origin/main、STATIC_REVIEW、UNVERIFIED、单一 PR、不 merge。
+- detector fingerprint：两页原先不存在；slash 只做 `\\` → `/` 并放过 `\\?\`，normalize-path 折叠分隔符、默认剥尾并改写 win32 namespace；npm `normalize-path@3.0.0` 的 `gitHead` 是 tag 父提交且仍写 `2.1.1`。
+- external delta：分支将 push 并开 1 个 PR；未授权 merge / deploy。
+- 完成切片：
+  1. `slash` 绑定 annotated tag `v5.1.0` → `98b618f5a3bfcb5dd374b204868818845b87bb2f`（与 npm `gitHead` 一致）。
+  2. `normalize-path` 绑定 lightweight tag `3.0.0` → `ea100bbecf851e2cc89e54e295e91af7b835fe63`；披露 npm `gitHead` 仅差 version 字段。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:counts` / `audit:site-state` 通过。`verify:ci` 在首个 commit 之后跑。
+- budget：2 个小型上游 clone + 2 页静态源码迁移；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一 PR 已开且未 merge 后停止；不自动开下一对。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr view` 查看本 PR；不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
