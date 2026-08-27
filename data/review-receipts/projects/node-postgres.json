@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "node-postgres",
+    "digest_sha256": "e797456b528f1e465afd35dd3e05df412f661df06a3abf0c585e1013b0a1aefd"
+  },
+  "source_revision": "df274d1ba9ad9d11a8f1079314faeafde7208207",
+  "research_input_sha256": "881e95c5879acef216a165b859f0c5151aa3aa8a0051387cdc598c3e4a9e5b52",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-it",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Client reuse, Pool checkout, undefined-as-NULL, and opt-in pipeline."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-it",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "client.js query queue, pg-pool acquire/release, and prepareValue were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-it",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds pg@8.23.0 where tag peel and npm gitHead agree; native/libpq path was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "slonik",
+    "digest_sha256": "c11866196020beb6d5323c1d0dd652290b6cedee5697a3dc23c029bd0e47ed6f"
+  },
+  "source_revision": "0d9da1dcf8e4e85c3318c3bdfe69d5af10232f70",
+  "research_input_sha256": "881e95c5879acef216a165b859f0c5151aa3aa8a0051387cdc598c3e4a9e5b52",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-it",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates async createPool, sql.unsafe/sql.type, cardinality assertions, and interceptor-only schema."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-it",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createSqlTag, executeQuery integrity checks, pg-driver Client import, and transaction savepoints were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-it",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds slonik@49.10.9 peeled tag; npm gitHead is absent and was not invented."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

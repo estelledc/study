@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -52432,6 +52432,37 @@
       }
     },
     {
+      "id": "projects::node-postgres",
+      "area": "projects",
+      "slug": "node-postgres",
+      "title": "node-postgres — 用 Client 与 Pool 直接说话的 Node PostgreSQL 驱动",
+      "description": "介绍 pg 8.23.0 如何把 Client.query、连接池 checkout 和扩展查询协议收成同一套 API。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "数据库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/node-postgres/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::nodegui",
       "area": "projects",
       "slug": "nodegui",
@@ -59349,6 +59380,37 @@
       }
     },
     {
+      "id": "projects::slonik",
+      "area": "projects",
+      "slug": "slonik",
+      "title": "Slonik — 用 sql token 与基数断言包住 pg.Client 的查询层",
+      "description": "介绍 slonik 49.10.9 如何用异步连接池、sql.unsafe/sql.type 和 one/many 断言组织 PostgreSQL 查询。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "数据库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/slonik/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::smoltcp",
       "area": "projects",
       "slug": "smoltcp",
@@ -66044,7 +66106,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/",
-      "entries": 8
+      "entries": 10
     },
     {
       "id": "topic-projects-state-management-01",

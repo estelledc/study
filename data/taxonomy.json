@@ -2220,6 +2220,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::node-postgres",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
       "note_id": "projects::nuxt",
       "topic_id": "projects-meta-and-full-stack-frameworks"
     },
@@ -2406,6 +2410,10 @@
     {
       "note_id": "projects::shiki",
       "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::slonik",
+      "topic_id": "projects-orm-and-database-clients"
     },
     {
       "note_id": "projects::solid",
