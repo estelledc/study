@@ -17,12 +17,12 @@
   1. `unconfig` 绑定 `antfu-collective/unconfig` tag `v7.5.0` → `04fb7ab57d616db7a89e8a9c3b14d84b91cb74ea`；npm 无 `gitHead`。
   2. `lilconfig` 绑定 `antonk52/lilconfig` tag `v3.1.3` → `77d7186c37a3838c85d03e126172f82a8a474ece`；npm `gitHead` 一致。
   3. 共享审查文档与两份 STATIC_REVIEW receipt；taxonomy 归入 `projects-build-tools-and-bundlers`。
-- 验证结果：两页 `quality-gate` pass、0 advisory；receipt `UNVERIFIED` 且 digest 对齐；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:site-state` / `audit:counts` 通过。`verify:ci` 在 push 后跑。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt `UNVERIFIED` 且 digest 对齐；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:site-state` / `audit:counts` 通过。`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：2 个小型 blob-filtered worktree + 2 页新增；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一页一对、一 PR、不 merge。canonical/revision 不唯一或只能放宽门禁时停。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR CI；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
