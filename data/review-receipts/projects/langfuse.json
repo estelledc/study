@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "langfuse",
+    "digest_sha256": "891629321dd6d24f6fb7f85c81a89f6889b19ac7e72d572dd691f547dc3fa5bc"
+  },
+  "source_revision": "362ef39abb298824b187e8e964d21460a1d03e98",
+  "research_input_sha256": "00414bc9fdd9b610b9ef2be8c47ac25c5eb021470b7e8e9e67cf2aedac357f9c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the trace, observation and score data model, the six-service self-host stack, and the SDK versus OTLP ingestion paths."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "docker-compose, prisma schema, clickhouse migrations, public API routes and LICENSE layering were inspected; the stack was not deployed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Storage split, OTLP endpoint and license boundaries are bounded to v4.21.0; throughput and cost accuracy require measurement."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T06:32:24.000Z"
+}
