@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "research_input_sha256": "4d5583cf82fb21f272e9f1ce327973fbe7556cba4eb7c43e94b08cd99f66324c",
+  "waivers": [],
+  "created_at": "2026-08-27T07:50:00.000Z",
+  "note": {
+    "area": "projects",
+    "slug": "fabric-js",
+    "digest_sha256": "17795f15b534b1e01cfb745273214dda7d1a01926fb27d3439656e9860447850"
+  },
+  "source_revision": "ce64f450bad811750cb5a75aa749fc1502c644be",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Canvas/StaticCanvas, center origin, Promise load/fromURL, and animate-without-render with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Pinned 7.4.0 DOM manager, FabricObject defaults, loadFromJSON, and Image.fromURL were inspected; vitest and PNG export were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Binds reachable v740/npm 7.4.0 gitHead; discloses named-export rename and default origin center vs older tutorials."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ]
+}

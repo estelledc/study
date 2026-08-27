@@ -2,149 +2,164 @@
 title: Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 来源: https://github.com/fabricjs/fabric.js
 日期: 2026-05-30
-分类: 前端 / Canvas
+分类: projects / Canvas 2D
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/fabricjs/fabric.js
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: ce64f450bad811750cb5a75aa749fc1502c644be
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 7.4.0
 ---
 
 ## 是什么
 
-Fabric.js 是一个把 HTML5 `<canvas>` 这块"只能涂抹的画板"包装成"可以摆放、选中、拖拽、旋转、序列化对象的舞台"的 JavaScript 库。
+Fabric.js 是一个把 HTML5 `<canvas>` 包成可选择、可变换、可序列化对象集合的 JavaScript 库。日常类比：原生 Canvas 像粉笔字——写完只剩像素；Fabric 像磁贴——每张磁贴记得自己的几何和变换。
 
-日常类比：原生 Canvas 像**用粉笔在玻璃上写字**——写完一笔，它就只是像素，再也挪不动了。Fabric 像**在玻璃上贴磁贴**——每张磁贴有自己的身份，知道"我是矩形、现在在 (100, 200)、被旋转了 30 度"，可以拖、可以选中、可以叠在别的磁贴上面。
-
-最小用法：
+你写：
 
 ```js
-const canvas = new fabric.Canvas('c');
-canvas.add(new fabric.Rect({ left: 100, top: 100, width: 80, height: 60, fill: 'orange' }));
-// 用户已经能拖、能缩放、能旋转——一行交互代码都不用写
+import { Canvas, Rect } from "fabric";
+
+const canvas = new Canvas("c");
+canvas.add(new Rect({ left: 100, top: 100, width: 80, height: 60, fill: "orange" }));
 ```
+
+7.4.0 的公开入口是 named ESM，不再把 `fabric.Canvas` 当唯一合同。`Canvas` 会叠 lower / upper 两张画布；`Rect` 默认 `originX/originY` 是 `center`，所以上面的 `left/top` 指中心点，不是左上角。本轮只读源码，未渲染页面，状态保持 `UNVERIFIED`。
 
 ## 为什么重要
 
-不理解 fabric 这套思路，下面这些东西都没法解释：
+不理解 Fabric 7.4.0，下面这些事都没法解释：
 
-- 为什么稿定设计、创客贴这类"在线设计工具"能在浏览器里跑——对象层往往是 fabric 或同一思路的自研
-- 为什么许多 Miro 类白板 / 海报编辑器的早期 Canvas 原型，借 fabric 几天就能跑出可拖拽 demo（注：Excalidraw 等后来自研场景模型，并不依赖 fabric）
-- 为什么"原生 Canvas 写编辑器"是个 800 行起步的工程，而 fabric 80 行就够
-- 为什么所有 Canvas 编辑器的存档都是 JSON 不是 PNG——序列化对象层 vs 序列化像素
-
-更广义的：**fabric 解决的是"无状态渲染 API → 可编辑对象层"这个范式**。这个范式在 WebGL、SVG 编辑器、PDF viewer、富文本编辑器里反复出现，是前端基建的一类共性问题。
+- 为什么选择框能在拖动时单独重绘，而对象画在另一张 canvas
+- 为什么 `left/top` 不再默认等于包围盒左上角
+- 为什么 `loadFromJSON` 和 `FabricImage.fromURL` 都返回 Promise
+- 为什么 `object.animate()` 改了数字却可能看不见运动
 
 ## 核心要点
 
-Fabric 的设计可以拆成 **三个核心抽象**：
+7.4.0 主链可以拆成四步：
 
-1. **Object Model（对象模型）**：所有形状继承自 `fabric.Object`，存的是**原始尺寸 + 变换参数**（left / top / scaleX / scaleY / angle），不是最终的 boundingRect。每帧渲染时再算出实际位置。
+1. **Canvas vs StaticCanvas**：`StaticCanvas` 只有 lower canvas，负责对象列表和导出。交互版 `Canvas` 用 `CanvasDOMManager` 再叠一张 `upper-canvas`，专门画控件和选择框。
 
-2. **双 Canvas 分层**：DOM 里其实有两个 `<canvas>` 叠在一起——`lower-canvas` 负责画对象，`upper-canvas` 负责画选择框和辅助线。拖动时只重绘 upper，松手时再全量刷 lower。这是用"分层"换"局部刷新"，跟操作系统双缓冲是同源思维。
+2. **对象模型**：形状继承 `FabricObject`（旧名 `fabric.Object` 因与 JS `Object` 撞名而改）。默认存 `left/top/width/height/scaleX/scaleY/angle/skewX/skewY`，`originX/originY` 默认 `center`，`objectCaching` 默认 true。
 
-3. **事件桥接**：fabric 把 DOM 的 mousedown / mousemove / mouseup 翻译成对象级事件——`mouse:down`（命中谁触发）、`object:moving`（拖动中）、`object:modified`（一次操作结束）。开发者不用自己写"鼠标坐标 → 哪个对象被点中"的命中测试。
+3. **序列化**：`canvas.toJSON()` 等于 `toObject()`。`loadFromJSON` 返回 Promise，加载期间临时关闭 `renderOnAddRemove`，官方示例在 `.then` 里再 `requestRenderAll()`。
 
-三层加起来，让你**只关心对象语义，不关心像素坐标**。
+4. **重绘**：`renderOnAddRemove` 默认 true，实际调用 `requestRenderAll()`，用 rAF 合并。立即绘制用 `renderAll()`。`skipOffscreen` 默认 true，按 viewport 跳过完全在画外的对象。
 
-## 实践案例
+`FabricImage.fromURL(url, { crossOrigin, signal }, imageOptions)` 返回 Promise。`IText` 和 `Textbox` 仍在公开导出里。Node 声明 `>=20`，可选依赖是 `canvas` 与 `jsdom`。
 
-### 案例 1：80 行最小编辑器
+## 实践示例
 
-```html
-<canvas id="c" width="900" height="600"></canvas>
-<script src="https://cdn.jsdelivr.net/npm/fabric@6/dist/index.min.js"></script>
-<script>
-  const canvas = new fabric.Canvas('c');
-  canvas.add(new fabric.Rect({ left: 100, top: 100, width: 120, height: 80, fill: '#f5a55f' }));
-  canvas.add(new fabric.IText('双击编辑', { left: 300, top: 200, fontSize: 32 }));
-  canvas.on('object:modified', (e) => console.log('改完了', e.target.toObject()));
-</script>
-```
-
-这几行已经包含：拖动、缩放、旋转、双击编辑文本、修改事件钩子。raw Canvas 写同样功能至少 800 行。
-
-### 案例 2：序列化是命脉
+### 案例 1：最小可编辑舞台
 
 ```js
-// 保存
-const json = JSON.stringify(canvas.toJSON());
-localStorage.setItem('design', json);
+import { Canvas, Rect, IText } from "fabric";
 
-// 恢复
-canvas.loadFromJSON(JSON.parse(localStorage.getItem('design')), () => canvas.renderAll());
+const canvas = new Canvas("c");
+canvas.add(new Rect({ left: 120, top: 80, width: 120, height: 80, fill: "#f5a55f" }));
+canvas.add(new IText("双击编辑", { left: 300, top: 200, fontSize: 32 }));
+canvas.on("object:modified", (e) => console.log(e.target.toObject()));
 ```
 
-所有"在线设计工具"靠这一对方法吃饭：服务端只存 JSON（通常是 PNG 的 1/100 体积），客户端解析后重建对象树。**导出 PNG 是 raster（像素），导出 JSON 是 vector（语义）**——这是为什么你在设计平台看到"保存"和"导出图片"是两个不同的按钮。
+`Canvas` 默认打开选择和变换控件。因为 origin 默认是中心，`left: 120, top: 80` 的矩形中心在 (120, 80)。本轮未在浏览器点选。
 
-### 案例 3：为什么存"原始 + 变换"而不存最终结果
+### 案例 2：JSON 往返是 Promise
 
-如果只存 boundingRect：撤销重做要存全量、JSON 丢失"用户旋转了 30 度"这层语义、缩放会累积浮点误差。存"原始 + 变换"则让所有操作**可逆、可叠加、可序列化**。这跟 SVG 哲学一致——SVG 也是"原始路径 + transform"。
+```js
+const json = canvas.toJSON();
+await canvas.loadFromJSON(json);
+canvas.requestRenderAll();
+```
+
+不要再写 `loadFromJSON(data, () => canvas.renderAll())` 当唯一签名。7.4.0 文档示例是 `loadFromJSON(json).then((canvas) => canvas.requestRenderAll())`。第二个参数是 reviver，不是“加载完成回调”。
+
+### 案例 3：动画不会自己刷屏
+
+```js
+rect.animate({ left: 400 }, {
+  duration: 1000,
+  onChange: () => canvas.renderAll()
+});
+```
+
+`animate()` 只改属性。`src/util/animation/animate.ts` 的注释要求在 rAF 回调里调 `renderAll()`，不要再叠一层 `requestRenderAll()`。旧写法 `obj.animate("left", 500)` 不是 7.4.0 签名。
 
 ## 踩过的坑
 
-1. **>1000 对象掉帧**：fabric 默认每帧全量重绘。优化方向：用 `fabric.Group` 把不动的对象合并、`renderOnAddRemove: false` 批量加完再 renderAll、`objectCaching: true`（默认开）让每个对象缓存为离屏 canvas、视口外的对象 `visible = false`。
+1. **把默认原点当成左上角**：`fabricObjectDefaultValues.originX/originY` 是 `center`。照抄 v5 教程的 `left/top` 会对不齐。
 
-2. **Image 跨域污染 canvas**：加载跨域图片再导出 PNG 会触发 SecurityError。必须 `fabric.Image.fromURL(url, { crossOrigin: 'anonymous' })`，且图床要返回 `Access-Control-Allow-Origin`。
+2. **继续用 v5 `fromURL(url, callback)`**：7.4.0 是 `await FabricImage.fromURL(url, { crossOrigin: "anonymous" })`。跨域导出仍要图床回 CORS；本轮未发网络请求。
 
-3. **Text 缩放变模糊**：直接 `scaleX = 2` 缩放 Text 是像素拉伸（糊），正确做法是改 `fontSize`（重新栅格化）。Textbox 已自动处理，IText / Text 没有，要自己接。
+3. **`animate` 后以为画布会动**：属性在变，默认不渲染。要在 `onChange` 里 `renderAll()`。
 
-4. **v6 全 Promise 化**：v5 是 `fabric.Image.fromURL(url, callback)`，v6 是 `await fabric.Image.fromURL(url)`。中文教程 80% 还停在 v5 写法，照抄会跑不起来——优先信 TypeScript 类型定义，不要信博客。
+4. **命名空间与 Web API 撞名**：公开迁移路径是 `FabricObject` / `FabricImage` / `FabricText`。`import { Object, Image, Text } from "fabric"` 仍在，但标 deprecated。
 
-5. **animate 不会自动重绘**：`obj.animate('left', 500, { duration: 1000 })` 默认不刷屏，必须接 `onChange: canvas.renderAll.bind(canvas)`。新人会以为代码没生效。
-
-6. **perPixelTargetFind 性能陷阱**：默认用 boundingRect 命中测试（圆形四角的透明区域也会被点中），开 `perPixelTargetFind: true` 改用像素级，但每次 mousemove 要读像素，慢 10 倍以上。只对个别复杂 Path 局部开。
+5. **把 `perPixelTargetFind` 当默认**：默认 false，命中按包围盒。像素级命中要显式打开；代价未在本轮测量。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 浏览器内的设计工具 / 编辑器底座（IText / Textbox / Filter 链做得深）
-- 海报 / 邀请函 / 头像 / 拼图等需要"对象层 + 序列化"的工具
-- 教育白板、PDF 标注、图片批注
-- Canvas 2D 上 ≤ 几千对象的中等规模交互
+- 浏览器里的海报 / 标注 / 简单设计工具，需要选择框和 JSON 存档
+- 接受命令式对象 API，并按 7.x named export 重写旧 `fabric.*` 教程
+- Node 20+ 上配合可选 `canvas` / `jsdom` 做导出
 
 **不适用**：
 
-- 重度 React 项目（fabric 没有官方 React 包装，命令式 API + useRef 接得很别扭，理性选择是 Konva + react-konva）
-- 万级以上对象 / 大量动画（应该上 Pixi.js 走 WebGL）
-- 纯展示无交互的图表（用 D3 / ECharts 即可，不需要这层对象抽象）
-- 矢量图编辑（Paper.js 的 Item 树更接近 SVG DOM）
+- 只要分层 scene graph、官方 React reconciler → 看 [[konva]]
+- 万级精灵 / WebGL 批处理 → 看 [[pixi]]，不在本页范围
+- 纯展示图表，不需要选择与序列化
+- 仍把 v5 callback 和左上角 origin 当当前合同的代码库，需先改调用面
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2008 年**：kangax (Juriy Zaytsev) 在 Printio 做 T 恤定制工具，需要让用户在 T 恤图片上拖图案、加文字。当时主流是 Flash，他选了刚出生的 HTML5 Canvas，发现"拖动"得自己维护对象列表，于是写了 fabric。
-- **2010 年**：开源后迅速成为"Canvas 编辑器"的事实标准。
-- **2024 年**：v6 整体重写为 ESM + TypeScript，开源生态进入"老教程都过期"的一年阵痛期。
-
-kangax 也是 ECMAScript 兼容性表 `kangax/compat-table` 的作者，一向偏好原生 JS，这也解释了 fabric 为什么没接 React。
+- 本文绑定 `fabricjs/fabric.js@ce64f450...`，npm `7.4.0` 与 GitHub tag `v740` 指向同一提交。
+- `engines.node` 为 `>=20.0.0`；浏览器入口是 `dist/index.min.mjs`。
+- 默认 `origin` 为 center、`objectCaching` true、`renderOnAddRemove` true、`skipOffscreen` true。
+- 本文未安装依赖、运行 vitest / Playwright、导出 PNG 或测量体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **对象模型是"无状态渲染 API"长出可编辑能力的必经之路**——不只是 Canvas，WebGL / DOM 事件流 / PDF 也一样
-2. **存"原始 + 变换"而不是"最终结果"** —— 让一切操作可逆、可序列化、可重放
-3. **分层换局部刷新** —— 双 canvas 是经典的"用空间换时间"
-4. **事件桥接是开发者最值钱的一层** —— hit-test 看似简单，但每个圆 / 路径 / 旋转过的矩形都要处理，自己写几百行起步
-5. **生态空窗期是开源项目重写的必然代价** —— React 18、Vue 3、fabric v6 都遇到过；一旦新版发布，旧教程会持续误导新人 1-2 年
+1. **对象模型把无状态 canvas 变成可编辑层**——存的是原始几何加变换，不是最终像素。
+2. **双 canvas 是选择交互的实现，不是装饰**——lower 画对象，upper 画控件。
+3. **7.x 的异步边界是 Promise**——`fromURL` 和 `loadFromJSON` 都不再靠“第二个参数一定是完成回调”。
+4. **默认原点改了，教程不会跟着改**——`center` 会让所有旧 `left/top` 例子偏一截。
 
-## 一个反直觉的事实
+## 应用型自测
 
-fabric 没有官方 React 包装。这件事很反直觉——一个 2008 年起、30k LOC 的成熟库，居然把"和最大前端框架的整合"留给社区。
+1. `new Rect({ left: 0, top: 0, width: 100, height: 50 })` 的左上角在 (0, 0) 吗？
+2. `canvas.loadFromJSON(json, () => canvas.renderAll())` 里的函数，在 7.4.0 是“全部加载完”的回调吗？
+3. `rect.animate({ left: 200 })` 之后，画布一定立刻看到移动吗？
 
-社区有 `fabricjs-react`、`react-fabric-canvas` 等几个非官方包装，维护活跃度都一般，大多数人就是裸用 `useEffect` + `useRef` 自己接。而 Konva 有官方 `react-konva`、Pixi 有官方 `@pixi/react`，把对象模型直接变成 React 组件 `<Rect x={10} y={20} />`。
+检查点：
 
-**所以今天选编辑器底座，如果团队是 React 重度，理性选择正在从 fabric 偏移向 Konva 或自研**。fabric 的命令式 API 在 Vue / Vanilla JS / Web Components 场景下没有这个问题，且 toJSON 数据结构足够稳定，可以独立于框架使用。这不是"fabric 输了"——它在自己的 niche 里依然第一，但市场是分裂的，没有赢家通吃。
+1. 默认不是。origin 在中心，左上角大约在 (-50, -25)。
+2. 不是。第二参数是 reviver；完成信号是返回的 Promise。
+3. 不一定。必须自己在 `onChange` 里渲染。
 
 ## 延伸阅读
 
-- 官方仓库：[github.com/fabricjs/fabric.js](https://github.com/fabricjs/fabric.js)（v6 文档比 fabricjs.com 更新）
-- 对照阅读：[Konva.js](https://github.com/konvajs/konva)（显式 Layer + 官方 React 包装），[Paper.js](https://github.com/paperjs/paper.js)（Item 树近 SVG）
-- 学习路径：从 `src/canvas/Canvas.ts` 看双 canvas 怎么挂 DOM → `src/shapes/Object/Object.ts` 看 `_render` / `toObject` → `src/canvas/SelectableCanvas.ts` 看事件分发
-- demos repo：[fabric.js/demos](https://github.com/fabricjs/fabric.js/tree/master/demos)，每个 demo ≤ 100 行，最快的对照学习路径
+- 仓库与 7.x 文档：[github.com/fabricjs/fabric.js](https://github.com/fabricjs/fabric.js)
+- 固定源码：本文绑定提交 `ce64f450bad811750cb5a75aa749fc1502c644be`
+- 对照：[Konva](https://github.com/konvajs/konva) 的显式 Layer，[Paper.js](https://github.com/paperjs/paper.js) 的 Item 树
+- [[konva]] —— 多 canvas 节点树，官方 React 包装在另一仓库
+- [[pixi]] —— WebGL 2D，不提供这套编辑器对象合同
 
 ## 关联
 
-- [[anime]] —— 都靠 requestAnimationFrame 主循环；fabric 的 animate 工具复用同一思路
-- [[d3]] —— D3 偏数据驱动 SVG，fabric 偏对象驱动 Canvas，两套抽象解决相邻问题
-- [[dnd-kit]] —— React 现代拖拽 toolkit；fabric 在 Canvas 内自己处理拖拽，dnd-kit 在 DOM 层
-- [[prosemirror]] —— 文档编辑器的对象模型；和 fabric 同样是"自定义对象模型 + 自管渲染"
-- [[storybook]] —— 组件展厅；fabric 的 demos repo 是它的"穷人版" Storybook
+- [[konva]] —— 同领域的 scene graph；Layer 是性能边界
+- [[excalidraw]] —— 自研画布模型，不依赖 Fabric
+- [[d3]] —— 数据驱动 SVG，不是对象编辑器
+- [[prosemirror]] —— 文档对象模型，对照“自管模型和渲染”
 
 ## 反向链接
 

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "research_input_sha256": "4d5583cf82fb21f272e9f1ce327973fbe7556cba4eb7c43e94b08cd99f66324c",
+  "waivers": [],
+  "created_at": "2026-08-27T07:50:00.000Z",
+  "note": {
+    "area": "projects",
+    "slug": "konva",
+    "digest_sha256": "72b162abda5638dfe5ac27d6f077fc6def6346b60b7663751d15ce9790b98b92"
+  },
+  "source_revision": "005356e261367c2485c70149ffc0570e16ee64f4",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Stage/Layer/Group/Shape, listening hit-canvas release, autoDraw batching, and Core vs Full with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 10.3.2 Stage/Layer/Shape/Transformer and Node backends were inspected; mocha and canvas rendering were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable 10.3.2 tag/npm gitHead; discloses FastLayer deprecation and size-limit values were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ]
+}

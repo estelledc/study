@@ -2,154 +2,175 @@
 title: Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 来源: 'https://github.com/konvajs/konva'
 日期: 2026-05-30
-分类: 前端图形 / Canvas 2D
+分类: projects / Canvas 2D
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/konvajs/konva
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 005356e261367c2485c70149ffc0570e16ee64f4
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 10.3.2
 ---
 
 ## 是什么
 
-Konva 是一个在 HTML5 Canvas 上重建"对象模型"的 JavaScript 框架。日常类比：原生 Canvas 是一块**一次性白板**——你画了红方块就剩下"一些红色像素"，浏览器记不住"这是一个红方块"；Konva 给这块白板**配了一份花名册**，每个图形都有名字、有事件、能被找到、能被拖拽。
+Konva 是一个在 HTML5 Canvas 上重建对象模型的 JavaScript 框架。日常类比：原生 Canvas 是一块一次性白板——你画了红方块就只剩像素；Konva 给这块白板配了一份花名册，每个图形都有事件、变换和命中检测。
 
 你写：
 
 ```js
-const stage = new Konva.Stage({ container: 'app', width: 800, height: 600 });
+import Konva from "konva";
+
+const stage = new Konva.Stage({ container: "app", width: 800, height: 600 });
 const layer = new Konva.Layer();
-const rect = new Konva.Rect({ x: 10, y: 10, width: 100, height: 100, fill: 'red', draggable: true });
-layer.add(rect); stage.add(layer);
-rect.on('click', () => console.log('点中了'));
+const rect = new Konva.Rect({
+  x: 10, y: 10, width: 100, height: 100, fill: "red", draggable: true
+});
+layer.add(rect);
+stage.add(layer);
+rect.on("click", () => console.log("点中了"));
 ```
 
-四行就拿到一个**能拖、能点、能查**的红方块。原生 Canvas 想做同样的事，需要自己维护一个"逻辑模型 + 像素呈现"的双向同步——这正是 Konva 替你做的事。
+`Stage` 接管一个 DOM 容器；`Layer` 是真正的 `<canvas>`。固定 10.3.2 默认 `Konva.autoDrawEnabled = true`，属性变化会排进下一帧 `batchDraw()`。本轮只读源码，未渲染页面，状态保持 `UNVERIFIED`。
 
 ## 为什么重要
 
-- 不理解 Konva，做"在线设计工具 / 白板 / 签名板 / 图像编辑器"会撞同一面墙：Canvas 没有"对象"，点击和拖拽都得自己造轮子
-- 不理解"Layer = 一个独立 canvas"，会把所有东西画在一层上，性能掉到 10fps 还找不到原因
-- 不理解 react-konva 是"自定义 reconciler"，会以为它和 React DOM 一样而到处踩 ref 的坑
-- 不理解 hit detection 用的是隐藏 canvas + 颜色编码，关不掉就一直多花一倍渲染时间
+不理解 Konva，下面这些事都没法解释：
+
+- 为什么点击、拖拽和变换必须先有节点树，而不是直接操作像素
+- 为什么“Layer = 一块独立 canvas”决定了谁会被重绘
+- 为什么关掉 `listening` 能少画一张 hit canvas
+- 为什么 `konva/lib/Core` 里没有 `Rect`，而默认入口有
 
 ## 核心要点
 
-1. **节点树四层**：Stage（一个 div，分发事件）→ Layer（一个 canvas，性能边界）→ Group（逻辑分组，不画东西）→ Shape（叶子图形）。类比家庭住址：省 → 市 → 街区 → 门牌。
+Konva 10.3.2 可以拆成四层：
 
-2. **Layer 是性能开关**：每个 Layer 是真实 `<canvas>`，浏览器在 GPU 上合成各 Layer。把"不动的背景 / 高频变的主体 / 选中框 UI"分到 3 个 Layer，一个 Layer 重绘不会拖累另两个。但 Layer ≤ 5，多了反而拖性能。
+1. **Stage**：构造时清空 container，再挂 `div.konvajs-content`。它监听 mouse / touch / pointer，把坐标换算进舞台，再向子层做命中。
 
-3. **事件像 DOM 但不是 DOM**：Shape → Group → Layer → Stage 的冒泡路径，写起来和 DOM 一样；但底层是 Konva 自己用一张**隐藏 canvas + 颜色编码**做的命中检测——不需要交互的层用 `listening(false)` 关掉能省一半渲染。
+2. **Layer**：每个 Layer 自带 `SceneCanvas` 和 `HitCanvas`。`clearBeforeDraw` 默认 true。非 listening 层会把 hit canvas 释成 0×0，不再读像素。
 
-4. **batchDraw 默认开**：循环里改 100 个属性别调 100 次 `draw()`，调一次 `batchDraw()` 让 Konva 用 `requestAnimationFrame` 合并成下一帧的一次重绘。
+3. **Group**：只做逻辑分组。`Group` 只能再收 Group 或 Shape，自己没有 canvas。
 
-## 实践案例
+4. **Shape**：叶子节点。构造时分配唯一 `colorKey`，hit 图用这块纯色；`getIntersection` 读 1×1 `getImageData`，必要时绕抗锯齿像素螺旋搜索。
 
-### 案例 1：拖拽 + 选中 + 变换控制器
+`FastLayer` 已 deprecated：构造函数强制 `listening(false)` 并警告改用 `new Konva.Layer({ listening: false })`。`hitGraphEnabled()` 同样 deprecated，改走 `listening()`。
+
+完整入口 `_FullInternals` 才注入 `Rect` / `Transformer` / `Filters`。`konva/lib/Core` 只有节点树、拖拽和动画。Node 端要另装可选 peer `canvas` 或 `skia-canvas`，再 import `konva/canvas-backend` 或 `konva/skia-backend`。
+
+## 实践示例
+
+### 案例 1：选中后挂 Transformer
 
 ```js
-const stage = new Konva.Stage({ container: 'app', width: 800, height: 600 });
-const layer = new Konva.Layer(); stage.add(layer);
-const rect = new Konva.Rect({ x: 50, y: 50, width: 100, height: 100, fill: '#3b82f6', draggable: true });
+const layer = new Konva.Layer();
+stage.add(layer);
+const rect = new Konva.Rect({
+  x: 50, y: 50, width: 100, height: 100, fill: "#3b82f6", draggable: true
+});
 const tr = new Konva.Transformer();
 layer.add(rect, tr);
-rect.on('click', () => tr.nodes([rect]));    // 点中后绑定变换器
-stage.on('click', (e) => { if (e.target === stage) tr.nodes([]); });  // 点空白取消
+rect.on("click", () => tr.nodes([rect]));
+stage.on("click", (e) => { if (e.target === stage) tr.nodes([]); });
 ```
 
-`Konva.Transformer` 是开箱即用的**8 个控制点 + 旋转把手**；`draggable: true` 一行开拖拽。原生 Canvas 这两个加起来要写 200 行。
+`Transformer` 是 Group，默认 8 个 resize 锚点加旋转把手。`nodes([shape])` 是当前 API；`setNode` / `attachTo` 已标 deprecated。本轮未点选验证。
 
-### 案例 2：多 Layer 拆性能
+### 案例 2：背景层关掉 listening
 
 ```js
-const bgLayer = new Konva.Layer(); bgLayer.listening(false);  // 背景层不响应事件
-const mainLayer = new Konva.Layer();                          // 主体频繁变
-const uiLayer = new Konva.Layer();                            // 选中框 UI 单放
-stage.add(bgLayer, mainLayer, uiLayer);
-bgLayer.add(grid); bgLayer.draw();        // 画一次，之后不动
-// 拖动主体只重绘 mainLayer，bgLayer 不参与
+const bgLayer = new Konva.Layer({ listening: false });
+const mainLayer = new Konva.Layer();
+stage.add(bgLayer, mainLayer);
+bgLayer.add(grid);
 ```
 
-`listening(false)` 让 bgLayer 不画 hit canvas，渲染开销直接砍半。这是大场景白板的标配模式。
+`listening: false` 让 hit canvas 保持 0×0。`FastLayer` 不再是推荐写法。官方文档常建议少开 Layer，但 10.3.2 源码没有写死“最多 5 层”。
 
-### 案例 3：react-konva 拿实例做命令式操作
+### 案例 3：滤镜必须先 cache
 
-```jsx
-import { Stage, Layer, Rect, Transformer } from 'react-konva';
-function App() {
-  const rectRef = useRef(null);
-  const trRef = useRef(null);
-  const [selected, setSelected] = useState(false);
-  useEffect(() => {
-    if (selected && trRef.current && rectRef.current) {
-      trRef.current.nodes([rectRef.current]);   // 必须 ref 拿 instance
-      trRef.current.getLayer().batchDraw();
-    }
-  }, [selected]);
-  return (<Stage width={800} height={600}><Layer>
-    <Rect ref={rectRef} x={10} y={10} width={100} height={100} fill="red" onClick={() => setSelected(true)} />
-    <Transformer ref={trRef} />
-  </Layer></Stage>);
-}
+```js
+rect.cache();
+rect.filters([Konva.Filters.Blur]);
+rect.blurRadius(8);
 ```
 
-react-konva 的"声明式表象 + 命令式底子"在 Transformer 这种地方漏出来——所有可选中节点都要走 ref + useEffect + nodes() + batchDraw 这一套。
+10.3.2 的滤镜走 cache 画布。非 cache 路径里，CSS filter 调用被注释成 skip。没 `cache()` 就挂 `Konva.Filters.*`，静态阅读看不到绘制。文本 cache 后的抗锯齿变化本轮未测。
 
 ## 踩过的坑
 
-1. **Layer 超过 5 个反而掉帧**：每个 Layer 是真 canvas，GPU 合成层多了浏览器吃不消。官方建议 ≤ 3-5，超了就该用 Group 合并而不是再开 Layer。
+1. **把 size-limit 写成当前体积**：`package.json` 给 `lib/index.js` 的上限是 45 KB、`lib/Core.js` 是 26 KB。本轮未跑 `size-limit`，不能当验收数字。
 
-2. **react-konva 默认是非 strict**：只把 render 里**真变化**的 props 写回节点；大场景靠这点省更新。若要强制每次对齐全部 props，用 `import { useStrictMode } from 'react-konva'; useStrictMode(true)`——代价是拖拽等命令式改动会被下一轮 render 的 props 覆盖回去。
+2. **继续用 FastLayer / hitGraphEnabled**：两者都在 10.3.2 标 deprecated。等效写法是 `new Konva.Layer({ listening: false })`。
 
-3. **滤镜必须先 `cache()`**：`Konva.Filters.Blur` 等需要 ImageData，没 cache 直接挂滤镜不显示也不报错；但文本节点 cache 后字体抗锯齿会变糊。
+3. **以为 touch 只是假鼠标**：`Stage` 同时绑 mouse、touch 和 pointer。手势算法仍要自己写；本轮未在真机核对多指。
 
-4. **触摸事件被映射成假鼠标事件**：`click` / `mousedown` 在移动端 tap / touchstart 也会触发，但**双指捏合 / hover** 不在这套里——要监听原生 `touchstart/touchmove` 自己算手势。
+4. **把 react-konva 写进本页合同**：`react-konva` 是另一个仓库。本文只绑定 `konvajs/konva@005356e2`，未读 reconciler。
+
+5. **关掉 autoDraw 后还等自动刷新**：`Konva.autoDrawEnabled` 默认 true。设成 false 后必须自己 `layer.draw()` 或 `batchDraw()`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 在线设计工具（海报 / 名片 / 简历模板）、白板 / 思维导图 / 流程图
-- 图像编辑器的基础裁剪 / 滤镜 / 标注、签名板 / 涂鸦
-- 节点边超出 SVG 性能上限的关系图（500+ 节点）
-- React/Vue 应用里的复杂 canvas 模块（生态成熟）
+- 需要节点事件、拖拽和 Transformer 的编辑器 / 白板 / 标注
+- 要把不动背景和高频层拆到不同 `<canvas>`
+- 浏览器为主，偶尔用 `canvas` / `skia-canvas` 做 Node 导出
 
 **不适用**：
 
-- 极简手绘（如 Excalidraw 那种）→ 直接 rough.js + 原生 canvas，框架反而是负担
-- Photoshop 级图像处理（笔刷 / 图层混合 / 智能选区）→ PixiJS + WebGL
-- 重选择交互、要"开箱即用变换框"→ [[fabric-js]] 上手更快
-- 真 3D / 游戏 → Three.js / PixiJS
+- 只要像素、不要对象模型 → 原生 Canvas 或更轻的绘制库
+- WebGL / 游戏级批处理 → 看 [[pixi]]，不在本页范围
+- 默认就要变换框且接受单画布对象列表 → 看 [[fabric-js]]
+- 把 React 组件树当合同 → 需要另读 `react-konva`
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2011 年**：Eric Rowell 发布 KineticJS，是 HTML5 Canvas 早期的"节点树"框架先驱之一
-- **2014 年**：Anton Lavrenov fork KineticJS 改名 Konva，独立维护至今
-- **2020 年前后**：从 ES5 重写成 TypeScript，类型可推、IDE 友好
-- **同期**：作者自己用 Konva 做了 Polotno（在线设计工具，Canva 替代），相当于把它当自家产品的反复打磨场
-- 现在 GitHub ~11.7k star、npm 周下载 ~600k，是 Canvas 2D 节点树框架里活跃度最高的之一
+- 本文绑定 `konvajs/konva@005356e2...`，npm / GitHub tag 均为 `10.3.2`。
+- 默认导出是完整 namespace；`konva/lib/Core` 不含形状和滤镜。
+- `autoDrawEnabled` 默认 true，`dragDistance` 默认 3，`angleDeg` 默认 true，`dragButtons` 默认 `[0, 1]`。
+- 本文未安装依赖、运行 mocha、渲染 Stage 或测量体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **Canvas 2D 缺一个对象模型**——这是所有"高级 Canvas 应用"的痛点起点，Konva 给的就是这个补丁
-2. **"Layer = canvas"** 是性能调优的全部出发点：分层 = 减少不必要的重绘 + 借浏览器 GPU 合成
-3. **React 集成不是真 React**——react-konva 用自定义 reconciler 把节点变组件，遇到命令式 API 必须 ref 兜底
-4. **框架选型看场景**：重选择 / 默认变换框选 fabric.js；多 Layer / React 重交互选 Konva；极简手绘别上框架
+1. **对象模型是交互 Canvas 的前置条件**——没有节点，就没有事件、拖拽和选中。
+2. **Layer 既是性能边界也是命中边界**——scene 和 hit 是两张画布；`listening: false` 直接丢掉后者。
+3. **自动重绘是默认策略，不是魔法**——`autoDrawEnabled` 把属性变化收进 `batchDraw()`。
+4. **Core 和 Full 不是同一份合同**——最小入口没有 `Rect`，完整入口才有 Transformer 和 Filters。
+
+## 应用型自测
+
+1. `new Konva.FastLayer()` 在 10.3.2 还是官方推荐的背景层写法吗？
+2. 给 `Rect` 设 `filters([Konva.Filters.Blur])` 但不调用 `cache()`，源码保证滤镜会画出来吗？
+3. `import Konva from "konva/lib/Core"` 之后，`new Konva.Rect()` 一定可用吗？
+
+检查点：
+
+1. 不是。`FastLayer` 已 deprecated，应使用 `Layer({ listening: false })`。
+2. 不保证。10.3.2 非 cache 路径跳过滤镜。
+3. 不一定。Core 没有注入形状；要另 import `konva/lib/shapes/Rect`。
 
 ## 延伸阅读
 
-- 官方文档：[konvajs.org](https://konvajs.org)（教程式，配可运行 demo）
-- React 包装：[react-konva 仓库](https://github.com/konvajs/react-konva)
-- 作者商业产品：[Polotno](https://polotno.com)（Konva 自己的最佳实践参考）
-- [[fabric-js]] —— Konva 最直接的对手，单 canvas + 对象列表心智
-- [[d3]] —— SVG 路线的可视化框架，命题不同但常被对比
-- [[anime]] —— 动画引擎，可以驱动 Konva 节点的属性补间
+- 文档：[konvajs.org](https://konvajs.org)
+- 固定源码：[konvajs/konva](https://github.com/konvajs/konva) —— 本文绑定提交 `005356e261367c2485c70149ffc0570e16ee64f4`
+- Node 后端：`konva/canvas-backend`、`konva/skia-backend`
+- [[fabric-js]] —— 单组 lower/upper canvas 的对象编辑器模型
+- [[pixi]] —— WebGL 2D 渲染，不在本页合同内
 
 ## 关联
 
-- [[fabric-js]] —— 同为 Canvas 2D 框架，单 canvas 心智、自带变换框，重叠 80%
-- [[d3]] —— SVG 路线，节点超 500 后让位给 Konva
-- [[echarts]] —— 图表库，底层也用 Canvas 但不暴露节点 API
-- [[anime]] —— 通用动画引擎，可与 Konva.Tween 互补
-- [[dnd-kit]] —— React 拖拽 toolkit，DOM 路线，和 Konva 的 draggable 是两个世界
-- [[storybook]] —— 调 Konva 组件视觉时常用的隔离环境
-- [[playwright]] —— canvas 应用做端到端测试的常用工具
+- [[fabric-js]] —— 同为 Canvas 2D 对象模型，默认双 canvas 选择层
+- [[pixi]] —— GPU 批处理路线，命题不同
+- [[excalidraw]] —— 自研场景模型，不依赖 Konva
+- [[d3]] —— SVG / 数据驱动，节点数量上来后常被拿来对照
 
 ## 反向链接
 

@@ -42646,16 +42646,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-image-processing-and-canvas",
-        "raw_category": "前端 / Canvas"
+        "raw_category": "projects / Canvas 2D"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fabric-js/",
       "atlas": {
@@ -47163,16 +47163,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-image-processing-and-canvas",
-        "raw_category": "前端图形 / Canvas 2D"
+        "raw_category": "projects / Canvas 2D"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/konva/",
       "atlas": {
