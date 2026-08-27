@@ -15,7 +15,12 @@
   1. `slash` 绑定 annotated tag `v5.1.0` → `98b618f5a3bfcb5dd374b204868818845b87bb2f`（与 npm `gitHead` 一致）。
   2. `normalize-path` 绑定 lightweight tag `3.0.0` → `ea100bbecf851e2cc89e54e295e91af7b835fe63`；披露 npm `gitHead` 仅差 version 字段。
   3. 共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:counts` / `audit:site-state` 通过。`verify:ci` 在首个 commit 之后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`
+  - `STUDY_CHANGED_FROM=1f2917d90 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML / 2288 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 drift 门禁）
+  - `audit:project-standard`：snapshot CURRENT；两页 `benchmark-aligned`
+  - `audit:content-contract`：blocking 0，v2=144
 - budget：2 个小型上游 clone + 2 页静态源码迁移；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一 PR 已开且未 merge 后停止；不自动开下一对。
