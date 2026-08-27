@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -17,6 +17,7 @@ sidebar:
 | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | `asdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | `aws-spot-best-practices` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | `bigbluebutton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [cacache — 按内容地址落盘的本地缓存](/study/projects/cacache/) | `cacache` | beginner | UNVERIFIED | 介绍 cacache 如何把 key 索引和 sha512 内容文件拆开，并用追加日志与完整性校验做本地缓存 |
 | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | `collabora-online` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | `coturn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | `cri-o` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -35,6 +36,7 @@ sidebar:
 | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | `istio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | `linkerd2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | `mailcow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [make-fetch-happen — 带磁盘缓存的 npm Fetch 客户端](/study/projects/make-fetch-happen/) | `make-fetch-happen` | beginner | UNVERIFIED | 介绍 make-fetch-happen 如何用 minipass-fetch、HTTP 缓存语义和 cacache 组成可重试的 Fetch 客户端 |
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | `moby` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

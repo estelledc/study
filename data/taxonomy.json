@@ -1816,6 +1816,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::cacache",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::cal-com",
       "topic_id": "projects-data-applications-and-saas"
     },
@@ -2118,6 +2122,10 @@
     {
       "note_id": "projects::luxon",
       "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::make-fetch-happen",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::mariadb-server",

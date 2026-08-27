@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IO：cacache + make-fetch-happen
+
+- status：writer epoch `running` → 内容切片完成，待 `verify:ci` 与 PR review。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：为缺失的 content-cache 双子补齐 `cacache` 与 `make-fetch-happen` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/content-cache-source-review-20260827-io.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未发网络请求、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-io-2026-08-27`。
+- detector fingerprint：目录无 `cacache.md` / `make-fetch-happen.md`；开放 PR 未占用这两个 slug；禁止回退到 cache-manager / quick-lru / unstorage / lru-cache / keyv / node-cache。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `cacache` 绑定 tag `v21.0.1` → `5c0b5782af33e828eaa63a401d89bb9200b557cb`；tag / package / npm `gitHead` 一致。
+  2. `make-fetch-happen` 绑定 tag `v16.0.1` → `36435b4fd8e68ff77fda4ac515d3dea198da2cb9`；披露 GitHub latest release 仍停在 `v15.0.6`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目数 967 → 969，总数 2050 → 2052，已对齐标杆 85 → 87。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `verify:ci`：待跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只交付这一对；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

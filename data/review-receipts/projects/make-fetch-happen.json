@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "make-fetch-happen",
+    "digest_sha256": "595ac4b1120c78859ce408f9ad1fea8d1a0fe24e2aefc4a583c55f46eb00ebe8"
+  },
+  "source_revision": "36435b4fd8e68ff77fda4ac515d3dea198da2cb9",
+  "research_input_sha256": "b674ec750196898ce20e809f02abcd3bd23fbf068c5d2923bb3c0e967425e304",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-io",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates cachePath gating, HTTP freshness, body-consume write, and default retries=0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-io",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "fetch/remote/cache entry/policy/key were inspected; no network or upstream tests."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-io",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v16.0.1 tag/npm gitHead and discloses stale GitHub latest release v15.0.6."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}
