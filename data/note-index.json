@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -55520,6 +55520,38 @@
       }
     },
     {
+      "id": "projects::postcss",
+      "area": "projects",
+      "slug": "postcss",
+      "title": "PostCSS — 用插件链变换 CSS 的编译器",
+      "description": "把 CSS 解析成节点树，按插件 visitor 变换后再序列化；无插件时可走 NoWorkResult",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-css-and-styling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-css-and-styling",
+        "matched_category": "css",
+        "raw_category": "CSS 工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/postcss/",
+      "atlas": {
+        "chunk_id": "topic-projects-css-and-styling-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-css-and-styling-01/"
+      }
+    },
+    {
       "id": "projects::postfix",
       "area": "projects",
       "slug": "postfix",
@@ -57921,6 +57953,38 @@
       "atlas": {
         "chunk_id": "topic-projects-backend-and-apis-01",
         "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
+      "id": "projects::sass",
+      "area": "projects",
+      "slug": "sass",
+      "title": "Sass — 把 SCSS/Sass 编译成 CSS 的 Dart 实现",
+      "description": "Dart Sass 官方实现，把 SCSS、缩进语法或纯 CSS 解析求值后再序列化成 CSS",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-css-and-styling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-css-and-styling",
+        "matched_category": "css",
+        "raw_category": "CSS 工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sass/",
+      "atlas": {
+        "chunk_id": "topic-projects-css-and-styling-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-css-and-styling-01/"
       }
     },
     {
@@ -65475,7 +65539,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-css-and-styling-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-data-applications-and-saas-01",

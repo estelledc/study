@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "postcss",
+    "digest_sha256": "ce81f31b028f6123b1c0f9b08fe5d0a13be51ef00c9251442320b8c04e53c72b"
+  },
+  "source_revision": "07b25773f38f77919f2af02ae3e8896b0deb5988",
+  "research_input_sha256": "521af7a9a96ee37a8c717a47032f3bd4d00ac5d5671abdc964b6ca5ff7c0e9fa",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Processor vs LazyResult vs NoWorkResult, plugin shapes, and sync/async boundaries without claiming a plugin run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "postcss.js, processor.js, lazy-result.js, no-work-result.js, and parse.js were inspected; upstream tests and plugin pipelines were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Bounded to postcss 8.5.26 / 07b25773; size-limit 16.5 KB is the repo self-check, not a measured install or runtime."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}

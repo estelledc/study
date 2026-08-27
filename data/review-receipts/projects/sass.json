@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sass",
+    "digest_sha256": "1bc3a81a61c7b5c218840e9b5aa90f296b17c4240f9ce12fc81491a6ed0405be"
+  },
+  "source_revision": "62243d455aa1d2ac7462e4c0ddda964ffbc82363",
+  "research_input_sha256": "521af7a9a96ee37a8c717a47032f3bd4d00ac5d5671abdc964b6ca5ff7c0e9fa",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains compile vs compileString, default SCSS syntax, NoOpImporter, and legacy render API without claiming a CLI or test run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "compile, evaluate/serialize, JS bindings, Syntax.forPath, and legacy.js were inspected; Dart/npm tests and CLI were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Bounded to dart-sass 1.103.1 / 62243d45; does not claim compile time, install size, or compatibility with Libsass."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}

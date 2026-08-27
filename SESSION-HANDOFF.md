@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 CSS toolchain twins epoch (writer BM)
+
+- status：writer epoch `complete`；等待单一 PR review。未 merge、未 deploy。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把 CSS 工具链双子 `sass` 与 `postcss` 绑定到可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `sass.md`、`postcss.md`、`docs/css-toolchain-source-review-20260827-bm.md`、两份 generation 1 receipt、atlas / site-state / 公开计数派生、本交接记录。本机 gitignored blob-filtered clone。未安装上游依赖、未跑 Dart/Node 上游测试、CLI 或性能测量。
+- activated_by：`explicit-user-parallel-writer-bm-20260827`。
+- detector fingerprint：仓库无 `sass` / `postcss` 页；开放 PR 已占用 `tailwind` / `unocss`，未占用本对 slug。
+- external delta：本轮授权 push + 开 PR；merge 与 deploy 未授权，D 轴不提升。
+- 完成切片：
+  1. `sass` 绑定 lightweight tag `1.103.1` → `62243d455aa1d2ac7462e4c0ddda964ffbc82363`（与 npm `sass@1.103.1` `gitHead` 一致）。
+  2. `postcss` 绑定 annotated tag `8.5.26` → `07b25773f38f77919f2af02ae3e8896b0deb5988`（与 npm `postcss@8.5.26` `gitHead` 一致）。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest / revision / research-input 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci` 全绿：388 Node tests、2287 HTML / 2286 sitemap URLs、23 Playwright a11y。
+- budget：1 个可写切片。
+- blocker：无本对 slug 冲突；并行 PR 会在派生文件上冲突，内容页与 receipt 不重叠。
+- stop conditions：已形成单一 PR；不 merge。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
