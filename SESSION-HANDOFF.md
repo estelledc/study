@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DJ：Markdown 管线静态审查
+
+- status：`running` → 本轮 writer epoch 收口为 review-ready PR；未 merge。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（当时 `origin/main`）。
+- objective：按 PARALLEL writer DJ 授权，把 Markdown 管线双子迁到固定源码的 `study-v2` / `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`micromark`、`unified` 两页、`docs/markdown-pipeline-source-review-20260827-dj.md`、两份 generation 1 receipt、atlas / note-index / project-standard / site-state 派生；未改 taxonomy 阈值、政策、队列或远端 `main`。
+- activated_by：`explicit-user-parallel-writer-dj-20260827`。
+- detector fingerprint：原目标 `remark` + `unified`；仓库无 `remark` 项目页，新建页会把 atlas `unknown_difficulty` / `empty_description` 预算各 +1 超限。fallback 为已有页 `micromark` + `unified`（排除 marked / markdown-it）。两页旧正文缺 pinned revision / evidence / self-test，并含未绑定体积、下载量、流式内存与“100% CommonMark”断言。
+- external delta：本轮授权 One PR / No merge；D 轴在 merge 前不提升。
+- 完成切片：
+  1. 只读核验 `remark@15.0.1` / `5017a27…` 可钉，但因 atlas 预算放弃新建页。
+  2. `unified` 绑定 `unifiedjs/unified@242105bd…` / `11.0.5`（tag 与 npm `gitHead` 一致），修正冻结默认导出、freeze 时才跑 plugin、`file.value`/`file.result` 与 Sync API 异步边界。
+  3. `micromark` 绑定 `micromark/micromark@3fae1552…` / `4.0.2`（tag 与 npm `gitHead` 一致），修正 preprocess→parse→postprocess→compile 主链、默认 HTML 安全开关、`micromark/stream` 在 `end` 才缓冲输出。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 review doc digest 一致，evidence `UNVERIFIED`；`git diff --check` 通过。`verify:ci` 在 push/PR 后跑。
+- budget：3 个 blob-filtered worktree（remark 仅作 fallback 证据）+ 2 页静态迁移 + 派生刷新；单 writer。
+- blocker：无新的硬暂停。规模 baseline 超限若仍在 `origin/main` 上，属既有 `PARKED_HUMAN` 信号，本轮未改阈值。
+- stop conditions：已形成一份 PR；不 merge、不部署。
+- 下一次 wake 条件：PR review / CI 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

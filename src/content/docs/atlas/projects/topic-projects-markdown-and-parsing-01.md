@@ -15,6 +15,6 @@ sidebar:
 |---|---|---|---|---|
 | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | `markdown-it` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | `marked` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | `micromark` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [micromark — 用状态机发 token 事件再编成 HTML](/study/projects/micromark/) | `micromark` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | `shiki` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | `unified` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [unified — 用冻结 processor 串起 parse / run / stringify](/study/projects/unified/) | `unified` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

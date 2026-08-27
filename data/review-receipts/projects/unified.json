@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "unified",
+    "digest_sha256": "ff01f8cc2b9164b841eaa0df1dcab77a4313f032755b174542bfe4c86b44fc48"
+  },
+  "source_revision": "242105bd6e18c61ca10f37d99529b89f1be37518",
+  "research_input_sha256": "986109e8d3dbaef21b729c15d7e4a39fcd528e9ba923485e0692ed4d76ed3dac",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains frozen default export, freeze-time plugins, parse/run/stringify, and file.value versus file.result with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed 11.0.5 Processor, CallableInstance, trough run, and sync/async boundary were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "GH-246 browser exception fix is disclosed as source-only; no runtime or download-count claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

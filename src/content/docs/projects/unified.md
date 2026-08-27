@@ -1,172 +1,168 @@
 ---
-title: unified — 把文档处理拆成 AST + plugin 流水线
-来源: 'https://github.com/unifiedjs/unified'
+title: unified — 用冻结 processor 串起 parse / run / stringify
+来源: https://github.com/unifiedjs/unified
 日期: 2026-05-30
-分类: projects
+分类: Markdown / 解析
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/unifiedjs/unified
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 242105bd6e18c61ca10f37d99529b89f1be37518
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 11.0.5
 ---
 
 ## 是什么
 
-unified 是一个**通用文档处理框架**：把任意文本（Markdown / HTML / 自然语言）先解析成树结构（AST），再用一串小函数（plugin）轮流改这棵树，最后输出新文本。日常类比：像一条**自助餐流水线**——食材（原文）从一头进，每个工位（plugin）只负责把"加酱""撒葱花"这一步做完，最后从另一头出成品。
+unified 是一个**文档处理器内核**：它不认识 Markdown 或 HTML，只约定三段——parser 把文本变成树，transformer 改树，compiler 把树变成结果。日常类比：一条可以换刀具的流水线；默认导出是已经冻结的空线，调用 `unified()` 才复制出还能装刀的新线。
 
-你写：
-
-```js
-unified()
-  .use(remarkParse)        // Markdown 字符串 → 树
-  .use(remarkRehype)       // 切到 HTML 树
-  .use(rehypeStringify)    // 树 → HTML 字符串
-  .process('# Hello *world*')
-// → '<h1>Hello <em>world</em></h1>'
-```
-
-三步之间没有"端到端解析器"在偷偷做事，每一步都是**纯函数**。这种"AST + plugin"思路撑起了 Astro / MDX / Gatsby / Next.js / Storybook 的 markdown 管线，月下载 100M+。
-
-## 为什么重要
-
-不理解 unified，下面这些事都没法解释：
-
-- 为什么 Astro / MDX 能在你写 `.md` 时同时跑 frontmatter / 语法高亮 / 自动锚点 / sanitize 五件事，还彼此不打架
-- 为什么写一个"给所有外部链接加 `target="_blank"`"的功能只要 10 行，而 marked / markdown-it 要重写整个 renderer
-- 为什么 unified 自己的核心代码只有 ~600 行，却能撑起 700+ 的 plugin 社区
-- 为什么有时一篇 markdown 渲染出问题，调试要跨 6-7 层 trough 调用栈才能定位
-
-## 核心要点
-
-unified 把文档处理拆成 **三段**：
-
-1. **parser**：把字符串变成 AST（树）。类比：把一段中文翻译成可以拆分的语法结构图。`remark-parse` 是 Markdown 的 parser，`rehype-parse` 是 HTML 的。
-
-2. **transformer**：纯函数 `(tree, file) => tree`，一棵树进一棵树出。类比：流水线工位，每个 plugin 只动自己关心的节点。多个 transformer 串成一条链。
-
-3. **compiler**：把 AST 变回字符串。`rehype-stringify` 把 HTML 树序列化成 HTML 文本。
-
-三段之间用**规范化 AST** 串起来：mdast（Markdown 语义树）/ hast（HTML DOM 树）/ nlcst（自然语言树），都是 unist 的子集。规范统一后，任何人写的 plugin 只要遵循"输入 mdast → 输出 mdast"，就能和别人组合。这就是 Unix pipe 哲学搬到 AST 层。
-
-## 实践案例
-
-### 案例 1：3 行配置跑通最小管线
+固定 `11.0.5` 的公开入口是 `new Processor().freeze()`。真正干活的是副本上的 `.use()` / `.parse()` / `.run()` / `.stringify()` / `.process()`。
 
 ```js
-import { unified } from 'unified'
+import {unified} from 'unified'
 import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
+import remarkStringify from 'remark-stringify'
 
 const file = await unified()
   .use(remarkParse)
-  .use(remarkRehype)
-  .use(rehypeStringify)
-  .process('# Hello *world*')
-
-console.log(String(file)) // '<h1>Hello <em>world</em></h1>'
+  .use(remarkStringify)
+  .process('*hi*')
 ```
 
-`.use()` 链式注册 plugin，`.process()` 触发执行。`file` 是 vfile 对象，承载输出文本 + lint 消息 + 路径元信息。
+没有 parser 或 compiler 时，`process` 会直接抛 `Cannot process without parser/compiler`。
 
-### 案例 2：完整管线（GFM + frontmatter + 高亮 + 锚点 + sanitize）
+## 为什么重要
+
+不读固定 11.0.5 源码，很容易把 unified 讲成“一个 Markdown 引擎”：
+
+- 为什么 `unified` 自己不能 `process('# hi')`——默认导出是冻结空 processor，还没装 parser
+- 为什么 `.use(plugin)` 当时看起来“什么都没发生”——plugin 在 `freeze()` 才被调用
+- 为什么第一次 `process` 之后不能再 `.use()`——冻结不可逆，必须先 `processor()` 复制
+- 为什么 Markdown 快捷方式可以只有一行——它只是预装了 parse 与 stringify 的 unified 副本
+
+## 核心要点
+
+固定版本可以拆成四层：
+
+1. **可调用实例**：`CallableInstance` 让 `unified` 既是对象又是函数。调用它等于 `copy()`：重放 `attachers`，深拷贝 `namespace`，得到未冻结后代。
+
+2. **先登记，后冻结**：`.use(plugin, opts)` 把元组推进 `attachers`。同函数再次 `.use` 会合并 options（两边都是 plain object 就 `extend(true)`）。`freeze()` 才以 processor 为 `this` 调用 plugin；返回函数就挂到 `trough`。`.use(plugin, false)` 在 freeze 时跳过。
+
+3. **三段可以拆开跑**：`parse` 只建树，`run` 只跑 transformer，`stringify` 只编译。`process` 把三段串起来。compiler 返回 `string` / `Uint8Array` 写入 `file.value`，否则写入 `file.result`。
+
+4. **同步 API 不容异步**：`processSync` / `runSync` 若 transformer 没立刻完成，就抛 `` finished async ``。异步插件必须走 `process` / `run`。
+
+## 实践示例
+
+### 案例 1：空核不能 process，装上才能走完
 
 ```js
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkGfm)                              // 表格 / 任务列表 / 删除线
-  .use(remarkFrontmatter, ['yaml'])            // YAML frontmatter 不当 markdown 渲
-  .use(remarkRehype, { allowDangerousHtml: true })
-  .use(rehypeRaw)                              // 重新解析 markdown 内嵌的 HTML
-  .use(rehypeSlug)                             // h1-h6 加 id
-  .use(rehypeAutolinkHeadings)                 // heading 包 anchor
-  .use(rehypeHighlight)                        // 代码块高亮
-  .use(rehypeSanitize)                         // XSS 防护（必须最后）
-  .use(rehypeStringify)
+import {unified} from 'unified'
+
+// unified.process('# x')  // TypeError: Cannot process without parser
+const copy = unified() // 未冻结副本
 ```
 
-注意 plugin 顺序：`rehype-slug` 必须在 `rehype-autolink-headings` 之前（后者依赖前者写好的 id）；`rehype-sanitize` 必须最后（否则前面注入的属性可能被清掉）。
+默认导出已经 `freeze()`。要配置，先调用它。这不是风格问题，是 `assertUnfrozen` 的硬边界。
 
-### 案例 3：自己写一个 plugin（外链加 `target="_blank"`）
+### 案例 2：plugin 在 freeze 时才执行
 
 ```js
-import { visit } from 'unist-util-visit'
-
-function rehypeExternalLinks() {
-  return (tree) => {
-    visit(tree, 'element', (node) => {
-      if (node.tagName === 'a' && /^https?:\/\//.test(node.properties.href)) {
-        node.properties.target = '_blank'
-        node.properties.rel = 'noopener'
-      }
-    })
+function plugin(options) {
+  const self = this
+  return function (tree, file) {
+    file.data.seen = options?.flag ?? true
   }
 }
 
-unified().use(remarkParse).use(remarkRehype).use(rehypeExternalLinks).use(rehypeStringify)
+const processor = unified().use(plugin, {flag: false})
+// 此时 attachers 有记录，transformers 还是空 trough
+await processor.process(file) // freeze() 才调用 plugin
 ```
 
-10 行就完事。不需要继承 / 注册到 renderer，不需要懂 micromark token。这就是"plugin 是纯函数"的好处。
+调试“plugin 没生效”时，先问：processor 冻过没有、options 是不是被第二次 `.use` 合并掉、是不是传了 `false`。
+
+### 案例 3：只跑其中一段
+
+```js
+const tree = processor.parse('# Hi')
+const next = await processor.run(tree)
+const text = processor.stringify(next)
+```
+
+AST 变换不必每次都经过 stringify。反过来，已经有树时也不必再 parse。
 
 ## 踩过的坑
 
-1. **性能弱**：每个 plugin 一次完整树遍历，10 个 plugin 就遍历 10 次。构建上千 markdown 文件时累积秒级延迟，CPU 密集场景慎用。
-
-2. **mdast → hast 是单向有损切换**：mdast 里的 `inlineCode` 切成 hast 的 `<code>` 时丢了"这是 markdown 内联代码"的语义。某些处理只能在 mdast 阶段做，错过 `remark-rehype` 就再也拿不回来。
-
-3. **plugin 顺序敏感**：`remark-gfm` 和 `remark-frontmatter` 谁先 `.use()` 影响最终行为，因为它们都往 `this.data('micromarkExtensions')` 里 push 扩展，顺序决定 micromark 的状态机分支。这种隐式耦合调试时很坑。
-
-4. **plugin 生态长尾不健康**：700+ plugin 里大量是 4-5 年前的死包，依赖旧 unified（v9）但你用 v11，运行时炸 `this.parser is not a function`。建议只用 unifiedjs 官方组织维护的 plugin，社区 plugin 必须 fork 自审。
+1. **对冻结 processor 调用 `.use()` / `.data(key, value)`**：会抛 `Cannot call … on a frozen processor`；先 `processor()`。
+2. **把 plugin 当成“注册时立刻改树”**：它在 freeze 时配置 parser/compiler 或返回 transformer，第一次 process 才跑树。
+3. **`processSync` 配了返回 Promise 的 transformer**：同步 API 会认为自己“异步结束了”并抛错。
+4. **compiler 返回 React 树却去读 `file.value`**：非 `string`/`Uint8Array` 在 `file.result`。
+5. **把 11.0.5 的浏览器修复写成兼容性保证**：GH-246 只改了 `CallableInstance` 不再复制函数自有属性，本页没有跑浏览器。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 静态站点 / 文档站（Astro / Gatsby / Next.js MDX）—— 灵活性需求 > 性能需求
-- 自定义 markdown 转换（mermaid 块 / 自定义 directive / 双链 wikilink）
-- 需要 lint / source map（vfile.messages 自带）
-- 想从 markdown 同时输出 HTML / 纯文本 / RSS 多种格式
+
+- 需要把 parse、变换、序列化拆开，并让 plugin 共享 `data`
+- 同一套 processor 既输出文本，也输出非文本 `file.result`
+- 阅读 [[remark]] / rehype / retext 为什么能共用一套 `.use()` 合同
 
 **不适用**：
-- 浏览器实时渲染上千字符 → 选 markdown-it（快 2-3x）或 wasm 解析器（pulldown-cmark / comrak / @swc/markdown）
-- 只需要"markdown → HTML 一锤子买卖"，不要任何转换 → 直接用 micromark 零开销
-- 严格性能预算的 CLI 工具 → mdBook / Hugo / Zola 这类 Rust/Go 工具链更合适
-- 不想理解 mdast / hast / vfile 三层概念的初学者 → marked 5 行配置即可上手
 
-## 历史小故事（可跳过）
+- 只要“Markdown 进、HTML 出”，且不打算碰 AST：应看具体 parser，而不是本核
+- 需要本包自带 Markdown 语法：那是 [[micromark]] 或 remark 预配置，不是 `unified`
+- 想把静态阅读写成“跑过上游测试”或性能结论
 
-- **2014 年**：Titus Wormer（@wooorm，荷兰开发者）开始写 mdast 规范——一份"Markdown 应该长成什么 AST"的协议。纯文档，没代码。
-- **2015 年 4 月**：unified v0.1 从 mdast 仓分裂出来，第一次把 parser / transformer / compiler 三段抽象写成代码。
-- **2017-2018**：rehype（HTML）和 retext（自然语言）相继切到 unified 协议下，三个生态共用一套 plugin 接口。
-- **2018 年 9 月**：MDX 1.0 把 JSX-in-Markdown 接到 unified pipeline，让 React 组件能直接嵌进 markdown，从此进入"组件化文档"时代。
-- **2024 年**：unified v11 主流，Astro / Next.js / VuePress / Storybook 的 markdown 管线全线基于它，月下载 100M+。
+## 固定版本边界
+
+- 本文绑定 `unifiedjs/unified@242105bd6e18c61ca10f37d99529b89f1be37518`，tag / npm 均为 `11.0.5`，`gitHead` 一致。
+- 运行时依赖含 `trough`、`vfile`、`extend`、`bail`；parser/compiler 由 plugin 注入。
+- readme 写明当前主线兼容 Node.js 16+；`package.json` 无 `engines` 字段。
+- 未安装依赖、运行 `test-api` 或测量下载量，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **AST + plugin pipeline 是文档处理的优秀抽象**——把"端到端解析器"拆成三段，组合性远胜 renderer 重写
-2. **接口规范化能撑起庞大生态**——核心代码 600 行，因为 mdast / hast / vfile 接口规范，社区写出 700+ plugin
-3. **lazy freeze + immutable derivation**：`.use()` 链式 + 第一次 process 才冻结，是处理"配置 vs 执行"的经典模式
-4. **vfile 这种"贯穿全程载体"在 build 工具链里很有价值**——webpack chunk、vite module、unified vfile 都是同一思想
+1. **unified 是协议，不是语法引擎**——空核加三段，才出现 Markdown / HTML 生态
+2. **冻结是复制点**——配置发生在未冻结副本，执行前一次性 freeze
+3. **plugin 的 `this` 是 processor**——它可以改 parser/compiler/data，也可以返回 transformer
+4. **vfile 是贯穿载体**——文本走 `value`，非文本结果走 `result`，消息走 `messages`
+
+## 应用型自测
+
+1. `import {unified} from 'unified'` 之后直接 `unified.process('# x')` 会得到 HTML 吗？
+2. `.use(plugin)` 之后、第一次 `process` 之前，transformer 链里已经有这个 plugin 了吗？
+3. 一个 plugin 的 transformer 返回 Promise。还能安全调用 `processSync` 吗？
+
+检查点：
+
+1. 不会。默认导出没有 parser/compiler，`process` 会抛错。
+2. 没有。`use` 只记 `attachers`，`freeze()` 才挂到 `trough`。
+3. 不能。`processSync` 要求回调同步完成。
 
 ## 延伸阅读
 
-- 官方文档：[unifiedjs.com](https://unifiedjs.com/)（含 learn / explore 两个互动入口）
-- 视频入门：[The unified collective by Titus Wormer](https://www.youtube.com/watch?v=4iN9b-eBYgI)（作者本人 30 分钟讲完核心思想）
-- 写第一个 plugin：[unifiedjs.com/learn/guide/create-a-plugin/](https://unifiedjs.com/learn/guide/create-a-plugin/)
-- syntax-tree 规范族：[github.com/syntax-tree](https://github.com/syntax-tree)（mdast / hast / unist 全部规范文档）
-- [[micromark]] —— unified 底层的 token 化器
-- [[markdown-it]] —— 老一代端到端解析器，对照看抽象差距
+- 官方文档：[unifiedjs.com](https://unifiedjs.com/)
+- 固定源码：[unifiedjs/unified](https://github.com/unifiedjs/unified) —— 本文绑定 `242105bd6e18c61ca10f37d99529b89f1be37518`
+- 审查记录：仓库内 `docs/markdown-pipeline-source-review-20260827-dj.md`
+- [[micromark]] —— 常见 Markdown tokenizer；remark-parse 经 `fromMarkdown` 消费它的事件
+- remark（`remarkjs/remark`）—— 预装 parse/stringify 的 unified 副本，本轮未新建 Study 页
 
 ## 关联
 
-- [[micromark]] —— unified 底层的 CommonMark token 化器，零 regex 状态机
-- [[markdown-it]] —— 端到端解析器代表，性能强但 plugin 是 rule registration 不是纯函数
-- [[marked]] —— 最老的 markdown 解析器，AST 不暴露，新项目应避免
-- [[astro]] —— 静态站框架，markdown / MDX 渲染就是一个 unified processor
-- [[starlight]] —— Astro 文档站主题，全靠 unified 管线支撑双链与代码高亮
-- [[shiki]] —— 语法高亮引擎，常以 `rehype-shiki` 形式接入 unified
-- [[wadler-prettier]] —— 同样是"AST → 输出"思路，但 prettier 偏 layout 而非 transform
+- [[micromark]] —— Markdown 状态机，通常经 `mdast-util-from-markdown` 进入本核
+- remark 预配置 —— `unified().use(remarkParse).use(remarkStringify).freeze()`，仓库无独立项目页
+- [[markdown-it]] —— 另一条 renderer/rule 模型，不是 trough plugin
+- [[astro]] —— 站点 Markdown 管线常接 unified plugin
+- [[starlight]] —— 文档主题，扩展口仍是 remark/rehype
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
-- [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
-- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上

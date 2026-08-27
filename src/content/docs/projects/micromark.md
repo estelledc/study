@@ -1,155 +1,162 @@
 ---
-title: micromark — markdown 解析器里那台一个字一个字读的状态机
-来源: Titus Wormer, micromark, 2020 起；https://github.com/micromark/micromark
+title: micromark — 用状态机发 token 事件再编成 HTML
+来源: https://github.com/micromark/micromark
 日期: 2026-05-30
-分类: 前端工程
+分类: Markdown / 解析
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/micromark/micromark
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 3fae15528f69dfaf2a8865a7f7d92bfb4abd7bc9
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.0.2
 ---
 
 ## 是什么
 
-micromark 是一个**专门把 markdown 文本读成结构化事件**的小工具。日常类比：像超市收银员读条形码——一个字符一个字符扫过去，每扫到一个有意义的边界就"叮"一声告诉后端发生了什么（"标题开始"、"段落结束"）。
+micromark 是一个 **CommonMark 取向的 Markdown tokenizer**：按字节推进状态机，发出带位置的 concrete token，再可选地编成 HTML。日常类比：收银扫描枪——每个字符都入账，先打出事件小票，需要时再打印收据（HTML）。它**不建 mdast**。
 
-你写一段 markdown：
+固定 `4.0.2` 的一站式入口把四步收成一行：
 
 ```js
-import { micromark } from 'micromark'
-const html = micromark('# Hello *world*')
+import {micromark} from 'micromark'
+
+micromark('# Hello *world*')
 // '<h1>Hello <em>world</em></h1>'
 ```
 
-它的特别之处：**不用大正则、不切 token，靠一个状态机一个字符一个字符地往前推**。每读一个字符，根据现在所处的"状态"（比如"刚见到 #"或"在段落里"）决定下一步走哪条路。
-
-micromark 不是给最终用户直接调的，而是 **unified / remark / MDX / Astro** 这一整条 markdown 工具链的底层引擎。
+源码展开是 `compile(options)(postprocess(parse(options).document().write(preprocess()(value, encoding, true))))`。
 
 ## 为什么重要
 
-不理解 micromark，下面这些事都解释不通：
+不读固定 4.0.2 源码，很容易把 micromark 讲成“无限流式 AST 引擎”：
 
-- 为什么 marked / markdown-it 能把 95% 的 markdown 解对，但总有一两个 case 跟 GitHub 渲染不一样——它们没做到 100% CommonMark 合规
-- 为什么 Astro / Next.js / VitePress 的 markdown 渲染都依赖一条叫 unified 的链，链的最深处就是 micromark
-- 为什么写 markdown 扩展（自定义 :::note::: 语法）很难——不是写正则，而是要写新的状态机片段
-- 为什么"流式渲染一个 GB 级 markdown 文件"成立——只要状态机不囤积上下文，输入流过去就行
-- 为什么 unified 生态的扩展（remark-gfm、remark-math）能拔插即用——它们最终都把构造塞给 micromark 的状态机，再没碰 AST 一根头发
+- 为什么它能直接吐 HTML，却仍被 [[unified]] 当底层——HTML compiler 是内置便利层，事件才是主产品
+- 为什么 `micromark('<x>')` 默认不是 `<x>`——原始 HTML 要 `allowDangerousHtml`
+- 为什么 `javascript:` 图片默认进不了 `src`——协议白名单，需 `allowDangerousProtocol` 才关
+- 为什么 `stream()` 看起来像管道，结束时仍要缓冲——注释写明 markdown 无法真正流式
 
 ## 核心要点
 
-micromark 的工作分 **三步**，看似简单但每步都有讲究：
+固定版本可以拆成四层：
 
-1. **状态机扫字符**：维护一个 state（比如 `inParagraph`、`afterHash`），每读一个字符按 state 决定动作。类比：迷宫里的小人，根据脚下哪块地砖决定往哪走。
+1. **preprocess**：去掉 BOM，把 `\0` / `\t` / `\n` / `\r` 切成 chunk。字符串或 `Uint8Array` 都能进，编码默认按引擎的 UTF-8。
 
-2. **发事件，不建树**：识别出"标题开始"就发一个 `enter('atxHeading')` 事件，识别完发 `exit('atxHeading')`。它**不直接构建 AST**，把建树的活留给上层（unified 链里的 mdast-util-from-markdown）。
+2. **parse + tokenizer**：`combineExtensions` 合并默认 CommonMark constructs 与 `options.extensions`。`document` / `flow` / `content` / `text` / `string` 是不同入口。construct 按首字符分发，例如 `#` 走 ATX heading。
 
-3. **可挂扩展**：每个状态机片段（叫 construct）能被替换或扩充。GFM、MDX、math、frontmatter 都是这样挂上去的——核心代码不动，往状态机里塞新分支。
+3. **postprocess**：循环 `subtokenize` 直到不再产生新的内层 token。这是嵌套结构收口的地方。
 
-最后一步的好处：核心包 30 KB，加了 GFM 也才 60 KB，不用全家桶。
+4. **compile**：事件 → HTML。默认丢掉 raw HTML；`href` 只放行 `https?|ircs?|mailto|xmpp`，`src` 只放行 `https?`。GFM 不在本包，要另挂 syntax / html extension。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：直接用 micromark 渲染 markdown
-
-```js
-import { micromark } from 'micromark'
-import { gfm, gfmHtml } from 'micromark-extension-gfm'
-
-const html = micromark('# 标题\n\n- [x] 任务一\n- [ ] 任务二', {
-  extensions: [gfm()],
-  htmlExtensions: [gfmHtml()],
-})
-```
-
-**逐步解释**：
-
-- `micromark(value, options)` 是一站式 API，吃 markdown 字符串吐 HTML
-- `extensions` 加进状态机的 syntax 分支（识别 GFM 语法）
-- `htmlExtensions` 加进 HTML 渲染分支（决定 `<input type="checkbox">` 怎么写）
-
-### 案例 2：从事件流自己造结构
+### 案例 1：默认安全的 HTML，而不是“原样嵌 HTML”
 
 ```js
-// 内部 API，仅演示「先发事件、再建树」；业务代码请走 unified/remark
-import { parse, postprocess, preprocess } from 'micromark/lib/parse'
+import {micromark} from 'micromark'
 
-const events = postprocess(parse().document().write(preprocess()('# Hi')))
-for (const [kind, token] of events) {
-  console.log(kind, token.type) // 'enter' 'atxHeading' …
-}
+micromark('<x>')                    // 不是 '<x>'
+micromark('<x>', {allowDangerousHtml: true}) // '<x>'
 ```
 
-**逐步解释**：
+仓库测试把这条写成 unsafe 开关。默认关，不是漏实现。
 
-1. `preprocess` 把字符串收成状态机可吞的码点流
-2. `parse().document().write(...)` 跑状态机，边读边攒原始事件
-3. `postprocess` 整理成稳定的 `[enter|exit, token]` 列表
-4. **unified / mdast-util-from-markdown** 再把事件翻成树——micromark 自己不建 AST
-
-### 案例 3：用 stream 接 fs
+### 案例 2：拆开四步，只拿事件
 
 ```js
-import { stream } from 'micromark/stream'
-import { createReadStream } from 'node:fs'
+import {parse, preprocess, postprocess} from 'micromark'
 
-createReadStream('huge.md', { encoding: 'utf8' })
-  .pipe(stream())
-  .pipe(process.stdout) // 输出 HTML
+const events = postprocess(
+  parse().document().write(preprocess()('# Hi', undefined, true))
+)
 ```
 
-输入 stream 流过来，状态机边读边吐 HTML。文件 1 GB 也只占常数内存。这一招让"切下来直接 pipe 到 stdout"成为常态——你不必等整篇 markdown 读完才能看到第一个 `<h1>` 出来。
+公开导出就是这些函数，加上 `compile` 与 `micromark/stream`。旧文里的 `micromark/lib/parse` 不是 4.0.2 的导出合同。
+
+### 案例 3：stream 在 `end` 才交出整段 HTML
+
+```js
+import {stream} from 'micromark/stream'
+
+const s = stream()
+s.on('data', (html) => { /* 一次完整结果 */ })
+s.write('# Hi\n')
+s.end()
+```
+
+`write` 只喂 tokenizer。`end` 才 `postprocess` + `compile` 并 `emit('data')` 一次。注释写明部分工作可流式，最终仍要缓冲；micromark 自己不处理、不发出 parse error。
 
 ## 踩过的坑
 
-1. **直接用 micromark 写法繁琐**：除非做底层基础设施，普通业务应该用 `unified().use(remarkParse).use(remarkRehype)`，让生态替你拼；直接撸 micromark 等于在汽车工厂里装螺丝，能装但不该这么干。
-
-2. **状态机 debug 难**：报错只看到 state 编号（比如 `code 35` 表示遇到 `#`），不会指 markdown 第几行第几列。要靠 token positional info 自己反查，新人通常会被劝退。
-
-3. **写 extension 门槛高**：不是写正则，是写 construct——一个 construct 含 tokenize（识别字符走法）、resolve（决定哪些事件保留）、continuation（多行块怎么续上）三段。要先读 micromark-extension-gfm-table 看人家怎么搭。
-
-4. **stream 不处理编码**：BOM、UTF-16 都得自己 decode 成 UTF-8 字符串再喂进去，不然状态机直接乱。Node 里推荐先 `createReadStream('x.md', { encoding: 'utf8' })` 而不是 raw Buffer。
-
-5. **版本切换破坏性**：v3 → v4 把 token 类型重命名了几处（`atxHeadingText` → `atxHeadingContent`），下游 mdast-util-* 必须同步升，半路升级会炸。
+1. **把 stream 写成“GB 级常数内存、边读边出第一个 `<h1>`”**：结束前会缓冲事件。
+2. **把 GFM 任务列表当成内置**：默认 constructs 是 CommonMark；GFM 是外部 extension。
+3. **默认输出里找 raw HTML 或 `javascript:` 图片**：要显式打开危险开关。
+4. **从事件直接当 AST 用**：事件是 enter/exit token，建树是 `mdast-util-from-markdown` 的事。
+5. **把 readme 的“100% CommonMark / ±14kb”抄进结论**：本页未跑 `commonmark.json@0.31.0` 套件，也未测 bundle。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 写 markdown 工具链底层（unified / remark / MDX / Astro / Docusaurus 内核都用它）
-- 必须 100% CommonMark 合规（GitHub README 渲染对齐）
-- 需要流式 / 低内存解析（CMS 后台批量处理 GB 级 markdown）
-- 要做语法扩展（自定义 :::callout:::、math 公式块）
+- 只要 Markdown → HTML，并接受默认 sanitize 边界
+- 要自己消费 token 事件，或给 remark-parse 这类包装提供底层
+- 需要按 constructs 挂语法扩展，而不是改核心
 
 **不适用**：
 
-- 业务代码直接渲染一篇 markdown → 用 marked 或 markdown-it 更省事
-- 只需要把 markdown 转 HTML 一次 → 用 unified + remark-html，不要直接调 micromark
-- 不在意 100% 合规、追求极致小体积 → marked 更小（~10 KB）
+- 需要一棵可变换的 mdast：走 [[unified]] + remark-parse，不要停在本包
+- 假设 `stream()` 等于真正的逐 token 输出
+- 把静态阅读写成已跑通 CommonMark 套件或性能数字
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014 年**：Titus Wormer 开始做 unified / remark 生态——"把 markdown 处理拆成可组合的小块"。
-- **2018 年前后**：他发现 remark-parse 在 CommonMark spec 0.28+ 上挂掉好几处（list 嵌套、setext heading 在 block quote 里），原因是底层基于 token-stream 的解析模型遇到上下文敏感语法吃不消。
-- **2020 年 8 月**：发布 micromark v0.1，**完全重写底层**，改成 char-by-char 状态机。同年 remark 12 切到 micromark 内核。
-- **2024 年**：v4.x 稳定，CommonMark 0.30 spec 742/742 全过，下游链路（unified / MDX / Astro）一起升级。
-
-之后整条 JS markdown 处理链——只要走 unified 的——背后跑的都是这台状态机。
+- 本文绑定 `micromark/micromark@3fae15528f69dfaf2a8865a7f7d92bfb4abd7bc9`，tag / npm `micromark@4.0.2`，`gitHead` 一致。
+- 4.0.2 发布说明是内部字段允许 trailing whitespace；未验证该字段的产品面行为。
+- workspace 根版本号是占位 `0.0.1`；以 `packages/micromark` 的 `4.0.2` 为准。
+- readme 写明 Node.js 16+。
+- 未安装依赖、运行 `test-api` 或测量体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **上下文敏感语法用状态机比 lexer 更稳**：markdown / Python 缩进这种"一行的意义取决于前后行"的格式，正则切 token 必然出 bug；状态机让"现在在什么位置"变成显式变量。
-2. **解析和建树拆开**：micromark 只发事件，建 AST 让上层做。这一拆使核心稳定不动，扩展成本极低——MDX、math、frontmatter 都没改一行核心代码。
-3. **库的最佳形态可能是底层**：micromark 自己只有 ~1.5k stars，但每周下载 ~30M，因为它跑在你装的每个用 markdown 的工具里。"用户感知不到"反而是好基础设施的标志。
-4. **重写一次比修补五年快**：Wormer 没去补 remark-parse 的旧引擎，直接重写 micromark，三年内整条生态切完——这种"敢推倒重来"在开源里很少见，因为下游迁移成本通常吓退作者。
+1. **tokenizer 和 AST 是两份合同**——micromark 卖事件，mdast 是别人的活
+2. **内置 HTML 编译是便利层**——存在是为了对照 CommonMark 用例，不是唯一出口
+3. **默认安全是编译选项，不是解析失败**——危险 HTML/协议被丢掉或改写
+4. **stream API 仍有缓冲点**——可写管道 ≠ 真正流式语义
+
+## 应用型自测
+
+1. `micromark('<em>x</em>')` 在默认选项下会原样留下 `<em>` 吗？
+2. 调用 `stream()` 并 `write('# A')` 但还没 `end()`。会不会已经 `emit('data')`？
+3. 本包的 `parse().document().write(...)` 返回的是 mdast `root` 吗？
+
+检查点：
+
+1. 不会。默认关掉 raw HTML，要 `allowDangerousHtml`。
+2. 不会。`data` 在 `end` 里才发出。
+3. 不是。那是 token 事件；mdast 在别的包。
 
 ## 延伸阅读
 
-- 仓库 README：[micromark/micromark](https://github.com/micromark/micromark)（含架构图，先看 architecture 章节）
-- CommonMark spec：[spec.commonmark.org](https://spec.commonmark.org/0.30/)（吃透这份文档才敢 debug 边界 case）
-- 写扩展的范例：micromark-extension-gfm-table 源码（约 300 行，是入门写 construct 的最短路径）
-- [[unified]] —— micromark 的上层调度框架
-- [[markdown-it]] —— 同领域对手，正则 + token-stream 老派做法
+- 固定源码：[micromark/micromark](https://github.com/micromark/micromark) —— 本文绑定 `3fae15528f69dfaf2a8865a7f7d92bfb4abd7bc9`
+- 审查记录：仓库内 `docs/markdown-pipeline-source-review-20260827-dj.md`
+- CommonMark 规范：[spec.commonmark.org](https://spec.commonmark.org/)（本页未宣称某一版 100% 通过）
+- [[unified]] —— 把事件翻成树、再跑 plugin 的上层核
 
 ## 关联
 
-- [[unified]] —— remark / rehype / retext 生态总入口；它把 micromark 的事件翻译成 mdast
-- [[markdown-it]] —— 速度接近、合规率 97%、API 更直接，适合直接调
-- [[marked]] —— bundle 最小（~10 KB），合规率 95%，适合体积敏感场景
-- [[astro]] —— 内置 markdown 渲染走 unified → micromark 链路
+- [[unified]] —— 用 plugin 接 parse/run/stringify；micromark 常在 parser 底下
+- [[markdown-it]] —— 另一条 token / renderer 模型，不是同一套 constructs
+- [[marked]] —— 更偏“一锤子 HTML”的路径
+- [[astro]] —— 站点 Markdown 管线常间接依赖这条链
+- [[starlight]] —— 文档主题，扩展口在 remark/rehype，不直接调本包
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

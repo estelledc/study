@@ -50574,7 +50574,7 @@
       "id": "projects::micromark",
       "area": "projects",
       "slug": "micromark",
-      "title": "micromark — markdown 解析器里那台一个字一个字读的状态机",
+      "title": "micromark — 用状态机发 token 事件再编成 HTML",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -50584,16 +50584,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-markdown-and-parsing",
-        "raw_category": "前端工程"
+        "raw_category": "Markdown / 解析"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/micromark/",
       "atlas": {
@@ -62168,7 +62168,7 @@
       "id": "projects::unified",
       "area": "projects",
       "slug": "unified",
-      "title": "unified — 把文档处理拆成 AST + plugin 流水线",
+      "title": "unified — 用冻结 processor 串起 parse / run / stringify",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -62178,16 +62178,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-markdown-and-parsing",
-        "raw_category": "projects"
+        "raw_category": "Markdown / 解析"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/unified/",
       "atlas": {
