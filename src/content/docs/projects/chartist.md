@@ -30,7 +30,9 @@ import { LineChart } from "chartist"
 
 new LineChart(".ct-chart", {
   labels: ["周一", "周二", "周三"],
-  series: [[3, 5, 2]]
+  series: [
+    [3, 5, 2]
+  ]
 })
 ```
 
@@ -63,7 +65,9 @@ import { LineChart } from "chartist"
 
 new LineChart(".ct-chart", {
   labels: ["周一", "周二", "周三", "周四", "周五"],
-  series: [[3, 5, 2, 6, 4]]
+  series: [
+    [3, 5, 2, 6, 4]
+  ]
 })
 ```
 

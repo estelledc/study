@@ -28,7 +28,12 @@ import bb, { line } from "billboard.js"
 
 bb.generate({
   bindto: "#chart",
-  data: { columns: [["销量", 30, 200, 100]], type: line() }
+  data: {
+    columns: [
+      ["销量", 30, 200, 100]
+    ],
+    type: line()
+  }
 })
 ```
 
@@ -61,7 +66,12 @@ import bb, { line } from "billboard.js"
 
 bb.generate({
   bindto: "#chart",
-  data: { columns: [["A", 1, 2, 3]], type: line() }
+  data: {
+    columns: [
+      ["A", 1, 2, 3]
+    ],
+    type: line()
+  }
 })
 ```
 
@@ -76,7 +86,12 @@ bar(); line(); grid();
 
 bb.generate({
   bindto: "#chart",
-  data: { type: "bar", columns: [["A", 30, 200, 100]] },
+  data: {
+    type: "bar",
+    columns: [
+      ["A", 30, 200, 100]
+    ]
+  },
   grid: { x: { show: true } }
 })
 ```
@@ -90,7 +105,12 @@ import bb, { bar, canvas } from "billboard.js/canvas"
 
 bb.generate({
   render: { mode: canvas() },
-  data: { columns: [["A", 30, 200, 100, 400]], type: bar() }
+  data: {
+    columns: [
+      ["A", 30, 200, 100, 400]
+    ],
+    type: bar()
+  }
 })
 ```
 
