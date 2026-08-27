@@ -1,162 +1,176 @@
 ---
 title: Framer Motion — React 声明式动画
-来源: https://github.com/framer/motion
+来源: https://github.com/motiondivision/motion
 日期: 2026-05-29
 分类: 动画
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/motiondivision/motion
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 1b037b0032578b52af94b06ff3920bfa0aaa5e36
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 13.1.1
 ---
 
 ## 是什么
 
-Framer Motion 是 Framer 公司出的 React 动画库——你写一句 `<motion.div animate={{ x: 100 }}>`，元素就从当前位置滑到 x=100，**中间过程它自己算**。
+Framer Motion 是 Motion 仓库里面向 React 的声明式动画实现。日常类比：你只写“目标状态”，它负责在当前值和目标值之间插值，而不是手写每一帧。
 
-日常类比：以前用 CSS transition / keyframes，得写"先 0%、再 50%、再 100%，每一帧给个值"，像编排一段舞蹈每一拍都告诉舞者站哪。Framer Motion 是"我要从这变到那、半秒到位、带点弹性"——它接管中间的每一帧。
+你写：
 
 ```jsx
-<motion.div
-  animate={{ x: 100, opacity: 1 }}
-  transition={{ duration: 0.5 }}
-/>
+import { motion } from "motion/react"
+
+<motion.div animate={{ x: 100, opacity: 1 }} />
 ```
 
-这一行就是完整的动画。没有 `@keyframes`、没有 `requestAnimationFrame` 循环、没有 `setTimeout`。
-
-11.x 后官方包名从 `framer-motion` 改成了 `motion`，import 路径变 `motion/react`——同一个项目，跨 React / Vue / vanilla JS 三个生态。
+固定 `13.1.1` 里，`motion` npm 包是一层再导出：默认入口转出 `framer-motion/dom`，`motion/react` 再导出整个 `framer-motion`。真正的 React 组件、`AnimatePresence` 和 feature bundle 在 `framer-motion` 包。`https://github.com/framer/motion` 会转到 `motiondivision/motion`。
 
 ## 为什么重要
 
-不理解 Framer Motion 在 React 生态的位置，下面这些事都没法解释：
+不理解固定 13.1.1 的分层，下面这些事都会说错：
 
-- 为什么很多 React 项目把 UI 微交互默认交给它，而不是老牌的 GSAP——GSAP 时间轴更强，但 motion 跟 React 的 mount / unmount / re-render 集成更深
-- 为什么 React 项目里"元素消失前先 fade out 再卸载"这件事用纯 CSS / Hooks 写起来很烦，motion 一个 `<AnimatePresence>` 就完事
-- 为什么 Linear / Vercel / Apple 营销页都选它——它把 layout 变化动画做成一个 prop `layout`（底层类似 FLIP：先记下旧位置，再插值过渡到新位置）
-- 为什么"声明式动画"这个词常和它绑在一起——你声明**目标状态**，它推断中间过程；不再声明"每帧的样子"
+- 为什么文档写 `import { motion } from "motion/react"`，实现包却仍叫 `framer-motion`
+- 为什么没写 `transition` 时，位移可能是 spring，透明度却是 0.3 秒 keyframes
+- 为什么子 `motion` 能跟着父级 `"open"` / `"closed"` 一起切，但自己写了 `animate` 就不会继承
+- 为什么 `exit` 必须包在 `AnimatePresence` 里才有机会跑完
 
 ## 核心要点
 
-Framer Motion 的整套 API 可以拆成 **三块积木**：
+固定源码的主链可以拆成五步：
 
-1. **motion 组件**：把普通 `div` 替换成 `motion.div`，就解锁了一套动画 props（`animate` / `initial` / `exit` / `transition` / `whileHover` / `drag` 等）。它是 React 自带 div 的"超集"——所有原 props 仍然可用。
+1. **入口分层**：`motion/react` 用本地绑定再导出 `framer-motion` 的 `motion` / `m`，避免 duplicate re-export；`motion/react-client` 对应 `framer-motion/client`。
 
-2. **Variants（变体）**：给一组**命名状态**起名字，比如 `"open"` / `"closed"`，每个状态里写"这个状态下我长什么样"。然后 `animate="open"` 切换状态。子节点能继承父节点的状态切换——一个开关传遍整棵子树。
+2. **motion proxy**：`motion.div` 由 `createMotionProxy(featureBundle, createDomVisualElement)` 生成。默认 feature bundle 装入 animations、gestures、drag、layout。
 
-3. **AnimatePresence**：包住会被 `if/else` 卸载的组件，让它在被 React 真删之前**先跑完 exit 动画**。React 没有官方的"延迟 unmount" 机制，AnimatePresence 自己实现了一套。
+3. **默认 transition**：`getDefaultTransition()` 按属性分流。超过两个 keyframe 用 `keyframes` 0.8s；transform（非 `scale*`）用 stiffness 500 / damping 25 的 under-damped spring；`scale*` 用 critically-damped spring；其余属性用 duration 0.3、ease `[0.25, 0.1, 0.35, 1]`。
 
-三块加起来覆盖了 React 动画的 95% 场景。
+4. **Variants 继承**：父节点把 `initial` / `animate` 放进 `MotionContext`。子节点在自己不是 controlling variant、且 `inherit !== false` 时读取父级标签。未显式 `inherit` 时，只有“有 `variants` 且没有 `animate`”才默认继承。
 
-## 实践案例
+5. **AnimatePresence**：用 `key` 跟踪进出。默认 `mode="sync"`。条件卸载时先保留 exiting 子树，等 `exit` 结束再真正移除。`wait` 模式在仍有 exiting 时只渲染 exiting。
 
-### 案例 1：最简动画（2 行入门）
+## 实践示例
+
+### 案例 1：目标状态，不写 transition
 
 ```jsx
-<motion.div
-  animate={{ x: 100, opacity: 1 }}
-  transition={{ duration: 0.5 }}
-/>
+import { motion } from "motion/react"
+
+<motion.div animate={{ x: 100, opacity: 1 }} />
 ```
 
-**逐部分解释**：
+`x` 走 transform spring；`opacity` 走 0.3 秒 keyframes。不要把“没写 transition = 全部 spring”当成固定合同。
 
-- `animate` prop 写"目标状态"——元素最终要到 x=100、opacity=1
-- `transition` 控制怎么过去——这里是 0.5 秒线性
-- 没写 `initial`，默认从元素当前 CSS 值出发
-
-不写 `transition` 时默认是 spring（弹性）——这是 motion 的"风格"，不像 CSS 默认 ease。
-
-### 案例 2：Variants 让一个开关控制一棵树
+### 案例 2：父级标签广播到子树
 
 ```jsx
 const variants = {
-  open:   { x: 0,    opacity: 1 },
+  open: { x: 0, opacity: 1 },
   closed: { x: -100, opacity: 0 },
 }
 
 function Drawer({ isOpen }) {
   return (
-    <motion.div
-      variants={variants}
-      animate={isOpen ? "open" : "closed"}
-    >
+    <motion.div variants={variants} animate={isOpen ? "open" : "closed"}>
       <motion.div variants={variants}>子内容</motion.div>
     </motion.div>
   )
 }
 ```
 
-子 `motion.div` 没写自己的 `animate` prop——它**继承**父节点的当前状态。父切到 `"open"`，子也切。这是 motion 的"状态广播"机制：父子用 React Context 串起来，一个 `animate` 触发整棵子树。
+子节点没有自己的 `animate`，因此继承父级标签。若子节点写了 `animate={{ opacity: 1 }}`，它就不再跟父级字符串标签走。
 
-### 案例 3：AnimatePresence 让消失也能动
+### 案例 3：exit 必须经过 AnimatePresence
 
 ```jsx
+import { AnimatePresence, motion } from "motion/react"
+
 <AnimatePresence>
   {visible && (
     <motion.div
+      key="hello"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-    >
-      Hello
-    </motion.div>
+    />
   )}
 </AnimatePresence>
 ```
 
-`visible` 从 true 变 false 时，React 想立刻卸载这个 `motion.div`。AnimatePresence 拦下来——先让元素跑完 `exit` 动画（fade 到 0），跑完了再真正从 DOM 删除。
-
-如果不包 AnimatePresence，`exit` 这个 prop 就完全没机会触发。
+多个条件子节点必须有唯一 `key`。没有 `AnimatePresence`，`exit` 没有延迟卸载的宿主。
 
 ## 踩过的坑
 
-1. **layout animation + SSR 第一帧错位**——`<motion.div layout />` 依赖 mount 时测量 DOM 大小，SSR 时服务端没 DOM、客户端 hydrate 后第一帧测出来的盒子和服务端 HTML 对不上，画面会"跳一下"。Next.js 项目要么把 layout 组件标 `"use client"` + `dynamic({ ssr: false })`，要么接受首帧抖动。
-
-2. **大列表里每个 item 都 motion 性能差**——每个 `motion.div` 都挂一个 VisualElement + 可能的 ProjectionNode（layout 用），1000 条会卡。解法：搭 `react-window` 之类的虚拟列表只渲染可见项；或者 above-the-fold 用纯 CSS、below-the-fold 才用 motion。
-
-3. **AnimatePresence 必须给 key**——条件渲染的元素必须有 `key`，否则 motion 认不出"是哪一个在 exit"。两个条件分支共用同一个 key 也会出问题——motion 以为是 update 而不是 mount/unmount。
-
-4. **Server Components 不能直接放 motion 组件**——motion 内部用 `useState` / `useEffect`，是 client-only。在 React Server Components / Next.js App Router 里，包含 motion 的组件文件必须顶部写 `"use client"`，否则编译时报错。
+1. **把包名改写理解成“旧包消失”**：固定 13.1.1 同时发布 `motion` 与 `framer-motion`，前者依赖后者。
+2. **默认动画不是单一 spring**：只有部分 transform 走 spring；`opacity` 等走 keyframes。
+3. **自己写了 `animate` 还指望继承父级 variants**：默认继承条件是“有 variants 且没有 animate”。
+4. **AnimatePresence 多子节点不给 key**：源码用 `props.key` 判断进出；缺 key 会把 update 认成同一节点。
+5. **Server Component 直接 import hooks**：相关文件带 `"use client"`，peer 是 React 18/19。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- React / Next.js 项目里需要 enter / exit / layout 切换 / hover / drag 任意组合的动画
-- 设计师参与调动画参数（暴露 stiffness / damping / duration 给设计师好理解）
-- 需要"声明式 + 物理感"——spring 默认值就有不错手感
+- React 18/19 里需要 enter / exit / layout / 手势的声明式 UI 动画
+- 希望用 variants 把一棵子树切到同一命名状态
+- 能接受实现落在 `framer-motion`，入口落在 `motion/react`
 
 **不适用**：
 
-- 影视级时间轴动画（多步骤 sequence、scrub、reverse、labels）→ 用 GSAP
-- React Native → 用 react-native-reanimated（motion 重度依赖 DOM API）
-- 电商首屏 / H5 小程序对 bundle 体积敏感（motion 完整版 ~50KB gzip）→ 用纯 CSS 或 auto-animate（3KB）
-- Canvas / WebGL 粒子系统 → 用 pixi.js / three.js
+- 多段时间轴、标签、scrub、精确 position 参数 → 用 [[gsap]]
+- 需要本轮未测量的最小 bundle 数字才能做决策
+- 把历史 Motion One 3KB 包当成当前 13.1.1 的同一合同 → 见 [[motion-one]]
+- 本页未运行，因此不能用它证明首帧、水合或列表性能
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018-2019 年**：Framer 团队把内部动画能力抽成 React 库开源，强调声明式 props 而不是手写时间轴
-- **2020-2022 年**：`AnimatePresence`、variants、layout 动画让它成为 React UI 动效的常见默认选择
-- **2023-2024 年**：官方把包名逐步统一到 `motion`，同一套引擎覆盖 React / Vue / vanilla
-- **之后**：继续围绕性能、手势和文档站（motion.dev）迭代；GSAP 仍在复杂时间轴场景占优
+- 本文绑定 `motiondivision/motion@1b037b00...`，npm `motion@13.1.1` / `framer-motion@13.1.1` 的 `gitHead` 与 `v13.1.1` peeled commit 一致。
+- 包内 `package.json` 仍残留另一 `gitHead`；不把它当成第二个可绑定 revision。
+- React peer 为 `^18.0.0 || ^19.0.0`，且 optional。
+- 同仓也承载历史 Motion One 文档对象 [[motion-one]]；本页只描述 13.1.1 的 React 声明式表面。
+- 未安装依赖、未跑上游测试、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **声明式 vs 命令式的边界可以推到 layout 这一层**——传统认为"layout 切换必须命令式手写 FLIP"，motion 把它做成 `layout` 一个 prop，颠覆了这个边界
-2. **状态广播比 prop drilling 更适合动画**——variants + Context 让父组件改一个字符串，整棵树自动协同动画，比每层手动传 props 简洁一个数量级
-3. **延迟 unmount 仍是 React 的缺口**——AnimatePresence 是库侧补丁：先跑完 exit，再真正从 DOM 删除；不要把它和 `useTransition` 混为一谈
+1. **入口包 ≠ 实现包**——`motion/react` 是再导出，`framer-motion` 才是 React 运行时。
+2. **默认 easing 必须按属性读**——transform 与非 transform 走两条默认合同。
+3. **Context 广播有退出条件**——variants 继承不是“只要是子节点就会跟”。
+4. **延迟卸载是库补丁**——`AnimatePresence` 用 key 和 presence 状态补 React 没有的 exit 相位。
+
+## 应用型自测
+
+1. 只写 `animate={{ x: 100, opacity: 1 }}`，不写 `transition`。`opacity` 会走 spring 吗？
+2. 子 `motion.div` 既有 `variants` 又写了 `animate={{ opacity: 1 }}`，还会继承父级 `"open"` 吗？
+3. 两个条件子节点共用同一个 key，包在 `AnimatePresence` 里。源码按什么判断进出？
+
+检查点：
+
+1. 不会。非 transform 默认是 0.3 秒 keyframes。
+2. 不会默认继承；有 `animate` 时 `checkShouldInheritVariant` 为假。
+3. 按 `props.key` 做 diff，不按组件类型。
 
 ## 延伸阅读
 
-- 官方文档：[Motion docs](https://motion.dev/docs)（v12 后改名 motion，但 React API 不变）
-- 视频教程：[Matt Perry — Why I built Framer Motion](https://www.youtube.com/results?search_query=matt+perry+framer+motion)（创始人讲设计哲学）
-- 替代品速览：[react-spring](https://www.react-spring.dev/) / [GSAP](https://gsap.com/) / [auto-animate](https://auto-animate.formkit.com/)
-- [[react]] —— motion 的宿主框架，VisualElement 树寄生在 React 树上
-- [[lerna]] —— motion 仓库用的 monorepo 工具
+- 文档：[motion.dev](https://motion.dev/docs)
+- 固定源码：[motiondivision/motion](https://github.com/motiondivision/motion) —— 提交 `1b037b0032578b52af94b06ff3920bfa0aaa5e36`
+- [[gsap]] —— 命令式时间轴对照
+- [[motion-one]] —— 同仓历史轻量入口，合同不同
+- [[react]] —— hooks / Context 宿主
 
 ## 关联
 
-- [[react]] —— React 是 motion 的运行时基底，所有 hook 和 context 机制都靠它
-- [[lerna]] —— motion 仓库自己用 Lerna + Yarn workspaces 管 4 个 npm 包
-- [[express]] —— 同样是"把一坨样板代码缩成一行 API"的设计哲学
-- [[next-js]] —— Next.js App Router 里 motion 必须 `"use client"`
+- [[gsap]] —— 命令式时间轴与插件注册对照
+- [[motion-one]] —— 同一 GitHub 仓的另一文档对象
+- [[react]] —— `"use client"` 与 Context 继承的运行时
+- [[react-spring]] —— 另一套 React 物理动画 API
+- [[anime]] —— 框架无关的时间轴写法
 
 ## 反向链接
 

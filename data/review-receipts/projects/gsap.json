@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "gsap",
+    "digest_sha256": "f3ddd1246d1a82ce09c2146361b7b83e82bf704080f271505a78a7aa22f71b5b"
+  },
+  "source_revision": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+  "research_input_sha256": "19347a48af0b4b9b6991f908f8323c0789a5dc7dc862de8d5a1c401293d835c0",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ad",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains default duration/ease, timeline position DSL, kill vs onInterrupt, plugin registration, and license/React-hook boundaries with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ad",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 3.15.0 tag, package.json, and gsap.version agree; npm has no gitHead; upstream tests and ticker/scroll behavior were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ad",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "The note discloses the Standard no-charge license and treats README performance/site-count claims as unverified marketing text."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
