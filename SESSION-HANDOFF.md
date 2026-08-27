@@ -15,7 +15,7 @@
   1. `immer` 绑定 `immerjs/immer@b00474e3...` / published `11.1.18`，纠正插件边界、return-vs-draft、revoke 与 semantic-release 占位版本。
   2. 新增 `immutable-js`，绑定 `immutable-js/immutable-js@329f7a68...` / `5.1.9`，写清 32 路 trie、`withMutations`/`OwnerID`、`fromJS` 与 `is()`；披露 6.x beta 与 3.8.4 回移。
   3. 共享 provenance 文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致，evidence state `UNVERIFIED`。`verify:ci` 在 push/PR 后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下，除首次因本机缺少 Playwright Chromium 停在 a11y 外，其余门禁已过；安装浏览器后 23 个 Playwright 测试及 Pages/Atlas/site budget / diff 门禁通过。未改 baseline。`benchmark-site --compare` 相对 2026-07 baseline 在 `origin/main`（3136 文件）已超 threshold 3053；本 PR 只新增 4 个 tracked 文件。
 - budget：2 个内容切片 + 1 个派生/文档切片；单 writer；1 个 PR。
 - blocker：上游测试、bundle、性能未跑；静态阅读不能升级为 `VERIFIED`。
 - 下一次 wake 条件：本 PR 出现 CI/review 变化，或 owner 明确授权 merge / 下一对主题。
