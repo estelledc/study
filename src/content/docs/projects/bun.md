@@ -191,6 +191,7 @@ Bun.serve({
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[nypm]] —— nypm — 探测当前包管理器并代跑装包命令
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[vitest]] —— Vitest — Vite 原生测试框架

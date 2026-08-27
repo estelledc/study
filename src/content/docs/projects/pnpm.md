@@ -170,6 +170,8 @@ find ~/.pnpm-store/v3/files -inum 1234567
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[projects/nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
+- [[nypm]] —— nypm — 探测当前包管理器并代跑装包命令
+- [[package-manager-detector]] —— package-manager-detector — 按策略探测包管理器并拼出命令
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[projects/scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"

@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -52815,6 +52815,37 @@
       }
     },
     {
+      "id": "projects::nypm",
+      "area": "projects",
+      "slug": "nypm",
+      "title": "nypm — 探测当前包管理器并代跑装包命令",
+      "description": "自带探测且不包装 package-manager-detector，yarn frozen 一律写成 --immutable",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-monorepos-and-package-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-monorepos-and-package-management",
+        "raw_category": "包管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/nypm/",
+      "atlas": {
+        "chunk_id": "topic-projects-monorepos-and-package-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/"
+      }
+    },
+    {
       "id": "projects::obs-studio",
       "area": "projects",
       "slug": "obs-studio",
@@ -54180,6 +54211,37 @@
       "atlas": {
         "chunk_id": "topic-projects-build-tools-and-bundlers-01",
         "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
+      "id": "projects::package-manager-detector",
+      "area": "projects",
+      "slug": "package-manager-detector",
+      "title": "package-manager-detector — 按策略探测包管理器并拼出命令",
+      "description": "默认先扫 lockfile，只返回命令模板，不 spawn",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-monorepos-and-package-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-monorepos-and-package-management",
+        "raw_category": "包管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/package-manager-detector/",
+      "atlas": {
+        "chunk_id": "topic-projects-monorepos-and-package-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/"
       }
     },
     {
@@ -65859,7 +65921,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-observability-and-performance-01",

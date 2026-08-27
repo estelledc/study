@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "nypm",
+    "digest_sha256": "c0e1080fda07529dc7c93084eb7e0694f5795d83e5f393655e05df254fc89252"
+  },
+  "source_revision": "98e209c05c53db85b7f990e4da9487fb3e45f200",
+  "research_input_sha256": "6072433b497c7addc6e042c428807f0fa30d41927a86f76339982731230301d8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates nypm spawn/corepack from detector templates; yarn frozen is always --immutable."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected package-manager.ts, api.ts, cmd.ts, _utils.ts, cli.ts; tests and real installs were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds nypm 0.6.9 / 98e209c0; no package-manager-detector dependency; no speed claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

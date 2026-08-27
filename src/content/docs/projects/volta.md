@@ -158,4 +158,4 @@ nvm 要你敲 `nvm use 18`，或靠 `.nvmrc` + shell hook 每次 `cd` 跑脚本�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[package-manager-detector]] —— package-manager-detector — 按策略探测包管理器并拼出命令

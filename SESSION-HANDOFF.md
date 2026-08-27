@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FL：nypm + package-manager-detector
+
+- status：Program `active`；本地 writer epoch `complete`；用户授权单一 PR、不 merge。
+- 起始 ref：`99736a909`（PR #76 merge 后的 origin/main）。
+- objective：为 `nypm` 与 `package-manager-detector` 新增源码绑定的 `study-v2` 页；证据边界是 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/nypm-package-manager-detector-source-review-20260827-fl.md`、taxonomy 与派生索引、本 handoff、`pnpm` / `bun` / `volta` 只补生成段反向链接；未安装上游依赖、未跑上游测试、未调用真实包管理器。
+- activated_by：`explicit-user-parallel-writer-fl-20260827`。
+- detector fingerprint：两 slug 在 origin/main 上不存在；旧印象会把 nypm 写成 detector 包装，或把两边的探测顺序、frozen/dlx 旗当成同一份合同。
+- external delta：分支将 push 并打开 1 个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `nypm` 绑定 annotated tag `v0.6.9` / `98e209c05c...`（npm latest 同号，无 `gitHead`）；记录自带探测、字段优先、yarn frozen 一律 `--immutable`、deno dlx 为 `deno run -A`。
+  2. `package-manager-detector` 绑定 annotated tag `v1.8.0` / `1042cf8c00...`（npm latest 同号，无 `gitHead`）；记录 lockfile 优先、`name`/`agent` 分流、默认不含 install-metadata。
+  3. 新增共享审查文档与两份 generation 1 static receipt；派生计数 projects 963→965，`benchmark-aligned` 75→77。
+- acceptance checks：两页 quality-gate 全绿、0 advisory；receipt digest 与正文一致，evidence `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致。
+- budget：2 个 blob-filtered 本地 worktree + 2 页新建；单 writer。
+- blocker（先于本切片存在）：规模 baseline 超限仍需 owner 处置；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或新的显式有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=99736a909 npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

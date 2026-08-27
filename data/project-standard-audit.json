@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 963,
+    "total": 965,
     "by_status": {
-      "benchmark-aligned": 75,
+      "benchmark-aligned": 77,
       "needs-evidence": 888
     }
   },
@@ -13759,6 +13759,26 @@
       ]
     },
     {
+      "slug": "nypm",
+      "title": "nypm — 探测当前包管理器并代跑装包命令",
+      "source": "https://github.com/unjs/nypm",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "obs-studio",
       "title": "OBS Studio — 直播推流软件事实标准",
       "source": null,
@@ -14750,6 +14770,26 @@
       "slug": "oxlint",
       "title": "oxlint — 编译进二进制的 JS/TS linter",
       "source": "https://github.com/oxc-project/oxc",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
+      "slug": "package-manager-detector",
+      "title": "package-manager-detector — 按策略探测包管理器并拼出命令",
+      "source": "https://github.com/antfu-collective/package-manager-detector",
       "status": "benchmark-aligned",
       "checks": {
         "source": true,
