@@ -16,11 +16,13 @@
   1. `webdriverio` 绑定 tag `v9.31.3` / `2b9721d052...`（与 npm `webdriverio@9.31.3` / `@wdio/cli@9.31.3` gitHead 一致），写清 launcher → local-runner → `webdriver` 协议层、middleware 等待与同提交 `webdriver@9.31.2` 漂移。
   2. `nightwatch` 绑定 tag `v3.16.0` / `765afc3566...`（与 npm `nightwatch@3.16.0` gitHead 一致），写清 CliRunner → CommandQueue → Transport 工厂、assert/verify 中止合同与默认 Firefox。
   3. 新增共享审查记录与两份 generation 1 static receipt；taxonomy 收入 `projects-testing-and-verification`，未抬高 unclassified / unknown_difficulty / empty_description 预算。
+  4. 同步 queue / method / about / career-plan 的公开规模文案到 projects=963、total=2046，使 `audit:counts` 通过。
 - acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `npm run audit:counts`：通过。
   - `git diff --check`：通过。
-  - 派生：`audit:project-standard` snapshot 与 `generate:site-state` 已写；全量 `verify:ci` 在 PR 头提交后跑。
+  - 派生：`audit:project-standard` snapshot 与 `generate:site-state` 已写；全量 `verify:ci` 在本修订上继续跑。
 - budget：2 个 blob-filtered 本地 worktree + 2 页新内容 + 派生刷新；单 writer。
 - external_outcome：一个 PR，不 merge。
 - blocker：无本轮硬暂停。规模 compare 仍可能在 supervisor 巡检中超 baseline，本轮未改 threshold。
