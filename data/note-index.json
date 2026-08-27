@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
-      "unknown_difficulty": 1972,
-      "empty_description": 1967
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
-        "unknown_difficulty": 958,
-        "empty_description": 954
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -54215,6 +54215,37 @@
       }
     },
     {
+      "id": "projects::oxc-parser",
+      "area": "projects",
+      "slug": "oxc-parser",
+      "title": "oxc-parser — 把 JS/TS 源码收成一份 ESTree",
+      "description": "介绍 oxc-parser 0.147.0 如何用 NAPI 同步解析、JSON 反序列化和可选 semantic 错误产出 ESTree。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "编译器 / 工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/oxc-parser/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::oxlint",
       "area": "projects",
       "slug": "oxlint",
@@ -60619,9 +60650,9 @@
       "id": "projects::swc",
       "area": "projects",
       "slug": "swc",
-      "title": "SWC — Rust 写的 TS/JS 编译器",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "SWC — 用 Rust crate 和 @swc/core 做 TS/JS 转译",
+      "description": "介绍 @swc/core 1.16.1 如何用 NAPI 做 transform/parse/minify，以及 .swcrc 与 Wasm plugin 边界。",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-build-tools-and-bundlers"
       ],
@@ -60632,13 +60663,13 @@
         "raw_category": "构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/swc/",
       "atlas": {
@@ -65652,7 +65683,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 15
+      "entries": 16
     },
     {
       "id": "topic-projects-cli-tools-01",
