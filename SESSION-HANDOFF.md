@@ -18,11 +18,13 @@
 - acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
-  - `audit:content-contract`：0 blocking。
+  - `audit:content-contract`：0 blocking，v2=105。
   - `git diff --check`：通过。
-  - `verify:ci`：提交后在规范 Node 下跑。
+  - 规范 Node 22.23.1 / npm 11.17.0 下 `STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`：toolchain、tests、content/quality/redline、strict build（2287 HTML / 2286 sitemap）通过；卡在本地 Pagefind 负向查询 `不存在不存在` 返回 2241（合同上限 0）。两页正文不含该词，未改 search-contract 或门禁。
+  - 构建后继续跑：SEO / 静态 a11y / Pages artifact / Atlas budget 通过。
+  - `benchmark-site --compare`：`tracked_files=3165` 超过 baseline 2775 / threshold 3053，属先于本切片的规模 detector。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
-- blocker：规模 baseline 仍可能超限，属先于本切片的 `PARKED_HUMAN` 事项；本轮未改 baseline 或阈值。
+- blocker：本地 Pagefind 负向查询与规模 baseline 均不在本 epoch 自动检修 allowlist；未放宽门禁。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
 - 下一次 wake 条件：本 PR 的 CI/review 状态变化，或 owner 对 merge 的单独授权。
 - 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
