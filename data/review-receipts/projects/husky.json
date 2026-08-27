@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "husky",
+    "digest_sha256": "fb67b7480987771fb8739383bdf3ba133b863f1780727d8b80849f8a725cfac2"
+  },
+  "source_revision": "799e84b716d0e03db80db5d5b0dcdd15b9d555fc",
+  "research_input_sha256": "33cae8c347ccec837b203fab65b69e602f566cf9d85143fa2954729d736c6d3f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains hooksPath vs user scripts, the 14-hook allowlist, HUSKY=0, and deprecated add/set/uninstall with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned 9.1.7 installer, shim, init, and shell tests were read; upstream test.sh and live hooks were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Annotated v9.1.7, npm gitHead, and package version agree; later main commits are docs/CI only and are not treated as a new contract."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:05:00.000Z"
+}

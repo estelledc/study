@@ -1992,6 +1992,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::husky",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::i18next",
       "topic_id": "projects-internationalization"
     },
@@ -2090,6 +2094,10 @@
     {
       "note_id": "projects::lingui",
       "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::lint-staged",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::listr2",

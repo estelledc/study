@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lint-staged",
+    "digest_sha256": "929e834d2b20b1a20dd2510366736d17190a219ba05bfc5625e028b3e7a57740"
+  },
+  "source_revision": "d15344350d914f5ce24df2c85f3ffebb9b387f3b",
+  "research_input_sha256": "33cae8c347ccec837b203fab65b69e602f566cf9d85143fa2954729d736c6d3f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains ACMR file selection, config grouping, automatic git add, stash/--diff coupling, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned 17.3.0 runAll, GitWorkflow, config search, and matchers were read; vitest and live hook runs were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Lightweight v17.3.0 and npm gitHead agree; unreleased --all/defineConfig on main are disclosed and excluded from 17.3.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:05:00.000Z"
+}
