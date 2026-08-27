@@ -10,7 +10,7 @@
 - scope：两页正文、2 份 generation 1 receipt、`docs/open-url-source-review-20260827-eq.md`、note-index / project-standard / site-state / 公开计数 / CLI atlas / 本 handoff；2 个 ignored worktree。未安装上游依赖，未跑 `xo` / `ava` / `tsd`，未调用系统打开程序。
 - activated_by：`explicit-user-parallel-writer-eq-20260827`。
 - detector fingerprint：仓库无 `open` / `open-cli` 页；用户指定该 open-url 对，并允许回退。npm/GitHub 对 `open@11.0.1` 与 `open-cli@9.0.0` 的 tag 与 `gitHead` 可唯一对齐，故未回退。
-- external delta：分支 push + 单 PR（用户授权）；未 merge。
+- external delta：分支 `cursor/open-open-cli-20260827-eq-8af3` 已 push，PR #188 已开；未 merge、未 deploy。
 - 完成切片：
   1. `open` 绑定 tag `v11.0.1` / `f38acc807a8760968310759a203cf14ca4d54727`，写清 spawn 启动器、PowerShell `Start`、macOS `--args` 顺序、WSL 探测与测试残留 `{url: true}`。
   2. `open-cli` 绑定 tag `v9.0.0` / `199a2033ae41c65928b8b8bfd7936082a135aa8c`，写清 meow 旗帜、stdin 临时文件、Node `>=22` 与未暴露的 `newInstance` / `browserPrivate`。
@@ -20,12 +20,12 @@
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:content-contract`：0 blocking。
   - `audit:counts` / `audit:site-state` 与 atlas 已按当前文件重生成。
-  - `verify:ci` 在 push 后对 `STUDY_CHANGED_FROM=89766cc27` 跑。
+  - `STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e` 本地门禁：toolchain、tests、audits、strict build、changed quality-gate 2/2、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁通过。首次 a11y 因本机缺 Playwright 浏览器失败，安装 chromium 后重跑 23/23。
 - budget：1 个 epoch、2 篇新增页、1 个本地 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：单 PR 已开且未 merge；不继续下一对。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=89766cc27 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #188 的 CI。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
