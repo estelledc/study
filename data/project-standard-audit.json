@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 32,
-      "needs-evidence": 929
+      "benchmark-aligned": 34,
+      "needs-evidence": 927
     }
   },
   "projects": [
@@ -14817,27 +14817,23 @@
     },
     {
       "slug": "oxc",
-      "title": "oxc — Rust 写一整套 JS/TS 工具链的勇气",
+      "title": "oxc — 用一份 arena AST 串起 JS/TS 编译器组件",
       "source": "https://github.com/oxc-project/oxc",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "paddle-lite",
@@ -17399,27 +17395,23 @@
     },
     {
       "slug": "rolldown",
-      "title": "rolldown — 用 Rust 给 Vite 当统一引擎的打包器",
+      "title": "rolldown — 用 Rust 实现 Rollup 兼容协议的打包器",
       "source": "https://github.com/rolldown/rolldown",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "rollup",
