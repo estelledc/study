@@ -2028,12 +2028,20 @@
       "topic_id": "projects-image-processing-and-canvas"
     },
     {
+      "note_id": "projects::jose",
+      "topic_id": "projects-authentication"
+    },
+    {
       "note_id": "projects::jotai",
       "topic_id": "projects-state-management"
     },
     {
       "note_id": "projects::js-joda",
       "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::jsonwebtoken",
+      "topic_id": "projects-authentication"
     },
     {
       "note_id": "projects::kafka",

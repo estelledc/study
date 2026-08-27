@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "jose",
+    "digest_sha256": "3e41cbd73acd93c0cd37cd026dcf4f4d6e8bde582b66c507e6bc6d6d6a0ccd86"
+  },
+  "source_revision": "3eab1524782fab3f6421b98380f44c99da210a6b",
+  "research_input_sha256": "3d5d9e9aaf37c4d3d6c9b25e0921cab68c29f38dc51320ee626cbabff99d9d7c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates SignJWT header requirement, jwtVerify claim checks, remote JWKS cache, and UnsecuredJWT vs decodeJwt."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned jose@6.2.10 / 3eab1524; inspected SignJWT, jwtVerify, claims set, JWS algs, remote JWKS. Tests not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds reachable GitHub tag v6.2.10 and discloses missing npm gitHead; no runtime or bundle measurement."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}
