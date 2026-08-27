@@ -19,8 +19,8 @@
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得改其他 writer 正在写的页面。
-- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一次 wake 条件：owner review https://github.com/estelledc/study/pull/302 ，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/302 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
