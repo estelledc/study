@@ -16,7 +16,8 @@
   2. `happy-dom` 绑定 Detached Window / Browser context、默认 `enableJavaScriptEvaluation=false`、手写 `HTMLParser`。
   3. `linkedom` 绑定 `parseHTML`→htmlparser2、PREV/NEXT/END 三链表、`linkedom/cached` WeakMap。
   4. 新增共享 `docs/dom-impl-source-review-20260827-di.md` 与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest 一致，evidence state `UNVERIFIED`；`audit:counts` / content-contract blocking 0。全量 `verify:ci` 在提交后跑。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest 一致，evidence state `UNVERIFIED`；`audit:counts` / content-contract blocking 0。
+- 验证结果：规范 Node 22.23.1 / npm 11.17.0 下，定向 quality-gate、receipt、counts、content-contract、strict build（2287 HTML / 2286 sitemap）、23 Playwright a11y、SEO/Pages/Atlas/site budget 与 diff 门禁通过。整链 `verify:ci` 在本机停在 Pagefind 负向查询 `不存在不存在`（返回 2241，合同要求 0）；同索引上 `happy-dom DetachedBrowser` 为 1 条，正向合同查询仍命中。未改 search-contract 或门禁。远端 CI 以 PR #161 为准。
 - budget：2 个 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：规模 compare 在 main 上已超 baseline，属既有 `PARKED_HUMAN` 信号；本轮未改 baseline 或阈值。
 - stop conditions：本轮写入结束；merge 与 deploy 需单独授权。
