@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "insane",
+    "digest_sha256": "8def790f01d27516c8189e52881550d26928d277170f8d4b1dbc5781b991ed06"
+  },
+  "source_revision": "641ad8e9e1e9894eddd24806f1d81acb3550dc1d",
+  "research_input_sha256": "b0d5c646a404addce5719996dc975ddab5f9a8a682fe787691605f0e5e5ca3f8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates subtree ignore, shallow default merge, URI scheme checks, and class whitelist vs class attribute."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "insane.js, parser, sanitizer, defaults, and she.js were inspected; he/assignment and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v2.6.2 where tag, package and npm gitHead agree; readme defaults are disclosed as stale versus defaults.js."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:55:00.000Z"
+}

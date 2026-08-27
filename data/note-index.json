@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -45848,6 +45848,37 @@
       }
     },
     {
+      "id": "projects::insane",
+      "area": "projects",
+      "slug": "insane",
+      "title": "insane — 丢掉不在名单里的整棵 HTML 子树",
+      "description": "介绍 insane 2.6.2 如何用浅合并白名单、子树忽略和 URL scheme 前缀过滤 HTML。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/insane/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::insightface",
       "area": "projects",
       "slug": "insightface",
@@ -64403,6 +64434,37 @@
       }
     },
     {
+      "id": "projects::xss",
+      "area": "projects",
+      "slug": "xss",
+      "title": "xss — 用白名单决定转义还是留下 HTML",
+      "description": "介绍 xss 1.0.15 如何用白名单、转义默认值和 href/src 前缀规则过滤不可信 HTML。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/xss/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::xstate",
       "area": "projects",
       "slug": "xstate",
@@ -65812,7 +65874,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 16
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",

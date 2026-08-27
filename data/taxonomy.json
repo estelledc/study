@@ -2012,6 +2012,10 @@
       "topic_id": "projects-cli-tools"
     },
     {
+      "note_id": "projects::insane",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::inngest",
       "topic_id": "projects-infrastructure-utilities"
     },
@@ -2614,6 +2618,10 @@
     {
       "note_id": "projects::xstate",
       "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::xss",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::yargs",
