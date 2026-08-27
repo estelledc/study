@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -39469,6 +39469,37 @@
       }
     },
     {
+      "id": "projects::cookies-next",
+      "area": "projects",
+      "slug": "cookies-next",
+      "title": "cookies-next — 按 options 形状分发的 Next.js cookie 助手",
+      "description": "介绍 cookies-next 6.1.1 如何用 client/server 分入口、cookie@1 序列化，以及 Next cookies() 与普通 HTTP 两条写入路径。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cookies-next/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::coqui-tts",
       "area": "projects",
       "slug": "coqui-tts",
@@ -52525,6 +52556,37 @@
       "atlas": {
         "chunk_id": "topic-projects-devops-containers-and-operations-01",
         "chunk_route": "/study/atlas/projects/topic-projects-devops-containers-and-operations-01/"
+      }
+    },
+    {
+      "id": "projects::nookies",
+      "area": "projects",
+      "slug": "nookies",
+      "title": "nookies — 面向 Pages Router 与 Express 的 cookie 助手",
+      "description": "介绍 nookies 2.5.2 如何用 cookie.parse / Set-Cookie 数组合并，在 Next.js ctx 与浏览器之间读写 cookie。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/nookies/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
       }
     },
     {
@@ -65974,7 +66036,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-mobile-development-01",

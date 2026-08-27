@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer JF：cookies-next + nookies
+
+- status：writer epoch `running`；本地内容已齐，待 `verify:ci` 与 PR review。未 merge、未 deploy。
+- 起始 ref：`ed10b72797dc50b822cbb7759055674270d85132`（`origin/main`）。
+- objective：为缺失的 cookie-helper 双子补齐 `cookies-next` 与 `nookies` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/cookie-helper-source-review-20260827-jf.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-jf-2026-08-27`。
+- detector fingerprint：目录无 `cookies-next.md` / `nookies.md`；开放 PR 已占用 js-cookie/cookies、tough-cookie/universal-cookie、cookie-es/set-cookie-parser，未占用本对。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `cookies-next` 绑定 annotated tag `v6.1.1` 剥皮提交 `c390d3599e29494753a7457f0414595872fe18f1`；npm `gitHead` 一致。
+  2. `nookies` 绑定 lightweight tag `v2.5.2` → `f3b87f876ea342fb287ccbb11f44631db4f91462`；披露 npm 无 `gitHead`、源码仓版本占位 `0.0.0-semantic-release`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 91 → 93，公开项目数 968 → 970。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、162 v2。
+  - `audit:counts` / `audit:site-state`：projects=970、papers=1083、total=2053。
+  - `audit:wikilinks`：blocking 0。
+  - `audit:project-standard`：snapshot CURRENT，`benchmark-aligned=93`。
+  - `git diff --check`：通过。
+  - `verify:ci`：待跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只交付这一对；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：对已打开的 JF cookie-helper PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
