@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "70 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,14 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 70 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) | `ast-grep` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) | `bandwhich` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [bat — 现代 cat 替代](/study/projects/bat/) | `bat` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [blessed — 用 widget 树和 terminfo 画终端界面](/study/projects/blessed/) | `blessed` | intermediate | UNVERIFIED | 用 widget 树和 terminfo Program 画全屏 TUI 的 Node |
 | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) | `bottom` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) | `broot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) | `btop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -42,7 +43,7 @@ sidebar:
 | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | `hadolint` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | `htop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HTTPie — curl 的人话版本](/study/projects/httpie/) | `httpie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | `ink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | `ink` | intermediate | UNVERIFIED | 用 React reconciler 和 Yoga 在字符网格上画 CLI 的 Node |
 | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | `jc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jq — JSON 的 sed/awk](/study/projects/jq/) | `jq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | `just` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
