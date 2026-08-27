@@ -23,7 +23,7 @@
 - blocker：未获 merge/deploy 授权；静态阅读不能升级为运行证据。
 - stop conditions：本 epoch 在开出 1 个 PR 后停止；不自动 merge。
 - 下一次 wake 条件：owner review / CI 结果，或新的显式范围重授权。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：查看 PR https://github.com/estelledc/study/pull/116 ；未获授权前不要 merge。
 - superseded_by：`none`
 - 不在 handoff 中复制易过期数字或 ETA。见 `AGENTS.md`。
 
