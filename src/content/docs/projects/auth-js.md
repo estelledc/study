@@ -160,3 +160,4 @@ callbacks: {
 - [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 - [[supabase]] —— Supabase — Firebase 的开源替代
 - [[supertokens]] —— SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
+- [[workos]] —— WorkOS — 企业 SSO 与用户管理共用一个 Node SDK 的认证 SaaS

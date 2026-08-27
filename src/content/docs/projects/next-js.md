@@ -170,4 +170,5 @@ export default Page
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
+- [[workos]] —— WorkOS — 企业 SSO 与用户管理共用一个 Node SDK 的认证 SaaS
 - [[zod]] —— Zod — TypeScript-first schema 验证

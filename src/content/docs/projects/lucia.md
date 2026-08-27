@@ -151,3 +151,4 @@ state 由用户传入并自管，库不存任何状态——这是 utility 派�
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[supertokens]] —— SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
+- [[workos]] —— WorkOS — 企业 SSO 与用户管理共用一个 Node SDK 的认证 SaaS

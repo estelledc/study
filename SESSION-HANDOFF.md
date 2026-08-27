@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Auth SaaS DO epoch（clerk + workos）
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review，不 merge。
+- status：`running` 已收口为本 epoch `complete`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 clerk 升到 study-v2，并新增 workos 对照页；两页均为 `STATIC_ANALYSIS` / `UNVERIFIED`；留下 `docs/auth-saas-source-review-20260827-do.md`。
+- scope：`src/content/docs/projects/{clerk,workos}.md`、共享源码审查记录、两份 generation 1 receipt、taxonomy curated assignment、由 atlas / site-state / project-standard / 公开计数派生的文件；未安装上游依赖、调用 Clerk/WorkOS API、运行上游测试或改政策阈值。
+- activated_by：`explicit-user-request-parallel-writer-do-clerk-workos-20260827`。
+- detector fingerprint：clerk 页缺 pinned revision / evidence / self-test；仓库无 workos 页，无法做 SaaS 认证对照。
+- external delta 计数：GitHub/npm 只读核验 + 本地 blob-filtered clone；将开 1 个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `clerk` 绑定 `clerk/javascript@2799f0dd...`；`@clerk/nextjs@7.8.2` 等五个 tag 剥到同一提交；纠正 deprecated `createRouteMatcher`、development-only telemetry、按 instance 分桶的 JWKS 缓存。
+  2. 新增 `workos` 绑定 `workos/workos-node@203f845f...` / `@workos-inc/node@10.11.0`（tag 与 npm `gitHead` 一致）；写清 User Management / AuthKit provider / 封存 cookie / SSO 模块边界。
+  3. 新增 `docs/auth-saas-source-review-20260827-do.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 `UNVERIFIED` evidence state 一致；`audit:counts` / `audit:content-contract` / `git diff --check` 通过。全量 `verify:ci` 在首个 commit 之后跑。
+- budget：2 页静态源码迁移 + 1 个共享 review 文档；单 writer。
+- external_outcome：一个 review-ready PR，不 merge。
+- stop conditions：本 epoch 写入结束；不自动 merge。
+- 下一次 wake 条件：PR CI / review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

@@ -190,3 +190,4 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[workos]] —— WorkOS — 企业 SSO 与用户管理共用一个 Node SDK 的认证 SaaS

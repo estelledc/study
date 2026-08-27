@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "workos",
+    "digest_sha256": "9c96066247549a6cdc87bbae7e2acfc0862024f4f3d66768b45da3bea2183553"
+  },
+  "source_revision": "203f845fff6fcb904953ad55f799b43fb6e6663e",
+  "research_input_sha256": "144dec123c01d891c09133c2cf006eee908f84e44259d2e6e2034db2d887f485",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates WorkOS HTTP facade, AuthKit authorize URL, sealed cookie session, PKCE public client, and SSO module paths."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected WorkOS client, user-management authenticate/seal, session jose verify, fetch retry defaults, and specs; upstream tests and WorkOS APIs were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v10.11.0 matches npm gitHead. Claims stay inside the Node SDK; hosted AuthKit UI and directory protocols are not in this repo."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

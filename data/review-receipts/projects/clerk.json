@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "clerk",
+    "digest_sha256": "5f6d6615bae8cd84721bbb95471a170a5e23b36cf45f7e612f196a63884cce59"
+  },
+  "source_revision": "2799f0ddb8590d88fcb15dbd6b7e06c453ecb9d2",
+  "research_input_sha256": "144dec123c01d891c09133c2cf006eee908f84e44259d2e6e2034db2d887f485",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains SDK-vs-cloud split, authenticateRequest, deprecated route matcher, development-only telemetry, and JWKS instance cache."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected nextjs middleware, backend authenticateRequest/verifyJwt/keys, shared telemetry, and middleware tests; upstream tests and Clerk APIs were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Five package tags peel to one reachable commit; npm gitHead is absent. Cloud auth internals remain out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

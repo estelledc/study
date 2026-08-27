@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
       "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
         "unknown_difficulty": 961,
-        "empty_description": 957
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -38779,7 +38779,7 @@
       "area": "projects",
       "slug": "clerk",
       "title": "Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK",
-      "description": "",
+      "description": "开源接线 SDK：在应用侧校验 session JWT，登录与用户表仍跑在 Clerk 云。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-authentication"
@@ -38791,13 +38791,13 @@
         "raw_category": "框架与 SDK"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/clerk/",
       "atlas": {
@@ -63993,6 +63993,37 @@
       }
     },
     {
+      "id": "projects::workos",
+      "area": "projects",
+      "slug": "workos",
+      "title": "WorkOS — 企业 SSO 与用户管理共用一个 Node SDK 的认证 SaaS",
+      "description": "官方 Node SDK，把 User Management、SSO、Directory Sync 等 WorkOS API 收成一个 Fetch 客户端。",
+      "difficulty": "初级",
+      "canonical_topics": [
+        "projects-authentication"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-authentication",
+        "raw_category": "认证"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/workos/",
+      "atlas": {
+        "chunk_id": "topic-projects-authentication-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-authentication-01/"
+      }
+    },
+    {
       "id": "projects::wormhole",
       "area": "projects",
       "slug": "wormhole",
@@ -65391,7 +65422,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-authentication-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-backend-and-apis-01",
