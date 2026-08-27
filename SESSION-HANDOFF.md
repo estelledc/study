@@ -4,15 +4,29 @@
 
 ## 2026-08-27 PARALLEL writer DD · mongoose / MikroORM
 
-- status：`running`；writer epoch 进行中，目标为一份可审查 PR，不 merge。
-- 起始 ref：`7a2384d09`（`origin/main`，PR #54 merge）。
+- status：Program `active`；本地 writer epoch `complete`；PR 已开，不 merge。
+- 起始 ref：`7a2384d09`（PR #54 merge 后的 `origin/main`）。
+- 完成 ref：本分支 `cursor/mongoose-mikro-orm-dd-c3cb`。
 - objective：把 mongoose 与 mikro-orm 绑定到可达静态源码，产出 `docs/node-orm-source-review-20260827-dd.md`，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：新建 `mongoose` 页、重写 `mikro-orm` 页、共享 DD 文档、2 份 generation 1 receipt、atlas / note-index / project-standard / site-state / 公开规模文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未连库、未跑上游测试。
 - activated_by：`explicit-user-parallel-writer-dd-2026-08-27`。
 - detector fingerprint：仓库无 mongoose 页；mikro-orm 缺 pinned revision / evidence boundary，且正文仍写 v6 的 `persistAndFlush`、core 装饰器与默认可共用 `orm.em`。
-- external_outcome：一份 PR，不 merge；D 轴在 merge/deploy 前不变。
-- budget：2 页 + 1 份 DD 文档；默认 3 切片 / 120 分钟；单 writer。
-- stop_conditions：provenance 不可达、只能靠猜测、需要改政策/阈值/baseline，或被要求 merge。
+- external delta：分支已 push 并打开 PR #174；未 merge、未 deploy，D 轴不变。
+- 完成切片：
+  1. `mongoose` 绑定 tag / npm `9.9.4` / `a4b8a603...`，写清 Schema→Model、`save` 默认校验、`updateOne` 默认不校验、v9 拒绝 callback / `findOne(null)`、默认 `bufferCommands`。
+  2. `mikro-orm` 绑定 npm `@mikro-orm/core@7.1.14` / `fb178b49...`（tag `v7.1.14` 指向父提交 `cd79b2c3...`，仅 changelog/lockfile diff），纠正 `persist().flush()`、`allowGlobalContext: false`、装饰器迁出 core、SQL 底座改为 Kysely。
+  3. 新增共享 `docs/node-orm-source-review-20260827-dd.md` 与两份 generation 1 static receipt；项目审计从 `34/961` 前进到 `36/962`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 DD provenance 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2286 HTML / 2285 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=926`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=105`、`legacy-unverified=1940`、blocking 0。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer；预算内完成。
+- blocker：规模 baseline 仍超限（先于本切片存在）；本轮未改 baseline / 阈值。merge 与 deploy 需单独授权。
+- stop conditions：本轮已完成；不 merge。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 授权 merge / 新的有限目标。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/174`。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
