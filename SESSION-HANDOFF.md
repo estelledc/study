@@ -15,12 +15,12 @@
   1. Ember 绑定 `emberjs/ember.js@ccfcde92...` / `ember-source@7.2.0`（tag 与 npm `gitHead` 一致）
   2. Backbone 绑定 `jashkenas/backbone@da75718e...` / `1.6.1`（剥开 annotated tag；npm `gitHead` 不可达，未猜测）
   3. 新增共享审查记录与两份 generation 1 static receipt
-- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision / provenance 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:links` / `audit:wikilinks` / `audit:site-state` / `audit:project-standard` 通过
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision / provenance 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:links` / `audit:wikilinks` / `audit:site-state` / `audit:project-standard` 通过；`STUDY_CHANGED_FROM=a910f11f npm run verify:ci` 全绿（366 Node tests、2287 HTML、2286 sitemap URLs、23 Playwright a11y）
 - budget：1 个 classic-framework 双子切片；单 writer
-- blocker：未跑 `verify:ci` 前不得声称全量门禁通过；不 merge
+- blocker：不 merge；等待 owner review / 远端 CI
 - stop conditions：需要猜 revision、安装上游依赖、或放宽门禁时停止
 - 下一次 wake 条件：owner review / CI；未授权 merge
-- 下一条命令：`STUDY_CHANGED_FROM=a910f11f npm run verify:ci`
+- 下一条命令：查看 PR #158，不要 merge
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
