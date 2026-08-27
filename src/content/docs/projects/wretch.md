@@ -10,12 +10,12 @@ trust:
   note_type: library
   canonical_source: https://github.com/elbywan/wretch
   source_authority: AUTHOR_PRIMARY
-  accessed_at: '2026-07-17'
+  accessed_at: '2026-08-27'
   immutable_revision: 32d5f68badf7e8f103b734febe680968c6e0f97f
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
-  reviewed_at: '2026-07-17'
-  review_after: '2026-10-17'
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
   applicable_version: 3.0.9
 ---
 
@@ -119,13 +119,13 @@ const data = await api.url("/flaky").get().json()
 
 ## 踩过的坑
 
-1. **混淆两层 catcher API**：wrapper 上是 `.catcher(404, fn)`；`.get()` 后的 ResponseChain 用 `.notFound(fn)` 或 `.error(404, fn)`，没有同名 `.catcher()`。
+1. **混淆两层 catcher API**：wrapper 上是 `.catcher(404, fn)`，也可以传入 id 数组；`.get()` 后的 ResponseChain 用 `.notFound(fn)` 或 `.error(404, fn)`，没有同名 `.catcher()`。
 
 2. **丢弃配置方法返回值**：`api.auth(...)` 不会修改 `api`，必须接住返回的新 object。
 
 3. **把 retry middleware 当幂等保护**：默认不检查 method；POST 也可能重试 5xx。副作用请求必须用 `skip`、idempotency key 或等价策略收口。
 
-4. **误读 `maxAttempts`**：值 3 表示初次请求之外最多重试 3 次，总调用可达 4；固定默认值是 10，不是 3。
+4. **误读 `maxAttempts`**：值 3 表示初次请求之外最多重试 3 次，总调用可达 4；固定默认值是 10，不是 3。值 `0` 在固定源码里表示无限重试，不是“不重试”。
 
 5. **把 addon 当 core 默认**：timeout 依赖 Abort addon 的 `setTimeout()`，retry 依赖 middleware；只 import core 不会自动获得这些策略。
 
@@ -146,9 +146,9 @@ const data = await api.url("/flaky").get().json()
 
 ## 固定版本边界
 
-- 本文绑定 `elbywan/wretch@32d5f68b...`，tag、package 与 npm `gitHead` 均为 `3.0.9`。
+- 本文绑定 `elbywan/wretch@32d5f68b...`。2026-08-27 复验 Git tag、package 与 npm `gitHead` 仍同为 `3.0.9`。
 - package 同时提供 import/require exports，声明 Node >=22。
-- retry middleware 默认 `delayTimer=500`、线性 delay ramp、`maxAttempts=10`、停止于 ok 或 4xx、network retry 关闭。
+- retry middleware 默认 `delayTimer=500`、线性 `delay * nbOfAttempts`、`maxAttempts=10`（`0` 表示无限）、停止于 ok 或 4xx、network retry 关闭。
 - 本文未安装依赖、运行上游 Node/browser/Bun/Deno 测试或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
@@ -161,13 +161,13 @@ const data = await api.url("/flaky").get().json()
 ## 应用型自测
 
 1. 执行 `api.auth("Bearer x")` 但不保存返回值，后续 `api.get()` 会带新 header 吗？
-2. `retry({maxAttempts: 3})` 最多会调用底层 Fetch 几次？
+2. `retry({maxAttempts: 3})` 最多会调用底层 Fetch 几次？`maxAttempts: 0` 呢？
 3. 默认 retry middleware 遇到 POST 500，会因为 method 是 POST 而自动跳过吗？
 
 检查点：
 
 1. 不会；原 wrapper 未变。
-2. 最多 4 次，包含初次调用和 3 次 retry。
+2. 值为 3 时最多 4 次（初次 + 3 次 retry）；值为 0 时按固定源码会无限重试，直到 `until` 成立。
 3. 不会。默认 condition 看 response，不看 method；需显式 `skip` 或幂等设计。
 
 ## 延伸阅读
