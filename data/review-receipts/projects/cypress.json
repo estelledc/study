@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cypress",
+    "digest_sha256": "579df8317e9c43ece7c2e2c4bf0b62c305ab1f67eb36439aadf7d52dd59147ba"
+  },
+  "source_revision": "979b6a213e49e5ca65c9f7f53e023331f68ad459",
+  "research_input_sha256": "994c1fe8c1c609aa963e28e86c87dcb7bfd49f6a863f16423d033c0645c97c07",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-aw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates command-queue retry from test-level retries and cy.origin serialization."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-aw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected config defaults, CommandQueue, actionability, origin; did not run Cypress or open a browser."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-aw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm 15.21.1 has no gitHead; revision is the peeled GitHub tag v15.21.1. No runtime evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:31:00.000Z"
+}

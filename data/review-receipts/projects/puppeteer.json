@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "puppeteer",
+    "digest_sha256": "dd7b9685e05c779f0624bb8629623c089c8b9740f4f503ceeb49f23c1796c5a1"
+  },
+  "source_revision": "21efe834b7094d53a1c0d633dc69deced17702d8",
+  "research_input_sha256": "994c1fe8c1c609aa963e28e86c87dcb7bfd49f6a863f16423d033c0645c97c07",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-aw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates CDP client from test runner; click is one-shot query plus mouse click."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-aw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected launch, TimeoutSettings, Frame.click, ChromeLauncher headless, revisions; did not launch a browser."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-aw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to puppeteer 25.9.0 / Chrome 152.0.7977.54; no bundle or performance comparison."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:31:00.000Z"
+}
