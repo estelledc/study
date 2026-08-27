@@ -37420,7 +37420,7 @@
       "id": "projects::box2d",
       "area": "projects",
       "slug": "box2d",
-      "title": "Box2D — Erin Catto C++ 2D 物理",
+      "title": "Box2D — C17 2D 刚体物理",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37434,13 +37434,13 @@
         "raw_category": "graphics"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/box2d/",
       "atlas": {
@@ -37973,13 +37973,13 @@
         "raw_category": "开源工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/cannon-es/",
       "atlas": {

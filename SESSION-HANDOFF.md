@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FJ：box2d + cannon-es 静态迁移
+
+- supervisor 状态：writer epoch `running` → 完成后 `complete`；未 merge、未 force-push `main`、未 deploy。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（以 `git rev-parse origin/main` 为准；写入前已 fetch）。
+- objective：把 assigned pair `box2d` + `cannon-es` 从 `needs-evidence` 迁到源码绑定标准；两页均存在且 canonical 为真实 GitHub 仓，无需换邻页。
+- scope：两页正文、2 份 generation 1 receipt、`docs/physics-engine-source-review-20260827-fj.md`、本交接；派生索引按门禁生成但不负责与并行 PR 合并。未安装上游依赖、未编译、未跑上游 test / samples / benchmark。
+- activated_by：`explicit-user-parallel-writer-fj-2026-08-27`（10h 窗口至 23:38 Asia/Shanghai）。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary`；box2d 旧正文仍写 2.x C++ `b2World::Step(dt, vel, pos)` 与 fixture；cannon-es 旧正文未区分单参 `step` 与 accumulator，并把未绑定刚体规模写成限制。
+- external delta 计数：本 PR（push + 开 PR 已由调用方授权；merge / deploy 未授权）。
+- 已完成切片：
+  1. `box2d` 绑定 lightweight tag `v3.1.1` → `8c661469c9507d3ad6fbd2fea3f1aa71669c2fe3`。
+  2. `cannon-es` 绑定 annotated tag `v0.20.0` peel → `8b147715d5f7ec69da2211611daa236d80e88933`。
+  3. 共享审查文档与两份 `STATIC_REVIEW` / `UNVERIFIED` receipt。
+- 验证结果：两页 `quality-gate` 均 pass、0 advisory；两份 receipt digest 与正文一致，evidence state `UNVERIFIED`；`git diff --check` 通过。派生索引已本地重生成，合并冲突不是本 writer 的工作。不在 handoff 中复制易过期数字或 ETA。
+- budget：2 页、最多 3 切片、120 分钟、单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或 baseline。
+- stop conditions：两页绑定、一枚 PR 打开后停止；不 merge、不写 `main`。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/box2d.md src/content/docs/projects/cannon-es.md`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

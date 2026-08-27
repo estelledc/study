@@ -1,155 +1,174 @@
 ---
-title: Box2D — Erin Catto C++ 2D 物理
-来源: 'https://github.com/erincatto/box2d'
+title: Box2D — C17 2D 刚体物理
+来源: https://github.com/erincatto/box2d
 日期: 2026-07-08
 分类: graphics
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/erincatto/box2d
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 8c661469c9507d3ad6fbd2fea3f1aa71669c2fe3
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.1.1
 ---
 
 ## 是什么
 
-Box2D 是一个经典 2D 刚体物理引擎。日常类比：它像一个“可复用的物理教材引擎”——你负责画角色和规则，它负责每一帧把力、速度、摩擦、碰撞变成可复现的结果。
+Box2D 3.x 是 Erin Catto 写的 **2D 刚体物理库**，库本体是 portable C17，公开对象是按值传递的 opaque id。日常类比：你不再“new 一个世界对象再对它调方法”，而是拿一张编号牌去柜台办事——`b2WorldId` / `b2BodyId` / `b2ShapeId` 本身不持有内存。
 
-它的入口常见是：
+```c
+b2WorldDef worldDef = b2DefaultWorldDef();
+worldDef.gravity = (b2Vec2){0.0f, -10.0f};
+b2WorldId worldId = b2CreateWorld(&worldDef);
+b2World_Step(worldId, 1.0f / 60.0f, 4);
+b2DestroyWorld(worldId);
+```
 
-1. 创建 `b2World`
-2. 定义物体刚体、形状和 fixture
-3. 每帧调用 `Step`
-4. 按新物理状态同步到渲染层
-
-这条链条让开发者不用手写积分和碰撞求解。
+固定 `v3.1.1` 的 CMake 项目版本是 `3.1.1`。samples 才要求 C++20；绑定 C++ class 的旧笔记（`b2World::Step(dt, velIters, posIters)`、fixture）对不上这条线。
 
 ## 为什么重要
 
-2D 游戏里“看起来自然”不是渲染特效，而是物理参数和离散时间积分的一致性。
+不按 3.1.1 的 C API 读，下面这些 2.x 印象会直接编不过：
 
-- `gravity` 不是只写 9.8：单位、缩放比都要和像素坐标系一致。
-- 一个小角速度抖动会在 10 秒后放大成整屏抖动。
-- 物理 step 稳定性直接决定体验。
-- 碰撞过滤、传感器、关节约束写错时，玩家看到的是“穿墙”“抖动”“卡死”，很难靠美术补救。
+- 世界、刚体、形状不再是 C++ 对象，零初始化的 id 是 null
+- `b2WorldDef` 必须先走 `b2DefaultWorldDef()`，不能 `{0}` 当默认
+- 默认 body 是 static；忘了写 `b2_dynamicBody` 就会“掉不下来”
+- 没有 fixture：形状直接 `b2CreatePolygonShape(bodyId, &shapeDef, &box)`
+- 接触回调改成步进后拉取 transient 事件数组
 
 ## 核心要点
 
-1. **世界与步进要稳定**。`b2World::Step(dt, velocityIterations, positionIterations)` 是核心入口。类比：像节拍器，每拍都按同样时间推进，乐队才不会越演越乱。
+固定 3.1.1 可以拆成五层：
 
-   - `dt` 太大：穿透增强，隧穿风险上升。
-   - 迭代次数太低：抖动和堆积穿透明显。
-   - 迭代过高：性能掉得快但数值更稳定。
+1. **定义必须带 secret cookie**：`b2DefaultWorldDef()` 默认重力 `{0, -10}`、`enableSleep` / `enableContinuous` 为 true、`contactHertz=30`、`contactDampingRatio=10`、`maximumLinearSpeed=400`（再乘 `b2_lengthUnitsPerMeter`，`core.c` 默认为 1）。漏掉 default helper 会让 `internalValue` 对不上。
 
-2. **形状和 fixture 决定“怎么撞”**。Circle、Polygon 是最常用，复杂边界可用链条边和胶囊体。类比：同一个玩具人，穿棉衣和穿盔甲，撞到墙的反应不一样。
+2. **世界是全局表里的槽**：`b2CreateWorld` 最多同时占用 `B2_MAX_WORLDS`（128）个槽。每个世界独立，注释写明可以并行模拟。
 
-   - 碰撞形状和 fixture 密度决定质量与惯性。
-   - 传感器 fixture 不参与物理响应，仅作触发。
-   - filter bits 决定某两类物体是否允许碰撞。
+3. **步进是时间步 + 子步**：`b2World_Step(worldId, timeStep, subStepCount)`。hello 文档建议 `1/60` 和 4 个子步（子步 240Hz）。没有 2.x 那对 velocity/position iteration 计数。
 
-3. **关节和约束把自由物体连成机构**。Revolute、Prismatic、Distance、Weld 等关节让结构从“自由落体”变成“可控机械”。类比：门铰链只允许绕一个轴转，抽屉滑轨只允许前后滑。
- 
-   - 锁链系统要控制长度和阻尼。
-   - 速度太高时要加限位器，避免数值发散。
-   - 关节误差要用测试场景回归，不要只凭肉眼调一次。
+4. **形状挂在 body 上**：`b2DefaultShapeDef()` 密度 1、摩擦 0.6、`updateBodyMass=true`。`isSensor` 只产生 overlap、不产生碰撞响应；`enableSensorEvents` 即使对传感器也默认 false。
 
-## 实践案例
+5. **事件是拉模型**：`b2World_GetContactEvents` / `GetSensorEvents` / `GetBodyEvents` 返回当前步的 transient 数据，不能存引用。要自己在步进后拷走。
 
-### 案例 1：基本掉落
+## 实践示例
 
-一个球体从高处下落，碰撞地面后反弹：
+### 案例 1：hello 落地盒
 
-```cpp
-b2World world({0.0f, -10.0f});
-world.Step(1.0f / 60.0f, 8, 3);
+```c
+b2WorldDef worldDef = b2DefaultWorldDef();
+b2WorldId worldId = b2CreateWorld(&worldDef);
+
+b2BodyDef groundDef = b2DefaultBodyDef();
+groundDef.position = (b2Vec2){0.0f, -10.0f};
+b2BodyId groundId = b2CreateBody(worldId, &groundDef);
+b2Polygon groundBox = b2MakeBox(50.0f, 10.0f);
+b2ShapeDef groundShape = b2DefaultShapeDef();
+b2CreatePolygonShape(groundId, &groundShape, &groundBox);
+
+b2BodyDef bodyDef = b2DefaultBodyDef();
+bodyDef.type = b2_dynamicBody;
+bodyDef.position = (b2Vec2){0.0f, 4.0f};
+b2BodyId bodyId = b2CreateBody(worldId, &bodyDef);
+b2Polygon box = b2MakeBox(1.0f, 1.0f);
+b2ShapeDef shapeDef = b2DefaultShapeDef();
+b2CreatePolygonShape(bodyId, &shapeDef, &box);
+
+b2World_Step(worldId, 1.0f / 60.0f, 4);
+b2Vec2 p = b2Body_GetPosition(bodyId);
 ```
 
-**逐部分解释**：
+`b2MakeBox` 吃的是半宽半高。地面默认 static。动态盒必须设 `type`。
 
-- `b2World` 保存所有刚体、碰撞和关节，是物理“场地”。
-- `{0.0f, -10.0f}` 是重力方向；如果像素比例不统一，掉落速度会显得怪。
-- `Step` 的三个参数分别是固定时间步、速度迭代、位置迭代；`8, 3` 常作为教学起点。
+### 案例 2：中心冲量
 
-### 案例 2：推箱子
-
-角色施加脉冲力推动箱体时，若不设合适质量比例会出现“角色被推飞”或“箱子不动”。
-
-```cpp
-boxBody->ApplyLinearImpulseToCenter({20.0f, 0.0f}, true);
+```c
+b2Body_ApplyLinearImpulseToCenter(bodyId, (b2Vec2){20.0f, 0.0f}, true);
 ```
 
-**逐部分解释**：
+第三个参数 `wake` 为 true 会唤醒。注释写明冲量适合一次性动作；持续力应走 `b2Body_ApplyForce*`，更贴合子步求解器。睡着的 body 会忽略冲量，除非你先唤醒。
 
-- `ApplyLinearImpulseToCenter` 像“突然推一下”，适合跳跃、撞击、推箱子。
-- 第二个参数 `true` 会唤醒正在 sleep 的 body，避免推了没反应。
-- 箱体密度、摩擦、角色质量要一起调；质量差 10 倍以上时很容易出现不自然反弹。
+### 案例 3：步进后读接触
 
-### 案例 3：滚球轨道
-
-让多个斜面形成轨道，关键是每段坡度和摩擦匹配。
-
-```cpp
-const float fixedDt = 1.0f / 60.0f;
-accumulator += frameDt;
-while (accumulator >= fixedDt) {
-    world.Step(fixedDt, 8, 3);
-    accumulator -= fixedDt;
-}
+```c
+b2World_Step(worldId, 1.0f / 60.0f, 4);
+b2ContactEvents events = b2World_GetContactEvents(worldId);
+/* events 只在这一步有效，下一拍再取会换一批 */
 ```
 
-**逐部分解释**：
-
-- `frameDt` 是真实帧间隔，会抖；`fixedDt` 是物理世界的固定节拍。
-- 用 accumulator 把渲染帧率和物理步进解耦，轨道才不随机器快慢改变。
-- 高速滚球仍要开启 CCD 或缩小步长，否则会穿过薄平台。
+不要在回调里改拓扑。3.x 没有 2.x 那种 `b2ContactListener` 虚函数。
 
 ## 踩过的坑
 
-1. **像素和米坐标混用**：同一世界里 PTM 比例不一致会导致对象“忽大忽小”。
-2. **固定步长被忽略**：真实帧率波动下直接用 `deltaSeconds` 会导致不稳定。
-3. **过早回收 body**：没先销毁 joint 再 destroy body 可能引发野指针。
-4. **错误设置 sleep threshold**：无休眠对象持续参与计算。
-5. **接触监听器逻辑副作用**：BeginContact 和 EndContact 里改状态前先排队。
+1. **继续写 `world.Step(dt, 8, 3)`**：那是 2.x C++。3.1.1 只有 `b2World_Step(id, dt, subStepCount)`。
+2. **零初始化 `b2WorldDef`**：hello 写明 C 没有构造函数，必须 `b2Default*Def()`。
+3. **默认 body 当动态用**：`b2DefaultBodyDef().type` 是 `b2_staticBody`。
+4. **把 fixture 当必须层**：形状直接创建在 body 上；filter / 密度 / 摩擦在 `b2ShapeDef`。
+5. **存事件指针跨步**：`Get*Events` 数据 transient。
+6. **把 `main` 上的 CCD `safetyFactor` 写成 3.1.1 合同**：那是 2026-08-21 的未发布提交。
 
 ## 适用 vs 不适用场景
 
-适用：
+**适用**：
 
-- 2D 物理小游戏、模拟器、教育演示
-- 对性能有控制要求的轻量跨平台项目
-- 需要自己扩展碰撞/约束行为的团队
+- 2D 游戏 / 教学需要刚体、关节、传感器和查询（ray / shape cast / overlap）
+- 能接受 C17 头文件 + 自己写渲染同步
+- 需要同一进程里多个独立世界（上限 128）
 
-不适用：
+**不适用**：
 
-- 3D 或大规模物理粒子系统（应用 Box2D 会吃力）
-- 无法接受固定步长更新的系统
-- 极端高精度刚体仿真（建议更专门引擎）
+- 仍按 2.4 fixture / `b2World` 类写新代码
+- 3D 或柔体为主的仿真
+- 要把未跑过的堆叠规模、SIMD 加速比写成选型结论
+- 准备跟 `main` 的 Tunable CCD 走，却仍按 3.1.1 推理
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- 最初定位是让游戏团队避开重复造轮子。
-- 后续社区围绕 Cocos / Unity 等生态形成大量封装。
-- 在“轻量 2D”与“可控 determinism”之间，它形成了长期标杆。
-- 同类里，很多人从 Box2D 过渡到 Chipmunk / Planck，通常是为了生态语言差异。
+- 本文绑定 `erincatto/box2d@8c661469c9507d3ad6fbd2fea3f1aa71669c2fe3`，lightweight tag `v3.1.1`。
+- `main` 在 2026-08-21 已有 `617d32ab...`（CCD `safetyFactor`）；未绑定。
+- 未编译、未跑 samples / test、未测步进耗时，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. 物理引擎要点在于“稳定模型参数”，不是更多特效。
-2. 碰撞和约束是两个系统：处理接触是物理，处理反应是你定义的游戏逻辑。
-3. 固定步进是体验可复现的前提。
-4. 2D 物理的复杂度多数发生在边界场景而不是基础 API。
-5. 有序的世界构建顺序比参数魔改更重要。
+1. **3.x 的单位是 id，不是对象**——零 id 就是 null，销毁世界会带走其上的 body/shape/joint。
+2. **子步替代了 2.x 的双迭代计数**——调的是 `subStepCount`，不是 vel/pos iters。
+3. **默认值藏在 `b2Default*Def`**——尤其是 static body 和 0.6 摩擦。
+4. **事件要自己拷**——拉模型，下一步就失效。
+
+## 应用型自测
+
+1. `b2BodyDef def = {0}; b2CreateBody(worldId, &def);` 在固定头文件合同里可靠吗？
+2. 不改 `bodyDef.type` 时，盒子会在重力下落吗？
+3. `b2World_Step` 的第三参还是 velocity iteration 吗？
+
+检查点：
+
+1. 不可靠。定义必须 `b2DefaultBodyDef()`，否则 `internalValue` 对不上。
+2. 不会。默认 `b2_staticBody`。
+3. 不是。第三参是 `subStepCount`。
 
 ## 延伸阅读
 
-- 官方仓库： https://github.com/erincatto/box2d
-- Box2D 文档与示例工程（官方文档）
-- [[chipmunk2d]]——轻量物理引擎替代路线
-- [[matter-js]]——JS 端口思路参考
-- [[cocos2d-x]]——引擎级应用示例
+- 手册：[box2d.org/documentation](https://box2d.org/documentation/)
+- 固定源码：[erincatto/box2d](https://github.com/erincatto/box2d) —— 本文绑定提交 `8c661469c9507d3ad6fbd2fea3f1aa71669c2fe3`
+- 迁移说明在仓库 `docs/migration.md`（以你检出的 revision 为准）
+- [[planck]] —— JS 侧的 Box2D 生态，不是这份 C17 源码
+- [[matter-js]] —— 另一条 JS 2D 刚体路线
+- [[cannon-es]] —— 浏览器 3D 刚体的对照
 
 ## 关联
 
-- [[collision-detection]] —— 碰撞检测原理
-- [[game-loop]] —— 固定步进与时间管理
-- [[physics-materials]] —— 摩擦 / 恢复系数实践
-- [[rigid-body]] —— 刚体物理基础
-- [[ecs]] —— 当对象管理规模变大时的结构模式
+- [[cannon-es]] —— 3D JS 世界 / accumulator / Spring 对照
+- [[chipmunk2d]] —— 另一条 C 2D 物理
+- [[matter-js]] —— JS 2D
+- [[planck]] —— Box2D 的 JS 移植线
+- [[rapier]] —— Rust 2D/3D
 
 ## 反向链接
 

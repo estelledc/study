@@ -1,172 +1,180 @@
 ---
 title: Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则
-来源: 'https://github.com/pmndrs/cannon-es'
+来源: https://github.com/pmndrs/cannon-es
 日期: 2026-07-08
 分类: 开源工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/pmndrs/cannon-es
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 8b147715d5f7ec69da2211611daa236d80e88933
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.20.0
 ---
 
 ## 是什么
 
-Cannon-es 是一个纯 JavaScript 的 3D 物理引擎，偏向浏览器、WebGL 场景和前端交互。你可以把它理解成“游戏里替你做力学算术的后台核算器”。
+cannon-es 是 pmndrs 维护的 **cannon.js TypeScript fork**：一份扁平 ESM/CJS bundle，把 3D 刚体步进从渲染循环里拆出来。日常类比：Three.js 负责把椅子画出来，cannon-es 负责算椅子什么时候碰到地板、会不会再弹起来。
 
-日常类比：你在桌面拼图，如果每块拼图都按碰撞、重力、摩擦自然落下，手工算一遍会很累；Cannon-es 就是那台帮你自动算“碰到谁、反弹多少、滑多少”的小机器。
+```js
+import { World, Body, Sphere, Vec3 } from 'cannon-es'
 
-它的价值不在“画出世界”，而在于把“世界里对象怎么运动”从 JS 业务逻辑里剥离出来，让你把精力放到游戏规则和交互。
+const world = new World({ gravity: new Vec3(0, -9.82, 0) })
+const ball = new Body({ mass: 1, shape: new Sphere(0.5), position: new Vec3(0, 10, 0) })
+world.addBody(ball)
+world.step(1 / 60)
+```
+
+固定 `0.20.0` 的 `package.json` 写 `sideEffects: false`，零运行时依赖。npm `homepage` 仍指向原版 `schteppe/cannon.js`；canonical 仓库是 `pmndrs/cannon-es`。
 
 ## 为什么重要
 
-不了解 Cannon-es 时，前端工程里物理问题常常会被误解为“只是写几个常量”：
+不按 0.20.0 源码读，下面这些前端物理问题会对不上：
 
-- 为什么角色会穿模？因为没固定步进、或碰撞体与可视 Mesh 不匹配。
-- 为什么同样场景在高帧和低帧下行为不一致？因为时间步和积分方式没对齐。
-- 为什么一个参数调得很“看起来对”，另一台设备又崩？因为 damping、restitution、shape 半径和单位体系没统一。
-- 为什么项目后期 bug 多在“物理同步”？因为渲染层和物理层更新节奏不一致。
-
-Cannon-es 正是在这个层面提供标准化答案：世界、刚体、形状、材质、约束、步进。
+- 为什么只写 `world.step(1/60)` 时没有内置插值，而三参数 `step` 才会累加 accumulator
+- 为什么 `new Body({})` 默认是静态的（`mass` 默认 0）
+- 为什么 `new Material('glass')` 几乎不改触感
+- 为什么 `Spring` 加了世界却不动——它根本不是 `Constraint`
 
 ## 核心要点
 
-1. **世界(World)是统一时钟**：`World` 负责步进、重力、solver 迭代。你每帧调用 `world.step(dt)`，它负责统一推进。
+固定 0.20.0 的主链：
 
-2. **Body 与 Shape 解耦**：刚体（`Body`）定义质量、速度、阻尼等状态；形状（`Sphere`、`Box`、`Cylinder`）定义“几何边界”。
+1. **世界默认不休眠**：`World.allowSleep` 默认 false，`broadphase` 默认 `NaiveBroadphase`，`solver` 默认 `GSSolver`（`iterations=10`，`tolerance=1e-7`）。刚体自己的 `allowSleep` 默认 true，但世界开关关上时仿真不会睡。
 
-3. **材质 & 接触约束**：两个 body 接触时，材质上的摩擦/弹性决定“滑不滑、跳不跳”。通过 `ContactMaterial` 能做系统化的物理体验统一。
+2. **两种步进**：`step(dt)` 只跑一次 `internalStep`。`step(dt, timeSinceLastCalled, maxSubSteps=10)` 才把墙钟塞进 `accumulator`，子步用尽或单次调用墙钟超过 `dt` 秒就 bail，然后 `accumulator %= dt`，再 lerp/slerp 到 `interpolatedPosition` / `interpolatedQuaternion`。`fixedStep()` 用 `performance.now()` 填第二参。
 
-4. **事件驱动调试**：`addEventListener('collide')` 这种碰撞回调是“行为触发点”，可用于音效、粒子、得分与连锁反应。
+3. **质量决定类型**：`mass <= 0` → `STATIC`，`mass > 0` → `DYNAMIC`；也可显式 `type: Body.KINEMATIC`。`isTrigger` 默认 false：仍派发 `collide`，不改力。
 
-5. **可升级的性能策略**：低端设备下减少迭代步数、加大固定步长、降低碰撞体复杂度，往往比追求“最真实”更重要。
+4. **材质对才是触感**：`ContactMaterial` 默认 friction/restitution 都是 0.3。`Material` 的摩擦/弹性默认 `-1`，表示“用 ContactMaterial / `defaultContactMaterial`”。字符串构造只填已弃用的 `name`。
 
-## 实践案例
+5. **弹簧要自己加力**：`Spring` 不进 `world.constraints`。必须在 `postStep` 里 `applyForce()`，公式是 `F = -k*(x-L) - D*u`。默认 `restLength=1`、`stiffness=100`、`damping=1`。
 
-### 案例 1：基础落体场景
+## 实践示例
+
+### 案例 1：地面 + 落球
 
 ```js
-import * as CANNON from 'cannon-es'
+import { World, Body, Box, Sphere, Vec3 } from 'cannon-es'
 
-const world = new CANNON.World({ gravity: new CANNON.Vec3(0, -9.82, 0) })
-const ground = new CANNON.Body({
+const world = new World({ gravity: new Vec3(0, -9.82, 0) })
+world.addBody(new Body({
   mass: 0,
-  shape: new CANNON.Box(new CANNON.Vec3(5, 0.5, 5)),
-  position: new CANNON.Vec3(0, -1, 0),
-})
-world.addBody(ground)
-
-const ball = new CANNON.Body({
+  shape: new Box(new Vec3(5, 0.5, 5)),
+  position: new Vec3(0, -1, 0),
+}))
+const ball = new Body({
   mass: 1,
-  shape: new CANNON.Sphere(0.5),
-  position: new CANNON.Vec3(0, 10, 0),
+  shape: new Sphere(0.5),
+  position: new Vec3(0, 10, 0),
 })
 world.addBody(ball)
-
 world.step(1 / 60)
-console.log('ball y', ball.position.y)
 ```
 
-这段代码把“重力世界 + 地面 + 小球”搭好。关键不是行数，而是你学会了思维分离：渲染只是把 ball.position 画出来。
+`mass: 0` 与省略 `mass` 一样是静态。渲染应读 `position`（无插值模式）或 `interpolatedPosition`（三参数步进）。
 
-### 案例 2：摩擦和反弹控制触感
+### 案例 2：成对材质，而不是名字
 
 ```js
-const mat1 = new CANNON.Material('glass')
-const mat2 = new CANNON.Material('rubber')
-world.addContactMaterial(new CANNON.ContactMaterial(mat1, mat2, {
+import { Material, ContactMaterial, Plane, Quaternion } from 'cannon-es'
+
+const glass = new Material({ friction: 0.05, restitution: 0.85 })
+const rubber = new Material({ friction: 0.8, restitution: 0.4 })
+world.addContactMaterial(new ContactMaterial(glass, rubber, {
   friction: 0.05,
   restitution: 0.85,
 }))
-
-const floor = new CANNON.Body({
-  mass: 0,
-  material: mat1,
-  shape: new CANNON.Plane(),
-})
+const floor = new Body({ mass: 0, material: glass, shape: new Plane() })
 floor.quaternion.setFromEuler(-Math.PI / 2, 0, 0)
 world.addBody(floor)
 ```
 
-- 反弹（restitution）高低影响掉落后回弹幅度。
-- 摩擦低一点适合光滑表面；高一点适合“抓地感”游戏。
-- 视觉上很容易把 0.4 和 0.8 的差别看错，建议每个参数都做回归测试。
+`new Material('glass')` 不会把摩擦变成玻璃。`Plane` 默认朝 +Z，地面要绕 X 转 `-π/2`。
 
-### 案例 3：两个球做弹簧约束
+### 案例 3：弹簧不是约束
 
 ```js
-const a = new CANNON.Body({
-  mass: 1,
-  position: new CANNON.Vec3(0, 4, 0),
-  shape: new CANNON.Sphere(0.5),
-})
-const b = new CANNON.Body({
-  mass: 1,
-  position: new CANNON.Vec3(2, 4, 0),
-  shape: new CANNON.Sphere(0.5),
-})
-world.addBody(a)
-world.addBody(b)
+import { Spring } from 'cannon-es'
 
-const spring = new CANNON.Spring(a, b, {
-  restLength: 2,
-  stiffness: 50,
-  damping: 1,
-  localAnchorA: new CANNON.Vec3(0, 0, 0),
-  localAnchorB: new CANNON.Vec3(0, 0, 0),
-})
-
-world.addEventListener('postStep', () => {
-  spring.applyForce()
-})
+const spring = new Spring(a, b, { restLength: 2, stiffness: 50, damping: 1 })
+world.addEventListener('postStep', () => { spring.applyForce() })
 ```
 
-弹簧约束可表达绳索、摆、牵引等交互。类比上：两个挂篮之间用弹簧绳一连，系统自动处理拉扯。
+`addConstraint` 收的是 `DistanceConstraint` / `HingeConstraint` 等。漏掉 `postStep`，弹簧系数为 0。
 
 ## 踩过的坑
 
-1. **时间步没有固定**：帧率抖动时会抖出穿透。先固定 step 并用 accumulator 累积，不要随便 `delta` 放大。 
-2. **Shape 和模型尺寸不一致**：视觉模型半径 1，碰撞球半径 0.9，用户永远会遇到“明明没碰到却碰到了”。
-3. **渲染层与物理层直接耦合**：在同一帧重复拉取大量 body 状态会卡；渲染只读快照即可。
-4. **约束参数误调**：`stiffness` / `damping` 一起调很容易引入爆炸能量，建议先慢步进观察再加。
+1. **以为 `step(1/60)` 已经固定帧率**：那是无插值单步。要对墙钟追赶，得传 `timeSinceLastCalled` 或用 `fixedStep()`。
+2. **`new Body({ shape })` 却想让它掉**：默认 `mass=0` → static。
+3. **材质只写了字符串名字**：`Material('glass')` 的 friction/restitution 仍是 `-1`。
+4. **把 `Spring` 当 `Constraint`**：不会进 solver，必须 `applyForce`。
+5. **世界没开 `allowSleep` 却怪刚体不睡**：世界默认 false。
+6. **把未测的“两千刚体 / AAA 手感”写成事实**：固定源码没有这种保证。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 需要 3D 物理、但不想维护 C++/Rust 物理内核的前端项目。
-- 快速原型、可视化、教育场景中对准确到亚毫米级不要求。
-- Three.js / React Three Fiber 场景中需要统一的刚体行为。
+
+- 浏览器 / WebGL 场景需要 3D 刚体、车辆（`RaycastVehicle` / `RigidVehicle`）或触发器
+- 能接受默认 naive broadphase，并自己换 SAP / Grid
+- 和 `@react-three/cannon` / `use-cannon` 对接时，先认这份 0.20.0 合同
 
 **不适用**：
-- AAA 级高保真物理（竞技竞速、精细破坏）
-- 纯服务端物理计算（缺少无头仿真分发能力）
-- 超大规模刚体数 > 2000 且要跨千人在线实时同步
 
-## 历史小故事（可跳过）
+- 需要 3.x Box2D 那种 C 内核与子步求解器
+- 零重力还想靠默认摩擦——应设 `world.frictionGravity`
+- 要把未发布的 `master` 文档构建提交当成 0.20.0
+- 用未绑定的刚体数量或帧耗时做选型
 
-- **早期**：许多 JS 项目在同类问题上用手写 ODE，维护成本很高。
-- **fork 时代**：Cannon 的 fork 社区把 TypeScript 与更清晰 API 放在前端生态更容易接入。
-- **PMNDRS 演进**：cannon-es 作为更轻量的社区版本，和 react-three 系列工具链接得较紧。
-- **现在**：前端项目越来越多地把物理从图形层抽离成独立系统，cannon-es 常作为中间方案。
+## 固定版本边界
+
+- 本文绑定 `pmndrs/cannon-es@8b147715d5f7ec69da2211611daa236d80e88933`，annotated tag `v0.20.0` 解引用到此提交。
+- npm `cannon-es@0.20.0` latest，无 `gitHead`。`master` 在 2024-01-06 另有 `dd971c4a...`（`chore: build docs`）；未绑定。
+- 未安装依赖、未跑 Jest、未接 Three.js，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. 物理问题本质是状态同步，不是“算得越复杂越准”。
-2. 世界 step 与渲染帧解耦，让体验更稳定。
-3. shape 参数和材质参数是产品体验的“质感预算”。
-4. 遇到跨设备抖动，先看时间步、质量单位、约束参数，再看模型。
+1. **步进 API 的第二参才打开 accumulator**——单参 `step` 不会替你追帧。
+2. **质量默认值就是类型默认值**——0 是静态。
+3. **触感在 ContactMaterial，不在名字字符串**。
+4. **Spring 是力发生器，Constraint 才进 solver**。
+
+## 应用型自测
+
+1. `new Body({ shape: new Sphere(0.5) })` 会在默认重力下落吗？
+2. `world.step(1/60)` 会更新 `interpolatedPosition` 吗？
+3. `new Spring(a, b)` 之后只 `world.addBody`，弹簧会拉吗？
+
+检查点：
+
+1. 不会。默认 `mass=0`，类型是 `STATIC`。
+2. 不会。无第二参时只跑一次 `internalStep`，不做 lerp。
+3. 不会。必须在 `postStep` 里 `applyForce()`。
 
 ## 延伸阅读
 
-- 官方仓库：[pmndrs/cannon-es](https://github.com/pmndrs/cannon-es)
-- 示例项目：官方示例中有约束、材质、碰撞的组合参考
-- 与三维引擎结合：`@react-three/cannon` 的生态接入路径
-- 性能建议：减少复杂形状与频繁销毁创建
-- [[cannon]] —— 经典旧版 cannon 的对照
+- 文档：[pmndrs.github.io/cannon-es/docs](https://pmndrs.github.io/cannon-es/docs/)
+- 固定源码：[pmndrs/cannon-es](https://github.com/pmndrs/cannon-es) —— 本文绑定提交 `8b147715d5f7ec69da2211611daa236d80e88933`
+- 原版对照：[schteppe/cannon.js](https://github.com/schteppe/cannon.js)
+- React 封装：[pmndrs/use-cannon](https://github.com/pmndrs/use-cannon)（以该仓固定 revision 为准）
+- [[box2d]] —— C17 2D 子步求解器对照
+- [[cannon]] —— 未 fork 的旧 cannon.js 页
 
 ## 关联
 
-- [[three-js]] —— 你先有渲染，再把物理交给 cannon-es
-- [[matter-js]] —— 2D 物理与 3D 物理的解题方式对照
-- [[rapier]] —— Rust 生态的另一种高性能方案
-- [[ammo-js]] —— 复杂物理与大规模场景的另一个方向
-- [[ode]] —— 老牌物理库思想血统
+- [[box2d]] —— 2D C 内核 vs 3D JS 世界
+- [[three-js]] —— 常见渲染层
+- [[matter-js]] —— 2D JS 物理
+- [[rapier]] —— 另一条可编译到 WASM 的路线
+- [[ammo-js]] —— Bullet 绑定方向
 
 ## 反向链接
 
