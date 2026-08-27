@@ -2096,6 +2096,10 @@
       "topic_id": "projects-terminal-tools"
     },
     {
+      "note_id": "projects::load-json-file",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
       "note_id": "projects::llamaindex",
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
@@ -2346,6 +2350,10 @@
     {
       "note_id": "projects::react-spring",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::read-pkg",
+      "topic_id": "projects-monorepos-and-package-management"
     },
     {
       "note_id": "projects::recharts",

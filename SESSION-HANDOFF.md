@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FB：read-pkg + load-json-file 静态审查
+
+- supervisor 状态：writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（origin/main，#72）。
+- objective：为 package-read 双子 `read-pkg` 与 `load-json-file` 新增 study-v2 项目页，证据保持 `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/package-read-source-review-20260827-fb.md`、taxonomy / atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；未安装上游依赖、未跑上游测试、未测 BOM 文件或 bundle。
+- activated_by：`explicit-user-parallel-writer-fb-20260827`。
+- detector fingerprint：目录中不存在这两个 slug；调用方指定 target 为 read-pkg / load-json-file，fallback 为其他 package-read 配对。两仓 npm latest 的 `gitHead` 均可达。
+- external delta 计数：本轮授权 push + 一个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `read-pkg` 绑定 annotated tag `v10.1.0` / `ae4bbc65...`（与 npm `gitHead`、`origin/main` 一致），写清 cwd-only 定位、`parse-json`、默认 `normalize-package-data` 与 `structuredClone`。
+  2. `load-json-file` 绑定 annotated tag `v7.0.1` / `eeac7ad7...`（与 npm `gitHead` 一致），写清 Buffer + `TextDecoder` 去 BOM、原生 `JSON.parse`、`beforeParse`/`reviver` 顺序，并披露 main 超前 2 个文档提交未绑定。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生 site-state 首页对齐标杆从 67 刷新为 69，项目 963→965。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest 一致且 evidence state 为 `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` 通过。`verify:ci` 在提交后跑。
+- budget：1 个可写切片、2 个小型 blob-filtered worktree、1 个 PR。
+- blocker：规模 baseline `tracked_files` 在 main 已超阈值；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 给出新的有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
