@@ -55807,7 +55807,7 @@
       "id": "projects::prom-client",
       "area": "projects",
       "slug": "prom-client",
-      "title": "prom-client — Node 服务暴露监控指标的事实标准 SDK",
+      "title": "prom-client — Node 进程内的 Prometheus 指标客户端",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -55817,16 +55817,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-observability-and-performance",
-        "raw_category": "projects"
+        "raw_category": "可观测"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/prom-client/",
       "atlas": {
@@ -63742,7 +63742,7 @@
       "id": "projects::web-vitals",
       "area": "projects",
       "slug": "web-vitals",
-      "title": "web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上",
+      "title": "web-vitals — 浏览器端 Core Web Vitals 的官方参考实现",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63752,16 +63752,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-observability-and-performance",
-        "raw_category": "projects / 前端"
+        "raw_category": "前端工程化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/web-vitals/",
       "atlas": {
