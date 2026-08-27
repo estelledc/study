@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 2,
+  "predecessor_digest_sha256": "9c22c84b32a30ca70a11c810a47a6cda582a7cd0212a59880b41015e33cbccb2",
+  "note": {
+    "area": "projects",
+    "slug": "nestjs",
+    "digest_sha256": "6082c1de550c377775a6623e937ab3caa3a75f75c074e6675d0ba168a28f6d7a"
+  },
+  "source_revision": "2b36ee5fea13dedcedfd9815a9c193b2d21130c1",
+  "research_input_sha256": "575844e48ac3a2c67bcbb12c49dc21dda7816929d7c3baaf312c7af1cf84bf58",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-w",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains adapter selection, module scan, DI metadata, export visibility, and guard/interceptor/pipe order with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-w",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Core factory, scanner, instance-loader, injector, execution context, and adapter packages were inspected; upstream tests and HTTP servers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-w",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Bounded to reachable GitHub release v11.2.3 / npm gitHead match; npm latest 12.0.0 is disclosed but not bound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:13:41.000Z"
+}
