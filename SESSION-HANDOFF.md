@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EV：which + lookpath PATH 查找双子
+
+- status：writer epoch `complete`；等待 PR review。未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（当时 origin/main）。
+- objective：把 PATH 查找对 `which` + `lookpath` 绑到可达固定 revision；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新建项目页、2 份 generation 1 receipt、共享审查文档 `docs/path-lookup-source-review-20260827-ev.md`、taxonomy / atlas / site-state / 公开计数、本 handoff；本机 gitignored blob-filtered clone。未安装上游依赖、未跑 tap/jest/tsc、未测 Windows PATHEXT。
+- activated_by：`explicit-user-parallel-writer-ev-2026-08-27`。
+- detector fingerprint：仓库原先没有 `which` / `lookpath` 页；开放 PR 未占用这两个 slug。
+- external delta：本分支 push + 一个 PR（用户授权）；未 merge、未 deploy，D 轴不提升。
+- 完成切片：
+  1. `which` 绑定 `npm/node-which@297db11d...` / `which@7.0.0`（tag `v7.0.0` 与 npm `gitHead` 一致）。写清斜杠跳过 PATH、Windows cwd-first / PATHEXT、`nothrow→null`、`all` 数组、CLI 名 `node-which`。
+  2. `lookpath` 绑定 `otiai10/lookpath@3885a0e4...` / `lookpath@1.2.2`。写清找不到为 `undefined`、Windows 读 `Path`、`include` 追加、`path.sep` 走 `resolve`。披露 npm `1.2.3` 的 `gitHead` 在公开仓库不可达。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state `UNVERIFIED`。
+  - `audit:counts`：projects=965、papers=1083、total=2048。
+  - `audit:content-contract --changed-from origin/main`：blocking 0。
+  - `audit:wikilinks`：budget_failures=0。
+  - `git diff --check`：通过。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：规模 baseline 仍以 main 上已有 `tracked_files` 超限为准；本轮未改 baseline / 阈值。
+- stop conditions：单 PR 完成即停；不 merge。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

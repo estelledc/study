@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -50,6 +50,7 @@ sidebar:
 | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | `lazydocker` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | `lazygit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | `lf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [lookpath — 不 spawn 子进程的 Go 风格 PATH 查找](/study/projects/lookpath/) | `lookpath` | 初级 | UNVERIFIED | 不 spawn which 的 Go 风格 PATH 查找，找不到返回 undefined |
 | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | `lsd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | `miller` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | `ncdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -73,6 +74,7 @@ sidebar:
 | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | `tmux` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | `universal-ctags` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) | `wezterm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [which — 在 PATH 里找第一个可执行文件的 Node 实现](/study/projects/which/) | `which` | 初级 | UNVERIFIED | 在 PATH 里找第一个可执行文件，语义接近 BSD which(1) |
 | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | `xh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | `xonsh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | `xplr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

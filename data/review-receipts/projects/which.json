@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "which",
+    "digest_sha256": "655937a4852a5c12d3605edac798383f3a9ed0dc7e8e9cf467428093b41f52d3"
+  },
+  "source_revision": "297db11d58eebe01551ae0875a127a89ee63d2cb",
+  "research_input_sha256": "146e191575727418658df8fe314956e6cb4c024062551ab2c9c06b8febeb4b53",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ev",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates slash-skips-PATH, Windows cwd-first/PATHEXT, nothrow null, all-array, and node-which CLI name with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ev",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "lib/index.js, bin/which.js, and tap fixtures were inspected; isexe and Windows PATHEXT were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ev",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v7.0.0, package 7.0.0, and npm gitHead agree; engines and isexe remain declared, not runtime-verified."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

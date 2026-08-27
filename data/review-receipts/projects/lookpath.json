@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lookpath",
+    "digest_sha256": "51ab47d33cb3c3dcf23f6c439323a8a1e32d024715061c371b261226273220a1"
+  },
+  "source_revision": "3885a0e45459b2d6bf466223a67055c3374d979d",
+  "research_input_sha256": "146e191575727418658df8fe314956e6cb4c024062551ab2c9c06b8febeb4b53",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ev",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates undefined-on-miss, Path vs PATH, include-append, path.sep resolve, and CLI-only throw with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ev",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "src/index.ts, bin/lookpath.js, and jest specs were inspected; tsc, jest, and Windows Path were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ev",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Bound reachable v1.2.2; npm 1.2.3 gitHead is not on the public remote and was not invented."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

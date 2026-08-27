@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -49174,6 +49174,37 @@
       }
     },
     {
+      "id": "projects::lookpath",
+      "area": "projects",
+      "slug": "lookpath",
+      "title": "lookpath — 不 spawn 子进程的 Go 风格 PATH 查找",
+      "description": "不 spawn which 的 Go 风格 PATH 查找，找不到返回 undefined。",
+      "difficulty": "初级",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "命令行"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/lookpath/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::lora-mac-node",
       "area": "projects",
       "slug": "lora-mac-node",
@@ -63928,6 +63959,37 @@
       }
     },
     {
+      "id": "projects::which",
+      "area": "projects",
+      "slug": "which",
+      "title": "which — 在 PATH 里找第一个可执行文件的 Node 实现",
+      "description": "在 PATH 里找第一个可执行文件，语义接近 BSD which(1)。",
+      "difficulty": "初级",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "命令行"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/which/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::whisper",
       "area": "projects",
       "slug": "whisper",
@@ -65509,7 +65571,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",

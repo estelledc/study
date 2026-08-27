@@ -2112,6 +2112,10 @@
       "topic_id": "projects-authentication"
     },
     {
+      "note_id": "projects::lookpath",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::luxon",
       "topic_id": "projects-date-and-time"
     },
@@ -2590,6 +2594,10 @@
     {
       "note_id": "projects::webpack",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::which",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::why-did-you-render",
