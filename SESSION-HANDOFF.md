@@ -15,12 +15,12 @@
   1. `yup` 绑定 `jquense/yup@b413bf65...` / `1.7.1`；披露 GitHub 无 `v1.7.1` tag
   2. `valibot` 改绑 `open-circle/valibot@0dc26ea8...`，与 tag `v1.4.2` 和 npm `gitHead` 对齐
   3. 新增共享 `docs/schema-validation-source-review-20260827-av.md` 与 generation 1/2 static receipt
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 匹配；`audit:counts` / `audit:content-contract` / `audit:project-standard` 通过
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 匹配；`audit:counts` / `audit:content-contract` / `audit:project-standard` 通过；`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 全绿（strict build 2286 HTML / 2285 sitemap URLs、23 Playwright tests）
 - budget：2 页、单 writer、1 个 PR；不 merge
-- blocker：未跑 `verify:ci` 前不得宣称全量门禁；开放 PR 占用 slug 未改
-- stop conditions：本 epoch 已完成本地 change set；不 merge
-- 下一次 wake 条件：PR review / CI，或 owner 授权 merge
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- blocker：无本地门禁 blocker；等待 review，不 merge
+- stop conditions：本 epoch 已完成可审查 PR；不 merge
+- 下一次 wake 条件：PR review / 远端 CI，或 owner 授权 merge
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/105`，不要 merge
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
