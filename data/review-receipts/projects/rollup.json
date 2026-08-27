@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "rollup",
+    "digest_sha256": "a70df114daa0f7e8de17d78853a07e9f987d50ee892fc5210a3475df5855f9d9"
+  },
+  "source_revision": "34b8b924c815ec9413d7821f6fd54cc615584a51",
+  "research_input_sha256": "05a37530621b1e24ef367400a5bc1d9c8220ecf25b9830abbc90f71ed9cbd590",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates build/generate, default resolve, multi-pass include, and native parse with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Graph, PluginDriver, resolveId, treeshake defaults, and parseAst were inspected; upstream tests and bundles were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Version and side-effect claims are bounded to rollup 4.63.0; performance comparisons require benchmarks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}

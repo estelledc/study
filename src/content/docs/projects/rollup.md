@@ -4,150 +4,175 @@ title: Rollup — ESM 优先的打包器
 日期: 2026-05-29
 分类: 构建工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/rollup/rollup
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 34b8b924c815ec9413d7821f6fd54cc615584a51
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.63.0
 ---
 
 ## 是什么
 
-Rollup 是一个 JavaScript **打包器**（bundler）——把分散在很多文件里的代码合并成一个发布产物。日常类比：你写一本书用了 30 个 markdown 文件分章节，出版前要把它们合并成一份 PDF。Rollup 就干这事，但还会顺手做一件更厉害的：**砍掉没人引用的章节**——这叫 **tree-shaking**。
+Rollup 是一个 ESM 优先的 JavaScript 打包器。日常类比：像把一本书的分章稿合成一份可出版的 PDF，并且只留下真正被引用的章节。
 
-类比："整理书架时把重复的书拿掉，只留真正有人借过的"。你 import 了 lodash 的一个 `debounce`，Rollup 知道你只用了这个，就只把 `debounce` 打进产物，剩下 600 个 lodash 函数全部丢掉。
+固定 `v4.63.0` 里，`rollup(inputOptions)` 先建一张模块图，再返回 `{ generate, write, close }`。`generate` 只在内存里出产物，`write` 才落盘。同一张图可以再出 ESM、CJS 或其他 format。
 
-它最大的舞台是「发 npm 库」：React / Vue / Three.js / d3 这些大型库的构建工具都是 Rollup。它**不太适合**做 SPA 应用（那是 webpack / Vite 的活），擅长把库精雕成最小最干净的发布形态。
+```js
+import { rollup } from "rollup";
+
+const bundle = await rollup({ input: "src/index.js" });
+await bundle.write({ file: "dist/index.mjs", format: "es" });
+await bundle.close();
+```
+
+它擅长把库打成扁平、可 tree-shake 的发布形态；应用级 dev server / HMR 不是这套核心 API 的一部分。
 
 ## 为什么重要
 
 不理解 Rollup，下面这些事都没法解释：
 
-- 为什么 **tree-shaking** 成了 JS 工具链的通用术语——Rich Harris 2015 年用 Rollup 在 JS 社区把这个说法推开（术语本身更早见于 Lisp/Dart 等）
-- 为什么 webpack 2 才开始跟 ESM unused export，webpack 4 又靠 `sideEffects` 把 shake 做稳——Rollup 从一开始就按「只打包用到的活代码」设计
-- 为什么 Vite production build 相对慢——生产构建底层调的是 Rollup（JS 实现，精度优先）
-- 为什么 React / Vue 这些「库」的产物比 webpack SPA 干净那么多——库要扁平可 shake，应用要 chunk/缓存，思路不同
-
-简单说：你用任何现代 JS 库，几乎都吃了 Rollup 的产物；你用 Vite 部署，build 阶段也是 Rollup。
+- 为什么 Vite 生产构建长期押在 Rollup 的 graph / plugin 合同上
+- 为什么“只打包用到的 export”和 webpack 的 `sideEffects` 约定不是同一套实现
+- 为什么裸模块名 `lodash` 必须靠 plugin，而 `./math.js` 核心自己就能解析
+- 为什么 4.x 还要带平台 native 包：parser 已经不在纯 JS 里
 
 ## 核心要点
 
-Rollup 干活的过程可以拆成 **三步**：
+固定版本的主链可以拆成四步：
 
-1. **静态分析**：读 `import` / `export` 语法。ES module 的厉害之处在于「编译期就能知道谁 import 了谁」——不像 CommonJS 的 `require()` 是运行时调用、可以包在 if 里、可以拼接路径。Rollup 利用这个静态性，构出一张完整的依赖图。
+1. **先 build，后 generate**。`rollup()` 触发 `Graph.build()`：生成模块图 → 排序绑定 → 标记要留下的语句。`generate` / `write` 另建 `Bundle`，做 chunk 划分和 format 包装。内部 phase 是 `LOAD_AND_PARSE`、`ANALYSE`、`GENERATE`。
 
-2. **Tree-shaking**：从入口（你指定的 `index.js`）出发，沿依赖图标记每个被「真正用到」的 export。没人用到的 export 直接不输出。类比：扫描一棵树，只留有人在上面走过的枝丫，其他全部锯掉。
+2. **默认解析很窄**。`resolveId` 先问 plugin；都没接手时，只有相对路径或绝对路径会去探 `.mjs` / `.js`。以字母开头的包名在这一层直接返回 `null`，要 `@rollup/plugin-node-resolve` 这类 plugin 才能进 `node_modules`。
 
-3. **Plugin 钩子**：Rollup 自己只懂 ESM。其他东西（TypeScript / CSS / JSON / CommonJS 模块）全靠 plugin 转成 ESM 喂给它。Plugin 写起来是三个核心钩子：`resolveId`（解析路径）、`load`（读文件）、`transform`（改源码）。
+3. **tree-shake 是多轮 include**。从 entry 标出已执行模块后，对每个模块跑 `include()`；第一轮之后，`preserveSignature !== false` 的入口会 `includeAllExports()` 再进下一轮。`treeshake: false` 则整模块全收。默认 `moduleSideEffects` 是“当作有副作用”。
 
-## 实践案例
+4. **parser 走 native**。`parseAst` 调 NAPI `parse` / `parseAsync`，再把 buffer 转成 JS AST。浏览器构建换成 WASM，而且没有 Node 那种 resolve/load 回退。
 
-### 案例 1：最小可用的 rollup.config.js
+## 实践示例
+
+### 案例 1：同一张图出两份 format
 
 ```js
-// rollup.config.js
-import typescript from '@rollup/plugin-typescript';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { rollup } from "rollup";
 
-export default {
-  input: 'src/index.ts',          // 入口文件
-  output: {
-    file: 'dist/index.mjs',       // 输出位置
-    format: 'esm',                // 输出格式
-  },
-  plugins: [
-    nodeResolve(),                // 找 node_modules 里的依赖
-    typescript(),                 // .ts → .js
-  ],
-};
+const bundle = await rollup({
+  input: "src/index.js",
+  plugins: [/* nodeResolve / typescript 等 */]
+});
+
+await bundle.write({ file: "dist/index.mjs", format: "es" });
+await bundle.write({ file: "dist/index.cjs", format: "cjs" });
+await bundle.close();
 ```
 
-**逐部分解释**：
+`es` / `cjs` / `amd` / `iife` / `umd` / `system` 都是 generate 阶段的 finaliser，不是第二遍重新建图。`write` 需要 `file` 或 `dir`。
 
-- `input` 是你的入口文件——Rollup 从这里开始追依赖
-- `output.format: 'esm'` 让产物保留 `import` / `export` 语法（适合现代环境）。其他选项有 `cjs`（老 Node）、`umd`（同时兼容浏览器和 Node）、`iife`（直接 `<script>` 引用）
-- `plugins` 顺序会影响 `resolveId` / `load` / `transform` 谁先接手：裸模块名（如 `lodash`）要靠 `nodeResolve` 参与解析；和 `typescript` 的先后以官方示例与实测为准，不要死记「必须谁在前」
-
-### 案例 2：写一个最小 plugin（10 行）
+### 案例 2：最小 transform plugin
 
 ```js
-// 把 .json 文件转成 ESM export
 export default function jsonPlugin() {
   return {
-    name: 'json',
-    transform(code, id) {                    // 钩子：每个文件读完后触发
-      if (!id.endsWith('.json')) return null;  // 只管 .json
-      const data = JSON.parse(code);
-      return `export default ${JSON.stringify(data)};`;
-    },
+    name: "json",
+    transform(code, id) {
+      if (!id.endsWith(".json")) return null;
+      return `export default ${JSON.stringify(JSON.parse(code))};`;
+    }
   };
 }
 ```
 
-`return null` 表示「这个 plugin 不处理此文件，传给下一个」。这就是 plugin 链——链式串接，每个 plugin 改一次。
+`return null` 表示本 plugin 不处理，交给下一个。build hook 里还有 `resolveId`、`load`、`moduleParsed`；输出阶段另有 `renderStart`、`generateBundle`。
 
-### 案例 3：tree-shaking 体积对比
+### 案例 3：关掉或收紧 tree-shake
 
 ```js
-// 不 tree-shake 友好的写法
-import _ from 'lodash';                 // 全包，~70KB
-const fn = _.debounce(handler, 300);
+await rollup({
+  input: "src/index.js",
+  treeshake: false
+});
 
-// tree-shake 友好的写法
-import { debounce } from 'lodash-es';   // 只含 debounce + 它的依赖，~3KB
-const fn = debounce(handler, 300);
+await rollup({
+  input: "src/index.js",
+  treeshake: { preset: "smallest" }
+});
 ```
 
-差别：`lodash` 是 CommonJS 包，Rollup 没法静态分析它的内部结构，整包打进产物。`lodash-es` 是 ESM 版本，Rollup 能精确切下你用到的部分。这就是为什么很多大库都同时维护 `xxx` + `xxx-es` 两个 npm 包。
+`false` 跳过 include 循环，每个模块 `includeAllInBundle()`。`smallest` 把 `moduleSideEffects` 设成恒 false，并关掉若干保守的副作用假设。这是配置，不是对 npm `sideEffects` 字段的自动读取。
 
 ## 踩过的坑
 
-1. **CommonJS 默认不能 tree-shake**：Rollup 内部只懂 ESM。CJS 包必须先用 `@rollup/plugin-commonjs` 转换。但这个 plugin 是 best-effort——遇到动态 require、条件 require、`module.exports = function() {}` 等动态形态可能转换失败。CJS 重的项目慎选 Rollup。
+1. **核心不读 `package.json` 的 `sideEffects`**。默认 `treeshake.moduleSideEffects` 返回 `true`。webpack 那套 `"sideEffects": false` 不会在本仓自动生效；要靠 plugin 在 `resolveId` / module info 里改，或自己写 `treeshake.moduleSideEffects`。
 
-2. **`sideEffects: false` 配错会砍掉副作用代码**：在 `package.json` 写 `"sideEffects": false` 等于告诉 Rollup「我这包没副作用，shake 吧」。但如果你有 `import './styles.css'`（CSS 也是副作用），Rollup 会把整行丢掉，产物里就没 CSS 了。修法：写成 `"sideEffects": ["*.css"]` 列出例外。
+2. **裸 specifier 不会被默认解析**。没有 `nodeResolve` 时，`import "lodash"` 会变成 unresolved / external，而不是去找 `node_modules`。
 
-3. **`output.format` 选错发布的库装不上**：`format: 'esm'` 只能在支持 ESM 的环境用（现代 Node、浏览器原生）。老 Node + 老 webpack 项目要 `cjs`。库作者通常**两份都发**——`dist/index.mjs` + `dist/index.cjs`，配套 `package.json` 的 `exports` 字段告诉 Node 该用哪个。
+3. **CJS 不是一等模块**。内部按 ESM 绑定与 include。CommonJS 包必须先被 plugin 转成 ESM；动态 `require`、条件导出仍然可能转失败。
 
-4. **多 entry 共享 chunk 配置易混乱**：当 `input` 是多个文件、且某些模块被多个入口引用时，Rollup 会自动拆出 shared chunk。但 chunk 的命名、依赖顺序、是否 inline 等细节要靠 `output.manualChunks` 手动指定。新手在这里容易输出一堆 `chunk-XXXX.js` 文件名乱七八糟。
+4. **`write` 之后要 `close()`**。bundle 实现了 `Symbol.asyncDispose`；不关会让 `closeBundle` hook 和 watcher 资源悬着。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 发 npm 库（库作者首选）——产物扁平、tree-shake 干净、ESM 优先；入口少、体积敏感时收益最大
-- 单文件构建工具（CLI 工具的 bundle 阶段）
-- monorepo 里的 library 子项目（配合 Vite 做 application）
+
+- 发 npm 库，要扁平 ESM/CJS 双产物
+- 需要精确 unused-export 删除，并能接受 plugin 补齐解析
+- 已经用 Vite / 其他工具，只把生产图交给 Rollup 合同
 
 **不适用**：
-- SPA / 大型应用——没内置 dev server / HMR，配套生态不如 webpack / Vite
-- CommonJS 模块为主的老项目——@rollup/plugin-commonjs 兼容性边界多
-- 需要复杂 code splitting + cache 优化的浏览器应用——webpack 的 splitChunks 更成熟
 
-## 历史小故事（可跳过）
+- 大型应用要 dev server、HMR、webpack loader 生态
+- 以 CommonJS 为主、又不愿维护 `@rollup/plugin-commonjs` 边界
+- 需要核心自动尊重 npm `sideEffects` 字段
 
-- **2015 年**：Svelte 创始人 Rich Harris 发布 Rollup，并写「Tree-shaking versus dead code elimination」，在 JS 社区推广 **tree-shaking**（术语更早有，他把它讲成「只打进活代码」）
-- **2017–2018 年**：webpack 2 已能做 ESM unused export 检测；webpack 4 再用 `sideEffects` + scope hoisting 等把 shake 做稳。库场景仍多选 Rollup
-- **2020-2021 年**：Vite 选 Rollup 做 production build——dev 用 esbuild 求快，生产要精度仍靠 Rollup
-- **2021 年**：Rich Harris 加入 Vercel，Rollup 维护转向 Lukas Taegert-Atkinson 团队
-- **2024-2026 年**：VoidZero 启动 **Rolldown**——Rust 重写、API 兼容 Rollup，目标替换 Vite 底下的 JS Rollup
+## 固定版本边界
+
+- 本文绑定 `rollup/rollup@34b8b924...` / `v4.63.0`，npm `gitHead` 与该提交一致。
+- Node engines 为 `>=18.0.0`。`maxParallelFileOps` 默认 1000。
+- 输出 finaliser 固定为 amd / cjs / es / iife / system / umd。
+- 本文未安装依赖、运行测试、bundle 或性能 benchmark，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **ESM 静态结构是 tree-shaking 的根**——CommonJS 的 `require()` 是运行时调用，编译器没法在编译期推可达性。这就是为什么 Rollup 把「ESM-first」当做核心架构而非 marketing 话术
-2. **plugin 钩子设计反映了构建流程的关键节点**——`resolveId` / `load` / `transform` 三件套对应「找文件 / 读文件 / 改文件」，是任何 bundler 的最低骨架
-3. **library 和 application 是两种世界观**——library 要扁平、单文件、tree-shake 友好；application 要 chunk / cache / runtime patch。Rollup 选了前者，webpack 选了后者
-4. **`sideEffects` 字段是 npm 生态的隐形 convention**——发库时漏写，下游 bundler 就 shake 不动你；写错，CSS 等副作用文件被砍。这是踩坑高发区
-5. **理论 → 工程 → 替换**：JS 侧 tree-shaking 经 Rollup 工程化 → webpack 跟进完善 → 2024 年起用 Rust（Rolldown）重写。大约每五年换一代实现
+1. **build 与 generate 是两段合同**——图可以复用，format 和是否写盘是后一步。
+2. **默认解析不是 Node 解析**——相对文件是核心，包名是 plugin。
+3. **tree-shake 默认偏保守**——“有副作用”是默认，不是 npm 字段自动生效。
+4. **4.x parser 已经 native**——JS 层编排 graph 与 hook，句法分析走 NAPI/WASM。
+
+## 应用型自测
+
+1. 不配任何 plugin，`import "lodash"` 会被默认 `resolveId` 解析到 `node_modules` 吗？
+2. 未改 `treeshake` 时，核心会不会因为某个包的 `"sideEffects": false` 而删掉它的副作用模块？
+3. 对同一 `bundle` 先 `write({ format: "es" })` 再 `write({ format: "cjs" })`，会不会重新跑一遍 `Graph.build()`？
+
+检查点：
+
+1. 不会。裸 specifier 在默认回退里直接返回 `null`。
+2. 不会。默认 `moduleSideEffects` 恒为 true，除非配置或 plugin 改写。
+3. 不会。`generate` / `write` 复用已建成的 graph。
 
 ## 延伸阅读
 
-- 官方教程：[Rollup Tutorial](https://rollupjs.org/tutorial/)（30 分钟跑通 Hello World library）
-- 概念出处：[Rich Harris — Tree-shaking versus dead code elimination](https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80)
-- 实战练习：自己写一个 50 行 npm library，配 `package.json` 的 `exports` / `sideEffects`，跑 `npm pack` 看产物
-- 进阶：读 `@rollup/plugin-typescript` 源码（约 300 行），是最简的真实 plugin 范例
-- [[webpack]] —— Rollup 的「另一极」：application 打包的标杆
-- [[vite]] —— Rollup 的「上层包装」：dev 用 esbuild，build 用 Rollup
+- 固定源码：[rollup/rollup](https://github.com/rollup/rollup) —— 本文绑定提交 `34b8b924c815ec9413d7821f6fd54cc615584a51`
+- 架构说明：[ARCHITECTURE.md](https://github.com/rollup/rollup/blob/34b8b924c815ec9413d7821f6fd54cc615584a51/ARCHITECTURE.md)
+- 主链源码：[src/Graph.ts](https://github.com/rollup/rollup/blob/34b8b924c815ec9413d7821f6fd54cc615584a51/src/Graph.ts)
+- [[webpack]] —— application 打包的另一极
+- [[vite]] —— 生产构建长期调用 Rollup
+- [[rspack]] —— webpack 兼容路线的 Rust 打包器
 
 ## 关联
 
 - [[webpack]] —— 与 Rollup 形成 application vs library 的两极
-- [[vite]] —— 把 Rollup 装在底下做 production build，是 Rollup 在 application 场景的解
-- [[esbuild]] —— 与 Rollup 形成「速度 vs 精度」的对比
-- [[vue]] —— 内核构建用 Rollup，是「ESM-first 库」的典型用户
+- [[vite]] —— 把 Rollup 装在底下做 production build
+- [[esbuild]] —— 速度优先的对照
+- [[rspack]] —— 本批对照：留 webpack API，换 Rust 内核
+- [[rolldown]] —— 宣称兼容 Rollup plugin 协议的 Rust 重写
 
 ## 反向链接
 
