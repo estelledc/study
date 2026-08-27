@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2049,
-      "classified": 2002,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 966,
-        "classified": 938,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -39757,6 +39757,38 @@
       }
     },
     {
+      "id": "projects::cuid2",
+      "area": "projects",
+      "slug": "cuid2",
+      "title": "Cuid2 — 把时间、计数器和主机指纹哈希成不可猜的短 ID",
+      "description": "固定 3.3.0 把时间、盐、会话计数器和主机指纹送进 SHA3-512，再切成默认 24 位的小写 base36",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "工具库",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cuid2/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::curlie",
       "area": "projects",
       "slug": "curlie",
@@ -62257,6 +62289,38 @@
       }
     },
     {
+      "id": "projects::ulid",
+      "area": "projects",
+      "slug": "ulid",
+      "title": "ULID — 时间在前、Crockford Base32 编码的可排序 128-bit ID",
+      "description": "固定 3.0.2 把 48-bit 时间戳和 80-bit 随机段编成 26 个 Crockford 字符，并提供单调工厂",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "工具库",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ulid/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::ultralytics",
       "area": "projects",
       "slug": "ultralytics",
@@ -65812,7 +65876,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 16
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",
