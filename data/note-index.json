@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -40420,6 +40420,38 @@
       }
     },
     {
+      "id": "projects::del",
+      "area": "projects",
+      "slug": "del",
+      "title": "del — 先 glob 再删的 Node 清理库",
+      "description": "固定 8.0.1 用 globby 选路径，默认拦住 cwd 与 cwd 外，删除走 fs.rm",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "工具库",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/del/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::delta",
       "area": "projects",
       "slug": "delta",
@@ -57351,6 +57383,38 @@
       }
     },
     {
+      "id": "projects::rimraf",
+      "area": "projects",
+      "slug": "rimraf",
+      "title": "rimraf — 跨平台的 Node `rm -rf`",
+      "description": "固定 6.1.3 按平台挑选 native / POSIX / Windows / move-remove，默认拒绝删根",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "工具库",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/rimraf/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::ripgrep",
       "area": "projects",
       "slug": "ripgrep",
@@ -65719,7 +65783,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 13
+      "entries": 15
     },
     {
       "id": "topic-projects-headless-ui-components-01",
