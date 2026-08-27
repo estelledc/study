@@ -15,12 +15,12 @@
   1. `h3` 绑定 `h3js/h3@7b9f41fda6...` / `1.15.11`（tag、package、npm `gitHead` 一致）；披露 npm `latest` 为 `2.0.1-rc.29` 且未绑定。
   2. `listhen` 绑定 `unjs/listhen@2466b69899...` / `1.10.1`（tag 与 package 一致，npm 无 `gitHead`）；依赖 `h3@^1.15.11`。
   3. 共享审查文档 `docs/http-listen-source-review-20260827-ge.md` 与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate` 全绿、0 advisory；receipt `UNVERIFIED` 且 digest 匹配；`audit:counts` / `audit:project-standard --write` / `generate:site-state` 已刷新。`verify:ci` 在提交后跑。
+- 验证结果：两页 `quality-gate` 全绿、0 advisory；receipt `UNVERIFIED` 且 digest 匹配。`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、23 Playwright a11y、strict build、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：1 个 epoch、2 页新建、单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
-- stop conditions：一 PR 已开且未授权 merge 即停止。
+- stop conditions：PR #252 已开且未授权 merge 即停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/252`。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
