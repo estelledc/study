@@ -7,21 +7,21 @@
 
 - supervisor 状态：writer epoch `complete`；PR 待 review，未 merge。
 - 起始 ref：`0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465`（`origin/main`）。
-- objective：postgres.js 已被 PARALLEL I 占用，回退到未占用 SQL 客户端对 `node-postgres` + `slonik`，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
-- scope：两篇新项目页、共享审查文档 `docs/sql-client-source-review-20260827-it.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未连接数据库、未运行上游测试、未测 bundle。
-- activated_by：`explicit-user-parallel-writer-it-2026-08-27`。
-- detector fingerprint：目录无 `slonik.md` / `node-postgres.md`；`postgres-js` 已对齐；A–AG 与开放 PR 未占用这两个 slug；lane HM–ID 已保留。
+- objective：STOP `postgres.js`（#56 已 merge）。保留 `slonik`，配对 `pg` / `node-postgres`，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/sql-client-source-review-20260827-it.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未改 `postgres-js` 正文或 receipt。未安装上游依赖、未连接数据库、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-it-2026-08-27`；后续确认 `STOP postgres.js` / 保留 slonik + pg。
+- detector fingerprint：目录无 `slonik.md` / `node-postgres.md`；`postgres-js` 已在 #56 对齐；本分支 `git diff origin/main` 不含 `postgres-js`；禁止 knex/db0/sql.js/better-sqlite3/kysely/prisma/drizzle。
 - external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
 - 已完成切片：
-  1. `node-postgres` 绑定 annotated tag `pg@8.23.0` → `df274d1ba9ad9d11a8f1079314faeafde7208207`；npm `gitHead` 一致。
+  1. `node-postgres`（npm `pg@8.23.0`）绑定 annotated tag `pg@8.23.0` → `df274d1ba9ad9d11a8f1079314faeafde7208207`；npm `gitHead` 一致。
   2. `slonik` 绑定 `slonik@49.10.9` → `0d9da1dcf8e4e85c3318c3bdfe69d5af10232f70`；npm 无 `gitHead`，已披露。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` 通过；`audit:wikilinks` blocking 0；`git diff --check` 通过。实时计数以这些命令为准。
+- 验证结果：`STUDY_CHANGED_FROM=0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465 npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y。两页 `quality-gate` pass、0 advisory。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
-- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得改 `postgres-js`。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。见 `AGENTS.md`。
+- 下一条命令：在 https://github.com/estelledc/study/pull/318 做 review；未授权前不要 merge。见 `AGENTS.md`。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
