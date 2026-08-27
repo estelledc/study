@@ -4,13 +4,13 @@
 
 ## 2026-08-27 PARALLEL writer GZ：cuid2 + ulid
 
-- status：writer epoch `complete`；基于最新 `origin/main`；待 PR review；不 merge。
+- status：writer epoch `complete`；PR #275 已打开；不 merge。
 - 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
 - objective：为 unique-id 双子补齐 `cuid2` 与 `ulid` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/unique-id-source-review-20260827-gz.md`、2 份 generation 1 receipt、派生 atlas / note-index / project-standard / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle / 碰撞 / 吞吐。
 - activated_by：`explicit-user-parallel-writer-gz-2026-08-27`。
 - detector fingerprint：目录无 `cuid2.md` / `ulid.md`；指定目标可用且未被 marked / markdown-it / knex / uuid / nanoid 占用。
-- external delta：本 PR（push + PR 已授权；merge / deploy 未授权）。
+- external delta：分支 `cursor/unique-id-cuid2-ulid-gz-0bae` 已 push 并打开 https://github.com/estelledc/study/pull/275（用户显式授权 push+PR）；未 merge、未 deploy。
 - 完成切片：
   1. `cuid2` 绑定 tag `v3.3.0` → `2275e80d1d36d36588a3b7a4929fb07b4b745fd0`；披露 npm `gitHead` 是父提交 `3af6f1b1...`，树差异只有 version 字段。
   2. `ulid` 绑定 tag `v3.0.2` → `11c2067821ee19e4dc787ca4e0125a025485edc6`，tag / npm `gitHead` 一致。
@@ -22,11 +22,12 @@
   - `audit:content-contract`：0 blocking、154 v2。
   - `audit:project-standard`：snapshot CURRENT。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对；不 merge。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- 下一条命令：用 GitHub 查看 https://github.com/estelledc/study/pull/275 ；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
