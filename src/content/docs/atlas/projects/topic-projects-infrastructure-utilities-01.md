@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -21,6 +21,7 @@ sidebar:
 | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | `coturn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | `cri-o` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | `ctranslate2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [devalue — 把值编成可 JSON 传输的索引图](/study/projects/devalue/) | `devalue` | intermediate | UNVERIFIED | Svelte 生态的值编解码器，用扁平数组、负数哨兵和 uneval 处理 JSON 做不到的类型 |
 | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | `doris` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | `dovecot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) | `edgedb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -54,6 +55,7 @@ sidebar:
 | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | `shellcheck` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SigNoz — 自托管的 OpenTelemetry 一体化可观测平台](/study/projects/signoz/) | `signoz` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | `starrocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [superjson — 把 JSON 不够用的值写进 meta 注解](/study/projects/superjson/) | `superjson` | intermediate | UNVERIFIED | 用 json 加 meta values 携带 Date、Map、Set 和 class，而不是改 JSON 语法本身 |
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

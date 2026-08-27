@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -40513,6 +40513,37 @@
       }
     },
     {
+      "id": "projects::devalue",
+      "area": "projects",
+      "slug": "devalue",
+      "title": "devalue — 把值编成可 JSON 传输的索引图",
+      "description": "Svelte 生态的值编解码器，用扁平数组、负数哨兵和 uneval 处理 JSON 做不到的类型。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施 / 序列化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/devalue/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::dgraph",
       "area": "projects",
       "slug": "dgraph",
@@ -60271,6 +60302,37 @@
       }
     },
     {
+      "id": "projects::superjson",
+      "area": "projects",
+      "slug": "superjson",
+      "title": "superjson — 把 JSON 不够用的值写进 meta 注解",
+      "description": "用 json 加 meta values 携带 Date、Map、Set 和 class，而不是改 JSON 语法本身。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施 / 序列化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/superjson/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::superset",
       "area": "projects",
       "slug": "superset",
@@ -65713,7 +65775,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/",
-      "entries": 44
+      "entries": 46
     },
     {
       "id": "topic-projects-internationalization-01",

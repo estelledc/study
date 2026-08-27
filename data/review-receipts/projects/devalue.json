@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "devalue",
+    "digest_sha256": "bf166bd0cce3c8668837bdb6692cfd8ec4a271c8d048501e1773384e48ff8f88"
+  },
+  "source_revision": "3e01a6c749e215e16c94f5c132f46f7840dfa5e0",
+  "research_input_sha256": "9f130e48063ca8cce1a5d5b7357ecde9398cd1b35b805b84d6a358cd366dc633",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates stringify index graph, uneval JS source, and stringifyAsync thenable boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "stringify/parse/uneval, sparse encoding, typed-array buffers, and reducers were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to devalue 5.9.1; Temporal and cross-realm operations need a target runtime."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:05:00.000Z"
+}

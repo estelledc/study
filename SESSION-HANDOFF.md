@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 序列化双子 superjson / devalue（writer CM）
+
+- status：writer epoch `running`；待定向验收与 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：为目录中缺失的 serialize 双子 `superjson` 与 `devalue` 绑定可达固定 revision，证据上限 `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：两篇新项目页、2 份 generation 1 receipt、`docs/serialize-source-review-20260827-cm.md`、taxonomy 两条 assignment、派生 atlas / site-state / 公开计数、本交接记录。
+- activated_by：`explicit-user-parallel-writer-cm-2026-08-27`。
+- detector fingerprint：主仓无 `superjson`/`devalue` 页；当时开放 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge 与 deploy 未授权），D 轴不因本地 diff 提升。
+- 完成切片：
+  1. `superjson` 绑定 `ravionhq/superjson@4e708c11...` / `2.2.5`，写清 json+meta walker、默认单例 registry、class 不跑构造函数，并披露 npm `2.2.6` gitHead 不可达。
+  2. `devalue` 绑定 `sveltejs/devalue@3e01a6c7...` / `5.9.1`，写清扁平索引图、负数哨兵、stringify/uneval/async 边界与稀疏数组启发式。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：待 `quality-gate`、`audit:project-standard`、`audit:content-contract`、`audit:counts` 与 `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`。
+- budget：1 个 serialize 双子切片、1 个本地 writer。
+- blocker：merge/deploy 未授权；verify:ci 尚未跑完。
+- stop conditions：canonical/revision 不一致、需要猜测 2.2.6 或性能数字、或只能放宽门禁时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 新授权。
+- 下一条命令：先完成本地定向验收，再等待 PR review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

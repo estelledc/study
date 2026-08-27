@@ -1892,6 +1892,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::devalue",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::dify",
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
@@ -2430,6 +2434,10 @@
     {
       "note_id": "projects::supabase",
       "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::superjson",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::supertokens",
