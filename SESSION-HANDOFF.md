@@ -27,8 +27,8 @@
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对，不得写 knex。
-- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一次 wake 条件：本 PR 的 GitHub CI / owner review 变化，或另行授权 merge。
+- 下一条命令：`gh pr checks 264`；未授权前不要 merge。 PR 已从 draft 标为 ready，等待 `pull_request` synchronize 触发 CI。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
