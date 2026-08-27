@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tanstack-router",
+    "digest_sha256": "e8e99665b13415491c73d243c4ff7498374d3a294dc0cb069c00fcd267fe7b47"
+  },
+  "source_revision": "a5a5bacc8fdf30b7823caf0a94908c3e0db27aa2",
+  "research_input_sha256": "80f9655fdad6dc18dd710b6834d17cefc93541b48da003b0e31a3fdc027d3e20",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-aa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Corrects async validateSearch, companion package versions, and the with-query to ssr-query rename with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-aa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "RouterCore defaults, validateSearch, FileRoutesByPath, plugin output path, and ssr-query package were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-aa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm exposes no gitHead; react-router 1.170.32 and router-core 1.171.27 share one commit, while plugin/ssr-query versions differ. Bundle and IDE cost are unbound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

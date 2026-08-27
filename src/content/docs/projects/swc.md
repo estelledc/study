@@ -4,159 +4,169 @@ title: SWC — Rust 写的 TS/JS 编译器
 日期: 2026-05-29
 分类: 构建工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/swc-project/swc
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 490c7d88ad15cf84ee410c69e19eef86f445d45b
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.16.1
 ---
 
 ## 是什么
 
-SWC（Speedy Web Compiler）是用 **Rust** 重写 Babel 核心能力的编译器——做 TypeScript / JSX 转译、minify 压缩、bundle 打包。日常类比：
+SWC（Speedy Web Compiler）是用 Rust 写的 TypeScript / JavaScript 编译器。日常类比：它像一座用原生机器运转的翻译厂——进门是 TS/JSX，出门是按配置降级、剥类型、可选压缩后的 JS；**质检（类型检查）不在厂内**。
 
-> 同样一道菜，Babel 用电饭锅 30 分钟煮出来，SWC 用高压锅 1 分钟搞定。
+固定 `1.16.1` 的 npm 包是 `@swc/core`。你写：
 
-锅形状（API）几乎不变，菜谱（要做的转换）也一样。换个材料的锅（JS → Rust），加压（编译期 trait dispatch + 真并行），同一份输入 10-20 倍出锅。
+```ts
+import { transformSync } from "@swc/core";
+const { code } = transformSync(src, { jsc: { parser: { syntax: "typescript" } } });
+```
+
+同一包还导出 `parse` / `print` / `minify` / `bundle` 与 `Compiler`。`bundle` 是独立的 Spack 路径，不是 transform 的默认后缀。
 
 ## 为什么重要
 
-不理解 SWC 解释不了下面这些：
+不理解固定版本的合同，下面这些事会说错：
 
-- 为什么 **Next.js 12+ 启动快了**——2021 年起默认编译器从 Babel 切到 SWC（13 继续沿用）
-- 为什么 Vercel 的下一代 bundler **Turbopack** 跑得动——它底层把 SWC 当库链接进去
-- 为什么 ByteDance 出的 webpack 替代品 **Rspack** 也能拉到几十倍速度——它把 SWC 选作 transformer
-- 为什么 Node 能直接调 Rust 编译器不卡——**napi-rs** 是给 Node 用的原生扩展桥，把 Rust 产物包成 binary 供 `require`
+- 为什么切到 SWC 后类型错误消失了——它本来就不检查
+- 为什么 React 17+ 的自动 JSX 没生效——默认 runtime 是 `classic`
+- 为什么旧 Wasm plugin 升级后立刻报错——host 与 plugin 的 `swc_core` / AST schema 必须对齐
+- 为什么 `transform` 和 `minify` 是两条入口，不能把 SWC 只理解成“更快的 Babel.transformSync”
 
 ## 核心要点
 
-SWC 的设计可以拆成 **三件事**：
+固定 `@swc/core@1.16.1`（`swc_core` `v77.0.2`）的主链是：
 
-1. **换语言（Rust > Go > JS）**：Babel 用 JS 写——单线程 + V8 GC 卡顿。[[esbuild]] 用 Go 写，能开多核。SWC 用 Rust：编译期 trait dispatch 像「出门前就定好走哪扇门」，Go interface 更像「到门口再翻目录找门牌」。早期宣传常说单核可比 esbuild 快一截，但 2020 前后口径、场景相关，不宜当永恒排名。
+1. **parse → 变换 → 打印**：`Compiler` 先按 `.swcrc` / `Options` 解析，再跑 resolver、可选 decorator、TypeScript strip、Wasm plugin、React/JSX、optimizer、compat/`env`、module，最后可选 minify 与 codegen。
 
-2. **Visitor 模式的 Rust 化**：Babel `traverse` 每碰一个 AST 节点都要查 `visitor[node.type]`（像翻通讯录找处理人）。SWC 用 Rust trait + `#[ast_node]` 宏自动派生 `VisitMut`（「可变地走访语法树」）——访问变成「直接打电话 + 按偏移读字段」。节点一多，差距就放大。
+2. **剥类型，不做类型检查**：`swc_ecma_transforms_typescript` 去掉类型语法并处理 enum / namespace 等。parser 把部分 TS 语义错误留给 type checker。
 
-3. **API 对齐 Babel**：`@swc/core` 的 `transform(code, opts)` 几乎是 Babel `transformSync` 的镜像。这降低了下游迁移成本——webpack / Next.js 把 Babel 替换成 SWC 时，调用代码改动极小。这是 SWC 在 2020-2022 年快速被采纳的关键
+3. **默认值会咬人**：`jsc.transform.react.runtime` 默认 `Classic`（源码注明 v2 可能改）。decorator 未写 `decoratorVersion` 时走 legacy/`2021-12` 路径；解析 TypeScript 时还会强制 `legacyDecorator: true`。`env` 与 `jsc.target` 不能同时开。
 
-## 实践案例
+4. **插件是 Wasm，不是稳定 Babel visitor**：生产配置是 `jsc.experimental.plugins`。`swc_plugin_runner` 校验 AST schema；对不上就失败。`@swc/wasm` 回退会跳过 plugin，也没有 `bundle` / `parseFile`。JS 侧旧 `plugin` / `plugins()` 已标记 deprecated。
 
-### 案例 1：CLI 一行编译
+## 实践示例
 
-最常见的用法——把整个 src 目录的 TS/JSX 编译到 dist：
+### 案例 1：transformSync 剥 TS 并开自动 JSX
 
-```bash
-swc src -d dist
+```ts
+import { transformSync } from "@swc/core";
+
+const { code } = transformSync(src, {
+  filename: "app.tsx",
+  jsc: {
+    parser: { syntax: "typescript", tsx: true },
+    transform: { react: { runtime: "automatic" } },
+    target: "es2020",
+  },
+  module: { type: "es6" },
+});
 ```
 
-逐部分解释：
+不写 `runtime: "automatic"` 时走 classic JSX，仍可能生成 `React.createElement`。`filename` 影响是否查找 `.swcrc`；省略时文档按 `swcrc: false` 处理。
 
-- `src` 是源码目录
-- `-d dist` 是输出目录
-- 没指定 config 时 SWC 会自动找 `.swcrc`
-
-跑完 dist 里就是纯 ES5/ES2015 的 JS 文件 + sourcemap。中型项目（500 文件）大约 1-2 秒。
-
-### 案例 2：.swcrc 配 JSX + TS
+### 案例 2：.swcrc 只描述解析与模块
 
 ```json
 {
   "jsc": {
-    "parser": {
-      "syntax": "typescript",
-      "tsx": true,
-      "decorators": true
-    },
+    "parser": { "syntax": "typescript", "tsx": true, "decorators": true },
     "target": "es2020",
     "transform": {
-      "react": {
-        "runtime": "automatic"
-      }
+      "react": { "runtime": "automatic" },
+      "decoratorVersion": "2022-03"
     }
   },
-  "module": {
-    "type": "es6"
-  }
+  "module": { "type": "es6" }
 }
 ```
 
-逐字段解释：
+需要 stage-3 decorator 时必须显式选 `2022-03` 或 `2023-11`。只开 `decorators: true` 不够，默认仍可能走 legacy。本轮未展开 CLI 实现，验收以 `@swc/core` 读这份配置为准。
 
-- `parser.syntax` 选 `"typescript"` 让 SWC 认 TS 类型语法（Babel 要装 `@babel/preset-typescript`，SWC 内置）
-- `tsx: true` 同时打开 TSX 支持
-- `target: 'es2020'` 控制语法降级目标——`async/await`、可选链都保留
-- `transform.react.runtime: 'automatic'` 用 React 17+ 的新 JSX 运行时，省掉 `import React`
+### 案例 3：独立 minify，而不是指望 transform 顺便压
 
-### 案例 3：最小 SWC plugin（Rust → Wasm）
+```ts
+import { minifySync } from "@swc/core";
 
-SWC plugin 是 **Wasm 模块**。下面用伪代码说明「碰到 `console.log` 就清空参数」：
-
-```rust
-impl VisitMut for ConsoleRemover {
-    fn visit_mut_call_expr(&mut self, n: &mut CallExpr) {
-        // 1) 先递归处理子节点
-        n.visit_mut_children_with(self);
-        // 2) 若 callee 是 console.log（成员表达式 obj=console, prop=log）
-        // 3) 则 n.args.clear() —— 调用还在，参数被掏空
-    }
-}
-
-#[plugin_transform]
-pub fn process(mut program: Program, _: ()) -> Program {
-    program.visit_mut_with(&mut ConsoleRemover);
-    program
-}
+const { code } = minifySync(js, {
+  compress: true,
+  mangle: true,
+});
 ```
 
-`#[plugin_transform]` 生成 Wasm 入口与 host 约定。`cargo build --target wasm32-wasi --release` 得到 `.wasm`，在 `.swcrc` 写 `jsc.experimental.plugins: [['./my-plugin.wasm', {}]]` 即生效。
+`minify` / `minifySync` 走 `swc_ecma_minifier::optimize`。transform 里设 `minify: true` 也会进同一套 pass，但默认是关的。这是 Terser 风格移植，不保证体积或字节与 Terser 一致。
 
 ## 踩过的坑
 
-1. **不做类型检查**：和 [[esbuild]] 一样，SWC 编译 TS 时只 **剥掉类型注解**——`const x: number = "hello"` 它照样编译过去。CI 必须配 `tsc --noEmit` 双跑，IDE 也要开 TS 检查。否则你以为类型对的代码运行时会爆炸
+1. **不做类型检查**：和 [[esbuild]] 一样，类型错误只要能 parse 就会变成 JS。CI 仍要 `tsc --noEmit`。
 
-2. **Decorator 实现细节不一致**：SWC 同时支持 legacy decorator（TC39 stage 1，老版本）和 2022-03 decorator（TC39 新版本），两者语义有差别。Babel / tsc 的实现也不完全相同——同一份 NestJS 代码用 Babel 跑通，切到 SWC 可能某个装饰器顺序不对。配置选错会导致运行时差异
+2. **Decorator 默认不是 2022/2023 语义**：未设 `decoratorVersion` 走 legacy 路径；TS 还会强制 `legacyDecorator`。NestJS 一类代码从 Babel / tsc 切过来时，要先对版本。
 
-3. **Rust plugin ABI 不稳定**：每次升级 SWC 主版本，AST 节点结构可能微调，旧 plugin 需要重新编译对齐新版本。开发者发了一个 plugin，几个月后 SWC 升级 plugin 就跑不起来。这是 SWC 插件生态发展慢的根本阻力（10000+ Babel plugin vs 100+ SWC plugin）
+3. **Wasm plugin 必须跟 host 的 swc_core 对齐**：schema 校验失败会直接 bail。`@swc/wasm` 下 plugin 被跳过。
 
-4. **minify 输出比 terser 略大**：SWC 自带的 minifier 与 terser API 兼容，但在边角 case（特定的 dead code 消除、变量名 mangle 策略）上输出会大 1-3%。对极致追求 bundle size 的库作者来说仍倾向用 terser
+4. **JSX 默认 classic**：React 17+ 项目不写 `runtime: "automatic"`，输出会回到旧工厂函数。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- Next.js / Parcel 2 / Storybook 这类「需要把 transformer 当库链接」的工具——SWC 是 Rust crate，能内嵌进任何 Rust 项目
-- 中大型 TS 项目的 transform 提速（500+ 文件）——速度收益显著
-- 需要保留 Babel 风格 API 的项目迁移——`transform(code, opts)` 一对一替换
+
+- 需要把 TS/JSX transform 或 minify 嵌进 Node / Rust 宿主
+- 配置面接近 Babel（`transform(code, opts)`），但能接受剥类型、默认 classic JSX 和实验性 Wasm plugin
+- 只要独立 minify API，不把打包当成主路径
 
 **不适用**：
-- 重度依赖冷门 Babel plugin 的项目——要么 Wasm 重写要么放弃 SWC
-- 需要类型检查的 TS 项目——必须额外配 tsc，SWC 永远不做这件事
-- 库发包到 npm 追求最优 tree-shake 与 bundle size——用 [[rollup]] 仍是首选
 
-## 历史小故事（可跳过）
+- 把类型检查、稳定 Babel plugin 生态或与 Terser 字节一致当成合同
+- 依赖 `@swc/wasm` 还想跑 Wasm 插件或 `bundle`
+- 需要本文未核验的 CLI 旗标语义——请回到 `swc_cli_impl` 或当前文档，不要从本页外推
 
-- **2017 年**：DongYoon Kang（GitHub @kdy1，韩国开发者）作为个人项目开始写 SWC，命题是「用 Rust 重写 Babel」
-- **2020 年**：v1.0 发布，README 直接对标 Babel 性能
-- **2021 年**：Vercel 决定把 Next.js 12 的默认编译器从 Babel 切到 SWC，并直接资助 kdy1 全职维护——SWC 从「个人项目」升级为「Vercel 战略基础设施」
-- **至今**：直接 + 间接调用每周 50M+，被 Next.js / Parcel 2 / Storybook 7+ / Deno 部分 / Vite 部分采纳；项目仍主要由 kdy1 一人主导
+## 固定版本边界
 
-「Rust 重写 JS 工具链」浪潮里，SWC 是最完整的一份成果——既覆盖 transform/minify/bundle 三件套，又被 Next.js 全面采纳，事实上是「下一代 Babel」。
+- 本文绑定 `swc-project/swc@490c7d88...`，`@swc/core` 与发布说明均为 `1.16.1`；npm 未暴露 `gitHead`。
+- 许可为 Apache-2.0。Native 绑定来自 `binding_core_node`；失败时 postinstall 可回退 `@swc/wasm`。
+- 未安装依赖、未跑上游测试、未声明下游框架默认编译器，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **「换语言」+「数据结构内嵌」是性能终极武器**——Rust 的 trait dispatch + struct 偏移读，比 JS 的 hashmap lookup 快一个数量级。算法层能压的极限有限，runtime + 数据结构这两层才是天花板
-2. **API 兼容是采纳的关键**——SWC API 对齐 Babel 是有意识的，没这一步 Vercel 也未必选它做 Next.js 默认编译器
-3. **Wasm plugin 是赌注**——好处（跨语言 + 隔离 + 性能）短期看不出，坏处（生态启动慢 + ABI 不稳）立刻有。这是个长期才能赢的设计选择
-4. **Rust 不是 Go 的替代品，是更下层的选项**——Rust 写出来的库能被任何 Rust 项目当 crate 链接（Turbopack / Rspack 都这么用），Go binary 只能外部调用。这是 SWC 战略价值的核心
-5. **不做类型检查是性能选择**——tsc 类型检查占 80% 时间，删掉这部分才能跑到几毫秒。esbuild / SWC / Babel + preset-typescript 都做这个取舍
+1. **“更快的 Babel”不是 API 等价**——多了 parse/print/minify/bundle，默认值也不一样
+2. **默认 runtime / decorator 比宣传口径更重要**——classic JSX 和 legacy decorator 都是源码里的 Default
+3. **Wasm plugin 用版本门换隔离**——换来的是 ABI 耦合，不是无限稳定
+4. **minify 和 transform 是两条合同**——打开 `minify: true` 才共享 minifier pass
+
+## 应用型自测
+
+1. `transformSync("const x: number = 'a'", { jsc: { parser: { syntax: "typescript" } } })` 会因为类型错误抛出吗？
+2. 不写 `jsc.transform.react.runtime` 时，默认是 automatic 还是 classic？
+3. 加载的是 `@swc/wasm` 回退绑定时，`jsc.experimental.plugins` 还会执行吗？
+
+检查点：
+
+1. 不会。它只剥类型，不跑 type checker。
+2. classic。自动 JSX 必须显式写 `automatic`。
+3. 不会。wasm 回退会跳过 plugin。
 
 ## 延伸阅读
 
 - 官方文档：[swc.rs](https://swc.rs/)
-- 配置参考：[swc.rs/docs/configuration/swcrc](https://swc.rs/docs/configuration/swcrc)
-- 写 plugin 教程：[swc.rs/docs/plugin/ecmascript/getting-started](https://swc.rs/docs/plugin/ecmascript/getting-started)
-- [[esbuild]] —— Go 写的同代竞争对手，速度接近，plugin 模型差异大
-- [[turbopack]] —— Vercel 的下一代 bundler，把 SWC 当库链接
+- 固定源码：[swc-project/swc](https://github.com/swc-project/swc) —— 本文绑定提交 `490c7d88ad15cf84ee410c69e19eef86f445d45b`
+- [[esbuild]] —— Go 侧对照：plugin 是 onResolve/onLoad，不是 Wasm
+- [[turbopack]] —— 常见的 Rust 宿主对照，是否链接本版本需另核
+- [[rspack]] —— 另一条嵌入式 transform 路线
 
 ## 关联
 
-- [[esbuild]] —— Go vs Rust 的同代之争；esbuild 速度接近但不能内嵌进 Rust 项目
-- [[turbopack]] —— Vercel 的 Rust bundler，SWC 是它的 transformer 引擎
-- [[rspack]] —— ByteDance 的 Rust webpack 替代，也用 SWC 做 transform
-- [[rollup]] —— 库发包场景的对照组，tree-shake 仍比 SWC 强
+- [[esbuild]] —— Go vs Rust 的同代对照；能力边界不同
+- [[turbopack]] —— Rust bundler 对照
+- [[rspack]] —— 同样把原生 transform 嵌进打包器
+- [[rollup]] —— 库发包与 tree-shake 对照组
 
 ## 反向链接
 

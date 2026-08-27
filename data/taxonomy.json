@@ -2360,6 +2360,10 @@
       "topic_id": "projects-internationalization"
     },
     {
+      "note_id": "projects::react-router",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
       "note_id": "projects::react-spring",
       "topic_id": "projects-animation"
     },

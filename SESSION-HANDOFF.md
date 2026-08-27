@@ -4,9 +4,9 @@
 
 ## 2026-08-27 PARALLEL writer HU：k6 + locust
 
-- status：writer epoch `complete`；已 merge `origin/main`（含 #77/#82）并重生成派生索引；PR https://github.com/estelledc/study/pull/294 待 review；未把本 PR merge 进 main、未 deploy。
+- status：writer epoch `complete`；已再 merge `origin/main`（含 #83/#84）并重生成派生索引；PR https://github.com/estelledc/study/pull/294 待 review；未把本 PR merge 进 main、未 deploy。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（当时的 `origin/main`，#71）。
-- 当前 head：以 `git rev-parse HEAD` 为准；`2122461e7`（#82）与 `0ffa894c3`（#77）已是祖先。
+- 当前 head：以 `git rev-parse HEAD` 为准；`98d8b168f`（#84）与 `ed10b7279`（#83）已是祖先。
 - objective：把 `needs-evidence` 的负载测试双子 `k6` 与 `locust` 迁到绑定可达固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` 页。
 - scope：两篇既有项目页、共享审查文档 `docs/load-test-source-review-20260827-hu.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译 k6、未安装 Locust 依赖、未发真实负载。
 - activated_by：`explicit-user-parallel-writer-hu-2026-08-27`。
@@ -23,7 +23,7 @@
   - `audit:counts` / `audit:site-state` / `audit:project-standard`：以这些命令为准，未手改计数。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
-  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：接入 #77/#82 后，规范 Node 22.23.1 / npm 11.17.0 下再次全绿。
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：接入 #83/#84 后待再跑；定向 quality-gate / counts / site-state 已绿。
   - PR：https://github.com/estelledc/study/pull/294
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。

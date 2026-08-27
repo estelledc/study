@@ -4,151 +4,181 @@ title: TanStack Router — 把 URL 当类型，编译器替你守路由
 日期: 2026-05-30
 分类: projects
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/TanStack/router
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: a5a5bacc8fdf30b7823caf0a94908c3e0db27aa2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.170.32
 ---
 
 ## 是什么
 
-TanStack Router 是一个 **TypeScript 路由库**：它把 URL 模板（如 `/posts/$postId`）从普通字符串升级成 **类型**，让编译器在你打字时就检查跳转是否合法、参数是否齐全。
-
-日常类比：以前路由像在路口立一块写着"去 1 号楼 305 室"的木牌——拼写错了没人管，等访客敲错门才发现。TanStack Router 把这块木牌换成 IC 卡——卡上每个字段都是结构化的，写错形状卡就插不进读卡器，编译器立刻拦下来。
+TanStack Router 是一个 **TypeScript 路由库**：路径、params、search 和 loader data 都挂在路由树类型上。日常类比：React Router 的 `href` 要等 typegen 填 `Register`；这里 `createRoute({ path: '/posts/$postId' })` 自己就能推出 params 形状。
 
 你写：
 
 ```tsx
-<Link to="/posts/$postId" params={{ postId: '123' }} />
+import { createRoute, createRouter, RouterProvider } from "@tanstack/react-router";
+
+const postRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/posts/$postId",
+  loader: ({ params }) => fetchPost(params.postId),
+  component: PostPage,
+});
+
+const router = createRouter({ routeTree: rootRoute.addChildren([postRoute]) });
+<RouterProvider router={router} />
 ```
 
-漏写 `postId`、把名字打成 `postIdd`，TS 立即报红。改路径 `/posts/$postId` 为 `/blog/$slug`，整个项目所有引用全部编译期报错——你不会忘了改其中一处，因为编译器会列清单。
+固定 1.170.32 的 `createRouter` 构造 React `Router`，它继承 `@tanstack/router-core` 的 `RouterCore`。`RouterCore` 构造函数本身标为 deprecated，应走 `createRouter`。
 
 ## 为什么重要
 
-- 不理解它，没法解释为什么一些 React 项目敢删掉 80% 的 `useParams<{ id: string }>()` 手写泛型
-- 不理解它，看不懂 `<Link to="/posts/$postId">` 怎么自动补全所有可能路径
-- 不理解它，不知道为什么文件 `posts.$postId.tsx` 改名后 TS 满屏报错——这是设计而不是 bug
-- 不理解它，错过 TS 模板字面量类型在工业里跑得最远的一个范例
-- 不理解它，被问"为什么 string 配置应该升级为类型"时举不出活的例子
+不理解固定源码，会把旧博客写成当前合同：
+
+- 为什么 `<Link to="/posts/$postId">` 能补全路径，而普通 `string` 变量会让类型塌陷
+- 为什么 `validateSearch` 看到 Promise 会直接抛 `SearchParamError`
+- 为什么同提交里 plugin 是 `1.168.35`、ssr-query 是 `1.167.1`，不能把 `1.170.32` 套到整个 monorepo
+- 为什么旧包名 `@tanstack/react-router-with-query` 不再是本 pin 的集成入口
 
 ## 核心要点
 
-1. **模板字面量类型解析路径**：TS 4.1+ 引入的 `${string}$${infer T}` 让类型层能像正则一样切字符串。给定字符串字面量类型 `'/posts/$postId'`，类型层递归算出 `{ required: 'postId' }`。**类比**：在你按下回车前，编译器已经悄悄跑了一遍字符串解析，再拿结果守住 Link 的入口。
+1. **`RouterCore` 持有类型化路由树**：`routeTree` 展开成 `routesById` / `routesByPath` 与 processed tree。运行时匹配路径，类型层推断 `Link` / `useParams` / `useSearch`。
 
-2. **RouterCore 持有类型化路由树**：用户写的一堆 `createRoute({ path, loader })` 会被收成一棵 `TRouteTree`，RouterCore 用泛型把它展开成两份索引——按 ID 查（loader 找上下文用）、按 path 查（matchRoutes 用）。运行时跑路由匹配，类型层跑参数推断。
+2. **search 是同步 schema**：`validateSearch` 接受 Standard Schema `'~standard'`、带 `parse` 的对象，或裸函数。`'~standard'.validate` 若返回 Promise，运行时抛 `SearchParamError('Async validation not supported')`。IO 校验必须放到 `beforeLoad`。
 
-3. **codegen + declare module 把局部类型变全局**：`@tanstack/router-plugin` 监听 `src/routes/` 目录，把文件名编译成 `routeTree.gen.ts`。生成的代码里有一段 `declare module '@tanstack/react-router'`，把整张路由表注入全局命名空间——结果就是 `<Link to="/...">` 在任何文件里不用 import 都能自动补全所有可能的路径。
+3. **codegen 靠 module augmentation**：`FileRoutesByPath` 与 `Register` 在 core 里是空接口。`@tanstack/router-plugin` 默认生成 `./src/routeTree.gen.ts`；generator 快照写入 `declare module '@tanstack/react-router'`。同提交 plugin 版本是 `1.168.35`，不是 `1.170.32`。
 
-三步合起来：**path 只写一次，编译期反推出参数形状，全局类型表把推断结果广播给整个项目**。这是 TS "类型即文档 + 类型即测试"想法被推到极限的工业样本。
+4. **默认等待与 preload 是数字，不是口号**：`defaultPreloadDelay=50`、`defaultPendingMs=1000`、`defaultPendingMinMs=500`、`notFoundMode='fuzzy'`、`caseSensitive=false`。这些是构造时写入的默认值，不是测量结论。
 
-## 实践案例
+5. **Query 集成换了包名**：本 pin 提供 `@tanstack/react-router-ssr-query@1.167.1`。旧文里的 `@tanstack/react-router-with-query` 不是这次检查到的包。
 
-### 案例 1：改路径，编译器替你列清单
+## 实践示例
+
+### 案例 1：路径只写一次，引用处被类型守住
 
 ```tsx
 const postRoute = createRoute({
-  path: '/posts/$postId',
+  getParentRoute: () => rootRoute,
+  path: "/posts/$postId",
   loader: ({ params }) => fetchPost(params.postId),
-})
+});
 ```
 
-跨文件引用：`<Link to="/posts/$postId" params={{ postId: '1' }} />`、`useParams({ from: '/posts/$postId' })`。
+`<Link to="/posts/$postId" params={{ postId: "1" }} />` 里漏 `postId` 或把 path 改成 `/blog/$slug`，只要 `to` 仍是字符串字面量，TypeScript 应能列出旧引用。把 path 存进 `string` 变量后，保护当场消失。
 
-把 `path` 改成 `/blog/$slug`，`tsc --noEmit` 立刻列出所有用到旧路径的位置。你不需要全局搜索字符串，TS 替你做了清单——**这是把"路由作为契约"做到底的体感**。对比 React Router v7：`<Link to="/posts/123" />` 的字符串里的 `posts` 是 typo 还是真路径？编译器没办法判断。
-
-### 案例 2：search params 当 schema 用
+### 案例 2：search 同步校验，异步会被扔掉
 
 ```tsx
 const route = createRoute({
-  path: '/posts/$postId',
-  validateSearch: (s: Record<string, unknown>) => {
-    const tab = s.tab
-    if (tab !== 'overview' && tab !== 'comments') throw new Error('bad tab')
-    return { tab: tab as 'overview' | 'comments' }
+  getParentRoute: () => rootRoute,
+  path: "/posts/$postId",
+  validateSearch: (search: Record<string, unknown>) => {
+    const tab = search.tab;
+    if (tab !== "overview" && tab !== "comments") {
+      throw new Error("bad tab");
+    }
+    return { tab };
   },
-})
+});
 ```
 
-URL 里手动改成 `?tab=invalid`，validator 抛 `SearchParamError`，进 `errorComponent` 兜底。组件里 `useSearch` 拿到的 `tab` 类型直接是 `'overview' | 'comments'`，不需要每次都判 `undefined`。
+函数抛错或 Standard Schema 产出 `issues`，都会变成 `SearchParamError`。需要查权限或数据库时，应使用 `beforeLoad`，不要把 Promise 塞进 `validateSearch`。
 
-大多数路由库把 search 当 `string → string` 的 map，业务代码到处 `parseInt(searchParams.get('page') || '1')`。TanStack 把它升级为强类型 schema——错值 throw、好值进类型。换成 zod 写法只是把上面那段 `validateSearch` 替换成 `zodValidator(z.object({ tab: z.enum([...]) }))`。
-
-### 案例 3：和 TanStack Query 拼在一起
+### 案例 3：loader 只保证“路由数据”，不保证 Query 缓存
 
 ```tsx
 createRoute({
-  path: '/posts/$postId',
-  loader: ({ params }) => queryClient.ensureQueryData(postQuery(params.postId)),
-})
+  getParentRoute: () => rootRoute,
+  path: "/posts/$postId",
+  loader: ({ params }) => fetchPost(params.postId),
+});
 ```
 
-router 的 loader 直接调 query 的 `ensureQueryData`——有缓存就用、没有就拉。**路由切换 = 缓存命中**，这种"路由数据层"的整合是其他路由库要自己手写的。组件内再用 `useQuery(postQuery(...))` 读，永远命中缓存。
-
-整合的关键是 router 团队故意把 `@tanstack/react-router-with-query` 单独拆成包，让两个库的 lifecycle 在 SSR / dehydrate / hydrate 三个阶段对齐。
+loader 可以调用任意 cache。要和 TanStack Query 的 SSR dehydrate 对齐，本 pin 检查到的是 `@tanstack/react-router-ssr-query`，不是旧 `with-query` 包名。本文未运行该集成。
 
 ## 踩过的坑
 
-1. **`to` / `from` 必须是字符串字面量**——把路径存到变量或 JSON 配置后，TS 把它退化成 `string`，所有强类型保护**当场塌陷**。这条文档没强调，但是硬约束。
+1. **`to` / `from` 必须是字面量**：存进变量后退化成 `string`，自动补全和改名清单一起失效。
 
-2. **`validateSearch` 必须同步**——异步会被运行时直接 `throw`。校验需要查数据库（比如权限）必须挪到 `beforeLoad`，不能塞进 `validateSearch`。
+2. **`validateSearch` 必须同步**：`'~standard'` 路径对 Promise 直接抛 `SearchParamError`。
 
-3. **路由树超 200 节点 IDE 卡顿**——`routesById` 是 mapped type，TS server 每次类型查询都得遍历整棵路由。这是语言能力的天花板，不是写法问题。
+3. **把 `1.170.32` 套到 plugin / ssr-query**：同提交版本分别是 `1.168.35` 与 `1.167.1`。
 
-4. **codegen 绑死 Vite/Rollup**——纯 webpack 项目用不了文件路由，要么换打包器、要么手动声明（失去文件路由便利）。
+4. **继续写 `@tanstack/react-router-with-query`**：本 pin 的包名是 `@tanstack/react-router-ssr-query`。
 
-5. **dehydrate 体积容易炸**——所有 loader data 默认序列化到 HTML，大 loader 让 SSR HTML 暴胀，要手动 `defer` 拆出非关键数据。
+5. **把 pending/preload 默认值当成性能结论**：`1000` / `50` 是源码默认，不是测量值。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 类型敏感的客户端 SPA / 内部工具——路由数 30-100 之间，类型推导收益最大
-- 表单 / 列表 / 搜索这类把状态放 URL 的应用——`validateSearch` + zod adapter 让 `?page=2&filter={...}` 强类型
-- 已经在用 TanStack Query 的项目——`ensureQueryData` 集成几乎零成本
-- 想学 TS 模板字面量类型在工业里跑到极限的样本
-- TanStack Start 全栈项目——router 是 Start 的根基，loader 直接对接 server functions
+- 类型敏感的客户端 SPA，路径以字面量写在仓库里
+- 要把 search 当成 schema，而不是 `URLSearchParams` 字符串表
+- 已接受 Node `>=20.19`，React 18 或 19
 
 **不适用**：
 
-- < 10 路由的小项目——架构成本不划算，Wouter 1.5KB 已够用
-- SSR 重 + RSC 优先的 SEO 站点——Next App Router 集成更顺
-- 已有 React Router 项目想增量迁移——双栈并存几乎不可能，要全部重写
-- 校验要 IO 的场景——`validateSearch` 同步限制硬性挡路
-- 路径必须存数据库 / 远端配置的多租户场景——失去字面量后类型保护塌陷
+- 路径必须从远端配置动态灌入——失去字面量后类型保护塌陷
+- 校验必须做 IO——会被 `validateSearch` 的同步合同挡住
+- 已有 React Router data/framework 应用，只想“换个包名”
+- 需要把静态阅读写成已跑通的 Start / SSR 证据
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018 年前后**：Tanner Linsley 做出 react-table、react-query，把"列表/缓存"做成一等公民，开启 TanStack 系列
-- **2022-2023**：他开始做 router，公开赌一件事——路由是软件最重要的 UX 边界，类型应该把它守得死死的
-- **2024 年初**：v1 稳定，launch blog 写下 manifesto——"我们要的不是 routes，是一份从 URL 到 React tree 的端到端类型契约"
-- **2025-2026**：衍生出 TanStack Start 全栈框架（基于 router 做 Next 替代品），同时多了 Solid / Vue adapter，core 拆出 framework-agnostic 包
+- 本文绑定 `TanStack/router@a5a5bacc...`。`@tanstack/react-router@1.170.32` 与 `@tanstack/router-core@1.171.27` 的 tag 都解引用到该提交。
+- npm 未暴露可比 `gitHead`。同提交 companion 版本：plugin `1.168.35`、generator `1.167.33`、ssr-query `1.167.1`。
+- React peer 为 `>=18 || >=19`；Node engines 为 `>=20.19`。
+- 本文未安装依赖、未跑上游测试、未测 IDE/bundle/SSR，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **类型可以做 UX**：自动补全、报错红波浪线、改名一刀切——这些不是"额外负担"，是开发者实时反馈
-- **string config 能升级成 template literal type**：i18n key、event name、API endpoint 这类配置都能搬这个套路
-- **协议优先 + 多 fallback** 是类型库互操作的范式：`~standard` 协议 + `parse` 兜底 + 裸函数兜底
-- **类型层激进、运行时务实**：types 把所有边界拆细，runtime 该缓存就缓存（LRU），不是越严越好
-- **codegen 是工程上的必要**：`declare module` 让局部约定变全局类型——纯类型层做不到，运行时反注解又没意义
+1. **类型可以当 UX**——补全和改名清单来自路由树，不是运行时报错。
+2. **schema 协议有三层兜底**——`'~standard'`、`parse`、裸函数；异步一律不收。
+3. **monorepo 版本必须按包读**——一次 release 可以发布多组不等号。
+4. **集成包会改名**——Query 对齐从 `with-query` 换成了 `ssr-query`。
+
+## 应用型自测
+
+1. `validateSearch` 返回 `Promise.resolve({ tab: "a" })`，固定实现会怎样？
+2. 同提交的 `@tanstack/router-plugin` 版本是 `1.170.32` 吗？
+3. 本 pin 与 TanStack Query 的官方 companion 包名是什么？
+
+检查点：
+
+1. `'~standard'` 路径抛 `SearchParamError('Async validation not supported')`；裸 Promise 也不是合法同步输出。
+2. 不是。同提交 plugin 是 `1.168.35`。
+3. `@tanstack/react-router-ssr-query`，不是旧的 `with-query`。
 
 ## 延伸阅读
 
-- 官方文档：[tanstack.com/router](https://tanstack.com/router/latest)（quickstart 30 分钟跑通）
-- 官方博客：[Announcing TanStack Router v1](https://tanstack.com/blog/announcing-tanstack-router-v1)（manifesto）
-- TS 模板字面量类型 handbook：[TypeScript Template Literal Types](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
-- [Standard Schema 协议](https://standardschema.dev/)——`validateSearch` 里 `~standard` 是什么的官方解释
-- 实验：自己起一个 Vite + React 项目，把 `<Link to="/posts/$postId" />` 的 `postId` 改成 `postIdd`，看 IDE 红波浪线长什么样
-- [[hindley-milner]] —— 类型推导的祖师爷，TanStack Router 的"自动推参数表"是它的工业回响
-- [[zod]] —— `validateSearch` 的最常见 adapter
+- 官方文档：[tanstack.com/router](https://tanstack.com/router/latest)
+- 固定源码：[TanStack/router](https://github.com/TanStack/router) —— 本文绑定提交 `a5a5bacc8fdf30b7823caf0a94908c3e0db27aa2`
+- [Standard Schema](https://standardschema.dev/) —— `validateSearch` 的 `'~standard'` 协议
+- [[react-router]] —— 对照：Register/typegen vs 路由树字面量
+- [[zod]] —— 常见 Standard Schema / `parse` adapter
+- [[tanstack-query]] —— 数据缓存层，需另绑 ssr-query 包
 
 ## 关联
 
-- [[hindley-milner]] —— 类型推导思想：占位符 + 解方程，TanStack 用模板字面量类型重演了一遍
-- [[tanstack-query]] —— 兄弟项目，loader 直接调它的 `ensureQueryData`
-- [[tanstack-form]] —— 同源设计，把表单状态也做成类型一等公民
-- [[zod]] —— search validator 默认 adapter
-- [[valibot]] —— 同上，更小体积的替代
-- [[arktype]] —— 同上，纯 TS 类型层校验
-- [[remix]] —— React Router v7 前身，文件路由的另一种诠释
-- [[trpc]] —— "类型是契约"理念在 RPC 层的兄弟项目
-- [[vite]] —— router-plugin 跑 codegen 的宿主，`HMR` 让 `routeTree.gen.ts` 改完即可见
+- [[react-router]] —— 同主题客户端路由，默认 revalidate 与类型来源不同
+- [[tanstack-query]] —— loader 可选用的缓存，集成分包已改名
+- [[tanstack-form]] —— 同源 Standard Schema 思路
+- [[zod]] —— search validator 常见实现
+- [[valibot]] —— 更小的 Standard Schema 实现
+- [[arktype]] —— 另一套 `'~standard'` 实现
+- [[remix]] —— React Router 框架模式的前身叙述
+- [[vite]] —— router-plugin 的常见宿主
+- [[trpc]] —— “类型即契约”在 RPC 层的对照
 
 ## 反向链接
 
