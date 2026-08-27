@@ -1,152 +1,181 @@
 ---
 title: Jest — 一个包就能跑 JS 测试的全家桶
-来源: 'https://github.com/jestjs/jest'
+description: 把 runner、断言、mock 和快照收进同一 CLI 的 JavaScript 测试框架
+来源: https://github.com/jestjs/jest
 日期: 2026-05-30
 分类: 测试框架
 难度: 初级
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/jestjs/jest
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 746f2a0f57c56e3bba555280f0587d40f3db95c0
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 30.4.2
 ---
 
 ## 是什么
 
-Jest 是一个**只装一个包就能跑 JS 测试**的框架。日常类比：像超市的"火锅一站式购物车"——肉、菜、汤底、调料、锅具一次装齐，不用你跑五个货架对着配料表挑半天。
+Jest 是一个把 runner、断言、mock、快照和转译收进同一 CLI 的 JavaScript 测试框架。日常类比：像超市的「火锅一站式购物车」——肉、菜、汤底和锅具一次装齐，不用再分别去配 [[mocha]]、Chai、sinon 和覆盖率工具。
 
-具体说，写一个 Node 测试以前要凑齐这些：
+```js
+test('1 + 1 = 2', () => {
+  expect(1 + 1).toBe(2)
+})
+```
 
-- **Mocha**（跑测试的 runner）
-- **Chai**（写断言的 `expect(x).to.equal(y)`）
-- **sinon**（伪造函数 / 假数据）
-- **istanbul**（统计覆盖率）
-- **babel-register**（让 Node 读懂 TS / JSX）
-
-每装一个就要在 `package.json` 多写一段配置。Jest 把这五件事打包进一个包：`npm i -D jest` 装完，写完测试直接 `npx jest` 就跑。
+固定 `30.4.2` 的入口包只依赖 `@jest/core` 与 `jest-cli`。默认 `injectGlobals: true`，所以 `test` / `expect` / `jest` 不必手写 import；也可以关掉 globals，改从 `@jest/globals` 取。
 
 ## 为什么重要
 
-不理解 Jest，下面这些事很难解释：
+不理解 Jest 在 30.x 里的真实默认，下面这些印象会过时：
 
-- 为什么 React 项目里测试文件叫 `*.test.tsx` 不用任何配置就能跑——这是 Jest 的默认约定
-- 为什么 `jest.mock('axios')` 一行就能把整个 axios 替换成假货
-- 为什么改一个文件 watch 模式只重跑 3 个测试不重跑 300 个
-- 为什么 [[vitest]] 出来之后 Jest 团队那么紧张
+- 为什么 `*.test.js` 不用额外 runner 配置就能被收集——默认 `testMatch` 认 `__tests__` 与 `*.test` / `*.spec`
+- 为什么 `jest.mock('axios')` 能替换模块，但 **不会** 自动 mock 全部 import——默认 `automock: false`
+- 为什么「按 CPU 数起 worker」并不总发生——调度器会把小而快的套件收回主进程
+- 为什么纯 ESM 项目仍可能看到 `ERR_REQUIRE_ESM`——`require(ESM)` 依赖 Node v24.9+ 的同步 vm module API
 
 ## 核心要点
 
-Jest 的设计可以拆成 **三件事**：
+固定源码的主链可以拆成五步：
 
-1. **沙箱隔离模块**：每个测试文件在自己的 `vm.Context` 里跑，全局变量不会串。类比：每个测试发一个独立小厨房，前一个搞乱厨房不影响下一个。
+1. **规范化配置**：`jest-config` 默认 `testRunner` 为 `jest-circus/runner`，`testEnvironment` 为 `jest-environment-node`，`maxWorkers` 为 `'50%'`，`workerThreads` 为 `false`。
 
-2. **多进程 worker 并行**：默认按 CPU 核心数起 worker，每个 worker 跑一组测试文件。类比：5 个洗碗工同时洗 5 摞碗，比一个人快 5 倍。
+2. **收集测试文件**：`SearchSource` 按 `testMatch` / 变更文件过滤路径，再交给 `TestScheduler`。
 
-3. **自动 mock + 快照**：`jest.mock('./api')` 自动伪造整个模块；`toMatchSnapshot()` 把对象序列化存盘，下次对比。类比：第一次拍证件照存档，下次再拍对比看你有没有变胖。
+3. **决定 in-band 还是 worker**：`shouldRunInBand()` 在 `runInBand`、`detectOpenHandles`、只有 1 个测试/1 个 worker，或「≤20 个且历史都快于 1s」时走主进程；否则用子进程（默认不是 worker thread）。
 
-## 实践案例
+4. **Runtime 装模块**：CJS 走 Jest 自己的 module registry；被判定为 ESM 的文件若用 `require()` 加载，当前 Node 没有同步 vm API 就会抛 `ERR_REQUIRE_ESM`。`jest.isolateModules` 只是 registry overlay，不是每个测试新建 `vm.Context`。
+
+5. **Circus 执行树**：`eventHandler` 同步登记 `describe` / hook / `test`；`run.ts` 先 `beforeAll`，再跑测试，最后 `afterAll`。`test.concurrent` 用 `p-limit`，默认 `maxConcurrency=5`。
+
+## 实践示例
 
 ### 案例 1：零配置跑第一个测试
 
 ```bash
 mkdir jest-toy && cd jest-toy
 npm init -y
-npm i -D jest
+npm i -D jest@30.4.2
 ```
 
-写 `sum.js`：
+`sum.js`：
 
-```javascript
-function sum(a, b) { return a + b; }
-module.exports = sum;
+```js
+function sum(a, b) { return a + b }
+module.exports = sum
 ```
 
-写 `sum.test.js`：
+`sum.test.js`：
 
-```javascript
-const sum = require('./sum');
+```js
+const sum = require('./sum')
 
 test('1 + 1 = 2', () => {
-  expect(sum(1, 1)).toBe(2);
-});
+  expect(sum(1, 1)).toBe(2)
+})
 ```
 
-跑 `npx jest`——直接绿。**逐部分解释**：`test(name, fn)` 是 Jest 的全局函数（不用 import）；`expect(x).toBe(y)` 是断言；`.test.js` 后缀让 Jest 自动认出这是测试文件。
+`npx jest` 会按默认 `testMatch` 找到这个文件。`test` 与 `expect` 来自 injectGlobals，不是语言内置。单文件套件还可能被 `shouldRunInBand` 收回主进程，不代表「永远多进程」。
 
-### 案例 2：一行替换整个模块
+### 案例 2：手动 mock，而不是自动 mock
 
-```javascript
-jest.mock('axios');
-const axios = require('axios');
+```js
+jest.mock('axios')
+const axios = require('axios')
 
 test('fetchUser 调 axios.get', async () => {
-  axios.get.mockResolvedValue({ data: { name: 'Jason' } });
-  const user = await fetchUser(1);
-  expect(user.name).toBe('Jason');
-});
+  axios.get.mockResolvedValue({ data: { name: 'Jason' } })
+  const user = await fetchUser(1)
+  expect(user.name).toBe('Jason')
+})
 ```
 
-`jest.mock('axios')` 让真实 axios 永远不会发 HTTP，所有方法变 `jest.fn()`。`mockResolvedValue` 指定下次调用返回什么。这就是"自动 mock"——你不用手写 `axios.get = () => ...`，Jest 自己替你伪造好了。
+`jest.mock('axios')` 把该模块换成 mock。默认 **不会** 对未声明的 import 做 automock。ESM 侧对应 API 是 `jest.unstable_mockModule`，固定源码要求传入 factory。
 
-### 案例 3：快照测试一行存档
+### 案例 3：并发测试有上限
 
-```javascript
-test('用户卡片渲染', () => {
-  const card = renderUserCard({ name: 'Jason', age: 22 });
-  expect(card).toMatchSnapshot();
-});
+```js
+test.concurrent('A', async () => { /* ... */ })
+test.concurrent('B', async () => { /* ... */ })
 ```
 
-第一次跑：在 `__snapshots__/user.test.js.snap` 写入序列化结果。第二次跑：和文件对比，不一致就 fail。改了组件想更新快照，加 `--updateSnapshot`（或 watch 模式按 `u`）。**这是把"输出长这样"固化到 git 里**——下次 review PR 能直接看 `.snap` diff。
+同一 describe 里的 concurrent 测试会被收成一组，再用 `p-limit(maxConcurrency)` 跑。circus 默认 `maxConcurrency` 是 5，不是「全部同时开火」。
 
 ## 踩过的坑
 
-1. **自动 mock 在 debug 时反而是阻碍**：测试 fail 了你不知道是真实模块的问题还是 mock 假货行为不对。很多团队最后 `automock: false` 改回手动。
-2. **快照测试一键 update 让 review 失效**：CI 红了开发者直接 `--updateSnapshot` 然后 push，根本没看 diff。这不是 Jest 的锅，但 Jest 把这门技术大众化加重了滥用。
-3. **ESM 支持长期 experimental**：`vm.Context` 拦不住 Node 原生 `import`，所以纯 ESM 项目用 Jest 要折腾 `--experimental-vm-modules` flag，这是 [[vitest]] 抢市场的关键缝隙。
-4. **ts-jest 比 babel-jest 慢但严**：默认走 babel-jest 不做类型检查（只剥 TS 类型注解），切到 ts-jest 会做完整类型检查但 watch 模式启动慢 2-3 倍，选错让人怀疑人生。
+1. **把 automock 当默认**：`Defaults.ts` 写明 `automock: false`。没写 `jest.mock` 的模块就是真模块。
+
+2. **以为每个测试都有独立 `vm.Context`**：文件级隔离来自 worker / runtime registry；`isolateModules` 只切换 registry overlay，不能嵌套混用 sync/async 两个 API。
+
+3. **把 `maxWorkers: '50%'` 理解成永远半满并行**：小套件、`detectOpenHandles` 或 `runInBand` 会改走主进程。
+
+4. **在 test 函数里再写 `describe` / hook**：circus 会把错误记到当前测试上；测试必须在开始跑之前同步登记。
+
+5. **把 TypeScript generic 或快照当运行证据**：`expect(x).toMatchSnapshot()` 只比较序列化文本；本页未跑上游测试。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- React / Vue / 普通 Node 项目的单元测试和集成测试
-- 大型 monorepo 已有 Jest 配置——迁移成本不划算就留着
-- 需要 mock 大量模块的场景（自动 mock 比手写 sinon 省 80% 代码）
-- 需要快照测试的 UI 组件库（搭配 `react-test-renderer` 或 [[storybook]]）
+
+- 需要同一套 CLI 同时提供断言、mock、快照和 Node 环境
+- 已有 Jest 配置的 React / Node 仓库，迁移成本高于换 runner
+- 满足当前 package 的 Node 边界：`^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0`
 
 **不适用**：
-- 纯 ESM 项目 + 没有遗产负担——直接选 [[vitest]]
-- 需要极快启动速度的 CI——Jest 启动比 vitest 慢 3-5 倍
-- 浏览器端 E2E 测试——用 [[playwright]] 或 Cypress，Jest 是 Node 进程
-- 简单库想要零依赖——Node 18+ 自带 `node:test` 模块够用
 
-## 历史小故事（可跳过）
+- 想把 runner、断言、mock 拆开组合——那是 [[mocha]] 的模型
+- 主要目标是浏览器 E2E——Jest 默认 `jest-environment-node`
+- 需要在低于 Node 24.9 的环境里用 `require()` 加载 ESM
 
-- **2014 年**：Meta（原 Facebook）的 Christoph Pojer 发起 Jest，为内部 React 项目服务
-- **2016 年**：开源；React 16 默认推荐 Jest，生态爆发
-- **2018 年**：Jest 22 引入 `jest-circus` 新 runner，替换老的 jest-jasmine2
-- **2020 年**：OpenJS Foundation 接管 Jest 治理，从 Meta 独立
-- **2022 年**：[[vitest]] 出现，启动速度 3-5 倍 + 原生 ESM，成为新项目的默认选择
+## 固定版本边界
+
+- 本文绑定 `jestjs/jest@746f2a0f57c56e3bba555280f0587d40f3db95c0`，tag 与 npm `gitHead` 均为 `30.4.2`。
+- 默认 circus timeout 5000ms；`bail` 默认 0；覆盖率 provider 默认 `babel`。
+- ESM / CJS 互操作取决于 Node 的同步 vm module 能力，不能把「Jest 已支持 ESM」写成无条件事实。
+- 本文未安装依赖、运行上游测试或测量启动时间，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **工具一体化 vs UNIX 哲学**：测试栈"小而美组合"在企业里失败，因为配置漂移让新人 onboarding 痛苦；"大而全"反而降低成本——但代价是你被绑架了
-2. **沙箱化模块系统**：测试隔离的本质是**模块状态隔离**，不是函数调用隔离。自实现 require 让 Jest 能塞进 mock / coverage / reset 钩子
-3. **元数据驱动的代码生成**：jest-mock 用 metadata IR 描述模块结构再生成 mock，这种"先描述再生成"模式在编译器、ORM、Schema 验证都能复用
-4. **架构惯性是真护城河**：vitest 启动快但 Jest 在 monorepo 巨型项目里依然主流，迁移成本是真实壁垒
+1. **全家桶降低配置漂移，也把默认值变成合同**——automock、worker、timeout 都以源码默认为准。
+2. **并行是调度结果，不是口号**——`50%` workers 仍可能 in-band。
+3. **模块隔离有两层**——进程/worker 与 registry overlay 不是同一件事。
+4. **测试树必须先登记再执行**——circus 把「定义期」和「执行期」分开。
+
+## 应用型自测
+
+1. 不写 `jest.mock` 时，默认会不会把所有 import 换成 mock？
+2. 只有 1 个测试文件时，Jest 是否一定起多个 worker？
+3. `require()` 一个 ESM 文件，在 Node 22 上是否一定成功？
+
+检查点：
+
+1. 不会。默认 `automock: false`。
+2. 不一定。`shouldRunInBand` 会把单测收回主进程。
+3. 不一定。固定源码要求 Node v24.9+ 才提供 `require(ESM)` 的同步 vm API。
 
 ## 延伸阅读
 
-- 官方文档：[jestjs.io](https://jestjs.io/)（getting-started 30 分钟能跑通第一个测试）
-- 视频教程：[Jest Crash Course](https://www.youtube.com/watch?v=7r4xVDI2vho)（Traversy Media，1 小时入门）
-- 进阶阅读：[Testing JavaScript with Kent C. Dodds](https://testingjavascript.com/)（付费课程，从 Jest 到 React Testing Library 一条龙）
-- 对比阅读：[[vitest]] —— 同类对比看新世代怎么做
-- 相关工具：[[storybook]] —— UI 组件开发 + 视觉快照搭配 Jest
+- 官方文档：[jestjs.io](https://jestjs.io/)
+- 固定源码：[jestjs/jest](https://github.com/jestjs/jest) —— 本文绑定提交 `746f2a0f57c56e3bba555280f0587d40f3db95c0`
+- 共享审查记录：`docs/test-runner-source-review-20260827-ag.md`
+- [[mocha]] —— 只做 runner、默认同进程串行的对照模型
+- [[testing-library]] —— 常和 Jest 一起测 DOM 行为
 
 ## 关联
 
-- [[vitest]] —— Jest 的 ESM 时代继任者，API 几乎照抄
-- [[esbuild]] —— vitest 用它做 transformer，这是 Jest 慢的原因之一
-- [[swc]] —— Rust 写的 transformer，`@swc/jest` 替换 babel-jest 提速 5x
-- [[lerna]] —— Jest monorepo 用它管理 50+ package（同款工具链）
-- [[storybook]] —— UI 组件开发标配，常和 Jest 快照测试组合
-- [[playwright]] —— Jest 不擅长的浏览器 E2E 由它补位
-- [[turborepo]] —— monorepo 里跑 Jest 的并行调度器
+- [[mocha]] —— Jest 对照的「可组合 runner」
+- [[testing-library]] —— 用户视角查询，不负责跑测试
+- [[msw]] —— 网络层 mock，用来替代 `jest.mock('./api')`
+- [[swc]] —— `@swc/jest` 可作为 transform，不是 Jest 默认
+- [[storybook]] —— 组件开发，常和快照测试一起出现
 
 ## 反向链接
 
