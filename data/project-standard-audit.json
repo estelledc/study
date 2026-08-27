@@ -2,10 +2,10 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 962,
     "by_status": {
-      "benchmark-aligned": 34,
-      "needs-evidence": 927
+      "benchmark-aligned": 36,
+      "needs-evidence": 926
     }
   },
   "projects": [
@@ -12240,13 +12240,13 @@
     },
     {
       "slug": "mikro-orm",
-      "title": "MikroORM — Data Mapper Identity Map ORM",
+      "title": "MikroORM — Data Mapper、Identity Map 与 Unit of Work",
       "source": "https://github.com/mikro-orm/mikro-orm",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
@@ -12256,10 +12256,7 @@
         "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary"
-      ]
+      "missing": []
     },
     {
       "slug": "miller",
@@ -12716,6 +12713,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "mongoose",
+      "title": "Mongoose — 给 MongoDB 文档加 Schema 的 ODM",
+      "source": "https://github.com/Automattic/mongoose",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "mosquitto",

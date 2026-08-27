@@ -1,165 +1,183 @@
 ---
-title: MikroORM — Data Mapper Identity Map ORM
+title: MikroORM — Data Mapper、Identity Map 与 Unit of Work
 来源: https://github.com/mikro-orm/mikro-orm
 日期: 2026-05-29
 分类: ORM
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/mikro-orm/mikro-orm
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: fb178b49c36586bc82fed16a8809e125a8c64ffe
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 7.1.14
 ---
 
 ## 是什么
 
-MikroORM 是 Martin Adámek 在 2018 年开始写的 TypeScript ORM，目标是把 PHP 的 Doctrine（一个非常成熟的 ORM）思路搬到 Node.js——所以社区也常叫它"Node 版 Doctrine"。
+MikroORM 是 TypeScript 的 **Data Mapper ORM**。日常类比：entity 只是货物标签，真正调度进出库的是 `EntityManager`——它记得“同一主键只有一个对象”（Identity Map），并在 `flush()` 时把脏变更打包写库（Unit of Work）。
 
-技术定位的一句话：**Data Mapper 模式 + Identity Map + Unit of Work**。这三个名词听起来吓人，但拿同生态的 [[typeorm]] 一对照就清楚了：
+```ts
+import { MikroORM } from "@mikro-orm/postgresql";
 
-- [[typeorm]] 默认是 **Active Record** 风格——每个 entity 类自带 `save()` / `remove()` 方法，对象自己管自己的持久化
-- MikroORM 是 **Data Mapper** 风格——entity 类只描述数据结构，CRUD 全部走一个叫 `EntityManager` 的统一入口
+const orm = await MikroORM.init({
+  entities: [User],
+  dbName: "app",
+});
+const em = orm.em.fork();
+```
 
-日常类比：
-
-- Active Record 像**自己开车**——每个人开自己的车，方向自己掌握
-- Data Mapper 像**滴滴调度**——你只说"我要去哪"，平台统一派车、统一管理路线
-
-这种"统一管理"带来一个关键能力：**Identity Map**——同一行数据在内存里只存一份对象，下次再查直接复用，不会出现"u1 和 u2 是同一个用户但在内存里是两个对象"这种诡异情况。
+固定 `@mikro-orm/core@7.1.14` 是原生 ESM，要求 Node `>= 22.17.0`。`MikroORM.init(options)` 的 `options` 必填；`initSync` 已删除。装饰器不在 core 里，而在 `@mikro-orm/decorators`。
 
 ## 为什么重要
 
-不理解 MikroORM 的存在价值，下面几件事都没法解释：
+不读固定 7.1.14 源码，v6 教程会把你带到已经不存在的入口：
 
-- 为什么有人放着 [[typeorm]] / [[prisma]] 不用，专门选这个下载量明显小于头部 ORM 的选项——**因为它把 PHP Doctrine 用了 10 多年的成熟模式带到了 Node 生态**
-- 为什么 NestJS 官方推荐的 ORM 列表里它能和 [[typeorm]] / [[prisma]] / [[sequelize]] 并列——**它在"复杂领域模型"场景里有独特价值**
-- 为什么"Identity Map"这个概念值得专门记一笔——**它解决的不是性能问题，是一致性问题**：避免同一条数据被加载两次后，改 A 不影响 B 的诡异 bug
-- 为什么从写第一行就强制 TypeScript——**MikroORM 没有"JS-first 然后兼容 TS"的历史包袱**，类型推导从设计开始就是一等公民
+- 为什么 `user.save()` 或 `em.persistAndFlush(user)` 会找不到——entity 不负责持久化，后一个 API 已删除
+- 为什么教程里的 `orm.em.find(...)` 在默认配置下会抛 `cannotUseGlobalContext`
+- 为什么 `@mikro-orm/core` 不再默认给你 `ReflectMetadataProvider`
+- 为什么 SQL 侧要找 `@mikro-orm/sql` / `em.getKysely()`，而不是旧的 Knex 入口
+- 它和 [[mongoose]] 的差别：一个管关系表上的对象身份，一个管 Mongo 文档的 schema hydrate
 
 ## 核心要点
 
-理解 MikroORM 只需要抓住三个核心抽象：
+固定版本的主链可以拆成四层：
 
-1. **EntityManager**：所有数据操作的统一入口。你不会调用 `user.save()`，而是 `em.persist(user)` + `em.flush()`。类比："去前台办理"——前台是唯一的对接窗口
+1. **启动**：`MikroORM.init` 先发现 metadata，再 `createEntityManager()`，并把 `orm.em.global = true`。无文件夹发现的同步路径是 `new MikroORM(options)`。
 
-2. **Identity Map**：每个 EntityManager 内部维护一张"主键 → 对象"的表。同一个 PK 第二次查询时直接返回已有引用，不创建新对象。类比："户口本"——一个身份证号只对应一个人，多次查户口拿到的都是同一份记录
+2. **请求上下文**：`allowGlobalContext` 默认 `false`。HTTP 请求应 `RequestContext.create(orm.em, next)` 或 `orm.em.fork()`。`getContext()` 的查找顺序是 TransactionContext → RequestContext → 当前 EM；校验失败就拒绝全局 EM。
 
-3. **Unit of Work**：你改 entity 字段时不会立刻发 SQL，而是攒着；调用 `em.flush()` 时，框架对比"快照 vs 当前值"算出 dirty 字段，**一次性**把所有 INSERT / UPDATE / DELETE 包在一个 transaction 里发出去。类比："购物车"——逛的时候只往车里加，最后结账一次性付款
+3. **Identity Map + Unit of Work**：`persist` / `remove` 只把实体放进栈并返回 `this`。赋值改字段不会发 SQL。`flush()` 调用 `UnitOfWork.commit()`：算 changeset，必要时开隐式事务，再写库。
 
-## 实践案例
+4. **查询与过滤**：`find` / `findOne` 先 `getContext()`，可能按 `flushMode` 自动 flush，再应用 Filter，然后走 driver。默认 `loadStrategy` 是 `BALANCED`（to-one join，to-many 另查）。软删除是 `@Filter({ default: true })`，不是单独的软删引擎。
 
-### 案例 1：定义 entity（Data Mapper 风格）
+## 实践示例
+
+### 案例 1：v7 的创建 / 修改必须 `persist().flush()`
 
 ```ts
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, PrimaryKey, Property } from "@mikro-orm/decorators/legacy";
 
 @Entity()
-export class User {
+class User {
   @PrimaryKey() id!: number;
   @Property() name!: string;
-  @Property({ unique: true }) email!: string;
 }
+
+const em = orm.em.fork();
+const user = em.create(User, { name: "Ada" });
+await em.persist(user).flush();   // persistAndFlush 已删除
+
+user.name = "Ada Lovelace";
+await em.flush();                 // 只 flush，UoW 自己 diff
 ```
 
-注意：**class 里没有任何 `save()` / `update()` 方法**——这就是 Data Mapper：entity 只管描述自己长什么样。
+`persist` 的 JSDoc 写明：入库发生在事务提交或 `flush()`。legacy 装饰器要显式从 `@mikro-orm/decorators/legacy` 引入；ES 装饰器走 `/es`。
 
-### 案例 2：完整的"创建 + 修改 + 删除"流程
+### 案例 2：全局 EM 默认不能直接查
 
 ```ts
-const em = orm.em.fork();   // 每个请求拿一个独立的 EM
+import { RequestContext } from "@mikro-orm/core";
 
-// 创建
-const user = em.create(User, { name: 'Alice', email: 'a@x.com' });
-await em.persist(user).flush();
-// 实际 SQL：INSERT INTO users (...) VALUES (...)
+function middleware(req, res, next) {
+  RequestContext.create(orm.em, next); // 内部 fork，useContext: true
+}
 
-// 修改（注意：没调任何方法，只是改字段）
-const u = await em.findOne(User, { email: 'a@x.com' });
-u!.name = 'Alice Renamed';
-await em.flush();
-// 实际 SQL：UPDATE users SET name = ? WHERE id = ?
-// Unit of Work 自动 diff 出 name 字段被改了
-
-// 删除
-em.remove(u!);
-await em.flush();
-// 实际 SQL：DELETE FROM users WHERE id = ?
+// 默认 allowGlobalContext: false
+// await orm.em.find(User, {})  → ValidationError.cannotUseGlobalContext()
 ```
 
-最反直觉的是**修改流程**——你只是赋了一下值，框架居然知道要发 UPDATE。这是 Identity Map 配 Unit of Work 的魔法：进 Identity Map 时框架拍了张快照，flush 时对比快照得出 dirty 字段。
+`fork()` 默认 `clear: true`，得到空 Identity Map。跨请求复用同一个 EM，会把上一请求的托管对象带到下一请求。
 
-### 案例 3：Filter / Soft Delete 是一等公民
-
-很多 ORM 把"软删除"当成扩展插件，MikroORM 把它做进核心：
+### 案例 3：Filter 是默认 WHERE，不是隐式删行
 
 ```ts
 @Entity()
-@Filter({ name: 'notDeleted', cond: { deletedAt: null }, default: true })
-export class Post {
+@Filter({ name: "notDeleted", cond: { deletedAt: null }, default: true })
+class Post {
   @PrimaryKey() id!: number;
   @Property({ nullable: true }) deletedAt?: Date;
 }
 
-// 默认查询自动加 WHERE deleted_at IS NULL
 const posts = await em.find(Post, {});
-// 想看已删除的，临时关 filter
 const all = await em.find(Post, {}, { filters: { notDeleted: false } });
 ```
 
-写一次 filter，全项目所有查询自动带上——这种"横切关注点"的能力是 Doctrine 风格 ORM 的强项。
+`applyFilters()` 把生效条件并进 `$and`。这能模拟软删除，但删除动作仍是你自己写 `deletedAt` 或 `em.remove()`。
 
 ## 踩过的坑
 
-1. **学习曲线**：从 Active Record 习惯（[[sequelize]] / [[typeorm]] AR 模式）转过来，会一直问"我改了字段怎么没自动 save？"——你忘了调 `em.flush()`。反过来 Hibernate / Doctrine 的老用户上手丝滑。第一次学 MikroORM 比学 [[prisma]] 痛苦得多
-
-2. **Strict mode vs allowGlobalContext**：默认配置下，跨请求共享同一个 `orm.em` 会抛错（因为 Identity Map 跨请求会串味）。教程里图省事直接用 `orm.em` 跑得通，上生产立刻爆——必须用 `em.fork()` 给每个请求一份独立 EM，或者打开 `allowGlobalContext: true`（**不推荐**）
-
-3. **多 Connection / 多请求场景**：在 Express 里要写中间件 `RequestContext.create(orm.em, next)`，在 NestJS 里要装 `@mikro-orm/nestjs`（自动处理）。新手 90% 第一次会忘，表现是"某个请求查到的数据是上个请求改过的"——典型的 Identity Map 跨请求污染
-
-4. **Dynamic schema (multi-tenancy) 配置复杂**：多租户场景下每个租户连不同 schema / 不同库，需要 per-request 切换 connection + 切换 metadata。MikroORM 支持，但配置比 [[prisma]] 麻烦得多——要自己管 connection pool + 自己处理 fork 时机
+1. **继续调用 `persistAndFlush` / `removeAndFlush`**：升级文档写明已删除，应 `persist(entity).flush()`。
+2. **把 `orm.em` 当请求单例**：默认全局上下文守卫会抛错；打开 `allowGlobalContext` 只是关掉警报。
+3. **以为装饰器还从 `@mikro-orm/core` 出来**：v7 要装 `@mikro-orm/decorators`，legacy 反射还要自己挂 `ReflectMetadataProvider`。
+4. **把 Filter 当成“框架替你做软删除”**：它只改查询条件。
+5. **用字符串实体名 `em.find('User')`**：v7 要求 class 或 `EntitySchema` 引用。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 复杂领域模型（DDD 风格的项目）——Data Mapper + Identity Map 是这类项目的天然朋友
-- NestJS + 长生命周期 server 项目——`@mikro-orm/nestjs` 集成丝滑
-- 已有 Java Hibernate / PHP Doctrine 经验的团队——概念无缝迁移
-- 需要"软删除 / 多租户 filter / 乐观锁"这些企业级特性的场景
+- 长期运行的 Node 22.17+ 服务，需要 Identity Map 保持对象身份
+- 已有 Doctrine / Hibernate 经验，能接受 `flush()` 才写库
+- PostgreSQL / MySQL / SQLite / MongoDB 等官方 driver 包，并按 ESM `exports` 解析模块
 
 **不适用**：
 
-- Edge / Serverless 场景——Identity Map + 长连接 pool 哲学和 Edge 短生命周期不匹配，选 [[drizzle]] / [[kysely]]
-- 简单 CRUD 项目——杀鸡用牛刀，[[prisma]] 心智负担更低
-- 团队完全没接触过 Data Mapper / Unit of Work 概念，又赶项目交付——学习成本会拖进度
+- Mongo 文档 + schema hydrate，且团队已在 [[mongoose]] 上
+- Edge / 短生命周期函数，不想维护 per-request EM
+- 只要 SQL builder，不要托管实体 → [[kysely]] / [[drizzle]]
+- 还停在 Node 20 或 `moduleResolution: "node"` 的旧 Nest 默认配置
 
-## 历史小故事
+## 固定版本边界
 
-- **2018 年**：Martin Adámek 开始写 v0.x，初心很朴素——"我用过 PHP Doctrine，搬到 Node 怎么没人做过？"
-- **2020-2022 年**：v3 → v4 → v5，逐步把 NestJS 集成、TypeScript decorator metadata、ts-morph 编译期方案做完整
-- **2024 年**：v6 stable，加入 MS SQL 支持，metadata 方案趋稳。和 [[prisma]] / [[drizzle]] 各占细分市场，没打算抢 CRUD 用户
+- 本文绑定 `mikro-orm/mikro-orm@fb178b49...`，与 npm `@mikro-orm/core@7.1.14` 的 `gitHead` 一致。
+- annotated tag `v7.1.14` 指向父提交 `cd79b2c3...`；两者之间只有版本/changelog/lockfile，无运行时 `.ts` / `.js` diff。
+- Node `>= 22.17.0`；文档要求 TypeScript 5.8+ 与 `node20` / `nodenext` / `bundler`。
+- SQL 底座是 `@mikro-orm/sql`（Kysely）；未审查 `@mikro-orm/nestjs` 或各 driver 的 SQL 方言细节。
+- 未安装依赖、连接数据库或运行测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **ORM 不是只有一种风格**——Active Record（自己管自己） vs Data Mapper（统一管理）是两种哲学，没有谁更先进，看项目复杂度
-2. **Identity Map 是"对象一致性"原语**——它解决的不是性能问题，是逻辑一致性问题；同一行数据在内存里只有一份引用，省掉一大堆"我改了 A 怎么 B 没变"的 bug
-3. **Unit of Work 把"自动 vs 手动"推到极端**——你只改字段，flush 时框架自己知道。这是省心，但代价是"为什么没改的字段也被 UPDATE 了？"这种调试问题
-4. **TypeScript 一等公民比"兼容 TS"重要得多**——MikroORM 从设计起就只考虑 TS，没有 JS-first 历史包袱，类型推导深度远超半路出家的 ORM
+1. **Data Mapper 把“改字段”和“写库”拆开**——`flush()` 才是提交点。
+2. **Identity Map 是一致性原语**——同一 EM 里同一主键不应出现两份对象。
+3. **默认全局 EM 不安全**——v7 用 `allowGlobalContext: false` 把这件事变成硬错误。
+4. **装饰器、反射、SQL 引擎都是可替换插件**——core 不再把它们藏成“装上就能用的默认值”。
+
+## 应用型自测
+
+1. 改了托管 entity 的 `name`，不调用任何方法。数据库会更新吗？
+2. 默认配置下直接 `await orm.em.find(User, {})`，会怎样？
+3. `em.persistAndFlush(user)` 在固定 7.1.14 还存在吗？
+
+检查点：
+
+1. 不会。变更只在内存，必须 `flush()`。
+2. 抛 `cannotUseGlobalContext`，除非已有 RequestContext / TransactionContext 或打开 `allowGlobalContext`。
+3. 不存在。应 `await em.persist(user).flush()`。
 
 ## 延伸阅读
 
-- 官方文档：[mikro-orm.io](https://mikro-orm.io)（章节"Identity Map"和"Unit of Work"是核心，先读这两个）
-- 概念前置：Martin Fowler 《Patterns of Enterprise Application Architecture》中的 Data Mapper / Identity Map / Unit of Work 三章——所有现代 ORM 的理论源头
-- [[typeorm]] —— 同样 decorator 风格，但走 Active Record 路线，对照学最直观
-- [[prisma]] —— 无状态 client 风格，和 MikroORM 是两条不同道路
-- [[drizzle]] —— TS-first SQL builder，"不要 ORM"的另一个答案
+- 官方文档：[mikro-orm.io](https://mikro-orm.io)
+- 固定源码：[mikro-orm/mikro-orm](https://github.com/mikro-orm/mikro-orm) —— 本文绑定 `fb178b49c36586bc82fed16a8809e125a8c64ffe`
+- 审查记录：仓库内 `docs/node-orm-source-review-20260827-dd.md`
+- [[mongoose]] —— 文档 ODM，对照“对象身份 vs schema hydrate”
+- [[typeorm]] —— 同装饰器路线，但 Active Record 与 Data Mapper 混用
 
 ## 关联
 
-- [[typeorm]] —— 同 decorator 但 Active Record 风格，没有 Identity Map
-- [[prisma]] —— 无状态 client，每次查询返回 plain object，无对象一致性
-- [[drizzle]] —— Query builder 风格，根本没有 entity 概念，Edge 友好
-- [[sequelize]] —— ActiveRecord 老前辈，和 MikroORM 走相反路线
-- [[kysely]] —— 纯 SQL builder，"不要 ORM"的代表
-- [[zod]] —— 现代 input 校验，取代 ORM 内置 validate 函数
+- [[mongoose]] —— MongoDB ODM；没有 Unit of Work flush 合同
+- [[typeorm]] —— 装饰器 ORM，默认更偏 Active Record
+- [[prisma]] —— 无状态 client，每次查询新对象
+- [[kysely]] —— MikroORM v7 SQL 底座用的查询构建器
+- [[drizzle]] —— 另一条 TS-first SQL 路线
+- [[sequelize]] —— Active Record 老路径
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）

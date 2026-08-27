@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 961 个项目的分块地图 · 稳定 taxonomy · 自动生成
+description: 962 个项目的分块地图 · 稳定 taxonomy · 自动生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -12,10 +12,10 @@ sidebar:
 ## 总览
 
 <div class="study-stats-strip">
-  <div><strong>961</strong><span>项目总数</span></div>
-  <div><strong>933</strong><span>已有规范主题</span></div>
+  <div><strong>962</strong><span>项目总数</span></div>
+  <div><strong>934</strong><span>已有规范主题</span></div>
   <div><strong>28</strong><span>暂未收纳进主题路线</span></div>
-  <div><strong>97.1%</strong><span>分类覆盖率（933 / 961，已分类 / 总数）</span></div>
+  <div><strong>97.1%</strong><span>分类覆盖率（934 / 962，已分类 / 总数）</span></div>
 </div>
 
 ## 先选一条学习路径
@@ -48,7 +48,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 日期时间 | Date and Time | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-date-and-time-01/) |
 | i18n 国际化 | Internationalization | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-internationalization-01/) |
 | 构建工具 / Bundler | Build Tools and Bundlers | 14 | [第 1/1 组](/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/) |
-| ORM / DB 客户端 | ORM and Database Clients | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-orm-and-database-clients-01/) |
+| ORM / DB 客户端 | ORM and Database Clients | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-orm-and-database-clients-01/) |
 | 数据库本体 / 存储引擎 | Databases and Storage Engines | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-databases-and-storage-engines-01/) |
 | DevOps / 容器 / 运维 | DevOps Containers and Operations | 56 | [第 1/1 组](/study/atlas/projects/topic-projects-devops-containers-and-operations-01/) |
 | 监控 / 时序 | Monitoring and Time Series | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-monitoring-and-time-series-01/) |
@@ -97,4 +97,4 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 - difficulty 未知：961
 - description 为空：957
-- sidecar 主键：961 个唯一 `area::slug`
+- sidecar 主键：962 个唯一 `area::slug`

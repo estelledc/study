@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -50700,7 +50700,7 @@
       "id": "projects::mikro-orm",
       "area": "projects",
       "slug": "mikro-orm",
-      "title": "MikroORM — Data Mapper Identity Map ORM",
+      "title": "MikroORM — Data Mapper、Identity Map 与 Unit of Work",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -50713,13 +50713,13 @@
         "raw_category": "ORM"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/mikro-orm/",
       "atlas": {
@@ -51324,6 +51324,38 @@
       "atlas": {
         "chunk_id": "topic-projects-databases-and-storage-engines-01",
         "chunk_route": "/study/atlas/projects/topic-projects-databases-and-storage-engines-01/"
+      }
+    },
+    {
+      "id": "projects::mongoose",
+      "area": "projects",
+      "slug": "mongoose",
+      "title": "Mongoose — 给 MongoDB 文档加 Schema 的 ODM",
+      "description": "MongoDB document ODM。Schema 编译成 Model；save 默认校验，update 查询默认不校验。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-orm-and-database-clients",
+        "matched_category": "orm",
+        "raw_category": "ORM"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mongoose/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
       }
     },
     {
@@ -65825,7 +65857,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/",
-      "entries": 8
+      "entries": 9
     },
     {
       "id": "topic-projects-state-management-01",

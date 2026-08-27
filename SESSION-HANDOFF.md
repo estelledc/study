@@ -2,6 +2,19 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DD · mongoose / MikroORM
+
+- status：`running`；writer epoch 进行中，目标为一份可审查 PR，不 merge。
+- 起始 ref：`7a2384d09`（`origin/main`，PR #54 merge）。
+- objective：把 mongoose 与 mikro-orm 绑定到可达静态源码，产出 `docs/node-orm-source-review-20260827-dd.md`，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `mongoose` 页、重写 `mikro-orm` 页、共享 DD 文档、2 份 generation 1 receipt、atlas / note-index / project-standard / site-state / 公开规模文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未连库、未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-dd-2026-08-27`。
+- detector fingerprint：仓库无 mongoose 页；mikro-orm 缺 pinned revision / evidence boundary，且正文仍写 v6 的 `persistAndFlush`、core 装饰器与默认可共用 `orm.em`。
+- external_outcome：一份 PR，不 merge；D 轴在 merge/deploy 前不变。
+- budget：2 页 + 1 份 DD 文档；默认 3 切片 / 120 分钟；单 writer。
+- stop_conditions：provenance 不可达、只能靠猜测、需要改政策/阈值/baseline，或被要求 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
