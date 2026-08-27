@@ -20,13 +20,14 @@
   - 两页 `quality-gate.mjs`：全部 pass、0 advisory（153 / 154 行）。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:counts` / `audit:content-contract` blocking 0 / `audit:project-standard` CURRENT / `audit:site-state` current。
+  - `STUDY_CHANGED_FROM=42caf48968 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态源码页；单 writer。
 - blocker（先于本切片存在，需人工处置）：`benchmark-site --compare` 在 main 已超 tracked_files baseline；本轮未改 baseline、阈值或证据布局。
 - stop conditions：本轮已完成；merge 与 deploy 均需单独授权。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 对规模 baseline 的处置决定。
 - 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`；PR 状态用 GitHub 查看。
 - superseded_by：`none`。
-- 验证结果：定向 quality-gate / receipt / counts / contract / project-standard / site-state 已通过；全量 `verify:ci` 见本分支后续记录。
+- 验证结果：定向 quality-gate / receipt / counts / contract / project-standard / site-state 已通过；全量 `verify:ci` 全绿。构建产物可见两页标题、固定 SHA 与 `UNVERIFIED`。未 merge。
 - 不在 handoff 中复制易过期数字或 ETA。
 
 ## 2026-08-27 表单主题组收口 epoch 8
