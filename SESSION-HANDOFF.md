@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DF Farm / Rsbuild
+
+- status：writer epoch `complete`；等待 PR review。未 merge、未 deploy。
+- 起始 ref：`a910f11f2`（`origin/main`，PR #53 merge）。
+- objective：按用户指定目标绑定 Farm 与 Rsbuild 到固定 revision 的 study-v2 页；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `farm` / `rsbuild` 两页、2 份 generation 1 receipt、`docs/bundler-farm-rsbuild-source-review-20260827-df.md`、taxonomy 分类、派生 atlas / site-state / 公开计数、本 handoff；本机 gitignored blob-filtered clone。未安装上游依赖、未跑上游测试/CLI/bundle。
+- activated_by：`explicit-user-parallel-writer-df-20260827`。
+- detector fingerprint：目标 slug 在 `origin/main` 不存在；vite/webpack/esbuild/swc/oxc/rolldown/rollup/rspack/bun 已被其他 parallel writer 占用，因此按指定目标新建而不是改写占用页。
+- external delta：本分支 push + 1 个 PR（授权范围内）；未 merge、未 deploy，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `farm` 绑定 lightweight tag `v1.7.11` → `549e29486b286c7d0488612eacb6bd4ed0884abe`。记录 Rust build/generate、first-wins resolve、Vite `enforce`→priority，以及 `compile()` 与 `update()` 队列合同。披露 `@farmfe/cli@1.0.5` 与 core `1.7.11` 版本字段不同、npm 无 `gitHead`。
+  2. `rsbuild` 绑定 lightweight tag `v2.2.0` → `f274e3eaa08e28f2449d1abd7592c34796072d74`。记录默认插件、`camelCase(output.target)` 默认环境、`tools.rspack` 与 `setup` 分流、`initConfigs` action 绑定与 Rspack `>=2.0.0`。披露 `@rsbuild/plugin-react@2.1.0`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生首页“已对齐标杆标准”32 → 34。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest / revision / 审查文档 digest 一致；`audit:counts` 与 content-contract blocking 0。全量 `verify:ci` 在 push 后继续跑。
+- budget：2 个 blob-filtered worktree + 2 页 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超阈值，政策禁止自动刷新 baseline；本轮只新增指定页与证据文件。
+- stop conditions：本轮已完成；merge 与 deploy 未授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=a910f11f2e9df8e0ce23e1e38b62d3e60cfc1f3f npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
