@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IP：oxc-parser + swc
 
-- status：writer epoch `running` → 本地变更已齐，待 push / PR / `verify:ci`。
+- status：writer epoch `complete`；PR #313 待 review，未 merge。
 - 起始 ref：`0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465`（`origin/main`）。
 - objective：为缺失的 `oxc-parser` 新建、将 legacy `swc` 迁到固定 revision 的 `study-v2` 静态审查；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：新页 `oxc-parser`、迁移 `swc`、共享审查文档 `docs/js-transform-source-review-20260827-ip.md`、2 份 generation 1 receipt、taxonomy 一条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
@@ -21,11 +21,12 @@
   - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 1 新建 + 1 迁移；单 writer。
-- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。开放 PR #83 也改 `swc.md`。
-- stop conditions：本 epoch 完成后不得继续发明下一对。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。开放草稿 PR #83 也改 `swc.md`。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/313 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
