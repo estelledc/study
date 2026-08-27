@@ -15,7 +15,7 @@
   1. `k3s` 绑定轻量 tag `v1.36.3+k3s1` → `5aed4d7beddeb3e67120da477c876ac9efd70318`；纠正默认 Kine/SQLite、`--cluster-init` 嵌入 etcd、`DisableItems` 与 README「< 100 MB」。
   2. `kind` 绑定 annotated tag `v0.33.0` 剥皮提交 `407a9675e6d9af1200b5f57f9ca52ec6cdacce74`；默认节点镜像为 `kindest/node:v1.37.0@sha256:a1ed56…`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` / `audit:project-standard` CURRENT（benchmark-aligned=87）；`git diff --check` 通过。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` / `audit:project-standard` CURRENT（benchmark-aligned=87）；`STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci` 全绿。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得改其他 writer 正在写的页面。
