@@ -1800,6 +1800,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::bookshelf",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
       "note_id": "projects::boxen",
       "topic_id": "projects-terminal-tools"
     },
@@ -2222,6 +2226,10 @@
     {
       "note_id": "projects::nx",
       "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::objection",
+      "topic_id": "projects-orm-and-database-clients"
     },
     {
       "note_id": "projects::observable-plot",

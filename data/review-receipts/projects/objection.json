@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "objection",
+    "digest_sha256": "68d2696711137b9c59997d23626d1b456610ef2d01a6d5d437534797ea3ab6a6"
+  },
+  "source_revision": "76fb48ee56d37f68849009e78964a235ea7e1e17",
+  "research_input_sha256": "92b72d1c8e0ca1d5c9547d382f674dc2e56191e8cd12ad9a524b7197c3dac26c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Model.query builder construction, execute-on-then, one-write-per-builder, graph/eager algorithms, and patch Ajv defaults."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Model, QueryBuilder, AjvValidator, GraphOptions, transaction and WhereIn batch sizes were inspected; upstream tests and SQL were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to objection 3.1.5 tag 76fb48ee; npm gitHead matches the tag and was not invented."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}

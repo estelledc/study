@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -37289,6 +37289,37 @@
       }
     },
     {
+      "id": "projects::bookshelf",
+      "area": "projects",
+      "slug": "bookshelf",
+      "title": "Bookshelf — 建立在 Knex 上的 Backbone 风格 ORM",
+      "description": "构造时先认 knex 函数名，再把 fetch 和 save 做成带事件的实例方法。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "ORM"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/bookshelf/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::bookstack",
       "area": "projects",
       "slug": "bookstack",
@@ -52815,6 +52846,37 @@
       }
     },
     {
+      "id": "projects::objection",
+      "area": "projects",
+      "slug": "objection",
+      "title": "Objection — 建立在 Knex 上的 SQL 友好 ORM",
+      "description": "query() 先拼 QueryBuilder，等到 then 才克隆执行；图操作和校验都挂在这条链上。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "ORM"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/objection/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::obs-studio",
       "area": "projects",
       "slug": "obs-studio",
@@ -65825,7 +65887,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/",
-      "entries": 8
+      "entries": 10
     },
     {
       "id": "topic-projects-state-management-01",
