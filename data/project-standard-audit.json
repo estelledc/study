@@ -10409,6 +10409,26 @@
       ]
     },
     {
+      "slug": "lilconfig",
+      "title": "lilconfig — 零依赖的 cosmiconfig 子集",
+      "source": "https://github.com/antonk52/lilconfig",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "lima",
       "title": "Lima — macOS 上跑 Linux 虚拟机的轻量 CLI",
       "source": "https://github.com/lima-vm/lima",
@@ -20799,6 +20819,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "unconfig",
+      "title": "unconfig — 给工具作者的多源配置加载器",
+      "source": "https://github.com/antfu-collective/unconfig",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "unified",

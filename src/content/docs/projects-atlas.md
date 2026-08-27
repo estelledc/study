@@ -47,7 +47,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | HTTP 客户端 | HTTP Clients | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-http-clients-01/) |
 | 日期时间 | Date and Time | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-date-and-time-01/) |
 | i18n 国际化 | Internationalization | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-internationalization-01/) |
-| 构建工具 / Bundler | Build Tools and Bundlers | 15 | [第 1/1 组](/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/) |
+| 构建工具 / Bundler | Build Tools and Bundlers | 17 | [第 1/1 组](/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/) |
 | ORM / DB 客户端 | ORM and Database Clients | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-orm-and-database-clients-01/) |
 | 数据库本体 / 存储引擎 | Databases and Storage Engines | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-databases-and-storage-engines-01/) |
 | DevOps / 容器 / 运维 | DevOps Containers and Operations | 56 | [第 1/1 组](/study/atlas/projects/topic-projects-devops-containers-and-operations-01/) |

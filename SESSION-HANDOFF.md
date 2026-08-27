@@ -1,6 +1,29 @@
 # Study 操作交接入口
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
+> 不在 handoff 中复制易过期数字或 ETA。
+
+## 2026-08-27 PARALLEL writer GI：unconfig + lilconfig 静态审查
+
+- supervisor 状态：writer epoch `complete`；等待 PR review。未 merge、未 deploy。
+- status：`running` 已收口为本轮本地 change set + 授权中的单 PR。
+- 起始 ref：`9adc8b99165dfaf015777d5ca88c629ebfa961aa`（当时的 `origin/main`，#80）。
+- objective：为 config-discover 双子 `unconfig` 与 `lilconfig` 新增 study-v2 页，证据边界 STATIC_REVIEW / `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/config-discover-source-review-20260827-gi.md`、taxonomy / atlas / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gi-20260827`。
+- detector fingerprint：仓库无 `unconfig` / `lilconfig` 页；该主题组缺少固定 revision 的 config-discover 对照。
+- external delta 计数：本轮授权 1 个 PR（push + create PR）；未授权 merge / deploy。
+- 已完成切片：
+  1. `unconfig` 绑定 `antfu-collective/unconfig` tag `v7.5.0` → `04fb7ab57d616db7a89e8a9c3b14d84b91cb74ea`；npm 无 `gitHead`。
+  2. `lilconfig` 绑定 `antonk52/lilconfig` tag `v3.1.3` → `77d7186c37a3838c85d03e126172f82a8a474ece`；npm `gitHead` 一致。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；taxonomy 归入 `projects-build-tools-and-bundlers`。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt `UNVERIFIED` 且 digest 对齐；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:site-state` / `audit:counts` 通过。`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+- budget：2 个小型 blob-filtered worktree + 2 页新增；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一页一对、一 PR、不 merge。canonical/revision 不唯一或只能放宽门禁时停。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：用 GitHub 查看 PR CI；未授权前不要 merge。
+- superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
