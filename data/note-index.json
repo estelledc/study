@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -40047,9 +40047,9 @@
       "id": "projects::dash.js",
       "area": "projects",
       "slug": "dash.js",
-      "title": "dash.js — Web DASH 播放器官方参考实现",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "dash.js — DASH-IF 的 Web MPEG-DASH 参考播放器",
+      "description": "介绍固定版本的 DASH 参考播放器如何用 FactoryMaker、MPD 与动态 Throughput/BOLA 规则把 mpd 喂给 MediaSource",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-communication-and-media"
       ],
@@ -40061,13 +40061,13 @@
         "raw_category": "media"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/dash.js/",
       "atlas": {
@@ -45250,9 +45250,9 @@
       "id": "projects::hls.js",
       "area": "projects",
       "slug": "hls.js",
-      "title": "hls.js — 浏览器里的 HLS 播放库",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "hls.js — 用 MSE 在浏览器里播 HLS 的客户端",
+      "description": "介绍固定版本的 HLS 客户端如何用播放列表、分片 transmux 和 EWMA ABR 把 m3u8 喂给 MediaSource",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-communication-and-media"
       ],
@@ -45264,13 +45264,13 @@
         "raw_category": "media"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/hls.js/",
       "atlas": {

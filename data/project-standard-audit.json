@@ -4,8 +4,8 @@
   "summary": {
     "total": 967,
     "by_status": {
-      "benchmark-aligned": 85,
-      "needs-evidence": 882
+      "benchmark-aligned": 87,
+      "needs-evidence": 880
     }
   },
   "projects": [
@@ -4157,27 +4157,23 @@
     },
     {
       "slug": "dash.js",
-      "title": "dash.js — Web DASH 播放器官方参考实现",
+      "title": "dash.js — DASH-IF 的 Web MPEG-DASH 参考播放器",
       "source": "https://github.com/Dash-Industry-Forum/dash.js",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "dash",
@@ -8062,27 +8058,23 @@
     },
     {
       "slug": "hls.js",
-      "title": "hls.js — 浏览器里的 HLS 播放库",
+      "title": "hls.js — 用 MSE 在浏览器里播 HLS 的客户端",
       "source": "https://github.com/video-dev/hls.js",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "hnswlib",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "hls.js",
+    "digest_sha256": "588c04629fdbb0efddccb82562e56b11753e000c34ccfd2bfa071d69da81d571"
+  },
+  "source_revision": "565f70ee8e074a0fbe82ed80dfb7fac0697bbb8a",
+  "research_input_sha256": "76372bdd1c1f78678b409d259de1127f6ae485417ecf39f5fedd6bd3b0e3923b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-id",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates MSE-only isMSESupported from codec-aware isSupported, and currentLevel flush from nextLevel."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-id",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "hls.ts loadSource/attachMedia, AbrController EWMA, ErrorController ResetMediaSource, and transmuxer worker were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-id",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds annotated tag v1.7.1 peel; npm gitHead matches; source package.json has no version field; live delay was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:00:00.000Z"
+}

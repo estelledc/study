@@ -2,6 +2,20 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer ID：hls.js + dash.js
+
+- status：`running`
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）；分支 `cursor/adaptive-video-hls-dash-id-94fd`。
+- objective：为缺失固定 revision 的自适应视频双子补齐 `hls.js` 与 `dash.js` 两页，绑定可达静态 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇既有项目页、共享审查文档 `docs/adaptive-video-source-review-20260827-id.md`、2 份 generation 1 receipt、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未改其他 writer 拥有的项目页。未安装上游依赖、未运行上游测试、未播真实流。
+- activated_by：`explicit-user-parallel-writer-id-2026-08-27`（由 HQ 改号，因 HQ 已被 escape-html + escape-goat 占用）。
+- detector fingerprint：两页 `needs-evidence`，缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放 PR 未占用这两个 slug。
+- external_outcome：一个 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer；最多 3 切片。
+- acceptance_checks：两页 `quality-gate.mjs` pass；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:content-contract` blocking 0；`git diff --check`；跨层后 `STUDY_CHANGED_FROM` + `verify:ci`。
+- stop_conditions：revision 不可达、与其他 writer 撞页、只能靠放宽门禁继续、或本对完成后停止。不得继续发明下一对。
+- superseded_by：`none`（身份从 HQ 改为 ID，目标未变）。
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

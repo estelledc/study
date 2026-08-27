@@ -21,7 +21,7 @@ sidebar:
 | [COLMAP — 多视图 SfM/MVS 重建](/study/projects/colmap/) | `colmap` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) | `conduit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | `conversations` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [dash.js — Web DASH 播放器官方参考实现](/study/projects/dash.js/) | `dash.js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [dash.js — DASH-IF 的 Web MPEG-DASH 参考播放器](/study/projects/dash.js/) | `dash.js` | intermediate | UNVERIFIED | 介绍固定版本的 DASH 参考播放器如何用 FactoryMaker、MPD 与动态 Throughput/BOLA 规则把 mpd 喂给 MediaSource |
 | [dav1d — 纯 C 的超快 AV1 解码器](/study/projects/dav1d/) | `dav1d` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | `dendrite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) | `discord-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -37,7 +37,7 @@ sidebar:
 | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | `freeswitch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [HandBrake — 把视频转码变成点两下鼠标的事](/study/projects/handbrake/) | `handbrake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | `haraka` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [hls.js — 浏览器里的 HLS 播放库](/study/projects/hls.js/) | `hls.js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [hls.js — 用 MSE 在浏览器里播 HLS 的客户端](/study/projects/hls.js/) | `hls.js` | intermediate | UNVERIFIED | 介绍固定版本的 HLS 客户端如何用播放列表、分片 transmux 和 EWMA ABR 把 m3u8 喂给 MediaSource |
 | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) | `imagemagick` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [InsightFace — 人脸识别 / 检测 SOTA 工具箱](/study/projects/insightface/) | `insightface` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Jellyfin — 自托管媒体服务器](/study/projects/jellyfin/) | `jellyfin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -1,75 +1,80 @@
 ---
-title: dash.js — Web DASH 播放器官方参考实现
-来源: 'https://github.com/Dash-Industry-Forum/dash.js'
-日期: 2026-07-09
+title: dash.js — DASH-IF 的 Web MPEG-DASH 参考播放器
+description: 介绍固定版本的 DASH 参考播放器如何用 FactoryMaker、MPD 与动态 Throughput/BOLA 规则把 mpd 喂给 MediaSource
+来源: https://github.com/Dash-Industry-Forum/dash.js
+日期: 2026-08-27
 分类: media
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/Dash-Industry-Forum/dash.js
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: a9a8542cd7e6257116be4046ebf16ac49e1cec91
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.2.1
 ---
 
 ## 是什么
 
-dash.js 是 DASH Industry Forum 维护的 **Web 端 MPEG-DASH 播放器参考实现**。日常类比：普通 `<video>` 像你把一整盘菜端上桌；DASH 像自助餐台，播放器每隔几秒根据胃口和排队情况，决定拿高清、标清还是先少拿一点。
+dash.js 是 DASH Industry Forum 维护的 **Web 端 MPEG-DASH 参考播放器**。日常类比：普通 `<video>` 像一次端上一整盘菜；DASH 像自助餐台，播放器隔几秒按胃口和排队情况决定拿哪一档。
 
-它读的不是一个完整 MP4，而是一个 `.mpd` 清单和一堆小媒体片段。清单告诉播放器："这里有 360p、720p、1080p；每段几秒；音频和字幕在哪里。" dash.js 负责下载片段、喂给浏览器的 MSE，再让 `<video>` 像播放普通视频一样播出来。
+你写：
 
-最小心智模型：
+```js
+import dashjs from 'dashjs';
 
-```html
-<video id="player" controls></video>
-<script src="https://cdn.dashjs.org/latest/modern/umd/dash.all.min.js"></script>
-<script>
-  const url = 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd'
-  const player = dashjs.MediaPlayer().create()
-  player.initialize(document.querySelector('#player'), url, true)
-</script>
+const player = dashjs.MediaPlayer().create();
+player.initialize(
+  document.querySelector('video'),
+  'https://example.com/manifest.mpd',
+  true,
+);
 ```
 
-一句话：dash.js 不是"视频文件处理器"，而是"浏览器里会自己换码率、管缓冲、读 DASH 清单的播放控制器"。
+`MediaPlayer` 是 `FactoryMaker` 的 class factory：先 `MediaPlayer()` 拿到工厂，再 `.create()` 得到实例。`initialize(view, source, autoPlay, startTime = NaN)` 会检查 `capabilities.supportsMediaSource()`，再 `attachView` / `attachSource`。npm 包名是 `dashjs`，不是带点的 `dash.js`。
 
 ## 为什么重要
 
-不理解 dash.js，下面这些事都很难解释：
+不理解固定 5.2.1 的工厂、MPD 和 ABR 规则开关，下面这些事会对不上：
 
-- 为什么视频网站不会给每个人都发同一个 4K 文件，而是按网络情况切换不同码率
-- 为什么一个直播延迟 3 秒还是 30 秒，不只取决于 CDN，也取决于播放器怎么追 live edge
-- 为什么 ABR 算法要同时看带宽和缓冲区，只看下载速度会在弱网里来回抖
-- 为什么 DASH-IF 需要一个参考播放器：标准写得再清楚，也要有可运行实现验证细节
+- 为什么视频网站不给每个人发同一个 4K 文件，而是按缓冲和吞吐换 Representation
+- 为什么默认同时打开 Throughput 和 BOLA，实际每个媒体类型同一时刻只用其中一条
+- 为什么只写 `liveDelay: 4` 并不等于仓库默认低延迟配置
+- 为什么 `reset()` 还能再挂源，而 `destroy()` 会拆掉整个 context 的单例
 
 ## 核心要点
 
-dash.js 的核心可以压缩成 **三件事**：
+固定 5.2.1 的主链可以拆成五步：
 
-1. **MPD 是菜单**：MPD 清单列出所有可选 Representation，比如 480p/600k、720p/2.5M。类比：餐厅菜单写着有哪些套餐、价格和出餐节奏，播放器照着菜单点菜。
+1. **工厂先于实例**：`dashjs.MediaPlayer().create()` 走 `FactoryMaker.getClassFactory`。`MediaPlayerFactory.create(video)` 是另一条捷径：它扫描 `application/dash+xml` 的 `<source>`，并记住 `video._dashjs_player`。
 
-2. **MSE 是上菜口**：dash.js 用 Fetch/XHR 拿到媒体片段，再通过 Media Source Extensions append 到 `SourceBuffer`。类比：厨房分批出菜，服务员按顺序放到传送带，客人看到的是连续一餐。
+2. **initialize 先查 MSE**：没有 MediaSource 就报 `CAPABILITY_MEDIASOURCE_ERROR` 并返回。通过后装配 `AbrController`、`StreamController`、`CatchupController`、`DashAdapter` 等，再按参数挂 view / source。`autoPlay` 缺省当成 `true`。
 
-3. **ABR 是调度员**：每下载一段，播放器估算吞吐、查看 buffer、观察掉帧，再决定下一段用哪个码率。类比：高速路导航不是只看最高限速，还要看拥堵、油量和前方出口。
+3. **MPD 是菜单，MSE 是上菜口**：`.mpd` 列出 Period / AdaptationSet / Representation。`ManifestLoader` 拉清单，`StreamController` 按模板或时间线取片段，再 append 到 `SourceBuffer`。
 
-这也是它适合学习 ABR 的原因：ThroughputRule、BolaRule、L2A、LoL+ 都能在官方文档和样例里看到入口，抽象比生产闭源播放器透明。
+4. **ABR 是可开关的规则表**：默认 `throughputRule`、`bolaRule`、`insufficientBufferRule`、`switchHistoryRule`、`abandonRequestsRule` 为 active；`droppedFramesRule`、`l2ARule`、`loLPRule` 为 false。Throughput 与 BOLA 同时打开时进入动态模式：缓冲越过 `hybridSwitchBufferTime`（默认 12 秒）才从 Throughput 切到 BOLA，`getBestPossibleSwitchRequest` 同一媒体类型不会两条一起算。
 
-## 实践案例
+5. **直播延迟默认不写死 4 秒**：`streaming.delay.liveDelay` 默认 `NaN`，`useSuggestedPresentationDelay` 为 true。`liveCatchup.enabled` 默认 `null`，`playbackRate.min/max` 默认也是 `NaN`。低延迟下载时间默认用 `MOOF_PARSING`。
 
-### 案例 1：网页里播放一个 DASH 点播流
+## 实践示例
 
-```html
-<video id="v" controls></video>
-<script src="https://cdn.dashjs.org/latest/modern/umd/dash.all.min.js"></script>
-<script>
-  const mpd = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd'
-  const player = dashjs.MediaPlayer().create()
-  player.initialize(document.querySelector('#v'), mpd, true)
-</script>
+### 案例 1：最短 MSE + MPD 链路
+
+```js
+const player = dashjs.MediaPlayer().create();
+player.initialize(video, 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd', true);
 ```
 
-逐部分解释：
+第三个参数是 autoplay，不是“已经在播”。第四个可选 `startTime`：点播相对第一 Period；直播可写 `posix:` 前缀表示 UTC 秒。没有 MSE 时 `initialize` 直接返回，后面的 `updateSettings` 也帮不上。
 
-- `mpd` 指向清单，不是单个视频文件；播放器会继续按清单请求音视频片段
-- `MediaPlayer().create()` 创建播放器控制器，不直接替代 `<video>`
-- `initialize(video, mpd, true)` 把控制器、DOM video、DASH 清单连起来，并允许自动播放
-
-这是官方 Quickstart 的真实用法，适合验证"浏览器 + MSE + DASH 清单"这条最短链路。
-
-### 案例 2：把 ABR 切到吞吐优先，观察码率怎么变
+### 案例 2：关掉 BOLA，只观察吞吐规则
 
 ```js
 player.updateSettings({
@@ -79,114 +84,95 @@ player.updateSettings({
         throughputRule: { active: true },
         bolaRule: { active: false },
         insufficientBufferRule: { active: true },
-        switchHistoryRule: { active: false },
-        droppedFramesRule: { active: false },
-        abandonRequestsRule: { active: false }
-      }
-    }
-  }
-})
-player.initialize(video, 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd', true)
+      },
+    },
+  },
+});
 ```
 
-逐部分解释：
+`updateSettings` 是深合并，两次分别改 `a` 和 `b` 等于一次都写上。默认动态模式里 Throughput / BOLA 互斥；这里把 BOLA 关掉后，质量切换只走 Throughput，缓冲保护仍可由 `insufficientBufferRule` 兜底。
 
-- `throughputRule` 根据最近片段的下载速度选下一段码率，直觉最容易懂
-- `bolaRule` 是 buffer-based 规则；关掉它可以单独观察吞吐规则的反应
-- `insufficientBufferRule` 像安全员，缓冲快空时强制保守，避免卡顿
-
-这来自官方 ABR sample，是学习自适应码率最有价值的入口：你能看到"算法选择"不是口号，而是具体开关。
-
-### 案例 3：低延迟直播里追 live edge
+### 案例 3：显式指定 live delay，而不是以为仓库默认就是 4 秒
 
 ```js
 player.updateSettings({
   streaming: {
     delay: { liveDelay: 4 },
     liveCatchup: {
+      enabled: true,
       maxDrift: 0,
-      playbackRate: { max: 1, min: -0.5 }
+      playbackRate: { min: -0.5, max: 0.5 },
     },
-    abr: {
-      throughput: {
-        lowLatencyDownloadTimeCalculationMode:
-          dashjs.Constants.LOW_LATENCY_DOWNLOAD_TIME_CALCULATION_MODE.MOOF_PARSING
-      }
-    }
-  }
-})
+  },
+});
 ```
 
-逐部分解释：
-
-- `liveDelay: 4` 表示目标是离直播边缘大约 4 秒；越小越实时，但越容易卡
-- `liveCatchup` 允许播放器用轻微变速或 seek 把自己拉回 live edge
-- `MOOF_PARSING` 用 CMAF chunk 边界估算下载时间，避免把服务器等待时间误当成网络慢
-
-这是官方低延迟文档里的真实配置方向，适合理解"直播低延迟 = 内容切片 + 服务器传输 + 播放器追赶"三件事一起成立。
+仓库默认 `liveDelay` 是 `NaN`，会先看 MPD 的 SuggestedPresentationDelay。`maxDrift` 和 `playbackRate` 默认也是 `NaN`。低延迟还要求内容是 CMAF chunk，并且传输支持 chunked transfer；只改播放器数字没有魔法。
 
 ## 踩过的坑
 
-1. **把 MPD 当 MP4**：`.mpd` 只是清单，真正媒体片段还要继续请求；直接下载一个 MPD 当然播不出画面。
-2. **只调 `liveDelay` 就期待低延迟**：如果内容不是 CMAF chunk、服务器不支持 chunked transfer，播放器没有魔法可用。
-3. **ABR 只看带宽会抖**：网络瞬间变好就升码率，buffer 还没稳就容易再次卡顿，所以 dash.js 默认会动态结合 throughput 和 BOLA。
-4. **忘记浏览器能力边界**：MSE、EME、codec 支持都在浏览器侧；dash.js 能调度片段，但不能让不支持的 codec 突然可播。
+1. **把 MPD 当 MP4**：`.mpd` 只是清单。直接下载一个 MPD 文件不会出画面。
+2. **把默认 ABR 理解成“Throughput 和 BOLA 同时投票”**：两者都 active 时，`getBestPossibleSwitchRequest` 每个媒体类型只留一条。
+3. **把样例里的 `liveDelay: 4` 抄成默认值**：源码默认是 `NaN`。`droppedFramesRule` 默认也是关的。
+4. **`reset()` 和 `destroy()` 当成一回事**：`reset()` 卸源、卸 view、复位 settings；`destroy()` 还会 `FactoryMaker.deleteSingletonInstances(context)`。
+5. **npm 包名写成 `dash.js`**：registry 上是 `dashjs@5.2.1`。该版本 `package.json` 没有 `gitHead`，本页绑定的是 Git tag `v5.2.1` 轻量标签提交。
 
-## 适用 vs 不适用
+## 适用 vs 不适用场景
 
 **适用**：
 
-- Web 端 MPEG-DASH 点播和直播播放器
-- 想研究 ABR 算法、低延迟直播、CMCD 指标上报的团队
-- 需要对齐 DASH-IF IOP、做标准兼容性验证的流媒体工程
-- 需要 DRM、字幕、多音轨、指标事件等播放器控制面的场景
+- Web 端 MPEG-DASH 点播 / 直播，并要对齐 DASH-IF 参考行为
+- 想看 ABR 规则如何按 settings 装卸载，而不是只听算法名字
+- 需要 DRM、多音轨、CMCD、字幕等播放器控制面
 
 **不适用**：
 
-- 只想处理本地视频文件、转码、切片，先看 [[ffmpeg]]
-- iOS Safari 原生 HLS 优先的业务，通常先看 [[hls.js]] 或原生播放能力
-- 超低延迟双向通话，应该看 WebRTC / [[openvidu]] / [[webrtc-rs]]
-- 不想碰 DASH 清单、CDN、segment、codec 的简单页面嵌入
+- 只处理本地文件、转码、切片——先看 [[ffmpeg]]
+- iOS Safari 原生 HLS 优先的业务——通常先看 [[hls.js]] 或系统播放器
+- 超低延迟双向通话——应看 WebRTC，而不是 HTTP 自适应点播
+- 需要本页提供已测量的卡顿率或码率曲线——本轮没有跑流
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2012 年前后**：MPEG-DASH 标准化，目标是让自适应 HTTP 流媒体不再被单一厂商协议锁死。
-- **2013-2014 年**：浏览器 MSE 成熟，JavaScript 播放器开始能自己喂片段给 `<video>`，dash.js 有了落地空间。
-- **DASH-IF 维护阶段**：dash.js 成为 DASH Industry Forum 的参考客户端，跟 IOP 指南、LiveSim 2、测试流一起演进。
-- **低延迟阶段**：CMAF chunk、L2A、LoL+、CMCD 等能力陆续进入文档和样例，播放器从"能播"变成"能解释体验"。
-- **今天**：仓库约 5.5k stars，价值不在 star 数本身，而在它是标准组织维护、可对照规范学习的实现。
+- 本文绑定 `Dash-Industry-Forum/dash.js@a9a8542cd7e6257116be4046ebf16ac49e1cec91`，轻量 tag `v5.2.1`，`package.json` 的 `version` 同为 `5.2.1`。
+- npm 包 `dashjs@5.2.1` 未提供 `gitHead`；条件 exports 指向 `dist/modern/esm/dash.all.min.js` 与 UMD 构建。`engines.node` 为 `>=20`。
+- `Version.js` 的字符串同样由构建替换 `__VERSION__`。本文未安装依赖、未跑上游测试、未测 bundle。
+- 状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **流媒体播放器是调度系统**：它不只是播文件，而是在网络、缓冲、码率、延迟之间做连续决策。
-- **标准需要参考实现**：DASH 的 MPD、SegmentTemplate、CMAF、CMCD 都很抽象，dash.js 把它们变成能跑的代码。
-- **ABR 的本质是取舍**：高画质、低卡顿、低延迟不能同时拉满，算法是在三个目标之间找平衡。
-- **低延迟不是单点优化**：编码切片、HTTP 传输、CDN、播放器 catchup、吞吐估算要一起配合。
+1. **参考播放器首先是调度器**——它读 MPD、选 Representation、喂 MSE，不负责把源片转成 DASH。
+2. **规则表不等于同时生效**——Throughput / BOLA 默认双开，运行时按缓冲互斥。
+3. **低延迟是三件事对齐**——切片、传输、播放器 catchup；默认 `liveDelay` 并不等于 4。
+4. **工厂和单例有生命周期**——`reset` 可重挂，`destroy` 拆 context。
+
+## 应用型自测
+
+1. `dashjs.MediaPlayer().create()` 和 `dashjs.MediaPlayerFactory.create(video)` 是不是同一条入口？
+2. 默认 settings 里 `bolaRule.active` 和 `droppedFramesRule.active` 分别是什么？
+3. `initialize()` 在 `supportsMediaSource()` 为 false 时还会不会 `attachSource`？
+
+检查点：
+
+1. 不是。前者是 FactoryMaker class factory；后者扫描 `application/dash+xml` 的 `<source>` 并写 `video._dashjs_player`。
+2. `true` 与 `false`。
+3. 不会。它先报 MediaSource 能力错误并 `return`，后面的 attach 不会执行。
 
 ## 延伸阅读
 
-- 官方文档：[dashif.org/dash.js](https://dashif.org/dash.js/)（Quickstart、Usage、样例入口都在这里）
-- 官方样例：[dash.js Samples](https://reference.dashif.org/dash.js/latest/samples/index.html)（ABR、低延迟、CMCD 都能直接跑）
-- ABR 文档：[ABR Settings](https://dashif.org/dash.js/pages/usage/abr/settings.html)（理解 ThroughputRule、BolaRule、L2A、LoL+）
-- 低延迟文档：[Low Latency Streaming](https://dashif.org/dash.js/pages/usage/low-latency.html)（CMAF chunk 和 live edge 解释很细）
-- [[hls.js]] —— Web HLS 播放库，适合对照 HLS 与 DASH 两条路线
-- [[ffmpeg]] —— 生成 DASH/HLS 片段前常用的转码与封装工具
+- 固定源码：[Dash-Industry-Forum/dash.js](https://github.com/Dash-Industry-Forum/dash.js) —— 本文绑定提交 `a9a8542cd7e6257116be4046ebf16ac49e1cec91`
+- 官方站点：[dashif.org/dash.js](https://dashif.org/dash.js/)
+- [[hls.js]] —— 同一条 MSE 路上的 HLS 客户端
+- [[ffmpeg]] —— 生成 DASH 片段前常用的转码与封装工具
 
 ## 关联
 
-- [[hls.js]] —— 同样是 Web 自适应流播放器，但协议生态偏 HLS
-- [[ffmpeg]] —— 常用来把源视频转码、切片、封装成 DASH 可用素材
-- [[gstreamer]] —— 另一套媒体 pipeline 框架，适合理解"片段、编码、缓冲"的底层来源
-- [[ovenmediaengine]] —— 流媒体服务器侧项目，可对照播放器和服务端的责任边界
-- [[openvidu]] —— 实时会议 PaaS，和 dash.js 的单向 HTTP 流媒体形成对照
-- [[webrtc-rs]] —— WebRTC 协议栈，适合比较低延迟直播和双向实时通信的差异
+- [[hls.js]] —— HLS 菜单 + EWMA ABR 的对照
+- [[ffmpeg]] —— 把源视频切成 DASH 可用素材
+- [[shaka-player]] —— 同时覆盖 DASH / HLS 的另一套 MSE 播放器
+- [[video.js]] —— UI 壳，协议层可接到 dash.js 或 VHS
+- [[openvidu]] —— 实时会议，和单向 HTTP 流对照
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[hls.js]] —— hls.js — 浏览器里的 HLS 播放库
-- [[mediasoup]] —— mediasoup — 多人音视频会议的 SFU 路由器
-- [[nginx-rtmp-module]] —— nginx-rtmp-module — 把 NGINX 变成直播入口
-- [[shaka-player]] —— Shaka Player — Google 流媒体播放器
-- [[video.js]] —— Video.js — Web 视频播放器框架

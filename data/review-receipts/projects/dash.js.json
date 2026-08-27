@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "dash.js",
+    "digest_sha256": "cb1b19f3a71f0e9cf6e7e49e63f509f4992137a05ba103e719e63b79a6a823e1"
+  },
+  "source_revision": "a9a8542cd7e6257116be4046ebf16ac49e1cec91",
+  "research_input_sha256": "76372bdd1c1f78678b409d259de1127f6ae485417ecf39f5fedd6bd3b0e3923b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-id",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates MediaPlayer factory from MediaPlayerFactory helper, and default liveDelay NaN from sample 4s."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-id",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "MediaPlayer initialize/MSE gate, Settings ABR defaults, and ABRRulesCollection mutual exclusion were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-id",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds lightweight tag v5.2.1; npm dashjs@5.2.1 has no gitHead; bundle size and live catchup were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:00:00.000Z"
+}
