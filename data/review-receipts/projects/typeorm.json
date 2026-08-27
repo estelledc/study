@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "typeorm",
+    "digest_sha256": "2c56f9f89fc4bfd8df224f78267ce5c7eaab74c35c4829b9a6dc640043ffd2a4"
+  },
+  "source_revision": "8748b1be17bf93fc9b62b3444e411e9055e9e017",
+  "research_input_sha256": "8f3c4b940c02cb1ab1d9770f1045446ad16f43fbc5faf9690fffdeea850eb01b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-t",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates DataSource initialize, decorator metadata, driver types, and where/write guards with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-t",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "DriverFactory, initialize, OrmUtils, QueryBuilder, and CLI sources were inspected; upstream tests and databases were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-t",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims are bounded to typeorm 1.1.0; driver behavior and Nest integration require target-environment runs."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
