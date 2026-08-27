@@ -14,7 +14,7 @@
 - 完成切片：
   1. `effect` 绑定 `Effect-TS/effect@417e0faa80e471d77fc4a67452e68b09ae0ee861` / `effect@3.22.1`（annotated tag 剥开；npm 无 `gitHead`）。写清 lazy instruction、`fail`/`die`、`runPromise` 的 `R=never`、`acquireRelease` 的 Scope，以及本包 Schema leftover。
   2. `neverthrow` 绑定 `supermacro/neverthrow@1d4cc19ed2e6ba882e296385fe0175d642ec8c5d` / `8.2.0`（tag 与 npm `gitHead` 一致）。写清 Ok/Err class、`combine` 短路、`andTee` 吞异常、`fromSafePromise` 不 catch。
-- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest/revision 一致，`UNVERIFIED`；`audit:counts` projects=962 / total=2045；`audit:content-contract` v2=105 blocking 0；`audit:project-standard` aligned=36。完整 `verify:ci` 在本提交后跑。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest/revision 一致，`UNVERIFIED`；`audit:counts` projects=962 / total=2045；`audit:content-contract` v2=105 blocking 0；`audit:project-standard` aligned=36。`STUDY_CHANGED_FROM=7a2384d0… npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2286 HTML / 2285 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：2 页、单 writer、1 个 PR；不 merge。
 - blocker：main 上既有 `tracked_files` 超 baseline，属 `PARKED_HUMAN`；本轮未改阈值。
 - stop conditions：本轮已完成；merge / deploy / 规模 baseline 需单独授权。
