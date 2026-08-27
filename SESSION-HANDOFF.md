@@ -15,11 +15,17 @@
   1. `better-auth` 绑定 `better-auth/better-auth@ba12fcdf...` / `1.7.2`。修正 `emailAndPassword.enabled` 默认 false、Drizzle 公开入口、`nextCookies` RSC 边界、MySQL 无 RETURNING。
   2. `supertokens` 绑定 `supertokens/supertokens-core@3547e855...` / `12.1.1`。修正为 Core-only HTTP recipe，补 `/hello`、refresh 哈希链、CDI 5.6 reuse 与 `ee/` 许可墙。
   3. 新增共享审查文档与两份 `STATIC_REVIEW` receipt。
-- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision / research input 一致，evidence `UNVERIFIED`；`git diff --check`；随后跑 `verify:ci`。
+- 验证结果：
+  - 两页 `quality-gate`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision、审查文档 digest 一致；evidence `UNVERIFIED`。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2285 HTML、2284 sitemap URLs、23 Playwright tests）。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `audit:content-contract`：projects `v2=20`、blocking 0。
 - budget：1 个可写切片；单 writer。
 - stop conditions：本 epoch 完成即停；不开启下一对；不 merge。
 - 下一次 wake 条件：PR review / CI 变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：在 https://github.com/estelledc/study/pull/109 看 review / CI，不要 merge。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
