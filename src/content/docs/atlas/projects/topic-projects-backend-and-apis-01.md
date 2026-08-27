@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "56 条 后端与 API Atlas 分块"
+description: "58 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 56 条，稳定上限为 100 条。
+本分块共 58 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -45,6 +45,7 @@ sidebar:
 | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | `ktor` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | `litestar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | `micronaut` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [openapi-typescript — 把 OpenAPI 3 文档编译成 TypeScript AST](/study/projects/openapi-typescript/) | `openapi-typescript` | 中级 | UNVERIFIED | 用 Redocly 校验并 bundle OpenAPI 3 |
 | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | `pg-boss-readme` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | `phoenix` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) | `plug` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -62,6 +63,7 @@ sidebar:
 | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | `spring-boot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | `starlette` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | `strawberry` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [swagger-js — 按 OpenAPI 文档 resolve 并执行操作的 JS client](/study/projects/swagger-js/) | `swagger-js` | 中级 | UNVERIFIED | 把 Swagger 2 / OpenAPI 3 |
 | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | `symfony` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | `thrift` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | `tide` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

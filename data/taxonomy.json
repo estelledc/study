@@ -2240,6 +2240,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::openapi-typescript",
+      "topic_id": "projects-backend-and-apis"
+    },
+    {
       "note_id": "projects::opentelemetry",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2442,6 +2446,10 @@
     {
       "note_id": "projects::sveltekit",
       "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::swagger-js",
+      "topic_id": "projects-backend-and-apis"
     },
     {
       "note_id": "projects::swc",

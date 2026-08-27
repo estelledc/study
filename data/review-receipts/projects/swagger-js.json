@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "swagger-js",
+    "digest_sha256": "07b62e0b656b163ce43482de8410fa1f41ea3156a6ce758606db1404a766052a"
+  },
+  "source_revision": "c605554cd713fe6d84152510fafe4c9169088b71",
+  "research_input_sha256": "ab2ca9111e17fd8aa2062cb9d42238561e78ca66dcae623b94dd9066efe68cf1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "openapi-client-static-20260827-by",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains Promise constructor, tag/operation execute, empty-server default, and non-2xx throw with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "openapi-client-static-20260827-by",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 3.38.0 constructor, resolve strategies, execute/http, and package engines; upstream tests and requests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "openapi-client-static-20260827-by",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v3.38.0 and npm gitHead agree; note stays STATIC_REVIEW / UNVERIFIED and does not claim UI or bundle size."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:00:00.000Z"
+}

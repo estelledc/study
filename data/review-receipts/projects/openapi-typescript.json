@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "openapi-typescript",
+    "digest_sha256": "94bcba0bed422a92ef9a5fe3bbebc50db4e31c008db5f43180514b61b4ae65a9"
+  },
+  "source_revision": "5709d33a5977c4908b9e331f01cd0f9e181b1c37",
+  "research_input_sha256": "ab2ca9111e17fd8aa2062cb9d42238561e78ca66dcae623b94dd9066efe68cf1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "openapi-client-static-20260827-by",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains AST-only generation, OpenAPI 3 version gate, operationId index, and empty-object default with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "openapi-client-static-20260827-by",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 7.13.0 index, Redocly bundle, path/operation transforms and CLI; upstream tests and CLI runs were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "openapi-client-static-20260827-by",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag openapi-typescript@7.13.0 peels to the pinned commit; npm gitHead is absent, so the note stays STATIC_REVIEW / UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:00:00.000Z"
+}

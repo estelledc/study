@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BY OpenAPI 双子
+
+- status：`running` → 本地 writer epoch `complete`；等待 PR review。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：为 `openapi-typescript` 与 `swagger-js` 新增 pinned study-v2 静态审查页，证据保持 `UNVERIFIED`。
+- scope：两篇新项目页、两份 generation 1 receipt、`docs/openapi-client-source-review-20260827-by.md`、taxonomy assignments、atlas / site-state / 公开计数文案、本交接记录。
+- activated_by：`explicit-user-request-parallel-writer-by-20260827`。
+- detector fingerprint：目标 slug 不在开放 PR 中，本地也没有既有项目页；需要绑定可达 GitHub/npm revision。
+- external delta：GitHub/npm 只读核验 + `/tmp` blob-filtered clone；将开 1 个 PR，不 merge，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `openapi-typescript` 绑定 `openapi-ts/openapi-typescript@5709d33a...` / `7.13.0`（annotated tag 剥开；npm 无 `gitHead`）。
+  2. `swagger-js` 绑定 `swagger-api/swagger-js@c605554c...` / npm `swagger-client@3.38.0`（tag 与 `gitHead` 一致；仓库现重定向到 `swagger-client`）。
+  3. 横向对照：类型 AST 编译器 vs resolve/execute 运行时 client；未覆盖 gRPC / tRPC。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision / research input 一致，evidence `UNVERIFIED`。
+  - `audit:counts`：projects=963、papers=1083、total=2046。
+  - `audit:content-contract`：0 blocking。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`。
+  - `git diff --check`：通过。
+- budget：1 个内容切片、2 篇新项目、1 个可写切片、1 份 PR。
+- external_outcome：一份 review-ready PR，不 merge。
+- stop conditions：本 epoch 在开 PR 后停止；不 merge、不部署。
+- 下一次 wake 条件：owner review / CI；无新授权不开启下一内容批次。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`（规范 Node 22.23.1）。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

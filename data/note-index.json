@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -53163,6 +53163,37 @@
       }
     },
     {
+      "id": "projects::openapi-typescript",
+      "area": "projects",
+      "slug": "openapi-typescript",
+      "title": "openapi-typescript — 把 OpenAPI 3 文档编译成 TypeScript AST",
+      "description": "用 Redocly 校验并 bundle OpenAPI 3.x，再把 paths / operations / components 编成可打印的 TS 类型",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-backend-and-apis",
+        "raw_category": "projects"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/openapi-typescript/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
       "id": "projects::opencode",
       "area": "projects",
       "slug": "opencode",
@@ -60460,6 +60491,37 @@
       }
     },
     {
+      "id": "projects::swagger-js",
+      "area": "projects",
+      "slug": "swagger-js",
+      "title": "swagger-js — 按 OpenAPI 文档 resolve 并执行操作的 JS client",
+      "description": "把 Swagger 2 / OpenAPI 3.x 文档 resolve 成可执行接口，再由 fetch 发出真实 HTTP 请求",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-backend-and-apis",
+        "raw_category": "projects"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/swagger-js/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
       "id": "projects::swc",
       "area": "projects",
       "slug": "swc",
@@ -65405,7 +65467,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 56
+      "entries": 58
     },
     {
       "id": "topic-projects-blockchain-01",
