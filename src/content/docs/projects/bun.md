@@ -1,83 +1,90 @@
 ---
-title: Bun — JS 全能运行时
+title: Bun — 单二进制 JS/TS 运行时与工具链
 来源: https://github.com/oven-sh/bun
 日期: 2026-05-29
 分类: 运行时 / 构建工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/oven-sh/bun
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 34cbb9a40b4bd1bd767d134a7065e66c2432a676
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.4.0
 ---
 
 ## 是什么
 
-Bun 是一个**用 Zig 写的 JavaScript 全能运行时**——把 Node.js + npm + bundler + transpiler + test runner 打包成一个二进制。
+Bun 1.4.0 是一个**单文件可执行程序**，把运行 `.js`/`.ts`/`.tsx`、装 npm 包、打包和跑测试收进同一个 `bun` 入口。日常类比：以前出门要带相机、手电筒、笔记本，现在一台手机搞定——但手机里面已经不是 2022 年那套 Zig 机芯。
 
-日常类比：以前出门要带相机 + 手电筒 + 笔记本三件设备，现在一台手机搞定。
-
-你装一个 `bun`，就同时拥有：
+固定 tag `bun-v1.4.0` 的 `src/` 是 Cargo workspace：`bun_bin` 编成 `libbun_rust.a`，进程 `main` 做完 crash handler、mimalloc、argv 后进入 `cli::Cli::start()`。JS 引擎仍是 **JavaScriptCore**。该树里 **0 个 `.zig` 文件**。
 
 ```bash
-bun run app.ts        # 跑代码（替代 node + ts-node）
-bun install lodash    # 装包（替代 npm / pnpm）
-bun build app.ts      # 打包（替代 webpack / esbuild）
-bun test              # 跑测试（替代 jest / vitest）
+bun run app.ts        # 运行时 + 即时转译
+bun install lodash    # 包管理（bun i）
+bun build app.ts      # 打包
+bun test              # bun:test
 ```
 
-跑常见 TypeScript、测试和打包任务时，不用先装 `ts-node`、`jest`、`webpack` 这些工具——Bun 把运行时和工具链入口收进一个二进制里；严格类型检查仍然要交给 `tsc` 或编辑器。
+`bun <file>` 与 `bun run <file>` 在 CLI 分发里走同一条 Auto/Run 热路径。`package.json` 脚本要用显式 `bun run <script>`，否则同名内置命令优先。
 
 ## 为什么重要
 
-不理解 Bun，下面这些事都没法解释：
+不读固定 1.4.0 源码，旧教程会把三件事说错：
 
-- 为什么 2024 年突然有一堆人说"我把 Node 换成 Bun，启动快了好几倍"
-- 为什么一些 benchmark 里 `bun install` 明显快过 npm / pnpm——明明 pnpm 已经够快了
-- 为什么 Bun 文件里没看到 `import 'http'` 也能 `Bun.serve` 起一个 HTTP server
-- 为什么有人说"Bun 是给前端工程师写后端的最低门槛"
+- 实现语言还是 Zig（2026-08 的 1.4.0 已是 Rust + C++/JSC 绑定）
+- `Bun.serve` 只能写一个 `fetch`（1.2.3 之后 `routes` 才是一等入口，`fetch` 是未匹配回退）
+- `bun install` 永远扁平 hardlink（同时存在 hoisted / isolated 两套安装器，lockfile 带 `configVersion`）
 
-Bun 的核心价值有四点：
+它和 [[node-js]] 的关系也不是「更快所以替代」：Bun 刻意兼容 Node 模块与 npm 生态，但 inspector、部分 native addon、V8 专用 API 仍要按版本验证。
 
-1. **启动快**：Node 启动常见是几十毫秒量级，Bun 在冷启动任务上通常更短。原因是运行时用 Zig 嵌入 JavaScriptCore（不是 Node 用的 V8），JSC 的启动路径更轻
-2. **`bun install` 快**：用全局二进制 cache + hardlink + 并行下载——和 pnpm 思路像但更激进，具体倍数取决于网络、缓存和 lockfile
-3. **内置一切**：TypeScript / JSX / SQLite / 测试框架原生支持，不用配 `tsconfig` + `babel` + `jest`
-4. **Web 标准 API 是一等公民**：`fetch` / `WebSocket` / `FormData` 直接用，Node 要等到 v18 才慢慢补齐
+## 架构与流程
 
-## 核心要点
+从敲下 `bun` 到跑用户代码，固定源码的主链可以拆成五步：
 
-Bun 之所以能"全能 + 快"，靠 **三个底层选择**：
+1. **进程入口**：`bun_bin::main` 初始化输出与栈检查，再 `Cli::start()`。冷启动路径刻意避开 `install` / `test` / `build` 等 `#[cold]` 子命令。
 
-1. **用 Zig 写**（不是 Rust 或 Go）
+2. **命令分发**：`RootCommandMatcher` 识别 `run`、`test`、`install`/`i`、`build`、`x`、`repl`、`exec`、`add`、`remove`、`pm` 等。裸文件名走 Run；`bun run` 的解析顺序是脚本 → 源文件 → 本地 bin →（仅 `bun run`）系统命令。
 
-   - [[swc]] 用 Rust，[[esbuild]] 用 Go，Bun 选 Zig
-   - Zig 没有垃圾回收（GC），与 C ABI 直接互操作——SIMD / 指针运算 / 内存对齐都比 Rust 顺手
-   - 代价：Zig 1.0 还没发布，**语言本身在变**，社区比 Rust 小一个数量级
+3. **转译再进 JSC**：`bun run` 对 TS/JSX 做原生转译，再交给 `bun_jsc` 的 `VirtualMachine`。这是**运行**，不是 `tsc --noEmit`。类型检查仍要编辑器或 `tsc`。
 
-2. **用 JavaScriptCore 引擎**（不是 V8）
+4. **HTTP 服务**：`Bun.serve` 的 `ServerConfig::from_js` 组装地址、`routes`、`fetch`、WebSocket 与 `idle_timeout`。底层监听走 uWebSockets 绑定。
 
-   - JSC 是 Apple Safari 的引擎；V8 是 Chrome / Node 的引擎
-   - JSC 启动快、解释器优先、嵌入 API 小——Bun 选它就是为了**冷启动速度**
-   - 代价：V8 的 JIT 优化峰值更高，长跑服务计算密集场景略慢
+5. **装包**：`bun_install` 解析 registry / lockfile，用 `clonefile`（macOS）或 `hardlink`（Linux/Windows）落到 cache，失败再拷贝；然后走 hoisted 或 isolated 布局。
 
-3. **包管理用全局 cache + hardlink**
+## 实践示例
 
-   - 第一次装 `lodash` 下载到全局 `~/.bun/install/cache/`
-   - 第二次别的项目装 `lodash` 不重新下载，hardlink 一份到 `node_modules/`——磁盘 0 拷贝
-   - 这思路 [[pnpm]] 也用，但 Bun 走得更极端：连 metadata 都尽量并行处理
+### 案例 1：`routes` 优先的 HTTP 服务
 
-## 实践案例
+```ts
+const server = Bun.serve({
+  routes: {
+    "/health": new Response("ok"),
+    "/users/:id": (req) => new Response(`user ${req.params.id}`),
+    "/api/posts": {
+      GET: () => Response.json({ posts: [] }),
+      POST: async (req) => Response.json(await req.json()),
+    },
+  },
+  fetch() {
+    return new Response("Not Found", { status: 404 });
+  },
+});
 
-### 案例 1：30 秒起一个 React 项目
-
-```bash
-bun create vite my-app --template react
-cd my-app
-bun dev
+console.log(server.url);
 ```
 
-`bun dev` 启动 dev server 通常比传统 npm 脚本少一次 Node 工具链启动；实际从命令敲下到浏览器能访问，要看项目大小和插件数量。
+未写 `port` 时，`from_js` 先放 `3000`，再被 `BUN_PORT` → `PORT` → `NODE_PORT` → CLI `--port` 覆盖。`port: 0` 才是系统选端口。`idle_timeout` 默认 10 秒（`u8`，最大 255，`0` 关闭）；长 SSE 要用 `server.timeout(req, 0)`，不能假定默认一直挂着。
 
-### 案例 2：跑 Jest 兼容的测试
+### 案例 2：`bun:test` 不必先装 Jest
 
-`math.test.ts`：
-
-```typescript
+```ts
 import { test, expect } from "bun:test";
 
 test("加法", () => {
@@ -86,97 +93,92 @@ test("加法", () => {
 ```
 
 ```bash
-bun test    # 不用装 jest，不用配 babel，不用 ts-jest
+bun test
+bun test foo bar
+bun test --test-name-pattern baz
 ```
 
-基础 API 和 Jest 很像（`describe` / `it` / `expect` / `mock`）——简单单元测试通常能少改迁移；重度依赖 Jest 插件或自定义环境时仍要逐项验证。
+固定源码把 runner 标成 Jest-compatible：`describe` / `it` / `expect` / mock / snapshot / fake timers 都在 `test_runner`。重度 Jest 插件或自定义环境仍要逐项验证。
 
-### 案例 3：用 Bun 写 HTTP server
+### 案例 3：安装布局不是单一故事
 
-```typescript
-Bun.serve({
-  port: 3000,
-  fetch(req) {
-    return new Response("Hi");
-  },
-});
+```bash
+bun install
+bun install --linker hoisted
+bun install --linker isolated
+bun install --backend hardlink
 ```
 
-**逐部分解释**：
-
-- `Bun.serve` 是 Bun 内置 API，不用 `import 'http'`
-- `fetch(req)` 接收一个标准 Web `Request` 对象，返回标准 `Response` 对象——这就是"Web 标准 API 一等公民"
-- 同样的代码逻辑在 Node 里要 `http.createServer((req, res) => res.end(...))`，写法和浏览器 API 完全不一样
-- `fetch(req) { return new Response(...) }` 这一层逻辑接近 Cloudflare Workers / Deno Deploy——因为它们都用 Web 标准 API；外层启动方式仍要按各平台改
+`ConfigVersion::CURRENT` 是 `V1`。文档与安装器同时描述：新 workspace 倾向 isolated（`node_modules/.bun/` + symlink，挡幽灵依赖），新单包倾向 hoisted；旧 lockfile（pre-1.3.2 / `configVersion=0`）保持 hoisted。cache 在 `~/.bun/install/cache/${name}@${version}`。不要把「永远 hardlink 扁平树」写成 1.4.0 合同。
 
 ## 踩过的坑
 
-1. **Node 内置模块不全兼容**：`fs` / `path` / `http` 这些常用的 OK；`v8` / `vm` / `inspector` 这些低层模块模拟得不全。依赖 V8 inspector 协议的工具（Chrome DevTools profiling）跑不动。
+1. **把实现语言停在 Zig**：1.4.0 的 `src/` 已是 Rust workspace + JSC C++ 绑定。排障时去翻 `.zig` 会落空。
 
-2. **JSC 与 V8 边角行为不一致**：
+2. **只写 `fetch`、不知道 `routes`**：未匹配才进 `fetch`。静态路径、`:id`、按 method 的对象、`/api/*` 通配都在 `routes`。
 
-   - `RegExp` 部分高级特性（lookbehind 长度限制）有差异
-   - 大数运算（`BigInt`）在某些 corner case 下精度处理不同
-   - `WeakRef` / `FinalizationRegistry` 的 GC 时机由 JSC 决定，跨引擎写"靠 GC 触发"的代码不可靠
+3. **把 `idleTimeout` 当成「请求处理时限」**：默认关的是**连接空闲**。handler 还在算、但没往 socket 写字节，也会被 10 秒掐断。
 
-3. **Bundler 输出不如 esbuild 干净**：默认开 bundle + treeshake，但生成的代码会带额外的 polyfill 和 runtime helper。**做 library 发布**用 esbuild / rollup 仍然更干净。
+4. **`bun dev` 当内置命令**：CLI 表里没有独立 `dev`。它通常是 `package.json` 脚本；与内置命令重名时必须 `bun run dev`。
 
-4. **生产环境还少**（截至 2024 年逐步成熟）：
-
-   - 长跑服务 + 99.99% SLA 场景，Node 的运维生态多 10 年
-   - 某些 native 模块（如 `sharp` 的特定 patch）跑不动
-   - 大型团队技术栈迁移要观望——通常黑客松 / 小工具 / CLI 这些场景先用
+5. **README 里的启动毫秒当 SLA**：仓库 README 仍引用旧 Hello World 对照。本文未复跑，不能把「快 4 倍」写成当前事实。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 新项目 startup / 黑客松 / 内部工具——启动快 + 配置零摩擦
-- 替代 Jest 跑现有测试——`bun test` 兼容度够高
-- 写 CLI 工具 / agent backend / 小型 HTTP API——单二进制部署超方便
-- 学 bundler / parser 内部原理——Bun 源码是 Zig 写的，hot path 注释丰富
+- 新项目、内部工具、CLI：一个二进制覆盖 run / install / test / build
+- 已用 [[hono]] / [[elysia]] 这类 Web 标准 `Request`/`Response` 的服务
+- 想少配 Jest/ts-node 的单元测试
 
 **不适用**：
 
-- 生产环境长跑服务 + 高 SLA——Node 仍是更稳的选择
-- 依赖某个特定 Node native 模块（如 `sharp` 某些 patch）——直接跑不动
-- 强依赖 Chrome DevTools 协议——JSC 的 inspector 协议跟 V8 不同
-- 团队完全没人用过 Zig——出问题排查源码门槛高
+- 必须绑 V8 inspector / Chrome DevTools 协议的剖析流程
+- 依赖特定 Node native addon 或未覆盖的 `vm`/`v8` 边角
+- 发布给别人用的 library bundle——固定源码的 bundler 会带 runtime helper，库作者常另选打包器
+- 不能接受 JSC 与 V8 在 `RegExp` / GC 时机上的差异
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2021 年**：Jarred Sumner 一个人在 Twitter 上说"我要写一个比 Node 快 4 倍的 JS 运行时"——大家以为他疯了
-- **2022 年 7 月**：Bun 0.1 发布，benchmarks 显示真的比 Node 快——风向开始变
-- **2023 年 9 月**：Bun 1.0 发布，背后团队 Oven 拿到红杉投资
-- **2024-2025**：陆续支持 Windows / Workspaces / SQLite 内置 / `bun:test` mock API——逐步进入"敢上生产"区间
-
-不像 [[node-runtime]] 是 Ryan Dahl 把 V8 包进 C++ 让前端能写后端的产物，Bun 是"既然要重做一遍，干脆把工具链全打包"的回答。
+- 本文绑定 `oven-sh/bun@34cbb9a40b4bd1bd767d134a7065e66c2432a676`，tag / `package.json` 均为 `1.4.0`。
+- 许可分层：Bun MIT；静态链接的 JavaScriptCore / WebKit 为 LGPL-2，重链需按 `LICENSE.md` 提供对象文件。
+- 平台声明覆盖 Linux / macOS / Windows 的 x64 与 arm64；Linux 文档建议内核 ≥ 5.6。
+- 本文未安装 `bun`、未跑上游测试、未测 install/bundler/HTTP 性能，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **一个二进制 = 更短的工具链路径**：Node 项目常把 runtime / npm / bundler / test runner 分给多个工具；Bun 把运行、安装、打包、测试放进同一个入口。**少装少启动少搬数据**，才是快的真正来源。
+1. **「一个二进制」是产品合同，不是实现语言合同**——入口没变，1.4.0 的机芯已经是 Rust workspace。
+2. **HTTP API 要按版本读 `ServerConfig`**——port 环境变量链、`routes`、`idle_timeout` 都不能靠 2023 年博客外推。
+3. **装包布局是策略，不是信仰**——hoisted 与 isolated 共存，lockfile `configVersion` 决定默认。
+4. **转译 ≠ 类型检查**——`bun run app.ts` 能跑，并不证明 `tsc` 会通过。
 
-2. **选语言 = 选 trade-off**：Zig 没 GC + C ABI 互操作好；Rust borrow checker 严格但 hot path 写起来不直观；Go 简单但性能上限低。Bun 选 Zig 是赌"hot path 优化空间 > 语言成熟度"。
+## 应用型自测
 
-3. **选引擎也是 trade-off**：JSC 启动快但峰值优化弱；V8 启动慢但长跑性能强。**短任务（CLI / 启动）选 JSC，长任务（数据处理）选 V8**。
+1. 固定 1.4.0 的 `src/` 里，实现语言还是 Zig 吗？
+2. 不写 `port`、环境变量也没设时，`Bun.serve` 的 TCP 端口先写成多少？之后还会看哪些环境变量？
+3. `bun install` 是否保证永远使用扁平 `node_modules` + hardlink？
 
-4. **Web 标准 API 是新世代后端的最大公约数**：Cloudflare Workers / Deno / Bun 都用 `fetch` / `Response`——你写一份代码能在三个 runtime 上跑。这是 Node 的 `http.createServer` 永远做不到的事。
+检查点：
+
+1. 不是。该 tag 是 Rust Cargo workspace，树内 0 个 `.zig`。
+2. 先写 3000，再按 `BUN_PORT` → `PORT` → `NODE_PORT`（以及 CLI `--port`）覆盖。
+3. 不保证。存在 hoisted / isolated 两套安装器，后端还有 clonefile / hardlink / 拷贝回退。
 
 ## 延伸阅读
 
-- 官方 docs：[bun.sh/docs](https://bun.com/docs)——产品功能完整清单
-- 源码：[github.com/oven-sh/bun](https://github.com/oven-sh/bun)——Zig 写的 runtime、package manager、bundler、test runner
-- Jarred Sumner 的早期访谈：[ChangeLog Podcast — Bun](https://changelog.com/podcast/512)——讲为什么选 Zig 和 JSC
-- [[zig]] —— Bun 的实现语言
-- [[esbuild]] —— JS bundler 的速度标杆，适合对照理解 Bun 的工具链目标
+- 文档：[bun.com/docs](https://bun.com/docs)
+- 固定源码：[oven-sh/bun](https://github.com/oven-sh/bun) —— 本文绑定 `34cbb9a40b4bd1bd767d134a7065e66c2432a676`
+- [[deno]] —— 同赛道、权限默认相反的运行时
+- [[node-js]] —— Bun 声称 drop-in 的对照对象
+- [[elysia]] —— 长在 Bun 上的 Web 框架
 
 ## 关联
 
-- [[zig]] —— Bun 的实现语言；选 Zig 是为 hot path 优化空间
-- [[esbuild]] —— Bun 的 lexer fork 自 esbuild，注释都是从 Go 翻成 Zig 的
-- [[swc]] —— Rust 阵营的 JS toolchain，与 Bun 是直接竞品
-- [[pnpm]] —— `bun install` 的 hardlink 思路与 pnpm 一脉相承，但更激进
-- [[node-runtime]] —— Bun 想取代的对象；保持兼容是 Bun 的核心策略
+- [[deno]] —— V8 + 默认拒绝权限，和 Bun 的「默认能做」对照
+- [[node-js]] —— 模块与 npm 兼容的目标平台
+- [[elysia]] —— Bun.serve 上的类型安全框架
+- [[hono]] —— 多运行时 Web 标准框架
+- [[esbuild]] —— 独立 bundler，适合对照 Bun 的打包边界
 
 ## 反向链接
 
