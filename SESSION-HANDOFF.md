@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GY：toml + smol-toml
+
+- status：writer epoch `complete`；从最新 `origin/main` 开分支；未 merge、未 deploy。
+- 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`，#81）。
+- objective：为缺失的 TOML-parse 双子补齐 `toml` 与 `smol-toml` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/toml-parse-source-review-20260827-gy.md`、2 份 receipt、taxonomy 两条 assignment、派生 atlas / site-state / 公开计数、`yq`/`dasel` 生成回链、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未跑 toml-test / vitest、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gy-2026-08-27`。
+- detector fingerprint：目录无 `toml.md` / `smol-toml.md`；用户指定该对，并禁止占用 marked / markdown-it / knex。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `toml` 绑定 `BinaryMuse/toml-node` tag `v5.0.0` → `ccd8b103f08bea6d39541271b1e6c3dba9e73275`；npm `toml@5.0.0` `gitHead` 一致。
+  2. `smol-toml` 绑定 tag `v1.8.0` → `6d0f4774700c40ce8b5794934eb771870a9a93d3`；npm `1.8.0` 无 `gitHead`，已披露。
+  3. 新增共享审查文档与 generation-1/2 STATIC_REVIEW receipt；项目标准 81 → 83，公开项目数 965 → 967。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、152 v2。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:wikilinks`：blocking 0，budget_failures 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

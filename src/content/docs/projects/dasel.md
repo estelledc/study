@@ -164,4 +164,6 @@ dasel -r yaml -w json -f docker-compose.yaml '.services.web'
 - [[curlie]] —— curlie — curl 的能力 + HTTPie 的语法
 - [[httpie]] —— HTTPie — curl 的人话版本
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
+- [[smol-toml]] —— smol-toml — 手写指针机上的 TOML parse 与 stringify
+- [[toml]] —— toml — Peggy 文法只负责 parse 的 TOML 1.1 库
 - [[xh]] —— xh — HTTPie 的 Rust 重写版

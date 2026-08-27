@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 2,
+  "predecessor_digest_sha256": "fa77ddbde1d2380985a1ba27b7dfd7b1504d2bd7446c5041a1de089788de92fe",
+  "note": {
+    "area": "projects",
+    "slug": "toml",
+    "digest_sha256": "eec97eac37513bec335a0bc82326e9f1ea8280f5439c8dd20adf9169c6910ed2"
+  },
+  "source_revision": "ccd8b103f08bea6d39541271b1e6c3dba9e73275",
+  "research_input_sha256": "0e04605235faf55d1cce635da93735acfd3f64dc476a5fdd43270d951b11a280",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates Peggy parse, null-prototype tables, fail-closed integers, and missing stringify."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected pegjs, compiler, maxDepth 500, bigint option, Temporal opt-in; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to toml 5.0.0 / v1.1.0; toml-test score and bundle size remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}

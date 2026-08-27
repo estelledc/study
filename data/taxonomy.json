@@ -2408,6 +2408,10 @@
       "topic_id": "projects-markdown-and-parsing"
     },
     {
+      "note_id": "projects::smol-toml",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::solid",
       "topic_id": "projects-ui-and-frontend-frameworks"
     },
@@ -2502,6 +2506,10 @@
     {
       "note_id": "projects::timescaledb",
       "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::toml",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::traefik",

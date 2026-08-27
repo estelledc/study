@@ -176,4 +176,6 @@ yq -p=xml -o=json pom.xml | jq '.project.dependencies'
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
 - [[httpie]] —— HTTPie — curl 的人话版本
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
+- [[smol-toml]] —— smol-toml — 手写指针机上的 TOML parse 与 stringify
+- [[toml]] —— toml — Peggy 文法只负责 parse 的 TOML 1.1 库
 - [[xh]] —— xh — HTTPie 的 Rust 重写版
