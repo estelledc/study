@@ -126,7 +126,7 @@ for (let i = 0; i < tokens.length; i++) {
 **不适用**：
 
 - 生产依赖个数必须为零 → [[marked]]
-- 要 AST + 异步 pipeline / MDX → [[unified]] / [[remark]]
+- 要 AST + 异步 pipeline / MDX → [[unified]]
 - 还没跑过 spec 或 sanitizer，却把「默认 100% CommonMark 且安全」写成无条件事实
 
 ## 固定版本边界

@@ -124,7 +124,7 @@ marked.use({
 
 - 用户提交内容且没有外部 sanitizer → 先看 [[markdown-it]] 的默认 `html: false` + `validateLink`
 - 需要严格 CommonMark 或插件生态 → [[markdown-it]] 或 [[micromark]]
-- 需要 AST 变换 / MDX / source map → [[unified]] / [[remark]]
+- 需要 AST 变换 / MDX / source map → [[unified]]
 - 还没量过体积，却把「大约 30 KB」写成当前事实
 
 ## 固定版本边界
