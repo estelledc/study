@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EE 日期 leftover epoch
+
+- supervisor 状态：writer epoch `complete`；等待 PR review。不在 handoff 中复制易过期数字或 ETA。
+- status：`running` 已收口为本轮 local change set；merge 未授权。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`。
+- objective：dayjs / temporal-polyfill 已被开放 PR 占用，改绑 leftover 日期对 FormKit Tempo 与 spacetime；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `formkit-tempo`、`spacetime` 两页、2 份 generation 1 receipt、`docs/date-leftover-source-review-20260827-ee.md`、taxonomy/atlas/site-state/公开计数文案、本 handoff；本机 gitignored blob-filtered clone。未改 `dayjs` / `date-fns` / `luxon` / `moment` / `temporal-polyfill`，未安装上游依赖，未跑上游测试或 bundle。
+- activated_by：`explicit-user-parallel-writer-ee-20260827`。
+- detector fingerprint：日期 atlas leftover 中 `dayjs`/`date-fns`/`luxon`/`temporal-polyfill` 已有开放 PR；`tempo` 现页是 Grafana 追踪后端；`spacetime` 与 FormKit Tempo 无 study-v2 页。
+- external delta 计数：`0`；只形成本地 review-ready PR，未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. 只读核验 GitHub tag 与 npm `gitHead`：`@formkit/tempo@1.1.0` → `00dc3dc9837a461e1e7766bc3f560966d6b00007`；`spacetime@7.13.0` → `33bf9574b88aaf9acde74ea88a308f92e53cdcd6`。
+  2. 新建 `formkit-tempo`：ISO 硬门、Intl offset、`tzDate` wall-clock 解释、默认月份夹日。
+  3. 新建 `spacetime`：自带 zonefile、`goto` 保瞬时 / `timezone` 保墙钟、`d` 与 `toNativeDate` 分叉、`weekStart` 原地修改。
+- budget：2 个小型本地 worktree + 2 页静态源码迁移；单 writer。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / provenance 一致且 `UNVERIFIED`；`audit:counts` 通过。
+- 验证结果：定向质量门与 receipt 校验已通过；全量 `verify:ci` 以 PR head 实测为准。
+- blocker：merge 与 deploy 未授权。
+- stop conditions：单 PR 完成即停；不 merge。
+- 下一次 wake 条件：本 PR 进入 review，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

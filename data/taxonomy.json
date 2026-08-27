@@ -1968,6 +1968,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::formkit-tempo",
+      "topic_id": "projects-date-and-time"
+    },
+    {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
     },
@@ -2398,6 +2402,10 @@
     {
       "note_id": "projects::sortablejs",
       "topic_id": "projects-drag-and-drop-interaction"
+    },
+    {
+      "note_id": "projects::spacetime",
+      "topic_id": "projects-date-and-time"
     },
     {
       "note_id": "projects::sqlite",

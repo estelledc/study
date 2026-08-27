@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -43431,6 +43431,37 @@
       }
     },
     {
+      "id": "projects::formkit-tempo",
+      "area": "projects",
+      "slug": "formkit-tempo",
+      "title": "FormKit Tempo — 不造日期对象，只给原生 Date 配 Intl 工具函数",
+      "description": "一组操作原生 Date 的 Intl 工具函数，不另造日期类型。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-date-and-time"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-date-and-time",
+        "raw_category": "日期时间"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/formkit-tempo/",
+      "atlas": {
+        "chunk_id": "topic-projects-date-and-time-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-date-and-time-01/"
+      }
+    },
+    {
       "id": "projects::foundry",
       "area": "projects",
       "slug": "foundry",
@@ -59543,6 +59574,37 @@
       }
     },
     {
+      "id": "projects::spacetime",
+      "area": "projects",
+      "slug": "spacetime",
+      "title": "Spacetime — 自带 zonefile 的不可变时区计算器",
+      "description": "用自带 zonefile 计算远程时区墙钟的不可变日期库。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-date-and-time"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-date-and-time",
+        "raw_category": "日期时间"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/spacetime/",
+      "atlas": {
+        "chunk_id": "topic-projects-date-and-time-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-date-and-time-01/"
+      }
+    },
+    {
       "id": "projects::spectorjs",
       "area": "projects",
       "slug": "spectorjs",
@@ -65559,7 +65621,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-date-and-time-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-devops-containers-and-operations-01",
