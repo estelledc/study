@@ -1,6 +1,30 @@
 # Study 操作交接入口
 
-> 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
+> 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。独立 agent 先读 `AGENTS.md`。不在 handoff 中复制易过期数字或 ETA。
+
+## 2026-08-27 Parallel writer BQ：jsPDF / PDFKit
+
+- supervisor 状态：Program `active`；writer BQ epoch `complete`；PR 待审，未授权 merge。
+- status：`running` 已结束为 `complete`；未进入 `PARKED_HUMAN`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：本分支 `cursor/pdf-generation-20260827-bq-21d9`。
+- objective：把 `jspdf` 与 `pdfkit` 迁到固定源码的 `study-v2`，证据为 `STATIC_ANALYSIS` / `UNVERIFIED`，审查为 `STATIC_REVIEW`。
+- scope：两页正文、`docs/pdf-generation-source-review-20260827-bq.md`、两份 generation 1 receipt、由脚本刷新的 atlas/site-state/project-standard 快照与本 handoff。未改候选队列、政策阈值、pdfmake/pdfme 正文，也未安装上游依赖或跑上游测试。
+- activated_by：`explicit-user-instruction-parallel-writer-bq-20260827`。
+- detector fingerprint：两页结构完整但缺 pinned revision / evidence boundary / self-test；jsPDF 旧正文停在 v3 印象并缺少单位数组缩放合同；PDFKit 旧正文把默认纸张写成 A4，并把自定义字体写成整份嵌入。
+- fallback：目标对是 `pdf-lib` + `jspdf`。`pdf-lib` 无现成项目页，新建会抬高 atlas unknown-difficulty / empty-description 预算并改写公开计数文案，因此改走现有 PDF 双子 `jspdf` + `pdfkit`。
+- external delta 计数：已 push feature branch 并打开 PR #119；未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. 只读核验 GitHub/npm 后，稀疏克隆绑定 `parallax/jsPDF@4562ce8a...` / `4.2.1` 与 `foliojs/pdfkit@f048bdd...` / `0.20.1`。
+  2. 重写两页主链：jsPDF 的单位/数组 format、可选 html2canvas、无 parser；PDFKit 的 Readable/`letter` 默认、CTM 翻转、`bufferPages` 与 fontkit subset。
+  3. 新增共享审查记录与两份 `STATIC_REVIEW` receipt；项目标杆对齐从 18 前进到 20。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致且 `UNVERIFIED`；`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下通过（388 Node tests、strict build 2285 HTML / 2284 sitemap URLs、23 Playwright tests）。
+- budget：2 页静态源码迁移 + 1 个 PR；单 writer。
+- blocker：merge 与部署仍需单独授权。
+- stop conditions：本 epoch 目标已完成；不继续发明下一对页面。
+- 下一次 wake 条件：owner 审查或授权 merge/deploy；或新的显式 slug 批次。
+- 下一条命令：`gh pr view 119 --repo estelledc/study`；不要 merge。
+- superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
 

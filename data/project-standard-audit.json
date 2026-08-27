@@ -9076,27 +9076,23 @@
     },
     {
       "slug": "jspdf",
-      "title": "jsPDF — 浏览器里直接生成 PDF",
+      "title": "jsPDF — 在内存里从零拼出一份 PDF",
       "source": "https://github.com/parallax/jsPDF",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "jupyter-notebook",
@@ -15053,27 +15049,23 @@
     },
     {
       "slug": "pdfkit",
-      "title": "PDFKit — 用画笔在 PDF 上一笔一笔画",
+      "title": "PDFKit — 用可读流从零画出一份 PDF",
       "source": "https://github.com/foliojs/pdfkit",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "pdfmake",

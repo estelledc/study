@@ -13,7 +13,7 @@ sidebar:
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
-| [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) | `jspdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [jsPDF — 在内存里从零拼出一份 PDF](/study/projects/jspdf/) | `jspdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | `lighthouse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | `pdfmake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Preact — 3KB React 替代](/study/projects/preact/) | `preact` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

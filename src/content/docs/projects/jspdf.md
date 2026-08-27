@@ -1,174 +1,159 @@
 ---
-title: jsPDF — 浏览器里直接生成 PDF
-来源: 'https://github.com/parallax/jsPDF'
-日期: 2026-06-01
+title: jsPDF — 在内存里从零拼出一份 PDF
+来源: https://github.com/parallax/jsPDF
+日期: 2026-08-27
 分类: projects / 前端导出
 难度: 入门到中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/parallax/jsPDF
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 4562ce8aa35bd5ecd98cd5e262e3da2af96476f6
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.2.1
 ---
 
 ## 是什么
 
-jsPDF 是 James Hall（MrRio）2010 年开源、社区接手维护的纯 JavaScript PDF 生成库，约 30k stars，MIT。日常类比：像在浏览器里塞了一台便携激光打印机——你按 API 喂它 "在第 X 页第 Y 行写一句话、贴一张图、画一条线"，它在内存里拼出合法的 PDF 二进制数据，最后让用户点下载。**全程没服务器**。
+jsPDF 是一个从零**生成** PDF 的 JavaScript 库。日常类比：内存里有一台只出纸、不收纸的打印机——你按坐标写下文字、贴图、画线，最后把对象树序列化成 PDF 1.3。它没有 `load` 已有文件的入口。
 
-最小例子：
+你写：
 
 ```js
-import { jsPDF } from 'jspdf'
+import { jsPDF } from "jspdf";
 
-const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' })
-doc.setFontSize(16)
-doc.text('Hello, PDF', 20, 30)
-doc.save('hello.pdf')
+const doc = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+doc.setFontSize(16);
+doc.text("Hello, PDF", 20, 30);
+doc.save("hello.pdf");
 ```
 
-四行做完三件事：开一张 A4、在 (20mm, 30mm) 写一句话、把生成的 Blob 触发浏览器下载。`doc` 对象在内存里维护一棵 PDF 对象树，`save` 时把它序列化成符合 PDF 1.3 规范的二进制数据。整个过程**不发任何网络请求**，也不依赖任何后端。
+固定 4.2.1 的构造默认是 `unit: "mm"`、`format: "a4"`、`orientation: "p"`。命名纸张存在点值表里（A4 为 `[595.28, 841.89]`）；若传入数字数组，宽高会再乘 `scaleFactor`。`save()` 在浏览器构建里走 FileSaver，在 CJS 构建里走 `fs.writeFileSync`。
 
 ## 为什么重要
 
-不理解 jsPDF，下面这些事都没法解释：
+不读这条生成链，下面几件事会讲错：
 
-- 为什么"前端导出 PDF"在 SPA 里几乎成了默认能力——不再需要后端拼模板生成 PDF 再回传
-- 为什么发票 / 凭证 / 报表 / 证书类需求会优先在客户端实现——数据已经在前端，往返一圈反而更慢
-- 为什么很多 React / Vue 项目里看到 `jspdf + html2canvas` 这对组合——一个负责"把 DOM 截成图"，一个负责"把图塞进 PDF"
-- 为什么用 jsPDF 写中文要折腾半天——默认字体只有 Helvetica / Times，**完全没有 CJK 字形**
+- 为什么 SPA 能在前端导出，却仍然**不能**编辑已有 PDF
+- 为什么 `format: [210, 297]` 只有在当前 `unit` 是 mm 时才是 A4
+- 为什么 `doc.html()` 还要再加载可选的 `html2canvas`
+- 为什么中文默认是方框：标准 14 字体不含 CJK
 
 ## 核心要点
 
-jsPDF 的 API 可以分成三层：
+固定版本的控制流可以拆成五步：
 
-1. **画布层**：`text / line / rect / circle / setFont / setFontSize / setTextColor`，所有定位用 mm / pt / in，**y 轴向下**且 `text` 的 y 是**基线**不是顶部
-2. **页层**：`addPage(format, orientation)` 切下一页，`setPage(n)` 跳回任意页改内容
-3. **图像层**：`addImage(src, format, x, y, w, h)`，`src` 可以是 dataURL / HTMLImageElement / HTMLCanvasElement——这是与 [[html2canvas]] 接驳的关键
+1. **建文档**：构造函数设定单位、纸张、压缩（默认关）和 `putOnlyUsedFonts`（默认 false）。
+2. **画用户空间**：兼容模式 y 向下；`text(text, x, y)` 的 y 是基线。`advancedAPI()` 会装一个翻转矩阵。
+3. **换页**：`addPage(format, orientation)`；命名格式查点值表，数组格式乘 `scaleFactor`。
+4. **插件挂上原型**：`src/index.js` 以 side-effect import 挂上 html、图片、VFS、TTF、AcroForm 等模块。
+5. **输出**：`output` / `save` 调用 `buildDocument()`，没有读入已有 PDF 的对称 API。
 
-输出有三种：`save('a.pdf')` 触发下载、`output('blob')` 拿到 Blob 自己处理、`output('datauristring')` 拿到 base64 直接嵌 `<iframe>` 预览。
+## 实践示例
 
-生态里两个常配：
-
-- **html2canvas**：把任意 DOM 节点光栅化成 canvas，再 `addImage` 进 PDF。最通用但**所有文字变像素**，PDF 里不能复制不能搜索
-- **jspdf-autotable**：表格插件，自动分页 / 表头重复 / 斑马纹，写后台导出报表必装
-
-v2（2020）起内置 `doc.html(element)` 方法封装了 html2canvas 调用并自动分页；v3（2024）转 ESM 优先，可 tree-shake。
-
-## 实践案例
-
-### 案例 1：纯 API 画一张发票
+### 案例 1：用原生对象画一页
 
 ```js
-const doc = new jsPDF({ unit: 'mm', format: 'a4' })
-
-doc.setFontSize(20).text('INVOICE', 20, 25)
-doc.setFontSize(10).text('No. 2026-0001', 20, 35)
-doc.line(20, 40, 190, 40)
-
-const items = [
-  ['Item A', 2, 50],
-  ['Item B', 1, 80],
-]
-let y = 50
-items.forEach(([name, qty, price]) => {
-  doc.text(name, 20, y)
-  doc.text(String(qty), 120, y)
-  doc.text(String(price), 160, y)
-  y += 8
-})
-
-doc.save('invoice.pdf')
+const doc = new jsPDF({ unit: "mm", format: "a4" });
+doc.setFontSize(20).text("INVOICE", 20, 25);
+doc.setFontSize(10).text("No. 2026-0001", 20, 35);
+doc.line(20, 40, 190, 40);
+doc.save("invoice.pdf");
 ```
 
-文字、表格、分割线全是 PDF 原生对象，**生成的 PDF 可以选中文字、可以搜索**，体积通常只有几 KB。这是 jsPDF 最值钱的用法——但只对**没有中文 + 布局简单**的场景成立。
+这些是 PDF 文本和路径，不是截图。坐标按当前 `unit` 解释；默认 mm 时 `(20, 25)` 是距左 20mm、距顶 25mm 的基线。
 
-### 案例 2：DOM 截图模式（html2canvas + addImage）
+### 案例 2：数字数组按当前单位缩放
 
 ```js
-import html2canvas from 'html2canvas'
-
-const node = document.querySelector('#report')
-await document.fonts.ready
-const canvas = await html2canvas(node, { scale: 2 })
-const imgData = canvas.toDataURL('image/png')
-
-const pdf = new jsPDF({ unit: 'mm', format: 'a4' })
-const pageW = 210
-const imgH = (canvas.height * pageW) / canvas.width
-pdf.addImage(imgData, 'PNG', 0, 0, pageW, imgH)
-pdf.save('report.pdf')
+const mm = new jsPDF({ unit: "mm", format: [210, 297] });
+const pt = new jsPDF({ unit: "pt", format: [210, 297] });
 ```
 
-适合"已经精心排版的 HTML 页面，原样导出"。代价：所有文字变像素、A4 高度内容超出要手动按 `pageHeight` 切片 + `addPage` 循环贴。**`document.fonts.ready` 不能省**——webfont 没加载完就截图，会回退到默认字体。
+`_addPage` 对数组做 `width = format[0] * scaleFactor`。mm 的 scaleFactor 是 `72 / 25.4`，所以第一份接近 A4；第二份的 210×297 **点**只是一张小纸。命名 `"a4"` 不会再乘一次。
 
-### 案例 3：嵌入中文字体
+### 案例 3：VFS 挂字体，而不是假定有中文
 
 ```js
-import notoSansSC from './NotoSansSC-Regular.ttf?base64'
-
-doc.addFileToVFS('NotoSansSC.ttf', notoSansSC)
-doc.addFont('NotoSansSC.ttf', 'NotoSansSC', 'normal')
-doc.setFont('NotoSansSC').text('你好，世界', 20, 30)
+doc.addFileToVFS("NotoSansSC.ttf", base64);
+doc.addFont("NotoSansSC.ttf", "NotoSansSC", "normal");
+doc.setFont("NotoSansSC");
+doc.text("你好，世界", 20, 30);
 ```
 
-VFS（Virtual File System）是 jsPDF 内部的内存文件系统，要先 `addFileToVFS` 注册再 `addFont` 声明。Noto Sans SC Regular 子集化前 ~10MB、子集化后能压到 ~500KB。**忘了子集化会让前端 bundle 直接膨胀十几 MB**。
+`ttfsupport` 在 `addFont` 事件里从 `internal.vFS` 取字符串（或再 `loadFile`）。标准字体路径会直接 return，不会去 VFS。
 
 ## 踩过的坑
 
-1. **中文字符全变方框 / 问号**：默认 14 种 PDF 标准字体（Helvetica / Times / Courier 各 4 字重 + Symbol / ZapfDingbats）**全都没有 CJK 字形**。必须 `addFileToVFS + addFont` 嵌入 TTF，且要用 fonttools / pyftsubset 子集化。
-
-2. **html2canvas 截出来的 PDF 不能搜文字**：DOM 已被光栅化为像素。需要"可搜索"就别走截图路线，老老实实用 jsPDF 原生 `text()` 一行行画。
-
-3. **`doc.text(x, y)` 的 y 是基线**：你以为 y=10 文字顶在 10mm 处，实际上文字往上"长出"约一个字号的 ascent。新人画完发现文字超出页眉，原因在此。
-
-4. **页面尺寸单位陷阱**：`format: 'a4'` 和 `[210, 297]` **都按当前 `unit` 解释**——数组并不强制毫米。若 `unit: 'pt'` 却仍写 `[210, 297]`（那是 mm 数值），页面会缩成一小块，坐标全错。
-
-5. **超长 canvas 单页贴不下**：截 2000px 高的 dashboard，整张塞 A4 会被裁。要按 `pageHeight * (canvas.width / pageW)` 切片循环 `addPage + addImage`，或直接用 v2 的 `doc.html()` 让它自动分页。
-
-6. **WebFont 没加载完就截图**：CSS 里 `@font-face` 是异步的，html2canvas 不会等。截图前必须 `await document.fonts.ready`，否则 PDF 里出现的是 fallback 字体，跟设计稿对不上。
+1. **把 html 导出当成内置光栅器**：`html()` 动态 `import("html2canvas")`。`html2canvas` 只在 `optionalDependencies`，主包不保证带上它。
+2. **`px` 单位默认是反的**：没有 hotfix `px_scaling` 时 scaleFactor 是 `96 / 72`，打开 hotfix 才是 `72 / 96`。
+3. **y 是基线**：`text("A", 10, 10)` 的字形会向上长出 ascent，不是盒子顶边贴在 10。
+4. **不能读已有 PDF**：没有 parser。合并、填表、盖已有页要看带文档对象模型的库（例如 pdf-lib）。
+5. **不要把主入口写成可任意 tree-shake**：`src/index.js` 会执行一长串模块 import，把 API 挂到同一个构造函数上。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- SPA 里发票 / 收据 / 凭证 / 报表导出，数据在客户端、不想往返后端
-- 把 dashboard / 看板的某个面板"打个快照"分享出去
-- 证书 / 票券批量生成（同一模板换数据，循环调 `addPage`）
-- canvas 类工具（白板、流程图、图表）的"另存为 PDF"功能
+- 浏览器或 Node 里从零画发票、证书、简单报表
+- 需要 `output("blob")` / `datauristring` / `save` 三种出口
+- 文字走 `text()`，图片走 `addImage`
 
 **不适用**：
 
-- 精排版 + 中文 + 复杂布局：用服务端 [[playwright]] / Puppeteer 走 Chrome 打印保真度更高
-- 50 页以上长文档：浏览器内存吃不消，PDF 体积也会爆
-- 需要解析 / 编辑 / 填表已有 PDF：jsPDF 只写不读，要看 pdf-lib / pdfjs-dist
-- 需要无障碍标签（PDF/UA）：jsPDF 对结构化标签支持很弱，合规场景换 pdfmake 或服务端方案
+- 编辑、合并、填已有 PDF → 需要 parser，不是本库
+- 复杂 CSS 排版还要可搜索文本 → 不要默认 `html()` 截图像素
+- 需要 PDF/UA 结构树或现代 PDF 版本保证：固定实现写的是 1.3
+- 把未测量的 bundle 大小或 star 数当成当前合同
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2010**：James Hall（MrRio）开源 jsPDF，目标是浏览器里直接拼 PDF，不靠 Flash / 后端。
-- **社区接手**：仓库迁到 `parallax/jsPDF`，插件生态（autotable 等）把报表导出做成默认组合拳。
-- **2020 v2**：内置 `doc.html()`，把 html2canvas 分页封装进主库。
-- **2024 v3**：ESM 优先、可 tree-shake，更贴现代打包链路。
+- 本文绑定 `parallax/jsPDF@4562ce8a...`，Git tag 与 npm `gitHead` 均为 `v4.2.1` / `jspdf@4.2.1`。
+- `package.json` exports 区分 `node`（`dist/jspdf.node.min.js`）与 `browser` / default（`dist/jspdf.es.min.js`）。
+- 必选依赖是 `@babel/runtime`、`fflate`、`fast-png`；`html2canvas`、`canvg`、`dompurify` 是可选。
+- 本文未安装依赖、运行上游测试、调用 `html2canvas` 或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"前端生成文档"已是默认选项**：当数据已在浏览器，把渲染也放在前端比走一趟后端更快、更省机器
-2. **PDF 路线分两派——画 vs 截**：`text/line/rect` 派文件小、可搜索、但没法还原复杂 CSS；`html2canvas` 派像素级保真但变成图片。两条路各有适配场景，**没有银弹**
-3. **底层标准的细节会反弹到上层 API**：单位、坐标、基线、字体子集化，每一条踩坑背后都是 PDF 1.3 规范的硬约束——封装库藏不住底层
-4. **嵌字体是 CJK 前端导出的硬税**：不交这个税就只能截图。子集化 + 按需懒加载是把税率压低的唯一办法
+1. **生成库和编辑库的边界是“有没有 parser”。**
+2. **单位表和数组格式走两条路径**，不能把 mm 数字塞进 pt 文档。
+3. **html 路径是可选插件，不是核心渲染器。**
+4. **默认 14 字体决定了 CJK 必须自己进 VFS。**
+
+## 应用型自测
+
+1. `new jsPDF({ unit: "pt", format: [210, 297] })` 得到的是 A4 吗？
+2. 固定 4.2.1 能否 `load` 一份已有 PDF 再 `text` 盖字？
+3. 只 `import { jsPDF } from "jspdf"` 且没装 `html2canvas` 时，`doc.html(el)` 是否一定成功？
+
+检查点：
+
+1. 不是。数组会乘 pt 的 scaleFactor 1，得到 210×297 点。
+2. 不能。核心只有 `buildDocument()` 输出。
+3. 不一定。`html()` 要动态加载可选的 html2canvas。
 
 ## 延伸阅读
 
-- 官方文档：[jsPDF API Reference](https://artskydj.github.io/jsPDF/docs/jsPDF.html)
-- GitHub 仓库：[parallax/jsPDF](https://github.com/parallax/jsPDF)
-- 配套截图库：[html2canvas](https://html2canvas.hertzen.com/)
-- 表格插件：[jspdf-autotable](https://github.com/simonbengtsson/jsPDF-AutoTable)
-- 替代方案：[pdfmake](https://github.com/bpampuch/pdfmake)（声明式）/ [pdf-lib](https://pdf-lib.js.org/)（读 + 写）/ [react-pdf](https://react-pdf.org/)（React 渲染器）
+- 固定源码：[parallax/jsPDF](https://github.com/parallax/jsPDF) —— 本文绑定提交 `4562ce8aa35bd5ecd98cd5e262e3da2af96476f6`
+- API 文档：[jsPDF API Reference](https://artskydj.github.io/jsPDF/docs/jsPDF.html)
+- [[pdfkit]] —— Node 流式画笔，默认 LETTER 且内置 fontkit
+- [[html2canvas]] —— `doc.html()` 可能加载的可选依赖
 
 ## 关联
 
-- [[html2canvas]] —— DOM 截图最常用的搭档，`doc.addImage` 收的就是它的 canvas
-- [[playwright]] —— 当 jsPDF 撑不住复杂排版时，服务端 headless 浏览器打印是更稳的退路
-- [[pdfkit]] —— Node 端的"画"派 PDF 库，思路与 jsPDF 同源
-- [[react-pdf]] —— 把"声明组件树 → PDF"做成 React 渲染器，另一种抽象层级
+- [[pdfkit]] —— 同类命令式生成，主场在 Node Stream
+- [[pdfmake]] —— 声明式 JSON，底层不是 jsPDF
+- [[html2canvas]] —— DOM 光栅化搭档，不是 jsPDF 核心
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[pdfkit]] —— PDFKit — 用画笔在 PDF 上一笔一笔画
+- [[playwright]] —— Playwright — 用代码操作真实浏览器
