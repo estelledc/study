@@ -46,7 +46,7 @@ btm
 
 2. **时间序列是分块 SoA**：`TimeSeriesData` 用 `timeless::data::ChunkedData` 按字段存，时间是相对「现在」的反向偏移，并带修剪元数据。这不是定长环形数组。默认刷新 1000ms（下限 250ms），默认保留约 10 分钟（下限 1 分钟）。
 
-3. **布局是 row → col → widget 树**：默认三行——`cpu`（ratio 30）、`mem` + `temp`/`disk`（40）、`net` + `proc`（30），进程格 `default=true`。用户 TOML 写 `[[row]]` / `row.child` / `type` / `ratio`；省略 ratio 按 1。进程 widget 还会自动挂 sort 与 search 子格。
+3. **布局是 row → col → widget 树**：默认三行——`cpu`（ratio 30）、`mem` + `temp`/`disk`（40）、`net` + `proc`（30），进程格 `default=true`。用户 TOML 用 array-of-tables 写 `row` / `row.child` / `type` / `ratio`；省略 ratio 按 1。进程 widget 还会自动挂 sort 与 search 子格。
 
 4. **输入与副作用分开**：crossterm 把键鼠送给 `App`。`/` 或 `Ctrl-f` 打开进程搜索（支持 `pid` / `cpu` / `mem` / `gpu%` 等查询）；`t` 或 `F5` 切树视图；`dd` / `F9` / `Delete` 打开杀进程对话框。Unix 默认可选信号，`--disable-advanced-kill` 时只发 SIGTERM（15）；Windows 走 `TerminateProcess`。`--read-only` 禁止这类动作。
 
