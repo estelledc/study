@@ -1,6 +1,6 @@
 ---
 title: "CLI / 命令行工具 · 项目 · 第 1 组"
-description: "69 条 CLI / 命令行工具 Atlas 分块"
+description: "71 条 CLI / 命令行工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 69 条，稳定上限为 100 条。
+本分块共 71 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -58,6 +58,8 @@ sidebar:
 | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | `nushell` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | `oclif` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | `oh-my-posh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [open — 跨平台用 spawn 打开 URL、文件和可执行程序](/study/projects/open/) | `open` | 入门 | UNVERIFIED | Node 库：按平台选择 open / PowerShell Start / xdg-open，而不是 exec 拼命令 |
+| [open-cli — 把 open 库收成一条可管道的命令](/study/projects/open-cli/) | `open-cli` | 入门 | UNVERIFIED | 全局命令 open-cli：位置参数或 stdin 临时文件，再交给 open 打开 |
 | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | `procs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pyenv — 用 shim 把 python 命令拦截后路由到指定版本](/study/projects/pyenv/) | `pyenv` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | `ranger` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
