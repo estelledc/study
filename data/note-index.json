@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2050,
+      "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 967,
+        "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -45973,6 +45973,37 @@
       }
     },
     {
+      "id": "projects::isomorphic-dompurify",
+      "area": "projects",
+      "slug": "isomorphic-dompurify",
+      "title": "isomorphic-dompurify — 给 DOMPurify 补一层 Node/浏览器同一入口",
+      "description": "介绍 isomorphic-dompurify 3.23.0 如何用 JSDOM 窗口和 Proxy 复用 DOMPurify，以及 clearWindow 与双入口导出边界。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/isomorphic-dompurify/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::istio",
       "area": "projects",
       "slug": "istio",
@@ -58017,6 +58048,37 @@
       }
     },
     {
+      "id": "projects::sanitize-html",
+      "area": "projects",
+      "slug": "sanitize-html",
+      "title": "sanitize-html — 用 htmlparser2 事件流做标签白名单清洗",
+      "description": "介绍 sanitize-html 2.17.7 如何用 htmlparser2 事件拼回字符串，以及默认 allowlist、scheme 检查和 SVG 动画整标签拒绝。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sanitize-html/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::scikit-learn",
       "area": "projects",
       "slug": "scikit-learn",
@@ -65865,7 +65927,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

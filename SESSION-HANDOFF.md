@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GU：sanitize-html + isomorphic-dompurify
+
+- status：`running` → 本地 writer epoch 完成后 `complete`；单一 PR，未 merge。
+- 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`）。
+- objective：为 HTML 清洗双子新增 `sanitize-html` 与 `isomorphic-dompurify` 源码绑定页；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、`docs/html-sanitize-source-review-20260827-gu.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored sparse/blob-filtered clone。未安装上游依赖、未运行 mocha / vitest、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gu-2026-08-27`。
+- detector fingerprint：目录无目标 slug；用户指定 sanitize-html / isomorphic-dompurify，开放 PR 标题未占用。
+- external delta：本 PR（用户授权 push + 单一 PR；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `sanitize-html` 绑定 `apostrophecms/apostrophe@ab4c660b4426...` 上的 `packages/sanitize-html@2.17.7`；披露独立仓已弃用、npm 无 `gitHead`。
+  2. `isomorphic-dompurify` 绑定 annotated tag `3.23.0` 剥皮提交 `7607c2f4c166...`；npm 无 `gitHead`；未阅读 DOMPurify 本体。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:site-state`：projects=967，papers=1083，total=2050；`audit:content-contract --changed-from origin/main` blocking 0；`git diff --check` 通过。
+- budget：2 个本地 clone + 2 页新建；单 writer。
+- blocker：merge 与 deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

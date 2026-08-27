@@ -2016,6 +2016,10 @@
       "topic_id": "projects-infrastructure-utilities"
     },
     {
+      "note_id": "projects::isomorphic-dompurify",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::jaeger",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2382,6 +2386,10 @@
     {
       "note_id": "projects::rspack",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::sanitize-html",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::sentry",
