@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AK：eslint / prettier STATIC_REVIEW
+
+- supervisor 状态：`running` → writer epoch `complete`，等待 PR review；未 merge。
+- status：`running` 完成本轮后进入等待 owner review。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：为 ESLint 与 Prettier 各写一页 `study-v2` 静态源码审查，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `eslint` / `prettier` 项目页、共享 provenance 文档、receipt、taxonomy/atlas/site-state/handoff；未改 biome/oxlint，也未占用 open PR #47-#85 的 slug。
+- activated_by：`explicit-user-request-20260827-ak-eslint-prettier`。
+- detector fingerprint：仓库已有 biome/oxc 等工具链页，但缺少独立的 `eslint` 与 `prettier` 源码绑定页。
+- external delta 计数：本轮只形成 1 个 PR，未 merge、未部署，D 轴不提升。
+- 完成切片：
+  1. ESLint 绑定 `eslint/eslint@5c8c2417...` / `10.9.1`，写清 flat config 查找、默认不含 recommended、`--fix` 写盘与 concurrency 默认 `off`。
+  2. Prettier 绑定 GitHub tag `3.9.6` / `8f0c95057...`，写清 parse → doc IR → print，并披露 npm `gitHead` 不可达。
+  3. 新增 `docs/linter-formatter-source-review-20260827-ak.md` 与两份 generation 1 receipt。
+- acceptance checks：两页 `quality-gate` 通过；`audit:counts` / `audit:content-contract` 通过。
+- 验证结果：本地定向检查已通过；全量 `verify:ci` 在 PR 创建后补跑。
+- budget：1 个可写切片、1 个本地 writer、1 个 PR。
+- blocker：PR 待审查；未获 merge 授权。
+- stop conditions：本轮只开 1 个 PR 且不 merge；不继续发明下一项内容。
+- 下一次 wake 条件：owner review 或新的显式维护指令。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
