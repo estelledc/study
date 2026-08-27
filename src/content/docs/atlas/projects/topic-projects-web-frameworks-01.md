@@ -1,6 +1,6 @@
 ---
 title: "Web 框架 · 项目 · 第 1 组"
-description: "14 条 Web 框架 Atlas 分块"
+description: "16 条 Web 框架 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,14 +9,16 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | `aspnetcore` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | `elysia` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | `express` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [FastAPI — 用类型注解驱动请求校验的 ASGI 框架](/study/projects/fastapi/) | `fastapi` | intermediate | UNVERIFIED | 介绍 FastAPI 如何把函数签名编成 dependant，再用 Pydantic v2 做校验和 OpenAPI |
 | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | `fastify` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Flask — 用装饰器把 URL 接到视图函数的 WSGI 微框架](/study/projects/flask/) | `flask` | beginner | UNVERIFIED | 介绍 Flask 如何用 Werkzeug 路由、ContextVar 代理和 make_response 把同步视图收成 WSGI 应用 |
 | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | `hanami` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | `helidon` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hono — 多运行时 Web 框架](/study/projects/hono/) | `hono` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

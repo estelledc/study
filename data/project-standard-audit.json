@@ -4,8 +4,8 @@
   "summary": {
     "total": 967,
     "by_status": {
-      "benchmark-aligned": 85,
-      "needs-evidence": 882
+      "benchmark-aligned": 87,
+      "needs-evidence": 880
     }
   },
   "projects": [
@@ -6189,27 +6189,23 @@
     },
     {
       "slug": "fastapi",
-      "title": "FastAPI — 用 Python 类型注解写 API",
+      "title": "FastAPI — 用类型注解驱动请求校验的 ASGI 框架",
       "source": "https://github.com/fastapi/fastapi",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "faster-whisper",
@@ -6521,27 +6517,23 @@
     },
     {
       "slug": "flask",
-      "title": "Flask — 用装饰器把 URL 接到函数上的 Python 微框架",
+      "title": "Flask — 用装饰器把 URL 接到视图函数的 WSGI 微框架",
       "source": "https://github.com/pallets/flask",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "flax",

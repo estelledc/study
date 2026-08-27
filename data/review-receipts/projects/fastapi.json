@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "fastapi",
+    "digest_sha256": "19a0004530da6dde146466c8c737b01d9d76adbcf84d1484b66fde812130d8dd"
+  },
+  "source_revision": "95f8322ee1dcda7ceace7b1c4f6c9915b36d748f",
+  "research_input_sha256": "1d193c98eff834786aadc83a75a1cd8d15dacd6c748fe3fd0534df96253bcd64",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates signature-to-dependant encoding, threadpool vs coroutine, response_model serialize, and docs/openapi coupling."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "applications, routing, dependencies/utils, params, exception_handlers, and _compat were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 0.141.1 where commit and __version__ agree; pydantic.v1 is rejected; no server or benchmark claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

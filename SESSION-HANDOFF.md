@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HN：fastapi + flask
+
+- status：writer epoch `running` → 本地切片完成，待 `verify:ci` / PR review；未 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：把 `needs-evidence` 的 Python-web 双子 `fastapi` 与 `flask` 迁到绑定可达 revision 的 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇项目页、共享审查文档 `docs/python-web-source-review-20260827-hn.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未启动服务。
+- activated_by：`explicit-user-parallel-writer-hn-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放与已合并 PR 未占用这两个 slug；A–HM 与当前 open PRs 未声明 fastapi/flask。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `fastapi` 绑定 lightweight tag `0.141.1` → `95f8322ee1dcda7ceace7b1c4f6c9915b36d748f`。
+  2. `flask` 绑定 annotated tag `3.1.3` → `22d924701a6ae2e4cd01e9a15bbaf3946094af65`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87。
+- acceptance checks（定向，verify:ci 待跑）：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，evidence state `UNVERIFIED`。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍可能超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只收这一对；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

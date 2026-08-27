@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "57 条 后端与 API Atlas 分块"
+description: "55 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 57 条，稳定上限为 100 条。
+本分块共 55 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -28,9 +28,7 @@ sidebar:
 | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | `dropwizard` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | `echo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) | `envoy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | `fastapi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | `fiber` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | `flask` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | `gin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | `go-zero` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) | `gqlgen` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

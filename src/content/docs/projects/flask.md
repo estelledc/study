@@ -1,16 +1,31 @@
 ---
-title: Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-来源: 'https://github.com/pallets/flask'
-日期: 2026-05-29
-分类: backend-api
-难度: 初级
+title: Flask — 用装饰器把 URL 接到视图函数的 WSGI 微框架
+description: 介绍 Flask 如何用 Werkzeug 路由、ContextVar 代理和 make_response 把同步视图收成 WSGI 应用
+来源: https://github.com/pallets/flask
+日期: 2026-08-27
+分类: backend-framework
+难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/pallets/flask
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 22d924701a6ae2e4cd01e9a15bbaf3946094af65
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.1.3
 ---
 
 ## 是什么
 
-Flask 是一个**让你用一个装饰器就把 URL 路径绑到 Python 函数上**的轻量 Web 框架。日常类比：像在邮局给每个房间号贴一张"信件去哪个抽屉"的便签——客户端发一封 `GET /hello`，Flask 看一眼便签上写"去 hello 函数"，把信塞过去就完了。
+Flask 3.1.3 是一个把 URL 规则交给 Werkzeug、把模板交给 Jinja、自己只做应用对象与请求生命周期的 WSGI 微框架。日常类比：邮局只准备分拣架和当前窗口的便签本；信件怎么拆、数据库怎么连，都不是核心包的事。
 
-最小例子：
+你写：
 
 ```python
 from flask import Flask
@@ -22,35 +37,37 @@ def hello():
     return "Hello, World!"
 ```
 
-5 行代码就有了一个能跑的 web 服务。`@app.route("/")` 这一行装饰器就是那张便签——它告诉 Flask："如果有人请求 `/`，就调下面这个函数"。
-
-它叫"微框架"是因为**自己只做最少的事**——HTTP 路由、模板渲染、cookie 三件套，其他（数据库、表单、登录）全靠扩展拼出来。
+`Flask` 必须传入 `import_name`。`@app.route` 调用 `add_url_rule`：默认方法是 `GET`，并在配置允许时自动补 `OPTIONS`。WSGI 服务器调用 `app` 时进入 `wsgi_app`。核心包要求 Python `>=3.9`，依赖 Werkzeug、Jinja2、Click、ItsDangerous、Blinker、MarkupSafe。
 
 ## 为什么重要
 
-不理解 Flask 解决的问题，下面这些事都没法解释：
+不理解 Flask 3.1.3 的上下文和收尾规则，就解释不了：
 
-- 为什么 Python 写 web 后端 15 年来教程几乎都从 Flask 开始（学习曲线最低，5 行代码看到结果）
-- 为什么"装饰器 + 蓝图"成了 Python web 圈通用心智模型——FastAPI / Starlette / Quart 都沿用同一套
-- 为什么很多公司内部小工具、API 网关、ML 推理服务都用 Flask 起步（500 行就够生产可用）
-- 为什么"微框架 vs 全栈框架"的争论 Django 党和 Flask 党吵了 15 年还没停
+- 为什么 `request` / `current_app` 看起来像全局变量，换到新线程或异步任务却会报 “Working outside of …”
+- 为什么视图直接 `return {"ok": True}` 会变成 JSON，而不必手写 `jsonify`
+- 为什么 `async def` 视图在没装 `flask[async]` 时会直接炸
+- 为什么 `app.run()` 自己就写着不要用于生产
 
 ## 核心要点
 
-Flask 的核心设计可以拆成 **三块**：
+固定 3.1.3 的主链可以拆成五步：
 
-1. **Werkzeug + Jinja 的胶水层**：Flask 自己几乎不实现底层——HTTP 协议、路由匹配交给 Werkzeug（一个 WSGI 工具集），HTML 模板交给 Jinja（一个模板引擎）。Flask 的工作是把这两个粘起来加一层易用 API。类比：像方便面碗——面是别人的（Werkzeug），调料包是别人的（Jinja），它只是个让你吃得方便的容器。
+1. **WSGI 入口**：`__call__` 转给 `wsgi_app`。后者 `request_context(environ).push()`，跑 `full_dispatch_request()`，最后 `ctx.pop()`。中间件应包 `app.wsgi_app`，不要包掉应用对象。
 
-2. **装饰器路由**：`@app.route("/path")` 让你在函数定义那一刻就声明"我负责这个 URL"，不用单独维护一张路由表。类比：在自己门上贴号码牌，而不是去物业那边登记房号——分散管理但每个文件局部清晰。
+2. **路由登记**：`route` 是 `add_url_rule` 的装饰器。规则进 `url_map`，视图进 `view_functions[endpoint]`。同一 endpoint 换函数会 `AssertionError`。
 
-3. **应用上下文 + 请求上下文**：Flask 用 thread-local（像每人自带一份便签本）让你随手写 `request.args.get("name")`——看起来像全局变量，实际每个请求各自一份。这是最神奇也最易踩坑的地方。
+3. **分发**：`full_dispatch_request` 发 `request_started`，跑 `preprocess_request`，再 `dispatch_request`。匹配到的视图先经 `ensure_sync` 再调用。
 
-## 实践案例
+4. **返回值收口**：`make_response` 把 `str`/`bytes`、`dict`/`list`、迭代器、`(body, status, headers)` 元组收成 `Response`。`dict`/`list` 走 `self.json.response`。`None` 直接 `TypeError`。
 
-### 案例 1：最小 JSON API
+5. **上下文是 ContextVar**：`current_app` / `g` / `request` / `session` 是 `LocalProxy`，底层是 `_cv_app` 与 `_cv_request`。`AppContext.push` 用 `ContextVar.set`，不是线程局部存储。
+
+## 实践示例
+
+### 案例 1：同一规则按方法分发，dict 自动成 JSON
 
 ```python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 
 app = Flask(__name__)
 todos = []
@@ -58,138 +75,113 @@ todos = []
 @app.route("/todos", methods=["GET", "POST"])
 def todos_view():
     if request.method == "POST":
-        todos.append(request.json["text"])
-        return jsonify(todos), 201
-    return jsonify(todos)
+        todos.append(request.get_json(silent=True) or {})
+        return todos, 201
+    return todos
 ```
 
-**逐部分解释**：
+`methods` 必须是字符串列表。视图返回 `list`/`dict` 时，`make_response` 会走 JSON provider。`request.get_json` 来自 Werkzeug `Request`，Flask 只把 `json_module` 指到 `flask.json`。
 
-- `methods=["GET", "POST"]`：同一个路径按方法分发——GET 返回列表，POST 添加一项
-- `request.json`：Flask 帮你解析请求 body 的 JSON——不用自己写 `json.loads`
-- `jsonify(todos), 201`：返回 JSON 响应 + 状态码 201（Created）
-
-### 案例 2：蓝图（Blueprint）拆模块
-
-应用大了一个文件就乱。蓝图把路由分组到不同文件：
+### 案例 2：Blueprint 先分组，再挂到 app
 
 ```python
-# auth.py
-from flask import Blueprint
+from flask import Blueprint, Flask
+
 auth = Blueprint("auth", __name__, url_prefix="/auth")
 
 @auth.route("/login", methods=["POST"])
-def login(): ...
+def login():
+    return {"ok": True}
 
-# app.py
-from flask import Flask
-from auth import auth
 app = Flask(__name__)
 app.register_blueprint(auth)
-# 现在 /auth/login 由 auth.py 里的函数处理
 ```
 
-**逐部分解释**：
+`Blueprint` 继承 sans-io 基类，并自带 Click `AppGroup`。`register_blueprint` 把规则和 CLI 一并挂上；主文件不必知道每条 URL。
 
-- `Blueprint("auth", __name__, url_prefix="/auth")`：这一组路由全部以 `/auth` 开头
-- `register_blueprint`：把整组路由挂到 app 上——主文件不需要知道每条路由的细节
-
-### 案例 3：扩展生态——Flask-SQLAlchemy
+### 案例 3：async 视图要 asgiref，上下文不能跨任务默认继承
 
 ```python
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, request
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
-db = SQLAlchemy(app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
-
-@app.route("/users")
-def list_users():
-    return [u.name for u in User.query.all()]
+@app.get("/ping")
+async def ping():
+    return {"q": request.args.get("q")}
 ```
 
-**逐部分解释**：
-
-- `flask_sqlalchemy` 把 SQLAlchemy ORM 的会话生命周期接到 Flask 请求生命周期上——请求开始给一个会话，结束自动关
-- 这就是"扩展"模式：外部库写一层 Flask 适配，你只 import 就能用
+`ensure_sync` 见到协程函数就调用 `async_to_sync`；缺 `asgiref` 时抛 `RuntimeError`，提示安装 `flask[async]`。`request` 绑在当前 ContextVar 上，新线程或未复制的异步任务里不会自动出现。
 
 ## 踩过的坑
 
-1. **生产环境千万别用 `flask run`**：开发服务器单线程、不抗压、debug 模式开了等于远程代码执行。生产用 Gunicorn / uWSGI / waitress 这种 WSGI 服务器。
+1. **把 `app.run()` 当生产服务器**：文档写明不满足生产安全与性能。默认 `host=127.0.0.1`、`port=5000`，`threaded=True`；`debug` 为真时默认打开 Werkzeug reloader 与 debugger。本轮未读 Werkzeug PIN 实现，也不声称已复现远程代码执行。
 
-2. **Debug 模式 = RCE 漏洞**：`app.run(debug=True)` 配合公网部署，攻击者可以通过浏览器拿到的 PIN 直接执行 Python。记住 debug **只在本地开**。
+2. **把 `request` 当成真正的全局变量**：3.1.3 用 `ContextVar` + `LocalProxy`。后台线程要显式传值，或用 `copy_current_request_context`。
 
-3. **应用上下文外报 `RuntimeError: Working outside of application context`**：你想在脚本里用 `current_app` 或 `db.session` 但没在请求里——Flask 不知道当前是哪个 app。要么 `with app.app_context():` 包起来，要么用 application factory 模式。
+3. **在应用上下文外用 `current_app` / `url_for`**：会触发 “Working outside of application context”。脚本里用 `with app.app_context():`。
 
-4. **多线程 + 全局变量**：`request` / `g` 看起来像全局变量，但实际是 thread-local。如果你用 `threading.Thread` 派生新线程跑后台任务，新线程里访问 `request` 会炸——新线程没有这个 thread-local。后台任务用 Celery 或显式传值。
+4. **返回 `None`**：`make_response` 直接报该 endpoint 没有合法响应。
+
+5. **`flask.__version__` 还当稳定 API**：访问会 `DeprecationWarning`，计划在 Flask 3.2 删除；应改用 `importlib.metadata.version("flask")`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 学习 web 后端的第一站（教程多、心智负担低、5 行能跑）
-- 小到中型 API / 内部工具 / ML 推理服务（5 万行代码以内）
-- 想自己组合技术栈（数据库 / 表单 / 登录 各挑各的扩展）
-- 已有 Python 业务逻辑，需要套一层 HTTP 接口
+- 需要最小 WSGI 入口、装饰器路由和可组合扩展，而不是内置 ORM / Admin
+- 视图以同步函数为主，JSON 用 `dict`/`list` 返回即可
+- 用 Blueprint 拆模块，并接受自己选择数据库、表单和登录扩展
 
 **不适用**：
 
-- 大型 admin 后台、多数据模型 + 权限 → Django 开箱即用更省事
-- 重 IO、需要原生 async/await → 用 FastAPI / Starlette / Quart
-- 要内置 ORM / migrations / admin → Django 全包
-- 强类型 + 自动 OpenAPI 文档 → FastAPI
+- 原生 async 请求处理是主路径——[[fastapi]] / [[starlette]] / [[quart]] 不必把协程桥回 WSGI
+- 需要开箱即用的 ORM、迁移和后台——看 [[django]]
+- 需要签名驱动的 OpenAPI 与 422 校验主链——看 [[fastapi]]
+- 不能接受开发服务器与 debugger 默认绑定在 `run()` 上
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2010 年 4 月愚人节**：Armin Ronacher 在博客发"Denied: the next generation Python micro-web-framework"当玩笑，反而吸引了真实需求
-- **2010 年 4 月正式发布 0.1**：底层基于他自己之前写的 Werkzeug（2007）和 Jinja（2008）
-- **2016 年 Pallets 组织成立**：Armin 把 Werkzeug / Jinja / Click / Flask 都搬进 Pallets 共同维护
-- **2020 年 Flask 2.0**：开始支持 `async def` 视图（虽然性能不如原生 async 框架）
-- **2024 年 Flask 3.0**：移除老 Python 兼容代码，全面拥抱现代 Python
-
-如今数万 star 量级、Pallets 组织维护、BSD-3 协议，仍是 Python web 教程默认起点。
+- 本文绑定 `pallets/flask@22d924701a6ae2e4cd01e9a15bbaf3946094af65`，tag / `pyproject.toml` 版本均为 `3.1.3`。
+- `requires-python >=3.9`；`async` extra 才包含 `asgiref>=3.2`。
+- `jsonify` 必须在请求或应用上下文里，内部调用 `current_app.json.response`。
+- 本文未安装依赖、未跑 `flask run`、未跑上游测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **少做事 = 易学 = 长寿**：核心 API 15 年没大改，正因为它不试图包圆一切
-2. **装饰器成了 Python web 通用心智**：FastAPI / Starlette 都沿用同一套
-3. **微框架的代价是组合负担**：自由换来要自己挑数据库、表单、登录；thread-local 优雅但和异步组合时要懂底层
+1. **微框架的边界是“路由 + 上下文 + 响应收口”**——JSON、模板、CLI 都是薄封装，扩展不在核心包。
+2. **看起来像全局的对象其实是当前 ContextVar**——跨线程/任务前要先问有没有 push。
+3. **`async def` 只是同步桥**——没有 `asgiref` 就没有这条路。
+4. **开发服务器和 debugger 是同一条 `run()` 开关**——`debug` 会同时打开 reloader 与 debugger。
+
+## 应用型自测
+
+1. `@app.route("/x")` 不写 `methods` 时，默认允许哪些方法（忽略自动 OPTIONS）？
+2. 视图 `return {"ok": True}` 会不会自动变成 JSON 响应？
+3. 没装 `flask[async]` 时，`async def` 视图会怎样？
+
+检查点：
+
+1. 只有 `GET`（`HEAD` 由 Werkzeug 规则处理；`OPTIONS` 另按配置自动补）。
+2. 会。`make_response` 对 `dict`/`list` 调用 `self.json.response`。
+3. `async_to_sync` 在 import `asgiref` 失败时抛 `RuntimeError`。
 
 ## 延伸阅读
 
-- 官方教程 + 设计哲学：[Flask Tutorial](https://flask.palletsprojects.com/en/tutorial/) + [Design Decisions in Flask](https://flask.palletsprojects.com/en/design/)
-- Miguel Grinberg 的 [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)（社区公认最完整）
-- [[fastapi]] —— 用类型注解的现代继承者
-- [[express]] —— JS 世界同生态位的微框架
+- 文档：[flask.palletsprojects.com](https://flask.palletsprojects.com/)
+- 固定源码：[pallets/flask](https://github.com/pallets/flask) —— 本文绑定提交 `22d924701a6ae2e4cd01e9a15bbaf3946094af65`
+- [[fastapi]] —— 类型注解 + ASGI 的对照
+- [[starlette]] —— 若要把 Flask 心智换成原生 async，先看这一层
+- [[django]] —— 全家桶对照
 
 ## 关联
 
-- [[fastapi]] —— 思想继承者，把 Flask 装饰器风格 + Python 类型注解结合
-- [[express]] —— Node.js 微框架，路由风格几乎一模一样
-- [[hono]] —— Web 标准时代的微框架，装饰器心智的最新演化
-- [[postgresql]] —— Flask 应用最常配的关系数据库（通过 Flask-SQLAlchemy）
-- [[redis]] —— Flask 常用的 session / 缓存后端
-- [[docker]] —— Flask 应用的标准部署封装
-- [[caddy]] —— Flask 前面常摆的反向代理 + HTTPS 终端
+- [[fastapi]] —— 同样用装饰器挂路由，但主链是 dependant / Pydantic / OpenAPI
+- [[starlette]] —— FastAPI 的 ASGI 底座，也是 Flask 同步模型的对照
+- [[django]] —— batteries-included，Flask 刻意不做的那部分
+- [[quart]] —— Flask 风格 API 的 ASGI 移植，不在本页固定范围内
+- [[express]] —— 另一条“最小核心 + 中间件/扩展”的微框架对照
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
-- [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
-- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
-- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
-- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
-- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
-- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
-- [[superset]] —— Apache Superset — 开源 BI 平台

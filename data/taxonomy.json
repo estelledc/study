@@ -1964,7 +1964,15 @@
       "topic_id": "projects-image-processing-and-canvas"
     },
     {
+      "note_id": "projects::fastapi",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
       "note_id": "projects::fastify",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
+      "note_id": "projects::flask",
       "topic_id": "projects-web-frameworks"
     },
     {

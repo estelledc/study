@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -42731,32 +42731,31 @@
       "id": "projects::fastapi",
       "area": "projects",
       "slug": "fastapi",
-      "title": "FastAPI — 用 Python 类型注解写 API",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "FastAPI — 用类型注解驱动请求校验的 ASGI 框架",
+      "description": "介绍 FastAPI 如何把函数签名编成 dependant，再用 Pydantic v2 做校验和 OpenAPI",
+      "difficulty": "intermediate",
       "canonical_topics": [
-        "projects-backend-and-apis"
+        "projects-web-frameworks"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
-        "topic_id": "projects-backend-and-apis",
-        "matched_category": "backend api",
-        "raw_category": "backend-api"
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "backend-framework"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fastapi/",
       "atlas": {
-        "chunk_id": "topic-projects-backend-and-apis-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
       }
     },
     {
@@ -43178,32 +43177,31 @@
       "id": "projects::flask",
       "area": "projects",
       "slug": "flask",
-      "title": "Flask — 用装饰器把 URL 接到函数上的 Python 微框架",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Flask — 用装饰器把 URL 接到视图函数的 WSGI 微框架",
+      "description": "介绍 Flask 如何用 Werkzeug 路由、ContextVar 代理和 make_response 把同步视图收成 WSGI 应用",
+      "difficulty": "beginner",
       "canonical_topics": [
-        "projects-backend-and-apis"
+        "projects-web-frameworks"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
-        "topic_id": "projects-backend-and-apis",
-        "matched_category": "backend api",
-        "raw_category": "backend-api"
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "backend-framework"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/flask/",
       "atlas": {
-        "chunk_id": "topic-projects-backend-and-apis-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
       }
     },
     {
@@ -65592,7 +65590,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 57
+      "entries": 55
     },
     {
       "id": "topic-projects-blockchain-01",
@@ -66082,7 +66080,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-web-frameworks-01/",
-      "entries": 14
+      "entries": 16
     },
     {
       "id": "unclassified-01",
