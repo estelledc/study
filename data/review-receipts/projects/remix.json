@@ -1,11 +1,11 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "3c1d1b6470e8689cfda979fcaa7ef48354418dfe9b2f199d97887cc1287b3aba",
   "note": {
     "area": "projects",
     "slug": "remix",
-    "digest_sha256": "e91a029b14af6c02d776529ce553d88d13cea39bcbb38eff27dc5cfecd26bcf1"
+    "digest_sha256": "ce5792f878759cd90051f7d6a03bdb8cf24a5c1fc2aa8df40e8b9663cb800cfc"
   },
   "source_revision": "8307662161457e1ad710bde0a52de7b7f800abbc",
   "research_input_sha256": "2b2c9a06f7ceeb5bdc8aa1cc7315f009d589cd651675c7b7afcf27206dc68666",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-08-27T08:02:55.482Z"
+  "created_at": "2026-08-27T08:05:58.038Z"
 }

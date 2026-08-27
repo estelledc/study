@@ -183,13 +183,12 @@ app/routes/products.$id.tsx
 
 - 固定源码：[remix-run/remix](https://github.com/remix-run/remix) —— 提交 `8307662161457e1ad710bde0a52de7b7f800abbc`
 - 文档：[remix.run/docs](https://remix.run/docs)
-- [[react-router]] —— 运行时 `StaticHandler` / `Form` 的底层
+- React Router 文档：[reactrouter.com](https://reactrouter.com) —— 运行时 `StaticHandler` / `Form` 的底层（本仓尚无独立页）
 - [[gatsby]] —— 构建期 GraphQL 数据层对照
 - [[next-js]] —— 另一条 React 全栈约定
 
 ## 关联
 
-- [[react-router]] —— Remix 2.17.5 把路由执行交给它
 - [[gatsby]] —— 同主题的构建期数据层
 - [[next-js]] —— React 元框架对照
 - [[vite]] —— `@remix-run/dev` 的编译宿主
