@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -35191,6 +35191,38 @@
       }
     },
     {
+      "id": "projects::antd",
+      "area": "projects",
+      "slug": "antd",
+      "title": "Ant Design — 企业后台组件库的 ConfigProvider / Design Token 合同",
+      "description": "介绍 antd 6.6.1 如何用 ConfigProvider 合并 token、把 type 映射到 color/variant，以及静态 message 为何吃不到动态 theme。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-headless-ui-components"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-headless-ui-components",
+        "matched_category": "基础组件",
+        "raw_category": "基础组件"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/antd/",
+      "atlas": {
+        "chunk_id": "topic-projects-headless-ui-components-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-headless-ui-components-01/"
+      }
+    },
+    {
       "id": "projects::anthropic-cookbook",
       "area": "projects",
       "slug": "anthropic-cookbook",
@@ -51485,6 +51517,38 @@
       }
     },
     {
+      "id": "projects::mui",
+      "area": "projects",
+      "slug": "mui",
+      "title": "MUI — Material UI 的 createTheme / ThemeProvider 分叉",
+      "description": "介绍 @mui/material 9.3.1 默认走 createThemeNoVars，以及 ThemeProvider 如何按 colorSchemes 分叉到 CssVarsProvider。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-headless-ui-components"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-headless-ui-components",
+        "matched_category": "基础组件",
+        "raw_category": "基础组件"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mui/",
+      "atlas": {
+        "chunk_id": "topic-projects-headless-ui-components-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-headless-ui-components-01/"
+      }
+    },
+    {
       "id": "projects::mumble",
       "area": "projects",
       "slug": "mumble",
@@ -65671,7 +65735,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-headless-ui-components-01/",
-      "entries": 2
+      "entries": 4
     },
     {
       "id": "topic-projects-http-clients-01",
