@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EZ：kleur + yoctocolors 静态审查
+
+- status：writer epoch `complete`；已 push 并打开单一 PR。未 merge、未 deploy。
+- 起始 ref：`89766cc27`（`origin/main`，Auth.js / Lucia #72）。
+- objective：按用户显式 PARALLEL writer EZ 指令，为 `kleur` 与 `yoctocolors` 新增 study-v2 项目页，证据边界为 `STATIC_REVIEW` / `UNVERIFIED`，并留下 `docs/*-20260827-ez.md`。
+- scope：两篇新项目页、2 份 generation 1 receipt、共享源码审查文档、taxonomy / atlas / note-index / project-standard / site-state 与公开计数文案、本 handoff；未改既有笔记正文，未安装上游依赖，未跑上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-ez-20260827`。
+- detector fingerprint：仓库没有 `kleur` / `yoctocolors` 项目页；chalk 仍是 legacy，且指令排除 chalk/picocolors。
+- external delta：分支已 push 并打开 PR（用户授权 push + 单一 PR）；未 merge。
+- 完成切片：
+  1. `kleur` 绑定 tag `v4.1.5` / npm `gitHead` `fa3454483899ddab550d08c18c028e6db1aab0e5`，写明默认链式入口、`kleur/colors` 非链式合同，以及 `NO_COLOR` / TTY / `FORCE_COLOR` 探测公式。
+  2. `yoctocolors` 绑定 tag `v2.2.0` / npm `gitHead` `a02a16ec36fbd58a0848e95598fb4913c54c7591`，写明 import 时 `hasColors` 快照、SGR 22 嵌套重开，以及 `yoctocolors-cjs` 不在本仓。
+  3. 新增 `docs/terminal-color-source-review-20260827-ez.md` 与两份 STATIC_REVIEW receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：`verifyReceiptAgainstNote` 通过，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：blocking 0。
+  - `audit:project-standard` snapshot CURRENT。
+  - `audit:counts` / `audit:site-state` 与当前内容文件一致。
+- budget：1 个新增双子页切片；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：单一 PR 已打开后停止；不 merge、不 deploy、不开启下一对。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR 的 checks。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

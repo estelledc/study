@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -47055,6 +47055,37 @@
       }
     },
     {
+      "id": "projects::kleur",
+      "area": "projects",
+      "slug": "kleur",
+      "title": "kleur — 可链式也可拆开的终端着色函数集",
+      "description": "默认导出可链式累积样式，kleur/colors 则是不可链式的具名函数",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-terminal-tools",
+        "raw_category": "终端着色"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/kleur/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
+      }
+    },
+    {
       "id": "projects::klipper",
       "area": "projects",
       "slug": "klipper",
@@ -64467,6 +64498,37 @@
       }
     },
     {
+      "id": "projects::yoctocolors",
+      "area": "projects",
+      "slug": "yoctocolors",
+      "title": "yoctocolors — 加载时拍板的具名终端着色函数",
+      "description": "ESM 具名函数在 import 时调用 hasColors，之后不再提供 enabled 开关",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-terminal-tools",
+        "raw_category": "终端着色"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/yoctocolors/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
+      }
+    },
+    {
       "id": "projects::yq",
       "area": "projects",
       "slug": "yq",
@@ -65915,7 +65977,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-terminal-tools-01/",
-      "entries": 6
+      "entries": 8
     },
     {
       "id": "topic-projects-testing-and-verification-01",
