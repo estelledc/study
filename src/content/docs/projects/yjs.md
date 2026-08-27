@@ -1,156 +1,173 @@
 ---
 title: Yjs — 让任何编辑器都能接的协同编辑内核
-来源: 'https://github.com/yjs/yjs'
-日期: 2026-05-30
+来源: https://github.com/yjs/yjs
+日期: 2026-08-27
 分类: 协同编辑
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/yjs/yjs
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 1ce38f75f786e4bc0b2cc9703afbc6eea8fe7859
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 13.6.32
 ---
 
 ## 是什么
 
-Yjs 是一个**编辑器无关的协同编辑库**——你写的文本、列表、地图，多人同时改不会冲突，断网回来也能自动合并。日常类比：像一群人一起填同一张共享表格，每个人手上都有副本，回来对一下就自动同步好了，没人当裁判。
+Yjs 是一个 **编辑器无关的 CRDT 内核**：文本、数组、映射、XML 都挂在同一份 `Y.Doc` 上，多人同时改、断网再合，靠类型自己收敛。日常类比：每人手里一份表格副本，改完对一下就齐，没有裁判。
 
-它的核心是一组"共享数据类型"：`YText`（文本）/ `YArray`（数组）/ `YMap`（键值映射）/ `YXml`（XML 树）。你像操作普通对象一样操作它们，Yjs 在背后把每次改动序列化成二进制 update，发给其他人。
+固定 `yjs@13.6.32` 的共享类型是 `YText` / `YArray` / `YMap` / `YXmlElement` / `YXmlFragment`（导出别名 `Text` / `Array` / `Map` / …）。你像操作集合一样改它们，库把改动编成 `Uint8Array` update：
 
 ```js
-import * as Y from 'yjs'
+import * as Y from "yjs"
+
 const doc = new Y.Doc()
-const text = doc.getText('content')
-text.insert(0, 'hello')        // 你这边
-// 别人那边同时插了别的——重连后自动合并不冲突
+const text = doc.getText("content")
+text.insert(0, "hello")
+const update = Y.encodeStateAsUpdate(doc)
 ```
 
-ProseMirror、CodeMirror、Lexical、TipTap、Quill 都能接同一套 Yjs，绑定胶水通常 ≤ 500 行。
+`getText` 等是 `Doc.get(name, TypeConstructor)` 的糖。同名再用不同构造器会抛 “already been defined with a different constructor”。`y-websocket` / `y-prosemirror` / `y-indexeddb` 不在本仓。
 
 ## 为什么重要
 
-不理解 Yjs 这类 CRDT 库，下面这些事都没法解释：
+不按 13.6.32 读源码，下面这些旧说法会偏：
 
-- 为什么 JupyterLab、AFFiNE 能做"多人同时编辑、不卡、断网也能写"——底下是 Yjs；Notion / Linear 则用同类 CRDT 或 OT 方案
-- 为什么 Google Docs 当年用 OT（Operational Transform，操作变换）那么难写，CRDT 出来后小团队都能做协同
-- 为什么 local-first 软件运动（Ink & Switch）反复推 CRDT——它是"先离线、再合并"的数学基础
-- 为什么协同编辑很少弹"冲突对话框"——CRDT 保证结构最终一致；两人改同一句时两边都留下，只是不再卡死
+- 为什么 Jupyter / 各类编辑器绑定能共用一个内核——本仓只给 `Y.Doc` 和类型，传输与编辑器胶水在别的包
+- 为什么 Google Docs 式 OT 难写，CRDT 小团队也能做协同——`Item#integrate` 用 origin / originRight 做就地全序
+- 为什么光标不能存绝对下标——要用 `createRelativePositionFromTypeIndex`
+- 为什么装了两个 Yjs 副本会“算法坏掉”——`index.js` 用全局标记做 constructor 检查
+- 为什么现在不能把 v14 当默认——同仓已有 `v14.0.0-rc.*`，本文只绑稳定 13.6.32
 
-## 核心要点
+## 核心架构与流程
 
-Yjs 的工作机制可以拆成 **三步**：
+固定源码把协同拆成五层：
 
-1. **每个改动有唯一编号（Lamport ID）**：每个客户端有 `clientID`，本地操作计数 `clock`，合起来 `(clientID, clock)` 全局唯一。类比：每人便签写"姓名+第几张"，全世界不会重号。
+1. **ID(client, clock)**：`generateNewClientId` 来自 `lib0/random.uint32`。clock 只随插入走；删除不占 clock，而是 DeleteSet + Item 上的 deleted 位。
 
-2. **文档是一条双向链表**：每个字符是一个 `Item`（节点），记住左右邻居。两人同时往同一处插字（并发 / concurrent）时，YATA 算法看"各自锚定的左右邻居 + clientID 谁大"决定谁排前——所有人算出同一顺序。类比：两张便签都夹在同一对邻居之间，按学号大小排。
+2. **Item 是双向链表节点**：`left` / `right` 是文档序，`origin` / `rightOrigin` 记住插入时的左右锚。连续同 client 字符可挤进一个 Item，中途删除会拆开。
 
-3. **传输是紧凑二进制**：update 用 9 列按列压缩（client、clock、标记位、字符串、父节点等）。比 JSON 小一个数量级，WebSocket / WebRTC / IndexedDB 都能直接收发。
+3. **integrate 是 YATA 判定**：并发插在同一位置时，扫冲突项；同 origin 则 `client` 较小者靠左。`INTERNALS.md` 指向 2016 YATA 论文，并说明 `originRight` 是实现里的补充。
 
-三步加起来叫 **YDoc 模型**。
+4. **update 分 V1 / V2**：默认 `encodeStateAsUpdate` / `applyUpdate` 走 V1。V2 把 keyClock、client、left/right clock、info、string、parentInfo、typeRef、len 九列分开编，再追加 rest。`Doc` 同时发 `update` 与 `updateV2`。
 
-## 实践案例
+5. **事务默认自动开**：单次 `insert` / `push` / `set` 内部也会 `transact`。显式 `ydoc.transact(() => { ... })` 把多步合成一次 observer 和一条 update。`gc` 默认 `true`。
 
-### 案例 1：10 行接好协同富文本
+## 实践示例
 
-用 y-prosemirror 把 ProseMirror 接到 Yjs：
+### 案例 1：两份文档交换 V1 update
 
 ```js
-import * as Y from 'yjs'
-import { WebsocketProvider } from 'y-websocket'
-import { ySyncPlugin, yCursorPlugin } from 'y-prosemirror'
-// EditorView / EditorState 来自 prosemirror-view / prosemirror-state
+import * as Y from "yjs"
 
-const ydoc = new Y.Doc()
-const provider = new WebsocketProvider('wss://demo', 'room-1', ydoc)
-const yXml = ydoc.getXmlFragment('prosemirror')
-
-new EditorView(dom, { state: EditorState.create({
-  schema, plugins: [ySyncPlugin(yXml), yCursorPlugin(provider.awareness)]
-}) })
+const a = new Y.Doc()
+const b = new Y.Doc()
+a.getText("content").insert(0, "hello")
+Y.applyUpdate(b, Y.encodeStateAsUpdate(a))
 ```
 
-ProseMirror 不需要知道协同存在——`ySyncPlugin` 双向翻译 ProseMirror transaction 和 Yjs update。
+`encodeStateAsUpdate(doc, stateVector)` 可只发对方缺的 struct。`applyUpdate` 第三个参数会写到 `transaction.origin`。V2 必须成对使用 `encodeStateAsUpdateV2` / `applyUpdateV2`。
 
-### 案例 2：YArray 做实时白板图层列表
+### 案例 2：YArray 观察 delta
 
 ```js
-const layers = ydoc.getArray('layers')
+const layers = doc.getArray("layers")
 layers.observe(event => {
-  event.changes.delta.forEach(d => {
-    if (d.insert) renderLayers(d.insert)
-    if (d.delete) removeLayers(d.delete)
-  })
+  for (const d of event.changes.delta) {
+    if (d.insert) { /* 新增项 */ }
+    if (d.delete) { /* 删除长度 */ }
+  }
 })
-layers.push([{ id: 'rect-1', x: 10, y: 20 }])  // 多人同时拖图层不抢锁
+layers.push([{ id: "rect-1", x: 10, y: 20 }])
 ```
 
-`observe` 拿到的 `delta` 已经是合并后的最终顺序——CRDT 保证所有客户端 delta 序列等价。
+`push` 的参数是 **数组**，不是单个元素。`event.delta` 是 `event.changes.delta` 的别名；`YEvent` 写明必须在回调里读，事后再算可能错。
 
-### 案例 3：YMap + IndexedDB 做 local-first 笔记
+### 案例 3：相对位置而不是下标
 
 ```js
-import { IndexeddbPersistence } from 'y-indexeddb'
-const persistence = new IndexeddbPersistence('notes-db', ydoc)
-const notes = ydoc.getMap('notes')
-
-await persistence.whenSynced  // 先从本地恢复
-notes.set('note-1', { title: '...', body: '...' })
-// 离线写、上线自动合并到服务端
+const text = doc.getText("content")
+text.insert(0, "hello")
+const rel = Y.createRelativePositionFromTypeIndex(text, 2)
+text.insert(0, "ab")
+const abs = Y.createAbsolutePositionFromRelativePosition(rel, doc)
 ```
 
-`y-indexeddb` 把整个 YDoc 存浏览器，断网随便写，重连后跟服务端自动 diff 同步。
+`RelativePosition` 锚在 Item / 类型名上，可带 `assoc`。绝对下标会随前方插入漂移。
 
 ## 踩过的坑
 
-1. **改动必须包在 `transact()` 里**：单条调用没事，但同一 tick 多个改动如果不包，会发出多份 update 拖垮性能；用 `ydoc.transact(() => { ... })` 把它们合成一份。
-
-2. **协同光标别存绝对索引**：别人在你前面插了一行，你的 `cursor: 5` 就指错位置了。用 `Y.RelativePosition` 锚定到 `Item`，索引随别人编辑自动跟。
-
-3. **update 是 Uint8Array，不是 JSON**：发送时不能 `JSON.stringify`——会破坏二进制结构。WebSocket 走 `binaryType: 'arraybuffer'`，HTTP 走 base64 或 multipart。
-
-4. **大量离线改动要切片**：堆了几小时改动后单条 update 可能几 MB，WebSocket 单帧打爆。要么 `Y.encodeStateAsUpdate(doc, stateVector)` 增量发，要么手动按 length 切片。
+1. **项目里出现两个 Yjs 副本**：`index.js` 会 `console.error`，`instanceof GC` 一类检查失效。
+2. **`array.push(item)` 当原生数组用**：签名是 `push(content: Array<T>)`。
+3. **同一 tick 多次改却不包 `transact`**：每次都会独立提交；要合成一条 update 就显式开事务。
+4. **光标存 `5`**：别人在前面插入后下标失效，用相对位置。
+5. **把 `y-websocket` / IndexedDB provider 写成这个 tag 的 API**：本仓只保证 `Doc`、类型和 update 编解码。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 多人协同富文本 / 代码编辑器（接 ProseMirror / CodeMirror / Lexical）
-- local-first app（先离线写，回来自动合并）
-- 实时白板 / 看板（图层、卡片这种"列表式"对象）
-- P2P 协作（y-webrtc 完全无中心服务器）
+
+- 给 ProseMirror / CodeMirror / Lexical 接一层薄绑定，状态留在 `Y.Doc`
+- 先离线写、再用 `encodeStateAsUpdate` / provider 合并
+- 列表或映射式白板对象，用 `observe` 的 delta 重绘
 
 **不适用**：
-- 强一致性事务（金融账本、库存扣减）→ 用数据库 + 锁
-- 需要"操作可审计 / 可撤销到任意点"且要数学证明 → 选 Automerge（论文派，op log 可追溯）
-- 极小内存设备（嵌入式 IoT）→ Yjs 的 Item 链表内存开销不低
-- 不需要协同的本地 app → 直接用普通对象，别引入 CRDT 复杂度
 
-## 历史小故事（可跳过）
+- 需要中心事务和唯一余额的账本
+- 必须把每次删除的“谁、何时”留成可审计日志——删除不增 clock，内容在 `gc` 下可被 `GC` 替换
+- 把 v14 RC 或未绑定的绑定包性能数字当 13.6.32 合同
+- 本页没有运行编辑器或网络 provider
 
-- **2014 年**：Kevin Jahns 在博士期间开始写 Yjs 原型，最初尝试 OT 派实现，发现 transform 函数难写到爆。
-- **2016 年**：改用自己提的 **YATA 算法**（RGA 家族双向链表变体），成为 CRDT 派——concurrent insert 冲突有了简洁可证的解。
-- **2018 年**：发布 v13，确立 YDoc + YType + Item + UpdateEncoder 的四层架构，性能拉到"编辑器无感"。
-- **2020 年起**：被 Linear、JupyterLab、GitBook 等工业项目采用。
-- **现在**：GitHub Sponsors 上活跃度最高的 CRDT 项目，Kevin 个人维护接近 9 年。
+## 固定版本边界
+
+- 本文绑定 `yjs/yjs@1ce38f75f786e4bc0b2cc9703afbc6eea8fe7859`。annotated tag `v13.6.32` 解引用到该提交，与 npm `yjs@13.6.32` 的 `gitHead` 一致。
+- `package.json`：`license` MIT，`engines.node >= 16`，依赖 `lib0 ^0.2.99`。
+- 访问当日同仓已有 `v14.0.0-rc.24`，未绑定。
+- `UndoManager`、`Snapshot`、`PermanentUserData` 只确认导出，未走测试。
+- 未安装依赖、未跑 `npm test` / rollup，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **协同不必绑死编辑器**——把"共享状态"和"传输 update"切开，编辑器只写薄胶水
-2. **CRDT ≠ OT**：CRDT 让 concurrent op 有"天然全序"，不需要中央 transform；代价是数据结构复杂、内存占用高
-3. **算法选择决定性能**：YATA 双向链表 vs flat ops vec（Automerge），同样满足公理但工程取舍完全不同
-4. **二进制编码很重要**：9 列 column-oriented 比 JSON 小一个数量级，是 Yjs 能在生产用的关键
+1. **共享类型和传输字节必须切开**——本仓不绑编辑器，也不绑 WebSocket。
+2. **YATA 的全序写在 `Item#integrate`，不在中央 transform**。
+3. **默认 update 是 V1**——V2 的九列编码要成对调用。
+4. **删除是状态型 CRDT**——和插入的顺序 ops 不是同一套记账。
+
+## 应用型自测
+
+1. `ydoc.get("t", Y.Array)` 之后再 `ydoc.get("t", Y.Map)` 会怎样？
+2. `layers.push({ id: 1 })` 符合 13.6.32 的签名吗？
+3. `Y.encodeStateAsUpdate(doc)` 默认是 V1 还是 V2？
+
+检查点：
+
+1. 抛错。同名类型已被另一构造器占用。
+2. 不符合。`push` 要数组，应写 `push([{ id: 1 }])`。
+3. V1。V2 入口是 `encodeStateAsUpdateV2`。
 
 ## 延伸阅读
 
-- 官方文档：[docs.yjs.dev](https://docs.yjs.dev)（API 完整参考 + 教程）
-- Kevin 自己讲 YATA：[Yjs internals talk](https://www.youtube.com/watch?v=0l5XgnQ6sB4)（45 min，讲链表 + integrate）
-- 与 Automerge 对比：[Martin Kleppmann — CRDTs: The Hard Parts](https://www.youtube.com/watch?v=x7drE24geUw)
-- [[crdt-json]] —— Kleppmann 走"flat ops vec"路线，与 Yjs 工程取舍完全相反
-- [[prosemirror]] —— y-prosemirror 是 Yjs 富文本最重要的绑定层
-- [[codemirror]] —— y-codemirror.next 让协同代码编辑器成为可能
+- 文档：[docs.yjs.dev](https://docs.yjs.dev)
+- 固定源码：[yjs/yjs](https://github.com/yjs/yjs) —— 本文绑定提交 `1ce38f75f786e4bc0b2cc9703afbc6eea8fe7859`
+- 仓内说明：`INTERNALS.md`（YATA、Item、DeleteSet）
+- [[automerge]] —— 不可变文档 + change log 对照
+- [[lamport-1978]] —— ID 所用 Lamport 时钟的理论根
 
 ## 关联
 
-- [[crdt-json]] —— 同样满足 CRDT 公理，但用 op log 而不是链表骨干
-- [[prosemirror]] —— Yjs 富文本的主力宿主，schema-first 让协同与编辑解耦
-- [[codemirror]] —— y-codemirror.next 把协同接进代码编辑器
-- [[lexical]] —— Meta 的新一代编辑器框架，也有 y-lexical 绑定
-- [[lamport-1978]] —— Lamport 时钟是 Yjs Item ID 的理论基础
-- [[paxos-1998]] —— 强一致协议的对比项；CRDT 选了"最终一致"而不是 Paxos 的强一致
+- [[automerge]] —— 不可变快照 / OpId / Bloom sync vs 可变类型 / update
+- [[prosemirror]] —— 常见宿主；绑定细节以对应包为准
+- [[codemirror]] —— 代码编辑器绑定在独立包
+- [[lexical]] —— 另一编辑器宿主
+- [[crdt-json-2017]] —— 嵌套 JSON CRDT 的另一条实现线
+- [[sharedb]] —— OT 对照
 
 ## 反向链接
 

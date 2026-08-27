@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "yjs",
+    "digest_sha256": "e3a651d44d2fef134244137603d57d1360749fd7d342b90b7d7df4462c72d08f"
+  },
+  "source_revision": "1ce38f75f786e4bc0b2cc9703afbc6eea8fe7859",
+  "research_input_sha256": "1476ab8a7566e8b0d6760f39a52b2173da99a371f0203152ddac55e566590a60",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates Y.Doc types, Item/YATA integrate, V1 vs V2 updates, and relative positions."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Doc/Item/encoding/YArray/RelativePosition; upstream tests and providers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Bound to yjs 13.6.32 / 1ce38f75...; v14 RC and editor bindings remain unbound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:15:00.000Z"
+}
