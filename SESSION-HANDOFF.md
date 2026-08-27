@@ -15,12 +15,17 @@
   1. 绑定 `nodejs/undici@c8d80e6b...` / `8.10.0`，区分 Dispatcher、`fetch()` 与 `request()` 默认 method，并写明 retry 为 opt-in。
   2. 绑定 `node-fetch/node-fetch@8b3320d2...` / npm `3.3.2`，披露仓内 `package.json.version=3.1.1`，写明 http/https 传输、重定向与凭证边界。
   3. 新增 `docs/fetch-impl-source-review-20260827-bt.md` 与两份 generation 1 receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致且 `evidence_state=UNVERIFIED`；`audit:project-standard` `benchmark-aligned=20`；`audit:content-contract` blocking 0；`audit:counts` / `audit:wikilinks` 通过。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`。
+  - `audit:content-contract`：v2=89，blocking 0。
+  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿；2287 HTML、2286 sitemap URLs、23 Playwright tests。
 - budget：1 个 epoch、2 个源码页、单 writer。
-- external_outcome：一个 review-ready PR；未授权 merge/deploy。
-- stop conditions：需要抬高 taxonomy 预算、猜测不可达 revision、或把静态阅读写成运行证据时停止。
-- 下一次 wake 条件：PR review / CI；不自动 merge。
-- 下一条命令：在规范 Node 下对 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159` 跑 `npm run verify:ci`。
+- external_outcome：PR https://github.com/estelledc/study/pull/127 ；未 merge、未部署，D 轴不变。
+- stop conditions：当前 epoch 已完成；不自动 merge。
+- 下一次 wake 条件：owner review / CI；只有单独授权才能 merge。
+- 下一条命令：查看 PR #127 checks；不要 merge。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
