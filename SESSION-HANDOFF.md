@@ -15,7 +15,7 @@
   1. `execa` 绑定 tag `v10.0.1` / `8017b279e19347efaf2587711c2d57dbd4330740`（与 npm `gitHead` 一致），记录 `createExeca`、`$` 的 `preferLocal`、`execaNode` IPC，以及仓库内 Windows PATHEXT / shebang / 换行拒绝。
   2. `cross-spawn` 绑定 tag `v7.0.6` / `77cd97f3ca7b62c904a63a698fc4a79bf41977d0`（与 npm `gitHead` 一致），记录 parse → spawn、`shell` 退出增强、Windows ENOENT 改写与 cmd-shim 二次转义。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；taxonomy 归入 `projects-cli-tools`。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:site-state` current；`audit:counts` 与当前文件数一致。`verify:ci` 以提交后命令为准。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:site-state` current；`audit:counts` 与当前文件数一致。`STUDY_CHANGED_FROM=51e405f5fd76131242466ecc9c2973d3cc9f70f3 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全部 portable 门禁通过（含 23 个 Playwright a11y）。
 - budget：1 个可写切片、2 个 blob-filtered worktree、1 个 PR；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或 baseline。
 - stop conditions：单 PR 已形成且未 merge 后停止；不开启下一对研究页。
