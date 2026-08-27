@@ -17,12 +17,14 @@
   2. `nightwatch` 绑定 tag `v3.16.0` / `765afc3566...`（与 npm `nightwatch@3.16.0` gitHead 一致），写清 CliRunner → CommandQueue → Transport 工厂、assert/verify 中止合同与默认 Firefox。
   3. 新增共享审查记录与两份 generation 1 static receipt；taxonomy 收入 `projects-testing-and-verification`，未抬高 unclassified / unknown_difficulty / empty_description 预算。
   4. 同步 queue / method / about / career-plan 的公开规模文案到 projects=963、total=2046，使 `audit:counts` 通过。
-- acceptance checks：
+- 验证结果：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `npm run audit:counts`：通过。
   - `git diff --check`：通过。
-  - 派生：`audit:project-standard` snapshot 与 `generate:site-state` 已写；全量 `verify:ci` 在本修订上继续跑。
+  - `STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2287 HTML / 2286 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=927`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=105`、`legacy-unverified=1941`、blocking 0。
 - budget：2 个 blob-filtered 本地 worktree + 2 页新内容 + 派生刷新；单 writer。
 - external_outcome：一个 PR，不 merge。
 - blocker：无本轮硬暂停。规模 compare 仍可能在 supervisor 巡检中超 baseline，本轮未改 threshold。
