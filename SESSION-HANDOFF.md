@@ -4,13 +4,13 @@
 
 ## 2026-08-27 PARALLEL writer GP：yaml + js-yaml 静态审查
 
-- status：Program `active`；本地 writer epoch `complete`；分支已 push，PR 待开，未 merge。
+- status：Program `active`；本地 writer epoch `complete`；分支已 push，PR #262 已开，未 merge。
 - 起始 ref：`9adc8b991`（当时 `origin/main`）。
 - objective：按用户指定 PARALLEL writer GP，把 YAML-parse 双子 `yaml` / `js-yaml` 做成源码绑定的 study-v2 静态审查；仓库原无这两页，因此新建而不是回退到 yq/dasel。
 - scope：两页新正文、2 份 generation 1 receipt、`docs/yaml-parser-source-review-20260827-gp.md`、taxonomy Markdown/解析主题、派生 atlas / note-index / site-state / 公开规模文案、本 handoff；未改 yq/dasel 正文，未安装上游依赖，未跑上游测试或 benchmark。
 - activated_by：`explicit-user-request-2026-08-27-parallel-writer-gp`。
 - detector fingerprint：`yaml` / `js-yaml` 无项目页；现有 YAML 页（yq/dasel）仍是 legacy 处理器而不是 parser 对。本轮按主目标新建两页。
-- external delta：用户授权 push + 一个 PR；未 merge、未 deploy，D 轴不因 merge 提升。
+- external delta：用户授权 push + 一个 PR（#262）；未 merge、未 deploy，D 轴不因 merge 提升。
 - 完成切片：
   1. `yaml` 绑定 annotated tag `v2.9.0` / `ddb21b04...`（与 npm `yaml@2.9.0` `gitHead` 一致），修正 parse vs parseDocument、1.2 core 默认、`merge` 关闭、`maxAliasCount: 100`。
   2. `js-yaml` 绑定 lightweight tag `5.4.1` / `e5a3ba0e...`（与 npm `gitHead` 一致），修正 v5 事件管线、`CORE_SCHEMA` vs `DUMP_SCHEMA`、空输入抛错、默认 `maxAliases: -1`。
@@ -24,7 +24,7 @@
 - blocker：规模 baseline 在 main 已超限，本轮未改阈值或证据布局。
 - stop conditions：一个 PR 已打开且未 merge 后停止；不部署。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
-- 下一条命令：用 GitHub 查看本分支 PR。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/262`。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
