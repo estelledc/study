@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EA：Highcharts / visx
+
+- status：writer epoch complete；准备 draft PR，不 merge。
+- 起始 ref：`7a2384d09`（origin/main，oxc/rolldown #54 merge 后）。
+- objective：把可视化双子 `highcharts` + `visx` 绑到可达静态 revision；`highcharts` 原先没有项目页，按 victory 先例新增。
+- scope：两篇项目页、共享 EA 审查记录、receipt、taxonomy 分类、atlas / site-state / 公开计数、本 handoff；2 个 ignored blob-filtered worktree。未安装上游依赖、未跑测试、bundle 或 WebGL boost。
+- activated_by：`explicit-parallel-writer-ea-20260827`。
+- detector fingerprint：`visx` 仍是 v3 / React 16.8 教程，缺 pinned revision；`highcharts` 不在目录中。npm `highcharts@13.0.2` 的 `gitHead` 在 `highcharts-dist`，与 source tag 不是同一 SHA。
+- external delta：本轮授权 push + 一个 PR；不 merge、不部署，D 轴不提升。
+- 完成切片：
+  1. `highcharts` 绑定 source `69edf895...` / tag `v13.0.2`；披露 npm 发布自 `highcharts-dist@387b98df...`；修正工厂/Promise、`update`/`setData`、默认 SVG master 与独立 Boost 阈值。
+  2. `visx` 绑定 `78839796...` / `v4.0.0`（与 `@visx/scale` npm `gitHead` 一致）；修正 vendor d3-scale operator 顺序、ParentSize 300ms、Zoom 默认 0/Infinity、React 18/19 peer，以及 `@visx/xychart` 组装层。
+  3. 新增 `docs/highcharts-visx-source-review-20260827-ea.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：`STATIC_REVIEW` / `UNVERIFIED`。
+  - `audit:counts`：projects=962、papers=1083、total=2045。
+  - `audit:content-contract`：blocking 0，`v2=105`。
+  - `audit:project-standard`：`benchmark-aligned=36`、snapshot CURRENT。
+- budget：2 个稀疏 worktree + 2 页 + 派生刷新；单 writer。
+- blocker：规模 baseline 超限是 main 既有问题，本轮未改 threshold。
+- stop conditions：本轮已完成；merge / deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI，或新的显式目标。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

@@ -1,53 +1,62 @@
 ---
-title: visx — 把 d3 拆成 30 块乐高的 React 可视化原语
-来源: 'https://github.com/airbnb/visx + Airbnb Engineering 2018 "vx, an alternative to traditional chart libraries"'
+title: visx — 把 vendored d3 拆成 React 可视化原语
+来源: https://github.com/airbnb/visx
 日期: 2026-05-30
-分类: 前端工程
+分类: 数据可视化
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/airbnb/visx
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 78839796081beb0370fc928cc922b21908bbabaf
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.0.0
 ---
 
 ## 是什么
 
-visx 是 **Airbnb 把 d3 拆成 30+ 个 React 子包的可视化原语库**。日常类比：[[recharts]] 像超市买现成蛋糕（柜里挑一个就走）；visx 像烘焙原料店（面粉、糖、模具分开卖，自己揉自己烤）。
+visx 是 Airbnb 的 **React 可视化原语 monorepo**。日常类比：不是超市成品蛋糕（[[recharts]]），而是烘焙原料店——scale、shape、axis 分开卖；若不想从零拼，同一提交里还有 `@visx/xychart` 这套半成品模具。
 
-最小用法：
+固定 `v4.0.0` 的最小用法：
 
 ```tsx
 import { scaleLinear } from '@visx/scale';
 import { Bar } from '@visx/shape';
 
 const xScale = scaleLinear({ domain: [0, 100], range: [0, 500] });
-// xScale(50) → 250；xScale.invert(250) → 50
 
 <svg width={500} height={200}>
   <Bar x={xScale(20)} y={0} width={20} height={150} fill="steelblue" />
 </svg>
 ```
 
-它不替你画"柱状图"——你得自己拼 axis / grid / shape / tooltip。代价是初学陡，回报是任意自定义。原项目 2018-04 叫 **vx**，2020-09 改名进 Airbnb 主仓库变 **visx**。
+`scaleLinear` 返回的是 `@visx/vendor/d3-scale` 的 d3 scale；`Bar` 只是带 `visx-bar` class 的 `<rect>`。
 
 ## 为什么重要
 
-不理解 visx，下面这些事都没法解释：
+不理解 visx v4，旧教程会对不上：
 
-- 为什么 React 项目里用原生 d3 总撞墙：`d3.select(svg).selectAll(...)` 是一步步改 DOM（imperative，命令式），跟 React「声明 UI、由框架重画」的时序对不上
-- 为什么 [[recharts]] 易上手但深度自定义就卡死，visx 反过来——慢上手但天花板高
-- 为什么 SSR / Next.js 场景里大家选 SVG-based 方案而不是 Canvas（服务端先吐出可序列化的标签，hydration 体积更小）
-- 为什么「按需 import 几个子包」在 [[d3]] 这种工具库时代变成硬性优势（没用到的代码打包时丢掉，bundle 约 4KB vs 全量约 50KB）
+- 为什么 React 项目里直接 `d3.select` 会和声明式渲染抢 DOM
+- 为什么“没有成品图”不再完整——`@visx/xychart` 已导出 `XYChart` 与一组 series
+- 为什么最低 React 不再是 16.8：`@visx/zoom` peer 是 `^18 || ^19`
+- 为什么 scale 不重写算法，却多一层 `scaleOperator` 配置顺序
 
 ## 核心要点
 
-visx 的设计可以拆成 **三句话**：
+固定版本可以拆成四层：
 
-1. **数学引擎用 d3，UI 层用 React**：`@visx/scale` 用配置对象薄包装创建 d3-scale，没重写 scaleLinear/scaleLog。类比：visx 是 d3 的"翻译官"，不是替代品。
+1. **数学来自 vendor d3**：`@visx/vendor` 钉死 `d3-scale@4.0.2` 等模块。`scaleOperator` 按 domain → nice → zero → interpolate → round → range → reverse 套配置。
+2. **shape 是 SVG 组件**：`Bar` 把剩余 props 铺到 `<rect>`。没有 imperative `chart.update()`——data 变则 props 变。
+3. **响应式与缩放是 state**：`ParentSize` 用 ResizeObserver；默认 debounce 300ms，且 `enableDebounceLeadingCall=true`，初始宽高是 0。`Zoom` 把 `transformMatrix` 放 React state，`toString()` 写成 SVG `matrix(...)`；默认缩放上下限是 `0` / `Infinity`。
+4. **分包很多，但有一层组装**：此提交 `packages/` 有 38 个 `visx-*` 目录（含 demo 与 umbrella）。`@visx/xychart` 提供 `XYChart`、`LineSeries`、`BarSeries` 等。
 
-2. **原语分两类，心智却统一**：scale 是函数（数据 ↔ 像素）；axis / shape 才是 props 驱动的 SVG 组件。没有 imperative `chart.update()`——data 变 → props 变 → React 对比新旧树（reconciliation）→ SVG 重渲染。
-
-3. **monorepo 拆 30+ 子包**：`@visx/scale` `@visx/shape` `@visx/zoom` 各自独立发布。bundler 看到你只 import 几个，剩下的全部 dead-code-eliminate（没用到的代码打包时丢掉）。
-
-合在一起：**继承 d3 数学战斗经验 + React 心智一致 + tree-shake 友好的 bundle**。
-
-## 实践案例
+## 实践示例
 
 ### 案例 1：scale 当函数用
 
@@ -55,106 +64,110 @@ visx 的设计可以拆成 **三句话**：
 import { scaleLinear } from '@visx/scale';
 
 const xScale = scaleLinear({
-  domain: [0, 100],   // 数据范围
-  range: [0, 500],    // 像素范围
-  nice: true,         // tick 自动取整
+  domain: [0, 100],
+  range: [0, 500],
+  nice: true,
 });
 
-xScale(50);           // → 250（数据 50 映射到像素 250）
-xScale.invert(250);   // → 50（反向，pixel → data）
-xScale.ticks(5);      // → [0, 25, 50, 75, 100]
+xScale(50);        // d3-scale 映射
+xScale.invert(250);
+xScale.ticks(5);
 ```
 
-**逐部分解释**：`scaleLinear` 返回的对象**就是 d3-scale 实例**（本身是个函数，同时挂了 `.invert / .ticks`）。visx 只补配置化 API 与 TS 类型，没改算法。真实柱状图通常 `data.map` 再喂 `xScale`。
+`nice` 发生在 domain 之后、range 之前。返回值仍是 d3 scale，不是 visx 自研映射器。
 
-### 案例 2：响应式容器（@visx/responsive）
+### 案例 2：ParentSize 的默认合同
 
 ```tsx
 import { ParentSize } from '@visx/responsive';
 
-<ParentSize debounceTime={50}>
+<ParentSize>
   {({ width, height }) => <MyChart width={width} height={height} />}
 </ParentSize>
 ```
 
-**逐步**：① `ParentSize` 用 ResizeObserver 盯父容器宽高；② 通过 render-prop 把 `width/height` 传给子图；③ 默认 debounce 300ms，防拖动时每帧重渲染。SSR 时给 fallback 尺寸。
+首帧宽高可能是 0，要等 ResizeObserver。把 `debounceTime` 调到 50 能缩短等待，也会更频繁 setState。SSR 时库不会凭空猜容器尺寸。
 
-### 案例 3：state-based zoom（@visx/zoom）
+### 案例 3：Zoom 输出 SVG matrix
 
 ```tsx
 import { Zoom } from '@visx/zoom';
 
-<Zoom width={500} height={500} scaleXMin={0.5} scaleXMax={4}>
+<Zoom width={500} height={500}>
   {(zoom) => (
-    <svg
-      onMouseDown={zoom.dragStart}
-      onMouseMove={zoom.dragMove}
-      onMouseUp={zoom.dragEnd}
-      onWheel={zoom.handleWheel}
-    >
-      <g transform={zoom.toString()}>{/* 你的图表 */}</g>
+    <svg>
+      <g transform={zoom.toString()}>{/* 图层 */}</g>
     </svg>
   )}
 </Zoom>
 ```
 
-**逐步**：① 拖/滚轮进 Zoom 的 handler；② 内部更新 transformMatrix（scaleX/Y、translateX/Y）；③ `zoom.toString()` 写成 SVG `transform`。**不直接操作 DOM**——跟原生 d3-zoom 的 imperative 路径对照，这是 visx 的关键设计代价。
+默认不限制到 0.5–4；要夹紧需自己传 `scaleXMin` / `scaleXMax`。拖拽与 pinch 走 `@use-gesture/react`，不是 d3-zoom 的 DOM 手势。
 
 ## 踩过的坑
 
-1. **没成品图表**：做柱状图要手动组合 BarStack + AxisLeft + AxisBottom + Grid（30+ 行 JSX）。新人第一次写经常卡 1-2 小时，[[recharts]] 一行 `<BarChart>` 就搞定。
-
-2. **SVG-only 性能瓶颈**：>10k 数据点时 SVG 节点 reflow 明显卡顿。visx 没有 Canvas/WebGL 出口，大数据场景（实时监控、万级散点）必须切到 deck.gl / pixi-react。
-
-3. **ParentSize debounce 默认 300ms**：拖动 window 边缘时看起来有"延迟"。传 `debounceTime={50}` 能调短，但太短又会撕裂重渲染。这是社区试出来的魔法值，没理论依据。
-
-4. **state-based zoom 在大数据集卡**：每次 zoom 触发 reconciliation，5k+ 点开始有掉帧。workaround：`useMemo` 把数据 transform 提到 Zoom 外面，子组件用 React.memo 隔离重渲染。
+1. **仍按 v3 / React 16.8 写 peer**：固定 zoom 包要 React 18 或 19。
+2. **以为完全没有成品图**：`@visx/xychart` 已提供笛卡尔组装层。
+3. **把 0.5–4 当成 Zoom 默认值**：源码默认是 `0` / `Infinity`。
+4. **把 debounce 300ms 当成“延迟 bug”**：这是 `useParentSize` 默认值，可用 props 改。
+5. **把“SVG 过 10k 点就卡”写成测量结论**：本页未跑渲染 benchmark。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 数据集 1k-10k 点，需要自定义坐标轴 / 渐变 / 复合图层
-- 强 SSR / Next.js 需求（SVG 友好，hydration 体积小）
-- 团队有 d3 经验，愿意承担陡学习曲线换灵活度
-- 移动端 H5 首屏 < 50KB JS 预算（按需引入子包优势明显）
+
+- React 里要自己拼 SVG，并复用 d3 scale / shape
+- 需要按包引入，而不是一份巨型 chart 配置
+- 愿意读 operator 顺序和 ResizeObserver 首帧 0 尺寸
 
 **不适用**：
-- 数据集 < 1k 点的常规柱/线/饼/散点 → 用 [[recharts]] 省样板代码
-- 数据集 > 10k 点或要 60fps 动画 → 切 Canvas（react-konva / regl / pixi-react）
-- 团队 React 经验浅、希望"props 即配置" → [[recharts]] 更声明式
-- 学习目的想理解可视化底层 → 直接学 [[d3]]，别被包装层屏蔽细节
 
-## 历史小故事（可跳过）
+- 只要一份 options 出图，并接受商业许可 → [[highcharts]]
+- 只要 JSX 成品图 → [[recharts]]
+- 需要本页未验证的 Canvas / WebGL 吞吐
+- 还在 React 17：对不上 `@visx/zoom@4.0.0` peer
 
-- **2018-04**：Airbnb 工程师 Harrison Shoff 等开源 **vx**（visualization expressions），项目独立托管，不在 airbnb 组织下。
-- **2020-09**：改名 **visx**，迁入 airbnb 主仓库，标志 Airbnb 官方背书。
-- **2022-2023**：提交节奏从周更降到月更甚至季更，社区维护为主，但仍是 React 生态低层可视化的事实标准。
-- **2024**：发布 v3.x，最低 React 版本提到 16.8（强制 hooks），@visx/zoom 矩阵字段从 string 改 number，bundle 平均缩 8-12%。
+## 固定版本边界
+
+- 本文绑定 `airbnb/visx@78839796...`，tag `v4.0.0`。
+- npm `@visx/scale@4.0.0`、`@visx/shape@4.0.0`、`@visx/zoom@4.0.0` 的 `gitHead` 与该 tag 一致。
+- 未安装依赖、未跑 vitest 或 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **包装 d3 vs 替代 d3 是两种哲学**：visx 选包装（承认 d3 数学不可替代），[[observable-plot]] 选替代（用语法糖隐藏 d3）。前者天花板高、上手陡，后者反之。
-2. **React 化 imperative 库的核心难点是事件系统映射**：visx 在 zoom/brush 上的 state-based 路径就是这个难点的典型样本——选了 React 心智一致，付了性能代价。
-3. **monorepo 30+ 子包是 bundle 友好的代价**：文档分散、新手组合时卡，跟 lodash-es / date-fns 同样的 trade-off。
-4. **API 形状决定 bundle 形状**：modular function export 让 tree-shake 真生效，class chain 模式做不到。这是结构性决策，事后无法补救。
+1. **包装 d3 和替代 d3 是两种哲学**——visx 选包装，并用 vendor 钉版本
+2. **配置对象的字段顺序也是合同**——nice 在 range 前，会改 domain
+3. **原语库也可以再长一层组装**——xychart 没有否定 shape 层
+4. **手势库换了，心智还是 state → transform 字符串**
+
+## 应用型自测
+
+1. `scaleLinear({ domain, range, nice: true })` 会重写 d3 的映射算法吗？
+2. 不传 `debounceTime` 时，`ParentSize` 默认多重渲染间隔是多少？
+3. `<Zoom width={500} height={500}>` 默认把缩放夹在 0.5 到 4 吗？
+
+检查点：
+
+1. 不会。它创建 vendor `d3-scale` 再套 operator。
+2. 300ms，且默认允许 leading call。
+3. 不会。默认上下限是 `0` 与 `Infinity`。
 
 ## 延伸阅读
 
-- 官方文档：[airbnb.io/visx](https://airbnb.io/visx/)（每个子包都有 sandbox 示例）
-- 官方仓库：[github.com/airbnb/visx](https://github.com/airbnb/visx)
-- bundle 对比：[bundlephobia.com/package/@visx/scale](https://bundlephobia.com/package/@visx/scale)
-- [[d3]] —— visx 内部依赖，理解它是用 visx 的前置知识
-- [[recharts]] —— 同生态高层竞品，对比维度
-- [[observable-plot]] —— 不同哲学路线（语法糖隐藏 d3）
+- 官方文档：[airbnb.io/visx](https://airbnb.io/visx/)
+- 固定源码：[airbnb/visx](https://github.com/airbnb/visx) —— 本文绑定 `78839796081beb0370fc928cc922b21908bbabaf`
+- 审查记录：仓库内 `docs/highcharts-visx-source-review-20260827-ea.md`
+- [[d3]] —— vendor 里的数学引擎
+- [[recharts]] —— 同生态高层成品图
+- [[highcharts]] —— 配置对象 / 商业许可对照
 
 ## 关联
 
-- [[d3]] —— visx 的底层数学引擎，scale/shape/hierarchy 全部包装或 re-export d3 模块
-- [[recharts]] —— 同生态高层对比，visx 是低层原语 / Recharts 是高层成品
-- [[observable-plot]] —— 反例哲学（用语法糖隐藏 d3）
-- [[echarts]] —— 高层 vs 低层哲学对比的另一极，配置驱动
-- [[react-spring]] —— visx 不做时间动画，过渡要靠这种动画原语补
-- [[gsap]] —— 同上，与 visx 互补的动画方案
+- [[d3]] —— scale / shape 的算法来源
+- [[recharts]] —— React 成品图对照
+- [[highcharts]] —— options 工厂对照
+- [[observable-plot]] —— 用语法糖藏 d3 的另一条路
+- [[echarts]] —— 配置驱动对照，本页未审查其固定源码
 
 ## 反向链接
 

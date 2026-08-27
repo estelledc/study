@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "visx",
+    "digest_sha256": "33884258623bc84c27a7cb59361920e721adc3e5a32b015ede76aa5c52bae00c"
+  },
+  "source_revision": "78839796081beb0370fc928cc922b21908bbabaf",
+  "research_input_sha256": "c2ef80c5694778bab4af94b8c27f5a7abcd5bb4787f7c7ec0cd319b0c1805557",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ea",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains vendored d3-scale operators, ParentSize debounce defaults, Zoom matrix limits, and XYChart as an assembly layer."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ea",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected scaleOperator, Bar, ParentSize, Zoom, vendor pins, and xychart exports; upstream vitest and bundles were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ea",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "React peer is 18/19 on @visx/zoom@4.0.0; v3 / React 16.8 claims are out of scope for this revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "highcharts",
+    "digest_sha256": "7a3a029ae53adceb8a1dc72f4dc6fa82a9d215388f4a2277bd7a398c9af583c0"
+  },
+  "source_revision": "69edf8952a04b9872b6510fbdacd7dff8b03970b",
+  "research_input_sha256": "c2ef80c5694778bab4af94b8c27f5a7abcd5bb4787f7c7ec0cd319b0c1805557",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ea",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains source-versus-dist provenance, chart factory/promise, update versus setData, and Boost as a separate module."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ea",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Chart.chart, Chart.update, Series.setData, default SVG master, and Boost thresholds; upstream tests and WebGL were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ea",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm highcharts@13.0.2 gitHead lives in highcharts-dist and is disclosed as out of scope for this source-bound note."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

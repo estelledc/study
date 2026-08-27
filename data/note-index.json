@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -45247,6 +45247,37 @@
       }
     },
     {
+      "id": "projects::highcharts",
+      "area": "projects",
+      "slug": "highcharts",
+      "title": "Highcharts — 配置对象驱动的商业 SVG 图表库",
+      "description": "配置对象驱动的商业 SVG 图表库，绑定 Highcharts 13.0.2 源码仓的 chart 工厂、update/setData 与独立 Boost 模块。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-data-visualization"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-visualization",
+        "raw_category": "数据可视化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/highcharts/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-visualization-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-visualization-01/"
+      }
+    },
+    {
       "id": "projects::hls.js",
       "area": "projects",
       "slug": "hls.js",
@@ -63021,7 +63052,7 @@
       "id": "projects::visx",
       "area": "projects",
       "slug": "visx",
-      "title": "visx — 把 d3 拆成 30 块乐高的 React 可视化原语",
+      "title": "visx — 把 vendored d3 拆成 React 可视化原语",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63031,16 +63062,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-data-visualization",
-        "raw_category": "前端工程"
+        "raw_category": "数据可视化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/visx/",
       "atlas": {
@@ -65531,7 +65562,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-data-visualization-01/",
-      "entries": 54
+      "entries": 55
     },
     {
       "id": "topic-projects-databases-and-storage-engines-01",

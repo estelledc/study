@@ -2,10 +2,10 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 962,
     "by_status": {
-      "benchmark-aligned": 34,
-      "needs-evidence": 927
+      "benchmark-aligned": 36,
+      "needs-evidence": 926
     }
   },
   "projects": [
@@ -8128,6 +8128,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "highcharts",
+      "title": "Highcharts — 配置对象驱动的商业 SVG 图表库",
+      "source": "https://github.com/highcharts/highcharts",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "hls.js",
@@ -21512,27 +21532,23 @@
     },
     {
       "slug": "visx",
-      "title": "visx — 把 d3 拆成 30 块乐高的 React 可视化原语",
+      "title": "visx — 把 vendored d3 拆成 React 可视化原语",
       "source": "https://github.com/airbnb/visx",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "vite",

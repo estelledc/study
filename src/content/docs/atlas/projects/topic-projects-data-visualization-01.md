@@ -1,6 +1,6 @@
 ---
 title: "数据可视化 · 项目 · 第 1 组"
-description: "54 条 数据可视化 Atlas 分块"
+description: "55 条 数据可视化 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 54 条，稳定上限为 100 条。
+本分块共 55 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -40,6 +40,7 @@ sidebar:
 | [Gradio — ML 模型 demo 框架](/study/projects/gradio/) | `gradio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Graphology — 浏览器里的图数据结构与算法库](/study/projects/graphology/) | `graphology` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Handsontable — 浏览器里的 Excel](/study/projects/handsontable/) | `handsontable` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Highcharts — 配置对象驱动的商业 SVG 图表库](/study/projects/highcharts/) | `highcharts` | intermediate | UNVERIFIED | 配置对象驱动的商业 SVG 图表库，绑定 Highcharts 13 |
 | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) | `holoviews` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) | `kepler-gl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) | `leaflet` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -65,5 +66,5 @@ sidebar:
 | [Apache Superset — 开源 BI 平台](/study/projects/superset/) | `superset` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tabulator — 纯 JS 交互式表格](/study/projects/tabulator/) | `tabulator` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | `vega` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | `visx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [visx — 把 vendored d3 拆成 React 可视化原语](/study/projects/visx/) | `visx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | `voila` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

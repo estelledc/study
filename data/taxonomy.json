@@ -1988,6 +1988,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::highcharts",
+      "topic_id": "projects-data-visualization"
+    },
+    {
       "note_id": "projects::hono",
       "topic_id": "projects-web-frameworks"
     },
