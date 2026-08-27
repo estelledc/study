@@ -15,7 +15,7 @@
   1. `enquirer` 绑定 npm `gitHead` `70bdb0fedc3ed355d9d8fe4f00ac9b3874f94f61` / `2.4.1`，披露 GitHub 无 `2.4.1` tag。
   2. `sisteransi` 绑定 tag `v2.0.0` / `305922fd6654df4c77d1e023aa6c55162958eccb`。
   3. 共享审查文档与两份 STATIC_REVIEW receipt；evidence state `UNVERIFIED`。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致；`audit:counts` / `audit:content-contract` / `audit:site-state` / `git diff --check` 已在本地跑过。`verify:ci` 在 PR 打开后继续。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致；`audit:counts` / `audit:content-contract` / `audit:site-state` / `git diff --check` 通过。`STUDY_CHANGED_FROM=89766cc27 npm run verify:ci` 全绿（规范 Node 22.23.1 / npm 11.17.0）。
 - budget：1 个 twin 切片；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一份 PR 已开且未 merge 后停止。
