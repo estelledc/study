@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer GJ：pathe + upath 静态审查
 
-- supervisor 状态：writer epoch `running` → 本地切片完成，等待 PR CI；未 merge、未 deploy。
+- supervisor 状态：writer epoch `complete`；PR #250 已打开（draft）；未 merge、未 deploy。
 - 起始 ref：`9adc8b99165dfaf015777d5ca88c629ebfa961aa`（`origin/main`，#80）。
 - objective：按用户指定目标把 `pathe` 与 `upath` 做成 STATIC_REVIEW / UNVERIFIED 的源码绑定 study-v2 页。仓库原先没有这两页，未改用其他 path-util 后备对。
 - scope：两页正文、2 份 generation 1 receipt、`docs/path-util-source-review-20260827-gj.md`、派生 atlas / note-index / project-standard / site-state / 公开计数、本交接；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle。
@@ -15,12 +15,12 @@
   1. `pathe` 绑定 annotated tag `v2.0.3` → `614844ba1f7f34f051959f3d1a953c54eaeaf3b2`（npm latest 无 gitHead）。
   2. `upath` 绑定 tag `v3.0.8` → `ef9377ff82bb6d56904df6824a91be843f2ece2c`（与 npm gitHead 一致）。
   3. 共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`；`audit:project-standard` snapshot CURRENT；`audit:site-state` current；`audit:counts` OK。`verify:ci` 在首个 push/PR 之后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci` 全绿（388 Node tests、changed-note quality gate 2/2、strict build 2289 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。`audit:project-standard` snapshot CURRENT（`benchmark-aligned=81`）。
 - budget：1 个可写切片；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：1 个 PR 已打开且未授权 merge 时停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/250`；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
