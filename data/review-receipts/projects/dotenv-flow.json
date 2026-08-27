@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "dotenv-flow",
+    "digest_sha256": "7edca532870760d1ccb56a90c2fb73391feec0188f77ace17d75c3e042f4928f"
+  },
+  "source_revision": "7f07cf32cc28277f04e801982cc2fbddb6b220fa",
+  "research_input_sha256": "f89fa58d89e1b4974a26ebcee7e566d6a24879c8a349244b01561c6d60dc6637",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ih",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates file cascade, process.env non-overwrite, test skip of .env.local, and options.files."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ih",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "listFiles, load/parse, purge_dotenv, env/cli option maps, and config.js were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ih",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds reachable tag v4.1.0; npm dotenv-flow@4.1.0 exposes no gitHead; no runtime or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

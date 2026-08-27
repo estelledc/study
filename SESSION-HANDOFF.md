@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IH：dotenv-flow + dotenv-safe
+
+- status：writer epoch `running`；本地切片已写完，待定向验收与 PR。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
+- objective：为缺失的 dotenv 变体双子补齐 `dotenv-flow` 与 `dotenv-safe` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/dotenv-variant-source-review-20260827-ih.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。未改 marked / markdown-it / knex / ioredis / redis / BullMQ，也未写 dotenv 本体、dotenv-expand 或 rc9。
+- activated_by：`explicit-user-parallel-writer-ih-2026-08-27`。
+- detector fingerprint：目录无 `dotenv-flow.md` / `dotenv-safe.md`；开放 PR 已占 rc9+dotenv-expand（#266）与 dotenv+envalid（#121）；intern 车道 HM–ID，本车道为 IH。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `dotenv-flow` 绑定源码 tag `v4.1.0` → `7f07cf32cc28277f04e801982cc2fbddb6b220fa`；披露 npm `dotenv-flow@4.1.0` 未暴露 `gitHead`。
+  2. `dotenv-safe` 绑定 npm `gitHead` `6c314f973e2213122bfa2eb3a5f0e386390281ff`（提交说明 `9.1.0`）；远端无对应 tag，其后 dependabot braces 合并未纳入。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，公开项目数 967 → 969。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 完成后不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

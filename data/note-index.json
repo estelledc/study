@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2050,
-      "classified": 2003,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 967,
-        "classified": 939,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -40956,6 +40956,68 @@
       }
     },
     {
+      "id": "projects::dotenv-flow",
+      "area": "projects",
+      "slug": "dotenv-flow",
+      "title": "dotenv-flow — 按 NODE_ENV 叠多层 .env* 的环境文件加载器",
+      "description": "介绍 dotenv-flow 4.1.0 如何用环境 cascade、不覆盖已有 process.env，以及 options.files 显式清单。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/dotenv-flow/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
+      "id": "projects::dotenv-safe",
+      "area": "projects",
+      "slug": "dotenv-safe",
+      "title": "dotenv-safe — 用 .env.example 核对缺键的 dotenv 包装",
+      "description": "介绍 dotenv-safe 9.1.0 如何在 dotenv.config 之后对照 example 键，以及预加载默认允许空值。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/dotenv-safe/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::dovecot",
       "area": "projects",
       "slug": "dovecot",
@@ -65844,7 +65906,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 16
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",
