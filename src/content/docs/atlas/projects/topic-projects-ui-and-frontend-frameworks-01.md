@@ -1,6 +1,6 @@
 ---
 title: "UI 框架 / Frontend Framework · 项目 · 第 1 组"
-description: "13 条 UI 框架 / Frontend Framework Atlas 分块"
+description: "14 条 UI 框架 / Frontend Framework Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,11 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 14 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [InstantSearch — 用 searchClient 合同拼即时搜索 UI](/study/projects/instantsearch/) | `instantsearch` | intermediate | UNVERIFIED | 绑定 InstantSearch |
 | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) | `jspdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | `lighthouse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | `pdfmake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

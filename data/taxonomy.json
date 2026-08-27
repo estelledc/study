@@ -1760,6 +1760,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::algolia",
+      "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
       "note_id": "projects::anime",
       "topic_id": "projects-animation"
     },
@@ -2014,6 +2018,10 @@
     {
       "note_id": "projects::inngest",
       "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::instantsearch",
+      "topic_id": "projects-ui-and-frontend-frameworks"
     },
     {
       "note_id": "projects::jaeger",

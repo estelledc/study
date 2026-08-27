@@ -1,6 +1,6 @@
 ---
 title: "数据库本体 / 存储引擎 · 项目 · 第 1 组"
-description: "77 条 数据库本体 / 存储引擎 Atlas 分块"
+description: "78 条 数据库本体 / 存储引擎 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,11 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 77 条，稳定上限为 100 条。
+本分块共 78 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Algolia — 托管搜索的官方 JavaScript 客户端](/study/projects/algolia/) | `algolia` | intermediate | UNVERIFIED | 绑定 algoliasearch 5 |
 | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | `ann-benchmarks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) | `annoy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | `arangodb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

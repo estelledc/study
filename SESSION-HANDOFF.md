@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 托管搜索 PARALLEL writer DW
+
+- status：`running` 写入完成，等待 PR review；未 merge。
+- supervisor 状态：有界 writer epoch complete；D 轴未部署。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（当时 `origin/main`，含 oxc/rolldown PR #54）。
+- objective：按用户指定目标审查 Algolia + InstantSearch 托管搜索对；证据为 `STATIC_REVIEW` / `UNVERIFIED`；产出 `docs/*-20260827-dw.md` 与一个 PR，不 merge。
+- scope：新建 `algolia` / `instantsearch` 两页、2 份 generation 1 receipt、共享审查文档、taxonomy 指派、atlas / note-index / site-state / 公开规模文案、本 handoff；2 个 ignored blob-filtered worktree。未安装上游依赖、未发搜索请求、未跑上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-dw-20260827`。
+- detector fingerprint：仓库无 `algolia` / `instantsearch` 项目页；目标是托管搜索对，且排除另一路 writer 的 meilisearch/typesense。
+- external delta 计数：本轮授权 push + 一个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. 用 GitHub/npm 元数据绑定 `algolia/algoliasearch-client-javascript@899993f9...` / `algoliasearch@5.57.0`，以及 `algolia/instantsearch@ec13aefa...` / `instantsearch.js@4.113.0`。
+  2. 新建两篇 `study-v2` 页：客户端门面/host/retry/browser-Node 默认，以及 InstantSearch `searchClient` / `start` / `defer` / hydrate 边界。
+  3. 新增 `docs/hosted-search-source-review-20260827-dw.md` 与两份 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与固定 revision 一致，evidence state `UNVERIFIED`。
+- budget：2 个 blob-filtered worktree + 2 篇新页 + 1 个 PR；单 writer。
+- blocker：`benchmark-site --compare` 的 `tracked_files` 超限在 `main` 上已存在，属 `PARKED_HUMAN` 规模基线问题；本轮未改 baseline 或阈值。
+- stop conditions：本轮写入结束；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

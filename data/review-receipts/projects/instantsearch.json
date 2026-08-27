@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "instantsearch",
+    "digest_sha256": "9421e04bebb95eb46067ab3fe5d7c3304d9997950d918afd8a29ba67e927b603"
+  },
+  "source_revision": "ec13aefaca895b91160f6309f355801c8bf909b3",
+  "research_input_sha256": "bb956d2fb5905cb5249c0419e65315c71f8749b6d7be8cf8860c56b2408f5683",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains searchClient contract, start/dispose, defer coalescing, hydrate, and composition limits with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed InstantSearch.js 4.113.0 constructor, helper search rewrite, and widget scheduling were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "React/Vue packages share this commit but are identity-only; this note does not claim their APIs."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
