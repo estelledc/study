@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "gin",
+    "digest_sha256": "1b875f7058f4b490f1af2616717b9e06a6f7c76148f3a8dd929b7281d254ab62"
+  },
+  "source_revision": "73726dc606796a025971fe451f0aa6f1b9b847f6",
+  "research_input_sha256": "906be57482e3f2e7f6cd0186a6163c2a1d01e667c4b54c36a05e38195d83ed3e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ib",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates in-repo radix trees, Context pool/Copy, MustBind status-only 400, and Run/h2c/QUIC listen boundaries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ib",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected gin.go, tree.go, context.go, binding, and recovery; upstream tests and ListenAndServe were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ib",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Claims are bounded to gin v1.12.0 / Go 1.25.0; throughput and HTTP/3 production behavior need separate evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:55:00.000Z"
+}

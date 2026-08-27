@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "fiber",
+    "digest_sha256": "1c526e8e28b51097c6a28bf90311fe973f82b6f31d2b42dc217f348f483b259f"
+  },
+  "source_revision": "741d8511a75f408ddf93eb41b175df0165714f11",
+  "research_input_sha256": "906be57482e3f2e7f6cd0186a6163c2a1d01e667c4b54c36a05e38195d83ed3e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ib",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Ctx interface, Immutable string aliasing, net/http adapter, and Listen HTTP/1.1-only NextProto."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ib",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected app.go, adapter.go, listen.go, ctx.go, req.go, and res.go; upstream tests and Listen were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ib",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to fiber v3.5.0 / Go 1.25.0 / fasthttp v1.73.0; throughput was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:55:00.000Z"
+}

@@ -1,6 +1,6 @@
 ---
 title: "Web 框架 · 项目 · 第 1 组"
-description: "14 条 Web 框架 Atlas 分块"
+description: "16 条 Web 框架 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -17,6 +17,8 @@ sidebar:
 | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | `elysia` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | `express` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | `fastify` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Fiber — 用 fasthttp 与可适配 handler 写 Express 风格 Go API 的框架](/study/projects/fiber/) | `fiber` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Gin — 用自建 radix 树与 Context 池写 Go HTTP API 的框架](/study/projects/gin/) | `gin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | `hanami` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | `helidon` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hono — 多运行时 Web 框架](/study/projects/hono/) | `hono` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

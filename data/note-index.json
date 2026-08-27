@@ -43018,32 +43018,31 @@
       "id": "projects::fiber",
       "area": "projects",
       "slug": "fiber",
-      "title": "Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架",
+      "title": "Fiber — 用 fasthttp 与可适配 handler 写 Express 风格 Go API 的框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-backend-and-apis"
+        "projects-web-frameworks"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
-        "topic_id": "projects-backend-and-apis",
-        "matched_category": "backend api",
-        "raw_category": "backend-api"
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "后端框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fiber/",
       "atlas": {
-        "chunk_id": "topic-projects-backend-and-apis-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
       }
     },
     {
@@ -43913,32 +43912,31 @@
       "id": "projects::gin",
       "area": "projects",
       "slug": "gin",
-      "title": "Gin — Go 写 web API 的事实标准框架",
+      "title": "Gin — 用自建 radix 树与 Context 池写 Go HTTP API 的框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-backend-and-apis"
+        "projects-web-frameworks"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
-        "topic_id": "projects-backend-and-apis",
-        "matched_category": "backend api",
-        "raw_category": "backend-api"
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "后端框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/gin/",
       "atlas": {
-        "chunk_id": "topic-projects-backend-and-apis-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
       }
     },
     {
@@ -65592,7 +65590,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 57
+      "entries": 55
     },
     {
       "id": "topic-projects-blockchain-01",
@@ -66082,7 +66080,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-web-frameworks-01/",
-      "entries": 14
+      "entries": 16
     },
     {
       "id": "unclassified-01",

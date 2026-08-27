@@ -1968,8 +1968,16 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::fiber",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::gin",
+      "topic_id": "projects-web-frameworks"
     },
     {
       "note_id": "projects::got",
