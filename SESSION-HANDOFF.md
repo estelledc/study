@@ -4,8 +4,9 @@
 
 ## 2026-08-27 PARALLEL writer IR：ksuid + typeid-js
 
-- status：`running`（本地内容已写，待 `verify:ci` / PR）。
-- 起始 ref：`2b64a3ebf`（`origin/main`，#71 merge）。
+- status：writer epoch `complete`；PR 已开，未 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71 merge）。
+- 当前 head：以 `git rev-parse HEAD` 为准。
 - objective：为缺失的 unique-id 双子补齐 `ksuid` 与 `typeid-js` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/unique-id-source-review-20260827-ir.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
 - activated_by：`explicit-user-parallel-writer-ir-2026-08-27`。
@@ -15,7 +16,16 @@
   1. `ksuid` 绑定 tag `v3.0.0` → `90ca4c1508f216e03923de610291786a0d6a868c`；tag / package / npm `gitHead` 一致。
   2. `typeid-js` 绑定 npm `typeid-js@1.2.0` `gitHead` → `3199b119fb2e8b77b2710e2e8eaec9f0220a9d18`（GitHub 无 tag）。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，公开项目数 967 → 969。
-- acceptance checks（已完成）：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 一致且 `UNVERIFIED`；`audit:content-contract` 0 blocking；`audit:counts` / `audit:site-state` projects=969、papers=1083、total=2052；`audit:wikilinks` blocking 0；`audit:project-standard` CURRENT；`git diff --check` 通过。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=969、papers=1083、total=2052。
+  - `audit:wikilinks`：blocking 0。
+  - `audit:project-standard`：`benchmark-aligned=87`、`needs-evidence=882`、snapshot CURRENT。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
+- 下一条命令：在 https://github.com/estelledc/study/pull/314 做 review；未授权前不要 merge。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：两页通过且一个 PR 已开后停止；不得继续发明下一对；不得 merge。
