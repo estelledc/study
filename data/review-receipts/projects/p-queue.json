@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "p-queue",
+    "digest_sha256": "21a7a73767abe70107368d94c5db69261e785068f9d4482c9ee43974083ab9b4"
+  },
+  "source_revision": "180ab9e25cd10b6f548767d7176076b50d25e188",
+  "research_input_sha256": "5f3d0d9eabfe93f8e6f54055612968d5742ed3db13b6ac217d81192030836821",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Infinity default, add-completion promise, timeout-on-dequeue, abort stages, clear() hang, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "PQueue, PriorityQueue, options, and rate-limit/abort tests were inspected; upstream node:test, tsc, and bench were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fd",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds p-queue 9.3.3 only; stale AbortError named export is disclosed; feature-complete is not treated as API freeze."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

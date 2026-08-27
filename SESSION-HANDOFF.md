@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FD：p-limit / p-queue
+
+- status：`running` → writer epoch `complete`（待 PR CI）；未 merge。
+- 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main）。
+- objective：把并发限制双子 `p-limit` 与 `p-queue` 做成源码绑定的 study-v2 静态审查页；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、2 份 generation 1 receipt、`docs/concurrency-limit-source-review-20260827-fd.md`、bullmq 生成反向链接两行、公开计数与 atlas / site-state 派生输出、本 handoff；未安装上游依赖、未跑上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-fd-2026-08-27`。
+- detector fingerprint：仓库无 `p-limit` / `p-queue` 页；本轮按指定目标新增，而不是改写既有 legacy 正文。
+- external delta：分支将 push 并开 1 个 PR；未授权 merge / deploy。
+- 完成切片：
+  1. `p-limit` 绑定 annotated tag `v7.3.1` peel / npm `gitHead` `df476048...`，写清 yocto-queue、`rejectOnClear`、嵌套死锁与 eager `map`。
+  2. `p-queue` 绑定 `v9.3.3` / `180ab9e2...`，写清默认 `Infinity` 并发、完成 Promise、`timeout` 从出队起算、固定/滑动窗口，并披露 JSDoc `AbortError` 导出与 `index.ts` 不符。
+  3. 新增共享审查文档 `docs/concurrency-limit-source-review-20260827-fd.md` 与两份 receipt。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt `UNVERIFIED` 且 digest/revision/provenance 一致；`audit:content-contract` blocking 0；`audit:counts` 与派生 site-state 对齐。`verify:ci` 在提交后跑。
+- budget：1 个可写切片；未并行写同一工作树。
+- external_outcome：1 个 review-ready PR，不 merge；D 轴仅在 push/PR 后计，不 deploy。
+- blocker：规模 `tracked_files` 超 baseline 的 `PARKED_HUMAN` 先于本切片存在；本轮未改 baseline / 阈值。
+- stop conditions：本轮目标完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 review/CI 变化，或新的显式有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

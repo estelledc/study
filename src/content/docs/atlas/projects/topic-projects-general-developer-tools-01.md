@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "13 条 通用开发工具 Atlas 分块"
+description: "15 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 15 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -21,6 +21,8 @@ sidebar:
 | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) | `llrt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | `lmms` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) | `matter-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [p-limit — 只限制“同时跑几份 Promise”](/study/projects/p-limit/) | `p-limit` | intermediate | UNVERIFIED | 介绍 p-limit 如何用 yocto-queue 把 Promise 并发限制成可调整的叫号器 |
+| [p-queue — 带优先级和窗口限流的进程内 Promise 队列](/study/projects/p-queue/) | `p-queue` | intermediate | UNVERIFIED | 介绍 p-queue 如何用优先级队列、固定或滑动窗口和完成 Promise 管理进程内异步任务 |
 | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) | `quasar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) | `supercollider` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用](/study/projects/tauri/) | `tauri` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
