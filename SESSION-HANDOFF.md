@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer GR：shiki + lowlight
 
-- status：writer epoch `running`（本地切片完成，verify:ci / PR 进行中）；未 merge、未 deploy。
+- status：writer epoch `complete`；PR #270 已打开；未 merge、未 deploy。
 - 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`，#81 lodash/ramda）。
 - objective：把语法高亮双子 `shiki` 与 `lowlight` 绑到可达固定 revision；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：改写 `shiki`、新建 `lowlight`、共享审查文档 `docs/syntax-highlight-source-review-20260827-gr.md`、2 份 generation 1 receipt、taxonomy curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 WASM / bundle / 识别准确率。
@@ -15,17 +15,18 @@
   1. `shiki` 绑定 annotated tag `v4.4.3` peel `48cd2cc695ed2e3357c3f9c370578ea843d6d9a3`；npm latest 无 `gitHead`。纠正旧正文的未测体积/时延、v1 当当前版、以及把默认 import 写成“只带一个函数”。
   2. `lowlight` 新建页，绑定 lightweight tag `3.3.0` / npm `gitHead` 同指 `0f36148072cd096ca86753d6f1ff01589d30d78f`；产物是 hast，不是 HTML。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 81 → 83，公开项目数 965 → 966。
-- acceptance checks（定向，verify:ci 待跑）：
+- acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest 与固定 revision 一致，evidence state `UNVERIFIED`。
   - `audit:content-contract --changed-from 1ecba4040`：0 blocking。
   - `audit:counts` / `audit:site-state`：projects=966、papers=1083、total=2049。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=1ecba404048464534225c6d542c19415c83fcabb npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 1 页迁移 + 1 页新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍可能超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 完成后不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：查看本分支 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/270 做 review；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
