@@ -15,12 +15,12 @@
   1. `xss` 绑定源码 tag `v1.0.15` → `9c92272047390671b9771a0fb439793f07521d8c`；tag / package / npm `gitHead` 一致。
   2. `insane` 绑定 `v2.6.2` → `641ad8e9e1e9894eddd24806f1d81acb3550dc1d`；tag / package / npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准与公开计数以验收命令为准，不在 handoff 中复制易过期数字或 ETA。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` / `audit:wikilinks` 通过；`git diff --check` 通过。`verify:ci` 在 push 后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` / `audit:wikilinks` 通过；`git diff --check` 通过。`STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci` 规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/291 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
