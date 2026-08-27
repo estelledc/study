@@ -15,7 +15,12 @@
   1. `tsup` 绑定 annotated tag `v8.5.1` / `1ecb6a5783fc91c73a7426adaa9a5abf3f978f07`（npm 无 `gitHead`，已披露），修正默认 CJS、`ignoreOptionDefaultValue`、`tsup-node` 只开 `skipNodeModulesBundle`、`dts`/`experimentalDts` 互斥与 clean 留 `.d.ts`。
   2. `unbuild` 绑定 `v3.6.1` / `a0b4aaf87a6566e7b2c6f7855242fc2acc10dc6a`（npm `gitHead` 与剥开 tag 一致），修正四 builder、尾斜杠 mkdist、`emitCJS` 默认 false、jiti stub 与 `failOnWarn` 退出码。
   3. 新增共享审查文档与两份 generation 1 static receipt；派生 site-state 项目数 963→965，已对齐标杆 79→81。
-- acceptance checks：两页 `quality-gate` 全部 pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`。其余门禁以本轮 `verify:ci` 为准。
+- acceptance checks：
+  - 两页 `quality-gate`：全部 pass、0 advisory（157 / 164 行）。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=81`、`needs-evidence=884`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=150`、`legacy-unverified=1898`、blocking 0。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态源码页；单 writer。
 - blocker（先于本切片存在）：`benchmark-site --compare` 在 main 已超 `tracked_files` baseline；本 PR 未改阈值或证据布局。
 - stop conditions：一枚 PR 已打开且未 merge；规模 baseline 处置、merge 与 deploy 均需单独授权。
