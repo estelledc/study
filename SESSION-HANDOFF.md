@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer AQ：pocketbase + appwrite
 
-- supervisor 状态：writer epoch `running` → 内容切片完成，等待 `verify:ci`；PR 未 merge。
+- supervisor 状态：writer epoch `complete`；draft PR #108 已开，未 merge。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
 - 完成 ref：本分支 `cursor/baas-pocketbase-appwrite-aq-66fa`。
 - status：`running`
@@ -23,12 +23,12 @@
   - 两份 receipt：digest 与固定 revision 一致，`evidence_state=UNVERIFIED`。
   - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
   - `audit:content-contract`：projects `v2=20`、`legacy-unverified=941`、blocking 0。
-  - `STUDY_CHANGED_FROM=e20d4ddff npm run verify:ci`：待本分支首提后跑。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、2285 HTML、2284 sitemap URLs、23 Playwright tests）。
 - budget：2 个 blob-filter worktree（约 20 MB / 74 MB）+ 2 页静态源码迁移；单 writer。
 - blocker：无；禁止 slug 未写入。
 - stop_conditions：一个 PR 完成后停止；未获 merge 授权。
 - 下一次 wake 条件：owner review / CI 状态变化。
-- 下一条命令：在本 PR 上 review；未授权前不要 merge。
+- 下一条命令：在 PR #108 上做 review；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
