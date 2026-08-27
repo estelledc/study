@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GO：es-toolkit / radash
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`9adc8b991`（origin/main）。
+- objective：按调用方指定的 util-lib 对，为 `es-toolkit` 与 `radash` 新增源码绑定的 `study-v2` 页；证据边界为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/util-lib-source-review-20260827-go.md`、taxonomy 与派生索引、本 handoff；未安装上游依赖、未跑上游 test / bundle / benchmark。
+- activated_by：`explicit-user-parallel-writer-go-20260827`。
+- detector fingerprint：Study 清单无 `es-toolkit` / `radash` slug；调用方指定该对并可回退。两库均有可达稳定 tag，未回退。
+- external delta：分支将 push 并打开 1 个 PR；未授权 merge / deploy。
+- 完成切片：
+  1. `es-toolkit` 绑定 tag `v1.51.0` / `5dc4477f...`（npm 无 `gitHead`），区分主入口与 `compat` 的 `chunk` 合同，以及 debounce 默认 trailing、`merge` 就地修改。
+  2. `radash` 绑定 `v12.1.1` / `4cab1900...`（npm `gitHead` 与 tag 一致；GitHub 现为 `sodiray/radash`），纠正顺序 `map`、字符串 `get`、以及 `debounce` 取消后立即执行。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:counts` / `audit:site-state`：projects=965，papers=1083，total=2048。
+  - `audit:content-contract --changed-from origin/main`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 ignored worktree + 2 页新增静态审查；单 writer。
+- blocker：规模 baseline 仍可能超限（先于本切片存在）；本轮未改 threshold。merge / deploy 需单独授权。
+- stop conditions：本轮已完成；未授权 merge。
+- 下一次 wake 条件：PR review/CI 状态变化，或新的显式有限目标。
+- 下一条命令：用 GitHub 查看本 PR；不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

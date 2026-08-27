@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "14 条 通用开发工具 Atlas 分块"
+description: "16 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,14 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Electron — 自带 Chromium + Node 的跨平台桌面运行时](/study/projects/electron/) | `electron` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [es-toolkit — 分类导出的现代工具函数集，compat 另走一条入口](/study/projects/es-toolkit/) | `es-toolkit` | beginner | UNVERIFIED | 主入口不带 lodash 语义 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | `lens` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -23,6 +24,7 @@ sidebar:
 | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | `lmms` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) | `matter-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) | `quasar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [radash — 单桶导出的函数工具集，map 是顺序 await](/study/projects/radash/) | `radash` | beginner | UNVERIFIED | try 返回元组 |
 | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) | `supercollider` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tauri — 系统 WebView + Rust 后端的轻量桌面运行时](/study/projects/tauri/) | `tauri` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [V8 — 让 JS 在极端性能下也能跑得稳的 JavaScript 引擎](/study/projects/v8/) | `v8` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
