@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -39725,6 +39725,37 @@
       }
     },
     {
+      "id": "projects::crossws",
+      "area": "projects",
+      "slug": "crossws",
+      "title": "crossws — 把各运行时的 WebSocket 收成同一套 hooks",
+      "description": "看 crossws 如何按连接解析 hooks、默认不回显子协议，以及它怎样挂到 srvx 的 upgrade。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-backend-and-apis",
+        "raw_category": "backend-api"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/crossws/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
       "id": "projects::ctranslate2",
       "area": "projects",
       "slug": "ctranslate2",
@@ -59702,6 +59733,37 @@
       }
     },
     {
+      "id": "projects::srvx",
+      "area": "projects",
+      "slug": "srvx",
+      "title": "srvx — 用 Web 标准 fetch 挂上各运行时的 HTTP 服务器",
+      "description": "看 srvx 如何把一份 fetch handler 接到 Node、Bun、Deno 与 Workers，以及默认端口、中间件折叠和 body 上限的真实合同。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-backend-and-apis",
+        "raw_category": "backend-api"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/srvx/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
       "id": "projects::stable-diffusion-webui",
       "area": "projects",
       "slug": "stable-diffusion-webui",
@@ -65405,7 +65467,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 56
+      "entries": 58
     },
     {
       "id": "topic-projects-blockchain-01",

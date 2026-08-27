@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "srvx",
+    "digest_sha256": "a937ec1a378f52ae6cc1a4a51cce68a82c626d2bdbc6861f8a937200293e329e"
+  },
+  "source_revision": "053be62e5e9e1f1966ab8592f1254ac40ac00317",
+  "research_input_sha256": "e389723a55e4d67ad791836a091ffee386de2bc4e14ef36033de9d93ed7d0dc3",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates fetch-only server, export-condition adapters, construct-time middleware fold, and unverified listen/bench claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected generic/node/bun serve, wrapFetch, error/graceful plugins, body-limit 413 shape; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Annotated tag v0.12.7 matches package 0.12.7; npm packument has no gitHead; no runtime or benchmark evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}

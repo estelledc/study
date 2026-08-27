@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "56 条 后端与 API Atlas 分块"
+description: "58 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 56 条，稳定上限为 100 条。
+本分块共 58 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -24,6 +24,7 @@ sidebar:
 | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | `centrifugo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | `chi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) | `connect-rpc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [crossws — 把各运行时的 WebSocket 收成同一套 hooks](/study/projects/crossws/) | `crossws` | intermediate | UNVERIFIED | 看 crossws 如何按连接解析 hooks、默认不回显子协议，以及它怎样挂到 srvx 的 upgrade |
 | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | `django` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | `dropwizard` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | `echo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -60,6 +61,7 @@ sidebar:
 | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | `soketi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | `spin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | `spring-boot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [srvx — 用 Web 标准 fetch 挂上各运行时的 HTTP 服务器](/study/projects/srvx/) | `srvx` | intermediate | UNVERIFIED | 看 srvx 如何把一份 fetch handler 接到 Node、Bun、Deno 与 Workers，以及默认端口、中间件折叠和 body 上限的真实合同 |
 | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | `starlette` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | `strawberry` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | `symfony` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -1,6 +1,28 @@
 # Study 操作交接入口
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
+> 数量、ETA 与队列快照必须用实时命令重取，不在 handoff 中复制易过期数字或 ETA。独立 agent 先读 `AGENTS.md`。
+
+## 2026-08-27 PARALLEL writer GH · srvx / crossws
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review，未 merge。
+- 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main）。
+- objective：为 `srvx` 与 `crossws` 建立源码绑定的 study-v2 静态审查页（STATIC_REVIEW / UNVERIFIED），共享文档 `docs/server-ws-source-review-20260827-gh.md`。
+- scope：两篇新项目页、2 份 generation 1 receipt、共享审查文档、taxonomy / atlas / note-index / site-state / 公开计数文案、本 handoff；未安装上游依赖、未 listen、未开 WebSocket、未跑上游测试或 bench。
+- activated_by：`explicit-user-parallel-writer-gh-2026-08-27`。
+- detector fingerprint：目录中无 `srvx` / `crossws` 项目页；二者是互补的 server-ws 对，GitHub 仓 `h3js/srvx`、`h3js/crossws` 体量可控；旧印象会把 srvx 写成路由器、把 crossws 0.2 `createCrossWS` 当现行入口。
+- external delta 计数：本轮授权 push + 单 PR；未 merge、未 deploy。
+- 已完成切片：
+  1. `srvx` 绑定 annotated tag `v0.12.7` / `053be62e5e9e1f1966ab8592f1254ac40ac00317`；npm latest 同版本但无 `gitHead`；修正默认端口/全接口、`trustProxy=false`、构造期 middleware 折叠、Node 400 request-target、body 上限运行时差异。
+  2. `crossws` 绑定 annotated tag `v0.4.12` / `6d366f8b6d2ddd0276fd9eb9962a223f1a68429e`；npm 无 `gitHead`；LICENSE 为 MIT；修正 once-per-connection `resolve`、默认不回显子协议、Request hooks 通道、default SSE fallback、与 srvx `upgrade` 插件关系。
+  3. 新增共享 `docs/server-ws-source-review-20260827-gh.md` 与两份 generation 1 static receipt；taxonomy 归入 `projects-backend-and-apis`。
+- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory；receipt digest 与正文一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0。全量 `verify:ci` 在推送后继续跑。
+- budget：2 个 ignored blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker（先于本切片存在）：规模 compare detector 在 main 上已超 threshold，处置需 owner；本轮未改 baseline / 阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
 

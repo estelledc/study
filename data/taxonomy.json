@@ -1876,6 +1876,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::crossws",
+      "topic_id": "projects-backend-and-apis"
+    },
+    {
       "note_id": "projects::d3",
       "topic_id": "projects-data-visualization"
     },
@@ -2402,6 +2406,10 @@
     {
       "note_id": "projects::sqlite",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::srvx",
+      "topic_id": "projects-backend-and-apis"
     },
     {
       "note_id": "projects::stagehand",
