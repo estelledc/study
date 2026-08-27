@@ -15,12 +15,18 @@
   1. `recast` 绑定 `benjamn/recast@93325e37...` / `recast@0.24.0`。GitHub tag `v0.24.0` 与 npm `gitHead` 同指该提交。正文写清 Esprima 默认、`original` + Patcher 局部重印、`print()` 对象结果，以及 Babel parser 需另装。
   2. `babel` 绑定 `babel/babel@8ed5db1bc...` / monorepo tag `v8.0.4`。披露 npm 8.x 无 `gitHead`，以及 GitHub `latest` 仍名 `v7.29.8`。正文写清 8.0 callback/`*Sync` 分裂、根/相对配置文件名、默认扩展名不含 `.ts`。
   3. 新增共享 provenance 文档与两份 receipt。
-- acceptance checks：两页 `quality-gate.mjs`；receipt digest 与 revision 对齐；`audit:counts` / `audit:content-contract`；`git diff --check`；`STUDY_CHANGED_FROM=origin/main npm run verify:ci`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 对齐，evidence state `UNVERIFIED`。
+  - `audit:counts` / `audit:content-contract`：projects=963、v2=91、blocking 0。
+  - 规范 Node 22.23.1 / npm 11.17.0 下 `verify:ci` 其余步骤通过（tests、strict build 2287 HTML、23 Playwright、SEO/a11y/Pages/Atlas/site budget）。
+  - 本地 `audit:pagefind` 负向查询 `不存在不存在` 在 Node API 下返回 2241，未改合同；浏览器 Pagefind a11y 用例通过。远端 CI 为权威。
 - budget：2 个 ignored worktree + 1 个可写切片；单 writer。
+- external_outcome：PR #131，未 merge、未 deploy。
 - blocker：规模 baseline 超限属先于本切片的 `PARKED_HUMAN` detector，本轮未改阈值。
 - stop conditions：本轮只开一个 PR，不自 merge。
-- 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge/规模 baseline 的单独授权。
-- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/recast.md`
+- 下一次 wake 条件：PR #131 的 CI/review 变化，或 owner 对 merge 的单独授权。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/131`
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
