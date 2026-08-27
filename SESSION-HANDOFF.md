@@ -15,7 +15,12 @@
   1. `chartist` 绑定 tag `v1.5.0` / `4a721397...`（npm 无 gitHead，包版本一致），修正 v1 class API、`setTimeout(0)` 首绘、`monotoneCubic` 默认平滑、`a`–`o` 十五色、foreignObject 标签。
   2. `billboard-js` 绑定 tag `4.0.3` / `f599730a...`（npm gitHead 一致），修正 ESM resolver、v4 五块 optional API、canvas 入口、`resize.auto` 默认 true、去掉 sunburst/sankey。
   3. 新增 `docs/svg-chart-source-review-20260827-fl.md` 与两份 generation 1 static receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 blocking；receipt digest 与 `UNVERIFIED` 一致。全量 `verify:ci` 在提交后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=1f2917d90 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：本分支 snapshot 含这两页 `benchmark-aligned`。
+  - `audit:wikilinks`：图表示例嵌套数组已拆行，budget_failures=0。
 - budget：2 个 blob-filtered sparse clone + 2 页静态源码迁移；单 writer。
 - stop conditions：两页已绑定；merge / deploy / 规模 baseline 处置需单独授权。
 - 下一次 wake 条件：PR review/CI 状态变化，或新的显式有限目标。
