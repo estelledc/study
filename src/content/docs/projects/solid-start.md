@@ -106,7 +106,7 @@ export const saveNote = action(async (formData: FormData) => {
 1. **仍按 Vinxi 排障**：2.0.4 源码里的 Vinxi 只剩清理脚本和历史目录名。
 2. **把 Nitro 写成 Start 内核**：包自身依赖是 h3 / srvx / seroval；Nitro 是应用插件。
 3. **在 Start 包里找 `createAsync`**：它在 `@solidjs/router`。
-4. **API 路由写 `[[optional]]`**：`matchAPIRoute` 会 throw `Optional parameters are not supported in API routes`。
+4. **API 路由写双方括号 optional 段**：`matchAPIRoute` 会 throw `Optional parameters are not supported in API routes`。
 5. **生产环境用 Node 22**：`engines.node` 是 `>=24`。npm `@solidjs/start@2.0.4` **没有 `gitHead`**，只能以 GitHub annotated tag 解引用提交为准。
 
 ## 适用 vs 不适用场景
