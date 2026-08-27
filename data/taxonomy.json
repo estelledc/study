@@ -1944,6 +1944,10 @@
       "topic_id": "projects-terminal-tools"
     },
     {
+      "note_id": "projects::env-paths",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::esbuild",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -2602,6 +2606,10 @@
     {
       "note_id": "projects::xstate",
       "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::xdg-basedir",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::yargs",

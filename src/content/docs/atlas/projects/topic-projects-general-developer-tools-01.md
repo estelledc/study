@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "13 条 通用开发工具 Atlas 分块"
+description: "15 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,12 +9,13 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 15 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [env-paths — 按操作系统拼出应用自己的用户目录](/study/projects/env-paths/) | `env-paths` | beginner | UNVERIFIED | 只生成 data/config/cache/log/temp 字符串，并默认加上 nodejs 后缀 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | `lens` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -26,3 +27,4 @@ sidebar:
 | [Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用](/study/projects/tauri/) | `tauri` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [V8 — 让 JS 在极端性能下也能跑得稳的 JavaScript 引擎](/study/projects/v8/) | `v8` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Wails — 用 Go + 网页技术打成单个桌面应用](/study/projects/wails/) | `wails` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [xdg-basedir — 只给出 Linux 用户的 XDG 基目录](/study/projects/xdg-basedir/) | `xdg-basedir` | beginner | UNVERIFIED | 在 import 时读 XDG 环境变量，不拼应用名，缺 home 时可为 undefined |

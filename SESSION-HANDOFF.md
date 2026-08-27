@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FO：env-paths + xdg-basedir 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；用户授权 push + 一个 PR，未授权 merge / deploy。
+- 起始 ref：`99736a909`（`origin/main`，#76 merge 后）。
+- objective：为 `env-paths` 与 `xdg-basedir` 新增源码绑定的 study-v2 页，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/user-path-source-review-20260827-fo.md`、taxonomy / atlas / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未运行上游测试、未测 Windows / macOS 实机路径。
+- activated_by：`explicit-user-parallel-writer-fo-20260827`。
+- detector fingerprint：仓库无这对用户路径页；实时审计与远端 `origin/main` 均无 `env-paths` / `xdg-basedir`。
+- external delta：分支将 push 并打开 1 个 PR；未 merge、未 deploy，D 轴不含 merge/deploy。
+- 完成切片：
+  1. `env-paths` 绑定 tag `v4.0.0` / `c3c0dd464c268a99a28feeaec54c54d0a12c4291`（与 npm `gitHead` 一致），写明默认 `-nodejs` suffix、二次文件名检查、Windows 子目录为作者补写、Linux log 走 `XDG_STATE_HOME`。
+  2. `xdg-basedir` 绑定 tag `v5.1.0` / `8cceade858e4da18cb971bf1844f086e9e213563`（与 npm `gitHead` 一致），写明 import 时求值、单路径可为 `undefined`、`xdgRuntime` 无 home 回退、现行测试是 `t.pass()` 占位。
+  3. 新增共享 FO 审查文档与两份 STATIC_REVIEW receipt；项目审计从 `75/963` 前进到 `77/965`。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` 通过。
+- budget：2 个小型本地 worktree + 2 页新增静态源码审查；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：本轮完成后只保留 1 个 PR；不 merge、不 deploy、不开下一对。
+- 下一次 wake 条件：本 PR 的 review/CI 变化，或 owner 另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR 的 checks；不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
