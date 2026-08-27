@@ -15,12 +15,12 @@
   1. `ky` 改绑 `sindresorhus/ky@0a24c44fe4...` / `2.0.2` peel，修正 `prefixUrl` 会抛错，并写清 413 / timeout / stream clone 边界。
   2. `superagent` 绑定 `ladjs/superagent@3ef36761...` / `10.3.0`，写清 callback/thenable、XHR/http 分流、默认关闭 timeout/retry，以及 POST 可被 `.retry()` 重放。
   3. 新增共享审查文档与 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt evidence state `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=19`；`audit:content-contract` 0 blocking / 88 v2；`audit:counts` projects=962；`audit:wikilinks` budget_failures=0。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt evidence state `UNVERIFIED`；`audit:project-standard` `benchmark-aligned=19`；`audit:content-contract` 0 blocking / 88 v2；`audit:counts` projects=962；`audit:wikilinks` budget_failures=0；`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（首次只缺本机 Playwright 浏览器；安装 Chromium 后 23 个 a11y 测试通过；strict build 2286 HTML / 2285 sitemap URLs）。
 - budget：1 个 HTTP 客户端双子切片、1 个本地 writer。
 - blocker：merge/deploy 未授权。
 - stop conditions：canonical/revision 不一致、需要猜测性能数字、或只能放宽门禁时停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 新授权。
-- 下一条命令：在已开 PR 上等待 CI/review；未授权前不要 merge。
+- 下一条命令：在 PR #186 上等待 CI/review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
