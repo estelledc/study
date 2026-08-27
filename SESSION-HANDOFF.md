@@ -19,7 +19,7 @@
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:content-contract`：0 blocking、152 v2。
-  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050；slug 更名后重生成 `site-state`，`content_contract.blocking` 2 → 0。
   - `audit:wikilinks`：blocking 0。
   - `audit:project-standard`：`benchmark-aligned=83`、snapshot CURRENT。
   - `git diff --check`：通过。
