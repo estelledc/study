@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2053,
+      "classified": 2006,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 970,
+        "classified": 942,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -50190,6 +50190,37 @@
       }
     },
     {
+      "id": "projects::mdast-util-frontmatter",
+      "area": "projects",
+      "slug": "mdast-util-frontmatter",
+      "title": "mdast-util-frontmatter — 把 frontmatter 事件收成 Literal 节点",
+      "description": "介绍 mdast-util-frontmatter 2.0.1 如何把 YAML/TOML 围栏编成 mdast Literal，并按同一套 matter 表写回 markdown。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "Markdown / 解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mdast-util-frontmatter/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::mediapipe",
       "area": "projects",
       "slug": "mediapipe",
@@ -50659,6 +50690,37 @@
         "review_after": null
       },
       "route": "/study/projects/micromark/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
+      "id": "projects::micromark-extension-frontmatter",
+      "area": "projects",
+      "slug": "micromark-extension-frontmatter",
+      "title": "micromark-extension-frontmatter — 在状态机入口认出 YAML/TOML 围栏",
+      "description": "介绍 micromark-extension-frontmatter 2.0.0 如何把 YAML/TOML 围栏登记成 flow construct，并在 HTML 阶段整段丢弃。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "Markdown / 解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/micromark-extension-frontmatter/",
       "atlas": {
         "chunk_id": "topic-projects-markdown-and-parsing-01",
         "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
@@ -65960,7 +66022,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",
