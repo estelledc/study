@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -37798,6 +37798,38 @@
       }
     },
     {
+      "id": "projects::bundle-require",
+      "area": "projects",
+      "slug": "bundle-require",
+      "title": "bundle-require — 先用 esbuild 打包再加载用户配置",
+      "description": "把 TypeScript / ESM 配置打成临时文件，再 import 或 require 回当前进程",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "matched_category": "前端工具链",
+        "raw_category": "前端工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/bundle-require/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::caddy",
       "area": "projects",
       "slug": "caddy",
@@ -62354,6 +62386,38 @@
       }
     },
     {
+      "id": "projects::unrun",
+      "area": "projects",
+      "slug": "unrun",
+      "title": "unrun — 用 Rolldown 在运行时加载任意 JS/TS",
+      "description": "异步 / 同步 / CLI 三条入口，以及 none / jiti / bundle-require 三套返回合同",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "matched_category": "前端工具链",
+        "raw_category": "前端工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/unrun/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::unsloth",
       "area": "projects",
       "slug": "unsloth",
@@ -65495,7 +65559,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 15
+      "entries": 17
     },
     {
       "id": "topic-projects-cli-tools-01",

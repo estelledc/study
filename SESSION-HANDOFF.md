@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GF：unrun + bundle-require
+
+- status：`running` 完成本地切片后进入 review-ready；未 merge、未 deploy。
+- objective：为仓库里还不存在的 TS bundle-load 双子补两页源码绑定的 `study-v2` 笔记：`unrun` 与 `bundle-require`。
+- scope：两页新正文、2 份 generation 1 receipt、共享审查文档 `docs/ts-bundle-load-source-review-20260827-gf.md`、note-index / project-standard / site-state / 公开计数派生、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle 或性能 benchmark。
+- activated_by：`explicit-user-parallel-writer-gf-20260827`。
+- detector fingerprint：目标 slug `unrun` / `bundle-require` 在 origin/main 上不存在；实时审计确认它们是互补的 TS 运行时加载器（esbuild 打包再加载 vs Rolldown 打包再加载）。
+- external delta：本轮授权 push + 一个 PR；未 merge、未 deploy，D 轴不因 merge/deploy 提升。
+- 起始 ref：`9adc8b991`（origin/main）。
+- 完成切片：
+  1. `bundle-require` 绑定 lightweight tag `v5.1.0` / `8ca47fef...`，与 npm `gitHead` 一致；修正“返回 default”、`node_modules` 默认 external、临时文件写在源文件旁、Jest 强制 CJS。
+  2. `unrun` 绑定 annotated tag `v0.3.1` / `b1e8952e...`；披露 npm 无 `gitHead`；区分 `unrun` / `unrunSync` / `unrunCli`、三套 preset、external 按入口解析能力、synckit 可选 peer。
+  3. 新增共享审查记录与两份 generation 1 static receipt；派生 site-state 项目数 963→965、已对齐标杆 79→81。
+- acceptance checks：两页 `quality-gate` 通过、0 advisory；receipt digest / revision 一致，evidence state 为 `UNVERIFIED`。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页新增静态源码笔记 + 派生刷新；单 writer。
+- external_outcome：review-ready branch + 一个 PR；未授权 merge。
+- stop_conditions：本轮完成后停止；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge 的授权。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
