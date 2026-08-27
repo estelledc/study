@@ -4,18 +4,18 @@
 
 ## 2026-08-27 PARALLEL writer CA：Pinia / Redux Toolkit
 
-- status：`running`（本地 writer epoch 完成，等待 PR review；未 merge）。
+- status：`complete`（本地 writer epoch 完成；PR #147 已开；未 merge）。
 - 起始 ref：`042f60a8a`（当时 `origin/main`）。
 - objective：把 Pinia 与 Redux Toolkit 绑到可达 STATIC_REVIEW 修订，形成一对 Vue / Redux 商店对照页；证据状态保持 `UNVERIFIED`。
 - scope：两篇新项目页、2 份 generation 1 receipt、`docs/vue-redux-store-source-review-20260827-ca.md`、taxonomy 两条 curated assignment、atlas / site-state / 公开计数派生、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle。
 - activated_by：`explicit-parallel-writer-ca-20260827`（用户指定 pinia + redux-toolkit；排除开放 PR 已占用的 zustand / jotai / valtio / xstate）。
 - detector fingerprint：两 slug 在 `origin/main` 与开放 PR 中均不存在；状态管理 Atlas 组缺 Vue 官方商店与 Redux 官方默认写法对照。
-- external delta：将 push 并开 1 个 PR；不 merge、不部署。D 轴待 rebase 队列处理。
+- external delta：分支 `cursor/pinia-redux-toolkit-20260827-ca-1166` 已 push，PR #147 已开；未 merge、未部署。D 轴待 rebase 队列处理。
 - 完成切片：
   1. `pinia` 绑定 annotated tag `v4.0.3` 剥出的 `5d6ac5b8...`（npm 无 `gitHead`，已披露），写清根状态树、懒创建、`$patch` / `$reset` / `skipHydrate` 边界。
   2. `redux-toolkit` 绑定 `v2.12.0` / npm `gitHead` 同一提交 `576a02f8...`，写清 `configureStore` 默认中间件、Immer `createSlice`、`createAsyncThunk` 三态与 Query 独立安装面。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `git diff --check` 通过。`verify:ci` 在 push 后跑。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `git diff --check` 通过。`STUDY_CHANGED_FROM=042f60a8a npm run verify:ci` 除首次缺 Playwright 浏览器外，补装 chromium 后 a11y 23/23 与后续 Pages/Atlas/site budget / drift 门禁通过。
 - budget：2 页、1 个 PR、单 writer。
 - stop conditions：本轮不 merge；规模 baseline 超限仍是先于本切片的 `PARKED_HUMAN` 项，未改阈值。
 - 下一次 wake 条件：PR CI / review 变化，或 rebase 队列合并后的外部状态。
