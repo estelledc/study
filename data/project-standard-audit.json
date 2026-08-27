@@ -4,8 +4,8 @@
   "summary": {
     "total": 962,
     "by_status": {
-      "benchmark-aligned": 55,
-      "needs-evidence": 907
+      "benchmark-aligned": 57,
+      "needs-evidence": 905
     }
   },
   "projects": [
@@ -7574,26 +7574,22 @@
     {
       "slug": "graphql-yoga",
       "title": "GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器",
-      "source": "https://github.com/dotansimha/graphql-yoga",
-      "status": "needs-evidence",
+      "source": "https://github.com/graphql-hive/graphql-yoga",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "grbl",
@@ -20615,25 +20611,21 @@
       "slug": "trpc",
       "title": "tRPC — TS 端到端类型安全 RPC",
       "source": "https://github.com/trpc/trpc",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "turbopack",
