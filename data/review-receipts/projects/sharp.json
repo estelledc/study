@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sharp",
+    "digest_sha256": "1dd90ec43958a02312ee7c1d02c7d7540a4eb440315951a14b68c8508af3d937"
+  },
+  "source_revision": "7f1a0a22cc285fe180766f4935d50b55af6e8432",
+  "research_input_sha256": "7ce6e46203ae5d5171efe28cbc798d5fcffd0f791a8f7ff3e212e2fb37352ebf",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains mutable options, clone(), delayed _pipeline, autoOrient, and same-path toFile rejection with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Constructor, resize, rotate/autoOrient, output pipeline, cache/concurrency, and engines were inspected; upstream tests and images were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Git tag v0.35.4 and npm gitHead match 7f1a0a22...; performance, Edge, and binary install claims stay UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:15:00.000Z"
+}

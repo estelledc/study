@@ -4,8 +4,8 @@
   "summary": {
     "total": 970,
     "by_status": {
-      "benchmark-aligned": 95,
-      "needs-evidence": 875
+      "benchmark-aligned": 97,
+      "needs-evidence": 873
     }
   },
   "projects": [
@@ -8831,27 +8831,23 @@
     },
     {
       "slug": "jimp",
-      "title": "jimp — 哪都能跑的纯 JS 图像处理库",
+      "title": "jimp — 纯 JS 位图图像处理库",
       "source": "https://github.com/jimp-dev/jimp",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "jitsi-meet",
@@ -18126,27 +18122,23 @@
     },
     {
       "slug": "sharp",
-      "title": "sharp — 让 Node.js 处理图像快到不像 JS",
+      "title": "sharp — 以 libvips 为引擎的 Node 图像管线",
       "source": "https://github.com/lovell/sharp",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "shell-gpt",
