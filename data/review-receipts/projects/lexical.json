@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lexical",
+    "digest_sha256": "d9d3d10bd382dcf9aff05ede679e544e9aba08a900aeba7031aa7fdbfe3877a7"
+  },
+  "source_revision": "ffe90924bd55b5d450c88de0f9f1c8b228c4a221",
+  "research_input_sha256": "f00edc66d236cdc4eb44a58175e81f79233526e5ae97cf3f788947c8c162ae26",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates EditorState snapshots, queued updates, copy-on-write getWritable, dirty-set reconcile, and read-mode flush boundaries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "LexicalEditor, EditorState, Updates, Reconciler, Composer and HistoryPlugin were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Bounded to facebook/lexical v0.49.0; nightly 0.49.1 tags exist and are excluded. React peer is >=18."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}
