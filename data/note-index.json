@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1973,
+      "empty_description": 1968
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 959,
+        "empty_description": 955
       }
     },
     "missing_curated_assignments": [],
@@ -36435,7 +36435,7 @@
       "id": "projects::auth-js",
       "area": "projects",
       "slug": "auth-js",
-      "title": "Auth.js — 让 OAuth 登录和会话存储变成两个抽象",
+      "title": "Auth.js — 把 OAuth 登录和会话存储拆成两层抽象",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -36445,16 +36445,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-authentication",
-        "raw_category": "projects"
+        "raw_category": "框架与 SDK"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/auth-js/",
       "atlas": {
@@ -37133,9 +37133,9 @@
       "id": "projects::biome",
       "area": "projects",
       "slug": "biome",
-      "title": "Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Biome — 把 lint、format 和 assist 收进同一个 CLI",
+      "description": "固定版本把 lint、format 和 assist 收进同一条 process_file",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-build-tools-and-bundlers"
       ],
@@ -37146,13 +37146,13 @@
         "raw_category": "前端工具链"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/biome/",
       "atlas": {
@@ -37528,13 +37528,13 @@
         "raw_category": "AI agent infra"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/browser-use/",
       "atlas": {
@@ -37770,7 +37770,7 @@
       "id": "projects::bun",
       "area": "projects",
       "slug": "bun",
-      "title": "Bun — JS 全能运行时",
+      "title": "Bun — 单二进制 JS/TS 运行时与工具链",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37783,13 +37783,13 @@
         "raw_category": "运行时 / 构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/bun/",
       "atlas": {
@@ -40175,7 +40175,7 @@
       "id": "projects::date-fns",
       "area": "projects",
       "slug": "date-fns",
-      "title": "date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数",
+      "title": "date-fns — 不造新类型，给原生 Date 配独立纯函数",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -40188,13 +40188,13 @@
         "raw_category": "projects / 工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/date-fns/",
       "atlas": {
@@ -40238,7 +40238,7 @@
       "id": "projects::dayjs",
       "area": "projects",
       "slug": "dayjs",
-      "title": "Day.js — 用 2 KB 复刻 Moment 的极简日期库",
+      "title": "Day.js — 用 Moment 风格 API 包装原生 Date 的不可变日期库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -40251,13 +40251,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/dayjs/",
       "atlas": {
@@ -40487,7 +40487,7 @@
       "id": "projects::deno",
       "area": "projects",
       "slug": "deno",
-      "title": "Deno — 安全优先的 TypeScript/JavaScript 运行时",
+      "title": "Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [],
@@ -40498,13 +40498,13 @@
         "raw_category": "运行时"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/deno/",
       "atlas": {
@@ -41718,32 +41718,32 @@
       "id": "projects::electron",
       "area": "projects",
       "slug": "electron",
-      "title": "Electron — 用网页技术做跨平台桌面应用",
+      "title": "Electron — 自带 Chromium + Node 的跨平台桌面运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-mobile-development"
+        "projects-general-developer-tools"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "projects-mobile-development",
-        "matched_category": "mobile",
-        "raw_category": "mobile"
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "跨平台桌面",
+        "raw_category": "跨平台桌面"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/electron/",
       "atlas": {
-        "chunk_id": "topic-projects-mobile-development-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -42586,13 +42586,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/express/",
       "atlas": {
@@ -42808,13 +42808,13 @@
         "raw_category": "web-frameworks"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fastify/",
       "atlas": {
@@ -43479,13 +43479,13 @@
         "raw_category": "动画"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/framer-motion/",
       "atlas": {
@@ -44565,13 +44565,13 @@
         "raw_category": "后端 API"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/graphql-yoga/",
       "atlas": {
@@ -44724,13 +44724,13 @@
         "raw_category": "动画"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/gsap/",
       "atlas": {
@@ -47090,7 +47090,7 @@
       "id": "projects::koa",
       "area": "projects",
       "slug": "koa",
-      "title": "Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架",
+      "title": "Koa — 用 ctx 与可替换 compose 编排洋葱中间件的 Node 框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -47103,13 +47103,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/koa/",
       "atlas": {
@@ -47515,13 +47515,13 @@
         "raw_category": "ORM / 查询构建器"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/kysely/",
       "atlas": {
@@ -49047,6 +49047,37 @@
       }
     },
     {
+      "id": "projects::lodash",
+      "area": "projects",
+      "slug": "lodash",
+      "title": "Lodash — 以 iteratee 与 wrapper 组织的通用工具函数集",
+      "description": "介绍 lodash 4.18.1 如何用 iteratee、wrapper 与 debounce/throttle 组织通用工具函数，并区分 mutate 与 cloneDeep。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/lodash/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::lodestar",
       "area": "projects",
       "slug": "lodestar",
@@ -49304,7 +49335,7 @@
       "id": "projects::lucia",
       "area": "projects",
       "slug": "lucia",
-      "title": "Lucia — 主动把自己降级为\"学习资源\"的 TS 认证库",
+      "title": "Lucia — 弃用后留下的单文件会话教学样本",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -49317,13 +49348,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/lucia/",
       "atlas": {
@@ -49794,13 +49825,13 @@
         "raw_category": "projects / 前端工具链"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/markdown-it/",
       "atlas": {
@@ -49825,13 +49856,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/marked/",
       "atlas": {
@@ -51122,13 +51153,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/mobx/",
       "atlas": {
@@ -52025,7 +52056,7 @@
       "id": "projects::nestjs",
       "area": "projects",
       "slug": "nestjs",
-      "title": "NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架",
+      "title": "NestJS — 用模块与 DI 组织 Node 后端的企业级框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -52038,13 +52069,13 @@
         "raw_category": "后端框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/nestjs/",
       "atlas": {
@@ -54184,6 +54215,37 @@
       }
     },
     {
+      "id": "projects::oxlint",
+      "area": "projects",
+      "slug": "oxlint",
+      "title": "oxlint — 编译进二进制的 JS/TS linter",
+      "description": "lint-only CLI：JSON 配置可移植，JS plugin 只走 Node NAPI 入口",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "前端工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/oxlint/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::paddle-lite",
       "area": "projects",
       "slug": "paddle-lite",
@@ -54838,13 +54900,13 @@
         "raw_category": "projects / Node.js"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/pino/",
       "atlas": {
@@ -54984,7 +55046,7 @@
       "id": "projects::pixi",
       "area": "projects",
       "slug": "pixi",
-      "title": "PixiJS — 浏览器里画 2D 的高性能 GPU 引擎",
+      "title": "PixiJS — 浏览器 2D 场景图与多后端渲染器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -54997,13 +55059,13 @@
         "raw_category": "projects / 图形渲染"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/pixi/",
       "atlas": {
@@ -55142,7 +55204,7 @@
       "id": "projects::playwright",
       "area": "projects",
       "slug": "playwright",
-      "title": "Playwright — 跨浏览器自动化测试",
+      "title": "Playwright — 每测一个隔离 context 的浏览器自动化",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -55155,13 +55217,13 @@
         "raw_category": "测试"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/playwright/",
       "atlas": {
@@ -55789,13 +55851,13 @@
         "raw_category": "ORM"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/prisma/",
       "atlas": {
@@ -55871,7 +55933,7 @@
       "id": "projects::prom-client",
       "area": "projects",
       "slug": "prom-client",
-      "title": "prom-client — Node 服务暴露监控指标的事实标准 SDK",
+      "title": "prom-client — Node 进程内的 Prometheus 指标客户端",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -55881,16 +55943,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-observability-and-performance",
-        "raw_category": "projects"
+        "raw_category": "可观测"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/prom-client/",
       "atlas": {
@@ -56624,6 +56686,37 @@
       "atlas": {
         "chunk_id": "topic-projects-web-frameworks-01",
         "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
+      }
+    },
+    {
+      "id": "projects::ramda",
+      "area": "projects",
+      "slug": "ramda",
+      "title": "Ramda — 自动柯里、data-last 的实用函数式工具库",
+      "description": "介绍 ramda 0.32.0 如何用自动柯里、占位符和路径拷贝组织 data-last 函数管道。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ramda/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -58307,6 +58400,37 @@
       }
     },
     {
+      "id": "projects::sentry-javascript",
+      "area": "projects",
+      "slug": "sentry-javascript",
+      "title": "Sentry JavaScript SDK — 把异常变成可发送的 event",
+      "description": "把浏览器和 Node 异常收成 event，再按三层 scope 合并后交给 transport。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-observability-and-performance"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "observability"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sentry-javascript/",
+      "atlas": {
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
+      }
+    },
+    {
       "id": "projects::sequelize",
       "area": "projects",
       "slug": "sequelize",
@@ -58323,13 +58447,13 @@
         "raw_category": "ORM"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/sequelize/",
       "atlas": {
@@ -60067,13 +60191,13 @@
         "raw_category": "前端工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/storybook/",
       "atlas": {
@@ -60686,8 +60810,8 @@
       "area": "projects",
       "slug": "tailwind",
       "title": "Tailwind CSS — 工具类优先样式框架",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "CSS-first 工具类编译器，用 compile/build 和 Oxide 扫描按需生成 utility",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-css-and-styling"
       ],
@@ -60698,13 +60822,13 @@
         "raw_category": "CSS"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/tailwind/",
       "atlas": {
@@ -60873,7 +60997,7 @@
       "id": "projects::tauri",
       "area": "projects",
       "slug": "tauri",
-      "title": "Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用",
+      "title": "Tauri — 系统 WebView + Rust 后端的轻量桌面运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -60887,13 +61011,13 @@
         "raw_category": "跨平台桌面"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/tauri/",
       "atlas": {
@@ -61169,13 +61293,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/testing-library/",
       "atlas": {
@@ -61411,7 +61535,7 @@
       "id": "projects::threejs",
       "area": "projects",
       "slug": "threejs",
-      "title": "Three.js — 轻量 3D 渲染引擎",
+      "title": "Three.js — 浏览器 3D 场景图与 WebGL2 渲染器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -61425,13 +61549,13 @@
         "raw_category": "前端 / 三维图形"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/threejs/",
       "atlas": {
@@ -61962,13 +62086,13 @@
         "raw_category": "API / 类型安全"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/trpc/",
       "atlas": {
@@ -62151,13 +62275,13 @@
         "raw_category": "ORM"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/typeorm/",
       "atlas": {
@@ -62321,6 +62445,37 @@
       "atlas": {
         "chunk_id": "topic-projects-cli-tools-01",
         "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
+      "id": "projects::unocss",
+      "area": "projects",
+      "slug": "unocss",
+      "title": "UnoCSS — 按需原子 CSS 引擎",
+      "description": "按需原子 CSS 引擎，用 createGenerator 和可换 preset 把 token 编成 CSS",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-css-and-styling"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-css-and-styling",
+        "raw_category": "CSS"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/unocss/",
+      "atlas": {
+        "chunk_id": "topic-projects-css-and-styling-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-css-and-styling-01/"
       }
     },
     {
@@ -62561,13 +62716,13 @@
         "raw_category": "projects / 前端状态"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/valtio/",
       "atlas": {
@@ -63210,7 +63365,7 @@
       "id": "projects::vitest",
       "area": "projects",
       "slug": "vitest",
-      "title": "Vitest — Vite 原生测试框架",
+      "title": "Vitest — 复用 Vite 流水线的测试运行器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63223,13 +63378,13 @@
         "raw_category": "测试"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/vitest/",
       "atlas": {
@@ -63775,7 +63930,7 @@
       "id": "projects::web-vitals",
       "area": "projects",
       "slug": "web-vitals",
-      "title": "web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上",
+      "title": "web-vitals — 浏览器端 Core Web Vitals 的官方参考实现",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63785,16 +63940,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-observability-and-performance",
-        "raw_category": "projects / 前端"
+        "raw_category": "前端工程化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/web-vitals/",
       "atlas": {
@@ -63978,13 +64133,13 @@
         "raw_category": "前端工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/why-did-you-render/",
       "atlas": {
@@ -64328,13 +64483,13 @@
         "raw_category": "前端"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/xstate/",
       "atlas": {
@@ -65497,7 +65652,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 14
+      "entries": 15
     },
     {
       "id": "topic-projects-cli-tools-01",
@@ -65539,7 +65694,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-css-and-styling-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-data-applications-and-saas-01",
@@ -65721,7 +65876,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 15
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",
@@ -65833,7 +65988,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-mobile-development-01/",
-      "entries": 10
+      "entries": 9
     },
     {
       "id": "topic-projects-monitoring-and-time-series-01",
@@ -65875,7 +66030,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-observability-and-performance-01/",
-      "entries": 11
+      "entries": 12
     },
     {
       "id": "topic-projects-orm-and-database-clients-01",

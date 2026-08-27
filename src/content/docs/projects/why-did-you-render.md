@@ -4,58 +4,77 @@ title: why-did-you-render — 让 React 告诉你这次渲染到底为什么
 日期: 2026-05-30
 分类: 前端工具
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/welldone-software/why-did-you-render
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 752cfdb4d5c5eba5a8774fb19a978a7ac0a0d5de
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 10.0.1
 ---
 
 ## 是什么
 
-why-did-you-render（**WDYR**）是一个**只在开发时启用**的 React 调试库，每当一个组件重新渲染，它都会站出来对你喊：你这次渲染**到底为什么**？是 props 真变了，还是只是引用换了一只？
+why-did-you-render（**WDYR**）是一个 **只应在开发时启用** 的 React 诊断库。它 monkey-patch `React.createElement` / `cloneElement` 和若干 hook，在被跟踪组件再次渲染时比较 prev/next 的 props、state 和 hook 结果，并把“值等价但引用变了”打到 console。
 
-日常类比：像超市收银台的老员工，每次你拿同一瓶水重新结账时，他都会探头说"这瓶刚才结过了，你确定要再扫一次吗"——React 默认是个不爱说话的新员工，照单全收；WDYR 给它装了一张嘴。
+日常类比：React 默认是不解释的收银员，同一瓶水再扫一次也不会说话；WDYR 是会探头问“这瓶刚才结过了，你确定要再扫吗”的老员工。它不是 React DevTools Profiler 的替代品——Profiler 回答“谁慢”，WDYR 回答“谁可能白渲染了”。
 
-具体做法是：**接管** React 的 `createElement` / `cloneElement` 和几个常用 hook，给每次组件渲染前后做一次 props/state/hook 的对账，发现"值等价但引用变了"就在 console 里打一段 diff，告诉你哪一行是冤枉的渲染。
-
-它不是 React DevTools Profiler 的替代品——Profiler 告诉你"哪个组件慢"，WDYR 告诉你"哪个组件**白渲染了**"。
+固定 10.0.1 的 `peerDependencies` 是 `react@^19`。README 写明：未测试 React Compiler，并相信 **完全不兼容**；生产环境绝不能用，因为会显著拖慢 React，且 patch 公共 API。
 
 ## 为什么重要
 
-不理解 WDYR 这种"诊断假更新"的工具，下面这些事都没法解释：
+不理解这套 patch 合同，下面这些事会按旧印象写错：
 
-- 为什么 `<Foo style={{width: 100}}/>` 看起来人畜无害，却让 `React.memo` 的优化彻底失效
-- 为什么明明 props 的值都没变，子组件还在每次父组件 setState 时被重新渲染
-- 为什么"性能差 = 组件本身慢"经常是个误导——React 性能问题 90% 是冤枉的 re-render
-- 为什么 React Compiler 的"自动 memo"是把 WDYR 这一类调试工具往退休方向推
+- 为什么 `<Child style={{width: 100}} />` 能让 `React.memo` 失效，而 WDYR 会把它标成 `deepEquals`
+- 为什么 React 19 的 automatic JSX 需要 `importSource`，而 `jsx-runtime.js` 本身并不包一层 WDYR
+- 为什么默认 notifier **不报**“props 真的变了”的渲染，除非打开 `logOnDifferentValues`
+- 为什么调用两次 `whyDidYouRender(React)` 不会叠两层 patch
 
 ## 核心要点
 
-WDYR 的工作可以拆成 **三步**：
+固定 10.0.1 的工作可以拆成三步：
 
-1. **挖个旁路（monkey-patch）**：调一次 `whyDidYouRender(React)`，它就把 `React.createElement` 等公共方法换成自己包过的版本——React 没有提供官方钩子，它只能用这种"霸王硬上弓"的姿势。类比：你把家门口的门把手拆了，换成自己装的电子锁，外人推门照样能进，但每次进出都被记账。
+1. **挂旁路**：`whyDidYouRender(React, options)` 若看到 `React.__IS_WDYR__` 直接返回。否则保存原 `createElement` / `createFactory` / `cloneElement`，换成会调用 `getWDYRType()` 的包装。`__REVERT_WHY_DID_YOU_RENDER__` 能把方法和 hook 还原。
 
-2. **比较 prev 和 next（diff 决策）**：每次组件渲染时，wrapper 抓两份 props 做比较——外层走浅比（看 key），每个 value 内部再走深比（看引用 vs 值）。如果"值相等但引用不等"，就标记为 `deepEquals` 类型——这就是"白渲染"的特征指纹。
+2. **决定跟不跟踪**：`shouldTrack()` 看 `Component.whyDidYouRender`、`include`/`exclude` 正则，以及 `trackAllPureComponents`（只覆盖 `PureComponent` 和 `React.memo`）。默认 `trackHooks: true`，会包装 `useState` / `useReducer` / `useContext` / `useSyncExternalStore`；`useMemo` / `useCallback` 只把 deps 记进 WeakMap，不当 hook 变更上报。
 
-3. **结构化输出（updateInfo）**：比较结果不是一句话，而是一个**对象**：包含 `propsDifferences` / `stateDifferences` / `hookDifferences` / `ownerDifferences` 四个维度。默认 notifier 走 `console.group`，把 prev/next 字段级 diff 直接打到浏览器 console。
+3. **结构化 diff**：`getUpdateInfo()` 产出 `propsDifferences` / `stateDifferences` / `hookDifferences` / `ownerDifferences`。顶层对象按 key 浅看，每个 value 再走 `calculateDeepEqualDiffs`。函数先比 `name`；同名且来自被跟踪 hook 时再深比 deps。默认 notifier 只在 **没有** `diffType === 'different'` 时打日志，也就是专抓“引用变了、值没变”。
 
-三步加起来，就是把"组件白渲染"从口头警告，变成一个**可定位、可分类、可写测试**的诊断对象。
+class 组件用 `renderNumber % 2 === 1` 跳过 StrictMode 的奇数次渲染；functional wrapper 没有这条短路，每次后续 render 都比较。
 
 ## 实践案例
 
-### 案例 1：5 分钟接入
+### 案例 1：React 19 的开发态接入
 
-在项目入口（如 `index.js`）顶部加 4 行，dev 环境才生效：
+README 要求 `preset-react` 走 automatic runtime，并且 **development** 才把 `importSource` 指到本包：
+
+```js
+['@babel/preset-react', {
+  runtime: 'automatic',
+  development: process.env.NODE_ENV === 'development',
+  importSource: '@welldone-software/why-did-you-render',
+}]
+```
+
+入口仍要 **最先** 调用 `whyDidYouRender(React)`，否则 `wdyrStore.React` 为空，`jsxDEV` wrapper 会原样落到 React：
 
 ```js
 import React from 'react';
 if (process.env.NODE_ENV === 'development') {
-  const wdyr = require('@welldone-software/why-did-you-render');
-  wdyr.default(React, { trackAllPureComponents: true });
+  const whyDidYouRender = require('@welldone-software/why-did-you-render');
+  whyDidYouRender(React, { trackAllPureComponents: true });
 }
 ```
 
-刷新页面，console 会开始出现 `Re-rendered for the same props` 的红色分组——说明它已经在替你盯着每一个 memo 组件。
+`jsx-dev-runtime.js` 才替换 `jsxDEV`。同版本的 `jsx-runtime.js` 只是 `require('react/jsx-runtime')`，生产/非 dev transform 不会自动获得跟踪。
 
-### 案例 2：抓一个真实的"白渲染"
-
-写一个被 `memo` 包过的子组件，故意传 inline object：
+### 案例 2：抓一次“值相等、引用不等”
 
 ```jsx
 const Child = React.memo(function Child({ style }) {
@@ -65,84 +84,97 @@ Child.whyDidYouRender = true;
 
 function App() {
   const [n, setN] = React.useState(0);
-  return <>
-    <button onClick={() => setN(n + 1)}>{n}</button>
-    <Child style={{ width: 100 }} />
-  </>;
+  return (
+    <>
+      <button onClick={() => setN(n + 1)}>{n}</button>
+      <Child style={{ width: 100 }} />
+    </>
+  );
 }
 ```
 
-每点 button，console 立刻报：`different objects that are equal by value in ".style"`，prev/next 两份 `{width: 100}` 字面量并排——你**亲眼看到**引用不同但值相等。
+父组件每次 `setN` 都新建 `{ width: 100 }`。WDYR 的 deep diff 应把它标成 `deepEquals`（“different objects that are equal by value”）。本文未在浏览器里跑这个例子。
 
-### 案例 3：修一处验证
-
-把 `style={{width: 100}}` 提到模块作用域：
+### 案例 3：修引用后再看 notifier 是否安静
 
 ```jsx
 const STYLE = { width: 100 };
-// ...
 <Child style={STYLE} />
 ```
 
-再点 button，Child 那行 console 直接消失。诊断 → 修复 → 验证闭环，2 分钟跑完——这是博客读 10 篇都换不来的"手感"。
+顶层 `findObjectsDifferences` 先做 `prev === next`。引用不变则整段 props diff 为 `false`，默认 notifier 不再为这次 Child 开 group。这是诊断 → 改引用 → 再看 console 的闭环，不是 WDYR 替你 memo。
 
 ## 踩过的坑
 
-1. **多 React 副本只 patch 到一份**——monorepo dedup 失败或 micro-frontend 各自带 React 时，WDYR 只追到自己 import 那一份，另一份照常"装哑巴"
-2. **inline arrow 永远报假阳性**——函数 diff 只比 `name` 不比 `toString`，匿名箭头 `name` 都是空字符串，每次 render 都会被判"等价但引用不等"
-3. **trackAllPureComponents 在大型应用很贵**——每个被追踪的 functional 组件多出 2 个 useRef hook，几百个 memo 组件下 hook overhead 肉眼可见
-4. **与 React Compiler 完全不兼容**——README 自己写了 `completely incompatible`，编译期自动 memo 之后，monkey-patch 会和编译产物冲突，要么用 Compiler，要么用 WDYR
-5. **生产环境绝不能引**——README 反复警告 `It significantly slows down React`，必须用 `process.env.NODE_ENV === 'development'` 守卫，写错一次就是真事故
+1. **把 `jsx-runtime.js` 当成第二套 patch**：10.0.1 里它不包 `jsx()`。只配 production runtime、或忘了先调用 `whyDidYouRender(React)`，都会静默无日志。
 
-## 适用 vs 不适用
+2. **多份 React 只 patch 到你传入的那一份**：monorepo / microfrontend 若解析出两份 `react`，另一份的 `createElement` 仍是哑巴。`__IS_WDYR__` 也只打在传入对象上。
+
+3. **匿名函数永远像“等价但新引用”**：函数 diff 比的是 `name`。inline arrow 的 `name` 常是空字符串，两次都会走 `diffTypes.function`。`useMemo`/`useCallback` 只有在 hook wrapper 把结果放进 `dependenciesMap` 后才会比 deps。
+
+4. **`trackAllPureComponents` 会给每个被跟踪 function 多两个 `useRef`**：`patchFunctionalOrStrComponent` 用它们存 prev props 和 prev owner。大应用全开会改变 hook 数量和耗时；README 也警告不要把它当通用性能优化器。
+
+5. **默认 notifier 会吞“真的变了”**：`shouldLog()` 看到任何 `different` 就返回 false。想记录合法更新必须设 `logOnDifferentValues`。热更新后 `hotReloadBufferMs` 默认 500ms 内也会静音。
+
+6. **React Compiler / 生产构建**：README 两段 CAUTION 写死。Compiler 自动 memo 之后，这套 createElement patch 没有合同；生产引入会同时付出性能和正确性风险。
+
+## 适用 vs 不适用场景
 
 **适用**：
 
-- 调一个具体的"为什么这个 list 每次都全量重渲染"的 bug
-- code review 配套——合作者改了 props 结构，本地跑一遍看 console 有没有新红字
-- 给团队新人讲"为什么不能 inline object prop"，开 demo 现场演示一次胜过 10 张幻灯片
-- 接手老项目，全量打开 `trackAllPureComponents`，跑核心交互扫一遍找祖传引用问题
+- 追查某个 `memo` / `PureComponent` 为什么还在更新
+- 用 `trackExtraHooks` 看 React-Redux `useSelector` 这类自定义 hook 的结果引用
+- 给新人演示 inline object / inline function 怎样打穿浅比较
 
 **不适用**：
 
-- 想看应用"哪几个组件最耗时"——那是 React DevTools Profiler 的活，看 flame graph 不是看 diff
-- 已经全量切到 React Compiler——Compiler 帮你自动 memo 了，WDYR 既不兼容也无用武之地
-- 生产环境性能监控——WDYR 是 dev-only 工具，绝不能跑在线上用户面前
-- 想"修复"白渲染——WDYR 只诊断不修复，修是你自己的活（提引用 / `useCallback` / `useMemo`）
+- 找“哪个组件最耗时”——那是 Profiler / flame graph
+- 已经全量 React Compiler，并且接受 README 的不兼容声明
+- 生产监控或 RUM——这是 dev-only monkey-patch
+- 期望工具自动修好引用——它只产出 `updateInfo`，不改你的组件
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018**：Welldone Software 的 Vitali Zaidman 写出第一版 WDYR；那个年代 React DevTools Profiler 才刚出，行业还在用 `componentDidUpdate` 手动 `console.log`
-- **2019**：v3 加入 hook tracking，开始 patch `useState` / `useReducer`——这一步把 WDYR 从"class 时代工具"拖进了 hooks 时代
-- **2022**：v7 适配 React 18 的 concurrent rendering 和 StrictMode 双调用，引入 `renderNumber % 2 === 1` 跳过逻辑
-- **2025-01**：v10.0.1 适配 React 19 + JSX automatic transform，提供 `jsx-runtime.js` / `jsx-dev-runtime.js` 两套接入
-- **现在**：一作 Vitali 已加入 React 团队，未来 React Compiler 会逐步把 WDYR 解决的"该 memo 而没 memo"自动化掉，WDYR 的价值会从"调优工具"逐步退化为"教学工具"
+- 本文绑定 `welldone-software/why-did-you-render@752cfdb4...`，即 GitHub annotated tag `v10.0.1` 剥出的 commit；`package.json` 为 `10.0.1`。
+- npm `10.0.1` 的 `gitHead` 是 `5623596ee8833f8352c6bf7a713619a1bcd57c6c`（tag 之后的 badge 提交）；`master` 后来还有 `3ec3512d...`，版本号仍写 10.0.1。本文不把后两份当成同一 provenance。
+- 运行时依赖 `lodash@^4`；类型和 `dist/` 随 npm 包发布，本 review 读的是 `src/`。
+- 本文未安装依赖、未跑 Jest/Cypress、未在浏览器挂载 React 19，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **monkey-patch 是工具库的最后手段**：没有官方钩子时，替换公共方法是唯一选择，但要做幂等哨兵（`__IS_WDYR__`）和反挂回（`__REVERT_*`）
-- **shallow 入口 + deep 内部** 是工程上"全 shallow 漏 / 全 deep 炸"的折中，diff 算法设计的经典样板
-- **诊断 ≠ 修复**：好工具不替你做决定，而是把"原因"结构化暴露给你；从 `console.log("update")` 升级到 `console.group(updateInfo)` 是质变
-- **dev 工具的灵魂是 NODE_ENV gate**：性能/正确性都允许牺牲，但必须有一道闸门把代价挡在线下
-- **工具的目标不是消灭问题，而是把问题"看得见"**：WDYR 不替你 memo，但它让你看得到该 memo 而没 memo 的位置——这是诊断工具区别于自动化工具的核心定位
+1. **没有官方钩子时，幂等哨兵和 revert 是最低安全网**——`__IS_WDYR__` 与 `__REVERT_*` 决定能不能安全地补丁公共 API。
+2. **诊断默认要偏向假阳性里的“白渲染”**——默认 notifier 故意忽略值真的变了的更新。
+3. **JSX transform 入口和 `whyDidYouRender()` 必须成对**——只改 babel `importSource` 或只 patch `React.createElement`，在 React 19 都会漏一侧。
+4. **函数相等是工程近似**——比 `name` 和 hook deps，不比 `toString()`。
+
+## 应用型自测
+
+1. 第二次调用 `whyDidYouRender(React)` 会再包一层 `createElement` 吗？
+2. 默认 notifier 会不会为 `prev={a:1}` → `next={a:2}` 打日志？
+3. 只引入 `jsx-runtime.js`、不调用 `whyDidYouRender(React)`，automatic production runtime 会被跟踪吗？
+
+检查点：
+
+1. 不会。已有 `React.__IS_WDYR__` 时函数直接 return。
+2. 不会。顶层值变化是 `different`，`shouldLog` 为 false，除非 `logOnDifferentValues`。
+3. 不会。`jsx-runtime.js` 原样重导出 React；跟踪发生在 `jsxDEV` 包装和已初始化的 `wdyrStore`。
 
 ## 延伸阅读
 
-- [welldone-software/why-did-you-render 仓库](https://github.com/welldone-software/why-did-you-render) —— 总入口 + README，红色警告比文档多
-- [Vitali 的 v1.0 launch blog (Medium)](https://medium.com/welldone-software/why-did-you-render-mr-big-pure-react-component-2a36dd86996f) —— 原作者讲清楚动机的一篇
-- [[react]] —— 理解 createElement / Fiber / useRef 的工作机制
-- [[react-compiler]] —— 与 WDYR 哲学对立的"自动 memo"路径
-- [[use-deep-compare-effect]] —— 解决"应对策略"，WDYR 解决"根因诊断"
-- [React DevTools Profiler 文档](https://react.dev/learn/react-developer-tools) —— 看时间用它，看原因用 WDYR
+- 固定源码：[welldone-software/why-did-you-render](https://github.com/welldone-software/why-did-you-render) —— 本文绑定提交 `752cfdb4d5c5eba5a8774fb19a978a7ac0a0d5de`
+- [Vitali 的 v1.0 动机文](https://medium.com/welldone-software/why-did-you-render-mr-big-pure-react-component-2a36dd86996f)
+- [[react]] —— `createElement` / memo / hook 的公共合同
+- [[react-compiler]] —— README 声明与 WDYR 不兼容的自动 memo
+- [React DevTools Profiler](https://react.dev/learn/react-developer-tools) —— 看耗时用它
 
 ## 关联
 
-- [[react]] —— WDYR 的所有 monkey-patch 都是基于 React 公共 API 的
-- [[react-compiler]] —— 与 WDYR 完全不兼容；编译期自动 memo 的另一条路
-- [[use-deep-compare-effect]] —— "深比代替浅比"的应对工具，和 WDYR 是诊断 vs 治疗的关系
-- [[eslint-plugin-react-hooks]] —— 编译期防"deps 缺失"，但抓不到 inline object prop
-- [[react-devtools]] —— 看耗时与 commit 时序，和 WDYR 各管"性能"的一半
-- [[turbopack]] —— 同样是 dev-only 工具的设计哲学：开发期重，生产期消失
+- [[react]] —— 全部 monkey-patch 都建立在 React 公共对象上
+- [[react-compiler]] —— 编译期 memo，和运行时 patch 互斥
+- [[use-deep-compare-effect]] —— 用深比回避引用抖动；WDYR 负责把抖动显示出来
+- [[eslint-plugin-react-hooks]] —— 管 deps 数组写没写全，不管 inline object prop
+- [[react-devtools]] —— 看 commit 时序和耗时
+- [[turbopack]] —— 同样把重代价留在 development
 
 ## 反向链接
 

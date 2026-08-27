@@ -4,60 +4,77 @@ title: markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 日期: 2026-05-30
 分类: projects / 前端工具链
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/markdown-it/markdown-it
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 157b33bc13649aebecf9ab9b3b8c85ae645abb5a
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 15.0.0
 ---
 
 ## 是什么
 
-markdown-it 是一个 **JavaScript 库**，它接收一段 Markdown 文本（你写博客那种带 `#` 和 `**` 的纯文本），输出一段 HTML 字符串。日常类比：像一台**专门的翻译机**——你把"中文"塞进去，"英文"从另一头吐出来，中间它会在自己肚子里先把句子拆成词条、再按顺序拼回去。
+markdown-it 是一个可插拔的 JavaScript Markdown 解析器：输入 Markdown 文本，输出 HTML 字符串。日常类比：像一条有名字的传送带——core / block / inline 三条 Ruler 按顺序处理，最后 Renderer 把扁平 token 流拼成标签。
 
 ```js
 import MarkdownIt from 'markdown-it'
 const md = new MarkdownIt()
 md.render('# Hello\n\n这是 **粗体**')
-// → '<h1>Hello</h1>\n<p>这是 <strong>粗体</strong></p>\n'
 ```
 
-它的特点：100% 遵守 CommonMark 规范、可选打开 GitHub Flavored Markdown 扩展（表格、删除线）、解析速度快（单线程每秒大约 5 万到 10 万篇短文）、规则可拔插（你能写一个小 plugin 就改它的行为）。VitePress、VuePress 等文档站默认用它；Hexo 默认是 marked，也可换成 `hexo-renderer-markdown-it`；docsify 则走 marked 路线。
+根导出仍包一层无 `new` 的 callable，方便旧代码；v15 文档写明新代码应写成 `new MarkdownIt()`，兼容包装未来可能删除。
 
 ## 为什么重要
 
-不理解它，下面这些事就没法解释：
+不读固定 15.0.0 源码，下面这些合同很容易被旧教程带偏：
 
-- 为什么 VitePress / VuePress 渲染路径很像——它们默认都挂 markdown-it
-- 为什么社区有 200+ 个 `markdown-it-xxx` plugin 而 marked 少得多——是 Ruler/token 架构差异
-- 为什么文档站里 `# 标题` 旁边能自动出锚点 `#`——markdown-it-anchor plugin 替换了一条 renderer 规则
-- 为什么 Markdown 里的 `<script>` 默认不会被执行——markdown-it 默认 `html: false`（转义），想让源里 HTML 直通必须显式 `html: true`
+- 为什么「默认 100% CommonMark、GFM 要另开」并不准确
+- 为什么 `new MarkdownIt('commonmark')` 反而打开了 `html: true`
+- 为什么 v15 不再把 `example.com` 自动变成链接
+- 为什么 VitePress 能用几行 plugin 改锚点和外链，而不换引擎
 
 ## 核心要点
 
-把 Markdown 翻译成 HTML，markdown-it 做了**三件事**：
+固定版本的主链可以拆成五步：
 
-1. **两阶段**：先 parse（文本 → token 数组），再 render（token 数组 → HTML 字符串）。两阶段隔离，plugin 可以单独换一边。类比：先把整篇中文拆成一张张词卡，再按词卡拼英文。
+1. **三条链**：`parse()` 建 `StateCore`，core 顺序是 normalize → block → strip_references → inline → linkify → replacements → smartquotes → text_join。`render()` 再把 token 交给 Renderer。
 
-2. **Token 流而非 AST 树**：嵌套结构用 `heading_open` / `inline` / `heading_close` 这种**配对的扁平数组**表示，不像 mdast 那种递归树。遍历就是 for 循环，没有 visitor 黑魔法。
+2. **默认 preset 不是 CommonMark-only**：`new MarkdownIt()` 设 `html: false`、`linkify: false`、`breaks: false`、`typographer: false`、`maxNesting: 100`，但 default 不 `enableOnly`，因此 table 与 strikethrough 规则保持开启。`linkify` 规则在选项为假时直接返回。
 
-3. **Ruler 调度**：每个解析阶段里有一组**有序的命名规则**。`md.use(plugin)` 实质就是在某条规则前后插入新规则，或替换 `renderer.rules.foo` 这条函数——几行代码就能改解析行为。
+3. **`commonmark` / `zero` 才裁规则**：`commonmark` 关掉 table / strikethrough / linkify / replacements / smartquotes，同时把 `html` 设为 `true`、`xhtmlOut` 为 `true`、`maxNesting` 为 `20`。`zero` 几乎只留 paragraph + text。
 
-## 实践案例
+4. **默认链接过滤**：`validateLink` 拒绝 `javascript:` / `vbscript:` / `file:` / 多数 `data:`，只放行 gif/png/jpeg/webp 的 data image。这和 [[marked]] 只做 `encodeURI` 不同。
 
-### 案例 1：最小渲染一段 Markdown
+5. **v15 包合同**：类型随包发布；`markdown-it/lib/...` 不再导出，`Token` / `Ruler` / `Renderer` 挂在类静态属性上；`linkify-it` 默认关闭 fuzzy link。生产依赖是 `argparse`、`entities`、`linkify-it`、`mdurl`、`punycode.js`、`uc.micro`。
+
+## 实践示例
+
+### 案例 1：默认实例与显式 CommonMark
 
 ```js
 import MarkdownIt from 'markdown-it'
 
 const md = new MarkdownIt({
-  html: false,        // 不允许源里的 HTML 标签直通（防 XSS）
-  linkify: true,      // 自动把 https://x.com 包成 <a>
-  breaks: false       // 单换行不变 <br>，按 CommonMark 规范
+  html: false,
+  linkify: true,
+  breaks: false,
 })
+md.linkify.set({ fuzzyLink: true }) // v15 要显式打开 example.com
 
-const html = md.render('# Hello\n\n看 https://example.com')
-// → '<h1>Hello</h1>\n<p>看 <a href="https://example.com">https://example.com</a></p>\n'
+const strict = new MarkdownIt('commonmark')
+// html: true, 无 table / strikethrough
 ```
 
-`html: false` 是默认值，重要的安全开关。如果你确定 Markdown 来源可信（比如自己写的博客），开 `html: true` 可以让源里写的 `<div>` 直通；如果是用户提交内容，**必须保持 false**，否则 XSS。
+用户内容应保持 `html: false`。要严格 CommonMark，用 preset 名，不要只关几个选项。
 
-### 案例 2：写 plugin 给所有外链加 target=\_blank
+### 案例 2：改 `link_open` 而不是手写整段 `<a>`
 
 ```js
 const defaultRender = md.renderer.rules.link_open
@@ -73,78 +90,87 @@ md.renderer.rules.link_open = (tokens, idx, opts, env, self) => {
 }
 ```
 
-**逐部分解释**：先取出（或构造）默认 `link_open` 渲染函数；再覆盖同名规则——读 `href`，外链就加 `target`/`rel`；最后仍调用默认渲染，避免自己手写整段 `<a>`。社区多数 plugin 都是「保存默认 → 改 token 属性 → 回默认」。
+社区 plugin 多半是「保存默认 → 改 token 属性 → 回默认」。`md.use(plugin, ...params)` 只是 `plugin(md, ...params)`。
 
-### 案例 3：拿 token 流抽 TOC
+### 案例 3：只 parse、抽 TOC
 
 ```js
-const tokens = md.parse(markdownSrc, {})
+const tokens = md.parse(src, {})
 const toc = []
 for (let i = 0; i < tokens.length; i++) {
   if (tokens[i].type === 'heading_open') {
-    const level = parseInt(tokens[i].tag.slice(1))     // h1 → 1
-    const text = tokens[i + 1].content                  // 下一个 inline token
-    toc.push({ level, text })
+    const level = Number.parseInt(tokens[i].tag.slice(1), 10)
+    const inline = tokens[i + 1]
+    toc.push({ level, text: inline?.content ?? '' })
   }
 }
 ```
 
-**逐部分解释**：`parse` 只产出扁平 token 数组，不生成 HTML；遇到 `heading_open` 时，`tag` 是 `h1`/`h2`…，紧邻的 `inline` token 的 `content` 才是标题文字。跳过 render、只读 token——适合做 TOC/静态分析。
+顶层是配对的 block token；真正的行内细节在紧随其后的 `inline` token 的 `children` 里。`env` 是可变共享沙箱，plugin 应写到自己的命名空间。
 
 ## 踩过的坑
 
-1. **`html: true` 是 XSS 直通车**：用户能塞 `<script>alert(1)</script>` 直接到 HTML。给用户内容渲染**永远保持 false**，再用 sanitize-html 做二次清洗。
-
-2. **Token 配对忘了改一边**：`heading_open` 和 `heading_close` 配对，你只改 open 不改 close，HTML 结构就坏。改 token 数组前先想清楚自己改的是开标签、闭标签还是中间内容。
-
-3. **`ruler.before` 插错位置**：你想在 `linkify` 前面跑自定义规则，但写成了 `ruler.after('linkify', ...)`，结果你的规则看不到 linkify 处理过的状态。规则顺序敏感，写之前先 `md.core.ruler.__rules__.map(r => r.name)` 看一遍。
-
-4. **`env` 对象是共享可变状态**：多个 plugin 都往 `env` 上塞字段，命名冲突就互相覆盖。约定：自己 plugin 用 `env.myPlugin = {}` 命名空间。
+1. **把 default 当成 CommonMark 参考实现**：表格和 `~~del~~` 默认就会出。要规范锚点用 `'commonmark'`，并接受它打开 HTML。
+2. **`html: true` 是 XSS 直通车**：安全文档的策略是默认关 HTML，或开 HTML 后接外部 sanitizer。
+3. **v15 仍写 `md.utils.assign` 或 `import 'markdown-it/lib/token.mjs'`**：三个 legacy helper 已删，内部路径不再导出。
+4. **plugin 用用户输入当元素 `id`/`name`**：安全文档点名 DOM clobbering，锚点类 plugin 必须加前缀。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 文档站 / SSG 默认栈（VitePress、VuePress）；Hexo 若已换成 markdown-it 渲染器
-- 需要写 plugin 扩展 Markdown 语法（自定义容器、数学公式、emoji 短代码）
-- 服务端同步渲染 Markdown（Node API 返回 HTML）
-- 要在 parse 与 render 之间插手（TOC、锚点、外链策略）
+
+- 文档站默认栈（VitePress / VuePress）；需要 named rule 插入或替换
+- 要在 parse 与 render 之间抽 TOC、改外链、加容器
+- 用户内容渲染，且愿意保持 `html: false` 并理解 `validateLink` 的范围
 
 **不适用**：
-- 浏览器端极小 bundle 优先 → 用 marked（min ~30KB vs markdown-it 更大）
-- 默认 Hexo / docsify 栈且不想换引擎 → 它们默认是 marked
-- 想要严格的 AST 树 + 异步 plugin pipeline → 用 unified / remark
-- Markdown + JSX 混写（mdx）→ 用 mdx 体系
 
-## 历史小故事（可跳过）
+- 生产依赖个数必须为零 → [[marked]]
+- 要 AST + 异步 pipeline / MDX → [[unified]]
+- 还没跑过 spec 或 sanitizer，却把「默认 100% CommonMark 且安全」写成无条件事实
 
-- **2014 年**：Puzrin 与 Kocharin 嫌当时的 remarkable 解析器架构不够清晰，把它整理重写发布了 markdown-it 1.0。
-- **2015 年**：CommonMark 规范定稿，markdown-it 第一时间做到 100% 兼容，成为 JS 生态里 CommonMark 的事实参考实现。
-- **2018-2020 年**：VuePress / VitePress 把 markdown-it 选为默认底层；Hexo 生态同时提供 markdown-it 可选渲染器，社区 plugin 数突破 200。
-- **2024 年**：稳定在 v14.x，CommonMark 0.31 兼容，npm 周下载量约 2500 万。
+## 固定版本边界
+
+- 本文绑定 `markdown-it/markdown-it@157b33bc13649aebecf9ab9b3b8c85ae645abb5a`，tag / npm latest / `gitHead` 均为 `15.0.0`。
+- 公共 parser API 与 v14 兼容；v15 变更集中在 fuzzy link、类型打包和内部导出。
+- 默认 preset 含 table / strikethrough；`commonmark` preset 含 `html: true`。
+- 本文未安装依赖、运行 cmspec 或测量吞吐，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **两阶段隔离**让扩展点变多——只改 parse 阶段、只改 render 阶段、改两边都行。这是 markdown-it 比 marked 更"可插拔"的根因。
-2. **Token 流（扁平数组）vs AST 树（递归 node）** 是真实的设计权衡：前者遍历快、内存省；后者表达力强、操作直观。各有适用场景。
-3. **Ruler 模式** 把"一组有序规则 + before/after/replace 操作"抽出来，是写可扩展系统的通用招式。
-4. **默认安全比默认方便重要**：`html: false` 默认关掉，再让用户显式打开——XSS 防御从默认值开始。
+1. **preset 比单个选项更能说明合同**——default 和 commonmark 同时改规则表和 `html`。
+2. **扁平 token + 命名 Ruler** 让扩展落在「某一条规则前后」，而不是换引擎。
+3. **默认安全是策略，不是证明**——`validateLink` 和 `html: false` 仍覆盖不了任意 plugin。
+4. **内部路径不是公共 API**——v15 把 Token/Ruler 收到类上，就是在收这条口子。
+
+## 应用型自测
+
+1. `new MarkdownIt().render('| a | b |\n| --- | --- |\n| 1 | 2 |')` 会不会出 `<table>`？
+2. `new MarkdownIt('commonmark').render('<em>x</em>')` 会不会把标签转义掉？
+3. `new MarkdownIt({ linkify: true }).render('see example.com')` 在 v15 会不会自动加 `<a>`？
+
+检查点：
+
+1. 会。default 未裁掉 table 规则。
+2. 不会转义。commonmark preset 的 `html` 为 `true`。
+3. 默认不会。fuzzy link 要 `md.linkify.set({ fuzzyLink: true })`。
 
 ## 延伸阅读
 
-- 官方文档：[markdown-it.github.io](https://markdown-it.github.io/)（带 in-browser playground，能直接看 token 流）
-- API 参考：[markdown-it API](https://markdown-it.github.io/markdown-it/)（Token / Ruler / Renderer 三大类）
-- CommonMark 规范：[spec.commonmark.org](https://spec.commonmark.org/)（markdown-it 兼容的目标）
-- Plugin 列表：[markdown-it/awesome](https://www.npmjs.com/search?q=keywords:markdown-it-plugin)
-- [[marked]] —— 同生态对手，更轻量
-- [[unified]] —— Markdown 处理的另一派（AST + 异步）
+- 官方文档：[markdown-it.github.io](https://markdown-it.github.io/)
+- 固定源码：[markdown-it/markdown-it](https://github.com/markdown-it/markdown-it) —— 本文绑定提交 `157b33bc13649aebecf9ab9b3b8c85ae645abb5a`
+- v15 迁移：[docs/migration/migration_v15.md](https://github.com/markdown-it/markdown-it/blob/15.0.0/docs/migration/migration_v15.md)
+- CommonMark spec：[spec.commonmark.org](https://spec.commonmark.org/)
+- [[marked]] —— 更少依赖、默认 GFM、无 HTML 开关
+- [[unified]] —— AST + plugin pipeline
 
 ## 关联
 
-- [[marked]] —— JS Markdown 解析器另一派，docsify 用它；体积更小但扩展点少
-- [[unified]] —— remark / rehype 的统一框架，AST + plugin pipeline，与 markdown-it 走两条路
-- [[vitepress]] —— Vue 文档站点框架，markdown-it 直接做底层
-- [[astro]] —— SSG 框架，可选 markdown-it 或 remark/unified 作为 Markdown 引擎
-- [[starlight]] —— Astro 文档主题，本笔记网站用的就是它
+- [[marked]] —— JS Markdown 另一派，默认更「放开」
+- [[unified]] —— remark / rehype 路线
+- [[vitepress]] —— 默认底层之一
+- [[astro]] —— 可选 markdown-it 或 remark
+- [[starlight]] —— 本笔记站点用 unified 系
 
 ## 反向链接
 

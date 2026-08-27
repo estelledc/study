@@ -4,159 +4,184 @@ title: Kysely — TypeScript SQL 查询构建器
 日期: 2026-05-29
 分类: ORM / 查询构建器
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/kysely-org/kysely
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: f24018c789c3cf7ad03ccc672ada63a1ded87f88
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.29.5
 ---
 
 ## 是什么
 
-Kysely 是一个 **TypeScript 优先的 SQL 查询构建器**，核心承诺一句话：**"我就想写 SQL，但要类型自动检查"**。
+Kysely 是一个 TypeScript 优先的 SQL 查询构建器。日常类比：它不替你炒菜，只给你一套带量杯的锅铲——你还是在写 `select` / `where` / `join`，但列名和值类型会在编译期被 `Database` 接口核对。
 
-日常类比：
-
-- [[prisma]] / [[drizzle]] 这种 ORM 像**给你做好的菜**——你说"来一盘宫保鸡丁"，厨房自己处理切配、爆炒、装盘。你不知道菜怎么做的，但拿到能吃。
-- Kysely 像一台**改装后的电锅**——你还是要自己下米、加水、按开关（也就是写 SQL），但每加一种食材，电锅自己核对："这是大米还是面条？水位够吗？"——食材类型不对它当场报警。
-
-你在 IDE 里写：
-
-```typescript
-db.selectFrom('users').select(['id', 'email']).where('id', '=', 1).executeTakeFirst()
+```ts
+const user = await db
+  .selectFrom("users")
+  .select(["id", "email"])
+  .where("id", "=", 1)
+  .executeTakeFirst();
 ```
 
-TypeScript 编译期就告诉你：返回类型是 `{ id: number; email: string } | undefined`——你拼错列名、where 类型不对，编译期立刻爆红。
+`execute()` 返回全部 rows；`executeTakeFirst()` 只取第一行；`executeTakeFirstOrThrow()` 空结果时默认抛 `NoResultError`。0.29.5 运行时 0 dependencies，声明 Node `>=22`。
 
 ## 为什么重要
 
-理解 Kysely 的位置，要看 TypeScript ORM 光谱上的几个点：
+不理解 Kysely 把“类型”和“执行”拆开，就解释不了：
 
-- **比 [[prisma]] 简单**——Prisma 要写 `.prisma` DSL 文件、跑 `prisma generate` 生成代码、引入 Rust binary 引擎。Kysely 没有这些，纯 TypeScript，`import` 就能用。
-- **比 [[drizzle]] 更贴近原生 SQL**——Drizzle 有 schema-as-code 和 relation API，往 ORM 方向再走半步。Kysely 的链式调用 1:1 对应 SQL 关键字（`selectFrom` / `innerJoin` / `where` / `groupBy`），写 builder 几乎等于写 SQL。
-- **0 dependencies、包体积超小**（约 30KB）——Edge runtime（Cloudflare Workers / Vercel Edge）友好，冷启动快。
-- **类型自动推导**——你写 `select(['id', 'name'])`，TypeScript 自己推出 row 类型是 `{ id: number; name: string }`，不用手动声明。
-- **多 dialect 支持**——PostgreSQL / MySQL / SQLite / MS SQL Server，加上社区维护的 PlanetScale / Neon / Cloudflare D1 / Bun SQLite。换 dialect 等于换一个 adapter。
+- 为什么没有 `schema.prisma` 也能得到 `{ id: number; email: string } | undefined`
+- 为什么 `compile()` 可以只出 SQL、不碰数据库
+- 为什么内置 `Migrator` 仍然不会根据 interface 自动 diff 出 ALTER
+- 为什么 TypeScript 4.x 项目装上 0.29.5 只会看到过期 stub
 
 ## 核心要点
 
-Kysely 的世界观可以拆成 **三块拼图**：
+固定 0.29.5 的主链可以拆成五步：
 
-1. **TypeScript Database 类型**（你的 schema 长什么样）
+1. **手写 `Database` 接口**：表名是 key，列用 `string` / `Generated<T>` / `ColumnType<S, I, U>` 描述 select / insert / update 三种形状。
 
-   你**手写**一份 `Database` interface 告诉 Kysely "我有哪些表、每张表有哪些列、列是什么类型"。也可以用第三方工具 [kysely-codegen](https://github.com/RobinBlomberg/kysely-codegen) 从已有 db 反向生成。
+2. **dialect 装配执行器**：构造 `Kysely` 时，`dialect.createDriver()`、`createQueryCompiler()`、`createAdapter()` 组成 `DefaultQueryExecutor`。一等 dialect 有 postgres、mysql、sqlite、mssql、pglite。
 
-2. **Query builder 链**（你怎么写 query）
+3. **不可变 builder**：`selectFrom` / `insertInto` / `updateTable` / `deleteFrom` / `mergeInto` 每一步返回新对象，类型沿链累积。
 
-   链式调用：`db.selectFrom().select().where().orderBy().execute()`。每一步返回**新 builder**（不可变），类型在链上**累积**。
+4. **编译**：`toOperationNode()` 先跑 plugin 的 `transformQuery`（必须保持 node kind），再 `compileQuery` 得到 `{ sql, parameters }`。
 
-3. **编译时类型推导**（IDE 帮你 catch 错误）
+5. **执行**：`executeQuery` 向 driver 要连接、跑 SQL，再跑 `transformResult`。`AbortSignal` 可选；默认 `inflightQueryAbortStrategy` 是 `ignore query`。
 
-   TypeScript 用模板字面量类型 + 条件类型，把 `'users.email'` 字符串拆成表名 + 列名，再去 `Database['users']['email']` 查类型。`select` 选了哪些字段，就决定了最终 row 长什么样。
+## 实践示例
 
-整套机制**不依赖 codegen、不依赖 runtime engine、不依赖 DSL**——纯类型系统就能完成。
+### 案例 1：Database 类型 + dialect
 
-## 实践案例
-
-### 案例 1：定义 Database 类型
-
-```typescript
-import { Kysely, Generated, ColumnType, PostgresDialect } from 'kysely'
-import { Pool } from 'pg'
+```ts
+import { Kysely, Generated, ColumnType, PostgresDialect } from "kysely";
+import { Pool } from "pg";
 
 interface Database {
   users: {
-    id: Generated<number>           // 自增主键，insert 不用传
-    email: string
-    name: string | null
-    created_at: ColumnType<Date, string | undefined, never>
-    // 三栏：select 出来 / insert 时 / update 时 各自的类型
-  }
-  posts: {
-    id: Generated<number>
-    title: string
-    author_id: number
-  }
+    id: Generated<number>;
+    email: string;
+    name: string | null;
+    created_at: ColumnType<Date, string | undefined, never>;
+  };
 }
 
 const db = new Kysely<Database>({
   dialect: new PostgresDialect({
     pool: new Pool({ connectionString: process.env.DATABASE_URL }),
   }),
-})
+});
 ```
 
-`Generated<T>` 和 `ColumnType<S, I, U>` 是 Kysely 的两个标记类型——告诉编译器"这一列在 select / insert / update 三种场景下类型不同"。
+`Generated<S>` 等于 `ColumnType<S, S | undefined, S>`：insert 可省略，update 仍是 `S`。`pool` 也可以是 `async () => new Pool(...)`，第一次用到才创建。
 
-### 案例 2：select + where（自动推 row 类型）
+### 案例 2：compile 与 execute 分开
 
-```typescript
-const user = await db
-  .selectFrom('users')
-  .select(['id', 'email'])
-  .where('id', '=', 1)
-  .executeTakeFirst()
+```ts
+const qb = db
+  .selectFrom("users")
+  .select(["id", "email"])
+  .where("id", "=", 1);
 
-// user 的类型自动推出来：{ id: number; email: string } | undefined
+const compiled = qb.compile();
+// compiled.sql / compiled.parameters 已是 dialect SQL
+
+const user = await qb.executeTakeFirst();
 ```
 
-注意几件事：
+类型安全停在编译期。同事改了真实列类型但没改 interface，TS 不会报警。
 
-- `.select(['id', 'email'])` 只选两列，最终 row 就**只有这两个字段**——不是把整张表都返回。
-- `.where('id', '=', 1)` 的 `1` 必须是 number——你传 `'1'` 字符串，编译期立刻报错。
-- `.executeTakeFirst()` 表示"取第一条或 undefined"；`.executeTakeFirstOrThrow()` 取不到就抛异常；`.execute()` 返回数组。
+### 案例 3：一等 Migrator，不是 schema diff
 
-### 案例 3：Insert + Returning
+```ts
+import { FileMigrationProvider, Migrator } from "kysely/migration";
+import { promises as fs } from "node:fs";
+import path from "node:path";
 
-```typescript
-const newUser = await db
-  .insertInto('users')
-  .values({ email: 'a@b.com', name: 'Alice' })
-  .returning('id')
-  .executeTakeFirstOrThrow()
+const migrator = new Migrator({
+  db,
+  provider: new FileMigrationProvider({
+    fs,
+    path,
+    migrationFolder: "migrations",
+  }),
+});
 
-// newUser 的类型：{ id: number }
+await migrator.migrateToLatest();
 ```
 
-`.returning('id')` 是 PostgreSQL / SQLite 的特性（MySQL 不支持，要用 last insert id）——告诉数据库"插入后顺便把 id 还给我"。Kysely 把这种 dialect 差异封装在 adapter 层，但你写 query 时还是要知道哪些 dialect 支持。
+默认记录表是 `kysely_migration`，锁表是 `kysely_migration_lock`。`up` / `down` 是你自己写的 Kysely 语句；它不会读取 `Database` 接口去生成 SQL。
 
 ## 踩过的坑
 
-1. **必须自己保持 Database 类型与真实 db 同步**——不像 Prisma 跑 `prisma generate` 自动对齐，Kysely 信任你写的 interface。同事改了 db 但没改 interface？编译期看不出来，运行时拿到 `email: number`（实际 db 改成 int 了）但 TS 说是 `string`——类型谎言。补救：用 `kysely-codegen` 定期从 db 反向生成，或者在 API 边界用 `zod` 做 runtime 校验。
+1. **把“没有 Prisma migrate”说成“没有 migration”**：0.29.5 在 `kysely/migration` 提供 `Migrator` 与 `FileMigrationProvider`。缺的是自动 schema diff，不是迁移运行器。
 
-2. **大型查询编译慢**——`selectFrom().innerJoin().innerJoin().select([20 列])...` 这种链如果跨 5+ 表、20+ 列，TypeScript 类型推导要展开几十层条件类型，`tsc` 变慢、IDE 卡顿、错误信息巨大。这是模板类型路线的固有代价（Drizzle 同样有）。缓解办法：把大 query 拆成小函数，或在中间用 `as` 类型断言切断推导链。
+2. **忽略 Node / TypeScript 下限**：`engines.node` 是 `>=22.0.0`；`<5.4` 的 TypeScript 只会解析到 `outdated-typescript.d.ts`。
 
-3. **不带 migration 工具**——Kysely 不内置 schema 演化方案。你要自己装第三方包：`kysely-migrator` / `kysely-migration-cli` / 或直接用 `umzug` 自己写。Drizzle 的 `drizzle-kit` 和 Prisma 的 `prisma migrate` 是开箱即用的，Kysely 不是——这是它"做最窄一件事"哲学的代价。
+3. **信任手写 interface 等于库状态**：Kysely 不 generate 客户端。interface 过期时，编译期绿灯、运行时列类型仍可能对不上。
 
-4. **与 Prisma / Drizzle 互不兼容**——三个项目的 schema 表达方式完全不同（DSL / TS object / TS interface），从 Prisma 迁到 Kysely 要重写全部 query 代码。如果项目深度用了 Prisma 的 `include: { posts: true }` 嵌套结果，迁到 Kysely 还要把"自动嵌套"改成"手动 reduce"，工作量很大。
+4. **plugin 改 query 种类**：`transformQuery` 必须返回同一 `kind`，否则执行器直接抛错。
+
+5. **把 `v0.30.0-beta` 当 0.29.5 合同**：beta tag 已存在；本页只绑定 `v0.29.5`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 已有 db / legacy schema，想上 type-safe 但不想引入 Prisma 那一套
-- Edge runtime（Cloudflare Workers / Vercel Edge）冷启动敏感
-- 团队 SQL 功底强，喜欢"看见每一条 SQL"
-- 性能敏感场景（30KB bundle vs Prisma 10MB）
+- 已有 SQL 库，想要类型安全但不想引入 codegen 客户端
+- 需要 `compile()` 先审查 SQL，再决定是否执行
+- Node 22+，并接受自己维护 `Database` 接口或外部 codegen
 
 **不适用**：
 
-- 从零起步、想要 schema + migration + 关系一站式 → 选 Drizzle
-- 团队 SQL 弱、想要 DSL 直观 API → 选 Prisma
-- 项目里要写大量复杂 join / CTE / window function 嵌套 → builder 链会变难读，混合 raw SQL 反而清晰
-- MongoDB → Kysely 只做 SQL 数据库
+- 想从一份 DSL 同时得到 migrate SQL 和生成客户端 → 看 [[prisma]]
+- TypeScript 低于 5.4，或必须跑在 Node 20
+- MongoDB：0.29.5 的 dialect 都是 SQL
+- 需要本页未测量的“30KB / 更快冷启动”结论
+
+## 固定版本边界
+
+- 本文绑定 `kysely-org/kysely@f24018c7...`，tag 与 package 均为 `0.29.5`。
+- 运行时 0 dependencies；官方 helpers、`readonly` 与 plugin 是可选出口。
+- 一等 dialect：PostgreSQL、MySQL、SQLite、MS SQL Server、PGlite。社区 adapter 不在本提交保证范围内。
+- 本文未安装 `pg` / `better-sqlite3`、未跑上游 mocha / tsd、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **builder 派 vs ORM 派**——Kysely 选了"builder 1:1 SQL"路线，比 ORM 透明、比 raw SQL 安全，是中间地带
-2. **TypeScript 模板类型能做的事比想象多**——把字符串字面量当编程语言用，编译期就能完成 SQL 类型推导
-3. **"做最窄的一件事"是有代价的**——Kysely 不做 schema / migration / relation，市场份额被一站式的 Drizzle / Prisma 抢走，但保留了"轻、快、透明"的核心优势
-4. **类型安全不等于运行时安全**——Kysely 只在编译期校验，db 真实状态偏离 interface 时 TS 不会救你
+1. **builder 可以 1:1 贴近 SQL**——代价是关系嵌套、schema 演化都要自己接。
+2. **类型安全不是运行时校验**——`Database` 接口是编译期契约，不是 introspection 结果。
+3. **迁移运行器 ≠ schema 源头**——`Migrator` 执行你写的 `up` / `down`，不替你算 diff。
+4. **dialect 是四件套**——driver、compiler、adapter、introspector 可以替换，查询 API 保持同一套。
+
+## 应用型自测
+
+1. `executeTakeFirst()` 在 0 行结果时返回什么？和 `executeTakeFirstOrThrow()` 差在哪？
+2. 不提供 `down()` 的 migration，往下回滚时会怎样？
+3. plugin 把 `SelectQueryNode` 变成另一种 `kind`，执行前会怎样？
+
+检查点：
+
+1. 返回 `undefined`；OrThrow 默认抛 `NoResultError`。
+2. 这条 migration 在 down 方向被跳过。
+3. `transformQuery` 抛错，因为 kind 必须保持不变。
 
 ## 延伸阅读
 
-- 官网入门：[Kysely 官方文档](https://kysely.dev/docs/intro)（30 分钟从安装到第一个 query）
-- 类型推导原理：[Type-safety 章节](https://kysely.dev/docs/category/typesafety)（看 Generated / ColumnType / Selection 怎么工作）
-- 反向生成 schema：[kysely-codegen](https://github.com/RobinBlomberg/kysely-codegen)（从已有 db 生成 Database interface）
+- 文档：[kysely.dev/docs/intro](https://kysely.dev/docs/intro)
+- 固定源码：[kysely-org/kysely](https://github.com/kysely-org/kysely) —— 本文绑定提交 `f24018c789c3cf7ad03ccc672ada63a1ded87f88`
+- [[prisma]] —— schema-first ORM 对照
 
 ## 关联
 
-- [[prisma]] —— ORM 派代表，Kysely 的"远邻"，对比看出 builder vs DSL 两种哲学
-- [[drizzle]] —— 同样 TypeScript-first builder，但带 schema-as-code 和 relation API，Kysely 的"近邻竞争对手"
-- [[typescript]] —— Kysely 的整套类型推导依赖 TS 4.x 的模板字面量类型
-- [[postgresql]] —— Kysely 主推的 dialect，returning / advisory lock 等特性都是 PG 起家
+- [[prisma]] —— schema + codegen 对照；Kysely 把 schema 真相留在 TypeScript 接口
+- [[typescript]] —— 0.29.5 要求 TS 5.4+ 才能看到真实类型
+- [[postgresql]] —— `PostgresDialect` 使用 `pg` Pool
+
+## 反向链接

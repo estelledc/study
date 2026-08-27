@@ -127,8 +127,8 @@ head:
 <p class="jx-proof__summary-en" lang="en">Proof is not the note count. It is the visible method, source-level evidence, curated learning paths, and an explicit account of where AI collaboration can still be wrong.</p>
 <!-- STUDY:SITE_STATE:BEGIN -->
 <div class="jx-proof__metrics" aria-label="当前内容规模">
-<div class="jx-proof__metric"><strong>2046</strong><span>篇项目与论文笔记</span></div>
-<div class="jx-proof__metric"><strong>42</strong><span>个项目已对齐标杆标准</span></div>
+<div class="jx-proof__metric"><strong>2051</strong><span>篇项目与论文笔记</span></div>
+<div class="jx-proof__metric"><strong>85</strong><span>个项目已对齐标杆标准</span></div>
 <div class="jx-proof__metric"><strong>3</strong><span>条新手首选路径</span></div>
 </div>
 <div class="jx-proof__links" aria-label="证据入口">
@@ -146,7 +146,7 @@ head:
 </dl>
   </div>
 
-  <p class="study-muted"><strong>当前规模：</strong>1083 篇论文 + 963 个项目 = 2046 篇笔记。当前状态来自 <code>data/site-state.json</code>；数量已移出首屏，只作为覆盖面证据。</p>
+  <p class="study-muted"><strong>当前规模：</strong>1083 篇论文 + 968 个项目 = 2051 篇笔记。当前状态来自 <code>data/site-state.json</code>；数量已移出首屏，只作为覆盖面证据。</p>
 <!-- STUDY:SITE_STATE:END -->
 </section>
 

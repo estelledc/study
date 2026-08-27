@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 963 个项目的分块地图 · 稳定 taxonomy · 自动生成
+description: 968 个项目的分块地图 · 稳定 taxonomy · 自动生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -12,10 +12,10 @@ sidebar:
 ## 总览
 
 <div class="study-stats-strip">
-  <div><strong>963</strong><span>项目总数</span></div>
-  <div><strong>935</strong><span>已有规范主题</span></div>
+  <div><strong>968</strong><span>项目总数</span></div>
+  <div><strong>940</strong><span>已有规范主题</span></div>
   <div><strong>28</strong><span>暂未收纳进主题路线</span></div>
-  <div><strong>97.1%</strong><span>分类覆盖率（935 / 963，已分类 / 总数）</span></div>
+  <div><strong>97.1%</strong><span>分类覆盖率（940 / 968，已分类 / 总数）</span></div>
 </div>
 
 ## 先选一条学习路径
@@ -47,7 +47,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | HTTP 客户端 | HTTP Clients | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-http-clients-01/) |
 | 日期时间 | Date and Time | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-date-and-time-01/) |
 | i18n 国际化 | Internationalization | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-internationalization-01/) |
-| 构建工具 / Bundler | Build Tools and Bundlers | 14 | [第 1/1 组](/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/) |
+| 构建工具 / Bundler | Build Tools and Bundlers | 15 | [第 1/1 组](/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/) |
 | ORM / DB 客户端 | ORM and Database Clients | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-orm-and-database-clients-01/) |
 | 数据库本体 / 存储引擎 | Databases and Storage Engines | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-databases-and-storage-engines-01/) |
 | DevOps / 容器 / 运维 | DevOps Containers and Operations | 56 | [第 1/1 组](/study/atlas/projects/topic-projects-devops-containers-and-operations-01/) |
@@ -64,12 +64,12 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 数据获取 / 路由 | Data Fetching and Routing | 4 | [第 1/1 组](/study/atlas/projects/topic-projects-data-fetching-and-routing-01/) |
 | AI 应用 / Agent 平台 | AI Applications and Agent Platforms | 28 | [第 1/1 组](/study/atlas/projects/topic-projects-ai-applications-and-agent-platforms-01/) |
 | AI 浏览器自动化 | AI Browser Automation | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-ai-browser-automation-01/) |
-| 可观测 / 性能 | Observability and Performance | 11 | [第 1/1 组](/study/atlas/projects/topic-projects-observability-and-performance-01/) |
+| 可观测 / 性能 | Observability and Performance | 12 | [第 1/1 组](/study/atlas/projects/topic-projects-observability-and-performance-01/) |
 | 数据应用 / SaaS | Data Applications and SaaS | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-data-applications-and-saas-01/) |
 | 基础组件 / Headless UI | Headless UI Components | 2 | [第 1/1 组](/study/atlas/projects/topic-projects-headless-ui-components-01/) |
 | Markdown / 解析 | Markdown and Parsing | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-markdown-and-parsing-01/) |
 | 图像处理 / Canvas | Image Processing and Canvas | 58 | [第 1/1 组](/study/atlas/projects/topic-projects-image-processing-and-canvas-01/) |
-| CSS / 样式 | CSS and Styling | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-css-and-styling-01/) |
+| CSS / 样式 | CSS and Styling | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-css-and-styling-01/) |
 | CLI / 命令行工具 | CLI Tools | 69 | [第 1/1 组](/study/atlas/projects/topic-projects-cli-tools-01/) |
 | Terminal / 终端 | Terminal Tools | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-terminal-tools-01/) |
 | Drag & Drop / Interaction | Drag and Drop Interaction | 3 | [第 1/1 组](/study/atlas/projects/topic-projects-drag-and-drop-interaction-01/) |
@@ -77,8 +77,8 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 区块链 | Blockchain | 59 | [第 1/1 组](/study/atlas/projects/topic-projects-blockchain-01/) |
 | 嵌入式系统 | Embedded Systems | 54 | [第 1/1 组](/study/atlas/projects/topic-projects-embedded-systems-01/) |
 | 通信与多媒体 | Communication and Media | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-communication-and-media-01/) |
-| 移动开发 | Mobile Development | 10 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
-| 通用开发工具 | General Developer Tools | 15 | [第 1/1 组](/study/atlas/projects/topic-projects-general-developer-tools-01/) |
+| 移动开发 | Mobile Development | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
+| 通用开发工具 | General Developer Tools | 18 | [第 1/1 组](/study/atlas/projects/topic-projects-general-developer-tools-01/) |
 | 数据科学与 AI | Data Science and AI | 44 | [第 1/1 组](/study/atlas/projects/topic-projects-data-science-and-ai-01/) |
 | 后端与 API | Backend and APIs | 56 | [第 1/1 组](/study/atlas/projects/topic-projects-backend-and-apis-01/) |
 
@@ -95,6 +95,6 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 ## 数据质量报告
 
-- difficulty 未知：961
-- description 为空：957
-- sidecar 主键：963 个唯一 `area::slug`
+- difficulty 未知：959
+- description 为空：955
+- sidecar 主键：968 个唯一 `area::slug`

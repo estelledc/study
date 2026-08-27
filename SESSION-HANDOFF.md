@@ -2,6 +2,17 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 merge-in #189 ms + pretty-ms
+
+- status：`running`
+- objective：把 `origin/main` 合入 #189，只重生派生索引并修正过期公开计数字段后 push。仅当非草稿、MERGEABLE、verify:ci 绿、且存在真实 ship review 时才 squash-merge。
+- scope：PR 分支 merge commit、atlas / project-standard / site-state、公开计数文案、本交接。不改项目页正文，不 rebase，不 force-push，不 deploy。
+- activated_by：explicit merge-in lane（#187 已 push+CI running 后开始 #189）。
+- detector fingerprint：#189 `CONFLICTING` / `DIRTY`，非草稿；冲突文件仅为派生索引与公开计数。
+- external delta：push 已授权；squash-merge 仅在门禁满足时授权。
+- acceptance checks：`git merge origin/main`；`npm run atlas`；`node scripts/audit-project-standard.mjs --write`；`npm run generate:site-state`；`npm run audit:counts`；`git diff --check`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer EO duration-format epoch
 
 - supervisor 状态：Program `active`；本地 writer epoch `complete`。
@@ -29,6 +40,54 @@
 - 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
 - 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
 - superseded_by：`none`。
+## 2026-08-27 PARALLEL writer AH：lodash + ramda
+
+- status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：为缺失的 util-lib 双子补齐 `lodash` 与 `ramda` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/util-lib-source-review-20260827-ah.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ah-2026-08-27`。
+- detector fingerprint：目录无 `lodash.md` / `ramda.md`，但 `date-fns` 已有 `[[lodash]]` 悬空链；A–AG 与开放 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `lodash` 绑定源码 tag `4.18.1` → `cb0b9b9212521c08e3eafe7c8cb0af1b42b6649e`；披露 npm `lodash@4.18.1` / `lodash-es@4.18.1` 分别落在 `4.18.1-npm` 与 `4.18.1-es` 发布树。
+  2. `ramda` 绑定 `v0.32.0` → `f0b1fb524a681bc8c37dd6c35886420f8c2470c3`，tag / package / npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 18 → 20，公开项目数 961 → 963。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、89 v2。
+  - `audit:counts` / `audit:site-state`：projects=965、papers=1083、total=2048。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/81 做 review；未授权前不要 merge。
+
+## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
+
+- supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 当前 head：以 `git rev-parse HEAD` 为准；`7b78db79731a` 已是祖先。
+- objective：按本轮 owner review，只接入 #66 并重生成派生索引，使 `xstate`/`mobx` 与 `dayjs`/`date-fns` 同时保持 aligned。
+- scope：merge commit、note-index / project-standard-audit / site-state / 首页指标、本交接。未改四页正文，未开新研究双子。
+- activated_by：PR #65 owner review（ship / approve-with-notes；merge `origin/main`、禁止 rebase/force-push/squash/deploy）。
+- detector fingerprint：#66 合入后两边派生摘要都曾是 53；直接 squash 会把 #66 两页打回 `needs-evidence` 或让计数停在 53。
+- external delta 计数：本 PR（push 已授权；squash / merge / deploy 未授权）。
+- 已完成切片：
+  1. `xstate` 绑定 tag `xstate@5.32.6` → `21872cdc93a3baddbcf43f1d83553991d39f28ab`。
+  2. `mobx` 绑定 `mobx@7.0.3` → `5dbb04a15f7eb0ef6b844904c43955357a9bbdfc`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+  4. `merge origin/main`（不 rebase / 不 force-push）后跑 `regen-atlas` / `audit-project-standard --write` / `generate:site-state`；`xstate` `mobx` `dayjs` `date-fns` 均为 `benchmark-aligned`。
+- 验证结果：`audit:project-standard` snapshot CURRENT；`audit:content-contract` blocking 0；`audit:site-state` current。计数以这些命令为准，未手改。
+- budget：1 个接入 main + 派生重生成切片；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本 PR 未改阈值。
+- stop conditions：merge + regen 已 push、PR 仍 ready 后停止。本 agent 不执行 squash / merge / deploy，不开下一对研究页。
+- 下一次 wake 条件：本 PR 的 CI/review 再变化，或 owner 另行授权 squash。
+- 下一条命令：`gh pr checks 65`。
+- superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
 

@@ -1,50 +1,67 @@
 ---
 title: TypeORM — Decorator-based ORM
 来源: https://github.com/typeorm/typeorm
-日期: 2026-05-29
+日期: 2026-08-27
 分类: ORM
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/typeorm/typeorm
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 8748b1be17bf93fc9b62b3444e411e9055e9e017
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.1.0
 ---
 
 ## 是什么
 
-TypeORM 是 **Node.js 上的一种 ORM**（对象关系映射器）——你用 TypeScript 写 class，它帮你把 class 翻译成数据库表的增删改查 SQL。
+TypeORM 是面向 TypeScript / ES2023 的 **Data Mapper ORM**，也同时提供 Active Record 入口。日常类比：你在 class 上贴 `@Entity()` / `@Column()` 便利贴，启动时这些便利贴被收成表元数据；真正发 SQL 的是 `DataSource` 选中的 driver，不是 class 自己。
 
-它最大的特点是 **装饰器风格**：你不另开一个 schema 文件，直接在 class 字段上贴 `@Entity()` `@Column()` `@OneToMany()` 这种"小标签"，描述每列长什么样、和哪张表有关系。
+```ts
+import { DataSource } from "typeorm"
+const ds = new DataSource({ type: "postgres", entities: [User] })
+await ds.initialize()
+await ds.getRepository(User).save(user)
+```
 
-日常类比：
-
-- [[prisma]] 像"先写一份 schema.prisma 设计图，再让工具按图施工"
-- TypeORM 像"在 class 旁边贴便利贴，每张便利贴说一件事——`这是表`、`这是主键`、`这一列对外键`"
-- [[drizzle]] / [[kysely]] 像"我直接拼 SQL，但拼得有类型保护"
-
-四种风格各有粉丝。TypeORM 的便利贴风格在 [[nest]] 早期是默认搭档，写起来像 Java 的 JPA / Hibernate。
+固定 `1.1.0` 仍依赖 `reflect-metadata`，CLI `init` 生成的 tsconfig 继续打开 `experimentalDecorators` 与 `emitDecoratorMetadata`。包描述把自己写成 Data-Mapper ORM；`BaseEntity` 只是把同一套 Repository 挂到实例方法上。
 
 ## 为什么重要
 
-不了解 TypeORM，下面这些事不太好理解：
+不按固定 1.x 源码读 TypeORM，下面这些印象会对不上：
 
-- 为什么 [[nest]] 教程里 entity 都长成 `@Entity() class User { ... }`——那是 TypeORM 风格
-- 为什么从 Java 转 Node 的工程师特别喜欢它——和 Hibernate / Spring Data JPA 几乎一个气味
-- 为什么既能写 `repo.find()`（**Data Mapper**：仓库管存取，entity 只是数据）又能写 `user.save()`（**Active Record**：对象自己会存）——两种范式都收
-- 为什么支持 PostgreSQL / MySQL / SQLite / MS SQL / MongoDB 等 10+ 库——driver 抽出来，换 DB 只换 type 字段
-- 它和 [[prisma]] / [[drizzle]] / [[kysely]] 同属常见 Node ORM 选型，互相参考也互相竞争
+- 旧教程里的 `type: "sqlite"` 在 `DriverFactory` 里已经不是合法 type；桌面 SQLite 要写 `better-sqlite3` 或 `sqljs`
+- `Connection` 只是历史名字；当前入口是 `DataSource.initialize()`
+- `where: { email: null }` 默认会抛错，不会被静默当成 SQL NULL
+- 写操作 QueryBuilder 若 WHERE 展开成空条件或 `1=1`，会被拒绝，而不是默默改全表
 
 ## 核心要点
 
-TypeORM 的工作方式可以拆成 **三块**：
+固定 1.1.0 的主链可以拆成五步：
 
-1. **用装饰器定义 Entity**：在 class 上贴 `@Entity()`，在字段上贴 `@Column()` / `@PrimaryGeneratedColumn()` / `@OneToMany()`。启动时这些便利贴被收集成"这张表长什么样"的元数据。
-2. **Migration（迁移）自动生成 + 手动写**：改完 entity 跑 `migration:generate`，对比"entity 想要的样子"和"数据库现在的样子"写出 SQL；生产再 `migration:run`。
-3. **两种查询 API 共存**：Data Mapper 用 `dataSource.getRepository(User).find(...)`；Active Record 用 `User.find(...)` / `user.save()`。写法不同，底下同一套 SQL 生成。
+1. **装饰器写入全局 metadata**：`@Entity()` 把 class 推进 `getMetadataArgsStorage().tables`。这份存储挂在 platform global 上，避免 CLI 全局包与本地包各持一份。
 
-## 实践案例
+2. **构造 DataSource 就选 driver**：构造函数立刻 `DriverFactory.create()`。`initialize()` 再 `driver.connect()` → `buildMetadatas()` → `afterConnect()`；然后按开关依次 `dropSchema`、`migrationsRun`、`synchronize`。后三者都是 opt-in，默认不会改表。
 
-### 案例 1：定义一张表
+3. **Repository 与 BaseEntity 共用 EntityManager**：`getRepository(User).find()` / `save()` 走 Data Mapper；`user.save()` 只是 `BaseEntity.getRepository().save(this)`。
+
+4. **Find 默认 join、where 默认 throw**：`relationLoadStrategy` 默认 `"join"`，也可改 `"query"`。`invalidWhereValuesBehavior` 未配置时，plain-object where 里的 `null` / `undefined` 都默认 `"throw"`。要匹配 SQL NULL 必须显式 `IsNull()`。
+
+5. **写查询拒绝空 WHERE**：Update/Delete 等写 query type 若提供了 where 但渲染结果为空或 `1=1`，抛 `Empty criteria(s) are not allowed...`；真要影响全表必须故意不写 where。
+
+## 实践示例
+
+### 案例 1：DataSource + 装饰器 entity
 
 ```ts
-import 'reflect-metadata'
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import "reflect-metadata"
+import { DataSource, Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
 class User {
@@ -57,116 +74,115 @@ class User {
   @Column({ unique: true })
   email!: string
 }
+
+const ds = new DataSource({
+  type: "postgres",
+  host: "127.0.0.1",
+  database: "app",
+  entities: [User],
+  synchronize: false,
+})
+await ds.initialize()
 ```
 
-逐部分读：
+`synchronize` 只有显式 `true` 才会在 `initialize()` 末尾建/改表。生产路径应保持 `false`，改走 `migration:generate` / `migration:run`。
 
-- `@Entity()`：这个 class 对应一张表，表名默认是 class 名小写
-- `@PrimaryGeneratedColumn()`：主键，自增
-- `@Column({ length: 100 })` / `{ unique: true }`：普通列与唯一约束
-- `import 'reflect-metadata'` 必须最先执行——装饰器靠它在运行时读字段类型
-
-### 案例 2：查询和过滤
+### 案例 2：find 与 QueryBuilder
 
 ```ts
-import { Like } from 'typeorm'
-const userRepo = dataSource.getRepository(User)
+import { Like, IsNull } from "typeorm"
+const repo = ds.getRepository(User)
 
-const hits = await userRepo.find({
-  where: { email: Like('%@example.com') },
-  order: { id: 'DESC' },
+const hits = await repo.find({
+  where: { email: Like("%@example.com") },
+  order: { id: "DESC" },
   take: 10,
 })
 
-const list = await userRepo
-  .createQueryBuilder('u')
-  .where('u.name = :name', { name: 'Ada' })
+const one = await repo.findOneBy({ id: 1 })
+const missing = await repo.findOneBy({ email: IsNull() })
+
+const list = await repo
+  .createQueryBuilder("u")
+  .where("u.name = :name", { name: "Ada" })
   .getMany()
 ```
 
-逐部分读：
+`find()` 默认不加载 relations，需要 `relations` 或 QueryBuilder `leftJoinAndSelect`。`findOneBy({ email: null })` 在默认行为下会抛错。
 
-- `getRepository(User)`：拿到 User 表的仓库（Data Mapper）
-- `find` 的 `where` / `order` / `take`：过滤、排序、只取前 N 条；`Like` 是模糊匹配
-- 复杂条件用 `createQueryBuilder`：自己写接近 SQL 的链式调用；新手先学 `find`，再学后者
-- 前提：已有 `dataSource.initialize()`（把 host / 库名 / entities 配好）
-
-### 案例 3：自动生成 Migration（0.3+）
+### 案例 3：生成 migration
 
 ```bash
-# -d 指向 DataSource 文件；输出路径自己起名
 npx typeorm migration:generate ./src/migrations/AddEmailToUser -d ./src/data-source.ts
 npx typeorm migration:run -d ./src/data-source.ts
 ```
 
-生成文件大致是：
-
-```ts
-export class AddEmailToUser1700000000000 implements MigrationInterface {
-  async up(q: QueryRunner) {
-    await q.query(`ALTER TABLE "user" ADD COLUMN "email" varchar UNIQUE`)
-  }
-  async down(q: QueryRunner) {
-    await q.query(`ALTER TABLE "user" DROP COLUMN "email"`)
-  }
-}
-```
-
-`up` 升级、`down` 回滚——成对出现是 migrations 的通用约定。
+CLI 的 `-d` / `--dataSource` 是必填，指向导出 `DataSource` 的文件。`--check` 只验证“当前库是否已与 entity 对齐”，不写文件。
 
 ## 踩过的坑
 
-1. **装饰器配置陡**：`tsconfig` 要开 `experimentalDecorators` + `emitDecoratorMetadata`，再 `import 'reflect-metadata'`；少一项就静默失效。
-2. **多 entity 关联易 N+1**：默认 `find` 不 join；写 `relations: ['posts']` 又可能每人再查一次——改用 QueryBuilder 显式 `leftJoinAndSelect`。
-3. **`synchronize: true` 生产危险**：开发可自动改表，生产可能默默 drop 列；**生产必须 `false`，走 migrations**。
-4. **TS 5+ 新装饰器不兼容**：TypeORM 仍用旧 experimental decorator；`target` 过新时行为也可能不一致。
+1. **把 0.3 的 `type: "sqlite"` 抄到 1.1.0**：`DriverFactory` 合法 type 是 `postgres` / `mysql` / `mariadb` / `mssql` / `oracle` / `mongodb` / `better-sqlite3` / `sqljs` / `cockroachdb` / `sap` / `spanner` / `aurora-*` 以及若干移动端 driver，没有 `"sqlite"`。
+2. **where 里写 `null` 当 IS NULL**：默认 throw；要 SQL NULL 用 `IsNull()`，或把 `invalidWhereValuesBehavior.null` 改成 `sql-null` / `ignore`。
+3. **生产打开 `synchronize`**：它会按 entity 元数据改库，MongoDB 则只同步 index。固定源码自己标注不要用于生产。
+4. **空 where 的 update/delete**：提供了但展开为空的 criteria 会被拒绝；这是 1.1.0 的保护，不是“没写 where 就更新 0 行”。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- [[nest]] 项目（`@nestjs/typeorm` 集成最成熟）
-- 需要同时对接 ≥3 种数据库驱动，或多 DB 抽象是硬需求
-- 团队从 Java Hibernate / Spring Data JPA 迁来，要熟悉写法
-- 2018–2022 起家的 Node 后端，已有 TypeORM 历史包袱
+- 需要同一套装饰器 entity 对接多种 RDBMS / Mongo，并且接受 driver 语义差异
+- 已有 Nest + `@nestjs/typeorm` 存量，或团队熟悉 Hibernate / Doctrine 式 metadata
+- 需要 Data Mapper 与 Active Record 两种入口共存
 
 **不适用**：
 
-- Edge / serverless（reflect-metadata 抬高 cold start，[[drizzle]] / [[kysely]] 更合适）
-- 极致 TypeScript 类型推导（[[prisma]] / [[drizzle]] 的 infer 更好）
-- 想用 TypeScript 5+ 新装饰器（TypeORM 还在旧 decorator）
-- 全新项目且无 TypeORM 包袱（社区新项目更常选 [[prisma]] 或 [[drizzle]]）
+- 不能开 experimental decorator / `reflect-metadata` 的运行时
+- 不满足 `engines.node`：`^20.19.0 || ^22.13.0 || >=24.11.0`
+- 想要 schema-first 代码生成或纯 SQL builder——应看 [[prisma]] / [[drizzle]] / [[kysely]]，不要把它们的合同外推到 TypeORM
+- 需要把静态阅读写成“已在目标库跑通”——本文没有这样做
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2016 前后**：Pleerock 开源 TypeORM，把 Hibernate 式装饰器 entity 带到 TypeScript / Node。
-- **NestJS 早期**：官方数据库教程默认 `@nestjs/typeorm`，便利贴风格成为 Nest 教程标配。
-- **0.3 大改**：DataSource 取代旧 Connection；CLI 改为 `-d` 指向 DataSource，迁移工作流更明确。
-- **今天**：新项目份额被 [[prisma]] / [[drizzle]] 分流，但多 DB + Nest 存量里仍常见。
+- 本文绑定 `typeorm/typeorm@8748b1be17bf93fc9b62b3444e411e9055e9e017`。annotated tag `1.1.0` 解引用到该提交；`package.json` 版本为 `1.1.0`。npm 未暴露 `gitHead`。
+- v1.0（2026-05-19）起编译目标为 ES2023，并去掉 Node 16/18；1.1.0 是其后的修补/小功能版。
+- 上游另有 `packages/codemod`，用于 0.3 → 1.x 机械改写；本文未运行该 codemod。
+- 本文未安装依赖、未连库、未跑上游测试或 migration，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **ORM 两种范式**：Data Mapper（仓库 + 纯数据）与 Active Record（entity 自带 CRUD），TypeORM 都收——灵活也易学乱
-2. **装饰器 + reflect-metadata** 是这类 ORM 的钥匙，也是理解 [[nest]] 的钥匙
-3. **Migrations 是生产必备**：`synchronize: true` 只给开发；生产靠 migrations 控 schema
-4. **多 DB 抽象有代价**：10+ driver 方便，但各库行为有差异，不能完全无感切换
+1. **装饰器 ORM 的源真相是 metadata 表，不是 class 方法**——Active Record 只是 Repository 的语法糖。
+2. **多 driver 抽象要按 type 枚举读，不能按旧文档猜 SQLite 字符串**。
+3. **默认保护已经从“静默当 NULL / 静默全表更新”改成 throw**——升级 1.x 时这是行为变化，不是类型装饰。
+4. **`synchronize` 与 migrations 是两条互斥生产策略**——`initialize()` 把它们都做成开关，默认全关。
+
+## 应用型自测
+
+1. `new DataSource({ type: "sqlite" })` 在固定 1.1.0 能否构造成功？
+2. `repo.find({ where: { email: null } })` 默认会生成 `IS NULL` 吗？
+3. `initialize()` 在未设置 `synchronize` 时会自动改表吗？
+
+检查点：
+
+1. 不能。`DriverFactory` 没有 `"sqlite"`，会抛 `MissingDriverError`。
+2. 不会。未配置时 `null` 默认 throw，必须 `IsNull()`。
+3. 不会。只有 `options.synchronize === true` 才调用 `synchronize()`。
 
 ## 延伸阅读
 
 - 官方文档：[typeorm.io](https://typeorm.io/)
-- 官方仓库：[github.com/typeorm/typeorm](https://github.com/typeorm/typeorm)
-- NestJS 数据库教程：[docs.nestjs.com/techniques/database](https://docs.nestjs.com/techniques/database)
-- [[prisma]] —— schema-first 风格 ORM
-- [[drizzle]] —— 低 bundle / Edge 友好 ORM
-- [[kysely]] —— 纯 SQL builder 风格
+- 固定源码：[typeorm/typeorm](https://github.com/typeorm/typeorm) —— 本文绑定提交 `8748b1be17bf93fc9b62b3444e411e9055e9e017`
+- v1.0 发布说明：[typeorm.io/docs/releases/1.0/release-notes](https://typeorm.io/docs/releases/1.0/release-notes)
+- [[sequelize]] —— 同主题 Active Record / `define()` 对照
+- [[mikro-orm]] —— 同装饰器风格，但强制 EntityManager + Unit of Work
 
 ## 关联
 
-- [[prisma]] —— schema.prisma 文件 vs class 装饰器风格
-- [[drizzle]] —— schema-as-code + 极小 bundle，Edge 场景首选
-- [[kysely]] —— SQL builder 而非完整 ORM
-- [[nest]] —— 通过 `@nestjs/typeorm` 深度集成
-- [[zod]] —— 常配 class-validator，给输入做校验
+- [[sequelize]] —— Model.define / hooks / transaction 回调 vs DataSource + decorator metadata
+- [[mikro-orm]] —— Identity Map / `em.flush()` 对照 TypeORM 的即时 `save()`
+- [[prisma]] —— schema-first 代码生成，不是装饰器运行时
+- [[drizzle]] —— schema-as-code + SQL-like 查询
+- [[kysely]] —— 类型安全 SQL builder，不是完整 ORM
+- [[nest]] —— 常见 `@nestjs/typeorm` 集成面；集成细节以 Nest 固定源码为准
 
 ## 反向链接
 

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "date-fns",
+    "digest_sha256": "027b466bcdb0cdd2e1176d6e5349a452109e1cbcd19f27939c4d618cb7c4174b"
+  },
+  "source_revision": "cd53d2538cfa318404eff7ade6449b49bf34562e",
+  "research_input_sha256": "38caf972aa7d54eee56e1b110060dc026c9b99d81457f08fae02584264189dc0",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-z",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains toDate/constructFrom, Unicode tokens, TZDate in-context, and global default options with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-z",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Stable 4.4.0 core helpers, protected tokens, addDays clone, and @date-fns/tz 1.5.0 were inspected; upstream vitest was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-z",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v4.4.0 matches package 4.4.0; npm has no gitHead. Remote v5.0.0-alpha.0 is disclosed and not bound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

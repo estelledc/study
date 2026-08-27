@@ -4,64 +4,72 @@ title: GSAP — GreenSock 高性能动画
 日期: 2026-05-29
 分类: 动画
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/greensock/GSAP
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 13e2b790546426a1a2e0e9b409f3f8dc6d6611f2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.15.0
 ---
 
 ## 是什么
 
-GSAP（**GreenSock Animation Platform**）是一套**让网页上任何东西能丝滑动起来**的 JavaScript 动画库。日常类比：[[framer-motion]] 是给 React 用户的方便贴，GSAP 是给所有人用的瑞士军刀——不挑框架，性能更猛。
+GSAP（GreenSock Animation Platform）是一套框架无关的 JavaScript 动画引擎。日常类比：[[framer-motion]] 让你声明目标状态，GSAP 让你命令“这段属性在何时从哪到哪”。
 
-它 2008 年从 Flash 时代出生，那时候网页还没现代浏览器，动画都靠 Flash 做。Flash 死后 GSAP 把核心搬到了 JS，一路熬成今天 web 动画的工业标准。
-
-你写一行：
+你写：
 
 ```js
-gsap.to(".box", { x: 100, duration: 1 })
+import gsap from "gsap"
+
+gsap.to(".box", { x: 100 })
 ```
 
-页面上所有 class 是 `.box` 的元素就在 1 秒内向右移 100px。**不需要 React、不需要 Vue、纯 JS 也能用**。
+固定 `3.15.0` 的默认入口会注册 `CSSPlugin`。没写 `duration` 时用 `0.5` 秒，没写 ease 时用 `quad.out`。`x` 由 CSSPlugin 写成 `transform`。选择器字符串会走 `document.querySelectorAll`。
 
 ## 为什么重要
 
-不学 GSAP，下面这些事都会被卡住：
+不读固定 3.15.0 的核心文件，下面这些合同很容易被旧印象带偏：
 
-- **跑得快**：官方常说相对 jQuery 最高约 20×。原理是它跳过反复 DOM 重读，把动画值算好直接写；别把它理解成"比 CSS transition 快 20 倍"
-- **Timeline API**：能精细编排几十个动画——串联（一个接一个）、并联（同时跑）、嵌套（动画里套动画）。其他库做不到这个粒度
-- **兼容性稳**：GSAP 3 面向现代主流浏览器；老项目若还卡在 IE，那是 GSAP 2 时代的故事，不要默认拿 GSAP 3 去扛
-- **大型互动站默认底层**：Apple 产品页、NASA、Awwwards 获奖站等互动页，背后经常是它
-- **2024 年起插件免费**：Webflow 收购后，以前 Club 付费的 ScrollTrigger / DrawSVG / MorphSVG / SplitText 等改为免费可用
+- 为什么默认时长是 0.5 而不是 1
+- 为什么 `kill()` 通常触发 `onInterrupt`，而不是 `onComplete`
+- 为什么 Timeline 里 `"<"` 是对齐最近子动画的起点，不是“并行”这个口语
+- 为什么 `import ScrollTrigger from "gsap/ScrollTrigger"` 之后还要 `registerPlugin`
+- 为什么许可写的是 Standard no-charge，不是 MIT
 
 ## 核心要点
 
-GSAP 的世界由 **三块积木** 搭起来：
+GSAP 主链可以拆成五步：
 
-1. **Tween（动画原子）**：一次动画 = 起点 + 终点 + 缓动函数。`gsap.to(target, vars)` 是最常见的写法。类比：一段电影分镜，从 A 帧到 B 帧。
+1. **Tween**：`gsap.to` / `from` / `fromTo` 创建 `Tween`。默认 `duration: 0.5`、`overwrite: false`、`delay: 0`、ease `quad.out`。源码把版本写成 `gsap.version = "3.15.0"`。
 
-2. **Timeline（编排器）**：把多个 tween 串成时间轴。可以指定"第 2 秒开始"、"接在上一段后面"、"同步开始"。类比：剪辑软件的多轨时间线。
+2. **Timeline**：`gsap.timeline()` 创建可嵌套时间轴。`position == null` 时插到当前 clipped duration（接在最近子动画之后）。`"<"` 用最近子动画的 `_start`，`">"` 用它的 `endTime`；`+=0.5` 是相对当前终点再偏 0.5 秒。
 
-3. **Plugin（插件系统）**：核心库只负责"改属性的值"，复杂场景靠插件扩展。常用 4 个：
-   - **ScrollTrigger**：滚动驱动动画
-   - **DrawSVG**：让 SVG 路径"画出来"
-   - **MorphSVG**：让一个形状变成另一个形状
-   - **SplitText**：把段落拆成单字符再各自动画
+3. **Plugin**：核心只负责改属性。`src/index.js` 已注册 `CSSPlugin`。ScrollTrigger、Flip、Draggable、MorphSVG 等与核心同仓，经 `gsap/<Plugin>` 导入后仍要 `gsap.registerPlugin(...)`。
 
-## 实践案例
+4. **kill / interrupt**：`Animation.kill()` 无参，走 `_interrupt`：从父级摘除；若 `progress() < 1` 调用 `onInterrupt`，不调用 `onComplete`。`Tween.kill(targets, vars = "all")` 可以按目标或属性局部杀掉。
 
-### 案例 1：最简单的一行动画
+5. **环境边界**：`_wake()` 只在存在 `window` 时绑定 `document`。模块加载末尾执行 `_windowExists() && _wake()`。没有 document 时，选择器字符串没有可查询的树。`@gsap/react` 的 `useGSAP` 不在本仓库。
+
+## 实践示例
+
+### 案例 1：默认时长的 tween
 
 ```js
-gsap.to(".box", { x: 100, duration: 1 })
+import gsap from "gsap"
+
+gsap.to(".box", { x: 100 })
 ```
 
-**逐部分解释**：
+没有 `duration` 就是 0.5 秒，ease 是 `quad.out`。要 1 秒必须显式写 `duration: 1`。
 
-- `.to`：从当前状态过渡到目标状态
-- `".box"`：CSS 选择器，所有匹配的 DOM 元素一起动
-- `{ x: 100 }`：目标——往右 100px（GSAP 的 `x` 是 CSS `transform: translateX`）
-- `duration: 1`：花 1 秒走完
-
-GSAP 不像 CSS transition 写在样式里，它是命令式的——什么时候 call 什么时候动。
-
-### 案例 2：Timeline 编排两段动画
+### 案例 2：Timeline 位置参数
 
 ```js
 gsap.timeline()
@@ -69,18 +77,14 @@ gsap.timeline()
   .to(".b", { y: 50 }, "<")
 ```
 
-**关键是那个 `"<"`**：
+`"<"` 让第二段从最近子动画的起点开始。省略位置则接到当前时间轴终点。`">"` 对齐最近子动画的结束时间。
 
-- 不写时间标签 → 第二段接着第一段播（串联）
-- `"<"` → 第二段和第一段**同时开始**（并联）
-- `">"` → 第二段在第一段结束后播（默认）
-- `"+=0.5"` → 第一段结束后再延 0.5 秒
-
-一行字符串就能表达复杂的时间关系。这是 GSAP 比手写 setTimeout 优雅的地方。
-
-### 案例 3：滚动驱动动画
+### 案例 3：ScrollTrigger 必须注册
 
 ```js
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
 gsap.registerPlugin(ScrollTrigger)
 
 gsap.to(".box", {
@@ -93,75 +97,72 @@ gsap.to(".box", {
 })
 ```
 
-**逐部分解释**：
-
-- `trigger: ".container"`：以 `.container` 进入视口为触发点
-- `start: "top center"`：当 container 的 top 撞到 viewport 的 center 时开始
-- `scrub: true`：动画进度跟滚动条**插值绑定**——你滚一半，动画走一半
-
-这就是 Apple 产品页那种"滚动到哪儿，元素动到哪儿"的底层。
+有 trigger、未 pin、且未写 `start` 时，固定实现默认 `start` 为 `"0 100%"`。例子里的 `"top center"` 是显式覆盖。`markers` 只是调试绘制，生产构建不会替你删掉。
 
 ## 踩过的坑
 
-1. **搞反 `kill()` 和 `onComplete`**：GSAP 3 里 `tween.kill()` 会立刻停掉动画，并且**通常不会**再触发 `onComplete`。API 是 `kill(target, propertiesList)`——按目标和属性局部杀掉，不是 `kill(true)` 清回调。若要在被中断时做事，用 `onInterrupt`；若要播完再收尾，别 `kill()`，改 `pause()` / 等它自然结束。
-
-2. **React 用必须用 `useGSAP` hook**：旧版用 `useEffect` 创建 tween，React 18 strict mode 会创建两次，动画跑两遍。`@gsap/react` 包提供的 `useGSAP` hook 会自动处理 cleanup 和 strict mode。
-
-3. **ScrollTrigger 的 `markers` 调试好用，但 production 要删**：
-   ```js
-   scrollTrigger: { markers: true }  // 显示 start/end 红绿线
-   ```
-   忘删上线，用户会看到一堆诡异的彩条。
-
-4. **SSR 配合要在 useEffect 内创建**：Next.js / Remix 里 GSAP 不能在 server 端跑（碰不到 window），必须用 `useEffect` / `useGSAP` 包起来。否则 build 时直接炸。
+1. **以为 `kill()` 还会跑 `onComplete`**：未完成时 `_interrupt` 走 `onInterrupt`。
+2. **把 `Tween.kill` 的参数记成 `kill(true)`**：签名是 `kill(targets, vars = "all")`，用来按目标或属性裁剪。
+3. **导入插件却不 `registerPlugin`**：条件 exports 能解析到文件，不注册就不会挂到核心。
+4. **把 `@gsap/react` 写成这个 pin 的一部分**：`useGSAP` 是独立 npm 包，本仓库没有。
+5. **把 README 的 “20x faster than jQuery” 当成测量结果**：那是项目自述，本轮未跑任何 benchmark。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 复杂时间轴动画（多段串并联嵌套）
-- 滚动驱动的互动站（产品介绍页 / 故事网站）
-- SVG / Canvas / WebGL 高频更新（GSAP 的 ticker 比手写 requestAnimationFrame 更省心）
-- 需要跨框架、命令式精确编排的现代浏览器项目
+- 需要精确串并联、标签和 position 字符串的时间轴
+- 滚动驱动、SVG/属性/通用对象一起编进同一套 ticker
+- 能接受 Standard no-charge 许可，而不是 OSI MIT
 
 **不适用**：
 
-- 极简过渡（鼠标 hover 变色）→ 直接 CSS transition 更省事
-- React 组件级的进入退出动画 → [[framer-motion]] 的 `<AnimatePresence>` 更对味
-- 严格遵守 React 声明式哲学的项目 → GSAP 是命令式，会和 state 驱动的 UI 打架
-- 体积敏感（核心约几十 KB，加插件再涨）→ Web Animations API 原生免费
-- 还必须支持 IE9/IE10 → 别硬上 GSAP 3，那是历史版本的战场
+- React 组件级 enter/exit 且希望声明式 props → [[framer-motion]]
+- 只做 hover 变色 → CSS transition 更短
+- 必须在没有 `window`/`document` 的环境里解析选择器字符串
+- 需要本轮未提供的运行时帧率或体积数字
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2008 年**：Jack Doyle 在 Flash 论坛发布 TweenLite，最初是 ActionScript 库，目标是"比 Adobe 自家 Tween 类快 10 倍"
-- **2012 年**：HTML5 革命，Flash 在被埋的路上。Jack 用三个月把 TweenLite 重写成 JS，叫 GSAP
-- **2018 年**：GSAP 3 重构 API，引入 Timeline 数据结构和 plugin 注册系统，成为今天的形态
-- **2024 年**：Webflow 收购 GSAP，原本付费的 BusinessGreen / ShockinglyGreen 订阅取消，全套插件免费
-
-之后 web 动画领域分成两派：声明式（[[framer-motion]] / Vue Transition）vs 命令式（GSAP / [[anime]]）。GSAP 是后者的代表。
+- 本文绑定 `greensock/GSAP@13e2b790...`，tag 与 `package.json` / `gsap.version` 均为 `3.15.0`。
+- npm 未暴露 `gitHead`；锚点是 lightweight tag 与版本字符串一致。
+- 许可是 Standard no-charge，不是 MIT。README 称 Webflow 之后 bonus 插件免费；具体条款仍以许可页为准。
+- 未安装依赖、未跑上游测试、未测滚动或 ticker，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **命令式动画 vs 声明式动画**——GSAP 是命令式，你 call 它它动；React state 驱动是声明式，状态变它动。两套哲学，没有谁对谁错
-2. **Timeline 是动画的灵魂**——单段 tween 谁都会写，Timeline 把"几十个动画的精确编排"做成可读的链式调用
-3. **Plugin 系统让核心保持小**——core 不到 50KB，复杂能力按需加载。这是写库的好范式
-4. **历史包袱也是优势**——15 年的迭代让兼容性、缓动函数细节、边缘情况都被磨平。新库要追这套底蕴很难
+1. **命令式时间轴把“何时开始”做成位置 DSL**——`"<"` / `">"` / `+=` 是解析规则，不是口语。
+2. **默认值必须从 `_defaults` 读**——时长 0.5、ease `quad.out`，不能沿用旧教程的 1 秒。
+3. **中断和完成是两条回调**——`kill` 对齐 `onInterrupt`。
+4. **插件同仓不等于自动注册**——除默认 `CSSPlugin` 外都要显式登记。
+
+## 应用型自测
+
+1. `gsap.to(".box", { x: 100 })` 没写 duration，会跑多久？
+2. 一段 tween 播到一半调用无参 `kill()`，会触发 `onComplete` 吗？
+3. Timeline 第二段写 `">"`，它从哪里开始？
+
+检查点：
+
+1. 0.5 秒，ease 为 `quad.out`。
+2. 不会；`progress() < 1` 时走 `onInterrupt`。
+3. 从最近子动画的 `endTime` 开始。
 
 ## 延伸阅读
 
-- 官方文档：[GSAP Docs](https://gsap.com/docs/)（文档质量极高，每个 API 都有交互式 demo）
-- ScrollTrigger 教程：[Cassie Evans — Animating with ScrollTrigger](https://www.youtube.com/watch?v=X7IBa7vZjmo)（GSAP 团队成员讲，30 分钟讲透 scrollTrigger）
-- Codepen 灵感库：[GSAP Showcase](https://codepen.io/collection/AEbkkJ)（看别人用 GSAP 做的获奖站）
-- [[framer-motion]] —— React 声明式动画对照组
-- [[lottie]] —— After Effects 出码方案，和 GSAP 互补
+- 文档：[gsap.com/docs](https://gsap.com/docs/)
+- 固定源码：[greensock/GSAP](https://github.com/greensock/GSAP) —— 提交 `13e2b790546426a1a2e0e9b409f3f8dc6d6611f2`
+- 许可：[Standard license](https://gsap.com/standard-license)
+- [[framer-motion]] —— React 声明式对照
+- [[lottie]] —— 设计师工具链产物，可与 timeline 配合
 
 ## 关联
 
-- [[framer-motion]] —— React 生态的声明式动画库，与 GSAP 形成两派
-- [[lottie]] —— 设计师工具链产物，能和 GSAP timeline 配合
-- [[react]] —— React 用 GSAP 需要 `useGSAP` hook 处理 cleanup
-- [[svg]] —— GSAP DrawSVG / MorphSVG 是 SVG 动画的工业标准方案
+- [[framer-motion]] —— 声明式 React 动画对照
+- [[lottie]] —— JSON 回放与命令式时间轴互补
+- [[react]] —— React 集成应另查 `@gsap/react`，不在本 pin
+- [[anime]] —— 另一套命令式时间轴
+- [[pixi]] —— 2D 引擎侧常见的 GSAP 搭档
 
 ## 反向链接
 

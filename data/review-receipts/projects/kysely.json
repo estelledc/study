@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "kysely",
+    "digest_sha256": "389b5fa9a7d2231fa581bfaaa3b1c1ddeb578dcb6b5d62d1fbd87f324a1d55be"
+  },
+  "source_revision": "f24018c789c3cf7ad03ccc672ada63a1ded87f88",
+  "research_input_sha256": "1154d3bc2fa7c94891ea9ffed9f43218e237684599b1ef4853682d5d9a150e08",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-d",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains dialect assembly, compile-vs-execute, Generated/ColumnType, and first-party Migrator limits with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-d",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Kysely constructor, QueryFinalizer, executor plugins, column types, dialects, and Migrator defaults were inspected; upstream tests and drivers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-d",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "0.30.0-beta exists and is excluded; Node >=22 and TypeScript 5.4 lower bounds are taken from the pinned package, not measured performance."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:30:00.000Z"
+}

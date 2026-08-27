@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "trpc",
+    "digest_sha256": "88e1bbd4571ddc094fbfd52af05a86a51ff216999fb61ed28e1a663b66cc3582"
+  },
+  "source_revision": "6aec1578a899df50a17e4e78d5512a099b574c18",
+  "research_input_sha256": "341c6e25808083d8d7f8227728b0067eb785929161835c0400683fb84c73e186",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-u",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates router types, Standard Schema parsers, deprecated proxy alias, and AsyncIterable subscriptions."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-u",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "initTRPC, parser, links, fetch adapter, and both React packages were inspected; servers and tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-u",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to tRPC 11.18.0; performance, IDE cost, and v12 removal dates require later evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
