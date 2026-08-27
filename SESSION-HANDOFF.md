@@ -15,7 +15,7 @@
   1. `radix3` 绑定 npm `gitHead` `293d3ae4...` / `1.1.2`，披露 tag `v1.1.2` 落在祖先且 `package.json` 仍为 `1.1.1`；修正无方法维、精确段优先、`maxDepth` 多占位、默认剥尾斜杠、`remove` 对 `Map` 清扫不完整。
   2. `rou3` 绑定 tag `v0.9.2` 剥皮 `68f6d87d...` / `0.9.2`（npm 无 `gitHead`）；修正零参数 `createRouter`、`{ data, params }` 返回形、方法桶回落、同节点挡门闸、`compileRouter` 依赖 `new Function`。
   3. 新增共享 `docs/router-trie-source-review-20260827-gc.md` 与两份 generation 1 static receipt。
-- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt 与正文 digest / revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract`（0 blocking，v2=150）通过。`verify:ci` 在 PR 上跑。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt 与正文 digest / revision 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract`（0 blocking，v2=150）通过。`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML / 2288 sitemap URLs、23 Playwright a11y）。
 - budget：2 个 ignored worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：规模 `tracked_files` 超 baseline 的 `PARKED_HUMAN` 先于本切片存在；本轮未改 baseline / 阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
