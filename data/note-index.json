@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -38371,8 +38371,8 @@
       "area": "projects",
       "slug": "changesets",
       "title": "changesets — 让每个 PR 自带版本号 bump 声明",
-      "description": "",
-      "difficulty": "unknown",
+      "description": "介绍 changesets 3.0.1 如何把 bump 声明写成磁盘文件，并由 assembleReleasePlan 按 range 计算 dependents。",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-monorepos-and-package-management"
       ],
@@ -38383,13 +38383,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/changesets/",
       "atlas": {
@@ -58212,6 +58212,37 @@
       }
     },
     {
+      "id": "projects::semantic-release",
+      "area": "projects",
+      "slug": "semantic-release",
+      "title": "semantic-release — 从 commit 推断下一版并自动发布",
+      "description": "介绍 semantic-release 25.0.9 如何在 CI 里分析 commit、先打 tag 再调用 publish 插件，以及非 CI 强制 dry-run。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-monorepos-and-package-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-monorepos-and-package-management",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/semantic-release/",
+      "atlas": {
+        "chunk_id": "topic-projects-monorepos-and-package-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/"
+      }
+    },
+    {
       "id": "projects::sentry",
       "area": "projects",
       "slug": "sentry",
@@ -65797,7 +65828,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-observability-and-performance-01",

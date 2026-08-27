@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 发版双子 PARALLEL CF
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review，不自 merge。
+- status：`running` 已收口为 review-ready PR。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`（当时 `origin/main`）。
+- objective：把 `changesets` 与 `semantic-release` 迁到固定源码的 `study-v2` 静态审查，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/release-automation-source-review-20260827-cf.md`、taxonomy / atlas / site-state 派生、公开计数文案、本 handoff；未安装上游依赖、未跑上游测试、未 publish。
+- activated_by：`explicit-user-parallel-writer-cf-20260827`。
+- detector fingerprint：`changesets` 仍是 legacy 页，缺 pinned revision / evidence boundary / self-test，且把 dependents 默认写成“永远 patch”、snapshot 未区分 `0.0.0` 底数；`semantic-release` 尚无项目页。
+- external delta 计数：本轮只形成一条 PR；未 merge、未 deploy，D 轴不提升。
+- 已完成切片：
+  1. `changesets` 绑定 tag `@changesets/cli@3.0.1` / `bed458124f...`；npm 无 `gitHead`，已披露。纠正 dependents 默认 out-of-range、snapshot `0.0.0`、Node `^22.11 || ^24 || >=26`。
+  2. `semantic-release` 绑定 tag `v25.0.9` / `8d905a56e8...`（与 npm `gitHead` 一致）。写清非 CI dry-run、PR 不发版、首次 `1.0.0`、先 tag 再 publish、`EGITNOPERMISSION` 用原始 URL；未声称 analyzer 的 conventional-commit 映射。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 对齐，evidence state `UNVERIFIED`；`audit:project-standard` snapshot CURRENT；`audit:site-state` current。未跑全量 `verify:ci`。
+- budget：2 个 blob-filtered worktree + 2 页 + 派生刷新；单 writer。
+- blocker：无本切片 blocker。merge / deploy 需单独授权。
+- stop conditions：本轮已完成；不自 merge。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge 的单独授权。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/changesets.md && node scripts/quality-gate.mjs src/content/docs/projects/semantic-release.md`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

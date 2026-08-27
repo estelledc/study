@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "semantic-release",
+    "digest_sha256": "494a1fd16807d0df9e5d041c8e2e5def2ce4521d13739fa11493736794094350"
+  },
+  "source_revision": "8d905a56e80030c141a71a32c0c4cb870e90470a",
+  "research_input_sha256": "cf5e8cd41797703915ca54af3c4935714e81a7396bfeb1c2616319abf58421eb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "release-automation-static-20260827-cf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Separates CI dry-run, PR no-publish, required analyzeCommits, first-release 1.0.0, tag-before-publish, and token-safe EGITNOPERMISSION."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "release-automation-static-20260827-cf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 25.0.9 index, get-config, get-next-version, plugin steps and error details; analyzer/npm/github plugin trees were not pinned."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "release-automation-static-20260827-cf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v25.0.9 and npm gitHead agree; conventional-commit mapping is not claimed from this host-only static review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

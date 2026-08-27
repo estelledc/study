@@ -1,39 +1,54 @@
 ---
 title: changesets — 让每个 PR 自带版本号 bump 声明
-来源: 'changesets/changesets, GitHub 11.9k stars, MIT 协议'
+description: 介绍 changesets 3.0.1 如何把 bump 声明写成磁盘文件，并由 assembleReleasePlan 按 range 计算 dependents。
+来源: https://github.com/changesets/changesets
 日期: 2026-05-29
 分类: 工具库
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/changesets/changesets
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: bed458124f623463c581521ab56d040eba2a8b20
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.0.1
 ---
 
 ## 是什么
 
-changesets 是 monorepo 的**版本管理 + changelog 自动化工具**。日常类比：像在每个快递包裹上贴一张面单——上面写明这次发货影响哪些商品、是大件还是小件。等仓库要发货时，工具读所有面单，自动算清单、贴标签。
+changesets 是一套**把版本决策写成磁盘文件、再由纯函数算出 bump 清单**的 monorepo 发版工具。日常类比：每个 PR 先贴一张面单，写明改了哪些包、是 major / minor / patch；仓库发货时只读面单，不读作者记忆，也不读 commit 标题。
 
-具体来说，开发者写完代码跑 `npx changeset add`，CLI 问你：改了哪些包？major / minor / patch？写一句变更说明。它生成一个 markdown 文件 `.changeset/funny-cats-jump.md`，跟 PR 一起 review、一起 merge。等 release 时 CI 跑 `changeset version`，把所有累积的 markdown 翻译成 package.json 版本 bump + CHANGELOG 段落。
-
-它由 Atlassian 的 Mitchell Hamilton 开源，Vercel / Astro / Storybook / Chakra UI / SvelteKit / Remix 在用。
+固定 3.0.1 的入口是 `@changesets/cli`。开发者跑 `changeset add`（`cac` 把它标成默认命令），工具在 `.changeset/` 下生成一个 `human-id` 文件名的 markdown；`changeset version` 再调用 `assembleReleasePlan` 算新版本，`applyReleasePlan` 写 `package.json` / `CHANGELOG.md` 并删掉已消费的 changeset。
 
 ## 为什么重要
 
-不理解 changesets，下面这些事很难想清楚：
+不读固定 3.0.1 的计划函数，下面这些印象很容易写错：
 
-- 为什么 monorepo 发版比单包难——一个 PR 改 5 个包，每个该 bump 哪一档，谁来决定
-- 为什么 semantic-release（commit message 推断）在 squash merge 后版本会跳错
-- 为什么"全自动发版"听起来好，但成熟项目都留一道"Version Packages" PR 给人 merge
-- 为什么 versioning 的 source of truth 应该是磁盘上的 markdown，不是 commit message 也不是 release 经理脑子
+- 以为依赖包一改，所有 dependents 都会自动 patch——默认只在新版本**走出**已声明 range 时才 bump
+- 以为 snapshot 会从当前 semver 往上加 canary——默认底数是 `0.0.0`
+- 以为 CLI 还停留在旧 Node 12 时代——3.0.1 要求 `^22.11 || ^24 || >=26`
+- 以为 commit message 推断和 changeset 声明是同一套 source of truth
 
 ## 核心要点
 
-changesets 的设计可以拆成 **三步**：
+`assembleReleasePlan` 可以拆成五步：
 
-1. **版本决策前置到 PR 时刻**：作者在写代码同时就声明这次该 bump 啥。类比：装修工每钉一颗钉子时就在墙上贴张小纸条写"这是承重墙的钉子"，而不是装修完再回忆。
+1. **筛 changeset**：跳过被 ignore / private 策略排除的包；pre 模式还会丢掉 `pre/` 前缀的历史文件。
 
-2. **状态全在磁盘上**：每个 changeset 是 `.changeset/` 目录下的一个 markdown 文件。没有"工具内部状态"、没有数据库。`git diff` 看得清清楚楚，merge 永远不冲突（每个 PR 一个独立 md）。
+2. **flatten**：同一包出现多次时只保留最高 bump（`major > minor > patch > none`），CHANGELOG 仍能列出多段说明。
 
-3. **跨包依赖自动传播**：包 A 改了，包 B 在 dependencies 里 import 了 A——工具自动 bump B（默认 patch）。这一步靠"反向依赖图"算，不靠人记忆。
+3. **dependents**：反向依赖图**包含** `devDependencies`，但 dev 依赖只拿 `none`——用来改 range，不涨自己的版本。`dependencies` / `optionalDependencies` / `peerDependencies` 默认按 range 是否仍满足决定要不要 patch。
 
-合起来一句话：**"machine 算清单、human 确认 release"**。
+4. **fixed / linked**：配置组会把几个包绑成同一次 bump，循环直到约束稳定。
+
+5. **increment**：普通发版用 `semver.inc(old, type)`；`--snapshot` 默认写成 `0.0.0-<tag?>-<datetime>`，只有打开 `snapshot.useCalculatedVersion` 才用算出来的 semver。
 
 ## 实践案例
 
@@ -45,109 +60,89 @@ changesets 的设计可以拆成 **三步**：
 "@my-org/pkg-b": patch
 ---
 
-Add new public API for cat juggling.
-
-Now `pkg-a` exposes `juggle(cats: Cat[])`. `pkg-b` adds matching types.
+Add a public cat-juggling API.
 ```
 
-**逐部分解释**：
+`writeChangeset` 会给文件名生成 `human-id`（小写、短横线），frontmatter 里的包名必须带引号，因为 scoped name 含 `@`。3.0.1 也可以非交互：`changeset add --minor @my-org/pkg-a -m "Add a public cat-juggling API"`。
 
-- 顶部 YAML frontmatter：key 是包名，value 是 bump 档（`major` / `minor` / `patch` / `none`）
-- 下面 markdown body 是给 CHANGELOG 用的描述
-- 文件名是随机三词组（`funny-cats-jump.md`）——保证多 PR 不会撞名
+### 案例 2：range 仍满足时，dependent 不会跟着涨版本
 
-### 案例 2：30 分钟跑通
-
-```bash
-mkdir test-changesets && cd test-changesets
-npm init -y
-npm install -D @changesets/cli
-npx changeset init                   # 生成 .changeset/config.json
-
-# 假装一个 monorepo
-mkdir -p packages/{pkg-a,pkg-b}
-echo '{"name":"@test/pkg-a","version":"0.1.0"}' > packages/pkg-a/package.json
-echo '{"name":"@test/pkg-b","version":"0.1.0","dependencies":{"@test/pkg-a":"^0.1.0"}}' > packages/pkg-b/package.json
-echo '{"name":"root","private":true,"workspaces":["packages/*"]}' > package.json
-
-npx changeset                        # 选 pkg-a，bump minor，写 summary
-npx changeset version                # 自动 bump、写 CHANGELOG、删 changeset 文件
+```json
+{ "name": "@test/pkg-b", "version": "0.1.0", "dependencies": { "@test/pkg-a": "^0.1.0" } }
 ```
 
-跑完后：
+若 `pkg-a` 从 `0.1.0` 升到 `0.2.0`，`^0.1.0` 仍然满足，`determineDependents` 不会给 `pkg-b` 一个 patch。旧印象里的“改了依赖就自动 bump 下游”只在 range 被打破，或打开实验开关 `updateInternalDependents: "always"` 时成立。
 
-- `pkg-a`：`0.1.0` → `0.2.0`
-- `pkg-b`：`0.1.0` → `0.1.1`（dependents 自动 patch bump）
-- 两个包都生成 `CHANGELOG.md`
-- `.changeset/*.md` 被删除（已消费）
+### 案例 3：version 之后磁盘上发生什么
 
-### 案例 3：版本号是怎么算出来的
+`applyReleasePlan` 写入每个包的 `version` 和内部依赖 range，追加 `CHANGELOG.md`，然后：
 
-`assemble-release-plan` 是核心算法，5 步纯函数：
+- 普通模式：`fs.rm` 删掉已消费的 `.changeset/<id>.md`
+- pre 模式：把文件挪到 `.changeset/pre/`，等 `pre exit` 再收口
 
-1. **flatten**：多个 changeset 改同一包 → merge 成一个，取最高 bump
-2. **dependents**：找谁依赖了变更包，按 config 决定要不要跟着 bump
-3. **links / fixed**：`config.linked` / `config.fixed` 强制几个包 group bump
-4. **increment**：用 semver 算 `newVersion = bump(oldVersion, type)`
-5. **output**：返回 ReleasePlan（每个包的新版本 + 该写的 CHANGELOG 段落）
-
-每一步都是纯函数：同样的 changeset 文件 + 同样的 package.json，跑一万次结果一样。这种 single source of truth 设计让 release 行为完全可预测。
+默认 written config 是 `access: "restricted"`、`baseBranch: "main"`、`commit: false`、`format: "auto"`。`format: "auto"` 会探测仓库里的 formatter，但会排除 Biome（它不格式化 markdown）。
 
 ## 踩过的坑
 
-1. **新人 PR 必忘加 changeset**：`npx changeset add` 不是 git/npm 标准动作，第一周必踩。CI 必须配 `changeset-bot` 拦截，否则会有"忘加 changeset 的 PR 被 merge → release 时漏 bump"
-2. **changeset 文件名是随机三词组无法溯源**：`funny-cats-jump.md` 看不出对应哪个 PR，得 `git log .changeset/funny-cats-jump.md` 反查
-3. **flatten 取最高 bump 会丢"step 数"**：3 个 changeset 是 [minor, patch, major]，flatten 后只跳一档 major。CHANGELOG 列三段，但版本号只 +1 个 major
-4. **不验证 git diff**：你完全可以写一个 changeset 说"这个包 minor"但代码一行没改——changesets 不查。trade-off 是信任作者声明 vs 强制对齐 diff
+1. **把 dependents 默认说成“永远 patch”**：3.0.1 默认是 out-of-range，不是 always。
+2. **把 snapshot 想成 1.2.3-canary**：未开 `useCalculatedVersion` 时底数是 `0.0.0`，避免和正式 pre 线抢 `^` range。
+3. **混写 ignore 包和未 ignore 包**：同一 changeset 里两边都出现会直接抛错。
+4. **以为 CLI 会核对 git diff**：changeset 只记录声明，不验证你是否真的改了那个包。
+5. **用旧 Node 跑 3.0.1**：engines 已经卡在 Node 22.11+ / 24 / 26。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- pnpm / yarn / npm workspace monorepo（pnpm 适配最好）
-- 想让 reviewer 在 PR 阶段就看到"这个改动是 breaking 还是 patch"
-- 团队接受多一个步骤（写 changeset）换 release 透明度
-- 需要 snapshot release（PR preview 包）—— `changeset version --snapshot` 原生支持
+- pnpm / yarn / npm workspace monorepo，希望 reviewer 在 PR 里看到 bump 档
+- 需要 snapshot / pre 模式，并且接受“Version Packages”这一道人确认
+- 团队愿意多写一个 markdown，换可 review 的版本决策
 
 **不适用**：
 
-- 单包仓库——`npm version` 就够，装 changesets 纯属仪式开销
-- 想要全自动发版无人参与——changesets 的"Version Packages" PR 必须人 merge，绕过它就退化成 semantic-release
-- commit message 严格规范的项目——semantic-release 从 `feat:` / `fix:` / `BREAKING:` 推断，更省事
-- 没有 monorepo 工具基础（没用 pnpm / yarn workspace）——先解决 workspace 再装 changesets
+- 单包、只用 `npm version` 就够的仓库
+- 想从 conventional commit **无人值守**推断版本——那是 [[semantic-release]] 的合同
+- 还在 Node 18/20 上发版的仓库；3.0.1 不会在这些运行时上自我证明
+- 需要本轮审查没有读到的 `@changesets/action` 行为细节
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2019 年**：Atlassian 的 Mitchell Hamilton 在做 design system monorepo 时受不了 Lerna 的 release-time 决策模式，做了第一版
-- **2020 年**：项目移到独立 GitHub org `changesets/changesets`，完全开源
-- **2021 年**：v2 rearchitecture（Thinkmill 赞助），把 monolithic CLI 拆成约 30 个独立小包，每包 surface 小、单一职责
-- **2022 年起**：Vercel / Astro / Storybook / Chakra UI / SvelteKit 成为主要用户；GitHub Action `changesets/action@v1` 让"自动开 Version Packages PR"成为标准模式
-- **2026 年**：11.9k stars，仍在活跃维护，每周都有 release
+- 本文绑定 `changesets/changesets@bed45812...`，即 tag `@changesets/cli@3.0.1`。
+- npm `@changesets/cli@3.0.1` 不暴露 `gitHead`；绑定依据是可达 tag 与包内 `package.json` 自报版本一致。
+- CLI 是 ESM，bin 为 `changeset`；3.0.1 还带 `publish-plan`、`pack`、`git-tag`。
+- 本文未安装依赖、未跑上游测试、未调用 publish，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **状态在磁盘上 vs 状态在工具内部**——前者可见、可 review、可手改；后者依赖工具版本和黑盒
-2. **决策前置**：能在 PR 时回答的问题，不要拖到 release 时回答——人会忘，reviewer 也参与不了
-3. **machine 算 + human 确认** 的两段式比"全自动"更稳健，留一道人门是 feature 不是 bug
-4. **monorepo 的版本管理是 dependents-graph 问题**——把这一步独立成纯函数包（`@changesets/get-dependents-graph`）让其他工具也能复用
+1. **声明在磁盘上**才能被 PR review；commit 标题和 release 经理的记忆都不是同一份 source of truth
+2. **highest-wins flatten** 会丢掉“跳了几档”，只保留最高档，CHANGELOG 仍可分段
+3. **依赖图传播默认看 range**，不是“改了就 bump”；devDependency 甚至只改数字不改版本
+4. **snapshot 用 0.0.0 当底数**是为了不污染正式 pre 线的 semver range
+
+## 应用型自测
+
+1. `pkg-a` 从 `1.0.0` 升到 `1.1.0`，`pkg-b` 声明 `"pkg-a": "^1.0.0"`。默认会给 `pkg-b` patch 吗？
+2. `--snapshot` 且未设置 `useCalculatedVersion` 时，新版本的数字前缀是当前 semver 还是 `0.0.0`？
+3. 一个 changeset 同时写了 ignore 包和未 ignore 包，`assembleReleasePlan` 会怎么做？
+
+检查点：
+
+1. 不会。`^1.0.0` 仍满足 `1.1.0`，默认 out-of-range 策略不 bump。
+2. `0.0.0`。只有打开 `snapshot.useCalculatedVersion` 才用算出来的 semver。
+3. 直接抛错；混合 changeset 不被允许。
 
 ## 延伸阅读
 
-- 官方文档：[Intro to using changesets](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)（10 分钟读完工作流）
-- 设计动机：[Detailed explanation](https://github.com/changesets/changesets/blob/main/docs/detailed-explanation.md)（讲清楚为什么不用 commit message）
-- 视频教程：[Changesets — automating versioning and publishing](https://www.youtube.com/watch?v=g0gJN0MPlVc)（30 分钟动手演示）
-- [[lerna]] —— 上一代 monorepo 版本工具，对比看决策模式差异
-- [[pnpm]] —— changesets 默认搭配的 package manager
-- [[turborepo]] —— monorepo build 工具，和 changesets 职责互补
+- 固定源码：[changesets/changesets](https://github.com/changesets/changesets) —— 本文绑定提交 `bed458124f623463c581521ab56d040eba2a8b20`
+- 设计说明：[Detailed explanation](https://github.com/changesets/changesets/blob/main/docs/detailed-explanation.md)
+- [[semantic-release]] —— 对照：commit 推断 vs 磁盘声明
+- [[lerna]] —— 上一代在 release 时刻选档的工具
 
 ## 关联
 
-- [[lerna]] —— Lerna 在 release 时人工选 bump 档；changesets 把这步推到 PR 时刻，是"决策前置"的范式转换
-- [[pnpm]] —— pnpm workspace 是 changesets 最常见的运行环境，workspace protocol 适配最好
-- [[turborepo]] —— turborepo 管 build / cache，changesets 管 version / publish，两者职责不重叠
-- [[nx]] —— nx 也有自己的 release 工具（nx release），思路接近 changesets 但绑死 nx 生态
-- [[biome]] —— Biome 自己用 changesets 发版，可以读它的 `.changeset/` 目录学怎么写 summary
-- [[astro]] —— Astro 是 changesets 的重度用户，每个 release PR 都很标准
+- [[semantic-release]] —— 同一发版问题的另一端：从 commit 推断、CI 里直接 tag
+- [[lerna]] —— release-time 人工选档；changesets 把决策前置到 PR
+- [[pnpm]] —— 最常见的 workspace 宿主；`workspace:` protocol 会在 dependents 计算时被展开
 
 ## 反向链接
 

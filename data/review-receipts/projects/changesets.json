@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "changesets",
+    "digest_sha256": "c0e760c1fcb1947c04a8c74416150fcc1a4324839b232250a77fac5a8bb22c48"
+  },
+  "source_revision": "bed458124f623463c581521ab56d040eba2a8b20",
+  "research_input_sha256": "cf5e8cd41797703915ca54af3c4935714e81a7396bfeb1c2616319abf58421eb",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "release-automation-static-20260827-cf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains disk-declared bumps, highest-wins flatten, out-of-range dependents, snapshot 0.0.0, and Node 22.11 engines with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "release-automation-static-20260827-cf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 3.0.1 CLI, assemble/apply-release-plan, dependents graph and writeChangeset; upstream tests and publish were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "release-automation-static-20260827-cf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag @changesets/cli@3.0.1 is reachable; npm gitHead is absent so the note binds the tag commit and stays STATIC_REVIEW / UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

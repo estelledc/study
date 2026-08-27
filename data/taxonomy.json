@@ -2372,6 +2372,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::semantic-release",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
       "note_id": "projects::sentry",
       "topic_id": "projects-observability-and-performance"
     },
