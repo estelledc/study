@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 2,
+  "predecessor_digest_sha256": "5d9d853de78e9c6b7e9239a588cf72561cb401f47a6a9e1b5aba2e714219d1c4",
+  "note": {
+    "area": "projects",
+    "slug": "haystack",
+    "digest_sha256": "2b467ca7c5c7c82337bc297c50c87208dc8933dcfe8ed2d8a15f852992a389cc"
+  },
+  "source_revision": "859a6eb3ac4d0bd33f069bab57fb041e3434a353",
+  "research_input_sha256": "77bcc48f0fc85f88d7cf0c4b938659d5d80cd328f9475e427033136c0b05b93f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the component protocol, assembly-time socket checking, cycle-capable pipeline graph, and the core agent and tool layers."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "core/pipeline, generators/chat OpenAIChatGenerator, builders/ChatPromptBuilder, core embedders and document_stores were inspected; OpenAIGenerator and SentenceTransformersDocumentEmbedder are absent at this pin; no pipeline was executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Cycle support, chat generator messages socket and core embedder exports are bounded to haystack-ai 3.1.0; retrieval quality requires execution."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:15:00.000Z"
+}

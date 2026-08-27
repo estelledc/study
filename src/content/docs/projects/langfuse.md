@@ -4,54 +4,66 @@ title: Langfuse — LLM 应用可观测性
 日期: 2026-05-29
 分类: AI
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/langfuse/langfuse
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 362ef39abb298824b187e8e964d21460a1d03e98
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: v4.21.0
 ---
 
 ## 是什么
 
-**Langfuse** 是德国团队 2023 年开源的「LLM 应用专用监控与追踪平台」——把每次 LLM 调用、token 用量、prompt 版本、用户反馈都记录下来可视化。
+**Langfuse** 是一个开源的「LLM 应用追踪与评测平台」——把每次 LLM 调用、token 用量、prompt 版本、评分反馈记录下来可视化。
 
-日常类比：[[prometheus]] 监控服务器的 CPU 和内存（基础设施层），Langfuse 监控的是 LLM 应用层——prompt 是什么、模型回了什么、花了多少 token、用户给了几分。
+日常类比：[[prometheus]] 监控服务器的 CPU 和内存（基础设施层），Langfuse 监控的是 LLM 应用层——prompt 是什么、模型回了什么、花了多少 token、这次回答被打了几分。
 
 举个例子：你在线上跑一个客服机器人，用户问了 100 个问题。Langfuse 让你看到：
 
-- 每个问题走的是哪个 prompt 模板（带版本号）
-- 模型回答用了几秒、花了多少美元
-- 用户对这个回答打了几分（1-5 星）
-- 哪些问题模型答错了
+- 每个问题走的是哪条调用链、哪个 prompt 版本
+- 每次模型调用的耗时、token 与成本归因
+- 人工或自动评分对每条回答的判断
+- 哪些问题的链路出了错
 
-没有 Langfuse 时，这些数据要么在 OpenAI dashboard 看个总数，要么自己写日志逐行 grep。
+没有这类平台时，这些数据要么在各家模型厂商的控制台看个总数，要么自己写日志逐行 grep。
 
 ## 为什么重要
 
-`LLM 可观测性` 这个赛道在 2023-2024 年才出现，Langfuse 是几个标杆之一：
+不理解 Langfuse 的架构，下面这些事说不清：
 
-1. **赛道头部**：和 Helicone（代理模式）、LangSmith（LangChain 自家闭源）一起被讨论
-2. **集成简单**：与 [[langchain]] / [[llamaindex]] / OpenAI SDK 一行代码集成
-3. **一站式**：Prompt 管理 + 数据集 + 自动评测都在同一个平台
-4. **双轨开源**：MIT 协议 + 自托管 + 官方 Cloud——企业可选
+- 为什么 LLM 可观测性不能只靠“打日志”——调用链是嵌套结构（一次会话 → 多步检索/生成），要专门的数据模型
+- 为什么它的自托管栈要同时上 Postgres 和 ClickHouse——元数据与遥测时序的查询模式根本不同
+- 为什么“遥测平台”都在拥抱 OpenTelemetry——固定 v4.21.0 直接暴露 OTLP traces 端点，SDK 之外多了标准接入路
+- 为什么开源核心 + `ee/` 商业目录的分层许可成了这类平台的常见形态
 
-## 核心要点
+## 核心架构与数据流程
 
-Langfuse 的数据模型只有 4 个核心概念，看懂这 4 个就懂了：
+固定 v4.21.0 可以拆成数据模型与部署栈两条线：
 
-1. **Trace（追踪）**：一次完整的 LLM 应用调用。比如「用户问问题 → 检索文档 → 调用 GPT-4 → 返回答案」整条链就是一个 Trace。
-2. **Generation（生成）**：Trace 里某一次具体的 LLM API 调用，记录 prompt + 输出 + token 用量 + 模型名 + 耗时 + 成本。
-3. **Score（评分）**：人工或自动给某个 Trace 或 Generation 打的分。比如「这次回答的相关度 0.8」「用户给的星数 4」。
-4. **Prompt（带版本的 prompt 仓库）**：把 prompt 文本本身当作可版本化的资产管理——v1 / v2 / v3 都留着，可以回滚。
+1. **数据模型（遥测三件套 + 元数据）**：核心遥测是 **traces**（一次完整调用链）、**observations**（链内的每一步——span / generation / event，LLM 调用是其中的 generation 类型）与 **scores**（人工或自动评分）——这三张表建在 ClickHouse（迁移 0001/0002/0003）。prompt 版本、数据集、实验、会话、项目/用户等元数据在 Postgres（Prisma schema）。类比：trace 像一次手术的整体记录，observation 是手术里的每个步骤，score 是术后评估表，prompt 库是带版本的 SOP 模板。
 
-类比：Trace 像一次手术的整体记录，Generation 是手术里某个具体步骤，Score 是术后评估表，Prompt 是医生用的 SOP 模板（有版本）。
+2. **部署栈（六个服务）**：`docker-compose.yml` 定义 `langfuse-web`（Next.js 应用与 API）、`langfuse-worker`（异步摄取与处理）、`postgres`、`clickhouse`、`redis`（队列/缓存）、`minio`（S3 兼容 blob，存原始事件与多媒体）。写入路径是“API 收事件 → 队列 → worker 落库”，读写分离扛高写入。
 
-## 实践案例
+3. **接入面**：公共 API 在 `api/public/*`（ingestion、observations、metrics、datasets、experiments、annotation-queues、media 等），另有 **OTLP 端点 `api/public/otel/v1/traces`**——除官方 SDK 外，任何 OpenTelemetry 导出器都能把 trace 打进来。
+
+## 实践示例
 
 ### 案例 1：Python 一行集成 OpenAI
 
-最常见的用法——把 `openai` 的 import 换成 `langfuse.openai`，业务调用几乎不动：
+把 `openai` 的 import 换成 `langfuse.openai`，业务调用几乎不动：
 
 ```python
 # pip install langfuse openai
 # export LANGFUSE_PUBLIC_KEY=pk-lf-...
 # export LANGFUSE_SECRET_KEY=sk-lf-...
-# export LANGFUSE_HOST=https://cloud.langfuse.com  # 自托管改成你的地址
+# export LANGFUSE_HOST=http://localhost:3000  # 自托管地址
 
 from langfuse.openai import openai  # 原来是: import openai
 
@@ -59,84 +71,97 @@ completion = openai.chat.completions.create(
     model="gpt-4o-mini",
     messages=[{"role": "user", "content": "用一句话解释 Trace"}],
 )
-print(completion.choices[0].message.content)
 ```
 
-之后所有 OpenAI 调用都被自动记成 Generation，UI 里能看到 prompt、输出、token、成本。**零业务逻辑改动**。
+之后所有 OpenAI 调用都被记成 observation（generation 类型），UI 里能看到 prompt、输出、token 与成本归因。SDK 的具体行为以其自身版本文档为准，本文只绑定平台侧。
 
 ### 案例 2：自托管一键起
 
 ```bash
 git clone https://github.com/langfuse/langfuse
 cd langfuse
-docker compose up -d   # 起 web + worker + Postgres + ClickHouse + Redis
-open http://localhost:3000
+docker compose up -d
 ```
 
-约一分钟起一套生产形态的 Langfuse。Postgres 装元数据（用户、项目、prompt 版本），ClickHouse 装 trace 时序数据（高写入 + 聚合查询），Redis 做异步队列。
+固定 v4.21.0 的 compose 会起六个服务：web + worker + Postgres + ClickHouse + Redis + MinIO。Postgres 装元数据（项目、prompt 版本、数据集），ClickHouse 装 traces/observations/scores 时序数据（高写入 + 聚合查询），Redis 做异步队列，MinIO 存原始事件与媒体 blob。
 
-### 案例 3：用 LLM 给 LLM 打分（LLM-as-judge）
+### 案例 3：OpenTelemetry 标准接入
 
-跑完一批 trace 后，让 GPT-4 当裁判给每条打「相关度」分：
-
-```
-你是一个评分助手。下面是用户问题和 AI 回答。
-请给相关度打 0-1 分，只输出数字。
-问题：{trace.input}
-回答：{trace.output}
+```text
+POST <你的 langfuse>/api/public/otel/v1/traces   # OTLP/HTTP
 ```
 
-Langfuse 自动跑这套评分，分数回流到 Score 字段——后续可以按分数过滤、按 prompt 版本对比平均分、看某次改动是变好了还是变差了。生产里常见做法是：先人工标 50–100 条当金标准，再让 judge prompt 对齐这批分数。
+已经用 OTel 埋点的应用（或任何带 OTLP exporter 的 agent 框架）可以不接 Langfuse SDK，直接把 spans 导到这个端点，由平台映射成 trace/observation 模型。对“observability 已有一套 OTel 管线”的团队，这是增量最小的接入路。
 
 ## 踩过的坑
 
-1. **默认 retention 短，要配长期存储**：Cloud 版的免费档只保留 30 天 trace，超期就被清。生产用要么升级套餐、要么自托管 + 接 S3 长期归档。
-2. **大量 trace 写入要调 ClickHouse 批量参数**：默认配置在每秒几百条 trace 时还行，到几千条要把 batch size + async flush interval 调起来——不然会触发 ClickHouse 的「Too many parts」报错。
-3. **与 Helicone 的区别**：Langfuse 走 SDK 主动推送（要改一行 import），Helicone 走 HTTP 代理（不改代码但只支持 OpenAI 这种直连场景）。Langfuse 主打 prompt 管理 + 自托管，Helicone 主打零侵入。
-4. **自托管的 Cloud 版本对齐时差 1-2 月**：Cloud 跑的是更新版本，自托管 OSS 版有时晚一两个 release。新功能发布时不要立刻假设自托管能用。
-5. **成本字段依赖价目表**：模型单价表要自己维护或跟官方同步，否则 Generation 上的「美元成本」会对不齐账单。
+1. **别把所有东西塞进一个 trace**：trace 是“一次完整调用链”的边界。把整个批处理任务塞成一条 trace，UI 和聚合查询都会难用；按用户请求或任务实例切 trace，链内步骤用 observation 表达。
+
+2. **成本字段依赖模型价目**：token 成本换算需要模型单价映射（平台带 models 配置面）；自定义或新模型要自己维护单价，否则成本归因对不上账单。
+
+3. **自托管不是单容器**：六服务栈意味着要照看 Postgres/ClickHouse/Redis/MinIO 四个有状态组件的存储与备份；试用可以 compose 一把起，生产要按各组件自己的运维实践来。
+
+4. **`ee/` 目录不是 MIT**：`ee/`、`web/src/ee/`、`worker/src/ee/` 下的功能按商业许可（`ee/LICENSE`），其余 MIT。自托管选型时按 LICENSE 分层核对功能边界，别默认“仓库里有的都能随便用”。
+
+5. **版本迭代快，教程易过期**：绑定的 v4.21.0 与网上大量 v2/v3 教程在部署栈与功能面上已有差异；对任何操作步骤先核对目标版本。
 
 ## 适用 vs 不适用
 
 **适用**：
 
 - 团队级 LLM 应用，有调试 / 评测 / 成本归因需求
-- 要 self-host 不锁定 SaaS 的场景
-- 用 [[langchain]] / [[llamaindex]] / OpenAI SDK 直接调用 LLM 的项目
+- 要 self-host、数据不出自己基础设施的场景
+- 已有 OTel 管线、想用标准协议接入 LLM 遥测的团队
+- 需要 prompt 版本管理 + 数据集 + 实验评测在同一平台闭环
 
 **不适用**：
 
-- 个人小项目（OpenAI dashboard 看 token 数就够）
-- 完全没有 LLM 调用的传统 web 应用（用 Datadog / Sentry）
-- 必须零代码改动接入的场景（用 Helicone 这种代理模式）
+- 个人小项目——模型厂商控制台看用量就够，六服务栈过重
+- 完全没有 LLM 调用的传统 web 应用——用通用 APM
+- 只想要“零代码改动”的代理式记录——那是 HTTP proxy 型工具的形态，Langfuse 主路径是 SDK/OTLP 上报
+- 不能运维有状态服务的环境——自托管栈含四个有状态组件
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2023 初**：Langfuse GmbH 在柏林创立；同期进入 Y Combinator Winter 2023（W23），在旧金山把产品从计费工具转向 LLM 可观测性
-- **2023-08**：v1 开源（MIT 协议），定位「LLM observability」
-- **2024**：v2 加入 Datasets（测试集管理）+ LLM-as-Judge（自动评测）
-- **2025**：v3 加入多模态 trace 支持（图像 / 音频 trace）
-- **旁注**：同一时期 Helicone / LangSmith 也在抢 LLMOps 心智，Langfuse 靠 MIT + 自托管把开源心智占住
-
-40 年前没人监控 web 应用，20 年前 [[prometheus]] 让监控基础设施变成基本盘——Langfuse 在做的事是把同样的工作搬到 LLM 应用层。
+- 本文绑定 `langfuse/langfuse@362ef39a...`，即 release tag `v4.21.0`；根 `package.json` 版本一致。
+- 部署栈：web、worker、Postgres、ClickHouse、Redis、MinIO 六服务（`docker-compose.yml`）；traces/observations/scores 建在 ClickHouse，元数据在 Postgres。
+- 接入面：`api/public/*` 公共 API + `api/public/otel/v1/traces` OTLP 端点。
+- 许可：核心 MIT，`ee/` 及 `web/src/ee/`、`worker/src/ee/` 按 `ee/LICENSE` 商业许可；该 revision 的 LICENSE 版权行为 "Copyright (c) 2023-2026 ClickHouse, Inc."。
+- 本文未部署平台、未运行摄取链路、未测写入吞吐或查询延迟；SDK 行为、Cloud 定价与 retention 策略均不在绑定范围。状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **可观测性赛道总会从基础设施层往应用层延伸**——先有 [[prometheus]] 监控机器，再有 Langfuse 监控 LLM
-2. **多存储分层是规模逼出来的**——Langfuse 用 ClickHouse + Postgres + Redis 三件套，不是设计美感，是因为 trace 时序数据和元数据查询模式根本不同
-3. **「engineering platform」不等于「monitoring tool」**——前者驱动迭代（prompt 版本、数据集、A/B 对比），后者只看「现在挂没挂」。LLM 应用的可观测性需求天然偏前者
+1. **可观测性总会从基础设施层爬到应用层**——先有 Prometheus 监控机器，再有 LLM trace 平台监控调用链
+2. **存储分层是查询模式逼出来的**——元数据（关系查询）进 Postgres，遥测时序（高写入聚合）进 ClickHouse，队列与 blob 各归其位
+3. **标准协议是平台的护城河也是逃生门**——暴露 OTLP 端点意味着接入不锁定自家 SDK，用户迁移成本双向降低
+4. **开源核心 + ee 分层是这类平台的常见商业形态**——读 LICENSE 的目录边界，比读官网定价页更接近事实
+
+## 应用型自测
+
+1. 固定 v4.21.0 的自托管 compose 栈有哪六个服务？
+2. traces / observations / scores 存在哪个数据库里，为什么不放 Postgres？
+3. 不用 Langfuse SDK，还有什么标准方式把调用链打进平台？
+
+检查点：
+
+1. langfuse-web、langfuse-worker、Postgres、ClickHouse、Redis、MinIO。
+2. ClickHouse（迁移 0001/0002/0003 建表）；遥测是高写入 + 聚合查询的时序负载，与 Postgres 里的关系型元数据查询模式不同。
+3. OpenTelemetry：把 OTLP traces 导出到 `api/public/otel/v1/traces` 端点。
 
 ## 延伸阅读
 
-- 官方文档：[langfuse.com/docs](https://langfuse.com/docs) — 集成 / SDK / self-host 详细指南
-- GitHub 仓库：[github.com/langfuse/langfuse](https://github.com/langfuse/langfuse) — 源码 + Issues + Roadmap
-- 数据模型说明：[langfuse.com/docs/tracing](https://langfuse.com/docs/tracing) — Trace / Generation / Score 怎么嵌套
+- 官方文档：[langfuse.com/docs](https://langfuse.com/docs) — 集成 / SDK / self-host 指南
+- 固定源码：[github.com/langfuse/langfuse](https://github.com/langfuse/langfuse) —— 本文绑定提交 `362ef39abb298824b187e8e964d21460a1d03e98`
+- 数据模型说明：[langfuse.com/docs/tracing](https://langfuse.com/docs/tracing)
+- [[haystack]] —— 管线框架视角：先把链路搭出来，再谈观测
 
 ## 关联
 
-- [[langchain]] —— 主流 LLM 应用框架，与 Langfuse 一行集成
+- [[langchain]] —— 主流 LLM 应用框架，Langfuse 提供集成
 - [[llamaindex]] —— RAG 框架，同样支持 Langfuse 钩子
+- [[haystack]] —— LLM 管线编排；跑起来之后的追踪与评测正是 Langfuse 的位置
 - [[prometheus]] —— 基础设施监控的标杆，Langfuse 是 LLM 层的对应物
+- [[clickhouse]] —— Langfuse 遥测存储的底座，也是其 LICENSE 版权主体
 
 ## 反向链接
 
