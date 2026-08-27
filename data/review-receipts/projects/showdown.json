@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "showdown",
+    "digest_sha256": "607b9523d91c52b11cf023434e9dffe1d98448b8376c0df962d6ebf8e886e358"
+  },
+  "source_revision": "9958ba5cfaf01c93ea9e1a48650fb3074eff98ce",
+  "research_input_sha256": "1223c3ceebffb4ee67de1251de61a5ebd7795fa4d530b3ebce07cd7a7c7e584e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates vanilla defaults, github flavor, HTML hash restore, and Node makeMarkdown DOM requirement."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Converter, options, blockGamut, hashHTMLBlocks, headers, and extensions were inspected; grunt tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to showdown 2.1.0; 3.0 RC, sanitizer behavior, and bundle size remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:45:00.000Z"
+}

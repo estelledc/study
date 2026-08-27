@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "snarkdown",
+    "digest_sha256": "80222001676c3c1ae509add7205279a54ec8b6e490592fa408afb18a59d960a1"
+  },
+  "source_revision": "a6dc55c93e29e40d3d77b759ce3a6070537028ee",
+  "research_input_sha256": "1223c3ceebffb4ee67de1251de61a5ebd7795fa4d530b3ebce07cd7a7c7e584e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the single regex, TAGS second-character trick, missing tables, and unsanitized HTML passthrough."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "src/index.js, types, and tests were inspected; mocha/eslint and bundle size were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to snarkdown 2.0.0; README 1kb gzip and XSS outcomes need a sanitizer run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:45:00.000Z"
+}

@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 965,
+    "total": 967,
     "by_status": {
-      "benchmark-aligned": 81,
+      "benchmark-aligned": 83,
       "needs-evidence": 884
     }
   },
@@ -18221,6 +18221,26 @@
       ]
     },
     {
+      "slug": "showdown",
+      "title": "Showdown — 带 flavor 开关的正则 Markdown 转换器",
+      "source": "https://github.com/showdownjs/showdown",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "sia",
       "title": "Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储",
       "source": "https://github.com/SiaFoundation/renterd",
@@ -18627,6 +18647,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "snarkdown",
+      "title": "Snarkdown — 一条正则吃掉 Markdown 的单函数解析器",
+      "source": "https://github.com/developit/snarkdown",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "socket-io",

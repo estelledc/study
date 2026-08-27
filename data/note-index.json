@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2050,
+      "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 967,
+        "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -58840,6 +58840,37 @@
       }
     },
     {
+      "id": "projects::showdown",
+      "area": "projects",
+      "slug": "showdown",
+      "title": "Showdown — 带 flavor 开关的正则 Markdown 转换器",
+      "description": "介绍 Showdown 怎样用 Converter、flavor 与 subParser 把 Markdown 变成 HTML，并说明默认 vanilla 并不打开表格",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "markdown"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/showdown/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::sia",
       "area": "projects",
       "slug": "sia",
@@ -59378,6 +59409,37 @@
       "atlas": {
         "chunk_id": "topic-projects-blockchain-01",
         "chunk_route": "/study/atlas/projects/topic-projects-blockchain-01/"
+      }
+    },
+    {
+      "id": "projects::snarkdown",
+      "area": "projects",
+      "slug": "snarkdown",
+      "title": "Snarkdown — 一条正则吃掉 Markdown 的单函数解析器",
+      "description": "介绍 Snarkdown 怎样用一条全局正则和 TAGS 表把 Markdown 变成 HTML，以及它不处理表格、也不消毒",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-markdown-and-parsing",
+        "raw_category": "markdown"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/snarkdown/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
       }
     },
     {
@@ -65865,7 +65927,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",

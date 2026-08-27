@@ -2408,6 +2408,14 @@
       "topic_id": "projects-markdown-and-parsing"
     },
     {
+      "note_id": "projects::showdown",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::snarkdown",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::solid",
       "topic_id": "projects-ui-and-frontend-frameworks"
     },
