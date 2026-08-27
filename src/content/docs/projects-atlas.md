@@ -77,8 +77,8 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 区块链 | Blockchain | 59 | [第 1/1 组](/study/atlas/projects/topic-projects-blockchain-01/) |
 | 嵌入式系统 | Embedded Systems | 54 | [第 1/1 组](/study/atlas/projects/topic-projects-embedded-systems-01/) |
 | 通信与多媒体 | Communication and Media | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-communication-and-media-01/) |
-| 移动开发 | Mobile Development | 10 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
-| 通用开发工具 | General Developer Tools | 13 | [第 1/1 组](/study/atlas/projects/topic-projects-general-developer-tools-01/) |
+| 移动开发 | Mobile Development | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
+| 通用开发工具 | General Developer Tools | 14 | [第 1/1 组](/study/atlas/projects/topic-projects-general-developer-tools-01/) |
 | 数据科学与 AI | Data Science and AI | 44 | [第 1/1 组](/study/atlas/projects/topic-projects-data-science-and-ai-01/) |
 | 后端与 API | Backend and APIs | 56 | [第 1/1 组](/study/atlas/projects/topic-projects-backend-and-apis-01/) |
 
