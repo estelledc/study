@@ -4,149 +4,170 @@ title: Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 日期: 2026-05-30
 分类: web-frameworks
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/fastify/fastify
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 7d196a998c422062a3aaa3f8041db91ad576cea0
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.12.1
 ---
 
 ## 是什么
 
-Fastify 是一个 **Node.js 的 web 框架**——你给它路由和处理函数，它给你一个 HTTP 服务器。日常类比：像一个**带模具的注塑机**——Express 是手工捏陶，每个请求都要"看一眼形状再决定怎么处理"；Fastify 让你**先做模具（schema）**，开机后所有请求被同一个模具一压成型，没有判断、没有反射。
+Fastify 是一个把路由、插件封装和 JSON Schema 编译绑在启动链上的 Node HTTP 框架。日常类比：先把模具（schema）和工位（hook）装进车间，开门营业后请求按固定阶段走，而不是每次现场决定插哪个中间件。
 
-最简单一段：
+你写：
 
-```ts
-import Fastify from 'fastify'
-const app = Fastify()
-app.get('/hi', async () => ({ msg: 'hello' }))
-await app.listen({ port: 3000 })
+```js
+const Fastify = require("fastify");
+const app = Fastify();
+app.get("/hi", async () => ({ msg: "hello" }));
+await app.listen({ port: 3000 });
 ```
 
-写起来跟 Express 几乎一样。差别藏在你看不见的地方：当你给路由配一个 JSON Schema，Fastify 在 `listen()` 之前就把 schema **编译成一段 JavaScript 函数**。运行期不再"读 schema 判断 type"——直接调函数。这是它比 Express 快 3 倍的核心原因。
+`listen()` / `ready()` 会先走 `avvio` 启动链。路由匹配默认交给 `find-my-way`；校验与序列化编译器分别来自 `@fastify/ajv-compiler` 和 `@fastify/fast-json-stringify-compiler`。
 
 ## 为什么重要
 
-不理解 Fastify，下面这些事都没法解释：
+不理解 Fastify 5.12.1 的启动合同，就解释不了：
 
-- 为什么 Node.js 同样代码 Fastify 能跑 30k req/s、Express 只有 10k——差的 20k 哪里来
-- 为什么 schema-first 框架（FastAPI / NestJS / Hono）这几年都流行——单一来源生成校验、序列化、文档
-- 为什么 Fastify 的 plugin 不是 `app.use()` 而是 `app.register()`——封装边界设计的两条路
-- 为什么 Matteo Collina（Node.js 核心维护者）愿意为这个框架站台
+- 为什么 `register()` 里 `decorate` 的属性，父 instance 默认看不到
+- 为什么 schema 不是在 `route()` 当下编译，而是等到 avvio `preReady`
+- 为什么 handler 返回 `undefined`、thenable 或普通值，走三条不同出口
+- 为什么 GET 默认不跑 body parser，QUERY 却强制要求 Content-Type
 
 ## 核心要点
 
-Fastify 的设计可以拆成 **三个支柱**：
+Fastify 主链可以拆成五步：
 
-1. **schema 先于代码**：每个路由配 JSON Schema，启动期 Ajv 编译出 validator、fast-json-stringify 编译出 serializer。类比：开店前把所有菜单和容器提前印好，客人来了直接套用，不需要现场设计。
+1. **装配 instance**：`fastify()` 创建 router、404 封装、schema controller、hook 表和 logger。
 
-2. **plugin encapsulation**：每次 `register()` 出一个**子 instance**。在子里加的装饰器、hook、路由都被关在子 scope 里。类比：每个插件像独立的房间，不会污染走廊。要全局生效得用 `fastify-plugin` 标注"穿墙"。
+2. **插件封装**：`register()` 默认 `Object.create(parent)` 出子 instance，并复制 hook / parser / schema 桶。函数带 `Symbol.for('skip-override')` 时不拆 scope。
 
-3. **生命周期 hook 取代中间件链**：八个固定阶段（onRequest → preParsing → preValidation → preHandler → handler → preSerialization → onSend → onResponse），顺序不可变。类比：流水线的固定工位，不像 Express 的"想插哪就插哪"。
+3. **启动期编译**：路由先登记 context；`preReady` 才绑定生命周期 hook，并编译 body/params/query/headers 校验器与 response 序列化器。
 
-底层还有 find-my-way 的 radix tree 路由（匹配随**路径段数**增长，与注册路由条数基本无关）和 pino 异步 logger，三件套合起来叫"性能优先的现代 Node 框架"。
+4. **请求阶段固定**：常见成功路径是 onRequest → preParsing → 解析 body → preValidation → validate → preHandler → handler。另外还有 onTimeout、onError、onRequestAbort。
 
-## 实践案例
+5. **handler 出口三分**：返回 `undefined` 表示自己会 `reply.send`；thenable 交给 `wrapThenable`；其他值直接 `reply.send(result)`。
 
-### 案例 1：schema 同时管校验和序列化
+## 实践示例
 
-```ts
-app.post('/users', {
+### 案例 1：response schema 在启动后生效
+
+```js
+app.post("/users", {
   schema: {
     body: {
-      type: 'object',
-      required: ['name', 'email'],
-      properties: {
-        name: { type: 'string', minLength: 1 },
-        email: { type: 'string', format: 'email' },
-      },
+      type: "object",
+      required: ["name"],
+      properties: { name: { type: "string" } }
     },
     response: {
-      200: { type: 'object', properties: { id: { type: 'integer' }, name: { type: 'string' } } },
-    },
+      200: { type: "object", properties: { id: { type: "integer" }, name: { type: "string" } } }
+    }
   },
-  handler: async (req, reply) => {
-    const { name } = req.body as { name: string }
-    return { id: 1, name, secret: 'should-not-leak' }
-  },
-})
+  handler: async () => ({ id: 1, name: "Ada", secret: "no" })
+});
 ```
 
-**关键观察**：客户端**收不到** `secret`——response schema 没列它，序列化阶段被裁掉。这是**安全特性**也是**性能优化**（fast-json-stringify 跳过未列字段）。
+没有 schema 的路由不会走这条编译。`secret` 会不会从响应里消失，取决于序列化器对未声明字段的处理；本轮未运行 serializer，不能写成普遍保证。
 
-### 案例 2：plugin encapsulation——子里的东西父看不见
+### 案例 2：子插件看不见对面房间
 
-```ts
-app.decorate('rootHelper', () => 'global')
+```js
+app.decorate("rootHelper", () => "global");
 
 app.register(async (sub) => {
-  sub.decorate('inSub', () => 'only here')
-  sub.get('/sub', async () => sub.inSub())     // OK
-  sub.get('/up', async () => sub.rootHelper()) // OK：子能看父
-})
-
-// app.inSub  // ❌ undefined：父看不到子
+  sub.decorate("inSub", () => "only here");
+  sub.get("/sub", async () => sub.inSub());
+});
 ```
 
-**逐步解释**：`register` 内部 `Object.create(app)` 出 child；child 上加属性不会写回 parent。要"穿墙"得用 `fastify-plugin` 包：`fp(myPlugin)` 告诉 Fastify"这个插件不要起 scope"。
+子能顺着原型看到 `rootHelper`。父默认没有 `inSub`。要“穿墙”得给插件打 `skip-override`（生态里通常由 `fastify-plugin` 设置）。
 
-### 案例 3：hooks 替代 middleware
+### 案例 3：返回值决定谁负责发响应
 
-```ts
-app.addHook('onRequest', async (req) => {
-  req.log.info({ url: req.url }, 'incoming')
-})
-app.addHook('preHandler', async (req) => {
-  if (!req.headers.authorization) throw new Error('Unauthorized')
-})
+```js
+app.get("/plain", async () => ({ ok: true }));
+app.get("/manual", async (request, reply) => {
+  reply.send({ ok: true });
+});
 ```
 
-**对比 Express**：Express 全是 `app.use(mw)`，顺序靠注册顺序，语义全靠你自己记。Fastify 把"什么阶段做什么"写进 API：onRequest 永远第一、preHandler 永远在 handler 前。读代码时一眼知道执行顺序。
+第一段返回对象，框架 `reply.send`。第二段返回 `undefined`，框架假定 handler 已经或即将自己发送。两种混用时，重复 `send` 是运行期问题，本轮未执行。
 
 ## 踩过的坑
 
-1. **不写 response schema = 序列化红利大打折扣**：没 schema 的路由会回退到通用 `JSON.stringify`，吞吐明显掉一截（路由/封装等优化还在，但最肥的那块没了）。schema-first 的红利主要落在配了 schema 的路由上。
+1. **把 hook 数记成“八个工位”**：生命周期 hook 还有 onTimeout、onError、onRequestAbort；application hook 另有 onRoute、onRegister、onReady、onListen、preClose、onClose。
 
-2. **schema 是契约不是建议**：字段类型错配（schema 说 string、handler 返 number）会让 fast-json-stringify 在 prod 直接拼出 `{"email":123}` 这种不合法但能 parse 的 JSON；handler 多返字段 schema 只列 3 个，会被悄悄裁掉——dev 模式 strict 能提前抓到
+2. **以为 `route()` 当下就编译 schema**：编译挂在 avvio `preReady`。只登记路由、从不 `ready()`/`listen()`/`inject()`，校验器不会出现。
 
-3. **register 不是 use**：第一次写的人会困惑"为什么我 decorate 的 helper 在外面调不到"。要全局共享得 `fastify-plugin` 包一层。
+3. **把 `register()` 当成 `app.use()`**：封装边界是默认行为，不是可选文档风格。
+
+4. **从 `package.json` 读 Node 下限**：5.12.1 没有 `engines` 字段。LTS 文档把 Fastify 5 标成 Node.js 20、22；部署约束要另核。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 高并发 REST API / JSON 微服务（schema 编译收益最大）
-- 需要 OpenAPI 文档自动生成（schema 是单一来源）
-- 中大型项目想用 plugin encapsulation 做边界隔离
+
+- 需要 JSON Schema 同时约束输入校验和输出序列化的 HTTP API
+- 想用 plugin encapsulation 做模块边界，而不是共享一个线性中间件数组
+- 接受 `ready()` 启动栅栏，并主要在 Node HTTP/1.1 或 HTTP/2 上运行
 
 **不适用**：
-- 一次性脚本 / 简单内部工具（Express 几行更快）
-- Edge runtime（Cloudflare Workers / Deno Deploy）——Fastify bundle 偏大，Hono / Elysia 更合适
-- 想要类型自动从 schema 推到 TS——zod-based 的 Hono / Elysia 体验更顺，Fastify 要靠 `@fastify/type-provider-typebox`
 
-## 历史小故事（可跳过）
+- 只要几行 `(req, res, next)`、现有 Connect 中间件已经够用——看 [[express]]
+- 必须在登记路由的同步瞬间拿到编译后的 validator
+- 本轮未验证的 Edge / 非 Node 运行时；不能把文档宣传写成已测兼容
 
-- **2010 年**：Express 1.0，定义了 Node.js 的 middleware 范式，但 schema 不是它的关注点
-- **2013 年**：Koa 出来，async 中间件优雅了，但仍是中间件链思维
-- **2017 年**：Matteo Collina（Node.js TSC 成员）和 Tomas Della Vedova 觉得"该有个 schema-first 的"，开了 Fastify v0.x
-- **2018 年 8 月**：v1.0 发布，性能立刻成为社区话题
-- **2024 年**：v5 要求 Node ≥ 20，weekly downloads ~3M，已经是 Node web 框架前三
+## 固定版本边界
+
+- 本文绑定 `fastify/fastify@7d196a99...`，tag / npm `gitHead` / 包版本均为 `5.12.1`。
+- 核心依赖包括 `avvio`、`find-my-way`、`pino`、`@fastify/ajv-compiler`、`@fastify/fast-json-stringify-compiler`。
+- GET/HEAD/TRACE 视为 bodyless；DELETE/OPTIONS/PATCH/PUT/POST/QUERY 视为可能带 body。
+- 本文未安装依赖、未跑上游测试、未 listen，也未做吞吐对比；状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"编译期做完，运行期不动" 是性能的黄金法则**——schema → fn 这个套路适用于任何"反复用同一规则处理大量数据"的场景
-2. **封装边界 + 固定 Hook 比"想插就插" 更结构化**——Fastify 用 `Object.create` 在 JS 层做出 scope 隔离 + 八阶段固定 hook，思路可移植，且 FastAPI / Hono / Elysia 都已沿用 schema-first 路线，Express "代码即接口" 时代结束
+1. **封装是对象原型，不是目录约定**——`Object.create` 决定 decorate 的可见范围。
+2. **编译发生在启动栅栏，不在 API 调用瞬间**——schema 收益以 `preReady` 为界。
+3. **返回值是协议的一部分**——`undefined` / Promise / 普通值对应三种发送责任。
+4. **方法集合决定 parser**——bodyless 与 bodywith 是源码里的两张表，不是文档口误。
+
+## 应用型自测
+
+1. 只 `app.route(...)`、从不 `ready()` 或 `listen()`，response schema 会在登记当下编译吗？
+2. 普通 `register()` 里 `decorate('x')` 后，父 instance 默认能读到 `x` 吗？
+3. handler `return undefined` 且不调用 `reply.send`，框架会自动把返回值序列化出去吗？
+
+检查点：
+
+1. 不会。编译发生在 avvio `preReady`。
+2. 不能。默认会 `Object.create` 出子 scope。
+3. 不会。`undefined` 表示 handler 自己负责发送。
 
 ## 延伸阅读
 
-- 官方文档：[fastify.dev](https://fastify.dev/)（Getting Started 写得简洁，30 分钟跑通）
-- Matteo Collina 的演讲：[The Cost of Logging](https://www.youtube.com/watch?v=hVR-PGiNsv4)（讲为什么默认用 pino）
-- Plugin 写法实战：[fastify/example](https://github.com/fastify/example)
-- [[fastapi]] —— Python 同样是 schema-first 的代表，思路一脉相承
-- [[playwright]] —— 同 Node 生态、同样把"编译/启动期把动态判断消除"做到极致
+- 文档：[fastify.dev](https://fastify.dev/)
+- 固定源码：[fastify/fastify](https://github.com/fastify/fastify) —— 本文绑定提交 `7d196a998c422062a3aaa3f8041db91ad576cea0`
+- 封装实现：[lib/plugin-override.js](https://github.com/fastify/fastify/blob/7d196a998c422062a3aaa3f8041db91ad576cea0/lib/plugin-override.js)
+- 请求出口：[lib/handle-request.js](https://github.com/fastify/fastify/blob/7d196a998c422062a3aaa3f8041db91ad576cea0/lib/handle-request.js)
+- [[express]] —— 线性中间件对照
+- [[pino]] —— Fastify 默认 logger 依赖
 
 ## 关联
 
-- [[fastapi]] —— Python 版的 schema-first：Pydantic schema 同时管校验 / 文档 / 序列化
-- [[warp]] —— Rust 里同代的"现代 web 框架"，但用类型而非 schema 表达 route
-- [[playwright]] —— 同样 Node.js 生态，同样靠"启动期把动态消除"换性能
-- [[hindley-milner]] —— schema 编译为 fn 的思路，与类型推导"把检查移到编译期"哲学相通
-- [[ssa]] —— 编译期消除"运行期判断"的另一个工程典范
+- [[express]] —— 同一层 HTTP 服务器，扩展模型完全不同
+- [[pino]] —— 日志实现来自依赖，不是 Fastify 手写的同步 `console`
+- [[nestjs]] —— 可以选择 Fastify adapter
+- [[fastapi]] —— 另一条 schema-first 路线，运行时与编译器都不同
 
 ## 反向链接
 
