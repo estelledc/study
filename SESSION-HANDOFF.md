@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CH：Sinon / testdouble.js
+
+- supervisor 状态：writer epoch `complete`；等待 PR review，不 merge。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`。
+- objective：新增 sinon 与 testdouble 两页，绑定可达 STATIC_REVIEW revision，verification 保持 UNVERIFIED。
+- scope：两页、`docs/test-double-source-review-20260827-ch.md`、两份 receipt、taxonomy assignments、确定性派生与本 handoff。未占用开放 PR 已用 slug，未 merge。
+- activated_by：`explicit-parallel-writer-ch-20260827`。
+- detector fingerprint：origin/main 无 sinon / testdouble 页；开放 PR 也未占用这对 test-double slug。jest / mocha / vitest 已被其他 writer 占用，本轮不碰。
+- external delta 计数：本轮形成 1 个 PR；未 merge、未部署，D 轴不提升。
+- 已完成切片：
+  1. 绑定 `sinonjs/sinon@ab289e92...` / `22.1.0`（tag 与 npm `gitHead` 一致）。
+  2. 绑定 `testdouble/testdouble.js@293753e7...` / `3.20.2`（tag 与 npm `gitHead` 一致）。
+  3. 共享 provenance `docs/test-double-source-review-20260827-ch.md` 与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`git diff --check`、`audit:counts`、`audit:content-contract`（v2=91）、`audit:wikilinks` budget_failures=0、`audit:project-standard` `benchmark-aligned=22`。全量 `verify:ci` 见 PR checks。
+- budget：1 个可写切片；未安装上游依赖、未跑上游 test / loader / bundle。
+- blocker：无。本 PR 按授权不 merge。
+- 下一次 wake 条件：owner review / CI 变化，或新的显式 PARALLEL writer 授权。
+- 下一条命令：`source "$HOME/.nvm/nvm.sh" && nvm use 22.23.1 >/dev/null && node scripts/quality-gate.mjs src/content/docs/projects/sinon.md`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -59065,6 +59065,37 @@
       }
     },
     {
+      "id": "projects::sinon",
+      "area": "projects",
+      "slug": "sinon",
+      "title": "Sinon — 把 spy / stub / mock / 假时钟收进同一个 sandbox",
+      "description": "默认导出就是 sandbox；stub 按最长参数匹配选行为，ESM 不能直接 stub。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sinon/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
+      }
+    },
+    {
       "id": "projects::siyuan",
       "area": "projects",
       "slug": "siyuan",
@@ -61086,6 +61117,37 @@
       "atlas": {
         "chunk_id": "topic-projects-devops-containers-and-operations-01",
         "chunk_route": "/study/atlas/projects/topic-projects-devops-containers-and-operations-01/"
+      }
+    },
+    {
+      "id": "projects::testdouble",
+      "area": "projects",
+      "slug": "testdouble",
+      "title": "testdouble.js — 先排练一次调用，再决定返回或核对",
+      "description": "when/verify 吃的是全局最后一次 double 调用；模块替换靠 quibble，ESM 要 loader。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "测试"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/testdouble/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
       }
     },
     {
@@ -65867,7 +65929,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-testing-and-verification-01/",
-      "entries": 6
+      "entries": 8
     },
     {
       "id": "topic-projects-ui-and-frontend-frameworks-01",

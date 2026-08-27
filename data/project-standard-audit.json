@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 20,
+      "benchmark-aligned": 22,
       "needs-evidence": 941
     }
   },
@@ -18579,6 +18579,26 @@
       ]
     },
     {
+      "slug": "sinon",
+      "title": "Sinon — 把 spy / stub / mock / 假时钟收进同一个 sandbox",
+      "source": "https://github.com/sinonjs/sinon",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "siyuan",
       "title": "SiYuan — 国产块结构笔记",
       "source": "https://github.com/siyuan-note/siyuan",
@@ -20106,6 +20126,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "testdouble",
+      "title": "testdouble.js — 先排练一次调用，再决定返回或核对",
+      "source": "https://github.com/testdouble/testdouble.js",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "testing-library",

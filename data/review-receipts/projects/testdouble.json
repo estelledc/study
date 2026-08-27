@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "testdouble",
+    "digest_sha256": "b084f909ff665296d5036b3a357424ae4e8199e50365fc96d6ab39d94365aa91"
+  },
+  "source_revision": "293753e7380eab997a23d09014f4595313c2f2b0",
+  "research_input_sha256": "7406538124db78e369f94a372a29456391743d0d9e5e47158c2f03bda507e0f2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates rehearsal when/verify, last-in-wins stubbings, quibble CJS replace, and loader-gated replaceEsm."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "function/when/verify/store/replace/reset sources were inspected; teenytest, quibble loader, and examples were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Pinned to testdouble/testdouble.js v3.20.2 293753e7; npm gitHead matches tag. engines Node >=16. Published entry uses store files, not CallLog siblings."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:10:00.000Z"
+}

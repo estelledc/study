@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sinon",
+    "digest_sha256": "c1e827ce560f37f9030963522e64bd84f74fccb52f1402becbbdac3fdeb75d42"
+  },
+  "source_revision": "ab289e92cdd76caf8cec2b0a8c9a391283e6c9df",
+  "research_input_sha256": "7406538124db78e369f94a372a29456391743d0d9e5e47158c2f03bda507e0f2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates default sandbox, isolated createSandbox, longest withArgs match, onCall behaviors, and descriptor/ESM restore limits."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Sandbox, stub/spy/fake, behavior.invoke, replace/define, and fake-timers sources were inspected; mocha, timers, and adapters were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Pinned to sinonjs/sinon v22.1.0 ab289e92; npm gitHead matches tag. No engines field; compatibility is ES2023+ / maintained Node. No benchmark claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:10:00.000Z"
+}

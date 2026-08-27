@@ -2392,6 +2392,10 @@
       "topic_id": "projects-markdown-and-parsing"
     },
     {
+      "note_id": "projects::sinon",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::solid",
       "topic_id": "projects-ui-and-frontend-frameworks"
     },
@@ -2474,6 +2478,10 @@
     {
       "note_id": "projects::terraform",
       "topic_id": "projects-devops-containers-and-operations"
+    },
+    {
+      "note_id": "projects::testdouble",
+      "topic_id": "projects-testing-and-verification"
     },
     {
       "note_id": "projects::testing-library",
