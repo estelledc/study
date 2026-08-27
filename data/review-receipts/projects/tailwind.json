@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tailwind",
+    "digest_sha256": "1a58fc88e0419832c844b6a9ddde10a9445393a9b59f2dc34a8d3d83bd44ac47"
+  },
+  "source_revision": "c2b24dd15fed1c59dd521bd86082f520c9f5ad0d",
+  "research_input_sha256": "811ce73f77ad52cf4e03d18035e32620e67fa60066c08c502419d3c47dde6439",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-r",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains CSS-first compile/build split, Oxide scanner boundary, @theme/@source, and spacing function without claiming a runtime build."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-r",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "compile, parseCss, candidate important syntax, @utility rules, and integration Scanner imports were inspected; Oxide scan, tests, and optimize were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-r",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm tarball has no gitHead; this note is bounded to reachable GitHub tag v4.3.3 and does not claim compile-time or bundle measurements."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

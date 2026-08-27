@@ -2,10 +2,10 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 965,
+    "total": 968,
     "by_status": {
-      "benchmark-aligned": 69,
-      "needs-evidence": 896
+      "benchmark-aligned": 85,
+      "needs-evidence": 883
     }
   },
   "projects": [
@@ -2464,27 +2464,23 @@
     },
     {
       "slug": "bun",
-      "title": "Bun — JS 全能运行时",
+      "title": "Bun — 单二进制 JS/TS 运行时与工具链",
       "source": "https://github.com/oven-sh/bun",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "caddy",
@@ -4537,27 +4533,23 @@
     },
     {
       "slug": "deno",
-      "title": "Deno — 安全优先的 TypeScript/JavaScript 运行时",
+      "title": "Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时",
       "source": "https://github.com/denoland/deno",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "dgraph",
@@ -5487,27 +5479,23 @@
     },
     {
       "slug": "electron",
-      "title": "Electron — 用网页技术做跨平台桌面应用",
+      "title": "Electron — 自带 Chromium + Node 的跨平台桌面运行时",
       "source": "https://github.com/electron/electron",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "element-android",
@@ -9479,27 +9467,23 @@
     },
     {
       "slug": "koa",
-      "title": "Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架",
+      "title": "Koa — 用 ctx 与可替换 compose 编排洋葱中间件的 Node 框架",
       "source": "https://github.com/koajs/koa",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "kong",
@@ -10950,6 +10934,26 @@
       ]
     },
     {
+      "slug": "lodash",
+      "title": "Lodash — 以 iteratee 与 wrapper 组织的通用工具函数集",
+      "source": "https://github.com/lodash/lodash",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "lodestar",
       "title": "Lodestar — JS/TS 生态里的以太坊共识层客户端",
       "source": "https://github.com/ChainSafe/lodestar",
@@ -11501,49 +11505,41 @@
       "slug": "markdown-it",
       "title": "markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器",
       "source": "https://github.com/markdown-it/markdown-it",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "marked",
       "title": "marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器",
       "source": "https://github.com/markedjs/marked",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "marktext",
@@ -13170,27 +13166,23 @@
     },
     {
       "slug": "nestjs",
-      "title": "NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架",
+      "title": "NestJS — 用模块与 DI 组织 Node 后端的企业级框架",
       "source": "https://github.com/nestjs/nest",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "nethermind",
@@ -15397,27 +15389,23 @@
     },
     {
       "slug": "pixi",
-      "title": "PixiJS — 浏览器里画 2D 的高性能 GPU 引擎",
+      "title": "PixiJS — 浏览器 2D 场景图与多后端渲染器",
       "source": "https://github.com/pixijs/pixijs",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "planck",
@@ -16598,6 +16586,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "ramda",
+      "title": "Ramda — 自动柯里、data-last 的实用函数式工具库",
+      "source": "https://github.com/ramda/ramda",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "ranger",
@@ -17908,25 +17916,21 @@
       "slug": "sequelize",
       "title": "Sequelize — 老牌 Node ORM",
       "source": "https://github.com/sequelize/sequelize",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "sglang",
@@ -19691,25 +19695,21 @@
       "slug": "tailwind",
       "title": "Tailwind CSS — 工具类优先样式框架",
       "source": "https://github.com/tailwindlabs/tailwindcss",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "tanstack-form",
@@ -19825,27 +19825,23 @@
     },
     {
       "slug": "tauri",
-      "title": "Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用",
+      "title": "Tauri — 系统 WebView + Rust 后端的轻量桌面运行时",
       "source": "https://github.com/tauri-apps/tauri",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "tdengine",
@@ -20228,27 +20224,23 @@
     },
     {
       "slug": "threejs",
-      "title": "Three.js — 轻量 3D 渲染引擎",
+      "title": "Three.js — 浏览器 3D 场景图与 WebGL2 渲染器",
       "source": "https://github.com/mrdoob/three.js",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "thrift",
@@ -20780,25 +20772,21 @@
       "slug": "typeorm",
       "title": "TypeORM — Decorator-based ORM",
       "source": "https://github.com/typeorm/typeorm",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "typesense",
@@ -20920,6 +20908,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "unocss",
+      "title": "UnoCSS — 按需原子 CSS 引擎",
+      "source": "https://github.com/unocss/unocss",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "unqlite",
