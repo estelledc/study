@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "bytes",
+    "digest_sha256": "f05ab798df6da529d38b3bc67057d75e5a7f8986df5fc146ed7c38aeb93d26c0"
+  },
+  "source_revision": "9ddc13b6c66e0cb293616fba246e05db4b6cef4d",
+  "research_input_sha256": "21f404827b8089bebcfeb525317a4f25f83348705cea9ddfd49d6ccae583f99f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ew",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates 1024-only parse/format, narrow regex without bare B/KiB, and null-on-error contract."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ew",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected index.js parse/format, tests for parseInt fallback and 1024 thresholds; mocha was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ew",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm gitHead, tag 3.1.2 and bound SHA identify the same reachable revision; no SI/IEC switch in this package."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:50:00.000Z"
+}
