@@ -1,6 +1,6 @@
 ---
 title: "数据获取 / 路由 · 项目 · 第 1 组"
-description: "4 条 数据获取 / 路由 Atlas 分块"
+description: "6 条 数据获取 / 路由 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,12 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 4 条，稳定上限为 100 条。
+本分块共 6 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [path-to-regexp — 把路径模板编成正则再匹配或反编译](/study/projects/path-to-regexp/) | `path-to-regexp` | beginner | UNVERIFIED | 介绍 path-to-regexp 8 |
+| [route-recognizer — 把多条路由编进 NFA 再选出最静态的一条](/study/projects/route-recognizer/) | `route-recognizer` | beginner | UNVERIFIED | 介绍 route-recognizer 0 |
 | [SWR — 用全局 cache 和事件广播做 stale-while-revalidate](/study/projects/swr/) | `swr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TanStack Query — 用 Observer 订阅一份服务端状态](/study/projects/tanstack-query/) | `tanstack-query` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | `tanstack-router` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

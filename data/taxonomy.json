@@ -2264,6 +2264,10 @@
       "topic_id": "projects-ai-browser-automation"
     },
     {
+      "note_id": "projects::path-to-regexp",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
       "note_id": "projects::penpot",
       "topic_id": "projects-data-applications-and-saas"
     },
@@ -2378,6 +2382,10 @@
     {
       "note_id": "projects::rollup",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::route-recognizer",
+      "topic_id": "projects-data-fetching-and-routing"
     },
     {
       "note_id": "projects::rspack",
