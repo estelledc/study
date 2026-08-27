@@ -20,7 +20,7 @@
   - 两份 receipt：正文 digest、固定 revision 与共享审查文档 digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`、snapshot CURRENT。
   - `audit:content-contract`：`v2=89`、`legacy-unverified=1955`、blocking 0。
-  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：提交后在规范 Node 22.23.1 / npm 11.17.0 下复跑。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2285 HTML / 2284 sitemap URLs、23 Playwright a11y）。
 - budget：2 个 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
 - blocker（先于本切片存在，需人工处置）：规模 detector `tracked_files` 在 main 已超 baseline threshold；本轮未改 baseline、阈值或证据布局。
 - stop conditions：本轮只开 1 个 PR、不 merge；规模 baseline 处置、merge 与 deploy 均需单独授权。
