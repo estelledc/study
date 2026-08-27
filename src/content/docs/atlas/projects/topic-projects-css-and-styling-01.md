@@ -1,6 +1,6 @@
 ---
 title: "CSS / 样式 · 项目 · 第 1 组"
-description: "5 条 CSS / 样式 Atlas 分块"
+description: "7 条 CSS / 样式 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,11 +9,13 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 5 条，稳定上限为 100 条。
+本分块共 7 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | `emotion` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [PostCSS — 用插件链变换 CSS 的编译器](/study/projects/postcss/) | `postcss` | intermediate | UNVERIFIED | 把 CSS 解析成节点树，按插件 visitor 变换后再序列化 |
+| [Sass — 把 SCSS/Sass 编译成 CSS 的 Dart 实现](/study/projects/sass/) | `sass` | intermediate | UNVERIFIED | Dart Sass 官方实现，把 SCSS、缩进语法或纯 CSS 解析求值后再序列化成 CSS |
 | [styled-components — 用标签模板把 CSS 写进 React 组件的 CSS-in-JS 库](/study/projects/styled-components/) | `styled-components` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | `stylex` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | `tailwind` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
