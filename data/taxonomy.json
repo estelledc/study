@@ -1812,6 +1812,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::cac",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::caddy",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -1838,6 +1842,10 @@
     {
       "note_id": "projects::chroma",
       "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::citty",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::clack",

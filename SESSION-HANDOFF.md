@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FI：cac + citty 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；已形成 review-ready 分支，待 push + 单 PR。
+- 起始 ref：`99736a909`（当时 `origin/main`）。
+- objective：按用户指定 PARALLEL writer FI，把 argv-parser 双子 `cac` / `citty` 做成源码绑定的 study-v2 静态审查；仓库原无这两页，因此新建而不是回退到 commander/yargs。
+- scope：两页新正文、2 份 generation 1 receipt、`docs/argv-parser-source-review-20260827-fi.md`、taxonomy CLI 主题、派生 atlas / note-index / site-state / 公开规模文案、本 handoff；未改 commander/yargs 正文，未安装上游依赖，未跑上游测试或 benchmark。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-fi`。
+- detector fingerprint：`cac` / `citty` 无项目页；现有 argv-parser 页（commander/yargs）仍是 legacy。本轮按主目标新建两页，而不是改写 fallback 页。
+- external delta：用户授权 push + 一个 PR；未 merge、未 deploy，D 轴不因 merge 提升。
+- 完成切片：
+  1. `cac` 绑定 tag `v7.0.0` / `77f602fc...`（npm latest 同号、无 gitHead），修正 v7 为 `EventTarget` + `addEventListener`、action 门控校验、默认命令空名/`!`。
+  2. `citty` 绑定 tag `v0.2.2` / `9cb0edcc...`（与 npm `gitHead` 一致），修正 Resolvable 对象图、父 hook 包住子命令、`run`/`default` 互斥、内建 help/version 让位。
+  3. 新增共享 `docs/argv-parser-source-review-20260827-fi.md` 与两份 STATIC_REVIEW / UNVERIFIED receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，`evidence_state=UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:site-state` / `audit:project-standard` 通过。`verify:ci` 在首个 commit 之后跑。
+- budget：2 个小型 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 baseline 在 main 已超限，本轮未改阈值或证据布局。
+- stop conditions：一个 PR 已打开且未 merge 后停止；不部署。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

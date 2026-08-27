@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -37798,6 +37798,37 @@
       }
     },
     {
+      "id": "projects::cac",
+      "area": "projects",
+      "slug": "cac",
+      "title": "cac — 用命令树把 argv 收成 action",
+      "description": "Command And Conquer：EventTarget + mri，声明子命令后再 parse",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "CLI / 命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cac/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
       "id": "projects::caddy",
       "area": "projects",
       "slug": "caddy",
@@ -38649,6 +38680,37 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::citty",
+      "area": "projects",
+      "slug": "citty",
+      "title": "citty — 用对象定义描述 CLI，再异步跑下去",
+      "description": "Elegant CLI Builder：defineCommand + Resolvable 子命令 + plugin 钩子",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-cli-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-cli-tools",
+        "raw_category": "CLI / 命令行工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/citty/",
+      "atlas": {
+        "chunk_id": "topic-projects-cli-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
       }
     },
     {
@@ -65509,7 +65571,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-cli-tools-01/",
-      "entries": 69
+      "entries": 71
     },
     {
       "id": "topic-projects-communication-and-media-01",
