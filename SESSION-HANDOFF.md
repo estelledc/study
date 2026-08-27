@@ -16,7 +16,7 @@
   1. `fullcalendar` 绑定 annotated tag `v7.0.2` peel `f413ddfe...`；npm `gitHead` 为空，已披露。纠正 v7 包名、`render()` 不自动调用、daygrid plugin 与 Temporal peer 边界。
   2. `tui-calendar` 绑定 `calendar@2.1.3` / npm `gitHead` `99ee7029...`；wrapper tag 指向后续提交，已披露。纠正三视图工厂、`(id, calendarId)` 身份、默认统计与全局 DOMPurify hook。
   3. 新增共享 `docs/calendar-ui-source-review-20260827-cs.md` 与两份 generation 1 static receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` / `audit:wikilinks` / `audit:content-contract` / `audit:project-standard` 通过。`verify:ci` 在首个 push 之后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致，`evidence_state=UNVERIFIED`；`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci` 全绿（388 Node tests、changed-note quality gate 2/2、strict build 2287 HTML / 2286 sitemap URLs、23 Playwright tests）。`audit:content-contract` blocking 0、v2=91；`audit:project-standard` `benchmark-aligned=22`。
 - budget：2 个新建页、1 个可写切片、1 个 PR。
 - 剩余 blocker：需要 owner review；不得自合并。
 - 下一次 wake 条件：PR CI / review 变化，或 owner 给出 merge 授权。
