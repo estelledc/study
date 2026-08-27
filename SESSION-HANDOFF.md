@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AY：rxjs + redux-observable
+
+- status：writer epoch `complete`；形成 review-ready PR，未 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：为原先缺失的 `rxjs`、`redux-observable` 两页做 STATIC_REVIEW，保持 `UNVERIFIED`。
+- scope：两篇新建项目笔记、两份 generation 1 receipt、`docs/rxjs-redux-observable-source-review-20260827-ay.md`、taxonomy 归入 `projects-state-management`，以及 atlas / site-state / 公开计数派生文件；未改候选队列、政策阈值、xstate 或其他 open PR slug。
+- activated_by：`explicit-parallel-writer-ay-2026-08-27`。
+- detector fingerprint：目标 slug 不在开放 PR 中，本地也没有这两页；RxJS 稳定 tag `7.8.2` 与 npm `gitHead` 一致，redux-observable npm latest 是可达的 `v3.0.0-rc.3`。
+- external delta：GitHub/npm 只读核验 + 本地 blob-filtered clone；授权开 1 个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `rxjs` 绑定 `ReactiveX/rxjs@e5351d02...` / `7.8.2`，写清 subscribe 启动、unsubscribe≠complete、`switchMap`/`mergeMap`/`shareReplay` 默认值。
+  2. `redux-observable` 绑定 `a544c2d6...` / `3.0.0-rc.3`，写清 `run` 安装、reducer 先行、`ofType`+`isAction`、`mergeMap` 叠 run。
+  3. 新增共享审查记录与两份 generation 1 static receipt；项目审计 `benchmark-aligned` 18→20。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与 revision 一致；`audit:content-contract` 0 blocking。
+- budget：2 个内容切片 + 1 个派生/文档切片；单 writer；1 个 PR。
+- blocker：上游测试与真实 store 未跑；redux-observable 仍是 RC。
+- stop conditions：本 epoch 已完成；不得 merge。
+- 下一次 wake 条件：owner 审查本 PR，或新的显式范围授权。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

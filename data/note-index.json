@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -57161,6 +57161,37 @@
       }
     },
     {
+      "id": "projects::redux-observable",
+      "area": "projects",
+      "slug": "redux-observable",
+      "title": "redux-observable — 用 RxJS epic 接 Redux 5 的副作用中间件",
+      "description": "固定 3.0.0-rc.3 的 run、reducer-先行与 ofType 边界。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-state-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-state-management",
+        "raw_category": "状态管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/redux-observable/",
+      "atlas": {
+        "chunk_id": "topic-projects-state-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-state-management-01/"
+      }
+    },
+    {
       "id": "projects::regl",
       "area": "projects",
       "slug": "regl",
@@ -57793,6 +57824,37 @@
       "atlas": {
         "chunk_id": "topic-projects-infrastructure-utilities-01",
         "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
+      "id": "projects::rxjs",
+      "area": "projects",
+      "slug": "rxjs",
+      "title": "RxJS — 用订阅启动、用退订回收的推式流",
+      "description": "固定 7.8.2 的冷订阅、退订与展平/多播默认值。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-state-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-state-management",
+        "raw_category": "响应式编程 / 状态管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/rxjs/",
+      "atlas": {
+        "chunk_id": "topic-projects-state-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-state-management-01/"
       }
     },
     {
@@ -65839,7 +65901,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-state-management-01/",
-      "entries": 8
+      "entries": 10
     },
     {
       "id": "topic-projects-terminal-tools-01",
