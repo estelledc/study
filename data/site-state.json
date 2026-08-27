@@ -7,12 +7,12 @@
   },
   "project_standard": {
     "total": 961,
-    "benchmark_aligned": 36,
-    "needs_evidence": 925
+    "benchmark_aligned": 38,
+    "needs_evidence": 923
   },
   "content_contract": {
-    "v2": 105,
-    "legacy_unverified": 1939,
+    "v2": 107,
+    "legacy_unverified": 1937,
     "blocking": 0
   }
 }
