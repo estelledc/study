@@ -1956,6 +1956,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::expo",
+      "topic_id": "projects-mobile-development"
+    },
+    {
       "note_id": "projects::express",
       "topic_id": "projects-web-frameworks"
     },
@@ -2014,6 +2018,10 @@
     {
       "note_id": "projects::inngest",
       "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::ionic-framework",
+      "topic_id": "projects-mobile-development"
     },
     {
       "note_id": "projects::jaeger",

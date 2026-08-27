@@ -1,6 +1,6 @@
 ---
 title: "项目待复核映射 · 第 1 组"
-description: "28 条 暂未分类 Atlas 分块"
+description: "27 条 暂未分类 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 28 条，稳定上限为 100 条。
+本分块共 27 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -24,7 +24,6 @@ sidebar:
 | [DVC — 数据版本管理](/study/projects/dvc/) | `dvc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | `encore` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hermes — Facebook 的 React Native JS 引擎](/study/projects/hermes/) | `hermes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱](/study/projects/ionic-framework/) | `ionic-framework` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | `lapce` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [librosa — 把声音变成机器学习能吃的数字特征](/study/projects/librosa/) | `librosa` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | `litmus` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

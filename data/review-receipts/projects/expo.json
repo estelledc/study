@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "expo",
+    "digest_sha256": "1b9afae9a7be8192d0bd913e1f3d07908bdec2a6c571a0d7d4e03ba9a0574023"
+  },
+  "source_revision": "c300d2cc60c9e684e64f48d9bc90ea18a571d01d",
+  "research_input_sha256": "861b158d2bd4f301a46784a63d3e6da3423cd903414d1befc35f25af3e7b2375",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates config/prebuild CNG, Expo Go vs dev client vs production, and OTA-only JS/asset updates."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Expo.ts, registerRootComponent, getConfig, prebuild help, requireNativeModule, Updates.channel; Metro/EAS not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds reachable npm gitHead for expo@57.0.17 and discloses monorepo patch skew; no GitHub release tag."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:53:00.000Z"
+}

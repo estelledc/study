@@ -4,10 +4,10 @@
   "stats": {
     "summary": {
       "total": 2050,
-      "classified": 2003,
-      "unclassified": 47,
+      "classified": 2004,
+      "unclassified": 46,
       "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -19,10 +19,10 @@
       },
       "projects": {
         "total": 967,
-        "classified": 939,
-        "unclassified": 28,
+        "classified": 940,
+        "unclassified": 27,
         "unknown_difficulty": 959,
-        "empty_description": 955
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -42542,26 +42542,25 @@
       "area": "projects",
       "slug": "expo",
       "title": "Expo — 面向 React Native 的“开箱即用”应用生产线",
-      "description": "",
+      "description": "介绍 Expo SDK 57 如何用 config → prebuild/CNG、JSI 模块注册和 runtimeVersion 把开发、原生工程与 OTA 更新拆开。",
       "difficulty": "unknown",
       "canonical_topics": [
         "projects-mobile-development"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-mobile-development",
-        "matched_category": "移动开发",
         "raw_category": "移动开发"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/expo/",
       "atlas": {
@@ -45916,28 +45915,30 @@
       "area": "projects",
       "slug": "ionic-framework",
       "title": "Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱",
-      "description": "",
+      "description": "介绍 Ionic Framework 9.0.1 如何用 Stencil Web Components、mode 主题和 v9 拆开的 URL 路由 / ion-nav 堆栈做跨端 UI。",
       "difficulty": "unknown",
-      "canonical_topics": [],
+      "canonical_topics": [
+        "projects-mobile-development"
+      ],
       "classification": {
-        "state": "unclassified",
-        "source": "unmapped",
-        "topic_id": null,
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-mobile-development",
         "raw_category": "移动端跨平台"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/ionic-framework/",
       "atlas": {
-        "chunk_id": "unclassified-01",
-        "chunk_route": "/study/atlas/projects/unclassified-01/"
+        "chunk_id": "topic-projects-mobile-development-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
       }
     },
     {
@@ -65956,7 +65957,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-mobile-development-01/",
-      "entries": 9
+      "entries": 10
     },
     {
       "id": "topic-projects-monitoring-and-time-series-01",
@@ -66096,7 +66097,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/unclassified-01/",
-      "entries": 28
+      "entries": 27
     }
   ]
 }

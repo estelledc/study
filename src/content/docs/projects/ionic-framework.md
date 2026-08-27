@@ -1,59 +1,73 @@
 ---
 title: Ionic Framework — 用网页技术做跨端 App 的 UI 工具箱
-来源: 'https://github.com/ionic-team/ionic-framework'
-日期: 2026-07-08
+description: 介绍 Ionic Framework 9.0.1 如何用 Stencil Web Components、mode 主题和 v9 拆开的 URL 路由 / ion-nav 堆栈做跨端 UI。
+来源: https://github.com/ionic-team/ionic-framework
+日期: 2026-08-27
 分类: 移动端跨平台
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/ionic-team/ionic-framework
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: d696a6aecfee59f99eca3c712887a5195a811dbb
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 9.0.1
 ---
 
 ## 是什么
 
-**Ionic Framework** 是一套**用 HTML/CSS/JavaScript 写出接近原生手感的跨端 UI** 的开源工具箱（约 52k stars）。日常类比：像同一套店面装修图纸——iOS、Android、浏览器三家门店都能按图施工，招牌和按钮长得像同一品牌，但底层水电（原生能力）靠另一套管道（常见是 [[capacitor]]）接进去。
+**Ionic Framework** 是一套用 **HTML / CSS / JS Web Components** 做移动端手感 UI 的工具箱。日常类比：同一套店面装修图纸——按钮、列表、导航栈按 iOS 或 Material 两套 `mode` 施工；水电（相机、推送、文件系统）不在这份图纸里，常见是另接 [[capacitor]]。
 
-它**不**自己发明一套新运行时，而是建立在 **Web Components**（可复用的网页组件标准）上：你写页面结构和业务逻辑，再用 Capacitor（或旧生态 Cordova）打包成可上架的 App。Web Components 可以粗理解为"浏览器原生支持的自定义标签"——Ionic 的 `<ion-button>` 之类就是这类标签的产品化包装。
+固定 `v9.0.1` 的本体是 `@ionic/core`（Stencil 4 编译）。`@ionic/react` / `@ionic/vue` / `@ionic/angular` 都是 **同一套自定义元素的薄包装**：调用 `defineCustomElement()`，再桥接 props / 事件。仓库里没有 Capacitor 运行时，只有读取 `window.Capacitor` 的探测代码。
 
-```bash
-$ npm create @ionic/app@latest my-app -- --type=react
-$ cd my-app && ionic serve   # 浏览器里先跑通，再考虑装进手机壳
-```
+它不发明新的 JS 引擎，也不画系统原生控件。和 [[expo]] 的差别可以记一句：Ionic 画网页控件，Expo / RN 画原生视图。
 
 ## 为什么重要
 
-不理解 Ionic，下面这些事都没法解释：
+不理解“组件在 core、壳在 Capacitor、路由在框架适配器”，下面这些事会搅成一团：
 
-- 为什么很多团队能用**一个前端组**同时交 iOS / Android / Web，而不是养三套 native 人马
-- 为什么"hybrid App"从早期 WebView 套壳，进化到今天还能在企业里活着——组件与原生桥接分层了
-- 为什么 Angular / React / Vue 都能接同一套 Ionic 组件，而不必绑死某一框架
-- 为什么 PWA 和上架 App 可以共用同一套页面，只在打包层分叉
+- 为什么 Angular / React / Vue 能共用同一套 `<ion-button>`，却仍要各自的 router 包
+- 为什么改 CSS 变量就能换肤，而不用给每个按钮写 class
+- 为什么 v9 里把页面推进 `ion-nav`，地址栏却不再跟着变
+- 为什么“hybrid 慢”常常是首屏塞了太多组件，而不是 Ionic 自己又做了一套运行时
 
-## 核心要点
+## 核心机制与架构流程
 
-Ionic 可以拆成 **三层** 来看：
+固定 9.0.1 可以拆成五段：
 
-1. **UI 组件层（Ionic 本体）**：按钮、列表、导航栈、模态、Tab 等，按移动端习惯做好交互与动画。类比：装修图纸里的标准门窗型号——换城市也能装。
+1. **Stencil 出两份组件交付**。`core/stencil.config.ts` 同时打 lazy bundle（`@ionic/core/loader`）和 per-component 自定义元素（`@ionic/core/components/ion-*.js`）。路由、overlay、`ion-app` 不走自动生成的框架 proxy，由各框架包手写。
 
-2. **框架适配层**：官方支持 Angular / React / Vue（底层组件来自 Stencil 编译出的 Web Components）。类比：同一套零件，配三种说明书。
+2. **`mode` 决定皮肤，不是决定原生内核**。`initialize()` 的优先级是：用户传入的 `IonicConfig.mode` → `<html mode>` → `isPlatform(..., 'ios') ? 'ios' : 'md'`。然后给 `documentElement` 写 `mode` 属性并加上 `ios` / `md` class。组件还可沿祖先覆盖。主题色来自 SCSS 映射生成的 `--ion-color-primary` 等变量。
 
-3. **原生能力层（Capacitor / Cordova）**：相机、推送、文件系统等走插件，把 Web 代码装进系统壳。类比：图纸画完后，找水电工接真实水管——Ionic 管"长什么样"，Capacitor 管"能不能调摄像头"。
+3. **框架入口只做两件事**：加 `ion-ce` class（自定义元素构建没有 Stencil hydration），再调用 core 的 `initialize(config)`。React 是 `setupIonicReact`；Vue 是 `IonicVue.install`；Angular v9 默认走 standalone 的 `provideIonicAngular()`，`IonicModule` 已弃用。
 
-三者合起来：**业务与 UI 写一遍，目标平台在构建时切换**。和 React Native 的差别可以记一句：Ionic 画的是网页控件，RN 画的是系统原生控件——前者 Web 调试友好，后者滚动手感通常更"原生"。
+4. **v9 把 URL 路由和命令式堆栈拆开**。`ion-router` 只认 `ion-tabs` / `ion-router-outlet`（选择器写明 `:not([no-router])`，**不包括 `ion-nav`**）。`ion-nav` 变成不写 URL 的命令式栈；`setRouteId` / `getRouteId` / `updateURL` 已删。React 侧 `routerLink` 不是 React Router 的 `<Link>`：`createRoutingComponent` 拦截点击后走 `NavContext.navigate()`。`@ionic/react-router` / `@ionic/vue-router` 源码不在本轮 sparse 树里；BREAKING.md 要求 React Router **v6.4+**、Vue Router **v5**。
+
+5. **Overlay 是挂到 app 根上的自定义元素**。`createOverlay` 等 `customElements.whenDefined(tagName)`，`document.createElement`，`Object.assign` 选项（并打上 `hasController: true`），再 `appendChild` 到 app root。之后走元素自己的 `present()` / `dismiss()`。React 用 `createControllerComponent`（Alert / Toast 等）或 `createOverlayComponent`（Modal / Popover）；也可以声明式 `isOpen` / `trigger`。
+
+配置合并顺序：sessionStorage（`persistConfig`）→ 已有 `window.Ionic.config` → URL 查询 `ionic:` 前缀 → `setupIonicReact(config)` 等用户配置。`hardwareBackButton` 默认在 hybrid / CloseWatcher 可用时打开。
 
 ## 实践案例
 
-### 案例 1：最小页面 + 导航
+### 案例 1：React 入口只初始化 core，不自己重写按钮
 
 ```tsx
-import { IonApp, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/react';
+import { setupIonicReact, IonApp, IonPage, IonContent, IonButton } from '@ionic/react';
+
+setupIonicReact();
 
 export default function Home() {
   return (
     <IonApp>
       <IonPage>
-        <IonHeader>
-          <IonToolbar><IonTitle>报名</IonTitle></IonToolbar>
-        </IonHeader>
         <IonContent className="ion-padding">
-          <IonButton routerLink="/form">去填表</IonButton>
+          <IonButton>报名</IonButton>
         </IonContent>
       </IonPage>
     </IonApp>
@@ -61,20 +75,13 @@ export default function Home() {
 }
 ```
 
-**逐步解释**：`IonPage` 是一屏；`IonHeader`/`IonToolbar` 模拟原生顶栏；`routerLink` 走 Ionic 的页面栈动画，而不是整页刷新。若用 React Router，记得包一层 `IonReactRouter`，否则返回手势和浏览器后退会对不上。
+**逐部分**：
 
-### 案例 2：同一套代码交 Web + App
+- `setupIonicReact` 给 `<html>` 加 `ion-ce`，再 `initialize()`
+- `IonButton` 仍是 `<ion-button>` 自定义元素，不是再画一遍 React DOM 按钮
+- 若要页面栈动画，还要把框架 router 和 `IonRouterOutlet` 接上；本页未打开 `@ionic/react-router` 源码
 
-```bash
-$ ionic build                 # 产出 web 静态资源
-$ npx cap add ios && npx cap add android
-$ npx cap sync                # 把 web 产物拷进原生工程
-$ npx cap open ios            # 用 Xcode 继续签证书、上架
-```
-
-活动报名：浏览器给用户填表，线下扫码 App 复用同一表单组件；差的是 Capacitor 插件（推送 / 扫码），不是重写 UI。**逐部分**：`ionic build` 只产出网页；`cap add` 生成原生工程外壳；`cap sync` 把网页拷进去——三步别合成一步想。
-
-### 案例 3：主题 token 对齐设计系统
+### 案例 2：用 token 换肤，而不是覆盖每个组件
 
 ```css
 :root {
@@ -83,65 +90,92 @@ $ npx cap open ios            # 用 Xcode 继续签证书、上架
 }
 ```
 
-把设计稿里的主色写进 CSS 变量，Ionic 组件会跟着换肤（含暗色模式相关变量）。**逐部分**：改的是设计 token，不是每个按钮手写 class。暗色模式通常再设一套 `body.dark` 下的同名变量即可。
+`core.scss` 按调色板生成 `--ion-color-*`、`*-rgb`、`*-contrast`。`html.ios` / `html.md` 还会改默认字体变量。这是设计 token，不是“每个按钮手写 class”。
+
+### 案例 3：控制器创建的是 DOM 节点
+
+```ts
+import { toastController } from '@ionic/core';
+
+const toast = await toastController.create({
+  message: '已保存',
+  duration: 2000,
+});
+await toast.present();
+```
+
+`create` 并不“调用原生 Toast API”。它等到 `ion-toast` 定义好，建元素、赋 props、挂到 app root，再 `present()`。要声明式控制时，用组件的 `isOpen`，而不是再包一层幽灵 React 树。
 
 ## 踩过的坑
 
-1. **把它当 Native SDK**：重 GPU / AR / 低延迟音视频仍要原生模块；Ionic 解决的是 UI 与多数业务页，不是替代 Metal/Vulkan。
-2. **Capacitor 插件版本错配**：`@capacitor/camera` 与 `@capacitor/core` 主版本不一致时，iOS/Android 构建常红——锁同主版本并 `cap sync`。
-3. **导航栈生命周期漏清**：Tab + 多层 `IonRouterOutlet` 时，返回键与页面销毁不同步，会留下"幽灵页"占内存。
-4. **真机与浏览器样式差**：安全区、点击热区、字体回退在 Web 预览看不出来——至少用一台真机过一遍首屏。
-5. **首屏塞太多动态组件**：未懒加载时 WebView 启动慢；路由级拆包比"再骂 hybrid 慢"更有效。
+1. **把 Ionic 当成 Native SDK**：GPU / AR / 低延迟音视频仍要原生模块；本仓库只提供 UI 与多数业务页。
+2. **继续把 `ion-nav` 当路由器出口**：v9 源码和 BREAKING.md 都写明它不再更新 URL，也不再被 `ion-router` 选中。
+3. **React 仍按 v5 写 `component` / `exact` / `IonRedirect`**：v9 要求 React Router v6 的 `element`，重定向改 `<Navigate replace />`。
+4. **Capacitor 2 的 `isNative` 探测**：`platform.ts` 只认 `Capacitor.isNativePlatform()`；BREAKING.md 的底线是 Capacitor 7+、iOS 16+、Safari 16+、Chrome 89+。
+5. **把 `@ionic/core` 的内部路径当公共 API**：v9 加了 `exports` allowlist，未列出的路径在 Node ESM 下会断。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 团队以 Web 技能为主，要同时覆盖 iOS / Android / Web
-- 表单、列表、后台配套、活动页、中轻度交互的业务 App
-- 需要 PWA + 上架 App 双形态，且 UI 一致性优先于极致原生动画
-- 已有设计系统、希望用 CSS 变量快速映射到组件主题
+
+- 团队以 Web 技能为主，要同时覆盖 iOS / Android / Web，UI 一致性优先
+- 表单、列表、中轻度交互；主题能用 CSS 变量映射到设计系统
+- 接受 Angular 18+ / React 18–19 / Vue 3.5+ 这些 v9 peer 底线
+- 原生能力另选 [[capacitor]]（或遗留 [[cordova]]），不和 UI 层绑死
 
 **不适用**：
-- 复杂手势动画、大型 3D / AR、专业相机管线——应 React Native 定制视图或纯原生
-- 对启动时间 / 帧率有硬指标（游戏级）且不愿做原生桥
-- 已有成熟双端 native 代码库、只差几个 Web 页——不必整项目迁 Ionic
-- 强依赖平台专属 UIKit/Jetpack 控件且不允许 WebView 容器
 
-## 历史小故事（可跳过）
+- 必须像素级系统控件或极致手势——对照 [[react-native]] / [[expo]] / 纯原生
+- 对启动帧率有游戏级硬指标，又不愿做原生桥
+- 已经有成熟双端 native 库，只差几个 Web 页
+- 还停在 Capacitor 2 / React Router v5 / Angular NgModule 默认导入，又不能做 v9 迁移
 
-- **2013 年**：Drifty（后改 Ionic）发布早期 Ionic，建立在 AngularJS + Cordova 的 hybrid 路线上
-- **2016–2018 年**：Ionic 3/4 转向现代 Angular，并开始用 Stencil 把组件做成 Web Components
-- **2018–2019 年**：团队推出 Capacitor，逐步替代 Cordova 成为官方推荐原生桥
-- **2020 年代**：React / Vue 官方支持成熟；Ionic 定位成"UI 系统 + 可选原生壳"，而不是单一框架绑死
-- **今天**：企业后台配套 App、活动页、中轻度业务仍常见 Ionic；和 Flutter / React Native 比，它赌的是"Web 人才密度"而不是自研渲染引擎
+## 固定版本边界
+
+- 本文绑定 `ionic-team/ionic-framework@d696a6aecfee59f99eca3c712887a5195a811dbb`，即 annotated tag `v9.0.1` peel 后的 commit。tag 提交说明就是 `v9.0.1`。
+- 同树 `@ionic/core` / `@ionic/react` / `@ionic/vue` / `@ionic/angular` 均为 `9.0.1`。`lerna.json` 的 `version` 同为 `9.0.1`。
+- npm `@ionic/core@9.0.1` 与 `@ionic/react@9.0.1` 的 `gitHead` 是父提交 `ea91babf5fd26fe4993ac1a2d27fbb8f9989503c`（Renovate 更新 CodeQL action），比 tag 少那一次版本提交。本页绑定 tag peel，不绑定 npm `gitHead`。
+- v9.0.0 是 2026-08-19 的破坏性主版本；v9.0.1 只修 overlay 移位、picker-column、react-router 动画跳过等。
+- `@ionic/react-router`、`@ionic/vue-router` 以及编译产物 `dist/` / `loader/` 未纳入本轮 sparse 阅读。
+- 本文未在浏览器或真机运行、未执行 `cap sync`、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **统一开发 ≠ 自动统一体验**：体验来自组件约定、导航模型和真机测试，不是来自"写了一次 Web"。
-2. **跨端是能力映射**：UI 用 Ionic，原生能力用 Capacitor——两层问题不要混成一层骂。
-3. **插件与构建链决定节奏**：业务代码稳，版本矩阵不稳，照样交不出包。
-4. **先 Web 验证再接原生**：`ionic serve` 跑通主流程，再 `cap add`，比一上来就开 Xcode 省时间。
-5. **选型时问人才结构**：团队全是前端 → Ionic/Capacitor 摩擦小；团队全是 iOS/Android → 直接原生或 RN 往往更顺。
+1. **Ionic 的真相是“一套 CE + 三套说明书”**，不是三个独立 UI 库。
+2. **`mode` 管观感，Capacitor 管原生能力**，两层问题不要混着骂。
+3. **v9 以后 URL 路由和 `ion-nav` 堆栈是两条合同**。
+4. **Overlay 的控制器只是在造 DOM**，不调用系统 Toast / Dialog。
+
+## 应用型自测
+
+1. `initialize()` 没传 `mode`、`<html>` 也没写 `mode` 时，Android Chrome 上默认会落到 `ios` 还是 `md`？
+2. v9 的 `ion-router` 会不会把 `ion-nav` 当成 outlet？
+3. `toastController.create()` 成功后，页面上多出来的是系统原生 toast，还是一个 `ion-toast` 自定义元素？
+
+检查点：
+
+1. `md`。回退是 `isPlatform(win, 'ios') ? 'ios' : 'md'`。
+2. 不会。`OUTLET_SELECTOR` 只有 `ion-tabs` 与 `ion-router-outlet`。
+3. 后者。`createOverlay` 做的是 `document.createElement(tagName)` 再挂到 app root。
 
 ## 延伸阅读
 
-- 官方仓库：[ionic-team/ionic-framework](https://github.com/ionic-team/ionic-framework)
+- 官方仓库：[ionic-team/ionic-framework](https://github.com/ionic-team/ionic-framework) —— 本文绑定提交 `d696a6aecfee59f99eca3c712887a5195a811dbb`
 - 官方文档：[Ionic Docs](https://ionicframework.com/docs/)
 - Capacitor 文档：[Capacitor Docs](https://capacitorjs.com/docs)
-- [[capacitor]] —— Ionic 团队做的现代原生桥，几乎是标配搭档
-- [[cordova]] —— 旧一代 hybrid 桥，仍能在遗留项目里见到
-- [[react-native]] —— 另一条跨端路线：JS 驱动原生视图，而不是 WebView UI
-- [[flutter]] —— Dart + 自绘引擎，和 Ionic 的 Web 路线对照着看更清楚
+- [[capacitor]] —— 官方推荐的原生桥，不在本仓库发布
+- [[expo]] —— RN 托管工具链，对标“快速开箱”但视图模型不同
+- [[react-native]] —— JS 驱动原生视图的对照路线
 
 ## 关联
 
-- [[capacitor]] —— 把 Web 产物装进 iOS/Android 并调原生 API
-- [[cordova]] —— Capacitor 之前的主流 hybrid 桥接层
+- [[capacitor]] —— 把 Web 产物装进 iOS / Android 并调原生 API
+- [[cordova]] —— Capacitor 之前的 hybrid 桥，探测代码仍在
 - [[react-native]] —— 用原生视图而不是 Web 组件做跨端 UI
-- [[flutter]] —— 自带渲染引擎的跨端对照物
-- [[expo]] —— React Native 的托管工具链，对标 Ionic 的"快速开箱"
-- [[electron]] —— 桌面端 Web 壳，和 Ionic 移动端 Web 壳是亲戚思路
-- [[nativescript]] —— 另一条"用 JS 调原生 UI"路线，可与 Ionic 的 WebView 路线对照
+- [[flutter]] —— 自绘引擎对照
+- [[expo]] —— React Native 的配置驱动工具链
+- [[electron]] —— 桌面端自带 Chromium 的亲戚思路
+- [[nativescript]] —— 用 JS 调原生 UI，而不是 WebView
 
 ## 反向链接
 

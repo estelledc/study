@@ -13,9 +13,9 @@ sidebar:
 
 <div class="study-stats-strip">
   <div><strong>967</strong><span>项目总数</span></div>
-  <div><strong>939</strong><span>已有规范主题</span></div>
-  <div><strong>28</strong><span>暂未收纳进主题路线</span></div>
-  <div><strong>97.1%</strong><span>分类覆盖率（939 / 967，已分类 / 总数）</span></div>
+  <div><strong>940</strong><span>已有规范主题</span></div>
+  <div><strong>27</strong><span>暂未收纳进主题路线</span></div>
+  <div><strong>97.2%</strong><span>分类覆盖率（940 / 967，已分类 / 总数）</span></div>
 </div>
 
 ## 先选一条学习路径
@@ -77,7 +77,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | 区块链 | Blockchain | 59 | [第 1/1 组](/study/atlas/projects/topic-projects-blockchain-01/) |
 | 嵌入式系统 | Embedded Systems | 54 | [第 1/1 组](/study/atlas/projects/topic-projects-embedded-systems-01/) |
 | 通信与多媒体 | Communication and Media | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-communication-and-media-01/) |
-| 移动开发 | Mobile Development | 9 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
+| 移动开发 | Mobile Development | 10 | [第 1/1 组](/study/atlas/projects/topic-projects-mobile-development-01/) |
 | 通用开发工具 | General Developer Tools | 16 | [第 1/1 组](/study/atlas/projects/topic-projects-general-developer-tools-01/) |
 | 数据科学与 AI | Data Science and AI | 44 | [第 1/1 组](/study/atlas/projects/topic-projects-data-science-and-ai-01/) |
 | 后端与 API | Backend and APIs | 57 | [第 1/1 组](/study/atlas/projects/topic-projects-backend-and-apis-01/) |
@@ -85,7 +85,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 ## 暂未收纳进主题路线
 
 <details class="study-details">
-<summary>暂未收纳进主题路线（28 个）</summary>
+<summary>暂未收纳进主题路线（27 个）</summary>
 
 这些内容已经有笔记，但现有 frontmatter 还不能稳定映射到 canonical topic；这不是质量低的标记，只代表它们还没有进入精选学习路径。预算只允许数量下降；确需增长时必须审查 `data/taxonomy.json`。
 
@@ -96,5 +96,5 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 ## 数据质量报告
 
 - difficulty 未知：959
-- description 为空：955
+- description 为空：953
 - sidecar 主键：967 个唯一 `area::slug`
