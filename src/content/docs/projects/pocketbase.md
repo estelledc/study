@@ -1,160 +1,161 @@
 ---
 title: PocketBase — 一个 Go 二进制就是完整的后端
-来源: 'https://github.com/pocketbase/pocketbase'
+来源: https://github.com/pocketbase/pocketbase
 日期: 2026-05-30
 分类: backend-api
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/pocketbase/pocketbase
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: bc8ffed4e7265a70a6e8de76c0b0b48b945e19ef
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.40.1
 ---
 
 ## 是什么
 
-PocketBase 是一个**单文件后端**：你下一个几十 MB 的 Go 可执行文件，双击运行，立刻就拥有数据库、用户登录、文件上传、实时推送、可视化管理后台。日常类比：像装在一个保温杯里的厨房——杯子里塞着炉子、刀、砧板、水槽，打开就能炒菜，不用去租厨房。
+PocketBase 是一个把数据库、HTTP API、鉴权、文件和实时订阅压进同一进程的后端。日常类比：像把炉子、砧板和水槽塞进一个保温杯——打开就能炒菜，不用再租一间厨房。
 
-它把"开个网站后端"传统上要拼的几样东西（PostgreSQL + Redis + 后端框架 + 鉴权服务 + 管理面板）压进一个二进制：
+固定 `v0.40.1` / `bc8ffed4...` 的启动面是 `pocketbase.New()` 加 `Start()`：先嵌入 `core.BaseApp`，再注册 `serve` / `superuser`。无域名参数时，`serve` 默认听 `127.0.0.1:8090`；数据目录默认是可执行文件旁的 `pb_data`。
 
-```bash
-./pocketbase serve --http=0.0.0.0:8090
-# 8090 端口立刻有了：
-# - 完整 REST API（增删改查任意 collection）
-# - WebSocket / SSE 实时订阅
-# - 多种登录方式（邮箱、OAuth）
-# - 浏览器打开 /_/ 就是 Admin 控制台
+```go
+app := pocketbase.New()
+if err := app.Start(); err != nil {
+    log.Fatal(err)
+}
 ```
 
-数据全存在本地 `pb_data/` 目录的 SQLite 文件里，部署就是 `scp` 一下二进制和数据目录。
+`Start()` 本身不监听端口，它只是把系统命令挂到 cobra 再 `Execute()`。真正的 HTTP 路由在 `apis.NewRouter`：`/api/collections/{collection}/records`、`/api/realtime`、auth、file、batch。
 
 ## 为什么重要
 
-不理解 PocketBase 的设计，下面这些事都没法解释：
+不读这条主链，下面这些事都会被旧印象带偏：
 
-- 为什么有人会**主动放弃 Firebase 的全球 CDN** 选 PocketBase——是怕 vendor lock-in 和按月计费
-- 为什么 SQLite 在 2026 年突然又火——单机性能足够 80% 的 SaaS 场景，且省去整个数据库运维
-- 为什么"BaaS = cloud-only"是一个被打破的等式——本地文件 + Go 二进制就够用
-- 为什么 Hacker News 上做副业 SaaS 的人越来越多说"先用 PocketBase 跑 MVP"
+- 为什么“一个二进制”不等于“没有规则引擎”——collection rule 会直接变成 SQL 过滤
+- 为什么前端 `subscribe()` 不能单独成立——SSE 连接和订阅列表是两次 HTTP
+- 为什么多实例不能只复制二进制——默认文件在 `pb_data/storage`，SQLite 也在同一目录
+- 为什么 0.40 不能当 0.39 的静默补丁——最低 Go 是 1.27，JSON 已切到 `encoding/json/v2`
 
-## 核心要点
+## 核心要点：架构与请求流程
 
-PocketBase 的设计哲学可以拆成 **三条**：
+可以把固定版本拆成四段：
 
-1. **一切嵌入**：数据库（SQLite）、Web 服务器（Go net/http）、Admin UI（嵌入的 SPA）、文件存储（本地目录）全编进同一个二进制。类比：瑞士军刀——所有工具都在一把刀里，不用单独带剪刀和起子。
+1. **进程装配**：`NewWithConfig` 建 `BaseApp`（连接池、query timeout、数据目录），`OnBootstrap` 才打开 SQLite。默认 DSN 带 `busy_timeout(10000)`、`journal_mode(WAL)` 和 `_defensive=1`。
 
-2. **Schema-driven REST**：在 Admin UI 建 collection 定义字段，立刻自动生成对应的 REST endpoint（`/api/collections/posts/records`），无需写任何路由或 ORM 代码。类比：拼乐高——你定义形状，PocketBase 把零件库出货。
+2. **Schema-driven CRUD**：`GET/POST /api/collections/{collection}/records` 与 `GET/PATCH/DELETE .../{id}`。`ListRule == nil` 时非 superuser 直接 403；非空 rule 作为 filter 与客户端 `filter` 同一查询执行。这是刻意的性能/正确性折中，不是两次鉴权。
 
-3. **实时订阅作为一等公民**：每个 collection 都自带 `subscribe` 能力，前端 SDK 一行调用就能监听变更（基于 SSE）。类比：报纸订阅——一旦某个版面有新闻，邮递员立刻送上门，不用每天去报刊亭问。
+3. **Realtime 两步**：`GET /api/realtime` 建立 SSE，先推 `PB_CONNECT`（带 `clientId`），空闲 5 分钟、最长 30 分钟；`POST /api/realtime` 再用同一个 `clientId` 提交最多 1000 条 subscription。SDK 的 `collection.subscribe` 只是这层协议的包装，本仓不包含 JS SDK。
 
-三条加起来就是它的口号："**one file, one backend**"——一个文件，一个完整后端。
+4. **钩子双入口**：Go 侧 `app.OnRecordCreate("orders").BindFunc(...)` 必须 `e.Next()`；JS 侧由 `plugins/jsvm` 加载默认 `pb_data/../pb_hooks` 下的 `*.pb.js` / `*.pb.ts`。两者都是 tagged hook，不是“创建后自动发邮件”的隐藏魔法。
 
 ## 实践案例
 
-### 案例 1：5 分钟起一个待办应用后端
+### 案例 1：用 HTTP 合同建一条 record
 
-```bash
-# 下载 + 启动
-wget https://github.com/pocketbase/pocketbase/releases/download/v0.39.0/pocketbase_linux_amd64.zip
-unzip pocketbase_linux_amd64.zip && ./pocketbase serve
-# 浏览器打开 http://127.0.0.1:8090/_/
-# 在 Admin UI 里建 collection: todos { title: text, done: bool }
+```http
+POST /api/collections/todos/records
+Content-Type: application/json
+
+{"title":"买菜","done":false}
 ```
 
-前端立刻可以这样调：
+对应实现是 `recordCreate`：先找 collection，再看 `CreateRule`。规则为 `nil` 时只有 superuser 能写；规则为非空字符串时，会先造一条 dummy row 用同一套 filter 表达式探路，再 `form.Submit()`。没有单独的 ORM 层。
 
-```js
-import PocketBase from 'pocketbase'
-const pb = new PocketBase('http://127.0.0.1:8090')
-const todo = await pb.collection('todos').create({ title: '买菜', done: false })
-const list = await pb.collection('todos').getFullList()
-```
-
-**没写一行后端代码**——CRUD 全部由 PocketBase 根据 schema 自动生成。
-
-### 案例 2：用 Go hooks 注入业务逻辑
-
-PocketBase 暴露事件钩子，你把它当库 import 进自己的 Go main：
+### 案例 2：Go hook 插在创建链上
 
 ```go
-import "github.com/pocketbase/pocketbase"
-import "github.com/pocketbase/pocketbase/core"
-
 app := pocketbase.New()
 app.OnRecordCreate("orders").BindFunc(func(e *core.RecordEvent) error {
-    // 创建订单时自动发邮件
-    sendEmail(e.Record.GetString("user_email"))
+    // 副作用必须自己保证可重入；失败应在 Next 前返回
     return e.Next()
 })
-app.Start()
+_ = app.Start()
 ```
 
-**两层用法**：纯零代码（cli serve）适合原型；嵌入 Go 写 hooks 适合需要定制规则的产品。
+`OnRecordCreate` 与 `OnRecordCreateRequest` 不是同一层：前者跟模型保存走，后者跟 HTTP handler 走。只绑其中一个，不能假定另一条也触发。
 
-### 案例 3：实时协作清单
+### 案例 3：Realtime 先连后订
 
-```js
-// 客户端订阅 collection 的所有变更
-pb.collection('todos').subscribe('*', (e) => {
-    console.log(e.action, e.record)
-    // action: create / update / delete
-    // 立刻更新 UI
-})
+```http
+GET /api/realtime
+Accept: text/event-stream
+
+POST /api/realtime
+Content-Type: application/json
+
+{"clientId":"<from PB_CONNECT>","subscriptions":["todos"]}
 ```
 
-服务端是 SSE（Server-Sent Events）单向推送，多个浏览器同时订阅时变更秒同步。**不需要自己搭 WebSocket gateway 或 Redis pub-sub**。
+`POST` 会核对 client IP，并禁止已经鉴权的连接改成另一个身份。只开 SSE、不 POST，订阅列表为空。
 
 ## 踩过的坑
 
-1. **0.x 不保证向后兼容**：从 0.22 升 0.23 可能要改 hook 签名，每次升级先读 release notes 的 migration 段，别盲升。
-
-2. **SQLite 写并发瓶颈**：默认 WAL 模式下读并发好，写仍是单线程。每秒 > 几百次写入时性能掉得厉害，要么前置队列、要么换 PostgreSQL fork（比如 [[supabase]]）。
-
-3. **本地文件存储不能多实例**：默认上传文件存 `pb_data/storage/`，如果你跑两个 pod 各自有本地盘，文件就各存一半。横向扩展前必须配置 S3-compatible 后端（MinIO 也行）。
-
-4. **SSE + 浏览器 6 连接限制**：一个 origin 同时只能 6 个长连接，订阅多个 collection 会被吃满。同站点其他 fetch 会被堵——大型应用要做订阅复用或换 WebSocket 库。
+1. **把 `ListRule == nil` 当成“公开列表”**：源码是反过来的——`nil` 只给 superuser。空字符串才是“无额外 filter”。
+2. **以为 `timeout` 和 SSE 共用一个 write deadline**：`realtimeConnect` 会把 write deadline 清掉；连接寿命由 idle/max timer 管，不是全局 `WriteTimeout`。
+3. **两个进程共用一份 `pb_data` 却不配 S3**：`NewFilesystem()` 在 `settings.S3.Enabled` 为假时写 `pb_data/storage`。本地盘分叉后文件只在其中一个实例。
+4. **把源码里的 `Version = "(untracked)"` 写成发行号**：二进制发行靠 tag；本页绑定 `v0.40.1` 提交，不把该字面量当 SemVer。
+5. **0.40 当补丁升**：CHANGELOG 写明最低 Go 1.27，并迁移 `encoding/json/v2`；命令错误现在会以非零码退出，旧的 `cmd && next` 脚本会断。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 副业 SaaS / MVP / 内部工具——5 分钟起站，几乎零运维
-- 数据量 < 100 GB、写 QPS < 100 的中小应用
-- 教学项目和黑客松——讲清楚后端 4 件套不绕弯
-- 离线优先的 desktop / mobile app——把 PocketBase 当本地"小后端"嵌入
+
+- 单机 MVP / 内部工具，能接受一份 `pb_data` 目录
+- 需要 collection rule 当行级 filter，而不是另写一层 BFF
+- 想用 Go 或 `pb_hooks` 把副作用挂在同一进程
 
 **不适用**：
-- 高写并发（电商秒杀、实时计费） → 选 Postgres + 分布式
-- 多区域部署 / 跨机房 → SQLite 单机，没有原生分片
-- 需要复杂权限系统（行级 ABAC、多租户隔离） → 用 [[supabase]] 的 Postgres RLS 更直接
-- 强合规审计（SOC2 / 金融）→ 0.x 还没成熟到这个程度
 
-## 历史小故事（可跳过）
+- 多区域、多副本写入——默认 SQLite 单文件，不是分布式 SQL
+- 把实时订阅当成无限长连接——固定实现 30 分钟会拆线
+- 需要跨实例共享上传文件却不配 S3
+- 不能接受 0.x 的 hook / JSON / 退出码变化
 
-- **2022 年 8 月**：保加利亚开发者 Gani Georgiev 一个人开源 v0.1，README 一句话："Open Source backend for your next SaaS and mobile app in 1 file"。
-- **2023 年**：星标突破 20k，社区开始讨论"是不是 Firebase 的本地替代"。
-- **2024-2025 年**：v0.20+ 引入 hooks 系统，用户可以把 PocketBase 当 Go 库 import 进自己代码，从"零代码 BaaS"扩展为"轻量后端框架"。
-- **2026 年 5 月**：v0.39 发布，star 45k+，仍未到 1.0——作者坚持 "ready when ready"，不被 hype 推着发。
-- 整个项目 **一个全职 maintainer**——这种规模在主流 BaaS 里独一份。
+## 固定版本边界
+
+- 本文绑定 `pocketbase/pocketbase@bc8ffed4e7265a70a6e8de76c0b0b48b945e19ef`，tag `v0.40.1`。
+- 默认驱动是 `modernc.org/sqlite` 1.57.0；连接池默认 `DataMaxOpenConns=120`、`QueryTimeout=30s`。
+- 未执行 `serve`、未打开 SQLite、未跑上游测试；状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **简单不等于功能少**——把 80% 场景压进单二进制，远比再造一个 cloud BaaS 有价值
-2. **SQLite 在 2026 年是被严重低估的后端选型**——单机性能 + 零运维 + 文件级备份
-3. **嵌入式 Admin UI 是降低后端门槛的关键**——零代码能跑 demo，写代码能扩功能，两个人群同时覆盖
-4. **vendor lock-in 的反向力量很大**——大量开发者愿意为"一个二进制 + 一份数据"放弃云的弹性
+1. **“单二进制”真正省下的是进程拓扑，不是规则**——rule、hook、SSE 订阅仍是三条独立合同。
+2. **默认拒绝写在 rule 指针上**——`nil` 与 `""` 语义相反，不能靠 Firebase 经验外推。
+3. **实时通道和订阅列表分开**，才能解释重连、换 token 和 IP 校验。
+4. **本地盘是隐藏的分片键**——文件与 SQLite 都在 `pb_data`，横向扩展先改存储合同。
+
+## 应用型自测
+
+1. 某 collection 的 `ListRule` 是 `nil`。匿名请求 `GET /api/collections/posts/records` 会得到列表吗？
+2. 客户端只建立了 `GET /api/realtime`，没有 POST。能收到 `todos` 的 create 事件吗？
+3. 两个容器各挂自己的空盘，都没开 `settings.S3`。上传的文件会出现在两个实例里吗？
+
+检查点：
+
+1. 不会。`ListRule == nil` 时只有 superuser 能 list。
+2. 不会。SSE 只先推 `PB_CONNECT`；订阅要靠 `POST /api/realtime`。
+3. 不会。默认文件系统是各自的 `pb_data/storage`。
 
 ## 延伸阅读
 
-- 官方文档：[pocketbase.io/docs](https://pocketbase.io/docs/)（API + hooks + JS/Dart SDK 全在一处）
-- Gani 的 blog：[ganigeorgiev.com](https://ganigeorgiev.com/)（讲为什么要做单文件后端）
-- 视频：[Fireship — PocketBase in 100 Seconds](https://www.youtube.com/watch?v=Wqy3PBEglXQ)（俯瞰式 demo）
-- [[sqlite-2022]] —— 理解 PocketBase 选 SQLite 的底气在哪
-- [[supabase]] —— 选 Postgres 路线的同类，对比"自托管 vs 全托管"
-- [[appwrite]] —— 另一个开源 BaaS，更重（Docker Compose）但功能更全
+- 官方文档：[pocketbase.io/docs](https://pocketbase.io/docs/)
+- 固定源码：[pocketbase/pocketbase](https://github.com/pocketbase/pocketbase) —— 本文绑定提交 `bc8ffed4e7265a70a6e8de76c0b0b48b945e19ef`
+- [[appwrite]] —— Compose 集群路线的开源 BaaS，对照单进程与多 worker
+- [[supabase]] —— Postgres + RLS 路线，对照 SQLite + collection rule
 
 ## 关联
 
-- [[sqlite-2022]] —— PocketBase 的存储底座，单文件数据库的 30 年验证
-- [[supabase]] —— 同赛道的 Postgres + 云托管派，对照看清楚两种 BaaS 哲学
-- [[appwrite]] —— Docker Compose 路线的开源 BaaS，对比"重容器 vs 单二进制"
-- [[fastify]] —— 当你把 PocketBase 当 Go 库不够用时的 Node.js 同类思路
-- [[fiber]] —— Go 生态另一个轻量 web 框架，和 PocketBase 的 net/http 选型对比
-- [[express]] —— 最经典的 Node.js 后端框架，PocketBase 的"一个文件"是反向思路
+- [[sqlite-2022]] —— 默认存储引擎的背景，不代替本页的 DSN / defensive 合同
+- [[supabase]] —— 同赛道的 Postgres 派
+- [[appwrite]] —— 同赛道的容器集群派
+- [[fiber]] —— 只要 Go HTTP、不要嵌入式 BaaS 时的另一条路
 
 ## 反向链接
 

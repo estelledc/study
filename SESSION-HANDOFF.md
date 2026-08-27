@@ -2,6 +2,35 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AQ：pocketbase + appwrite
+
+- supervisor 状态：writer epoch `running` → 内容切片完成，等待 `verify:ci`；PR 未 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：本分支 `cursor/baas-pocketbase-appwrite-aq-66fa`。
+- status：`running`
+- objective：在 supabase/firebase 不可执行后，把最近的开源 BaaS 对 `pocketbase` 与 `appwrite` 迁成绑定固定 revision 的 `study-v2` 页；evidence 为 `STATIC_ANALYSIS` / `UNVERIFIED`，review_mode 为 `STATIC_REVIEW`。
+- scope：两页项目笔记、共享审查记录 `docs/baas-source-review-20260827-aq.md`、receipt 与确定性派生索引、本交接；2 个 ignored worktree。未改候选队列、政策阈值、禁止 slug，未启动上游服务。
+- activated_by：`explicit-user-goal-parallel-writer-aq-20260827`。
+- detector fingerprint：`supabase/supabase` ≈ 2.4 GiB；仓库无 `firebase` 页；开放 PR 未占用 `pocketbase`/`appwrite`；两页缺 pinned revision / evidence boundary / self-test，且旧正文含未绑定 star、v0.39 下载链和 InfluxDB 拓扑。
+- external delta 计数：将推分支并开 1 个 PR；未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. 放弃 supabase/firebase：monorepo 超预算，且无 firebase slug。
+  2. `pocketbase` 绑定 `pocketbase/pocketbase@bc8ffed4...` / `v0.40.1`，纠正 `ListRule == nil`、SSE+POST 订阅、本地 `pb_data/storage`、Go 1.27 / json v2。
+  3. `appwrite` 绑定 `appwrite/appwrite@9f8423e2...` / `1.9.6`，纠正 TablesDB 替换面、`documentSecurity` 默认 false、Compose 为 MariaDB/Mongo/Postgres/Redis 且无 InfluxDB。
+  4. 新增 `docs/baas-source-review-20260827-aq.md` 与两份 generation 1 static receipt。
+- acceptance_checks：
+  - 两页 `quality-gate.mjs`：pass，0 advisory。
+  - 两份 receipt：digest 与固定 revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `audit:content-contract`：projects `v2=20`、`legacy-unverified=941`、blocking 0。
+  - `STUDY_CHANGED_FROM=e20d4ddff npm run verify:ci`：待本分支首提后跑。
+- budget：2 个 blob-filter worktree（约 20 MB / 74 MB）+ 2 页静态源码迁移；单 writer。
+- blocker：无；禁止 slug 未写入。
+- stop_conditions：一个 PR 完成后停止；未获 merge 授权。
+- 下一次 wake 条件：owner review / CI 状态变化。
+- 下一条命令：在本 PR 上 review；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

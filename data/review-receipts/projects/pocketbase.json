@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pocketbase",
+    "digest_sha256": "ea2eceb758a39afd83c29221d797631a1170ba0faf1377821f78ca2989044871"
+  },
+  "source_revision": "bc8ffed4e7265a70a6e8de76c0b0b48b945e19ef",
+  "research_input_sha256": "ef5a221c9d5dd2700d81c71cf61855655c5a44f7ae22e6da05bea66097b5577b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-aq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains serve defaults, nil vs empty collection rules, SSE connect vs POST subscribe, and local storage vs S3."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-aq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected router, record CRUD, realtime timers, tagged hooks, sqlite defensive DSN, and jsvm hooks dir; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-aq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable v0.40.1 tag commit; source Version literal remains (untracked) and is not treated as SemVer."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:45:00.000Z"
+}
