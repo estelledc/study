@@ -15,7 +15,7 @@
   1. `tinypool` 绑定 annotated tag `v2.1.2` → `5e18382a9aaa3344035905384b18a88a9da8c8bb`。
   2. `piscina` 绑定 lightweight tag `v5.3.1` → `6a23286fb7e3d28aa1745add5014f7187bc0389a`；披露未绑定 `v6.0.0-rc.4`。
   3. 共享审查文档与两份 STATIC_REVIEW receipt；派生刷新后 `benchmark-aligned=77`。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:project-standard` CURRENT；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致；`git diff --check` 通过。`verify:ci` 在首个 commit 之后跑。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0、v2=146；`audit:project-standard` CURRENT、`benchmark-aligned=77`；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致；`git diff --check` 通过。`STUDY_CHANGED_FROM=99736a909 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全部门禁通过（本机首次 a11y 因缺 Playwright browser 失败，安装 Chromium 后 23/23 通过；未改仓库门禁）。
 - budget：2 个 ignored worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：PR 已开且未授权 merge 后停止。
