@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pkg-types",
+    "digest_sha256": "20994f055cc1e5c361cc22edd0c88f9fad5f23b22de2840d19237b94fed5ccf3"
+  },
+  "source_revision": "6dc514b530123f2e4147727019dba6d128a0754f",
+  "research_input_sha256": "231f0e19b3f87b4d3ff3c32ceb381f0d2229a6afdd9b59eb2d7cd94fdc9bfd82",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates readPackage vs readPackageJSON, node_modules search stop, cache opt-in, and workspace direction."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected findFile, package/tsconfig/gitconfig utils, and fixture tests; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "npm 2.3.1 has no gitHead; claims stay bounded to reachable tag 6dc514b5 and UNVERIFIED static review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

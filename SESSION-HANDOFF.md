@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FK：mlly + pkg-types 静态审查
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`99736a90976f0b3d0a18bc16b9ab04c9c91254f1`（`origin/main`，#76 merge 后）。
+- objective：按用户指定的 PARALLEL writer FK，为 UnJS ESM 工具对 `mlly` 与 `pkg-types` 新建源码绑定的 `study-v2` 页；证据为 `STATIC_REVIEW` / `UNVERIFIED`；一个 PR，不 merge。
+- scope：两份新项目页、2 份 generation 1 receipt、共享审查文档 `docs/esm-package-utils-source-review-20260827-fk.md`、note-index / project-standard / site-state / atlas / 公开计数文案、本 handoff；未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-fk-2026-08-27`。
+- detector fingerprint：仓库无 `mlly` / `pkg-types` 页；该对是边界互补的 ESM 包工具（模块 resolve vs package.json/tsconfig 读写）。
+- external delta 计数：分支将 push 并打开 1 个 PR（用户显式授权 push+PR）；未 merge、未 deploy。
+- 已完成切片：
+  1. `mlly` 绑定 tag `v1.8.2` / `c5ce4e5596761b9d2b063bcf82a5160d76e8c2cf`（npm `gitHead` 与 tag peel 一致），修正同步 `_resolve`、`createResolve` 展开顺序、`isValidNodeImport` 最终看 `!hasESMSyntax`、`evalModule` 不自动改写相对 import。
+  2. `pkg-types` 绑定 tag `v2.3.1` / `6dc514b530123f2e4147727019dba6d128a0754f`（npm 无 `gitHead`，已披露），修正 `readPackage` vs `readPackageJSON`、`node_modules` 搜索下界、cache 需显式打开、workspace 最近/最远方向。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；新页带 `description` + `difficulty: intermediate`，避免撑破 taxonomy 预算。
+- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；receipt 与正文 digest / revision 一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:links` / `audit:wikilinks` 已跑。全量 `verify:ci` 在提交后继续。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态源码笔记；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改 baseline、阈值或证据布局。
+- stop conditions：一 PR 已开且未 merge 即结束；merge / deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=99736a90976f0b3d0a18bc16b9ab04c9c91254f1 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

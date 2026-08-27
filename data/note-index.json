@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -51042,6 +51042,38 @@
       }
     },
     {
+      "id": "projects::mlly",
+      "area": "projects",
+      "slug": "mlly",
+      "title": "mlly — 给 Node ESM 补齐 resolve、interop 和语法探测",
+      "description": "介绍 mlly 如何用同步 ESM resolve、interopDefault 和语法探测补齐 Node 模块工具。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "matched_category": "前端工程化",
+        "raw_category": "前端工程化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mlly/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::mlt",
       "area": "projects",
       "slug": "mlt",
@@ -55008,6 +55040,38 @@
       "atlas": {
         "chunk_id": "topic-projects-image-processing-and-canvas-01",
         "chunk_route": "/study/atlas/projects/topic-projects-image-processing-and-canvas-01/"
+      }
+    },
+    {
+      "id": "projects::pkg-types",
+      "area": "projects",
+      "slug": "pkg-types",
+      "title": "pkg-types — 给 package.json 和 tsconfig 一套可读可写的类型与查找",
+      "description": "介绍 pkg-types 如何查找、解析和写回 package.json / tsconfig，以及 workspace 根的探测顺序。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "matched_category": "前端工程化",
+        "raw_category": "前端工程化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/pkg-types/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
       }
     },
     {
@@ -65495,7 +65559,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 15
+      "entries": 17
     },
     {
       "id": "topic-projects-cli-tools-01",
