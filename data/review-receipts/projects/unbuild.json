@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "unbuild",
+    "digest_sha256": "75b4d92e17f84f773c0ce9ff1c3c42706784dd784754c60ccb42c903afeacb9d"
+  },
+  "source_revision": "a0b4aaf87a6566e7b2c6f7855242fc2acc10dc6a",
+  "research_input_sha256": "931b755d56f6b6615cbdec5be564bd3d16e988458ee3710120a6716c5be2b2dd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains auto package.json inference, slash-to-mkdist builder split, stub versus watch, and failOnWarn exit with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v3.6.1 build task order, emitCJS/declaration files, jiti stub, and validateDependencies/validatePackage were inspected; vitest and real builds were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "obuild/rolldown successor stays unbound; unused/implicit dependency warnings are source-level, not a measured publish audit."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

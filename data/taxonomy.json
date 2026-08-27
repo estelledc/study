@@ -2504,6 +2504,10 @@
       "topic_id": "projects-data-fetching-and-routing"
     },
     {
+      "note_id": "projects::tsup",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::turbopack",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -2518,6 +2522,10 @@
     {
       "note_id": "projects::typesense",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::unbuild",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::unified",

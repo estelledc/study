@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 963,
+    "total": 965,
     "by_status": {
-      "benchmark-aligned": 79,
+      "benchmark-aligned": 81,
       "needs-evidence": 884
     }
   },
@@ -20572,6 +20572,26 @@
       "missing": []
     },
     {
+      "slug": "tsup",
+      "title": "tsup — 用 esbuild 默认打 CJS 的零配置库打包器",
+      "source": "https://github.com/egoist/tsup",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "turbopack",
       "title": "Turbopack — 把 bundler 重做成增量计算应用",
       "source": "https://github.com/vercel/next.js/tree/main/turbopack",
@@ -20759,6 +20779,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "unbuild",
+      "title": "unbuild — 从 package.json 推断入口的统一库构建器",
+      "source": "https://github.com/unjs/unbuild",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "unified",

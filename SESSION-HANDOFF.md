@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FY：tsup + unbuild 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；用户显式授权 push + 一枚 PR，未 merge、未 deploy。
+- 起始 ref：`9adc8b991`（`origin/main`，#80 merge 后）。
+- objective：按指定目标新建 `tsup` 与 `unbuild` 库打包双子页，证据边界为 `STATIC_REVIEW` / 正文 `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/lib-bundler-source-review-20260827-fy.md`、taxonomy / note-index / atlas / project-standard / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未运行上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-fy-20260827`。
+- detector fingerprint：清单无 `tsup` / `unbuild` slug；旧印象会把 tsup 默认当成 ESM、把 CLI help 的 `es2017` 当成真实 target、把 `tsup-node` 当成另一编译器，并把 unbuild 当成单条 esbuild、把 `--stub` 当成 watch。
+- external delta：分支 `cursor/lib-bundler-tsup-unbuild-fy-363d` 已 push 并打开 PR（用户显式授权 push+PR）；未 merge、未 deploy。
+- 完成切片：
+  1. `tsup` 绑定 annotated tag `v8.5.1` / `1ecb6a5783fc91c73a7426adaa9a5abf3f978f07`（npm 无 `gitHead`，已披露），修正默认 CJS、`ignoreOptionDefaultValue`、`tsup-node` 只开 `skipNodeModulesBundle`、`dts`/`experimentalDts` 互斥与 clean 留 `.d.ts`。
+  2. `unbuild` 绑定 `v3.6.1` / `a0b4aaf87a6566e7b2c6f7855242fc2acc10dc6a`（npm `gitHead` 与剥开 tag 一致），修正四 builder、尾斜杠 mkdist、`emitCJS` 默认 false、jiti stub 与 `failOnWarn` 退出码。
+  3. 新增共享审查文档与两份 generation 1 static receipt；派生 site-state 项目数 963→965，已对齐标杆 79→81。
+- acceptance checks：两页 `quality-gate` 全部 pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`。其余门禁以本轮 `verify:ci` 为准。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态源码页；单 writer。
+- blocker（先于本切片存在）：`benchmark-site --compare` 在 main 已超 `tracked_files` baseline；本 PR 未改阈值或证据布局。
+- stop conditions：一枚 PR 已打开且未 merge；规模 baseline 处置、merge 与 deploy 均需单独授权。
+- 下一次 wake 条件：本 PR 的 review/CI 状态变化，或 owner 对规模 baseline / merge 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`；PR 状态用 GitHub 查看。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

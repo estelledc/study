@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tsup",
+    "digest_sha256": "c24a66e375baa054ad406f309ef75281bd8d083e940402f77301b8ebb0481f12"
+  },
+  "source_revision": "1ecb6a5783fc91c73a7426adaa9a5abf3f978f07",
+  "research_input_sha256": "931b755d56f6b6615cbdec5be564bd3d16e988458ee3710120a6716c5be2b2dd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains default CJS, CLI ignoreOptionDefaultValue versus node16, tsup-node skipNodeModulesBundle, and dts/experimentalDts mutex with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v8.5.1 normalizeOptions, runEsbuild write:false pipeline, Worker dts, and cjsInterop single-default boundary were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Maintenance warning and tsdown pointer stay README-bound; no bundle size or speed claim is treated as measured evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}
