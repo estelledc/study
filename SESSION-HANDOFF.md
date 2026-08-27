@@ -22,7 +22,7 @@
   - `audit:content-contract`：`v2=91`、`legacy-unverified=1954`、blocking 0。
   - `audit:counts` / `audit:site-state`：projects=962、papers=1083、total=2045。
   - `git diff --check`：通过。
-  - `verify:ci`：见本分支后续补记。
+  - `STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，toolchain 到 strict build、Pagefind/SEO/静态 a11y 全绿；首次 a11y 因本机缺 Playwright Chromium 失败，安装浏览器后 23 Playwright tests 通过，Pages/Atlas/站点预算与 drift/whitespace 门禁通过。未改门禁。
 - budget：2 个 blob-filtered worktree + 1 个可写切片；单 writer。
 - blocker：main 上规模 `tracked_files` 已超 baseline threshold，属先于本切片的 `PARKED_HUMAN` 规模债；本轮未改 baseline / 阈值。
 - stop conditions：本 epoch 完成；merge / deploy / 规模 baseline 处置需单独授权。
