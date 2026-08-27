@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 28,
-      "needs-evidence": 933
+      "benchmark-aligned": 30,
+      "needs-evidence": 931
     }
   },
   "projects": [
@@ -19630,27 +19630,23 @@
     },
     {
       "slug": "swr",
-      "title": "SWR — React 远程数据 hook 的极简流派",
+      "title": "SWR — 用全局 cache 和事件广播做 stale-while-revalidate",
       "source": "https://github.com/vercel/swr",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "symfony",
@@ -19770,27 +19766,23 @@
     },
     {
       "slug": "tanstack-query",
-      "title": "TanStack Query — 数据获取与缓存库",
+      "title": "TanStack Query — 用 Observer 订阅一份服务端状态",
       "source": "https://github.com/TanStack/query",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "tanstack-router",
