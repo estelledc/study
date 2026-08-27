@@ -15,12 +15,12 @@
   1. `uuid` 绑定 `uuidjs/uuid@fd59f027...` / `14.0.2`，写清 `crypto.randomUUID` 快路径、共享 `rng` 缓冲、`v7` 模块状态与 options 隔离。
   2. `nanoid` 绑定 `ai/nanoid@9247b6db...` / `6.0.1`，写清 Node 字符串池、浏览器 `getRandomValues`、拒绝采样与 `engines.node`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate` pass、0 advisory；`audit:project-standard` `benchmark-aligned=20`；`audit:content-contract` 0 blocking / 89 v2；`audit:counts` projects=963。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；`audit:project-standard` `benchmark-aligned=20`；`audit:content-contract` 0 blocking / 89 v2；`audit:counts` projects=963；`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 全绿（含 23 Playwright a11y）。
 - budget：1 个 id-lib 双子切片、1 个本地 writer。
-- blocker：未跑 `verify:ci` 前不得声称全门禁通过；merge/deploy 未授权。
+- blocker：merge/deploy 未授权。
 - stop conditions：canonical/revision 不一致、需要猜测性能、或只能放宽门禁时停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 新授权。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：在 PR #90 上等待 CI/review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
