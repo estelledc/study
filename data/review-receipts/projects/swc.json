@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "swc",
+    "digest_sha256": "418e97b9a1fc10a05fd6d0d5918331021490aa157295cb80fe7b05ed6b56a453"
+  },
+  "source_revision": "490c7d88ad15cf84ee410c69e19eef86f445d45b",
+  "research_input_sha256": "10b70161479fc6529a81e53435e986adda2d06c970d9b54a34189f8e8202b9a2",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-s",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains transform/minify/bundle split, classic JSX default, decorator versions, and Wasm plugin ABI with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-s",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned peeled v1.16.1 / @swc/core 1.16.1; inspected Compiler pipeline, TS strip, plugin runner, minifier; CLI impl and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-s",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Downstream default-compiler claims and Terser size equality are disclosed as unbound; evidence remains STATIC_REVIEW / UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:15:37.834Z"
+}
