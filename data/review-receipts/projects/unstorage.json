@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "unstorage",
+    "digest_sha256": "bd191cb4b6bfcbd8cbacc793681149eea77d0168c713c82683f15ecbf0310921"
+  },
+  "source_revision": "e2febded37759ec796e7d0233d4eb68c92423cc2",
+  "research_input_sha256": "c551b5aa6d595860a8f9956f94bcd2d516171d59c3117a081d5f170610497ba1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates key normalization, longest-prefix mount, stringify versus raw, and unverified bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected storage.ts, driver contract, memory/lru-cache/redis/indexedb, server handler; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to unstorage 1.17.5; npm has no gitHead and 2.0.0-alpha.9 is out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}

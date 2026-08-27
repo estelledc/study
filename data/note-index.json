@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -49269,6 +49269,37 @@
       }
     },
     {
+      "id": "projects::lru-cache",
+      "area": "projects",
+      "slug": "lru-cache",
+      "title": "lru-cache — 先定容量，再谈最近最少使用",
+      "description": "固定版本用 Map 加预分配链表做 LRU，TTL 默认不预删",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/lru-cache/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::lsd",
       "area": "projects",
       "slug": "lsd",
@@ -62327,9 +62358,9 @@
       "id": "projects::unstorage",
       "area": "projects",
       "slug": "unstorage",
-      "title": "unstorage — 让 KV 存储不绑死运行时的统一抽象层",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "unstorage — 跨运行时的 KV 门面，不是万能存储",
+      "description": "固定版本把 key 收成冒号路径，再按最长 mount 前缀交给 driver",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-infrastructure-utilities"
       ],
@@ -62337,16 +62368,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-infrastructure-utilities",
-        "raw_category": "projects"
+        "raw_category": "基础设施"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/unstorage/",
       "atlas": {
@@ -65713,7 +65744,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/",
-      "entries": 44
+      "entries": 45
     },
     {
       "id": "topic-projects-internationalization-01",

@@ -2108,6 +2108,10 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::lru-cache",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::lucia",
       "topic_id": "projects-authentication"
     },

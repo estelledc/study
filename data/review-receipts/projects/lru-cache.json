@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lru-cache",
+    "digest_sha256": "18979967f072d735150bd8516a440899e9a898795ea45fc614b66b287dd3b709"
+  },
+  "source_revision": "16b3a916662ab449d496b7b4b4f04132565d1d28",
+  "research_input_sha256": "c551b5aa6d595860a8f9956f94bcd2d516171d59c3117a081d5f170610497ba1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates bounded constructor, lazy TTL, has versus get, and fetch/memo entry points."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected constructor, set/get/has, evict, fetch/memo; tap tests and benchmarks were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to lru-cache 11.5.2; Node 20||>=22 and unbounded-TTL warning are disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}

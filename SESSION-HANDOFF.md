@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GN KV/cache 双子
+
+- status：Program `active`；本地 writer epoch `complete`；用户显式授权 push + 一个 PR，不 merge。
+- 起始 ref：`42caf4896`（`origin/main`，PR #57 merge 后对齐）。
+- objective：把 `unstorage` 迁到固定源码 study-v2，并新增互补的 `lru-cache` 页；证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/kv-cache-source-review-20260827-gn.md`、taxonomy / atlas / note-index / project-standard / site-state / 公开规模文案、本 handoff；未安装上游依赖、未连 Redis/S3、未跑上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-gn-2026-08-27`。
+- detector fingerprint：`unstorage` 缺 `pinned_revision` / `evidence_boundary` / `self_test`，旧正文把 driver 写成固定 7 method、把 binary `setItem` 写成 JSON 吞掉、把 ~25KB/35+ driver 写成事实；`origin/main` 没有 `lru-cache` 页。
+- external delta：分支将 push 并打开一个 PR；未 merge、未 deploy。
+- 完成切片：
+  1. `unstorage` 绑定 annotated tag `v1.17.5` / `e2febded...`（npm latest 同号、无 `gitHead`，已披露），修正 key 规范化、最长前缀 mount、`stringify` throw、只读写静默、33 个 builtin driver 与 `lru-cache` 驱动默认 `max: 1000`。
+  2. 新增 `lru-cache` 绑定 `v11.5.2` / `16b3a916...`（npm `gitHead` 与 tag 一致），写清有界构造、惰性 TTL、`has`/`get` 副作用差、`fetch`/`memo` 入口。
+  3. 共享审查文档与两份 generation 1 static receipt；派生 site-state 首页“已对齐标杆”从 40 刷新为 42，项目数 961→962。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt `evidence_state=UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` / `audit:project-standard` 本地通过。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态源码；单 writer。
+- blocker：规模 `tracked_files` 超限仍是 main 既有 detector，需 owner 处置；本轮未改 baseline/阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 review/CI，或新的显式有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf4896 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

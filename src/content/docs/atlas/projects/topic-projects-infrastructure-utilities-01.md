@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "45 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 45 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -34,6 +34,7 @@ sidebar:
 | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | `inngest` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | `istio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | `linkerd2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [lru-cache — 先定容量，再谈最近最少使用](/study/projects/lru-cache/) | `lru-cache` | intermediate | UNVERIFIED | 固定版本用 Map 加预分配链表做 LRU，TTL 默认不预删 |
 | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | `mailcow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -56,4 +57,4 @@ sidebar:
 | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | `starrocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [unstorage — 跨运行时的 KV 门面，不是万能存储](/study/projects/unstorage/) | `unstorage` | intermediate | UNVERIFIED | 固定版本把 key 收成冒号路径，再按最长 mount 前缀交给 driver |
