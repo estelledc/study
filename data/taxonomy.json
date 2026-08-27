@@ -2188,6 +2188,10 @@
       "topic_id": "projects-ai-browser-automation"
     },
     {
+      "note_id": "projects::nanoid",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::nanostores",
       "topic_id": "projects-state-management"
     },
@@ -2518,6 +2522,10 @@
     {
       "note_id": "projects::unstorage",
       "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::uuid",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::valibot",
