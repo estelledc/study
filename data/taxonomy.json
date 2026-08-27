@@ -2004,6 +2004,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::inferno",
+      "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
       "note_id": "projects::influxdb",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2158,6 +2162,10 @@
     {
       "note_id": "projects::minisearch",
       "topic_id": "projects-infrastructure-utilities"
+    },
+    {
+      "note_id": "projects::mithril",
+      "topic_id": "projects-ui-and-frontend-frameworks"
     },
     {
       "note_id": "projects::mobx",

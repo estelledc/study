@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "inferno",
+    "digest_sha256": "b5c63453da3448157699676603cd98a51ff4a5e90949ea79289cd20c060afea0"
+  },
+  "source_revision": "f1a7fa2f1d6823989b30ffda410b340eb5ed3963",
+  "research_input_sha256": "aeea472fba6ea53d4b1be2f701f7a342fbfbb22cadb238c27aa871bfa694494c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-db",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains the core/create-element split, document.body guard, defaultHooks, and linkEvent without claiming hooks or measured speed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-db",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 9.1.0 createVNode/render/setState/delegation paths; upstream tests, JSX plugins, and browser render were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-db",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag, package and npm gitHead agree on f1a7fa2f; performance and compat claims stay UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

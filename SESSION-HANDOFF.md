@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DB Inferno/Mithril 静态审查
+
+- status：`running` → writer epoch complete，等待 PR review；未授权 merge。
+- objective：为 Inferno 与 Mithril 建立 STATIC_REVIEW / UNVERIFIED 的 study-v2 源码审查页，并留下 `docs/ui-framework-source-review-20260827-db.md`。
+- scope：两页项目笔记、两份 receipt、taxonomy/atlas/site-state/公开计数、handoff、writer DB 审查文档；未改候选队列、政策阈值、preact/lit/vue/svelte，未安装上游依赖或跑上游测试。
+- activated_by：`explicit-user-request-parallel-writer-db-20260827`。
+- detector fingerprint：`origin/main` 无 inferno/mithril 项目页；目标对可从 GitHub/npm 绑定固定 revision。
+- starting ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- external delta：只读 GitHub/npm metadata + 本地 blob-filtered clone；授权形成一个 PR，不 merge、不部署，D 轴 merge/deploy 不变。
+- 完成切片：
+  1. `inferno` 绑定 `infernojs/inferno@f1a7fa2f...` / `9.1.0`，核清核心包无 createElement/hooks、开发态拒绝 `document.body`、`defaultHooks` 与 `linkEvent`。
+  2. `mithril` 绑定 tag `v2.3.8` / `0984c986...`，披露 npm `gitHead=170e8dc...` 仍自报 2.3.7；核清 mount 订阅、事件 redraw、`#!` 路由与 XHR completion。
+  3. 新增共享 `docs/ui-framework-source-review-20260827-db.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking；projects 现为 v2 笔记 + 既有 legacy。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`、snapshot current。
+  - `audit:counts` / `audit:site-state` / `audit:doc-lifecycle` / `git diff --check`：通过。
+- budget：1 个 epoch、2 页静态源码迁移、1 个可写切片。
+- external_outcome：一个 review-ready PR；未 merge。
+- stop conditions：未获 merge/deploy 授权即停止；不把静态阅读写成运行证据。
+- 下一次 wake 条件：owner 审查本 PR，或另授 merge。
+- 下一条命令：在规范 Node 22.23.1 / npm 11.17.0 下对 PR 跑 `STUDY_CHANGED_FROM=<base> npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

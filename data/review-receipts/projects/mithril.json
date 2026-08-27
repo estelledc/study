@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "mithril",
+    "digest_sha256": "2dc4fa0be10a7815644c0952ba91dee3a1ba29b19395e673e2dca6a0eb50641e"
+  },
+  "source_revision": "0984c9865caa5496fca80236b20e73c8e019e7b2",
+  "research_input_sha256": "aeea472fba6ea53d4b1be2f701f7a342fbfbb22cadb238c27aa871bfa694494c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-db",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Separates mount subscriptions, event redraw, hash routing, and XHR completion; warns against passing a vnode to mount."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-db",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 2.3.8 index, hyperscript, mount-redraw, router, and request wrap; ospec and network calls were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-db",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Binds tagged 0984c986 / 2.3.8 and discloses npm gitHead 170e8dc still reports 2.3.7."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

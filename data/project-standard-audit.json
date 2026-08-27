@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 18,
+      "benchmark-aligned": 20,
       "needs-evidence": 943
     }
   },
@@ -8499,6 +8499,26 @@
       ]
     },
     {
+      "slug": "inferno",
+      "title": "Inferno — 用标志位拆开的 React 形状 UI 运行时",
+      "source": "https://github.com/infernojs/inferno",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "influxdb",
       "title": "InfluxDB — 专用时序数据库",
       "source": "https://github.com/influxdata/influxdb",
@@ -12472,6 +12492,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "mithril",
+      "title": "Mithril — 把视图、重绘、路由和 XHR 收进一个 m",
+      "source": "https://github.com/MithrilJS/mithril.js",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "mitsuba3",

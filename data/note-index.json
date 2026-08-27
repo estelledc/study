@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -45723,6 +45723,37 @@
       }
     },
     {
+      "id": "projects::inferno",
+      "area": "projects",
+      "slug": "inferno",
+      "title": "Inferno — 用标志位拆开的 React 形状 UI 运行时",
+      "description": "对照 Inferno 9.1.0 核心包如何用 vnode 标志位、独立 createElement 和 defaultHooks 实现 React 形状 UI。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "raw_category": "UI 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/inferno/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::influxdb",
       "area": "projects",
       "slug": "influxdb",
@@ -50978,6 +51009,37 @@
       "atlas": {
         "chunk_id": "topic-projects-infrastructure-utilities-01",
         "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
+      "id": "projects::mithril",
+      "area": "projects",
+      "slug": "mithril",
+      "title": "Mithril — 把视图、重绘、路由和 XHR 收进一个 m",
+      "description": "对照 Mithril 2.3.8 如何把 hyperscript、mount/redraw、hash 路由和 XHR 收进同一个 m。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "raw_category": "UI 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mithril/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
       }
     },
     {
@@ -65881,7 +65943,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/",
-      "entries": 13
+      "entries": 15
     },
     {
       "id": "topic-projects-web-frameworks-01",
