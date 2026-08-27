@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FN：caddy + centrifugo 源码绑定
+
+- status：`running` → writer epoch `complete`（本地 review-ready + 授权的 push/PR）；未 merge、未 deploy。
+- objective：把 `caddy` 与 `centrifugo` 两页从 needs-evidence 迁到固定 git SHA 的 STATIC_ANALYSIS / UNVERIFIED 标准。
+- scope：两页正文、2 份 generation 1 receipt、`docs/caddy-centrifugo-source-review-20260827-fn.md`、本 handoff；不改派生索引、候选队列、政策阈值或 `main`。
+- activated_by：用户 2026-08-27 平行研究指令（writer FN，caddy + centrifugo）。
+- 起始 ref：`origin/main` @ `1f2917d90`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文含未绑定 QPS/star/延迟，并把 ZeroSSL 写成无条件默认 CA、把 Centrifugo insecure 写成开箱默认、仍写 Tarantool broker。
+- external_outcome：一条 PR（push + create PR 已由本云任务授权）；D 轴不提升，直到另行 merge/deploy。
+- 完成切片：
+  1. `caddy` 绑定 annotated tag `v2.11.4` peel `e2eee6a7fce366321294c9c2a79f3146891dcbdf`。
+  2. `centrifugo` 绑定 lightweight tag `v6.9.3` → `e108c4e8f3b9f78d21663f985e754ef4d6908ed1`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，`evidence_state=UNVERIFIED`；`evaluateProjectNote` 均为 `benchmark-aligned`；`git diff --check` 通过。派生索引留给 merge 作业。
+- budget：2 页 / 单 writer / blob-filtered sparse clone；未耗尽。
+- stop conditions：两页已绑定且 PR 已开即结束 writer；不自动 merge。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：用 GitHub 查看本 PR checks。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

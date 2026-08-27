@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "centrifugo",
+    "digest_sha256": "6135ef0ad36d010779a94a25d62bafcec866b0751fdb1710f0f3ceb642ce4aa5"
+  },
+  "source_revision": "e108c4e8f3b9f78d21663f985e754ef4d6908ed1",
+  "research_input_sha256": "6d8fa3e0163d1d0d66a0ffdb3ea8eab0284f02d6de3eb23c71b7fc61a16c3b66",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates default memory engine, opt-in insecure flags, subscribe ACL, and unverified latency/star claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected mux/API auth, engine/broker types, client connect/subscribe ACL; process was not started and no Redis/NATS/Postgres was used."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to centrifugo v6.9.3 / e108c4e8; Tarantool broker and default-open subscribe are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "caddy",
+    "digest_sha256": "1c7a6773fcff841618ad64003257d8c9386679d98a9442f0b4853cefd42aacfa"
+  },
+  "source_revision": "e2eee6a7fce366321294c9c2a79f3146891dcbdf",
+  "research_input_sha256": "6d8fa3e0163d1d0d66a0ffdb3ea8eab0284f02d6de3eb23c71b7fc61a16c3b66",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates Caddyfile adapter, default ACME issuer set, admin /load reload, and unverified throughput claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected cmd LoadConfig/reload, DefaultIssuers, autohttps, reverse_proxy/file_server; Caddy was not started and no ACME order was issued."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fn",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to caddy v2.11.4 / e2eee6a7; ZeroSSL-as-unconditional-default and 60-day renewal constants are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
