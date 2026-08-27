@@ -18,7 +18,7 @@
 - acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / research input 一致。
 - budget：1 个双子切片、1 个本地 writer、1 份 PR。
 - blocker：未跑上游测试或真实并行进程；npm `concurrently@10.0.5` 缺少 `gitHead`。
-- 验证结果：定向质量门已过；公开规模文案已对齐 963/2046；全量 `verify:ci` 继续。
+- 验证结果：两页 quality-gate pass、0 advisory；`audit:counts` / content contract / strict build / 23 Playwright a11y / Pages / Atlas / site budget / diff 门禁已过。首次 `verify:ci` 在本机缺 Playwright browser 处中断，安装 chromium 后续跑剩余门禁通过。未 merge。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 授权 merge。
 - 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
 - superseded_by：`none`
