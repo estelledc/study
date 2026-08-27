@@ -158,4 +158,5 @@ nvm 要你敲 `nvm use 18`，或靠 `.nvmrc` + shell hook 每次 `cd` 跑脚本�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[find-up]] —— find-up — 沿目录树上行或下行找文件
+- [[pkg-dir]] —— pkg-dir — 把最近的 package.json 收成包根目录

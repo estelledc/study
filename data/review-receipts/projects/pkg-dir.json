@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pkg-dir",
+    "digest_sha256": "20807b998b68340c90001d0dc819fc378ab5cf0b288027fdbcba61c281c6a6e1"
+  },
+  "source_revision": "fe0b0fbe45a2b3bd92961cbc586d8fde90e58e01",
+  "research_input_sha256": "14c236a4299ec94f65e5a5c9257973319e6f7935ba99113465438d707fb1457a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "packageDirectory wraps find-up-simple then dirname; npm 9.0.0 shares this gitHead."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected index.js/d.ts/test.js and 8.0.0 vs 9.0.0 tarballs; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds pkg-dir v8.0.0; does not invent a 9.0.0 revision or bind package-directory 8.2.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:55:00.000Z"
+}

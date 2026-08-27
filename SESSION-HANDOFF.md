@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FA：find-up + pkg-dir 静态审查
+
+- status：writer epoch `complete`；单一 PR，未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（当时 `origin/main`）。
+- objective：为目标双子 `find-up` 与 `pkg-dir` 新增源码绑定的 `study-v2` 页；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页新正文、2 份 generation 1 receipt、`docs/find-package-source-review-20260827-fa.md`、taxonomy curated assignment、派生 atlas / note-index / project-standard / site-state / 公开计数、本 handoff；`volta`/`pnpm` 仅补生成段反向链接。未安装上游依赖、未跑上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-fa-20260827`。
+- detector fingerprint：catalog 无这两页；`find-up@8.0.0` tag 与 npm `gitHead` 一致；`pkg-dir` npm `9.0.0` 与 `8.0.0` 共享 `fe0b0fbe...`，tarball 只改 version。
+- external delta：分支将 push 并开 1 个 PR；未授权 merge / deploy。
+- 完成切片：
+  1. `find-up` 绑定 annotated tag `v8.0.0` → `5a009c227a484e503b78566412b1c0fd3dab3c27`；`findUp` 是 `findUpMultiple` + `limit: 1`；默认 `type: 'file'`；`findDown` 默认 `depth: 1`。
+  2. `pkg-dir` 绑定 tag `v8.0.0` → `fe0b0fbe45a2b3bd92961cbc586d8fde90e58e01`；导出 `packageDirectory*`，依赖 `find-up-simple`；披露 npm `9.0.0` 同源、后继改名为 `package-directory`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；派生计数 projects 965、aligned 69、v2 138。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：blocking 0，v2=138。
+  - `audit:project-standard`：snapshot CURRENT，`find-up`/`pkg-dir` 均为 `benchmark-aligned`。
+  - `audit:counts` / `audit:site-state`：965 / 1083 / 2048。
+  - `git diff --check`：通过。
+- budget：1 个可写切片；2 个 ignored worktree。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值。
+- stop_conditions：PR 已开即停；不 merge。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：用 GitHub 查看本 PR checks。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -43111,6 +43111,37 @@
       }
     },
     {
+      "id": "projects::find-up",
+      "area": "projects",
+      "slug": "find-up",
+      "title": "find-up — 沿目录树上行或下行找文件",
+      "description": "固定 v8：findUp 是 limit=1 的上行搜索，findDown 默认只往下看一层",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-monorepos-and-package-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-monorepos-and-package-management",
+        "raw_category": "包管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/find-up/",
+      "atlas": {
+        "chunk_id": "topic-projects-monorepos-and-package-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/"
+      }
+    },
+    {
       "id": "projects::fish",
       "area": "projects",
       "slug": "fish",
@@ -55011,6 +55042,37 @@
       }
     },
     {
+      "id": "projects::pkg-dir",
+      "area": "projects",
+      "slug": "pkg-dir",
+      "title": "pkg-dir — 把最近的 package.json 收成包根目录",
+      "description": "固定 v8：packageDirectory 依赖 find-up-simple，不依赖 find-up",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-monorepos-and-package-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-monorepos-and-package-management",
+        "raw_category": "包管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/pkg-dir/",
+      "atlas": {
+        "chunk_id": "topic-projects-monorepos-and-package-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/"
+      }
+    },
+    {
       "id": "projects::planck",
       "area": "projects",
       "slug": "planck",
@@ -65859,7 +65921,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-monorepos-and-package-management-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-observability-and-performance-01",

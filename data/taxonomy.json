@@ -1968,6 +1968,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::find-up",
+      "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
       "note_id": "projects::framer-motion",
       "topic_id": "projects-animation"
     },
@@ -2262,6 +2266,10 @@
     {
       "note_id": "projects::penpot",
       "topic_id": "projects-data-applications-and-saas"
+    },
+    {
+      "note_id": "projects::pkg-dir",
+      "topic_id": "projects-monorepos-and-package-management"
     },
     {
       "note_id": "projects::pino",
