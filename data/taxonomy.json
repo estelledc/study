@@ -2352,6 +2352,10 @@
       "topic_id": "projects-data-visualization"
     },
     {
+      "note_id": "projects::redaxios",
+      "topic_id": "projects-http-clients"
+    },
+    {
       "note_id": "projects::redis",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2518,6 +2522,10 @@
     {
       "note_id": "projects::typesense",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::unfetch",
+      "topic_id": "projects-http-clients"
     },
     {
       "note_id": "projects::unified",

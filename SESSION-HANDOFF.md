@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FM：redaxios + unfetch 静态审查
+
+- status：writer epoch `complete`；review-ready branch，一个 PR，不 merge。
+- 起始 ref：`99736a909`（`origin/main`，#76 merge）。
+- objective：按指定目标做 fetch-wrapper 双子。`ofetch` 已被开放 PR #86 占用，因此保留 `redaxios` 并配对同作者 `unfetch`。
+- scope：两页新正文、`docs/fetch-wrapper-source-review-20260827-fm.md`、两份 generation 1 receipt、taxonomy / atlas / project-standard / site-state / 公开计数、本 handoff。未改 `ofetch` / `axios` / `ky` / `got` / `wretch` / `undici` / `node-fetch` 正文。
+- activated_by：`explicit-user-parallel-writer-fm-2026-08-27`。
+- detector fingerprint：仓库无 `redaxios` / `unfetch` 页；`ofetch` 已被 #86 占用。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权）。D 轴不提升。
+- 完成切片：
+  1. `redaxios` 绑定 lightweight tag `0.5.1` / `ad40de9175109bbe144fd2ab81a001132f437184`（与 npm `gitHead` 一致）。
+  2. `unfetch` 绑定 lightweight tag `5.0.0` / `e8f8baa5c1aaf4f70afcfcc6bfa8b592fae6c861`（与 npm `gitHead` 一致）。
+  3. 共享审查文档与两份 `STATIC_REVIEW` receipt；验证状态 `UNVERIFIED`。
+- acceptance checks：两页 `quality-gate.mjs`；receipt digest / revision 一致；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state`；`git diff --check`；`STUDY_CHANGED_FROM=99736a909 npm run verify:ci`。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值。
+- stop conditions：一个 PR 完成后停止；不 merge。
+- 下一次 wake 条件：本 PR 的 CI / review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=99736a909 npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

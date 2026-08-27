@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -57129,6 +57129,37 @@
       }
     },
     {
+      "id": "projects::redaxios",
+      "area": "projects",
+      "slug": "redaxios",
+      "title": "redaxios — 把 Axios API 收成一层 Fetch 外壳",
+      "description": "用 Axios 形状的 get/post/data 调用运行时 Fetch，默认先 text 再 JSON.parse。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-http-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-http-clients",
+        "raw_category": "HTTP 客户端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/redaxios/",
+      "atlas": {
+        "chunk_id": "topic-projects-http-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-http-clients-01/"
+      }
+    },
+    {
       "id": "projects::redis",
       "area": "projects",
       "slug": "redis",
@@ -62227,6 +62258,37 @@
       }
     },
     {
+      "id": "projects::unfetch",
+      "area": "projects",
+      "slug": "unfetch",
+      "title": "unfetch — 用 XHR 冒充一份最小 Fetch",
+      "description": "用 XMLHttpRequest 提供 Fetch 子集；默认 ponyfill，polyfill 只在缺失时安装。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-http-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-http-clients",
+        "raw_category": "HTTP 客户端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/unfetch/",
+      "atlas": {
+        "chunk_id": "topic-projects-http-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-http-clients-01/"
+      }
+    },
+    {
       "id": "projects::unified",
       "area": "projects",
       "slug": "unified",
@@ -65747,7 +65809,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-http-clients-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-image-processing-and-canvas-01",
