@@ -15,7 +15,7 @@
   1. `mlly` 绑定 tag `v1.8.2` / `c5ce4e5596761b9d2b063bcf82a5160d76e8c2cf`（npm `gitHead` 与 tag peel 一致），修正同步 `_resolve`、`createResolve` 展开顺序、`isValidNodeImport` 最终看 `!hasESMSyntax`、`evalModule` 不自动改写相对 import。
   2. `pkg-types` 绑定 tag `v2.3.1` / `6dc514b530123f2e4147727019dba6d128a0754f`（npm 无 `gitHead`，已披露），修正 `readPackage` vs `readPackageJSON`、`node_modules` 搜索下界、cache 需显式打开、workspace 最近/最远方向。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；新页带 `description` + `difficulty: intermediate`，避免撑破 taxonomy 预算。
-- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；receipt 与正文 digest / revision 一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:links` / `audit:wikilinks` 已跑。全量 `verify:ci` 在提交后继续。
+- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；receipt 与正文 digest / revision 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=99736a90976f0b3d0a18bc16b9ab04c9c91254f1 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（2289 HTML、23 Playwright a11y）。PR #233 已开，未 merge。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页新建静态源码笔记；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改 baseline、阈值或证据布局。
 - stop conditions：一 PR 已开且未 merge 即结束；merge / deploy 需单独授权。
