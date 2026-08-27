@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ramda",
+    "digest_sha256": "6e75f4643348024e776e6b1d977faa7fc800fad47a7552f4f58b7222310e3415"
+  },
+  "source_revision": "f0b1fb524a681bc8c37dd6c35886420f8c2470c3",
+  "research_input_sha256": "dcccfef7cad48807d727a91d3da382c7573d8a4e2fc91edb2336752fb67c1187",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ah",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates auto-curry, placeholder, non-curried pipe/compose, path copy, and map dispatch."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ah",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "curryN, pipe/compose/flow, assocPath, map dispatch, and exports were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ah",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v0.32.0 where tag, package and npm gitHead agree; no runtime or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

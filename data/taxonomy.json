@@ -2100,6 +2100,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::lodash",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::loki",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2326,6 +2330,10 @@
     {
       "note_id": "projects::radix-ui",
       "topic_id": "projects-headless-ui-components"
+    },
+    {
+      "note_id": "projects::ramda",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::react",
