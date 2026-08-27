@@ -15,7 +15,7 @@
   1. `ohash` 绑定 annotated tag `v2.0.12` 解引用 `764b0a3203308956ef07597612af5ad59f36c791`；`hash` = `digest(serialize)`，key 排序不再走 `localeCompare`。
   2. `murmurhash` 绑定 lightweight tag `2.0.1` / `0359fb98cd2e11dc79dbc0ae08ad9d5f8e7a66f7`；默认 v3，`TextEncoder` UTF-8；披露 npm `gitHead` `e6aec85b...` 不可达。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT；`audit:counts` / `audit:site-state` 与当前文件数一致。全量 `verify:ci` 在 push 后补跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt evidence `UNVERIFIED`；`audit:content-contract` blocking 0、`v2=150`；`audit:project-standard` snapshot CURRENT（`benchmark-aligned=81`）；`audit:counts` / `audit:site-state` 为 projects=965、papers=1083、total=2048。`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2290 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 drift 门禁）。
 - budget：2 个 ignored worktree + 2 页静态源码 + 派生刷新；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本 PR 未改阈值。
 - stop conditions：一对研究页已形成单一 PR 后停止。本 agent 不执行 merge / deploy。
