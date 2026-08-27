@@ -2052,6 +2052,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::ksuid",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::ky",
       "topic_id": "projects-http-clients"
     },
@@ -2518,6 +2522,10 @@
     {
       "note_id": "projects::turborepo",
       "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::typeid-js",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::typeorm",

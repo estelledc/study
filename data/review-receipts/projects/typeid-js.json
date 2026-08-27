@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "typeid-js",
+    "digest_sha256": "1f60ecfa92c19b353997de342d8eeb6efaad2983dc14bc9192c28f406519b48e"
+  },
+  "source_revision": "3199b119fb2e8b77b2710e2e8eaec9f0220a9d18",
+  "research_input_sha256": "c623bd9167b2f6e0a069df5dec45cdd88b21fc994ee386fdd4fec3063ccc8ff0",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ir",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates prefix rules, UUIDv7 suffix, lastIndexOf split, and class vs unboxed fromUUID order."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ir",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "typeid.ts, unboxed/typeid.ts, prefix.ts, base32.ts, and parse_uuid.ts were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ir",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds npm typeid-js@1.2.0 gitHead because GitHub has no tag; no runtime or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:00:00.000Z"
+}
