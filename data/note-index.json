@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -27,7 +27,7 @@
     },
     "missing_curated_assignments": [],
     "atlas": {
-      "chunks": 69,
+      "chunks": 70,
       "chunk_size": 100,
       "max_chunk_entries": 100
     }
@@ -39250,6 +39250,37 @@
       }
     },
     {
+      "id": "projects::compare-versions",
+      "area": "projects",
+      "slug": "compare-versions",
+      "title": "compare-versions — 用轻量函数比较版本字符串",
+      "description": "轻量比较版本字符串，支持短版本、四段号和 npm 风格 satisfies。",
+      "difficulty": "入门",
+      "canonical_topics": [
+        "projects-semver-and-version-comparison"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-semver-and-version-comparison",
+        "raw_category": "版本比较"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/compare-versions/",
+      "atlas": {
+        "chunk_id": "topic-projects-semver-and-version-comparison-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-semver-and-version-comparison-01/"
+      }
+    },
+    {
       "id": "projects::compound-v3",
       "area": "projects",
       "slug": "compound-v3",
@@ -58243,6 +58274,37 @@
       }
     },
     {
+      "id": "projects::semver",
+      "area": "projects",
+      "slug": "semver",
+      "title": "semver — npm 用来解析和匹配 SemVer 的标准库",
+      "description": "npm 用来解析 SemVer、比较版本并匹配 caret/tilde/range 的标准库。",
+      "difficulty": "入门",
+      "canonical_topics": [
+        "projects-semver-and-version-comparison"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-semver-and-version-comparison",
+        "raw_category": "版本比较"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/semver/",
+      "atlas": {
+        "chunk_id": "topic-projects-semver-and-version-comparison-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-semver-and-version-comparison-01/"
+      }
+    },
+    {
       "id": "projects::sentry",
       "area": "projects",
       "slug": "sentry",
@@ -65888,6 +65950,20 @@
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/",
       "entries": 8
+    },
+    {
+      "id": "topic-projects-semver-and-version-comparison-01",
+      "area": "projects",
+      "kind": "topic",
+      "topic_id": "projects-semver-and-version-comparison",
+      "labels": {
+        "zh": "SemVer / 版本比较",
+        "en": "SemVer and Version Comparison"
+      },
+      "page": 1,
+      "pages": 1,
+      "route": "/study/atlas/projects/topic-projects-semver-and-version-comparison-01/",
+      "entries": 2
     },
     {
       "id": "topic-projects-state-management-01",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "semver",
+    "digest_sha256": "705c8e389f8e1cdf53b2e4a060478b2726cd5438b45f79241f9bf3d413e23b38"
+  },
+  "source_revision": "6e05b7637396ac66522cff8731f07cfe0ef49a29",
+  "research_input_sha256": "d2725f90b8fdd18053311b9a1538a0b120dfa1cd9d1322e3c573d2a4f08bc451",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates parse/valid/coerce, default compare vs compareBuild, caret 0.x bounds, and prerelease exclusion with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "SemVer constructor, compareMain/comparePre, Range desugar, testSet prerelease gate, and coerce were inspected; upstream tap was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v7.8.5, package 7.8.5, and npm gitHead agree; SEMVER_SPEC_VERSION 2.0.0 is disclosed as the spec, not the package."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

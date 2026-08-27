@@ -395,6 +395,15 @@
       "description": "Monorepo / 包管理相关的开源项目。"
     },
     {
+      "id": "projects-semver-and-version-comparison",
+      "area": "projects",
+      "labels": {
+        "zh": "SemVer / 版本比较",
+        "en": "SemVer and Version Comparison"
+      },
+      "description": "语义化版本解析与比较相关的开源项目。"
+    },
+    {
       "id": "projects-state-management",
       "area": "projects",
       "labels": {
@@ -1003,6 +1012,13 @@
       "match_any": [
         "monorepo",
         "包管理"
+      ]
+    },
+    {
+      "area": "projects",
+      "topic_id": "projects-semver-and-version-comparison",
+      "match_any": [
+        "版本比较"
       ]
     },
     {
@@ -1868,6 +1884,10 @@
       "topic_id": "projects-cli-tools"
     },
     {
+      "note_id": "projects::compare-versions",
+      "topic_id": "projects-semver-and-version-comparison"
+    },
+    {
       "note_id": "projects::containerd",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2374,6 +2394,10 @@
     {
       "note_id": "projects::rspack",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::semver",
+      "topic_id": "projects-semver-and-version-comparison"
     },
     {
       "note_id": "projects::sentry",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "compare-versions",
+    "digest_sha256": "85c97c96555adba002ebf7e8285f162389934d912c65d34d1f2cb26b90310fb5"
+  },
+  "source_revision": "497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd",
+  "research_input_sha256": "d2725f90b8fdd18053311b9a1538a0b120dfa1cd9d1322e3c573d2a4f08bc451",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates compareVersions sort values from three-argument compare, short/four-segment parse, and satisfies recursion with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "validateAndParse, compareSegments, caret/tilde pointers, and validate vs validateStrict were inspected; upstream mocha/c8 was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fe",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v6.1.1, package 6.1.1, and npm gitHead agree; named exports since v5 and missing Range algebra are disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
