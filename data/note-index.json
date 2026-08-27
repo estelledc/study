@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2051,
-      "classified": 2004,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
       "unknown_difficulty": 1972,
       "empty_description": 1967
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 968,
-        "classified": 940,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
         "unknown_difficulty": 958,
         "empty_description": 954
@@ -57129,6 +57129,37 @@
       }
     },
     {
+      "id": "projects::react-router",
+      "area": "projects",
+      "slug": "react-router",
+      "title": "React Router — 把框架能力收进同一个路由包",
+      "description": "把 Remix 框架能力收进同一 react-router 包的客户端与全栈路由库",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "projects"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/react-router/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
       "id": "projects::react-spring",
       "area": "projects",
       "slug": "react-spring",
@@ -60883,13 +60914,13 @@
         "raw_category": "projects"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/tanstack-router/",
       "atlas": {
@@ -65722,7 +65753,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/",
-      "entries": 4
+      "entries": 5
     },
     {
       "id": "topic-projects-data-science-and-ai-01",
