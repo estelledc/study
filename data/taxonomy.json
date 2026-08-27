@@ -2216,6 +2216,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::nightwatch",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::nuxt",
       "topic_id": "projects-meta-and-full-stack-frameworks"
     },
@@ -2578,6 +2582,10 @@
     {
       "note_id": "projects::web-vitals",
       "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::webdriverio",
+      "topic_id": "projects-testing-and-verification"
     },
     {
       "note_id": "projects::webpack",

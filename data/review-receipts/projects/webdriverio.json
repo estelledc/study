@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "webdriverio",
+    "digest_sha256": "9d819223b7bb07b44052572e5330d33d0630cdb90f336eba71e2249542eac967"
+  },
+  "source_revision": "2b9721d052ac24207e8628c65a63c3a0de122a2a",
+  "research_input_sha256": "ca1551f88b6b5cbab7d2f5169e87ce7aee0e2aeb966213aae1aad6553b521867",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains launcher/local-runner/webdriver split, middleware wait, BiDi opt-in, and workspace patch drift with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v9.31.3 launcher, implicitWait, session BiDi gate, and webdriver 9.31.2 drift were inspected; browsers were not launched."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Performance and Cypress-replacement claims stay unbound; browser runner and Appium remain out of executed scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:45:00.000Z"
+}

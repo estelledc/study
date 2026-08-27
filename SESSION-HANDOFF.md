@@ -2,6 +2,33 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DG：WebdriverIO / Nightwatch
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
+- status：`running` 已收口为本轮 review-ready change set；未 merge、未 deploy。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（`origin/main`，PR #54 merge）。
+- objective：为 `webdriverio` 与 `nightwatch` 建立 `study-v2` 静态源码绑定页，证据保持 `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：两篇新项目页、2 份 generation 1 receipt、共享 `docs/e2e-webdriver-source-review-20260827-dg.md`、taxonomy curated assignments、atlas / note-index / site-state / project-standard 派生、本 handoff；2 个 ignored worktree。未改候选队列、既有笔记正文、playwright/cypress/puppeteer、政策阈值或远端 `main`。
+- activated_by：`explicit-user-parallel-writer-dg-20260827`。
+- detector fingerprint：目标对在 Study 中无项目页；`webdriverio` 仅存在于 queued candidate；两仓均可绑定可达 tag + npm `gitHead`。
+- external delta 计数：本轮授权 push + 1 个 PR；未 merge，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `webdriverio` 绑定 tag `v9.31.3` / `2b9721d052...`（与 npm `webdriverio@9.31.3` / `@wdio/cli@9.31.3` gitHead 一致），写清 launcher → local-runner → `webdriver` 协议层、middleware 等待与同提交 `webdriver@9.31.2` 漂移。
+  2. `nightwatch` 绑定 tag `v3.16.0` / `765afc3566...`（与 npm `nightwatch@3.16.0` gitHead 一致），写清 CliRunner → CommandQueue → Transport 工厂、assert/verify 中止合同与默认 Firefox。
+  3. 新增共享审查记录与两份 generation 1 static receipt；taxonomy 收入 `projects-testing-and-verification`，未抬高 unclassified / unknown_difficulty / empty_description 预算。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `git diff --check`：通过。
+  - 派生：`audit:project-standard` snapshot 与 `generate:site-state` 已写；全量 `verify:ci` 在 PR 头提交后跑。
+- budget：2 个 blob-filtered 本地 worktree + 2 页新内容 + 派生刷新；单 writer。
+- external_outcome：一个 PR，不 merge。
+- blocker：无本轮硬暂停。规模 compare 仍可能在 supervisor 巡检中超 baseline，本轮未改 threshold。
+- stop conditions：本轮写入已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对新的有限目标重新授权。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
