@@ -15,12 +15,13 @@
   1. `perfect-debounce` 绑定 annotated tag `v2.1.0` peel / npm `gitHead` `d3f83001dad6faa2090bd1aadab7312843fe6b79`。
   2. `throttle-debounce` 绑定 npm `5.0.2` `gitHead` `bb02ea22128987fdf41e5cc6a817ba2aeeb9f7a2`，并披露 tag 错位。
   3. 共享审查文档与两份 STATIC_REVIEW receipt；分类走 `工具库` → 通用开发工具。
-- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest 与固定 revision 一致；`audit:counts` / `audit:site-state` / `audit:project-standard` 已对齐。`verify:ci` 在首个 commit 之后跑。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest 与固定 revision 一致。`STUDY_CHANGED_FROM=51448afbec7839b2fe4e8c5d0fb936edbee7e816 npm run verify:ci` 全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。`audit:project-standard` CURRENT（`benchmark-aligned=79`）；`audit:content-contract` blocking 0、`v2=148`。
+- external_outcome：PR https://github.com/estelledc/study/pull/241 ；未 merge、未 deploy。
 - budget：2 个小型 ignored worktree + 2 页新增 + 派生刷新；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一页一对、一个 PR、不 merge。canonical/revision 不唯一且无法披露、或只能放宽门禁时停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=51448afbec7839b2fe4e8c5d0fb936edbee7e816 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #241 的 CI/review；未获授权不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
