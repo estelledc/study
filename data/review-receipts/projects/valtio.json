@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "17ed42a89db24e2aef214a336112e9b2dc16c99ccf6d558965596e755aedaa78",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
   "note": {
     "area": "projects",
-    "slug": "zod",
-    "digest_sha256": "8e6b44ce47100750036f9e5021f6df838d66c7d8992cdfd73ea6ccf47e591386"
+    "slug": "valtio",
+    "digest_sha256": "5ab4f7583025ee3a911cd2d2ba9bb7963d1f0234f74ac788f031b15ec4aa243f"
   },
-  "source_revision": "1fb56a5c18c27102dbc92260a4007c7732a0ccca",
+  "source_revision": "15c64d4d7a7a9bd55d750fa6a317b440978a2b25",
   "research_input_sha256": "895ca6e75d12a8b8cdd0d3bb5caa2b61b48c26462ad9f1046a1b88780b565bc8",
   "reviewers": [
     {
       "role": "ZERO_BASE",
       "reviewer_version": "writer-k-static-20260827",
       "decision": "PASS_WITH_NOTES",
-      "score": 92,
+      "score": 91,
       "warnings": [
-        "Separates runtime parse, static inference, object key policy, async boundary, and codec direction."
+        "Separates write-side proxy, versioned snapshot, read-side tracking, and collection/async v2 boundaries."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -29,7 +29,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 93,
       "warnings": [
-        "Official v4.4.3 tag parse, classic methods, object, codec, and proto tests were inspected; upstream tests and bundles were not run."
+        "vanilla, react, subscribeKey, proxyMap, watch deprecation, and v2 migration docs were inspected; upstream tests were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -40,9 +40,9 @@
       "role": "ACADEMIC",
       "reviewer_version": "writer-k-static-20260827",
       "decision": "PASS_WITH_NOTES",
-      "score": 91,
+      "score": 90,
       "warnings": [
-        "Claims are bounded to GitHub release v4.4.3 / 1fb56a5c; later 4.4.3-labeled main commits were not adopted."
+        "Runtime and API claims are bounded to valtio 2.3.2; bundle, caret, and concurrency effects need target measurements."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",

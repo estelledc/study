@@ -10,12 +10,12 @@ trust:
   note_type: library
   canonical_source: https://github.com/colinhacks/zod
   source_authority: AUTHOR_PRIMARY
-  accessed_at: '2026-07-17'
-  immutable_revision: 912f0f51b0ced654d0069741e7160834dca742ee
+  accessed_at: '2026-08-27'
+  immutable_revision: 1fb56a5c18c27102dbc92260a4007c7732a0ccca
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
-  reviewed_at: '2026-07-17'
-  review_after: '2026-10-17'
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
   applicable_version: 4.4.3
 ---
 
@@ -56,7 +56,7 @@ Zod v4 的核心可以拆成四层：
 
 3. **同步与异步是显式边界**：同步 runner 遇到 Promise 会抛 `$ZodAsyncError`。包含 async refine/transform 时必须使用 `parseAsync` 或 `safeParseAsync`，不能期待同步 API 自动等待。
 
-4. **对象与组合策略会改变输出**：`z.object` 默认移除未知 key，`looseObject` 保留，`strictObject` 报 issue，`catchall` 用额外 schema 校验。`refine`、`transform`、`pipe` 的顺序还会改变被检查的值。
+4. **对象与编解码会改变输入/输出**：`z.object` 默认移除未知 key，`looseObject` 保留，`strictObject` 报 issue，`catchall` 用额外 schema 校验。`z.codec` 再把 decode（正向）和 encode（反向）分成两条方向，`z.infer` 默认仍看 output。
 
 ## 实践示例
 
@@ -95,27 +95,22 @@ type User = z.infer<typeof User>
 2. `z.enum` 推出字面量联合 `"admin" | "user"`
 3. schema 改字段，类型跟着变——校验与类型不会漂移
 
-### 案例 3：React Hook Form 集成
+### 案例 3：codec 的正向 decode 与反向 encode
 
-```tsx
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-const Login = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+```ts
+const IsoDate = z.codec(z.iso.datetime(), z.date(), {
+  decode: (iso) => new Date(iso),
+  encode: (date) => date.toISOString(),
 })
-type LoginInput = z.infer<typeof Login>
-const { register, handleSubmit, formState: { errors } } = useForm<LoginInput>({
-  resolver: zodResolver(Login),
-})
+const date = z.decode(IsoDate, "2024-01-15T10:30:00.000Z")
+const iso = z.encode(IsoDate, date)
 ```
 
 **逐部分解释**：
 
-1. `zodResolver` 把 zod 的 issue 列表翻译成表单 `errors`
-2. 同一份 schema 可同时服务客户端 form 与服务端 API
-3. `LoginInput` 仍由 `z.infer` 推出，表单泛型与校验同源
+1. `z.codec(input, output, { decode, encode })` 同时声明两侧 schema 和方向函数
+2. `z.decode` 走正向：校验输入 schema，再变成 output
+3. `z.encode` 把 direction 设成 `backward`：从 output 回到 input。边界代码要分清 `z.input` 与 `z.output`
 
 ### 案例 4：验证对象输出和异步边界
 
@@ -132,7 +127,7 @@ await Exists.parseAsync("known")
 
 ## 踩过的坑
 
-1. **把 `safeParse` 理解成永不抛**：普通 validation issue 会进入返回值，但 async schema 走同步 API仍会抛异步边界错误。
+1. **把 `safeParse` 理解成永不抛**：普通 validation issue 会进入返回值，但 async schema 走同步 API 仍会抛 `$ZodAsyncError`。
 2. **忽略未知 key 策略**：默认 strip 可能让输入字段静默消失；需要保留或拒绝时应显式选择 loose/strict/catchall。
 3. **混淆 input 与 output**：transform/codec 让输入输出类型不同，`z.infer` 默认关注 output；边界代码要明确自己需要 `z.input` 还是 `z.output`。
 4. **只测一个执行路径**：对象解析有 JIT/jitless 路径，固定测试专门比较 key 顺序和 `__proto__` 防护；安全敏感升级应覆盖两者。
@@ -142,7 +137,7 @@ await Exists.parseAsync("known")
 **适用**：
 - TS 项目的运行时输入校验（API、form、LLM 输出、配置）
 - 需要「schema = 类型源头」的场景
-- 团队愿意围绕 Zod v4 的错误、异步和对象输出语义建立测试
+- 团队愿意围绕 Zod v4 的错误、异步、对象输出和 codec 方向建立测试
 
 **不适用**：
 - 极致 bundle 敏感但尚未做目标 bundler 实测 → 应先比较 Zod Mini、[[valibot]] 等实际产物
@@ -151,7 +146,8 @@ await Exists.parseAsync("known")
 
 ## 固定版本边界
 
-- 本文绑定 `colinhacks/zod@912f0f51...`，`packages/zod` 版本为 `4.4.3`。
+- 本文绑定 GitHub release `v4.4.3`，提交 `colinhacks/zod@1fb56a5c18c27102dbc92260a4007c7732a0ccca`，`packages/zod` 版本为 `4.4.3`。
+- 访问当日 `main` 仍有更新提交，其中部分仍自称 `4.4.3`，但没有更新的正式 GitHub release；本文不猜测未发布版本。
 - 固定包同时导出默认入口、`mini`、`v3`、`v4`、`v4/core` 和 locale 子路径。
 - `sideEffects: false` 为 tree shaking 提供条件，但最终 bundle 仍取决于 import、bundler 与配置。
 - 本文只做源码/测试静态审查，没有安装依赖、运行上游测试或 bundle benchmark，状态保持 `UNVERIFIED`。
@@ -159,30 +155,29 @@ await Exists.parseAsync("known")
 ## 学到什么
 
 1. **「schema 既是类型又是 runtime」**是 TS 时代的实用范式——一份源码同时服务编译器与运行时
-2. **API 好口决定采用率**：方法链让多数开发者愿意上手，往往比纯性能或理论优雅更重要
-3. **生态锁定真实存在**：[[trpc]] / RHF / drizzle-zod 接上之后，换库成本常高于纸面对比
+2. **API 入口决定采用率**：方法链让多数开发者愿意上手，往往比纯性能或理论优雅更重要
+3. **方向比「通过/失败」更细**：codec 的 decode/encode 让同一份契约同时服务读入和写回
 4. **单一真相源有代价**：schema 一变，前后端 / form / LLM 边界都可能要一起改与重测
 
 ## 应用型自测
 
 1. `safeParse()` 使用了 async refinement。失败一定会落在 `{ success: false }` 里吗？
 2. API 输入包含 `{ name: "Ada", admin: true }`，schema 是 `z.object({ name: z.string() })`。默认输出还有 `admin` 吗？
-3. 一个 transform 把字符串转成数字。函数边界该只写 `z.infer`，还是区分 input/output？
+3. 一个 codec 把 ISO 字符串转成 `Date`。函数边界该只写 `z.infer`，还是区分 input/output？
 
 检查点：
 
-1. 不一定。同步 API 遇到 Promise 会抛异步错误，应使用 `safeParseAsync()`。
+1. 不一定。同步 API 遇到 Promise 会抛 `$ZodAsyncError`，应使用 `safeParseAsync()`。
 2. 没有。默认 object 会移除未知 key；保留或拒绝需要显式策略。
-3. 应区分。外部输入和校验后的输出是两种类型，不能用一个别名掩盖转换边界。
+3. 应区分。外部输入和校验后的输出是两种类型；`z.encode` 还会走反向。
 
 ## 延伸阅读
 
 - 官方文档：[zod.dev](https://zod.dev)
 - 仓库：[github.com/colinhacks/zod](https://github.com/colinhacks/zod)
-- 固定源码：[colinhacks/zod](https://github.com/colinhacks/zod) —— 本文绑定提交 `912f0f51b0ced654d0069741e7160834dca742ee`
+- 固定源码：[colinhacks/zod](https://github.com/colinhacks/zod) —— 本文绑定提交 `1fb56a5c18c27102dbc92260a4007c7732a0ccca`
 - [[trpc]] —— 端到端类型契约的最大下游之一
 - [[valibot]] —— 更小 bundle 的模块化替代
-- [[react-hook-form]] —— 表单侧常见集成点
 - [[next-js]] —— Server Actions / 路由里常见的输入校验搭配
 
 ## 关联
