@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2050,
-      "classified": 2003,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 967,
-        "classified": 939,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -51830,6 +51830,37 @@
       }
     },
     {
+      "id": "projects::navaid",
+      "area": "projects",
+      "slug": "navaid",
+      "title": "Navaid — 用 regexparam 和 history 补丁做成的无框架浏览器路由器",
+      "description": "介绍 navaid 1.2.0 如何用 format/on/run/listen 四步，在无框架页面里做路径匹配和 history 同步。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "路由库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/navaid/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
       "id": "projects::navigation2",
       "area": "projects",
       "slug": "navigation2",
@@ -64212,6 +64243,37 @@
       }
     },
     {
+      "id": "projects::wouter",
+      "area": "projects",
+      "slug": "wouter",
+      "title": "Wouter — 用 hooks 和 regexparam 拼起来的最小 React 路由器",
+      "description": "介绍 wouter 3.9.0 如何用 location hook、regexparam 匹配和 Switch 首个命中组织 React / Preact 路由。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "路由库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/wouter/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
       "id": "projects::wretch",
       "area": "projects",
       "slug": "wretch",
@@ -65690,7 +65752,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/",
-      "entries": 4
+      "entries": 6
     },
     {
       "id": "topic-projects-data-science-and-ai-01",

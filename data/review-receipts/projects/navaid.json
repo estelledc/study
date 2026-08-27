@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "navaid",
+    "digest_sha256": "4c8add9e7334c50186a7820d4211581333123a73276432cc302022f7999ecd05"
+  },
+  "source_revision": "9989c05ece026f2786f3582bb35ea4dc86afc574",
+  "research_input_sha256": "9ab2d50e01c6f6d6713726f63d7879ead7cf1d54d96b634d971960c4ff7d5898",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-in",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates format/base gate, first-hit run, route-vs-listen, and history.push patch flag."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-in",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "src/index.js, types, and builder were inspected; regexparam v1 is the runtime matcher; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-in",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag, package, and npm gitHead agree on 9989c05; advertised 865-byte size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

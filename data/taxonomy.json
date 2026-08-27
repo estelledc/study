@@ -2196,6 +2196,10 @@
       "topic_id": "projects-state-management"
     },
     {
+      "note_id": "projects::navaid",
+      "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
       "note_id": "projects::neo4j",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2606,6 +2610,10 @@
     {
       "note_id": "projects::why-did-you-render",
       "topic_id": "projects-observability-and-performance"
+    },
+    {
+      "note_id": "projects::wouter",
+      "topic_id": "projects-data-fetching-and-routing"
     },
     {
       "note_id": "projects::wretch",
