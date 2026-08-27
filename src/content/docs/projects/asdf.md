@@ -1,161 +1,160 @@
 ---
 title: asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
 来源: https://github.com/asdf-vm/asdf
-日期: 2026-05-31
+日期: 2026-08-27
 分类: 基础设施
 难度: 入门
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/asdf-vm/asdf
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 150aaf051b3b88ac9ad73136d7e629bbdf332bd6
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.20.0
 ---
 
 ## 是什么
 
-asdf（读作 "as-dee-eff"，没有特别含义）是一个**多语言的开发环境版本管理器**。
+asdf 是一个**多运行时版本管理器**：一个 CLI，靠插件装 Node / Python / Ruby 等工具，再用 `.tool-versions` 按目录选版本。日常类比：以前每种语言一把秤（nvm、pyenv、rbenv）；asdf 是一把通用秤，刻度盘由插件提供。
 
-日常类比：
-
-- 想象厨房里每种食材都有自己的称：电子秤称米、量杯量水、勺子量盐——三套工具
-- 老式做法：装 `nvm` 切 Node、`pyenv` 切 Python、`rbenv` 切 Ruby——每种语言一个工具，命令各不一样
-- asdf 是一把"通用秤"：一个 CLI 通过插件支持几十种语言/工具，命令统一
-
-在项目根放一份 `.tool-versions` 文件（每行一个工具+版本），下次 `cd` 进这个目录，asdf 自动把对的版本切上去。
-
-仓库：`github.com/asdf-vm/asdf`，**MIT** 协议，2014 年 Akash Manohar 创建，最初用 **Bash** 写，2025 年的 v0.16 重写为 **Go**。
-
-## 为什么重要
-
-不用 asdf（或类似工具）做多语言开发，会撞上四类痛：
-
-1. **多项目多版本冲突**：项目 A 用 Node 18，项目 B 用 Node 22，系统装一个都不对。
-2. **每种语言一个工具**：nvm / pyenv / rbenv / goenv… 命令风格不一致，shell 启动慢。
-3. **新人入坑成本**：README 写"先装 Node 18.17、Python 3.11、Ruby 3.2"——挨个装。有 `.tool-versions` 时只要 `asdf install` 一行。
-4. **CI 与本地不一致**：`.tool-versions` 进 git，CI 用 `asdf-vm/actions/install`，与本地同源。
-
-更关键的是：asdf **定义了"通用版本管理器插件协议"的事实标准**。后来出现的 `mise` / `rtx` 都兼容 asdf 插件——整个生态因 asdf 而存在。
-
-## 核心要点
-
-asdf 的世界由 **5 个概念**撑起来：
-
-| 概念 | 是什么 | 类比 |
-|------|--------|------|
-| Plugin | 一个 git 仓库，定义"怎么装这门语言" | 给"通用秤"加一个新刻度盘 |
-| `.tool-versions` | 项目根的版本声明文件 | 项目的环境清单 |
-| Shim | `~/.asdf/shims/node` 这种假可执行 | 替身演员，调用时再找真版本 |
-| Global / Local | 家目录是全局回退；项目内是局部覆盖 | 家里默认值 / 工作时改写 |
-| `asdf install` | 读 `.tool-versions` 把所有版本装上 | 一键备料 |
-
-最重要的三步：`asdf plugin add nodejs`（装插件） → `asdf install nodejs 20.10.0`（装版本） → `asdf set nodejs 20.10.0`（写进 `.tool-versions`）。
-
-## 实践案例
-
-### 案例 1：新项目装 Node + Python
+固定 `v0.20.0` 的主程序是 Go 二进制，不再是塞进 shell 的函数。`cmd/asdf/main.go` 把版本写成 `0.20.0`；仓库根目录 `version.txt` 仍是 `0.15.0`，不能当发布号。
 
 ```bash
-# 一次性装两个插件
 asdf plugin add nodejs
-asdf plugin add python
-
-# 在项目目录里声明版本
-cd my-project
 asdf set nodejs 20.10.0
-asdf set python 3.11.7
-
-# 看看生成了什么
-cat .tool-versions
-# nodejs 20.10.0
-# python 3.11.7
-
-# 真正下载 + 编译
 asdf install
 ```
 
-之后这个目录里跑 `node --version` 就是 20.10.0；`cd` 出去回到默认值。
+`asdf set` 默认在当前目录写 `.tool-versions`。`--home` / `-u` 写用户主目录；`--parent` / `-p` 改最近的父目录版本文件。两者不能同时开。
 
-### 案例 2：shim 是怎么工作的
+## 为什么重要
 
-执行 `node app.js` 时背后的链路：
+不按 0.16 之后的 Go 源码读，下面这些旧习惯会直接失败：
 
-1. shell 找到 `~/.asdf/shims/node`（PATH 第一个）
-2. shim 是个小脚本，它读取**当前目录往上找**到的第一个 `.tool-versions`
-3. 找到 `nodejs 20.10.0`，跳到 `~/.asdf/installs/nodejs/20.10.0/bin/node`
-4. 把所有参数原样转发
+- 继续 `source ~/.asdf/asdf.sh`——升级文档要求改把 `$ASDF_DATA_DIR/shims` 放到 PATH 前面
+- 继续写 `asdf local` / `asdf global` / `asdf shell` / `asdf update`——这些命令在 0.16 起删除或改成报错
+- 以为 shim 已经变成纯 Go——`Write()` 仍生成 `#!/usr/bin/env bash` 脚本，最后一行是 `exec asdf exec "name" "$@"`
 
-类比：你打公司前台电话，前台查工位表，再把电话转给真人。shim 就是前台。
+## 核心要点
 
-### 案例 3：插件协议的简洁
+固定 0.20.0 的主链可以拆成五步：
 
-asdf 的插件就是一个 git 仓库，里面几个 shell 脚本：
+1. **插件是 Git 仓库**：`asdf plugin add <name>` 无 URL 时，向默认索引 `https://github.com/asdf-vm/asdf-plugins.git` 查短名；有 URL 则直接 `git clone --depth 1`。插件名只允许小写字母、数字、`_`、`-`。
+2. **装版本是回调，不是 asdf 自己编译**：`InstallOneVersion` 先可选跑 `bin/download`，再必须跑 `bin/install`。`system` 与 `path` 版本不能装。成功后 `shims.GenerateAll`。
+3. **选版本先看环境变量**：`resolve.Version` 先读 `ASDF_<TOOL>_VERSION`（工具名大写，连字符变下划线），再从当前目录往上找 `.tool-versions`，最后回退到家目录。`.nvmrc` 这类 legacy 文件默认关，要在 `.asdfrc` 打开 `legacy_version_file`。
+4. **shim 只是跳板**：PATH 上的 `node` 是 bash 小脚本；它把控制权交给 `asdf exec`，再由 `FindExecutable` 按当前目录解析真实二进制。
+5. **核心是二进制，升级靠包管理器**：`asdf update` 只打印「已移除」并返回错误。数据目录默认 `~/.asdf`，可用 `ASDF_DATA_DIR` 覆盖。
 
+插件文档把 `bin/list-all` 与 `bin/install` 标成 required，`bin/download` 与 `bin/list-bin-paths` 是常见可选回调。没有 `list-bin-paths` 时，可执行目录默认 `bin/`。
+
+## 实践示例
+
+### 案例 1：声明并安装
+
+```bash
+asdf plugin add nodejs
+asdf plugin add python
+cd my-project
+asdf set nodejs 20.10.0
+asdf set python 3.11.7
+cat .tool-versions
+asdf install
 ```
-bin/list-all       # 列出这个工具有哪些版本可装
-bin/download       # 下载源码或二进制
-bin/install        # 装到 ~/.asdf/installs/<tool>/<version>/
-bin/list-bin-paths # 告诉 asdf 这个版本里哪些目录有可执行
+
+`asdf install` 无参数时，对当前目录解析到的每个已安装插件版本逐个 `Install`。已装过的版本返回 `VersionAlreadyInstalledError`，不会当致命失败单独中断整批。
+
+### 案例 2：shim 实际做了什么
+
+生成的 shim 形态是：
+
+```bash
+#!/usr/bin/env bash
+# asdf-plugin: nodejs 20.10.0
+exec asdf exec "node" "$@"
 ```
 
-写一个新插件 = 写这 4 个 shell 脚本。生态因此爆发——asdf 官方插件库收了 500+ 工具。
+`asdf exec` 用当前工作目录调用 `FindExecutable`：读 shim 头里的插件/版本注释，再和目录向上解析出的版本求交，最后 `exec` 真实文件。类比：前台只记「谁能接这个分机」，真正接线的是 `asdf exec`。
+
+### 案例 3：家目录回退 vs 当前目录
+
+```bash
+asdf set --home nodejs 22.11.0
+asdf set nodejs 20.10.0
+```
+
+第一行写 `$HOME/.tool-versions`，第二行写当前目录。进入项目目录时，解析器先命中当前文件，不会用家目录值盖住它。环境变量 `ASDF_NODEJS_VERSION` 比两种文件都更优先。
 
 ## 踩过的坑
 
-1. **Bash 版 shim 启动慢**：每次调用 `node` 都要 fork 一次 shell 解析 `.tool-versions`，在 monorepo 里叠加上百个 shim 体感卡顿。v0.16（2025）改 Go 后改善。
-2. **PATH 顺序问题**：忘了在 `.zshrc` 里 `source ~/.asdf/asdf.sh`，shim 不在 PATH，`node` 找不到——典型新手坑。
-3. **v0.16 行为变化**：旧 Bash 版的 `ASDF_DIR` 等环境变量在 Go 版里有变，升级时旧脚本可能失效，要看 changelog。
-4. **插件质量参差**：冷门语言（如某些小众 lisp 方言）的插件可能停止维护，装版本时报错。
-5. **Windows 原生不支持**：要走 WSL，原生 Windows 用户用 mise 或 scoop 更顺。
+1. **升级后还 source `asdf.sh`**：0.16+ 要求 PATH 指向 shims 目录；旧函数入口会让你以为命令不存在或仍是 Bash 版。
+2. **把 `asdf set` 当成旧的 global**：默认只写当前目录。要写家目录必须 `--home`。
+3. **`asdf update` 自升级**：命令还在，但固定文本说明已移除，退出为错误。
+4. **插件短名仓库被关掉**：`disable_plugin_short_name_repository` 为真且没给 Git URL 时，`plugin add` 直接失败。
+5. **把 `version.txt` 当成 0.20.0**：发布号以 `cmd/asdf/main.go` 的 `version` 与 tag `v0.20.0` 为准。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- polyglot 项目：一个 monorepo 既有 Node 后端又有 Python 脚本又有 Go 工具
-- 多版本测试：Ruby 库要在 2.7 / 3.0 / 3.2 都跑一遍
-- 团队入职：README 写 `asdf install`，几分钟环境齐
-- CI：用 `asdf-vm/actions/install` 直接读 `.tool-versions`
+- 一个仓库要锁多种运行时，并用同一份 `.tool-versions`
+- 团队/CI 用同一套插件回调装版本
+- 已有 asdf 插件生态，并接受「shim → `asdf exec`」这条路径
 
 **不适用**：
 
-- 单语言简单项目：装个 nvm / pyenv 就够，没必要全家桶
-- Windows 原生开发（不走 WSL）：用 mise / scoop / winget
-- 追求"包括系统库"的可重现性：用 [[nix]]，asdf 只管语言运行时
-- 容器化部署：CI 镜像里 `FROM node:20` 更直接
+- 只要一种语言、已经在用 nvm / pyenv，没有统一入口的需求
+- 原生 Windows：FAQ 只承诺 WSL2 且工作目录在 Unix 盘；WSL1 明确不官方支持
+- 要把系统库和编译工具一并锁死——那是 [[nix]] 的合同，不是 asdf 插件协议
+- 需要把「比 mise 快/慢多少」写成事实——本文没有测启动时间
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014 年**：Akash Manohar 发布 asdf，目标是把 nvm、rbenv、pyenv 这类单语言版本管理器统一到一个命令入口。
-- **2016-2018 年**：插件机制稳定下来，社区开始把 Node、Python、Ruby、Elixir 等常见运行时都接进同一套 `.tool-versions` 文件。
-- **2020-2023 年**：polyglot monorepo 变多，asdf 因为“一个仓库锁多种工具版本”被大量团队放进 onboarding 和 CI。
-- **2025 年**：v0.16 改用 Go 重写主程序，保留插件协议和目录结构，重点解决 Bash 版本启动慢、维护困难的问题。
-
-## 替代品
-
-| 工具 | 特点 | 何时选 |
-|------|------|--------|
-| **mise** | Rust 重写版，启动比 asdf 快 10×，兼容 asdf 插件 | 嫌 asdf 慢，又想要插件生态 |
-| **Homebrew** | 装一个最新版，没切换概念 | 只用一个版本就够 |
-| **[[nix]]** | 函数式包管理，连系统库一起锁 | 要"绝对可重现"，能接受陡学习曲线 |
-| **Docker** | 整个环境装容器里 | 部署同源，不想污染本机 |
-| **手动 nvm/pyenv** | 每语言一个工具 | 老项目里已经在用，不想动 |
+- 本文绑定 `asdf-vm/asdf@150aaf051b3b88ac9ad73136d7e629bbdf332bd6`。lightweight tag `v0.20.0` 指向该提交；`go.mod` 为 `go 1.26.3`。
+- 0.16.0 起主程序改为 Go；0.20.0 的 changelog 只记录 `ASDF_TOOL_VERSIONS_FILENAME` 无效值警告、插件浅克隆和 nushell completion，不改变上述主链。
+- LICENSE 仍是 2014 Akash Manohar J 的 MIT；CLI `Copyright` 字段写的是 2024 Trevor Brown。
+- 未安装二进制、未跑插件回调或上游测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **shim 是把"动态选择"塞进 PATH 的经典套路**：与 [[homebrew]] 的 `Cellar/<formula>/<version>/` + symlink 是不同思路（asdf 选 shim、homebrew 选 symlink）。
-2. **插件协议越简单，生态越大**：4 个 shell 脚本就能写一个 asdf 插件——门槛低，所以 500+ 插件。
-3. **Bash → Go 重写不是"重新发明"**：v0.16 保留了协议、目录结构、`.tool-versions` 格式——升级时数据可继承。
-4. **"事实标准"比"官方标准"更顽强**：asdf 没出过 RFC，但因为 mise 兼容它的插件，整个版本管理生态都按它的格式走。
+1. **「一个 CLI 管多语言」靠的是插件回调，不是核心认识每种语言**。
+2. **Go 重写删的是 shell 函数能力**（改当前 shell 环境、自升级），不是 `.tool-versions` 或 shim 协议。
+3. **版本解析是有序回退**：环境变量 → 目录向上 → 家目录，没有真正的全局锁定。
+4. **发布号要以 tag 与 `main.go` 为准**——仓库里可能留下过期的 `version.txt`。
+
+## 应用型自测
+
+1. 在 0.20.0 里运行 `asdf local nodejs 20.10.0` 还会写 `.tool-versions` 吗？
+2. shim 文件本身会打开 `.tool-versions` 并 `exec` 真实 `node` 吗？
+3. `ASDF_NODEJS_VERSION=18.20.0` 存在时，当前目录的 `.tool-versions` 还会生效吗？
+
+检查点：
+
+1. 不会。`local` / `global` 已删除；应使用 `asdf set`。
+2. 不会。shim 只 `exec asdf exec "node" "$@"`，解析发生在 Go 的 `FindExecutable`。
+3. 不会。`resolve.Version` 先读环境变量并直接返回。
 
 ## 延伸阅读
 
-- 官方文档：[asdf-vm.com](https://asdf-vm.com)（Getting Started 10 分钟读完）
-- 插件列表：[github.com/asdf-vm/asdf-plugins](https://github.com/asdf-vm/asdf-plugins)（500+ 插件清单）
-- v0.16 重写背景：[asdf v0.16.0 release notes](https://github.com/asdf-vm/asdf/releases)（Bash → Go 动机）
-- [[mise]] —— Rust 重写版，更快，兼容 asdf 插件
-- [[homebrew]] —— macOS 包管理器，思路对照（symlink vs shim）
-- [[nix]] —— 函数式包管理，"可重现"的另一极
+- 官方文档：[asdf-vm.com](https://asdf-vm.com)
+- 固定源码：[asdf-vm/asdf](https://github.com/asdf-vm/asdf) —— 本文绑定提交 `150aaf051b3b88ac9ad73136d7e629bbdf332bd6`
+- 0.16 升级说明：[Upgrading to 0.16.0](https://asdf-vm.com/guide/upgrading-to-v0-16.html)
+- 插件脚本：[Create a Plugin](https://asdf-vm.com/plugins/create.html)
+- [[mise]] —— 兼容插件协议的另一种实现；快慢对比不在本文范围内
+- [[nvm]] / [[pyenv]] —— 单语言对照
 
 ## 关联
 
-- [[mise]] —— asdf 的 Rust 后继者，启动快 10×，插件协议兼容
-- [[homebrew]] —— 同样管"装多个版本"，但用 symlink 而非 shim
-- [[nix]] —— 同样追求"项目环境描述化"，但管到系统库一层
+- [[mise]] —— 同样吃 asdf 插件，实现与性能主张以 mise 固定源码为准
+- [[nvm]] —— 只管 Node
+- [[pyenv]] —— 同样用 shim，但是单语言
+- [[homebrew]] —— 用 Cellar + symlink，不是按目录解析 `.tool-versions`
+- [[nix]] —— 锁到系统依赖一层
 
 ## 反向链接
 

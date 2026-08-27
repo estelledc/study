@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 平行 writer FF：ast-grep + asdf 源码绑定
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
+- status：`running` 已收口为本 epoch `complete`。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（分支起点 `origin/main` / PR #75）。
+- objective：把 `ast-grep` 与 `asdf` 两页从 `needs-evidence` 迁到源码绑定 `study-v2`；二者均在审计里有真实 GitHub canonical，且未被本波其他 writer 占用。
+- scope：两页正文、2 份 generation 1 static receipt、`docs/ast-grep-asdf-source-review-20260827-ff.md`、本 handoff，以及为 portable gate 刷新的派生索引；未安装上游依赖、未编译/运行 `sg` 或 `asdf`、未测启动时间或吞吐。
+- activated_by：`explicit-user-parallel-writer-ff-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧 ast-grep 把语言数写成含糊「20+」、把 `$x` 当占位符；旧 asdf 仍教 `source asdf.sh`、把 shim 写成直接读 `.tool-versions`，并含未绑定的插件数量与 mise 倍数。
+- external delta 计数：本轮授权形成 1 个 PR（未 merge、未 deploy）。
+- 已完成切片：
+  1. `ast-grep` 绑定 lightweight tag `0.45.2` / `c41e023a64060c9f263c23320aa5ff67be4bc474`（与 npm `@ast-grep/cli@0.45.2` `gitHead` 一致），修正 28 个 `SupportLang`、meta-variable 字符集、`run -r` vs `scan -r`、`-U` 必须带 rewrite。
+  2. `asdf` 绑定 lightweight tag `v0.20.0` / `150aaf051b3b88ac9ad73136d7e629bbdf332bd6`，修正 Go 二进制 PATH、`asdf set` 落点、环境变量优先解析、shim 仍是 `exec asdf exec`，并披露 `version.txt` 仍为 `0.15.0`。
+  3. 新增 `docs/ast-grep-asdf-source-review-20260827-ff.md` 与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` 全过、0 advisory；两份 receipt digest/revision/provenance 一致，evidence state `UNVERIFIED`；`git diff --check` 通过。全量 `verify:ci` 以 PR checks 为准。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态迁移；单 writer。
+- stop_conditions：本轮两页已绑定即结束；派生索引冲突不是本 writer 的 merge 工作；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 对 merge 的单独授权。
+- 下一条命令：`export PATH="$HOME/.nvm/versions/node/v22.23.1/bin:$PATH" && STUDY_CHANGED_FROM=1f2917d90180638e3960be37de1a5df6884b989a npm run verify:ci`
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。实时计数以 `npm run audit:project-standard` 与 `npm run audit:content-contract` 为准。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
