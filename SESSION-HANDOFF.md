@@ -17,12 +17,14 @@
   2. 新建两篇 `study-v2` 页：客户端门面/host/retry/browser-Node 默认，以及 InstantSearch `searchClient` / `start` / `defer` / hydrate 边界。
   3. 新增 `docs/hosted-search-source-review-20260827-dw.md` 与两份 static receipt。
   4. 同步 atlas 派生：`algolia` 的 `freshness.review_after` 从 2026-11-27 改为 2026-11-25，与 platform-api 90 天窗口一致。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与固定 revision 一致，evidence state `UNVERIFIED`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与固定 revision 一致，evidence state `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 STUDY_FRESHNESS_AS_OF=2026-08-27 npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下全绿（23 Playwright a11y、Pages/Atlas 2046 notes/69 chunks、站点预算与 diff 门禁）。
 - budget：2 个 blob-filtered worktree + 2 篇新页 + 1 个 PR；单 writer。
 - blocker：`benchmark-site --compare` 的 `tracked_files` 超限在 `main` 上已存在，属 `PARKED_HUMAN` 规模基线问题；本轮未改 baseline 或阈值。
 - stop conditions：本轮写入结束；merge 与 deploy 需单独授权。
 - 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge / 规模 baseline 的决定。
-- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #179；未获授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 表单主题组收口 epoch 8
