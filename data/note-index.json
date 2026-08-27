@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2045,
-      "classified": 1998,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 962,
-        "classified": 934,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -37133,9 +37133,9 @@
       "id": "projects::biome",
       "area": "projects",
       "slug": "biome",
-      "title": "Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Biome — 把 lint、format 和 assist 收进同一个 CLI",
+      "description": "固定版本把 lint、format 和 assist 收进同一条 process_file",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-build-tools-and-bundlers"
       ],
@@ -37146,13 +37146,13 @@
         "raw_category": "前端工具链"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/biome/",
       "atlas": {
@@ -54152,6 +54152,37 @@
       }
     },
     {
+      "id": "projects::oxlint",
+      "area": "projects",
+      "slug": "oxlint",
+      "title": "oxlint — 编译进二进制的 JS/TS linter",
+      "description": "lint-only CLI：JSON 配置可移植，JS plugin 只走 Node NAPI 入口",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-build-tools-and-bundlers"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-build-tools-and-bundlers",
+        "raw_category": "前端工具链"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/oxlint/",
+      "atlas": {
+        "chunk_id": "topic-projects-build-tools-and-bundlers-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/"
+      }
+    },
+    {
       "id": "projects::paddle-lite",
       "area": "projects",
       "slug": "paddle-lite",
@@ -65464,7 +65495,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-build-tools-and-bundlers-01/",
-      "entries": 14
+      "entries": 15
     },
     {
       "id": "topic-projects-cli-tools-01",

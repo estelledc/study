@@ -2252,6 +2252,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::oxlint",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::patchright",
       "topic_id": "projects-ai-browser-automation"
     },

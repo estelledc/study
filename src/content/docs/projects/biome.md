@@ -1,158 +1,156 @@
 ---
-title: Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+title: Biome — 把 lint、format 和 assist 收进同一个 CLI
+description: 固定版本把 lint、format 和 assist 收进同一条 process_file
 来源: https://github.com/biomejs/biome
-日期: 2026-05-29
+日期: 2026-08-27
 分类: 前端工具链
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/biomejs/biome
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 05797b196eb4412bb373d0825c44b0dd856f4134
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.5.10
 ---
 
 ## 是什么
 
-Biome 是**用 Rust 重写的 JavaScript / TypeScript 工具链**，把 ESLint（找代码问题）、Prettier（统一代码格式）、import sorter（整理 import 顺序）三件事**塞进同一个二进制**。日常类比：以前你家厨房有 4 个独立小电器（榨汁机、搅拌机、料理机、研磨杯），现在变成一台多功能料理机——少占空间、共享马达、洗一次就行。
+Biome 是一个用 Rust 写的 Web 工具链 CLI。日常类比：以前 lint、format、整理 import 像三台各带说明书的电器；Biome 把它们收进同一个开关面板，共用一份工作区文档。
 
-你只要写一行：
+固定 2.5.10 的 npm 包是 `@biomejs/biome`，二进制名 `biome`，可选依赖按平台分发 CLI。常见入口：
 
 ```bash
-npx @biomejs/biome check ./src
+npx @biomejs/biome check --write
+npx @biomejs/biome ci
 ```
 
-一个命令同时做：扫语法错、按规则格式化、排好 import 顺序、给出诊断报告——**速度比 ESLint + Prettier 跑一遍快 25-100 倍**。截至 2026-05，v2.4.16，450+ 条规则，24.8k stars。
+`check` 可以同时做 lint、assist 和 format；`ci` 走同一条处理链，但只读、不写盘。
 
 ## 为什么重要
 
-不理解 Biome 的设计选择，下面这些事都没法解释：
+不看固定源码，容易把 Biome 说成“更快的 ESLint + Prettier”：
 
-- 为什么 ESLint + Prettier 已经存在 10 年，还能被一个新工具一战打穿
-- 为什么"性能优势"不是核心卖点——**真正的杠杆是"共享一份 AST"**
-- 为什么 Biome 故意限制插件生态——这不是功能缺失，是判断
-- 为什么 Vite 团队另起炉灶做 oxlint 而不是直接用 Biome——同流派的工具是怎么分流的
+- 为什么一个 `biome.json` 能同时关掉 formatter、linter 或 assist，而不必拆成四套 ignore 文件
+- 为什么 `--write` 默认不会应用 unsafe fix，GritQL 插件重写通常还要再加 `--unsafe`
+- 为什么 `ci` 在 GitHub Actions 里会换 reporter，却仍然拒绝写回
+- 为什么“一份 AST 只 parse 一次”在 write 路径上并不总成立
+
+一句话：Biome 的产品判断是**同一工作区、同一 `process_file`**，不是单点工具的重命名。
 
 ## 核心要点
 
-Biome 的设计选择可以拆成 **三条**：
+固定版本可以把主链拆成四步：
 
-1. **一份 AST，多个 pass 共享**：源码只 parse 一次，linter / formatter / import sorter 全部读同一棵语法树。类比：开会做会议纪要，一个人记，所有人共用，而不是 4 个人各自做笔记。
+1. **命令选择功能集**：`check` / `ci` 请求 lint + assist + format；单独的 `lint` / `format` 只开其中一部分。
+2. **配置合并**：磁盘上的 `biome.json` / `biome.jsonc` 与 CLI 覆盖合并。CLI 覆盖不会重写配置文件里已经关掉的 rules / assist actions。
+3. **同一 `process_file`**：CLI 的 `CheckProcessFile` 调用 workspace `process_file`，按文件已支持的 feature 决定是否 lint、assist、format。
+4. **写回是显式模式**：没有 `--write` / `--fix` 时只报告 diagnostics 和 format diff；`ci` 的 `requires_write_access` 恒为 false。
 
-2. **配置统一**：一个 `biome.json` 替代 `.eslintrc` + `.prettierrc` + `.eslintignore` + `.prettierignore` 四件套。类比：把 4 张分散的卡塞进一张身份证。
+`init` 生成的默认配置会打开 formatter（`indentStyle: tab`）、linter 和 assist，并把 `organizeImports` 设为 on。formatter 默认 `lineWidth` 为 80；`formatWithErrors` 默认 false。
 
-3. **故意不追求 100% 兼容**：97% 兼容 Prettier 输出，450+ 条规则覆盖 ESLint 高价值部分。剩下的 3% / 自定义规则要么改写、要么放弃。类比：搬家时只带 90% 常用物品，省下的搬运成本远超那 10%。
+## 实践示例
 
-这三条加起来叫 **"整合优于单点"** 的判断——是一种产品哲学，不是单纯的技术胜利。
-
-## 实践案例
-
-### 案例 1：5 分钟跑通
+### 案例 1：init 之后一次 check
 
 ```bash
-mkdir biome-demo && cd biome-demo
-npm init -y
 npm install --save-dev --save-exact @biomejs/biome
-npx @biomejs/biome init                  # 生成 biome.json
-echo 'const x=1;var y=2' > demo.js
-npx @biomejs/biome check --write demo.js
-cat demo.js
-# const x = 1;
-# const y = 2;
+npx @biomejs/biome init
+npx @biomejs/biome check --write ./src
 ```
 
 **逐部分解释**：
 
-- `init` 生成默认配置（`biome.json`，约 10 行）
-- `check --write` 一次跑完 lint + format + auto-fix
-- `var y` 被自动改成 `const y`（noVar 规则的 unsafe fix）
-- 整个过程**没装 ESLint、没装 Prettier、没装任何 plugin**
+1. `init` 在发现 `.gitignore` 时会写入 VCS ignore 集成；发现 `dist/` 时会加 `!!**/dist` 排除。
+2. 默认文件名是 `biome.json`；`--jsonc` 才写 `biome.jsonc`。
+3. `--write` 只应用 safe lint fix 和 safe assist；要 unsafe 必须再加 `--unsafe`。
 
-### 案例 2：lineWidth 改一处看字节差
+### 案例 2：CI 只读，不写盘
 
-`biome.json` 里把 `"lineWidth": 80` 改成 `"lineWidth": 120`，对同一份长对象字面量跑 format：
-
-```js
-// lineWidth: 80（容不下 → 整个对象 break）
-const obj = {
-  foo: 1, bar: 2,
-  baz: [1, 2, 3 /* ... */],
-  nested: { a: 1, b: 2 },
-};
-
-// lineWidth: 120（同一对象塞回一行）
-const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } };
+```bash
+npx @biomejs/biome ci .
 ```
 
-输出在两个稳定状态间切换——**没有"换 3 个字段、保留 2 个不换"的中间态**。这是 Wadler 1998 paper 的 group atom 性质（见 [[wadler-prettier]]）。
+`ci` 复用 `CheckProcessFile`，但 `FixFileMode` 为空、`requires_write_access=false`。GitHub Actions 下会改用 GitHub reporter。三个功能都被 CLI 关掉时，命令直接报配置不兼容。
 
-### 案例 3：CI 里替代 ESLint + Prettier
+### 案例 3：语法错误时 format 可能被拒绝
 
-旧 CI：
-
-```yaml
-- run: npx eslint .             # ~8 秒
-- run: npx prettier --check .   # ~3 秒
+```bash
+npx @biomejs/biome check ./broken.js
 ```
 
-换成：
-
-```yaml
-- run: npx biome ci .           # ~0.5 秒（同等规模 1000 文件 TS 项目）
-```
-
-`biome ci` 是给 CI 优化的子命令——只读、不写、错误码 1 退出。**整体 lint 阶段从 11 秒缩到 1 秒以内**。
+workspace `process_file` 在文件已有 parse error、且未打开 `formatWithErrors` 时，会把 `format_with_errors_disabled` 置位并跳过 format。这不是“format 更宽松”，而是默认保护。
 
 ## 踩过的坑
 
-1. **97% 兼容不是 100%**：那 3% 集中在 JSX、TS decorators、object literal 边界场景——下游工具如果硬吃 Prettier 输出，迁移会炸。
-2. **复杂 ESLint 自定义规则没等价**：内部 lint 规则 / 复杂 plugin 要重写，迁移成本可能 > 性能收益。
-3. **plugin 系统故意被限制**：只支持 GritQL pattern 匹配，不支持任意 Rust plugin——**这不是 bug 是判断**，但被卡过的人会觉得是缺失。
-4. **默认配置不一定合团队**：`lineWidth: 80` / `indentStyle: tab` 大概率你会想改，别以为"零配置开箱即用"等于"什么都不用动"。
+1. **把 write 路径说成永远只 parse 一次**：fix 或 format 写回后，固定实现会 `parse_process_file_state` 再拉 diagnostics。
+2. **以为 `--write` 等于应用全部 fix**：默认 `SafeFixes`；`--unsafe` 才是 `SafeAndUnsafeFixes`。GritQL 插件 rewrite 默认按 unsafe 处理。
+3. **`--watch` 和 `--write` / `--fix` 不能组合**：watch 模式明确拒绝落盘修复。
+4. **把 README 的 Prettier 兼容率或规则数当成本轮测量**：本文没有跑 compatibility suite 或规则清单统计。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 新项目起步——30 分钟搭好、一个文件配置完
-- 已有 ESLint + Prettier 项目想加速——可双跑过渡
-- pre-commit hook（`lint-staged + biome check`）替换原 ESLint hook
-- CI 里把 lint job 从 30 秒缩到 1 秒以下
+- 希望一个 CLI、一份配置同时管 lint / format / import 整理
+- 能接受默认 tab + 80 列，或愿意在 `biome.json` 里显式改掉
+- CI 需要只读检查，本地再用 `--write` 落盘
 
 **不适用**：
 
-- 重度依赖 ESLint 自定义规则的大型项目——迁移成本太高
-- 必须 100% Prettier 兼容（下游工具吃 Prettier 输出格式）——3% 差异可能炸
-- 需要写 plugin 深度扩展核心——Biome 故意限制
-- 只想要"更快的 Prettier"不要 lint——用 dprint 更纯粹
+- 必须 100% 复现 Prettier 输出，又没有做目标仓库对比
+- 依赖任意 JS ESLint plugin 运行时，而不是 GritQL / 上游内置规则
+- 需要把静态阅读写成已验证的性能或兼容性结论
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：前 Babel 作者发起 **Rome** 项目——目标是做完整 web toolchain（含 bundler）。野心过大，进展缓慢。
-- **2022 年**：Rome 团队组建公司，宣布用 Rust 全量重写。
-- **2023 年 8 月**：公司倒闭。社区 fork 出 **Biome**，由 maintainer 群体接管。
-- **2024 年**：Biome 1.0 发布——只做 lint + format + import sort，**砍掉 bundler 等一半野心**。
-- **2026 年 5 月**：v2.4.16，Vercel / Astro / Tailwind 等都在用。
-
-→ 知道这个背景才理解：Biome 不是凭空冒出，是一群人从废墟里把可保留的部分抢救出来。**砍野心是它活下来的关键**。
+- 本文绑定 `biomejs/biome@05797b19...`，npm 包 `@biomejs/biome@2.5.10`。
+- 引擎声明为 `node >=14.21.3`；实际 CLI 是按平台分发的原生二进制。
+- 插件扩展在固定源码里走 GritQL，不是任意 Rust/JS plugin ABI。
+- 本文只做源码静态审查，没有安装依赖或运行 CLI，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **设计胜过性能**：Biome 真正的杠杆不是 Rust，是"一份 AST + 一个配置"——这是产品判断，不是技术优势
-- **整合优于单点最强**：dprint 在 format 单点更纯粹，oxlint 在 lint 单点更快，但 Biome 把两者合一拿到了 80% 用户
-- **故意限制 = 设计**：不开放任意 plugin、不追求 100% 兼容——这些"限制"换来的是迭代速度和体验一致性
-- **救活项目的关键是砍野心**：Rome 想做完整 toolchain 死了，Biome 砍到 lint+format 活了
+1. **一体化的杠杆是工作区合同**，不是“Rust 一定更快”
+2. **safe / unsafe 是写回边界**，不是诊断是否出现的边界
+3. **CI 命令的核心保证是只读**，不是另一套规则引擎
+4. **默认配置也是产品判断**：tab、80 列、assist 开 `organizeImports`
+
+## 应用型自测
+
+1. `biome ci` 加上 `--write` 会按 `check --write` 那样改文件吗？
+2. 只写 `biome check --write`，GritQL 插件的 rewrite 默认会应用吗？
+3. 文件有语法错误且未开 `formatWithErrors` 时，`check` 还会格式化吗？
+
+检查点：
+
+1. 不会。`ci` 在固定源码里禁止写盘。
+2. 默认不会。插件 rewrite 按 unsafe，需要 `--unsafe`。
+3. 默认不会；`format_with_errors_disabled` 会挡住 format。
 
 ## 延伸阅读
 
-- [Biome 官方文档](https://biomejs.dev) —— 最新规则列表、配置参考、迁移指南
-- [Wadler 1998 — A Prettier Printer](https://homepages.inf.ed.ac.uk/wadler/papers/prettier/prettier.pdf) —— Biome formatter IR 的理论根
-- [Biome blog](https://biomejs.dev/blog/) —— Rome 倒闭 → Biome 重生的项目治理演化
-- [oxlint 源码](https://github.com/oxc-project/oxc) —— 同代竞品（只做 lint）的设计差异
-- [[wadler-prettier]] —— Wadler 论文的零基础解读
+- 官方文档：[biomejs.dev](https://biomejs.dev)
+- 固定源码：[biomejs/biome](https://github.com/biomejs/biome) —— 本文绑定提交 `05797b196eb4412bb373d0825c44b0dd856f4134`
+- [[oxlint]] —— 同代 lint-only CLI，配置与插件合同不同
+- [[oxc]] —— oxlint 所在的工具链仓库，不是 Biome 的运行时
+- [[wadler-prettier]] —— 打印代数的理论来源，不代替本页的 formatter 默认值
 
 ## 关联
 
-- [[wadler-prettier]] —— Biome formatter IR 直接来自这篇 paper（group / soft_line_break / atom 性质）
-- [[esbuild]] —— 同样用编译型语言（Go）重写 JS 工具链，思路并行
-- [[swc]] —— Rust 写的 JS 编译器，和 Biome 同流派但分工不同（swc 做 transform，biome 做 lint+format）
-- [[vite]] —— 现代前端构建，常和 Biome 搭配做 lint job
-- [[turborepo]] —— monorepo 缓存工具，Biome 在 monorepo 场景里更省时间
-- [[hindley-milner]] —— Biome 不做类型检查（交给 tsc），但类型推导是相邻领域
+- [[oxlint]] —— lint-only、ESLint 兼容配置与 JS plugin 边界
+- [[oxc]] —— 另一套 Rust JS 工具链；本文不改它的页面
+- [[ast-grep]] —— 按 AST 做搜索/改写，和 GritQL 插件相邻
+- [[esbuild]] —— 编译器/bundler 路线，不是 linter
+- [[vite]] —— 常见的上层构建入口
+- [[wadler-prettier]] —— pretty printer 论文
 
 ## 反向链接
 

@@ -1,18 +1,18 @@
 {
   "schema_version": "study-site-state-v1",
   "content": {
-    "projects": 962,
+    "projects": 963,
     "papers": 1083,
-    "total": 2045
+    "total": 2046
   },
   "project_standard": {
-    "total": 962,
-    "benchmark_aligned": 61,
-    "needs_evidence": 901
+    "total": 963,
+    "benchmark_aligned": 63,
+    "needs_evidence": 900
   },
   "content_contract": {
-    "v2": 130,
-    "legacy_unverified": 1915,
+    "v2": 132,
+    "legacy_unverified": 1914,
     "blocking": 0
   }
 }
