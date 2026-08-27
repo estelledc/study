@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "throttle-debounce",
+    "digest_sha256": "0611620fbced10d40516d99cbb98fb0f61c9d9938fe3da2ad48aaa62e232112f"
+  },
+  "source_revision": "bb02ea22128987fdf41e5cc6a817ba2aeeb9f7a2",
+  "research_input_sha256": "1e024520b9bbfcec4dbbcf1aeb49cb6f5b40a0078c13fc840b7ae3a3b9ed573a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ft",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Shows debounce as throttle debounceMode and opposite (delay, fn) arity."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ft",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected throttle.js/debounce.js/tests; Karma and built cjs/esm/umd were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ft",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "npm 5.0.2 gitHead is one changelog/version commit after GitHub tag v5.0.2."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

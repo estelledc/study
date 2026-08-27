@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -54629,6 +54629,38 @@
       }
     },
     {
+      "id": "projects::perfect-debounce",
+      "area": "projects",
+      "slug": "perfect-debounce",
+      "title": "perfect-debounce — 把多次调用收成一份 Promise",
+      "description": "UnJS 的 Promise debounce：同窗调用共享一次执行结果，并区分 in-flight 补跑与 lodash 式 trailing。",
+      "difficulty": "入门",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "工具库",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/perfect-debounce/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::pg-boss-readme",
       "area": "projects",
       "slug": "pg-boss-readme",
@@ -61470,6 +61502,38 @@
       }
     },
     {
+      "id": "projects::throttle-debounce",
+      "area": "projects",
+      "slug": "throttle-debounce",
+      "title": "throttle-debounce — debounce 只是 throttle 的一种模式",
+      "description": "同步 throttle/debounce 小库：debounce 是 debounceMode，参数顺序是 delay 在前，且 npm 5.0.2 与 GitHub tag 错位。",
+      "difficulty": "入门",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "工具库",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/throttle-debounce/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::tidb",
       "area": "projects",
       "slug": "tidb",
@@ -65719,7 +65783,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 14
+      "entries": 16
     },
     {
       "id": "topic-projects-headless-ui-components-01",

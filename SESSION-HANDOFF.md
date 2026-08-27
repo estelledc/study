@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FT：perfect-debounce + throttle-debounce
+
+- supervisor 状态：writer epoch `complete`；本地 review-ready change set 已形成。未 merge、未 deploy。
+- 起始 ref：`51448afbec7839b2fe4e8c5d0fb936edbee7e816`（`origin/main`，#78 merge）。
+- objective：按 owner 指定的 PARALLEL writer FT，新增并绑定 `perfect-debounce` 与 `throttle-debounce` 一对 debounce/throttle 笔记；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页新正文、2 份 generation 1 receipt、`docs/debounce-throttle-source-review-20260827-ft.md`、派生 atlas / note-index / project-standard / site-state / 公开计数文案、本交接；未安装上游依赖、未跑上游测试、未测 bundle 或 timer 精度。
+- activated_by：`explicit-user-request-20260827-parallel-writer-ft`。
+- detector fingerprint：仓库无 `perfect-debounce` / `throttle-debounce` 页面；npm latest 可钉到唯一可达 revision。`throttle-debounce` 的 GitHub tag `v5.0.2` 仍指向 `package.json` 5.0.1。
+- external delta 计数：本 PR（push + 开 PR 已授权；merge / deploy 未授权）。
+- 已完成切片：
+  1. `perfect-debounce` 绑定 annotated tag `v2.1.0` peel / npm `gitHead` `d3f83001dad6faa2090bd1aadab7312843fe6b79`。
+  2. `throttle-debounce` 绑定 npm `5.0.2` `gitHead` `bb02ea22128987fdf41e5cc6a817ba2aeeb9f7a2`，并披露 tag 错位。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；分类走 `工具库` → 通用开发工具。
+- 验证结果：两页 `quality-gate` pass、0 advisory；receipt digest 与固定 revision 一致；`audit:counts` / `audit:site-state` / `audit:project-standard` 已对齐。`verify:ci` 在首个 commit 之后跑。
+- budget：2 个小型 ignored worktree + 2 页新增 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一页一对、一个 PR、不 merge。canonical/revision 不唯一且无法披露、或只能放宽门禁时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=51448afbec7839b2fe4e8c5d0fb936edbee7e816 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
