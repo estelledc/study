@@ -1948,6 +1948,14 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::escape-goat",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
+      "note_id": "projects::escape-html",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::etcd",
       "topic_id": "projects-devops-containers-and-operations"
     },
