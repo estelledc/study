@@ -1888,6 +1888,10 @@
       "topic_id": "projects-date-and-time"
     },
     {
+      "note_id": "projects::destr",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::dgraph",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2038,6 +2042,10 @@
     {
       "note_id": "projects::kafka",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::klona",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::koa",

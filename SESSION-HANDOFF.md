@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FR：destr + klona 静态新建
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review，未 merge。
+- 起始 ref：`99736a90976f0b3d0a18bc16b9ab04c9c91254f1`（origin/main，NestJS/Koa #76）。
+- objective：按用户指定 PARALLEL writer FR，把 parse-clone 对 `destr` + `klona` 写成源码绑定的 `study-v2` 页；证据为 `STATIC_REVIEW` / `UNVERIFIED`；文档 `docs/parse-clone-source-review-20260827-fr.md`；一个 PR，不 merge。
+- scope：两篇新建项目页、2 份 generation 1 receipt、共享审查文档、taxonomy 收录、派生 atlas / note-index / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试或 bench。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-fr`。
+- detector fingerprint：目录中没有 `destr` / `klona` 页；`ofetch` 已有未解析 `[[destr]]`；未分类预算已满，必须写入 curated assignment。
+- external delta 计数：本轮按用户授权产生 push + 一个 PR；未 merge、未 deploy。
+- 已完成切片：
+  1. `destr` 绑定 annotated tag `v2.0.5` / `7bb3c39ef5f8c84219be08ebc11b3c4f4a4c828f`（与 npm `gitHead` 一致），写清默认回退、`safeDestr`、短字面量和 16 位数字签名。
+  2. `klona` 绑定 annotated tag `v2.0.6` / `6ad153073b7529769010ddbde1938372e1702f5b`（与 npm `gitHead` 一致），写清 json/lite/default/full 与 constructor / `Object.create` 边界。
+  3. 新增 `docs/parse-clone-source-review-20260827-fr.md` 与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 quality-gate 全绿、0 advisory；receipt digest 一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0。完整 `verify:ci` 在首个 commit 后继续跑。
+- budget：2 个小型 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：`benchmark-site --compare` 的 tracked_files 超限是 main 上先于本切片的规模信号，需 owner 处置；本轮未改 baseline 或阈值。
+- stop conditions：PR 已开即停；禁止 merge / deploy。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=99736a90976f0b3d0a18bc16b9ab04c9c91254f1 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
