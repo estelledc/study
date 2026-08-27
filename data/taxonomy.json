@@ -2596,6 +2596,10 @@
       "topic_id": "projects-observability-and-performance"
     },
     {
+      "note_id": "projects::wrap-ansi",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
       "note_id": "projects::wretch",
       "topic_id": "projects-http-clients"
     },

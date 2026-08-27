@@ -2,10 +2,10 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 963,
+    "total": 964,
     "by_status": {
-      "benchmark-aligned": 67,
-      "needs-evidence": 896
+      "benchmark-aligned": 69,
+      "needs-evidence": 895
     }
   },
   "projects": [
@@ -2228,27 +2228,23 @@
     },
     {
       "slug": "boxen",
-      "title": "boxen — 给终端文本套个边框的事",
+      "title": "boxen — 给终端文本套边框的纯拼接库",
       "source": "https://github.com/sindresorhus/boxen",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "broot",
@@ -22195,6 +22191,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "wrap-ansi",
+      "title": "wrap-ansi — 按可见列宽给带 ANSI 的字符串换行",
+      "source": "https://github.com/chalk/wrap-ansi",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "wretch",

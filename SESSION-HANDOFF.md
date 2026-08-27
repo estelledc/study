@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer ES：boxen + wrap-ansi 静态迁移
+
+- supervisor 状态：writer epoch `complete`；本地 change set 已准备进单一 PR。未 merge、未 deploy。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`。
+- objective：把 CLI 布局双子迁到源码绑定标准——迁移既有 `boxen`，并新增 `wrap-ansi` 页；证据为 STATIC_REVIEW / UNVERIFIED。
+- scope：两页正文、共享 `docs/cli-layout-source-review-20260827-es.md`、2 份 generation 1 receipt、taxonomy 收纳、派生 atlas / site-state / 公开计数、本交接。未安装上游依赖、未跑上游测试、未测 TTY / bundle。
+- activated_by：`explicit-user-parallel-writer-es-20260827`。
+- detector fingerprint：`boxen` 缺 `pinned_revision` / `evidence_boundary` / `self_test`，旧文把 v8 写成自读 `NO_COLOR`、把换行写成未绑定的 wrap-ansi 故事；仓库没有 `wrap-ansi` 独立页。
+- external delta 计数：本 PR（用户授权 push + 单 PR；merge / deploy 未授权）。
+- 已完成切片：
+  1. `boxen` 绑定 annotated tag `v8.0.1` / `52bbd6a57e92ea0dac762677d21ab5787a8abc39`，与 npm `gitHead` 一致；修正 3 倍数字 padding、`hard: true` 换行、标题 `String#slice`、以及 `wrap-ansi@^9` 边界。
+  2. 新增 `wrap-ansi` 页，绑定 `v10.0.1` / `c6b6259a58843e491e8703c5010a2a517b5f5738`；写清 soft/hard、grapheme 测宽、行界 SGR/OSC 8 恢复，以及与 boxen 9.x 依赖的版本差。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；`wrap-ansi` 收入 `projects-terminal-tools`。
+- 验证结果：两页 `quality-gate` 通过、0 advisory。其余门禁以本分支后续 `verify:ci` 为准。不在 handoff 中复制易过期数字或 ETA。
+- budget：1 个可写切片；2 页 + 1 份审查文档。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：单 PR 已打开且未 merge 后停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

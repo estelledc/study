@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "boxen",
+    "digest_sha256": "4f79683de318de5725b01d6b315d4c55d60ec0877ed7127c41b31f20adfe251f"
+  },
+  "source_revision": "52bbd6a57e92ea0dac762677d21ab5787a8abc39",
+  "research_input_sha256": "ec556443fa9d6a67759bc05d7ba558ae5a659d952cb0fb56833e43a1431b5504",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-es",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates dimension probe, hard wrap via wrap-ansi, 3x numeric padding, and title String#slice."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-es",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index.js determineDimensions/makeContentText/boxContent inspected; tests and TTY render were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-es",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds boxen 8.0.1; wrap-ansi ^9 and post-tag title fix #105 remain out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:10:00.000Z"
+}

@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2047,
+      "classified": 2000,
       "unclassified": 47,
-      "unknown_difficulty": 1974,
-      "empty_description": 1969
+      "unknown_difficulty": 1975,
+      "empty_description": 1970
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 964,
+        "classified": 936,
         "unclassified": 28,
-        "unknown_difficulty": 960,
-        "empty_description": 956
+        "unknown_difficulty": 961,
+        "empty_description": 957
       }
     },
     "missing_curated_assignments": [],
@@ -37452,7 +37452,7 @@
       "id": "projects::boxen",
       "area": "projects",
       "slug": "boxen",
-      "title": "boxen — 给终端文本套个边框的事",
+      "title": "boxen — 给终端文本套边框的纯拼接库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37465,13 +37465,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/boxen/",
       "atlas": {
@@ -64087,6 +64087,37 @@
       }
     },
     {
+      "id": "projects::wrap-ansi",
+      "area": "projects",
+      "slug": "wrap-ansi",
+      "title": "wrap-ansi — 按可见列宽给带 ANSI 的字符串换行",
+      "description": "",
+      "difficulty": "unknown",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-terminal-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/wrap-ansi/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
+      }
+    },
+    {
       "id": "projects::wretch",
       "area": "projects",
       "slug": "wretch",
@@ -65915,7 +65946,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-terminal-tools-01/",
-      "entries": 6
+      "entries": 7
     },
     {
       "id": "topic-projects-testing-and-verification-01",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "wrap-ansi",
+    "digest_sha256": "be7be3c0d59d55f0fe5e946863b5d76df5451933cdce4518f89daff403cfa155"
+  },
+  "source_revision": "c6b6259a58843e491e8703c5010a2a517b5f5738",
+  "research_input_sha256": "ec556443fa9d6a67759bc05d7ba558ae5a659d952cb0fb56833e43a1431b5504",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-es",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates soft/hard wrap, grapheme width, and SGR/OSC 8 restore across rows."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-es",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index.js tokenize/exec/restoreStylesAcrossRows inspected; node --test was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-es",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds wrap-ansi 10.0.1; boxen 8.0.1 still depends on 9.x and was not treated as the same contract."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:10:00.000Z"
+}
