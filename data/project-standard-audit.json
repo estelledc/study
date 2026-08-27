@@ -4,8 +4,8 @@
   "summary": {
     "total": 963,
     "by_status": {
-      "benchmark-aligned": 77,
-      "needs-evidence": 886
+      "benchmark-aligned": 79,
+      "needs-evidence": 884
     }
   },
   "projects": [
@@ -2464,27 +2464,23 @@
     },
     {
       "slug": "bun",
-      "title": "Bun — JS 全能运行时",
+      "title": "Bun — 单二进制 JS/TS 运行时与工具链",
       "source": "https://github.com/oven-sh/bun",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "caddy",
@@ -4517,27 +4513,23 @@
     },
     {
       "slug": "deno",
-      "title": "Deno — 安全优先的 TypeScript/JavaScript 运行时",
+      "title": "Deno — 默认拒绝权限的 TypeScript/JavaScript 运行时",
       "source": "https://github.com/denoland/deno",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "dgraph",
