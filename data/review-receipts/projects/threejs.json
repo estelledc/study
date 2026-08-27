@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "threejs",
+    "digest_sha256": "e419bc8b88082e5c0178e28906154efa88c209d62762e0f5ff2a010911c9df65"
+  },
+  "source_revision": "2431a09f46f34c560bc8e44b33be0e567723d5b9",
+  "research_input_sha256": "dfbe9fdf18ac6cfdacc46433869d55b39396b02d702037564ffeaeaecb7f67e5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ai",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains scene graph ownership, Mesh default Basic material, WebGL2 render loop, and WebGPU export split with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ai",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Object3D, Mesh, Raycaster, InstancedMesh, WebGLRenderer, ColorManagement, and package exports at r185 / 0.185.1; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ai",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "npm 0.185.0 gitHead differs from tag r185; this note binds the reachable and internally consistent 0.185.1 / r185 pair."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

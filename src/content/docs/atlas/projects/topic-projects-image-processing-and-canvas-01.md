@@ -57,7 +57,7 @@ sidebar:
 | [Phaser — HTML5 2D 游戏框架](/study/projects/phaser/) | `phaser` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PicoGL.js — WebGL2 的轻量图形封装](/study/projects/picogl/) | `picogl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Piskel — Web 像素艺术编辑器](/study/projects/piskel/) | `piskel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | `pixi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [PixiJS — 浏览器 2D 场景图与多后端渲染器](/study/projects/pixi/) | `pixi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [planck.js — 纯 JS Box2D 生态](/study/projects/planck/) | `planck` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PlayCanvas — Web 3D 引擎与可视化应用](/study/projects/playcanvas/) | `playcanvas` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Rapier — Rust 现代 2D/3D 物理引擎](/study/projects/rapier/) | `rapier` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -68,6 +68,6 @@ sidebar:
 | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | `sharp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spector.js — WebGL/WebGPU 调试器](/study/projects/spectorjs/) | `spectorjs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spine Runtimes — 2D 骨骼动画运行时](/study/projects/spine-runtimes/) | `spine-runtimes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Three.js — 轻量 3D 渲染引擎](/study/projects/threejs/) | `threejs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Three.js — 浏览器 3D 场景图与 WebGL2 渲染器](/study/projects/threejs/) | `threejs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tiled Map Editor — 通用 2D 关卡编辑](/study/projects/tiled/) | `tiled` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [TWGL — 极薄 WebGL helpers](/study/projects/twgl/) | `twgl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

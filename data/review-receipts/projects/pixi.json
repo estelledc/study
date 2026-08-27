@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pixi",
+    "digest_sha256": "886358f44fd8f0720d108200142ed4d76a748d8d5f9dde6284656c5473db30a1"
+  },
+  "source_revision": "3b6b5635deb9edd09f3eafd548b1e82685853ea7",
+  "research_input_sha256": "dfbe9fdf18ac6cfdacc46433869d55b39396b02d702037564ffeaeaecb7f67e5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ai",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains async Application.init, default webgl-first renderer order, ParticleContainer.addParticle, and ticker.deltaTime with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ai",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Application, autoDetectRenderer, TickerPlugin, ParticleContainer, FilterSystem, Assets, and Graphics fill path at v8.20.1; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ai",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "GitHub tag v8.20.1 and npm pixi.js@8.20.1 gitHead match; filter/RenderGroup limits are disclosed as source comments, not runtime measurements."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
