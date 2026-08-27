@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "markdown-wasm",
+    "digest_sha256": "09ee614de85b7a2b72c39ad3e7c7f34147efa95ee4e86e078b112dab7ece38f9"
+  },
+  "source_revision": "0aa6c8ff6c717859599b32fb203166c1d73d838e",
+  "research_input_sha256": "aa2c505e714c826591a051d7e1598caf90ad9dd15aa1bc28dc1ddbc7dc35b134",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates GitHub-style default flags, shared WASM outbuf, javascript: anchor-only filter, and ready/parse."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "md.js, md.c, fmt_html.c and markdown.d.ts were inspected; WASM was not built and spec/benchmark were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dv",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Note is bounded to reachable v1.2.0; master is one readme commit ahead and is disclosed rather than bound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:41:00.000Z"
+}
