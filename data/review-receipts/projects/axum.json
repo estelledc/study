@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "axum",
+    "digest_sha256": "afc751666b074651753846c1770fb271715c157607494f9dce4d1e4c2b2d216b"
+  },
+  "source_revision": "c59208c86fded335cd85e388030ad59347b0e5ae",
+  "research_input_sha256": "9fc290ee3262d4c6f071c9f753637515002cfd3a067e873e8f45494737972ad1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates Router<S> missing-state, {name} path syntax, and Json 415/400/422 rejections with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "routing/path_router, extract docs, json rejections, serve, and Handler Send+static were inspected; upstream tests and HTTP servers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims are bounded to axum 0.8.9 at c59208c86fde; tower-http layers and HTTP/2 feature behavior require a target-environment run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
