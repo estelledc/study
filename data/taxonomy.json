@@ -1820,6 +1820,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::cache-manager",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::cassandra",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2322,6 +2326,10 @@
     {
       "note_id": "projects::qdrant",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::quick-lru",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::qwik",
