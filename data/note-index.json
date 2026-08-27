@@ -41718,32 +41718,32 @@
       "id": "projects::electron",
       "area": "projects",
       "slug": "electron",
-      "title": "Electron — 用网页技术做跨平台桌面应用",
+      "title": "Electron — 自带 Chromium + Node 的跨平台桌面运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
-        "projects-mobile-development"
+        "projects-general-developer-tools"
       ],
       "classification": {
         "state": "classified",
         "source": "frontmatter-category",
-        "topic_id": "projects-mobile-development",
-        "matched_category": "mobile",
-        "raw_category": "mobile"
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "跨平台桌面",
+        "raw_category": "跨平台桌面"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/electron/",
       "atlas": {
-        "chunk_id": "topic-projects-mobile-development-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -47090,7 +47090,7 @@
       "id": "projects::koa",
       "area": "projects",
       "slug": "koa",
-      "title": "Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架",
+      "title": "Koa — 用 ctx 与可替换 compose 编排洋葱中间件的 Node 框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -47103,13 +47103,13 @@
         "raw_category": "工具库"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/koa/",
       "atlas": {
@@ -51993,7 +51993,7 @@
       "id": "projects::nestjs",
       "area": "projects",
       "slug": "nestjs",
-      "title": "NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架",
+      "title": "NestJS — 用模块与 DI 组织 Node 后端的企业级框架",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -52006,13 +52006,13 @@
         "raw_category": "后端框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/nestjs/",
       "atlas": {
@@ -60871,7 +60871,7 @@
       "id": "projects::tauri",
       "area": "projects",
       "slug": "tauri",
-      "title": "Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用",
+      "title": "Tauri — 系统 WebView + Rust 后端的轻量桌面运行时",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -60885,13 +60885,13 @@
         "raw_category": "跨平台桌面"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/tauri/",
       "atlas": {
@@ -65719,7 +65719,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 13
+      "entries": 14
     },
     {
       "id": "topic-projects-headless-ui-components-01",
@@ -65831,7 +65831,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-mobile-development-01/",
-      "entries": 10
+      "entries": 9
     },
     {
       "id": "topic-projects-monitoring-and-time-series-01",

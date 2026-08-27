@@ -15,7 +15,8 @@
   1. `box2d` 绑定 lightweight tag `v3.1.1` → `8c661469c9507d3ad6fbd2fea3f1aa71669c2fe3`。
   2. `cannon-es` 绑定 annotated tag `v0.20.0` peel → `8b147715d5f7ec69da2211611daa236d80e88933`。
   3. 共享审查文档与两份 `STATIC_REVIEW` / `UNVERIFIED` receipt。
-- 验证结果：两页 `quality-gate` 均 pass、0 advisory；两份 receipt digest 与正文一致，evidence state `UNVERIFIED`；`git diff --check` 通过。派生索引已本地重生成，合并冲突不是本 writer 的工作。不在 handoff 中复制易过期数字或 ETA。
+  4. 远端 `verify:ci` 在 PR merge tree 上因 `site-state.json` stale 失败（`main` 已合入 #76/#78）。已 `merge origin/main`（不 rebase）并重生成派生索引；未改两页正文。
+- 验证结果：两页 `quality-gate` 均 pass、0 advisory；两份 receipt digest 与正文一致，evidence state `UNVERIFIED`；`git diff --check` 通过。派生索引以当前命令为准，不在 handoff 中复制易过期数字或 ETA。
 - budget：2 页、最多 3 切片、120 分钟、单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或 baseline。
 - stop conditions：两页绑定、一枚 PR 打开后停止；不 merge、不写 `main`。
