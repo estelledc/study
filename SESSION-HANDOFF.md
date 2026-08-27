@@ -15,7 +15,7 @@
   1. `semver` 绑定 `npm/node-semver@6e05b7637396ac66522cff8731f07cfe0ef49a29` / `7.8.5`，写清 parse/valid/coerce、默认 compare 忽略 build、caret 0.x 上界，以及 range 预发布排除。
   2. `compare-versions` 绑定 `omichelsen/compare-versions@497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd` / `6.1.1`，写清 `compareVersions` vs 三参数 `compare`、短版本/四段号、satisfies 递归改写，以及 `validate` / `validateStrict` 分界。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；Atlas 增加 `SemVer / 版本比较` 主题组。
-- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory。receipt digest 与正文/固定 revision 一致。其余门禁用 `verify:ci` 复核。不在 handoff 中复制易过期数字或 ETA。
+- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory。receipt digest 与正文/固定 revision 一致。`STUDY_CHANGED_FROM=1f2917d90180638e3960be37de1a5df6884b989a npm run verify:ci` 本地通过（首次 a11y 因本机缺 Playwright 浏览器中断，安装 chromium 后 23/23 通过，其余门禁无 tracked drift）。不在 handoff 中复制易过期数字或 ETA。
 - budget：2 个小型 ignored worktree + 2 页静态源码迁移；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：本轮完成后只开一个 PR，不 merge、不 deploy。
