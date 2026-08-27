@@ -5,14 +5,14 @@
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
-- 起始 ref：以 `git rev-parse origin/main` 为准；本分支 rebase 后的内容提交为 `ba8abb5f`。
+- 起始 ref：`origin/main` 现为 `96da2ee8`（#79）；本分支内容提交为 `a68fc3e8`。
 - objective：把 rebase 后滞后的 `career-plan.md` 项目数对齐到实时库存，使 `audit:counts` 恢复绿色。
 - scope：`src/content/docs/career-plan.md`、本交接。未改笔记正文、未改政策/阈值、未 merge。
-- activated_by：feature branch CI `verify:ci` 失败（`audit:counts`：career-plan 写 965，实时 projects=966）。
-- detector fingerprint：`career-plan.md` 公开项目数比 `data/site-state.json` / 其余计数页少 1；其余公开规模文案已是 966/1083/2049。
+- activated_by：feature branch CI `verify:ci` 失败（`cc8e7d96`：career-plan 写 966，实时 projects=967）。
+- detector fingerprint：rebase regen 更新了 atlas / site-state / 其余计数页，但未改 `career-plan.md`。
 - external delta：本 PR 后续 push（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
-- 完成切片：`career-plan.md` 项目数 965 → 966。
-- acceptance checks：`npm run audit:counts` → projects=966、papers=1083、total=2049，OK；`git diff --check` 通过。
+- 完成切片：`career-plan.md` 项目数 966 → 967。
+- acceptance checks：`npm run audit:counts` → projects=967、papers=1083、total=2050，OK；`git diff --check` 通过。
 - budget：1 个确定性计数对齐切片；单 writer。
 - blocker：merge 与 Pages deploy 未授权。
 - stop conditions：计数门禁修复已提交后停止；不得发明下一对内容。
