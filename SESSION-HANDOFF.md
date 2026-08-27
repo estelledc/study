@@ -4,8 +4,9 @@
 
 ## 2026-08-27 PARALLEL writer DR HTTP server epoch
 
-- status：writer epoch `complete`；等待 owner review；不 merge。
+- status：writer epoch `complete`；draft PR #168 等待 owner review；不 merge。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：`6827cbdecb5240ca7c12ca16446ecb9e527b76bd`。
 - objective：把 restify / polka 绑到可达固定 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、`docs/http-server-source-review-20260827-dr.md`、两份 generation 1 receipt、taxonomy 两条 assignment、atlas / site-state / 公开计数、本 handoff。本机 gitignored blob-filtered clone。未安装上游依赖、未跑上游测试、未发网络请求。
 - activated_by：`explicit-user-parallel-writer-DR-2026-08-27`。
@@ -15,12 +16,15 @@
   1. `restify` 绑定 `restify/node-restify@784dd418...` / `12.0.0`（tag 与 npm `gitHead` 一致）。写清 first → pre → lookup → use → route；`use()` 只在命中后跑；`next("string")` 在 12.0.0 是 500。
   2. `polka` 绑定 peeled tag `v0.5.2` → `302d74a2...`。披露 npm 无 `gitHead`，以及 `1.0.0-next.28` 不在适用版本内。
   3. 新增共享审查文档与两份 generation 1 `STATIC_REVIEW` receipt；`benchmark-aligned` 18 → 20；项目数 961 → 963。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:counts` / `audit:content-contract` / `audit:wikilinks` / `audit:site-state` / `git diff --check` 已在本地跑过。
+- acceptance checks：
+  - 两页 `quality-gate.mjs` pass、0 advisory。
+  - `audit:counts` / `audit:content-contract` / `audit:wikilinks` / `audit:site-state` / `git diff --check` 已在本地跑过。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，388 Node tests、repository audits、changed-note quality gate、strict build 2287 HTML、homepage links 全绿；停在 Pagefind 负向查询 `不存在不存在`（返回 2241，合同要求 0）。同索引正向查询仍成立（React=1、ReAct=15、分布式系统=7）。未改 `search-contract.json`、未删测、未放宽门禁。
 - budget：2 页、单 writer、1 个 PR；不 merge。
-- blocker：完整 portable gate 以本 PR 的 `verify:ci` 为准。
-- stop conditions：本轮写入完成；不自合并。
+- blocker：Pagefind 负向查询合同失败与本页无直接因果；远端 CI 尚未回报。owner review 决定是否 merge。
+- stop conditions：本轮写入与本地 portable gate 记录完成；不自合并。
 - 下一次 wake 条件：owner review 后决定是否 merge，或新的显式授权。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：`gh pr view 168`；不要 merge。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
