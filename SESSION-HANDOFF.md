@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DC HTTP 客户端静态审查
+
+- supervisor 状态：writer epoch `complete`；回到 `WAIT_HEALTHY`。未 merge。
+- status：writer epoch `complete`。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`。
+- objective：对 `got` 与 `wretch` 做 STATIC_REVIEW，保持 `UNVERIFIED`；got 改绑 tag/npm 一致的 `15.1.0`，wretch 复验后继续钉 `3.0.9`。
+- scope：两页、`docs/http-client-source-review-20260827-dc.md`、两份 generation 2 receipt、note-index/handoff 派生。
+- activated_by：`explicit-parallel-writer-dc-2026-08-27`。
+- detector fingerprint：旧 got 页把 `e3924aa1...`（15.1.0 之后 4 个提交，含 QUERY #2466）写成 `got@15.1.0`；wretch 3.0.9 三方一致，但缺 `maxAttempts=0` 无限重试与 catcher 数组边界。
+- external delta 计数：GitHub/npm 只读核验 + 本地 blob-filtered clone + 将开 1 个 PR；未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. got 绑定 `b855688f...` / `v15.1.0`，去掉默认 retry method 中的 QUERY，补 413/`Retry-After`、阶段 timeout 与 Stream retry listener 边界。
+  2. wretch 复验后继续绑定 `32d5f68b...` / `3.0.9`，补 `maxAttempts=0` 表示无限、`.catcher()` 可接收 id 数组。
+  3. 新增 `docs/http-client-source-review-20260827-dc.md` 与两份 generation 2 receipt。
+- acceptance checks：两页 quality-gate pass / 0 advisory；receipt `evidence_state=UNVERIFIED`；`git diff --check` 通过。`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci` 全绿。
+- budget：2 个内容切片 + 1 个文档/派生切片；单 writer；1 个 PR。
+- blocker：无本轮写入 blocker；merge/deploy 需另授权。
+- 验证结果：规范 Node 22.23.1 / npm 11.17.0 下 `verify:ci` 全绿（388 Node tests、strict build 2285 HTML / 2284 sitemap URLs、23 Playwright tests）。
+- stop conditions：本 writer epoch 已结束；不要 merge。
+- 下一次 wake 条件：PR #156 的 CI/review 变化，或 owner 新授权。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/156`；不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

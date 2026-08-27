@@ -10,12 +10,12 @@ trust:
   note_type: library
   canonical_source: https://github.com/sindresorhus/got
   source_authority: AUTHOR_PRIMARY
-  accessed_at: '2026-07-17'
-  immutable_revision: e3924aa1e53a6ca3eb93a43618ce532442a89b40
+  accessed_at: '2026-08-27'
+  immutable_revision: b855688f0e520c82aff7a1dd913f9f95a4a05337
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
-  reviewed_at: '2026-07-17'
-  review_after: '2026-10-17'
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
   applicable_version: 15.1.0
 ---
 
@@ -44,7 +44,7 @@ Got 的执行链可以拆成五步：
 
 3. **Promise 包装可选**：默认 `got()` 用 `asPromise()` 监听底层 Request，收集并解析响应，再 resolve `Response` 或 body shortcut。
 
-4. **按规则决定 retry**：默认 limit 为 2，但还要同时满足 method、status code 或 error code、`Retry-After` 与 delay 规则。默认 method 包含 GET、PUT、HEAD、DELETE、OPTIONS、TRACE、QUERY，不含 POST。
+4. **按规则决定 retry**：默认 `limit` 为 2 且 `enforceRetryRules: true`，还要同时满足 method、status code 或 error code、`Retry-After` 与 delay 规则。固定 15.1.0 的默认 method 是 GET、PUT、HEAD、DELETE、OPTIONS、TRACE，不含 POST，也不含后来才合入 `main` 的 QUERY。
 
 5. **每次 retry 创建新 Request**：Promise 包装层沿用更新后的 options；如果 body 仍是同一个已消费 stream，就以 `Cannot retry with consumed body stream` 失败。
 
@@ -77,7 +77,7 @@ export const http = got.extend({
 });
 ```
 
-`request` timeout 是整个请求阶段预算，`connect` 只约束连接阶段；默认所有 timeout 都是关闭的。`beforeRetry` 当前签名是 `(error, retryCount)`，重试后的 `beforeRequest` 会再次运行。
+`request` timeout 是整个请求阶段预算，`connect` 只约束连接阶段；默认 `lookup` / `connect` / `secureConnect` / `socket` / `send` / `response` / `read` / `request` 都是 `undefined`。`beforeRetry` 当前签名是 `(error, retryCount)`，重试后的 `beforeRequest` 会再次运行。
 
 ### 案例 2：流式下大文件 + 进度
 
@@ -119,7 +119,9 @@ const user = await got
 
 3. **给 stream body 开自动 retry 却不准备新 body**：第一次请求已经消费原 stream；重试前需要提供新可读 stream，否则 Promise 路径会拒绝重放。
 
-4. **把 Promise hook 套到 Stream API**：`beforeRetry` 与 `afterResponse` 在 Stream API 中被忽略；Stream retry 需要监听 `retry` event 并重建输出与 body。
+4. **把 Promise hook 套到 Stream API**：`afterResponse` 只存在于 Promise 包装层。官方 hook 文档写 Stream API 会忽略 `beforeRetry`；固定源码里该 hook 仍从 `Request._beforeError` 调用，但整段 retry 分支只在已挂 `retry` listener 时进入。Stream retry 必须自己监听该事件并重建输出与 body。
+
+5. **把 413 当成总会重试的状态码**：默认 status list 含 413，但没有 `Retry-After` 时 delay 计算直接返回 0。
 
 ## 适用 vs 不适用场景
 
@@ -137,9 +139,10 @@ const user = await got
 
 ## 固定版本边界
 
-- 本文绑定 `sindresorhus/got@e3924aa1...`，package 版本为 `15.1.0`，要求 Node >=22。
+- 本文绑定 `sindresorhus/got@b855688f...`。GitHub annotated tag `v15.1.0` 与 npm `got@15.1.0` `gitHead` 都指向同一提交，package 要求 Node >=22。
 - 固定 package 为 ESM；正文不把旧版 CommonJS 兼容方式外推到当前版本。
-- 默认 retry limit 为 2；默认 timeout 的各阶段均为 `undefined`。
+- 默认 retry `limit` 为 2、`enforceRetryRules` 为 true；默认 timeout 的各阶段均为 `undefined`。
+- 上一轮绑定的 `e3924aa1...` 比 15.1.0 新 4 个提交（含 QUERY #2466），可达但不是该 release；本轮改绑 tag/npm 一致的提交，并去掉默认 method 里的 QUERY。
 - 本文未安装依赖、发送网络请求、运行上游测试或性能 benchmark，状态保持 `UNVERIFIED`。
 
 ## 学到什么
@@ -164,7 +167,7 @@ const user = await got
 ## 延伸阅读
 
 - 官方文档：[got/readme.md](https://github.com/sindresorhus/got#readme)（功能矩阵 + 4 套 API 速查）
-- 固定源码：[sindresorhus/got](https://github.com/sindresorhus/got) —— 本文绑定提交 `e3924aa1e53a6ca3eb93a43618ce532442a89b40`
+- 固定源码：[sindresorhus/got](https://github.com/sindresorhus/got) —— 本文绑定提交 `b855688f0e520c82aff7a1dd913f9f95a4a05337`
 - Stream 文档：[documentation/3-streams.md](https://github.com/sindresorhus/got/blob/main/documentation/3-streams.md)
 - Retry 文档：[documentation/7-retry.md](https://github.com/sindresorhus/got/blob/main/documentation/7-retry.md)
 - [[axios]] —— got 早年对标的"通用 HTTP 客户端"，今天在浏览器场景仍占主导

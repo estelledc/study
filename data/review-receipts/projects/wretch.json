@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "3a31d8cc10e46ed0c635f1a6f41d9c1ed1327708196c64b1b24fff36075d6d87",
   "note": {
     "area": "projects",
     "slug": "wretch",
-    "digest_sha256": "4ba680c0b77d21de386f34c60c386987c81739dfc374333256c479d7f36d51cc"
+    "digest_sha256": "29a47e30164458dc92cf4c687a2c401fda11ea5b7537a6277e92f690f9921be4"
   },
   "source_revision": "32d5f68badf7e8f103b734febe680968c6e0f97f",
-  "research_input_sha256": "4d6f6214d76cc10ea18160867474cdb2b263a55547ad76e560e6b173e5e571e5",
+  "research_input_sha256": "e726de6898e43f60d08c531b79d96f9d04852d1de48a5c228624a974dc53a019",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-dc",
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
-        "Separates immutable configuration, request triggering, response consumption, middleware, addons, and retry safety."
+        "Keeps immutable config, response-chain catchers, and retry middleware; adds maxAttempts=0 infinite and array catcher ids."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -25,11 +25,11 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-dc",
       "decision": "PASS_WITH_NOTES",
-      "score": 94,
+      "score": 93,
       "warnings": [
-        "Core, resolver, middleware composition, retry, Abort addon, and Node/shared tests were inspected; upstream tests were not run."
+        "Reconfirmed 3.0.9 tag/npm gitHead; inspected core, resolver, middleware, retry, Abort addon, and shared tests; upstream tests were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -38,11 +38,11 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-dc",
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
-        "Node, export and retry claims are bounded to wretch 3.0.9; bundle and cross-runtime behavior require target execution."
+        "Node >=22, import/require exports, and retry defaults remain bound to wretch 3.0.9; bundle and cross-runtime behavior still need target execution."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-17T14:44:42.000Z"
+  "created_at": "2026-08-27T08:30:00.000Z"
 }

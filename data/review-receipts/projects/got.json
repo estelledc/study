@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 1,
-  "predecessor_digest_sha256": null,
+  "generation": 2,
+  "predecessor_digest_sha256": "f59316d9d8f1f4d555536b5e3bccb321ee1fd6e7a36ca98eed0fe6ad26b4d9a6",
   "note": {
     "area": "projects",
     "slug": "got",
-    "digest_sha256": "5fb6b466a33a4aa389bba1142bba7c31894ea6f3b93d298089be0a5c532e2617"
+    "digest_sha256": "ee40359915fd99d2e49aa6dd0238d40b0dca9dcf190413d6fe125bb3f9569926"
   },
-  "source_revision": "e3924aa1e53a6ca3eb93a43618ce532442a89b40",
-  "research_input_sha256": "de1ffde36a7d5796c58163921114d5a15891d42acdb15d470506a31dc618f7f1",
+  "source_revision": "b855688f0e520c82aff7a1dd913f9f95a4a05337",
+  "research_input_sha256": "e726de6898e43f60d08c531b79d96f9d04852d1de48a5c228624a974dc53a019",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-dc",
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
-        "Explains Duplex Request, Promise wrapping, phase timeouts, retry rules, and body replay with application checks."
+        "Corrects 15.1.0 retry methods (no QUERY), phase timeouts, 413/Retry-After, and stream retry listener with application checks."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -25,11 +25,11 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-dc",
       "decision": "PASS_WITH_NOTES",
-      "score": 94,
+      "score": 93,
       "warnings": [
-        "Core Request, Options, retry delay, Promise wrapper, errors, and Stream and hook docs were inspected; upstream tests and requests were not run."
+        "Rebound tag/npm-consistent b855688f; inspected Request, Options, retry delay, Promise wrapper, and Stream/hook docs; upstream tests were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -38,11 +38,11 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "research-benchmark-static-20260717",
+      "reviewer_version": "research-benchmark-static-20260827-dc",
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
-        "Node, ESM, timeout, and retry claims are bounded to got 15.1.0; download, bundle, and cold-start claims were removed."
+        "Discloses e3924aa1 is four commits after v15.1.0; QUERY is not in the 15.1.0 default method allowlist."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-07-17T14:25:23.000Z"
+  "created_at": "2026-08-27T08:30:00.000Z"
 }
