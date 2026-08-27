@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BT：undici + node-fetch
+
+- status：`running` → writer epoch complete，等待 PR review；不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把指定 fetch 实现对 `undici` 与 `node-fetch` 建成 `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2 页，并留下 `docs/*-20260827-bt.md` provenance。
+- scope：两篇新项目页、共享源码审查记录、generation 1 receipt、atlas / site-state / 公开计数派生；未改开放 PR slug，未改 axios/ofetch，未安装上游依赖、未发请求、未跑上游测试。
+- activated_by：`explicit-user-request-20260827-parallel-writer-bt`。
+- detector fingerprint：目标 slug 不在开放 PR 中，且仓库原先没有这两页；用 `difficulty` + `description` + `分类: HTTP 客户端` 避免抬高 atlas unknown-difficulty / empty-description / unclassified 预算。
+- external delta：GitHub/npm 只读核验 + 本地 blob-filtered clone；形成 1 个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. 绑定 `nodejs/undici@c8d80e6b...` / `8.10.0`，区分 Dispatcher、`fetch()` 与 `request()` 默认 method，并写明 retry 为 opt-in。
+  2. 绑定 `node-fetch/node-fetch@8b3320d2...` / npm `3.3.2`，披露仓内 `package.json.version=3.1.1`，写明 http/https 传输、重定向与凭证边界。
+  3. 新增 `docs/fetch-impl-source-review-20260827-bt.md` 与两份 generation 1 receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致且 `evidence_state=UNVERIFIED`；`audit:project-standard` `benchmark-aligned=20`；`audit:content-contract` blocking 0；`audit:counts` / `audit:wikilinks` 通过。
+- budget：1 个 epoch、2 个源码页、单 writer。
+- external_outcome：一个 review-ready PR；未授权 merge/deploy。
+- stop conditions：需要抬高 taxonomy 预算、猜测不可达 revision、或把静态阅读写成运行证据时停止。
+- 下一次 wake 条件：PR review / CI；不自动 merge。
+- 下一条命令：在规范 Node 下对 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159` 跑 `npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

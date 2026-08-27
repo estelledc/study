@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "undici",
+    "digest_sha256": "3a381248769d4a55de1d69615035a0b9636a462f768c8cecfae7c910972b695c"
+  },
+  "source_revision": "c8d80e6b2dcfab282557b08f51352937bc9e5692",
+  "research_input_sha256": "38f43ae7e3d528a06d17f1892f0b0652b6985f329a28aa3c95255b82afb73196",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Dispatcher, fetch(), request() default method, and opt-in retry with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Agent/Pool/Client, fetch redirect limit, RetryHandler defaults, and request() PUT default were read; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Version, engines, and timeout claims are bounded to undici 8.10.0; no throughput or Node-builtin fetch comparison was measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}
