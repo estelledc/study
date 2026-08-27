@@ -1,166 +1,174 @@
 ---
 title: Leaflet — 轻量交互式地图
-来源: 'https://github.com/Leaflet/Leaflet'
+来源: https://github.com/Leaflet/Leaflet
 日期: 2026-05-31
 分类: projects / 数据可视化
 难度: 入门到中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/Leaflet/Leaflet
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: d15112c9e8ac339f0f74f563959d0423d291308d
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.9.4
 ---
 
 ## 是什么
 
-Leaflet 是 Vladimir Agafonkin 2011 年发起的开源 JavaScript 地图库，BSD-2-Clause 协议，压缩后核心只有 **38KB**。日常类比：像一面拼图板——你给它一个网址模板，它就把世界各地的小图片（瓦片）按经纬度拼成一张可以拖、可以缩放、可以点的地图。
+Leaflet 是一个面向浏览器的交互式地图库。日常类比：像一块拼图板——你给它瓦片 URL 模板和经纬度，它把栅格小图拼成可拖、可缩放、可点的平面地图。
 
-最小例子（5 行）：
+你写：
 
-```html
-<div id="map" style="height: 400px"></div>
-<script>
-  const map = L.map('map').setView([39.90, 116.40], 12)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-  }).addTo(map)
-  L.marker([39.90, 116.40]).addTo(map).bindPopup('北京')
-</script>
+```js
+const map = L.map('map').setView([39.90, 116.40], 12);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+L.marker([39.90, 116.40]).addTo(map).bindPopup('北京');
 ```
 
-这段代码做了三件事：
-
-- `L.map('map').setView(...)`：把 id 为 map 的 div 变成地图容器，初始视角中心 + 缩放级别
-- `L.tileLayer(url)`：声明瓦片源（这里用 OpenStreetMap 的免费瓦片）
-- `L.marker(...).bindPopup(...)`：在指定经纬度放一个点，点击弹气泡
-
-整个过程不需要任何后端——浏览器按 `{z}/{x}/{y}` 模板向 OSM 服务器请求 256×256 的 PNG 小图，Leaflet 负责拼接和事件分发。
+`L.map()` 把容器变成 `Map`；`setView([lat, lng], zoom)` 设定中心与缩放。固定 1.9.4 默认 CRS 是 `EPSG3857`。本轮只读源码，未渲染页面，状态保持 `UNVERIFIED`。
 
 ## 为什么重要
 
 不理解 Leaflet，下面这些事都没法解释：
 
-- 为什么 GitHub / Etsy / Pinterest / Foursquare 这些大站做地图用的是 Leaflet 而不是 Google Maps——授权费 + 数据主权 + 38KB 包大小
-- 为什么"在网页上画点 GPS 轨迹"在 2011 年之前要么用 Google API（收费）要么自己写 canvas，2011 年之后基本一行 `L.geoJSON(data)`
-- 为什么 OpenStreetMap 官网的"地图编辑器入口页"用 Leaflet——它是 OSM 项目首推的前端
-- 为什么手机浏览器双指捏合缩放地图这么顺滑——Leaflet 从第一版就把触摸事件当一等公民，和桌面鼠标走同一套抽象
+- 为什么同一套 API 能同时吃栅格瓦片、Marker、矢量 Path 和 GeoJSON
+- 为什么手写 `L.marker([lng, lat])` 会落到大西洋，而 `L.geoJSON` 却能显示正确
+- 为什么容器尺寸变了以后必须调用 `invalidateSize()`
+- 为什么点聚合、路径规划和绘制工具不属于 1.9.4 核心合同
 
 ## 核心要点
 
-Leaflet 的架构可以拆成 **三层**：
+Leaflet 1.9.4 可以拆成四层：
 
-1. **Map 容器**：管视图（中心点 / 缩放级别 / 边界）和事件分发，整张图只有一个
-2. **Layer 系统**：所有可见内容都是 Layer 的子类——TileLayer（栅格瓦片）/ Marker（点）/ Popup（气泡）/ Polyline（线）/ Polygon（面）/ GeoJSON（数据驱动批量）
-3. **Control 控件**：缩放按钮 / 比例尺 / 图层切换器 / 归属信息——用 `map.addControl()` 挂上去
+1. **Map**：管中心、缩放、CRS、pane 和事件。默认打开 `zoomControl`、`attributionControl`，以及 drag / scrollWheelZoom / touchZoom / keyboard / doubleClickZoom / boxZoom / tapHold 这组 handler。
 
-复合工具：
+2. **Layer**：可见内容都挂在 `Layer` 上。`addTo(map)` 只是调用 `map.addLayer(this)`。`TileLayer` 继承 `GridLayer`，默认 `tileSize` 256、`maxZoom` 18、`subdomains` `'abc'`。
 
-- `L.layerGroup([a, b, c])`：把多个 layer 当成一个，方便整体显示/隐藏
-- `L.featureGroup(...)`：和 layerGroup 类似，但能算 `getBounds()`（外接矩形），用于"一键缩放到所有标注"
-- `L.geoJSON(data, options)`：吃 GeoJSON 标准（RFC 7946）数据，自动拆成 Marker / Polyline / Polygon
+3. **Control**：独立于 Layer 的角落控件。`Control` 默认 `position` 是 `topright`；attribution 默认在 `bottomright`，并会收集各层 `getAttribution()`。
 
-事件模型和 DOM 一致：
+4. **Geo / Geometry**：`LatLng` 构造函数是 `(lat, lng, alt?)`；GeoJSON 入口用 `coordsToLatLng` 把 `[lng, lat]` 转成 `LatLng(lat, lng)`。
 
-```js
-map.on('click', e => {
-  L.marker(e.latlng).addTo(map)
-})
-```
+`LayerGroup` 只做批量 add/remove。`FeatureGroup` 额外转发成员事件，并提供 `getBounds()`。`L.geoJSON` 继承 `FeatureGroup`，按 geometry 生成 Marker / Polyline / Polygon。
 
-`e.latlng` 是 `LatLng` 对象，含 `lat` 和 `lng` 两个数字字段。
+## 实践示例
 
-## 实践案例
-
-### 案例 1：渲染一份 GeoJSON 数据
+### 案例 1：渲染一份 GeoJSON
 
 ```js
 const data = {
   type: 'FeatureCollection',
   features: [
-    { type: 'Feature', geometry: { type: 'Point', coordinates: [116.40, 39.90] }, properties: { name: '北京' } },
-    { type: 'Feature', geometry: { type: 'Point', coordinates: [121.47, 31.23] }, properties: { name: '上海' } }
+    { type: 'Feature', geometry: { type: 'Point', coordinates: [116.40, 39.90] }, properties: { name: '北京' } }
   ]
-}
+};
 
 L.geoJSON(data, {
   onEachFeature: (feature, layer) => layer.bindPopup(feature.properties.name)
-}).addTo(map)
+}).addTo(map);
 ```
 
-注意 GeoJSON 标准里坐标是 `[lng, lat]`（先经度后纬度），但 Leaflet API 里 `[lat, lng]`（先纬度后经度）。`L.geoJSON` 自动帮你转，但手写 `L.marker([...])` 时要小心。
+GeoJSON 坐标是 `[lng, lat]`。`coordsToLatLng` 读 `coords[1]` 作 lat、`coords[0]` 作 lng。手写 `L.marker` 时顺序相反。
 
-### 案例 2：点聚合（MarkerCluster 插件）
-
-直接放 1 万个 Marker 浏览器会卡。装 `leaflet.markercluster` 后：
+### 案例 2：容器尺寸变化后重排
 
 ```js
-const cluster = L.markerClusterGroup()
-data.forEach(p => cluster.addLayer(L.marker([p.lat, p.lng])))
-map.addLayer(cluster)
+sidebar.classList.toggle('open');
+map.invalidateSize();
 ```
 
-近距离的点自动合并成"圆圈+数字"，缩放进去再展开——这是插件生态最常用的之一。
+固定实现先比较新旧 `getSize()`。中心像素偏移为 0 则直接返回；否则默认 `pan: true`、`animate: false`。sidebar / 弹窗改变容器高度后，不调用它会出现空白或瓦片错位。
 
-### 案例 3：自定义瓦片源
-
-不想用 OSM 默认样式，可以换 CartoDB / Stamen / 高德 / 百度（需自己处理坐标系偏移）：
+### 案例 3：自定义瓦片模板与子域
 
 ```js
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   attribution: '© CARTO',
   subdomains: 'abcd',
   maxZoom: 19
-}).addTo(map)
+}).addTo(map);
 ```
 
-`{s}` 是子域占位符，`subdomains` 列出所有可选值，浏览器并发请求时自动负载均衡。
+`{s}` 按 `subdomains` 轮询。官方 1.9.4 示例已使用无子域的 `tile.openstreetmap.org`；是否仍允许抓 OSM 瓦片，以当前 OSM 使用政策为准，本文未验证。
 
 ## 踩过的坑
 
-1. **容器没高度地图不显示**：`<div id="map">` 默认 height 是 0，必须 CSS 给个具体值（或 `100%` + 父元素有高度），否则页面看起来空白。
-2. **经纬度顺序反了**：Leaflet `[lat, lng]` vs GeoJSON `[lng, lat]`，混用直接显示在大西洋里。
-3. **容器尺寸变化不刷新瓦片**：弹窗打开 / sidebar 切换后地图容器尺寸变，瓦片错位。手动调 `map.invalidateSize()` 触发重排。
-4. **混用 http/https 瓦片**：现代浏览器 block 混合内容，瓦片源要么全 https 要么全 http，统一用 https 最稳。
-5. **删了 attribution**：OSM 数据协议（ODbL）要求保留归属信息，去掉违法。
+1. **把 README 的 39KB 写成当前测量值**：1.9.4 README 自报约 39 KB gzip JS + 4 KB gzip CSS。本轮未跑 `bundlemon`，不能把它当验收数字。
+
+2. **经纬度顺序混用**：`LatLng` / `setView` / `L.marker` 是 `[lat, lng]`；GeoJSON 是 `[lng, lat]`。`L.geoJSON` 会转换，手写 Marker 不会。
+
+3. **容器没高度或尺寸变了不刷新**：`<div id="map">` 高度为 0 时看起来是空白。动态改尺寸后要 `invalidateSize()`。
+
+4. **把插件能力写成核心**：`leaflet.markercluster`、绘制和路由都不在 `d15112c9` 的 `src/` 里。1.9.4 也没有 WebGL painter。
+
+5. **删掉 attribution**：控件默认开启，是因为它会聚合图层的 `attribution`。OSM 等数据源的法律要求不因关掉控件而消失。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 标注、轨迹、热力图、行政区边界这类**栅格瓦片底图 + 矢量覆盖物**的场景
-- 包大小敏感的项目（移动端、嵌入第三方页面）
-- 需要丰富插件（聚合 / 路径规划 / 绘制 / 实时位置）但不想自己造轮子
-- 只要二维平面地图不要 3D 倾斜视角
+- 栅格底图 + Marker / Polyline / Polygon / GeoJSON 覆盖物
+- 需要默认触摸缩放、滚轮缩放和键盘平移，但不需要 3D pitch
+- 包体和插件生态优先，且能接受 DOM/`<img>` 瓦片模型
 
 **不适用**：
 
-- 需要矢量瓦片 + WebGL 的高性能场景（大量 polygon、3D 建筑）→ 用 Mapbox GL JS / MapLibre GL
-- 复杂投影 / 海图 / 测绘级别精度 → 用 OpenLayers
-- 完全离线 + 操作系统原生地图 → 用平台 SDK
-- 只要展示一个静态图（无交互） → 直接 `<img src="static-map.png">` 即可，不必引入库
+- 矢量瓦片 + WebGL、运行时换皮肤、3D 倾斜 → 看 [[mapbox-gl-js]] 或 [[maplibre-gl]]
+- 复杂投影、WMS 工作流或测绘级控件 → 看 [[openlayers]]
+- 需要核心点聚合或离线原生地图 SDK
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2010 年**：Vladimir Agafonkin 在乌克兰 CloudMade 工作时，发现"轻量易用的开源 JS 地图库"是个空缺——Google Maps 闭源 + OpenLayers 太重。
-- **2011 年 5 月**：Leaflet 0.1 发布，10KB 核心，立刻被 OSM 社区采用作为默认前端。
-- **2013 年**：作者跳槽到 Mapbox 继续维护，0.7 版稳定 API。
-- **2016 年**：1.0 发布，支持任意投影（之前只支持 Web Mercator）。
-- **至今**：~41k stars，被全球数十万站点使用，是最广泛部署的开源地图库之一。
+- 本文绑定 `Leaflet/Leaflet@d15112c9...`，npm / annotated tag 均为 `1.9.4`。
+- GitHub 另有 `v2.0.0-alpha`；升级到 2.x 前需重新固定 revision。
+- 核心无运行时依赖；构建产物声明在 `dist/leaflet-src.js` 与 `dist/leaflet.css`。
+- 本文未安装依赖、运行 Karma、加载瓦片或测量体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **38KB 能做什么**——核心只做"瓦片 + Layer + 事件"三件事，其他全交给插件。这是开源库"小核心 + 大生态"的范本
-2. **DOM 不是性能墙**——SVG + img tile 的非 WebGL 方案在中等规模数据下性能足够，包大小和兼容性是实打实的赢
-3. **协议绑定是软实力**——OSM 数据 + Leaflet 前端，两者各自开源、互相成就
-4. **API 三件套（map / layer / control）很泛化**——后来很多前端图形库（[[d3]]、[[echarts]]）也借鉴了"容器 + 图层 + 控件"的拆法
+1. **小核心靠分层，不靠魔法**——Map / Layer / Control / CRS 分开后，插件才能在不改主链的情况下加能力。
+2. **坐标顺序是合同，不是风格**——同一库内部同时存在 `[lat, lng]` 与 GeoJSON `[lng, lat]`。
+3. **默认控件也是 API 的一部分**——attribution 和 zoom 默认打开，关掉它们不会取消数据源义务。
+4. **README 体积不是证据**——自报 gzip 数字必须和固定构建命令分开写。
+
+## 应用型自测
+
+1. `L.marker([116.40, 39.90])` 会把点放在北京吗？
+2. `L.layerGroup([a, b]).getBounds()` 在 1.9.4 核心里一定可用吗？
+3. sidebar 改变 `#map` 宽度后，不调用任何方法，瓦片会自动重排吗？
+
+检查点：
+
+1. 不会。`LatLng` 把第一个数当 lat，该点会落到错误半球。
+2. 不一定。`getBounds()` 在 `FeatureGroup`，不在 `LayerGroup`。
+3. 不会自动按新尺寸重排；需要 `invalidateSize()`。
 
 ## 延伸阅读
 
-- 官方教程：[Leaflet Quick Start](https://leafletjs.com/examples/quick-start/)（10 分钟跑通第一个地图）
-- API 参考：[Leaflet Reference](https://leafletjs.com/reference.html)（按字母顺序列所有类和方法）
-- 插件市场：[Leaflet Plugins](https://leafletjs.com/plugins.html)（800+ 插件分类列表）
-- 对比文章：[Leaflet vs Mapbox GL vs OpenLayers](https://www.maptiler.com/news/2019/02/web-mapping-libraries-compared/)
-- [[d3]] —— 通用数据可视化框架，地理模块（d3-geo）和 Leaflet 经常混用
-- [[vega-lite]] —— 声明式可视化语法，地图能力相对薄弱时常和 Leaflet 拼
+- 文档：[Leaflet Reference](https://leafletjs.com/reference.html)
+- 固定源码：[Leaflet/Leaflet](https://github.com/Leaflet/Leaflet) —— 本文绑定提交 `d15112c9e8ac339f0f74f563959d0423d291308d`
+- [[mapbox-gl-js]] —— 矢量瓦片 + WebGL 的另一条主链
+- [[maplibre-gl]] —— Mapbox v1 的社区分叉
+- [[openlayers]] —— 更重的 GIS 前端
 
 ## 关联
 
-- [[d3]] —— d3-geo 提供投影计算，Leaflet 提供交互容器，常组合用
-- [[echarts]] —— 国内地图可视化竞品，自带 GL 后端，包大但开箱即用
-- [[vega-lite]] —— 声明式语法，地图层不如 Leaflet 灵活但其他图更强
-- [[chart-js]] —— 同属"小核心 + 易上手"的开源前端图形库
+- [[mapbox-gl-js]] —— WebGL 矢量地图；默认坐标是 `[lng, lat]`
+- [[maplibre-gl]] —— 开源矢量渲染，对照 Leaflet 的 DOM 瓦片模型
+- [[openlayers]] —— 同领域更完整的投影与协议覆盖
+- [[d3]] —— d3-geo 提供投影，常和 Leaflet 容器组合
+- [[deck-gl]] —— 大规模 GPU 图层，通常不走 Leaflet 核心
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
+- [[openlayers]] —— OpenLayers — 全功能 GIS 前端

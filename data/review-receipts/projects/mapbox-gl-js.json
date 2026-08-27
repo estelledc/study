@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "mapbox-gl-js",
+    "digest_sha256": "5bc85ca6cbc045d3811598b4c9d192def49fc5f1c19bc98dbb26bf55f523dfc3"
+  },
+  "source_revision": "2d7d5d25a4e2f8bc7fb778381e15764b97d4fc65",
+  "research_input_sha256": "9f213625fe8f5cfc35cc71b6b0af13ad74db499473c5341c92a897c45580f415",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Source/Style/Worker/Painter, default Standard style, workerCount=2, and queryRenderedFeatures visibility with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned GitHub v3.29.0 Map constructor, worker pool, layer types, and addSource/addLayer were inspected; WebGL, token, and Vitest were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Discloses npm gitHead e0492c02 is unreachable on GitHub; note binds tag 2d7d5d25 and Mapbox TOS, not BSD."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:40:00.000Z"
+}

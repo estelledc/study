@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BC：Leaflet / Mapbox GL JS
+
+- supervisor 状态：writer epoch complete；等待 owner review；不 merge。
+- status：本地 writer epoch `complete`；D 轴不含 merge / deploy。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `leaflet` 与 `mapbox-gl-js` 从 `needs-evidence` 迁到绑定可达 revision 的 `study-v2`；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、`docs/map-library-source-review-20260827-bc.md`、两份 generation 1 receipt，以及由本轮验证驱动的 project-standard / note-index / site-state / homepage 派生刷新。未改其他开放 PR slug，未安装上游依赖，未渲染地图。
+- activated_by：`explicit-user-goal-parallel-writer-bc-2026-08-27`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision / evidence boundary / self-test；旧正文把 README 体积、`workerCount=CPU`、默认 `streets-v12` 写成当前事实。
+- external delta 计数：本轮授权形成一个 PR；未 merge、未 deploy。
+- 已完成切片：
+  1. 用 GitHub/npm 元数据固定 `Leaflet/Leaflet@d15112c9...` / `1.9.4`（tag 与 `gitHead` 一致）和 `mapbox/mapbox-gl-js@2d7d5d25...` / `3.29.0`（GitHub tag 可达；npm `gitHead` 不可达，已披露）。
+  2. 重写两页主链：Leaflet 的 Map/Layer/Control/CRS 与 GeoJSON 坐标顺序；Mapbox 的 Source/Style/Worker/Painter、默认 Standard style、`workerCount=2`。
+  3. 新增共享审查记录与两份 `STATIC_REVIEW` receipt；project-standard 由本轮验证刷新。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿（388 Node tests、2285 HTML、2284 sitemap URLs、23 Playwright tests）。
+- budget：2 个稀疏本地 worktree + 2 页静态源码迁移；单 writer。
+- blocker：Mapbox npm `gitHead` 在 canonical GitHub 不可达；上游运行/WebGL/token 证据不能由静态 review 替代。
+- stop conditions：本 epoch 已收口到 1 个 PR；不自动 merge。
+- 下一次 wake 条件：owner review，或另授 merge / deploy。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
