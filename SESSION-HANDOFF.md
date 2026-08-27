@@ -2,6 +2,19 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EF：vanilla-extract + StyleX
+
+- status：`running`；writer epoch 将 vanilla-extract 与 stylex 迁到固定源码 study-v2。
+- 起始 ref：`7a2384d09`（origin/main，#54 merge）。
+- objective：把编译期 CSS 双子绑到可达 revision，纠正旧正文的执行器 / 覆盖策略漂移；保持 STATIC_REVIEW / UNVERIFIED。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/css-zero-runtime-source-review-20260827-ef.md`、派生 note-index / project-standard / site-state / atlas、本 handoff、2 个 ignored worktree。未改候选队列、政策阈值、远端 main；未 merge。
+- activated_by：`explicit-user-goal-parallel-writer-ef-2026-08-27`。
+- detector fingerprint：两页缺 pinned revision / evidence boundary / self-test；vanilla-extract 把抽取写成 Node `vm` + stylis；StyleX 把默认覆盖写成全员 `:where()` 且 Vite 支持弱。`linaria` 与 `open-props` 无既有 Study 页，按 fallback 选 stylex。
+- external_outcome：一个 PR，不 merge；D 轴不变。
+- budget：最多 3 切片、120 分钟、1 个可写切片。
+- stop_conditions：canonical/revision 不唯一、只能放宽门禁、或需要新建项目页改 961 计数时停止。
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

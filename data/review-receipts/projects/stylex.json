@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "stylex",
+    "digest_sha256": "b2408e0ced8ee9f34384ad2b5befca5a8e969504afbe0fcb3300e1238e699d28"
+  },
+  "source_revision": "5f51b24444abced04b213726977b9d67339bb26d",
+  "research_input_sha256": "7a608287ec7c178619cb2c28506f96d374c8ca55325e4e0b3c3cdb1ecbc1c56e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ef",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains compile-away create APIs, atomic hashing, styleq merge, defineVars themes, and unplugin hosts with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ef",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed 0.19.0 runtime, babel create/theme path, and unplugin exports were inspected; upstream tests and CSS size were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ef",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Corrects the old :where()-everywhere and weak-Vite claims; default resolution is property-specificity."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:45:00.000Z"
+}

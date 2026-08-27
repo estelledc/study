@@ -1,163 +1,168 @@
 ---
 title: StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
-来源: 'https://github.com/facebook/stylex'
+来源: https://github.com/facebook/stylex
 日期: 2026-05-30
 分类: 前端
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/facebook/stylex
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 5f51b24444abced04b213726977b9d67339bb26d
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.19.0
 ---
 
 ## 是什么
 
-StyleX 是一套**让你像写 JS 对象一样写样式，但编译时就把每条 CSS 属性单独切成一个短 className** 的库。日常类比：像出版社做杂志——你交一份完整稿（样式对象），编辑（babel plugin）拆成版面零件（atomic class），每篇文章只挑自己用的那几块拼起来印。
+StyleX 让你用 JS 对象写样式，编译时把每条属性编成原子 class，运行时只做 className / inline style 合并。日常类比：把完整稿交给印刷厂拆成零件，上架时只按编号拼盘。
 
-你写：
+固定 `@stylexjs/stylex@0.19.0` 里，你写：
 
-```ts
+```js
+import * as stylex from '@stylexjs/stylex';
 const styles = stylex.create({
-  button: { backgroundColor: "blue", color: "white", padding: 8 }
+  button: { backgroundColor: 'blue', color: 'white', padding: 8 },
 });
-<button {...stylex.props(styles.button)} />
+const styleProps = stylex.props(styles.button);
 ```
 
-编译完，浏览器拿到的不是这个对象，而是一份预生成的 atomic CSS 文件 + 一行 `className="x_a1 x_b2 x_c3"`。运行时**不再 hash、不再注入 style 标签**——只是字符串拼接。
-
-这个"先编译再上场"的姿态，就是 StyleX 区别于 emotion / styled-components 的根本点。
+`stylex.create` 在未编译时会 throw。babel plugin 把它换成带 `$$css: true` 的类名表，并收集可注入 CSS。浏览器侧真正执行的是 `props()` / `attrs()`，内部走 `styleq`。
 
 ## 为什么重要
 
-不理解 StyleX，下面这些事都没法解释：
+不理解固定版本，下面这些事都对不上源码：
 
-- 为什么 facebook.com 这种几千组件的应用 CSS 文件还能控制在几百 KB——atomic class 全应用共享，重复样式天然 dedupe
-- 为什么 Tailwind 和 StyleX 看着完全不同（一个 class 字符串、一个 JS 对象）但底层都是 atomic CSS
-- 为什么 emotion 的"运行时 inject style"在 SSR 场景要小心，而 StyleX 天然没这个问题
-- 为什么 Meta 拖了 4 年才把内部用熟的库开源，开源后社区却追不上 Tailwind
+- 为什么“零 runtime hash”不等于“零 JS”——`props()` 仍要 `styleq` 合并
+- 为什么默认覆盖策略是 `property-specificity`，而不是“全部 `:where()`、specificity 恒为 0”
+- 为什么 `createTheme` 只能盖 `defineVars()` 的 var group
+- 为什么旧页说 Vite 支持弱：`@stylexjs/unplugin` 已导出 vite / webpack / esbuild / rspack / rolldown / bun
 
 ## 核心要点
 
-StyleX 三件套加一道编译机制：
+固定版本的主链可以拆成四层：
 
-1. **stylex.create({...})**：定义命名样式集，编译期被 babel 静态分析掉。类比：把菜谱送去印刷厂，回来就只剩"成品菜单上的编号"。
+1. **定义 API 必须被编译掉**：`create`、`defineVars`、`createTheme`、`defineConsts`、`keyframes`、`when.*` 在 runtime 模块里全部 `throw`。没挂 `@stylexjs/babel-plugin` 就没有样式。
 
-2. **stylex.props(...)**：在 JSX 上应用样式，运行时返回 `{className, style}`。类比：服务员拿编号去后厨拼盘——后厨已经把菜做好摆好，他只是端出来。
+2. **一条声明一个原子 class**：`convertStyleToClassName` 把 camelCase 改成 dashed key，再 hash `dashedKey + value + (pseudo/at-rule)`。默认前缀 `x`。同一 namespace 里重复 property 留最后一个。
 
-3. **defineVars + createTheme**：用 CSS 变量做主题，切主题只改父节点的 className，CSS 级联自动更新所有子节点，**不触发 React 重渲染**。类比：换灯泡颜色不用每个屋子重装修。
+3. **运行时只合并**：`props()` 返回 `{ className, style, 'data-style-src' }`；`attrs()` 把 `className` 换成 `class`，把 style 对象收成字符串。后传入的 style 覆盖前者，靠 `styleq` 而不是再算 hash。
 
-底下保命的小机关是 `:where()` 选择器——它把 specificity 强制锁为 0，让"谁覆盖谁"纯靠 CSS 文件里的源序顺序决定。
+4. **主题是变量 group 上的 class**：`createTheme` 要求对象带 `__varGroupHash__`。生成的 override class 写成 `.hash, .hash:root { --var: value }`。切主题就是换这个 class。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：一个有三态的 Button
+### 案例 1：条件 class，靠调用顺序覆盖
 
 ```tsx
-import * as stylex from "@stylexjs/stylex";
+import * as stylex from '@stylexjs/stylex';
 
 const styles = stylex.create({
-  base: { backgroundColor: "blue", color: "white", padding: 8 },
-  primary: { backgroundColor: "red" },
-  disabled: { opacity: 0.5, cursor: "not-allowed" }
+  base: { backgroundColor: 'blue', color: 'white', padding: 8 },
+  primary: { backgroundColor: 'red' },
+  disabled: { opacity: 0.5, cursor: 'not-allowed' },
 });
 
 function Button({ primary, disabled }) {
   return <button {...stylex.props(
     styles.base,
     primary && styles.primary,
-    disabled && styles.disabled
+    disabled && styles.disabled,
   )} />;
 }
 ```
 
-`stylex.props` 把多份样式合并：同 property 的 className 只保留**最后一个**，于是 `primary` 的红色覆盖 `base` 的蓝色，纯靠数组顺序。
+`primary` 的 `backgroundColor` 原子 class 会盖住 `base` 的蓝色。这是合并顺序，不是再生成一份新 CSS。
 
-### 案例 2：暗色主题切换不重渲染 React
+### 案例 2：主题只能盖 defineVars 的合同
 
-```tsx
-const tokens = stylex.defineVars({ bg: "#fff", fg: "#222" });
-const dark = stylex.createTheme(tokens, { bg: "#222", fg: "#eee" });
+```js
+const tokens = stylex.defineVars({ bg: '#fff', fg: '#222' });
+const dark = stylex.createTheme(tokens, { bg: '#222', fg: '#eee' });
 const styles = stylex.create({
-  text: { color: tokens.fg, backgroundColor: tokens.bg }
+  text: { color: tokens.fg, backgroundColor: tokens.bg },
 });
-const isDark = true; // 实际来自开关 state
-
-<body {...stylex.props(isDark && dark)}>
-  <p {...stylex.props(styles.text)}>Hello</p>
-</body>
 ```
 
-`tokens.bg` 在 TS 看是 `string`，运行时实际是 `var(--x_bg)`。切主题只改父节点 className，CSS 变量级联到所有子节点，React 完全不知道发生了什么。
+`createTheme` 源码检查 `__varGroupHash__`，不是任意对象都能当 theme。tokens 在编译后是 `var(--…)`；切 dark 只改父节点 class。
 
-### 案例 3：和 Tailwind / emotion 的同款 Button 对比
+### 案例 3：HTML 属性版，以及官方 bundler 入口
 
-```tsx
-// Tailwind: 3 行，类型只有 IDE 插件层面
-<button className="bg-blue-500 text-white p-2" />
-
-// emotion: 5 行，运行时 hash + inject
-<button css={css({ backgroundColor: "blue", color: "white", padding: 8 })} />
-
-// StyleX: 6 行，类型强（StyleXStyles<...>），编译期已 atomic
-const s = stylex.create({ b: { backgroundColor: "blue", color: "white", padding: 8 }});
-<button {...stylex.props(s.b)} />
+```js
+const { class: className, style } = stylex.attrs(styles.button);
 ```
 
-StyleX 的胜负手是"对象 API + 类型强 + 零运行时"全占；代价是配 babel + bundler plugin。
+非 React 宿主用 `attrs()`。集成上，固定版本提供 `@stylexjs/unplugin/vite` 等入口，以及 postcss plugin 与仓库内 examples。旧结论“只能绑 webpack / Next”对不上 0.19.0。
 
 ## 踩过的坑
 
-1. **不能写动态值**：`padding: someProp` 编译报错。要"运行时变"必须用 defineVars + 改 CSS 变量，比 emotion 模板字符串绕一层。
-
-2. **specificity 锁 0 在混合项目里被反咬**：StyleX 假设全局都是 `:where()` 包装；但第三方组件库（Bootstrap、Chakra）默认 specificity > 0，会**单方面盖过** StyleX 样式。
-
-3. **devtools 看到一串 `x_a1b2c3` 哈希**：定位"这个红色是哪条规则"必须靠 source map 或 dev 模式的 debugClassName。生产构建调样式很痛。
-
-4. **bundler 集成是硬绑定**：必须配 babel plugin + webpack/Next plugin。vite / esbuild / parcel 支持仍弱，你想用 vite 就要接受社区 plugin 的早期状态。
+1. **把每条规则都说成 `:where()` specificity 0**：`:where()` 出现在 `stylex.when` 的关系选择器里；默认 `styleResolution` 是 `property-specificity`，规则带 priority。
+2. **运行时调用 `stylex.create`**：未编译必炸。开发时看到这个错误，先查 babel / unplugin，不是查 `props()`。
+3. **给 `createTheme` 塞普通对象**：只能覆盖 `defineVars()` 的 group。
+4. **把 `props()` 当成零 JS**：它依赖 `styleq`。零的是编译期 hash 与 `<style>` 插入，不是合并函数。
+5. **用 shorthand 当 React Native 风格**：`property-specificity` 路径会拒绝 `border` / `background` 等部分 shorthand，要求拆成长属性。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 大型应用（500+ 组件）希望 CSS bundle 大小随属性组合数而非组件数增长
-- 团队接受"严格类型 + 编译期约束"换"零运行时开销 + 可预测 CSS"
-- 已经在用 webpack / Next.js 工具链
-- 主题系统要做到"切主题不触发 React 重渲染"
+- 能接受“对象 API + 编译期约束”，希望重复属性在应用级被原子去重
+- 已经或准备挂 StyleX babel / unplugin
+- 主题要用 CSS 变量，并且能从 `defineVars` 建合同
 
 **不适用**：
 
-- 中小项目（< 100 组件），emotion 的 5-20ms cold hash 完全可接受，开发体验更顺
-- 重度依赖第三方组件库（shadcn/ui、Chakra、MUI）—— 它们大多绑 emotion / Tailwind
-- 用 vite / esbuild / parcel，不愿等社区 plugin 成熟
-- 需要完全动态的样式表达（运行时根据 prop 任意生成 CSS）
+- 需要运行时按任意 props 生成新 CSS 声明
+- 不能接受编译失败当开发反馈（动态值必须走 vars / 明确允许的插值）
+- 只想写 class 字符串——那是 [[tailwind]] 的合同
+- 想把样式文件单独写成 `.css.ts` 再 eval——那是 [[vanilla-extract]]
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2019 年**：Meta 内部启用 StyleX，最初是为给 facebook.com 的几千组件做 CSS bundle 瘦身——atomic CSS + 类型化是关键诉求
-- **2020-2022 年**：facebook.com / instagram.com / threads / WhatsApp Web 陆续切换到 StyleX，内部稳定 4 年
-- **2023-12**：React Conf 2023 宣布开源 v0.1，Naman Goel 为主要 maintainer
-- **2024-2025**：social proof 起来但社区生态仍在追赶；Tailwind 8 年的 inertia + emotion 7 年的 ecosystem 让 StyleX 的扩散速度慢于预期
+- 本文绑定 `facebook/stylex@5f51b244...`，tag `0.19.0`，package `@stylexjs/stylex@0.19.0`。
+- npm `gitHead` 与 annotated tag 指向同一 commit。同提交还有 babel-plugin 与 unplugin `0.19.0`。
+- 未安装依赖、运行上游测试或测量 CSS 体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **CSS-in-JS 的根本分水岭是编译期 vs 运行时**：选 emotion 接受 runtime cost 换灵活，选 StyleX / vanilla-extract 接受约束换性能 + 类型
-2. **atomic CSS 的 dedupe 优势只在大型应用回报为正**：100 组件以内 emotion 完全够用，硬上 StyleX 反而背 bundler 配置和约束的成本
-3. **`:where()` + source order 是 specificity 控制的现代解法**——把覆盖逻辑从"哪条选择器更具体"压平成"谁排得更后面"
-4. **大厂背书 ≠ 开源成功**：Meta 内部用熟不代表外部接受，开源时间晚 5 年要付出 generation 级的生态追赶成本
+1. **编译期 CSS-in-JS 仍可能留下合并 runtime**——`styleq` 是合同的一部分
+2. **覆盖策略要读默认值**——`property-specificity` 不是“全员 `:where()`”
+3. **主题 API 是有类型的 var group**——不是随便一个 theme object
+4. **bundler 矩阵会变**——集成结论必须绑到当前 unplugin 导出
+
+## 应用型自测
+
+1. 没挂 babel plugin 时调用 `stylex.create({ a: { color: 'red' } })` 会怎样？
+2. 默认 `styleResolution` 是什么？`:where()` 是不是每条原子规则的包装？
+3. `stylex.props(styles.a, styles.b)` 还要不要运行时 JS？
+
+检查点：
+
+1. throw：`Unexpected 'stylex.create' call at runtime`。
+2. `property-specificity`。`:where()` 主要用于 `when.*`。
+3. 要。`props()` 调 `styleq`。
 
 ## 延伸阅读
 
-- 官方文档：[stylexjs.com](https://stylexjs.com)（教程 + API 速查 + 与 emotion / Tailwind 对比）
-- React Conf 2023 开源演讲：搜 "StyleX React Conf 2023"，Naman Goel 半小时讲设计取舍
-- 源码核心：`packages/babel-plugin/src` 是静态分析，`packages/stylex/src` 是运行时拼接
-- [[vanilla-extract]] —— 同档对手，写法非常像
-- [[tailwind]] —— 另一种 atomic CSS 哲学
+- 官方文档：[stylexjs.com](https://stylexjs.com)
+- 固定源码：[facebook/stylex](https://github.com/facebook/stylex) —— 本文绑定 `5f51b24444abced04b213726977b9d67339bb26d`
+- 审查记录：仓库内 `docs/css-zero-runtime-source-review-20260827-ef.md`
+- [[vanilla-extract]] —— 同档编译期方案，差异是 eval `.css.ts` vs babel 消掉 `create()`
 
 ## 关联
 
-- [[tailwind]] —— 同样 atomic CSS 但 API 是 className 字符串，生态远大
-- [[emotion]] —— runtime CSS-in-JS 的事实标准，StyleX 的编译期对照组
-- [[styled-components]] —— 早一代 runtime 方案，组件包装语法重于样式对象
-- [[vanilla-extract]] —— 同样编译期 + TS object，差异在 `.css.ts` 文件边界 vs `stylex.create` 调用边界
-- [[react]] —— Meta 同生态，StyleX 在 facebook.com 与 React 紧密耦合
-- [[next-js]] —— StyleX 主推的 bundler 集成方案
-- [[biome]] —— 同样靠"工具链一体化"换性能的思路，CSS 侧的对应物
+- [[vanilla-extract]] —— `.css.ts` + 自研 transform；本页是原子 class + `styleq`
+- [[tailwind]] —— 同样追求原子 CSS，API 是 class 字符串
+- [[emotion]] —— runtime 插入对照
+- [[styled-components]] —— 标签模板 runtime 对照
+- [[react]] —— `props()` 的主要宿主；`attrs()` 给非 JSX
+- [[lightningcss]] —— unplugin 依赖它做 CSS 处理，不是 StyleX 自己的 parser
 
 ## 反向链接
 

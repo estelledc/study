@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "vanilla-extract",
+    "digest_sha256": "0d6ca33cf2c54c0ce9ac40bec6f407245dcc72fbe2ea426a432f1563e8dc1681"
+  },
+  "source_revision": "235de1739b5cc123ee12d12a2c0b80c6b31726a4",
+  "research_input_sha256": "7a608287ec7c178619cb2c28506f96d374c8ca55325e4e0b3c3cdb1ecbc1c56e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ef",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains .css.ts file scope, eval-after-esbuild, identifier hashing, theme vars, and recipe runtime with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ef",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed 1.21.2 adapter, processVanillaFile, transformCss, and recipes createRuntimeFn were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ef",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Corrects the old vm/stylis story and discloses that zero-runtime is the extracted module contract, not the npm package itself."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:45:00.000Z"
+}
