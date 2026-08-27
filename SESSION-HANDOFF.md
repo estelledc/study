@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer BK：luxon / temporal-polyfill 日期库双子
 
-- status：writer epoch `running` → 本地切片完成，等待 `verify:ci` 与 PR review。未 merge、未 deploy。
+- status：writer epoch `complete`；等待 PR review。未 merge、未 deploy。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
 - objective：把 `luxon` 与 JS Temporal 日期页从 `needs-evidence` 迁到源码绑定的 `study-v2`，证据上限为 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两页正文、2 份 generation 1 receipt、`docs/date-lib-source-review-20260827-bk.md`、派生 note-index / atlas / project-standard-audit / site-state / 首页指标、本交接；本机 gitignored `research-worktrees/{luxon,temporal-polyfill}`。未改候选队列、政策阈值、`dayjs`/`date-fns`、远端 `main`。
@@ -21,10 +21,10 @@
   - `audit:project-standard --write`：`benchmark-aligned=20`、`needs-evidence=941`。
   - `audit:content-contract`：0 blocking、89 v2。
   - `git diff --check`：通过。
-  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：待本提交后运行。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全部门禁通过（388 Node tests、strict build 2285 HTML / 2284 sitemap URLs、23 Playwright a11y）。首次失败只因本机缺 Playwright Chromium，安装浏览器后重跑全绿，未改门禁。
 - budget：2 页静态源码迁移 + 派生刷新；单 writer；默认 3 切片 / 120 分钟。
 - 未碰 slug：开放 PR 中的 `dayjs` / `date-fns` 及其他已占 slug。
-- blocker：merge 与 Pages deploy 需另授；`verify:ci` 尚未出结果。
+- blocker：merge 与 Pages deploy 需另授。
 - stop conditions：单 PR、不 merge。需要猜 revision 或只能放宽门禁时停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另授 merge。
 - 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
