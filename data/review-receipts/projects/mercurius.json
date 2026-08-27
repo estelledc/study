@@ -5,7 +5,7 @@
   "note": {
     "area": "projects",
     "slug": "mercurius",
-    "digest_sha256": "8d0c0b5a47705fb5d67786204f03210d10c2f0869e5f4c2c2bde2f120d28e446"
+    "digest_sha256": "06d136cb095470c472fd2e7de9238b9b541a963259f2f34a9ef76875fc6ff8af"
   },
   "source_revision": "3ad0edd8af3aa1774a342cb9f14a4bd991e16a42",
   "research_input_sha256": "cfbd44b7579f52666e5a1f07ca3361dba1b1ec29be68e0cf78545407b8cb6873",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-08-27T08:30:00.000Z"
+  "created_at": "2026-08-27T08:32:00.000Z"
 }
