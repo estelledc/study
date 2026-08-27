@@ -1,6 +1,31 @@
 # Study 操作交接入口
 
-> 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
+> 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。独立 agent 先读 `AGENTS.md`。不在 handoff 中复制易过期数字或 ETA。
+
+## 2026-08-27 Parallel writer BX：MSW / nock
+
+- supervisor 状态：Program `active`；writer BX epoch `complete`；PR 待审，未授权 merge。
+- status：`running` 已结束为 `complete`；未进入 `PARKED_HUMAN`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：本分支 `cursor/http-mock-msw-nock-48ab`。
+- objective：把 `msw` 与 `nock` 迁到固定源码的 `study-v2`，证据为 `STATIC_ANALYSIS` / `UNVERIFIED`，审查为 `STATIC_REVIEW`。
+- scope：`msw` 正文、新建 `nock` 页、`docs/http-mock-source-review-20260827-bx.md`、两份 generation 1 receipt、taxonomy curated assignment、由脚本刷新的 atlas/site-state/project-standard 快照、公开计数文案与本 handoff。未改候选队列、政策阈值，也未安装上游依赖或跑上游测试。
+- activated_by：`explicit-user-instruction-parallel-writer-bx-20260827`。
+- detector fingerprint：`msw` 结构完整但缺 pinned revision / evidence boundary / self-test，且仍按 v2 早期印象描述 Node interceptor；`nock` 无项目页。开放 PR 未占用这两个 slug。
+- fallback：目标对就是 `msw` + `nock`。仓库原先没有 `nock` 页；新建时补了英文 `difficulty` / `description` 并保持 classified，因此 unknown-difficulty / empty-description / unclassified 预算下降而不是抬高。未改走其他主题。
+- external delta 计数：将 push feature branch 并打开 1 个 PR；未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. 只读核验 GitHub/npm 后，blob-filtered clone 绑定 `mswjs/msw@49d9d47f...` / `2.15.0` 与 `nock/nock@1ee467c6...` / `14.0.17`。
+  2. 重写 `msw`：纠正默认 `'warn'`、`setupWorker` 拒 Node、`executeHandlers` 顺序和 npm 缺 `gitHead`。
+  3. 新建 `nock`：一次用完的 interceptor、ClientRequest + Fetch 双拦截、`dryrun` 默认与 `ENETUNREACH` 锁网。
+  4. 新增共享审查记录与两份 `STATIC_REVIEW` receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致且 `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:counts` / `audit:wikilinks` / `audit:project-standard` 通过。`verify:ci` 在 push 后继续跑。
+- budget：2 页静态源码迁移 + 1 个 PR；单 writer。
+- blocker：merge 与部署仍需单独授权。
+- stop conditions：本 epoch 目标已完成；不继续发明下一对页面。
+- 下一次 wake 条件：owner 审查或授权 merge/deploy；或新的显式 slug 批次。
+- 下一条命令：查看本分支 PR；不要 merge。
+- superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
 

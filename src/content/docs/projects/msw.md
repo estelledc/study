@@ -1,165 +1,184 @@
 ---
-title: MSW — 让 mock 不改业务代码，在网络层透明拦截
-来源: 'https://github.com/mswjs/msw'
-日期: 2026-05-30
+title: MSW — 在网络层用同一套 handler 拦截请求
+description: "介绍 MSW 如何把 handler 大脑与浏览器 Service Worker / Node interceptor 分开。"
+来源: https://github.com/mswjs/msw
+日期: 2026-08-27
 分类: projects / 测试工具
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/mswjs/msw
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 49d9d47f613b072f8d20e1a025feaee7c5382b2b
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.15.0
 ---
 
 ## 是什么
 
-MSW（**Mock Service Worker**）是一套**让你不改业务代码就能 mock 网络请求**的库。日常类比：像在水管中间装一个滤芯——水龙头（业务代码里的 `fetch`）和水（请求 URL）都不变，滤芯负责把"真水"换成"假水"返回。
+MSW（Mock Service Worker）是一套**不改业务调用点**的 HTTP / GraphQL / WebSocket mock。日常类比：水龙头（`fetch` / `http.request`）和水（URL）都不变，滤芯装在水管中间。
 
 你写：
 
 ```ts
-import { http, HttpResponse } from 'msw'
-import { setupServer } from 'msw/node'
+import { http, HttpResponse } from "msw";
+import { setupServer } from "msw/node";
 
 const server = setupServer(
-  http.get('/users/:id', ({ params }) => {
-    return HttpResponse.json({ id: params.id, name: 'Jason' })
-  })
-)
+  http.get("/users/:id", ({ params }) =>
+    HttpResponse.json({ id: params.id, name: "Jason" })
+  )
+);
 ```
 
-测试里 `fetch('/users/42')` 不需要改，MSW 在网络层把它接走，返回上面定义的假 JSON。浏览器里走 Service Worker，Node 里走 monkey-patch，**handler 写一次两边都用**。
+固定 2.15.0 的 handler 写一次，浏览器走 `msw/browser`，Node 走 `msw/node`。包 exports 把 `./browser` 标成 `node: null`，把 `./node` 标成 `browser: null`。
 
 ## 为什么重要
 
-不理解 MSW，下面这些事都不好解释：
+不读这条拦截链，下面几件事会讲错：
 
-- 为什么 2020 年后前端测试纷纷从 `jest.mock('./api')` 迁移到 MSW——业务零侵入是最大动力
-- 为什么 Storybook、Vitest、Playwright 三个生态都有 MSW 集成——一份 handler 多处复用
-- 为什么"Service Worker"这个本来给 PWA 离线用的浏览器 API，被借去做测试 mock
-- 为什么后端没写完时前端也能开发完整页面——dev 模式下 MSW 就是"假后端"
+- 为什么同一份 `http.get` 能同时服务 Vitest 和 Storybook
+- 为什么默认漏 mock 只是 `'warn'`，不是自动报错
+- 为什么 `setupWorker()` 在 Node 里会直接 invariant 失败
+- 为什么 v1 的 `rest.get(req, res, ctx)` 不能抄到 2.15.0
 
 ## 核心要点
 
-MSW 的工作可以拆成 **三层**：
+固定版本的控制流可以拆成五步：
 
-1. **平台拦截层**：浏览器装 `/mockServiceWorker.js`，所有 `fetch` / `xhr` 经它转发；Node 用 `@mswjs/interceptors` monkey-patch `http.request` / `fetch` / `XMLHttpRequest` / `WebSocket`。类比：浏览器是"门口装摄像头"，Node 是"在每条门后面塞便条"。
+1. **选入口**：`setupServer` 用 `@mswjs/interceptors` 的 ClientRequest、XMLHttpRequest、Fetch、WebSocket；`setupWorker` 先拒绝 Node，再选 Service Worker 或 fallback HTTP source。
+2. **共享大脑**：请求进入 `handleRequest()`。带 `accept: msw/passthrough` 的请求直接放行。
+3. **按顺序找 handler**：`executeHandlers()` 遍历数组；第一个带 `response` 的结果胜出，只有匹配没有 response 的 handler 可以继续往下掉。
+4. **URL 匹配**：`matchRequestUrl()` 先规范化路径，再用 `path-to-regexp`。`:id` 和通配符在 `coercePath()` 里改写成它能吃的语法。
+5. **未处理策略**：找不到 handler 时跑 `onUnhandledRequest`，默认 `'warn'`。`'error'` 会抛 `InternalError`，阻止穿透到真网络。
 
-2. **共享大脑**：handler 数组 + URL 匹配 + resolver 调用全在 `core/` 目录。无论请求从浏览器还是 Node 进来，进入大脑后流程一样：跑 `matchRequestUrl`（基于 path-to-regexp）找匹配 → 调用 resolver → 返回 `HttpResponse`。
+## 实践示例
 
-3. **handler 抽象**：`http.get(path, resolver)` / `graphql.query(name, resolver)` 是平台无关的描述。这是 MSW 跨平台的根——你写一次 `http.get('/api/x', ...)`，浏览器测试、Node 测试、dev 模式三处都吃。
-
-## 实践案例
-
-### 案例 1：Node 端 vitest 单元测试
+### 案例 1：Node 测试里把漏 mock 升级成错误
 
 ```ts
-// vitest.setup.ts
-import { setupServer } from 'msw/node'
-import { http, HttpResponse } from 'msw'
-import { beforeAll, afterEach, afterAll } from 'vitest'
+import { setupServer } from "msw/node";
+import { http, HttpResponse } from "msw";
 
 const server = setupServer(
-  http.get('https://api.example.com/users/:id', ({ params }) =>
-    HttpResponse.json({ id: params.id, name: 'mocked' })
+  http.get("https://api.example.com/users/:id", ({ params }) =>
+    HttpResponse.json({ id: params.id, name: "mocked" })
   )
-)
+);
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
+beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 ```
 
-业务代码里的 `fetch('https://api.example.com/users/42')` 完全不动，测试自动拿到 `{ id: '42', name: 'mocked' }`。`onUnhandledRequest: 'error'` 让漏 mock 的请求直接报错，避免静默走真网络。
+`listen()` 默认仍是 `'warn'`。这里显式改成 `'error'`，漏写的请求不会静默打到外网。`resetHandlers()` 清掉 `server.use()` 追加的一次性 handler。
 
-### 案例 2：浏览器 dev 模式假后端
+### 案例 2：浏览器入口必须等网络启用
 
 ```ts
-// src/main.ts
-import { setupWorker } from 'msw/browser'
-import { handlers } from './handlers'
+import { setupWorker } from "msw/browser";
+import { handlers } from "./handlers";
 
 if (import.meta.env.DEV) {
-  const worker = setupWorker(...handlers)
-  await worker.start()  // 必须 await，等 SW 注册完
+  const worker = setupWorker(...handlers);
+  await worker.start();
 }
 ```
 
-后端还没实现 `/api/orders` 时，前端先写 handler 返回假订单数据。后端上线后把 `worker.start({ onUnhandledRequest: 'bypass' })` 加上，没 mock 的请求直接穿透到真 API。
+`start()` 是 async 的：它要 `network.enable()`，Service Worker 路径还要等 registration。固定版本已把 `waitUntilReady` 标成 deprecated；正确做法是 await `start()`，而不是依赖这个旧开关。
 
-### 案例 3：动态切换 mock（测试运行时改返回）
+### 案例 3：运行时覆盖一条 handler
 
 ```ts
-test('renders error state', async () => {
+test("renders error state", async () => {
   server.use(
-    http.get('/users/:id', () =>
-      new HttpResponse(null, { status: 500 })
-    )
-  )
-  // 这个 test 内 /users/:id 返回 500
-  render(<UserPage id="42" />)
-  expect(await screen.findByText(/出错/)).toBeInTheDocument()
-})
-// afterEach 的 resetHandlers 自动复位
+    http.get("/users/:id", () => new HttpResponse(null, { status: 500 }))
+  );
+  render(<UserPage id="42" />);
+  expect(await screen.findByText(/出错/)).toBeInTheDocument();
+});
 ```
 
-`server.use()` 在 `setupServer` 启动后追加 handler，比初始 handlers 优先级高。配合 `afterEach(resetHandlers)` 实现"每个 test 自带 mock 状态"。
+`use()` 把 handler 插到查找顺序的前面。`{ once: true }` 可以让某条 handler 用一次后失效。这是测试态覆盖，不是改业务代码。
 
 ## 踩过的坑
 
-1. **Service Worker 注册要 dev server 服务**：`/mockServiceWorker.js` 必须由 HTTP server 提供，`file://` 协议下 SW 注册不了——所以纯静态 demo 跑不起来 MSW。
-
-2. **`worker.start()` 必须 await**：它是异步的（要等 SW 进入 active 状态）。`main.tsx` 里如果不 await 直接渲染，首屏的 `fetch` 会绕过 SW 打到真服务器，测试时表现成"偶发漏拦截"。
-
-3. **v1 → v2 大改不兼容**：v1 的 `rest.get('/x', (req, res, ctx) => res(ctx.json(...)))` 在 v2 完全废弃，换成 `http.get('/x', () => HttpResponse.json(...))`。老博客上的代码不能直接抄。
-
-4. **生产 build 必须排除 msw**：包体积大且不应进 prod。用 `import.meta.env.DEV` 守门 + Vite 自动 tree-shake，否则 bundle 里出现 `mockServiceWorker.js` 就是事故。
+1. **把默认未处理策略写成 error**：`listen()` / `start()` 默认 `'warn'`。要 fail-closed 必须显式传 `'error'`。
+2. **在 Node 里调用 `setupWorker`**：源码第一行用 `isNodeProcess()` invariant。Node 测试只能走 `msw/node`。
+3. **不 await `worker.start()`**：首屏 `fetch` 可能发生在 Service Worker 还没 enable 之前，看起来像偶发漏拦截。
+4. **抄 v1 API**：`rest.get((req, res, ctx) => res(ctx.json(...)))` 已不存在；2.15.0 是 `http.get` + `HttpResponse`。
+5. **把 `defineNetwork` 当稳定公开主 API**：`SetupServerApi` / `SetupWorkerApi` 已 deprecated，但文档和现有集成仍以 `setupServer` / `setupWorker` 为入口。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 浏览器 + Node 都要 mock 同一套 API（unit test + Storybook + dev 共用 handler）
-- 业务代码不想为测试做改动（不想抽 api 层、不想引 jest.mock）
-- 后端没写完，前端要先开发完整体验
-- 需要"动态切换 mock"演示组件多种状态（loading / 失败 / 限流）
+
+- 浏览器 + Node 要共用同一份 API 合同（单测、Storybook、本地假后端）
+- 业务代码不想为测试抽一层 `jest.mock('./api')`
+- 需要按请求标准对象（`Request` / `Response`）写 resolver
 
 **不适用**：
-- 只想在 Node 拦 http、不想装 SW 的小项目 → 用 nock 更轻
-- 只跑 Cypress / Playwright E2E 的项目 → 用它们自带的 `intercept` / `route` 即可
-- 需要带 ORM 的全栈 mock（自动 ID、关联表） → 选 miragejs，MSW 故意不做这层
-- 生产环境的 A/B 流量改写、灰度路由 → MSW 是测试工具，不是 service mesh
 
-## 历史小故事（可跳过）
+- 只要拦 Node `http`、不想装 Service Worker → 用 [[nock]]
+- 只跑 Playwright / Cypress E2E，平台自带 route / intercept 已够
+- 需要带关联表的全栈假资源 → MSW 不做 ORM
+- 生产流量改写或灰度路由 → 这是测试 / 开发工具
 
-- **2018-2019**：Artem Zakharchenko (kettanaito) 在做前端测试时不满 jest.mock 的业务侵入，启发自浏览器 Service Worker（PWA 用的）能拦 fetch 这件事，做了第一版 MSW
-- **2020**：Manifesto 帖《Mock Service Worker, the next-generation API mocking library》发布，社区开始大量迁移
-- **2021-2022**：Storybook 官方 addon、Vitest 集成相继出现，MSW 成为 React 生态默认 mock 方案
-- **2023**：v2 大版本切到 web 标准 `Request` / `Response`，配套独立项目 `@mswjs/interceptors` 把 Node 拦截层抽出
-- **2025-2026**：MSW v2 稳定演进，成为 npm 周下载量百万级的工具库
+## 固定版本边界
+
+- 本文绑定 `mswjs/msw@49d9d47f...`，Git tag 为 `v2.15.0`，包版本为 `2.15.0`。
+- npm `msw@2.15.0` 没有 `gitHead`；升级前应再核 GitHub tag，不要假设 registry 对象等于该提交。
+- engines 写 `node >= 18`；Node 拦截依赖 `@mswjs/interceptors ^0.41.3`。
+- 本文未安装依赖、运行上游测试、注册 Service Worker 或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **mock 应该在网络层、不应该在业务依赖点**——这是 MSW 与 jest.mock 哲学的根本差异
-2. **借现成平台 API（Service Worker）做新事**——比自己造拦截器优雅得多，且天然跨浏览器
-3. **同一份 handler 多处复用**是 DX 的胜利——测试、dev、Storybook 不必写三遍 mock
-4. **runtime invariant + 友好 warning** 比类型系统更适合"运行环境分叉"的库——`isNodeProcess()` 第一行守门胜过让 TS 复杂泛型
+1. **mock 边界在网络层**——业务继续调用真实 client，测试替换的是传输，不是模块图。
+2. **入口分叉、大脑不分叉**——browser / node / native 只换 source，handler 查找是同一套。
+3. **默认策略必须读源码**——`'warn'` 不会保护 CI 免于漏网请求。
+4. **标准 Request/Response 是跨端合同**——v2 用它替换了 v1 的 `req/res/ctx`。
+
+## 应用型自测
+
+1. 不传 `onUnhandledRequest` 时，未匹配请求会抛错并阻止真网络吗？
+2. 两个 `http.get('/users/:id')` handler 都匹配，且都返回 `HttpResponse`，谁生效？
+3. 在 Vitest 里调用 `setupWorker()` 会怎样？
+
+检查点：
+
+1. 不会。默认 `'warn'`，请求按 passthrough 处理。
+2. 数组里先出现且带 `response` 的那条。
+3. `isNodeProcess()` 为真时 invariant 失败；应改用 `setupServer`。
 
 ## 延伸阅读
 
-- 官方文档：[mswjs.io](https://mswjs.io) —— 含完整 v2 API + 迁移指南
-- 作者的 manifesto：[Mock Service Worker — kettanaito](https://kettanaito.com/blog/mock-service-worker)
+- 官方文档：[mswjs.io](https://mswjs.io)
+- 固定源码：[mswjs/msw](https://github.com/mswjs/msw) —— 本文绑定提交 `49d9d47f613b072f8d20e1a025feaee7c5382b2b`
 - v1 → v2 迁移：[migrations/1.x-to-2.x](https://mswjs.io/docs/migrations/1.x-to-2.x)
-- 配套包：[@mswjs/interceptors](https://github.com/mswjs/interceptors) —— Node 端拦截核心
-- [[storybook]] —— `msw-storybook-addon` 让每个 story 配自己的 mock
-- [[vitest]] —— Vitest setupFiles 注入 MSW lifecycle 是当前主流写法
+- [[nock]] —— Node 侧 Scope/Interceptor；v14 也用 `@mswjs/interceptors`
+- [[vitest]] —— 常见的 `setupFiles` 注入点
+- [[storybook]] —— story 级 handler 复用
 
 ## 关联
 
-- [[jest]] —— jest.mock 是 MSW 要替代的"业务侵入式"老方案
-- [[playwright]] —— Playwright 自带 `route` 拦截器，与 MSW 解决类似问题但只在 E2E 内
-- [[storybook]] —— 通过 addon 把 MSW handler 注入每个 story
-- [[fastify]] —— 真后端框架；MSW 是 fastify 没写完时的"假替身"
-- [[express]] —— path-to-regexp 由 Express 推广，MSW 复用了它的语法
-- [[vitest]] —— 现代 Node 测试 runner，MSW 通常以 setupFiles 注入
+- [[nock]] —— Node-only 对照：一次用完的 interceptor vs 常驻 handler 表
+- [[vitest]] —— Node 测试 runner
+- [[playwright]] —— E2E 自带 `route`，和 MSW 分层不同
+- [[jest]] —— `jest.mock` 是业务侵入式对照
+- [[storybook]] —— 用 addon 注入同一份 handler
+- [[wretch]] —— 以标准 Fetch 为底座，适合被 MSW 拦截
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[nock]] —— nock — 用 Scope 和一次用完的 interceptor 假扮 Node HTTP
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[wretch]] —— wretch — 把 fetch 写成一条链

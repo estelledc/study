@@ -2216,6 +2216,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::nock",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::nuxt",
       "topic_id": "projects-meta-and-full-stack-frameworks"
     },

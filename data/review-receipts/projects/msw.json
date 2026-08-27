@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "msw",
+    "digest_sha256": "6efe0ca7b3b8268bdae0dc4082d9d6965324f3d88ad0fead2ad8ad209d62f5d8"
+  },
+  "source_revision": "49d9d47f613b072f8d20e1a025feaee7c5382b2b",
+  "research_input_sha256": "f73bde47975b589ea67722a7e20434ee70e83cd61db7c2ae6ccc09469715720d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates browser/node sources, handleRequest, executeHandlers order, and default warn strategy with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "setupServer interceptors, setupWorker Service Worker path, matchRequestUrl and onUnhandledRequest were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds GitHub v2.15.0 because npm gitHead is missing; does not treat defineNetwork as the stable public entry."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

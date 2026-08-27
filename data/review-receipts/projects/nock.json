@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "nock",
+    "digest_sha256": "470e2f642829b6149b2f3a9ce24f405c2fef72a86694ff3614729192c31eebab"
+  },
+  "source_revision": "1ee467c68d601ddc22629d7a657061e6c27097c2",
+  "research_input_sha256": "f73bde47975b589ea67722a7e20434ee70e83cd61db7c2ae6ccc09469715720d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Scope registration, one-shot counters, ClientRequest plus Fetch interceptors, and net-connect policy with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index activation, intercept.js BatchInterceptor, interceptor.reply/times and back dryrun were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bx",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds v14.0.17 where Git tag and npm gitHead match; in-tree 0.0.0-development is not treated as the published version."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

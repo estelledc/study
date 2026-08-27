@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -51457,9 +51457,9 @@
       "id": "projects::msw",
       "area": "projects",
       "slug": "msw",
-      "title": "MSW — 让 mock 不改业务代码，在网络层透明拦截",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "MSW — 在网络层用同一套 handler 拦截请求",
+      "description": "介绍 MSW 如何把 handler 大脑与浏览器 Service Worker / Node interceptor 分开。",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-testing-and-verification"
       ],
@@ -51470,13 +51470,13 @@
         "raw_category": "projects / 测试工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/msw/",
       "atlas": {
@@ -52334,6 +52334,37 @@
       "atlas": {
         "chunk_id": "topic-projects-cli-tools-01",
         "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
+      "id": "projects::nock",
+      "area": "projects",
+      "slug": "nock",
+      "title": "nock — 用 Scope 和一次用完的 interceptor 假扮 Node HTTP",
+      "description": "介绍 nock 如何用 Scope 表拦截 Node 的 ClientRequest 和 Fetch。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-testing-and-verification"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-testing-and-verification",
+        "raw_category": "projects / 测试工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/nock/",
+      "atlas": {
+        "chunk_id": "topic-projects-testing-and-verification-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-testing-and-verification-01/"
       }
     },
     {
@@ -65867,7 +65898,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-testing-and-verification-01/",
-      "entries": 6
+      "entries": 7
     },
     {
       "id": "topic-projects-ui-and-frontend-frameworks-01",
