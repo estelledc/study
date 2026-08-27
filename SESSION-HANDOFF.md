@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BB：cheerio / jsdom
+
+- supervisor 状态：`running`（writer epoch 进行中，目标是一个 review-ready PR，不 merge）。
+- status：Program `active`；writer BB epoch `running`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 cheerio 与 jsdom 以 `STATIC_REVIEW` / `UNVERIFIED` 绑定到可达静态 revision，形成 study-v2 页、generation 1 receipt 与 `docs/html-parse-source-review-20260827-bb.md`。
+- scope：两页新笔记、共享源码审查记录、receipt / atlas / site-state / 公开计数文案与本交接；未安装上游依赖、发送业务网络请求、运行上游测试、bundle 或性能 benchmark。
+- activated_by：`explicit-user-request-parallel-writer-bb-20260827`。
+- detector fingerprint：仓库 961 个项目页中没有 cheerio / jsdom slug，开放 PR 也未占用这对 HTML 解析页；现有笔记把 jsdom 当测试环境提到，但没有固定 revision 合同。
+- external delta 计数：本轮授权开 1 个 PR、不 merge、不部署；D 轴在 merge/deploy 前不提升。
+- 已完成切片：
+  1. GitHub tag / npm `gitHead` 对齐 `cheeriojs/cheerio@e3c7aaf9...` / `1.2.0` 与 `jsdom/jsdom@6584485f...` / `30.0.1`。
+  2. 新增两页 study-v2 与 generation 1 static receipt；共享 provenance 为 `docs/html-parse-source-review-20260827-bb.md`。
+  3. 刷新 atlas / project-standard / site-state 与公开规模文案。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 一致且 `evidence_state=UNVERIFIED`；`audit:content-contract` 0 blocking；`audit:counts` / `audit:doc-lifecycle` / `git diff --check` 通过。`verify:ci` 在首个 PR 推送后跑。
+- budget：1 个 HTML 解析双子切片、120 分钟、1 个可写切片。
+- external_outcome：一个 draft PR；不 merge。
+- stop_conditions：canonical/revision 不唯一、需要猜测运行时/性能、开放 PR slug 冲突、或只能放宽门禁时停止。
+- 下一次 wake 条件：本分支 PR 的 CI/review 状态变化，或 owner 明确授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

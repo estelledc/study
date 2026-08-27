@@ -1,6 +1,6 @@
 ---
 title: "Markdown / 解析 · 项目 · 第 1 组"
-description: "5 条 Markdown / 解析 Atlas 分块"
+description: "7 条 Markdown / 解析 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,12 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 5 条，稳定上限为 100 条。
+本分块共 7 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [Cheerio — 用 jQuery 选择器操作 parse5 / htmlparser2 树](/study/projects/cheerio/) | `cheerio` | beginner | UNVERIFIED | 用 jQuery 选择器操作 parse5 / htmlparser2 树，不执行页面脚本 |
+| [jsdom — 在 Node 里模拟 WHATWG DOM，而不是布局引擎](/study/projects/jsdom/) | `jsdom` | intermediate | UNVERIFIED | 在 Node 里模拟 WHATWG DOM 与 HTML，默认不跑脚本、不加载子资源 |
 | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | `markdown-it` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | `marked` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | `micromark` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

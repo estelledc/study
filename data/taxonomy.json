@@ -1836,6 +1836,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::cheerio",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::chroma",
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
@@ -2034,6 +2038,10 @@
     {
       "note_id": "projects::js-joda",
       "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::jsdom",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::kafka",
