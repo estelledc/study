@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "meriyah",
+    "digest_sha256": "402f556ca7ed9b1830953bcd89d1409caa1fea5c1590055fb3112134f1744f2f"
+  },
+  "source_revision": "3e586e4c957a438bf872a9d09aab334a3cea3f8d",
+  "research_input_sha256": "878d90cb56f9a02f3ebff4e8c259c63f7f4c138ffb3b33fdfa9d3b27b5d01c7e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates deprecated parseScript aliases, next-feature bitset, runtime regex validation, and commonjs AST sourceType with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "parseSource, normalizeOptions, features, JSX lexer entry, and ParseError were inspected; vitest and test262 were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fw",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag v7.3.2 and npm gitHead match; ES2024 / Annex B / regex claims stay UNVERIFIED without runtime evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}

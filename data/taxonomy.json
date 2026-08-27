@@ -1756,6 +1756,10 @@
       "topic_id": "papers-cryptography-and-security"
     },
     {
+      "note_id": "projects::acorn",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::affine",
       "topic_id": "projects-data-applications-and-saas"
     },
@@ -2134,6 +2138,10 @@
     {
       "note_id": "projects::meilisearch",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::meriyah",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::micromark",
