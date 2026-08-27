@@ -19,7 +19,7 @@
   - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
 - budget：2 个 ignored worktree + 2 页静态源码迁移；单 writer。
-- 验证结果：定向 quality-gate 与派生快照已刷新；全量 `verify:ci` 在提交后继续跑。
+- 验证结果：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 STUDY_FRESHNESS_AS_OF=2026-08-27 npm run verify:ci` 全绿（含 tests、content/receipt 门禁、strict build、23 Playwright a11y、Pages/Atlas/站点预算）。构建页可见两页标题、固定版本与 `UNVERIFIED`。
 - blocker：未获 merge/deploy 授权；静态阅读不能升级为运行证据。
 - stop conditions：本 epoch 在开出 1 个 PR 后停止；不自动 merge。
 - 下一次 wake 条件：owner review / CI 结果，或新的显式范围重授权。
