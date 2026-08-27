@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer FJ URL-query 双子
 
-- supervisor 状态：Program `active`；本地 writer epoch `running` → 完成后 `complete`。
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
 - 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main）。
 - objective：把 `ufo` 与 `query-string` 这对 URL-query 库以 `STATIC_REVIEW` / `UNVERIFIED` 写入源码绑定 study-v2 页；产出 `docs/url-query-source-review-20260827-fj.md`；开一个 PR，不 merge。
 - scope：两页新正文、2 份 generation 1 receipt、共享审查文档、taxonomy curated assignment、note-index / project-standard / site-state / atlas 派生、公开计数文案、ofetch/ky/hono 生成段入链、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 bundle。
@@ -20,7 +20,7 @@
 - external_outcome：review-ready PR；未授权 merge / deploy，D 轴不提升到生产。
 - stop_conditions：canonical/revision 不唯一、taxonomy 预算只能靠放宽阈值继续、需要 merge、或 verify:ci 失败且无法在 scope 内修复。
 - blocker：规模 compare detector 在 main 即超 baseline（先于本切片存在）；本轮未改 baseline / 阈值。
-- 验证结果：定向 quality-gate 两页 pass、0 advisory；其余以 verify:ci 为准。
+- 验证结果：两页 quality-gate pass、0 advisory；receipt `UNVERIFIED`；`audit:counts` 与内容文件一致；规范 Node 22.23.1 / npm 11.17.0 下 `verify:ci` 在 Playwright 浏览器补齐后全绿（含 23 Playwright a11y、strict build、Pages/Atlas/站点预算与 diff 门禁）。首次 `test:a11y` 因本机缺少 Chromium 失败，安装浏览器后 23/23 通过，未改测试或门禁。
 - 下一次 wake 条件：本 PR 的 CI/review 状态变化，或 owner 对 merge / 规模 baseline 的单独授权。
 - 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
 - superseded_by：`none`
