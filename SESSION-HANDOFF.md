@@ -2,6 +2,25 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Parallel writer BO：gRPC-Go + Connect-ES
+
+- supervisor 状态：writer epoch complete；等待 review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `grpc-go` 与 `connect-rpc` 迁到 pinned `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2，第二页按指令绑定 connect-es。
+- scope：两篇项目页、两份 generation 1 receipt、`docs/rpc-source-review-20260827-bo.md`，以及 atlas / note-index / site-state / project-standard / 本 handoff 的确定性派生。
+- activated_by：explicit parallel writer BO（2026-08-27）。
+- detector fingerprint：两页教学骨架完整但缺 pinned revision；`connect-rpc` 仍指向 connect-go 且例子停在已删除的 `createPromiseClient`；`grpc-go` 仍把 `Dial` / `WithInsecure` / keepalive 10s 写成当前默认。
+- external delta 计数：GitHub/npm 只读核验 + 本地 blob-filtered clone；未 merge、未部署，D 轴不变。
+- 已完成切片：
+  1. `grpc-go` 绑定 `grpc/grpc-go@030ee8bec...` / `1.83.2`，纠正 NewClient、显式凭据、keepalive 地板和 4MiB 接收上限。
+  2. `connect-rpc` 改绑 `connectrpc/connect-es@104238c58...` / `2.1.2`，纠正 v2 客户端工厂、`*_pb` 生成物、web JSON / Node 二进制默认分叉。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt digest 已写入。`verify:ci` 在本提交之后跑。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：上游运行证据不能由静态 review 替代。
+- 下一次 wake 条件：PR review 完成或 owner 另授 merge/deploy。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

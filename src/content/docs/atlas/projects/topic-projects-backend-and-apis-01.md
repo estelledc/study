@@ -23,7 +23,7 @@ sidebar:
 | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | `celery` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | `centrifugo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | `chi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) | `connect-rpc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ConnectRPC — TypeScript 实现（connect-es）](/study/projects/connect-rpc/) | `connect-rpc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | `django` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | `dropwizard` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | `echo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

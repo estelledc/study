@@ -1,155 +1,168 @@
 ---
-title: ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
-来源: 'https://github.com/connectrpc/connect-go'
+title: ConnectRPC — TypeScript 实现（connect-es）
+来源: https://github.com/connectrpc/connect-es
 日期: 2026-05-30
 分类: 后端 / RPC 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/connectrpc/connect-es
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 104238c58152e324ac16a99563f5eeea8ae7136d
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.1.2
 ---
 
 ## 是什么
 
-**ConnectRPC** 是 Buf 团队推出的开源 RPC 库——同一份 `.proto` 接口文件，能同时被浏览器、移动端、和老的 gRPC 客户端调用，**不需要 grpc-web 那套额外的代理转协议**。日常类比：像一个会三种语言的接待员——客人用普通话（HTTP/JSON）、广东话（gRPC-Web）还是英语（gRPC over HTTP/2）说话，他都能听懂同一个意思，不用先把客人送进翻译室再带出来。
+Connect-ES 是 ConnectRPC 的 TypeScript 实现。日常类比：还是那份 `.proto` 合同，但接待员改讲三种 HTTP 方言——Connect（普通 POST / 可选 JSON）、gRPC-Web、gRPC。浏览器可以用 fetch 直接打，不必先架一层 grpc-web 代理。
 
-你写一份 `.proto`：
+固定 2.1.2 的核心包是 `@connectrpc/connect`。浏览器传输在 `@connectrpc/connect-web`，Node 传输和 adapter 在 `@connectrpc/connect-node`。npm `gitHead` 与 GitHub tag `v2.1.2` 都指向同一提交。
 
-```proto
-service Greeter {
-  rpc SayHello (HelloRequest) returns (HelloReply);
-}
-```
-
-跑 `protoc-gen-connect-go` 生成代码后，**同一个 server 二进制**接受三种协议的请求；浏览器端直接 `fetch('/greet.v1.GreeterService/SayHello', {body: JSON.stringify(...)})` 就能调，连特殊客户端库都可以不用。
+你不再从 `*_connect.ts` 生成客户端：v2 删掉了 `protoc-gen-connect-es`，服务描述来自 Protobuf-ES 的 `*_pb`。
 
 ## 为什么重要
 
-不理解 Connect，下面这些事都没法解释：
+不理解 v2 合同，旧例子会直接编译失败：
 
-- 为什么有了 gRPC，还要再造一个 RPC 协议——因为 gRPC 强依赖 HTTP/2，**浏览器原生 fetch / XHR 跑不了 gRPC**
-- 为什么不用 grpc-web 就够了——grpc-web 需要单独跑一个 Envoy 代理把浏览器请求转成 gRPC，部署一套两份运维
-- 为什么 curl 一行就能调 Connect 服务——它是普通的 HTTP POST + JSON，跟 REST 一样能 grep 日志、能 Postman 调试
-- 为什么很多 Go 项目从 grpc-go 平迁到 connect-go——server 兼容旧 gRPC 客户端，新增浏览器路径，**老路不断**
+- 为什么 `createPromiseClient` 已经不存在
+- 为什么 `import { Greeter } from "./gen/greet_connect"` 对不上生成物
+- 为什么浏览器默认拿到 JSON，Node 默认却是二进制 protobuf
+- 为什么“一个 server 三种协议”是 router 默认值，不是额外插件
 
 ## 核心要点
 
-Connect 的设计可以拆成 **三件事**：
+1. **客户端入口是 `createClient(service, transport)`**：`index.ts` 从 `promise-client.ts` 导出它。按 `methodKind` 分成 unary / server_streaming / client_streaming / bidi_streaming，分别返回 `Promise` 或 `AsyncIterable`。
 
-1. **三协议同口**：一个 server 监听一个端口，按请求 `Content-Type` 自动分流——`application/grpc` 走 gRPC、`application/grpc-web` 走 gRPC-Web、`application/connect+json` 走 Connect 自己的协议。类比：餐厅只有一扇门，进来的人是堂食 / 外卖 / 自助，门口接待员一眼分流。
+2. **Router 默认三协议**：`createConnectRouter()` 里 `grpc`、`grpcWeb`、`connect` 只要不是显式 `false` 就会注册。三个都关会抛 `ConnectError`（`invalid_argument`）。Node 侧用 `connectNodeAdapter({ routes })` 把 router 接到 `http` / `http2`。
 
-2. **Connect 协议本身**：跑在 HTTP/1.1 上的简化 RPC——请求方法走 `POST /service.Method`，body 是 Protobuf 二进制或 JSON，错误用 HTTP 状态码 + JSON 错误体。**没有 HTTP/2 trailer 那一套**，所以浏览器、curl、Cloudflare Worker 都能直接发。
+3. **传输默认值按运行时分叉**：`connect-web` 的 `createConnectTransport` 默认 `useBinaryFormat = false`（JSON），`useHttpGet = false`。`connect-node` 的默认是 `useBinaryFormat ?? true`。调试时不要用浏览器的默认去猜 Node。
 
-3. **统一 SDK**：Go / TypeScript / Swift / Kotlin 共用同一份 schema 生成代码，调用姿势在四种语言里高度一致。类比：四种语言的 SDK 像四份翻译本，源头是同一份 `.proto` 合同。
+4. **Interceptor 是洋葱，数组末尾最先执行**：类型是 `(next) => (req) => ...`。请求从外到内，真正的 HTTP 调用在最里层。
 
-中间还有一层 **interceptor**（拦截器），跟 gRPC-Go 一样可以插日志 / 鉴权 / 重试，迁移成本低。
+5. **错误带 Code**：`ConnectError` 把 status code 前缀进 `message`，并保留 `metadata` 与 protobuf `details`。不能把它当成普通 `Error.message` 字符串比较。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：Go 后端 + curl 调试
-
-```go
-mux := http.NewServeMux()
-path, handler := greetv1connect.NewGreeterHandler(&Server{})
-mux.Handle(path, handler)
-http.ListenAndServe(":8080", h2c.NewHandler(mux, &http2.Server{}))
-```
-
-调试时直接 curl，**不用任何 RPC 工具**：
-
-```bash
-curl -X POST -H "Content-Type: application/json" \
-  --data '{"name":"world"}' \
-  http://localhost:8080/greet.v1.GreeterService/SayHello
-```
-
-返回普通 JSON。换成 grpc-go 就要 `grpcurl` 才能调。
-
-### 案例 2：浏览器端零代理直连
+### 案例 1：浏览器 unary，走默认 JSON
 
 ```ts
-import { createPromiseClient } from "@connectrpc/connect"
+import { createClient } from "@connectrpc/connect"
 import { createConnectTransport } from "@connectrpc/connect-web"
-import { GreeterService } from "./gen/greet_connect"
+import { ElizaService } from "./gen/connectrpc/eliza/v1/eliza_pb"
 
-const client = createPromiseClient(GreeterService,
-  createConnectTransport({ baseUrl: "/api" })
+const client = createClient(
+  ElizaService,
+  createConnectTransport({ baseUrl: "/api" }),
 )
-const res = await client.sayHello({ name: "world" })
+const { sentence } = await client.say({ sentence: "hello" })
 ```
 
-浏览器到后端走的是普通 HTTP/1.1，**没有中间 proxy**。同样的代码换成 grpc-web 必须先部署一个 Envoy。
+这是 v2 合同：服务来自 `*_pb`，客户端是 `createClient`。旧页里的 `createPromiseClient` 与 `@connectrpc/connect-web` 的 `createPromiseClient` 导入在 2.1.2 不存在。未设 `useBinaryFormat` 时，web transport 走 JSON。
 
-### 案例 3：从 grpc-go 渐进迁移
+### 案例 2：Node 上同时接三种协议
 
-老服务 server 用的是 `grpc.NewServer()`，客户端散布全公司。改 server：
+```ts
+import * as http2 from "node:http2"
+import type { ConnectRouter } from "@connectrpc/connect"
+import { connectNodeAdapter } from "@connectrpc/connect-node"
+import { ElizaService } from "./gen/connectrpc/eliza/v1/eliza_pb"
 
-```go
-// 同一个 mux 同时挂 connect handler 和 grpc handler
-mux := http.NewServeMux()
-mux.Handle(greetv1connect.NewGreeterHandler(svc))    // connect / grpc-web
-grpcServer := grpc.NewServer()
-pb.RegisterGreeterServer(grpcServer, svc)            // 老 grpc 客户端
-// 用 cmux 或 h2c handler 同时承接两路
+function routes(router: ConnectRouter) {
+  router.rpc(ElizaService.method.say, async (req) => ({
+    sentence: `you said: ${req.sentence}`,
+  }))
+}
+
+http2.createServer(connectNodeAdapter({ routes })).listen(8080)
 ```
 
-旧客户端**完全无感**，浏览器路径多出来一条，**不用同时维护两份服务实现**。
+未关闭任何协议时，同一 handler 可被 Connect、gRPC-Web 和 gRPC 客户端调用。`router.service(svc, impl)` 若漏实现某个方法，router 会补一个 `unimplemented` 错误处理，而不是悄悄 404。
+
+### 案例 3：curl 打 Connect JSON，不必上 grpcurl
+
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"sentence":"hello"}' \
+  http://localhost:8080/connectrpc.eliza.v1.ElizaService/Say
+```
+
+这只覆盖 Connect + JSON 路径。Node 客户端默认二进制；web 客户端默认 JSON。同一服务、两种默认，日志里看到“乱码”往往是 Content-Type 不匹配，不是服务挂了。
 
 ## 踩过的坑
 
-1. **`http.ListenAndServe` 不能直接上生产**：默认 server 没超时、连接池随便、没 trace。文档明确说 "not fit for production"——必须自己装 `ReadHeaderTimeout` / `IdleTimeout` / OpenTelemetry interceptor 才能上线。
+1. **继续用 v1 生成器**：`protoc-gen-connect-es` 已删除。生成物应来自 `protoc-gen-es` / `@bufbuild/protoc-gen-es`，导入 `*_pb`。
 
-2. **streaming 仍要 HTTP/2**：Connect 单元调用走 HTTP/1.1 没问题，但 server-streaming / client-streaming / bidi 需要 HTTP/2 才能稳定，浏览器更只能拿到 server-streaming 一种。所以"Connect = HTTP/1.1"是单元 RPC 才成立，**streaming 没省掉 HTTP/2**。
+2. **把 web 默认当成全平台默认**：浏览器 JSON，Node 二进制。给 Node 客户端写 curl 对照时必须显式改 `useBinaryFormat` 或改请求头。
 
-3. **JSON / Protobuf 默认值不同**：connect-go 默认走 Protobuf 二进制，curl 调试要显式 `Content-Type: application/json`；不指定就拿到一堆乱码。新人容易以为服务挂了。
+3. **以为 GET 会自动开启**：`useHttpGet` 默认 false，且只对声明为无副作用的方法生效。
 
-4. **多语言 SDK 版本对齐**：`protoc-gen-connect-go` v1.16 和 `@connectrpc/connect-es` v1.4 都各自演进，trailer 处理偶有兼容性 bug。生产环境**必须把生成器版本和运行时版本钉死在 monorepo 里**。
+4. **把 Node 版本读成单一数字**：`MIGRATING.md` 写 Connect v2 支持 Node **18.14.1+**；`@connectrpc/connect-node` 的 `engines.node` 是 `>=20`。部署前按你实际引用的包读，不要把两行合成“官方最低 18”。
+
+5. **在浏览器里假设 bidi 可用**：web transport 注释写明面向 unary 与 server-streaming。双向流仍要 HTTP/2，浏览器能力不能从“Connect 能跑在 HTTP/1.1”推出来。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 同一份 schema 同时服务后端 + Web + 移动（省掉 OpenAPI / GraphQL 两套）
-- 已有 gRPC 服务，想加浏览器路径但不想跑 grpc-web proxy
-- 调试 / 灰度 / 抓包以日志友好为先（需要 curl / Postman / grep 日志）
-- 单元 RPC 占绝对主导，streaming 偶尔用
+
+- 一份 Protobuf 契约同时给 Web、Node 和现有 gRPC 客户端
+- 需要 curl / 普通 HTTP 调试的单元 RPC
+- 已迁移到 Protobuf-ES v2 的 TypeScript 仓库
 
 **不适用**：
-- 重度 streaming 场景（推送、双向语音）→ 直接用 gRPC over HTTP/2 更省心
-- 性能极限（百万 QPS、单字节都要省）→ 原生 gRPC + HTTP/2 比 Connect JSON 路径快
-- 生态完全没有 Protobuf 工具链 → REST + OpenAPI 学习曲线低很多
 
-## 历史小故事（可跳过）
+- 还停在 Connect-ES v1 生成物（`*_connect.ts` + `createPromiseClient`）且不打算跑 `connect-migrate`
+- 重度浏览器双向流——先确认传输与运行时，而不是只换 SDK 名字
+- 没有 Protobuf 工具链、只想手写 JSON REST
 
-- **2020 年**：Buf（前 Uber 工程师创立）做 Protobuf 工具链，发现 grpc-web 太复杂、文档少、调试痛苦
-- **2022 年 8 月**：Buf 开源 connect-go + Connect 协议规范，主打 "gRPC + HTTP + 浏览器三合一"
-- **2023 年**：陆续放出 connect-es（TypeScript）、connect-swift、connect-kotlin
-- **2024 年**：项目捐给 CNCF Sandbox，标志获得云原生社区背书
+## 固定版本边界
 
-至此 RPC 协议生态从"gRPC vs grpc-web"两极变成"gRPC / Connect / REST"三极并存。
+- 本文绑定 `connectrpc/connect-es@104238c58152e324ac16a99563f5eeea8ae7136d`。
+- npm：`@connectrpc/connect@2.1.2` 的 `gitHead` 与该提交一致；`connect-web` / `connect-node` 同版本。
+- peer：`@bufbuild/protobuf ^2.7.0`。
+- slug 仍是既有 `connect-rpc`；canonical 从旧的 `connect-go` 改为本次指定的 `connect-es`。Go 实现不在本页证据范围内。
+- 本文未安装依赖、未跑 Jasmine / conformance、未发网络请求，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **协议简化是工程胜负手**——Connect 没发明新东西，只是把 gRPC 的 HTTP/2 强依赖去掉、trailer 改 JSON、流变可选；就解决了"浏览器调 gRPC 难"
-2. **三协议同口路由**是降低迁移成本的范式——老客户端不用改，新客户端走新路，**老路不断是迁移成功的关键**
-3. **schema 单一来源**比"REST 还是 RPC"之争更值得追求——`.proto` 一份，多端共享类型，比维护两套（OpenAPI + Protobuf）更可持续
-4. **生产化默认配置**永远是开源库的第一坑——`http.ListenAndServe` 这种 demo 写法不能直接上线，把超时 / observability / 连接池写进 README 才负责
-5. **兼容性比新颖性更值钱**——Connect 选择主动兼容 gRPC，而不是另起炉灶；这让它有条件吃下既有 gRPC 用户基数，而不是从零做用户教育
+1. **协议默认开启，运行时默认分叉**——三协议是 router 的默认；JSON/二进制却按 web/Node 分开。
+2. **v2 把代码生成交还给 Protobuf-ES**——少一个插件，换来必须改导入和客户端工厂。
+3. **Interceptor 顺序与 gRPC-Go 的 Chain 不同**——这里是数组末尾最先包到 HTTP。
+4. **浏览器友好不等于四种 stream 都友好**——HTTP/1.1 只稳住单元路径。
+
+## 应用型自测
+
+1. 在 2.1.2 里 `createPromiseClient(ElizaService, transport)` 还能用吗？
+2. `createConnectTransport({ baseUrl })` 在浏览器里默认发 protobuf 二进制吗？
+3. `createConnectRouter({ grpc: false, grpcWeb: false, connect: false })` 会得到空 router 还是抛错？
+
+检查点：
+
+1. 不能。该函数已删除，应改 `createClient`。
+2. 不会。web 默认 `useBinaryFormat=false`。
+3. 抛 `ConnectError`：至少一个协议必须启用。
 
 ## 延伸阅读
 
-- 官方主页：[connectrpc.com](https://connectrpc.com/)（含 Go / TS / Swift / Kotlin 各语言入门）
-- 协议规范：[Connect Protocol Reference](https://connectrpc.com/docs/protocol)（一页讲完线协议）
-- 设计动机：[Buf 原始博客 — Connect: A better gRPC](https://buf.build/blog/connect-a-better-grpc)
-- 视频教程：[Connect: gRPC 的轻量替代品](https://www.youtube.com/results?search_query=connect+rpc+buf)（主分享会录像）
-- 同类对比：grpc-web 官方仓库 README（看 grpc-web 路径有多复杂就懂 Connect 在解什么痛）
-- [[grpc-go]] —— Connect 兼容的老协议，理解它能更快理解 Connect 在做什么减法
-- [[http-2]] —— gRPC 强依赖 HTTP/2，Connect 把这个依赖打散
+- 固定源码：[connectrpc/connect-es](https://github.com/connectrpc/connect-es) —— 本文绑定提交 `104238c58152e324ac16a99563f5eeea8ae7136d`
+- 协议说明：[Connect Protocol](https://connectrpc.com/docs/protocol)
+- 迁移说明：仓库内 `MIGRATING.md`（v1 → v2）
+- [[grpc-go]] —— 官方 Go 实现，默认 HTTP/2 + 显式凭据
+- [[twirp]] —— 更早的 protobuf-over-HTTP 思路，没有三协议同口
 
 ## 关联
 
-- [[grpc-go]] —— 同一团队消费的对象，Connect 服务能直接被 grpc-go 客户端调用
-- [[http-2]] —— gRPC 必需，Connect 单元调用不需要，streaming 仍需要
-- [[fastapi]] —— 同样以 schema 优先（Pydantic）但走 OpenAPI/REST 路线，对比可见 RPC 派思路差异
-- [[fastify]] —— Node 的 schema-first 框架，对比可见 schema 单源思想在 REST 阵营也有
-- [[axum]] —— Rust 的 web 框架，思路是 handler-first 而非 schema-first，对比可见两派工程哲学
-- [[trpc]] —— TypeScript 的"端到端类型推导"RPC，思路最接近 Connect 但限定 TS 全栈
+- [[grpc-go]] —— 同一契约的 Go / HTTP/2 实现；Connect router 默认仍接待 gRPC 客户端
+- [[twirp]] —— HTTP/1.1 + protobuf/JSON，但没有 gRPC 兼容层
+- [[trpc]] —— TypeScript 端到端类型 RPC，契约来自 TS 而不是 `.proto`
+- [[fastify]] —— `@connectrpc/connect-fastify` 可把 router 挂上去，框架本身不是 RPC 运行时
 
 ## 反向链接
 
