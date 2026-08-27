@@ -87,7 +87,7 @@ Post.belongsTo(User)
 
 const hits = await User.findAll({
   where: { email: { [Op.like]: "%@example.com" } },
-  order: [["id", "DESC"]],
+  order: "id DESC",
   limit: 10,
   include: [Post],
 })
