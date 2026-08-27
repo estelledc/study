@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "redux-observable",
+    "digest_sha256": "7d04522cb2d8f23a906287b06dcd023983b65d7bae50fd4112386b64895b1291"
+  },
+  "source_revision": "a544c2d6aa99b8546e089da94bbf5bbef69d08cd",
+  "research_input_sha256": "42c5175288c20d32fbc804f3a97999b7910928e2ec37b9ba91922214c146b5f9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ay",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains run-after-store, reducer-before-epic ordering, ofType/isAction, and mergeMap run stacking with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ay",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 3.0.0-rc.3 middleware, StateObservable, combineEpics, and ofType were inspected; vitest and a live store were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ay",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "npm latest is an RC; v2.0.0 and newer main docs HEAD are disclosed and not adopted as the contract."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}
