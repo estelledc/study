@@ -4,14 +4,14 @@
 
 ## 2026-08-27 PARALLEL writer AK：eslint / prettier STATIC_REVIEW
 
-- supervisor 状态：writer epoch `complete`；远端 CI 已绿，等待 owner review；未 merge。
-- status：`WAIT_HEALTHY`（writer 已停，PR #98 待审查）。
+- supervisor 状态：writer epoch `complete`；owner review 为 ship / approve-with-notes；未 merge。
+- status：`WAIT_HEALTHY`（writer 已停；draft + conflict，本轮不 squash）。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
 - objective：为 ESLint 与 Prettier 各写一页 `study-v2` 静态源码审查，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：新建 `eslint` / `prettier` 项目页、共享 provenance 文档、receipt、taxonomy/atlas/site-state/handoff；未改 biome/oxlint，也未占用 open PR #47-#85 的 slug。
 - activated_by：`explicit-user-request-20260827-ak-eslint-prettier`。
 - detector fingerprint：仓库已有 biome/oxc 等工具链页，但缺少独立的 `eslint` 与 `prettier` 源码绑定页。
-- external delta 计数：打开 PR #98；远端 `verify:ci` run `33051285911` 通过。未 merge、未部署，D 轴不提升。
+- external delta 计数：打开 PR #98；远端 `verify:ci` run `33051285911` 通过；owner review `5041035266` 为 approve-with-notes。未 merge、未部署，D 轴不提升。
 - 完成切片：
   1. ESLint 绑定 `eslint/eslint@5c8c2417...` / `10.9.1`，写清 flat config 查找、默认不含 recommended、`--fix` 写盘与 concurrency 默认 `off`。
   2. Prettier 绑定 GitHub tag `3.9.6` / `8f0c95057...`，写清 parse → doc IR → print，并披露 npm `gitHead` 不可达。
@@ -19,10 +19,10 @@
 - acceptance checks：两页 `quality-gate` 通过；`audit:counts` / `audit:content-contract` 通过。
 - 验证结果：本地与远端 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 均全绿；GitHub Actions `33051285911` 通过。
 - budget：1 个可写切片、1 个本地 writer、1 个 PR。
-- blocker：PR 待审查；未获 merge 授权。
-- stop conditions：本轮只开 1 个 PR 且不 merge；不继续发明下一项内容。
-- 下一次 wake 条件：owner review 或新的显式维护指令。
-- 下一条命令：在 https://github.com/estelledc/study/pull/98 做 review；未获授权前不要 merge。
+- blocker：PR 为 draft 且与 main 冲突；派生索引落后当前 main，按 review 交给 merge queue。非阻塞笔记：provenance 文档 CJK 渲染、source `engines` 严于已发布包。
+- stop conditions：本轮不 squash、不 merge、不发明下一项内容。
+- 下一次 wake 条件：merge queue 接手，或 owner 明确授权处理冲突 / 非阻塞笔记。
+- 下一条命令：不要 rebase 或 squash；冲突与派生索引留给 merge queue。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
