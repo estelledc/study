@@ -1,6 +1,6 @@
 ---
 title: "UI 框架 / Frontend Framework · 项目 · 第 1 组"
-description: "13 条 UI 框架 / Frontend Framework Atlas 分块"
+description: "15 条 UI 框架 / Frontend Framework Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,10 +9,12 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 15 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
+| [cash-dom — 只把能用原生 API 表达的 jQuery 子集留下来](/study/projects/cash-dom/) | `cash-dom` | 初级 | UNVERIFIED | cash-dom 8 |
+| [jQuery — 选择器工厂、集合栈和委托事件的 DOM 工具](/study/projects/jquery/) | `jquery` | 初级 | UNVERIFIED | jQuery 4 |
 | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) | `jspdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | `lighthouse` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | `pdfmake` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

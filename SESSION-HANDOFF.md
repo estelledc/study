@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 DOM-util 双子 STATIC_REVIEW（jquery + cash-dom）
+
+- supervisor 状态：`running` → writer epoch `complete`（待 PR review；不自合并）。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`。
+- objective：对 jquery 与 cash-dom 做 STATIC_REVIEW / UNVERIFIED 源码绑定，形成一篇共享审查文档与两页 study-v2。
+- scope：两篇新项目页、两份 generation 1 receipt、`docs/dom-util-source-review-20260827-cr.md`、atlas / note-index / project-standard / site-state 派生、本 handoff；未安装上游依赖、未跑上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-cr-20260827`。
+- detector fingerprint：`origin/main` 无 jquery / cash-dom 页；开放 PR 未占用这两 slug；用户指定 DOM-util 对与 `*-20260827-cr.md`。
+- external delta 计数：本轮授权 push + 1 个 PR；未 merge、未 deploy，D 轴不因本地派生数字提升。
+- 已完成切片：
+  1. 只读核验 GitHub/npm：jQuery 绑定可达 tag `4.0.0` / `4f2fae08...`，披露 npm `gitHead` 不可达；cash-dom 绑定 `8.1.5` / `61e3b8f2...`，gitHead 与 tag 一致。
+  2. 写共享审查文档与两页正文：工厂/选择器/事件/ajax 与 QSA-only 子集、默认构建排除项、HTML 脚本边界。
+  3. 两份 STATIC_REVIEW receipt（evidence state `UNVERIFIED`）并刷新派生输出。
+- 验证结果：定向 quality-gate 两页 pass、0 advisory；receipt 与正文 digest 一致且 `UNVERIFIED`；`audit:counts` 与公开规模文案对齐。全量 `verify:ci` 在首个 PR 提交后跑。
+- budget：2 个 ignored blob-filtered worktree + 2 页 + 1 篇审查文档；单 writer。
+- blocker：规模 baseline 超限是 main 上已有 detector，本轮未改 threshold / baseline。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge / 规模 baseline 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
