@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "jimp",
+    "digest_sha256": "0d60f898a58525dbf51aa3d7e3864c5fe0c5ee09349547def0ff8b652433926c"
+  },
+  "source_revision": "7e6a95694e00a8b6f1bdd9aad709f5413eb9b08c",
+  "research_input_sha256": "7ce6e46203ae5d5171efe28cbc798d5fcffd0f791a8f7ff3e212e2fb37352ebf",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains createJimp, immediate bitmap mutation, object resize, Rec.709 greyscale, and read path/URL fork with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Core factory, file-ops, fromBuffer/file-type, resize/blur/color plugins, and default format matrix were inspected; vitest was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bf",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Git tag v1.6.1 and npm gitHead match 7e6a9569...; Worker/heap/WebP wasm claims stay UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:15:00.000Z"
+}

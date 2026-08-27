@@ -35,7 +35,7 @@ sidebar:
 | [glTF Transform — glTF 资产工具链](/study/projects/gltf-transform/) | `gltf-transform` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Heaps — Haxe 跨平台高性能游戏引擎](/study/projects/heaps/) | `heaps` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Hydra — 实时视觉合成 livecoding](/study/projects/hydra-synth/) | `hydra-synth` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | `jimp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [jimp — 纯 JS 位图图像处理库](/study/projects/jimp/) | `jimp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Kdenlive — KDE 非线性视频剪辑](/study/projects/kdenlive/) | `kdenlive` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [KiCad — 电子电路 CAD](/study/projects/kicad/) | `kicad` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) | `konva` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -65,7 +65,7 @@ sidebar:
 | [regl — 函数式 WebGL 封装](/study/projects/regl/) | `regl` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Rive — 把矢量动画做成可交互组件的运行时](/study/projects/rive/) | `rive` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Shader Park — 程序化 SDF 着色器 DSL](/study/projects/shader-park/) | `shader-park` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | `sharp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [sharp — 以 libvips 为引擎的 Node 图像管线](/study/projects/sharp/) | `sharp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spector.js — WebGL/WebGPU 调试器](/study/projects/spectorjs/) | `spectorjs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spine Runtimes — 2D 骨骼动画运行时](/study/projects/spine-runtimes/) | `spine-runtimes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Three.js — 浏览器 3D 场景图与 WebGL2 渲染器](/study/projects/threejs/) | `threejs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

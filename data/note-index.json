@@ -46294,7 +46294,7 @@
       "id": "projects::jimp",
       "area": "projects",
       "slug": "jimp",
-      "title": "jimp — 哪都能跑的纯 JS 图像处理库",
+      "title": "jimp — 纯 JS 位图图像处理库",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -46304,16 +46304,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-image-processing-and-canvas",
-        "raw_category": "工具库"
+        "raw_category": "图像处理"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/jimp/",
       "atlas": {
@@ -58747,7 +58747,7 @@
       "id": "projects::sharp",
       "area": "projects",
       "slug": "sharp",
-      "title": "sharp — 让 Node.js 处理图像快到不像 JS",
+      "title": "sharp — 以 libvips 为引擎的 Node 图像管线",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -58757,16 +58757,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-image-processing-and-canvas",
-        "raw_category": "projects / 图像处理"
+        "raw_category": "图像处理"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/sharp/",
       "atlas": {
