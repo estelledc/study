@@ -17,14 +17,15 @@
   3. 新增共享 `docs/ui-framework-source-review-20260827-db.md` 与两份 generation 1 static receipt。
 - acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
-  - `audit:content-contract`：0 blocking；projects 现为 v2 笔记 + 既有 legacy。
+  - `audit:content-contract`：0 blocking，`v2=89`。
   - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`、snapshot current。
   - `audit:counts` / `audit:site-state` / `audit:doc-lifecycle` / `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：到 strict build / Pagefind / SEO / 静态 a11y 全绿；首次 a11y 因本机缺 Playwright Chromium 失败，安装后 `npm run test:a11y` 23/23 通过，随后 pages artifact / atlas / site budget 通过。
 - budget：1 个 epoch、2 页静态源码迁移、1 个可写切片。
-- external_outcome：一个 review-ready PR；未 merge。
+- external_outcome：PR https://github.com/estelledc/study/pull/154 ；未 merge。
 - stop conditions：未获 merge/deploy 授权即停止；不把静态阅读写成运行证据。
 - 下一次 wake 条件：owner 审查本 PR，或另授 merge。
-- 下一条命令：在规范 Node 22.23.1 / npm 11.17.0 下对 PR 跑 `STUDY_CHANGED_FROM=<base> npm run verify:ci`。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/154` 的 CI / review。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
