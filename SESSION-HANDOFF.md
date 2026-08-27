@@ -4,8 +4,8 @@
 
 ## 2026-08-27 PARALLEL writer IC：helix + kakoune
 
-- supervisor 状态：writer epoch `running` → 本地切片完成后待 PR review；未 merge / 未 deploy。
-- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（本分支所跟踪的 `origin/main`）。
+- supervisor 状态：writer epoch `complete`；PR 待 review，未 merge / 未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（本分支创建时的 `origin/main`）。
 - objective：把 `needs-evidence` 的模态编辑器双子 `helix` 与 `kakoune` 迁到源码绑定标准，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇既有项目页、共享审查文档 `docs/modal-editor-source-review-20260827-ic.md`、2 份 generation 1 receipt、派生 atlas / site-state / project-standard、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译上游、未装 grammar、未启动 LSP/DAP。
 - activated_by：`explicit-user-parallel-writer-ic-2026-08-27`（字母从 HP 改为 IC，因 HP 已被 dotenv-flow / dotenv-safe 占用）。
@@ -15,12 +15,20 @@
   1. `helix` 绑定 annotated tag `25.07.1` peel → `a05c151bb6e8e9c65ec390b0ae2afe7a5efd619b`；披露 Cargo `25.7.1` 与 `rust-version 1.82`。
   2. `kakoune` 绑定 lightweight tag `v2026.05.21` → `36ad52ebf983c1b23182caccd4f792517235b06d`；披露 README C++20 与 Makefile `-std=c++2b`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 quality-gate 通过、receipt `UNVERIFIED`；全量门禁以 `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci` 为准。
+- 验证结果：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：`verifyReceiptAgainstNote` 通过，evidence state `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:wikilinks`：blocking 0。
+  - `audit:project-standard`：`benchmark-aligned=87`、`needs-evidence=880`、snapshot CURRENT。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，除首次缺 Playwright 浏览器外全绿；安装 Chromium 后 23 个 a11y 测试与后续 Pages/Atlas/站点预算、diff 门禁通过。
+  - `git diff --check`：通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得 merge。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/289 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
