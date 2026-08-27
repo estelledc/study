@@ -2,6 +2,24 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 平行 writer FP：Annoy + ANN-Benchmarks
+
+- status：`running` → writer epoch `complete`。
+- 起始 ref：`1f2917d90`（本分支从当时的 `origin/main` 切出）。
+- objective：绑定审计中 `needs-evidence` 的 `annoy` 与 `ann-benchmarks` 两页；两页均已存在且有 GitHub canonical。
+- scope：两页正文、2 份 receipt、`docs/annoy-ann-benchmarks-source-review-20260827-fp.md`、本 handoff。不改派生索引。未编译 Annoy、未跑 Docker/HDF5。
+- activated_by：`explicit-user-parallel-writer-fp-2026-08-27`。
+- detector fingerprint：两页缺 pinned revision / evidence / self-test；旧文把 Annoy `_K` 写成约 30、把 split 写成两点中垂面，并含未绑定 QPS；ANN-Benchmarks 未写入 `2e081ad3` 的 unmaintained 状态。
+- external_outcome：1 个 PR（push+PR 已授权）；不 merge、不 force-push `main`。
+- 完成切片：`annoy` → `75429e5dc930754698f1d37c44ea189a7521c7a3`（`v1.17.3`）；`ann-benchmarks` → `2e081ad32c1eccab72dcb739ad886c310b90f715`（无 tag）。
+- acceptance_checks：两页 quality-gate；两份 receipt digest 对齐；`git diff --check`。
+- budget：2 页 / ≤3 切片 / 120 分钟 / 1 writer。
+- blocker：派生索引与规模 baseline 由收口处理。
+- stop_conditions：两页已绑定即停。
+- 下一次 wake 条件：本 PR 的 CI/review。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/annoy.md src/content/docs/projects/ann-benchmarks.md`
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

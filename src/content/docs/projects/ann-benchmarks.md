@@ -4,164 +4,151 @@ title: ANN-Benchmarks — 近似最近邻算法的统一擂台
 日期: 2026-05-31
 分类: 数据检索 / 基础设施
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/erikbern/ann-benchmarks
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 2e081ad32c1eccab72dcb739ad886c310b90f715
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2e081ad32c1eccab72dcb739ad886c310b90f715
 ---
 
 ## 是什么
 
-ANN-Benchmarks 是 Erik Bernhardsson（Spotify Annoy 的作者）维护的一套**给"近似最近邻算法"打分的统一擂台**。日常类比：你想知道哪款跑鞋跑步快，不是听厂商广告，而是把所有牌子拉到同一个塑胶跑道，同一双袜子、同一个天气、同一段距离，逐个测。
+ANN-Benchmarks 是 Erik Bernhardsson 等人维护的一套 **ANN 算法对照脚手架**：同一份 HDF5 数据集、同一套 `BaseANN` 接口、默认一个算法一个 Docker 镜像。日常类比：它不卖跑鞋，只提供同一条跑道和同一套计时规则。
 
-它做一件事：
+固定提交 `2e081ad3...`（2026-07-10）的第一句是：**仓库不再积极维护**，并建议把新工作投到 [VIBE](https://github.com/vector-index-bench/vibe)。仓库没有 release tag。许可是 MIT。
 
-- 把市面上所有声称"我能在亿万向量里快速找到最近邻"的算法（FAISS、HNSW、Annoy、ScaNN、DiskANN ...）
-- 装进**一个 Docker 容器一个**，喂同样的数据集，跑同样的查询
-- 画一张图：横轴**召回率（recall）**，纵轴**每秒能处理的查询数（QPS）**
-
-这张图后来被称作"召回-延迟曲线"，是过去 7 年所有 ANN 论文 / 厂商对比的黄金标准。
+它做三件事：`install.py` 编镜像，`run.py` 跑定义，`plot.py` 默认画 `k-nn`（Recall）对 `qps`。
 
 ## 为什么重要
 
-不理解 ANN-Benchmarks 的位置，就理解不了向量检索整个生态怎么校准：
+不理解这套脚手架的合同，向量检索对比会把“别人的图”读成“你的生产数字”：
 
-- **常用公开 benchmark**：FAISS、ScaNN、DiskANN 以及许多向量数据库（[[milvus]] / [[pgvector]] / qdrant）做横向对比时，都会参考这类召回-延迟曲线
-- **厂商宣称的"翻译器"**：A 厂说"亚毫秒级查询"，B 厂说"99% 召回"，单看没法比；放到这张曲线上一秒看清谁在前
-- **架构选型依据**：你做 RAG / 推荐 / 相似搜索，要选 HNSW 还是 IVF-PQ，看这张图比读 10 篇论文都快
-- **filter 缺位是 open_question**：现实业务普遍要"召回最像 + 满足 WHERE 条件"，但这张图**不测**，是当前向量检索界公认的空白
+- 默认查询宽度是 `-k/--count=10`，不是数据集里预计算的 top-100 邻居本身
+- `--parallelism` 是并行容器数，不是算法内部线程数
+- 带 `WHERE` 的过滤检索、十亿级磁盘索引、排序质量（nDCG）都不在原则清单里
+- 固定提交已经把维护责任交出去，不能再把它写成“持续官方黄金标准”
 
 ## 核心要点
 
-ANN-Benchmarks 的设计可以拆成 **三个轴 + 一条铁律**：
+固定源码可以拆成四条合同：
 
-1. **三个轴的笛卡尔积**：
-   - **数据集**：SIFT-128（1M 图像特征）/ GloVe-100（词向量）/ GIST-960 / Fashion-MNIST / NYTimes-256
-   - **算法**：每个算法实现一个 `BaseANN` 接口，只要有 `fit(X)` 和 `query(v, n)` 两个方法
-   - **距离度量**：欧氏（Euclidean）、角度（Angular，等价余弦）
+1. **接入面是目录，不是两个函数**：每个实现放在 `ann_benchmarks/algorithms/{name}/`，至少要有 `module.py`、`Dockerfile`、`config.yml`。`BaseANN` 要求 `fit(X)` 和 `query(q, n)`；`batch_query` 默认用 `ThreadPool` 去调 `query`。可选 `set_query_arguments` 用来扫查询超参。
 
-2. **铁律：单线程 + Docker 隔离**：
-   - 默认**单 CPU 线程**跑——多核很容易把单核劣势盖过去，单线程才是公平比较
-   - 每个算法装在独立 Docker 镜像里，依赖冲突、Python 版本、BLAS 选型互不干扰
+2. **默认单 CPU，批量模式例外**：非 `--batch` 时 Docker `cpuset_cpus` 钉在单个 CPU 编号上；`--batch` 把查询一次交给实现，并占用全部 CPU，此时 `--parallelism` 必须为 1。`run.py` 默认 `--runs 5`（取最好一次）、`--timeout` 两小时、`--parallelism 1`、默认数据集 `glove-100-angular`。
 
-3. **唯一指标：recall@10 vs QPS**：
-   - x 轴：top-10 召回率（暴力扫描的 10 个邻居里命中几个，0~1）
-   - y 轴：每秒查询数，对数刻度
-   - 同一个算法跑多组超参，连成一条曲线——曲线越靠**右上**越好
+3. **数据比“欧氏 / 角度”更宽**：`DATASETS` 里有 Euclidean / Angular / Hamming / Jaccard / dot，以及若干 `random-*` 和 `dbpedia-openai-*k-angular`。HDF5 预计算的是 top-100 邻居；`write_output(..., count=100)`。图默认 x=`k-nn`、y=`qps`，README 示例才把轴改成 logit / log。
 
-## 实践案例
+4. **结果图不是本文的证据**：README 写“These are all as of April 2025”，机器是 `r6i.16xlarge`、`--parallelism 31`、关闭超线程，并强调 **all benchmarks are single-CPU**。本文不转述那些曲线上的 QPS 或名次。
 
-### 案例 1：读懂这张图怎么用
+## 实践示例
 
-```
-QPS (log)
-  10000 |  HNSW *
-        |       \
-   1000 |  ScaNN  *
-        |        \   FAISS-IVF
-    100 |         *--------*
-        |                   \  Annoy
-     10 |                    *---*
-        +-------------------------> recall@10
-        0.5     0.8     0.95   1.0
-```
-
-**怎么读**：
-
-- 想要 95% 召回 → HNSW 能给你 1000 QPS，FAISS-IVF 只能 100 QPS
-- 想要 99.9% 召回 → 所有算法都掉到 100 QPS 以下，没有"完美方案"
-- 召回不重要（< 80%） → Annoy 也能跑得飞快，省内存
-
-### 案例 2：自己跑一次（最少命令）
+### 案例 1：看清默认入口
 
 ```bash
-git clone https://github.com/erikbern/ann-benchmarks
-cd ann-benchmarks
-pip install -r requirements.txt
-
-# 在 SIFT-128 上跑 HNSW
 python run.py --dataset sift-128-euclidean --algorithm hnswlib
-
-# 出图
 python plot.py --dataset sift-128-euclidean
 ```
 
-第一次跑会下数据 + 拉 Docker 镜像，**4 核机器一晚上**能跑完一个数据集 × 5 个算法。
+`run.py` 只是调用 `ann_benchmarks.main:main`。第一次会按数据集名去 `https://ann-benchmarks.com/{name}.hdf5` 拉文件；失败才回落到本地生成函数。`install.py` 负责先把镜像编出来。
 
-### 案例 3：写一个新算法接入
+### 案例 2：给新算法接入口
 
 ```python
-# ann_benchmarks/algorithms/my_algo.py
-from .base import BaseANN
+# ann_benchmarks/algorithms/my_algo/module.py
+from ..base.module import BaseANN
 
 class MyAlgo(BaseANN):
-    def __init__(self, metric, param):
-        self.param = param
     def fit(self, X):
-        # 建索引
-        pass
+        ...
     def query(self, v, n):
-        # 返回 top-n 邻居 id
         return [...]
 ```
 
-加一个 Dockerfile + 一份 YAML 配置（写超参网格），就能进擂台。这种**低门槛接入**是它能聚拢所有算法的关键。
+还要补 Dockerfile、`config.yml` 超参网格，以及 `.github/workflows/benchmarks.yml` 的 CI 项。同仓的 Annoy 包装调用 `AnnoyIndex.add_item` / `build` / `get_nns_by_vector`，但 `config.yml` 里 `disabled: true`。
+
+### 案例 3：读图时先读坐标名
+
+```bash
+python plot.py --dataset glove-100-angular --x-axis k-nn --y-axis qps
+python plot.py --x-scale logit --y-scale log
+```
+
+默认就是 `k-nn` × `qps`。另外还有 `epsilon` / `rel` / `p50` / `p95` 等指标；没有 nDCG，也没有带过滤条件的召回。
 
 ## 踩过的坑
 
-1. **单线程不等于生产场景**：真实业务一台机器开 16 线程批量查询，多核扩展性、内存带宽冲突、缓存争用都是新变量。曲线第一名换到生产可能不是第一。
-
-2. **recall@10 不测排序质量**：召回出 10 个邻居里命中 9 个算 0.9，但你作为用户更在乎"最接近的那个"是不是真的第一名。要测排序得用 mAP / nDCG，这套 benchmark 不覆盖。
-
-3. **数据集偏小**：主流数据集只到 1M 向量，DEEP-image 也只到 1B 子集。**10B+ 规模**（云厂商常见）的内存换盘策略（DiskANN）没法在这里完整对比。
-
-4. **filter 完全缺位**：现实查询常带 WHERE（`category = 'shoes' AND price < 100`），ANN-Benchmarks **不测带过滤的检索**。这是当前向量数据库竞争的真正主战场，但没有公共标尺。
-
-5. **Docker 镜像漂移**：跨年比较时，base image / BLAS / glibc 都会变。2020 年的曲线和 2026 年的曲线**不能直接拼**，要看是不是同一次"集中跑"产生的。
+1. **把 `--parallelism 31` 读成“算法用 31 线程”**：那是同时跑 31 个容器；每个容器默认仍钉单核。
+2. **把预计算的 100 个邻居当成默认评测宽度**：跑和画的默认 `count` 都是 10。
+3. **把仓库写成仍在集中维护**：固定提交把状态改成 unmaintained，并指向 VIBE。
+4. **拿跨年截图直接拼接**：原则写明 Docker / BLAS / 镜像会漂；README 自己还留着 “TODO: update plots on ann-benchmarks.com”。
+5. **以为 Annoy 包装默认会进下一轮全量跑**：固定 `annoy/config.yml` 的 float/bit 两组都是 `disabled: true`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 选型阶段对比候选 ANN 算法 / 库 / 数据库
-- 写 ANN 论文时找 baseline + 公平对照
-- 看自己实现的索引比业界主流差多少
-- 教学：把"召回-延迟"权衡可视化
+- 复现或阅读“同数据、默认同单核、Docker 隔离”的 ANN 对照流程
+- 给新实现接 `BaseANN` 并提交超参网格
+- 教学：把召回和 QPS 当成一对可切换的坐标，而不是一句口号
 
 **不适用**：
 
-- 评估带 filter 的混合查询（这是空白）
-- 评估超大规模（10B+）磁盘索引
-- 评估多线程 / 批量查询的实际吞吐
-- 评估排序质量（mAP / nDCG）
-- 评估更新 / 删除的成本（这套只测**静态**索引）
+- 评估带 filter 的混合查询、十亿级磁盘索引、多租户或更新删除成本
+- 把 README 里 April 2025 的图当成你机器上的数字
+- 需要一个仍在积极收 PR 的维护入口——固定提交指向 VIBE
+- 把静态阅读写成“已经跑完 sift / glove”
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2015 年前后**：Spotify 的 Erik Bernhardsson 在 Annoy 之后开始整理公开 ANN 对比工具，核心目标是把"同机同数据"变成默认姿势。
-- **2017-2019 年**：HNSW、FAISS、ScaNN、DiskANN 等路线快速迭代，ANN-Benchmarks 的召回-延迟图成为论文和工程博客常见背景板。
-- **2020 年之后**：向量数据库兴起，大家开始发现 benchmark 缺少 filter、增删改、多租户等生产维度。
-- **今天**：它仍然适合做算法层面的第一轮校准，但不能替代真实业务压测。
+- 本文绑定 `erikbern/ann-benchmarks@2e081ad32c1eccab72dcb739ad886c310b90f715`。该提交没有 tag；`gh` 可见的默认分支 tip 即此 SHA。
+- LICENSE 为 MIT，版权年 2018，作者行写 Erik Bernhardsson。
+- 设计原则与可复现协议见 Aumüller / Bernhardsson / Faithfull 的 Information Systems 2019 文与后续 reproducibility protocol；本文未复跑实验。
+- 十亿级对照被原则清单指向 [big-ann-benchmarks](https://github.com/harsha-simhadri/big-ann-benchmarks)。GPU 只提到 FAISS，且必须本地编译并加 `--local --batch`。
+- 未安装依赖、未拉 HDF5、未启动 Docker，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **统一接口 + Docker 隔离**是搞 benchmark 的两根支柱——少一根就会被"我环境不一样"挡回去
-2. **召回-延迟曲线**是这个领域的"血压计"，所有讨论都从这张图开始
-3. **铁律是公平**：单线程、同数据、同硬件——只要让算法**看起来不公平**就毫无信息量
-4. **缺什么**比"测什么"更值得看：filter / 多线程 / 排序质量都是当前 ANN 系统的真实痛点
+1. **公平对照首先钉住 CPU 与数据，而不是钉住库名**。
+2. **接口目录 + Docker + `config.yml` 比“两个函数”更接近真实接入成本**。
+3. **默认图画的是 count=10 的召回对 QPS，不是生产 SLA**。
+4. **维护状态也是合同**：unmaintained 提交不能再被写成活着的官方擂台。
+
+## 应用型自测
+
+1. 固定提交还把 ANN-Benchmarks 写成活跃维护中吗？
+2. `--parallelism 31` 会让单个算法用 31 个线程吗？
+3. `plot.py` 默认横轴是不是“数据集里那 100 个真邻居的全量召回”？
+
+检查点：
+
+1. 不是。README 首段写 no longer actively maintained，并指向 VIBE。
+2. 不会。那是并行容器数；非 batch 时每个容器 `cpuset_cpus` 钉单核。
+3. 不是。默认 `--count 10`，横轴是 `k-nn`（该 count 下的 Recall）。
 
 ## 延伸阅读
 
-- 在线结果：[ann-benchmarks.com](https://ann-benchmarks.com)（持续维护的公开结果）
-- 代码仓库：[erikbern/ann-benchmarks](https://github.com/erikbern/ann-benchmarks)
-- HNSW 原论文：Malkov & Yashunin 2018，"Efficient and robust approximate nearest neighbor search using HNSW"
-- DiskANN 论文：Subramanya 2019，把 ANN 索引扩展到磁盘
-- [[faiss]] —— Facebook 出的 ANN 库，是 ANN-Benchmarks 的常驻顶尖选手
-- [[pgvector]] —— PG 扩展，间接基于 hnswlib
+- 固定源码：[erikbern/ann-benchmarks](https://github.com/erikbern/ann-benchmarks) —— 本文绑定提交 `2e081ad32c1eccab72dcb739ad886c310b90f715`
+- 维护接替建议：[vector-index-bench/vibe](https://github.com/vector-index-bench/vibe)
+- 设计论文：Aumüller, Bernhardsson, Faithfull, [ANN-Benchmarks](https://arxiv.org/abs/1807.05614)
+- 十亿级对照：[harsha-simhadri/big-ann-benchmarks](https://github.com/harsha-simhadri/big-ann-benchmarks)
+- [[annoy]] —— 同作者的只读森林索引
+- [[faiss]] / [[hnswlib]] / [[pgvector]] —— 常见被包装的实现，不是本仓库的运行证据
 
 ## 关联
 
-- [[faiss]] —— Facebook ANN 库，ANN-Benchmarks 上的常驻第一梯队
-- [[pgvector]] —— PostgreSQL 的向量扩展，HNSW 实现来自 hnswlib
-- [[milvus]] —— 专门向量数据库，对外宣传引用 ANN-Benchmarks 数据
-- [[qdrant]] —— Rust 写的向量数据库，filter-aware 检索是它的差异化
-- [[hnswlib]] —— HNSW 的参考实现，ANN-Benchmarks 上长期 SOTA
+- [[annoy]] —— 只读 mmap 森林，本仓有包装但默认 disabled
+- [[faiss]] —— 原则里提到的少数带 GPU 路径的库
+- [[hnswlib]] —— HNSW 参考实现
+- [[pgvector]] —— PostgreSQL 向量扩展
+- [[milvus]] —— 独立向量数据库，不能把本仓曲线外推过去
 
 ## 反向链接
 
