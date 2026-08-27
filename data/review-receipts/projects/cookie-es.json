@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cookie-es",
+    "digest_sha256": "3a8971c31ffa97d8f2da420ab1923b3c06e2bf6ff2f82ac4eec4592a1339f2e3"
+  },
+  "source_revision": "487c49d4908c0910fc9d36b6751d15af872c1893",
+  "research_input_sha256": "5306b94b4a9fc5a0c97d2c46a62d480faa04dbcf686b468bc2dc2886f7663c56",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Cookie parse first-wins, Set-Cookie serialize Secure/prefix checks, and single-string parseSetCookie."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected parse/serialize/parseSetCookie/split and tests; vitest, requests, and bundle were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gl",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 3.1.1; 400-day Expires cap depends on Date.now() and remains unverified at runtime."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}
