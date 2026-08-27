@@ -86,7 +86,9 @@ c.nest.self === c
 
 ```js
 const clone = require("rfdc")({
-  constructorHandlers: [[RegExp, (o) => new RegExp(o)]],
+  constructorHandlers: [
+    [RegExp, (o) => new RegExp(o)],
+  ],
 })
 clone({ r: /foo/ }).r.test("foo")
 ```
