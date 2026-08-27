@@ -16,12 +16,12 @@
   1. 只读核验 `exceljs/exceljs@ac96f9a61e...` / `4.4.0` 与 `mholt/PapaParse@555c1c1b...` / `5.7.0`，tag 与 npm `gitHead` 一致。
   2. 新增两页 study-v2 笔记与 generation 1 static receipt，共享 provenance 文档。
   3. 刷新 atlas / project-standard / site-state 与公开规模文案。
-- 验证结果：两页 quality-gate pass、0 advisory；receipt digest 与 revision 一致，`evidence_state=UNVERIFIED`。`verify:ci` 在推送后的 PR 窗口运行。
+- 验证结果：两页 quality-gate pass、0 advisory；receipt digest 与 revision 一致，`evidence_state=UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2287 HTML / 2286 sitemap URLs、23 Playwright tests）。
 - budget：2 页静态源码迁移；单 writer；不 merge。
 - blocker：上游运行证据不能由静态 review 替代。
 - stop conditions：本 epoch 以一 PR 为止；不自动 merge。
 - 下一次 wake 条件：PR CI / review 状态变化，或 owner 新的有限授权。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：查看 PR CI / review，或 `git status --short --branch`。
 - superseded_by：`none`
 - 不在 handoff 中复制易过期数字或 ETA。
 
