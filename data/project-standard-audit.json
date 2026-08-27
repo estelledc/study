@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 18,
+      "benchmark-aligned": 20,
       "needs-evidence": 943
     }
   },
@@ -15845,6 +15845,26 @@
       ]
     },
     {
+      "slug": "polka",
+      "title": "polka — 把 Trouter 接到原生 http.Server 上的微服务器",
+      "source": "https://github.com/lukeed/polka",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "polygon-zkevm",
       "title": "Polygon zkEVM — 用零知识证明给以太坊扩容",
       "source": "https://github.com/0xPolygonHermez/zkevm-node",
@@ -17235,6 +17255,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "restify",
+      "title": "restify — 先匹配路由再跑 use 链的 Node REST 服务器",
+      "source": "https://github.com/restify/node-restify",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "rethinkdb",

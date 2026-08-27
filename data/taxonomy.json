@@ -2284,6 +2284,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::polka",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
       "note_id": "projects::postgres-js",
       "topic_id": "projects-orm-and-database-clients"
     },
@@ -2354,6 +2358,10 @@
     {
       "note_id": "projects::remix",
       "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
+      "note_id": "projects::restify",
+      "topic_id": "projects-web-frameworks"
     },
     {
       "note_id": "projects::rocksdb",

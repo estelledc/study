@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DR HTTP server epoch
+
+- status：writer epoch `complete`；等待 owner review；不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 restify / polka 绑到可达固定 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、`docs/http-server-source-review-20260827-dr.md`、两份 generation 1 receipt、taxonomy 两条 assignment、atlas / site-state / 公开计数、本 handoff。本机 gitignored blob-filtered clone。未安装上游依赖、未跑上游测试、未发网络请求。
+- activated_by：`explicit-user-parallel-writer-DR-2026-08-27`。
+- detector fingerprint：仓库没有 restify / polka 页；开放 PR 已占用 express / fastify / hono / elysia / koa / nest。
+- external delta：单 PR（push + PR 已授权；merge 与 deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `restify` 绑定 `restify/node-restify@784dd418...` / `12.0.0`（tag 与 npm `gitHead` 一致）。写清 first → pre → lookup → use → route；`use()` 只在命中后跑；`next("string")` 在 12.0.0 是 500。
+  2. `polka` 绑定 peeled tag `v0.5.2` → `302d74a2...`。披露 npm 无 `gitHead`，以及 `1.0.0-next.28` 不在适用版本内。
+  3. 新增共享审查文档与两份 generation 1 `STATIC_REVIEW` receipt；`benchmark-aligned` 18 → 20；项目数 961 → 963。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:counts` / `audit:content-contract` / `audit:wikilinks` / `audit:site-state` / `git diff --check` 已在本地跑过。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：完整 portable gate 以本 PR 的 `verify:ci` 为准。
+- stop conditions：本轮写入完成；不自合并。
+- 下一次 wake 条件：owner review 后决定是否 merge，或新的显式授权。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

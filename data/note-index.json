@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -55456,6 +55456,37 @@
       }
     },
     {
+      "id": "projects::polka",
+      "area": "projects",
+      "slug": "polka",
+      "title": "polka — 把 Trouter 接到原生 http.Server 上的微服务器",
+      "description": "Tiny Node HTTP server that layers Trouter, middleware, and sub-apps on http.createServer.",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-web-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "Web 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/polka/",
+      "atlas": {
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::polygon-zkevm",
       "area": "projects",
       "slug": "polygon-zkevm",
@@ -57285,6 +57316,37 @@
       "atlas": {
         "chunk_id": "topic-projects-blockchain-01",
         "chunk_route": "/study/atlas/projects/topic-projects-blockchain-01/"
+      }
+    },
+    {
+      "id": "projects::restify",
+      "area": "projects",
+      "slug": "restify",
+      "title": "restify — 先匹配路由再跑 use 链的 Node REST 服务器",
+      "description": "REST-oriented Node HTTP server whose use() chain runs only after find-my-way matches a route.",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-web-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "Web 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/restify/",
+      "atlas": {
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
       }
     },
     {
@@ -65895,7 +65957,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-web-frameworks-01/",
-      "entries": 14
+      "entries": 16
     },
     {
       "id": "unclassified-01",
