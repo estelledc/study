@@ -1908,6 +1908,10 @@
       "topic_id": "projects-documentation-sites"
     },
     {
+      "note_id": "projects::dprint",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::drizzle",
       "topic_id": "projects-orm-and-database-clients"
     },
@@ -2590,6 +2594,10 @@
     {
       "note_id": "projects::wretch",
       "topic_id": "projects-http-clients"
+    },
+    {
+      "note_id": "projects::xo",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::xstate",

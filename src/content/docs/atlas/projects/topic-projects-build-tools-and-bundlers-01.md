@@ -1,6 +1,6 @@
 ---
 title: "构建工具 / Bundler · 项目 · 第 1 组"
-description: "14 条 构建工具 / Bundler Atlas 分块"
+description: "16 条 构建工具 / Bundler Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,12 +9,13 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | `biome` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bun — JS 全能运行时](/study/projects/bun/) | `bun` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [dprint — 把格式化做成可插拔宿主，而不是又一个语言 formatter](/study/projects/dprint/) | `dprint` | intermediate | UNVERIFIED | 用 Rust 写的可插拔格式化宿主，通过 WASM 或 process plugin 统一多语言 fmt/check |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | `esbuild` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | `lightningcss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | `mage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -27,3 +28,4 @@ sidebar:
 | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | `turbopack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | `vite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [webpack 模块打包](/study/projects/webpack/) | `webpack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [XO — 把 ESLint 收成一份意见，而不是再发明一个 lint 引擎](/study/projects/xo/) | `xo` | intermediate | UNVERIFIED | 面向 ESM 的 ESLint 10 wrapper，默认给出强硬意见，并把格式化交给外部工具 |

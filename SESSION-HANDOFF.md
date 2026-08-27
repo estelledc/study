@@ -2,6 +2,35 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DK：dprint + XO lint/format 对
+
+- supervisor 状态：`running` 完成本地 writer epoch 后进入 PR review；未 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- detector fingerprint：仓库无 `dprint` / `xo` 项目页；用户明确指定这对 lint/format 组合，证据类型 `STATIC_REVIEW` / `UNVERIFIED`，文档 `*-20260827-dk.md`，只开 1 个 PR、不 merge。
+- external delta 计数：本轮只形成 review-ready branch 与 1 个 PR；未 merge、未部署，D 轴不变。local diff / receipt / handoff 都不计入 external delta。
+- objective：为 dprint（格式化宿主）与 XO（ESLint wrapper）写 study-v2 静态审查页，并留下可核验的固定 revision 与 generation 1 receipt。
+- scope：两篇新项目页、`docs/lint-format-source-review-20260827-dk.md`、两份 receipt、taxonomy curated assignment、atlas / note-index / site-state / 公开计数 / project-standard 派生输出、本交接记录。未安装上游依赖、未运行 dprint/xo、未改政策阈值、未改既有笔记正文。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-dk-dprint-xo`。
+- review_after：`2026-08-27`。
+- 已完成切片：
+  1. 只读核验 `dprint/dprint@0.56.1` / `760591de...` 与 `xojs/xo@4.0.0` / `2775f7fa...`，GitHub tag 与 npm `gitHead` 一致。
+  2. 新增两篇 `study-v2` 工具页，证据边界为 `STATIC_ANALYSIS` + `UNVERIFIED`；receipt `review_mode=STATIC_REVIEW`。
+  3. 写入共享审查文档与 generation 1 receipts，刷新 atlas 与公开规模文案。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：note digest 与 source revision 匹配，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking。
+  - `audit:project-standard`：snapshot current；`benchmark-aligned` 由 18 增至 20。
+  - `audit:counts` / `audit:site-state`：projects=963、papers=1083、total=2046。
+- budget：1 个本地 writer epoch、2 页静态源码审查、1 个 PR；不 merge。
+- 验证结果：定向 quality-gate / receipt / content-contract / counts / site-state / project-standard 已通过；`verify:ci` 在首个 commit 后跑。
+- 剩余 blocker：PR 未 merge；静态审查不能替代上游运行证据。
+- 下一次 wake 条件：owner 审查本 PR，或出现新的显式范围。无新授权时不要继续发明 lint/format 页。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`；不要 merge。
+- stop conditions：已形成 1 个 PR。不得自动 merge，不得把 STATIC_REVIEW 提升为 VERIFIED。
+- superseded_by：`none`。
+- 不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
