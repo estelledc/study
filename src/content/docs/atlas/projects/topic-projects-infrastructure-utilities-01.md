@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -31,6 +31,7 @@ sidebar:
 | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | `grafana-tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) | `greenplum-db` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | `homebrew` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [hookable — 可 await 的顺序 hook 表](/study/projects/hookable/) | `hookable` | intermediate | UNVERIFIED | 固定版本把 hook 登记成数组，callHook 按 thenable 串行往下走 |
 | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | `inngest` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | `istio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | `linkerd2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -56,4 +57,5 @@ sidebar:
 | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | `starrocks` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [unctx — 把当前实例藏进调用栈的组合上下文](/study/projects/unctx/) | `unctx` | intermediate | UNVERIFIED | 固定版本用同步注入、可选 ALS 或编译期 await 改写来恢复上下文 |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
