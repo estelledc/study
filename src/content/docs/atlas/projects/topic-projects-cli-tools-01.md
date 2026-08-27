@@ -32,7 +32,7 @@ sidebar:
 | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | `eza` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fd — Rust 写的现代 find](/study/projects/fd/) | `fd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | `fish` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | `fx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [fx — 终端里先看 JSON 树，再用 JS 做变换](/study/projects/fx/) | `fx` | beginner | UNVERIFIED | 用 bubbletea 看 JSON 树，或把参数交给 goja，并披露 npm 包是另一套无 TUI 的 Node CLI |
 | [fzf — 命令行模糊查找](/study/projects/fzf/) | `fzf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | `gdu` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | `gitui` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -44,7 +44,7 @@ sidebar:
 | [HTTPie — curl 的人话版本](/study/projects/httpie/) | `httpie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | `ink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | `jc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [jq — JSON 的 sed/awk](/study/projects/jq/) | `jq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [jq — 把 JSON 当成流来过滤的命令行处理器](/study/projects/jq/) | `jq` | intermediate | UNVERIFIED | 把 JSON 输入编译成过滤器字节码，再按值吐出结果流 |
 | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | `just` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | `kitty` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | `lazydocker` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

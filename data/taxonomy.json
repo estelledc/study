@@ -1972,6 +1972,10 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::fx",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::got",
       "topic_id": "projects-http-clients"
     },
@@ -2030,6 +2034,10 @@
     {
       "note_id": "projects::jotai",
       "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::jq",
+      "topic_id": "projects-cli-tools"
     },
     {
       "note_id": "projects::js-joda",

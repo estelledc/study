@@ -1,165 +1,149 @@
 ---
-title: fx — JSON 的交互式查看器（jq 的 TUI 表亲）
+title: fx — 终端里先看 JSON 树，再用 JS 做变换
+description: 用 bubbletea 看 JSON 树，或把参数交给 goja，并披露 npm 包是另一套无 TUI 的 Node CLI
 来源: https://github.com/antonmedv/fx
-日期: 2026-05-30
-分类: CLI
+日期: 2026-08-27
+分类: CLI / 命令行工具
 难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/antonmedv/fx
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: c8fd8cf394083141ab912f604d332e1cfde830cb
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 39.2.0
 ---
 
 ## 是什么
 
-fx 是 Anton Medvedev 在 2018 年发布、2022 年用 Go 重写的**终端交互式 JSON 查看器**。日常类比：
-
-- **[[jq]]**：JSON 的 sed/awk —— 一条命令吐出过滤后的结果，**不交互**
-- **fx**：JSON 的 less + 文件树 —— 在终端里**打开**一个大 JSON，方向键展开/折叠，斜杠搜索，`e`/`E` 全开全关
-- **[[btop]] : top/htop = fx : jq** —— 都是给原本一次性输出的命令行工具加一层"可以点、可以滚、可以折"的 TUI 皮
-
-最小例子：
+fx 是 Anton Medvedev 的终端 JSON 工具。日常类比：[[jq]] 像把信件拆开按格子分拣；fx 默认先把整封信摊成可折叠的树，看清路径后再决定要不要写一段 JavaScript。
 
 ```bash
+fx data.json
 curl -s https://api.github.com/repos/antonmedv/fx | fx
 ```
 
-fx 立刻打开一个全屏 TUI：可折叠的 JSON 树，方向键导航，`e` 展开全部，`/` 搜索，`q` 退出。无参数时它就是 JSON 版的 less。
+固定 39.2.0 的 `version.go` 写死 `39.2.0`。无 filter 参数时走 bubbletea TUI；有参数或 `--slurp` 时走 `internal/engine` 里的 goja 管道。
 
 ## 为什么重要
 
-fx 在 19k+ stars 的位置不是偶然，原因有几层：
+不看这个提交，旧笔记会把分流说反：
 
-- **大 JSON 时代缺个交互入口**：API 响应、kubectl、AWS CLI 输出动辄 100KB ~ 几 MB，jq 一行命令打出来全是滚动屏幕的瀑布；fx 让你**先折叠看结构、再展开看细节**，认知负担直接降一档
-- **和 [[jq]] / [[yq]] 是搭档不是替代**：jq/yq 是管道里的 filter，fx 是终点的 viewer —— 三者关系类似 grep + less 的关系，没有 fx 时人们用 `jq . | less`，但 less 不懂 JSON 结构
-- **零配置上手**：`brew install fx` → `cat x.json | fx`，5 秒学会，比学 jq 的 DSL 门槛低 10 倍 —— 是 jq 的"前置入口工具"
-- **单 Go 二进制 + 跨平台** —— 老版 Node.js 的发行包袱在 2022 重写后甩掉
+- 以为“没有 TTY 就退化成 `jq .`”。源码按**有没有 filter 参数**决定 TUI 还是 `engine.Start`，不是看 stdout 是不是 TTY
+- 以为 npm 的 `fx` 就是 Go TUI。同提交 `npm/index.js` 是另一套 Node 变换 CLI，入口没有 TUI
+- 以为 dig 是“按 `.` 打开 jq REPL”。`.` 只跳 JSON 路径；真正变换写的是 JS，或 `.field` / `@` / `?` 这类转写
 
-如果说 [[jq]] 是从无到有造了"shell 里处理 JSON"这个场景，fx 是把这个场景**人性化** —— 让不会 jq 的人也能先看清 JSON 长什么样。
+它和 [[jq]] 仍是搭档：fx 看树，jq 跑稳定批处理。
 
 ## 核心要点
 
-fx 的心智模型可以拆成 **三层**：
+固定 39.2.0 的主链可以拆成四步：
 
-1. **TUI viewer（默认模式）**：把 JSON 当文件树渲染。方向键 / `h` `l` 折叠展开，`e` 展开全部，`E` 全部折叠，`/` 搜索，`g/G` 跳到首尾，**空格是翻页不是折叠** —— 键位大体抄 vim/less，但空格语义不同，别按错。
+1. **看 stdin 是不是 TTY**：TTY 且无参数就打印 usage；TTY 时第一个参数当文件，并按 `.ya?ml` / `.toml` 自动打开对应解析；否则读 stdin。
+2. **选解析器**：默认 `NewJsonParser`；`--yaml` 用 `goccy/go-yaml` 转 JSON；`--toml` 用 `internal/toml`；`--raw` 按行当字符串。
+3. **有 args 或 `--slurp` → JS 管道**：`engine.Start` 把参数 `transpile` 后拼进 `__main__`，用 goja 跑。`.` / `this` / `x` 走 pretty-print 快路径，不进 VM。
+4. **否则 → TUI**：bubbletea 全屏，输出接到 **stderr**。`.` dig、`/` 正则搜索、`e`/`E` 全开全关、空格/`f`/`pgdown` 翻页、`q` 退出。`FX_COLLAPSED` 可默认折叠。
 
-2. **dig 路径（按 `.`）+ JS 管道（CLI 参数）**：TUI 里按 `.` 进入 dig，用模糊补全跳到某个 JSON 路径；真正做变换时，在命令行写 **JavaScript** 表达式（Go 版内嵌 goja），例如 `fx 'x.users.map(u => u.email)'`。它不是 jq DSL，也不是"按 . 打开 jq REPL"。
+`transpile` 把 `.foo` 写成 `x.foo`，`@` 写成 `map`，`?` 写成 `filter`。`stdlib.js` 还提供 `skip`、`walk`、`save`、`YAML`。启动时会把 cwd、`$HOME`、XDG 下的 `.fxrc.js` 拼进 `Stdlib`。
 
-3. **管道模式（无 TTY 时）**：输出被重定向（`fx ... > out.json`）时自动切非交互，行为接近 pretty-print。脚本里能当 JSON 美化器用，不会卡在全屏 TUI。
+## 实践示例
 
-三层叠加：调试时当 viewer，探索路径用 dig，批量变换用 JS 表达式；和 [[jq]] 仍是搭档——fx 看结构，jq 跑批。
-
-## 实践案例
-
-### 案例 1：打开一个大 API 响应
+### 案例 1：先看树，不写表达式
 
 ```bash
 gh api repos/antonmedv/fx | fx
 ```
 
-打开后是可折叠的 JSON 树。方向键浏览，看到 `owner` 是个对象，按 `l` 或 → 展开，再看到 `permissions`，再展开 —— 全程不需要写任何表达式。这是 fx 替代 `jq . | less` 的标准用法。
+方向键或 `j`/`k` 移动，`l`/`enter` 展开，`h` 折叠。空格是翻页，不是折叠。
 
-### 案例 2：和 [[jq]] 互补 —— fx 当前置探索器
-
-实际工作流是这样：
+### 案例 2：dig 对齐路径，再交给 jq 批处理
 
 ```bash
-# 第一步：先用 fx 探索结构
 kubectl get pods -o json | fx
-
-# 第二步：心里有数后，写 jq 一行抓字段
+# TUI 里按 . 跳到 .items[0].status.phase
 kubectl get pods -o json | jq '.items[] | {name: .metadata.name, status: .status.phase}'
 ```
 
-fx 解决"我不知道这个 JSON 长什么样"的问题，jq 解决"我已经知道结构、要批量提字段"的问题。**先 fx 后 jq** 是最高效的组合。
+dig 只负责确认路径；稳定脚本仍写 jq。
 
-### 案例 3：和 [[yq]] 联动看 K8s YAML
-
-yq 把 YAML 转 JSON 后灌给 fx 交互浏览：
+### 案例 3：CLI 里用 JS，不是 jq DSL
 
 ```bash
-yq -o=json deployment.yaml | fx
+fx users.json 'x.users.map(u => u.email)'
+fx users.json '.users' '@.email'
 ```
 
-K8s 的 manifest 嵌套深，YAML 直接读眼花，转成 JSON 用 fx 的折叠树看更清楚。这是 yq 文档里推荐的 debugging 模式之一。
-
-### 案例 4：dig 跳路径 + CLI 用 JS 抽字段
-
-```bash
-# TUI：打开后按 . 进入 dig，输入 users → emails 之类路径，Tab 补全跳转
-cat huge-config.json | fx
-
-# 非交互：用 JavaScript 表达式抽字段（不是 jq 的 | map）
-cat huge-config.json | fx 'x.users.map(u => u.email)'
-```
-
-跟做顺序：先 fx 打开看清结构 → dig 确认路径 → 再把同一路径写成 JS 表达式塞进管道。需要 jq 批处理时，把思路翻译成 jq 语法另跑。
-
-### 案例 5：和 [[fzf]] / [[ripgrep]] 搭管道
-
-```bash
-rg --json "password" logs/ | fx
-```
-
-`rg --json` 输出换行分隔的 JSON 事件；fx 按多文档加载，方向键在条目间切换。适合审查日志里敏感字段命中，而不是替代 jq 做字段抽取。
+第一条是原样 JS。第二条 `.users` 被转成 `x.users`，`@` 再 map。需要 YAML 时加 `--yaml`，或直接打开 `.yaml` 文件。
 
 ## 踩过的坑
 
-1. **同名工具混淆**：GitHub 上至少有 3 个叫 `fx` 的工具 —— Anton Medvedev 的这个 JSON viewer、一个前端 effects 库、一个 functional extensions 库。**认准 `antonmedv/fx`** —— Homebrew `brew install fx` 默认就是它，但 npm 上其他同名包多到要小心。
-
-2. **Node 版和 Go 版并存**：2018-2022 是 Node.js 写的（npm 安装），2022 后官方主推 Go 版（brew/binary）。两版**功能基本一致但启动速度差 10 倍**（Go 二进制冷启 30ms，Node 版要起 V8 引擎要 200ms+）。建议直接装 Go 版。
-
-3. **没 TTY 自动退化**：在 CI 或者输出被重定向时，fx 检测到没 TTY 就不进 TUI，行为变成 `jq .` —— 这点设计合理但**会让"为什么我看不到 UI"的初学者困惑半天**。检查 `tty -s` 状态。
-
-4. **JS 表达式模式有安全风险**：fx 支持用 JS 函数当 filter（`fx 'x => x.users.length'`）。这意味着 **JSON 文件里的内容如果跟你的 filter 拼起来形成 JS 注入面**，理论上能跑任意代码。处理不可信 JSON 时尽量用 jq 模式或只读 viewer。
-
-5. **大文件仍然一次性加载**：默认把整个 JSON 读进内存才开始渲染。打开 5GB JSON 会卡几秒甚至 OOM —— 流式打开要看 ndjson 模式或外部预处理（jq `--stream` 切片后再 fx）。
+1. **把“没 TTY”理解成自动 pretty-print**：无参数时即使用户把 stdout 重定向，Go 版仍会起 TUI（画面写到 stderr）。要非交互输出，需要带 filter，例如 `fx .`。
+2. **认错 npm 包合同**：`fx@39.2.0` 的 `gitHead` 就是本提交，但发布物是 `npm/index.js`。它会做 JS 变换和 YAML，入口看不到 bubbletea，也没有 `--toml`。
+3. **同名工具**：认准 `antonmedv/fx`。Homebrew / GitHub release 是 Go 二进制；`npx fx` 走 Node 入口。
+4. **`.fxrc.js` 会进 VM**：cwd 和用户配置目录里的文件被拼进 `Stdlib`。处理不可信输入时，不要把“只是看 JSON”理解成“没有用户代码”。
+5. **整份输入先解析再渲染**：TUI 按 `parser.Parse()` 一块块收节点，但没有“只映射磁盘上的一段”的流式打开。本轮未测超大文件行为。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 探索陌生 JSON 结构（API 响应、kubectl 输出、配置文件）
-- 确认 JSON 路径后再写 jq/JS 批处理（先 dig 后管道）
-- ndjson / `rg --json` 日志逐条交互查看
-- 临时 pretty-print（管道末端 `... | fx` 在脚本里也能用）
-- 教学场景 —— 比直接啃 jq DSL 友好，新人 5 分钟会浏览
+
+- 探索陌生 API / kubectl / 配置 JSON 的结构
+- 确认路径后再写 [[jq]] 或 JS 管道
+- 把 YAML / TOML 先转成 JSON 再看（Go 版）
 
 **不适用**：
-- CI/CD 自动化里抽字段 → 用 [[jq]]，无 TUI 开销
-- YAML 直接处理 → 用 [[yq]]（先 yq 转 JSON 再 fx 也行，但多一步）
-- 多 GB 流式处理 → fx 不擅长，用 jq `--stream`
-- 需要 schema 校验 → 用 jsonschema / ajv
-- 远程服务器无 TTY → 用 `jq . | less` 替代
 
-## 历史小故事（可跳过）
+- CI 里抽字段——用 [[jq]]，避免 TUI 和 JS 运行时
+- 需要 jq 的 `empty` / `reduce` 合同，而不是 JS 数组方法
+- 把 npm 包当成“同一个 TUI”
+- 把未测量的启动时间或 star 数写进结论
 
-- **2018**：Anton Medvedev 在 GitHub 发布 fx 1.0，Node.js 写的，配一个 30 秒的 GIF 演示 `cat data.json | fx`。HN 首页爆，第一周就 5k stars。
-- **2019-2021**：稳定迭代，加 themes、搜索、JS 表达式 filter，10k+ stars。
-- **2022**：官方宣布**完全用 Go 重写**，理由是单二进制、启动快、不依赖 Node runtime。Node 版仍可用但进入维护模式。
-- **2023**：进入 Homebrew、apt、scoop、nix 默认仓库，K8s 圈口口相传"调试 JSON 用 fx"。
-- **2024-2026**：19k+ stars，是 jq 之后最常被推荐的 JSON 工具；Anton 开始做 fx Pro（带 schema 推断的付费版）。
+## 固定版本边界
+
+- 本文绑定 `antonmedv/fx@c8fd8cf394083141ab912f604d332e1cfde830cb`，tag / `version.go` / npm `fx@39.2.0` `gitHead` 一致。
+- Go 模块要求 `go 1.23.0`，TUI 依赖 `charmbracelet/bubbletea`，JS 引擎是 `dop251/goja`。
+- npm 发布物与 Go TUI 同 tag、不同入口；本页以 Go 源码为准，并披露 Node CLI。
+- 本文未安装 Go/Node 依赖、未跑 TUI、未测体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **给老 CLI 加 TUI 是一个反复出现的成功 pattern** —— top → htop → btop，jq → fx，git → lazygit，docker → lazydocker。每个 CLI 工具都值得问一句"它的 TUI 在哪"。
+1. **同一仓库可以有两套 CLI 合同**——Go TUI 和 npm JS 不能互相代称。
+2. **交互还是管道，看的是参数，不是“像不像 less”**——`fx .` 才是明确的非交互 pretty-print。
+3. **dig 对齐路径，JS/jq 负责变换**——先看树再写过滤器。
+4. **用户配置会进解释器**——`.fxrc.js` 让“只读查看”不再只读。
 
-2. **先看清结构再写表达式** —— jq/JS 难在"不知道 JSON 长什么样"；fx 的折叠树 + dig 把反馈环缩短到按键级，写管道之前先对齐路径。
+## 应用型自测
 
-3. **同生态做"探索版 + 批量版"组合** —— fx 不替代 jq：TUI 探索用 fx，稳定批处理仍用 jq。互补定位比正面竞争健康。
+1. `cat data.json | fx` 在 39.2.0 的 Go 入口会不会因为 stdout 不是 TTY 就改成 `jq .`？
+2. `fx data.json '.users'` 走 TUI 还是 goja？
+3. `npx fx@39.2.0` 默认打开 bubbletea 树吗？
 
-4. **Node → Go 的重写代价值不值** —— 2022 重写后用户从 npm 迁到 brew 经历了一次小阵痛，但启动速度从 200ms 降到 30ms，长期收益远大于一次性迁移成本。这是工具类项目"语言换跑道"的成功案例。
+检查点：
+
+1. 不会。无参数时仍启动 TUI，画面写到 stderr。
+2. 走 `engine.Start`。有 filter 就不进 TUI。
+3. 不会。npm 入口是 `npm/index.js` 的 Node 变换 CLI。
 
 ## 延伸阅读
 
-- 官方站：[fx.wtf](https://fx.wtf)（一页文档全在这，5 分钟看完）
-- GitHub README：[antonmedv/fx](https://github.com/antonmedv/fx)（GIF 演示直观）
-- 作者博客：[medv.io](https://medv.io)（Anton 写的 fx 设计反思和重写故事）
-- 同类对比：[jless](https://github.com/PaulJuliusMartinez/jless)（Rust 写的 fx 对手，键位更 vim）
+- 文档：[fx.wtf](https://fx.wtf)
+- 固定源码：[antonmedv/fx](https://github.com/antonmedv/fx) —— 本文绑定提交 `c8fd8cf394083141ab912f604d332e1cfde830cb`
+- [[jq]] —— 过滤器语言与批处理对照
 
 ## 关联
 
-- [[jq]] —— 心智模型同源；fx 是 jq 的 TUI 前置入口，先 fx 探索再 jq 批量
-- [[yq]] —— `yq -o=json | fx` 是看复杂 K8s manifest 的标准管道
-- [[btop]] —— 同属"给老 CLI 加 TUI"的设计模式
-- [[fzf]] —— ripgrep + jq + fzf + fx 是 DevOps 的 JSON 探索四件套
-- [[ripgrep]] —— `rg --json | fx` 把搜索结果交互化
-- [[claude-code]] —— Claude Code 在调试 API 响应时常推荐先 fx 探索再写 jq 表达式
+- [[jq]] —— 稳定批处理和 `empty` 语义
+- [[yq]] —— `yq -o=json | fx` 看深 YAML
+- [[ripgrep]] —— `rg --json` 可再交给 fx 逐条看
+- [[fzf]] —— 交互选择，不是 JSON 树
+- [[btop]] —— 同属“给旧 CLI 加 TUI”，合同不同
 
 ## 反向链接
 

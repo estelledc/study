@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HZ：jq + fx
+
+- status：writer epoch `running` → 本地切片完成，待 `verify:ci` 与 PR review；未 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（当时的 `origin/main`）。
+- objective：把 `needs-evidence` 的 JSON-CLI 双子 `jq` 与 `fx` 迁到固定 revision 的 `study-v2`，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇项目页、共享审查文档 `docs/json-cli-source-review-20260827-hz.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译上游、未运行上游测试、未测 TUI/吞吐。
+- activated_by：`explicit-user-parallel-writer-hz-2026-08-27`。
+- detector fingerprint：目录已有 `jq.md` / `fx.md` 但缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `jq` 绑定 tag `jq-1.8.2` → `34f7186b86743a083a589741b6cea95293524108`；纠正不存在的 `--decimal`，以及 `select`=`empty`、写时拷贝 `jv`。
+  2. `fx` 绑定 `39.2.0` → `c8fd8cf394083141ab912f604d332e1cfde830cb`，tag / `version.go` / npm `gitHead` 一致；纠正 TUI/管道分流，并披露 npm 是另一套无 TUI 的 Node CLI。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87，v2 154 → 156。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `git diff --check`：通过。
+  - `verify:ci`：提交后跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只做这一对；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在打开的 PR 上做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

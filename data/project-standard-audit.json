@@ -4,8 +4,8 @@
   "summary": {
     "total": 967,
     "by_status": {
-      "benchmark-aligned": 85,
-      "needs-evidence": 882
+      "benchmark-aligned": 87,
+      "needs-evidence": 880
     }
   },
   "projects": [
@@ -6877,27 +6877,23 @@
     },
     {
       "slug": "fx",
-      "title": "fx — JSON 的交互式查看器（jq 的 TUI 表亲）",
+      "title": "fx — 终端里先看 JSON 树，再用 JS 做变换",
       "source": "https://github.com/antonmedv/fx",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "fzf",
@@ -8959,27 +8955,23 @@
     },
     {
       "slug": "jq",
-      "title": "jq — JSON 的 sed/awk",
+      "title": "jq — 把 JSON 当成流来过滤的命令行处理器",
       "source": "https://github.com/jqlang/jq",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "js-joda",

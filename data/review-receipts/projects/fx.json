@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "fx",
+    "digest_sha256": "f90611c4dbed12715a6e426f810a2e1b4530f2d0376c1760c63f57ffc553a610"
+  },
+  "source_revision": "c8fd8cf394083141ab912f604d332e1cfde830cb",
+  "research_input_sha256": "77c5ef281c7ccc97700c43d65cb2ed4a15c424e6d17e3a82f00a3edb6eae0f0d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates TTY file/stdin split, TUI vs goja by filter args, dig vs JS transpile, and npm Node CLI."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "main.go dispatch, engine transpile/stdlib/fxrc, keymap, and npm/index.js entry were inspected; TUI and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds 39.2.0 where tag, version.go and npm gitHead agree, and discloses the npm package is not the Go TUI."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}

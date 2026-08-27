@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -43657,27 +43657,26 @@
       "id": "projects::fx",
       "area": "projects",
       "slug": "fx",
-      "title": "fx — JSON 的交互式查看器（jq 的 TUI 表亲）",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "fx — 终端里先看 JSON 树，再用 JS 做变换",
+      "description": "用 bubbletea 看 JSON 树，或把参数交给 goja，并披露 npm 包是另一套无 TUI 的 Node CLI",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
-        "raw_category": "CLI"
+        "raw_category": "CLI / 命令行工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/fx/",
       "atlas": {
@@ -46452,27 +46451,26 @@
       "id": "projects::jq",
       "area": "projects",
       "slug": "jq",
-      "title": "jq — JSON 的 sed/awk",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "jq — 把 JSON 当成流来过滤的命令行处理器",
+      "description": "把 JSON 输入编译成过滤器字节码，再按值吐出结果流",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
-        "raw_category": "CLI"
+        "raw_category": "CLI / 命令行工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/jq/",
       "atlas": {

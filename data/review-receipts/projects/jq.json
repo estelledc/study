@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "jq",
+    "digest_sha256": "92bf0347a30e78ba09402f737386a3cab149fb93fcc33594c0d263ed15e92280"
+  },
+  "source_revision": "34f7186b86743a083a589741b6cea95293524108",
+  "research_input_sha256": "77c5ef281c7ccc97700c43d65cb2ed4a15c424e6d17e3a82f00a3edb6eae0f0d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates compile/start/next stream, select-as-empty, copy-on-write jv, and the missing --decimal flag."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "main.c process loop, execute.c compile/start/next, jv.c write path, and builtin.jq select/assign were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds reachable tag jq-1.8.2 even though the tagged commit is a CI checkout bump; official binaries were not rebuilt."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}
