@@ -16,7 +16,7 @@
   1. 用 GitHub/npm 元数据固定 `Leaflet/Leaflet@d15112c9...` / `1.9.4`（tag 与 `gitHead` 一致）和 `mapbox/mapbox-gl-js@2d7d5d25...` / `3.29.0`（GitHub tag 可达；npm `gitHead` 不可达，已披露）。
   2. 重写两页主链：Leaflet 的 Map/Layer/Control/CRS 与 GeoJSON 坐标顺序；Mapbox 的 Source/Style/Worker/Painter、默认 Standard style、`workerCount=2`。
   3. 新增共享审查记录与两份 `STATIC_REVIEW` receipt；project-standard 由本轮验证刷新。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt evidence state `UNVERIFIED`。全量 `verify:ci` 在提交后跑。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿（388 Node tests、2285 HTML、2284 sitemap URLs、23 Playwright tests）。
 - budget：2 个稀疏本地 worktree + 2 页静态源码迁移；单 writer。
 - blocker：Mapbox npm `gitHead` 在 canonical GitHub 不可达；上游运行/WebGL/token 证据不能由静态 review 替代。
 - stop conditions：本 epoch 已收口到 1 个 PR；不自动 merge。
