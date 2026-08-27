@@ -162,13 +162,11 @@ function Isolated() {
 - 固定源码：[pmndrs/jotai](https://github.com/pmndrs/jotai) —— 本文绑定提交 `3e0b9ffad54b2fbedf2165a82d06ae6bcf1ebd67`
 - [[zustand]] —— 集中 store + selector 对照
 - [[valtio]] —— Proxy mutate 对照
-- [[react-hooks]] —— `use` / Suspense 与外部 store 订阅
 
 ## 关联
 
 - [[zustand]] —— 同生态集中 store，对照原子模型
 - [[valtio]] —— 同作者第三条路：直接 mutate
-- [[react-hooks]] —— Suspense 与外部订阅的桥
 - [[immer]] —— 需要草稿式更新时的可选搭配，不是 Jotai 核心
 
 ## 反向链接
