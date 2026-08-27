@@ -21,7 +21,7 @@ sidebar:
 | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) | `btop` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | `bubbletea` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | `clack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | `commander` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | `commander` | 初级 | UNVERIFIED | 用命令树声明选项与子命令，再由 parse / parseAsync walk argv 的零依赖 Node CLI 库 |
 | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | `curlie` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | `delta` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -76,7 +76,7 @@ sidebar:
 | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | `xh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | `xonsh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | `xplr` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | `yargs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | `yargs` | 初级 | UNVERIFIED | 用 yargs-parser 把 argv 收成对象，再叠加命令、补全、config 与 locale 的 Node CLI 框架 |
 | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) | `yazi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | `yq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) | `zellij` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

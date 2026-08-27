@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "yargs",
+    "digest_sha256": "d30abd5bd93e1a2dcebaa1b3877a04f61ce6b63bd2e87ecb771c047ac81ab6e3"
+  },
+  "source_revision": "8878a894111e3fe7c98d84af546c0f34fa017492",
+  "research_input_sha256": "34c7046fc45a19683500c2151d5943c04335d23c3d1ece1a4d5a0bb877be3e1e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "cli-parser-static-20260827-az",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Explains yargs-parser layering, factory help/version defaults, hideBin Electron indexing, builder reset, and positional number coercion with checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "cli-parser-static-20260827-az",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 18.1.0 factory, command, middleware, process-argv and helpers; upstream tests, completion scripts and config loads were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "cli-parser-static-20260827-az",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v18.1.0 and npm gitHead agree; ESM-only engines and parser defaults are disclosed without unverified speed or download claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:00:00.000Z"
+}
