@@ -15,7 +15,7 @@
   1. `commander` 绑定 `tj/commander.js@ba6d13ddb4243e5913367734f8c159089ffe7834` / `15.0.0`。
   2. `yargs` 绑定 `yargs/yargs@8878a894111e3fe7c98d84af546c0f34fa017492` / `18.1.0`。
   3. 新增共享审查文档与两份 generation 1 static receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / research input 一致，evidence `UNVERIFIED`；`git diff --check` 通过。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision / research input 一致，evidence `UNVERIFIED`；`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿。
 - budget：1 个可写切片；单 writer。
 - blocker：未跑上游 test / 示例 CLI / completion / bundle；merge 未授权。
 - 下一次 wake 条件：本 PR 进入 review，或 owner 另行授权 merge。
