@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer ED（Result / Effect）
+
+- status：writer epoch `complete`；等待 review，不 merge。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`（`origin/main`）。
+- objective：zod leftover 的 Result / Effect 对照——把已有 `effect` 迁到固定源码，并新建 `neverthrow`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/result-effect-source-review-20260827-ed.md`、taxonomy 一条 curated assignment、派生 atlas / site-state / 公开计数、本 handoff；本机 ignored blob-filtered clone。未安装上游依赖、未跑上游测试 / bundle。
+- activated_by：`explicit-user-parallel-writer-ED-2026-08-27`。
+- detector fingerprint：`effect` 缺 pinned revision / evidence / self-test，且含未绑定 star、bundle、QPS 断言；目录无 `neverthrow`；开放 PR 未占用这两个 slug。
+- external delta：本 PR（授权 push + PR）；未 merge、未 deploy，D 轴不提升。
+- 完成切片：
+  1. `effect` 绑定 `Effect-TS/effect@417e0faa80e471d77fc4a67452e68b09ae0ee861` / `effect@3.22.1`（annotated tag 剥开；npm 无 `gitHead`）。写清 lazy instruction、`fail`/`die`、`runPromise` 的 `R=never`、`acquireRelease` 的 Scope，以及本包 Schema leftover。
+  2. `neverthrow` 绑定 `supermacro/neverthrow@1d4cc19ed2e6ba882e296385fe0175d642ec8c5d` / `8.2.0`（tag 与 npm `gitHead` 一致）。写清 Ok/Err class、`combine` 短路、`andTee` 吞异常、`fromSafePromise` 不 catch。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest/revision 一致，`UNVERIFIED`；`audit:counts` projects=962 / total=2045；`audit:content-contract` v2=105 blocking 0；`audit:project-standard` aligned=36。完整 `verify:ci` 在本提交后跑。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：main 上既有 `tracked_files` 超 baseline，属 `PARKED_HUMAN`；本轮未改阈值。
+- stop conditions：本轮已完成；merge / deploy / 规模 baseline 需单独授权。
+- 下一次 wake 条件：PR review / CI，或 owner 新的有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

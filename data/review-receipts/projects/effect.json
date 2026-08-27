@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "effect",
+    "digest_sha256": "e9b2dc9faf0cb2720142e51a6f40bdaa8aacf53909f26fc73e89db96777fcd24"
+  },
+  "source_revision": "417e0faa80e471d77fc4a67452e68b09ae0ee861",
+  "research_input_sha256": "fba558f25153b13c1e68e8347a9af671f6008b8cd6af7c9991ab4d5f308e51dd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ed",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates lazy Effect values, fail versus die, R=never runPromise, Scope, and Schema leftover versus Zod."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ed",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Effect.gen, core succeed/fail/die, acquireRelease, Schema decodeUnknown/Either, and standardSchemaV1; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ed",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned to effect@3.22.1 via peeled GitHub tag; npm gitHead is absent and 4.0 beta/rc stay out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

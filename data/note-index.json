@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -41624,9 +41624,9 @@
       "id": "projects::effect",
       "area": "projects",
       "slug": "effect",
-      "title": "Effect — 给 TypeScript 装上\"会跟踪错误和依赖\"的副作用引擎",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Effect — 给 TypeScript 装上会跟踪错误和依赖的副作用引擎",
+      "description": "Typed Effect<A, E, R> values, fibers, and Schema decoding on a pinned 3.22.1 revision.",
+      "difficulty": "advanced",
       "canonical_topics": [
         "projects-state-management"
       ],
@@ -41637,13 +41637,13 @@
         "raw_category": "TypeScript 运行时"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/effect/",
       "atlas": {
@@ -52082,6 +52082,37 @@
       "atlas": {
         "chunk_id": "topic-projects-mobile-development-01",
         "chunk_route": "/study/atlas/projects/topic-projects-mobile-development-01/"
+      }
+    },
+    {
+      "id": "projects::neverthrow",
+      "area": "projects",
+      "slug": "neverthrow",
+      "title": "neverthrow — 用 Result 把失败变成返回值",
+      "description": "Ok/Err classes, safeTry, and ResultAsync on a pinned neverthrow 8.2.0 revision.",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/neverthrow/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -65657,7 +65688,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 13
+      "entries": 14
     },
     {
       "id": "topic-projects-headless-ui-components-01",

@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "13 条 通用开发工具 Atlas 分块"
+description: "14 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 14 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -21,6 +21,7 @@ sidebar:
 | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) | `llrt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | `lmms` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) | `matter-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [neverthrow — 用 Result 把失败变成返回值](/study/projects/neverthrow/) | `neverthrow` | intermediate | UNVERIFIED | Ok/Err classes, safeTry, and ResultAsync on a pinned neverthrow 8 |
 | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) | `quasar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) | `supercollider` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用](/study/projects/tauri/) | `tauri` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

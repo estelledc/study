@@ -1,152 +1,182 @@
 ---
-title: Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-来源: 'Effect-TS/effect, MIT, v3.21+, github.com/Effect-TS/effect'
+title: Effect — 给 TypeScript 装上会跟踪错误和依赖的副作用引擎
+description: Typed Effect<A, E, R> values, fibers, and Schema decoding on a pinned 3.22.1 revision.
+来源: https://github.com/Effect-TS/effect
 日期: 2026-05-29
 分类: TypeScript 运行时
 难度: 高级
+difficulty: advanced
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/Effect-TS/effect
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 417e0faa80e471d77fc4a67452e68b09ae0ee861
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.22.1
 ---
 
 ## 是什么
 
-Effect 是一个 **TypeScript 库**，把"一段代码做了什么"在类型上写得更清楚。日常类比：像快递面单——传统 `Promise<User>` 只写了"包裹是 User"，Effect 的 `Effect<User, NotFoundError, Database>` 把"装的是什么、可能出什么差错、要走哪个仓库"三件事都印在面单上。
+Effect 是一个 TypeScript 库，把一段计算写成**还没跑的描述**。日常类比：快递面单。`Promise<User>` 只写“箱子里是 User”；`Effect<User, NotFound, Database>` 把成功值、预期失败、运行时依赖三件事都印在面单上。
 
 你写：
 
-```typescript
+```ts
+import { Effect } from "effect"
+
 const getUser = (id: string) =>
   Effect.gen(function* () {
     const db = yield* Database
     return yield* db.findUser(id)
   })
-// 类型自动推断：Effect<User, NotFoundError, Database>
 ```
 
-编译器替你算出：成功时是 `User`、可能失败成 `NotFoundError`、运行时需要一个 `Database` 服务。整个程序的副作用都被钉死在类型上。
+固定 `effect@3.22.1` 里，这仍是一个 `Effect` 值。`Effect.gen` 只是把 generator 包进 iterator instruction；必须 `Effect.runPromise`（且 `R` 已是 `never`）才会真正执行。
 
 ## 为什么重要
 
-不理解 Effect，下面这些事都没法解释：
+不理解 Effect，下面这些事会对不上固定源码：
 
-- 为什么 `Promise<User>` 在类型上**看不出会抛什么错**——10 年了 JS 一直没修
-- 为什么有人说"Result 类型解决了一半问题"——它只管错误，没管依赖、资源、并发
-- 为什么 Scala 的 ZIO 和 Haskell 的 IO monad 看起来像同一个东西换皮——它们都来自代数效应
-- 为什么 TypeScript 项目想做"全栈类型安全"绕不开生成器（generator）函数
+- 为什么 `Promise<User>` 在类型上看不见会失败成什么
+- 为什么 [[neverthrow]] 的 `Result<T, E>` 只覆盖错误通道，不管依赖、Scope 和 Fiber
+- 为什么 Zod leftover 会落到 `effect/Schema`：同一仓里 schema decode 返回 `Effect` 或 `Either`，还能接 Standard Schema
+- 为什么没 `provide` 完服务就 `runPromise`，类型过不去
 
 ## 核心要点
 
-Effect 把传统 JS 异步编程做不好的事，集中在 **三件事** 上重新设计：
+固定 3.22.1 的主链可以拆成五步：
 
-1. **三参类型 `Effect<A, E, R>`**：A 是成功值、E 是错误类型、R 是运行时依赖。类比"会自我介绍的快递面单"——一眼看清结果、风险、需求。
+1. **构造描述，不执行**：`Effect.succeed` 生成 `OP_SUCCESS` instruction。`Effect.fail` 走 typed `Cause.Fail`；`Effect.die` 走 defect，结果类型是 `Effect<never>`。
 
-2. **lazy 求值**：Effect 是个**值**，不是马上跑的任务。必须 `runPromise` 才执行。类比"菜谱 vs 做菜"——Promise 是已经下锅的菜，Effect 是写在纸上的菜谱。
+2. **三参顺序是 `<A, E, R>`**：成功值、预期错误、环境。旧文里的 `<R, E, A>` 是更早的 ZIO 习惯，不是本页绑定版本。
 
-3. **结构化资源 + 并发**：通过 `Scope` 自动管资源、通过 `Fiber` 管并发取消。类比"租房有押金合同"——离开时房东（Scope）一定会把水电关掉，不靠你记得。
+3. **运行入口收窄环境**：`Effect.runPromise(effect, options?)` 只接受 `Effect<A, E, never>`，可选 `AbortSignal`。还缺服务时要先 `provide` / `provideService`。
 
-## 实践案例
+4. **资源挂在 Scope 上**：`Effect.acquireRelease(acquire, release)` 把 `Scope` 并进 `R`；release 收到 `Exit`，不靠词法 `try/finally`。
 
-### 案例 1：把 try/catch 升级成类型化错误
+5. **Schema 在本包**：`Schema.decodeUnknown` 返回 `Effect<A, ParseError, R>`；`decodeUnknownEither` 要求 schema 的 `R` 为 `never`。`Schema.standardSchemaV1`（3.13.0 起）提供 `~standard.validate`。仓内 `schema-vs-zod.md` 是对照说明，不是本轮运行证据。
 
-```typescript
-import { Effect } from 'effect'
+## 实践示例
 
-class NotFoundError { readonly _tag = 'NotFoundError' }
+### 案例 1：typed fail 与 defect 不是一条通道
 
-const findById = (id: string): Effect.Effect<string, NotFoundError> =>
-  id === '1' ? Effect.succeed('Jason') : Effect.fail(new NotFoundError())
+```ts
+import { Effect } from "effect"
+
+class NotFound { readonly _tag = "NotFound" }
+
+const find = (id: string) =>
+  id === "1" ? Effect.succeed("Ada") : Effect.fail(new NotFound())
+
+// Effect.runPromise(find("x")) 会 reject；要看完整 Cause 用 runPromiseExit
 ```
 
-**逐部分解释**：
+`fail` 的 `E` 会出现在类型里。`die` 表示缺陷，不进入 `E`。把业务 404 写成 `die`，调用方无法在类型上穷尽处理。
 
-- `Effect.succeed('Jason')` 等同 `Promise.resolve`，但类型上明确"不会失败"
-- `Effect.fail(...)` 是**业务预期错误**——调用方编译期就被强制处理
-- `_tag` 字段是辨识联合（discriminated union）的口令，TS 用它做穷尽性检查
+### 案例 2：Tag 写出依赖，再 provide 才能跑
 
-### 案例 2：依赖注入直接写在类型里
+```ts
+import { Context, Effect, Layer } from "effect"
 
-```typescript
-class Database extends Context.Tag('Database')<Database, {
-  findUser: (id: string) => Effect.Effect<string, NotFoundError>
+class Database extends Context.Tag("Database")<Database, {
+  findUser: (id: string) => Effect.Effect<string, never>
 }>() {}
 
 const program = Effect.gen(function* () {
   const db = yield* Database
-  return yield* db.findUser('1')
+  return yield* db.findUser("1")
 })
-// 类型推断：Effect<string, NotFoundError, Database>
+
+const live = Layer.succeed(Database, { findUser: () => Effect.succeed("Ada") })
+const runnable = Effect.provide(program, live)
 ```
 
-**关键点**：你没传 db 进来，编译器自己看出"这段代码要在有 Database 的环境跑"。运行时忘了 `Effect.provide(DatabaseLive)` → TS 直接报错。
+`runnable` 的 `R` 被消成 `never` 后，才能交给 `runPromise`。忘了 provide，不是运行时报“缺 Database”，而是类型阶段过不去。
 
-### 案例 3：用 `acquireRelease` 替换 try/finally
+### 案例 3：Schema decode 相对 Zod leftover
 
-```typescript
-const openLog = Effect.acquireRelease(
-  Effect.tryPromise(() => fs.open('/tmp/app.log', 'a')),
-  (fh) => Effect.promise(() => fh.close())
-)
+```ts
+import { Effect, Schema } from "effect"
+
+const User = Schema.Struct({ name: Schema.String })
+const either = Schema.decodeUnknownEither(User)({ name: "Ada" })
+const effect = Schema.decodeUnknown(User)({ name: "Ada" })
 ```
 
-不管中间是失败、被中断还是正常返回，`fh.close()` 都会跑。比 `try/finally` 强在：跨 await/yield 边界、跨 fiber 都能正确清理，传统 try/finally 只在同步词法块里好用。
+`either` 是同步 `Either`；`effect` 仍是可组合的 Effect。这和 [[zod]] 的 `parse` / `safeParse` 对象不同：这里失败类型是 `ParseError`，成功通道还可以继续 `flatMap` 进 Layer / Fiber。双向 encode、以及 `standardSchemaV1` 适配器，都在本包，不需要另装 `@effect/schema`。
 
 ## 踩过的坑
 
-1. **A/E/R 顺序记反**：早期文档写 `<R, E, A>`（来自 Scala ZIO 传统），新版本改成 `<A, E, R>`——读旧博客看到老顺序不要慌。
-
-2. **以为 Effect 立刻执行**：`Effect.tap(() => console.log('hi'))` 单独写**什么也不会发生**，必须 `runPromise` 才跑。新人最常见的"我代码没生效" bug。
-
-3. **半 Effect 半 Promise 最痛**：用 `Effect.tryPromise` 把老 Promise 包进来，包多了类型推断慢、bundle 涨、调试栈断。要么全切要么不切。
-
-4. **Cause 嵌套 log 看不懂**：一次并发双失败 + finalizer 又炸，cause 字符串嵌套三层，新人盯着 `Parallel(Fail(...), Sequential(Die(...), ...))` 头大。生产 log 要专门处理。
+1. **以为写出 `Effect.gen` 就已经跑了**：generator 被 `fromIterator` 包起来；没有 runner 就没有副作用。
+2. **`runPromise` 吃带 `R` 的程序**：签名是 `Effect<A, E, never>`。Scope 也算 `R`，`acquireRelease` 后还要 `scoped` / runtime 提供 Scope。
+3. **把 `fail` 和 `die` 当同义词**：一个进错误通道，一个是缺陷。日志里的 `Cause` 树会把两者叠在一起。
+4. **把 `tryPromise` 的无 catch 重载当成 typed E**：不传 `catch` 时错误是 `Cause.UnknownException`。
+5. **把 npm latest 的 4.0 rc 当成 3.22.1**：`dist-tags.beta` / `rc` 指向 4.0 线，本页未绑定。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 长生命周期后端服务（订单、支付、agent 工作流）
-- 需要 mock 测试的核心逻辑（Layer 让 mock 是类型安全的）
-- 高并发场景（结构化并发 + 自动取消）
-- 团队愿意投入培训、有人当 Effect champion 答疑
+- 需要把错误、依赖和资源寿命一起写进类型
+- 愿意用 Layer / Tag 做可替换实现
+- 要在同一套 Effect 里接 Schema decode，而不是另起一套 Result 管道
 
 **不适用**：
 
-- 简单 CRUD / 表单提交 / 静态站点（Promise 够用，Effect 是过度设计）
-- 前端关键路径（核心包 50KB+，generator 运行时无法 tree-shake 干净）
-- 团队没函数式编程经验且没培训预算
-- 每秒 10w+ QPS 的热路径（每次 `Effect.gen` 创建 generator 实例，性能不够）
+- 只要同步 `Result<T, E>`——[[neverthrow]] 更小，也没有 Fiber / Scope
+- 只做表单或 API 边界校验，且团队已经以 [[zod]] 为契约源
+- 需要本轮未测的 bundle / QPS 结论——固定源码没有给出可引用数字
+- 想跟 4.0 beta/rc API，那是另一条 revision
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Giulio Canti 写出 fp-ts，把 Haskell 的 `Either / Task / IO` 搬进 TypeScript。纯函数式爱好者在用。
-- **2020 年**：Michael Arnaldi 启动 Effect-TS 项目，灵感来自 Scala 的 ZIO——把 fp-ts 那一堆类型合并成一个 `Effect<A, E, R>`。
-- **2023 年**：fp-ts 团队和 Effect 团队合并，宣布 fp-ts v3 不再独立发布、精神延续到 Effect。
-- **2024 年**：Effect v3 发布，参数顺序统一改成 `<A, E, R>`，API 进入相对稳定期。
-- **2026 年**：核心仓库 14k+ star、5000+ release、30+ 子包（sql / cluster / ai / platform）。生态从"小众玩具"进入"敢用在生产"阶段。
+- 本文绑定 `Effect-TS/effect@417e0faa...`，GitHub tag `effect@3.22.1` 剥开后指向该提交。
+- npm `effect@3.22.1` 当前不暴露 `gitHead`，不以 registry 反推。
+- package 自报 “missing standard library”；依赖 `@standard-schema/spec` 与 `fast-check`。未声明 `engines`。
+- `effect@4.0.0-beta.*` / `rc` 不在适用版本内。
+- 未安装依赖、运行上游 vitest / tstyche 或测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **类型系统能装的东西远不止"成功值"**——错误、依赖、资源都可以爬上类型轴
-2. **lazy 是范式分水岭**——Promise 是动作，Effect 是描述。整个 dev tool / 调试范式都不一样
-3. **结构化并发不是噱头**——一个 fiber 失败带走它的全部子任务、自动跑 finalizer，比手写 `Promise.all + AbortController` 健壮一截
-4. **生态成本是真成本**——选 Effect 是技术栈决策，不是引一个库；要对团队学习曲线、IDE hover 体验、tsc 编译速度都做心理准备
+1. **Effect 是值**：成功、失败、依赖都可以先描述后执行
+2. **`R` 是运行许可**：`runPromise` 只收已经 provide 完的程序
+3. **fail 与 die 分通道**：业务错误和缺陷不能混写成同一种 throw
+4. **Schema 是 leftover，不是另一套 Zod**：decode 进 Effect/Either，还能挂 Standard Schema
+
+## 应用型自测
+
+1. 只写了 `Effect.succeed(1)`，没有 runner。控制台会打印 1 吗？
+2. `acquireRelease` 之后的程序，能否直接交给 `Effect.runPromise`？
+3. `Schema.decodeUnknownEither` 能接受一个还需要服务的 schema（`R` 不是 `never`）吗？
+
+检查点：
+
+1. 不会。它只是 instruction。
+2. 默认不能。`Scope` 还在 `R` 里。
+3. 不能。该 API 要求 schema 的 `R` 为 `never`。
 
 ## 延伸阅读
 
-- 官方文档：[Effect.website](https://effect.website)（**先读这个再读源码**）
-- 视频教程：[Effect Days 2024 — Michael Arnaldi 主旨演讲](https://www.youtube.com/@effect-ts)（讲为什么要造 Effect）
-- 论文：[Plotkin & Pretnar — Handling Algebraic Effects](https://homepages.inf.ed.ac.uk/gdp/publications/handlers.pdf)（Effect 的理论根，代数效应原始论文）
-- [[effect-handlers]] —— 代数效应的语言级实现，Effect 是它在 JS 的库级模拟
-- [[hindley-milner]] —— Effect 类型推断背后的统一算法
-- [[zod]] —— Effect 生态里的 Schema 子包思想类似，可对照看
+- 官方文档：[effect.website](https://effect.website)
+- 固定源码：[Effect-TS/effect](https://github.com/Effect-TS/effect) —— 本文绑定 `417e0faa80e471d77fc4a67452e68b09ae0ee861`
+- 审查记录：仓库内 `docs/result-effect-source-review-20260827-ed.md`
+- [[neverthrow]] —— 只覆盖 Result 通道的轻量对照
+- [[zod]] —— schema leftover 的另一侧：parse / safeParse
 
 ## 关联
 
-- [[effect-handlers]] —— 代数效应是 Effect 的精神先祖；JS 没原生 effects，Effect 用 generator 模拟
-- [[hindley-milner]] —— Effect 的类型推断借助统一算法，generator 是 do-notation 的廉价替代
-- [[fastapi]] —— Python 用类型注解推 API 形态，Effect 是 TS 把这思路推到极致
-- [[zod]] —— Effect 自带的 Schema 子包和 zod 同生态位
-- [[hono]] —— 后端框架，Effect 常被用来重写 Hono/Express 上的核心服务
-- [[playwright]] —— 测试场景里 Effect 的 Layer mock 比 jest.mock 更类型安全
-- [[trpc]] —— 端到端类型安全工具，Effect 是它的"重武器"对照
+- [[neverthrow]] —— Result 解决错误返回值；Effect 再加依赖、资源和并发
+- [[zod]] —— 运行时 schema；Effect Schema 用 Effect/Either 接 decode
+- [[valibot]] —— 模块化 schema，另一条校验对照
+- [[arktype]] —— 更贴近 TypeScript 语法的 schema
+- [[effect-handlers]] —— 代数效应的语言级来源
+- [[xstate]] —— 状态机对照；Effect 的 actor/fiber 是另一条并发模型
 
 ## 反向链接
 

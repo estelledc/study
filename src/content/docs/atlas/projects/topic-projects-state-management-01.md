@@ -13,7 +13,7 @@ sidebar:
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
-| [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | `effect` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Effect — 给 TypeScript 装上会跟踪错误和依赖的副作用引擎](/study/projects/effect/) | `effect` | advanced | UNVERIFIED | Typed Effect<A, E, R> values, fibers, and Schema decoding on a pinned 3 |
 | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | `immer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | `jotai` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | `mobx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
