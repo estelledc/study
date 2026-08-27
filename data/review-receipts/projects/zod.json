@@ -1,22 +1,22 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "17ed42a89db24e2aef214a336112e9b2dc16c99ccf6d558965596e755aedaa78",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
   "note": {
     "area": "projects",
     "slug": "zod",
-    "digest_sha256": "8e6b44ce47100750036f9e5021f6df838d66c7d8992cdfd73ea6ccf47e591386"
+    "digest_sha256": "c0f8ab46d3561122c6604c5190cca6a62aaf0b9dc5051f675e14beae9377407a"
   },
-  "source_revision": "1fb56a5c18c27102dbc92260a4007c7732a0ccca",
-  "research_input_sha256": "895ca6e75d12a8b8cdd0d3bb5caa2b61b48c26462ad9f1046a1b88780b565bc8",
+  "source_revision": "912f0f51b0ced654d0069741e7160834dca742ee",
+  "research_input_sha256": "43c1edc289a8a3030600e65f25a11fa0807a1dd1775812e8c30b03ec661ab2fb",
   "reviewers": [
     {
       "role": "ZERO_BASE",
-      "reviewer_version": "writer-k-static-20260827",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
-      "score": 92,
+      "score": 91,
       "warnings": [
-        "Separates runtime parse, static inference, object key policy, async boundary, and codec direction."
+        "Explains runtime validation, static inference, object output, and async boundaries separately."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -25,11 +25,11 @@
     },
     {
       "role": "ENGINEER",
-      "reviewer_version": "writer-k-static-20260827",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
       "score": 93,
       "warnings": [
-        "Official v4.4.3 tag parse, classic methods, object, codec, and proto tests were inspected; upstream tests and bundles were not run."
+        "Core parse, classic API, object, async, and security tests were inspected; upstream tests and bundles were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -38,11 +38,11 @@
     },
     {
       "role": "ACADEMIC",
-      "reviewer_version": "writer-k-static-20260827",
+      "reviewer_version": "research-benchmark-static-20260717",
       "decision": "PASS_WITH_NOTES",
-      "score": 91,
+      "score": 90,
       "warnings": [
-        "Claims are bounded to GitHub release v4.4.3 / 1fb56a5c; later 4.4.3-labeled main commits were not adopted."
+        "Version and performance claims are bounded to zod 4.4.3 and require target-environment benchmarks."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -51,5 +51,5 @@
     }
   ],
   "waivers": [],
-  "created_at": "2026-08-27T07:10:00.000Z"
+  "created_at": "2026-07-17T13:58:08.000Z"
 }
