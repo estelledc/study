@@ -15,7 +15,7 @@
   1. `cosmiconfig` 绑定 tag `v10.0.0` → `014687e689b04c34d72fa89997f8c6c3bdcf5756`（与 npm `10.0.0` `gitHead` 一致）；默认 `searchStrategy: 'none'`。
   2. `c12` 绑定 tag `v3.3.4` → `49ef83ce30492e512b88326c8cacc8d06a8ba8ec`（与 npm `3.3.4` `gitHead` 一致）；披露 npm latest `4.0.0-beta.5` 未绑定。
   3. 共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate` pass / 0 advisory；receipt `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致；`audit:project-standard` snapshot 写后 `benchmark-aligned=73`。
+- acceptance checks：两页 `quality-gate` pass / 0 advisory；receipt `UNVERIFIED`；`audit:content-contract` blocking 0、v2=142；`audit:counts` / `audit:site-state` 与 965/1083/2048 一致；`audit:project-standard` snapshot CURRENT、`benchmark-aligned=73`。`STUDY_CHANGED_FROM=c7615aa91 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下，内容契约与后续门禁通过；a11y 23/23 在补装 Playwright Chromium 后通过。
 - budget：2 个 blob-filtered worktree + 2 页新增；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值、未 merge。
 - stop conditions：单一 PR 已打开且未请求 merge 后停止。
