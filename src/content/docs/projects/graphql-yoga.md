@@ -1,164 +1,169 @@
 ---
 title: GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-来源: 'https://github.com/dotansimha/graphql-yoga'
+来源: 'https://github.com/graphql-hive/graphql-yoga'
 日期: 2026-05-30
 分类: 后端 API
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/graphql-hive/graphql-yoga
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 0c6025d5bfcde9bd1be86b73ba406a0ca84e35eb
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.22.0
 ---
 
 ## 是什么
 
-GraphQL Yoga 是 The Guild 出的 **GraphQL HTTP 服务器**：你给它一份 schema 和 resolvers，它接管解析、校验、执行、返回 JSON。和 Apollo Server 干同一件事，但更小巧、不绑 Node。
+GraphQL Yoga 是 The Guild / GraphQL Hive 的 **GraphQL HTTP 服务器**：你给它一份可执行 schema，它接管解析、校验、执行和按 Accept 选择的响应格式。日常类比：还是“自助点单”餐厅，但灶台只认标准化外卖箱（WHATWG `Request` / `Response`），煤气灶和电灶用同一套箱子接单。
 
-日常类比：还是"自助点单"那家餐厅，但 Yoga 是**走开放厨房的小店**——后厨只有标准工具，灶台同时能用煤气、电、柴。Apollo 是连锁店带自家中央厨房（Studio + Federation 商业化）。
-
-代码长这样：
-
-```js
-import { createYoga, createSchema } from 'graphql-yoga'
-import { createServer } from 'node:http'
-
-const yoga = createYoga({
-  schema: createSchema({
-    typeDefs: `type Query { hello: String }`,
-    resolvers: { Query: { hello: () => 'world' } },
-  }),
-})
-createServer(yoga).listen(4000)
-```
-
-一个 `createYoga`、一个 schema，HTTP 端点就有了，自带 GraphiQL 调试网页。
+`createYoga()` 先构造内部 `YogaServer`，再包一层 `@whatwg-node/server` 的 `createServerAdapter`。所以同一个实例既能 `createServer(yoga)` 挂到 Node，也能在 Workers / Deno / Bun 上当 Fetch handler。`createSchema()` 只是 `@graphql-tools/schema` 的 `makeExecutableSchema` 包装。
 
 ## 为什么重要
 
-不理解 Yoga，下面这些事不好解释：
+不理解固定 5.22.0 的默认值，下面这些事会写错：
 
-- 为什么同一份 GraphQL handler 既能跑 Node，又能直接 `export default { fetch: yoga.fetch }` 部署到 Cloudflare Workers / Deno / Bun
-- 为什么 The Guild 工具链（codegen / inspector / mesh / hive）默认推 Yoga 当 server 层
-- 为什么 GraphQL 圈出现"两条主线"——Apollo 的全家桶 vs Yoga + Envelop 的拼装路线
-- 为什么 Yoga v3 重写后体积砍到一半还更快——Web Fetch API 抛掉 Node 专属胶水
+- 为什么旧文档里的 `dotansimha/graphql-yoga` 现在应写成 `graphql-hive/graphql-yoga`
+- 为什么生产环境不关 GraphiQL / landing page / CORS，调试面和跨域策略会按默认敞开
+- 为什么 `context: { cache: new Map() }` 不是每请求新建——静态对象会被原样复用
+- 为什么 Federation 不该再写 `@graphql-yoga/federation` / `useApolloFederation`：该 revision 没有这两个符号
 
 ## 核心要点
 
-Yoga 的设计可以拆成 **三块**：
+Yoga 的请求链可以看成四段：
 
-1. **Fetch-based HTTP**：Yoga 是一个 `(Request) => Response` 的纯函数。Node 用 `createServer(yoga)`，Workers 用 `export default { fetch: yoga.fetch }`，本质是同一个东西。类比：你的厨房只接受标准化外卖箱，谁来取都按这个箱子接。
+1. **Fetch adapter 外壳**：`createYoga` 返回 `ServerAdapter`。默认 `graphqlEndpoint` 是 `/graphql`，健康检查是 `/health`，`logging` 默认打开。
 
-2. **Envelop 插件系统**：每个 GraphQL 阶段（parse / validate / context / execute / subscribe）都开 hook，插件像积木一样拼。`useDepthLimit`、`useResponseCache`、`usePersistedOperations` 都是社区插件。类比：每道菜中间留一个检查口，安检员、营养师、记账员各自挂上去。
+2. **Envelop 插件链**：内置 `useEngine`（graphql-js 的 `parse`/`validate` + `@graphql-tools/executor`）、请求 parser、结果 processor、校验缓存和错误掩码。用户 `plugins` 插在 parser 之后、校验缓存之前。
 
-3. **schema 工厂 + context 工厂**：`createSchema` 把 typeDefs + resolvers 编成可执行 schema；`context` 是个函数，每请求跑一次注入登录用户。
+3. **默认安全/调试开关**：`graphiql !== false` 时启用 GraphiQL（只在 `GET` 且 `Accept` 含 `text/html` 时渲染）；`landingPage` 默认开；`cors !== false` 时启用 CORS；`maskedErrors` 默认开，文案是 `Unexpected error.`；`multipart` 默认开；`batching` 默认关，显式打开后 limit 默认 10。
 
-底层 executor 仍是 graphql-js，所以 schema 文件能在 Apollo / Yoga 之间直接搬。
+4. **订阅走 SSE 优先**：async iterable / subscription 结果优先匹配 `text/event-stream`；固定实现会先写一行注释 ping，再每 12 秒心跳。GraphiQL 的 `subscriptionsProtocol` 还可选 `GRAPHQL_SSE` / `WS` / `LEGACY_WS`。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：Node 上跑起来
+### 案例 1：Node 上挂同一个 adapter
 
 ```js
-import { createYoga, createSchema } from 'graphql-yoga'
-import { createServer } from 'node:http'
+import { createYoga, createSchema } from "graphql-yoga";
+import { createServer } from "node:http";
 
-const schema = createSchema({
-  typeDefs: `
-    type Book { title: String, author: String }
-    type Query { books: [Book] }
-  `,
-  resolvers: { Query: { books: () => [{ title: 'A', author: 'X' }] } },
-})
+const yoga = createYoga({
+  schema: createSchema({
+    typeDefs: /* GraphQL */ `
+      type Book { title: String, author: String }
+      type Query { books: [Book] }
+    `,
+    resolvers: { Query: { books: () => [{ title: "A", author: "X" }] } },
+  }),
+});
 
-createServer(createYoga({ schema })).listen(4000)
+createServer(yoga).listen(4000);
 ```
 
-打开 `http://localhost:4000/graphql` 自带 GraphiQL，能直接写查询。
+打开 `http://localhost:4000/graphql` 且浏览器带 `Accept: text/html` 时会进 GraphiQL。这是默认，不是需要另装的插件。
 
-### 案例 2：同一份代码部署到 Cloudflare Workers
+### 案例 2：同一实例交给 Cloudflare Workers
 
 ```js
-import { createYoga, createSchema } from 'graphql-yoga'
+import { createYoga, createSchema } from "graphql-yoga";
 
 const yoga = createYoga({
   schema: createSchema({
     typeDefs: `type Query { hello: String }`,
-    resolvers: { Query: { hello: () => 'edge!' } },
+    resolvers: { Query: { hello: () => "edge" } },
   }),
-  graphqlEndpoint: '/',
-})
+  graphqlEndpoint: "/",
+  graphiql: false,
+  landingPage: false,
+});
 
-export default { fetch: yoga.fetch }
+export default yoga;
 ```
 
-不需要 `node:http`、不需要 polyfill；Workers 把请求当成 Web Request 喂进来，Yoga 直接吃。Deno 和 Bun 也走同样套路。
+Workers 认 Fetch handler。生产环境应显式关掉 GraphiQL / landing page，不要依赖“反正不是浏览器”。
 
-### 案例 3：用 Envelop 插件防 DoS
+### 案例 3：用本仓插件关 introspection
 
 ```js
-import { createYoga } from 'graphql-yoga'
-import { useDepthLimit } from '@envelop/depth-limit'
+import { createYoga } from "graphql-yoga";
+import { useDisableIntrospection } from "@graphql-yoga/plugin-disable-introspection";
 
 const yoga = createYoga({
   schema,
-  plugins: [useDepthLimit({ maxDepth: 10 })],
-})
+  graphiql: false,
+  plugins: [useDisableIntrospection()],
+});
 ```
 
-恶意客户端发 `user { posts { author { posts { author { ... } } } } }` 这种深层嵌套时直接被拒，避免后端被指数级 resolver 调用打崩。
+`useDisableIntrospection` 在该 monorepo 的 `packages/plugins/disable-introspection`。默认 `isDisabled` 为 true，会给 validate 加上 graphql-js 的 `NoSchemaIntrospectionCustomRule`。深度限制这类能力属于外部 Envelop 插件，不在本包默认链里。
 
 ## 踩过的坑
 
-1. **GraphiQL 默认开着**：`createYoga({})` 不传 `graphiql: false` 时生产环境也暴露调试 IDE，schema 一览无余。要么关掉，要么用 `graphiql: { headerEditorEnabled: false }` 限制。
-
-2. **graphql peerDep 版本错配**：`graphql` 是 peerDep，npm 同时装了两个版本时运行时报 "Cannot use a different copy of graphql"。锁同一份就行。
-
-3. **Federation 不在主包**：要做 subgraph 必须装 `@graphql-yoga/federation`，按 `useApolloFederation` 风格挂插件，光装 graphql-yoga 启动 Federation 会一脸懵。
-
-4. **context 工厂当全局缓存**：`context: () => ({ cache: new Map() })` 看着没事，跨请求**共享**会让 A 用户看到 B 用户的数据。每请求新建是关键。
+1. **以为 GraphiQL 只在开发环境出现**：默认 `graphiql` 为 true；只是按 `GET + text/html` 决定是否渲染，与 `NODE_ENV` 无关。
+2. **把静态 context 对象当成每请求工厂**：函数形式才按请求计算；普通对象每次原样返回，Map/DataLoader 会串请求。
+3. **继续写 `@graphql-yoga/federation`**：固定树里是 `@graphql-yoga/apollo-managed-federation` 与 `@graphql-yoga/apollo-inline-trace`，没有旧包名和 `useApolloFederation`。
+4. **打开 batching 却不设上限**：`batching: true` 时 limit 默认 10，不是无限。
+5. **忽略 `graphql` peer 必须是同一份拷贝**：peer 允许 15.2 / 16 / 17；装两份 graphql-js 仍会在 schema 运行时报复制错误。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 想跨运行时部署（Node + Workers / Deno / Bun 同一份）
-- 想要 GraphQL 但不想被 Apollo Studio / Federation 商业化路线绑
-- 已经在用 The Guild 工具链（codegen + hive + mesh）
-- 想用 Envelop 自定义中间件（rate limit、persisted ops、tracing）
+- 需要一份 handler 同时部署 Node 与 Workers / Deno / Bun
+- 已在 The Guild 工具链（codegen、Hive、Envelop 插件）里
+- 想要 GraphQL over HTTP，但不必绑 Apollo Studio 全家桶
 
 **不适用**：
-- 想要 Apollo Studio 一键监控 → 直接用 Apollo Server 省心
-- 团队已经标准化在 Apollo Federation v2 → 迁移收益不大
-- 极简 CRUD 单体 → REST/tRPC 更轻
-- 需要 GraphQL Java / Python 生态 → Yoga 只在 JS 圈
+- 团队已经标准化 Apollo Federation 控制面，迁移收益未实测
+- 只要 TS 单仓端到端类型、不需要字段选择——[[trpc]] 更直接
+- 不能接受 Node `>= 18`，或需要 GraphQL Java / Python 运行时——Yoga 只在 JS 圈
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018 年**：Prisma Labs 发布 graphql-yoga v1，本质是 `apollo-server-express + graphql-tools` 的预设打包，定位是"零配置 Apollo"
-- **2021 年**：The Guild 接管维护权，Prisma 把精力转向自家 ORM
-- **2022 年**：Yoga v3 大重写，扔掉 apollo-server-express 依赖，改用 Web Fetch API 自己实现 HTTP 层 + 集成 Envelop 插件系统
-- **2023 年**：v4 调整默认错误响应格式，对齐 GraphQL over HTTP spec；增 `@graphql-yoga/federation`
-- **2024–2025 年**：v5 持续打磨，subscription 用 SSE 替代 WebSocket 当默认，跨运行时矩阵稳定
+- 本文绑定 `graphql-hive/graphql-yoga@0c6025d5...`，包版本 `graphql-yoga@5.22.0`。
+- npm latest 未暴露 `gitHead`，溯源锚点是 package tag 剥皮提交，不是 npm gitHead。
+- 未安装依赖、未执行 GraphQL、未测跨运行时或 SSE 心跳，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **Web Fetch API 是跨运行时的最大公约数**：Yoga v3 的关键决策——只认 `Request/Response`，省掉一层适配
-- **Envelop 拆开 GraphQL 流水线**：parse / validate / execute 每步都能插钩子，比 Apollo 的 plugin 颗粒更细
-- **库可以"轻"也可以"全"**：Yoga 选轻，Apollo 选全，靠共享 graphql-js 底座保证 schema 不锁死
-- **The Guild vs Apollo 的路线分歧**：开源中性 + 商业化捆绑是 GraphQL 工具链长期的两条主轴
+1. **跨运行时的公约数是 Fetch，不是 `http.Server`**——adapter 把 Node 和 Workers 收成同一种箱子
+2. **默认值就是产品决策**：CORS、GraphiQL、landing page、错误掩码都默认开，安全面要显式关
+3. **插件插槽位置有合同**：用户插件在 parser 之后，因此能改方法面，但挡不住更早的 health check
+4. **包名会过期**：canonical 仓库和 Federation 插件名都已经换过一轮
+
+## 应用型自测
+
+1. `createYoga({})` 在生产环境是否默认提供 GraphiQL？
+2. `context: { loaders: new Map() }` 会每请求新建 Map 吗？
+3. 该 pin 里 Federation 应该 import `@graphql-yoga/federation` 吗？
+
+检查点：
+
+1. 是。默认 `graphiql !== false`，只要求 GET + `text/html`。
+2. 不会。静态对象每次原样返回，应写成函数。
+3. 不应该。该 revision 没有这个包名。
 
 ## 延伸阅读
 
-- 官方文档：[GraphQL Yoga Docs](https://the-guild.dev/graphql/yoga-server)（quickstart + 跨运行时部署都在这）
-- Envelop 文档：[envelop.dev](https://the-guild.dev/graphql/envelop)（理解插件系统的钥匙）
-- 视频：[The Guild — Yoga v3 Deep Dive](https://www.youtube.com/watch?v=ZgBRk2qd1JE)（作者讲为什么重写）
-- 对比阅读：[Apollo Server](https://www.apollographql.com/docs/apollo-server)（同类全家桶路线）
-- GraphQL over HTTP spec：[graphql/graphql-over-http](https://github.com/graphql/graphql-over-http)（Yoga v4+ 对齐的标准）
+- 文档：[the-guild.dev/graphql/yoga-server](https://the-guild.dev/graphql/yoga-server)
+- 固定源码：[graphql-hive/graphql-yoga](https://github.com/graphql-hive/graphql-yoga) —— 本文绑定提交 `0c6025d5bfcde9bd1be86b73ba406a0ca84e35eb`
+- Envelop：[the-guild.dev/graphql/envelop](https://the-guild.dev/graphql/envelop)
+- [[apollo-server]] —— 同生态另一条 server 路线
+- [[trpc]] —— 全 TS 单仓、没有 schema language 的对照
 
 ## 关联
 
-- [[apollo-server]] —— 同生态另一主流 server，schema 可互搬
-- [[express]] —— Yoga 可以挂在 Express 上当中间件
-- [[fastify]] —— 另一常见宿主，Yoga 提供官方适配
-- [[trpc]] —— 同站全 TS 替代品，没有 schema language
-- [[grpc-go]] —— 二进制契约 RPC，跨语言时比 GraphQL 更省字节
-- [[connect-rpc]] —— 跨语言 RPC，定位介于 gRPC 和 REST 之间
-- [[swr]] —— 前端拿 GraphQL 数据时常用的缓存层
+- [[apollo-server]] —— schema 可互搬的另一主流 GraphQL server
+- [[trpc]] —— 共享 TS 类型、不写 SDL 的对照
+- [[express]] / [[fastify]] —— 常见宿主；Yoga adapter 也能挂上去
+- [[connect-rpc]] —— 跨语言 RPC，字段选择需求弱时的对照
+- [[swr]] —— 前端取 GraphQL 数据时常见的缓存层
 
 ## 反向链接
 
