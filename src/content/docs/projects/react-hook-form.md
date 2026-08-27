@@ -4,56 +4,71 @@ title: react-hook-form — input 不进 React state 也能写表单
 日期: 2026-05-30
 分类: projects
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/react-hook-form/react-hook-form
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 33860b43d5c52f39b7280a012b5876e6ad3e905c
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 7.86.0
 ---
 
 ## 是什么
 
-react-hook-form（缩写 **RHF**）是一套**让 input 不走 React state、靠 ref 直接读 DOM 值**的 React 表单库。日常类比：像饭店点单——服务员（React）不必每写一个字就跑回厨房汇报，最后下单（提交）才把整张纸递过去。
+react-hook-form（缩写 **RHF**）是一套**让 input 值不走 React state、由内部可变对象直接托管**的 React 表单库。日常类比：像饭店点单——服务员（React）不必每写一个字就跑回厨房汇报，最后下单（提交）才把整张纸递过去。
 
 你写：
 
 ```jsx
-const {register, handleSubmit} = useForm();
+const { register, handleSubmit } = useForm();
 return <input {...register("email")} />;
 ```
 
-`register("email")` 返回一组 `ref + onChange + onBlur` 摊到 input 上。从这一刻起，用户每敲一个字符**只更新 DOM 自己**，不触发 React 重渲染——直到提交那一下，RHF 才把所有字段值收齐。官方大表单 benchmark 里，这常被写成比 Formik 快约 5–10 倍——根因就是少重渲染，不是魔法。
+`register("email")` 返回 `{ name, onChange, onBlur, ref }` 摊到 input 上。从这一刻起，用户每敲一个字符只更新 DOM 和内部值仓库，默认不触发 React 重渲染——直到提交那一下，RHF 才把所有字段值收齐交给你的回调。固定 7.86.0 的重渲染差异来自“少走 setState”这一机制本身；本轮未运行与 Formik 等库的对比 benchmark，不引用倍数结论。
 
 ## 为什么重要
 
 不理解 RHF 的 uncontrolled 心智，下面这些事都解释不通：
 
-- 为什么 100 字段表单用 Formik 输入卡顿，换成 RHF 立刻丝滑——同一个 React，差异在哪
-- 为什么 RHF + zod 几乎成了 React + TS 项目的默认搭配，而不是 RHF + 自己写校验
-- 为什么 RHF 在 Server Components / Suspense 边界总有奇怪 hydration warning，新一代库（Conform）反而更好
-- 为什么 valtio / mobx-react-lite / Jotai 这些库都用同一套"细粒度订阅"（前两者靠 Proxy，Jotai 靠 atom）——和 RHF 的 formState Proxy 是同一类思路
+- 为什么多字段大表单里“每个 input 一个 useState”会让每次击键都重渲染整棵子树，而 RHF 默认击键不重渲染
+- 为什么 RHF 常和 zod / valibot 这类 schema 库搭配——核心只留了一个 `resolver` 挂点，校验库全部外置
+- 为什么 uncontrolled 值存在 DOM/内部仓库里，遇到 Server Components 与 hydration 边界要格外小心
+- 为什么“订阅你读过的状态、只在它变化时重渲染”是一类通用性能思路——RHF 对 formState 的按需订阅是其中一种实现
 
 ## 核心要点
 
-RHF 性能秘诀拆三步：
+RHF 的执行链可以拆成四步（对应固定源码 `src/logic/createFormControl.ts`）：
 
-1. **register 把 input 注册成 uncontrolled**：返回 `{ref, name, onChange, onBlur}`，spread 到 `<input>`。值存在 DOM 里，**不进 React state**。类比：把笔记写在纸上，不每次都拍照发群。
+1. **register 把 input 登记成 uncontrolled**：返回 `{ name, onChange, onBlur, ref }`；`onBlur` 与 `onChange` 是同一个统一处理器，内部靠 `event.type` 区分 blur/change。值不进 React state。
 
-2. **内部影子仓库（教学上可叫 valuesRef）**：RHF 用 ref/可变对象镜像所有字段值。用户输入时 onChange 更新它，但**不**调用 setState。类比：服务员心里记单，但不打断厨房。
+2. **内部值仓库 `_formValues`**：一个可变对象镜像所有字段值。输入时统一处理器把新值 `set` 进去，但不调用 setState；只有 touched/dirty 变化、字段被 watch 或错误状态变化时才通知订阅者重渲染。
 
-3. **formState 用 Proxy 按字段订阅**：你访问 `formState.errors.email` 时，Proxy 拦截这次 get，把"errors.email"加进订阅集。之后只有 errors.email 变了，本组件才重渲染。类比：你订阅"我的快递"通知，邻居的快递更新不吵你。
+3. **formState 按需订阅**：`useForm` 返回的 `formState` 经 `getProxyFormState` 包装，用 `Object.defineProperty` 的 getter 记录你读过哪些**顶层 key**（`errors`、`isDirty`、`isValid`…）。之后只有这些 key 变化才让根组件重渲染。注意粒度是 formState 的 key，不是 `errors.email` 这种字段级路径。
 
-三件事合起来：输入只动 DOM，校验只动相关订阅者，整张表只在提交时被读一遍。
+4. **handleSubmit 收口**：克隆 `_formValues` → 跑 resolver schema 或内建规则校验 → 把 disabled 字段从提交值里剔除 → 全部通过才调用你的 onValid 回调，并更新 `isSubmitted` / `submitCount`。
 
-## 实践案例
+默认校验模式：`mode: onSubmit`（提交前不校验）、`reValidateMode: onChange`（提交失败后每次输入重校验）、`shouldFocusError: true`。
+
+## 实践示例
 
 ### 案例 1：register 一行替代 useState + onChange
 
 ```jsx
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 function LoginForm() {
-  const {register, handleSubmit, formState: {errors}} = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   return (
     <form onSubmit={handleSubmit(v => console.log(v))}>
-      <input {...register("email", {required: "必填"})} />
+      <input {...register("email", { required: "必填" })} />
       {errors.email && <span>{errors.email.message}</span>}
-      <input {...register("password", {minLength: 8})} />
+      <input {...register("password", { minLength: 8 })} />
       <button>登录</button>
     </form>
   );
@@ -62,106 +77,121 @@ function LoginForm() {
 
 **逐部分**：
 
-- `register("email", {required: "必填"})` 摊到 input 上 = ref + name + onChange + onBlur 一次给齐
-- `handleSubmit(callback)` 返回一个真正的事件处理器，会先跑校验再调 callback
-- `errors.email` 被读到时 Proxy 才订阅；提交失败 errors 写入，才重渲染该 span
+- `register("email", { required: "必填" })` 摊到 input 上 = name + 统一 onChange/onBlur + ref 一次给齐
+- `handleSubmit(callback)` 返回真正的事件处理器，先 preventDefault、跑校验，全部通过才调 callback
+- 这里读了 `formState.errors`，getter 把 `errors` 记入订阅集；提交失败写入 errors 时组件才重渲染
 
-零 useState、零 onChange handler——一份表单写完没碰一次 React state。
+零 useState、零手写 onChange——一份表单写完没碰一次 React state。
 
-### 案例 2：zodResolver 端到端类型安全
+### 案例 2：resolver 挂点接 schema 校验
 
 ```ts
-import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-const schema = z.object({email: z.string().email(), age: z.number().min(18)});
+const schema = z.object({ email: z.string().email(), age: z.number().min(18) });
 type FormValues = z.infer<typeof schema>;
 
-const {register, handleSubmit} = useForm<FormValues>({resolver: zodResolver(schema)});
+const { register, handleSubmit } = useForm<FormValues>({ resolver: zodResolver(schema) });
 // 下面仍是 <input {...register("email")} /> + handleSubmit，与案例 1 同形
-```
-
-**逐部分**（本案例只演示接线，完整 JSX 同案例 1）：
-
-- `z.object({...})` 写一份 schema，**一次定义，校验+类型双输出**
-- `z.infer<typeof schema>` 自动算出 `{email: string, age: number}` 类型
-- `useForm<FormValues>` 把类型灌给 hook，`register("email")` 字段名补全、值类型自动对
-- 同一个 schema 拿去 Server Action 再 `safeParse` 一次，前后端校验逻辑零重复
-
-### 案例 3：Controller 桥接受控组件
-
-react-select / MUI / antd 这些 UI 库的组件不接受 ref 直接读值，需要用 Controller 包一层：
-
-```jsx
-import {Controller} from "react-hook-form";
-import Select from "react-select";
-
-<Controller control={control} name="country"
-  render={({field}) => <Select {...field} options={countries} />} />
 ```
 
 **逐部分**：
 
-- `control` 从 useForm 拿，相当于"表单遥控器"
-- `render` 拿到 `field = {value, onChange, onBlur, ref}`，spread 给受控组件即可
-- 代价：Controller 是组件级订阅，每次输入都重渲染——比 register 慢，但是与生态妥协的必要桥
+- 固定源码里 `handleSubmit` 与输入路径都优先走 `_options.resolver`，命中时跳过内建规则
+- `z.infer<typeof schema>` 把 schema 类型灌给 hook，`register("email")` 字段名补全、值类型自动对
+- `@hookform/resolvers` 是独立仓库/包，负责把 zod 等库桥成 resolver 函数；本文只绑定核心的挂点行为，不绑定桥接包版本
+
+### 案例 3：Controller 桥接受控组件
+
+react-select / MUI / antd 这类组件不暴露原生 input ref，需要用 Controller 包一层：
+
+```jsx
+import { Controller } from "react-hook-form";
+import Select from "react-select";
+
+<Controller control={control} name="country"
+  render={({ field }) => <Select {...field} options={countries} />} />
+```
+
+**逐部分**：
+
+- `control` 从 useForm 拿，相当于“表单遥控器”
+- `render` 拿到 `field = { value, onChange, onBlur, ref }`，spread 给受控组件即可
+- 固定源码中 `useController` = `useWatch`（值）+ `useFormState`（字段状态）的组件级订阅：该字段每次输入这个组件都会重渲染——比 register 路径重，是与受控生态妥协的桥
 
 ## 踩过的坑
 
-1. **register 和 useState 抢值**：你给 input 同时写 `value={x}` 和 `{...register("x")}`，两套机制互相覆盖，结果 input 看起来更新了但提交拿到旧值。RHF 要 uncontrolled，input 上**别**再写 value 属性。
+1. **register 和 value 属性抢值**：给 input 同时写 `value={x}` 和 `{...register("x")}`，两套机制互相覆盖，input 看起来更新了但提交拿到旧值。RHF 要 uncontrolled，input 上别再写 value。
 
-2. **watch() 把性能优势全交回去**：`const all = watch()` 订阅整张表，每次输入都让本组件重渲染。10+ 字段时性能掉到 Formik 水平。该用 `useWatch({name: "email"})` 单字段订阅。
+2. **watch() 把性能优势全交回去**：固定源码里无参 `watch()` 订阅整张表的值，每次输入都让本组件重渲染。要单字段就用 `useWatch({ name: "email" })`，订阅留在子组件；7.86.0 的 `useWatch` 还支持 `compute` 投影，只在算出的结果变化时更新。
 
-3. **Controller 越多越像 Formik**：受控组件每个字段都是一次组件级重渲染。10+ 个 Controller 的表单里 RHF 性能护城河接近消失，要么换 useController（更轻），要么承认这种场景就是慢。
+3. **Controller 越多越接近全受控**：每个 Controller 都是组件级订阅，字段一多，击键重渲染次数随之增加，uncontrolled 的差异逐渐消失。这是机制推论；本轮未测量具体阈值。
 
-4. **shouldUnregister v6→v7 默认翻转**：v7 默认 false（卸载组件保留字段值），v6 默认 true（删）。老项目升级时动态字段表行为静默改变，提交结果突然多出"已删除"字段。
+4. **shouldUnregister 默认保留卸载字段的值**：7.86.0 默认 `shouldUnregister` 为 falsy——字段组件卸载后值仍留在 `_formValues`，提交结果里会带出“已经不在界面上”的字段。做动态表单要么显式 `shouldUnregister: true`，要么手动 `unregister`。
+
+5. **disabled 字段不进提交结果**：`handleSubmit` 在调用回调前把 disabled 字段的值从 payload 里 `unset`。想保留只读值就用 `readOnly` 而不是 `disabled`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 中大型表单（10+ 字段），性能敏感
-- React + TypeScript 项目，与 zod / valibot / yup schema 配套
+
+- 中大型、字段多、击键频繁的表单，希望输入路径不触发 React 重渲染
+- React + TypeScript 项目，用 resolver 挂点接 zod / valibot 等 schema 库
 - 复杂条件字段、依赖联动、动态 FieldArray
-- 客户端高频校验场景（实时反馈用户输入）
+- 满足 package 边界：Node >=18，React `^16.8 || ^17 || ^18 || ^19`
 
 **不适用**：
-- 纯 Server Components / Server Action 场景——uncontrolled 与 hydration 边界冲突，Conform 更顺
-- 表单只 3-5 字段——RHF 心智成本和 useState 持平甚至更高
+
+- 重 Server Components / Server Action 的表单——uncontrolled 值不在 React 树里，hydration 与服务端往返边界要自己兜
+- 表单只有 3-5 个字段——RHF 的心智成本和 useState 持平甚至更高
 - 已深度绑定 antd Form / Mantine Form 的项目——这些 UI 库自带表单系统，混用代价高
-- React 19 之前的 SSR 表单——defaultValues 与 server props 同步要自己做
+- 大多数字段都必须走 Controller 的纯受控生态——RHF 的机制优势发挥不出来
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2019 年**：Bill Luo（@bluebill1049）个人开源 v1，对标当时垄断的 Formik，主打 uncontrolled。第一版 README 直接放 benchmark 数据，性能差距说服力极强。
-- **2021 年**：v7 重写——把原来手动维护的 subscription 系统换成 Proxy，bundle 砍 30%，API 收敛到现在这套 register / handleSubmit / formState。breaking change，但社区接受度高。
-- **2022 年**：`@hookform/resolvers` 拆出来独立维护，按子包提供 zod / yup / joi / valibot / arktype / class-validator 等桥接，让校验库与表单库彻底解耦。
-- **2024–2026 年**：weekly downloads ~10M+，GitHub stars 已到 **4 万+**，与 zod 形成 React+TS 表单事实标配。
+- 本文绑定 `react-hook-form/react-hook-form@33860b43...`，即 tag `v7.86.0`，package 版本 `7.86.0`。
+- npm 同版本的 `gitHead` 比 tag 多一个仅改 CHANGELOG 的提交，tag 是它的祖先，两者源码树一致；本文绑定 tag 提交。
+- package 声明 Node >=18；peer 依赖 React `^16.8.0 || ^17 || ^18 || ^19`。
+- 默认选项：`mode: onSubmit`、`reValidateMode: onChange`、`shouldFocusError: true`；`shouldUnregister` 默认 falsy（卸载保留值）；disabled 字段值在提交时被剔除。
+- 同版本还提供 `createFormControl`（hook 外建控制器）、公开 `subscribe` API 与 bfcache 恢复用的内部 resync；本文未展开。
+- 本文未安装依赖、未运行上游测试、未测 bundle 或性能对比，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **uncontrolled 在 React 时代不是落后选择**——它是性能 vs DX 的工程权衡，量大时优势明显
-2. **Proxy + 按字段订阅** 是高性能 React 库的通用套路（valtio / mobx-react-lite / Jotai 都是这套思路）
-3. **resolver 模式** 让校验库与表单库解耦，是开源最佳实践——Formik 早期硬编码 yup 后悔莫及
-4. **生态网络效应是真护城河**——RHF 单点技术优势在小表单不明显，但 RHF + zod + tRPC + Next.js 形成闭环后新项目几乎默认这一套
+1. **uncontrolled 在 React 时代不是落后选择**——把高频值更新挪出 React state 是性能 vs DX 的工程权衡，字段多时优势明显
+2. **可变仓库 + 选择性通知**是高频状态的通用解法：值随便写，重渲染只在“有人订阅的状态”变化时发生
+3. **记录“你读过什么”不一定要 Proxy**——defineProperty getter 同样能实现按需订阅；粒度设计（key 级 vs 字段级）才是关键取舍
+4. **resolver 模式**让校验库与表单库解耦：核心只留挂点，桥接放独立包，生态可以各自演化
+
+## 应用型自测
+
+1. `register("email")` 返回的 `onChange` 和 `onBlur` 是两个不同的处理函数吗？
+2. 组件里只读了 `formState.isDirty`，另一个字段的校验错误变化会让它重渲染吗？
+3. 一个 `disabled` 的字段，它的值会出现在 `handleSubmit` 拿到的 values 里吗？
+
+检查点：
+
+1. 不是。两者是同一个统一处理器，内部靠 `event.type` 判断是 blur 还是 change。
+2. 不会。getter 只把读过的顶层 key（这里是 `isDirty`）记入订阅集，`errors` 变化不触发它重渲染。
+3. 不会。提交前 disabled 字段的值被从 payload 中剔除；要保留值应改用 `readOnly`。
 
 ## 延伸阅读
 
 - 官方文档：[react-hook-form.com](https://react-hook-form.com/)（Get Started 30 分钟能跑通）
-- 性能对比文章：[Why React Hook Form?](https://react-hook-form.com/faqs)（含与 Formik / Final Form 的逐项 benchmark）
-- 视频：YouTube 搜 "Bill Luo react-hook-form" 有作者亲自讲设计动机
-- [[zod]] —— RHF 默认搭档的 schema 库
-- [[react]] —— hooks 是 RHF 存在的前提
-- [[tanstack-form]] —— 同代竞品，hook-based + 渐进 control
+- 固定源码：[react-hook-form/react-hook-form](https://github.com/react-hook-form/react-hook-form) —— 本文绑定提交 `33860b43d5c52f39b7280a012b5876e6ad3e905c`
+- [[zod]] —— RHF 最常搭的 schema 库，经 resolver 挂点接入
+- [[tanstack-form]] —— 同代竞品，显式受控 + selector 订阅，设计哲学正相反
 
 ## 关联
 
 - [[zod]] —— RHF 最常配的 schema 校验库，`@hookform/resolvers/zod` 一行接通
-- [[valibot]] —— zod 的轻量替代，bundle 小一截，同样有 RHF resolver
+- [[valibot]] —— zod 的轻量替代，同样有 RHF resolver 桥
 - [[react]] —— RHF 完全建立在 hooks 之上，没有 16.8 就没有它
-- [[tanstack-form]] —— 同期新作品，从设计到 API 都是 RHF 的回应
-- [[valtio]] —— 同样 Proxy + 按字段订阅，但用在全局 state 而非表单
-- [[jotai]] —— atom 粒度订阅，与 RHF 字段粒度订阅是同思路在不同问题上的应用
-- [[mobx]] —— Proxy 订阅的祖师爷，RHF 的 formState Proxy 思路就是 mobx 简化版
+- [[tanstack-form]] —— 同期新作品，从设计到 API 都是 RHF 的对照组
+- [[valtio]] —— 用 Proxy 做细粒度订阅的 state 库；RHF 用 getter 记录订阅，两者可对照
+- [[jotai]] —— atom 粒度订阅，与 RHF 的 formState key 粒度订阅是同思路不同粒度
+- [[mobx]] —— 响应式订阅的老牌代表，适合对照理解“订阅你读过的状态”
 
 ## 反向链接
 
