@@ -20,6 +20,9 @@
   - `haystack/core/pipeline/pipeline.py`
   - `haystack/core/component/component.py`
   - `haystack/components/agents/`
+  - `haystack/components/generators/__init__.py`、`haystack/components/generators/chat/`
+  - `haystack/components/builders/`
+  - `haystack/components/embedders/__init__.py`
   - `haystack/tools/`
   - `haystack/skill_stores/`
   - `haystack/document_stores/`
@@ -30,6 +33,8 @@
   - Agent 位于核心包 `haystack.components.agents`（`agent.py`、`tool_calling.py`、`state/`），工具层 `haystack/tools/` 提供 `Tool`、`ComponentTool`、`PipelineTool`、`Toolset`、`from_function` 等；`haystack/skill_stores/`（file_system 后端）是该版本的 agent skills 存储；
   - Pipeline 可序列化：`to_dict` / `dumps` / `loads` 走 Marshaller（默认 YAML）；
   - 核心包只内置 `in_memory` document store 与 types 协议，外部向量库经独立 integration 包接入；`requires-python >=3.10`。
+  - 核心 `haystack.components.generators` 只导出 `OpenAIImageGenerator`；文本 LLM 是 `haystack.components.generators.chat.OpenAIChatGenerator`，`run(messages=...)` 输入 socket 为 `messages`，输出 `replies`。与之配对的是 `ChatPromptBuilder`（输出 socket 仍名 `prompt`，类型 `list[ChatMessage]`），连接为 `prompt.prompt → llm.messages`。已删除的 `OpenAIGenerator` / `prompt` completion 口不是该 pin 的当前 API。
+  - 核心 `haystack.components.embedders` 导出 `OpenAIDocumentEmbedder`、`OpenAITextEmbedder`、`AzureOpenAIDocumentEmbedder`、`AzureOpenAITextEmbedder`、`MockDocumentEmbedder`、`MockTextEmbedder`；`SentenceTransformersDocumentEmbedder` 不在该 revision 的核心树。
 - provenance note：
   - GitHub release `v3.1.0`（2026-08-24）为 annotated tag `26b9a845...`，解引用到提交 `859a6eb3...`（"bump version to 3.1.0"）；PyPI 包名为 `haystack-ai`；
   - 旧正文的 “v2 架构（2024-03）”“Pipeline 不能有环，循环要用 haystack-experimental 的 Agent”“大约 17k stars” 在该 revision 均已过时或不可绑定，已由上述观察替换。

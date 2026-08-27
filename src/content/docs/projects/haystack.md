@@ -28,15 +28,18 @@ Haystack 是一套**用组件图把 NLP / RAG / Agent 流程连成流水线**的
 ```python
 from haystack import Pipeline
 from haystack.components.retrievers.in_memory import InMemoryBM25Retriever
-from haystack.components.builders import PromptBuilder
-from haystack.components.generators import OpenAIGenerator
+from haystack.components.builders import ChatPromptBuilder
+from haystack.components.generators.chat import OpenAIChatGenerator
+from haystack.dataclasses import ChatMessage
+
+template = [ChatMessage.from_user("用以下文档回答：{{documents}}\n问题：{{query}}")]
 
 pipe = Pipeline()
 pipe.add_component("retriever", InMemoryBM25Retriever(document_store=store))
-pipe.add_component("prompt", PromptBuilder(template=template))
-pipe.add_component("llm", OpenAIGenerator())
+pipe.add_component("prompt", ChatPromptBuilder(template=template))
+pipe.add_component("llm", OpenAIChatGenerator())
 pipe.connect("retriever.documents", "prompt.documents")
-pipe.connect("prompt.prompt", "llm.prompt")
+pipe.connect("prompt.prompt", "llm.messages")
 pipe.run({"retriever": {"query": "Haystack 是什么"}, "prompt": {"query": "Haystack 是什么"}})
 ```
 
@@ -68,15 +71,19 @@ pipe.run({"retriever": {"query": "Haystack 是什么"}, "prompt": {"query": "Hay
 ### 案例 1：最简 RAG 流水线（查询侧）
 
 ```python
-template = "用以下文档回答：{{documents}}\n问题：{{query}}"
+from haystack.components.builders import ChatPromptBuilder
+from haystack.components.generators.chat import OpenAIChatGenerator
+from haystack.dataclasses import ChatMessage
+
+template = [ChatMessage.from_user("用以下文档回答：{{documents}}\n问题：{{query}}")]
 
 pipe = Pipeline()
 pipe.add_component("retriever", InMemoryBM25Retriever(document_store=store))
-pipe.add_component("prompt", PromptBuilder(template=template))
-pipe.add_component("llm", OpenAIGenerator())
+pipe.add_component("prompt", ChatPromptBuilder(template=template))
+pipe.add_component("llm", OpenAIChatGenerator())
 
 pipe.connect("retriever.documents", "prompt.documents")
-pipe.connect("prompt.prompt", "llm.prompt")
+pipe.connect("prompt.prompt", "llm.messages")
 
 result = pipe.run({"retriever": {"query": "Haystack 是什么"},
                    "prompt":    {"query": "Haystack 是什么"}})
@@ -88,11 +95,16 @@ DAG 形态是 `retriever -> prompt -> llm`，但 `query` 同时喂给 `retriever
 ### 案例 2：索引侧流水线（写入文档存储）
 
 ```python
+from haystack.components.converters import TextFileToDocument
+from haystack.components.preprocessors import DocumentCleaner, DocumentSplitter
+from haystack.components.embedders import OpenAIDocumentEmbedder
+from haystack.components.writers import DocumentWriter
+
 indexing = Pipeline()
 indexing.add_component("converter", TextFileToDocument())
 indexing.add_component("cleaner",   DocumentCleaner())
 indexing.add_component("splitter",  DocumentSplitter(split_by="word", split_length=200))
-indexing.add_component("embedder",  SentenceTransformersDocumentEmbedder())
+indexing.add_component("embedder",  OpenAIDocumentEmbedder())
 indexing.add_component("writer",    DocumentWriter(document_store=store))
 
 indexing.connect("converter.documents", "cleaner.documents")
@@ -101,7 +113,7 @@ indexing.connect("splitter.documents",  "embedder.documents")
 indexing.connect("embedder.documents",  "writer.documents")
 ```
 
-每一步的 socket 类型都对得上；接错（比如把 embeddings 接到 documents 口）在 `connect()` 这一刻就报错——不用等运行时崩。
+每一步的 socket 类型都对得上；接错（比如把 embeddings 接到 documents 口）在 `connect()` 这一刻就报错——不用等运行时崩。固定 3.1.0 核心 `haystack.components.embedders` 导出的是 `OpenAIDocumentEmbedder` / `AzureOpenAIDocumentEmbedder` / `MockDocumentEmbedder`（及对应 text 变体）；`SentenceTransformersDocumentEmbedder` 不在该 pin 的核心包，本文不把它写成当前 API。
 
 ### 案例 3：自定义 Component
 
@@ -129,6 +141,8 @@ class WordCounter:
 
 5. **类型校验的严格度是双刃剑**：装配期报错前移了问题，但也意味着升级框架或换组件时，类型不匹配会立即拦住你——预留调整 socket 适配的时间。
 
+6. **旧 completion generator 教程会直接 import 失败**：`haystack.components.generators` 在该 pin 只导出 `OpenAIImageGenerator`；文本 LLM 要用 `haystack.components.generators.chat.OpenAIChatGenerator`，输入 socket 是 `messages`，不是已删除的 `OpenAIGenerator.prompt`。`PromptBuilder` 仍在核心 builders 里，但和 chat generator 配对的是产出 `list[ChatMessage]` 的 `ChatPromptBuilder`，连接写成 `prompt.prompt → llm.messages`。
+
 ## 适用 vs 不适用场景
 
 **适用**：
@@ -149,6 +163,7 @@ class WordCounter:
 
 - 本文绑定 `deepset-ai/haystack@859a6eb3...`，即 release tag `v3.1.0`；`VERSION.txt` 与 `pyproject.toml`（包名 `haystack-ai`）一致；`requires-python >=3.10`。
 - 该版本 `Pipeline` 提供 `run` / `run_async` / `run_async_generator`；图允许环（不受支持的环形连接在运行入口抛错）；Agent 位于核心 `haystack.components.agents`，工具层含 `Tool`/`ComponentTool`/`PipelineTool`/`Toolset`，`skill_stores/` 提供 skills 文件系统存储。
+- 核心 `haystack.components.generators` 只导出 `OpenAIImageGenerator`；文本生成入口是 `OpenAIChatGenerator`（`messages` → `replies`）。核心 embedders 为 OpenAI / Azure OpenAI / Mock 的 document 与 text 变体；`SentenceTransformersDocumentEmbedder` 在该 pin 的核心树中不存在。
 - 核心只内置 in-memory document store；外部存储经独立 integration 包接入，其版本兼容不在本文绑定范围。
 - 本文未安装依赖、未运行任何 pipeline 或上游测试、未测检索/生成质量，状态保持 `UNVERIFIED`。
 
