@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "rolldown",
+    "digest_sha256": "9e4d556a8ad2029c3e5e64ae4199fd37a3cc3d03a72eb77773d9d918573fc73a"
+  },
+  "source_revision": "5375362b36eeeaf514c67052ba65f3e97523dde5",
+  "research_input_sha256": "8005a48ff610b92196b2c26cdc80908a0f6fb440e5ed0f6860b38ecc6ce73ac0",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-o",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains scan/link/generate/write, Rollup-compatible plugins, define versus replace, and Vite package boundary with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-o",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v1.2.6 Bundler/Bundle stages, JS API, plugin docs, and oxc pin were inspected; upstream tests and Vite were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-o",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Performance claims stay unbound; Vite 8 dependency is npm metadata only and does not review Vite source."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

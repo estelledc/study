@@ -1,66 +1,29 @@
 ---
-title: oxc — Rust 写一整套 JS/TS 工具链的勇气
-来源: 'https://github.com/oxc-project/oxc'
+title: oxc — 用一份 arena AST 串起 JS/TS 编译器组件
+来源: https://github.com/oxc-project/oxc
 日期: 2026-05-30
-分类: projects / 编译器
+分类: 编译器 / 工具链
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/oxc-project/oxc
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 4e258430cdb290598d9f2aeb2d13be598ec9e8e9
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.147.0
 ---
 
 ## 是什么
 
-oxc 是用 **Rust 写的一整套 JavaScript / TypeScript 工具链**——parser、linter、formatter、transformer、resolver、minifier 全在一个仓库里。日常类比：像一座共用一份图纸的工厂大院，所有车间（linter、formatter）都从同一台总装线（parser + AST）下料，不再各画各的图。
+oxc（Oxidation Compiler）是一组用 Rust 写的 JavaScript / TypeScript 编译器组件。日常类比：不是再盖一座“全能工厂”，而是先把图纸、料架和尺码统一——parser 产出同一棵 AST，linter、transformer、minifier、codegen 都在这棵树上干活。
 
-主流前端的现状是：ESLint、Prettier、Babel、tsc、swc、esbuild 各自带一份 parser，每个 parser 输出自己定义的 AST。CI 跑一次 lint+format+build，同一段代码可能被 parse 六次。
-
-oxc 的判断：**AST 应该是个独立的 crate**，parser 把字节变成树，linter 和 formatter 只读这棵树就行。这套设计让它的 linter 比 ESLint 快 50-100 倍，parser 比 swc 快 3 倍。
-
-## 为什么重要
-
-不理解 oxc，下面这些事都没法解释：
-
-- 为什么 Vite 团队会选一个新工具（Rolldown）当下一代 bundler，底座却押在 oxc 上
-- 为什么"用 Rust 重写 ESLint"听起来简单，真做出来的只有 oxc 和 [[biome]]
-- 为什么 oxc 故意不做插件 API，把社区可贡献口收得很窄
-- 为什么 oxlint 在大型 monorepo 里能把 lint 阶段从 90 秒压到 1 秒
-
-## 核心要点
-
-oxc 的设计可以拆成 **三个判断**：
-
-1. **AST 独立成 crate**：`oxc_ast` 是纯 data-only crate，不依赖 parser。下游想做 transform 不用先 parse 一次，直接接 AST。类比：螺丝标准化，所有工具厂都能用同一颗。
-
-2. **数据结构决定性能**：`Span` 用 `u32` 而不是 `usize`，每个节点省 8 字节；分配走 bump arena 而不是 `Box<T>`，drop 整棵树是 O(1)；标识符走 `Atom` 字符串 interning，比较是指针对比。
-
-3. **故意不开放插件 API**：所有 lint 规则都在主仓库里，由维护者直接 review。代价是用户写不了"自定义业务规则"，收益是每次升级不用考虑插件兼容。
-
-三个判断合在一起：**接口标准化 + 数据结构极致 + 生态故意收窄**。
-
-换句话说，oxc 不只是"把 ESLint 翻译成 Rust"——它先把 AST、Span、Allocator 这套"地基"重做一遍，再让 linter / formatter / transformer 像几栋楼一样长在同一块地基上。地基不变，楼可以一栋栋盖。这也是它能同时被 Rolldown 当 parser、被 oxlint 当 lint 引擎、被 oxc-resolver 当解析库的原因。
-
-## 实践案例
-
-### 案例 1：oxlint 在 CI 里替换 ESLint
-
-```bash
-# 原来 .eslintrc.js + 200 个文件
-$ time pnpm lint
-real    1m32.4s
-
-# 安装 oxlint，配置基本兼容
-$ pnpm add -D oxlint
-$ time pnpm oxlint
-real    0m0.9s
-```
-
-**逐部分解释**：
-
-- oxlint 把 600+ 条规则编译进二进制，不像 ESLint 每次都要 require plugin
-- 多线程跑文件，单核 ESLint 永远赶不上
-- 不兼容的规则会输出 warning，不会让 CI 失败
-- oxlint 默认开启的规则集（correctness、suspicious）覆盖了 ESLint recommended 的 80%
-- 不兼容那部分规则可以保留 ESLint 二次跑，逐步迁移而不是一次切干净
-
-### 案例 2：Rolldown 把 oxc 当依赖用
+固定 `crates_v0.147.0` 里，`oxc` crate 是带 feature 的门面；真正的节点类型在 `oxc_ast`，分配在 `oxc_allocator`，源码位置在 `oxc_span`。Node 侧通过 NAPI 包使用，例如 `oxc-parser@0.147.0`。
 
 ```rust
 use oxc_allocator::Allocator;
@@ -68,89 +31,130 @@ use oxc_parser::Parser;
 use oxc_span::SourceType;
 
 let allocator = Allocator::default();
-let source = "const x: number = 1;";
-let ret = Parser::new(&allocator, source, SourceType::ts()).parse();
-// ret.program 是 AST，ret.errors 是诊断列表
+let ret = Parser::new(&allocator, "const x: number = 1;", SourceType::ts()).parse();
 ```
 
-Rolldown 拿到 `ret.program` 直接喂给 `oxc_transformer` 做 TS 降级 + JSX 转换，全程 **不再 parse 第二次**。同一棵 AST 在 bundler 里走完整个 pipeline，省的不只是 parse 时间，还省了"两份 AST 数据结构互相转换"的代码量——这部分在传统工具链里往往是最难维护、最容易出 bug 的胶水层。
+`ret.program` 是 AST，`ret.diagnostics` 是可恢复语法错误，`ret.panicked` 为真时 program 会被清空。
 
-### 案例 3：oxc-resolver 替 enhanced-resolve
+## 为什么重要
 
-webpack/Rspack 用的 `enhanced-resolve` 是 JS 写的，每次解析 `import` 都要走 Node fs sync。oxc-resolver 用 Rust 实现同样的 Node 解析算法，且把 `tsconfig.json` 的 paths 也内置：
+不理解 oxc，下面这些事都没法解释：
 
-```ts
-const resolver = new Resolver({ extensions: ['.ts', '.tsx', '.js'] });
-resolver.sync('/project/src', './utils');
-// → /project/src/utils.ts
+- 为什么 [[rolldown]] 能把 parse / transform / minify 都押在同一套 crate 上，却把模块解析放到另一个仓库
+- 为什么“parse 成功”不等于“这棵树可以拿去变换”——语义分析和 scoping 是后一步
+- 为什么同一仓库里同时出现 `0.147.0` 的编译器 crate 和 `1.x` 的 linter/apps 版本号
+- 为什么旧印象里的“完全不做插件、resolver 也在本仓”对不上固定源码
+
+## 核心要点
+
+固定版本的主链可以拆成四层：
+
+1. **地基独立成 crate**：`oxc_allocator` 是 bump arena；`oxc_span::Span` 用 `u32` 记起止，源文件超过约 4 GiB 会被拒绝；`oxc_ast` 把 estree 里含糊的 `Identifier` 拆成 `BindingIdentifier` / `IdentifierReference` / `IdentifierName`。
+
+2. **parser 只做句法**：手写递归下降，支持稳定 ECMAScript、TypeScript、JSX/TSX。作用域、符号和更贵的语法检查交给 `oxc_semantic`。可恢复错误仍会留下结构完整的 AST；不可恢复则 `panicked`。
+
+3. **`Compiler::compile` 是可选流水线**：parse → 可选 isolated declarations → semantic → 可选 transform → inject/define → compress/DCE → mangle → codegen。transform 之后 scoping 与 AST 不同步，inject/define/compress 会先重建 `Scoping`。
+
+4. **发布流是两条**：本页绑定 `crates_v0.147.0` / `4e258430...`，编译器 crate 与 `oxc-parser` 均为 `0.147.0`。同提交里 `oxc_linter` 报 `1.79.0`；`apps_v1.80.0` 指向另一 SHA。`oxc_resolver` 不在本 workspace。
+
+## 实践示例
+
+### 案例 1：Rust 侧 parse，并区分 panicked 与 diagnostics
+
+```rust
+let allocator = Allocator::default();
+let ret = Parser::new(&allocator, source, SourceType::from_path(path)?).parse();
+if ret.panicked {
+    // program 被换成 dummy，不要继续 semantic / transform
+}
+// diagnostics 非空时，AST 仍可能在；语义是否合法要再跑 SemanticBuilder
 ```
 
-实测在大型 monorepo 里比 enhanced-resolve **快 28 倍**，bundler 冷启动直接腰斩。
+`SourceType` 同时编码语言、module/script/commonjs/unambiguous 和 JSX。`unambiguous` 只是 parser 输入：看到 `import` / `export` / `import.meta` 才落成 module。
 
-oxc-resolver 还顺手把 `package.json` 的 `exports` / `imports` 字段、`browser` 字段、`module` 字段都按 Node 规范实现了，下游不用再各自维护一套兼容代码。Rspack、Rolldown、unbuild 都已经切到这条依赖。
+### 案例 2：Node 侧用 `oxc-parser` 同步解析
+
+```js
+import { parseSync } from "oxc-parser";
+
+const result = parseSync("app.ts", "export const n: number = 1;");
+console.log(result.program, result.errors);
+```
+
+`parse()` 把 Rust parse 放到别的线程，但 AST 反序列化仍在当前线程，文档写明同步反序列化通常比异步 parse 更重。多文件并行应自己开 worker，而不是指望 `parse()` 自动摊开。
+
+### 案例 3：同一棵树接着做 transform，而不是重新 parse
+
+`Transformer::new(allocator, path, options).build_with_scoping(scoping, program)` 接收已经做过 semantic 的 `Scoping`。TypeScript 擦除、JSX、按 target 降级都在 `oxc_transformer`。下游 bundler 的收益是少一次 parse，也少一次 AST 互转。
 
 ## 踩过的坑
 
-1. **arena lifetime 学习曲线陡**：所有 AST 节点都借用 `&'a Allocator`，写 visitor 时一个生命周期写错就编译不过，前端开发者第一周常卡在这。
-
-2. **formatter 还没到 1.0**：`oxfmt` 输出格式和 Prettier 有少量差异（trailing comma、JSX 换行），需要 100% Prettier 兼容选 Biome 而不是 oxc。
-
-3. **没插件 API**：公司内部要写"禁止 import 某模块"这种业务规则，要么 fork oxlint 改主仓库，要么继续用 ESLint custom rule，没第三条路。
-
-4. **不做类型推导**：oxc 不是 tsc 的替代——它不知道 `T extends keyof X` 这种类型层面的事情，类型检查仍然必须 `tsc --noEmit`。
+1. **把空 `diagnostics` 当成语义合法**：parser 文档要求再跑带 syntax-error checking 的 semantic analysis。
+2. **transform 之后复用旧 scoping**：`compiler.rs` 明确 transformer 会把符号表弄脏；inject/define/compress 前必须重建。
+3. **把 `oxc_resolver` 写进本仓**：Rolldown 的 `Cargo.toml` 也把它标成独立仓库依赖。
+4. **把 apps 的 1.x 版本当成 crate 版本**：linter/CLI 与 parser/transformer 不是同一套 semver。
+5. **以为 `parse()` 能把大部分工作并行化**：NAPI 注释写明反序列化占大头。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 大型 monorepo 想砍 lint / parse 时间，oxlint 是当前最快的 ESLint 替代
-- 自己造 bundler / 框架，想白嫖一份"100% TS 兼容"的 parser + AST
-- Vite 用户切到 Rolldown-Vite，自动享受 oxc 加速
-- 想读 Rust 编译器源码学性能优化（arena / 字符串 interning / u32 offset）
+- 自己做 bundler、转译器或语言服务，需要一份可复用的 TS/JS AST
+- 要在 Rust 或 Node 里做 parse → semantic → transform → codegen，且能接受 arena lifetime
+- 阅读 [[rolldown]] 的 parse/transform/minify 底座
 
 **不适用**：
 
-- 重度依赖 ESLint 自定义规则的团队，迁移会丢规则
-- 老 Node.js 版本（< 18），napi 二进制不一定有
-- 小项目几十个文件，ESLint 跑 2 秒就完事，迁移收益小
-- 需要类型层面的检查 / 重构，那是 tsc 的领地
+- 把 oxc 当成 `tsc --noEmit`：固定 `Compiler` 不跑完整类型检查
+- 需要本仓自带的 Node 风格 resolver：那是 `oxc-project/oxc-resolver`
+- 只想评测 linter CLI 产品面：应另绑 `apps_*` / `oxlint_*` 标签，不是这篇 crate 页
+- 源文件可能超过 4 GiB
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2021 年**：Boshen 个人项目起手，最初目标只是"用 Rust 写一个 JS parser 玩"
-- **2023 年**：oxlint 第一个版本发布，对比 ESLint 快 50 倍的截图在社区刷屏
-- **2024 年**：VoidZero 成立（Vite 作者 Evan You 牵头），把 oxc 收编做下一代前端工具链底座
-- **2024 年底**：Rolldown 公测，宣布底层全用 oxc，bundler 切到 oxc-resolver
-- **2025 年**：Rolldown-Vite 进入 Vite 7 alpha，oxc 正式成为前端主线工具
-- **2026 年初**：oxlint 1.0 发布，规则数突破 700+，主流框架（Nuxt、Astro、Preact）官方文档把 oxlint 列为推荐 linter
+- 本文绑定 `oxc-project/oxc@4e258430...`，tag `crates_v0.147.0`，编译器 crate / `oxc-parser` 为 `0.147.0`。
+- 同提交 `oxc_linter=1.79.0`；`apps_v1.80.0` 是另一可达提交，未并入本页。
+- NAPI 包声明 Node `^20.19.0 || >=22.12.0`；workspace MSRV 为 `1.96.0`。
+- 未安装依赖、运行上游测试或测量性能，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **接口比实现重要 10 倍**——AST 形状一旦稳定，下游可以爆炸式生长
-2. **90% 的性能提升来自数据结构选型**，剩下 10% 才是算法
-3. **生态广度和迭代速度是对立的**——故意收窄插件，换每次升级敢动内部 API
-4. **新工具不是从"功能更多"赢，是从"重做一份正确的底"赢**
+1. **共享 AST 比“再用 Rust 重写一遍工具”更关键**——下游能少做胶水层
+2. **句法树和符号表是两份合同**——parse 通过只说明树还在
+3. **monorepo 里可以有两套版本号**——crate 流和 apps 流不能互相替代
+4. **性能数字必须绑到具体 revision 与测量**——架构文档里的倍数不是本页证据
+
+## 应用型自测
+
+1. `Parser::parse` 返回的 `diagnostics` 为空。这棵 AST 是否已通过语义检查？
+2. 刚跑完 `Transformer::build_with_scoping`，能否把原来的 `Scoping` 直接交给 compress？
+3. 在本仓库里能找到 `oxc_resolver` 这个 workspace member 吗？
+
+检查点：
+
+1. 不能。还要跑 semantic；parser 把更贵的检查推迟了。
+2. 不能默认可以。transform 后 scoping 与 AST 不同步，需要重建。
+3. 找不到。resolver 是独立仓库。
 
 ## 延伸阅读
 
-- 官方文档：[oxc.rs](https://oxc.rs)（首页直接列性能对比）
-- 仓库：[oxc-project/oxc](https://github.com/oxc-project/oxc)
-- 设计稿：[oxc Architecture](https://oxc.rs/docs/learn/architecture.html)
-- 性能拆解：[Why is oxc fast](https://oxc.rs/blog)
-- [[biome]] —— 同样 Rust 写的 JS 工具链，路线对比
+- 官方文档：[oxc.rs](https://oxc.rs)
+- 固定源码：[oxc-project/oxc](https://github.com/oxc-project/oxc) —— 本文绑定 `4e258430cdb290598d9f2aeb2d13be598ec9e8e9`
+- 审查记录：仓库内 `docs/oxc-rolldown-source-review-20260827-o.md`
+- [[rolldown]] —— 同提交族的 `oxc@0.147.0` 消费者
+- [[swc]] —— 另一条 Rust JS 工具链，AST 与发布模型不同
 
 ## 关联
 
-- [[biome]] —— 同代竞品，做"用户直接用 CLI"，oxc 做"被别人当依赖用"
-- [[swc]] —— 老一代 Rust JS 工具，parser 比 oxc 慢 3 倍，transformer 仍是事实标准
-- [[esbuild]] —— Go 写的 bundler，parser 私有不可复用，oxc 反方向走
-- [[lightningcss]] —— Rust 写的 CSS 编译器，思路和 oxc 同源但跨语言
-- [[rolldown]] —— 用 oxc 当底座的下一代 bundler
-- [[wadler-prettier]] —— Prettier 算法源头，oxfmt 仍在追赶
-- [[astro]] —— Vite 系下游，迟早会享受 oxc 加速
+- [[rolldown]] —— 用 oxc 做 parse / transform / minify 的打包器
+- [[vite]] —— npm `vite@8.2.2` 已依赖 rolldown，间接受益于 oxc
+- [[swc]] —— 老一代 Rust JS 编译器对照
+- [[esbuild]] —— Go bundler，parser 不对外复用
+- [[biome]] —— 同代 Rust 工具链，产品切分不同
+- [[lightningcss]] —— Rust CSS 一侧的对照
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+- [[rolldown]] —— rolldown — 用 Rust 实现 Rollup 兼容协议的打包器

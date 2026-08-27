@@ -19,8 +19,8 @@ sidebar:
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | `lightningcss` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | `mage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | `nvm` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | `oxc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | `rolldown` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [oxc — 用一份 arena AST 串起 JS/TS 编译器组件](/study/projects/oxc/) | `oxc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [rolldown — 用 Rust 实现 Rollup 兼容协议的打包器](/study/projects/rolldown/) | `rolldown` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | `rollup` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | `rspack` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | `swc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
