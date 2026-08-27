@@ -1,6 +1,6 @@
 ---
 title: "DevOps / 容器 / 运维 · 项目 · 第 1 组"
-description: "56 条 DevOps / 容器 / 运维 Atlas 分块"
+description: "55 条 DevOps / 容器 / 运维 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 56 条，稳定上限为 100 条。
+本分块共 55 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -46,7 +46,6 @@ sidebar:
 | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | `kubernetes` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) | `kustomize` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lima — macOS 上跑 Linux 虚拟机的轻量 CLI](/study/projects/lima/) | `lima` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | `locust` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | `longhorn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) | `minikube` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MinIO — S3 兼容对象存储](/study/projects/minio/) | `minio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

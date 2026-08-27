@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HU：k6 + locust
+
+- status：writer epoch `running` → 本地切片完成，待 push / PR；未 merge、未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
+- objective：把 `needs-evidence` 的负载测试双子 `k6` 与 `locust` 迁到绑定可达固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` 页。
+- scope：两篇既有项目页、共享审查文档 `docs/load-test-source-review-20260827-hu.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译 k6、未安装 Locust 依赖、未发真实负载。
+- activated_by：`explicit-user-parallel-writer-hu-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；开放与已合并 study PR 未占用这两个 slug；旧正文把 k6 runtime 写成 goja、`check` 写成 `k6/check`、`p95` 写成假绿，把 Locust 默认 wait 和退出码边界写错。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `k6` 绑定 annotated tag `v2.2.0` 剥皮提交 `00a9a1b7f552d6bb4337278b10ae25aac0f4e666`；JS VM 为 sobek；`check` 来自模块 `k6`；`p95` 会解析失败。
+  2. `locust` 绑定轻量 tag `2.46.4` → `407343d0f5ab84a32f41f6f9a7c991188d10a55a`；默认 `wait_time = constant(0)`；`--exit-code-on-error` 默认 1。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；两页 curated 到 `projects-observability-and-performance`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：`verifyReceiptAgainstNote` ok，`evidence_state=UNVERIFIED`。
+  - `audit:content-contract`：0 blocking。
+  - `audit:counts` / `audit:site-state` / `audit:project-standard`：以这些命令为准，未手改计数。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只交付这一对；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：对本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

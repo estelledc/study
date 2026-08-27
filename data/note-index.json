@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -46675,27 +46675,26 @@
       "id": "projects::k6",
       "area": "projects",
       "slug": "k6",
-      "title": "k6 — 用 JS 写脚本的现代负载测试器",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "k6 — 用 JS 脚本驱动 Go executor 的负载测试器",
+      "description": "介绍 k6 2.2.0 如何把 options 收成 scenario、用 sobek 跑 VU，并用 threshold 决定退出码。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-observability-and-performance"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-observability-and-performance",
-        "matched_category": "性能",
-        "raw_category": "DevOps / 性能测试"
+        "raw_category": "可观测 / 性能"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/k6/",
       "atlas": {
@@ -49050,32 +49049,31 @@
       "id": "projects::locust",
       "area": "projects",
       "slug": "locust",
-      "title": "Locust — 用 Python 写压测脚本的分布式负载工具",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Locust — 用 Python User/task 描述虚拟用户的分布式负载工具",
+      "description": "介绍 Locust 2.46.4 如何用 User、加权 task 和 gevent runner 复制虚拟用户，并用 ZeroMQ 做 master/worker。",
+      "difficulty": "beginner",
       "canonical_topics": [
-        "projects-devops-containers-and-operations"
+        "projects-observability-and-performance"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
-        "topic_id": "projects-devops-containers-and-operations",
-        "matched_category": "devops",
-        "raw_category": "DevOps"
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "可观测 / 性能"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/locust/",
       "atlas": {
-        "chunk_id": "topic-projects-devops-containers-and-operations-01",
-        "chunk_route": "/study/atlas/projects/topic-projects-devops-containers-and-operations-01/"
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
       }
     },
     {
@@ -65760,7 +65758,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-devops-containers-and-operations-01/",
-      "entries": 56
+      "entries": 55
     },
     {
       "id": "topic-projects-documentation-sites-01",
@@ -65998,7 +65996,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-observability-and-performance-01/",
-      "entries": 12
+      "entries": 13
     },
     {
       "id": "topic-projects-orm-and-database-clients-01",
