@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AX：immer / immutable-js STATIC_REVIEW
+
+- supervisor 状态：`WAIT_HEALTHY` after writer epoch complete。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 `immer` 升到 `study-v2`，并新增同主题 `immutable-js` 页；证据保持 `STATIC_ANALYSIS` / `UNVERIFIED`，审查模式 `STATIC_REVIEW`。
+- scope：两页笔记、两份 generation 1 receipt、`docs/immutability-source-review-20260827-ax.md`、taxonomy 一条、由 atlas / site-state / 公开计数派生的文件与本 handoff。未改候选队列、政策阈值、open PR slug 正文。
+- activated_by：`explicit-parallel-writer-ax-20260827`。
+- detector fingerprint：`immer` 仍是 legacy 页，缺 pinned revision / evidence / self-test，且把 Map/Set 默认代理、v9/~3KB 写成当前事实；仓库无 `immutable-js` 页。
+- external delta 计数：GitHub/npm 只读核验 + 本地 blob-filtered clone；将开 1 个 PR，不 merge、不部署，D 轴不因本 epoch 提升。
+- 已完成切片：
+  1. `immer` 绑定 `immerjs/immer@b00474e3...` / published `11.1.18`，纠正插件边界、return-vs-draft、revoke 与 semantic-release 占位版本。
+  2. 新增 `immutable-js`，绑定 `immutable-js/immutable-js@329f7a68...` / `5.1.9`，写清 32 路 trie、`withMutations`/`OwnerID`、`fromJS` 与 `is()`；披露 6.x beta 与 3.8.4 回移。
+  3. 共享 provenance 文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 一致，evidence state `UNVERIFIED`。`STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下，除首次因本机缺少 Playwright Chromium 停在 a11y 外，其余门禁已过；安装浏览器后 23 个 Playwright 测试及 Pages/Atlas/site budget / diff 门禁通过。未改 baseline。`benchmark-site --compare` 相对 2026-07 baseline 在 `origin/main`（3136 文件）已超 threshold 3053；本 PR 只新增 4 个 tracked 文件。
+- budget：2 个内容切片 + 1 个派生/文档切片；单 writer；1 个 PR。
+- blocker：上游测试、bundle、性能未跑；静态阅读不能升级为 `VERIFIED`。
+- 下一次 wake 条件：本 PR 出现 CI/review 变化，或 owner 明确授权 merge / 下一对主题。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

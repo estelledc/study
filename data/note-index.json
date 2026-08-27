@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -45664,9 +45664,9 @@
       "id": "projects::immer",
       "area": "projects",
       "slug": "immer",
-      "title": "Immer — 用 Proxy 让你写\"看起来可改\"的代码却产出不可变状态",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Immer — 用 Proxy 写出可变语法、产出不可变状态",
+      "description": "用 Proxy 写出可变语法，产出带结构共享的不可变状态。",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-state-management"
       ],
@@ -45674,16 +45674,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-state-management",
-        "raw_category": "projects"
+        "raw_category": "状态管理"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/immer/",
       "atlas": {
@@ -45720,6 +45720,37 @@
       "atlas": {
         "chunk_id": "topic-projects-data-applications-and-saas-01",
         "chunk_route": "/study/atlas/projects/topic-projects-data-applications-and-saas-01/"
+      }
+    },
+    {
+      "id": "projects::immutable-js",
+      "area": "projects",
+      "slug": "immutable-js",
+      "title": "Immutable.js — 用持久化集合代替就地修改",
+      "description": "用持久化 Map/List 等集合做结构共享，而不是给普通对象套 Proxy。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-state-management"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-state-management",
+        "raw_category": "状态管理"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/immutable-js/",
+      "atlas": {
+        "chunk_id": "topic-projects-state-management-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-state-management-01/"
       }
     },
     {
@@ -65839,7 +65870,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-state-management-01/",
-      "entries": 8
+      "entries": 9
     },
     {
       "id": "topic-projects-terminal-tools-01",
