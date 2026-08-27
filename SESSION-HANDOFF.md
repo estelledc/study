@@ -15,12 +15,12 @@
   1. `ini` 绑定 tag `v7.0.0` → `847941ced4fb8465f0ccb383fd8b15c7e5aa09fc`（与 npm `gitHead` 一致）。
   2. `properties` 绑定无 tag 的版本提交 `bb04b570d2216d75ca5631eb1d095f443b5f6a40`；npm 无 `gitHead`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` / `audit:wikilinks` / `audit:doc-lifecycle` / `git diff --check` 通过。不在 handoff 中复制易过期数字或 ETA。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` / `audit:wikilinks` / `audit:doc-lifecycle` / `git diff --check` 通过。`STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿。不在 handoff 中复制易过期数字或 ETA。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 完成后停止；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：查看本 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/305 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
