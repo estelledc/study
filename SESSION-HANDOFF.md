@@ -15,13 +15,13 @@
   1. `p-limit` 绑定 annotated tag `v7.3.1` peel / npm `gitHead` `df476048...`，写清 yocto-queue、`rejectOnClear`、嵌套死锁与 eager `map`。
   2. `p-queue` 绑定 `v9.3.3` / `180ab9e2...`，写清默认 `Infinity` 并发、完成 Promise、`timeout` 从出队起算、固定/滑动窗口，并披露 JSDoc `AbortError` 导出与 `index.ts` 不符。
   3. 新增共享审查文档 `docs/concurrency-limit-source-review-20260827-fd.md` 与两份 receipt。
-- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt `UNVERIFIED` 且 digest/revision/provenance 一致；`audit:content-contract` blocking 0；`audit:counts` 与派生 site-state 对齐。`verify:ci` 在提交后跑。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt `UNVERIFIED` 且 digest/revision/provenance 一致；`audit:content-contract` blocking 0；`audit:counts` 与派生 site-state 对齐。`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci` 全绿（含 23 个 Playwright a11y）。
 - budget：1 个可写切片；未并行写同一工作树。
 - external_outcome：1 个 review-ready PR，不 merge；D 轴仅在 push/PR 后计，不 deploy。
 - blocker：规模 `tracked_files` 超 baseline 的 `PARKED_HUMAN` 先于本切片存在；本轮未改 baseline / 阈值。
 - stop conditions：本轮目标完成；merge 与 deploy 需单独授权。
 - 下一次 wake 条件：本 PR 的 review/CI 变化，或新的显式有限目标。
-- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR CI；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
