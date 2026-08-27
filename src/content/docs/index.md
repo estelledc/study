@@ -128,7 +128,7 @@ head:
 <!-- STUDY:SITE_STATE:BEGIN -->
 <div class="jx-proof__metrics" aria-label="当前内容规模">
 <div class="jx-proof__metric"><strong>2045</strong><span>篇项目与论文笔记</span></div>
-<div class="jx-proof__metric"><strong>45</strong><span>个项目已对齐标杆标准</span></div>
+<div class="jx-proof__metric"><strong>47</strong><span>个项目已对齐标杆标准</span></div>
 <div class="jx-proof__metric"><strong>3</strong><span>条新手首选路径</span></div>
 </div>
 <div class="jx-proof__links" aria-label="证据入口">
