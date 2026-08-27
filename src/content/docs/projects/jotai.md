@@ -93,19 +93,27 @@ function User() {
 ```tsx
 import { Provider, createStore, useAtom } from 'jotai'
 
-const defaultPair = useAtom(countAtom) // 用 getDefaultStore()
+function CountButton() {
+  const [count, setCount] = useAtom(countAtom)
+  return <button onClick={() => setCount((c) => c + 1)}>{count}</button>
+}
 
-function Isolated() {
-  const store = createStore()
+function DefaultStoreDemo() {
+  return <CountButton /> // 无 Provider → getDefaultStore()
+}
+
+const isolatedStore = createStore()
+
+function IsolatedStoreDemo() {
   return (
-    <Provider store={store}>
-      <Counter />
+    <Provider store={isolatedStore}>
+      <CountButton />
     </Provider>
   )
 }
 ```
 
-`<Provider>` 不传 `store` 时，会 `useRef` 建一份自己的 store，子树互不串值。多个 Jotai 副本同时调用 `getDefaultStore()` 时，开发模式会警告 default store 行为可能异常。
+两个组件可以并排渲染：`DefaultStoreDemo` 走默认单例，`IsolatedStoreDemo` 走自己的 store，点击互不影响。`<Provider>` 不传 `store` 时，会 `useRef` 建一份自己的 store，子树也不串值。多个 Jotai 副本同时调用 `getDefaultStore()` 时，开发模式会警告 default store 行为可能异常。
 
 ## 踩过的坑
 
