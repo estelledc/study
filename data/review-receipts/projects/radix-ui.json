@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "radix-ui",
+    "digest_sha256": "f538b57b2af1f60a4b5d74f508531acadeeea43224644e0602d1cf785abcfd8a"
+  },
+  "source_revision": "9aebdd45abd447b84092ecf20f8bcd27f2398c36",
+  "research_input_sha256": "03ddccf01c068e143b0cf9ae50aeb2d6c3609a24da6c14ba44e78f97d5b4fada",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-e",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Slot/asChild, controllable state timing, and Dialog Presence/Portal/Focus/Dismiss layers with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-e",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "slot, primitive, dialog, presence, dismissable-layer, and umbrella radix-ui@1.6.7 were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-e",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Title warning, bundle size, and star-count claims were dropped; conclusions are bounded to primitives 1.6.7."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}
