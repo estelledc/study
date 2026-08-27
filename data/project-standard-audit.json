@@ -4,8 +4,8 @@
   "summary": {
     "total": 962,
     "by_status": {
-      "benchmark-aligned": 49,
-      "needs-evidence": 913
+      "benchmark-aligned": 51,
+      "needs-evidence": 911
     }
   },
   "projects": [
@@ -15521,27 +15521,23 @@
     },
     {
       "slug": "playwright",
-      "title": "Playwright — 跨浏览器自动化测试",
+      "title": "Playwright — 每测一个隔离 context 的浏览器自动化",
       "source": "https://github.com/microsoft/playwright",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "plotly-js",
@@ -21579,27 +21575,23 @@
     },
     {
       "slug": "vitest",
-      "title": "Vitest — Vite 原生测试框架",
+      "title": "Vitest — 复用 Vite 流水线的测试运行器",
       "source": "https://github.com/vitest-dev/vitest",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "vllm",
