@@ -16,12 +16,16 @@
   1. `nuxt` 绑定 `nuxt/nuxt@e2d3a394...` / `4.5.2`，纠正 `app/` srcDir、`serverDir` 相对 root、`useFetch`→`useAsyncData` hydrate 缓存，以及 `@nuxt/nitro-server` / `nitropack` 分层。
   2. `sveltekit` 绑定 `sveltejs/kit@39e8e1fb...` / `2.70.3`，纠正 `actions` 只属于 `+page.server`、`return fail()`、form-encoded / CSRF Origin、adapter 插件边界。
   3. 新增共享 `docs/metaframework-source-review-20260827-an.md` 与两份 generation 1 static receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；两份 receipt digest 与 source revision 匹配，`evidence_state=UNVERIFIED`；`audit:project-standard --write` 后这两页为 `benchmark-aligned`。
+- 验证结果：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / source revision 匹配，`evidence_state=UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，内容、receipt、strict build、Pagefind、SEO、静态 a11y 先过；本机补装 Playwright Chromium 后 23 个浏览器 a11y 测试与 Pages/Atlas/site budget、diff 门禁通过。
+  - 构建冒烟：`dist/projects/{nuxt,sveltekit}/index.html` 可见标题、固定 revision 与 `UNVERIFIED`。
 - budget：2 页、单 writer、1 个 PR；不 merge。
-- blocker：未跑 `verify:ci` 前以定向门禁为准；远端 CI 以 PR checks 为准。
+- blocker：无本地 blocker；远端 CI 以 PR #94 checks 为准。
 - stop conditions：需要猜 revision、把静态阅读写成运行成功、改开放 PR slug、或要求 merge 时停止。
-- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge / 下一对页面。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一次 wake 条件：PR #94 的 CI/review 变化，或 owner 授权 merge / 下一对页面。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/94`；未获 merge 授权前不要合并。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
