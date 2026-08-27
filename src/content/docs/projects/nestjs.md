@@ -1,14 +1,27 @@
 ---
-title: NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-来源: 'https://github.com/nestjs/nest + https://docs.nestjs.com'
+title: NestJS — 用模块与 DI 组织 Node 后端的企业级框架
+来源: https://github.com/nestjs/nest
 日期: 2026-05-30
 分类: 后端框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/nestjs/nest
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 2b36ee5fea13dedcedfd9815a9c193b2d21130c1
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 11.2.3
 ---
 
 ## 是什么
 
-NestJS 是一个**让你用装饰器和模块组织 Node.js 后端代码**的框架。日常类比：像建一座工厂——`@Module` 是车间，`@Injectable` 是在册工人，`@Controller` 是对外窗口，DI 容器是调度系统，开班前自动把工人分配到每个窗口。
+NestJS 是一个用装饰器、模块和依赖注入组织 Node 后端的框架。日常类比：它像工厂调度台——`@Module` 划分车间，`@Injectable` 登记工人，`@Controller` 开对外窗口；真正接 HTTP 请求的是底下的 adapter，不是 Nest 自己实现的服务器。
 
 你写：
 
@@ -18,7 +31,7 @@ class UsersService { findAll() { return [{ id: 1 }]; } }
 
 @Controller('users')
 class UsersController {
-  constructor(private users: UsersService) {}  // ← 自动注入
+  constructor(private users: UsersService) {}
   @Get() list() { return this.users.findAll(); }
 }
 
@@ -26,39 +39,41 @@ class UsersController {
 class AppModule {}
 ```
 
-NestJS 启动时读所有装饰器、构建依赖图、把单例工人塞进每个 controller 的 constructor，再把路由挂到 HTTP 层。HTTP 层不是它自己做的——底下是 Express（默认）或 Fastify（可切），NestJS 只解决"代码怎么组织"。
+`NestFactory.create(AppModule)` 会扫描模块树、按依赖实例化 provider，再把路由挂到 HTTP adapter。未传入 adapter 时，固定 `11.2.3` 会 `require('@nestjs/platform-express')` 并构造 `ExpressAdapter`。
 
 ## 为什么重要
 
 不理解 NestJS 这套，下面这些事都没法解释：
 
-- 为什么 Node.js 也能写出像 Spring Boot 一样的企业级代码（5M weekly downloads，Adidas / Roche / Decathlon 在用）
-- 为什么 Angular 团队转后端零摩擦——`@NgModule` 和 `@Module` 几乎是同一份设计
-- 为什么"换一行代码"就能从 Express 切到 Fastify 或加上 gRPC / Kafka 传输层
-- 为什么"小项目用 NestJS 就是过度工程"是真的——结构化收益要 100+ controller 才显现
+- 为什么同一套 controller / provider 可以挂到 Express 或 Fastify，而不等于“换一个字符串就切完”
+- 为什么 constructor 参数能自动注入，却仍依赖 `reflect-metadata` 与 `design:paramtypes`
+- 为什么某个 provider 标成 `Scope.REQUEST` 后，依赖它的整棵树都会变成非静态
+- 为什么跨模块注入失败时，问题常常在 `exports` 而不在 decorator 本身
 
-## 核心要点
+## 核心架构与流程
 
-NestJS 的运转可以拆成 **三块**：
+固定 `11.2.3` 的启动与请求链可以拆成五步：
 
-1. **装饰器 + Reflect.metadata**：`@Injectable` / `@Module` / `@Controller` 不做任何运行时动作，只是把"我是 service"、"我需要这些依赖"写进 metadata。类比：给每个零件贴标签，标签上写身份和搭档。
+1. **选 adapter 并建容器**：`NestFactory.create()` 要么使用传入的 `AbstractHttpAdapter`，要么加载 Express adapter；随后创建 `NestContainer`、`Injector`、`DependenciesScanner`。
 
-2. **module 是依赖图的打包单元**：`imports` / `providers` / `controllers` / `exports` 四元组决定可见性——只有显式 export 的 provider 才能被别的 module 注入。类比：车间之间不能随便借工人，必须挂在"对外业务"清单上。
+2. **扫描模块图**：`DependenciesScanner.scan()` 先注册内部 core module，再递归读 `imports` / `providers` / `controllers` / `exports`，计算模块距离并绑定 global scope。
 
-3. **DI 容器在启动时把图建出来**：`NestFactory.create` 递归扫描 module 树，按拓扑序实例化 provider（依赖谁谁先 new），最后把路由挂到 HttpAdapter。类比：调度系统先排好"哪个工人先到岗"，再开门接客。
+3. **按拓扑实例化**：`InstanceLoader` 先给 provider / injectable / controller 建 prototype，再并行 `loadProvider` / `loadInjectable` / `loadController`。构造参数来自 `design:paramtypes`，再用 `@Inject` 的 `self:paramtypes` 覆盖。
 
-三块加起来构成 NestJS 的核心抽象——**经验从 Angular 迁移，运行时跑在 Node.js**。
+4. **跨模块可见性看 exports**：向已 import 的模块解析依赖时，目标 token 必须同时出现在该模块的 `exports` 与 `providers`；只 import 不 export 不能注入。
 
-## 实践案例
+5. **请求时 guard → interceptor → pipe → handler**：`RouterExecutionContext` 先跑 guard，再让 interceptor 包住后续步骤；pipe 在 interceptor 最内层、调用 handler 之前执行。返回值由 response controller 写出，不必手写 `res.json()`。
 
-### 案例 1：最小 controller + service 起步
+## 实践示例
+
+### 案例 1：最小 module 起步
 
 ```ts
 import { Module, Controller, Get, Injectable } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 @Injectable()
-class UsersService { findAll() { return [{ id: 1, name: 'Jason' }]; } }
+class UsersService { findAll() { return [{ id: 1, name: 'Ada' }]; } }
 
 @Controller('users')
 class UsersController {
@@ -69,110 +84,110 @@ class UsersController {
 @Module({ controllers: [UsersController], providers: [UsersService] })
 class AppModule {}
 
-NestFactory.create(AppModule).then(app => app.listen(3000));
+const app = await NestFactory.create(AppModule);
+await app.listen(3000);
 ```
 
-**逐部分解释**：
+同一模块内的 provider 可以直接注入。`listen()` 发生在实例化之后；扫描失败且未关 `abortOnError` 时，固定实现会 `process.abort()`。
 
-1. `@Injectable` 把 `UsersService` 登记为可注入工人；`@Controller('users')` 挂路由前缀
-2. constructor 声明依赖 → Nest 启动时自动塞进单例；`@Get()` 映射 `GET /users`
-3. `list()` **直接 return** 数据，框架序列化 JSON——不用 `res.json()`
-4. `@Module` 把 controller + provider 打包；`NestFactory.create` 建依赖图后听 3000
+### 案例 2：显式传入 Fastify adapter
 
-### 案例 2：DI 怎么从元数据自动注入
+```ts
+import { NestFactory } from '@nestjs/core';
+import { FastifyAdapter } from '@nestjs/platform-fastify';
+
+const app = await NestFactory.create(AppModule, new FastifyAdapter());
+await app.listen(3000);
+```
+
+这不是改一行配置名。固定 `11.2.3` 的 `@nestjs/platform-fastify` 依赖 Fastify 5.11.3，并在 adapter 里自建 Fastify instance；直接碰 `req.app`、Express middleware 或 multipart 约定的代码不会自动兼容。
+
+### 案例 3：guard、interceptor 与 pipe 的真实顺序
 
 ```ts
 @Injectable()
-class Logger { log(msg: string) { console.log(msg); } }
-
-@Injectable()
-class UsersService {
-  constructor(private logger: Logger) {}  // ← TS 写入 design:paramtypes
-}
-```
-
-TS 开 `emitDecoratorMetadata` 后，Nest 启动时：① 读 `design:paramtypes` 得 `[Logger]`；② `resolve(Logger)` 拿单例；③ `new UsersService(logger)`。全程不用手写 wire。
-
-### 案例 3：guard + pipe 搭管线
-
-```ts
-@Injectable()
-class JwtAuthGuard implements CanActivate {
-  canActivate(ctx: ExecutionContext): boolean {
-    const req = ctx.switchToHttp().getRequest();
-    return !!req.headers.authorization?.startsWith('Bearer ');
+class AuthGuard implements CanActivate {
+  canActivate(ctx: ExecutionContext) {
+    return !!ctx.switchToHttp().getRequest().headers.authorization;
   }
 }
 
 @Controller('users')
-@UseGuards(JwtAuthGuard)
+@UseGuards(AuthGuard)
 class UsersController {
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) { return { id }; }
 }
 ```
 
-**逐部分解释**：请求按 **guard → pipe → handler** 走。① `@UseGuards` 先验 token 头；② `ParseIntPipe` 把 `:id` 转成 number；③ handler 只收已校验参数。比 Express 线性中间件链类型更强。
+请求先过 guard；过了之后 interceptor 才包住“pipe + handler”。`ParseIntPipe` 不会在 guard 之前跑。旧印象里的“guard → pipe → handler”少了 interceptor 这一层包裹。
 
 ## 踩过的坑
 
-1. **decorator 在 TS 5+ 是 baggage**：v10 仍依赖老 `experimentalDecorators` + `emitDecoratorMetadata`，和 TS 5 stage 3 标准不兼容。升级 TS 时按官方推荐关掉 experimental，整个项目就崩——v11 才开始迁移。
+1. **仍然依赖实验装饰器元数据**：仓库 tsconfig 仍开 `experimentalDecorators` 与 `emitDecoratorMetadata`。DI 读的是 `design:paramtypes`。esbuild 等不发射该 metadata 的工具链会得到稀疏参数表；这不是 TypeScript 5 stage-3 decorator 的默认行为。
 
-2. **REQUEST scope 是性能毒药**：某 provider 标 `Scope.REQUEST` 后，所有依赖它的 provider 都变 request-scoped，每个 HTTP 请求要实例化整棵子树。新人为"日志带 trace id"加 REQUEST 容易让 TPS 砍半。
+2. **REQUEST scope 会沿着依赖树上浮**：`InstanceWrapper.isDependencyTreeStatic()` 在自身或任一依赖是 `Scope.REQUEST` 时返回 false。给 logger 加 REQUEST 以便带 trace id，可能让整棵子树按请求实例化。`durable` 只能和 REQUEST 一起用，用来构造惰性子树，不是性能开关。
 
-3. **Express → Fastify adapter 切换不无缝**：官方话术"换一行"，真实迁移要 1-2 周——cookie-parser 不兼容、multipart 上传 API 不同、`req.app` / `res.locals` 这种逃逸到底层的代码会崩。
+3. **默认 Express 5，不是“一行切 Fastify”**：未传 adapter 时加载 `@nestjs/platform-express`，该包固定依赖 Express 5.2.1。改用 Fastify 必须传入 `FastifyAdapter`，并处理 cookie、multipart、底层 request 形状差异。
 
-4. **forwardRef 滥用是 code smell**：循环依赖时 NestJS 抛 "can't resolve dependencies"，给的逃生通道是 `forwardRef(() => OtherService)`——但这通常说明拆分粒度不对，应该重构而不是绕。
+4. **export 不是礼貌标记**：`validateExportedProvider()` 只允许导出本模块 provider 或已 import 的模块 token。跨模块查找还要求 `exports.has(name) && providers.has(name)`。漏 export 会表现为“can't resolve dependencies”，不一定是循环依赖。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 企业级后端（金融、电商、SaaS）：100+ controller、团队 5+ 人、需要"代码风格统一"
-- 从 Java/Spring 迁移团队：思想 1:1 对应，迁移成本最低
-- 复杂业务 + 多 transport（HTTP + WebSocket + Kafka + gRPC 混合）：一个框架统一
-- GraphQL + REST 混合后端：`@nestjs/graphql` 集成度高于其他框架
+- 需要统一模块边界、测试替换和多 transport（HTTP / microservice / WebSocket）的中大型后端
+- 团队已熟悉 Angular / Spring 式 annotation + IoC
+- 希望业务代码不直接依赖 Express 或 Fastify 的 request/response 形状
 
 **不适用**：
 
-- 小项目 / MVP / 单文件 API：用 Express / Hono，module 仪式感是负担
-- 极致性能场景（高频交易、超高 QPS）：用裸 Fastify，DI 开销不必要
-- 边缘部署（CF Worker / Bun edge）：NestJS 强依赖 Node 启动模型，扫描 + 实例化整棵树和短生命周期 stateless 模型不适配
-- 团队人均经验少：NestJS 的强结构对新人是双刃剑——能写好的是工程师，写烂了的是垃圾
+- 只需几条路由的脚本或 BFF——模块扫描和 DI 图是固定成本
+- 不能接受 `reflect-metadata` / 实验装饰器发射合同的构建链
+- 边缘 runtime 或短生命周期 worker：启动时要扫整棵模块树再实例化
+- 把 Nest 当 Express 兼容层，却继续大量使用底层 `req` / `res` 专有 API
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017-05** v1：Kamil Mysliwiec 发布，Angular 思想搬到 Node.js，TypeScript-first
-- **2018-2020 v5-7**：GraphQL / Microservice / WebSocket 与 Fastify adapter 稳定
-- **2022-2024 v9-10**：Standalone application、Node 16+ 起步
-- **2025 v11**：原生 ESM、Node 20+，开始迁 stage 3 decorator
-
-8 年长到约 5M weekly downloads，成 Node 后端企业级范本。
+- 本文绑定 `nestjs/nest@2b36ee5fe...`，GitHub Release 与 npm `@nestjs/core@11.2.3` 的 `gitHead` 均为该提交。
+- 源码树里 `packages/*/package.json` 的 `gitHead` 字段仍写着旧提交 `bcb4747f...`，以 npm registry 与 annotated tag 为准。
+- 审阅当日 npm `latest` 已是 `12.0.0`，其 `gitHead` 为 `6494a6c2...`，与 GitHub tag `v12.0.0` 的剥皮提交一致，但当时还没有 GitHub Release 页；本文不把 v12 当已核验合同。
+- 引擎声明为 Node `>= 20`。peer 包括 `reflect-metadata` 与 `rxjs`。
+- 本文未安装依赖、未跑上游测试、未启动 HTTP 服务或测量吞吐，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **decorator + Reflect.metadata 是根**：TS emit metadata 才让 DI 自动化成立
-2. **module 是依赖图打包单元**：imports/providers/controllers/exports 决定可见性
-3. **adapter 解耦 HTTP 层**——上层可切 Express / Fastify / Kafka / gRPC
-4. **结构有成本**：小项目仪式感是负担；收益在多 controller、多 transport 时显现
+1. **框架主链是扫描 + 注入 + adapter**——Nest 管组织，HTTP 语义仍由 Express / Fastify 实现。
+2. **装饰器只写 metadata**——没有 `design:paramtypes` 或显式 `@Inject`，DI 无法可靠推断构造参数。
+3. **作用域是树属性**——REQUEST 不是单个 provider 的局部开关。
+4. **enhancer 顺序以源码为准**——guard 在前，interceptor 包裹 pipe 与 handler。
+
+## 应用型自测
+
+1. 调用 `NestFactory.create(AppModule)` 且不传第二参，固定 11.2.3 会加载哪个 HTTP adapter？
+2. 一个 DEFAULT provider 依赖 `Scope.REQUEST` 的服务后，它的依赖树还是静态的吗？
+3. `@UseGuards` 与 `@Param(..., ParseIntPipe)` 同时存在时，pipe 会在 guard 之前执行吗？
+
+检查点：
+
+1. `@nestjs/platform-express` 的 `ExpressAdapter`。
+2. 不会。`isDependencyTreeStatic()` 会因 REQUEST 依赖返回 false。
+3. 不会。guard 先执行；pipe 在 interceptor 包住的 handler 里、调用方法前执行。
 
 ## 延伸阅读
 
-- 官方文档：[docs.nestjs.com](https://docs.nestjs.com)
-- 视频：[Marius Espejo — NestJS Crash Course](https://www.youtube.com/c/MariusEspejo)
-- 源码：`packages/core/scanner.ts` + `instance-loader.ts`（DI 拓扑序）
-- 对比：[[fastapi]] 的 Depends 比 NestJS DI 更简，看抽象数量如何影响学习曲线
-- [[spring-boot]] —— Java 侧 annotation / IoC 对照
+- 文档：[docs.nestjs.com](https://docs.nestjs.com)
+- 固定源码：[nestjs/nest](https://github.com/nestjs/nest) —— 本文绑定提交 `2b36ee5fea13dedcedfd9815a9c193b2d21130c1`
+- 对照：[[koa]] 把组织问题留给用户，只保留 ctx 与中间件链
+- [[spring-boot]] —— annotation / IoC 对照，不是源码等价物
 
 ## 关联
 
-- [[express]] —— 默认 HTTP adapter，被包了一层 module + DI
-- [[fastify]] —— 高性能可选 adapter
-- [[koa]] —— 同代极简 async 中间件路线
-- [[hono]] —— 边缘 runtime 赛道，NestJS 不覆盖
-- [[spring-boot]] —— Java 思想原型，annotation/IoC/AOP 对应
-- [[fastapi]] —— Python type hint + Depends 简化版
-- [[aspnetcore]] —— .NET 同位框架，DI/middleware/filter 同构
+- [[koa]] —— 同主题的极简洋葱模型对照
+- [[express]] —— 固定版本的默认 HTTP adapter
+- [[fastify]] —— 需显式传入的可选 adapter
+- [[spring-boot]] —— Java 侧 IoC / 模块化对照
+- [[fastapi]] —— Python 类型注解 + Depends 的另一条组织路线
 
 ## 反向链接
 
