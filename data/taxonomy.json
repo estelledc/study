@@ -1760,6 +1760,10 @@
       "topic_id": "projects-data-applications-and-saas"
     },
     {
+      "note_id": "projects::ajv",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
       "note_id": "projects::anime",
       "topic_id": "projects-animation"
     },
@@ -2502,6 +2506,10 @@
     {
       "note_id": "projects::turborepo",
       "topic_id": "projects-monorepos-and-package-management"
+    },
+    {
+      "note_id": "projects::typebox",
+      "topic_id": "projects-forms-and-schema-validation"
     },
     {
       "note_id": "projects::typeorm",
