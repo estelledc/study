@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer HD：ts-blank-space + oxc-transform
 
-- status：writer epoch `complete`；review-ready PR 待开。未 merge、未 deploy。
+- status：writer epoch `complete`；PR https://github.com/estelledc/study/pull/273 已开。未 merge、未 deploy。
 - 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
 - objective：为缺失的 TS-strip 双子补齐 `ts-blank-space` 与 `oxc-transform` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/ts-strip-source-review-20260827-hd.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未加载 NAPI binding、未测 bundle。
@@ -22,11 +22,12 @@
   - `audit:wikilinks`：blocking 0。
   - `audit:project-standard`：snapshot CURRENT，`benchmark-aligned=85`。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/273 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
