@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AN：Nuxt / SvelteKit STATIC_REVIEW
+
+- supervisor 状态：writer epoch `complete`；等待 PR review，不 merge。
+- status：`running` 已收口为本地 review-ready change set。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：只把 `nuxt` 与 `sveltekit` 迁到绑定固定 revision 的 `study-v2`，证据为 `STATIC_ANALYSIS` / receipt `STATIC_REVIEW`，验证状态保持 `UNVERIFIED`。
+- scope：两篇项目页、两份 generation 1 receipt、`docs/metaframework-source-review-20260827-an.md`，以及 atlas / note-index / site-state / project-standard / handoff 的确定性派生。
+- activated_by：`explicit-parallel-writer-AN-20260827`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision、证据边界和应用型自测；旧正文把 Nuxt 4 默认写成根 `pages/`、把 `server/` 跟着 `app/` 搬家，并把 SvelteKit `throw fail()` / `+page.ts` actions 写成合法合同。
+- external delta 计数：本轮只形成可审查 PR；未 merge、未部署，D 轴不提升。GitHub/npm 只读核验 + 本地 blob-filtered clone 不算 D 轴。
+- 完成切片：
+  1. `nuxt` 绑定 `nuxt/nuxt@e2d3a394...` / `4.5.2`，纠正 `app/` srcDir、`serverDir` 相对 root、`useFetch`→`useAsyncData` hydrate 缓存，以及 `@nuxt/nitro-server` / `nitropack` 分层。
+  2. `sveltekit` 绑定 `sveltejs/kit@39e8e1fb...` / `2.70.3`，纠正 `actions` 只属于 `+page.server`、`return fail()`、form-encoded / CSRF Origin、adapter 插件边界。
+  3. 新增共享 `docs/metaframework-source-review-20260827-an.md` 与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；两份 receipt digest 与 source revision 匹配，`evidence_state=UNVERIFIED`；`audit:project-standard --write` 后这两页为 `benchmark-aligned`。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：未跑 `verify:ci` 前以定向门禁为准；远端 CI 以 PR checks 为准。
+- stop conditions：需要猜 revision、把静态阅读写成运行成功、改开放 PR slug、或要求 merge 时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge / 下一对页面。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

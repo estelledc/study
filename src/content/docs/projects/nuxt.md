@@ -4,13 +4,28 @@ title: Nuxt — Vue 全栈框架
 日期: 2026-05-29
 分类: Meta 框架
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/nuxt/nuxt
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e2d3a3945a3459c0e3a869de85c0b53c6c214432
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.5.2
 ---
 
 ## 是什么
 
-Nuxt 是 [[vue]] 生态的全栈框架——把"路由 / 服务端渲染 / 静态生成 / 自动 import / 部署"全部打包成开箱即用的约定。日常类比：[[next-js]] 是 [[react]] 的酒店服务，Nuxt 是 Vue 的酒店服务——你写 `<script setup>` 就像办入住，路由表 / 数据获取 / 部署适配这些"行李房 / 前台 / 接送车"全都不用自己张罗。
+Nuxt 是 [[vue]] 生态的全栈框架。固定 `4.5.2` 把页面路由、auto-import、SSR/SSG 和 Nitro 服务端打包成一份约定，而不是让你自己拼 Vue Router + Vite + 部署脚本。
 
-你新建一个 `pages/index.vue`：
+日常类比：Vue 是发动机，Nuxt 是整车。你写一个页面文件，框架负责把它挂到 URL、决定在哪一端取数、再把同一份应用打到 Node 或边缘运行时。
+
+固定提交里，默认 `srcDir` 会先看项目根下有没有非空的 `app/`；没有才退回根目录。`server/` 始终相对 `rootDir`，不会跟着 `app/` 一起挪走。
 
 ```vue
 <script setup>
@@ -21,54 +36,36 @@ const msg = ref("Hi from Nuxt")
 </template>
 ```
 
-文件保存的那一刻，浏览器访问 `/` 已经能渲染——**没写一行路由配置、没手 import ref、没配 SSR**。这三件事 Nuxt 都替你做了。
+把这段放进 `app/pages/index.vue`（或旧布局的 `pages/index.vue`），约定路由会把它映射到 `/`。`ref` 来自 Vue auto-import preset，不必手写 import。
 
 ## 为什么重要
 
-不理解 Nuxt，下面这些事都没法解释：
+不理解固定 4.5.2 的分层，下面这些事会说错：
 
-- 为什么 Vue 项目从"自己拼 Vue Router + Pinia + Vite + 部署脚本"变成"装个 Nuxt 全有了"
-- 为什么同一份代码可以一键部署到 Node / Bun / Deno / Cloudflare Workers / Vercel Edge / Netlify——这是 **Nitro 引擎**做的事
-- 为什么 Nuxt 项目里 `ref()` / `useFetch()` / `<MyButton />` 都不用 import 还能直接用——这是 **auto-import**
-- 为什么 `@nuxt/image` / `@nuxt/content` / `@nuxt/auth-utils` 装一行就跑——Nuxt 的官方模块系统比社区插件统一得多
+- 为什么新项目常见 `app/pages`，而 `server/api` 仍在仓库根
+- 为什么 `useFetch('/api/hello')` 在服务端会走 `event.$fetch`，hydrate 时又先读 payload
+- 为什么“Nitro preset 一键换部署目标”不在 `packages/nuxt` 里实现，而在 `@nuxt/nitro-server` + `nitropack`
+- 为什么 Node 版本不能再按 Nuxt 3 的宽松引擎猜
 
-Nuxt 的核心价值有三点：
+## 核心架构与流程
 
-1. **Vue 生态的全栈首选**：要做 SSR / SSG / API 路由 / 同构数据获取，Nuxt 是 Vue 圈最完整的方案
-2. **Nitro 让部署目标解耦**：写一份代码，build 时通过 `preset` 切换部署目标——Node 服务器 / Cloudflare Workers / Vercel Edge / 静态文件夹任意切
-3. **约定大于配置**：`pages/` 即路由、`server/api/` 即接口、`composables/` 自动可用——新项目省掉 80% 配置代码
+固定源码的主链可以拆成五步：
 
-## 核心要点
+1. **解析目录**：`srcDir` 优先 `app/`；`dir.pages` 默认 `pages`。`resolvePagesRoutes` 扫描各 layer 的 `appPages`，用 `unrouting` 建成 Vue Router 4 路由树。
 
-Nuxt 之所以能"少配置 + 同构 + 多部署目标"，靠 **三个核心**：
+2. **注入 auto-import**：`nuxt:imports` 默认 `autoImport: true`，扫描 `composables/`、`utils/`、`shared/utils`、`shared/types`；Vue 的 `ref` / `computed` / `watch` 和 `useFetch` / `$fetch` 来自 preset。
 
-1. **pages/ 目录约定路由**
+3. **取数走 `useAsyncData`**：`useFetch` 是 `createUseFetch` 工厂的默认实例。请求 key 由 method、URL、query/body 哈希组成；服务端对本站相对路径改用 `useRequestFetch()`。
 
-   - `pages/index.vue` → `/`
-   - `pages/about.vue` → `/about`
-   - `pages/users/[id].vue` → `/users/:id`（动态参数）
-   - `pages/users/[id]/posts.vue` → `/users/:id/posts`（嵌套）
-   - 不写一行 `createRouter`，文件结构就是路由表
+4. **hydrate 先读缓存**：默认 `getCachedData` 在 `nuxtApp.isHydrating` 时返回 `payload.data[key]`，否则在非手动/hook refresh 时读 `static.data[key]`。
 
-2. **Nitro 服务端引擎**
-
-   - Nitro 是基于 H3（universal HTTP 框架）的服务端运行时——和 Express / Fastify 同位
-   - 关键能力：写一份 `defineEventHandler` 代码，build 时通过 preset 编译到 Node / Bun / Workers / Deno / Edge——**部署目标和源码解耦**
-   - 类比：写一份汉语稿，翻译机给你输出英 / 法 / 日 / 德版——Nitro 就是那台翻译机
-
-3. **Auto-import（不用手写 import）**
-
-   - `components/` 下的 Vue 组件：模板里 `<MyButton />` 直接用
-   - `composables/` 下的函数：`useUserStore()` 直接调
-   - `utils/` 下的纯函数：直接当全局函数
-   - Vue API：`ref` / `computed` / `watch` 自动 import
-   - 类比：Java 的 `java.lang.*` 不用 import；Nuxt 把这套思路推到整个项目
+5. **服务端交给 Nitro**：默认 server builder 是 `@nuxt/nitro-server`，它调用 `nitropack` 的 `createNitro` / `build` / `prerender`。H3 从 `@nuxt/nitro-server/h3` 再导出。
 
 ## 实践案例
 
-### 案例 1：最简一个文件就是首页
+### 案例 1：页面文件即路由
 
-`pages/index.vue`：
+`app/pages/index.vue`：
 
 ```vue
 <script setup>
@@ -79,14 +76,9 @@ const msg = ref("Hi")
 </template>
 ```
 
-**逐部分解释**：
+`pages/index.vue` 仍表示 `/`，但固定 4.5.2 默认先找 `app/pages`。动态段仍是 `[id].vue` 这类文件名，由 `unrouting` 编译，不是手写 `createRouter`。
 
-- `<script setup>` 是 Vue 3 的 Composition API 语法糖——里面声明的变量自动暴露到模板
-- `ref("Hi")` 创建一个响应式引用——**没 import**，Nuxt auto-import 自动加进去
-- `pages/index.vue` 这个文件位置就告诉 Nuxt"这是 `/` 的页面"——不用配路由
-- 跑 `npx nuxi dev`，浏览器访问 localhost:3000 直接看到 `<h1>Hi</h1>`——SSR 渲染，HTML 里就有内容（不是 SPA 那种白屏 + JS 注入）
-
-### 案例 2：API 路由也是文件即接口
+### 案例 2：API 路由停在仓库根
 
 `server/api/hello.ts`：
 
@@ -96,14 +88,9 @@ export default defineEventHandler(() => {
 })
 ```
 
-**逐部分解释**：
+`serverDir` 固定相对 `rootDir` 解析，默认就是根上的 `server/`。即便 `srcDir` 是 `app/`，接口也不该写成 `app/server/api`。`defineEventHandler` 来自 H3/Nitro 的 auto-import，不在 Vue 页面 preset 里。
 
-- 文件位置 `server/api/hello.ts` → 接口 URL `/api/hello`
-- `defineEventHandler` 是 Nitro/H3 的接口声明函数——没 import，auto-import 处理掉
-- 返回 JSON 对象，Nitro 自动序列化 + 设置 `Content-Type: application/json`
-- 这个 API 部署到 Cloudflare Workers / Vercel Edge / Node 都不用改代码——Nitro preset 切换即可
-
-### 案例 3：useFetch 同构数据获取
+### 案例 3：useFetch 复用 payload，不保证零网络
 
 ```vue
 <script setup>
@@ -114,65 +101,77 @@ const { data } = await useFetch('/api/hello')
 </template>
 ```
 
-**为什么这个例子重要**：
-
-- `useFetch` 在**服务端**就把数据拉好——返回的 HTML 已经包含 `<pre>{"message":"Hello..."}</pre>`
-- 客户端 hydrate 时**不再发起一次重复请求**——payload 通过 `<script>` 注入到 window
-- 类比：[[next-js]] 的 `getServerSideProps` + `useEffect(fetch...)` 二合一——一行 `useFetch` 搞定 SSR + CSR 两种场景
+服务端对本站 `/api/hello` 走 `event.$fetch`；结果写入 `payload.data`。客户端 hydrate 时默认先取这份缓存。这不是“永远不再请求”：`refresh:manual` / `refresh:hook`、key 变化或自定义 `getCachedData` 都会重新执行 handler。`createUseFetch` 从 4.2.0 起允许预置默认选项。
 
 ## 踩过的坑
 
-1. **Nuxt 2 vs Nuxt 3 不兼容**：Nuxt 2 基于 Vue 2 + Webpack，Nuxt 3（2022 末发布）基于 Vue 3 + Vite + Nitro——**API、目录结构、生命周期几乎全换了**。老项目升级近似重写。新项目直接 Nuxt 3+。
+1. **把 Nuxt 4 仍写成“根目录 pages/ 是唯一默认”**：有非空 `app/` 时 `srcDir` 是 `app/`；只有 `app/` 不存在、或空 `app/` 且根上已有 `app.vue` / `pages/` 时才退回根目录。
 
-2. **Auto-import 让 IDE 跳转/类型提示要装官方插件**：VS Code / Cursor 默认看到 `ref(0)` 不知道这是 Vue 的 `ref`——Nuxt 3 请装 **Vue - Official（原 Volar）**；TypeScript 已内置，不必再装 Nuxt 2 时代的 `@nuxt/typescript`。新人常以为"代码能跑但 IDE 标红肯定哪里错了"——其实是语言插件没装。
+2. **把 `server/` 跟着 `app/` 搬家**：`serverDir` 不读 `srcDir`。`app/server/api` 不是固定默认。
 
-3. **Server-only / Client-only 边界**：Nuxt 3 用 `import.meta.server` / `import.meta.client`（旧文里的 `process.server` 是 Nuxt 2 写法）。在 `<script setup>` 里直接用 `localStorage` 会**SSR 阶段崩溃**——必须包 `if (import.meta.client) {...}` 或用 `<ClientOnly>` 组件。
+3. **把 hydrate 缓存说成“客户端绝不再 fetch”**：默认缓存只覆盖 hydrating 的 `payload.data` 和部分 `static.data`；手动 refresh 不走这条短路。
 
-4. **Nitro preset 选错部署不通**：build 时通过 `nitro.preset = 'cloudflare'` 切目标。如果代码里用了 Node 独有 API（如 `fs.readFile`），切到 Workers 会 build 失败但报错信息可能很绕——根因是 Workers runtime 没 fs 模块。
+4. **按 Nuxt 3 猜 Node 版本**：`packages/nuxt/package.json` 的 engines 是 `^22.19.0 || ^24.11.0 || >=26.0.0`。
+
+5. **把部署 preset 当成 `packages/nuxt` 内建表**：本仓只选择 `@nuxt/nitro-server`；preset 编译在 `nitropack`。本轮未打开 nitropack 源码，不能写出具体 preset 名单。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Vue 生态的中大型 web app / 内容站 / SSR 需求
-- 需要"同一份代码部署到多个目标"的场景——Nitro preset 价值最大
-- 团队已熟悉 Vue，想要全栈但不想自己拼 Vue Router + Pinia + Nitro
-- API 后端轻量（CRUD / 调外部服务为主）——`server/api/` 写起来比 Express 顺
+- 已用 Vue 3，需要文件路由、SSR/SSG 和同构取数
+- 希望服务端路由与页面约定分开，API 留在根 `server/`
+- 接受 Nitro/`nitropack` 作为服务端编译层，而不是自己接 Express
 
 **不适用**：
 
-- 团队主用 React → 直接 [[next-js]]，Nuxt 没意义
-- 纯静态内容站（博客 / 文档）→ [[astro]] 默认 0 JS 更轻
-- 重型后端（复杂业务逻辑、长连接、worker 队列）→ Nitro 是轻量 HTTP 框架，不适合扛核心业务，建议另起 Node 后端
-- 完全前后端分离的 SPA → Vue + Vite 即可，Nuxt 的 SSR 能力用不上反成累赘
+- 团队主栈是 React → 看 [[next-js]]，Nuxt 帮不上
+- 只要内容站、默认 0 JS → [[astro]] 更贴
+- 必须跑在 Node 18/20 → 固定 4.5.2 的 engines 不包含这些主版本
+- 需要本轮未核验的具体边缘 preset 行为或性能数字
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2016**：Nuxt 1 出现，把 Vue 2 + Webpack 的 SSR 约定打包成「pages 即路由」。
-- **2018–2020**：Nuxt 2 成为 Vue 全栈默认选项，模块生态成型。
-- **2022 末**：Nuxt 3 正式发布——Vue 3 + Vite + Nitro，API 与目录几乎重写。
-- **之后**：Nitro 独立成通用服务端引擎，preset 把同一份代码打到 Node / Workers / Edge。
+- 本文绑定 `nuxt/nuxt@e2d3a394...`，`packages/nuxt` 与 `@nuxt/nitro-server` 均为 `4.5.2`。
+- npm `nuxt@4.5.2` 未提供 `gitHead`；revision 来自 GitHub 轻量 tag `v4.5.2` 指向的提交，并与该提交上的 `package.json` version 对齐。
+- 服务端依赖声明为 `nitropack@^2.13.4`、`h3@^1.15.11`、`ofetch`；具体锁文件版本未核验。
+- 本文未安装依赖、未跑 `nuxi`、未发送请求、未测量 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **约定大于配置 = 团队 90% 时间省在哪里**：路由表 / 数据获取 / auto-import / 部署 preset——这些"约定"是 Nuxt 的核心交付物
-2. **同构（universal）的真意**：同一份代码在服务器跑一次（生成 HTML）+ 浏览器跑一次（hydrate 接管）——`useFetch` 这类 API 的设计就是为了让作者**不用关心代码到底在哪端跑**
-3. **运行时和部署目标解耦**：Nitro 是 Nuxt 最被低估的部分——它把"代码"和"跑在哪台服务器"分开，源码不变 preset 切换即换目标
-4. **生态完整性是 meta 框架的胜负手**：[[next-js]] / Nuxt / [[astro]] 的差别不是性能，而是"官方模块 + 默认值 + 文档"是否足够多到 90% 场景一行装一个就行
+1. **目录约定是解析结果，不是口号**——`app/` 与根目录 `pages/` 哪一个生效，要看 `srcDir` 解析；`server/` 是另一条路径。
+2. **`useFetch` 不是裸 `$fetch`**——它把请求编进 `useAsyncData` 的 key/cache/dedupe 合同，服务端本地调用还换了 fetch 实现。
+3. **Nitro 是独立 builder**——Nuxt 选择 `@nuxt/nitro-server`，真正的 `createNitro` 在 `nitropack`。
+4. **引擎字段会收紧**——4.5.2 已经把 Node 下限写进 package，不能靠旧教程里的 18 推断。
+
+## 应用型自测
+
+1. 新建项目只有根目录 `pages/index.vue`，没有 `app/`。固定 4.5.2 会把 `srcDir` 解析成 `app/` 吗？
+2. `srcDir` 已是 `app/` 时，默认 API 文件应放在 `app/server/api` 还是根 `server/api`？
+3. hydrate 完成后用户点“手动 refresh”。默认 `getCachedData` 还会直接返回 `payload.data[key]` 吗？
+
+检查点：
+
+1. 不会。`app/` 不存在时退回 `rootDir`。
+2. 根 `server/api`。`serverDir` 相对 `rootDir`。
+3. 不会。`refresh:manual` 不走默认 static/payload 短路。
 
 ## 延伸阅读
 
-- 官方 docs：[nuxt.com/docs](https://nuxt.com/docs)——三层结构（Get Started / Guide / API）
-- Nitro 引擎：[nitro.build](https://nitro.build)——单独看 Nitro 文档能理解为什么 preset 这么强
-- 源码：[github.com/nuxt/nuxt](https://github.com/nuxt/nuxt) + [github.com/nitrojs/nitro](https://github.com/nitrojs/nitro)
-- [[vue]] —— Nuxt 之上的核心 UI 库
-- [[next-js]] —— Nuxt 的常被对比对象；React 圈的等价物
+- 官方 docs：[nuxt.com/docs](https://nuxt.com/docs)
+- 固定源码：[nuxt/nuxt](https://github.com/nuxt/nuxt) —— 本文绑定提交 `e2d3a3945a3459c0e3a869de85c0b53c6c214432`
+- Nitro 文档：[nitro.build](https://nitro.build)（preset 细节以 nitropack 为准，本轮未打开）
+- [[vue]] —— Nuxt 之上的 UI 运行时
+- [[ofetch]] —— `$fetch` / `useFetch` 底层客户端
+- [[sveltekit]] —— 另一条文件约定全栈路线
 
 ## 关联
 
-- [[vue]] —— Nuxt 直接构建在 Vue 之上；理解 Vue Composition API 是用好 Nuxt 的前提
-- [[next-js]] —— React 生态的对应方案；理念相似（文件即路由 + SSR + auto-data-fetch），但运行时不通用
-- [[astro]] —— 另一种 meta 框架取舍：默认 0 JS、内容站优先；与 Nuxt 形成"内容 vs 全栈"的两端
+- [[vue]] —— 页面组件与 auto-import 的 `ref`/`computed` 来源
+- [[next-js]] —— React 阵营的文件路由 + SSR 对照
+- [[astro]] —— 内容站优先、默认少 JS 的另一端
+- [[ofetch]] —— Nuxt 请求包装的底座
+- [[unstorage]] —— Nitro server cache 常用的存储抽象
 
 ## 反向链接
 
