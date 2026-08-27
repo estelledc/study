@@ -21,6 +21,7 @@
   - `audit:content-contract`：0 blocking、91 v2。
   - `audit:counts`：projects=961、papers=1083、total=2044。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全部 portable gate 通过；strict build 2285 HTML、23 Playwright tests、Atlas/站点预算和 diff 门禁全绿。首次 a11y 失败只因本机缺少 Playwright Chromium，安装浏览器后重跑通过，未改测试或门禁。
 - budget：2 页静态源码迁移；单 writer；一个 PR。
 - blocker：未授权 merge / deploy。
 - stop conditions：provenance 不唯一、质量门失败、或碰到开放 PR slug 时停止。
