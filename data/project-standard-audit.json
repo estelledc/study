@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 18,
+      "benchmark-aligned": 20,
       "needs-evidence": 943
     }
   },
@@ -2907,6 +2907,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "chakra-ui",
+      "title": "Chakra UI — 用 System + recipe 包一层 Ark 行为的 React 组件库",
+      "source": "https://github.com/chakra-ui/chakra-ui",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "chalk",
@@ -11465,6 +11485,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "mantine",
+      "title": "Mantine — CSS 变量与 Styles API 驱动的 React 组件库",
+      "source": "https://github.com/mantinedev/mantine",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "mapbox-gl-js",

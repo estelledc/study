@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 961 个项目的分块地图 · 稳定 taxonomy · 自动生成
+description: 963 个项目的分块地图 · 稳定 taxonomy · 自动生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -12,10 +12,10 @@ sidebar:
 ## 总览
 
 <div class="study-stats-strip">
-  <div><strong>961</strong><span>项目总数</span></div>
-  <div><strong>933</strong><span>已有规范主题</span></div>
+  <div><strong>963</strong><span>项目总数</span></div>
+  <div><strong>935</strong><span>已有规范主题</span></div>
   <div><strong>28</strong><span>暂未收纳进主题路线</span></div>
-  <div><strong>97.1%</strong><span>分类覆盖率（933 / 961，已分类 / 总数）</span></div>
+  <div><strong>97.1%</strong><span>分类覆盖率（935 / 963，已分类 / 总数）</span></div>
 </div>
 
 ## 先选一条学习路径
@@ -66,7 +66,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | AI 浏览器自动化 | AI Browser Automation | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-ai-browser-automation-01/) |
 | 可观测 / 性能 | Observability and Performance | 11 | [第 1/1 组](/study/atlas/projects/topic-projects-observability-and-performance-01/) |
 | 数据应用 / SaaS | Data Applications and SaaS | 8 | [第 1/1 组](/study/atlas/projects/topic-projects-data-applications-and-saas-01/) |
-| 基础组件 / Headless UI | Headless UI Components | 2 | [第 1/1 组](/study/atlas/projects/topic-projects-headless-ui-components-01/) |
+| 基础组件 / Headless UI | Headless UI Components | 4 | [第 1/1 组](/study/atlas/projects/topic-projects-headless-ui-components-01/) |
 | Markdown / 解析 | Markdown and Parsing | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-markdown-and-parsing-01/) |
 | 图像处理 / Canvas | Image Processing and Canvas | 58 | [第 1/1 组](/study/atlas/projects/topic-projects-image-processing-and-canvas-01/) |
 | CSS / 样式 | CSS and Styling | 5 | [第 1/1 组](/study/atlas/projects/topic-projects-css-and-styling-01/) |
@@ -97,4 +97,4 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 - difficulty 未知：961
 - description 为空：957
-- sidecar 主键：961 个唯一 `area::slug`
+- sidecar 主键：963 个唯一 `area::slug`

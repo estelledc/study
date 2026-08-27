@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "chakra-ui",
+    "digest_sha256": "59321429eb491ec02b674c7ded335dfdcceae58c48e09840658bc58fa3cb47d8"
+  },
+  "source_revision": "f8133940accf0b7de1f7c9ac4aca37e9be5e2027",
+  "research_input_sha256": "3a9c75f5e23ab2de8c18564fe8640018808d62ab0600bce35c26c0be9dd60fc5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-as",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains createSystem, required ChakraProvider value, recipe/slot-recipe, Ark dialog defaults, and .dark color boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-as",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Pinned @chakra-ui/react@3.36.1 / f8133940; inspected system, provider, factory, button, dialog. Upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-as",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "v2 theme/ColorModeProvider is explicitly out of scope; evidence stays STATIC_REVIEW / UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

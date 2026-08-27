@@ -1824,6 +1824,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::chakra-ui",
+      "topic_id": "projects-headless-ui-components"
+    },
+    {
       "note_id": "projects::chalk",
       "topic_id": "projects-terminal-tools"
     },
@@ -2114,6 +2118,10 @@
     {
       "note_id": "projects::luxon",
       "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::mantine",
+      "topic_id": "projects-headless-ui-components"
     },
     {
       "note_id": "projects::mariadb-server",
