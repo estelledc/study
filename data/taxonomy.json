@@ -2336,6 +2336,10 @@
       "topic_id": "projects-forms-and-schema-validation"
     },
     {
+      "note_id": "projects::react-hot-toast",
+      "topic_id": "projects-headless-ui-components"
+    },
+    {
       "note_id": "projects::react-intl",
       "topic_id": "projects-internationalization"
     },
@@ -2394,6 +2398,10 @@
     {
       "note_id": "projects::solid",
       "topic_id": "projects-ui-and-frontend-frameworks"
+    },
+    {
+      "note_id": "projects::sonner",
+      "topic_id": "projects-headless-ui-components"
     },
     {
       "note_id": "projects::sortablejs",

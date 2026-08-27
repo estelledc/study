@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sonner",
+    "digest_sha256": "f77e3059fa12297df50bcbc0dee82a2f294cad89ad6d5f98584ce1469f66d8d7"
+  },
+  "source_revision": "6739aca5f668a33a4fd1d2fd9f758dff95c57466",
+  "research_input_sha256": "eb93e24bc626b31d846d24bfb42cb4d7ee50a3ebf919b31565bfcc2054b47c4b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains ToastState subscription, same-id merge vs rebuild, visibleToasts, and promise unwrap with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned v2.0.8 entry points, Observer, Toaster, types, and Playwright specs were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "npm 2.0.8 gitHead points at a reachable 2.0.7 commit; the note binds the consistent GitHub v2.0.8 revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:15:00.000Z"
+}

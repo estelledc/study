@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "react-hot-toast",
+    "digest_sha256": "7d01204139a8b7b3fb8ca436b6c08d6a6743e8bb0060006c3226a209e469ec9e"
+  },
+  "source_revision": "3a870ed99ff43848c5ad66ce56ee346dbbf3633e",
+  "research_input_sha256": "eb93e24bc626b31d846d24bfb42cb4d7ee50a3ebf919b31565bfcc2054b47c4b",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-bj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains reducer buckets, dismiss vs remove, default timeouts, and promise return value with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-bj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 2.6.0 store, toast API, Toaster, headless export, and Jest tests were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-bj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "npm 2.6.0 has no gitHead; the note binds the peeled GitHub annotated tag v2.6.0 commit."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:15:00.000Z"
+}
