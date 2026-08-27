@@ -17,12 +17,12 @@
   2. 新增 nyc 页，绑定 `istanbuljs/nyc@3ce6d979a1c6753263165d31cb985523b5a81855` / `18.0.0`（tag 名为 `nyc-v18.0.0`）。
   3. 共享 provenance 文档与 generation 1 static receipt。
 - acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt `evidence_state=UNVERIFIED`；`git diff --check`。
-- 验证结果：待 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`。
+- 验证结果：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿（388 Node tests、2287 HTML、2286 sitemap URLs、23 Playwright tests）。
 - budget：1 个 coverage CLI 双子切片；单 writer。
 - blocker：无。本 PR 不 merge。
 - stop conditions：未授权 merge / deploy。
 - 下一次 wake 条件：owner 审查本 PR，或出现新的显式范围。
-- 下一条命令：先完成本地 `verify:ci`，再在 GitHub 查看本 PR；未获 merge 授权前不要合并。
+- 下一条命令：在 GitHub 查看 `https://github.com/estelledc/study/pull/145`；未获 merge 授权前不要合并。
 - superseded_by：`none`
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
