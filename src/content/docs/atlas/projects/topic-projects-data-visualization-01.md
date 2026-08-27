@@ -1,6 +1,6 @@
 ---
 title: "数据可视化 · 项目 · 第 1 组"
-description: "54 条 数据可视化 Atlas 分块"
+description: "55 条 数据可视化 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 54 条，稳定上限为 100 条。
+本分块共 55 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -48,7 +48,7 @@ sidebar:
 | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) | `matplotlib` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) | `mermaid` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Metabase — 让非技术人查数](/study/projects/metabase/) | `metabase` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [nivo — React + d3 组件化图表](/study/projects/nivo/) | `nivo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [nivo — 按图表分包的 React + d3 组件](/study/projects/nivo/) | `nivo` | intermediate | UNVERIFIED | nivo turns d3 scales and shapes into per-chart React packages, with SVG or Canvas renderers and AutoSizer-based respons… |
 | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/projects/observable-framework/) | `observable-framework` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | `observable-plot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | `openlayers` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -65,5 +65,6 @@ sidebar:
 | [Apache Superset — 开源 BI 平台](/study/projects/superset/) | `superset` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tabulator — 纯 JS 交互式表格](/study/projects/tabulator/) | `tabulator` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | `vega` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Victory — 用可组合系列拼出 React 图表](/study/projects/victory/) | `victory` | intermediate | UNVERIFIED | Formidable Victory composes standalone series into a shared domain, then draws SVG through a responsive viewBox contain… |
 | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | `visx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | `voila` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

@@ -2,10 +2,10 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 962,
     "by_status": {
-      "benchmark-aligned": 20,
-      "needs-evidence": 941
+      "benchmark-aligned": 22,
+      "needs-evidence": 940
     }
   },
   "projects": [
@@ -13436,27 +13436,23 @@
     },
     {
       "slug": "nivo",
-      "title": "nivo — React + d3 组件化图表",
+      "title": "nivo — 按图表分包的 React + d3 组件",
       "source": "https://github.com/plouc/nivo",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "nix",
@@ -21417,6 +21413,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "victory",
+      "title": "Victory — 用可组合系列拼出 React 图表",
+      "source": "https://github.com/FormidableLabs/victory",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "video.js",

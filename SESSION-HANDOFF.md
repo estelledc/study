@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CT：Victory + nivo
+
+- status：writer epoch `complete`；review-ready PR only，不 merge。
+- 起始 ref：`042f60a8`（`origin/main`，PR #47 merge）。
+- objective：把 React 可视化双子 `victory` + `nivo` 绑到可达静态 revision；证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：新建 `victory`、迁移既有 `nivo`、共享审查记录、2 份 generation 1 receipt、atlas / note-index / site-state / project-standard / 公开计数 / 本 handoff。
+- activated_by：`explicit-parallel-writer-ct-2026-08-27`。
+- detector fingerprint：`nivo` 为 legacy 教程页，缺 pinned revision / evidence / self-test，且把 Responsive 写成 ResizeObserver、默认字段写成 country；仓库没有 `victory` 页。开放 PR 未占用这两个 slug；未改 echarts / plotly / d3。
+- external delta：1 个 PR（用户授权 push + PR）；未 merge、未 deploy，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `victory` 绑定 `FormidableLabs/victory@d9d9ca2d...` / `37.3.6`；npm 无 `gitHead`，以 GitHub tag 为准。
+  2. `nivo` 绑定 `plouc/nivo@a2d9dab8...` / `@nivo/core@0.99.0` 与 `@nivo/bar@0.99.0`；tag 与 npm `gitHead` 一致。
+  3. 新增 `docs/react-viz-source-review-20260827-ct.md` 与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs`；receipt digest 与 revision 一致；`verify:ci` 以 PR 记录为准。
+- budget：2 页 / 1 个 writer / 1 个 PR / 不 merge。
+- stop conditions：本轮只待 review；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review / CI 变化，或 owner 新授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

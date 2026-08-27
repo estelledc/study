@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -52244,9 +52244,9 @@
       "id": "projects::nivo",
       "area": "projects",
       "slug": "nivo",
-      "title": "nivo — React + d3 组件化图表",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "nivo — 按图表分包的 React + d3 组件",
+      "description": "nivo turns d3 scales and shapes into per-chart React packages, with SVG or Canvas renderers and AutoSizer-based responsive wrappers",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-data-visualization"
       ],
@@ -52258,13 +52258,13 @@
         "raw_category": "数据可视化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/nivo/",
       "atlas": {
@@ -62826,6 +62826,38 @@
       }
     },
     {
+      "id": "projects::victory",
+      "area": "projects",
+      "slug": "victory",
+      "title": "Victory — 用可组合系列拼出 React 图表",
+      "description": "Formidable Victory composes standalone series into a shared domain, then draws SVG through a responsive viewBox container",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-data-visualization"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-data-visualization",
+        "matched_category": "数据可视化",
+        "raw_category": "数据可视化"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/victory/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-visualization-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-visualization-01/"
+      }
+    },
+    {
       "id": "projects::video.js",
       "area": "projects",
       "slug": "video.js",
@@ -65531,7 +65563,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-data-visualization-01/",
-      "entries": 54
+      "entries": 55
     },
     {
       "id": "topic-projects-databases-and-storage-engines-01",

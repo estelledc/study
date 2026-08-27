@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "nivo",
+    "digest_sha256": "dfd24d4dedf45c56402a1b90068a5db75ff1d4f144b1537bb927d2efa631f9b1"
+  },
+  "source_revision": "a2d9dab855365926cb41267eb20af154ca8fd558",
+  "research_input_sha256": "4c3db0458ca1791b46829a3bbbad5e903057442e96c30c917e5eb60c72823db9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ct",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains scoped packages, default id/value/stacked fields, AutoSizer responsive path, and SVG vs Canvas with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ct",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Inspected @nivo/core Container/ResponsiveWrapper/motion and @nivo/bar Bar/Canvas/hooks/defaults; upstream tests and HTTP API were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ct",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Bound GitHub v0.99.0 with matching npm gitHead for @nivo/core and @nivo/bar; top-level nivo@0.31.0 is disclosed as not this review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}

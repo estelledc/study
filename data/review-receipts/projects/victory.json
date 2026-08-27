@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "victory",
+    "digest_sha256": "f7b3cafe4f200fffd5a06d2cb5ab73851117ac74b6ff525c77bf0c75c9c609fd"
+  },
+  "source_revision": "d9d9ca2d5038d6ef9de91f2cef39e6fb2733baa6",
+  "research_input_sha256": "4c3db0458ca1791b46829a3bbbad5e903057442e96c30c917e5eb60c72823db9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ct",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains standalone series vs VictoryChart axes, getDomainWithZero, and responsive viewBox with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ct",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Inspected umbrella re-exports, VictoryChart defaults, VictoryBar domain, Data.formatData, VictoryContainer, and createContainer; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ct",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Bound GitHub tag v37.3.6 / victory@37.3.6; npm publishes no gitHead, so registry was not used to infer revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T12:00:00.000Z"
+}
