@@ -1944,6 +1944,10 @@
       "topic_id": "projects-terminal-tools"
     },
     {
+      "note_id": "projects::entities",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::esbuild",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -1982,6 +1986,10 @@
     {
       "note_id": "projects::gsap",
       "topic_id": "projects-animation"
+    },
+    {
+      "note_id": "projects::he",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::helm",

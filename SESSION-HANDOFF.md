@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GW：he + entities
+
+- status：writer epoch `complete`；本地 change set 已形成，待 push / 开 1 个 PR。
+- 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`）。
+- objective：为缺失的 HTML-entity 双子补齐 `he` 与 `entities` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/html-entity-source-review-20260827-gw.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gw-2026-08-27`。
+- detector fingerprint：目录无 `he.md` / `entities.md`；开放 PR 未占用这两个 slug；`markdown-it` 生产依赖写明 `entities`，但站点没有对应源码绑定页。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `he` 绑定 tag `v1.2.0` → `36afe179392226cf1b6ccdb16ebbb7a5a844d93a`；tag / 构建后 `he.version` / npm `gitHead` 一致。
+  2. `entities` 绑定 tag `v8.0.0` → `2322ee76c431b990facb259b61b9ff4eb89ef3c9`；tag / package / npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目数 965 → 967。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
