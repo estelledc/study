@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2050,
+      "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 967,
+        "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -57254,6 +57254,37 @@
       }
     },
     {
+      "id": "projects::regexparam",
+      "area": "projects",
+      "slug": "regexparam",
+      "title": "regexparam — 把路由字符串编译成 RegExp 和 keys",
+      "description": "介绍 regexparam 如何把路径模式编译成 keys 与 RegExp，并用 inject 回填参数",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "路由"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/regexparam/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
       "id": "projects::regl",
       "area": "projects",
       "slug": "regl",
@@ -62511,6 +62542,37 @@
       }
     },
     {
+      "id": "projects::url-pattern",
+      "area": "projects",
+      "slug": "url-pattern",
+      "title": "url-pattern — 把模式编译成可双向转换的 AST",
+      "description": "介绍 url-pattern 如何用 parser combinator 把字符串编译成 AST，再做 match 与 stringify",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-data-fetching-and-routing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-data-fetching-and-routing",
+        "raw_category": "路由"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/url-pattern/",
+      "atlas": {
+        "chunk_id": "topic-projects-data-fetching-and-routing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/"
+      }
+    },
+    {
       "id": "projects::v8",
       "area": "projects",
       "slug": "v8",
@@ -65627,7 +65689,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-data-fetching-and-routing-01/",
-      "entries": 4
+      "entries": 6
     },
     {
       "id": "topic-projects-data-science-and-ai-01",
