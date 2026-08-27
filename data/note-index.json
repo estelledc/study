@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -35450,9 +35450,9 @@
       "id": "projects::apollo-server",
       "area": "projects",
       "slug": "apollo-server",
-      "title": "Apollo Server — Node 端 GraphQL 服务端的事实标准",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Apollo Server — 用插件管线执行 GraphQL 的 Node 服务端",
+      "description": "Explain how Apollo Server 5 runs HTTP GraphQL requests through plugins, CSRF defaults, and standalone or integration adapters.",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-backend-and-apis"
       ],
@@ -35464,13 +35464,13 @@
         "raw_category": "后端 API"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/apollo-server/",
       "atlas": {
@@ -50379,6 +50379,38 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::mercurius",
+      "area": "projects",
+      "slug": "mercurius",
+      "title": "Mercurius — 把 GraphQL 接到 Fastify 上的适配器",
+      "description": "Explain how Mercurius registers Fastify routes, caches parsed documents, and optionally JIT-compiles GraphQL operations.",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-backend-and-apis",
+        "matched_category": "后端 api",
+        "raw_category": "后端 API"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/mercurius/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
       }
     },
     {
@@ -65405,7 +65437,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 56
+      "entries": 57
     },
     {
       "id": "topic-projects-blockchain-01",

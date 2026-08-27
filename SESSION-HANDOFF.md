@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DM GraphQL server pair
+
+- status：writer epoch `complete`；等待 PR review。
+- 起始 ref：`a910f11f2e9df8e0ce23e1e38b62d3e60cfc1f3f`（`origin/main`）。
+- objective：绑定 GraphQL 服务端对 `mercurius` + `apollo-server` 到可达固定 revision；证据为 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 receipt、`docs/graphql-server-source-review-20260827-dm.md`、派生 atlas / site-state / 公开计数、本 handoff；未改 `graphql-yoga`、`trpc`。
+- activated_by：`explicit-user-parallel-writer-dm-2026-08-27`。
+- detector fingerprint：`mercurius` 页面不存在；`apollo-server` 为 legacy，仍写 `@apollo/server/express4` 内建中间件与未绑定 revision。
+- external delta：本 PR；未 merge、未 deploy，D 轴不提升。
+- 完成切片：
+  1. `mercurius` 新建并绑定 `mercurius-js/mercurius@3ad0edd8...` / `16.10.0`。
+  2. `apollo-server` 重写并绑定 `apollographql/apollo-server@4f154060...` / `@apollo/server@5.5.1`。
+  3. 共享审查文档与两份 generation 1 static receipt。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest/revision 一致，`evidence_state=UNVERIFIED`。
+- budget：2 个 ignored worktree + 2 页 + 1 份审查文档；单 writer。
+- blocker：无本轮新增硬暂停；merge/deploy 未授权。
+- stop conditions：本轮完成后只开 1 个 PR，不 merge。
+- 下一次 wake 条件：PR review / CI，或 owner 另授 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=a910f11f2e9df8e0ce23e1e38b62d3e60cfc1f3f npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

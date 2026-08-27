@@ -1,168 +1,174 @@
 ---
-title: Apollo Server — Node 端 GraphQL 服务端的事实标准
+title: Apollo Server — 用插件管线执行 GraphQL 的 Node 服务端
 来源: 'https://github.com/apollographql/apollo-server'
 日期: 2026-05-30
 分类: 后端 API
 难度: 中级
+description: "Explain how Apollo Server 5 runs HTTP GraphQL requests through plugins, CSRF defaults, and standalone or integration adapters."
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/apollographql/apollo-server
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 4f154060bbe57d3bd612cb09ab63467f319d4ba5
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 5.5.1
 ---
 
 ## 是什么
 
-Apollo Server 是一个 **Node.js GraphQL 服务端框架**：你写一份"菜单"（schema），再写一组"厨师"（resolvers，每道菜怎么做），它负责按客户点的单上菜。
+Apollo Server 是 GraphQL 的 **执行引擎 + HTTP 适配合同**，不是某一个 Web 框架。日常类比：它是后厨调度台。`ApolloServer` 认菜单和厨师；`executeHTTPGraphQLRequest` 认标准化的点菜单。Express、独立 HTTP 或网关只负责把盘子端上桌。
 
-日常类比：像点菜系统。REST 是"套餐"——服务员只能给你 A 套餐或 B 套餐，多余的菜也得吃。GraphQL 是"自助点单"——客人列出"我要鱼香肉丝里的笋丝、宫保鸡丁里的花生"，后厨按单装盘。
-
-代码长这样：
+固定 `@apollo/server@5.5.1` 要求 Node `>=20`、peer `graphql@^16.11.0`。最小独立进程是：
 
 ```js
-import { ApolloServer } from '@apollo/server'
-import { startStandaloneServer } from '@apollo/server/standalone'
+import { ApolloServer } from "@apollo/server"
+import { startStandaloneServer } from "@apollo/server/standalone"
 
-const typeDefs = `type Query { hello: String }`
-const resolvers = { Query: { hello: () => 'world' } }
-
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({
+  typeDefs: `type Query { hello: String }`,
+  resolvers: { Query: { hello: () => "world" } },
+})
 const { url } = await startStandaloneServer(server)
 ```
 
-两件套（typeDefs + resolvers）+ 一句 startStandaloneServer，一个 GraphQL endpoint 就跑起来了。
+`startStandaloneServer` 用 Node `http` + `cors` + `body-parser.json`（默认 50mb），监听 `4000`，并先装上 drain 插件再 `start()`。
 
 ## 为什么重要
 
-不理解 Apollo Server，下面这些事都不好解释：
+不理解 5.x 这条合同，升级和对照都会走偏：
 
-- 为什么 GitHub API v4 / Shopify / Airbnb 用 GraphQL，前端只发一个请求就能拿到嵌套数据
-- 为什么大公司多团队前端不再吵"这个字段加在哪个接口"——Federation 让每个团队各管一段 schema
-- 为什么 GraphQL 项目都在踩 N+1，DataLoader 几乎成了标配
-- 为什么 v4 升级时全网在改 import——单包架构是有意收敛
+- 为什么 v5 不能再从 `@apollo/server/express4` import 中间件
+- 为什么没配 CORS 的浏览器 GET 会被默认 CSRF 拦住
+- 为什么 landing page、cache control、usage reporting 会在 `start()` 时自己出现
+- 为什么 Federation 例子不能从本包里找 `buildSubgraphSchema`
 
 ## 核心要点
 
-Apollo Server 的设计可以拆成 **三块**：
+主链可以看成五段：
 
-1. **schema-first**：先写 SDL（schema definition language）描述 API，编译器把它变成可执行 schema。类比：先画好菜单，厨师才知道有什么菜。`type Query { user(id: ID!): User }` 就是一行菜单。
+1. **构造 schema 来源**：`typeDefs`+`resolvers`、现成 `schema`，或外部 `gateway`。三者互斥。
+2. **start 时补默认插件**：CacheControl 默认开；非 production 给 local landing page，production 给 production landing page；有 `APOLLO_KEY` 且有 `graphRef` 时前置 usage reporting；subgraph schema 默认 inline trace。
+3. **适配器翻译 HTTP**：把 method / headers / search / body 收成 `HTTPGraphQLRequest`，再提供 `context()`。
+4. **`processGraphQLRequest`**：persisted query → 取/解析 document → validate → `didResolveOperation` → execute → 格式化。GET 只允许 query。
+5. **写出 HTTP 头和 body**：完整字符串或 incremental async iterator。
 
-2. **resolvers 树**：每个字段对应一个函数，签名是 `(parent, args, context, info) => value`。类比：每道菜有一个厨师，上一道菜的产出（parent）是这道菜的原料。
+旧页里的“两件套 + `expressMiddleware(server)`”在 5.5.1 仍然能工作，但中间件来自 `@as-integrations/express5`，不在本包 exports 里。
 
-3. **数据源 + context**：每个请求 new 一个 context（装当前用户、DataLoader 实例等），resolvers 通过 context 拿数据库连接。类比：每桌单独一个服务员账本，互不串台。
+## 实践示例
 
-底层执行器是 graphql-js，Apollo 在外面套了 HTTP 处理 + 插件系统 + Federation。
-
-## 实践案例
-
-### 案例 1：最小 Hello World
+### 案例 1：独立进程，把用户放进 context
 
 ```js
-import { ApolloServer } from '@apollo/server'
-import { startStandaloneServer } from '@apollo/server/standalone'
-
-const typeDefs = `
-  type Book { title: String, author: String }
-  type Query { books: [Book] }
-`
-const books = [{ title: 'A', author: 'X' }]
-const resolvers = { Query: { books: () => books } }
-
-const server = new ApolloServer({ typeDefs, resolvers })
-const { url } = await startStandaloneServer(server, { listen: { port: 4000 } })
-console.log(`ready at ${url}`)
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 4000 },
+  context: async ({ req }) => ({
+    user: req.headers.authorization ?? null,
+  }),
+})
 ```
 
-打开 url 自带 Apollo Sandbox（一个网页 IDE），你能直接写查询测试。
+`context` 不再传给 `new ApolloServer`。独立服务器把 Node 的 `IncomingMessage` 交给你，再把返回值送进 resolver 第三参。
 
-### 案例 2：挂在 Express 上 + 注入用户身份
+### 案例 2：Express 5 适配器在另一个包
 
 ```js
-import express from 'express'
-import { ApolloServer } from '@apollo/server'
-import { expressMiddleware } from '@apollo/server/express4'
-import cors from 'cors'
+import { expressMiddleware } from "@as-integrations/express5"
+import express from "express"
+import cors from "cors"
 
 const app = express()
 const server = new ApolloServer({ typeDefs, resolvers })
 await server.start()
 
-app.use('/graphql', cors(), express.json(), expressMiddleware(server, {
-  context: async ({ req }) => ({ user: await getUserFromToken(req.headers.authorization) }),
+app.use("/graphql", cors(), express.json(), expressMiddleware(server, {
+  context: async ({ req }) => ({ user: req.headers.authorization ?? null }),
 }))
 ```
 
-`context` 每个请求跑一次，把 user 注入；resolvers 里 `(parent, args, ctx) => ctx.user.id` 就能用。
+固定 README 的安装行是 `@apollo/server @as-integrations/express5 graphql express cors`。v4 的 `@apollo/server/express4` 深导入在 5.5.1 的 package exports 中不存在。
 
-### 案例 3：Federation v2 子图
+### 案例 3：关掉默认 CSRF 之前先认头
 
 ```js
-import { buildSubgraphSchema } from '@apollo/subgraph'
-
-const typeDefs = `
-  extend schema @link(url: "https://specs.apollo.dev/federation/v2.0")
-  type User @key(fields: "id") { id: ID!, name: String }
-`
-const resolvers = {
-  User: { __resolveReference: ({ id }) => loadUser(id) },
-}
-const server = new ApolloServer({ schema: buildSubgraphSchema({ typeDefs, resolvers }) })
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  csrfPrevention: true, // 与省略同义
+})
 ```
 
-`@key` 告诉网关"User 用 id 跨子图认领"；网关收到查询时按 id 来本子图取 User，再把结果合并。
+默认要求：Content-Type 不是浏览器 safelist，或带 `x-apollo-operation-name` / `apollo-require-preflight`。`csrfPrevention: false` 才能关掉。这和 [[mercurius]] 的 opt-in 正好相反。
 
 ## 踩过的坑
 
-1. **N+1 查询**：`Post.author` resolver 直接 `db.users.findById(post.authorId)` 会让 100 篇文章触发 100 次 DB 查询，必须套 DataLoader 在一次 tick 里 batch + cache。
-
-2. **resolvers 名字打错只返 null**：typeDefs 里写 `title`，resolvers 里写成 `Title`，Apollo 不报错只静默返 null，调试半天才发现是大小写。
-
-3. **context 别放全局可变状态**：context 函数每请求跑一次，里头 new Date() 这种没事，但放共享 cache 时记得加请求作用域；放错地方会让 A 用户看到 B 用户数据。
-
-4. **v3 → v4 大改 import**：以前 `apollo-server-express`、`apollo-server-koa` 一堆子包，v4 全合并进 `@apollo/server`，老代码 import 全要改 + 中间件改成 `expressMiddleware(server)` 注入。
+1. **继续从 `@apollo/server/express4` import**：5.x 要求独立 integration 包；CHANGELOG 写明可先迁包再升主版本。
+2. **把 batched HTTP 当默认**：`allowBatchedHttpRequests` 默认 `false`。
+3. **以为 APQ 要自己打开**：Automatic Persisted Queries 默认开，关要用 `persistedQueries: false`。
+4. **用 GET 发 mutation**：管线会 405，并写 `allow: POST`。
+5. **把 DataLoader / subgraph codegen 写进本包**：N+1 仍靠外部 DataLoader；`buildSubgraphSchema` 在 `@apollo/subgraph`，本轮未检。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 前端字段需求多变、嵌套层级深（GraphQL 一次请求拿全）
-- 多团队多服务要拼一份对外 API（用 Federation 让每团队管自己 subgraph）
-- 已经在 Node.js 生态，不想自己造 HTTP + 解析 + executor 轮子
-- 想要查询验证、tracing、缓存等开箱即用
+
+- 需要一份稳定的 HTTP GraphQL 执行器，再接到 Express、独立进程或自写适配器
+- 想要默认 CSRF、landing page、cache control，并能用插件关掉
+- 已经走 Apollo graph ref / usage reporting，并接受环境变量合同
 
 **不适用**：
-- 简单 CRUD + 单团队 → REST/tRPC 更轻
-- 极致延迟敏感（金融交易撮合）→ gRPC/Protobuf 二进制更快
-- 大量文件上传/流式数据 → GraphQL 不擅长，走 HTTP 直传
-- 已用 Yoga GraphQL/Mercurius 等其它 server，没强诉求别迁
 
-## 历史小故事（可跳过）
+- Fastify 应用只想要一个插件和 per-request loader——对照 [[mercurius]]
+- 目标运行时是 Worker / Deno 的 `fetch` handler——本页未覆盖 [[graphql-yoga]]
+- 同仓 TypeScript 函数即 API、不需要 SDL——那是 [[trpc]] 的问题，本页不改它
+- 要把“Federation 是唯一拆分方式”或固定吞吐写成结论——缺少运行证据
 
-- **2012 年**：Facebook 内部为新闻 feed iOS app 设计 GraphQL，解决 REST 数据冗余/不足
-- **2015 年**：GraphQL 规范开源，graphql-js 参考实现发布
-- **2016 年**：Apollo（公司原名 Meteor）推出 Apollo Server 把 GraphQL 在 Node 落地
-- **2018 年**：Apollo Federation v1 让多 service schema 合并；2021 v2 改进
-- **2022 年**：v4 大重构，所有 `apollo-server-*` 子包合并到 `@apollo/server`
-- **2025 年前后**：v5 继续收敛运行时边界，重点放在新版 Node.js、Express 5 等宿主环境兼容
+## 固定版本边界
+
+- 本文绑定 `apollographql/apollo-server@4f154060...`，即 `@apollo/server@5.5.1` 的解引用提交，与 npm `gitHead` 一致。
+- 包导出 `.` / `./standalone` / `./errors` / 若干 `./plugin/*`；没有 `./express4`。
+- CSRF、APQ、CacheControl 默认开；batched HTTP 默认关；`status400ForVariableCoercionErrors` 默认 `true`。
+- 本文未安装依赖、未跑 Jest、未启动 standalone、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **schema-first 把契约提前**：前后端先对 schema 一致再各干各的，比 REST"接口文档拖后写"靠谱
-- **resolvers 是树而非平面**：嵌套查询自然映射到嵌套 resolvers 调用，但也意味着 N+1 是默认坑
-- **Federation 是"把单体大 schema 拆成多 subgraph 但对外仍是一份"** 的中间路线
-- **包结构演化反映社区心智**：v4 收敛单包是承认"集成爆炸"是反模式
+1. **框架中间件不是核心 API**——核心是 `executeHTTPGraphQLRequest`
+2. **默认插件会在 start 时长出来**——没写进 constructor 不等于没装
+3. **CSRF 默认保护的是“看起来像简单请求”的浏览器调用**，不是所有客户端
+4. **v4 单包收敛之后，v5 又把宿主适配拆出去**——升级要认 exports，而不是旧 import 记忆
+
+## 应用型自测
+
+1. `@apollo/server@5.5.1` 还能从 `@apollo/server/express4` 导入 `expressMiddleware` 吗？
+2. 构造时不写 `csrfPrevention`，浏览器用无自定义头的 GET 发 query，会进入 `context()` 吗？
+3. `allowBatchedHttpRequests` 默认允许 POST body 里的 operation 数组吗？
+
+检查点：
+
+1. 不能。5.5.1 的 package exports 没有这一项，要走 `@as-integrations/express5`。
+2. 默认 CSRF 会先拦住这类非预检请求，不进入后续 context / execute。
+3. 不允许。默认 `false`。
 
 ## 延伸阅读
 
-- 官方文档：[Apollo Server Docs](https://www.apollographql.com/docs/apollo-server)（quickstart + Federation 都在这）
-- 视频：[GraphQL 官方简介](https://www.youtube.com/watch?v=783ccP__No8)（Lee Byron，30 分钟讲清动机）
-- DataLoader 源：[graphql/dataloader](https://github.com/graphql/dataloader)（解决 N+1 的标配）
-- Federation 规范：[Apollo Federation Spec](https://www.apollographql.com/docs/federation/)
-- 对比阅读：[GraphQL Yoga](https://the-guild.dev/graphql/yoga-server)（更轻量的同类）
+- 官方文档：[Apollo Server Docs](https://www.apollographql.com/docs/apollo-server)
+- 固定源码：[apollographql/apollo-server](https://github.com/apollographql/apollo-server) —— 本文绑定提交 `4f154060bbe57d3bd612cb09ab63467f319d4ba5`
+- DataLoader：[graphql/dataloader](https://github.com/graphql/dataloader)
+- [[mercurius]] —— Fastify 插件对照：CSRF / JIT / loader 边界不同
 
 ## 关联
 
-- [[express]] —— Apollo 最常见的 Node 宿主，expressMiddleware 直接挂上
-- [[fastify]] —— 另一个常用宿主，fastifyApollo 插件支持
-- [[koa]] —— 老 Apollo Server v3 时代主流宿主，v4 仍可用
-- [[trpc]] —— 同站全 TS 替代品，没有 schema language，类型靠 TS 推
-- [[grpc-go]] —— 二进制契约 RPC，Federation 之前微服务拼数据另一条路线
-- [[connect-rpc]] —— 跨语言 RPC，介于 gRPC 和 REST 之间
-- [[swr]] —— 前端拿 GraphQL 数据时常用的缓存层
+- [[express]] —— 常见宿主；5.x 中间件在 `@as-integrations/express5`
+- [[mercurius]] —— Fastify 适配器，默认安全开关相反
+- [[fastify]] —— 另一条宿主路线，本包不内置
+- [[graphql-yoga]] —— 跨运行时对照，本轮未改
+- [[trpc]] —— 无 SDL 的同仓 TS 对照，本轮未改
 
 ## 反向链接
 
@@ -172,5 +178,6 @@ const server = new ApolloServer({ schema: buildSubgraphSchema({ typeDefs, resolv
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
+- [[mercurius]] —— Mercurius — 把 GraphQL 接到 Fastify 上的适配器
 - [[nodemailer]] —— Nodemailer — Node.js 发邮件的事实标准
 - [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema

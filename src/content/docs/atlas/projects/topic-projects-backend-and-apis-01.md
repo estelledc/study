@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "56 条 后端与 API Atlas 分块"
+description: "57 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,12 +9,12 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 56 条，稳定上限为 100 条。
+本分块共 57 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | `actix-web` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | `apollo-server` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Apollo Server — 用插件管线执行 GraphQL 的 Node 服务端](/study/projects/apollo-server/) | `apollo-server` | intermediate | UNVERIFIED | Explain how Apollo Server 5 runs HTTP GraphQL requests through plugins, CSRF defaults, and standalone or integration ad… |
 | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | `appwrite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | `asynq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | `axum` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -44,6 +44,7 @@ sidebar:
 | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | `kratos` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | `ktor` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | `litestar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Mercurius — 把 GraphQL 接到 Fastify 上的适配器](/study/projects/mercurius/) | `mercurius` | intermediate | UNVERIFIED | Explain how Mercurius registers Fastify routes, caches parsed documents, and optionally JIT-compiles GraphQL operations |
 | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | `micronaut` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | `pg-boss-readme` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | `phoenix` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
