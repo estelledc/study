@@ -20,7 +20,7 @@
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:content-contract`：blocking 0。
   - `audit:counts` 与 `audit:site-state`：与当前内容文件一致。
-  - `verify:ci`：推送后在规范 Node 下跑。
+  - 规范 Node 22.23.1 / npm 11.17.0 下，`verify:ci` 在首次 a11y 因本机缺 Playwright 浏览器失败后，安装浏览器并从该步起重跑：23 Playwright a11y 通过，Pages/Atlas/站点预算与 git drift 干净。未改门禁。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码页 + 派生刷新；单 writer。
 - blocker：规模 baseline 处置仍需 owner；本轮未改 baseline / 阈值。
 - stop conditions：本轮以单 PR 为止；merge 与 deploy 需单独授权。
