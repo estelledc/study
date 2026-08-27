@@ -11,17 +11,17 @@
 - activated_by：`explicit-parallel-writer-cw-20260827`。
 - 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`。
 - detector fingerprint：`zod` / `yup` / `valibot` / Ajv / TypeBox 已被开放 PR 占用；`arktype` 已是 study-v2 但 provenance 需按 2026-08-27 合同重验；`typia` 无页面。
-- external delta 计数：将形成 1 个可审查 PR；未 merge、未 deploy，D 轴不提升。
+- external delta 计数：已打开 PR #150；未 merge、未 deploy，D 轴不提升。
 - 已完成切片：
   1. `arktype` 继续绑定 GitHub tag `arktype@2.2.3` / `03b1f015...`；披露 npm 无 `gitHead`；补 RegExp/thunk definition、默认 `deepClone` 与 `onUndeclaredKey: ignore`。
   2. 新增 `typia` 绑定 tag `v14.0.4` / `00872d29...`；写明 fail-closed transform、`createValidate` Standard Schema 与 `assertEquals` 多余字段边界。
   3. 新增共享 `docs/schema-validation-source-review-20260827-cw.md`；`arktype` receipt generation 2，`typia` receipt generation 1。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 匹配且 `evidence_state=UNVERIFIED`；`audit:counts` projects=962 / papers=1083 / total=2045；`audit:content-contract` 0 blocking、v2=90；`audit:project-standard` `benchmark-aligned=21`。`verify:ci` 在首个可审查提交之后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 匹配且 `evidence_state=UNVERIFIED`；`audit:counts` projects=962 / papers=1083 / total=2045；`audit:content-contract` 0 blocking、v2=90；`audit:project-standard` `benchmark-aligned=21`。本地 `STUDY_CHANGED_FROM=042f60a8... npm run verify:ci` 全绿（388 Node tests、strict build 2286 HTML / 2285 sitemap URLs、23 Playwright tests）。构建冒烟：`dist/projects/{arktype,typia}/index.html` 可见固定 revision 与 `UNVERIFIED`。
 - budget：2 页、单 writer、1 个 PR；不 merge。
 - blocker：main 上已有规模 detector（tracked_files 超 baseline threshold）；本轮未改 baseline、阈值或证据布局。
 - stop conditions：slug 冲突、revision 不可核验、只能靠放宽门禁继续、或需要 merge/deploy 时停止。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge / 规模 baseline 的单独授权。
-- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/150`；不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
