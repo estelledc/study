@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "runtypes",
+    "digest_sha256": "d985516d47ca0eaf0bdd2c76eb6f699632e9b27e2b4254e7c6aa7bcfe534cf59"
+  },
+  "source_revision": "5cabab81fc9266dfeffd3d236677fdf2cd80eaac",
+  "research_input_sha256": "fc7dcef04b69e3f385236d93d7cb929e6752d3c25e5b65aa268e2b8eb22816ce",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates inspect/check/parse channels, Object extra-key keep-vs-drop, and exact() as reject-not-strip."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Runtype, Object, Parser, ValidationError and Contract were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to runtypes 7.0.5 / commit 5cabab81; parse/check object identity needs execution to reconfirm."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:03:26.000Z"
+}

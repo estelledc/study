@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CL runtime-type epoch
+
+- supervisor 状态：writer epoch `running` → 本地定向门禁已过，等待 `verify:ci` / PR review；不 merge。
+- status：Program `active`；本轮按用户显式 PARALLEL writer CL 授权写入。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`（PR #47 merge 后的 `origin/main`）。
+- objective：新增 `io-ts` 与 `runtypes` 两页 `study-v2` 笔记，绑定可达 STATIC_REVIEW revision，证据保持 `UNVERIFIED`；留下 `docs/runtime-type-source-review-20260827-cl.md`；一个 PR，不自合并。
+- scope：两篇新项目页、两份 generation 1 receipt、CL 源码审查文档、taxonomy curated assignment、atlas / note-index / site-state / project-standard / 公开计数 / 本 handoff；未改候选队列、政策阈值、既有笔记正文语义；未安装上游依赖或跑上游测试。
+- activated_by：`explicit-user-parallel-writer-cl-20260827`。
+- detector fingerprint：目标 slug `io-ts` / `runtypes` 在 `origin/main` 与开放 PR 中均不存在；开放 PR 已占用 yup/valibot/ajv/typebox/zod，按指令避开。
+- external delta 计数：本轮授权形成 1 个可审查 PR；未 merge、未 deploy，D 轴不提升。
+- 已完成切片：
+  1. `io-ts` 绑定 tag `2.2.22` / `864a3a2f...`（npm `gitHead` 一致），写清 Either decode/encode、`t.type` 保留多余字段、`t.exact`/`t.strict` 只剥离不拒绝、稳定 `t.number` 放行 NaN。
+  2. `runtypes` 绑定 annotated tag `v7.0.5` 剥开的 `5cabab81...`（npm 无 `gitHead`），写清 inspect/check/parse 分叉、`Object` 默认 check 保原值 / parse 丢多余字段、`exact()` 才 `PROPERTY_PRESENT`。
+  3. 新增共享 `docs/runtime-type-source-review-20260827-cl.md` 与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:counts` projects=963 / papers=1083 / total=2046；`audit:content-contract --changed-from origin/main` blocking 0、v2=91；`audit:project-standard` `benchmark-aligned=22`、`needs-evidence=941`；`git diff --check` 通过。全量 `verify:ci` 在本交接写入时尚未跑完。
+- budget：2 个小型浅克隆 worktree + 2 页新增 + 派生刷新；单 writer；1 个 PR。
+- blocker：main 上已存在的规模 detector（`tracked_files` 超 baseline）先于本切片；本轮未改 baseline / 阈值 / 证据布局。
+- 下一次 wake 条件：PR CI/review 状态变化，或 owner 对 merge / 规模 baseline 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。实时数量以 `npm run audit:counts` / `data/site-state.json` 为准。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "io-ts",
+    "digest_sha256": "e78110c6b4ae60341512a1143efff01d65fedf06de1282e8fa2f119e9eff5f2b"
+  },
+  "source_revision": "864a3a2f03c5d7b974afeb1da0faf46c21758779",
+  "research_input_sha256": "fc7dcef04b69e3f385236d93d7cb929e6752d3c25e5b65aa268e2b8eb22816ce",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Either-based decode/encode, extra-key retention on t.type, and exact/strict as strip-not-reject."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Type class, t.type/t.exact, PathReporter and experimental Type.number were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to io-ts 2.2.22 / commit 864a3a2f; NaN and extra-key behavior need execution in a target environment to reconfirm."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:03:26.000Z"
+}

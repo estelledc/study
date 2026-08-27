@@ -2016,6 +2016,10 @@
       "topic_id": "projects-infrastructure-utilities"
     },
     {
+      "note_id": "projects::io-ts",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
       "note_id": "projects::jaeger",
       "topic_id": "projects-monitoring-and-time-series"
     },
@@ -2370,6 +2374,10 @@
     {
       "note_id": "projects::rspack",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::runtypes",
+      "topic_id": "projects-forms-and-schema-validation"
     },
     {
       "note_id": "projects::sentry",

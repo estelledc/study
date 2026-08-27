@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -45912,6 +45912,37 @@
       }
     },
     {
+      "id": "projects::io-ts",
+      "area": "projects",
+      "slug": "io-ts",
+      "title": "io-ts — 用 fp-ts Either 做编解码，而不是抛错",
+      "description": "用固定 2.2.22 源码说明 io-ts 如何把 decode/encode 做成 Type，以及 exact 为何只剥多余字段。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-forms-and-schema-validation"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-forms-and-schema-validation",
+        "raw_category": "schema / 运行时类型"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/io-ts/",
+      "atlas": {
+        "chunk_id": "topic-projects-forms-and-schema-validation-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-forms-and-schema-validation-01/"
+      }
+    },
+    {
       "id": "projects::ionic-framework",
       "area": "projects",
       "slug": "ionic-framework",
@@ -57796,6 +57827,37 @@
       }
     },
     {
+      "id": "projects::runtypes",
+      "area": "projects",
+      "slug": "runtypes",
+      "title": "runtypes — check 放行原物，parse 才重新装箱",
+      "description": "用固定 7.0.5 源码说明 runtypes 的 check/parse 分叉，以及 Object.exact 如何拒绝多余字段。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-forms-and-schema-validation"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-forms-and-schema-validation",
+        "raw_category": "schema / 运行时类型"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/runtypes/",
+      "atlas": {
+        "chunk_id": "topic-projects-forms-and-schema-validation-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-forms-and-schema-validation-01/"
+      }
+    },
+    {
       "id": "projects::safe-contracts",
       "area": "projects",
       "slug": "safe-contracts",
@@ -65643,7 +65705,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-forms-and-schema-validation-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-general-developer-tools-01",
