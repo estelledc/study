@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer BW · Konva / Fabric.js
 
-- status：writer epoch `running` → 本地页与 receipt 已写；等待 `verify:ci` 与 owner review；**不 merge**。
+- status：writer epoch `complete`；本地 `verify:ci` 已通过；等待 owner review；**不 merge**。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
 - objective：只把 `konva` 与 `fabric-js` 从 `needs-evidence` 迁到绑定可达 revision 的 `study-v2`；证据上限 `STATIC_ANALYSIS` / `UNVERIFIED`，审查模式 `STATIC_REVIEW`。
 - scope：两页、`docs/canvas-2d-source-review-20260827-bw.md`、两份 generation 1 receipt，以及 project-standard / note-index / site-state / homepage 派生刷新。未改其他开放 PR slug，未改 three / pixi / sharp / jimp 正文。
@@ -19,16 +19,17 @@
   2. `konva` 绑定 10.3.2，纠正 FastLayer / hitGraphEnabled 弃用、`autoDrawEnabled` 默认批绘、Core vs Full、非 cache 滤镜 skip。
   3. `fabric-js` 绑定 7.4.0，纠正 named export、`origin` 默认 center、`loadFromJSON`/`fromURL` Promise、`animate` 不自动渲染。
   4. 新增共享 `docs/canvas-2d-source-review-20260827-bw.md` 与两份 generation 1 static receipt。
-- acceptance checks（截至提交前）：
+- acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：digest / revision 一致，evidence state `UNVERIFIED`。
-  - `audit:project-standard --write`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
   - site-state：projects v2 合同计数 `89`，homepage 标杆数 `20`。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，388 Node tests、2285 HTML、2284 sitemap URLs、23 Playwright tests、Pages/Atlas/站点预算和 diff 门禁全绿。
 - budget：2 个小型 ignored worktree + 2 页静态源码迁移；单 writer。
-- blocker：`verify:ci` 尚未在本环境跑完；规范 Node 声明为 22.23.1，当前 shell 为 22.14.0。
+- blocker：无本地门禁 blocker。未授权 merge / deploy。
 - stop conditions：canonical/revision 不唯一、需要猜测运行结果、或门禁只能靠放宽通过时停止。
 - 下一次 wake 条件：owner review / CI；未授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- 下一条命令：在 PR #120 上做 review；不要 merge。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
