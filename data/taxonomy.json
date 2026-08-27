@@ -2604,6 +2604,10 @@
       "topic_id": "projects-editors-and-rich-text"
     },
     {
+      "note_id": "projects::yup",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
       "note_id": "projects::zod",
       "topic_id": "projects-forms-and-schema-validation"
     },

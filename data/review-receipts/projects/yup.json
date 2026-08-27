@@ -1,13 +1,13 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "d3189914bc0dae9bf8e7034b2253126a384d1ac7ad4c66a9daf845584ff86eed",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
   "note": {
     "area": "projects",
-    "slug": "valibot",
-    "digest_sha256": "76d91b7e96ee7be41dd67d99155f666b268be7eb4b8cbd70f227d7bc3443953c"
+    "slug": "yup",
+    "digest_sha256": "8d91d15f321a45fae15d16ddbf3641deb5cae66edb5d02dfccd9ad5663d95d76"
   },
-  "source_revision": "0dc26ea88cf07a414653375f0da43f97e0eed607",
+  "source_revision": "b413bf65ecdbea965a8e22060a16b5caa9b2c39b",
   "research_input_sha256": "6325ba82b107e478810c3871e691a862f29a75ca3ced68258fb32a932d47d3ec",
   "reviewers": [
     {
@@ -16,7 +16,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
-        "Keeps typed versus success separate and records that the published 1.4.2 tag still contains the is's JSDoc typo."
+        "Separates cast from validate and keeps unknown object keys unless an explicit strategy is chosen."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -29,7 +29,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 93,
       "warnings": [
-        "Rebound to the npm/tag commit; safeParse, object, pipe, i18n 1.2.0, and to-json-schema 1.7.1 were inspected without running tests."
+        "Schema, object, string coerce, when(), Standard Schema, and createValidation were inspected; upstream tests were not run."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -40,9 +40,9 @@
       "role": "ACADEMIC",
       "reviewer_version": "research-benchmark-static-20260827-av",
       "decision": "PASS_WITH_NOTES",
-      "score": 92,
+      "score": 91,
       "warnings": [
-        "The previous 32247b36 pin was a later typo-fix still labeled 1.4.2, not the published package identity."
+        "npm 1.7.1 gitHead is reachable but GitHub has no v1.7.1 tag; the missing tag is disclosed."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
