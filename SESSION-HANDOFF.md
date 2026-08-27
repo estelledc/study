@@ -19,7 +19,8 @@
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest 与固定 revision 一致，`evidence_state=UNVERIFIED`。
   - `audit:project-standard`：`benchmark-aligned=81`、`needs-evidence=884`、snapshot CURRENT。
-  - `audit:content-contract` 与 `verify:ci` 在提交后跑。
+  - `STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（含 23 Playwright a11y）。首次 a11y 失败只因本机缺 Chromium，安装后 23/23 通过；未改测试或门禁。
+  - `audit:content-contract`：`v2=150`、`legacy-unverified=1898`、blocking 0。
 - budget：2 个小型 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
 - blocker：规模 baseline 在 main 已超限，本轮未改阈值或证据布局。
 - stop conditions：一个 PR 已打开且未 merge 后停止；不部署。
