@@ -20,6 +20,7 @@
   - 两份 receipt：`verifyReceiptAgainstNote` 通过，evidence state `UNVERIFIED`。
   - `git diff --check`：通过。
   - 定向派生刷新：`audit:project-standard --write`、`atlas`、`generate:site-state`。
+  - `STUDY_CHANGED_FROM=e20d4ddff npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（strict build 2285 HTML、2284 sitemap URLs、23 Playwright a11y）。
 - budget：1 个可写切片、2 页、120 分钟窗口内完成。
 - external_outcome：1 个 review-ready PR；未授权 merge。
 - stop conditions：本轮写入结束；merge / deploy / 规模 baseline 处置需单独授权。
