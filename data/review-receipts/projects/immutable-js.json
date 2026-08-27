@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "immutable-js",
+    "digest_sha256": "aa842718de17e0708148e634a5e8e7d51bff22c526b5bd7da645070b65dfaf5d"
+  },
+  "source_revision": "329f7a680efa262c310b938a343295880eefe4fc",
+  "research_input_sha256": "1bcd3c6d3d1e671f9f9549d0df8fb440d893cee29bfa747ccf8c9bf9c4e8846c",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ax",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains persistent Map/List, OwnerID withMutations, fromJS, and is() equality with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ax",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Map HAMT, List trie, fromJS, is/hash, Record, and Map tests were inspected; upstream Jest was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ax",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Binds consistent 5.1.9 tag/package/gitHead; discloses v6 beta and 3.8.4 backport provenance split."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

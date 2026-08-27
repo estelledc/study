@@ -1,156 +1,161 @@
 ---
-title: Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
-来源: 'https://github.com/immerjs/immer'
+title: Immer — 用 Proxy 写出可变语法、产出不可变状态
+description: 用 Proxy 写出可变语法，产出带结构共享的不可变状态。
+来源: https://github.com/immerjs/immer
 日期: 2026-05-30
-分类: projects
+分类: 状态管理
 难度: 初级
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/immerjs/immer
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: b00474e3755954f6b27a392dcb4bce97254c100c
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 11.1.18
 ---
 
 ## 是什么
 
-Immer 是一个**只有几 KB** 的 JS 库，让你用**最熟悉的赋值语法**（`obj.x.y = 1`）写状态更新，但最终拿到一份**新对象，原对象一字未改**。日常类比：像复印店——你拿一份"草稿"在上面随便涂改，店员最后给你一份**只把你涂过的那几行重印、其余页直接夹回原件复印**的新版本。
-
-它的核心 API 只有一个：
+Immer 让你用赋值、`push` 这类可变语法写状态更新，但最终得到一份新对象，原对象保持不动。日常类比：你在透明书皮上涂改；店员只重印被涂过的那几页，没动的页仍夹回原书。
 
 ```ts
-import { produce } from 'immer'
+import { produce } from "immer"
 
 const next = produce(state, draft => {
-  draft.user.profile.address.city = 'Shanghai'
+  draft.user.profile.address.city = "Shanghai"
 })
 ```
 
-读起来像直接修改，但 `next` 是新对象，`state` 完全没动。Redux Toolkit 把它列为默认依赖，所以只要你写过现代 Redux，几乎一定隐式用过它。
+固定 `11.1.18` 的默认 `produce` 只给 plain object 与 array 套 Proxy。`Map` / `Set`、JSON Patch 与数组方法优化分别由 `enableMapSet`、`enablePatches`、`enableArrayMethods` 按需加载。
 
 ## 为什么重要
 
-不理解 immer，下面这些事都没法解释：
+不读固定源码，下面这些说法很容易写错：
 
-- 为什么 Redux Toolkit 的 reducer 写起来像直接 mutate state，**却没有 bug**
-- 为什么社区一夜之间从"四层 `...spread`"风格转向"看起来 mutable"的写法
-- 为什么 MobX 作者写完响应式库还要再造一个不可变库（思路相反，目标互补）
-- 为什么 TypeScript 在 immer 里能正确推出 `draft` 类型——这是 Proxy + 泛型的精巧合作
+- 为什么 Redux Toolkit 的 reducer 能“看起来 mutate”，却仍交出新引用
+- 为什么 `produce(new Map(), …)` 在没调用 `enableMapSet()` 时会直接失败
+- 为什么 recipe 既 `return` 新值又改 draft 会抛错
+- 为什么异步回调里继续碰 `draft` 会遇到已撤销的 Proxy
 
 ## 核心要点
 
-immer 的工作可以拆成 **三步**：
+一次 `produce(base, recipe)` 可以拆成四步：
 
-1. **包代理**：`produce` 拿到 base 后，**不**深拷贝它，而是用 Proxy 把它的最外层包一层。日常类比：像给一本书外面加一层透明书皮——书还是原书，但所有翻页动作经过书皮才到书。
+1. **建 scope 与根 Proxy**：`enterScope` 后，`createProxy` 给 draftable 的根值套 `Proxy.revocable`。target 实际是内部 state，不是原对象。
 
-2. **懒拷贝（copy-on-write）**：你访问哪个子对象，才**临时**给那个子对象再包一层 Proxy；你写哪个字段，才**浅拷贝**那一层并把改动写进去。没碰到的子树原封不动。
+2. **读时才下钻、写时才浅拷**：get trap 碰到 draftable 子值才再包一层；set / delete 才 `shallowCopy` 当前层并沿父链 `markChanged`。没碰到的子树继续共享原引用。
 
-3. **finalize 走改动路径**：`produce` 回调结束时，从根开始只走"被标记改过"的子树，把改过的层换成新对象，未改的层**直接用原引用**塞回去。这样新旧对象**共享所有没动的子树**——这叫"结构共享"。
+3. **finalize 只走改过的路径**：recipe 返回 `undefined` 时，从根 draft 递归；未改节点退回 `base_`，改过的节点留下 `copy_`。recipe 返回另一个值则整树替换。
 
-三步加起来就是一次 `produce(state, recipe)` 调用。
+4. **撤销 Proxy**：`processResult` 结束后 `revokeScope`。draft 不能带出这次调用。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：四层嵌套，一行就改完
-
-不用 immer 时你得这样写：
-
-```ts
-const next = {
-  ...state,
-  user: { ...state.user, profile: { ...state.user.profile,
-    address: { ...state.user.profile.address, city: 'Shanghai' } } }
-}
-```
-
-用 immer：
+### 案例 1：嵌套赋值只复制路径
 
 ```ts
 const next = produce(state, draft => {
-  draft.user.profile.address.city = 'Shanghai'
+  draft.user.profile.address.city = "Shanghai"
 })
 ```
 
-**逐部分解释**：`draft` 看起来就是 state，但其实是 Proxy；写 `.city = 'Shanghai'` 时，set trap 会沿着 user → profile → address 一路把祖先标记为改过；finalize 时只浅拷贝这条路径，其他兄弟节点（如 `state.posts`）和 `next.posts` 仍是同一个引用。
+`next.user` 是新对象；`next.posts` 若没被写过，仍与 `state.posts` 同一引用。这是结构共享，不是深拷贝整棵树。
 
-### 案例 2：数组操作直接 push / splice
+### 案例 2：返回值与 draft 互斥
 
 ```ts
-const state = { todos: [{ id: 1, done: false }] }
-
-const next = produce(state, draft => {
-  draft.todos.push({ id: 2, done: false })
-  draft.todos[0].done = true
+const replaced = produce(state, draft => {
+  return { ...state, ready: true } // 整树替换
 })
 ```
 
-`Array.prototype.push` 在 mutable 编程里天天写，但传统不可变写法要 `[...arr, newItem]`。immer 让 push 也"看起来可改、实际不变"——内部用 Proxy 拦截了数组的 set。`next.todos !== state.todos`，但 `next` 之外没动的字段全部和 `state` 共享引用。
+固定实现里，recipe 若返回新值同时又改过 draft，会走 `die(4)`。要么改 draft 并省略 return，要么 return 替换值且不要改 draft。`nothing` 用来把结果收成 `undefined`。
 
-### 案例 3：produceWithPatches 做 undo/redo
+### 案例 3：Patches 是插件，不是默认
 
 ```ts
-import { produceWithPatches, applyPatches, enablePatches } from 'immer'
+import { enablePatches, produceWithPatches, applyPatches } from "immer"
 enablePatches()
 
-const base = { todos: [{ id: 1, title: 'learn', done: false }] }
 const [next, patches, inverse] = produceWithPatches(base, draft => {
   draft.todos[0].done = true
 })
-// patches: [{ op: 'replace', path: ['todos', 0, 'done'], value: true }]
-// inverse: [{ op: 'replace', path: ['todos', 0, 'done'], value: false }]
-const back = applyPatches(next, inverse)  // back deepEquals base
+const back = applyPatches(next, inverse)
 ```
 
-`patches` 兼容 RFC 6902 JSON Patch，单机 undo/redo 几乎免费——只要把每次的 inverse 压栈即可。
+`produceWithPatches` 通过 patch listener 取插件；没先 `enablePatches()` 会在 `getPlugin("Patches")` 失败。patches 形状接近 JSON Patch，但是单机 undo 材料，不带因果序。
 
 ## 踩过的坑
 
-1. **不支持循环引用**：在 draft 里写 `a.b = a` 会**栈溢出**。immer 没有运行时检测，因为加上检测会拖慢 99% 的正常情况。
-2. **class 实例不会自动被代理**：默认只代理 plain object / array / Map / Set。class 必须显式 `[immerable] = true` 才进 draft 体系，否则当成"叶子"原封不动复制。
-3. **draft 不能逃出 produce**：`produce` 一返回，所有 Proxy 立刻被 revoke。如果你在外面再访问 draft 引用会抛错。`produce(state, async draft => ...)` 是**禁止写法**——异步回调里 draft 早就废了。
-4. **patches 不带因果序号**：单机 undo/redo 没问题，但如果想做多人协同编辑，patches 不解决冲突合并，需要再叠 CRDT 或 OT。
+1. **把 Map/Set 当成默认能力**：`isDraftable` 对 `Map`/`Set` 为真，但代理实现在 `enableMapSet()`。未加载插件时 `produce` 会要求插件。
+2. **异步 recipe**：`produce` 同步等 recipe 返回后立刻 revoke。把 draft 交给 `async` / `then` 会碰到“revoked proxy”错误。
+3. **`enableArrayMethods()` 的回调拿到 base**：开启后 `sort` / `filter` 等走优化路径；回调参数不是 draft。在回调里改元素不会按 draft 语义记账。
+4. **默认冻结**：`autoFreeze_` 默认 `true`，注释写明生产环境也默认冻结。后续若再 mutate `next`，应先确认自己关过 `setAutoFreeze`。
+5. **循环引用**：错误表有 “forbids circular references”，但本 revision 的 `src/` 未见对应 `die(5)` 调用。不要把“表里有这句话”写成“运行时一定拦住”。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Redux / Zustand / 任意"reducer 改 state"模式——immer 是默认最佳搭档
-- 中等深度（≤ 6 层）嵌套对象的局部更新
-- 需要 undo/redo 且能接受单机一致性的 UI 应用
-- 代码库已是 plain JS object，不想换数据结构层
+- reducer / store updater 以 plain object 与 array 为主
+- 需要结构共享，且能接受 Proxy 与默认 freeze
+- 单机 undo/redo，并愿意显式打开 patches 插件
 
 **不适用**：
 
-- 极高频写场景（游戏循环 / 高频动画 / 单帧上万次 produce）—— Proxy 开销可能成瓶颈，考虑手写 spread 或换 `Immutable.js` 的 HAMT trie
-- 大量 class 实例的状态——要么全打 `[immerable]`，要么 immer 不是合适工具
-- 分布式协作编辑——patches 不带因果序，要叠 [[crdt-json]]
-- 真正需要持久化数据结构（O(log n) 合并 / 大版本树）—— Clojure 风格的 persistent map 更合适
+- 状态主体是 `Map`/`Set` 或 class 实例，却不想维护插件与 `[immerable]`
+- 需要把 draft 带进异步边界
+- 要用多人协同合并——patches 不解决冲突
+- 已经选择 [[immutable-js]] 这类持久化集合，不想再包一层 Proxy
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Michel Weststrate（MobX 作者）开源 immer。灵感来自 Clojure persistent data + ES6 新规范的 Proxy 终于落地到主流浏览器，让"拦截一切读写"成为可能。
-- **2018-2019 年**：Redux Toolkit 把 immer 列为默认依赖，社区一夜之间从 spread 地狱解脱出来。
-- **2021 年**：v9 大重写，全面 TypeScript 化，把 Patches、MapSet 拆成可选插件——默认 bundle 缩到 ~3KB。
-- **设计取舍**：MobX 让你"原地改、自动追踪"；immer 让你"看起来原地改、实际全新对象"。同一个作者，两个相反方向，覆盖了状态管理的两端。
+- 本文绑定 `immerjs/immer@b00474e3755954f6b27a392dcb4bce97254c100c`。GitHub tag `v11.1.18` 与 npm `immer@11.1.18` 的 `gitHead` 都指向它。
+- 该提交工作区 `package.json` 仍写 `10.0.3-beta`，发布脚本是 `semantic-release`；published 版本以 npm/tag 为准。
+- `useStrictIteration_` 字段默认 `false`，与部分源码注释“默认开启”不一致；以字段初值为准。
+- 本文未安装依赖、运行上游 vitest、测量 bundle 或对比性能，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **API 的认知摩擦比性能更值钱**——immer 用一点点运行时开销换"零学习曲线"，赢得了整个 Redux 生态
-2. **Proxy + Symbol 内部状态外挂** 是 2026 年 JS 框架的标准模式（Vue 3 reactive / MobX 6 / SolidJS Store / immer）都用同一招
-3. **结构共享**让"不可变"不再昂贵——只复制真改的那条路径，其他子树共享引用
-4. **插件化 + 默认最小** 是现代 JS 库的事实标准——核心包小、高级特性按需开启
+1. **可变语法可以只是陷阱，不是真 mutate**——Proxy 把“看起来赋值”变成 copy-on-write。
+2. **默认可起草的集合比口头传说更窄**——object/array 在核心路径；Map/Set/patches/数组优化都是插件。
+3. **返回值与 draft 是两条互斥出口**——同时用会失败，不是“谁覆盖谁”。
+4. **published 版本可能不写在 git `package.json` 里**——semantic-release 仓要以 tag / npm `gitHead` 对 revision。
+
+## 应用型自测
+
+1. 未调用任何 `enable*` 时，`produce(new Map(), draft => draft.set("a", 1))` 会成功吗？
+2. recipe 里先改 `draft.count++`，再 `return { count: 0 }`，固定 11.1.18 会怎样？
+3. `produce(state, async draft => { draft.x = 1 })` 返回的 Promise resolve 之后，还能安全读那个 `draft` 吗？
+
+检查点：
+
+1. 不会；Map 代理要先 `enableMapSet()`。
+2. 抛错：不能既改 draft 又返回替换值。
+3. 不能。recipe 返回 Promise 后 scope 已 revoke。
 
 ## 延伸阅读
 
-- 官方文档：[immerjs.github.io/immer](https://immerjs.github.io/immer/)（10 分钟通读 produce / patches / class 适配）
-- 视频：[Michel Weststrate — Immer, immutability and the wonderful world of Proxies](https://www.youtube.com/watch?v=-gJbS7YjcSo)（作者本人讲设计取舍，30 分钟）
-- 源码精读切入点：`src/core/proxy.ts`（Proxy traps）→ `src/core/finalize.ts`（结构共享递归）→ `src/plugins/patches.ts`（JSON Patch 生成）
-- [[mobx]] —— 同一作者的反方向库，看完会更理解 immer 的设计选择
-- [[salsa-adapton]] —— 另一种"只重算改了的那部分"思路，但用在计算图而非状态树
+- 官方文档：[immerjs.github.io/immer](https://immerjs.github.io/immer/)
+- 固定源码：[immerjs/immer](https://github.com/immerjs/immer) —— 本文绑定提交 `b00474e3755954f6b27a392dcb4bce97254c100c`
+- [[immutable-js]] —— 持久化 HAMT / List，对照“换数据结构”还是“换更新语法”
+- [[mobx]] —— 同一作者的另一方向：就地改并追踪依赖
 
 ## 关联
 
-- [[mobx]] —— 同作者；MobX 让你直接 mutate 并自动追踪，immer 让你看起来 mutate 实则不变
-- [[react]] —— immer 在 React 状态管理里几乎无处不在（Redux Toolkit / useReducer）
-- [[zustand]] —— 默认集成 immer middleware，写 store 时也能 draft.x = y
-- [[jotai]] —— 原子化状态库，配合 immer 处理嵌套原子时仍能享受 draft 写法
-- [[valtio]] —— Proxy 路线的另一端：直接订阅 mutation，不像 immer 产出新对象
-- [[self-adjusting]] —— 思路同源：变化只触发依赖部分的重算/重建
-- [[crdt-json]] —— immer 的 patches 不能解决冲突合并，要协同得叠 CRDT
+- [[immutable-js]] —— 持久化集合；immer 保持 plain JS 形状
+- [[mobx]] —— 同作者；响应式 mutate vs 产出新树
+- [[react]] —— 常见于 `useReducer` / Redux Toolkit 一类更新
+- [[zustand]] —— 可用 immer middleware 写 draft
+- [[valtio]] —— 另一条 Proxy 路线，订阅 mutation 而不是产出新对象
+- [[crdt-json]] —— patches 不够做协同合并时的对照
 
 ## 反向链接
 
