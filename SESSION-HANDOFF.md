@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DI：happy-dom / linkedom
+
+- supervisor 状态：`running` writer epoch complete，等待 PR review；未 merge。
+- 起始 ref：`7a2384d098114782c7c7f0cec319a81c92047552`。
+- objective：为尚不存在的 DOM 实现对页建立 `study-v2` STATIC_REVIEW：happy-dom 与 linkedom；产出 `docs/dom-impl-source-review-20260827-di.md`；一个 PR，不 merge。
+- scope：两篇新项目页、2 份 generation 1 receipt、共享审查文档、taxonomy curated assignment、atlas/site-state/project-standard/公开计数、本 handoff；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未测 canvas/bundle/性能。未改既有笔记正文语义、政策阈值或 jsdom。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-di`。
+- detector fingerprint：仓库无 happy-dom / linkedom 项目页；DOM 实现对只能从固定源码新建，不能绑 jsdom。
+- external delta 计数：本轮授权 push + 一个 PR；未 merge、未 deploy，D 轴不变。
+- 已完成切片：
+  1. 只读核验 GitHub/npm：`happy-dom@20.11.8` lightweight tag 与 `gitHead` 同指 `00fcf21b...`；`linkedom@0.18.13` annotated tag 解引用到 `fcd88e02...`，与 npm `gitHead` 一致。
+  2. `happy-dom` 绑定 Detached Window / Browser context、默认 `enableJavaScriptEvaluation=false`、手写 `HTMLParser`。
+  3. `linkedom` 绑定 `parseHTML`→htmlparser2、PREV/NEXT/END 三链表、`linkedom/cached` WeakMap。
+  4. 新增共享 `docs/dom-impl-source-review-20260827-di.md` 与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest 一致，evidence state `UNVERIFIED`；`audit:counts` / content-contract blocking 0。全量 `verify:ci` 在提交后跑。
+- budget：2 个 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 compare 在 main 上已超 baseline，属既有 `PARKED_HUMAN` 信号；本轮未改 baseline 或阈值。
+- stop conditions：本轮写入结束；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`
+- 不在 handoff 中复制易过期数字或 ETA。验证结果：定向 quality-gate 与 receipt 已通过；CI 以 PR checks 为准。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

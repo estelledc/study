@@ -1984,6 +1984,10 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::happy-dom",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::helm",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2086,6 +2090,10 @@
     {
       "note_id": "projects::lightningcss",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::linkedom",
+      "topic_id": "projects-testing-and-verification"
     },
     {
       "note_id": "projects::lingui",

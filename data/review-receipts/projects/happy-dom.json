@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "happy-dom",
+    "digest_sha256": "6c24e5d94cf056a8721ab85448e5795b56e4fd7f169000e1731f9e2b70e33e80"
+  },
+  "source_revision": "00fcf21b00da1ba1ed89f1b940592c32de21708d",
+  "research_input_sha256": "2e33c092d92365c204dae39b34ff0b8f1b25cf80c8c90d24af61780f0ceb8664",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-di",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Detached Window, Browser context, default-off JS evaluation, and hand-written HTML parser with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-di",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Window, Browser, DefaultBrowserSettings, HTMLParser, script gates, and GlobalRegistrator were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-di",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Workspace package versions remain 0.0.0; identity is bound to reachable tag/npm gitHead 20.11.8, not sibling package latest."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "linkedom",
+    "digest_sha256": "d2d7f014d8e68a3e3abe0840bdf134f6be35d19fcf67bf77ec7f06b2fce30557"
+  },
+  "source_revision": "fcd88e02b6dd3e616f5de512b15713b663d16ab7",
+  "research_input_sha256": "2e33c092d92365c204dae39b34ff0b8f1b25cf80c8c90d24af61780f0ceb8664",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-di",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates parseHTML return values, PREV/NEXT/END storage, css-select scan, and cached export with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-di",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "DOMParser, htmlparser2 builder, ParentNode chain, matches, and cached reset path were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-di",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "README throughput and memory claims are excluded; this note stays bounded to reachable 0.18.13 source contracts."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
