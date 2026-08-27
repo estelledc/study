@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "unocss",
+    "digest_sha256": "a4d6c0780d0adfcfdea5b9625b0139eda82d487764cc63232b078429fec0cf83"
+  },
+  "source_revision": "a441ef4d8b14a20c0b3551383ae1b1e96940c0d2",
+  "research_input_sha256": "811ce73f77ad52cf4e03d18035e32620e67fa60066c08c502419d3c47dde6439",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-r",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains createGenerator, extractor vs token input, shortcut depth, and deprecated presetUno without claiming a Vite or test run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-r",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "generator, default extractor, config merge, preset-uno wrapper, and Vite mode defaults were inspected; upstream tests and builds were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-r",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm tarball has no gitHead; this note is bounded to annotated tag v66.8.1 and does not claim size or speed versus Tailwind."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

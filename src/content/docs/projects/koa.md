@@ -1,148 +1,172 @@
 ---
-title: Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
-来源: https://github.com/koajs/koa + koajs.com 官方文档
+title: Koa — 用 ctx 与可替换 compose 编排洋葱中间件的 Node 框架
+来源: https://github.com/koajs/koa
 日期: 2026-05-30
 分类: 工具库
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/koajs/koa
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 6984592d41946ed746f15afcb05554e073f64dad
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 3.2.1
 ---
 
 ## 是什么
 
-Koa 是 **TJ Holowaychuk（Express 同作者）2013 年起在 koajs 组织下开源**的 Node.js web 框架。日常类比：Express 像装修齐全的精装公寓——开门就能住，但墙体家具都按房东想法定好了；Koa 像毛坯房——给你水电承重墙（中间件链 + ctx），其余 router、body 解析、CORS、模板引擎全自己买装（独立 npm 包），布置完全你说了算。
+Koa 是一个只负责中间件链与 `ctx` 包装的 Node web 框架。日常类比：它给你水电和承重墙——`app.use()` 登记函数，`callback()` 把它们交给 `koa-compose`（或你传入的 `compose`），每个请求新建 `ctx`；路由、body 解析、CORS 都不在这个仓库里。
 
 你写：
 
-```ts
-import Koa from 'koa';
+```js
+const Koa = require('koa');
 const app = new Koa();
-app.use(async (ctx, next) => { const t = Date.now(); await next(); ctx.set('X-Time', `${Date.now()-t}ms`); });
+app.use(async (ctx, next) => {
+  const start = Date.now();
+  await next();
+  ctx.set('X-Time', `${Date.now() - start}ms`);
+});
 app.use(async (ctx) => { ctx.body = { ok: true }; });
 app.listen(3000);
 ```
 
-四行起一个有计时 header 的服务。`await next()` 之前是请求进入路径，之后是响应回流路径——同一个函数包住两个方向，这就是 **洋葱模型**。weekly downloads ~1M，core ~600 行 JS，是非内置主义 Node web 框架的事实代表。
+`listen()` 只是 `http.createServer(app.callback()).listen(...)`。固定 `3.2.1` 的 CommonJS 入口是 `lib/application.js`，ESM 入口是 `gen-esm-wrapper` 生成的 `dist/koa.mjs`。
 
 ## 为什么重要
 
 不理解 Koa，下面这些事都没法解释：
 
-- 为什么 TJ Holowaychuk 写完 Express 三年后又写一个 **反 Express** 的框架——同作者亲手革命自己的产品
-- 为什么 Fastify / Hono / Elysia 这些后辈讲设计哲学时都要 **拿 Koa 当参照系**——洋葱中间件是它们的精神祖先
-- 为什么 50 行的 `koa-compose` 是 Node 中间件机制的 **教学典范**，读完彻底懂"中间件链异步执行"是怎么回事
-- 为什么 Koa v3 从 2019 alpha 拖到 **2025-04** 才发稳定版——BDFL 离场后社区维护的真实代价
+- 为什么 `await next()` 能同时表示“把控制权交给下游”和“等下游全部结束再回来”
+- 为什么 core 没有 router，却仍能用 `ctx.body` / `ctx.throw()` 写完响应
+- 为什么 v3 不再把 generator 中间件当成一等公民
+- 为什么 stream / Blob / `Response` 都能当 `ctx.body`，错误路径却仍取决于有没有 `error` 监听器
 
 ## 核心要点
 
-Koa 的工作可以拆成 **三个支柱**：
+固定 `3.2.1` 可以拆成四步：
 
-1. **极简核心**：core 只负责 ctx 包装 + 中间件链编排 + 错误冒泡，~600 行 JS。router、body-parser、CORS 全是独立 npm 包（`@koa/router` / `koa-bodyparser` / `@koa/cors`）。"什么都没有"是入口姿态。
+1. **登记中间件**：`use(fn)` 只接受 function，推进 `this.middleware`。不再转换 Koa v1 generator。
 
-2. **洋葱模型中间件**：每个中间件是 `async (ctx, next) => { /* 上游 */ await next(); /* 下游 */ }`。`koa-compose` 50 行实现：`dispatch(i)` 调用 `middleware[i]`，把 `dispatch.bind(null, i+1)` 作为 `next` 传入；`await next()` 实质是 `await dispatch(i+1)` 递归。一进一出对称，错误用 try/catch 一处接。
+2. **合成链**：`callback()` 调用 `this.compose(this.middleware)`，默认 `compose` 来自依赖 `koa-compose@^4.1.0`，也可在构造时传入 `options.compose`。
 
-3. **ctx 取代 (req, res, next)**：Express 把 Node 原生 `req` / `res` 直接暴露；Koa 用 `ctx` 包装两者，提供 `ctx.body` `ctx.status` `ctx.throw()` 这套高层 API。`ctx.state` 是 per-request 状态容器，跨中间件共享数据的标准位置。
+3. **每请求一个 ctx**：`createContext()` 从 `context` / `request` / `response` prototype 派生对象，挂上原生 `req` / `res`，并设置 `ctx.state = {}`。若构造时打开 `asyncLocalStorage`，请求会跑在 `AsyncLocalStorage.run(ctx, ...)` 里，`app.currentContext` 才能读到当前 ctx。
 
-三件事拼起来 = 把"中间件链异步控制流"这个 callback 时代痛点用 Promise 时代的语言原生机制解出来。代价：极简哲学换来组装负担，新人上手要装 5-10 个包；ctx 抽象在 2024 年看不如 Hono `c.json()` 方法式明确。
+4. **默认 404 再 respond**：`handleRequest()` 先把 `res.statusCode` 设为 404，再 `fnMiddleware(ctx).then(respond).catch(ctx.onerror)`。`respond()` 按 body 类型分支：空状态码、HEAD、`null`、Buffer、string、stream / Blob / `ReadableStream` / `Response`，最后才 `JSON.stringify`。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：洋葱模型的"一进一出"
+### 案例 1：洋葱进出顺序
 
-```ts
-app.use(async (ctx, next) => { console.log('1 in');  await next(); console.log('1 out'); });
-app.use(async (ctx, next) => { console.log('2 in');  await next(); console.log('2 out'); });
-app.use(async (ctx)       => { console.log('3 in');  ctx.body = 'ok'; });
-// 请求一次输出: 1 in / 2 in / 3 in / 2 out / 1 out
+```js
+app.use(async (ctx, next) => { console.log('1 in'); await next(); console.log('1 out'); });
+app.use(async (ctx, next) => { console.log('2 in'); await next(); console.log('2 out'); });
+app.use(async (ctx) => { console.log('3 in'); ctx.body = 'ok'; });
+// 一次请求：1 in / 2 in / 3 in / 2 out / 1 out
 ```
 
-每个 mw 自然处理"请求进入 + 响应回流"两个方向，无需写两套 hook。
+`await next()` 之前是进入路径，之后是回流路径。这是 compose 递归 `dispatch(i)` 的结果，不是框架另做的两套 hook。
 
-### 案例 2：错误统一冒泡
+### 案例 2：错误沿 Promise 冒泡
 
-```ts
+```js
 app.use(async (ctx, next) => {
   try { await next(); }
-  catch (err: any) { ctx.status = err.status || 500; ctx.body = { msg: err.message }; }
+  catch (err) { ctx.status = err.status || 500; ctx.body = { msg: err.message }; }
 });
 app.use(async (ctx) => { ctx.throw(404, 'user not found'); });
 ```
 
-下游任意层 throw → 当前 `await next()` reject → 上游 try/catch 接住。Express 的 `next(err)` 显式传错被这套 Promise rejection 自然链取代。
+`ctx.throw()` 把参数交给 `http-errors` 的 `createError(...args)` 再 throw。下游 reject 后，上游 `await next()` 的 try/catch 可以接住。v3 迁移文档提醒：带 properties 的旧签名 `(status, message, properties)` 已随 `http-errors@2` 变成 `(status, error, properties)`。
 
-### 案例 3：plugin 拼装而非内置
+### 案例 3：自己拼 router，而不是找内置
 
-```ts
-import Router from '@koa/router';
-import bodyParser from 'koa-bodyparser';
-import cors from '@koa/cors';
+```js
+const Router = require('@koa/router');
+const bodyParser = require('koa-bodyparser');
 const router = new Router();
-router.post('/users', async (ctx) => { ctx.body = ctx.request.body; });
-app.use(cors()).use(bodyParser()).use(router.routes()).use(router.allowedMethods());
+router.post('/users', (ctx) => { ctx.body = ctx.request.body; });
+app.use(bodyParser());
+app.use(router.routes());
+app.use(router.allowedMethods());
 ```
 
-router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就是"极简核心"的代价与自由度同源。
+`@koa/router`、`koa-bodyparser` 都是独立包。固定 core 只保证中间件数组与 `ctx` 合同；包版本和类型扩展要单独核验。
 
 ## 踩过的坑
 
-1. **极简核心反成入门负担**：开箱什么都没有——做 REST API 至少要装 `@koa/router` + `koa-bodyparser` + `@koa/cors` + `koa-helmet` + `koa-static`。每个包独立维护、版本独立升级、配置风格各异。Express 一行 `express()` 起步，Koa 要拼 5-10 个包。
+1. **把 v1 generator 当还活着**：v3 迁移文档写明旧中间件签名已删除。`use()` 只检查 `typeof fn === 'function'`，不会帮你 `koa-convert`。继续 `function* (next) { yield next; }` 不会得到洋葱语义。
 
-2. **ctx.state 类型推导是 TS 重灾区**：默认 `Record<string, any>`，挂 `ctx.state.user = ...` 时类型完全丢。补救方式 `declare module 'koa' { interface DefaultState { user?: User } }`，但跨 plugin 扩展 state 类型很麻烦。Hono 用 `Variables: { user: User }` 泛型直传，体验差距明显。
+2. **ALS 默认是关的**：只有 `new Koa({ asyncLocalStorage: true })` 或传入 `AsyncLocalStorage` 实例才会设置 `ctxStorage`。直接读 `app.currentContext` 在默认构造下是 `undefined`。
 
-3. **洋葱式调试地狱**：50 个中间件叠起来出错时，stack trace 全是 `dispatch / dispatch / dispatch`。`koa-compose` 没特殊处理 `Error.captureStackTrace`，prod 环境定位异常代价高。Fastify 8 段固定 lifecycle hook 反而清晰。
+3. **stream 错误走 `Stream.pipeline`**：`respond()` 对 stream / Blob / `ReadableStream` / `Response` 使用 `Stream.pipeline`。出错时只有 `app.listenerCount('error') > 0` 才会调用 `ctx.onerror`。`callback()` 若发现没有 error 监听器，会先挂上默认 `this.onerror`；若你移除了所有监听器，stream 错误不会再进 `ctx.onerror`，但也不应再假设“必须手写 `stream.on('error', ctx.onerror)`”才是唯一路径。
 
-4. **Stream body 错误隐晦**：`ctx.body = stream` 时 stream 出错不自动冒到 `ctx.onerror`，要手写 `stream.on('error', ctx.onerror)`。文档讲了但藏在角落，新人第一次踩到 stream 错误时连 socket hang up 原因都看不到。
+4. **`ctx.state` 没有框架级类型**：每次请求都是新的 `{}`。TypeScript 默认推不出 `ctx.state.user`；跨插件扩展要自己补模块增强，这不是 core 保证的。
 
-5. **v3 拖太久才落地**：2019 起 alpha（ESM-first + drop Node <18），**v3.0.0 直到 2025-04-28 才正式发布**（之后有 3.1/3.2）。漫长空窗期里 Fastify / Hono 抢走心智；现在选型要按「v3 已可用」重新评估，别再当永久 alpha。
+5. **core 行数不是“约 600”**：固定树里 `lib/` 合计 2062 行，其中 `application.js` 344 行。README 写的 “~570 SLOC” 只覆盖“常见 HTTP 方法”，不能当成整个框架体积。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 教学示例与中间件机制学习（核心 600 行，`koa-compose` 50 行，源码极易读）
-- 中小型 REST API + 轻量微服务（洋葱中间件够清晰）
-- 从 Express 迁移过来想要 async/await 但保留同作者血缘
-- Bun 直接能跑，少 Node 特定 internal API 绑定 → 跨 runtime 兼容性好
+- 想先读完中间件控制流再决定路由/校验方案的中小型服务
+- 需要可替换 `compose` 或把 ctx 放进 `AsyncLocalStorage` 的定制宿主
+- 已经接受“自己组装 router / body / cors”的插件生态
 
 **不适用**：
 
-- 高吞吐场景 → 用 Fastify（schema 编译 + radix tree 快 ~1.5x，~30k req/s）
-- Edge runtime 优先 → 用 Hono（~50KB bundle + TS 一等 + Cloudflare Workers）
-- 需要严格 TS 类型推导 → 用 Elysia / Hono（schema 一写类型自动推）
-- 需要内置 schema 校验 + 完整 lifecycle 8 段 hook → 用 Fastify
+- 需要框架内置 schema、生命周期 hook 或模块封装——那些合同不在这个仓库
+- 还必须跑 Koa v1 generator 中间件
+- 边缘 runtime 优先且需要一等 TypeScript 路由类型的场景
+- 把 README 的 SLOC 或未绑定 benchmark 当成选型依据
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2010 年**：TJ 写 Express，回调风格 + `next(err)` 显式传错，是当时 Node web 框架代表。
-- **2013 年**：TJ 起步 Koa v0.x，明确反思 Express——极简核心 + 不内置 router + 用 ES6 generators 解 callback hell。
-- **2014 年**：v1 稳定，generators 中间件（`yield next`）展示了"中间件链异步控制流"的优雅写法。
-- **2017 年**：v2 改 async/await，把 `yield next` 换成 `await next()`，更符合语言原生。
-- **2019–2025-04**：v3 长期停在 alpha；TJ 少活跃，Jonathan Ong / Imed Jaberi 等社区 maintainer 节奏偏慢。**2025-04-28** 终于发 v3.0.0（Node ≥18、去掉 generator 中间件）。空窗期里 Fastify / Hono / Elysia 已抢走大量心智份额。
+- 本文绑定 `koajs/koa@6984592d...`，annotated tag `v3.2.1` 与 npm `koa@3.2.1` 的 `gitHead` 均为该提交。
+- `engines.node` 为 `>= 18`。v3 删除 generator 中间件，并把 `ctx.response.redirect('back')` 换成 `ctx.back()`。
+- 查询串改走 `URLSearchParams`；body 增加 Blob / `ReadableStream` / `Response` 分支。
+- 依赖 `koa-compose@^4.1.0`、`http-errors@^2.0.0`。本文未打开 compose 源码仓库，不把 compose 行数写成 Koa core 事实。
+- 本文未安装依赖、未跑上游测试、未监听端口或测量吞吐，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **同作者反思自己的设计是技术演进的良性信号**：TJ 三年后亲手做 Express 的"反面"——这种"我做的东西我亲手革命"在 OSS 领域少见但极有价值，说明作者真在思考问题本身而不是抱产品不放。
-2. **洋葱模型 = async/await 与中间件的自然结合**：Promise 时代之前中间件链是 callback hell；`await next()` 这一句话同时具备"递交控制 + 等待完成"双语义，才让洋葱从概念变成代码。
-3. **极简核心是哲学不是产品**：Koa core 600 行漂亮，用户视角是装 10 个包。"哲学正确" vs "用户体验正确" 在框架领域不总一致——Express 一站式赢在 onboarding，Koa 极简赢在思想纯洁。
-4. **maintainer 节奏决定框架命运**：v3 从 alpha 拖到 2025 才稳定，根因是 BDFL 离场后无人拍板。Fastify 双核心 + 商业化（Platformatic）有持续发版动力，OSS 框架成熟期"维护者激励"是第一生产力。
-5. **50 行库的复杂度承载量是有限的**：`koa-compose` 50 行实现洋葱很优雅，但任何想加 lifecycle hook 区分 onRequest / preHandler 都要改根本。Fastify 选 8 段固定 hook 牺牲自由度换结构化语义清晰度——这是设计权衡而非优劣。
+1. **极简核心把控制流和插件边界拆开**——洋葱在 compose，业务能力在独立包。
+2. **默认 404 是显式赋值**——没有中间件写 body 时，并不是“没有响应”，而是 `handleRequest` 先写下 404。
+3. **响应类型表比“字符串或 JSON”更宽**——stream 与 WHATWG body 都走 `respond()`，错误策略也写在那里。
+4. **v3 的破坏是文档化的**——Node 18、去掉 generator、`http-errors` v2、`ctx.back()` 都要按迁移说明核对，不能靠 v2 记忆。
+
+## 应用型自测
+
+1. `new Koa()` 之后立刻读 `app.currentContext`，能拿到本次请求的 ctx 吗？
+2. 没有中间件设置 `ctx.body` 时，`handleRequest()` 先把状态码写成什么？
+3. `ctx.body` 是 Node stream，且应用上没有任何 `error` 监听器时，`respond()` 还会调用 `ctx.onerror` 吗？
+
+检查点：
+
+1. 不能。默认不创建 `ctxStorage`；要构造时打开 `asyncLocalStorage`。
+2. `404`。这是 `handleRequest()` 在跑中间件之前写下的。
+3. 不会。`Stream.pipeline` 只在 `listenerCount('error') > 0` 时转发到 `ctx.onerror`。
 
 ## 延伸阅读
 
-- 官方仓库：[koajs/koa](https://github.com/koajs/koa)（README + lib/ 四个文件值得通读）
-- 中间件核心：[koajs/compose](https://github.com/koajs/compose)（50 行洋葱 dispatch，教学典范）
-- 路由独立包：[koajs/router](https://github.com/koajs/router)（@koa/router，path-to-regexp 实现）
-- 同作者上一代：[expressjs/express](https://github.com/expressjs/express)（对照看哲学差别）
-- 后辈对比：[fastify/fastify](https://github.com/fastify/fastify) / [honojs/hono](https://github.com/honojs/hono)（schema-first / Edge-first 现代版）
+- 固定源码：[koajs/koa](https://github.com/koajs/koa) —— 本文绑定提交 `6984592d41946ed746f15afcb05554e073f64dad`
+- 迁移说明：仓库内 `docs/migration-v2-to-v3.md`
+- 中间件合成依赖：[koajs/compose](https://github.com/koajs/compose)（独立包，本文未固定其 revision）
+- 对照：[[nestjs]] 用模块图换掉“自己拼插件”
 
 ## 关联
 
-- [[express]] —— TJ 同作者上一代框架，2010 起；Koa 是它的反思版
-- [[fastify]] —— 2017 起，schema-first + plugin encapsulation；Koa 的"加结构化"对手
-- [[hono]] —— 2022 起，TS-first + Edge runtime；Koa 哲学的现代化重写
-- [[elysia]] —— 2023 起，Bun-first + 自带 schema；新一代代表
-- [[hapi]] —— 配置驱动 + 内置一切，与 Koa 组合式哲学相反
-- [[bun]] —— Koa 直接能跑的新 runtime，跨 runtime 兼容性优势
-- [[axios]] —— 同样 TJ 时代的小而美 npm 库，命名规约 / 维护断档模式可类比
-- [[ink]] —— 同期"用 React 心智搬到非浏览器宿主"案例，体现哲学决定边界
+- [[nestjs]] —— 同主题的模块 + DI 对照
+- [[express]] —— 同作者上一代 `(req, res, next)` 模型
+- [[hono]] —— 多运行时、类型更先的后辈对照
+- [[fastify]] —— 固定 lifecycle hook 与 schema 的另一条路线
+- [[node-js]] —— `http.createServer` 仍是 `listen()` 的底座
 
 ## 反向链接
 

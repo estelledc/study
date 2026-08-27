@@ -1,153 +1,168 @@
 ---
 title: Tailwind CSS — 工具类优先样式框架
+description: CSS-first 工具类编译器，用 compile/build 和 Oxide 扫描按需生成 utility
 来源: https://github.com/tailwindlabs/tailwindcss
 日期: 2026-05-29
 分类: CSS
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/tailwindlabs/tailwindcss
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: c2b24dd15fed1c59dd521bd86082f520c9f5ad0d
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.3.3
 ---
 
 ## 是什么
 
-Tailwind 是一套**让你直接在 HTML 里写样式工具类**的 CSS 框架。日常类比：以前盖房先做模子再倒水泥（自定义 CSS class），现在直接把每块砖一块块往墙上贴（utility class）。
+Tailwind CSS 是一套把「设计 token + 按需工具类」编译成 CSS 的引擎。日常类比：`theme.css` 是色板和尺子，HTML 里的 `px-4` 是点菜单，真正炒菜的是两段式编译——先读你的 CSS，再按扫到的候选生成 utility。
 
-你写：
+固定 4.3.3 的入口不再是「把 `tailwindcss` 丢进 PostCSS plugins」。默认导出函数会直接抛错，要求改用 `@tailwindcss/postcss`。你写：
 
-```html
-<button class="px-4 py-2 bg-blue-500 text-white rounded">登录</button>
+```css
+@import "tailwindcss";
 ```
 
-不需要再写一段 `.login-button { padding: 8px 16px; ... }`。每个 class 只做一件事——`px-4` 设左右 padding 16px，`bg-blue-500` 设背景色，`rounded` 设圆角。组合即组件。
+它会按 `@layer theme, base, components, utilities` 依次导入 `theme.css`、`preflight.css` 和只含 `@tailwind utilities;` 的 `utilities.css`。
 
 ## 为什么重要
 
-不理解 Tailwind 的设计哲学，下面这些事都没法解释：
+不读固定 4.3.3 源码，下面这些合同很容易被 v3 教程带偏：
 
-- 为什么 shadcn/ui / Catalyst / DaisyUI 全部以 Tailwind 为底——utility class 不会污染全局，copy-paste 友好
-- 为什么 Tailwind 周下载 1000 万、Bootstrap 时代被关掉——它把"给 class 起名字"这个最痛苦的步骤直接省了
-- 为什么 Tailwind 的 CSS bundle 能从 100KB 砍到 10KB——JIT（just-in-time）编译时只生成你用过的 class
-- 为什么 v4（2025）启动比 v3 快约 5–10 倍——性能关键路径用 Rust（Oxide）重写
+- 为什么 `tailwind.config.js` 不再是默认配置面，主合同在 CSS 的 `@theme` / `@source` / `@utility`
+- 为什么 `compile()` 本身不扫项目文件，扫描器在 `@tailwindcss/oxide`
+- 为什么 `p-4` 输出的是 `--spacing(4)`，而不是写死 `1rem`
+- 为什么重要标记同时接受 `mx-4!` 和旧写法 `!mx-4`
 
 ## 核心要点
 
-Tailwind 的核心是 **三个思想**：
+固定版本的主链可以拆成六步：
 
-1. **Utility-first（工具类优先）**：每个 class 只做一件事，组合即组件。`p-4` 只设 padding，`bg-blue-500` 只设背景。类比：乐高积木——单块功能简单，组合千变万化。
+1. **解析输入 CSS**：`compile(css)` 先 `CSS.parse`，再走 `parseCss`。`@import`、`@theme`、`@source`、`@utility`、`@custom-variant`、`@plugin` / `@config` 都在这一阶段登记。
 
-2. **JIT 编译（按需生成）**：Tailwind 启动时不预先生成几十万行 utility CSS，而是扫源码看你用了哪些 class，**只生成用过的**。开发时改一个 class 后约 10ms 出新 CSS，热更新无感。
+2. **两段式生成**：返回值是 `{ sources, root, features, build }`。`build(candidates)` 才调用 `compileCandidates`，把有效候选写成 AST。实现只追加候选，不删除已经生成的节点。
 
-3. **设计系统约束**：`p-4` 的 `4` 不是字面 4px，是查 spacing scale 的 key（4 = 1rem = 16px）。所有间距 / 字号 / 颜色都来自一个有限集合——魔法数被消灭，设计一致性自动出现。
+3. **扫描在集成包**：`Scanner` 来自 `@tailwindcss/oxide`，由 `@tailwindcss/postcss`、`@tailwindcss/vite`、`@tailwindcss/cli`、`@tailwindcss/webpack` 调用。核心包不保证「自动找到 class」。
 
-## 实践案例
+4. **token 在 `@theme`**：`@theme` 只接受自定义属性或 `@keyframes`。选项有 `reference` / `inline` / `default` / `static` / `prefix(…)`；`prefix` 必须是小写 ASCII 字母。多个 `@theme` 会合并进第一条替换出的 `:root, :host` 规则。
 
-### 案例 1：Hello world 一行
+5. **间距是函数，不是字面表**：存在 `--spacing` 时，`p-4` 走 `handleBareValue` 产出 `--spacing(4)`。默认 `theme.css` 把 `--spacing` 设为 `0.25rem`，色板是 `oklch(...)`。
 
-```html
-<button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">
-  Click
-</button>
+6. **兼容层是可选钩子**：`@plugin` / `@config` 会打开 `JsPluginCompat`，由 `applyCompatibilityHooks` 加载旧 JS 配置。没有这两条 at-rule 时，核心不读 `tailwind.config.js`。
+
+## 实践示例
+
+### 案例 1：CSS-first 入口与品牌色
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-brand: oklch(0.7 0.15 250);
+}
+
+@source "./src/**/*.{html,js}";
 ```
 
-**逐部分解释**：
+`@source` 路径必须带引号。`@source not "…"` 排除目录；`@source inline(px-4 bg-brand)` 把字面候选直接喂给 `build`，不必出现在源文件里。`source(none)` 关闭默认 root。
 
-- `bg-blue-500`：背景色 = 蓝色第 5 阶（500 是基准，越小越浅、越大越深）
-- `hover:bg-blue-700`：鼠标悬停时换更深的蓝——`hover:` 是状态前缀
-- `text-white`：文字白色
-- `px-4 py-2`：水平 padding 16px、垂直 padding 8px（`x = 左右`、`y = 上下`、`4 = 1rem = 16px`）
-- `rounded`：`border-radius: 0.25rem`，轻微圆角
-
-整个按钮无需写任何 CSS 文件。
-
-### 案例 2：自定义品牌色
-
-`tailwind.config.js`（v3）：
+### 案例 2：只把扫到的 class 编进去
 
 ```js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        brand: {
-          DEFAULT: '#FF5733',
-          light: '#FFB199',
-          dark: '#A33621',
-        },
-      },
-    },
-  },
-};
+import { compile } from "tailwindcss";
+
+const { build } = await compile('@import "tailwindcss";');
+const css = build(["px-4", "bg-blue-500", "hover:bg-blue-700"]);
 ```
 
-之后可以写 `bg-brand`、`text-brand-light`、`hover:bg-brand-dark`。`extend` 是关键——直接写 `colors:` 会**覆盖**默认色板，`extend` 是**追加**。
+`px-4` 会生成 `--spacing(4)`；没出现的 utility 不会进结果。第二次 `build(["px-4"])` 若没有新候选，实现复用上一份 AST。动态拼接 `bg-${color}-500` 仍然扫不到——扫描器看到的是源文本，不是求值后的字符串。
 
-### 案例 3：响应式 + 暗色模式
+### 案例 3：重要标记与自定义工具类
 
 ```html
-<div class="text-sm md:text-base lg:text-lg dark:text-gray-200">
-  屏幕变大字会变大；暗色模式自动换色
-</div>
+<button class="px-4! bg-blue-500 hover:bg-blue-700">保存</button>
 ```
 
-- `md:` 表示屏幕宽度 ≥ 768px 时生效；`lg:` 是 ≥ 1024px
-- mobile-first 策略：默认值给小屏幕，大屏幕"叠加"覆盖
-- `dark:` 在暗色模式下生效，省掉手写 media query
+```css
+@utility glow-* {
+  box-shadow: 0 0 12px var(--glow-*);
+}
+```
+
+`px-4!` 与旧写法 `!px-4` 都会把该候选标成 important。`@utility` 不能嵌套、不能为空；函数式名称必须以 `-*` 结尾，否则解析阶段抛错。
 
 ## 踩过的坑
 
-1. **class 字符串过长**：一个复杂按钮可能 30+ 个 class。用 `clsx` 拼接条件 class、用 `tailwind-merge` 解决"多个同属性 class 谁覆盖谁"的问题。shadcn 的 `cn()` 工具就是这两个的封装。
-
-2. **与已有 CSS 冲突**：Tailwind 的 preflight（重置样式）很激进——`<h1>` 默认无字号、`<ul>` 无 bullet。迁移老项目时容易"原本好的样式没了"。要么禁 preflight，要么逐页补样式。
-
-3. **content 配置漏路径丢样式**：v3 必须告诉 Tailwind 去哪扫源码（`content: ['./src/**/*.{html,js,jsx,tsx}']`）。漏写一个目录，那里的 class 不会被生成 CSS——开发模式正常，生产构建后样式消失。v4 自动检测项目结构，少踩这个坑。
-
-4. **动态拼接 class 扫不到**：`bg-${color}-500` 这种动态字符串 Tailwind 的正则扫描器看不见。必须写完整字面量，或在 safelist 里手动登记。
-
-5. **自定义工具类的位置**：想加一个 `.glow` class，必须放进 `@layer utilities {}` 块里，不能直接写在 CSS 顶层——否则不参与 Tailwind 的优先级管理，hover/responsive 前缀也无法叠加。
+1. **把 `tailwindcss` 当 PostCSS 插件**：默认导出会抛错，指向 `@tailwindcss/postcss`。
+2. **以为核心会自动扫 `./src`**：`compile()` 只吃你传入的 candidate 字符串。扫文件是 Oxide + 集成包的事；漏写 `@source` 时，生产 CSS 可能缺类。
+3. **把 `p-4` 记成写死 16px**：固定实现输出 `--spacing(4)`，取决于 `--spacing` 是否存在以及它的值。
+4. **只记得 `!mx-4`**：4.3.3 同时接受尾部 `mx-4!`。文档或 lint 若只认一种，会误判合法 class。
+5. **在 `@theme` 里写普通 CSS 规则**：除自定义属性和 `@keyframes` 外都会抛错。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 单页应用 / 设计系统 / 产品快速迭代——utility-first 让设计改动只是改 class 字符串
-- 团队需要一套共享的 design token（spacing / color / size scale 全统一）
-- 用 React / Vue / Svelte 做 component-based 开发——utility 不污染全局，copy-paste 友好
-- 关心生产 CSS 体积：JIT 后常用页面往往落在十余 KB 量级（随用到的 utility 增减）
+- 组件化 UI，愿意用 utility 拼样式，并接受 CSS-first token
+- 需要 PostCSS / Vite / CLI / webpack 集成，且能接受 Oxide 扫描边界
+- 想和 [[unocss]] 对照：同一套 class 语汇，编译器一个是 CSS 驱动，一个是 token 引擎
 
 **不适用**：
 
-- 内容驱动的纯静态站点（博客 / 文档），样式一年不改一次——semantic class 的可读性更高
-- 老项目大规模迁移成本超过收益时——utility class 让 HTML 变长，diff 难读
-- 团队对"HTML 不应混样式"有强信念——这是审美问题，没标准答案
+- 必须把 `tailwindcss` 本身当 PostCSS 插件，且不能改依赖名
+- 需要运行时按字符串拼接 class，又拒绝 safelist / `@source inline`
+- 还没在目标环境量过体积或编译时间，却把「快 5–10 倍」写成当前事实
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2013 年**：Yahoo 提出 Atomic CSS（如 `.Bgc(#fff)` 表示 background-color），是 utility-first 的雏形，但命名晦涩，没人接受
-- **2017 年**：Adam Wathan 写博客 "CSS Utility Classes and Separation of Concerns"；同年 11 月发布 Tailwind v0.1.0
-- **2019 年 5 月**：稳定版 Tailwind v1.0
-- **2021 年**：3 月推出独立 JIT 包，随后进 v2.1；12 月 v3 默认 JIT，支持任意值 `top-[117px]`
-- **2025 年 1 月**：v4.0 稳定，Oxide（Rust）加速编译，CSS-first 配置可弱化 `tailwind.config.js`
+- 本文绑定 `tailwindlabs/tailwindcss@c2b24dd15fed1c59dd521bd86082f520c9f5ad0d`，tag / npm latest 均为 `4.3.3`。
+- npm tarball 未提供 `gitHead`；升级前应重新核对 tag 与打包提交是否仍一致。
+- 同仓集成包 `@tailwindcss/postcss`、`@tailwindcss/vite`、`@tailwindcss/cli`、`@tailwindcss/node`、`@tailwindcss/browser`、`@tailwindcss/upgrade`、`@tailwindcss/webpack` 在该 tag 也报 `4.3.3`。
+- `@tailwindcss/node` 依赖 `lightningcss` 做 optimize；本文未跑 minify 或测量产物。
+- 本文未安装依赖、运行 Oxide 扫描、Vite 或 Playwright UI 测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **命名是抽象的最大成本**——`login-button` 这个名字假定它只在登录页用，下次复用就要么改名要么 copy。Tailwind 直接绕开这一步。
+1. **配置面从 JS 挪到 CSS**——`@theme` / `@source` / `@utility` 才是 4.3.3 的主合同。
+2. **编译和扫描是两个包**——核心 `build(candidates)` 不管文件系统。
+3. **token 是 CSS 变量**——间距、颜色都先查 theme，再决定能不能生成。
+4. **默认导出也是合同**——误用入口会在加载期失败，而不是默默走旧插件。
 
-2. **JIT 是「按需生成」的胜利**——v1 时期全量生成 50 万行 CSS，3MB；v3 之后只生成用到的，bundle 降到 KB 级。
+## 应用型自测
 
-3. **设计 token 是设计系统的最小单位**——shadcn/ui 选 Tailwind 是因为：utility class 不污染全局、token 统一、改 token 影响所有 component。
+1. 只调用 `compile('@import "tailwindcss";')`，不调用 `build`，也不接 PostCSS/Vite。会不会自动扫到 `src/App.tsx` 里的 `px-4`？
+2. 默认 theme 下，`p-4` 生成的声明值是 `1rem` 字面量，还是 `--spacing(4)`？
+3. class 写成 `mx-4!`，固定 4.3.3 会不会当成 important？
 
-4. **审美问题没标准答案**——utility-first vs semantic-class 哲学之争还会持续 10 年。但市场已经选边：Next.js 默认推荐 Tailwind，Bootstrap 时代被关掉。
+检查点：
+
+1. 不会。核心只编译传入候选；扫描属于 Oxide 与集成包。
+2. 是 `--spacing(4)`，前提是 theme 里存在 `--spacing`。
+3. 会。尾部 `!` 与旧的前导 `!` 都被 `parseCandidate` 接受。
 
 ## 延伸阅读
 
-- [Tailwind 官方文档](https://tailwindcss.com)（cheatsheet 必备，写代码时常开）
-- [Adam Wathan 2017 博客](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)（utility-first 的原始辩护）
-- [shadcn/ui](https://ui.shadcn.com)（utility-first React component 标杆）
-- [tailwind-merge](https://github.com/dcastil/tailwind-merge)（解决多 class 同属性冲突的工具库）
+- 官方文档：[tailwindcss.com](https://tailwindcss.com)
+- 固定源码：[tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss) —— 本文绑定提交 `c2b24dd15fed1c59dd521bd86082f520c9f5ad0d`
+- [[unocss]] —— 同赛道的 token 引擎对照
+- [[lightningcss]] —— `@tailwindcss/node` 用来 optimize 的编译器
+- [Adam Wathan 2017 博客](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
 
 ## 关联
 
-- [[react]] —— shadcn/ui 把 Tailwind 推到 utility-first 的 React 组件标杆
-- [[nextjs]] —— Next.js `create-next-app` 默认问你要不要 Tailwind，是它最大的入口
-- [[vite]] —— Tailwind 在 Vite 里一行配置，开发体验流畅
+- [[unocss]] —— 规则/preset 驱动的原子引擎，对照 CSS-first 编译器
+- [[lightningcss]] —— Tailwind 节点集成里的 CSS optimizer
+- [[vite]] —— `@tailwindcss/vite` 的宿主之一
+- [[stylex]] —— 编译期原子 class 的另一条路线
+- [[vanilla-extract]] —— 用 TypeScript 写样式、运行时零 CSS-in-JS
 
 ## 反向链接
 

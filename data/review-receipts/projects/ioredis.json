@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ioredis",
+    "digest_sha256": "2a5f7baf69de8491d40c2fb6bc3cff8884259c9553daef729f0c60a7d35f8f5b"
+  },
+  "source_revision": "8ed2946504a36ae9b1e186b9dccc56afcd046d78",
+  "research_input_sha256": "d8137723bf8d7482a52000b60bb4db61594422f3a989ad23d088a38ca7ecd173",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ae",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates RESP3 wire protocol from legacy reply mapping, retry jitter, and maxRetriesPerRequest."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ae",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Redis.ts, RedisOptions, ClusterOptions, Pipeline/transaction and HIMPORT notes were read; no Redis process was started."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ae",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims are bounded to ioredis 6.0.0; README node-redis recommendation is not a runtime comparison."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}

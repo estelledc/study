@@ -1,152 +1,173 @@
 ---
-title: BullMQ — Node.js 上的 Redis 任务队列
+title: BullMQ — 默认 Redis、可选 Postgres 的 Node 任务队列
 来源: 'https://github.com/taskforcesh/bullmq'
-日期: 2026-05-30
+日期: 2026-08-27
 分类: backend-api
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/taskforcesh/bullmq
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 9d737e9d0e467eeacf6f6a43f3f806fa2873ee1b
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 6.3.1
 ---
 
 ## 是什么
 
-BullMQ 是一个**让 Node.js 把"后台慢活"丢进 Redis、再让一群工人慢慢做完**的任务队列库。日常类比：像奶茶店的取餐号——前台收单立刻给号，后厨按号做单，做完叫号；前台不会因为一杯奶茶要 5 分钟就把后面 10 个人都挡在门口。
+BullMQ 是一个把后台任务从请求路径拆出去的 Node.js 队列库。日常类比：前台只开单，后厨按单做；前台不必等一杯奶茶做完才接待下一位。
 
-你写：
+固定 `6.3.1` 的高阶 API 仍是 `Queue`、`Worker`、`QueueEvents` 与 `FlowProducer`，但它们不再直接操作 Redis。默认 `BackendFactory` 指向 Redis；也可以注入 `createPostgresBackend`。
 
-```js
-import { Queue, Worker } from 'bullmq'
-const queue = new Queue('email')
-await queue.add('welcome', { to: 'jason@example.com' })
+```ts
+import { Queue, Worker } from "bullmq";
 
-new Worker('email', async job => {
-  await sendMail(job.data.to)  // 慢活在另一个进程里跑
-})
+const connection = { host: "127.0.0.1", port: 6379 };
+const queue = new Queue("email", { connection });
+await queue.add("welcome", { to: "jason@example.com" });
+
+new Worker("email", async job => {
+  await sendMail(job.data.to);
+}, { connection });
 ```
 
-API 立即返回，邮件由 worker 异步发出去。Redis 当中间存储，挂掉重启 job 还在。它在 Node 后端生态里常被拿来做异步任务基建。
+`Worker` 缺少 `connection` 会直接抛错。Redis 路径未传入现成 client 时，会懒加载 optional peer `ioredis`。
 
 ## 为什么重要
 
-不理解 BullMQ，下面这些事都没法解释：
+不理解 v6 的存储与调度边界，下面这些事都会写错：
 
-- 为什么大量 Node 后端有"API 立即返回 + 后台跑活"的能力，而不是直接 `setTimeout` 完事
-- 为什么同一个 Node 服务部署 5 个实例，定时任务**只跑一次**而不是 5 次
-- 为什么 Redis 也能做"任务队列"，不一定非要上 Kafka / RabbitMQ
-- 为什么 BullMQ 的失败重试、延迟、限流是"原子的"，靠的是 Redis 里的 Lua 脚本
+- 为什么 `Queue.add(..., { repeat })` 已经不是合法 API
+- 为什么同一套 Queue/Worker 能换 Postgres，却仍把 Redis 写成默认 backend
+- 为什么 worker 需要第二条 blocking connection
+- 为什么 `concurrency: 10` 只约束一个进程里同时 await 的 job 数
 
 ## 核心要点
 
-BullMQ 把任务队列拆成 **三件套 + 一个原子保证**：
+1. **Backend 抽象**：`QueueBase` 只依赖 `IQueueBackend`。默认 `createRedisBackend`；Postgres 用 `createPostgresBackend` 或 `setDefaultBackendFactory`。
+2. **生产**：`queue.add(name, data, opts)` 把 `data` 做 `JSON.stringify` 后交给 backend。类实例方法到不了 worker。
+3. **消费**：Worker 默认 `autorun: true`、`concurrency: 1`、`lockDuration: 30000`、`drainDelay: 5`、`maxStalledCount: 1`。Redis worker 另建 blocking connection，用 `BZPOPMIN` 取活，单次最长 10 秒。
+4. **调度**：Job Scheduler 取代 v5 repeatable API。重复任务走 `upsertJobScheduler` / `removeJobScheduler`，不再把 `repeat` 传给 `add`。
+5. **依赖树**：`FlowProducer.add` 仍是树。子 job 完成后父 job 才处理，并可读子结果。
+6. **原子性**：Redis backend 仍靠 `src/commands/` 里的 Lua；Postgres backend 走 SQL，不再假装“全靠 Lua”。
 
-1. **Queue（生产者）**：业务代码调 `queue.add(name, data)` 把 job 塞进 Redis。类比：前台开取餐号，写在小票上贴墙。
+## 实践示例
 
-2. **Worker（消费者）**：另一个进程跑 `new Worker(name, async job => ...)`，循环从 Redis 拉 job 执行。多个 worker 并行不冲突——因为 Redis 给每个 job 加了"原子取走"标记。
+### 案例 1：API 立刻返回，邮件在 worker 里发
 
-3. **QueueEvents（监听者）**：业务想知道 job 跑完了、失败了，订阅 `completed` / `failed` 事件就行，不用轮询 DB。
+```ts
+const connection = { host: "127.0.0.1", port: 6379 };
+const emailQueue = new Queue("email", { connection });
 
-**原子保证**靠 Lua 脚本——把"取 job + 标记处理中 + 设超时"几个 Redis 命令打包成一段 Lua 在服务端原子执行，不会被并发 worker 抢到同一份。这是 BullMQ 比早期 Bull 更可靠的关键。
+app.post("/signup", async (req, res) => {
+  await db.user.create(req.body);
+  await emailQueue.add("welcome", { to: req.body.email });
+  res.json({ ok: true });
+});
 
-## 实践案例
-
-### 案例 1：发邮件 / push 通知
-
-```js
-// API 路由
-app.post('/signup', async (req, res) => {
-  await db.user.create(req.body)
-  await emailQueue.add('welcome', { to: req.body.email })
-  res.json({ ok: true })  // 立刻返回，不等邮件
-})
-
-// worker.js（独立进程）
-new Worker('email', async job => {
-  await mailgun.send(job.data.to, '欢迎')
-}, { concurrency: 10 })
+new Worker("email", async job => {
+  await mailgun.send(job.data.to, "欢迎");
+}, { connection, concurrency: 10 });
 ```
 
-`concurrency: 10` 表示这一个 worker 进程内可以同时 await 10 个 job。
+`concurrency` 默认是 1。把它调到 10 只增加同进程并发 await，不会自动 fork 出 CPU 进程。
 
-### 案例 2：视频转码 pipeline（Flow）
+### 案例 2：定时任务改走 Job Scheduler
 
-```js
-import { FlowProducer } from 'bullmq'
-const flow = new FlowProducer()
-await flow.add({
-  name: 'publish', queueName: 'video',
-  children: [
-    { name: 'download', queueName: 'video', data: { url } },
-    { name: 'transcode', queueName: 'video', data: { quality: '720p' } }
-  ]
-})
+```ts
+await queue.upsertJobScheduler(
+  "daily-report",
+  { pattern: "0 9 * * *", tz: "UTC" },
+  { name: "daily-report", data: {} }
+);
 ```
 
-Flow 让父 job **必须等所有子 job 跑完**才执行——天然适合"下载 → 转码 → 上传"这种串联依赖，任一步失败整链可见。
+v6 删除了 `Queue.add(..., { repeat })`、`removeRepeatable` 和 `Repeat`。改 cron 应再次 `upsertJobScheduler` 同一 id，或先 `removeJobScheduler`。旧 `repeat.utc` 改为 `tz: "UTC"`。
 
-### 案例 3：定时任务（替代 cron）
+### 案例 3：可选 Postgres backend
 
-```js
-await queue.add('daily-report', {}, {
-  repeat: { pattern: '0 9 * * *' }  // 每天早 9 点
-})
+```ts
+import { Queue, Worker, createPostgresBackend } from "bullmq";
+
+const opts = { connection: "postgres://user:pass@localhost:5432/app" };
+const queue = new Queue("email", opts, createPostgresBackend);
+new Worker("email", async job => job.data, opts, createPostgresBackend);
 ```
 
-部署 5 个实例都注册同一个 repeat key，**同一时间点只会生成一份 job**——因为 BullMQ 用 Redis sorted set 记录下一次触发时间，再由 worker 抢到到期 job 执行。比手写 cron + 加锁省事得多。
+文档要求 PostgreSQL 13+，并懒加载 optional peer `pg`。本轮未启动 Postgres，也未验证行为等价。
 
 ## 踩过的坑
 
-1. **concurrency 不等于并行**：单 worker 进程内 `concurrency: 10` 是 10 个协程在 await，CPU 密集场景**没用**——必须用 sandboxed processor（传文件路径而非函数），让 worker fork 子进程跑。
-
-2. **job.data 必须 JSON 可序列化**：传 `Date` 会变成字符串，类实例会丢方法，`Buffer` 也会变成普通 JSON 结构。约定只传 plain object + 原始类型。
-
-3. **失败 job 不会自动清**：配置了 `attempts` / `backoff` 后，最终失败的 job 仍会留在 `failed` set；几个月后可能撑爆 Redis。必须配 `removeOnFail: { age: 86400 }` 或写定期 clean。
-
-4. **Repeatable 改 cron 后旧 schedule 不会自动删**：直接改 `pattern` 重新 add，会**双倍跑**——必须先 `removeRepeatable` 再 add。线上改 cron 是高发事故。
+1. **继续写 `repeat` 到 `add`**：类型和迁移文档都写明这是 v6 breaking change。
+2. **Worker 不传 connection**：固定实现会抛 `Worker requires a connection`。
+3. **默认 ioredis 选项直接塞进 BullMQ**：Redis 连接路径要求 `maxRetriesPerRequest` 为 `null`，并会覆盖调用方设置。
+4. **指望 `removeOnFail: { age }` 自己扫地**：清理发生在下一次同类 job 结束时，没有后台定时器。
+5. **把多语言目录当成同一 npm 包合同**：仓库里还有 Python / PHP / Rust / .NET / Elixir 客户端；本文只绑定 Node 包 `bullmq@6.3.1`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- Node.js 后端的异步任务（邮件 / 通知 / 转码 / 报表 / 爬虫）
-- 中小规模分布式任务调度（< 百万 job/天，单 Redis 够用）
-- 需要重试 / 延迟 / 优先级 / 定时 / 依赖链等丰富语义
-- 已经在用 Redis，不想再引一个 Kafka / RabbitMQ
+
+- Node 服务要把邮件、转码、报表从请求线程拆走
+- 已经有 Redis，并接受 Lua 脚本作为原子边界
+- 需要重试、延迟、优先级、Flow 依赖树或 Job Scheduler
 
 **不适用**：
-- 跨语言事件流（生产者 Java / 消费者 Go）→ 用 [[kafka]] / [[nats]]
-- 长事务工作流 / 跨服务编排（要补偿、要状态机）→ 用 [[temporal]] / [[inngest]]
-- 千万级 QPS 实时流处理 → Redis 单实例瓶颈，BullMQ 不抗
-- 不想要 Redis 依赖（边缘 / 无服务器）→ 用 SQLite / Postgres 队列方案
 
-## 历史小故事（可跳过）
+- 还停在 v5 `repeat` / `removeRepeatable`，又没有按迁移文档改数据和代码
+- 跨语言事件流要独立 broker 合同——对照 [[kafka]] / [[nats]]，不要把多语言目录写成已验证互通
+- 长事务补偿 / 跨服务编排——对照 [[temporal]] / [[inngest]]
+- 需要已测量的吞吐或“单 Redis 扛百万 job/天”——本轮没有 benchmark
 
-- **2014 年**：OptimalBits 团队发布 Bull v1，回调风格 + 纯 JS，是早期 Node 任务队列的事实标准
-- **2018-2019 年**：Bull 暴露出"非原子操作并发丢 job""复杂依赖难做"两类痛点，Manuel Astudillo（Taskforce.sh 创始人）开始重写
-- **2020 年**：BullMQ v1 首发——Promise + TypeScript + 全 Lua 原子操作 + Flow 父子依赖
-- **2022-2024 年**：加 sandboxed processor / repeatable 改进 / 多语言代理（Python / PHP / Elixir 通过 BullMQ Pro 共用同一 Redis 队列）
-- **现在**：被 NestJS / Fastify 生态广泛采纳，成 Node 后端任务队列默认选择
+## 固定版本边界
+
+- 本文绑定 `taskforcesh/bullmq@9d737e9d...`。npm latest 与 tag `v6.3.1` 的 `gitHead` 一致。
+- 该提交树内 `package.json` 与 `src/version.ts` 仍写 `6.3.0`；发布提交未回写版本号，不另猜别的 revision。
+- `engines.node` 为 `>=14.17.0`。`ioredis`、`redis`、`pg` 均为 optional peer。
+- 本文未安装依赖、连接 Redis/Postgres、跑 worker 或测延迟，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **Redis 不仅是缓存**——它的 Streams / List / Sorted Set / Lua 脚本组合起来，足够撑一个生产级任务队列
-2. **原子性靠 Lua**——多键操作要原子，必须服务端脚本，客户端 transaction 不够
-3. **任务队列三件套**：生产 / 消费 / 事件监听是通用模式，理解了 BullMQ，看 Sidekiq / Celery / [[inngest]] 都好懂
-4. **"分布式只跑一次"不是魔法**——是 sorted set + 抢锁，第一个拿到的赢
+1. **队列外观稳定，不等于存储合同不变**——同一套 Queue/Worker 现在可以换 backend。
+2. **调度 API 和入队 API 必须分开**——重复任务是 scheduler，不是 `add` 的一个选项。
+3. **并发是进程内预算**——`concurrency` 管同时处理数；CPU 密集仍要沙箱文件处理器。
+4. **默认保留失败 job**——不配清理策略，失败集合会一直长。
+
+## 应用型自测
+
+1. `await queue.add("daily", {}, { repeat: { pattern: "0 9 * * *" } })` 在固定 6.3.1 还是公开 API 吗？
+2. `new Worker("email", processor)` 不传 `opts.connection` 会怎样？
+3. 配了 `removeOnFail: { age: 86400 }` 后，失败 job 会在 24 小时整点自动消失吗？
+
+检查点：
+
+1. 不是。应使用 `upsertJobScheduler`。
+2. 抛 `Worker requires a connection`。
+3. 不会保证。age/count 只在下一次失败结束时 best-effort 评估。
 
 ## 延伸阅读
 
-- 官方文档：[BullMQ Docs](https://docs.bullmq.io/)（教程 + API + Patterns 三部分）
-- 源码：[taskforcesh/bullmq](https://github.com/taskforcesh/bullmq)（核心 Lua 脚本在 `src/commands/`）
-- 视频：[BullMQ in 100 Seconds](https://www.youtube.com/results?search_query=bullmq)（社区视频快速上手）
-- [[redis]] —— BullMQ 全部状态都在 Redis 里
-- [[inngest]] —— BullMQ 的"持久工作流"竞品
+- 固定源码：[taskforcesh/bullmq](https://github.com/taskforcesh/bullmq) —— 本文绑定提交 `9d737e9d0e467eeacf6f6a43f3f806fa2873ee1b`
+- v6 迁移：[migrate-from-v5-to-v6](https://docs.bullmq.io/guide/migrations/migrate-from-v5-to-v6)
+- Job Scheduler：[guide/job-schedulers](https://docs.bullmq.io/guide/job-schedulers)
+- [[ioredis]] —— Redis backend 默认仍可懒加载的 Node 客户端
+- [[redis]] —— Lua、Sorted Set 与阻塞弹出，决定 Redis backend 的原子面
 
 ## 关联
 
-- [[redis]] —— BullMQ 的存储后端，理解 Redis 数据结构才能读懂 BullMQ 的实现
-- [[fastify]] —— Node 高性能 web 框架，常和 BullMQ 一起做"快返回 + 慢任务"
-- [[nestjs]] —— NestJS 自带 `@nestjs/bullmq` 适配器，企业 Node 项目常用组合
-- [[express]] —— 老牌 Node 框架，最早 Bull 教程都基于 Express
-- [[kafka]] —— 大数据流处理的对照面：跨语言、海量、但学习曲线陡
-- [[temporal]] —— 持久工作流引擎，适合 BullMQ 撑不住的长流程编排
-- [[inngest]] —— "事件驱动 + 持久函数"的现代替代品，云原生场景更省运维
+- [[ioredis]] —— 默认 Redis 驱动之一；BullMQ 会改写 `maxRetriesPerRequest`
+- [[redis]] —— 默认存储；命令原子性来自服务端脚本
+- [[nestjs]] —— `@nestjs/bullmq` 仍是常见封装，但 adapter 版本要单独核对
+- [[fastify]] —— 快返回 + 慢任务的常见 web 组合
+- [[temporal]] —— 长流程 / 补偿编排的对照面
+- [[inngest]] —— 事件函数路线的对照面
+- [[kafka]] —— 跨语言日志流，不是同一种队列合同
 
 ## 反向链接
 

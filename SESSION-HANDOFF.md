@@ -2,6 +2,17 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 merge-in #192 ansi-escapes + log-update
+
+- status：`running`
+- objective：把 `origin/main` 合入 #192，只重生派生索引并修正过期公开计数字段后 push。不 rebase、不 force-push、不 deploy。无真实 ship review 不 squash。
+- scope：PR 分支 merge commit、atlas / project-standard / site-state、公开计数文案、本交接。不改项目页正文。
+- activated_by：explicit merge-in lane（用户指定下一非草稿 CONFLICTING PR #192）。
+- detector fingerprint：#192 对当前 `origin/main`（含 #71）CONFLICTING；冲突文件仅为派生索引与公开计数。
+- external delta：push 已授权；squash-merge 未授权（无 ship review）。
+- acceptance checks：`git merge origin/main`；`npm run atlas`；`node scripts/audit-project-standard.mjs --write`；`npm run generate:site-state`；`npm run audit:counts`；`git diff --check`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer EX：ansi-escapes + log-update
 
 - status：writer epoch `complete`；review-ready branch；未 merge、未 deploy。
@@ -22,6 +33,50 @@
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
 - 下一条命令：`STUDY_CHANGED_FROM=89766cc27 npm run verify:ci`
 - superseded_by：`none`
+
+## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
+
+- status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
+- 起始 ref：`origin/main` 现为 `96da2ee8`（#79）；本分支内容提交为 `a68fc3e8`。
+- objective：把 rebase 后滞后的 `career-plan.md` 项目数对齐到实时库存，使 `audit:counts` 恢复绿色。
+- scope：`src/content/docs/career-plan.md`、本交接。未改笔记正文、未改政策/阈值、未 merge。
+- activated_by：feature branch CI `verify:ci` 失败（`cc8e7d96`：career-plan 写 966，实时 projects=967）。
+- detector fingerprint：rebase regen 更新了 atlas / site-state / 其余计数页，但未改 `career-plan.md`。
+- external delta：本 PR 后续 push（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：`career-plan.md` 项目数 966 → 967。
+- acceptance checks：`npm run audit:counts` → projects=967、papers=1083、total=2050，OK；`git diff --check` 通过。
+- budget：1 个确定性计数对齐切片；单 writer。
+- blocker：merge 与 Pages deploy 未授权。
+- stop conditions：计数门禁修复已提交后停止；不得发明下一对内容。
+- 下一次 wake 条件：本 PR 的 CI/review 再变化，或 owner 另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/71 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
+## 2026-08-27 PARALLEL writer AH：lodash + ramda
+
+- status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：为缺失的 util-lib 双子补齐 `lodash` 与 `ramda` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/util-lib-source-review-20260827-ah.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ah-2026-08-27`。
+- detector fingerprint：目录无 `lodash.md` / `ramda.md`，但 `date-fns` 已有 `[[lodash]]` 悬空链；A–AG 与开放 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `lodash` 绑定源码 tag `4.18.1` → `cb0b9b9212521c08e3eafe7c8cb0af1b42b6649e`；披露 npm `lodash@4.18.1` / `lodash-es@4.18.1` 分别落在 `4.18.1-npm` 与 `4.18.1-es` 发布树。
+  2. `ramda` 绑定 `v0.32.0` → `f0b1fb524a681bc8c37dd6c35886420f8c2470c3`，tag / package / npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 18 → 20，公开项目数 961 → 963。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、89 v2。
+  - `audit:counts` / `audit:site-state`：projects=965、papers=1083、total=2048。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/81 做 review；未授权前不要 merge。
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
