@@ -4,15 +4,29 @@
 
 ## 2026-08-27 PARALLEL writer EF：vanilla-extract + StyleX
 
-- status：`running`；writer epoch 将 vanilla-extract 与 stylex 迁到固定源码 study-v2。
+- status：Program `active`；本地 writer epoch `complete`。
 - 起始 ref：`7a2384d09`（origin/main，#54 merge）。
+- 完成 ref：本分支 head。
 - objective：把编译期 CSS 双子绑到可达 revision，纠正旧正文的执行器 / 覆盖策略漂移；保持 STATIC_REVIEW / UNVERIFIED。
-- scope：两页正文、2 份 generation 1 receipt、共享 `docs/css-zero-runtime-source-review-20260827-ef.md`、派生 note-index / project-standard / site-state / atlas、本 handoff、2 个 ignored worktree。未改候选队列、政策阈值、远端 main；未 merge。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/css-zero-runtime-source-review-20260827-ef.md`、派生 note-index / project-standard / site-state、本 handoff、2 个 ignored worktree。未改候选队列、政策阈值、远端 main；未 merge。
 - activated_by：`explicit-user-goal-parallel-writer-ef-2026-08-27`。
 - detector fingerprint：两页缺 pinned revision / evidence boundary / self-test；vanilla-extract 把抽取写成 Node `vm` + stylis；StyleX 把默认覆盖写成全员 `:where()` 且 Vite 支持弱。`linaria` 与 `open-props` 无既有 Study 页，按 fallback 选 stylex。
-- external_outcome：一个 PR，不 merge；D 轴不变。
-- budget：最多 3 切片、120 分钟、1 个可写切片。
-- stop_conditions：canonical/revision 不唯一、只能放宽门禁、或需要新建项目页改 961 计数时停止。
+- external delta：分支已 push 并打开 PR #177；未 merge、未部署，D 轴不变。
+- 完成切片：
+  1. `vanilla-extract` 绑定 `@vanilla-extract/css@1.21.2` / `235de173...`，纠正 esbuild + `eval` + `transformCss` 主链、file scope、browser runtimeAdapter 与 recipe `createRuntimeFn`。
+  2. `stylex` 绑定 `@stylexjs/stylex@0.19.0` / `5f51b244...`，纠正 compile-away `create`、`props()`/`styleq`、默认 `property-specificity`，以及 unplugin 的 vite/webpack/esbuild/rspack/rolldown/bun 入口。
+  3. 新增共享 `docs/css-zero-runtime-source-review-20260827-ef.md` 与两份 generation 1 static receipt；项目审计从 `34/961` 前进到 `36/961`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下全绿（388 Node tests、23 Playwright a11y、strict build、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=925`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=105`、`legacy-unverified=1939`、blocking 0。
+- budget：2 个 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
+- blocker：main 上既有 `tracked_files` 规模 detector 超限仍属 `PARKED_HUMAN`，本轮未改 baseline。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge 的授权。
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/177`。
 - superseded_by：`none`。
 
 ## 2026-08-27 表单主题组收口 epoch 8
