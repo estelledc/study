@@ -4,92 +4,80 @@ title: BuildKit — Docker 下一代镜像构建后端
 日期: 2026-06-01
 分类: devops / 容器构建
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/moby/buildkit
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 991535e0973488b6a429096d21fa13f81f2d89d8
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.32.2
 ---
 
 ## 是什么
 
-BuildKit 是 Docker / Moby 的**新一代镜像构建后端**——你写的还是 `Dockerfile`，但跑起来的引擎换了一个。日常类比：
+BuildKit 是一套**把构建定义编译成可并发、可缓存的 DAG，再交给 worker 执行**的工具包。日常类比：老厨房按菜谱一行行做；新厨房先画出依赖图，没有互相等待的步骤可以同时开火。
 
-> 老式厨房：师傅一道菜做完才开始下一道（哪怕第二道根本不依赖第一道）。新厨房：先看菜单画一张依赖图，没相互等的菜同时开火。
+你写的还可以是 Dockerfile，但引擎不再按“指令序列”执行。中间格式叫 **LLB**（Low-Level Builder），README 的比喻是：LLB 之于 Dockerfile，就像 LLVM IR 之于 C。
 
-BuildKit 干的就是后一件事——把 Dockerfile 编译成一张**有向无环图**（DAG），叫 LLB（Low-Level Builder），然后并发跑、共享缓存。结果是同样一个镜像，构建时间经常能明显缩短。
-
-8.6k star，原作者 Tõnis Tiigi（Docker），2017 年从 `docker build` 抽出来重写，2018 年合入 Moby。Docker Engine 23.0 起默认就是它，老 builder 进入 deprecated 路线。
+固定 `v0.32.2` 由 `buildkitd` 守护进程和 `buildctl` 客户端组成。Docker Engine 23.0 起，`docker build` 默认走 Buildx + BuildKit——这是本仓 README 的声明，不是本轮对 Docker Engine 的运行核验。
 
 ## 为什么重要
 
-不理解 BuildKit 解释不了下面这些：
+不理解 LLB，下面这些事会对不上：
 
-- 为什么同一份 Dockerfile 在新版 Docker 上突然快了——默认 builder 换了
-- 为什么 GitHub Actions / GitLab CI 能"跨 job 共享 layer 缓存"——BuildKit 的远程缓存协议
-- 为什么 Dagger / depot.dev / Earthly 这些"代码即流水线"工具都长得有点像——它们底下都是 BuildKit
-- 为什么 `RUN --mount=type=secret` 能把密钥喂进构建过程而不会泄漏到镜像层——BuildKit 的高级 mount
+- 为什么同一份多 stage Dockerfile 能让无依赖的 stage 同时跑，而不只是“换了个日志颜色”
+- 为什么 Dagger / Earthly / Depot 能长在同一套协议上——README 的 Used by 把它们列为 frontend / 客户端，而不是“更快”的证据
+- 为什么 `RUN --mount=type=secret` 能把密钥喂进这一步，而 `PROJECT.md` 要求 secret 值不得进磁盘或 cache checksum
+- 为什么 GitHub Actions / registry 能复用构建缓存——export 走的是 content-addressed 的 cache record，不是层序号
 
 ## 核心要点
 
-BuildKit 的设计可以拆成 **三个核心抽象**：
+固定版本可以拆成四层：
 
-1. **LLB（中间表示）**：Dockerfile 不直接执行，先编译成一张 protobuf 描述的 DAG。每个节点是一个操作（exec / file 改动 / 拉镜像），边是依赖。这一步把"指令序列"变成"依赖关系"
+1. **LLB 是 protobuf DAG**：`solver/pb/ops.proto` 里每个 `Op` 是顶点，`oneof` 为 Exec / Source / File / Build / Merge / Diff / Passthrough。边是 `Input`（上游 digest + output index）。求解器按依赖并发执行，按输入做缓存。
 
-2. **前端可插拔**：Dockerfile 只是 LLB 的一个 frontend。你也可以用 Buildpacks、HLB、Mockerfile，甚至自己写一个——只要最终输出 LLB 就行。BuildKit 不是构建器，是**构建协议**
+2. **Frontend 可插拔**：Dockerfile frontend（本仓 const `1.26`）把 Dockerfile 编成 LLB。另外还有 `gateway.v0`：任意镜像都可以当 frontend。Buildpacks / HLB / Earthfile 等是外部语言，不是本仓必须实现的运行时。
 
-3. **内容寻址缓存**：缓存键是步骤输入的 hash，不是层序号。同样的输入在任何机器上都命中同一份缓存——可以推到 registry / S3 / GitHub Actions cache，团队共享
+3. **进程模型是 daemon + client**：`buildkitd` 默认听 `/run/buildkit/buildkitd.sock`；worker 默认 OCI/runc，可切 containerd。所谓 daemonless 是 `buildctl-daemonless.sh` 拉起一次性 daemon，不是“没有进程”。
 
-三件事叠加：DAG 让并发可能，前端让协议复用，content hash 让缓存跨机器。
+4. **缓存按输入寻址，导出分 mode**：`parseCacheExportMode` 认 `min`（默认：顶层可传输层及其依赖）和 `max`（所有非 root vertex）；未知值回落 `min`。后端包括 inline、registry、local；README 把 GHA / S3 / Azure Blob 标成 experimental。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：默认就在用，但你不知道
+### 案例 1：默认的 `docker build`
 
 ```bash
 docker build -t myapp .
 ```
 
-新版 Docker Engine（23.0+）这条命令背后跑的就是 BuildKit。如果你看到构建日志里有彩色进度条 + 多个步骤同时显示 `=>`，那就是它。老 builder 是一行一行串着打日志。
+23.0+ 的 Docker 把这条接到 BuildKit。独立使用则是 `buildctl` 对 `buildkitd`。彩色并行日志是 UI，不是性能数字。
 
-逐部分解释：
-
-- `docker build` 仍然是入口命令，用户不需要直接调用 `buildkitd`。
-- 日志里多个步骤同时刷新，说明 BuildKit 已经把独立步骤并发执行。
-
-### 案例 2：并发省时间
+### 案例 2：无依赖 stage 可同时成为 LLB 顶点
 
 ```dockerfile
 FROM node:20 AS frontend
-RUN npm install        # 步骤 A：装前端依赖
+RUN npm install
 
 FROM golang:1.22 AS backend
-RUN go mod download    # 步骤 B：装后端依赖
+RUN go mod download
 
 FROM alpine
 COPY --from=frontend /app /front
 COPY --from=backend /app /back
 ```
 
-老 builder：A 装完才装 B，串行 2 分钟。BuildKit：A 和 B 没相互依赖，**同时开跑**，1 分钟搞定。
+`frontend` 与 `backend` 没有互相 `COPY --from`，在 LLB 里是可并行的 Exec 顶点；最终 stage 等两边。本轮未测量“快了多少”。
 
-逐部分解释：
-
-- `frontend` 和 `backend` 是两个独立 stage，彼此没有 `COPY --from` 依赖。
-- BuildKit 看到依赖图后，可以同时下载 npm 包和 Go module。
-- 最后的 `FROM alpine` 需要等两个 stage 都完成，才把产物复制进最终镜像。
-
-### 案例 3：持久化构建缓存
+### 案例 3：cache / secret mount
 
 ```dockerfile
 RUN --mount=type=cache,target=/root/.npm npm install
-```
-
-`/root/.npm` 这个目录在多次构建之间**保留**——npm 不用每次重新下整个 cache。这是 BuildKit 的 cache mount，跟普通 layer cache 是两套机制。
-
-逐部分解释：
-
-- `type=cache` 声明这是构建机上的临时缓存，不会进入最终镜像。
-- `target=/root/.npm` 告诉 BuildKit 把 npm 下载目录接到缓存卷上。
-
-### 案例 4：构建机密不泄漏
-
-```dockerfile
 RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm install
 ```
 
@@ -97,86 +85,90 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm install
 docker build --secret id=npmrc,src=$HOME/.npmrc .
 ```
 
-`.npmrc`（含 token）只在这一步可见，**不会写入镜像层**。`docker history` 里看不到它。
+`commands_runmount.go` 允许 bind / cache / tmpfs / secret / ssh。secret 还可 `env=` 注入，此时默认不落 `/run/secrets`。cache mount 的 key 由 id 等参数决定，与普通 layer hash 不是同一套。
 
-逐部分解释：
-
-- `--secret id=npmrc` 把宿主机文件注册成一次性密钥。
-- Dockerfile 里的 `RUN --mount=type=secret` 只在这一条命令运行时挂载它。
-
-### 案例 5：远程缓存共享
+### 案例 4：远程缓存导出
 
 ```bash
 docker buildx build \
-  --cache-to=type=registry,ref=myrepo/cache:main \
+  --cache-to=type=registry,ref=myrepo/cache:main,mode=min \
   --cache-from=type=registry,ref=myrepo/cache:main \
   -t myapp .
 ```
 
-CI 跑完把缓存推到 registry，下一次（哪怕在另一台机器）`--cache-from` 直接拉回来。第一次构建 5 分钟，之后命中缓存 30 秒。
-
-逐部分解释：
-
-- `--cache-to` 把本次构建的可复用中间结果推到远端。
-- `--cache-from` 在下次构建前先拉缓存，命中后跳过重复步骤。
+`mode=min` 是 daemon 默认；`mode=max` 导出更多中间 vertex，体积也会更大。本轮未跑 registry，也没有命中率数字。
 
 ## 踩过的坑
 
-1. **`DOCKER_BUILDKIT=1` 是历史包袱**：老 Docker（< 23.0）要手动设这个环境变量才走 BuildKit。新版默认就是，但很多教程还在写——加了无害，没加且 Docker 旧就走不到 BuildKit
+1. **`DOCKER_BUILDKIT=1` 是旧开关**：README 的 Used by 仍写这句；23.0+ 默认已是 BuildKit。旧引擎不加这个环境变量就走不到它。
 
-2. **cache mount 和 layer cache 是两套**：`RUN --mount=type=cache` 的 cache key 由你给的 `id` 决定，跟 `RUN` 这一层的 hash 无关。改了上一行 `COPY` 不会让 cache mount 失效——这反而是好事，但新人容易混
+2. **cache mount ≠ layer cache**：改了上一行 `COPY` 不会按 layer 规则自动丢掉 `type=cache` 目录。这是机制，不是本轮测出的“一定更快”。
 
-3. **远程缓存不会自己清**：推到 registry 的缓存会一直涨。需要自己设保留策略（比如 `mode=max` 推全量，`mode=min` 只推最终产物的关键层）
+3. **远程缓存要自己管生命周期**：`max` 会推更多 vertex。BuildKit 不会替你制定 registry 保留策略。
 
-4. **并发让日志非确定**：步骤 A 和 B 同时跑，日志会交错。要按步骤分组看，命令行加 `--progress=plain` 或在 CI 里看每个 step 的独立日志
+4. **daemonless 仍要特权/安全选项**：`buildctl-daemonless.sh` 文档示例带 `--privileged` 或 rootless 的 seccomp/apparmor 放开。它不是 Buildah 那种“默认无长跑进程”。
 
-5. **rootless 模式有 OverlayFS 限制**：rootless（不需要 root 跑 buildkitd）更安全但有些 mount / chmod 操作受限。生产容器里跑构建（K8s pod）常用，但 Dockerfile 里跨用户改文件权限要小心
+5. **平台边界**：`buildkitd` 支持 Linux 与 Windows；macOS 公式不含 daemon。secret 的 uid/gid/mode 参数在 Windows 未实现。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- CI 里多个独立步骤想并行（前端 + 后端依赖同时装）
-- 跨团队 / 跨机器共享构建缓存（推到 registry，下次直接拉）
-- 需要构建机密但不泄漏到镜像层（secret mount）
-- 多架构镜像分发（一次构建出 amd64 + arm64）
-- rootless 容器环境跑构建（K8s pod 里安全跑）
+- 需要把 Dockerfile 或其他 frontend 编成可并发 DAG
+- 要跨机器导出/导入 content-addressed 缓存
+- 要用 secret/ssh/cache mount，且接受 daemon 或 Buildx 客户端
+- 多架构导出（LLB 带 Platform 约束）
 
 **不适用**：
 
-- Windows 容器构建（支持有限，主战场是 Linux）
-- 不用 Docker 生态、纯 K8s 镜像构建（Kaniko / img 更轻，不需要 daemon）
-- 只想本地随手 `docker build`：默认已是 BuildKit，不必单独学
+- 坚持“主机上不能有构建 daemon”，又不肯跑 daemonless 一次性进程——对照 [[buildah]]
+- 把 README 的 Used by 名单当成性能排名
+- 只想在 macOS 上本机跑 `buildkitd`（官方 daemon 不在这一侧）
+- 跟踪 `v0.33.0-rc1` / dockerfile 1.27 RC，却按 0.32.2 推理
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Tõnis Tiigi 在 Docker 内部启动 BuildKit，目标替换 1.x 的 `docker build`——并发 + 可插拔前端
-- **2018 年**：合入 moby/moby；同年 Docker 18.06 加 `DOCKER_BUILDKIT=1` 实验开关
-- **2020 年**：Docker 19.03 起 `buildx` 子命令稳定，作为 BuildKit 客户端
-- **2023 年**：Docker Engine 23.0 默认走 BuildKit，legacy builder 标记 deprecated
-- **2023 年**：Dagger 基于 BuildKit 重写 pipeline 引擎——证明 LLB 不只是 Dockerfile 的后端，是通用的"可缓存可并发的执行图"
+- 本文绑定 `moby/buildkit@991535e0973488b6a429096d21fa13f81f2d89d8`，即 annotated tag `v0.32.2`。
+- 同仓已有 `v0.33.0-rc1`（2026-08-27）与 `dockerfile/1.27.0-rc1`；未绑定。
+- 本仓 Dockerfile frontend const 为 `1.26`。Go 1.26.3。许可 Apache-2.0。
+- cache export 默认 `min`；GHA / S3 / Azure 缓存在 README 中标 experimental。
+- 本文未启动 `buildkitd`、未跑 `buildctl`、未测耗时或命中率，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **把"指令序列"抽象成"依赖图"** 这一步，让并发、缓存、跨前端复用全部成为可能——这是工程设计上一个反复出现的模式
-2. **前端可插拔**（Dockerfile 不是唯一）让 BuildKit 不只是构建器，是**构建协议**——抽象一旦立起来，生态就能在上面长
-3. **content-addressable cache** 让缓存跨机器、跨团队可共享——这跟 Git / Nix / IPFS 的设计哲学一致：用 hash 取代位置
+1. **把指令序列变成依赖图**之后，并发和跨机器缓存才是同一套数学，而不是两套优化开关
+2. **Frontend 与 solver 分离**让 Dockerfile 不再垄断构建定义
+3. **Daemon 是 BuildKit 的默认形态**；daemonless 只是把 daemon 的寿命缩到一次 build
+4. **secret 的合同是“不进层、不进 checksum”**，不是“日志里绝对看不见你自己 echo 出来的值”
+
+## 应用型自测
+
+1. LLB 的 `Op` 是不是只能表示 `Exec`（跑命令）？
+2. `--cache-to` 不写 `mode` 时，daemon 按 `min` 还是 `max` 导出？
+3. `buildctl-daemonless.sh` 是不是表示 BuildKit 可以完全没有 `buildkitd` 进程？
+
+检查点：
+
+1. 不是。`ops.proto` 的 oneof 还有 Source / File / Build / Merge / Diff / Passthrough。
+2. `min`。`parseCacheExportMode` 把空/未知值回落 `CacheExportModeMin`。
+3. 不是。脚本拉起一次性 daemon；README 把这叫做 daemonless mode。
 
 ## 延伸阅读
 
-- 官方文档：[docs.docker.com/build/buildkit](https://docs.docker.com/build/buildkit/)（最权威，有 LLB / cache / secret 各章节）
-- 对比文章：[Earthly Blog — BuildKit vs Buildah](https://earthly.dev/blog/buildkit-vs-buildah/)（讲清两套主流构建后端取舍）
-- 源码入口：[github.com/moby/buildkit](https://github.com/moby/buildkit) `frontend/dockerfile/` 看 Dockerfile 怎么编译成 LLB
-- [[docker]] —— BuildKit 的宿主，理解镜像 / layer / registry 是前置
-- [[dagger]] —— 基于 BuildKit 的"代码即 CI"工具
-- [[kaniko]] —— K8s 原生镜像构建器，不依赖 daemon
+- 固定源码：[moby/buildkit](https://github.com/moby/buildkit) —— 本文绑定提交 `991535e0973488b6a429096d21fa13f81f2d89d8`
+- LLB 定义：`solver/pb/ops.proto`
+- Docker 文档：[docs.docker.com/build/buildkit](https://docs.docker.com/build/buildkit/)
+- [[docker]] —— BuildKit 的常见宿主
+- [[dagger]] —— README Used by 中的 LLB 客户端
+- [[kaniko]] —— 另一条无 dockerd 的构建路线
 
 ## 关联
 
-- [[docker]] —— BuildKit 是 Docker Engine 23.0+ 默认 builder
-- [[dagger]] —— 用 LLB 重写 pipeline 引擎，证明 BuildKit 是通用执行图
-- [[kaniko]] —— 纯 K8s 场景的替代方案，无 daemon 设计
-- [[github-actions]] —— `actions/cache` 集成 BuildKit 远程缓存协议
+- [[docker]] —— Engine 23.0+ 默认 builder（README 声明）
+- [[dagger]] —— 基于 BuildKit 的 pipeline 引擎
+- [[kaniko]] —— 纯集群内构建的对照
+- [[github-actions]] —— README 记载的 experimental cache 后端之一
+- [[buildah]] —— fork-exec、默认 jobs=1 的对照实现
 
 ## 反向链接
 
