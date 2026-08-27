@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2045,
-      "classified": 1998,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 962,
-        "classified": 934,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
