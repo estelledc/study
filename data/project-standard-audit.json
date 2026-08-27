@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 34,
+      "benchmark-aligned": 36,
       "needs-evidence": 927
     }
   },
@@ -4940,6 +4940,26 @@
       ]
     },
     {
+      "slug": "draft-js",
+      "title": "Draft.js — 用不可变 ContentState 管 contentEditable 的 React 编辑器",
+      "source": "https://github.com/facebookarchive/draft-js",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "dragonbones",
       "title": "DragonBones — 国产开源 2D 骨骼动画运行时",
       "source": "https://github.com/DragonBones/DragonBonesCPP",
@@ -5396,6 +5416,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "editorjs",
+      "title": "Editor.js — 按块存 JSON、按 Tool 渲染和保存的编辑器",
+      "source": "https://github.com/codex-team/editor.js",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "effect",

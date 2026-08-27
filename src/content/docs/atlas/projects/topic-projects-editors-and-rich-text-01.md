@@ -1,6 +1,6 @@
 ---
 title: "编辑器 / 富文本 · 项目 · 第 1 组"
-description: "67 条 编辑器 / 富文本 Atlas 分块"
+description: "69 条 编辑器 / 富文本 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 67 条，稳定上限为 100 条。
+本分块共 69 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -26,7 +26,9 @@ sidebar:
 | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | `codemirror` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Coder — 自托管开发环境平台](/study/projects/coder/) | `coder` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Doom Emacs — 启动不到一秒的模块化 Emacs 配置](/study/projects/doom-emacs/) | `doom-emacs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Draft.js — 用不可变 ContentState 管 contentEditable 的 React 编辑器](/study/projects/draft-js/) | `draft-js` | intermediate | UNVERIFIED | 用不可变 ContentState 管 contentEditable，并由 push 决定何时写入 undo 栈 |
 | [Eclipse Che — Kubernetes 原生云 IDE](/study/projects/eclipse-che/) | `eclipse-che` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Editor.js — 按块存 JSON、按 Tool 渲染和保存的编辑器](/study/projects/editorjs/) | `editorjs` | intermediate | UNVERIFIED | 把文档当成块数组，启动时 prepare 模块，保存时逐块校验再消毒 |
 | [GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统](/study/projects/emacs/) | `emacs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Etherpad — 经典协作文本编辑器](/study/projects/etherpad-lite/) | `etherpad-lite` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Foam — 把 VS Code 变成 Markdown 双链知识库](/study/projects/foam/) | `foam` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

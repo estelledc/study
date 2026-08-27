@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EB leftover editors
+
+- status：`running` → writer epoch complete，等待 draft PR review；未 merge。
+- objective：收口 leftover 富文本对。指定 `draft-js` + `quill` 后 `quill` 已被 CV 占用；`froala` 公开仓只有压缩发行物，按 fallback（排除 tiptap / slate / lexical / monaco）改为 `draft-js` + `editorjs`，绑定可达 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、`docs/editor-source-review-20260827-eb.md`、两份 generation 1 receipt、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；2 个 ignored worktree。未改候选队列、政策阈值、远端 main。
+- activated_by：`explicit-user-parallel-writer-eb-20260827`。
+- detector fingerprint：`draft-js` / `froala` / `quill` 均不在 origin/main 项目页；`quill` 已在开放 PR #146；`froala/wysiwyg-editor@v5.4.0` 无内核源码。
+- external delta：授权范围内形成 1 个 draft PR；未 merge、未 deploy，D 轴不变。
+- 完成切片：
+  1. `draft-js` 绑定 `facebookarchive/draft-js@f55fa0f8...` / `v0.11.7`（npm `gitHead` 一致），写清受控 `EditorState`、`Modifier`+`push` 的 undo 边界，以及 `DraftEntity` 模块单例。
+  2. `editorjs` 绑定 `codex-team/editor.js@4ea9eb38...` / `v2.31.6`（npm 无 `gitHead`，按 tag 绑定），写清 holder 校验、默认 paragraph、stub 回推和 400ms `onChange` 批。
+  3. 共享 provenance 记在 `docs/editor-source-review-20260827-eb.md`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest 与固定 revision 一致，evidence `UNVERIFIED`。
+  - `audit:counts`：projects=963、papers=1083、total=2046。
+  - `audit:content-contract`：v2=105，blocking 0。
+  - `audit:project-standard`：benchmark-aligned=36、snapshot CURRENT。
+  - `git diff --check`：通过。
+- budget：1 个双子切片、1 个可写 writer、单 PR。
+- stop conditions：本轮只开 draft PR，不自合；规模 baseline 与 merge / deploy 需单独授权。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d0 npm run verify:ci`（规范 Node 22.23.1 / npm 11.17.0）。
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

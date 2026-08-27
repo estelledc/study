@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "editorjs",
+    "digest_sha256": "09c714e6b40a877378f43ba7870b54ff884baf6f1facd31e20e170ef62580976"
+  },
+  "source_revision": "4ea9eb389847181ceb757735f8bd45cc8c2f1673",
+  "research_input_sha256": "f54e15eb47baa022d640f412c628e24aba1b31efd560adaae69f0c38f9951c4d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates holder validation, default paragraph block, stub fallback, and 400ms onChange batching."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "Core boot, Tools.internalTools, Renderer stub rewrite, Saver.validate/sanitize and ReadOnly CriticalError were inspected; Cypress was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Bindings stay on reachable v2.31.6; npm latest has no gitHead and Froala was skipped as dist-only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}
