@@ -1948,6 +1948,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::eslint",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::etcd",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2298,6 +2302,10 @@
     {
       "note_id": "projects::prisma",
       "topic_id": "projects-orm-and-database-clients"
+    },
+    {
+      "note_id": "projects::prettier",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::prom-client",

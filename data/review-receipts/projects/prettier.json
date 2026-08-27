@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "prettier",
+    "digest_sha256": "d343bf4c918e1c27b3721c1a0ccdebc692e4d4204fdcf16feee2ab43e1ba9f45"
+  },
+  "source_revision": "8f0c95057cc91d5836409466cd9d9af3bb901e84",
+  "research_input_sha256": "32da20347e9ba75fd704be33290b364c420d6ffcda7f6df2121f408a873d7ab4",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ak",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains parse → doc IR → print, check-as-reformat, and conservative --write without treating npm gitHead as the pin."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ak",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "format/formatWithCursor, coreFormat, config-searcher, and CLI formatFiles sources were inspected; CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ak",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Pinned to reachable GitHub 3.9.6 tag; npm gitHead is unreachable and performance claims stay out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

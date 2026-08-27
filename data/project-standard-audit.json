@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 963,
     "by_status": {
-      "benchmark-aligned": 18,
+      "benchmark-aligned": 20,
       "needs-evidence": 943
     }
   },
@@ -5882,6 +5882,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "eslint",
+      "title": "ESLint — 可插拔的 JS/TS 静态检查器",
+      "source": "https://github.com/eslint/eslint",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "esp-dl",
@@ -16035,6 +16055,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "prettier",
+      "title": "Prettier — 把源码打成一份 doc IR 再打印",
+      "source": "https://github.com/prettier/prettier",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "prisma",

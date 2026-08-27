@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "eslint",
+    "digest_sha256": "2eb6dee9c8e7d653e5cd1f8205984e5199029583c14fea07c70a756099542d2d"
+  },
+  "source_revision": "5c8c2417b9ff462f2dc4e54a062c59135b45b845",
+  "research_input_sha256": "32da20347e9ba75fd704be33290b364c420d6ffcda7f6df2121f408a873d7ab4",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ak",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains flat-config lookup, skinny defaults, and explicit --fix write-back without claiming recommended rules are on."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ak",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "CLI execute, ESLint.lintFiles, Linter.verifyAndFix, and default-config sources were inspected; CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ak",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable 10.9.1 tag/gitHead; plugin recommended sets and worker speed remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}
