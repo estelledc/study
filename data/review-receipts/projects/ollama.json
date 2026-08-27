@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ollama",
+    "digest_sha256": "164ccfb67518abb52299e7c7ac4a121087cf0ec9fd91aa906a296caba136d9df"
+  },
+  "source_revision": "13f2fb8c99278469b954429d5541019f4d83a4d0",
+  "research_input_sha256": "11f79d67a3211d671e3d2965193380b7dc9d99885f0911f152a75dea30b975a6",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the Modelfile DSL, content-addressed storage, API compatibility layers, and the subprocess engine boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "envconfig, routes, llm server wrappers, manifest paths and the Modelfile parser were inspected; no service or model was run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Defaults, endpoints and engine pinning are bounded to v0.33.1; quantization quality and throughput require measurement."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T05:52:20.000Z"
+}
