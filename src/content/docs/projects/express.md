@@ -180,6 +180,7 @@ app.use((err, req, res, next) => {
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[detect-port]] —— detect-port — 从首选端口往上试十次，再听随机口
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
@@ -187,6 +188,7 @@ app.use((err, req, res, next) => {
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[get-port]] —— get-port — 探测空闲 TCP 端口，占用则改给 OS 随机口
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器

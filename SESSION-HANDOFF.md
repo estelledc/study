@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FU：get-port + detect-port 静态审查
+
+- status：writer epoch `complete`；准备 PR，不 merge。
+- 起始 ref：`51448afbe`（当时的 `origin/main`）。
+- objective：为 `get-port` 与 `detect-port` 新增源码绑定的 `study-v2` 页；证据边界是 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/free-port-source-review-20260827-fu.md`、taxonomy 与派生索引；`express` / `vite` / `vitest` 只补生成段反向链接。未安装上游依赖，未跑上游测试，未测跨进程竞争。
+- activated_by：用户指定 PARALLEL writer FU、origin/main、STATIC_REVIEW、UNVERIFIED、单一 PR、不 merge。
+- detector fingerprint：仓库没有这两页；实时 npm/git 可固定 `get-port@7.2.0` / `detect-port@2.1.0`，且两者空闲端口合同互补（听 `0` + 进程内锁 vs `+10` 窗口 + `waitPort`）。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权）。D 轴不因本轮本地写入提升。
+- 完成切片：
+  1. `get-port` 绑定 annotated tag `v7.2.0` → `efbebfb0a2904b55d5ce9ab0badb52b3fbab99fe`（与 npm `gitHead` 一致）。
+  2. `detect-port` 绑定 lightweight tag `v2.1.0` → `a2cfe1daed83c8f93358aea8b281a91514c307c4`（与 npm `gitHead` 一致）。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest / revision 一致，evidence state `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:project-standard` snapshot CURRENT。`verify:ci` 在 push 后跑。
+- budget：1 个双子内容切片；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：单一 PR 打开后停止；不 merge、不 deploy。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=51448afbe npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

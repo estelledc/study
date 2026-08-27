@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "14 条 通用开发工具 Atlas 分块"
+description: "16 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,13 +9,15 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 14 条，稳定上限为 100 条。
+本分块共 16 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [detect-port — 从首选端口往上试十次，再听随机口](/study/projects/detect-port/) | `detect-port` | beginner | UNVERIFIED | 固定 v2：占用后往上试十格，waitPort 等的是被占而不是空闲 |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Electron — 自带 Chromium + Node 的跨平台桌面运行时](/study/projects/electron/) | `electron` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [get-port — 探测空闲 TCP 端口，占用则改给 OS 随机口](/study/projects/get-port/) | `get-port` | beginner | UNVERIFIED | 固定 v7：首选端口失败后听 0，进程内锁 15–30 秒，reserve 锁到进程结束 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | `lens` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

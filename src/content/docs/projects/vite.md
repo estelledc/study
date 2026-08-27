@@ -166,6 +166,7 @@ export default defineConfig({
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[cordova]] —— Cordova — 用 Web 技术打包移动 App 的老牌桥梁
+- [[detect-port]] —— detect-port — 从首选端口往上试十次，再听随机口
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[electron]] —— Electron — 用网页技术做跨平台桌面应用
 - [[electron-builder]] —— electron-builder — Electron 打包发布事实标准

@@ -166,6 +166,7 @@ npx vitest run --coverage
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[get-port]] —— get-port — 探测空闲 TCP 端口，占用则改给 OS 随机口
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
