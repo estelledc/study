@@ -4,9 +4,10 @@
 
 ## 2026-08-27 PARALLEL writer BH JSON Schema 双子
 
-- supervisor 状态：`running` 本 epoch 完成后进入等待审查；未 merge。
+- supervisor 状态：writer epoch BH `complete`，等待 owner 审查 PR #95；未 merge。
 - status：Program `active`；本地 writer epoch BH `complete`。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- 完成 ref：`ea953f41`（本交接刷新前的内容提交；验证结果见下）。
 - objective：为缺失的 Ajv / TypeBox 新增 `study-v2` 对照笔记，证据为 `STATIC_REVIEW` / `STATIC_ANALYSIS`，验证状态保持 `UNVERIFIED`，并开 1 个审查 PR（不 merge）。
 - scope：`ajv`、`typebox` 两页、`docs/json-schema-source-review-20260827-bh.md`、两份 generation 1 receipt、taxonomy / atlas / site-state / 公开计数与本交接；未安装上游依赖、运行上游测试、bundle 或性能 benchmark。
 - activated_by：`explicit-user-request-parallel-writer-BH-20260827`。
@@ -17,7 +18,9 @@
   2. 新增 `ajv` 页：draft-07 默认入口 vs `Ajv2020`、compile 缓存、`removeAdditional` 副作用、空 `formats` 表。
   3. 新增 `typebox` 页：1.x 包名 `typebox`、`Schema.Compile` JIT/动态回退、`Value.Parse` 与 `Validator.Parse` 分叉、未登记 format 放行。
   4. 共享 provenance `docs/json-schema-source-review-20260827-bh.md` 与两份 generation 1 receipt。
-- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；`audit:counts` / `audit:content-contract` / `audit:site-state` 通过。
+- 验证结果：两页 `quality-gate.mjs` 全绿、0 advisory；`audit:counts` / `audit:content-contract` / `audit:site-state` 通过；`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿（23 Playwright tests）。
+- acceptance checks：同上。
+- 外部结果：Draft PR https://github.com/estelledc/study/pull/95 ，不 merge。
 - budget：1 个可写切片、2 个新项目页、单 writer。
 - blocker：未获 merge/deploy 授权。
 - stop conditions：本 epoch 以 1 个 PR 结束；不继续发明下一对 slug。
