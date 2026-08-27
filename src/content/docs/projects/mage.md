@@ -1,18 +1,29 @@
 ---
-title: Mage — 用 Go 写 build 脚本，告别 Makefile
-来源: magefile/mage, https://github.com/magefile/mage
-日期: 2026-05-31
+title: Mage — 把导出的 Go 函数编译成一次运行的 target
+description: 固定版本先解析 magefile，再生成 main 并编译到缓存；Deps 在进程内并行且只跑一次
+来源: https://github.com/magefile/mage
+日期: 2026-08-27
 分类: 构建工具
 难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/magefile/mage
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 0953947c1673fd745a51c032aadeb3c63f9f3368
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.17.2
 ---
 
 ## 是什么
 
-Mage 是一个**用 Go 函数当 build target 的构建工具**，目标和 Make / Rake / Task 一样：把 "执行一系列命令" 这件事编成可复用、可命名的任务。
-
-日常类比：Make 像一本写满咒语的菜谱，每条咒语用 bash 写、还要你认得 tab 和空格的差别；Mage 像让你直接用平时写程序的语言写菜谱——同样的 Go，同样的 IDE 补全，同样能 step debug。
-
-最小例子：
+Mage v1.17.2 是一个 **用 Go 函数当 target 的构建工具**。日常类比：不写一本要记 tab 的菜谱，而是用你本来就会的语言写几个导出函数，Mage 把它们编成一份临时菜单再执行。
 
 ```go
 //go:build mage
@@ -21,67 +32,47 @@ package main
 
 import "github.com/magefile/mage/sh"
 
-// Build 编译二进制到 bin/app
 func Build() error {
     return sh.Run("go", "build", "-o", "bin/app", "./cmd/app")
 }
 ```
 
-放进 `magefile.go`，命令行 `mage build` 就能跑。Mage 自己读懂导出函数 `Build`，把它作为 target 暴露出来。
+```bash
+mage build
+mage -l
+```
+
+入口是 `mage.Main()` → `ParseAndRun` → `Invoke`。真正跑 target 前，它会解析 magefile、生成 `mage_output_file.go`、编译到缓存目录。`go.mod` 声明 `go 1.18`。
 
 ## 为什么重要
 
-写过 Makefile 的人都懂这些痛：
+不读固定 v1.17.2，旧笔记会把三件事写错：
 
-- **跨平台失效**：`rm -rf` 在 Windows 不存在，`&&` 在 cmd.exe 行为不同——一份 Makefile 搞不定三个系统
-- **语法陷阱**：tab vs 空格、`$$` 转义、`.PHONY` 忘写——bug 经常出在 build 系统本身
-- **无法 debug**：脚本写复杂了想 print 调试都难，更别说断点
-- **生态封闭**：Makefile 里调函数？写循环？嵌套条件？语法越写越像正则表达式
+- `mage -h <target>` / `mage -l` 也必须先编译（1.17.2 在 parse 之后、compile 之前就能出列表和单 target 帮助）
+- 只有 `func()` / `func() error` / `func(context.Context) error` 三种签名（还可以无 error、以及 `string` / `int` / `float64` / `bool` / `time.Duration` 参数）
+- 默认 target 是第一个导出函数（实际是包级 `var Default = Build`）
 
-Mage 用 Go 解决这些。**项目本身用 Go 写**，build 脚本就用 Go 写——同一套工具链、同一套 CI 缓存、同一种 review 习惯。这是它在 Go 生态里能站住脚的核心原因。
+它和 [[just]] 的对照是：**just 每次把文本交给 shell；Mage 先把 Go 编成二进制，再在一次进程里按函数跑。**
 
 ## 核心要点
 
-四件事吃透就能用：
+主链可以拆成五步：
 
-1. **build 标签隔离**：magefile 顶部必须写 `//go:build mage`，让它只在 mage 命令下编译，不会被 `go build ./...` 误带进主二进制。
+1. **找文件**：若存在 `magefiles/` 目录，默认进该目录。根目录同时还有带 `mage` tag 的文件时打 WARNING，当前仍回退用根目录。
+2. **筛选**：当前目录只收带 `mage` build tag 的 `.go`；`magefiles/` 按普通 Go tag 规则收全部 `.go`。
+3. **解析**：`parse.PrimaryPackage` 抽出导出函数、`Default`、`Aliases`、`mg.Namespace` 方法。CLI 名一律小写，namespace 写成 `build:server`。
+4. **列表/帮助可停在这里**：`mage -l` 与 `mage -h target` 走 `mageListOutput` / `mageHelpOutput`，不编译。
+5. **要执行才编译**：生成 `mage_output_file.go`，编到 `MAGEFILE_CACHE` 或 `~/.magefile`（Windows 为 `%HOMEDRIVE%%HOMEPATH%\magefile`）。若本机 `GOCACHE` 非空，默认忽略旧二进制、重新 `go build`，除非 `MAGEFILE_HASHFAST`。
 
-2. **导出函数 = target**：函数首字母大写就是 target；签名固定几种（`func()` / `func() error` / `func(context.Context) error`）。注释第一行变成 `mage -l` 的 help 文本。
+`mg.Deps` 在各自 goroutine 里跑，并用 `sync.Once` 保证同一 `Name+ID` 一次 Mage 进程只执行一次。`SerialDeps` 改为串行。`target.Path` 只比较路径自身的 modtime，不递归目录。
 
-3. **依赖声明 mg.Deps**：
+## 实践示例
 
-   ```go
-   func Deploy() error {
-       mg.Deps(Build, Test)  // 并发跑 Build 和 Test，且每个只跑一次
-       return sh.Run("./deploy.sh")
-   }
-   ```
-
-   同一个 target 在一次 mage 运行里**最多执行一次**，不需要手动去重。
-
-4. **Namespace 分组**：
-
-   ```go
-   type Build mg.Namespace
-   func (Build) Server() error { ... }  // mage build:server
-   func (Build) Client() error { ... }  // mage build:client
-   ```
-
-   target 多了用 namespace 分类，避免一屏 50 个 target 找不到。
-
-辅助工具包：
-
-- `sh` — 运行外部命令、捕获输出、设置环境变量
-- `mg` — Deps / SerialDeps / Namespace / Verbose 等核心控制
-- `target` — 只在源文件比产物新时重跑（类似 Makefile 的时间戳判断）
-
-## 实践案例
-
-### 案例 1：用 mg.Deps 跑并发任务
+### 案例 1：Deps 并行且去重
 
 ```go
 func CI() {
-    mg.Deps(Lint, Test, Build)  // 三个并发跑
+    mg.Deps(Lint, Test, Build)
 }
 
 func Lint() error  { return sh.Run("golangci-lint", "run") }
@@ -89,95 +80,102 @@ func Test() error  { return sh.Run("go", "test", "./...") }
 func Build() error { return sh.Run("go", "build", "./...") }
 ```
 
-`mage ci` 同时启动三件事，比串行 Make target 快。如果 Test 又 deps Build，Mage 自动去重——Build **只跑一次**。
+`mage ci` 三个依赖并发。若 `Test` 内部再 `mg.Deps(Build)`，`Build` 仍只跑一次。失败会 `panic(mg.Fatal(...))`，退出码取依赖里的非零值。
 
-### 案例 2：用 target 包做增量构建
+### 案例 2：Default、Namespace 与可选参数
 
 ```go
-import "github.com/magefile/mage/target"
+var Default = Build
 
+type Build mg.Namespace
+
+func (Build) Server() error { return sh.Run("go", "build", "./cmd/server") }
+
+func Release(version string) error {
+    return sh.Run("git", "tag", version)
+}
+```
+
+`mage` 无参跑 `Default`。`mage build:server` 对应 namespace 方法。`mage release v1.2.3` 把位置参数绑到 `string`；可选参数会生成 `-name=value`。
+
+### 案例 3：时间戳增量要自己写
+
+```go
 func Build() error {
     newer, err := target.Path("bin/app", "main.go", "go.sum")
     if err != nil { return err }
-    if !newer { return nil }  // 产物比源新，跳过
+    if !newer { return nil }
     return sh.Run("go", "build", "-o", "bin/app")
 }
 ```
 
-类似 Makefile 的 `$(target): $(deps)` 语义，但用 Go 表达，看得懂。
-
-### 案例 3：替代 Bash 脚本做 release
-
-```go
-func Release(version string) error {
-    if err := sh.Run("git", "tag", version); err != nil { return err }
-    if err := sh.Run("git", "push", "origin", version); err != nil { return err }
-    return sh.RunV("goreleaser", "release", "--clean")
-}
-```
-
-`mage release v1.2.3` 命令行参数自动绑定。Bash 写参数验证还得 `[ -z "$1" ]` 这种语法，Go 直接就是普通函数签名。
+`target.Path` 在目标不存在时返回 `true`；源不存在则报错。它**不**进入目录比最新文件。目录要用 `target.Dir`。这不是 Mage 运行时的默认行为。
 
 ## 踩过的坑
 
-1. **忘写 build 标签**：少了 `//go:build mage`，magefile 会被 `go build ./...` 一起编进主二进制——名字撞 `Build` 函数报错。每次新建 magefile 第一件事就是顶部加 tag。
-
-2. **首次跑慢**：Mage 第一次执行会**编译 magefile** 成临时二进制（缓存到 `~/.magefile/`），之后才跑。冷启动比 Make 慢半秒到一秒，CI 第一次跑要预期到。
-
-3. **target 名大小写敏感**：函数 `Build` 命令行写 `mage build`（小写）能跑，但内部传给 `mg.Deps` 必须写 `Build`（首字母大写）——Go 标识符规则，不是 Mage 自定义。
-
-4. **跨 magefile 文件共享变量需谨慎**：`var version = "1.0"` 全局变量在多个 magefile 之间共享，但 mage 每次运行都重新启动进程，**变量不会在多次 mage 调用之间持久化**。要持久化得自己写文件。
-
-5. **错误信息不够友好**：magefile 编译错误会先报 Go 编译器原始信息，新人容易看不懂"为啥我 mage --help 都跑不了"——其实是 magefile 本身有语法错。
+1. **根目录 magefile 忘了 `//go:build mage`**：会被 `go build ./...` 编进主包，也可能根本不被 Mage 收进去。`magefiles/` 目录可以不写该 tag。
+2. **把 `mage -l` 的冷启动当成“每次都编译”**：v1.17.2 列表和 `-h` 已停在 parse。真正 `mage build` 仍要编译。
+3. **`mg.Deps(Build)` 写成字符串 `"build"`**：`checkFns` 要求函数值 / `mg.Fn`，非函数会 panic。
+4. **以为 `target.Path("out", "src")` 会扫整个 `src/`**：只 stat 你传入的那一项。
+5. **把 GitHub star 或“比 Make 快半秒”写成当前事实**：本文未安装 Go、未跑 `mage` 自己的测试。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Go 项目的 CI/CD 流水线（团队已经熟 Go）
-- 跨平台构建——同一份 magefile 在 Windows / macOS / Linux 一致跑
-- 复杂条件 / 循环 / 并发逻辑——bash 写不动的场景
-- 希望 build 脚本能像普通代码一样 review、单测、debug
+- 项目已经用 Go，希望 build 脚本能补全、单测、code review
+- 需要 `mg.Deps` 这种进程内并行和去重
+- 同一份 magefile 要在 Unix / Windows 上调 `os/exec`，而不是一份 bash
 
 **不适用**：
 
-- 非 Go 项目（学 Go 单为写 build 脚本不值）
-- 一两行 shell 能搞定的极简场景（直接 `npm run` 或 Makefile 更轻）
-- 需要超丰富模板生态——这块 Task / Just 社区更繁荣
-- 需要复杂依赖图可视化——Make 有 `--debug`，Mage 工具链更轻
+- 非 Go 仓库，只为写四行脚本去学一套编译缓存
+- 只要文本别名、换解释器——[[just]] 更轻
+- 要声明式、可缓存的任务图——[[task]] / [[earthly]] / [[turborepo]]
+- 不能接受“执行前先 `go build` magefile”
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Nate Finch 在 Go 社区提出"为啥 Go 项目还在用 Makefile"，几个月后开源 Mage v0.1
-- 设计灵感来自 Ruby 的 Rake——"用项目自己的语言写 build 脚本"
-- **2018-2019** 年快速迭代加上 namespace、target 包、verbose 模式
-- **2024 年 v1.17.x**：稳定期，主要做 tab 补全和 Go 1.22+ 适配
-- 至今 GitHub 4.7k star，是 Go 生态里最受欢迎的 Make 替代品之一
+- 本文绑定 `magefile/mage@0953947c1673fd745a51c032aadeb3c63f9f3368`，tag `v1.17.2`。该提交说明 `-h` 不再要求编译。
+- 模块路径 `github.com/magefile/mage`，`go 1.18`。二进制版本来自 `debug.ReadBuildInfo()`，不是 `go.mod` 里的常量。
+- 缓存目录：`MAGEFILE_CACHE`，否则 Unix `~/.magefile`，Windows `HOMEDRIVE+HOMEPATH/magefile`。
+- 本文未执行 `mage`、未跑上游测试，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **build 系统也是代码**：用项目同语言写脚本，享受同一套工具链——这是 Mage 最关键的设计选择
-2. **去重靠运行时**：Make 用文件时间戳决定要不要跑，Mage 在进程内追踪"这个 target 跑过没"——更精确、不依赖文件系统
-3. **轻量胜过功能多**：Mage 没做 watch / hot-reload / 依赖图可视化，把"编译 Go 函数当 target"做到极致——少而稳
-4. **跨平台要从设计上隔离**：用 Go 标准库的 `os/exec` 而不是直接调 bash，是 Mage 跨平台的根基
+1. **Mage 的产品是“编译后的函数表”**，不是再实现一种 Makefile DSL。
+2. **列表/帮助和执行的成本不同**——v1.17.2 把前者从编译路径拆出来。
+3. **去重发生在一次进程里**——`sync.Once` 不管文件时间戳。
+4. **增量是库，不是运行时默认**——`target` 要你自己调用。
+
+## 应用型自测
+
+1. `mage -l` 在 v1.17.2 会不会生成并编译 `mage_output_file.go`？
+2. 没有 `var Default` 时，无参 `mage` 会跑第一个导出函数吗？
+3. `target.Path("bin/app", "cmd")` 在 `cmd` 是目录时，会不会比较目录里最新文件？
+
+检查点：
+
+1. 不会。`-l` 在 parse 后直接 `mageListOutput` 返回。
+2. 不会。没有 Default 就没有默认 target。
+3. 不会。`Path` 只 stat `cmd` 本身；目录内容要 `target.Dir`。
 
 ## 延伸阅读
 
-- 官网（含 docs / cookbook）：[magefile.org](https://magefile.org/)
-- 源码：[magefile/mage](https://github.com/magefile/mage)
-- 入门视频：[Justen Walker — Mage Quick Tour](https://www.youtube.com/results?search_query=mage+golang+build+tool)
-- 对比文章：[Mage vs Make vs Task — 选型决策](https://github.com/magefile/mage/wiki)
-- [[task-runner]] —— Yaml 风格的跨语言 task 执行器，Mage 的常见对比对象
+- 文档：[magefile.org](https://magefile.org/)
+- 固定源码：[magefile/mage](https://github.com/magefile/mage) —— 本文绑定提交 `0953947c1673fd745a51c032aadeb3c63f9f3368`
+- [[just]] —— 文本 recipe，默认不编译、不看时间戳
+- [[task]] —— YAML 清单
+- [[earthly]] —— 容器化构建图
 
 ## 关联
 
-- [[task-runner]] —— Task（taskfile.dev），yaml-DSL 风格，社区生态更广
-- [[just]] —— Just（rust 写的命令运行器），偏向"写 alias"的轻量场景
-- [[ninja-build]] —— Ninja，C/C++ 世界的高速 build 后端，定位完全不同
-- [[goreleaser]] —— Go 项目发布工具，常和 Mage 搭配做 release target
+- [[just]] —— 命令编排对照：shell 文本 vs Go 函数
+- [[task]] —— 跨语言 YAML runner
+- [[earthly]] —— 需要隔离构建时的另一侧
+- [[turborepo]] —— JS monorepo 任务缓存
+- [[nix]] —— 声明式可重复环境
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）

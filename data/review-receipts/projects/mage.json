@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "mage",
+    "digest_sha256": "c5acd455cdc118755d31e4003d9884f21fc57a79a12ceab32fa41106963b0fed"
+  },
+  "source_revision": "0953947c1673fd745a51c032aadeb3c63f9f3368",
+  "research_input_sha256": "bd998cd1cadd29632044f3fd16d25d063aa76449e9fda72cf0aa279af8dda1f5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ia",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates parse-only -l/-h, var Default, mg.Deps once-map, and target.Path non-recursion."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ia",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "mage/main.go Invoke, parse.PrimaryPackage, mg/deps.go, sh/cmd.go, and target.Path were inspected; mage was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ia",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v1.17.2 peel commit and discloses GOCACHE rebuild vs HASHFAST; go.mod is go 1.18."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}

@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -46611,27 +46611,26 @@
       "id": "projects::just",
       "area": "projects",
       "slug": "just",
-      "title": "just — 把 make 拆成两半，只留 ‘命令编排’ 那一半",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "just — 只编排命令，默认不跟踪文件时间戳",
+      "description": "固定版本把 justfile 编成 recipe 并默认交给 sh -cu，增量与缓存都是显式选择而不是默认合同",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "命令行",
         "raw_category": "命令行工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/just/",
       "atlas": {
@@ -49589,27 +49588,26 @@
       "id": "projects::mage",
       "area": "projects",
       "slug": "mage",
-      "title": "Mage — 用 Go 写 build 脚本，告别 Makefile",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Mage — 把导出的 Go 函数编译成一次运行的 target",
+      "description": "固定版本先解析 magefile，再生成 main 并编译到缓存；Deps 在进程内并行且只跑一次",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-build-tools-and-bundlers"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-build-tools-and-bundlers",
-        "matched_category": "构建工具",
         "raw_category": "构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/mage/",
       "atlas": {

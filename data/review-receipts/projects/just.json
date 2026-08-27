@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "just",
+    "digest_sha256": "2ffa5d307dfa407d7f31091b9d52ba560fa57c2cb2fac8a52ce9f85c0f4c3501"
+  },
+  "source_revision": "7f4ef81bd6a93faa2b28430912c8e9ab0e3dd29a",
+  "research_input_sha256": "bd998cd1cadd29632044f3fd16d25d063aa76449e9fda72cf0aa279af8dda1f5",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ia",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates default recipe selection, sh -cu vs script sh -eu, [parallel] deps, and unstable [cache]."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ia",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "run.rs, invocation_parser, recipe.rs, settings.rs, cache.rs, and analyzer default selection were inspected; just was not compiled."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ia",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 1.58.0 and rust-version 1.89.0; cache is disclosed as unstable CachedRecipes."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:54:00.000Z"
+}

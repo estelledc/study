@@ -1,85 +1,83 @@
 ---
-title: just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
+title: just — 只编排命令，默认不跟踪文件时间戳
+description: 固定版本把 justfile 编成 recipe 并默认交给 sh -cu，增量与缓存都是显式选择而不是默认合同
 来源: https://github.com/casey/just
-日期: 2026-05-31
+日期: 2026-08-27
 分类: 命令行工具
 难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/casey/just
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 7f4ef81bd6a93faa2b28430912c8e9ab0e3dd29a
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.58.0
 ---
 
 ## 是什么
 
-just 是一个**专门跑项目命令的小工具**——你把日常要敲的长命令（`pytest -v --cov`、`docker compose up`、`pnpm build && pnpm preview`）写到一个叫 `justfile` 的文件里，以后只要 `just test` / `just dev` / `just deploy` 就能跑。日常类比：家里冰箱贴一张便签 ‘晚饭菜单’，写好每道菜怎么做；just 就是把这张便签变成一个会自己执行的小机器人。
-
-你写 `justfile`：
+just 1.58.0 是一个 **Rust 写的命令编排器**：把日常要敲的长命令写进 `justfile`，以后用 `just test` / `just dev` 按名执行。日常类比：冰箱门上的晚饭便签只写“今晚做什么”，不负责判断食材变没变。
 
 ```just
-# 跑测试
 test:
     pytest -v --cov
 
-# 起开发服
 dev:
     pnpm dev
 ```
 
-然后命令行：
-
 ```bash
-just test     # 等价于 pytest -v --cov
-just dev      # 等价于 pnpm dev
-just --list   # 列出全部 recipe（食谱）
+just test
+just --list
 ```
 
-截至 2026-05，作者 Casey Rodarmor，Rust 写，24k stars，brew/cargo/apt/scoop 都能装。
+固定源码把自己标成 *Just a command runner*。`Cargo.toml` 版本 `1.58.0`，`rust-version` 为 `1.89.0`，许可 `CC0-1.0`。默认解释器是 `sh -cu`，不是 make 那种“源文件比产物新才跑”的构建图。
 
 ## 为什么重要
 
-不理解 just 的设计选择，下面这些事都没法解释：
+不读固定 1.58.0，旧教程会把三件事说错：
 
-- 为什么 `make` 已经存在 50 年（1976），还能被一个新工具撬动一块地盘
-- 为什么 just 故意**不做增量构建**——这不是功能缺失，是判断
-- 为什么团队 README 里那一长串 ‘项目怎么跑’ 文档，可以直接被一份 `justfile` 替代
-- 为什么 monorepo / 多语言项目特别爱用它，单一 Node 项目反而不太需要
+- 无参 `just` 一定跑名叫 `default` 的 recipe（实际是 `[default]` 属性，否则取根 justfile **行号最小** 的那条）
+- just 完全没有缓存（`[cache]` 会写 `.justcache`，用 blake3 做 key，但标成 unstable）
+- Windows 会自动切 PowerShell（默认仍是 `sh`；要 `set windows-shell` 或 `set windows-powershell`）
+
+它和 make 的分水岭不是语法像不像，而是 **默认不看文件时间戳**。
 
 ## 核心要点
 
-just 的设计可以拆成 **三个判断**：
+从敲下 `just` 到跑出一条命令，主链可以拆成五步：
 
-1. **不是构建系统**：make 既做 ‘命令编排’（跑哪些命令）又做 ‘增量构建’（哪些文件变了才跑）。just 砍掉后者，只留前者。代价是不能替你做 C/C++ 这种 ‘源文件变了才编译’ 的活；好处是语法和心智模型都简单一半。
+1. **找 justfile 并解析**：`just::run` 解析 CLI，再交给 subcommand。无参默认是 `Run`。
+2. **选定 recipe**：命令行参数经 `InvocationParser` 拆成 recipe + 参数。空参数走 `Justfile.default`。
+3. **先跑先验依赖**：`priors` 在 recipe 前执行；`subsequents` 在其后。带 `[parallel]` 时先验依赖用线程并行，否则按声明顺序。
+4. **插值后再交给解释器**：`{{...}}` 在执行前由 Evaluator 展开。普通行走 `settings.shell_command`（默认 `sh -cu`）；shebang / `[script]` 走 `Executor`，把正文写成临时脚本。
+5. **可选缓存**：只有带 `[cache]` 且未传 `--no-cache` 的 script recipe 才查 `.justcache`。未标注的 recipe 每次都跑。
 
-2. **类 Makefile 语法但修掉痛点**：保留 ‘target: 命令’ 的形状（这种结构看一眼就懂），但修掉 make 三大坑——
-   - tab vs 空格的诡异区分（just 接受任一缩进）
-   - 隐式规则（`%.o: %.c`）这种新人完全看不懂的魔法（just 没有）
-   - shell 语法在 make 里被双重转义（just 干净传给 shell）
+脚本解释器默认是 `sh -eu`，和行命令的 `sh -cu` 不是同一组参数。
 
-3. **每个 recipe 可换解释器**：第一行可以写 `#!/usr/bin/env python`，整个 recipe 由 Python 跑；下一个 recipe 又可以是 bash / node / ruby。一份 `justfile` 里混多种脚本语言完全合法。
+## 实践示例
 
-## 实践案例
-
-### 案例 1：基础 recipe + 参数
+### 案例 1：默认 recipe 不是靠名字
 
 ```just
-# 默认 recipe（就 just 一下，不带参数时跑这个）
-default:
+[default]
+list:
     @just --list
 
-# 带参数的 recipe
 deploy env="staging":
     echo "deploying to {{env}}"
-    ./scripts/deploy.sh {{env}}
 ```
 
-命令行：
+`just` 无参会跑带 `[default]` 的 `list`。若删掉属性，则跑行号最小的那条。`{{env}}` 是 just 插值；shell 自己的变量仍写 `$VAR` 或 `$$`。
 
-```bash
-just              # 跑 default → 列出全部
-just deploy       # env 用默认值 staging
-just deploy prod  # env=prod
-```
-
-`{{env}}` 是 just 的模板插值语法——和 mustache / handlebars 一致，新人 0 学习成本。
-
-### 案例 2：recipe 之间依赖
+### 案例 2：依赖总是再跑一遍，除非自己加判断
 
 ```just
 build:
@@ -87,100 +85,88 @@ build:
 
 test: build
     cargo test
-
-ship: test
-    ./scripts/upload.sh
 ```
 
-`just ship` 会自动先跑 `build` → `test` → `ship`。但**注意**：每次都重跑 `build`，不管 `Cargo.toml` 变没变。这就是 just 不做增量构建的代价——简单换 always-fresh。
+`just test` 会先跑 `build` 再跑 `test`。没有“`Cargo.toml` 没变就跳过”。`[parallel]` 只改变先验依赖的并发，不引入时间戳图。
 
-### 案例 3：跨语言混搭
+### 案例 3：shebang 换解释器，Windows 要显式改壳
 
 ```just
-# shebang 必须写在 recipe 正文第一行（不是写在 recipe 名上面）
-backup-bash:
-    #!/usr/bin/env bash
-    tar czf backup.tgz ./data
-
-analyze-py:
+analyze:
     #!/usr/bin/env python3
-    import json, statistics
-    data = json.load(open('metrics.json'))
-    print(statistics.mean(data['latencies']))
+    print("ok")
+
+set windows-powershell
 ```
 
-第一个 recipe 用 bash，第二个直接写 Python。just 会把正文存成临时脚本再交给解释器。一个项目里数据科学家、后端、运维各写各的语言，统一用 `just <recipe>` 调度。
+shebang 必须写在 recipe 正文第一行。`set windows-powershell` 在 Windows 上把行命令换成 `powershell.exe -NoLogo -Command`；自定义列表用 `set windows-shell := ["pwsh.exe", "-Command"]`。没设这两项时，Windows 也还是 `sh`。
 
 ## 踩过的坑
 
-1. **不要用它替代 make 跑 C/C++ 编译**：just 每次都全跑，没增量。100 个 .c 文件每次重新编一遍会被打死。这种场景留给 make / cmake / bazel。
-
-2. **`{{var}}` 和 shell 的 `${var}` 不一样**：`{{var}}` 是 just 在执行**前**插值（像模板渲染），`${var}` 是 shell 运行时变量。混用会绕晕——记住 `{{}}` 是 just 的，`$$` 是 shell 的。
-
-3. **Windows 上的 shell 默认是 sh**：意味着如果你机器没装 git-bash / WSL，recipe 里的 `cp -r` 之类会跑不动。解决：`justfile` 顶部写 `set windows-shell := ["powershell.exe", "-c"]` 切到 PowerShell。
-
-4. **没有缓存机制**：意味着 `just test` 跑 5 分钟，每次都跑 5 分钟，不会因为 ‘代码没变’ 而快进。要快进得在 recipe 里自己加判断（或上 turbo / nx 这类带缓存的工具）。
+1. **把 just 当 C/C++ 增量构建**：默认每次全跑。`[cache]` 还是 unstable，不能当成 make / ninja 的替代合同。
+2. **以为 recipe 名叫 `default` 就会自动当入口**：入口是 `[default]` 或第一条 recipe。也可以 `set default-list`，让无参 `just` 只列表。
+3. **混用 `{{var}}` 和 `${var}`**：前者在进 shell 前展开，后者是 shell 运行时。
+4. **在没装 sh 的 Windows 上直接跑**：默认 `sh -cu`。没有 Git Bash / WSL 时要改 `windows-shell` 或 `windows-powershell`。
+5. **把 crates.io / 文档里的体积或 star 当成本轮测量**：本页未装 Rust、未跑集成测试、未测启动时间。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- monorepo / 多语言项目（Python + Rust + Node 混在一起）
-- 需要把团队 README 里 ‘跑这个先跑那个再跑这个’ 流程固化下来
-- 跨平台需求（macOS + Linux + Windows 团队成员一起用）
-- 替代散落的 `scripts/` 文件夹里十几个 `*.sh`
+- 多语言仓库要把 README 里的“先跑这个再跑那个”收成一份 justfile
+- 需要同一文件里混 bash / Python / Node，用 shebang 或 `[script]` 换解释器
+- 接受“每次都跑”来换简单心智模型
 
 **不适用**：
 
-- 需要增量构建（C/C++ / 大型 monorepo 编译）→ make / bazel / turbo
-- 单纯 Node.js 项目且全队都装了 npm → npm scripts 够用
-- 需要复杂 DAG 调度 / 并行任务编排 → task / mage / Earthly
-- 需要 ‘源文件 → 输出文件’ 的依赖追踪 → make / ninja
+- 要按源文件时间戳跳过编译——make / ninja / [[earthly]]
+- 要 Go 函数、并发 `mg.Deps` 和进程内去重——[[mage]]
+- 只要 YAML 清单并带有限增量——[[task]]
+- 不能接受 `rust-version 1.89.0` 的工具链下限
 
-## 对比表
+## 固定版本边界
 
-| 工具 | 增量构建 | 跨平台 | 跨语言 | 单文件二进制 | 学习成本 |
-|------|---------|--------|--------|------------|----------|
-| make | 有 | 差 | 是 | 否 | 高 |
-| just | 无 | 好 | 是 | 是 | 低 |
-| task (Go) | 有限 | 好 | 是 | 是 | 中（YAML） |
-| npm scripts | 无 | 好 | 否（锁 Node） | N/A | 低 |
-| bazel | 强 | 好 | 是 | 否 | 极高 |
-
-## 历史小故事（可跳过）
-
-- **2016**：Casey Rodarmor 在 GitHub 开第一个 commit，最早只是 ‘自己受不了 make 的语法’ 的周末项目
-- **2018**：1.0 发布，进入各包管理器
-- **2022**：被 Casey 同时维护的另一个项目 ord（Bitcoin 序数协议）带火——ord 用 just 编排，更多 Rust 圈用户接触到
-- **2026**：24k stars，已成 Rust 项目和 monorepo 默认 ‘命令入口’ 之一
+- 本文绑定 `casey/just@7f4ef81bd6a93faa2b28430912c8e9ab0e3dd29a`，tag / `Cargo.toml` 均为 `1.58.0`。
+- 默认行命令：`sh` + `["-cu"]`。默认脚本解释器：`sh` + `["-eu"]`。
+- `[cache]` 属于 unstable feature `CachedRecipes`；缓存目录名是 `.justcache`，key 用 blake3。
+- 许可为 `CC0-1.0`。本文未编译 `just`、未跑 `tests/`，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **拆问题比解问题更重要**：make 把构建 + 编排塞一起，just 把它劈开只取一半，结果更简单也更通用
-2. **‘故意不做’ 是设计**：不做增量构建不是缺失，是判断——加上会让工具复杂 5 倍但只惠及一小部分人
-3. **修小痛点也能撬动老巨头**：tab vs space、隐式规则、shell 转义——make 用户忍了 50 年的小毛病，全部修掉就是产品
-4. **单二进制 + Rust** 是新一代命令行工具的标配：分发简单、跨平台、没运行时依赖
+1. **编排和增量构建不是同一份合同**——just 把后者从默认路径拿掉。
+2. **默认 recipe 是属性或源码顺序，不是名字魔法**。
+3. **插值发生在 shell 之前**——`{{}}` 和 `$` 分属两层。
+4. **跨平台壳是设置，不是自动探测**——Windows 默认仍是 `sh`。
+
+## 应用型自测
+
+1. 不写 `[default]`、第一条 recipe 叫 `build` 时，无参 `just` 跑谁？
+2. 未标 `[cache]` 的 `test` 在源文件没变时会不会跳过？
+3. 没设 `windows-shell` 时，Windows 上行命令的默认二进制是什么？
+
+检查点：
+
+1. `build`（行号最小的根 recipe）。
+2. 不会跳过；每次进入 `run_shell` / `run_script`。
+3. `sh`，参数 `-cu`。
 
 ## 延伸阅读
 
-- 官方文档：[just.systems](https://just.systems/man/en/)（手册式，30 分钟读完）
-- GitHub：[casey/just](https://github.com/casey/just)
-- 对比文章：[Why I prefer just over make](https://news.ycombinator.com/item?id=32957938)（HN 讨论串）
-- [[makerdao]] —— 名字有 make 但和构建系统无关，DeFi 协议
-- [[biome]] —— 同样 ‘Rust 重写、单二进制’ 的工具链思路
-- [[nix]] —— 另一种 ‘命令编排 + 可重复’ 的极端方案
+- 手册：[just.systems/man/en](https://just.systems/man/en/)
+- 固定源码：[casey/just](https://github.com/casey/just) —— 本文绑定提交 `7f4ef81bd6a93faa2b28430912c8e9ab0e3dd29a`
+- [[mage]] —— 用 Go 函数当 target，进程内去重
+- [[task]] —— YAML 清单，带有限增量
+- [[earthly]] —— 容器化构建图，不是命令别名
 
 ## 关联
 
-- [[biome]] —— 都属于 ‘Rust 单二进制 + 替代老工具’ 这一波
-- [[nix]] —— Nix 把可重复性做到极致，just 只做命令编排，互补
-- [[turborepo]] —— monorepo 调度，比 just 多了缓存和并行
-- [[make]] —— just 直接致敬和取代的对象
+- [[mage]] —— 同主题对照：编译 Go 函数 vs 解析 justfile
+- [[task]] —— YAML 命令清单
+- [[earthly]] —— 需要可重复构建图时的另一侧
+- [[biome]] —— 同样是 Rust 单二进制 CLI，但合同是 lint/format
+- [[nix]] —— 把可重复性做到声明式环境
+- [[turborepo]] —— monorepo 任务图带缓存
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[mage]] —— Mage — 用 Go 写 build 脚本，告别 Makefile
-- [[projects/nix]] —— Nix — 函数式声明式包管理与可重复构建
-- [[task]] —— Task — 用 YAML 写一份跨平台的 ‘项目命令清单’

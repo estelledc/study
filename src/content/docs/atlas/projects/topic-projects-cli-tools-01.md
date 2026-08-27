@@ -45,7 +45,7 @@ sidebar:
 | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | `ink` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | `jc` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [jq — JSON 的 sed/awk](/study/projects/jq/) | `jq` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | `just` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [just — 只编排命令，默认不跟踪文件时间戳](/study/projects/just/) | `just` | beginner | UNVERIFIED | 固定版本把 justfile 编成 recipe 并默认交给 sh -cu，增量与缓存都是显式选择而不是默认合同 |
 | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | `kitty` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | `lazydocker` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | `lazygit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
