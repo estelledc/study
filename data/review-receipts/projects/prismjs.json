@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "prismjs",
+    "digest_sha256": "8df57995aca5f5c489758ec59c6588480670742d21304dd53d48b00b63584907"
+  },
+  "source_revision": "76dde18a575831c91491895193f56081ac08b0c5",
+  "research_input_sha256": "e8808658d51d4b5804f17edf91260d55807177a4f05469413dd9558c0cd50d5d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates language class lookup, grammar tokenize, encode/stringify, and optional XHR file-highlight."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Core highlight/tokenize/hooks and bundled file-highlight were inspected; mocha, workers, and plugins were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Pinned to GitHub tag v1.30.0 76dde18a; npm 1.30.0 gitHead is parent 93cca40b. No benchmark claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:20:00.000Z"
+}

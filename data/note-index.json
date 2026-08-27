@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -45247,6 +45247,38 @@
       }
     },
     {
+      "id": "projects::highlight-js",
+      "area": "projects",
+      "slug": "highlight-js",
+      "title": "highlight.js — 先给语言或让 relevance 投票，再把 token 树渲染成 HTML",
+      "description": "带自动检测的代码高亮；highlightAuto 用 relevance 投票，缺语言时仍能输出转义文本。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-markdown-and-parsing",
+        "matched_category": "解析",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/highlight-js/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::hls.js",
       "area": "projects",
       "slug": "hls.js",
@@ -55740,6 +55772,38 @@
       }
     },
     {
+      "id": "projects::prismjs",
+      "area": "projects",
+      "slug": "prismjs",
+      "title": "PrismJS — 按 language-xxx 类名把代码切成 token 再写成 HTML",
+      "description": "正则语法表驱动的代码高亮；默认 bundle 含 markup/css/js，不会自动猜语言。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-markdown-and-parsing"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-markdown-and-parsing",
+        "matched_category": "解析",
+        "raw_category": "解析"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/prismjs/",
+      "atlas": {
+        "chunk_id": "topic-projects-markdown-and-parsing-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/"
+      }
+    },
+    {
       "id": "projects::probe-rs",
       "area": "projects",
       "slug": "probe-rs",
@@ -65741,7 +65805,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-markdown-and-parsing-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-meta-and-full-stack-frameworks-01",
