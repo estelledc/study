@@ -23,7 +23,7 @@
   - `audit:counts` / `audit:site-state` / `audit:project-standard`：以这些命令为准，未手改计数。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
-  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿。
+  - `STUDY_CHANGED_FROM=origin/main npm run verify:ci`：接入 #77/#82 后，规范 Node 22.23.1 / npm 11.17.0 下再次全绿。
   - PR：https://github.com/estelledc/study/pull/294
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
