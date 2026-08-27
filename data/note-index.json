@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -35128,6 +35128,38 @@
       }
     },
     {
+      "id": "projects::ansi-escapes",
+      "area": "projects",
+      "slug": "ansi-escapes",
+      "title": "ansi-escapes — 把光标、擦除和 OSC 收成可拼接字符串",
+      "description": "对照 ansi-escapes 7.3.0 源码，看 0 基坐标如何变成 CSI/OSC，以及 README 的 cursorLeft 示例为什么对不上。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-terminal-tools",
+        "matched_category": "终端",
+        "raw_category": "终端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ansi-escapes/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
+      }
+    },
+    {
       "id": "projects::ansible",
       "area": "projects",
       "slug": "ansible",
@@ -49076,6 +49108,38 @@
       "atlas": {
         "chunk_id": "topic-projects-blockchain-01",
         "chunk_route": "/study/atlas/projects/topic-projects-blockchain-01/"
+      }
+    },
+    {
+      "id": "projects::log-update",
+      "area": "projects",
+      "slug": "log-update",
+      "title": "log-update — 在原位覆盖上一帧终端输出",
+      "description": "对照 log-update 8.0.0 源码，看它如何 wrap、按高度裁剪，并在可 diff 时只重画变化行。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-terminal-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-terminal-tools",
+        "matched_category": "终端",
+        "raw_category": "终端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/log-update/",
+      "atlas": {
+        "chunk_id": "topic-projects-terminal-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-terminal-tools-01/"
       }
     },
     {
@@ -65915,7 +65979,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-terminal-tools-01/",
-      "entries": 6
+      "entries": 8
     },
     {
       "id": "topic-projects-testing-and-verification-01",

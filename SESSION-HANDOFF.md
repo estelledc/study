@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EX：ansi-escapes + log-update
+
+- status：writer epoch `complete`；review-ready branch；未 merge、未 deploy。
+- 起始 ref：`89766cc27`（`origin/main`，#72 Auth.js / Lucia）。
+- objective：为终端控制双子 `ansi-escapes` 与 `log-update` 新建固定源码的 `study-v2` 页；证据为 `STATIC_ANALYSIS` / `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页新正文、两份 receipt、`docs/terminal-control-source-review-20260827-ex.md`、atlas / note-index / project-standard / site-state、公开计数文案、本 handoff；未安装上游依赖、未跑上游测试、未测 TTY / bundle。
+- activated_by：`explicit-parallel-writer-ex-20260827`。
+- detector fingerprint：两包原先不在项目清单中；`ansi-escapes` README 的 `cursorLeft` 示例与 `base.js` 不符；`log-update` 8.0.0 已做行级 diff，不能再写成每帧整页重打。
+- external delta：授权范围内的一个 PR（push + 开 PR）；D 轴在 merge 前不提升。
+- 完成切片：
+  1. `ansi-escapes` 绑定 annotated tag `v7.3.0` / `73e652efe7a353bdf25f456e592c858e4648db3d`，与 npm `gitHead` 一致。
+  2. `log-update` 绑定 annotated tag `v8.0.0` / `4f7a1460893a7557aee8f7202956218c3e770a5a`，与 npm `gitHead` 一致。
+  3. 新增共享审查文档与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt `evidence_state=UNVERIFIED`；`audit:content-contract` blocking 0；`audit:counts` 通过。
+- budget：2 个小型 blob-filtered worktree + 2 页新建；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一个 PR 已形成后停止；不 merge。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc27 npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

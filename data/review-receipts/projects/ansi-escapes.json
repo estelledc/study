@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ansi-escapes",
+    "digest_sha256": "00a97a85ac3c9e5ab8f49fec94f4927071140c7303413bcb312db806fd4f2694"
+  },
+  "source_revision": "73e652efe7a353bdf25f456e592c858e4648db3d",
+  "research_input_sha256": "aa69905a4ed245141c2636ec01d278f41530aa1f14c06428d478f747e285924e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ex",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates 0-based cursorTo, stale README cursorLeft, RIS vs clearViewport, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ex",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected 7.3.0 base.js, types, and ava tests; ava/tsd and real TTY were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ex",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "annotated v7.3.0 peel, npm gitHead, and checkout identify the same reachable revision."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:55:00.000Z"
+}
