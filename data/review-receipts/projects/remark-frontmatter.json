@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "remark-frontmatter",
+    "digest_sha256": "775a9231cc203cee9b8729b429e63b0616bbb62c621ceaade813c45927f9e588"
+  },
+  "source_revision": "df7122f529563e35183f97e6643d9bf1725c60f2",
+  "research_input_sha256": "a783a88995a793b80ee26e152caef45cec007f23d44ed2dc97ec524ff604e85a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates fence recognition from YAML/TOML value parsing, default yaml-only preset, and anywhere=false."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "lib/index.js three-extension push, fixtures, and freeze-time validation were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 5.0.0 with matching npm gitHead; complementary vfile-matter pair is disclosed; UNVERIFIED static review only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:55:00.000Z"
+}

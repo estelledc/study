@@ -2,6 +2,34 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HK：remark-frontmatter + vfile-matter
+
+- status：writer epoch `complete`；本地 review-ready change set 已形成。push + 一个 PR 已授权；未 squash / 未 merge / 未 deploy。
+- 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`）。
+- objective：为缺失的 frontmatter-plugin 双子补齐 `remark-frontmatter` 与 `vfile-matter` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/frontmatter-plugin-source-review-20260827-hk.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-hk-2026-08-27`。
+- detector fingerprint：目录无 `remark-frontmatter.md` / `vfile-matter.md`；`unified.md` 已点名 `remark-frontmatter`；开放 PR #263 占用 `gray-matter` / `front-matter`，writer AC 已占用 `marked` / `markdown-it`。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `remark-frontmatter` 绑定 tag `5.0.0` → `df7122f529563e35183f97e6643d9bf1725c60f2`；tag / npm `gitHead` 一致。默认只认 YAML 围栏，不解析键值。
+  2. `vfile-matter` 绑定 tag `5.0.1` → `20c6193bb118f4c65488e0daaf2e66f5cafc733f`；tag / npm `gitHead` 一致。锚定 `---` 正则 + `yaml.parse`，未命中也写 `{}`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 81 → 83，公开项目数 965 → 967。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：`verifyReceiptAgainstNote` 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、v2=152。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:project-standard`：`benchmark-aligned=83`、snapshot CURRENT。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支对应 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

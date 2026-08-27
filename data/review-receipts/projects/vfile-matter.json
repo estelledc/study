@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "vfile-matter",
+    "digest_sha256": "a87c448233e91183b0b892ee687910e8e87421e04635faf6b242ddb3de404999"
+  },
+  "source_revision": "20c6193bb118f4c65488e0daaf2e66f5cafc733f",
+  "research_input_sha256": "a783a88995a793b80ee26e152caef45cec007f23d44ed2dc97ec524ff604e85a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains start-anchored --- regex, empty-object fallback, strip, and YAML 1.1/1.2 yes/no split."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "lib/index.js regex, yaml.parse fallback, Uint8Array strip, and test.js cases were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hk",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 5.0.1 with matching npm gitHead; does not claim TOML support; UNVERIFIED static review only."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:55:00.000Z"
+}
