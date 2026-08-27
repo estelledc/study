@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer GL：cookie-es + set-cookie-parser
 
-- supervisor 状态：writer epoch `complete`；本地 change set 已形成，等待 push / PR。未 merge、未 deploy。
+- supervisor 状态：writer epoch `complete`；分支已 push，PR #258 已打开。未 merge、未 deploy。
 - 起始 ref：`9adc8b99165dfaf015777d5ca88c629ebfa961aa`。
 - objective：按 owner 指定的 PARALLEL writer GL 目标，新建 `cookie-es` 与 `set-cookie-parser` 两页，绑定可达固定 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两页正文、2 份 generation 1 receipt、`docs/cookie-parse-source-review-20260827-gl.md`、note-index / project-standard / site-state / 公开规模文案、本交接；2 个 ignored worktree。未安装上游依赖、未跑上游测试、未发请求、未测 bundle。
@@ -15,7 +15,7 @@
   1. `cookie-es` 绑定 tag `v3.1.1` / `487c49d4908c0910fc9d36b6751d15af872c1893`，与 npm `gitHead` 一致。
   2. `set-cookie-parser` 绑定 tag `v3.1.2` / `60b9d7f2b2a029238676bb0c34cd1a324198c766`，与 npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt 与正文 digest / revision 一致，evidence state 为 `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:project-standard` / `audit:content-contract`（changed-from 起始 ref）通过。全量 `verify:ci` 在提交后跑。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt 与正文 digest / revision 一致，evidence state 为 `UNVERIFIED`。`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。`audit:content-contract` blocking 0。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页新建；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一个 PR 打开后停止；不 merge、不开下一对。
