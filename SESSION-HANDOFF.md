@@ -21,6 +21,7 @@
   - `audit:content-contract`：v2=105，blocking 0。
   - `audit:project-standard`：benchmark-aligned=36、snapshot CURRENT。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=7a2384d0 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下 portable gate 全绿（388+ Node tests、strict build 2287 HTML / 2286 sitemap、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：1 个双子切片、1 个可写 writer、单 PR。
 - stop conditions：本轮只开 draft PR，不自合；规模 baseline 与 merge / deploy 需单独授权。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 授权 merge。
