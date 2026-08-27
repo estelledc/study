@@ -1,6 +1,28 @@
 # Study 操作交接入口
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
+> 不在 handoff 中复制易过期数字或 ETA。详见 `AGENTS.md`。
+
+## 2026-08-27 PARALLEL writer FN：p-retry + p-timeout
+
+- supervisor 状态：本地 writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`99736a90976f0b3d0a18bc16b9ab04c9c91254f1`（当时 `origin/main`）。
+- objective：为 `p-retry` 与 `p-timeout` 新增源码绑定的 `study-v2` 页；证据边界是 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/p-retry-p-timeout-source-review-20260827-fn.md`、taxonomy 与派生索引、本交接；未改 ky / got / ofetch / axios / wretch 正文。
+- activated_by：用户指定 PARALLEL writer FN、origin/main、STATIC_REVIEW、UNVERIFIED、单一 PR、不 merge。
+- detector fingerprint：仓库无 `p-retry` / `p-timeout` 页；常见误读是「p-retry 包装 p-timeout / 超时即取消 / retries 等于总次数」。
+- external delta 计数：本 PR（push + PR 已由本轮用户指令授权；merge / deploy 未授权）。
+- 已完成切片：
+  1. `p-retry` 绑定 annotated tag `v8.0.0` / npm `8.0.0` `gitHead` → `35681f6c70f8ca2bdcb9542281147679184269fa`。
+  2. `p-timeout` 绑定 annotated tag `v7.0.1` / npm `7.0.1` `gitHead` → `245066ef7daa5e74024d5b6a188ae599a1b7bfdf`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；taxonomy 归入 `projects-general-developer-tools`。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision 一致，evidence state `UNVERIFIED`。其余命令以本轮 PR 验收为准。
+- budget：2 个小型 ignored worktree + 2 页新建；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：单一 PR 已打开且未 merge 后停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr view --json url,state,statusCheckRollup`。
+- superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 

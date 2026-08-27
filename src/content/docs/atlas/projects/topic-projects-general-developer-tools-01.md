@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "13 条 通用开发工具 Atlas 分块"
+description: "15 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 15 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -21,6 +21,8 @@ sidebar:
 | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) | `llrt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | `lmms` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) | `matter-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [p-retry — 给会失败的异步函数做指数退避重试](/study/projects/p-retry/) | `p-retry` | beginner | UNVERIFIED | 固定 8 |
+| [p-timeout — 给已经开始的 Promise 加一只计时器](/study/projects/p-timeout/) | `p-timeout` | beginner | UNVERIFIED | 固定 7 |
 | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) | `quasar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) | `supercollider` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tauri — 用系统浏览器内核 + Rust 做轻量桌面应用](/study/projects/tauri/) | `tauri` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
