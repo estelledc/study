@@ -23,6 +23,7 @@
   - `audit:wikilinks`：blocking 0。
   - `audit:project-standard`：`benchmark-aligned=83`、snapshot CURRENT。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=1ecba404048464534225c6d542c19415c83fcabb npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y；构建产物为 `/projects/db0/` 与 `/projects/sql-js/`，无 `/projects/sqljs/`。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对，不得写 knex。
