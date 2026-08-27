@@ -15,12 +15,13 @@
   1. 绑定 `ant-design/ant-design@164a310f7...` / `antd@6.6.1`，写清 ConfigProvider / token / App / 静态 message 边界。
   2. 绑定 `mui/material-ui@5b91ac750...` / `@mui/material@9.3.1`，写清 `createTheme` no-vars 默认与 ThemeProvider 分叉。
   3. 新增 generation 1 `STATIC_REVIEW` receipt；笔记 `verification_status` 保持 `UNVERIFIED`。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，evidence `UNVERIFIED`；`audit:counts` / content-contract changed-from 基线 blocking 0。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，evidence `UNVERIFIED`；`audit:counts` / content-contract changed-from 基线 blocking 0；strict build 产出新页；Playwright a11y 23/23。
+- 验证结果：本地定向门禁与 a11y 通过。完整 `verify:ci` 在 Pagefind 合同处失败：`不存在不存在` 被 Pagefind 解析成否定查询并返回大量结果；给同一查询加引号则 0 条。该失败与本对笔记正文无关，未改 search-contract 或 performance baseline。
 - budget：2 个本地 worktree + 2 页静态源码迁移；单 writer。
-- blocker：上游运行证据不能由静态 review 替代；MUI npm tarball 无 `gitHead`。
+- blocker：上游运行证据不能由静态 review 替代；MUI npm tarball 无 `gitHead`；远端 CI 卡在既有 Pagefind 否定查询合同。
 - stop conditions：本 epoch 已形成可审查 PR；未获 merge/deploy 授权前停止。
 - 下一次 wake 条件：owner review 本 PR，或提供新的有限目标。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`。
+- 下一条命令：在 PR #118 上看 CI / review；不要 merge。
 - superseded_by：`none`。
 - 不在 handoff 中复制易过期数字或 ETA。独立 agent 先读 `AGENTS.md`。
 
