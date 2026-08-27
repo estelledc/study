@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "rsbuild",
+    "digest_sha256": "6e89fce2a3893af517adc12688661a3da9828de6e99a3a1a91a4ea9dee7cbd98"
+  },
+  "source_revision": "f274e3eaa08e28f2449d1abd7592c34796072d74",
+  "research_input_sha256": "8653dc1cc8f0e7a4e151d2752177420ead892e350df4dd06a56a5e9597ecc5cd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-df",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains default plugins, environment camelCase(target), tools.rspack vs setup plugins, and initConfigs action binding."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-df",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createRsbuild, initConfigs, createCompiler, pluginManager and rspackMinVersion 2.0.0 were inspected; rspack() and e2e were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-df",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable v2.2.0 tag; discloses plugin-react 2.1.0 split and missing npm gitHead."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

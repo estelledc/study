@@ -1964,6 +1964,10 @@
       "topic_id": "projects-image-processing-and-canvas"
     },
     {
+      "note_id": "projects::farm",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::fastify",
       "topic_id": "projects-web-frameworks"
     },
@@ -2365,6 +2369,10 @@
     },
     {
       "note_id": "projects::rollup",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::rsbuild",
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "farm",
+    "digest_sha256": "9d98ec49f80b3dff8469536db8286dd36982de4ce7a5038aaf5407a642608b27"
+  },
+  "source_revision": "549e29486b286c7d0488612eacb6bd4ed0884abe",
+  "research_input_sha256": "8653dc1cc8f0e7a4e151d2752177420ead892e350df4dd06a56a5e9597ecc5cd",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-df",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Rust build/generate stages, first-wins resolve, Vite adapter priority, and compile-vs-update contracts."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-df",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "compiler lib.rs, build/generate, plugin_driver, JS Compiler and vite-plugin-adapter were inspected; upstream tests and CLI were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-df",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable v1.7.11 tag; discloses CLI 1.0.5 mismatch, missing npm gitHead, and unbound v2 beta line."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}
