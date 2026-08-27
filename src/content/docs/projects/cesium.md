@@ -174,7 +174,7 @@ viewer.entities.add({
 - [[maplibre-gl]] —— 2D 矢量地图
 - [[mapbox-gl-js]] —— 2D 地图上游对照
 - [[deck.gl]] —— 常叠在地球或地图上的 GPU 图层
-- [[gltf]] —— Entity `model.uri` 与 3D Tiles 内容常用的模型格式
+- [[gltf-transform]] —— 同生态的 glTF 资产工具链，不是 Cesium 本体
 
 ## 反向链接
 
