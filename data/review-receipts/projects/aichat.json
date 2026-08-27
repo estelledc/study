@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "aichat",
+    "digest_sha256": "d97daf0e5df4e5402fe954e29908cdc99bf2924cd6b2c35249fdaa992888c83e"
+  },
+  "source_revision": "430416d914896c3534c04b84c0226910c64e3e66",
+  "research_input_sha256": "3928048da506474993799f1cb531e14b152f93e6eed5241f1f45552fe2a3cfac",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the unified client registry, roles and sessions, agents and RAG, and the local server gateway layers."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "cli.rs, client registry, serve.rs, config layout, shell integrations and config.example.yaml were inspected; the tool was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Client types, serve endpoints, role storage and RAG dependencies are bounded to v0.30.0; retrieval quality requires execution."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T06:16:02.000Z"
+}

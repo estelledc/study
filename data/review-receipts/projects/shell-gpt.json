@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "shell-gpt",
+    "digest_sha256": "14214130e64862dcb5e765b97dc1d45ffe7bd247c63ae5238f873eec90d43c0a"
+  },
+  "source_revision": "dee88ff87bb93899971a3ca1361ad74678e4a94f",
+  "research_input_sha256": "3928048da506474993799f1cb531e14b152f93e6eed5241f1f45552fe2a3cfac",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the three output modes, the confirm interaction, role and chat storage, and the shell integration boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "app.py, config.py, role.py, integration.py and handlers were inspected; no LLM call or shell integration was executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Defaults, the E/M/D/A interaction and the Ctrl+L binding are bounded to 1.5.1; completion quality requires execution."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T06:16:02.000Z"
+}
