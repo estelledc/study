@@ -4,8 +4,9 @@
 
 ## 2026-08-27 PARALLEL writer HU：k6 + locust
 
-- status：writer epoch `complete`；PR https://github.com/estelledc/study/pull/294 待 review；未 merge、未 deploy。
-- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
+- status：writer epoch `complete`；已 merge `origin/main`（含 #77/#82）并重生成派生索引；PR https://github.com/estelledc/study/pull/294 待 review；未把本 PR merge 进 main、未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（当时的 `origin/main`，#71）。
+- 当前 head：以 `git rev-parse HEAD` 为准；`2122461e7`（#82）与 `0ffa894c3`（#77）已是祖先。
 - objective：把 `needs-evidence` 的负载测试双子 `k6` 与 `locust` 迁到绑定可达固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` 页。
 - scope：两篇既有项目页、共享审查文档 `docs/load-test-source-review-20260827-hu.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未编译 k6、未安装 Locust 依赖、未发真实负载。
 - activated_by：`explicit-user-parallel-writer-hu-2026-08-27`。

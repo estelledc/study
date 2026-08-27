@@ -1,6 +1,6 @@
 ---
 title: "后端与 API · 项目 · 第 1 组"
-description: "57 条 后端与 API Atlas 分块"
+description: "58 条 后端与 API Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 57 条，稳定上限为 100 条。
+本分块共 58 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -57,7 +57,7 @@ sidebar:
 | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | `salvo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | `sanic` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | `slim-framework` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | `socket-io` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Socket.IO — 用 Engine.IO 传输层承载命名空间事件](/study/projects/socket-io/) | `socket-io` | 初级 | UNVERIFIED | 建立在 Engine |
 | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | `soketi` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | `spin` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | `spring-boot` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -70,3 +70,4 @@ sidebar:
 | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) | `tyk` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | `vertx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | `warp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ws — Node.js 上的 RFC 6455 WebSocket 实现](/study/projects/ws/) | `ws` | 初级 | UNVERIFIED | Node |

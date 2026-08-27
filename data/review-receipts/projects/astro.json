@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "astro",
+    "digest_sha256": "0f8ef2a8e43d492dc9844396cd04f87b8095028c3e581a7e6fc1f05e273bc8b7"
+  },
+  "source_revision": "7cadf1055a61c85d0b05f3c7d8c709f7faa5cf0d",
+  "research_input_sha256": "78623f2a59db3684bc7f85f93df2c336d8b2d2daf9ee2284321d442aa3d0c41d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-q",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Content Layer loaders, five client directives, ClientRouter, and island/no-island boundaries with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-q",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected compile/render/island path, content-layer type assignment, idle fallback, hybrid removal, and @astrojs/solid-js hydrate vs render; upstream build and tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-q",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds peeled astro@7.2.8; npm gitHead is absent. Does not treat Lighthouse or JS-byte claims as measured evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
