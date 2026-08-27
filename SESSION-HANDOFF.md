@@ -15,7 +15,7 @@
   1. `std-env` 绑定 annotated tag `v4.2.0` peel `ddd5e9e0...`；npm `4.2.0` 无 `gitHead`，已披露。
   2. `ci-info` 绑定 annotated tag `v4.4.0` peel `c4e1d056...`，与 npm `gitHead` 一致。
   3. 新增共享审查文档与两份 generation 1 static receipt。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision / research input 一致，`evidence_state=UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` blocking 0。全量 `verify:ci` 在 push 后补跑。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision / research input 一致，`evidence_state=UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:content-contract` blocking 0。`STUDY_CHANGED_FROM=1f2917d90 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全部门禁通过（388 Node tests、23 Playwright a11y；本机首次 a11y 因缺 Chromium 失败，安装后 23/23，未改门禁）。
 - budget：1 个可写切片；默认 epoch 预算内。
 - blocker：规模 `tracked_files` 超 baseline 的 detector 仍属先于本切片的 `PARKED_HUMAN`；本轮未改 baseline / 阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
