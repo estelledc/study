@@ -2,6 +2,30 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EC：localforage + idb
+
+- status：`running` 完成本 epoch 后等待 PR review；未 merge。
+- 起始 ref：`7a2384d09`（origin/main，oxc/rolldown #54 merge 后）。
+- objective：为客户端存储双子新建 study-v2 页，绑定可达静态 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`localforage`、`idb` 两页、2 份 generation 1 receipt、`docs/client-storage-source-review-20260827-ec.md`、taxonomy / atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未打开浏览器仓库、未跑上游测试或 bundle。
+- activated_by：`explicit-user-parallel-writer-ec-20260827`。
+- detector fingerprint：仓库无 localforage / idb 项目页；目标对可从 GitHub/npm 固定到一致 revision。
+- external delta：本轮授权 push + 1 个 PR；未 merge、未 deploy，D 轴不因 merge/deploy 提升。
+- 完成切片：
+  1. `localforage` 绑定 tag `1.10.0` / `73234759...`（npm `gitHead` 一致），写明三驱动顺序、模块级 `DefinedDrivers`、`config()` 返回 Error、`undefined`→`null`。
+  2. `idb` 绑定 tag `v8.0.3` / `77dd8beb...`（npm 无 `gitHead`，已披露），写明 wrap/Proxy、one-shot 捷径、`tx.store` 与不传 version 跳过 upgrade。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目审计从 `34/961` 前进到 `36/963`。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:counts` / `audit:site-state` / `audit:content-contract`：blocking 0；`v2=105`。
+- budget：2 个 blob-filtered worktree + 2 页新建 + 派生刷新；单 writer。
+- blocker：规模 baseline 在 main 上已超阈值，属既有 `PARKED_HUMAN` 项；本轮未改 baseline。
+- stop conditions：本 epoch 以 1 个 PR 结束；不 merge。
+- 下一次 wake 条件：PR review/CI，或 owner 对 merge / 规模 baseline 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

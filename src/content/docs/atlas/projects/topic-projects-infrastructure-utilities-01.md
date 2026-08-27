@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -31,9 +31,11 @@ sidebar:
 | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | `grafana-tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) | `greenplum-db` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | `homebrew` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [idb — 把 IndexedDB 请求收成 Promise 和 Proxy](/study/projects/idb/) | `idb` | beginner | UNVERIFIED | 介绍 idb 8 |
 | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | `inngest` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | `istio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | `linkerd2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [localforage — 用 localStorage 口令调度三种浏览器仓库](/study/projects/localforage/) | `localforage` | beginner | UNVERIFIED | 介绍 localforage 1 |
 | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | `mailcow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

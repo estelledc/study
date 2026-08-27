@@ -1996,6 +1996,10 @@
       "topic_id": "projects-internationalization"
     },
     {
+      "note_id": "projects::idb",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::immer",
       "topic_id": "projects-state-management"
     },
@@ -2098,6 +2102,10 @@
     {
       "note_id": "projects::llamaindex",
       "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::localforage",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::loki",

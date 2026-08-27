@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "localforage",
+    "digest_sha256": "f83c1ad6cb76106daf641c5d0eeea5db5830c3732f80846200a2c8feea4957e2"
+  },
+  "source_revision": "7323475989c0ddc51849d72b4acaec66f2b491c6",
+  "research_input_sha256": "73340b16bd9f86caf7fa2322cb3fd884456e099bcc6d4248f27269b287f87a53",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates driver fallback, shared DefinedDrivers, config-after-ready Error, and undefined-to-null."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "LocalForage core, three drivers, serializer, key normalize, and IDB validity were inspected; browser stores were not opened."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Tag 1.10.0, npm gitHead and package version agree; Blob/Safari branches stay UNVERIFIED without a browser run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:30:00.000Z"
+}
