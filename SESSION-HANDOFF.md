@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GX：json5 + jsonc-parser
+
+- supervisor 状态：本地 writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`1ecba404048464534225c6d542c19415c83fcabb`（`origin/main`，PR #81 merge）。
+- objective：为缺失的 JSON 方言双子补齐 `json5` 与 `jsonc-parser` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/json-dialect-source-review-20260827-gx.md`、2 份 generation 1 receipt、派生 atlas / note-index / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gx-2026-08-27`。
+- detector fingerprint：目录无 `json5.md` / `jsonc-parser.md`；目标是 JSON5 手写超集与 Microsoft JSONC 偏移/edit 解析器，可横向对照。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `json5` 绑定 tag `v2.2.3` → `c3a75242772a5026a49c4017a16d9b3543b62776`；npm `gitHead` 一致。披露 `main` 上另有 2 个文档/语法提交、版本号仍写 2.2.3。
+  2. `jsonc-parser` 绑定 tag `v3.3.1` → `3c9b4203d663061d87d4d34dd0004690aef94db5`；npm 3.3.1 无 `gitHead`。披露 `v4.0.0-next.2` 未绑定。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；两页归入 `projects-markdown-and-parsing`。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与正文一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:site-state` / `audit:project-standard` 已按当前文件刷新。`verify:ci` 在 push 后跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
