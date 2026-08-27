@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer HX：eza + lsd
 
-- status：writer epoch `complete`；待 owner review。未 merge / 未 deploy。
+- status：writer epoch `complete`；PR https://github.com/estelledc/study/pull/285 待 review。未 merge / 未 deploy。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
 - objective：把 `eza` 与 `lsd` 从 `needs-evidence` 迁到固定 revision 的 `STATIC_REVIEW` / `UNVERIFIED` 标准。
 - scope：两篇项目页、共享审查文档 `docs/ls-replacement-source-review-20260827-hx.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未编译、未运行上游测试。
@@ -23,11 +23,12 @@
   - `audit:project-standard`：`eza`/`lsd` 均为 `benchmark-aligned`。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，除本机首次缺 Playwright 浏览器外全绿；安装 Chromium 后 23 个 a11y 测试与后续 Pages/Atlas/站点预算门禁通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/285 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
