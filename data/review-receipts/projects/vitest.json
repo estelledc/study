@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "vitest",
+    "digest_sha256": "17f05c0b13a78527b84fd09ce9a48cf3d5574eb27476ea4d060d27b9b21e73e9"
+  },
+  "source_revision": "9bd8d464e6328c567c2dbcd8fdd977d57a9425c2",
+  "research_input_sha256": "4695f68ad3ee3e25c110f7271d7218c3d4627c41a62cd969b1ddc8f9e2c9875d",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-m",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Vite-server hosting, default forks/node isolation, mock hoisting, and optional browser providers."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-m",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "createVitest, resolveConfig, watcher, hoistMocks and browser provider errors were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-m",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm vitest@4.1.11 has no gitHead; the note is bounded to GitHub tag v4.1.11. Speed claims were removed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:12:00.000Z"
+}

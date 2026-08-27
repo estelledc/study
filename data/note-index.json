@@ -55110,7 +55110,7 @@
       "id": "projects::playwright",
       "area": "projects",
       "slug": "playwright",
-      "title": "Playwright — 跨浏览器自动化测试",
+      "title": "Playwright — 每测一个隔离 context 的浏览器自动化",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -55123,13 +55123,13 @@
         "raw_category": "测试"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/playwright/",
       "atlas": {
@@ -63177,7 +63177,7 @@
       "id": "projects::vitest",
       "area": "projects",
       "slug": "vitest",
-      "title": "Vitest — Vite 原生测试框架",
+      "title": "Vitest — 复用 Vite 流水线的测试运行器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -63190,13 +63190,13 @@
         "raw_category": "测试"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/vitest/",
       "atlas": {
