@@ -15,12 +15,12 @@
   1. `chakra-ui` 绑定 annotated tag `@chakra-ui/react@3.36.1` → `f8133940accf0b7de1f7c9ac4aca37e9be5e2027`。写明 `createSystem`、必填 `ChakraProvider value`、recipe/SVA、Ark Dialog 默认 `lazyMount`/`unmountOnExit`、以及 `_dark` 只认 `.dark`。
   2. `mantine` 绑定 tag `9.5.2` → `8a284e2c2c53a9cb6f39f5dc389bf41b7a2073f8`。写明 CSS 入口、`createTheme` identity、`mergeMantineTheme`、Styles API、React `^19.2.0` peer，以及 `schemaResolver` 的 Standard Schema 合同。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目审计 18/961 → 20/963。
-- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking / v2=89；`audit:counts` 与 `audit:project-standard` 当前快照对齐。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` 0 blocking / v2=89；`audit:counts` 与 `audit:project-standard` 当前快照对齐。规范 Node 22.23.1 / npm 11.17.0 下 `STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci` 全绿（首次 a11y 因本机缺 Playwright browser 失败，安装 Chromium 后 23/23 通过；未改门禁）。
 - budget：2 个小型 ignored clone + 2 页静态源码写作；单 writer。
 - blocker：上游运行证据不能由静态 review 替代；merge/deploy 需另授权。
 - stop conditions：当前切片已完成；未授权 merge。
-- 下一次 wake 条件：PR review / CI 变化，或 owner 授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddf npm run verify:ci`（规范 Node 22.23.1 / npm 11.17.0）。
+- 下一次 wake 条件：PR #111 review / CI 变化，或 owner 授权 merge。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/111`。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
