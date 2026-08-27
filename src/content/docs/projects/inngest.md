@@ -4,76 +4,86 @@ title: Inngest — 让 async 函数自动从断点恢复的工作流引擎
 日期: 2026-05-30
 分类: projects
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: system
+  canonical_source: https://github.com/inngest/inngest
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: a54673a45b00ea10917620ab3e05a21d04579db7
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.44.0
 ---
 
 ## 是什么
 
-Inngest 是一个 **durable workflow 框架**：你写的还是普通 async 函数，但它能让函数在进程崩溃、机器重启、网络断开之后**从断点继续跑**，已经做完的步骤不会重来。
+Inngest 是一套 **durable execution** 平台：你在应用里写带 `step` 的函数，执行器通过 HTTPS（或 Connect）反复调用同一入口；已完成步骤的输出存在外部 state store，进程崩溃后从断点继续。日常类比：后厨记账本——每做完一道工序画勾，换班的人不用从切菜重来。
 
-日常类比：餐馆后厨的炒菜记账本。师傅做一道复杂的菜，每完成一道工序——切配、过油、调味——就在小本子上画一个勾。万一师傅中途晕倒，下一个接手的人不用从切菜开始重做，翻一翻本子，看到"过油已完成"就直接从调味开始。Inngest 干的是同样的事：你把函数里每一段关键代码包进 `step.run("名字", 函数)`，它帮你把每一步的输入输出记到外部存储；进程哪怕中途挂掉，executor 重新通过 HTTP 调用同一个函数时，已经完成的 step 直接返回缓存结果。
+应用侧常用官方 TS SDK `inngest@4.18.1`。固定 SDK 的注册已经是两参数，触发器写进 options，不再是「options + event + handler」三参数：
 
 ```ts
 inngest.createFunction(
-  { id: "welcome-flow" },
-  { event: "user/signed_up" },
+  { id: "welcome-flow", triggers: { event: "user/signed_up" } },
   async ({ event, step }) => {
     await step.run("send-welcome", () => sendEmail(event.user))
     await step.sleep("wait-day", "24h")
     await step.run("send-tip", () => sendTip(event.user))
-  }
+  },
 )
 ```
 
+平台仓库 `inngest/inngest` 提供 Event API、Runner、Queue、Executor、state store 和 Dev Server；语言 SDK 是独立仓。
+
 ## 为什么重要
 
-不理解 Inngest（以及它代表的 durable workflow 思路），下面这些事都没法解释：
+不理解这套「SDK 吐 opcode、执行器存状态再回放」的分工，下面这些事会对不上：
 
-- 为什么 Vercel / Lambda / Cloudflare Workers 这种"无状态函数"也能跑"睡 24 小时再继续"的任务
-- 为什么 Temporal / Cadence 要求一个长连的 worker 进程，而 Inngest 不用
-- 为什么 trigger.dev V3 在 2024 年大改 API，也采用了类似的 `step.run` 风格
-- 为什么后台任务的"DB status 字段 + 一堆 try/catch"模式正在被淘汰
+- 为什么 Vercel / Lambda 这种短生命周期进程能跑「睡 24 小时再继续」
+- 为什么改 `step.run` 的 id 会让进行中的 run 丢档
+- 为什么旧笔记里的三参数 `createFunction` 在 4.18.1 会直接抛错
+- 为什么自托管要面对 SSPL，而 SDK 是 Apache-2.0
 
-## 核心要点
+## 核心架构与流程
 
-Inngest 的执行模型可以拆成 **三个机制**：
+固定 `v1.44.0` 的执行链可以拆成五步：
 
-1. **每个 step 都有名字，名字就是缓存的钥匙**：`step.run("send-welcome", fn)` 里那个字符串是这一步的身份证。executor 把名字哈希成 cache key，把 fn 的返回值存进 state store。下次重放时碰到同一个 key 就直接返回缓存，跳过执行。类比：寄存柜的票号，丢了就拿不回包。
+1. **事件进系统**：Event API 收 SDK 的 HTTP 事件，写入内部 event stream。Runner 按函数触发器创建 run，把初始状态写入 state store，再入队。
 
-2. **HTTP re-invoke 代替长连 worker**：你的应用是普通 HTTP server。executor 通过 POST 调用一次你的函数，函数跑到第一个 step 就返回，executor 把结果存起来，过段时间再 POST 一次。类比：游戏存档退出，下次进游戏自动加载——你不需要一直挂在屏幕前。
+2. **执行器只跑一步**：Executor 调 driver（默认 HTTPS 打到你的 serve 端点）执行当前需要的步骤，把输出或错误写回 state。异步边（sleep、waitForEvent）会留下 pause，到期或匹配后再入队。
 
-3. **opcode 是 SDK 和 executor 之间的协议**：SDK 把 step.run / step.sleep / step.waitForEvent 翻译成一条条 opcode（共 15 种）发给 executor。executor 看 opcode 决定下一步：sleep 就丢一个 24h 后到期的延迟任务；run 就立刻 re-invoke SDK；waitForEvent 就挂起这个 run 等事件触达。类比：餐厅点单——服务员把"红烧肉"翻译成厨房工单号，厨房按工单做菜。
+3. **SDK 用 opcode 说话**：TS SDK 把 `step.run` / `sleep` / `waitForEvent` / `waitForSignal` / `invoke` / `ai.infer` / `defer` 等编成 `GeneratorOpcode`。平台枚举从 `OpcodeNone` 到 `OpcodeDeferAbort` 共 17 个 iota 值；SDK `StepOpCode` 另有遗留 `Step` 和 `StepNotFound`。
 
-## 实践案例
+4. **步骤身份证是 SHA-1**：用户写的 id 经 `sha1().update(id).digest("hex")` 变成 state key。重放时命中同一哈希就返回缓存，跳过函数体。改名等于换钥匙。
 
-### 案例 1：注册后的三步邮件流
+5. **硬边界写在 consts**：step 输入/输出各 4MB，单次 SDK 请求体 4MB，默认单函数最多 1000 step（执行器绝对上限 10000），sleep / waitForEvent 最长 366 天，默认重试 4 次（加首次共 5 次），函数/step 最长 2 小时。
 
-最经典的用例：用户注册后立刻发欢迎邮件，24 小时后发使用建议，7 天后发问卷。
+## 实践示例
+
+### 案例 1：注册后的延时邮件
 
 ```ts
 inngest.createFunction(
-  { id: "onboarding" },
-  { event: "user/signed_up" },
+  { id: "onboarding", triggers: { event: "user/signed_up" } },
   async ({ event, step }) => {
     await step.run("welcome", () => sendEmail(event.user, "welcome"))
     await step.sleep("wait-day", "24h")
     await step.run("tip", () => sendEmail(event.user, "tip"))
-    await step.sleep("wait-week", "7d")
-    await step.run("survey", () => sendEmail(event.user, "survey"))
-  }
+  },
 )
 ```
 
-逐部分解释：三个 `step.run` 是三个独立的"存档点"；两个 `step.sleep` 不是真在睡，而是告诉 executor "24 小时后再调我"。中间任意时刻进程重启都不要紧——重启后函数从最近的存档点恢复，已经发出去的邮件不会再发一遍。
+`step.sleep` 发的是 `OpcodeSleep`，duration 在 opts 或遗留 `name` 字段；执行器解析后入延迟队列，不是在 Node 进程里 `setTimeout`。`triggers` 可以是单个对象或数组。
 
-### 案例 2：故意失败再成功，亲眼看缓存生效
-
-为了验证 replay 真的工作，写一个第一次必失败、第二次必成功的函数：
+### 案例 2：看 memoization 是否生效
 
 ```ts
 let attempts = 0
 inngest.createFunction(
-  { id: "demo-replay" },
-  { event: "toy/run" },
+  { id: "demo-replay", triggers: { event: "toy/run" } },
   async ({ step }) => {
     await step.run("always-ok", () => { console.log("A"); return "A" })
     await step.run("flaky", () => {
@@ -81,87 +91,80 @@ inngest.createFunction(
       if (attempts === 1) throw new Error("transient")
       return "B"
     })
-  }
+  },
 )
 ```
 
-本地 `inngest dev` 触发一次事件，观察终端：A 只 print 一次（cache hit，第二次重试时直接拿缓存），flaky 重试时 attempts=2 才成功。注意"靠进程内变量计数"在多进程部署时会失效——这恰恰反向印证了文档为什么强调 step.run 必须 idempotent。
+第一次 `flaky` 失败会以 `OpcodeStepError` 回去并按重试策略再 invoke。成功后的 `always-ok` 在后续重放应走缓存。用进程内 `attempts` 计数只适合单进程玩具；多实例时必须靠 step 输出或外部去重。
 
-### 案例 3：改 step id 让缓存失效
+### 案例 3：改 id 与本地 Dev Server
 
-把案例 2 的第二个 step 改名后再跑同一事件：
-
-```ts
-await step.run("always-ok", () => { console.log("A"); return "A" })
-await step.run("flaky-v2", () => {   // 原来叫 "flaky"
-  attempts++
-  if (attempts === 1) throw new Error("transient")
-  return "B"
-})
-```
-
-逐部分解释：
-
-- `"flaky"` → `"flaky-v2"` 后，state store 里旧 cache key 对不上
-- 重放时找不到任何已完成 step，于是 `always-ok` 也会再 print 一次 A
-- 这直接证明 step id 就是缓存钥匙；生产里改名等于让进行中的 run 丢档重跑
+把 `"flaky"` 改成 `"flaky-v2"` 后，state 里旧哈希对不上，进行中的 run 会把已完成步骤当新步骤。本地用 `npx inngest-cli@latest dev`，README 写的仪表盘是 `http://localhost:8288`。生产可接 Inngest Platform 或自托管同一套组件。
 
 ## 踩过的坑
 
-1. **step.run 不 idempotent**：HTTP 投递可能重试同一个请求，如果 step 里直接 `INSERT INTO orders ...` 不带去重，会插两条订单。要么加唯一约束兜底，要么先查再插。
-2. **改 step id 等于丢档**：把 `"send-welcome"` 改成 `"send-welcome-v2"` 上线，所有跑到一半的 run 都会从头开始——已经发出去的邮件会再发一次。重命名 step 要走 feature flag 或灰度。
-3. **step 输入/输出超 4MB 直接报错**：state store 是 hot path，存大对象会拖垮 replay 性能。大文件走 S3 / OSS，step 里只存 URL 或 ID。
-4. **dev server 不持久化**：本地 `inngest dev` 嵌的是 miniredis + sqlite，进程退出 state 全丢。生产部署要么买 Inngest Cloud，要么自己起 Redis + Postgres + executor 集群——这一步运维成本比单装一个 Redis 高一个数量级。
+1. **继续写三参数 `createFunction`**：4.18.1 的第二参必须是 handler，否则抛错并提示把 triggers 放进第一参。
+2. **`step.run` 无幂等**：HTTP 可能重试同一步。直接 `INSERT` 而不带去重，会写出重复副作用。
+3. **改 step id 等于丢档**：哈希变了，旧输出对不上；重命名要灰度或接受重跑。
+4. **把 4MB / 1000 step 当软提示**：超限是执行器拒绝，不是警告。大文件应只存 URL。
+5. **把平台许可写成 MIT**：服务器与 CLI 是 SSPL + 延迟 Apache-2.0；SDK 才是 Apache-2.0。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 长任务跨小时 / 跨天（用户注册流、订单超时取消、定时报表、多步审批）
-- 部署在 Vercel / Lambda / Cloudflare Workers 这种无状态环境
-- 需要可视化每一步执行状态（dev UI 自带 run 树 + step 输入输出查看）
-- 跨服务、跨语言的事件驱动流程（TS / Python / Go SDK）
+- 跨小时、跨天的多步流程（注册、超时取消、审批）
+- 部署在无状态 HTTP 环境，由平台回拨 serve 端点
+- 需要按 step 查看输入输出，而不是自己维护 status 字段机
 
 **不适用**：
 
-- 高频小任务（每秒上千 step）—— HTTP round-trip 50-200ms 是硬地板，会被网络往返打死，普通 queue 更合适
-- 金融级 deterministic 保证必须的场景（不能调 `Date.now()` 那种）—— Temporal 仍是正解
-- 没有"流"概念的纯 fire-and-forget（"发个邮件就完事"）—— BullMQ / 普通 queue 更轻
-- 所有状态都在 PG 的纯数据库系统 —— DBOS 把 durable execution 下沉到 PG，更直接
+- 每秒海量小任务、且不能接受「每步一次调度」的开销——应先实测，而不是套用未绑定的往返数字
+- 必须把执行引擎留在进程内、不能把状态交给外部 store
+- 自托管却不能接受 SSPL 的服务端条款
+- 仍按三参数 SDK 文档改 4.18.1 代码
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018 年**：AWS Step Functions 推出，用 JSON DSL 描述工作流，平台锁定严重
-- **2019 年**：Temporal 从 Uber Cadence fork 出来，走 Go runtime + worker daemon 长连路线
-- **2022 年**：trigger.dev V1/V2 用 Node.js 实现 workflow，但 sleep 是 polling 数据库
-- **2023 年**：Inngest（YC W23）提出 event sourcing + step.run 函数式 API，无需长连 worker，无服务器友好
-- **2024 年**：trigger.dev V3 重写成 V8 isolate runtime，API 也走向类似的 step.run 风格
-- **2024–2025 年**：Cloudflare Workflows 等平台把 durable step 做成原生能力
+- 本文绑定 `inngest/inngest@a54673a4...`，release tag `v1.44.0`。
+- TS 示例对照 `inngest/inngest-js` 的 `inngest@4.18.1`（annotated tag 解引用 `bf41c415...`，与 npm `gitHead` 一致）。Python / Go / Kotlin SDK 未展开。
+- 固定平台另有 Connect、durable endpoints、AI gateway、defer；本文只静态阅读，不声明这些路径已在目标环境跑通。
+- 未安装依赖、未起 Dev Server / 自托管栈、未发事件，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **状态机不在代码里，在外部存储里**——代码本身只是声明转换关系，这个心智模型可迁移到任何"长任务 + 可恢复"的系统设计
-2. **idempotent 是分布式系统的入场券**——任何会被自动重试的代码都要先问"被调两次会怎样"
-3. **HTTP re-invoke 比长连 worker 更适合 serverless 时代**——平台调度你，而不是你 keep-alive
-4. **opcode 当 audit log 用**——执行流天然就是"这个流程怎么从 A 走到 B"的证据链
+1. **可恢复性来自外部状态，不是更长的进程**——代码声明步骤，store 记住结果。
+2. **用户可见的 step id 不是存储主键**——真正的钥匙是 SHA-1。
+3. **SDK 与执行器靠 opcode 对齐**——枚举变了，旧「15 种 opcode」不能再当事实。
+4. **许可分层和 API 形态都要绑 revision**——SSPL 与两参数 `createFunction` 都不是口耳相传能代替的。
+
+## 应用型自测
+
+1. 在 `inngest@4.18.1` 里写 `createFunction({ id }, { event }, handler)` 会怎样？
+2. 把进行中 run 的 `"send-welcome"` 改成 `"send-welcome-v2"`，已发出的欢迎邮件还会被当成已完成步骤吗？
+3. `step.sleep("wait", "400d")` 在固定执行器上一定成功吗？
+
+检查点：
+
+1. 会抛错。第二参必须是 handler，触发器放在 `triggers`。
+2. 不会。新 id 的 SHA-1 对不上旧 state，这一步会重跑。
+3. 不一定。sleep 上限是 366 天，超过会按 timeout-too-long 拒绝。
 
 ## 延伸阅读
 
-- 视频：[Inngest 官方 Hello World](https://www.inngest.com/docs/quick-start)（10 分钟跑通本地 dev server）
-- 文档：[Inngest Patterns](https://www.inngest.com/docs/guides/patterns)（fan-out / saga / 幂等三大模式）
-- 对比文：[Inngest vs Temporal vs trigger.dev](https://www.inngest.com/blog/inngest-vs-temporal)（一作视角，看它选型论证就行）
-- 源码：[inngest/inngest](https://github.com/inngest/inngest) 的 `pkg/execution/executor` 目录是核心
-- [[temporal]] —— durable workflow 的"重型"代表，对照看 deterministic 约束
-- [[kafka]] —— event sourcing 的另一种实现，状态由分布式 log 重建
+- 文档：[inngest.com/docs](https://www.inngest.com/docs)
+- 固定平台源码：[inngest/inngest](https://github.com/inngest/inngest) —— 本文绑定提交 `a54673a45b00ea10917620ab3e05a21d04579db7`
+- 固定 TS SDK：[inngest/inngest-js](https://github.com/inngest/inngest-js) —— `inngest@4.18.1` / `bf41c415939804c8a947d1d14aec22b2c3ea16e8`
+- [[temporal]] —— worker 长连路线的对照
+- [[postgresql]] —— 自托管常见的历史/元数据存储
 
 ## 关联
 
-- [[temporal]] —— 同样是 durable workflow，但走 worker daemon 长连路线，对比可以看清两种部署哲学
-- [[kafka]] —— event sourcing 的同源思想：状态由事件流重建而非 mutable 字段
-- [[redis]] —— Inngest 的 queue 后端，partition / shard 分布式调度都建在 Redis 上
-- [[postgresql]] —— state store 默认实现，存每个 step 的 input / output / 时间戳
-- [[langchain]] —— 多步 LLM 应用同样面对"长任务 + 可恢复"问题，checkpoint 思路相通
-- [[effect]] —— TypeScript 副作用引擎，跟 step.run 一样把"会失败的操作"变成可组合的值
+- [[temporal]] —— 同样做 durable workflow，部署哲学不同
+- [[kafka]] —— 用事件流重建状态的同源思路
+- [[redis]] —— 固定执行器队列实现之一
+- [[postgresql]] —— 系统库与历史记录常见落点
+- [[langchain]] —— 多步 LLM 流程同样面对 checkpoint
 
 ## 反向链接
 
