@@ -2,6 +2,37 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 merge-in #191 rimraf + del
+
+- status：`running`
+- objective：把 `origin/main` 合入 #191，只重生派生索引并修正过期公开计数字段后 push。不 rebase、不 force-push、不 deploy。#187/#189 仅在真实 ship review 且 verify:ci 绿时才 squash-merge。
+- scope：PR 分支 merge commit、atlas / project-standard / site-state、公开计数文案、本交接。不改项目页正文。
+- activated_by：explicit merge-in lane（用户指定下一非草稿 CONFLICTING PR #191）。
+- detector fingerprint：#191 `CONFLICTING` / `DIRTY`，非草稿；冲突文件仅为派生索引与公开计数。
+- external delta：push 已授权；squash-merge 仅在门禁满足时授权。
+- acceptance checks：`git merge origin/main`；`npm run atlas`；`node scripts/audit-project-standard.mjs --write`；`npm run generate:site-state`；`npm run audit:counts`；`git diff --check`。
+- superseded_by：`none`
+
+## 2026-08-27 PARALLEL writer ER：rimraf + del 静态审查
+
+- status：Program `active`；本地 writer epoch `complete`；已 push 并打开 1 个 PR，**未 merge、未 deploy**。
+- 起始 ref：`89766cc27`（当时的 `origin/main`）。
+- objective：为 rimraf / del 这一对 delete-fs 库新增 `study-v2` 项目页，证据边界是 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/delete-fs-source-review-20260827-er.md`、派生索引与公开计数、本 handoff、2 个 ignored worktree；未安装上游依赖、未执行删除、未跑 tap / ava。
+- activated_by：`explicit-user-request-20260827-parallel-writer-er`。
+- detector fingerprint：目录中不存在 `rimraf` / `del` 页；npm latest 为 `rimraf@6.1.3` / `del@8.0.1`，均可绑定唯一 tag 与 `gitHead`。
+- external delta：分支已 push 并打开 PR（用户授权 push+PR）；未 merge、未 deploy。
+- 完成切片：
+  1. `rimraf` 绑定 tag `v6.1.3` / `f738c781...`（与 npm `gitHead` 一致），修正 native/Windows 选择器、opt-in glob 与 `ERR_PRESERVE_ROOT`。
+  2. `del` 绑定 tag `v8.0.1` / `f9412a3d...`，纠正“仍包装 rimraf”的旧叙事，绑定 globby + cwd 沙箱 + `fs.rm`。
+  3. 共享审查文档与两份 STATIC_REVIEW receipt；`分类: 工具库` 进入 general-developer-tools。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest / revision 匹配，evidence state = `UNVERIFIED`；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与当前文件数一致。
+- budget：2 个小型 blob-filtered worktree + 2 页新建；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：1 个 PR 已打开且未授权 merge 后停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`gh pr view` 查看本分支 PR；未授权前不要 merge。
+- superseded_by：`none`
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
