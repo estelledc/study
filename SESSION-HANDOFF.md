@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer GK：wrangler + miniflare 静态审查
 
-- status：`running` 完成本地 writer epoch 后进入 review-ready；One PR，No merge。
+- status：本地 writer epoch `complete`；PR #254 已开，未 merge / 未 deploy。
 - objective：把 Cloudflare Workers 工具链双子 `wrangler` 与 `miniflare` 做成源码绑定的 study-v2 `STATIC_REVIEW` / `UNVERIFIED` 项目页。仓库原本没有这两页，按用户指定目标新建，而不是改 `partykit` 或其他 fallback。
 - scope：两页正文、2 份 generation 1 receipt、`docs/workers-runtime-source-review-20260827-gk.md`、note-index / project-standard / site-state / atlas 派生、本 handoff；1 个 gitignored `research-worktrees/workers-sdk`。未安装上游依赖、未运行 wrangler/miniflare/workerd、未测 bundle 或性能。
 - activated_by：`explicit-user-parallel-writer-gk-20260827`。
@@ -18,7 +18,8 @@
 - acceptance_checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 review doc digest 一致，evidence state 为 `UNVERIFIED`。
-  - `git diff --check`；再跑 `STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`。
+  - `npm run audit:counts`：projects=965、papers=1083、total=2048。
+  - `STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML / 2288 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：1 个稀疏 worktree + 2 页静态源码新建 + 派生刷新；单 writer；3 切片 / 120 分钟。
 - blocker：规模 detector 在 main 已超 baseline；本 PR 未改阈值或证据布局。
 - stop_conditions：PR 已开且未获 merge 授权即停止；不绑定 5.x alpha，不改其他 Workers 页。
