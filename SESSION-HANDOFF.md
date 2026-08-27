@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IA：just + mage
 
-- status：writer epoch `complete`；review-ready PR，未 merge。
+- status：writer epoch `complete`；PR https://github.com/estelledc/study/pull/293 待 review，未 merge。
 - 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`，#71）。
 - objective：把 `needs-evidence` 的 task-runner 双子 `just` 与 `mage` 迁到源码绑定标准，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇既有项目页、共享审查文档 `docs/task-runner-source-review-20260827-ia.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装 Rust/Go、未运行上游测试。
@@ -15,12 +15,19 @@
   1. `just` 绑定 tag `1.58.0` → `7f4ef81bd6a93faa2b28430912c8e9ab0e3dd29a`；纠正默认 recipe、`sh -cu` / `sh -eu`、Windows 默认仍是 `sh`、unstable `[cache]`。
   2. `mage` 绑定 `v1.17.2` → `0953947c1673fd745a51c032aadeb3c63f9f3368`；纠正 `-l`/`-h` 不再编译、`var Default`、`target.Path` 不递归目录。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87。
-- acceptance checks：以本轮命令输出为准，见 PR 正文。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:project-standard`：benchmark-aligned=87。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=2b64a3ebffee19b72d570bfe70b8c0547069ae16 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，除本机首次缺 Playwright Chromium 外全绿；安装浏览器后 23 个 a11y 测试与后续门禁通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/293 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
