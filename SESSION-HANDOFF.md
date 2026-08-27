@@ -15,7 +15,7 @@
   1. `knip` 绑定 annotated tag `knip@6.32.3` → `fc2733dc18c2e3d300183b9e2fe67d3fa54334fa`。
   2. `depcheck` 绑定 tag `v1.4.7` / npm `gitHead` → `b180e2ec82a7c1413bc29df260561076030b1734`；披露仓库 archived 与源码 `version=0.0.1`。
   3. 共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate` 通过、0 advisory；receipt 与正文 digest / 固定 revision 对齐。其余命令以本轮验收记录为准。
+- 验证结果：两页 `quality-gate` 通过、0 advisory；receipt 与正文 digest / 固定 revision 对齐。`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下，除本机首次缺 Playwright 浏览器外全绿；安装 Chromium 后 23 个 a11y 测试与后续 Pages/Atlas/site budget / drift 门禁通过。未 merge。
 - budget：1 个双子页切片；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：一个 PR 已打开且未 merge 后停止。
