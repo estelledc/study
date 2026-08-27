@@ -11,13 +11,13 @@ trust:
   source_kind: project
   note_type: platform-api
   canonical_source: https://github.com/algolia/algoliasearch-client-javascript
-  source_authority: AUTHOR_PRIMARY
+  source_authority: OFFICIAL_PRIMARY
   accessed_at: '2026-08-27'
   immutable_revision: 899993f9ed19c90495979e4fb5440506752c9581
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
   reviewed_at: '2026-08-27'
-  review_after: '2026-11-27'
+  review_after: '2026-11-25'
   applicable_version: 5.57.0
 ---
 
