@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FL：chartist + billboard.js
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`1f2917d90`（`origin/main`，PR #75 merge）。
+- objective：把 `needs-evidence` 的 `chartist` 与 `billboard-js` 绑定到不可变 git SHA，修正旧正文过时 API / 图类型 / 默认行为，保持 `STATIC_ANALYSIS` / `UNVERIFIED`。
+- scope：两页正文、2 份新 receipt、`docs/svg-chart-source-review-20260827-fl.md`、由本轮派生的 note-index / project-standard / site-state；未安装上游依赖、未渲染、未跑上游测试或 benchmark。
+- activated_by：`explicit-user-parallel-writer-FL-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧 Chartist 正文仍用 v0 `Chartist.Line`、把默认平滑写成 cardinal、把系列色写成五种；旧 billboard 正文写 sunburst/sankey、四套主题、必须手调 resize，未覆盖 v4 ESM resolver 与 canvas 入口。
+- external delta：分支将 push 并开 PR（cloud writer 授权）；未 merge、未 deploy。
+- 完成切片：
+  1. `chartist` 绑定 tag `v1.5.0` / `4a721397...`（npm 无 gitHead，包版本一致），修正 v1 class API、`setTimeout(0)` 首绘、`monotoneCubic` 默认平滑、`a`–`o` 十五色、foreignObject 标签。
+  2. `billboard-js` 绑定 tag `4.0.3` / `f599730a...`（npm gitHead 一致），修正 ESM resolver、v4 五块 optional API、canvas 入口、`resize.auto` 默认 true、去掉 sunburst/sankey。
+  3. 新增 `docs/svg-chart-source-review-20260827-fl.md` 与两份 generation 1 static receipt。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 blocking；receipt digest 与 `UNVERIFIED` 一致。全量 `verify:ci` 在提交后跑。
+- budget：2 个 blob-filtered sparse clone + 2 页静态源码迁移；单 writer。
+- stop conditions：两页已绑定；merge / deploy / 规模 baseline 处置需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或新的显式有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=1f2917d90180638e3960be37de1a5df6884b989a npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
