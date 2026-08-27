@@ -15,7 +15,12 @@
   1. `read-pkg` 绑定 annotated tag `v10.1.0` / `ae4bbc65...`（与 npm `gitHead`、`origin/main` 一致），写清 cwd-only 定位、`parse-json`、默认 `normalize-package-data` 与 `structuredClone`。
   2. `load-json-file` 绑定 annotated tag `v7.0.1` / `eeac7ad7...`（与 npm `gitHead` 一致），写清 Buffer + `TextDecoder` 去 BOM、原生 `JSON.parse`、`beforeParse`/`reviver` 顺序，并披露 main 超前 2 个文档提交未绑定。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生 site-state 首页对齐标杆从 67 刷新为 69，项目 963→965。
-- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest 一致且 evidence state 为 `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` 通过。`verify:ci` 在提交后跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=89766cc27 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2289 HTML / 2288 sitemap URLs、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=69`、`needs-evidence=896`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=138`、`legacy-unverified=1910`、blocking 0。
 - budget：1 个可写切片、2 个小型 blob-filtered worktree、1 个 PR。
 - blocker：规模 baseline `tracked_files` 在 main 已超阈值；本轮未改 baseline / 阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。
