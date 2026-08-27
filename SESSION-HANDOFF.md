@@ -19,8 +19,9 @@
   - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
   - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
   - `audit:content-contract`：0 blocking，`v2=105`。
-  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=926`、snapshot WRITTEN。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=926`、snapshot CURRENT。
   - `audit:counts` / `audit:site-state`：projects=962、papers=1083、total=2045。
+  - `STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下 portable gate 全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
 - blocker（先于本切片存在）：规模 detector 在 main 已超 baseline；本轮新增 1 页 + receipt + 审查文档，未改 baseline 或阈值。
 - stop conditions：本轮已完成；merge 与 deploy 均需单独授权。按用户指令不 merge。
