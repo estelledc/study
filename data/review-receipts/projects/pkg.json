@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pkg",
+    "digest_sha256": "13663e01518bb35c0f5b031fa71b0f0a8511b5af4a4bdab628a62e630cb069a0"
+  },
+  "source_revision": "8d3d7af9fe9cbb02ec60c78c4c71de343e259c0a",
+  "research_input_sha256": "16fd3fe79fc0bf607cb8cc643f55bc0cd7bb6763e1453618f7bfd893919e5400",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-iy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates traditional patched-Node pipeline from simple vs enhanced SEA, default linux/macos/win targets, and VFS snapshot."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-iy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "exec/resolveConfig, walker, producer placeholders, seaEnhanced Node>=22, and compress enum were inspected; pkg-fetch and packaging were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-iy",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds yao-pkg tag v6.22.0 peeled commit and discloses npm gitHead parent plus archived vercel/pkg 5.8.1."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:15:00.000Z"
+}

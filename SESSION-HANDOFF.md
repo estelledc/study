@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IY：ncc + pkg
+
+- status：writer epoch `running`；本地 change set 已形成，待 push / PR。
+- 起始 ref：`1ecba4040`（`origin/main`）。
+- objective：为缺失的单文件/单二进制打包双子补齐 `ncc` 与 `pkg` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/single-binary-bundler-source-review-20260827-iy.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle、未调用 pkg-fetch。
+- activated_by：`explicit-user-parallel-writer-iy-2026-08-27`。
+- detector fingerprint：目录无 `ncc.md` / `pkg.md`；开放 PR 已占用 tshy/microbundle/pkgroll/bunchee/tsup/unbuild；HM–ID 车道保留。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `ncc` 绑定源码 tag `0.45.0` → `cb1f1f058bfa7de4cb63f2411e14a724e714e260`；披露源码仓 version 为 `0.0.0-development`。
+  2. `pkg` 绑定 `yao-pkg/pkg` tag `v6.22.0` 剥皮提交 `8d3d7af9fe9cbb02ec60c78c4c71de343e259c0a`；披露 npm `gitHead` 为父提交，且 archived `vercel/pkg@5.8.1` 不是本页绑定树。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- acceptance checks：见本轮验证命令；未授权前不要 merge。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 只交付这一对；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
