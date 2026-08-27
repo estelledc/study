@@ -6,7 +6,7 @@
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79`（#66）清 BEHIND，并重生成派生索引。等待该 head 的 CI 与 owner squash。未把本 PR merge 进 main、未 deploy。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
-- 当前 head：merge #66 后待 push。
+- 当前 head：本分支已包含 `7b78db79`（#66）；精确 SHA 以 `git rev-parse HEAD` 为准。
 - objective：按 PARALLEL writer J 授权，把状态机/store 双子迁到绑定固定 revision 的 `study-v2` / `STATIC_REVIEW` / `UNVERIFIED`。目标 slug 为 `xstate` 与 `redux-toolkit`（或 `redux`）；仓库无后两页，因此 fallback 为 `xstate` + `mobx`。未改 `zustand` / `jotai` / `valtio` 及其他 forbidden slug。
 - scope：`xstate.md`、`mobx.md`、2 份 generation 1 receipt、`docs/state-machine-store-source-review-20260827-j.md`、note-index / project-standard-audit / site-state / 首页指标、本交接。未安装上游依赖、未运行上游测试、未测 bundle 或性能。
 - activated_by：`explicit-user-parallel-writer-j-20260827`；后续由 PR #65 owner review（ship / approve-with-notes）授权接入最新 main 并 mark ready。
