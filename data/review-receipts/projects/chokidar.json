@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "chokidar",
+    "digest_sha256": "e50edef8b1ef3bd8c006631bc56a892a6486f47cc5e58d0b176a96669711273a"
+  },
+  "source_revision": "c0c8d20e49d337491891078d1081bf91bd178de6",
+  "research_input_sha256": "1d6a8fdddd377b1a17e3ff7d7f9e0e0535f017566c812b8243a040313f9dab66",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-cp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains FSWatcher/fs.watch, exact-string ignored, atomic unlink+add, awaitWriteFinish off-by-default, and no glob."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-cp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 5.0.0 ESM surface, NodeFsHandler backends, AWF/atomic defaults, and shared watchers were inspected; tests and fs.watch were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-cp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable 5.0.0 annotated tag/npm gitHead; discloses no glob/fsevents and Node >=20.19.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

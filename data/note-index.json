@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -38557,6 +38557,38 @@
       }
     },
     {
+      "id": "projects::chokidar",
+      "area": "projects",
+      "slug": "chokidar",
+      "title": "chokidar — 把 fs.watch 收成可组合的文件事件",
+      "description": "介绍 chokidar 5.0.0 如何用 fs.watch / fs.watchFile 规范化 add/change/unlink，并去掉 glob 与 fsevents。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "开发工具",
+        "raw_category": "开发工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/chokidar/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::chroma",
       "area": "projects",
       "slug": "chroma",
@@ -52433,6 +52465,38 @@
       }
     },
     {
+      "id": "projects::nodemon",
+      "area": "projects",
+      "slug": "nodemon",
+      "title": "nodemon — 文件一变就重启子进程的开发监视器",
+      "description": "介绍 nodemon 3.1.14 如何用 chokidar 3 监听文件、过滤扩展名，并 fork/spawn 重启子进程。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-general-developer-tools",
+        "matched_category": "开发工具",
+        "raw_category": "开发工具"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/nodemon/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::nomad",
       "area": "projects",
       "slug": "nomad",
@@ -65657,7 +65721,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 13
+      "entries": 15
     },
     {
       "id": "topic-projects-headless-ui-components-01",

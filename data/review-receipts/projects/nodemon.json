@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "nodemon",
+    "digest_sha256": "b0dabaf9a0d45225274a767ef5d842e0751561e990e0cc9ed6a62049c04d15ac"
+  },
+  "source_revision": "cfebe2feb2054a13fa6b9c493c1cd826ffccf167",
+  "research_input_sha256": "1d6a8fdddd377b1a17e3ff7d7f9e0e0535f017566c812b8243a040313f9dab66",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-cp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains process restart vs HMR, chokidar 3 dependency, fork/spawn, SIGUSR2, and rs/delay with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-cp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned 3.1.14 CLI/config/watch/run/kill path and chokidar@^3.5.2 were inspected; mocha and live restarts were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-cp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Binds reachable v3.1.14 tag/npm gitHead; discloses repo package.json version is 0.0.0-development."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:10:00.000Z"
+}

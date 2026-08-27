@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CP：nodemon / chokidar
+
+- supervisor 状态：writer epoch complete；等待 owner review；不 merge。
+- status：本地 writer epoch `complete`；D 轴不含 merge / deploy。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`。
+- objective：新增 `nodemon` 与 `chokidar` 两篇 `study-v2` 页，绑定可达 STATIC_REVIEW revision；证据上限 `UNVERIFIED`。
+- scope：两页正文、`docs/file-watch-source-review-20260827-cp.md`、两份 generation 1 receipt，以及由本轮验证驱动的 project-standard / note-index / site-state / homepage 派生刷新。未改其他开放 PR slug，未安装上游依赖，未打开真实 watcher。
+- activated_by：`explicit-user-goal-parallel-writer-cp-2026-08-27`。
+- detector fingerprint：仓库没有 nodemon/chokidar 页；开放 PR 也未占用这对 file-watch slug。
+- external delta 计数：本轮授权形成一个 PR；未 merge、未 deploy。
+- 已完成切片：
+  1. 用 GitHub/npm 元数据固定 `remy/nodemon@cfebe2fe...` / `3.1.14` 与 `paulmillr/chokidar@c0c8d20e...` / `5.0.0`（tag 与 `gitHead` 一致）。
+  2. 写清主链：nodemon 的配置合并、chokidar 3 监听、fork/spawn 与 `SIGUSR2`；chokidar 5 的 `fs.watch`、精确字符串 ignore、atomic / AWF 默认值。
+  3. 新增共享审查记录与两份 `STATIC_REVIEW` receipt；atlas / project-standard / site-state 由本轮验证刷新。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt evidence state `UNVERIFIED`。`verify:ci` 尚未在本交接写入时声明。
+- budget：2 个稀疏本地 worktree + 2 篇新增静态源码页；单 writer。
+- blocker：nodemon 3.1.14 仍依赖 chokidar 3，不能用本页的 5.0.0 合同解释它；上游运行/句柄/CPU 证据不能由静态 review 替代。
+- stop conditions：本 epoch 已收口到 1 个 PR；不自动 merge。
+- 下一次 wake 条件：owner review，或另授 merge / deploy。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
