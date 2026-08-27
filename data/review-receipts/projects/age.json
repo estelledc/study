@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "age",
+    "digest_sha256": "03363e1cd3cff4b2627ec8dfbd0c2983c7cb005eff22e1ed143cbcc274efaca4"
+  },
+  "source_revision": "b8564adb6d58329b8a3e267360ca2b0abc4efe1d",
+  "research_input_sha256": "0f72497779b6929638df018afb122f6e91a2e36f9ac11a7ad28a9a3a3e0813a9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates X25519 default keygen from opt-in ML-KEM-768 hybrid, scrypt-only files, and SSH convenience keys."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected header format, x25519/pq/scrypt, CLI parse, keygen, inspect; encryption and plugins were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to FiloSottile/age v1.3.1 / b8564adb...; license is BSD-3-Clause; timings and binary size are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}
