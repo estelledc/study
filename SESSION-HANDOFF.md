@@ -15,12 +15,12 @@
   1. `jws` 绑定源码 tag `v4.0.1` → `34c45b2c04434f925b638de6a061de9339c0ea2e`；披露 committed / npm `gitHead` 是 2013 起始提交 `c0f6b27b...`。
   2. `paseto` 绑定 `v3.1.4` → `04d57493b0bd1d26b72432bde4124dede06552db`，tag / package / npm `gitHead` 一致；披露仓库已 archived，且无 v2/v4 local。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` 均 pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` current；`audit:wikilinks` blocking 0；`git diff --check` 通过。全量 `verify:ci` 在首个 commit 之后跑。
+- 验证结果：两页 `quality-gate.mjs` 均 pass、0 advisory；`audit:content-contract` blocking 0、v2=158；`audit:counts` / `audit:site-state` projects=970、papers=1083、total=2053；`audit:project-standard` benchmark-aligned=89；`audit:wikilinks` blocking 0；`git diff --check` 通过。`STUDY_CHANGED_FROM=0ffa894c35f0d01611c7c9dd4b6d7bda3c8a4465 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下，a11y 之前的步骤全绿；本机首次缺 Playwright Chromium，安装后 23 个 a11y 与后续 Pages/Atlas/站点预算、drift 门禁通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本分支对应 PR；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/317 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
