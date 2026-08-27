@@ -1,162 +1,174 @@
 ---
 title: Sequelize — 老牌 Node ORM
 来源: https://github.com/sequelize/sequelize
-日期: 2026-05-29
+日期: 2026-08-27
 分类: ORM
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/sequelize/sequelize
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: cb7f99ad05de56137672ab95586359ff6ceba004
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 6.37.8
 ---
 
 ## 是什么
 
-Sequelize 是 Node.js 世界**最早一批** ORM（Object-Relational Mapper，把数据库表映射成 JS 对象的桥）里最有名的那一个，2010 年开源。Node.js 自己也才 2009 年出生——几乎是 Node 一有，它就有了。
-
-日常类比：
-
-> [[prisma]] 是新潮装修房——强类型、规整、所有水电图纸都对得上。
-> Sequelize 是老市政房——功能齐全、住过几代人，但电路是后期改的，TypeScript 类型贴在墙上，仔细看会发现接缝。
-
-API 风格是 **Active Record**——你定义一个 `User` 类，类本身既是表结构，又是查询入口：`User.findAll()` 直接就能查。这种风格被 Ruby on Rails 带火，Sequelize 把它搬到了 Node。
-
-## 为什么重要
-
-不知道 Sequelize，下面这些事都会一头雾水：
-
-- **Node.js ORM 鼻祖级存在**：2010 年代 Express + Sequelize 是常见后端组合，地位接近今天的 Next.js + Prisma
-- **文档极厚 + 社区极大**：Stack Overflow / 老博客里大量 Node ORM 问答仍以 Sequelize 为主，踩坑资料最好找
-- **ORM 三代演进的第一代**：Sequelize（2010）→ [[typeorm]]（2016 装饰器风）→ [[prisma]]（2019 schema-first 强类型），代代解决前一代的痛点
-- **大量历史项目仍在跑**：跳进 5 年以上的 Node 后端，遇到 Sequelize 并不稀奇——迁移成本高，很多人选择继续维护
-
-## 核心要点
-
-Sequelize 的能力可以浓缩成 **三块**：
-
-1. **Model 定义 + 实例方法**
-   一个 class 同时是表结构 + 查询接口 + 实例数据。`User.create()` 插入，`user.save()` 保存修改，`user.destroy()` 删除——动词全挂在对象上。
-
-2. **Associations（关系）**
-   `hasMany` / `belongsTo` / `hasOne` / `belongsToMany`，把外键关系翻译成对象图。写完 `User.hasMany(Post)`，你就能 `user.getPosts()` 直接拿到所有帖子。
-
-3. **Hooks + Transaction**
-   - Hooks：`beforeCreate` / `afterUpdate` 等钩子，在数据库动作前后插自己的逻辑（比如自动加密密码）
-   - Transaction：`sequelize.transaction(async (t) => { ... })`，里面所有操作要么全成功，要么全回滚
-
-加上 `sequelize-cli` 工具做迁移（migration），就是一套完整的后端数据层。
-
-## 实践案例
-
-### 案例 1：定义一个 Model
+Sequelize 是 Node 上的 **Active Record ORM**：一个 Model class 同时描述表结构、提供查询入口，并在实例上挂 `save()` / `destroy()`。日常类比：`User` 既是户口本格式，也是窗口柜员——`User.findAll()` 去查，`user.save()` 把眼前这份记录写回去。
 
 ```js
-import { Sequelize, DataTypes, Model } from 'sequelize'
-
-const sequelize = new Sequelize('sqlite::memory:')
-
-class User extends Model {}
-User.init({
-  name: DataTypes.STRING,
-  age: DataTypes.INTEGER,
-}, { sequelize, modelName: 'user' })
-
-await sequelize.sync()  // 建表
-await User.create({ name: 'Jason', age: 25 })
-```
-
-**逐部分解释**：
-
-- `Model` 是 Sequelize 给的基类，继承它就有了所有 CRUD 方法
-- `User.init({...}, {...})` 第一个参数是字段定义，第二个是配置（连哪个 sequelize 实例、表名等）
-- `sequelize.sync()` 把所有 Model 的结构同步成数据库表（生产环境别用，要用 migration）
-
-### 案例 2：带条件查询
-
-```js
-import { Op } from 'sequelize'
-
-const adults = await User.findAll({
-  where: {
-    age: { [Op.gt]: 18 },
-  },
+import { Sequelize, DataTypes } from "sequelize"
+const sequelize = new Sequelize("postgres://localhost/app")
+const User = sequelize.define("User", {
+  email: { type: DataTypes.STRING, unique: true },
 })
 ```
 
-`Op.gt` 是 "greater than"。Sequelize 用 Symbol 包装运算符，避免和字段名冲突。这种 API 在 [[prisma]] 看来很啰嗦，[[prisma]] 直接写 `age: { gt: 18 }`——但 Sequelize 选择了更明确的方式。
+`define(name, attrs)` 的实现是：现场 `class extends Model {}`，再 `model.init(attributes, options)`。class-based `User.init(...)` 与 `define()` 最终走同一条 `Model.init`。
 
-### 案例 3：Migration（迁移）
+## 为什么重要
 
-```bash
-npx sequelize-cli migration:generate --name add-email-to-user
-npx sequelize-cli db:migrate
-```
+不按固定 v6 源码读 Sequelize，下面这些事会对不上：
 
-生成的迁移文件长这样：
+- 为什么老 Express 项目里满是 `sequelize.define`，而较新代码改写成 `class User extends Model`
+- 为什么默认会多出 `createdAt` / `updatedAt`，表名又常常被复数化
+- 为什么 `transaction(async t => ...)` 成功就 commit、抛错就 rollback，而只调 `transaction()` 时要自己收尾
+- 为什么字符串运算符别名已经被 deprecation 路径拦住，查询要写 `Op.like`
+
+## 核心要点
+
+固定 `6.37.8` 可以看成四层：
+
+1. **构造期选定 dialect**：`new Sequelize(...)` 用 switch 静态 `require` dialect，避免打包器动态路径。实现支持 `mariadb` / `mssql` / `mysql` / `oracle` / `postgres` / `sqlite` / `db2` / `snowflake`。默认错误文案漏写了 `snowflake`，但 case 存在。
+
+2. **Model.init 填默认选项**：`timestamps: true`、`freezeTableName: false`、`paranoid: false`、`underscored: false`、`whereMergeStrategy: 'overwrite'`。未给 `tableName` 时，表名是 `freezeTableName ? name : underscoredIf(pluralize(name))`。
+
+3. **查询与关联挂在 Model 上**：`findAll` / `create` 是 static；`hasMany` / `belongsTo` / `hasOne` / `belongsToMany` 生成 getter。条件用 `Op.*` symbol，不是字符串 `'$like'`。
+
+4. **Hooks 与 transaction 是副作用边界**：hooks 覆盖 validate/create/update/destroy/save/upsert/bulk/find/count/sync/query/connect 等阶段；`beforeSave` 会代理到 `beforeUpdate` + `beforeCreate`。`sequelize.transaction(fn)` 用 CLS 跑回调并自动 commit/rollback；不传回调则返回未结束的 `Transaction`。
+
+## 实践示例
+
+### 案例 1：define 一张表
 
 ```js
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('users', 'email', Sequelize.STRING)
-  },
-  down: async (queryInterface) => {
-    await queryInterface.removeColumn('users', 'email')
-  },
-}
+import { Sequelize, DataTypes, Model } from "sequelize"
+
+const sequelize = new Sequelize("sqlite::memory:")
+
+const User = sequelize.define("User", {
+  name: { type: DataTypes.STRING, allowNull: false },
+  email: { type: DataTypes.STRING, unique: true },
+})
+
+class Post extends Model {}
+Post.init(
+  { title: DataTypes.STRING },
+  { sequelize, modelName: "Post" },
+)
 ```
 
-`up` 是升级，`down` 是回滚。Sequelize 的 migration 和 Model **是两套文件**——这正是后面要说的坑之一。
+两种写法都要求 Sequelize 实例进入 `init`；缺 `options.sequelize` 会直接抛 `No Sequelize instance passed`。默认 `timestamps: true`，所以同步后的表通常还有 `createdAt` / `updatedAt`。
+
+### 案例 2：查询、关联与运算符
+
+```js
+import { Op } from "sequelize"
+
+User.hasMany(Post)
+Post.belongsTo(User)
+
+const hits = await User.findAll({
+  where: { email: { [Op.like]: "%@example.com" } },
+  order: "id DESC",
+  limit: 10,
+  include: [Post],
+})
+```
+
+`Op.like` 是 symbol。把 `operatorsAliases` 设成对象或布尔，固定源码会走 deprecation 辅助函数，不应再当新代码默认。
+
+### 案例 3：回调式 transaction
+
+```js
+await sequelize.transaction(async (t) => {
+  const user = await User.create({ name: "Ada", email: "ada@example.com" }, { transaction: t })
+  await Post.create({ title: "Notes", UserId: user.id }, { transaction: t })
+})
+```
+
+回调 resolve 后 `commit()`，reject 后尝试 `rollback()`。只调用 `await sequelize.transaction()` 时，调用方必须自己 `commit` / `rollback`；未传回调不会自动收尾。
 
 ## 踩过的坑
 
-1. **TypeScript 支持是后期补的**
-   Sequelize 2010 年生于纯 JS 时代，TS 类型是后来贴上去的。Model 的字段在 TS 里不会自动有类型，得自己写一份 interface 或用 `Model<UserAttributes>` 泛型。对比 [[prisma]] 的 schema-first 全自动生成、[[drizzle]] 的 ts-first 一体化，Sequelize 体验明显落后一代。
-
-2. **N+1 查询要自己防**
-   写 `users.forEach(u => u.getPosts())` 会触发 N 次查询。要显式 `User.findAll({ include: [Post] })` 让 Sequelize 生成 JOIN。新人最常见的性能问题。
-
-3. **Bulk operation API 不友好**
-   批量插入要用 `User.bulkCreate([...])`，但更新一批不同数据要循环 `update`，没有像 [[prisma]] 的 `updateMany` 那么顺手。批量改不同字段时尤其痛。
-
-4. **Migration 与 Model 分离**
-   表结构在 Model 里写一遍，建表脚本在 migration 里写一遍——**两边要手动同步**。改了 Model 字段忘了写 migration，本地 `sync()` 跑得好好的，部署一上生产数据库报错。[[prisma]] 通过 `prisma migrate dev` 从 schema 自动生成 migration，省掉这层心智负担。
+1. **以为 `define` 和 class `init` 是两套 ORM**：`define` 只是造匿名 subclass 再 `init`。
+2. **忘了默认 timestamps / 复数表名**：`User` 默认表名是复数；`freezeTableName: true` 才钉死类名。
+3. **字符串运算符**：`where: { email: { $like: '...' } }` 依赖已废弃的 alias；固定 v6 要 `Op.like`。
+4. **把 `@sequelize/core` v7 alpha 当成 npm `sequelize` latest**：`npm view sequelize` 当前 latest 仍是 `6.37.8`；v7 是另一包且为 `7.0.0-alpha.48`，不能把 alpha 合同写进本页。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 维护已有 Sequelize 代码库（例如存量 >1 万行 Model/migration，整库迁 Prisma 成本通常高于继续学）
-- 需要 Oracle / Db2 / Snowflake 等方言——官方/社区 dialect 覆盖面仍比多数新 ORM 宽
-- 团队以 JS 为主、已熟悉 Active Record，且查询以中等复杂度 CRUD 为主
+
+- 维护已有 Express / 早期 Nest 的 Sequelize v6 代码
+- 需要 Active Record 实例方法，并接受运行时 schema
+- dialect 落在上述 8 个 switch case 内，且能接受各 dialect 深浅不一
 
 **不适用**：
-- 全新项目 + TypeScript-first 团队 → 直接 [[prisma]] 或 [[drizzle]]
-- 强类型安全要求（编译期就要查出字段/SQL 形状错误）→ [[drizzle]] 或 Kysely
-- 极致性能 / 想直接写 SQL → Kysely（query builder，不是 ORM）
 
-## 历史小故事（可跳过）
+- 新项目若要以编译期 schema 为唯一真相——对照 [[prisma]] / [[drizzle]] / [[typeorm]] 的固定源码，不要外推“谁更新”
+- 需要 Identity Map / Unit of Work——那是 [[mikro-orm]] 的合同，不是 Sequelize v6
+- 想把 v7 alpha 行为写进生产结论
+- 需要本文未做的真实 dialect 联调或性能数字
 
-- **2010 年**：Sequelize 开源，赶上 Node 早期浪潮；Express + Sequelize + MySQL/Postgres 成了那十年常见后端三件套
-- **Active Record 路线**：把 Rails 那套「类既是表又是查询入口」搬进 JS，新人上手快，也埋下 Model 职责过重的种子
-- **TypeScript 补丁时代**：社区与官方陆续补类型；字段要手写 interface / 泛型，体验明显落后 schema-first 一代
-- **v6 → v7**：大版本想做更彻底的 TS 重写，破坏面大，稳定版推进慢，许多生产项目仍停在 v6
+## 固定版本边界
+
+- 本文绑定 `sequelize/sequelize@cb7f99ad05de56137672ab95586359ff6ceba004`。lightweight tag `v6.37.8` 与 npm `sequelize@6.37.8` 的 `gitHead` 一致。
+- 该提交根 `package.json` 的 `version` 是 `0.0.0-development`（发布流程占位）；对外版本以 npm `6.37.8` 与 tag 名为准。`engines.node` 为 `>=10.0.0`。
+- `@sequelize/core@7.0.0-alpha.48` 不在本页绑定范围。
+- 本文未安装依赖、未连库、未跑上游测试或 `sync()`，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **ActiveRecord 风格的代价**：动词挂对象上读起来自然，但 Model 既是 schema 又是查询又是数据，单元测试时三件事缠在一起
-2. **ORM 演进的方向**：从 Sequelize（运行时拼 SQL）→ [[typeorm]]（装饰器声明 schema）→ [[prisma]]（schema 文件 + 代码生成器），核心趋势是**类型信息往编译期推**
-3. **API 设计的稳定性 vs 进化**：Sequelize 在 v6 → v7 之间憋了 4 年想做 TS 重写，但因为破坏性太大一直没敢发 stable，老用户被困在 v6
-4. **"功能全 ≠ 体验好"**：8 种数据库都支持，但每种都不深；强类型要后补；migration 要双写——这是元老级库的通病
+1. **Active Record 把 schema、查询、实例生命周期叠在同一个 class 上**——好读，也难单测。
+2. **默认选项比文档印象更具体**：timestamps、复数表名、`whereMergeStrategy: overwrite` 都在 `Model.init`。
+3. **transaction 的两种调用约定必须分开记**：有回调才自动收尾。
+4. **多 dialect 的“支持”以 switch 为准**，错误文案和实现列表可以不一致。
+
+## 应用型自测
+
+1. `sequelize.define("User", attrs)` 和 `class User extends Model; User.init(attrs, { sequelize })` 是否走不同的持久化引擎？
+2. 不设 `timestamps` 时，`User` 默认真的没有时间列吗？
+3. `await sequelize.transaction()` 不传回调，抛错后会自动 rollback 吗？
+
+检查点：
+
+1. 不是。`define` 创建 subclass 后调用同一套 `Model.init`。
+2. 不是。`Model.init` 默认 `timestamps: true`。
+3. 不会。无回调只返回 `Transaction`，收尾由调用方负责。
 
 ## 延伸阅读
 
-- 官方文档：[Sequelize Docs](https://sequelize.org/) —— v6 文档详尽，有完整 Tutorial
-- 教程视频：[Sequelize Tutorial - Node.js with PostgreSQL](https://www.youtube.com/results?search_query=sequelize+tutorial)
-- 对比文章：搜 "Prisma vs Sequelize vs TypeORM" —— 几乎每年都有新文章重新比一次
-- [[prisma]] —— 强类型、schema-first 的下一代 ORM
-- [[drizzle]] —— TypeScript-first 的轻量 ORM / query builder
+- 官方文档：[sequelize.org](https://sequelize.org/)
+- 固定源码：[sequelize/sequelize](https://github.com/sequelize/sequelize) —— 本文绑定提交 `cb7f99ad05de56137672ab95586359ff6ceba004`
+- [[typeorm]] —— 装饰器 metadata + DataSource，对照 Active Record
+- [[mikro-orm]] —— Data Mapper + Identity Map
+- [[prisma]] —— schema-first 生成客户端
 
 ## 关联
 
-- [[prisma]] —— 同代竞品；解决了 Sequelize 的类型 + migration 双写痛点
-- [[typeorm]] —— 中间一代；用 TypeScript 装饰器风，思路接近 Java Hibernate
-- [[drizzle]] —— 最新一代；ts-first + 接近裸 SQL 的 query builder
-- [[postgresql]] —— Sequelize 最常配的数据库；多 dialect 适配器里支持最完整
+- [[typeorm]] —— 装饰器 entity / DataSource vs `define` / `Model.init`
+- [[mikro-orm]] —— `em.flush()` 对照 Sequelize 实例 `save()`
+- [[prisma]] —— 生成类型与 migration 工作流不同
+- [[drizzle]] —— SQL-like schema-as-code
+- [[postgresql]] —— 常见 dialect 之一；各 dialect 行为以对应 driver 为准
 
 ## 反向链接
 
