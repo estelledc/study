@@ -4,182 +4,159 @@ title: Drizzle ORM — 轻量 SQL-like ORM
 日期: 2026-05-29
 分类: ORM
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/drizzle-team/drizzle-orm
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 273c78071d4841b497f5144734b38294df7ec64b
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.45.2
 ---
 
 ## 是什么
 
-Drizzle 是一个 TypeScript 写的 ORM——你定义 schema、写 query，它帮你生成 SQL 并把结果映射成对象。日常类比：餐厅有两种点单方式——
-
-- [[prisma]] 是**点菜按钮**：你按"红烧肉"那个按钮，后厨怎么做你不管，端上来什么样也只能听服务员的。
-- Drizzle 是**菜谱本**：写下"五花肉切块、糖色、加酱油慢炖"——你看得见每一步，自己组合，但要懂一点烹饪。
-
-更直接的对比：
+Drizzle ORM 是一份 TypeScript 写的 SQL 层：schema 用普通 TS 对象声明，查询用链式 builder 拼成 SQL AST，再交给各 driver 执行。日常类比：它给你一本可组合的菜谱，而不是一排成品按钮——你看得见 `SELECT` / `WHERE` / `JOIN`，也要自己对 SQL 形状负责。
 
 ```ts
-// Prisma：你不写 SQL
-const rows = await prisma.user.findMany({ where: { active: true } })
+import { drizzle } from "drizzle-orm/node-postgres"
+import { eq } from "drizzle-orm"
+import { users } from "./schema"
 
-// Drizzle：你像写 SQL 一样组合（注意别和表名 users 撞名）
+const db = drizzle(pool)
 const rows = await db.select().from(users).where(eq(users.active, true))
 ```
 
-两边都给你类型安全，但 Drizzle 让 SQL 留在视野里。
+固定 `0.45.2` 的 `drizzle-orm` 包声明 `sideEffects: false`、零运行时依赖；PostgreSQL / MySQL / SQLite / SingleStore / Gel 等方言各自一份 core，driver 走独立入口。
 
 ## 为什么重要
 
-不理解 Drizzle 的判断，下面这些事都没法解释：
+不理解 Drizzle 的分层，下面这些事会对不上：
 
-- **不需要 codegen**：Prisma 每次改 schema 要跑 `prisma generate` 出客户端代码，Drizzle 直接读 TS 类型——启动快、CI 简单、IDE 跳转能跳到 schema 源文件。
-- **SQL 风格 API 让懂 SQL 的人零成本**：`select().from().where()` 一眼看出对应 SQL，不用学新概念。
-- **体积小，能塞 edge runtime**：Prisma Client 加上 query engine 几 MB，Drizzle 几十 KB——Cloudflare Workers / Vercel Edge / Bun 这些"启动要快、bundle 要小"的环境，Drizzle 是首选。
-- **类型 100% 从 schema 推**：你写一遍 schema，`InsertModel` / `SelectModel` / `UpdateModel` 全自动出来——这是 TS mapped type 5 年来的能力升级才让这条路线变可能。
+- 为什么改表结构不必跑客户端 codegen，但 migration SQL 仍要单独生成
+- 为什么 `db.query.users.findMany({ with: { posts: true } })` 只有把 `schema` 传进 `drizzle()` 才存在
+- 为什么换 Cloudflare D1 或 `postgres` 客户端时，query 代码能复用，import 路径却必须换
+- 为什么 README 写的 bundle 体积不能直接当成你项目里的产物大小
 
 ## 核心要点
 
-Drizzle 的设计可以拆成 **三块**：
+固定版本可以拆成四层：
 
-1. **Schema 用 TS 函数定义**：不像 Prisma 写一个独立 `.prisma` DSL 文件，Drizzle 让你 `pgTable('users', { id: serial('id').primaryKey() })`——schema 就是普通 TS 对象，可以 `import` / 跳转 / 重构。
+1. **Schema 就是 TS 对象**：`pgTable('users', { id: serial('id').primaryKey(), email: text('email').notNull() })` 返回带列属性的 table。`serial()` 构造时已经把 `notNull` 和 `hasDefault` 设为 true；`$inferSelect` / `$inferInsert` 从同一份 table 推出读写类型。
 
-2. **Query builder 链式调用对应 SQL**：`db.select().from(users).where(eq(users.id, 1))` 这条链每一节都对应 SQL 的一个子句——builder 的形状跟 SQL 1:1 映射，不藏 magic。
+2. **SQL builder 对应子句**：`db.select().from(users).where(eq(users.id, 1))` 每一步往 config 里塞子句。`eq` 通过 `bindIfParam` 把右侧值收成 `Param`，序列化时走占位符，不是字符串拼接。
 
-3. **Type inference 自动推 row 类型**：每个 query 的返回值类型是 schema 推出来的——加列、改列、删列，所有用到这个表的 query 类型立即变化，编译期提示。
+3. **Then 触发执行**：select/insert/update 都是 `QueryPromise`。`await` 才让 dialect 把 AST 编成 SQL，再交给 session/driver。没有隐藏的 query engine 进程。
 
-## 实践案例
+4. **关系查询是第二条入口**：传入 `schema` 后，`PgDatabase` 按表名挂 `db.query[tableName]`。`findMany` / `findFirst` 走 `RelationalQueryBuilder`，用 `with` 描述嵌套，而不是手写 `leftJoin`。没传 schema 时，类型会提示 generic 缺失。
 
-### 案例 1：定义一张表的 schema
+## 实践示例
+
+### 案例 1：用 pg-core 定义表
 
 ```ts
-import { pgTable, serial, text } from 'drizzle-orm/pg-core'
+import { pgTable, serial, text } from "drizzle-orm/pg-core"
 
-export const users = pgTable('users', {
-  id: serial('id').primaryKey(),
-  email: text('email').notNull(),
-  bio: text('bio'),  // 没写 notNull，所以可空
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull(),
+  bio: text("bio"),
 })
-```
 
-**逐部分解释**：
-
-- `pgTable(...)` 是工厂函数，返回一个带类型的 table 对象
-- `serial('id')` 是 PostgreSQL 的自增整数列；类型 builder 上链 `.primaryKey()` 标主键
-- `text(...).notNull()` 让 TS 类型层面把这一列从 `string | null` 变成 `string`——`notNull()` 不只是运行时调用，而是改了 generic 参数
-
-类型自动推出来：
-
-```ts
 type User = typeof users.$inferSelect
-//   ^? { id: number; email: string; bio: string | null }
+// { id: number; email: string; bio: string | null }
 ```
 
-### 案例 2：写一个 query
+**逐部分解释**：`pgTable` 把列 builder `build` 到 table 上；未标 `notNull` 的 `text` 在 select 类型里是 `string | null`。列名既可以写在 `serial('id')` 里，也可以留给 table 的 key 去 `setName`。
+
+### 案例 2：SQL-like 查询
 
 ```ts
-import { eq } from 'drizzle-orm'
-import { users } from './schema'
+import { eq } from "drizzle-orm"
 
 const list = await db.select().from(users).where(eq(users.id, 1))
-//    ^? Array<{ id: number; email: string; bio: string | null }>
 ```
 
-`list` 自动是 `User[]` 类型，没手写一处类型注解。背后发生了什么：
+空 `select()` 选出该表全部列。`where` 接收 `SQL` 节点；`1` 被绑成参数。需要表达式时用 `` sql<string>`lower(${users.email})` ``。
 
-1. `db.select()` 返回一个 builder（fluent 链式起点）
-2. `.from(users)` 把 schema 对象塞进 config，类型层面记下"我从 users 表来"
-3. `.where(eq(users.id, 1))` 注意 `eq` 是函数不是字符串——返回一个 `SQL` AST 节点，所以参数 `1` 自动参数化（防 SQL 注入）
-4. `await` 触发 `execute()`，把 AST 序列化成 `SELECT * FROM users WHERE id = $1` 加参数 `[1]`
+### 案例 3：关系查询与 drizzle-kit
 
-### 案例 3：用 drizzle-kit 生成 migration
-
-Drizzle 不在运行时生成代码，但**migration**还是要从 SQL 跑——`drizzle-kit` 是配套的命令行工具：
-
-```bash
-# 你改了 schema.ts，加了一列
-npx drizzle-kit generate
-# → 生成 drizzle/0001_add_bio_column.sql
-
-npx drizzle-kit migrate
-# → 把 0001 应用到数据库
+```ts
+const db = drizzle(pool, { schema })
+const withPosts = await db.query.users.findMany({ with: { posts: true } })
 ```
 
-drizzle-kit 读你的 `schema.ts` + 数据库当前状态，做 diff 算出"该加什么、该改什么"，写成 SQL 文件让你 review 后执行。这一步**不是 codegen 出客户端代码**——它只生成 migration SQL，运行时仍然零生成。
+`findFirst` 会把 `limit: 1` 写进同一套 relational config。配套 CLI 在同仓 `drizzle-kit@0.31.10`：`generate` 从 schema 差出 SQL 文件，`migrate` 按方言连接后应用，`push` 直接改库。`studio` 在本机起 HTTPS 服务（默认 `0.0.0.0:4983`），终端打印的入口是 `https://local.drizzle.studio`。Gel 方言在 `generate` / `migrate` / `studio` 上会直接退出。
 
 ## 踩过的坑
 
-1. **SQL 风格曲线陡（vs Prisma）**：Prisma 的 `findMany({ where, include, orderBy })` 看起来像写 JSON，Drizzle 让你写 `select().from().where().orderBy()`——如果你不熟 SQL，前者更顺。这是审美差异，没标准答案。
-
-2. **关系查询要手写 leftJoin / innerJoin**：
-
-   ```ts
-   // Prisma：一行 include 自动 join
-   await prisma.user.findMany({ include: { posts: true } })
-
-   // Drizzle 经典 builder：要自己写 join
-   await db.select().from(users).leftJoin(posts, eq(posts.userId, users.id))
-   ```
-
-   Drizzle 后来加了 RQB（relational query builder） `db.query.users.findMany({ with: { posts: true } })` 来追平这个差距，但运行时复杂度更高、SQL 不那么直观。
-
-3. **多 driver 配置略不同**：Drizzle 支持 PostgreSQL / MySQL / SQLite / PlanetScale / Neon / Cloudflare D1 / Bun SQL ……每个 driver 的初始化代码都要换一行 import：
-
-   ```ts
-   // node-postgres
-   import { drizzle } from 'drizzle-orm/node-postgres'
-   const db = drizzle(pool)
-
-   // Cloudflare D1
-   import { drizzle } from 'drizzle-orm/d1'
-   const db = drizzle(env.DB)
-   ```
-
-   schema / query 代码不变，但**配置层换 driver 时容易踩 import 路径**——文档要按 driver 翻一翻。
-
-4. **Studio 需连官方云端**：`drizzle-kit studio` 会连 drizzle.team 云端做可视化；有免费额度，完整能力偏商业化。Prisma Studio 则是免费本地进程——部署/隐私预期不同。
+1. **把 RQB 当成默认 API**：`db.query` 只在构造时拿到 relational schema 才会按表挂 builder；只传 client、不传 `schema` 时这条路不存在。
+2. **换 driver 只改连接串**：`drizzle-orm/node-postgres`、`drizzle-orm/postgres-js`、`drizzle-orm/d1`、`drizzle-orm/neon-http` 等各自 `construct` session。schema/query 可复用，入口模块不能混。
+3. **把 Studio 写成必须登录官方云控制台**：固定 kit 起的是本地服务，UI 域名是 `local.drizzle.studio`；这与「远程托管数据库浏览器」不是同一条合同。
+4. **把 README 的 ~7.4kb 或「零依赖」写成你的产物保证**：`package.json` 标了 `sideEffects: false`，最终体积仍取决于 import、bundler 和选中的 driver。
+5. **以为 0.45.2 就是仓库最新标签**：同仓已有 `v1.0.0-rc.4` 预发布标签；本文不绑定 RC 行为。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 想要"schema 在 TS 文件 + 看得见 SQL + 类型推导好"全占的 TS 项目
-- Edge runtime / serverless 部署（Cloudflare Workers / Vercel Edge / Bun）——bundle size 决定一切
-- 团队熟 SQL，喜欢 query 写法跟 SQL 一一对应
-- 不想要 codegen 步骤拖慢 CI
+- 希望 schema 留在 TypeScript、查询形状接近 SQL 的 TS 服务
+- 需要同一套 schema 接到多种 JS 运行时 driver（Node pool、serverless HTTP、D1 等）
+- 能接受 migration 由 kit 生成 SQL、运行时不再做 codegen
 
 **不适用**：
 
-- 团队不熟 SQL、想用 ORM 完全屏蔽 SQL → 选 Prisma
-- 已经有 legacy 数据库、不想要 migration 工具 / 关系系统、只要 type-safe builder → 选 Kysely
-- 习惯 Java/C# 的 Entity / Repository 心智 → 选 TypeORM 或 MikroORM
-- 100+ 表的大型 schema 且 tsc 编译速度敏感——Drizzle 类型推导用了大量 mapped type，编译时间会涨
+- 团队不打算读 SQL，只要对象 API 屏蔽方言差异
+- 需要 Gel 的 kit generate/migrate/studio——固定版本这三条命令会拒绝
+- 要把未实测的 bundle / 编译时长写成选型结论
+- 准备跟 1.0 RC 走，却仍按 0.45.2 文档推理
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2018 年**：Prisma 1.0 用 `.prisma` DSL + codegen 火起来，定义了一代 ORM 的"DSL 派"路线。
-- **2021 年**：Kysely 走另一条路——纯 TS query builder，不管 schema，让你手写 interface。"SQL builder 派"。
-- **2022 年**：Drizzle 第一个 commit，提出第三条路——schema 用 TS、builder 用 TS、类型从 schema 推。
-- **2023-2024 年**：Cloudflare Workers / Vercel Edge / Bun 成熟，bundle size 重要性飙升，Drizzle 成为 edge runtime ORM 首选。
-- **2026 年**：Drizzle 在 GitHub ~28k stars，跟 Prisma / TypeORM 三分天下。
+- 本文绑定 `drizzle-team/drizzle-orm@273c7807...`，`drizzle-orm` 包版本 `0.45.2`；npm latest 同号，未暴露 `gitHead`。
+- 同提交里 `drizzle-kit` 是 `0.31.10`（MIT），ORM 本体是 Apache-2.0。
+- 仓库另有 `v1.0.0-rc.4`（2026-06-27，prerelease）；升级前需重新固定 revision。
+- 本文未安装依赖、未连数据库、未跑 kit/studio、未测 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **Codegen 不是 ORM 的必需品**——Prisma 把"DSL + generate"作为核心卖点 5 年，Drizzle 证明了"用 TS mapped type 推同样能做到 type-safe"。
-2. **schema 在哪里决定一切**——schema 在 DSL 文件 / TS 对象 / 类装饰器，三个选择背后是三种心智，没对错。
-3. **SQL 可见性是审美选择**——Prisma 选择遮，Drizzle 选择露，团队习惯决定哪个顺。
-4. **bundle size 在 edge runtime 时代是硬指标**——10MB 跟 50KB 不是"快慢"差距，是"能跑跟不能跑"差距。
+1. **「无 codegen」只覆盖客户端**——类型从 mapped type 推，migration SQL 仍是独立产物。
+2. **两条查询入口合同不同**——SQL builder 始终可用；RQB 依赖构造期 schema。
+3. **driver 是模块边界，不是配置开关**——换运行时先换 import。
+4. **CLI 与 ORM 版本要一起读**——kit 命令、Studio 入口和方言拒绝列表都以固定提交为准。
+
+## 应用型自测
+
+1. `drizzle(pool)` 之后，`db.query.users.findMany()` 一定可用吗？
+2. `eq(users.id, 1)` 会把 `1` 嵌进 SQL 字符串吗？
+3. 固定 kit 的 `studio` 是不是必须连 drizzle.team 云端才能看表？
+
+检查点：
+
+1. 不一定。没把 `schema` 传给 `drizzle()` 时，`query` 不会按表挂上 RQB。
+2. 不会。`eq` 把右侧收成参数化 `Param`。
+3. 不是。kit 起本地 HTTPS 服务，打印的是 `https://local.drizzle.studio`。
 
 ## 延伸阅读
 
-- 官方文档：[orm.drizzle.team](https://orm.drizzle.team/)（按 driver 分章节）
-- 对比：[Drizzle vs Prisma](https://orm.drizzle.team/docs/comparison)
-- GitHub：[drizzle-team/drizzle-orm](https://github.com/drizzle-team/drizzle-orm)
-- [[kysely]] —— 纯 SQL builder 路线，对比基线
+- 文档：[orm.drizzle.team](https://orm.drizzle.team/)
+- 固定源码：[drizzle-team/drizzle-orm](https://github.com/drizzle-team/drizzle-orm) —— 本文绑定提交 `273c78071d4841b497f5144734b38294df7ec64b`
+- [[postgres-js]] —— 常见的轻量 pg 客户端，对应 `drizzle-orm/postgres-js`
+- [[prisma]] —— DSL + 客户端 codegen 的对照路线
+- [[kysely]] —— 更贴近裸 SQL 的 TS builder，不管 schema-as-code
 
 ## 关联
 
-- [[prisma]] —— DSL 派 ORM，Drizzle 直接对标
-- [[kysely]] —— 不管 schema 的 TS SQL builder
+- [[prisma]] —— schema-first + generate 的对照
+- [[kysely]] —— 纯 query builder，不内置 schema 运行时
 - [[typeorm]] —— Decorator / Active Record 一派
-- [[postgresql]] —— Drizzle 主力 dialect 是 pg-core
-- [[postgres-js]] —— 常与 Drizzle 搭配的轻量 pg 客户端
+- [[postgresql]] —— `pg-core` 的主力方言
+- [[postgres-js]] —— 常与 Drizzle 搭配的 Node pg 客户端
 
 ## 反向链接
 
