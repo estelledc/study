@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "pinia",
+    "digest_sha256": "2eacabbbc5998944cc87f736f24f45398b003300ab34145600ca950e163cc7d1"
+  },
+  "source_revision": "5d6ac5b86491041aa83a663a9a31189c707aff08",
+  "research_input_sha256": "d81380594d655e50d2cf35545327e5b12deb66bb20756a3aa3ed57d5e8a4e755",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates the root state tree, lazy defineStore creation, options-to-setup compilation, and skipHydrate / $reset boundaries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "createPinia, defineStore, $patch mergeReactiveObjects, storeToRefs and SSR skipHydrate were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Peer range and reset/hydration behavior are bounded to pinia 4.0.3; Vue 2 compatibility and runtime SSR were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:05:00.000Z"
+}

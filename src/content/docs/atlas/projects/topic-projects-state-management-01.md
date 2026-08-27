@@ -1,6 +1,6 @@
 ---
 title: "状态管理 · 项目 · 第 1 组"
-description: "8 条 状态管理 Atlas 分块"
+description: "10 条 状态管理 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 8 条，稳定上限为 100 条。
+本分块共 10 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -18,6 +18,8 @@ sidebar:
 | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | `jotai` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | `mobx` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | `nanostores` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Pinia — Vue 官方商店：一份根状态树上的懒创建 store](/study/projects/pinia/) | `pinia` | intermediate | UNVERIFIED | Vue 官方商店：根状态树上按 id 懒创建 store |
+| [Redux Toolkit — 把 Redux 收成 configureStore 与 createSlice](/study/projects/redux-toolkit/) | `redux-toolkit` | intermediate | UNVERIFIED | 官方 Redux 默认写法：configureStore、createSlice 与 Immer |
 | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | `valtio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | `xstate` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Zustand — 极简 React 状态管理](/study/projects/zustand/) | `zustand` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
