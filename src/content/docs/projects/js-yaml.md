@@ -1,6 +1,6 @@
 ---
 title: js-yaml — v5 把 load/dump 接到事件管线上
-description: 固定 5.4.1 仍叫 load/dump，内部已换成事件流再构造 JS
+description: v5 仍叫 load/dump，内部已换成事件流再构造 JS
 来源: https://github.com/nodeca/js-yaml
 日期: 2026-08-27
 分类: 解析
