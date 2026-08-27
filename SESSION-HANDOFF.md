@@ -16,6 +16,7 @@
   1. 用 GitHub/npm 元数据绑定 `algolia/algoliasearch-client-javascript@899993f9...` / `algoliasearch@5.57.0`，以及 `algolia/instantsearch@ec13aefa...` / `instantsearch.js@4.113.0`。
   2. 新建两篇 `study-v2` 页：客户端门面/host/retry/browser-Node 默认，以及 InstantSearch `searchClient` / `start` / `defer` / hydrate 边界。
   3. 新增 `docs/hosted-search-source-review-20260827-dw.md` 与两份 static receipt。
+  4. 同步 atlas 派生：`algolia` 的 `freshness.review_after` 从 2026-11-27 改为 2026-11-25，与 platform-api 90 天窗口一致。
 - acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；receipt digest 与固定 revision 一致，evidence state `UNVERIFIED`。
 - budget：2 个 blob-filtered worktree + 2 篇新页 + 1 个 PR；单 writer。
 - blocker：`benchmark-site --compare` 的 `tracked_files` 超限在 `main` 上已存在，属 `PARKED_HUMAN` 规模基线问题；本轮未改 baseline 或阈值。
