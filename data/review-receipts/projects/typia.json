@@ -1,13 +1,13 @@
 {
   "schema_version": "study-review-receipt-v1",
-  "generation": 2,
-  "predecessor_digest_sha256": "f1934b6b0e2bf954aed3930f36a1241487a22ad1fd090a721e6d0fc04ea04bfa",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
   "note": {
     "area": "projects",
-    "slug": "arktype",
-    "digest_sha256": "11c772eb6302ca7fe15b0ab7568163541015043d9c2cda26941da15502c90aaf"
+    "slug": "typia",
+    "digest_sha256": "415d712abc60f936445e8fa3173e09581a06d07f3512cd01710a7d7a4571e065"
   },
-  "source_revision": "03b1f015d9b7c5af5dac2caed1aeedefaf705ab3",
+  "source_revision": "00872d2952ecdb06c548c83fb4f2a376256b7d9a",
   "research_input_sha256": "a90e14efb7397d832a32986f3bc4e8b14757e29d6255c76e03c24606a94edebc",
   "reviewers": [
     {
@@ -16,7 +16,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 91,
       "warnings": [
-        "Explains strings as one definition form; also covers RegExp, thunks, and default onUndeclaredKey ignore."
+        "Separates type-first tags, fail-closed missing-transform behavior, and createValidate Standard Schema."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -29,7 +29,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 94,
       "warnings": [
-        "Definition parser, scope, compiled traversal, clone/morph, ArkErrors, and Standard Schema were inspected; benchmarks were not run."
+        "module.ts sentinels, ttsc plugin descriptor, _createStandardSchema, and json/protobuf/llm entry points were inspected; transform was not executed."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",
@@ -42,7 +42,7 @@
       "decision": "PASS_WITH_NOTES",
       "score": 92,
       "warnings": [
-        "npm arktype@2.2.3 exposes no gitHead; the page binds the reachable GitHub tag arktype@2.2.3."
+        "npm typia@14.0.4 exposes no gitHead; the page binds the reachable GitHub tag v14.0.4 and does not repeat unofficial speed claims."
       ],
       "execution": {
         "review_mode": "STATIC_REVIEW",

@@ -2512,6 +2512,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::typia",
+      "topic_id": "projects-forms-and-schema-validation"
+    },
+    {
       "note_id": "projects::unified",
       "topic_id": "projects-markdown-and-parsing"
     },

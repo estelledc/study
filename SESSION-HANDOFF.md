@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CW：ArkType + Typia
+
+- supervisor 状态：writer epoch `complete`；等待 review，不 merge。
+- status：`running` 已收口为本地 review-ready change set；未 merge、未 deploy。
+- objective：只把 `arktype` 重绑到可核验发布 tag，并新增 `typia` 的 `study-v2` 静态审查页。
+- scope：两篇项目页、两份 receipt、`docs/schema-validation-source-review-20260827-cw.md`、taxonomy curated assignment，以及 atlas / note-index / site-state / project-standard / 公开计数 / 本 handoff 的确定性派生。
+- activated_by：`explicit-parallel-writer-cw-20260827`。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`。
+- detector fingerprint：`zod` / `yup` / `valibot` / Ajv / TypeBox 已被开放 PR 占用；`arktype` 已是 study-v2 但 provenance 需按 2026-08-27 合同重验；`typia` 无页面。
+- external delta 计数：将形成 1 个可审查 PR；未 merge、未 deploy，D 轴不提升。
+- 已完成切片：
+  1. `arktype` 继续绑定 GitHub tag `arktype@2.2.3` / `03b1f015...`；披露 npm 无 `gitHead`；补 RegExp/thunk definition、默认 `deepClone` 与 `onUndeclaredKey: ignore`。
+  2. 新增 `typia` 绑定 tag `v14.0.4` / `00872d29...`；写明 fail-closed transform、`createValidate` Standard Schema 与 `assertEquals` 多余字段边界。
+  3. 新增共享 `docs/schema-validation-source-review-20260827-cw.md`；`arktype` receipt generation 2，`typia` receipt generation 1。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt digest/revision 匹配且 `evidence_state=UNVERIFIED`；`audit:counts` projects=962 / papers=1083 / total=2045；`audit:content-contract` 0 blocking、v2=90；`audit:project-standard` `benchmark-aligned=21`。`verify:ci` 在首个可审查提交之后跑。
+- budget：2 页、单 writer、1 个 PR；不 merge。
+- blocker：main 上已有规模 detector（tracked_files 超 baseline threshold）；本轮未改 baseline、阈值或证据布局。
+- stop conditions：slug 冲突、revision 不可核验、只能靠放宽门禁继续、或需要 merge/deploy 时停止。
+- 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge / 规模 baseline 的单独授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
