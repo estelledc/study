@@ -16,7 +16,7 @@
   1. `lerna` 绑定 `lerna/lerna@35d15a1567932be97759f512d8b8033dad72b411` / `10.0.1`，纠正 workspace 发现、v9 stub 命令、拓扑发布与 `lerna run` 默认 Nx。
   2. `pnpm` 绑定 `pnpm/pnpm@cef4816dfbc9aa7ffbe67fa727c1eb9be5d5e1e7` / `11.24.0`，纠正 `STORE_VERSION=v11`、lockfile `9.0`、`workspace:` 找不到即抛错，并披露 Rust port 不在本 npm 包入口。
   3. 新增共享 provenance 与两份 `STATIC_REVIEW` / `UNVERIFIED` receipt。
-- 验证结果：两页 quality-gate pass、0 advisory；receipt digest 一致且 `UNVERIFIED`；`audit:content-contract` blocking 0。
+- 验证结果：两页 quality-gate pass、0 advisory；receipt digest 一致且 `UNVERIFIED`；`audit:content-contract` blocking 0；`STUDY_CHANGED_FROM=7a2384d0... npm run verify:ci` 全绿（含 23 Playwright a11y、strict build）。
 - budget：1 个内容切片、2 页、1 个本地 writer、1 个 PR；不 merge。
 - stop conditions：本 epoch 在 PR 打开后结束；不自动 merge。
 - 下一次 wake 条件：owner review / CI，或新的显式范围。
