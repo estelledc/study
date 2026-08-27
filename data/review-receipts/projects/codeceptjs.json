@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "codeceptjs",
+    "digest_sha256": "7e342d6d4728b9aaf5a55c5edaa39c4145fbf22e052bba549d360ce9106187d9"
+  },
+  "source_revision": "8b918159193d4f9ff8d4eb6e7f720c168266e299",
+  "research_input_sha256": "d46812c146c7df307996b42c32dae893f23ae638724e466fe147a62e8dd85b36",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates actor/recorder queue, Mocha Scenario UI, helper backends, and git/npm version-field conflict with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Fixed tag 4.1.0 container, actor, recorder, Playwright helper defaults, workers/sharding, and version() were inspected; helpers were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm 4.1.0 and git package.json 4.0.0-rc.1 conflict is disclosed; Playwright timeouts remain helper-level, not CodeceptJS core."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "testcafe",
+    "digest_sha256": "781121f25ec80a081b3686846063cbf5128551f62116ddab4fb4d88adc9e5fd2"
+  },
+  "source_revision": "f210cfcdbb588c89bfb0b00273fa7ee0f1959f22",
+  "research_input_sha256": "d46812c146c7df307996b42c32dae893f23ae638724e466fe147a62e8dd85b36",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-dt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates hammerhead proxy, native automation fallback, compiler-injected fixture/test, and missing-await tracking with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-dt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Fixed v3.7.6 createTestCafe, bootstrapper native-automation disable, compiler list, and TestController executionChain were inspected; browsers were not launched."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-dt",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Timeout, TypeScript compiler pins, and remote-browser native-automation claims are bounded to testcafe 3.7.6; no upstream tests were run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

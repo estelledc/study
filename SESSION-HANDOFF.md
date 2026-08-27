@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DT · TestCafe / CodeceptJS
+
+- status：`running` → writer epoch `complete`；等待 PR review，不 merge。
+- 起始 ref：`7a2384d098`（当时 `origin/main`）。
+- objective：为 `testcafe` 与 `codeceptjs` 新增 study-v2 页，绑定可复查 revision；证据为 `STATIC_REVIEW` / `STATIC_ANALYSIS`，验证状态保持 `UNVERIFIED`。
+- scope：两页正文、2 份 generation 1 receipt、`docs/e2e-testcafe-codeceptjs-source-review-20260827-dt.md`、taxonomy / atlas / site-state / 公开计数、本 handoff；2 个 ignored worktree。未安装上游依赖、未启动浏览器、未跑上游测试。
+- activated_by：`explicit-user-parallel-writer-dt-20260827`。
+- detector fingerprint：仓库无 testcafe/codeceptjs 页；用户指定该 e2e 对，并排除 playwright/cypress/puppeteer/webdriverio。
+- external delta：按授权 push + 开 1 个 PR；未 merge、未 deploy，D 轴不含合并/发布。
+- 完成切片：
+  1. `testcafe` 绑定 `DevExpress/testcafe@f210cfcd...` / `testcafe@3.7.6`（tag 与 npm gitHead 一致），写清 hammerhead Proxy、默认 native automation、remote 回退、compiler 注入 `fixture`/`test` 与漏 `await` 跟踪。
+  2. `codeceptjs` 绑定 `codeceptjs/CodeceptJS@8b918159...` / npm `4.1.0`，写清 Mocha Scenario UI、actor/recorder 队列、四个标准 acting helper，并披露工作树 `package.json#version=4.0.0-rc.1` 与 npm tarball `4.1.0` 冲突。
+  3. 新增共享 `docs/e2e-testcafe-codeceptjs-source-review-20260827-dt.md` 与两份 generation 1 static receipt。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，`review_mode=STATIC_REVIEW`，evidence 保持 `UNVERIFIED`。
+  - `audit:counts` / `audit:content-contract` / `audit:site-state`：公开计数 1083+963=2046，v2=105，blocking 0。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=927`。
+- budget：2 个 blob-filtered worktree + 2 页 + 派生刷新；单 writer。
+- blocker：规模 baseline 仍是既有 `PARKED_HUMAN` 信号（main 已超 threshold）；本轮未改 baseline/阈值。
+- stop conditions：本轮已完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge 的授权。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

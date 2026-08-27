@@ -1860,6 +1860,10 @@
       "topic_id": "projects-databases-and-storage-engines"
     },
     {
+      "note_id": "projects::codeceptjs",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
       "note_id": "projects::codemirror",
       "topic_id": "projects-editors-and-rich-text"
     },
@@ -2477,6 +2481,10 @@
     },
     {
       "note_id": "projects::testing-library",
+      "topic_id": "projects-testing-and-verification"
+    },
+    {
+      "note_id": "projects::testcafe",
       "topic_id": "projects-testing-and-verification"
     },
     {
