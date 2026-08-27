@@ -1876,6 +1876,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::cookies",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::d3",
       "topic_id": "projects-data-visualization"
     },
@@ -2030,6 +2034,10 @@
     {
       "note_id": "projects::jotai",
       "topic_id": "projects-state-management"
+    },
+    {
+      "note_id": "projects::js-cookie",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::js-joda",

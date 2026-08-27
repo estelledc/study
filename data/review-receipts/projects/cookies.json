@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cookies",
+    "digest_sha256": "12056119b50f27d74b6c0c21e555ed0e09e2c8f9539bf937bf58cf0b05614f4e"
+  },
+  "source_revision": "b58c7207bb80a900f8db527bc847b4e0a8d49009",
+  "research_input_sha256": "15a052e99e7bb39004c8f1e53d450ea1ee0f858941894038694f774374bd5603",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-im",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates lazy Cookie-header parse, name.sig Keygrip rotation, millisecond maxAge, and secure-over-HTTP throw."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-im",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "index.js constructor, get/set, Cookie.toHeader, and express/connect helper were inspected; keygrip internals and upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-im",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds 0.9.1 where tag, package and npm gitHead agree; no HTTP or bundle claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 967,
+    "total": 969,
     "by_status": {
-      "benchmark-aligned": 85,
+      "benchmark-aligned": 87,
       "needs-evidence": 882
     }
   },
@@ -3749,6 +3749,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "cookies",
+      "title": "cookies — 给 Node 请求响应配可签名的 Cookie / Set-Cookie 罐子",
+      "source": "https://github.com/pillarjs/cookies",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "coqui-tts",
@@ -8980,6 +9000,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "js-cookie",
+      "title": "js-cookie — 把 document.cookie 收成可替换的浏览器读写器",
+      "source": "https://github.com/js-cookie/js-cookie",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "js-joda",

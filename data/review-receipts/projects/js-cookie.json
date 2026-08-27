@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "js-cookie",
+    "digest_sha256": "1a65a141b1b8023b3b375a1d14b5b7e934ddbe335c21be8e8548c31927fd7cb9"
+  },
+  "source_revision": "d7a10966e3f2cbcbfa96e34e7544d23aab9e3372",
+  "research_input_sha256": "15a052e99e7bb39004c8f1e53d450ea1ee0f858941894038694f774374bd5603",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-im",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates document.cookie no-op, day-based expires, frozen withAttributes/withConverter, and remove path matching."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-im",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "src/api.mjs, converter, assign, and package exports were inspected; dist/ is absent from the tag tree; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-im",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds source tag v3.0.8 and discloses npm gitHead as the parent version-bump commit; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:05:00.000Z"
+}

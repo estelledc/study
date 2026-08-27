@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2050,
-      "classified": 2003,
+      "total": 2052,
+      "classified": 2005,
       "unclassified": 47,
       "unknown_difficulty": 1973,
       "empty_description": 1968
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 967,
-        "classified": 939,
+        "total": 969,
+        "classified": 941,
         "unclassified": 28,
         "unknown_difficulty": 959,
         "empty_description": 955
@@ -39469,6 +39469,37 @@
       }
     },
     {
+      "id": "projects::cookies",
+      "area": "projects",
+      "slug": "cookies",
+      "title": "cookies — 给 Node 请求响应配可签名的 Cookie / Set-Cookie 罐子",
+      "description": "介绍 pillarjs/cookies 0.9.1 如何用 Keygrip 签名、毫秒 maxAge 和默认 HttpOnly 读写 HTTP cookie。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/cookies/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
+      }
+    },
+    {
       "id": "projects::coqui-tts",
       "area": "projects",
       "slug": "coqui-tts",
@@ -46478,6 +46509,37 @@
       "atlas": {
         "chunk_id": "topic-projects-cli-tools-01",
         "chunk_route": "/study/atlas/projects/topic-projects-cli-tools-01/"
+      }
+    },
+    {
+      "id": "projects::js-cookie",
+      "area": "projects",
+      "slug": "js-cookie",
+      "title": "js-cookie — 把 document.cookie 收成可替换的浏览器读写器",
+      "description": "介绍 js-cookie 3.0.8 如何用 converter、冻结属性和按天 expires 包装 document.cookie。",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-general-developer-tools"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-general-developer-tools",
+        "raw_category": "工具库"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/js-cookie/",
+      "atlas": {
+        "chunk_id": "topic-projects-general-developer-tools-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-general-developer-tools-01/"
       }
     },
     {
@@ -65844,7 +65906,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-general-developer-tools-01/",
-      "entries": 16
+      "entries": 18
     },
     {
       "id": "topic-projects-headless-ui-components-01",
