@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer IF：lossless-json + json-bigint
 
-- status：writer epoch `running` → 准备 push / 开 PR；lane 由 HN 改到 IF（intern 占用 HM–ID）。
+- status：writer epoch `complete`；lane 为 IF（intern 占用 HM–ID，不使用 HN）；PR #284 待 review。
 - 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
 - objective：为缺失的 JSON-number 双子补齐 `lossless-json` 与 `json-bigint` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/json-number-source-review-20260827-if.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
@@ -15,12 +15,19 @@
   1. `lossless-json` 绑定 tag `v4.3.1` → `a19ae09763876582d120d2f3de4cbd7741faa427`，与 npm `gitHead` 一致。
   2. `json-bigint` 绑定 tag `v1.0.0` → `390482a8b6b460f98c61c3b65915dbd91fc8e7b2`，与 npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 83 → 85，公开项目数 966 → 968。
-- acceptance checks：两页 `quality-gate.mjs` 已 pass、0 advisory；其余审计与 `verify:ci` 在本 PR 后续提交补跑。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、154 v2。
+  - `audit:counts` / `audit:site-state`：projects=968、papers=1083、total=2051。
+  - `audit:project-standard`：benchmark-aligned=85、snapshot CURRENT。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，除首次缺 Playwright 浏览器外全绿；安装 Chromium 后 23 个 a11y 测试通过，后续 Pages/Atlas/站点预算与 drift 门禁通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
-- stop conditions：一个 PR，不 merge，不发明下一对。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/284 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
