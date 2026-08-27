@@ -22,11 +22,12 @@
   - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=1ecba4040 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，审计与 strict build 先过；首次 a11y 因本机缺 Playwright 浏览器失败，安装 Chromium 后 23 个 Playwright 测试、Pages artifact、Atlas/站点预算与 diff 门禁通过。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
-- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：用 GitHub 查看本 PR；未授权前不要 merge。
+- 下一次 wake 条件：owner review https://github.com/estelledc/study/pull/268，或另行授权 merge。
+- 下一条命令：查看 PR #268；未授权前不要 merge。
 - superseded_by：`none`。
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
