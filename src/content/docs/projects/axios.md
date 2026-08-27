@@ -10,13 +10,13 @@ trust:
   note_type: library
   canonical_source: https://github.com/axios/axios
   source_authority: AUTHOR_PRIMARY
-  accessed_at: '2026-08-27'
-  immutable_revision: 84a9f3b9a4f3244b8c8e818f557d64c7b964fb25
+  accessed_at: '2026-07-17'
+  immutable_revision: a092bae50d1884782151b2fcea12974d6da6e376
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
-  reviewed_at: '2026-08-27'
-  review_after: '2026-11-27'
-  applicable_version: 1.20.0
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
+  applicable_version: 1.18.1
 ---
 
 ## 是什么
@@ -29,7 +29,7 @@ Axios 是一个同时面向浏览器与 Node 的 HTTP 客户端。日常类比�
 const {data} = await axios.get("/api/users", {params: {limit: 10}});
 ```
 
-固定 1.20.0 的默认 adapter 列表仍是 XHR、Node HTTP、Fetch。Axios 还负责 config 合并、request/response transform、interceptor 与按 `validateStatus` 决定 resolve/reject。同版本还提供 `axios.query()` 作为带 body 的幂等读方法，但不生成 `queryForm`。
+固定源码的默认 adapter 列表是 XHR、Node HTTP、Fetch。Axios 还负责 config 合并、request/response transform、interceptor 与按 `validateStatus` 决定 resolve/reject。
 
 ## 为什么重要
 
@@ -46,11 +46,11 @@ Axios 主链拆成五步：
 
 1. **合并 config 与 headers**：instance defaults 和本次请求被合并，method 被规范化，common/method headers 被拍平。
 
-2. **运行 request interceptors**：它们可以同步或异步修改 config，也可以根据 `runWhen` 跳过。默认 `legacyInterceptorReqResOrdering: true`，后注册的 request interceptor 先执行；只有显式关掉这项才会变成先注册先执行。
+2. **运行 request interceptors**：它们可以同步或异步修改 config，也可以根据 `runWhen` 跳过。失败处理规则必须按当前版本测试，不能只凭“Promise 链”类比。
 
-3. **压平 config + transform request + 选择 adapter**：`dispatchRequest()` 先用 `toSafeFlatObject()` 去掉 interceptor 可能带入的原型成员，再转换 body，并从 XHR/HTTP/Fetch 候选中找当前环境可用实现。
+3. **transform request + 选择 adapter**：`dispatchRequest()` 先转换 body，再从 XHR/HTTP/Fetch 候选中找当前环境可用实现。
 
-4. **adapter 执行并 settle**：adapter 产生 response，`validateStatus` 决定 resolve 还是构造 `AxiosError` reject。默认接受 200-299。Fetch adapter 会用 `composeSignals` 把已有 `signal`/`CancelToken` 与 `timeout` 合成；这和 ofetch 1.5.0“已有 signal 就不装 timeout”不同。
+4. **adapter 执行并 settle**：adapter 产生 response，`validateStatus` 决定 resolve 还是构造 `AxiosError` reject。默认接受 200-299。
 
 5. **transform response + response interceptors**：成功与错误 response 都可能经过转换；之后 response interceptors 继续处理 Promise。
 
@@ -120,9 +120,7 @@ controller.abort();
 
 3. **混淆 HTTP error 与 network error**：`validateStatus` 只决定已有 response 的状态处理；DNS、连接和取消错误没有相同的 response 字段。
 
-4. **以为已有 signal 就会忽略 timeout**：XHR/HTTP adapter 各自实现 timeout；Fetch adapter 会把 timeout 与用户 signal 合成。不能把 ofetch 1.5.0 的“已有 signal 就不装 timeout”外推到 axios。
-
-5. **TypeScript generic 不做运行时校验**：`api.get<User>("/x")` 只是骗 IDE，服务端返 `null` 也照样过编译。要安全得配 zod / valibot 在拦截器或 transform 里跑 parse。
+4. **TypeScript generic 不做运行时校验**：`api.get<User>("/x")` 只是骗 IDE，服务端返 `null` 也照样过编译。要安全得配 zod / valibot 在拦截器或 transform 里跑 parse。
 
 ## 适用 vs 不适用场景
 
@@ -142,10 +140,9 @@ controller.abort();
 
 ## 固定版本边界
 
-- 本文绑定 `axios/axios@84a9f3b9...`，GitHub tag 与 npm `gitHead` 均为 `1.20.0`。
+- 本文绑定 `axios/axios@a092bae5...`，默认分支为 `v1.x`，包版本为 `1.18.1`。
 - 固定 package exports 会按 browser、Node、Bun 与 React Native 条件选择构建。
 - 默认 adapter 候选是 `xhr`、`http`、`fetch`，默认 timeout 为 0，默认不提供 retry policy。
-- 上一轮绑定的 `1.18.1` / `a092bae5...` 已不是访问当日 GitHub `v1.18.1` tag；本轮改绑三者一致的 1.20.0。
 - 本文未安装依赖、运行请求、adapter 测试或性能 benchmark，状态保持 `UNVERIFIED`。
 
 ## 学到什么
@@ -159,19 +156,19 @@ controller.abort();
 
 1. 把 `validateStatus` 改为始终返回 `true` 后，500 response 还会自动进入 catch 吗？
 2. 两个请求同时收到 401，各自在 response interceptor 调 `refreshToken()`。`_retry` 能否防止两次 refresh？
-3. 已传入 `AbortSignal` 并设置 `timeout: 1000`。固定 1.20.0 的 Fetch adapter 是否一定忽略 timeout？
+3. `api.get<User>()` 编译通过，是否说明 response.data 一定是 User？
 
 检查点：
 
 1. 不会因状态码自动 reject；业务仍应自行检查 response。
 2. 不能。它只标记各自的原请求，需要共享 single-flight refresh。
-3. 不会。`composeSignals` 会把 timeout 与已有 signal 合成。
+3. 不能。泛型只影响静态类型，外部数据仍需 runtime validation。
 
 ## 延伸阅读
 
 - 官网文档：[axios-http.com](https://axios-http.com/)（中文版完整，例子多）
 - 源码精读：[lib/core/Axios.js](https://github.com/axios/axios/blob/v1.x/lib/core/Axios.js)、[InterceptorManager.js](https://github.com/axios/axios/blob/v1.x/lib/core/InterceptorManager.js)
-- 固定源码：[axios/axios](https://github.com/axios/axios) —— 本文绑定提交 `84a9f3b9a4f3244b8c8e818f557d64c7b964fb25`
+- 固定源码：[axios/axios](https://github.com/axios/axios) —— 本文绑定提交 `a092bae50d1884782151b2fcea12974d6da6e376`
 - 对比文章：[ky vs axios vs got](https://github.com/sindresorhus/ky#comparison)（sindresorhus 视角）
 - [[tanstack-query]] —— React 时代 axios 多半被它包一层用
 - [[zod]] —— 配 axios 把"运行时类型安全"补上

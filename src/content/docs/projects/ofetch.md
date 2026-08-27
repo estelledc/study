@@ -10,12 +10,12 @@ trust:
   note_type: library
   canonical_source: https://github.com/unjs/ofetch
   source_authority: AUTHOR_PRIMARY
-  accessed_at: '2026-08-27'
+  accessed_at: '2026-07-17'
   immutable_revision: 47fe80799e23406dd0fb1c504bb493b6a6d0a5af
   evidence_type: STATIC_ANALYSIS
   verification_status: UNVERIFIED
-  reviewed_at: '2026-08-27'
-  review_after: '2026-11-27'
+  reviewed_at: '2026-07-17'
+  review_after: '2026-10-17'
   applicable_version: 1.5.0
 ---
 
@@ -84,7 +84,7 @@ const api = ofetch.create({
 const data = await api<User[]>("/users");  // 实际请求 https://api.example.com/users
 ```
 
-不显式配置时，非 payload method 默认重试一次，POST/PUT/PATCH/DELETE 默认零次，默认 delay 为 0。默认 `retryStatusCodes` 含 408/409/425/429/500/502/503/504。这里显式写 `retry: 2` 后，所有 method 都可能按状态码重试；调用方必须证明副作用可去重。
+不显式配置时，非 payload method 默认重试一次，POST/PUT/PATCH/DELETE 默认零次，默认 delay 为 0。这里显式写 `retry: 2` 后，所有 method 都可能按状态码重试；调用方必须证明副作用可去重。
 
 ### 案例 2.5：拿原始 Response 看 status / headers
 
@@ -112,7 +112,7 @@ const data = await ofetch<User>("/api/users/1", {
 
 2. **以为 retry 默认指数退避**：默认 `retryDelay` 是 0。需要退避、jitter 或尊重业务预算时必须显式实现。
 
-3. **同时设置 signal 与 timeout**：固定实现只在没有 `signal` 时创建 timeout controller；已有 signal 时不能假定 `timeout` 仍会生效。axios 1.20.0 的 Fetch adapter 会合成两者，不能互相外推。
+3. **同时设置 signal 与 timeout**：固定实现只在没有 `signal` 时创建 timeout controller；已有 signal 时不能假定 `timeout` 仍会生效。
 
 4. **把 `destr` 容错当 schema validation**：它是 parser，不会证明字段、类型或业务约束；外部数据仍需 zod/valibot 等 runtime schema。
 
@@ -136,7 +136,7 @@ const data = await ofetch<User>("/api/users/1", {
 ## 固定版本边界
 
 - 本文绑定 `unjs/ofetch@47fe8079...`，tag 与 package 均为 `1.5.0`。
-- 2026-08-27 复验：npm latest 仍是 `1.5.1`，但其 `gitHead=cd3ed5ab...` 在 canonical GitHub 仓库不可达；GitHub `v1.5.1` tag 仍指向自报 `2.0.0-alpha.3` 的提交。本轮不猜测或改绑。
+- npm 把 1.5.1 标为 latest，但其 `gitHead` 在 canonical GitHub 仓库不可达，GitHub `v1.5.1` tag 又指向自报 2.0 alpha 的提交；升级前需重新建立可复查 provenance。
 - 固定版本依赖 `ufo`、`destr`、`node-fetch-native`；条件 exports 为不同运行时选择入口。
 - 本文未安装依赖、运行上游测试、发送请求或测量 bundle，状态保持 `UNVERIFIED`。
 
