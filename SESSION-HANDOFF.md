@@ -22,11 +22,12 @@
   - `audit:content-contract`：0 blocking。
   - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=943`。
   - `git diff --check`：通过。
+  - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿；2287 HTML、2286 sitemap URLs、23 Playwright tests。
 - budget：1 个内容切片、2 篇新项目、1 个可写切片、1 份 PR。
-- external_outcome：一份 review-ready PR，不 merge。
-- stop conditions：本 epoch 在开 PR 后停止；不 merge、不部署。
+- external_outcome：PR https://github.com/estelledc/study/pull/123 ，不 merge。
+- stop conditions：本 epoch 已完成；不 merge、不部署。
 - 下一次 wake 条件：owner review / CI；无新授权不开启下一内容批次。
-- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`（规范 Node 22.23.1）。
+- 下一条命令：在 PR #123 上看 CI；不要 merge。
 - superseded_by：`none`。
 
 ## 2026-07-17 Research 标杆迁移 epoch 7
