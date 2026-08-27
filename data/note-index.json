@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -45470,6 +45470,37 @@
       }
     },
     {
+      "id": "projects::hookable",
+      "area": "projects",
+      "slug": "hookable",
+      "title": "hookable — 可 await 的顺序 hook 表",
+      "description": "固定版本把 hook 登记成数组，callHook 按 thenable 串行往下走",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/hookable/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::hot-chocolate",
       "area": "projects",
       "slug": "hot-chocolate",
@@ -62227,6 +62258,37 @@
       }
     },
     {
+      "id": "projects::unctx",
+      "area": "projects",
+      "slug": "unctx",
+      "title": "unctx — 把当前实例藏进调用栈的组合上下文",
+      "description": "固定版本用同步注入、可选 ALS 或编译期 await 改写来恢复上下文",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "基础设施"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/unctx/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::unified",
       "area": "projects",
       "slug": "unified",
@@ -65775,7 +65837,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/",
-      "entries": 44
+      "entries": 46
     },
     {
       "id": "topic-projects-internationalization-01",

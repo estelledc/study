@@ -1992,6 +1992,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::hookable",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::i18next",
       "topic_id": "projects-internationalization"
     },
@@ -2518,6 +2522,10 @@
     {
       "note_id": "projects::typesense",
       "topic_id": "projects-databases-and-storage-engines"
+    },
+    {
+      "note_id": "projects::unctx",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::unified",

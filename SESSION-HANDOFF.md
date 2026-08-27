@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GA：hookable + unctx 静态审查
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`9adc8b99165dfaf015777d5ca88c629ebfa961aa`（`origin/main`，#80 merge）。
+- objective：为 PARALLEL writer GA 新增 `hookable` / `unctx` 两页，绑定可达源码 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`；产出 `docs/hooks-context-source-review-20260827-ga.md` 与一个 PR，不 merge。
+- scope：两页正文、2 份 generation 1 receipt、共享审查文档、taxonomy / note-index / project-standard / site-state / 公开规模文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle 或 ALS。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-ga`。
+- detector fingerprint：`origin/main` 无 `hookable` / `unctx` 页；两库是互补的 hooks-context 对，适合作为 writer GA 目标而非 fallback。
+- external delta 计数：分支已授权 push + 一个 PR；未 merge、未 deploy。
+- 已完成切片：
+  1. `hookable` 绑定 tag `v6.1.1` / `b77477c027039362ee0ec4f39b8998c4f1b21707`（npm `gitHead` 一致），修正顺序 `callHook`、thenable 等待、错误 reject 与 `addHooks` 展平。
+  2. `unctx` 绑定 tag `v3.0.1` / `6586739a70bd43a67437f72f00c186dd762b5125`（npm 无 `gitHead`，已披露），修正同步 `call` 在首个 await 后丢失、ALS WeakRef、默认 transform 不含 `callAsync`。
+  3. 新增共享 `docs/hooks-context-source-review-20260827-ga.md` 与两份 generation 1 static receipt。
+- 验证结果：两页 `quality-gate.mjs` 全部 pass、0 advisory。其余门禁以本轮命令为准，不在此复制易过期数量。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码新增；单 writer。
+- blocker：规模 baseline 超限仍先于本切片存在；本轮未改 baseline、阈值或证据布局。
+- stop conditions：一个 PR 已打开且未 merge 即结束；merge / deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

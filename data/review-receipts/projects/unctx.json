@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "unctx",
+    "digest_sha256": "9a6f8f3bf67e999a139e7b45f2c2906ef2b7a4f407a999053ca48df14fa2b0ad"
+  },
+  "source_revision": "6586739a70bd43a67437f72f00c186dd762b5125",
+  "research_input_sha256": "2fd37e2146ce5e5c4f25e9783aa8246c02c8f0552f941393a9ec70522123e3ff",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ga",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains sync call loss after await, ALS WeakRef, and default transform not covering callAsync."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ga",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createContext, call/callAsync, namespace, plugin, and transform were inspected; ALS and plugin were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ga",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm 3.0.1 has no gitHead; claims stay bounded to reachable GitHub tag 6586739a and UNVERIFIED static review."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:25:00.000Z"
+}
