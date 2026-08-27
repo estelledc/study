@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "iron-webcrypto",
+    "digest_sha256": "25fc469f8ed97ada2cc184882890c75b7d16fda7333b6848a7340a5016c2de59"
+  },
+  "source_revision": "214ba8a0287005971d5b5c12c236dbbbd5f83e00",
+  "research_input_sha256": "ab978f68038409a1c8a915c62dc41e930381795d450a1ee1b225c2e2b6b617dc",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates v2 global crypto, Fe26.2 eight-part seals, PBKDF2-SHA-1 defaults, and lossless JSON rejection with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected seal/unseal, generateKey, lossless JSON, and tests; SubtleCrypto and deno task test were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gm",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to iron-webcrypto 2.0.0; v1 crypto injection, @hapi/iron interop, and AEAD upgrades are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:40:00.000Z"
+}

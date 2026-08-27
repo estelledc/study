@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -45973,6 +45973,38 @@
       }
     },
     {
+      "id": "projects::iron-webcrypto",
+      "area": "projects",
+      "slug": "iron-webcrypto",
+      "title": "iron-webcrypto — 用 Web Crypto 把对象封成可核验字符串",
+      "description": "固定 v2 用全局 Web Crypto 做 AES-CBC 加 HMAC，输出 Fe26 密封串",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-authentication"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-authentication",
+        "matched_category": "认证",
+        "raw_category": "认证"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/iron-webcrypto/",
+      "atlas": {
+        "chunk_id": "topic-projects-authentication-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-authentication-01/"
+      }
+    },
+    {
       "id": "projects::istio",
       "area": "projects",
       "slug": "istio",
@@ -62227,6 +62259,38 @@
       }
     },
     {
+      "id": "projects::uncrypto",
+      "area": "projects",
+      "slug": "uncrypto",
+      "title": "uncrypto — 用条件导出对齐 Web Crypto 表面",
+      "description": "用条件导出把 Node crypto 与 globalThis crypto 收成同一组 Web Crypto 表面",
+      "difficulty": "beginner",
+      "canonical_topics": [
+        "projects-authentication"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-authentication",
+        "matched_category": "认证",
+        "raw_category": "认证"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/uncrypto/",
+      "atlas": {
+        "chunk_id": "topic-projects-authentication-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-authentication-01/"
+      }
+    },
+    {
       "id": "projects::unified",
       "area": "projects",
       "slug": "unified",
@@ -65453,7 +65517,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-authentication-01/",
-      "entries": 5
+      "entries": 7
     },
     {
       "id": "topic-projects-backend-and-apis-01",

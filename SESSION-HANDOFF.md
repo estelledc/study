@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Web Crypto 双子 PARALLEL writer GM
+
+- status：Program `active`；本地 writer epoch `complete`；用户显式授权 push + 一枚 PR、禁止 merge。
+- 起始 ref：`9adc8b991`（`Bind bun and deno to reachable static revisions (#80)`，本分支从 `origin/main` 拉出）。
+- objective：新增 `iron-webcrypto` 与 `uncrypto` 两页源码绑定 study-v2 静态审查；选题依据是调用方指定的 Web Crypto 双子（仓库原先没有这两篇笔记，未改走 fallback）。
+- scope：两页正文、2 份 generation 1 receipt、共享 `docs/webcrypto-source-review-20260827-gm.md`、note-index / project-standard / site-state / atlas / 公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未调用 SubtleCrypto、未跑 deno/vitest、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-gm-20260827`。
+- detector fingerprint：目标 slug 不存在；`iron-webcrypto@2.0.0` 的 tag 与 npm `gitHead` 同指 `214ba8a0...`；`uncrypto@0.1.3` 的 npm `gitHead` 为 `a0cd4661...`，Git tag `v0.1.3` 却指向自报 `0.1.2` 的祖先 `90a308f0...`。
+- external delta：分支将 push 并打开一枚 PR；未 merge、未 deploy。D 轴在 merge 前不提升。
+- 完成切片：
+  1. `iron-webcrypto` 绑定 tag `v2.0.0` / `214ba8a0287005971d5b5c12c236dbbbd5f83e00`，纠正 v2 不再注入 crypto 第一参数、`Fe26.2` 八段协议、PBKDF2-SHA-1 默认迭代 1、无损 JSON 拒绝非 plain object。
+  2. `uncrypto` 绑定 npm 可达 `gitHead` `a0cd466151b2b728a54b085c931c7173fdecc26b`，披露 tag/npm 分裂；纠正条件导出分叉、`subtle` 空对象回退、Node `randomUUID` 走 `node:crypto`。
+  3. 新增共享 `docs/webcrypto-source-review-20260827-gm.md` 与两份 generation 1 static receipt；派生首页“已对齐标杆”从 79 刷新为 81，项目笔记 963→965。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking。
+  - `audit:project-standard`：`benchmark-aligned=81`、`needs-evidence=884`、snapshot CURRENT。
+  - `audit:counts` / `audit:site-state`：projects=965、papers=1083、total=2048。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页新增静态源码笔记 + 派生刷新；单 writer；预算内完成。
+- blocker（先于本切片存在）：规模 baseline 是否仍超限以 `benchmark-site --compare` 实时结果为准；本轮未改 baseline、阈值或证据布局。
+- stop conditions：本轮已完成；merge 与 deploy 均需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`；PR 状态用 GitHub 查看。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
