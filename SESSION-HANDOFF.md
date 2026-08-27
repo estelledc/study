@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EO duration-format epoch
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`。
+- status：`running` 已收口为本轮 review-ready change set；未 merge、未 deploy。
+- 起始 ref：`42caf48968a4901b8aa77f699b0567cc475beb20`（origin/main，PR #57 merge 后对齐）。
+- objective：按用户指定目标新建 `ms` 与 `pretty-ms` 源码绑定 study-v2 页（STATIC_REVIEW / UNVERIFIED），并写 `docs/duration-format-source-review-20260827-eo.md`。实时确认这两页原先不存在；未改走 fallback。
+- scope：两页新正文、2 份 generation 1 receipt、共享审查文档、note-index / project-standard / site-state / atlas / 公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行 mocha / ava、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-eo-20260827`。
+- detector fingerprint：仓库无 `ms` / `pretty-ms` 项目页；用户指定 duration-format 双子 + STATIC_REVIEW + `*-20260827-eo.md` + 一 PR 不 merge。
+- external delta 计数：本轮授权 push + 开 1 个 PR；未 merge、未 deploy，D 轴不含生产发布。
+- 已完成切片：
+  1. `ms` 绑定 tag `2.1.3` / `1c6264b795...`（npm `gitHead` 与 tag 一致），写清字符串解析 vs 有限数字格式化、100 字符 / 单单位正则、365.25 天年、格式化最大单位为天，并披露 3.x/4.x 预发布线。
+  2. `pretty-ms` 绑定 tag `v9.3.0` / `ab52d6ae...`（npm `gitHead` 与 tag 一致），写清单向 number|bigint 格式化、选项覆盖层级、365 天年、冒号记法至少显示到分钟；披露 tag 后 FAQ 提交未绑定。
+  3. 新增共享 `docs/duration-format-source-review-20260827-eo.md` 与两份 generation 1 static receipt；派生索引与公开计数随两页新建刷新。
+- acceptance checks：两页 quality-gate 全过、0 advisory；receipt digest / revision / research_input 一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:site-state` / `git diff --check` 已在本地跑过。`verify:ci` 以 PR CI / 后续本地全量门禁为准。
+- budget：2 个小型本地 worktree + 2 页新建 + 派生刷新；单 writer。
+- 验证结果：STATIC_REVIEW 完成；未宣称上游测试或运行证据。规模 baseline 超限是先于本切片的 `PARKED_HUMAN` detector，本轮未改 baseline / 阈值。
+- blocker：`benchmark-site --compare` 的 tracked_files 超限需 owner 处置；merge / deploy 需单独授权。
+- stop conditions：本轮一 PR 已是外部结果上限；不 merge。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
+- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
