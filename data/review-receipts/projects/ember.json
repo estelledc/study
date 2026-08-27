@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ember",
+    "digest_sha256": "f205bcde32683e0613899f2622d90bafceb4478af61bc7f66de39fc114fa76fa"
+  },
+  "source_revision": "ccfcde92ce1a82a5d9d605d0117261b8341a9777",
+  "research_input_sha256": "74d8c59be9797215d5a93fe5a122b0da8cbf35c4781d2b4a063470bb79a0ce21",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Application boot, StrictResolver modules, Route hooks, tracked invalidation, and classic components."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Application, routing, renderer, tracked, and runloop sources were inspected; upstream tests and builds were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Version and boot claims are bounded to ember-source 7.2.0; Glimmer package bodies were outside this sparse checkout."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:28:40.000Z"
+}

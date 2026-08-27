@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -36750,6 +36750,38 @@
       }
     },
     {
+      "id": "projects::backbone",
+      "area": "projects",
+      "slug": "backbone",
+      "title": "Backbone — 用 Events、Model、View 搭页面的最小骨架",
+      "description": "介绍 Backbone 1.6.1 如何把 Events、Model.set/save 和 History.start 默认值拆开",
+      "difficulty": "初级",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "matched_category": "ui 框架",
+        "raw_category": "UI 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/backbone/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::backstage",
       "area": "projects",
       "slug": "backstage",
@@ -41967,6 +41999,38 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::ember",
+      "area": "projects",
+      "slug": "ember",
+      "title": "Ember.js — 约定式路由和自动追踪的应用框架",
+      "description": "介绍 ember-source 7.2.0 如何把 Application boot、StrictResolver 和 tracked render 队列接成一条主链",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-ui-and-frontend-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-ui-and-frontend-frameworks",
+        "matched_category": "ui 框架",
+        "raw_category": "UI 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ember/",
+      "atlas": {
+        "chunk_id": "topic-projects-ui-and-frontend-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/"
       }
     },
     {
@@ -65881,7 +65945,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-ui-and-frontend-frameworks-01/",
-      "entries": 13
+      "entries": 15
     },
     {
       "id": "topic-projects-web-frameworks-01",

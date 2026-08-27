@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer DA：Ember + Backbone
+
+- status：writer epoch complete；等待 owner review；不 merge
+- 起始 ref：`a910f11f`（`origin/main`）
+- objective：只把 Ember 与 Backbone 绑到可达且内部一致的 STATIC_REVIEW revision
+- scope：两页、`docs/classic-framework-source-review-20260827-da.md`、两份 generation 1 receipt，以及 project-standard / atlas / site-state / 公开计数派生刷新
+- activated_by：`explicit-user-goal-parallel-writer-da-2026-08-27`
+- detector fingerprint：`origin/main` 无 `ember` / `backbone` 页；开放 PR 未占用这两个 slug
+- external delta：本轮授权形成 1 个 review-ready PR；未 merge、未部署，D 轴不因 merge 提升
+- 完成切片：
+  1. Ember 绑定 `emberjs/ember.js@ccfcde92...` / `ember-source@7.2.0`（tag 与 npm `gitHead` 一致）
+  2. Backbone 绑定 `jashkenas/backbone@da75718e...` / `1.6.1`（剥开 annotated tag；npm `gitHead` 不可达，未猜测）
+  3. 新增共享审查记录与两份 generation 1 static receipt
+- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision / provenance 一致，evidence `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:links` / `audit:wikilinks` / `audit:site-state` / `audit:project-standard` 通过
+- budget：1 个 classic-framework 双子切片；单 writer
+- blocker：未跑 `verify:ci` 前不得声称全量门禁通过；不 merge
+- stop conditions：需要猜 revision、安装上游依赖、或放宽门禁时停止
+- 下一次 wake 条件：owner review / CI；未授权 merge
+- 下一条命令：`STUDY_CHANGED_FROM=a910f11f npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
