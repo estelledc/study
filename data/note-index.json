@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2048,
-      "classified": 2001,
+      "total": 2050,
+      "classified": 2003,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 965,
-        "classified": 937,
+        "total": 967,
+        "classified": 939,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -40266,6 +40266,37 @@
       }
     },
     {
+      "id": "projects::db0",
+      "area": "projects",
+      "slug": "db0",
+      "title": "db0 — 用一份 SQL 门面接多种 JS 数据库",
+      "description": "介绍 db0 怎样用 connector、sql 模板和方言能力表，把多种 SQL 后端收成同一套 exec/prepare/sql API。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "ORM / DB 客户端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/db0/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::dbt-core",
       "area": "projects",
       "slug": "dbt-core",
@@ -59795,6 +59826,37 @@
       }
     },
     {
+      "id": "projects::sql.js",
+      "area": "projects",
+      "slug": "sql.js",
+      "title": "sql.js — 把 SQLite 编译进 JavaScript 进程",
+      "description": "介绍如何用 Emscripten 把 SQLite 编成 WASM，并在虚拟文件上提供 Database 与 Statement API。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "ORM / DB 客户端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/sql.js/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::sqlite",
       "area": "projects",
       "slug": "sqlite",
@@ -65949,7 +66011,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/",
-      "entries": 8
+      "entries": 10
     },
     {
       "id": "topic-projects-state-management-01",

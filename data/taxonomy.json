@@ -1888,6 +1888,10 @@
       "topic_id": "projects-date-and-time"
     },
     {
+      "note_id": "projects::db0",
+      "topic_id": "projects-orm-and-database-clients"
+    },
+    {
       "note_id": "projects::dgraph",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2414,6 +2418,10 @@
     {
       "note_id": "projects::sortablejs",
       "topic_id": "projects-drag-and-drop-interaction"
+    },
+    {
+      "note_id": "projects::sql.js",
+      "topic_id": "projects-orm-and-database-clients"
     },
     {
       "note_id": "projects::sqlite",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sql.js",
+    "digest_sha256": "7341f1369b016f5703ef36b56a1f31be174d7c717474ec4842f7d372834a1d2f"
+  },
+  "source_revision": "9c4e167ec37129192d166ab9223faa9a4bd07c58",
+  "research_input_sha256": "ff5fa6483ceb4e50736cff168f7706e926ed5da733c7ecd833548e399684b226",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates initSqlJs singleton load, virtual FS file, run/exec/prepare paths, and export close/reopen."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected api.js Database/Statement, shell-pre singleton, worker actions, Makefile amalgamation 3490100, and issue630 stack restore; WASM was not instantiated."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag v1.14.2 peel 9c4e167e and discloses npm gitHead 1d5db454 parent (CI-only); native SQLite speed was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:45:00.000Z"
+}

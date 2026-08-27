@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "db0",
+    "digest_sha256": "1a27e6f19b293d566d1f411ee3ec1cf1c9c9332937a4efbecb881f5ef06e5b16"
+  },
+  "source_revision": "d49c507c0a4b4e82e9909f3f7b598a31565665e9",
+  "research_input_sha256": "ff5fa6483ceb4e50736cff168f7706e926ed5da733c7ecd833548e399684b226",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-gs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates connector facade, sql template static vs param tracks, and dialect capability overrides."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-gs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected createDatabase, sqlTemplate, normalizeParams, node-sqlite/D1/pg connectors, and drizzle/kysely/prisma integrations; tests and DBs were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-gs",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds annotated tag v0.4.0 peel d49c507c; npm 0.4.0 has no gitHead; performance and bundle size were not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:45:00.000Z"
+}
