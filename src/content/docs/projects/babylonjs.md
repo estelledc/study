@@ -4,161 +4,167 @@ title: Babylon.js — 浏览器里的 3D 游戏和可视化引擎
 日期: 2026-07-08
 分类: graphics
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/BabylonJS/Babylon.js
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 38ed028f40722504a215002fbc2fa89a2c89cf5d
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 9.23.0
 ---
 
 ## 是什么
 
-Babylon.js 是一个用 JavaScript / TypeScript 写的 **Web 3D 引擎**。它让浏览器不只显示网页文字和按钮，还能显示会动的 3D 场景、游戏、产品展示、数字孪生和 WebXR 体验。
+Babylon.js 是一份 TypeScript 写的浏览器 3D 引擎。固定 9.23.0 把实现拆成 `@babylonjs/core`（场景、相机、网格、引擎）和 `@babylonjs/loaders`（glTF / FBX / OBJ 等插件）两套发布包；仓库内部则用 `*.pure.ts` 放无副作用实现，再由薄入口做 `Register*` 注册。
 
-日常类比：普通网页像一张海报，CSS 负责排版；Babylon.js 像一个小型摄影棚，帮你放相机、灯光、模型、材质和动画，最后把画面拍到 `<canvas>` 上。
+日常类比：普通网页像一张海报；Babylon.js 像摄影棚——`Engine` 管电源和快门循环，`Scene` 是片场，相机、灯和 mesh 都挂在同一场里，最后画到 `<canvas>`。
 
-它底层使用 WebGL，也支持 WebGPU 路线；你写的是更接近“搭场景”的代码，而不是直接和 GPU 指令打交道。
+```ts
+import { Engine, Scene, FreeCamera, HemisphericLight, MeshBuilder, Vector3 } from "@babylonjs/core";
+
+const engine = new Engine(canvas, true);
+const scene = new Scene(engine);
+new FreeCamera("camera", new Vector3(0, 2, -6), scene).setTarget(Vector3.Zero());
+new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+MeshBuilder.CreateBox("box", { size: 2 }, scene);
+engine.runRenderLoop(() => scene.render());
+```
+
+`Engine` 构造函数第二参是 antialias，默认 `false`；上面的 `true` 显式打开抗锯齿。`runRenderLoop` 定义在 `AbstractEngine`：同一引擎可以登记多个回调，第一次登记才启动 `requestAnimationFrame` 队列。
 
 ## 为什么重要
 
-不理解 Babylon.js，下面这些事会很难解释：
+不理解这条 Engine → Scene → render 合同，下面这些事会对不上：
 
-- 为什么一个浏览器页面能跑 3D 游戏，而不需要安装 Unity 或 Unreal 客户端
-- 为什么产品官网可以让用户旋转汽车、鞋子、家具模型，而不是只看几张图片
-- 为什么 WebXR 可以在同一套 Web 技术上进入 VR / AR 设备
-- 为什么 3D 工程里总会同时出现 engine、scene、camera、light、mesh、material 这些词
-
-Babylon.js 的价值是把“和显卡打交道”包成“搭一个可运行的舞台”。初学者先会搭舞台，再慢慢理解渲染管线。
+- 为什么 `new Engine(canvas)` 走的是 WebGL 路径，而想优先 WebGPU 要另走 `EngineFactory.CreateAsync`
+- 为什么盒子能造出来、`.glb` 却加载失败——加载器是独立包，靠副作用注册插件
+- 为什么 `scene.createDefaultXRExperienceAsync` 不是 Scene 本体字段，而是 `RegisterSceneHelpers` 挂上去的
+- 为什么 9.x 到处出现 `.pure.ts`：同一符号可以按“无副作用实现”或“带 Register 的入口”两种方式导入
 
 ## 核心要点
 
-1. **Scene 是舞台**：所有模型、灯光、相机都放进同一个 Scene。类比：拍电影前先有片场，演员和道具才知道自己在哪里。
+固定 9.23.0 可以拆成四步：
 
-2. **Camera 决定你从哪里看**：没有相机，场景里有东西也看不到。类比：同一个房间，从门口看和从天花板看，画面完全不同。
+1. **Engine 选择后端**：`new Engine(canvas, antialias?)` 继承 ThinEngine / AbstractEngine，走 WebGL。`EngineFactory.CreateAsync` 先 `await WebGPUEngine.IsSupportedAsync`，支持则 `WebGPUEngine.CreateAsync`，否则退回 `Engine.IsSupported` 再退 `NullEngine`。
 
-3. **Mesh + Material 组成看得见的物体**：Mesh 是形状，Material 是表面颜色、金属感、透明度。类比：纸箱的盒子形状和外面贴的包装纸是两回事。
+2. **Scene 拥有本帧**：构造时把自身推进 `engine.scenes`（`virtual: true` 除外）。`scene.render()` 只是包一层 `_renderFrame`：涨 `_frameId`、跑 `animate()`、更新 `activeCamera` / `activeCameras`，再进入真正的绘制。
 
-## 实践案例
+3. **MeshBuilder 是函数表**：`meshBuilder.pure.ts` 导出的是 `const MeshBuilder = { CreateBox, CreateGround, ... }`，每个 `Create*` 来自对应 `Builders/*.pure.ts`。`CreateBox` 先 `new Mesh(name, scene)`，再用 `CreateBoxVertexData` 填顶点。
 
-### 案例 1：最小 3D 盒子
+4. **加载与 XR 都是注册上去的能力**：`AppendSceneAsync(source, scene, { rootUrl })` 是现行模块级 API；类上的 `SceneLoader.AppendAsync` 仍在，但标了 deprecated。`createDefaultXRExperienceAsync` 由 `RegisterSceneHelpers` 写到 `Scene.prototype`，内部调用 `WebXRDefaultExperience.CreateAsync`。
 
-下面这段代码在网页里创建一个可渲染的 Babylon.js 场景：
+## 实践示例
 
-```html
-<canvas id="renderCanvas"></canvas>
-<script type="module">
-import { Engine, Scene, FreeCamera, HemisphericLight, MeshBuilder, Vector3 } from "https://cdn.babylonjs.com/babylon.module.js";
+### 案例 1：最小盒子
 
-const canvas = document.getElementById("renderCanvas");
+```ts
+import { Engine, Scene, FreeCamera, HemisphericLight, MeshBuilder, Vector3 } from "@babylonjs/core";
+
 const engine = new Engine(canvas, true);
 const scene = new Scene(engine);
-
 const camera = new FreeCamera("camera", new Vector3(0, 2, -6), scene);
 camera.setTarget(Vector3.Zero());
-camera.attachControl(canvas, true);
-
-new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+camera.attachControl(true);
+new HemisphericLight("light", Vector3.Up(), scene);
 MeshBuilder.CreateBox("box", { size: 2 }, scene);
-
 engine.runRenderLoop(() => scene.render());
-</script>
 ```
 
-**逐部分解释**：
+**逐部分解释**：`FreeCamera` 构造里 `inputs.addKeyboard().addMouse()`；`attachControl` 的 canvas 参数已忽略，只保留 `noPreventDefault` 的兼容重载。`HemisphericLight` 的方向是半球朝向，不是点光源位置。
 
-- `Engine`：连接浏览器 canvas 和底层 WebGL / WebGPU，相当于摄影棚的电源和机器。
-- `Scene`：装所有 3D 对象的容器，相当于舞台。
-- `FreeCamera`：决定观察位置，`attachControl` 让鼠标键盘能控制视角。
-- `MeshBuilder.CreateBox`：快速造一个立方体，先不用自己写顶点数据。
-
-### 案例 2：加载一个 glTF 模型
-
-真实项目不会全靠代码造盒子，通常会从 Blender、Maya 或设计工具导出 `.glb` / `.gltf`：
+### 案例 2：把 glTF 追加进当前场景
 
 ```ts
-import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
+import { AppendSceneAsync } from "@babylonjs/core/Loading/sceneLoader";
 import "@babylonjs/loaders/glTF";
 
-await SceneLoader.AppendAsync("/assets/", "robot.glb", scene);
+await AppendSceneAsync("robot.glb", scene, { rootUrl: "/assets/" });
 ```
 
-**逐部分解释**：
+**逐部分解释**：`@babylonjs/loaders` 的 glTF 入口会 `RegisterGLTFFileLoader()`。不注册插件时，loader 不知道 `.glb`。旧的 `SceneLoader.AppendAsync(rootUrl, filename, scene)` 仍能编译，源码注释要求改用模块级 `AppendSceneAsync`。同包还导出 BVH / FBX / OBJ / STL / SPLAT。
 
-- `SceneLoader`：负责把外部模型读进当前场景。
-- `@babylonjs/loaders/glTF`：注册 glTF 加载器；少了这行，项目里可能只会报“不知道怎么读 glb”。
-- `AppendAsync`：异步加载，模型没下载完之前不能假装它已经在场景里。
-
-### 案例 3：进入 WebXR
-
-Babylon.js 把 WebXR 的很多浏览器差异包起来，常见入口是：
+### 案例 3：默认 WebXR 体验
 
 ```ts
+import { MeshBuilder } from "@babylonjs/core";
+
 const ground = MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
-const xr = await scene.createDefaultXRExperienceAsync({
-  floorMeshes: [ground],
-});
+const xr = await scene.createDefaultXRExperienceAsync({ floorMeshes: [ground] });
 ```
 
-**逐部分解释**：
-
-- `CreateGround`：给 VR / AR 体验一个地面参考，否则用户不知道脚下在哪里。
-- `createDefaultXRExperienceAsync`：创建默认 XR 按钮、会话和控制器支持。
-- `floorMeshes`：告诉引擎哪些物体可当作地面，便于传送和边界判断。
+**逐部分解释**：helper 默认打开 Enter/Exit UI、pointer selection、传送（`floorMeshes` 交给 teleportation feature）、near interaction 和 hand tracking。任一开关可用 `disableDefaultUI` / `disableTeleportation` 等关掉。失败时源码只 `Logger.Error`，仍返回已构造的 `WebXRDefaultExperience` 对象。
 
 ## 踩过的坑
 
-1. **canvas 没设宽高**：3D 代码没错，但 `<canvas>` 在 CSS 里只有 0 高度，结果页面一片空白。
-
-2. **忘了导入 loader**：能创建盒子，却加载不了 `.glb`，通常是没有导入 `@babylonjs/loaders/glTF`。
-
-3. **异步加载当同步用**：模型还在下载就去找它的 mesh，会拿到空结果。要 `await` 或监听加载完成。
-
-4. **坐标单位不统一**：美术模型按厘米导出，代码按米摆放，进场景后不是巨大就是小到看不见。
-
-5. **移动端性能预算很小**：高面数模型、4K 贴图、实时阴影一起开，桌面能跑，手机会掉帧或发热。
+1. **把 `new Engine` 写成“自动选 WebGPU”**：`Engine` 是 WebGL 路径。要按硬件挑选，用 `EngineFactory.CreateAsync`；它先问 WebGPU，再问 WebGL，最后 `NullEngine`。
+2. **只装 `@babylonjs/core` 就去加载 `.glb`**：glTF 插件在 `@babylonjs/loaders`，靠副作用注册。少了这一步，场景加载器找不到插件。
+3. **继续把 `SceneLoader.AppendAsync` 当现行主 API**：9.23.0 已标 deprecated，模块级 `AppendSceneAsync(source, scene, options)` 才是正向入口。
+4. **`attachControl(canvas, true)` 以为还在绑 canvas**：第一参被标成 ignored，真正生效的是 `noPreventDefault`。
+5. **把未测的帧率、面数或手机发热写成结论**：本轮只读了固定提交，没有跑 playground、visualization test 或设备采样。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 浏览器里的 3D 展示、轻量游戏、数据可视化和教学 demo
-- 电商产品预览、建筑漫游、工业设备数字孪生
-- 需要 WebXR，但希望保持 Web 技术栈的项目
-- 想用 TypeScript 写 3D，而不是直接写 WebGL shader 的团队
+- 浏览器里的 3D 展示、轻量游戏、产品预览、WebXR 入口，希望 TypeScript 场景 API 而不是手写 WebGL
+- 需要同一套 Scene 合同同时碰 WebGL 与可选 WebGPU
+- 模型走 glTF，并能接受 loaders 作为独立包
 
 **不适用**：
 
-- 大型 3A 游戏或极重资产项目 → Unity / Unreal 更成熟
-- 对原生性能、主机平台、复杂编辑器流水线要求极高的项目
-- 只需要二维图表或普通动画 → Canvas / SVG / CSS 动画更轻
-- 完全不想处理模型压缩、贴图、灯光和性能预算的简单网页
+- 只要场景图、自己管 renderer → [[threejs]] 更薄
+- 地理椭球、时间轴、3D Tiles 流式地球 → [[cesium]]
+- 把未绑定的 FPS / 包体 / 星数当成选型依据
+- 还按 4.x / 5.x 的 `SceneLoader` 类 API 写新代码
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2013 年前后**：Microsoft 工程师 David Catuhe 发起 Babylon.js，目标是让 WebGL 开发更接近引擎体验。
-- **2015 年后**：项目逐步形成 playground、文档、材质库、加载器和 GUI 组件，降低入门门槛。
-- **WebXR 普及期**：Babylon.js 把 VR / AR 会话、控制器和传送能力做成默认体验入口。
-- **WebGPU 时代**：项目继续兼容 WebGL，同时跟进 WebGPU，让浏览器 3D 有更长的性能上限。
+- 本文绑定 `BabylonJS/Babylon.js@38ed028f40722504a215002fbc2fa89a2c89cf5d`，即 annotated tag `9.23.0` 剥出的提交；npm `@babylonjs/core@9.23.0` 与 `@babylonjs/loaders@9.23.0` 的 `gitHead` 同指此 SHA。
+- 发布包 Apache-2.0、`type: module`；`@babylonjs/core` 未声明 `engines` / `peerDependencies`。
+- 源码实现在 `packages/dev/core`（内部包名 `@dev/core@1.0.0`），发布包装在 `packages/public/@babylonjs/*`。
+- `Engine` antialias 默认 false；`FreeCamera` 注释建议新代码看 `UniversalCamera`。
+- 本文未安装依赖、未跑 unit / visualization test、未测 WebGPU 或包体，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- Babylon.js 不是建站框架，而是浏览器 3D 引擎；核心工作是管理场景、相机、灯光、模型和渲染循环。
-- 初学 3D 先记住“舞台、摄影机、灯光、道具”这条线，比直接学 shader 更稳。
-- 工程上最常见的问题不是“能不能画”，而是模型加载、坐标单位、贴图大小和移动端性能。
-- Web 3D 的优势是分发简单：用户打开链接就能体验；代价是浏览器兼容和性能预算要认真测。
+1. **后端选择是工厂，不是默认构造函数**——`new Engine` 与 `EngineFactory.CreateAsync` 合同不同。
+2. **9.x 用 Register + pure 拆副作用**——导入路径决定会不会执行插件/helper 注册。
+3. **加载器是插件表，不是 Scene 内置格式支持**——少一次 import，`.glb` 就不会被识别。
+4. **XR 默认体验是一串 feature 开关**——传送、近场、手部追踪都有独立 disable 位。
+
+## 应用型自测
+
+1. `new Engine(canvas)` 不传第二参，抗锯齿默认开吗？
+2. 只 `import { AppendSceneAsync } from "@babylonjs/core/Loading/sceneLoader"`、不导入 loaders，固定 9.23.0 能解析 `.glb` 吗？
+3. `EngineFactory.CreateAsync` 在 WebGPU 与 WebGL 都不支持时会抛错吗？
+
+检查点：
+
+1. 不开。构造函数文档写明 antialias 默认 `false`。
+2. 不能指望它自动会。glTF 插件要 `@babylonjs/loaders/glTF` 的 `RegisterGLTFFileLoader`。
+3. 不会抛这一句。它退回 `new NullEngine(...)`。
 
 ## 延伸阅读
 
-- 官方网站：[Babylon.js](https://www.babylonjs.com/)
 - 官方文档：[Babylon.js Documentation](https://doc.babylonjs.com/)
-- 官方 playground：[Babylon.js Playground](https://playground.babylonjs.com/)
-- 仓库：[BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js)
-- [[threejs]] —— 同是浏览器 3D 生态，API 更底层一些
-- [[webgpu]] —— 新一代浏览器 GPU API，Babylon.js 正在支持它
+- Playground：[playground.babylonjs.com](https://playground.babylonjs.com/)
+- 固定源码：[BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) —— 本文绑定提交 `38ed028f40722504a215002fbc2fa89a2c89cf5d`
+- [[threejs]] —— 更薄的场景图 + 默认 WebGL 2 renderer
+- [[cesium]] —— 地理椭球与时间轴是一等公民的对照
 
 ## 关联
 
-- [[threejs]] —— 对比 Web 3D 库和完整引擎的取舍
-- [[webgl]] —— Babylon.js 早期主要依赖的浏览器 3D API
-- [[webgpu]] —— Babylon.js 面向未来性能上限的重要方向
-- [[gltf]] —— 3D 模型交换格式，Babylon.js 项目最常加载的资产之一
-- [[unity]] —— 原生/多平台游戏引擎，适合比较工作流和发布方式
-- [[react-three-fiber]] —— React 生态里另一条浏览器 3D 路线
+- [[threejs]] —— 对照“完整引擎”和“场景图 + renderer”
+- [[cesium]] —— 对照本地笛卡尔场景与 ECEF 地球
+- [[webgpu]] —— `EngineFactory` 优先尝试的后端
+- [[webgl]] —— `Engine` 默认路径
+- [[gltf]] —— `@babylonjs/loaders` 最常用的交换格式
 
 ## 反向链接
 
