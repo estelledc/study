@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2050,
-      "classified": 2003,
+      "total": 2051,
+      "classified": 2004,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1972,
+      "empty_description": 1967
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 967,
-        "classified": 939,
+        "total": 968,
+        "classified": 940,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 958,
+        "empty_description": 954
       }
     },
     "missing_curated_assignments": [],
@@ -59416,9 +59416,9 @@
       "id": "projects::socket-io",
       "area": "projects",
       "slug": "socket-io",
-      "title": "Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Socket.IO — 用 Engine.IO 传输层承载命名空间事件",
+      "description": "建立在 Engine.IO 之上的命名空间事件与房间广播框架",
+      "difficulty": "初级",
       "canonical_topics": [
         "projects-backend-and-apis"
       ],
@@ -59430,13 +59430,13 @@
         "raw_category": "backend-api"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/socket-io/",
       "atlas": {
@@ -64243,6 +64243,38 @@
       }
     },
     {
+      "id": "projects::ws",
+      "area": "projects",
+      "slug": "ws",
+      "title": "ws — Node.js 上的 RFC 6455 WebSocket 实现",
+      "description": "Node.js 上的 RFC 6455 WebSocket 客户端与服务端实现",
+      "difficulty": "初级",
+      "canonical_topics": [
+        "projects-backend-and-apis"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "frontmatter-category",
+        "topic_id": "projects-backend-and-apis",
+        "matched_category": "backend api",
+        "raw_category": "backend-api"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/ws/",
+      "atlas": {
+        "chunk_id": "topic-projects-backend-and-apis-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-backend-and-apis-01/"
+      }
+    },
+    {
       "id": "projects::x264",
       "area": "projects",
       "slug": "x264",
@@ -65592,7 +65624,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-backend-and-apis-01/",
-      "entries": 57
+      "entries": 58
     },
     {
       "id": "topic-projects-blockchain-01",
