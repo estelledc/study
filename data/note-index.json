@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2046,
+      "classified": 1999,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 963,
+        "classified": 935,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -37034,6 +37034,37 @@
       }
     },
     {
+      "id": "projects::better-sqlite3",
+      "area": "projects",
+      "slug": "better-sqlite3",
+      "title": "better-sqlite3 — 同步调用 SQLite 的 Node 原生绑定",
+      "description": "用同步 prepare/run/get 调用 SQLite，事务函数不能返回 Promise。",
+      "difficulty": "初级",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "DB 客户端"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/better-sqlite3/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
+      }
+    },
+    {
       "id": "projects::bevy",
       "area": "projects",
       "slug": "bevy",
@@ -47084,6 +47115,37 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::knex",
+      "area": "projects",
+      "slug": "knex",
+      "title": "Knex — 跨方言的 SQL 查询构建器",
+      "description": "先拼 QueryBuilder，then() 才向连接池要连接并编译 SQL。",
+      "difficulty": "中级",
+      "canonical_topics": [
+        "projects-orm-and-database-clients"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-orm-and-database-clients",
+        "raw_category": "ORM"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/knex/",
+      "atlas": {
+        "chunk_id": "topic-projects-orm-and-database-clients-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"
       }
     },
     {
@@ -65825,7 +65887,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/",
-      "entries": 8
+      "entries": 10
     },
     {
       "id": "topic-projects-state-management-01",

@@ -2,6 +2,29 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer BD：SQL helper 双子
+
+- supervisor 状态：`running`（writer epoch 完成，等待 PR review；未 merge）。
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：为 better-sqlite3 与 knex 建立 STATIC_REVIEW / UNVERIFIED 的 study-v2 源码绑定页，并产出 `docs/sql-helper-source-review-20260827-bd.md` 与一份 PR。
+- scope：两篇新项目页、两份 generation 1 receipt、source review 文档、taxonomy/atlas/site-state/counts、SESSION-HANDOFF；未安装上游依赖、未编译 native addon、未执行 SQL。
+- activated_by：`explicit-user-goal-parallel-writer-bd-20260827`。
+- detector fingerprint：目标库 better-sqlite3 / knex 在 origin/main 无项目页；开放 PR 已占用 prisma / kysely / drizzle / postgres-js / typeorm / sequelize。
+- external delta 计数：本轮只形成一份 PR，未 merge、未部署；D 轴不因开 PR 提升为 accepted-pr。
+- 已完成切片：
+  1. 只读核验 `WiseLibs/better-sqlite3@dbc2ea1165...` / `13.0.3` 与 `knex/knex@e25d54bc...` / `3.3.0`。
+  2. 新增两页与共享 provenance 文档，receipt evidence state 为 `UNVERIFIED`。
+  3. 将两页编入 `projects-orm-and-database-clients`，刷新派生 atlas / site-state。
+- 验证结果：两页 `quality-gate.mjs` 通过、0 advisory；receipt 与正文 digest / revision 一致；`audit:counts` 与 `audit:content-contract --changed-from` 无 blocking。全量 `verify:ci` 在 PR 上继续跑。
+- budget：2 个 ignored worktree + 2 页静态源码新建；单 writer。
+- blocker：上游运行证据不能由静态 review 替代；未获 merge 授权。
+- stop conditions：writer epoch 已完成；不自动 merge。
+- 下一次 wake 条件：PR CI / review 状态变化，或 owner 给出 merge / 下一对授权。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+- 发布、队列和 worktree 的实时状态必须由命令重新读取，不在 handoff 中复制易过期数字或 ETA。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
