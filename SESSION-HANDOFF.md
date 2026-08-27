@@ -17,7 +17,7 @@
   2. Prettier 绑定 GitHub tag `3.9.6` / `8f0c95057...`，写清 parse → doc IR → print，并披露 npm `gitHead` 不可达。
   3. 新增 `docs/linter-formatter-source-review-20260827-ak.md` 与两份 generation 1 receipt。
 - acceptance checks：两页 `quality-gate` 通过；`audit:counts` / `audit:content-contract` 通过。
-- 验证结果：本地定向检查已通过；全量 `verify:ci` 在 PR 创建后补跑。
+- 验证结果：规范 Node 22.23.1 / npm 11.17.0 下 `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci` 全绿。
 - budget：1 个可写切片、1 个本地 writer、1 个 PR。
 - blocker：PR 待审查；未获 merge 授权。
 - stop conditions：本轮只开 1 个 PR 且不 merge；不继续发明下一项内容。
