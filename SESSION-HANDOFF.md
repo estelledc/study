@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 富文本双子 STATIC_REVIEW epoch（writer CU）
+
+- status：`running` → writer epoch complete；等待 PR review，不自 merge。
+- 起始 ref：`042f60a8`（`origin/main`，PR #47 merge）。
+- objective：并行 writer CU 对富文本双子做 `STATIC_REVIEW` / `UNVERIFIED`。指定目标是 slate + lexical；仓库无 `slate` / `slate-js` 页且开放 PR 未占用这两 slug，因此 fallback 为既有页 `lexical` + `prosemirror`（排除已开放的 monaco/codemirror）。
+- scope：两页正文、2 份 generation 1 receipt、`docs/rich-text-source-review-20260827-cu.md`、note-index / project-standard / site-state / 首页派生、本 handoff；ignored worktree 不入库。未安装上游依赖、未跑上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-parallel-writer-cu-20260827`。
+- detector fingerprint：`lexical` 缺 source / pinned_revision / evidence_boundary / self_test，旧文把 latest 写成 v0.47.0、把 `isEmpty` 写成只看 nodeMap.size；`prosemirror` 缺 pinned_revision / evidence_boundary / self_test，canonical 指向 website 仓，且未披露 model/view 已迁到 haverbeke.berlin。
+- external delta：将形成 1 个 Draft PR（用户授权 push + PR）；未 merge、未 deploy，D 轴不变。
+- 完成切片：
+  1. `lexical` 绑定 `facebook/lexical@ffe90924...` / `v0.49.0`，修正 `EditorState.isEmpty`、queued update、`getWritable` copy-on-write、`editor.read` 默认 `force-commit`、Composer 空段落/`null` 协同边界、History 1000 ms、`@lexical/react` peer React >=18。
+  2. `prosemirror` 绑定 GitHub 可达的 `prosemirror-state@1.4.4` / `d6fdcd19...`，配套阅读 model 1.25.11 与 view 1.42.3（haverbeke.berlin）以及 transform 1.12.0；修正 schema ContentMatch、`ReplaceStep.map` 返回 null、重复 PluginKey 硬错误，并披露 GitHub tag 落后 npm latest。
+  3. 新增共享 `docs/rich-text-source-review-20260827-cu.md` 与两份 receipt；派生 `benchmark-aligned` 20→22，`content_contract.v2` 89→91。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，evidence `UNVERIFIED`。
+  - `git diff --check`：通过。
+  - `verify:ci`：提交后以 `STUDY_CHANGED_FROM=042f60a8` 跑规范 Node 22.23.1 / npm 11.17.0。
+- budget：1 个可写切片、2 页静态迁移、单 writer。
+- blocker：main 上规模 detector `tracked_files` 超限属既有 `PARKED_HUMAN`；本轮未改 baseline / 阈值。
+- stop conditions：本轮完成后停止；不自 merge。
+- 下一次 wake 条件：PR CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

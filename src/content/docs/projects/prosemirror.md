@@ -1,160 +1,182 @@
 ---
 title: ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
-来源: 'https://github.com/ProseMirror/prosemirror'
+来源: https://github.com/ProseMirror/prosemirror-state
 日期: 2026-05-30
 分类: 编辑器
 难度: 高级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/ProseMirror/prosemirror-state
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: d6fdcd19c4f7f68206b0a8d49649860365672585
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.4.4
 ---
 
 ## 是什么
 
-ProseMirror 是 Marijn Haverbeke 写的**富文本编辑器框架**——不是开箱即用的编辑器组件，是一套让你**自己定义文档结构**再让浏览器服从的协议。日常类比：像办报纸排版——主编先定"标题字号 + 段落间距 + 引文格式"的版式规则，作者写稿子时只能在版式里填内容，不能擅自加一种新格式。
+ProseMirror 是一套**自己定义文档结构、再让浏览器服从**的富文本框架，不是开箱即用的输入组件。日常类比：办报纸要先定版式手册，作者只能在栏位里填内容，不能擅自发明一种新格式。
 
-浏览器里有个原生 API 叫 contentEditable：给任意 div 加 `contenteditable="true"`，用户就能在里面输入和粘贴。问题是它**没规矩**——用户粘进来一段 Word 文本，浏览器自己生成一堆 `<font>` 和嵌套到第六层的 `<span>`，谁也保证不了文档结构合法。
-
-ProseMirror 的反转是：**你先用 schema 声明合法形态**（"段落里只能有文本和加粗，标题只能有文本不能有加粗"），然后**任何编辑都被拆成 Step 序列**——每一步都能 apply、能 invert（撤销）、能 map（远端来的 step 重新对齐到本地最新位置）。Tiptap、Atlassian Editor、The New York Times、早期 Notion 都站在它上面。
+浏览器的 `contentEditable` 没这本手册。用户从 Word 粘一段进来，DOM 里可能出现多层 `<font>` / `<span>`，谁也保证不了结构合法。ProseMirror 反过来：**schema 先声明合法形态**，每次编辑被拆成可 `apply` / `invert` / `map` 的 `Step`。本文把编辑器内核钉在 `prosemirror-state@1.4.4`；schema、Step 与 View 来自一并阅读的配套包。
 
 ## 为什么重要
 
 不理解 ProseMirror，下面这些事都没法解释：
 
-- 为什么 Notion / Atlassian / Linear 这种富文本能做协同编辑，但很多自研编辑器加协同就崩——Step 抽象让 rebase 几乎免费
-- 为什么 Tiptap 不自己重写一个编辑器内核——因为重写就要重新证明 schema 约束、协同 rebase、undo/redo 全都不出 bug
-- 为什么 Slate.js 文档看着更友好但生产环境踩坑更多——它直接 patch DOM，没有 Step 这层抽象
-- 为什么 contentEditable 二十年了还没被一个"更好的 API"取代——浏览器知道它有问题但没人提得出更好的替代
+- 为什么协同编辑要传 Step 序列，而不是 DOM diff
+- 为什么 schema 里 `'paragraph+'` 和 `'paragraph*'` 会让空文档行为完全不同
+- 为什么 View 必须用 `MutationObserver` 把浏览器对 DOM 的偷改翻译回 transaction
+- 为什么两个带同一 `PluginKey` 的插件不能同时放进一份 state
 
 ## 核心要点
 
-ProseMirror 的设计可以拆成 **三件抽象**：
+固定源码里可以把设计收成三件抽象：
 
-1. **Schema（合法形态判定器）**：你声明"什么节点能套什么节点"——doc 里能有 paragraph 和 heading，paragraph 里能有 text 和加粗 mark，heading 里只能有 text。类比：办报纸的版式手册，违反规则的内容直接被拒。
+1. **Schema（合法形态）**：`prosemirror-model@1.25.11` 把 `content` 表达式编成 `ContentMatch`（先 NFA 再 DFA）。`+` 不允许空匹配作为合法结束，`*` 允许。节点属性和嵌套规则在创建文档时就检查，而不是事后劝告。
 
-2. **Step（原子修改的语法）**：每一次编辑——插入字符、删除一段、加粗一个词——都是一个 Step 对象。它必须实现三件事：apply（在文档上执行）、invert（生成反向 step 用于 undo）、map（把自己重新对齐到一个新的位置链上）。类比：会计分录，每一笔都能正向记和反向冲。
+2. **Step（原子修改）**：`prosemirror-transform@1.12.0` 的 `Step` 必须实现 `apply`、`invert`、`map` 和 JSON 往返。`ReplaceStep.invert` 用旧文档切片换回被替换区间；`map` 在两端都被 `deletedAcross` 时返回 `null`，表示这个 step 已被 concurrent 删除吃掉。
 
-3. **State + View（不可变快照 + 浏览器薄壳）**：State 是某一刻的完整文档 + 选区 + plugin 状态，不可变。View 把当前 State 渲染到一块 contentEditable，并用 MutationObserver 捕获浏览器对 DOM 的偷改，把它翻译回 Step。类比：React 的 state + render，但加了一层"浏览器在偷偷改 DOM 我得抓回来"的反向通道。
+3. **State + View**：`EditorState` 是持久化快照。`apply` / `applyTransaction` 算出**新实例**，不改旧对象。插件可以 `filterTransaction` 否决，也可以 `appendTransaction` 追加；追加会循环到没有插件再追加为止。`EditorView`（`prosemirror-view@1.42.3`）把 state 画到 contentEditable，并用 `DOMObserver` 里的 `MutationObserver` 抓浏览器回头改 DOM。
 
-三件抽象合起来的效果：协同编辑不是后挂的功能，是 Step 抽象的副产品——远端发来的不是 DOM 而是 Step 序列，本地把它 map 过自己最近的 step 链，就能干净 apply。
+`Transaction` 是带选区、stored marks 和 metadata 的 `Transform`。`state.tr` 从当前 state 长出一笔新账。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：最小可用的段落编辑器
+### 案例 1：最小段落编辑器
 
 ```ts
-import { Schema } from 'prosemirror-model'
-import { EditorState } from 'prosemirror-state'
-import { EditorView } from 'prosemirror-view'
+import { Schema } from "prosemirror-model";
+import { EditorState } from "prosemirror-state";
+import { EditorView } from "prosemirror-view";
 
 const schema = new Schema({
   nodes: {
-    doc: { content: 'paragraph+' },
-    paragraph: { content: 'text*', toDOM: () => ['p', 0] },
+    doc: { content: "paragraph+" },
+    paragraph: { content: "text*", toDOM: () => ["p", 0] },
     text: {},
   },
-})
+});
 
-const state = EditorState.create({ schema })
-new EditorView(document.querySelector('#editor'), { state })
+const state = EditorState.create({ schema });
+const view = new EditorView(document.querySelector("#editor"), {
+  state,
+  dispatchTransaction(tr) {
+    view.updateState(view.state.apply(tr));
+  },
+});
 ```
 
-**逐部分解释**：
+**逐部分**：`content: "paragraph+"` 表示 doc 至少要有一个 paragraph，所以 `create` 会 `createAndFill()` 出合法初值。`toDOM: () => ["p", 0]` 的 `0` 是子节点洞。必须自己写 `dispatchTransaction`，否则用户输入产生的 transaction 不会回到 view。
 
-- `content: 'paragraph+'` 是 content 表达式——doc 里必须有至少一个 paragraph
-- `toDOM: () => ['p', 0]` 告诉 ProseMirror 怎么把 paragraph 渲染成 DOM，0 是子节点占位符
-- 没传 dispatch 也能跑，但用户的输入会被直接吃掉——下一个案例补上
-
-### 案例 2：自己写一个 ReplaceStep 看三件套
+### 案例 2：看 ReplaceStep 的三件套
 
 ```ts
-import { ReplaceStep } from 'prosemirror-transform'
-import { Slice } from 'prosemirror-model'
+import { Fragment, Slice } from "prosemirror-model";
+import { ReplaceStep } from "prosemirror-transform";
 
-// 在位置 5 处插入一段 slice
-const step = new ReplaceStep(5, 5, slice)
-const result = step.apply(doc)        // 得到新 doc
-const inverse = step.invert(doc)      // 得到撤销 step
-const remapped = step.map(otherMap)   // 远端到来时重新对齐位置
+const step = new ReplaceStep(5, 5, slice);
+const result = step.apply(doc);
+const inverse = step.invert(doc);
+const remapped = step.map(otherMap);
 ```
 
-**逐部分解释**：
+**逐部分**：`apply` 得到新文档或失败信息，旧 `doc` 不变。`invert` 给 history 用。`map` 给并发编辑用——本地又打了几个字之后，远端 step 的位置要避开新插入。两端都已被删除映射掉时，`map` 返回 `null`，调用方必须丢掉这个 step。
 
-- `apply` 在旧 doc 上跑得到新 doc，旧 doc 不变（immutable）
-- `invert` 给 history plugin 用，撤销时把 inverse 反过来 apply 一次
-- `map` 是协同编辑的灵魂——本地刚 typed 了几个字，远端发来一个 step，map 让远端 step 的位置自动避开本地的新字
-
-### 案例 3：协同编辑的最小骨架
+### 案例 3：插件可以否决或追加 transaction
 
 ```ts
-import { collab, sendableSteps, receiveTransaction } from 'prosemirror-collab'
+import { Plugin, PluginKey } from "prosemirror-state";
 
-const state = EditorState.create({ schema, plugins: [collab()] })
-// 本地有未提交 step 时
-const sendable = sendableSteps(state)
-if (sendable) socket.send(JSON.stringify(sendable.steps))
-// 远端来 step 时
-socket.on('message', steps => {
-  view.dispatch(receiveTransaction(view.state, steps, clientIds))
-})
+const key = new PluginKey("audit");
+const audit = new Plugin({
+  key,
+  filterTransaction(tr) {
+    return !tr.getMeta("blocked");
+  },
+  appendTransaction(trs, _old, state) {
+    if (trs.some((tr) => tr.docChanged)) {
+      return state.tr.setMeta("touched", true);
+    }
+  },
+});
 ```
 
-**逐部分解释**：
-
-- `collab()` plugin 帮你管 step version 号和未确认 step 队列
-- `sendableSteps` 拿出本地未确认的 step 发到服务端
-- `receiveTransaction` 把远端 step 应用到本地——内部会 rebase 本地未确认 step
+**逐部分**：同一 `PluginKey` 不能装两份，`EditorState.create` 会抛 `Adding different instances of a keyed plugin`。`filterTransaction` 返回 false 则整笔 root transaction 被丢弃。`appendTransaction` 看到新 step 可以再追加；别的插件又追加时，它只会再看到自己没见过的那几笔。
 
 ## 踩过的坑
 
-1. **schema content 表达式 'inline*' 和 'inline+' 行为差异巨大**——前者允许空段落，后者不允许，编辑空段落时表现完全不同
-2. **协同编辑不能直接发 DOM diff**——Slate.js 的设计在并发删除+插入场景会让两端文档分裂，必须走 Step 序列化
-3. **View 层 contentEditable 兼容性是永远的苦活**——Safari shadow root、Chrome IME、Firefox space-eaten 各自要专门补丁，看 prosemirror-view 的 commit 历史就知道
-4. **自定义 NodeView 忘了 update / destroy 会内存泄漏**——React 包装层尤其容易出现 stale closure，每次 dispatch 都把旧组件留在内存里
+1. **`'inline*'` 和 `'inline+'` 不是风格差异**：后者不允许空段落，编辑空文档时的补齐和光标行为会完全不同。
+
+2. **协同不能直接发 DOM diff**：Step 才有 `map`。把 DOM 当真相，并发删除加插入时两端会对不齐。本文未运行协同包，不讨论具体 OT/CRDT 产品。
+
+3. **View 层的浏览器补丁没有消失**：固定 `1.42.3` 仍保留 Firefox「空格被吃掉」的 hack node，以及 Safari shadow selection 的旁路。自定义 `NodeView` 必须实现 `update` / `destroy`，否则会漏卸载。
+
+4. **重复 PluginKey 是硬错误**：不是后装覆盖先装，创建 state 时直接抛。
+
+5. **GitHub 上的 model/view tag 可能落后 npm**：当前 latest model/view 的 `gitHead` 在 GitHub 不可达，源码在 `code.haverbeke.berlin`。不要用 GitHub 旧 tag 当 npm latest。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 需要协同编辑的富文本（Notion / Atlassian / Linear 这类）——Step 抽象天然适配 OT/CRDT
-- 文档结构需要强约束的场景——医疗病历、法律合同、技术写作工具
-- 已经有自己的 schema 设计且不愿被现成编辑器锁死的团队
-- 需要可预测的 undo / redo 行为——Step.invert 让历史栈干净
+- 文档结构必须合法的编辑器：病历、合同、技术写作
+- 需要把每次修改做成可 rebase 的 step 流
+- 已经有 schema 设计、愿意自己写 plugin 胶水的团队
+- 需要可预测的 undo：`Step.invert` 让历史栈可反演
 
 **不适用**：
 
-- 只需要简单评论框 / 帖子输入框——直接 textarea 或 contentEditable 即可，ProseMirror 上手成本太高
-- 团队没人能维护 schema 和 plugin——这是个框架不是组件，必须自己写胶水
-- 需要 React/Vue 风格 declarative API——直接用 [[tiptap]] 这种包装层
-- 富文本但完全没有结构（如纯日记本无格式）——Lexical 或纯 markdown 编辑器更轻
+- 只要简单评论框——textarea 或更轻的包装就够
+- 团队没人维护 schema 和 plugin
+- 想要 React/Vue 声明式组件树当主 API——应看上层包装，而不是直接绑这四个包
+- 代码编辑器赛道；那是同作者的 CodeMirror
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2013 年**：Marijn Haverbeke 已经在维护 CodeMirror，意识到富文本场景需要类似的"plugin + immutable state"范式
-- **2014-2016 年**：ProseMirror 雏形迭代，2016 年发布首个稳定版本，分成 6 个独立 npm 包
-- **2018 年**：全面 TypeScript 重写
-- **2020 年**：Tiptap v2 在它之上做 React/Vue 包装，让前端开发者能用而不是只有编辑器专家能用
-- **2022 年**：Atlassian 把内部 Editor 抽出来公开发布，证明它能扛超大型 SaaS 的复杂需求
+- 本文页面 revision 绑定 `ProseMirror/prosemirror-state@d6fdcd19...`，即 tag / npm `prosemirror-state@1.4.4`；GitHub `gitHead` 与 tag 一致。
+- 配套阅读：`prosemirror-model@1.25.11`（`code.haverbeke.berlin` @ `09098e3b...`）、`prosemirror-transform@1.12.0`（GitHub @ `fb70a533...`）、`prosemirror-view@1.42.3`（haverbeke.berlin @ `20dc0a91...`）。
+- GitHub `prosemirror-model` / `prosemirror-view` 最新 tag 分别停在 `1.25.4` / `1.41.7`，不能代表 npm latest。
+- 重复 plugin key 会抛错；`applyTransaction` 会循环 `appendTransaction` 直到稳定。
+- 本文未安装依赖、未跑上游测试、未跑协同或浏览器套件，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- **schema 先定 DOM 后服从**是反直觉但威力巨大——把"我接受任何 DOM"反过来变成"DOM 必须满足 schema"，整套约束链就稳了
-- **协同编辑应该是 Step 抽象的副产品而不是后挂功能**——任何先做编辑器再加协同的项目都会被并发场景反噬
-- **immutable + apply/invert/map 三件套**是事件溯源思想在富文本场景的一次成功落地
-- **bus factor 的现实**：核心维护者一个人（Marijn）同时挑 CodeMirror、Lezer、ProseMirror，重要项目要警惕单点依赖
+- **schema 先定、DOM 后服从**把「我接受任何 DOM」反转成「DOM 必须满足表达式」。
+- **apply / invert / map** 让撤销和并发变成同一套位置代数，而不是后挂功能。
+- **持久化 state + MutationObserver 回读**是在承认：浏览器会偷改 DOM，编辑器必须把它翻译回来。
+- **分包 + 双远程**要求按包钉 revision：state 仍在 GitHub，model/view 的最新源码已经迁到 haverbeke.berlin。
+
+## 应用型自测
+
+1. `EditorState.apply(tr)` 会就地改当前 state 吗？
+2. 两个插件用了同一个 `PluginKey`，`EditorState.create` 会怎样？
+3. `ReplaceStep.map` 在 from/to 都被 `deletedAcross` 时返回什么？
+
+检查点：
+
+1. 不会。它构造新的 `EditorState`，旧实例保持原样。
+2. 抛 `RangeError`：`Adding different instances of a keyed plugin`。
+3. 返回 `null`，表示这个 step 已被 concurrent 删除吞掉，不能再 apply。
 
 ## 延伸阅读
 
-- 官方文档：[ProseMirror Guide](https://prosemirror.net/docs/guide/)（最权威，作者亲笔，但学术腔重）
-- 作者博客：[The Architecture of ProseMirror](https://marijnhaverbeke.nl/blog/prosemirror.html)（30 分钟讲完整体设计哲学）
-- 视频：[ProseMirror Deep Dive](https://www.youtube.com/results?search_query=prosemirror+deep+dive)（社区讲座，多个版本可选）
-- [[codemirror]] —— 同作者的代码编辑器，分包思路一脉相承
-- [[tiptap]] —— ProseMirror 的 React/Vue 包装层，多数前端真正在用的是它
+- 作者指南：[ProseMirror Guide](https://prosemirror.net/docs/guide/)
+- 固定内核：[ProseMirror/prosemirror-state](https://github.com/ProseMirror/prosemirror-state) —— 本文绑定提交 `d6fdcd19c4f7f68206b0a8d49649860365672585`
+- [[lexical]] —— 快照 + 脏节点路线，对照 schema/step
+- [[codemirror]] —— 同作者的代码编辑器，分包思路相近
 
 ## 关联
 
-- [[codemirror]] —— 同作者的代码编辑器，6 包架构和 plugin 范式如出一辙
-- [[tiptap]] —— ProseMirror 上层包装，让 React/Vue 项目零成本接入
-- [[lezer]] —— 同作者的增量语法分析器，CodeMirror 6 用它做高亮，思路上和 ProseMirror 的 ContentMatch DFA 互通
-- [[slate-js]] —— 设计上的反面教材：直接 patch DOM 没有 Step 抽象，协同场景吃亏
-- [[lexical]] —— Meta 写的新一代富文本框架，借鉴了 ProseMirror 的不可变思路但 API 更 declarative
+- [[codemirror]] —— 同作者的代码编辑器，plugin 与不可变 state 一脉相承
+- [[lexical]] —— Meta 的富文本内核：事务和脏集，而不是 schema 表达式
+- [[lezer]] —— 同作者的增量语法分析器
+- [[yjs]] —— 另一种把并发修改做成可交换操作的内核
 
 ## 反向链接
 

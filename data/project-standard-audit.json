@@ -4,8 +4,8 @@
   "summary": {
     "total": 961,
     "by_status": {
-      "benchmark-aligned": 20,
-      "needs-evidence": 941
+      "benchmark-aligned": 22,
+      "needs-evidence": 939
     }
   },
   "projects": [
@@ -10271,27 +10271,22 @@
     {
       "slug": "lexical",
       "title": "Lexical — 把富文本编辑拆成快照、事务和插件",
-      "source": null,
-      "status": "needs-evidence",
+      "source": "https://github.com/facebook/lexical",
+      "status": "benchmark-aligned",
       "checks": {
-        "source": false,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "source",
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "lf",
@@ -16183,26 +16178,22 @@
     {
       "slug": "prosemirror",
       "title": "ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架",
-      "source": "https://github.com/ProseMirror/prosemirror",
-      "status": "needs-evidence",
+      "source": "https://github.com/ProseMirror/prosemirror-state",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "prosody",
