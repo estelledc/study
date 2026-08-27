@@ -54124,7 +54124,7 @@
       "id": "projects::oxc",
       "area": "projects",
       "slug": "oxc",
-      "title": "oxc — Rust 写一整套 JS/TS 工具链的勇气",
+      "title": "oxc — 用一份 arena AST 串起 JS/TS 编译器组件",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -54134,16 +54134,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-build-tools-and-bundlers",
-        "raw_category": "projects / 编译器"
+        "raw_category": "编译器 / 工具链"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/oxc/",
       "atlas": {
@@ -57546,7 +57546,7 @@
       "id": "projects::rolldown",
       "area": "projects",
       "slug": "rolldown",
-      "title": "rolldown — 用 Rust 给 Vite 当统一引擎的打包器",
+      "title": "rolldown — 用 Rust 实现 Rollup 兼容协议的打包器",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -57559,13 +57559,13 @@
         "raw_category": "构建工具"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/rolldown/",
       "atlas": {
