@@ -16,12 +16,19 @@
   1. `tiptap` 绑定 tag `v3.30.3` / `db790a7c...`（npm `@tiptap/core@3.30.5` 无 GitHub tag，已披露），写清 Extension 合成、command/chain/can、未挂载 view Proxy 与 React `immediatelyRender` 边界。
   2. `quill` 绑定 annotated tag `v2.0.3` / `522fd7ee...`（npm `gitHead` 一致），写清 Delta + Parchment、`modify()` source 门、`setContents` 尾部 `\n` 与 History 默认 `userOnly=false`。
   3. 新增共享 `docs/editor-source-review-20260827-cv.md` 与两份 generation 1 static receipt。
-- acceptance checks：两页 quality-gate pass、0 advisory；receipt digest / revision 一致，evidence `UNVERIFIED`；`audit:content-contract` v2=91；`audit:counts` projects=963 / papers=1083 / total=2046。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build 2287 HTML、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=22`、`needs-evidence=941`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=91`、`legacy-unverified=1955`、blocking 0。
+  - `audit:counts`：projects=963、papers=1083、total=2046。
+- 验证结果：本地 `verify:ci` 已通过；PR #146 保持 Draft，等待人工 review。未 merge。
 - budget：2 个 blob-filtered worktree + 2 页 + 派生刷新；单 writer。
 - blocker：规模 baseline 超限仍是先于本切片的 `PARKED_HUMAN` 项（main 已超 threshold）；本轮未改 baseline / 阈值。
 - stop conditions：本轮已完成；merge 与 deploy 需单独授权。禁止自合。
 - 下一次 wake 条件：PR review / CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
-- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- 下一条命令：用 GitHub 查看 `https://github.com/estelledc/study/pull/146`
 - external_outcome：review-ready PR；D 轴保持不变直到另行授权 merge。
 - superseded_by：`none`
 
