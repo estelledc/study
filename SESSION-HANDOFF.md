@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
-- status：writer epoch `complete`；supervisor 等待本 PR review，不 merge。
+- status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
 - 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
 - objective：为缺失的 util-lib 双子补齐 `lodash` 与 `ramda` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/util-lib-source-review-20260827-ah.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
@@ -18,7 +18,7 @@
 - acceptance checks：
   - 两页 `quality-gate.mjs`：pass、0 advisory。
   - `audit:content-contract`：0 blocking、89 v2。
-  - `audit:counts` / `audit:site-state`：projects=963、papers=1083、total=2046。
+  - `audit:counts` / `audit:site-state`：projects=965、papers=1083、total=2048。
   - `audit:wikilinks`：blocking 0。
   - `git diff --check`：通过。
   - `STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿，含 23 Playwright a11y 测试。
