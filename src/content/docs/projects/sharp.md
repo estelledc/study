@@ -1,162 +1,163 @@
 ---
-title: sharp — 让 Node.js 处理图像快到不像 JS
+title: sharp — 以 libvips 为引擎的 Node 图像管线
 来源: 'https://github.com/lovell/sharp'
 日期: 2026-05-30
-分类: projects / 图像处理
+分类: 图像处理
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/lovell/sharp
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 7f1a0a22cc285fe180766f4935d50b55af6e8432
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 0.35.4
 ---
 
 ## 是什么
 
-sharp 是 **Node.js 处理图像的最快工具**：把图片缩小、换格式、加水印这些事，用三行链式 JS 就能搞定，而且速度比传统 ImageMagick 快 4-5 倍、内存只占 1/4。
+sharp 是 Node.js 上的图像处理库。日常类比：它像一张**待办清单**，先记下缩放、旋转和输出格式，真正开炉要等到 `toFile` / `toBuffer` / 第一次被 pipe 读取。重活交给 C 库 libvips，JS 层负责拼这份清单。
 
-日常类比：像一个**给图片做菜的流水线工厂**。原料（一张大 JPEG）从一头进来，经过"切片→调味→换包装"三个工位，从另一头出来。关键是这条流水线**不会把整批原料搬上工作台**，而是一小块一小块（瓦片）流过来——所以处理 4K 大图也不爆内存。
-
-写出来长这样：
+你写：
 
 ```js
-const sharp = require('sharp')
-await sharp('input.jpg').resize(800).webp().toFile('out.webp')
+import sharp from "sharp";
+await sharp("input.jpg").resize(800).webp().toFile("out.webp");
 ```
 
-一行：读 JPEG、缩到宽 800、转 WebP 格式、写到磁盘。背后是 C 语言写的 libvips 库在干重活，sharp 只是把它包成 JS 友好的链式 API。
+这一行只是在同一实例上累积 options，最后由 `_pipeline()` 调用 native `sharp.pipeline`。它实现的是 Node `stream.Duplex`，不是另起一条不可变链。
 
 ## 为什么重要
 
-不理解 sharp，下面这些事都没法解释：
+不理解固定 0.35.4 的合同，下面这些事都没法解释：
 
-- 为什么 Next.js / Astro / Vercel / Strapi / Gatsby 几乎所有 Node 框架的图像优化默认都装它（npm 周下载约 5000 万）
-- 为什么同一张 4K JPEG，sharp 处理只用 30MB 内存，ImageMagick 要 200MB+
-- 为什么 `npm install sharp` 不需要本地有 C 编译器也能装上（背后 9 个平台预编译二进制）
-- 为什么它已经 13 年还停在 0.x，但下游全都敢拿来生产
+- 为什么 `.resize().rotate()` 看起来像新对象，其实一直在改同一个 `this.options`
+- 为什么无参 `.rotate()` 仍能纠正手机竖拍，而推荐写法已经是 `.autoOrient()`
+- 为什么同一条链第二次 `.rotate(90)` 会丢掉前一次角度
+- 为什么默认输出会去掉 EXIF，处理后的朝向不能靠“原图 metadata 还在”来保证
 
 ## 核心要点
 
-sharp 的高速来自三个层叠的设计：
+sharp 的执行可以拆成五步：
 
-1. **底层用 libvips 而不是 ImageMagick**：libvips 是 1996 年起的 C 库，专门为 streaming 设计——把图片切成瓦片（tile）按需流过来，不全部加载。类比：ImageMagick 是把整箱菜搬上桌切，libvips 是流水线上一片片切。
+1. **构造 Duplex 实例**：`new Sharp(input, options)` 填好默认 options，并用 `_createInputDescriptor` 记下文件、Buffer 或可读流。
 
-2. **链式调用 + 延迟执行 = 计算图融合**：你写 `.resize(800).rotate(90).blur(2)` 时**什么都没算**，只是在搭一张"待办清单"。直到 `.toFile()` 才真正跑——而且相邻操作会被自动合并，比如"先裁剪再缩放"会被融合成"只采样需要的像素"。类比：跟服务员点 5 个菜，厨房统一规划火候，不是点一个炒一个。
+2. **链式方法只改 options**：`resize` / `rotate` / `webp` 都 `return this`。要分叉必须 `clone()`，它会对 options 做 `structuredClone`。
 
-3. **N-API + prebuild 二进制**：JS 和 C 之间的桥用 N-API（一种 ABI 稳定接口），所以一份编译好的 `.node` 文件能跨 Node 14/16/18/20/22 跑；再配合 prebuild-install 自动下载 9 个平台 × arch 的预编译包，用户感受不到 native 模块的"难装"。
+3. **输出才触发 native pipeline**：`toFile`、`toBuffer`、`toUint8Array` 或流的第一次 `_read()` 调用 `_pipeline()`。
 
-## 实践案例
+4. **默认安全阀**：`limitInputPixels` 默认 `268402689`（`0x3FFF²`），`failOn` 默认 `warning`，`sequentialRead` 默认 `true`。
 
-### 案例 1：三行做一个 thumbnail
+5. **线程与缓存是进程级开关**：libvips cache 默认 50MB / 20 文件 / 100 项；每张图的 concurrency 在 glibc 且未用 jemalloc 时默认降到 1。
+
+## 实践示例
+
+### 案例 1：缩略图仍是同一条可变链
 
 ```js
-const sharp = require('sharp')
-await sharp('photo.jpg')
-  .resize(400, 300, { fit: 'cover' })
-  .toFile('thumb.jpg')
+import sharp from "sharp";
+
+const pipeline = sharp("photo.jpg")
+  .resize(400, 300, { fit: "cover" });
+await pipeline.toFile("thumb.jpg");
 ```
 
-逐部分解释：
+`fit` 默认就是 `cover`。这里没有中间 `await`：缩放被记进 options，`toFile` 才真正跑。不要把 `pipeline = pipeline.resize(...)` 理解成不可变 API。
 
-- `sharp('photo.jpg')` 不立即读图，只是创建一个"输入节点"
-- `.resize(400, 300, { fit: 'cover' })` 加一个"缩放并填充"操作；`fit: 'cover'` 意思是"裁掉多余部分填满 400×300"
-- `.toFile('thumb.jpg')` 才触发真正的执行，返回 Promise
-
-整个链没有 `await` 在中间——延迟执行让链式调用读起来像配方而不是步骤。
-
-### 案例 2：用 Stream 处理大图不爆内存
+### 案例 2：同一输入要分出 JPEG 和 WebP，必须 clone
 
 ```js
-const fs = require('fs')
-const sharp = require('sharp')
+const source = sharp("photo.jpg").autoOrient();
+await Promise.all([
+  source.clone().resize({ width: 800 }).jpeg({ quality: 80 }).toFile("a.jpg"),
+  source.clone().resize({ width: 800 }).webp({ quality: 80 }).toFile("a.webp"),
+]);
+```
 
-fs.createReadStream('huge-4k.jpg')
+`clone()` 复制当前 options。若直接在 `source` 上连续 `.jpeg().toFile()` 再 `.webp().toFile()`，后一次会覆盖前一次的 format 字段。
+
+### 案例 3：流式入口，以及同路径写回会被拒绝
+
+```js
+import { createReadStream, createWriteStream } from "node:fs";
+
+createReadStream("huge.jpg")
   .pipe(sharp().resize(1920).webp({ quality: 80 }))
-  .pipe(fs.createWriteStream('out.webp'))
+  .pipe(createWriteStream("out.webp"));
 ```
 
-逐部分解释：
-
-- `fs.createReadStream` 一次只读几 KB，不把整张 4K 图塞进内存
-- `sharp()` 不带参数时变成一个 Transform 流，可以接到管道里
-- 三段 pipe 串起来后，内存峰值大约固定在 30-50MB，无论原图多大
-
-这就是为什么 Vercel / Cloudflare 的边缘图像优化敢用 sharp——并发上万张时，**固定内存比"快"更可贵**。
-
-### 案例 3：next/image 怎么调它
-
-Next.js 的 `<Image>` 组件背后大致这样调 sharp：
-
-```js
-async function optimizeImage(buffer, { width, format, quality }) {
-  let pipeline = sharp(buffer).rotate()
-  if (width) pipeline = pipeline.resize(width)
-  if (format === 'webp') pipeline = pipeline.webp({ quality })
-  return pipeline.toBuffer()
-}
-```
-
-逐部分解释：
-
-- `.rotate()` 不传角度时，意思是"按 EXIF 自动旋正"——手机竖拍的照片会被纠正
-- `pipeline = pipeline.xxx()` 不可变（immutable），每次返回新链——所以可以条件分支构建
-- `.toBuffer()` 把结果当二进制返回，框架再缓存到 CDN
+无参 `sharp()` 允许后面再 pipe 进数据。`toFile` 若发现 input/output 解析后是同一路径会直接拒绝；需要覆盖原文件时先写到临时路径再替换。
 
 ## 踩过的坑
 
-1. **libvips 错误信息会"穿透"上来**：报 `VipsJpeg: out of order read at line 1024` 这种 C 库内部状态机消息，对 JS 工程师极不友好——生产环境最好包一层错误规整化把它翻译成"图片损坏 / 格式不支持 / 内存不足"三类。
+1. **把链式调用当成 immutable**：方法改的是 `this.options`。条件分支里复用同一实例，会把上一分支的 resize/format 带进下一分支。
 
-2. **bus factor = 1 的脆弱**：Lovell Fuller 一个人维护 9 个平台 × 多 Node 版本 × 多 codec 的预编译矩阵，依赖大公司 sponsor。底层 libjpeg / libwebp 出 CVE 时升级压力极大。
+2. **一条 pipeline 只能留下一次 `rotate(angle)`**：后写覆盖前写。无参 `rotate()` 只是兼容入口，内部转去 `autoOrient()`。
 
-3. **Edge Runtime 跑不了**：Cloudflare Workers / Deno Deploy 等 Edge 环境不支持 N-API native binding，必须切到 wasm 路线（@squoosh），慢 2-3 倍且不能 streaming。
+3. **默认输出丢掉 EXIF**：朝向、ICC、密度都不会自动保留；需要 `keepMetadata` / `keepExif` / `withMetadata`。
 
-4. **0.x 的"假稳定"**：sharp 已 13 年仍在 0.33.x，下游必须 pin minor 版本不能 caret range。底层 libvips ABI 一升级就会在 binary 层 break，Docker 镜像构建失败常因为基础镜像没装 libvips-dev。
+4. **glibc 默认 concurrency=1**：这是为了减少内存碎片，不是“没开多核”。用 `sharp.concurrency()` 读取当前值，不要从 CPU 核数反推。
+
+5. **把 0.33 时代的 Node 14/16 矩阵抄过来**：固定 0.35.4 声明 `engines.node >=20.9.0`，并带 wasm32 / win32-arm64 等更多 optional binary。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- Node.js SSR 服务端图像处理（Next.js / Astro / Strapi / Gatsby）
-- 需要高并发低内存（Vercel Lambda / Express 中间件）
-- 常见格式互转（JPEG / PNG / WebP / AVIF / TIFF）
-- 链式批处理（resize + crop + composite + format）
+- Node 20.9+ 的服务端缩略图、格式转换、合成水印
+- 需要流式输入或 `clone()` 多路输出的批处理
+- JPEG / PNG / WebP / AVIF / TIFF / GIF / SVG 栅格化等常见格式
 
 **不适用**：
 
-- Edge Runtime（Cloudflare Workers / Bun-on-Edge）→ 用 wasm 路线（squoosh）
-- 浏览器内处理 → 用 Canvas API 或 wasm
-- 矢量图深加工（SVG 节点编辑）→ 用 svgo / sharp 只能 raster 化
-- PSD / 复杂动画 GIF 帧编辑 → 用 ag-psd / 专业工具
-- OCR / 视觉理解 → 用 Tesseract / 视觉大模型
+- Cloudflare Workers / 无 N-API 的 Edge——固定版本的主路径仍是 native binding
+- 浏览器内处理——请看 [[jimp]] 或 Canvas / wasm
+- 需要就地改同一文件路径——`toFile` 禁止 input=output
+- 要把“比 ImageMagick 快几倍”写成 SLA——本文没有运行 benchmark
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2013 年**：Lovell Fuller 创建 sharp，最初只是 ImageMagick 的更快替代，几百行 JS。
-- **2014 年**：切到 libvips backend，速度跳 4-5 倍——这是它真正与众不同的起点。
-- **2017 年**：0.18 引入 N-API，从此一份编译产物跨所有 Node 版本可用。
-- **2019 年**：稳定 prebuild 二进制覆盖 9 个平台，用户 `npm install` 不再卡在 node-gyp。
-- **2022 年**：0.30 加入 AVIF 编解码，对齐 web 现代格式。
-- **至今**：仍未发布 1.0——维护者宁愿不承诺 SemVer 也要保留底层 libvips 变动余地，这是工程师诚实。
+- 本文绑定 `lovell/sharp@7f1a0a22...`，Git tag 与 npm `gitHead` 均为 `0.35.4`。
+- 依赖 `@img/colour`、`detect-libc`、`semver`；optionalDependencies 按平台拉取 `@img/sharp-*` 与 `@img/sharp-libvips-*@1.3.3`。
+- 声明 libvips `>=8.18.6`。Web Streams 示例要求 Node `>=24.15.0`。
+- 本文未安装依赖、运行上游测试、处理真实图片或测量内存/吞吐，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **C 库 + N-API 是 Node 性能解锁的正解**——不要害怕 native 绑定，prebuild 解决了"难装"的负担。
-2. **链式 + 延迟执行 = 计算图融合的口子**——这跟 Pandas / Spark / React 是同一种思路，是高性能 API 的通用配方。
-3. **streaming 比 buffer 重要**——并发场景下"固定内存"比"绝对快"更值钱。
-4. **0.x 长期稳定也行**——SemVer 是社会承诺不是技术承诺，把它当工程师诚实就好。
+1. **延迟执行不等于不可变**——options 对象是可变草稿，clone 才是分叉。
+2. **输出函数才是引擎开关**——没到 `_pipeline` 之前，libvips 还没开始干活。
+3. **默认朝向与默认 metadata 不是一回事**——`autoOrient` 要显式打开，输出还可能剥掉 EXIF。
+4. **进程级 cache/concurrency 会影响邻居请求**——不要把它们当成单次调用的局部参数。
+
+## 应用型自测
+
+1. `const a = sharp(buf).resize(100); const b = a.webp();` 之后只 `a.toFile("x.jpg")`，输出还是 JPEG 吗？
+2. 对同一实例先 `.rotate(90)` 再 `.rotate(180)`，最终旋转角度是多少？
+3. `toFile` 的目标路径与输入文件是同一绝对路径时，会发生什么？
+
+检查点：
+
+1. 不一定。`b` 与 `a` 是同一实例，`.webp()` 已改 `formatOut`。
+2. 180。后一次 `rotate(angle)` 替换前一次。
+3. 拒绝并报 `Cannot use same file for input and output`。
 
 ## 延伸阅读
 
-- 官方文档：[sharp.pixelplumbing.com](https://sharp.pixelplumbing.com/) —— 完整 API reference
-- 底层库：[libvips/libvips](https://github.com/libvips/libvips) —— 1996 年起的 C 图像处理库
-- 视频：[Sharp's libvips Tour](https://www.youtube.com/watch?v=DgWJZ-sk4nY) —— 官方 30 分钟原理讲解
-- 维护者博客：[Lovell Fuller](https://blog.lovell.io/) —— sharp / libvips 内部细节
-- N-API 入门：[Node.js N-API guide](https://nodejs.org/api/n-api.html) —— 理解绑定层
-- 对照库：[[jimp]] —— 纯 JS 实现，慢但零依赖兜底
+- 官方文档：[sharp.pixelplumbing.com](https://sharp.pixelplumbing.com/)
+- 固定源码：[lovell/sharp](https://github.com/lovell/sharp) —— 本文绑定提交 `7f1a0a22cc285fe180766f4935d50b55af6e8432`
+- 底层库：[libvips/libvips](https://github.com/libvips/libvips)
+- 对照库：[[jimp]] —— 纯 JS 位图路线，默认格式与执行模型不同
 
 ## 关联
 
-- [[jimp]] —— 纯 JS 图像库，sharp 跑不了时的 fallback 选项
-- [[fastify]] —— 同样靠"少包装、贴底层"做出 Node 高性能的代表
-- [[playwright]] —— 跨平台 native binary 分发的另一个范本
-- [[starlight]] —— Astro 文档站点主题，图像优化默认用 sharp
-- [[tanstack-router]] —— 同样链式 API + 延迟执行的设计哲学
-- [[biome]] —— Rust 写的工具链，跟 sharp 都属于"换语言换性能"路线
+- [[jimp]] —— 无 native binding 时的互补选项
+- [[vips]] —— sharp 背后的流式 C 库
+- [[starlight]] —— Astro 文档主题，构建期图像优化常走 sharp
 
 ## 反向链接
 
