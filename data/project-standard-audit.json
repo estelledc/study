@@ -4,8 +4,8 @@
   "summary": {
     "total": 962,
     "by_status": {
-      "benchmark-aligned": 47,
-      "needs-evidence": 915
+      "benchmark-aligned": 49,
+      "needs-evidence": 913
     }
   },
   "projects": [
@@ -9805,25 +9805,21 @@
       "slug": "kysely",
       "title": "Kysely — TypeScript SQL 查询构建器",
       "source": "https://github.com/kysely-org/kysely",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "label-studio",
@@ -15978,26 +15974,22 @@
     {
       "slug": "prisma",
       "title": "Prisma — 类型安全 ORM",
-      "source": "https://github.com/prisma/prisma",
-      "status": "needs-evidence",
+      "source": "https://github.com/prisma/orm",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "probe-rs",
