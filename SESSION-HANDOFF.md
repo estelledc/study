@@ -4,13 +4,21 @@
 
 ## 2026-08-27 merge-in #189 ms + pretty-ms
 
-- status：`running`
-- objective：把 `origin/main` 合入 #189，只重生派生索引并修正过期公开计数字段后 push。仅当非草稿、MERGEABLE、verify:ci 绿、且存在真实 ship review 时才 squash-merge。
-- scope：PR 分支 merge commit、atlas / project-standard / site-state、公开计数文案、本交接。不改项目页正文，不 rebase，不 force-push，不 deploy。
+- supervisor 状态：merge-in 已 push；远端 `verify:ci` 绿。
+- status：`WAIT_HEALTHY` 等待 owner；writer EO 原合同为「一 PR、不 merge」。
+- 起始 ref：`e6ac78a54023a00a4b888c34a3bd760b33486059`（EO 本地验收交接）。
+- 完成 ref：`3f1cbf48e966b132477216485c2d5297e621c529`。
+- objective：把 `origin/main` 合入 #189，只重生派生索引并修正过期公开计数字段后 push。
+- scope：PR 分支 merge commit、atlas / project-standard / site-state、公开计数文案、本交接。不改 `ms` / `pretty-ms` 正文，不 rebase，不 force-push，不 deploy。
 - activated_by：explicit merge-in lane（#187 已 push+CI running 后开始 #189）。
-- detector fingerprint：#189 `CONFLICTING` / `DIRTY`，非草稿；冲突文件仅为派生索引与公开计数。
-- external delta：push 已授权；squash-merge 仅在门禁满足时授权。
-- acceptance checks：`git merge origin/main`；`npm run atlas`；`node scripts/audit-project-standard.mjs --write`；`npm run generate:site-state`；`npm run audit:counts`；`git diff --check`。
+- detector fingerprint：#189 曾 `CONFLICTING` / `DIRTY`；冲突文件仅为派生索引与公开计数。远端 CI run `33064694783` 现为 SUCCESS。
+- external delta 计数：push + CI 状态变化已发生；squash-merge / deploy 仍未授权。
+- 已完成切片：merge `origin/main`（含 #79）并重生派生索引；公开计数随 main 前进刷新。
+- 验证结果：GitHub Actions `verify:ci` 在 `3f1cbf48e966b132477216485c2d5297e621c529` 上 COMPLETED / SUCCESS。
+- acceptance checks：远端 CI 绿；本地不重复跑全量门禁。
+- blocker：merge 与 deploy 需单独授权。EO 原指令是 No merge。
+- 下一次 wake 条件：owner 对 #189 的 review / merge 决定。
+- 下一条命令：用 GitHub 查看 https://github.com/estelledc/study/pull/189 ；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer EO duration-format epoch
@@ -22,7 +30,7 @@
 - scope：两页新正文、2 份 generation 1 receipt、共享审查文档、note-index / project-standard / site-state / atlas / 公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行 mocha / ava、未测 bundle 或性能。
 - activated_by：`explicit-user-parallel-writer-eo-20260827`。
 - detector fingerprint：仓库无 `ms` / `pretty-ms` 项目页；用户指定 duration-format 双子 + STATIC_REVIEW + `*-20260827-eo.md` + 一 PR 不 merge。
-- external delta 计数：本轮授权 push + 开 1 个 PR；未 merge、未 deploy，D 轴不含生产发布。
+- external delta 计数：push + PR #189 + 远端 `verify:ci` SUCCESS（run `33064694783`，head `3f1cbf48e966...`）；未 merge、未 deploy。
 - 已完成切片：
   1. `ms` 绑定 tag `2.1.3` / `1c6264b795...`（npm `gitHead` 与 tag 一致），写清字符串解析 vs 有限数字格式化、100 字符 / 单单位正则、365.25 天年、格式化最大单位为天，并披露 3.x/4.x 预发布线。
   2. `pretty-ms` 绑定 tag `v9.3.0` / `ab52d6ae...`（npm `gitHead` 与 tag 一致），写清单向 number|bigint 格式化、选项覆盖层级、365 天年、冒号记法至少显示到分钟；披露 tag 后 FAQ 提交未绑定。
@@ -37,8 +45,8 @@
 - 验证结果：STATIC_REVIEW 完成；未宣称上游测试或运行证据。规模 baseline 超限是先于本切片的 `PARKED_HUMAN` detector，本轮未改 baseline / 阈值。
 - blocker：`benchmark-site --compare` 的 tracked_files 超限需 owner 处置；merge / deploy 需单独授权。
 - stop conditions：本轮一 PR 已是外部结果上限；不 merge。
-- 下一次 wake 条件：PR review/CI 状态变化，或 owner 对 merge / 规模 baseline 的决定。
-- 下一条命令：`STUDY_CHANGED_FROM=42caf48968a4901b8aa77f699b0567cc475beb20 npm run verify:ci`
+- 下一次 wake 条件：owner 对 #189 的 review / merge 决定，或规模 baseline 处置。
+- 下一条命令：用 GitHub 查看 https://github.com/estelledc/study/pull/189 ；未授权前不要 merge。
 - superseded_by：`none`。
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
