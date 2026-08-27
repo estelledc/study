@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "valtio",
+    "digest_sha256": "5ab4f7583025ee3a911cd2d2ba9bb7963d1f0234f74ac788f031b15ec4aa243f"
+  },
+  "source_revision": "15c64d4d7a7a9bd55d750fa6a317b440978a2b25",
+  "research_input_sha256": "895ca6e75d12a8b8cdd0d3bb5caa2b61b48c26462ad9f1046a1b88780b565bc8",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "writer-k-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates write-side proxy, versioned snapshot, read-side tracking, and collection/async v2 boundaries."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "writer-k-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "vanilla, react, subscribeKey, proxyMap, watch deprecation, and v2 migration docs were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "writer-k-static-20260827",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Runtime and API claims are bounded to valtio 2.3.2; bundle, caret, and concurrency effects need target measurements."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}

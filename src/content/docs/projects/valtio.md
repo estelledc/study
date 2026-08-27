@@ -4,44 +4,66 @@ title: valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
 日期: 2026-05-30
 分类: projects / 前端状态
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/pmndrs/valtio
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 15c64d4d7a7a9bd55d750fa6a317b440978a2b25
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 2.3.2
 ---
 
 ## 是什么
 
-valtio 是 React（也兼容纯 JS）的状态管理库。一句话定义：**用一层 JS Proxy 把状态对象包成"会喊"的对象——你直接 `state.count++` 就能让组件重渲染**，不用写 `set(s => ({ count: s.count + 1 }))` 那种 callback 仪式。
+valtio 是一个面向 React 和纯 JS 的状态库。一句话定义：**用 JS Proxy 包住普通对象，直接 `state.count++` 就会通知订阅者**；React 侧再拿一份只读快照做渲染。
 
-日常类比：像在房间里装了**红外感应灯**。你不用按开关（不用调 `set`），只要走过去（直接改属性），灯就自己亮（订阅者收到通知）；同时每盏灯只盯着自己那块地（每个组件只在它读过的字段变了才重渲染）。
+日常类比：像在房间里装了红外感应灯。你不用按开关（不用写 `set`），只要走过去（直接改属性），灯就自己亮；每盏灯只盯自己那块地（组件只在读过的路径变了才重渲染）。
 
-valtio 的核心 vanilla.ts 459 行 + react.ts 174 行，外部依赖只有一个 `proxy-compare`。它的存在证明：状态管理库可以**直接利用 JS 语言能力（Proxy）而不是发明新 API**。
+```ts
+import { proxy, useSnapshot } from 'valtio'
+
+const state = proxy({ count: 0 })
+function Counter() {
+  const snap = useSnapshot(state)
+  return <button onClick={() => state.count++}>{snap.count}</button>
+}
+```
+
+固定提交里 `src/vanilla.ts` 459 行、`src/react.ts` 174 行；运行时依赖只有 `proxy-compare`。React 是可选 peer，纯 JS 可以从 `valtio/vanilla` 只取 `proxy` / `subscribe` / `snapshot`。
 
 ## 为什么重要
 
-不理解 valtio 的思路，下面这些问题会一直绕不清：
+不理解 valtio 的读写分层，下面这些问题会一直绕不清：
 
-- 为什么 zustand 要写 `set` 函数、Redux 要 dispatch action，这些"仪式"到底是必要的还是历史包袱
-- 为什么 MobX 写 `obj.x++` 也能响应式但被嫌"重"，valtio 同样写法却被认为"轻"
-- 为什么 React 18 的 `useSyncExternalStore` 让一票第三方状态库百花齐放
-- 为什么"嵌套对象状态"在不同库里成本差这么远（valtio 少一层 produce 仪式，zustand 常要配 immer）
+- 为什么组件里读 `snap.count`、写却必须回到 `state.count++`
+- 为什么嵌套对象可以直接 `item.qty++`，而原生 `Map` / `Set` 要换 `proxyMap` / `proxySet`
+- 为什么 React 18 的 `useSyncExternalStore` 能让第三方状态库共用同一套并发订阅合同
+- 为什么 v2 不再在库内自动解开 Promise，而要把 `use()` 留给调用方
 
 ## 核心要点
 
-valtio 的全部魔法可以拆成 **三层叠加**：
+valtio v2 的执行可以拆成四层：
 
-1. **Proxy.set trap 把赋值变成事件**——`Proxy.set` 是拦截赋值的钩子。你写 `state.x = 1`，它先用 `Object.is`（严格相等）比对新旧值，相同就短路；不同则记下事件并通知订阅者。类比：邮筒里塞信，邮递员立刻知道。
+1. **写侧 Proxy.set / deleteProperty**：`proxy()` 给对象装陷阱。`set` 先用 `Object.is`（可替换）比较新旧值，相同就短路；不同则记下 `set`/`delete` 操作并通知监听者。v2 的 `proxy(obj)` 会就地改传入对象，不再深拷贝一份再代理。
 
-2. **版本号 + 快照缓存**——每次有效 mutate 让全局版本号 `++`；React 侧 `useSnapshot` 拿一个不可变快照，**同版本返回同一引用**。类比：小区公告栏的"第 N 次更新"，同一版印的传单都长一样，组件靠这个判断"要不要重画"。
+2. **版本号 + 快照缓存**：每次有效 mutate 让内部 `versionHolder` 递增。`snapshot()` 按版本从 `snapCache` 取只读快照；同版本返回同一缓存。属性用 `defineProperty` 做成不可写，但固定源码已去掉 `Object.preventExtensions`。
 
-3. **proxy-compare 路径跟踪**——React 渲染时再套一层 proxy，记录"这个组件读了 `snap.user.name`"。下次 mutate 后比对：只要它读过的路径没变，就跳过重渲染。类比：每个组件随身带个清单，只盯着清单上的字段。
+3. **读侧 proxy-compare**：`useSnapshot` 用 `useSyncExternalStore` 订阅 vanilla `subscribe`，再把快照包进第二层 Proxy，记录这次渲染读过哪些路径。下次只有这些路径变了才换引用。
 
-三层加起来：**写法朴素 + 订阅精细 + 引用稳定**，这是 valtio 区别于其他库的核心。理解了这三层，剩下 proxyMap / subscribeKey / devtools 都是"上层应用"，套路同。
+4. **可代理集合是显式边界**：默认 `canProxy` 排除带 `Symbol.iterator` 的非数组对象，以及 `Date` / `Promise` / `WeakMap` / `Error` / `RegExp` 等。`Map`/`Set` 要用 `proxyMap` / `proxySet`；`watch` 仍在仓内，但源码已标 deprecated，指向 `valtio-reactive`。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：最简计数器（零仪式）
+### 案例 1：最简计数器（读写分开）
 
 ```tsx
-import { proxy } from 'valtio'
-import { useSnapshot } from 'valtio/react'
+import { proxy, useSnapshot } from 'valtio'
 
 const state = proxy({ count: 0 })
 
@@ -53,20 +75,20 @@ function Counter() {
 
 **逐部分解释**：
 
-- `proxy({ count: 0 })`：把普通对象包成"会喊"的状态，放在模块级，别放进组件函数里
-- `useSnapshot(state)`：拿到只读快照 `snap`，组件用它读数；同版本引用稳定
-- 点击时写 `state.count++`（改原 proxy），读用 `snap.count`——两份句柄，读写分开
+- `proxy({ count: 0 })` 必须放在模块级或稳定引用里，不能每次 render 新建
+- 渲染读 `snap.count`；事件里写 `state.count++`
+- `useSnapshot` 默认把 `subscribe` 回调排到 microtask；受控 input 若丢光标，可传 `{ sync: true }`
 
 ### 案例 2：嵌套对象（购物车）
 
-```tsx
+```ts
 const cart = proxy({
   items: [{ id: 1, name: 'A', qty: 1 }],
   total: 0,
 })
 
 function inc(id: number) {
-  const it = cart.items.find(i => i.id === id)!
+  const it = cart.items.find((i) => i.id === id)!
   it.qty++
   cart.total = cart.items.reduce((s, i) => s + i.qty, 0)
 }
@@ -74,87 +96,97 @@ function inc(id: number) {
 
 **逐部分解释**：
 
-1. `find` 拿到深层 item——嵌套对象也被自动包成 proxy，不用手写深拷贝
-2. `it.qty++` 直接改深层字段；不必 `{...cart, items: [...]}`
-3. 手写 `cart.total = reduce(...)` 同步总价（也可用 `subscribe` 派生，不必每次手算）
-4. 只读 `snap.total` 的组件会重渲染——因为 `total` 也被改了
+1. 嵌套普通对象会被再次 `proxy()`，所以 `it.qty++` 能通知到根
+2. 不必手写 `{...cart, items: [...]}` 那种浅拷贝
+3. 只读 `snap.total` 的组件会因 `total` 被改而重渲染；只读 `snap.items[0].name` 的组件不会只因 `qty` 变而重渲染
 
-### 案例 3：组件外订阅（同步 localStorage）
+### 案例 3：组件外订阅
 
 ```ts
-import { subscribe, subscribeKey } from 'valtio'
+import { subscribe } from 'valtio'
+import { subscribeKey } from 'valtio/utils'
 
 subscribe(cart, () => {
   localStorage.setItem('cart', JSON.stringify(cart))
 })
-
-subscribeKey(cart, 'total', (total) => console.log('新总价', total))
+subscribeKey(cart, 'total', (total) => {
+  console.log('新总价', total)
+})
 ```
 
 **逐部分解释**：
 
-- `subscribe(cart, cb)`：任何 `cart.*` 改动都跑 callback，写在 React 组件外也行
-- `JSON.stringify(cart)`：把当前购物车落盘；不需要 `useEffect`
-- `subscribeKey(cart, 'total', ...)`：只盯一个 key，字段没变就不喊——减薄版订阅
+- `subscribe` 默认把多次 mutate 收进一次 microtask，再把 ops 交给回调
+- `subscribeKey` 仍订阅整个 proxy，但只在指定 key 的 `Object.is` 结果变化时喊
+- 非 React 项目应改从 `valtio/vanilla` 导入，避免主入口把 `react` peer 拉进打包器
 
 ## 踩过的坑
 
-1. **解构再 mutate 会丢通知**——`const { user } = state; user.name = 'x'`：dev 模式抛 prop listener 错，prod 模式静默不通知。规则：永远在 `state.user.name = 'x'` 这种"从根开始"的链式上写。
-
-2. **snapshot 是只读的**——在 `useSnapshot` 返回值上写赋值会被冻结报错。要改必须回到原 proxy。容易忘：组件里写 `snap.x = 1` 直觉上像在改 state，其实是在改快照。
-
-3. **不能代理 Map/Set/Date/Promise/类实例**——`canProxy` 黑名单。响应式集合得用 valtio 提供的 `proxyMap` / `proxySet`（不是原生 Map 的完整替代，`for...of` 顺序等细节不一致）。
-
-4. **父组件每次 render 重建 proxy 会让组件不响应**——`function App() { const state = proxy({}); ... }`：每次 render 是新 proxy，旧的 mutate 通知不到当前组件。proxy 必须放组件外（模块级）或 useRef 锁住。
+1. **在快照上写赋值**：`useSnapshot` 返回值是只读快照再包一层比较 Proxy。普通字段不可写；`proxyMap` / `proxySet` 的 mutate 方法会直接抛 `Cannot perform mutations on a snapshot`。
+2. **把带迭代器的对象当普通 state**：原生 `Map`/`Set` 过不了默认 `canProxy`，不会自动变响应式。要用 `proxyMap` / `proxySet`，并注意它们不是完整原生集合替代。
+3. **每次 render 新建 proxy**：`function App() { const state = proxy({}) }` 会让旧订阅对不上新对象。proxy 要放模块级或用稳定引用锁住。
+4. **v2 的 Promise 与不纯 proxy**：库不再内部解开 Promise，React 19 应用 `use()`；传入 `proxy(obj)` 的对象会被就地改写，复用原对象时要先 `deepClone`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 业务对象嵌套深（购物车、表单、富文档树）——直接 mutate 比层层拷贝省事
-- 想要"零心智 API"——小团队或不熟 reducer / selector 时上手快
-- 组件外大量副作用（同步存储 / 发请求 / 拉外部 SDK）——subscribe 写在哪都行
-- React 18+ 项目——`useSyncExternalStore` 已就位，并发安全
+- 业务对象嵌套深，希望直接 mutate 而不是层层拷贝
+- 需要组件外订阅（存储、请求、外部 SDK）
+- React 18+ 项目，可以接受 `useSyncExternalStore` 合同
+- 小团队想先用最少 API 把对象状态跑起来
 
 **不适用**：
 
-- 衍生值占比高（大量 select / compute）→ [[jotai]] 原子化更合身
-- 要能 `grep 'set('` 审计所有写入入口 → [[zustand]] 更合规
-- 需要 time-travel / 严格审计的大型业务 → Redux Toolkit 的 action 日志更稳
-- 跨框架（React + Vue + 纯 JS）→ [[nanostores]] 更轻更通用
-
-## 历史小故事（可跳过）
-
-- **2020 年前后**：React 状态库已经卷到第三波——Redux 太重、context 性能差、zustand 刚起。Daishi Kato（dai-shi）发起 valtio，挂在 pmndrs（Poimandres）组织下，与 zustand / jotai / react-three-fiber 同门。
-- **2021-2022 年**：valtio v1.x 验证 Proxy 思路可行，但要靠自定义 useSubscription 处理 tearing/并发。
-- **2022 年**：React 18 落地 `useSyncExternalStore`——把"小状态库怎么和并发渲染共存"标准化。valtio 改用它后，react.ts 缩到 174 行，订阅核心 30 行不到。
-- **2024-2026 年**：迭代到 v2.x，主要在精细化 proxy-compare、SSR/Suspense 适配、把"自动追踪 effect"（旧 watch.ts）剥离到 valtio-reactive 子项目。
-- 同期 zustand / jotai 也都迁到 useSyncExternalStore，三个库形成"显式 set / 原子化 / proxy mutate"的三脚架。
+- 衍生值占比高、需要大量独立 atom / selector → 原子化模型更合身
+- 必须 `grep` 到每一个写入入口做审计 → 显式 `set` 或 action 日志更稳
+- 跨框架且要避开 React 入口 → 用 `valtio/vanilla`，或改选框架无关库
+- 需要库内自动处理 Promise / Suspense → 那是 v1 合同，v2 已拿掉
 
 ## 学到什么
 
-1. **能用 JS 语言能力（Proxy / Reflect / WeakMap）就别造新 API**——valtio 没造一个新概念，全在用 JS 标配；"心智成本"和"造的新词数"成正比。
-2. **响应式系统的精度，靠的是"读"和"写"两侧都被劫持**——valtio 写侧用自家 Proxy，读侧用 proxy-compare 第二层 Proxy。两层独立、配合精细。
-3. **mutate-anywhere 的代价是"哪里改了"难追**——动态性赢了写法，输了可观测性，没法一次解决；项目大了"哪里改了 user.name"会变成痛点。
-4. **React 18 的 useSyncExternalStore 是生态胜利**——它让 valtio / zustand / jotai 都能站在同一标准上做差异化创新，第三方状态库不再各自踩 tearing 坑。
+1. **能用语言能力就别造新词**：valtio 的核心是 `Proxy`、`WeakMap`、版本号和 `useSyncExternalStore`，不是新状态代数。
+2. **响应式精度来自读写两侧都被劫持**：写侧记 ops，读侧记路径；两层 Proxy 职责不同。
+3. **mutate-anywhere 换来的是可观测性**：写法短，但「谁改了 `user.name`」更难追。
+4. **版本边界比口号重要**：v2 的不纯 `proxy`、显式 Promise 和 deprecated `watch` 都写在固定源码里，不能用 v1 印象替换。
+
+## 应用型自测
+
+1. 组件写了 `const snap = useSnapshot(state)`，然后执行 `snap.count++`。状态会更新吗？
+2. `const state = proxy({ cart: new Map() }); state.cart.set('a', 1)`。默认会通知订阅者吗？
+3. `useSnapshot(state)` 没有带 `{ sync: true }`。一次点击里连续改两个字段，订阅回调默认什么时候跑？
+
+检查点：
+
+1. 不会按预期更新。快照字段不可写；必须改回原 proxy。
+2. 不会按普通对象那样自动代理。`Map` 带迭代器，默认 `canProxy` 为假，应改用 `proxyMap`。
+3. 默认进 microtask 批量通知，不是每个赋值同步回调一次。
+
+## 固定版本边界
+
+- 本文绑定 GitHub release `v2.3.2`，提交 `pmndrs/valtio@15c64d4d7a7a9bd55d750fa6a317b440978a2b25`。
+- `package.json` 版本为 `2.3.2`；`engines.node` 为 `>=12.20.0`；React peer 为 `>=18`，且为 optional。
+- TypeScript 类型入口要求 `>=4.5`。
+- 本文只做源码/测试/文档静态审查，没有安装依赖、运行上游测试、bundle 或性能 benchmark，状态保持 `UNVERIFIED`。
 
 ## 延伸阅读
 
-- 官方仓库 README：[pmndrs/valtio](https://github.com/pmndrs/valtio)（含示例索引和 codesandbox 链接）
-- 作者 Daishi Kato 博文：[How Valtio Proxy State Works](https://blog.axlight.com/posts/how-valtio-proxy-state-works/)（拆解 vanilla 部分）
-- 官方文档：[valtio.dev](https://valtio.dev/)（含 useSnapshot / proxyMap / devtools 用法）
-- proxy-compare 库：[dai-shi/proxy-compare](https://github.com/dai-shi/proxy-compare)（valtio 的精细订阅依靠它）
-- React 18 RFC：[useSyncExternalStore](https://github.com/reactwg/react-18/discussions/86)（理解 valtio 为什么从 v1 到 v2 急剧瘦身）
-- [[zustand]] —— 同门 set-fn 派状态库，对比理解"显式 vs 隐式"权衡
+- 官方仓库：[pmndrs/valtio](https://github.com/pmndrs/valtio)
+- 固定源码：本文绑定提交 `15c64d4d7a7a9bd55d750fa6a317b440978a2b25`
+- 官方文档：[valtio.dev](https://valtio.dev/)
+- 仓内机制说明：[docs/how-tos/how-valtio-works.mdx](https://github.com/pmndrs/valtio/blob/15c64d4d7a7a9bd55d750fa6a317b440978a2b25/docs/how-tos/how-valtio-works.mdx)
+- proxy-compare：[dai-shi/proxy-compare](https://github.com/dai-shi/proxy-compare)
+- [[immer]] —— 用 draft 模拟「看起来能改」；valtio 是真的改 proxy
+- [[mobx]] —— 同样走 Proxy，但还带 derivation 引擎
 
 ## 关联
 
-- [[zustand]] —— 同 pmndrs 出品；显式 `set(s => ...)` 仪式 vs valtio 直接 mutate，是同一团队的两种哲学
-- [[jotai]] —— 同 pmndrs 出品；原子化（atom 粒度订阅）vs valtio 整体 proxy（路径粒度订阅），适合"衍生值多"场景
-- [[mobx]] —— 思路最像 valtio（Proxy + 自动追踪），但带 OOP/装饰器范式，bundle ~16KB；valtio 是它的轻量化函数式表达
-- [[nanostores]] —— 极简 set/get 状态库，跨框架；valtio 反过来是"重写法、轻心智"的极端
-- [[immer]] —— 用 produce + draft 模拟"直接改"；valtio 用 Proxy 真的让你直接改，省了 producer 一层
-- [[redux]] —— 显式 action + reducer 链路最长；valtio 几乎反着走，但都解的是同一类问题
+- [[zustand]] —— 同 pmndrs 出品；显式 `set` 与 valtio 直接 mutate 是两种哲学
+- [[jotai]] —— 同门原子化模型，适合衍生值多的界面
+- [[mobx]] —— 思路最像：Proxy + 自动追踪
+- [[nanostores]] —— 更小、框架无关的 set/get
+- [[immer]] —— produce + draft 产出不可变下一份
+- [[redux]] —— 显式 action + reducer；valtio 几乎反向走同一类问题
 
 ## 反向链接
 
