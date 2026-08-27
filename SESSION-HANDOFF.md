@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AU CSS-in-JS 双子
+
+- status：writer epoch `complete`；等待 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`。
+- objective：把 styled-components 与 Emotion 绑到可达固定 revision，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两页、一份 `docs/css-in-js-source-review-20260827-au.md`、两份 generation 1 receipt、确定性 atlas / project-standard / site-state / handoff；未安装上游依赖、未跑上游测试、未测 bundle / SSR / RSC。
+- activated_by：`explicit-parallel-writer-au-20260827`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision / evidence boundary；旧文把 6.x 写成维护停更、把 RSC 写成必须 `'use client'`，并把 Emotion hash / `@emotion/server` 默认 cache 写错。
+- external delta：GitHub / npm 只读核验 + 本地 blob-filtered clone；形成 1 个 PR，不 merge、不部署，D 轴不变。
+- 完成切片：
+  1. `styled-components` 绑定 `styled-components/styled-components@159302389c...` / `6.5.3`，纠正 runtime `componentId`、RSC `IS_RSC` 内联 style、ThemeProvider no-op 与 2026-08 仍在发版。
+  2. `emotion` 绑定 `emotion-js/emotion@3c19ce5997...` / `@emotion/react@11.14.0`，纠正 MurmurHash2、`css` prop jsx 工厂、server 默认 `@emotion/css` cache，并披露 `@emotion/styled@11.14.1` 更晚提交。
+  3. 新增共享 `docs/css-in-js-source-review-20260827-au.md` 与两份 generation 1 static receipt；项目审计 `benchmark-aligned` 18 → 20。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `generate:site-state`：projects=961、papers=1083、total=2044、content_contract v2=89。
+- budget：2 个 ignored worktree + 2 页静态源码迁移；单 writer。
+- blocker：未跑 `verify:ci` 前不得宣称 CI 全绿；不 merge。
+- stop conditions：本 epoch 已完成；不继续发明下一对 slug。
+- 下一次 wake 条件：PR CI / review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

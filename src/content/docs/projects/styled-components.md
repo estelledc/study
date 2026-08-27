@@ -4,145 +4,158 @@ title: styled-components — 用标签模板把 CSS 写进 React 组件的 CSS-i
 日期: 2026-05-30
 分类: projects / 前端样式
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/styled-components/styled-components
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 159302389c696a7952aaed31d840b06b8aa6d677
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 6.5.3
 ---
 
 ## 是什么
 
-styled-components 是一个 React 库，用 JavaScript 的**标签模板字面量**把 CSS 写在组件文件里，自动生成不冲突的类名，再把样式注入到页面 `<head>`。
+styled-components 是一个 React CSS-in-JS 库。日常类比：后厨给每道菜贴两张号——一张是菜名牌（`componentId`），一张是今天这份酱汁的配方号（动态 class）。你用标签模板写 CSS，库负责算号、注入 `<style>`，DOM 只拿到 className。
 
-日常类比：传统 CSS 像**印一大张共用贴纸**——所有组件去同一张纸上撕自己那块，名字一样就互相覆盖。styled-components 像**自助打印机**——每个组件当场打印自己的贴纸，机器自动给每张编一个唯一编号，永远不会撞名字。
-
-它由 babel 插件（编译期）+ 运行时 StyleSheet（浏览器期）两段组成。babel 插件给每个 `styled.xxx` 模板算一个稳定的短哈希，叫 componentId；运行时第一次渲染组件时把 CSS 文本拼出来、再 hash 一次、注入一个 `<style data-styled>` 标签到 head 里。
-
-它解决的是 React 项目里传统 CSS 的三个老问题：类名全局冲突、组件和样式分散在两个文件、动态样式难表达伪类和媒体查询。换句话说，它把 "样式" 重新装回了 "组件" 这个盒子里。
-
-## 为什么重要
-
-- 不理解它，看不懂 2017-2023 年 React 项目里满屏的 `styled.div` 写法
-- 不理解它，会以为 "CSS-in-JS" 是抽象概念——其实就是 "用 JS 函数把 CSS 字符串变成 className" 这一件事
-- 不理解它，无法解释为什么后来 Emotion / MUI 等抢走大量新项目与明星用户
-- 不理解它，无法判断新项目该不该选——约 2025 起进入维护期，对 React Server Components 不友好
-
-## 核心要点
-
-1. **标签模板字面量是入口**——`styled.div` 后面跟反引号那段，本质是 JS 引擎把模板拆成静态字符串数组和动态值数组传给 `styled.div` 这个函数。函数怎么拼都行。这是 ES2015 的语法，不是 styled 自创。
-2. **componentId 是稳定钩子**——babel 插件遍历源码，给每个 styled 调用算 "基于文件路径 + 变量名" 的短哈希，比如 `sc-Button-1a2b3c`。SSR 时服务端和客户端必须算出一样的 hash，否则 hydration 失败。所以**生产环境必装 babel-plugin**。
-3. **运行时按需注入**——组件第一次渲染才把 CSS 拼出来、hash、注入 `<style>` 到 head。这和 inline-style 的关键区别是**支持伪类、媒体查询、关键帧**——这三样能力在 `style={{}}` 里都没有。
-4. **componentId + 动态 hash 双重命名**——DOM 里看到的 className 通常是两段，前一段是 babel 给的稳定 id（用于 SSR 和 DevTools 调试），后一段是 props 算出来的动态 hash（用于命中 cache）。两段合起来才是一个完整 class 名。
-
-## 实践案例
-
-### 案例 1：根据 props 切换底色的按钮
+你写：
 
 ```jsx
 import styled from 'styled-components'
 
 const Button = styled.button`
-  background: ${props => props.primary ? '#0070f3' : '#fff'};
-  color: ${props => props.primary ? '#fff' : '#000'};
-  padding: 8px 16px;
-  &:hover { opacity: 0.85; }
+  background: ${p => (p.$primary ? '#0070f3' : '#fff')};
 `
-
-<Button primary>Click</Button>
 ```
 
-每次渲染跑 `props => ...` 算出真实 CSS 字符串，hash 后看 cache 有没有；没有就注入新 class。primary=true 和 primary=false 产生两个不同的 class，DOM 里看到的 className 数 = 用到的 props 组合数。
+固定 6.5.3 把 `styled.div` 这类快捷方式预挂到 `baseStyled` 上；模板先经 `css()` 展平，再由 `ComponentStyle.generateAndInjectStyles()` 用 stylis 编译并写入 StyleSheet。
 
-### 案例 2：用 ThemeProvider 切换主题
+## 为什么重要
+
+不理解它，下面这些事都没法解释：
+
+- 为什么 className 常常是两段：稳定 `componentId` 加上动态 hash
+- 为什么 `$primary` 不会落到 DOM，而 `primary` 可能触发未知 prop 警告
+- 为什么旧文说“RSC 必须 `'use client'`”，但 6.5.3 源码里有独立的 RSC 注入路径
+- 为什么没装 babel 插件也能生成 `componentId`，却仍可能和 SSR 顺序打架
+
+## 核心要点
+
+主链可以拆成五步：
+
+1. **构造**：`styled.button\`...\`` 调用 `constructWithOptions` → `createStyledComponent`，把模板交给 `css()` 展平。
+2. **编号**：默认 `componentId` 是 `escape(displayName) + '-' + generateComponentId(SC_VERSION + name + 计数)`；djb2 哈希再转成 base-52 字母名。`withConfig({ componentId })` 可以钉死。
+3. **执行**：渲染时 `resolveContext` 合并 `.attrs()`、props 和 theme；`$` 前缀与 `as` 不会转发给 DOM。
+4. **注入**：对展平后的 CSS 再做 `phash(baseHash, stylis.hash, css)`，得到动态名并 `insertRules`。同一 CSS 字符串走 `dynamicNameCache`。
+5. **环境分叉**：浏览器走 CSSOM / 文本插入；`ServerStyleSheet` 收集后输出 `<style data-styled>`；`IS_RSC`（`React.createContext === undefined`）则在组件旁内联 `<style>`，并用 `React.cache` 去重。
+
+## 实践示例
+
+### 案例 1：用 transient prop 切换按钮
 
 ```jsx
-import { ThemeProvider } from 'styled-components'
-const dark = { bg: '#000', fg: '#fff' }
-const Box = styled.div`background: ${p => p.theme.bg};`
+import styled from 'styled-components'
 
-<ThemeProvider theme={dark}><Box /></ThemeProvider>
+const Button = styled.button`
+  background: ${p => (p.$primary ? '#0070f3' : '#eee')};
+  color: ${p => (p.$primary ? '#fff' : '#111')};
+`
+
+<Button $primary>Save</Button>
 ```
 
-`theme` 通过 React Context 流到每个 styled 组件，props 函数能直接读 `props.theme`。这是 styled-components 的 "杀手锏"——无需 CSS 变量也能做主题切换。
+`$primary` 只参与样式函数，不会成为 DOM 属性。写成 `primary` 且目标是普通 HTML 标签时，开发态会警告未知 prop。
 
-### 案例 3：十几行写 mini styled，验证整个机制
+### 案例 2：SSR 抽出 critical CSS
 
-可以照着下面的玩具实现自己跑一遍，把 SSR 和嵌套伪类先放一边，只看 "JS 函数怎么把字符串变成 className" 这个核心。
+```jsx
+import { ServerStyleSheet } from 'styled-components'
 
-```js
-function styled(tag) {
-  return (strings, ...fns) => (props) => {
-    const css = strings.reduce((acc, s, i) =>
-      acc + s + (fns[i] ? fns[i](props) : ''), '')
-    const hash = 'sc-' + simpleHash(css)
-    if (!document.querySelector(`[data-id="${hash}"]`)) {
-      const el = document.createElement('style')
-      el.dataset.id = hash
-      el.textContent = `.${hash} { ${css} }`
-      document.head.appendChild(el)
-    }
-    return React.createElement(tag, { ...props, className: hash })
-  }
-}
+const sheet = new ServerStyleSheet()
+const html = renderToString(sheet.collectStyles(<App />))
+const tags = sheet.getStyleTags()
+sheet.seal()
 ```
 
-十几行复刻核心机制——真实库的复杂度主要在 SSR 提取、嵌套伪类解析、性能 cache 等工程细节。
+`collectStyles` 把子树包进 `StyleSheetManager`。`seal()` 之后不能再收集；流式 SSR 走 `interleaveWithNodeStream`。
+
+### 案例 3：RSC 里 ThemeProvider 不会传 theme
+
+```jsx
+<ThemeProvider theme={{ bg: '#000' }}>
+  <Box />
+</ThemeProvider>
+```
+
+固定实现在 `IS_RSC` 下把 `ThemeProvider` 变成透传 children 的 no-op，`useTheme()` 也跳过 `useContext`。主题只在存在 `createContext` 的客户端 / 传统 SSR 路径生效。
 
 ## 踩过的坑
 
-1. 没装 babel-plugin → SSR hydration mismatch，DevTools 里也看不到 `displayName`
-2. 在循环或函数体里写 `styled.div` → 每次都新建组件，cache 全 miss，性能直接劣化
-3. props 函数里依赖外部多变的变量 → 哈希频繁失效，CSS 重复注入，head 里 `<style>` 越堆越长
-4. 同项目里 styled-components 和 Emotion 混用 → 两份运行时同时跑，bundle 翻倍且互不复用 cache
+1. **把 babel 插件当成运行时身份来源**：6.5.3 默认用 displayName + 创建顺序 + `SC_VERSION` 生成 `componentId`。插件可以钉 ID，但不是运行时必经步骤。
+2. **在 render 里写 `styled.div`**：开发态 `checkDynamicCreation` 会警告；每次新建组件会打乱 cache 与 SSR 顺序。
+3. **把 2025 年“维护期、不再发版”外推到 6.5.3**：GitHub annotated tag `styled-components@6.5.3` 落在 2026-08-15，同仓还有 7.0 预发布。是否适合新项目要另看 RSC / 编译期方案，不能用过期维护声明当证据。
+4. **以为 RSC 路径也有 Theme Context**：源码明确在 `IS_RSC` 下关掉 context；FAQ 写的是 React 19+ 自动检测，不是“必须 `'use client'`”。
 
 ## 适用 vs 不适用场景
 
-适用：
+**适用**：
 
-- 老 React 项目（Next.js Pages Router、CRA、Vite SPA），团队已熟练
-- 需要 "组件即样式" 心智的中小型 UI 库
-- 主题切换频繁、希望 props 直接驱动样式的场景
-- 把现有 CSS 大文件按组件拆分迁移的过渡期
+- 已有 `styled.div` 代码、需要 props / attrs / 主题驱动样式的 React 18 客户端树
+- Pages Router 或自定义 SSR，可用 `ServerStyleSheet`
+- 需要 `$` transient props 把样式开关和 DOM 属性分开
 
-不适用：
+**不适用**：
 
-- 新建的 RSC 项目（Next.js App Router 默认）——styled 必须 `'use client'`，违背 "零 JS 默认" 哲学
-- 极致追求 bundle 体积的场景——Emotion 比它小一半，Tailwind 几乎零运行时
-- 严格的 "编译期 CSS" 要求——选 [[vanilla-extract]] 或 Panda CSS
-- 想长期跟进新特性的团队——维护期后以修 bug / 兼容为主，不宜当新项目默认选型
+- 把 ThemeProvider 当 RSC 主题通道
+- 需要编译期原子 CSS、零运行时注入的新栈
+- 不能接受 peer `react >= 16.8.0`、`stylis@4.3.6` 与 `@emotion/is-prop-valid@1.4.0`
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- 2016-10：Glen Maddern 与 Max Stoiber 发布首版，用标签模板把 CSS 写进组件（CSS-in-JS 流派此前已有 Aphrodite 等）
-- 2017：Emotion 出现，社区从此分裂成两派各自维护
-- 2018-2019：Aphrodite、Glamor 等早期竞品淡出，市场基本剩 styled 和 Emotion 两家
-- 2020-2022：MUI v5、Chakra 等大型组件库纷纷选 Emotion，styled-components 失去明星用户
-- 2023-06：v6.0.0 发布，从 Flow 迁到 TypeScript 重写
-- 2025-03：维护者宣布进入维护期（修兼容 / 安全，不再冲新特性）；新项目选型几乎不再默认选它
-
-时间线读起来像 OSS 流派兴衰的小教材——一个先发库被同代后来者抢走份额，再被下一代范式（atomic CSS、编译期 CSS）整体绕开。
+- 本文绑定 `styled-components/styled-components@159302389c...`，annotated tag 与 package 均为 `6.5.3`。
+- npm `styled-components@6.5.3` 版本一致，但不暴露可比的 `gitHead`。
+- `engines.node` 为 `>= 16`；`peerDependencies.react` 为 `>= 16.8.0`。
+- 本文未安装依赖、运行上游测试、测量 bundle / SSR / RSC，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-- "CSS-in-JS" 听起来神秘，本质就是 "用一个 JS 函数把字符串变成 className"
-- 编译期 + 运行时双段架构是大量库的通用模板（webpack loader、babel 插件、CSS-in-JS 都是这个套路）
-- 先发优势在 OSS 世界很有限——styled 早 Emotion 一年，照样被后者抢走份额
-- 看到一个库进入 "维护期" 信号要敏感——不主动重构，但也不在新项目里再下注
-- 标签模板字面量是被低估的语言特性——它让一个库可以原汁原味嵌入另一种语言（CSS、SQL、GraphQL 都用过这套路）
-- 选样式方案前先回答 "我的项目在 RSC 边界上吗"——答案变了，最优解就变
+1. **稳定 ID 和动态 class 是两件事**——前者标识组件，后者标识这份 CSS 文本。
+2. **环境检测改写了旧 RSC 故事**——`createContext` 缺失时走内联 style，而不是一律 `'use client'`。
+3. **主题是 Context 功能，不是样式函数语法糖**——RSC 下 Provider 被掏空。
+4. **维护期叙事必须跟 tag 对表**——2026-08 的 6.5.3 不能沿用 2025 年停更印象。
+
+## 应用型自测
+
+1. 不装 babel 插件时，6.5.3 还会生成 `componentId` 吗？
+2. RSC 树里的 `ThemeProvider` 能否把 `theme` 交给 styled 插值？
+3. `<Button $primary />` 的 `$primary` 会不会出现在 HTML 属性里？
+
+检查点：
+
+1. 会。运行时用 displayName、计数和 `SC_VERSION` 生成；插件只是可选钉 ID。
+2. 不能。`IS_RSC` 下 Provider 是 no-op。
+3. 不会；`$` 前缀在转发给 DOM 前被丢掉。
 
 ## 延伸阅读
 
-- 官方文档 styled-components.com（v6 章节最新）
-- React 官方对 RSC 与样式方案的讨论文档
-- "Tagged Template Literals" MDN 入门页
-- Max Stoiber 关于离开维护的公开博客文 / 推特线程
-- Next.js App Router 文档里 `StyledComponentsRegistry` workaround 章节
-- [[emotion]]、[[vanilla-extract]]、[[tailwind]] 三篇一起读，构成完整 React 样式光谱
+- 文档：[styled-components.com](https://styled-components.com)
+- 固定源码：[styled-components/styled-components](https://github.com/styled-components/styled-components) —— 本文绑定提交 `159302389c696a7952aaed31d840b06b8aa6d677`
+- [[emotion]] —— 同赛道运行时 CSS-in-JS，cache / css prop / SSR API 不同
+- [[vanilla-extract]] —— 编译期对照
+- [[stylex]] —— 原子编译期对照
 
 ## 关联
 
-- [[emotion]] —— 同年代竞品，工程上 95% 等价但 bundle 更小、社区更活跃
-- [[vanilla-extract]] —— 编译期 CSS-in-JS，零运行时，RSC 友好的下一代方案
-- [[tailwind]] —— atomic CSS 范式，与 CSS-in-JS 思路相反但解决同样痛点
-- [[react-spring]] —— 经常被 styled 组件包装的动画库，互补而非竞争
-- [[shadcn-ui]] —— 新一代组件库，用 Tailwind 替代 styled，体现选型迁移趋势
+- [[emotion]] —— 同年代竞品；注入与 SSR 合同不同
+- [[vanilla-extract]] —— 零运行时、RSC 友好的编译期方案
+- [[tailwind]] —— atomic utility，和 CSS-in-JS 解法相反
+- [[stylex]] —— Meta 的编译期原子 CSS
+- [[react]] —— peer 宿主
 
 ## 反向链接
 

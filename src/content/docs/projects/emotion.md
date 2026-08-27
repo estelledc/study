@@ -4,88 +4,81 @@ title: Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 class
 日期: 2026-05-30
 分类: projects
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/emotion-js/emotion
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 3c19ce5997f73960679e546af47801205631dfde
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: '@emotion/react@11.14.0'
 ---
 
 ## 是什么
 
-Emotion 是一套**让你在 JS 文件里写 CSS、运行时再生成 className 注入页面**的库。日常类比：像点单时让厨房现配酱料——你说"番茄+蒜+橄榄油"，厨房调好后给你一个唯一编号，下次同样配方就用同个编号，不再重复调。
+Emotion 是一套把 CSS 写进 JS、再生成稳定 className 的运行时库。日常类比：共享调料柜——同一配方永远对应同一格编号；`css` prop 是把调料直接洒在盘子上，不必先开一道“套餐组件”。
 
 你写：
-
-```jsx
-import { css } from '@emotion/react'
-
-const red = css`color: red; font-size: 14px;`
-
-<div css={red}>hello</div>
-```
-
-Emotion 读到这段后，做三件事：把字符串序列化 → 用 hash 算法生成一个短 className（如 `css-1k2f9q`）→ 把规则塞进页面顶端的 `<style>` 标签。组件拿到的就是这个独一份 className，不会和别人撞车。
-
-它有两条路：**runtime**（浏览器现场算）和 **babel plugin**（编译时把静态部分先抽出来），过去十年它和 styled-components 共同撑起 React 圈的"CSS-in-JS"叫法。Material UI v5 / Chakra v1 都把它选作底盘。
-
-## 为什么重要
-
-不理解 Emotion，下面这些事都没法解释：
-
-- 为什么 React 项目里 `<div className="css-xj3k">` 这种乱码 className 满屏都是
-- 为什么 MUI v5 不需要全局 CSS 文件，组件却能各自带样式
-- 为什么 2024 年大家又在喊"runtime CSS-in-JS 死了"，Tailwind 和 RSC 究竟撼动了什么
-- 为什么 `<div css={...}>` 这种语法需要配 babel，不配会出怪事
-
-## 核心要点
-
-Emotion 的注入流水线可以拆成 **三步**：
-
-1. **序列化**：把你写的 `css\`...\`` 模板字符串或对象拼成一段标准 CSS 文本。类比：把口语菜单翻译成厨房标准配方表。
-
-2. **hash + cache**：对配方文本做 hash（默认是 mhash 类的 stable hash），同样输入永远拿到同样的 className。Emotion 内部维护一张 cache，已注入过的就跳过。类比：厨房里那本"配方-编号"对照册，不重复调。
-
-3. **注入 DOM**：第一次见到的 className，就把规则 append 到页面顶部的 `<style>` 标签里；SSR 场景下改成把 critical CSS 抽成字符串拼进 HTML `<head>`，浏览器一打开就有样式，不闪烁。
-
-三步连起来就是 runtime CSS-in-JS 的标准管线，Emotion / styled-components 几乎一样，差别在 cache 策略和 SSR API。
-
-## 实践案例
-
-### 案例 1：用 styled API 写带 props 变体的按钮
-
-```jsx
-import styled from '@emotion/styled'
-
-const Button = styled.button`
-  padding: 8px 16px;
-  background: ${(p) => (p.primary ? '#0070f3' : '#eee')};
-  color: ${(p) => (p.primary ? 'white' : 'black')};
-`
-
-<Button primary>Save</Button>
-<Button>Cancel</Button>
-```
-
-**逐部分解释**：
-
-- `styled.button\`...\`` 包了一个 `<button>` 组件，模板内可以读 props
-- primary=true 走第一组样式，否则走第二组——本质是两次序列化，两个不同 className
-- 渲染出来的 DOM 是 `<button class="css-abc123">`，规则在页面顶部 `<style>` 里
-
-### 案例 2：css prop + 局部样式
 
 ```jsx
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-const card = css`
-  border: 1px solid #ddd;
-  padding: 16px;
-  &:hover { border-color: #0070f3; }
-`
-
-<div css={card}>card content</div>
+const red = css`color: red;`
+<div css={red}>hello</div>
 ```
 
-这种 `css={...}` 写法绕过了 styled 包装，直接给原生标签贴样式。前提：顶部那行 jsx pragma 注释或在 babel 里配 `@emotion/babel-plugin`，否则 `css={}` 会原样掉到 DOM 上变成无效属性。
+`css()` 只调用 `@emotion/serialize` 的 `serializeStyles`。真正贴 class、插 `<style>` 的是 `Emotion` 元素：它用 cache 里的 `key` 拼出 `css-xxxx`，再经 `useInsertionEffectAlwaysWithSyncFallback` 调用 `insertStyles`。
 
-### 案例 3：SSR critical CSS 抽取
+## 为什么重要
+
+不理解 Emotion，下面这些事都没法解释：
+
+- 为什么满屏都是 `css-1k2f9q` 这种 `key-hash` 名
+- 为什么 `@emotion/server` 默认导出并不自动对准 `@emotion/react` 的 cache
+- 为什么没配 jsx 运行时，`css={...}` 会变成无效 DOM 属性
+- 为什么 npm 上 `@emotion/styled@11.14.1` 不能当成这份 11.14.0 快照
+
+## 核心要点
+
+管线可以拆成四步：
+
+1. **序列化**：模板或对象被 `serializeStyles` 拼成标准 CSS 文本；对象键会 hyphenate，数字在非 unitless 属性上补 `px`。
+2. **哈希**：`@emotion/hash` 对文本做 MurmurHash2，再转 36 进制。`label:` 规则会追加到 name 后面。
+3. **cache**：浏览器默认 `createCache({ key: 'css' })`。开发态缺少 `key` 会直接抛错；同 key 的多个 cache 会抢 style 节点。
+4. **插入**：`registerStyles` 记入 `cache.registered`；浏览器走 insertion effect，服务端把规则收成 `<style data-emotion>`。`createEmotionServer(cache)` 会把 `cache.compat = true`，否则 critical CSS 抽不齐。
+
+## 实践示例
+
+### 案例 1：styled API 的 props 变体
+
+```jsx
+import styled from '@emotion/styled'
+
+const Button = styled.button`
+  background: ${p => (p.primary ? '#0070f3' : '#eee')};
+`
+```
+
+`createStyled` 把模板拆进 `__emotion_styles`，渲染时再 `serializeStyles(..., cache.registered, mergedProps)`。缺 `theme` 时从 `ThemeContext` 补；默认主题是空对象 `{}`，不是 `undefined`。
+
+### 案例 2：css prop 必须换 jsx 工厂
+
+```jsx
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+
+<div css={css`border: 1px solid #ddd;`}>card</div>
+```
+
+`jsx()` 看到 `css` 才包一层 `Emotion` 内部组件。没有 `jsxImportSource` / babel plugin 时，浏览器会把对象 `toString` 成 `css="[object Object]"`。
+
+### 案例 3：SSR 必须共用同一份 cache
 
 ```jsx
 import createCache from '@emotion/cache'
@@ -94,73 +87,79 @@ import createEmotionServer from '@emotion/server/create-instance'
 
 const cache = createCache({ key: 'app' })
 const { extractCriticalToChunks } = createEmotionServer(cache)
-
 const html = renderToString(
   <CacheProvider value={cache}><App /></CacheProvider>
 )
 const { styles } = extractCriticalToChunks(html)
-// 把 styles 拼进 <head>，浏览器收到 HTML 时第一帧就有样式
 ```
 
-不抽 critical CSS，浏览器拿到 HTML → React hydrate → 此时才注入样式 → 短暂"无样式闪烁"（FOUC）。
+`@emotion/server` 的默认入口绑的是 `@emotion/css` 的全局 cache。React 树若走 `@emotion/react`，必须 `create-instance` 并传入同一 `cache`。抽取时按 HTML 里的 `${key}-id` 反查 `cache.inserted`。
 
 ## 踩过的坑
 
-1. **runtime 注入有性能税**：每个组件首次渲染要走"序列化 + hash + 插 `<style>`"，1000 个组件首屏就能拖慢 LCP。babel-plugin 静态化能省一部分，但动态 props 那段省不掉。
-
-2. **SSR critical CSS 配置容易漏**：忘了用 `extractCriticalToChunks` 把 styles 拼进 HTML，页面会闪一下。Next 模板专门处理这件事，跳过这步会被用户投诉"白屏 0.3 秒"。
-
-3. **css prop 缺 babel/jsx pragma**：不配 `@emotion/babel-plugin`、也不写 `/** @jsxImportSource @emotion/react */`，写 `<div css={...}>` 会让浏览器把 css 对象 toString 后塞进 `<div css="[object Object]">`——不报错，样式悄悄丢失。
-
-4. **和 React Server Components 边界冲突**：runtime 注入需要浏览器 DOM API，必须 `'use client'` 才能用。直接在 RSC 文件里 import Emotion 会序列化报错。MUI 6+ 改 pigment-css、Chakra v3 切 Panda CSS，都是为了在 RSC 里活下去。
+1. **把默认 server 包当成 React cache**：`extractCriticalToChunks` 只认识传入的那份 cache；用错 cache 会抽出空样式。
+2. **css prop 缺运行时**：不报红，只是属性落到 DOM。
+3. **把 `@emotion/styled@11.14.1` 外推到本页**：该包的 npm `gitHead` 是更晚的 `49229553...`；本页绑定的是 `@emotion/react@11.14.0` / `@emotion/cache@11.14.0` 共用的 `3c19ce59...`，这里的 styled 仍是 `11.14.0`。
+4. **cache key 冲突**：开发态 key 只能是小写字母和 `-`；多个应用共用 `css` 会互相搬 style 节点。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 已经全身心 React + 中型 SPA，且没在做 RSC：MUI v5 / Chakra v1 / 多数现存企业项目
-- 需要按 props 极度动态地切换样式的组件库
-- 想用 JS 表达式（变量、循环、条件）写 CSS 的场景
+- 已有 MUI v5 / Chakra v1 一类建立在 Emotion 上的客户端 React 树
+- 需要对象样式、`css` prop 和 styled 三种入口并存
+- 能自己接 `CacheProvider` + `@emotion/server/create-instance`
 
 **不适用**：
 
-- 重视首屏 LCP 的 marketing 站、内容站 → 选 Tailwind / vanilla-extract / lightningcss
-- React Server Components 项目 → 至少要包一层 `'use client'`，更建议改用编译期方案
-- 团队已统一 Tailwind atomic 风格 → 不要混两套世界观
-- 微前端里多个子应用都用 Emotion → cache key 不隔离会撞车
+- 把 `@emotion/server` 默认导出直接套在 `@emotion/react` 树上
+- React Server Components 里当零 JS 方案——运行时插入仍要浏览器 / client 边界
+- 不能接受 peer `react >= 16.8.0`，以及 cache 依赖的 `stylis@4.2.0`（与 styled-components 6.5.3 的 `stylis@4.3.6` 不是同一锁定）
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Kye Hohenberger 在 styled-components 已成主流的赛道里发起 Emotion，主打更小的 runtime 和更好的 SSR critical CSS 抽取。
-- **2019 年**：v10 重写，引入 `css` prop 和 babel 编译期优化，成为 styled-components 同代竞品里"最像产品"的那个。
-- **2021 年**：Material UI v5 把内部 styling 引擎从 JSS 换成 Emotion，Emotion 跟着 MUI 进了大量企业项目。
-- **2024 年**：Tailwind atomic CSS 把 runtime CSS-in-JS 的"性能税"暴露在阳光下；React Server Components 又让 runtime 注入在边界上语义模糊。MUI v6 推 pigment-css（编译期），Chakra v3 切 Panda CSS——runtime 路线集体让位。
+- 本文绑定 `emotion-js/emotion@3c19ce5997...`。
+- 同提交：`@emotion/react@11.14.0`、`@emotion/cache@11.14.0`、`@emotion/styled@11.14.0`、`@emotion/serialize@1.3.3`。
+- npm `gitHead` 与 GitHub annotated tag `@emotion/react@11.14.0` / `@emotion/cache@11.14.0` 都解到该提交。
+- npm latest `@emotion/styled@11.14.1` 指向另一提交，不能把 11.14.1 的行为写进本页。
+- 条件导出区分 browser / edge-light / worker；开发态另有 development 构建。
+- 本文未安装依赖、运行上游测试、测 SSR FOUC 或 bundle，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **CSS-in-JS 是一条具体的技术管线**——不是"概念"，是"序列化 → hash → 注入"三步，搞懂就能看懂任何同类库。
-2. **运行时灵活性是有代价的**——动态 props 越多，性能税越重；2024 年的趋势是把能编译期解决的尽量编译期解决。
-3. **基础设施换代靠下游推动**——MUI / Chakra 这些大客户切走，Emotion 不会马上死，但新项目不再选它。
-4. **API 设计的选择面**——styled / css prop / 对象样式各有受众，Emotion 把三种都做了，所以接得住不同口味的团队。
+1. **序列化、哈希、插入是三个包**——`serialize` / `hash` / `cache` / `react` 不要混成一个黑盒。
+2. **SSR 合同是 cache 身份，不是包名**——server helper 必须拿到渲染时那份 cache。
+3. **css prop 是编译器约定**——运行时靠自定义 jsx 工厂，不是 React 内置。
+4. **monorepo 包版本可以分叉**——同一仓的 latest 标签不必落在同一提交。
+
+## 应用型自测
+
+1. `import { extractCriticalToChunks } from '@emotion/server'` 默认抽的是哪份 cache？
+2. 不写 `jsxImportSource`、也不配 babel plugin，`<div css={obj} />` 会不会自动注入样式？
+3. 固定提交里 `@emotion/styled` 的 package 版本是 11.14.1 吗？
+
+检查点：
+
+1. `@emotion/css` 的全局 cache，不是你在 React 树里 `createCache` 的那份。
+2. 不会；`css` 会原样落到 DOM。
+3. 不是。本提交是 `11.14.0`；`11.14.1` 在更晚的 tag。
 
 ## 延伸阅读
 
-- 官方文档：[emotion.sh](https://emotion.sh/docs/introduction)（Quick Start 直接上手）
-- GitHub 主仓：[emotion-js/emotion](https://github.com/emotion-js/emotion)（monorepo，看 packages/ 目录结构最直观）
-- 对比文章：[CSS-in-JS Performance](https://pustelto.com/blog/css-vs-css-in-js-perf/)（runtime 路线性能数据）
-- [[styled-components]] —— 同代竞品，看清"差异化 5%"是什么
-- [[tailwind]] —— 编译期 atomic CSS 路线
-- [[stylex]] —— Meta 出的编译期 CSS-in-JS
+- 文档：[emotion.sh/docs/introduction](https://emotion.sh/docs/introduction)
+- 固定源码：[emotion-js/emotion](https://github.com/emotion-js/emotion) —— 本文绑定提交 `3c19ce5997f73960679e546af47801205631dfde`
+- [[styled-components]] —— 同赛道，ID / RSC / SSR API 不同
+- [[stylex]] —— 编译期原子 CSS
+- [[vanilla-extract]] —— CSS-in-TS，零运行时
 
 ## 关联
 
-- [[styled-components]] —— 同代竞品，API 几乎一样，差在 cache / SSR / object style
-- [[stylex]] —— 编译期取代 runtime 的代表方案
-- [[tailwind]] —— 不写 CSS 文件，用 atomic class 替代 className 生成
-- [[vanilla-extract]] —— 类型安全的编译期 CSS-in-TS
-- [[lightningcss]] —— Rust 写的 CSS parser/transformer，给编译期方案兜底
-- [[react]] —— Emotion 的最大宿主
-- [[next-js]] —— SSR 场景下 critical CSS 抽取的实际舞台
+- [[styled-components]] —— 标签模板入口相近，cache 与 RSC 边界不同
+- [[stylex]] —— 编译期取代运行时注入
+- [[tailwind]] —— utility class，不生成运行时 hash
+- [[vanilla-extract]] —— 类型安全的编译期对照
+- [[react]] —— peer 宿主
+- [[next-js]] —— 最容易用错 cache 的 SSR 舞台
 
 ## 反向链接
 
