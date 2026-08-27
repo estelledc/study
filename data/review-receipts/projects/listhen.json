@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "listhen",
+    "digest_sha256": "d41bf5c67c3e27e577a1c3d3b4eacf49ad48ebef0beee3a038d73ca621261a95"
+  },
+  "source_revision": "2466b698997f6d5006c22f36ab54379df277cf5f",
+  "research_input_sha256": "8f73fbea81caf787095b0f59564224af32d45f658f99c3f07fc1ffe5354d58ae",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ge",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains listen() takes RequestListener, public/host defaults, one-day self-signed cert, and CLI h3 loading."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ge",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "listen.ts, createDevServer export unwrap, watcher JS-only filter, and _cert defaults were inspected; listen() was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ge",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag and package agree on 1.10.1; npm has no gitHead; depends on h3@^1.15.11."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}

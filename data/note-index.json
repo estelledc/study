@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -44803,6 +44803,37 @@
       }
     },
     {
+      "id": "projects::h3",
+      "area": "projects",
+      "slug": "h3",
+      "title": "h3 — 用 event 和 layer stack 接 HTTP 的最小框架",
+      "description": "createApp 按层处理，createRouter 默认不抢占，toNodeListener 才是听端口的入口",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-web-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "Web 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/h3/",
+      "atlas": {
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::hadolint",
       "area": "projects",
       "slug": "hadolint",
@@ -48505,6 +48536,37 @@
       "atlas": {
         "chunk_id": "topic-projects-embedded-systems-01",
         "chunk_route": "/study/atlas/projects/topic-projects-embedded-systems-01/"
+      }
+    },
+    {
+      "id": "projects::listhen",
+      "area": "projects",
+      "slug": "listhen",
+      "title": "listhen — 给 Node listener 选端口、开 HTTPS 和印 URL 的听端口层",
+      "description": "listen 吃 RequestListener，CLI 再动态加载 h3 把入口包成 listener",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-web-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-web-frameworks",
+        "raw_category": "Web 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/listhen/",
+      "atlas": {
+        "chunk_id": "topic-projects-web-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-web-frameworks-01/"
       }
     },
     {
@@ -65957,7 +66019,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-web-frameworks-01/",
-      "entries": 14
+      "entries": 16
     },
     {
       "id": "unclassified-01",

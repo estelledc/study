@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer GE：h3 + listhen HTTP-listen
+
+- supervisor 状态：Program `active`；本地 writer epoch `complete`；等待 PR review / CI。
+- 起始 ref：`9adc8b99165dfaf015777d5ca88c629ebfa961aa`（当时 `origin/main`，#80 bun/deno）。
+- objective：为 HTTP-listen 配对新建 `h3` 与 `listhen` 的 study-v2 页，证据为 `STATIC_REVIEW` / `UNVERIFIED`；未改用其他 listen 配对。
+- scope：两篇新项目页、2 份 generation 1 receipt、`docs/http-listen-source-review-20260827-ge.md`、taxonomy / atlas / note-index / site-state / 公开规模文案、本 handoff；2 个 ignored worktree。未安装上游依赖、未执行 `listen()`、未跑上游测试、未测 bundle 或性能。
+- activated_by：`explicit-user-request-2026-08-27-parallel-writer-ge`。
+- detector fingerprint：仓库无 `h3` / `listhen` 项目页；ofetch 已有 `[[h3]]` 断链；Express/Fastify/Koa/Hono 已对齐，目标配对仍缺。
+- external delta 计数：用户授权 1 个 PR、不 merge；D 轴待 push+PR 后计 1，未 deploy。
+- 已完成切片：
+  1. `h3` 绑定 `h3js/h3@7b9f41fda6...` / `1.15.11`（tag、package、npm `gitHead` 一致）；披露 npm `latest` 为 `2.0.1-rc.29` 且未绑定。
+  2. `listhen` 绑定 `unjs/listhen@2466b69899...` / `1.10.1`（tag 与 package 一致，npm 无 `gitHead`）；依赖 `h3@^1.15.11`。
+  3. 共享审查文档 `docs/http-listen-source-review-20260827-ge.md` 与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate` 全绿、0 advisory；receipt `UNVERIFIED` 且 digest 匹配；`audit:counts` / `audit:project-standard --write` / `generate:site-state` 已刷新。`verify:ci` 在提交后跑。
+- budget：1 个 epoch、2 页新建、单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
+- stop conditions：一 PR 已开且未授权 merge 即停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=9adc8b99165dfaf015777d5ca88c629ebfa961aa npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

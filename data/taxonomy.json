@@ -1988,6 +1988,10 @@
       "topic_id": "projects-devops-containers-and-operations"
     },
     {
+      "note_id": "projects::h3",
+      "topic_id": "projects-web-frameworks"
+    },
+    {
       "note_id": "projects::hono",
       "topic_id": "projects-web-frameworks"
     },
@@ -2090,6 +2094,10 @@
     {
       "note_id": "projects::lingui",
       "topic_id": "projects-internationalization"
+    },
+    {
+      "note_id": "projects::listhen",
+      "topic_id": "projects-web-frameworks"
     },
     {
       "note_id": "projects::listr2",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "h3",
+    "digest_sha256": "00edbb2f98347ceb414d1a8595fb7095a2ef70dcf98bcc5ac5493ee13ea43385"
+  },
+  "source_revision": "7b9f41fda6038d26a367c2a26a07ed83ee1dbaac",
+  "research_input_sha256": "8f73fbea81caf787095b0f59564224af32d45f658f99c3f07fc1ffe5354d58ae",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ge",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates event/layer stack from listen(); covers non-preemptive router, HTML string MIME, and 1.x vs 2.x RC."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ge",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "app.ts stack, radix3 router, toNodeListener, readBody method gate, and adapters were inspected; tests and listen were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ge",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag, package and npm gitHead agree on 1.15.11; latest 2.0.1-rc.29 is disclosed and unbound."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:30:00.000Z"
+}
