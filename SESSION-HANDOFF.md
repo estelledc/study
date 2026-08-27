@@ -4,7 +4,7 @@
 
 ## 2026-08-27 PARALLEL writer HJ：cache-manager + quick-lru
 
-- supervisor 状态：writer epoch `complete`；待 push / 开 PR。未 merge / 未 deploy。
+- supervisor 状态：writer epoch `complete`；已 push 并打开 PR。未 merge / 未 deploy。
 - 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
 - objective：为缺失的 JS cache 双子补齐 `cache-manager` 与 `quick-lru` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/cache-lib-source-review-20260827-hj.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。未改既有笔记正文。
@@ -15,12 +15,12 @@
   1. `cache-manager` 绑定 date tag `2026-05-27` → `069f7340194f29f8ad2310cec4b922c0ad21b4f9`（`packages/cache-manager` 版本 `7.2.9`）；披露 npm 无 `gitHead`、未绑定 unpublished `7.2.10` / `main`。
   2. `quick-lru` 绑定 `v7.3.0` → `070bdf331d9e451f75f5335c127255a124d4270d`，tag / package / npm `gitHead` 一致。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目页 966 → 968。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 `audit:project-standard` snapshot CURRENT。`verify:ci` 待本分支 push 后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0、v2=154；`audit:counts` / `audit:site-state` projects=968、papers=1083、total=2051；`audit:project-standard` `benchmark-aligned=85` snapshot CURRENT。`STUDY_CHANGED_FROM=96da2ee8c00f7ff392b0e10e30233fe07158132b npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、2292 HTML、23 Playwright a11y）。
 - budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
 - blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
 - stop conditions：本 epoch 已完成；不得继续发明下一对。
 - 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
-- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- 下一条命令：在 https://github.com/estelledc/study/pull/280 做 review；未授权前不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
