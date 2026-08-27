@@ -15,12 +15,12 @@
   1. `giget` 绑定 annotated tag `v3.3.1` peel `34f8cb6455636fe3652427ef2769aff521ed07bb`；修正默认 registry、`main` ref、CLI 未转发 `--cwd`、README 旗标漂移。
   2. `download-git-repo` 绑定 GitLab `23e8c09b4a19aaf9c9b3e265d41b924143daf707` / `3.0.2`；修正默认 `master` zip、clone 后删 `.git`、`shallow` 仅当 checkout 为 `master`。
   3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
-- acceptance checks：两页 `quality-gate.mjs` 全过、0 advisory；receipt digest 一致且 `evidence_state=UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` snapshot CURRENT。`verify:ci` 在 push 后跑。
+- acceptance checks：两页 `quality-gate.mjs` 全过、0 advisory；receipt digest 一致且 `evidence_state=UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` snapshot CURRENT。`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci` 在规范 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、23 Playwright a11y、strict build、Pages/Atlas/站点预算与 diff 门禁）。
 - budget：1 个 git-scaffold 双子切片 + 派生刷新；单 writer。
 - blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。
 - stop conditions：单 PR 已开且未获 merge 授权即停止。
 - 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 另行授权 merge。
-- 下一条命令：`STUDY_CHANGED_FROM=9adc8b991 npm run verify:ci`
+- 下一条命令：用 GitHub 查看 PR #247；未获授权不要 merge。
 - superseded_by：`none`
 
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
