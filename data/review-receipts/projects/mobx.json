@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "mobx",
+    "digest_sha256": "1931cc6fd8b819292cbf944cd837d5c0173e93865e8422393cdd00db6fd7f08f"
+  },
+  "source_revision": "5dbb04a15f7eb0ef6b844904c43955357a9bbdfc",
+  "research_input_sha256": "e80975ab9bb0ad961d6d7fed5e87b400a9b0d6892cdcfd8550ef5a9ede9204d7",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-j",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates atom, derivation states, default enforceActions, makeAutoObservable keys, and observer subscription."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-j",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Core atom, derivation, action, makeAutoObservable, and mobx-react-lite sources were inspected; tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-j",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Claims are bounded to mobx 7.0.3 / mobx-react-lite 5.0.3. No runtime, Jest, or performance evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:30:00.000Z"
+}
