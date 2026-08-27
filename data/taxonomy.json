@@ -2036,6 +2036,10 @@
       "topic_id": "projects-date-and-time"
     },
     {
+      "note_id": "projects::jws",
+      "topic_id": "projects-authentication"
+    },
+    {
       "note_id": "projects::kafka",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2258,6 +2262,10 @@
     {
       "note_id": "projects::oxlint",
       "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
+      "note_id": "projects::paseto",
+      "topic_id": "projects-authentication"
     },
     {
       "note_id": "projects::patchright",
