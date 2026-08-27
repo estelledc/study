@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CI 图表双子
+
+- status：writer epoch `complete`；待 PR review，不 merge。
+- 起始 ref：`042f60a8a6c2673168c406b6956d51523cc6420f`（`origin/main`）。
+- objective：把 `echarts` 与 `plotly-js` 绑到可达固定 revision，完成 `STATIC_REVIEW` / `UNVERIFIED` 的 study-v2 迁移。
+- scope：两页、`docs/chart-lib-source-review-20260827-ci.md`、两份 generation 1 receipt、确定性派生与本交接；未安装上游依赖、未跑上游测试、bundle 或渲染 benchmark。
+- activated_by：`explicit-parallel-writer-ci-20260827`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision / evidence boundary / self-test；旧正文把 ECharts 停在 v5 维护期、把 LTTB 写成百万点自动救命，并把 Plotly 全量包、mapbox traces 与跨语言 JSON 字节一致写成未核验事实。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered clone；开 PR 但不 merge、不部署，D 轴不自动提升。
+- 完成切片：
+  1. `echarts` 绑定 `apache/echarts@c5a48f5f...` / `6.1.0`，对齐 `zrender@6.1.0`、全量 `index.js` vs `echarts/core` + `use()`、`setOption` 默认合并，以及 cartesian2d 上的显式 sampling。
+  2. `plotly-js` 绑定 `plotly/plotly.js@e020cc00...` / `4.0.0`，区分 core-only scatter、`newPlot` purge 与 `react` diff，并记下 v4 删除 `*mapbox` / MathJax v2。
+  3. 新增共享 provenance 与两份 receipt；项目审计 `benchmark-aligned` 20 → 22，`v2` 89 → 91。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：digest / revision 一致，`evidence_state=UNVERIFIED`。
+  - `audit:content-contract`：0 blocking、91 v2。
+  - `audit:counts`：projects=961、papers=1083、total=2044。
+  - `git diff --check`：通过。
+- budget：2 页静态源码迁移；单 writer；一个 PR。
+- blocker：未授权 merge / deploy。
+- stop conditions：provenance 不唯一、质量门失败、或碰到开放 PR slug 时停止。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或新的显式双子授权。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8a6c2673168c406b6956d51523cc6420f npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

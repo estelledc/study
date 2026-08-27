@@ -1,160 +1,180 @@
 ---
 title: Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶
-来源: 'https://github.com/plotly/plotly.js + Plotly Inc. 2015 开源'
-日期: 2026-05-31
+description: 介绍 Plotly.js 4.0.0 如何用 data / layout / config 描述图表，以及 newPlot、react、core scatter 与 v4 删除 mapbox 的边界。
+来源: https://github.com/plotly/plotly.js
+日期: 2026-08-27
 分类: projects / 数据可视化
 难度: 入门
+difficulty: beginner
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/plotly/plotly.js
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: e020cc00ef4eb3b0b7fbf25871c2f818e73a04ce
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.0.0
 ---
 
 ## 是什么
 
-Plotly.js 不是给你一堆"画框"的工具，而是一种**用纯 JSON 描述图表的标准**——你写一个对象，浏览器替你画图、加交互、做导出。日常类比：D3 给你砖头自己砌房子，Plotly 给你**装修菜单**——勾几个选项，房子直接落成，连开关插座（缩放/悬停/导出）都接好了。
+Plotly.js 是一份**用 JSON 描述图表的浏览器运行时**。你给 traces、layout 和 config，它负责画图、交互和导出。日常类比：[[echarts]] 的对象叫 option/series；Plotly 的对象叫 figure，骨架是 `{data, layout, config, frames}`。
 
-最小代码：
+固定 `plotly.js@4.0.0` 的公开入口是 `Plotly.newPlot` 与 `Plotly.react`。`src/core.js` 默认只注册 `scatter`；完整 `lib/index.js` 再挂上柱、箱线、热力、3D、地图和新增的 `quiver`。
 
 ```js
-Plotly.newPlot('chart', [{
+Plotly.newPlot("chart", [{
   x: [1, 2, 3, 4],
   y: [10, 15, 13, 17],
-  type: 'scatter'
+  type: "scatter",
 }], {
-  title: '我的第一张图'
+  title: { text: "我的第一张图" },
 })
 ```
 
-四行 JSON，浏览器里出一张可缩放、可框选、可导出 PNG 的折线图。**没写一行 SVG，没绑一个事件**。
-
-40+ 种图表类型（散点、柱、饼、箱线、热力、3D 曲面、地图、桑基、旭日……）共用同一个对象骨架：`data`（数据 trace 数组）+ `layout`（标题/坐标轴/字体）+ `config`（工具条行为）。换图表只改一个字段：`type: 'scatter'` 改成 `'bar'` 就是柱状图，改成 `'box'` 就是箱线图。
+四行对象就能出一张可交互散点/折线。`newPlot` 会先 `purge` 再画；频繁更新应走 `react`。
 
 ## 为什么重要
 
-不理解 Plotly.js，下面这些事都没法解释：
+不按 4.0.0 源码读，下面这些事很容易写错：
 
-- 为什么 Python 里 `fig = px.scatter(...)` 出来的图，**保存成 JSON 拷到前端 Plotly.js 直接渲染** —— 因为 plotly.py / Plotly R / Plotly Julia / plotly.js 共用**同一份 schema**，4 个宿主语言一份文档
-- 为什么 Dash / Streamlit / Gradio 的图表组件几乎都是它 —— 跨语言 + 框架无关 + 交互内置，做仪表盘的甜区
-- 为什么 Jupyter 里图能拖能转能看 tooltip —— 那不是图片，是 plotly.js 在浏览器实时渲染的 JSON
-- 为什么生物/金融/地理论文图大量用它 —— 3D 曲面 / 地图 / 候选烛 / 等高线这些"专业图"开箱即有，D3 要自己拼
+- 为什么 `import Plotly from "plotly.js/lib/core"` 只有 scatter，而默认 `plotly.js` 才有完整 traces
+- 为什么实时仪表盘用 `newPlot` 会整图重建，`react` 才会 diff
+- 为什么 v4 不能再写 `scattermapbox`——mapbox traces 和 `mapboxAccessToken` 已被删除
+- 为什么自定义 bundle 文档仍说 `scatter` 去不掉
 
 ## 核心要点
 
-Plotly.js 的设计可以拆成 **三个支点**：
+固定版本可以拆成四层：
 
-1. **声明式 JSON schema**：图表 = `{data, layout, config}` 一个对象。`data` 是 trace 数组（每条曲线一个 trace），`layout` 管全局外观，`config` 管交互行为。学一次结构通吃 40+ 图表。
+1. **figure 合同**：`_doPlot` 接受 `(gd, data, layout, config)`，或把第一个数据参数当成 `{data, layout, config, frames}`。`data` 是 trace 数组，`layout` 管坐标轴/标题，`config` 管 modebar 与静态导出。
 
-2. **SVG / WebGL 混合渲染**：默认走 SVG（清晰、可二次编辑、几千点流畅）；点数上去切到 WebGL trace（`scatter` → `scattergl`，仅改一个字符串），百万点仍能拖。底层早期基于 D3 做 SVG，后接入 stack.gl / regl 做 WebGL。
+2. **注册表**：core 只 `register(scatter)`。完整 `lib/index.js` 再注册 bar/box/heatmap/histogram/contour/violin/pie/sunburst/treemap/scatter3d/surface/scattergl/splom/sankey/scattermap/choroplethmap/densitymap/`quiver` 等。没有 `*mapbox`。
 
-3. **跨语言 schema 复用**：plotly.py 的 `fig.to_json()` 输出和浏览器 `JSON.stringify(div.data)` **字节级一致**。Python 后端算图、前端原样渲染，中间不用转换层。
+3. **newPlot vs react**：`newPlot` 先 `Plots.cleanPlot` + `Plots.purge`，再 `_doPlot`。`react` 在已有 plot div 上 diff layout/data；`config` 一变会先 `newPlot`（并尝试保留事件监听）再 `react`。
 
-三点合起来：**写一份 JSON，跨语言、跨规模、跨交互**。
+4. **v4 边界**：`engines.node` 为 `>=22`。颜色处理改 `culori`。MathJax v2 已删除，文档写的是 v3/v4。`toImage` 默认 `png`，还允许 `jpeg` / `webp` / `svg` / `full-json`。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：换图表只改一个字符串
+### 案例 1：换 trace 类型
 
 ```js
 const data = [{
-  x: ['周一', '周二', '周三'],
+  x: ["周一", "周二", "周三"],
   y: [3, 7, 5],
-  type: 'scatter'   // 折线图
+  type: "scatter",
 }]
-Plotly.newPlot('chart', data)
+Plotly.newPlot("chart", data)
 ```
 
-把 `type: 'scatter'` 改成 `'bar'` —— 柱状图。改成 `'box'` —— 箱线图（注意把 y 改成数组的数组）。同一个数据骨架，**40+ 种图任选**。
+完整 bundle 里把 `type` 改成 `"bar"` 或 `"box"` 会换图层。core-only 包没有 bar，必须先 `Plotly.register`。
 
-### 案例 2：内置交互一个不漏
+### 案例 2：更新走 `react`
 
 ```js
-Plotly.newPlot('chart', data, {
-  hovermode: 'x unified'      // 同 x 值多 trace 一起显示在 tooltip
-})
+Plotly.react("chart", nextData, nextLayout)
 ```
 
-页面上自动得到：
+已有图时 `react` 会 `supplyDefaults` 再 diff。第一次调用空容器则退回 `newPlot`。`config` 变了会重建。
 
-- **缩放**：鼠标拖矩形框选区域；滚轮缩放
-- **平移**：按住拖
-- **悬停 tooltip**：跟随鼠标显示数值
-- **图例**：单击隐藏一条 trace、双击只显示这一条
-- **modebar**：右上角工具条 — 下载 PNG / 重置视图 / 套索选择
-
-零代码。要关掉某个交互就在 `config` 里改一个布尔。
-
-### 案例 3：Python 算图 + 前端渲染（schema 共用）
-
-Python 端：
-
-```python
-import plotly.express as px
-fig = px.scatter(df, x='gdp', y='life')
-json_str = fig.to_json()    # 序列化成 JSON 字符串
-```
-
-前端 JS：
+### 案例 3：partial bundle 只装需要的 traces
 
 ```js
-const fig = JSON.parse(jsonStr)
-Plotly.newPlot('chart', fig.data, fig.layout)
+import Plotly from "plotly.js/lib/index-basic"
+Plotly.newPlot(gd, [{ type: "bar", x: ["A"], y: [1] }])
 ```
 
-**没有适配层**。Python 算完直接拿 JSON 给前端，前端就是把那个 JSON 喂给 Plotly.js。Dash 框架就是把这个流程自动化做成 web app。
+`index-basic` 只额外注册 bar 与 pie。3D / 地图 / `quiver` 不在这个入口。自定义 bundle 文档写明 `scatter` 目前仍会进入所有 bundle。
 
 ## 踩过的坑
 
-1. **全量 bundle ~3MB 压缩后**：dist/plotly.min.js 含全部 40+ 图 + 3D + 地图，首屏会拖慢。生产用按需选 **partial bundle**：`plotly-basic` / `plotly-cartesian` / `plotly-geo` / `plotly-gl3d` / `plotly-finance` —— 只引你要的那一部分。
-
-2. **`Plotly.newPlot` vs `Plotly.react`**：前者每次销毁重建 DOM，数据频繁更新（实时仪表盘）会闪烁掉帧。**频繁更新用 `Plotly.react`** —— 它做 diff，只改变化的部分，新人常用错。
-
-3. **WebGL context 上限**：浏览器最多约 16 个 WebGL 上下文，超过会丢弃最早的。一页放 20 个 `scatter3d` 会有图突然空白。**解决**：合并成一个图多 trace，或者部分 trace 退回 SVG。
-
-4. **SVG 文本跨浏览器 1-2px 偏差**：出 PDF 报告时不同 Chrome / Safari 渲染的 SVG 文本居中略不同。生产报告流水线必须 `Plotly.toImage(div, {format:'png'})` 转 PNG 再嵌 PDF，避免视觉抖动。
+1. **把 core 当全家桶**：`src/core.js` 只有 scatter；完整 traces 在 `lib/index.js`。
+2. **更新仍用 `newPlot`**：它会 `purge` 后重建。频繁更新应 `react`。
+3. **继续写 mapbox traces**：v4 删除 `scattermapbox` / `choroplethmapbox` / `densitymapbox` 和 `mapboxAccessToken`，对应物是 `*map`。
+4. **把颜色字符串当旧 TinyColor 语义**：v4 改 `culori`，`hsv()` 与部分非 CSS 颜色会被拒绝。
+5. **把未测量的“3MB 全量包”当事实**：本文没有跑 gzip / bundle stats。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-
-- 数据探索仪表盘（Dash / Streamlit / Jupyter）—— 交互内置、40 种图够用
-- 跨语言协作（Python 同事算数据、前端同事展示）—— schema 一致免对齐
-- 科研报告含 3D / 地图 / 统计高级图 —— 不用自己拼 D3
-- 中等数据量（万级到百万级）—— WebGL trace 顶得住
+- 数据探索、仪表盘、需要现成 zoom/hover/modebar
+- 只要 scatter/bar/pie 时可用 `index-basic` 等 partial bundle
+- 能接受 Node >=22 的构建链
 
 **不适用**：
+- 非标准图形 → [[d3]]
+- 只要 React 组件树 → [[recharts]]
+- 国内业务大屏、option/series 心智 → [[echarts]]
+- 还依赖 mapbox traces 或 MathJax v2 → 不要停在 4.0.0 的旧文档
 
-- 极致定制图形（不在 40 种内的奇异可视化）—— 用 D3 从砖头开始
-- 极简首屏 / 移动端 banner —— 3MB bundle 太重，用 Chart.js（八种主流图、~70KB）
-- 千万级流式数据 —— 仍然吃力，要 deck.gl / regl 直接吃 GPU
-- 想完全 React 范式（组件即图表）—— Recharts / nivo 是 React-only 封装更顺手
+## 固定版本边界
 
-## 历史小故事（可跳过）
-
-- **2013**：Plotly Inc. 在蒙特利尔创立，做在线绘图 SaaS
-- **2014**：内部图表引擎跨 Python / R / MATLAB 成型
-- **2015**：**plotly.js 在 GitHub MIT 开源** —— 这是它进入主流前端的起点
-- **2017**：Dash 发布 —— 把 plotly.js 推上 Python 仪表盘主流舞台
-- **2019**：Plotly Express 发布 —— Python 高层 API，写法接近 seaborn
-
-之后六年，plotly.js 成为科研、量化、生物信息、地理可视化默认选择之一。
+- 本文绑定 `plotly/plotly.js@e020cc00...`，npm 与 GitHub tag 均为 `4.0.0`。
+- `engines.node` 为 `>=22.0.0`。
+- 完整入口是 `lib/index.js`；core 只有 scatter。
+- 本轮只读 plotly.js，没有打开 plotly.py / Dash，不能把跨语言 JSON 说成字节级一致。
+- 本文只做静态源码阅读，没有安装依赖、运行上游测试或测量包体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **声明式 JSON 是跨语言图表的关键** —— 一份 schema 让 Python / R / Julia / JS 共享一份"画图语言"
-2. **SVG 和 WebGL 不是二选一** —— 同一个库按数据规模自动切换渲染后端
-3. **交互内置是仪表盘场景的甜区** —— 缩放/悬停/导出零代码就能用，省下 80% 模板代码
-4. **乐高 vs 装修菜单** —— D3 / Plotly / ECharts / Chart.js 是同一光谱不同高度，按"想自定义多少"挑
+1. **figure 是 data + layout + config，不是“一个 type 字段”**
+2. **core 与 full bundle 的注册表不同**
+3. **newPlot 重建，react 才 diff**
+4. **v4 的地图合同是 `*map`，不是 mapbox**
+5. **partial bundle 以 `lib/index-*.js` 为准，不能口算体积**
+
+## 应用型自测
+
+1. `plotly.js/lib/core` 上直接 `type: "bar"`，不 `register`。会画出柱状图吗？
+2. 已经有一张图，只改 `y` 仍调用 `newPlot`。它会 diff 还是 purge 重建？
+3. 4.0.0 还能用 `scattermapbox` 和 `mapboxAccessToken` 吗？
+
+检查点：
+
+1. 不会。core 只注册 scatter，bar 在完整 `lib/index.js` 或自行 `register`。
+2. `newPlot` 先 `purge` 再画；diff 是 `react` 的路径。
+3. 不能。v4 删除了 mapbox traces 与该 config，应改 `scattermap` 一类入口。
 
 ## 延伸阅读
 
-- 官方文档：[Plotly.js docs](https://plotly.com/javascript/)（按图表类型组织，每种都有可改的 demo）
-- 跨语言对照：[Plotly Python](https://plotly.com/python/) 和 plotly.js 文档**结构镜像**，对着看能立刻理解 schema 共享
-- Dash 教程：[Dash in 20 minutes](https://dash.plotly.com/tutorial)（看仪表盘怎么把 plotly.js 推上 web）
-- 论文级对比：Bostock D3 vs 高层封装的取舍 —— 见 [[d3]] 笔记
-- [[d3]] —— Plotly.js 早期 SVG 后端用的就是它
-- [[echarts]] —— 同光谱另一个声明式高层库，国内仪表盘多
-- [[recharts]] —— React-only 高层封装，思想接近但范式不同
+- 文档：[plotly.com/javascript](https://plotly.com/javascript/)
+- 固定源码：[plotly/plotly.js](https://github.com/plotly/plotly.js) —— 本文绑定提交 `e020cc00ef4eb3b0b7fbf25871c2f818e73a04ce`
+- 自定义 bundle：[CUSTOM_BUNDLE.md](https://github.com/plotly/plotly.js/blob/v4.0.0/CUSTOM_BUNDLE.md)
+- [[echarts]] —— 另一条声明式 option 路线
+- [[d3]] —— Plotly 依赖 `@plotly/d3`，但公开 API 不是 selection/join
 
 ## 关联
 
-- [[d3]] —— Plotly.js 的 SVG 渲染最初基于它；理解 d3 能解释 plotly 的下层
-- [[echarts]] —— 另一条声明式路线（Apache 系），对比可看出 schema 设计取舍
-- [[recharts]] —— React 范式封装，和 Plotly.js 的"框架无关"是相反取向
-- [[jupyter]] —— Jupyter notebook 把 plotly.py 输出的 JSON 直接喂给 plotly.js 渲染
+- [[echarts]] —— option/series vs figure/traces
+- [[d3]] —— 底层 mapping；Plotly 的公开合同仍是 JSON
+- [[chart-js]] —— 更小的 Canvas Chart
+- [[recharts]] —— React 组件树
+- [[plotly-py]] —— Python 端；本轮未核验其 JSON 是否字节级一致
+- [[dash]] —— 把 figure 接到 Python 仪表盘
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
+- [[amcharts5]] —— amCharts 5 — TypeScript 重写的商业级图表库
+- [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
+- [[bokeh]] —— Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流
+- [[chart-js]] —— Chart.js — Canvas 渲染入门级图表
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[dash]] —— Dash — 用 Python 回调拼出交互仪表盘
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[holoviews]] —— HoloViews — 声明式数据可视化，一次声明多后端
+- [[panel]] —— Panel — Python 数据应用工具箱
+- [[plotly-py]] —— Plotly.py — DataFrame 一行变交互图表
+- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
+- [[regl]] —— regl — 函数式 WebGL 封装
+- [[streamlit]] —— Streamlit — 脚本即应用的 Python 数据应用框架
+- [[vega]] —— Vega — 整张图就是一棵 JSON
+- [[projects/vega-lite]] —— Vega-Lite — 高层声明式可视化语法

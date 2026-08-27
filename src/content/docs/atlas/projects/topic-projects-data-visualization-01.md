@@ -32,7 +32,7 @@ sidebar:
 | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | `d3` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Dash — Plotly 的 Python 仪表板框架](/study/projects/dash/) | `dash` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) | `dhtmlx-gantt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) | `echarts` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) | `echarts` | intermediate | UNVERIFIED | 介绍 Apache ECharts 6 |
 | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) | `evidence` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | `flowchart-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) | `frappe-gantt` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -55,7 +55,7 @@ sidebar:
 | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | `panel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) | `pdfkit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [pdfme — TypeScript 模板化 PDF](/study/projects/pdfme/) | `pdfme` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | `plotly-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | `plotly-js` | beginner | UNVERIFIED | 介绍 Plotly |
 | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | `plotly-py` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) | `plotnine` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) | `recharts` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

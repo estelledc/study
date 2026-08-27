@@ -1,148 +1,169 @@
 ---
 title: Apache ECharts — 给一个 JSON 就能画图的可视化库
-来源: 'Apache ECharts 官网与仓库, https://echarts.apache.org/ + https://github.com/apache/echarts'
-日期: 2026-05-30
+description: 介绍 Apache ECharts 6.1.0 如何用 option / series / component 描述图表，以及 init、setOption、采样和按需 use() 的边界。
+来源: https://github.com/apache/echarts
+日期: 2026-08-27
 分类: projects / 数据可视化
-难度: 初级
+难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/apache/echarts
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: c5a48f5f97d23e5379720870b8444cd05b50ffb4
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 6.1.0
 ---
 
 ## 是什么
 
-Apache ECharts 是一个**开箱即用的图表库**：你给它一个 JSON 描述（叫 option），它就帮你画出折线图、柱状图、饼图、热力图、关系图、地图等 30 多种图表。日常类比：像点菜——你说"我要一份番茄炒蛋，少盐多糖"，厨师自己处理刀工、火候、装盘；你不用进厨房。
+Apache ECharts 是一份**声明式图表运行时**：你给 `option` JSON，它在容器里画出折线、柱、饼、热力、关系图等。日常类比：[[plotly-js]] 也是“写对象出图”，但 ECharts 把图层叫 `series`、把坐标轴/缩放/提示叫 `component`，并且默认走独立渲染层 zrender。
 
-底层用的是自家造的渲染层叫 **zrender**，可以一行配置切换 Canvas 或 SVG 输出，不改业务代码。
+固定 `echarts@6.1.0` 的核心合同是 `init` → `setOption` →（可选）`resize` / `dispose`。默认 `import * as echarts from "echarts"` 走全量 `index.js`；要变瘦必须改走 `echarts/core` 再 `use()` 图表和渲染器。
 
-跟另一个流行库 [d3](./d3) 的关系是互补：d3 像一盒乐高，给你 scale、axis、selection 这些零件，让你拼自己的图；ECharts 是已经拼好的成品，写一句 `type: 'bar'` 就有完整的柱状图。
+```js
+import * as echarts from "echarts"
+const chart = echarts.init(document.getElementById("main"))
+chart.setOption({
+  xAxis: { type: "category", data: ["衬衫", "羊毛衫", "裤子"] },
+  yAxis: {},
+  series: [{ type: "bar", data: [5, 20, 36] }],
+})
+```
+
+`init` 在容器上建实例；`setOption` 喂配置。默认渲染器是 `'canvas'`。
 
 ## 为什么重要
 
-不理解 ECharts 的设计，下面这些问题没法解释：
+不按 6.1.0 源码读，下面这些事很容易写错：
 
-- 为什么国内 BI 仪表盘、运维大屏几乎清一色 ECharts，而国外更常见 d3 / Chart.js
-- 为什么 ECharts 一个全量包 1MB，按需引入却能压到 100KB——它的模块边界长什么样
-- 为什么百万级数据点画折线，ECharts 不卡 d3 卡——sampling 是怎么救场的
-- 为什么 vue-echarts / echarts-for-react 这些封装都只有几百行——薄壳能薄成什么样
+- 为什么同一 DOM 再 `init` 一次，拿到的是旧实例而不是第二张图
+- 为什么按需引入只 `use(LineChart)` 时，坐标轴或 tooltip 会缺，而全量入口看起来“开箱即有”
+- 为什么 `sampling: "lttb"` 不是“百万点自动救命”，而是 cartesian2d 上的显式降采样
+- 为什么 SPA 切路由后 CPU 还在转——`dispose` 才会停掉 zrender
 
 ## 核心要点
 
-ECharts 的所有 API 表面可以归到 **3 个核心抽象**：
+固定版本可以拆成四层：
 
-1. **option（声明式配置）**：一个深嵌套 JSON。类比 CSS——你不告诉浏览器"画个红色矩形在 (50, 50)"，你说"`background: red; left: 50px`"。怎么变成像素是库的事。
+1. **option / series / component**：`series[].type` 决定图层；grid / polar / dataZoom / tooltip / legend 是平行注册的 component。`echarts.all.ts` 注册了 22 个 chart installer（line/bar/pie/scatter/radar/map/tree/treemap/graph/chord/gauge/funnel/parallel/sankey/boxplot/candlestick/effectScatter/lines/heatmap/pictorialBar/themeRiver/sunburst/custom）。
 
-2. **series（图层数组）**：每个元素是一个图层，`type` 字段决定它怎么画——bar / line / pie / scatter / heatmap / sankey 等 30+ 种。同一张图可以叠多种 series（柱+折线+散点同框）。
+2. **默认全量 vs `echarts/core`**：`exports["."]` 指向全量 `index.js`。`src/echarts.ts` 只默认 `use([CanvasRenderer, DatasetComponent])`；全量入口再装 SVGRenderer 和全部 chart。按需路径漏 `use` 的组件时，对应图层或坐标轴不会出现。
 
-3. **component（坐标系 + 交互）**：和 series 平行的概念。series 管"画什么"，component 管"在哪个坐标系画 / 怎么交互"——grid（直角坐标）/ polar（极坐标）/ dataZoom（缩放）/ tooltip / legend。
+3. **更新周期**：`setOption` 默认合并（`notMerge=false`）。也可传 `{notMerge, lazyUpdate, silent, replaceMerge, transition}`。主过程中再次 `setOption` 会被拒绝。`resize` 只调用 `zr.resize`，源码没有 ResizeObserver。
 
-把这三个搞清楚，剩下的细节都是查文档。
+4. **采样是显式的**：line 默认 `sampling: "none"`。`dataSample` 只在坐标系为 `cartesian2d`、点数 `>10` 且 `rate>1` 时下调；`lttb` / `minmax` / `average` / `min` / `max` / `sum` 或自定义函数都要写进 option。
 
-## 实践案例
+## 实践示例
 
-### 案例 1：3 行代码画一个柱状图
+### 案例 1：全量入口的最小柱状图
 
 ```js
-import * as echarts from 'echarts'
-const chart = echarts.init(document.getElementById('main'))
+import * as echarts from "echarts"
+const chart = echarts.init(el)
 chart.setOption({
-  xAxis: { type: 'category', data: ['衬衫', '羊毛衫', '裤子'] },
+  xAxis: { type: "category", data: ["A", "B"] },
   yAxis: {},
-  series: [{ type: 'bar', data: [5, 20, 36] }]
+  series: [{ type: "bar", data: [1, 2] }],
 })
 ```
 
-`init` 拿到容器，`setOption` 喂数据。如果用 d3 写同样的图大约要 15 行（建 svg、建 scale、join data、画 rect、画 axis）。差别在心智模型：ECharts 让你思考结果，d3 让你思考过程。
+全量入口已经注册 BarChart 与 Grid。同一 `el` 再 `init` 一次，6.1.0 会返回已有实例。
 
-### 案例 2：百万点折线 + 缩放不卡
+### 案例 2：按需引入必须自己 `use`
+
+```js
+import * as echarts from "echarts/core"
+import { BarChart } from "echarts/charts"
+import { GridComponent, TooltipComponent } from "echarts/components"
+import { CanvasRenderer } from "echarts/renderers"
+echarts.use([BarChart, GridComponent, TooltipComponent, CanvasRenderer])
+```
+
+这里少 `use` 任何一个，图、轴或 tooltip 就会缺。这是 tree-shake 合同，不是“静默画一半也算成功”。
+
+### 案例 3：LTTB 只在直角坐标且够密时生效
 
 ```js
 chart.setOption({
-  xAxis: { type: 'time' },
+  xAxis: { type: "time" },
   yAxis: {},
-  dataZoom: [{ type: 'slider' }, { type: 'inside' }],
-  series: [{ type: 'line', data: bigArray, sampling: 'lttb', large: true }]
+  dataZoom: [{ type: "inside" }],
+  series: [{ type: "line", data, sampling: "lttb" }],
 })
 ```
 
-`sampling: 'lttb'` 启用 **LTTB 算法**（Largest-Triangle-Three-Buckets，2013 年 Steinarsson 提出）。它对每个区间挑一个能让相邻三角形面积最大的点，保留视觉拐点扔掉冗余中间点。一百万点降到两千点，曲线肉眼几乎一致。`dataZoom` 提供滑块和滚轮缩放，缩放时重新触发 sampling。
-
-### 案例 3：在 React 里用 echarts-for-react
-
-```jsx
-import ReactECharts from 'echarts-for-react'
-
-export function Sales({ data }) {
-  const option = {
-    xAxis: { type: 'category', data: data.map(d => d.month) },
-    yAxis: {},
-    series: [{ type: 'line', data: data.map(d => d.value) }]
-  }
-  return <ReactECharts option={option} style={{ height: 400 }} />
-}
-```
-
-这种封装本质就是 `useEffect(() => echarts.init(ref.current).setOption(option))` + 卸载时 `dispose`。React 只看到一个 `<div>` 容器，ECharts 在容器内独立画图——和 d3 直接写 DOM 跟 React 抢控制权的麻烦完全没了。
-
-vue-echarts 同样套路，几百行包装一个组件。这两个生态封装能薄成这样，正是因为 ECharts 自己已经是个完整图表库，外壳只负责挂载和销毁。
+`lttb` 走 `data.lttbDownSample`。点数少、不是 `cartesian2d`、或 `rate<=1` 时，这段 processor 不会降采样。本文没有测量百万点帧率。
 
 ## 踩过的坑
 
-1. **按需引入忘了 use 组件会 silent fail**：`import { LineChart } from 'echarts/charts'` 但忘了 `GridComponent`，结果折线图渲染出来但没坐标轴，控制台还不报错——只能盯着图发现"咦怎么没轴"。LineChart 要 GridComponent 才有坐标轴；想要 tooltip 还要 TooltipComponent；想要图例还要 LegendComponent。这套依赖图官方文档不直观，新手要花一两个项目才记住。
-2. **option 嵌套深 5-6 层心智重**：一个 series 内部 `itemStyle` / `lineStyle` / `emphasis` / `markLine` / `label.formatter` 全是嵌套对象，新人记不住，要么靠官方编辑器试错要么查 ChatGPT。
-3. **dispose 不调会内存泄漏**：zrender 启了 `requestAnimationFrame` 循环，单页应用切路由时如果不手动 `chart.dispose()`，老图实例的动画循环还在跑——切几次页面浏览器吃满 CPU。
-4. **resize 不会自动跟容器**：ECharts 不监听 ResizeObserver，容器尺寸变了你得自己 `chart.resize()`，否则图就停在初始尺寸里，缩放窗口图不动。
+1. **把默认入口当按需包**：`import * as echarts from "echarts"` 是全量；要瘦必须 `echarts/core` + `use()`。
+2. **漏组件**：只 `use(LineChart)` 没有 `GridComponent` 时，折线可以在，轴不在。
+3. **重复 `init`**：同一 DOM 已有实例会直接返回，不会帮你清掉旧 option。
+4. **不调 `dispose`**：`dispose` 才会 `zr.dispose()` 并从实例表删除。
+5. **以为 resize 会跟着容器走**：窗口或 flex 变了要自己 `chart.resize()`。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-
-- 标准业务图表（BI 仪表盘、运维大屏、报表导出）——30+ 种图表覆盖 95% 需求
-- 大数据量场景（万级到百万级点）——LTTB sampling + Canvas backend 是杀手锏
-- 需要 SSR / 服务端导出 PDF——v5 内置 SVG SSR，无 jsdom 依赖
-- 中文移动端——出生就考虑了移动端 + 中文字体
-- 跨框架嵌入——原生 JS 用法 + 各框架薄壳，Vue/React/Angular 都有官方/社区维护
+- 业务仪表盘、运维大屏、需要现成 series/component
+- 能接受 Canvas 默认渲染，或显式切 `renderer: "svg"`
+- 愿意为 tree-shake 维护 `use()` 依赖图
 
 **不适用**：
+- 非标准图形、要自己拼 scale/path → [[d3]] / [[visx]]
+- 只要 React 组件树当图表 → [[recharts]]
+- 需要跨语言同一份 figure schema → [[plotly-js]]
+- 把未测量的包体积或百万点帧率当选型依据 → 本文没有跑 bundle / 渲染 benchmark
 
-- 完全自定义、不规则视觉（蜂巢热力、艺术化数据图）——custom series API 难写，不如 d3 直接画
-- 极致 bundle 大小（小于 50KB）——按需引入最低也要 100KB 左右
-- 需要深度复用 React 组件树、用 hooks 控制每个图元——选 Recharts / visx
-- 需要 Grammar of Graphics 风格的声明（图形语法）——选 Vega-Lite / Observable Plot
+## 固定版本边界
 
-## 历史小故事（可跳过）
-
-- **2013 年**：百度前端团队（FEX）开源 ECharts 1.0，起点是商业 BI dashboard，针对中文移动端 + 大数据
-- **2014-2017 年**：v2 / v3 / v4 迭代；v3 加 SVG backend，v4 引入 dataset 把数据和配置解耦
-- **2018-01**：进 Apache 软件基金会孵化器，是中国前端项目首个进 ASF 的
-- **2021-01**：毕业为 Apache 顶级项目（TLP），同时发 v5——按需引入 + Universal Transition + 无障碍 Aria
-- **2024-2026**：v5.4 / v5.5 维护期，每年一两个 minor，每月 patch，Apache 治理保证不被单一厂商裹挟
-
-为什么当年要自己造一个 zrender 而不直接用 SVG？2013 年 IE8 还活着，IE8 没有 SVG 只有 VML，加上 SVG 渲染上千节点就卡，Canvas 在大数据场景碾压。所以 zrender 出生就是 Canvas-first，SVG 是后加的备选——这跟 d3 的 SVG-first 思路完全相反。
+- 本文绑定 `apache/echarts@c5a48f5f...`，npm 与 GitHub tag 均为 `6.1.0`。
+- 运行时依赖锁定 `zrender@6.1.0`；`src/core/echarts.ts` 的 `dependencies.zrender` 也是 `6.1.0`。
+- 默认渲染器是 canvas；SSR 走 `init(..., { ssr: true })`。
+- 本文只做静态源码阅读，没有安装依赖、运行上游测试或测量包体积，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **声明式 vs 命令式**：ECharts 和 d3 是同一个可视化问题的两种相反答案。前者结果导向，后者过程导向——选哪个看场景，不是哪个更好。
-2. **抽象层的红利**：zrender 让 ECharts 一行切 Canvas/SVG backend，是抽象层换来的可替换性。代价是多一层间接调用 + 自己造轮子的维护。
-3. **按需引入是 v5 的灵魂**：1MB 全量 vs 100KB 按需差 10 倍。前提是你愿意背依赖图——LineChart 要 GridComponent 要 TooltipComponent。
-4. **Apache 治理的稳定性溢价**：进 ASF 之后版本节奏可预测，企业愿意 pin 在 5.x 用五年。这种稳定度在国内开源项目里少见。
-5. **Universal Transition 是高层封装的天花板**：v5.1 里把饼图变柱图这种过去想都不敢想的动画做成一行 `universalTransition: true`，证明高层图表库的封装空间还远没到顶。d3 的哲学不会做这个——它给你乐高让你自己拼。
+1. **声明式图表库的合同是 option，不是画布 API**
+2. **全量入口和 `use()` 入口是两套注册表**
+3. **合并更新是默认值**，清空要显式 `notMerge` 或 `replaceMerge`
+4. **降采样是 option，不是隐式性能开关**
+5. **实例生命周期要自己 `resize` / `dispose`**
+
+## 应用型自测
+
+1. 同一 `div` 上连续调用两次 `echarts.init`，会得到两个独立实例吗？
+2. `echarts/core` 只 `use(LineChart, CanvasRenderer)`，不 `use(GridComponent)`。折线图会有直角坐标轴吗？
+3. `series: [{ type: "line", sampling: "lttb" }]` 在极坐标、只有 8 个点时，一定会走 LTTB 吗？
+
+检查点：
+
+1. 不会。非 SSR 路径发现 DOM 上已有实例就返回它。
+2. 不会按全量入口那样自动出现。轴是 GridComponent，要自己注册。
+3. 不会。`dataSample` 要求 `cartesian2d`、点数 `>10`，并且算出的 `rate>1`。
 
 ## 延伸阅读
 
-- 官方文档：[echarts.apache.org](https://echarts.apache.org/) ——配置项查询和在线编辑器
-- 配置项手册：[ECharts Option 文档](https://echarts.apache.org/zh/option.html)——所有字段在这一页
-- 仓库 README：[github.com/apache/echarts](https://github.com/apache/echarts)
-- 渲染层独立仓库：[github.com/ecomfe/zrender](https://github.com/ecomfe/zrender)——Canvas/SVG 双 backend 的图元抽象，独立项目同 PMC 维护
-- LTTB 论文：[Downsampling Time Series for Visual Representation](https://skemman.is/handle/1946/15343)（Steinarsson 2013）
-- [[d3]] —— 同主题底层乐高视角，对照阅读
-- [[lottie]] —— 都属"声明式动画"阵营，Lottie 来自 After Effects 导出
+- 文档：[echarts.apache.org](https://echarts.apache.org/)
+- 固定源码：[apache/echarts](https://github.com/apache/echarts) —— 本文绑定提交 `c5a48f5f97d23e5379720870b8444cd05b50ffb4`
+- 渲染层：[ecomfe/zrender](https://github.com/ecomfe/zrender)
+- [[plotly-js]] —— 另一条 JSON figure 路线
+- [[d3]] —— 对照乐高原语
 
 ## 关联
 
-- [[d3]] —— 底层乐高 vs 开箱图表，互补共存的两条路
-- [[lottie]] —— 声明式描述驱动渲染，思路同源不同领域
-- [[framer-motion]] —— 动画库视角下 vue-echarts / echarts-for-react 的薄壳设计有相通处
-- [[playwright]] —— ECharts 自家用 playwright 做视觉回归测试
-- [[vitepress]] —— 文档站点常嵌 ECharts 做交互图，按需引入的典型消费方
-- [[storybook]] —— 给 ECharts 配置项做 visual catalog 的常见工具
+- [[plotly-js]] —— 同主题的声明式 JSON 图表，跨语言 schema 更重
+- [[d3]] —— 底层 mapping / join，不是成品 series 枚举
+- [[chart-js]] —— 更小的 Canvas Chart 抽象
+- [[recharts]] —— React 组件树当图表
+- [[visx]] —— 把 d3 纯函数接到 JSX
 
 ## 反向链接
 
