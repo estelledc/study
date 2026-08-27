@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "16 条 通用开发工具 Atlas 分块"
+description: "18 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 16 条，稳定上限为 100 条。
+本分块共 18 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -23,6 +23,8 @@ sidebar:
 | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | `lmms` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Lodash — 以 iteratee 与 wrapper 组织的通用工具函数集](/study/projects/lodash/) | `lodash` | beginner | UNVERIFIED | 介绍 lodash 4 |
 | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) | `matter-js` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [ms — 把 "2 days" 和毫秒当成同一种值](/study/projects/ms/) | `ms` | 初级 | UNVERIFIED | 绑定 vercel/ms 2 |
+| [pretty-ms — 把毫秒拆成可读的多单位时长](/study/projects/pretty-ms/) | `pretty-ms` | 初级 | UNVERIFIED | 绑定 sindresorhus/pretty-ms 9 |
 | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) | `quasar` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ramda — 自动柯里、data-last 的实用函数式工具库](/study/projects/ramda/) | `ramda` | beginner | UNVERIFIED | 介绍 ramda 0 |
 | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) | `supercollider` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
