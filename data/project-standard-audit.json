@@ -2,9 +2,9 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 966,
+    "total": 968,
     "by_status": {
-      "benchmark-aligned": 83,
+      "benchmark-aligned": 85,
       "needs-evidence": 883
     }
   },
@@ -2466,6 +2466,26 @@
       "slug": "bun",
       "title": "Bun — 单二进制 JS/TS 运行时与工具链",
       "source": "https://github.com/oven-sh/bun",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
+      "slug": "cache-manager",
+      "title": "cache-manager — 用 Keyv store 阵列做分层 wrap 的 Node 缓存门面",
+      "source": "https://github.com/jaredwray/cacheable",
       "status": "benchmark-aligned",
       "checks": {
         "source": true,
@@ -16426,6 +16446,26 @@
         "evidence_boundary",
         "self_test"
       ]
+    },
+    {
+      "slug": "quick-lru",
+      "title": "quick-lru — 用新旧两份 Map 近似 LRU 的同步缓存",
+      "source": "https://github.com/sindresorhus/quick-lru",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
     },
     {
       "slug": "quickjs",

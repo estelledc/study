@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -17,6 +17,7 @@ sidebar:
 | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | `asdf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | `aws-spot-best-practices` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | `bigbluebutton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [cache-manager — 用 Keyv store 阵列做分层 wrap 的 Node 缓存门面](/study/projects/cache-manager/) | `cache-manager` | beginner | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | `collabora-online` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | `coturn` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | `cri-o` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -45,6 +46,7 @@ sidebar:
 | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | `partykit` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) | `postal` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | `prefect` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [quick-lru — 用新旧两份 Map 近似 LRU 的同步缓存](/study/projects/quick-lru/) | `quick-lru` | beginner | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | `ray` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) | `redash` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) | `rethinkdb` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

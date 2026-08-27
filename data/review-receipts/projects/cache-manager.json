@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "cache-manager",
+    "digest_sha256": "d4d3465d867c13e6f26aa94ec50ce5610f4802e61691a98bee25730225633b24"
+  },
+  "source_revision": "069f7340194f29f8ad2310cec4b922c0ad21b4f9",
+  "research_input_sha256": "e533b3397451f1f6bdb705068f15e783cc6c887a904373004066ea2970245f2e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Keyv store array, wrap coalesce, refreshThreshold, ttl expires timestamp, and v7 undefined miss."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "createCache, wrap/coalesceAsync, ttl expires, nonBlocking race, and KeyvAdapter were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hj",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds date tag 2026-05-27 / 7.2.9 and discloses missing npm gitHead plus unpublished 7.2.10; bundle was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}
