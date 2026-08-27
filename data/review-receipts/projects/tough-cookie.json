@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "tough-cookie",
+    "digest_sha256": "d883af9d0a3ea8f7bf3633c421917bbe49bcd8926e366f6faeef42ca23725415"
+  },
+  "source_revision": "40708dd809cfb1dd658270dc85597bf9f68a6ccc",
+  "research_input_sha256": "436f3202dcf672266f34ee6ce6ef38300f08318bd33f04ae388e510f92ca38e9",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-he",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates RFC 5.3 store path, host-only vs domainMatch, silent prefix default, and SameSite-not-enforced unless context is passed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-he",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "cookie.ts parse/TTL and cookieJar setCookie/getCookies/secureContext were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-he",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag v6.0.2 with matching npm gitHead; public-suffix and SameSite defaults disclosed; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}

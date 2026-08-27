@@ -2504,6 +2504,10 @@
       "topic_id": "projects-monitoring-and-time-series"
     },
     {
+      "note_id": "projects::tough-cookie",
+      "topic_id": "projects-http-clients"
+    },
+    {
       "note_id": "projects::traefik",
       "topic_id": "projects-devops-containers-and-operations"
     },
@@ -2530,6 +2534,10 @@
     {
       "note_id": "projects::unified",
       "topic_id": "projects-markdown-and-parsing"
+    },
+    {
+      "note_id": "projects::universal-cookie",
+      "topic_id": "projects-http-clients"
     },
     {
       "note_id": "projects::unocss",

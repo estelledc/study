@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HE：tough-cookie + universal-cookie
+
+- supervisor 状态：writer epoch `complete`；待 owner review。未 merge、未 deploy。
+- 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
+- objective：为缺失的 cookie-jar 双子补齐 `tough-cookie` 与 `universal-cookie` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/cookie-jar-source-review-20260827-he.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-he-2026-08-27`。
+- detector fingerprint：目录无 `tough-cookie.md` / `universal-cookie.md`；开放 PR #258 占用 cookie-es / set-cookie-parser，本轮按指令避开这两项。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `tough-cookie` 绑定 tag `v6.0.2` → `40708dd809cfb1dd658270dc85597bf9f68a6ccc`；tag / `lib/version.ts` / npm `gitHead` 一致。
+  2. `universal-cookie` 绑定 monorepo tag `v8.1.2` → `54f246ee61c487792331d42f40f2a34960ba2a5b`；披露仓库已从 `reactivestack/cookies` 转到 `ItsBenCodes/cookies`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` 与 `audit:wikilinks` blocking 0；`git diff --check` 通过。全量 `verify:ci` 在首个 review-ready commit 之后跑。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：用 GitHub 查看本分支 PR；未授权前不要 merge。
+- superseded_by：`none`
+- 实时数量与 ETA 以命令为准，不在 handoff 中复制易过期数字或 ETA。独立 agent 先读 `AGENTS.md`。
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。
