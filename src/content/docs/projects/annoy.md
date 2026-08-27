@@ -1,160 +1,168 @@
 ---
 title: Annoy — Spotify 的随机森林近似最近邻索引
-来源: Erik Bernhardsson, Spotify, 2013（开源 https://github.com/spotify/annoy）
+来源: https://github.com/spotify/annoy
 日期: 2026-06-01
 分类: 信息检索 / 向量索引
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/spotify/annoy
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 75429e5dc930754698f1d37c44ea189a7521c7a3
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.17.3
 ---
 
 ## 是什么
 
-Annoy（**Approximate Nearest Neighbors Oh Yeah**）是 Spotify 工程师 Erik Bernhardsson 在 2013 年写的近似最近邻库。**C++ 内核 + Python 绑定**，专门解决"我有几千万条向量，怎么快速找出和查询向量最像的 50 个"。
+Annoy（**Approximate Nearest Neighbors Oh Yeah**）是 Spotify 的 C++ 近似最近邻库，Python 绑定从 `annoy.annoylib` 再导出成 `AnnoyIndex`。日常类比：先按不同切法把书架分成许多小格，查询时每棵树只摸几格，再对摸到的书精确比距离。
 
-日常类比：你想在一座有 5000 万本书的图书馆找"最像这本"的书。逐本比对要好几天。Annoy 的做法是先按随机方向把书房一刀切两半（"放音乐类那侧 / 放小说类那侧"），递归切到每个角落只剩 30 本左右。这样一棵树就建好了。再多建 50 棵切法不同的树，每次查询时让 50 棵树**并行投票**给候选书，最后只精确比对这些候选。
+固定 `1.17.3`（tag `v1.17.3` → `75429e5d...`）把整片森林写成只读文件，`load()` 走 `mmap`，多个进程可以共享同一份索引。`setup.py` 声明 Apache-2.0，包名 `annoy`；npm 上的同名包指向另一个仓库，不是这份源码。
 
-这就是"随机投影森林"——Annoy 的全部本质。
+```python
+from annoy import AnnoyIndex
+
+t = AnnoyIndex(40, "angular")
+t.add_item(0, [0.1] * 40)
+t.build(10)
+t.save("test.ann")
+```
 
 ## 为什么重要
 
-不理解 Annoy（或它代表的 ANN 思路），下面这些事都没法解释：
+不理解这份只读森林合同，下面这些事会对不上：
 
-- 为什么 Spotify / Netflix 给你推歌、推剧能在 100 毫秒内从几千万候选里挑出来
-- 为什么"向量相似度搜索"在 LLM 时代成了 RAG / 推荐 / 搜索的底层基建
-- 为什么生产环境的 ANN 库总在"召回率 / 延迟 / 内存"三角里挣扎
-- 为什么 Annoy 在 HNSW / FAISS 兴起后还有人用——它有一个别人很难复制的特性：**mmap 友好**
+- 为什么 `build()` 或 `load()` 之后不能再 `add_item`
+- 为什么 item id 必须是非负整数，而且会按 `max(id)+1` 预分配
+- 为什么 README 写“随机取两点做中垂面”，源码实际走的是 `two_means`
+- 为什么 `angular` 的 Python 距离不是余弦本身，而是 `sqrt(2-2cos)`
 
 ## 核心要点
 
-Annoy 的工作流可以拆成 **三步**：
+固定版本可以拆成四层：
 
-1. **建一棵随机投影树**：在每个节点上随机挑两个点，用它们的中垂面（垂直平分面）把数据切成两半。递归切到节点里只剩 ≤ K 个点（K 默认约 30）就停。
+1. **五种度量**：构造时选 `"angular"` / `"euclidean"` / `"manhattan"` / `"hamming"` / `"dot"`。`angular` 在 C++ 里存 `2-2cos`，Python `get_distance` 再开方；`hamming` 把 float 阈值打成 `uint64_t` 后按位计数，切分是轴对齐的；`dot` 用 Bachrach 等人的方法把内积空间折到更适合查询的余弦空间。
 
-2. **建一片森林**：树切得"准不准"取决于运气——一棵树可能恰好把两个相似点切到不同侧。**所以多建几十到几百棵**，让随机性互相抵消。每棵独立、可并行建。
+2. **叶子容量 `_K` 随维度算出来**：节点大小 `_s = offsetof(Node, v) + f * sizeof(T)`，`_K = (_s - offsetof(Node, children)) / sizeof(S)`。叶子不是写死的“大约 30 个点”，而是“向量槽位还能塞多少个 descendant id”。
 
-3. **查询时多树合并**：拿查询向量从每棵树往下走，把走到的叶子节点候选合到一起，再对这些候选**精确算距离**取 top-k。候选取多少由参数 `search_k` 控制——越大越准、越慢。
+3. **建树不是只抽两点**：`Angular` / `Euclidean` / `Manhattan` 的 `create_split` 调用 `two_means`——先随机挑两个种子，再做最多 200 步加权更新，超平面取两个中心之差。切得太偏（imbalance ≥ 0.95）会重试最多 3 次，仍失败就随机分边。`build(q)` 在 `q == -1` 时一直加树，直到节点数至少是 item 数的两倍。
 
-加上一个工程关键点：**整片森林序列化成单个文件，用 mmap 加载**。多个进程零拷贝共享同一份索引，索引比 RAM 大也能跑（操作系统按需调页）。这是 Spotify 上线时的核心考量。
+4. **查询用优先队列合并多棵树**：`search_k == -1` 时默认 `n * n_trees`。队列吐出最多 `search_k` 个候选后，按 id 去重再精确算距离。`n_trees` 管索引体积，`search_k` 管这次走多深；README 写两者大致可独立调。
 
-直觉对照：
-- **k-d 树**按坐标轴对齐方向切（"x 轴上 < 50 / >= 50"），高维下退化
-- **Annoy 树**按随机方向切（任意方向的超平面），对维度灾难鲁棒得多
-- **HNSW 图**根本不切空间，建一张可导航的多层图
+## 实践示例
 
-切空间的难题是高维下"对的切法"几乎肯定切错——Annoy 干脆放弃找最优切法，靠**多次随机 + 投票**逼近。
-
-## 实践案例
-
-### 案例 1：30 行 Python 跑通
+### 案例 1：建树、落盘、mmap 再查
 
 ```python
 from annoy import AnnoyIndex
 import random
 
-f = 40  # 向量维度
-t = AnnoyIndex(f, 'angular')  # 五种距离之一
+f = 40
+t = AnnoyIndex(f, "angular")
 for i in range(1000):
-    v = [random.gauss(0, 1) for _ in range(f)]
-    t.add_item(i, v)
+    t.add_item(i, [random.gauss(0, 1) for _ in range(f)])
 
-t.build(10)         # 建 10 棵树
-t.save('test.ann')  # 序列化到磁盘
+t.build(10)          # 10 棵树；n_jobs 默认 -1，尽量用满核
+t.save("test.ann")   # save 之后也不能再加点
 
-# 后续进程加载（mmap，不读完整文件）
-u = AnnoyIndex(f, 'angular')
-u.load('test.ann')
-print(u.get_nns_by_item(0, 5))  # 跟 0 号最像的 5 个
+u = AnnoyIndex(f, "angular")
+u.load("test.ann")   # 默认 prefault=False，按页调入
+print(u.get_nns_by_item(0, 5))
 ```
 
-**注意**：`build()` 之后**不能再 `add_item`**——Annoy 是**只读索引**。要加数据必须重建。
+**逐部分解释**：`add_item` 只接受非负整数 id。`load(..., prefault=True)` 会用 `MAP_POPULATE` 预读整文件；默认是按需缺页。
 
-### 案例 2：search_k 怎么选
+### 案例 2：查询时放大 search_k
 
 ```python
-# 默认 search_k = n_trees * n（n 是想要的近邻数）
-t.get_nns_by_item(0, 100)                # 默认
-t.get_nns_by_item(0, 100, search_k=10000)  # 更准更慢
+t.get_nns_by_item(0, 100)                   # search_k 默认 10 * 100
+t.get_nns_by_item(0, 100, search_k=10000)
+t.get_nns_by_vector(query, 10, include_distances=True)
 ```
 
-经验法则：召回率不够先调大 `search_k`，调到延迟到极限再加 `n_trees`。先调查询时参数、再调建索引参数——这点跟很多 ANN 库通用。
+先改查询参数再决定要不要重建。`include_distances=True` 返回 `(ids, distances)` 二元组。
 
-### 案例 3：Spotify 实际怎么用
+### 案例 3：磁盘上建大索引
 
-Spotify 给每首歌训出一个嵌入向量（早期是协同过滤 + 深度模型）。几千万首歌 = 几千万个 200 维向量。线上推荐时拿用户最近听的歌的向量，调 `get_nns_by_vector` 查最像的几百首做候选，再交给排序模型挑 30 首。
+```python
+t = AnnoyIndex(40, "euclidean")
+t.on_disk_build("big.ann")   # 必须在 add_item 之前
+# ... add_item ...
+t.build(50)                  # 不必再 save
+```
 
-mmap 在这里的价值：**几十个 worker 进程共享一份索引**，每个不用各自加载几 GB。
+`on_disk_build` 把节点缓冲映射到指定文件，避免整片森林先装进 RAM。
 
 ## 踩过的坑
 
-1. **建好后不能加点**。要加新向量必须从头重建，Spotify 通常每天离线重建一次。如果业务需要"实时加向量"，Annoy 不合适，得用 HNSW。
-
-2. **维度太高效果掉**。随机投影在 50–200 维表现好，超过 500 维树的切分越来越不准，召回率跌得快。高维场景该用 PQ 量化或 HNSW。
-
-3. **`angular` 距离不是余弦相似度本身**。Annoy 内部用的是 `sqrt(2 - 2*cos(θ))`，是余弦距离的**单调变换**，排序结果一致但数值不一样。看到"距离 1.4"不要以为很差。
-
-4. **`n_trees` 和 `search_k` 解耦不彻底**。理论上前者管建索引、后者管查询，但树越多每次查询遍历的节点也越多，不是免费的。
-
-5. **mmap 也怕冷启动抖动**。索引页第一次被访问时要从磁盘调入内存，容器重启或网络盘加载会让前几批请求变慢。生产建议本地 SSD、启动预热，并监控 major page fault。
+1. **把叶子写成固定 K≈30**：`_K` 跟维度和节点布局走，40 维 float 大约是 42，不是政策参数。
+2. **把 README 的“两点中垂面”当成实现**：实现是 `two_means` 启发式；Hamming 更是随机选 bit。
+3. **把 `angular` 距离读成余弦值**：Python 层看到的是 `sqrt(2-2cos)`。距离 1.4 并不等于“很不像”。
+4. **以为 `save` 之后还能增量加向量**：`build`、`save`、`load` 都会把索引锁成只读；`add_item` 对 loaded index 直接报错。
+5. **把 npm `annoy` 或后继 commit 当成 1.17.3**：npm 同名包是 `jimkang/annoy-node`。`main` 在 2025-10 还有 Python 3.13 wheel 提交，本文不绑定那些行为。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 静态/准静态向量集（每天/每小时重建一次能接受）
-- 索引比 RAM 大、需要靠 mmap 调页
-- 多进程共享一份索引（Web 服务、推荐召回）
-- 中等维度（50–300）、千万到亿级向量
+
+- 向量集可以离线重建，查询端只要 mmap 一份静态文件
+- 多进程共享同一索引，不想每个 worker 各拷一份
+- 需要在本机用 `on_disk_build` 处理装不进 RAM 的建树
 
 **不适用**：
-- 实时增删向量 → 用 HNSWlib / FAISS IVF
-- 极高维（>500） → 用带量化的方案（FAISS PQ / ScaNN）
-- 超大规模（10 亿 +） → FAISS GPU / ScaNN
-- 要求最高召回率 → HNSW 通常领先
 
-## 历史小故事（可跳过）
+- 必须在线增删向量——固定源码没有可变图结构
+- 把 README 的“<100 维更好、到 1000 维也还行”写成你的召回保证
+- 需要把未运行的 QPS / 召回曲线写成选型结论
+- 把 1.17.3 之后的 wheel / CI 改动外推到这个 tag
 
-- **2013 年**：Erik Bernhardsson 在 Spotify 做音乐推荐，需要一个能在内存受限机器上跑、且能多进程共享的 ANN 库。当时没有满意方案，他自己写了 Annoy，开源到 GitHub。
-- **2015 年**：博客《Nearest Neighbors and Vector Models》系列爆火，Annoy 成为 Python ANN 生态事实标准。
-- **2017–2018 年**：Erik 自己开了 ann-benchmarks 项目，定期跑各家 ANN 库的对比。HNSW 系列在召回-延迟图上稳定领先。
-- **2018+**：HNSWlib / FAISS 在性能上压过 Annoy，但 Annoy 的 mmap + 极简 API 在"召回服务"场景仍有不可替代的位置。
+## 固定版本边界
 
-## 参数调优一张表
-
-| 想要 | 调什么 | 代价 |
-|------|--------|------|
-| 召回率更高 | 先调大 `search_k`（查询时） | 单次查询变慢 |
-| 还要更高 | 再加大 `n_trees`（建索引时） | 索引文件变大、建索引变慢 |
-| 内存压力 | 减小 `n_trees`，依赖 mmap 调页 | 命中率下降时 IO 增多 |
-| 索引文件太大 | 用 `on_disk_build`，一边建一边写盘 | 建索引更慢 |
-
-调参顺序的核心心法：**查询时参数优先于建索引参数**——前者改一改马上看效果，后者改了要重建。
-
-## 一行心智模型
-
-> "把一堆向量随机切成几十棵不同的树，查询时每棵树各推几个候选，合起来再精确比对——再用 mmap 让多进程零拷贝共享。"
-
-这句话能讲清楚 Annoy 90% 的设计。剩下 10% 是工程细节（节点格式、内存对齐、距离公式优化）。
+- 本文绑定 `spotify/annoy@75429e5dc930754698f1d37c44ea189a7521c7a3`，lightweight tag `v1.17.3`，`setup.py` 版本 `1.17.3`。
+- 分类器列到 CPython 3.9；README 仍写测试过 2.7 / 3.6 / 3.7。未安装扩展、未跑 `nosetests`。
+- 上游 `main` 在此 tag 之后还有提交（含 2025-10 的 Python 3.13 支持 PR）；那些行为不在本文范围。
+- 本文未测 mmap 缺页、多进程共享或任何 benchmark，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **随机性 + 多次重复 = 鲁棒近似**——一棵树切错了不要紧，五十棵投票就稳了。这是工程上把"准确算法"换成"近似算法"的通用思路。
-2. **工程约束塑造算法选择**——Annoy 不是最快也不是最准的，但 mmap 友好这一条让它在 Spotify 的多进程架构里赢了。算法没有"最好"，只有"最匹配约束的"。
-3. **不可变数据结构在生产更好用**——只读索引让多进程共享、缓存预热、回滚都简单。要"既能加又能查"通常要付出复杂度代价。
-4. **召回率 / 延迟 / 内存 三角永远存在**——任何 ANN 库都在这三者之间做权衡，理解它就能选库、调参不再蒙。
+1. **只读文件 + mmap 是一等设计，不是附赠优化**——创建与查询被刻意拆开。
+2. **叶子大小是内存布局推出来的，不是调参旋钮**。
+3. **文档直觉和实现启发式会分叉**——要以 `two_means` / Hamming bit split 为准。
+4. **查询精度先动 `search_k`，再建更多树**——前者不用重建索引。
+
+## 应用型自测
+
+1. `t.build(10)` 之后还能 `t.add_item(1001, v)` 吗？
+2. 叶子容量是不是固定约 30？
+3. Python `get_distance` 在 `angular` 下返回的是余弦值吗？
+
+检查点：
+
+1. 不能。`_built` 后不能再加点；`load` 后也不行。
+2. 不是。`_K` 由节点里向量槽位能塞多少 descendant id 决定。
+3. 不是。C++ 存 `2-2cos`，Python 再 `sqrt`。
 
 ## 延伸阅读
 
-- 官方仓库：[spotify/annoy](https://github.com/spotify/annoy)（C++ 实现 + 多语言绑定）
-- 作者博客系列：[Nearest Neighbors and Vector Models, Part 2](https://erikbern.com/2015/10/01/nearest-neighbors-and-vector-models-part-2-how-to-search-in-high-dimensional-spaces.html)（讲随机投影直觉）
-- ANN 基准：[ann-benchmarks.com](https://ann-benchmarks.com/)（各家 ANN 库召回-延迟曲线，Erik 自己维护）
-- [[hnsw]] —— 当前主流 ANN 算法，Annoy 的常见替代
-- [[faiss]] —— Facebook 的 ANN 库，IVF / PQ / HNSW 全家桶
+- 固定源码：[spotify/annoy](https://github.com/spotify/annoy) —— 本文绑定提交 `75429e5dc930754698f1d37c44ea189a7521c7a3`
+- 作者说明：[Nearest Neighbors and Vector Models, Part 2](https://erikbern.com/2015/10/01/nearest-neighbors-and-vector-models-part-2-how-to-search-in-high-dimensional-spaces.html)
+- 同作者擂台：[[ann-benchmarks]] —— 固定提交已写明不再积极维护
+- [[hnsw]] —— 图导航路线，不要把未绑定曲线写成“一定更快”
+- [[faiss]] —— 多索引家族，部署合同不同
 
 ## 关联
 
-- [[hnsw]] —— 分层小世界图，召回-延迟通常领先 Annoy
-- [[faiss]] —— 内核选择多、支持 GPU，但部署复杂度更高
-- [[bentley-1975-kdtree]] —— k-d 树，低维场景的精确最近邻；Annoy 是它在高维下的近似版本
-- [[ance-2020]] —— 用近似最近邻做大规模检索训练
-- [[colbert-2020]] —— 后期交互检索，候选召回阶段常用 ANN
+- [[ann-benchmarks]] —— 统一 ANN 接口与 Docker 跑法
+- [[hnsw]] —— 分层小世界图
+- [[faiss]] —— IVF / PQ / HNSW 等可选内核
+- [[bentley-1975-kdtree]] —— 轴对齐精确划分的对照
+- [[ance-2020]] —— 用 ANN 做检索训练
 
 ## 反向链接
 

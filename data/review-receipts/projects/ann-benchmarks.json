@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ann-benchmarks",
+    "digest_sha256": "723cf4963eee2a5d7a8ffe233ae4e9d09dd2b2f0776cd33ee01987eb9b82d1c9"
+  },
+  "source_revision": "2e081ad32c1eccab72dcb739ad886c310b90f715",
+  "research_input_sha256": "ac95a05eb009355e4e5e701183f68d722f179cf1ad6a12a49b0dc5ad85b71e55",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates unmaintained status, single-CPU cpuset, count=10 vs HDF5 top-100, and disabled Annoy config."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected BaseANN, run/plot/main, datasets, annoy wrapper; Docker, HDF5, and run.py were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fp",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Claims bounded to 2e081ad3; April 2025 plots, QPS, and VIBE behavior are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
