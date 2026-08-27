@@ -2,6 +2,31 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HH：edge-runtime + workerd
+
+- status：writer epoch `complete`；本地 review-ready change set 已形成。push + 一个 PR 已授权；merge / deploy 未授权。
+- 起始 ref：`96da2ee8c00f7ff392b0e10e30233fe07158132b`（`origin/main`）。
+- objective：为缺失的 edge-runtime 双子补齐 `edge-runtime` 与 `workerd` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/edge-runtime-source-review-20260827-hh.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未编译 workerd、未测 HTTP。
+- activated_by：`explicit-user-parallel-writer-hh-2026-08-27`。
+- detector fingerprint：目录无 `edge-runtime.md` / `workerd.md`；`wikilink-baseline` 已有 `edge-runtime` 悬空链；开放 PR #254 占用 wrangler/miniflare，本轮按指令跳过这对。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `edge-runtime` 绑定 annotated tag `edge-runtime@4.0.1` 剥皮提交 `d1fbe4ee5937c4ad7ff60b57d6f3db9d1e6ab18a`；披露 npm `edge-runtime@4.0.1` 本轮无 `gitHead`。
+  2. `workerd` 绑定 lightweight tag `v1.20260827.1` → `fffb83fc1e7c0bdcec92ad9f83bc2d9bb523bc12`，与 npm `gitHead` / `release-version.txt` 一致。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；公开项目数 966 → 968，已对齐标杆 83 → 85。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking。
+  - `audit:counts` / `audit:site-state`：projects=968、papers=1083、total=2051。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对；不得 merge。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：在本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AH：lodash + ramda
 
 - status：writer epoch `complete`；已 rebase `origin/main`（含 #80）并重生成派生索引；review ship/comment；待 squash。

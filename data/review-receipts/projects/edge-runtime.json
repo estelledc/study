@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "edge-runtime",
+    "digest_sha256": "e27100cd1ac0e46152374b9572dc4cd6134e824cc279e7a711f9a7143ff2da21"
+  },
+  "source_revision": "d1fbe4ee5937c4ad7ff60b57d6f3db9d1e6ab18a",
+  "research_input_sha256": "23e4415a1875b5102b0a01c11f8ace8d9dc37bbfee4ec226ea5071d6d0637c4e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Node vm realm from workerd isolates, one fetch listener, and CLI evaluate vs listen."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "EdgeVM, dispatchFetch, undici duplex default, and createHandler were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag 4.0.1 peeled commit; npm gitHead was absent; LICENSE.md MIT vs runtime README MPLv2 disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}

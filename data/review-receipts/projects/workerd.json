@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "workerd",
+    "digest_sha256": "c73132b62492f5d5caea41795e3ddc3b5ba38da8d29279f8ace264c27d61f73c"
+  },
+  "source_revision": "fffb83fc1e7c0bdcec92ad9f83bc2d9bb523bc12",
+  "research_input_sha256": "23e4415a1875b5102b0a01c11f8ace8d9dc37bbfee4ec226ea5071d6d0637c4e",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-hh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Cap'n Proto config, compatibility-date versioning, implicit internet, and non-hardened sandbox."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-hh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "workerd.c++ CLI, workerd.capnp Worker/Binding, and global-scope waitUntil were inspected; binary was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-hh",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Tag, release-version.txt and npm gitHead agree on 1.20260827.1; npm template version 1.20220926.0 disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:50:00.000Z"
+}
