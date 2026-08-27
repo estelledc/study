@@ -4,57 +4,75 @@ title: shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 日期: 2026-05-30
 分类: 前端 / 组件库
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/shadcn-ui/ui
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 1773ecfeeb4a04366978d353e69b5c7ded78dcb2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.19.0
 ---
 
 ## 是什么
 
-shadcn/ui 不是一个 React 组件库，是一份**代码分发协议**。日常类比：传统 npm 包像外卖，你只能开盒就吃；shadcn 像菜谱——CLI 把整段源码逐字复制到你项目里，从此组件归你，怎么改都行。
+shadcn/ui 不是一个 React 组件运行时包，而是一份**把 registry JSON 写成你仓库源码的 CLI 协议**。日常类比：传统 npm 组件库像外卖，盒子你拆不了；shadcn 像菜谱——`npx shadcn add button` 把 `button.tsx` 写进 `components/ui/`，之后 diff、改样式、review 都发生在你自己的 Git 里。
 
-你跑这一行：
-
-```bash
-npx shadcn add button
-```
-
-CLI 去 registry 拉一段 JSON、过 Zod schema（校验 JSON 形状的规则）校验，再把 `button.tsx` **直接写进**你项目的 `components/ui/`。没有 node_modules 里的 shadcn **组件运行时**，也就没有“升级组件包版本”的冲突——CLI 本身仍是 npm 上的 `shadcn` 工具包，但组件源码不走依赖树。
-
-v4 把这个协议向第三方开放：任何 HTTPS JSON 满足 schema，都能成为合法 registry。
+固定 `4.19.0` 的可发布包是 `packages/shadcn` 里的 `shadcn` CLI（`engines.node >=20.18.1`）。组件模板在 `apps/v4/registry/`。没有“升级 shadcn 组件包版本号”这回事：升级等于再跑一次 `add`，由你决定是否覆盖本地改动。
 
 ## 为什么重要
 
-不理解 shadcn，下面这些事都不好解释：
+不理解这层协议，下面这些事都不好解释：
 
-- 为什么 v0、Tremor、Origin UI、Magic UI 都跟进了同一套 registry 协议——它在事实上成了 React + Tailwind 组件分发的新默认
-- 为什么"组件库"和"代码分发"是两个不同的范畴——前者是包，后者是协议
-- 为什么 MUI / Antd 改样式那么费劲——因为你不拥有那些组件，只能在 theme override 里和它博弈
-- 为什么前端团队从"复制粘贴别人 button"过渡到了"team registry 一行 add"
+- 为什么同一套 CLI 能吐出 [[radix-ui]]、Base UI 或 React Aria 三套行为内核
+- 为什么 `@acme/button` 这种第三方 registry 必须先写进 `components.json`
+- 为什么改品牌色常常只动 CSS 变量，而不是 fork 一份 theme provider
+- 为什么“拥有源码”的代价是你要自己同步上游模板
 
 ## 核心要点
 
-shadcn 的协议可以拆成 **三层**：
+可以把一次 `add` 看成六步流水线：
 
-1. **Schema 是法律**：`registry-item.json` 描述每个组件长什么样——`name` / `type` / `files[].path` / `dependencies` / `registryDependencies` / `tailwind` / `cssVars` / `css` / `envVars` 是九大字段。CLI 拉到 JSON 第一件事就是 `registryItemSchema.parse(data)`，形状不对直接抛错退出。schema 有了边界，第三方才敢做兼容 registry。
+1. **读地址**：本地文件、HTTPS JSON、GitHub 地址，或 `@namespace/name`。`registries` 的 key 必须以 `@` 开头。
 
-2. **CLI 是 runtime**：`npx shadcn add` 内部跑 9 步——fetch JSON、Zod 校验形状、解析 `registryDependencies`、Kahn 拓扑排序（给依赖排队：utils 先于 button 落地）、deepmerge `tailwind` / `cssVars` 字段、ts-morph（用 AST 改配置文件）改 `tailwind.config`、写 `components/ui/<name>.tsx`、装 npm 依赖、跑 format。每一步都绑定一个心脏文件，可单独排错。
+2. **Zod 验形**：`registryItemSchema` 按 `type` 分支（`registry:ui` / `file` / `page` / `theme` / `base` / `font` 等）。字段包括 `files`、`dependencies`、`registryDependencies`、`tailwind`、`cssVars`、`css`、`envVars`。
 
-3. **src/ 是产物**：写完即"你 own"——`git diff` 看得到、PR 能 review、改样式直接动源文件。**没有"运行时升级"概念**——升级 = 重新跑 add 把上游新版本拉一遍。这是 shadcn 与传统 npm 包最关键的分水岭。
+3. **展开依赖并拓扑排序**：`resolveRegistryTree` 递归拉 `registryDependencies`，再用 Kahn 算法排序，让被依赖项先落地。发现环时**不抛错**，只把剩下的项追加到末尾。
 
-## 实践案例
+4. **写外围配置**：`updateDependencies` 装 npm 依赖，再补 Tailwind / env / fonts。
 
-### 案例 1：30 分钟从 0 到一个有 button 的项目
+5. **写文件**：`updateFiles` 把 `*.tsx` 写进 alias 目录。已有文件默认询问；`--overwrite` 跳过确认直接覆盖。
+
+6. **最后写 CSS**：注释写明要等组件和依赖就位后，才让文件监视器触发重建。
+
+行为内核不是写死 Radix。`PRESET_BASES` 是 `radix` / `base` / `aria`。官方 `new-york-v4` 的 Dialog/Button 从 umbrella `"radix-ui"` 进口；`base-` 风格会把 `asChild` 改写成 Base UI 的 render 形态。`init` 在没给 style 时仍可能回落到 `"new-york"`，同时还有 nova / vega / maia 等 named preset。
+
+CLI 还能探测 npm / yarn / pnpm / bun / deno 来装依赖，但可执行文件本身仍是 Node。另有 `init`、`diff`、`search`、`build`、`preset`、`registry`、`mcp` 等子命令，都不改变“源码归你”这条合同。
+
+## 实践示例
+
+### 案例 1：初始化后再加一个 Button
 
 ```bash
-npx create-next-app@latest demo --typescript --tailwind --app
-cd demo
-npx shadcn@latest init      # 选 New York 风格、Slate 主色、CSS variables=yes
-npx shadcn@latest add button
+npx shadcn@4.19.0 init
+npx shadcn@4.19.0 add button
 ```
 
-跑完会看到：`components/ui/button.tsx` 多了 64 行、`package.json` 多了 `class-variance-authority` / `clsx` / `tailwind-merge`、`globals.css` 多了 50 行 CSS 变量。这时 `<Button>测试</Button>` 已经能渲染。
+`add` 会按 registry 项装 `class-variance-authority` 一类声明依赖，并写入 `button.tsx`。固定模板里 Button 已经是函数组件 + `Slot.Root`，不再包一层 `forwardRef`：
 
-### 案例 2：把品牌色集中到 globals.css
+```tsx
+import { Slot } from "radix-ui";
+const Comp = asChild ? Slot.Root : "button";
+```
 
-shadcn 的 button 不写 `bg-blue-500`，写的是 `bg-primary`——这是 Tailwind 引用的 CSS 变量 `--primary`。换主题等于改 `globals.css` 里这一行，**组件类名一行不动**：
+类名走 `cva` 的 `bg-primary` / `text-primary-foreground`，颜色来自 CSS 变量，不写死 `bg-blue-500`。
+
+### 案例 2：换品牌色只改变量
 
 ```css
 :root {
@@ -63,90 +81,88 @@ shadcn 的 button 不写 `bg-blue-500`，写的是 `bg-primary`——这是 Tail
 }
 ```
 
-业务组件可以照抄这个套路：把 `cva` variant 命名改成业务术语（`rare` / `common` / `limited`），而不是默认的 `default` / `destructive`，复用率会跟着抽象层级上升。
+组件类名可以不动。这是模板选择 CSS variables 时的合同；`cssVariables: false` 的项目不走这条路。
 
-### 案例 3：自建团队 registry
-
-v4 起任何 HTTPS JSON 都是合法 registry。在 `public/r/my-tag.json` 写一份满足 schema 的 JSON：
+### 案例 3：第三方 registry 必须先登记
 
 ```json
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "my-tag",
-  "type": "registry:ui",
-  "dependencies": ["class-variance-authority"],
-  "registryDependencies": ["utils"],
-  "files": [{ "path": "ui/my-tag.tsx", "type": "registry:ui", "content": "..." }]
+  "registries": {
+    "@acme": "https://example.com/r/{name}.json"
+  }
 }
 ```
 
-跑 dev server 后用 CLI 装：
-
 ```bash
-npx shadcn@latest add http://localhost:3000/r/my-tag.json
+npx shadcn@4.19.0 add @acme/my-tag
 ```
 
-CLI 会写入 `components/ui/my-tag.tsx`、装 npm 依赖、还会因为你声明了 `registryDependencies: ["utils"]` 而**回头从默认 shadcn registry 拉 utils**。整套递归解析在你眼前跑了一遍——你刚做了一个微型私有 registry。
+`@acme` 没写进 `registries` 时抛 `RegistryNotConfiguredError`，不会静默回落到默认 registry。`{name}` 占位符是 schema 硬要求。
 
 ## 踩过的坑
 
-1. **asChild + ref 在 React 18 项目下静默丢 ref**——v4 假设 React 19 的"ref-as-prop"，老项目 `<Button ref={...}>` 不会报错但 ref 不生效。升 v4 前先确认 React 版本。
-
-2. **tailwind.config 用 `theme: extend({...})` 写法时 patch 可能落错位置**——AST 注入只看顶层 `ObjectLiteralExpression` 上的 `content` 字段，会跳过 extend 的内层对象，base theme 可能被覆盖。
-
-3. **`registryDependencies` 不能跨 namespace 隐式引用**——依赖 `@v0/x` 必须在 `components.json` 显式声明对应 registry，否则抛 `RegistryNotConfiguredError`，不会静默跳过。
-
-4. **已有文件时 CLI 会提示是否覆盖；加 `--overwrite` 则跳过确认强制覆盖**——一旦确认或强制，本地魔改过的 `button.tsx` 会被上游模板冲掉，是新人最常见的 PR 灾难。
+1. **`--overwrite` 会冲掉本地魔改**：交互确认或该旗标一旦生效，上游模板覆盖现有 `button.tsx`。先 `diff` 再决定。
+2. **把 bun / deno 理解成“CLI 换运行时”**：探测器会用 bun/deno 装依赖，但 `shadcn` bin 仍要求 Node `>=20.18.1`。
+3. **`base-` 风格继续写 `asChild`**：transform 会改写成 Base UI render API；Radix 模板才把 `asChild` 交给 `Slot.Root`。
+4. **环状 `registryDependencies` 不会让 add 失败**：Kahn 排序不完整时剩下的项被追加，落地顺序不再有保证。
+5. **跨 namespace 隐式引用**：`@v0/x` 必须在 `registries` 里有对应项。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- React + Tailwind 项目，想 own 组件源码、视觉是产品差异化点
-- 团队需要"组件起跑线"——同一份 button.tsx 模板出发，再各自演化
-- 想搭跨仓库的 team registry，用 SSO Bearer token 鉴权；接受升级 = 重跑 `add` 手动同步上游
+- React + Tailwind，视觉是产品差异，愿意 own 源码
+- 团队要一份可复制的起跑线，再各自演化
+- 需要私有 / 第三方 registry，并接受升级 = 再跑 `add`
 
 **不适用**：
 
-- 已有大型 MUI / Antd 项目——cva + theme provider 双套体系会打架
-- 不写 React / 不用 Tailwind 的栈
-- 强动效 / 高定制业务组件（抽奖转盘类）——shadcn 强在原子组件，复杂业务交互仍要自己写
-- bun / Deno only 的项目——CLI 当前仍是 Node.js only
-- 期望“改 package.json 版本号就全局升级组件”的团队——源码分发没有这种一键升级
+- 已有大型 MUI / Antd 主题体系，两套 token 会打架
+- 不写 React、不用 utility CSS 的栈
+- 期望改一个 npm 版本号就全局升级所有按钮
+- 需要本文证明 CLI 在某套脚手架上“一定一次成功”——未实际执行
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2023-04**：作者 [@shadcn](https://github.com/shadcn) 在 Hacker News 发出 shadcn/ui，洞见是"高水平 React 团队最终都会写出几乎一样的 button.tsx，不如把模板交付出来"
-- **2023 下半年**：GitHub Star 从 5k 飙到 50k，整个 React + Tailwind 圈子开始照抄它的写法
-- **2024**：v0、Tremor、Origin UI、Magic UI 都跟进 registry 协议
-- **2025 v4**：把 registry 开放给第三方——从"shadcn 自家组件集"升级成"通用代码分发协议"
-- **2026-05**：v4.8.x 稳定迭代中，仓库 115k+ Star，事实标准
+- 本文绑定 `shadcn-ui/ui@1773ecfe...`，即 annotated tag `shadcn@4.19.0` 的解引用提交；`packages/shadcn/package.json` 版本一致。
+- 官方 `new-york-v4` 模板依赖 umbrella `radix-ui`，不是旧的 `@radix-ui/react-*` 分包路径。Base UI / React Aria 是并列 preset base，不是“以后也许会有”。
+- CLI 引擎声明为 Node `>=20.18.1`。包管理器探测含 bun/deno，不等于 CLI 改用那些运行时启动。
+- 本文未运行 `init`/`add`、未装依赖、未跑 vitest，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"分发"和"组件库"是两个不同的层次**——shadcn 在更下一层（协议），所以才能成为 v0、Tremor 等的共同基座
-2. **schema + 递归依赖 + 拓扑排序** 是任何"包管"系统的最小三件套——shadcn 是组件版，npm/Cargo 是模块版，本质同构
-3. **代码 own 比包 own 自由**——但代价是你要承担"上游有新写法时手动同步"的迁移成本
-4. **AST codemod 是 codemod 工具的真正难点**——deepmerge + ts-morph + spread 占位 hack 这些细节决定鲁棒性
+1. **分发协议和组件库不是一层**：shadcn 卖的是“如何把 JSON 变成你仓库里的文件”
+2. **schema + 递归依赖 + 拓扑排序** 是任何包管理系统的最小三件套；这里的包是组件源码
+3. **own 源码换来的是分叉自由，也换来同步成本**
+4. **行为内核可替换**——同一套 registry 协议能接 Radix、Base UI 或 Aria，样式层仍然是你的文件
+
+## 应用型自测
+
+1. `npx shadcn add @acme/button` 在 `components.json` 没有 `@acme` 时会怎样？
+2. 两个 registry 项互相写在 `registryDependencies` 里，`add` 会因为环而失败吗？
+3. 固定 `new-york-v4` 的 Dialog 是 `import * as Dialog from "@radix-ui/react-dialog"` 还是另一条路径？
+
+检查点：
+
+1. 抛 `RegistryNotConfiguredError`，不会默默去默认 registry 找。
+2. 不会因此失败；未排进 Kahn 序列的项会被追加到末尾。
+3. `import { Dialog as DialogPrimitive } from "radix-ui"`，走 umbrella 包。
 
 ## 延伸阅读
 
-- 官方文档：[ui.shadcn.com](https://ui.shadcn.com)（含 registry 协议规范、组件示例、theme 编辑器）
-- HN 原贴：[Show HN: shadcn/ui](https://news.ycombinator.com/item?id=35324296)（理解作者的初始想法）
-- 自建 registry：[Build your own registry](https://ui.shadcn.com/docs/registry)（v4 的 protocol 文档）
-- Radix UI 文档：[radix-ui.com](https://www.radix-ui.com)（shadcn 默认依赖的 headless 行为层）
-- [[radix-ui]] —— shadcn 组件的"行为内核"——a11y、键盘、焦点管理都委托给它
-- [[tailwind]] —— shadcn 的视觉表达层，CSS variables + utility 双管齐下
+- 官方文档：[ui.shadcn.com](https://ui.shadcn.com)
+- 自建 registry：[Build your own registry](https://ui.shadcn.com/docs/registry)
+- 固定源码：[shadcn-ui/ui](https://github.com/shadcn-ui/ui) —— 本文绑定提交 `1773ecfeeb4a04366978d353e69b5c7ded78dcb2`
+- [[radix-ui]] —— 默认 new-york-v4 模板的行为内核
 
 ## 关联
 
-- [[radix-ui]] —— shadcn 把 Radix 的行为层 + Tailwind 的样式层组合，自己只负责"模板"
-- [[tailwind]] —— `bg-primary` / `[&_svg]:size-4` 这些类名是 shadcn 视觉的全部表达
-- [[react]] —— shadcn 是 React-only 协议；v4 利用 React 19 的 ref-as-prop 拿掉 forwardRef
-- [[next-js]] —— 最常见的脚手架场景；Next.js 也常被用作团队 registry 的 server 侧
-- [[vite]] —— Vite 项目同样支持 shadcn init，无 framework lock-in
-- [[astro]] —— shadcn 也能装到 Astro 项目，前提是开了 React integration
-- [[biome]] —— shadcn 写完代码顺手跑 format，可以直接用 Biome 替 Prettier
+- [[radix-ui]] —— 官方 v4 模板从 umbrella `radix-ui` 进口 Dialog / Slot
+- [[tailwind]] —— `bg-primary` 与 CSS 变量是默认视觉合同
+- [[react]] —— CLI 和模板都按 React 组件树编写
+- [[next-js]] —— 最常见的脚手架之一，不是唯一目标
+- [[vite]] —— 同样在官方 templates 里
+- [[astro]] —— 前提是项目已接 React integration
 
 ## 反向链接
 

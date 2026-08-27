@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "shadcn-ui",
+    "digest_sha256": "4e90d417f7ca497fcf1234d379dd45bd5abe5dd21649d8b0e27a5179dc2966e9"
+  },
+  "source_revision": "1773ecfeeb4a04366978d353e69b5c7ded78dcb2",
+  "research_input_sha256": "03ddccf01c068e143b0cf9ae50aeb2d6c3609a24da6c14ba44e78f97d5b4fada",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-e",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates registry schema, Kahn sort, namespace configuration, and radix/base/aria preset bases with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-e",
+      "decision": "PASS_WITH_NOTES",
+      "score": 94,
+      "warnings": [
+        "CLI add/init, registry schema/resolver, and new-york-v4 button/dialog templates were inspected; CLI was not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-e",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Star counts, fixed button line counts, and bun/Deno-as-runtime claims were dropped; bounded to shadcn 4.19.0."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:10:00.000Z"
+}
