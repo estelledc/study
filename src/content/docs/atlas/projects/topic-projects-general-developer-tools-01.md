@@ -1,6 +1,6 @@
 ---
 title: "通用开发工具 · 项目 · 第 1 组"
-description: "13 条 通用开发工具 Atlas 分块"
+description: "15 条 通用开发工具 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,11 +9,13 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 13 条，稳定上限为 100 条。
+本分块共 15 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
 | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | `cannon-es` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [clipboardy — 按平台选命令，再把系统剪贴板包成 Promise](/study/projects/clipboardy/) | `clipboardy` | 初级 | UNVERIFIED | Node 20+ 与浏览器的跨平台剪贴板库，加载时选定 pbcopy、PowerShell、xsel 或 wl-copy |
+| [copy-paste — 用 spawn/execSync 把系统剪贴板做成 callback](/study/projects/copy-paste/) | `copy-paste` | 初级 | UNVERIFIED | CommonJS 系统剪贴板封装，用 spawn/execSync 调用 pbcopy、xclip、wl-copy 或 clip |
 | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | `drawio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [gh — GitHub 官方命令行](/study/projects/gh/) | `gh` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [glab — GitLab 官方命令行](/study/projects/glab/) | `glab` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

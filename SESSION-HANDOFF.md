@@ -2,6 +2,26 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 剪贴板双子 PARALLEL writer EP
+
+- status：Program `active`；本地 writer epoch `complete`；review-ready branch。
+- 起始 ref：`89766cc27`（本分支从当时的 `origin/main` 切出）。
+- objective：为 `clipboardy` 与 `copy-paste` 新增固定源码的 `study-v2` 静态审查页。两页原不在清单中，本轮是新建。
+- scope：两页正文、2 份 generation 1 receipt、`docs/clipboard-source-review-20260827-ep.md`、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；未安装上游依赖、未跑上游测试、未调用系统剪贴板。
+- activated_by：`explicit-parallel-writer-ep-20260827`。
+- detector fingerprint：目标对不在当时清单中；`copy-paste` npm latest `2.2.0` 的 `gitHead` 在 canonical GitHub 不可达。
+- external delta：分支将 push 并开 1 个 PR（用户授权 push+PR）；未 merge、未 deploy。
+- 完成切片：
+  1. `clipboardy` 绑定 annotated tag `v5.3.2` / `84e8d07ceacba32d95e9072efcb7d486578ac9d2`（与 npm `5.3.2` `gitHead` 一致）。
+  2. `copy-paste` 绑定可达的 `393ca5c012c7a2aa6b2534b70eff10d95644d200` / npm `2.1.1`；披露 `2.2.0` `gitHead` 不可达，未伪造 revision。
+  3. 新增共享审查文档与两份 `STATIC_REVIEW` / `UNVERIFIED` receipt。
+- acceptance checks：两页 `quality-gate` 全绿、0 advisory；receipt digest 与 provenance 一致，`evidence_state=UNVERIFIED`；`audit:content-contract` 0 blocking；`audit:counts` 通过；`git diff --check` 通过。
+- budget：2 页静态源码迁移 + 派生刷新；单 writer。
+- stop conditions：本轮完成；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化，或新的显式有限目标。
+- 下一条命令：`git status --short --branch`；PR 状态用 GitHub 查看。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

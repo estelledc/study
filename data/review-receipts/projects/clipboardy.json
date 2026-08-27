@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "clipboardy",
+    "digest_sha256": "1c2ba9df98ece818202aa492f072065e13f87ee1c5fa5c5914e58a138c5f944b"
+  },
+  "source_revision": "84e8d07ceacba32d95e9072efcb7d486578ac9d2",
+  "research_input_sha256": "d815a2afd3b1f1fab573cd666e384172ef6420aa6a4feff46ca9b7d986207698",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ep",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains load-time platform IIFE, execa text API, Wayland stderr file, and browser sync throw."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ep",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned clipboardy@5.3.2 / 84e8d07; inspected index, browser, six lib backends, test.js. Tests not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ep",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to reachable 5.3.2; image APIs and headless Linux are out of executed evidence."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:50:00.000Z"
+}

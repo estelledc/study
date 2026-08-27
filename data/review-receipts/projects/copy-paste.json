@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "copy-paste",
+    "digest_sha256": "6ce20051f4e6c2e8cd07b2f4459f1d37279f25480bc301407d24098ff7b83aaa"
+  },
+  "source_revision": "393ca5c012c7a2aa6b2534b70eff10d95644d200",
+  "research_input_sha256": "d815a2afd3b1f1fab573cd666e384172ef6420aa6a4feff46ca9b7d986207698",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ep",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains callback/spawn, inspect vs copy.json, platform table, and unreachable npm 2.2.0 gitHead."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ep",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Pinned copy-paste@2.1.1 / 393ca5c0; inspected index, promises, five platforms, paste.vbs. Tests not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ep",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "npm latest 2.2.0 gitHead is unreachable; note binds 2.1.1 and does not invent 2.2.0 source."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T09:50:00.000Z"
+}
