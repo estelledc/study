@@ -176,7 +176,7 @@ app.register(mercurius, {
 - [[fastify]] —— 插件、装饰器和路由都挂在这层
 - [[apollo-server]] —— CSRF 默认开启、Express 适配外置的对照组
 - [[graphql-yoga]] —— 另一条 GraphQL HTTP 服务器路线，本页未迁移
-- [[dataloader]] —— 概念近亲；Mercurius loader 是 per-request Factory，不是这个包
+- graphql/dataloader —— 概念近亲；Mercurius loader 是 per-request Factory，不是这个包
 
 ## 反向链接
 
