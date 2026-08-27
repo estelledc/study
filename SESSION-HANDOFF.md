@@ -2,6 +2,25 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer FQ：anchor + ape-framework 静态迁移
+
+- status：writer epoch `complete`；未 merge、未 deploy。
+- 起始 ref：`1f2917d90180638e3960be37de1a5df6884b989a`（origin/main，#75）。
+- objective：把 `anchor` 与 `ape-framework` 从 `needs-evidence` 迁到源码绑定标准。
+- scope：两页正文、2 份 generation 1 receipt、`docs/anchor-ape-source-review-20260827-fq.md`、本 handoff。未改 note-index / project-standard / site-state 派生索引。
+- activated_by：`explicit-user-parallel-writer-fq-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文使用 `@coral-xyz/anchor` 0.30 叙事、未绑定 CU / 占比，并把 Ape 默认网络写成 mainnet。
+- external delta：本分支 push + 一枚 PR（用户/云端授权）；D 轴在 merge 前不提升。
+- 完成切片：
+  1. `anchor` 绑定 annotated tag `v1.1.2` → `24035e2b0035c87e321acc1c05f97793829a87f1`；披露仓迁 `otter-sec`、客户端改名为 `@anchor-lang/core`。
+  2. `ape-framework` 绑定 lightweight tag `v0.8.51` → `dde11f1b975d691c15e62ee03293fff3a7cff00b`；纠正默认 `local` 网络与 README/pyproject 漂移。
+- acceptance checks：两页 `quality-gate.mjs` 全绿、0 advisory；receipt digest 与 `UNVERIFIED` 一致；`git diff --check` 通过。
+- budget：2 页 / 2 个 tag tarball / 单 writer。
+- stop conditions：两页绑定完成即停；派生索引冲突交给 integrator。
+- 下一次 wake 条件：本 PR 的 CI/review 变化。
+- 下一条命令：`node scripts/quality-gate.mjs src/content/docs/projects/anchor.md src/content/docs/projects/ape-framework.md`。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。

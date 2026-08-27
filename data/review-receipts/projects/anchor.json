@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "anchor",
+    "digest_sha256": "20251746b508ba83da672419a98b0950c6237f6ce9fa64a2267c30ab1e922929"
+  },
+  "source_revision": "24035e2b0035c87e321acc1c05f97793829a87f1",
+  "research_input_sha256": "8dd0765fb09df2e4273bf21bb16c674095c831757a659352fbaef19952e1862f",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates otter-sec transfer, @anchor-lang/core rename, idl.address Program ctor, and InitSpace discriminator width."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected program dispatch, Accounts constraints, TS Program/methods; rustc, solana-test-validator, and npm tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fq",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims bounded to Anchor 1.1.2; @coral-xyz/anchor 0.32.1 and v2.0.0-rc.1 are out of scope. No CU or popularity claims."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
