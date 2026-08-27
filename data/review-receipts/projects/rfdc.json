@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "rfdc",
+    "digest_sha256": "00ea8ee5f78e4f01336e5db9756cd96dbe7bfc470161d239496cd790c79685e7"
+  },
+  "source_revision": "29ea53f8ccc618495b40cfafba475952b62be847",
+  "research_input_sha256": "3ff0a6c9f1321c3ed2a316a9a7a65a7518b9ae073fc732bd3877cc0e16b6960a",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates factory vs default export, proto skip, circles stack, and exact constructor handlers."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected index.js, default.js, types and tap tests; tap/standard/bench were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fz",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds tag 1.4.1 / 29ea53f8 matching npm gitHead; v1.4.0 is two commits behind; no bench numbers."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:26:00.000Z"
+}
