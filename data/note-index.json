@@ -6,8 +6,8 @@
       "total": 2044,
       "classified": 1997,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1973,
+      "empty_description": 1968
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 961,
         "classified": 933,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 959,
+        "empty_description": 955
       }
     },
     "missing_curated_assignments": [],
@@ -52787,9 +52787,9 @@
       "id": "projects::nx",
       "area": "projects",
       "slug": "nx",
-      "title": "Nx — 一个仓库装几十个项目时帮你少跑活的工具",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Nx — 用 project graph 和 native hasher 决定哪些任务要跑",
+      "description": "固定版本先构图再按 per-task env 算 hash，默认走数据库本地缓存",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-monorepos-and-package-management"
       ],
@@ -52800,13 +52800,13 @@
         "raw_category": "前端工程化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/nx/",
       "atlas": {
@@ -61947,9 +61947,9 @@
       "id": "projects::turborepo",
       "area": "projects",
       "slug": "turborepo",
-      "title": "Turborepo — 让 monorepo 学会\"哪些活已经干过了不要再干\"",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Turborepo — 用任务图和缓存决定哪些活不用再干",
+      "description": "固定版本把 turbo 任务合同编成图，再用本地/远程缓存决定是否真跑",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-monorepos-and-package-management"
       ],
@@ -61960,13 +61960,13 @@
         "raw_category": "前端工程化"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/turborepo/",
       "atlas": {

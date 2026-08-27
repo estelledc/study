@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "turborepo",
+    "digest_sha256": "9cdce5b8007202e264f16c21d65d2bf9f39f047d4e47be397f727b903c575bce"
+  },
+  "source_revision": "53752d452049bdda47698354b16a83d7ce92ced0",
+  "research_input_sha256": "f7f6e92fc3387146079aeeb9be2ba1bdc3f0348dc69d9235ac5c72964e7c9b19",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ar",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains ^dependsOn, cache multiplexer, and empty outputs without claiming CLI timings."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ar",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Engine builder, execute walker, multiplexer fetch/put, and restore guards were inspected; turbo CLI was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ar",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable v2.10.12 tag; npm has no gitHead. Remote cache and FULL TURBO timings remain unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:48:00.000Z"
+}

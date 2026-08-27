@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer AR：turbo / nx STATIC_REVIEW
+
+- status：`running` → 本地 writer epoch `complete`；等待 PR review，不 merge。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把 `turborepo` 与 `nx` 绑定到可达静态 revision，写成 study-v2 页、generation 1 receipt 和共享 AR 文档。
+- scope：两页、`docs/monorepo-source-review-20260827-ar.md`、两份 receipt、atlas / note-index / site-state / project-standard 派生；未改候选队列、政策阈值、其他开放 PR slug。
+- activated_by：`explicit-user-request-parallel-writer-ar-turbo-nx-20260827`。
+- detector fingerprint：两页教学骨架完整，但缺 pinned revision、evidence boundary 与应用型自测；旧正文含未绑定耗时、默认缓存路径和 DTE 营销断言。
+- external delta：GitHub/npm metadata 只读核验 + 本地 blob-filtered sparse clone；未 merge、未部署，D 轴不变。
+- 完成切片：
+  1. `turborepo` 绑定 `vercel/turborepo@53752d45...` / `turbo@2.10.12`，修正 `^dependsOn`、`.turbo/cache`、空 outputs 与“关缓存不失败”。
+  2. `nx` 绑定 `nrwl/nx@82723c9c...` / `nx@23.1.2`，修正 project graph `6.0`、per-task env hash、`DbCache` 与源码 `0.0.1` 占位版本。
+  3. 新增 `docs/monorepo-source-review-20260827-ar.md` 与两份 generation 1 static receipt；项目审计 `benchmark-aligned` 18→20。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：blocking 0、projects `v2=20`、`legacy-unverified=941`。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`。
+  - `STUDY_CHANGED_FROM=e20d4ddf... npm run verify:ci`：规范 Node 22.23.1 / npm 11.17.0 下，toolchain、tests、audits、content/receipt/redline、strict build、23 Playwright a11y、Pages/Atlas/站点预算和 diff 门禁通过。首次 a11y 因本机缺 Chromium 失败；安装 Playwright 浏览器后 23/23 通过，未改门禁。
+- budget：2 个 ignored sparse worktree + 2 页静态源码迁移；单 writer。
+- blocker：未跑上游 CLI / 远程 cache / DTE；PR #114 草稿待 review，不 merge。
+- stop conditions：本 epoch 只开一个 PR、不 merge；无下一项同主题证据。
+- 下一次 wake 条件：PR review / CI，或 owner 授权 merge。
+- 下一条命令：查看 `https://github.com/estelledc/study/pull/114`；未获 merge 授权前不要合并。
+- superseded_by：`none`
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

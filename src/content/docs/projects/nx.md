@@ -1,148 +1,156 @@
 ---
-title: Nx — 一个仓库装几十个项目时帮你少跑活的工具
-来源: 'https://github.com/nrwl/nx'
-日期: 2026-05-30
+title: Nx — 用 project graph 和 native hasher 决定哪些任务要跑
+description: 固定版本先构图再按 per-task env 算 hash，默认走数据库本地缓存
+来源: https://github.com/nrwl/nx
+日期: 2026-08-27
 分类: 前端工程化
 难度: 中级
+difficulty: intermediate
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: tool
+  canonical_source: https://github.com/nrwl/nx
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 82723c9cf1a8d46a3b774d0b977001f2c6c19561
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 23.1.2
 ---
 
 ## 是什么
 
-Nx 是一个**让你把几十个项目塞进同一个仓库还不卡**的工具。日常类比：像装了 ETC 的高速收费站——你的车（任务）经过时，系统先看你的车牌（文件 hash），如果之前来过就直接放行，不用再付钱（重新跑）。
+Nx 是一个 monorepo 构建系统：先画出项目依赖图，再把目标展开成任务图，用 hash 决定复用缓存还是 fork 子进程。日常类比：调度台先看“谁依赖谁”，再只给受影响的工位派活。
 
-你写：
+固定 23.1.2 的 npm 包是 `nx`，二进制 `nx` / `nx-cloud`。常见入口：
 
 ```bash
-nx build my-app
+npx nx build my-app
+npx nx affected --target=test --base=main
 ```
 
-第一次老老实实跑完 build。第二次只要源码没改，Nx 看一眼 hash 直接复用上次结果，零秒返回。如果改了 my-app 但没改它的依赖，只重跑 my-app；改了它的依赖，才会顺着图重跑下游。
-
-这种"按需跑、能缓就缓"的能力，是大公司把几百个 package 塞进一个仓库还能让 CI 在 10 分钟内跑完的核心。
+`affected` 根据改动文件找出 touched projects，再沿反向 project graph 扩展；`build` 则直接对指定项目构图并跑目标。
 
 ## 为什么重要
 
-不理解 Nx，下面这些事都没法解释：
+不看固定源码，容易把 Nx 说成“带缓存的脚本跑手”：
 
-- 为什么大公司前端把所有项目放一个仓库还不会卡——靠的是 task graph + 缓存
-- 为什么 [[turborepo]] 起步快但 [[lerna]] 慢慢退场——同一个赛道不同抽象层
-- 为什么改一行代码 CI 跑 2 分钟而不是 20 分钟——affected 算法只跑受影响的项目
-- 为什么 monorepo 工具都叫"build system"——它们的核心不是 build，是调度 + 缓存
+- 为什么 project graph 协议版本写死为 `6.0`，旧缓存会因版本或根配置变化整图重算
+- 为什么 `hashTasks` 必须按任务提供 env，共享一份 `process.env` 可能算错 key
+- 为什么默认本地缓存是数据库实现，WASM 路径没有 sqlite
+- 为什么 `NX_REJECT_UNKNOWN_LOCAL_CACHE=0` 不再恢复旧的拒绝逻辑
+
+一句话：Nx 的核心合同是 **project graph → task graph → native hash → orchestrator**，不是营销文案里的分布式执行。
 
 ## 核心要点
 
-Nx 干的事可以拆成 **三件**：
+固定版本可以把主链拆成四步：
 
-1. **画图（project graph）**：先扫所有 package.json 和 import 语句，画出"谁依赖谁"。类比：像超市把货架按"买面包的人也常买黄油"理出关系图。
+1. **画 project graph**：插件收集项目配置和文件 map。协议版本 `6.0`。`packageJsonDeps`、`nx.json`、root tsconfig 或 external nodes hash 变化会触发整图重算。
+2. **展开 task graph**：`ProcessTasks` 把 project × target 变成任务节点，并沿 `dependsOn` 补依赖。`excludeTaskDependencies` 会丢掉后补的依赖任务。
+3. **算 hash**：默认 `NativeTaskHasherImpl` 把图交给 Rust hasher。`hashTasks` 现在要求 `perTaskEnvs[task.id]`；依赖其他任务 outputs 或带 custom hasher 的任务会延后单算。
+4. **编排与缓存**：`defaultTasksRunner` 把工作交给 `TaskOrchestrator`。非 WASM 默认 `DbCache`：先查本地 `NxCache`，未命中再 remote retrieve，并按 `task.outputs` 拷回文件。
 
-2. **跑任务（task runner）**：按图的拓扑序跑。先跑没人依赖的叶子（utils），再跑依赖它的（components），最后跑 app。类比：装修必须先打地基再砌墙再刷漆。
+`affected` 的 locator 包括 workspace 项目、implicit touch、project glob 和 JS touched projects；收集后再反向遍历依赖。
 
-3. **算 hash 命中缓存**：每个任务的输入文件 + 配置 + 依赖 hash 拼成一个 cacheKey，命中就复用上次的产物和 stdout。类比：菜谱 + 食材一样，那道菜应该一样，没必要再炒一遍。
+## 实践示例
 
-三件事加起来叫 **Nx 调度内核**，本地有 `.nx/cache/`，付费版 Nx Cloud 还能把缓存上云、把任务拆给多台机器并行（叫 DTE，distributed task execution）。
-
-## 实践案例
-
-### 案例 1：建一个新库不用手写配置
-
-```bash
-npx nx g @nx/js:lib utils --directory=packages/utils
-```
-
-执行完会自动做四件事：
-
-- 在 `packages/utils/` 下生成 `src/index.ts`、`README.md`、`tsconfig.json` 模板
-- 在根 `tsconfig.base.json` 注册 `@org/utils → packages/utils/src/index.ts` 路径映射
-- 写一份 `project.json` 注册 build 和 test 两个 target
-- 跑一次 prettier 让风格和仓库其余代码对齐
-
-这就是 Nx 的 **generator**——把"建库时该做的几件事"沉淀成一个命令。比手写省 5 分钟，也避免漏掉某一步。
-
-### 案例 2：只测改动影响到的项目
+### 案例 1：只跑受影响项目的目标
 
 ```bash
-nx affected --target=test --base=main
+npx nx affected --target=test --base=main
 ```
 
-Nx 比较当前分支和 main 之间改了哪些文件，沿 project graph 反推哪些项目被波及，**只跑这些项目的 test**。在一个有 50 个 package 的仓库，可能从"跑 200 个 test 文件"压到"跑 8 个"。
+**逐部分解释**：
 
-CI 上这一招是金子。配合 `--parallel=3` 把这 8 个 test 拆到 3 个进程并行，2 分钟搞定原本 20 分钟的活。
+1. `parseFiles` 得到相对 base 的改动文件。
+2. 多个 locator 把文件映射成 touched projects。
+3. `filterAffected` 沿反向图把下游项目加进来，再只保留拥有 `test` target 的节点。
 
-### 案例 3：看缓存到底命中了什么
+这是 **git diff + 反向图**，不是 Turborepo 那种“上游 hash 变了下游自动失效”的同一条公式。
 
-```bash
-NX_PERF_LOGGING=true npx nx build utils
+### 案例 2：hash 必须带 per-task env
+
+```ts
+await hasher.hashTasks(tasks, taskGraph, perTaskEnvs)
 ```
 
-第一次跑会看到 build 真实耗时。第二次同样命令瞬间返回，日志会写 `[remote cache] cache hit, key=abc123...`。
+固定接口把“所有任务共用一份 env”标成遗留签名。各任务若有自己的 `.env` 或 custom hasher 读环境变量，共享 env 会算出错误 cache key。调用方应构造 `{ [task.id]: env }`。
 
-```bash
-ls -lah .nx/cache/abc123/
-cat .nx/cache/abc123/terminalOutputs/build.txt
+### 案例 3：默认本地缓存是数据库
+
+```ts
+getCache(options) // 非 WASM 返回 DbCache
 ```
 
-里面就是上次的 stdout，原样回放。这种"连日志都缓存"的设计，让你看 CI 失败原因时，cached 任务的报错也不丢。
+`DbCache.get` 先 `cache.get(task.hash)`。本地没有且存在 remote cache 时，才 `retrieve` 并 `applyRemoteCacheResults`。WASM 没有 sqlite，走旧 `Cache`。`NX_REJECT_UNKNOWN_LOCAL_CACHE=0` 只会警告，不会切换回旧拒绝语义。
 
 ## 踩过的坑
 
-1. **tsconfig.paths 改一行触发全图重建**：cache 失效的判定颗粒太粗，`packageJsonDeps + nxJson + rootTsConfig` 任一变化就全量重算 graph，5000+ 文件项目里每次微调要等 30 秒起步。
-
-2. **generator/executor 双轨学习曲线陡**：对只想跑 build/test 的小团队，Nx 比 Turborepo 多出来的两个抽象（脚手架 + 执行器）经常是过度设计，10 人以下团队用 Turborepo 更合身。
-
-3. **DTE 是付费功能**：免费版 Nx Cloud 只有 remote cache，分布式任务执行要按 agent 数收费。营销文案常把 DTE 当 Nx 的标准能力宣传，新人接入时容易踩坑。
-
-4. **schema 演进太快**：从 `workspace.json` 拆到 `project.json + nx.json`，每两个大版本就要迁移一次。`nx migrate` 自动跑完还要手 review 50+ 文件，所谓"无痛升级"是营销话术。
+1. **把源码 `packages/nx/package.json` 的 `0.0.1` 当成发布版本**：那是工作区占位；本页绑定的是 tag / npm `23.1.2`。
+2. **以为默认 hasher 还是纯 JS 文件扫描**：固定默认实现是 native hasher。
+3. **把 Nx Cloud DTE 写成核心开箱能力**：本轮只审查了 `packages/nx` 的构图、hasher 和 runner，没有读 DTE 实现或计费。
+4. **把整图重算说成“改一行 tsconfig 一定 30 秒”**：源码只规定失效条件，没有绑定耗时。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 中到大型 monorepo（20+ package）想要开箱即用的 task 调度 + 缓存
-- 团队需要统一脚手架（generator 帮新人少踩坑）
-- TypeScript 一等公民的前端栈（React / Vue / Angular / Node）
-- 重复 build / test 多、CI 时间是瓶颈的项目
+- 需要 project graph、affected、generator/executor 和统一 target 合同的中大型 JS/TS monorepo
+- 能接受 native 二进制与（非 WASM 下）sqlite 本地缓存
+- 愿意按任务准备 env 和 outputs，而不是假设全局 env 一定安全
 
 **不适用**：
 
-- 5 个以下 package 的小仓库——直接 [[pnpm]] workspaces + npm scripts 够用
-- 跨语言（Python / Rust / Go）大型 monorepo——Bazel 更合适
-- 不愿付费但又需要分布式执行——免费版只有缓存
-- 团队不接受"框架感"，想保持配置极简——选 [[turborepo]]
+- 只要一份 `turbo.json` 调度 npm scripts，不需要 plugin/generator 平台 → 看 [[turborepo]]
+- 必须在 WASM 里使用数据库缓存
+- 需要把未审查的分布式执行或性能数字写成已验证事实
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Nrwl（前 Angular 团队成员创立的咨询公司）开源 Nx，最早只是给 Angular CLI 加 monorepo 能力。
-- **2018 年**：把 schematics 改造成 generator，把 builder 改造成 executor，确立 devkit 双轨抽象。
-- **2019 年**：6.x 转型跨框架，把 React 当一等公民，Angular 反而退到平等位置。同年推出 Nx Cloud，提供 remote cache。
-- **2021 年**：Nx Cloud 推出 DTE（distributed task execution），把 task graph 拆到多台 agent 并行。
-- **2022 年**：用 Rust 重写 hasher 模块，本地 graph 构建从秒级压到百毫秒级。
-- **2024 年**：Nrwl 被 Nx 自身收编（公司直接以产品命名），整合咨询团队全力推产品。
+- 本文绑定 `nrwl/nx@82723c9c...`，npm 包 `nx@23.1.2`。
+- npm registry 未提供 `gitHead`；工作区 package version 仍是 `0.0.1`，不以它覆盖 tag。
+- 核心包带 `@nx/nx-*` optional native 绑定；WASM 路径缺少 sqlite / `TaskDetails`。
+- 本文只做源码静态审查，没有安装依赖、连接 Nx Cloud 或跑 CLI，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **缓存的边界比缓存本身更重要**——文件级 hash 比 project 级颗粒度细，但太细会让 hash 计算比真跑还慢
-2. **把"做事的方式"抽象成一等公民**——不要让"怎么建库""怎么跑测试"散落在 README，沉淀成 generator/executor
-3. **商业层差异化点要选对**——Nx Cloud 选 DTE 因为这是大 monorepo 的真痛点，没选"更好看的 UI"或"更多 plugin"
-4. **跨框架转型有代价但值得**——Nx 放弃了 angular.json 的简洁，换来 React/Vue/Node 的一等支持，市场扩大十倍
-5. **显式版本号比 hash 比对更稳**——Nx 用 `projectGraphVersion = '6.0'` 标记 graph 协议，旧缓存自动失效，比"靠所有输入 hash 比"更可控
+1. **affected 是反向图扩展**，和 hash 链式失效是两条不同的“少跑活”公式
+2. **cache key 含环境**：共享 env 在 per-project `.env` 场景会错
+3. **默认本地缓存已经换实现**：旧的 `NX_REJECT_UNKNOWN_LOCAL_CACHE` 语义不能想当然
+4. **图协议版本是显式失效开关**：`6.0` 让旧 graph cache 直接作废
+
+## 应用型自测
+
+1. `hashTasks(tasks, graph, process.env)` 在每个任务都有自己的 `.env` 时，cache key 一定对吗？
+2. `NX_REJECT_UNKNOWN_LOCAL_CACHE=0` 能让默认 `DbCache` 拒绝未知本地缓存吗？
+3. `nx affected` 只看改动文件本身，还是会沿依赖图扩展？
+
+检查点：
+
+1. 不一定。共享 env 是遗留签名，应按 `task.id` 提供 per-task env。
+2. 不能。该变量与数据库缓存不兼容，只打警告。
+3. 会扩展。locator 找到 touched projects 后，沿反向 project graph 加入下游。
 
 ## 延伸阅读
 
-- 视频：[Nx 官方 10 分钟入门](https://nx.dev/getting-started/intro)（动画讲清楚 graph + cache）
-- 文档：[Nx Recipes](https://nx.dev/recipes)（按场景查的食谱集，比 Concepts 实用）
-- [[turborepo]] —— Nx 最直接的对手，更轻更专注 build
-- [[lerna]] —— Nx 的前辈，被 Nrwl 接管后基本退出舞台
-- [[pnpm]] —— Nx 推荐的底层包管理器，本身只管依赖不管调度
+- 官方文档：[nx.dev](https://nx.dev)
+- 固定源码：[nrwl/nx](https://github.com/nrwl/nx) —— 本文绑定提交 `82723c9cf1a8d46a3b774d0b977001f2c6c19561`
+- [[turborepo]] —— 更薄的任务图 + 双层缓存，没有本页的 plugin 平台
+- [[pnpm]] —— Nx 常用的安装层，不管调度
+- [[lerna]] —— 更早的多包发布工具，现已被 Nx 生态收编叙述
 
 ## 关联
 
-- [[turborepo]] —— 同赛道竞品，更轻但缺 generator 和 IDE 集成
-- [[lerna]] —— 早期 monorepo 工具，被 Nrwl 接管后基本归一
-- [[pnpm]] —— 底层包管理器，Nx 调度的依赖来源
-- [[vite]] —— Nx 的 `@nx/vite` 插件把 Vite 包成 executor
-- [[jest]] —— Nx 的 `@nx/jest` 插件把 Jest 包成 executor
-- [[rollup]] —— Nx 默认的库 bundler 之一
-- [[webpack]] —— Nx 早期默认 bundler，新项目逐步被 Vite/Rolldown 取代
+- [[turborepo]] —— 同赛道、配置更薄的任务编排器
+- [[pnpm]] —— workspace 依赖来源
+- [[lerna]] —— 发布循环前辈
+- [[vite]] —— `@nx/vite` 一类 plugin 会把它包成 executor
+- [[jest]] —— 常见 test executor 后端
+- [[webpack]] —— 早期默认 bundler 之一
 
 ## 反向链接
 
@@ -151,4 +159,4 @@ cat .nx/cache/abc123/terminalOutputs/build.txt
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
-- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
+- [[turborepo]] —— Turborepo — 用任务图和缓存决定哪些活不用再干

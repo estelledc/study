@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "nx",
+    "digest_sha256": "e6529cb18f198376a19f0fccd9957455e58eec475f48f641f88ead099d97f980"
+  },
+  "source_revision": "82723c9cf1a8d46a3b774d0b977001f2c6c19561",
+  "research_input_sha256": "f7f6e92fc3387146079aeeb9be2ba1bdc3f0348dc69d9235ac5c72964e7c9b19",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ar",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Explains affected reverse-graph walk, per-task env hashing, and DbCache without claiming DTE."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ar",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Project graph 6.0, NativeTaskHasherImpl, DbCache, and TaskOrchestrator were inspected; nx CLI and Nx Cloud were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ar",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Pinned to reachable 23.1.2 tag; workspace package.json is 0.0.1 and npm has no gitHead. Performance remains unmeasured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:45:00.000Z"
+}
