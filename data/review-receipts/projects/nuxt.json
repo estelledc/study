@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "nuxt",
+    "digest_sha256": "2df2e8c3d81a26e44b4c328dfb68c5825d10c34d36af4835010c6757751462f1"
+  },
+  "source_revision": "e2d3a3945a3459c0e3a869de85c0b53c6c214432",
+  "research_input_sha256": "f366f0ea8dea1b1e52d3888e2e437efdff8108b86286a4dad5c19896c89fd417",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-an",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains app/ srcDir fallback, root serverDir, useFetch to useAsyncData, hydrate cache, and Nitro builder split."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-an",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected schema srcDir, pages unrouting, imports presets, fetch/asyncData, nitro-server createNitro; upstream tests and nuxi were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-an",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "GitHub tag v4.5.2 matches packages/nuxt 4.5.2; npm gitHead is absent. Node engines and nitropack version are disclosed, not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:35:00.000Z"
+}

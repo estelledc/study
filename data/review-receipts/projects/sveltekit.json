@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "sveltekit",
+    "digest_sha256": "bfa05650ede9e5f925164fed284c854a65a9f079efa64f3ca523551c99cd1945"
+  },
+  "source_revision": "39e8e1fbd4feba7f22dd46bfdf7335362c38de16",
+  "research_input_sha256": "f366f0ea8dea1b1e52d3888e2e437efdff8108b86286a4dad5c19896c89fd417",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-an",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates +page vs +page.server exports, two-layer load, return fail(), CSRF origin check, and adapter plugin boundary."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-an",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected respond CSRF, load_data/load_server_data, actions named/default rules, exports.spec, adapt(); upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-an",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Annotated tag @sveltejs/kit@2.70.3 peels to the pinned commit; npm gitHead is absent. Remote functions and Kit 3 next are out of scope."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:35:00.000Z"
+}
