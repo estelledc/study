@@ -1,154 +1,168 @@
 ---
 title: billboard.js — c3.js 的 TypeScript 继任者
-来源: 'https://github.com/naver/billboard.js'
+来源: https://github.com/naver/billboard.js
 日期: 2026-05-31
 分类: 数据可视化
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/naver/billboard.js
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: f599730a0a0428ab4717c8f57b826d1cf9beff63
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.0.3
 ---
 
 ## 是什么
 
-billboard.js 是 Naver 出品的 **D3 v7 封装图表库**，定位是"接住停滞的 c3.js"。日常类比：c3.js 像一台 2014 年的相机，能用但厂家不再出固件；billboard.js 像另一家维修站照着旧相机接口做的新机身，按键布局尽量不变，老用户少看说明书也能上手。
-
-你写：
+billboard.js 是 Naver 维护的 **D3 模块封装图表库**，生成入口仍是 c3 风格的 `bb.generate({ bindto, data, axis })`。日常类比：方向盘布局尽量不动，但 v4 把图类型和可选 API 拆成要自己拧开的开关。
 
 ```js
+import bb, { line } from "billboard.js"
+
 bb.generate({
-  bindto: '#chart',
-  data: { columns: [['销量', 30, 200, 100, 400, 150]], type: 'line' }
+  bindto: "#chart",
+  data: { columns: [["销量", 30, 200, 100]], type: line() }
 })
 ```
 
-API 尽量贴近 c3.js——这就是它的核心承诺：**老 c3 项目先从改 import 开始，再逐项处理少量差异**。
+固定 `4.0.3` 依赖一组 `d3-*` 包（如 `d3-selection@^3`、`d3-scale@^4`），不是单一 `d3`。npm `gitHead` 与 tag `4.0.3` 同指 `f599730a...`。
 
 ## 为什么重要
 
-不理解 billboard.js 的定位，下面这些事都没法解释：
+不理解 v4 的拆包，下面这些事会对不上：
 
-- 为什么 Naver 自己会维护一个看板图表库，而不是只等 c3.js 原作者继续修
-- 为什么 2018 年之后 c3.js 项目在 GitHub 评论区都被人推荐"换 billboard"
-- 为什么它有 TypeScript 类型却仍走"配置对象 + bindto" 的命令式 API——继承 c3 的历史包袱
-- 为什么它支持的图类型比 c3.js 多一倍（sunburst / treemap / sankey / radar）
+- 为什么 ESM 里 `chart.xgrids()` 会提示先 import `grid`
+- 为什么 `type: "line"` 有时能用、有时不行
+- 为什么 `/canvas` 入口和默认 SVG 入口不是同一个开关
+- 为什么旧文里的 sunburst / sankey 在这份源码里找不到
 
 ## 核心要点
 
-billboard.js 的设计可以拆成 **三个承诺**：
+固定版本可以拆成四层：
 
-1. **API 兼容 c3.js**：`generate({ bindto, data, axis, legend })` 字段几乎对齐。类比：换发动机不换方向盘——司机还是同一个司机。
+1. **generate 仍是命令式入口**：`bb.generate` 把 `bb.defaults` 与 config merge 后 `new Chart`。`bindto` 默认 `"#chart"`；也可传 DOM 或 d3 selection。
+2. **ESM resolver 必须先跑**：`line()` / `bar()` 首次调用把模块挂到 prototype，返回值是 `"line"` / `"bar"`。同一页先 `line()` 一次后，后面可以写 `data.type: "line"`。UMD / CDN 入口会预装全部 shape 与 optional API。
+3. **v4 从默认 ESM 拆出五块 API**：`exportApi`、`flow`、`grid`、`regions`、`category`。缺 import 时走 stub，报“请确认模块已导入”，不是含糊的 `is not a function`。
+4. **Canvas 是另一条 ESM 入口**：`import { canvas, bar } from "billboard.js/canvas"` 且 `render: { mode: canvas() }` 才切渲染器。arc 族（pie / donut / gauge / polar / radar）仍只走 SVG。
 
-2. **TypeScript 全量重写**：每个 option 都有类型，IDE 补全友好。这是 c3 永远做不到的（c3 是纯 JS）。类比：从手写菜单升级成有图有价的扫码菜单。
+## 实践示例
 
-3. **D3 v7 + 模块化加载**：底层换上现代 D3，按图类型分包，按需 import 才能 tree-shake 出小 bundle。类比：自助餐拆成档口，要哪盘点哪盘，不用全端上来。
-
-三件加起来叫 **平滑继承**——老用户零成本迁移，新用户拿到的是 TS 友好的现代库。
-
-## 实践案例
-
-### 案例 1：从 c3 迁移过来的最小改动
+### 案例 1：c3 风格最小迁移
 
 ```js
-// 老代码（c3.js）
-import c3 from 'c3'
-c3.generate({ bindto: '#chart', data: { columns: [['A', 1, 2, 3]] } })
+import bb, { line } from "billboard.js"
 
-// 新代码（billboard.js）
-import bb from 'billboard.js'
-bb.generate({ bindto: '#chart', data: { columns: [['A', 1, 2, 3]] } })
-```
-
-最小例子只改了 import 名。这就是 billboard 卖点最直接的体现——存量项目可以先用很小改动跑通，再按迁移指南处理事件回调、主题路径等差异。
-
-### 案例 2：按需加载省 bundle
-
-```js
-import bb, { line, bar } from 'billboard.js'
 bb.generate({
-  bindto: '#chart',
-  data: { columns: [['A', 1, 2, 3, 4, 5]], type: line() },
-  // 只 import 用到的图类型，未用的 pie/gauge/sankey 不会进 bundle
+  bindto: "#chart",
+  data: { columns: [["A", 1, 2, 3]], type: line() }
 })
 ```
 
-`type: line()` 而不是 `type: 'line'` 是新写法——它把图类型当成可摇树的模块。生产项目压完几十 KB 就够。
+字段名仍接近 c3。事件回调、主题路径和 v4 resolver 不是 100% 复制旧项目就能过。
 
-### 案例 3：TypeScript 提示一眼能看清配置
+### 案例 2：先注册、再写普通 config
 
-```ts
-import bb, { ChartOptions } from 'billboard.js'
-const options: ChartOptions = {
-  bindto: '#chart',
-  data: { columns: [['A', 30, 200, 100]], type: 'line' },
-  axis: { y: { tick: { format: (v) => `${v} 件` } } }
-}
-bb.generate(options)
+```js
+import bb, { bar, line, grid } from "billboard.js"
+
+bar(); line(); grid();
+
+bb.generate({
+  bindto: "#chart",
+  data: { type: "bar", columns: [["A", 30, 200, 100]] },
+  grid: { x: { show: true } }
+})
 ```
 
-`ChartOptions` 类型让你写到 `axis.y.tick` 时 IDE 直接列出所有字段——c3.js 时代靠记文档，现在交给编译器。
+resolver 全局、幂等。多图页面可以初始化一次，后面不再写 `type: bar()`。
+
+### 案例 3：可选 canvas
+
+```js
+import bb, { bar, canvas } from "billboard.js/canvas"
+
+bb.generate({
+  render: { mode: canvas() },
+  data: { columns: [["A", 30, 200, 100, 400]], type: bar() }
+})
+```
+
+canvas 支持 line / spline / step / area 族 / bar / scatter / bubble / candlestick / treemap。它不给每个柱子建 DOM，`.bb-bar` 这类选择器打不到像素。
 
 ## 踩过的坑
 
-1. **不是 React 组件，是命令式 API**：`bindto` 接 DOM 选择器，所以在 React 里要在 `useEffect` 里手动 generate 并保存实例 destroy。新人常把 ref.current 直接传进去然后 React 18 严格模式双调用导致重复实例。
-
-2. **API "几乎"兼容 c3 不是"100%" 兼容**：`onrendered` 回调签名 / `data.onclick` 参数顺序 / 主题文件路径都微调过，盲目复制 c3 老代码会有沉默 bug。
-
-3. **D3 v7 ESM 化导致 IE11 死路**：billboard 3.x 起依赖现代 ESM 浏览器，老国内政府项目还要 IE11 的话只能停留在 2.x 或换其它库。
-
-4. **多主题切换需要换 CSS 文件不是切 option**：`billboard.css` / `billboard-datalab.css` / `billboard-graph.css` 是四份独立 CSS，要在 build 阶段决定，不能运行时切——这一点和 ECharts 不一样。
-
-5. **bundle 没按需 import 时很大**：`import bb from 'billboard.js'` 会把所有图类型打进来，几百 KB。生产必须显式 `import { line }` 这种 named export 才能 tree-shake。
-
-6. **resize 必须手动触发**：容器宽度被父级 flex 改变时图不会自动重画，要调 `chart.resize()` 或自行监听 ResizeObserver。c3 时代踩过的坑这里没修。
-
-7. **TypeScript 类型有时和实际行为不一致**：极少数 option（特别是新加的 sankey / treemap）类型还在补，IDE 报红但运行时其实接受——遇到时翻 GitHub issue 比读类型定义快。
+1. **把 UMD 习惯带进 ESM**：默认 `billboard.js` 入口不自动安装 `grid` / `regions` / `exportApi`。要用 `chart.xgrids()` 就得 `import { grid }` 并调用。
+2. **以为固定版本有 sunburst / sankey**：`TYPE` 常量到 treemap / radar / funnel / polar / candlestick 为止，没有这两项。
+3. **把主题当成 runtime option**：README 提供默认 CSS 以及 datalab / dark / insight / graph / modern 五套文件，切换靠换样式表，不是 `theme: "dark"`。
+4. **把 resize 写成必须手调**：`resize.auto` 默认 `true`，还可 `"parent"` / `"viewBox"`。`chart.resize()` 是显式改 `size_width` / `size_height` 再 `flush`。
+5. **在 React 里忽略实例生命周期**：API 仍是 `bindto` + `generate`。严格模式双调用会建两份实例，需要自己 `destroy`。
+6. **把 changelog 里某次 esbuild 体积写成你的产物保证**：那是作者在特定配置下的测量，本文未复现。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 老 c3.js 项目升级，想要 TS 类型 + 维护活跃
-- 企业后台 dashboard：折线 / 柱 / 饼 / radar / treemap 等常规图齐全
-- 团队已经懂 D3 v7，需要"省心默认 + 必要时下钻到 D3"
-- 韩国 / 日本 / 国内 toB 后台项目（生态熟、issue 响应快）
+- 存量 c3 配置要迁到仍维护的 TS 库
+- 需要 radar / treemap / funnel / candlestick / polar，且接受 D3 模块依赖
+- ESM 项目愿意按图类型和 API 做 resolver import
+- 高密度轴图可以评估 opt-in canvas（未在本文实测）
 
 **不适用**：
 
-- 极度自定义视觉（每根柱独立形变 / 自定义动画曲线） → 直接用 D3
-- 移动端追求最小 bundle → Chart.js 更轻
-- 复杂关系图 / 地理 / 3D → ECharts 或 deck.gl
-- 需要服务器端渲染（SSR）首屏出图 → billboard 强依赖 DOM，要走 jsdom workaround
+- 要把每个柱、每条线当 DOM/CSS 节点改——canvas 模式做不到
+- 需要 sunburst / sankey 或纯 React 声明式组件（看 [[recharts]] / [[echarts]]）
+- 不能为 ESM 补 resolver，却按 UMD“全自动”推理
+- 要把未测 bundle / 帧率写成结论
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014 年**：Masayuki Tanaka 一个人写了 c3.js，把 D3 包成"配置式 API"，迅速火起来。
-- **2017 年**：c3 长期由作者一人维护，PR 排队半年，bug 修不完。Naver 的 dataviz 团队决定 fork 不是策略——他们直接用 TypeScript 重写，但保持 API 兼容。
-- **2018 年**：billboard.js 1.0 发布，主打"无痛迁移 + 类型友好"。
-- **2020 年**：3.0 引入模块化加载，按需 import 图类型，兼容 D3 v6 ESM。
-- **2024 年至今**：稳定迭代，新增 sankey / treemap / sunburst 等 c3 没有的图，主题系统扩到四套。
-
-c3 的 issue 区现在仍有人留言"已迁移到 billboard，谢谢作者"——这是开源社区"接力"的典型样本。
+- 本文绑定 `naver/billboard.js@f599730a0a0428ab4717c8f57b826d1cf9beff63`，包版本 `4.0.3`。npm `gitHead` 一致。
+- 4.0.3 的 changelog 还记了一处文本背景滤镜属性转义修复；本文未验证该修复的运行效果。
+- 本文未安装依赖、未跑 Vitest / Playwright、未渲染 SVG 或 canvas，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **API 兼容是迁移项目的护城河**——重写引擎但不动方向盘，是最便宜的用户增长策略
-2. **后继者不一定要"颠覆"前任**——平滑接棒比另起炉灶更受存量项目欢迎
-3. **TS 重写不是炫技**：类型暴露让 IDE 替文档干活，新人上手时间断崖式下降
-4. **模块化 + tree-shaking** 是现代库的及格线，不做就被 bundle 体积淘汰
+1. **兼容入口和解耦打包是两件事**——`generate` 看起来像 c3，ESM 却要求显式 resolver。
+2. **字符串类型名是注册之后的别名**——`line()` 先挂模块，才安全写 `type: "line"`。
+3. **Canvas 是第二条入口，不是 `render: "canvas"` 开关**。
+4. **图类型清单以 `src/config/const.ts` 为准**，不能沿用旧文的 sunburst / sankey。
+
+## 应用型自测
+
+1. ESM 只 `import bb from "billboard.js"`，不 import `grid`，`chart.xgrids()` 会怎样？
+2. 固定 `TYPE` 里有 `sunburst` 或 `sankey` 吗？
+3. `resize.auto` 的默认值是必须手调 `chart.resize()` 吗？
+
+检查点：
+
+1. 走 stub，提示先导入 `grid` 模块。
+2. 没有。常量止于 area 族、bar、bubble、candlestick、donut、funnel、gauge、line、pie、polar、radar、scatter、spline、step、treemap。
+3. 不是。默认 `resize.auto === true`。
 
 ## 延伸阅读
 
-- 官方文档：[billboard.js docs](https://naver.github.io/billboard.js/)（example 极多，每种图都有可改的 live demo）
-- 迁移指南：[c3 to billboard migration](https://github.com/naver/billboard.js/wiki/Migration-from-C3)
-- [[chart-js]] —— 同样定位"易用图表"，但 Canvas 渲染、不依赖 D3
-- [[d3]] —— billboard 的底层引擎，看懂 D3 就理解了 billboard 的留白
-- [[echarts]] —— 同样配置式，但生态体量大十倍，更适合复杂关系图
-- [[recharts]] —— React 项目首选 SVG 系，对照看 declarative 与 imperative 的差异
+- 文档：[naver.github.io/billboard.js](https://naver.github.io/billboard.js/)
+- 固定源码：[naver/billboard.js](https://github.com/naver/billboard.js) —— 本文绑定提交 `f599730a0a0428ab4717c8f57b826d1cf9beff63`
+- 模块导入说明：仓内 `MODULE_IMPORTS.md`
+- [[chart-js]] —— 不依赖 D3 的 Canvas 配置式对照
+- [[d3]] —— 底层 selection / scale / shape
+- [[echarts]] —— 更重的配置式看板
+- [[chartist]] —— 零依赖 SVG，图类型更少
 
 ## 关联
 
-- [[d3]] —— billboard 把 D3 v7 的 selection / scale / shape 包成一份配置
-- [[chart-js]] —— 同类"配置式"图表库，但 Canvas 渲染路线
-- [[echarts]] —— 配置项体量更大，企业级看板的另一条主流选项
-- [[recharts]] —— React 生态对位选手，走 declarative 组件路线
+- [[d3]] —— billboard 把 d3 模块包成一份配置
+- [[chart-js]] —— 同类配置式，Canvas 主路线
+- [[echarts]] —— 企业看板另一条主流
+- [[recharts]] —— React 声明式对照
+- [[chartist]] —— 更小的 SVG 合同
 
 ## 反向链接
 

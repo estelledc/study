@@ -1,150 +1,158 @@
 ---
 title: Chartist — 极简 SVG 图表
-来源: 'https://github.com/chartist-js/chartist'
+来源: https://github.com/chartist-js/chartist
 日期: 2026-05-31
 分类: 数据可视化
 难度: 初级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/chartist-js/chartist
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 4a721397994e366079573e90a792e7a647806df2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.5.0
 ---
 
 ## 是什么
 
-Chartist 是一个**用 SVG 画图、用 CSS 改主题、零依赖**的图表库。日常类比：像一张可复印的描红——画出来的每一根线、每一个柱子都是 HTML 节点，你想换颜色直接改 CSS，不必碰 JS。
+Chartist 是一份 **用 inline SVG 画图、用 CSS class 改外观、无 runtime 依赖** 的图表库。日常类比：它只负责把点和线种进 DOM，颜色和线宽交给你自己的样式表，不另起一套画布 API。
 
-你写：
+固定 `1.5.0` 的公开入口是三个 class，不再有 `Chartist.Line(...)` 命名空间：
 
 ```js
-new Chartist.Line('.ct-chart', {
-  labels: ['一月','二月','三月'],
-  series: [[10, 20, 15]]
+import { LineChart } from "chartist"
+
+new LineChart(".ct-chart", {
+  labels: ["周一", "周二", "周三"],
+  series: [[3, 5, 2]]
 })
 ```
 
-3 行，一条折线就出现在 `.ct-chart` 容器里。它把图画在 SVG 上（不是 Canvas），所以每个点都是 DOM 节点，能用 dev tools 选中，能用 CSS 选择器换主题。
+`package.json` 声明 `engines.node >=14`、`license: MIT OR WTFPL`，`dependencies` 为空。
 
 ## 为什么重要
 
-不理解 Chartist 的设计，下面这些事都没法解释：
+不理解这条合同，下面这些事会对不上：
 
-- 为什么"零依赖 + 10 KB"还能在主流图表库里活了 13 年——因为它切的是"博客小图"细分市场
-- 为什么设计师能直接接手图表样式而不必学 JS——所有外观都走 `ct-` 前缀的 CSS class
-- 为什么 SVG 派和 Canvas 派是 Web 可视化第一个大分叉——一个是"DOM 节点 + CSS"，一个是"位图 + JS API"
-- 为什么响应式不是给个 `width: 100%` 那么简单——不同尺寸要切不同 options（比如手机隐藏 Y 轴）
+- 为什么旧教程里的 `Chartist.Line` 在 v1 对不上 export
+- 为什么换颜色可以只改 `.ct-series-a .ct-line`，不必改 JS
+- 为什么 `update()` 之后整棵 SVG 被拆掉重建
+- 为什么注释写 cardinal 平滑，实际默认却是 monotone cubic
 
 ## 核心要点
 
-Chartist 的设计可以拆成 **三个主张**：
+固定版本可以拆成四层：
 
-1. **SVG 优先**：每个点、每根线都是 SVG 元素 + DOM 节点。类比：拼图的每一块都能单独捏起来；Canvas 是"已经印好的纸"。
+1. **三种图，一个基类**：`LineChart` / `BarChart` / `PieChart` 都继承 `BaseChart`。`PieChart` 用 `donut: true` 改成描边圆环，不是第四个 class。
+2. **首次绘制进宏任务**：构造函数把实例放进容器 `WeakMap`，用 `setTimeout(..., 0)` 才 `initialize()`，好让同一调用栈先 `on(...)`。同容器再 new 一次会先 `detach()` 旧实例。
+3. **响应式走 matchMedia**：第四参 `responsiveOptions` 是 `[mediaQuery, options]` 数组。`optionsProvider` 监听 `change`，匹配项 `extend` 进当前 options，再触发 `optionsChanged` → `update()`。
+4. **样式在 class 上**：系列默认 `ct-series-a` 起跳；`alphaNumerate` 用 `n % 26` 生成 `a`–`z`。默认 SCSS 给 `a`–`o` 十五色，不是五种。
 
-2. **CSS 主题化**：图表外观不在 JS 里写，全部走 `ct-series-a` / `ct-line` / `ct-point` 这类 class。类比：JS 负责"画什么"，CSS 负责"长什么样"——前后端职责清楚。
+## 实践示例
 
-3. **响应式 options**：通过 `responsiveOptions` 数组 + media query 字符串，让同一份 chart 在不同屏幕宽度用不同配置。类比：一份食谱，宴会版加大、午餐版简化。
-
-三个主张加起来叫 **convention over configuration**——默认就够好看，要改也直接改 CSS。
-
-## 实践案例
-
-### 案例 1：5 分钟最小起手式
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist/dist/index.css">
-<div class="ct-chart ct-perfect-fourth"></div>
-<script type="module">
-  import { LineChart } from 'https://cdn.jsdelivr.net/npm/chartist/+esm'
-  new LineChart('.ct-chart', {
-    labels: ['周一','周二','周三','周四','周五'],
-    series: [[3, 5, 2, 6, 4]]
-  })
-</script>
-```
-
-`ct-perfect-fourth` 是预设宽高比（黄金比的近亲），让图自动按音乐音程比例排版——细节，但很 Chartist。
-
-### 案例 2：CSS 换主题
-
-```css
-/* 默认是 5 种颜色，按 ct-series-a/b/c/d/e 自动循环 */
-.ct-series-a .ct-line, .ct-series-a .ct-point { stroke: #ff5722; }
-.ct-series-b .ct-line, .ct-series-b .ct-point { stroke: #2196f3; }
-```
-
-注意：**JS 里一行颜色都没改**。这就是 Chartist 与 Chart.js 最大的视觉哲学差异——前者把视觉决定全部交还 CSS，后者必须 `options.borderColor` 配。
-
-### 案例 3：响应式 options
+### 案例 1：v1 最小折线
 
 ```js
-new LineChart('.ct-chart', data, {
-  showArea: true
-}, [
-  ['screen and (max-width: 640px)', {
-    showArea: false,
-    axisY: { offset: 0 }
-  }]
-])
+import { LineChart } from "chartist"
+
+new LineChart(".ct-chart", {
+  labels: ["周一", "周二", "周三", "周四", "周五"],
+  series: [[3, 5, 2, 6, 4]]
+})
 ```
 
-第四个参数是 `responsiveOptions`，数组每项 = `[mediaQuery, optionsOverride]`。窄屏自动隐藏面积填充和 Y 轴 offset，省空间。
+容器常加 `ct-perfect-fourth` 这类比例 class。默认 SCSS 把它们定义成音乐音程比，例如 perfect fourth = 4/5。
+
+### 案例 2：CSS 换系列色
+
+```css
+.ct-series-a .ct-line,
+.ct-series-a .ct-point { stroke: #ff5722; }
+```
+
+JS 里可以一行颜色都不写。默认样式表还预置了 `b`–`o`。
+
+### 案例 3：responsiveOptions 与 update
+
+```js
+const chart = new LineChart(".ct-chart", data, { showArea: true }, [
+  ["screen and (max-width: 640px)", { showArea: false, axisY: { offset: 0 } }]
+])
+chart.update(newData)
+```
+
+`update()` 会重建 SVG。只改 data 时沿用现有 `optionsProvider`；传入新 options 才会重建 provider。窗口 `resize` 也会整图重画。
 
 ## 踩过的坑
 
-1. **数据点上千就卡**：SVG 每个点都是 DOM 节点，1000 点就是 1000 个 `<circle>`，浏览器重排会肉眼可见地慢。这是 SVG 路线天生的天花板。
-
-2. **v0 → v1 不向后兼容**：v0 用 `Chartist.Line(...)`（命名空间），v1 用 ESM `import { LineChart } from 'chartist'`。旧教程多是 v0，看到 `Chartist.` 前缀先核版本。
-
-3. **Tooltip 要装插件**：内置不带悬浮提示，要装 `chartist-plugin-tooltips` 或自己监听 mouseover。Chart.js 是默认就带，对比之下 Chartist 更"裸"。
-
-4. **响应式 options 只在初始化生效**：动态加点 / 改 series 后，要手动 `chart.update(newData)`，不会自动重算 responsiveOptions。
-
-5. **图类型只有 3 个**：Line / Bar / Pie。要雷达、散点、热力、地图——直接换库（ECharts / D3 / Observable Plot）。
+1. **把 v0 的 `Chartist.Line` 抄进 v1**：固定入口是 `new LineChart(...)`。看到 `Chartist.` 前缀先核版本。
+2. **相信注释里的 cardinal 默认**：`lineSmooth: true` 实际调用 `monotoneCubic()`；要 cardinal 必须自己传入 `Interpolation.cardinal()`。
+3. **以为核心带 tooltip**：`1.5.0` 没有内置悬浮层。`options.plugins` 接受函数或 `[plugin, options]`，README 仍写 v1 插件“Coming soon”。
+4. **把轴标签当 SVG text**：`createLabel` 用 `foreignObject` 包 HTML `span`，CSS 选择器要按这个 DOM 写。
+5. **把上千点当小图场景**：每个点都是 SVG 节点，`update` / `resize` 是全量重建。本文没有测卡顿阈值。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 博客 / 内容站每页几十点的小图（性能不是问题，包大小是问题）
-- 设计师主导的项目——CSS 改主题不必排队等前端开 PR
-- 强可访问性需求——SVG 节点能加 `aria-label`，屏幕阅读器能读到
-- 极简打包预算（<15 KB），不想引入 Chart.js 的 60 KB
+- 需要可点选、可加 `aria-*` 的 SVG 小图
+- 设计师能直接改 `ct-` class，不想把颜色写进 JS
+- 能接受 Line / Bar / Pie（含 donut option）三种图
 
 **不适用**：
 
-- 数据量上千点的探索式图表 → 走 Canvas（Chart.js / ECharts）或 WebGL（deck.gl）
-- 需要丰富插件生态（缩放 / 框选 / 联动）→ Chart.js / ECharts 插件多十倍
-- 需要高级图类型（地图、桑基、关系、3D）→ ECharts / D3
-- 团队已用 Chart.js 且性能没瓶颈 → 没必要单独换
+- 还在跟 v0 命名空间教程走，却按 v1 推理
+- 需要雷达、散点、热力、地图——固定版本没有这些 class
+- 要把未测的包体积或帧率写成选型结论
+- 指望核心自带 tooltip / zoom 插件生态
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2014 年**：Gion Kunz 在 Snack 工作时不满意当时的图表库（D3 太重、Highcharts 收费），自己写了 Chartist v0，开源到 GitHub。
-- **2015-2018 年**：星数从 1k 涨到 12k，主打 "responsive + CSS 主题"，那阵子前端正在"扁平化"，CSS 改主题刚好对味。
-- **2022 年**：原作者退出维护，社区成立 `chartist-js/chartist` 组织接管，发布 v1.0 用 TypeScript 重写。
-- **现在**：维护节奏慢于 Chart.js / Recharts，但仍是"小图 + CSS 主题"细分市场的稳态选项。
-
-13 年下来证明：**够轻 + 够垂直** 也能在巨头夹缝里长期存活。
+- 本文绑定 `chartist-js/chartist@4a721397994e366079573e90a792e7a647806df2`，包版本 `1.5.0`。npm latest 同号，未暴露 `gitHead`。
+- 双许可是 `MIT OR WTFPL`。无 runtime 依赖。
+- 本文未安装依赖、未跑 Jest / Storybook / size-limit、未在浏览器出图，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **SVG vs Canvas 是 Web 可视化的第一个分叉点**——一个走 DOM 节点 + CSS，一个走位图 + JS API；选错了往后所有交互、性能、可访问性决定都跟着走
-2. **样式归 CSS 是一个工程主张**——把视觉从 JS 配置里搬出来，前后端分工更清楚，设计师不必学 JS 也能改图
-3. **响应式不是给个 width: 100% 那么简单**——不同断点切换不同 options 才叫真响应式（手机隐藏副轴、平板压缩 padding）
-4. **细分定位 + 极轻包**也能活——不是每个库都要做"全功能 + 大生态"，13 年下来 Chartist 证明垂直市场也有稳态
+1. **v1 把命名空间拆成 ESM class**——教程前缀和 import 必须对上同一条线。
+2. **“CSS 主题化”依赖稳定的 `ct-series-*` 合同**——颜色表长度以 SCSS 为准，不是口播的五种。
+3. **响应式 options 是 media query 覆盖，不是 `width: 100%`**。
+4. **默认平滑以源码分支为准**——注释写 cardinal，实现走 monotone cubic。
+
+## 应用型自测
+
+1. `new Chartist.Line('.ct-chart', data)` 在固定 1.5.0 是公开 API 吗？
+2. `lineSmooth: true` 默认用的是 cardinal 还是 monotone cubic？
+3. 只调用 `chart.update(newData)`、不传 options 时，已匹配的 media query 覆盖还在吗？
+
+检查点：
+
+1. 不是。公开入口是 `LineChart` / `BarChart` / `PieChart`。
+2. 实现走 `monotoneCubic()`。
+3. 在。data-only `update` 继续用现有 `optionsProvider.getCurrentOptions()`。
 
 ## 延伸阅读
 
-- 官方文档：[Chartist Docs](https://chartist.dev/)（v1 文档）
-- 仓库：[chartist-js/chartist](https://github.com/chartist-js/chartist)（v1 在这里）
-- [[chart-js]] —— 同样的入门定位，但走 Canvas 路线，刚好对照
-- [[d3]] —— SVG 数据驱动祖师，Chartist 是 D3 思路的简化结晶
-- [[recharts]] —— 同样 SVG 但走 React 声明式组件，对照看 imperative vs declarative
-- [[echarts]] —— 走 Canvas，配置项体量大十倍
+- 文档：[chartist.dev](https://chartist.dev/)
+- 固定源码：[chartist-js/chartist](https://github.com/chartist-js/chartist) —— 本文绑定提交 `4a721397994e366079573e90a792e7a647806df2`
+- [[chart-js]] —— Canvas 入门路线对照
+- [[d3]] —— SVG 数据驱动祖师
+- [[billboard-js]] —— 配置对象 + D3 模块，图类型更多
+- [[recharts]] —— React 声明式 SVG
 
 ## 关联
 
-- [[chart-js]] —— Canvas 派代表，与 Chartist 是"渲染哲学"两端的镜像
-- [[d3]] —— SVG + 数据驱动祖师，Chartist 是它的极简后裔
-- [[recharts]] —— React + SVG，把 Chartist 的"声明 + CSS"路线装进组件
-- [[echarts]] —— 同样配置式 API，但走 Canvas + 海量图类型路线
-- [[observable-plot]] —— grammar of graphics 风格的现代 SVG 库
+- [[chart-js]] —— Canvas 派代表
+- [[d3]] —— SVG + 数据驱动
+- [[recharts]] —— React + SVG
+- [[echarts]] —— 配置式，但走 Canvas + 海量图类型
+- [[billboard-js]] —— 同主题配置式图表，绑定 D3 模块与可选 canvas
 
 ## 反向链接
 
