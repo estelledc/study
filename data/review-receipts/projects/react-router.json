@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "react-router",
+    "digest_sha256": "bb94c6925659570f5bc0a85d29abaf25a0e06ad954afe551832479bdde5502a8"
+  },
+  "source_revision": "2edaca7a4f12a50cad002d55d84f73b0cdd462b6",
+  "research_input_sha256": "80f9655fdad6dc18dd710b6834d17cefc93541b48da003b0e31a3fdc027d3e20",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-aa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains createBrowserRouter, default shouldRevalidate, href/Register, and the missing react-router-dom@8 package with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-aa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Router, matchRoutes, dataStrategy, href, Register, and createRequestHandler were inspected; upstream tests, SSR, and RSC were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-aa",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "npm exposes no gitHead for 8.3.0; React >=19.2.7 and missing react-router-dom@8.3.0 are disclosed. Unstable RSC is not treated as verified."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T07:20:00.000Z"
+}
