@@ -1888,6 +1888,10 @@
       "topic_id": "projects-date-and-time"
     },
     {
+      "note_id": "projects::debug",
+      "topic_id": "projects-observability-and-performance"
+    },
+    {
       "note_id": "projects::dgraph",
       "topic_id": "projects-databases-and-storage-engines"
     },
@@ -2098,6 +2102,10 @@
     {
       "note_id": "projects::llamaindex",
       "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::loglevel",
+      "topic_id": "projects-observability-and-performance"
     },
     {
       "note_id": "projects::loki",

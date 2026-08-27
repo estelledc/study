@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2046,
-      "classified": 1999,
+      "total": 2048,
+      "classified": 2001,
       "unclassified": 47,
       "unknown_difficulty": 1974,
       "empty_description": 1969
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 963,
-        "classified": 935,
+        "total": 965,
+        "classified": 937,
         "unclassified": 28,
         "unknown_difficulty": 960,
         "empty_description": 956
@@ -40327,6 +40327,37 @@
       }
     },
     {
+      "id": "projects::debug",
+      "area": "projects",
+      "slug": "debug",
+      "title": "debug — 用命名空间开关调试输出",
+      "description": "按 namespace 电闸开关调试输出；Node 写 stderr，浏览器走 console.debug 回退",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-observability-and-performance"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "日志"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/debug/",
+      "atlas": {
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
+      }
+    },
+    {
       "id": "projects::deck-gl",
       "area": "projects",
       "slug": "deck-gl",
@@ -49076,6 +49107,37 @@
       "atlas": {
         "chunk_id": "topic-projects-blockchain-01",
         "chunk_route": "/study/atlas/projects/topic-projects-blockchain-01/"
+      }
+    },
+    {
+      "id": "projects::loglevel",
+      "area": "projects",
+      "slug": "loglevel",
+      "title": "loglevel — 给 console 补上可替换的日志级别",
+      "description": "用 noop 替换给 console 补级别；debug 实际绑定 console.log，根 setLevel 不自动 rebuild 孩子",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-observability-and-performance"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-observability-and-performance",
+        "raw_category": "日志"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/loglevel/",
+      "atlas": {
+        "chunk_id": "topic-projects-observability-and-performance-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-observability-and-performance-01/"
       }
     },
     {
@@ -65873,7 +65935,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-observability-and-performance-01/",
-      "entries": 12
+      "entries": 14
     },
     {
       "id": "topic-projects-orm-and-database-clients-01",

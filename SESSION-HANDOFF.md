@@ -2,6 +2,28 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EN：debug + loglevel 静态审查
+
+- supervisor 状态：writer epoch `complete`；本地 change set 已准备 push + PR。未 merge、未 deploy。
+- status：`running` 已收口为本轮 writer 完成；D 轴仅到 PR。
+- 起始 ref：`89766cc270eff34fe99eb4c715d18a7a7c0d335e`（当时 `origin/main`，#72 Auth.js / Lucia）。
+- objective：按用户显式 PARALLEL writer EN 授权，新增 `debug` 与 `loglevel` 两页源码绑定 `study-v2` 笔记；证据为 `STATIC_REVIEW` / `UNVERIFIED`；审查文档 `docs/debug-loglevel-source-review-20260827-en.md`；一个 PR，不 merge。
+- scope：两页正文、2 份 generation 1 receipt、英文审查文档、taxonomy / atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；未安装上游依赖，未跑上游测试、bundle 或性能 benchmark。`pino` / `winston` 按合同排除。
+- activated_by：`explicit-user-parallel-writer-en-20260827`。
+- detector fingerprint：站点无 `debug` / `loglevel` 页；目标对是 namespace 电闸与 console level 替换，且能在固定小仓上核对 README 与实现分歧。
+- external delta 计数：本轮授权 push + 一个 PR；未授权 merge / deploy。
+- 已完成切片：
+  1. `debug` 绑定 annotated tag `4.4.3` / npm `gitHead` `6b2c5fbdb7d414483d9e306ef234acb4cd7ea67c`；纠正“namespace 以 `*` 结尾永远开启”，并写明 Node `stderr` 与浏览器 `console.debug || console.log`。
+  2. `loglevel` 绑定 annotated tag `v1.9.2` / npm `gitHead` `40d10ef1917710afcc70b5f2115bb336ab4b0580`；纠正 `log.debug` 实际 bind `console.log`，以及根 `setLevel` 不自动 `rebuild` 已有孩子。
+  3. 新增共享英文审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` 全过、0 advisory；receipt 与正文 digest / 固定 revision 一致，evidence state `UNVERIFIED`；`audit:counts` / `audit:content-contract` / `audit:project-standard` 在写入派生后通过。`verify:ci` 在首个 commit 之后跑。
+- budget：2 个小型 blob-filtered worktree + 2 页新增 + 派生刷新；单 writer。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值、未改 evidence 布局。
+- stop conditions：本轮以一个 PR 为止；merge 与 deploy 需单独授权。
+- 下一次 wake 条件：本 PR 的 CI / review 变化，或 owner 另行授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=89766cc270eff34fe99eb4c715d18a7a7c0d335e npm run verify:ci`
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
