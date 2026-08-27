@@ -20,7 +20,7 @@ sidebar:
 | [Assimp — 把 3D 模型格式统一成 aiScene 的导入库](/study/projects/assimp/) | `assimp` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Babylon.js — 浏览器里的 3D 游戏和可视化引擎](/study/projects/babylonjs/) | `babylonjs` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bevy — 用 Rust 写游戏的现代 ECS 引擎](/study/projects/bevy/) | `bevy` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [Box2D — Erin Catto C++ 2D 物理](/study/projects/box2d/) | `box2d` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Box2D — C17 2D 刚体物理](/study/projects/box2d/) | `box2d` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Bullet — C++ 经典 3D 物理引擎与 PyBullet 仿真工具](/study/projects/bullet/) | `bullet` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | `cocos2d-x` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Defold — King 出品的 Lua 跨平台游戏引擎](/study/projects/defold/) | `defold` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
