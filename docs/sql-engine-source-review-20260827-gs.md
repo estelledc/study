@@ -9,7 +9,7 @@
 - evidence：GitHub metadata、npm package metadata、固定提交静态源码与测试阅读
 - not executed：未安装两仓依赖，未连接数据库，未实例化 WASM / asm.js，未跑 vitest / make / emcc，未测 bundle 或性能
 - worktrees：本机 `research-worktrees/db0` 与 `research-worktrees/sqljs`，不进入 Git
-- slugs：`db0`、`sql.js`（与 npm 包名一致；`sql.js` 中的点是合法 slug）
+- slugs：`db0`、`sql-js`（npm / GitHub 名是 `sql.js`；站点 slug 用连字符，避免 Starlight 把点压成 `sqljs`）
 - not this pair：未写 knex / better-sqlite3 页面（knex 已在开放 PR #115）
 
 ## db0

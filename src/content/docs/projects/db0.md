@@ -114,7 +114,7 @@ await db.sql`select * from users where id = ${1}`
 
 - 想从一份 schema 同时得到类型客户端和 migration → 看已对齐的 [[prisma]] / [[drizzle]]
 - 需要编译期核对列名 → 看 [[kysely]]
-- 要在浏览器进程里跑完整 SQLite 引擎 → 看 [[sql.js]]
+- 要在浏览器进程里跑完整 SQLite 引擎 → 看 [[sql-js]]
 - 要把未测量的包体积或 “lightweight” 写成选型结论
 
 ## 固定版本边界
@@ -147,13 +147,13 @@ await db.sql`select * from users where id = ${1}`
 
 - 文档：[db0.unjs.io](https://db0.unjs.io)
 - 固定源码：[unjs/db0](https://github.com/unjs/db0) —— 本文绑定提交 `d49c507c0a4b4e82e9909f3f7b598a31565665e9`
-- [[sql.js]] —— 浏览器/进程内 SQLite 引擎，db0 并不内置
+- [[sql-js]] —— 浏览器/进程内 SQLite 引擎，db0 并不内置
 - [[kysely]] —— 可用 `db0/integrations/kysely` 接到同一扇门面
 - [[drizzle]] —— 默认集成走 SQLite session
 
 ## 关联
 
-- [[sql.js]] —— 进程内引擎对照；db0 只连接已有引擎
+- [[sql-js]] —— 进程内引擎对照；db0 只连接已有引擎
 - [[kysely]] —— type-safe builder，db0 提供 dialect 适配
 - [[drizzle]] —— schema-as-code；`db0/integrations/drizzle` 默认 SQLite
 - [[prisma]] —— 7.x adapter 入口；db0 的 `prisma()` 是单连接 mutex

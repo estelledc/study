@@ -9,7 +9,7 @@
 - objective：为缺失的 SQL-engine 双子补齐 `db0` 与 `sql.js` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
 - scope：两篇新项目页、共享审查文档 `docs/sql-engine-source-review-20260827-gs.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未实例化 WASM、未连库、未测 bundle。
 - activated_by：`explicit-user-parallel-writer-gs-2026-08-27`（停 knex，改 sql.js）。
-- detector fingerprint：目录无 `db0.md` / `sql.js.md`；knex 已被 #115 占用；开放 PR 未占用这两个 slug。
+- detector fingerprint：目录无 `db0.md` / `sql-js.md`；knex 已被 #115 占用；开放 PR 未占用这两个 slug。站点 slug 用 `sql-js`，避免 Starlight 把 `sql.js` 发成 `sqljs`。
 - external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
 - 完成切片：
   1. `db0` 绑定 annotated tag `v0.4.0` → `d49c507c0a4b4e82e9909f3f7b598a31565665e9`；披露 npm `db0@0.4.0` 无 `gitHead`。

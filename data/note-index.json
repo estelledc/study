@@ -59826,9 +59826,9 @@
       }
     },
     {
-      "id": "projects::sql.js",
+      "id": "projects::sql-js",
       "area": "projects",
-      "slug": "sql.js",
+      "slug": "sql-js",
       "title": "sql.js — 把 SQLite 编译进 JavaScript 进程",
       "description": "介绍如何用 Emscripten 把 SQLite 编成 WASM，并在虚拟文件上提供 Database 与 Statement API。",
       "difficulty": "intermediate",
@@ -59850,7 +59850,7 @@
         "reviewed_at": "2026-08-27",
         "review_after": "2026-11-27"
       },
-      "route": "/study/projects/sql.js/",
+      "route": "/study/projects/sql-js/",
       "atlas": {
         "chunk_id": "topic-projects-orm-and-database-clients-01",
         "chunk_route": "/study/atlas/projects/topic-projects-orm-and-database-clients-01/"

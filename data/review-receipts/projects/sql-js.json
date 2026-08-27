@@ -4,11 +4,11 @@
   "predecessor_digest_sha256": null,
   "note": {
     "area": "projects",
-    "slug": "sql.js",
-    "digest_sha256": "7341f1369b016f5703ef36b56a1f31be174d7c717474ec4842f7d372834a1d2f"
+    "slug": "sql-js",
+    "digest_sha256": "f5f5af39016bc9f5c8d3bedbf784f378e41ca0bb7582dce15372fe48e46db4f4"
   },
   "source_revision": "9c4e167ec37129192d166ab9223faa9a4bd07c58",
-  "research_input_sha256": "ff5fa6483ceb4e50736cff168f7706e926ed5da733c7ecd833548e399684b226",
+  "research_input_sha256": "05a5e3decdca7e6a5f8cbf0511545c39a4f55c99d7de70bb0287499464097c23",
   "reviewers": [
     {
       "role": "ZERO_BASE",

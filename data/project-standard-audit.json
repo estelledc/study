@@ -18961,7 +18961,7 @@
       ]
     },
     {
-      "slug": "sql.js",
+      "slug": "sql-js",
       "title": "sql.js — 把 SQLite 编译进 JavaScript 进程",
       "source": "https://github.com/sql-js/sql.js",
       "status": "benchmark-aligned",

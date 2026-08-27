@@ -119,7 +119,7 @@ const bytes = db.export()
 
 ## 固定版本边界
 
-- 本文绑定 `sql-js/sql.js@9c4e167ec37129192d166ab9223faa9a4bd07c58`，annotated tag `v1.14.2`。包版本 `1.14.2`。
+- 本文绑定 `sql-js/sql.js@9c4e167ec37129192d166ab9223faa9a4bd07c58`，annotated tag `v1.14.2`。包版本 `1.14.2`。站点 slug 是 `sql-js`，避免文件名里的点被构建成 `sqljs`。
 - npm `sql.js@1.14.2` 的 `gitHead` 是 `1d5db4546e5feb944a3415739eb2a54103b54882`（祖先，CI 发布配置）；tag 提交只多 `ci: debug npm publish http log`。
 - Makefile 固定 `sqlite-amalgamation-3490100`，编译开关含 `SQLITE_THREADSAFE=0`、`SQLITE_OMIT_LOAD_EXTENSION`、`SQLITE_ENABLE_FTS3`、`STACK_SIZE=5MB`。
 - 许可：包装器 MIT；SQLite 公有领域。本文未跑 make / emcc / 上游 test，状态保持 `UNVERIFIED`。
