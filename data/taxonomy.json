@@ -1796,6 +1796,10 @@
       "topic_id": "projects-authentication"
     },
     {
+      "note_id": "projects::big-js",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::biome",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -1886,6 +1890,10 @@
     {
       "note_id": "projects::dayjs",
       "topic_id": "projects-date-and-time"
+    },
+    {
+      "note_id": "projects::decimal-js",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::dgraph",

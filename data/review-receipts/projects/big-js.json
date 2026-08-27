@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "big-js",
+    "digest_sha256": "f741e1a27ab9b484c7d8eec2b4102d26aa0c237f17e8bc4a4ea97b4dd806b6de"
+  },
+  "source_revision": "e19cc83cb965bdef18cb31423d81f60140c9e7be",
+  "research_input_sha256": "f762fc3a78d3ed01daaf2fcde72bd49ae4cf8bb2201201dc3d1812fed3f81e95",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ix",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates exact plus/times from DP-rounded div/sqrt/neg-pow, empty Big() constructor clone, and strict Number rejection."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ix",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "big.js defaults, constructor/_Big_, plus/times/div/mod, and toNumber strict path were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ix",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag v7.0.1, package 7.0.1, and npm gitHead identify the same reachable commit; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}

@@ -2,6 +2,21 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IX：decimal.js + big.js
+
+- status：`running`
+- 起始 ref：`2122461e7ac7cd08ee3be1827d3ec84bbf919707`（`origin/main`）。
+- objective：为缺失的 decimal-math 双子补齐 `decimal-js` 与 `big-js` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/decimal-math-source-review-20260827-ix.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ix-2026-08-27`。
+- detector fingerprint：目录无 `decimal-js.md` / `big-js.md`；A–AG 与开放 PR 未占用这两个 slug；禁止使用 lossless-json / json-bigint / marked / markdown-it / knex / ioredis / redis / BullMQ；车道 HM–ID 已保留。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- acceptance_checks：两页 `quality-gate.mjs`；`audit:content-contract`；`audit:counts` / `audit:site-state`；`audit:wikilinks`；`git diff --check`；`STUDY_CHANGED_FROM=2122461e7 npm run verify:ci`。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer；默认 3 切片 / 120 分钟。
+- external_outcome：一个 review-ready PR；不 merge；D 轴不提升。
+- stop_conditions：两页与派生索引通过、PR 已开即停；不得发明下一对；不得 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "decimal-js",
+    "digest_sha256": "219087af8b5bf9a8ddcd36104127f615499d1616c4a26a64be9853b518b36be2"
+  },
+  "source_revision": "1a6e845004b29a3b7dcef78fe92b8d786634f4e2",
+  "research_input_sha256": "f762fc3a78d3ed01daaf2fcde72bd49ae4cf8bb2201201dc3d1812fed3f81e95",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ix",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates constructor-level precision, finalise-on-plus/times/div, clone vs set, and Number-literal loss."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ix",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "decimal.js DEFAULTS, constructor, clone, plus/times/div, and bigint parse were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ix",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds reachable source tag v10.6.0 and discloses unreachable npm gitHead f1ee2f40; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:20:00.000Z"
+}
