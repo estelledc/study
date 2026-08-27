@@ -26,9 +26,9 @@ sidebar:
 | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | `dasel` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | `delta` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) | `dive` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | `dua-cli` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [dua-cli — 并发扫目录占用，再在 TUI 里标记后删除或进废纸篓](/study/projects/dua-cli/) | `dua-cli` | beginner | UNVERIFIED | 介绍 dua-cli 如何用自带工作窃取线程池扫描目录树，并在 TUI 里把标记、删除和废纸篓拆开 |
 | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | `duf` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | `dust` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [dust — 把 du 的数字收成按占比着色的目录树](/study/projects/dust/) | `dust` | beginner | UNVERIFIED | 介绍 dust 如何用 rayon 并行 walk，再用最大堆截顶并画占比条形图 |
 | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | `eza` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fd — Rust 写的现代 find](/study/projects/fd/) | `fd` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | `fish` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

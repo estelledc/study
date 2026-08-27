@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer HY：dua-cli + dust
+
+- status：writer epoch `complete`；待 review。未 merge / 未 deploy。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：把磁盘占用双子 `dua-cli` 与 `dust` 从 `needs-evidence` 迁到可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇既有项目页、共享审查文档 `docs/disk-usage-source-review-20260827-hy.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试或 CLI。
+- activated_by：`explicit-user-parallel-writer-hy-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 dua 写成 jwalk+rayon 与 `--format=json-lines`，把 `d`/`Ctrl+D` 写成废纸篓/永久删除；开放与已合并 PR 未占用这两个 slug。
+- external delta：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 完成切片：
+  1. `dua-cli` 绑定 tag `v2.43.0` / `dua-core-v3.2.0` → `7baa9266a593fd6b7f7568c741798d76660eb3ab`；纠正 walk 引擎、`-f` 语义和 TUI 删除键。
+  2. `dust` 绑定 `v1.2.5` → `8a846f6689f2db6be6ef595239a21ec784d62b57`；纠正 inode 去重、行数截取、`-b`/`-j` 边界。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；项目标准 85 → 87。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - `audit:content-contract`：0 blocking、156 v2。
+  - `audit:counts` / `audit:site-state`：projects=967、papers=1083、total=2050。
+  - `audit:wikilinks`：blocking 0。
+  - `git diff --check`：通过。
+- budget：2 个 blob-filtered clone + 2 页静态源码迁移；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍可能超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 已完成；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：对本 PR 做 review；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。

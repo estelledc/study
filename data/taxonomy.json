@@ -1920,6 +1920,14 @@
       "topic_id": "projects-orm-and-database-clients"
     },
     {
+      "note_id": "projects::dua-cli",
+      "topic_id": "projects-cli-tools"
+    },
+    {
+      "note_id": "projects::dust",
+      "topic_id": "projects-cli-tools"
+    },
+    {
       "note_id": "projects::echarts",
       "topic_id": "projects-data-visualization"
     },

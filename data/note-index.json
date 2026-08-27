@@ -6,8 +6,8 @@
       "total": 2050,
       "classified": 2003,
       "unclassified": 47,
-      "unknown_difficulty": 1973,
-      "empty_description": 1968
+      "unknown_difficulty": 1971,
+      "empty_description": 1966
     },
     "by_area": {
       "papers": {
@@ -21,8 +21,8 @@
         "total": 967,
         "classified": 939,
         "unclassified": 28,
-        "unknown_difficulty": 959,
-        "empty_description": 955
+        "unknown_difficulty": 957,
+        "empty_description": 953
       }
     },
     "missing_curated_assignments": [],
@@ -41278,27 +41278,26 @@
       "id": "projects::dua-cli",
       "area": "projects",
       "slug": "dua-cli",
-      "title": "dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "dua-cli — 并发扫目录占用，再在 TUI 里标记后删除或进废纸篓",
+      "description": "介绍 dua-cli 如何用自带工作窃取线程池扫描目录树，并在 TUI 里把标记、删除和废纸篓拆开",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
         "raw_category": "cli"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/dua-cli/",
       "atlas": {
@@ -41404,27 +41403,26 @@
       "id": "projects::dust",
       "area": "projects",
       "slug": "dust",
-      "title": "dust — du 的可视化替代，按目录大小排树状条形图",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "dust — 把 du 的数字收成按占比着色的目录树",
+      "description": "介绍 dust 如何用 rayon 并行 walk，再用最大堆截顶并画占比条形图",
+      "difficulty": "beginner",
       "canonical_topics": [
         "projects-cli-tools"
       ],
       "classification": {
         "state": "classified",
-        "source": "frontmatter-category",
+        "source": "curated-assignment",
         "topic_id": "projects-cli-tools",
-        "matched_category": "cli",
         "raw_category": "cli"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/dust/",
       "atlas": {
