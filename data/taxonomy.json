@@ -2032,6 +2032,10 @@
       "topic_id": "projects-state-management"
     },
     {
+      "note_id": "projects::json-bigint",
+      "topic_id": "projects-markdown-and-parsing"
+    },
+    {
       "note_id": "projects::js-joda",
       "topic_id": "projects-date-and-time"
     },
@@ -2106,6 +2110,10 @@
     {
       "note_id": "projects::loki",
       "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::lossless-json",
+      "topic_id": "projects-markdown-and-parsing"
     },
     {
       "note_id": "projects::lottie",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "lossless-json",
+    "digest_sha256": "f46f9ea8da04b2603006a44a1895c27af221d928b39f78283ac3e3970a8afc83"
+  },
+  "source_revision": "a19ae09763876582d120d2f3de4cbd7741faa427",
+  "research_input_sha256": "78df5915882637f85b8d96e65e2b0ef469db5bca2f9426963419ec76bf4008c3",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-if",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates LosslessNumber string payload, delayed valueOf typing, parseNumber option name, and duplicate-key deep-equal exception."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-if",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "parse.ts, LosslessNumber.ts, stringify.ts, numberParsers.ts and revive.ts were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-if",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag v4.3.1 / npm gitHead a19ae09763876582d120d2f3de4cbd7741faa427; README numberParser vs parseNumber mismatch disclosed; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

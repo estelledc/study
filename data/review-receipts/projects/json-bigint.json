@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "json-bigint",
+    "digest_sha256": "4452f93463d127dcb0a97a8bae6d84ca6f89475113c523f346b955f42c75267b"
+  },
+  "source_revision": "390482a8b6b460f98c61c3b65915dbd91fc8e7b2",
+  "research_input_sha256": "78df5915882637f85b8d96e65e2b0ef469db5bca2f9426963419ec76bf4008c3",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-if",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates factory options, length>15 heuristic, proto/constructor fail-closed defaults, and plain-object SyntaxError."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-if",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "index.js, lib/parse.js, lib/stringify.js and proto/bigint tests were inspected; bignumber.js was not installed or executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-if",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds tag v1.0.0 / npm gitHead 390482a8b6b460f98c61c3b65915dbd91fc8e7b2; stringify is option-independent; bundle size was not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}
