@@ -2256,6 +2256,10 @@
       "topic_id": "projects-build-tools-and-bundlers"
     },
     {
+      "note_id": "projects::oxc-transform",
+      "topic_id": "projects-build-tools-and-bundlers"
+    },
+    {
       "note_id": "projects::oxlint",
       "topic_id": "projects-build-tools-and-bundlers"
     },
@@ -2510,6 +2514,10 @@
     {
       "note_id": "projects::trpc",
       "topic_id": "projects-data-fetching-and-routing"
+    },
+    {
+      "note_id": "projects::ts-blank-space",
+      "topic_id": "projects-build-tools-and-bundlers"
     },
     {
       "note_id": "projects::turbopack",
