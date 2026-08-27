@@ -16,12 +16,12 @@
   1. `sucrase` 绑定 `280ee202e73b...` / `3.35.1`（npm `gitHead` 指向父提交 `fa5b7abf...` 且仍自报 3.35.0，无 GitHub tag，已披露）。
   2. `ts-jest` 绑定 tag `v29.4.12` / `3f05625da1...`（npm `gitHead` 一致）。
   3. 新增 `docs/ts-transpile-source-review-20260827-du.md` 与两份 STATIC_REVIEW receipt。
-- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision 一致，`evidence_state=UNVERIFIED`；`audit:counts` 与 `audit:content-contract --changed-from origin/main` 无 blocking。`verify:ci` 在 commit 后跑。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；receipt 与正文 digest / revision 一致，`evidence_state=UNVERIFIED`；`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci` 在 Node 22.23.1 / npm 11.17.0 下全绿（388 Node tests、strict build、23 Playwright a11y）。
 - budget：1 个 TS-transpile 双子切片、1 个本地 writer。
 - blocker：无。本对不覆盖 native SWC / esbuild / tsx。
 - stop conditions：定向门禁通过即结束 writer；不 merge。
 - 下一次 wake 条件：本 PR 的 review / CI；无新授权不继续写内容。
-- 下一条命令：`STUDY_CHANGED_FROM=7a2384d098114782c7c7f0cec319a81c92047552 npm run verify:ci`
+- 下一条命令：在 PR #173 上等待 review；未获 merge 授权前不要合并。
 - superseded_by：`none`。
 
 
