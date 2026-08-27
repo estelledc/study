@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 表单主题组收口 epoch 8
+
+- status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
+- 起始 ref：`e20d4ddff`（PR #45 merge，main 与 origin/main 对齐）。
+- objective：收口 `forms-and-schema-validation` Atlas 组最后两页，把 `react-hook-form` 与 `tanstack-form` 迁移到源码绑定标准；选题依据是实时审计——该组 3/5 对齐，是唯一部分对齐的主题组，与 epoch 7 收口 HTTP 组同型。
+- scope：两页正文、2 份新 receipt、共享源码审查文档、note-index / project-standard / site-state 派生输出、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle 或性能 benchmark。
+- activated_by：`explicit-user-continue-2026-08-27`。
+- detector fingerprint：两页缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把 RHF formState 写成 Proxy 字段级订阅（固定 7.86.0 实为 `Object.defineProperty` getter 的顶层 key 级），把 TanStack Form 写成“5 框架 + `form.useStore` 实例方法”（固定 1.33.5 实为 7 个框架 adapter、独立导出 `useStore(form.store, selector)`），并含未绑定的 benchmark 倍数、bundle、下载量与 star 断言。
+- external delta：分支 `cursor/forms-atlas-completion-6e44` 已 push 并打开 PR（用户显式授权 push+PR）；未 merge、未 deploy。
+- 完成切片：
+  1. `react-hook-form` 绑定 tag `v7.86.0` / `33860b43...`（npm gitHead 与 tag 差一个 changelog-only 提交、tag 为其祖先，已披露），修正统一 onChange/onBlur 处理器、`_formValues` 可变仓库、key 级订阅粒度、默认校验模式与 disabled 字段提交剔除边界。
+  2. `tanstack-form` 绑定 `b865ef33...`（`@tanstack/form-core@1.33.5` 与 `@tanstack/react-form@1.33.5` 双 tag 同指此提交），修正 7 个框架 adapter 清单、Standard Schema `'~standard'` 协议、`Subscribe`/`useStore` API 形态与提交校验主链；披露上游 v2.0.0-alpha.2 线进行中。
+  3. 新增共享 `docs/form-library-source-review-20260827.md` 与两份 generation 1 static receipt；派生 site-state 首页“已对齐标杆”从 18 刷新为 20。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `STUDY_CHANGED_FROM=e20d4ddff npm run verify:ci`：规范 Node 22.23.1/npm 11.17.0 下 30 步全绿（388 Node tests、strict build、23 Playwright a11y、Pages/Atlas/站点预算与 diff 门禁）。
+  - `audit:project-standard`：`benchmark-aligned=20`、`needs-evidence=941`、snapshot CURRENT。
+  - `audit:content-contract`：`v2=89`、`legacy-unverified=1955`、blocking 0。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer；预算内完成。
+- blocker（先于本切片存在，需人工处置）：`node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 报 `tracked_files` 超限——main 即 3136 > threshold 3053（baseline 2775 记录于 Research 标杆导入之前），本分支 3139（+3 为两份 receipt 与共享审查文档）。按政策该 detector 属 `PARKED_HUMAN`：迁移 baseline、调整证据存放或其他处置需要 owner 决定；本轮未改 baseline、阈值或证据布局。
+- stop conditions：本轮已完成；规模 baseline 处置、merge 与 deploy 均需单独授权。
+- 下一次 wake 条件：PR review/CI 状态变化、owner 对规模 baseline 处置的决定、或新的显式有限目标。
+- 下一条命令：`npm run build:strict -- --log /tmp/study-scale.log && node scripts/benchmark-site.mjs --compare data/performance-baseline.json` 复现规模 detector；PR 状态用 GitHub 查看。
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。
