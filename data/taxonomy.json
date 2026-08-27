@@ -1972,6 +1972,10 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::gatsby",
+      "topic_id": "projects-meta-and-full-stack-frameworks"
+    },
+    {
       "note_id": "projects::got",
       "topic_id": "projects-http-clients"
     },

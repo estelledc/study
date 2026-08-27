@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer CC · Remix / Gatsby STATIC_REVIEW
+
+- status：`running` → writer epoch `complete`；等待 PR review，不自合并。
+- 起始 ref：`e20d4ddffca1363b187f628d1f0634199148d159`（`origin/main`）。
+- objective：把 Remix 与 Gatsby 绑到可复查的固定源码修订，证据保持 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：`remix` 重写、`gatsby` 新页、两份 generation 1 receipt、`docs/metaframework-source-review-20260827-cc.md`、taxonomy 分配与派生 atlas/site-state/handoff；未安装上游依赖、未跑上游 test/dev/build。
+- activated_by：`explicit-user-request-20260827-parallel-writer-cc-remix-gatsby`。
+- detector fingerprint：`remix` 为 legacy 教学页，缺 pinned revision / evidence / self-test；仓库无 `gatsby` 页；开放 PR 未占用这两个 slug。
+- external delta：GitHub/npm 只读核验 + blob-filtered sparse clone（Remix 25MB / Gatsby 核心包 67MB）；将形成 1 个 draft PR，不 merge、不部署。
+- 完成切片：
+  1. `remix` 绑定 `remix-run/remix@8307662161457e1ad710bde0a52de7b7f800abbc` / `2.17.5`，纠正 `remix` 包抛错、`v3_singleFetch` 默认关闭、Origin/Host CSRF 与 `json()` 弃用边界。
+  2. 新增 `gatsby` 绑定 `gatsbyjs/gatsby@81c3b47cc8debb7f22cef971910ed368cfcada36` / `5.16.1`，写清 bootstrap/build、SSG/SSR/DSG 特征检测与 develop≠build。
+  3. 共享 `docs/metaframework-source-review-20260827-cc.md` 与两份 STATIC_REVIEW receipt。
+- acceptance checks：两页 `quality-gate` pass、0 advisory；receipt digest 与 revision 一致，evidence `UNVERIFIED`；`audit:content-contract` 0 blocking；`audit:counts` 通过。`verify:ci` 在首个 commit/PR 后跑。
+- budget：2 个稀疏 worktree + 2 页；单 writer；1 个 PR。
+- blocker：无。Astro / Nuxt / SvelteKit 由其他开放 PR 占用，本轮未改。
+- stop conditions：不自合并；不扩大到其他元框架。
+- 下一次 wake 条件：PR CI / owner review。
+- 下一条命令：`STUDY_CHANGED_FROM=e20d4ddffca1363b187f628d1f0634199148d159 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-07-17 Research 标杆迁移 epoch 7
 
 - status：Program `active`；本地 writer epoch 7 `complete`；连续三批无 external delta 暂停门已触发。

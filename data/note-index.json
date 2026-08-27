@@ -3,11 +3,11 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
-      "unknown_difficulty": 1975,
-      "empty_description": 1970
+      "unknown_difficulty": 1974,
+      "empty_description": 1969
     },
     "by_area": {
       "papers": {
@@ -18,11 +18,11 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
-        "unknown_difficulty": 961,
-        "empty_description": 957
+        "unknown_difficulty": 960,
+        "empty_description": 956
       }
     },
     "missing_curated_assignments": [],
@@ -43718,6 +43718,37 @@
       }
     },
     {
+      "id": "projects::gatsby",
+      "area": "projects",
+      "slug": "gatsby",
+      "title": "Gatsby — 用 GraphQL 数据层在构建期生成 React 站点",
+      "description": "Pinned Gatsby v5 builds a GraphQL node layer, then generates React pages as SSG, DSG, or SSR.",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-meta-and-full-stack-frameworks"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-meta-and-full-stack-frameworks",
+        "raw_category": "Meta 框架"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/gatsby/",
+      "atlas": {
+        "chunk_id": "topic-projects-meta-and-full-stack-frameworks-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/"
+      }
+    },
+    {
       "id": "projects::gazebo-classic",
       "area": "projects",
       "slug": "gazebo-classic",
@@ -57196,9 +57227,9 @@
       "id": "projects::remix",
       "area": "projects",
       "slug": "remix",
-      "title": "Remix — 拥抱 Web 标准的 React 全栈框架",
-      "description": "",
-      "difficulty": "unknown",
+      "title": "Remix — 按 Web Request 跑 loader/action 的 React 全栈框架",
+      "description": "Pinned Remix v2 routes Web Request through nested loaders, actions, and React Router.",
+      "difficulty": "intermediate",
       "canonical_topics": [
         "projects-meta-and-full-stack-frameworks"
       ],
@@ -57209,13 +57240,13 @@
         "raw_category": "Meta 框架"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/remix/",
       "atlas": {
@@ -65755,7 +65786,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01/",
-      "entries": 5
+      "entries": 6
     },
     {
       "id": "topic-projects-mobile-development-01",

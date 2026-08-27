@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "gatsby",
+    "digest_sha256": "4e4604f1adfcc91b15f98c77cfcc08b31db30ed5f50a65f083b57e68289fee5e"
+  },
+  "source_revision": "81c3b47cc8debb7f22cef971910ed368cfcada36",
+  "research_input_sha256": "2b2c9a06f7ceeb5bdc8aa1cc7315f009d589cd651675c7b7afcf27206dc68666",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-cc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains bootstrap/build pipeline, SSG/SSR/DSG feature detection, and develop-versus-build query behavior."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-cc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected bootstrap, initialize, source-nodes, create-pages, build command, page-mode, and engine helpers; build was not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-cc",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Tag, npm gitHead, and package version agree on 5.16.1; remaining plugin packages were not cloned."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:02:55.482Z"
+}
