@@ -2100,6 +2100,10 @@
       "topic_id": "projects-ai-applications-and-agent-platforms"
     },
     {
+      "note_id": "projects::log-update",
+      "topic_id": "projects-terminal-tools"
+    },
+    {
       "note_id": "projects::loki",
       "topic_id": "projects-monitoring-and-time-series"
     },

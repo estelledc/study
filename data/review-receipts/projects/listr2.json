@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "listr2",
+    "digest_sha256": "4821533fb9106514f79c69d10b18fca63f227d5ebaf5840d767fc87a58a748c5"
+  },
+  "source_revision": "da0f4383f98214a3bc0e6af2f9f9949e6337ce0a",
+  "research_input_sha256": "d062862366f3f5919d656cad3326c197f27c5e5c2822a019c22790f064771a64",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-em",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates WAITING state, simple fallback, null errors, SIGINT 127, and log-update v8 painting."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-em",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Inspected Listr/Task/Concurrency/DefaultRenderer; upstream Jest and TTY frames were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-em",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds listr2@11.0.1 tag+gitHead; workspace package.json still says 1.0.0 and is disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:00:00.000Z"
+}

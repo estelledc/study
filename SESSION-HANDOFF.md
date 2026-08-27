@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer EM：listr2 + log-update 静态迁移
+
+- status：`running` 完成本地切片后转 review-ready；ora 页已被 Study CX 占用，本轮按授权改走 listr2 + log-update。
+- 起始 ref：`51e405f5fd76131242466ecc9c2973d3cc9f70f3`（当时 `origin/main`）。
+- objective：把 CLI 进度层迁到源码绑定 `STATIC_REVIEW` / `UNVERIFIED`：迁移既有 `listr2`，并新建 `log-update` 页。
+- scope：`listr2` 正文、新建 `log-update` 页、2 份 generation 1 receipt、`docs/cli-progress-source-review-20260827-em.md`、taxonomy 收录、atlas / note-index / project-standard / site-state / 公开计数、本 handoff；2 个 ignored worktree。未改 `ora`、未安装上游依赖、未跑上游测试、未测 TTY 帧或 bundle。
+- activated_by：`explicit-user-parallel-writer-em-20260827`。
+- detector fingerprint：`listr2` 缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把初态写成 PENDING、把 CI fallback 写成 `verbose`、把 `errors` 写成默认数组、把颜色归因 chalk，并含未绑定下载量；仓库无 `log-update` 页。
+- external_outcome：一个 PR，不 merge、不 deploy；D 轴仅在 push+PR 被授权时变化。
+- budget：2 个切片、单 writer。
+- 完成切片：
+  1. `listr2` 绑定 tag `listr2@11.0.1` / `da0f4383...`（与 npm `gitHead` 一致），修正 `WAITING`、`fallbackRenderer: 'simple'`、`collectErrors` 默认 `null`、SIGINT/`127`、以及 default renderer 经 `log-update@^8` 画帧。
+  2. 新建 `log-update` 绑定 annotated tag `v8.0.0` peel `4f7a1460...`（与 npm `gitHead` 一致），写明 wrap/clip、prefix-suffix patch、`persist` vs `done`。
+  3. 共享 `docs/cli-progress-source-review-20260827-em.md` 与两份 STATIC_REVIEW receipt；taxonomy 将 `log-update` 收进 Terminal 组。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：pass、0 advisory。
+  - 两份 receipt：正文 digest 与固定 revision 一致，`STATIC_REVIEW` / `UNVERIFIED`。
+  - `audit:content-contract`：blocking 0。
+  - `audit:counts` / `audit:site-state` / `audit:project-standard` snapshot CURRENT。
+  - `git diff --check` 通过。
+- blocker：规模 detector 在 main 已超 baseline；本轮未改阈值或证据布局。`ora` 仍由 CX 负责。
+- stop_conditions：本地 change set 与一个 PR 完成后停止；不 merge。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=origin/main npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-08-27 PARALLEL writer J：xstate + mobx 静态迁移
 
 - supervisor 状态：writer epoch `complete`；已 merge `origin/main` `7b78db79731a`（#66），并重生成派生索引。本切片到 push 为止。未 squash / 未把本 PR merge 进 main / 未 deploy。
