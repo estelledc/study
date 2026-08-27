@@ -1,154 +1,160 @@
 ---
-title: SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
-来源: 'https://github.com/supertokens/supertokens-core'
-日期: 2026-05-30
+title: SuperTokens — 自托管认证核心：用 HTTP recipe 拆开登录与会话
+来源: https://github.com/supertokens/supertokens-core
+日期: 2026-08-27
 分类: projects / 认证
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/supertokens/supertokens-core
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 3547e8550580fcc78dceb6641dc735fbfae3ecf8
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 12.1.1
 ---
 
 ## 是什么
 
-SuperTokens 是一个**开源、跑在你自己机器上的认证产品**。日常类比：像装一台自家用的指纹锁——不用月租云服务，钥匙是你的，门也是你的，但出厂自带门、锁、电池和换钥匙的工具，你不用自己拼。
+SuperTokens Core 是一个**用 Java 写成的自托管认证 HTTP 服务**。日常类比：银行金库——前台（各语言 SDK）负责说话和发邮件，金库只记账、发卡、验卡。你的应用不直接实现 session 轮换，而是打 Core 的 recipe API。
 
-它由两层组成：
+README 把整套拆成三块：Frontend SDK、Backend SDK、Core。**本文只绑定 Core** `v12.1.1`，不把 Node / React SDK 的 `SuperTokens.init` 当成这份源码。
 
-- **Core service**（Java 写的 HTTP 服务）：真正的认证逻辑——发 token、验密码、轮换 session
-- **SDK**（Node / Python / Go / Java）：跑在你的应用里，把 core 的 HTTP API 包装成开发者顺手用的方法
-
-每种登录方式（密码、魔法链接、Google OAuth、MFA）做成独立模块，叫 **Recipe**——你需要哪个就开哪个，不需要的不会拖累。
+Gradle 写明 `version = "12.1.1"`，Java toolchain 21，嵌入 Tomcat。默认 host `localhost`、port `3567`。
 
 ## 为什么重要
 
-不理解 SuperTokens 的位置，下面这些问题会持续困惑你：
+不理解固定 12.1.1，下面这些事会对不上：
 
-- 为什么 Auth.js / NextAuth 这种 library 写小项目够，规模一大就难受
-- 为什么 Clerk 试用爽快，但企业评估时 legal 和财务会拦下
-- 为什么 Keycloak 每个 SaaS 公司都听过，但很少人选它做 to-C 应用
-- 为什么"自托管 + 完整产品 + 多语言 SDK"这一档之前是空的
+- 为什么同一套登录能给 Node、Go、Python 用——Core 只暴露 HTTP，语言细节在 SDK 仓
+- 为什么 curl `POST /recipe/signin` 就能验邮箱密码，而不必在 Core 里找 SMTP
+- 为什么 refresh token 被重放会变成 `TokenTheftDetectedException`，而不只是“再发一张”
+- 为什么 `ee/` 和仓库其余部分不是同一份许可
 
 ## 核心要点
 
-SuperTokens 的设计靠 **三招**：
+固定 12.1.1 可以拆成四层：
 
-1. **Recipe 模式**：每种登录方式（EmailPassword / Passwordless / ThirdParty / MFA / Session）是独立模块，自己有业务逻辑、HTTP 路由、storage 接口，互不直接 import。类比：插座面板——每个 recipe 是一个插孔，按需插上即可。
+1. **Webserver + recipe API**：`Webserver` 挂上一组 `WebserverAPI`。每个 API 构造时写入 `rid`；请求头字段是 `rId`。EmailPassword 登录是 `POST /recipe/signin`。兼容版本走 `cdi-version` 头。
 
-2. **Core 不做 I/O**：Core 只生成 token、code、hash，不发邮件、不发短信。发送是 SDK 那一层的事。这让 core 容易测（不用 mock SMTP）也容易换语言（核心算法都在 core）。
+2. **Core 不做投递**：`EmailPassword.signUp` 哈希密码并入库；`generatePasswordResetToken` 只返回 token。本 revision 的 Core 源码不见 SMTP / SMS 发送——发信是 SDK 或调用方的事。
 
-3. **Token rotation 检测重放**：access token 里塞了 refresh token 的 hash。下次刷新时如果 hash 对不上数据库最新值，说明 refresh token 被偷过，整个 session 立刻撤销。
+3. **Session 哈希链**：`AccessToken.createNewAccessToken` 把 `refreshTokenHash1` 和 `parentRefreshTokenHash1` 放进 access token。refresh 时：当前 token 的双重 SHA-256 对上 DB 的 `refreshTokenHash2` 就发子代；parent 对上就 promote；否则抛 `TokenTheftDetectedException`。
 
-三招拼起来，让 core 既能装企业版的 multi-tenancy / SCIM，也能轻量到给个人项目用。
+4. **CDI >= 5.6 的 reuse 分类**：出现 `RECENT_PREV` / `ORPHANED_BRANCH` / `STALE_LINEAGE`。`recent_token_reuse_behaviour` 可把近期重用报成 `UNAUTHORISED`，注释写明 **session 仍会撤销**。默认 grace 30 秒。
 
-## 实践案例
+默认 access token 3600 秒，refresh token 144000 分钟。`ee/` 是 Enterprise license，其余 Apache 2.0。
 
-### 案例 1：Docker 起一个最小 core
+## 实践示例
+
+### 案例 1：探活 `/hello`
 
 ```bash
-docker run -p 3567:3567 \
-    -d registry.supertokens.io/supertokens/supertokens-postgresql:latest
 curl http://localhost:3567/hello
-# 期望返回 "Hello"
+# 期望正文包含 Hello
 ```
 
-`/hello` 是 core 的健康检查端点。能返回字符串就说明 Java 服务起来了，可以接 SDK。这是排查"卡在哪"的第一站。
+`HelloAPI.getPath()` 是 `/hello`，不要求 API key，也不要求 `cdi-version`。它会按 app 取 storage 并读一个测试 key。限流器阈值写在源码里；生产路径被限流时仍回 `Hello`，测试才可能看到 `RateLimitedHello`。这只能证明进程和 storage 还活着，不能证明登录配方已配置。
 
-随后用 SDK 接入 Next.js：
+### 案例 2：Core 上的邮箱密码登录
 
-```ts
-// 后端 init（每个 recipe 独立 init，互不干涉）
-SuperTokens.init({
-  supertokens: { connectionURI: "http://localhost:3567" },
-  appInfo: { appName: "demo", apiDomain: "...", websiteDomain: "..." },
-  recipeList: [EmailPassword.init(), Session.init()],
-});
+```bash
+curl -X POST http://localhost:3567/recipe/signin \
+  -H "cdi-version: 5.3" \
+  -H "rId: emailpassword" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"a@b.com","password":"secret"}'
 ```
 
-`recipeList` 是 Recipe 模式的体现——你想要哪个就 push 进数组，core 在路由时按 `rid` header 分发。
+`SignInAPI` 的 `rid` 是 `RECIPE_ID.EMAIL_PASSWORD`，路径 `/recipe/signin`。它规范化 email，再调 `EmailPassword` 验哈希。成功只说明 Core 认这组凭据；发 session cookie、CORS、`rid` 自动注入都在 SDK 仓，不在这份 revision。
 
-### 案例 2：Recipe 模式怎么让模块互不打架
-
-类比：各科室不互相打电话，只往前台登记本写一条规则；前台验票时按本子逐条查。
-
-```ts
-// supertokens-auth-react: emailverification recipe init
-SessionClaimValidatorStore.addClaimValidatorFromOtherRecipe(
-    EmailVerificationClaim.validators.isVerified(10)
-);
-```
-
-EmailVerification recipe 把自己的「邮箱已验证」检查规则登记进 Session 的中央 store（前台本）。Session 校验时遍历 store——recipe 之间**不直接调对方**，靠登记本间接联通。`10` 是缓存秒数，避免每次请求都打 core。
-
-### 案例 3：access token 里的 refresh hash 链
+### 案例 3：refresh 时的哈希链
 
 ```java
-// supertokens-core: AccessToken.createNewAccessToken
-payload.addProperty("refreshTokenHash1", refreshTokenHash1);
-payload.addProperty("parentRefreshTokenHash1", parentRefreshTokenHash1);
+// AccessToken.AccessTokenInfo.toJSONObject
+res.addProperty("refreshTokenHash1", this.refreshTokenHash1);
+res.addProperty("parentRefreshTokenHash1", this.parentRefreshTokenHash1);
 ```
 
-每张 access token 携带"当前 refresh token 的 hash + 上一代的 hash"，组成一条 hash 链。如果同一个 refresh token 被两个客户端同时用，server 一对比就发现链断裂——立刻判定 session 被劫持，撤销所有 token。这是 OAuth 2.0 Security BCP（RFC 9700）推荐的 refresh token rotation 做法。
-
-逐部分解释：
-
-- `refreshTokenHash1`：当前这条 refresh token 的 SHA256 hash，进 DB 也进 access token
-- `parentRefreshTokenHash1`：上一代 refresh token 的 hash，让 server 判断这是不是合法续期
-- 攻击者偷到 access token 也偷不到原始 refresh（DB 里只存 hash，token 也只塞 hash）
-- 双链断裂检测让"refresh token 被偷"从无法识别变成立即可识别
+新 access token 带着“当前 refresh 的 hash”和“上一代 hash”。`Session.refreshSessionHelper` 在事务里对比 DB 的 `refreshTokenHash2`：对上当前值就签发子代；对上 parent 就 promote 并重入 helper；对不上就 `TokenTheftDetectedException`。CDI >= 5.6 还会区分刚轮换掉的 token 和真正的 stale lineage。调用方看到 theft 响应时，服务端已经按版本决定是否 revoke。
 
 ## 踩过的坑
 
-1. **CORS 忘了开 allow-credentials**：浏览器会静默丢 cookie，前端永远登不上，控制台一句报错都没有。
-2. **Docker 网络写错**：core 在 docker-compose 里要用 service name 而不是 `localhost`，否则 SDK 连不上。
-3. **rid header 缺了**：core 用它判断请求路由到哪个 recipe，SDK 自动加，但你直接 curl 测试时要手动加。
-4. **多 recipe 顺序敏感**：claim validator 同 id 重复注册会被静默丢弃（兼容 React 18 strict mode），配错时也不会报错。
+1. **把 SDK `recipeList` 写进 Core 页**：`SuperTokens.init({ recipeList: [...] })` 属于 Backend SDK。Core 只按路径和 `rId` 分发 HTTP API。
+
+2. **以为 `/hello` 限流会 429**：生产路径仍回 200 `Hello`。用它做“就绪探针”可以，用它当容量信号不行。
+
+3. **漏 `cdi-version` 去打 recipe API**：`/hello` 不需要版本头；多数 recipe API 要。版本不够时行为会回到 legacy 分支，不能拿 5.6 的 reuse subtype 去解释老客户端。
+
+4. **把 `recent_token_reuse_behaviour=UNAUTHORISED` 当成“不撤 session”**：源码注释写明只改报告，不改撤销。
+
+5. **把 `ee/` 当 Apache 2.0**：`LICENSE.md` 把 `ee/` 单独划走。多租户 / 企业能力要以该目录的许可证为准。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 中型产品需要自托管 + 完整认证（密码 / 魔法链接 / OAuth / MFA 同时存在）
-- 有合规要求"用户数据必须在自己 DB 里"
-- 团队不止 JS，还有 Python / Go 后端要共享 session
+
+- 需要自托管、用户数据在自己的库，并且不止一种后端语言
+- 要把登录配方和 session 轮换做成独立服务，而不是嵌入式 library
+- 关心 refresh token 重放能否在服务端被判定为 theft
 
 **不适用**：
-- 个人项目只要 Google 登录 + session → 直接 Auth.js / better-auth
-- 完全不想运维 → Clerk / Auth0
-- 企业 SSO + LDAP + SAML + 复杂 ACL → Keycloak（OIDC 全套）
-- 极度定制 / 想自己写一切 → Lucia 这种纯 library
 
-## 历史小故事（可跳过）
+- 只要 TypeScript 里一行 `betterAuth()`——那是 [[better-auth]]
+- 完全不想运维 Java 进程——看 [[clerk]] 或托管 Core
+- 把本文的 curl 示例当成已验证的生产接入——未启动 Core，也未跑测试
+- 需要完整 SSO / LDAP 套件时，先核对本 revision 实际暴露的 API，不要外推成 Keycloak 替代
 
-- **2020**：团队判断 Auth0 数据锁定 + Keycloak 老派笨重之间缺"自托管 + 完整产品"这一档
-- **2021**：Java core 开源，先支持 Node SDK 和 EmailPassword recipe
-- **2022-2023**：陆续补齐 Passwordless / ThirdParty / MFA / dashboard，Python / Go SDK 跟上
-- **2024**：multi-tenancy / SCIM / 高级 dashboard 走企业版，OSS 保留单租户主功能（典型 open-core）
-- 之后路线：把 Recipe 模式延伸到 audit log / consent / device management
-- 与 Lucia / better-auth 这类纯 library 阵营形成对照：一边是"自托管 service + 多语言"，一边是"嵌入式 + JS-only"
-- 与 Auth0 / Clerk 形成对照：开放 schema + 数据落本地 DB，迁出成本只是 CSV 导出加一个 SQL 脚本
+## 固定版本边界
+
+- 本文绑定 `supertokens/supertokens-core@3547e855...`，Gradle 版本 `12.1.1`。
+- 只覆盖 Core；Frontend / Backend SDK 是相邻仓库，不在本 receipt 里。
+- 默认 port `3567`，access token 3600 秒，refresh token 144000 分钟，grace 30 秒。
+- `ee/` Enterprise，其余 Apache 2.0。
+- 本文未编译 Java、未启动 Tomcat、未打真实登录，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **Recipe 模式是正交化设计的工程化**——每个登录方式独立到目录、storage、HTTP 路由层面，可迁移到任何"功能多变、组合维度高"的领域（评论审核、推送渠道、payment 方式）
-2. **Core 不做 I/O 是降低耦合的关键**——把发邮件 / 发短信推到 SDK 层，core 只输出"应该发的内容"
-3. **Refresh token hash 链是检测被偷凭证最便宜的办法**——不需要 token blocklist，不需要分布式状态，只要一条 hash 链
-4. **open-core 商业化在代码里能看到清楚的"功能墙"**——OSS 保留单实例主功能，企业版加 multi-tenancy / SCIM / 高级 dashboard
+1. **产品型认证常把“算法核心”和“IO / UI”拆开**——Core 发卡，SDK 送信。
+2. **recipe 在 Core 里是 HTTP 面，不是 JS 模块数组**——路径 + `rId` + CDI 版本才是合同。
+3. **refresh rotation 的可用性来自哈希链，不是 blocklist**——对不上就 theft。
+4. **open-core 的墙写在目录和许可证上**——`ee/` 不能按 Apache 2.0 默认条款使用。
+
+## 应用型自测
+
+1. 对生产 Core 打爆 `/hello` 限流，响应是 429 还是仍可能是 `Hello`？
+2. `EmailPassword.generatePasswordResetToken` 会不会直接发重置邮件？
+3. CDI >= 5.6 且 `recent_token_reuse_behaviour=UNAUTHORISED` 时，重放刚轮换掉的 refresh token，session 还会被撤吗？
+
+检查点：
+
+1. 生产路径仍回 `Hello`；测试才可能看到 `RateLimitedHello`。
+2. 不会。Core 只生成 token，投递不在本仓。
+3. 会。该配置只改异常类型，注释写明仍 revoke。
 
 ## 延伸阅读
 
-- 官网与文档：[supertokens.com/docs](https://supertokens.com/docs)（架构图与 recipe 配置全在这里）
-- 源码精读：[supertokens-core](https://github.com/supertokens/supertokens-core) 重点看 `session/` 和 `passwordless/` 两个目录
-- OAuth2 refresh rotation 规范：[RFC 9700（OAuth 2.0 Security BCP）](https://datatracker.ietf.org/doc/html/rfc9700)
-- [[auth-js]] —— 对比 library 形态的认证方案
-- [[clerk]] —— 对比 SaaS 形态的认证产品
+- 架构说明：[README · Architecture](https://github.com/supertokens/supertokens-core#architecture)
+- 固定源码：[supertokens/supertokens-core](https://github.com/supertokens/supertokens-core) —— 本文绑定提交 `3547e8550580fcc78dceb6641dc735fbfae3ecf8`
+- OAuth 2.0 安全 BCP：[RFC 9700](https://datatracker.ietf.org/doc/html/rfc9700)
+- [[better-auth]] —— 嵌入式 TS library，对比独立 Core
+- [[auth-js]] —— 进程内 library，没有这层 HTTP 服务
 
 ## 关联
 
-- [[auth-js]] —— Auth.js（NextAuth）是 library，跑在 API route 里，没有独立 service
-- [[better-auth]] —— Lucia 后继者，TypeScript-first，比 SuperTokens 轻但功能少
-- [[clerk]] —— SaaS 认证，开箱即用 UI，但用户数据锁在 Clerk 数据库
-- [[lucia]] —— 纯 library，思路漂亮但密码重置 / OAuth callback 都得自己写
-- [[express]] —— SuperTokens Node SDK 最常见的宿主之一，中间件形态接入
+- [[better-auth]] —— 同一主题的嵌入式方案；没有独立 Java 进程
+- [[auth-js]] —— Next.js 进程内 Auth；session 默认值随 adapter 变
+- [[clerk]] —— 托管用户表，对标 README 里的 Auth0 / Cognito 位置
+- [[lucia]] —— 学习资源，不再提供可安装框架
+- [[express]] —— Node SDK 常见宿主；不在本 Core revision 内
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[better-auth]] —— better-auth — 用 plugin 注册表把登录能力接到同一条 Request 上

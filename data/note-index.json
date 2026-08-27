@@ -37006,7 +37006,7 @@
       "id": "projects::better-auth",
       "area": "projects",
       "slug": "better-auth",
-      "title": "better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架",
+      "title": "better-auth — 用 plugin 注册表把登录能力接到同一条 Request 上",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -37019,13 +37019,13 @@
         "raw_category": "框架与 SDK"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/better-auth/",
       "atlas": {
@@ -60306,7 +60306,7 @@
       "id": "projects::supertokens",
       "area": "projects",
       "slug": "supertokens",
-      "title": "SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe",
+      "title": "SuperTokens — 自托管认证核心：用 HTTP recipe 拆开登录与会话",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -60319,13 +60319,13 @@
         "raw_category": "projects / 认证"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/supertokens/",
       "atlas": {

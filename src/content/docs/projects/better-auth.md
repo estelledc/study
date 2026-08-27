@@ -1,60 +1,33 @@
 ---
-title: better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
-来源: 'https://github.com/better-auth/better-auth'
-日期: 2026-05-30
+title: better-auth — 用 plugin 注册表把登录能力接到同一条 Request 上
+来源: https://github.com/better-auth/better-auth
+日期: 2026-08-27
 分类: 框架与 SDK
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/better-auth/better-auth
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: ba12fcdfa774ca27d417079dbac0b1b5894ccaf2
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 1.7.2
 ---
 
 ## 是什么
 
-better-auth 是一个**让你写一行 `betterAuth({ plugins: [...] })`，就同时拥有邮箱密码登录、GitHub/Google OAuth、二步验证、Passkey、组织管理**的 TypeScript 认证库。日常类比：像装电饭煲——你买的不是只会煮米饭的机器，而是一个空容器加几张菜单卡片，想煮什么就插对应卡片，机器面板上自动多几个按钮。
+better-auth 是一套**框架无关的 TypeScript 认证库**：你给它数据库和一组 option，它吐出吃标准 `Request` 的 `handler`，再按 plugin 往同一条路由上挂能力。日常类比：总机接线台——邮箱密码、GitHub、Passkey 都是分机，总机只认一种插头。
 
 你写：
 
 ```ts
 import { betterAuth } from "better-auth";
-import { passkey } from "@better-auth/passkey";
-
-export const auth = betterAuth({
-  database: db,
-  emailAndPassword: { enabled: true },
-  plugins: [passkey()],
-});
-```
-
-这一段后，服务端立刻有 `/api/auth/sign-in/email`、`/api/auth/sign-up/email`、`/api/auth/passkey/register` 等十几个 endpoint；前端再接上 `passkeyClient()` 后，`authClient.passkey.signIn()` 这种方法会出现在 IDE 自动补全里——你没写任何类型定义。这就是 better-auth 主打的"plugin 一装，类型自己长出来"。
-
-## 为什么重要
-
-不理解 better-auth 的 plugin 注册表 + adapter 抽象，下面几件事都没法解释：
-
-- 为什么不少 TS 项目会拿它和 Auth.js / Clerk 对比——Auth.js 偏 Provider/Adapter，Clerk 偏托管 SaaS，better-auth 则把自托管、插件和类型推导放在同一个包里
-- 为什么 better-auth 能同时跑在 Next.js / SvelteKit / Hono / Bun / Cloudflare Workers 上——它的 `handler(request)` 接收标准 `Request`，谁都能转给它
-- 为什么"装一个 plugin 就多一组方法"在 TS 里能做到——靠的是 declaration merging（声明合并）这种少见但工业级的语言机制
-- 为什么相同代码切换 ORM（Drizzle ↔ Prisma ↔ Kysely）只需改一行——adapter 把 CRUD 抽成统一接口
-
-## 核心要点
-
-better-auth 的设计可以拆成 **三层**：
-
-1. **Plugin 注册表（让类型穿透）**：每个 plugin 用 TypeScript 的 `declare module` 给中央 registry 加一个 key，主包通过 `keyof BetterAuthPluginRegistry` 反查所有已装 plugin，把方法挂到 `auth.api.*` 和 `authClient.*`。类比：每个插件自报家门贴一张便签，主包扫便签自动开窗口。
-
-2. **Adapter 抽象（让数据库可插拔）**：所有数据库操作走统一接口 `DBAdapter`（create/findOne/findMany/update/delete/transaction）。drizzle / prisma / kysely / mongo / memory 各自实现一份。类比：电源插头——墙上插座一种规格，电器都按规格做插头。
-
-3. **Endpoint pipeline（让 plugin 互相挂钩）**：每个 endpoint 都被包成统一签名 `(ctx) => Response`，并跑过 `before` / `after` hook 链。类比：流水线传送带，plugin 可以在传送带前后两端各加一个工人贴标签。
-
-三层加起来：plugin 之间互相不知道对方存在，但用户感受是"功能像内置一样齐全"。
-
-## 实践案例
-
-### 案例 1：5 行配出邮箱密码登录
-
-```ts
-// server.ts
-import { betterAuth } from "better-auth";
-import { drizzleAdapter } from "@better-auth/drizzle-adapter";
-import { db } from "./db";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: "pg" }),
@@ -62,13 +35,51 @@ export const auth = betterAuth({
 });
 ```
 
-**逐部分解释**：
+默认入口走 `auth/full.ts`，返回 `{ handler, fetch, api, $context }`。`handler` 与 `fetch` 是同一个函数。`basePath` 默认 `/api/auth`。本文绑定 `better-auth@1.7.2`（workspace 内 `@better-auth/core@1.7.2`）。
 
-- `database: drizzleAdapter(...)` 告诉 better-auth 用 Drizzle 操作 PostgreSQL
-- `emailAndPassword: { enabled: true }` 这一开关就让主包内置的 `/sign-in/email`、`/sign-up/email`、`/forget-password` 全部 endpoint 上线
-- 不需要再写 controller，handler 已经是 `auth.handler(request)`，框架那边只 `app.all("/api/auth/*", auth.handler)` 一行即可
+## 为什么重要
 
-### 案例 2：加 GitHub OAuth + Passkey
+不理解固定 1.7.2，下面这些事会对不上：
+
+- 为什么同一份 `auth.handler(request)` 能接到 Next.js、Hono 或裸 Node——它只吃 Web 标准 `Request`
+- 为什么写了 `sign-in/email` 路由，不把 `emailAndPassword.enabled` 打开仍会失败
+- 为什么装 plugin 后 `auth.api.*` 会多方法——靠 `BetterAuthPluginRegistry` 的 declaration merging，不是运行时“扫便签”
+- 为什么换 Drizzle / Prisma / Kysely 只需换 adapter——`DBAdapter` 把 CRUD 收成统一接口
+
+## 核心要点
+
+固定 1.7.2 可以拆成四层：
+
+1. **入口与 per-request clone**：`createBetterAuth` 先 `init`，再把 `handler` 包一层。动态 `baseURL` 或缺省 `baseURL` 时，会 clone context，避免并发请求把 `trustedOrigins` / host 写进共享状态。
+
+2. **Endpoint 合并**：`getEndpoints` 先放内置的 `signInEmail` / `signUpEmail` / `signInSocial` / session 等，再 `reduce` plugin `endpoints`。后注册的同名 key 覆盖前者。路径+方法冲突只由 `checkEndpointConflicts` 打 error log。
+
+3. **Adapter**：`DBAdapter` 提供 `create` / `findOne` / `findMany` / `count` / `update` / `updateMany` / `delete` / `deleteMany`，以及 `consumeOne`、`incrementOne` 和可选 transaction。公开 Drizzle 入口是 `better-auth/adapters/drizzle`。
+
+4. **Plugin 类型**：每个 plugin `declare module "@better-auth/core"` 给 `BetterAuthPluginRegistry` 加一个 id。这是编译期合并，不是运行时注册表扫描。
+
+Router 用 `better-call` 的 `createRouter`，全局挂 `originCheckMiddleware`，默认只接受 `application/json`。
+
+## 实践示例
+
+### 案例 1：打开邮箱密码
+
+```ts
+import { betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+
+export const auth = betterAuth({
+  database: drizzleAdapter(db, { provider: "pg" }),
+  emailAndPassword: { enabled: true },
+});
+
+// 框架侧
+app.all("/api/auth/*", (c) => auth.handler(c.req.raw));
+```
+
+`emailAndPassword.enabled` 默认 `false`。路由始终注册，但 `POST /sign-in/email` 未开启时抛 `EMAIL_PASSWORD_DISABLED`。密码存在 `providerId === "credential"` 的 account 上。session `expiresIn` 默认 7 天，`updateAge` 默认 1 天。
+
+### 案例 2：GitHub + Passkey
 
 ```ts
 import { betterAuth } from "better-auth";
@@ -78,7 +89,6 @@ import { passkeyClient } from "@better-auth/passkey/client";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: "pg" }),
-  emailAndPassword: { enabled: true },
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID!,
@@ -93,13 +103,9 @@ export const authClient = createAuthClient({
 });
 ```
 
-**逐部分解释**：
+社交登录走 `POST /sign-in/social`。Passkey 在独立包 `@better-auth/passkey@1.7.2`，带 `./client` 导出。类型能补全，是因为 plugin 的 declaration merging，不是运行时生成 `.d.ts`。
 
-- `socialProviders.github` 自动产生 `/sign-in/social?provider=github` 与回调；PKCE / state / nonce 都不需要你管
-- 服务端 `plugins: [passkey()]` 负责 Passkey 注册/登录 endpoint；客户端 `passkeyClient()` 负责把 `authClient.passkey.register()` 与 `authClient.passkey.signIn()` 挂到类型里
-- 因为 passkey 在独立子包 `@better-auth/passkey`，不用 Passkey 的项目体积不增加
-
-### 案例 3：多租户组织
+### 案例 3：组织表与 session 字段
 
 ```ts
 import { organization } from "better-auth/plugins";
@@ -109,71 +115,80 @@ export const auth = betterAuth({
   emailAndPassword: { enabled: true },
   plugins: [organization()],
 });
-
-// 客户端
-await authClient.organization.create({ name: "Acme" });
-await authClient.organization.inviteMember({ email: "a@b.com", role: "admin" });
 ```
 
-`organization()` plugin 在数据库里自动建 `organization` / `member` / `invitation` 三张表，并把 `auth.api.createOrganization`、`acceptInvitation` 等十几个方法挂出来——你没写任何路由代码。
+默认 schema 含 `organization` / `member` / `invitation`，并给 session 加 `activeOrganizationId`。`team` / `teamMember` 只在 `teams: { enabled: true }` 时出现。邀请、成员、权限是 plugin endpoints，不是主包内置路由。
 
 ## 踩过的坑
 
-1. **`baseURL` / `trustedOrigins` 配错——cookie 不写入或被浏览器拒绝**：开发环境 `localhost` 正常但生产环境 `*.example.com` 死活登不上，根因常是 `baseURL` 没改或 `trustedOrigins` 没加子域名。
+1. **把 `enabled: true` 当成“多注册几个路由”**：路由本来就在。开关管的是运行时拒绝，不是路由表。
 
-2. **不同适配器事务支持差异**：MySQL 没有 `INSERT ... RETURNING`，drizzle adapter 内部走 5 级降级；切 ORM 后老 plugin 的 schema 迁移命令要重跑（`npx better-auth migrate`）。
+2. **漏 `nextCookies()` 或没放最后**：`better-auth/next-js` 的 `nextCookies()` 在 after hook 把 `Set-Cookie` 抄进 `cookies()`。RSC 且没有 `next-action` 时会跳过 session refresh，避免只读渲染写 cookie。
 
-3. **两个 plugin 注册同一个 registry key**：TypeScript declaration merging 不会报错，但运行时后注册的覆盖前注册的。如果你 fork 某 plugin 自己改名，记得 `id` 字段也改。
+3. **`baseURL` / `trustedOrigins` 配错**：cookie 默认 `httpOnly` + `SameSite=Lax`。生产 host 与 trusted origin 不一致时，浏览器会拒收 cookie；动态 `baseURL` 必须按请求 clone，不能写进共享 context。
 
-4. **SSR / Edge Runtime 写 cookie 行为不同**：Next.js Server Action 与 Route Handler 写 cookie 的 API 不一样；用错容器框架专属的 helper（如 `nextCookies()`）会得到"登录成功但下一次请求又是匿名"的诡异表现。
+4. **MySQL + `generateId: false`**：Drizzle adapter 写明 MySQL 没有 `INSERT/UPDATE/DELETE ... RETURNING`，会走 best-effort fallback。切 provider 后要重看 schema 与迁移，不能假设 Postgres 语义。
+
+5. **两个 plugin 抢同一 path**：后注册覆盖同名 endpoint key；路径冲突只打日志。fork plugin 时连 `id` 一起改。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- TypeScript 后端，需要邮箱密码 + 几种 OAuth + 可能未来加 Passkey/2FA
-- 自托管开源、不想被 Clerk/Auth0 价格锁定
-- 多框架项目（同一份认证逻辑跑 Next.js + Hono + Bun）
-- 需要组织/SSO/API key 等企业向能力但预算紧
+- TypeScript 后端，要把邮箱密码、OAuth、Passkey 或组织放进同一 `handler`
+- 自托管、数据留在自己的 ORM / 数据库
+- 多框架共用一份认证逻辑（标准 `Request` 输入）
 
 **不适用**：
 
-- 团队完全不写 TS（better-auth 类型推导是核心卖点，纯 JS 用得别扭）
-- 只是个 hackathon demo——直接 `next-auth` 或干脆用 Clerk 免费档更快
-- 极端轻量场景只要"一个 session"——Lucia 残骸或手写 50 行更轻
-- 重度依赖 SAML 老企业 IDP——better-auth SSO plugin 还在演进，老牌 WorkOS / Auth0 更稳
+- 只要托管 UI 和云端用户表——那是 [[clerk]] 的合同
+- 要独立 Java 核心服务 + 多语言 SDK——看 [[supertokens]]
+- 团队不写 TypeScript，或只想抄 30 行 session——plugin / 类型合并没有收益
+- 需要把静态阅读写成“已跑通 OAuth / Passkey”——本文没有运行证据
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2024 年初**：Bekacru（Bereket Engida，埃塞俄比亚开发者）受不了 Auth.js v5 难扩展、Clerk 涨价、Lucia 作者宣布"自己写 session"的处境，开始造 better-auth
-- **2024 年中**：在 X（Twitter）发 demo 视频——5 行加 Passkey、装 plugin 类型自动出现，走红开发者圈
-- **2025 年**：进入 Y Combinator 加速器，发布 1.0 稳定版，覆盖 Next.js / SvelteKit / Hono / Bun / Cloudflare 等几乎所有主流 JS 运行时
-- **2026 年**：stars 28k+，社区贡献的 plugin（Stripe / SIWE / Magic Link）超过 30 个，成为 TS 后端默认开源认证选择之一
+- 本文绑定 `better-auth/better-auth@ba12fcdf...`，包版本 `1.7.2`。
+- 默认入口是 full mode（带 Kysely）；`better-auth/minimal` 是另一条初始化链。
+- Passkey 不在主包 exports 里，而在 `@better-auth/passkey`。
+- 本文未安装依赖、未跑上游测试、未走真实登录或 cookie，状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **"plugin 是一等公民" + "类型穿透" 是 TS-first 框架的核心模式**——declaration merging 这种语言机制看着冷门，但用对了能让"装 plugin 就多方法"无侵入实现
-2. **Adapter 抽象的边界要划得狠**——数据库五花八门，但 better-auth 只暴露 6 个 CRUD 方法，复杂的方言细节锁在 adapter 内部
-3. **跨框架靠"标准化输入"**——`handler(request: Request)` 接受标准 Web API 的 `Request`，谁能转换出 Request 谁就能用
-4. **开源认证想活下去，要功能完整 + 自托管开源 + 跨框架——三条缺一不可**
+1. **“装上就多方法”来自类型合并，不是魔法运行时**——`BetterAuthPluginRegistry` 是 declaration merging。
+2. **开关和路由表是两件事**——邮箱密码路由默认在，`enabled` 只决定能不能用。
+3. **跨框架靠标准 Request，跨 ORM 靠 adapter**——`handler(request)` 与 `DBAdapter` 把两边封死。
+4. **Next.js cookie 必须当独立 plugin 读**——RSC / Route Handler / Server Action 的写 cookie 合同不同。
+
+## 应用型自测
+
+1. 不写 `emailAndPassword.enabled`，直接 `POST /api/auth/sign-in/email`，固定 1.7.2 会怎样？
+2. 两个 plugin 注册同一 endpoint key，TypeScript 会不会编译失败？
+3. 只在 RSC 里调 `auth.api.getSession`，且装了 `nextCookies()`，session 一定会滑动续期吗？
+
+检查点：
+
+1. 路由还在，但会得到 `EMAIL_PASSWORD_DISABLED`。
+2. 不会。后注册覆盖前者；路径冲突只打日志。
+3. 不一定。RSC 且非 Server Action 时，`nextCookies` 会跳过 refresh。
 
 ## 延伸阅读
 
-- 文档：[better-auth 官方文档](https://www.better-auth.com/docs)（plugin 列表 + 框架接入指引）
-- 视频：[Theo - better-auth review](https://www.youtube.com/results?search_query=theo+better-auth)（看一线 TS 开发者如何评价）
-- 源码：[better-auth GitHub](https://github.com/better-auth/better-auth)（pnpm workspace 21 子包）
-- [[auth-js]] —— 前辈 + 灵感源；better-auth 的 plugin 模型直接受其 Provider/Adapter 抽象启发
-- [[drizzle]] —— 默认推荐 ORM，drizzle adapter 是最完整的实现
+- 文档：[better-auth.com/docs](https://www.better-auth.com/docs)
+- 固定源码：[better-auth/better-auth](https://github.com/better-auth/better-auth) —— 本文绑定提交 `ba12fcdfa774ca27d417079dbac0b1b5894ccaf2`
+- [[supertokens]] —— 独立 Core 服务，对比嵌入式 library
+- [[auth-js]] —— Provider / Adapter 前辈；session 默认值合同不同
+- [[clerk]] —— 托管 SaaS，用户表不在你这边
 
 ## 关联
 
-- [[auth-js]] —— Auth.js v5 把 Provider/Adapter 双抽象做到工业级；better-auth 把"插件"这一层从 callback 升级成一等公民
-- [[drizzle]] —— Drizzle 的"用 TS 类型描述 schema"哲学和 better-auth 的"plugin 注册类型"思路同根
-- [[prisma]] —— Prisma adapter 让 better-auth 也能跑在 Prisma 项目；adapter 抽象把 ORM 选择留给用户
-- [[hono]] —— Hono 在 Bun / Cloudflare Workers 等 edge 运行时的覆盖，让 better-auth 的"标准 Request 输入"思路有了真实价值
-- [[next-js]] —— Next.js Server Actions / Route Handler 的 cookie 行为差异是 better-auth 特意做的兼容点
-- [[trpc]] —— 同样是"让 TS 类型穿透前后端"的思路，better-auth 借鉴了它的类型推导经验
-- [[zod]] —— better-auth 的 endpoint 输入校验默认用 zod，与生态主流对齐
+- [[supertokens]] —— 自托管产品：Core HTTP 服务 + 多语言 SDK
+- [[auth-js]] —— 同一赛道的 library；JWT/JWE 与 Credentials 边界不同
+- [[lucia]] —— 已降级为学习资源，不再是可安装框架
+- [[clerk]] —— 云端用户表 + 开箱 UI
+- [[drizzle]] —— 固定版本推荐的 adapter 之一
+- [[hono]] —— 把 `Request` 转给 `auth.handler` 的常见宿主
+- [[next-js]] —— `nextCookies()` 专门补的 cookie / RSC 边界
 
 ## 反向链接
 
@@ -183,4 +198,4 @@ await authClient.organization.inviteMember({ email: "a@b.com", role: "admin" });
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 - [[supabase]] —— Supabase — Firebase 的开源替代
-- [[supertokens]] —— SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
+- [[supertokens]] —— SuperTokens — 自托管认证核心：用 HTTP recipe 拆开登录与会话
