@@ -4,8 +4,8 @@
   "summary": {
     "total": 970,
     "by_status": {
-      "benchmark-aligned": 99,
-      "needs-evidence": 871
+      "benchmark-aligned": 101,
+      "needs-evidence": 869
     }
   },
   "projects": [
@@ -17388,25 +17388,21 @@
       "slug": "rollup",
       "title": "Rollup — ESM 优先的打包器",
       "source": "https://github.com/rollup/rollup",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "roo-code",
@@ -17484,25 +17480,21 @@
       "slug": "rspack",
       "title": "rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态",
       "source": "https://github.com/web-infra-dev/rspack",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "rt-thread",
