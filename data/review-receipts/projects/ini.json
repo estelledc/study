@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "ini",
+    "digest_sha256": "d85ecf4b3373febb19c748a9114aadb2294c7558b6ed840693f861274fbb1e56"
+  },
+  "source_revision": "847941ced4fb8465f0ccb383fd8b15c7e5aa09fc",
+  "research_input_sha256": "fcba7fb52daf2f752a8b24393743706efcd24390a38e9c27980e815dc3c4ee93",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ik",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates section nesting, true/false/null-only coercion, bracketed arrays, and __proto__ drop."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ik",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "lib/ini.js encode/decode/safe/unsafe and proto test were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ik",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Binds v7.0.0 tag matching npm gitHead; engines-only breaking change disclosed; bundle not measured."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

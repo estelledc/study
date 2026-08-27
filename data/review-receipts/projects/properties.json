@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "properties",
+    "digest_sha256": "dd450d0e496b68f0165ba977c0792b07b2808993ed524ed917c73695668b4634"
+  },
+  "source_revision": "bb04b570d2216d75ca5631eb1d095f443b5f6a40",
+  "research_input_sha256": "fcba7fb52daf2f752a8b24393743706efcd24390a38e9c27980e815dc3c4ee93",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-ik",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Separates Java defaults, optional INI sections, cast/variables/include, and stringify limits."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-ik",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "read/parse/write/stringify/escape were inspected; path/include callbacks were not executed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-ik",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Binds untagged v1.2.1 commit; npm gitHead is absent; later docs-only master commits disclosed."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T11:10:00.000Z"
+}

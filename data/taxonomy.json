@@ -2012,6 +2012,10 @@
       "topic_id": "projects-cli-tools"
     },
     {
+      "note_id": "projects::ini",
+      "topic_id": "projects-general-developer-tools"
+    },
+    {
       "note_id": "projects::inngest",
       "topic_id": "projects-infrastructure-utilities"
     },
@@ -2314,6 +2318,10 @@
     {
       "note_id": "projects::prometheus",
       "topic_id": "projects-monitoring-and-time-series"
+    },
+    {
+      "note_id": "projects::properties",
+      "topic_id": "projects-general-developer-tools"
     },
     {
       "note_id": "projects::prosemirror",

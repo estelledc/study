@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 PARALLEL writer IK：ini + properties
+
+- supervisor 状态：writer epoch `complete`；一个 PR，不 merge。
+- 起始 ref：`2b64a3ebffee19b72d570bfe70b8c0547069ae16`（`origin/main`）。
+- objective：为缺失的 INI / `.properties` 双子补齐 `ini` 与 `properties` 两页，绑定可达固定 revision，证据上限 `STATIC_REVIEW` / `UNVERIFIED`。
+- scope：两篇新项目页、共享审查文档 `docs/ini-properties-source-review-20260827-ik.md`、2 份 generation 1 receipt、taxonomy 两条 curated assignment、派生 atlas / site-state / 公开计数、本交接；本机 gitignored `research-worktrees/` 的 2 个 blob-filtered clone。未安装上游依赖、未运行上游测试、未测 bundle。
+- activated_by：`explicit-user-parallel-writer-ik-2026-08-27`。
+- detector fingerprint：目录无 `ini.md` / `properties.md`；开放 PR #277 已占用 `toml` / `smol-toml`；HM–ID 由 intern 占用，本车道为 IK。
+- external delta 计数：本 PR（push + PR 已授权；merge / deploy 未授权），D 轴不提升。
+- 已完成切片：
+  1. `ini` 绑定 tag `v7.0.0` → `847941ced4fb8465f0ccb383fd8b15c7e5aa09fc`（与 npm `gitHead` 一致）。
+  2. `properties` 绑定无 tag 的版本提交 `bb04b570d2216d75ca5631eb1d095f443b5f6a40`；npm 无 `gitHead`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt。
+- 验证结果：两页 `quality-gate.mjs` pass、0 advisory；`audit:content-contract` blocking 0；`audit:counts` / `audit:site-state` / `audit:wikilinks` / `audit:doc-lifecycle` / `git diff --check` 通过。不在 handoff 中复制易过期数字或 ETA。
+- budget：2 个 blob-filtered clone + 2 页静态源码新建；单 writer。
+- blocker：merge 与 Pages deploy 未授权；规模 baseline 仍超阈值，本轮未改 baseline。
+- stop conditions：本 epoch 完成后停止；不得继续发明下一对。
+- 下一次 wake 条件：owner review 本 PR，或另行授权 merge。
+- 下一条命令：查看本 PR；未授权前不要 merge。
+- superseded_by：`none`
+
 ## 2026-08-27 PARALLEL writer AE：ioredis + bullmq
 
 - status：writer epoch `complete`（CI 计数切片）；PR 待 review，未 merge。
