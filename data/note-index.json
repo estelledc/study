@@ -3,8 +3,8 @@
   "taxonomy_version": "taxonomy-v1",
   "stats": {
     "summary": {
-      "total": 2044,
-      "classified": 1997,
+      "total": 2045,
+      "classified": 1998,
       "unclassified": 47,
       "unknown_difficulty": 1975,
       "empty_description": 1970
@@ -18,8 +18,8 @@
         "empty_description": 1013
       },
       "projects": {
-        "total": 961,
-        "classified": 933,
+        "total": 962,
+        "classified": 934,
         "unclassified": 28,
         "unknown_difficulty": 961,
         "empty_description": 957
@@ -43654,6 +43654,37 @@
       }
     },
     {
+      "id": "projects::fuse.js",
+      "area": "projects",
+      "slug": "fuse.js",
+      "title": "Fuse.js — 用 Bitap 在浏览器里做模糊匹配",
+      "description": "用 Bitap 在浏览器里做模糊匹配，默认扫描字段而不是倒排索引。",
+      "difficulty": "intermediate",
+      "canonical_topics": [
+        "projects-infrastructure-utilities"
+      ],
+      "classification": {
+        "state": "classified",
+        "source": "curated-assignment",
+        "topic_id": "projects-infrastructure-utilities",
+        "raw_category": "搜索"
+      },
+      "trust": {
+        "contract_state": "v2",
+        "verification_status": "UNVERIFIED"
+      },
+      "freshness": {
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
+      },
+      "route": "/study/projects/fuse.js/",
+      "atlas": {
+        "chunk_id": "topic-projects-infrastructure-utilities-01",
+        "chunk_route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/"
+      }
+    },
+    {
       "id": "projects::fx",
       "area": "projects",
       "slug": "fx",
@@ -50921,7 +50952,7 @@
       "id": "projects::minisearch",
       "area": "projects",
       "slug": "minisearch",
-      "title": "minisearch — 浏览器里的小型全文搜索引擎",
+      "title": "MiniSearch — 浏览器里的倒排索引全文搜索",
       "description": "",
       "difficulty": "unknown",
       "canonical_topics": [
@@ -50931,16 +50962,16 @@
         "state": "classified",
         "source": "curated-assignment",
         "topic_id": "projects-infrastructure-utilities",
-        "raw_category": "projects"
+        "raw_category": "搜索"
       },
       "trust": {
-        "contract_state": "legacy-unverified",
+        "contract_state": "v2",
         "verification_status": "UNVERIFIED"
       },
       "freshness": {
-        "state": "UNKNOWN",
-        "reviewed_at": null,
-        "review_after": null
+        "state": "NOT_EVALUATED",
+        "reviewed_at": "2026-08-27",
+        "review_after": "2026-11-27"
       },
       "route": "/study/projects/minisearch/",
       "atlas": {
@@ -65713,7 +65744,7 @@
       "page": 1,
       "pages": 1,
       "route": "/study/atlas/projects/topic-projects-infrastructure-utilities-01/",
-      "entries": 44
+      "entries": 45
     },
     {
       "id": "topic-projects-internationalization-01",

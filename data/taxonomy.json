@@ -1972,6 +1972,10 @@
       "topic_id": "projects-animation"
     },
     {
+      "note_id": "projects::fuse.js",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::got",
       "topic_id": "projects-http-clients"
     },

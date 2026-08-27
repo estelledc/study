@@ -2,6 +2,32 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 客户端搜索双子 epoch（PARALLEL writer DE）
+
+- status：Program `active`；本地 writer epoch `complete`。
+- 起始 ref：`7a2384d09`（PR #54 merge 后的 `origin/main`）。
+- objective：把客户端搜索双子迁到固定源码的 `study-v2` 静态审查：既有 `minisearch` 页，以及仓库里原本不存在的 `fuse.js` 页。
+- scope：两页正文、2 份 generation 1 static receipt、共享审查文档 `docs/client-search-source-review-20260827-de.md`、taxonomy / atlas / note-index / site-state 派生、公开计数文案、本 handoff、2 个 ignored worktree；未安装上游依赖、未运行上游测试、未测 bundle 或性能 benchmark。
+- activated_by：`explicit-user-parallel-writer-de-20260827`。
+- detector fingerprint：`minisearch` 缺 `pinned_revision` / `evidence_boundary` / `self_test`；旧正文把默认 tokenize 写成 `split(/[\s\W]/)`，把 `replace` 写成立刻改 posting list，并把空查询与通配符混为一谈。`fuse.js` 无独立项目页，无法做横向对照。
+- external delta：用户授权 push + 单 PR；未 merge、未 deploy，D 轴在合并前不变。
+- 完成切片：
+  1. `minisearch` 绑定 tag `v7.2.0` / `3d239d1c...`（npm 无 `gitHead`，已披露），修正 Unicode 分词、默认关闭 prefix/fuzzy、`MiniSearch.wildcard`、BM25+ 默认与 `discard`/`replace` vacuum。
+  2. 新增 `fuse.js` 绑定 annotated tag `v7.5.0` / `45bac9fe...`；披露 npm `gitHead` `457fe762...` 只比 tag 多一次文档 bump。修正默认 Bitap 扫描、空查询列出全部、权重归一化、字段长度空白规则与构建开关。
+  3. 新增共享 `docs/client-search-source-review-20260827-de.md` 与两份 generation 1 static receipt；派生 site-state 首页“已对齐标杆”从 34 刷新为 36，项目总数 961→962。
+- acceptance checks：
+  - 两页 `quality-gate.mjs`：全部 pass、0 advisory。
+  - 两份 receipt：正文 digest、固定 revision 与 provenance digest 一致，evidence state 为 `UNVERIFIED`。
+  - `audit:content-contract`：0 blocking，`v2=105`。
+  - `audit:project-standard`：`benchmark-aligned=36`、`needs-evidence=926`、snapshot WRITTEN。
+  - `audit:counts` / `audit:site-state`：projects=962、papers=1083、total=2045。
+- budget：2 个小型 blob-filtered 本地 worktree + 2 页静态源码迁移 + 派生刷新；单 writer。
+- blocker（先于本切片存在）：规模 detector 在 main 已超 baseline；本轮新增 1 页 + receipt + 审查文档，未改 baseline 或阈值。
+- stop conditions：本轮已完成；merge 与 deploy 均需单独授权。按用户指令不 merge。
+- 下一次 wake 条件：PR review/CI 状态变化，或 owner 给出新的有限目标。
+- 下一条命令：`STUDY_CHANGED_FROM=7a2384d09 npm run verify:ci`。
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。

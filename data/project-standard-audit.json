@@ -2,10 +2,10 @@
   "schema_version": "study-project-standard-audit-v1",
   "standard": "research-benchmark-v1",
   "summary": {
-    "total": 961,
+    "total": 962,
     "by_status": {
-      "benchmark-aligned": 34,
-      "needs-evidence": 927
+      "benchmark-aligned": 36,
+      "needs-evidence": 926
     }
   },
   "projects": [
@@ -6937,6 +6937,26 @@
       ]
     },
     {
+      "slug": "fuse.js",
+      "title": "Fuse.js — 用 Bitap 在浏览器里做模糊匹配",
+      "source": "https://github.com/krisk/Fuse",
+      "status": "benchmark-aligned",
+      "checks": {
+        "source": true,
+        "pinned_revision": true,
+        "evidence_boundary": true,
+        "identity_and_value": true,
+        "beginner_explanation": true,
+        "mechanism_or_flow": true,
+        "runnable_practice": true,
+        "tradeoffs_and_limits": true,
+        "learning_outcomes": true,
+        "self_test": true,
+        "further_sources": true
+      },
+      "missing": []
+    },
+    {
       "slug": "fx",
       "title": "fx — JSON 的交互式查看器（jq 的 TUI 表亲）",
       "source": "https://github.com/antonmedv/fx",
@@ -12407,27 +12427,23 @@
     },
     {
       "slug": "minisearch",
-      "title": "minisearch — 浏览器里的小型全文搜索引擎",
+      "title": "MiniSearch — 浏览器里的倒排索引全文搜索",
       "source": "https://github.com/lucaong/minisearch",
-      "status": "needs-evidence",
+      "status": "benchmark-aligned",
       "checks": {
         "source": true,
-        "pinned_revision": false,
-        "evidence_boundary": false,
+        "pinned_revision": true,
+        "evidence_boundary": true,
         "identity_and_value": true,
         "beginner_explanation": true,
         "mechanism_or_flow": true,
         "runnable_practice": true,
         "tradeoffs_and_limits": true,
         "learning_outcomes": true,
-        "self_test": false,
+        "self_test": true,
         "further_sources": true
       },
-      "missing": [
-        "pinned_revision",
-        "evidence_boundary",
-        "self_test"
-      ]
+      "missing": []
     },
     {
       "slug": "mise",

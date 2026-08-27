@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "fuse.js",
+    "digest_sha256": "9d259cccf0888dc88d11883d368e75b6e9d6fb0cff04ba2c7d74d05bdb633dc3"
+  },
+  "source_revision": "45bac9fe2e71fe8c680c861a35a8b226c4ae6d5a",
+  "research_input_sha256": "a95919b9335ead5dfc6dd7aa9ff4fed4669206390e0a58f09666b20f711af083",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-de",
+      "decision": "PASS_WITH_NOTES",
+      "score": 92,
+      "warnings": [
+        "Explains Bitap scan versus inverted index, empty-query listing, normalised key weights, and application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-de",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "Fixed v7.5.0 Bitap defaults, KeyStore normalisation, field-norm whitespace, heap limit, and build-gated token/extended search were inspected; upstream tests were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-de",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "npm gitHead 457fe762 is a docs-only descendant of tag 45bac9fe; the note binds the reachable GitHub tag and stays UNVERIFIED."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T08:40:00.000Z"
+}

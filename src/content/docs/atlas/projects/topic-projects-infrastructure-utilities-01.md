@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "45 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 45 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -28,6 +28,7 @@ sidebar:
 | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | `feast` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | `flux` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | `freertos` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [Fuse.js — 用 Bitap 在浏览器里做模糊匹配](/study/projects/fuse.js/) | `fuse.js` | intermediate | UNVERIFIED | 用 Bitap 在浏览器里做模糊匹配，默认扫描字段而不是倒排索引 |
 | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | `grafana-tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) | `greenplum-db` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | `homebrew` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -35,7 +36,7 @@ sidebar:
 | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | `istio` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | `linkerd2` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | `mailcow` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
-| [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [MiniSearch — 浏览器里的倒排索引全文搜索](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | `moby` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | `nodemailer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |

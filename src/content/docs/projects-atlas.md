@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 961 个项目的分块地图 · 稳定 taxonomy · 自动生成
+description: 962 个项目的分块地图 · 稳定 taxonomy · 自动生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -12,10 +12,10 @@ sidebar:
 ## 总览
 
 <div class="study-stats-strip">
-  <div><strong>961</strong><span>项目总数</span></div>
-  <div><strong>933</strong><span>已有规范主题</span></div>
+  <div><strong>962</strong><span>项目总数</span></div>
+  <div><strong>934</strong><span>已有规范主题</span></div>
   <div><strong>28</strong><span>暂未收纳进主题路线</span></div>
-  <div><strong>97.1%</strong><span>分类覆盖率（933 / 961，已分类 / 总数）</span></div>
+  <div><strong>97.1%</strong><span>分类覆盖率（934 / 962，已分类 / 总数）</span></div>
 </div>
 
 ## 先选一条学习路径
@@ -73,7 +73,7 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 | CLI / 命令行工具 | CLI Tools | 69 | [第 1/1 组](/study/atlas/projects/topic-projects-cli-tools-01/) |
 | Terminal / 终端 | Terminal Tools | 6 | [第 1/1 组](/study/atlas/projects/topic-projects-terminal-tools-01/) |
 | Drag & Drop / Interaction | Drag and Drop Interaction | 3 | [第 1/1 组](/study/atlas/projects/topic-projects-drag-and-drop-interaction-01/) |
-| 其他基础设施 | Infrastructure Utilities | 44 | [第 1/1 组](/study/atlas/projects/topic-projects-infrastructure-utilities-01/) |
+| 其他基础设施 | Infrastructure Utilities | 45 | [第 1/1 组](/study/atlas/projects/topic-projects-infrastructure-utilities-01/) |
 | 区块链 | Blockchain | 59 | [第 1/1 组](/study/atlas/projects/topic-projects-blockchain-01/) |
 | 嵌入式系统 | Embedded Systems | 54 | [第 1/1 组](/study/atlas/projects/topic-projects-embedded-systems-01/) |
 | 通信与多媒体 | Communication and Media | 77 | [第 1/1 组](/study/atlas/projects/topic-projects-communication-and-media-01/) |
@@ -97,4 +97,4 @@ Atlas 不替代精选路线。零基础读者先从下面六条路径选一条�
 
 - difficulty 未知：961
 - description 为空：957
-- sidecar 主键：961 个唯一 `area::slug`
+- sidecar 主键：962 个唯一 `area::slug`
