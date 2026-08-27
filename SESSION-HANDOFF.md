@@ -2,6 +2,27 @@
 
 > 状态：当前接班入口。旧的批量生产 session 快照已失效，不得用于恢复自动循环；持续运行使用只读 supervisor + 有界 writer epoch。
 
+## 2026-08-27 Parallel writer CD：apollo-client + urql
+
+- status：writer epoch `complete`；`STATIC_REVIEW` / `UNVERIFIED`；待 review，不自合并。
+- 起始 ref：`042f60a8`（origin/main）。
+- objective：新建 GraphQL 客户端对 `apollo-client` 与 `urql`，绑定可达固定 revision。
+- scope：两页正文、2 份 generation 1 receipt、`docs/graphql-client-source-review-20260827-cd.md`、atlas / note-index / project-standard / site-state / 公开计数文案、本 handoff；本机 gitignored `research-worktrees/`。未安装上游依赖、未发请求、未跑上游测试或 bundle。
+- activated_by：`explicit-user-parallel-writer-cd-2026-08-27`。
+- detector fingerprint：仓库原先没有这两页；开放 PR 未占用这两个 slug；`graphql-yoga` / `trpc` 已在 PR #68，故不走 fallback。
+- external delta：按授权形成 1 个 PR；未 merge、未 deploy，D 轴在 merge 前不变。
+- 完成切片：
+  1. `apollo-client` 绑定 `@apollo/client@4.2.12` / `a4a170f1...`（npm `gitHead` 与 tag 解引用一致）。写清必填 `cache`+`link`、默认 `cache-first`/`errorPolicy: none`、`client.query` 拒绝 `cache-and-network`、默认 identify `__typename:id|_id`、`CombinedGraphQLErrors`。
+  2. `urql` 绑定 `urql@5.0.4` / `1eb11fcd...`（工作区 `@urql/core@6.0.3`；core tag `d510a9a1...` 为祖先）。写清必填 `exchanges`、document cache `Operation.key`、`__typename` 失效与 `additionalTypenames`、`useQuery` 元组、`preferGetMethod: within-url-limit`。
+  3. 新增共享审查文档与两份 STATIC_REVIEW receipt；派生计数 projects 961→963，`benchmark-aligned` 20→22，v2 89→91。
+- acceptance checks：两页 `quality-gate.mjs` pass、0 advisory；`audit:counts` / `audit:content-contract` / `audit:project-standard` / `audit:wikilinks` / `audit:site-state` / `git diff --check` 通过。`verify:ci` 在开 PR 后跑。
+- budget：2 个 blob-filtered worktree + 2 页新建；单 writer。
+- blocker：merge / deploy 未授权。`benchmark-site --compare` 的 tracked_files 超限是 main 既有 detector，本轮未改 baseline。
+- stop conditions：本轮写入结束；不自合并。
+- 下一次 wake 条件：本 PR 的 CI/review 变化，或 owner 授权 merge。
+- 下一条命令：`STUDY_CHANGED_FROM=042f60a8 npm run verify:ci`
+- superseded_by：`none`。
+
 ## 2026-08-27 表单主题组收口 epoch 8
 
 - status：Program `active`；本地 writer epoch 8 `complete`；epoch 7 的“三批无 external delta”暂停门由用户 2026-08-27 显式重授权解除，本轮按授权产生 external delta（push + PR）。
