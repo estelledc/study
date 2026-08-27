@@ -2204,6 +2204,10 @@
       "topic_id": "projects-web-frameworks"
     },
     {
+      "note_id": "projects::netlify-edge-functions",
+      "topic_id": "projects-infrastructure-utilities"
+    },
+    {
       "note_id": "projects::next-intl",
       "topic_id": "projects-internationalization"
     },
@@ -2558,6 +2562,10 @@
     {
       "note_id": "projects::vercel-ai",
       "topic_id": "projects-ai-applications-and-agent-platforms"
+    },
+    {
+      "note_id": "projects::vercel-edge",
+      "topic_id": "projects-infrastructure-utilities"
     },
     {
       "note_id": "projects::victoriametrics",

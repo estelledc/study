@@ -1,6 +1,6 @@
 ---
 title: "其他基础设施 · 项目 · 第 1 组"
-description: "44 条 其他基础设施 Atlas 分块"
+description: "46 条 其他基础设施 Atlas 分块"
 sidebar:
   hidden: true
 ---
@@ -9,7 +9,7 @@ sidebar:
 
 [返回项目全景索引](/study/projects-atlas/)
 
-本分块共 44 条，稳定上限为 100 条。
+本分块共 46 条，稳定上限为 100 条。
 
 | 项目 | Slug | 难度 | 可信状态 | 简介 |
 |---|---|---|---|---|
@@ -38,6 +38,7 @@ sidebar:
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | `minisearch` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | `mise` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | `moby` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [@netlify/edge-functions — 只提供类型合同的边缘函数入口包](/study/projects/netlify-edge-functions/) | `netlify-edge-functions` | beginner | UNVERIFIED | 介绍 @netlify/edge-functions 4 |
 | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | `nodemailer` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | `nvidia-mig` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | `openmeetings` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
@@ -57,3 +58,4 @@ sidebar:
 | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | `tekton` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | `tempo` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | `unstorage` | unknown | UNVERIFIED | 暂无独立描述；可先从标题与正文定位开始。 |
+| [@vercel/edge — 把中间件指令收成 next / rewrite 的兼容再导出层](/study/projects/vercel-edge/) | `vercel-edge` | beginner | UNVERIFIED | 介绍 @vercel/edge 1 |
