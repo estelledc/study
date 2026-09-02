@@ -1,16 +1,27 @@
 ---
-title: Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+title: Actix Web — 多 worker 工厂 + 类型 extractor 的 Rust Web 框架
 来源: 'https://github.com/actix/actix-web'
-日期: 2026-05-30
+日期: 2026-08-27
 分类: backend-api
 难度: 中级
+trust:
+  version: study-v2
+  source_kind: project
+  note_type: library
+  canonical_source: https://github.com/actix/actix-web
+  source_authority: AUTHOR_PRIMARY
+  accessed_at: '2026-08-27'
+  immutable_revision: 5723cf486522d47aad26390cf5b02e95654ae225
+  evidence_type: STATIC_ANALYSIS
+  verification_status: UNVERIFIED
+  reviewed_at: '2026-08-27'
+  review_after: '2026-11-27'
+  applicable_version: 4.15.0
 ---
 
 ## 是什么
 
-Actix Web 是一个用 **Rust** 写后端服务器的库，主打"又快又类型安全"。日常类比：像一辆**手动挡跑车**——比 Python/Node 那种自动挡的（FastAPI、Express）要多挂几次档（写类型、处理生命周期），换来的是车快得多。
-
-你用 Actix Web 写一个 Hello World：
+Actix Web 是一个 **Rust HTTP 框架**：`HttpServer` 按 worker 拉起线程，每个 worker 用工厂闭包各建一份 `App`，handler 再用类型 extractor 从请求里取路径、query 或 JSON。日常类比：总店按核数开收银台，每个柜台自己组装扫码枪和抽屉，但共享库存必须先包成可克隆的句柄。
 
 ```rust
 use actix_web::{get, App, HttpServer, Responder};
@@ -20,39 +31,43 @@ async fn greet(name: actix_web::web::Path<String>) -> impl Responder {
     format!("Hello {name}!")
 }
 
-#[actix_web::main]
+#[actix_web::main] // 或 #[tokio::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| App::new().service(greet))
-        .bind(("127.0.0.1", 8080))?.run().await
+        .bind(("127.0.0.1", 8080))?
+        .run()
+        .await
 }
 ```
 
-它跑在 **Tokio**（Rust 的异步运行时，类似 Node 的事件循环）之上，TechEmpower 这种公开吞吐榜单上常年排前三，2026 年仍然是 Rust 后端的两大主流之一（另一个是 axum）。
+名字里的 actix 来自早期 actor crate。固定 4.15.0 的 HTTP 主线是函数 handler；`actix` actor / `actix-web-actors` 仍要 `System`，不能只靠 `#[tokio::main]`。
 
 ## 为什么重要
 
-不理解 Actix Web，下面这些事都没法解释：
+不按固定 4.15.0 源码读 Actix Web，下面这些印象会对不上：
 
-- 为什么"Rust 写 web"在 2017 年之后突然成了一个真选项——以前都说 Rust 难写，是它证明可以
-- 为什么 Rust 后端社区分裂成了 actix vs axum 两派——一派要"自由发挥"，一派要"严格泛型"
-- 为什么"actor 模型"这个词总被提起又总被绕开——actix 的名字带着它，但日常用法里又没它
-- 为什么 Rust 函数 handler 写起来像简单 Express，但报错动辄几十行——背后是类型系统在替你查活儿
+- worker 默认数写在 `HttpServer::workers()` 里，依据是 `std::thread::available_parallelism()`，不是“随便猜几个核”
+- 共享状态漏注册 `web::Data<T>` 时，extractor 会 500，不是编译期拦下
+- 每个 worker 是单线程 runtime，同步阻塞会卡住该 worker 上的全部连接
+- JSON 超限是 413，字段反序列化失败才是 400
 
 ## 核心要点
 
-Actix Web 的设计可以拆成 **三件事**：
+固定 4.15.0 的主链可以拆成五步：
 
-1. **多 worker 并行处理请求**：HttpServer 启动后按 CPU 核数 spawn 多个 worker 线程（默认 = 核数），每个 worker 都跑一个独立的 App。类比：开了 8 个收银台，每个台都有完整的扫码枪和现金抽屉，互不干扰。
+1. **工厂 × worker × bind 地址**：`HttpServer::new(factory)` 的闭包至少每个 worker 跑一次。`run()` 再按每个成功 bind 的地址开一组 worker。2 个 worker × 2 个地址就是 4 次工厂实例化。
 
-2. **强类型 extractor 自动抽参数**：handler 的参数类型决定了从请求里取什么。`web::Path<String>` 取 URL 路径段，`web::Query<T>` 取 querystring，`web::Json<T>` 取 JSON body。类比：你写一张领料单，写"我要 3 个螺丝 + 1 把扳手"，仓库自己按单子配齐，不需要你跑一趟仓库。
+2. **默认 worker 数按 `available_parallelism()`**：`workers(n)` 要求 `n > 0`，否则 panic。`run()` 另一段文档写成 “physical cores”，与 `workers()` 的 API 注释不完全同词；本文按 `workers()` 合同写。
 
-3. **App 是请求处理的"配置层"**：路由、中间件、共享状态都挂在 App 上，每个 worker 启动时各自构造一份。状态如果要共享必须用 `web::Data<T>`（内部是 Arc）包一下，否则编译器不让你跨 worker。
+3. **类型 extractor**：`web::Path<T>` / `Query<T>` / `Json<T>` 实现 `FromRequest`。payload 只能被一个 extractor 消费。`Json` 默认 limit 是 `2_097_152` 字节。
 
-三件事加起来叫"Actix Web 模型"。
+4. **`web::Data<T>` 是 Arc 句柄**：共享可变状态应在 `HttpServer::new` 闭包外 `Data::new(...)`，再 `app_data` 进去。嵌套 `Scope` 会取“最近的一份”同类型数据。
 
-## 实践案例
+5. **中间件后注册先执行**：`wrap()` 用 `Transform` 包当前 endpoint；文档写明请求先进入最后一次 `wrap` 的中间件。
 
-### 案例 1：最小的 GET 路由
+## 实践示例
+
+### 案例 1：宏路由 + 路径抽取
 
 ```rust
 use actix_web::{get, App, HttpServer, Responder};
@@ -63,18 +78,12 @@ async fn greet(name: actix_web::web::Path<String>) -> impl Responder {
 }
 ```
 
-**逐部分解释**：
+`macros` 是默认 feature。也可以不用宏，改 `web::resource("/hello/{name}").route(web::get().to(greet))`。
 
-- `#[get("/hello/{name}")]` 是宏，等同 Express 里 `app.get('/hello/:name', ...)`
-- `web::Path<String>` 这个类型告诉框架："请把 URL 里 `{name}` 那段抽出来当字符串给我"
-- `async fn` 表示它是异步函数，返回 `impl Responder`（任何能转成 HTTP 响应的东西）
-
-比 Go 的 `net/http` 紧凑（不用手动写 `r.URL.Path`），比 Express 多了类型保证。
-
-### 案例 2：JSON API + 共享计数器
+### 案例 2：共享计数器必须在工厂外构造
 
 ```rust
-use actix_web::{get, post, web, App, HttpServer};
+use actix_web::{post, web, App, HttpServer};
 use std::sync::Mutex;
 
 struct AppState { count: Mutex<u32> }
@@ -85,17 +94,18 @@ async fn inc(data: web::Data<AppState>) -> String {
     *c += 1;
     format!("now={}", *c)
 }
+
+let state = web::Data::new(AppState { count: Mutex::new(0) });
+HttpServer::new(move || {
+    App::new()
+        .app_data(state.clone())
+        .service(inc)
+})
 ```
 
-**逐部分解释**：
+`Data` 内部是 `Arc`，clone 便宜。把 `Data::new` 写进工厂闭包会让每个 worker 各持一份。
 
-- `AppState` 是自定义状态结构体，里面用 `Mutex` 包 `u32`（多 worker 同时访问要加锁）
-- `web::Data<AppState>` 是 actix 提供的"共享句柄"，内部用 `Arc` 实现，所有 worker 拿到的是同一份
-- main 里要 `App::new().app_data(web::Data::new(state.clone()))` 注册一次
-
-这是真实生产代码里 90% 的状态管理写法。
-
-### 案例 3：JSON 表单自动反序列化
+### 案例 3：JSON 默认 2MB
 
 ```rust
 use actix_web::{post, web};
@@ -110,67 +120,72 @@ async fn signup(form: web::Json<Signup>) -> String {
 }
 ```
 
-**逐部分解释**：
-
-- `#[derive(Deserialize)]` 让 serde 库帮 Signup 实现 JSON 反序列化
-- `web::Json<Signup>` 让 actix 自动读 body，按 Signup 形状反序列化，类型不对自动 400
-
-手写解析要 30 行（读 body + serde_json::from_slice + 错误处理），actix 一行搞定。
+`JsonConfig::limit` 可改上限。overflow 是 413；`ContentType` / `Deserialize` 是 400；响应侧 `Serialize` 失败是 500。
 
 ## 踩过的坑
 
-1. **共享状态忘了 web::Data 包装**——直接传 `Arc<Mutex<T>>` 编译器会让你写一堆 trait bound，正确写法是 `App::new().app_data(web::Data::new(state))`，handler 里用 `data: web::Data<T>` 接。
-
-2. **handler 里跑同步阻塞调用会卡死整个 worker**——每个 worker 是单线程事件循环，`std::thread::sleep` 或 `std::fs::read` 大文件都会让该 worker 上所有连接饿死，应该用 `tokio::fs` 或把活儿丢给 `web::block`。
-
-3. **actor 模型不是日常用法**——名字叫 actix 容易误导，新人以为必须懂 actor 才能写路由，其实 4.x 起函数 handler 才是主线，actor crate 只在 WebSocket 长连接才偶尔登场。
-
-4. **中间件顺序反直觉**——`wrap()` 是栈式注册，最后注册的中间件**最先**执行进入请求，容易把日志加在认证之后导致未认证请求没被记录。
+1. **漏掉 `app_data(web::Data::new(...))`**：`Data<T>` extractor 在找不到实例时写 500。
+2. **在 handler 里跑同步阻塞**：每个 worker 单线程。大文件 `std::fs::read` 或 `thread::sleep` 会饿死该 worker；应 `web::block`（内部 `spawn_blocking`）或 async I/O。
+3. **把 `#[tokio::main]` 用到 actor WebSocket**：HTTP 可以；`actix-web-actors` 仍要 `#[actix_web::main]` 建 `System`。
+4. **`wrap()` 顺序按注册顺序理解**：最后 `wrap` 的中间件最先看到请求。把 Logger 放在认证前面还是后面，结果相反。
+5. **`Route::to()` 写在 `Route::wrap()` 之后**：4.14.0 起会 panic，避免静默丢掉 route 中间件。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 需要极限吞吐的内部服务（网关、API 转发、CDN 边缘）——TechEmpower 实测数据可信
-- 已经在用 Rust 的团队，想要一个老牌生产级 web 层
-- 需要长期支持 HTTP/2、WebSocket、流式响应的场景
+- 需要多 worker、默认 HTTP/2、压缩和 cookie 都在默认 features 里的 Rust HTTP 服务
+- 已有 actix-web 4.x 代码，或需要 `#[get]` 宏路由
+- 接受 MSRV 1.88，以及“每个 worker 一份 App”的工厂模型
 
 **不适用**：
 
-- 团队没人会 Rust——学习成本（生命周期、async）会让 MVP 推迟一两个月
-- 业务还在快速试错、接口天天改——Rust 改类型 + actix 改 extractor 比 Python 改字典慢得多，这种早期项目用 [[fastapi]] 或 [[express]] 更合适
-- 新项目没历史负担、想要更现代 API ——直接选 axum（基于 tower 中间件生态）；actix 适合既有 actix 生态的复用
+- 团队不能接受 Rust 生命周期 / 单线程 worker 的阻塞纪律
+- 想要 tower `Service` 中间件生态、而不是 `Transform` / `wrap`——看 [[axum]]
+- 想把静态阅读写成 TechEmpower 名次或吞吐结论——本文没有跑 benchmark
 
-## 历史小故事（可跳过）
+## 固定版本边界
 
-- **2017 年**：Nikolay Kim（昵称 fafhrd91）个人项目起步，先做了 actix actor crate（自己写的 Erlang 风格 actor 库，参见 [[erlang-otp]]），再在它上面建 actix-web，故得名
-- **2018-2020 年**：屡次在 TechEmpower benchmark 夺冠，Rust 社区知名度爆发，被认为是"Rust 能写 web"的活证据
-- **2020 年**：因 unsafe 代码使用引发社区争议，fafhrd91 一度删库退出，社区接手维护，actix-web 4.0 起转为社区驱动，重心从 actor 模型转向函数 handler + extractor
-- **2024 年后**：axum 凭借 tower 生态和更简洁 API 抢走了不少新项目，但 actix-web 仍是老牌生产级选择
+- 本文绑定 `actix/actix-web@5723cf486522d47aad26390cf5b02e95654ae225`。lightweight tag `web-v4.15.0` 直接指向该提交；`actix-web/Cargo.toml` 版本为 `4.15.0`。
+- workspace `rust-version` 为 `1.88`。4.15.0 增加 `Error::add_response_mapper()`，并移除实验 feature `experimental-io-uring`。
+- crates.io API 本轮 403，未用 registry 交叉核验。
+- 本文未安装依赖、未跑上游测试、未监听端口、未比较吞吐；状态保持 `UNVERIFIED`。
 
 ## 学到什么
 
-1. **快不快不只看语言，还看运行时模型**——同样 Rust，actix 的"多 worker × Tokio"组合比单线程同步快几十倍
-2. **类型驱动的 extractor 是 Rust web 框架的核心抽象**——一行 `web::Json<T>` 替代了几十行手写解析
-3. **共享状态要显式 web::Data + 框架名字 ≠ 当前主流用法**——比 Express 的 req.app.locals 啰嗦但编译期保证；actix-web 4.x 已经把 actor 推到边缘，新人不必先学 actor
+1. **多 worker 不是“一个 App 被线程共享”**——工厂会按 worker × 地址反复建 App。
+2. **`Data<T>` 是显式 Arc 句柄**——漏注册是 500，不是“编译器替你补上”。
+3. **单线程 worker 把阻塞变成可用性 bug**——`web::block` 才是同步工作的出口。
+4. **名字里的 actor 不是 HTTP 主线**——4.15.0 日常路径是函数 handler + extractor。
+
+## 应用型自测
+
+1. 不调用 `workers()` 时，worker 数按什么 API 决定？
+2. handler 取 `web::Data<AppState>` 但 App 没 `app_data`，默认响应是什么？
+3. `#[tokio::main]` 能否替代 `#[actix_web::main]` 去跑 `actix-web-actors`？
+
+检查点：
+
+1. `HttpServer::workers()` 文档：`std::thread::available_parallelism()`。
+2. 500。`Data<T>` 找不到实例会 Internal Server Error。
+3. 不能。actor / 这条 WebSocket 路径仍要 `System`。
 
 ## 延伸阅读
 
-- 官方文档：[actix.rs](https://actix.rs/)（教程章节最适合零基础上手）
-- GitHub README：[actix/actix-web](https://github.com/actix/actix-web)（看一遍 README 就能跑起来）
-- 性能对照：[TechEmpower Round 22+](https://www.techempower.com/benchmarks/) actix vs axum 实测
-- [[fastapi]] —— 思想最像的 Python 框架（也是类型注解 → 自动抽参数）
-- [[express]] —— Node 老牌框架，对比体会"动态 vs 静态"两条路线
+- 固定源码：[actix/actix-web](https://github.com/actix/actix-web) —— 本文绑定提交 `5723cf486522d47aad26390cf5b02e95654ae225`
+- 指南：[actix.rs](https://actix.rs/)
+- crate 文档：[docs.rs/actix-web/4.15.0](https://docs.rs/actix-web/4.15.0/actix_web/)
+- [[axum]] —— tower Service + 签名抽取对照
+- [[rocket]] —— 宏路由另一条 Rust 路线
+- [[express]] —— 动态 handler 对照，没有 worker 工厂
 
 ## 关联
 
-- [[gin]] —— Go 高性能 web 框架，定位接近，没 Rust 的类型推导但写法更轻
-- [[fiber]] —— Go 仿 Express 风格框架，比较"actix 类型重 vs fiber 链式轻"
-- [[fastapi]] —— Python 上类型驱动 web 的代表，extractor 思路相似
-- [[express]] —— JS 上动态类型 web 框架的鼻祖，反衬 actix 的"为什么要静态"
-- [[chi]] —— Go 极简路由库，对比 actix 的"宏 + 类型"重量级风格
-- [[encore]] —— 一站式 Go 后端框架，对比 actix 的"只管 web 层"
-- [[erlang-otp]] —— actor 模型的源头，actix 早期借鉴过 OTP 思想
+- [[axum]] —— `Router<S>` / `with_state` vs `HttpServer` 工厂 + `Data`
+- [[rocket]] —— attribute macro 路由
+- [[warp]] —— Filter 组合，不是 factory + extractor
+- [[express]] —— 单进程中间件栈，对照多 worker 工厂
+- [[fastapi]] —— 类型注解抽取的另一条语言路线
 
 ## 反向链接
 

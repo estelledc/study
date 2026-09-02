@@ -1,0 +1,55 @@
+{
+  "schema_version": "study-review-receipt-v1",
+  "generation": 1,
+  "predecessor_digest_sha256": null,
+  "note": {
+    "area": "projects",
+    "slug": "actix-web",
+    "digest_sha256": "beeea30709f02e96a84dcba1bcc892a2c7c918169a47574c0c647de7e70c7344"
+  },
+  "source_revision": "5723cf486522d47aad26390cf5b02e95654ae225",
+  "research_input_sha256": "9fc290ee3262d4c6f071c9f753637515002cfd3a067e873e8f45494737972ad1",
+  "reviewers": [
+    {
+      "role": "ZERO_BASE",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 91,
+      "warnings": [
+        "Separates worker factory instantiation, Data extractor 500, and wrap order with application checks."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ENGINEER",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 93,
+      "warnings": [
+        "server, data, json, middleware, and rt sources were inspected; upstream tests, workers, and HTTP servers were not run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    },
+    {
+      "role": "ACADEMIC",
+      "reviewer_version": "research-benchmark-static-20260827-fg",
+      "decision": "PASS_WITH_NOTES",
+      "score": 90,
+      "warnings": [
+        "Claims are bounded to actix-web 4.15.0 at 5723cf486522; keep-alive, HTTP/2 windows, and actor WebSocket require a target-environment run."
+      ],
+      "execution": {
+        "review_mode": "STATIC_REVIEW",
+        "code_mode": "NOT_APPLICABLE"
+      }
+    }
+  ],
+  "waivers": [],
+  "created_at": "2026-08-27T10:20:00.000Z"
+}
